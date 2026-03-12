@@ -11,6 +11,16 @@ Deno.serve(async (req) => {
   }
 
   try {
+    // Authenticate via secret API key
+    const adminKey = req.headers.get("x-admin-key");
+    const expectedKey = Deno.env.get("SEED_ADMIN_KEY");
+    if (!expectedKey || adminKey !== expectedKey) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, serviceRoleKey);
@@ -19,16 +29,15 @@ Deno.serve(async (req) => {
     const action = body.action || "insert_tools";
 
     if (action === "cleanup") {
-      // Delete all existing tools and categories
       await supabase.from("tools").delete().neq("id", "___none___");
       await supabase.from("categories").delete().neq("id", "___none___");
 
-      // Insert categories
       const categories = body.categories || [];
       if (categories.length > 0) {
         const { error } = await supabase.from("categories").insert(categories);
         if (error) {
-          return new Response(JSON.stringify({ error: "categories failed", detail: error }), {
+          console.error("categories insert error:", error);
+          return new Response(JSON.stringify({ error: "Categories insert failed" }), {
             status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
           });
         }
@@ -66,7 +75,8 @@ Deno.serve(async (req) => {
 
       const { error } = await supabase.from("tools").insert(tools);
       if (error) {
-        return new Response(JSON.stringify({ error: "tools insert failed", detail: error, ids: tools.map((t: any) => t.id) }), {
+        console.error("tools insert error:", error);
+        return new Response(JSON.stringify({ error: "Tools insert failed" }), {
           status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
@@ -104,7 +114,8 @@ Deno.serve(async (req) => {
 
         const { error } = await supabase.from("posts").insert(batch);
         if (error) {
-          return new Response(JSON.stringify({ error: "posts insert failed", detail: error, batch: i }), {
+          console.error("posts insert error:", error);
+          return new Response(JSON.stringify({ error: "Posts insert failed" }), {
             status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
           });
         }
@@ -120,7 +131,8 @@ Deno.serve(async (req) => {
       status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (err) {
-    return new Response(JSON.stringify({ error: String(err) }), {
+    console.error("seed-content error:", err);
+    return new Response(JSON.stringify({ error: "Internal server error" }), {
       status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
