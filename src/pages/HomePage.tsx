@@ -91,7 +91,7 @@ const HomePage = () => {
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
               {t(
-                "Tooltrim analyse votre stack d'outils et vous recommande les meilleurs — en éliminant les abonnements inutiles.",
+                "Tooltrim analyse votre stack d'outils et vous recommande les meilleurs en éliminant les abonnements inutiles.",
                 "Tooltrim analyzes your tool stack and recommends the best ones — eliminating unnecessary subscriptions."
               )}
             </p>
