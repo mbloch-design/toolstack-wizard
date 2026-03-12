@@ -37,14 +37,26 @@ const Tip = ({ text }: { text: string }) => (
 );
 
 const Logo = ({ tool, size = 36 }: { tool: ScoredTool["tool"]; size?: number }) => {
-  const url = getToolLogoUrl(tool);
+  const logoField = tool.logo;
+  const websiteUrl = tool.websiteUrl || tool.affiliateLink;
+  const [src, setSrc] = useState<string | null>(null);
   const [err, setErr] = useState(false);
-  if (!url || err) return (
+
+  useEffect(() => {
+    if (logoField) { setSrc(logoField); return; }
+    if (!websiteUrl) { setSrc(null); return; }
+    try {
+      const domain = new URL(websiteUrl.startsWith("http") ? websiteUrl : `https://${websiteUrl}`).hostname.replace("www.", "");
+      setSrc(`https://www.google.com/s2/favicons?domain=${domain}&sz=128`);
+    } catch { setSrc(null); }
+  }, [logoField, websiteUrl]);
+
+  if (!src || err) return (
     <span className="flex shrink-0 items-center justify-center rounded-xl bg-muted text-xs font-bold" style={{ width: size, height: size }}>
       {tool.name.charAt(0)}
     </span>
   );
-  return <img src={url} alt="" loading="lazy" className="shrink-0 rounded-xl bg-muted object-contain" style={{ width: size, height: size }} onError={() => setErr(true)} />;
+  return <img src={src} alt={`${tool.name} logo`} loading="lazy" className="shrink-0 rounded-xl bg-muted object-contain" style={{ width: size, height: size }} onError={() => setErr(true)} />;
 };
 
 /* ═══════════════ Main ═══════════════ */
