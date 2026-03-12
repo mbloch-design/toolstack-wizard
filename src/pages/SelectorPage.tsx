@@ -2,24 +2,31 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
-import { SelectorFormData, UserType, JobRole, MainGoal, AIUsageLevel, SelectedTool } from "@/data/types";
+import {
+  SelectorFormData, MainGoal, AIUsageLevel, SelectedTool,
+  PERSONAS, TJM_OPTIONS, PHASE_OPTIONS, MATURITY_OPTIONS,
+  Persona, TjmRange, ProjectPhase, TechMaturity,
+} from "@/data/types";
 import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { getToolLogoUrl } from "@/hooks/useSupabaseData";
 
-const STEPS = 6;
+const STEPS = 8;
 
 const SelectorPage = () => {
-  const { t, prefix } = useLang();
+  const { t, prefix, lang } = useLang();
   const navigate = useNavigate();
   const { tools } = useTools();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<SelectorFormData>({
-    userType: null,
-    jobRole: null,
+    persona: null,
     mainGoal: null,
     currentTools: [],
     aiUsageLevel: null,
+    tjm: null,
+    projectPhase: null,
+    techMaturity: null,
     email: "",
     firstName: "",
     marketingOptIn: false,
@@ -30,12 +37,14 @@ const SelectorPage = () => {
 
   const canNext = () => {
     switch (step) {
-      case 1: return !!form.userType;
-      case 2: return !!form.jobRole;
-      case 3: return !!form.mainGoal;
-      case 4: return true;
-      case 5: return !!form.aiUsageLevel;
-      case 6: return form.email.includes("@") && form.firstName.length > 0;
+      case 1: return !!form.persona;
+      case 2: return !!form.tjm;
+      case 3: return !!form.projectPhase;
+      case 4: return !!form.techMaturity;
+      case 5: return !!form.mainGoal;
+      case 6: return true; // tools optional
+      case 7: return !!form.aiUsageLevel;
+      case 8: return form.email.includes("@") && form.firstName.length > 0;
       default: return false;
     }
   };
@@ -45,16 +54,20 @@ const SelectorPage = () => {
   const handleSubmit = async () => {
     setSubmitting(true);
     try {
+      const tjmMedian = TJM_OPTIONS.find((o) => o.value === form.tjm)?.median || 0;
       const { error } = await supabase.from("leads").insert({
         email: form.email.trim(),
         first_name: form.firstName.trim(),
-        user_type: form.userType,
-        job_role: form.jobRole,
+        user_type: form.persona,
+        job_role: form.persona,
         main_goal: form.mainGoal,
         current_tools: JSON.stringify(form.currentTools),
         ai_usage_level: form.aiUsageLevel,
         marketing_opt_in: form.marketingOptIn,
-        source: "selector",
+        tjm: tjmMedian,
+        project_phase: form.projectPhase,
+        tech_maturity: form.techMaturity,
+        source: "selector-v2",
       } as any);
 
       if (error) throw error;
@@ -97,17 +110,9 @@ const SelectorPage = () => {
   };
 
   const OptionCard = ({
-    selected,
-    onClick,
-    emoji,
-    label,
-    desc,
+    selected, onClick, emoji, label, desc,
   }: {
-    selected: boolean;
-    onClick: () => void;
-    emoji: string;
-    label: string;
-    desc?: string;
+    selected: boolean; onClick: () => void; emoji: string; label: string; desc?: string;
   }) => (
     <button
       onClick={onClick}
@@ -118,7 +123,7 @@ const SelectorPage = () => {
       }`}
     >
       <span className="text-xl">{emoji}</span>
-      <div>
+      <div className="flex-1">
         <p className="font-medium">{label}</p>
         {desc && <p className="mt-0.5 text-sm text-muted-foreground">{desc}</p>}
       </div>
@@ -143,45 +148,85 @@ const SelectorPage = () => {
           </div>
         </div>
 
-        {/* Step 1: User Type */}
+        {/* Step 1: Persona */}
         {step === 1 && (
           <div className="animate-fade-in">
-            <h2 className="font-heading text-2xl font-bold">{t("Quel est votre profil ?", "What's your profile?")}</h2>
-            <p className="mt-2 text-muted-foreground">{t("Cela nous aide à personnaliser les recommandations.", "This helps us personalize recommendations.")}</p>
+            <h2 className="font-heading text-2xl font-bold">{t("Qui êtes-vous ?", "Who are you?")}</h2>
+            <p className="mt-2 text-muted-foreground">{t("Choisissez le profil qui vous ressemble le plus.", "Choose the profile that best fits you.")}</p>
             <div className="mt-6 grid gap-3">
-              {([
-                { value: "solo" as UserType, emoji: "👤", label: t("Freelance solo", "Solo freelancer"), desc: t("Je travaille seul", "I work alone") },
-                { value: "team-2-5" as UserType, emoji: "👥", label: t("Petite équipe (2-5)", "Small team (2-5)"), desc: t("Petite structure", "Small structure") },
-                { value: "team-5-10" as UserType, emoji: "👨‍👩‍👧‍👦", label: t("Équipe (5-10)", "Team (5-10)"), desc: t("Équipe moyenne", "Mid-size team") },
-                { value: "startup-10+" as UserType, emoji: "🚀", label: t("Startup (10+)", "Startup (10+)"), desc: t("Structure en croissance", "Growing organization") },
-              ]).map((opt) => (
-                <OptionCard key={opt.value} selected={form.userType === opt.value} onClick={() => setForm({ ...form, userType: opt.value })} {...opt} />
+              {PERSONAS.map((p) => (
+                <OptionCard
+                  key={p.value}
+                  selected={form.persona === p.value}
+                  onClick={() => setForm({ ...form, persona: p.value })}
+                  emoji={p.emoji}
+                  label={p.name}
+                  desc={lang === "en" ? p.descEn : p.desc}
+                />
               ))}
             </div>
           </div>
         )}
 
-        {/* Step 2: Job Role */}
+        {/* Step 2: TJM */}
         {step === 2 && (
           <div className="animate-fade-in">
-            <h2 className="font-heading text-2xl font-bold">{t("Quel est votre métier ?", "What's your job?")}</h2>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {([
-                { value: "writer" as JobRole, emoji: "✍️", label: t("Rédacteur / Copywriter", "Writer / Copywriter") },
-                { value: "consultant" as JobRole, emoji: "💼", label: t("Consultant / Coach", "Consultant / Coach") },
-                { value: "tech" as JobRole, emoji: "💻", label: t("Développeur / Tech", "Developer / Tech") },
-                { value: "designer" as JobRole, emoji: "🎨", label: t("Designer / Créatif", "Designer / Creative") },
-                { value: "content-creator" as JobRole, emoji: "📱", label: t("Créateur de contenu", "Content Creator") },
-                { value: "other" as JobRole, emoji: "🔧", label: t("Autre", "Other") },
-              ]).map((opt) => (
-                <OptionCard key={opt.value} selected={form.jobRole === opt.value} onClick={() => setForm({ ...form, jobRole: opt.value })} {...opt} />
+            <h2 className="font-heading text-2xl font-bold">{t("Votre taux journalier moyen ?", "Your average daily rate?")}</h2>
+            <p className="mt-2 text-muted-foreground">{t("Utilisé pour calculer la valeur réelle de chaque outil.", "Used to calculate the real value of each tool.")}</p>
+            <div className="mt-6 grid gap-3">
+              {TJM_OPTIONS.map((o) => (
+                <OptionCard
+                  key={o.value}
+                  selected={form.tjm === o.value}
+                  onClick={() => setForm({ ...form, tjm: o.value })}
+                  emoji="💰"
+                  label={lang === "en" ? o.labelEn : o.label}
+                />
               ))}
             </div>
           </div>
         )}
 
-        {/* Step 3: Main Goal */}
+        {/* Step 3: Project Phase */}
         {step === 3 && (
+          <div className="animate-fade-in">
+            <h2 className="font-heading text-2xl font-bold">{t("Où en êtes-vous dans votre activité ?", "Where are you in your business?")}</h2>
+            <div className="mt-6 grid gap-3">
+              {PHASE_OPTIONS.map((o) => (
+                <OptionCard
+                  key={o.value}
+                  selected={form.projectPhase === o.value}
+                  onClick={() => setForm({ ...form, projectPhase: o.value })}
+                  emoji={o.emoji}
+                  label={lang === "en" ? o.labelEn : o.label}
+                  desc={lang === "en" ? o.descEn : o.desc}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Step 4: Tech Maturity */}
+        {step === 4 && (
+          <div className="animate-fade-in">
+            <h2 className="font-heading text-2xl font-bold">{t("Votre rapport aux outils ?", "Your relationship with tools?")}</h2>
+            <div className="mt-6 grid gap-3">
+              {MATURITY_OPTIONS.map((o) => (
+                <OptionCard
+                  key={o.value}
+                  selected={form.techMaturity === o.value}
+                  onClick={() => setForm({ ...form, techMaturity: o.value })}
+                  emoji={o.emoji}
+                  label={lang === "en" ? o.labelEn : o.label}
+                  desc={lang === "en" ? o.descEn : o.desc}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Step 5: Main Goal */}
+        {step === 5 && (
           <div className="animate-fade-in">
             <h2 className="font-heading text-2xl font-bold">{t("Votre objectif principal ?", "Your main goal?")}</h2>
             <div className="mt-6 grid gap-3">
@@ -197,14 +242,15 @@ const SelectorPage = () => {
           </div>
         )}
 
-        {/* Step 4: Current Tools */}
-        {step === 4 && (
+        {/* Step 6: Current Tools */}
+        {step === 6 && (
           <div className="animate-fade-in">
             <h2 className="font-heading text-2xl font-bold">{t("Quels outils utilisez-vous ?", "Which tools do you use?")}</h2>
-            <p className="mt-2 text-muted-foreground">{t("Sélectionnez les outils que vous payez actuellement.", "Select the tools you currently pay for.")}</p>
-            <div className="mt-6 grid gap-2 sm:grid-cols-2">
+            <p className="mt-2 text-muted-foreground">{t("Sélectionnez les outils que vous payez actuellement. Optionnel.", "Select the tools you currently pay for. Optional.")}</p>
+            <div className="mt-6 grid gap-2 sm:grid-cols-2 max-h-[50vh] overflow-y-auto pr-1">
               {tools.map((tool) => {
                 const selected = form.currentTools.find((ct) => ct.toolId === tool.id);
+                const logoUrl = getToolLogoUrl(tool);
                 return (
                   <div key={tool.id}>
                     <button
@@ -213,8 +259,12 @@ const SelectorPage = () => {
                         selected ? "border-primary bg-accent" : "border-border hover:border-primary/30"
                       }`}
                     >
-                      <span>{tool.logo}</span>
-                      <span className="flex-1 font-medium">{tool.name}</span>
+                      {logoUrl ? (
+                        <img src={logoUrl} alt="" className="h-5 w-5 rounded" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                      ) : (
+                        <span className="h-5 w-5 rounded bg-muted" />
+                      )}
+                      <span className="flex-1 font-medium truncate">{tool.name}</span>
                       <span className="text-xs text-muted-foreground">{tool.defaultMonthlyPrice}€</span>
                       {selected && <Check className="h-4 w-4 text-primary" />}
                     </button>
@@ -245,8 +295,8 @@ const SelectorPage = () => {
           </div>
         )}
 
-        {/* Step 5: AI Usage */}
-        {step === 5 && (
+        {/* Step 7: AI Usage */}
+        {step === 7 && (
           <div className="animate-fade-in">
             <h2 className="font-heading text-2xl font-bold">{t("Votre usage de l'IA ?", "Your AI usage?")}</h2>
             <div className="mt-6 grid gap-3">
@@ -262,8 +312,8 @@ const SelectorPage = () => {
           </div>
         )}
 
-        {/* Step 6: Email */}
-        {step === 6 && (
+        {/* Step 8: Email */}
+        {step === 8 && (
           <div className="animate-fade-in">
             <h2 className="font-heading text-2xl font-bold">{t("Recevez vos résultats", "Get your results")}</h2>
             <p className="mt-2 text-muted-foreground">{t("Nous vous envoyons un récapitulatif par email.", "We'll send you a summary by email.")}</p>
@@ -334,7 +384,7 @@ const SelectorPage = () => {
               {submitting ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  {t("Enregistrement...", "Saving...")}
+                  {t("Analyse en cours...", "Analyzing...")}
                 </>
               ) : (
                 <>

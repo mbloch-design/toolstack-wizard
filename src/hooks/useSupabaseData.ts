@@ -70,6 +70,8 @@ function mapSupabaseTool(t: any): Tool {
     alternatives: t.alternatives || [],
     seo: t.seo || null,
     articles: t.articles || [],
+    timeGainedHoursPerMonth: t.time_gained_hours_per_month ?? undefined,
+    freeAlternative: t.free_alternative || null,
   };
 }
 
