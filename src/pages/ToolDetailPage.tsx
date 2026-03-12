@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories } from "@/hooks/useSupabaseData";
 import { ArrowLeft, ExternalLink, Check, X } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
 
 const ToolDetailPage = () => {
   const { t, prefix } = useLang();
@@ -34,7 +35,7 @@ const ToolDetailPage = () => {
         </Link>
 
         <div className="flex items-start gap-4">
-          <span className="text-4xl">{tool.logo}</span>
+          <ToolLogo tool={tool} size={48} />
           <div>
             <h1 className="text-3xl font-extrabold tracking-tighter">{tool.name}</h1>
             {category && (
@@ -134,9 +135,9 @@ const ToolDetailPage = () => {
                 <Link
                   key={alt.id}
                   to={`${prefix}/tool/${alt.slug}`}
-                  className="group rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30"
+                  className="group rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg"
                 >
-                  <span className="text-xl">{alt.logo}</span>
+                  <ToolLogo tool={alt} size={28} />
                   <p className="mt-2 font-semibold group-hover:text-primary">{alt.name}</p>
                   <p className="mt-1 text-xs text-muted-foreground">{alt.defaultMonthlyPrice > 0 ? `${alt.defaultMonthlyPrice}€/${t("mois", "mo")}` : t("Gratuit", "Free")}</p>
                 </Link>

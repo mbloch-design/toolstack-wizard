@@ -3,6 +3,19 @@ import { useLang } from "@/hooks/useLang";
 import { blogPosts } from "@/data/content";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { ArrowRight, TrendingDown, Zap, Search } from "lucide-react";
+import { getCategoryIcon } from "@/lib/categoryIcons";
+import ToolLogo from "@/components/ToolLogo";
+
+const TRUSTED_LOGOS = [
+  { name: "Notion", domain: "notion.so" },
+  { name: "Slack", domain: "slack.com" },
+  { name: "Figma", domain: "figma.com" },
+  { name: "Stripe", domain: "stripe.com" },
+  { name: "Canva", domain: "canva.com" },
+  { name: "ChatGPT", domain: "openai.com" },
+  { name: "Trello", domain: "trello.com" },
+  { name: "Airtable", domain: "airtable.com" },
+];
 
 const HomePage = () => {
   const { t, prefix } = useLang();
@@ -14,10 +27,10 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden py-24 md:py-36">
+      <section className="relative overflow-hidden py-16 md:py-24">
         <div className="container relative z-10">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-sm text-muted-foreground">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-sm text-muted-foreground">
               <Zap className="h-3.5 w-3.5 text-primary" />
               {t("Pour freelances & petites équipes", "For freelancers & small teams")}
             </div>
@@ -27,13 +40,13 @@ const HomePage = () => {
                 "Stop overpaying for your tools"
               )}
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
               {t(
                 "Tooltrim analyse votre stack d'outils et vous recommande les meilleurs — en éliminant les abonnements inutiles.",
                 "Tooltrim analyzes your tool stack and recommends the best ones — eliminating unnecessary subscriptions."
               )}
             </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 to={`${prefix}/selector`}
                 className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/85 hover:shadow-xl hover:shadow-primary/30"
@@ -47,6 +60,24 @@ const HomePage = () => {
               >
                 {t("Explorer les outils", "Explore tools")}
               </Link>
+            </div>
+
+            {/* Trusted tool logos */}
+            <div className="mt-10">
+              <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted-foreground/60">
+                {t("200+ outils analysés dont", "200+ tools analyzed including")}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-6">
+                {TRUSTED_LOGOS.map((logo) => (
+                  <img
+                    key={logo.domain}
+                    src={`https://logo.clearbit.com/${logo.domain}`}
+                    alt={logo.name}
+                    className="h-7 opacity-40 grayscale transition-all hover:opacity-70 hover:grayscale-0"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -63,7 +94,7 @@ const HomePage = () => {
             { value: "100%", label: t("Gratuit", "Free") },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <p className="text-3xl font-extrabold text-primary">{s.value}</p>
+              <p className="text-3xl font-extrabold text-foreground">{s.value}</p>
               <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
             </div>
           ))}
@@ -111,20 +142,34 @@ const HomePage = () => {
       <section className="border-t border-border bg-secondary/20 py-20">
         <div className="container">
           <h2 className="text-3xl font-bold tracking-tighter">{t("Catégories d'outils", "Tool categories")}</h2>
+          <p className="mt-2 text-muted-foreground">
+            {t(
+              "Explorez nos outils classés par usage pour trouver exactement ce qu'il vous faut.",
+              "Browse our tools by use case to find exactly what you need."
+            )}
+          </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {categories.map((cat) => (
-              <Link
-                key={cat.id}
-                to={`${prefix}/category/${cat.slug}`}
-                className="group rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
-              >
-                <p className="font-semibold group-hover:text-primary">{t(cat.name, cat.nameEn)}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{t(cat.description, cat.descriptionEn)}</p>
-                <p className="mt-2 text-xs font-medium text-primary">
-                  {tools.filter((tool) => tool.categoryId === cat.id).length} {t("outils", "tools")} →
-                </p>
-              </Link>
-            ))}
+            {categories.map((cat) => {
+              const Icon = getCategoryIcon(cat.id);
+              return (
+                <Link
+                  key={cat.id}
+                  to={`${prefix}/category/${cat.slug}`}
+                  className="group rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
+                >
+                  <div className="mb-2 inline-flex rounded-lg bg-accent p-2 text-accent-foreground">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <p className="font-semibold group-hover:text-primary">
+                    {t(cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), cat.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""))}
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">{t(cat.description, cat.descriptionEn)}</p>
+                  <p className="mt-2 text-xs font-medium text-primary">
+                    {tools.filter((tool) => tool.categoryId === cat.id).length} {t("outils", "tools")} →
+                  </p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -143,10 +188,10 @@ const HomePage = () => {
               <Link
                 key={tool.id}
                 to={`${prefix}/tool/${tool.slug}`}
-                className="group rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-md"
+                className="group rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg"
               >
                 <div className="flex items-start gap-3">
-                  <span className="text-2xl">{tool.logo}</span>
+                  <ToolLogo tool={tool} size={36} />
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
                       <h3 className="font-semibold group-hover:text-primary">{tool.name}</h3>
@@ -184,7 +229,7 @@ const HomePage = () => {
               <Link
                 key={post.slug}
                 to={`${prefix}/guide/${post.slug}`}
-                className="group rounded-xl border border-border bg-card p-5 transition-all hover:shadow-md"
+                className="group rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <p className="text-xs text-muted-foreground">{post.date} · {post.readingTime} min</p>
                 <h3 className="mt-2 font-semibold group-hover:text-primary">{t(post.title, post.titleEn || post.title)}</h3>

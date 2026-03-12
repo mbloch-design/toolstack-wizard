@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { Search } from "lucide-react";
+import { getCategoryIcon } from "@/lib/categoryIcons";
+import ToolLogo from "@/components/ToolLogo";
 
 const ToolsPage = () => {
   const { t, prefix } = useLang();
@@ -18,7 +20,7 @@ const ToolsPage = () => {
   });
 
   return (
-    <div className="py-12">
+    <div className="pt-12 pb-12">
       <div className="container">
         <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">{t("Catalogue d'outils", "Tool catalog")}</h1>
         <p className="mt-2 leading-relaxed text-muted-foreground">{t(`${tools.length}+ outils analysés et comparés.`, `${tools.length}+ tools analyzed and compared.`)}</p>
@@ -44,17 +46,21 @@ const ToolsPage = () => {
             >
               {t("Tout", "All")}
             </button>
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                  selectedCategory === cat.id ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground hover:bg-muted"
-                }`}
-              >
-                {t(cat.name, cat.nameEn)}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const Icon = getCategoryIcon(cat.id);
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
+                    selectedCategory === cat.id ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground hover:bg-muted"
+                  }`}
+                >
+                  <Icon className="h-3 w-3" />
+                  {t(cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), cat.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || cat.name)}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -64,10 +70,10 @@ const ToolsPage = () => {
             <Link
               key={tool.id}
               to={`${prefix}/tool/${tool.slug}`}
-              className="group rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-md"
+              className="group rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg"
             >
               <div className="flex items-start gap-3">
-                <span className="text-2xl">{tool.logo}</span>
+                <ToolLogo tool={tool} size={36} />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <h3 className="font-semibold group-hover:text-primary">{tool.name}</h3>

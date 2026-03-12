@@ -28,6 +28,8 @@ const staticTools: Tool[] = (contentJson as any).tools.map((t: any) => ({
   covers: t.covers || [],
   relevantFor: t.relevantFor || [],
   affiliateLink: t.affiliateLink || "",
+  websiteUrl: t.websiteUrl || t.affiliateLink || "",
+  logo: t.logo || "",
   soloRelevance: t.soloRelevance || "",
   teamRelevance: t.teamRelevance || "",
   alternatives: t.alternatives || [],
@@ -61,6 +63,8 @@ function mapSupabaseTool(t: any): Tool {
     covers: t.covers || [],
     relevantFor: t.relevant_for || [],
     affiliateLink: t.affiliate_link || "",
+    websiteUrl: t.website_url || t.affiliate_link || "",
+    logo: t.logo || "",
     soloRelevance: t.solo_relevance || "",
     teamRelevance: t.team_relevance || "",
     alternatives: t.alternatives || [],
@@ -211,4 +215,16 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
   }, [slug, lang]);
 
   return { post, loading };
+}
+
+/** Extract domain from a URL for Clearbit logo */
+export function getToolLogoUrl(tool: Tool): string | null {
+  const url = tool.websiteUrl || tool.affiliateLink;
+  if (!url) return null;
+  try {
+    const domain = new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
+    return `https://logo.clearbit.com/${domain}`;
+  } catch {
+    return null;
+  }
 }
