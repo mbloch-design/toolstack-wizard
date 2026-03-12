@@ -35,9 +35,30 @@ export function setJsonLd(id: string, data: Record<string, unknown>) {
   el.textContent = JSON.stringify(data);
 }
 
+export function setHreflang(path: string, base = "https://tooltrim.com") {
+  // Remove existing hreflang links
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+
+  const cleanPath = path.replace(/^\/(fr|en)/, "");
+  const entries: [string, string][] = [
+    ["fr", `${base}/fr${cleanPath}`],
+    ["en", `${base}/en${cleanPath}`],
+    ["x-default", `${base}/en${cleanPath}`],
+  ];
+
+  for (const [lang, href] of entries) {
+    const link = document.createElement("link");
+    link.rel = "alternate";
+    link.hreflang = lang;
+    link.href = href;
+    document.head.appendChild(link);
+  }
+}
+
 export function cleanupSeo(ids: string[]) {
   ids.forEach((id) => document.getElementById(id)?.remove());
   document.querySelector('link[rel="canonical"]')?.remove();
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
 }
 
 export function setSeoTags({
