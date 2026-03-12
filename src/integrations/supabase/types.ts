@@ -77,6 +77,51 @@ export type Database = {
         }
         Relationships: []
       }
+      posts: {
+        Row: {
+          category: string | null
+          content: string | null
+          date: string | null
+          excerpt: string | null
+          id: number
+          lang: string
+          read_time: string | null
+          seo: Json | null
+          slug: string
+          tags: Json | null
+          title: string
+          tool_id: string | null
+        }
+        Insert: {
+          category?: string | null
+          content?: string | null
+          date?: string | null
+          excerpt?: string | null
+          id?: never
+          lang?: string
+          read_time?: string | null
+          seo?: Json | null
+          slug: string
+          tags?: Json | null
+          title: string
+          tool_id?: string | null
+        }
+        Update: {
+          category?: string | null
+          content?: string | null
+          date?: string | null
+          excerpt?: string | null
+          id?: never
+          lang?: string
+          read_time?: string | null
+          seo?: Json | null
+          slug?: string
+          tags?: Json | null
+          title?: string
+          tool_id?: string | null
+        }
+        Relationships: []
+      }
       tools: {
         Row: {
           affiliate_link: string | null
