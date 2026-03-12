@@ -48,23 +48,23 @@ const UpdateToolsPage = () => {
           affiliate_link: t.affiliateLink || "",
           website_url: (t as any).websiteUrl || t.affiliateLink || "",
           default_monthly_price: Math.round(t.defaultMonthlyPrice || 0),
-          pricing: t.pricing || null,
+          pricing: t.pricing as any,
           logo: "",
           solo_relevance: t.soloRelevance || null,
           team_relevance: t.teamRelevance || null,
           time_gained_hours_per_month: t.timeGainedHoursPerMonth ?? null,
           free_alternative: t.freeAlternative || null,
-          verdict: t.verdict || null,
-          pros: t.pros || null,
-          cons: t.cons || null,
-          use_cases: t.useCases || null,
-          covers: t.covers || null,
-          relevant_for: t.relevantFor || null,
-          alternatives: t.alternatives || null,
-          seo: t.seo || null,
-          articles: t.articles || null,
+          verdict: t.verdict as any,
+          pros: t.pros as any,
+          cons: t.cons as any,
+          use_cases: t.useCases as any,
+          covers: t.covers as any,
+          relevant_for: t.relevantFor as any,
+          alternatives: t.alternatives as any,
+          seo: t.seo as any,
+          articles: t.articles as any,
         }));
-        const { error } = await supabase.from("tools").insert(batch);
+        const { error } = await supabase.from("tools").insert(batch as any);
         if (error) throw new Error(`Insert tools batch ${i}: ${error.message}`);
         addLog(`  Batch ${i}-${i + batch.length} OK`);
       }
