@@ -5,6 +5,7 @@ import { useState, useMemo, useEffect } from "react";
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
+import { setHreflang } from "@/lib/seo";
 import type { Tool } from "@/data/types";
 
 const GuidesPage = () => {
