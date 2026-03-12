@@ -6,7 +6,7 @@ import { Search, LayoutGrid, List, ArrowUpDown, ChevronDown, SlidersHorizontal, 
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setJsonLd, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first";
 type ViewMode = "grid" | "list";
