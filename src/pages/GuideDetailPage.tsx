@@ -8,6 +8,7 @@ import { ToolMentionedCard } from "@/components/ToolMentionedCard";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
+import DOMPurify from "dompurify";
 
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
