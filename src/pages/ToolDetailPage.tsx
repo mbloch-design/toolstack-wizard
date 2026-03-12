@@ -45,21 +45,20 @@ const ToolDetailPage = () => {
           </div>
         </div>
 
-        <p className="mt-6 text-lg text-muted-foreground">{tool.description}</p>
+        <p className="mt-6 text-lg text-muted-foreground">{tool.longDescription || tool.description || tool.shortDescription}</p>
 
         {/* Pricing */}
         <div className="mt-8 rounded-xl border border-border bg-card p-5">
           <h2 className="font-heading text-lg font-semibold">{t("Tarification", "Pricing")}</h2>
-          <div className="mt-3 flex items-baseline gap-2">
-            <span className={`rounded-full px-3 py-1 text-sm font-medium ${
-              tool.pricing === "free" ? "bg-accent text-accent-foreground" :
-              tool.pricing === "freemium" ? "bg-secondary text-secondary-foreground" :
-              "bg-muted text-muted-foreground"
-            }`}>
-              {tool.pricing === "free" ? t("Gratuit", "Free") : tool.pricing === "freemium" ? "Freemium" : t("Payant", "Paid")}
-            </span>
+          <div className="mt-3 space-y-2">
+            {tool.pricing?.free && (
+              <p className="text-sm"><span className="font-medium text-keep">✓ {t("Gratuit :", "Free:")}</span> {tool.pricing.free}</p>
+            )}
+            {tool.pricing?.paid && (
+              <p className="text-sm"><span className="font-medium text-primary">💳 {t("Payant :", "Paid:")}</span> {tool.pricing.paid}</p>
+            )}
             {tool.defaultMonthlyPrice > 0 && (
-              <span className="text-sm text-muted-foreground">{t("À partir de", "From")} <strong>{tool.defaultMonthlyPrice}€/{t("mois", "mo")}</strong></span>
+              <p className="text-sm text-muted-foreground">{t("À partir de", "From")} <strong>{tool.defaultMonthlyPrice}€/{t("mois", "mo")}</strong></p>
             )}
           </div>
         </div>
@@ -67,9 +66,23 @@ const ToolDetailPage = () => {
         {/* Verdict */}
         <div className="mt-6 rounded-xl border border-primary/20 bg-accent/50 p-5">
           <h2 className="font-heading text-lg font-semibold">{t("Notre verdict", "Our verdict")}</h2>
-          <div className="mt-3 space-y-2 text-sm">
-            <p><span className="font-medium text-keep">✓ {t("Gardez si :", "Keep if:")}</span> {tool.verdict.keepIf}</p>
-            <p><span className="font-medium text-cancel">✗ {t("Évitez si :", "Avoid if:")}</span> {tool.verdict.avoidIf}</p>
+          <div className="mt-3 space-y-3 text-sm">
+            <div>
+              <span className="font-medium text-keep">✓ {t("Gardez si :", "Keep if:")}</span>
+              <ul className="mt-1 ml-4 list-disc space-y-1">
+                {(Array.isArray(tool.verdict.keepIf) ? tool.verdict.keepIf : [tool.verdict.keepIf]).map((item: string, i: number) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <span className="font-medium text-cancel">✗ {t("Évitez si :", "Avoid if:")}</span>
+              <ul className="mt-1 ml-4 list-disc space-y-1">
+                {(Array.isArray(tool.verdict.avoidIf) ? tool.verdict.avoidIf : [tool.verdict.avoidIf]).map((item: string, i: number) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
             <p><span className="font-medium">📊 {t("Seuil :", "Threshold:")}</span> {tool.verdict.threshold}</p>
           </div>
         </div>

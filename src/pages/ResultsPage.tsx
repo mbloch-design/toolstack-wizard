@@ -42,7 +42,7 @@ function generateResults(form: SelectorFormData, tools: Tool[]): SelectorResults
       toKeep.push({
         tool,
         score: 80,
-        reason: tool.verdict.keepIf,
+        reason: Array.isArray(tool.verdict.keepIf) ? tool.verdict.keepIf.join(", ") : tool.verdict.keepIf,
         action: "keep",
       });
     }
@@ -78,11 +78,11 @@ function generateResults(form: SelectorFormData, tools: Tool[]): SelectorResults
   for (const tool of tools) {
     if (currentToolIds.includes(tool.id)) continue;
     const isRelevant = form.jobRole ? tool.relevantFor.includes(form.jobRole) : false;
-    if (isRelevant && (tool.pricing === "free" || tool.pricing === "freemium")) {
+    if (isRelevant && (tool.defaultMonthlyPrice === 0 || tool.pricing?.free)) {
       toAdd.push({
         tool,
         score: 70,
-        reason: `Recommandé pour les ${form.jobRole}s. ${tool.pricing === "free" ? "Gratuit !" : "Plan gratuit disponible."}`,
+        reason: `Recommandé pour les ${form.jobRole}s. ${tool.defaultMonthlyPrice === 0 ? "Gratuit !" : "Plan gratuit disponible."}`,
         action: "add",
       });
     }
