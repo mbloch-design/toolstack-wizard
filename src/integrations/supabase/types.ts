@@ -46,7 +46,10 @@ export type Database = {
           job_role: string | null
           main_goal: string | null
           marketing_opt_in: boolean
+          project_phase: string | null
           source: string
+          tech_maturity: string | null
+          tjm: number | null
           user_type: string | null
         }
         Insert: {
@@ -59,7 +62,10 @@ export type Database = {
           job_role?: string | null
           main_goal?: string | null
           marketing_opt_in?: boolean
+          project_phase?: string | null
           source?: string
+          tech_maturity?: string | null
+          tjm?: number | null
           user_type?: string | null
         }
         Update: {
@@ -72,7 +78,10 @@ export type Database = {
           job_role?: string | null
           main_goal?: string | null
           marketing_opt_in?: boolean
+          project_phase?: string | null
           source?: string
+          tech_maturity?: string | null
+          tjm?: number | null
           user_type?: string | null
         }
         Relationships: []
@@ -121,6 +130,53 @@ export type Database = {
           tool_id?: string | null
         }
         Relationships: []
+      }
+      selector_results: {
+        Row: {
+          created_at: string
+          estimated_savings_monthly: number | null
+          id: string
+          lead_id: number | null
+          persona: string
+          recommended_tools: Json | null
+          roi_analysis: Json | null
+          share_token: string | null
+          stack_health_score: number | null
+          tools_to_cancel: Json | null
+        }
+        Insert: {
+          created_at?: string
+          estimated_savings_monthly?: number | null
+          id?: string
+          lead_id?: number | null
+          persona: string
+          recommended_tools?: Json | null
+          roi_analysis?: Json | null
+          share_token?: string | null
+          stack_health_score?: number | null
+          tools_to_cancel?: Json | null
+        }
+        Update: {
+          created_at?: string
+          estimated_savings_monthly?: number | null
+          id?: string
+          lead_id?: number | null
+          persona?: string
+          recommended_tools?: Json | null
+          roi_analysis?: Json | null
+          share_token?: string | null
+          stack_health_score?: number | null
+          tools_to_cancel?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "selector_results_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       tools: {
         Row: {
