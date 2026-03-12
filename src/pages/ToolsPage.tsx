@@ -51,7 +51,7 @@ const ToolsPage = () => {
           "@type": "ListItem",
           position: i + 1,
           name: tool.name,
-          url: `https://tooltrim.com/${lang}/tool/${tool.slug || tool.id}`,
+          url: `https://tooltrim.io/${lang}/tool/${tool.slug || tool.id}`,
         })),
       },
     });

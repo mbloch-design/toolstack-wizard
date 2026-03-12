@@ -68,8 +68,8 @@ const HomePage = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "ToolTrim",
-      url: "https://tooltrim.com",
-      logo: "https://tooltrim.com/favicon.ico",
+      url: "https://tooltrim.io",
+      logo: "https://tooltrim.io/favicon.ico",
       sameAs: [],
     });
 

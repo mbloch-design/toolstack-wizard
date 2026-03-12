@@ -37,7 +37,7 @@ const GuideDetailPage = () => {
     if (!post) return;
     const seoTitle = post.seo?.metaTitle || `${post.title} — ToolTrim`;
     const seoDesc = post.seo?.metaDescription || post.excerpt;
-    const canonicalUrl = `https://tooltrim.com/${lang}/guide/${post.slug}`;
+    const canonicalUrl = `https://tooltrim.io/${lang}/guide/${post.slug}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, type: "article" });
     setHreflang(`/${lang}/guide/${post.slug}`);
