@@ -2,34 +2,58 @@ export interface Category {
   id: string;
   slug: string;
   name: string;
-  nameEn: string;
+  nameEn?: string;
   description: string;
-  descriptionEn: string;
+  descriptionEn?: string;
+  tools?: string[];
 }
 
 export interface ToolVerdict {
-  keepIf: string;
-  avoidIf: string;
+  keepIf: string[];
+  avoidIf: string[];
   threshold: string;
+}
+
+export interface ToolPricing {
+  free: string;
+  paid: string;
+}
+
+export interface ToolArticle {
+  slug: string;
+  title: string;
+  excerpt: string;
+}
+
+export interface ToolSeo {
+  metaDescription: string;
 }
 
 export interface Tool {
   id: string;
-  slug: string;
+  slug?: string;
   name: string;
   categoryId: string;
   shortDescription: string;
   shortDescriptionEn?: string;
-  description: string;
-  pricing: "free" | "paid" | "freemium";
+  longDescription?: string;
+  description?: string;
+  pricing: ToolPricing;
   defaultMonthlyPrice: number;
   verdict: ToolVerdict;
   pros: string[];
   cons: string[];
+  useCases?: string[];
+  covers?: string[];
   relevantFor: string[];
-  websiteUrl: string;
+  websiteUrl?: string;
   affiliateLink: string;
-  logo: string;
+  logo?: string;
+  soloRelevance?: string;
+  teamRelevance?: string;
+  alternatives?: string[];
+  seo?: ToolSeo;
+  articles?: ToolArticle[];
 }
 
 export interface BlogPost {
@@ -40,9 +64,10 @@ export interface BlogPost {
   excerptEn?: string;
   date: string;
   category: string;
-  tags: string[];
+  tags?: string[];
   toolId?: string;
-  readingTime: number;
+  readingTime?: number;
+  readTime?: string;
 }
 
 export type UserType = "solo" | "team-2-5" | "team-5-10" | "startup-10+";
