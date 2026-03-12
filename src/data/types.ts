@@ -54,6 +54,8 @@ export interface Tool {
   alternatives?: string[];
   seo?: ToolSeo;
   articles?: ToolArticle[];
+  timeGainedHoursPerMonth?: number;
+  freeAlternative?: string | null;
 }
 
 export interface BlogPost {

@@ -131,6 +131,7 @@ export type Database = {
           cons: Json | null
           covers: Json | null
           default_monthly_price: number | null
+          free_alternative: string | null
           id: string
           logo: string | null
           long_description: string | null
@@ -143,6 +144,7 @@ export type Database = {
           slug: string
           solo_relevance: string | null
           team_relevance: string | null
+          time_gained_hours_per_month: number | null
           use_cases: Json | null
           verdict: Json | null
           website_url: string | null
@@ -155,6 +157,7 @@ export type Database = {
           cons?: Json | null
           covers?: Json | null
           default_monthly_price?: number | null
+          free_alternative?: string | null
           id: string
           logo?: string | null
           long_description?: string | null
@@ -167,6 +170,7 @@ export type Database = {
           slug: string
           solo_relevance?: string | null
           team_relevance?: string | null
+          time_gained_hours_per_month?: number | null
           use_cases?: Json | null
           verdict?: Json | null
           website_url?: string | null
@@ -179,6 +183,7 @@ export type Database = {
           cons?: Json | null
           covers?: Json | null
           default_monthly_price?: number | null
+          free_alternative?: string | null
           id?: string
           logo?: string | null
           long_description?: string | null
@@ -191,6 +196,7 @@ export type Database = {
           slug?: string
           solo_relevance?: string | null
           team_relevance?: string | null
+          time_gained_hours_per_month?: number | null
           use_cases?: Json | null
           verdict?: Json | null
           website_url?: string | null

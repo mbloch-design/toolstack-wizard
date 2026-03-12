@@ -62,6 +62,8 @@ Deno.serve(async (req) => {
         logo: "",
         solo_relevance: t.soloRelevance || null,
         team_relevance: t.teamRelevance || null,
+        time_gained_hours_per_month: t.timeGainedHoursPerMonth ?? null,
+        free_alternative: t.freeAlternative || null,
         verdict: t.verdict || null,
         pros: t.pros || null,
         cons: t.cons || null,
