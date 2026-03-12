@@ -69,8 +69,8 @@ const Navbar = () => {
         {/* Logo — Vercel style: picto + wordmark tight */}
         <Link to={prefix} className="flex items-center gap-2 shrink-0" onClick={closeMega}>
           <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7 rounded-md" />
-          <span className="text-lg font-extrabold tracking-tighter">
-            Tool<span className="text-primary">trim</span>
+          <span className="text-lg font-extrabold tracking-tighter text-foreground">
+            Tooltrim
           </span>
         </Link>
 
