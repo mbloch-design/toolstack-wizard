@@ -1,17 +1,20 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { usePostBySlug } from "@/hooks/useSupabaseData";
+import { usePostBySlug, useTools } from "@/hooks/useSupabaseData";
 import { useEffect, useState, useMemo } from "react";
-import { ArrowLeft, Clock, Tag, ChevronUp } from "lucide-react";
+import { ArrowLeft, Clock, Tag, ChevronUp, Wrench } from "lucide-react";
+import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
+import { ToolMentionedCard } from "@/components/ToolMentionedCard";
 
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { lang, t, prefix } = useLang();
   const { post, loading } = usePostBySlug(slug, lang);
+  const { tools } = useTools();
+  const mentionedTools = useArticleTools(post, tools);
   const [readProgress, setReadProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
-  // Reading progress bar
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -23,7 +26,6 @@ const GuideDetailPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Extract headings for TOC
   const toc = useMemo(() => {
     if (!post?.content) return [];
     const matches = [...post.content.matchAll(/^(#{2,3}) (.+)$/gm)];
@@ -40,14 +42,9 @@ const GuideDetailPage = () => {
         <div className="fixed top-0 left-0 right-0 z-50 h-0.5 bg-primary/20" />
         <div className="container mx-auto max-w-4xl px-4 py-16">
           <div className="animate-pulse space-y-6">
-            <div className="h-4 w-32 rounded bg-muted" />
+            <div className="h-48 w-full rounded-2xl bg-muted" />
             <div className="h-10 w-3/4 rounded bg-muted" />
             <div className="h-5 w-1/2 rounded bg-muted" />
-            <div className="mt-12 space-y-3">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="h-4 w-full rounded bg-muted" />
-              ))}
-            </div>
           </div>
         </div>
       </>
@@ -65,6 +62,7 @@ const GuideDetailPage = () => {
     );
   }
 
+  const gradient = getArticleGradient(post.slug, post.category);
   const htmlContent = markdownToHtml(post.content, toc);
 
   return (
@@ -77,10 +75,44 @@ const GuideDetailPage = () => {
         />
       </div>
 
+      {/* Hero banner with tool logos */}
+      <div className={`relative overflow-hidden bg-gradient-to-br ${gradient}`}>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,transparent_0%,hsl(var(--background))_70%)]" />
+        <div className="container mx-auto max-w-4xl px-4 relative">
+          <div className="flex items-center justify-center py-12 md:py-16">
+            {mentionedTools.length > 0 ? (
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {mentionedTools.slice(0, 6).map((tool) => (
+                  <div
+                    key={tool.id}
+                    className="flex h-16 w-16 items-center justify-center rounded-2xl border border-border/50 bg-card/90 shadow-md backdrop-blur-sm transition-transform hover:scale-105 md:h-20 md:w-20"
+                  >
+                    <img
+                      src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=128`}
+                      alt={tool.name}
+                      className="h-9 w-9 rounded-lg object-contain md:h-11 md:w-11"
+                      loading="lazy"
+                      onError={(e) => {
+                        const el = e.target as HTMLImageElement;
+                        el.style.display = "none";
+                        el.parentElement!.innerHTML = `<span class="text-lg font-bold text-muted-foreground">${tool.name.charAt(0)}</span>`;
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-card/50 backdrop-blur-sm">
+                <Wrench className="h-10 w-10 text-primary/30" />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
       {/* Article header */}
-      <header className="border-b border-border bg-gradient-to-b from-accent/30 to-background">
-        <div className="container mx-auto max-w-4xl px-4 pb-10 pt-14">
-          {/* Back link */}
+      <header className="border-b border-border">
+        <div className="container mx-auto max-w-4xl px-4 pb-10 pt-8">
           <Link
             to={`${prefix}/guides`}
             className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -89,7 +121,6 @@ const GuideDetailPage = () => {
             {t("Tous les guides", "All guides")}
           </Link>
 
-          {/* Meta */}
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
             {post.category && (
               <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
@@ -102,17 +133,14 @@ const GuideDetailPage = () => {
             <span>{post.date}</span>
           </div>
 
-          {/* Title */}
           <h1 className="mt-5 text-3xl font-extrabold leading-[1.15] tracking-tighter md:text-4xl lg:text-[2.75rem]">
             {post.title}
           </h1>
 
-          {/* Excerpt */}
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             {post.excerpt}
           </p>
 
-          {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <div className="mt-5 flex flex-wrap gap-2">
               {post.tags.map((tag) => (
@@ -132,33 +160,66 @@ const GuideDetailPage = () => {
       {/* Body */}
       <div className="container mx-auto max-w-4xl px-4 py-12">
         <div className="flex gap-12">
-          {/* Table of contents — desktop sidebar */}
-          {toc.length > 2 && (
-            <aside className="hidden lg:block w-56 shrink-0">
-              <nav className="sticky top-20">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">
-                  {t("Sommaire", "Contents")}
-                </p>
-                <ul className="space-y-1.5 border-l border-border">
-                  {toc.map((item) => (
-                    <li key={item.id}>
-                      <a
-                        href={`#${item.id}`}
-                        className={`block border-l-2 border-transparent py-1 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-foreground ${
-                          item.level === 2 ? "pl-4 font-medium" : "pl-7 text-xs"
-                        }`}
-                      >
-                        {item.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </aside>
-          )}
+          {/* Sidebar: TOC + Tools */}
+          <aside className="hidden lg:block w-60 shrink-0">
+            <div className="sticky top-20 space-y-8">
+              {/* Table of contents */}
+              {toc.length > 2 && (
+                <nav>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">
+                    {t("Sommaire", "Contents")}
+                  </p>
+                  <ul className="space-y-1.5 border-l border-border">
+                    {toc.map((item) => (
+                      <li key={item.id}>
+                        <a
+                          href={`#${item.id}`}
+                          className={`block border-l-2 border-transparent py-1 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-foreground ${
+                            item.level === 2 ? "pl-4 font-medium" : "pl-7 text-xs"
+                          }`}
+                        >
+                          {item.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
+
+              {/* Tools mentioned */}
+              {mentionedTools.length > 0 && (
+                <div>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 flex items-center gap-1.5">
+                    <Wrench className="h-3 w-3" />
+                    {t("Outils mentionnés", "Tools mentioned")}
+                  </p>
+                  <div className="space-y-2">
+                    {mentionedTools.slice(0, 6).map((tool) => (
+                      <ToolMentionedCard key={tool.id} tool={tool} prefix={prefix} />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </aside>
 
           {/* Article content */}
           <article className="min-w-0 flex-1">
+            {/* Mobile tools strip */}
+            {mentionedTools.length > 0 && (
+              <div className="mb-8 lg:hidden">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 flex items-center gap-1.5">
+                  <Wrench className="h-3 w-3" />
+                  {t("Outils mentionnés", "Tools mentioned")}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {mentionedTools.slice(0, 6).map((tool) => (
+                    <ToolMentionedCard key={tool.id} tool={tool} prefix={prefix} compact />
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div
               className="prose prose-neutral dark:prose-invert max-w-none
                 prose-headings:font-bold prose-headings:tracking-tighter prose-headings:scroll-mt-20
@@ -178,7 +239,6 @@ const GuideDetailPage = () => {
               dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
 
-            {/* Bottom nav */}
             <div className="mt-16 flex items-center justify-between border-t border-border pt-8">
               <Link
                 to={`${prefix}/guides`}
@@ -192,7 +252,6 @@ const GuideDetailPage = () => {
         </div>
       </div>
 
-      {/* Back to top */}
       {showBackToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -206,7 +265,17 @@ const GuideDetailPage = () => {
   );
 };
 
-// ── Markdown → HTML with heading IDs for TOC ──
+function getToolDomain(tool: { websiteUrl?: string; affiliateLink: string }): string {
+  const url = tool.websiteUrl || tool.affiliateLink;
+  if (!url) return "";
+  try {
+    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
+  } catch {
+    return "";
+  }
+}
+
+// ── Markdown → HTML ──
 function markdownToHtml(
   md: string,
   toc: { id: string; level: number; text: string }[]
@@ -214,12 +283,9 @@ function markdownToHtml(
   let html = md;
   let tocIndex = 0;
 
-  // Images
   html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy" />');
-  // Links
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
-  // Tables
   html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (_match, header, _sep, body) => {
     const headers = header.split("|").filter((c: string) => c.trim());
     const rows = body.trim().split("\n").map((r: string) => r.split("|").filter((c: string) => c.trim()));
@@ -228,7 +294,6 @@ function markdownToHtml(
     return `<div class="overflow-x-auto rounded-lg border border-border my-6"><table><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
   });
 
-  // Headings with IDs
   html = html.replace(/^(#{2,3}) (.+)$/gm, (_match, hashes, text) => {
     const level = hashes.length;
     const id = toc[tocIndex]?.id || `heading-${tocIndex}`;
@@ -238,25 +303,20 @@ function markdownToHtml(
   html = html.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
   html = html.replace(/^# (.+)$/gm, "<h1>$1</h1>");
 
-  // Inline formatting
   html = html.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
   html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   html = html.replace(/\*(.+?)\*/g, "<em>$1</em>");
   html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
 
-  // Blockquotes
   html = html.replace(/^> (.+)$/gm, "<blockquote><p>$1</p></blockquote>");
 
-  // Lists
   html = html.replace(/^- (.+)$/gm, "<li>$1</li>");
   html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul>$1</ul>");
   html = html.replace(/^\d+\. (.+)$/gm, "<li>$1</li>");
   html = html.replace(/- ☐ (.+)/g, '<li class="list-none">☐ $1</li>');
 
-  // HR
   html = html.replace(/^---$/gm, "<hr />");
 
-  // Paragraphs
   html = html.replace(/^(?!<[a-z/]|$)(.+)$/gm, "<p>$1</p>");
   html = html.replace(/<p>\s*<\/p>/g, "");
 

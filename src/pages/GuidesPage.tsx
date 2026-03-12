@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { usePosts, type Post } from "@/hooks/useSupabaseData";
+import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useState, useMemo } from "react";
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
+import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
+import { ToolLogoStrip } from "@/components/ToolMentionedCard";
+import type { Tool } from "@/data/types";
 
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
   const { posts, loading } = usePosts(lang);
+  const { tools } = useTools();
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const allCategories = useMemo(() => {
@@ -42,7 +46,6 @@ const GuidesPage = () => {
             )}
           </p>
 
-          {/* Category filter pills */}
           {allCategories.length > 1 && (
             <div className="mt-8 flex flex-wrap gap-2">
               <button
@@ -83,14 +86,11 @@ const GuidesPage = () => {
           </p>
         ) : (
           <>
-            {/* Featured article */}
-            {featured && <FeaturedCard post={featured} prefix={prefix} t={t} />}
-
-            {/* Grid */}
+            {featured && <FeaturedCard post={featured} prefix={prefix} t={t} tools={tools} />}
             {rest.length > 0 && (
               <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {rest.map((post) => (
-                  <ArticleCard key={post.slug} post={post} prefix={prefix} />
+                  <ArticleCard key={post.slug} post={post} prefix={prefix} tools={tools} />
                 ))}
               </div>
             )}
@@ -106,20 +106,53 @@ function FeaturedCard({
   post,
   prefix,
   t,
+  tools,
 }: {
   post: Post;
   prefix: string;
   t: (fr: string, en: string) => string;
+  tools: Tool[];
 }) {
+  const mentionedTools = useArticleTools(post, tools);
+  const gradient = getArticleGradient(post.slug, post.category);
+
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
       className="group relative block overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-lg"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-      <div className="relative flex flex-col gap-6 p-6 md:flex-row md:items-center md:p-8">
-        {/* Left: text */}
-        <div className="flex-1">
+      <div className="relative flex flex-col gap-6 md:flex-row">
+        {/* Visual banner */}
+        <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} p-8 md:w-72 md:shrink-0`}>
+          {mentionedTools.length > 0 ? (
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {mentionedTools.slice(0, 6).map((tool) => (
+                <div
+                  key={tool.id}
+                  className="flex h-14 w-14 items-center justify-center rounded-xl border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
+                >
+                  <img
+                    src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=64`}
+                    alt={tool.name}
+                    className="h-8 w-8 rounded-md object-contain"
+                    loading="lazy"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = "none";
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-card/50 backdrop-blur-sm">
+              <BookOpen className="h-12 w-12 text-primary/30" />
+            </div>
+          )}
+        </div>
+
+        {/* Text */}
+        <div className="flex-1 p-6 md:py-8 md:pr-8 md:pl-0">
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             {post.category && (
               <span className="rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary">
@@ -137,29 +170,20 @@ function FeaturedCard({
           <p className="mt-3 text-muted-foreground leading-relaxed line-clamp-3">
             {post.excerpt}
           </p>
-          {post.tags && post.tags.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {post.tags.slice(0, 4).map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center gap-1 rounded-md bg-secondary px-2.5 py-1 text-xs text-muted-foreground"
-                >
-                  <Tag className="h-3 w-3" />
-                  {tag}
-                </span>
-              ))}
+
+          {/* Tool logos strip */}
+          {mentionedTools.length > 0 && (
+            <div className="mt-4 flex items-center gap-3">
+              <ToolLogoStrip tools={mentionedTools} maxDisplay={5} />
+              <span className="text-xs text-muted-foreground">
+                {mentionedTools.length} {mentionedTools.length > 1 ? "outils" : "outil"}
+              </span>
             </div>
           )}
-          <div className="mt-6 inline-flex items-center gap-2 font-semibold text-primary text-sm">
+
+          <div className="mt-5 inline-flex items-center gap-2 font-semibold text-primary text-sm">
             {t("Lire l'article", "Read article")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </div>
-        </div>
-
-        {/* Right: decorative element */}
-        <div className="hidden md:flex shrink-0 items-center justify-center">
-          <div className="flex h-32 w-32 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/10">
-            <BookOpen className="h-12 w-12 text-primary/40" />
           </div>
         </div>
       </div>
@@ -168,64 +192,113 @@ function FeaturedCard({
 }
 
 /* ── Article card ── */
-function ArticleCard({ post, prefix }: { post: Post; prefix: string }) {
+function ArticleCard({ post, prefix, tools }: { post: Post; prefix: string; tools: Tool[] }) {
+  const mentionedTools = useArticleTools(post, tools);
+  const gradient = getArticleGradient(post.slug, post.category);
+
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
-      className="group flex flex-col rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
     >
-      <div className="flex items-center gap-2 text-xs text-muted-foreground">
-        {post.category && (
-          <span className="rounded-full bg-primary/10 px-2.5 py-0.5 font-semibold text-primary">
-            {post.category}
-          </span>
+      {/* Visual thumbnail */}
+      <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} px-4 py-6`}>
+        {mentionedTools.length > 0 ? (
+          <div className="flex items-center gap-2">
+            {mentionedTools.slice(0, 4).map((tool) => (
+              <div
+                key={tool.id}
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
+              >
+                <img
+                  src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=64`}
+                  alt={tool.name}
+                  className="h-6 w-6 rounded object-contain"
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
+                />
+              </div>
+            ))}
+            {mentionedTools.length > 4 && (
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/60 text-xs font-bold text-muted-foreground backdrop-blur-sm">
+                +{mentionedTools.length - 4}
+              </div>
+            )}
+          </div>
+        ) : (
+          <BookOpen className="h-8 w-8 text-primary/25" />
         )}
-        <span className="flex items-center gap-1">
-          <Clock className="h-3 w-3" /> {post.readTime}
-        </span>
       </div>
-      <h3 className="mt-3 text-base font-bold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">
-        {post.title}
-      </h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
-        {post.excerpt}
-      </p>
-      {post.tags && post.tags.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {post.tags.slice(0, 2).map((tag) => (
-            <span
-              key={tag}
-              className="rounded-md bg-secondary px-2 py-0.5 text-[11px] text-muted-foreground"
-            >
-              {tag}
+
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          {post.category && (
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 font-semibold text-primary">
+              {post.category}
             </span>
-          ))}
+          )}
+          <span className="flex items-center gap-1">
+            <Clock className="h-3 w-3" /> {post.readTime}
+          </span>
         </div>
-      )}
-      <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">
-        <ArrowRight className="h-3 w-3" />
+        <h3 className="mt-3 text-base font-bold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">
+          {post.title}
+        </h3>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+          {post.excerpt}
+        </p>
+        {post.tags && post.tags.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {post.tags.slice(0, 2).map((tag) => (
+              <span
+                key={tag}
+                className="rounded-md bg-secondary px-2 py-0.5 text-[11px] text-muted-foreground"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </Link>
   );
+}
+
+function getToolDomain(tool: Tool): string {
+  const url = tool.websiteUrl || tool.affiliateLink;
+  if (!url) return "";
+  try {
+    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
+  } catch {
+    return "";
+  }
 }
 
 /* ── Loading skeleton ── */
 function LoadingSkeleton() {
   return (
     <div className="space-y-8">
-      <div className="animate-pulse rounded-2xl border border-border bg-card p-8">
-        <div className="h-4 w-24 rounded bg-muted" />
-        <div className="mt-4 h-8 w-3/4 rounded bg-muted" />
-        <div className="mt-3 h-4 w-full rounded bg-muted" />
-        <div className="mt-2 h-4 w-2/3 rounded bg-muted" />
+      <div className="animate-pulse overflow-hidden rounded-2xl border border-border bg-card">
+        <div className="flex flex-col md:flex-row">
+          <div className="h-40 bg-muted md:w-72" />
+          <div className="flex-1 p-8 space-y-4">
+            <div className="h-4 w-24 rounded bg-muted" />
+            <div className="h-8 w-3/4 rounded bg-muted" />
+            <div className="h-4 w-full rounded bg-muted" />
+          </div>
+        </div>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[1, 2, 3].map((i) => (
-          <div key={i} className="animate-pulse rounded-xl border border-border bg-card p-5">
-            <div className="h-3 w-20 rounded bg-muted" />
-            <div className="mt-3 h-5 w-3/4 rounded bg-muted" />
-            <div className="mt-2 h-4 w-full rounded bg-muted" />
-            <div className="mt-2 h-4 w-1/2 rounded bg-muted" />
+          <div key={i} className="animate-pulse overflow-hidden rounded-xl border border-border bg-card">
+            <div className="h-28 bg-muted" />
+            <div className="p-5 space-y-3">
+              <div className="h-3 w-20 rounded bg-muted" />
+              <div className="h-5 w-3/4 rounded bg-muted" />
+              <div className="h-4 w-full rounded bg-muted" />
+            </div>
           </div>
         ))}
       </div>
