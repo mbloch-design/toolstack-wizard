@@ -13,6 +13,7 @@ import ResultsPage from "@/pages/ResultsPage";
 import ToolsPage from "@/pages/ToolsPage";
 import ToolDetailPage from "@/pages/ToolDetailPage";
 import CategoryPage from "@/pages/CategoryPage";
+import CategoriesIndexPage from "@/pages/CategoriesIndexPage";
 import GuidesPage from "@/pages/GuidesPage";
 import GuideDetailPage from "@/pages/GuideDetailPage";
 import AboutPage from "@/pages/AboutPage";
