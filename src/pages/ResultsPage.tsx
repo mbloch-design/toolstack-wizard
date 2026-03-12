@@ -42,7 +42,7 @@ function generateResults(form: SelectorFormData, tools: Tool[]): SelectorResults
       toKeep.push({
         tool,
         score: 80,
-        reason: tool.verdict.keepIf,
+        reason: Array.isArray(tool.verdict.keepIf) ? tool.verdict.keepIf.join(", ") : tool.verdict.keepIf,
         action: "keep",
       });
     }
