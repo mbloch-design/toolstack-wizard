@@ -64,17 +64,6 @@ const ResultsPage = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  if (!results || !form) return null;
-
-  const healthLabel = results.stackHealthScore > 80
-    ? { text: t("Optimisée", "Optimized"), color: "text-keep" }
-    : results.stackHealthScore >= 50
-    ? { text: t("À revoir", "Needs review"), color: "text-primary" }
-    : { text: t("Dette détectée", "Debt detected"), color: "text-cancel" };
-
-  const personaName = PERSONAS.find((p) => p.value === form.persona)?.name || "";
-  const fewRecommendations = results.recommended.length < 3 && results.toCancel.length === 0;
-
   // Quadrant data
   const quadrantData = useMemo(() => {
     if (!results) return [];
@@ -103,6 +92,17 @@ const ResultsPage = () => {
         verdict: s.finalScore > 80 ? "Excellent" : s.finalScore > 60 ? "Bon" : "Neutre",
       }));
   }, [results, tjmMedian]);
+
+  if (!results || !form) return null;
+
+  const healthLabel = results.stackHealthScore > 80
+    ? { text: t("Optimisée", "Optimized"), color: "text-keep" }
+    : results.stackHealthScore >= 50
+    ? { text: t("À revoir", "Needs review"), color: "text-primary" }
+    : { text: t("Dette détectée", "Debt detected"), color: "text-cancel" };
+
+  const personaName = PERSONAS.find((p) => p.value === form.persona)?.name || "";
+  const fewRecommendations = results.recommended.length < 3 && results.toCancel.length === 0;
 
   return (
     <div className="py-8 md:py-12">
