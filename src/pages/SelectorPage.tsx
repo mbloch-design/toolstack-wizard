@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { tools } from "@/data/content";
 import { SelectorFormData, UserType, JobRole, MainGoal, AIUsageLevel, SelectedTool } from "@/data/types";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const STEPS = 6;
 
