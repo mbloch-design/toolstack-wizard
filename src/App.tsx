@@ -61,11 +61,11 @@ const App = () => (
             <Route path="tool/:slug" element={<ToolDetailPage />} />
             <Route path="category/:slug" element={<CategoryPage />} />
             <Route path="guides" element={<GuidesPage />} />
+            <Route path="guide/:slug" element={<GuideDetailPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="methodology" element={<AboutPage />} />
             <Route path="transparency" element={<TransparencyPage />} />
             <Route path="contact" element={<ContactPage />} />
-            <Route path="seed-posts" element={<SeedPostsPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
