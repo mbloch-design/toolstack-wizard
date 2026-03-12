@@ -327,11 +327,20 @@ const SelectorPage = () => {
           ) : (
             <button
               onClick={handleSubmit}
-              disabled={!canNext()}
+              disabled={!canNext() || submitting}
               className="flex items-center gap-1 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-40"
             >
-              {t("Voir mes résultats", "See my results")}
-              <ArrowRight className="h-4 w-4" />
+              {submitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {t("Enregistrement...", "Saving...")}
+                </>
+              ) : (
+                <>
+                  {t("Voir mes résultats", "See my results")}
+                  <ArrowRight className="h-4 w-4" />
+                </>
+              )}
             </button>
           )}
         </div>
