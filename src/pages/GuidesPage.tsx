@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
@@ -12,6 +12,19 @@ const GuidesPage = () => {
   const { posts, loading } = usePosts(lang);
   const { tools } = useTools();
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  // SEO for listing page
+  useEffect(() => {
+    const title = lang === "fr"
+      ? "Guides & Comparatifs d'outils SaaS — ToolTrim"
+      : "SaaS Tool Guides & Comparisons — ToolTrim";
+    const desc = lang === "fr"
+      ? "Analyses approfondies, comparatifs détaillés et conseils pratiques pour construire la stack d'outils parfaite."
+      : "In-depth analyses, detailed comparisons and practical advice to build the perfect tool stack.";
+    document.title = title;
+    const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (metaDesc) metaDesc.content = desc;
+  }, [lang]);
 
   const allCategories = useMemo(() => {
     const cats = new Set(posts.map((p) => p.category).filter(Boolean));

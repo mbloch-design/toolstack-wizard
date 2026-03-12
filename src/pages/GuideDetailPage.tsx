@@ -1,19 +1,22 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { usePostBySlug, useTools } from "@/hooks/useSupabaseData";
+import { usePostBySlug, usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useEffect, useState, useMemo } from "react";
-import { ArrowLeft, Clock, Tag, ChevronUp, Wrench } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Tag, ChevronUp, Wrench, Link2, Check } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolMentionedCard } from "@/components/ToolMentionedCard";
+import ToolLogo from "@/components/ToolLogo";
 
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { lang, t, prefix } = useLang();
   const { post, loading } = usePostBySlug(slug, lang);
+  const { posts: allPosts } = usePosts(lang);
   const { tools } = useTools();
   const mentionedTools = useArticleTools(post, tools);
   const [readProgress, setReadProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +29,60 @@ const GuideDetailPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // SEO: Update document head
+  useEffect(() => {
+    if (!post) return;
+    const seoTitle = post.seo?.metaTitle || `${post.title} — ToolTrim`;
+    const seoDesc = post.seo?.metaDescription || post.excerpt;
+    const canonicalUrl = `https://tooltrim.com/${lang}/guide/${post.slug}`;
+
+    document.title = seoTitle;
+
+    setMeta("description", seoDesc);
+    setMeta("og:title", seoTitle);
+    setMeta("og:description", seoDesc);
+    setMeta("og:type", "article");
+    setMeta("og:url", canonicalUrl);
+    setMeta("twitter:title", seoTitle);
+    setMeta("twitter:description", seoDesc);
+    setMeta("article:published_time", post.date || "");
+
+    // Canonical
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+
+    // JSON-LD
+    let jsonLd = document.getElementById("article-jsonld");
+    if (!jsonLd) {
+      jsonLd = document.createElement("script");
+      jsonLd.id = "article-jsonld";
+      (jsonLd as HTMLScriptElement).type = "application/ld+json";
+      document.head.appendChild(jsonLd);
+    }
+    jsonLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.title,
+      description: seoDesc,
+      datePublished: post.date,
+      url: canonicalUrl,
+      author: { "@type": "Organization", name: "ToolTrim" },
+      publisher: { "@type": "Organization", name: "ToolTrim" },
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+      ...(post.tags?.length ? { keywords: post.tags.join(", ") } : {}),
+    });
+
+    return () => {
+      document.getElementById("article-jsonld")?.remove();
+      document.querySelector('link[rel="canonical"]')?.remove();
+    };
+  }, [post, lang]);
+
   const toc = useMemo(() => {
     if (!post?.content) return [];
     const matches = [...post.content.matchAll(/^(#{2,3}) (.+)$/gm)];
@@ -35,6 +92,43 @@ const GuideDetailPage = () => {
       text: m[2],
     }));
   }, [post?.content]);
+
+  // Related articles: same category or shared tags
+  const relatedPosts = useMemo(() => {
+    if (!post || allPosts.length === 0) return [];
+    return allPosts
+      .filter((p) => p.slug !== post.slug)
+      .map((p) => {
+        let score = 0;
+        if (p.category === post.category) score += 3;
+        const sharedTags = (p.tags || []).filter((t) => (post.tags || []).includes(t));
+        score += sharedTags.length;
+        return { post: p, score };
+      })
+      .filter((r) => r.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3)
+      .map((r) => r.post);
+  }, [post, allPosts]);
+
+  const handleCopyLink = () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  const handleShareTwitter = () => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(post?.title || "");
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, "_blank", "noopener");
+  };
+
+  const handleShareLinkedIn = () => {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank", "noopener");
+  };
 
   if (loading) {
     return (
@@ -63,7 +157,7 @@ const GuideDetailPage = () => {
   }
 
   const gradient = getArticleGradient(post.slug, post.category);
-  const htmlContent = markdownToHtml(post.content, toc);
+  const htmlContent = markdownToHtml(post.content, toc, post.title);
 
   return (
     <>
@@ -141,29 +235,57 @@ const GuideDetailPage = () => {
             {post.excerpt}
           </p>
 
-          {post.tags && post.tags.length > 0 && (
-            <div className="mt-5 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center gap-1.5 rounded-md bg-secondary px-3 py-1 text-xs text-muted-foreground"
-                >
-                  <Tag className="h-3 w-3" />
-                  {tag}
-                </span>
-              ))}
+          {/* Tags + Share row */}
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1.5 rounded-md bg-secondary px-3 py-1 text-xs text-muted-foreground"
+                  >
+                    <Tag className="h-3 w-3" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Share buttons */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-muted-foreground mr-1">{t("Partager", "Share")}</span>
+              <button
+                onClick={handleCopyLink}
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+                title={t("Copier le lien", "Copy link")}
+              >
+                {copied ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Link2 className="h-3.5 w-3.5" />}
+              </button>
+              <button
+                onClick={handleShareTwitter}
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+                title="Twitter / X"
+              >
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </button>
+              <button
+                onClick={handleShareLinkedIn}
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+                title="LinkedIn"
+              >
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </button>
             </div>
-          )}
+          </div>
         </div>
       </header>
 
       {/* Body */}
       <div className="container mx-auto max-w-4xl px-4 py-12">
         <div className="flex gap-12">
-          {/* Sidebar: TOC + Tools */}
+          {/* Sidebar */}
           <aside className="hidden lg:block w-60 shrink-0">
             <div className="sticky top-20 space-y-8">
-              {/* Table of contents */}
               {toc.length > 2 && (
                 <nav>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">
@@ -186,7 +308,6 @@ const GuideDetailPage = () => {
                 </nav>
               )}
 
-              {/* Tools mentioned */}
               {mentionedTools.length > 0 && (
                 <div>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 flex items-center gap-1.5">
@@ -205,7 +326,6 @@ const GuideDetailPage = () => {
 
           {/* Article content */}
           <article className="min-w-0 flex-1">
-            {/* Mobile tools strip */}
             {mentionedTools.length > 0 && (
               <div className="mb-8 lg:hidden">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 flex items-center gap-1.5">
@@ -239,7 +359,48 @@ const GuideDetailPage = () => {
               dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
 
-            <div className="mt-16 flex items-center justify-between border-t border-border pt-8">
+            {/* Share bar bottom */}
+            <div className="mt-12 flex items-center gap-3 rounded-xl border border-border bg-card p-4">
+              <span className="text-sm font-medium text-muted-foreground">{t("Cet article vous a été utile ? Partagez-le", "Found this useful? Share it")}</span>
+              <div className="ml-auto flex items-center gap-2">
+                <button
+                  onClick={handleCopyLink}
+                  className="flex h-9 items-center gap-2 rounded-lg border border-border bg-background px-3 text-sm text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+                >
+                  {copied ? <Check className="h-4 w-4 text-green-500" /> : <Link2 className="h-4 w-4" />}
+                  {copied ? t("Copié !", "Copied!") : t("Copier", "Copy")}
+                </button>
+                <button
+                  onClick={handleShareTwitter}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+                >
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </button>
+                <button
+                  onClick={handleShareLinkedIn}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+                >
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Related articles */}
+            {relatedPosts.length > 0 && (
+              <section className="mt-16">
+                <h2 className="text-xl font-bold tracking-tighter mb-6">
+                  {t("Articles connexes", "Related articles")}
+                </h2>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {relatedPosts.map((rp) => (
+                    <RelatedArticleCard key={rp.slug} post={rp} prefix={prefix} tools={tools} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Bottom nav */}
+            <div className="mt-12 flex items-center justify-between border-t border-border pt-8">
               <Link
                 to={`${prefix}/guides`}
                 className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -265,6 +426,57 @@ const GuideDetailPage = () => {
   );
 };
 
+/* ── Related article card ── */
+function RelatedArticleCard({ post, prefix, tools }: { post: Post; prefix: string; tools: import("@/data/types").Tool[] }) {
+  const mentionedTools = useArticleTools(post, tools);
+  const gradient = getArticleGradient(post.slug, post.category);
+
+  return (
+    <Link
+      to={`${prefix}/guide/${post.slug}`}
+      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+    >
+      {/* Thumbnail */}
+      <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} px-3 py-4`}>
+        {mentionedTools.length > 0 ? (
+          <div className="flex items-center gap-1.5">
+            {mentionedTools.slice(0, 3).map((tool) => (
+              <div
+                key={tool.id}
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
+              >
+                <ToolLogo tool={tool} size={20} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Wrench className="h-6 w-6 text-primary/25" />
+        )}
+      </div>
+      <div className="flex-1 p-4">
+        <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+          {post.category && (
+            <span className="rounded-full bg-primary/10 px-2 py-0.5 font-semibold text-primary">
+              {post.category}
+            </span>
+          )}
+          <span className="flex items-center gap-1">
+            <Clock className="h-2.5 w-2.5" /> {post.readTime}
+          </span>
+        </div>
+        <h3 className="mt-2 text-sm font-bold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">
+          {post.title}
+        </h3>
+        <div className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+          <ArrowRight className="h-3 w-3" />
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+/* ── Helpers ── */
+
 function getToolDomain(tool: { websiteUrl?: string; affiliateLink: string }): string {
   const url = tool.websiteUrl || tool.affiliateLink;
   if (!url) return "";
@@ -275,10 +487,23 @@ function getToolDomain(tool: { websiteUrl?: string; affiliateLink: string }): st
   }
 }
 
-// ── Markdown → HTML ──
+function setMeta(nameOrProp: string, content: string) {
+  const isOg = nameOrProp.startsWith("og:") || nameOrProp.startsWith("article:");
+  const attr = isOg ? "property" : "name";
+  let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${nameOrProp}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, nameOrProp);
+    document.head.appendChild(el);
+  }
+  el.content = content;
+}
+
+// ── Markdown → HTML (strips duplicate H1 matching title) ──
 function markdownToHtml(
   md: string,
-  toc: { id: string; level: number; text: string }[]
+  toc: { id: string; level: number; text: string }[],
+  articleTitle: string
 ): string {
   let html = md;
   let tocIndex = 0;
@@ -301,7 +526,14 @@ function markdownToHtml(
     return `<h${level} id="${id}">${text}</h${level}>`;
   });
   html = html.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
-  html = html.replace(/^# (.+)$/gm, "<h1>$1</h1>");
+
+  // Remove H1 lines that match the article title (avoids duplication)
+  html = html.replace(/^# (.+)$/gm, (_match, text) => {
+    const normalized = text.trim().toLowerCase();
+    const titleNorm = articleTitle.trim().toLowerCase();
+    if (normalized === titleNorm) return ""; // strip duplicate
+    return `<h1>${text}</h1>`;
+  });
 
   html = html.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
   html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
