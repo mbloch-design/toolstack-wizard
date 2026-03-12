@@ -5,7 +5,6 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Inline the categories and tool IDs from content.json
 const CATEGORIES = [
   { id: "ai-general", name: "🤖 IA Généraliste", slug: "ia-generaliste", description: "Les cerveaux numériques pour rédiger, chercher et brainstormer." },
   { id: "organization", name: "✂️ Organisation", slug: "organisation", description: "Mettre de l'ordre dans le chaos sans passer sa vie à configurer." },
@@ -35,12 +34,22 @@ Deno.serve(async (req) => {
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, serviceRoleKey);
 
-    // Parse request body for tools data
-    const { tools } = await req.json();
+    // Get content URL from request body
+    const { contentUrl } = await req.json();
+    
+    // Fetch content.json from the provided URL
+    const contentRes = await fetch(contentUrl);
+    if (!contentRes.ok) {
+      return new Response(JSON.stringify({ error: `Failed to fetch content: ${contentRes.status}` }), {
+        status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const content = await contentRes.json();
+    const tools = content.tools || [];
 
     // Delete existing data (tools first due to FK)
-    await supabase.from("tools").delete().neq("id", "___none___");
-    await supabase.from("categories").delete().neq("id", "___none___");
+    const { error: delToolsErr } = await supabase.from("tools").delete().neq("id", "___none___");
+    const { error: delCatsErr } = await supabase.from("categories").delete().neq("id", "___none___");
 
     // Insert categories
     const { error: catError } = await supabase.from("categories").insert(CATEGORIES);
@@ -52,7 +61,7 @@ Deno.serve(async (req) => {
 
     // Insert tools in batches
     let insertedTools = 0;
-    const batchSize = 20;
+    const batchSize = 15;
     for (let i = 0; i < tools.length; i += batchSize) {
       const batch = tools.slice(i, i + batchSize).map((t: any) => ({
         id: t.id,
@@ -80,7 +89,12 @@ Deno.serve(async (req) => {
       }));
       const { error } = await supabase.from("tools").insert(batch);
       if (error) {
-        return new Response(JSON.stringify({ error: `tools batch ${i} failed`, detail: error }), {
+        return new Response(JSON.stringify({ 
+          error: `tools batch ${i} failed`, 
+          detail: error,
+          insertedSoFar: insertedTools,
+          failedBatchIds: batch.map((b: any) => b.id),
+        }), {
           status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
@@ -91,6 +105,7 @@ Deno.serve(async (req) => {
       success: true,
       categoriesInserted: CATEGORIES.length,
       toolsInserted: insertedTools,
+      totalToolsInJson: tools.length,
     }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
