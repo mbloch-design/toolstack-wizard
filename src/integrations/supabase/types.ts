@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      categories: {
+        Row: {
+          description: string | null
+          id: string
+          name: string
+          slug: string
+        }
+        Insert: {
+          description?: string | null
+          id: string
+          name: string
+          slug: string
+        }
+        Update: {
+          description?: string | null
+          id?: string
+          name?: string
+          slug?: string
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           ai_usage_level: string | null
@@ -55,6 +76,89 @@ export type Database = {
           user_type?: string | null
         }
         Relationships: []
+      }
+      tools: {
+        Row: {
+          affiliate_link: string | null
+          alternatives: Json | null
+          articles: Json | null
+          category: string | null
+          cons: Json | null
+          covers: Json | null
+          default_monthly_price: number | null
+          id: string
+          logo: string | null
+          long_description: string | null
+          name: string
+          pricing: string | null
+          pros: Json | null
+          relevant_for: Json | null
+          seo: Json | null
+          short_description: string | null
+          slug: string
+          solo_relevance: string | null
+          team_relevance: string | null
+          use_cases: Json | null
+          verdict: Json | null
+          website_url: string | null
+        }
+        Insert: {
+          affiliate_link?: string | null
+          alternatives?: Json | null
+          articles?: Json | null
+          category?: string | null
+          cons?: Json | null
+          covers?: Json | null
+          default_monthly_price?: number | null
+          id: string
+          logo?: string | null
+          long_description?: string | null
+          name: string
+          pricing?: string | null
+          pros?: Json | null
+          relevant_for?: Json | null
+          seo?: Json | null
+          short_description?: string | null
+          slug: string
+          solo_relevance?: string | null
+          team_relevance?: string | null
+          use_cases?: Json | null
+          verdict?: Json | null
+          website_url?: string | null
+        }
+        Update: {
+          affiliate_link?: string | null
+          alternatives?: Json | null
+          articles?: Json | null
+          category?: string | null
+          cons?: Json | null
+          covers?: Json | null
+          default_monthly_price?: number | null
+          id?: string
+          logo?: string | null
+          long_description?: string | null
+          name?: string
+          pricing?: string | null
+          pros?: Json | null
+          relevant_for?: Json | null
+          seo?: Json | null
+          short_description?: string | null
+          slug?: string
+          solo_relevance?: string | null
+          team_relevance?: string | null
+          use_cases?: Json | null
+          verdict?: Json | null
+          website_url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tools_category_fkey"
+            columns: ["category"]
+            isOneToOne: false
+            referencedRelation: "categories"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
