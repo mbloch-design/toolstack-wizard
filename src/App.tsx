@@ -14,11 +14,11 @@ import ToolsPage from "@/pages/ToolsPage";
 import ToolDetailPage from "@/pages/ToolDetailPage";
 import CategoryPage from "@/pages/CategoryPage";
 import GuidesPage from "@/pages/GuidesPage";
+import GuideDetailPage from "@/pages/GuideDetailPage";
 import AboutPage from "@/pages/AboutPage";
 import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/NotFound";
-import SeedPostsPage from "@/pages/SeedPostsPage";
 
 const queryClient = new QueryClient();
 
