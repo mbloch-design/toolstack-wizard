@@ -413,12 +413,12 @@ const ResultsPage = () => {
                         <div className="mt-auto pt-4">
                           {s.tool.affiliateLink ? (
                             <a href={s.tool.affiliateLink} target="_blank" rel="noopener noreferrer"
-                              className="flex w-full items-center justify-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background hover:opacity-90">
+                              className="flex w-full items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10">
                               {t("Essayer", "Try it")} <ExternalLink className="h-3.5 w-3.5" />
                             </a>
                           ) : (
                             <Link to={`${prefix}/tool/${s.tool.slug}`}
-                              className="flex w-full items-center justify-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background hover:opacity-90">
+                              className="flex w-full items-center justify-center gap-2 rounded-xl border border-border px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
                               {t("Voir la fiche", "Details")} <ChevronRight className="h-3.5 w-3.5" />
                             </Link>
                           )}
