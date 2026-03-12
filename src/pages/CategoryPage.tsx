@@ -35,7 +35,7 @@ const CategoryPage = () => {
     const desc = lang === "fr"
       ? `Comparez ${allCatTools.length} outils ${catName.toLowerCase()} : prix, avantages, alternatives. Trouvez le meilleur pour votre activité.`
       : `Compare ${allCatTools.length} ${(category.nameEn || catName).toLowerCase()} tools: pricing, pros, alternatives. Find the best for your business.`;
-    const url = `https://tooltrim.com/${lang}/category/${category.slug}`;
+    const url = `https://tooltrim.io/${lang}/category/${category.slug}`;
 
     setSeoTags({ title, description: desc, url });
     setHreflang(`/${lang}/category/${category.slug}`);
