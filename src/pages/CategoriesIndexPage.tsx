@@ -4,7 +4,7 @@ import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setJsonLd, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { LayoutGrid } from "lucide-react";
 
 const CategoriesIndexPage = () => {
@@ -22,6 +22,7 @@ const CategoriesIndexPage = () => {
     const url = `https://tooltrim.com/${lang}/category`;
 
     setSeoTags({ title, description: desc, url });
+    setHreflang(`/${lang}/category`);
     setJsonLd("cats-jsonld", {
       "@context": "https://schema.org",
       "@type": "CollectionPage",

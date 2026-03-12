@@ -7,7 +7,7 @@ import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolMentionedCard } from "@/components/ToolMentionedCard";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setMeta, setJsonLd, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -39,6 +39,7 @@ const GuideDetailPage = () => {
     const canonicalUrl = `https://tooltrim.com/${lang}/guide/${post.slug}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, type: "article" });
+    setHreflang(`/${lang}/guide/${post.slug}`);
     setMeta("article:published_time", post.date || "");
 
     setJsonLd("article-jsonld", {

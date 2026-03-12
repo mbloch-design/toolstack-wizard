@@ -5,6 +5,7 @@ import { useState, useMemo, useEffect } from "react";
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
+import { setHreflang } from "@/lib/seo";
 import type { Tool } from "@/data/types";
 
 const GuidesPage = () => {
@@ -24,6 +25,7 @@ const GuidesPage = () => {
     document.title = title;
     const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (metaDesc) metaDesc.content = desc;
+    setHreflang(`/${lang}/guides`);
   }, [lang]);
 
   const allCategories = useMemo(() => {

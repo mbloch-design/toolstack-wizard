@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ExternalLink, Check, X, Copy, Share2, Users, User, Target, Globe, ArrowRight } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setJsonLd, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 
 const ToolDetailPage = () => {
@@ -30,6 +30,7 @@ const ToolDetailPage = () => {
     const canonicalUrl = `https://tooltrim.com/${lang}/tool/${tool.slug || tool.id}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl });
+    setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
 
     setJsonLd("tool-jsonld", {
       "@context": "https://schema.org",
