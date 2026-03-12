@@ -14,8 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        heading: ['"Inter"', 'system-ui', 'sans-serif'],
+        body: ['"Inter"', 'system-ui', 'sans-serif'],
+      },
+      letterSpacing: {
+        tighter: '-0.02em',
       },
       colors: {
         border: "hsl(var(--border))",

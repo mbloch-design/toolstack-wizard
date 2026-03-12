@@ -9,8 +9,8 @@ const GuidesPage = () => {
   return (
     <div className="py-12">
       <div className="container mx-auto max-w-3xl">
-        <h1 className="font-heading text-3xl font-bold">{t("Guides & Comparatifs", "Guides & Comparisons")}</h1>
-        <p className="mt-2 text-muted-foreground">{t("Conseils pratiques pour optimiser votre stack d'outils.", "Practical tips to optimize your tool stack.")}</p>
+        <h1 className="text-3xl font-extrabold tracking-tighter">{t("Guides & Comparatifs", "Guides & Comparisons")}</h1>
+        <p className="mt-2 leading-relaxed text-muted-foreground">{t("Conseils pratiques pour optimiser votre stack d'outils.", "Practical tips to optimize your tool stack.")}</p>
 
         {loading ? (
           <div className="mt-8 space-y-4">
@@ -34,10 +34,10 @@ const GuidesPage = () => {
                   <p className="text-xs text-muted-foreground">
                     {post.date} · {post.readTime} · {post.category}
                   </p>
-                  <h2 className="mt-1 font-heading text-lg font-semibold group-hover:text-primary">
+                  <h2 className="mt-1 text-lg font-semibold tracking-tighter group-hover:text-primary">
                     {post.title}
                   </h2>
-                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground line-clamp-2">
                     {post.excerpt}
                   </p>
                   {post.tags && post.tags.length > 0 && (
