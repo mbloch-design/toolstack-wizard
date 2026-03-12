@@ -294,7 +294,7 @@ const GuideDetailPage = () => {
                 prose-hr:border-border prose-hr:my-8
                 prose-img:rounded-xl prose-img:shadow-md
                 prose-code:text-primary prose-code:bg-accent/40 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(htmlContent) }}
             />
 
             {/* Share bottom */}
