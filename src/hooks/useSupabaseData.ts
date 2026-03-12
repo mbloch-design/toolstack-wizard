@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import type { Tool, Category } from "@/data/types";
+import type { Tool, Category, BlogPost } from "@/data/types";
 import contentJson from "@/data/content.json";
 
 // Static fallback data from content.json
@@ -135,4 +135,80 @@ export function useToolBySlug(slug: string | undefined) {
   }, [slug]);
 
   return { tool, loading };
+}
+
+export interface Post {
+  id: number;
+  slug: string;
+  lang: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  toolId: string | null;
+  content: string;
+  tags: string[];
+  readTime: string;
+  seo: { metaTitle?: string; metaDescription?: string; keywords?: string } | null;
+}
+
+function mapPost(p: any): Post {
+  return {
+    id: p.id,
+    slug: p.slug,
+    lang: p.lang,
+    title: p.title,
+    excerpt: p.excerpt || "",
+    date: p.date,
+    category: p.category || "",
+    toolId: p.tool_id || null,
+    content: p.content || "",
+    tags: p.tags || [],
+    readTime: p.read_time || "",
+    seo: p.seo || null,
+  };
+}
+
+export function usePosts(lang: string) {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const { data, error } = await supabase
+        .from("posts")
+        .select("*")
+        .eq("lang", lang)
+        .order("date", { ascending: false });
+      if (!error && data) {
+        setPosts(data.map(mapPost));
+      }
+      setLoading(false);
+    })();
+  }, [lang]);
+
+  return { posts, loading };
+}
+
+export function usePostBySlug(slug: string | undefined, lang: string) {
+  const [post, setPost] = useState<Post | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!slug) { setLoading(false); return; }
+    (async () => {
+      const { data } = await supabase
+        .from("posts")
+        .select("*")
+        .eq("slug", slug)
+        .eq("lang", lang)
+        .maybeSingle();
+      if (data) {
+        setPost(mapPost(data));
+      }
+      setLoading(false);
+    })();
+  }, [slug, lang]);
+
+  return { post, loading };
 }
