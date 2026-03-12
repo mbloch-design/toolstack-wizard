@@ -46,7 +46,7 @@ const HomePage = () => {
     const desc = lang === "fr"
       ? `Tooltrim compare ${stats.total}+ outils SaaS pour freelances et petites équipes. Optimisez votre stack, réduisez vos coûts.`
       : `Tooltrim compares ${stats.total}+ SaaS tools for freelancers and small teams. Optimize your stack, reduce costs.`;
-    const url = `https://tooltrim.com/${lang}`;
+    const url = `https://tooltrim.io/${lang}`;
 
     setSeoTags({ title, description: desc, url });
     setHreflang(`/${lang}`);
