@@ -20,6 +20,7 @@ import AboutPage from "@/pages/AboutPage";
 import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/NotFound";
+import ScrollToTop from "@/components/ScrollToTop";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/fr" replace />} />
           <Route path="/:lang" element={<LangLayout />}>
