@@ -468,7 +468,7 @@ function RelatedArticleCard({ post, prefix, tools }: { post: Post; prefix: strin
           {post.title}
         </h3>
         <div className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-          {t("Lire", "Read")} <ArrowRight className="h-3 w-3" />
+          <ArrowRight className="h-3 w-3" />
         </div>
       </div>
     </Link>
