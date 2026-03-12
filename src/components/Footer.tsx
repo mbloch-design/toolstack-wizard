@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
+import pictoLogo from "@/assets/picto-logo.svg";
 
 const Footer = () => {
   const { t, prefix } = useLang();
@@ -9,7 +10,10 @@ const Footer = () => {
       <div className="container">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
-            <p className="text-lg font-extrabold tracking-tighter">Tool<span className="text-primary">trim</span></p>
+            <div className="flex items-center gap-2">
+              <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7 rounded-md" />
+              <p className="text-lg font-extrabold tracking-tighter">Tool<span className="text-primary">trim</span></p>
+            </div>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {t("Arrêtez de payer trop cher pour vos outils.", "Stop overpaying for your tools.")}
             </p>
