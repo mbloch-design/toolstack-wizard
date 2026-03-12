@@ -31,6 +31,8 @@ export const tools: Tool[] = (contentJson as any).tools.map((t: any) => ({
   alternatives: t.alternatives || [],
   seo: t.seo || null,
   articles: t.articles || [],
+  timeGainedHoursPerMonth: t.timeGainedHoursPerMonth ?? undefined,
+  freeAlternative: t.freeAlternative || null,
 }));
 
 export const blogPosts: BlogPost[] = ((contentJson as any).articles || []).map((a: any) => ({
