@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Category } from "@/data/types";
 import contentJson from "@/data/content.json";
 
+// Static fallback data from content.json
 const staticCategories: Category[] = (contentJson as any).categories.map((c: any) => ({
   id: c.id,
   slug: c.slug,
@@ -68,62 +69,12 @@ function mapSupabaseTool(t: any): Tool {
   };
 }
 
-let seedPromise: Promise<void> | null = null;
-
-async function seedIfEmpty() {
-  if (seedPromise) return seedPromise;
-  seedPromise = (async () => {
-    const { count } = await supabase
-      .from("tools")
-      .select("*", { count: "exact", head: true });
-
-    if (count && count >= 200) return;
-
-    console.log(`Seeding: found ${count} tools, need 200+. Starting seed via edge function...`);
-
-    // Step 1: Cleanup + insert categories
-    const cats = (contentJson as any).categories.map((c: any) => ({
-      id: c.id,
-      name: c.name,
-      slug: c.slug || c.id,
-      description: c.description || "",
-    }));
-
-    const { data: cleanupResult, error: cleanupError } = await supabase.functions.invoke("seed-content", {
-      body: { action: "cleanup", categories: cats },
-    });
-    console.log("Cleanup result:", cleanupResult, cleanupError);
-
-    // Step 2: Insert tools in batches of 15
-    const allTools = (contentJson as any).tools;
-    const batchSize = 15;
-    let totalInserted = 0;
-
-    for (let i = 0; i < allTools.length; i += batchSize) {
-      const batch = allTools.slice(i, i + batchSize);
-      const { data, error } = await supabase.functions.invoke("seed-content", {
-        body: { action: "insert_tools", tools: batch },
-      });
-      if (error) {
-        console.error(`Batch ${i} error:`, error, data);
-        break;
-      }
-      totalInserted += batch.length;
-      console.log(`Inserted batch ${i}-${i + batch.length}: ${totalInserted}/${allTools.length}`);
-    }
-
-    console.log(`Seed complete: ${totalInserted} tools inserted`);
-  })();
-  return seedPromise;
-}
-
 export function useCategories() {
   const [categories, setCategories] = useState<Category[]>(staticCategories);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
-      await seedIfEmpty();
       const { data, error } = await supabase.from("categories").select("*");
       if (!error && data && data.length > 0) {
         setCategories(data.map(mapSupabaseCat));
@@ -141,7 +92,6 @@ export function useTools() {
 
   useEffect(() => {
     (async () => {
-      await seedIfEmpty();
       const { data, error } = await supabase.from("tools").select("*").limit(500);
       if (!error && data && data.length > 0) {
         setTools(data.map(mapSupabaseTool));
@@ -160,16 +110,14 @@ export function useToolBySlug(slug: string | undefined) {
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
     (async () => {
-      await seedIfEmpty();
-      // Try by slug first, then by id
-      let { data, error } = await supabase
+      let { data } = await supabase
         .from("tools")
         .select("*")
         .eq("slug", slug)
         .maybeSingle();
       
       if (!data) {
-        ({ data, error } = await supabase
+        ({ data } = await supabase
           .from("tools")
           .select("*")
           .eq("id", slug)
