@@ -39,9 +39,33 @@ const SelectorPage = () => {
     }
   };
 
-  const handleSubmit = () => {
-    sessionStorage.setItem("tooltrim_selector", JSON.stringify(form));
-    navigate(`${prefix}/selector/results`);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.from("leads").insert({
+        email: form.email.trim(),
+        first_name: form.firstName.trim(),
+        user_type: form.userType,
+        job_role: form.jobRole,
+        main_goal: form.mainGoal,
+        current_tools: JSON.stringify(form.currentTools),
+        ai_usage_level: form.aiUsageLevel,
+        marketing_opt_in: form.marketingOptIn,
+        source: "selector",
+      } as any);
+
+      if (error) throw error;
+
+      sessionStorage.setItem("tooltrim_selector", JSON.stringify(form));
+      navigate(`${prefix}/selector/results`);
+    } catch (err) {
+      console.error("Error saving lead:", err);
+      toast.error(t("Une erreur est survenue. Veuillez réessayer.", "An error occurred. Please try again."));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const toggleTool = (toolId: string) => {
