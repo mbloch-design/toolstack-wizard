@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { tools } from "@/data/content";
 import { SelectorFormData, UserType, JobRole, MainGoal, AIUsageLevel, SelectedTool } from "@/data/types";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const STEPS = 6;
 
@@ -37,9 +39,33 @@ const SelectorPage = () => {
     }
   };
 
-  const handleSubmit = () => {
-    sessionStorage.setItem("tooltrim_selector", JSON.stringify(form));
-    navigate(`${prefix}/selector/results`);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.from("leads").insert({
+        email: form.email.trim(),
+        first_name: form.firstName.trim(),
+        user_type: form.userType,
+        job_role: form.jobRole,
+        main_goal: form.mainGoal,
+        current_tools: JSON.stringify(form.currentTools),
+        ai_usage_level: form.aiUsageLevel,
+        marketing_opt_in: form.marketingOptIn,
+        source: "selector",
+      } as any);
+
+      if (error) throw error;
+
+      sessionStorage.setItem("tooltrim_selector", JSON.stringify(form));
+      navigate(`${prefix}/selector/results`);
+    } catch (err) {
+      console.error("Error saving lead:", err);
+      toast.error(t("Une erreur est survenue. Veuillez réessayer.", "An error occurred. Please try again."));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const toggleTool = (toolId: string) => {
@@ -301,11 +327,20 @@ const SelectorPage = () => {
           ) : (
             <button
               onClick={handleSubmit}
-              disabled={!canNext()}
+              disabled={!canNext() || submitting}
               className="flex items-center gap-1 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-40"
             >
-              {t("Voir mes résultats", "See my results")}
-              <ArrowRight className="h-4 w-4" />
+              {submitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {t("Enregistrement...", "Saving...")}
+                </>
+              ) : (
+                <>
+                  {t("Voir mes résultats", "See my results")}
+                  <ArrowRight className="h-4 w-4" />
+                </>
+              )}
             </button>
           )}
         </div>
