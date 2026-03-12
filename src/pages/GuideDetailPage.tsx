@@ -61,7 +61,7 @@ const GuideDetailPage = () => {
     if (!jsonLd) {
       jsonLd = document.createElement("script");
       jsonLd.id = "article-jsonld";
-      jsonLd.type = "application/ld+json";
+      (jsonLd as HTMLScriptElement).type = "application/ld+json";
       document.head.appendChild(jsonLd);
     }
     jsonLd.textContent = JSON.stringify({
