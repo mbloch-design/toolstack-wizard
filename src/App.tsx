@@ -72,6 +72,7 @@ const App = () => (
             <Route path="methodology" element={<AboutPage />} />
             <Route path="transparency" element={<TransparencyPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="update-tools" element={<UpdateToolsPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
