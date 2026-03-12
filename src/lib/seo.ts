@@ -35,7 +35,7 @@ export function setJsonLd(id: string, data: Record<string, unknown>) {
   el.textContent = JSON.stringify(data);
 }
 
-export function setHreflang(path: string, base = "https://tooltrim.com") {
+export function setHreflang(path: string, base = "https://tooltrim.io") {
   // Remove existing hreflang links
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
 

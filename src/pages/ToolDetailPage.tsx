@@ -27,7 +27,7 @@ const ToolDetailPage = () => {
       (lang === "fr"
         ? `Découvrez ${tool.name} : prix, avantages, inconvénients et alternatives. Notre verdict complet pour optimiser votre stack.`
         : `Discover ${tool.name}: pricing, pros, cons and alternatives. Our complete verdict to optimize your stack.`);
-    const canonicalUrl = `https://tooltrim.com/${lang}/tool/${tool.slug || tool.id}`;
+    const canonicalUrl = `https://tooltrim.io/${lang}/tool/${tool.slug || tool.id}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl });
     setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
