@@ -1,41 +1,47 @@
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { tools, categories } from "@/data/content";
+import { categories, tools } from "@/data/content";
 import { Button } from "@/components/ui/button";
+
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
 const UpdateToolsPage = () => {
   const [status, setStatus] = useState<string>("idle");
   const [log, setLog] = useState<string[]>([]);
+  const [adminKey, setAdminKey] = useState("");
 
   const addLog = (msg: string) => setLog((prev) => [...prev, msg]);
 
+  const callSeed = async (body: any) => {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/seed-content`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_ANON_KEY,
+        "x-admin-key": adminKey,
+      },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+    return data;
+  };
+
   const handleReseed = async () => {
+    if (!adminKey) { addLog("❌ Entrez la clé admin"); return; }
     setStatus("running");
     setLog([]);
 
     try {
-      // 1. Delete all tools
-      addLog("Suppression des outils…");
-      const { error: delToolsErr } = await supabase.from("tools").delete().neq("id", "___none___");
-      if (delToolsErr) throw new Error(`Delete tools: ${delToolsErr.message}`);
-
-      // 2. Delete all categories
-      addLog("Suppression des catégories…");
-      const { error: delCatsErr } = await supabase.from("categories").delete().neq("id", "___none___");
-      if (delCatsErr) throw new Error(`Delete categories: ${delCatsErr.message}`);
-
-      // 3. Re-insert categories
-      addLog(`Insertion de ${categories.length} catégories…`);
+      // 1. Cleanup + insert categories
+      addLog("Nettoyage + insertion catégories…");
       const catsPayload = categories.map((c) => ({
-        id: c.id,
-        slug: c.slug,
-        name: c.name,
-        description: c.description,
+        id: c.id, slug: c.slug, name: c.name, description: c.description,
       }));
-      const { error: insCatsErr } = await supabase.from("categories").insert(catsPayload);
-      if (insCatsErr) throw new Error(`Insert categories: ${insCatsErr.message}`);
+      const r1 = await callSeed({ action: "cleanup", categories: catsPayload });
+      addLog(`  ✓ ${r1.categoriesInserted} catégories`);
 
-      // 4. Re-insert tools in batches of 20
+      // 2. Insert tools in batches of 20
       addLog(`Insertion de ${tools.length} outils…`);
       for (let i = 0; i < tools.length; i += 20) {
         const batch = tools.slice(i, i + 20).map((t) => ({
@@ -43,30 +49,28 @@ const UpdateToolsPage = () => {
           name: t.name,
           slug: t.slug || t.id,
           category: t.categoryId || null,
-          short_description: t.shortDescription || "",
-          long_description: t.longDescription || "",
-          affiliate_link: t.affiliateLink || "",
-          website_url: (t as any).websiteUrl || t.affiliateLink || "",
-          default_monthly_price: Math.round(t.defaultMonthlyPrice || 0),
-          pricing: t.pricing as any,
-          logo: "",
-          solo_relevance: t.soloRelevance || null,
-          team_relevance: t.teamRelevance || null,
-          time_gained_hours_per_month: t.timeGainedHoursPerMonth ?? null,
-          free_alternative: t.freeAlternative || null,
-          verdict: t.verdict as any,
-          pros: t.pros as any,
-          cons: t.cons as any,
-          use_cases: t.useCases as any,
-          covers: t.covers as any,
-          relevant_for: t.relevantFor as any,
-          alternatives: t.alternatives as any,
-          seo: t.seo as any,
-          articles: t.articles as any,
+          shortDescription: t.shortDescription || "",
+          longDescription: t.longDescription || "",
+          affiliateLink: t.affiliateLink || "",
+          websiteUrl: (t as any).websiteUrl || t.affiliateLink || "",
+          defaultMonthlyPrice: t.defaultMonthlyPrice || 0,
+          pricing: t.pricing || null,
+          soloRelevance: t.soloRelevance || null,
+          teamRelevance: t.teamRelevance || null,
+          timeGainedHoursPerMonth: t.timeGainedHoursPerMonth ?? null,
+          freeAlternative: t.freeAlternative || null,
+          verdict: t.verdict || null,
+          pros: t.pros || null,
+          cons: t.cons || null,
+          useCases: t.useCases || null,
+          covers: t.covers || null,
+          relevantFor: t.relevantFor || null,
+          alternatives: t.alternatives || null,
+          seo: t.seo || null,
+          articles: t.articles || null,
         }));
-        const { error } = await supabase.from("tools").insert(batch as any);
-        if (error) throw new Error(`Insert tools batch ${i}: ${error.message}`);
-        addLog(`  Batch ${i}-${i + batch.length} OK`);
+        const r = await callSeed({ action: "insert_tools", tools: batch });
+        addLog(`  Batch ${i}-${i + batch.length}: ${r.toolsInserted} outils`);
       }
 
       addLog("✅ Re-seed terminé !");
@@ -81,8 +85,15 @@ const UpdateToolsPage = () => {
     <div className="container mx-auto max-w-2xl py-16 px-4">
       <h1 className="text-2xl font-bold mb-6">Re-seed des outils</h1>
       <p className="text-muted-foreground mb-4">
-        Cette page vide la table tools et categories puis les re-remplit depuis content.json.
+        Vide tools + categories puis re-remplit depuis content.json via la edge function.
       </p>
+      <input
+        type="password"
+        placeholder="SEED_ADMIN_KEY"
+        value={adminKey}
+        onChange={(e) => setAdminKey(e.target.value)}
+        className="w-full mb-4 p-2 border rounded bg-background text-foreground"
+      />
       <Button onClick={handleReseed} disabled={status === "running"} variant="destructive">
         {status === "running" ? "En cours…" : "Lancer le re-seed"}
       </Button>
