@@ -20,6 +20,7 @@ import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/NotFound";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
 
 const LangLayout = () => {
