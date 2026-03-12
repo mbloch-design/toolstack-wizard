@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://tooltrim.io/sitemap.xml
+Sitemap: https://rtfyfuwfdpnsogovkwai.supabase.co/functions/v1/sitemap
