@@ -13,7 +13,7 @@ function getLogoUrl(tool: Tool): string | null {
   if (!url) return null;
   try {
     const domain = new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-    return `https://logo.clearbit.com/${domain}`;
+    return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
   } catch {
     return null;
   }
