@@ -30,6 +30,7 @@ const ToolDetailPage = () => {
     const canonicalUrl = `https://tooltrim.com/${lang}/tool/${tool.slug || tool.id}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl });
+    setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
 
     setJsonLd("tool-jsonld", {
       "@context": "https://schema.org",

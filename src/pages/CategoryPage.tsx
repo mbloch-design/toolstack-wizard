@@ -38,6 +38,7 @@ const CategoryPage = () => {
     const url = `https://tooltrim.com/${lang}/category/${category.slug}`;
 
     setSeoTags({ title, description: desc, url });
+    setHreflang(`/${lang}/category/${category.slug}`);
     setJsonLd("cat-jsonld", {
       "@context": "https://schema.org",
       "@type": "CollectionPage",

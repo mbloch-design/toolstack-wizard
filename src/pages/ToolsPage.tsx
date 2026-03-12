@@ -36,6 +36,7 @@ const ToolsPage = () => {
     const url = `https://tooltrim.com/${lang}/tools`;
 
     setSeoTags({ title, description: desc, url });
+    setHreflang(`/${lang}/tools`);
 
     setJsonLd("tools-jsonld", {
       "@context": "https://schema.org",

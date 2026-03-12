@@ -22,6 +22,7 @@ const CategoriesIndexPage = () => {
     const url = `https://tooltrim.com/${lang}/category`;
 
     setSeoTags({ title, description: desc, url });
+    setHreflang(`/${lang}/category`);
     setJsonLd("cats-jsonld", {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
