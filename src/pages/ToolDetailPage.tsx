@@ -23,8 +23,8 @@ const ToolDetailPage = () => {
     );
   }
 
-  const category = categories.find((c) => c.id === tool.categoryId);
-  const alternatives = tools.filter((t) => t.categoryId === tool.categoryId && t.id !== tool.id).slice(0, 3);
+  const category = categories.find((c: any) => c.id === tool.categoryId);
+  const alternatives = tools.filter((t: any) => t.categoryId === tool.categoryId && t.id !== tool.id).slice(0, 3);
 
   return (
     <div className="py-12">

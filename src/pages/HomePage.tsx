@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { categories, tools, blogPosts } from "@/data/content";
+import { blogPosts } from "@/data/content";
+import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { ArrowRight, TrendingDown, Zap, Search } from "lucide-react";
 
 const HomePage = () => {
   const { t, prefix } = useLang();
+  const { tools } = useTools();
+  const { categories } = useCategories();
   const featuredTools = tools.slice(0, 6);
   const featuredPosts = blogPosts.slice(0, 3);
 

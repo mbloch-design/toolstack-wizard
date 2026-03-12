@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { tools, categories } from "@/data/content";
+import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { Search } from "lucide-react";
 
 const ToolsPage = () => {
   const { t, prefix } = useLang();
+  const { tools } = useTools();
+  const { categories } = useCategories();
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 

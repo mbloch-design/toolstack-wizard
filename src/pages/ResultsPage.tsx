@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { tools } from "@/data/content";
+import { useTools } from "@/hooks/useSupabaseData";
 import { SelectorFormData, SelectorResults, ToolRecommendation, Tool } from "@/data/types";
 import { ArrowRight, TrendingDown, Check, X, ArrowUpRight, RefreshCw } from "lucide-react";
 

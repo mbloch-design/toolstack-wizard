@@ -1,10 +1,12 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { tools, categories } from "@/data/content";
+import { useTools, useCategories } from "@/hooks/useSupabaseData";
 
 const CategoryPage = () => {
   const { t, prefix } = useLang();
   const { slug } = useParams();
+  const { tools } = useTools();
+  const { categories } = useCategories();
   const category = categories.find((c) => c.slug === slug);
   const catTools = category ? tools.filter((t) => t.categoryId === category.id) : [];
 
