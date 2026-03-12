@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { tools } from "@/data/content";
+import { useTools } from "@/hooks/useSupabaseData";
 import { SelectorFormData, UserType, JobRole, MainGoal, AIUsageLevel, SelectedTool } from "@/data/types";
 import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -12,6 +12,7 @@ const STEPS = 6;
 const SelectorPage = () => {
   const { t, prefix } = useLang();
   const navigate = useNavigate();
+  const { tools } = useTools();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<SelectorFormData>({
     userType: null,

@@ -1,12 +1,18 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { tools, categories } from "@/data/content";
+import { useToolBySlug, useTools, useCategories } from "@/hooks/useSupabaseData";
 import { ArrowLeft, ExternalLink, Check, X } from "lucide-react";
 
 const ToolDetailPage = () => {
   const { t, prefix } = useLang();
   const { slug } = useParams();
-  const tool = tools.find((t) => t.slug === slug);
+  const { tool, loading } = useToolBySlug(slug);
+  const { tools } = useTools();
+  const { categories } = useCategories();
+
+  if (loading) {
+    return <div className="container py-20 text-center text-muted-foreground">Chargement...</div>;
+  }
 
   if (!tool) {
     return (
@@ -17,8 +23,8 @@ const ToolDetailPage = () => {
     );
   }
 
-  const category = categories.find((c) => c.id === tool.categoryId);
-  const alternatives = tools.filter((t) => t.categoryId === tool.categoryId && t.id !== tool.id).slice(0, 3);
+  const category = categories.find((c: any) => c.id === tool.categoryId);
+  const alternatives = tools.filter((t: any) => t.categoryId === tool.categoryId && t.id !== tool.id).slice(0, 3);
 
   return (
     <div className="py-12">

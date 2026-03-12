@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { tools } from "@/data/content";
+import { useTools } from "@/hooks/useSupabaseData";
 import { SelectorFormData, SelectorResults, ToolRecommendation, Tool } from "@/data/types";
 import { ArrowRight, TrendingDown, Check, X, ArrowUpRight, RefreshCw } from "lucide-react";
 
-function generateResults(form: SelectorFormData): SelectorResults {
+function generateResults(form: SelectorFormData, tools: Tool[]): SelectorResults {
   const recommended: ToolRecommendation[] = [];
   const toCancel: ToolRecommendation[] = [];
   const toKeep: ToolRecommendation[] = [];
@@ -100,17 +100,19 @@ function generateResults(form: SelectorFormData): SelectorResults {
 const ResultsPage = () => {
   const { t, prefix } = useLang();
   const navigate = useNavigate();
+  const { tools } = useTools();
   const [results, setResults] = useState<SelectorResults | null>(null);
 
   useEffect(() => {
+    if (tools.length === 0) return;
     const data = sessionStorage.getItem("tooltrim_selector");
     if (!data) {
       navigate(`${prefix}/selector`);
       return;
     }
     const form: SelectorFormData = JSON.parse(data);
-    setResults(generateResults(form));
-  }, [navigate, prefix]);
+    setResults(generateResults(form, tools));
+  }, [navigate, prefix, tools]);
 
   if (!results) return null;
 
