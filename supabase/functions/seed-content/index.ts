@@ -76,6 +76,46 @@ Deno.serve(async (req) => {
       });
     }
 
+    if (action === "seed_posts") {
+      await supabase.from("posts").delete().neq("id", 0);
+
+      const posts = body.posts || [];
+      if (posts.length === 0) {
+        return new Response(JSON.stringify({ error: "No posts provided" }), {
+          status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
+      let inserted = 0;
+      for (let i = 0; i < posts.length; i += 20) {
+        const batch = posts.slice(i, i + 20).map((p: any) => ({
+          slug: p.slug,
+          lang: p.lang,
+          title: p.title,
+          excerpt: p.excerpt || "",
+          date: p.date || null,
+          category: p.category || null,
+          tool_id: p.toolId || null,
+          content: p.content || "",
+          tags: p.tags || null,
+          read_time: p.readTime || null,
+          seo: p.seo || null,
+        }));
+
+        const { error } = await supabase.from("posts").insert(batch);
+        if (error) {
+          return new Response(JSON.stringify({ error: "posts insert failed", detail: error, batch: i }), {
+            status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
+        inserted += batch.length;
+      }
+
+      return new Response(JSON.stringify({ success: true, action: "seed_posts", postsInserted: inserted }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     return new Response(JSON.stringify({ error: "Unknown action" }), {
       status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
