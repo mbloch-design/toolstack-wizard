@@ -86,6 +86,58 @@ const Navbar = () => {
               {t("Outils", "Tools")}
               <ChevronDown className={`h-3 w-3 transition-transform ${activeMega === "tools" ? "rotate-180" : ""}`} />
             </button>
+
+            {/* Dropdown panel — compact, positioned under trigger */}
+            {activeMega === "tools" && (
+              <div className="absolute left-1/2 top-full pt-2 -translate-x-1/2">
+                <div className="w-[520px] rounded-xl border border-border bg-background p-5 shadow-xl animate-in fade-in-0 slide-in-from-top-2 duration-150">
+                  <div className="grid grid-cols-2 gap-5">
+                    {/* Categories */}
+                    <div>
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("Catégories", "Categories")}</p>
+                      <div className="space-y-0.5">
+                        {topCategories.map(cat => {
+                          const Icon = getCategoryIcon(cat.id);
+                          const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
+                          return (
+                            <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} onClick={closeMega}
+                              className="group flex items-center gap-2.5 rounded-lg px-2.5 py-2 transition-colors hover:bg-secondary">
+                              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent text-accent-foreground">
+                                <Icon className="h-3.5 w-3.5" />
+                              </div>
+                              <div className="min-w-0">
+                                <p className="text-sm font-medium leading-tight">{t(catName, cat.nameEn || catName)}</p>
+                                <p className="text-[11px] text-muted-foreground">{cat.count} {t("outils", "tools")}</p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                      <Link to={`${prefix}/category`} onClick={closeMega} className="mt-2 inline-flex items-center gap-1 px-2.5 text-xs font-medium text-primary hover:underline">
+                        {t("Toutes les catégories →", "All categories →")}
+                      </Link>
+                    </div>
+
+                    {/* Popular tools */}
+                    <div className="border-l border-border pl-5">
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("Populaires", "Popular")}</p>
+                      <div className="space-y-0.5">
+                        {topTools.map(tool => (
+                          <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} onClick={closeMega}
+                            className="group flex items-center gap-2.5 rounded-lg px-2.5 py-2 transition-colors hover:bg-secondary">
+                            <ToolLogo tool={tool} size={24} />
+                            <p className="text-sm font-medium truncate">{tool.name}</p>
+                          </Link>
+                        ))}
+                      </div>
+                      <Link to={`${prefix}/tools`} onClick={closeMega} className="mt-2 inline-flex items-center gap-1 px-2.5 text-xs font-medium text-primary hover:underline">
+                        {t("Tous les outils →", "All tools →")}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Resources mega */}
@@ -98,6 +150,32 @@ const Navbar = () => {
               {t("Ressources", "Resources")}
               <ChevronDown className={`h-3 w-3 transition-transform ${activeMega === "resources" ? "rotate-180" : ""}`} />
             </button>
+
+            {activeMega === "resources" && (
+              <div className="absolute left-1/2 top-full pt-2 -translate-x-1/2">
+                <div className="w-[320px] rounded-xl border border-border bg-background p-3 shadow-xl animate-in fade-in-0 slide-in-from-top-2 duration-150">
+                  <div className="space-y-0.5">
+                    {[
+                      { icon: <BookOpen className="h-3.5 w-3.5" />, label: t("Guides & comparatifs", "Guides & comparisons"), desc: t("Articles pour choisir vos outils", "Articles to choose your tools"), to: `${prefix}/guides` },
+                      { icon: <BarChart3 className="h-3.5 w-3.5" />, label: t("Sélecteur de stack", "Stack selector"), desc: t("Trouvez les outils faits pour vous", "Find the right tools for you"), to: `${prefix}/selector` },
+                      { icon: <Shield className="h-3.5 w-3.5" />, label: t("Transparence", "Transparency"), desc: t("Notre méthodologie", "Our methodology"), to: `${prefix}/transparency` },
+                      { icon: <HelpCircle className="h-3.5 w-3.5" />, label: t("À propos", "About"), desc: t("Qui sommes-nous ?", "Who are we?"), to: `${prefix}/about` },
+                    ].map(item => (
+                      <Link key={item.to} to={item.to} onClick={closeMega}
+                        className="group flex items-start gap-2.5 rounded-lg p-2.5 transition-colors hover:bg-secondary">
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent text-accent-foreground mt-0.5">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium leading-tight">{item.label}</p>
+                          <p className="text-[11px] text-muted-foreground">{item.desc}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <Link to={`${prefix}/selector`} className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
@@ -139,107 +217,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* ========= MEGA MENU — Tools ========= */}
-      {activeMega === "tools" && (
-        <div
-          onMouseEnter={() => handleMegaEnter("tools")}
-          onMouseLeave={handleMegaLeave}
-          className="absolute left-0 right-0 top-full z-50 border-b border-border bg-background shadow-xl animate-in fade-in-0 slide-in-from-top-1 duration-200"
-        >
-          <div className="container py-6">
-            <div className="grid gap-8 lg:grid-cols-3">
-              {/* Categories */}
-              <div className="lg:col-span-2">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("Catégories", "Categories")}</p>
-                <div className="grid gap-1 sm:grid-cols-2">
-                  {topCategories.map(cat => {
-                    const Icon = getCategoryIcon(cat.id);
-                    const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
-                    return (
-                      <Link
-                        key={cat.id}
-                        to={`${prefix}/category/${cat.slug}`}
-                        onClick={closeMega}
-                        className="group flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-secondary"
-                      >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                          <Icon className="h-4 w-4" />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-sm font-medium group-hover:text-foreground">{t(catName, cat.nameEn || catName)}</p>
-                          <p className="text-xs text-muted-foreground">{cat.count} {t("outils", "tools")}</p>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-                <Link to={`${prefix}/category`} onClick={closeMega} className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-                  {t("Toutes les catégories", "All categories")} <ArrowRight className="h-3 w-3" />
-                </Link>
-              </div>
 
-              {/* Popular tools */}
-              <div className="border-l border-border pl-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("Populaires", "Popular")}</p>
-                <div className="space-y-1">
-                  {topTools.map(tool => (
-                    <Link
-                      key={tool.id}
-                      to={`${prefix}/tool/${tool.slug}`}
-                      onClick={closeMega}
-                      className="group flex items-center gap-3 rounded-lg p-2.5 transition-colors hover:bg-secondary"
-                    >
-                      <ToolLogo tool={tool} size={28} />
-                      <div className="min-w-0">
-                        <p className="text-sm font-medium group-hover:text-foreground truncate">{tool.name}</p>
-                        <p className="text-xs text-muted-foreground truncate">{tool.shortDescription?.slice(0, 50)}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-                <Link to={`${prefix}/tools`} onClick={closeMega} className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-                  {t("Voir tous les outils", "See all tools")} <ArrowRight className="h-3 w-3" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
-      {/* ========= MEGA MENU — Resources ========= */}
-      {activeMega === "resources" && (
-        <div
-          onMouseEnter={() => handleMegaEnter("resources")}
-          onMouseLeave={handleMegaLeave}
-          className="absolute left-0 right-0 top-full z-50 border-b border-border bg-background shadow-xl animate-in fade-in-0 slide-in-from-top-1 duration-200"
-        >
-          <div className="container py-6">
-            <div className="grid gap-1 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { icon: <BookOpen className="h-4 w-4" />, label: t("Guides & comparatifs", "Guides & comparisons"), desc: t("Articles pour choisir vos outils", "Articles to choose your tools"), to: `${prefix}/guides` },
-                { icon: <BarChart3 className="h-4 w-4" />, label: t("Sélecteur de stack", "Stack selector"), desc: t("Trouvez les outils faits pour vous", "Find the right tools for you"), to: `${prefix}/selector` },
-                { icon: <Shield className="h-4 w-4" />, label: t("Transparence", "Transparency"), desc: t("Notre méthodologie et nos critères", "Our methodology and criteria"), to: `${prefix}/transparency` },
-                { icon: <HelpCircle className="h-4 w-4" />, label: t("À propos", "About"), desc: t("Qui sommes-nous ?", "Who are we?"), to: `${prefix}/about` },
-              ].map(item => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  onClick={closeMega}
-                  className="group flex items-start gap-3 rounded-lg p-4 transition-colors hover:bg-secondary"
-                >
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium group-hover:text-foreground">{item.label}</p>
-                    <p className="mt-0.5 text-xs text-muted-foreground">{item.desc}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* ========= MOBILE MENU ========= */}
       {mobileOpen && (
