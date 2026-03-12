@@ -12,6 +12,7 @@ const STEPS = 6;
 const SelectorPage = () => {
   const { t, prefix } = useLang();
   const navigate = useNavigate();
+  const { tools } = useTools();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<SelectorFormData>({
     userType: null,

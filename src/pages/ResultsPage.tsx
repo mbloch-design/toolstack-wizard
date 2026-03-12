@@ -5,7 +5,7 @@ import { useTools } from "@/hooks/useSupabaseData";
 import { SelectorFormData, SelectorResults, ToolRecommendation, Tool } from "@/data/types";
 import { ArrowRight, TrendingDown, Check, X, ArrowUpRight, RefreshCw } from "lucide-react";
 
-function generateResults(form: SelectorFormData): SelectorResults {
+function generateResults(form: SelectorFormData, tools: Tool[]): SelectorResults {
   const recommended: ToolRecommendation[] = [];
   const toCancel: ToolRecommendation[] = [];
   const toKeep: ToolRecommendation[] = [];
