@@ -54,6 +54,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/fr" replace />} />
           <Route path="/:lang" element={<LangLayout />}>
