@@ -73,25 +73,46 @@ let seedPromise: Promise<void> | null = null;
 async function seedIfEmpty() {
   if (seedPromise) return seedPromise;
   seedPromise = (async () => {
-    // Check if we have the right number of tools
     const { count } = await supabase
       .from("tools")
       .select("*", { count: "exact", head: true });
 
-    // If we already have 200+ tools, skip seeding
     if (count && count >= 200) return;
 
-    // Call edge function with service role to seed data
-    console.log("Seeding data via edge function...");
-    const { data, error } = await supabase.functions.invoke("seed-content", {
-      body: { tools: (contentJson as any).tools },
-    });
+    console.log(`Seeding: found ${count} tools, need 200+. Starting seed via edge function...`);
 
-    if (error) {
-      console.error("Seed edge function error:", error);
-    } else {
-      console.log("Seed result:", data);
+    // Step 1: Cleanup + insert categories
+    const cats = (contentJson as any).categories.map((c: any) => ({
+      id: c.id,
+      name: c.name,
+      slug: c.slug || c.id,
+      description: c.description || "",
+    }));
+
+    const { data: cleanupResult, error: cleanupError } = await supabase.functions.invoke("seed-content", {
+      body: { action: "cleanup", categories: cats },
+    });
+    console.log("Cleanup result:", cleanupResult, cleanupError);
+
+    // Step 2: Insert tools in batches of 15
+    const allTools = (contentJson as any).tools;
+    const batchSize = 15;
+    let totalInserted = 0;
+
+    for (let i = 0; i < allTools.length; i += batchSize) {
+      const batch = allTools.slice(i, i + batchSize);
+      const { data, error } = await supabase.functions.invoke("seed-content", {
+        body: { action: "insert_tools", tools: batch },
+      });
+      if (error) {
+        console.error(`Batch ${i} error:`, error, data);
+        break;
+      }
+      totalInserted += batch.length;
+      console.log(`Inserted batch ${i}-${i + batch.length}: ${totalInserted}/${allTools.length}`);
     }
+
+    console.log(`Seed complete: ${totalInserted} tools inserted`);
   })();
   return seedPromise;
 }
@@ -140,26 +161,26 @@ export function useToolBySlug(slug: string | undefined) {
     if (!slug) { setLoading(false); return; }
     (async () => {
       await seedIfEmpty();
-      const { data, error } = await supabase
+      // Try by slug first, then by id
+      let { data, error } = await supabase
         .from("tools")
         .select("*")
         .eq("slug", slug)
-        .single();
-      if (!error && data) {
-        setTool(mapSupabaseTool(data));
-      } else {
-        // Try by ID as fallback
-        const { data: data2, error: error2 } = await supabase
+        .maybeSingle();
+      
+      if (!data) {
+        ({ data, error } = await supabase
           .from("tools")
           .select("*")
           .eq("id", slug)
-          .single();
-        if (!error2 && data2) {
-          setTool(mapSupabaseTool(data2));
-        } else {
-          const found = staticTools.find((t) => t.slug === slug || t.id === slug);
-          setTool(found || null);
-        }
+          .maybeSingle());
+      }
+
+      if (data) {
+        setTool(mapSupabaseTool(data));
+      } else {
+        const found = staticTools.find((t) => t.slug === slug || t.id === slug);
+        setTool(found || null);
       }
       setLoading(false);
     })();
