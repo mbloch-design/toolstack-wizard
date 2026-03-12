@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useTools, getToolLogoUrl } from "@/hooks/useSupabaseData";
+import { useTools } from "@/hooks/useSupabaseData";
 import {
   SelectorFormData, ScoredTool, SelectorResults,
   TJM_OPTIONS, PERSONAS, PHASE_OPTIONS,
