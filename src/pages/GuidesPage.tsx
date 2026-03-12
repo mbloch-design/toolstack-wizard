@@ -25,9 +25,6 @@ const GuidesPage = () => {
     document.title = title;
     const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (metaDesc) metaDesc.content = desc;
-
-    // hreflang
-    const { setHreflang } = await_import;
     setHreflang(`/${lang}/guides`);
   }, [lang]);
 
