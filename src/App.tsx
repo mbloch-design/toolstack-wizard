@@ -21,7 +21,6 @@ import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
-import UpdateToolsPage from "@/pages/UpdateToolsPage";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
