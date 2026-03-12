@@ -72,11 +72,11 @@ const ToolsPage = () => {
                   <div className="flex items-center justify-between">
                     <h3 className="font-heading font-semibold group-hover:text-primary">{tool.name}</h3>
                     <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                      tool.pricing === "free" ? "bg-accent text-accent-foreground" :
-                      tool.pricing === "freemium" ? "bg-secondary text-secondary-foreground" :
+                      tool.defaultMonthlyPrice === 0 ? "bg-accent text-accent-foreground" :
+                      tool.pricing?.free ? "bg-secondary text-secondary-foreground" :
                       "bg-muted text-muted-foreground"
                     }`}>
-                      {tool.pricing}
+                      {tool.defaultMonthlyPrice === 0 ? (tool.pricing?.free ? "Freemium" : t("Gratuit", "Free")) : t("Payant", "Paid")}
                     </span>
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">{t(tool.shortDescription, tool.shortDescriptionEn || tool.shortDescription)}</p>
