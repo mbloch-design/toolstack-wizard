@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          ai_usage_level: string | null
+          created_at: string
+          current_tools: string | null
+          email: string
+          first_name: string | null
+          id: number
+          job_role: string | null
+          main_goal: string | null
+          marketing_opt_in: boolean
+          source: string
+          user_type: string | null
+        }
+        Insert: {
+          ai_usage_level?: string | null
+          created_at?: string
+          current_tools?: string | null
+          email: string
+          first_name?: string | null
+          id?: never
+          job_role?: string | null
+          main_goal?: string | null
+          marketing_opt_in?: boolean
+          source?: string
+          user_type?: string | null
+        }
+        Update: {
+          ai_usage_level?: string | null
+          created_at?: string
+          current_tools?: string | null
+          email?: string
+          first_name?: string | null
+          id?: never
+          job_role?: string | null
+          main_goal?: string | null
+          marketing_opt_in?: boolean
+          source?: string
+          user_type?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
