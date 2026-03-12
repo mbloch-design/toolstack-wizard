@@ -57,7 +57,7 @@ function computeValueIndex(tool: Tool, tjmMedian: number): { valueIndex: number;
   const hours = tool.timeGainedHoursPerMonth || 0;
   const valueCreated = hours * tjmH;
   const raw = valueCreated / (tool.defaultMonthlyPrice + 1);
-  const normalized = Math.min((raw / 30) * 100, 100);
+  const normalized = Math.min((raw / 50) * 100, 100);
   return { valueIndex: Math.round(normalized), valueCreated: Math.round(valueCreated) };
 }
 
