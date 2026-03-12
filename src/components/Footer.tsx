@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="container">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
-            <p className="font-heading text-lg font-bold">Tool<span className="text-primary">trim</span></p>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="text-lg font-extrabold tracking-tighter">Tool<span className="text-primary">trim</span></p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {t("Arrêtez de payer trop cher pour vos outils.", "Stop overpaying for your tools.")}
             </p>
           </div>

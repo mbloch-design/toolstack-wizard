@@ -36,7 +36,7 @@ const ToolDetailPage = () => {
         <div className="flex items-start gap-4">
           <span className="text-4xl">{tool.logo}</span>
           <div>
-            <h1 className="font-heading text-3xl font-bold">{tool.name}</h1>
+            <h1 className="text-3xl font-extrabold tracking-tighter">{tool.name}</h1>
             {category && (
               <Link to={`${prefix}/category/${category.slug}`} className="mt-1 inline-block text-sm text-primary hover:underline">
                 {t(category.name, category.nameEn)}
@@ -45,11 +45,11 @@ const ToolDetailPage = () => {
           </div>
         </div>
 
-        <p className="mt-6 text-lg text-muted-foreground">{tool.longDescription || tool.description || tool.shortDescription}</p>
+        <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{tool.longDescription || tool.description || tool.shortDescription}</p>
 
         {/* Pricing */}
         <div className="mt-8 rounded-xl border border-border bg-card p-5">
-          <h2 className="font-heading text-lg font-semibold">{t("Tarification", "Pricing")}</h2>
+          <h2 className="text-lg font-semibold tracking-tighter">{t("Tarification", "Pricing")}</h2>
           <div className="mt-3 space-y-2">
             {tool.pricing?.free && (
               <p className="text-sm"><span className="font-medium text-keep">✓ {t("Gratuit :", "Free:")}</span> {tool.pricing.free}</p>
@@ -65,7 +65,7 @@ const ToolDetailPage = () => {
 
         {/* Verdict */}
         <div className="mt-6 rounded-xl border border-primary/20 bg-accent/50 p-5">
-          <h2 className="font-heading text-lg font-semibold">{t("Notre verdict", "Our verdict")}</h2>
+          <h2 className="text-lg font-semibold tracking-tighter">{t("Notre verdict", "Our verdict")}</h2>
           <div className="mt-3 space-y-3 text-sm">
             <div>
               <span className="font-medium text-keep">✓ {t("Gardez si :", "Keep if:")}</span>
@@ -90,7 +90,7 @@ const ToolDetailPage = () => {
         {/* Pros/Cons */}
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-keep/20 bg-card p-5">
-            <h3 className="font-heading font-semibold text-keep">{t("Avantages", "Pros")}</h3>
+            <h3 className="font-semibold text-keep">{t("Avantages", "Pros")}</h3>
             <ul className="mt-3 space-y-2">
               {tool.pros.map((pro) => (
                 <li key={pro} className="flex items-start gap-2 text-sm">
@@ -101,7 +101,7 @@ const ToolDetailPage = () => {
             </ul>
           </div>
           <div className="rounded-xl border border-cancel/20 bg-card p-5">
-            <h3 className="font-heading font-semibold text-cancel">{t("Inconvénients", "Cons")}</h3>
+            <h3 className="font-semibold text-cancel">{t("Inconvénients", "Cons")}</h3>
             <ul className="mt-3 space-y-2">
               {tool.cons.map((con) => (
                 <li key={con} className="flex items-start gap-2 text-sm">
@@ -119,7 +119,7 @@ const ToolDetailPage = () => {
             href={tool.affiliateLink || tool.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/85"
           >
             {t("Essayer", "Try")} {tool.name} <ExternalLink className="h-4 w-4" />
           </a>
@@ -128,7 +128,7 @@ const ToolDetailPage = () => {
         {/* Alternatives */}
         {alternatives.length > 0 && (
           <div className="mt-12">
-            <h2 className="font-heading text-xl font-bold">{t("Alternatives", "Alternatives")}</h2>
+            <h2 className="text-xl font-bold tracking-tighter">{t("Alternatives", "Alternatives")}</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               {alternatives.map((alt) => (
                 <Link

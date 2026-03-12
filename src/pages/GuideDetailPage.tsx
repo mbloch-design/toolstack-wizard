@@ -38,10 +38,10 @@ const GuideDetailPage = () => {
           <p className="text-sm text-muted-foreground">
             {post.date} · {post.readTime} · {post.category}
           </p>
-          <h1 className="mt-2 font-heading text-3xl font-bold leading-tight md:text-4xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
             {post.title}
           </h1>
-          <p className="mt-3 text-lg text-muted-foreground">{post.excerpt}</p>
+          <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{post.excerpt}</p>
           {post.tags && post.tags.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
               {post.tags.map((tag) => (
@@ -55,7 +55,7 @@ const GuideDetailPage = () => {
 
         <div
           className="prose prose-neutral dark:prose-invert max-w-none
-            prose-headings:font-heading prose-headings:font-bold
+            prose-headings:font-bold prose-headings:tracking-tighter
             prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
             prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
             prose-p:leading-relaxed prose-p:text-foreground/90
@@ -73,14 +73,8 @@ const GuideDetailPage = () => {
 // Simple markdown to HTML converter
 function markdownToHtml(md: string): string {
   let html = md;
-
-  // Images: ![alt](url)
   html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy" />');
-
-  // Links: [text](url)
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-
-  // Tables
   html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (_match, header, _sep, body) => {
     const headers = header.split("|").filter((c: string) => c.trim());
     const rows = body.trim().split("\n").map((r: string) => r.split("|").filter((c: string) => c.trim()));
@@ -88,37 +82,20 @@ function markdownToHtml(md: string): string {
     const trs = rows.map((r: string[]) => `<tr>${r.map((c: string) => `<td>${c.trim()}</td>`).join("")}</tr>`).join("");
     return `<table><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table>`;
   });
-
-  // Headers
   html = html.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
   html = html.replace(/^### (.+)$/gm, "<h3>$1</h3>");
   html = html.replace(/^## (.+)$/gm, "<h2>$1</h2>");
   html = html.replace(/^# (.+)$/gm, "<h1>$1</h1>");
-
-  // Bold and italic
   html = html.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
   html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   html = html.replace(/\*(.+?)\*/g, "<em>$1</em>");
-
-  // Unordered lists
   html = html.replace(/^- (.+)$/gm, "<li>$1</li>");
   html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul>$1</ul>");
-
-  // Ordered lists
   html = html.replace(/^\d+\. (.+)$/gm, "<li>$1</li>");
-
-  // Checkboxes
   html = html.replace(/- ☐ (.+)/g, '<li class="list-none">☐ $1</li>');
-
-  // Horizontal rules
   html = html.replace(/^---$/gm, "<hr />");
-
-  // Paragraphs (lines that aren't already HTML)
   html = html.replace(/^(?!<[a-z]|$)(.+)$/gm, "<p>$1</p>");
-
-  // Clean up empty paragraphs
   html = html.replace(/<p>\s*<\/p>/g, "");
-
   return html;
 }
 

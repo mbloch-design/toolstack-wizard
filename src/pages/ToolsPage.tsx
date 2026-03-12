@@ -20,8 +20,8 @@ const ToolsPage = () => {
   return (
     <div className="py-12">
       <div className="container">
-        <h1 className="font-heading text-3xl font-bold md:text-4xl">{t("Catalogue d'outils", "Tool catalog")}</h1>
-        <p className="mt-2 text-muted-foreground">{t(`${tools.length}+ outils analysés et comparés.`, `${tools.length}+ tools analyzed and compared.`)}</p>
+        <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">{t("Catalogue d'outils", "Tool catalog")}</h1>
+        <p className="mt-2 leading-relaxed text-muted-foreground">{t(`${tools.length}+ outils analysés et comparés.`, `${tools.length}+ tools analyzed and compared.`)}</p>
 
         {/* Filters */}
         <div className="mt-8 flex flex-col gap-4 md:flex-row">
@@ -70,7 +70,7 @@ const ToolsPage = () => {
                 <span className="text-2xl">{tool.logo}</span>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <h3 className="font-heading font-semibold group-hover:text-primary">{tool.name}</h3>
+                    <h3 className="font-semibold group-hover:text-primary">{tool.name}</h3>
                     <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                       tool.defaultMonthlyPrice === 0 ? "bg-accent text-accent-foreground" :
                       tool.pricing?.free ? "bg-secondary text-secondary-foreground" :
@@ -79,7 +79,7 @@ const ToolsPage = () => {
                       {tool.defaultMonthlyPrice === 0 ? (tool.pricing?.free ? "Freemium" : t("Gratuit", "Free")) : t("Payant", "Paid")}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{t(tool.shortDescription, tool.shortDescriptionEn || tool.shortDescription)}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t(tool.shortDescription, tool.shortDescriptionEn || tool.shortDescription)}</p>
                   {tool.defaultMonthlyPrice > 0 && (
                     <p className="mt-2 text-xs text-muted-foreground">{t("À partir de", "From")} {tool.defaultMonthlyPrice}€/{t("mois", "mo")}</p>
                   )}
