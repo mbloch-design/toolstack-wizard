@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
