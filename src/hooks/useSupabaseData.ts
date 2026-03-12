@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import type { Tool, Category } from "@/data/types";
+import type { Tool, Category, BlogPost } from "@/data/types";
 import contentJson from "@/data/content.json";
 
 // Static fallback data from content.json
