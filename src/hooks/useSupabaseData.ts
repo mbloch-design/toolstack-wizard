@@ -73,55 +73,24 @@ let seedPromise: Promise<void> | null = null;
 async function seedIfEmpty() {
   if (seedPromise) return seedPromise;
   seedPromise = (async () => {
-    // Check if tools exist
-    const { data: existingTools } = await supabase
+    // Check if we have the right number of tools
+    const { count } = await supabase
       .from("tools")
-      .select("id")
-      .limit(1);
+      .select("*", { count: "exact", head: true });
 
-    if (existingTools && existingTools.length > 0) return;
+    // If we already have 200+ tools, skip seeding
+    if (count && count >= 200) return;
 
-    // Delete old data
-    await supabase.from("tools").delete().neq("id", "___none___");
-    await supabase.from("categories").delete().neq("id", "___none___");
+    // Call edge function with service role to seed data
+    console.log("Seeding data via edge function...");
+    const { data, error } = await supabase.functions.invoke("seed-content", {
+      body: { tools: (contentJson as any).tools },
+    });
 
-    // Insert categories
-    const catRows = staticCategories.map((c) => ({
-      id: c.id,
-      name: c.name,
-      slug: c.slug,
-      description: c.description,
-    }));
-    await supabase.from("categories").insert(catRows as any);
-
-    // Insert tools in batches of 20
-    const toolRows = staticTools.map((t) => ({
-      id: t.id,
-      name: t.name,
-      slug: t.slug || t.id,
-      category: t.categoryId,
-      short_description: t.shortDescription,
-      long_description: t.longDescription,
-      affiliate_link: t.affiliateLink,
-      default_monthly_price: t.defaultMonthlyPrice,
-      pricing: t.pricing,
-      solo_relevance: t.soloRelevance,
-      team_relevance: t.teamRelevance,
-      verdict: t.verdict,
-      pros: t.pros,
-      cons: t.cons,
-      use_cases: t.useCases,
-      covers: t.covers,
-      relevant_for: t.relevantFor,
-      alternatives: t.alternatives,
-      seo: t.seo,
-      articles: t.articles,
-    }));
-
-    const batchSize = 20;
-    for (let i = 0; i < toolRows.length; i += batchSize) {
-      const batch = toolRows.slice(i, i + batchSize);
-      await supabase.from("tools").insert(batch as any);
+    if (error) {
+      console.error("Seed edge function error:", error);
+    } else {
+      console.log("Seed result:", data);
     }
   })();
   return seedPromise;
@@ -152,7 +121,7 @@ export function useTools() {
   useEffect(() => {
     (async () => {
       await seedIfEmpty();
-      const { data, error } = await supabase.from("tools").select("*");
+      const { data, error } = await supabase.from("tools").select("*").limit(500);
       if (!error && data && data.length > 0) {
         setTools(data.map(mapSupabaseTool));
       }
@@ -179,8 +148,18 @@ export function useToolBySlug(slug: string | undefined) {
       if (!error && data) {
         setTool(mapSupabaseTool(data));
       } else {
-        const found = staticTools.find((t) => t.slug === slug || t.id === slug);
-        setTool(found || null);
+        // Try by ID as fallback
+        const { data: data2, error: error2 } = await supabase
+          .from("tools")
+          .select("*")
+          .eq("id", slug)
+          .single();
+        if (!error2 && data2) {
+          setTool(mapSupabaseTool(data2));
+        } else {
+          const found = staticTools.find((t) => t.slug === slug || t.id === slug);
+          setTool(found || null);
+        }
       }
       setLoading(false);
     })();
