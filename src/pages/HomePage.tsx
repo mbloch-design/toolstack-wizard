@@ -5,7 +5,7 @@ import { useEffect, useMemo } from "react";
 import { ArrowRight, TrendingDown, Zap, Search, Check, BarChart3, Shield } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
-import { setSeoTags, setJsonLd, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 
 const TRUSTED_LOGOS = [
   { name: "Notion", domain: "notion.so" },
