@@ -7,7 +7,7 @@ import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolMentionedCard } from "@/components/ToolMentionedCard";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setMeta, setJsonLd, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
