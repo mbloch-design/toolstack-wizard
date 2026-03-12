@@ -71,9 +71,9 @@ const HomePage = () => {
                 {TRUSTED_LOGOS.map((logo) => (
                   <img
                     key={logo.domain}
-                    src={`https://logo.clearbit.com/${logo.domain}`}
+                    src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`}
                     alt={logo.name}
-                    className="h-7 opacity-40 grayscale transition-all hover:opacity-70 hover:grayscale-0"
+                    className="h-7 w-7 opacity-40 grayscale transition-all hover:opacity-70 hover:grayscale-0"
                     loading="lazy"
                   />
                 ))}
