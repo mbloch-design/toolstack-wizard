@@ -13,6 +13,19 @@ const GuidesPage = () => {
   const { tools } = useTools();
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
+  // SEO for listing page
+  useEffect(() => {
+    const title = lang === "fr"
+      ? "Guides & Comparatifs d'outils SaaS — ToolTrim"
+      : "SaaS Tool Guides & Comparisons — ToolTrim";
+    const desc = lang === "fr"
+      ? "Analyses approfondies, comparatifs détaillés et conseils pratiques pour construire la stack d'outils parfaite."
+      : "In-depth analyses, detailed comparisons and practical advice to build the perfect tool stack.";
+    document.title = title;
+    const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (metaDesc) metaDesc.content = desc;
+  }, [lang]);
+
   const allCategories = useMemo(() => {
     const cats = new Set(posts.map((p) => p.category).filter(Boolean));
     return Array.from(cats);
