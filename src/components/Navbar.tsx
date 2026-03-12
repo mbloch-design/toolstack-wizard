@@ -3,6 +3,7 @@ import { useLang } from "@/hooks/useLang";
 import { useTheme } from "@/hooks/useTheme";
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { useState } from "react";
+import pictoLogo from "@/assets/picto-logo.svg";
 
 const Navbar = () => {
   const { t, prefix, lang } = useLang();
@@ -13,7 +14,8 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between">
-        <Link to={prefix} className="text-xl font-extrabold tracking-tighter">
+        <Link to={prefix} className="flex items-center gap-2 text-xl font-extrabold tracking-tighter">
+          <img src={pictoLogo} alt="ToolTrim" className="h-8 w-8 rounded-lg" />
           Tool<span className="text-primary">trim</span>
         </Link>
 
