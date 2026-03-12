@@ -55,7 +55,7 @@ const HomePage = () => {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "ToolTrim",
-      url: "https://tooltrim.com",
+      url: "https://tooltrim.io",
       description: desc,
       potentialAction: {
         "@type": "SearchAction",
