@@ -59,7 +59,7 @@ const HomePage = () => {
       description: desc,
       potentialAction: {
         "@type": "SearchAction",
-        target: `https://tooltrim.com/${lang}/tools?q={search_term_string}`,
+        target: `https://tooltrim.io/${lang}/tools?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
     });
