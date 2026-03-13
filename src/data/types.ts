@@ -300,6 +300,7 @@ export interface SelectorResults {
   isStackFree?: boolean;
   hasAiDoublon?: boolean;
   fewRecommendations?: boolean;
+  questionTools?: Tool[];
 }
 
 // Legacy types kept for compat
