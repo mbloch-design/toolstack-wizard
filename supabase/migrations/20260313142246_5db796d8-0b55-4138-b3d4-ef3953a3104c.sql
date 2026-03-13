@@ -1,0 +1,1 @@
+ALTER TABLE public.tools ALTER COLUMN default_monthly_price TYPE numeric USING default_monthly_price::numeric;
