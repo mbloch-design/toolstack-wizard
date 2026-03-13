@@ -46,6 +46,7 @@ export interface Tool {
   useCases?: string[];
   covers?: string[];
   relevantFor: string[];
+  personas?: string[];
   websiteUrl?: string;
   affiliateLink: string;
   logo?: string;
