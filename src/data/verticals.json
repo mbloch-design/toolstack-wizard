@@ -1,0 +1,340 @@
+{
+  "graphiste-da": {
+    "family": "creatif",
+    "label": "Graphiste / Directeur artistique",
+    "functional_needs": [
+      "design-visuel",
+      "typographie",
+      "print",
+      "identite-visuelle",
+      "retouche-photo",
+      "illustration-vectorielle",
+      "mise-en-page",
+      "gestion-assets",
+      "livraison-client",
+      "versioning-fichiers"
+    ]
+  },
+  "motion-video": {
+    "family": "creatif",
+    "label": "Motion designer / Vidéaste",
+    "functional_needs": [
+      "montage-video",
+      "motion-design",
+      "color-grading",
+      "effets-visuels",
+      "rendu-video",
+      "review-client-video",
+      "gestion-proxies",
+      "stockage-massif",
+      "export-multi-formats",
+      "animation-2d-3d"
+    ]
+  },
+  "photographe": {
+    "family": "creatif",
+    "label": "Photographe",
+    "functional_needs": [
+      "retouche-photo",
+      "gestion-raw",
+      "galerie-client",
+      "backup-photos",
+      "watermark",
+      "vente-prints",
+      "color-grading",
+      "catalogage",
+      "livraison-client"
+    ]
+  },
+  "ux-ui": {
+    "family": "creatif",
+    "label": "Designer UX/UI",
+    "functional_needs": [
+      "prototypage-interactif",
+      "tests-utilisateurs",
+      "handoff-dev",
+      "design-system",
+      "wireframing",
+      "user-research",
+      "design-visuel",
+      "collaboration-equipe",
+      "composants-ui"
+    ]
+  },
+  "illustrateur": {
+    "family": "creatif",
+    "label": "Illustrateur / Character designer",
+    "functional_needs": [
+      "dessin-numerique",
+      "illustration-vectorielle",
+      "gestion-assets",
+      "vente-directe",
+      "portfolio",
+      "licence-commerciale"
+    ]
+  },
+  "architecte-bim": {
+    "family": "creatif",
+    "label": "Architecte / Designer spatial",
+    "functional_needs": [
+      "modelisation-3d",
+      "bim",
+      "plans-techniques",
+      "rendu-3d",
+      "collaboration-projet",
+      "gestion-fichiers-lourds",
+      "presentation-client",
+      "maquette-numerique"
+    ]
+  },
+  "scenographe": {
+    "family": "creatif",
+    "label": "Scénographe / Event designer",
+    "functional_needs": [
+      "moodboard",
+      "presentation-client",
+      "plans-2d",
+      "modelisation-3d",
+      "gestion-projet",
+      "sourcing-fournisseurs",
+      "budget-evenement"
+    ]
+  },
+  "developpeur-solo": {
+    "family": "tech",
+    "label": "Développeur solo / Indie hacker",
+    "functional_needs": [
+      "versioning-code",
+      "deploiement",
+      "base-de-donnees",
+      "monitoring",
+      "ci-cd",
+      "auth",
+      "hosting",
+      "code-review",
+      "bug-tracking",
+      "documentation"
+    ]
+  },
+  "cto-lead-tech": {
+    "family": "tech",
+    "label": "CTO / Lead tech",
+    "functional_needs": [
+      "observabilite",
+      "iam",
+      "gestion-incidents",
+      "roadmap-technique",
+      "code-review",
+      "documentation",
+      "securite",
+      "ci-cd",
+      "gestion-equipe-tech",
+      "architecture-cloud"
+    ]
+  },
+  "data-analyst": {
+    "family": "tech",
+    "label": "Data analyst / Data scientist",
+    "functional_needs": [
+      "data-warehouse",
+      "visualisation-donnees",
+      "sql",
+      "notebooks",
+      "etl",
+      "dashboards",
+      "reporting",
+      "collaboration-data",
+      "versioning-donnees"
+    ]
+  },
+  "product-manager": {
+    "family": "tech",
+    "label": "Product manager",
+    "functional_needs": [
+      "roadmap-produit",
+      "discovery",
+      "analytics-produit",
+      "feedback-utilisateurs",
+      "priorisation",
+      "documentation",
+      "wireframing",
+      "collaboration-equipe",
+      "kpi-tracking"
+    ]
+  },
+  "ai-builder": {
+    "family": "tech",
+    "label": "Solopreneur IA / AI builder",
+    "functional_needs": [
+      "orchestration-agents",
+      "api-management",
+      "fine-tuning",
+      "prompting",
+      "automatisation",
+      "deploiement",
+      "gestion-tokens",
+      "no-code-ia",
+      "integration-llm"
+    ]
+  },
+  "consultant-b2b": {
+    "family": "conseil",
+    "label": "Consultant indépendant B2B",
+    "functional_needs": [
+      "crm-leger",
+      "gestion-missions",
+      "facturation",
+      "signature-contrats",
+      "prise-de-rdv",
+      "video-async",
+      "partage-documents",
+      "suivi-temps",
+      "relance-client"
+    ]
+  },
+  "coach-formateur": {
+    "family": "conseil",
+    "label": "Coach / Formateur",
+    "functional_needs": [
+      "lms",
+      "sessions-live",
+      "paiement-abonnements",
+      "communaute",
+      "creation-cours",
+      "prise-de-rdv",
+      "emailing",
+      "certification",
+      "replay-video"
+    ]
+  },
+  "rh-recruteur": {
+    "family": "conseil",
+    "label": "RH / Recruteur",
+    "functional_needs": [
+      "ats",
+      "sourcing",
+      "scoring-candidats",
+      "onboarding",
+      "entretiens-video",
+      "gestion-pipeline-rh",
+      "signature-contrats"
+    ]
+  },
+  "createur-contenu": {
+    "family": "content",
+    "label": "Créateur de contenu",
+    "functional_needs": [
+      "montage-video-court",
+      "creation-visuels",
+      "planification-reseaux",
+      "seo-video",
+      "analytics-contenu",
+      "monetisation",
+      "gestion-communaute",
+      "sous-titrage",
+      "repurposing"
+    ]
+  },
+  "newslettiste-auteur": {
+    "family": "content",
+    "label": "Newslettiste / Auteur",
+    "functional_needs": [
+      "editeur-email",
+      "liste-abonnes",
+      "monetisation-newsletter",
+      "segmentation",
+      "analytics-email",
+      "redaction",
+      "publication",
+      "automation-email"
+    ]
+  },
+  "podcasteur": {
+    "family": "content",
+    "label": "Podcasteur",
+    "functional_needs": [
+      "enregistrement-multipistes",
+      "montage-audio",
+      "distribution-podcast",
+      "transcription",
+      "chapitrage",
+      "hebergement-audio",
+      "analytics-podcast",
+      "livraison-invites"
+    ]
+  },
+  "community-manager": {
+    "family": "content",
+    "label": "Community manager / Social media",
+    "functional_needs": [
+      "planification-posts",
+      "multi-plateformes",
+      "veille",
+      "reporting-client",
+      "creation-visuels",
+      "gestion-commentaires",
+      "analytics-reseaux",
+      "collaboration-client"
+    ]
+  },
+  "fondateur-saas": {
+    "family": "business",
+    "label": "Fondateur B2B SaaS",
+    "functional_needs": [
+      "analytics-produit",
+      "support-client",
+      "billing",
+      "roadmap-produit",
+      "onboarding-users",
+      "churn-analysis",
+      "funnel-acquisition",
+      "crm",
+      "run-rate"
+    ]
+  },
+  "ecommercant": {
+    "family": "business",
+    "label": "E-commerçant",
+    "functional_needs": [
+      "gestion-boutique",
+      "email-marketing",
+      "support-ecom",
+      "analytics-attribution",
+      "gestion-avis",
+      "subscriptions",
+      "gestion-stock",
+      "publicite-digitale",
+      "retention"
+    ]
+  },
+  "manager-dsi": {
+    "family": "business",
+    "label": "Manager / DSI",
+    "functional_needs": [
+      "iam",
+      "gestion-licences",
+      "securite",
+      "sirh",
+      "gestion-equipe",
+      "communication-interne",
+      "audit-it",
+      "gestion-projets",
+      "documentation-interne"
+    ]
+  },
+  "daf-finance": {
+    "family": "business",
+    "label": "DAF / Responsable finance",
+    "functional_needs": [
+      "consolidation-depenses",
+      "renouvellements-licences",
+      "facturation",
+      "tva",
+      "audit",
+      "reporting-financier",
+      "gestion-notes-frais",
+      "previsionnel",
+      "paie"
+    ]
+  }
+}
