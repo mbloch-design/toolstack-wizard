@@ -8,8 +8,10 @@ import {
   TjmRange, ProjectPhase, TechMaturity,
   VERTICAL_FAMILIES, FAMILY_ACTIVITIES, VerticalFamily,
   TIME_WEIGHT_OPTIONS, TimeWeight, VerticalWeight,
+  ToolType,
 } from "@/data/types";
-import { ArrowLeft, ArrowRight, Check, Loader2, Search, X, RotateCcw } from "lucide-react";
+import { verticals as VERTICALS_MAP } from "@/data/content";
+import { ArrowLeft, ArrowRight, Check, Loader2, Search, X, RotateCcw, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { getToolLogoUrl } from "@/hooks/useSupabaseData";
@@ -21,21 +23,12 @@ const STEPS = 6;
 const STEP_LABELS_FR = ["Profil", "Pondération", "Business", "Objectif", "Outils", "Email"];
 const STEP_LABELS_EN = ["Profile", "Weighting", "Business", "Goal", "Tools", "Email"];
 
-const POPULAR_TOOL_IDS = [
-  "chatgpt", "claude", "notion", "canva", "slack", "figma",
-  "calendly", "make", "loom", "grammarly", "zoom", "google-drive",
-];
-
-const CATEGORY_CHIPS: { id: string; label: string; labelEn: string }[] = [
-  { id: "all", label: "Tous", labelEn: "All" },
-  { id: "ai-general", label: "IA", labelEn: "AI" },
-  { id: "organization", label: "Organisation", labelEn: "Organization" },
-  { id: "communication", label: "Communication", labelEn: "Communication" },
-  { id: "design-tools", label: "Design", labelEn: "Design" },
-  { id: "automation", label: "Automatisation", labelEn: "Automation" },
-  { id: "finance", label: "Finance", labelEn: "Finance" },
-  { id: "nocode-web", label: "No-code", labelEn: "No-code" },
-  { id: "creation", label: "Création", labelEn: "Creation" },
+const TOOL_LAYERS: { type: ToolType; emoji: string; label: string; labelEn: string; desc: string; descEn: string }[] = [
+  { type: "metier", emoji: "🏗️", label: "Outils métier", labelEn: "Core tools", desc: "Logiciels essentiels à votre activité", descEn: "Essential software for your activity" },
+  { type: "plugin", emoji: "🔌", label: "Plugins & extensions", labelEn: "Plugins & extensions", desc: "Extensions qui enrichissent vos outils métier", descEn: "Extensions that enhance your core tools" },
+  { type: "ia", emoji: "🤖", label: "Intelligence artificielle", labelEn: "Artificial intelligence", desc: "Assistants et agents IA", descEn: "AI assistants and agents" },
+  { type: "gestion", emoji: "📋", label: "Gestion & organisation", labelEn: "Management & organization", desc: "Suivi projet, facturation, communication", descEn: "Project tracking, billing, communication" },
+  { type: "satellite", emoji: "🛰️", label: "Satellites", labelEn: "Satellites", desc: "Outils complémentaires et utilitaires", descEn: "Complementary tools and utilities" },
 ];
 
 const INITIAL_FORM: SelectorFormData = {
