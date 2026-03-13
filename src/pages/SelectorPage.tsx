@@ -55,29 +55,60 @@ const TOOL_TYPE_LABELS: Record<string, { label: string; labelEn: string; color: 
   satellite: { label: "Satellite", labelEn: "Misc", color: "bg-muted text-muted-foreground" },
 };
 
+/* ─── Multi-fallback Logo ─── */
+function ToolLogo({ tool, size = 28 }: { tool: Tool; size?: number }) {
+  const googleUrl = getToolLogoUrl(tool);
+  const hdUrl = getToolLogoUrlHD(tool);
+  const [src, setSrc] = useState<string | null>(hdUrl || googleUrl);
+  const [failed, setFailed] = useState(0);
+
+  const handleError = () => {
+    if (failed === 0 && hdUrl && googleUrl) {
+      setSrc(googleUrl);
+      setFailed(1);
+    } else {
+      setFailed(2);
+    }
+  };
+
+  if (!src || failed >= 2) {
+    return (
+      <div
+        className="flex shrink-0 items-center justify-center rounded-lg bg-secondary text-foreground font-bold"
+        style={{ width: size, height: size, fontSize: size * 0.38 }}
+      >
+        {tool.name.charAt(0).toUpperCase()}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={`${tool.name} logo`}
+      className="shrink-0 rounded-lg object-contain bg-white dark:bg-secondary/50"
+      style={{ width: size, height: size }}
+      loading="lazy"
+      onError={handleError}
+    />
+  );
+}
+
 /* ─── Compact Tool Row ─── */
 function ToolRow({ tool, selected, onToggle, lang, highlighted }: { tool: Tool; selected: boolean; onToggle: () => void; lang: string; highlighted?: boolean }) {
-  const logoUrl = getToolLogoUrl(tool);
-  const [logoFailed, setLogoFailed] = useState(false);
   const typeInfo = TOOL_TYPE_LABELS[tool.tool_type || "satellite"] || TOOL_TYPE_LABELS.satellite;
   return (
     <button
       onClick={onToggle}
-      className={`group flex items-center gap-2.5 rounded-lg border px-3 py-2 text-left transition-all ${
+      className={`group flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-left transition-all w-full ${
         selected
-          ? "border-primary bg-accent ring-1 ring-primary/20"
+          ? "bg-accent ring-1 ring-primary/20"
           : highlighted
-          ? "border-primary/20 bg-primary/[0.03] hover:bg-primary/[0.06]"
-          : "border-transparent hover:bg-secondary/60"
+          ? "bg-primary/[0.03] hover:bg-primary/[0.06]"
+          : "hover:bg-secondary/60"
       }`}
     >
-      {/* Logo */}
-      {logoUrl && !logoFailed ? (
-        <img src={logoUrl} alt="" className="h-7 w-7 shrink-0 rounded-md object-contain bg-secondary/50" loading="lazy" onError={() => setLogoFailed(true)} />
-      ) : (
-        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-secondary text-[10px] font-bold text-foreground">{tool.name.charAt(0).toUpperCase()}</div>
-      )}
-      {/* Name + type */}
+      <ToolLogo tool={tool} size={28} />
       <div className="flex-1 min-w-0">
         <p className="text-sm font-medium truncate leading-tight">{tool.name}</p>
         <div className="flex items-center gap-1.5 mt-0.5">
@@ -89,7 +120,6 @@ function ToolRow({ tool, selected, onToggle, lang, highlighted }: { tool: Tool; 
           </span>
         </div>
       </div>
-      {/* Toggle */}
       {selected ? (
         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary transition-transform group-hover:scale-110"><Check className="h-3 w-3 text-primary-foreground" /></div>
       ) : (
@@ -101,10 +131,7 @@ function ToolRow({ tool, selected, onToggle, lang, highlighted }: { tool: Tool; 
 
 /* ─── Mini Logo for chips ─── */
 function ToolMiniLogo({ tool }: { tool: Tool }) {
-  const logoUrl = getToolLogoUrl(tool);
-  const [err, setErr] = useState(false);
-  if (!logoUrl || err) return <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded bg-secondary text-[9px] font-bold">{tool.name.charAt(0)}</span>;
-  return <img src={logoUrl} alt="" className="h-4 w-4 shrink-0 rounded object-contain" loading="lazy" onError={() => setErr(true)} />;
+  return <ToolLogo tool={tool} size={16} />;
 }
 
 function OptionCard({ selected, onClick, emoji, label, desc, compact }: {
