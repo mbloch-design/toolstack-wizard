@@ -1,7 +1,9 @@
-import type { Tool, Category, BlogPost } from "./types";
+import type { Tool, Category, BlogPost, Vertical } from "./types";
 import contentJson from "./content.json";
+import toolsV4Json from "./tools_v4.json";
+import verticalsJson from "./verticals.json";
 
-// Re-export data from content.json
+// Re-export categories from content.json
 export const categories: Category[] = (contentJson as any).categories.map((c: any) => ({
   id: c.id,
   slug: c.slug,
@@ -10,7 +12,8 @@ export const categories: Category[] = (contentJson as any).categories.map((c: an
   tools: c.tools,
 }));
 
-export const tools: Tool[] = (contentJson as any).tools.map((t: any) => ({
+// Tools from v4 enriched data
+export const tools: Tool[] = (toolsV4Json as any[]).map((t: any) => ({
   id: t.id,
   slug: t.slug || t.id,
   name: t.name,
@@ -34,7 +37,26 @@ export const tools: Tool[] = (contentJson as any).tools.map((t: any) => ({
   articles: t.articles || [],
   timeGainedHoursPerMonth: t.timeGainedHoursPerMonth ?? undefined,
   freeAlternative: t.freeAlternative || null,
+  // v4 fields
+  tool_type: t.tool_type || "satellite",
+  substitutable: t.substitutable ?? true,
+  host_app: t.host_app || null,
+  bundle_parent: t.bundle_parent || null,
+  verticals: t.verticals || [],
+  functional_needs: t.functional_needs || t.covers || [],
+  ia_use_case: t.ia_use_case || null,
+  betterAlternative: t.betterAlternative || null,
+  migrationGuide: t.migrationGuide || null,
+  downgradePlan: t.downgradePlan || null,
 }));
+
+// Verticals
+export const verticals: Record<string, Vertical> = Object.fromEntries(
+  Object.entries(verticalsJson as Record<string, any>).map(([id, v]) => [
+    id,
+    { id, family: v.family, label: v.label, functional_needs: v.functional_needs },
+  ])
+);
 
 export const blogPosts: BlogPost[] = ((contentJson as any).articles || []).map((a: any) => ({
   slug: a.slug,

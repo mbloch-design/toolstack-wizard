@@ -143,6 +143,8 @@ export type Database = {
           share_token: string | null
           stack_health_score: number | null
           tools_to_cancel: Json | null
+          user_stack: Json | null
+          verticals_composite: Json | null
         }
         Insert: {
           created_at?: string
@@ -155,6 +157,8 @@ export type Database = {
           share_token?: string | null
           stack_health_score?: number | null
           tools_to_cancel?: Json | null
+          user_stack?: Json | null
+          verticals_composite?: Json | null
         }
         Update: {
           created_at?: string
@@ -167,6 +171,8 @@ export type Database = {
           share_token?: string | null
           stack_health_score?: number | null
           tools_to_cancel?: Json | null
+          user_stack?: Json | null
+          verticals_composite?: Json | null
         }
         Relationships: [
           {
@@ -183,14 +189,21 @@ export type Database = {
           affiliate_link: string | null
           alternatives: Json | null
           articles: Json | null
+          better_alternative: Json | null
+          bundle_parent: string | null
           category: string | null
           cons: Json | null
           covers: Json | null
           default_monthly_price: number | null
+          downgrade_plan: Json | null
           free_alternative: string | null
+          functional_needs: Json | null
+          host_app: string | null
+          ia_use_case: Json | null
           id: string
           logo: string | null
           long_description: string | null
+          migration_guide: Json | null
           name: string
           personas: Json | null
           pricing: Json | null
@@ -200,24 +213,34 @@ export type Database = {
           short_description: string | null
           slug: string
           solo_relevance: string | null
+          substitutable: boolean | null
           team_relevance: string | null
           time_gained_hours_per_month: number | null
+          tool_type: string | null
           use_cases: Json | null
           verdict: Json | null
+          verticals: Json | null
           website_url: string | null
         }
         Insert: {
           affiliate_link?: string | null
           alternatives?: Json | null
           articles?: Json | null
+          better_alternative?: Json | null
+          bundle_parent?: string | null
           category?: string | null
           cons?: Json | null
           covers?: Json | null
           default_monthly_price?: number | null
+          downgrade_plan?: Json | null
           free_alternative?: string | null
+          functional_needs?: Json | null
+          host_app?: string | null
+          ia_use_case?: Json | null
           id: string
           logo?: string | null
           long_description?: string | null
+          migration_guide?: Json | null
           name: string
           personas?: Json | null
           pricing?: Json | null
@@ -227,24 +250,34 @@ export type Database = {
           short_description?: string | null
           slug: string
           solo_relevance?: string | null
+          substitutable?: boolean | null
           team_relevance?: string | null
           time_gained_hours_per_month?: number | null
+          tool_type?: string | null
           use_cases?: Json | null
           verdict?: Json | null
+          verticals?: Json | null
           website_url?: string | null
         }
         Update: {
           affiliate_link?: string | null
           alternatives?: Json | null
           articles?: Json | null
+          better_alternative?: Json | null
+          bundle_parent?: string | null
           category?: string | null
           cons?: Json | null
           covers?: Json | null
           default_monthly_price?: number | null
+          downgrade_plan?: Json | null
           free_alternative?: string | null
+          functional_needs?: Json | null
+          host_app?: string | null
+          ia_use_case?: Json | null
           id?: string
           logo?: string | null
           long_description?: string | null
+          migration_guide?: Json | null
           name?: string
           personas?: Json | null
           pricing?: Json | null
@@ -254,10 +287,13 @@ export type Database = {
           short_description?: string | null
           slug?: string
           solo_relevance?: string | null
+          substitutable?: boolean | null
           team_relevance?: string | null
           time_gained_hours_per_month?: number | null
+          tool_type?: string | null
           use_cases?: Json | null
           verdict?: Json | null
+          verticals?: Json | null
           website_url?: string | null
         }
         Relationships: [
@@ -269,6 +305,27 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      verticals: {
+        Row: {
+          family: string
+          functional_needs: Json
+          id: string
+          label: string
+        }
+        Insert: {
+          family: string
+          functional_needs?: Json
+          id: string
+          label: string
+        }
+        Update: {
+          family?: string
+          functional_needs?: Json
+          id?: string
+          label?: string
+        }
+        Relationships: []
       }
     }
     Views: {

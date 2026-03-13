@@ -13,6 +13,7 @@ import ResultsPage from "@/pages/ResultsPage";
 import ToolsPage from "@/pages/ToolsPage";
 import ToolDetailPage from "@/pages/ToolDetailPage";
 import UpdateToolsV3 from "@/pages/UpdateToolsV3";
+import UpdateToolsV4 from "@/pages/UpdateToolsV4";
 import CategoryPage from "@/pages/CategoryPage";
 import CategoriesIndexPage from "@/pages/CategoriesIndexPage";
 import GuidesPage from "@/pages/GuidesPage";
@@ -73,6 +74,7 @@ const App = () => (
             <Route path="transparency" element={<TransparencyPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="update-tools-v3" element={<UpdateToolsV3 />} />
+            <Route path="update-tools-v4" element={<UpdateToolsV4 />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
