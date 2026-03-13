@@ -46,25 +46,54 @@ const INITIAL_FORM: SelectorFormData = {
   marketingOptIn: false,
 };
 
-/* ─── Compact Tool Card ─── */
-function ToolCard({ tool, selected, onToggle }: { tool: Tool; selected: boolean; onToggle: () => void }) {
+/* ─── Tool Type Labels ─── */
+const TOOL_TYPE_LABELS: Record<string, { label: string; labelEn: string; color: string }> = {
+  metier: { label: "Métier", labelEn: "Core", color: "bg-primary/10 text-primary" },
+  plugin: { label: "Plugin", labelEn: "Plugin", color: "bg-violet-500/10 text-violet-600 dark:text-violet-400" },
+  ia: { label: "IA", labelEn: "AI", color: "bg-amber-500/10 text-amber-600 dark:text-amber-400" },
+  gestion: { label: "Gestion", labelEn: "Mgmt", color: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400" },
+  satellite: { label: "Satellite", labelEn: "Misc", color: "bg-muted text-muted-foreground" },
+};
+
+/* ─── Compact Tool Row ─── */
+function ToolRow({ tool, selected, onToggle, lang, highlighted }: { tool: Tool; selected: boolean; onToggle: () => void; lang: string; highlighted?: boolean }) {
   const logoUrl = getToolLogoUrl(tool);
   const [logoFailed, setLogoFailed] = useState(false);
+  const typeInfo = TOOL_TYPE_LABELS[tool.tool_type || "satellite"] || TOOL_TYPE_LABELS.satellite;
   return (
-    <button onClick={onToggle} className={`group flex items-center gap-3 rounded-xl border p-3 text-left transition-all ${selected ? "border-primary bg-accent shadow-sm ring-1 ring-primary/20" : "border-border bg-card hover:border-primary/30 hover:shadow-sm"}`}>
+    <button
+      onClick={onToggle}
+      className={`group flex items-center gap-2.5 rounded-lg border px-3 py-2 text-left transition-all ${
+        selected
+          ? "border-primary bg-accent ring-1 ring-primary/20"
+          : highlighted
+          ? "border-primary/20 bg-primary/[0.03] hover:bg-primary/[0.06]"
+          : "border-transparent hover:bg-secondary/60"
+      }`}
+    >
+      {/* Logo */}
       {logoUrl && !logoFailed ? (
-        <img src={logoUrl} alt="" className="h-8 w-8 shrink-0 rounded-lg object-contain" loading="lazy" onError={() => setLogoFailed(true)} />
+        <img src={logoUrl} alt="" className="h-7 w-7 shrink-0 rounded-md object-contain bg-secondary/50" loading="lazy" onError={() => setLogoFailed(true)} />
       ) : (
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-xs font-bold text-foreground">{tool.name.charAt(0).toUpperCase()}</div>
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-secondary text-[10px] font-bold text-foreground">{tool.name.charAt(0).toUpperCase()}</div>
       )}
+      {/* Name + type */}
       <div className="flex-1 min-w-0">
-        <p className="font-medium text-sm truncate">{tool.name}</p>
-        <p className="text-xs text-muted-foreground">{tool.defaultMonthlyPrice > 0 ? `${tool.defaultMonthlyPrice}€/mois` : "Gratuit"}</p>
+        <p className="text-sm font-medium truncate leading-tight">{tool.name}</p>
+        <div className="flex items-center gap-1.5 mt-0.5">
+          <span className={`rounded px-1 py-px text-[9px] font-semibold uppercase tracking-wide ${typeInfo.color}`}>
+            {lang === "en" ? typeInfo.labelEn : typeInfo.label}
+          </span>
+          <span className="text-[11px] text-muted-foreground tabular-nums">
+            {tool.defaultMonthlyPrice > 0 ? `${tool.defaultMonthlyPrice}€` : lang === "en" ? "Free" : "Gratuit"}
+          </span>
+        </div>
       </div>
+      {/* Toggle */}
       {selected ? (
-        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary"><Check className="h-3 w-3 text-primary-foreground" /></div>
+        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary transition-transform group-hover:scale-110"><Check className="h-3 w-3 text-primary-foreground" /></div>
       ) : (
-        <div className="h-5 w-5 shrink-0 rounded-full border-2 border-border group-hover:border-primary/50 transition-colors" />
+        <div className="h-5 w-5 shrink-0 rounded-full border-2 border-border transition-colors group-hover:border-primary/40" />
       )}
     </button>
   );
