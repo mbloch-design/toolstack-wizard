@@ -154,6 +154,21 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
 }
 
 export function getToolLogoUrl(tool: Tool): string | null {
+  // 1. Use logo field from DB if populated
+  if (tool.logo && tool.logo.startsWith("http")) return tool.logo;
+
+  // 2. Extract domain for favicon services
+  const url = tool.websiteUrl || tool.affiliateLink;
+  if (!url) return null;
+  try {
+    const domain = new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
+    // Google Favicon service (more reliable than Clearbit)
+    return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+  } catch { return null; }
+}
+
+export function getToolLogoUrlHD(tool: Tool): string | null {
+  if (tool.logo && tool.logo.startsWith("http")) return tool.logo;
   const url = tool.websiteUrl || tool.affiliateLink;
   if (!url) return null;
   try {
