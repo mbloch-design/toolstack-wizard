@@ -655,19 +655,27 @@ const SelectorPage = () => {
         )}
 
         {/* ─── Navigation ─── */}
-        <div className="mt-8 flex items-center justify-between">
-          <button onClick={prev} disabled={step === 1} className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30">
-            <ArrowLeft className="h-4 w-4" /> {t("Retour", "Back")}
-          </button>
-          {step < STEPS ? (
-            <button onClick={handleNext} disabled={!canNext()} className="flex items-center gap-1.5 rounded-xl bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-40 shadow-sm shadow-primary/20">
-              {t("Suivant", "Next")} <ArrowRight className="h-4 w-4" />
-            </button>
-          ) : (
-            <button onClick={handleSubmit} disabled={!canNext() || submitting} className="flex items-center gap-1.5 rounded-xl bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-40 shadow-sm shadow-primary/20">
-              {submitting ? (<><Loader2 className="h-4 w-4 animate-spin" /> {t("Analyse en cours...", "Analyzing...")}</>) : (<>{t("Voir mes résultats", "See my results")} <ArrowRight className="h-4 w-4" /></>)}
-            </button>
+        <div className={`mt-8 ${step === 5 ? "sticky bottom-0 -mx-4 md:-mx-6 px-4 md:px-6 pb-4 pt-3 bg-background/95 backdrop-blur-md border-t border-border shadow-[0_-4px_16px_-4px_rgba(0,0,0,0.1)]" : ""}`}>
+          {step === 5 && (
+            <div className="flex items-center justify-between mb-3 text-sm">
+              <span className="text-muted-foreground"><span className="font-semibold text-foreground">{form.currentTools.length}</span> {t("outils sélectionnés", "tools selected")}</span>
+              <span className="font-heading font-bold tabular-nums">{t("Total", "Total")} : <span className="text-primary">{totalCost}€/{t("mois", "mo")}</span></span>
+            </div>
           )}
+          <div className="flex items-center justify-between">
+            <button onClick={prev} disabled={step === 1} className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30">
+              <ArrowLeft className="h-4 w-4" /> {t("Retour", "Back")}
+            </button>
+            {step < STEPS ? (
+              <button onClick={handleNext} disabled={!canNext()} className="flex items-center gap-1.5 rounded-xl bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-40 shadow-sm shadow-primary/20">
+                {t("Suivant", "Next")} <ArrowRight className="h-4 w-4" />
+              </button>
+            ) : (
+              <button onClick={handleSubmit} disabled={!canNext() || submitting} className="flex items-center gap-1.5 rounded-xl bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-40 shadow-sm shadow-primary/20">
+                {submitting ? (<><Loader2 className="h-4 w-4 animate-spin" /> {t("Analyse en cours...", "Analyzing...")}</>) : (<>{t("Voir mes résultats", "See my results")} <ArrowRight className="h-4 w-4" /></>)}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
