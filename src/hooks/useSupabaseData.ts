@@ -27,6 +27,7 @@ const staticTools: Tool[] = (contentJson as any).tools.map((t: any) => ({
   useCases: t.useCases || [],
   covers: t.covers || [],
   relevantFor: t.relevantFor || [],
+  personas: t.personas || [],
   affiliateLink: t.affiliateLink || "",
   websiteUrl: t.websiteUrl || t.affiliateLink || "",
   logo: t.logo || "",
@@ -35,6 +36,8 @@ const staticTools: Tool[] = (contentJson as any).tools.map((t: any) => ({
   alternatives: t.alternatives || [],
   seo: t.seo || null,
   articles: t.articles || [],
+  timeGainedHoursPerMonth: t.timeGainedHoursPerMonth ?? undefined,
+  freeAlternative: t.freeAlternative || null,
 }));
 
 function mapSupabaseCat(c: any): Category {
@@ -62,6 +65,7 @@ function mapSupabaseTool(t: any): Tool {
     useCases: t.use_cases || [],
     covers: t.covers || [],
     relevantFor: t.relevant_for || [],
+    personas: t.personas || [],
     affiliateLink: t.affiliate_link || "",
     websiteUrl: t.website_url || t.affiliate_link || "",
     logo: t.logo || "",

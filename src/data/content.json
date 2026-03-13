@@ -296,6 +296,13 @@
         "Code : déboguer, expliquer, ou générer du code",
         "Formation : apprendre de nouveaux concepts avec des explications simplifiées"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 13
     },
     {
@@ -371,6 +378,13 @@
         "Génération de code : créer des scripts, fonctions, ou applications complètes",
         "Révision de documents : améliorer la clarté et la structure de longs textes",
         "Analyse de données : interpréter des CSV, JSON, ou tableaux complexes"
+      ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
       ],
       "timeGainedHoursPerMonth": 13
     },
@@ -455,6 +469,13 @@
         "Suivi de projets : organiser vos tâches avec des vues Kanban, Timeline et Calendrier",
         "Base de connaissances : centraliser vos notes de formation, ressources et idées"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -532,6 +553,11 @@
         "Formateurs : permettre aux participants de réserver des sessions de questions-réponses",
         "Recruteurs : faciliter la prise de rendez-vous pour les entretiens"
       ],
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -571,7 +597,7 @@
         "video-async",
         "telephonie"
       ],
-      "freeAlternative": "cap",
+      "freeAlternative": null,
       "soloRelevance": "high",
       "teamRelevance": "medium",
       "bestFor": [
@@ -610,6 +636,11 @@
         "Reporting : présenter les résultats d'une campagne ou d'un projet de manière engageante",
         "Bug reports : montrer exactement le problème rencontré au lieu de le décrire par écrit",
         "Formation : créer des mini-formations pour vos clients ou votre équipe"
+      ],
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
       ],
       "timeGainedHoursPerMonth": 2
     },
@@ -650,7 +681,7 @@
         "redaction",
         "presentations"
       ],
-      "freeAlternative": "canva",
+      "freeAlternative": null,
       "soloRelevance": "high",
       "teamRelevance": "medium",
       "bestFor": [
@@ -688,6 +719,11 @@
         "Lead magnets : créer des ebooks, checklists, infographies à offrir",
         "Branding : concevoir un logo, des cartes de visite, une charte graphique basique",
         "Supports de formation : créer des slides, workbooks, certificats"
+      ],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia"
       ],
       "timeGainedHoursPerMonth": 6
     },
@@ -758,6 +794,11 @@
         "Articles de blog : corriger et améliorer votre contenu avant publication",
         "Posts LinkedIn : optimiser vos publications pour l'engagement",
         "Documentation : assurer un anglais professionnel dans vos livrables"
+      ],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia"
       ],
       "timeGainedHoursPerMonth": 6
     },
@@ -837,6 +878,11 @@
         "E-commerce : accepter les paiements sur votre boutique en ligne",
         "Consultants : créer des factures payables en ligne en un clic"
       ],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 7
     },
     {
@@ -911,6 +957,11 @@
         "Comptabilité : suivre vos revenus/dépenses et générer vos déclarations",
         "Suivi client : gérer vos clients et projets dans un CRM simple",
         "Compte pro : ouvrir un compte bancaire dédié à votre activité"
+      ],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
       ],
       "timeGainedHoursPerMonth": 7
     },
@@ -988,6 +1039,13 @@
         "Partage de livrables : envoyer des fichiers lourds via lien de partage",
         "Archivage : stocker vos anciens projets et factures"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 1
     },
     {
@@ -1060,6 +1118,13 @@
         "Apprentissage : explorer un nouveau sujet avec des réponses synthétiques",
         "Comparaisons : 'Quelle est la différence entre X et Y ?' avec sources"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 13
     },
     {
@@ -1108,6 +1173,11 @@
       "seo": {
         "metaDescription": "Tally : Le Typeform gratuit (en mieux). Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -1180,6 +1250,13 @@
         "Capture rapide : noter toutes vos idées et tâches pour les traiter plus tard",
         "Collaboration : partager des projets avec clients ou partenaires"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -1250,6 +1327,13 @@
         "Journaling : tenir un journal quotidien avec liens vers projets, personnes et concepts",
         "Documentation technique : créer une base de connaissances locale pour vos projets de développement"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -1283,7 +1367,7 @@
         "no-code",
         "workflows"
       ],
-      "freeAlternative": "make",
+      "freeAlternative": null,
       "soloRelevance": "medium",
       "teamRelevance": "high",
       "bestFor": [
@@ -1320,6 +1404,12 @@
         "Facturation : créer des factures automatiquement depuis vos projets Notion/Airtable",
         "Veille : agréger des articles, newsletters, posts dans une base de données",
         "Reporting : compiler automatiquement des données depuis plusieurs sources dans un Google Sheet"
+      ],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
       ],
       "timeGainedHoursPerMonth": 15
     },
@@ -1390,6 +1480,13 @@
         "Contrôle d'apps : créer une tâche Notion, un ticket GitHub, sans ouvrir l'app",
         "AI : résumer un article, corriger un email, traduire du texte en un raccourci"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -1458,6 +1555,11 @@
         "Collaboration : partager des emails avec votre équipe",
         "Productivité : réduire le temps passé dans les emails de 30-50%"
       ],
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -1525,6 +1627,13 @@
         "Collaboration client : donner accès au client pour suivre l'avancement",
         "Bug tracking : centraliser les bugs avec priorités et assignations",
         "Projets perso : gérer vos side projects avec une interface pro"
+      ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
       ],
       "timeGainedHoursPerMonth": 5
     },
@@ -1596,6 +1705,11 @@
         "Formateurs : permettre aux participants de réserver des créneaux de questions-réponses",
         "Recruteurs : faciliter la prise de rendez-vous pour les entretiens"
       ],
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -1664,6 +1778,11 @@
         "Prototypage : visualiser des concepts produits ou designs",
         "Art personnel : créer des œuvres d'art pour votre portfolio ou réseaux sociaux"
       ],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 6
     },
     {
@@ -1715,6 +1834,12 @@
       "seo": {
         "metaDescription": "Base44 : Créez des apps complètes avec l'IA, sans coder. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 15
     },
     {
@@ -1767,6 +1892,11 @@
       "seo": {
         "metaDescription": "Sellsy : La suite CRM + Facturation française tout-en-un. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 7
     },
     {
@@ -1840,6 +1970,13 @@
         "Assistants vocaux : créer des voix personnalisées pour vos apps",
         "Localisation : traduire et doubler vos contenus dans d'autres langues"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 13
     },
     {
@@ -1894,6 +2031,11 @@
       "seo": {
         "metaDescription": "ClickUp : La plateforme tout-en-un pour gérer projets, tâches et collaboration. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 6
     },
     {
@@ -1947,6 +2089,10 @@
       "seo": {
         "metaDescription": "SaneBox : L'IA qui trie vos emails et vous fait gagner 12h par mois. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 8
     },
     {
@@ -2001,6 +2147,10 @@
       "seo": {
         "metaDescription": "GetResponse : La plateforme tout-en-un pour email marketing et automatisation. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 8
     },
     {
@@ -2055,6 +2205,11 @@
       "seo": {
         "metaDescription": "Trello : Le Kanban visuel pour organiser ses projets sans complexité. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 6
     },
     {
@@ -2109,6 +2264,11 @@
       "seo": {
         "metaDescription": "Airtable : La base de données flexible qui remplace 5 outils (CRM, projets, contenus). Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 6
     },
     {
@@ -2162,6 +2322,10 @@
       "seo": {
         "metaDescription": "Mailchimp : L'incontournable de l'email marketing pour petites listes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 8
     },
     {
@@ -2215,6 +2379,10 @@
       "seo": {
         "metaDescription": "Slack : La messagerie pro pour échanger avec clients et partenaires. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -2247,7 +2415,7 @@
         "prototypage",
         "logos"
       ],
-      "freeAlternative": "figma",
+      "freeAlternative": null,
       "soloRelevance": "high",
       "teamRelevance": "high",
       "bestFor": [
@@ -2267,6 +2435,10 @@
       "seo": {
         "metaDescription": "Figma : L'outil de design d'interfaces pour créer maquettes et prototypes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 4
     },
     {
@@ -2320,6 +2492,11 @@
       "seo": {
         "metaDescription": "1Password : Le gestionnaire de mots de passe pro pour sécuriser tous vos comptes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "claire",
+        "marc",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 1
     },
     {
@@ -2351,7 +2528,7 @@
         "suivi-temps",
         "facturation-temps"
       ],
-      "freeAlternative": null,
+      "freeAlternative": "toggl",
       "soloRelevance": "high",
       "teamRelevance": "medium",
       "bestFor": [
@@ -2374,6 +2551,11 @@
       "seo": {
         "metaDescription": "Toggl Track : Le tracker de temps pour facturer au juste prix. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -2425,6 +2607,11 @@
       "seo": {
         "metaDescription": "Webflow : Créer des sites web pros sans coder, avec contrôle total du design. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -2476,6 +2663,12 @@
       "seo": {
         "metaDescription": "Plausible Analytics : L'alternative RGPD-friendly à Google Analytics, simple et respectueuse. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -2529,6 +2722,10 @@
       "seo": {
         "metaDescription": "Pitch : Créer des présentations modernes et collaboratives pour impressionner les clients. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 4
     },
     {
@@ -2586,6 +2783,11 @@
         "metaDescription": "LearnWorlds : Plateforme pour créer et vendre des cours en ligne. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -2641,6 +2843,10 @@
         "metaDescription": "Prezi : Présentations dynamiques avec zoom et animations. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -2698,6 +2904,10 @@
         "metaDescription": "KrispCall : Téléphonie cloud avec numéros virtuels internationaux. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -2751,6 +2961,11 @@
         "metaDescription": "Mega HR : Solution RH et paie pour gérer salariés et congés. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -2809,6 +3024,10 @@
         "metaDescription": "Logome.ai : Générateur de logos IA en quelques minutes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 4
     },
     {
@@ -2867,6 +3086,10 @@
         "metaDescription": "Reply.io : Automatisation cold email et prospection multi-canaux. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -2936,6 +3159,12 @@
         "metaDescription": "Turbotic : Automatisation IA pour orchestrer vos processus métier. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 15
     },
     {
@@ -3012,6 +3241,10 @@
         "designer",
         "content-creator",
         "other"
+      ],
+      "personas": [
+        "sofia",
+        "theo"
       ],
       "timeGainedHoursPerMonth": 5
     },
@@ -3091,6 +3324,11 @@
         "consultant",
         "other"
       ],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 7
     },
     {
@@ -3167,6 +3405,11 @@
         "designer",
         "content-creator",
         "other"
+      ],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
       ],
       "timeGainedHoursPerMonth": 5
     },
@@ -3246,6 +3489,11 @@
         "consultant",
         "other"
       ],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 6
     },
     {
@@ -3300,6 +3548,11 @@
         "metaDescription": "8fig : Plateforme de financement de croissance pour les fondateurs e-commerce. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -3354,6 +3607,10 @@
         "metaDescription": "Adobe : Logiciels pour les professionnels de la création et le marketing numérique. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -3408,6 +3665,9 @@
         "metaDescription": "Aircall Inc. : Solution de centre d’appels cloud pour les entreprises modernes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -3462,6 +3722,13 @@
         "metaDescription": "airSlate : Plateforme d’automatisation de workflows documentaires. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -3518,6 +3785,12 @@
         "metaDescription": "Albato : Plateforme no-code pour étendre les intégrations et automatisations SaaS. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 14
     },
     {
@@ -3572,6 +3845,7 @@
         "metaDescription": "Allstate : Fournit des plans de santé pour petites entreprises aux États-Unis. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -3626,6 +3900,9 @@
         "metaDescription": "Aloware : Solution de centre de contact pour appels et SMS. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -3682,6 +3959,10 @@
         "metaDescription": "Apollo.io : Plateforme d’intelligence commerciale B2B et d’engagement des ventes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -3738,6 +4019,10 @@
         "metaDescription": "AroundDeal : Plateforme d’intelligence B2B pour contacts et informations d’entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -3765,7 +4050,7 @@
       "covers": [
         "project management"
       ],
-      "freeAlternative": "trello",
+      "freeAlternative": null,
       "soloRelevance": "high",
       "teamRelevance": "high",
       "defaultMonthlyPrice": 15,
@@ -3792,6 +4077,13 @@
         "metaDescription": "Asana : Plateforme de gestion du travail pour les équipes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -3846,6 +4138,7 @@
         "metaDescription": "Autonix : Outil de suivi de QR codes et d’analytique pour agences et marketers. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -3900,6 +4193,13 @@
         "metaDescription": "Auvik : Plateforme de gestion IT pour les réseaux et infrastructures. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -3958,6 +4258,10 @@
         "metaDescription": "AWeber : Plateforme d’email marketing et d’automatisation. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -4012,6 +4316,13 @@
         "metaDescription": "Basecamp : Logiciel de gestion de projet et de collaboration d’équipe. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4066,6 +4377,13 @@
         "metaDescription": "Blueink eSignatures : Plateforme de signatures électroniques et suivi de documents. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4120,6 +4438,11 @@
         "metaDescription": "Boast : Plateforme d’automatisation des déclarations de crédit R&D. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4174,6 +4497,9 @@
         "metaDescription": "Bolt Business : Plateforme polyvalente de gestion de la mobilité et des flottes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4228,6 +4554,13 @@
         "metaDescription": "BoomPop : Service d’organisation d’événements d’entreprise et networking. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4282,6 +4615,13 @@
         "metaDescription": "Box : Service cloud de gestion de contenu et partage de fichiers. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4336,6 +4676,10 @@
         "metaDescription": "Brand24 : Outil de veille médiatique pour suivre les mentions de marque en ligne. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -4390,6 +4734,13 @@
         "metaDescription": "Breezy HR : Logiciel de recrutement de bout en bout pour attirer et embaucher des talents. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4444,6 +4795,13 @@
         "metaDescription": "Buddy Punch : Pointage en ligne pour le suivi du temps des employés. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4498,6 +4856,13 @@
         "metaDescription": "BugHerd : Outil de feedback et suivi de bugs pour sites web (développeurs/designers). Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4552,6 +4917,10 @@
         "metaDescription": "CallHippo : Système de téléphonie cloud pour entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -4606,6 +4975,9 @@
         "metaDescription": "CallRail : Plateforme d’intelligence d’appels pour suivi et attribution de leads. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -4660,6 +5032,9 @@
         "metaDescription": "CallTrackingMetrics : Logiciel de suivi d’appels et automatisation pour marketing & support. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -4718,6 +5093,10 @@
         "metaDescription": "Campaigner : Solution puissante de marketing email et SMS pour entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -4774,6 +5153,10 @@
         "metaDescription": "Capsule : CRM pour gérer les ventes et relations client. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -4830,6 +5213,10 @@
         "metaDescription": "Castmagic : Outil de transformation rapide de tout format audio en contenu. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4884,6 +5271,10 @@
         "metaDescription": "Clearbit : Outil d’enrichissement de données et insights pour marketing et ventes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -4938,6 +5329,13 @@
         "metaDescription": "ClockShark : Application de feuilles de temps pour BTP ou entreprises de terrain. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -4994,6 +5392,10 @@
         "metaDescription": "Close : CRM avec outils de communication intégrés pour les ventes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -5048,6 +5450,10 @@
         "metaDescription": "CloudTask Marketplace : Marketplace de talents B2B RevOps en freelance. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -5102,6 +5508,12 @@
         "metaDescription": "Coast : Carte carburant intelligente et gestion des dépenses pour entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5158,6 +5570,9 @@
         "metaDescription": "Cognism : Plateforme d’intelligence commerciale B2B (contacts et données entreprises). Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -5212,6 +5627,9 @@
         "metaDescription": "Connecteam : Application tout-en-un pour gérer les employés sans bureau. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5268,6 +5686,11 @@
         "metaDescription": "Crowdfire Inc : Plateforme de gestion des réseaux sociaux. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -5322,6 +5745,13 @@
         "metaDescription": "Deel : Plateforme pour embaucher des talents dans 150 pays. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5376,6 +5806,9 @@
         "metaDescription": "Deputy : Simplifie la planification et réduit les coûts de main-d’œuvre. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5432,6 +5865,13 @@
         "metaDescription": "Deskpro : Logiciel de helpdesk pour offrir une expérience client de qualité. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5486,6 +5926,13 @@
         "metaDescription": "DesktopReady : Solution de bureau virtuel Azure. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5540,6 +5987,11 @@
         "metaDescription": "Docyt : Plateforme logicielle d’automatisation comptable. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5594,6 +6046,11 @@
         "metaDescription": "doola : Aide les entrepreneurs web2 & web3 à créer et gérer leur entreprise. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5648,6 +6105,12 @@
         "metaDescription": "Draftbit : Générateur d’applications natives (avec code) pour mobiles. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -5675,7 +6138,7 @@
       "covers": [
         "cloud storage"
       ],
-      "freeAlternative": "google-drive",
+      "freeAlternative": null,
       "soloRelevance": "high",
       "teamRelevance": "high",
       "defaultMonthlyPrice": 10,
@@ -5702,6 +6165,13 @@
         "metaDescription": "Dropbox : Service de stockage cloud et synchronisation de fichiers. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5756,6 +6226,12 @@
         "metaDescription": "EasyDMARC : SaaS pour résoudre les problèmes de sécurité et délivrabilité email. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -5810,6 +6286,11 @@
         "metaDescription": "Extensis : Plateforme de gestion de polices et ressources créatives. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5864,6 +6345,11 @@
         "metaDescription": "Finale Inventory : Solution de gestion des stocks pour vendeurs à gros volume. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -5918,6 +6404,10 @@
         "metaDescription": "FlexiQuiz : Générateur de quiz personnalisés avec fonctionnalités LMS. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -5972,6 +6462,10 @@
         "metaDescription": "Format : Constructeur de portfolio en ligne pour professionnels créatifs. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -6028,6 +6522,11 @@
         "metaDescription": "FreshBooks : Logiciel de comptabilité pour petites entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -6082,6 +6581,13 @@
         "metaDescription": "Front : Hub de communication client pour les équipes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -6136,6 +6642,11 @@
         "metaDescription": "Gelato : Plateforme d’impression à la demande avec production locale. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6190,6 +6701,7 @@
         "metaDescription": "Getida : Solution d’audit et remboursement Amazon FBA. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6244,6 +6756,12 @@
         "metaDescription": "Glide : Plateforme pour créer des applications métier personnalisées sans code. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -6300,6 +6818,12 @@
         "metaDescription": "Gorgias : Service client e-commerce transformant le support en centre de profit. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6354,6 +6878,13 @@
         "metaDescription": "Hive : Plateforme de productivité pour équipes performantes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -6410,6 +6941,11 @@
         "metaDescription": "Hootsuite : Plateforme de gestion des réseaux sociaux. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6464,6 +7000,7 @@
         "metaDescription": "Hostfully : Plateforme de gestion de locations de vacances. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6518,6 +7055,7 @@
         "metaDescription": "Houzz Pro : Solution tout-en-un pour gérer les projets de construction résidentielle. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -6576,6 +7114,10 @@
         "metaDescription": "iContact : Outils d’email marketing pour PME pour engager les clients. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6630,6 +7172,11 @@
         "metaDescription": "InboxAlly : Plateforme pour améliorer la délivrabilité et taux d’ouverture des emails. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6684,6 +7231,11 @@
         "metaDescription": "inFlow Inventory : Logiciel de gestion des stocks pour petites entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6740,6 +7292,10 @@
         "metaDescription": "Insightly : CRM pour entreprises en croissance. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -6794,6 +7350,10 @@
         "metaDescription": "Instapage : Générateur de landing pages et plateforme d’optimisation. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6848,6 +7408,13 @@
         "metaDescription": "Jobber : Logiciel pour gérer et développer les entreprises de services. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -6902,6 +7469,11 @@
         "metaDescription": "Katana Cloud Manufacturing : Logiciel cloud de gestion manufacturière intégrée au e-commerce. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -6956,6 +7528,11 @@
         "metaDescription": "Kavkom : Solution de téléphonie IP pour communications d’entreprise. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -7010,6 +7587,13 @@
         "metaDescription": "KeepTruckin : Logiciel de gestion de flottes pour entreprises de transport. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -7064,6 +7648,10 @@
         "metaDescription": "Kissmetrics : Outil d’analytics comportemental pour augmenter conversions & engagement. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7118,6 +7706,9 @@
         "metaDescription": "Kixie : Plateforme d’engagement commercial avec appels et SMS intégrés. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -7174,6 +7765,10 @@
         "metaDescription": "Landbot : Générateur de chatbot pour automatiser la capture de leads et interactions client. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7228,6 +7823,13 @@
         "metaDescription": "Lano : Solution globale d’employeur de référence et gestion de paie. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -7284,6 +7886,11 @@
         "metaDescription": "Later : Outil complet de gestion des réseaux sociaux et Link in Bio. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7340,6 +7947,10 @@
         "metaDescription": "Leadflow : Générateur de leads immobilier alimenté par l’IA. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7394,6 +8005,10 @@
         "metaDescription": "Leadpages : Logiciel marketing pour créer des landing pages et convertir. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7448,6 +8063,9 @@
         "metaDescription": "LeadSquared : Plateforme d’exécution commerciale et d’automatisation marketing. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -7502,6 +8120,11 @@
         "metaDescription": "Lendio : Service de prêts professionnels avec multiples options de financement. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -7556,6 +8179,11 @@
         "metaDescription": "Liquid Web Partner+ Program : Fournisseur d’hébergement cloud et web managé. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7610,6 +8238,10 @@
         "metaDescription": "Looka : Plateforme de création de logos par IA. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -7664,6 +8296,12 @@
         "metaDescription": "Lucid Software : Solutions de diagrammes intelligents et tableau blanc en ligne. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -7718,6 +8356,10 @@
         "metaDescription": "Mailgun : Service d’envoi d’emails pour développeurs. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7774,6 +8416,12 @@
         "metaDescription": "Manifest AI : Chatbot IA alimenté par GPT pour de meilleures interactions client. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 8
     },
     {
@@ -7828,6 +8476,11 @@
         "metaDescription": "MASV : Service de transfert de fichiers volumineux pour vidéastes et médias. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -7886,6 +8539,10 @@
         "metaDescription": "Moosend : Outil d’email marketing et d’automatisation. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7940,6 +8597,11 @@
         "metaDescription": "MRPeasy : ERP/MRP pour petites entreprises manufacturières. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -7994,6 +8656,7 @@
         "metaDescription": "MyCase : Solution de gestion de dossiers juridiques pour cabinets B2C. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8048,6 +8711,13 @@
         "metaDescription": "Navan : Solution tout-en-un de gestion des voyages et notes de frais. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8102,6 +8772,7 @@
         "metaDescription": "NearSt : Convertit les visiteurs en ligne en clients en magasin en montrant les stocks locaux. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -8156,6 +8827,13 @@
         "metaDescription": "Netchex : Solution de gestion RH et paie. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8210,6 +8888,9 @@
         "metaDescription": "Omniconvert Explore : Outil d’optimisation des conversions (CRO) pour améliorer l’expérience utilisateur. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -8264,6 +8945,11 @@
         "metaDescription": "Onramp Funds : Fournit des financements aux marchands pour soutenir leur croissance. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8318,6 +9004,11 @@
         "metaDescription": "OpenPhone : Système téléphonique tout-en-un pour équipes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -8372,6 +9063,11 @@
         "metaDescription": "Ownr : Plateforme d’enregistrement et de création d’entreprises (Canada). Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8426,6 +9122,13 @@
         "metaDescription": "Oyster® : Plateforme RH pour entreprises distribuées mondialement. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8480,6 +9183,7 @@
         "metaDescription": "Packhelp : Marketplace de packagings personnalisés. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -8534,6 +9238,12 @@
         "metaDescription": "Pagecloud : Constructeur de site web et boutique en ligne. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -8588,6 +9298,11 @@
         "metaDescription": "Payoneer : Plateforme de paiements transfrontaliers pour entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8644,6 +9359,10 @@
         "metaDescription": "Pipedrive : CRM simple d’utilisation pour les ventes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -8698,6 +9417,10 @@
         "metaDescription": "PipelinePRO : Plateforme de gestion de pipeline de ventes et d’automatisation marketing. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -8752,6 +9475,11 @@
         "metaDescription": "Printify : Plateforme d’impression à la demande pour entrepreneurs. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -8806,6 +9534,13 @@
         "metaDescription": "Process Street : Plateforme de gestion de processus pour équipes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8860,6 +9595,10 @@
         "metaDescription": "ProductionCrate : Bibliothèques numériques pour la création vidéo. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8914,6 +9653,10 @@
         "metaDescription": "Promo.com : Plateforme de création vidéo pour entreprises et agences. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -8968,6 +9711,9 @@
         "metaDescription": "PushOwl Web Push Notifications : Application de notifications push web pour Shopify. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -9022,6 +9768,11 @@
         "metaDescription": "Quadient : Solutions d’automatisation des comptes clients et fournisseurs. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -9076,6 +9827,9 @@
         "metaDescription": "Quartile : Plateforme publicitaire multicanal pour optimiser la performance e-commerce. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -9130,6 +9884,12 @@
         "metaDescription": "Quick Base : Plateforme de développement d’applications sans code. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -9186,6 +9946,11 @@
         "metaDescription": "QuickBooks : Logiciel de comptabilité pour petites entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -9240,6 +10005,11 @@
         "metaDescription": "Razorpay : Passerelle de paiement et services financiers pour entreprises en Inde. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -9294,6 +10064,10 @@
         "metaDescription": "respond.io : Logiciel de messagerie alimenté par l’IA pour entreprises B2C. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -9348,6 +10122,9 @@
         "metaDescription": "ResponseTap : Logiciel de suivi des appels pour les marketers. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -9402,6 +10179,10 @@
         "metaDescription": "Restream : Service de diffusion en direct multi-plateformes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -9456,6 +10237,10 @@
         "metaDescription": "RocketLink : Raccourcisseur d’URL avec reciblage publicitaire. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -9510,6 +10295,7 @@
         "metaDescription": "Ruby : Standard téléphonique virtuel et chat en direct pour entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -9566,6 +10352,10 @@
         "metaDescription": "Salesflare : CRM pour PME vendant en B2B. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -9622,6 +10412,9 @@
         "metaDescription": "Salesforce : Logiciel de gestion de la relation client et solutions cloud. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -9676,6 +10469,11 @@
         "metaDescription": "SellersFi : Fintech pour commerçants e-commerce (financement). Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "claire",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -9730,6 +10528,11 @@
         "metaDescription": "Sellfy : Plateforme e-commerce pour créer des boutiques en ligne. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -9784,6 +10587,10 @@
         "metaDescription": "SEMrush : Plateforme SaaS de marketing digital et SEO. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -9842,6 +10649,10 @@
         "metaDescription": "Sendinblue : Logiciel d’automatisation marketing et emailing. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -9896,6 +10707,11 @@
         "metaDescription": "Shogun : Outils d’optimisation et merchandising pour boutiques Shopify. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -9950,6 +10766,11 @@
         "metaDescription": "ShopHero : Plateforme de gestion e-commerce et supply chain. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10004,6 +10825,11 @@
         "metaDescription": "Shopify : Plateforme e-commerce pour boutiques en ligne et points de vente. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10058,6 +10884,10 @@
         "metaDescription": "Similarweb : Fournit des données numériques pour améliorer les stratégies marketing. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10112,6 +10942,10 @@
         "metaDescription": "SimpleTexting : Plateforme d’envoi de campagnes SMS marketing et alertes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10166,6 +11000,12 @@
         "metaDescription": "Simvoly : Constructeur de sites web et plateforme e-commerce. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -10220,6 +11060,13 @@
         "metaDescription": "SmartSuite : Plateforme collaborative de gestion du travail pour équipes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -10274,6 +11121,10 @@
         "metaDescription": "SMTP.com : Service d’emails transactionnels et API avec haute délivrabilité. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10330,6 +11181,11 @@
         "metaDescription": "SocialBee : Plateforme de gestion des réseaux sociaux et services de marketing digital. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10384,6 +11240,12 @@
         "metaDescription": "Softr : Plateforme pour créer des outils internes et portails sans code. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -10438,6 +11300,13 @@
         "metaDescription": "SpaceIQ : Logiciel de gestion des espaces de travail et des actifs. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -10492,6 +11361,12 @@
         "metaDescription": "Squarespace : Service de création de sites web et hébergement. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -10546,6 +11421,10 @@
         "metaDescription": "SurveySparrow : Plateforme d’enquêtes et collecte de feedback. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10600,6 +11479,13 @@
         "metaDescription": "SysAid : Logiciel de gestion des services IT (ITSM). Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -10654,6 +11540,13 @@
         "metaDescription": "Teamwork : Logiciel de gestion de projet pour équipes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -10710,6 +11603,11 @@
         "metaDescription": "Teachable : Plateforme pour créer et vendre des cours en ligne. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10764,6 +11662,11 @@
         "metaDescription": "Tidio : Solution de chat en direct et chatbot pour entreprises. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -10818,6 +11721,13 @@
         "metaDescription": "Time Doctor : Logiciel de suivi du temps et productivité des employés. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -10872,6 +11782,10 @@
         "metaDescription": "Trustpilot : Plateforme d’avis en ligne pour entreprises et consommateurs. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10899,7 +11813,7 @@
       "covers": [
         "form builder"
       ],
-      "freeAlternative": "tally",
+      "freeAlternative": null,
       "soloRelevance": "high",
       "teamRelevance": "medium",
       "defaultMonthlyPrice": 15,
@@ -10926,6 +11840,11 @@
         "metaDescription": "Typeform : Outil en ligne de création de formulaires et enquêtes interactifs. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo",
+        "marc"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -10980,6 +11899,9 @@
         "metaDescription": "Unbounce : Générateur de landing pages et plateforme d’optimisation de conversion. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -11034,6 +11956,13 @@
         "metaDescription": "Upwork : Place de marché freelance reliant entreprises et freelances. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11088,6 +12017,11 @@
         "metaDescription": "Vimeo : Plateforme d’hébergement et de partage vidéo professionnelle. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11142,6 +12076,12 @@
         "metaDescription": "Wix : Constructeur de site web avec templates personnalisables. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -11196,6 +12136,11 @@
         "metaDescription": "WooCommerce : Plateforme e-commerce pour WordPress. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -11250,6 +12195,12 @@
         "metaDescription": "WordPress.com : Constructeur de site web et plateforme de blog. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -11304,6 +12255,13 @@
         "metaDescription": "Wrike : Logiciel de gestion de projet pour équipes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11358,6 +12316,13 @@
         "metaDescription": "Wunderlist : Application de gestion de tâches et de listes. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11385,7 +12350,7 @@
       "covers": [
         "workflow automation"
       ],
-      "freeAlternative": "make",
+      "freeAlternative": null,
       "soloRelevance": "high",
       "teamRelevance": "medium",
       "defaultMonthlyPrice": 15,
@@ -11412,6 +12377,12 @@
         "metaDescription": "Zapier : Outil d’automatisation pour connecter des applications et workflows. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 10
     },
     {
@@ -11466,6 +12437,13 @@
         "metaDescription": "Zendesk : Plateforme de service client et engagement client. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11520,6 +12498,13 @@
         "metaDescription": "Zoho : Suite d’outils de productivité en ligne et applications SaaS. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11574,6 +12559,9 @@
         "metaDescription": "HoneyBook : Logiciel de gestion client pour petites entreprises (CRM Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -11628,6 +12616,13 @@
         "metaDescription": "Dubsado : Suite de gestion d’entreprise pour créatifs (contrats Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11682,6 +12677,10 @@
         "metaDescription": "Visme : Plateforme de création de contenus visuels (présentations Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11736,6 +12735,13 @@
         "metaDescription": "Plutio : Plateforme de gestion tout-en-un pour freelances (projets Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11790,6 +12796,10 @@
         "metaDescription": "Snov.io : Plateforme d’automatisation des ventes (recherche d’emails Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -11844,6 +12854,10 @@
         "metaDescription": "Elfsight : Collection de widgets pour sites web (flux sociaux Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "theo",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -11898,6 +12912,10 @@
         "metaDescription": "ProWritingAid : Assistant d’écriture pour améliorer style Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -11952,6 +12970,9 @@
         "metaDescription": "vcita : Plateforme de gestion clients pour PME (rendez-vous Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "sofia"
+      ],
       "timeGainedHoursPerMonth": 2
     },
     {
@@ -12008,6 +13029,11 @@
         "metaDescription": "Sendible : Outil de gestion des réseaux sociaux pour agences (programmation Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 5
     },
     {
@@ -12062,6 +13088,13 @@
         "metaDescription": "Clockify : Logiciel de suivi du temps (gratuit) pour équipes et projets. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -12116,6 +13149,13 @@
         "metaDescription": "TimeCamp : Outil de suivi du temps et rapports pour la productivité. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 3
     },
     {
@@ -12151,7 +13191,7 @@
         "analyse",
         "redaction"
       ],
-      "freeAlternative": null,
+      "freeAlternative": "deepseek",
       "soloRelevance": "high",
       "teamRelevance": "medium",
       "bestFor": [
@@ -12197,6 +13237,13 @@
         "Prototypage : tester des idées sans exploser le budget API",
         "Agents IA : mémoire long terme pour personnalisation avancée"
       ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
+      ],
       "timeGainedHoursPerMonth": 11
     },
     {
@@ -12231,7 +13278,7 @@
         "design",
         "analyse"
       ],
-      "freeAlternative": null,
+      "freeAlternative": "gemini",
       "soloRelevance": "high",
       "teamRelevance": "high",
       "bestFor": [
@@ -12276,6 +13323,13 @@
         "Synthèse de systèmes : connecter APIs complexes et design user-friendly",
         "Prototypage rapide : dashboards, visualisations de données en temps réel",
         "Intégration Google : automatiser workflows avec Workspace, NotebookLM"
+      ],
+      "personas": [
+        "alix",
+        "claire",
+        "marc",
+        "sofia",
+        "theo"
       ],
       "timeGainedHoursPerMonth": 8
     }

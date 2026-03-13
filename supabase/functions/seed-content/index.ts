@@ -70,6 +70,7 @@ Deno.serve(async (req) => {
         use_cases: t.useCases || null,
         covers: t.covers || null,
         relevant_for: t.relevantFor || null,
+        personas: t.personas || [],
         alternatives: t.alternatives || null,
         seo: t.seo || null,
         articles: t.articles || null,
