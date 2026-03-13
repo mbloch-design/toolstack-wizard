@@ -14,7 +14,7 @@ import { verticals as VERTICALS_MAP } from "@/data/content";
 import { ArrowLeft, ArrowRight, Check, Loader2, Search, X, RotateCcw, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { getToolLogoUrl } from "@/hooks/useSupabaseData";
+import { getToolLogoUrl, getToolLogoUrlHD } from "@/hooks/useSupabaseData";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Tool } from "@/data/types";
 
