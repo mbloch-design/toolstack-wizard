@@ -18,7 +18,7 @@ import {
 import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { getToolLogoUrl } from "@/hooks/useSupabaseData";
+import { getToolLogoUrl, getToolLogoUrlHD } from "@/hooks/useSupabaseData";
 
 /* ═══════════ Helpers ═══════════ */
 
@@ -36,14 +36,26 @@ const Tip = ({ text }: { text: string }) => (
 );
 
 const Logo = ({ tool, size = 36 }: { tool: ScoredTool["tool"]; size?: number }) => {
-  const logoUrl = getToolLogoUrl(tool);
-  const [err, setErr] = useState(false);
-  if (!logoUrl || err) return (
+  const googleUrl = getToolLogoUrl(tool);
+  const hdUrl = getToolLogoUrlHD(tool);
+  const [src, setSrc] = useState<string | null>(hdUrl || googleUrl);
+  const [failed, setFailed] = useState(0);
+
+  const handleError = () => {
+    if (failed === 0 && hdUrl && googleUrl) {
+      setSrc(googleUrl);
+      setFailed(1);
+    } else {
+      setFailed(2);
+    }
+  };
+
+  if (!src || failed >= 2) return (
     <span className="flex shrink-0 items-center justify-center rounded-xl bg-secondary text-xs font-bold text-foreground" style={{ width: size, height: size }}>
       {tool.name.charAt(0)}
     </span>
   );
-  return <img src={logoUrl} alt={`${tool.name} logo`} loading="lazy" className="shrink-0 rounded-xl bg-secondary object-contain" style={{ width: size, height: size }} onError={() => setErr(true)} />;
+  return <img src={src} alt={`${tool.name} logo`} loading="lazy" className="shrink-0 rounded-xl bg-white dark:bg-secondary/50 object-contain" style={{ width: size, height: size }} onError={handleError} />;
 };
 
 const BADGE_STYLES: Record<string, string> = {
