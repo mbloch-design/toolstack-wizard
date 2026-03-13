@@ -192,6 +192,7 @@ export type Database = {
           logo: string | null
           long_description: string | null
           name: string
+          personas: Json | null
           pricing: Json | null
           pros: Json | null
           relevant_for: Json | null
@@ -218,6 +219,7 @@ export type Database = {
           logo?: string | null
           long_description?: string | null
           name: string
+          personas?: Json | null
           pricing?: Json | null
           pros?: Json | null
           relevant_for?: Json | null
@@ -244,6 +246,7 @@ export type Database = {
           logo?: string | null
           long_description?: string | null
           name?: string
+          personas?: Json | null
           pricing?: Json | null
           pros?: Json | null
           relevant_for?: Json | null
