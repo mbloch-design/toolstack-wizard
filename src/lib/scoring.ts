@@ -1,7 +1,7 @@
 import type {
   Tool, SelectorFormData, ScoredTool, SelectorResults,
   Fiche, PrescriptionType, MigrationGuide,
-  TjmRange, VerticalWeight,
+  TjmRange, VerticalWeight, PrescriptionQuality,
 } from "@/data/types";
 import { TJM_OPTIONS, TIME_WEIGHTS } from "@/data/types";
 import { verticals as VERTICALS } from "@/data/content";
@@ -49,9 +49,8 @@ function buildProfile(form: SelectorFormData): UserProfile {
 function scoreToolForVertical(tool: Tool, verticalId: string, profile: UserProfile): number {
   if (!tool.verticals || !tool.verticals.includes(verticalId)) return 0;
 
-  let score = 0.3; // base: tool is in the right vertical
+  let score = 0.3;
 
-  // +0.2 — coverage of functional_needs
   const vertical = VERTICALS[verticalId];
   if (vertical) {
     const verticalNeeds = vertical.functional_needs || [];
@@ -61,19 +60,16 @@ function scoreToolForVertical(tool: Tool, verticalId: string, profile: UserProfi
     score += coverageRatio * 0.2;
   }
 
-  // +0.2 — main goal
   const mainGoal = profile.mainGoal;
   if (mainGoal === "reduce_costs" && tool.defaultMonthlyPrice === 0) score += 0.2;
   if (mainGoal === "save_time" && (tool.timeGainedHoursPerMonth || 0) >= 5) score += 0.2;
   if (mainGoal === "simplify_stack" && (tool.covers?.length || 0) >= 3) score += 0.2;
   if (mainGoal === "find_better_tools") score += 0.1;
 
-  // +0.15 — phase
   if (profile.phase === "lancement" && tool.pricing?.free) score += 0.15;
   if (profile.phase === "croissance" && tool.functional_needs?.includes("automatisation")) score += 0.15;
   if (profile.phase === "regime") score += 0.05;
 
-  // +0.1 — tech maturity
   if (profile.techMaturity === "zero-config") {
     const avoidText = (tool.verdict?.avoidIf || []).join(" ").toLowerCase();
     if (!avoidText.includes("configuration") && !avoidText.includes("complexe")) {
@@ -83,37 +79,27 @@ function scoreToolForVertical(tool: Tool, verticalId: string, profile: UserProfi
     }
   }
 
-  // +0.05 — tool_type/vertical coherence bonus
   if (tool.tool_type === "ia" && ["ai-builder", "developpeur-solo"].includes(verticalId)) score += 0.05;
   if (tool.tool_type === "gestion" && ["consultant-b2b", "daf-finance", "manager-dsi"].includes(verticalId)) score += 0.05;
 
   return Math.max(0, Math.min(1, score));
 }
 
-/** Composite score: MAX weighted across all profile verticals */
 function scoreToolForProfile(tool: Tool, profile: UserProfile): number {
   if (!tool.verticals || tool.verticals.length === 0) {
-    // Fallback for tools without verticals: use legacy personas
     if (tool.personas && tool.personas.length > 0) return 30;
     return 0;
   }
-
   if (profile.verticals.length === 0) {
-    // No verticals selected — check if tool has any verticals at all
     return tool.verticals.length > 0 ? 20 : 0;
   }
-
   const verticalScores = profile.verticals.map(({ id, weight }) => {
     if (!tool.verticals.includes(id)) return 0;
-    const baseScore = scoreToolForVertical(tool, id, profile);
-    return baseScore * weight;
+    return scoreToolForVertical(tool, id, profile) * weight;
   });
-
-  const maxScore = Math.max(...verticalScores, 0);
-  return Math.min(Math.round(maxScore * 100), 100);
+  return Math.min(Math.round(Math.max(...verticalScores, 0) * 100), 100);
 }
 
-/** Value index (0–100) */
 function valueIndex(tool: Tool, profile: UserProfile): { valueIndex: number; valueCreated: number } {
   if (!profile.tjm || profile.tjm === 0) return { valueIndex: 0, valueCreated: 0 };
   const tjmH = profile.tjm / 8;
@@ -125,7 +111,6 @@ function valueIndex(tool: Tool, profile: UserProfile): { valueIndex: number; val
   return { valueIndex: normalized, valueCreated: Math.round(valueCreated) };
 }
 
-/** Final composite score */
 function scoreFinal(tool: Tool, profile: UserProfile): number {
   const pertinence = scoreToolForProfile(tool, profile);
   const { valueIndex: vi } = valueIndex(tool, profile);
@@ -133,7 +118,62 @@ function scoreFinal(tool: Tool, profile: UserProfile): number {
   return Math.round(pertinence * 0.6 + vi * 0.4);
 }
 
-/* ═══════════════ ANOMALY DETECTION ═══════════════ */
+/* ═══════════════ V10 PRESCRIPTION LOGIC ═══════════════ */
+
+/**
+ * Can this tool receive a prescription?
+ * NEVER prescribe on silence, metier, or plugin.
+ */
+function canPrescribe(tool: Tool): boolean {
+  if (tool.prescription_quality === "silence") return false;
+  if (tool.tool_type === "metier" || tool.tool_type === "plugin") return false;
+  return true;
+}
+
+/**
+ * Build a "ferme" prescription directly from prescription_output
+ */
+function buildFermePrescription(
+  tool: Tool,
+  allTools: Tool[],
+  lang: "fr" | "en"
+): Fiche | null {
+  const po = tool.prescription_output;
+  if (!po) return null;
+  const isFr = lang === "fr";
+
+  const altTool = allTools.find((t) => t.id === po.replacement_tool || t.slug === po.replacement_tool);
+  const gain = po.gain_monthly_eur;
+  const isUpgrade = gain < 0;
+
+  let type: PrescriptionType = "replace-cheaper";
+  if (po.mode === "replace_for_performance" || po.mode === "replace_for_performance_or_fit") {
+    type = "replace-better";
+  } else if (po.mode === "replace_for_simplicity") {
+    type = "replace-better";
+  }
+
+  const diagnostic = isFr
+    ? `${tool.name} peut être remplacé par ${altTool?.name || po.replacement_tool} (${po.mode.replace(/_/g, " ")}).`
+    : `${tool.name} can be replaced by ${altTool?.name || po.replacement_tool} (${po.mode.replace(/_/g, " ")}).`;
+
+  const prescription = isUpgrade
+    ? (isFr ? `Passer à ${altTool?.name || po.replacement_tool} (meilleur outil, même budget)` : `Switch to ${altTool?.name || po.replacement_tool} (better tool, same budget)`)
+    : (isFr ? `Remplacer par ${altTool?.name || po.replacement_tool}` : `Replace with ${altTool?.name || po.replacement_tool}`);
+
+  return {
+    type,
+    tool,
+    diagnostic,
+    prescription,
+    alternative: altTool || null,
+    gain: Math.max(gain, 0),
+    badge: "Doublon",
+    migrationGuide: tool.migrationGuide || null,
+  };
+}
+
+/* ═══════════════ ANOMALY DETECTION (kept for non-prescription tools) ═══════════════ */
 
 interface DoublonResult {
   type: "doublon";
@@ -150,14 +190,48 @@ interface DoublonIAResult {
   message: string;
 }
 
+/**
+ * V10: Detect doublons using substitution_cluster_v2 first, then fallback to functional_needs
+ */
 function detectDoublons(currentTools: Tool[], profile: UserProfile): DoublonResult[] {
   const doublons: DoublonResult[] = [];
   const compared = new Set<string>();
 
+  // Phase 1: cluster-based detection
+  const clusterMap: Record<string, Tool[]> = {};
+  for (const t of currentTools) {
+    if (t.substitution_cluster_v2) {
+      if (!clusterMap[t.substitution_cluster_v2]) clusterMap[t.substitution_cluster_v2] = [];
+      clusterMap[t.substitution_cluster_v2].push(t);
+    }
+  }
+  for (const [, clusterTools] of Object.entries(clusterMap)) {
+    if (clusterTools.length < 2) continue;
+    const sorted = [...clusterTools].sort((a, b) => scoreFinal(b, profile) - scoreFinal(a, profile));
+    const winner = sorted[0];
+    for (let i = 1; i < sorted.length; i++) {
+      const loser = sorted[i];
+      const key = [winner.id, loser.id].sort().join("--");
+      if (compared.has(key)) continue;
+      compared.add(key);
+      if (!canPrescribe(loser)) continue;
+      const sharedNeeds = (winner.functional_needs || []).filter((n) =>
+        (loser.functional_needs || []).includes(n)
+      );
+      doublons.push({
+        type: "doublon", loser, winner, sharedNeeds,
+        message: `${winner.name} couvre déjà : ${sharedNeeds.join(", ")}. ${loser.name} devient redondant.`,
+      });
+    }
+  }
+
+  // Phase 2: functional_needs fallback (only for tools not already in a cluster doublon)
+  const doublonIds = new Set(doublons.map((d) => d.loser.id));
   for (let i = 0; i < currentTools.length; i++) {
     for (let j = i + 1; j < currentTools.length; j++) {
       const a = currentTools[i];
       const b = currentTools[j];
+      if (doublonIds.has(a.id) || doublonIds.has(b.id)) continue;
       const key = [a.id, b.id].sort().join("--");
       if (compared.has(key)) continue;
       compared.add(key);
@@ -166,18 +240,14 @@ function detectDoublons(currentTools: Tool[], profile: UserProfile): DoublonResu
       const needsB = new Set(b.functional_needs || b.covers || []);
       const intersection = [...needsA].filter((n) => needsB.has(n));
 
-      // Doublon if 2+ shared needs AND same tool_type
       if (intersection.length >= 2 && a.tool_type === b.tool_type) {
         const scoreA = scoreFinal(a, profile);
         const scoreB = scoreFinal(b, profile);
         const [winner, loser] = scoreA >= scoreB ? [a, b] : [b, a];
-
+        if (!canPrescribe(loser)) continue;
         if (!doublons.find((d) => d.loser.id === loser.id)) {
           doublons.push({
-            type: "doublon",
-            loser,
-            winner,
-            sharedNeeds: intersection,
+            type: "doublon", loser, winner, sharedNeeds: intersection,
             message: `${winner.name} couvre déjà : ${intersection.join(", ")}. ${loser.name} devient redondant.`,
           });
         }
@@ -190,21 +260,17 @@ function detectDoublons(currentTools: Tool[], profile: UserProfile): DoublonResu
 function detectDoublonsIA(currentTools: Tool[]): DoublonIAResult[] {
   const iaTools = currentTools.filter((t) => t.tool_type === "ia" && t.ia_use_case?.length);
   const useCaseMap: Record<string, Tool[]> = {};
-
   for (const tool of iaTools) {
     for (const useCase of tool.ia_use_case!) {
       if (!useCaseMap[useCase]) useCaseMap[useCase] = [];
       useCaseMap[useCase].push(tool);
     }
   }
-
   const doublons: DoublonIAResult[] = [];
   for (const [useCase, tools] of Object.entries(useCaseMap)) {
     if (tools.length >= 2) {
       doublons.push({
-        type: "doublon-ia",
-        useCase,
-        tools,
+        type: "doublon-ia", useCase, tools,
         message: `${tools.length} outils IA pour "${useCase}" : ${tools.map((t) => t.name).join(", ")}`,
       });
     }
@@ -214,10 +280,10 @@ function detectDoublonsIA(currentTools: Tool[]): DoublonIAResult[] {
 
 function detectDormants(currentTools: Tool[], form: SelectorFormData): Tool[] {
   return currentTools.filter((tool) => {
+    if (!canPrescribe(tool)) return false;
     const stackEntry = form.currentTools.find((s) => s.toolId === tool.id);
     if (!stackEntry || stackEntry.usage !== "low") return false;
     if (tool.defaultMonthlyPrice === 0) return false;
-
     const otherTools = currentTools.filter((t) => t.id !== tool.id);
     const toolNeeds = new Set(tool.functional_needs || []);
     return otherTools.some((other) => {
@@ -228,16 +294,13 @@ function detectDormants(currentTools: Tool[], form: SelectorFormData): Tool[] {
 }
 
 function detectInadapted(
-  currentTools: Tool[],
-  profile: UserProfile,
-  doublonIds: Set<string>,
-  dormantIds: Set<string>
+  currentTools: Tool[], profile: UserProfile,
+  doublonIds: Set<string>, dormantIds: Set<string>
 ): Tool[] {
   return currentTools.filter((tool) => {
+    if (!canPrescribe(tool)) return false;
     if (doublonIds.has(tool.id)) return false;
     if (dormantIds.has(tool.id)) return false;
-    if (tool.tool_type === "metier") return false;
-    if (tool.tool_type === "plugin") return false;
     return scoreFinal(tool, profile) < 40;
   });
 }
@@ -245,24 +308,17 @@ function detectInadapted(
 /* ═══════════════ PRESCRIPTION BUILDER ═══════════════ */
 
 function buildPrescription(
-  tool: Tool,
-  reason: "doublon" | "doublon-ia" | "dormant" | "inadapted",
-  winner: Tool | null,
-  profile: UserProfile,
-  allTools: Tool[],
-  lang: "fr" | "en"
+  tool: Tool, reason: "doublon" | "doublon-ia" | "dormant" | "inadapted",
+  winner: Tool | null, profile: UserProfile, allTools: Tool[], lang: "fr" | "en"
 ): Fiche {
   const isFr = lang === "fr";
 
-  // TYPE 1 — Cancel without replacing (dormant with no alternative)
   if (reason === "dormant" && !tool.freeAlternative && !tool.betterAlternative) {
     return {
-      type: "cancel",
-      tool,
+      type: "cancel", tool,
       diagnostic: isFr ? "Vous l'utilisez rarement. Ce coût n'est pas justifié." : "You rarely use it. This cost isn't justified.",
       prescription: isFr ? `Annuler ${tool.name}` : `Cancel ${tool.name}`,
-      gain: tool.defaultMonthlyPrice,
-      badge: "Dormant",
+      gain: tool.defaultMonthlyPrice, badge: "Dormant",
       migrationGuide: {
         steps: [
           isFr ? `Allez dans les paramètres de ${tool.name}` : `Go to ${tool.name} settings`,
@@ -274,12 +330,10 @@ function buildPrescription(
     };
   }
 
-  // TYPE 2 — Replace with free alternative
   if (tool.freeAlternative && tool.freeAlternative !== tool.id) {
     const altTool = allTools.find((t) => t.id === tool.freeAlternative);
     return {
-      type: "replace-cheaper",
-      tool,
+      type: "replace-cheaper", tool,
       diagnostic: reason === "doublon"
         ? (isFr ? `${winner?.name || "Un autre outil"} couvre déjà ces besoins.` : `${winner?.name || "Another tool"} already covers these needs.`)
         : (isFr ? "Une alternative gratuite couvre les mêmes fonctionnalités." : "A free alternative covers the same features."),
@@ -291,38 +345,30 @@ function buildPrescription(
     };
   }
 
-  // TYPE 3 — Replace with better alternative
   if (tool.betterAlternative) {
     const altTool = allTools.find((t) => t.id === tool.betterAlternative!.tool);
     const netGain = tool.defaultMonthlyPrice - (altTool?.defaultMonthlyPrice || 0);
     return {
-      type: "replace-better",
-      tool,
+      type: "replace-better", tool,
       diagnostic: tool.betterAlternative.performanceGain || (isFr ? `${altTool?.name} est plus adapté à votre profil.` : `${altTool?.name} is better suited to your profile.`),
       prescription: isFr ? `Passer à ${altTool?.name || tool.betterAlternative.tool}` : `Switch to ${altTool?.name || tool.betterAlternative.tool}`,
-      alternative: altTool || null,
-      gain: netGain,
+      alternative: altTool || null, gain: netGain,
       badge: reason === "doublon" ? "Doublon" : "Inadapté",
       migrationGuide: tool.migrationGuide || null,
     };
   }
 
-  // TYPE 4 — Downgrade plan
   if (tool.downgradePlan?.available) {
     return {
-      type: "downgrade",
-      tool,
+      type: "downgrade", tool,
       diagnostic: isFr ? "Votre usage ne justifie pas le plan payant." : "Your usage doesn't justify the paid plan.",
       prescription: isFr ? `Passer au plan gratuit (${tool.downgradePlan.freeTier})` : `Switch to free plan (${tool.downgradePlan.freeTier})`,
-      gain: tool.defaultMonthlyPrice,
-      badge: "Inadapté",
+      gain: tool.defaultMonthlyPrice, badge: "Inadapté",
     };
   }
 
-  // Fallback — cancel
   return {
-    type: "cancel",
-    tool,
+    type: "cancel", tool,
     diagnostic: isFr
       ? `Score faible pour votre profil (${Math.round(scoreFinal(tool, profile))}/100).`
       : `Low score for your profile (${Math.round(scoreFinal(tool, profile))}/100).`,
@@ -332,35 +378,36 @@ function buildPrescription(
   };
 }
 
-/* ═══════════════ STACK HEALTH SCORE ═══════════════ */
+/* ═══════════════ STACK HEALTH SCORE V10 ═══════════════ */
 
 function computeStackHealth(
   currentTools: Tool[],
   doublons: DoublonResult[],
   doublonsIA: DoublonIAResult[],
   dormants: Tool[],
-  inadapted: Tool[],
-  profile: UserProfile
+  fermeCount: number,
 ): { score: number; label: string; color: string } {
   if (!currentTools || currentTools.length === 0) {
     return { score: 100, label: "Non évalué", color: "gray" };
   }
 
   let score = 100;
-  score -= Math.min(doublons.length * 10, 30);
-  score -= Math.min(doublonsIA.length * 8, 24);
-  score -= Math.min(dormants.length * 5, 20);
-  score -= Math.min(inadapted.length * 5, 20);
 
-  // Bonus if stack is coherent
-  const nonMetier = currentTools.filter((t) => t.tool_type !== "metier");
-  if (nonMetier.length > 0) {
-    const avgScore = nonMetier.reduce((sum, t) => sum + scoreFinal(t, profile), 0) / nonMetier.length;
-    if (avgScore > 70) score += 5;
-  }
+  // V10 formula:
+  // -10 pts par doublon détecté (même substitution_cluster_v2, 2+ outils)
+  score -= Math.min(doublons.length * 10, 30);
+
+  // -5 pts par outil dormant payant
+  score -= Math.min(dormants.length * 5, 20);
+
+  // -5 pts par outil avec prescription_quality = "ferme" non encore traité
+  score -= Math.min(fermeCount * 5, 25);
+
+  // +5 pts bonus si aucun doublon IA
+  if (doublonsIA.length === 0) score += 5;
 
   const finalScore = Math.max(0, Math.min(100, score));
-  if (finalScore >= 80) return { score: finalScore, label: "Excellente", color: "green" };
+  if (finalScore >= 80) return { score: finalScore, label: "Optimisée", color: "green" };
   if (finalScore >= 60) return { score: finalScore, label: "Correcte", color: "blue" };
   if (finalScore >= 40) return { score: finalScore, label: "À revoir", color: "orange" };
   return { score: finalScore, label: "Critique", color: "red" };
@@ -369,42 +416,53 @@ function computeStackHealth(
 /* ═══════════════ MAIN EXPORT ═══════════════ */
 
 export function computeStackHealthScore(
-  currentToolIds: string[],
-  allTools: Tool[],
-  scoreMap: Map<string, number>,
-  _personaKey: string
+  currentToolIds: string[], allTools: Tool[],
+  scoreMap: Map<string, number>, _personaKey: string
 ): number {
   if (currentToolIds.length === 0) return -1;
   let health = 100;
   const currentTools = currentToolIds.map((id) => allTools.find((t) => t.id === id)).filter(Boolean) as Tool[];
 
-  // Simple doublon check for health score
-  for (let i = 0; i < currentTools.length; i++) {
-    for (let j = i + 1; j < currentTools.length; j++) {
-      const needsA = currentTools[i].functional_needs || currentTools[i].covers || [];
-      const needsB = currentTools[j].functional_needs || currentTools[j].covers || [];
-      const overlap = needsA.filter((n) => needsB.includes(n));
-      if (overlap.length >= 2 && currentTools[i].tool_type === currentTools[j].tool_type) health -= 10;
+  // Cluster-based doublon
+  const clusters: Record<string, Tool[]> = {};
+  for (const t of currentTools) {
+    if (t.substitution_cluster_v2) {
+      if (!clusters[t.substitution_cluster_v2]) clusters[t.substitution_cluster_v2] = [];
+      clusters[t.substitution_cluster_v2].push(t);
     }
   }
-
-  for (const t of currentTools) {
-    if ((scoreMap.get(t.id) || 0) < 40 && t.tool_type !== "metier" && t.tool_type !== "plugin") health -= 5;
+  for (const [, tools] of Object.entries(clusters)) {
+    if (tools.length >= 2) health -= 10;
   }
+
+  // Ferme prescriptions penalty
+  for (const t of currentTools) {
+    if (t.prescription_quality === "ferme") health -= 5;
+  }
+
+  // No IA doublon bonus
+  const iaTools = currentTools.filter((t) => t.tool_type === "ia" && t.ia_use_case?.length);
+  const useCases = new Set<string>();
+  let hasDupIA = false;
+  for (const t of iaTools) {
+    for (const uc of t.ia_use_case!) {
+      if (useCases.has(uc)) { hasDupIA = true; break; }
+      useCases.add(uc);
+    }
+    if (hasDupIA) break;
+  }
+  if (!hasDupIA) health += 5;
 
   return Math.max(0, Math.min(100, health));
 }
 
 export function generateScoringResults(
-  form: SelectorFormData,
-  allTools: Tool[],
-  lang: "fr" | "en" = "fr"
+  form: SelectorFormData, allTools: Tool[], lang: "fr" | "en" = "fr"
 ): SelectorResults {
   const profile = buildProfile(form);
   const isTjmZero = profile.tjm === 0;
   const currentToolIds = form.currentTools.map((ct) => ct.toolId);
   const hasCurrentTools = currentToolIds.length > 0;
-  const isFr = lang === "fr";
 
   // Score every tool
   const scoredTools: ScoredTool[] = allTools.map((tool) => {
@@ -415,17 +473,13 @@ export function generateScoringResults(
       : Math.round(pertinenceScore * 0.6 + vi * 0.4);
 
     return {
-      tool,
-      pertinenceScore,
+      tool, pertinenceScore,
       valueIndex: isTjmZero ? 0 : vi,
       finalScore,
       valueCreated: isTjmZero ? 0 : Math.min(vc, 2000),
       action: "neutral" as ScoredTool["action"],
-      cancelReason: undefined,
-      cancelType: undefined,
-      replacedBy: undefined,
-      freeAlt: null,
-      fiche: null,
+      cancelReason: undefined, cancelType: undefined,
+      replacedBy: undefined, freeAlt: null, fiche: null,
     };
   });
 
@@ -436,55 +490,71 @@ export function generateScoringResults(
     .map((id) => allTools.find((t) => t.id === id))
     .filter(Boolean) as Tool[];
 
-  // ── ANOMALY DETECTION ──
-  const doublons = detectDoublons(currentToolObjs, profile);
-  const doublonsIA = detectDoublonsIA(currentToolObjs);
-  const dormants = detectDormants(currentToolObjs, form);
+  // ── FICHES: V10 PRESCRIPTION-FIRST LOGIC ──
+  const fiches: Fiche[] = [];
+  const prescribedIds = new Set<string>();
+
+  // Phase 1: "ferme" prescriptions — direct from prescription_output
+  for (const tool of currentToolObjs) {
+    if (tool.prescription_quality === "ferme" && canPrescribe(tool)) {
+      const fiche = buildFermePrescription(tool, allTools, lang);
+      if (fiche) {
+        fiches.push(fiche);
+        prescribedIds.add(tool.id);
+      }
+    }
+  }
+
+  // Phase 2: "question" tools — flagged but no prescription yet
+  // (handled in UI — the ScoredTool will carry prescription_quality = "question")
+
+  // Phase 3: anomaly detection for remaining prescribable tools
+  const remainingTools = currentToolObjs.filter((t) => !prescribedIds.has(t.id) && canPrescribe(t));
+  const doublons = detectDoublons(remainingTools, profile);
+  const doublonsIA = detectDoublonsIA(currentToolObjs); // detect across all for banner
+  const dormants = detectDormants(remainingTools, form);
 
   const doublonIds = new Set(doublons.map((d) => d.loser.id));
   const doublonIALosers = new Set<string>();
   for (const dia of doublonsIA) {
-    // The lowest scoring tool is the loser
     const sorted = [...dia.tools].sort((a, b) => scoreFinal(b, profile) - scoreFinal(a, profile));
     for (let i = 1; i < sorted.length; i++) {
-      if (!doublonIds.has(sorted[i].id)) doublonIALosers.add(sorted[i].id);
+      if (!doublonIds.has(sorted[i].id) && !prescribedIds.has(sorted[i].id) && canPrescribe(sorted[i])) {
+        doublonIALosers.add(sorted[i].id);
+      }
     }
   }
   const dormantIds = new Set(dormants.map((d) => d.id));
-  const inadapted = detectInadapted(currentToolObjs, profile, new Set([...doublonIds, ...doublonIALosers]), dormantIds);
-
-  // ── BUILD FICHES ──
-  const fiches: Fiche[] = [];
+  const inadapted = detectInadapted(remainingTools, profile, new Set([...doublonIds, ...doublonIALosers]), dormantIds);
 
   for (const d of doublons) {
     fiches.push(buildPrescription(d.loser, "doublon", d.winner, profile, allTools, lang));
+    prescribedIds.add(d.loser.id);
   }
   for (const toolId of doublonIALosers) {
     const tool = currentToolObjs.find((t) => t.id === toolId);
-    if (tool) fiches.push(buildPrescription(tool, "doublon-ia", null, profile, allTools, lang));
+    if (tool) {
+      fiches.push(buildPrescription(tool, "doublon-ia", null, profile, allTools, lang));
+      prescribedIds.add(tool.id);
+    }
   }
   for (const tool of dormants) {
-    if (!doublonIds.has(tool.id) && !doublonIALosers.has(tool.id)) {
+    if (!prescribedIds.has(tool.id)) {
       fiches.push(buildPrescription(tool, "dormant", null, profile, allTools, lang));
+      prescribedIds.add(tool.id);
     }
   }
   for (const tool of inadapted) {
     fiches.push(buildPrescription(tool, "inadapted", null, profile, allTools, lang));
+    prescribedIds.add(tool.id);
   }
 
   // Sort fiches by gain desc
   fiches.sort((a, b) => b.gain - a.gain);
 
   // Mark cancellations on scored tools
-  const allCancelIds = new Set([
-    ...doublonIds,
-    ...doublonIALosers,
-    ...dormantIds,
-    ...inadapted.map((t) => t.id),
-  ]);
-
   for (const scored of scoredTools) {
-    if (!allCancelIds.has(scored.tool.id)) continue;
+    if (!prescribedIds.has(scored.tool.id)) continue;
     scored.action = "cancel";
     const fiche = fiches.find((f) => f.tool.id === scored.tool.id);
     scored.fiche = fiche || null;
@@ -500,25 +570,20 @@ export function generateScoringResults(
     } else {
       scored.cancelType = "inadequate";
     }
-
-    // Free alternative
     if (scored.tool.freeAlternative && scored.tool.freeAlternative !== scored.tool.id) {
       const alt = allTools.find((t) => t.id === scored.tool.freeAlternative || t.slug === scored.tool.freeAlternative);
       if (alt) scored.freeAlt = alt;
     }
   }
 
-  // Recommendations: tools NOT in current stack, NOT metier/plugin, score > 60
+  // Recommendations
   for (const s of scoredTools) {
     if (!currentToolIds.includes(s.tool.id) && s.finalScore > 60) {
-      // Filter: only satellite, gestion, ia for recommendations
       if (["satellite", "gestion", "ia"].includes(s.tool.tool_type)) {
         s.action = "recommend";
       }
     }
   }
-
-  // Cas 3: if fewer than 3 recommendations, lower threshold
   const highRecommended = scoredTools.filter((s) => s.action === "recommend" && s.finalScore > 60);
   if (highRecommended.length < 3) {
     for (const s of scoredTools) {
@@ -529,7 +594,6 @@ export function generateScoringResults(
       }
     }
   }
-  // If still < 3, show top 6
   const recommended2 = scoredTools.filter((s) => s.action === "recommend");
   if (recommended2.length < 3) {
     const remaining = scoredTools
@@ -542,30 +606,28 @@ export function generateScoringResults(
   const toCancel = scoredTools.filter((s) => s.action === "cancel").sort((a, b) => a.finalScore - b.finalScore);
   const recommended = scoredTools.filter((s) => s.action === "recommend").sort((a, b) => b.finalScore - a.finalScore).slice(0, 6);
 
-  // Stack health
-  const healthResult = computeStackHealth(currentToolObjs, doublons, doublonsIA, dormants, inadapted, profile);
+  // Stack health V10
+  const fermeCount = currentToolObjs.filter((t) => t.prescription_quality === "ferme" && canPrescribe(t)).length;
+  const healthResult = computeStackHealth(currentToolObjs, doublons, doublonsIA, dormants, fermeCount);
   const totalSavingsMonthly = fiches.reduce((sum, f) => sum + Math.max(f.gain, 0), 0);
-
-  // AI doublon detection
   const hasAiDoublon = doublonsIA.length > 0;
-
-  // Persona message (derived from family + verticals)
   const personaMessage = buildPersonaMessage(form, lang);
 
+  // Count "question" tools for UI
+  const questionTools = currentToolObjs.filter(
+    (t) => t.prescription_quality === "question" && canPrescribe(t) && !prescribedIds.has(t.id)
+  );
+
   return {
-    scoredTools,
-    recommended,
-    toCancel,
-    fiches,
+    scoredTools, recommended, toCancel, fiches,
     stackHealthScore: hasCurrentTools ? healthResult.score : -1,
     totalSavingsMonthly,
     totalSavingsAnnual: totalSavingsMonthly * 12,
-    personaMessage,
-    hasCurrentTools,
-    isTjmZero,
+    personaMessage, hasCurrentTools, isTjmZero,
     isStackFree: hasCurrentTools && currentToolObjs.every((t) => t.defaultMonthlyPrice === 0),
     hasAiDoublon,
     fewRecommendations: highRecommended.length < 3,
+    questionTools,
   };
 }
 
@@ -579,7 +641,5 @@ function buildPersonaMessage(form: SelectorFormData, lang: "fr" | "en"): string 
     return isFr ? "Voici votre analyse de stack personnalisée." : "Here's your personalized stack analysis.";
   }
   const joined = verticalLabels.join(", ");
-  return isFr
-    ? `Analyse optimisée pour : ${joined}.`
-    : `Analysis optimized for: ${joined}.`;
+  return isFr ? `Analyse optimisée pour : ${joined}.` : `Analysis optimized for: ${joined}.`;
 }

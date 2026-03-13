@@ -11,7 +11,6 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Verify admin key
   const adminKey = req.headers.get("x-admin-key");
   const expectedKey = Deno.env.get("SEED_ADMIN_KEY");
   if (!adminKey || adminKey !== expectedKey) {
@@ -27,9 +26,11 @@ serve(async (req) => {
   );
 
   try {
-    const { tools, verticals } = await req.json();
+    // Expect: { tools: [...], verticals: {...}, priceOverrides: { toolId: priceEur } }
+    const { tools, verticals, priceOverrides } = await req.json();
+    const prices: Record<string, number> = priceOverrides || {};
 
-    // 1. Delete all existing tools
+    // 1. Delete existing tools
     const { error: delToolsErr } = await supabaseAdmin
       .from("tools")
       .delete()
@@ -38,46 +39,61 @@ serve(async (req) => {
 
     // 2. Insert tools in batches of 20
     let toolsInserted = 0;
-    let toolsErrors: string[] = [];
+    const toolsErrors: string[] = [];
 
     for (let i = 0; i < tools.length; i += 20) {
-      const batch = tools.slice(i, i + 20).map((t: any) => ({
-        id: t.id,
-        slug: t.slug || t.id,
-        name: t.name,
-        category: t.category || null,
-        short_description: t.shortDescription || "",
-        long_description: t.longDescription || "",
-        pricing: t.pricing || { free: "", paid: "" },
-        default_monthly_price: Math.round(t.defaultMonthlyPrice || 0),
-        verdict: t.verdict || null,
-        pros: t.pros || [],
-        cons: t.cons || [],
-        use_cases: t.useCases || [],
-        covers: t.covers || [],
-        relevant_for: t.relevantFor || [],
-        personas: t.personas || [],
-        affiliate_link: t.affiliateLink || "",
-        website_url: t.websiteUrl || t.affiliateLink || "",
-        logo: t.logo || "",
-        solo_relevance: t.soloRelevance || null,
-        team_relevance: t.teamRelevance || null,
-        alternatives: t.alternatives || [],
-        seo: t.seo || null,
-        articles: t.articles || [],
-        time_gained_hours_per_month: t.timeGainedHoursPerMonth != null ? Math.round(t.timeGainedHoursPerMonth) : null,
-        free_alternative: t.freeAlternative || null,
-        tool_type: t.tool_type || "satellite",
-        substitutable: t.substitutable ?? true,
-        host_app: t.host_app || null,
-        bundle_parent: t.bundle_parent || null,
-        verticals: t.verticals || [],
-        functional_needs: t.functional_needs || t.covers || [],
-        ia_use_case: t.ia_use_case || null,
-        better_alternative: t.betterAlternative || null,
-        migration_guide: t.migrationGuide || null,
-        downgrade_plan: t.downgradePlan || null,
-      }));
+      const batch = tools.slice(i, i + 20).map((t: any) => {
+        // Use CSV price override if available, else JSON compare_price, else defaultMonthlyPrice
+        const csvPrice = prices[t.id];
+        const jsonComparePrice = t.pricing_v5?.compare_price_monthly_eur
+          ?? t.pricing_v4?.compare_price_monthly_eur
+          ?? t.pricing_v3?.compare_price_monthly_eur;
+        const finalPrice = csvPrice ?? jsonComparePrice ?? t.defaultMonthlyPrice ?? 0;
+
+        return {
+          id: t.id,
+          slug: t.slug || t.id,
+          name: t.name,
+          category: t.category || null,
+          short_description: t.shortDescription || "",
+          long_description: t.longDescription || "",
+          pricing: t.pricing || { free: "", paid: "" },
+          default_monthly_price: Math.round(finalPrice * 100) / 100,
+          verdict: t.verdict || null,
+          pros: t.pros || [],
+          cons: t.cons || [],
+          use_cases: t.useCases || [],
+          covers: t.covers || [],
+          relevant_for: t.relevantFor || [],
+          personas: t.personas || [],
+          affiliate_link: t.affiliateLink || "",
+          website_url: t.website || t.affiliateLink || "",
+          logo: t.logo || "",
+          solo_relevance: t.soloRelevance || null,
+          team_relevance: t.teamRelevance || null,
+          alternatives: t.alternatives || [],
+          seo: t.seo || null,
+          articles: t.articles || [],
+          time_gained_hours_per_month: t.timeGainedHoursPerMonth != null ? Math.round(t.timeGainedHoursPerMonth) : null,
+          free_alternative: t.freeAlternative || null,
+          tool_type: t.tool_type || "satellite",
+          substitutable: t.substitutable ?? true,
+          host_app: t.host_app || null,
+          bundle_parent: t.bundle_parent || null,
+          verticals: t.verticals || [],
+          functional_needs: t.functional_needs || t.covers || [],
+          ia_use_case: t.ia_use_case || null,
+          better_alternative: t.betterAlternative || null,
+          migration_guide: t.migrationGuide || null,
+          downgrade_plan: t.downgradePlan || null,
+          // V10 prescription fields
+          prescription_quality: t.prescription_quality || "silence",
+          prescription_output: t.prescription_output || null,
+          prescription_block_reasons: t.prescription_block_reasons || [],
+          prescription_context_questions: t.prescription_context_questions || [],
+          substitution_cluster_v2: t.substitution_cluster_v2 || null,
+        };
+      });
 
       const { error } = await supabaseAdmin.from("tools").insert(batch);
       if (error) {

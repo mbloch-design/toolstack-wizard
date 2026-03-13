@@ -129,10 +129,11 @@ const ResultsPage = () => {
   const stackCost = form.currentTools.reduce((s, ct) => s + ct.monthlyCost, 0);
 
   const healthPct = results.stackHealthScore;
-  const healthColor = healthPct > 80 ? "text-keep" : healthPct >= 50 ? "text-primary" : "text-cancel";
-  const healthLabel = healthPct > 80
+  const healthColor = healthPct >= 80 ? "text-keep" : healthPct >= 60 ? "text-optimize" : healthPct >= 40 ? "text-orange-500" : "text-cancel";
+  const healthLabel = healthPct >= 80
     ? t("Optimisée", "Optimized")
-    : healthPct >= 50 ? t("À revoir", "Needs review") : t("Dette détectée", "Debt detected");
+    : healthPct >= 60 ? t("Correcte", "Correct")
+    : healthPct >= 40 ? t("À revoir", "Needs review") : t("Critique", "Critical");
 
   const recsToShow = showAllRecs ? results.recommended : results.recommended.slice(0, 6);
 
@@ -262,6 +263,65 @@ const ResultsPage = () => {
             )}
           </section>
         )}
+        
+        {/* ─── QUESTION TOOLS (need context before prescribing) ─── */}
+        {results.hasCurrentTools && results.questionTools && results.questionTools.length > 0 && (
+          <section>
+            <div className="flex items-center gap-2 mb-4">
+              <h2 className="text-xl font-bold">{t("Outils à analyser", "Tools to analyze")}</h2>
+              <Tip text={t("Ces outils nécessitent plus de contexte pour une recommandation fiable.", "These tools need more context for a reliable recommendation.")} />
+            </div>
+            <div className="space-y-2">
+              {results.questionTools.map((tool) => (
+                <div key={tool.id} className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
+                  <Logo tool={tool} size={32} />
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-semibold">{tool.name}</h3>
+                    <p className="text-xs text-muted-foreground">{tool.shortDescription}</p>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="rounded-lg bg-secondary px-2.5 py-1 text-xs font-medium tabular-nums text-muted-foreground">
+                      {tool.defaultMonthlyPrice > 0 ? `${tool.defaultMonthlyPrice}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
+                    </span>
+                    <span className="rounded-md bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[11px] font-semibold text-amber-600">
+                      {t("Analyse requise", "Analysis needed")}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ─── SILENCE TOOLS (no prescription, just display) ─── */}
+        {results.hasCurrentTools && (() => {
+          const silenceTools = form.currentTools
+            .map((ct) => results.scoredTools.find((s) => s.tool.id === ct.toolId))
+            .filter((s): s is ScoredTool => !!s && (s.tool.prescription_quality === "silence" || s.tool.tool_type === "metier" || s.tool.tool_type === "plugin") && s.action !== "cancel")
+          if (silenceTools.length === 0) return null;
+          return (
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <h2 className="text-xl font-bold">{t("Outils métier", "Core tools")}</h2>
+                <Tip text={t("Ces outils sont essentiels à votre activité. Aucune prescription.", "These tools are essential to your work. No prescription.")} />
+              </div>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {silenceTools.map((s) => (
+                  <div key={s.tool.id} className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
+                    <Logo tool={s.tool} size={28} />
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-sm font-semibold">{s.tool.name}</h3>
+                      <p className="text-[11px] text-muted-foreground">{s.tool.tool_type === "metier" ? t("Outil métier", "Core tool") : s.tool.tool_type === "plugin" ? "Plugin" : t("Non substituable", "Non-substitutable")}</p>
+                    </div>
+                    <span className="text-xs tabular-nums text-muted-foreground">
+                      {s.tool.defaultMonthlyPrice > 0 ? `${s.tool.defaultMonthlyPrice}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
 
         {results.hasCurrentTools && results.fiches.length === 0 && (
           <div className="flex items-center gap-3 rounded-xl border border-keep/20 bg-keep/5 px-5 py-4">

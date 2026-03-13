@@ -48,6 +48,19 @@ export interface DowngradePlan {
 }
 
 export type ToolType = "metier" | "plugin" | "ia" | "gestion" | "satellite";
+export type PrescriptionQuality = "ferme" | "question" | "silence";
+
+export interface PrescriptionOutput {
+  action: string;
+  replacement_tool: string;
+  mode: string;
+  confidence: string;
+  gain_monthly_eur: number;
+  gain_annual_eur: number;
+  price_tool_eur: number;
+  price_alt_eur: number;
+  verified_on: string;
+}
 
 export interface Tool {
   id: string;
@@ -88,6 +101,12 @@ export interface Tool {
   betterAlternative?: BetterAlternative | null;
   migrationGuide?: MigrationGuide | null;
   downgradePlan?: DowngradePlan | null;
+  // v10 prescription fields
+  prescription_quality: PrescriptionQuality;
+  prescription_output?: PrescriptionOutput | null;
+  prescription_block_reasons?: string[];
+  prescription_context_questions?: string[];
+  substitution_cluster_v2?: string | null;
 }
 
 export interface BlogPost {
@@ -281,6 +300,7 @@ export interface SelectorResults {
   isStackFree?: boolean;
   hasAiDoublon?: boolean;
   fewRecommendations?: boolean;
+  questionTools?: Tool[];
 }
 
 // Legacy types kept for compat
