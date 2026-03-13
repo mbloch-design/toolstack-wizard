@@ -70,7 +70,14 @@ function ToolCard({ tool, selected, onToggle }: { tool: Tool; selected: boolean;
   );
 }
 
-/* ─── Option Card ─── */
+/* ─── Mini Logo for chips ─── */
+function ToolMiniLogo({ tool }: { tool: Tool }) {
+  const logoUrl = getToolLogoUrl(tool);
+  const [err, setErr] = useState(false);
+  if (!logoUrl || err) return <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded bg-secondary text-[9px] font-bold">{tool.name.charAt(0)}</span>;
+  return <img src={logoUrl} alt="" className="h-4 w-4 shrink-0 rounded object-contain" loading="lazy" onError={() => setErr(true)} />;
+}
+
 function OptionCard({ selected, onClick, emoji, label, desc, compact }: {
   selected: boolean; onClick: () => void; emoji: string; label: string; desc?: string; compact?: boolean;
 }) {
