@@ -620,13 +620,6 @@ const SelectorPage = () => {
               </div>
             )}
 
-            {/* Sticky counter — always visible */}
-            <div className="sticky bottom-0 mt-5 -mx-1 rounded-xl border border-border bg-card/95 backdrop-blur-md px-4 py-3 shadow-lg">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">{form.currentTools.length}</span> {t("outils", "tools")}</span>
-                <span className="font-heading text-sm font-bold tabular-nums">{t("Total", "Total")} : <span className="text-primary">{totalCost}€/{t("mois", "mo")}</span></span>
-              </div>
-            </div>
           </div>
         )}
 
