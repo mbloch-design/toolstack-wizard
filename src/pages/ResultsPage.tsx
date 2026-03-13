@@ -129,10 +129,11 @@ const ResultsPage = () => {
   const stackCost = form.currentTools.reduce((s, ct) => s + ct.monthlyCost, 0);
 
   const healthPct = results.stackHealthScore;
-  const healthColor = healthPct > 80 ? "text-keep" : healthPct >= 50 ? "text-primary" : "text-cancel";
-  const healthLabel = healthPct > 80
+  const healthColor = healthPct >= 80 ? "text-keep" : healthPct >= 60 ? "text-optimize" : healthPct >= 40 ? "text-orange-500" : "text-cancel";
+  const healthLabel = healthPct >= 80
     ? t("Optimisée", "Optimized")
-    : healthPct >= 50 ? t("À revoir", "Needs review") : t("Dette détectée", "Debt detected");
+    : healthPct >= 60 ? t("Correcte", "Correct")
+    : healthPct >= 40 ? t("À revoir", "Needs review") : t("Critique", "Critical");
 
   const recsToShow = showAllRecs ? results.recommended : results.recommended.slice(0, 6);
 
