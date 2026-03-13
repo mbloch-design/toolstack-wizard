@@ -16539,5 +16539,4944 @@
     "migrationGuide": null,
     "host_app": null,
     "ia_use_case": null
+  },
+  {
+    "id": "pika-labs",
+    "name": "Pika Labs",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération vidéo IA centrée sur l'animation de personnages et d'objets.",
+    "defaultMonthlyPrice": 8,
+    "pricing": {
+      "free": "150 crédits/mois",
+      "paid": "8$/mois (Basic)"
+    },
+    "covers": [
+      "generation-video",
+      "animation-personnages"
+    ],
+    "functional_needs": [
+      "generation-video",
+      "animation-2d-3d"
+    ],
+    "ia_use_case": [
+      "generation-video"
+    ],
+    "verticals": [
+      "motion-video",
+      "createur-contenu",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "runway",
+      "reason": "plus-polyvalent",
+      "saving": -7,
+      "performanceGain": "Runway couvre plus de cas (rotoscopie, suppression fond, inpainting)"
+    },
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "150 crédits/mois"
+    },
+    "affiliateLink": "https://pika.art",
+    "verdict": {
+      "keepIf": [
+        "Spécifiquement pour l'animation de personnages IA"
+      ],
+      "avoidIf": [
+        "Runway déjà dans le stack — fort doublon génération vidéo"
+      ],
+      "threshold": "Rentable si vous animez plus de 10 personnages par mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "150 crédits/mois",
+      "paid": "8$/mois (Basic)"
+    },
+    "longDescription": "Génération vidéo IA centrée sur l'animation de personnages et d'objets.",
+    "alternatives": []
+  },
+  {
+    "id": "kling-ai",
+    "name": "Kling AI",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération vidéo IA réaliste jusqu'à 2 minutes. Alternative sérieuse à Runway.",
+    "defaultMonthlyPrice": 10,
+    "pricing": {
+      "free": "166 crédits/mois",
+      "paid": "10$/mois (Basic)"
+    },
+    "covers": [
+      "generation-video",
+      "video-longue-duree"
+    ],
+    "functional_needs": [
+      "generation-video"
+    ],
+    "ia_use_case": [
+      "generation-video"
+    ],
+    "verticals": [
+      "motion-video",
+      "createur-contenu",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "runway",
+      "reason": "plus-mature-ecosysteme",
+      "saving": -5,
+      "performanceGain": "Runway a un écosystème plus complet (formation, templates, intégrations)"
+    },
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "166 crédits/mois"
+    },
+    "affiliateLink": "https://klingai.com",
+    "verdict": {
+      "keepIf": [
+        "Vidéos longues (>10s) avec réalisme cinématique"
+      ],
+      "avoidIf": [
+        "Runway ou Pika déjà en place — triplon génération vidéo"
+      ],
+      "threshold": "À tester en gratuit avant de payer."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "166 crédits/mois",
+      "paid": "10$/mois (Basic)"
+    },
+    "longDescription": "Génération vidéo IA réaliste jusqu'à 2 minutes. Alternative sérieuse à Runway.",
+    "alternatives": []
+  },
+  {
+    "id": "krea-ai",
+    "name": "Krea AI",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération d'images IA en temps réel avec contrôle créatif avancé.",
+    "defaultMonthlyPrice": 10,
+    "pricing": {
+      "free": "Accès limité",
+      "paid": "10$/mois (Standard)"
+    },
+    "covers": [
+      "generation-image",
+      "upscaling",
+      "design-visuel",
+      "concept-art"
+    ],
+    "functional_needs": [
+      "generation-image",
+      "concept-art",
+      "moodboard"
+    ],
+    "ia_use_case": [
+      "generation-image",
+      "upscaling-image"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "motion-video",
+      "illustrateur",
+      "ai-builder",
+      "scenographe"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://krea.ai",
+    "verdict": {
+      "keepIf": [
+        "Génération en temps réel pour exploration créative rapide"
+      ],
+      "avoidIf": [
+        "Midjourney ou Firefly déjà en place — doublon génération image"
+      ],
+      "threshold": "Complémentaire à Midjourney si besoin de contrôle en temps réel."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Accès limité",
+      "paid": "10$/mois (Standard)"
+    },
+    "longDescription": "Génération d'images IA en temps réel avec contrôle créatif avancé.",
+    "alternatives": []
+  },
+  {
+    "id": "magnific-ai",
+    "name": "Magnific AI",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Upscaling IA d'images avec ajout de détails hallucinés. Résultats uniques.",
+    "defaultMonthlyPrice": 39,
+    "pricing": {
+      "paid": "39$/mois (Pro)"
+    },
+    "covers": [
+      "upscaling",
+      "retouche-photo",
+      "generation-image"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "upscaling"
+    ],
+    "ia_use_case": [
+      "upscaling-image",
+      "generation-image"
+    ],
+    "verticals": [
+      "photographe",
+      "graphiste-da",
+      "motion-video",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "topaz-video-ai",
+      "reason": "moins-cher-pour-video",
+      "saving": 39,
+      "performanceGain": null
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://magnific.ai",
+    "verdict": {
+      "keepIf": [
+        "Upscaling créatif haute résolution pour print ou portfolio"
+      ],
+      "avoidIf": [
+        "Usage vidéo — Topaz Video AI est plus adapté et moins cher"
+      ],
+      "threshold": "Rentable si vous vendez des tirages grand format régulièrement."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "39$/mois (Pro)"
+    },
+    "longDescription": "Upscaling IA d'images avec ajout de détails hallucinés. Résultats uniques.",
+    "alternatives": []
+  },
+  {
+    "id": "ideogram",
+    "name": "Ideogram",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération d'images IA avec texte intégré — le meilleur du marché pour la typo.",
+    "defaultMonthlyPrice": 8,
+    "pricing": {
+      "free": "10 générations/jour",
+      "paid": "8$/mois (Basic)"
+    },
+    "covers": [
+      "generation-image",
+      "typographie",
+      "design-visuel"
+    ],
+    "functional_needs": [
+      "generation-image",
+      "typographie",
+      "design-visuel"
+    ],
+    "ia_use_case": [
+      "generation-image"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "community-manager",
+      "createur-contenu",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "10 générations/jour"
+    },
+    "affiliateLink": "https://ideogram.ai",
+    "verdict": {
+      "keepIf": [
+        "Visuels avec texte intégré (affiches, covers, thumbnails)"
+      ],
+      "avoidIf": [
+        "Midjourney pour usage purement artistique sans texte"
+      ],
+      "threshold": "Complémentaire à Midjourney — couvre un angle différent."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "10 générations/jour",
+      "paid": "8$/mois (Basic)"
+    },
+    "longDescription": "Génération d'images IA avec texte intégré — le meilleur du marché pour la typo.",
+    "alternatives": []
+  },
+  {
+    "id": "udio",
+    "name": "Udio",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération musicale IA de haute qualité à partir d'un prompt texte.",
+    "defaultMonthlyPrice": 10,
+    "pricing": {
+      "free": "100 crédits/mois",
+      "paid": "10$/mois (Standard)"
+    },
+    "covers": [
+      "generation-audio",
+      "creation-musicale",
+      "jingles"
+    ],
+    "functional_needs": [
+      "generation-audio",
+      "creation-musicale"
+    ],
+    "ia_use_case": [
+      "generation-audio",
+      "creation-musicale"
+    ],
+    "verticals": [
+      "motion-video",
+      "createur-contenu",
+      "podcasteur",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "100 crédits/mois"
+    },
+    "affiliateLink": "https://udio.com",
+    "verdict": {
+      "keepIf": [
+        "Création de jingles, ambiances ou musiques pour vos vidéos"
+      ],
+      "avoidIf": [
+        "Suno déjà dans le stack — doublon génération musicale"
+      ],
+      "threshold": "Rentable dès 3 projets vidéo avec musique originale par mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "100 crédits/mois",
+      "paid": "10$/mois (Standard)"
+    },
+    "longDescription": "Génération musicale IA de haute qualité à partir d'un prompt texte.",
+    "alternatives": []
+  },
+  {
+    "id": "suno",
+    "name": "Suno",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération musicale IA avec paroles et voix intégrées.",
+    "defaultMonthlyPrice": 10,
+    "pricing": {
+      "free": "50 crédits/jour",
+      "paid": "10$/mois (Pro)"
+    },
+    "covers": [
+      "generation-audio",
+      "creation-musicale",
+      "voix-chantee"
+    ],
+    "functional_needs": [
+      "generation-audio",
+      "creation-musicale"
+    ],
+    "ia_use_case": [
+      "generation-audio",
+      "creation-musicale"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "motion-video",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "udio",
+      "reason": "meilleure-qualite-musicale",
+      "saving": 0,
+      "performanceGain": "Udio produit une meilleure qualité instrumentale, Suno est meilleur pour la voix"
+    },
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "50 crédits/jour"
+    },
+    "affiliateLink": "https://suno.com",
+    "verdict": {
+      "keepIf": [
+        "Chansons complètes avec paroles pour contenus viraux"
+      ],
+      "avoidIf": [
+        "Udio déjà dans le stack — doublon génération musicale"
+      ],
+      "threshold": "Les deux ont un free tier généreux — tester avant de payer."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "50 crédits/jour",
+      "paid": "10$/mois (Pro)"
+    },
+    "longDescription": "Génération musicale IA avec paroles et voix intégrées.",
+    "alternatives": []
+  },
+  {
+    "id": "descript",
+    "name": "Descript",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA.",
+    "defaultMonthlyPrice": 12,
+    "pricing": {
+      "free": "1h transcription/mois",
+      "paid": "12$/mois (Creator)"
+    },
+    "covers": [
+      "montage-audio",
+      "transcription",
+      "enregistrement-multipistes",
+      "montage-video-court"
+    ],
+    "functional_needs": [
+      "montage-audio",
+      "transcription",
+      "enregistrement-multipistes"
+    ],
+    "ia_use_case": [
+      "transcription",
+      "voice-synthesis",
+      "montage-par-texte"
+    ],
+    "verticals": [
+      "podcasteur",
+      "createur-contenu",
+      "coach-formateur",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 8,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "1h transcription/mois"
+    },
+    "affiliateLink": "https://descript.com",
+    "verdict": {
+      "keepIf": [
+        "Podcast, interviews, cours en ligne — gain de temps massif"
+      ],
+      "avoidIf": [
+        "Montage vidéo long format — Premiere ou DaVinci plus adaptés"
+      ],
+      "threshold": "Rentable dès 2 épisodes podcast ou vidéos par mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "1h transcription/mois",
+      "paid": "12$/mois (Creator)"
+    },
+    "longDescription": "Édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA.",
+    "alternatives": []
+  },
+  {
+    "id": "otter-ai",
+    "name": "Otter.ai",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Transcription et résumé automatique de réunions en temps réel.",
+    "defaultMonthlyPrice": 10,
+    "pricing": {
+      "free": "300 minutes/mois",
+      "paid": "10$/mois (Pro)"
+    },
+    "covers": [
+      "transcription",
+      "notes-reunion",
+      "synthese"
+    ],
+    "functional_needs": [
+      "transcription",
+      "notes-reunion"
+    ],
+    "ia_use_case": [
+      "transcription",
+      "synthese"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "manager-dsi",
+      "rh-recruteur",
+      "coach-formateur"
+    ],
+    "personas": [
+      "sofia",
+      "marc",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "descript",
+      "reason": "plus-complet",
+      "saving": -2,
+      "performanceGain": "Descript transcrit ET monte — évite un outil supplémentaire"
+    },
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "300 minutes/mois"
+    },
+    "affiliateLink": "https://otter.ai",
+    "verdict": {
+      "keepIf": [
+        "Beaucoup de réunions clients à retranscrire"
+      ],
+      "avoidIf": [
+        "Descript déjà en place — doublon transcription"
+      ],
+      "threshold": "Free tier généreux — rarement nécessaire de payer."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "300 minutes/mois",
+      "paid": "10$/mois (Pro)"
+    },
+    "longDescription": "Transcription et résumé automatique de réunions en temps réel.",
+    "alternatives": []
+  },
+  {
+    "id": "bolt-new",
+    "name": "Bolt.new",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération d'applications web complètes depuis un prompt. Alternative à Lovable.",
+    "defaultMonthlyPrice": 20,
+    "pricing": {
+      "free": "Crédits limités",
+      "paid": "20$/mois (Pro)"
+    },
+    "covers": [
+      "no-code-ia",
+      "app-builder",
+      "deploiement",
+      "coding"
+    ],
+    "functional_needs": [
+      "no-code-ia",
+      "app-builder",
+      "integration-llm"
+    ],
+    "ia_use_case": [
+      "code",
+      "no-code-ia"
+    ],
+    "verticals": [
+      "developpeur-solo",
+      "ai-builder",
+      "fondateur-saas"
+    ],
+    "personas": [
+      "theo",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 12,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://bolt.new",
+    "verdict": {
+      "keepIf": [
+        "Prototypage rapide sans backend complexe"
+      ],
+      "avoidIf": [
+        "Lovable ou Cursor déjà en place — fort doublon"
+      ],
+      "threshold": "Rentable dès le premier prototype validé par un client."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Crédits limités",
+      "paid": "20$/mois (Pro)"
+    },
+    "longDescription": "Génération d'applications web complètes depuis un prompt. Alternative à Lovable.",
+    "alternatives": []
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération d'applications full-stack depuis un prompt avec Supabase intégré.",
+    "defaultMonthlyPrice": 20,
+    "pricing": {
+      "free": "Crédits limités",
+      "paid": "20$/mois (Starter)"
+    },
+    "covers": [
+      "no-code-ia",
+      "app-builder",
+      "deploiement",
+      "base-de-donnees"
+    ],
+    "functional_needs": [
+      "no-code-ia",
+      "app-builder",
+      "deploiement",
+      "base-de-donnees"
+    ],
+    "ia_use_case": [
+      "code",
+      "no-code-ia"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "ai-builder",
+      "developpeur-solo"
+    ],
+    "personas": [
+      "theo",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 15,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://lovable.dev",
+    "verdict": {
+      "keepIf": [
+        "Construire un SaaS complet sans équipe dev"
+      ],
+      "avoidIf": [
+        "Bolt.new ou Cursor déjà en place — doublon builder"
+      ],
+      "threshold": "Rentable dès le premier produit qui génère du revenu."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Crédits limités",
+      "paid": "20$/mois (Starter)"
+    },
+    "longDescription": "Génération d'applications full-stack depuis un prompt avec Supabase intégré.",
+    "alternatives": []
+  },
+  {
+    "id": "replit",
+    "name": "Replit",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "IDE en ligne avec IA intégrée, hébergement et collaboration en temps réel.",
+    "defaultMonthlyPrice": 20,
+    "pricing": {
+      "free": "Usage limité",
+      "paid": "20$/mois (Core)"
+    },
+    "covers": [
+      "coding",
+      "deploiement",
+      "collaboration-code"
+    ],
+    "functional_needs": [
+      "coding",
+      "deploiement",
+      "collaboration-code"
+    ],
+    "ia_use_case": [
+      "code"
+    ],
+    "verticals": [
+      "developpeur-solo",
+      "ai-builder",
+      "coach-formateur"
+    ],
+    "personas": [
+      "theo",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "cursor",
+      "reason": "plus-puissant-local",
+      "saving": 0,
+      "performanceGain": "Cursor + Vercel = workflow plus pro et plus rapide pour les projets sérieux"
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://replit.com",
+    "verdict": {
+      "keepIf": [
+        "Formation au code, prototypage rapide en ligne"
+      ],
+      "avoidIf": [
+        "Cursor ou Bolt déjà en place"
+      ],
+      "threshold": "Surtout utile pour enseigner le code ou prototyper sur iPad."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Usage limité",
+      "paid": "20$/mois (Core)"
+    },
+    "longDescription": "IDE en ligne avec IA intégrée, hébergement et collaboration en temps réel.",
+    "alternatives": []
+  },
+  {
+    "id": "tabnine",
+    "name": "Tabnine",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité.",
+    "defaultMonthlyPrice": 12,
+    "pricing": {
+      "free": "Modèle basique gratuit",
+      "paid": "12$/mois (Pro)"
+    },
+    "covers": [
+      "coding",
+      "autocompletion",
+      "revue-code"
+    ],
+    "functional_needs": [
+      "coding",
+      "documentation"
+    ],
+    "ia_use_case": [
+      "code"
+    ],
+    "verticals": [
+      "developpeur-solo",
+      "cto-lead-tech"
+    ],
+    "personas": [
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "cursor",
+      "reason": "plus-complet",
+      "saving": -8,
+      "performanceGain": "Cursor comprend tout le codebase, pas seulement la ligne courante"
+    },
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Modèle basique gratuit"
+    },
+    "affiliateLink": "https://tabnine.com",
+    "verdict": {
+      "keepIf": [
+        "Équipe avec contraintes de confidentialité strictes (pas de cloud)"
+      ],
+      "avoidIf": [
+        "GitHub Copilot ou Cursor déjà en place — doublon"
+      ],
+      "threshold": "Pertinent uniquement si la conformité RGPD est une contrainte forte."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Modèle basique gratuit",
+      "paid": "12$/mois (Pro)"
+    },
+    "longDescription": "Assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité.",
+    "alternatives": []
+  },
+  {
+    "id": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Génération d'images IA open source — contrôle total, hébergement local possible.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Open source gratuit (local)",
+      "paid": "Via Stability AI API : pay-as-you-go"
+    },
+    "covers": [
+      "generation-image",
+      "fine-tuning",
+      "concept-art",
+      "design-visuel"
+    ],
+    "functional_needs": [
+      "generation-image",
+      "concept-art"
+    ],
+    "ia_use_case": [
+      "generation-image"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "illustrateur",
+      "ai-builder",
+      "motion-video"
+    ],
+    "personas": [
+      "alix",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://stability.ai",
+    "verdict": {
+      "keepIf": [
+        "Fine-tuning sur votre style, génération locale sans cloud"
+      ],
+      "avoidIf": [
+        "Midjourney ou Firefly suffisent pour 95% des usages créatifs"
+      ],
+      "threshold": "Pertinent uniquement si vous avez un GPU dédié ou des besoins de volume."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Open source gratuit (local)",
+      "paid": "Via Stability AI API : pay-as-you-go"
+    },
+    "longDescription": "Génération d'images IA open source — contrôle total, hébergement local possible.",
+    "alternatives": []
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": "notion",
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "IA intégrée dans Notion : rédaction, résumé, traduction directement dans vos docs.",
+    "defaultMonthlyPrice": 8,
+    "pricing": {
+      "paid": "8$/mois en add-on Notion"
+    },
+    "covers": [
+      "redaction",
+      "synthese",
+      "traduction",
+      "brainstorming"
+    ],
+    "functional_needs": [
+      "redaction",
+      "synthese",
+      "documentation"
+    ],
+    "ia_use_case": [
+      "generation-texte",
+      "synthese"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "product-manager",
+      "fondateur-saas",
+      "newslettiste-auteur"
+    ],
+    "personas": [
+      "sofia",
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "claude",
+      "reason": "deja-dans-stack-plus-puissant",
+      "saving": 8,
+      "performanceGain": "Claude est bien plus puissant — inutile de payer Notion AI en plus"
+    },
+    "migrationGuide": {
+      "steps": [
+        "Utilise Claude directement pour rédiger ou résumer",
+        "Copie-colle dans Notion",
+        "L'extension Claude Chrome facilite le workflow"
+      ],
+      "timeEstimate": "0 — même workflow",
+      "dataLoss": "Aucune"
+    },
+    "downgradePlan": null,
+    "affiliateLink": "https://notion.so/product/ai",
+    "verdict": {
+      "keepIf": [
+        "Vous n'avez pas d'abonnement Claude ou ChatGPT"
+      ],
+      "avoidIf": [
+        "Claude ou ChatGPT déjà dans le stack — doublon évident"
+      ],
+      "threshold": "Inutile si vous avez déjà un abonnement IA généraliste."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "8$/mois en add-on Notion"
+    },
+    "longDescription": "IA intégrée dans Notion : rédaction, résumé, traduction directement dans vos docs.",
+    "alternatives": []
+  },
+  {
+    "id": "mem-ai",
+    "name": "Mem AI",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement.",
+    "defaultMonthlyPrice": 14,
+    "pricing": {
+      "paid": "14$/mois (Pro)"
+    },
+    "covers": [
+      "notes",
+      "wiki",
+      "recherche-notes",
+      "brainstorming"
+    ],
+    "functional_needs": [
+      "notes",
+      "wiki",
+      "documentation"
+    ],
+    "ia_use_case": [
+      "recherche",
+      "synthese"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "newslettiste-auteur",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "notion",
+      "reason": "plus-complet-moins-cher",
+      "saving": 4,
+      "performanceGain": "Notion + Notion AI couvre les mêmes besoins avec plus de flexibilité"
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://mem.ai",
+    "verdict": {
+      "keepIf": [
+        "Chercheur, auteur avec volume massif de notes à connecter"
+      ],
+      "avoidIf": [
+        "Notion ou Obsidian déjà en place"
+      ],
+      "threshold": "Niche — pertinent surtout pour les knowledge workers intensifs."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "14$/mois (Pro)"
+    },
+    "longDescription": "Note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement.",
+    "alternatives": []
+  },
+  {
+    "id": "adobe-podcast-ai",
+    "name": "Adobe Podcast AI",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": "adobe-cc",
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Amélioration audio IA : suppression de bruit, égalisation automatique, studio qualité.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Gratuit (beta)",
+      "bundle": "Inclus dans Adobe CC"
+    },
+    "covers": [
+      "montage-audio",
+      "debruitage-audio",
+      "qualite-podcast"
+    ],
+    "functional_needs": [
+      "montage-audio",
+      "qualite-podcast"
+    ],
+    "ia_use_case": [
+      "traitement-audio"
+    ],
+    "verticals": [
+      "podcasteur",
+      "createur-contenu",
+      "motion-video"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://podcast.adobe.com",
+    "verdict": {
+      "keepIf": [
+        "Podcasts ou voix-off avec problèmes de bruit ambiant"
+      ],
+      "avoidIf": [
+        "Descript couvre déjà ce besoin"
+      ],
+      "threshold": "Gratuit — toujours pertinent si vous avez des problèmes audio."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Gratuit (beta)",
+      "bundle": "Inclus dans Adobe CC"
+    },
+    "longDescription": "Amélioration audio IA : suppression de bruit, égalisation automatique, studio qualité.",
+    "alternatives": []
+  },
+  {
+    "id": "flux",
+    "name": "Flux (Black Forest Labs)",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Modèle de génération d'images IA open source — qualité supérieure à Stable Diffusion.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Open source",
+      "paid": "Via API Replicate ou fal.ai : pay-as-you-go"
+    },
+    "covers": [
+      "generation-image",
+      "concept-art",
+      "design-visuel"
+    ],
+    "functional_needs": [
+      "generation-image",
+      "concept-art"
+    ],
+    "ia_use_case": [
+      "generation-image"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "illustrateur",
+      "ai-builder"
+    ],
+    "personas": [
+      "alix",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://blackforestlabs.ai",
+    "verdict": {
+      "keepIf": [
+        "Génération haute qualité via API, fine-tuning possible"
+      ],
+      "avoidIf": [
+        "Midjourney ou Leonardo suffisent pour les usages standards"
+      ],
+      "threshold": "Pertinent si vous construisez des pipelines IA custom."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Open source",
+      "paid": "Via API Replicate ou fal.ai : pay-as-you-go"
+    },
+    "longDescription": "Modèle de génération d'images IA open source — qualité supérieure à Stable Diffusion.",
+    "alternatives": []
+  },
+  {
+    "id": "whisper",
+    "name": "Whisper (OpenAI)",
+    "tool_type": "ia",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "ai-general",
+    "shortDescription": "Transcription audio open source d'OpenAI. Précis, multilingue, gratuit.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Open source gratuit",
+      "paid": "Via API OpenAI : 0.006$/minute"
+    },
+    "covers": [
+      "transcription",
+      "sous-titrage",
+      "notes-reunion"
+    ],
+    "functional_needs": [
+      "transcription",
+      "sous-titrage"
+    ],
+    "ia_use_case": [
+      "transcription"
+    ],
+    "verticals": [
+      "podcasteur",
+      "createur-contenu",
+      "consultant-b2b",
+      "ai-builder"
+    ],
+    "personas": [
+      "sofia",
+      "theo",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://openai.com/research/whisper",
+    "verdict": {
+      "keepIf": [
+        "Transcription en volume via pipeline automatisé"
+      ],
+      "avoidIf": [
+        "Descript ou Otter.ai déjà en place pour un usage non-technique"
+      ],
+      "threshold": "Gratuit — toujours pertinent pour les profils techniques."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Open source gratuit",
+      "paid": "Via API OpenAI : 0.006$/minute"
+    },
+    "longDescription": "Transcription audio open source d'OpenAI. Précis, multilingue, gratuit.",
+    "alternatives": []
+  },
+  {
+    "id": "buzzsprout",
+    "name": "Buzzsprout",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "L'hébergement podcast le plus simple à prendre en main. Distribution automatique.",
+    "defaultMonthlyPrice": 12,
+    "pricing": {
+      "free": "2h/mois (90 jours)",
+      "paid": "12$/mois (3h/mois)"
+    },
+    "covers": [
+      "hebergement-audio",
+      "distribution-podcast",
+      "analytics-podcast"
+    ],
+    "functional_needs": [
+      "hebergement-audio",
+      "distribution-podcast",
+      "analytics-podcast"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "podcasteur"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": "anchor-spotify",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://buzzsprout.com",
+    "verdict": {
+      "keepIf": [
+        "Podcast avec besoin d'analytics avancés et support réactif"
+      ],
+      "avoidIf": [
+        "Débutant — Spotify for Podcasters (Anchor) est gratuit"
+      ],
+      "threshold": "Rentable dès 100 écoutes par épisode et 2 épisodes/mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "2h/mois (90 jours)",
+      "paid": "12$/mois (3h/mois)"
+    },
+    "longDescription": "L'hébergement podcast le plus simple à prendre en main. Distribution automatique.",
+    "alternatives": []
+  },
+  {
+    "id": "anchor-spotify",
+    "name": "Spotify for Podcasters",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "Hébergement et distribution podcast 100% gratuit par Spotify.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Entièrement gratuit"
+    },
+    "covers": [
+      "hebergement-audio",
+      "distribution-podcast",
+      "enregistrement-simple"
+    ],
+    "functional_needs": [
+      "hebergement-audio",
+      "distribution-podcast"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "podcasteur",
+      "createur-contenu"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 2,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "buzzsprout",
+      "reason": "analytics-superieurs",
+      "saving": -12,
+      "performanceGain": "Analytics plus fins et meilleur support si vous monétisez"
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://podcasters.spotify.com",
+    "verdict": {
+      "keepIf": [
+        "Démarrage podcast, budget zéro"
+      ],
+      "avoidIf": [
+        "Analytics avancés ou monétisation — Buzzsprout plus adapté"
+      ],
+      "threshold": "Gratuit — toujours le bon choix pour démarrer."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Entièrement gratuit"
+    },
+    "longDescription": "Hébergement et distribution podcast 100% gratuit par Spotify.",
+    "alternatives": []
+  },
+  {
+    "id": "audacity",
+    "name": "Audacity",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "Logiciel de montage audio open source. Gratuit, puissant, universel.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Entièrement gratuit et open source"
+    },
+    "covers": [
+      "montage-audio",
+      "debruitage-audio",
+      "enregistrement-multipistes"
+    ],
+    "functional_needs": [
+      "montage-audio",
+      "enregistrement-multipistes"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "podcasteur",
+      "createur-contenu",
+      "motion-video"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "descript",
+      "reason": "montage-par-texte",
+      "saving": -12,
+      "performanceGain": "Descript permet de monter en éditant le texte — 3x plus rapide"
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://audacityteam.org",
+    "verdict": {
+      "keepIf": [
+        "Montage audio basique, pas besoin de transcription"
+      ],
+      "avoidIf": [
+        "Volume important — Descript est bien plus rapide"
+      ],
+      "threshold": "Gratuit — toujours pertinent pour les petits volumes."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Entièrement gratuit et open source"
+    },
+    "longDescription": "Logiciel de montage audio open source. Gratuit, puissant, universel.",
+    "alternatives": []
+  },
+  {
+    "id": "podbean",
+    "name": "Podbean",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "Hébergement podcast avec monétisation intégrée (dynamic ads, abonnements).",
+    "defaultMonthlyPrice": 9,
+    "pricing": {
+      "free": "5h stockage",
+      "paid": "9$/mois (Unlimited Audio)"
+    },
+    "covers": [
+      "hebergement-audio",
+      "distribution-podcast",
+      "monetisation-podcast"
+    ],
+    "functional_needs": [
+      "hebergement-audio",
+      "monetisation-podcast"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "podcasteur"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 2,
+    "freeAlternative": "anchor-spotify",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://podbean.com",
+    "verdict": {
+      "keepIf": [
+        "Monétisation via dynamic ads ou abonnements auditeurs"
+      ],
+      "avoidIf": [
+        "Buzzsprout ou Anchor déjà en place — doublon hébergement"
+      ],
+      "threshold": "Pertinent uniquement si la monétisation directe est votre priorité."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "5h stockage",
+      "paid": "9$/mois (Unlimited Audio)"
+    },
+    "longDescription": "Hébergement podcast avec monétisation intégrée (dynamic ads, abonnements).",
+    "alternatives": []
+  },
+  {
+    "id": "buffer",
+    "name": "Buffer",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "Planification de posts sur tous les réseaux. Simple, propre, efficace.",
+    "defaultMonthlyPrice": 6,
+    "pricing": {
+      "free": "3 canaux, 10 posts en file",
+      "paid": "6$/mois (Essentials)"
+    },
+    "covers": [
+      "planification-posts",
+      "multi-plateformes",
+      "analytics-reseaux"
+    ],
+    "functional_needs": [
+      "planification-posts",
+      "multi-plateformes",
+      "analytics-reseaux"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "community-manager",
+      "createur-contenu",
+      "fondateur-saas"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "3 canaux, 10 posts"
+    },
+    "affiliateLink": "https://buffer.com",
+    "verdict": {
+      "keepIf": [
+        "Planification multi-plateformes simple sans reporting client"
+      ],
+      "avoidIf": [
+        "Later ou Hootsuite déjà en place — doublon"
+      ],
+      "threshold": "Free tier suffisant pour moins de 3 canaux."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "3 canaux, 10 posts en file",
+      "paid": "6$/mois (Essentials)"
+    },
+    "longDescription": "Planification de posts sur tous les réseaux. Simple, propre, efficace.",
+    "alternatives": []
+  },
+  {
+    "id": "sprout-social",
+    "name": "Sprout Social",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "Gestion réseaux sociaux premium avec CRM social et analytics avancés.",
+    "defaultMonthlyPrice": 249,
+    "pricing": {
+      "paid": "249$/mois (Standard)"
+    },
+    "covers": [
+      "planification-posts",
+      "crm-social",
+      "analytics-reseaux",
+      "reporting-client",
+      "veille"
+    ],
+    "functional_needs": [
+      "planification-posts",
+      "reporting-client",
+      "crm-social"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "community-manager",
+      "manager-dsi"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 7,
+    "freeAlternative": "buffer",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://sproutsocial.com",
+    "verdict": {
+      "keepIf": [
+        "Grandes marques avec gestion de crise et CRM social"
+      ],
+      "avoidIf": [
+        "Freelance ou petite agence — Hootsuite ou Buffer suffisent"
+      ],
+      "threshold": "Pertinent uniquement pour les équipes marketing 5+."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "249$/mois (Standard)"
+    },
+    "longDescription": "Gestion réseaux sociaux premium avec CRM social et analytics avancés.",
+    "alternatives": []
+  },
+  {
+    "id": "tubebody",
+    "name": "TubeBuddy",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "Extension YouTube pour optimiser le SEO, les tags et la performance de vos vidéos.",
+    "defaultMonthlyPrice": 5,
+    "pricing": {
+      "free": "Fonctions basiques",
+      "paid": "5$/mois (Pro)"
+    },
+    "covers": [
+      "seo-video",
+      "analytics-contenu",
+      "optimisation-youtube"
+    ],
+    "functional_needs": [
+      "seo-video",
+      "analytics-contenu"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "createur-contenu"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Fonctions basiques"
+    },
+    "affiliateLink": "https://tubebuddy.com",
+    "verdict": {
+      "keepIf": [
+        "YouTube comme canal principal avec SEO vidéo actif"
+      ],
+      "avoidIf": [
+        "VidIQ déjà en place — doublon SEO YouTube"
+      ],
+      "threshold": "Rentable dès 500 abonnés YouTube."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Fonctions basiques",
+      "paid": "5$/mois (Pro)"
+    },
+    "longDescription": "Extension YouTube pour optimiser le SEO, les tags et la performance de vos vidéos.",
+    "alternatives": []
+  },
+  {
+    "id": "vidiq",
+    "name": "VidIQ",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "Analytics YouTube et IA pour trouver les sujets viraux et optimiser chaque vidéo.",
+    "defaultMonthlyPrice": 7,
+    "pricing": {
+      "free": "Analytics basiques",
+      "paid": "7$/mois (Basic)"
+    },
+    "covers": [
+      "seo-video",
+      "analytics-contenu",
+      "veille-concurrentielle",
+      "idees-contenus"
+    ],
+    "functional_needs": [
+      "seo-video",
+      "analytics-contenu",
+      "idees-contenus"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "createur-contenu"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Analytics basiques"
+    },
+    "affiliateLink": "https://vidiq.com",
+    "verdict": {
+      "keepIf": [
+        "YouTube avec stratégie SEO active"
+      ],
+      "avoidIf": [
+        "TubeBuddy déjà en place — doublon SEO YouTube"
+      ],
+      "threshold": "Rentable dès que YouTube est votre canal d'acquisition principal."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Analytics basiques",
+      "paid": "7$/mois (Basic)"
+    },
+    "longDescription": "Analytics YouTube et IA pour trouver les sujets viraux et optimiser chaque vidéo.",
+    "alternatives": []
+  },
+  {
+    "id": "substack",
+    "name": "Substack",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "email-productivity",
+    "shortDescription": "Plateforme newsletter et blog avec monétisation intégrée. Zéro friction.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Gratuit (10% commission sur abonnements payants)",
+      "paid": "Aucun abonnement requis"
+    },
+    "covers": [
+      "editeur-email",
+      "liste-abonnes",
+      "monetisation-newsletter",
+      "blog"
+    ],
+    "functional_needs": [
+      "editeur-email",
+      "monetisation-newsletter",
+      "liste-abonnes"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "newslettiste-auteur",
+      "createur-contenu",
+      "consultant-b2b"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "beehiiv",
+      "reason": "moins-de-commission-plus-features",
+      "saving": 0,
+      "performanceGain": "Beehiiv prend 0% de commission et offre plus d'outils de croissance"
+    },
+    "migrationGuide": {
+      "steps": [
+        "Exporte ta liste Substack (CSV)",
+        "Crée ton compte Beehiiv",
+        "Importe la liste",
+        "Redirige ton domaine custom",
+        "Annonce le changement à tes abonnés"
+      ],
+      "timeEstimate": "1-2h",
+      "dataLoss": "Historique des publications (republier manuellement les archives)"
+    },
+    "downgradePlan": null,
+    "affiliateLink": "https://substack.com",
+    "verdict": {
+      "keepIf": [
+        "Démarrage newsletter, communauté déjà sur Substack"
+      ],
+      "avoidIf": [
+        "Beehiiv si vous monétisez — 0% commission vs 10%"
+      ],
+      "threshold": "Gratuit — pertinent pour démarrer sans engagement."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Gratuit (10% commission sur abonnements payants)",
+      "paid": "Aucun abonnement requis"
+    },
+    "longDescription": "Plateforme newsletter et blog avec monétisation intégrée. Zéro friction.",
+    "alternatives": []
+  },
+  {
+    "id": "typefully",
+    "name": "Typefully",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "creation",
+    "shortDescription": "Rédaction et planification de threads Twitter/X et posts LinkedIn sans distraction.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Twitter/X gratuit",
+      "paid": "12$/mois (Creator, LinkedIn inclus)"
+    },
+    "covers": [
+      "planification-posts",
+      "redaction",
+      "analytics-reseaux"
+    ],
+    "functional_needs": [
+      "planification-posts",
+      "redaction"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "newslettiste-auteur",
+      "consultant-b2b",
+      "fondateur-saas",
+      "createur-contenu"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Twitter/X gratuit"
+    },
+    "affiliateLink": "https://typefully.com",
+    "verdict": {
+      "keepIf": [
+        "Actif sur Twitter/X ou LinkedIn avec stratégie éditoriale"
+      ],
+      "avoidIf": [
+        "Buffer ou Later déjà en place pour le social global"
+      ],
+      "threshold": "Free tier Twitter suffisant pour débuter."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Twitter/X gratuit",
+      "paid": "12$/mois (Creator, LinkedIn inclus)"
+    },
+    "longDescription": "Rédaction et planification de threads Twitter/X et posts LinkedIn sans distraction.",
+    "alternatives": []
+  },
+  {
+    "id": "lever",
+    "name": "Lever",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "organization",
+    "shortDescription": "ATS (Applicant Tracking System) moderne pour équipes de recrutement.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "Sur devis (environ 200$/mois pour petites équipes)"
+    },
+    "covers": [
+      "ats",
+      "gestion-pipeline-rh",
+      "sourcing",
+      "scoring-candidats"
+    ],
+    "functional_needs": [
+      "ats",
+      "gestion-pipeline-rh",
+      "sourcing"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "rh-recruteur",
+      "manager-dsi"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://lever.co",
+    "verdict": {
+      "keepIf": [
+        "Volume de recrutement régulier, équipe RH dédiée"
+      ],
+      "avoidIf": [
+        "Moins de 10 recrutements/an — Notion + Airtable suffisent"
+      ],
+      "threshold": "Rentable à partir de 20 recrutements par an."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "Sur devis (environ 200$/mois pour petites équipes)"
+    },
+    "longDescription": "ATS (Applicant Tracking System) moderne pour équipes de recrutement.",
+    "alternatives": []
+  },
+  {
+    "id": "workable",
+    "name": "Workable",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "organization",
+    "shortDescription": "ATS tout-en-un avec sourcing IA, job boards et onboarding.",
+    "defaultMonthlyPrice": 189,
+    "pricing": {
+      "paid": "189$/mois (Starter)"
+    },
+    "covers": [
+      "ats",
+      "sourcing",
+      "onboarding",
+      "scoring-candidats"
+    ],
+    "functional_needs": [
+      "ats",
+      "sourcing",
+      "onboarding"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "rh-recruteur",
+      "manager-dsi"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 7,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://workable.com",
+    "verdict": {
+      "keepIf": [
+        "RH avec sourcing actif et onboarding structuré"
+      ],
+      "avoidIf": [
+        "Lever déjà en place — doublon ATS"
+      ],
+      "threshold": "Rentable à partir de 5 postes ouverts simultanément."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "189$/mois (Starter)"
+    },
+    "longDescription": "ATS tout-en-un avec sourcing IA, job boards et onboarding.",
+    "alternatives": []
+  },
+  {
+    "id": "personio",
+    "name": "Personio",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "organization",
+    "shortDescription": "SIRH complet pour PME : recrutement, onboarding, paie, congés.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "Sur devis (environ 3€/employé/mois)"
+    },
+    "covers": [
+      "sirh",
+      "ats",
+      "onboarding",
+      "gestion-conges",
+      "paie"
+    ],
+    "functional_needs": [
+      "sirh",
+      "gestion-equipe",
+      "onboarding",
+      "paie"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "rh-recruteur",
+      "manager-dsi",
+      "daf-finance"
+    ],
+    "personas": [
+      "marc",
+      "claire"
+    ],
+    "timeGainedHoursPerMonth": 8,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://personio.com",
+    "verdict": {
+      "keepIf": [
+        "PME 20-200 collaborateurs avec RH internalisées"
+      ],
+      "avoidIf": [
+        "Moins de 20 personnes — BambooHR plus simple et moins cher"
+      ],
+      "threshold": "Rentable à partir de 20 collaborateurs."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "Sur devis (environ 3€/employé/mois)"
+    },
+    "longDescription": "SIRH complet pour PME : recrutement, onboarding, paie, congés.",
+    "alternatives": []
+  },
+  {
+    "id": "kajabi",
+    "name": "Kajabi",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "formation-education",
+    "shortDescription": "La plateforme tout-en-un pour créateurs : cours, communauté, email, paiements.",
+    "defaultMonthlyPrice": 55,
+    "pricing": {
+      "paid": "55$/mois (Basic) à 199$/mois (Growth)"
+    },
+    "covers": [
+      "lms",
+      "creation-cours",
+      "communaute",
+      "paiement-abonnements",
+      "emailing"
+    ],
+    "functional_needs": [
+      "lms",
+      "creation-cours",
+      "communaute",
+      "monetisation"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "coach-formateur",
+      "createur-contenu"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://kajabi.com",
+    "verdict": {
+      "keepIf": [
+        "Formateur avec cours + communauté + email en un"
+      ],
+      "avoidIf": [
+        "Teachable + Mailchimp déjà en place — doublon formation"
+      ],
+      "threshold": "Rentable dès 3 000€/mois de revenus formation."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "55$/mois (Basic) à 199$/mois (Growth)"
+    },
+    "longDescription": "La plateforme tout-en-un pour créateurs : cours, communauté, email, paiements.",
+    "alternatives": []
+  },
+  {
+    "id": "podia",
+    "name": "Podia",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "formation-education",
+    "shortDescription": "Vente de cours, webinaires et téléchargements numériques. 0% commission.",
+    "defaultMonthlyPrice": 33,
+    "pricing": {
+      "paid": "33$/mois (Mover)"
+    },
+    "covers": [
+      "lms",
+      "creation-cours",
+      "webinaires",
+      "vente-directe"
+    ],
+    "functional_needs": [
+      "lms",
+      "creation-cours",
+      "webinaires"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "coach-formateur",
+      "createur-contenu"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "kajabi",
+      "reason": "plus-complet",
+      "saving": -22,
+      "performanceGain": "Kajabi intègre email + communauté — évite 2 outils supplémentaires"
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://podia.com",
+    "verdict": {
+      "keepIf": [
+        "Vente de produits numériques simples sans communauté"
+      ],
+      "avoidIf": [
+        "Kajabi déjà en place — doublon LMS"
+      ],
+      "threshold": "Rentable dès 5 ventes de cours par mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "33$/mois (Mover)"
+    },
+    "longDescription": "Vente de cours, webinaires et téléchargements numériques. 0% commission.",
+    "alternatives": []
+  },
+  {
+    "id": "thinkific",
+    "name": "Thinkific",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "formation-education",
+    "shortDescription": "Plateforme de création de cours en ligne avec branding personnalisé.",
+    "defaultMonthlyPrice": 36,
+    "pricing": {
+      "free": "1 cours gratuit",
+      "paid": "36$/mois (Basic)"
+    },
+    "covers": [
+      "lms",
+      "creation-cours",
+      "certification",
+      "branding"
+    ],
+    "functional_needs": [
+      "lms",
+      "creation-cours",
+      "certification"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "coach-formateur"
+    ],
+    "personas": [
+      "sofia"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "kajabi",
+      "reason": "tout-en-un",
+      "saving": -19,
+      "performanceGain": "Kajabi inclut email et communauté — moins d'outils à gérer"
+    },
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "1 cours gratuit"
+    },
+    "affiliateLink": "https://thinkific.com",
+    "verdict": {
+      "keepIf": [
+        "Formations certifiantes avec besoin de branding fort"
+      ],
+      "avoidIf": [
+        "Kajabi ou Podia déjà en place — doublon LMS"
+      ],
+      "threshold": "Rentable dès 2 cours actifs avec 10+ élèves."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "1 cours gratuit",
+      "paid": "36$/mois (Basic)"
+    },
+    "longDescription": "Plateforme de création de cours en ligne avec branding personnalisé.",
+    "alternatives": []
+  },
+  {
+    "id": "circle",
+    "name": "Circle",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "formation-education",
+    "shortDescription": "La plateforme de communauté en ligne pour créateurs et formateurs.",
+    "defaultMonthlyPrice": 49,
+    "pricing": {
+      "free": "14 jours trial",
+      "paid": "49$/mois (Basic)"
+    },
+    "covers": [
+      "communaute",
+      "cours-en-ligne",
+      "evenements-live",
+      "monetisation"
+    ],
+    "functional_needs": [
+      "communaute",
+      "creation-cours",
+      "evenements-live"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "coach-formateur",
+      "createur-contenu",
+      "fondateur-saas"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://circle.so",
+    "verdict": {
+      "keepIf": [
+        "Communauté payante active avec cours et événements"
+      ],
+      "avoidIf": [
+        "Kajabi déjà en place — doublon communauté/cours"
+      ],
+      "threshold": "Rentable dès 50 membres payants."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "14 jours trial",
+      "paid": "49$/mois (Basic)"
+    },
+    "longDescription": "La plateforme de communauté en ligne pour créateurs et formateurs.",
+    "alternatives": []
+  },
+  {
+    "id": "metabase",
+    "name": "Metabase",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "analytics",
+    "shortDescription": "Outil de BI open source. Créez des dashboards depuis votre base de données sans SQL.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Self-hosted gratuit",
+      "paid": "500$/mois (Cloud)"
+    },
+    "covers": [
+      "data-warehouse",
+      "visualisation-donnees",
+      "dashboards",
+      "reporting"
+    ],
+    "functional_needs": [
+      "visualisation-donnees",
+      "dashboards",
+      "reporting",
+      "sql"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "data-analyst",
+      "product-manager",
+      "fondateur-saas",
+      "manager-dsi"
+    ],
+    "personas": [
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Self-hosted gratuit"
+    },
+    "affiliateLink": "https://metabase.com",
+    "verdict": {
+      "keepIf": [
+        "Dashboards SQL pour équipe non-technique"
+      ],
+      "avoidIf": [
+        "Looker ou Tableau déjà en place"
+      ],
+      "threshold": "Self-hosted gratuit — toujours pertinent pour les startups."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Self-hosted gratuit",
+      "paid": "500$/mois (Cloud)"
+    },
+    "longDescription": "Outil de BI open source. Créez des dashboards depuis votre base de données sans SQL.",
+    "alternatives": []
+  },
+  {
+    "id": "looker-studio",
+    "name": "Looker Studio",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "analytics",
+    "shortDescription": "Outil de reporting et dashboards Google. Connexion native à GA4, Sheets, BigQuery.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Entièrement gratuit"
+    },
+    "covers": [
+      "dashboards",
+      "reporting",
+      "visualisation-donnees",
+      "analytics-produit"
+    ],
+    "functional_needs": [
+      "dashboards",
+      "reporting",
+      "visualisation-donnees"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "data-analyst",
+      "community-manager",
+      "ecommercant",
+      "manager-dsi"
+    ],
+    "personas": [
+      "marc",
+      "claire",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://lookerstudio.google.com",
+    "verdict": {
+      "keepIf": [
+        "Reporting Google Ads/Analytics, dashboards clients"
+      ],
+      "avoidIf": [
+        "Données non-Google — Metabase plus flexible"
+      ],
+      "threshold": "Gratuit — toujours pertinent si vous utilisez Google Analytics."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Entièrement gratuit"
+    },
+    "longDescription": "Outil de reporting et dashboards Google. Connexion native à GA4, Sheets, BigQuery.",
+    "alternatives": []
+  },
+  {
+    "id": "retool",
+    "name": "Retool",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "nocode-web",
+    "shortDescription": "Construire des outils internes rapidement : dashboards, admin panels, CRUD.",
+    "defaultMonthlyPrice": 10,
+    "pricing": {
+      "free": "5 apps en cloud",
+      "paid": "10$/mois/user"
+    },
+    "covers": [
+      "app-builder",
+      "dashboards",
+      "outils-internes",
+      "base-de-donnees"
+    ],
+    "functional_needs": [
+      "outils-internes",
+      "dashboards",
+      "base-de-donnees"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "developpeur-solo",
+      "cto-lead-tech",
+      "fondateur-saas",
+      "data-analyst"
+    ],
+    "personas": [
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 8,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "5 apps cloud gratuites"
+    },
+    "affiliateLink": "https://retool.com",
+    "verdict": {
+      "keepIf": [
+        "Outils internes : backoffice, admin panel, workflows"
+      ],
+      "avoidIf": [
+        "Application client-facing — Bubble ou Webflow plus adaptés"
+      ],
+      "threshold": "Rentable dès 2 outils internes en production."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "5 apps en cloud",
+      "paid": "10$/mois/user"
+    },
+    "longDescription": "Construire des outils internes rapidement : dashboards, admin panels, CRUD.",
+    "alternatives": []
+  },
+  {
+    "id": "datadog",
+    "name": "Datadog",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "analytics",
+    "shortDescription": "Observabilité complète : logs, métriques, APM, alertes en temps réel.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "5 hosts, 1 jour rétention",
+      "paid": "15$/host/mois"
+    },
+    "covers": [
+      "observabilite",
+      "monitoring",
+      "logs",
+      "alertes"
+    ],
+    "functional_needs": [
+      "observabilite",
+      "monitoring",
+      "gestion-incidents"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "cto-lead-tech",
+      "developpeur-solo",
+      "fondateur-saas"
+    ],
+    "personas": [
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": "sentry",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "5 hosts, 1 jour rétention"
+    },
+    "affiliateLink": "https://datadoghq.com",
+    "verdict": {
+      "keepIf": [
+        "Infrastructure cloud complexe avec besoin d'alerting"
+      ],
+      "avoidIf": [
+        "Stack simple — Sentry gratuit suffit pour les erreurs"
+      ],
+      "threshold": "Pertinent à partir de 3+ services en production."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "5 hosts, 1 jour rétention",
+      "paid": "15$/host/mois"
+    },
+    "longDescription": "Observabilité complète : logs, métriques, APM, alertes en temps réel.",
+    "alternatives": []
+  },
+  {
+    "id": "sentry",
+    "name": "Sentry",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "analytics",
+    "shortDescription": "Monitoring des erreurs et performance applicative. Le standard des devs.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "5k erreurs/mois",
+      "paid": "26$/mois (Team)"
+    },
+    "covers": [
+      "bug-tracking",
+      "monitoring",
+      "performance-app",
+      "alertes"
+    ],
+    "functional_needs": [
+      "bug-tracking",
+      "monitoring",
+      "gestion-incidents"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "developpeur-solo",
+      "cto-lead-tech",
+      "fondateur-saas"
+    ],
+    "personas": [
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "5k erreurs/mois"
+    },
+    "affiliateLink": "https://sentry.io",
+    "verdict": {
+      "keepIf": [
+        "Toute application en production — incontournable"
+      ],
+      "avoidIf": [
+        "Jamais — free tier généreux pour démarrer"
+      ],
+      "threshold": "Free tier suffisant pour la plupart des projets solo."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "5k erreurs/mois",
+      "paid": "26$/mois (Team)"
+    },
+    "longDescription": "Monitoring des erreurs et performance applicative. Le standard des devs.",
+    "alternatives": []
+  },
+  {
+    "id": "jira",
+    "name": "Jira",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "project-management",
+    "shortDescription": "La référence de la gestion de projet Agile pour équipes tech.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Jusqu'à 10 users",
+      "paid": "7.75$/user/mois"
+    },
+    "covers": [
+      "gestion-projet",
+      "bug-tracking",
+      "sprint-planning",
+      "roadmap-produit"
+    ],
+    "functional_needs": [
+      "gestion-projet",
+      "bug-tracking",
+      "sprint-planning"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "cto-lead-tech",
+      "product-manager",
+      "developpeur-solo"
+    ],
+    "personas": [
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "linear",
+      "reason": "plus-rapide-moderne",
+      "saving": 0,
+      "performanceGain": "Linear est 10x plus rapide et bien plus agréable à utiliser"
+    },
+    "migrationGuide": {
+      "steps": [
+        "Exporte tes projets Jira",
+        "Crée tes équipes dans Linear",
+        "Importe les issues via CSV",
+        "Configure les cycles (sprints)"
+      ],
+      "timeEstimate": "2-3h",
+      "dataLoss": "Workflows custom à recréer"
+    },
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Jusqu'à 10 users"
+    },
+    "affiliateLink": "https://atlassian.com/software/jira",
+    "verdict": {
+      "keepIf": [
+        "Équipe tech établie avec workflows Jira complexes"
+      ],
+      "avoidIf": [
+        "< 10 personnes — Linear beaucoup plus agréable"
+      ],
+      "threshold": "Free tier jusqu'à 10 users — pertinent pour débuter."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Jusqu'à 10 users",
+      "paid": "7.75$/user/mois"
+    },
+    "longDescription": "La référence de la gestion de projet Agile pour équipes tech.",
+    "alternatives": []
+  },
+  {
+    "id": "confluence",
+    "name": "Confluence",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "organization",
+    "shortDescription": "Wiki d'entreprise Atlassian. Documentation technique et knowledge base.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Jusqu'à 10 users",
+      "paid": "5.75$/user/mois"
+    },
+    "covers": [
+      "documentation",
+      "wiki",
+      "knowledge-base",
+      "collaboration-equipe"
+    ],
+    "functional_needs": [
+      "documentation",
+      "wiki",
+      "knowledge-base"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "cto-lead-tech",
+      "manager-dsi",
+      "product-manager"
+    ],
+    "personas": [
+      "marc",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "notion",
+      "reason": "plus-flexible-moins-cher",
+      "saving": 0,
+      "performanceGain": "Notion combine wiki + projet + base de données — bien plus flexible"
+    },
+    "migrationGuide": {
+      "steps": [
+        "Exporte Confluence en HTML ou Markdown",
+        "Importe dans Notion via l'importeur officiel",
+        "Recrée la hiérarchie de pages",
+        "Vérifie les liens internes"
+      ],
+      "timeEstimate": "2-4h selon volume",
+      "dataLoss": "Macros Confluence non migrées"
+    },
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Jusqu'à 10 users"
+    },
+    "affiliateLink": "https://atlassian.com/software/confluence",
+    "verdict": {
+      "keepIf": [
+        "Jira déjà en place — intégration native précieuse"
+      ],
+      "avoidIf": [
+        "Sans Jira — Notion est meilleur sur tous les points"
+      ],
+      "threshold": "Pertinent uniquement si vous avez déjà l'écosystème Atlassian."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Jusqu'à 10 users",
+      "paid": "5.75$/user/mois"
+    },
+    "longDescription": "Wiki d'entreprise Atlassian. Documentation technique et knowledge base.",
+    "alternatives": []
+  },
+  {
+    "id": "productboard",
+    "name": "Productboard",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "project-management",
+    "shortDescription": "Outil de discovery produit : collecte feedback, priorisation, roadmap.",
+    "defaultMonthlyPrice": 20,
+    "pricing": {
+      "free": "15 jours trial",
+      "paid": "20$/mois (Starter)"
+    },
+    "covers": [
+      "roadmap-produit",
+      "feedback-utilisateurs",
+      "priorisation",
+      "discovery"
+    ],
+    "functional_needs": [
+      "roadmap-produit",
+      "feedback-utilisateurs",
+      "priorisation"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "product-manager",
+      "fondateur-saas"
+    ],
+    "personas": [
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "linear",
+      "reason": "tout-en-un",
+      "saving": 20,
+      "performanceGain": "Linear couvre roadmap + sprint en un seul outil"
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://productboard.com",
+    "verdict": {
+      "keepIf": [
+        "PM avec gros volume de feedback à structurer"
+      ],
+      "avoidIf": [
+        "Linear déjà en place — doublon roadmap"
+      ],
+      "threshold": "Rentable à partir de 100 feedbacks utilisateurs/mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "15 jours trial",
+      "paid": "20$/mois (Starter)"
+    },
+    "longDescription": "Outil de discovery produit : collecte feedback, priorisation, roadmap.",
+    "alternatives": []
+  },
+  {
+    "id": "canny",
+    "name": "Canny",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "project-management",
+    "shortDescription": "Collecte et vote de feedback utilisateurs. Roadmap publique ou privée.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Jusqu'à 100 tracked users",
+      "paid": "99$/mois (Growth)"
+    },
+    "covers": [
+      "feedback-utilisateurs",
+      "roadmap-produit",
+      "gestion-communaute"
+    ],
+    "functional_needs": [
+      "feedback-utilisateurs",
+      "roadmap-produit"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "fondateur-saas",
+      "product-manager"
+    ],
+    "personas": [
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Jusqu'à 100 tracked users"
+    },
+    "affiliateLink": "https://canny.io",
+    "verdict": {
+      "keepIf": [
+        "Collecte de feedback publique avec vote communauté"
+      ],
+      "avoidIf": [
+        "Productboard déjà en place — doublon feedback"
+      ],
+      "threshold": "Free tier généreux pour les early-stage SaaS."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Jusqu'à 100 tracked users",
+      "paid": "99$/mois (Growth)"
+    },
+    "longDescription": "Collecte et vote de feedback utilisateurs. Roadmap publique ou privée.",
+    "alternatives": []
+  },
+  {
+    "id": "hex",
+    "name": "Hex",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "analytics",
+    "shortDescription": "Notebooks data collaboratifs avec publication en apps interactives.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "5 projets publics",
+      "paid": "24$/mois (Starter)"
+    },
+    "covers": [
+      "notebooks",
+      "visualisation-donnees",
+      "collaboration-data",
+      "etl"
+    ],
+    "functional_needs": [
+      "notebooks",
+      "visualisation-donnees",
+      "collaboration-data"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "data-analyst"
+    ],
+    "personas": [
+      "theo",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "5 projets publics"
+    },
+    "affiliateLink": "https://hex.tech",
+    "verdict": {
+      "keepIf": [
+        "Analyses data à partager en app interactive avec des stakeholders"
+      ],
+      "avoidIf": [
+        "Metabase ou Looker déjà en place"
+      ],
+      "threshold": "Pertinent si vous présentez des analyses à des non-techniques."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "5 projets publics",
+      "paid": "24$/mois (Starter)"
+    },
+    "longDescription": "Notebooks data collaboratifs avec publication en apps interactives.",
+    "alternatives": []
+  },
+  {
+    "id": "pagerduty",
+    "name": "PagerDuty",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "analytics",
+    "shortDescription": "Gestion des incidents en temps réel avec astreintes et escalade automatique.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "5 users",
+      "paid": "21$/user/mois (Professional)"
+    },
+    "covers": [
+      "gestion-incidents",
+      "alertes",
+      "observabilite",
+      "astreintes"
+    ],
+    "functional_needs": [
+      "gestion-incidents",
+      "alertes",
+      "astreintes"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "cto-lead-tech",
+      "manager-dsi"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "5 users"
+    },
+    "affiliateLink": "https://pagerduty.com",
+    "verdict": {
+      "keepIf": [
+        "Service critique avec SLA et astreintes d'équipe"
+      ],
+      "avoidIf": [
+        "Stack simple — alertes Datadog ou Sentry suffisent"
+      ],
+      "threshold": "Pertinent à partir de 3+ ingénieurs en astreinte."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "5 users",
+      "paid": "21$/user/mois (Professional)"
+    },
+    "longDescription": "Gestion des incidents en temps réel avec astreintes et escalade automatique.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-overlord",
+    "name": "Overlord",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "45$ achat unique"
+    },
+    "covers": [
+      "motion-design",
+      "transfert-vectoriel",
+      "workflow-ae"
+    ],
+    "functional_needs": [
+      "motion-design",
+      "animation-2d-3d"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video",
+      "graphiste-da"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://battleaxe.co/overlord",
+    "verdict": {
+      "keepIf": [
+        "Workflow Illustrator + After Effects quotidien"
+      ],
+      "avoidIf": [
+        "Pas de travail vectoriel dans AE"
+      ],
+      "threshold": "Achat unique — rentable dès la première journée de motion design."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "45$ achat unique"
+    },
+    "longDescription": "Transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-bao-boa",
+    "name": "BAO Boa",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Animation de lignes et formes SVG dans After Effects. Tracés organiques.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "49$ achat unique"
+    },
+    "covers": [
+      "motion-design",
+      "animation-lignes",
+      "animation-2d-3d"
+    ],
+    "functional_needs": [
+      "motion-design",
+      "animation-2d-3d"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://aescripts.com/boa",
+    "verdict": {
+      "keepIf": [
+        "Animations de tracés et lignes SVG fréquentes"
+      ],
+      "avoidIf": [
+        "Peu d'animations linéaires dans vos projets"
+      ],
+      "threshold": "Achat unique — rentable si vous faites des animations de graphiques."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "49$ achat unique"
+    },
+    "longDescription": "Animation de lignes et formes SVG dans After Effects. Tracés organiques.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-newton3",
+    "name": "Newton 3",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "249$ achat unique"
+    },
+    "covers": [
+      "motion-design",
+      "simulation-physique",
+      "animation-2d-3d"
+    ],
+    "functional_needs": [
+      "motion-design",
+      "animation-2d-3d",
+      "effets-visuels"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://aescripts.com/newton",
+    "verdict": {
+      "keepIf": [
+        "Animations avec physique réaliste, typographie animée"
+      ],
+      "avoidIf": [
+        "Animations simples — pas besoin de physique"
+      ],
+      "threshold": "Achat unique — amortissable dès un projet avec typographie physique."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "249$ achat unique"
+    },
+    "longDescription": "Simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-animation-composer",
+    "name": "Animation Composer 3",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Bibliothèque de presets d'animation et de transitions pour After Effects.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Version de base gratuite",
+      "paid": "49$ achat unique (Pro)"
+    },
+    "covers": [
+      "motion-design",
+      "presets-animation",
+      "workflow-ae"
+    ],
+    "functional_needs": [
+      "motion-design",
+      "gestion-assets"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Version de base gratuite"
+    },
+    "affiliateLink": "https://misterhorse.com/animation-composer",
+    "verdict": {
+      "keepIf": [
+        "Volume important d'animations répétitives"
+      ],
+      "avoidIf": [
+        "Motion Bro déjà en place — chevauchement partiel"
+      ],
+      "threshold": "Gratuit pour la version de base — toujours pertinent."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Version de base gratuite",
+      "paid": "49$ achat unique (Pro)"
+    },
+    "longDescription": "Bibliothèque de presets d'animation et de transitions pour After Effects.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-duik",
+    "name": "Duik Ángela",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Le plugin de rigging de personnages de référence pour After Effects. Gratuit.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Entièrement gratuit et open source"
+    },
+    "covers": [
+      "motion-design",
+      "rigging-personnages",
+      "animation-2d-3d"
+    ],
+    "functional_needs": [
+      "motion-design",
+      "animation-2d-3d"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video",
+      "illustrateur"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://rxlaboratoire.com/duik",
+    "verdict": {
+      "keepIf": [
+        "Animation de personnages, marionnettes 2D"
+      ],
+      "avoidIf": [
+        "Pas d'animation de personnages dans vos projets"
+      ],
+      "threshold": "Gratuit — toujours pertinent pour l'animation de personnages."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Entièrement gratuit et open source"
+    },
+    "longDescription": "Le plugin de rigging de personnages de référence pour After Effects. Gratuit.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-gifgun",
+    "name": "GifGun",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Export GIF directement depuis After Effects en un clic.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "29$ achat unique"
+    },
+    "covers": [
+      "export-gif",
+      "workflow-ae",
+      "animation-2d-3d"
+    ],
+    "functional_needs": [
+      "export-gif",
+      "motion-design"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video",
+      "community-manager"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 2,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://aescripts.com/gifgun",
+    "verdict": {
+      "keepIf": [
+        "Export GIF fréquent pour web, réseaux sociaux"
+      ],
+      "avoidIf": [
+        "Pas de besoin GIF — inutile"
+      ],
+      "threshold": "Achat unique minime — rentable dès le premier GIF livré."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "29$ achat unique"
+    },
+    "longDescription": "Export GIF directement depuis After Effects en un clic.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-bodymovin",
+    "name": "Bodymovin / Lottie",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Entièrement gratuit"
+    },
+    "covers": [
+      "export-lottie",
+      "animation-web",
+      "animation-mobile",
+      "workflow-ae"
+    ],
+    "functional_needs": [
+      "motion-design",
+      "animation-web"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video",
+      "developpeur-solo",
+      "ux-ui"
+    ],
+    "personas": [
+      "sofia",
+      "alix",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://aescripts.com/bodymovin",
+    "verdict": {
+      "keepIf": [
+        "Animations web/mobile légères depuis After Effects"
+      ],
+      "avoidIf": [
+        "Rive.app si vous voulez un workflow natif sans AE"
+      ],
+      "threshold": "Gratuit — toujours pertinent si vous livrez des animations web."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Entièrement gratuit"
+    },
+    "longDescription": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-rubberhose",
+    "name": "RubberHose 2",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Animation de membres et tentacules organiques sans rigging complexe dans AE.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "45$ achat unique"
+    },
+    "covers": [
+      "motion-design",
+      "animation-personnages",
+      "rigging-simple"
+    ],
+    "functional_needs": [
+      "motion-design",
+      "animation-2d-3d"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "ae-duik",
+      "reason": "plus-complet-gratuit",
+      "saving": 45,
+      "performanceGain": "Duik est plus complet et entièrement gratuit"
+    },
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://aescripts.com/rubberhose",
+    "verdict": {
+      "keepIf": [
+        "Animation de personnages simples avec membres organiques"
+      ],
+      "avoidIf": [
+        "Duik déjà maîtrisé — doublon rigging"
+      ],
+      "threshold": "Pertinent si Duik est trop complexe pour vos besoins."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "45$ achat unique"
+    },
+    "longDescription": "Animation de membres et tentacules organiques sans rigging complexe dans AE.",
+    "alternatives": []
+  },
+  {
+    "id": "ae-red-giant",
+    "name": "Red Giant Magic Bullet Suite",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "after-effects",
+    "category": "design-tools",
+    "shortDescription": "Suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser.",
+    "defaultMonthlyPrice": 10,
+    "pricing": {
+      "paid": "10$/mois ou 99$ achat unique"
+    },
+    "covers": [
+      "color-grading",
+      "effets-visuels",
+      "debruitage-video"
+    ],
+    "functional_needs": [
+      "color-grading",
+      "effets-visuels"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "motion-video",
+      "photographe"
+    ],
+    "personas": [
+      "sofia",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://maxon.net/red-giant",
+    "verdict": {
+      "keepIf": [
+        "Étalonnage cinématique professionnel, finitions haute gamme"
+      ],
+      "avoidIf": [
+        "DaVinci Resolve couvre déjà l'étalonnage — doublon si utilisé"
+      ],
+      "threshold": "Rentable si vous livrez des vidéos avec look cinéma régulièrement."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "10$/mois ou 99$ achat unique"
+    },
+    "longDescription": "Suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser.",
+    "alternatives": []
+  },
+  {
+    "id": "figma-tokens",
+    "name": "Figma Tokens (Tokens Studio)",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "figma",
+    "category": "design-tools",
+    "shortDescription": "Gestion des design tokens dans Figma avec sync Git. Indispensable pour les design systems.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Tokens locaux gratuits",
+      "paid": "9$/mois (Pro, sync Git)"
+    },
+    "covers": [
+      "design-system",
+      "tokens",
+      "collaboration-dev"
+    ],
+    "functional_needs": [
+      "design-system",
+      "handoff-dev",
+      "composants-ui"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui",
+      "developpeur-solo"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Tokens locaux gratuits"
+    },
+    "affiliateLink": "https://tokens.studio",
+    "verdict": {
+      "keepIf": [
+        "Design system avec sync code — indispensable"
+      ],
+      "avoidIf": [
+        "Pas de design system — inutile"
+      ],
+      "threshold": "Rentable dès le premier design system en production."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Tokens locaux gratuits",
+      "paid": "9$/mois (Pro, sync Git)"
+    },
+    "longDescription": "Gestion des design tokens dans Figma avec sync Git. Indispensable pour les design systems.",
+    "alternatives": []
+  },
+  {
+    "id": "figma-iconify",
+    "name": "Iconify for Figma",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "figma",
+    "category": "design-tools",
+    "shortDescription": "Accès à 150 000+ icônes de toutes les bibliothèques directement dans Figma.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Entièrement gratuit"
+    },
+    "covers": [
+      "design-visuel",
+      "composants-ui",
+      "icones"
+    ],
+    "functional_needs": [
+      "design-visuel",
+      "composants-ui"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
+    "personas": [
+      "sofia",
+      "theo",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 2,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://iconify.design",
+    "verdict": {
+      "keepIf": [
+        "Tout designer Figma — incontournable"
+      ],
+      "avoidIf": [
+        "Jamais"
+      ],
+      "threshold": "Gratuit — toujours pertinent."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Entièrement gratuit"
+    },
+    "longDescription": "Accès à 150 000+ icônes de toutes les bibliothèques directement dans Figma.",
+    "alternatives": []
+  },
+  {
+    "id": "figma-anima",
+    "name": "Anima",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "figma",
+    "category": "design-tools",
+    "shortDescription": "Export de designs Figma en code React/HTML/CSS. Handoff développeur automatisé.",
+    "defaultMonthlyPrice": 31,
+    "pricing": {
+      "free": "3 exports/mois",
+      "paid": "31$/mois (Pro)"
+    },
+    "covers": [
+      "handoff-dev",
+      "export-code",
+      "collaboration-dev"
+    ],
+    "functional_needs": [
+      "handoff-dev",
+      "export-code"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui",
+      "developpeur-solo"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "3 exports/mois"
+    },
+    "affiliateLink": "https://animaapp.com",
+    "verdict": {
+      "keepIf": [
+        "Handoff fréquent vers des devs React/HTML"
+      ],
+      "avoidIf": [
+        "Figma Dev Mode déjà utilisé par votre équipe"
+      ],
+      "threshold": "Rentable dès 5 handoffs développeur par mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "3 exports/mois",
+      "paid": "31$/mois (Pro)"
+    },
+    "longDescription": "Export de designs Figma en code React/HTML/CSS. Handoff développeur automatisé.",
+    "alternatives": []
+  },
+  {
+    "id": "figma-stark",
+    "name": "Stark",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "figma",
+    "category": "design-tools",
+    "shortDescription": "Vérification de l'accessibilité (contrastes, daltonisme) directement dans Figma.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Vérifications basiques",
+      "paid": "7$/mois (Pro)"
+    },
+    "covers": [
+      "accessibilite",
+      "design-visuel",
+      "ux-ui"
+    ],
+    "functional_needs": [
+      "accessibilite",
+      "design-system"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 2,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Vérifications contrastes de base"
+    },
+    "affiliateLink": "https://stark.so",
+    "verdict": {
+      "keepIf": [
+        "Projets avec contraintes d'accessibilité WCAG"
+      ],
+      "avoidIf": [
+        "Pas de contrainte accessibilité — version gratuite suffit"
+      ],
+      "threshold": "Gratuit pour les vérifications de base — toujours utile."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Vérifications basiques",
+      "paid": "7$/mois (Pro)"
+    },
+    "longDescription": "Vérification de l'accessibilité (contrastes, daltonisme) directement dans Figma.",
+    "alternatives": []
+  },
+  {
+    "id": "luminar-neo",
+    "name": "Luminar Neo",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "photoshop",
+    "category": "design-tools",
+    "shortDescription": "Retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère.",
+    "defaultMonthlyPrice": 14,
+    "pricing": {
+      "paid": "14$/mois ou 79$/an"
+    },
+    "covers": [
+      "retouche-photo",
+      "remplacement-ciel",
+      "portrait-ia"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "retouche-portrait"
+    ],
+    "ia_use_case": [
+      "retouche-photo"
+    ],
+    "verticals": [
+      "photographe",
+      "graphiste-da"
+    ],
+    "personas": [
+      "sofia"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://skylum.com/luminar-neo",
+    "verdict": {
+      "keepIf": [
+        "Photographie paysage, portrait avec retouches IA fréquentes"
+      ],
+      "avoidIf": [
+        "Firefly (Adobe CC) couvre de plus en plus ces usages"
+      ],
+      "threshold": "Rentable dès 20 photos retouchées par mois avec ciel ou portrait."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "14$/mois ou 79$/an"
+    },
+    "longDescription": "Retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère.",
+    "alternatives": []
+  },
+  {
+    "id": "nik-collection",
+    "name": "Nik Collection",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "photoshop",
+    "category": "design-tools",
+    "shortDescription": "Suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "149€ achat unique"
+    },
+    "covers": [
+      "retouche-photo",
+      "effets-photo",
+      "noir-blanc"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "color-grading"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "photographe"
+    ],
+    "personas": [
+      "sofia"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://nikcollection.dxo.com",
+    "verdict": {
+      "keepIf": [
+        "Photographie artistique avec besoins de looks spécifiques"
+      ],
+      "avoidIf": [
+        "Capture One ou Lightroom couvrent vos besoins basiques"
+      ],
+      "threshold": "Achat unique — rentable si vous retouchez en volume."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "149€ achat unique"
+    },
+    "longDescription": "Suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex.",
+    "alternatives": []
+  },
+  {
+    "id": "topaz-gigapixel",
+    "name": "Topaz Gigapixel AI",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "photoshop",
+    "category": "design-tools",
+    "shortDescription": "Upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "paid": "99$/an ou 199$ achat unique"
+    },
+    "covers": [
+      "upscaling",
+      "retouche-photo",
+      "agrandissement-photo"
+    ],
+    "functional_needs": [
+      "upscaling",
+      "retouche-photo"
+    ],
+    "ia_use_case": [
+      "upscaling-image"
+    ],
+    "verticals": [
+      "photographe",
+      "graphiste-da"
+    ],
+    "personas": [
+      "sofia"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://topazlabs.com/gigapixel",
+    "verdict": {
+      "keepIf": [
+        "Tirages grand format, restauration photos anciennes"
+      ],
+      "avoidIf": [
+        "Magnific AI ou Firefly couvrent l'upscaling pour le web"
+      ],
+      "threshold": "Rentable dès 5 photos grand format par mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "99$/an ou 199$ achat unique"
+    },
+    "longDescription": "Upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché.",
+    "alternatives": []
+  },
+  {
+    "id": "revit",
+    "name": "Revit",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "design-tools",
+    "shortDescription": "Le logiciel BIM de référence pour architectes et ingénieurs structure.",
+    "defaultMonthlyPrice": 310,
+    "pricing": {
+      "paid": "310$/mois ou 2 545$/an"
+    },
+    "covers": [
+      "bim",
+      "plans-techniques",
+      "modelisation-3d",
+      "collaboration-projet"
+    ],
+    "functional_needs": [
+      "bim",
+      "plans-techniques",
+      "modelisation-3d",
+      "maquette-numerique"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "architecte-bim"
+    ],
+    "personas": [
+      "sofia",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 10,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://autodesk.com/products/revit",
+    "verdict": {
+      "keepIf": [
+        "Architecture, structure, MEP — outil de production central"
+      ],
+      "avoidIf": [
+        "Jamais si vous faites du BIM"
+      ],
+      "threshold": "Incontournable en architecture professionnelle."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "310$/mois ou 2 545$/an"
+    },
+    "longDescription": "Le logiciel BIM de référence pour architectes et ingénieurs structure.",
+    "alternatives": []
+  },
+  {
+    "id": "autocad",
+    "name": "AutoCAD",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "design-tools",
+    "shortDescription": "Le standard mondial du dessin technique 2D et 3D.",
+    "defaultMonthlyPrice": 220,
+    "pricing": {
+      "paid": "220$/mois ou 1 775$/an"
+    },
+    "covers": [
+      "plans-techniques",
+      "dessin-technique",
+      "modelisation-3d"
+    ],
+    "functional_needs": [
+      "plans-techniques",
+      "dessin-technique"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "architecte-bim",
+      "scenographe"
+    ],
+    "personas": [
+      "sofia",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 10,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://autodesk.com/products/autocad",
+    "verdict": {
+      "keepIf": [
+        "Plans techniques, cotations, dessin 2D précis"
+      ],
+      "avoidIf": [
+        "BIM — Revit remplace AutoCAD pour l'architecture"
+      ],
+      "threshold": "Standard non substituable en bureaux d'études."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "220$/mois ou 1 775$/an"
+    },
+    "longDescription": "Le standard mondial du dessin technique 2D et 3D.",
+    "alternatives": []
+  },
+  {
+    "id": "sketchup-pro",
+    "name": "SketchUp Pro",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "design-tools",
+    "shortDescription": "Modélisation 3D intuitive pour architectes, décorateurs et scénographes.",
+    "defaultMonthlyPrice": 34,
+    "pricing": {
+      "paid": "34$/mois ou 349$/an"
+    },
+    "covers": [
+      "modelisation-3d",
+      "plans-2d",
+      "presentation-client",
+      "maquette-numerique"
+    ],
+    "functional_needs": [
+      "modelisation-3d",
+      "plans-2d",
+      "presentation-client",
+      "maquette-numerique"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "architecte-bim",
+      "scenographe"
+    ],
+    "personas": [
+      "sofia",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 8,
+    "freeAlternative": "blender",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://sketchup.com",
+    "verdict": {
+      "keepIf": [
+        "Architecture intérieure, scénographie, modélisation rapide"
+      ],
+      "avoidIf": [
+        "BIM — Revit est plus adapté aux projets complexes"
+      ],
+      "threshold": "Incontournable pour la scénographie et l'archi intérieure."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "34$/mois ou 349$/an"
+    },
+    "longDescription": "Modélisation 3D intuitive pour architectes, décorateurs et scénographes.",
+    "alternatives": []
+  },
+  {
+    "id": "enscape",
+    "name": "Enscape",
+    "tool_type": "plugin",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": "revit",
+    "category": "design-tools",
+    "shortDescription": "Rendu temps réel et VR pour Revit, SketchUp, Rhino. Présentations client immersives.",
+    "defaultMonthlyPrice": 84,
+    "pricing": {
+      "paid": "84$/mois ou 659$/an"
+    },
+    "covers": [
+      "rendu-3d",
+      "presentation-client",
+      "vr-architecture"
+    ],
+    "functional_needs": [
+      "rendu-3d",
+      "presentation-client"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "architecte-bim",
+      "scenographe"
+    ],
+    "personas": [
+      "sofia",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://enscape3d.com",
+    "verdict": {
+      "keepIf": [
+        "Présentations client avec rendus immersifs en temps réel"
+      ],
+      "avoidIf": [
+        "V-Ray pour des rendus photoréalistes plus poussés"
+      ],
+      "threshold": "Rentable dès 2 présentations client par mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "84$/mois ou 659$/an"
+    },
+    "longDescription": "Rendu temps réel et VR pour Revit, SketchUp, Rhino. Présentations client immersives.",
+    "alternatives": []
+  },
+  {
+    "id": "lumion",
+    "name": "Lumion",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "design-tools",
+    "shortDescription": "Rendu architectural 3D rapide avec bibliothèque massive d'assets.",
+    "defaultMonthlyPrice": 179,
+    "pricing": {
+      "paid": "179$/mois ou 1 499$/an"
+    },
+    "covers": [
+      "rendu-3d",
+      "visualisation-architecturale",
+      "presentation-client"
+    ],
+    "functional_needs": [
+      "rendu-3d",
+      "presentation-client"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "architecte-bim",
+      "scenographe"
+    ],
+    "personas": [
+      "sofia",
+      "marc"
+    ],
+    "timeGainedHoursPerMonth": 6,
+    "freeAlternative": "blender",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://lumion.com",
+    "verdict": {
+      "keepIf": [
+        "Rendus architecturaux avec assets paysagers et ambiances"
+      ],
+      "avoidIf": [
+        "Enscape déjà en place — doublon rendu archi"
+      ],
+      "threshold": "Rentable si vous livrez des rendus architecturaux régulièrement."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "paid": "179$/mois ou 1 499$/an"
+    },
+    "longDescription": "Rendu architectural 3D rapide avec bibliothèque massive d'assets.",
+    "alternatives": []
+  },
+  {
+    "id": "maze",
+    "name": "Maze",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "design-tools",
+    "shortDescription": "Tests utilisateurs continus directement depuis vos prototypes Figma.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "1 étude/mois",
+      "paid": "75$/mois (Team)"
+    },
+    "covers": [
+      "tests-utilisateurs",
+      "user-research",
+      "analytics-ux"
+    ],
+    "functional_needs": [
+      "tests-utilisateurs",
+      "user-research"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui",
+      "product-manager"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "1 étude/mois"
+    },
+    "affiliateLink": "https://maze.co",
+    "verdict": {
+      "keepIf": [
+        "Tests utilisateurs continus sur prototypes Figma"
+      ],
+      "avoidIf": [
+        "Hotjar déjà en place pour les tests sur site live"
+      ],
+      "threshold": "Free tier suffisant pour 1 test par mois."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "1 étude/mois",
+      "paid": "75$/mois (Team)"
+    },
+    "longDescription": "Tests utilisateurs continus directement depuis vos prototypes Figma.",
+    "alternatives": []
+  },
+  {
+    "id": "hotjar",
+    "name": "Hotjar",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "analytics",
+    "shortDescription": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "35 sessions/jour",
+      "paid": "32$/mois (Plus)"
+    },
+    "covers": [
+      "tests-utilisateurs",
+      "analytics-ux",
+      "heatmaps",
+      "replays-sessions"
+    ],
+    "functional_needs": [
+      "tests-utilisateurs",
+      "analytics-ux"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui",
+      "product-manager",
+      "ecommercant",
+      "fondateur-saas"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "posthog",
+      "reason": "tout-en-un",
+      "saving": 0,
+      "performanceGain": "PostHog combine replays + analytics produit + feature flags en open source"
+    },
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "35 sessions/jour"
+    },
+    "affiliateLink": "https://hotjar.com",
+    "verdict": {
+      "keepIf": [
+        "Site existant avec besoin de comprendre les parcours utilisateurs"
+      ],
+      "avoidIf": [
+        "PostHog déjà en place — doublon replays"
+      ],
+      "threshold": "Free tier suffisant pour la plupart des projets."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "35 sessions/jour",
+      "paid": "32$/mois (Plus)"
+    },
+    "longDescription": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
+    "alternatives": []
+  },
+  {
+    "id": "zeplin",
+    "name": "Zeplin",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "design-tools",
+    "shortDescription": "Handoff design-développement avec specs automatiques et assets exportés.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "1 projet",
+      "paid": "8$/mois (Starter)"
+    },
+    "covers": [
+      "handoff-dev",
+      "specs-design",
+      "collaboration-dev"
+    ],
+    "functional_needs": [
+      "handoff-dev",
+      "specs-design"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui",
+      "developpeur-solo"
+    ],
+    "personas": [
+      "sofia",
+      "theo"
+    ],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "betterAlternative": {
+      "tool": "figma",
+      "reason": "dev-mode-integre",
+      "saving": 8,
+      "performanceGain": "Figma Dev Mode remplace Zeplin — inutile si vous avez Figma"
+    },
+    "migrationGuide": {
+      "steps": [
+        "Activez Figma Dev Mode (inclus dans votre plan)",
+        "Partagez l'accès lecture à vos développeurs",
+        "Désabonnez-vous de Zeplin"
+      ],
+      "timeEstimate": "10 minutes",
+      "dataLoss": "Aucune"
+    },
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "1 projet"
+    },
+    "affiliateLink": "https://zeplin.io",
+    "verdict": {
+      "keepIf": [
+        "Équipe sans Figma ou besoin de specs en dehors de Figma"
+      ],
+      "avoidIf": [
+        "Figma déjà en place — Dev Mode remplace entièrement Zeplin"
+      ],
+      "threshold": "Inutile si vous avez Figma — doublon évident."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "1 projet",
+      "paid": "8$/mois (Starter)"
+    },
+    "longDescription": "Handoff design-développement avec specs automatiques et assets exportés.",
+    "alternatives": []
+  },
+  {
+    "id": "protopie",
+    "name": "ProtoPie",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "design-tools",
+    "shortDescription": "Prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma.",
+    "defaultMonthlyPrice": 13,
+    "pricing": {
+      "free": "30 jours trial",
+      "paid": "13$/mois (Basic)"
+    },
+    "covers": [
+      "prototypage-interactif",
+      "micro-interactions",
+      "tests-utilisateurs"
+    ],
+    "functional_needs": [
+      "prototypage-interactif",
+      "micro-interactions"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui"
+    ],
+    "personas": [
+      "sofia"
+    ],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "affiliateLink": "https://protopie.io",
+    "verdict": {
+      "keepIf": [
+        "Micro-interactions complexes, prototypes haute fidélité avancés"
+      ],
+      "avoidIf": [
+        "Figma suffit pour 90% des prototypes — doublon si usage basique"
+      ],
+      "threshold": "Pertinent uniquement pour des interactions que Figma ne peut pas faire."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "30 jours trial",
+      "paid": "13$/mois (Basic)"
+    },
+    "longDescription": "Prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma.",
+    "alternatives": []
+  },
+  {
+    "id": "rive",
+    "name": "Rive",
+    "tool_type": "metier",
+    "substitutable": false,
+    "bundle_parent": null,
+    "host_app": null,
+    "category": "design-tools",
+    "shortDescription": "Animation interactive native pour le web et mobile. Remplace Lottie pour les projets complexes.",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Projets publics gratuits",
+      "paid": "14$/mois (Pro)"
+    },
+    "covers": [
+      "animation-web",
+      "animation-mobile",
+      "micro-interactions",
+      "prototypage-interactif"
+    ],
+    "functional_needs": [
+      "animation-web",
+      "animation-mobile",
+      "micro-interactions"
+    ],
+    "ia_use_case": null,
+    "verticals": [
+      "ux-ui",
+      "motion-video",
+      "developpeur-solo"
+    ],
+    "personas": [
+      "sofia",
+      "theo",
+      "alix"
+    ],
+    "timeGainedHoursPerMonth": 5,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": true,
+      "freeTier": "Projets publics illimités"
+    },
+    "affiliateLink": "https://rive.app",
+    "verdict": {
+      "keepIf": [
+        "Animations interactives pour apps ou sites — state machines"
+      ],
+      "avoidIf": [
+        "Animations simples — Bodymovin/Lottie depuis After Effects suffit"
+      ],
+      "threshold": "Gratuit pour les projets publics — toujours pertinent."
+    },
+    "pros": [],
+    "cons": [],
+    "useCases": [],
+    "seo": {},
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "bestFor": [],
+    "relevantFor": [],
+    "pricingTiers": {
+      "free": "Projets publics gratuits",
+      "paid": "14$/mois (Pro)"
+    },
+    "longDescription": "Animation interactive native pour le web et mobile. Remplace Lottie pour les projets complexes.",
+    "alternatives": []
   }
 ]
