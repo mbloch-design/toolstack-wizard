@@ -142,6 +142,8 @@ export interface ScoredTool {
   valueCreated: number;
   action: "recommend" | "cancel" | "neutral";
   cancelReason?: string;
+  cancelType?: "doublon" | "inadequate";
+  replacedBy?: string;
   freeAlt?: Tool | null;
 }
 

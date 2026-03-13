@@ -65,6 +65,7 @@ function mapSupabaseTool(t: any): Tool {
     useCases: t.use_cases || [],
     covers: t.covers || [],
     relevantFor: t.relevant_for || [],
+    personas: t.personas || [],
     affiliateLink: t.affiliate_link || "",
     websiteUrl: t.website_url || t.affiliate_link || "",
     logo: t.logo || "",

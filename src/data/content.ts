@@ -25,6 +25,7 @@ export const tools: Tool[] = (contentJson as any).tools.map((t: any) => ({
   useCases: t.useCases || [],
   covers: t.covers || [],
   relevantFor: t.relevantFor || [],
+  personas: t.personas || [],
   affiliateLink: t.affiliateLink || "",
   soloRelevance: t.soloRelevance || "",
   teamRelevance: t.teamRelevance || "",
