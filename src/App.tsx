@@ -76,6 +76,7 @@ const App = () => (
             <Route path="contact" element={<ContactPage />} />
             <Route path="update-tools-v3" element={<UpdateToolsV3 />} />
             <Route path="update-tools-v4" element={<UpdateToolsV4 />} />
+            <Route path="update-tools-v10" element={<UpdateToolsV10 />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
