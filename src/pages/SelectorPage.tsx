@@ -466,117 +466,125 @@ const SelectorPage = () => {
         {step === 5 && (
           <div className="animate-fade-in">
             <h2 className="font-heading text-2xl font-bold tracking-tight">{t("Quels outils utilisez-vous ?", "Which tools do you use?")}</h2>
-            <p className="mt-1.5 text-sm text-muted-foreground">{t("Sélectionnez vos outils actuels pour une analyse personnalisée. Optionnel.", "Select your current tools for a personalized analysis. Optional.")}</p>
+            <p className="mt-1.5 text-sm text-muted-foreground">{t("Sélectionnez les outils que vous payez actuellement. Optionnel.", "Select the tools you currently pay for. Optional.")}</p>
 
-            {/* Search */}
+            {/* Search — prominent */}
             <div className="relative mt-5">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <input type="text" value={toolSearch} onChange={(e) => setToolSearch(e.target.value)} placeholder={t("Rechercher parmi 300+ outils...", "Search among 300+ tools...")} className="w-full rounded-xl border border-input bg-background py-2.5 pl-10 pr-4 text-sm outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring" />
-              {toolSearch && <button onClick={() => setToolSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"><X className="h-4 w-4" /></button>}
+              <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <input type="text" value={toolSearch} onChange={(e) => setToolSearch(e.target.value)} placeholder={t("Rechercher parmi 300+ outils...", "Search among 300+ tools...")} className="w-full rounded-xl border border-input bg-background py-3 pl-10 pr-10 text-sm outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring" />
+              {toolSearch && <button onClick={() => setToolSearch("")} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"><X className="h-4 w-4" /></button>}
             </div>
 
-            {/* View toggle: Smart vs Layers */}
-            {!toolSearch.trim() && (
-              <div className="mt-3 flex gap-1 rounded-lg bg-secondary p-0.5">
-                <button onClick={() => setActiveView("smart")} className={`flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${activeView === "smart" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
-                  <Sparkles className="inline h-3 w-3 mr-1 -mt-0.5" />{t("Suggestions", "Suggestions")}
-                </button>
-                <button onClick={() => setActiveView("layers")} className={`flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${activeView === "layers" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
-                  {t("Par couche", "By layer")}
-                </button>
-              </div>
-            )}
-
-            {/* Selected tools */}
+            {/* Selected tools — always visible as chips */}
             {selectedToolObjects.length > 0 && (
-              <div className="mt-4">
-                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">{t("Votre sélection", "Your selection")} ({selectedToolObjects.length})</p>
+              <div className="mt-4 rounded-xl border border-primary/10 bg-primary/[0.02] p-3">
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">{t("Ma stack", "My stack")} ({selectedToolObjects.length})</p>
+                  <span className="text-xs font-bold tabular-nums text-primary">{totalCost}€/{t("mois", "mo")}</span>
+                </div>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedToolObjects.map((tool) => (
-                    <button key={tool.id} onClick={() => toggleTool(tool.id)} className="inline-flex items-center gap-1.5 rounded-lg border border-primary/20 bg-accent px-2.5 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10">
+                    <button key={tool.id} onClick={() => toggleTool(tool.id)} className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-background px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-destructive/10 hover:text-destructive hover:border-destructive/20 group">
                       <ToolMiniLogo tool={tool} />
-                      {tool.name}
-                      <X className="h-3 w-3 opacity-50" />
+                      <span className="max-w-[100px] truncate">{tool.name}</span>
+                      <X className="h-3 w-3 opacity-40 group-hover:opacity-100 transition-opacity" />
                     </button>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Search results */}
-            {toolSearch.trim() && (
-              <div className="mt-4">
-                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">{filteredTools.length} {t("résultats", "results")}</p>
-                <div className="grid gap-2 sm:grid-cols-2 max-h-[45vh] overflow-y-auto pr-1">
-                  {filteredTools.map((tool) => (
-                    <ToolCard key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} />
-                  ))}
-                </div>
+            {/* View toggle */}
+            {!toolSearch.trim() && (
+              <div className="mt-4 flex gap-1 rounded-lg bg-secondary/50 p-0.5">
+                <button onClick={() => setActiveView("smart")} className={`flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${activeView === "smart" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+                  <Sparkles className="inline h-3 w-3 mr-1 -mt-0.5" />{t("Pour vous", "For you")}
+                </button>
+                <button onClick={() => setActiveView("layers")} className={`flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${activeView === "layers" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+                  {t("Par type", "By type")}
+                </button>
               </div>
             )}
 
-            {/* Smart view: AI-suggested tools based on profile */}
+            {/* Search results — single column for density */}
+            {toolSearch.trim() && (
+              <div className="mt-3 rounded-xl border border-border bg-card overflow-hidden">
+                <div className="max-h-[50vh] overflow-y-auto divide-y divide-border/50">
+                  {filteredTools.length === 0 && (
+                    <div className="py-8 text-center text-sm text-muted-foreground">{t("Aucun outil trouvé", "No tool found")}</div>
+                  )}
+                  {filteredTools.slice(0, 50).map((tool) => (
+                    <ToolRow key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} lang={lang} />
+                  ))}
+                </div>
+                {filteredTools.length > 50 && (
+                  <div className="border-t border-border px-4 py-2 text-center text-xs text-muted-foreground">{t("Affinez votre recherche pour voir plus de résultats", "Refine your search to see more results")}</div>
+                )}
+              </div>
+            )}
+
+            {/* Smart view */}
             {!toolSearch.trim() && activeView === "smart" && (
-              <div className="mt-4 space-y-4">
+              <div className="mt-4 space-y-5">
+                {/* Suggestions */}
                 {suggestedTools.length > 0 && (
                   <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Sparkles className="h-3.5 w-3.5 text-primary" />
-                      <p className="text-xs font-medium uppercase tracking-wider text-primary">{t("Recommandés pour votre profil", "Recommended for your profile")}</p>
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <div className="flex h-5 w-5 items-center justify-center rounded-md bg-primary/10"><Sparkles className="h-3 w-3 text-primary" /></div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-primary">{t("Recommandés pour votre profil", "Recommended for your profile")}</p>
                     </div>
-                    <div className="grid gap-2 sm:grid-cols-2">
+                    <div className="rounded-xl border border-primary/10 bg-card overflow-hidden divide-y divide-border/50">
                       {suggestedTools.map((tool) => (
-                        <ToolCard key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} />
+                        <ToolRow key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
                       ))}
                     </div>
                   </div>
                 )}
 
-                {/* Show remaining tools in a compact scrollable area */}
+                {/* All tools — alphabetical, in a card */}
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
                     {t("Tous les outils", "All tools")} ({tools.filter((t) => !selectedIds.has(t.id)).length})
                   </p>
-                  <div className="grid gap-2 sm:grid-cols-2 max-h-[30vh] overflow-y-auto pr-1">
-                    {tools.filter((t) => !selectedIds.has(t.id) && !suggestedTools.some((s) => s.id === t.id)).map((tool) => (
-                      <ToolCard key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} />
-                    ))}
+                  <div className="rounded-xl border border-border bg-card overflow-hidden">
+                    <div className="max-h-[35vh] overflow-y-auto divide-y divide-border/50">
+                      {tools
+                        .filter((t) => !selectedIds.has(t.id) && !suggestedTools.some((s) => s.id === t.id))
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((tool) => (
+                          <ToolRow key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} lang={lang} />
+                        ))}
+                    </div>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Layer view: organized by tool_type */}
+            {/* Layer view */}
             {!toolSearch.trim() && activeView === "layers" && (
               <div className="mt-4 space-y-2">
                 {TOOL_LAYERS.map((layer) => {
-                  const layerTools = toolsByLayer[layer.type] || [];
+                  const layerTools = (toolsByLayer[layer.type] || []).sort((a, b) => a.name.localeCompare(b.name));
                   if (layerTools.length === 0) return null;
                   const isExpanded = expandedLayers.has(layer.type);
-                  const preview = isExpanded ? layerTools : layerTools.slice(0, 4);
                   return (
                     <div key={layer.type} className="rounded-xl border border-border bg-card overflow-hidden">
-                      <button onClick={() => toggleLayer(layer.type)} className="flex w-full items-center gap-3 p-4 text-left hover:bg-secondary/30 transition-colors">
-                        <span className="text-lg">{layer.emoji}</span>
+                      <button onClick={() => toggleLayer(layer.type)} className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-secondary/30 transition-colors">
+                        <span className="text-base">{layer.emoji}</span>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-semibold">{lang === "en" ? layer.labelEn : layer.label}</p>
-                          <p className="text-xs text-muted-foreground">{lang === "en" ? layer.descEn : layer.desc}</p>
+                          <p className="text-sm font-semibold leading-tight">{lang === "en" ? layer.labelEn : layer.label}</p>
+                          <p className="text-[11px] text-muted-foreground">{lang === "en" ? layer.descEn : layer.desc}</p>
                         </div>
-                        <span className="shrink-0 rounded-full bg-secondary px-2 py-0.5 text-xs font-medium tabular-nums text-muted-foreground">{layerTools.length}</span>
+                        <span className="shrink-0 rounded-full bg-secondary px-2 py-0.5 text-[11px] font-semibold tabular-nums text-muted-foreground">{layerTools.length}</span>
                         {isExpanded ? <ChevronUp className="h-4 w-4 text-muted-foreground shrink-0" /> : <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />}
                       </button>
-                      {(isExpanded || true) && (
-                        <div className="border-t border-border px-3 py-3">
-                          <div className={`grid gap-2 sm:grid-cols-2 ${isExpanded ? "max-h-[40vh] overflow-y-auto pr-1" : ""}`}>
-                            {preview.map((tool) => (
-                              <ToolCard key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} />
+                      {isExpanded && (
+                        <div className="border-t border-border">
+                          <div className="max-h-[40vh] overflow-y-auto divide-y divide-border/50">
+                            {layerTools.map((tool) => (
+                              <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} />
                             ))}
                           </div>
-                          {!isExpanded && layerTools.length > 4 && (
-                            <button onClick={() => toggleLayer(layer.type)} className="mt-2 text-xs font-medium text-primary hover:underline">
-                              {t(`Voir les ${layerTools.length - 4} autres`, `See ${layerTools.length - 4} more`)}
-                            </button>
-                          )}
                         </div>
                       )}
                     </div>
@@ -585,11 +593,11 @@ const SelectorPage = () => {
               </div>
             )}
 
-            {/* Sticky counter */}
-            <div className="sticky bottom-0 mt-4 -mx-1 rounded-xl border border-border bg-card/95 backdrop-blur-sm px-4 py-3 shadow-lg">
+            {/* Sticky counter — always visible */}
+            <div className="sticky bottom-0 mt-5 -mx-1 rounded-xl border border-border bg-card/95 backdrop-blur-md px-4 py-3 shadow-lg">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">{form.currentTools.length}</span> {t("outils sélectionnés", "tools selected")}</span>
-                <span className="font-heading text-sm font-bold">{t("Total", "Total")} : <span className="text-primary">{totalCost}€/mois</span></span>
+                <span className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">{form.currentTools.length}</span> {t("outils", "tools")}</span>
+                <span className="font-heading text-sm font-bold tabular-nums">{t("Total", "Total")} : <span className="text-primary">{totalCost}€/{t("mois", "mo")}</span></span>
               </div>
             </div>
           </div>
