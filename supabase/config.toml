@@ -2,3 +2,9 @@ project_id = "rtfyfuwfdpnsogovkwai"
 
 [functions.seed-content]
 verify_jwt = false
+
+[functions.seed-tools-v4]
+verify_jwt = false
+
+[functions.sitemap]
+verify_jwt = false
