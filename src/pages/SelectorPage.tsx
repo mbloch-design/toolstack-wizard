@@ -260,11 +260,6 @@ const SelectorPage = () => {
                 <h2 className="font-heading text-2xl font-bold">{t("Répartition de votre temps", "Time allocation")}</h2>
                 <p className="mt-2 text-muted-foreground">{t("Pour chaque activité, indiquez son importance.", "For each activity, indicate its importance.")}</p>
                 <div className="mt-6 space-y-4">
-                  {form.verticals.map((v) => {
-                    const vertical = (await import("@/data/content")).verticals[v.id];
-                    return null; // placeholder
-                  })}
-                  {/* Inline vertical weight selection */}
                   {form.verticals.map((v) => (
                     <div key={v.id} className="rounded-xl border border-border bg-card p-4">
                       <p className="font-medium text-sm mb-3">{v.id.replace(/-/g, " ")}</p>
