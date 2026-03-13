@@ -156,6 +156,10 @@ export interface SelectorResults {
   totalSavingsAnnual: number;
   personaMessage: string;
   hasCurrentTools: boolean;
+  isTjmZero?: boolean;
+  isStackFree?: boolean;
+  hasAiDoublon?: boolean;
+  fewRecommendations?: boolean;
 }
 
 // Legacy types kept for compat
