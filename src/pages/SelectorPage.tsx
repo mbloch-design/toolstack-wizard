@@ -274,6 +274,283 @@ const SelectorPage = () => {
     }
     return filtered;
   }, [tools, toolSearch, selectedIds]);
+
+  /* ─── Vertical label helper ─── */
+  const verticalLabel = (id: string) => {
+    const allActivities = Object.values(FAMILY_ACTIVITIES).flat();
+    for (const a of allActivities) {
+      if (a.verticals.includes(id)) return lang === "en" ? a.labelEn : a.label;
+    }
+    return id.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  };
+
+  const family = VERTICAL_FAMILIES.find((f) => f.value === form.family);
+
+  return (
+    <div className="min-h-[80vh] py-8 md:py-12">
+      <div className="container mx-auto max-w-3xl px-4 md:px-6">
+
+        {/* ─── Step Navigation ─── */}
+        <div className="mb-8">
+          <div className="flex items-center gap-1 mb-3">
+            {stepLabels.map((label, i) => {
+              const stepNum = i + 1;
+              const isActive = step === stepNum;
+              const isDone = step > stepNum;
+              return (
+                <button key={i} onClick={() => isDone && setStep(stepNum)} disabled={!isDone} className="flex-1 group">
+                  <div className={`h-1 rounded-full transition-all ${isActive ? "bg-primary" : isDone ? "bg-primary/40" : "bg-secondary"}`} />
+                  <p className={`mt-1.5 text-[10px] font-medium text-center transition-colors ${isActive ? "text-primary" : isDone ? "text-muted-foreground" : "text-muted-foreground/40"}`}>
+                    {!isMobile && label}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+          <div className="flex items-center justify-between">
+            <p className="text-xs text-muted-foreground">{t("Étape", "Step")} {step}/{STEPS}</p>
+            {step > 1 && (
+              <button onClick={handleReset} className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors">
+                <RotateCcw className="h-3 w-3" /> {t("Recommencer", "Reset")}
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* ═══ STEP 1 — Family + Activities ═══ */}
+        {step === 1 && (
+          <div className="animate-fade-in space-y-8">
+            <div>
+              <h2 className="font-heading text-2xl font-bold tracking-tight">{t("Quelle est votre famille d'activité ?", "What's your activity family?")}</h2>
+              <p className="mt-1.5 text-sm text-muted-foreground">{t("Choisissez la famille qui correspond le mieux.", "Choose the family that fits best.")}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {VERTICAL_FAMILIES.map((f) => (
+                  <button key={f.value} onClick={() => { setForm({ ...form, family: f.value, verticals: [] }); setSelectedActivities([]); }}
+                    className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium transition-all ${form.family === f.value ? "border-primary bg-accent text-primary shadow-sm ring-1 ring-primary/20" : "border-border bg-card text-foreground hover:border-primary/30"}`}>
+                    <span>{f.emoji}</span>
+                    {lang === "en" ? f.labelEn : f.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            {form.family && (
+              <div className="animate-fade-in">
+                <h3 className="font-heading text-lg font-semibold">{t("Quelles sont vos activités concrètes ?", "What are your actual activities?")}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{t("Sélectionnez jusqu'à 5 activités.", "Select up to 5 activities.")}</p>
+                <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                  {FAMILY_ACTIVITIES[form.family].map((activity) => {
+                    const isSelected = selectedActivities.includes(activity.label);
+                    return (
+                      <OptionCard key={activity.label} compact selected={isSelected} onClick={() => toggleActivity(activity.label)}
+                        emoji={isSelected ? "✅" : "○"} label={lang === "en" ? activity.labelEn : activity.label} />
+                    );
+                  })}
+                </div>
+                <p className="mt-2 text-xs text-muted-foreground">{selectedActivities.length}/5 {t("sélectionnées", "selected")}</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ═══ STEP 2 — Time Allocation ═══ */}
+        {step === 2 && form.verticals.length > 0 && (
+          <div className="animate-fade-in">
+            <h2 className="font-heading text-2xl font-bold tracking-tight">{t("Répartition de votre temps", "Time allocation")}</h2>
+            <p className="mt-1.5 text-sm text-muted-foreground">{t("Pour chaque activité, indiquez son importance dans votre quotidien.", "For each activity, indicate its importance in your daily work.")}</p>
+            <div className="mt-6 space-y-3">
+              {form.verticals.map((v) => (
+                <div key={v.id} className="rounded-xl border border-border bg-card p-4">
+                  <p className="font-medium text-sm mb-3">{verticalLabel(v.id)}</p>
+                  <div className="flex gap-2">
+                    {TIME_WEIGHT_OPTIONS.map((opt) => (
+                      <button key={opt.value} onClick={() => updateVerticalWeight(v.id, opt.value)}
+                        className={`flex-1 rounded-lg px-3 py-2.5 text-xs font-medium transition-all ${v.timeWeight === opt.value ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:text-foreground"}`}>
+                        {lang === "en" ? opt.labelEn : opt.label}
+                        <span className="block text-[10px] opacity-70 mt-0.5">{lang === "en" ? opt.descEn : opt.desc}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ═══ STEP 3 — Business Profile ═══ */}
+        {step === 3 && (
+          <div className="animate-fade-in space-y-8">
+            <div>
+              <h2 className="font-heading text-2xl font-bold tracking-tight">{t("Votre profil business", "Your business profile")}</h2>
+              <p className="mt-1.5 text-sm text-muted-foreground">{t("Ces informations affinent la pertinence des recommandations.", "These details refine the relevance of recommendations.")}</p>
+              <h3 className="mt-6 text-sm font-semibold text-foreground">{t("Taux journalier moyen", "Average daily rate")}</h3>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                {TJM_OPTIONS.map((o) => (
+                  <OptionCard key={o.value} compact selected={form.tjm === o.value} onClick={() => setForm({ ...form, tjm: o.value })} emoji="💰" label={lang === "en" ? o.labelEn : o.label} />
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">{t("Phase de développement", "Development phase")}</h3>
+              <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                {PHASE_OPTIONS.map((o) => (
+                  <OptionCard key={o.value} compact selected={form.projectPhase === o.value} onClick={() => setForm({ ...form, projectPhase: o.value })} emoji={o.emoji} label={lang === "en" ? o.labelEn : o.label} desc={lang === "en" ? o.descEn : o.desc} />
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">{t("Maturité technique", "Technical maturity")}</h3>
+              <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                {MATURITY_OPTIONS.map((o) => (
+                  <OptionCard key={o.value} compact selected={form.techMaturity === o.value} onClick={() => setForm({ ...form, techMaturity: o.value })} emoji={o.emoji} label={lang === "en" ? o.labelEn : o.label} desc={lang === "en" ? o.descEn : o.desc} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ═══ STEP 4 — Main Goal ═══ */}
+        {step === 4 && (
+          <div className="animate-fade-in">
+            <h2 className="font-heading text-2xl font-bold tracking-tight">{t("Quel est votre objectif principal ?", "What's your main goal?")}</h2>
+            <p className="mt-1.5 text-sm text-muted-foreground">{t("Cela détermine le type de recommandations prioritaires.", "This determines the type of priority recommendations.")}</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {([
+                { value: "reduce-costs" as MainGoal, emoji: "💰", label: t("Réduire les coûts", "Reduce costs"), desc: t("Payer moins pour mes outils", "Pay less for my tools") },
+                { value: "save-time" as MainGoal, emoji: "⏱️", label: t("Gagner du temps", "Save time"), desc: t("Automatiser et simplifier", "Automate and simplify") },
+                { value: "simplify" as MainGoal, emoji: "🧹", label: t("Simplifier la stack", "Simplify the stack"), desc: t("Moins d'outils, plus d'efficacité", "Fewer tools, more efficiency") },
+                { value: "find-better" as MainGoal, emoji: "🔍", label: t("Trouver de meilleurs outils", "Find better tools"), desc: t("Découvrir des alternatives", "Discover alternatives") },
+              ]).map((opt) => (
+                <OptionCard key={opt.value} selected={form.mainGoal === opt.value} onClick={() => setForm({ ...form, mainGoal: opt.value })} {...opt} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ═══ STEP 5 — Smart Tools Selection ═══ */}
+        {step === 5 && (
+          <div className="animate-fade-in">
+            <h2 className="font-heading text-2xl font-bold tracking-tight">{t("Quels outils utilisez-vous ?", "Which tools do you use?")}</h2>
+            <p className="mt-1.5 text-sm text-muted-foreground">{t("Sélectionnez vos outils actuels pour une analyse personnalisée. Optionnel.", "Select your current tools for a personalized analysis. Optional.")}</p>
+
+            {/* Search */}
+            <div className="relative mt-5">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <input type="text" value={toolSearch} onChange={(e) => setToolSearch(e.target.value)} placeholder={t("Rechercher parmi 300+ outils...", "Search among 300+ tools...")} className="w-full rounded-xl border border-input bg-background py-2.5 pl-10 pr-4 text-sm outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring" />
+              {toolSearch && <button onClick={() => setToolSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"><X className="h-4 w-4" /></button>}
+            </div>
+
+            {/* View toggle: Smart vs Layers */}
+            {!toolSearch.trim() && (
+              <div className="mt-3 flex gap-1 rounded-lg bg-secondary p-0.5">
+                <button onClick={() => setActiveView("smart")} className={`flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${activeView === "smart" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+                  <Sparkles className="inline h-3 w-3 mr-1 -mt-0.5" />{t("Suggestions", "Suggestions")}
+                </button>
+                <button onClick={() => setActiveView("layers")} className={`flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${activeView === "layers" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+                  {t("Par couche", "By layer")}
+                </button>
+              </div>
+            )}
+
+            {/* Selected tools */}
+            {selectedToolObjects.length > 0 && (
+              <div className="mt-4">
+                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">{t("Votre sélection", "Your selection")} ({selectedToolObjects.length})</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {selectedToolObjects.map((tool) => (
+                    <button key={tool.id} onClick={() => toggleTool(tool.id)} className="inline-flex items-center gap-1.5 rounded-lg border border-primary/20 bg-accent px-2.5 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10">
+                      <ToolMiniLogo tool={tool} />
+                      {tool.name}
+                      <X className="h-3 w-3 opacity-50" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Search results */}
+            {toolSearch.trim() && (
+              <div className="mt-4">
+                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">{filteredTools.length} {t("résultats", "results")}</p>
+                <div className="grid gap-2 sm:grid-cols-2 max-h-[45vh] overflow-y-auto pr-1">
+                  {filteredTools.map((tool) => (
+                    <ToolCard key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Smart view: AI-suggested tools based on profile */}
+            {!toolSearch.trim() && activeView === "smart" && (
+              <div className="mt-4 space-y-4">
+                {suggestedTools.length > 0 && (
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Sparkles className="h-3.5 w-3.5 text-primary" />
+                      <p className="text-xs font-medium uppercase tracking-wider text-primary">{t("Recommandés pour votre profil", "Recommended for your profile")}</p>
+                    </div>
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {suggestedTools.map((tool) => (
+                        <ToolCard key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Show remaining tools in a compact scrollable area */}
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
+                    {t("Tous les outils", "All tools")} ({tools.filter((t) => !selectedIds.has(t.id)).length})
+                  </p>
+                  <div className="grid gap-2 sm:grid-cols-2 max-h-[30vh] overflow-y-auto pr-1">
+                    {tools.filter((t) => !selectedIds.has(t.id) && !suggestedTools.some((s) => s.id === t.id)).map((tool) => (
+                      <ToolCard key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Layer view: organized by tool_type */}
+            {!toolSearch.trim() && activeView === "layers" && (
+              <div className="mt-4 space-y-2">
+                {TOOL_LAYERS.map((layer) => {
+                  const layerTools = toolsByLayer[layer.type] || [];
+                  if (layerTools.length === 0) return null;
+                  const isExpanded = expandedLayers.has(layer.type);
+                  const preview = isExpanded ? layerTools : layerTools.slice(0, 4);
+                  return (
+                    <div key={layer.type} className="rounded-xl border border-border bg-card overflow-hidden">
+                      <button onClick={() => toggleLayer(layer.type)} className="flex w-full items-center gap-3 p-4 text-left hover:bg-secondary/30 transition-colors">
+                        <span className="text-lg">{layer.emoji}</span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-semibold">{lang === "en" ? layer.labelEn : layer.label}</p>
+                          <p className="text-xs text-muted-foreground">{lang === "en" ? layer.descEn : layer.desc}</p>
+                        </div>
+                        <span className="shrink-0 rounded-full bg-secondary px-2 py-0.5 text-xs font-medium tabular-nums text-muted-foreground">{layerTools.length}</span>
+                        {isExpanded ? <ChevronUp className="h-4 w-4 text-muted-foreground shrink-0" /> : <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />}
+                      </button>
+                      {(isExpanded || true) && (
+                        <div className="border-t border-border px-3 py-3">
+                          <div className={`grid gap-2 sm:grid-cols-2 ${isExpanded ? "max-h-[40vh] overflow-y-auto pr-1" : ""}`}>
+                            {preview.map((tool) => (
+                              <ToolCard key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} />
+                            ))}
+                          </div>
+                          {!isExpanded && layerTools.length > 4 && (
+                            <button onClick={() => toggleLayer(layer.type)} className="mt-2 text-xs font-medium text-primary hover:underline">
+                              {t(`Voir les ${layerTools.length - 4} autres`, `See ${layerTools.length - 4} more`)}
+                            </button>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Sticky counter */}
+            <div className="sticky bottom-0 mt-4 -mx-1 rounded-xl border border-border bg-card/95 backdrop-blur-sm px-4 py-3 shadow-lg">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">{form.currentTools.length}</span> {t("outils sélectionnés", "tools selected")}</span>
                 <span className="font-heading text-sm font-bold">{t("Total", "Total")} : <span className="text-primary">{totalCost}€/mois</span></span>
