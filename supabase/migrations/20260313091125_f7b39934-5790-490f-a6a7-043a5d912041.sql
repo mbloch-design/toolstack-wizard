@@ -1,0 +1,1 @@
+ALTER TABLE public.leads ALTER COLUMN job_role TYPE text;
