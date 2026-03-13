@@ -48,6 +48,12 @@ export const tools: Tool[] = (toolsV4Json as any[]).map((t: any) => ({
   betterAlternative: t.betterAlternative || null,
   migrationGuide: t.migrationGuide || null,
   downgradePlan: t.downgradePlan || null,
+  // v10 prescription fields
+  prescription_quality: t.prescription_quality || "silence",
+  prescription_output: t.prescription_output || null,
+  prescription_block_reasons: t.prescription_block_reasons || [],
+  prescription_context_questions: t.prescription_context_questions || [],
+  substitution_cluster_v2: t.substitution_cluster_v2 || null,
 }));
 
 // Verticals

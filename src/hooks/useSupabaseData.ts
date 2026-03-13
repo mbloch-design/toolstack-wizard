@@ -47,6 +47,12 @@ function mapToolFromJson(t: any): Tool {
     betterAlternative: t.betterAlternative || t.better_alternative || null,
     migrationGuide: t.migrationGuide || t.migration_guide || null,
     downgradePlan: t.downgradePlan || t.downgrade_plan || null,
+    // v10 prescription fields
+    prescription_quality: t.prescription_quality || "silence",
+    prescription_output: t.prescription_output || null,
+    prescription_block_reasons: t.prescription_block_reasons || [],
+    prescription_context_questions: t.prescription_context_questions || [],
+    substitution_cluster_v2: t.substitution_cluster_v2 || null,
   };
 }
 
