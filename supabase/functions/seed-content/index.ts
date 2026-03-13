@@ -71,6 +71,7 @@ Deno.serve(async (req) => {
         covers: t.covers || null,
         relevant_for: t.relevantFor || null,
         personas: t.personas || [],
+        alternatives: t.alternatives || null,
         seo: t.seo || null,
         articles: t.articles || null,
       }));
