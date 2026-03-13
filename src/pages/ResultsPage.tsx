@@ -11,26 +11,24 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import {
   ArrowRight, AlertTriangle, CheckCircle2, ArrowUpRight,
-  Copy, ExternalLink, Info, Sparkles, Pencil,
-  ChevronRight, Shield, Wallet, Layers, UserCircle, TrendingDown, Zap,
-  ArrowDownCircle, RefreshCw, ChevronDown,
+  Copy, ExternalLink, Pencil, ChevronRight, Shield,
+  Wallet, Layers, TrendingDown, Zap,
+  ArrowDownCircle, RefreshCw, ChevronDown, ChevronUp, Sparkles,
 } from "lucide-react";
-import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid,
-  Tooltip as RechartsTooltip, ResponsiveContainer, ReferenceLine,
-} from "recharts";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { getToolLogoUrl } from "@/hooks/useSupabaseData";
 
-/* ═══════════════ Tiny helpers ═══════════════ */
+/* ═══════════ Helpers ═══════════ */
 
 const Tip = ({ text }: { text: string }) => (
   <TooltipProvider delayDuration={150}>
     <Tooltip>
       <TooltipTrigger asChild>
-        <button type="button" className="inline-flex"><Info className="h-3.5 w-3.5 text-muted-foreground/40 hover:text-muted-foreground transition-colors" /></button>
+        <button type="button" className="inline-flex opacity-40 hover:opacity-70 transition-opacity">
+          <span className="text-xs text-muted-foreground">ⓘ</span>
+        </button>
       </TooltipTrigger>
       <TooltipContent side="top" className="max-w-[260px] text-xs">{text}</TooltipContent>
     </Tooltip>
@@ -38,26 +36,14 @@ const Tip = ({ text }: { text: string }) => (
 );
 
 const Logo = ({ tool, size = 36 }: { tool: ScoredTool["tool"]; size?: number }) => {
-  const logoField = tool.logo;
-  const websiteUrl = tool.websiteUrl || tool.affiliateLink;
-  const [src, setSrc] = useState<string | null>(null);
+  const logoUrl = getToolLogoUrl(tool);
   const [err, setErr] = useState(false);
-
-  useEffect(() => {
-    if (logoField) { setSrc(logoField); return; }
-    if (!websiteUrl) { setSrc(null); return; }
-    try {
-      const domain = new URL(websiteUrl.startsWith("http") ? websiteUrl : `https://${websiteUrl}`).hostname.replace("www.", "");
-      setSrc(`https://www.google.com/s2/favicons?domain=${domain}&sz=128`);
-    } catch { setSrc(null); }
-  }, [logoField, websiteUrl]);
-
-  if (!src || err) return (
-    <span className="flex shrink-0 items-center justify-center rounded-xl bg-muted text-xs font-bold" style={{ width: size, height: size }}>
+  if (!logoUrl || err) return (
+    <span className="flex shrink-0 items-center justify-center rounded-xl bg-secondary text-xs font-bold text-foreground" style={{ width: size, height: size }}>
       {tool.name.charAt(0)}
     </span>
   );
-  return <img src={src} alt={`${tool.name} logo`} loading="lazy" className="shrink-0 rounded-xl bg-muted object-contain" style={{ width: size, height: size }} onError={() => setErr(true)} />;
+  return <img src={logoUrl} alt={`${tool.name} logo`} loading="lazy" className="shrink-0 rounded-xl bg-secondary object-contain" style={{ width: size, height: size }} onError={() => setErr(true)} />;
 };
 
 const BADGE_STYLES: Record<string, string> = {
@@ -74,7 +60,7 @@ const PRESCRIPTION_ICONS: Record<string, typeof ArrowDownCircle> = {
   downgrade: ChevronDown,
 };
 
-/* ═══════════════ Main ═══════════════ */
+/* ═══════════ Main ═══════════ */
 
 const ResultsPage = () => {
   const { t, prefix, lang } = useLang();
@@ -83,6 +69,8 @@ const ResultsPage = () => {
   const [results, setResults] = useState<SelectorResults | null>(null);
   const [form, setForm] = useState<SelectorFormData | null>(null);
   const [copied, setCopied] = useState(false);
+  const [fichesExpanded, setFichesExpanded] = useState(true);
+  const [showAllRecs, setShowAllRecs] = useState(false);
 
   const tjmMedian = useMemo(() => {
     if (!form?.tjm) return 0;
@@ -121,33 +109,6 @@ const ResultsPage = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const quadrantData = useMemo(() => {
-    if (!results) return [];
-    return results.scoredTools
-      .filter((s) => s.tool.defaultMonthlyPrice > 0 || (s.tool.timeGainedHoursPerMonth || 0) > 0)
-      .map((s) => ({
-        name: s.tool.name, x: s.tool.defaultMonthlyPrice, y: s.tool.timeGainedHoursPerMonth || 0,
-        valueIndex: s.valueIndex, valueCreated: s.valueCreated,
-        fill: s.action === "recommend" ? "hsl(var(--keep))" : s.action === "cancel" ? "hsl(var(--cancel))" : "hsl(var(--muted-foreground))",
-      }));
-  }, [results]);
-
-  const roiData = useMemo(() => {
-    if (!results) return [];
-    if (results.isTjmZero) {
-      return results.recommended.filter((s) => (s.tool.timeGainedHoursPerMonth || 0) > 0).map((s) => ({
-        name: s.tool.name, tool: s.tool, cost: s.tool.defaultMonthlyPrice,
-        hours: s.tool.timeGainedHoursPerMonth || 0, valueCreated: 0,
-        valueIndex: 0, verdict: s.finalScore > 80 ? "Excellent" : s.finalScore > 60 ? t("Bon", "Good") : t("Pertinent", "Relevant"),
-      }));
-    }
-    return results.recommended.filter((s) => s.valueCreated > 0).map((s) => ({
-      name: s.tool.name, tool: s.tool, cost: s.tool.defaultMonthlyPrice,
-      hours: s.tool.timeGainedHoursPerMonth || 0, valueCreated: s.valueCreated,
-      valueIndex: s.valueIndex, verdict: s.finalScore > 80 ? "Excellent" : s.finalScore > 60 ? t("Bon", "Good") : t("Pertinent", "Relevant"),
-    }));
-  }, [results, t]);
-
   if (!results || !form) return null;
 
   const family = VERTICAL_FAMILIES.find((f) => f.value === form.family);
@@ -156,457 +117,357 @@ const ResultsPage = () => {
   const stackCost = form.currentTools.reduce((s, ct) => s + ct.monthlyCost, 0);
 
   const healthPct = results.stackHealthScore;
-  const healthTag = healthPct > 80
-    ? { label: t("Optimisée", "Optimized"), cls: "text-keep" }
-    : healthPct >= 50
-    ? { label: t("À revoir", "Needs review"), cls: "text-primary" }
-    : { label: t("Dette détectée", "Debt detected"), cls: "text-cancel" };
+  const healthColor = healthPct > 80 ? "text-keep" : healthPct >= 50 ? "text-primary" : "text-cancel";
+  const healthLabel = healthPct > 80
+    ? t("Optimisée", "Optimized")
+    : healthPct >= 50 ? t("À revoir", "Needs review") : t("Dette détectée", "Debt detected");
 
-  const getBadge = (s: ScoredTool) => {
-    if (results.fewRecommendations && s.finalScore <= 60) return { text: t("Pertinent", "Relevant"), cls: "border-primary/20 bg-primary/10 text-primary" };
-    if (s.finalScore > 80) return { text: "Excellent", cls: "border-keep/20 bg-keep/10 text-keep" };
-    return { text: t("Bon", "Good"), cls: "border-primary/20 bg-primary/10 text-primary" };
-  };
+  const recsToShow = showAllRecs ? results.recommended : results.recommended.slice(0, 6);
 
-  /* ═══════════════ RENDER ═══════════════ */
+  /* ═══════════ RENDER ═══════════ */
   return (
     <div className="min-h-screen bg-background">
 
-      {/* HEADER */}
-      <div className="border-b border-border bg-card">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
-          <div>
-            <h1 className="font-heading text-2xl font-bold tracking-tight md:text-3xl">
-              {t("Analyse de votre stack", "Stack Analysis")}
-            </h1>
-            <p className="mt-1 text-sm text-muted-foreground">{results.personaMessage}</p>
+      {/* ─── HERO ─── */}
+      <div className="border-b border-border">
+        <div className="mx-auto max-w-5xl px-6 py-8 md:px-10 md:py-12">
+          {/* Header row */}
+          <div className="flex items-start justify-between gap-4 mb-8">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">{t("Votre analyse", "Your analysis")}</p>
+              <h1 className="font-heading text-3xl font-bold tracking-tight md:text-4xl">{t("Stack Diagnostic", "Stack Diagnostic")}</h1>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <button onClick={() => navigate(`${prefix}/selector`)} className="hidden md:inline-flex items-center gap-1.5 rounded-xl border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary">
+                <Pencil className="h-3.5 w-3.5" /> {t("Modifier", "Edit")}
+              </button>
+              <button onClick={handleShare} className="inline-flex items-center gap-1.5 rounded-xl border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary">
+                <Copy className="h-3.5 w-3.5" />
+                {copied ? t("Copié !", "Copied!") : t("Partager", "Share")}
+              </button>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <button onClick={() => navigate(`${prefix}/selector`)} className="hidden items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary md:inline-flex">
-              <Pencil className="h-3.5 w-3.5" /> {t("Modifier", "Edit")}
-            </button>
-            <button onClick={handleShare} className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary">
-              <Copy className="h-3.5 w-3.5" />
-              {copied ? t("Copié !", "Copied!") : t("Partager", "Share")}
-            </button>
+
+          {/* KPI Row */}
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+            {/* Stack Health */}
+            <div className="rounded-2xl bg-gradient-to-br from-primary to-primary/80 p-5 text-primary-foreground shadow-lg shadow-primary/10">
+              <div className="flex items-center gap-2 mb-3">
+                <Shield className="h-4 w-4 opacity-70" />
+                <p className="text-xs font-medium uppercase tracking-wider opacity-80">Stack Health</p>
+              </div>
+              <p className="font-heading text-4xl font-extrabold tabular-nums leading-none">
+                {results.hasCurrentTools && healthPct >= 0 ? healthPct : "—"}
+              </p>
+              <p className="mt-2 text-xs font-medium opacity-80">
+                {results.hasCurrentTools ? healthLabel : t("Ajoutez vos outils", "Add your tools")}
+              </p>
+            </div>
+
+            {/* Savings */}
+            <div className="rounded-2xl border border-border bg-card p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <TrendingDown className="h-4 w-4 text-cancel" />
+                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Économies", "Savings")}</p>
+              </div>
+              <p className={`font-heading text-4xl font-extrabold tabular-nums leading-none ${results.totalSavingsMonthly > 0 ? "text-cancel" : "text-muted-foreground/30"}`}>
+                {results.totalSavingsMonthly > 0 ? `-${results.totalSavingsMonthly}€` : "0€"}
+              </p>
+              <p className="mt-2 text-xs text-muted-foreground">
+                {results.isStackFree ? t("Stack 100% gratuite", "100% free stack") : results.totalSavingsMonthly > 0 ? `${results.totalSavingsAnnual}€/${t("an", "yr")}` : t("Aucune économie", "No savings")}
+              </p>
+            </div>
+
+            {/* Stack */}
+            <div className="rounded-2xl border border-border bg-card p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <Layers className="h-4 w-4 text-primary" />
+                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Stack actuelle", "Current Stack")}</p>
+              </div>
+              <p className="font-heading text-4xl font-extrabold tabular-nums leading-none">{form.currentTools.length}</p>
+              <p className="mt-2 text-xs text-muted-foreground">{t("outils", "tools")} · {stackCost}€/{t("mois", "mo")}</p>
+            </div>
+
+            {/* Profile */}
+            <div className="rounded-2xl border border-border bg-card p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <Wallet className="h-4 w-4 text-primary" />
+                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Profil", "Profile")}</p>
+              </div>
+              <p className="font-heading text-lg font-bold leading-tight">{family ? `${family.emoji} ${lang === "en" ? family.labelEn : family.label}` : "—"}</p>
+              <p className="mt-2 text-xs text-muted-foreground">
+                {tjmLabel ? (lang === "fr" ? tjmLabel.label : tjmLabel.labelEn) : "—"}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 py-6 md:px-10 md:py-8">
+      <div className="mx-auto max-w-5xl px-6 py-8 md:px-10 md:py-10 space-y-10">
 
-        {/* AI doublon banner */}
+        {/* ─── Banners ─── */}
         {results.hasAiDoublon && (
-          <div className="mb-6 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-3">
+          <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-3">
             <Zap className="h-5 w-5 text-primary shrink-0" />
-            <p className="text-sm text-primary font-medium">
-              {t("⚡ Doublon IA détecté — Vous utilisez plusieurs outils IA pour le même usage.", "⚡ AI Duplicate detected — You're using multiple AI tools for the same purpose.")}
-            </p>
+            <p className="text-sm text-primary font-medium">{t("⚡ Doublon IA détecté — Vous utilisez plusieurs outils IA pour le même usage.", "⚡ AI Duplicate detected — You're using multiple AI tools for the same purpose.")}</p>
           </div>
         )}
 
-        {results.fewRecommendations && (
-          <div className="mb-6 flex items-center gap-3 rounded-xl border border-keep/20 bg-keep/5 px-5 py-3">
-            <CheckCircle2 className="h-5 w-5 text-keep shrink-0" />
-            <p className="text-sm text-keep font-medium">
-              {t("Votre stack semble déjà bien optimisée. Voici quelques suggestions complémentaires.", "Your stack seems well optimized. Here are some complementary suggestions.")}
-            </p>
-          </div>
-        )}
-
-        {/* KPI CARDS */}
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-          {/* Stack Health */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary/80 p-5 text-primary-foreground shadow-lg shadow-primary/10">
-            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/15"><Shield className="h-4.5 w-4.5" /></div>
-            <p className="text-xs font-medium uppercase tracking-wider opacity-80">Stack Health</p>
-            <p className="mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none">{results.hasCurrentTools && healthPct >= 0 ? healthPct : "—"}</p>
-            <p className="mt-1.5 flex items-center gap-1 text-xs font-medium opacity-90">
-              {results.hasCurrentTools ? (<>{healthPct < 50 && <AlertTriangle className="h-3 w-3" />}{healthPct > 80 && <CheckCircle2 className="h-3 w-3" />}{healthTag.label}</>) : t("Ajoutez vos outils", "Add your tools")}
-            </p>
-          </div>
-
-          {/* Savings */}
-          {results.hasCurrentTools && (
-            <div className="relative overflow-hidden rounded-2xl bg-card border border-border p-5 shadow-sm">
-              <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-cancel/10"><TrendingDown className="h-4.5 w-4.5 text-cancel" /></div>
-              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Économies", "Savings")}</p>
-              <p className={`mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none ${results.totalSavingsMonthly > 0 ? "text-cancel" : "text-muted-foreground/30"}`}>{results.totalSavingsMonthly}€</p>
-              <p className="mt-1.5 text-xs text-muted-foreground">
-                {results.isStackFree ? t("Votre stack est déjà 100% gratuite.", "Your stack is already 100% free.") : results.totalSavingsMonthly > 0 ? `${t("soit", "i.e.")} ${results.totalSavingsAnnual}€/${t("an", "yr")}` : t("Aucune économie détectée", "No savings detected")}
-              </p>
-            </div>
-          )}
-
-          {/* Current Stack */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-keep to-keep/80 p-5 text-keep-foreground shadow-lg shadow-keep/10">
-            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/15"><Layers className="h-4.5 w-4.5" /></div>
-            <p className="text-xs font-medium uppercase tracking-wider opacity-80">{t("Stack actuelle", "Current Stack")}</p>
-            <p className="mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none">{form.currentTools.length}</p>
-            <p className="mt-1.5 text-xs font-medium opacity-90">{t("outils", "tools")} · {stackCost}€/{t("mois", "mo")}</p>
-          </div>
-
-          {/* Profile */}
-          <div className="relative overflow-hidden rounded-2xl bg-card border border-border p-5 shadow-sm">
-            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10"><UserCircle className="h-4.5 w-4.5 text-primary" /></div>
-            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Profil", "Profile")}</p>
-            <p className="mt-2 font-heading text-xl font-bold leading-tight">{family ? (lang === "en" ? family.labelEn : family.label) : "—"}</p>
-            <p className="mt-1.5 text-xs text-muted-foreground">
-              {tjmLabel ? (lang === "fr" ? tjmLabel.label : tjmLabel.labelEn) : "—"}
-              <span className="mx-1 opacity-30">·</span>
-              {phase ? (lang === "fr" ? phase.label : phase.labelEn) : "—"}
-            </p>
-          </div>
-        </div>
-
-        {/* Edge case messages */}
         {!results.hasCurrentTools && (
-          <p className="mt-4 text-center text-sm text-muted-foreground italic">
-            {t("Ajoutez vos outils pour obtenir une analyse de votre stack.", "Add your tools for a stack analysis.")}
-          </p>
+          <div className="flex flex-col items-center rounded-2xl border border-dashed border-border py-12 text-center">
+            <Layers className="h-10 w-10 text-muted-foreground/30 mb-3" />
+            <p className="text-sm text-muted-foreground max-w-xs">{t("Ajoutez vos outils dans le sélecteur pour obtenir une analyse complète de votre stack.", "Add your tools in the selector to get a complete stack analysis.")}</p>
+            <Link to={`${prefix}/selector`} className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 shadow-sm shadow-primary/20">
+              {t("Ajouter mes outils", "Add my tools")} <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         )}
-        {results.isTjmZero && (
-          <p className="mt-4 text-center text-sm text-muted-foreground italic">
-            {t("Renseignez votre TJM pour voir votre ROI en euros.", "Enter your daily rate to see your ROI in euros.")}
-          </p>
-        )}
 
-        {/* MAIN CONTENT */}
-        <div className="mt-8 grid gap-6 lg:grid-cols-5 lg:gap-8">
-
-          {/* LEFT — Prescription Fiches */}
-          {results.hasCurrentTools && (
-            <section className="lg:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <h2 className="text-lg font-bold">{t("Fiches prescription", "Prescription cards")}</h2>
-                <Tip text={t("Analyse de chaque outil à optimiser avec diagnostic et prescription.", "Analysis of each tool to optimize with diagnosis and prescription.")} />
+        {/* ─── PRESCRIPTIONS ─── */}
+        {results.hasCurrentTools && results.fiches.length > 0 && (
+          <section>
+            <button onClick={() => setFichesExpanded(!fichesExpanded)} className="flex w-full items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <h2 className="text-xl font-bold">{t("Prescriptions", "Prescriptions")}</h2>
+                <span className="rounded-full bg-cancel/10 px-2.5 py-0.5 text-xs font-semibold text-cancel tabular-nums">
+                  -{results.totalSavingsMonthly}€/{t("mois", "mo")}
+                </span>
+                <Tip text={t("Actions concrètes pour optimiser votre stack.", "Concrete actions to optimize your stack.")} />
               </div>
+              {fichesExpanded ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
+            </button>
 
-              {results.fiches.length === 0 ? (
-                <div className="flex flex-col items-center rounded-2xl border border-dashed border-border bg-card py-16 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-keep/10"><CheckCircle2 className="h-7 w-7 text-keep" /></div>
-                  <p className="mt-4 max-w-[220px] text-sm text-muted-foreground">
-                    {results.isStackFree ? t("Votre stack est déjà 100% gratuite.", "Your stack is already 100% free.") : t("Votre stack semble déjà optimisée.", "Your stack seems already optimized.")}
-                  </p>
-                </div>
-              ) : (
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between rounded-xl bg-cancel/5 border border-cancel/15 px-4 py-3">
-                    <span className="text-sm font-medium text-cancel">{t("Total économisable", "Total saveable")}</span>
-                    <span className="font-heading text-lg font-bold tabular-nums text-cancel">-{results.totalSavingsMonthly}€/{t("mois", "mo")}</span>
-                  </div>
-
-                  {results.fiches.map((fiche, i) => {
-                    const Icon = PRESCRIPTION_ICONS[fiche.type] || ArrowDownCircle;
-                    const badgeStyle = BADGE_STYLES[fiche.badge || ""] || "bg-muted text-muted-foreground";
-                    return (
-                      <div key={fiche.tool.id} className="relative overflow-hidden rounded-xl border border-border bg-card p-4 transition-colors hover:bg-secondary/20">
-                        <div className="absolute inset-y-0 left-0 w-[3px] rounded-l-xl bg-cancel" />
-                        <div className="flex items-start gap-3 pl-1.5">
-                          <Logo tool={fiche.tool} size={32} />
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <h3 className="text-sm font-semibold">{fiche.tool.name}</h3>
-                              {fiche.badge && (
-                                <span className={`rounded-md border px-1.5 py-0.5 text-[11px] font-semibold ${badgeStyle}`}>{fiche.badge}</span>
-                              )}
-                              <span className="rounded-md bg-cancel/10 px-1.5 py-0.5 text-[11px] font-semibold tabular-nums text-cancel">
-                                -{fiche.tool.defaultMonthlyPrice}€/{t("mois", "mo")}
-                              </span>
-                            </div>
-
-                            {/* Diagnostic */}
-                            <p className="mt-2 text-[13px] text-muted-foreground leading-relaxed">
-                              <span className="font-semibold text-foreground/70">{t("Diagnostic", "Diagnosis")} :</span> {fiche.diagnostic}
-                            </p>
-
-                            {/* Prescription */}
-                            <p className="mt-1 text-[13px] leading-relaxed">
-                              <span className="font-semibold text-foreground/70">{t("Prescription", "Prescription")} :</span>{" "}
-                              <span className="font-medium text-primary">{fiche.prescription}</span>
-                            </p>
-
-                            {/* Gain */}
-                            {fiche.gain > 0 && (
-                              <p className="mt-1 text-sm font-semibold tabular-nums text-cancel">
-                                {t("Gain", "Savings")} : {fiche.gain}€/{t("mois", "mo")} · {fiche.gain * 12}€/{t("an", "yr")}
-                              </p>
-                            )}
-
-                            {/* Alternative link */}
-                            {fiche.alternative && (
-                              <Link to={`${prefix}/tool/${fiche.alternative.slug || fiche.alternative.id}`} className="mt-1.5 inline-flex items-center gap-1 text-[13px] font-medium text-primary hover:underline">
-                                <ArrowUpRight className="h-3.5 w-3.5" />
-                                {t("Voir l'alternative", "See alternative")} : {fiche.alternative.name}
-                              </Link>
-                            )}
-
-                            {/* Migration guide */}
-                            {fiche.migrationGuide && (
-                              <details className="mt-2">
-                                <summary className="cursor-pointer text-xs font-medium text-muted-foreground hover:text-foreground">
-                                  {t("Guide de migration →", "Migration guide →")}
-                                </summary>
-                                <div className="mt-1.5 rounded-lg bg-secondary/50 p-3 text-xs space-y-1">
-                                  {fiche.migrationGuide.steps.map((step, i) => (
-                                    <p key={i} className="text-muted-foreground">{i + 1}. {step}</p>
-                                  ))}
-                                  <p className="text-muted-foreground/70">⏱ {fiche.migrationGuide.timeEstimate}</p>
-                                  <p className="text-muted-foreground/70">⚠️ {fiche.migrationGuide.dataLoss}</p>
-                                </div>
-                              </details>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </section>
-          )}
-
-          {/* RIGHT — Recommendations */}
-          <section className={results.hasCurrentTools ? "lg:col-span-3" : "lg:col-span-5"}>
-            <div className="flex items-center gap-2 mb-4">
-              <h2 className="text-lg font-bold">{t("Meilleurs outils pour vous", "Best tools for you")}</h2>
-              <Tip text={t("Score = pertinence (60%) + valeur (40%). Filtré par couche.", "Score = pertinence (60%) + value (40%). Filtered by layer.")} />
-            </div>
-
-            {results.recommended.length === 0 ? (
-              <div className="flex flex-col items-center rounded-2xl border border-dashed border-border bg-card py-16 text-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10"><Sparkles className="h-7 w-7 text-primary" /></div>
-                <p className="mt-4 max-w-[260px] text-sm text-muted-foreground">
-                  {!results.hasCurrentTools ? t("Ajoutez vos outils actuels pour une analyse complète.", "Add your current tools for a complete analysis.") : t("Votre stack semble déjà bien optimisée.", "Your stack seems well optimized.")}
-                </p>
-              </div>
-            ) : (
-              <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-                {results.recommended.slice(0, 3).map((s) => {
-                  const badge = getBadge(s);
+            {fichesExpanded && (
+              <div className="space-y-3">
+                {results.fiches.map((fiche) => {
+                  const Icon = PRESCRIPTION_ICONS[fiche.type] || ArrowDownCircle;
+                  const badgeStyle = BADGE_STYLES[fiche.badge || ""] || "bg-muted text-muted-foreground";
                   return (
-                    <div key={s.tool.id} className="flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
-                      <div className="flex items-start gap-3.5 flex-1 min-w-0">
-                        <Logo tool={s.tool} size={44} />
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2">
-                            <h3 className="text-base font-semibold">{s.tool.name}</h3>
-                            <span className={`shrink-0 rounded-md border px-2 py-0.5 text-[11px] font-semibold ${badge.cls}`}>{badge.text}</span>
-                            {s.tool.tool_type === "metier" && (
-                              <span className="rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">{t("Métier", "Core")}</span>
-                            )}
-                          </div>
-                          <p className="mt-1 line-clamp-2 text-[13px] text-muted-foreground">{s.tool.shortDescription}</p>
-                          {!results.isTjmZero && s.valueCreated > 0 && (
-                            <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">
-                              {t(`Vaut ~${s.valueCreated}€/mois`, `Worth ~€${s.valueCreated}/mo`)}
-                              {s.valueCreated >= 2000 && <span className="ml-1 text-xs font-normal text-muted-foreground">{t("(estimation)", "(estimate)")}</span>}
-                            </p>
-                          )}
-                          {results.isTjmZero && (s.tool.timeGainedHoursPerMonth || 0) > 0 && (
-                            <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">
-                              {t(`Gain estimé : ${s.tool.timeGainedHoursPerMonth}h/mois`, `Estimated gain: ${s.tool.timeGainedHoursPerMonth}h/mo`)}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="shrink-0 sm:w-44">
-                        {s.tool.affiliateLink ? (
-                          <a href={s.tool.affiliateLink} target="_blank" rel="noopener noreferrer"
-                            className="flex w-full items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10">
-                            {t("Essayer", "Try it")} <ExternalLink className="h-3.5 w-3.5" />
-                          </a>
-                        ) : (
-                          <Link to={`${prefix}/tool/${s.tool.slug}`}
-                            className="flex w-full items-center justify-center gap-2 rounded-xl border border-border px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
-                            {t("Voir la fiche", "Details")} <ChevronRight className="h-3.5 w-3.5" />
-                          </Link>
-                        )}
-                      </div>
-                    </div>
+                    <FicheCard key={fiche.tool.id} fiche={fiche} Icon={Icon} badgeStyle={badgeStyle} prefix={prefix} t={t} />
                   );
                 })}
               </div>
             )}
           </section>
-        </div>
+        )}
 
-        {/* TABS */}
-        <div className="mt-10">
-          <Tabs defaultValue="all">
-            <TabsList className="gap-1 rounded-xl border border-border bg-card p-1">
-              <TabsTrigger value="all" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-secondary data-[state=active]:shadow-sm">
-                {t("Toutes les recommandations", "All recommendations")}
-              </TabsTrigger>
-              {results.hasCurrentTools && form.currentTools.length >= 3 && (
-                <TabsTrigger value="quadrant" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-secondary data-[state=active]:shadow-sm">
-                  {t("Quadrant", "Quadrant")}
-                </TabsTrigger>
+        {results.hasCurrentTools && results.fiches.length === 0 && (
+          <div className="flex items-center gap-3 rounded-xl border border-keep/20 bg-keep/5 px-5 py-4">
+            <CheckCircle2 className="h-5 w-5 text-keep shrink-0" />
+            <p className="text-sm font-medium text-keep">{results.isStackFree ? t("Votre stack est déjà 100% gratuite. Bravo !", "Your stack is already 100% free. Well done!") : t("Votre stack semble déjà bien optimisée.", "Your stack seems well optimized.")}</p>
+          </div>
+        )}
+
+        {/* ─── RECOMMENDATIONS ─── */}
+        <section>
+          <div className="flex items-center gap-2 mb-5">
+            <h2 className="text-xl font-bold">{t("Meilleurs outils pour vous", "Best tools for you")}</h2>
+            <Tip text={t("Score = pertinence (60%) + valeur (40%).", "Score = pertinence (60%) + value (40%).")} />
+          </div>
+
+          {results.recommended.length === 0 ? (
+            <div className="flex flex-col items-center rounded-2xl border border-dashed border-border py-12 text-center">
+              <Sparkles className="h-10 w-10 text-muted-foreground/30 mb-3" />
+              <p className="text-sm text-muted-foreground max-w-xs">{t("Aucune recommandation pour le moment.", "No recommendations yet.")}</p>
+            </div>
+          ) : (
+            <>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {recsToShow.map((s) => (
+                  <RecCard key={s.tool.id} s={s} prefix={prefix} t={t} isTjmZero={results.isTjmZero} />
+                ))}
+              </div>
+              {results.recommended.length > 6 && !showAllRecs && (
+                <div className="mt-4 text-center">
+                  <button onClick={() => setShowAllRecs(true)} className="inline-flex items-center gap-1.5 rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
+                    {t(`Voir les ${results.recommended.length - 6} autres`, `See ${results.recommended.length - 6} more`)} <ChevronDown className="h-4 w-4" />
+                  </button>
+                </div>
               )}
-              <TabsTrigger value="roi" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-secondary data-[state=active]:shadow-sm">
-                {results.isTjmZero ? t("Temps gagné", "Time gained") : t("Analyse ROI", "ROI Analysis")}
-              </TabsTrigger>
-            </TabsList>
+            </>
+          )}
+        </section>
 
-            {/* All */}
-            <TabsContent value="all">
-              {results.recommended.length === 0 ? (
-                <p className="py-16 text-center text-sm text-muted-foreground">{t("Aucune recommandation.", "No recommendations.")}</p>
-              ) : (
-                <div className="grid gap-4 pt-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {results.recommended.map((s) => {
-                    const badge = getBadge(s);
-                    return (
-                      <div key={s.tool.id} className="flex flex-col rounded-2xl border border-border bg-card p-5 transition-all hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
-                        <div className="flex items-start gap-3">
-                          <Logo tool={s.tool} size={32} />
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center justify-between gap-2">
-                              <h3 className="text-sm font-semibold">{s.tool.name}</h3>
-                              <span className={`shrink-0 rounded-md border px-1.5 py-0.5 text-[10px] font-semibold ${badge.cls}`}>{badge.text}</span>
-                            </div>
-                            <p className="mt-1 line-clamp-2 text-[13px] text-muted-foreground">{s.tool.shortDescription}</p>
-                            {!results.isTjmZero && s.valueCreated > 0 && (
-                              <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">~{s.valueCreated}€/{t("mois", "mo")}{s.valueCreated >= 2000 && <span className="ml-1 text-xs font-normal text-muted-foreground">{t("(estimation)", "(estimate)")}</span>}</p>
-                            )}
-                            {results.isTjmZero && (s.tool.timeGainedHoursPerMonth || 0) > 0 && (
-                              <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">{t(`Gain : ${s.tool.timeGainedHoursPerMonth}h/mois`, `Gain: ${s.tool.timeGainedHoursPerMonth}h/mo`)}</p>
-                            )}
+        {/* ─── ROI Summary (text, not chart) ─── */}
+        {results.hasCurrentTools && !results.isTjmZero && results.recommended.filter((s) => s.valueCreated > 0).length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold mb-4">{t("Analyse ROI", "ROI Analysis")}</h2>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border bg-secondary/30">
+                      <th className="px-5 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Outil", "Tool")}</th>
+                      <th className="px-5 py-3 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Coût", "Cost")}</th>
+                      <th className="px-5 py-3 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Valeur créée", "Value created")}</th>
+                      <th className="px-5 py-3 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("ROI", "ROI")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {results.recommended.filter((s) => s.valueCreated > 0).slice(0, 10).map((s, i) => (
+                      <tr key={s.tool.id} className={`border-b border-border/40 last:border-0 transition-colors hover:bg-secondary/10 ${i % 2 === 1 ? "bg-secondary/5" : ""}`}>
+                        <td className="px-5 py-3">
+                          <div className="flex items-center gap-2.5">
+                            <Logo tool={s.tool} size={24} />
+                            <span className="font-medium">{s.tool.name}</span>
                           </div>
-                        </div>
-                        <div className="mt-auto pt-4">
-                          {s.tool.affiliateLink ? (
-                            <a href={s.tool.affiliateLink} target="_blank" rel="noopener noreferrer"
-                              className="flex w-full items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10">
-                              {t("Essayer", "Try it")} <ExternalLink className="h-3.5 w-3.5" />
-                            </a>
-                          ) : (
-                            <Link to={`${prefix}/tool/${s.tool.slug}`}
-                              className="flex w-full items-center justify-center gap-2 rounded-xl border border-border px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
-                              {t("Voir la fiche", "Details")} <ChevronRight className="h-3.5 w-3.5" />
-                            </Link>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </TabsContent>
+                        </td>
+                        <td className="px-5 py-3 text-right tabular-nums text-muted-foreground">{s.tool.defaultMonthlyPrice}€/{t("mois", "mo")}</td>
+                        <td className="px-5 py-3 text-right tabular-nums font-semibold text-keep">
+                          ~{s.valueCreated}€/{t("mois", "mo")}
+                          {s.valueCreated >= 2000 && <span className="text-xs font-normal text-muted-foreground ml-1">*</span>}
+                        </td>
+                        <td className="px-5 py-3 text-right">
+                          <span className={`rounded-md px-2 py-0.5 text-xs font-semibold ${s.valueIndex > 80 ? "bg-keep/10 text-keep" : s.valueIndex > 40 ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"}`}>
+                            {s.valueIndex > 80 ? "Excellent" : s.valueIndex > 40 ? t("Bon", "Good") : t("Faible", "Low")}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        )}
 
-            {/* Quadrant */}
-            {results.hasCurrentTools && form.currentTools.length >= 3 && (
-              <TabsContent value="quadrant">
-                <div className="mt-2 rounded-2xl border border-border bg-card p-6">
-                  <ResponsiveContainer width="100%" height={400}>
-                    <ScatterChart margin={{ top: 15, right: 25, bottom: 35, left: 15 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                      <XAxis type="number" dataKey="x" label={{ value: t("Coût (€/mois)", "Cost (€/mo)"), position: "bottom", offset: 10, style: { fontSize: 11, fill: "hsl(var(--muted-foreground))" } }} tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
-                      <YAxis type="number" dataKey="y" label={{ value: t("h/mois", "h/mo"), angle: -90, position: "insideLeft", style: { fontSize: 11, fill: "hsl(var(--muted-foreground))" } }} tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
-                      <RechartsTooltip content={({ payload }) => {
-                        if (!payload?.length) return null;
-                        const d = payload[0].payload;
-                        return (
-                          <div className="rounded-xl border border-border bg-popover px-3 py-2 text-xs shadow-lg">
-                            <p className="font-semibold text-popover-foreground">{d.name}</p>
-                            <p className="text-muted-foreground">{t("Indice :", "Index:")} {d.valueIndex}</p>
-                            {d.valueCreated > 0 && <p className="font-medium text-keep">~{d.valueCreated}€/{t("mois", "mo")}</p>}
-                          </div>
-                        );
-                      }} />
-                      <ReferenceLine segment={[{ x: 0, y: 0 }, { x: 100, y: 40 }]} stroke="hsl(var(--muted-foreground))" strokeDasharray="6 4"
-                        label={{ value: t("Frontière d'efficience", "Efficiency frontier"), position: "end", style: { fontSize: 10, fill: "hsl(var(--muted-foreground))" } }} />
-                      <Scatter data={quadrantData} />
-                    </ScatterChart>
-                  </ResponsiveContainer>
-                  <div className="mt-4 flex items-center justify-center gap-6 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-keep" /> {t("Recommandé", "Recommended")}</span>
-                    <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-cancel" /> {t("À annuler", "To cancel")}</span>
-                    <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-muted-foreground" /> {t("Neutre", "Neutral")}</span>
-                  </div>
-                </div>
-              </TabsContent>
-            )}
-
-            {/* ROI */}
-            <TabsContent value="roi">
-              {results.isTjmZero ? (
-                roiData.length === 0 ? (
-                  <p className="py-16 text-center text-sm text-muted-foreground">{t("Aucune donnée.", "No data.")}</p>
-                ) : (
-                  <div className="mt-2 overflow-hidden rounded-2xl border border-border bg-card">
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead>
-                          <tr className="border-b border-border bg-secondary/30">
-                            <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Outil", "Tool")}</th>
-                            <th className="px-5 py-3.5 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Coût/mois", "Cost/mo")}</th>
-                            <th className="px-5 py-3.5 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("h gagnées/mois", "h gained/mo")}</th>
-                            <th className="px-5 py-3.5 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Verdict", "Verdict")}</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {roiData.map((row, i) => (
-                            <tr key={row.name} className={`border-b border-border/40 last:border-0 transition-colors hover:bg-secondary/10 ${i % 2 === 1 ? "bg-secondary/10" : ""}`}>
-                              <td className="px-5 py-3.5"><div className="flex items-center gap-2.5"><Logo tool={row.tool} size={24} /><span className="font-medium">{row.name}</span></div></td>
-                              <td className="px-5 py-3.5 text-right tabular-nums">{row.cost}€</td>
-                              <td className="px-5 py-3.5 text-right tabular-nums font-semibold text-keep">{row.hours}h</td>
-                              <td className="px-5 py-3.5 text-right">
-                                <span className={`rounded-md border px-2 py-0.5 text-[11px] font-semibold ${row.verdict === "Excellent" ? "border-keep/20 bg-keep/10 text-keep" : "border-primary/20 bg-primary/10 text-primary"}`}>{row.verdict}</span>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                    <div className="border-t border-border px-5 py-3 text-xs text-muted-foreground italic">
-                      {t("Renseignez votre TJM pour voir votre ROI en euros.", "Enter your daily rate to see your ROI in euros.")}
-                    </div>
-                  </div>
-                )
-              ) : roiData.length === 0 ? (
-                <p className="py-16 text-center text-sm text-muted-foreground">{t("Aucune donnée.", "No data.")}</p>
-              ) : (
-                <div className="mt-2 overflow-hidden rounded-2xl border border-border bg-card">
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-border bg-secondary/30">
-                          <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Outil", "Tool")}</th>
-                          <th className="px-5 py-3.5 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Coût/mois", "Cost/mo")}</th>
-                          <th className="px-5 py-3.5 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("h gagnées", "h gained")}</th>
-                          <th className="px-5 py-3.5 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Valeur", "Value")}</th>
-                          <th className="px-5 py-3.5 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Indice", "Index")}</th>
-                          <th className="px-5 py-3.5 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Verdict", "Verdict")}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {roiData.map((row, i) => (
-                          <tr key={row.name} className={`border-b border-border/40 last:border-0 transition-colors hover:bg-secondary/10 ${i % 2 === 1 ? "bg-secondary/10" : ""}`}>
-                            <td className="px-5 py-3.5"><div className="flex items-center gap-2.5"><Logo tool={row.tool} size={24} /><span className="font-medium">{row.name}</span></div></td>
-                            <td className="px-5 py-3.5 text-right tabular-nums">{row.cost}€</td>
-                            <td className="px-5 py-3.5 text-right tabular-nums">{row.hours}h</td>
-                            <td className="px-5 py-3.5 text-right tabular-nums font-semibold text-keep">
-                              {row.valueCreated}€{row.valueCreated >= 2000 && <span className="text-xs font-normal text-muted-foreground ml-0.5">{t("(est.)", "(est.)")}</span>}
-                            </td>
-                            <td className="px-5 py-3.5 text-right tabular-nums">{row.valueIndex}</td>
-                            <td className="px-5 py-3.5 text-right">
-                              <span className={`rounded-md border px-2 py-0.5 text-[11px] font-semibold ${row.verdict === "Excellent" ? "border-keep/20 bg-keep/10 text-keep" : "border-primary/20 bg-primary/10 text-primary"}`}>{row.verdict}</span>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
-            </TabsContent>
-          </Tabs>
-        </div>
-
+        {/* TJM zero → show hours */}
+        {results.hasCurrentTools && results.isTjmZero && results.recommended.filter((s) => (s.tool.timeGainedHoursPerMonth || 0) > 0).length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold mb-4">{t("Temps gagné", "Time saved")}</h2>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border bg-secondary/30">
+                      <th className="px-5 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Outil", "Tool")}</th>
+                      <th className="px-5 py-3 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Coût", "Cost")}</th>
+                      <th className="px-5 py-3 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{t("Heures gagnées", "Hours saved")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {results.recommended.filter((s) => (s.tool.timeGainedHoursPerMonth || 0) > 0).map((s, i) => (
+                      <tr key={s.tool.id} className={`border-b border-border/40 last:border-0 transition-colors hover:bg-secondary/10 ${i % 2 === 1 ? "bg-secondary/5" : ""}`}>
+                        <td className="px-5 py-3"><div className="flex items-center gap-2.5"><Logo tool={s.tool} size={24} /><span className="font-medium">{s.tool.name}</span></div></td>
+                        <td className="px-5 py-3 text-right tabular-nums text-muted-foreground">{s.tool.defaultMonthlyPrice > 0 ? `${s.tool.defaultMonthlyPrice}€` : t("Gratuit", "Free")}</td>
+                        <td className="px-5 py-3 text-right tabular-nums font-semibold text-keep">{s.tool.timeGainedHoursPerMonth}h/{t("mois", "mo")}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );
 };
+
+/* ═══════════ Sub-components ═══════════ */
+
+function FicheCard({ fiche, Icon, badgeStyle, prefix, t }: {
+  fiche: Fiche; Icon: typeof ArrowDownCircle; badgeStyle: string; prefix: string; t: (fr: string, en: string) => string;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="rounded-xl border border-border bg-card overflow-hidden transition-all hover:shadow-sm">
+      {/* Header — always visible */}
+      <button onClick={() => setOpen(!open)} className="flex w-full items-center gap-3 p-4 text-left">
+        <Logo tool={fiche.tool} size={32} />
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h3 className="text-sm font-semibold">{fiche.tool.name}</h3>
+            {fiche.badge && <span className={`rounded-md border px-1.5 py-0.5 text-[11px] font-semibold ${badgeStyle}`}>{fiche.badge}</span>}
+          </div>
+          <p className="mt-0.5 text-xs text-muted-foreground truncate">{fiche.diagnostic}</p>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="rounded-lg bg-cancel/10 px-2.5 py-1 text-sm font-bold tabular-nums text-cancel">-{fiche.gain}€</span>
+          {open ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
+        </div>
+      </button>
+
+      {/* Details — expandable */}
+      {open && (
+        <div className="border-t border-border px-4 py-4 space-y-3 bg-secondary/20">
+          <div>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{t("Diagnostic", "Diagnosis")}</p>
+            <p className="text-sm text-foreground/80">{fiche.diagnostic}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{t("Prescription", "Prescription")}</p>
+            <p className="text-sm font-medium text-primary">{fiche.prescription}</p>
+          </div>
+          {fiche.gain > 0 && (
+            <p className="text-sm font-semibold tabular-nums text-cancel">{t("Gain", "Savings")} : {fiche.gain}€/{t("mois", "mo")} · {fiche.gain * 12}€/{t("an", "yr")}</p>
+          )}
+          {fiche.alternative && (
+            <Link to={`${prefix}/tool/${fiche.alternative.slug || fiche.alternative.id}`} className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <ArrowUpRight className="h-3.5 w-3.5" /> {t("Voir l'alternative", "See alternative")} : {fiche.alternative.name}
+            </Link>
+          )}
+          {fiche.migrationGuide && (
+            <div className="rounded-lg bg-background border border-border p-3 text-xs space-y-1">
+              <p className="font-semibold text-muted-foreground">{t("Guide de migration", "Migration guide")}</p>
+              {fiche.migrationGuide.steps.map((step, i) => (
+                <p key={i} className="text-muted-foreground">{i + 1}. {step}</p>
+              ))}
+              <p className="text-muted-foreground/70">⏱ {fiche.migrationGuide.timeEstimate}</p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function RecCard({ s, prefix, t, isTjmZero }: {
+  s: ScoredTool; prefix: string; t: (fr: string, en: string) => string; isTjmZero?: boolean;
+}) {
+  const scoreBadge = s.finalScore > 80
+    ? { text: "Excellent", cls: "bg-keep/10 text-keep border-keep/20" }
+    : s.finalScore > 60
+    ? { text: t("Bon", "Good"), cls: "bg-primary/10 text-primary border-primary/20" }
+    : { text: t("Pertinent", "Relevant"), cls: "bg-muted text-muted-foreground border-border" };
+
+  return (
+    <div className="flex flex-col rounded-2xl border border-border bg-card p-5 transition-all hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
+      <div className="flex items-start gap-3 mb-3">
+        <Logo tool={s.tool} size={36} />
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-2">
+            <h3 className="text-sm font-semibold truncate">{s.tool.name}</h3>
+            <span className={`shrink-0 rounded-md border px-1.5 py-0.5 text-[10px] font-semibold ${scoreBadge.cls}`}>{scoreBadge.text}</span>
+          </div>
+          <p className="mt-1 line-clamp-2 text-xs text-muted-foreground leading-relaxed">{s.tool.shortDescription}</p>
+        </div>
+      </div>
+
+      {/* Value info */}
+      {!isTjmZero && s.valueCreated > 0 && (
+        <p className="text-sm font-semibold tabular-nums text-keep mb-3">
+          ~{s.valueCreated}€/{t("mois", "mo")}
+          {s.valueCreated >= 2000 && <span className="ml-1 text-xs font-normal text-muted-foreground">({t("estimation", "estimate")})</span>}
+        </p>
+      )}
+      {isTjmZero && (s.tool.timeGainedHoursPerMonth || 0) > 0 && (
+        <p className="text-sm font-semibold tabular-nums text-keep mb-3">{s.tool.timeGainedHoursPerMonth}h/{t("mois", "mo")}</p>
+      )}
+
+      <div className="mt-auto">
+        {s.tool.affiliateLink ? (
+          <a href={s.tool.affiliateLink} target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary/5 border border-primary/20 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10">
+            {t("Essayer", "Try it")} <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        ) : (
+          <Link to={`${prefix}/tool/${s.tool.slug}`} className="flex w-full items-center justify-center gap-2 rounded-xl border border-border px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
+            {t("Voir la fiche", "Details")} <ChevronRight className="h-3.5 w-3.5" />
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default ResultsPage;
