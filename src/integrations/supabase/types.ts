@@ -206,6 +206,10 @@ export type Database = {
           migration_guide: Json | null
           name: string
           personas: Json | null
+          prescription_block_reasons: Json | null
+          prescription_context_questions: Json | null
+          prescription_output: Json | null
+          prescription_quality: string | null
           pricing: Json | null
           pros: Json | null
           relevant_for: Json | null
@@ -214,6 +218,7 @@ export type Database = {
           slug: string
           solo_relevance: string | null
           substitutable: boolean | null
+          substitution_cluster_v2: string | null
           team_relevance: string | null
           time_gained_hours_per_month: number | null
           tool_type: string | null
@@ -243,6 +248,10 @@ export type Database = {
           migration_guide?: Json | null
           name: string
           personas?: Json | null
+          prescription_block_reasons?: Json | null
+          prescription_context_questions?: Json | null
+          prescription_output?: Json | null
+          prescription_quality?: string | null
           pricing?: Json | null
           pros?: Json | null
           relevant_for?: Json | null
@@ -251,6 +260,7 @@ export type Database = {
           slug: string
           solo_relevance?: string | null
           substitutable?: boolean | null
+          substitution_cluster_v2?: string | null
           team_relevance?: string | null
           time_gained_hours_per_month?: number | null
           tool_type?: string | null
@@ -280,6 +290,10 @@ export type Database = {
           migration_guide?: Json | null
           name?: string
           personas?: Json | null
+          prescription_block_reasons?: Json | null
+          prescription_context_questions?: Json | null
+          prescription_output?: Json | null
+          prescription_quality?: string | null
           pricing?: Json | null
           pros?: Json | null
           relevant_for?: Json | null
@@ -288,6 +302,7 @@ export type Database = {
           slug?: string
           solo_relevance?: string | null
           substitutable?: boolean | null
+          substitution_cluster_v2?: string | null
           team_relevance?: string | null
           time_gained_hours_per_month?: number | null
           tool_type?: string | null
