@@ -1,172 +1,395 @@
-import type { Tool, SelectorFormData, ScoredTool, SelectorResults, Persona, TjmRange } from "@/data/types";
-import { TJM_OPTIONS } from "@/data/types";
+import type {
+  Tool, SelectorFormData, ScoredTool, SelectorResults,
+  Fiche, PrescriptionType, MigrationGuide,
+  TjmRange, VerticalWeight,
+} from "@/data/types";
+import { TJM_OPTIONS, TIME_WEIGHTS } from "@/data/types";
+import { verticals as VERTICALS } from "@/data/content";
+
+/* ── helpers ── */
 
 function getTjmMedian(tjm: TjmRange | null): number {
   if (!tjm) return 200;
-  const opt = TJM_OPTIONS.find((o) => o.value === tjm);
-  return opt?.median || 200;
+  return TJM_OPTIONS.find((o) => o.value === tjm)?.median || 200;
 }
 
-// Normalize mainGoal values (support both dash and underscore variants)
 function normalizeGoal(goal: string | null): string | null {
   if (!goal) return null;
   const map: Record<string, string> = {
-    "reduce-costs": "reduce_costs",
-    "reduce_costs": "reduce_costs",
-    "save-time": "save_time",
-    "save_time": "save_time",
-    "simplify": "simplify_stack",
-    "simplify_stack": "simplify_stack",
-    "find-better": "find_better_tools",
-    "find_better_tools": "find_better_tools",
+    "reduce-costs": "reduce_costs", "reduce_costs": "reduce_costs",
+    "save-time": "save_time", "save_time": "save_time",
+    "simplify": "simplify_stack", "simplify_stack": "simplify_stack",
+    "find-better": "find_better_tools", "find_better_tools": "find_better_tools",
   };
   return map[goal] || goal;
 }
 
-function computePertinenceScore(tool: Tool, form: SelectorFormData): number {
-  const personaKey = (form.persona || "").toLowerCase();
-  const mainGoal = normalizeGoal(form.mainGoal);
-  const phase = form.projectPhase;
-  const maturity = form.techMaturity;
-  const aiUsageLevel = form.aiUsageLevel;
+/* ═══════════════ SCORING v4 ═══════════════ */
 
-  // Exclude tools without personas or not matching persona
-  if (!tool.personas || tool.personas.length === 0) return 0;
-  if (!tool.personas.includes(personaKey)) return 0;
-
-  let score = 30; // base if persona matches
-
-  // +20 pts mainGoal
-  if (mainGoal === "reduce_costs" && tool.defaultMonthlyPrice === 0) score += 20;
-  if (mainGoal === "save_time" && (tool.timeGainedHoursPerMonth || 0) >= 5) score += 20;
-  if (mainGoal === "simplify_stack" && (tool.covers?.length || 0) >= 3) score += 20;
-  if (mainGoal === "find_better_tools") score += 10;
-
-  // +15 pts aiUsageLevel
-  if (aiUsageLevel === "intensive" && tool.categoryId === "ai-general") score += 15;
-
-  // +15 pts project_phase
-  if (phase === "lancement" && tool.pricing?.free) score += 15;
-  if (phase === "croissance") {
-    const covers = (tool.covers || []).map((c) => c.toLowerCase());
-    if (covers.includes("automatisation") || covers.includes("automation")) score += 15;
-  }
-
-  // +10 pts tech_maturity
-  if (maturity === "zero-config") {
-    const avoidIf = (tool.verdict?.avoidIf || []).join(" ").toLowerCase();
-    if (!avoidIf.includes("configuration") && !avoidIf.includes("complexe")) score += 10;
-    else score -= 15;
-  }
-
-  // +10 pts persona-specific categories
-  if (personaKey === "alix" && tool.categoryId === "ai-general") score += 10;
-  if (personaKey === "sofia" && tool.categoryId === "finance") score += 10;
-  if (personaKey === "claire" && ["finance", "analytics", "security"].includes(tool.categoryId)) score += 10;
-  if (personaKey === "marc" && ["project-management", "security", "communication-team"].includes(tool.categoryId)) score += 10;
-  if (personaKey === "theo" && ["automation", "nocode-web", "analytics"].includes(tool.categoryId)) score += 10;
-
-  return Math.min(score, 100);
+interface UserProfile {
+  verticals: { id: string; weight: number }[];
+  tjm: number;
+  phase: string | null;
+  techMaturity: string | null;
+  mainGoal: string | null;
 }
 
-function computeValueIndex(tool: Tool, tjmMedian: number): { valueIndex: number; valueCreated: number } {
-  if (tjmMedian === 0) return { valueIndex: 0, valueCreated: 0 };
-  const tjmH = tjmMedian / 8;
+function buildProfile(form: SelectorFormData): UserProfile {
+  const tjmMedian = getTjmMedian(form.tjm);
+  return {
+    verticals: form.verticals.map((v) => ({ id: v.id, weight: v.weight })),
+    tjm: tjmMedian,
+    phase: form.projectPhase,
+    techMaturity: form.techMaturity,
+    mainGoal: normalizeGoal(form.mainGoal),
+  };
+}
+
+/** Score a tool for a single vertical (0–1) */
+function scoreToolForVertical(tool: Tool, verticalId: string, profile: UserProfile): number {
+  if (!tool.verticals || !tool.verticals.includes(verticalId)) return 0;
+
+  let score = 0.3; // base: tool is in the right vertical
+
+  // +0.2 — coverage of functional_needs
+  const vertical = VERTICALS[verticalId];
+  if (vertical) {
+    const verticalNeeds = vertical.functional_needs || [];
+    const toolNeeds = tool.functional_needs || [];
+    const coverage = toolNeeds.filter((n) => verticalNeeds.includes(n)).length;
+    const coverageRatio = coverage / Math.max(verticalNeeds.length, 1);
+    score += coverageRatio * 0.2;
+  }
+
+  // +0.2 — main goal
+  const mainGoal = profile.mainGoal;
+  if (mainGoal === "reduce_costs" && tool.defaultMonthlyPrice === 0) score += 0.2;
+  if (mainGoal === "save_time" && (tool.timeGainedHoursPerMonth || 0) >= 5) score += 0.2;
+  if (mainGoal === "simplify_stack" && (tool.covers?.length || 0) >= 3) score += 0.2;
+  if (mainGoal === "find_better_tools") score += 0.1;
+
+  // +0.15 — phase
+  if (profile.phase === "lancement" && tool.pricing?.free) score += 0.15;
+  if (profile.phase === "croissance" && tool.functional_needs?.includes("automatisation")) score += 0.15;
+  if (profile.phase === "regime") score += 0.05;
+
+  // +0.1 — tech maturity
+  if (profile.techMaturity === "zero-config") {
+    const avoidText = (tool.verdict?.avoidIf || []).join(" ").toLowerCase();
+    if (!avoidText.includes("configuration") && !avoidText.includes("complexe")) {
+      score += 0.1;
+    } else {
+      score -= 0.15;
+    }
+  }
+
+  // +0.05 — tool_type/vertical coherence bonus
+  if (tool.tool_type === "ia" && ["ai-builder", "developpeur-solo"].includes(verticalId)) score += 0.05;
+  if (tool.tool_type === "gestion" && ["consultant-b2b", "daf-finance", "manager-dsi"].includes(verticalId)) score += 0.05;
+
+  return Math.max(0, Math.min(1, score));
+}
+
+/** Composite score: MAX weighted across all profile verticals */
+function scoreToolForProfile(tool: Tool, profile: UserProfile): number {
+  if (!tool.verticals || tool.verticals.length === 0) {
+    // Fallback for tools without verticals: use legacy personas
+    if (tool.personas && tool.personas.length > 0) return 30;
+    return 0;
+  }
+
+  if (profile.verticals.length === 0) {
+    // No verticals selected — check if tool has any verticals at all
+    return tool.verticals.length > 0 ? 20 : 0;
+  }
+
+  const verticalScores = profile.verticals.map(({ id, weight }) => {
+    if (!tool.verticals.includes(id)) return 0;
+    const baseScore = scoreToolForVertical(tool, id, profile);
+    return baseScore * weight;
+  });
+
+  const maxScore = Math.max(...verticalScores, 0);
+  return Math.min(Math.round(maxScore * 100), 100);
+}
+
+/** Value index (0–100) */
+function valueIndex(tool: Tool, profile: UserProfile): { valueIndex: number; valueCreated: number } {
+  if (!profile.tjm || profile.tjm === 0) return { valueIndex: 0, valueCreated: 0 };
+  const tjmH = profile.tjm / 8;
   const hours = tool.timeGainedHoursPerMonth || 0;
   const valueCreated = hours * tjmH;
-  const raw = valueCreated / (tool.defaultMonthlyPrice + 1);
-  // Normalisation étalée : plafond à 50
-  const normalized = Math.min((raw / 50) * 100, 100);
-  return { valueIndex: Math.round(normalized), valueCreated: Math.round(valueCreated) };
+  const cost = tool.defaultMonthlyPrice + 1;
+  const raw = valueCreated / cost;
+  const normalized = Math.min(Math.round((raw / 50) * 100), 100);
+  return { valueIndex: normalized, valueCreated: Math.round(valueCreated) };
 }
 
+/** Final composite score */
+function scoreFinal(tool: Tool, profile: UserProfile): number {
+  const pertinence = scoreToolForProfile(tool, profile);
+  const { valueIndex: vi } = valueIndex(tool, profile);
+  if (!profile.tjm || profile.tjm === 0) return pertinence;
+  return Math.round(pertinence * 0.6 + vi * 0.4);
+}
+
+/* ═══════════════ ANOMALY DETECTION ═══════════════ */
+
 interface DoublonResult {
-  tool: Tool;
-  scoreFinal: number;
-  reason: "doublon";
-  replacedBy: string;
+  type: "doublon";
+  loser: Tool;
+  winner: Tool;
+  sharedNeeds: string[];
   message: string;
 }
 
-function detectDoublons(
-  currentTools: Tool[],
-  scoreMap: Map<string, number>
-): DoublonResult[] {
-  const toCancel: DoublonResult[] = [];
+interface DoublonIAResult {
+  type: "doublon-ia";
+  useCase: string;
+  tools: Tool[];
+  message: string;
+}
+
+function detectDoublons(currentTools: Tool[], profile: UserProfile): DoublonResult[] {
+  const doublons: DoublonResult[] = [];
+  const compared = new Set<string>();
+
   for (let i = 0; i < currentTools.length; i++) {
     for (let j = i + 1; j < currentTools.length; j++) {
-      const coversA = currentTools[i].covers || [];
-      const coversB = currentTools[j].covers || [];
-      const intersection = coversA.filter((c) => coversB.includes(c));
-      if (intersection.length >= 2) {
-        const scoreA = scoreMap.get(currentTools[i].id) || 0;
-        const scoreB = scoreMap.get(currentTools[j].id) || 0;
-        const loser = scoreA <= scoreB ? currentTools[i] : currentTools[j];
-        const winner = loser === currentTools[i] ? currentTools[j] : currentTools[i];
-        // Don't add duplicates
-        if (!toCancel.find((d) => d.tool.id === loser.id)) {
-          toCancel.push({
-            tool: loser,
-            scoreFinal: scoreMap.get(loser.id) || 0,
-            reason: "doublon",
-            replacedBy: winner.name,
-            message: `${winner.name} couvre déjà vos besoins. ${loser.name} devient redondant.`,
+      const a = currentTools[i];
+      const b = currentTools[j];
+      const key = [a.id, b.id].sort().join("--");
+      if (compared.has(key)) continue;
+      compared.add(key);
+
+      const needsA = new Set(a.functional_needs || a.covers || []);
+      const needsB = new Set(b.functional_needs || b.covers || []);
+      const intersection = [...needsA].filter((n) => needsB.has(n));
+
+      // Doublon if 2+ shared needs AND same tool_type
+      if (intersection.length >= 2 && a.tool_type === b.tool_type) {
+        const scoreA = scoreFinal(a, profile);
+        const scoreB = scoreFinal(b, profile);
+        const [winner, loser] = scoreA >= scoreB ? [a, b] : [b, a];
+
+        if (!doublons.find((d) => d.loser.id === loser.id)) {
+          doublons.push({
+            type: "doublon",
+            loser,
+            winner,
+            sharedNeeds: intersection,
+            message: `${winner.name} couvre déjà : ${intersection.join(", ")}. ${loser.name} devient redondant.`,
           });
         }
       }
     }
   }
-  return toCancel;
+  return doublons;
 }
 
-function getPersonaMessage(persona: Persona | null, lang: "fr" | "en"): string {
-  if (lang === "en") {
-    const msgs: Record<string, string> = {
-      sofia: "Here's how much your stack really costs in billable days.",
-      marc: "Here are the orphan licenses and redundancies detected in your stack.",
-      theo: "Here's your monthly SaaS Burn and how to reduce it without losing velocity.",
-      alix: "Here are the AI duplicates in your stack and the agents with the best ROI.",
-      claire: "Here's a consolidated view of your software spending and reduction levers.",
-    };
-    return msgs[persona || ""] || "";
+function detectDoublonsIA(currentTools: Tool[]): DoublonIAResult[] {
+  const iaTools = currentTools.filter((t) => t.tool_type === "ia" && t.ia_use_case?.length);
+  const useCaseMap: Record<string, Tool[]> = {};
+
+  for (const tool of iaTools) {
+    for (const useCase of tool.ia_use_case!) {
+      if (!useCaseMap[useCase]) useCaseMap[useCase] = [];
+      useCaseMap[useCase].push(tool);
+    }
   }
-  const msgs: Record<string, string> = {
-    sofia: "Voici combien votre stack vous coûte réellement en jours facturables.",
-    marc: "Voici les licences orphelines et redondances détectées dans votre stack.",
-    theo: "Voici votre Burn SaaS mensuel et comment le réduire sans perdre en vélocité.",
-    alix: "Voici les doublons IA dans votre stack et les agents au meilleur ROI.",
-    claire: "Voici une vue consolidée de vos dépenses logicielles et les leviers de réduction.",
-  };
-  return msgs[persona || ""] || "";
+
+  const doublons: DoublonIAResult[] = [];
+  for (const [useCase, tools] of Object.entries(useCaseMap)) {
+    if (tools.length >= 2) {
+      doublons.push({
+        type: "doublon-ia",
+        useCase,
+        tools,
+        message: `${tools.length} outils IA pour "${useCase}" : ${tools.map((t) => t.name).join(", ")}`,
+      });
+    }
+  }
+  return doublons;
 }
+
+function detectDormants(currentTools: Tool[], form: SelectorFormData): Tool[] {
+  return currentTools.filter((tool) => {
+    const stackEntry = form.currentTools.find((s) => s.toolId === tool.id);
+    if (!stackEntry || stackEntry.usage !== "low") return false;
+    if (tool.defaultMonthlyPrice === 0) return false;
+
+    const otherTools = currentTools.filter((t) => t.id !== tool.id);
+    const toolNeeds = new Set(tool.functional_needs || []);
+    return otherTools.some((other) => {
+      const otherNeeds = new Set(other.functional_needs || []);
+      return [...toolNeeds].some((n) => otherNeeds.has(n));
+    });
+  });
+}
+
+function detectInadapted(
+  currentTools: Tool[],
+  profile: UserProfile,
+  doublonIds: Set<string>,
+  dormantIds: Set<string>
+): Tool[] {
+  return currentTools.filter((tool) => {
+    if (doublonIds.has(tool.id)) return false;
+    if (dormantIds.has(tool.id)) return false;
+    if (tool.tool_type === "metier") return false;
+    if (tool.tool_type === "plugin") return false;
+    return scoreFinal(tool, profile) < 40;
+  });
+}
+
+/* ═══════════════ PRESCRIPTION BUILDER ═══════════════ */
+
+function buildPrescription(
+  tool: Tool,
+  reason: "doublon" | "doublon-ia" | "dormant" | "inadapted",
+  winner: Tool | null,
+  profile: UserProfile,
+  allTools: Tool[],
+  lang: "fr" | "en"
+): Fiche {
+  const isFr = lang === "fr";
+
+  // TYPE 1 — Cancel without replacing (dormant with no alternative)
+  if (reason === "dormant" && !tool.freeAlternative && !tool.betterAlternative) {
+    return {
+      type: "cancel",
+      tool,
+      diagnostic: isFr ? "Vous l'utilisez rarement. Ce coût n'est pas justifié." : "You rarely use it. This cost isn't justified.",
+      prescription: isFr ? `Annuler ${tool.name}` : `Cancel ${tool.name}`,
+      gain: tool.defaultMonthlyPrice,
+      badge: "Dormant",
+      migrationGuide: {
+        steps: [
+          isFr ? `Allez dans les paramètres de ${tool.name}` : `Go to ${tool.name} settings`,
+          isFr ? "Section Billing → Annuler" : "Billing section → Cancel",
+        ],
+        timeEstimate: "5 minutes",
+        dataLoss: isFr ? "Pensez à exporter vos données avant" : "Export your data first",
+      },
+    };
+  }
+
+  // TYPE 2 — Replace with free alternative
+  if (tool.freeAlternative && tool.freeAlternative !== tool.id) {
+    const altTool = allTools.find((t) => t.id === tool.freeAlternative);
+    return {
+      type: "replace-cheaper",
+      tool,
+      diagnostic: reason === "doublon"
+        ? (isFr ? `${winner?.name || "Un autre outil"} couvre déjà ces besoins.` : `${winner?.name || "Another tool"} already covers these needs.`)
+        : (isFr ? "Une alternative gratuite couvre les mêmes fonctionnalités." : "A free alternative covers the same features."),
+      prescription: isFr ? `Remplacer par ${altTool?.name || tool.freeAlternative} (gratuit)` : `Replace with ${altTool?.name || tool.freeAlternative} (free)`,
+      alternative: altTool || null,
+      gain: tool.defaultMonthlyPrice,
+      badge: reason === "doublon" ? "Doublon" : reason === "doublon-ia" ? "Doublon IA" : "Inadapté",
+      migrationGuide: tool.migrationGuide || null,
+    };
+  }
+
+  // TYPE 3 — Replace with better alternative
+  if (tool.betterAlternative) {
+    const altTool = allTools.find((t) => t.id === tool.betterAlternative!.tool);
+    const netGain = tool.defaultMonthlyPrice - (altTool?.defaultMonthlyPrice || 0);
+    return {
+      type: "replace-better",
+      tool,
+      diagnostic: tool.betterAlternative.performanceGain || (isFr ? `${altTool?.name} est plus adapté à votre profil.` : `${altTool?.name} is better suited to your profile.`),
+      prescription: isFr ? `Passer à ${altTool?.name || tool.betterAlternative.tool}` : `Switch to ${altTool?.name || tool.betterAlternative.tool}`,
+      alternative: altTool || null,
+      gain: netGain,
+      badge: reason === "doublon" ? "Doublon" : "Inadapté",
+      migrationGuide: tool.migrationGuide || null,
+    };
+  }
+
+  // TYPE 4 — Downgrade plan
+  if (tool.downgradePlan?.available) {
+    return {
+      type: "downgrade",
+      tool,
+      diagnostic: isFr ? "Votre usage ne justifie pas le plan payant." : "Your usage doesn't justify the paid plan.",
+      prescription: isFr ? `Passer au plan gratuit (${tool.downgradePlan.freeTier})` : `Switch to free plan (${tool.downgradePlan.freeTier})`,
+      gain: tool.defaultMonthlyPrice,
+      badge: "Inadapté",
+    };
+  }
+
+  // Fallback — cancel
+  return {
+    type: "cancel",
+    tool,
+    diagnostic: isFr
+      ? `Score faible pour votre profil (${Math.round(scoreFinal(tool, profile))}/100).`
+      : `Low score for your profile (${Math.round(scoreFinal(tool, profile))}/100).`,
+    prescription: isFr ? `Annuler ${tool.name}` : `Cancel ${tool.name}`,
+    gain: tool.defaultMonthlyPrice,
+    badge: reason === "doublon" ? "Doublon" : reason === "doublon-ia" ? "Doublon IA" : reason === "dormant" ? "Dormant" : "Inadapté",
+  };
+}
+
+/* ═══════════════ STACK HEALTH SCORE ═══════════════ */
+
+function computeStackHealth(
+  currentTools: Tool[],
+  doublons: DoublonResult[],
+  doublonsIA: DoublonIAResult[],
+  dormants: Tool[],
+  inadapted: Tool[],
+  profile: UserProfile
+): { score: number; label: string; color: string } {
+  if (!currentTools || currentTools.length === 0) {
+    return { score: 100, label: "Non évalué", color: "gray" };
+  }
+
+  let score = 100;
+  score -= Math.min(doublons.length * 10, 30);
+  score -= Math.min(doublonsIA.length * 8, 24);
+  score -= Math.min(dormants.length * 5, 20);
+  score -= Math.min(inadapted.length * 5, 20);
+
+  // Bonus if stack is coherent
+  const nonMetier = currentTools.filter((t) => t.tool_type !== "metier");
+  if (nonMetier.length > 0) {
+    const avgScore = nonMetier.reduce((sum, t) => sum + scoreFinal(t, profile), 0) / nonMetier.length;
+    if (avgScore > 70) score += 5;
+  }
+
+  const finalScore = Math.max(0, Math.min(100, score));
+  if (finalScore >= 80) return { score: finalScore, label: "Excellente", color: "green" };
+  if (finalScore >= 60) return { score: finalScore, label: "Correcte", color: "blue" };
+  if (finalScore >= 40) return { score: finalScore, label: "À revoir", color: "orange" };
+  return { score: finalScore, label: "Critique", color: "red" };
+}
+
+/* ═══════════════ MAIN EXPORT ═══════════════ */
 
 export function computeStackHealthScore(
   currentToolIds: string[],
   allTools: Tool[],
   scoreMap: Map<string, number>,
-  personaKey: string
+  _personaKey: string
 ): number {
   if (currentToolIds.length === 0) return -1;
-
   let health = 100;
-  const currentTools = currentToolIds
-    .map((id) => allTools.find((t) => t.id === id))
-    .filter(Boolean) as Tool[];
+  const currentTools = currentToolIds.map((id) => allTools.find((t) => t.id === id)).filter(Boolean) as Tool[];
 
-  // Detect doublons
-  const doublons = detectDoublons(currentTools, scoreMap);
-  health -= doublons.length * 10;
-
-  // -5 per inadequate tool (score < 40, not already a doublon)
-  const doublonIds = new Set(doublons.map((d) => d.tool.id));
-  for (const t of currentTools) {
-    if (doublonIds.has(t.id)) continue;
-    if ((scoreMap.get(t.id) || 0) < 40) health -= 5;
+  // Simple doublon check for health score
+  for (let i = 0; i < currentTools.length; i++) {
+    for (let j = i + 1; j < currentTools.length; j++) {
+      const needsA = currentTools[i].functional_needs || currentTools[i].covers || [];
+      const needsB = currentTools[j].functional_needs || currentTools[j].covers || [];
+      const overlap = needsA.filter((n) => needsB.includes(n));
+      if (overlap.length >= 2 && currentTools[i].tool_type === currentTools[j].tool_type) health -= 10;
+    }
   }
 
-  // -5 per expensive tool (>20€) without free alternative
   for (const t of currentTools) {
-    if (t.defaultMonthlyPrice > 20 && !t.freeAlternative) health -= 5;
+    if ((scoreMap.get(t.id) || 0) < 40 && t.tool_type !== "metier" && t.tool_type !== "plugin") health -= 5;
   }
 
   return Math.max(0, Math.min(100, health));
@@ -177,144 +400,186 @@ export function generateScoringResults(
   allTools: Tool[],
   lang: "fr" | "en" = "fr"
 ): SelectorResults {
-  const tjmMedian = getTjmMedian(form.tjm);
-  const isTjmZero = tjmMedian === 0;
+  const profile = buildProfile(form);
+  const isTjmZero = profile.tjm === 0;
   const currentToolIds = form.currentTools.map((ct) => ct.toolId);
   const hasCurrentTools = currentToolIds.length > 0;
-  const personaKey = (form.persona || "").toLowerCase();
+  const isFr = lang === "fr";
 
   // Score every tool
   const scoredTools: ScoredTool[] = allTools.map((tool) => {
-    const pertinenceScore = computePertinenceScore(tool, form);
-    const { valueIndex, valueCreated } = computeValueIndex(tool, tjmMedian);
-    // If TJM = 0, finalScore = pertinenceScore only
+    const pertinenceScore = scoreToolForProfile(tool, profile);
+    const { valueIndex: vi, valueCreated: vc } = valueIndex(tool, profile);
     const finalScore = isTjmZero
       ? pertinenceScore
-      : Math.round(pertinenceScore * 0.6 + valueIndex * 0.4);
+      : Math.round(pertinenceScore * 0.6 + vi * 0.4);
 
     return {
       tool,
       pertinenceScore,
-      valueIndex: isTjmZero ? 0 : valueIndex,
+      valueIndex: isTjmZero ? 0 : vi,
       finalScore,
-      valueCreated: isTjmZero ? 0 : Math.min(valueCreated, 2000), // Cap at 2000€
+      valueCreated: isTjmZero ? 0 : Math.min(vc, 2000),
       action: "neutral" as ScoredTool["action"],
-      cancelReason: undefined as string | undefined,
-      cancelType: undefined as ScoredTool["cancelType"],
-      replacedBy: undefined as string | undefined,
-      freeAlt: null as Tool | null,
+      cancelReason: undefined,
+      cancelType: undefined,
+      replacedBy: undefined,
+      freeAlt: null,
+      fiche: null,
     };
   });
 
-  // Build score map for current tools
   const scoreMap = new Map<string, number>();
   scoredTools.forEach((s) => scoreMap.set(s.tool.id, s.finalScore));
 
-  // Get current tool objects
   const currentToolObjs = currentToolIds
     .map((id) => allTools.find((t) => t.id === id))
     .filter(Boolean) as Tool[];
 
-  // Step 1: Detect doublons in current stack
-  const doublons = detectDoublons(currentToolObjs, scoreMap);
-  const doublonIds = new Set(doublons.map((d) => d.tool.id));
+  // ── ANOMALY DETECTION ──
+  const doublons = detectDoublons(currentToolObjs, profile);
+  const doublonsIA = detectDoublonsIA(currentToolObjs);
+  const dormants = detectDormants(currentToolObjs, form);
 
-  // Step 2: Detect genuinely inadequate tools
-  const genuinelyInadequate = currentToolObjs.filter((tool) => {
-    if (doublonIds.has(tool.id)) return false;
-    const hasOverlap = currentToolObjs.some(
-      (other) =>
-        other.id !== tool.id &&
-        (other.covers || []).filter((c) => (tool.covers || []).includes(c)).length >= 1
-    );
-    const toolScore = scoreMap.get(tool.id) || 0;
-    return toolScore < 40 && !hasOverlap && !tool.personas?.includes(personaKey);
-  });
+  const doublonIds = new Set(doublons.map((d) => d.loser.id));
+  const doublonIALosers = new Set<string>();
+  for (const dia of doublonsIA) {
+    // The lowest scoring tool is the loser
+    const sorted = [...dia.tools].sort((a, b) => scoreFinal(b, profile) - scoreFinal(a, profile));
+    for (let i = 1; i < sorted.length; i++) {
+      if (!doublonIds.has(sorted[i].id)) doublonIALosers.add(sorted[i].id);
+    }
+  }
+  const dormantIds = new Set(dormants.map((d) => d.id));
+  const inadapted = detectInadapted(currentToolObjs, profile, new Set([...doublonIds, ...doublonIALosers]), dormantIds);
+
+  // ── BUILD FICHES ──
+  const fiches: Fiche[] = [];
+
+  for (const d of doublons) {
+    fiches.push(buildPrescription(d.loser, "doublon", d.winner, profile, allTools, lang));
+  }
+  for (const toolId of doublonIALosers) {
+    const tool = currentToolObjs.find((t) => t.id === toolId);
+    if (tool) fiches.push(buildPrescription(tool, "doublon-ia", null, profile, allTools, lang));
+  }
+  for (const tool of dormants) {
+    if (!doublonIds.has(tool.id) && !doublonIALosers.has(tool.id)) {
+      fiches.push(buildPrescription(tool, "dormant", null, profile, allTools, lang));
+    }
+  }
+  for (const tool of inadapted) {
+    fiches.push(buildPrescription(tool, "inadapted", null, profile, allTools, lang));
+  }
+
+  // Sort fiches by gain desc
+  fiches.sort((a, b) => b.gain - a.gain);
 
   // Mark cancellations on scored tools
-  for (const d of doublons) {
-    const scored = scoredTools.find((s) => s.tool.id === d.tool.id);
-    if (scored) {
-      scored.action = "cancel";
+  const allCancelIds = new Set([
+    ...doublonIds,
+    ...doublonIALosers,
+    ...dormantIds,
+    ...inadapted.map((t) => t.id),
+  ]);
+
+  for (const scored of scoredTools) {
+    if (!allCancelIds.has(scored.tool.id)) continue;
+    scored.action = "cancel";
+    const fiche = fiches.find((f) => f.tool.id === scored.tool.id);
+    scored.fiche = fiche || null;
+    scored.cancelReason = fiche?.diagnostic;
+    if (doublonIds.has(scored.tool.id)) {
       scored.cancelType = "doublon";
-      scored.replacedBy = d.replacedBy;
-      scored.cancelReason = lang === "fr"
-        ? d.message
-        : `${d.replacedBy} already covers your needs. ${d.tool.name} is redundant.`;
-    }
-  }
-  for (const tool of genuinelyInadequate) {
-    const scored = scoredTools.find((s) => s.tool.id === tool.id);
-    if (scored) {
-      scored.action = "cancel";
+      const d = doublons.find((x) => x.loser.id === scored.tool.id);
+      scored.replacedBy = d?.winner.name;
+    } else if (doublonIALosers.has(scored.tool.id)) {
+      scored.cancelType = "doublon-ia";
+    } else if (dormantIds.has(scored.tool.id)) {
+      scored.cancelType = "dormant";
+    } else {
       scored.cancelType = "inadequate";
-      scored.cancelReason = lang === "fr"
-        ? `Score faible (${scored.finalScore}/100) pour votre profil.`
-        : `Low score (${scored.finalScore}/100) for your profile.`;
+    }
+
+    // Free alternative
+    if (scored.tool.freeAlternative && scored.tool.freeAlternative !== scored.tool.id) {
+      const alt = allTools.find((t) => t.id === scored.tool.freeAlternative || t.slug === scored.tool.freeAlternative);
+      if (alt) scored.freeAlt = alt;
     }
   }
 
-  // Free alternative: only if freeAlternative is non-null and different from tool slug
-  for (const s of scoredTools) {
-    if (s.action === "cancel" && s.tool.freeAlternative && s.tool.freeAlternative !== s.tool.slug && s.tool.freeAlternative !== s.tool.id) {
-      const alt = allTools.find((t) => t.id === s.tool.freeAlternative || t.slug === s.tool.freeAlternative);
-      if (alt) s.freeAlt = alt;
-    }
-  }
-
-  // Recommendations: tools not in current stack with score > 60
+  // Recommendations: tools NOT in current stack, NOT metier/plugin, score > 60
   for (const s of scoredTools) {
     if (!currentToolIds.includes(s.tool.id) && s.finalScore > 60) {
-      s.action = "recommend";
-    }
-  }
-
-  // Cas 3: if fewer than 3 recommended tools with score > 60, lower threshold to 40
-  const highRecommended = scoredTools.filter((s) => s.action === "recommend" && s.finalScore > 60);
-  if (highRecommended.length < 3) {
-    for (const s of scoredTools) {
-      if (s.action === "neutral" && !currentToolIds.includes(s.tool.id) && s.finalScore > 40) {
+      // Filter: only satellite, gestion, ia for recommendations
+      if (["satellite", "gestion", "ia"].includes(s.tool.tool_type)) {
         s.action = "recommend";
       }
     }
   }
 
-  // Cas 6: Claire without tools — filter recommendations to specific categories
-  if (personaKey === "claire" && !hasCurrentTools) {
+  // Cas 3: if fewer than 3 recommendations, lower threshold
+  const highRecommended = scoredTools.filter((s) => s.action === "recommend" && s.finalScore > 60);
+  if (highRecommended.length < 3) {
     for (const s of scoredTools) {
-      if (s.action === "recommend" && !["finance", "analytics", "security"].includes(s.tool.categoryId)) {
-        s.action = "neutral";
+      if (s.action === "neutral" && !currentToolIds.includes(s.tool.id) && s.finalScore > 45) {
+        if (["satellite", "gestion", "ia"].includes(s.tool.tool_type)) {
+          s.action = "recommend";
+        }
       }
     }
   }
+  // If still < 3, show top 6
+  const recommended2 = scoredTools.filter((s) => s.action === "recommend");
+  if (recommended2.length < 3) {
+    const remaining = scoredTools
+      .filter((s) => s.action === "neutral" && !currentToolIds.includes(s.tool.id))
+      .sort((a, b) => b.finalScore - a.finalScore)
+      .slice(0, 6 - recommended2.length);
+    for (const s of remaining) s.action = "recommend";
+  }
 
-  const toCancel = scoredTools
-    .filter((s) => s.action === "cancel")
-    .sort((a, b) => a.finalScore - b.finalScore);
-  const recommended = scoredTools
-    .filter((s) => s.action === "recommend")
-    .sort((a, b) => b.finalScore - a.finalScore)
-    .slice(0, 6);
+  const toCancel = scoredTools.filter((s) => s.action === "cancel").sort((a, b) => a.finalScore - b.finalScore);
+  const recommended = scoredTools.filter((s) => s.action === "recommend").sort((a, b) => b.finalScore - a.finalScore).slice(0, 6);
 
-  const stackHealthScore = computeStackHealthScore(currentToolIds, allTools, scoreMap, personaKey);
-  const totalSavingsMonthly = toCancel.reduce((sum, s) => sum + (s.tool.defaultMonthlyPrice || 0), 0);
+  // Stack health
+  const healthResult = computeStackHealth(currentToolObjs, doublons, doublonsIA, dormants, inadapted, profile);
+  const totalSavingsMonthly = fiches.reduce((sum, f) => sum + Math.max(f.gain, 0), 0);
 
-  // Cas 7: Alix with 2+ AI tools
-  const aiToolsInStack = currentToolObjs.filter((t) => t.categoryId === "ai-general");
-  const hasAiDoublon = personaKey === "alix" && aiToolsInStack.length >= 2;
+  // AI doublon detection
+  const hasAiDoublon = doublonsIA.length > 0;
+
+  // Persona message (derived from family + verticals)
+  const personaMessage = buildPersonaMessage(form, lang);
 
   return {
     scoredTools,
     recommended,
     toCancel,
-    stackHealthScore,
+    fiches,
+    stackHealthScore: hasCurrentTools ? healthResult.score : -1,
     totalSavingsMonthly,
     totalSavingsAnnual: totalSavingsMonthly * 12,
-    personaMessage: getPersonaMessage(form.persona, lang),
+    personaMessage,
     hasCurrentTools,
     isTjmZero,
     isStackFree: hasCurrentTools && currentToolObjs.every((t) => t.defaultMonthlyPrice === 0),
     hasAiDoublon,
     fewRecommendations: highRecommended.length < 3,
   };
+}
+
+function buildPersonaMessage(form: SelectorFormData, lang: "fr" | "en"): string {
+  const isFr = lang === "fr";
+  if (!form.family) {
+    return isFr ? "Voici votre analyse de stack personnalisée." : "Here's your personalized stack analysis.";
+  }
+  const verticalLabels = form.verticals.map((v) => VERTICALS[v.id]?.label).filter(Boolean);
+  if (verticalLabels.length === 0) {
+    return isFr ? "Voici votre analyse de stack personnalisée." : "Here's your personalized stack analysis.";
+  }
+  const joined = verticalLabels.join(", ");
+  return isFr
+    ? `Analyse optimisée pour : ${joined}.`
+    : `Analysis optimized for: ${joined}.`;
 }

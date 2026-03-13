@@ -29,6 +29,26 @@ export interface ToolSeo {
   metaDescription: string;
 }
 
+export interface BetterAlternative {
+  tool: string;
+  reason: string;
+  saving: number;
+  performanceGain: string | null;
+}
+
+export interface MigrationGuide {
+  steps: string[];
+  timeEstimate: string;
+  dataLoss: string;
+}
+
+export interface DowngradePlan {
+  available: boolean;
+  freeTier: string | null;
+}
+
+export type ToolType = "metier" | "plugin" | "ia" | "gestion" | "satellite";
+
 export interface Tool {
   id: string;
   slug?: string;
@@ -57,6 +77,17 @@ export interface Tool {
   articles?: ToolArticle[];
   timeGainedHoursPerMonth?: number;
   freeAlternative?: string | null;
+  // v4 fields
+  tool_type: ToolType;
+  substitutable: boolean;
+  host_app?: string | null;
+  bundle_parent?: string | null;
+  verticals: string[];
+  functional_needs: string[];
+  ia_use_case?: string[] | null;
+  betterAlternative?: BetterAlternative | null;
+  migrationGuide?: MigrationGuide | null;
+  downgradePlan?: DowngradePlan | null;
 }
 
 export interface BlogPost {
@@ -73,7 +104,73 @@ export interface BlogPost {
   readTime?: string;
 }
 
-// ─── Personas ───
+// ─── Vertical System ───
+export type VerticalFamily = "creatif" | "tech" | "conseil" | "content" | "business";
+
+export interface Vertical {
+  id: string;
+  family: VerticalFamily;
+  label: string;
+  functional_needs: string[];
+}
+
+export const VERTICAL_FAMILIES: { value: VerticalFamily; emoji: string; label: string; labelEn: string }[] = [
+  { value: "creatif", emoji: "🎨", label: "Créatif", labelEn: "Creative" },
+  { value: "tech", emoji: "💻", label: "Tech", labelEn: "Tech" },
+  { value: "conseil", emoji: "💼", label: "Conseil", labelEn: "Consulting" },
+  { value: "content", emoji: "📝", label: "Content", labelEn: "Content" },
+  { value: "business", emoji: "📊", label: "Business", labelEn: "Business" },
+];
+
+export const FAMILY_ACTIVITIES: Record<VerticalFamily, { label: string; labelEn: string; verticals: string[] }[]> = {
+  creatif: [
+    { label: "Je crée des visuels et identités", labelEn: "I create visuals and identities", verticals: ["graphiste-da"] },
+    { label: "Je monte et anime des vidéos", labelEn: "I edit and animate videos", verticals: ["motion-video"] },
+    { label: "Je retouche des photos", labelEn: "I retouch photos", verticals: ["photographe"] },
+    { label: "Je conçois des interfaces", labelEn: "I design interfaces", verticals: ["ux-ui"] },
+    { label: "Je fais de l'illustration", labelEn: "I illustrate", verticals: ["illustrateur"] },
+    { label: "Je conçois des espaces / scènes", labelEn: "I design spaces / scenes", verticals: ["architecte-bim", "scenographe"] },
+  ],
+  tech: [
+    { label: "Je développe des produits", labelEn: "I develop products", verticals: ["developpeur-solo"] },
+    { label: "Je gère une équipe technique", labelEn: "I manage a tech team", verticals: ["cto-lead-tech"] },
+    { label: "Je travaille sur la data", labelEn: "I work on data", verticals: ["data-analyst"] },
+    { label: "Je gère un produit digital", labelEn: "I manage a digital product", verticals: ["product-manager"] },
+    { label: "Je construis avec l'IA", labelEn: "I build with AI", verticals: ["ai-builder"] },
+  ],
+  conseil: [
+    { label: "Je conseille des clients B2B", labelEn: "I advise B2B clients", verticals: ["consultant-b2b"] },
+    { label: "Je forme ou coach des clients", labelEn: "I train or coach clients", verticals: ["coach-formateur"] },
+    { label: "Je recrute ou gère les RH", labelEn: "I recruit or manage HR", verticals: ["rh-recruteur"] },
+  ],
+  content: [
+    { label: "Je crée du contenu vidéo / photo", labelEn: "I create video/photo content", verticals: ["createur-contenu"] },
+    { label: "J'écris des newsletters", labelEn: "I write newsletters", verticals: ["newslettiste-auteur"] },
+    { label: "Je fais un podcast", labelEn: "I produce a podcast", verticals: ["podcasteur"] },
+    { label: "Je gère des réseaux sociaux", labelEn: "I manage social media", verticals: ["community-manager"] },
+  ],
+  business: [
+    { label: "Je développe un SaaS", labelEn: "I develop a SaaS", verticals: ["fondateur-saas"] },
+    { label: "Je vends en ligne", labelEn: "I sell online", verticals: ["ecommercant"] },
+    { label: "Je manage une équipe", labelEn: "I manage a team", verticals: ["manager-dsi"] },
+    { label: "Je gère les finances", labelEn: "I manage finances", verticals: ["daf-finance"] },
+  ],
+};
+
+export type TimeWeight = "principal" | "secondaire" | "occasionnel";
+export const TIME_WEIGHTS: Record<TimeWeight, number> = {
+  principal: 1.0,
+  secondaire: 0.5,
+  occasionnel: 0.2,
+};
+
+export const TIME_WEIGHT_OPTIONS: { value: TimeWeight; label: string; labelEn: string; desc: string; descEn: string }[] = [
+  { value: "principal", label: "Principal", labelEn: "Primary", desc: "50%+ de mon temps", descEn: "50%+ of my time" },
+  { value: "secondaire", label: "Secondaire", labelEn: "Secondary", desc: "20-50%", descEn: "20-50%" },
+  { value: "occasionnel", label: "Occasionnel", labelEn: "Occasional", desc: "Moins de 20%", descEn: "Less than 20%" },
+];
+
+// ─── Legacy Personas (kept for compat) ───
 export type Persona = "sofia" | "marc" | "theo" | "alix" | "claire";
 
 export const PERSONAS: { value: Persona; emoji: string; name: string; desc: string; descEn: string }[] = [
@@ -110,10 +207,14 @@ export const MATURITY_OPTIONS: { value: TechMaturity; emoji: string; label: stri
   { value: "expert", emoji: "⚙️", label: "Expert", labelEn: "Expert", desc: "Je configure et j'automatise tout", descEn: "I configure and automate everything" },
 ];
 
-export type UserType = "solo" | "team-2-5" | "team-5-10" | "startup-10+";
-export type JobRole = "writer" | "consultant" | "tech" | "designer" | "content-creator" | "other";
 export type MainGoal = "reduce-costs" | "reduce_costs" | "save-time" | "save_time" | "simplify" | "simplify_stack" | "find-better" | "find_better_tools";
 export type AIUsageLevel = "intensive" | "occasional" | "none" | "want_to_start";
+
+export interface VerticalWeight {
+  id: string;
+  weight: number;
+  timeWeight: TimeWeight;
+}
 
 export interface SelectedTool {
   toolId: string;
@@ -122,6 +223,10 @@ export interface SelectedTool {
 }
 
 export interface SelectorFormData {
+  // v4 composite profile
+  family: VerticalFamily | null;
+  verticals: VerticalWeight[];
+  // legacy (kept for backward compat)
   persona: Persona | null;
   mainGoal: MainGoal | null;
   currentTools: SelectedTool[];
@@ -134,6 +239,20 @@ export interface SelectorFormData {
   marketingOptIn: boolean;
 }
 
+// ─── Prescription System ───
+export type PrescriptionType = "cancel" | "replace-cheaper" | "replace-better" | "downgrade";
+
+export interface Fiche {
+  type: PrescriptionType;
+  tool: Tool;
+  diagnostic: string;
+  prescription: string;
+  alternative?: Tool | null;
+  gain: number;
+  migrationGuide?: MigrationGuide | null;
+  badge?: "Doublon" | "Dormant" | "Inadapté" | "Doublon IA";
+}
+
 export interface ScoredTool {
   tool: Tool;
   pertinenceScore: number;
@@ -142,15 +261,17 @@ export interface ScoredTool {
   valueCreated: number;
   action: "recommend" | "cancel" | "neutral";
   cancelReason?: string;
-  cancelType?: "doublon" | "inadequate";
+  cancelType?: "doublon" | "doublon-ia" | "dormant" | "inadequate";
   replacedBy?: string;
   freeAlt?: Tool | null;
+  fiche?: Fiche | null;
 }
 
 export interface SelectorResults {
   scoredTools: ScoredTool[];
   recommended: ScoredTool[];
   toCancel: ScoredTool[];
+  fiches: Fiche[];
   stackHealthScore: number;
   totalSavingsMonthly: number;
   totalSavingsAnnual: number;
@@ -173,3 +294,5 @@ export interface ToolRecommendation {
 }
 
 export type Lang = "fr" | "en";
+export type UserType = "solo" | "team-2-5" | "team-5-10" | "startup-10+";
+export type JobRole = "writer" | "consultant" | "tech" | "designer" | "content-creator" | "other";
