@@ -88,27 +88,32 @@ const SelectorPage = () => {
     setSubmitting(true);
     try {
       const tjmMedian = TJM_OPTIONS.find((o) => o.value === form.tjm)?.median || 0;
-      const { error } = await supabase.from("leads").insert({
+      const leadData = {
         email: form.email.trim(),
-        first_name: form.firstName.trim(),
-        user_type: form.family,
-        job_role: form.verticals.map((v) => v.id).join(","),
-        main_goal: form.mainGoal,
+        first_name: form.firstName.trim() || null,
+        user_type: form.family || null,
+        job_role: form.verticals.map((v) => v.id).join(",") || null,
+        main_goal: form.mainGoal || null,
         current_tools: JSON.stringify(form.currentTools),
-        ai_usage_level: form.aiUsageLevel,
-        marketing_opt_in: form.marketingOptIn,
+        ai_usage_level: form.aiUsageLevel || null,
+        marketing_opt_in: form.marketingOptIn ?? false,
         tjm: tjmMedian,
-        project_phase: form.projectPhase,
-        tech_maturity: form.techMaturity,
+        project_phase: form.projectPhase || null,
+        tech_maturity: form.techMaturity || null,
         source: "selector-v4",
-      } as any);
+      };
+      console.log("Inserting lead:", leadData);
+      const { error } = await supabase.from("leads").insert(leadData as any);
 
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase lead insert error:", JSON.stringify(error));
+        throw error;
+      }
 
       sessionStorage.setItem("tooltrim_selector", JSON.stringify(form));
       navigate(`${prefix}/selector/results`);
-    } catch (err) {
-      console.error("Error saving lead:", err);
+    } catch (err: any) {
+      console.error("Error saving lead:", err?.message || err);
       toast.error(t("Une erreur est survenue. Veuillez réessayer.", "An error occurred. Please try again."));
     } finally {
       setSubmitting(false);
