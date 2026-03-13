@@ -112,7 +112,7 @@ export const MATURITY_OPTIONS: { value: TechMaturity; emoji: string; label: stri
 
 export type UserType = "solo" | "team-2-5" | "team-5-10" | "startup-10+";
 export type JobRole = "writer" | "consultant" | "tech" | "designer" | "content-creator" | "other";
-export type MainGoal = "reduce-costs" | "save-time" | "simplify" | "find-better";
+export type MainGoal = "reduce-costs" | "reduce_costs" | "save-time" | "save_time" | "simplify" | "simplify_stack" | "find-better" | "find_better_tools";
 export type AIUsageLevel = "intensive" | "occasional" | "none" | "want_to_start";
 
 export interface SelectedTool {
