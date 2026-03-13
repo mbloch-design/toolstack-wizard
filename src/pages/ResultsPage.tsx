@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
 import {
-  SelectorFormData, ScoredTool, SelectorResults,
-  TJM_OPTIONS, PERSONAS, PHASE_OPTIONS,
+  SelectorFormData, ScoredTool, SelectorResults, Fiche,
+  TJM_OPTIONS, PHASE_OPTIONS, VERTICAL_FAMILIES,
 } from "@/data/types";
 import { generateScoringResults } from "@/lib/scoring";
 import { supabase } from "@/integrations/supabase/client";
@@ -13,6 +13,7 @@ import {
   ArrowRight, AlertTriangle, CheckCircle2, ArrowUpRight,
   Copy, ExternalLink, Info, Sparkles, Pencil,
   ChevronRight, Shield, Wallet, Layers, UserCircle, TrendingDown, Zap,
+  ArrowDownCircle, RefreshCw, ChevronDown,
 } from "lucide-react";
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid,
@@ -59,6 +60,20 @@ const Logo = ({ tool, size = 36 }: { tool: ScoredTool["tool"]; size?: number }) 
   return <img src={src} alt={`${tool.name} logo`} loading="lazy" className="shrink-0 rounded-xl bg-muted object-contain" style={{ width: size, height: size }} onError={() => setErr(true)} />;
 };
 
+const BADGE_STYLES: Record<string, string> = {
+  "Doublon": "bg-primary/10 text-primary border-primary/20",
+  "Doublon IA": "bg-primary/10 text-primary border-primary/20",
+  "Dormant": "bg-orange-500/10 text-orange-600 border-orange-500/20",
+  "Inadapté": "bg-cancel/10 text-cancel border-cancel/20",
+};
+
+const PRESCRIPTION_ICONS: Record<string, typeof ArrowDownCircle> = {
+  cancel: ArrowDownCircle,
+  "replace-cheaper": RefreshCw,
+  "replace-better": ArrowUpRight,
+  downgrade: ChevronDown,
+};
+
 /* ═══════════════ Main ═══════════════ */
 
 const ResultsPage = () => {
@@ -84,12 +99,14 @@ const ResultsPage = () => {
     const r = generateScoringResults(parsed, tools, lang);
     setResults(r);
     supabase.from("selector_results").insert({
-      persona: parsed.persona || "unknown",
+      persona: parsed.family || parsed.persona || "unknown",
       stack_health_score: r.stackHealthScore >= 0 ? r.stackHealthScore : null,
       recommended_tools: r.recommended.map((s) => ({ id: s.tool.id, score: s.finalScore })),
       tools_to_cancel: r.toCancel.map((s) => ({ id: s.tool.id, score: s.finalScore, saving: s.tool.defaultMonthlyPrice })),
       estimated_savings_monthly: r.totalSavingsMonthly,
       roi_analysis: r.recommended.map((s) => ({ id: s.tool.id, valueIndex: s.valueIndex, valueCreated: s.valueCreated })),
+      verticals_composite: parsed.verticals,
+      user_stack: parsed.currentTools,
     } as any).select("share_token").single().then(({ data: row }) => {
       if (row) sessionStorage.setItem("tooltrim_share_token", (row as any).share_token);
     });
@@ -117,7 +134,6 @@ const ResultsPage = () => {
 
   const roiData = useMemo(() => {
     if (!results) return [];
-    // If TJM = 0, show hours gained instead of value
     if (results.isTjmZero) {
       return results.recommended.filter((s) => (s.tool.timeGainedHoursPerMonth || 0) > 0).map((s) => ({
         name: s.tool.name, tool: s.tool, cost: s.tool.defaultMonthlyPrice,
@@ -134,7 +150,7 @@ const ResultsPage = () => {
 
   if (!results || !form) return null;
 
-  const persona = PERSONAS.find((p) => p.value === form.persona);
+  const family = VERTICAL_FAMILIES.find((f) => f.value === form.family);
   const phase = PHASE_OPTIONS.find((p) => p.value === form.projectPhase);
   const tjmLabel = TJM_OPTIONS.find((o) => o.value === form.tjm);
   const stackCost = form.currentTools.reduce((s, ct) => s + ct.monthlyCost, 0);
@@ -146,11 +162,8 @@ const ResultsPage = () => {
     ? { label: t("À revoir", "Needs review"), cls: "text-primary" }
     : { label: t("Dette détectée", "Debt detected"), cls: "text-cancel" };
 
-  // Badge labels for recommendations
   const getBadge = (s: ScoredTool) => {
-    if (results.fewRecommendations && s.finalScore <= 60) {
-      return { text: t("Pertinent", "Relevant"), cls: "border-primary/20 bg-primary/10 text-primary" };
-    }
+    if (results.fewRecommendations && s.finalScore <= 60) return { text: t("Pertinent", "Relevant"), cls: "border-primary/20 bg-primary/10 text-primary" };
     if (s.finalScore > 80) return { text: "Excellent", cls: "border-keep/20 bg-keep/10 text-keep" };
     return { text: t("Bon", "Good"), cls: "border-primary/20 bg-primary/10 text-primary" };
   };
@@ -169,16 +182,10 @@ const ResultsPage = () => {
             <p className="mt-1 text-sm text-muted-foreground">{results.personaMessage}</p>
           </div>
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => navigate(`${prefix}/selector`)}
-              className="hidden items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary md:inline-flex"
-            >
+            <button onClick={() => navigate(`${prefix}/selector`)} className="hidden items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary md:inline-flex">
               <Pencil className="h-3.5 w-3.5" /> {t("Modifier", "Edit")}
             </button>
-            <button
-              onClick={handleShare}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary"
-            >
+            <button onClick={handleShare} className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary">
               <Copy className="h-3.5 w-3.5" />
               {copied ? t("Copié !", "Copied!") : t("Partager", "Share")}
             </button>
@@ -188,104 +195,62 @@ const ResultsPage = () => {
 
       <div className="mx-auto max-w-7xl px-6 py-6 md:px-10 md:py-8">
 
-        {/* Cas 7: Alix AI doublon banner */}
+        {/* AI doublon banner */}
         {results.hasAiDoublon && (
           <div className="mb-6 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-3">
             <Zap className="h-5 w-5 text-primary shrink-0" />
             <p className="text-sm text-primary font-medium">
-              {t(
-                "⚡ Doublon IA détecté — Vous utilisez plusieurs outils IA. Voici lequel a le meilleur ROI pour votre profil.",
-                "⚡ AI Duplicate detected — You're using multiple AI tools. Here's which has the best ROI for your profile."
-              )}
+              {t("⚡ Doublon IA détecté — Vous utilisez plusieurs outils IA pour le même usage.", "⚡ AI Duplicate detected — You're using multiple AI tools for the same purpose.")}
             </p>
           </div>
         )}
 
-        {/* Cas 3: Few recommendations message */}
         {results.fewRecommendations && (
           <div className="mb-6 flex items-center gap-3 rounded-xl border border-keep/20 bg-keep/5 px-5 py-3">
             <CheckCircle2 className="h-5 w-5 text-keep shrink-0" />
             <p className="text-sm text-keep font-medium">
-              {t(
-                "Votre stack semble déjà bien optimisée. Voici quelques suggestions complémentaires.",
-                "Your stack seems well optimized. Here are some complementary suggestions."
-              )}
+              {t("Votre stack semble déjà bien optimisée. Voici quelques suggestions complémentaires.", "Your stack seems well optimized. Here are some complementary suggestions.")}
             </p>
           </div>
         )}
 
-        {/* KPI CARDS ROW */}
+        {/* KPI CARDS */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-
-          {/* Card 1 — Stack Health */}
+          {/* Stack Health */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary/80 p-5 text-primary-foreground shadow-lg shadow-primary/10">
-            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">
-              <Shield className="h-4.5 w-4.5" />
-            </div>
+            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/15"><Shield className="h-4.5 w-4.5" /></div>
             <p className="text-xs font-medium uppercase tracking-wider opacity-80">Stack Health</p>
-            <p className="mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none">
-              {results.hasCurrentTools && healthPct >= 0 ? healthPct : "—"}
-            </p>
+            <p className="mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none">{results.hasCurrentTools && healthPct >= 0 ? healthPct : "—"}</p>
             <p className="mt-1.5 flex items-center gap-1 text-xs font-medium opacity-90">
-              {results.hasCurrentTools ? (
-                <>
-                  {healthPct < 50 && <AlertTriangle className="h-3 w-3" />}
-                  {healthPct > 80 && <CheckCircle2 className="h-3 w-3" />}
-                  {healthTag.label}
-                </>
-              ) : t("Ajoutez vos outils", "Add your tools")}
+              {results.hasCurrentTools ? (<>{healthPct < 50 && <AlertTriangle className="h-3 w-3" />}{healthPct > 80 && <CheckCircle2 className="h-3 w-3" />}{healthTag.label}</>) : t("Ajoutez vos outils", "Add your tools")}
             </p>
           </div>
 
-          {/* Card 2 — Savings */}
+          {/* Savings */}
           {results.hasCurrentTools && (
             <div className="relative overflow-hidden rounded-2xl bg-card border border-border p-5 shadow-sm">
-              <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-cancel/10">
-                <TrendingDown className="h-4.5 w-4.5 text-cancel" />
-              </div>
-              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                {t("Économies", "Savings")}
-              </p>
-              <p className={`mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none ${results.totalSavingsMonthly > 0 ? "text-cancel" : "text-muted-foreground/30"}`}>
-                {results.totalSavingsMonthly}€
-              </p>
+              <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-cancel/10"><TrendingDown className="h-4.5 w-4.5 text-cancel" /></div>
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Économies", "Savings")}</p>
+              <p className={`mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none ${results.totalSavingsMonthly > 0 ? "text-cancel" : "text-muted-foreground/30"}`}>{results.totalSavingsMonthly}€</p>
               <p className="mt-1.5 text-xs text-muted-foreground">
-                {results.isStackFree
-                  ? t("Votre stack est déjà 100% gratuite.", "Your stack is already 100% free.")
-                  : results.totalSavingsMonthly > 0
-                  ? `${t("soit", "i.e.")} ${results.totalSavingsAnnual}€/${t("an", "yr")}`
-                  : t("Aucune économie détectée", "No savings detected")}
+                {results.isStackFree ? t("Votre stack est déjà 100% gratuite.", "Your stack is already 100% free.") : results.totalSavingsMonthly > 0 ? `${t("soit", "i.e.")} ${results.totalSavingsAnnual}€/${t("an", "yr")}` : t("Aucune économie détectée", "No savings detected")}
               </p>
             </div>
           )}
 
-          {/* Card 3 — Current Stack */}
+          {/* Current Stack */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-keep to-keep/80 p-5 text-keep-foreground shadow-lg shadow-keep/10">
-            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">
-              <Layers className="h-4.5 w-4.5" />
-            </div>
-            <p className="text-xs font-medium uppercase tracking-wider opacity-80">
-              {t("Stack actuelle", "Current Stack")}
-            </p>
-            <p className="mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none">
-              {form.currentTools.length}
-            </p>
-            <p className="mt-1.5 text-xs font-medium opacity-90">
-              {t("outils", "tools")} · {stackCost}€/{t("mois", "mo")}
-            </p>
+            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/15"><Layers className="h-4.5 w-4.5" /></div>
+            <p className="text-xs font-medium uppercase tracking-wider opacity-80">{t("Stack actuelle", "Current Stack")}</p>
+            <p className="mt-2 font-heading text-4xl font-extrabold tabular-nums leading-none">{form.currentTools.length}</p>
+            <p className="mt-1.5 text-xs font-medium opacity-90">{t("outils", "tools")} · {stackCost}€/{t("mois", "mo")}</p>
           </div>
 
-          {/* Card 4 — Profile */}
+          {/* Profile */}
           <div className="relative overflow-hidden rounded-2xl bg-card border border-border p-5 shadow-sm">
-            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10">
-              <UserCircle className="h-4.5 w-4.5 text-primary" />
-            </div>
-            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              {t("Profil", "Profile")}
-            </p>
-            <p className="mt-2 font-heading text-xl font-bold leading-tight">
-              {persona?.name || "—"}
-            </p>
+            <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10"><UserCircle className="h-4.5 w-4.5 text-primary" /></div>
+            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Profil", "Profile")}</p>
+            <p className="mt-2 font-heading text-xl font-bold leading-tight">{family ? (lang === "en" ? family.labelEn : family.label) : "—"}</p>
             <p className="mt-1.5 text-xs text-muted-foreground">
               {tjmLabel ? (lang === "fr" ? tjmLabel.label : tjmLabel.labelEn) : "—"}
               <span className="mx-1 opacity-30">·</span>
@@ -294,16 +259,12 @@ const ResultsPage = () => {
           </div>
         </div>
 
-        {/* Cas 1: No tools message */}
+        {/* Edge case messages */}
         {!results.hasCurrentTools && (
           <p className="mt-4 text-center text-sm text-muted-foreground italic">
-            {form.persona === "claire"
-              ? t("Renseignez vos outils actuels pour obtenir une vue consolidée de vos dépenses.", "Enter your current tools to get a consolidated view of your spending.")
-              : t("Ajoutez vos outils pour obtenir une analyse de votre stack.", "Add your tools for a stack analysis.")}
+            {t("Ajoutez vos outils pour obtenir une analyse de votre stack.", "Add your tools for a stack analysis.")}
           </p>
         )}
-
-        {/* Cas 2: TJM=0 message */}
         {results.isTjmZero && (
           <p className="mt-4 text-center text-sm text-muted-foreground italic">
             {t("Renseignez votre TJM pour voir votre ROI en euros.", "Enter your daily rate to see your ROI in euros.")}
@@ -313,88 +274,110 @@ const ResultsPage = () => {
         {/* MAIN CONTENT */}
         <div className="mt-8 grid gap-6 lg:grid-cols-5 lg:gap-8">
 
-          {/* LEFT COLUMN — Savings (only if current tools exist) */}
+          {/* LEFT — Prescription Fiches */}
           {results.hasCurrentTools && (
             <section className="lg:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <h2 className="text-lg font-bold">{t("Économies identifiées", "Savings identified")}</h2>
-                <Tip text={t("Outils redondants ou inadaptés à votre profil.", "Redundant tools or mismatched for your profile.")} />
+                <h2 className="text-lg font-bold">{t("Fiches prescription", "Prescription cards")}</h2>
+                <Tip text={t("Analyse de chaque outil à optimiser avec diagnostic et prescription.", "Analysis of each tool to optimize with diagnosis and prescription.")} />
               </div>
 
-              {results.toCancel.length === 0 ? (
+              {results.fiches.length === 0 ? (
                 <div className="flex flex-col items-center rounded-2xl border border-dashed border-border bg-card py-16 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-keep/10">
-                    <CheckCircle2 className="h-7 w-7 text-keep" />
-                  </div>
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-keep/10"><CheckCircle2 className="h-7 w-7 text-keep" /></div>
                   <p className="mt-4 max-w-[220px] text-sm text-muted-foreground">
-                    {results.isStackFree
-                      ? t("Votre stack est déjà 100% gratuite.", "Your stack is already 100% free.")
-                      : t("Votre stack semble déjà optimisée.", "Your stack seems already optimized.")}
+                    {results.isStackFree ? t("Votre stack est déjà 100% gratuite.", "Your stack is already 100% free.") : t("Votre stack semble déjà optimisée.", "Your stack seems already optimized.")}
                   </p>
                 </div>
               ) : (
                 <div className="space-y-3">
                   <div className="flex items-center justify-between rounded-xl bg-cancel/5 border border-cancel/15 px-4 py-3">
-                    <span className="text-sm font-medium text-cancel">
-                      {t("Total économisable", "Total saveable")}
-                    </span>
-                    <span className="font-heading text-lg font-bold tabular-nums text-cancel">
-                      -{results.totalSavingsMonthly}€/{t("mois", "mo")}
-                    </span>
+                    <span className="text-sm font-medium text-cancel">{t("Total économisable", "Total saveable")}</span>
+                    <span className="font-heading text-lg font-bold tabular-nums text-cancel">-{results.totalSavingsMonthly}€/{t("mois", "mo")}</span>
                   </div>
 
-                  {results.toCancel.map((s) => (
-                    <div key={s.tool.id} className="relative overflow-hidden rounded-xl border border-border bg-card p-4 transition-colors hover:bg-secondary/20">
-                      <div className="absolute inset-y-0 left-0 w-[3px] rounded-l-xl bg-cancel" />
-                      <div className="flex items-start gap-3 pl-1.5">
-                        <Logo tool={s.tool} size={32} />
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <h3 className="text-sm font-semibold">{s.tool.name}</h3>
-                            {s.cancelType === "doublon" && (
-                              <span className="rounded-md bg-primary/10 px-1.5 py-0.5 text-[11px] font-semibold text-primary">
-                                {t("Doublon", "Duplicate")}
+                  {results.fiches.map((fiche, i) => {
+                    const Icon = PRESCRIPTION_ICONS[fiche.type] || ArrowDownCircle;
+                    const badgeStyle = BADGE_STYLES[fiche.badge || ""] || "bg-muted text-muted-foreground";
+                    return (
+                      <div key={fiche.tool.id} className="relative overflow-hidden rounded-xl border border-border bg-card p-4 transition-colors hover:bg-secondary/20">
+                        <div className="absolute inset-y-0 left-0 w-[3px] rounded-l-xl bg-cancel" />
+                        <div className="flex items-start gap-3 pl-1.5">
+                          <Logo tool={fiche.tool} size={32} />
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <h3 className="text-sm font-semibold">{fiche.tool.name}</h3>
+                              {fiche.badge && (
+                                <span className={`rounded-md border px-1.5 py-0.5 text-[11px] font-semibold ${badgeStyle}`}>{fiche.badge}</span>
+                              )}
+                              <span className="rounded-md bg-cancel/10 px-1.5 py-0.5 text-[11px] font-semibold tabular-nums text-cancel">
+                                -{fiche.tool.defaultMonthlyPrice}€/{t("mois", "mo")}
                               </span>
+                            </div>
+
+                            {/* Diagnostic */}
+                            <p className="mt-2 text-[13px] text-muted-foreground leading-relaxed">
+                              <span className="font-semibold text-foreground/70">{t("Diagnostic", "Diagnosis")} :</span> {fiche.diagnostic}
+                            </p>
+
+                            {/* Prescription */}
+                            <p className="mt-1 text-[13px] leading-relaxed">
+                              <span className="font-semibold text-foreground/70">{t("Prescription", "Prescription")} :</span>{" "}
+                              <span className="font-medium text-primary">{fiche.prescription}</span>
+                            </p>
+
+                            {/* Gain */}
+                            {fiche.gain > 0 && (
+                              <p className="mt-1 text-sm font-semibold tabular-nums text-cancel">
+                                {t("Gain", "Savings")} : {fiche.gain}€/{t("mois", "mo")} · {fiche.gain * 12}€/{t("an", "yr")}
+                              </p>
                             )}
-                            <span className="rounded-md bg-cancel/10 px-1.5 py-0.5 text-[11px] font-semibold tabular-nums text-cancel">
-                              -{s.tool.defaultMonthlyPrice}€/{t("mois", "mo")}
-                            </span>
+
+                            {/* Alternative link */}
+                            {fiche.alternative && (
+                              <Link to={`${prefix}/tool/${fiche.alternative.slug || fiche.alternative.id}`} className="mt-1.5 inline-flex items-center gap-1 text-[13px] font-medium text-primary hover:underline">
+                                <ArrowUpRight className="h-3.5 w-3.5" />
+                                {t("Voir l'alternative", "See alternative")} : {fiche.alternative.name}
+                              </Link>
+                            )}
+
+                            {/* Migration guide */}
+                            {fiche.migrationGuide && (
+                              <details className="mt-2">
+                                <summary className="cursor-pointer text-xs font-medium text-muted-foreground hover:text-foreground">
+                                  {t("Guide de migration →", "Migration guide →")}
+                                </summary>
+                                <div className="mt-1.5 rounded-lg bg-secondary/50 p-3 text-xs space-y-1">
+                                  {fiche.migrationGuide.steps.map((step, i) => (
+                                    <p key={i} className="text-muted-foreground">{i + 1}. {step}</p>
+                                  ))}
+                                  <p className="text-muted-foreground/70">⏱ {fiche.migrationGuide.timeEstimate}</p>
+                                  <p className="text-muted-foreground/70">⚠️ {fiche.migrationGuide.dataLoss}</p>
+                                </div>
+                              </details>
+                            )}
                           </div>
-                          <p className="mt-1 text-[13px] text-muted-foreground leading-relaxed">{s.cancelReason}</p>
-                          {s.freeAlt && s.freeAlt.slug !== s.tool.slug && s.freeAlt.id !== s.tool.id && (
-                            <Link to={`${prefix}/tool/${s.freeAlt.slug}`} className="mt-1.5 inline-flex items-center gap-1 text-[13px] font-medium text-primary hover:underline">
-                              <ArrowUpRight className="h-3.5 w-3.5" />
-                              {t("Alternative :", "Alternative:")} {s.freeAlt.name}
-                            </Link>
-                          )}
                         </div>
-                        <span className="shrink-0 text-sm font-bold tabular-nums text-cancel">
-                          -{s.tool.defaultMonthlyPrice * 12}€/{t("an", "yr")}
-                        </span>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               )}
             </section>
           )}
 
-          {/* RIGHT COLUMN — Top Recommendations */}
+          {/* RIGHT — Recommendations */}
           <section className={results.hasCurrentTools ? "lg:col-span-3" : "lg:col-span-5"}>
             <div className="flex items-center gap-2 mb-4">
               <h2 className="text-lg font-bold">{t("Meilleurs outils pour vous", "Best tools for you")}</h2>
-              <Tip text={t("Score = pertinence (60%) + valeur (40%). Top 3.", "Score = pertinence (60%) + value (40%). Top 3.")} />
+              <Tip text={t("Score = pertinence (60%) + valeur (40%). Filtré par couche.", "Score = pertinence (60%) + value (40%). Filtered by layer.")} />
             </div>
 
             {results.recommended.length === 0 ? (
               <div className="flex flex-col items-center rounded-2xl border border-dashed border-border bg-card py-16 text-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                  <Sparkles className="h-7 w-7 text-primary" />
-                </div>
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10"><Sparkles className="h-7 w-7 text-primary" /></div>
                 <p className="mt-4 max-w-[260px] text-sm text-muted-foreground">
-                  {!results.hasCurrentTools
-                    ? t("Ajoutez vos outils actuels pour une analyse complète.", "Add your current tools for a complete analysis.")
-                    : t("Votre stack semble déjà bien optimisée.", "Your stack seems well optimized.")}
+                  {!results.hasCurrentTools ? t("Ajoutez vos outils actuels pour une analyse complète.", "Add your current tools for a complete analysis.") : t("Votre stack semble déjà bien optimisée.", "Your stack seems well optimized.")}
                 </p>
               </div>
             ) : (
@@ -409,23 +392,21 @@ const ResultsPage = () => {
                           <div className="flex items-center gap-2">
                             <h3 className="text-base font-semibold">{s.tool.name}</h3>
                             <span className={`shrink-0 rounded-md border px-2 py-0.5 text-[11px] font-semibold ${badge.cls}`}>{badge.text}</span>
+                            {s.tool.tool_type === "metier" && (
+                              <span className="rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">{t("Métier", "Core")}</span>
+                            )}
                           </div>
                           <p className="mt-1 line-clamp-2 text-[13px] text-muted-foreground">{s.tool.shortDescription}</p>
-                          {/* TJM > 0: show value created (capped at 2000) */}
                           {!results.isTjmZero && s.valueCreated > 0 && (
                             <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">
                               {t(`Vaut ~${s.valueCreated}€/mois`, `Worth ~€${s.valueCreated}/mo`)}
                               {s.valueCreated >= 2000 && <span className="ml-1 text-xs font-normal text-muted-foreground">{t("(estimation)", "(estimate)")}</span>}
                             </p>
                           )}
-                          {/* TJM = 0: show hours gained */}
                           {results.isTjmZero && (s.tool.timeGainedHoursPerMonth || 0) > 0 && (
                             <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">
                               {t(`Gain estimé : ${s.tool.timeGainedHoursPerMonth}h/mois`, `Estimated gain: ${s.tool.timeGainedHoursPerMonth}h/mo`)}
                             </p>
-                          )}
-                          {s.tool.verdict?.threshold && (
-                            <p className="mt-1 text-xs italic text-muted-foreground/50">{s.tool.verdict.threshold}</p>
                           )}
                         </div>
                       </div>
@@ -450,7 +431,7 @@ const ResultsPage = () => {
           </section>
         </div>
 
-        {/* TABS — All reco / Quadrant / ROI */}
+        {/* TABS */}
         <div className="mt-10">
           <Tabs defaultValue="all">
             <TabsList className="gap-1 rounded-xl border border-border bg-card p-1">
@@ -486,18 +467,10 @@ const ResultsPage = () => {
                             </div>
                             <p className="mt-1 line-clamp-2 text-[13px] text-muted-foreground">{s.tool.shortDescription}</p>
                             {!results.isTjmZero && s.valueCreated > 0 && (
-                              <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">
-                                ~{s.valueCreated}€/{t("mois", "mo")}
-                                {s.valueCreated >= 2000 && <span className="ml-1 text-xs font-normal text-muted-foreground">{t("(estimation)", "(estimate)")}</span>}
-                              </p>
+                              <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">~{s.valueCreated}€/{t("mois", "mo")}{s.valueCreated >= 2000 && <span className="ml-1 text-xs font-normal text-muted-foreground">{t("(estimation)", "(estimate)")}</span>}</p>
                             )}
                             {results.isTjmZero && (s.tool.timeGainedHoursPerMonth || 0) > 0 && (
-                              <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">
-                                {t(`Gain : ${s.tool.timeGainedHoursPerMonth}h/mois`, `Gain: ${s.tool.timeGainedHoursPerMonth}h/mo`)}
-                              </p>
-                            )}
-                            {s.tool.verdict?.threshold && (
-                              <p className="mt-1 text-xs italic text-muted-foreground/50">{s.tool.verdict.threshold}</p>
+                              <p className="mt-1.5 text-sm font-semibold tabular-nums text-keep">{t(`Gain : ${s.tool.timeGainedHoursPerMonth}h/mois`, `Gain: ${s.tool.timeGainedHoursPerMonth}h/mo`)}</p>
                             )}
                           </div>
                         </div>
@@ -528,12 +501,8 @@ const ResultsPage = () => {
                   <ResponsiveContainer width="100%" height={400}>
                     <ScatterChart margin={{ top: 15, right: 25, bottom: 35, left: 15 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                      <XAxis type="number" dataKey="x"
-                        label={{ value: t("Coût (€/mois)", "Cost (€/mo)"), position: "bottom", offset: 10, style: { fontSize: 11, fill: "hsl(var(--muted-foreground))" } }}
-                        tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
-                      <YAxis type="number" dataKey="y"
-                        label={{ value: t("h/mois", "h/mo"), angle: -90, position: "insideLeft", style: { fontSize: 11, fill: "hsl(var(--muted-foreground))" } }}
-                        tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
+                      <XAxis type="number" dataKey="x" label={{ value: t("Coût (€/mois)", "Cost (€/mo)"), position: "bottom", offset: 10, style: { fontSize: 11, fill: "hsl(var(--muted-foreground))" } }} tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
+                      <YAxis type="number" dataKey="y" label={{ value: t("h/mois", "h/mo"), angle: -90, position: "insideLeft", style: { fontSize: 11, fill: "hsl(var(--muted-foreground))" } }} tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
                       <RechartsTooltip content={({ payload }) => {
                         if (!payload?.length) return null;
                         const d = payload[0].payload;
@@ -562,7 +531,6 @@ const ResultsPage = () => {
             {/* ROI */}
             <TabsContent value="roi">
               {results.isTjmZero ? (
-                // TJM=0: show time gained table
                 roiData.length === 0 ? (
                   <p className="py-16 text-center text-sm text-muted-foreground">{t("Aucune donnée.", "No data.")}</p>
                 ) : (
@@ -580,19 +548,11 @@ const ResultsPage = () => {
                         <tbody>
                           {roiData.map((row, i) => (
                             <tr key={row.name} className={`border-b border-border/40 last:border-0 transition-colors hover:bg-secondary/10 ${i % 2 === 1 ? "bg-secondary/10" : ""}`}>
-                              <td className="px-5 py-3.5">
-                                <div className="flex items-center gap-2.5">
-                                  <Logo tool={row.tool} size={24} />
-                                  <span className="font-medium">{row.name}</span>
-                                </div>
-                              </td>
+                              <td className="px-5 py-3.5"><div className="flex items-center gap-2.5"><Logo tool={row.tool} size={24} /><span className="font-medium">{row.name}</span></div></td>
                               <td className="px-5 py-3.5 text-right tabular-nums">{row.cost}€</td>
                               <td className="px-5 py-3.5 text-right tabular-nums font-semibold text-keep">{row.hours}h</td>
                               <td className="px-5 py-3.5 text-right">
-                                <span className={`rounded-md border px-2 py-0.5 text-[11px] font-semibold ${
-                                  row.verdict === "Excellent" ? "border-keep/20 bg-keep/10 text-keep"
-                                  : "border-primary/20 bg-primary/10 text-primary"
-                                }`}>{row.verdict}</span>
+                                <span className={`rounded-md border px-2 py-0.5 text-[11px] font-semibold ${row.verdict === "Excellent" ? "border-keep/20 bg-keep/10 text-keep" : "border-primary/20 bg-primary/10 text-primary"}`}>{row.verdict}</span>
                               </td>
                             </tr>
                           ))}
@@ -623,25 +583,15 @@ const ResultsPage = () => {
                       <tbody>
                         {roiData.map((row, i) => (
                           <tr key={row.name} className={`border-b border-border/40 last:border-0 transition-colors hover:bg-secondary/10 ${i % 2 === 1 ? "bg-secondary/10" : ""}`}>
-                            <td className="px-5 py-3.5">
-                              <div className="flex items-center gap-2.5">
-                                <Logo tool={row.tool} size={24} />
-                                <span className="font-medium">{row.name}</span>
-                              </div>
-                            </td>
+                            <td className="px-5 py-3.5"><div className="flex items-center gap-2.5"><Logo tool={row.tool} size={24} /><span className="font-medium">{row.name}</span></div></td>
                             <td className="px-5 py-3.5 text-right tabular-nums">{row.cost}€</td>
                             <td className="px-5 py-3.5 text-right tabular-nums">{row.hours}h</td>
-                            <td className="px-5 py-3.5 text-right tabular-nums font-medium text-keep">
-                              {row.valueCreated}€
-                              {row.valueCreated >= 2000 && <span className="ml-1 text-xs font-normal text-muted-foreground">{t("(est.)", "(est.)")}</span>}
+                            <td className="px-5 py-3.5 text-right tabular-nums font-semibold text-keep">
+                              {row.valueCreated}€{row.valueCreated >= 2000 && <span className="text-xs font-normal text-muted-foreground ml-0.5">{t("(est.)", "(est.)")}</span>}
                             </td>
-                            <td className="px-5 py-3.5 text-right tabular-nums font-bold">{row.valueIndex}</td>
+                            <td className="px-5 py-3.5 text-right tabular-nums">{row.valueIndex}</td>
                             <td className="px-5 py-3.5 text-right">
-                              <span className={`rounded-md border px-2 py-0.5 text-[11px] font-semibold ${
-                                row.verdict === "Excellent" ? "border-keep/20 bg-keep/10 text-keep"
-                                : row.verdict === t("Bon", "Good") ? "border-primary/20 bg-primary/10 text-primary"
-                                : "text-muted-foreground"
-                              }`}>{row.verdict}</span>
+                              <span className={`rounded-md border px-2 py-0.5 text-[11px] font-semibold ${row.verdict === "Excellent" ? "border-keep/20 bg-keep/10 text-keep" : "border-primary/20 bg-primary/10 text-primary"}`}>{row.verdict}</span>
                             </td>
                           </tr>
                         ))}
@@ -654,15 +604,6 @@ const ResultsPage = () => {
           </Tabs>
         </div>
 
-        {/* Footer */}
-        <div className="mt-10 mb-6 flex flex-wrap items-center justify-center gap-3">
-          <Link to={`${prefix}/tools`} className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
-            {t("Catalogue des outils", "Tool catalog")} <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link to={`${prefix}/selector`} className="inline-flex items-center gap-2 rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary">
-            {t("Refaire le test", "Retake test")}
-          </Link>
-        </div>
       </div>
     </div>
   );
