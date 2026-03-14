@@ -77,6 +77,9 @@ const App = () => (
             <Route path="methodology" element={<AboutPage />} />
             <Route path="transparency" element={<TransparencyPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="legal-notice" element={<LegalNoticePage />} />
+            <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="terms" element={<TermsPage />} />
             <Route path="update-tools-v3" element={<UpdateToolsV3 />} />
             <Route path="update-tools-v4" element={<UpdateToolsV4 />} />
             <Route path="update-tools-v10" element={<UpdateToolsV10 />} />
