@@ -22,6 +22,9 @@ import GuideDetailPage from "@/pages/GuideDetailPage";
 import AboutPage from "@/pages/AboutPage";
 import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
+import LegalNoticePage from "@/pages/LegalNoticePage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import TermsPage from "@/pages/TermsPage";
 import NotFound from "@/pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -74,6 +77,9 @@ const App = () => (
             <Route path="methodology" element={<AboutPage />} />
             <Route path="transparency" element={<TransparencyPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="legal-notice" element={<LegalNoticePage />} />
+            <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="terms" element={<TermsPage />} />
             <Route path="update-tools-v3" element={<UpdateToolsV3 />} />
             <Route path="update-tools-v4" element={<UpdateToolsV4 />} />
             <Route path="update-tools-v10" element={<UpdateToolsV10 />} />
