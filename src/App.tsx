@@ -22,6 +22,9 @@ import GuideDetailPage from "@/pages/GuideDetailPage";
 import AboutPage from "@/pages/AboutPage";
 import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
+import LegalNoticePage from "@/pages/LegalNoticePage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import TermsPage from "@/pages/TermsPage";
 import NotFound from "@/pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 
