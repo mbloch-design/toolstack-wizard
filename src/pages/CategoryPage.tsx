@@ -52,7 +52,7 @@ const CategoryPage = () => {
           "@type": "ListItem",
           position: i + 1,
           name: tool.name,
-          url: `https://tooltrim.io/${lang}/tool/${tool.slug || tool.id}`,
+          url: `https://www.tooltrim.io/${lang}/tool/${tool.slug || tool.id}`,
         })),
       },
     });
