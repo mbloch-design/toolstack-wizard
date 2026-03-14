@@ -46,7 +46,7 @@ const HomePage = () => {
     const desc = lang === "fr"
       ? `Tooltrim compare ${stats.total}+ outils SaaS pour freelances et petites équipes. Optimisez votre stack, réduisez vos coûts.`
       : `Tooltrim compares ${stats.total}+ SaaS tools for freelancers and small teams. Optimize your stack, reduce costs.`;
-    const url = `https://tooltrim.io/${lang}`;
+    const url = `https://www.tooltrim.io/${lang}`;
 
     setSeoTags({ title, description: desc, url });
     setHreflang(`/${lang}`);
@@ -55,11 +55,11 @@ const HomePage = () => {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "ToolTrim",
-      url: "https://tooltrim.io",
+      url: "https://www.tooltrim.io",
       description: desc,
       potentialAction: {
         "@type": "SearchAction",
-        target: `https://tooltrim.io/${lang}/tools?q={search_term_string}`,
+        target: `https://www.tooltrim.io/${lang}/tools?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
     });
@@ -68,8 +68,8 @@ const HomePage = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "ToolTrim",
-      url: "https://tooltrim.io",
-      logo: "https://tooltrim.io/favicon.ico",
+      url: "https://www.tooltrim.io",
+      logo: "https://www.tooltrim.io/picto-logo.svg",
       sameAs: [],
     });
 

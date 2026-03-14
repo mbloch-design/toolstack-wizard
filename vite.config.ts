@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
-const BASE = "https://tooltrim.io";
+const BASE = "https://www.tooltrim.io";
 const LANGS = ["fr", "en"];
 const STATIC_PAGES = ["", "tools", "category", "guides", "selector", "about", "transparency", "contact"];
 
