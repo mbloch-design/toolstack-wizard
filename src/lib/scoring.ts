@@ -1,7 +1,7 @@
 import type {
   Tool, SelectorFormData, ScoredTool, SelectorResults,
   Fiche, PrescriptionType, MigrationGuide,
-  TjmRange, VerticalWeight, PrescriptionQuality,
+  TjmRange, VerticalWeight, PrescriptionQuality, TechMaturity,
 } from "@/data/types";
 import { TJM_OPTIONS, TIME_WEIGHTS } from "@/data/types";
 import { verticals as VERTICALS } from "@/data/content";
@@ -170,7 +170,52 @@ function buildFermePrescription(
     gain: Math.max(gain, 0),
     badge: "Doublon",
     migrationGuide: tool.migrationGuide || null,
+    // V10 enrichments from prescription_output
+    gainMonthly: gain,
+    gainAnnual: po.gain_annual_eur,
+    priceTool: po.price_tool_eur,
+    priceAlt: po.price_alt_eur,
+    verifiedOn: po.verified_on,
   };
+}
+
+/* ═══════════════ SECTION 5: TJM-BASED SORT ═══════════════ */
+
+function sortPrescriptionsByTjm(fiches: Fiche[], tjm: TjmRange | null): Fiche[] {
+  if (tjm === "gt600" || tjm === "400-600") {
+    // High TJM: hide tiny gains (<5€) unless upgrade (negative gain)
+    const filtered = fiches.filter((f) => {
+      const g = f.gainMonthly ?? f.gain;
+      return Math.abs(g) >= 5 || g < 0;
+    });
+    // Upgrades first, then by absolute gain descending
+    return filtered.sort((a, b) => {
+      const ga = a.gainMonthly ?? a.gain;
+      const gb = b.gainMonthly ?? b.gain;
+      if (ga < 0 && gb >= 0) return -1;
+      if (ga >= 0 && gb < 0) return 1;
+      return Math.abs(gb) - Math.abs(ga);
+    });
+  }
+  // Default: sort by gain descending
+  return [...fiches].sort((a, b) => {
+    const ga = a.gainMonthly ?? a.gain;
+    const gb = b.gainMonthly ?? b.gain;
+    return gb - ga;
+  });
+}
+
+/* ═══════════════ SECTION 6: MATURITY FILTER ═══════════════ */
+
+const REQUIRES_INTERMEDIATE = ['cal-com', 'posthog', 'metabase', 'retool', 'sentry', 'github', 'vercel', 'datadog'];
+const REQUIRES_EXPERT = ['whisper', 'stable-diffusion', 'flux'];
+
+export function needsMaturityWarning(altId: string, maturity: TechMaturity | string | null): boolean {
+  if (!maturity) return false;
+  if (maturity === 'expert') return false;
+  if (maturity === 'intermediaire') return REQUIRES_EXPERT.includes(altId);
+  // zero-config: warn for both intermediate and expert tools
+  return REQUIRES_INTERMEDIATE.includes(altId) || REQUIRES_EXPERT.includes(altId);
 }
 
 /* ═══════════════ ANOMALY DETECTION (kept for non-prescription tools) ═══════════════ */
@@ -549,8 +594,17 @@ export function generateScoringResults(
     prescribedIds.add(tool.id);
   }
 
-  // Sort fiches by gain desc
-  fiches.sort((a, b) => b.gain - a.gain);
+  // V10 Section 6: Add maturity warnings to fiches
+  for (const fiche of fiches) {
+    if (fiche.alternative && needsMaturityWarning(fiche.alternative.id, form.techMaturity)) {
+      fiche.maturityWarning = true;
+    }
+  }
+
+  // V10 Section 5: Sort fiches by TJM logic
+  const sortedFiches = sortPrescriptionsByTjm(fiches, form.tjm);
+  fiches.length = 0;
+  fiches.push(...sortedFiches);
 
   // Mark cancellations on scored tools
   for (const scored of scoredTools) {
@@ -609,7 +663,13 @@ export function generateScoringResults(
   // Stack health V10
   const fermeCount = currentToolObjs.filter((t) => t.prescription_quality === "ferme" && canPrescribe(t)).length;
   const healthResult = computeStackHealth(currentToolObjs, doublons, doublonsIA, dormants, fermeCount);
-  const totalSavingsMonthly = fiches.reduce((sum, f) => sum + Math.max(f.gain, 0), 0);
+  // V10 Section 9: Certified savings = only ferme prescriptions with positive gain
+  const fermeFiches = fiches.filter((f) => f.tool.prescription_quality === "ferme");
+  const certifiedSavingsMonthly = fermeFiches.reduce((sum, f) => sum + Math.max(f.gainMonthly ?? f.gain, 0), 0);
+  const totalSavingsMonthly = certifiedSavingsMonthly;
+  // Find most recent verified_on date
+  const verifiedDates = fermeFiches.map((f) => f.verifiedOn).filter(Boolean) as string[];
+  const latestVerifiedOn = verifiedDates.length > 0 ? verifiedDates.sort().reverse()[0] : null;
   const hasAiDoublon = doublonsIA.length > 0;
   const personaMessage = buildPersonaMessage(form, lang);
 
@@ -628,6 +688,7 @@ export function generateScoringResults(
     hasAiDoublon,
     fewRecommendations: highRecommended.length < 3,
     questionTools,
+    latestVerifiedOn,
   };
 }
 

@@ -194,6 +194,7 @@ export type Database = {
           category: string | null
           cons: Json | null
           covers: Json | null
+          decision_policy_v3: Json | null
           default_monthly_price: number | null
           downgrade_plan: Json | null
           free_alternative: string | null
@@ -211,6 +212,7 @@ export type Database = {
           prescription_output: Json | null
           prescription_quality: string | null
           pricing: Json | null
+          pricing_v5: Json | null
           pros: Json | null
           relevant_for: Json | null
           seo: Json | null
@@ -236,6 +238,7 @@ export type Database = {
           category?: string | null
           cons?: Json | null
           covers?: Json | null
+          decision_policy_v3?: Json | null
           default_monthly_price?: number | null
           downgrade_plan?: Json | null
           free_alternative?: string | null
@@ -253,6 +256,7 @@ export type Database = {
           prescription_output?: Json | null
           prescription_quality?: string | null
           pricing?: Json | null
+          pricing_v5?: Json | null
           pros?: Json | null
           relevant_for?: Json | null
           seo?: Json | null
@@ -278,6 +282,7 @@ export type Database = {
           category?: string | null
           cons?: Json | null
           covers?: Json | null
+          decision_policy_v3?: Json | null
           default_monthly_price?: number | null
           downgrade_plan?: Json | null
           free_alternative?: string | null
@@ -295,6 +300,7 @@ export type Database = {
           prescription_output?: Json | null
           prescription_quality?: string | null
           pricing?: Json | null
+          pricing_v5?: Json | null
           pros?: Json | null
           relevant_for?: Json | null
           seo?: Json | null
