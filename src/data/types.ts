@@ -62,6 +62,29 @@ export interface PrescriptionOutput {
   verified_on: string;
 }
 
+export interface PricingV5 {
+  compare_price_monthly_eur: number;
+  compare_plan_name?: string;
+  compare_plan_kind?: string;
+  price_reliability?: string;
+  location_sensitive?: boolean;
+  usage_sensitive?: boolean;
+  cautions?: string[];
+  source_domain?: string;
+  verified_on?: string;
+  official_source_url?: string;
+  verification_status?: string;
+}
+
+export interface DecisionPolicyV3 {
+  auto_cancel_allowed?: boolean;
+  auto_replace_allowed?: boolean;
+  auto_downgrade_allowed?: boolean;
+  requires_context_questions?: boolean;
+  never_auto_cancel_reason?: string;
+  default_decision_lane?: string;
+}
+
 export interface Tool {
   id: string;
   slug?: string;
