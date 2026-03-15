@@ -53,6 +53,8 @@ function mapToolFromJson(t: any): Tool {
     prescription_block_reasons: t.prescription_block_reasons || [],
     prescription_context_questions: t.prescription_context_questions || [],
     substitution_cluster_v2: t.substitution_cluster_v2 || null,
+    pricing_v5: t.pricing_v5 || null,
+    decision_policy_v3: t.decision_policy_v3 || null,
   };
 }
 
