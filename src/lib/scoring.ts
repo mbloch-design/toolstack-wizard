@@ -170,7 +170,52 @@ function buildFermePrescription(
     gain: Math.max(gain, 0),
     badge: "Doublon",
     migrationGuide: tool.migrationGuide || null,
+    // V10 enrichments from prescription_output
+    gainMonthly: gain,
+    gainAnnual: po.gain_annual_eur,
+    priceTool: po.price_tool_eur,
+    priceAlt: po.price_alt_eur,
+    verifiedOn: po.verified_on,
   };
+}
+
+/* ═══════════════ SECTION 5: TJM-BASED SORT ═══════════════ */
+
+function sortPrescriptionsByTjm(fiches: Fiche[], tjm: TjmRange | null): Fiche[] {
+  if (tjm === "gt600" || tjm === "400-600") {
+    // High TJM: hide tiny gains (<5€) unless upgrade (negative gain)
+    const filtered = fiches.filter((f) => {
+      const g = f.gainMonthly ?? f.gain;
+      return Math.abs(g) >= 5 || g < 0;
+    });
+    // Upgrades first, then by absolute gain descending
+    return filtered.sort((a, b) => {
+      const ga = a.gainMonthly ?? a.gain;
+      const gb = b.gainMonthly ?? b.gain;
+      if (ga < 0 && gb >= 0) return -1;
+      if (ga >= 0 && gb < 0) return 1;
+      return Math.abs(gb) - Math.abs(ga);
+    });
+  }
+  // Default: sort by gain descending
+  return [...fiches].sort((a, b) => {
+    const ga = a.gainMonthly ?? a.gain;
+    const gb = b.gainMonthly ?? b.gain;
+    return gb - ga;
+  });
+}
+
+/* ═══════════════ SECTION 6: MATURITY FILTER ═══════════════ */
+
+const REQUIRES_INTERMEDIATE = ['cal-com', 'posthog', 'metabase', 'retool', 'sentry', 'github', 'vercel', 'datadog'];
+const REQUIRES_EXPERT = ['whisper', 'stable-diffusion', 'flux'];
+
+export function needsMaturityWarning(altId: string, maturity: TechMaturity | string | null): boolean {
+  if (!maturity) return false;
+  if (maturity === 'expert') return false;
+  if (maturity === 'intermediaire') return REQUIRES_EXPERT.includes(altId);
+  // zero-config: warn for both intermediate and expert tools
+  return REQUIRES_INTERMEDIATE.includes(altId) || REQUIRES_EXPERT.includes(altId);
 }
 
 /* ═══════════════ ANOMALY DETECTION (kept for non-prescription tools) ═══════════════ */
