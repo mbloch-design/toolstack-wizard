@@ -130,6 +130,8 @@ export interface Tool {
   prescription_block_reasons?: string[];
   prescription_context_questions?: string[];
   substitution_cluster_v2?: string | null;
+  pricing_v5?: PricingV5 | null;
+  decision_policy_v3?: DecisionPolicyV3 | null;
 }
 
 export interface BlogPost {
