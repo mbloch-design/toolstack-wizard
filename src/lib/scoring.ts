@@ -594,8 +594,17 @@ export function generateScoringResults(
     prescribedIds.add(tool.id);
   }
 
-  // Sort fiches by gain desc
-  fiches.sort((a, b) => b.gain - a.gain);
+  // V10 Section 6: Add maturity warnings to fiches
+  for (const fiche of fiches) {
+    if (fiche.alternative && needsMaturityWarning(fiche.alternative.id, form.techMaturity)) {
+      fiche.maturityWarning = true;
+    }
+  }
+
+  // V10 Section 5: Sort fiches by TJM logic
+  const sortedFiches = sortPrescriptionsByTjm(fiches, form.tjm);
+  fiches.length = 0;
+  fiches.push(...sortedFiches);
 
   // Mark cancellations on scored tools
   for (const scored of scoredTools) {
