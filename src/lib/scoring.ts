@@ -1,7 +1,7 @@
 import type {
   Tool, SelectorFormData, ScoredTool, SelectorResults,
   Fiche, PrescriptionType, MigrationGuide,
-  TjmRange, VerticalWeight, PrescriptionQuality,
+  TjmRange, VerticalWeight, PrescriptionQuality, TechMaturity,
 } from "@/data/types";
 import { TJM_OPTIONS, TIME_WEIGHTS } from "@/data/types";
 import { verticals as VERTICALS } from "@/data/content";
