@@ -688,6 +688,7 @@ export function generateScoringResults(
     hasAiDoublon,
     fewRecommendations: highRecommended.length < 3,
     questionTools,
+    latestVerifiedOn,
   };
 }
 
