@@ -295,6 +295,13 @@ export interface Fiche {
   gain: number;
   migrationGuide?: MigrationGuide | null;
   badge?: "Doublon" | "Dormant" | "Inadapté" | "Doublon IA";
+  // V10 enrichments
+  gainMonthly?: number;
+  gainAnnual?: number;
+  priceTool?: number;
+  priceAlt?: number;
+  verifiedOn?: string;
+  maturityWarning?: boolean;
 }
 
 export interface ScoredTool {
