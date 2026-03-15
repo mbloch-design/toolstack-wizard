@@ -333,6 +333,7 @@ export interface SelectorResults {
   hasAiDoublon?: boolean;
   fewRecommendations?: boolean;
   questionTools?: Tool[];
+  latestVerifiedOn?: string | null;
 }
 
 // Legacy types kept for compat
