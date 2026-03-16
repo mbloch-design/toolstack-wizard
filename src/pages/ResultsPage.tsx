@@ -6,7 +6,7 @@ import {
   SelectorFormData, ScoredTool, SelectorResults, Fiche,
   TJM_OPTIONS, PHASE_OPTIONS, VERTICAL_FAMILIES,
 } from "@/data/types";
-import { generateScoringResults } from "@/lib/scoring";
+import { generateScoringResults, needsMaturityWarning } from "@/lib/scoring";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import {
@@ -14,6 +14,7 @@ import {
   Copy, ExternalLink, Pencil, ChevronRight, Shield,
   Wallet, Layers, TrendingDown, Zap,
   ArrowDownCircle, RefreshCw, ChevronDown, ChevronUp, Sparkles,
+  BadgeCheck, Clock, Info,
 } from "lucide-react";
 import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
@@ -137,6 +138,11 @@ const ResultsPage = () => {
 
   const recsToShow = showAllRecs ? results.recommended : results.recommended.slice(0, 6);
 
+  // Count ferme prescriptions for "Analysé pour toi" block
+  const fermeCount = results.fiches.filter((f) => f.tool.prescription_quality === "ferme").length;
+  const questionCount = results.questionTools?.length || 0;
+  const silenceCount = form.currentTools.length - fermeCount - questionCount - results.fiches.filter((f) => f.tool.prescription_quality !== "ferme").length;
+
   /* ═══════════ RENDER ═══════════ */
   return (
     <div className="min-h-screen bg-background">
@@ -218,6 +224,57 @@ const ResultsPage = () => {
 
       <div className="mx-auto max-w-5xl px-6 py-8 md:px-10 md:py-10 space-y-10">
 
+        {/* ─── "Analysé pour toi" Block (Section 7) ─── */}
+        {results.hasCurrentTools && (
+          <section className="rounded-2xl border border-border bg-card p-6">
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                <Sparkles className="h-4 w-4 text-primary" />
+              </div>
+              <div>
+                <h2 className="text-base font-bold">{t("Analysé pour toi", "Analyzed for you")}</h2>
+                <p className="text-xs text-muted-foreground">{t("Résumé de notre diagnostic", "Summary of our diagnostic")}</p>
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {/* Ferme prescriptions */}
+              <div className="flex items-center gap-3 rounded-xl bg-cancel/5 border border-cancel/10 p-3">
+                <BadgeCheck className="h-5 w-5 text-cancel shrink-0" />
+                <div>
+                  <p className="text-2xl font-heading font-bold tabular-nums text-cancel">{fermeCount}</p>
+                  <p className="text-[11px] text-muted-foreground">{t("prescriptions certifiées", "certified prescriptions")}</p>
+                </div>
+              </div>
+              {/* Question tools */}
+              <div className="flex items-center gap-3 rounded-xl bg-amber-500/5 border border-amber-500/10 p-3">
+                <Info className="h-5 w-5 text-amber-500 shrink-0" />
+                <div>
+                  <p className="text-2xl font-heading font-bold tabular-nums text-amber-600">{questionCount}</p>
+                  <p className="text-[11px] text-muted-foreground">{t("outils à analyser", "tools to analyze")}</p>
+                </div>
+              </div>
+              {/* Verified date */}
+              <div className="flex items-center gap-3 rounded-xl bg-keep/5 border border-keep/10 p-3">
+                <Clock className="h-5 w-5 text-keep shrink-0" />
+                <div>
+                  <p className="text-sm font-heading font-bold text-keep">
+                    {results.latestVerifiedOn || t("Non vérifié", "Not verified")}
+                  </p>
+                  <p className="text-[11px] text-muted-foreground">{t("dernière vérification prix", "last price check")}</p>
+                </div>
+              </div>
+            </div>
+            {results.totalSavingsMonthly > 0 && (
+              <p className="mt-4 text-sm text-muted-foreground">
+                {t(
+                  `Économie certifiée : ${results.totalSavingsMonthly}€/mois (${results.totalSavingsAnnual}€/an), uniquement basée sur des prescriptions vérifiées.`,
+                  `Certified savings: ${results.totalSavingsMonthly}€/mo (${results.totalSavingsAnnual}€/yr), based only on verified prescriptions.`
+                )}
+              </p>
+            )}
+          </section>
+        )}
+
         {/* ─── Banners ─── */}
         {results.hasAiDoublon && (
           <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-3">
@@ -256,7 +313,7 @@ const ResultsPage = () => {
                   const Icon = PRESCRIPTION_ICONS[fiche.type] || ArrowDownCircle;
                   const badgeStyle = BADGE_STYLES[fiche.badge || ""] || "bg-muted text-muted-foreground";
                   return (
-                    <FicheCard key={fiche.tool.id} fiche={fiche} Icon={Icon} badgeStyle={badgeStyle} prefix={prefix} t={t} />
+                    <FicheCard key={fiche.tool.id} fiche={fiche} Icon={Icon} badgeStyle={badgeStyle} prefix={prefix} t={t} lang={lang} />
                   );
                 })}
               </div>
@@ -278,6 +335,16 @@ const ResultsPage = () => {
                   <div className="flex-1 min-w-0">
                     <h3 className="text-sm font-semibold">{tool.name}</h3>
                     <p className="text-xs text-muted-foreground">{tool.shortDescription}</p>
+                    {/* V10: Show context questions if any */}
+                    {tool.prescription_context_questions && tool.prescription_context_questions.length > 0 && (
+                      <div className="mt-2 space-y-1">
+                        {tool.prescription_context_questions.map((q, i) => (
+                          <p key={i} className="text-[11px] text-amber-600 flex items-start gap-1">
+                            <span className="shrink-0 mt-0.5">❓</span> {q}
+                          </p>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <span className="rounded-lg bg-secondary px-2.5 py-1 text-xs font-medium tabular-nums text-muted-foreground">
@@ -438,12 +505,16 @@ const ResultsPage = () => {
 
 /* ═══════════ Sub-components ═══════════ */
 
-function FicheCard({ fiche, Icon, badgeStyle, prefix, t }: {
-  fiche: Fiche; Icon: typeof ArrowDownCircle; badgeStyle: string; prefix: string; t: (fr: string, en: string) => string;
+function FicheCard({ fiche, Icon, badgeStyle, prefix, t, lang }: {
+  fiche: Fiche; Icon: typeof ArrowDownCircle; badgeStyle: string; prefix: string; t: (fr: string, en: string) => string; lang: string;
 }) {
   const [open, setOpen] = useState(false);
+  const isFerme = fiche.tool.prescription_quality === "ferme";
+  const gain = fiche.gainMonthly ?? fiche.gain;
+  const isUpgrade = gain < 0;
+
   return (
-    <div className="rounded-xl border border-border bg-card overflow-hidden transition-all hover:shadow-sm">
+    <div className={`rounded-xl border bg-card overflow-hidden transition-all hover:shadow-sm ${isFerme ? "border-primary/30" : "border-border"}`}>
       {/* Header — always visible */}
       <button onClick={() => setOpen(!open)} className="flex w-full items-center gap-3 p-4 text-left">
         <Logo tool={fiche.tool} size={32} />
@@ -451,11 +522,31 @@ function FicheCard({ fiche, Icon, badgeStyle, prefix, t }: {
           <div className="flex items-center gap-2 flex-wrap">
             <h3 className="text-sm font-semibold">{fiche.tool.name}</h3>
             {fiche.badge && <span className={`rounded-md border px-1.5 py-0.5 text-[11px] font-semibold ${badgeStyle}`}>{fiche.badge}</span>}
+            {/* V10 contextual badges (Section 8) */}
+            {isFerme && (
+              <span className="rounded-md bg-primary/10 border border-primary/20 px-1.5 py-0.5 text-[10px] font-semibold text-primary flex items-center gap-0.5">
+                <BadgeCheck className="h-2.5 w-2.5" /> {t("Vérifié", "Verified")}
+              </span>
+            )}
+            {isUpgrade && (
+              <span className="rounded-md bg-keep/10 border border-keep/20 px-1.5 py-0.5 text-[10px] font-semibold text-keep">
+                {t("Montée qualité", "Quality upgrade")}
+              </span>
+            )}
+            {fiche.maturityWarning && (
+              <span className="rounded-md bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 text-[10px] font-semibold text-amber-600 flex items-center gap-0.5">
+                <AlertTriangle className="h-2.5 w-2.5" /> {t("Niveau technique", "Tech level")}
+              </span>
+            )}
           </div>
           <p className="mt-0.5 text-xs text-muted-foreground truncate">{fiche.diagnostic}</p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
-          <span className="rounded-lg bg-cancel/10 px-2.5 py-1 text-sm font-bold tabular-nums text-cancel">-{fiche.gain}€</span>
+          {isUpgrade ? (
+            <span className="rounded-lg bg-keep/10 px-2.5 py-1 text-sm font-bold tabular-nums text-keep">+{Math.abs(gain)}€</span>
+          ) : (
+            <span className="rounded-lg bg-cancel/10 px-2.5 py-1 text-sm font-bold tabular-nums text-cancel">-{gain}€</span>
+          )}
           {open ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
         </div>
       </button>
@@ -471,8 +562,23 @@ function FicheCard({ fiche, Icon, badgeStyle, prefix, t }: {
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{t("Prescription", "Prescription")}</p>
             <p className="text-sm font-medium text-primary">{fiche.prescription}</p>
           </div>
-          {fiche.gain > 0 && (
-            <p className="text-sm font-semibold tabular-nums text-cancel">{t("Gain", "Savings")} : {fiche.gain}€/{t("mois", "mo")} · {fiche.gain * 12}€/{t("an", "yr")}</p>
+          {/* V10: Price comparison */}
+          {fiche.priceTool != null && fiche.priceAlt != null && (
+            <div className="flex gap-4 text-sm tabular-nums">
+              <span className="text-muted-foreground">{fiche.tool.name}: <span className="font-semibold">{fiche.priceTool}€/{t("mois", "mo")}</span></span>
+              <span className="text-primary">{fiche.alternative?.name || "Alt"}: <span className="font-semibold">{fiche.priceAlt}€/{t("mois", "mo")}</span></span>
+            </div>
+          )}
+          {gain !== 0 && (
+            <p className={`text-sm font-semibold tabular-nums ${isUpgrade ? "text-keep" : "text-cancel"}`}>
+              {t("Gain", "Savings")} : {isUpgrade ? `+${Math.abs(gain)}` : `-${gain}`}€/{t("mois", "mo")} · {isUpgrade ? `+${Math.abs(fiche.gainAnnual ?? gain * 12)}` : `-${fiche.gainAnnual ?? gain * 12}`}€/{t("an", "yr")}
+            </p>
+          )}
+          {/* V10: Verified date */}
+          {fiche.verifiedOn && (
+            <p className="text-[11px] text-muted-foreground flex items-center gap-1">
+              <BadgeCheck className="h-3 w-3 text-primary" /> {t("Prix vérifié le", "Price verified on")} {fiche.verifiedOn}
+            </p>
           )}
           {fiche.alternative && (
             <Link to={`${prefix}/tool/${fiche.alternative.slug || fiche.alternative.id}`} className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import toolsV10 from "@/data/tools_v10.json";
+import toolsV10 from "@/data/content_v10_final.json";
 import verticalsJson from "@/data/verticals.json";
 import pricingCsv from "@/data/pricing_truth.csv?raw";
 
