@@ -18,13 +18,12 @@ import { getToolLogoUrl, getToolLogoUrlHD } from "@/hooks/useSupabaseData";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Tool } from "@/data/types";
 
-const STEPS = 6;
+const STEPS = 5;
 
 const STEP_META_FR = [
   { label: "Profil", sub: "Activité" },
   { label: "Temps", sub: "Pondération" },
   { label: "Business", sub: "Contexte" },
-  { label: "Objectif", sub: "Priorité" },
   { label: "Outils", sub: "Stack actuelle" },
   { label: "Résultats", sub: "Email" },
 ];
@@ -32,7 +31,6 @@ const STEP_META_EN = [
   { label: "Profile", sub: "Activity" },
   { label: "Time", sub: "Weighting" },
   { label: "Business", sub: "Context" },
-  { label: "Goal", sub: "Priority" },
   { label: "Tools", sub: "Current stack" },
   { label: "Results", sub: "Email" },
 ];
@@ -180,9 +178,8 @@ const SelectorPage = () => {
       case 1: return !!form.family && selectedActivities.length > 0;
       case 2: return form.verticals.length > 0;
       case 3: return !!form.tjm && !!form.projectPhase && !!form.techMaturity;
-      case 4: return !!form.mainGoal;
-      case 5: return true;
-      case 6: return form.email.includes("@") && form.firstName.length > 0;
+      case 4: return true; // Tools step is optional
+      case 5: return form.email.includes("@") && form.firstName.length > 0;
       default: return false;
     }
   };
@@ -242,7 +239,7 @@ const SelectorPage = () => {
         main_goal: form.mainGoal || null, current_tools: JSON.stringify(form.currentTools),
         ai_usage_level: form.aiUsageLevel || null, marketing_opt_in: form.marketingOptIn ?? false,
         tjm: tjmMedian, project_phase: form.projectPhase || null,
-        tech_maturity: form.techMaturity || null, source: "selector-v4",
+        tech_maturity: form.techMaturity || null, source: "selector-v10",
       };
       const { error } = await supabase.from("leads").insert(leadData as any);
       if (error) throw error;
@@ -334,9 +331,6 @@ const SelectorPage = () => {
               const isDone = step > stepNum;
               return (
                 <div key={i} className="flex flex-col items-center gap-1.5 flex-1">
-                  {i > 0 && (
-                    <div className="absolute" style={{ display: "none" }} />
-                  )}
                   <button
                     onClick={() => isDone && setStep(stepNum)}
                     disabled={!isDone}
@@ -497,29 +491,8 @@ const SelectorPage = () => {
           </div>
         )}
 
-        {/* ═══ STEP 4 — Main Goal ═══ */}
+        {/* ═══ STEP 4 — Tools (was step 5) ═══ */}
         {step === 4 && (
-          <div className="animate-fade-in">
-            <SectionHead
-              title={t("Quel est votre objectif principal ?", "What's your main goal?")}
-              subtitle={t("Cela détermine le type de recommandations prioritaires.", "This determines the type of priority recommendations.")}
-            />
-            <div className="grid gap-2 sm:grid-cols-2">
-              {([
-                { value: "reduce-costs" as MainGoal, emoji: "💰", label: t("Réduire les coûts", "Reduce costs"), desc: t("Payer moins pour mes outils", "Pay less for my tools") },
-                { value: "save-time" as MainGoal, emoji: "⏱️", label: t("Gagner du temps", "Save time"), desc: t("Automatiser et simplifier", "Automate and simplify") },
-                { value: "simplify" as MainGoal, emoji: "🧹", label: t("Simplifier la stack", "Simplify the stack"), desc: t("Moins d'outils, plus d'efficacité", "Fewer tools, more efficiency") },
-                { value: "find-better" as MainGoal, emoji: "🔍", label: t("Trouver de meilleurs outils", "Find better tools"), desc: t("Découvrir des alternatives", "Discover alternatives") },
-              ]).map((opt) => (
-                <SelectionCard key={opt.value} selected={form.mainGoal === opt.value}
-                  onClick={() => setForm({ ...form, mainGoal: opt.value })} {...opt} />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ═══ STEP 5 — Tools ═══ */}
-        {step === 5 && (
           <div className="animate-fade-in">
             <SectionHead
               title={t("Quels outils utilisez-vous ?", "Which tools do you use?")}
@@ -677,8 +650,8 @@ const SelectorPage = () => {
           </div>
         )}
 
-        {/* ═══ STEP 6 — Email ═══ */}
-        {step === 6 && (
+        {/* ═══ STEP 5 — Email (was step 6) ═══ */}
+        {step === 5 && (
           <div className="animate-fade-in">
             <SectionHead
               title={t("Recevez votre diagnostic", "Get your diagnostic")}
@@ -742,11 +715,11 @@ const SelectorPage = () => {
 
         {/* ═══ Navigation Footer ═══ */}
         <div className={`mt-8
-          ${step === 5
+          ${step === 4
             ? "sticky bottom-0 -mx-4 md:-mx-6 px-4 md:px-6 pb-4 pt-3 bg-background/95 backdrop-blur-md border-t border-border shadow-[0_-2px_12px_-4px_hsl(var(--foreground)/0.06)]"
             : ""
           }`}>
-          {step === 5 && (
+          {step === 4 && (
             <div className="flex items-center justify-between mb-3">
               <span className="text-[12px] text-muted-foreground">
                 <span className="font-mono font-medium text-foreground">{form.currentTools.length}</span> {t("outils sélectionnés", "tools selected")}
