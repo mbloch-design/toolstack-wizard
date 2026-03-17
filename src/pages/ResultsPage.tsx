@@ -543,8 +543,29 @@ function FicheCard({ fiche, Icon, badgeStyle, prefix, t, lang }: {
   const gain = fiche.gainMonthly ?? fiche.gain;
   const isUpgrade = gain < 0;
 
+  // Section 8: Contextual badge message
+  const contextBadge = (() => {
+    const po = fiche.tool.prescription_output;
+    if (!po) return null;
+    if (fiche.tool.substitution_cluster_v2?.startsWith('ai-') && gain > 0)
+      return t("Tu paies deux fois pour le même usage IA", "You're paying twice for the same AI use case");
+    if (po.price_alt_eur === 0)
+      return t("Il existe une alternative gratuite qui fait le même boulot", "There's a free alternative that does the same job");
+    if (gain < 0)
+      return t("Pas une économie — un meilleur outil pour ce que tu fais", "Not a saving — a better tool for what you do");
+    if (gain >= 8)
+      return t("Économie directe et sans friction", "Direct and frictionless saving");
+    return t("Un remplacement qui tient la route", "A solid replacement");
+  })();
+
   return (
     <div className={`rounded-xl border bg-card overflow-hidden transition-all hover:shadow-sm ${isFerme ? "border-primary/30" : "border-border"}`}>
+      {/* Contextual badge (Section 8) */}
+      {contextBadge && (
+        <div className={`px-4 py-1.5 text-[11px] font-medium ${isFerme ? "bg-primary/5 text-primary" : "bg-secondary/50 text-muted-foreground"}`}>
+          {contextBadge}
+        </div>
+      )}
       {/* Header — always visible */}
       <button onClick={() => setOpen(!open)} className="flex w-full items-center gap-3 p-4 text-left">
         <Logo tool={fiche.tool} size={32} />
@@ -552,7 +573,6 @@ function FicheCard({ fiche, Icon, badgeStyle, prefix, t, lang }: {
           <div className="flex items-center gap-2 flex-wrap">
             <h3 className="text-sm font-semibold">{fiche.tool.name}</h3>
             {fiche.badge && <span className={`rounded-md border px-1.5 py-0.5 text-[11px] font-semibold ${badgeStyle}`}>{fiche.badge}</span>}
-            {/* V10 contextual badges (Section 8) */}
             {isFerme && (
               <span className="rounded-md bg-primary/10 border border-primary/20 px-1.5 py-0.5 text-[10px] font-semibold text-primary flex items-center gap-0.5">
                 <BadgeCheck className="h-2.5 w-2.5" /> {t("Vérifié", "Verified")}
