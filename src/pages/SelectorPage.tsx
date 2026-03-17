@@ -43,6 +43,136 @@ const TOOL_LAYERS: { type: ToolType; emoji: string; label: string; labelEn: stri
   { type: "satellite", emoji: "🛰️", label: "Satellites", labelEn: "Satellites", desc: "Outils complémentaires et utilitaires", descEn: "Complementary tools and utilities" },
 ];
 
+/* ─── Section 3: Persona-based activity groups for Temps 1 ─── */
+const PERSONA_MAP: Record<string, string> = {
+  creatif: "sofia", tech: "theo", conseil: "marc", content: "alix", business: "claire",
+};
+
+interface ActivityGroup { title: string; titleEn: string; functional_needs: string[] }
+
+const PERSONA_ACTIVITIES: Record<string, ActivityGroup[]> = {
+  sofia: [
+    { title: "Pour créer et produire", titleEn: "To create and produce", functional_needs: ["design-visuel", "montage-video", "motion-design", "retouche-photo", "illustration-vectorielle", "prototypage-interactif"] },
+    { title: "Pour livrer à tes clients", titleEn: "To deliver to clients", functional_needs: ["livraison-client", "review-client-video", "galerie-client", "partage"] },
+    { title: "Pour gérer tes missions", titleEn: "To manage missions", functional_needs: ["crm-leger", "suivi-temps", "gestion-missions", "documentation"] },
+    { title: "Pour facturer et te faire payer", titleEn: "To invoice and get paid", functional_needs: ["facturation", "paiements", "signature-contrats", "comptabilite"] },
+    { title: "Pour te coordonner", titleEn: "To coordinate", functional_needs: ["prise-de-rdv", "video-async", "scheduling"] },
+  ],
+  marc: [
+    { title: "Pour gérer ton équipe", titleEn: "To manage your team", functional_needs: ["gestion-equipe", "communication-interne", "iam", "gestion-licences"] },
+    { title: "Pour sécuriser les accès", titleEn: "To secure access", functional_needs: ["securite", "iam", "gestion-licences"] },
+    { title: "Pour suivre les projets", titleEn: "To track projects", functional_needs: ["gestion-projet", "bug-tracking", "documentation", "roadmap-produit"] },
+    { title: "Pour les dépenses et licences", titleEn: "For expenses and licenses", functional_needs: ["consolidation-depenses", "gestion-notes-frais", "renouvellements-licences", "reporting-financier"] },
+    { title: "Pour recruter et onboarder", titleEn: "To recruit and onboard", functional_needs: ["ats", "sourcing", "onboarding", "sirh"] },
+  ],
+  theo: [
+    { title: "Pour builder ton produit", titleEn: "To build your product", functional_needs: ["versioning-code", "deploiement", "base-de-donnees", "coding", "no-code-ia", "app-builder"] },
+    { title: "Pour comprendre tes users", titleEn: "To understand your users", functional_needs: ["analytics-produit", "kpi-tracking", "dashboards", "feedback-utilisateurs"] },
+    { title: "Pour l'acquisition et la conversion", titleEn: "For acquisition and conversion", functional_needs: ["email-marketing", "funnel-acquisition", "crm", "billing"] },
+    { title: "Pour le support et l'onboarding", titleEn: "For support and onboarding", functional_needs: ["support-client", "onboarding-users", "chatbot"] },
+    { title: "Pour les ops et l'automatisation", titleEn: "For ops and automation", functional_needs: ["automatisation", "workflows", "gestion-projet", "documentation"] },
+  ],
+  alix: [
+    { title: "Tes outils IA", titleEn: "Your AI tools", functional_needs: ["generation-image", "generation-video", "generation-audio", "generation-texte", "code", "transcription"] },
+    { title: "Pour builder et automatiser", titleEn: "To build and automate", functional_needs: ["no-code-ia", "automatisation", "integration-llm", "orchestration-agents", "app-builder"] },
+    { title: "Pour créer du contenu", titleEn: "To create content", functional_needs: ["montage-video-court", "creation-visuels", "redaction", "sous-titrage", "repurposing"] },
+    { title: "Pour gérer ton audience", titleEn: "To manage your audience", functional_needs: ["editeur-email", "liste-abonnes", "planification-posts", "monetisation-newsletter"] },
+    { title: "Pour distribuer", titleEn: "To distribute", functional_needs: ["hebergement-audio", "distribution-podcast", "seo-video", "analytics-contenu"] },
+  ],
+  claire: [
+    { title: "Pour les dépenses et la trésorerie", titleEn: "For expenses and cash flow", functional_needs: ["consolidation-depenses", "gestion-notes-frais", "renouvellements-licences", "paiements"] },
+    { title: "Pour facturer et encaisser", titleEn: "To invoice and collect", functional_needs: ["facturation", "tva", "comptabilite", "billing"] },
+    { title: "Pour la paie et les RH", titleEn: "For payroll and HR", functional_needs: ["paie", "sirh", "gestion-conges", "onboarding"] },
+    { title: "Pour le reporting et les prévisions", titleEn: "For reporting and forecasts", functional_needs: ["reporting-financier", "dashboards", "previsionnel", "audit"] },
+    { title: "Pour la conformité et la sécurité", titleEn: "For compliance and security", functional_needs: ["audit", "securite", "iam", "signature-contrats"] },
+  ],
+};
+
+const POPULAR_IDS = [
+  'notion', 'figma', 'canva', 'slack', 'calendly', 'loom', 'stripe',
+  'google-drive', 'dropbox', 'make', 'zapier', 'github', 'cursor',
+  'chatgpt', 'claude', 'midjourney', 'linear', 'asana', 'trello',
+  'mailchimp', 'beehiiv', 'substack', 'clickup', 'airtable',
+  'adobe-cc', 'davinci-resolve', 'grammarly', 'elevenlabs', 'runway',
+  'buffer', 'hootsuite', 'tubebody', 'descript', 'riverside',
+  'buzzsprout', 'todoist', 'indy', 'pennylane', 'qonto',
+  '1password', 'typeform', 'tally', 'webflow', 'bubble',
+  'posthog', 'amplitude', 'intercom', 'sentry', 'toggl',
+  'capcut', 'typefully', 'hotjar', 'frame-io', 'pixieset',
+  'capture-one', 'notion-ai', 'perplexity',
+];
+
+function getToolsForActivity(activityCovers: string[], persona: string, allTools: Tool[]): Tool[] {
+  return allTools
+    .filter(t => {
+      const matchesCovers = (t.functional_needs || []).some(n => activityCovers.includes(n));
+      const matchesPersona = (t.personas || []).includes(persona);
+      const isPopular = POPULAR_IDS.includes(t.id);
+      const notPlugin = t.tool_type !== 'plugin';
+      return matchesCovers && (matchesPersona || isPopular) && notPlugin;
+    })
+    .sort((a, b) => {
+      const pa = a.pricing_v5?.compare_price_monthly_eur || a.defaultMonthlyPrice || 0;
+      const pb = b.pricing_v5?.compare_price_monthly_eur || b.defaultMonthlyPrice || 0;
+      return pb - pa;
+    })
+    .slice(0, 6);
+}
+
+const PERSONA_VERTICALS: Record<string, string[]> = {
+  sofia: ['graphiste-da', 'motion-video', 'photographe', 'illustrateur'],
+  marc: ['manager-dsi', 'cto-lead-tech', 'rh-recruteur'],
+  theo: ['fondateur-saas', 'developpeur-solo', 'product-manager'],
+  alix: ['ai-builder', 'createur-contenu', 'newslettiste-auteur'],
+  claire: ['daf-finance', 'manager-dsi'],
+};
+
+const HOST_LABELS: Record<string, string> = {
+  'after-effects': 'Plugins After Effects',
+  'figma': 'Plugins Figma',
+  'photoshop': 'Plugins Photoshop / Lightroom',
+};
+
+const IMPORTANT_CLUSTERS: Record<string, string[]> = {
+  sofia: ['scheduling', 'cloud-storage', 'async-video-messaging', 'finance-ops'],
+  marc: ['team-chat', 'project-management-general', 'finance-ops', 'cloud-storage'],
+  theo: ['analytics', 'newsletter-platform', 'automation-orchestration', 'dev-issue-tracker'],
+  alix: ['ai-text-generalist', 'ai-image-generation', 'ai-video-generation', 'newsletter-platform'],
+  claire: ['finance-ops', 'project-management-general', 'cloud-storage'],
+};
+
+const CLUSTER_QUESTIONS: Record<string, Record<string, { fr: string; en: string }>> = {
+  sofia: {
+    'scheduling': { fr: 'Tu gères tes rendez-vous clients comment ?', en: 'How do you manage client meetings?' },
+    'cloud-storage': { fr: 'Et pour stocker tes gros fichiers ?', en: 'What about storing large files?' },
+    'finance-ops': { fr: 'Tu factures avec quoi ?', en: 'What do you use for invoicing?' },
+    'async-video-messaging': { fr: 'Tu envoies des vidéos async à tes clients ?', en: 'Do you send async videos to clients?' },
+  },
+  marc: {
+    'finance-ops': { fr: 'Pour les notes de frais et dépenses équipe ?', en: 'For expense reports and team spending?' },
+    'team-chat': { fr: 'Vous utilisez quoi pour communiquer en interne ?', en: 'What do you use for internal communication?' },
+    'project-management-general': { fr: 'Pour suivre les projets et la roadmap ?', en: 'For tracking projects and roadmap?' },
+    'cloud-storage': { fr: 'Et pour le partage de fichiers en interne ?', en: 'What about internal file sharing?' },
+  },
+  theo: {
+    'analytics': { fr: 'Tu mesures le comportement de tes users avec quoi ?', en: 'How do you track user behavior?' },
+    'newsletter-platform': { fr: 'Et pour ton acquisition email ?', en: 'What about email acquisition?' },
+    'automation-orchestration': { fr: 'Tu automatises certains workflows ?', en: 'Do you automate some workflows?' },
+    'dev-issue-tracker': { fr: 'Pour suivre les bugs et les issues ?', en: 'For tracking bugs and issues?' },
+  },
+  alix: {
+    'ai-text-generalist': { fr: 'Tu utilises un outil IA pour écrire ou raisonner ?', en: 'Do you use an AI tool for writing or reasoning?' },
+    'ai-image-generation': { fr: 'Et pour générer des images ?', en: 'What about image generation?' },
+    'ai-video-generation': { fr: 'Et pour la vidéo ?', en: 'What about video?' },
+    'newsletter-platform': { fr: "Tu as une newsletter ou une liste email ?", en: 'Do you have a newsletter or email list?' },
+  },
+  claire: {
+    'finance-ops': { fr: "Pour consolider les dépenses de l'équipe ?", en: 'To consolidate team expenses?' },
+    'project-management-general': { fr: 'Pour suivre les projets en cours ?', en: 'For tracking ongoing projects?' },
+    'cloud-storage': { fr: 'Et pour partager les documents internes ?', en: 'What about sharing internal documents?' },
+  },
+};
+
 const INITIAL_FORM: SelectorFormData = {
   family: null, verticals: [], persona: null, mainGoal: null,
   currentTools: [], aiUsageLevel: null, tjm: null, projectPhase: null,
