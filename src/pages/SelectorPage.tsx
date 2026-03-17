@@ -390,48 +390,49 @@ const SelectorPage = () => {
   }, 0);
   const selectedToolObjects = useMemo(() => tools.filter((t) => selectedIds.has(t.id)), [tools, selectedIds]);
 
-  const suggestedTools = useMemo(() => {
-    const userVerticalIds = form.verticals.map((v) => v.id);
-    if (userVerticalIds.length === 0) return [];
-    const userNeeds = new Set<string>();
-    for (const vId of userVerticalIds) {
-      const vertical = VERTICALS_MAP[vId];
-      if (vertical) vertical.functional_needs.forEach((n: string) => userNeeds.add(n));
-    }
-    return tools
-      .filter((t) => !selectedIds.has(t.id))
-      .map((t) => {
-        let score = 0;
-        if (t.verticals?.some((v: string) => userVerticalIds.includes(v))) score += 3;
-        score += (t.functional_needs || []).filter((n: string) => userNeeds.has(n)).length;
-        if (t.tool_type === "metier") score += 2;
-        if (t.tool_type === "ia") score += 1;
-        return { tool: t, score };
-      })
-      .filter((s) => s.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 12)
-      .map((s) => s.tool);
-  }, [tools, form.verticals, selectedIds]);
+  const persona = PERSONA_MAP[form.family || ""] || "sofia";
 
-  const toolsByLayer = useMemo(() => {
-    let pool = tools.filter((t) => !selectedIds.has(t.id));
-    if (toolSearch.trim()) pool = pool.filter((t) => t.name.toLowerCase().includes(toolSearch.toLowerCase().trim()));
-    const grouped: Record<ToolType, Tool[]> = { metier: [], plugin: [], ia: [], gestion: [], satellite: [] };
-    for (const t of pool) {
-      const type = (t.tool_type || "satellite") as ToolType;
-      if (grouped[type]) grouped[type].push(t); else grouped.satellite.push(t);
-    }
-    return grouped;
-  }, [tools, toolSearch, selectedIds]);
+  /* ── Temps 1: Activity-based tool groups ── */
+  const activityGroups = useMemo(() => {
+    const groups = PERSONA_ACTIVITIES[persona] || [];
+    return groups.map(g => ({
+      ...g,
+      tools: getToolsForActivity(g.functional_needs, persona, tools).filter(t => !selectedIds.has(t.id)),
+    })).filter(g => g.tools.length > 0);
+  }, [persona, tools, selectedIds]);
 
-  const [expandedLayers, setExpandedLayers] = useState<Set<ToolType>>(new Set());
-  const toggleLayer = (type: ToolType) => {
-    const n = new Set(expandedLayers);
-    if (n.has(type)) n.delete(type); else n.add(type);
-    setExpandedLayers(n);
-  };
-  const [activeView, setActiveView] = useState<"smart" | "layers">("smart");
+  /* ── Temps 2: Niche tools ── */
+  const nicheTools = useMemo(() => {
+    const verticals = PERSONA_VERTICALS[persona] || [];
+    const metier = tools.filter(t =>
+      (t.tool_type === 'metier' || t.tool_type === 'ia') &&
+      (t.verticals || []).some(v => verticals.includes(v)) &&
+      !selectedIds.has(t.id) &&
+      !POPULAR_IDS.includes(t.id)
+    );
+    const plugins = Object.keys(HOST_LABELS)
+      .filter(host => selectedToolObjects.some(t => t.id === 'adobe-cc' || t.id === `adobe-${host}` || t.id === host))
+      .map(host => ({
+        host,
+        label: HOST_LABELS[host],
+        tools: tools.filter(t => t.tool_type === 'plugin' && t.host_app === host && !selectedIds.has(t.id)),
+      }))
+      .filter(g => g.tools.length > 0);
+    return { metier, plugins };
+  }, [persona, tools, selectedIds, selectedToolObjects]);
+
+  /* ── Temps 3: Missing clusters ── */
+  const missingClusters = useMemo(() => {
+    const covered = new Set(selectedToolObjects.map(t => t.substitution_cluster_v2).filter(Boolean));
+    return (IMPORTANT_CLUSTERS[persona] || [])
+      .filter(cluster => !covered.has(cluster))
+      .map(cluster => ({
+        cluster,
+        question: CLUSTER_QUESTIONS[persona]?.[cluster] || { fr: 'Tu utilises quelque chose pour ça ?', en: 'Do you use something for this?' },
+        tools: tools.filter(t => t.substitution_cluster_v2 === cluster && !selectedIds.has(t.id)).slice(0, 5),
+      }))
+      .filter(g => g.tools.length > 0);
+  }, [persona, selectedToolObjects, tools, selectedIds]);
 
   const filteredTools = useMemo(() => {
     let filtered = tools.filter((t) => !selectedIds.has(t.id));
