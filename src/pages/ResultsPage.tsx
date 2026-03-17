@@ -236,6 +236,36 @@ const ResultsPage = () => {
                 <p className="text-xs text-muted-foreground">{t("Résumé de notre diagnostic", "Summary of our diagnostic")}</p>
               </div>
             </div>
+
+            {/* Profile influence text (Section 7 delta) */}
+            <div className="space-y-2 mb-4 rounded-xl bg-secondary/30 border border-border p-4">
+              {(() => {
+                const lines: string[] = [];
+                if (form.tjm === 'gt600' || form.tjm === '400-600')
+                  lines.push(t("⏱️ Avec ton TJM, ton temps vaut plus que tes abonnements. On a mis en avant ce qui te fait gagner des heures, pas juste quelques euros.", "⏱️ With your daily rate, your time is worth more than your subscriptions. We prioritized time savings over small cost cuts."));
+                else if (form.tjm === 'lt200' || form.tjm === '200-400')
+                  lines.push(t("💸 On a cherché les économies les plus concrètes en premier — chaque ligne de ta stack doit vraiment gagner sa place.", "💸 We looked for the most concrete savings first — every line in your stack must earn its place."));
+                else
+                  lines.push(t("📋 Sans TJM, on t'a classé les recommandations par économie directe — tu ajustes selon ta réalité.", "📋 Without a daily rate, we ranked recommendations by direct savings — adjust to your reality."));
+
+                if (form.projectPhase === 'lancement')
+                  lines.push(t("🌱 Tu construis encore — on a cherché à alléger, pas à optimiser. Les alternatives gratuites passent avant tout.", "🌱 You're still building — we focused on reducing costs, not optimizing. Free alternatives come first."));
+                else if (form.projectPhase === 'croissance')
+                  lines.push(t("📈 En croissance, les doublons et les outils fantômes coûtent cher en attention autant qu'en argent. On les a traqués.", "📈 While growing, duplicates and ghost tools cost attention as much as money. We tracked them down."));
+                else
+                  lines.push(t("⚡ Ta stack est installée. Avant de tout changer, on t'a cherché des downgrades de plan indolores.", "⚡ Your stack is set. Before changing everything, we looked for painless plan downgrades."));
+
+                if (form.techMaturity === 'zero-config')
+                  lines.push(t("🎯 On a écarté les alternatives qui demandent une config technique — les recommandations doivent marcher sans friction.", "🎯 We excluded alternatives requiring technical setup — recommendations must work friction-free."));
+                else if (form.techMaturity === 'expert')
+                  lines.push(t("🔧 Profil technique : on t'a tout montré, y compris les options qui demandent un peu de mise en place.", "🔧 Technical profile: we showed everything, including options that require some setup."));
+
+                return lines.map((line, i) => (
+                  <p key={i} className="text-[13px] text-foreground/80 leading-relaxed">{line}</p>
+                ));
+              })()}
+            </div>
+
             <div className="grid gap-3 sm:grid-cols-3">
               {/* Ferme prescriptions */}
               <div className="flex items-center gap-3 rounded-xl bg-cancel/5 border border-cancel/10 p-3">
@@ -513,8 +543,29 @@ function FicheCard({ fiche, Icon, badgeStyle, prefix, t, lang }: {
   const gain = fiche.gainMonthly ?? fiche.gain;
   const isUpgrade = gain < 0;
 
+  // Section 8: Contextual badge message
+  const contextBadge = (() => {
+    const po = fiche.tool.prescription_output;
+    if (!po) return null;
+    if (fiche.tool.substitution_cluster_v2?.startsWith('ai-') && gain > 0)
+      return t("Tu paies deux fois pour le même usage IA", "You're paying twice for the same AI use case");
+    if (po.price_alt_eur === 0)
+      return t("Il existe une alternative gratuite qui fait le même boulot", "There's a free alternative that does the same job");
+    if (gain < 0)
+      return t("Pas une économie — un meilleur outil pour ce que tu fais", "Not a saving — a better tool for what you do");
+    if (gain >= 8)
+      return t("Économie directe et sans friction", "Direct and frictionless saving");
+    return t("Un remplacement qui tient la route", "A solid replacement");
+  })();
+
   return (
     <div className={`rounded-xl border bg-card overflow-hidden transition-all hover:shadow-sm ${isFerme ? "border-primary/30" : "border-border"}`}>
+      {/* Contextual badge (Section 8) */}
+      {contextBadge && (
+        <div className={`px-4 py-1.5 text-[11px] font-medium ${isFerme ? "bg-primary/5 text-primary" : "bg-secondary/50 text-muted-foreground"}`}>
+          {contextBadge}
+        </div>
+      )}
       {/* Header — always visible */}
       <button onClick={() => setOpen(!open)} className="flex w-full items-center gap-3 p-4 text-left">
         <Logo tool={fiche.tool} size={32} />
@@ -522,7 +573,6 @@ function FicheCard({ fiche, Icon, badgeStyle, prefix, t, lang }: {
           <div className="flex items-center gap-2 flex-wrap">
             <h3 className="text-sm font-semibold">{fiche.tool.name}</h3>
             {fiche.badge && <span className={`rounded-md border px-1.5 py-0.5 text-[11px] font-semibold ${badgeStyle}`}>{fiche.badge}</span>}
-            {/* V10 contextual badges (Section 8) */}
             {isFerme && (
               <span className="rounded-md bg-primary/10 border border-primary/20 px-1.5 py-0.5 text-[10px] font-semibold text-primary flex items-center gap-0.5">
                 <BadgeCheck className="h-2.5 w-2.5" /> {t("Vérifié", "Verified")}

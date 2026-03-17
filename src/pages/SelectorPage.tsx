@@ -43,6 +43,136 @@ const TOOL_LAYERS: { type: ToolType; emoji: string; label: string; labelEn: stri
   { type: "satellite", emoji: "🛰️", label: "Satellites", labelEn: "Satellites", desc: "Outils complémentaires et utilitaires", descEn: "Complementary tools and utilities" },
 ];
 
+/* ─── Section 3: Persona-based activity groups for Temps 1 ─── */
+const PERSONA_MAP: Record<string, string> = {
+  creatif: "sofia", tech: "theo", conseil: "marc", content: "alix", business: "claire",
+};
+
+interface ActivityGroup { title: string; titleEn: string; functional_needs: string[] }
+
+const PERSONA_ACTIVITIES: Record<string, ActivityGroup[]> = {
+  sofia: [
+    { title: "Pour créer et produire", titleEn: "To create and produce", functional_needs: ["design-visuel", "montage-video", "motion-design", "retouche-photo", "illustration-vectorielle", "prototypage-interactif"] },
+    { title: "Pour livrer à tes clients", titleEn: "To deliver to clients", functional_needs: ["livraison-client", "review-client-video", "galerie-client", "partage"] },
+    { title: "Pour gérer tes missions", titleEn: "To manage missions", functional_needs: ["crm-leger", "suivi-temps", "gestion-missions", "documentation"] },
+    { title: "Pour facturer et te faire payer", titleEn: "To invoice and get paid", functional_needs: ["facturation", "paiements", "signature-contrats", "comptabilite"] },
+    { title: "Pour te coordonner", titleEn: "To coordinate", functional_needs: ["prise-de-rdv", "video-async", "scheduling"] },
+  ],
+  marc: [
+    { title: "Pour gérer ton équipe", titleEn: "To manage your team", functional_needs: ["gestion-equipe", "communication-interne", "iam", "gestion-licences"] },
+    { title: "Pour sécuriser les accès", titleEn: "To secure access", functional_needs: ["securite", "iam", "gestion-licences"] },
+    { title: "Pour suivre les projets", titleEn: "To track projects", functional_needs: ["gestion-projet", "bug-tracking", "documentation", "roadmap-produit"] },
+    { title: "Pour les dépenses et licences", titleEn: "For expenses and licenses", functional_needs: ["consolidation-depenses", "gestion-notes-frais", "renouvellements-licences", "reporting-financier"] },
+    { title: "Pour recruter et onboarder", titleEn: "To recruit and onboard", functional_needs: ["ats", "sourcing", "onboarding", "sirh"] },
+  ],
+  theo: [
+    { title: "Pour builder ton produit", titleEn: "To build your product", functional_needs: ["versioning-code", "deploiement", "base-de-donnees", "coding", "no-code-ia", "app-builder"] },
+    { title: "Pour comprendre tes users", titleEn: "To understand your users", functional_needs: ["analytics-produit", "kpi-tracking", "dashboards", "feedback-utilisateurs"] },
+    { title: "Pour l'acquisition et la conversion", titleEn: "For acquisition and conversion", functional_needs: ["email-marketing", "funnel-acquisition", "crm", "billing"] },
+    { title: "Pour le support et l'onboarding", titleEn: "For support and onboarding", functional_needs: ["support-client", "onboarding-users", "chatbot"] },
+    { title: "Pour les ops et l'automatisation", titleEn: "For ops and automation", functional_needs: ["automatisation", "workflows", "gestion-projet", "documentation"] },
+  ],
+  alix: [
+    { title: "Tes outils IA", titleEn: "Your AI tools", functional_needs: ["generation-image", "generation-video", "generation-audio", "generation-texte", "code", "transcription"] },
+    { title: "Pour builder et automatiser", titleEn: "To build and automate", functional_needs: ["no-code-ia", "automatisation", "integration-llm", "orchestration-agents", "app-builder"] },
+    { title: "Pour créer du contenu", titleEn: "To create content", functional_needs: ["montage-video-court", "creation-visuels", "redaction", "sous-titrage", "repurposing"] },
+    { title: "Pour gérer ton audience", titleEn: "To manage your audience", functional_needs: ["editeur-email", "liste-abonnes", "planification-posts", "monetisation-newsletter"] },
+    { title: "Pour distribuer", titleEn: "To distribute", functional_needs: ["hebergement-audio", "distribution-podcast", "seo-video", "analytics-contenu"] },
+  ],
+  claire: [
+    { title: "Pour les dépenses et la trésorerie", titleEn: "For expenses and cash flow", functional_needs: ["consolidation-depenses", "gestion-notes-frais", "renouvellements-licences", "paiements"] },
+    { title: "Pour facturer et encaisser", titleEn: "To invoice and collect", functional_needs: ["facturation", "tva", "comptabilite", "billing"] },
+    { title: "Pour la paie et les RH", titleEn: "For payroll and HR", functional_needs: ["paie", "sirh", "gestion-conges", "onboarding"] },
+    { title: "Pour le reporting et les prévisions", titleEn: "For reporting and forecasts", functional_needs: ["reporting-financier", "dashboards", "previsionnel", "audit"] },
+    { title: "Pour la conformité et la sécurité", titleEn: "For compliance and security", functional_needs: ["audit", "securite", "iam", "signature-contrats"] },
+  ],
+};
+
+const POPULAR_IDS = [
+  'notion', 'figma', 'canva', 'slack', 'calendly', 'loom', 'stripe',
+  'google-drive', 'dropbox', 'make', 'zapier', 'github', 'cursor',
+  'chatgpt', 'claude', 'midjourney', 'linear', 'asana', 'trello',
+  'mailchimp', 'beehiiv', 'substack', 'clickup', 'airtable',
+  'adobe-cc', 'davinci-resolve', 'grammarly', 'elevenlabs', 'runway',
+  'buffer', 'hootsuite', 'tubebody', 'descript', 'riverside',
+  'buzzsprout', 'todoist', 'indy', 'pennylane', 'qonto',
+  '1password', 'typeform', 'tally', 'webflow', 'bubble',
+  'posthog', 'amplitude', 'intercom', 'sentry', 'toggl',
+  'capcut', 'typefully', 'hotjar', 'frame-io', 'pixieset',
+  'capture-one', 'notion-ai', 'perplexity',
+];
+
+function getToolsForActivity(activityCovers: string[], persona: string, allTools: Tool[]): Tool[] {
+  return allTools
+    .filter(t => {
+      const matchesCovers = (t.functional_needs || []).some(n => activityCovers.includes(n));
+      const matchesPersona = (t.personas || []).includes(persona);
+      const isPopular = POPULAR_IDS.includes(t.id);
+      const notPlugin = t.tool_type !== 'plugin';
+      return matchesCovers && (matchesPersona || isPopular) && notPlugin;
+    })
+    .sort((a, b) => {
+      const pa = a.pricing_v5?.compare_price_monthly_eur || a.defaultMonthlyPrice || 0;
+      const pb = b.pricing_v5?.compare_price_monthly_eur || b.defaultMonthlyPrice || 0;
+      return pb - pa;
+    })
+    .slice(0, 6);
+}
+
+const PERSONA_VERTICALS: Record<string, string[]> = {
+  sofia: ['graphiste-da', 'motion-video', 'photographe', 'illustrateur'],
+  marc: ['manager-dsi', 'cto-lead-tech', 'rh-recruteur'],
+  theo: ['fondateur-saas', 'developpeur-solo', 'product-manager'],
+  alix: ['ai-builder', 'createur-contenu', 'newslettiste-auteur'],
+  claire: ['daf-finance', 'manager-dsi'],
+};
+
+const HOST_LABELS: Record<string, string> = {
+  'after-effects': 'Plugins After Effects',
+  'figma': 'Plugins Figma',
+  'photoshop': 'Plugins Photoshop / Lightroom',
+};
+
+const IMPORTANT_CLUSTERS: Record<string, string[]> = {
+  sofia: ['scheduling', 'cloud-storage', 'async-video-messaging', 'finance-ops'],
+  marc: ['team-chat', 'project-management-general', 'finance-ops', 'cloud-storage'],
+  theo: ['analytics', 'newsletter-platform', 'automation-orchestration', 'dev-issue-tracker'],
+  alix: ['ai-text-generalist', 'ai-image-generation', 'ai-video-generation', 'newsletter-platform'],
+  claire: ['finance-ops', 'project-management-general', 'cloud-storage'],
+};
+
+const CLUSTER_QUESTIONS: Record<string, Record<string, { fr: string; en: string }>> = {
+  sofia: {
+    'scheduling': { fr: 'Tu gères tes rendez-vous clients comment ?', en: 'How do you manage client meetings?' },
+    'cloud-storage': { fr: 'Et pour stocker tes gros fichiers ?', en: 'What about storing large files?' },
+    'finance-ops': { fr: 'Tu factures avec quoi ?', en: 'What do you use for invoicing?' },
+    'async-video-messaging': { fr: 'Tu envoies des vidéos async à tes clients ?', en: 'Do you send async videos to clients?' },
+  },
+  marc: {
+    'finance-ops': { fr: 'Pour les notes de frais et dépenses équipe ?', en: 'For expense reports and team spending?' },
+    'team-chat': { fr: 'Vous utilisez quoi pour communiquer en interne ?', en: 'What do you use for internal communication?' },
+    'project-management-general': { fr: 'Pour suivre les projets et la roadmap ?', en: 'For tracking projects and roadmap?' },
+    'cloud-storage': { fr: 'Et pour le partage de fichiers en interne ?', en: 'What about internal file sharing?' },
+  },
+  theo: {
+    'analytics': { fr: 'Tu mesures le comportement de tes users avec quoi ?', en: 'How do you track user behavior?' },
+    'newsletter-platform': { fr: 'Et pour ton acquisition email ?', en: 'What about email acquisition?' },
+    'automation-orchestration': { fr: 'Tu automatises certains workflows ?', en: 'Do you automate some workflows?' },
+    'dev-issue-tracker': { fr: 'Pour suivre les bugs et les issues ?', en: 'For tracking bugs and issues?' },
+  },
+  alix: {
+    'ai-text-generalist': { fr: 'Tu utilises un outil IA pour écrire ou raisonner ?', en: 'Do you use an AI tool for writing or reasoning?' },
+    'ai-image-generation': { fr: 'Et pour générer des images ?', en: 'What about image generation?' },
+    'ai-video-generation': { fr: 'Et pour la vidéo ?', en: 'What about video?' },
+    'newsletter-platform': { fr: "Tu as une newsletter ou une liste email ?", en: 'Do you have a newsletter or email list?' },
+  },
+  claire: {
+    'finance-ops': { fr: "Pour consolider les dépenses de l'équipe ?", en: 'To consolidate team expenses?' },
+    'project-management-general': { fr: 'Pour suivre les projets en cours ?', en: 'For tracking ongoing projects?' },
+    'cloud-storage': { fr: 'Et pour partager les documents internes ?', en: 'What about sharing internal documents?' },
+  },
+};
+
 const INITIAL_FORM: SelectorFormData = {
   family: null, verticals: [], persona: null, mainGoal: null,
   currentTools: [], aiUsageLevel: null, tjm: null, projectPhase: null,
@@ -167,6 +297,7 @@ const SelectorPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [toolSearch, setToolSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [toolSubStep, setToolSubStep] = useState<1 | 2 | 3>(1);
 
   const stepMeta = lang === "en" ? STEP_META_EN : STEP_META_FR;
 
@@ -259,48 +390,49 @@ const SelectorPage = () => {
   }, 0);
   const selectedToolObjects = useMemo(() => tools.filter((t) => selectedIds.has(t.id)), [tools, selectedIds]);
 
-  const suggestedTools = useMemo(() => {
-    const userVerticalIds = form.verticals.map((v) => v.id);
-    if (userVerticalIds.length === 0) return [];
-    const userNeeds = new Set<string>();
-    for (const vId of userVerticalIds) {
-      const vertical = VERTICALS_MAP[vId];
-      if (vertical) vertical.functional_needs.forEach((n: string) => userNeeds.add(n));
-    }
-    return tools
-      .filter((t) => !selectedIds.has(t.id))
-      .map((t) => {
-        let score = 0;
-        if (t.verticals?.some((v: string) => userVerticalIds.includes(v))) score += 3;
-        score += (t.functional_needs || []).filter((n: string) => userNeeds.has(n)).length;
-        if (t.tool_type === "metier") score += 2;
-        if (t.tool_type === "ia") score += 1;
-        return { tool: t, score };
-      })
-      .filter((s) => s.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 12)
-      .map((s) => s.tool);
-  }, [tools, form.verticals, selectedIds]);
+  const persona = PERSONA_MAP[form.family || ""] || "sofia";
 
-  const toolsByLayer = useMemo(() => {
-    let pool = tools.filter((t) => !selectedIds.has(t.id));
-    if (toolSearch.trim()) pool = pool.filter((t) => t.name.toLowerCase().includes(toolSearch.toLowerCase().trim()));
-    const grouped: Record<ToolType, Tool[]> = { metier: [], plugin: [], ia: [], gestion: [], satellite: [] };
-    for (const t of pool) {
-      const type = (t.tool_type || "satellite") as ToolType;
-      if (grouped[type]) grouped[type].push(t); else grouped.satellite.push(t);
-    }
-    return grouped;
-  }, [tools, toolSearch, selectedIds]);
+  /* ── Temps 1: Activity-based tool groups ── */
+  const activityGroups = useMemo(() => {
+    const groups = PERSONA_ACTIVITIES[persona] || [];
+    return groups.map(g => ({
+      ...g,
+      tools: getToolsForActivity(g.functional_needs, persona, tools).filter(t => !selectedIds.has(t.id)),
+    })).filter(g => g.tools.length > 0);
+  }, [persona, tools, selectedIds]);
 
-  const [expandedLayers, setExpandedLayers] = useState<Set<ToolType>>(new Set());
-  const toggleLayer = (type: ToolType) => {
-    const n = new Set(expandedLayers);
-    if (n.has(type)) n.delete(type); else n.add(type);
-    setExpandedLayers(n);
-  };
-  const [activeView, setActiveView] = useState<"smart" | "layers">("smart");
+  /* ── Temps 2: Niche tools ── */
+  const nicheTools = useMemo(() => {
+    const verticals = PERSONA_VERTICALS[persona] || [];
+    const metier = tools.filter(t =>
+      (t.tool_type === 'metier' || t.tool_type === 'ia') &&
+      (t.verticals || []).some(v => verticals.includes(v)) &&
+      !selectedIds.has(t.id) &&
+      !POPULAR_IDS.includes(t.id)
+    );
+    const plugins = Object.keys(HOST_LABELS)
+      .filter(host => selectedToolObjects.some(t => t.id === 'adobe-cc' || t.id === `adobe-${host}` || t.id === host))
+      .map(host => ({
+        host,
+        label: HOST_LABELS[host],
+        tools: tools.filter(t => t.tool_type === 'plugin' && t.host_app === host && !selectedIds.has(t.id)),
+      }))
+      .filter(g => g.tools.length > 0);
+    return { metier, plugins };
+  }, [persona, tools, selectedIds, selectedToolObjects]);
+
+  /* ── Temps 3: Missing clusters ── */
+  const missingClusters = useMemo(() => {
+    const covered = new Set(selectedToolObjects.map(t => t.substitution_cluster_v2).filter(Boolean));
+    return (IMPORTANT_CLUSTERS[persona] || [])
+      .filter(cluster => !covered.has(cluster))
+      .map(cluster => ({
+        cluster,
+        question: CLUSTER_QUESTIONS[persona]?.[cluster] || { fr: 'Tu utilises quelque chose pour ça ?', en: 'Do you use something for this?' },
+        tools: tools.filter(t => t.substitution_cluster_v2 === cluster && !selectedIds.has(t.id)).slice(0, 5),
+      }))
+      .filter(g => g.tools.length > 0);
+  }, [persona, selectedToolObjects, tools, selectedIds]);
 
   const filteredTools = useMemo(() => {
     let filtered = tools.filter((t) => !selectedIds.has(t.id));
@@ -491,30 +623,27 @@ const SelectorPage = () => {
           </div>
         )}
 
-        {/* ═══ STEP 4 — Tools (was step 5) ═══ */}
+        {/* ═══ STEP 4 — Tools in 3 Temps ═══ */}
         {step === 4 && (
           <div className="animate-fade-in">
-            <SectionHead
-              title={t("Quels outils utilisez-vous ?", "Which tools do you use?")}
-              subtitle={t("Sélectionnez les outils que vous payez actuellement. Cette étape est optionnelle.", "Select the tools you currently pay for. This step is optional.")}
-            />
-
-            {/* Search */}
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
-              <input type="text" value={toolSearch} onChange={(e) => setToolSearch(e.target.value)}
-                placeholder={t("Rechercher un outil…", "Search for a tool…")}
-                className="w-full rounded-lg border border-input bg-card py-2.5 pl-9 pr-9 text-sm outline-none placeholder:text-muted-foreground/50 focus-visible:ring-2 focus-visible:ring-ring transition-shadow" />
-              {toolSearch && (
-                <button onClick={() => setToolSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
-                  <X className="h-3.5 w-3.5" />
+            {/* Sub-step tabs */}
+            <div className="flex items-center gap-1 mb-6 rounded-lg border border-border bg-secondary/30 p-0.5">
+              {[
+                { n: 1 as const, label: t("Quotidien", "Daily"), labelEn: "Daily" },
+                { n: 2 as const, label: t("Fond de stack", "Deep stack"), labelEn: "Deep stack" },
+                { n: 3 as const, label: t("Compléter", "Complete"), labelEn: "Complete" },
+              ].map((s) => (
+                <button key={s.n} onClick={() => setToolSubStep(s.n)}
+                  className={`flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all
+                    ${toolSubStep === s.n ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+                  {s.n}. {s.label}
                 </button>
-              )}
+              ))}
             </div>
 
-            {/* Selected stack — horizontal chips */}
+            {/* Selected stack — always visible */}
             {selectedToolObjects.length > 0 && (
-              <div className="mt-4 rounded-lg border border-primary/15 bg-accent/30 p-3">
+              <div className="mb-4 rounded-lg border border-primary/15 bg-accent/30 p-3">
                 <div className="flex items-center justify-between mb-2.5">
                   <div className="flex items-center gap-1.5">
                     <Package className="h-3.5 w-3.5 text-primary" />
@@ -539,112 +668,160 @@ const SelectorPage = () => {
               </div>
             )}
 
-            {/* View toggle */}
-            {!toolSearch.trim() && (
-              <div className="mt-4 flex rounded-lg border border-border bg-secondary/30 p-0.5">
-                <button onClick={() => setActiveView("smart")}
-                  className={`flex-1 flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-all
-                    ${activeView === "smart" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
-                  <Sparkles className="h-3 w-3" />{t("Pour vous", "For you")}
-                </button>
-                <button onClick={() => setActiveView("layers")}
-                  className={`flex-1 flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-all
-                    ${activeView === "layers" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
-                  {t("Par type", "By type")}
-                </button>
-              </div>
-            )}
-
-            {/* Search results */}
-            {toolSearch.trim() && (
-              <div className="mt-3 rounded-lg border border-border bg-card overflow-hidden">
-                <div className="max-h-[45vh] overflow-y-auto divide-y divide-border/40">
-                  {filteredTools.length === 0 && (
-                    <div className="py-10 text-center text-sm text-muted-foreground">{t("Aucun outil trouvé", "No tool found")}</div>
-                  )}
-                  {filteredTools.slice(0, 50).map((tool) => (
-                    <ToolRow key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} lang={lang} />
-                  ))}
-                </div>
-                {filteredTools.length > 50 && (
-                  <div className="border-t border-border px-4 py-2 text-center text-[11px] text-muted-foreground">
-                    {t("Affinez votre recherche pour voir plus de résultats", "Refine your search to see more results")}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Smart view */}
-            {!toolSearch.trim() && activeView === "smart" && (
-              <div className="mt-4 space-y-5">
-                {suggestedTools.length > 0 && (
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Zap className="h-3.5 w-3.5 text-primary" />
-                      <p className="text-[11px] font-semibold uppercase tracking-wider text-primary">
-                        {t("Recommandés pour votre profil", "Recommended for your profile")}
-                      </p>
-                    </div>
-                    <div className="rounded-lg border border-primary/10 bg-card overflow-hidden divide-y divide-border/30">
-                      {suggestedTools.map((tool) => (
+            {/* ── TEMPS 1: Outils du quotidien par activité ── */}
+            {toolSubStep === 1 && (
+              <div className="space-y-5">
+                <SectionHead
+                  title={t("Vos outils du quotidien", "Your daily tools")}
+                  subtitle={t("On vous montre les outils classiques de votre activité — cochez ceux que vous utilisez.", "We show you typical tools for your activity — check the ones you use.")}
+                />
+                {activityGroups.map((group) => (
+                  <div key={group.title}>
+                    <p className="text-[12px] font-semibold text-muted-foreground mb-2">{lang === "en" ? group.titleEn : group.title}</p>
+                    <div className="rounded-lg border border-border bg-card overflow-hidden divide-y divide-border/30">
+                      {group.tools.map((tool) => (
                         <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
                       ))}
                     </div>
                   </div>
+                ))}
+                {activityGroups.length === 0 && (
+                  <p className="text-sm text-muted-foreground text-center py-8">{t("Aucun outil suggéré pour ce profil. Passez à l'étape suivante.", "No tools suggested for this profile. Move to the next step.")}</p>
                 )}
-                <div>
-                  <p className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-2">
-                    {t("Tous les outils", "All tools")} <span className="font-mono">({tools.filter((t) => !selectedIds.has(t.id)).length})</span>
-                  </p>
-                  <div className="rounded-lg border border-border bg-card overflow-hidden">
-                    <div className="max-h-[32vh] overflow-y-auto divide-y divide-border/30">
-                      {tools
-                        .filter((t) => !selectedIds.has(t.id) && !suggestedTools.some((s) => s.id === t.id))
-                        .sort((a, b) => a.name.localeCompare(b.name))
-                        .map((tool) => (
-                          <ToolRow key={tool.id} tool={tool} selected={false} onToggle={() => toggleTool(tool.id)} lang={lang} />
-                        ))}
-                    </div>
-                  </div>
+                <div className="flex justify-end">
+                  <button onClick={() => setToolSubStep(2)} className="flex items-center gap-1.5 text-[13px] font-medium text-primary hover:underline">
+                    {t("Et parmi ceux-là ?", "What about these?")} <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
                 </div>
               </div>
             )}
 
-            {/* Layer view */}
-            {!toolSearch.trim() && activeView === "layers" && (
-              <div className="mt-4 space-y-1.5">
-                {TOOL_LAYERS.map((layer) => {
-                  const layerTools = (toolsByLayer[layer.type] || []).sort((a, b) => a.name.localeCompare(b.name));
-                  if (layerTools.length === 0) return null;
-                  const isExpanded = expandedLayers.has(layer.type);
-                  return (
-                    <div key={layer.type} className="rounded-lg border border-border bg-card overflow-hidden">
-                      <button onClick={() => toggleLayer(layer.type)}
-                        className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-secondary/30 transition-colors">
-                        <span className="text-base">{layer.emoji}</span>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-[13px] font-medium leading-tight">{lang === "en" ? layer.labelEn : layer.label}</p>
-                          <p className="text-[11px] text-muted-foreground">{lang === "en" ? layer.descEn : layer.desc}</p>
-                        </div>
-                        <span className="shrink-0 font-mono rounded-full bg-secondary px-2 py-0.5 text-[11px] font-medium tabular-nums text-muted-foreground">
-                          {layerTools.length}
-                        </span>
-                        {isExpanded
-                          ? <ChevronUp className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
-                          : <ChevronDown className="h-3.5 w-3.5 text-muted-foreground shrink-0" />}
-                      </button>
-                      {isExpanded && (
-                        <div className="border-t border-border">
-                          <div className="max-h-[40vh] overflow-y-auto divide-y divide-border/30">
-                            {layerTools.map((tool) => (
-                              <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} />
-                            ))}
-                          </div>
-                        </div>
-                      )}
+            {/* ── TEMPS 2: Fond de stack ── */}
+            {toolSubStep === 2 && (
+              <div className="space-y-5">
+                <SectionHead
+                  title={t("Et parmi ceux-là ?", "What about these?")}
+                  subtitle={t("Outils de niche pour votre spécialité. Reconnaissez, cochez.", "Niche tools for your specialty. Recognize them, check them.")}
+                />
+                {nicheTools.metier.length > 0 && (
+                  <div>
+                    <p className="text-[12px] font-semibold text-muted-foreground mb-2">{t("Outils spécialisés", "Specialized tools")}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {nicheTools.metier.map((tool) => (
+                        <button key={tool.id} onClick={() => toggleTool(tool.id)}
+                          className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[12px] font-medium transition-all
+                            ${selectedIds.has(tool.id)
+                              ? "border-primary/40 bg-accent/60 text-foreground"
+                              : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                            }`}>
+                          <ToolLogo tool={tool} size={20} />
+                          {tool.name}
+                          {selectedIds.has(tool.id) && <Check className="h-3 w-3 text-primary" />}
+                        </button>
+                      ))}
                     </div>
-                  );
-                })}
+                  </div>
+                )}
+                {nicheTools.plugins.map((group) => (
+                  <div key={group.host}>
+                    <p className="text-[12px] font-semibold text-muted-foreground mb-2">{group.label}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {group.tools.map((tool) => (
+                        <button key={tool.id} onClick={() => toggleTool(tool.id)}
+                          className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[12px] font-medium transition-all
+                            ${selectedIds.has(tool.id)
+                              ? "border-primary/40 bg-accent/60 text-foreground"
+                              : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                            }`}>
+                          <ToolLogo tool={tool} size={20} />
+                          {tool.name}
+                          {selectedIds.has(tool.id) && <Check className="h-3 w-3 text-primary" />}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                {nicheTools.metier.length === 0 && nicheTools.plugins.length === 0 && (
+                  <p className="text-sm text-muted-foreground text-center py-6">{t("Pas d'outils de niche supplémentaires pour votre profil.", "No additional niche tools for your profile.")}</p>
+                )}
+                <div className="flex justify-between">
+                  <button onClick={() => setToolSubStep(1)} className="flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground">
+                    <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
+                  </button>
+                  <button onClick={() => setToolSubStep(3)} className="flex items-center gap-1.5 text-[13px] font-medium text-primary hover:underline">
+                    {t("Un outil qu'on n'a pas listé ?", "A tool we missed?")} <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* ── TEMPS 3: Le filet ── */}
+            {toolSubStep === 3 && (
+              <div className="space-y-5">
+                <SectionHead
+                  title={t("Un outil qu'on n'a pas listé ?", "A tool we missed?")}
+                  subtitle={t("Cherchez par nom ou répondez aux questions ci-dessous.", "Search by name or answer the questions below.")}
+                />
+
+                {/* Search */}
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
+                  <input type="text" value={toolSearch} onChange={(e) => setToolSearch(e.target.value)}
+                    placeholder={t("Rechercher un outil…", "Search for a tool…")}
+                    className="w-full rounded-lg border border-input bg-card py-2.5 pl-9 pr-9 text-sm outline-none placeholder:text-muted-foreground/50 focus-visible:ring-2 focus-visible:ring-ring transition-shadow" />
+                  {toolSearch && (
+                    <button onClick={() => setToolSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  )}
+                </div>
+
+                {/* Search results */}
+                {toolSearch.trim() && (
+                  <div className="rounded-lg border border-border bg-card overflow-hidden">
+                    <div className="max-h-[40vh] overflow-y-auto divide-y divide-border/40">
+                      {filteredTools.length === 0 && (
+                        <div className="py-10 text-center text-sm text-muted-foreground">{t("Aucun outil trouvé", "No tool found")}</div>
+                      )}
+                      {filteredTools.slice(0, 50).map((tool) => (
+                        <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Missing cluster prompts */}
+                {!toolSearch.trim() && missingClusters.length > 0 && (
+                  <div className="space-y-4">
+                    {missingClusters.map((mc) => (
+                      <div key={mc.cluster} className="rounded-xl border border-border bg-card p-4">
+                        <p className="text-[13px] font-medium text-foreground mb-3">
+                          {lang === "en" ? mc.question.en : mc.question.fr}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {mc.tools.map((tool) => (
+                            <button key={tool.id} onClick={() => toggleTool(tool.id)}
+                              className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[12px] font-medium transition-all
+                                ${selectedIds.has(tool.id)
+                                  ? "border-primary/40 bg-accent/60 text-foreground"
+                                  : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                                }`}>
+                              <ToolLogo tool={tool} size={20} />
+                              {tool.name}
+                              {selectedIds.has(tool.id) && <Check className="h-3 w-3 text-primary" />}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div className="flex justify-start">
+                  <button onClick={() => setToolSubStep(2)} className="flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground">
+                    <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
+                  </button>
+                </div>
               </div>
             )}
           </div>
