@@ -34,6 +34,13 @@ interface UserProfile {
   mainGoal: string | null;
 }
 
+function getImplicitGoal(tjm: string | null, phase: string | null): string {
+  if (phase === 'lancement') return 'reduce_costs';
+  if (phase === 'regime') return 'reduce_costs';
+  if (tjm === 'gt600' || tjm === '400-600') return 'save_time';
+  return 'reduce_costs';
+}
+
 function buildProfile(form: SelectorFormData): UserProfile {
   const tjmMedian = getTjmMedian(form.tjm);
   return {
@@ -41,7 +48,7 @@ function buildProfile(form: SelectorFormData): UserProfile {
     tjm: tjmMedian,
     phase: form.projectPhase,
     techMaturity: form.techMaturity,
-    mainGoal: normalizeGoal(form.mainGoal),
+    mainGoal: form.mainGoal ? normalizeGoal(form.mainGoal) : getImplicitGoal(form.tjm, form.projectPhase),
   };
 }
 
