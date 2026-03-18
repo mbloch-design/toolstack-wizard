@@ -127,7 +127,8 @@ const ResultsPage = () => {
   const family = VERTICAL_FAMILIES.find((f) => f.value === form.family);
   const phase = PHASE_OPTIONS.find((p) => p.value === form.projectPhase);
   const tjmLabel = TJM_OPTIONS.find((o) => o.value === form.tjm);
-  const stackCost = form.currentTools.reduce((s, ct) => s + ct.monthlyCost, 0);
+  const stackCost = form.currentTools.reduce((s, ct) => s + (typeof ct.monthlyCost === 'number' ? ct.monthlyCost : 0), 0);
+  const displayName = form.firstName?.trim() || t("votre profil", "your profile");
 
   const healthPct = results.stackHealthScore;
   const healthColor = healthPct >= 80 ? "text-keep" : healthPct >= 60 ? "text-optimize" : healthPct >= 40 ? "text-orange-500" : "text-cancel";
