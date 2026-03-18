@@ -444,7 +444,7 @@ const ResultsPage = () => {
             <>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {recsToShow.map((s) => (
-                  <RecCard key={s.tool.id} s={s} prefix={prefix} t={t} isTjmZero={results.isTjmZero} />
+                  <RecCard key={s.tool.id} s={s} prefix={prefix} t={t} isTjmZero={results.isTjmZero} form={form} userTools={form.currentTools} />
                 ))}
               </div>
               {results.recommended.length > 6 && !showAllRecs && (
