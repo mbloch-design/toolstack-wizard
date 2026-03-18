@@ -299,6 +299,7 @@ const SelectorPage = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeTypeFilter, setActiveTypeFilter] = useState("all");
   const [toolSubStep, setToolSubStep] = useState<1 | 2 | 3>(1);
+  const [currentToolCategoryIndex, setCurrentToolCategoryIndex] = useState(0);
 
   const stepMeta = lang === "en" ? STEP_META_EN : STEP_META_FR;
 
@@ -624,236 +625,107 @@ const SelectorPage = () => {
           </div>
         )}
 
-        {/* ═══ STEP 4 — Tools in 3 Temps ═══ */}
-        {step === 4 && (
-          <div className="animate-fade-in">
-            {/* Sub-step tabs */}
-            <div className="flex items-center gap-1 mb-6 rounded-lg border border-border bg-secondary/30 p-0.5">
-              {[
-                { n: 1 as const, label: t("Quotidien", "Daily"), labelEn: "Daily" },
-                { n: 2 as const, label: t("Fond de stack", "Deep stack"), labelEn: "Deep stack" },
-                { n: 3 as const, label: t("Compléter", "Complete"), labelEn: "Complete" },
-              ].map((s) => (
-                <button key={s.n} onClick={() => setToolSubStep(s.n)}
-                  className={`flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all
-                    ${toolSubStep === s.n ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
-                  {s.n}. {s.label}
-                </button>
-              ))}
-            </div>
+        {/* ═══ STEP 4 — Tools: Sequential Category Tunnel ═══ */}
+        {step === 4 && (() => {
+          /* Build tools per category */
+          const allAvailableTools = tools.filter(t => !selectedIds.has(t.id));
+          const categoryTools = allAvailableTools.filter(t => {
+            const type = t.tool_type || 'satellite';
+            return type === TOOL_LAYERS[currentToolCategoryIndex]?.type;
+          });
+          const searchResults = toolSearch.trim()
+            ? categoryTools.filter(t => t.name.toLowerCase().includes(toolSearch.toLowerCase().trim()))
+            : categoryTools;
 
-            {/* Selected stack — always visible */}
-            {selectedToolObjects.length > 0 && (
-              <div className="mb-4 rounded-lg border border-primary/15 bg-accent/30 p-3">
-                <div className="flex items-center justify-between mb-2.5">
-                  <div className="flex items-center gap-1.5">
-                    <Package className="h-3.5 w-3.5 text-primary" />
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-primary">
-                      {t("Ma stack", "My stack")}
+          const currentLayer = TOOL_LAYERS[currentToolCategoryIndex];
+          const nextLayer = TOOL_LAYERS[currentToolCategoryIndex + 1];
+          const isLastCategory = currentToolCategoryIndex >= TOOL_LAYERS.length - 1;
+
+          /* Category progress */
+          const categoryProgress = `${currentToolCategoryIndex + 1}/${TOOL_LAYERS.length}`;
+
+          return (
+            <div className="animate-fade-in">
+              {/* Category progress bar */}
+              <div className="mb-4">
+                <div className="flex items-center gap-1.5 mb-2">
+                  {TOOL_LAYERS.map((layer, i) => (
+                    <div key={layer.type}
+                      className={`h-1.5 flex-1 rounded-full transition-all duration-300
+                        ${i < currentToolCategoryIndex ? "bg-primary/50" : i === currentToolCategoryIndex ? "bg-primary" : "bg-border"}`} />
+                  ))}
+                </div>
+                <p className="text-[11px] text-muted-foreground font-mono tabular-nums">
+                  {t("Catégorie", "Category")} {categoryProgress}
+                </p>
+              </div>
+
+              <SectionHead
+                title={`${currentLayer.emoji} ${t(
+                  `Quels ${currentLayer.label.toLowerCase()} utilisez-vous ?`,
+                  `Which ${currentLayer.labelEn.toLowerCase()} do you use?`
+                )}`}
+                subtitle={lang === "en" ? currentLayer.descEn : currentLayer.desc}
+              />
+
+              {/* Selected stack — always visible */}
+              {selectedToolObjects.length > 0 && (
+                <div className="mb-4 rounded-lg border border-primary/15 bg-accent/30 p-3">
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="flex items-center gap-1.5">
+                      <Package className="h-3.5 w-3.5 text-primary" />
+                      <span className="text-[11px] font-semibold uppercase tracking-wider text-primary">
+                        {t("Ma stack", "My stack")}
+                      </span>
+                    </div>
+                    <span className="font-mono text-xs font-medium text-primary tabular-nums">
+                      {selectedToolObjects.length} {t("outils", "tools")} · {totalCost}€/{t("mois", "mo")}
                     </span>
                   </div>
-                  <span className="font-mono text-xs font-medium text-primary tabular-nums">
-                    {selectedToolObjects.length} {t("outils", "tools")} · {totalCost}€/{t("mois", "mo")}
-                  </span>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {selectedToolObjects.map((tool) => (
-                    <button key={tool.id} onClick={() => toggleTool(tool.id)}
-                      className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2 py-1 text-[11px] font-medium transition-colors hover:bg-destructive/5 hover:border-destructive/30 hover:text-destructive group">
-                      <ToolLogo tool={tool} size={14} />
-                      <span className="max-w-[80px] truncate">{tool.name}</span>
-                      <X className="h-2.5 w-2.5 opacity-30 group-hover:opacity-100" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* ── TEMPS 1: Outils du quotidien par activité — with type tabs ── */}
-            {toolSubStep === 1 && (() => {
-              const allGroupTools = activityGroups.flatMap(g => g.tools);
-              const availableTypes = TOOL_LAYERS.filter(layer => allGroupTools.some(t => (t.tool_type || 'satellite') === layer.type));
-              const filteredGroups = activeTypeFilter === "all"
-                ? activityGroups
-                : activityGroups.map(g => ({ ...g, tools: g.tools.filter(t => (t.tool_type || 'satellite') === activeTypeFilter) })).filter(g => g.tools.length > 0);
-
-              return (
-                <div className="space-y-5">
-                  <SectionHead
-                    title={t("Vos outils du quotidien", "Your daily tools")}
-                    subtitle={t("On vous montre les outils classiques de votre activité — cochez ceux que vous utilisez.", "We show you typical tools for your activity — check the ones you use.")}
-                  />
-
-                  {/* Horizontal type tabs */}
-                  {availableTypes.length > 1 && (
-                    <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none">
-                      <button onClick={() => setActiveTypeFilter("all")}
-                        className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all
-                          ${activeTypeFilter === "all" ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
-                        {t("Tous", "All")}
+                  <div className="flex flex-wrap gap-1.5">
+                    {selectedToolObjects.map((tool) => (
+                      <button key={tool.id} onClick={() => toggleTool(tool.id)}
+                        className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2 py-1 text-[11px] font-medium transition-colors hover:bg-destructive/5 hover:border-destructive/30 hover:text-destructive group">
+                        <ToolLogo tool={tool} size={14} />
+                        <span className="max-w-[80px] truncate">{tool.name}</span>
+                        <X className="h-2.5 w-2.5 opacity-30 group-hover:opacity-100" />
                       </button>
-                      {availableTypes.map(layer => (
-                        <button key={layer.type} onClick={() => setActiveTypeFilter(layer.type)}
-                          className={`shrink-0 inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all
-                            ${activeTypeFilter === layer.type ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
-                          <span>{layer.emoji}</span> {lang === "en" ? layer.labelEn : layer.label}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-
-                  {filteredGroups.map((group) => (
-                    <div key={group.title}>
-                      <p className="text-[12px] font-semibold text-muted-foreground mb-2">{lang === "en" ? group.titleEn : group.title}</p>
-                      <div className="rounded-lg border border-border bg-card overflow-hidden divide-y divide-border/30">
-                        {group.tools.map((tool) => (
-                          <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                  {filteredGroups.length === 0 && (
-                    <p className="text-sm text-muted-foreground text-center py-8">{t("Aucun outil de ce type pour votre profil.", "No tools of this type for your profile.")}</p>
-                  )}
-                  <div className="flex justify-end">
-                    <button onClick={() => setToolSubStep(2)} className="flex items-center gap-1.5 text-[13px] font-medium text-primary hover:underline">
-                      {t("Et parmi ceux-là ?", "What about these?")} <ArrowRight className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
-                </div>
-              );
-            })()}
-
-            {/* ── TEMPS 2: Fond de stack ── */}
-            {toolSubStep === 2 && (
-              <div className="space-y-5">
-                <SectionHead
-                  title={t("Et parmi ceux-là ?", "What about these?")}
-                  subtitle={t("Outils de niche pour votre spécialité. Reconnaissez, cochez.", "Niche tools for your specialty. Recognize them, check them.")}
-                />
-                {nicheTools.metier.length > 0 && (
-                  <div>
-                    <p className="text-[12px] font-semibold text-muted-foreground mb-2">{t("Outils spécialisés", "Specialized tools")}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {nicheTools.metier.map((tool) => (
-                        <button key={tool.id} onClick={() => toggleTool(tool.id)}
-                          className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[12px] font-medium transition-all
-                            ${selectedIds.has(tool.id)
-                              ? "border-primary/40 bg-accent/60 text-foreground"
-                              : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground"
-                            }`}>
-                          <ToolLogo tool={tool} size={20} />
-                          {tool.name}
-                          {selectedIds.has(tool.id) && <Check className="h-3 w-3 text-primary" />}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {nicheTools.plugins.map((group) => (
-                  <div key={group.host}>
-                    <p className="text-[12px] font-semibold text-muted-foreground mb-2">{group.label}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {group.tools.map((tool) => (
-                        <button key={tool.id} onClick={() => toggleTool(tool.id)}
-                          className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[12px] font-medium transition-all
-                            ${selectedIds.has(tool.id)
-                              ? "border-primary/40 bg-accent/60 text-foreground"
-                              : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground"
-                            }`}>
-                          <ToolLogo tool={tool} size={20} />
-                          {tool.name}
-                          {selectedIds.has(tool.id) && <Check className="h-3 w-3 text-primary" />}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-                {nicheTools.metier.length === 0 && nicheTools.plugins.length === 0 && (
-                  <p className="text-sm text-muted-foreground text-center py-6">{t("Pas d'outils de niche supplémentaires pour votre profil.", "No additional niche tools for your profile.")}</p>
-                )}
-                <div className="flex justify-between">
-                  <button onClick={() => setToolSubStep(1)} className="flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground">
-                    <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
-                  </button>
-                  <button onClick={() => setToolSubStep(3)} className="flex items-center gap-1.5 text-[13px] font-medium text-primary hover:underline">
-                    {t("Un outil qu'on n'a pas listé ?", "A tool we missed?")} <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* ── TEMPS 3: Le filet ── */}
-            {toolSubStep === 3 && (
-              <div className="space-y-5">
-                <SectionHead
-                  title={t("Un outil qu'on n'a pas listé ?", "A tool we missed?")}
-                  subtitle={t("Cherchez par nom ou répondez aux questions ci-dessous.", "Search by name or answer the questions below.")}
-                />
-
-                {/* Search */}
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
-                  <input type="text" value={toolSearch} onChange={(e) => setToolSearch(e.target.value)}
-                    placeholder={t("Rechercher un outil…", "Search for a tool…")}
-                    className="w-full rounded-lg border border-input bg-card py-2.5 pl-9 pr-9 text-sm outline-none placeholder:text-muted-foreground/50 focus-visible:ring-2 focus-visible:ring-ring transition-shadow" />
-                  {toolSearch && (
-                    <button onClick={() => setToolSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
-                      <X className="h-3.5 w-3.5" />
-                    </button>
-                  )}
-                </div>
-
-                {/* Search results */}
-                {toolSearch.trim() && (
-                  <div className="rounded-lg border border-border bg-card overflow-hidden">
-                    <div className="max-h-[40vh] overflow-y-auto divide-y divide-border/40">
-                      {filteredTools.length === 0 && (
-                        <div className="py-10 text-center text-sm text-muted-foreground">{t("Aucun outil trouvé", "No tool found")}</div>
-                      )}
-                      {filteredTools.slice(0, 50).map((tool) => (
-                        <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} />
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Missing cluster prompts */}
-                {!toolSearch.trim() && missingClusters.length > 0 && (
-                  <div className="space-y-4">
-                    {missingClusters.map((mc) => (
-                      <div key={mc.cluster} className="rounded-xl border border-border bg-card p-4">
-                        <p className="text-[13px] font-medium text-foreground mb-3">
-                          {lang === "en" ? mc.question.en : mc.question.fr}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {mc.tools.map((tool) => (
-                            <button key={tool.id} onClick={() => toggleTool(tool.id)}
-                              className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[12px] font-medium transition-all
-                                ${selectedIds.has(tool.id)
-                                  ? "border-primary/40 bg-accent/60 text-foreground"
-                                  : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground"
-                                }`}>
-                              <ToolLogo tool={tool} size={20} />
-                              {tool.name}
-                              {selectedIds.has(tool.id) && <Check className="h-3 w-3 text-primary" />}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
                     ))}
                   </div>
-                )}
+                </div>
+              )}
 
-                <div className="flex justify-start">
-                  <button onClick={() => setToolSubStep(2)} className="flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground">
-                    <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
+              {/* Search */}
+              <div className="relative mb-4">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
+                <input type="text" value={toolSearch} onChange={(e) => setToolSearch(e.target.value)}
+                  placeholder={t(`Rechercher un ${currentLayer.label.toLowerCase()}…`, `Search for a ${currentLayer.labelEn.toLowerCase()}…`)}
+                  className="w-full rounded-lg border border-input bg-card py-2.5 pl-9 pr-9 text-sm outline-none placeholder:text-muted-foreground/50 focus-visible:ring-2 focus-visible:ring-ring transition-shadow" />
+                {toolSearch && (
+                  <button onClick={() => setToolSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
+                    <X className="h-3.5 w-3.5" />
                   </button>
+                )}
+              </div>
+
+              {/* Tool list */}
+              <div className="rounded-lg border border-border bg-card overflow-hidden">
+                <div className="max-h-[45vh] overflow-y-auto divide-y divide-border/30">
+                  {searchResults.length === 0 && (
+                    <div className="py-10 text-center text-sm text-muted-foreground">
+                      {toolSearch.trim()
+                        ? t("Aucun outil trouvé", "No tool found")
+                        : t("Aucun outil de ce type dans notre base.", "No tools of this type in our database.")}
+                    </div>
+                  )}
+                  {searchResults.slice(0, 50).map((tool) => (
+                    <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
+                  ))}
                 </div>
               </div>
-            )}
-          </div>
-        )}
+            </div>
+          );
+        })()}
 
         {/* ═══ STEP 5 — Email (was step 6) ═══ */}
         {step === 5 && (
@@ -935,27 +807,74 @@ const SelectorPage = () => {
             </div>
           )}
           <div className="flex items-center justify-between">
-            <button onClick={prev} disabled={step === 1}
+            <button
+              onClick={() => {
+                if (step === 4 && currentToolCategoryIndex > 0) {
+                  setCurrentToolCategoryIndex(currentToolCategoryIndex - 1);
+                  setToolSearch("");
+                } else {
+                  prev();
+                }
+              }}
+              disabled={step === 1}
               className="flex items-center gap-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground disabled:opacity-0 disabled:pointer-events-none">
               <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
             </button>
-            {step < STEPS ? (
-              <button onClick={handleNext} disabled={!canNext()}
-                className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
-                {step === 4
-                  ? <>{t("Valider ma stack → Étape finale", "Confirm my stack → Final step")} <Check className="h-3.5 w-3.5" /></>
-                  : <>{t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" /></>
-                }
-              </button>
-            ) : (
-              <button onClick={handleSubmit} disabled={!canNext() || submitting}
-                className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
-                {submitting
-                  ? <><Loader2 className="h-3.5 w-3.5 animate-spin" /> {t("Analyse…", "Analyzing…")}</>
-                  : <>{t("Voir mes résultats", "See my results")} <ArrowRight className="h-3.5 w-3.5" /></>
-                }
-              </button>
-            )}
+
+            <div className="flex items-center gap-3">
+              {/* Skip button — only on step 4 */}
+              {step === 4 && (
+                <button
+                  onClick={() => {
+                    if (currentToolCategoryIndex < TOOL_LAYERS.length - 1) {
+                      setCurrentToolCategoryIndex(currentToolCategoryIndex + 1);
+                      setToolSearch("");
+                    } else {
+                      setToolSearch("");
+                      setCurrentToolCategoryIndex(0);
+                      next();
+                    }
+                  }}
+                  className="text-[12px] text-muted-foreground/70 hover:text-muted-foreground transition-colors underline-offset-2 hover:underline">
+                  {t("Je n'en utilise pas, passer", "I don't use any, skip")}
+                </button>
+              )}
+
+              {step < STEPS ? (
+                <button
+                  onClick={() => {
+                    if (step === 4) {
+                      if (currentToolCategoryIndex < TOOL_LAYERS.length - 1) {
+                        setCurrentToolCategoryIndex(currentToolCategoryIndex + 1);
+                        setToolSearch("");
+                      } else {
+                        setToolSearch("");
+                        setCurrentToolCategoryIndex(0);
+                        handleNext();
+                      }
+                    } else {
+                      handleNext();
+                    }
+                  }}
+                  disabled={!canNext()}
+                  className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
+                  {step === 4
+                    ? currentToolCategoryIndex < TOOL_LAYERS.length - 1
+                      ? <>{t(`Continuer vers ${TOOL_LAYERS[currentToolCategoryIndex + 1].emoji} ${TOOL_LAYERS[currentToolCategoryIndex + 1].label}`, `Continue to ${TOOL_LAYERS[currentToolCategoryIndex + 1].emoji} ${TOOL_LAYERS[currentToolCategoryIndex + 1].labelEn}`)} <ArrowRight className="h-3.5 w-3.5" /></>
+                      : <>{t("Valider ma stack et terminer", "Confirm my stack and finish")} <Check className="h-3.5 w-3.5" /></>
+                    : <>{t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" /></>
+                  }
+                </button>
+              ) : (
+                <button onClick={handleSubmit} disabled={!canNext() || submitting}
+                  className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
+                  {submitting
+                    ? <><Loader2 className="h-3.5 w-3.5 animate-spin" /> {t("Analyse…", "Analyzing…")}</>
+                    : <>{t("Voir mes résultats", "See my results")} <ArrowRight className="h-3.5 w-3.5" /></>
+                  }
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
