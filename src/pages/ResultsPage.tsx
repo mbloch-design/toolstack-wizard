@@ -651,14 +651,37 @@ function FicheCard({ fiche, Icon, badgeStyle, prefix, t, lang }: {
   );
 }
 
-function RecCard({ s, prefix, t, isTjmZero }: {
+function RecCard({ s, prefix, t, isTjmZero, form, userTools }: {
   s: ScoredTool; prefix: string; t: (fr: string, en: string) => string; isTjmZero?: boolean;
+  form: SelectorFormData; userTools: SelectorFormData["currentTools"];
 }) {
   const scoreBadge = s.finalScore > 80
     ? { text: "Excellent", cls: "bg-keep/10 text-keep border-keep/20" }
     : s.finalScore > 60
     ? { text: t("Bon", "Good"), cls: "bg-primary/10 text-primary border-primary/20" }
     : { text: t("Pertinent", "Relevant"), cls: "bg-muted text-muted-foreground border-border" };
+
+  // "Pourquoi cet outil ?" — personalized reasoning
+  const whyLines: string[] = [];
+  const isSolo = form.family === "creatif" || form.family === "content" || form.family === "tech";
+  const price = s.tool.defaultMonthlyPrice || 0;
+  const timeGain = s.tool.timeGainedHoursPerMonth || 0;
+  const replacesUserTool = userTools.find(ut => {
+    const tool = s.tool as any;
+    return tool.better_alternative?.id === ut.toolId || tool.alternatives?.includes?.(ut.toolId);
+  });
+
+  if (isSolo && s.tool.soloRelevance)
+    whyLines.push(s.tool.soloRelevance);
+  else if (!isSolo && s.tool.teamRelevance)
+    whyLines.push(s.tool.teamRelevance);
+
+  if (form.mainGoal === "reduce_costs" || form.projectPhase === "lancement") {
+    if (price === 0) whyLines.push(t("✅ 100% gratuit — parfait pour réduire les coûts.", "✅ 100% free — perfect for cutting costs."));
+    else if (price < 15) whyLines.push(t(`💰 Seulement ${price}€/mois — investissement minimal.`, `💰 Only ${price}€/mo — minimal investment.`));
+  }
+  if (timeGain > 0)
+    whyLines.push(t(`⏱️ Jusqu'à ${timeGain}h gagnées par mois.`, `⏱️ Up to ${timeGain}h saved per month.`));
 
   return (
     <div className="flex flex-col rounded-2xl border border-border bg-card p-5 transition-all hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
@@ -673,15 +696,48 @@ function RecCard({ s, prefix, t, isTjmZero }: {
         </div>
       </div>
 
+      {/* Replaces user tool badge */}
+      {replacesUserTool && (
+        <div className="mb-2">
+          <span className="inline-flex items-center gap-1 rounded-md bg-primary/10 border border-primary/20 px-2 py-0.5 text-[11px] font-semibold text-primary">
+            🔄 {t("Remplace idéalement", "Ideally replaces")} {replacesUserTool.toolId}
+          </span>
+        </div>
+      )}
+
       {/* Value info */}
       {!isTjmZero && s.valueCreated > 0 && (
-        <p className="text-sm font-semibold tabular-nums text-keep mb-3">
+        <p className="text-sm font-semibold tabular-nums text-keep mb-2">
           ~{s.valueCreated}€/{t("mois", "mo")}
           {s.valueCreated >= 2000 && <span className="ml-1 text-xs font-normal text-muted-foreground">({t("estimation", "estimate")})</span>}
         </p>
       )}
       {isTjmZero && (s.tool.timeGainedHoursPerMonth || 0) > 0 && (
-        <p className="text-sm font-semibold tabular-nums text-keep mb-3">{s.tool.timeGainedHoursPerMonth}h/{t("mois", "mo")}</p>
+        <p className="text-sm font-semibold tabular-nums text-keep mb-2">{s.tool.timeGainedHoursPerMonth}h/{t("mois", "mo")}</p>
+      )}
+
+      {/* Pros as bullet points */}
+      {s.tool.pros && Array.isArray(s.tool.pros) && s.tool.pros.length > 0 && (
+        <ul className="mb-3 space-y-1">
+          {(s.tool.pros as string[]).slice(0, 3).map((pro, i) => (
+            <li key={i} className="flex items-start gap-1.5 text-xs text-muted-foreground">
+              <CheckCircle2 className="h-3 w-3 text-keep shrink-0 mt-0.5" />
+              <span className="line-clamp-1">{typeof pro === 'string' ? pro : ''}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* "Pourquoi cet outil ?" pedagogical block */}
+      {whyLines.length > 0 && (
+        <div className="mb-3 rounded-lg bg-primary/5 border border-primary/10 p-3">
+          <p className="text-[11px] font-semibold text-primary mb-1.5 flex items-center gap-1">
+            <Sparkles className="h-3 w-3" /> {t("Pourquoi cet outil ?", "Why this tool?")}
+          </p>
+          {whyLines.map((line, i) => (
+            <p key={i} className="text-[12px] text-foreground/70 leading-relaxed">{line}</p>
+          ))}
+        </div>
       )}
 
       <div className="mt-auto">
