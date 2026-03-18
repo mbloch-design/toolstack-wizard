@@ -299,6 +299,7 @@ const SelectorPage = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeTypeFilter, setActiveTypeFilter] = useState("all");
   const [toolSubStep, setToolSubStep] = useState<1 | 2 | 3>(1);
+  const [currentToolCategoryIndex, setCurrentToolCategoryIndex] = useState(0);
 
   const stepMeta = lang === "en" ? STEP_META_EN : STEP_META_FR;
 
