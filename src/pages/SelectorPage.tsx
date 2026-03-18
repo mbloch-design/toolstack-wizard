@@ -297,6 +297,7 @@ const SelectorPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [toolSearch, setToolSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [activeTypeFilter, setActiveTypeFilter] = useState("all");
   const [toolSubStep, setToolSubStep] = useState<1 | 2 | 3>(1);
 
   const stepMeta = lang === "en" ? STEP_META_EN : STEP_META_FR;
@@ -668,33 +669,60 @@ const SelectorPage = () => {
               </div>
             )}
 
-            {/* ── TEMPS 1: Outils du quotidien par activité ── */}
-            {toolSubStep === 1 && (
-              <div className="space-y-5">
-                <SectionHead
-                  title={t("Vos outils du quotidien", "Your daily tools")}
-                  subtitle={t("On vous montre les outils classiques de votre activité — cochez ceux que vous utilisez.", "We show you typical tools for your activity — check the ones you use.")}
-                />
-                {activityGroups.map((group) => (
-                  <div key={group.title}>
-                    <p className="text-[12px] font-semibold text-muted-foreground mb-2">{lang === "en" ? group.titleEn : group.title}</p>
-                    <div className="rounded-lg border border-border bg-card overflow-hidden divide-y divide-border/30">
-                      {group.tools.map((tool) => (
-                        <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
+            {/* ── TEMPS 1: Outils du quotidien par activité — with type tabs ── */}
+            {toolSubStep === 1 && (() => {
+              const allGroupTools = activityGroups.flatMap(g => g.tools);
+              const availableTypes = TOOL_LAYERS.filter(layer => allGroupTools.some(t => (t.tool_type || 'satellite') === layer.type));
+              const filteredGroups = activeTypeFilter === "all"
+                ? activityGroups
+                : activityGroups.map(g => ({ ...g, tools: g.tools.filter(t => (t.tool_type || 'satellite') === activeTypeFilter) })).filter(g => g.tools.length > 0);
+
+              return (
+                <div className="space-y-5">
+                  <SectionHead
+                    title={t("Vos outils du quotidien", "Your daily tools")}
+                    subtitle={t("On vous montre les outils classiques de votre activité — cochez ceux que vous utilisez.", "We show you typical tools for your activity — check the ones you use.")}
+                  />
+
+                  {/* Horizontal type tabs */}
+                  {availableTypes.length > 1 && (
+                    <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none">
+                      <button onClick={() => setActiveTypeFilter("all")}
+                        className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all
+                          ${activeTypeFilter === "all" ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
+                        {t("Tous", "All")}
+                      </button>
+                      {availableTypes.map(layer => (
+                        <button key={layer.type} onClick={() => setActiveTypeFilter(layer.type)}
+                          className={`shrink-0 inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all
+                            ${activeTypeFilter === layer.type ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
+                          <span>{layer.emoji}</span> {lang === "en" ? layer.labelEn : layer.label}
+                        </button>
                       ))}
                     </div>
+                  )}
+
+                  {filteredGroups.map((group) => (
+                    <div key={group.title}>
+                      <p className="text-[12px] font-semibold text-muted-foreground mb-2">{lang === "en" ? group.titleEn : group.title}</p>
+                      <div className="rounded-lg border border-border bg-card overflow-hidden divide-y divide-border/30">
+                        {group.tools.map((tool) => (
+                          <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  {filteredGroups.length === 0 && (
+                    <p className="text-sm text-muted-foreground text-center py-8">{t("Aucun outil de ce type pour votre profil.", "No tools of this type for your profile.")}</p>
+                  )}
+                  <div className="flex justify-end">
+                    <button onClick={() => setToolSubStep(2)} className="flex items-center gap-1.5 text-[13px] font-medium text-primary hover:underline">
+                      {t("Et parmi ceux-là ?", "What about these?")} <ArrowRight className="h-3.5 w-3.5" />
+                    </button>
                   </div>
-                ))}
-                {activityGroups.length === 0 && (
-                  <p className="text-sm text-muted-foreground text-center py-8">{t("Aucun outil suggéré pour ce profil. Passez à l'étape suivante.", "No tools suggested for this profile. Move to the next step.")}</p>
-                )}
-                <div className="flex justify-end">
-                  <button onClick={() => setToolSubStep(2)} className="flex items-center gap-1.5 text-[13px] font-medium text-primary hover:underline">
-                    {t("Et parmi ceux-là ?", "What about these?")} <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
                 </div>
-              </div>
-            )}
+              );
+            })()}
 
             {/* ── TEMPS 2: Fond de stack ── */}
             {toolSubStep === 2 && (
@@ -914,7 +942,10 @@ const SelectorPage = () => {
             {step < STEPS ? (
               <button onClick={handleNext} disabled={!canNext()}
                 className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
-                {t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" />
+                {step === 4
+                  ? <>{t("Valider ma stack → Étape finale", "Confirm my stack → Final step")} <Check className="h-3.5 w-3.5" /></>
+                  : <>{t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" /></>
+                }
               </button>
             ) : (
               <button onClick={handleSubmit} disabled={!canNext() || submitting}
