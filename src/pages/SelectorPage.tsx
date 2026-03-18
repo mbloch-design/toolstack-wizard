@@ -914,7 +914,10 @@ const SelectorPage = () => {
             {step < STEPS ? (
               <button onClick={handleNext} disabled={!canNext()}
                 className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
-                {t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" />
+                {step === 4
+                  ? <>{t("Valider ma stack → Étape finale", "Confirm my stack → Final step")} <Check className="h-3.5 w-3.5" /></>
+                  : <>{t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" /></>
+                }
               </button>
             ) : (
               <button onClick={handleSubmit} disabled={!canNext() || submitting}
