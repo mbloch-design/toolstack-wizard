@@ -297,6 +297,7 @@ const SelectorPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [toolSearch, setToolSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [activeTypeFilter, setActiveTypeFilter] = useState("all");
   const [toolSubStep, setToolSubStep] = useState<1 | 2 | 3>(1);
 
   const stepMeta = lang === "en" ? STEP_META_EN : STEP_META_FR;
