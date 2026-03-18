@@ -668,33 +668,61 @@ const SelectorPage = () => {
               </div>
             )}
 
-            {/* ── TEMPS 1: Outils du quotidien par activité ── */}
-            {toolSubStep === 1 && (
-              <div className="space-y-5">
-                <SectionHead
-                  title={t("Vos outils du quotidien", "Your daily tools")}
-                  subtitle={t("On vous montre les outils classiques de votre activité — cochez ceux que vous utilisez.", "We show you typical tools for your activity — check the ones you use.")}
-                />
-                {activityGroups.map((group) => (
-                  <div key={group.title}>
-                    <p className="text-[12px] font-semibold text-muted-foreground mb-2">{lang === "en" ? group.titleEn : group.title}</p>
-                    <div className="rounded-lg border border-border bg-card overflow-hidden divide-y divide-border/30">
-                      {group.tools.map((tool) => (
-                        <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
+            {/* ── TEMPS 1: Outils du quotidien par activité — with type tabs ── */}
+            {toolSubStep === 1 && (() => {
+              const allGroupTools = activityGroups.flatMap(g => g.tools);
+              const availableTypes = TOOL_LAYERS.filter(layer => allGroupTools.some(t => (t.tool_type || 'satellite') === layer.type));
+              const [activeType, setActiveType] = useState<string>("all");
+              const filteredGroups = activeType === "all"
+                ? activityGroups
+                : activityGroups.map(g => ({ ...g, tools: g.tools.filter(t => (t.tool_type || 'satellite') === activeType) })).filter(g => g.tools.length > 0);
+
+              return (
+                <div className="space-y-5">
+                  <SectionHead
+                    title={t("Vos outils du quotidien", "Your daily tools")}
+                    subtitle={t("On vous montre les outils classiques de votre activité — cochez ceux que vous utilisez.", "We show you typical tools for your activity — check the ones you use.")}
+                  />
+
+                  {/* Horizontal type tabs */}
+                  {availableTypes.length > 1 && (
+                    <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none">
+                      <button onClick={() => setActiveType("all")}
+                        className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all
+                          ${activeType === "all" ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
+                        {t("Tous", "All")}
+                      </button>
+                      {availableTypes.map(layer => (
+                        <button key={layer.type} onClick={() => setActiveType(layer.type)}
+                          className={`shrink-0 inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all
+                            ${activeType === layer.type ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
+                          <span>{layer.emoji}</span> {lang === "en" ? layer.labelEn : layer.label}
+                        </button>
                       ))}
                     </div>
+                  )}
+
+                  {filteredGroups.map((group) => (
+                    <div key={group.title}>
+                      <p className="text-[12px] font-semibold text-muted-foreground mb-2">{lang === "en" ? group.titleEn : group.title}</p>
+                      <div className="rounded-lg border border-border bg-card overflow-hidden divide-y divide-border/30">
+                        {group.tools.map((tool) => (
+                          <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  {filteredGroups.length === 0 && (
+                    <p className="text-sm text-muted-foreground text-center py-8">{t("Aucun outil de ce type pour votre profil.", "No tools of this type for your profile.")}</p>
+                  )}
+                  <div className="flex justify-end">
+                    <button onClick={() => setToolSubStep(2)} className="flex items-center gap-1.5 text-[13px] font-medium text-primary hover:underline">
+                      {t("Et parmi ceux-là ?", "What about these?")} <ArrowRight className="h-3.5 w-3.5" />
+                    </button>
                   </div>
-                ))}
-                {activityGroups.length === 0 && (
-                  <p className="text-sm text-muted-foreground text-center py-8">{t("Aucun outil suggéré pour ce profil. Passez à l'étape suivante.", "No tools suggested for this profile. Move to the next step.")}</p>
-                )}
-                <div className="flex justify-end">
-                  <button onClick={() => setToolSubStep(2)} className="flex items-center gap-1.5 text-[13px] font-medium text-primary hover:underline">
-                    {t("Et parmi ceux-là ?", "What about these?")} <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
                 </div>
-              </div>
-            )}
+              );
+            })()}
 
             {/* ── TEMPS 2: Fond de stack ── */}
             {toolSubStep === 2 && (
