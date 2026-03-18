@@ -807,27 +807,74 @@ const SelectorPage = () => {
             </div>
           )}
           <div className="flex items-center justify-between">
-            <button onClick={prev} disabled={step === 1}
+            <button
+              onClick={() => {
+                if (step === 4 && currentToolCategoryIndex > 0) {
+                  setCurrentToolCategoryIndex(currentToolCategoryIndex - 1);
+                  setToolSearch("");
+                } else {
+                  prev();
+                }
+              }}
+              disabled={step === 1}
               className="flex items-center gap-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground disabled:opacity-0 disabled:pointer-events-none">
               <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
             </button>
-            {step < STEPS ? (
-              <button onClick={handleNext} disabled={!canNext()}
-                className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
-                {step === 4
-                  ? <>{t("Valider ma stack → Étape finale", "Confirm my stack → Final step")} <Check className="h-3.5 w-3.5" /></>
-                  : <>{t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" /></>
-                }
-              </button>
-            ) : (
-              <button onClick={handleSubmit} disabled={!canNext() || submitting}
-                className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
-                {submitting
-                  ? <><Loader2 className="h-3.5 w-3.5 animate-spin" /> {t("Analyse…", "Analyzing…")}</>
-                  : <>{t("Voir mes résultats", "See my results")} <ArrowRight className="h-3.5 w-3.5" /></>
-                }
-              </button>
-            )}
+
+            <div className="flex items-center gap-3">
+              {/* Skip button — only on step 4 */}
+              {step === 4 && (
+                <button
+                  onClick={() => {
+                    if (currentToolCategoryIndex < TOOL_LAYERS.length - 1) {
+                      setCurrentToolCategoryIndex(currentToolCategoryIndex + 1);
+                      setToolSearch("");
+                    } else {
+                      setToolSearch("");
+                      setCurrentToolCategoryIndex(0);
+                      next();
+                    }
+                  }}
+                  className="text-[12px] text-muted-foreground/70 hover:text-muted-foreground transition-colors underline-offset-2 hover:underline">
+                  {t("Je n'en utilise pas, passer", "I don't use any, skip")}
+                </button>
+              )}
+
+              {step < STEPS ? (
+                <button
+                  onClick={() => {
+                    if (step === 4) {
+                      if (currentToolCategoryIndex < TOOL_LAYERS.length - 1) {
+                        setCurrentToolCategoryIndex(currentToolCategoryIndex + 1);
+                        setToolSearch("");
+                      } else {
+                        setToolSearch("");
+                        setCurrentToolCategoryIndex(0);
+                        handleNext();
+                      }
+                    } else {
+                      handleNext();
+                    }
+                  }}
+                  disabled={!canNext()}
+                  className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
+                  {step === 4
+                    ? currentToolCategoryIndex < TOOL_LAYERS.length - 1
+                      ? <>{t(`Continuer vers ${TOOL_LAYERS[currentToolCategoryIndex + 1].emoji} ${TOOL_LAYERS[currentToolCategoryIndex + 1].label}`, `Continue to ${TOOL_LAYERS[currentToolCategoryIndex + 1].emoji} ${TOOL_LAYERS[currentToolCategoryIndex + 1].labelEn}`)} <ArrowRight className="h-3.5 w-3.5" /></>
+                      : <>{t("Valider ma stack et terminer", "Confirm my stack and finish")} <Check className="h-3.5 w-3.5" /></>
+                    : <>{t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" /></>
+                  }
+                </button>
+              ) : (
+                <button onClick={handleSubmit} disabled={!canNext() || submitting}
+                  className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
+                  {submitting
+                    ? <><Loader2 className="h-3.5 w-3.5 animate-spin" /> {t("Analyse…", "Analyzing…")}</>
+                    : <>{t("Voir mes résultats", "See my results")} <ArrowRight className="h-3.5 w-3.5" /></>
+                  }
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
