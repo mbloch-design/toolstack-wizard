@@ -673,10 +673,9 @@ const SelectorPage = () => {
             {toolSubStep === 1 && (() => {
               const allGroupTools = activityGroups.flatMap(g => g.tools);
               const availableTypes = TOOL_LAYERS.filter(layer => allGroupTools.some(t => (t.tool_type || 'satellite') === layer.type));
-              const [activeType, setActiveType] = useState<string>("all");
-              const filteredGroups = activeType === "all"
+              const filteredGroups = activeTypeFilter === "all"
                 ? activityGroups
-                : activityGroups.map(g => ({ ...g, tools: g.tools.filter(t => (t.tool_type || 'satellite') === activeType) })).filter(g => g.tools.length > 0);
+                : activityGroups.map(g => ({ ...g, tools: g.tools.filter(t => (t.tool_type || 'satellite') === activeTypeFilter) })).filter(g => g.tools.length > 0);
 
               return (
                 <div className="space-y-5">
@@ -688,15 +687,15 @@ const SelectorPage = () => {
                   {/* Horizontal type tabs */}
                   {availableTypes.length > 1 && (
                     <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none">
-                      <button onClick={() => setActiveType("all")}
+                      <button onClick={() => setActiveTypeFilter("all")}
                         className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all
-                          ${activeType === "all" ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
+                          ${activeTypeFilter === "all" ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
                         {t("Tous", "All")}
                       </button>
                       {availableTypes.map(layer => (
-                        <button key={layer.type} onClick={() => setActiveType(layer.type)}
+                        <button key={layer.type} onClick={() => setActiveTypeFilter(layer.type)}
                           className={`shrink-0 inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all
-                            ${activeType === layer.type ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
+                            ${activeTypeFilter === layer.type ? "bg-primary text-primary-foreground shadow-sm" : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"}`}>
                           <span>{layer.emoji}</span> {lang === "en" ? layer.labelEn : layer.label}
                         </button>
                       ))}
