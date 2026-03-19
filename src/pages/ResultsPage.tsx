@@ -93,6 +93,7 @@ const ResultsPage = () => {
 
   /* ── init ── */
   useEffect(() => {
+    setNoindex(); // Dynamic results should not be indexed
     if (tools.length === 0) return;
     const data = sessionStorage.getItem("tooltrim_selector");
     if (!data) { navigate(`${prefix}/selector`); return; }

@@ -4,9 +4,10 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
-const BASE = "https://www.tooltrim.io";
+const BASE = "https://tooltrim.io";
 const LANGS = ["fr", "en"];
-const STATIC_PAGES = ["", "tools", "category", "guides", "selector", "about", "transparency", "contact"];
+const STATIC_PAGES = ["", "tools", "category", "guides", "selector", "about", "methodology", "transparency", "contact"];
+const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"]; // methodology redirected from old URL
 
 function sitemapPlugin(): Plugin {
   return {

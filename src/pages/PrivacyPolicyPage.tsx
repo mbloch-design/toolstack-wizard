@@ -9,8 +9,9 @@ const PrivacyPolicyPage = () => {
     setSeoTags({
       title: t("Politique de confidentialité — ToolTrim", "Privacy Policy — ToolTrim"),
       description: t("Comment ToolTrim collecte, utilise et protège vos données personnelles.", "How ToolTrim collects, uses, and protects your personal data."),
-      url: `https://www.tooltrim.io/${lang}/privacy-policy`,
+      url: `${SEO_BASE}/${lang}/privacy-policy`,
     });
+    setNoindex();
     setHreflang(`/${lang}/privacy-policy`);
     return () => cleanupSeo([]);
   }, [lang]);
