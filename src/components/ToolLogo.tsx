@@ -7,7 +7,7 @@ interface ToolLogoProps {
   className?: string;
 }
 
-/** Extract domain from a URL for Clearbit logo */
+/** Extract domain from a URL for Google favicon */
 function getLogoUrl(tool: Tool): string | null {
   const url = tool.websiteUrl || tool.affiliateLink;
   if (!url) return null;
@@ -24,11 +24,12 @@ const ToolLogo = ({ tool, size = 32, className = "" }: ToolLogoProps) => {
   const logoUrl = getLogoUrl(tool);
 
   if (!logoUrl || failed) {
-    // Fallback: first letter in a colored circle
+    // Fallback: first letter in a colored circle — fixed size to prevent CLS
     return (
       <div
         className={`flex shrink-0 items-center justify-center rounded-lg bg-secondary text-sm font-bold text-foreground ${className}`}
-        style={{ width: size, height: size }}
+        style={{ width: size, height: size, minWidth: size, minHeight: size }}
+        aria-hidden="true"
       >
         {tool.name.charAt(0).toUpperCase()}
       </div>
@@ -38,11 +39,13 @@ const ToolLogo = ({ tool, size = 32, className = "" }: ToolLogoProps) => {
   return (
     <img
       src={logoUrl}
-      alt={`${tool.name} logo`}
+      alt={`Logo ${tool.name}`}
       width={size}
       height={size}
       loading="lazy"
+      fetchPriority="low"
       className={`shrink-0 rounded-lg object-contain ${className}`}
+      style={{ width: size, height: size, minWidth: size, minHeight: size }}
       onError={() => setFailed(true)}
     />
   );
