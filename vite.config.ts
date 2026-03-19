@@ -52,6 +52,16 @@ function sitemapPlugin(): Plugin {
           add(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6");
         }
 
+        // Comparison pages
+        const COMPARISONS = [
+          "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
+          "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
+          "github-copilot-vs-cursor", "grammarly-vs-claude",
+        ];
+        for (const comp of COMPARISONS) {
+          add(`${BASE}/fr/comparatif/${comp}`, "monthly", "0.7");
+        }
+
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
 
         // Write to dist (build output) and public (for dev/preview)

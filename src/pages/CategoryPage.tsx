@@ -6,7 +6,7 @@ import { getCategoryIcon } from "@/lib/categoryIcons";
 import { Search, Check, X, ChevronDown, ArrowRight } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
