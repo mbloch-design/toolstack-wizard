@@ -6,7 +6,7 @@ import { getCategoryIcon } from "@/lib/categoryIcons";
 import { Search, Check, X, ChevronDown, ArrowRight } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
@@ -35,7 +35,10 @@ const CategoryPage = () => {
     const desc = lang === "fr"
       ? `Comparez ${allCatTools.length} outils ${catName.toLowerCase()} : prix, avantages, alternatives. Trouvez le meilleur pour votre activité.`
       : `Compare ${allCatTools.length} ${(category.nameEn || catName).toLowerCase()} tools: pricing, pros, alternatives. Find the best for your business.`;
-    const url = `https://www.tooltrim.io/${lang}/category/${category.slug}`;
+    const url = `${SEO_BASE}/${lang}/category/${category.slug}`;
+
+    // Noindex empty categories
+    if (allCatTools.length === 0) { setNoindex(); }
 
     setSeoTags({ title, description: desc, url });
     setHreflang(`/${lang}/category/${category.slug}`);
@@ -52,7 +55,7 @@ const CategoryPage = () => {
           "@type": "ListItem",
           position: i + 1,
           name: tool.name,
-          url: `https://www.tooltrim.io/${lang}/tool/${tool.slug || tool.id}`,
+          url: `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`,
         })),
       },
     });

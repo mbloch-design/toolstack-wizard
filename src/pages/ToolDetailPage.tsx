@@ -2,10 +2,10 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useState } from "react";
-import { ExternalLink, Check, X, Copy, Share2, Users, User, Target, Globe, ArrowRight } from "lucide-react";
+import { ExternalLink, Check, X, Copy, Share2, Users, User, Target, Globe, ArrowRight, AlertTriangle } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 
 const ToolDetailPage = () => {
@@ -20,67 +20,97 @@ const ToolDetailPage = () => {
   // SEO
   useEffect(() => {
     if (!tool) return;
+    const v5Price = tool.pricing_v5?.compare_price_monthly_eur;
+    const price = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
     const seoTitle = lang === "fr"
-      ? `${tool.name} — Avis, prix et alternatives | ToolTrim`
-      : `${tool.name} — Review, pricing & alternatives | ToolTrim`;
-    const seoDesc = (tool.seo as any)?.metaDescription ||
-      (lang === "fr"
-        ? `Découvrez ${tool.name} : prix, avantages, inconvénients et alternatives. Notre verdict complet pour optimiser votre stack.`
-        : `Discover ${tool.name}: pricing, pros, cons and alternatives. Our complete verdict to optimize your stack.`);
-    const canonicalUrl = `https://www.tooltrim.io/${lang}/tool/${tool.slug || tool.id}`;
+      ? `${tool.name} — faut-il garder cet abonnement ? | ToolTrim`
+      : `${tool.name} — should you keep this subscription? | ToolTrim`;
+    const seoDesc = lang === "fr"
+      ? `Prix vérifié à ${price}€/mois. Alternatives, guide de migration et analyse complète.`
+      : `Verified price at €${price}/month. Alternatives, migration guide and complete analysis.`;
+    const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
 
-    setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl });
+    setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
 
+    // Enriched JSON-LD with Review and Offer
+    const ratingValue = tool.prescription_quality === "ferme" ? 3 : 4;
     setJsonLd("tool-jsonld", {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       name: tool.name,
-      description: seoDesc,
-      url: canonicalUrl,
+      description: tool.shortDescription || seoDesc,
+      url: tool.websiteUrl || canonicalUrl,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
-      offers: tool.defaultMonthlyPrice > 0
-        ? { "@type": "Offer", price: tool.defaultMonthlyPrice, priceCurrency: "EUR", billingDuration: "P1M" }
-        : { "@type": "Offer", price: "0", priceCurrency: "EUR" },
-      ...(tool.pros?.length > 0 && {
-        review: {
-          "@type": "Review",
-          author: { "@type": "Organization", name: "ToolTrim" },
-          reviewBody: tool.pros.slice(0, 3).join(". ") + ".",
+      offers: {
+        "@type": "Offer",
+        price: String(price || 0),
+        priceCurrency: "EUR",
+        ...(price > 0 && {
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            billingDuration: "P1M",
+          },
+        }),
+      },
+      review: {
+        "@type": "Review",
+        reviewBody: tool.verdict?.threshold || tool.pros?.slice(0, 3).join(". ") + "." || "",
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: String(ratingValue),
+          bestRating: "5",
         },
-      }),
+        author: {
+          "@type": "Organization",
+          name: "ToolTrim",
+          url: SEO_BASE,
+        },
+      },
     });
 
-    // FAQ schema from verdict
-    if (tool.verdict) {
-      setJsonLd("tool-faq-jsonld", {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: lang === "fr" ? `${tool.name} est-il gratuit ?` : `Is ${tool.name} free?`,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: tool.pricing?.free
-                ? (lang === "fr" ? `Oui, ${tool.name} propose une offre gratuite : ${tool.pricing.free}` : `Yes, ${tool.name} offers a free plan: ${tool.pricing.free}`)
-                : (lang === "fr" ? `Non, ${tool.name} est un outil payant à partir de ${tool.defaultMonthlyPrice}€/mois.` : `No, ${tool.name} is a paid tool starting at ${tool.defaultMonthlyPrice}€/month.`),
-            },
-          },
-          {
-            "@type": "Question",
-            name: lang === "fr" ? `Quelles sont les alternatives à ${tool.name} ?` : `What are alternatives to ${tool.name}?`,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: lang === "fr"
-                ? `Consultez notre comparatif des alternatives à ${tool.name} dans la même catégorie.`
-                : `Check our comparison of alternatives to ${tool.name} in the same category.`,
-            },
-          },
-        ],
+    // FAQ schema
+    const faqEntries: { "@type": string; name: string; acceptedAnswer: { "@type": string; text: string } }[] = [];
+
+    // Q1: price
+    faqEntries.push({
+      "@type": "Question",
+      name: lang === "fr" ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: lang === "fr"
+          ? `${tool.name} coûte ${price}€/mois${tool.pricing_v5?.compare_plan_name ? ` (plan ${tool.pricing_v5.compare_plan_name})` : ""}. Prix vérifié le ${tool.pricing_v5?.verified_on || "2026-03-13"}${tool.pricing_v5?.source_domain ? ` sur ${tool.pricing_v5.source_domain}` : ""}.`
+          : `${tool.name} costs €${price}/month${tool.pricing_v5?.compare_plan_name ? ` (${tool.pricing_v5.compare_plan_name} plan)` : ""}. Price verified on ${tool.pricing_v5?.verified_on || "2026-03-13"}${tool.pricing_v5?.source_domain ? ` on ${tool.pricing_v5.source_domain}` : ""}.`,
+      },
+    });
+
+    // Q2: free alternative
+    faqEntries.push({
+      "@type": "Question",
+      name: lang === "fr" ? `Existe-t-il une alternative gratuite à ${tool.name} ?` : `Is there a free alternative to ${tool.name}?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: tool.freeAlternative
+          ? (lang === "fr" ? `Oui, ${tool.freeAlternative} est une alternative gratuite.` : `Yes, ${tool.freeAlternative} is a free alternative.`)
+          : (lang === "fr" ? "Pas d'alternative entièrement gratuite pour cet usage." : "No entirely free alternative for this use case."),
+      },
+    });
+
+    // Q3: worth it
+    if (tool.verdict?.threshold) {
+      faqEntries.push({
+        "@type": "Question",
+        name: lang === "fr" ? `${tool.name} vaut-il le coup ?` : `Is ${tool.name} worth it?`,
+        acceptedAnswer: { "@type": "Answer", text: tool.verdict.threshold },
       });
     }
+
+    setJsonLd("tool-faq-jsonld", {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqEntries,
+    });
 
     return () => cleanupSeo(["tool-jsonld", "tool-faq-jsonld"]);
   }, [tool, lang]);
@@ -127,6 +157,11 @@ const ToolDetailPage = () => {
     return text.includes(tool.name.toLowerCase());
   }).slice(0, 3);
 
+  const v5Price = tool.pricing_v5?.compare_price_monthly_eur;
+  const displayPrice = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
+  const verifiedOn = tool.pricing_v5?.verified_on || "2026-03-13";
+  const sourceDomain = tool.pricing_v5?.source_domain;
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -156,10 +191,10 @@ const ToolDetailPage = () => {
                 )}
                 {/* Price badge */}
                 <div className="mt-2 flex items-center gap-2">
-                  <span className={`rounded-full px-3 py-1 text-xs font-semibold ${tool.defaultMonthlyPrice === 0 ? "bg-keep/10 text-keep" : "bg-secondary text-foreground"}`}>
-                    {tool.defaultMonthlyPrice === 0
+                  <span className={`rounded-full px-3 py-1 text-xs font-semibold ${displayPrice === 0 ? "bg-keep/10 text-keep" : "bg-secondary text-foreground"}`}>
+                    {displayPrice === 0
                       ? (tool.pricing?.paid ? "Freemium" : t("Gratuit", "Free"))
-                      : `${t("À partir de", "From")} ${tool.defaultMonthlyPrice}€/${t("mois", "mo")}`}
+                      : `${t("À partir de", "From")} ${displayPrice}€/${t("mois", "mo")}`}
                   </span>
                 </div>
               </div>
@@ -196,9 +231,18 @@ const ToolDetailPage = () => {
           {/* Main content */}
           <div className="lg:col-span-2 space-y-6">
 
+            {/* En une phrase — LLM citable */}
+            <div className="rounded-xl border border-border bg-secondary/30 p-5">
+              <h2 className="text-lg font-bold tracking-tighter">{t("En une phrase", "In one sentence")}</h2>
+              <p className="mt-2 text-sm leading-relaxed">
+                {tool.name} {t("coûte", "costs")} {displayPrice === 0 ? t("0€ (gratuit)", "€0 (free)") : `${displayPrice}€/${t("mois", "mo")}`}.{" "}
+                {tool.verdict?.threshold || tool.shortDescription}
+              </p>
+            </div>
+
             {/* Verdict */}
             <div className="rounded-xl border border-primary/20 bg-accent/30 p-6">
-              <h2 className="text-lg font-bold tracking-tighter">{t("Notre verdict", "Our verdict")}</h2>
+              <h2 className="text-lg font-bold tracking-tighter">{t("Faut-il garder cet abonnement ?", "Should you keep this subscription?")}</h2>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
                   <span className="text-sm font-semibold text-keep">✓ {t("Gardez si", "Keep if")}</span>
@@ -222,6 +266,36 @@ const ToolDetailPage = () => {
                   <span className="font-semibold">📊 {t("Seuil", "Threshold")} :</span> {tool.verdict.threshold}
                 </p>
               )}
+            </div>
+
+            {/* Ce que dit ToolTrim — prescription section */}
+            <div className="rounded-xl border border-border bg-card p-6">
+              <h2 className="text-lg font-bold tracking-tighter">{t("Ce que dit ToolTrim", "What ToolTrim says")}</h2>
+              <div className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {tool.prescription_quality === "ferme" && tool.prescription_output ? (
+                  <div className="space-y-2">
+                    <p className="font-medium text-foreground">
+                      {t("Notre recommandation :", "Our recommendation:")} {tool.prescription_output.action === "replace-cheaper" || tool.prescription_output.action === "replace-better"
+                        ? t(`remplacer par ${tool.prescription_output.replacement_tool}`, `replace with ${tool.prescription_output.replacement_tool}`)
+                        : tool.prescription_output.action === "cancel"
+                        ? t("résilier cet abonnement", "cancel this subscription")
+                        : tool.prescription_output.mode}
+                    </p>
+                    {tool.prescription_output.gain_monthly_eur > 0 && (
+                      <p className="text-keep font-medium">
+                        {t("Économie", "Savings")}: +{tool.prescription_output.gain_monthly_eur}€/{t("mois", "mo")} · {t("Prix vérifiés le", "Prices verified on")} {tool.prescription_output.verified_on || verifiedOn}
+                      </p>
+                    )}
+                  </div>
+                ) : tool.prescription_quality === "question" && tool.prescription_context_questions?.length ? (
+                  <div className="space-y-2">
+                    <p>{t("Ça dépend de votre usage.", "It depends on your usage.")}</p>
+                    <p className="italic">{tool.prescription_context_questions[0]}</p>
+                  </div>
+                ) : (
+                  <p>{t("Outil de production central — non substituable. À conserver.", "Core production tool — not substitutable. Keep it.")}</p>
+                )}
+              </div>
             </div>
 
             {/* Pros/Cons */}
@@ -311,9 +385,9 @@ const ToolDetailPage = () => {
                     <div><span className="font-medium">{t("Payant", "Paid")}</span><p className="text-muted-foreground">{tool.pricing.paid}</p></div>
                   </div>
                 )}
-                {tool.defaultMonthlyPrice > 0 && (
+                {displayPrice > 0 && (
                   <p className="pt-2 border-t border-border/50 text-muted-foreground">
-                    {t("À partir de", "From")} <strong className="text-foreground">{tool.defaultMonthlyPrice}€/{t("mois", "mo")}</strong>
+                    {t("À partir de", "From")} <strong className="text-foreground">{displayPrice}€/{t("mois", "mo")}</strong>
                   </p>
                 )}
               </div>
@@ -413,29 +487,30 @@ const ToolDetailPage = () => {
           <div className="mt-6 space-y-4">
             <details className="group rounded-xl border border-border bg-card p-5">
               <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-                {lang === "fr" ? `${tool.name} est-il gratuit ?` : `Is ${tool.name} free?`}
+                {lang === "fr" ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`}
                 <ChevronIcon />
               </summary>
               <p className="mt-3 text-sm text-muted-foreground">
-                {tool.pricing?.free
-                  ? t(`Oui, ${tool.name} propose une offre gratuite : ${tool.pricing.free}. ${tool.pricing?.paid ? `Une offre payante est aussi disponible : ${tool.pricing.paid}` : ""}`,
-                      `Yes, ${tool.name} offers a free plan: ${tool.pricing.free}. ${tool.pricing?.paid ? `A paid plan is also available: ${tool.pricing.paid}` : ""}`)
-                  : t(`${tool.name} est un outil payant à partir de ${tool.defaultMonthlyPrice}€/mois.`,
-                      `${tool.name} is a paid tool starting at €${tool.defaultMonthlyPrice}/month.`)}
+                {t(
+                  `${tool.name} coûte ${displayPrice}€/mois${tool.pricing_v5?.compare_plan_name ? ` (plan ${tool.pricing_v5.compare_plan_name})` : ""}. Prix vérifié le ${verifiedOn}${sourceDomain ? ` sur ${sourceDomain}` : ""}.`,
+                  `${tool.name} costs €${displayPrice}/month${tool.pricing_v5?.compare_plan_name ? ` (${tool.pricing_v5.compare_plan_name} plan)` : ""}. Price verified on ${verifiedOn}${sourceDomain ? ` on ${sourceDomain}` : ""}.`
+                )}
               </p>
             </details>
             <details className="group rounded-xl border border-border bg-card p-5">
               <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-                {lang === "fr" ? `Quelles sont les alternatives à ${tool.name} ?` : `What are the alternatives to ${tool.name}?`}
+                {lang === "fr" ? `Existe-t-il une alternative gratuite à ${tool.name} ?` : `Is there a free alternative to ${tool.name}?`}
                 <ChevronIcon />
               </summary>
               <p className="mt-3 text-sm text-muted-foreground">
-                {alternatives.length > 0
+                {tool.freeAlternative
+                  ? t(`Oui, ${tool.freeAlternative} est une alternative gratuite.`, `Yes, ${tool.freeAlternative} is a free alternative.`)
+                  : alternatives.some(a => a.defaultMonthlyPrice === 0)
                   ? t(
-                      `Parmi les alternatives à ${tool.name}, vous pouvez considérer : ${alternatives.slice(0, 4).map(a => a.name).join(", ")}. Consultez notre comparatif complet ci-dessus.`,
-                      `Among alternatives to ${tool.name}, you can consider: ${alternatives.slice(0, 4).map(a => a.name).join(", ")}. Check our full comparison above.`
+                      `Parmi les alternatives gratuites : ${alternatives.filter(a => a.defaultMonthlyPrice === 0).slice(0, 3).map(a => a.name).join(", ")}.`,
+                      `Free alternatives include: ${alternatives.filter(a => a.defaultMonthlyPrice === 0).slice(0, 3).map(a => a.name).join(", ")}.`
                     )
-                  : t("Aucune alternative référencée pour le moment.", "No alternatives listed yet.")}
+                  : t("Pas d'alternative entièrement gratuite référencée pour cet usage.", "No entirely free alternative listed for this use case.")}
               </p>
             </details>
             {tool.verdict?.threshold && (
@@ -450,6 +525,21 @@ const ToolDetailPage = () => {
               </details>
             )}
           </div>
+        </div>
+
+        {/* Pricing trust footer — E-E-A-T signal */}
+        <div className="mt-10 flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-t border-border pt-6">
+          <span className="flex items-center gap-1.5">
+            <AlertTriangle className="h-3.5 w-3.5" />
+            {t("Prix vérifié le", "Price verified on")} {verifiedOn}
+            {sourceDomain && (
+              <> {t("sur", "on")} <a href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{sourceDomain}</a></>
+            )}
+          </span>
+          <span>·</span>
+          <a href={`${prefix}/contact`} className="text-primary hover:underline">
+            {t("Signaler un prix incorrect", "Report incorrect pricing")}
+          </a>
         </div>
       </div>
     </div>

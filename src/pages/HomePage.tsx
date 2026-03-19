@@ -5,7 +5,7 @@ import { useEffect, useMemo } from "react";
 import { ArrowRight, TrendingDown, Zap, Search, Check, BarChart3, Shield } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
 const TRUSTED_LOGOS = [
   { name: "Notion", domain: "notion.so" },
@@ -16,6 +16,36 @@ const TRUSTED_LOGOS = [
   { name: "ChatGPT", domain: "openai.com" },
   { name: "Trello", domain: "trello.com" },
   { name: "Airtable", domain: "airtable.com" },
+];
+
+const FAQ_FR = [
+  {
+    q: "Comment ToolTrim analyse-t-il ma stack ?",
+    a: "ToolTrim compare vos outils à une base de 314 outils vérifiés. Il détecte les doublons, les outils dormants et les remplacements possibles — avec des prix vérifiés sur les pages officielles.",
+  },
+  {
+    q: "Les recommandations sont-elles vraiment fiables ?",
+    a: "ToolTrim ne prescrit que lorsque les données sont vérifiées. Chaque prix est issu de la page officielle de l'outil. Les recommandations incertaines sont signalées explicitement.",
+  },
+  {
+    q: "ToolTrim est-il gratuit ?",
+    a: "Oui, l'analyse de base est entièrement gratuite.",
+  },
+];
+
+const FAQ_EN = [
+  {
+    q: "How does ToolTrim analyze my stack?",
+    a: "ToolTrim compares your tools against a database of 314 verified tools. It detects duplicates, dormant tools, and possible replacements — with prices verified on official pages.",
+  },
+  {
+    q: "Are the recommendations really reliable?",
+    a: "ToolTrim only prescribes when data is verified. Each price comes from the tool's official page. Uncertain recommendations are explicitly flagged.",
+  },
+  {
+    q: "Is ToolTrim free?",
+    a: "Yes, the basic analysis is completely free.",
+  },
 ];
 
 const HomePage = () => {
@@ -37,29 +67,30 @@ const HomePage = () => {
   );
 
   const featuredPosts = posts.slice(0, 3);
+  const faq = lang === "fr" ? FAQ_FR : FAQ_EN;
 
   // SEO
   useEffect(() => {
     const title = lang === "fr"
-      ? "ToolTrim — Arrêtez de payer trop cher pour vos outils SaaS"
-      : "ToolTrim — Stop overpaying for your SaaS tools";
+      ? "ToolTrim — Auditez et optimisez votre stack SaaS"
+      : "ToolTrim — Audit and optimize your SaaS stack";
     const desc = lang === "fr"
-      ? `Tooltrim compare ${stats.total}+ outils SaaS pour freelances et petites équipes. Optimisez votre stack, réduisez vos coûts.`
-      : `Tooltrim compares ${stats.total}+ SaaS tools for freelancers and small teams. Optimize your stack, reduce costs.`;
-    const url = `https://www.tooltrim.io/${lang}`;
+      ? "Découvrez en 3 minutes quels outils virer, remplacer ou dégrader. Analyse personnalisée. Prix vérifiés. Recommandations actionnables."
+      : `ToolTrim compares ${stats.total}+ SaaS tools for freelancers and small teams. Personalized analysis. Verified pricing. Actionable recommendations.`;
+    const url = `${SEO_BASE}/${lang}`;
 
-    setSeoTags({ title, description: desc, url });
+    setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}`);
 
     setJsonLd("home-jsonld", {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "ToolTrim",
-      url: "https://www.tooltrim.io",
+      url: SEO_BASE,
       description: desc,
       potentialAction: {
         "@type": "SearchAction",
-        target: `https://www.tooltrim.io/${lang}/tools?q={search_term_string}`,
+        target: `${SEO_BASE}/${lang}/tools?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
     });
@@ -68,12 +99,26 @@ const HomePage = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "ToolTrim",
-      url: "https://www.tooltrim.io",
-      logo: "https://www.tooltrim.io/picto-logo.svg",
+      url: SEO_BASE,
+      logo: `${SEO_BASE}/picto-logo.svg`,
       sameAs: [],
     });
 
-    return () => cleanupSeo(["home-jsonld", "home-org-jsonld"]);
+    // FAQ JSON-LD
+    setJsonLd("home-faq-jsonld", {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      })),
+    });
+
+    return () => cleanupSeo(["home-jsonld", "home-org-jsonld", "home-faq-jsonld"]);
   }, [lang, stats.total]);
 
   return (
@@ -107,7 +152,7 @@ const HomePage = () => {
               <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted-foreground/60">{t("Ils font confiance aux outils que nous analysons", "Trusted tools we analyze")}</p>
               <div className="flex flex-wrap items-center justify-center gap-6">
                 {TRUSTED_LOGOS.map((logo) => (
-                  <img key={logo.domain} src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`} alt={logo.name} className="h-7 w-7 opacity-40 grayscale transition-all hover:opacity-70 hover:grayscale-0" loading="lazy" />
+                  <img key={logo.domain} src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`} alt={`Logo ${logo.name}`} width={28} height={28} className="h-7 w-7 opacity-40 grayscale transition-all hover:opacity-70 hover:grayscale-0" loading="lazy" />
                 ))}
               </div>
             </div>
@@ -258,6 +303,26 @@ const HomePage = () => {
           </div>
         </section>
       )}
+
+      {/* FAQ — visible for SEO + structured data */}
+      <section className="py-20 border-t border-border">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tighter text-center">{t("Questions fréquentes", "Frequently Asked Questions")}</h2>
+          <div className="mt-10 space-y-4">
+            {faq.map((item, i) => (
+              <details key={i} className="group rounded-xl border border-border bg-card p-5">
+                <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
+                  {item.q}
+                  <svg className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-20">

@@ -16,6 +16,7 @@ import {
   ArrowDownCircle, RefreshCw, ChevronDown, ChevronUp, Sparkles,
   BadgeCheck, Clock, Info,
 } from "lucide-react";
+import { setNoindex } from "@/lib/seo";
 import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
 } from "@/components/ui/tooltip";
@@ -92,6 +93,7 @@ const ResultsPage = () => {
 
   /* ── init ── */
   useEffect(() => {
+    setNoindex(); // Dynamic results should not be indexed
     if (tools.length === 0) return;
     const data = sessionStorage.getItem("tooltrim_selector");
     if (!data) { navigate(`${prefix}/selector`); return; }

@@ -4,9 +4,10 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
-const BASE = "https://www.tooltrim.io";
+const BASE = "https://tooltrim.io";
 const LANGS = ["fr", "en"];
-const STATIC_PAGES = ["", "tools", "category", "guides", "selector", "about", "transparency", "contact"];
+const STATIC_PAGES = ["", "tools", "category", "guides", "selector", "about", "methodology", "transparency", "contact"];
+const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"]; // methodology redirected from old URL
 
 function sitemapPlugin(): Plugin {
   return {
@@ -49,6 +50,16 @@ function sitemapPlugin(): Plugin {
         for (const a of data.articles || []) {
           const lang = a.lang || "fr";
           add(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6");
+        }
+
+        // Comparison pages
+        const COMPARISONS = [
+          "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
+          "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
+          "github-copilot-vs-cursor", "grammarly-vs-claude",
+        ];
+        for (const comp of COMPARISONS) {
+          add(`${BASE}/fr/comparatif/${comp}`, "monthly", "0.7");
         }
 
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
