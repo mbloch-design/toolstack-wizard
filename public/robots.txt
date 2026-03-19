@@ -10,7 +10,34 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# LLM crawlers — explicitly allowed
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 User-agent: *
 Allow: /
 
-Sitemap: https://www.tooltrim.io/sitemap.xml
+# Block UTM parameters from indexation
+Disallow: /*?utm_source=
+Disallow: /*?utm_medium=
+Disallow: /*?utm_campaign=
+
+# Block dynamic results pages
+Disallow: /*/selector/results
+
+Sitemap: https://tooltrim.io/sitemap.xml

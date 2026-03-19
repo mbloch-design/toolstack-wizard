@@ -2,6 +2,9 @@
  * SEO utility: set meta tags, canonical, and JSON-LD dynamically.
  */
 
+export const SEO_BASE = "https://tooltrim.io";
+export const OG_IMAGE = "https://tooltrim.io/picto-logo.svg";
+
 export function setMeta(nameOrProp: string, content: string) {
   const isOg = nameOrProp.startsWith("og:") || nameOrProp.startsWith("article:");
   const attr = isOg ? "property" : "name";
@@ -15,13 +18,15 @@ export function setMeta(nameOrProp: string, content: string) {
 }
 
 export function setCanonical(url: string) {
+  // Strip query params for canonical
+  const cleanUrl = url.split("?")[0].replace(/\/+$/, "");
   let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   if (!canonical) {
     canonical = document.createElement("link");
     canonical.rel = "canonical";
     document.head.appendChild(canonical);
   }
-  canonical.href = url;
+  canonical.href = cleanUrl;
 }
 
 export function setJsonLd(id: string, data: Record<string, unknown>) {
@@ -35,7 +40,7 @@ export function setJsonLd(id: string, data: Record<string, unknown>) {
   el.textContent = JSON.stringify(data);
 }
 
-export function setHreflang(path: string, base = "https://www.tooltrim.io") {
+export function setHreflang(path: string, base = SEO_BASE) {
   // Remove existing hreflang links
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
 
@@ -43,7 +48,7 @@ export function setHreflang(path: string, base = "https://www.tooltrim.io") {
   const entries: [string, string][] = [
     ["fr", `${base}/fr${cleanPath}`],
     ["en", `${base}/en${cleanPath}`],
-    ["x-default", `${base}/en${cleanPath}`],
+    ["x-default", `${base}/fr${cleanPath}`],
   ];
 
   for (const [lang, href] of entries) {
@@ -55,10 +60,20 @@ export function setHreflang(path: string, base = "https://www.tooltrim.io") {
   }
 }
 
+export function setNoindex() {
+  setMeta("robots", "noindex, follow");
+}
+
+export function removeNoindex() {
+  const el = document.querySelector<HTMLMetaElement>('meta[name="robots"][content*="noindex"]');
+  el?.remove();
+}
+
 export function cleanupSeo(ids: string[]) {
   ids.forEach((id) => document.getElementById(id)?.remove());
   document.querySelector('link[rel="canonical"]')?.remove();
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+  removeNoindex();
 }
 
 export function setSeoTags({
@@ -66,11 +81,13 @@ export function setSeoTags({
   description,
   url,
   type = "website",
+  locale = "fr_FR",
 }: {
   title: string;
   description: string;
   url: string;
   type?: string;
+  locale?: string;
 }) {
   document.title = title;
   setMeta("description", description);
@@ -78,7 +95,14 @@ export function setSeoTags({
   setMeta("og:description", description);
   setMeta("og:type", type);
   setMeta("og:url", url);
+  setMeta("og:image", OG_IMAGE);
+  setMeta("og:locale", locale);
+  setMeta("og:site_name", "ToolTrim");
+  setMeta("twitter:card", "summary_large_image");
   setMeta("twitter:title", title);
   setMeta("twitter:description", description);
+  setMeta("twitter:image", OG_IMAGE);
   setCanonical(url);
+  // Remove any previous noindex
+  removeNoindex();
 }
