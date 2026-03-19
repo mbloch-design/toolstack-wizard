@@ -20,11 +20,13 @@ import CategoriesIndexPage from "@/pages/CategoriesIndexPage";
 import GuidesPage from "@/pages/GuidesPage";
 import GuideDetailPage from "@/pages/GuideDetailPage";
 import AboutPage from "@/pages/AboutPage";
+import MethodologyPage from "@/pages/MethodologyPage";
 import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
 import LegalNoticePage from "@/pages/LegalNoticePage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsPage from "@/pages/TermsPage";
+import ComparePage from "@/pages/ComparePage";
 import NotFound from "@/pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -63,18 +65,31 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/fr" replace />} />
+
+          {/* Legacy redirects (301-like via Navigate replace) */}
+          <Route path="/methodology" element={<Navigate to="/fr/methodology" replace />} />
+          <Route path="/blog" element={<Navigate to="/fr" replace />} />
+          <Route path="/blog/*" element={<Navigate to="/fr" replace />} />
+          <Route path="/tool/:slug" element={<RedirectToolToFr />} />
+          <Route path="/en/tool/:slug" element={<RedirectToolToFr />} />
+          <Route path="/en/category/*" element={<Navigate to="/fr" replace />} />
+          <Route path="/en" element={<Navigate to="/fr" replace />} />
+
           <Route path="/:lang" element={<LangLayout />}>
             <Route index element={<HomePage />} />
             <Route path="selector" element={<SelectorPage />} />
             <Route path="selector/results" element={<ResultsPage />} />
             <Route path="tools" element={<ToolsPage />} />
             <Route path="tool/:slug" element={<ToolDetailPage />} />
+            <Route path="outils/:slug" element={<RedirectOutils />} />
             <Route path="category" element={<CategoriesIndexPage />} />
             <Route path="category/:slug" element={<CategoryPage />} />
             <Route path="guides" element={<GuidesPage />} />
             <Route path="guide/:slug" element={<GuideDetailPage />} />
+            <Route path="comparatif/:slugPair" element={<ComparePage />} />
             <Route path="about" element={<AboutPage />} />
-            <Route path="methodology" element={<AboutPage />} />
+            <Route path="methodology" element={<MethodologyPage />} />
+            <Route path="methodologie" element={<MethodologyPage />} />
             <Route path="transparency" element={<TransparencyPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="legal-notice" element={<LegalNoticePage />} />
@@ -90,5 +105,17 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+
+/** Redirect /tool/:slug and /en/tool/:slug → /fr/tool/:slug */
+function RedirectToolToFr() {
+  const { slug } = useParams();
+  return <Navigate to={`/fr/tool/${slug}`} replace />;
+}
+
+/** Redirect /fr/outils/:slug → /fr/tool/:slug */
+function RedirectOutils() {
+  const { slug, lang } = useParams();
+  return <Navigate to={`/${lang || "fr"}/tool/${slug}`} replace />;
+}
 
 export default App;
