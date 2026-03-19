@@ -16,6 +16,7 @@ import {
   ArrowDownCircle, RefreshCw, ChevronDown, ChevronUp, Sparkles,
   BadgeCheck, Clock, Info,
 } from "lucide-react";
+import { setNoindex } from "@/lib/seo";
 import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
 } from "@/components/ui/tooltip";
