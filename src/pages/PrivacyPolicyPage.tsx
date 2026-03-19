@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLang } from "@/hooks/useLang";
-import { setSeoTags, setHreflang, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
 const PrivacyPolicyPage = () => {
   const { t, lang } = useLang();
