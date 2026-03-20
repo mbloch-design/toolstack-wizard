@@ -127,12 +127,26 @@ function scoreFinal(tool: Tool, profile: UserProfile): number {
 
 /* ═══════════════ V10 PRESCRIPTION LOGIC ═══════════════ */
 
+/* Tools that should NEVER receive a prescription — infrastructure/payment */
+const FORCE_SILENCE_IDS = ['stripe', 'google-drive', 'paypal', 'google-analytics'];
+
+/**
+ * Effective prescription quality, applying overrides.
+ */
+function effectivePrescriptionQuality(tool: Tool): PrescriptionQuality {
+  if (FORCE_SILENCE_IDS.includes(tool.id)) return "silence";
+  // Price < 2€ → not worth prescribing
+  const price = tool.pricing_v5?.compare_price_monthly_eur ?? tool.defaultMonthlyPrice ?? 0;
+  if (price > 0 && price < 2) return "silence";
+  return tool.prescription_quality;
+}
+
 /**
  * Can this tool receive a prescription?
  * NEVER prescribe on silence, metier, or plugin.
  */
 function canPrescribe(tool: Tool): boolean {
-  if (tool.prescription_quality === "silence") return false;
+  if (effectivePrescriptionQuality(tool) === "silence") return false;
   if (tool.tool_type === "metier" || tool.tool_type === "plugin") return false;
   return true;
 }
@@ -160,9 +174,20 @@ function buildFermePrescription(
     type = "replace-better";
   }
 
+  // Translate mode to human-readable
+  const MODE_LABELS: Record<string, { fr: string; en: string }> = {
+    'replace_for_cost': { fr: 'Moins cher pour le même usage', en: 'Cheaper for the same use' },
+    'replace_for_performance_or_fit': { fr: 'Plus adapté à ton profil', en: 'Better suited to your profile' },
+    'replace_for_simplicity': { fr: 'Simplifie ta stack', en: 'Simplifies your stack' },
+    'replace_for_deeper_editor_ai': { fr: 'Plus puissant pour ton usage', en: 'More powerful for your use' },
+    'replace_if_already_paying_ai_generalist': { fr: 'Déjà couvert par ton abonnement IA', en: 'Already covered by your AI subscription' },
+    'replace_for_cost_or_complexity': { fr: 'Moins cher et plus simple', en: 'Cheaper and simpler' },
+  };
+  const modeLabel = MODE_LABELS[po.mode]?.[isFr ? 'fr' : 'en'] || po.mode.replace(/_/g, " ");
+
   const diagnostic = isFr
-    ? `${tool.name} peut être remplacé par ${altTool?.name || po.replacement_tool} (${po.mode.replace(/_/g, " ")}).`
-    : `${tool.name} can be replaced by ${altTool?.name || po.replacement_tool} (${po.mode.replace(/_/g, " ")}).`;
+    ? `${tool.name} peut être remplacé par ${altTool?.name || po.replacement_tool}. ${modeLabel}.`
+    : `${tool.name} can be replaced by ${altTool?.name || po.replacement_tool}. ${modeLabel}.`;
 
   const prescription = isUpgrade
     ? (isFr ? `Passer à ${altTool?.name || po.replacement_tool} (meilleur outil, même budget)` : `Switch to ${altTool?.name || po.replacement_tool} (better tool, same budget)`)
@@ -359,16 +384,59 @@ function detectInadapted(
 
 /* ═══════════════ PRESCRIPTION BUILDER ═══════════════ */
 
+/**
+ * Get a human-readable prescription reason (no raw scores).
+ */
+function getPrescriptionDiagnostic(
+  tool: Tool, reason: "doublon" | "doublon-ia" | "dormant" | "inadapted",
+  winner: Tool | null, profile: UserProfile, allTools: Tool[], lang: "fr" | "en"
+): string {
+  const isFr = lang === "fr";
+
+  if (reason === "doublon" && winner) {
+    return isFr
+      ? `${winner.name} couvre déjà les mêmes besoins. ${tool.name} devient redondant.`
+      : `${winner.name} already covers the same needs. ${tool.name} becomes redundant.`;
+  }
+
+  if (reason === "doublon-ia") {
+    return isFr
+      ? "Tu paies deux fois pour le même usage IA."
+      : "You're paying twice for the same AI use case.";
+  }
+
+  if (reason === "dormant") {
+    return isFr
+      ? "Tu l'utilises rarement — ce coût n'est pas justifié."
+      : "You rarely use it — this cost isn't justified.";
+  }
+
+  // inadapted — use verdict or functional reason, never raw score
+  if (tool.freeAlternative) {
+    return isFr
+      ? "Une alternative gratuite couvre les mêmes besoins."
+      : "A free alternative covers the same features.";
+  }
+
+  if (tool.verdict?.avoidIf?.[0]) {
+    return tool.verdict.avoidIf[0];
+  }
+
+  return isFr
+    ? "Cet outil n'est pas dans tes priorités actuelles."
+    : "This tool isn't in your current priorities.";
+}
+
 function buildPrescription(
   tool: Tool, reason: "doublon" | "doublon-ia" | "dormant" | "inadapted",
   winner: Tool | null, profile: UserProfile, allTools: Tool[], lang: "fr" | "en"
 ): Fiche {
   const isFr = lang === "fr";
+  const diagnostic = getPrescriptionDiagnostic(tool, reason, winner, profile, allTools, lang);
 
   if (reason === "dormant" && !tool.freeAlternative && !tool.betterAlternative) {
     return {
-      type: "cancel", tool,
-      diagnostic: isFr ? "Vous l'utilisez rarement. Ce coût n'est pas justifié." : "You rarely use it. This cost isn't justified.",
+      type: "cancel", tool, diagnostic,
       prescription: isFr ? `Annuler ${tool.name}` : `Cancel ${tool.name}`,
       gain: tool.defaultMonthlyPrice, badge: "Dormant",
       migrationGuide: {
@@ -385,10 +453,7 @@ function buildPrescription(
   if (tool.freeAlternative && tool.freeAlternative !== tool.id) {
     const altTool = allTools.find((t) => t.id === tool.freeAlternative);
     return {
-      type: "replace-cheaper", tool,
-      diagnostic: reason === "doublon"
-        ? (isFr ? `${winner?.name || "Un autre outil"} couvre déjà ces besoins.` : `${winner?.name || "Another tool"} already covers these needs.`)
-        : (isFr ? "Une alternative gratuite couvre les mêmes fonctionnalités." : "A free alternative covers the same features."),
+      type: "replace-cheaper", tool, diagnostic,
       prescription: isFr ? `Remplacer par ${altTool?.name || tool.freeAlternative} (gratuit)` : `Replace with ${altTool?.name || tool.freeAlternative} (free)`,
       alternative: altTool || null,
       gain: tool.defaultMonthlyPrice,
@@ -401,8 +466,7 @@ function buildPrescription(
     const altTool = allTools.find((t) => t.id === tool.betterAlternative!.tool);
     const netGain = tool.defaultMonthlyPrice - (altTool?.defaultMonthlyPrice || 0);
     return {
-      type: "replace-better", tool,
-      diagnostic: tool.betterAlternative.performanceGain || (isFr ? `${altTool?.name} est plus adapté à votre profil.` : `${altTool?.name} is better suited to your profile.`),
+      type: "replace-better", tool, diagnostic,
       prescription: isFr ? `Passer à ${altTool?.name || tool.betterAlternative.tool}` : `Switch to ${altTool?.name || tool.betterAlternative.tool}`,
       alternative: altTool || null, gain: netGain,
       badge: reason === "doublon" ? "Doublon" : "Inadapté",
@@ -412,18 +476,14 @@ function buildPrescription(
 
   if (tool.downgradePlan?.available) {
     return {
-      type: "downgrade", tool,
-      diagnostic: isFr ? "Votre usage ne justifie pas le plan payant." : "Your usage doesn't justify the paid plan.",
+      type: "downgrade", tool, diagnostic,
       prescription: isFr ? `Passer au plan gratuit (${tool.downgradePlan.freeTier})` : `Switch to free plan (${tool.downgradePlan.freeTier})`,
       gain: tool.defaultMonthlyPrice, badge: "Inadapté",
     };
   }
 
   return {
-    type: "cancel", tool,
-    diagnostic: isFr
-      ? `Score faible pour votre profil (${Math.round(scoreFinal(tool, profile))}/100).`
-      : `Low score for your profile (${Math.round(scoreFinal(tool, profile))}/100).`,
+    type: "cancel", tool, diagnostic,
     prescription: isFr ? `Annuler ${tool.name}` : `Cancel ${tool.name}`,
     gain: tool.defaultMonthlyPrice,
     badge: reason === "doublon" ? "Doublon" : reason === "doublon-ia" ? "Doublon IA" : reason === "dormant" ? "Dormant" : "Inadapté",
@@ -434,10 +494,9 @@ function buildPrescription(
 
 function computeStackHealth(
   currentTools: Tool[],
-  doublons: DoublonResult[],
+  prescriptions: Fiche[],
   doublonsIA: DoublonIAResult[],
-  dormants: Tool[],
-  fermeCount: number,
+  questionTools: Tool[],
 ): { score: number; label: string; color: string } {
   if (!currentTools || currentTools.length === 0) {
     return { score: 100, label: "Non évalué", color: "gray" };
@@ -445,18 +504,15 @@ function computeStackHealth(
 
   let score = 100;
 
-  // V10 formula:
-  // -10 pts par doublon détecté (même substitution_cluster_v2, 2+ outils)
-  score -= Math.min(doublons.length * 10, 30);
+  // -10 per ferme prescription (max 30)
+  const fermeCount = prescriptions.filter(f => f.tool.prescription_quality === "ferme").length;
+  score -= Math.min(fermeCount * 10, 30);
 
-  // -5 pts par outil dormant payant
-  score -= Math.min(dormants.length * 5, 20);
+  // -5 per question tool (max 20)
+  score -= Math.min(questionTools.length * 5, 20);
 
-  // -5 pts par outil avec prescription_quality = "ferme" non encore traité
-  score -= Math.min(fermeCount * 5, 25);
-
-  // +5 pts bonus si aucun doublon IA
-  if (doublonsIA.length === 0) score += 5;
+  // -8 per IA doublon (max 24)
+  score -= Math.min(doublonsIA.length * 8, 24);
 
   const finalScore = Math.max(0, Math.min(100, score));
   if (finalScore >= 80) return { score: finalScore, label: "Optimisée", color: "green" };
@@ -489,7 +545,7 @@ export function computeStackHealthScore(
 
   // Ferme prescriptions penalty
   for (const t of currentTools) {
-    if (t.prescription_quality === "ferme") health -= 5;
+    if (effectivePrescriptionQuality(t) === "ferme") health -= 5;
   }
 
   // No IA doublon bonus
@@ -506,6 +562,23 @@ export function computeStackHealthScore(
   if (!hasDupIA) health += 5;
 
   return Math.max(0, Math.min(100, health));
+}
+
+/**
+ * Compute total monthly stack cost using pricing_v5, with bundle deduplication.
+ */
+function computeTotalStackCost(currentToolObjs: Tool[]): number {
+  const bundleParentsInStack = new Set(currentToolObjs.map(t => t.id));
+  return currentToolObjs.reduce((sum, tool) => {
+    // If tool has a bundle_parent and that parent is in the stack, skip (already counted)
+    if (tool.bundle_parent && bundleParentsInStack.has(tool.bundle_parent)) {
+      return sum;
+    }
+    const price = tool.pricing_v5?.compare_price_monthly_eur
+      ?? tool.defaultMonthlyPrice
+      ?? 0;
+    return sum + price;
+  }, 0);
 }
 
 export function generateScoringResults(
@@ -548,7 +621,7 @@ export function generateScoringResults(
 
   // Phase 1: "ferme" prescriptions — direct from prescription_output
   for (const tool of currentToolObjs) {
-    if (tool.prescription_quality === "ferme" && canPrescribe(tool)) {
+    if (effectivePrescriptionQuality(tool) === "ferme" && canPrescribe(tool)) {
       const fiche = buildFermePrescription(tool, allTools, lang);
       if (fiche) {
         fiches.push(fiche);
@@ -556,6 +629,20 @@ export function generateScoringResults(
       }
     }
   }
+
+  // Phase 1b: Filter out tools that ARE the replacement_tool of another prescription
+  const replacementToolIds = new Set(
+    fiches
+      .map(f => f.tool.prescription_output?.replacement_tool)
+      .filter(Boolean) as string[]
+  );
+  // Remove fiches where the tool itself is a recommended replacement
+  const filteredFiches = fiches.filter(f => !replacementToolIds.has(f.tool.id));
+  fiches.length = 0;
+  fiches.push(...filteredFiches);
+  // Update prescribedIds
+  prescribedIds.clear();
+  fiches.forEach(f => prescribedIds.add(f.tool.id));
 
   // Phase 2: "question" tools — flagged but no prescription yet
   // (handled in UI — the ScoredTool will carry prescription_quality = "question")
@@ -637,11 +724,29 @@ export function generateScoringResults(
     }
   }
 
-  // Recommendations
+  // Count "question" tools for UI (using effective quality)
+  const questionTools = currentToolObjs.filter(
+    (t) => effectivePrescriptionQuality(t) === "question" && canPrescribe(t) && !prescribedIds.has(t.id)
+  );
+
+  // Recommendations — exclude tools from doublon clusters
+  const doublonClusters = new Set<string>();
+  for (const dia of doublonsIA) {
+    for (const t of dia.tools) {
+      if (t.substitution_cluster_v2) doublonClusters.add(t.substitution_cluster_v2);
+    }
+  }
+  for (const d of doublons) {
+    if (d.loser.substitution_cluster_v2) doublonClusters.add(d.loser.substitution_cluster_v2);
+  }
+
   for (const s of scoredTools) {
     if (!currentToolIds.includes(s.tool.id) && s.finalScore > 60) {
       if (["satellite", "gestion", "ia"].includes(s.tool.tool_type)) {
-        s.action = "recommend";
+        // Exclude tools from doublon clusters
+        if (!doublonClusters.has(s.tool.substitution_cluster_v2 || "")) {
+          s.action = "recommend";
+        }
       }
     }
   }
@@ -650,7 +755,9 @@ export function generateScoringResults(
     for (const s of scoredTools) {
       if (s.action === "neutral" && !currentToolIds.includes(s.tool.id) && s.finalScore > 45) {
         if (["satellite", "gestion", "ia"].includes(s.tool.tool_type)) {
-          s.action = "recommend";
+          if (!doublonClusters.has(s.tool.substitution_cluster_v2 || "")) {
+            s.action = "recommend";
+          }
         }
       }
     }
@@ -658,7 +765,7 @@ export function generateScoringResults(
   const recommended2 = scoredTools.filter((s) => s.action === "recommend");
   if (recommended2.length < 3) {
     const remaining = scoredTools
-      .filter((s) => s.action === "neutral" && !currentToolIds.includes(s.tool.id))
+      .filter((s) => s.action === "neutral" && !currentToolIds.includes(s.tool.id) && !doublonClusters.has(s.tool.substitution_cluster_v2 || ""))
       .sort((a, b) => b.finalScore - a.finalScore)
       .slice(0, 6 - recommended2.length);
     for (const s of remaining) s.action = "recommend";
@@ -667,35 +774,38 @@ export function generateScoringResults(
   const toCancel = scoredTools.filter((s) => s.action === "cancel").sort((a, b) => a.finalScore - b.finalScore);
   const recommended = scoredTools.filter((s) => s.action === "recommend").sort((a, b) => b.finalScore - a.finalScore).slice(0, 6);
 
-  // Stack health V10
-  const fermeCount = currentToolObjs.filter((t) => t.prescription_quality === "ferme" && canPrescribe(t)).length;
-  const healthResult = computeStackHealth(currentToolObjs, doublons, doublonsIA, dormants, fermeCount);
+  // Stack health V10 — new formula
+  const healthResult = computeStackHealth(currentToolObjs, fiches, doublonsIA, questionTools);
+
   // V10 Section 9: Certified savings = only ferme prescriptions with positive gain
-  const fermeFiches = fiches.filter((f) => f.tool.prescription_quality === "ferme");
-  const certifiedSavingsMonthly = fermeFiches.reduce((sum, f) => sum + Math.max(f.gainMonthly ?? f.gain, 0), 0);
-  const totalSavingsMonthly = certifiedSavingsMonthly;
+  const fermeFiches = fiches.filter((f) => effectivePrescriptionQuality(f.tool) === "ferme");
+  const certifiedSavingsMonthly = fermeFiches.reduce((sum, f) => {
+    const gain = f.gainMonthly ?? f.gain;
+    return sum + Math.max(gain, 0); // Only positive gains count as savings
+  }, 0);
+  const totalSavingsMonthly = Math.round(certifiedSavingsMonthly * 100) / 100;
+
   // Find most recent verified_on date
   const verifiedDates = fermeFiches.map((f) => f.verifiedOn).filter(Boolean) as string[];
   const latestVerifiedOn = verifiedDates.length > 0 ? verifiedDates.sort().reverse()[0] : null;
   const hasAiDoublon = doublonsIA.length > 0;
   const personaMessage = buildPersonaMessage(form, lang);
 
-  // Count "question" tools for UI
-  const questionTools = currentToolObjs.filter(
-    (t) => t.prescription_quality === "question" && canPrescribe(t) && !prescribedIds.has(t.id)
-  );
+  // Compute total stack cost with pricing_v5 and bundle dedup
+  const totalStackCost = computeTotalStackCost(currentToolObjs);
 
   return {
     scoredTools, recommended, toCancel, fiches,
     stackHealthScore: hasCurrentTools ? healthResult.score : -1,
     totalSavingsMonthly,
-    totalSavingsAnnual: totalSavingsMonthly * 12,
+    totalSavingsAnnual: Math.round(totalSavingsMonthly * 12),
     personaMessage, hasCurrentTools, isTjmZero,
-    isStackFree: hasCurrentTools && currentToolObjs.every((t) => t.defaultMonthlyPrice === 0),
+    isStackFree: hasCurrentTools && currentToolObjs.every((t) => (t.pricing_v5?.compare_price_monthly_eur ?? t.defaultMonthlyPrice ?? 0) === 0),
     hasAiDoublon,
     fewRecommendations: highRecommended.length < 3,
     questionTools,
     latestVerifiedOn,
+    totalStackCost,
   };
 }
 
