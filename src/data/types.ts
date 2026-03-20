@@ -334,6 +334,7 @@ export interface SelectorResults {
   fewRecommendations?: boolean;
   questionTools?: Tool[];
   latestVerifiedOn?: string | null;
+  totalStackCost?: number;
 }
 
 // Legacy types kept for compat
