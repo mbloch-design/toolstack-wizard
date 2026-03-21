@@ -777,16 +777,15 @@ export function generateScoringResults(
   // Stack health V10 — new formula
   const healthResult = computeStackHealth(currentToolObjs, fiches, doublonsIA, questionTools);
 
-  // V10 Section 9: Certified savings = only ferme prescriptions with positive gain
-  const fermeFiches = fiches.filter((f) => effectivePrescriptionQuality(f.tool) === "ferme");
-  const certifiedSavingsMonthly = fermeFiches.reduce((sum, f) => {
+  // V10 Section 9: Certified savings = ALL fiches with positive gain (Phase 1 + Phase 3)
+  const certifiedSavingsMonthly = fiches.reduce((sum, f) => {
     const gain = f.gainMonthly ?? f.gain;
-    return sum + Math.max(gain, 0); // Only positive gains count as savings
+    return sum + Math.max(gain, 0);
   }, 0);
   const totalSavingsMonthly = Math.round(certifiedSavingsMonthly * 100) / 100;
 
-  // Find most recent verified_on date
-  const verifiedDates = fermeFiches.map((f) => f.verifiedOn).filter(Boolean) as string[];
+  // Find most recent verified_on date across all fiches
+  const verifiedDates = fiches.map((f) => f.verifiedOn).filter(Boolean) as string[];
   const latestVerifiedOn = verifiedDates.length > 0 ? verifiedDates.sort().reverse()[0] : null;
   const hasAiDoublon = doublonsIA.length > 0;
   const personaMessage = buildPersonaMessage(form, lang);

@@ -386,10 +386,10 @@ const SelectorPage = () => {
 
   /* ─── Tool helpers ─── */
   const selectedIds = new Set(form.currentTools.map((ct) => ct.toolId));
-  const totalCost = form.currentTools.reduce((sum, ct) => {
+  const totalCost = Math.round(form.currentTools.reduce((sum, ct) => {
     const tool = tools.find((t) => t.id === ct.toolId);
     return sum + (ct.monthlyCost || tool?.defaultMonthlyPrice || 0);
-  }, 0);
+  }, 0) * 100) / 100;
   const selectedToolObjects = useMemo(() => tools.filter((t) => selectedIds.has(t.id)), [tools, selectedIds]);
 
   const persona = PERSONA_MAP[form.family || ""] || "sofia";
