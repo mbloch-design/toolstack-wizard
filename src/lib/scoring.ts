@@ -147,7 +147,7 @@ function effectivePrescriptionQuality(tool: Tool): PrescriptionQuality {
  */
 function canPrescribe(tool: Tool): boolean {
   if (effectivePrescriptionQuality(tool) === "silence") return false;
-  if (tool.tool_type === "metier" || tool.tool_type === "plugin") return false;
+  if (tool.tool_type === "metier") return false;
   return true;
 }
 
