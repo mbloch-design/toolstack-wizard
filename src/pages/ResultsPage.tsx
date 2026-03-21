@@ -384,6 +384,12 @@ const ResultsPage = () => {
     return TJM_OPTIONS.find((o) => o.value === form.tjm)?.median || 0;
   }, [form]);
 
+  // currentToolObjs for bundle price display — must be before early return (hooks rules)
+  const currentToolObjs = useMemo(() =>
+    (form?.currentTools || []).map(ct => tools.find(t => t.id === ct.toolId)).filter(Boolean) as Tool[],
+    [form?.currentTools, tools]
+  );
+
   /* ── init ── */
   useEffect(() => {
     setNoindex(); // Dynamic results should not be indexed
@@ -451,11 +457,6 @@ const ResultsPage = () => {
   const fermeCount = savingsFiches.length + upgradeFiches.length;
   const questionCount = activeQuestionTools.length;
 
-  // currentToolObjs for bundle price display
-  const currentToolObjs = useMemo(() =>
-    form.currentTools.map(ct => tools.find(t => t.id === ct.toolId)).filter(Boolean) as Tool[],
-    [form.currentTools, tools]
-  );
 
   // Handle question answer
   const handleAnswer = (toolId: string, questionKey: string, value: string) => {
