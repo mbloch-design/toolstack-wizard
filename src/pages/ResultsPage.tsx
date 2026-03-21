@@ -443,7 +443,7 @@ const ResultsPage = () => {
   const recsToShow = showAllRecs ? results.recommended : results.recommended.slice(0, 6);
 
   // Split prescriptions: Bloc 1 = ferme (économies), Bloc 2 = question (verdicts en attente)
-  const fermeFiches = results.fiches.filter((f) => f.tool.prescription_quality === "ferme");
+  const fermeFiches = results.fiches;
   const upgradeFiches = fermeFiches.filter(f => (f.gainMonthly ?? f.gain) < 0);
   const savingsFiches = fermeFiches.filter(f => (f.gainMonthly ?? f.gain) >= 0);
 
