@@ -504,9 +504,9 @@ function computeStackHealth(
 
   let score = 100;
 
-  // -10 per ferme prescription (max 30)
-  const fermeCount = prescriptions.filter(f => f.tool.prescription_quality === "ferme").length;
-  score -= Math.min(fermeCount * 10, 30);
+  // -10 per prescription (Phase 1 + Phase 3), max 30
+  const allPrescriptionsCount = prescriptions.length;
+  score -= Math.min(allPrescriptionsCount * 10, 30);
 
   // -5 per question tool (max 20)
   score -= Math.min(questionTools.length * 5, 20);
