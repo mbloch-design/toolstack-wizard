@@ -777,7 +777,10 @@ export function generateScoringResults(
 
   // Count "question" tools for UI (using effective quality)
   const questionTools = currentToolObjs.filter(
-    (t) => effectivePrescriptionQuality(t) === "question" && canPrescribe(t) && !prescribedIds.has(t.id)
+    (t) =>
+      (effectivePrescriptionQuality(t) === "question" || heuristicQuestionIds.has(t.id)) &&
+      canPrescribe(t) &&
+      !prescribedIds.has(t.id)
   );
 
   // Recommendations — exclude tools from doublon clusters
