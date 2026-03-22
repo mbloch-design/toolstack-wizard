@@ -332,6 +332,41 @@ function detectDoublons(currentTools: Tool[], profile: UserProfile): DoublonResu
       }
     }
   }
+  // Phase 2b: plugin doublon detection by shared host_app
+  const pluginsByHost: Record<string, Tool[]> = {};
+  for (const t of currentTools) {
+    if (t.tool_type === 'plugin' && t.host_app) {
+      if (!pluginsByHost[t.host_app]) pluginsByHost[t.host_app] = [];
+      pluginsByHost[t.host_app].push(t);
+    }
+  }
+  for (const [, hostPlugins] of Object.entries(pluginsByHost)) {
+    if (hostPlugins.length < 2) continue;
+    const sorted = [...hostPlugins].sort((a, b) => scoreFinal(b, profile) - scoreFinal(a, profile));
+    const winner = sorted[0];
+    for (let i = 1; i < sorted.length; i++) {
+      const loser = sorted[i];
+      if (!canPrescribe(loser)) continue;
+      if (doublons.find(d => d.loser.id === loser.id)) continue;
+      const sharedNeeds = (winner.functional_needs || []).filter(n =>
+        (loser.functional_needs || []).includes(n)
+      );
+      if (sharedNeeds.length >= 1) {
+        const key = [winner.id, loser.id].sort().join("--");
+        if (!compared.has(key)) {
+          compared.add(key);
+          doublons.push({
+            type: "doublon",
+            loser,
+            winner,
+            sharedNeeds,
+            message: `${winner.name} et ${loser.name} sont deux plugins ${loser.host_app} avec des fonctions similaires.`,
+          });
+        }
+      }
+    }
+  }
+
   return doublons;
 }
 
