@@ -35,14 +35,6 @@ const STEP_META_EN = [
   { label: "Results", sub: "Email" },
 ];
 
-const TOOL_LAYERS: { type: ToolType; emoji: string; label: string; labelEn: string; desc: string; descEn: string }[] = [
-  { type: "metier", emoji: "🏗️", label: "Outils métier", labelEn: "Core tools", desc: "Logiciels essentiels à votre activité", descEn: "Essential software for your activity" },
-  { type: "plugin", emoji: "🔌", label: "Plugins & extensions", labelEn: "Plugins & extensions", desc: "Extensions qui enrichissent vos outils métier", descEn: "Extensions that enhance your core tools" },
-  { type: "ia", emoji: "🤖", label: "Intelligence artificielle", labelEn: "Artificial intelligence", desc: "Assistants et agents IA", descEn: "AI assistants and agents" },
-  { type: "gestion", emoji: "📋", label: "Gestion & organisation", labelEn: "Management & organization", desc: "Suivi projet, facturation, communication", descEn: "Project tracking, billing, communication" },
-  { type: "satellite", emoji: "🛰️", label: "Satellites", labelEn: "Satellites", desc: "Outils complémentaires et utilitaires", descEn: "Complementary tools and utilities" },
-];
-
 /* ─── Section 3: Persona-based activity groups for Temps 1 ─── */
 const PERSONA_MAP: Record<string, string> = {
   creatif: "sofia", tech: "theo", conseil: "marc", content: "alix", business: "claire",
@@ -102,23 +94,6 @@ const POPULAR_IDS = [
   'capture-one', 'notion-ai', 'perplexity',
 ];
 
-function getToolsForActivity(activityCovers: string[], persona: string, allTools: Tool[]): Tool[] {
-  return allTools
-    .filter(t => {
-      const matchesCovers = (t.functional_needs || []).some(n => activityCovers.includes(n));
-      const matchesPersona = (t.personas || []).includes(persona);
-      const isPopular = POPULAR_IDS.includes(t.id);
-      const notPlugin = t.tool_type !== 'plugin';
-      return matchesCovers && (matchesPersona || isPopular) && notPlugin;
-    })
-    .sort((a, b) => {
-      const pa = a.pricing_v5?.compare_price_monthly_eur || a.defaultMonthlyPrice || 0;
-      const pb = b.pricing_v5?.compare_price_monthly_eur || b.defaultMonthlyPrice || 0;
-      return pb - pa;
-    })
-    .slice(0, 6);
-}
-
 const PERSONA_VERTICALS: Record<string, string[]> = {
   sofia: ['graphiste-da', 'motion-video', 'photographe', 'illustrateur'],
   marc: ['manager-dsi', 'cto-lead-tech', 'rh-recruteur'],
@@ -127,51 +102,77 @@ const PERSONA_VERTICALS: Record<string, string[]> = {
   claire: ['daf-finance', 'manager-dsi'],
 };
 
-const HOST_LABELS: Record<string, string> = {
-  'after-effects': 'Plugins After Effects',
-  'figma': 'Plugins Figma',
-  'photoshop': 'Plugins Photoshop / Lightroom',
+/* ─── Phase A: Persona Quick Picks ─── */
+const PERSONA_QUICK_PICKS: Record<string, string[]> = {
+  sofia: [
+    'figma', 'adobe-cc', 'canva', 'notion', 'slack',
+    'calendly', 'loom', 'stripe', 'indy', 'capture-one',
+    'davinci-resolve', 'frame-io'
+  ],
+  theo: [
+    'github', 'cursor', 'notion', 'linear', 'slack',
+    'vercel', 'supabase', 'chatgpt', 'claude', 'posthog',
+    'stripe', 'sentry'
+  ],
+  marc: [
+    'notion', 'slack', 'asana', 'google-drive', 'zoom',
+    'hubspot', 'pipedrive', '1password', 'loom', 'calendly',
+    'qonto', 'pennylane'
+  ],
+  alix: [
+    'chatgpt', 'claude', 'midjourney', 'notion', 'beehiiv',
+    'substack', 'capcut', 'canva', 'buffer', 'typefully',
+    'descript', 'elevenlabs'
+  ],
+  claire: [
+    'pennylane', 'qonto', 'indy', 'stripe', 'notion',
+    'slack', 'google-drive', 'docusign', 'hubspot', 'asana',
+    'zoom', 'loom'
+  ],
 };
 
-const IMPORTANT_CLUSTERS: Record<string, string[]> = {
-  sofia: ['scheduling', 'cloud-storage', 'async-video-messaging', 'finance-ops'],
-  marc: ['team-chat', 'project-management-general', 'finance-ops', 'cloud-storage'],
-  theo: ['analytics', 'newsletter-platform', 'automation-orchestration', 'dev-issue-tracker'],
-  alix: ['ai-text-generalist', 'ai-image-generation', 'ai-video-generation', 'newsletter-platform'],
-  claire: ['finance-ops', 'project-management-general', 'cloud-storage'],
-};
+/* ─── Phase B: Contextual Questions ─── */
+interface ContextualQuestion {
+  id: string;
+  question: string;
+  questionEn: string;
+  toolIds: string[];
+  personas: string[];
+}
 
-const CLUSTER_QUESTIONS: Record<string, Record<string, { fr: string; en: string }>> = {
-  sofia: {
-    'scheduling': { fr: 'Tu gères tes rendez-vous clients comment ?', en: 'How do you manage client meetings?' },
-    'cloud-storage': { fr: 'Et pour stocker tes gros fichiers ?', en: 'What about storing large files?' },
-    'finance-ops': { fr: 'Tu factures avec quoi ?', en: 'What do you use for invoicing?' },
-    'async-video-messaging': { fr: 'Tu envoies des vidéos async à tes clients ?', en: 'Do you send async videos to clients?' },
-  },
-  marc: {
-    'finance-ops': { fr: 'Pour les notes de frais et dépenses équipe ?', en: 'For expense reports and team spending?' },
-    'team-chat': { fr: 'Vous utilisez quoi pour communiquer en interne ?', en: 'What do you use for internal communication?' },
-    'project-management-general': { fr: 'Pour suivre les projets et la roadmap ?', en: 'For tracking projects and roadmap?' },
-    'cloud-storage': { fr: 'Et pour le partage de fichiers en interne ?', en: 'What about internal file sharing?' },
-  },
-  theo: {
-    'analytics': { fr: 'Tu mesures le comportement de tes users avec quoi ?', en: 'How do you track user behavior?' },
-    'newsletter-platform': { fr: 'Et pour ton acquisition email ?', en: 'What about email acquisition?' },
-    'automation-orchestration': { fr: 'Tu automatises certains workflows ?', en: 'Do you automate some workflows?' },
-    'dev-issue-tracker': { fr: 'Pour suivre les bugs et les issues ?', en: 'For tracking bugs and issues?' },
-  },
-  alix: {
-    'ai-text-generalist': { fr: 'Tu utilises un outil IA pour écrire ou raisonner ?', en: 'Do you use an AI tool for writing or reasoning?' },
-    'ai-image-generation': { fr: 'Et pour générer des images ?', en: 'What about image generation?' },
-    'ai-video-generation': { fr: 'Et pour la vidéo ?', en: 'What about video?' },
-    'newsletter-platform': { fr: "Tu as une newsletter ou une liste email ?", en: 'Do you have a newsletter or email list?' },
-  },
-  claire: {
-    'finance-ops': { fr: "Pour consolider les dépenses de l'équipe ?", en: 'To consolidate team expenses?' },
-    'project-management-general': { fr: 'Pour suivre les projets en cours ?', en: 'For tracking ongoing projects?' },
-    'cloud-storage': { fr: 'Et pour partager les documents internes ?', en: 'What about sharing internal documents?' },
-  },
-};
+const CONTEXTUAL_QUESTIONS: ContextualQuestion[] = [
+  // SOFIA — creatif
+  { id: 'uses_after_effects', question: 'Tu travailles sur After Effects ?', questionEn: 'Do you work with After Effects?', toolIds: ['newton-3', 'rubberhouse-2', 'motion-bro', 'bao-boa', 'animation-composer', 'duik-angela', 'gifgun', 'bodymovin'], personas: ['sofia'] },
+  { id: 'uses_figma_plugins', question: 'Tu utilises des plugins Figma ?', questionEn: 'Do you use Figma plugins?', toolIds: ['figma-tokens', 'iconify-for-figma', 'stark', 'anima'], personas: ['sofia'] },
+  { id: 'uses_video_editing', question: 'Tu fais du montage vidéo ?', questionEn: 'Do you do video editing?', toolIds: ['davinci-resolve', 'adobe-premiere-pro', 'capcut', 'descript', 'frame-io'], personas: ['sofia'] },
+  { id: 'uses_3d', question: 'Tu fais de la 3D ou du motion design ?', questionEn: 'Do you do 3D or motion design?', toolIds: ['blender', 'cinema-4d', 'adobe-after-effects', 'rive'], personas: ['sofia'] },
+  { id: 'has_clients_gallery', question: 'Tu livres des photos ou visuels à tes clients en ligne ?', questionEn: 'Do you deliver photos or visuals to clients online?', toolIds: ['pixieset', 'wetransfer', 'dropbox'], personas: ['sofia'] },
+  // THEO — tech
+  { id: 'uses_ai_coding', question: "Tu utilises un assistant IA pour coder ?", questionEn: 'Do you use an AI assistant for coding?', toolIds: ['cursor', 'github-copilot', 'chatgpt', 'claude'], personas: ['theo'] },
+  { id: 'uses_analytics', question: 'Tu mesures le comportement de tes utilisateurs ?', questionEn: 'Do you track user behavior?', toolIds: ['posthog', 'amplitude', 'hotjar', 'mixpanel'], personas: ['theo'] },
+  { id: 'uses_nocode', question: 'Tu utilises des outils no-code ou low-code ?', questionEn: 'Do you use no-code or low-code tools?', toolIds: ['webflow', 'bubble', 'make', 'zapier', 'retool'], personas: ['theo'] },
+  { id: 'uses_infra', question: 'Tu gères toi-même ton infra ou déploiement ?', questionEn: 'Do you manage your own infra or deployment?', toolIds: ['vercel', 'netlify', 'supabase', 'datadog', 'sentry'], personas: ['theo'] },
+  { id: 'has_newsletter_tech', question: 'Tu as une newsletter ou une liste email ?', questionEn: 'Do you have a newsletter or email list?', toolIds: ['beehiiv', 'mailchimp', 'substack', 'brevo'], personas: ['theo'] },
+  // MARC — conseil
+  { id: 'uses_crm', question: 'Tu utilises un CRM pour suivre tes clients ou prospects ?', questionEn: 'Do you use a CRM to track clients or prospects?', toolIds: ['hubspot', 'pipedrive', 'salesforce', 'notion'], personas: ['marc'] },
+  { id: 'uses_project_management', question: 'Tu as un outil de suivi de projets ou de tâches ?', questionEn: 'Do you use a project or task management tool?', toolIds: ['asana', 'notion', 'clickup', 'linear', 'trello', 'monday'], personas: ['marc'] },
+  { id: 'uses_esignature', question: 'Tu fais signer des contrats en ligne ?', questionEn: 'Do you sign contracts online?', toolIds: ['docusign', 'pandadoc', 'indy'], personas: ['marc'] },
+  { id: 'uses_expense_management', question: 'Tu gères des notes de frais ou dépenses équipe ?', questionEn: 'Do you manage expense reports or team spending?', toolIds: ['qonto', 'spendesk', 'pennylane', 'n26-business'], personas: ['marc'] },
+  { id: 'uses_communication_async', question: 'Tu envoies des vidéos ou messages async à ton équipe ?', questionEn: 'Do you send async video or messages to your team?', toolIds: ['loom', 'slack', 'notion'], personas: ['marc'] },
+  // ALIX — content
+  { id: 'uses_image_generation', question: 'Tu génères des images avec une IA ?', questionEn: 'Do you generate images with AI?', toolIds: ['midjourney', 'adobe-firefly', 'dalle', 'stable-diffusion'], personas: ['alix'] },
+  { id: 'uses_video_generation', question: 'Tu génères de la vidéo avec une IA ?', questionEn: 'Do you generate video with AI?', toolIds: ['runway', 'kling', 'pika', 'sora'], personas: ['alix'] },
+  { id: 'has_newsletter_content', question: 'Tu as une newsletter ou une liste email ?', questionEn: 'Do you have a newsletter or email list?', toolIds: ['beehiiv', 'substack', 'mailchimp', 'kit'], personas: ['alix'] },
+  { id: 'uses_social_scheduling', question: 'Tu planifies tes posts sur les réseaux ?', questionEn: 'Do you schedule your social media posts?', toolIds: ['buffer', 'typefully', 'hootsuite', 'later'], personas: ['alix'] },
+  { id: 'uses_podcast', question: 'Tu fais un podcast ou du contenu audio ?', questionEn: 'Do you make a podcast or audio content?', toolIds: ['buzzsprout', 'descript', 'riverside', 'elevenlabs', 'audacity'], personas: ['alix'] },
+  { id: 'uses_automation_content', question: 'Tu automatises des parties de ta production de contenu ?', questionEn: 'Do you automate parts of your content production?', toolIds: ['make', 'zapier', 'n8n', 'notion'], personas: ['alix'] },
+  // CLAIRE — business
+  { id: 'uses_accounting', question: 'Tu gères ta comptabilité ou facturation en ligne ?', questionEn: 'Do you manage your accounting or billing online?', toolIds: ['pennylane', 'indy', 'qonto', 'stripe'], personas: ['claire'] },
+  { id: 'uses_hr', question: 'Tu gères des RH, paie ou congés ?', questionEn: 'Do you manage HR, payroll or leave?', toolIds: ['payfit', 'lucca', 'bamboohr', 'factorial'], personas: ['claire'] },
+  { id: 'uses_esignature_claire', question: 'Tu fais signer des contrats ou documents en ligne ?', questionEn: 'Do you sign contracts or documents online?', toolIds: ['docusign', 'pandadoc', 'yousign'], personas: ['claire'] },
+  { id: 'uses_reporting', question: 'Tu fais du reporting ou des tableaux de bord financiers ?', questionEn: 'Do you do financial reporting or dashboards?', toolIds: ['notion', 'google-sheets', 'airtable', 'metabase'], personas: ['claire'] },
+  { id: 'uses_procurement', question: 'Tu gères les achats et licences logicielles de ton équipe ?', questionEn: 'Do you manage your team software purchases and licenses?', toolIds: ['qonto', 'spendesk', 'notion', 'airtable'], personas: ['claire'] },
+];
 
 const INITIAL_FORM: SelectorFormData = {
   family: null, verticals: [], persona: null, mainGoal: null,
@@ -296,10 +297,8 @@ const SelectorPage = () => {
   const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [toolSearch, setToolSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [activeTypeFilter, setActiveTypeFilter] = useState("all");
-  const [toolSubStep, setToolSubStep] = useState<1 | 2 | 3>(1);
-  const [currentToolCategoryIndex, setCurrentToolCategoryIndex] = useState(0);
+  const [questionAnswers, setQuestionAnswers] = useState<Record<string, boolean | null>>({});
+  const [searchPhaseVisible, setSearchPhaseVisible] = useState(false);
 
   const stepMeta = lang === "en" ? STEP_META_EN : STEP_META_FR;
 
@@ -392,55 +391,51 @@ const SelectorPage = () => {
   }, 0) * 100) / 100;
   const selectedToolObjects = useMemo(() => tools.filter((t) => selectedIds.has(t.id)), [tools, selectedIds]);
 
-  const persona = PERSONA_MAP[form.family || ""] || "sofia";
+  const personaKey = PERSONA_MAP[form.family || ""] || "sofia";
 
-  /* ── Temps 1: Activity-based tool groups ── */
-  const activityGroups = useMemo(() => {
-    const groups = PERSONA_ACTIVITIES[persona] || [];
-    return groups.map(g => ({
-      ...g,
-      tools: getToolsForActivity(g.functional_needs, persona, tools).filter(t => !selectedIds.has(t.id)),
-    })).filter(g => g.tools.length > 0);
-  }, [persona, tools, selectedIds]);
+  /* ── Phase A: Quick pick tools for this persona ── */
+  const quickPickTools = useMemo(() => {
+    const ids = PERSONA_QUICK_PICKS[personaKey] || [];
+    return ids
+      .map(id => tools.find(t => t.id === id || t.slug === id))
+      .filter(Boolean) as Tool[];
+  }, [personaKey, tools]);
 
-  /* ── Temps 2: Niche tools ── */
-  const nicheTools = useMemo(() => {
-    const verticals = PERSONA_VERTICALS[persona] || [];
-    const metier = tools.filter(t =>
-      (t.tool_type === 'metier' || t.tool_type === 'ia') &&
-      (t.verticals || []).some(v => verticals.includes(v)) &&
-      !selectedIds.has(t.id) &&
-      !POPULAR_IDS.includes(t.id)
-    );
-    const plugins = Object.keys(HOST_LABELS)
-      .filter(host => selectedToolObjects.some(t => t.id === 'adobe-cc' || t.id === `adobe-${host}` || t.id === host))
-      .map(host => ({
-        host,
-        label: HOST_LABELS[host],
-        tools: tools.filter(t => t.tool_type === 'plugin' && t.host_app === host && !selectedIds.has(t.id)),
-      }))
-      .filter(g => g.tools.length > 0);
-    return { metier, plugins };
-  }, [persona, tools, selectedIds, selectedToolObjects]);
+  /* ── Phase B: Contextual questions for this persona ── */
+  const relevantQuestions = useMemo(() => {
+    return CONTEXTUAL_QUESTIONS.filter(q => q.personas.includes(personaKey));
+  }, [personaKey]);
 
-  /* ── Temps 3: Missing clusters ── */
-  const missingClusters = useMemo(() => {
-    const covered = new Set(selectedToolObjects.map(t => t.substitution_cluster_v2).filter(Boolean));
-    return (IMPORTANT_CLUSTERS[persona] || [])
-      .filter(cluster => !covered.has(cluster))
-      .map(cluster => ({
-        cluster,
-        question: CLUSTER_QUESTIONS[persona]?.[cluster] || { fr: 'Tu utilises quelque chose pour ça ?', en: 'Do you use something for this?' },
-        tools: tools.filter(t => t.substitution_cluster_v2 === cluster && !selectedIds.has(t.id)).slice(0, 5),
-      }))
-      .filter(g => g.tools.length > 0);
-  }, [persona, selectedToolObjects, tools, selectedIds]);
+  const unlockedQuestionTools = useMemo(() => {
+    const unlockedIds = new Set<string>();
+    for (const q of relevantQuestions) {
+      if (questionAnswers[q.id] === true) {
+        q.toolIds.forEach(id => unlockedIds.add(id));
+      }
+    }
+    return [...unlockedIds]
+      .map(id => tools.find(t => t.id === id || t.slug === id))
+      .filter(Boolean) as Tool[];
+  }, [relevantQuestions, questionAnswers, tools]);
 
-  const filteredTools = useMemo(() => {
-    let filtered = tools.filter((t) => !selectedIds.has(t.id));
-    if (toolSearch.trim()) filtered = filtered.filter((t) => t.name.toLowerCase().includes(toolSearch.toLowerCase().trim()));
-    return filtered;
-  }, [tools, toolSearch, selectedIds]);
+  const allSuggestedIds = useMemo(() => {
+    const ids = new Set([
+      ...quickPickTools.map(t => t.id),
+      ...unlockedQuestionTools.map(t => t.id),
+    ]);
+    return ids;
+  }, [quickPickTools, unlockedQuestionTools]);
+
+  /* ── Phase C: Free search ── */
+  const searchResults = useMemo(() => {
+    if (!toolSearch.trim()) return [];
+    return tools
+      .filter(t =>
+        t.name.toLowerCase().includes(toolSearch.toLowerCase().trim()) &&
+        !allSuggestedIds.has(t.id)
+      )
+      .slice(0, 20);
+  }, [tools, toolSearch, allSuggestedIds]);
 
   const verticalLabel = (id: string) => {
     const allActivities = Object.values(FAMILY_ACTIVITIES).flat();
@@ -625,107 +620,252 @@ const SelectorPage = () => {
           </div>
         )}
 
-        {/* ═══ STEP 4 — Tools: Sequential Category Tunnel ═══ */}
-        {step === 4 && (() => {
-          /* Build tools per category */
-          const allAvailableTools = tools.filter(t => !selectedIds.has(t.id));
-          const categoryTools = allAvailableTools.filter(t => {
-            const type = t.tool_type || 'satellite';
-            return type === TOOL_LAYERS[currentToolCategoryIndex]?.type;
-          });
-          const searchResults = toolSearch.trim()
-            ? categoryTools.filter(t => t.name.toLowerCase().includes(toolSearch.toLowerCase().trim()))
-            : categoryTools;
+        {/* ═══ STEP 4 — Tools: 3-Phase Single Screen ═══ */}
+        {step === 4 && (
+          <div className="animate-fade-in space-y-8">
 
-          const currentLayer = TOOL_LAYERS[currentToolCategoryIndex];
-          const nextLayer = TOOL_LAYERS[currentToolCategoryIndex + 1];
-          const isLastCategory = currentToolCategoryIndex >= TOOL_LAYERS.length - 1;
-
-          /* Category progress */
-          const categoryProgress = `${currentToolCategoryIndex + 1}/${TOOL_LAYERS.length}`;
-
-          return (
-            <div className="animate-fade-in">
-              {/* Category progress bar */}
-              <div className="mb-4">
-                <div className="flex items-center gap-1.5 mb-2">
-                  {TOOL_LAYERS.map((layer, i) => (
-                    <div key={layer.type}
-                      className={`h-1.5 flex-1 rounded-full transition-all duration-300
-                        ${i < currentToolCategoryIndex ? "bg-primary/50" : i === currentToolCategoryIndex ? "bg-primary" : "bg-border"}`} />
-                  ))}
-                </div>
-                <p className="text-[11px] text-muted-foreground font-mono tabular-nums">
-                  {t("Catégorie", "Category")} {categoryProgress}
-                </p>
-              </div>
-
-              <SectionHead
-                title={`${currentLayer.emoji} ${t(
-                  `Quels ${currentLayer.label.toLowerCase()} utilisez-vous ?`,
-                  `Which ${currentLayer.labelEn.toLowerCase()} do you use?`
-                )}`}
-                subtitle={lang === "en" ? currentLayer.descEn : currentLayer.desc}
-              />
-
-              {/* Selected stack — always visible */}
-              {selectedToolObjects.length > 0 && (
-                <div className="mb-4 rounded-lg border border-primary/15 bg-accent/30 p-3">
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="flex items-center gap-1.5">
-                      <Package className="h-3.5 w-3.5 text-primary" />
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-primary">
-                        {t("Ma stack", "My stack")}
-                      </span>
-                    </div>
-                    <span className="font-mono text-xs font-medium text-primary tabular-nums">
-                      {selectedToolObjects.length} {t("outils", "tools")} · {totalCost}€/{t("mois", "mo")}
+            {/* ── SELECTED STACK SUMMARY ── */}
+            {selectedToolObjects.length > 0 && (
+              <div className="rounded-xl border border-primary/20 bg-accent/40 p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <Package className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-semibold text-primary">
+                      {t("Ma stack", "My stack")}
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {selectedToolObjects.map((tool) => (
-                      <button key={tool.id} onClick={() => toggleTool(tool.id)}
-                        className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2 py-1 text-[11px] font-medium transition-colors hover:bg-destructive/5 hover:border-destructive/30 hover:text-destructive group">
-                        <ToolLogo tool={tool} size={14} />
-                        <span className="max-w-[80px] truncate">{tool.name}</span>
-                        <X className="h-2.5 w-2.5 opacity-30 group-hover:opacity-100" />
-                      </button>
-                    ))}
-                  </div>
+                  <span className="font-mono text-sm font-semibold text-primary tabular-nums">
+                    {selectedToolObjects.length} {t("outils", "tools")} · {totalCost}€/{t("mois", "mo")}
+                  </span>
                 </div>
-              )}
-
-              {/* Search */}
-              <div className="relative mb-4">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
-                <input type="text" value={toolSearch} onChange={(e) => setToolSearch(e.target.value)}
-                  placeholder={t(`Rechercher un ${currentLayer.label.toLowerCase()}…`, `Search for a ${currentLayer.labelEn.toLowerCase()}…`)}
-                  className="w-full rounded-lg border border-input bg-card py-2.5 pl-9 pr-9 text-sm outline-none placeholder:text-muted-foreground/50 focus-visible:ring-2 focus-visible:ring-ring transition-shadow" />
-                {toolSearch && (
-                  <button onClick={() => setToolSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
-                    <X className="h-3.5 w-3.5" />
-                  </button>
-                )}
-              </div>
-
-              {/* Tool list */}
-              <div className="rounded-lg border border-border bg-card overflow-hidden">
-                <div className="max-h-[45vh] overflow-y-auto divide-y divide-border/30">
-                  {searchResults.length === 0 && (
-                    <div className="py-10 text-center text-sm text-muted-foreground">
-                      {toolSearch.trim()
-                        ? t("Aucun outil trouvé", "No tool found")
-                        : t("Aucun outil de ce type dans notre base.", "No tools of this type in our database.")}
-                    </div>
-                  )}
-                  {searchResults.slice(0, 50).map((tool) => (
-                    <ToolRow key={tool.id} tool={tool} selected={selectedIds.has(tool.id)} onToggle={() => toggleTool(tool.id)} lang={lang} highlighted />
+                <div className="flex flex-wrap gap-2">
+                  {selectedToolObjects.map(tool => (
+                    <button
+                      key={tool.id}
+                      onClick={() => toggleTool(tool.id)}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs font-medium transition-colors hover:border-destructive/40 hover:text-destructive hover:bg-destructive/5 group"
+                    >
+                      <ToolLogo tool={tool} size={14} />
+                      <span>{tool.name}</span>
+                      <X className="h-3 w-3 opacity-30 group-hover:opacity-100" />
+                    </button>
                   ))}
                 </div>
               </div>
+            )}
+
+            {/* ══════════════════════════════════
+                PHASE A — QUICK RECOGNITION
+            ══════════════════════════════════ */}
+            <div>
+              <div className="mb-4">
+                <h2 className="font-heading text-lg font-semibold">
+                  {t("Les outils les plus utilisés par ton profil", "Most used tools for your profile")}
+                </h2>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {t("Clique sur ceux que tu utilises déjà", "Click the ones you already use")}
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {quickPickTools.map(tool => {
+                  const isSelected = selectedIds.has(tool.id);
+                  const price = tool.pricing_v5?.compare_price_monthly_eur ?? tool.defaultMonthlyPrice ?? 0;
+                  return (
+                    <button
+                      key={tool.id}
+                      onClick={() => toggleTool(tool.id)}
+                      className={`relative flex items-center gap-3 rounded-xl border p-3 text-left transition-all
+                        ${isSelected
+                          ? 'border-primary bg-accent/60 shadow-[0_0_0_1.5px_hsl(var(--primary))]'
+                          : 'border-border bg-card hover:border-primary/30 hover:shadow-sm'
+                        }`}
+                    >
+                      <ToolLogo tool={tool} size={32} />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[13px] font-medium truncate">{tool.name}</p>
+                        <p className="text-[11px] text-muted-foreground">
+                          {price === 0 ? t('Gratuit', 'Free') : `${price}€`}
+                        </p>
+                      </div>
+                      {isSelected && (
+                        <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary">
+                          <Check className="h-2.5 w-2.5 text-primary-foreground" strokeWidth={3} />
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          );
-        })()}
+
+            {/* ══════════════════════════════════
+                PHASE B — CONTEXTUAL QUESTIONS
+            ══════════════════════════════════ */}
+            <div>
+              <div className="mb-4">
+                <h2 className="font-heading text-lg font-semibold">
+                  {t("Quelques questions rapides", "A few quick questions")}
+                </h2>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {t(
+                    "On va débloquer les outils qui correspondent à ta façon de travailler",
+                    "We'll unlock the tools that match your way of working"
+                  )}
+                </p>
+              </div>
+              <div className="space-y-3">
+                {relevantQuestions.map(q => {
+                  const answer = questionAnswers[q.id];
+                  const isAnsweredYes = answer === true;
+                  const isAnsweredNo = answer === false;
+                  const relevantTools = q.toolIds
+                    .map(id => tools.find(t => t.id === id || t.slug === id))
+                    .filter(Boolean) as Tool[];
+
+                  return (
+                    <div
+                      key={q.id}
+                      className={`rounded-xl border transition-all overflow-hidden
+                        ${isAnsweredYes ? 'border-primary/30 bg-accent/20' : 'border-border bg-card'}`}
+                    >
+                      {/* Question row */}
+                      <div className="flex items-center justify-between gap-4 p-4">
+                        <p className="text-[14px] font-medium flex-1">
+                          {lang === 'en' ? q.questionEn : q.question}
+                        </p>
+                        <div className="flex gap-2 shrink-0">
+                          <button
+                            onClick={() => setQuestionAnswers(prev => ({
+                              ...prev,
+                              [q.id]: prev[q.id] === true ? null : true
+                            }))}
+                            className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-all
+                              ${isAnsweredYes
+                                ? 'bg-primary text-primary-foreground shadow-sm'
+                                : 'bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground'
+                              }`}
+                          >
+                            {t("Oui", "Yes")}
+                          </button>
+                          <button
+                            onClick={() => setQuestionAnswers(prev => ({
+                              ...prev,
+                              [q.id]: prev[q.id] === false ? null : false
+                            }))}
+                            className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-all
+                              ${isAnsweredNo
+                                ? 'bg-secondary text-foreground'
+                                : 'bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground'
+                              }`}
+                          >
+                            {t("Non", "No")}
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Unlocked tools */}
+                      {isAnsweredYes && relevantTools.length > 0 && (
+                        <div className="border-t border-border/50 px-4 py-3 bg-accent/10">
+                          <div className="flex flex-wrap gap-2">
+                            {relevantTools.map(tool => {
+                              const isSelected = selectedIds.has(tool.id);
+                              return (
+                                <button
+                                  key={tool.id}
+                                  onClick={() => toggleTool(tool.id)}
+                                  className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-all
+                                    ${isSelected
+                                      ? 'border-primary bg-primary/10 text-primary font-medium'
+                                      : 'border-border bg-background text-muted-foreground hover:border-primary/30 hover:text-foreground'
+                                    }`}
+                                >
+                                  <ToolLogo tool={tool} size={18} />
+                                  <span>{tool.name}</span>
+                                  {isSelected && <Check className="h-3.5 w-3.5" strokeWidth={2.5} />}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* ══════════════════════════════════
+                PHASE C — FREE SEARCH
+            ══════════════════════════════════ */}
+            <div>
+              <button
+                onClick={() => setSearchPhaseVisible(!searchPhaseVisible)}
+                className="w-full flex items-center justify-between rounded-xl border border-dashed border-border p-4 text-left hover:border-primary/40 hover:bg-accent/10 transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <Search className="h-4 w-4 text-muted-foreground" />
+                  <div>
+                    <p className="text-sm font-medium">
+                      {t("Tu utilises un autre outil ?", "Do you use another tool?")}
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      {t("Cherche dans toute notre base de données", "Search our entire database")}
+                    </p>
+                  </div>
+                </div>
+                {searchPhaseVisible
+                  ? <ChevronUp className="h-4 w-4 text-muted-foreground" />
+                  : <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                }
+              </button>
+
+              {searchPhaseVisible && (
+                <div className="mt-3 space-y-3">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
+                    <input
+                      type="text"
+                      value={toolSearch}
+                      onChange={e => setToolSearch(e.target.value)}
+                      placeholder={t("Rechercher un outil...", "Search for a tool...")}
+                      className="w-full rounded-lg border border-input bg-card py-2.5 pl-9 pr-9 text-sm outline-none placeholder:text-muted-foreground/50 focus-visible:ring-2 focus-visible:ring-ring transition-shadow"
+                      autoFocus
+                    />
+                    {toolSearch && (
+                      <button
+                        onClick={() => setToolSearch("")}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                      >
+                        <X className="h-3.5 w-3.5" />
+                      </button>
+                    )}
+                  </div>
+
+                  {toolSearch.trim() && searchResults.length === 0 && (
+                    <p className="text-center text-sm text-muted-foreground py-4">
+                      {t("Aucun outil trouvé", "No tool found")}
+                    </p>
+                  )}
+
+                  {searchResults.length > 0 && (
+                    <div className="rounded-lg border border-border bg-card overflow-hidden divide-y divide-border/30">
+                      {searchResults.map(tool => (
+                        <ToolRow
+                          key={tool.id}
+                          tool={tool}
+                          selected={selectedIds.has(tool.id)}
+                          onToggle={() => toggleTool(tool.id)}
+                          lang={lang}
+                          highlighted
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* ═══ STEP 5 — Email (was step 6) ═══ */}
         {step === 5 && (
@@ -791,92 +931,75 @@ const SelectorPage = () => {
         )}
 
         {/* ═══ Navigation Footer ═══ */}
-        <div className={`mt-8
-          ${step === 4
-            ? "sticky bottom-0 -mx-4 md:-mx-6 px-4 md:px-6 pb-4 pt-3 bg-background/95 backdrop-blur-md border-t border-border shadow-[0_-2px_12px_-4px_hsl(var(--foreground)/0.06)]"
-            : ""
-          }`}>
-          {step === 4 && (
+        {step === 4 ? (
+          <div className="sticky bottom-0 -mx-4 md:-mx-6 px-4 md:px-6 pb-4 pt-3 bg-background/95 backdrop-blur-md border-t border-border shadow-[0_-2px_12px_-4px_hsl(var(--foreground)/0.06)]">
             <div className="flex items-center justify-between mb-3">
               <span className="text-[12px] text-muted-foreground">
-                <span className="font-mono font-medium text-foreground">{form.currentTools.length}</span> {t("outils sélectionnés", "tools selected")}
+                <span className="font-mono font-medium text-foreground">{form.currentTools.length}</span>{' '}
+                {t("outils sélectionnés", "tools selected")}
               </span>
               <span className="font-mono text-[12px] font-medium tabular-nums">
                 {t("Total", "Total")} : <span className="text-primary">{totalCost}€/{t("mois", "mo")}</span>
               </span>
             </div>
-          )}
-          <div className="flex items-center justify-between">
-            <button
-              onClick={() => {
-                if (step === 4 && currentToolCategoryIndex > 0) {
-                  setCurrentToolCategoryIndex(currentToolCategoryIndex - 1);
-                  setToolSearch("");
-                } else {
-                  prev();
-                }
-              }}
-              disabled={step === 1}
-              className="flex items-center gap-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground disabled:opacity-0 disabled:pointer-events-none">
-              <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
-            </button>
-
-            <div className="flex items-center gap-3">
-              {/* Skip button — only on step 4 */}
-              {step === 4 && (
+            <div className="flex items-center justify-between">
+              <button
+                onClick={prev}
+                className="flex items-center gap-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
+              </button>
+              <div className="flex items-center gap-3">
+                {form.currentTools.length === 0 && (
+                  <button
+                    onClick={next}
+                    className="text-[12px] text-muted-foreground/70 hover:text-muted-foreground transition-colors underline-offset-2 hover:underline"
+                  >
+                    {t("Passer cette étape", "Skip this step")}
+                  </button>
+                )}
                 <button
-                  onClick={() => {
-                    if (currentToolCategoryIndex < TOOL_LAYERS.length - 1) {
-                      setCurrentToolCategoryIndex(currentToolCategoryIndex + 1);
-                      setToolSearch("");
-                    } else {
-                      setToolSearch("");
-                      setCurrentToolCategoryIndex(0);
-                      next();
-                    }
-                  }}
-                  className="text-[12px] text-muted-foreground/70 hover:text-muted-foreground transition-colors underline-offset-2 hover:underline">
-                  {t("Je n'en utilise pas, passer", "I don't use any, skip")}
-                </button>
-              )}
-
-              {step < STEPS ? (
-                <button
-                  onClick={() => {
-                    if (step === 4) {
-                      if (currentToolCategoryIndex < TOOL_LAYERS.length - 1) {
-                        setCurrentToolCategoryIndex(currentToolCategoryIndex + 1);
-                        setToolSearch("");
-                      } else {
-                        setToolSearch("");
-                        setCurrentToolCategoryIndex(0);
-                        handleNext();
-                      }
-                    } else {
-                      handleNext();
-                    }
-                  }}
-                  disabled={!canNext()}
-                  className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
-                  {step === 4
-                    ? currentToolCategoryIndex < TOOL_LAYERS.length - 1
-                      ? <>{t(`Continuer vers ${TOOL_LAYERS[currentToolCategoryIndex + 1].emoji} ${TOOL_LAYERS[currentToolCategoryIndex + 1].label}`, `Continue to ${TOOL_LAYERS[currentToolCategoryIndex + 1].emoji} ${TOOL_LAYERS[currentToolCategoryIndex + 1].labelEn}`)} <ArrowRight className="h-3.5 w-3.5" /></>
-                      : <>{t("Valider ma stack et terminer", "Confirm my stack and finish")} <Check className="h-3.5 w-3.5" /></>
-                    : <>{t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" /></>
+                  onClick={handleNext}
+                  className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25"
+                >
+                  {form.currentTools.length === 0
+                    ? <>{t("Continuer sans outils", "Continue without tools")} <ArrowRight className="h-3.5 w-3.5" /></>
+                    : <>{t("Valider ma stack", "Confirm my stack")} <Check className="h-3.5 w-3.5" /></>
                   }
                 </button>
-              ) : (
-                <button onClick={handleSubmit} disabled={!canNext() || submitting}
-                  className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
-                  {submitting
-                    ? <><Loader2 className="h-3.5 w-3.5 animate-spin" /> {t("Analyse…", "Analyzing…")}</>
-                    : <>{t("Voir mes résultats", "See my results")} <ArrowRight className="h-3.5 w-3.5" /></>
-                  }
-                </button>
-              )}
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="mt-8">
+            <div className="flex items-center justify-between">
+              <button
+                onClick={prev}
+                disabled={step === 1}
+                className="flex items-center gap-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground disabled:opacity-0 disabled:pointer-events-none">
+                <ArrowLeft className="h-3.5 w-3.5" /> {t("Retour", "Back")}
+              </button>
+              <div className="flex items-center gap-3">
+                {step < STEPS ? (
+                  <button
+                    onClick={handleNext}
+                    disabled={!canNext()}
+                    className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
+                    {t("Continuer", "Continue")} <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                ) : (
+                  <button onClick={handleSubmit} disabled={!canNext() || submitting}
+                    className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-30 disabled:pointer-events-none shadow-sm shadow-primary/20 hover:shadow-md hover:shadow-primary/25">
+                    {submitting
+                      ? <><Loader2 className="h-3.5 w-3.5 animate-spin" /> {t("Analyse…", "Analyzing…")}</>
+                      : <>{t("Voir mes résultats", "See my results")} <ArrowRight className="h-3.5 w-3.5" /></>
+                    }
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
       </div>
     </div>
