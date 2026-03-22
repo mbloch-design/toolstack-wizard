@@ -680,6 +680,21 @@ export function generateScoringResults(
   prescribedIds.clear();
   fiches.forEach(f => prescribedIds.add(f.tool.id));
 
+  // Phase 1c: heuristic question trigger — tools with free alternative on cost-sensitive profiles
+  const heuristicQuestionIds = new Set<string>();
+  const costSensitiveProfile = form.projectPhase === 'lancement' || form.tjm === 'lt200' || form.tjm === '200-400';
+  if (costSensitiveProfile) {
+    for (const tool of currentToolObjs) {
+      if (prescribedIds.has(tool.id)) continue;
+      if (!canPrescribe(tool)) continue;
+      if (effectivePrescriptionQuality(tool) === 'question') continue;
+      const price = tool.pricing_v5?.compare_price_monthly_eur ?? tool.defaultMonthlyPrice ?? 0;
+      if (tool.freeAlternative && tool.freeAlternative !== tool.id && price > 5) {
+        heuristicQuestionIds.add(tool.id);
+      }
+    }
+  }
+
   // Phase 2: "question" tools — flagged but no prescription yet
   // (handled in UI — the ScoredTool will carry prescription_quality = "question")
 
