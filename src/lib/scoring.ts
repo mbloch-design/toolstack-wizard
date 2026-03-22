@@ -317,7 +317,8 @@ function detectDoublons(currentTools: Tool[], profile: UserProfile): DoublonResu
       const needsB = new Set(b.functional_needs || b.covers || []);
       const intersection = [...needsA].filter((n) => needsB.has(n));
 
-      if (intersection.length >= 2 && a.tool_type === b.tool_type) {
+      const overlapThreshold = (a.tool_type === 'plugin' || b.tool_type === 'plugin') ? 1 : 2;
+      if (intersection.length >= overlapThreshold && a.tool_type === b.tool_type) {
         const scoreA = scoreFinal(a, profile);
         const scoreB = scoreFinal(b, profile);
         const [winner, loser] = scoreA >= scoreB ? [a, b] : [b, a];
