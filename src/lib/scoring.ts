@@ -553,7 +553,7 @@ function computeStackHealth(
   if (prescriptions.length === 0 && questionTools.length === 0 && doublonsIA.length === 0 && currentTools.length > 0) {
     const toolsByCategory: Record<string, number> = {};
     for (const t of currentTools) {
-      if (t.category) toolsByCategory[t.category] = (toolsByCategory[t.category] || 0) + 1;
+      if (t.categoryId) toolsByCategory[t.categoryId] = (toolsByCategory[t.categoryId] || 0) + 1;
     }
     const categoryOverload = Object.values(toolsByCategory).filter(count => count >= 3).length;
     score -= categoryOverload * 5;
