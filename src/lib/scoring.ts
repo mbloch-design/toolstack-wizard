@@ -317,7 +317,8 @@ function detectDoublons(currentTools: Tool[], profile: UserProfile): DoublonResu
       const needsB = new Set(b.functional_needs || b.covers || []);
       const intersection = [...needsA].filter((n) => needsB.has(n));
 
-      if (intersection.length >= 2 && a.tool_type === b.tool_type) {
+      const overlapThreshold = (a.tool_type === 'plugin' || b.tool_type === 'plugin') ? 1 : 2;
+      if (intersection.length >= overlapThreshold && a.tool_type === b.tool_type) {
         const scoreA = scoreFinal(a, profile);
         const scoreB = scoreFinal(b, profile);
         const [winner, loser] = scoreA >= scoreB ? [a, b] : [b, a];
@@ -331,6 +332,41 @@ function detectDoublons(currentTools: Tool[], profile: UserProfile): DoublonResu
       }
     }
   }
+  // Phase 2b: plugin doublon detection by shared host_app
+  const pluginsByHost: Record<string, Tool[]> = {};
+  for (const t of currentTools) {
+    if (t.tool_type === 'plugin' && t.host_app) {
+      if (!pluginsByHost[t.host_app]) pluginsByHost[t.host_app] = [];
+      pluginsByHost[t.host_app].push(t);
+    }
+  }
+  for (const [, hostPlugins] of Object.entries(pluginsByHost)) {
+    if (hostPlugins.length < 2) continue;
+    const sorted = [...hostPlugins].sort((a, b) => scoreFinal(b, profile) - scoreFinal(a, profile));
+    const winner = sorted[0];
+    for (let i = 1; i < sorted.length; i++) {
+      const loser = sorted[i];
+      if (!canPrescribe(loser)) continue;
+      if (doublons.find(d => d.loser.id === loser.id)) continue;
+      const sharedNeeds = (winner.functional_needs || []).filter(n =>
+        (loser.functional_needs || []).includes(n)
+      );
+      if (sharedNeeds.length >= 1) {
+        const key = [winner.id, loser.id].sort().join("--");
+        if (!compared.has(key)) {
+          compared.add(key);
+          doublons.push({
+            type: "doublon",
+            loser,
+            winner,
+            sharedNeeds,
+            message: `${winner.name} et ${loser.name} sont deux plugins ${loser.host_app} avec des fonctions similaires.`,
+          });
+        }
+      }
+    }
+  }
+
   return doublons;
 }
 
@@ -514,6 +550,23 @@ function computeStackHealth(
   // -8 per IA doublon (max 24)
   score -= Math.min(doublonsIA.length * 8, 24);
 
+  if (prescriptions.length === 0 && questionTools.length === 0 && doublonsIA.length === 0 && currentTools.length > 0) {
+    const toolsByCategory: Record<string, number> = {};
+    for (const t of currentTools) {
+      if (t.categoryId) toolsByCategory[t.categoryId] = (toolsByCategory[t.categoryId] || 0) + 1;
+    }
+    const categoryOverload = Object.values(toolsByCategory).filter(count => count >= 3).length;
+    score -= categoryOverload * 5;
+
+    const unverifiedExpensive = currentTools.filter(t =>
+      (t.pricing_v5?.compare_price_monthly_eur ?? t.defaultMonthlyPrice ?? 0) > 50 && !t.pricing_v5?.verified_on
+    ).length;
+    score -= unverifiedExpensive * 3;
+
+    if (currentTools.length > 20) score -= 5;
+    score = Math.max(score, 60);
+  }
+
   const finalScore = Math.max(0, Math.min(100, score));
   if (finalScore >= 80) return { score: finalScore, label: "Optimisée", color: "green" };
   if (finalScore >= 60) return { score: finalScore, label: "Correcte", color: "blue" };
@@ -644,6 +697,21 @@ export function generateScoringResults(
   prescribedIds.clear();
   fiches.forEach(f => prescribedIds.add(f.tool.id));
 
+  // Phase 1c: heuristic question trigger — tools with free alternative on cost-sensitive profiles
+  const heuristicQuestionIds = new Set<string>();
+  const costSensitiveProfile = form.projectPhase === 'lancement' || form.tjm === 'lt200' || form.tjm === '200-400';
+  if (costSensitiveProfile) {
+    for (const tool of currentToolObjs) {
+      if (prescribedIds.has(tool.id)) continue;
+      if (!canPrescribe(tool)) continue;
+      if (effectivePrescriptionQuality(tool) === 'question') continue;
+      const price = tool.pricing_v5?.compare_price_monthly_eur ?? tool.defaultMonthlyPrice ?? 0;
+      if (tool.freeAlternative && tool.freeAlternative !== tool.id && price > 5) {
+        heuristicQuestionIds.add(tool.id);
+      }
+    }
+  }
+
   // Phase 2: "question" tools — flagged but no prescription yet
   // (handled in UI — the ScoredTool will carry prescription_quality = "question")
 
@@ -726,7 +794,10 @@ export function generateScoringResults(
 
   // Count "question" tools for UI (using effective quality)
   const questionTools = currentToolObjs.filter(
-    (t) => effectivePrescriptionQuality(t) === "question" && canPrescribe(t) && !prescribedIds.has(t.id)
+    (t) =>
+      (effectivePrescriptionQuality(t) === "question" || heuristicQuestionIds.has(t.id)) &&
+      canPrescribe(t) &&
+      !prescribedIds.has(t.id)
   );
 
   // Recommendations — exclude tools from doublon clusters
