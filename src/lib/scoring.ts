@@ -550,6 +550,23 @@ function computeStackHealth(
   // -8 per IA doublon (max 24)
   score -= Math.min(doublonsIA.length * 8, 24);
 
+  if (prescriptions.length === 0 && questionTools.length === 0 && doublonsIA.length === 0 && currentTools.length > 0) {
+    const toolsByCategory: Record<string, number> = {};
+    for (const t of currentTools) {
+      if (t.category) toolsByCategory[t.category] = (toolsByCategory[t.category] || 0) + 1;
+    }
+    const categoryOverload = Object.values(toolsByCategory).filter(count => count >= 3).length;
+    score -= categoryOverload * 5;
+
+    const unverifiedExpensive = currentTools.filter(t =>
+      (t.pricing_v5?.compare_price_monthly_eur ?? t.defaultMonthlyPrice ?? 0) > 50 && !t.pricing_v5?.verified_on
+    ).length;
+    score -= unverifiedExpensive * 3;
+
+    if (currentTools.length > 20) score -= 5;
+    score = Math.max(score, 60);
+  }
+
   const finalScore = Math.max(0, Math.min(100, score));
   if (finalScore >= 80) return { score: finalScore, label: "Optimisée", color: "green" };
   if (finalScore >= 60) return { score: finalScore, label: "Correcte", color: "blue" };
