@@ -30,7 +30,22 @@ const ToolDetailPage = () => {
       : `Verified price at €${price}/month. Alternatives, migration guide and complete analysis.`;
     const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
 
+    // Use tool favicon as og:image when available
+    const toolDomain = tool.websiteUrl || tool.affiliateLink;
+    let toolOgImage: string | undefined;
+    if (toolDomain) {
+      try {
+        const hostname = new URL(toolDomain.startsWith("http") ? toolDomain : `https://${toolDomain}`).hostname.replace("www.", "");
+        toolOgImage = `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
+      } catch { /* fallback to default */ }
+    }
+
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
+    if (toolOgImage) {
+      // Override default og:image with tool-specific one
+      const { setMeta } = await import("@/lib/seo");
+      setMeta("og:image", toolOgImage);
+    }
     setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
 
     // Enriched JSON-LD with Review and Offer
