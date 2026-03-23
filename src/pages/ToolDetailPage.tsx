@@ -222,6 +222,33 @@ const ToolDetailPage = () => {
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground max-w-3xl">
             {tool.longDescription || tool.description || tool.shortDescription}
           </p>
+
+          {/* Résumé — GEO/AEO factual density block */}
+          <div className="mt-6 rounded-lg bg-secondary/20 border border-border/50 p-4">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              <strong className="text-foreground">{tool.name}</strong>{" "}
+              {t("est un outil de", "is a")}{" "}
+              {category
+                ? t(
+                    category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "").toLowerCase(),
+                    (category.nameEn || category.name).toLowerCase()
+                  )
+                : t("productivité", "productivity")}
+              .{" "}
+              {displayPrice === 0
+                ? t("Il est disponible gratuitement.", "It is available for free.")
+                : t(
+                    `Son prix démarre à ${displayPrice}€/mois.`,
+                    `Its price starts at €${displayPrice}/month.`
+                  )}{" "}
+              {tool.verdict?.threshold
+                ? tool.verdict.threshold
+                : tool.shortDescription || ""}
+              {tool.soloRelevance && (
+                <>{" "}{t("Particulièrement adapté aux freelances et indépendants.", "Particularly suited for freelancers and solopreneurs.")}</>
+              )}
+            </p>
+          </div>
         </div>
       </section>
 
