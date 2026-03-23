@@ -42,8 +42,6 @@ const ToolDetailPage = () => {
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
     if (toolOgImage) {
-      // Override default og:image with tool-specific one
-      const { setMeta } = await import("@/lib/seo");
       setMeta("og:image", toolOgImage);
     }
     setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
