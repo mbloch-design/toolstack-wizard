@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ExternalLink, Check, X, Copy, Share2, Users, User, Target, Globe, ArrowRight, AlertTriangle } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 
 const ToolDetailPage = () => {
