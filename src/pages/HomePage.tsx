@@ -217,17 +217,21 @@ const HomePage = () => {
             </div>
             <Link to={`${prefix}/category`} className="hidden md:inline-flex text-sm font-medium text-primary hover:underline">{t("Voir toutes →", "See all →")}</Link>
           </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {categories.map((cat) => {
               const Icon = getCategoryIcon(cat.id);
               const count = tools.filter((tool) => tool.categoryId === cat.id).length;
               return (
-                <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} className="group rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-                  <div className="flex items-start gap-3">
-                    <div className="inline-flex rounded-lg bg-accent p-2 text-accent-foreground shrink-0"><Icon className="h-4 w-4" /></div>
+                <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} className="group rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-5 transition-all duration-300 hover:bg-card hover:border-primary/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/15">
+                      <Icon className="h-5 w-5" />
+                    </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold group-hover:text-primary truncate">{t(cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), cat.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""))}</p>
-                      <p className="mt-1 text-xs text-primary font-medium">{count} {t("outils", "tools")} →</p>
+                      <p className="font-semibold tracking-tight group-hover:text-primary transition-colors truncate">{t(cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), cat.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""))}</p>
+                      <p className="mt-0.5 text-sm text-muted-foreground">{count} {t("outils", "tools")}</p>
+                    </div>
+                    <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground/40 transition-all duration-300 group-hover:text-primary group-hover:translate-x-1" />
                     </div>
                   </div>
                 </Link>
