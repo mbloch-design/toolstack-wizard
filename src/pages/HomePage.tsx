@@ -232,7 +232,6 @@ const HomePage = () => {
                       <p className="mt-0.5 text-sm text-muted-foreground">{count} {t("outils", "tools")}</p>
                     </div>
                     <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground/40 transition-all duration-300 group-hover:text-primary group-hover:translate-x-1" />
-                    </div>
                   </div>
                 </Link>
               );
