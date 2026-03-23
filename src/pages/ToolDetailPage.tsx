@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ExternalLink, Check, X, Copy, Share2, Users, User, Target, Globe, ArrowRight, AlertTriangle } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 
 const ToolDetailPage = () => {
@@ -30,7 +30,20 @@ const ToolDetailPage = () => {
       : `Verified price at €${price}/month. Alternatives, migration guide and complete analysis.`;
     const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
 
+    // Use tool favicon as og:image when available
+    const toolDomain = tool.websiteUrl || tool.affiliateLink;
+    let toolOgImage: string | undefined;
+    if (toolDomain) {
+      try {
+        const hostname = new URL(toolDomain.startsWith("http") ? toolDomain : `https://${toolDomain}`).hostname.replace("www.", "");
+        toolOgImage = `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
+      } catch { /* fallback to default */ }
+    }
+
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
+    if (toolOgImage) {
+      setMeta("og:image", toolOgImage);
+    }
     setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
 
     // Enriched JSON-LD with Review and Offer
@@ -222,6 +235,33 @@ const ToolDetailPage = () => {
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground max-w-3xl">
             {tool.longDescription || tool.description || tool.shortDescription}
           </p>
+
+          {/* Résumé — GEO/AEO factual density block */}
+          <div className="mt-6 rounded-lg bg-secondary/20 border border-border/50 p-4">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              <strong className="text-foreground">{tool.name}</strong>{" "}
+              {t("est un outil de", "is a")}{" "}
+              {category
+                ? t(
+                    category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "").toLowerCase(),
+                    (category.nameEn || category.name).toLowerCase()
+                  )
+                : t("productivité", "productivity")}
+              .{" "}
+              {displayPrice === 0
+                ? t("Il est disponible gratuitement.", "It is available for free.")
+                : t(
+                    `Son prix démarre à ${displayPrice}€/mois.`,
+                    `Its price starts at €${displayPrice}/month.`
+                  )}{" "}
+              {tool.verdict?.threshold
+                ? tool.verdict.threshold
+                : tool.shortDescription || ""}
+              {tool.soloRelevance && (
+                <>{" "}{t("Particulièrement adapté aux freelances et indépendants.", "Particularly suited for freelancers and solopreneurs.")}</>
+              )}
+            </p>
+          </div>
         </div>
       </section>
 
