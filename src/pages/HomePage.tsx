@@ -162,6 +162,9 @@ const HomePage = () => {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.06),transparent_70%)]" />
       </section>
 
+      {/* Persona Savings — loss aversion */}
+      <PersonaSavings />
+
       {/* Stats */}
       <section className="border-y border-border bg-secondary/30 py-12">
         <div className="container grid grid-cols-2 gap-8 md:grid-cols-4">
