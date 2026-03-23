@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PersonaSavings from "@/components/home/PersonaSavings";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo } from "react";
