@@ -3,14 +3,14 @@ import { useLang } from "@/hooks/useLang";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-interface ToolRow {
+interface DemoTool {
   name: string;
   emoji: string;
   price: number;
   verdict: "keep" | "cut" | "swap";
 }
 
-const DEMO_TOOLS: ToolRow[] = [
+const DEMO_TOOLS: DemoTool[] = [
   { name: "Notion", emoji: "📝", price: 16, verdict: "keep" },
   { name: "Coda", emoji: "📋", price: 14, verdict: "cut" },
   { name: "Zapier", emoji: "⚡", price: 49, verdict: "swap" },
@@ -20,17 +20,17 @@ const DEMO_TOOLS: ToolRow[] = [
 
 const VERDICT_CONFIG = {
   keep: {
-    label: { fr: "Garder ✓", en: "Keep ✓" },
+    labelFr: "Garder ✓", labelEn: "Keep ✓",
     rowClass: "border-keep/30 bg-keep/5",
     badgeClass: "bg-keep/10 text-keep",
   },
   cut: {
-    label: { fr: "Couper ✗", en: "Cut ✗" },
+    labelFr: "Couper ✗", labelEn: "Cut ✗",
     rowClass: "border-destructive/30 bg-destructive/5",
     badgeClass: "bg-destructive/10 text-destructive",
   },
   swap: {
-    label: { fr: "Swapper →", en: "Swap →" },
+    labelFr: "Swapper →", labelEn: "Swap →",
     rowClass: "border-amber-500/30 bg-amber-500/5",
     badgeClass: "bg-amber-500/10 text-amber-500",
   },
@@ -65,6 +65,27 @@ const ScannerDemo = () => {
     ? Math.round(((scannedIndex + 1) / DEMO_TOOLS.length) * 100)
     : 0;
 
+  const features = [
+    {
+      strong: lang === "fr" ? "Détection de doublons" : "Duplicate detection",
+      text: lang === "fr"
+        ? " — si deux outils couvrent les mêmes fonctions, l'un est en trop."
+        : " — if two tools cover the same functions, one is redundant.",
+    },
+    {
+      strong: lang === "fr" ? "ROI relatif à votre TJM" : "ROI relative to your rate",
+      text: lang === "fr"
+        ? " — 49€/mois pèse différemment selon votre chiffre d'affaires."
+        : " — €49/mo weighs differently depending on your revenue.",
+    },
+    {
+      strong: lang === "fr" ? "Alternatives gratuites" : "Free alternatives",
+      text: lang === "fr"
+        ? " — pour chaque outil flaggé, une option concrète."
+        : " — for every flagged tool, a concrete option.",
+    },
+  ];
+
   return (
     <section className="py-20 px-6">
       <div className="mx-auto grid max-w-[1100px] items-center gap-16 md:grid-cols-2">
@@ -74,8 +95,9 @@ const ScannerDemo = () => {
             {t("Démo interactive", "Interactive demo")}
           </p>
           <h2 className="text-4xl font-bold tracking-[-1.5px] leading-tight">
-            {t(
-              <>Voyez ce que l'analyse <span className="text-muted-foreground/25">fait vraiment</span></>,
+            {lang === "fr" ? (
+              <>Voyez ce que l'analyse <span className="text-muted-foreground/25">fait vraiment</span></>
+            ) : (
               <>See what the analysis <span className="text-muted-foreground/25">really does</span></>
             )}
           </h2>
@@ -86,23 +108,10 @@ const ScannerDemo = () => {
             )}
           </p>
           <div className="mt-7 flex flex-col gap-3">
-            {[
-              t(
-                <><strong className="font-medium text-muted-foreground">Détection de doublons</strong> — si deux outils couvrent les mêmes fonctions, l'un est en trop.</>,
-                <><strong className="font-medium text-muted-foreground">Duplicate detection</strong> — if two tools cover the same functions, one is redundant.</>
-              ),
-              t(
-                <><strong className="font-medium text-muted-foreground">ROI relatif à votre TJM</strong> — 49€/mois pèse différemment selon votre chiffre d'affaires.</>,
-                <><strong className="font-medium text-muted-foreground">ROI relative to your rate</strong> — €49/mo weighs differently depending on your revenue.</>
-              ),
-              t(
-                <><strong className="font-medium text-muted-foreground">Alternatives gratuites</strong> — pour chaque outil flaggé, une option concrète.</>,
-                <><strong className="font-medium text-muted-foreground">Free alternatives</strong> — for every flagged tool, a concrete option.</>
-              ),
-            ].map((text, i) => (
+            {features.map((f, i) => (
               <div key={i} className="flex items-start gap-2.5 text-[13px] text-muted-foreground/60">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span>{text}</span>
+                <span><strong className="font-medium text-muted-foreground">{f.strong}</strong>{f.text}</span>
               </div>
             ))}
           </div>
@@ -110,7 +119,6 @@ const ScannerDemo = () => {
 
         {/* Scanner card */}
         <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-lg">
-          {/* Mac title bar */}
           <div className="flex items-center gap-2 border-b border-border px-4 py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-destructive/60" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber-400/60" />
@@ -119,7 +127,6 @@ const ScannerDemo = () => {
           </div>
 
           <div className="p-5">
-            {/* Tool rows */}
             <div className="flex flex-col gap-2">
               {DEMO_TOOLS.map((tool, i) => {
                 const isScanned = scannedIndex >= i;
@@ -147,14 +154,13 @@ const ScannerDemo = () => {
                         isScanned ? config.badgeClass : "bg-secondary text-muted-foreground/30"
                       }`}
                     >
-                      {isScanned ? config.label[lang as "fr" | "en"] || config.label.fr : "—"}
+                      {isScanned ? (lang === "en" ? config.labelEn : config.labelFr) : "—"}
                     </span>
                   </div>
                 );
               })}
             </div>
 
-            {/* Progress */}
             <div className="mt-4 border-t border-border pt-4">
               <div className="h-0.5 overflow-hidden rounded-full bg-secondary">
                 <div
@@ -174,7 +180,6 @@ const ScannerDemo = () => {
               </div>
             </div>
 
-            {/* Summary */}
             {done && (
               <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-3 animate-in fade-in duration-300">
                 <div className="space-y-1.5 text-[13px]">
@@ -184,21 +189,20 @@ const ScannerDemo = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">{t("À couper (doublons)", "To cut (duplicates)")}</span>
-                    <span className="text-destructive">2 — {t("économie", "savings")} 26€/m</span>
+                    <span className="text-destructive">{t("2 — économie 26€/m", "2 — savings €26/m")}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">{t("À swapper", "To swap")}</span>
-                    <span className="text-amber-500">1 — {t("économie", "savings")} 39€/m</span>
+                    <span className="text-amber-500">{t("1 — économie 39€/m", "1 — savings €39/m")}</span>
                   </div>
                   <div className="flex justify-between border-t border-primary/20 pt-2 font-semibold">
                     <span className="text-muted-foreground">{t("Économie annuelle estimée", "Estimated annual savings")}</span>
-                    <span className="text-primary">780€/{t("an", "yr")}</span>
+                    <span className="text-primary">{t("780€/an", "€780/yr")}</span>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Scan button */}
             <button
               onClick={done ? undefined : runScan}
               disabled={scanning}
