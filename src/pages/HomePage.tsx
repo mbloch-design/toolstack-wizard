@@ -1,52 +1,39 @@
 import { Link } from "react-router-dom";
-import PersonaSavings from "@/components/home/PersonaSavings";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo } from "react";
-import { ArrowRight, TrendingDown, Zap, Search, Check, BarChart3, Shield } from "lucide-react";
+import { ArrowRight, Check, BookOpen, Clock } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
+import { ToolLogoStrip } from "@/components/ToolMentionedCard";
+import type { Tool } from "@/data/types";
 
-const TRUSTED_LOGOS = [
-  { name: "Notion", domain: "notion.so" },
-  { name: "Slack", domain: "slack.com" },
-  { name: "Figma", domain: "figma.com" },
-  { name: "Stripe", domain: "stripe.com" },
-  { name: "Canva", domain: "canva.com" },
-  { name: "ChatGPT", domain: "openai.com" },
-  { name: "Trello", domain: "trello.com" },
-  { name: "Airtable", domain: "airtable.com" },
-];
+import HeroSection from "@/components/home/HeroSection";
+import TickerBar from "@/components/home/TickerBar";
+import StatsSection from "@/components/home/StatsSection";
+import ScannerDemo from "@/components/home/ScannerDemo";
+import HowItWorks from "@/components/home/HowItWorks";
+import PersonasSection from "@/components/home/PersonasSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import DiffTable from "@/components/home/DiffTable";
+import FinalCTA from "@/components/home/FinalCTA";
 
 const FAQ_FR = [
-  {
-    q: "Comment ToolTrim analyse-t-il ma stack ?",
-    a: "ToolTrim compare vos outils à une base de 314 outils vérifiés. Il détecte les doublons, les outils dormants et les remplacements possibles — avec des prix vérifiés sur les pages officielles.",
-  },
-  {
-    q: "Les recommandations sont-elles vraiment fiables ?",
-    a: "ToolTrim ne prescrit que lorsque les données sont vérifiées. Chaque prix est issu de la page officielle de l'outil. Les recommandations incertaines sont signalées explicitement.",
-  },
-  {
-    q: "ToolTrim est-il gratuit ?",
-    a: "Oui, l'analyse de base est entièrement gratuite.",
-  },
+  { q: "Comment ToolTrim analyse-t-il ma stack ?", a: "ToolTrim compare vos outils à une base de 314 outils vérifiés. Il détecte les doublons, les outils dormants et les remplacements possibles — avec des prix vérifiés sur les pages officielles." },
+  { q: "Les recommandations sont-elles vraiment fiables ?", a: "ToolTrim ne prescrit que lorsque les données sont vérifiées. Chaque prix est issu de la page officielle de l'outil. Les recommandations incertaines sont signalées explicitement." },
+  { q: "ToolTrim est-il gratuit ?", a: "Oui, l'analyse de base est entièrement gratuite." },
+  { q: "Combien de temps prend l'analyse ?", a: "Moins de 3 minutes. Vous répondez à quelques questions sur votre profil, sélectionnez vos outils, et recevez instantanément vos recommandations personnalisées." },
+  { q: "ToolTrim est-il affilié aux outils recommandés ?", a: "Non. ToolTrim est 100% indépendant. Aucun accord d'affiliation ne biaise les recommandations. Les résultats sont basés uniquement sur votre profil et les données objectives." },
 ];
 
 const FAQ_EN = [
-  {
-    q: "How does ToolTrim analyze my stack?",
-    a: "ToolTrim compares your tools against a database of 314 verified tools. It detects duplicates, dormant tools, and possible replacements — with prices verified on official pages.",
-  },
-  {
-    q: "Are the recommendations really reliable?",
-    a: "ToolTrim only prescribes when data is verified. Each price comes from the tool's official page. Uncertain recommendations are explicitly flagged.",
-  },
-  {
-    q: "Is ToolTrim free?",
-    a: "Yes, the basic analysis is completely free.",
-  },
+  { q: "How does ToolTrim analyze my stack?", a: "ToolTrim compares your tools against a database of 314 verified tools. It detects duplicates, dormant tools, and possible replacements — with prices verified on official pages." },
+  { q: "Are the recommendations really reliable?", a: "ToolTrim only prescribes when data is verified. Each price comes from the tool's official page. Uncertain recommendations are explicitly flagged." },
+  { q: "Is ToolTrim free?", a: "Yes, the basic analysis is completely free." },
+  { q: "How long does the analysis take?", a: "Less than 3 minutes. You answer a few questions about your profile, select your tools, and instantly receive personalized recommendations." },
+  { q: "Is ToolTrim affiliated with recommended tools?", a: "No. ToolTrim is 100% independent. No affiliate deals bias the recommendations. Results are based solely on your profile and objective data." },
 ];
 
 const HomePage = () => {
@@ -61,7 +48,6 @@ const HomePage = () => {
     return { total: tools.length, free, withFree, categories: categories.length };
   }, [tools, categories]);
 
-  // Top tools: pick ones with most pros
   const featuredTools = useMemo(() =>
     [...tools].sort((a, b) => (b.pros?.length || 0) - (a.pros?.length || 0)).slice(0, 6),
     [tools]
@@ -70,7 +56,6 @@ const HomePage = () => {
   const featuredPosts = posts.slice(0, 3);
   const faq = lang === "fr" ? FAQ_FR : FAQ_EN;
 
-  // SEO
   useEffect(() => {
     const title = lang === "fr"
       ? "ToolTrim — Auditez et optimisez votre stack SaaS"
@@ -79,139 +64,42 @@ const HomePage = () => {
       ? "Découvrez en 3 minutes quels outils virer, remplacer ou dégrader. Analyse personnalisée. Prix vérifiés. Recommandations actionnables."
       : `ToolTrim compares ${stats.total}+ SaaS tools for freelancers and small teams. Personalized analysis. Verified pricing. Actionable recommendations.`;
     const url = `${SEO_BASE}/${lang}`;
-
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}`);
-
-    setJsonLd("home-jsonld", {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "ToolTrim",
-      url: SEO_BASE,
-      description: desc,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${SEO_BASE}/${lang}/tools?q={search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
-    });
-
-    setJsonLd("home-org-jsonld", {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "ToolTrim",
-      url: SEO_BASE,
-      logo: `${SEO_BASE}/picto-logo.svg`,
-      sameAs: [],
-    });
-
-    // FAQ JSON-LD
-    setJsonLd("home-faq-jsonld", {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faq.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.a,
-        },
-      })),
-    });
-
+    setJsonLd("home-jsonld", { "@context": "https://schema.org", "@type": "WebSite", name: "ToolTrim", url: SEO_BASE, description: desc, potentialAction: { "@type": "SearchAction", target: `${SEO_BASE}/${lang}/tools?q={search_term_string}`, "query-input": "required name=search_term_string" } });
+    setJsonLd("home-org-jsonld", { "@context": "https://schema.org", "@type": "Organization", name: "ToolTrim", url: SEO_BASE, logo: `${SEO_BASE}/picto-logo.svg`, sameAs: [] });
+    setJsonLd("home-faq-jsonld", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) });
     return () => cleanupSeo(["home-jsonld", "home-org-jsonld", "home-faq-jsonld"]);
   }, [lang, stats.total]);
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative overflow-hidden py-16 md:py-24 lg:py-28">
-        <div className="container relative z-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-sm text-muted-foreground">
-              <Zap className="h-3.5 w-3.5 text-primary" />
-              {t(`${stats.total}+ outils analysés`, `${stats.total}+ tools analyzed`)}
-            </div>
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl">
-              {t("Arrêtez de payer trop cher pour vos outils", "Stop overpaying for your tools")}
-            </h1>
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              {t(
-                "Tooltrim analyse votre stack d'outils et vous recommande les meilleurs en éliminant les abonnements inutiles.",
-                "Tooltrim analyzes your tool stack and recommends the best ones — eliminating unnecessary subscriptions."
-              )}
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link to={`${prefix}/selector`} className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/85 hover:shadow-xl hover:shadow-primary/30">
-                {t("Analyser ma stack gratuitement", "Analyze my stack for free")} <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link to={`${prefix}/tools`} className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3.5 font-semibold text-foreground transition-colors hover:bg-secondary">
-                {t("Explorer les outils", "Explore tools")}
-              </Link>
-            </div>
-            <div className="mt-12">
-              <p className="mb-4 text-xs font-medium uppercase tracking-wider text-muted-foreground/60">{t("Ils font confiance aux outils que nous analysons", "Trusted tools we analyze")}</p>
-              <div className="flex flex-wrap items-center justify-center gap-6">
-                {TRUSTED_LOGOS.map((logo) => (
-                  <img key={logo.domain} src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`} alt={`Logo ${logo.name}`} width={28} height={28} className="h-7 w-7 opacity-40 grayscale transition-all hover:opacity-70 hover:grayscale-0" loading="lazy" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.06),transparent_70%)]" />
-      </section>
+      {/* 1. Hero */}
+      <HeroSection toolCount={stats.total} />
 
-      {/* Persona Savings — loss aversion */}
-      <PersonaSavings />
+      {/* 2. Ticker */}
+      <TickerBar />
 
-      {/* Stats */}
-      <section className="border-y border-border bg-secondary/30 py-12">
-        <div className="container grid grid-cols-2 gap-8 md:grid-cols-4">
-          {[
-            { value: `${stats.total}+`, label: t("Outils analysés", "Tools analyzed"), icon: <BarChart3 className="h-5 w-5 text-primary" /> },
-            { value: `${stats.categories}`, label: t("Catégories", "Categories"), icon: <Search className="h-5 w-5 text-primary" /> },
-            { value: `${stats.withFree}`, label: t("Avec offre gratuite", "With free plan"), icon: <Check className="h-5 w-5 text-primary" /> },
-            { value: "100%", label: t("Indépendant", "Independent"), icon: <Shield className="h-5 w-5 text-primary" /> },
-          ].map((s) => (
-            <div key={s.label} className="flex flex-col items-center text-center gap-2">
-              {s.icon}
-              <p className="text-3xl font-extrabold text-foreground">{s.value}</p>
-              <p className="text-sm text-muted-foreground">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 3. Stats */}
+      <StatsSection toolCount={stats.total} categoryCount={stats.categories} />
 
-      {/* How it works */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tighter">{t("Comment ça marche", "How it works")}</h2>
-            <p className="mx-auto mt-3 max-w-lg text-muted-foreground">{t("3 minutes pour optimiser votre stack d'outils.", "3 minutes to optimize your tool stack.")}</p>
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              { step: "01", icon: <Search className="h-6 w-6" />, title: t("Décrivez votre profil", "Describe your profile"), desc: t("Métier, taille d'équipe, objectifs et outils actuels.", "Job, team size, goals and current tools.") },
-              { step: "02", icon: <Zap className="h-6 w-6" />, title: t("Analyse personnalisée", "Personalized analysis"), desc: t("Notre algorithme évalue chaque outil selon votre profil.", "Our algorithm evaluates each tool based on your profile.") },
-              { step: "03", icon: <TrendingDown className="h-6 w-6" />, title: t("Économisez", "Save money"), desc: t("Recevez vos recommandations avec les économies estimées.", "Get your recommendations with estimated savings.") },
-            ].map((step) => (
-              <div key={step.step} className="relative rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md">
-                <span className="absolute -top-3 -left-2 rounded-full bg-primary px-2.5 py-0.5 text-xs font-bold text-primary-foreground">{step.step}</span>
-                <div className="mb-4 inline-flex rounded-lg bg-accent p-3 text-accent-foreground">{step.icon}</div>
-                <h3 className="text-lg font-semibold tracking-tighter">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 4. Interactive Scanner Demo */}
+      <ScannerDemo />
 
-      {/* Categories */}
-      <section className="border-t border-border bg-secondary/20 py-20">
+      {/* 5. How it works */}
+      <HowItWorks />
+
+      {/* 6. Personas (5 expertise types, no names) */}
+      <PersonasSection />
+
+      {/* 7. Categories */}
+      <section className="border-t border-border py-20">
         <div className="container">
           <div className="flex items-end justify-between">
             <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
+                {t("Catalogue", "Catalog")}
+              </p>
               <h2 className="text-3xl font-bold tracking-tighter">{t("Catégories d'outils", "Tool categories")}</h2>
               <p className="mt-2 text-muted-foreground">{t(`${stats.categories} catégories couvrant tous les besoins de votre activité.`, `${stats.categories} categories covering all your business needs.`)}</p>
             </div>
@@ -241,11 +129,14 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Featured Tools */}
-      <section className="py-20">
+      {/* 8. Popular tools */}
+      <section className="border-t border-border bg-secondary/20 py-20">
         <div className="container">
           <div className="flex items-end justify-between">
             <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
+                {t("Sélection", "Selection")}
+              </p>
               <h2 className="text-3xl font-bold tracking-tighter">{t("Outils populaires", "Popular tools")}</h2>
               <p className="mt-2 text-muted-foreground">{t("Les outils les mieux notés par notre équipe.", "Top-rated tools by our team.")}</p>
             </div>
@@ -257,7 +148,6 @@ const HomePage = () => {
                 ? (tool.pricing?.paid ? "Freemium" : t("Gratuit", "Free"))
                 : `${tool.defaultMonthlyPrice}€/${t("mois", "mo")}`;
               const badgeClass = tool.defaultMonthlyPrice === 0 ? "bg-primary/10 text-primary" : "bg-secondary text-muted-foreground";
-
               return (
                 <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="group rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
                   <div className="flex items-start gap-3">
@@ -284,12 +174,19 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Blog */}
+      {/* 9. Testimonials */}
+      <TestimonialsSection />
+
+      {/* 10. Guides — styled like GuidesPage */}
       {featuredPosts.length > 0 && (
         <section className="border-t border-border bg-secondary/20 py-20">
-          <div className="container">
+          <div className="container mx-auto max-w-6xl">
             <div className="flex items-end justify-between">
               <div>
+                <div className="flex items-center gap-2 text-primary mb-3">
+                  <BookOpen className="h-4 w-4" />
+                  <span className="text-[10px] font-medium uppercase tracking-[0.14em]">{t("Ressources", "Resources")}</span>
+                </div>
                 <h2 className="text-3xl font-bold tracking-tighter">{t("Derniers guides", "Latest guides")}</h2>
                 <p className="mt-2 text-muted-foreground">{t("Comparatifs, tutoriels et conseils pour optimiser votre stack.", "Comparisons, tutorials and tips to optimize your stack.")}</p>
               </div>
@@ -297,22 +194,18 @@ const HomePage = () => {
             </div>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {featuredPosts.map((post) => (
-                <Link key={post.slug} to={`${prefix}/guide/${post.slug}`} className="group rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
-                  {post.category && (
-                    <span className="inline-block rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium text-accent-foreground mb-2">{post.category}</span>
-                  )}
-                  <h3 className="font-semibold group-hover:text-primary line-clamp-2">{post.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-2">{post.excerpt}</p>
-                  <p className="mt-3 text-xs text-muted-foreground">{post.date} · {post.readTime || "5 min"}</p>
-                </Link>
+                <GuideCard key={post.slug} post={post} prefix={prefix} tools={tools} />
               ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* FAQ — visible for SEO + structured data */}
-      <section className="py-20 border-t border-border">
+      {/* 11. Diff table */}
+      <DiffTable toolCount={stats.total} />
+
+      {/* 12. FAQ */}
+      <section className="border-t border-border py-20">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold tracking-tighter text-center">{t("Questions fréquentes", "Frequently Asked Questions")}</h2>
           <div className="mt-10 space-y-4">
@@ -331,20 +224,68 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="container">
-          <div className="mx-auto max-w-2xl rounded-2xl border border-primary/20 bg-gradient-to-br from-accent/60 to-accent/20 p-10 text-center">
-            <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">{t("Prêt à optimiser votre stack ?", "Ready to optimize your stack?")}</h2>
-            <p className="mx-auto mt-3 max-w-md leading-relaxed text-muted-foreground">{t("Répondez à quelques questions et recevez des recommandations personnalisées en 3 minutes.", "Answer a few questions and get personalized recommendations in 3 minutes.")}</p>
-            <Link to={`${prefix}/selector`} className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/85">
-              {t("Commencer l'analyse", "Start the analysis")} <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* 13. Final CTA */}
+      <FinalCTA />
     </div>
   );
 };
+
+/* ── Guide card (styled like GuidesPage) ── */
+function GuideCard({ post, prefix, tools }: { post: any; prefix: string; tools: Tool[] }) {
+  const mentionedTools = useArticleTools(post, tools);
+  const gradient = getArticleGradient(post.slug, post.category);
+
+  return (
+    <Link
+      to={`${prefix}/guide/${post.slug}`}
+      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+    >
+      <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} px-4 py-6`}>
+        {mentionedTools.length > 0 ? (
+          <div className="flex items-center gap-2">
+            {mentionedTools.slice(0, 4).map((tool) => (
+              <div key={tool.id} className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm">
+                <img
+                  src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=64`}
+                  alt={tool.name}
+                  className="h-6 w-6 rounded object-contain"
+                  loading="lazy"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                />
+              </div>
+            ))}
+            {mentionedTools.length > 4 && (
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/60 text-xs font-bold text-muted-foreground backdrop-blur-sm">
+                +{mentionedTools.length - 4}
+              </div>
+            )}
+          </div>
+        ) : (
+          <BookOpen className="h-8 w-8 text-primary/25" />
+        )}
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          {post.category && (
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 font-semibold text-primary">{post.category}</span>
+          )}
+          <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime || "5 min"}</span>
+        </div>
+        <h3 className="mt-3 text-base font-bold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">{post.title}</h3>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">{post.excerpt}</p>
+      </div>
+    </Link>
+  );
+}
+
+function getToolDomain(tool: Tool): string {
+  const url = (tool as any).websiteUrl || tool.affiliateLink;
+  if (!url) return "";
+  try {
+    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
+  } catch {
+    return "";
+  }
+}
 
 export default HomePage;
