@@ -104,6 +104,10 @@ export default {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        ticker: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -111,6 +115,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "slide-up": "slide-up 0.6s ease-out forwards",
         "count-up": "count-up 0.3s ease-out forwards",
+        ticker: "ticker 28s linear infinite",
       },
     },
   },
