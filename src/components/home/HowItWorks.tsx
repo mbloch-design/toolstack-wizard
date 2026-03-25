@@ -1,134 +1,70 @@
-import { useState } from "react";
 import { useLang } from "@/hooks/useLang";
+import { Link } from "react-router-dom";
+import { ArrowRight, User, ScanSearch, FileCheck } from "lucide-react";
 
 const HowItWorks = () => {
-  const { t } = useLang();
-  const [active, setActive] = useState(0);
+  const { t, prefix } = useLang();
 
   const steps = [
     {
-      tab: t("01 · Votre profil", "01 · Your profile"),
-      num: t("Étape 01 sur 03", "Step 01 of 03"),
-      title: t("Posez votre contexte une fois, pour tout changer", "Set your context once, to change everything"),
+      num: "01",
+      icon: User,
+      title: t("Décrivez votre contexte", "Describe your context"),
       desc: t(
         "Métier, TJM, phase de projet, taille d'équipe. Ce que la plupart des outils ignorent — et qui change tout à l'analyse.",
         "Job, daily rate, project phase, team size. What most tools ignore — and what changes the entire analysis."
       ),
-      insight: t(
+      detail: t(
         "ToolTrim ne vous recommande pas « les meilleurs outils ». Il vous dit quels outils sont justifiés pour votre situation spécifique.",
         "ToolTrim doesn't recommend 'the best tools'. It tells you which tools are justified for your specific situation."
       ),
-      visual: (
-        <div className="space-y-3">
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-wider text-muted-foreground/40">{t("Votre profil", "Your profile")}</p>
-          {[
-            { label: t("Métier", "Job"), chips: [t("Freelance", "Freelancer"), t("Fondateur", "Founder"), "DSI"], activeIdx: 0 },
-            { label: "TJM", chips: ["< 300€", "300–600€", "600€+"], activeIdx: 1 },
-            { label: "Phase", chips: [t("Lancement", "Launch"), t("Croissance", "Growth"), t("Maturité", "Maturity")], activeIdx: 1 },
-            { label: t("Équipe", "Team"), chips: ["Solo", "2–5", "5–20"], activeIdx: 0 },
-          ].map((row) => (
-            <div key={row.label} className="flex items-center gap-2.5">
-              <span className="w-16 shrink-0 text-[11px] text-muted-foreground/40">{row.label}</span>
-              <div className="flex flex-wrap gap-1.5">
-                {row.chips.map((chip, ci) => (
-                  <span
-                    key={chip}
-                    className={`rounded-md border px-3 py-1.5 text-xs font-medium transition-colors ${
-                      ci === row.activeIdx
-                        ? "border-primary/25 bg-primary/10 text-primary"
-                        : "border-border bg-secondary text-muted-foreground/60"
-                    }`}
-                  >
-                    {chip}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      ),
+      chips: [
+        { label: t("Métier", "Job"), values: [t("Freelance", "Freelancer"), t("Fondateur", "Founder"), "DSI"] },
+        { label: "TJM", values: ["< 300€", "300–600€", "600€+"] },
+      ],
     },
     {
-      tab: t("02 · L'analyse", "02 · The analysis"),
-      num: t("Étape 02 sur 03", "Step 02 of 03"),
-      title: t("L'algorithme lit votre stack outil par outil", "The algorithm reads your stack tool by tool"),
+      num: "02",
+      icon: ScanSearch,
+      title: t("L'algorithme analyse outil par outil", "The algorithm analyzes tool by tool"),
       desc: t(
         "Chaque outil est évalué sur ses fonctions réelles, son rapport coût/usage, et sa complémentarité avec le reste de votre stack.",
         "Each tool is evaluated on its real functions, cost/usage ratio, and complementarity with your stack."
       ),
-      insight: t(
+      detail: t(
         "Notion + Coda dans la même stack = signal doublon immédiat. L'algorithme garde le mieux noté, annule l'autre.",
         "Notion + Coda in the same stack = immediate duplicate signal. The algorithm keeps the better rated one, cancels the other."
       ),
-      visual: (
-        <div className="relative mx-auto aspect-square max-w-[260px]">
-          <div className="absolute left-0 right-0 top-1/2 h-px bg-border" />
-          <div className="absolute bottom-0 left-1/2 top-0 w-px bg-border" />
-          <span className="absolute left-1/2 top-1 -translate-x-1/2 text-[10px] text-muted-foreground/40">{t("Valeur élevée", "High value")}</span>
-          <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[10px] text-muted-foreground/40">{t("Valeur faible", "Low value")}</span>
-          {/* Dots */}
-          <div className="absolute left-[28%] top-[25%] h-3.5 w-3.5 rounded-full bg-keep/80" title="Figma Pro" />
-          <div className="absolute left-[62%] top-[30%] h-3.5 w-3.5 rounded-full bg-keep/80" title="Notion" />
-          <div className="absolute left-[68%] top-[72%] h-3.5 w-3.5 rounded-full bg-destructive/80" title="Coda" />
-          <div className="absolute left-[72%] top-[68%] h-2.5 w-2.5 rounded-full bg-destructive/60" title="Loom" />
-          <div className="absolute left-[35%] top-[62%] h-3 w-3 rounded-full bg-amber-500/80" title="Zapier" />
-        </div>
-      ),
+      chips: null,
     },
     {
-      tab: t("03 · Le plan d'action", "03 · The action plan"),
-      num: t("Étape 03 sur 03", "Step 03 of 03"),
-      title: t("Un plan d'action, pas juste un score", "An action plan, not just a score"),
+      num: "03",
+      icon: FileCheck,
+      title: t("Recevez un plan d'action", "Get your action plan"),
       desc: t(
         "Quoi garder, quoi couper, quoi remplacer — avec les économies mensuelles et les alternatives concrètes.",
         "What to keep, cut, replace — with monthly savings and concrete alternatives."
       ),
-      insight: t(
+      detail: t(
         "Liste priorisée d'actions, économies estimées par outil, et un score de santé de votre stack.",
         "Prioritized action list, estimated savings per tool, and a stack health score."
       ),
-      visual: (
-        <div>
-          <p className="mb-3 text-[11px] font-medium uppercase tracking-wider text-muted-foreground/40">{t("Votre rapport", "Your report")}</p>
-          <div className="space-y-2">
-            {[
-              { name: "Figma Pro", verdict: t("Garder", "Keep"), cls: "bg-keep/10 text-keep", save: "—" },
-              { name: "Notion", verdict: t("Garder", "Keep"), cls: "bg-keep/10 text-keep", save: "—" },
-              { name: "Coda", verdict: t("Couper", "Cut"), cls: "bg-destructive/10 text-destructive", save: "−14€/m" },
-              { name: "Zapier", verdict: "→ Make", cls: "bg-amber-500/10 text-amber-500", save: "−39€/m" },
-              { name: "Loom", verdict: t("Couper", "Cut"), cls: "bg-destructive/10 text-destructive", save: "−12€/m" },
-            ].map((r) => (
-              <div key={r.name} className="flex items-center justify-between rounded-lg border border-border bg-secondary/50 px-3 py-2">
-                <span className="text-xs font-medium text-muted-foreground">{r.name}</span>
-                <span className={`rounded px-2 py-0.5 text-[11px] font-medium ${r.cls}`}>{r.verdict}</span>
-                <span className="text-[11px] text-muted-foreground/40">{r.save}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-3.5 flex items-center gap-3 rounded-lg border border-primary/20 bg-primary/5 p-3">
-            <span className="text-3xl font-extrabold tracking-[-1px] text-primary">68</span>
-            <div>
-              <p className="text-xs text-muted-foreground">Stack Health Score</p>
-              <p className="text-[11px] text-primary">{t("+24 pts après optimisation", "+24 pts after optimization")}</p>
-            </div>
-          </div>
-        </div>
-      ),
+      chips: null,
     },
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-24 px-6">
       <div className="mx-auto max-w-[1100px]">
+        {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-5">
             {t("Processus", "Process")}
-          </p>
-          <h2 className="text-[42px] font-extrabold tracking-[-2px] leading-tight">
-            {t("3 étapes.", "3 steps.")}{" "}
-            <span className="text-muted-foreground/25">{t("Aucune approximation.", "No guesswork.")}</span>
+          </span>
+          <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
+            {t("3 étapes. Aucune approximation.", "3 steps. No guesswork.")}
           </h2>
-          <p className="mx-auto mt-3.5 max-w-[480px] text-[15px] leading-relaxed text-muted-foreground/60">
+          <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">
             {t(
               "Contrairement aux annuaires génériques, chaque recommandation est filtrée par votre contexte réel.",
               "Unlike generic directories, every recommendation is filtered by your real context."
@@ -136,39 +72,85 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        {/* Tabs */}
-        <div className="mb-10 flex gap-1 rounded-xl border border-border bg-secondary/50 p-1">
-          {steps.map((s, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`flex-1 rounded-lg px-4 py-2.5 text-[13px] font-medium transition-all ${
-                active === i
-                  ? "border border-border bg-card text-foreground shadow-sm"
-                  : "text-muted-foreground/40 hover:text-muted-foreground/60"
-              }`}
-            >
-              {s.tab}
-            </button>
-          ))}
+        {/* Steps — vertical flow, Elevo-inspired */}
+        <div className="space-y-6">
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            return (
+              <div
+                key={i}
+                className="group rounded-2xl border border-border bg-card transition-all hover:border-primary/20 hover:shadow-sm"
+              >
+                <div className="grid md:grid-cols-[80px_1fr_1fr] items-stretch">
+                  {/* Step number */}
+                  <div className="hidden md:flex items-center justify-center border-r border-border">
+                    <span className="text-3xl font-extrabold tracking-[-2px] text-primary/20 group-hover:text-primary/40 transition-colors">
+                      {step.num}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <span className="md:hidden text-sm font-bold text-primary/40">{step.num}</span>
+                    </div>
+                    <h3 className="text-xl font-bold tracking-[-0.5px] mb-3">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+
+                    {/* Chips preview for step 1 */}
+                    {step.chips && (
+                      <div className="mt-5 space-y-2.5">
+                        {step.chips.map((row) => (
+                          <div key={row.label} className="flex items-center gap-2">
+                            <span className="w-12 shrink-0 text-[11px] text-muted-foreground/50">{row.label}</span>
+                            <div className="flex flex-wrap gap-1.5">
+                              {row.values.map((v, vi) => (
+                                <span
+                                  key={v}
+                                  className={`rounded-md border px-2.5 py-1 text-xs font-medium ${
+                                    vi === 0
+                                      ? "border-primary/20 bg-primary/10 text-primary"
+                                      : "border-border bg-secondary text-muted-foreground/50"
+                                  }`}
+                                >
+                                  {v}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Insight panel */}
+                  <div className="p-8 md:p-10 bg-secondary/30 flex flex-col justify-center">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary mb-3">
+                      {t("Pourquoi c'est différent", "Why it's different")}
+                    </p>
+                    <p className="text-sm text-foreground leading-relaxed">{step.detail}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Panel */}
-        <div className="grid items-center gap-12 md:grid-cols-2 animate-in fade-in duration-200" key={active}>
-          <div>
-            <p className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground/40 mb-4">{steps[active].num}</p>
-            <h3 className="text-[28px] font-bold tracking-[-1px] leading-snug">{steps[active].title}</h3>
-            <p className="mt-3.5 text-sm leading-relaxed text-muted-foreground/60">{steps[active].desc}</p>
-            <div className="mt-6 rounded-[10px] border border-primary/20 bg-primary/5 p-4">
-              <p className="mb-1.5 text-[10px] font-medium uppercase tracking-[0.1em] text-primary">
-                {t("Pourquoi c'est différent", "Why it's different")}
-              </p>
-              <p className="text-[13px] leading-relaxed text-muted-foreground">{steps[active].insight}</p>
-            </div>
-          </div>
-          <div className="rounded-2xl border border-border bg-card p-6">
-            {steps[active].visual}
-          </div>
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <Link
+            to={`${prefix}/selector`}
+            className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/15 transition-all hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5"
+          >
+            {t("Lancer mon analyse gratuite", "Start my free analysis")}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <p className="mt-3 text-xs text-muted-foreground">
+            {t("Gratuit · Sans inscription · Résultats en 3 minutes", "Free · No signup · Results in 3 minutes")}
+          </p>
         </div>
       </div>
     </section>
