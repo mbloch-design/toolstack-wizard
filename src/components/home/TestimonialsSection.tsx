@@ -1,6 +1,10 @@
 import { useState, useCallback, useEffect } from "react";
 import { useLang } from "@/hooks/useLang";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import portrait1 from "@/assets/testimonials/portrait-1.jpg";
+import portrait2 from "@/assets/testimonials/portrait-2.jpg";
+import portrait3 from "@/assets/testimonials/portrait-3.jpg";
+import portrait4 from "@/assets/testimonials/portrait-4.jpg";
 
 interface Testimonial {
   quote: string;
@@ -12,6 +16,7 @@ interface Testimonial {
   context: string;
   contextEn: string;
   color: string;
+  photo: string;
 }
 
 const TESTIMONIALS: Testimonial[] = [
@@ -25,6 +30,7 @@ const TESTIMONIALS: Testimonial[] = [
     context: "Stack de 8 outils · Analyse en 3 min",
     contextEn: "8-tool stack · 3 min analysis",
     color: "hsl(var(--primary))",
+    photo: portrait1,
   },
   {
     quote: "On utilisait HubSpot Pro alors qu'on était 3. Le rapport ToolTrim nous a orientés vers Brevo — même résultat, 5x moins cher.",
@@ -36,6 +42,7 @@ const TESTIMONIALS: Testimonial[] = [
     context: "Stack de 12 outils · 4 doublons détectés",
     contextEn: "12-tool stack · 4 duplicates detected",
     color: "hsl(25, 80%, 52%)",
+    photo: portrait2,
   },
   {
     quote: "Le Stack Health Score a convaincu mon associé qu'on avait un problème. On a coupé 4 outils le jour même.",
@@ -47,6 +54,7 @@ const TESTIMONIALS: Testimonial[] = [
     context: "Stack de 18 outils · Score initial 42/100",
     contextEn: "18-tool stack · Initial score 42/100",
     color: "hsl(145, 60%, 36%)",
+    photo: portrait3,
   },
   {
     quote: "Notion, Coda et Airtable en même temps... ToolTrim a identifié le doublon que je refusais de voir depuis 2 ans.",
@@ -58,6 +66,7 @@ const TESTIMONIALS: Testimonial[] = [
     context: "Stack de 14 outils · 3 swaps recommandés",
     contextEn: "14-tool stack · 3 swaps recommended",
     color: "hsl(220, 70%, 45%)",
+    photo: portrait4,
   },
 ];
 
@@ -84,7 +93,6 @@ const TestimonialsSection = () => {
     setTimeout(() => setIsAnimating(false), 500);
   }, [isAnimating]);
 
-  // Auto-advance every 8s
   useEffect(() => {
     const timer = setInterval(() => navigate("next"), 8000);
     return () => clearInterval(timer);
@@ -97,14 +105,13 @@ const TestimonialsSection = () => {
   return (
     <section className="py-24 bg-secondary/30">
       <div className="mx-auto max-w-[1200px] px-6">
-        {/* Header row — Elevo style: big title left + trust signals right */}
+        {/* Header — Elevo style */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-lg">
             <h2 className="text-4xl md:text-[44px] font-extrabold tracking-[-1.5px] leading-[1.1] text-foreground">
               {t("Ils ont repris le contrôle de leur stack.", "They took back control of their stack.")}
             </h2>
           </div>
-          {/* Stats row — like Elevo's percentage badges */}
           <div className="flex flex-wrap gap-8">
             {STATS.slice(0, 2).map((s, i) => (
               <div key={i} className="text-right">
@@ -117,29 +124,30 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Carousel — Elevo style: main card + peek of next */}
+        {/* Carousel — photo card + peek */}
         <div className="relative">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-4 items-stretch">
-            {/* Main testimonial card */}
+            {/* Main card */}
             <div
               key={active}
               className="rounded-2xl bg-card border border-border overflow-hidden animate-in fade-in slide-in-from-right-4 duration-500"
             >
-              <div className="grid md:grid-cols-[200px_1fr] h-full">
-                {/* Avatar column */}
-                <div className="bg-secondary/60 flex items-center justify-center p-8 md:p-0">
-                  <div
-                    className="h-28 w-28 md:h-full md:w-full rounded-full md:rounded-none flex items-center justify-center text-3xl md:text-5xl font-black text-white"
-                    style={{ backgroundColor: item.color }}
-                  >
-                    {item.initials}
-                  </div>
+              <div className="grid md:grid-cols-[240px_1fr] h-full">
+                {/* Photo column */}
+                <div className="relative h-48 md:h-full overflow-hidden">
+                  <img
+                    src={item.photo}
+                    alt={`${item.initials} - ${lang === "en" ? item.roleEn : item.role}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                  />
                 </div>
 
                 {/* Content */}
                 <div className="p-8 md:p-10 flex flex-col justify-between">
                   <div>
-                    {/* Saving badge */}
                     <span
                       className="inline-block rounded-full px-3.5 py-1 text-xs font-bold text-white mb-6"
                       style={{ backgroundColor: item.color }}
@@ -161,18 +169,20 @@ const TestimonialsSection = () => {
               </div>
             </div>
 
-            {/* Next card peek — visible on large screens */}
+            {/* Next card peek */}
             <div
               className="hidden lg:flex rounded-2xl bg-card/60 border border-border/50 overflow-hidden cursor-pointer opacity-50 hover:opacity-70 transition-opacity"
               onClick={() => navigate("next")}
             >
               <div className="flex flex-col items-center justify-center w-full p-6 text-center">
-                <div
-                  className="h-20 w-20 rounded-full flex items-center justify-center text-2xl font-black text-white mb-4"
-                  style={{ backgroundColor: nextItem.color }}
-                >
-                  {nextItem.initials}
-                </div>
+                <img
+                  src={nextItem.photo}
+                  alt={nextItem.initials}
+                  className="h-20 w-20 rounded-full object-cover mb-4"
+                  loading="lazy"
+                  width={512}
+                  height={512}
+                />
                 <p className="text-sm font-semibold text-foreground">{nextItem.initials}</p>
                 <p className="text-xs text-muted-foreground mt-1">{lang === "en" ? nextItem.roleEn : nextItem.role}</p>
                 <span
@@ -185,25 +195,20 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
-          {/* Navigation — Elevo style: arrows + dots */}
+          {/* Navigation */}
           <div className="mt-8 flex items-center justify-between">
-            {/* Dots */}
             <div className="flex items-center gap-2">
               {TESTIMONIALS.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => { setIsAnimating(true); setActive(i); setTimeout(() => setIsAnimating(false), 500); }}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    i === active
-                      ? "w-8 bg-primary"
-                      : "w-2 bg-border hover:bg-muted-foreground/40"
+                    i === active ? "w-8 bg-primary" : "w-2 bg-border hover:bg-muted-foreground/40"
                   }`}
                   aria-label={`Testimonial ${i + 1}`}
                 />
               ))}
             </div>
-
-            {/* Arrows */}
             <div className="flex gap-2">
               <button
                 onClick={() => navigate("prev")}
@@ -223,7 +228,7 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Bottom stats row */}
+        {/* Bottom stats */}
         <div className="mt-16 pt-10 border-t border-border/50 grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((stat, i) => (
             <div key={i}>
