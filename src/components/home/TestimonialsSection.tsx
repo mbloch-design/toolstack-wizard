@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useLang } from "@/hooks/useLang";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   quote: string;
@@ -11,6 +11,7 @@ interface Testimonial {
   saving: string;
   context: string;
   contextEn: string;
+  color: string;
 }
 
 const TESTIMONIALS: Testimonial[] = [
@@ -23,6 +24,7 @@ const TESTIMONIALS: Testimonial[] = [
     saving: "−960€/an",
     context: "Stack de 8 outils · Analyse en 3 min",
     contextEn: "8-tool stack · 3 min analysis",
+    color: "hsl(var(--primary))",
   },
   {
     quote: "On utilisait HubSpot Pro alors qu'on était 3. Le rapport ToolTrim nous a orientés vers Brevo — même résultat, 5x moins cher.",
@@ -33,6 +35,7 @@ const TESTIMONIALS: Testimonial[] = [
     saving: "−2 040€/an",
     context: "Stack de 12 outils · 4 doublons détectés",
     contextEn: "12-tool stack · 4 duplicates detected",
+    color: "hsl(25, 80%, 52%)",
   },
   {
     quote: "Le Stack Health Score a convaincu mon associé qu'on avait un problème. On a coupé 4 outils le jour même.",
@@ -43,6 +46,7 @@ const TESTIMONIALS: Testimonial[] = [
     saving: "−3 600€/an",
     context: "Stack de 18 outils · Score initial 42/100",
     contextEn: "18-tool stack · Initial score 42/100",
+    color: "hsl(145, 60%, 36%)",
   },
   {
     quote: "Notion, Coda et Airtable en même temps... ToolTrim a identifié le doublon que je refusais de voir depuis 2 ans.",
@@ -53,110 +57,180 @@ const TESTIMONIALS: Testimonial[] = [
     saving: "−1 440€/an",
     context: "Stack de 14 outils · 3 swaps recommandés",
     contextEn: "14-tool stack · 3 swaps recommended",
+    color: "hsl(220, 70%, 45%)",
   },
+];
+
+const STATS = [
+  { value: "92%", labelFr: "des utilisateurs estiment avoir gagné en efficacité", labelEn: "of users say they gained efficiency" },
+  { value: "2,3", labelFr: "outils coupés ou swappés en moyenne", labelEn: "tools cut or swapped on average" },
+  { value: "<3min", labelFr: "pour obtenir un diagnostic complet", labelEn: "to get a full diagnostic" },
+  { value: "100%", labelFr: "des recommandations vérifiées par un humain", labelEn: "of recommendations verified by a human" },
 ];
 
 const TestimonialsSection = () => {
   const { lang, t } = useLang();
   const [active, setActive] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const prev = () => setActive((p) => (p === 0 ? TESTIMONIALS.length - 1 : p - 1));
-  const next = () => setActive((p) => (p === TESTIMONIALS.length - 1 ? 0 : p + 1));
+  const navigate = useCallback((direction: "prev" | "next") => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setActive((p) =>
+      direction === "next"
+        ? p === TESTIMONIALS.length - 1 ? 0 : p + 1
+        : p === 0 ? TESTIMONIALS.length - 1 : p - 1
+    );
+    setTimeout(() => setIsAnimating(false), 500);
+  }, [isAnimating]);
+
+  // Auto-advance every 8s
+  useEffect(() => {
+    const timer = setInterval(() => navigate("next"), 8000);
+    return () => clearInterval(timer);
+  }, [navigate]);
+
   const item = TESTIMONIALS[active];
+  const nextIdx = active === TESTIMONIALS.length - 1 ? 0 : active + 1;
+  const nextItem = TESTIMONIALS[nextIdx];
 
   return (
-    <section className="py-24 px-6">
-      <div className="mx-auto max-w-[1100px]">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-5">
-            {t("Témoignages", "Testimonials")}
-          </span>
-          <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
-            {t("Ils ont repris le contrôle", "They took back control")}
-          </h2>
-          <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">
-            {t(
-              "Des freelances et fondateurs qui ont identifié et coupé leurs abonnements inutiles.",
-              "Freelancers and founders who identified and cut their unnecessary subscriptions."
-            )}
-          </p>
+    <section className="py-24 bg-secondary/30">
+      <div className="mx-auto max-w-[1200px] px-6">
+        {/* Header row — Elevo style: big title left + trust signals right */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+          <div className="max-w-lg">
+            <h2 className="text-4xl md:text-[44px] font-extrabold tracking-[-1.5px] leading-[1.1] text-foreground">
+              {t("Ils ont repris le contrôle de leur stack.", "They took back control of their stack.")}
+            </h2>
+          </div>
+          {/* Stats row — like Elevo's percentage badges */}
+          <div className="flex flex-wrap gap-8">
+            {STATS.slice(0, 2).map((s, i) => (
+              <div key={i} className="text-right">
+                <p className="text-3xl md:text-4xl font-extrabold tracking-[-1.5px] text-foreground">{s.value}</p>
+                <p className="text-xs text-muted-foreground mt-1 max-w-[180px] leading-relaxed">
+                  {lang === "en" ? s.labelEn : s.labelFr}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Main testimonial — large editorial card */}
-        <div className="relative rounded-2xl border border-border bg-card overflow-hidden" key={active}>
-          <div className="grid md:grid-cols-[1fr_340px]">
-            {/* Quote side */}
-            <div className="p-8 md:p-12 flex flex-col justify-between">
-              <div>
-                <Quote className="h-8 w-8 text-primary/20 mb-6" />
-                <blockquote className="text-xl md:text-2xl font-medium leading-relaxed tracking-[-0.5px] text-foreground animate-in fade-in duration-300">
-                  "{lang === "en" ? item.quoteEn : item.quote}"
-                </blockquote>
-              </div>
-
-              <div className="mt-8 flex items-center gap-4 pt-6 border-t border-border">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
-                  {item.initials}
+        {/* Carousel — Elevo style: main card + peek of next */}
+        <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-4 items-stretch">
+            {/* Main testimonial card */}
+            <div
+              key={active}
+              className="rounded-2xl bg-card border border-border overflow-hidden animate-in fade-in slide-in-from-right-4 duration-500"
+            >
+              <div className="grid md:grid-cols-[200px_1fr] h-full">
+                {/* Avatar column */}
+                <div className="bg-secondary/60 flex items-center justify-center p-8 md:p-0">
+                  <div
+                    className="h-28 w-28 md:h-full md:w-full rounded-full md:rounded-none flex items-center justify-center text-3xl md:text-5xl font-black text-white"
+                    style={{ backgroundColor: item.color }}
+                  >
+                    {item.initials}
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold">{item.initials}</p>
-                  <p className="text-sm text-muted-foreground">{lang === "en" ? item.roleEn : item.role}</p>
+
+                {/* Content */}
+                <div className="p-8 md:p-10 flex flex-col justify-between">
+                  <div>
+                    {/* Saving badge */}
+                    <span
+                      className="inline-block rounded-full px-3.5 py-1 text-xs font-bold text-white mb-6"
+                      style={{ backgroundColor: item.color }}
+                    >
+                      {item.saving}
+                    </span>
+
+                    <blockquote className="text-lg md:text-xl font-medium leading-relaxed tracking-[-0.3px] text-foreground">
+                      "{lang === "en" ? item.quoteEn : item.quote}"
+                    </blockquote>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-border">
+                    <p className="text-sm font-semibold text-foreground">{item.initials}</p>
+                    <p className="text-sm text-muted-foreground">{lang === "en" ? item.roleEn : item.role}</p>
+                    <p className="text-xs text-muted-foreground/70 mt-1">{lang === "en" ? item.contextEn : item.context}</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Stats side */}
-            <div className="bg-secondary/40 p-8 md:p-10 flex flex-col justify-center gap-6 border-t md:border-t-0 md:border-l border-border">
-              <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground mb-2">
-                  {t("Économie réalisée", "Savings achieved")}
-                </p>
-                <p className="text-4xl font-extrabold tracking-[-2px] text-primary">{item.saving}</p>
+            {/* Next card peek — visible on large screens */}
+            <div
+              className="hidden lg:flex rounded-2xl bg-card/60 border border-border/50 overflow-hidden cursor-pointer opacity-50 hover:opacity-70 transition-opacity"
+              onClick={() => navigate("next")}
+            >
+              <div className="flex flex-col items-center justify-center w-full p-6 text-center">
+                <div
+                  className="h-20 w-20 rounded-full flex items-center justify-center text-2xl font-black text-white mb-4"
+                  style={{ backgroundColor: nextItem.color }}
+                >
+                  {nextItem.initials}
+                </div>
+                <p className="text-sm font-semibold text-foreground">{nextItem.initials}</p>
+                <p className="text-xs text-muted-foreground mt-1">{lang === "en" ? nextItem.roleEn : nextItem.role}</p>
+                <span
+                  className="inline-block rounded-full px-3 py-0.5 text-[11px] font-bold text-white mt-3"
+                  style={{ backgroundColor: nextItem.color }}
+                >
+                  {nextItem.saving}
+                </span>
               </div>
-              <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground mb-2">
-                  {t("Contexte", "Context")}
-                </p>
-                <p className="text-sm text-foreground font-medium">{lang === "en" ? item.contextEn : item.context}</p>
-              </div>
-              <div className="flex items-center gap-1">
-                {TESTIMONIALS.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActive(i)}
-                    className={`h-1.5 rounded-full transition-all ${
-                      i === active ? "w-6 bg-primary" : "w-1.5 bg-border hover:bg-muted-foreground/30"
-                    }`}
-                    aria-label={`Testimonial ${i + 1}`}
-                  />
-                ))}
-              </div>
+            </div>
+          </div>
+
+          {/* Navigation — Elevo style: arrows + dots */}
+          <div className="mt-8 flex items-center justify-between">
+            {/* Dots */}
+            <div className="flex items-center gap-2">
+              {TESTIMONIALS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setIsAnimating(true); setActive(i); setTimeout(() => setIsAnimating(false), 500); }}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === active
+                      ? "w-8 bg-primary"
+                      : "w-2 bg-border hover:bg-muted-foreground/40"
+                  }`}
+                  aria-label={`Testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Arrows */}
+            <div className="flex gap-2">
+              <button
+                onClick={() => navigate("prev")}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                aria-label="Previous"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => navigate("next")}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                aria-label="Next"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Navigation arrows */}
-        <div className="mt-6 flex justify-center gap-3">
-          <button onClick={prev} className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary" aria-label="Previous">
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <button onClick={next} className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary" aria-label="Next">
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-
-        {/* Summary stats row */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { value: "92%", label: t("estiment avoir gagné en efficacité", "say they gained efficiency") },
-            { value: "2,3", label: t("outils coupés ou swappés en moyenne", "tools cut or swapped on average") },
-            { value: "<3min", label: t("pour obtenir un diagnostic complet", "to get a full diagnostic") },
-            { value: "100%", label: t("des recommandations vérifiées par un humain", "of recommendations verified by a human") },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <p className="text-3xl font-extrabold tracking-[-1px] text-foreground">{stat.value}</p>
-              <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{stat.label}</p>
+        {/* Bottom stats row */}
+        <div className="mt-16 pt-10 border-t border-border/50 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {STATS.map((stat, i) => (
+            <div key={i}>
+              <p className="text-2xl md:text-3xl font-extrabold tracking-[-1px] text-foreground">{stat.value}</p>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                {lang === "en" ? stat.labelEn : stat.labelFr}
+              </p>
             </div>
           ))}
         </div>
