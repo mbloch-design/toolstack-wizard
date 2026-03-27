@@ -40,4 +40,4 @@ Disallow: /*?utm_campaign=
 # Block dynamic results pages
 Disallow: /*/selector/results
 
-Sitemap: https://tooltrim.io/sitemap.xml
+Sitemap: https://www.tooltrim.io/sitemap.xml
