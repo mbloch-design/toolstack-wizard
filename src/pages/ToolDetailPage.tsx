@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useState } from "react";
@@ -150,12 +150,7 @@ const ToolDetailPage = () => {
   }
 
   if (!tool) {
-    return (
-      <div className="container py-20 text-center">
-        <p className="text-muted-foreground">{t("Outil non trouvé.", "Tool not found.")}</p>
-        <Link to={`${prefix}/tools`} className="mt-4 inline-block text-primary hover:underline">{t("Retour au catalogue", "Back to catalog")}</Link>
-      </div>
-    );
+    return <Navigate to={`${prefix}/tools`} replace />;
   }
 
   const category = categories.find((c: any) => c.id === tool.categoryId);
