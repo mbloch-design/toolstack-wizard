@@ -2,8 +2,8 @@
  * SEO utility: set meta tags, canonical, and JSON-LD dynamically.
  */
 
-export const SEO_BASE = "https://tooltrim.io";
-export const OG_IMAGE = "https://tooltrim.io/picto-logo.svg";
+export const SEO_BASE = "https://www.tooltrim.io";
+export const OG_IMAGE = "https://www.tooltrim.io/picto-logo.svg";
 
 export function setMeta(nameOrProp: string, content: string) {
   const isOg = nameOrProp.startsWith("og:") || nameOrProp.startsWith("article:");
