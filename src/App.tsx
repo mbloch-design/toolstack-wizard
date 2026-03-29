@@ -73,7 +73,7 @@ const App = () => (
           <Route path="/tool/:slug" element={<RedirectToolToFr />} />
           <Route path="/en/tool/:slug" element={<RedirectToolToFr />} />
           <Route path="/en/category/*" element={<Navigate to="/fr" replace />} />
-          <Route path="/en" element={<Navigate to="/fr" replace />} />
+          
 
           <Route path="/:lang" element={<LangLayout />}>
             <Route index element={<HomePage />} />
