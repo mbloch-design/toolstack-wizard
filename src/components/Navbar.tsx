@@ -194,10 +194,12 @@ const Navbar = () => {
             className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground">
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
-          <Link to={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}`}
+          <a href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
+            hrefLang={otherLang}
+            rel="alternate"
             className="rounded-lg px-2 py-1.5 text-[11px] font-semibold uppercase text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground tracking-wide">
-            {otherLang}
-          </Link>
+            {otherLang.toUpperCase()}
+          </a>
           <Link to={`${prefix}/selector`}
             className="ml-1 rounded-lg bg-foreground px-4 py-2 text-[13px] font-semibold text-background transition-all hover:bg-foreground/85 hover:shadow-md">
             {t("Analyser ma stack", "Analyze my stack")}
@@ -209,9 +211,12 @@ const Navbar = () => {
           <button onClick={toggle} className="rounded-lg p-2 text-muted-foreground" aria-label="Toggle theme">
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
-          <Link to={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}`} className="rounded-lg px-2 py-1 text-[11px] font-semibold uppercase text-muted-foreground tracking-wide">
-            {otherLang}
-          </Link>
+          <a href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
+            hrefLang={otherLang}
+            rel="alternate"
+            className="rounded-lg px-2 py-1 text-[11px] font-semibold uppercase text-muted-foreground tracking-wide">
+            {otherLang.toUpperCase()}
+          </a>
           <button onClick={() => { setMobileOpen(!mobileOpen); setMobileExpanded(null); }}
             className="rounded-lg p-2 text-muted-foreground">
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
