@@ -39,6 +39,8 @@ Each tool entry contains:
 ### Comparison Guides
 - Pattern: `https://www.tooltrim.io/{lang}/guide/{slug}`
 - Structured head-to-head comparisons with verified data
+- Key comparisons: Notion vs Coda, ChatGPT vs Claude, Zapier vs Make, Figma vs Canva, Slack vs Teams
+- Each guide includes: verified pricing table, ROI calculation by profile, migration guide, and independent verdict
 
 ### Stack Selector
 - URL: `https://www.tooltrim.io/fr/selector`
