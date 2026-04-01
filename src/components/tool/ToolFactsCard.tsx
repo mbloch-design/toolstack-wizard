@@ -84,8 +84,8 @@ export default function ToolFactsCard({ tool, category, alternatives, displayPri
 function Fact({ label, value, children }: { label: string; value?: string; children?: React.ReactNode }) {
   return (
     <div className="flex items-start justify-between gap-4 py-2.5">
-      <dt className="text-muted-foreground shrink-0">{label}</dt>
-      <dd className="font-medium text-right">{children || value || "—"}</dd>
+      <dt className="text-muted-foreground shrink-0 max-w-[45%]">{label}</dt>
+      <dd className="font-medium text-right break-words min-w-0">{children || value || "—"}</dd>
     </div>
   );
 }
