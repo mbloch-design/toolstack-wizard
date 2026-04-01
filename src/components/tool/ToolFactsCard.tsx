@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import type { Tool, Category } from "@/data/types";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Tag, DollarSign, Users, AlertTriangle, ArrowRightLeft, CalendarCheck, Globe } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
+import { getCategoryIcon } from "@/lib/categoryIcons";
 
 interface Props {
   tool: Tool;
@@ -13,10 +15,6 @@ interface Props {
   t: (fr: string, en: string) => string;
 }
 
-/**
- * Structured facts card — stable key-value pairs for machine consumption.
- * Rendered as a <dl> for maximum semantic clarity.
- */
 export default function ToolFactsCard({ tool, category, alternatives, displayPrice, verifiedOn, lang, prefix, t }: Props) {
   const categoryLabel = category
     ? t(category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), category.nameEn || category.name)
@@ -37,55 +35,98 @@ export default function ToolFactsCard({ tool, category, alternatives, displayPri
     ? (Array.isArray(tool.verdict.avoidIf) ? tool.verdict.avoidIf : [tool.verdict.avoidIf]).filter(Boolean)[0]
     : "—";
 
+  const CategoryIcon = category ? getCategoryIcon(category.id || category.slug) : Tag;
+
   return (
-    <div className="rounded-xl border border-border bg-card p-5">
-      <h2 className="text-lg font-bold tracking-tighter">
-        {t(`Fiche technique — ${tool.name}`, `${tool.name} — Key Facts`)}
-      </h2>
-      <dl className="mt-4 divide-y divide-border/50 text-sm">
-        <Fact label={t("Nom", "Name")} value={tool.name} />
-        <Fact label={t("Catégorie", "Category")}>
-          {category ? (
-            <Link to={`${prefix}/category/${category.slug}`} className="text-primary hover:underline">
+    <div className="rounded-2xl border border-border bg-card overflow-hidden">
+      {/* Header with logo */}
+      <div className="flex items-center gap-4 p-5 pb-4 border-b border-border/50 bg-muted/30">
+        <ToolLogo tool={tool} size={48} className="rounded-xl shadow-sm" />
+        <div className="min-w-0">
+          <h2 className="text-lg font-bold tracking-tight truncate">{tool.name}</h2>
+          {category && (
+            <Link to={`${prefix}/category/${category.slug}`}
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors mt-0.5">
+              <CategoryIcon className="h-3 w-3" />
               {categoryLabel}
             </Link>
-          ) : "—"}
+          )}
+        </div>
+      </div>
+
+      {/* Facts grid */}
+      <dl className="divide-y divide-border/40 text-sm">
+        <Fact icon={<DollarSign className="h-4 w-4 text-muted-foreground" />} label={t("Prix de départ", "Starting price")}>
+          <span className="font-semibold text-foreground">
+            {displayPrice === 0 ? t("Gratuit", "Free") : `${Math.round(displayPrice)}€/${t("mois", "mo")}`}
+          </span>
         </Fact>
-        <Fact label={t("Prix de départ", "Starting price")} value={displayPrice === 0 ? t("Gratuit", "Free") : `${displayPrice}€/${t("mois", "mo")}`} />
-        <Fact label={t("Modèle tarifaire", "Pricing model")} value={pricingModel} />
-        <Fact label={t("Essai gratuit", "Free trial")} value={tool.pricing?.free ? t("Oui", "Yes") : t("Non", "No")} />
-        <Fact label={t("Idéal pour", "Best for")} value={idealFor} />
-        <Fact label={t("Cas à éviter", "When to avoid")} value={avoidText} />
+
+        <Fact icon={<Tag className="h-4 w-4 text-muted-foreground" />} label={t("Modèle tarifaire", "Pricing model")}>
+          <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
+            pricingModel === "Freemium"
+              ? "bg-optimize/10 text-optimize"
+              : pricingModel === t("Gratuit", "Free")
+              ? "bg-keep/10 text-keep"
+              : "bg-muted text-muted-foreground"
+          }`}>
+            {pricingModel}
+          </span>
+        </Fact>
+
+        <Fact icon={<Users className="h-4 w-4 text-muted-foreground" />} label={t("Idéal pour", "Best for")}>
+          <span className="font-medium">{idealFor}</span>
+        </Fact>
+
+        <Fact icon={<AlertTriangle className="h-4 w-4 text-muted-foreground" />} label={t("À éviter si", "Avoid if")}>
+          <span className="text-muted-foreground">{avoidText}</span>
+        </Fact>
+
         {alternatives.length > 0 && (
-          <Fact label={t("Alternatives principales", "Main alternatives")}>
-            {alternatives.slice(0, 4).map((alt, i) => (
-              <span key={alt.id}>
-                {i > 0 && ", "}
-                <Link to={`${prefix}/tool/${alt.slug}`} className="text-primary hover:underline">{alt.name}</Link>
-              </span>
-            ))}
-          </Fact>
+          <div className="px-5 py-3.5">
+            <div className="flex items-center gap-2 mb-2.5">
+              <ArrowRightLeft className="h-4 w-4 text-muted-foreground" />
+              <dt className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                {t("Alternatives", "Alternatives")}
+              </dt>
+            </div>
+            <dd className="flex flex-wrap gap-2">
+              {alternatives.slice(0, 4).map((alt) => (
+                <Link key={alt.id} to={`${prefix}/tool/${alt.slug}`}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-muted/40 px-2.5 py-1.5 text-xs font-medium hover:border-primary/30 hover:bg-primary/5 transition-all">
+                  <ToolLogo tool={alt} size={16} className="rounded" />
+                  {alt.name}
+                </Link>
+              ))}
+            </dd>
+          </div>
         )}
-        <Fact label={t("Dernière vérification du prix", "Price last verified")} value={verifiedOn} />
-        <Fact label={t("Dernière mise à jour de la fiche", "Last updated")} value={verifiedOn} />
+
+        <Fact icon={<CalendarCheck className="h-4 w-4 text-muted-foreground" />} label={t("Prix vérifié le", "Price verified")}>
+          <time dateTime={verifiedOn} className="text-muted-foreground tabular-nums">{verifiedOn}</time>
+        </Fact>
+
         {(tool.websiteUrl || tool.affiliateLink) && (
-          <Fact label={t("Site officiel", "Official website")}>
+          <div className="px-5 py-3.5">
             <a href={tool.websiteUrl || tool.affiliateLink} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-primary hover:underline">
-              {t("Visiter", "Visit")} <ExternalLink className="h-3 w-3" />
+              className="flex items-center justify-center gap-2 w-full rounded-lg bg-primary/10 text-primary font-medium text-sm py-2.5 hover:bg-primary/20 transition-colors">
+              <Globe className="h-4 w-4" />
+              {t("Voir le site officiel", "Visit official website")}
+              <ExternalLink className="h-3 w-3" />
             </a>
-          </Fact>
+          </div>
         )}
       </dl>
     </div>
   );
 }
 
-function Fact({ label, value, children }: { label: string; value?: string; children?: React.ReactNode }) {
+function Fact({ icon, label, children }: { icon: React.ReactNode; label: string; children: React.ReactNode }) {
   return (
-    <div className="flex items-start justify-between gap-4 py-2.5">
-      <dt className="text-muted-foreground shrink-0 max-w-[45%]">{label}</dt>
-      <dd className="font-medium text-right break-words min-w-0">{children || value || "—"}</dd>
+    <div className="flex items-center gap-3 px-5 py-3.5">
+      {icon}
+      <dt className="text-xs text-muted-foreground font-medium flex-1 min-w-0">{label}</dt>
+      <dd className="text-right shrink-0">{children}</dd>
     </div>
   );
 }
