@@ -191,15 +191,12 @@ const ToolDetailPage = () => {
           {/* ── LEFT COLUMN ── */}
           <div className="lg:col-span-2 space-y-8">
 
-            {/* ── SECTION 3: What does this tool do? ── */}
-            <section>
-              <h2 className="text-lg font-bold tracking-tighter">
-                {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {tool.longDescription || tool.shortDescription}
-              </p>
-              {tool.useCases && tool.useCases.length > 0 && (
+            {/* ── SECTION 3: Use cases ── */}
+            {tool.useCases && tool.useCases.length > 0 && (
+              <section>
+                <h2 className="text-lg font-bold tracking-tighter">
+                  {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
+                </h2>
                 <div className="mt-4 grid gap-2 sm:grid-cols-2">
                   {tool.useCases.map((uc: string, i: number) => (
                     <div key={i} className="flex items-start gap-2 rounded-lg bg-secondary/50 p-3 text-sm">
@@ -208,8 +205,8 @@ const ToolDetailPage = () => {
                     </div>
                   ))}
                 </div>
-              )}
-            </section>
+              </section>
+            )}
 
             {/* ── SECTION 4: Who is it for? ── */}
             {(tool.soloRelevance || tool.teamRelevance) && (
@@ -224,8 +221,11 @@ const ToolDetailPage = () => {
                       <div>
                         <p className="text-sm font-semibold">{t("Solo / Freelance", "Solo / Freelance")}</p>
                         <p className="mt-1 text-sm text-muted-foreground">
-                          {t(`${tool.name} est surtout pertinent pour les freelances. `, `${tool.name} is particularly relevant for freelancers. `)}
-                          {tool.soloRelevance}
+                          {tool.soloRelevance === "high"
+                            ? t(`${tool.name} est très pertinent pour les freelances et indépendants.`, `${tool.name} is highly relevant for freelancers and solopreneurs.`)
+                            : tool.soloRelevance === "medium"
+                            ? t(`${tool.name} peut être utile pour certains freelances selon leur activité.`, `${tool.name} can be useful for some freelancers depending on their activity.`)
+                            : t(`${tool.name} est peu adapté à un usage solo.`, `${tool.name} is less suited for solo use.`)}
                         </p>
                       </div>
                     </div>
@@ -236,8 +236,11 @@ const ToolDetailPage = () => {
                       <div>
                         <p className="text-sm font-semibold">{t("Équipe / Startup", "Team / Startup")}</p>
                         <p className="mt-1 text-sm text-muted-foreground">
-                          {t(`${tool.name} devient intéressant pour les équipes quand `, `${tool.name} becomes valuable for teams when `)}
-                          {tool.teamRelevance.charAt(0).toLowerCase() + tool.teamRelevance.slice(1)}
+                          {tool.teamRelevance === "high"
+                            ? t(`${tool.name} est particulièrement adapté aux équipes et startups.`, `${tool.name} is particularly well-suited for teams and startups.`)
+                            : tool.teamRelevance === "medium"
+                            ? t(`${tool.name} devient intéressant pour les équipes de taille moyenne.`, `${tool.name} becomes valuable for medium-sized teams.`)
+                            : t(`${tool.name} est moins pertinent pour un usage en équipe.`, `${tool.name} is less relevant for team use.`)}
                         </p>
                       </div>
                     </div>
