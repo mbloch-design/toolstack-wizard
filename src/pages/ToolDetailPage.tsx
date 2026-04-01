@@ -191,15 +191,12 @@ const ToolDetailPage = () => {
           {/* ── LEFT COLUMN ── */}
           <div className="lg:col-span-2 space-y-8">
 
-            {/* ── SECTION 3: What does this tool do? ── */}
-            <section>
-              <h2 className="text-lg font-bold tracking-tighter">
-                {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {tool.longDescription || tool.shortDescription}
-              </p>
-              {tool.useCases && tool.useCases.length > 0 && (
+            {/* ── SECTION 3: Use cases ── */}
+            {tool.useCases && tool.useCases.length > 0 && (
+              <section>
+                <h2 className="text-lg font-bold tracking-tighter">
+                  {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
+                </h2>
                 <div className="mt-4 grid gap-2 sm:grid-cols-2">
                   {tool.useCases.map((uc: string, i: number) => (
                     <div key={i} className="flex items-start gap-2 rounded-lg bg-secondary/50 p-3 text-sm">
@@ -208,8 +205,8 @@ const ToolDetailPage = () => {
                     </div>
                   ))}
                 </div>
-              )}
-            </section>
+              </section>
+            )}
 
             {/* ── SECTION 4: Who is it for? ── */}
             {(tool.soloRelevance || tool.teamRelevance) && (
