@@ -156,7 +156,65 @@ function staticPrerenderPlugin(): Plugin {
           }
         }
 
-        console.log(`✅ Prerender : ${count} pages tools générées`);
+        // --- Generate landing pages: /, /fr, /en ---
+        const landings: { file: string; lang: string; canonical: string; title: string; description: string; bodyText: string }[] = [
+          {
+            file: "index.html",
+            lang: "fr",
+            canonical: "https://www.tooltrim.io/fr",
+            title: "ToolTrim — Optimisez votre stack SaaS | Avis, prix et alternatives",
+            description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
+            bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
+          },
+          {
+            file: "fr/index.html",
+            lang: "fr",
+            canonical: "https://www.tooltrim.io/fr",
+            title: "ToolTrim — Optimisez votre stack SaaS | Avis, prix et alternatives",
+            description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
+            bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
+          },
+          {
+            file: "en/index.html",
+            lang: "en",
+            canonical: "https://www.tooltrim.io/en",
+            title: "ToolTrim — Optimize your SaaS stack | Reviews, pricing & alternatives",
+            description: "ToolTrim analyzes your SaaS tools and helps you cut costs. Compare pricing, find free alternatives and optimize your stack in just a few clicks.",
+            bodyText: "ToolTrim is the independent SaaS tool comparison platform for freelancers, startups and tech teams. Audit your current stack, spot unnecessary subscriptions and discover cheaper alternatives. Every tool is manually tested for 2 to 4 weeks. Our recommendations are unbiased, verified and designed to save you time and money.",
+          },
+        ];
+
+        for (const lp of landings) {
+          const altLang = lp.lang === "fr" ? "en" : "fr";
+          const altCanonical = lp.lang === "fr" ? "https://www.tooltrim.io/en" : "https://www.tooltrim.io/fr";
+
+          const metaTags = [
+            `<title>${lp.title}</title>`,
+            `<meta name="description" content="${lp.description.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:title" content="${lp.title.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:description" content="${lp.description.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:url" content="${lp.canonical}" />`,
+            `<meta property="og:site_name" content="ToolTrim" />`,
+            `<link rel="canonical" href="${lp.canonical}" />`,
+            `<link rel="alternate" hreflang="fr" href="https://www.tooltrim.io/fr" />`,
+            `<link rel="alternate" hreflang="en" href="https://www.tooltrim.io/en" />`,
+            `<link rel="alternate" hreflang="x-default" href="https://www.tooltrim.io/fr" />`,
+          ].join("\n    ");
+
+          const staticParagraph = `<noscript><p>${lp.bodyText}</p></noscript>`;
+
+          let html = baseHtml;
+          html = html.replace(/<title>[^<]*<\/title>/, "");
+          html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+          html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+          html = html.replace("</body>", `    ${staticParagraph}\n  </body>`);
+
+          const outPath = path.resolve(distDir, lp.file);
+          fs.mkdirSync(path.dirname(outPath), { recursive: true });
+          fs.writeFileSync(outPath, html, "utf-8");
+        }
+
+        console.log(`✅ Prerender : ${count} pages tools + 3 landing pages générées`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
