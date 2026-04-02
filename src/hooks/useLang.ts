@@ -7,10 +7,15 @@ interface LangContextType {
   prefix: string;
 }
 
+const segmentLang = typeof window !== "undefined"
+  ? (window.location.pathname.split("/")[1] as string)
+  : "fr";
+const defaultLang: Lang = segmentLang === "en" ? "en" : "fr";
+
 export const LangContext = createContext<LangContextType>({
-  lang: "fr",
-  t: (fr) => fr,
-  prefix: "/fr",
+  lang: defaultLang,
+  t: (fr, en) => (defaultLang === "en" ? en : fr),
+  prefix: `/${defaultLang}`,
 });
 
 export const useLang = () => useContext(LangContext);
