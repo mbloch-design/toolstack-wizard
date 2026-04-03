@@ -3,6 +3,8 @@ import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Category, BlogPost } from "@/data/types";
 import contentJson from "@/data/content.json";
 import toolsV4Json from "@/data/tools_v4.json";
+import postsFrJson from "@/data/posts-fr.json";
+import postsEnJson from "@/data/posts-en.json";
 
 // Static fallback data
 const staticCategories: Category[] = (contentJson as any).categories.map((c: any) => ({
