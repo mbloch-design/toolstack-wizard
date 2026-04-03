@@ -156,7 +156,13 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
     if (!slug) { setLoading(false); return; }
     (async () => {
       const { data } = await supabase.from("posts").select("*").eq("slug", slug).eq("lang", lang).maybeSingle();
-      if (data) setPost(mapPost(data));
+      if (data) {
+        setPost(mapPost(data));
+      } else {
+        const localPosts = lang === "en" ? postsEnJson : postsFrJson;
+        const found = localPosts.find((p: any) => p.slug === slug);
+        setPost(found ? mapPost(found) : null);
+      }
       setLoading(false);
     })();
   }, [slug, lang]);
