@@ -3,6 +3,8 @@ import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Category, BlogPost } from "@/data/types";
 import contentJson from "@/data/content.json";
 import toolsV4Json from "@/data/tools_v4.json";
+import postsFrJson from "@/data/posts-fr.json";
+import postsEnJson from "@/data/posts-en.json";
 
 // Static fallback data
 const staticCategories: Category[] = (contentJson as any).categories.map((c: any) => ({
@@ -131,13 +133,14 @@ function mapPost(p: any): Post {
 }
 
 export function usePosts(lang: string) {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const localPosts: Post[] = (lang === "en" ? postsEnJson : postsFrJson).map(mapPost);
+  const [posts, setPosts] = useState<Post[]>(localPosts);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
       const { data, error } = await supabase.from("posts").select("*").eq("lang", lang).order("date", { ascending: false });
-      if (!error && data) setPosts(data.map(mapPost));
+      if (!error && data && data.length > 0) setPosts(data.map(mapPost));
       setLoading(false);
     })();
   }, [lang]);
@@ -153,7 +156,13 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
     if (!slug) { setLoading(false); return; }
     (async () => {
       const { data } = await supabase.from("posts").select("*").eq("slug", slug).eq("lang", lang).maybeSingle();
-      if (data) setPost(mapPost(data));
+      if (data) {
+        setPost(mapPost(data));
+      } else {
+        const localPosts = lang === "en" ? postsEnJson : postsFrJson;
+        const found = localPosts.find((p: any) => p.slug === slug);
+        setPost(found ? mapPost(found) : null);
+      }
       setLoading(false);
     })();
   }, [slug, lang]);
