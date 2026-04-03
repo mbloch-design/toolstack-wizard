@@ -133,13 +133,14 @@ function mapPost(p: any): Post {
 }
 
 export function usePosts(lang: string) {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const localPosts: Post[] = (lang === "en" ? postsEnJson : postsFrJson).map(mapPost);
+  const [posts, setPosts] = useState<Post[]>(localPosts);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
       const { data, error } = await supabase.from("posts").select("*").eq("lang", lang).order("date", { ascending: false });
-      if (!error && data) setPosts(data.map(mapPost));
+      if (!error && data && data.length > 0) setPosts(data.map(mapPost));
       setLoading(false);
     })();
   }, [lang]);
