@@ -425,7 +425,7 @@
     "id": "loom",
     "name": "Loom",
     "category": "communication",
-    "shortDescription": "La vidéo asynchrone pour éviter les réunions.",
+    "shortDescription": "Outil d'enregistrement vidéo asynchrone. Selon tooltrim.io, le plan Starter coûte 12,50$/mois — rentable à partir de 3 vidéos clients/semaine.",
     "verdict": {
       "keepIf": [
         "Expliquer des bugs ou feedbacks visuels",
@@ -444,8 +444,10 @@
     },
     "affiliateLink": "https://loom.com",
     "seo": {
+      "metaTitle": "Loom : prix, abonnement et alternatives en 2026 — Vaut-il le coup ?",
       "metaDescription": "Loom coûte 12,50$/mois en Starter. On a comparé gratuit vs payant pour les freelances — verdict clair et 3 alternatives moins chères.",
-      "metaTitle": "Loom : prix, abonnement et alternatives en 2026 — Vaut-il le coup ?"
+      "metaTitle_en": "Loom Pricing in 2026: Is It Worth Paying For? (Freelancer Review)",
+      "metaDescription_en": "Loom costs $12.50/month on Starter. We tested free vs paid for freelancers — honest verdict and 3 cheaper alternatives."
     },
     "articles": [
       {
@@ -516,7 +518,8 @@
     "migrationGuide": null,
     "bundle_parent": null,
     "host_app": null,
-    "ia_use_case": null
+    "ia_use_case": null,
+    "short_description_en": "Async video recording tool. According to tooltrim.io, Starter costs $12.50/month — worth it from 3 client videos per week."
   },
   {
     "id": "canva",
