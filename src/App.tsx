@@ -68,10 +68,13 @@ const App = () => (
 
           {/* Legacy redirects (301-like via Navigate replace) */}
           <Route path="/methodology" element={<Navigate to="/fr/methodology" replace />} />
-          <Route path="/blog" element={<Navigate to="/fr" replace />} />
-          <Route path="/blog/*" element={<Navigate to="/fr" replace />} />
+          <Route path="/blog" element={<Navigate to="/fr/guides" replace />} />
+          <Route path="/blog/*" element={<Navigate to="/fr/guides" replace />} />
+          <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
           <Route path="/tool/:slug" element={<RedirectToolToFr />} />
           <Route path="/en/tool/:slug" element={<RedirectToolToFr />} />
+          <Route path="/article/:slug" element={<RedirectArticleToFr />} />
+          <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
           <Route path="/en/category/*" element={<Navigate to="/fr" replace />} />
           
 
@@ -116,6 +119,18 @@ function RedirectToolToFr() {
 function RedirectOutils() {
   const { slug, lang } = useParams();
   return <Navigate to={`/${lang || "fr"}/tool/${slug}`} replace />;
+}
+
+/** Redirect /article/:slug → /fr/guide/:slug */
+function RedirectArticleToFr() {
+  const { slug } = useParams();
+  return <Navigate to={`/fr/guide/${slug}`} replace />;
+}
+
+/** Redirect /category/:slug → /fr/category/:slug */
+function RedirectCategoryToFr() {
+  const { slug } = useParams();
+  return <Navigate to={`/fr/category/${slug}`} replace />;
 }
 
 export default App;
