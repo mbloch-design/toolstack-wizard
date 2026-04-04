@@ -121,4 +121,16 @@ function RedirectOutils() {
   return <Navigate to={`/${lang || "fr"}/tool/${slug}`} replace />;
 }
 
+/** Redirect /article/:slug → /fr/guide/:slug */
+function RedirectArticleToFr() {
+  const { slug } = useParams();
+  return <Navigate to={`/fr/guide/${slug}`} replace />;
+}
+
+/** Redirect /category/:slug → /fr/category/:slug */
+function RedirectCategoryToFr() {
+  const { slug } = useParams();
+  return <Navigate to={`/fr/category/${slug}`} replace />;
+}
+
 export default App;
