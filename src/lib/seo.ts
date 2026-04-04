@@ -26,7 +26,7 @@ export function setCanonical(url: string) {
     canonical.rel = "canonical";
     document.head.appendChild(canonical);
   }
-  canonical.href = cleanUrl;
+  canonical.href = cleanUrl.replace("https://tooltrim.io", "https://www.tooltrim.io");
 }
 
 export function setJsonLd(id: string, data: Record<string, unknown>) {
