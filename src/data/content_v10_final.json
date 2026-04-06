@@ -50618,15 +50618,15 @@
   {
     "id": "plutio",
     "name": "Plutio",
-    "shortDescription": "Plateforme de gestion tout-en-un pour freelances (projets",
-    "description": "Plateforme de gestion tout-en-un pour freelances (projets",
+    "shortDescription": "Plateforme de gestion tout-en-un pour freelances (projets, facturation, CRM, finances).",
+    "description": "Plateforme de gestion tout-en-un pour freelances (projets, facturation, CRM, finances).",
     "category": "organization",
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
     },
-    "website": " finances).",
-    "affiliateLink": " finances).",
+    "website": "https://www.plutio.com",
+    "affiliateLink": "",
     "pros": [
       "Spécialisé en freelancer tools",
       "Interface professionnelle"
