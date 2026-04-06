@@ -89,6 +89,7 @@ const App = () => (
             <Route path="category/:slug" element={<CategoryPage />} />
             <Route path="guides" element={<GuidesPage />} />
             <Route path="guide/:slug" element={<GuideDetailPage />} />
+            <Route path="article/:slug" element={<RedirectArticleToGuide />} />
             <Route path="comparatif/:slugPair" element={<ComparePage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="methodology" element={<MethodologyPage />} />
@@ -125,6 +126,12 @@ function RedirectOutils() {
 function RedirectArticleToFr() {
   const { slug } = useParams();
   return <Navigate to={`/fr/guide/${slug}`} replace />;
+}
+
+/** Redirect /:lang/article/:slug → /:lang/guide/:slug */
+function RedirectArticleToGuide() {
+  const { slug, lang } = useParams();
+  return <Navigate to={`/${lang || "fr"}/guide/${slug}`} replace />;
 }
 
 /** Redirect /category/:slug → /fr/category/:slug */
