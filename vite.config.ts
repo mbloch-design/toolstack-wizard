@@ -48,6 +48,19 @@ function sitemapPlugin(): Plugin {
           add(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6");
         }
 
+        // Comparative guides with localized slugs
+        const GUIDE_COMPARISONS: [string, string][] = [
+          ["notion-vs-coda-comparatif-2026", "notion-vs-coda-comparison-2026"],
+          ["chatgpt-vs-claude-comparatif-2026", "chatgpt-vs-claude-comparison-2026"],
+          ["zapier-vs-make-comparatif-2026", "zapier-vs-make-comparison-2026"],
+          ["figma-vs-canva-comparatif-2026", "figma-vs-canva-comparison-2026"],
+          ["slack-vs-teams-comparatif-2026", "slack-vs-teams-comparison-2026"],
+        ];
+        for (const [frSlug, enSlug] of GUIDE_COMPARISONS) {
+          add(`${BASE}/fr/guide/${frSlug}`, "monthly", "0.7");
+          add(`${BASE}/en/guide/${enSlug}`, "monthly", "0.7");
+        }
+
         const COMPARISONS = [
           "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
           "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
