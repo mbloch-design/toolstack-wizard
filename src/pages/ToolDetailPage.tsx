@@ -283,7 +283,7 @@ const ToolDetailPage = () => {
             </section>
 
             {/* ── SECTION 6: Verdict ── */}
-            <ToolVerdictBlock tool={tool} t={t} />
+            <ToolVerdictBlock tool={tool} lang={lang} t={t} />
 
             {/* ── SECTION 7: Pricing ── */}
             <ToolPricingSection
@@ -292,6 +292,7 @@ const ToolDetailPage = () => {
               verifiedOn={verifiedOn}
               sourceDomain={sourceDomain}
               prefix={prefix}
+              lang={lang}
               t={t}
             />
           </div>
