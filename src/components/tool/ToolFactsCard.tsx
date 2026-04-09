@@ -31,8 +31,9 @@ export default function ToolFactsCard({ tool, category, alternatives, displayPri
     tool.teamRelevance && t("Équipes", "Teams"),
   ].filter(Boolean).join(", ") || t("Professionnels", "Professionals");
 
-  const avoidText = tool.verdict?.avoidIf?.length
-    ? (Array.isArray(tool.verdict.avoidIf) ? tool.verdict.avoidIf : [tool.verdict.avoidIf]).filter(Boolean)[0]
+  const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
+  const avoidText = verdict?.avoidIf?.length
+    ? (Array.isArray(verdict.avoidIf) ? verdict.avoidIf : [verdict.avoidIf]).filter(Boolean)[0]
     : "—";
 
   const CategoryIcon = category ? getCategoryIcon(category.id || category.slug) : Tag;

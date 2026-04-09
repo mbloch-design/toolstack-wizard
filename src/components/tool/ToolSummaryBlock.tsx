@@ -35,7 +35,7 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
 
   const topAlts = alternatives.slice(0, 4).map(a => a.name).join(", ");
 
-  const verdictText = tool.verdict?.threshold || tool.shortDescription || "";
+  const verdictText = (lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : (tool.verdict?.threshold || (lang === "en" && tool.shortDescriptionEn ? tool.shortDescriptionEn : tool.shortDescription) || "");
 
   return (
     <section

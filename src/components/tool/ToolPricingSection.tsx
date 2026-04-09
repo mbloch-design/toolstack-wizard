@@ -7,13 +7,15 @@ interface Props {
   verifiedOn: string;
   sourceDomain: string | undefined;
   prefix: string;
+  lang?: string;
   t: (fr: string, en: string) => string;
 }
 
 /**
  * Pricing section with verified data, source attribution and freshness signals.
  */
-export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sourceDomain, prefix, t }: Props) {
+export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sourceDomain, prefix, lang, t }: Props) {
+  const pricing = lang === "en" && tool.pricingEn ? tool.pricingEn : tool.pricing;
   return (
     <section className="rounded-xl border border-border bg-card p-6">
       <h2 className="text-lg font-bold tracking-tighter">
@@ -21,21 +23,21 @@ export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sou
       </h2>
 
       <div className="mt-4 space-y-3 text-sm">
-        {tool.pricing?.free && (
+        {pricing?.free && (
           <div className="flex items-start gap-2">
             <Check className="mt-0.5 h-4 w-4 shrink-0 text-keep" />
             <div>
               <span className="font-medium">{t("Offre gratuite", "Free plan")}</span>
-              <p className="text-muted-foreground">{tool.pricing.free}</p>
+              <p className="text-muted-foreground">{pricing.free}</p>
             </div>
           </div>
         )}
-        {tool.pricing?.paid && (
+        {pricing?.paid && (
           <div className="flex items-start gap-2">
             <span className="mt-0.5 text-base">💳</span>
             <div>
               <span className="font-medium">{t("Offre payante", "Paid plan")}</span>
-              <p className="text-muted-foreground">{tool.pricing.paid}</p>
+              <p className="text-muted-foreground">{pricing.paid}</p>
             </div>
           </div>
         )}

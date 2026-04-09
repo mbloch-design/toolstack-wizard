@@ -77,10 +77,12 @@ export default function ToolAlternativesSection({ tool, category, alternatives, 
                 </p>
               </div>
             </div>
-            <p className="mt-2 text-xs text-muted-foreground line-clamp-2">{alt.shortDescription}</p>
+            <p className="mt-2 text-xs text-muted-foreground line-clamp-2">
+              {lang === "en" && alt.shortDescriptionEn ? alt.shortDescriptionEn : alt.shortDescription}
+            </p>
             {alt.pros?.length > 0 && (
               <div className="mt-2 flex items-center gap-1 text-xs text-keep">
-                <Check className="h-3 w-3" /> {alt.pros[0]}
+                <Check className="h-3 w-3" /> {lang === "en" && alt.prosEn?.[0] ? alt.prosEn[0] : alt.pros[0]}
               </div>
             )}
           </Link>
