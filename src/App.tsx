@@ -77,10 +77,8 @@ const App = () => (
           <Route path="/blog/*" element={<Navigate to="/fr/guides" replace />} />
           <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
           <Route path="/tool/:slug" element={<RedirectToolToFr />} />
-          <Route path="/en/tool/:slug" element={<RedirectToolToFr />} />
           <Route path="/article/:slug" element={<RedirectArticleToFr />} />
           <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
-          <Route path="/en/category/*" element={<Navigate to="/fr" replace />} />
           
 
           <Route path="/:lang" element={<LangLayout />}>
