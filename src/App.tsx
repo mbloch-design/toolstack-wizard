@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, Navigate, useParams, Outlet } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate, useParams, useLocation, Outlet } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -35,20 +35,25 @@ const queryClient = new QueryClient();
 
 const LangLayout = () => {
   const { lang } = useParams<{ lang: string }>();
+  const location = useLocation();
   const validLang: Lang = lang === "en" ? "en" : "fr";
+
+  // Also derive lang from pathname to stay in sync on internal navigations
+  const pathLang = location.pathname.split("/")[1];
+  const effectiveLang: Lang = pathLang === "en" ? "en" : validLang;
 
   return (
     <LangContext.Provider
       value={{
-        lang: validLang,
-        t: (fr, en) => (validLang === "en" ? en : fr),
-        prefix: `/${validLang}`,
+        lang: effectiveLang,
+        t: (fr, en) => (effectiveLang === "en" ? en : fr),
+        prefix: `/${effectiveLang}`,
       }}
     >
       <div className="flex min-h-screen flex-col">
         <Navbar />
         <main className="flex-1">
-          <Outlet key={validLang} />
+          <Outlet key={effectiveLang} />
         </main>
         <Footer />
       </div>
