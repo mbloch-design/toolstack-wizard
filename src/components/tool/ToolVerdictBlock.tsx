@@ -3,6 +3,7 @@ import { Check, X, Award, TrendingDown, ArrowRightLeft, Sparkles } from "lucide-
 
 interface Props {
   tool: Tool;
+  lang?: string;
   t: (fr: string, en: string) => string;
 }
 
@@ -46,9 +47,10 @@ function getActionIcon(action: string | undefined) {
   }
 }
 
-export default function ToolVerdictBlock({ tool, t }: Props) {
-  const keepItems = (Array.isArray(tool.verdict?.keepIf) ? tool.verdict.keepIf : [tool.verdict?.keepIf]).filter(Boolean);
-  const avoidItems = (Array.isArray(tool.verdict?.avoidIf) ? tool.verdict.avoidIf : [tool.verdict?.avoidIf]).filter(Boolean);
+export default function ToolVerdictBlock({ tool, lang, t }: Props) {
+  const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
+  const keepItems = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean);
+  const avoidItems = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean);
 
   const prescription = tool.prescription_output;
   const actionLabel = getActionLabel(prescription?.action, prescription?.replacement_tool, t);
@@ -69,13 +71,13 @@ export default function ToolVerdictBlock({ tool, t }: Props) {
 
       <div className="px-6 pb-6 space-y-5">
         {/* Verdict paragraph */}
-        {tool.verdict?.threshold && (
+        {verdict?.threshold && (
           <p className="text-sm leading-relaxed text-muted-foreground">
             {t(
               `ToolTrim recommande ${tool.name} dans le cas où : `,
               `ToolTrim recommends ${tool.name} when: `
             )}
-            {tool.verdict.threshold}
+            {verdict.threshold}
           </p>
         )}
 

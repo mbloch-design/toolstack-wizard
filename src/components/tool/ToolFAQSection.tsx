@@ -20,10 +20,9 @@ export default function ToolFAQSection({ tool, displayPrice, verifiedOn, alterna
   const faqs: { q: string; a: string }[] = [
     {
       q: t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`),
-      a: tool.longDescription || tool.shortDescription || t(
-        `${tool.name} est un outil de productivité SaaS.`,
-        `${tool.name} is a SaaS productivity tool.`
-      ),
+      a: (lang === "en" && tool.longDescriptionEn ? tool.longDescriptionEn : tool.longDescription) || 
+         (lang === "en" && tool.shortDescriptionEn ? tool.shortDescriptionEn : tool.shortDescription) || 
+         t(`${tool.name} est un outil de productivité SaaS.`, `${tool.name} is a SaaS productivity tool.`),
     },
     {
       q: t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`),
@@ -46,7 +45,7 @@ export default function ToolFAQSection({ tool, displayPrice, verifiedOn, alterna
     },
     {
       q: t(`${tool.name} vaut-il son prix ?`, `Is ${tool.name} worth the price?`),
-      a: tool.verdict?.threshold || t(
+      a: ((lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : tool.verdict?.threshold) || t(
         `Cela dépend de votre usage. Consultez notre verdict ci-dessus.`,
         `It depends on your usage. See our verdict above.`
       ),
