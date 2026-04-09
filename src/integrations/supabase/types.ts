@@ -193,6 +193,7 @@ export type Database = {
           bundle_parent: string | null
           category: string | null
           cons: Json | null
+          cons_en: Json | null
           covers: Json | null
           decision_policy_v3: Json | null
           default_monthly_price: number | null
@@ -204,6 +205,7 @@ export type Database = {
           id: string
           logo: string | null
           long_description: string | null
+          long_description_en: string | null
           migration_guide: Json | null
           name: string
           personas: Json | null
@@ -212,11 +214,14 @@ export type Database = {
           prescription_output: Json | null
           prescription_quality: string | null
           pricing: Json | null
+          pricing_en: Json | null
           pricing_v5: Json | null
           pros: Json | null
+          pros_en: Json | null
           relevant_for: Json | null
           seo: Json | null
           short_description: string | null
+          short_description_en: string | null
           slug: string
           solo_relevance: string | null
           substitutable: boolean | null
@@ -225,7 +230,9 @@ export type Database = {
           time_gained_hours_per_month: number | null
           tool_type: string | null
           use_cases: Json | null
+          use_cases_en: Json | null
           verdict: Json | null
+          verdict_en: Json | null
           verticals: Json | null
           website_url: string | null
         }
@@ -237,6 +244,7 @@ export type Database = {
           bundle_parent?: string | null
           category?: string | null
           cons?: Json | null
+          cons_en?: Json | null
           covers?: Json | null
           decision_policy_v3?: Json | null
           default_monthly_price?: number | null
@@ -248,6 +256,7 @@ export type Database = {
           id: string
           logo?: string | null
           long_description?: string | null
+          long_description_en?: string | null
           migration_guide?: Json | null
           name: string
           personas?: Json | null
@@ -256,11 +265,14 @@ export type Database = {
           prescription_output?: Json | null
           prescription_quality?: string | null
           pricing?: Json | null
+          pricing_en?: Json | null
           pricing_v5?: Json | null
           pros?: Json | null
+          pros_en?: Json | null
           relevant_for?: Json | null
           seo?: Json | null
           short_description?: string | null
+          short_description_en?: string | null
           slug: string
           solo_relevance?: string | null
           substitutable?: boolean | null
@@ -269,7 +281,9 @@ export type Database = {
           time_gained_hours_per_month?: number | null
           tool_type?: string | null
           use_cases?: Json | null
+          use_cases_en?: Json | null
           verdict?: Json | null
+          verdict_en?: Json | null
           verticals?: Json | null
           website_url?: string | null
         }
@@ -281,6 +295,7 @@ export type Database = {
           bundle_parent?: string | null
           category?: string | null
           cons?: Json | null
+          cons_en?: Json | null
           covers?: Json | null
           decision_policy_v3?: Json | null
           default_monthly_price?: number | null
@@ -292,6 +307,7 @@ export type Database = {
           id?: string
           logo?: string | null
           long_description?: string | null
+          long_description_en?: string | null
           migration_guide?: Json | null
           name?: string
           personas?: Json | null
@@ -300,11 +316,14 @@ export type Database = {
           prescription_output?: Json | null
           prescription_quality?: string | null
           pricing?: Json | null
+          pricing_en?: Json | null
           pricing_v5?: Json | null
           pros?: Json | null
+          pros_en?: Json | null
           relevant_for?: Json | null
           seo?: Json | null
           short_description?: string | null
+          short_description_en?: string | null
           slug?: string
           solo_relevance?: string | null
           substitutable?: boolean | null
@@ -313,7 +332,9 @@ export type Database = {
           time_gained_hours_per_month?: number | null
           tool_type?: string | null
           use_cases?: Json | null
+          use_cases_en?: Json | null
           verdict?: Json | null
+          verdict_en?: Json | null
           verticals?: Json | null
           website_url?: string | null
         }
