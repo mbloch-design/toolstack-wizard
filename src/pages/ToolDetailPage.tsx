@@ -168,7 +168,7 @@ const ToolDetailPage = () => {
 
           {/* Short description — visible in initial HTML */}
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground max-w-3xl">
-            {tool.longDescription || tool.description || tool.shortDescription}
+            {lang === "en" && tool.longDescriptionEn ? tool.longDescriptionEn : (tool.longDescription || tool.description || tool.shortDescription)}
           </p>
         </div>
       </header>
@@ -198,7 +198,7 @@ const ToolDetailPage = () => {
                   {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
                 </h2>
                 <div className="mt-4 grid gap-2 sm:grid-cols-2">
-                  {tool.useCases.map((uc: string, i: number) => (
+                  {(lang === "en" && tool.useCasesEn ? tool.useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
                     <div key={i} className="flex items-start gap-2 rounded-lg bg-secondary/50 p-3 text-sm">
                       <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
                       {uc}
@@ -260,7 +260,7 @@ const ToolDetailPage = () => {
                     <Check className="h-4 w-4" /> {t("Avantages", "Pros")}
                   </h3>
                   <ul className="mt-3 space-y-2">
-                    {tool.pros?.map((pro: string) => (
+                    {(lang === "en" && tool.prosEn ? tool.prosEn : tool.pros)?.map((pro: string) => (
                       <li key={pro} className="flex items-start gap-2 text-sm">
                         <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-keep/60" />{pro}
                       </li>
@@ -272,7 +272,7 @@ const ToolDetailPage = () => {
                     <X className="h-4 w-4" /> {t("Inconvénients", "Cons")}
                   </h3>
                   <ul className="mt-3 space-y-2">
-                    {tool.cons?.map((con: string) => (
+                    {(lang === "en" && tool.consEn ? tool.consEn : tool.cons)?.map((con: string) => (
                       <li key={con} className="flex items-start gap-2 text-sm">
                         <X className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cancel/60" />{con}
                       </li>
