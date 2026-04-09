@@ -2,19 +2,23 @@
 
 ## Diagnostic
 
-The `/fr/guides` page is empty because `usePosts("fr")` queries Supabase, which returns `[]` (the posts table has very few rows and none match `lang=fr`). Unlike `useTools()` and `useCategories()` which initialize state with static fallback data, `usePosts()` initializes with an empty array and has **no fallback** to the local JSON files (`posts-fr.json` / `posts-en.json`).
+Le bug est sur la **ligne 80** de `src/App.tsx` :
 
-This is not caused by the LangContext fix — the LangContext works correctly. The root cause is that `usePosts` never had a local fallback, and either the Supabase data was wiped or was never fully seeded.
+```
+<Route path="/en/tool/:slug" element={<RedirectToolToFr />} />
+```
+
+Cette route legacy redirige **toutes** les URLs `/en/tool/:slug` vers `/fr/tool/:slug`. Elle est définie **avant** la route `/:lang` et matche en priorité. Donc quand tu cliques sur "EN" depuis `/fr/tool/chatgpt`, le navigateur charge `/en/tool/chatgpt`, React Router matche cette route de redirection, et te renvoie sur `/fr/tool/chatgpt`.
+
+Même problème potentiel sur la ligne 83 : `/en/category/*` redirige tout vers `/fr`.
 
 ## Plan
 
-**File: `src/hooks/useSupabaseData.ts`**
+1. **Supprimer la ligne 80** : `<Route path="/en/tool/:slug" element={<RedirectToolToFr />} />` — cette redirection est un vestige qui casse le bilinguisme des pages outils.
 
-1. Import `postsFr` from `@/data/posts-fr.json` and `postsEn` from `@/data/posts-en.json` at the top of the file.
+2. **Supprimer la ligne 83** : `<Route path="/en/category/*" element={<Navigate to="/fr" replace />} />` — même problème pour les catégories EN.
 
-2. In `usePosts(lang)`: after the Supabase query, if the result is empty (either error or `data.length === 0`), fall back to the matching local JSON file. Map the local posts through `mapPost` to normalize the shape.
+3. **Conserver la ligne 79** (`/tool/:slug` sans préfixe de langue) car elle gère les URLs legacy sans préfixe.
 
-3. In `usePostBySlug(slug, lang)`: similarly, if Supabase returns no result, look up the post in the local JSON fallback by slug.
-
-This mirrors the existing pattern used by `useToolBySlug` (which already falls back to `staticTools`). No other files are touched.
+Aucun autre fichier n'est modifié.
 
