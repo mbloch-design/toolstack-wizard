@@ -254,7 +254,7 @@ serve(async (req) => {
         console.log(`✅ ${tool.name} translated`);
 
         // Small delay between tools to avoid rate limits
-        await new Promise((r) => setTimeout(r, 2000));
+        await new Promise((r) => setTimeout(r, 500));
       } catch (toolErr) {
         console.error(`❌ ${tool.name}: ${toolErr}`);
         results.push({
