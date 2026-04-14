@@ -1,7 +1,8 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
-import type { SessionState, Persona } from "@/types/diagnostic";
+import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
+import { runDiagnostic } from "@/utils/scoring";
 
 import DiagStep0Prenom from "@/components/diagnostic/DiagStep0Prenom";
 import DiagStep1Tjm from "@/components/diagnostic/DiagStep1Tjm";
@@ -15,6 +16,7 @@ import DiagStep6Discovery from "@/components/diagnostic/DiagStep6Discovery";
 import DiagStep6bEmailRecap from "@/components/diagnostic/DiagStep6bEmailRecap";
 import DiagStep7Closing from "@/components/diagnostic/DiagStep7Closing";
 import DiagResultsLoading from "@/components/diagnostic/DiagResultsLoading";
+import DiagDashboard from "@/components/dashboard/DiagDashboard";
 import DiagTopBar from "@/components/diagnostic/DiagTopBar";
 import DiagRightPanel from "@/components/diagnostic/DiagRightPanel";
 import DiagSaveIndicator from "@/components/diagnostic/DiagSaveIndicator";
@@ -22,8 +24,8 @@ import DiagTransitionOverlay from "@/components/diagnostic/DiagTransitionOverlay
 
 // Steps: 0=Prenom, 1=TJM, 2=Persona, 3=Email, 4=Complementary,
 // 5=SofiaSpecialties(conditional), 6=Clusters, 7=ApiCosts(conditional),
-// 8=Discovery, 9=EmailRecap, 10=Closing, 11=ResultsLoading
-type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
+// 8=Discovery, 9=EmailRecap, 10=Closing, 11=ResultsLoading, 12=Dashboard
+type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 const TOTAL_VISIBLE_STEPS = 10;
 
