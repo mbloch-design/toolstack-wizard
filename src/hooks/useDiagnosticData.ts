@@ -28,6 +28,7 @@ function mapTool(t: any): Tool {
       ? JSON.stringify(t.better_alternative)
       : t.better_alternative || undefined,
     force_silence: t.force_silence === true || t.prescription_quality === "silence",
+    bundle_parent: t.bundle_parent || undefined,
   };
 }
 

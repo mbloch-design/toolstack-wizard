@@ -41,6 +41,11 @@ export interface Tool {
   };
   better_alternative?: string;
   force_silence: boolean;
+  bundle_parent?: string;
+  /** Runtime flag: true when this tool is included via a selected bundle parent */
+  includedInBundle?: boolean;
+  /** Runtime: name of the bundle parent that includes this tool */
+  includedVia?: string;
 }
 
 export interface Cluster {
