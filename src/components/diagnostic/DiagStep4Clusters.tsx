@@ -247,7 +247,7 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
               ? currentCluster.question_en
               : currentCluster.question}
           </h2>
-          {currentCluster.why && (
+          {currentCluster.why && session.language !== "en" && (
             <p className="text-sm text-muted-foreground">{currentCluster.why}</p>
           )}
           {/* Reassuring microcopy */}
