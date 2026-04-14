@@ -1,6 +1,7 @@
 import { useState, useMemo, useCallback } from "react";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
-import { Check, Download } from "lucide-react";
+import { Check } from "lucide-react";
+import DashPdfExport from "./DashPdfExport";
 
 interface Props {
   result: DiagnosticResult;
@@ -253,10 +254,7 @@ export default function DashActions({ result, allTools, t }: Props) {
       </div>
 
       {/* Export button */}
-      <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors">
-        <Download className="w-4 h-4" />
-        {t("Exporter checklist", "Export checklist")}
-      </button>
+      <DashPdfExport result={result} t={t} />
     </div>
   );
 }
