@@ -1,7 +1,7 @@
 import { useLang } from "@/hooks/useLang";
 
 const CompareHero = () => {
-  const { t } = useLang();
+  const { lang, t } = useLang();
 
   return (
     <header className="pt-24 pb-12 md:pt-32 md:pb-16 px-4 md:px-8 max-w-7xl mx-auto">
@@ -11,8 +11,9 @@ const CompareHero = () => {
             {t("Analyse experte", "Expert Analysis")}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
-            {t(
-              <>Prenez de meilleures <span className="text-primary italic">décisions SaaS.</span></>,
+            {lang === "fr" ? (
+              <>Prenez de meilleures <span className="text-primary italic">décisions SaaS.</span></>
+            ) : (
               <>Make Smarter <span className="text-primary italic">SaaS Decisions.</span></>
             )}
           </h1>
