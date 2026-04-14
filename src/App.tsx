@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, Navigate, useParams, useLocation, Outlet } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -7,29 +8,33 @@ import { LangContext } from "@/hooks/useLang";
 import { Lang } from "@/data/types";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HomePage from "@/pages/HomePage";
-import SelectorPage from "@/pages/SelectorPage";
-import ResultsPage from "@/pages/ResultsPage";
-import ToolsPage from "@/pages/ToolsPage";
-import ToolDetailPage from "@/pages/ToolDetailPage";
-import UpdateToolsV3 from "@/pages/UpdateToolsV3";
-import UpdateToolsV4 from "@/pages/UpdateToolsV4";
-import UpdateToolsV10 from "@/pages/UpdateToolsV10";
-import CategoryPage from "@/pages/CategoryPage";
-import CategoriesIndexPage from "@/pages/CategoriesIndexPage";
-import GuidesPage from "@/pages/GuidesPage";
-import GuideDetailPage from "@/pages/GuideDetailPage";
-import AboutPage from "@/pages/AboutPage";
-import MethodologyPage from "@/pages/MethodologyPage";
-import TransparencyPage from "@/pages/TransparencyPage";
-import ContactPage from "@/pages/ContactPage";
-import LegalNoticePage from "@/pages/LegalNoticePage";
-import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
-import TermsPage from "@/pages/TermsPage";
-import ComparePage from "@/pages/ComparePage";
-import ComparesIndexPage from "@/pages/ComparesIndexPage";
-import NotFound from "@/pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
+
+// Critical: HomePage loaded eagerly for FCP
+import HomePage from "@/pages/HomePage";
+
+// Lazy-loaded pages (below the fold / secondary routes)
+const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
+const ResultsPage = lazy(() => import("@/pages/ResultsPage"));
+const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
+const ToolDetailPage = lazy(() => import("@/pages/ToolDetailPage"));
+const UpdateToolsV3 = lazy(() => import("@/pages/UpdateToolsV3"));
+const UpdateToolsV4 = lazy(() => import("@/pages/UpdateToolsV4"));
+const UpdateToolsV10 = lazy(() => import("@/pages/UpdateToolsV10"));
+const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
+const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
+const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
+const GuideDetailPage = lazy(() => import("@/pages/GuideDetailPage"));
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));
+const TransparencyPage = lazy(() => import("@/pages/TransparencyPage"));
+const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const LegalNoticePage = lazy(() => import("@/pages/LegalNoticePage"));
+const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicyPage"));
+const TermsPage = lazy(() => import("@/pages/TermsPage"));
+const ComparePage = lazy(() => import("@/pages/ComparePage"));
+const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
