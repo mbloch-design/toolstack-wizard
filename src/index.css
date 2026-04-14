@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;400;500;600;700;1,9..40,300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+/* Fonts loaded via <link> in index.html to avoid MIME type issues */
 
 @tailwind base;
 @tailwind components;
