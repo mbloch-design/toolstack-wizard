@@ -41,21 +41,30 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/picto-logo.svg" />
     <link rel="apple-touch-icon" href="/picto-logo.svg" />
 
-    <!-- Preconnect for external resources -->
+    <!-- Preconnect for font origin -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.google.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;400;500;600;700;1,9..40,300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" />
 
-    <!-- Preload critical image -->
-    <link rel="preload" as="image" href="/picto-logo.svg" />
+    <!-- Non-render-blocking Google Fonts: load as print, swap to all on load -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;400;500;600;700;1,9..40,300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;400;500;600;700;1,9..40,300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;400;500;600;700;1,9..40,300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" /></noscript>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DL5MJKQ3JE"></script>
     <script>
-      window.dataLayer = window.dataLayer ||[];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DL5MJKQ3JE');
+      // Defer GTM loading to after first paint
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DL5MJKQ3JE';
+        s.async = true;
+        document.head.appendChild(s);
+        s.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-DL5MJKQ3JE');
+        };
+      });
     </script>
   </head>
 

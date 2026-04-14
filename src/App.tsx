@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, Navigate, useParams, useLocation, Outlet } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -7,29 +8,33 @@ import { LangContext } from "@/hooks/useLang";
 import { Lang } from "@/data/types";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HomePage from "@/pages/HomePage";
-import SelectorPage from "@/pages/SelectorPage";
-import ResultsPage from "@/pages/ResultsPage";
-import ToolsPage from "@/pages/ToolsPage";
-import ToolDetailPage from "@/pages/ToolDetailPage";
-import UpdateToolsV3 from "@/pages/UpdateToolsV3";
-import UpdateToolsV4 from "@/pages/UpdateToolsV4";
-import UpdateToolsV10 from "@/pages/UpdateToolsV10";
-import CategoryPage from "@/pages/CategoryPage";
-import CategoriesIndexPage from "@/pages/CategoriesIndexPage";
-import GuidesPage from "@/pages/GuidesPage";
-import GuideDetailPage from "@/pages/GuideDetailPage";
-import AboutPage from "@/pages/AboutPage";
-import MethodologyPage from "@/pages/MethodologyPage";
-import TransparencyPage from "@/pages/TransparencyPage";
-import ContactPage from "@/pages/ContactPage";
-import LegalNoticePage from "@/pages/LegalNoticePage";
-import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
-import TermsPage from "@/pages/TermsPage";
-import ComparePage from "@/pages/ComparePage";
-import ComparesIndexPage from "@/pages/ComparesIndexPage";
-import NotFound from "@/pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
+
+// Critical: HomePage loaded eagerly for FCP
+import HomePage from "@/pages/HomePage";
+
+// Lazy-loaded pages (below the fold / secondary routes)
+const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
+const ResultsPage = lazy(() => import("@/pages/ResultsPage"));
+const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
+const ToolDetailPage = lazy(() => import("@/pages/ToolDetailPage"));
+const UpdateToolsV3 = lazy(() => import("@/pages/UpdateToolsV3"));
+const UpdateToolsV4 = lazy(() => import("@/pages/UpdateToolsV4"));
+const UpdateToolsV10 = lazy(() => import("@/pages/UpdateToolsV10"));
+const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
+const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
+const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
+const GuideDetailPage = lazy(() => import("@/pages/GuideDetailPage"));
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));
+const TransparencyPage = lazy(() => import("@/pages/TransparencyPage"));
+const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const LegalNoticePage = lazy(() => import("@/pages/LegalNoticePage"));
+const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicyPage"));
+const TermsPage = lazy(() => import("@/pages/TermsPage"));
+const ComparePage = lazy(() => import("@/pages/ComparePage"));
+const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
@@ -62,6 +67,12 @@ const LangLayout = () => {
   );
 };
 
+const LazyFallback = () => (
+  <div className="flex items-center justify-center min-h-[50vh]">
+    <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -69,47 +80,48 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Navigate to="/fr" replace />} />
+        <Suspense fallback={<LazyFallback />}>
+          <Routes>
+            <Route path="/" element={<Navigate to="/fr" replace />} />
 
-          {/* Legacy redirects (301-like via Navigate replace) */}
-          <Route path="/methodology" element={<Navigate to="/fr/methodology" replace />} />
-          <Route path="/blog" element={<Navigate to="/fr/guides" replace />} />
-          <Route path="/blog/*" element={<Navigate to="/fr/guides" replace />} />
-          <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
-          <Route path="/tool/:slug" element={<RedirectToolToFr />} />
-          <Route path="/article/:slug" element={<RedirectArticleToFr />} />
-          <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
-          
+            {/* Legacy redirects */}
+            <Route path="/methodology" element={<Navigate to="/fr/methodology" replace />} />
+            <Route path="/blog" element={<Navigate to="/fr/guides" replace />} />
+            <Route path="/blog/*" element={<Navigate to="/fr/guides" replace />} />
+            <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
+            <Route path="/tool/:slug" element={<RedirectToolToFr />} />
+            <Route path="/article/:slug" element={<RedirectArticleToFr />} />
+            <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
 
-          <Route path="/:lang" element={<LangLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="selector" element={<SelectorPage />} />
-            <Route path="selector/results" element={<ResultsPage />} />
-            <Route path="tools" element={<ToolsPage />} />
-            <Route path="tool/:slug" element={<ToolDetailPage />} />
-            <Route path="outils/:slug" element={<RedirectOutils />} />
-            <Route path="category" element={<CategoriesIndexPage />} />
-            <Route path="category/:slug" element={<CategoryPage />} />
-            <Route path="guides" element={<GuidesPage />} />
-            <Route path="guide/:slug" element={<GuideDetailPage />} />
-            <Route path="article/:slug" element={<RedirectArticleToGuide />} />
-            <Route path="comparatifs" element={<ComparesIndexPage />} />
-            <Route path="comparatif/:slugPair" element={<ComparePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="methodology" element={<MethodologyPage />} />
-            <Route path="methodologie" element={<MethodologyPage />} />
-            <Route path="transparency" element={<TransparencyPage />} />
-            <Route path="contact" element={<ContactPage />} />
-            <Route path="legal-notice" element={<LegalNoticePage />} />
-            <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="terms" element={<TermsPage />} />
-            <Route path="update-tools-v3" element={<UpdateToolsV3 />} />
-            <Route path="update-tools-v4" element={<UpdateToolsV4 />} />
-            <Route path="update-tools-v10" element={<UpdateToolsV10 />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            <Route path="/:lang" element={<LangLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="selector" element={<SelectorPage />} />
+              <Route path="selector/results" element={<ResultsPage />} />
+              <Route path="tools" element={<ToolsPage />} />
+              <Route path="tool/:slug" element={<ToolDetailPage />} />
+              <Route path="outils/:slug" element={<RedirectOutils />} />
+              <Route path="category" element={<CategoriesIndexPage />} />
+              <Route path="category/:slug" element={<CategoryPage />} />
+              <Route path="guides" element={<GuidesPage />} />
+              <Route path="guide/:slug" element={<GuideDetailPage />} />
+              <Route path="article/:slug" element={<RedirectArticleToGuide />} />
+              <Route path="comparatifs" element={<ComparesIndexPage />} />
+              <Route path="comparatif/:slugPair" element={<ComparePage />} />
+              <Route path="about" element={<AboutPage />} />
+              <Route path="methodology" element={<MethodologyPage />} />
+              <Route path="methodologie" element={<MethodologyPage />} />
+              <Route path="transparency" element={<TransparencyPage />} />
+              <Route path="contact" element={<ContactPage />} />
+              <Route path="legal-notice" element={<LegalNoticePage />} />
+              <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="terms" element={<TermsPage />} />
+              <Route path="update-tools-v3" element={<UpdateToolsV3 />} />
+              <Route path="update-tools-v4" element={<UpdateToolsV4 />} />
+              <Route path="update-tools-v10" element={<UpdateToolsV10 />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
