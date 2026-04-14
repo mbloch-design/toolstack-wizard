@@ -1,27 +1,42 @@
 
 
-## Problem
+## Diagnostic : Articles manquants dans les guides
 
-All CTA buttons correctly link to `/fr/selector` (or `/en/selector`). The route exists and renders `SelectorPage.tsx`. But `SelectorPage.tsx` still contains the **old 5-step selector** (1009 lines). The new `DiagnosticRouter` component built in prompts 1-3 was never integrated — it exists but is not rendered anywhere.
+### Le problème
 
-## Fix
+La fonction `usePosts()` dans `useSupabaseData.ts` (ligne 150) **remplace** les articles locaux par ceux de Supabase dès qu'elle reçoit au moins 1 résultat :
 
-**1 file modified**: `src/pages/SelectorPage.tsx`
-
-Replace the entire content of `SelectorPage.tsx` with a simple wrapper that renders `DiagnosticRouter`:
-
-```tsx
-import DiagnosticRouter from "@/components/DiagnosticRouter";
-
-const SelectorPage = () => <DiagnosticRouter />;
-export default SelectorPage;
+```typescript
+if (!error && data && data.length > 0) setPosts(data.map(mapPost));
 ```
 
-This preserves the existing route (`/:lang/selector`), the `LangLayout` wrapper (Navbar, Footer, LangContext), and swaps in the new diagnostic tunnel.
+Or la table `posts` en Supabase ne contient que **6 articles** (1 FR + 5 EN), alors que les fichiers JSON locaux en contiennent **42** (18 FR + 24 EN). Résultat : les 36 articles manquants disparaissent de l'affichage.
 
-**No other file changes needed.** The route in `App.tsx` already points to `SelectorPage`, and all CTAs already link to `${prefix}/selector`.
+### Solution en 2 étapes
 
-## Risk
+**Étape 1 — Correction immédiate du hook `usePosts`** (fichier `src/hooks/useSupabaseData.ts`)
 
-The old selector code is fully replaced. If you want to keep it as fallback, I can rename it to `SelectorPageLegacy.tsx` first.
+Fusionner les articles Supabase avec les articles locaux au lieu de remplacer. Les articles Supabase sont prioritaires (par slug), les articles locaux comblent les manques :
+
+```typescript
+if (!error && data && data.length > 0) {
+  const supabasePosts = data.map(mapPost);
+  const supabaseSlugs = new Set(supabasePosts.map(p => p.slug));
+  const merged = [...supabasePosts, ...localPosts.filter(p => !supabaseSlugs.has(p.slug))];
+  merged.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  setPosts(merged);
+} else {
+  setPosts(localPosts);
+}
+```
+
+**Étape 2 — Re-seeder tous les articles dans Supabase**
+
+Appeler la Edge Function `seed-content` avec l'action `seed_posts` pour injecter les 42 articles (18 FR + 24 EN) depuis les fichiers `posts-fr.json` et `posts-en.json`. Cela rendra l'étape 1 pérenne : Supabase aura toutes les données et le fallback local ne sera plus nécessaire.
+
+### Impact
+
+- Les 42 articles seront immédiatement visibles dans la section Guides (FR et EN)
+- La page d'accueil affichera à nouveau les 3 articles en vedette
+- Les pages outils retrouveront leurs articles liés
 
