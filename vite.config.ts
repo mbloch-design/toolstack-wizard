@@ -70,6 +70,9 @@ function sitemapPlugin(): Plugin {
           "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
           "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
           "github-copilot-vs-cursor", "grammarly-vs-claude",
+          "figma-vs-canva", "linear-vs-jira", "notion-vs-airtable",
+          "vercel-vs-replit", "semrush-vs-similarweb", "stripe-vs-razorpay",
+          "slack-vs-front", "notion-vs-coda",
         ];
         for (const comp of COMPARISONS) {
           for (const lang of LANGS) {

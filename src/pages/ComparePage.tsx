@@ -10,17 +10,7 @@ import CompareStrengthBars from "@/components/compare/CompareStrengthBars";
 import CompareVerdictCards from "@/components/compare/CompareVerdictCards";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import type { Tool } from "@/data/types";
-
-const COMPARISONS: { slugPair: string; toolA: string; toolB: string }[] = [
-  { slugPair: "chatgpt-vs-claude", toolA: "chatgpt", toolB: "claude" },
-  { slugPair: "dropbox-vs-google-drive", toolA: "dropbox", toolB: "google-drive" },
-  { slugPair: "zapier-vs-make", toolA: "zapier", toolB: "make" },
-  { slugPair: "notion-vs-obsidian", toolA: "notion", toolB: "obsidian" },
-  { slugPair: "typeform-vs-tally", toolA: "typeform", toolB: "tally" },
-  { slugPair: "midjourney-vs-firefly", toolA: "midjourney", toolB: "adobe-firefly" },
-  { slugPair: "github-copilot-vs-cursor", toolA: "github-copilot", toolB: "cursor" },
-  { slugPair: "grammarly-vs-claude", toolA: "grammarly", toolB: "claude" },
-];
+import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 
 function findTool(tools: Tool[], idOrSlug: string): Tool | undefined {
   return tools.find(t => t.id === idOrSlug || t.slug === idOrSlug);
