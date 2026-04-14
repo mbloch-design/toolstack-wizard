@@ -38,11 +38,11 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
           </span>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-[500px] text-[17px] leading-relaxed text-muted-foreground/60">
+        <p className="mx-auto mt-6 max-w-[440px] text-[17px] leading-relaxed text-muted-foreground/60">
           {lang === "fr" ? (
-            <>ToolTrim analyse chaque outil selon <strong className="font-medium text-muted-foreground">votre profil réel</strong> — TJM, phase, usage — et vous dit exactement quoi couper, garder, remplacer.</>
+            <>Scannez votre stack, découvrez ce que vous <strong className="font-medium text-muted-foreground">surpayez</strong>.</>
           ) : (
-            <>ToolTrim analyzes each tool based on <strong className="font-medium text-muted-foreground">your real profile</strong> — daily rate, stage, usage — and tells you exactly what to cut, keep, or replace.</>
+            <>Scan your stack, find what you're <strong className="font-medium text-muted-foreground">overpaying</strong>.</>
           )}
         </p>
 
