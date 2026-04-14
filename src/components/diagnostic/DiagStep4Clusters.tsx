@@ -168,9 +168,9 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
     setHasInteracted(true);
   };
 
-  // Sync back to session when moving forward
+  // Sync back to session when moving forward — resolve via alias map
   const syncSession = () => {
-    const selected = tools.filter((t) => selectedIds.has(t.id));
+    const selected = Array.from(selectedIds).map((id) => resolveTool(id));
     onUpdate({ selectedTools: selected });
   };
 
@@ -189,10 +189,10 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
     else onPrev();
   };
 
-  // All selected tools for the right panel
+  // All selected tools for the right panel — resolve via alias map
   const selectedToolsList = useMemo(
-    () => tools.filter((t) => selectedIds.has(t.id)),
-    [tools, selectedIds]
+    () => Array.from(selectedIds).map((id) => resolveTool(id)),
+    [selectedIds, resolveTool]
   );
 
   const totalCost = useMemo(
