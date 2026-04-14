@@ -1,9 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useTools } from "@/hooks/useSupabaseData";
+import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo } from "react";
-import { Check, X, ArrowRight, ExternalLink } from "lucide-react";
+import { Check, X, ArrowRight, CheckCircle, XCircle } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import CompareHero from "@/components/compare/CompareHero";
+import CompareSidebar from "@/components/compare/CompareSidebar";
+import CompareStrengthBars from "@/components/compare/CompareStrengthBars";
+import CompareVerdictCards from "@/components/compare/CompareVerdictCards";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import type { Tool } from "@/data/types";
 
@@ -29,18 +33,41 @@ function getPrice(tool: Tool): string {
   return "Gratuit";
 }
 
-function getVerifiedOn(tool: Tool): string {
-  return tool.pricing_v5?.verified_on || "—";
+function getPriceNum(tool: Tool): number {
+  return tool.pricing_v5?.compare_price_monthly_eur || tool.defaultMonthlyPrice || 0;
+}
+
+/** Build feature checklist from functional_needs union */
+function buildFeatureChecklist(toolA: Tool, toolB: Tool): { label: string; a: boolean; b: boolean }[] {
+  const allNeeds = new Set([...(toolA.functional_needs || []), ...(toolB.functional_needs || [])]);
+  return Array.from(allNeeds).slice(0, 6).map(need => ({
+    label: need.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
+    a: (toolA.functional_needs || []).includes(need),
+    b: (toolB.functional_needs || []).includes(need),
+  }));
 }
 
 const ComparePage = () => {
   const { slugPair } = useParams<{ slugPair: string }>();
   const { lang, t, prefix } = useLang();
   const { tools, loading } = useTools();
+  const { categories } = useCategories();
 
   const comparison = COMPARISONS.find(c => c.slugPair === slugPair);
   const toolA = useMemo(() => comparison ? findTool(tools, comparison.toolA) : undefined, [tools, comparison]);
   const toolB = useMemo(() => comparison ? findTool(tools, comparison.toolB) : undefined, [tools, comparison]);
+
+  const categoryList = useMemo(() => {
+    const catSlugs = new Set(COMPARISONS.flatMap(c => {
+      const a = findTool(tools, c.toolA);
+      const b = findTool(tools, c.toolB);
+      return [a?.categoryId, b?.categoryId].filter(Boolean);
+    }));
+    return categories
+      .filter(c => catSlugs.has(c.id))
+      .map(c => ({ slug: c.slug, label: c.name }))
+      .slice(0, 6);
+  }, [tools, categories]);
 
   useEffect(() => {
     if (!toolA || !toolB) return;
@@ -70,196 +97,241 @@ const ComparePage = () => {
   }, [toolA, toolB, lang, slugPair]);
 
   if (loading) {
-    return <div className="container py-20 text-center"><div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" /></div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+      </div>
+    );
   }
 
   if (!comparison || !toolA || !toolB) {
     return (
       <div className="container py-20 text-center">
         <p className="text-muted-foreground">{t("Comparatif non trouvé.", "Comparison not found.")}</p>
-        <Link to={`${prefix}/tools`} className="mt-4 inline-block text-primary hover:underline">{t("Retour au catalogue", "Back to catalog")}</Link>
+        <Link to={`${prefix}/tools`} className="mt-4 inline-block text-primary hover:underline">
+          {t("Retour au catalogue", "Back to catalog")}
+        </Link>
       </div>
     );
   }
 
   const year = new Date().getFullYear();
-  const priceA = getPrice(toolA);
-  const priceB = getPrice(toolB);
-  const verifiedA = getVerifiedOn(toolA);
-  const verifiedB = getVerifiedOn(toolB);
-
-  // Determine verdict
-  const prescriptionA = toolA.prescription_quality;
-  const prescriptionB = toolB.prescription_quality;
-  let verdict = "";
-  if (prescriptionA === "ferme" && toolA.prescription_output) {
-    verdict = t(
-      `Notre recommandation : ${toolA.prescription_output.action === "replace-cheaper" || toolA.prescription_output.action === "replace-better" ? `remplacer ${toolA.name} par ${toolA.prescription_output.replacement_tool}` : toolA.prescription_output.action}. Économie potentielle : ${toolA.prescription_output.gain_monthly_eur}€/mois.`,
-      `Our recommendation: ${toolA.prescription_output.action === "replace-cheaper" || toolA.prescription_output.action === "replace-better" ? `replace ${toolA.name} with ${toolA.prescription_output.replacement_tool}` : toolA.prescription_output.action}. Potential savings: ${toolA.prescription_output.gain_monthly_eur}€/month.`
-    );
-  } else if (prescriptionB === "ferme" && toolB.prescription_output) {
-    verdict = t(
-      `Notre recommandation : ${toolB.prescription_output.action === "replace-cheaper" || toolB.prescription_output.action === "replace-better" ? `remplacer ${toolB.name} par ${toolB.prescription_output.replacement_tool}` : toolB.prescription_output.action}. Économie potentielle : ${toolB.prescription_output.gain_monthly_eur}€/mois.`,
-      `Our recommendation: ${toolB.prescription_output.action === "replace-cheaper" || toolB.prescription_output.action === "replace-better" ? `replace ${toolB.name} with ${toolB.prescription_output.replacement_tool}` : toolB.prescription_output.action}. Potential savings: ${toolB.prescription_output.gain_monthly_eur}€/month.`
-    );
-  } else {
-    verdict = t(
-      `Les deux outils ont des usages complémentaires. ${toolA.verdict?.threshold || ""} ${toolB.verdict?.threshold || ""}`.trim(),
-      `Both tools have complementary uses. ${toolA.verdict?.threshold || ""} ${toolB.verdict?.threshold || ""}`.trim()
-    );
-  }
-
-  const rows = [
-    { label: t("Prix/mois", "Price/mo"), a: priceA, b: priceB },
-    { label: t("Plan gratuit", "Free plan"), a: toolA.pricing?.free ? "✅" : "❌", b: toolB.pricing?.free ? "✅" : "❌" },
-    {
-      label: t("Meilleur pour", "Best for"),
-      a: (toolA.verdict?.keepIf || []).slice(0, 2).join(", ") || "—",
-      b: (toolB.verdict?.keepIf || []).slice(0, 2).join(", ") || "—",
-    },
-    {
-      label: t("À éviter si", "Avoid if"),
-      a: (toolA.verdict?.avoidIf || []).slice(0, 2).join(", ") || "—",
-      b: (toolB.verdict?.avoidIf || []).slice(0, 2).join(", ") || "—",
-    },
-  ];
+  const features = buildFeatureChecklist(toolA, toolB);
 
   return (
-    <div className="py-16 md:py-24">
-      <div className="container mx-auto max-w-4xl">
-        <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl text-center">
-          {toolA.name} vs {toolB.name} — {t(`lequel choisir en ${year} ?`, `which to choose in ${year}?`)}
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground leading-relaxed">
-          {t(
-            `Comparatif détaillé entre ${toolA.name} et ${toolB.name} avec prix vérifiés, avantages, inconvénients et verdict ToolTrim.`,
-            `Detailed comparison between ${toolA.name} and ${toolB.name} with verified pricing, pros, cons, and ToolTrim verdict.`
-          )}
-        </p>
+    <div className="bg-background min-h-screen">
+      {/* Hero */}
+      <CompareHero />
 
-        {/* Tool headers */}
-        <div className="mt-12 grid grid-cols-2 gap-6">
-          {[toolA, toolB].map((tool) => (
-            <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="flex items-center gap-3 rounded-xl border border-border bg-card p-4 hover:border-primary/30 transition-colors">
-              <ToolLogo tool={tool} size={40} />
-              <div>
-                <p className="font-semibold">{tool.name}</p>
-                <p className="text-sm text-muted-foreground">{getPrice(tool)}/{t("mois", "mo")}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+      {/* Main: Sidebar + Content */}
+      <main className="px-4 md:px-8 pb-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Sidebar — hidden on mobile */}
+          <div className="hidden lg:block lg:col-span-3 sticky top-24">
+            <CompareSidebar
+              categories={categoryList}
+              activeCategorySlug={slugPair || null}
+              selectedTools={[toolA, toolB]}
+              comparisons={COMPARISONS}
+            />
+          </div>
 
-        {/* Comparison table */}
-        <div className="mt-10 rounded-xl border border-border overflow-hidden">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-secondary/50">
-                <th className="p-4 text-left font-semibold">{t("Critère", "Criteria")}</th>
-                <th className="p-4 text-center font-semibold">{toolA.name}</th>
-                <th className="p-4 text-center font-semibold">{toolB.name}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, i) => (
-                <tr key={i} className={i % 2 === 0 ? "bg-card" : "bg-secondary/20"}>
-                  <td className="p-4 font-medium text-muted-foreground">{row.label}</td>
-                  <td className="p-4 text-center">{row.a}</td>
-                  <td className="p-4 text-center">{row.b}</td>
-                </tr>
+          {/* Main content */}
+          <div className="lg:col-span-9 space-y-6">
+            {/* Sticky tool headers */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 sticky top-20 z-30 pt-4 pb-2 bg-background/95 backdrop-blur-sm">
+              <div className="hidden md:block" />
+              {[
+                { tool: toolA, borderColor: "border-primary" },
+                { tool: toolB, borderColor: "border-orange-400" },
+              ].map(({ tool, borderColor }) => (
+                <Link
+                  key={tool.id}
+                  to={`${prefix}/tool/${tool.slug}`}
+                  className={`bg-card p-5 rounded-2xl shadow-sm border-t-4 ${borderColor} hover:shadow-md transition-shadow`}
+                >
+                  <ToolLogo tool={tool} size={40} className="mb-3" />
+                  <h3 className="text-lg font-extrabold text-foreground">{tool.name}</h3>
+                  <p className={`text-xs font-bold mt-1 ${borderColor === "border-primary" ? "text-primary" : "text-orange-500"}`}>
+                    {getPrice(tool)}/{t("mois", "mo")}
+                  </p>
+                </Link>
               ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Verdict */}
-        <div className="mt-10 rounded-xl border border-primary/20 bg-accent/30 p-6">
-          <h2 className="text-lg font-bold tracking-tighter">{t("Notre verdict ToolTrim", "Our ToolTrim verdict")}</h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{verdict}</p>
-          <p className="mt-3 text-xs text-muted-foreground">
-            {t("Prix vérifiés le", "Prices verified on")} {verifiedA || verifiedB || "2026-03-13"}
-            {toolA.pricing_v5?.source_domain && ` — ${t("Sources", "Sources")}: ${toolA.pricing_v5.source_domain}`}
-            {toolB.pricing_v5?.source_domain && `, ${toolB.pricing_v5.source_domain}`}
-          </p>
-        </div>
-
-        {/* Pros/Cons side by side */}
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {[toolA, toolB].map((tool) => (
-            <div key={tool.id} className="rounded-xl border border-border bg-card p-5">
-              <h3 className="font-semibold flex items-center gap-2 mb-4">
-                <ToolLogo tool={tool} size={24} /> {tool.name}
-              </h3>
-              {tool.pros?.length > 0 && (
-                <div className="mb-3">
-                  <p className="text-xs font-semibold text-keep mb-2">{t("Avantages", "Pros")}</p>
-                  <ul className="space-y-1">
-                    {tool.pros.slice(0, 4).map((pro, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm"><Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-keep/60" />{pro}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {tool.cons?.length > 0 && (
-                <div>
-                  <p className="text-xs font-semibold text-cancel mb-2">{t("Inconvénients", "Cons")}</p>
-                  <ul className="space-y-1">
-                    {tool.cons.slice(0, 3).map((con, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm"><X className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cancel/60" />{con}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
             </div>
-          ))}
-        </div>
 
-        {/* FAQ */}
-        <div className="mt-14 border-t border-border pt-10">
-          <h2 className="text-xl font-bold tracking-tighter">{t("Questions fréquentes", "FAQ")}</h2>
-          <div className="mt-6 space-y-4">
-            <details className="group rounded-xl border border-border bg-card p-5">
-              <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-                {t(`${toolA.name} ou ${toolB.name} — lequel est moins cher ?`, `${toolA.name} or ${toolB.name} — which is cheaper?`)}
-                <ChevronIcon />
-              </summary>
-              <p className="mt-3 text-sm text-muted-foreground">
-                {t(
-                  `${toolA.name} coûte ${priceA}/mois et ${toolB.name} coûte ${priceB}/mois. Prix vérifiés sur les pages officielles.`,
-                  `${toolA.name} costs ${priceA}/month and ${toolB.name} costs ${priceB}/month. Prices verified on official pages.`
+            {/* Pricing section */}
+            <div className="bg-card rounded-2xl shadow-sm overflow-hidden">
+              <div className="p-6 md:p-8 border-b border-secondary">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 items-center">
+                  <div>
+                    <h4 className="font-bold text-lg mb-1">{t("Tarification mensuelle", "Monthly Pricing")}</h4>
+                    <p className="text-sm text-muted-foreground">{t("Prix de départ par utilisateur", "Starting per user")}</p>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <span className="text-3xl font-mono font-black text-foreground">{getPrice(toolA)}</span>
+                    <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <span className="text-3xl font-mono font-black text-foreground">{getPrice(toolB)}</span>
+                    <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Strength bars */}
+              <CompareStrengthBars toolA={toolA} toolB={toolB} />
+
+              {/* Feature checklist */}
+              <div className="p-6 md:p-8">
+                <h4 className="font-bold text-lg mb-6">{t("Fonctionnalités clés", "Key Features")}</h4>
+                <div className="space-y-4">
+                  {features.map((feat, i) => (
+                    <div
+                      key={i}
+                      className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 items-center py-3 border-b border-secondary last:border-0"
+                    >
+                      <span className="col-span-2 md:col-span-1 font-semibold text-foreground text-sm">{feat.label}</span>
+                      <div className="flex justify-center md:justify-start">
+                        {feat.a ? (
+                          <CheckCircle className="h-5 w-5 text-primary" />
+                        ) : (
+                          <XCircle className="h-5 w-5 text-muted-foreground/40" />
+                        )}
+                      </div>
+                      <div className="flex justify-center md:justify-start">
+                        {feat.b ? (
+                          <CheckCircle className="h-5 w-5 text-primary" />
+                        ) : (
+                          <XCircle className="h-5 w-5 text-muted-foreground/40" />
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Verdict bento cards */}
+            <CompareVerdictCards toolA={toolA} toolB={toolB} />
+
+            {/* Pros/Cons side by side */}
+            <div className="grid gap-6 md:grid-cols-2">
+              {[toolA, toolB].map((tool) => (
+                <div key={tool.id} className="bg-card rounded-2xl p-5 md:p-6 shadow-sm border border-border/15">
+                  <h3 className="font-bold flex items-center gap-2 mb-4">
+                    <ToolLogo tool={tool} size={24} /> {tool.name}
+                  </h3>
+                  {tool.pros?.length > 0 && (
+                    <div className="mb-3">
+                      <p className="text-xs font-bold text-keep mb-2">{t("Avantages", "Pros")}</p>
+                      <ul className="space-y-1.5">
+                        {tool.pros.slice(0, 4).map((pro, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm">
+                            <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-keep/60" />
+                            {pro}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {tool.cons?.length > 0 && (
+                    <div>
+                      <p className="text-xs font-bold text-cancel mb-2">{t("Inconvénients", "Cons")}</p>
+                      <ul className="space-y-1.5">
+                        {tool.cons.slice(0, 3).map((con, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm">
+                            <X className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cancel/60" />
+                            {con}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* FAQ */}
+            <div className="mt-8 pt-8">
+              <h2 className="text-xl font-bold tracking-tighter mb-6">{t("Questions fréquentes", "FAQ")}</h2>
+              <div className="space-y-3">
+                <details className="group bg-card rounded-2xl p-5 shadow-sm border border-border/15">
+                  <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
+                    {t(
+                      `${toolA.name} ou ${toolB.name} — lequel est moins cher ?`,
+                      `${toolA.name} or ${toolB.name} — which is cheaper?`
+                    )}
+                    <ChevronIcon />
+                  </summary>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {t(
+                      `${toolA.name} coûte ${getPrice(toolA)}/mois et ${toolB.name} coûte ${getPrice(toolB)}/mois. Prix vérifiés sur les pages officielles.`,
+                      `${toolA.name} costs ${getPrice(toolA)}/month and ${toolB.name} costs ${getPrice(toolB)}/month. Prices verified on official pages.`
+                    )}
+                  </p>
+                </details>
+
+                <details className="group bg-card rounded-2xl p-5 shadow-sm border border-border/15">
+                  <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
+                    {t(
+                      `${toolA.name} vs ${toolB.name} : lequel choisir en ${year} ?`,
+                      `${toolA.name} vs ${toolB.name}: which to choose in ${year}?`
+                    )}
+                    <ChevronIcon />
+                  </summary>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {t(
+                      `Choisissez ${toolA.name} si : ${(toolA.verdict?.keepIf || []).join(", ") || "usage professionnel"}. Choisissez ${toolB.name} si : ${(toolB.verdict?.keepIf || []).join(", ") || "budget serré"}.`,
+                      `Choose ${toolA.name} if: ${(toolA.verdict?.keepIf || []).join(", ") || "professional use"}. Choose ${toolB.name} if: ${(toolB.verdict?.keepIf || []).join(", ") || "tight budget"}.`
+                    )}
+                  </p>
+                </details>
+
+                {(toolA.migrationGuide || toolB.migrationGuide) && (
+                  <details className="group bg-card rounded-2xl p-5 shadow-sm border border-border/15">
+                    <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
+                      {t(
+                        `Peut-on migrer de ${toolA.name} vers ${toolB.name} facilement ?`,
+                        `Can I easily migrate from ${toolA.name} to ${toolB.name}?`
+                      )}
+                      <ChevronIcon />
+                    </summary>
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      {toolA.migrationGuide
+                        ? t(
+                            `Durée estimée : ${toolA.migrationGuide.timeEstimate}. Étapes : ${toolA.migrationGuide.steps.join(", ")}.`,
+                            `Estimated time: ${toolA.migrationGuide.timeEstimate}. Steps: ${toolA.migrationGuide.steps.join(", ")}.`
+                          )
+                        : toolB.migrationGuide
+                        ? t(
+                            `Durée estimée : ${toolB.migrationGuide.timeEstimate}. Étapes : ${toolB.migrationGuide.steps.join(", ")}.`,
+                            `Estimated time: ${toolB.migrationGuide.timeEstimate}. Steps: ${toolB.migrationGuide.steps.join(", ")}.`
+                          )
+                        : "—"}
+                    </p>
+                  </details>
                 )}
-              </p>
-            </details>
-            {(toolA.migrationGuide || toolB.migrationGuide) && (
-              <details className="group rounded-xl border border-border bg-card p-5">
-                <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-                  {t(`Peut-on migrer de ${toolA.name} vers ${toolB.name} facilement ?`, `Can I easily migrate from ${toolA.name} to ${toolB.name}?`)}
-                  <ChevronIcon />
-                </summary>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  {toolA.migrationGuide
-                    ? t(`Durée estimée : ${toolA.migrationGuide.timeEstimate}. Étapes : ${toolA.migrationGuide.steps.join(", ")}.`,
-                        `Estimated time: ${toolA.migrationGuide.timeEstimate}. Steps: ${toolA.migrationGuide.steps.join(", ")}.`)
-                    : toolB.migrationGuide
-                    ? t(`Durée estimée : ${toolB.migrationGuide.timeEstimate}. Étapes : ${toolB.migrationGuide.steps.join(", ")}.`,
-                        `Estimated time: ${toolB.migrationGuide.timeEstimate}. Steps: ${toolB.migrationGuide.steps.join(", ")}.`)
-                    : "—"}
-                </p>
-              </details>
-            )}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                to={`${prefix}/tool/${toolA.slug}`}
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-primary/85 transition-colors shadow-lg shadow-primary/20"
+              >
+                {t("Voir la fiche", "See details")} {toolA.name} <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                to={`${prefix}/tool/${toolB.slug}`}
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-bold hover:bg-secondary transition-colors"
+              >
+                {t("Voir la fiche", "See details")} {toolB.name} <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
-
-        {/* CTA */}
-        <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link to={`${prefix}/tool/${toolA.slug}`} className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/85 transition-colors">
-            {t("Voir la fiche", "See details")} {toolA.name} <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link to={`${prefix}/tool/${toolB.slug}`} className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-semibold hover:bg-accent transition-colors">
-            {t("Voir la fiche", "See details")} {toolB.name} <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </div>
+      </main>
     </div>
   );
 };
