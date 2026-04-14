@@ -27,6 +27,7 @@ import LegalNoticePage from "@/pages/LegalNoticePage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsPage from "@/pages/TermsPage";
 import ComparePage from "@/pages/ComparePage";
+import ComparesIndexPage from "@/pages/ComparesIndexPage";
 import NotFound from "@/pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -93,6 +94,7 @@ const App = () => (
             <Route path="guides" element={<GuidesPage />} />
             <Route path="guide/:slug" element={<GuideDetailPage />} />
             <Route path="article/:slug" element={<RedirectArticleToGuide />} />
+            <Route path="comparatifs" element={<ComparesIndexPage />} />
             <Route path="comparatif/:slugPair" element={<ComparePage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="methodology" element={<MethodologyPage />} />
