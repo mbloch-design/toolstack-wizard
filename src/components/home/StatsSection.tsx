@@ -30,8 +30,40 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
     return () => obs.disconnect();
   }, [counted]);
 
+  const subStats = [
+    {
+      value: `${toolCount}+`,
+      label: t(`outils analysés sur ${categoryCount} catégories métier`, `tools analyzed across ${categoryCount} categories`),
+      chip: t("base vivante", "live database"),
+    },
+    {
+      value: "0",
+      label: t(
+        "accord d'affiliation qui biaise nos recommandations",
+        "affiliate deal biasing our recommendations"
+      ),
+      chip: t("100% indépendant", "100% independent"),
+    },
+    {
+      value: "2,3",
+      label: t(
+        "outils à couper ou swapper identifiés en moyenne",
+        "tools to cut or swap identified on average"
+      ),
+      chip: t("par analyse", "per analysis"),
+    },
+    {
+      value: "<3",
+      label: t(
+        "minutes pour obtenir votre diagnostic complet",
+        "minutes to get your complete diagnostic"
+      ),
+      chip: t("temps réel", "real-time"),
+    },
+  ];
+
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 bg-secondary/30">
       <div className="mx-auto max-w-[1100px]">
         {/* Header */}
         <div className="text-center mb-14">
@@ -43,18 +75,18 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
           </h2>
         </div>
 
-        {/* Stats grid — Elevo-style big numbers */}
-        <div className="grid gap-6 md:grid-cols-4">
-          {/* Hero stat — large */}
-          <div className="md:col-span-2 rounded-2xl border border-primary/20 bg-primary/5 p-10 flex flex-col justify-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-3">
+        {/* Bento grid: hero left (2 rows) + 2x2 right */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Hero stat — spans 2 rows on left */}
+          <div className="md:row-span-2 rounded-3xl bg-primary/8 p-10 md:p-12 flex flex-col justify-center items-center text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary mb-5">
               {t("Économies identifiées en moyenne", "Average savings identified")}
             </p>
-            <p className="text-6xl md:text-7xl font-extrabold tracking-[-4px] leading-none">
+            <p className="text-7xl md:text-8xl font-extrabold tracking-[-5px] leading-none text-primary">
               <span ref={counterRef}>0</span>
-              <span className="text-primary">€</span>
+              <span>€</span>
             </p>
-            <p className="mt-3 max-w-[280px] text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-[260px] text-sm leading-relaxed text-muted-foreground">
               {t(
                 "par freelance et par an, sur des abonnements déjà actifs.",
                 "per freelancer per year, on already active subscriptions."
@@ -62,44 +94,14 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
             </p>
           </div>
 
-          {/* Sub stats */}
-          {[
-            {
-              value: `${toolCount}+`,
-              label: t(`outils analysés sur ${categoryCount} catégories métier`, `tools analyzed across ${categoryCount} categories`),
-              chip: t("base vivante", "live database"),
-            },
-            {
-              value: "0",
-              label: t(
-                "accord d'affiliation qui biaise nos recommandations",
-                "affiliate deal biasing our recommendations"
-              ),
-              chip: t("100% indépendant", "100% independent"),
-            },
-            {
-              value: "2,3",
-              label: t(
-                "outils à couper ou swapper identifiés en moyenne",
-                "tools to cut or swap identified on average"
-              ),
-              chip: t("par analyse", "per analysis"),
-            },
-            {
-              value: "<3",
-              label: t(
-                "minutes pour obtenir votre diagnostic complet",
-                "minutes to get your complete diagnostic"
-              ),
-              chip: t("temps réel", "real-time"),
-            },
-          ].map((s, i) => (
+          {/* 4 sub-stat cards in 2x2 grid */}
+          {subStats.map((s, i) => (
             <div
               key={i}
-              className="rounded-2xl border border-border bg-card p-8 flex flex-col justify-between transition-all hover:border-primary/20 hover:shadow-sm"
+              className="rounded-3xl bg-card border border-border/40 p-7 flex flex-col justify-between transition-all hover:border-primary/20 hover:shadow-sm"
             >
               <div>
-                <p className="text-4xl font-extrabold tracking-[-2px]">{s.value}</p>
+                <p className="text-4xl md:text-5xl font-extrabold tracking-[-3px] text-primary">{s.value}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.label}</p>
               </div>
               <span className="mt-4 inline-flex w-fit items-center gap-1 rounded-full border border-primary/15 bg-primary/5 px-3 py-1 text-[11px] font-semibold tracking-wide text-primary">
