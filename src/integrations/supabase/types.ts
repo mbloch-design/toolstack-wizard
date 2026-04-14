@@ -68,6 +68,84 @@ export type Database = {
         }
         Relationships: []
       }
+      diagnostic_sessions: {
+        Row: {
+          actions_completed: number | null
+          annual_savings: number | null
+          api_spend_tranche: string | null
+          closing_answers: Json | null
+          created_at: string | null
+          discovery_answers: Json | null
+          email: string | null
+          email_preferences: Json | null
+          estimated_waste: number | null
+          first_name: string | null
+          health_label: string | null
+          health_score: number | null
+          hours_recoverable: number | null
+          id: string
+          language: string | null
+          optimized_cost: number | null
+          persona: string | null
+          prescriptions: Json | null
+          recommendations: Json | null
+          selected_tools: Json | null
+          stack_total_cost: number | null
+          tjm: number | null
+          tool_scores: Json | null
+        }
+        Insert: {
+          actions_completed?: number | null
+          annual_savings?: number | null
+          api_spend_tranche?: string | null
+          closing_answers?: Json | null
+          created_at?: string | null
+          discovery_answers?: Json | null
+          email?: string | null
+          email_preferences?: Json | null
+          estimated_waste?: number | null
+          first_name?: string | null
+          health_label?: string | null
+          health_score?: number | null
+          hours_recoverable?: number | null
+          id?: string
+          language?: string | null
+          optimized_cost?: number | null
+          persona?: string | null
+          prescriptions?: Json | null
+          recommendations?: Json | null
+          selected_tools?: Json | null
+          stack_total_cost?: number | null
+          tjm?: number | null
+          tool_scores?: Json | null
+        }
+        Update: {
+          actions_completed?: number | null
+          annual_savings?: number | null
+          api_spend_tranche?: string | null
+          closing_answers?: Json | null
+          created_at?: string | null
+          discovery_answers?: Json | null
+          email?: string | null
+          email_preferences?: Json | null
+          estimated_waste?: number | null
+          first_name?: string | null
+          health_label?: string | null
+          health_score?: number | null
+          hours_recoverable?: number | null
+          id?: string
+          language?: string | null
+          optimized_cost?: number | null
+          persona?: string | null
+          prescriptions?: Json | null
+          recommendations?: Json | null
+          selected_tools?: Json | null
+          stack_total_cost?: number | null
+          tjm?: number | null
+          tool_scores?: Json | null
+        }
+        Relationships: []
+      }
       discovery_questions: {
         Row: {
           condition_tool_ids: Json | null
