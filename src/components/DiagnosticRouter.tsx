@@ -143,7 +143,7 @@ export default function DiagnosticRouter() {
   };
   const progressIndex = progressMap[step];
 
-  const showRightPanel = step >= 6 && step <= 10;
+  const showRightPanel = step >= 7 && step <= 10;
 
   // If on dashboard step, render full dashboard
   if (step === 12 && diagnosticResult) {
