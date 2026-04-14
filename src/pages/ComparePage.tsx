@@ -53,9 +53,20 @@ const ComparePage = () => {
   const { tools, loading } = useTools();
   const { categories } = useCategories();
 
-  const comparison = COMPARISONS.find(c => c.slugPair === slugPair);
-  const toolA = useMemo(() => comparison ? findTool(tools, comparison.toolA) : undefined, [tools, comparison]);
-  const toolB = useMemo(() => comparison ? findTool(tools, comparison.toolB) : undefined, [tools, comparison]);
+  // Parse slugPair dynamically: support any "slugA-vs-slugB" pair
+  const parsedPair = useMemo(() => {
+    if (!slugPair) return null;
+    // Try featured first
+    const featured = COMPARISONS.find(c => c.slugPair === slugPair);
+    if (featured) return { idA: featured.toolA, idB: featured.toolB };
+    // Dynamic: split on "-vs-"
+    const parts = slugPair.split("-vs-");
+    if (parts.length === 2) return { idA: parts[0], idB: parts[1] };
+    return null;
+  }, [slugPair]);
+
+  const toolA = useMemo(() => parsedPair ? findTool(tools, parsedPair.idA) : undefined, [tools, parsedPair]);
+  const toolB = useMemo(() => parsedPair ? findTool(tools, parsedPair.idB) : undefined, [tools, parsedPair]);
 
   const categoryList = useMemo(() => {
     const catSlugs = new Set(COMPARISONS.flatMap(c => {
@@ -104,12 +115,12 @@ const ComparePage = () => {
     );
   }
 
-  if (!comparison || !toolA || !toolB) {
+  if (!parsedPair || !toolA || !toolB) {
     return (
       <div className="container py-20 text-center">
         <p className="text-muted-foreground">{t("Comparatif non trouvé.", "Comparison not found.")}</p>
-        <Link to={`${prefix}/tools`} className="mt-4 inline-block text-primary hover:underline">
-          {t("Retour au catalogue", "Back to catalog")}
+        <Link to={`${prefix}/comparatifs`} className="mt-4 inline-block text-primary hover:underline">
+          {t("Voir tous les comparatifs", "See all comparisons")}
         </Link>
       </div>
     );

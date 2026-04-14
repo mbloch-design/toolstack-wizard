@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTheme } from "@/hooks/useTheme";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
-import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench, BarChart3, HelpCircle, Shield, Mail, Layers } from "lucide-react";
+import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench, BarChart3, HelpCircle, Shield, Mail, Layers, Scale } from "lucide-react";
 import { useState, useRef, useEffect, useMemo } from "react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import pictoLogo from "@/assets/picto-logo.svg";
@@ -163,6 +163,7 @@ const Navbar = () => {
                 <div className="w-[280px] rounded-xl border border-border/60 bg-background shadow-lg shadow-foreground/[0.04] overflow-hidden p-2">
                   {[
                     { icon: BookOpen, label: t("Guides & comparatifs", "Guides & comparisons"), to: `${prefix}/guides` },
+                    { icon: Scale, label: t("Comparatifs", "Comparisons"), to: `${prefix}/comparatifs` },
                     { icon: Layers, label: t("Sélecteur de stack", "Stack selector"), to: `${prefix}/selector` },
                     { icon: Shield, label: t("Transparence", "Transparency"), to: `${prefix}/transparency` },
                     { icon: HelpCircle, label: t("À propos", "About"), to: `${prefix}/about` },
