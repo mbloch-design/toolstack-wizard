@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import type { ToolScore } from "@/utils/scoring";
 import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
-import ToolLogo from "@/components/ToolLogo";
+
 
 interface Props {
   result: DiagnosticResult;
@@ -33,7 +33,7 @@ function ToolCard({ tool, score, result, t }: { tool: Tool; score: ToolScore; re
         onClick={() => setExpanded(!expanded)}
         className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-muted/30 transition-colors"
       >
-        <ToolLogo toolName={tool.name} toolSlug={tool.id} size="sm" />
+        <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-foreground truncate">{tool.name}</p>
           <p className="text-xs text-muted-foreground capitalize truncate">{tool.category}</p>

@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback } from "react";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
 import { Check, ChevronRight } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
-import ToolLogo from "@/components/ToolLogo";
+
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 
@@ -232,7 +232,7 @@ export default function DashActions({ result, allTools, t, onNavigate }: Props) 
 
                     {/* Logo */}
                     {action.tool && (
-                      <ToolLogo toolName={action.tool.name} toolSlug={action.tool.id} size="sm" />
+                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
                     )}
 
                     {/* Label */}

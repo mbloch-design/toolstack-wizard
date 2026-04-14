@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import { computeScoreFinal } from "@/utils/scoring";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
-import ToolLogo from "@/components/ToolLogo";
+
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 
@@ -37,9 +37,9 @@ function SwapCard({ swap, t, onAccept }: { swap: SwapData; t: Props["t"]; onAcce
       <div className="p-4 space-y-3">
         {/* A → B */}
         <div className="flex items-center gap-3">
-          <ToolLogo toolName={swap.current.name} toolSlug={swap.current.id} size="sm" />
+          <div className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center text-xs font-bold text-destructive">{swap.current.name.charAt(0)}</div>
           <ArrowRight className="w-4 h-4 text-muted-foreground shrink-0" />
-          <ToolLogo toolName={swap.alternative.name} toolSlug={swap.alternative.id} size="sm" />
+          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">{swap.alternative.name.charAt(0)}</div>
           <div className="flex-1 min-w-0">
             <p className="text-sm text-foreground">
               <span className="text-muted-foreground line-through">{swap.current.name}</span>
@@ -157,7 +157,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
           <div className="space-y-2">
             {result.recommendations.slice(0, 3).map((tool) => (
               <div key={tool.id} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3">
-                <ToolLogo toolName={tool.name} toolSlug={tool.id} size="sm" />
+                <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground">{tool.name}</p>
                   <p className="text-xs text-muted-foreground">{t(personaReason.fr, personaReason.en)}</p>
