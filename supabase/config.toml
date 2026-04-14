@@ -17,3 +17,6 @@ verify_jwt = false
 
 [functions.seed-diagnostic]
 verify_jwt = false
+
+[functions.seed-tools-enrichment]
+verify_jwt = false
