@@ -164,7 +164,7 @@ const ComparePage = () => {
                   <ToolLogo tool={tool} size={40} className="mb-3" />
                   <h3 className="text-lg font-extrabold text-foreground">{tool.name}</h3>
                   <p className={`text-xs font-bold mt-1 ${borderColor === "border-primary" ? "text-primary" : "text-orange-500"}`}>
-                    {getPrice(tool)}/{t("mois", "mo")}
+                    {getPriceNum(tool) > 0 ? `${getPrice(tool)}/${t("mois", "mo")}` : t("Gratuit", "Free")}
                   </p>
                 </Link>
               ))}
@@ -180,11 +180,11 @@ const ComparePage = () => {
                   </div>
                   <div className="text-center md:text-left">
                     <span className="text-3xl font-mono font-black text-foreground">{getPrice(toolA)}</span>
-                    <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>
+                    {getPriceNum(toolA) > 0 && <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>}
                   </div>
                   <div className="text-center md:text-left">
                     <span className="text-3xl font-mono font-black text-foreground">{getPrice(toolB)}</span>
-                    <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>
+                    {getPriceNum(toolB) > 0 && <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>}
                   </div>
                 </div>
               </div>
@@ -276,8 +276,8 @@ const ComparePage = () => {
                   </summary>
                   <p className="mt-3 text-sm text-muted-foreground">
                     {t(
-                      `${toolA.name} coûte ${getPrice(toolA)}/mois et ${toolB.name} coûte ${getPrice(toolB)}/mois. Prix vérifiés sur les pages officielles.`,
-                      `${toolA.name} costs ${getPrice(toolA)}/month and ${toolB.name} costs ${getPrice(toolB)}/month. Prices verified on official pages.`
+                      `${toolA.name} coûte ${getPriceNum(toolA) > 0 ? getPrice(toolA) + "/mois" : "Gratuit"} et ${toolB.name} coûte ${getPriceNum(toolB) > 0 ? getPrice(toolB) + "/mois" : "Gratuit"}. Prix vérifiés sur les pages officielles.`,
+                      `${toolA.name} costs ${getPriceNum(toolA) > 0 ? getPrice(toolA) + "/month" : "Free"} and ${toolB.name} costs ${getPriceNum(toolB) > 0 ? getPrice(toolB) + "/month" : "Free"}. Prices verified on official pages.`
                     )}
                   </p>
                 </details>

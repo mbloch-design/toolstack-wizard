@@ -30,6 +30,13 @@ function getPrice(tool: Tool): string {
   return "Gratuit";
 }
 
+function getPriceLabel(tool: Tool, t: (fr: string, en: string) => string): string {
+  const v5 = tool.pricing_v5?.compare_price_monthly_eur;
+  const price = v5 != null && v5 > 0 ? v5 : tool.defaultMonthlyPrice;
+  if (price > 0) return `${price}€/${t("mois", "mo")}`;
+  return t("Gratuit", "Free");
+}
+
 const ComparesIndexPage = () => {
   const { lang, t, prefix } = useLang();
   const { tools, loading } = useTools();
@@ -176,7 +183,7 @@ const ComparesIndexPage = () => {
                         >
                           <ToolLogo tool={tool} size={20} />
                           <span className="font-medium">{tool.name}</span>
-                          <span className="ml-auto text-xs text-muted-foreground">{getPrice(tool)}/{t("mois", "mo")}</span>
+                          <span className="ml-auto text-xs text-muted-foreground">{getPriceLabel(tool, t)}</span>
                         </button>
                       ))}
                     </div>
@@ -227,7 +234,7 @@ const ComparesIndexPage = () => {
                         >
                           <ToolLogo tool={tool} size={20} />
                           <span className="font-medium">{tool.name}</span>
-                          <span className="ml-auto text-xs text-muted-foreground">{getPrice(tool)}/{t("mois", "mo")}</span>
+                          <span className="ml-auto text-xs text-muted-foreground">{getPriceLabel(tool, t)}</span>
                         </button>
                       ))}
                     </div>
@@ -280,9 +287,9 @@ const ComparesIndexPage = () => {
 
                   {/* Pricing */}
                   <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                    <span className="font-mono font-bold text-foreground">{getPrice(a)}/{t("mois", "mo")}</span>
+                    <span className="font-mono font-bold text-foreground">{getPriceLabel(a, t)}</span>
                     <span className="text-muted-foreground/50">{t("vs", "vs")}</span>
-                    <span className="font-mono font-bold text-foreground">{getPrice(b)}/{t("mois", "mo")}</span>
+                    <span className="font-mono font-bold text-foreground">{getPriceLabel(b, t)}</span>
                   </div>
 
                   {/* Verdict snippet */}
