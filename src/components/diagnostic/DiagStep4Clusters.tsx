@@ -105,13 +105,11 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
 
   const canProceed = hasInteracted || timerDone;
 
-  // Tools available for current cluster
+  // Tools available for current cluster — uses alias resolution + fallback
   const clusterTools = useMemo(() => {
     if (!currentCluster) return [];
-    return currentCluster.tool_ids
-      .map((id) => tools.find((t) => t.id === id))
-      .filter(Boolean) as Tool[];
-  }, [currentCluster, tools]);
+    return currentCluster.tool_ids.map((id) => resolveTool(id));
+  }, [currentCluster, resolveTool]);
 
   // Persist to localStorage
   useEffect(() => {
