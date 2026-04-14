@@ -1,8 +1,9 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useRef } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
 import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
 import { runDiagnostic } from "@/utils/scoring";
+import { supabase } from "@/integrations/supabase/client";
 
 import DiagStep0Prenom from "@/components/diagnostic/DiagStep0Prenom";
 import DiagStep1Tjm from "@/components/diagnostic/DiagStep1Tjm";
