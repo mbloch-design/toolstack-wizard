@@ -16,12 +16,64 @@ interface Props {
 
 const LOCALSTORAGE_KEY = "diag_selected_tools";
 
+/** Alias map for cluster tool_ids that don't match the tools table IDs */
+const TOOL_ID_ALIASES: Record<string, string> = {
+  "photoshop": "adobe-photoshop",
+  "illustrator": "adobe-illustrator",
+  "lightroom": "adobe-lightroom",
+  "premiere-pro": "adobe-premiere-pro",
+  "after-effects": "adobe-after-effects",
+  "adobe-creative-cloud": "adobe-cc",
+};
+
+/** Pretty-print a tool ID into a display name */
+function prettifyId(id: string): string {
+  return id
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+/** Create a minimal fallback Tool for IDs not in the catalog */
+function createFallbackTool(id: string): Tool {
+  return {
+    id,
+    name: prettifyId(id),
+    price: 0,
+    category: "",
+    functional_needs: [],
+    tool_type: "satellite",
+    usage: "medium",
+    prescription_quality: "oui",
+    force_silence: false,
+  };
+}
+
 export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, clusters, tools, doublonRules, t }: Props) {
+  // Build fast lookup map: id → Tool, including aliases
+  const toolMap = useMemo(() => {
+    const map = new Map<string, Tool>();
+    tools.forEach((t) => map.set(t.id, t));
+    // Register aliases pointing to existing tools
+    Object.entries(TOOL_ID_ALIASES).forEach(([alias, realId]) => {
+      const tool = map.get(realId);
+      if (tool) map.set(alias, tool);
+    });
+    return map;
+  }, [tools]);
+
+  /** Resolve a tool_id to a Tool — alias → exact → fallback */
+  const resolveTool = useCallback(
+    (id: string): Tool => {
+      return toolMap.get(id) || createFallbackTool(id);
+    },
+    [toolMap]
+  );
+
   const personaClusters = useMemo(
     () => clusters.filter((c) => c.persona === session.persona).sort((a, b) => a.order - b.order),
     [clusters, session.persona]
   );
-
   const [clusterIdx, setClusterIdx] = useState(0);
   const [selectedIds, setSelectedIds] = useState<Set<string>>(() => {
     try {
