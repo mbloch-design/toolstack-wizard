@@ -16,12 +16,64 @@ interface Props {
 
 const LOCALSTORAGE_KEY = "diag_selected_tools";
 
+/** Alias map for cluster tool_ids that don't match the tools table IDs */
+const TOOL_ID_ALIASES: Record<string, string> = {
+  "photoshop": "adobe-photoshop",
+  "illustrator": "adobe-illustrator",
+  "lightroom": "adobe-lightroom",
+  "premiere-pro": "adobe-premiere-pro",
+  "after-effects": "adobe-after-effects",
+  "adobe-creative-cloud": "adobe-cc",
+};
+
+/** Pretty-print a tool ID into a display name */
+function prettifyId(id: string): string {
+  return id
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+/** Create a minimal fallback Tool for IDs not in the catalog */
+function createFallbackTool(id: string): Tool {
+  return {
+    id,
+    name: prettifyId(id),
+    price: 0,
+    category: "",
+    functional_needs: [],
+    tool_type: "satellite",
+    usage: "medium",
+    prescription_quality: "oui",
+    force_silence: false,
+  };
+}
+
 export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, clusters, tools, doublonRules, t }: Props) {
+  // Build fast lookup map: id → Tool, including aliases
+  const toolMap = useMemo(() => {
+    const map = new Map<string, Tool>();
+    tools.forEach((t) => map.set(t.id, t));
+    // Register aliases pointing to existing tools
+    Object.entries(TOOL_ID_ALIASES).forEach(([alias, realId]) => {
+      const tool = map.get(realId);
+      if (tool) map.set(alias, tool);
+    });
+    return map;
+  }, [tools]);
+
+  /** Resolve a tool_id to a Tool — alias → exact → fallback */
+  const resolveTool = useCallback(
+    (id: string): Tool => {
+      return toolMap.get(id) || createFallbackTool(id);
+    },
+    [toolMap]
+  );
+
   const personaClusters = useMemo(
     () => clusters.filter((c) => c.persona === session.persona).sort((a, b) => a.order - b.order),
     [clusters, session.persona]
   );
-
   const [clusterIdx, setClusterIdx] = useState(0);
   const [selectedIds, setSelectedIds] = useState<Set<string>>(() => {
     try {
@@ -53,13 +105,11 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
 
   const canProceed = hasInteracted || timerDone;
 
-  // Tools available for current cluster
+  // Tools available for current cluster — uses alias resolution + fallback
   const clusterTools = useMemo(() => {
     if (!currentCluster) return [];
-    return currentCluster.tool_ids
-      .map((id) => tools.find((t) => t.id === id))
-      .filter(Boolean) as Tool[];
-  }, [currentCluster, tools]);
+    return currentCluster.tool_ids.map((id) => resolveTool(id));
+  }, [currentCluster, resolveTool]);
 
   // Persist to localStorage
   useEffect(() => {
@@ -118,9 +168,9 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
     setHasInteracted(true);
   };
 
-  // Sync back to session when moving forward
+  // Sync back to session when moving forward — resolve via alias map
   const syncSession = () => {
-    const selected = tools.filter((t) => selectedIds.has(t.id));
+    const selected = Array.from(selectedIds).map((id) => resolveTool(id));
     onUpdate({ selectedTools: selected });
   };
 
@@ -139,10 +189,10 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
     else onPrev();
   };
 
-  // All selected tools for the right panel
+  // All selected tools for the right panel — resolve via alias map
   const selectedToolsList = useMemo(
-    () => tools.filter((t) => selectedIds.has(t.id)),
-    [tools, selectedIds]
+    () => Array.from(selectedIds).map((id) => resolveTool(id)),
+    [selectedIds, resolveTool]
   );
 
   const totalCost = useMemo(
@@ -197,7 +247,7 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
               ? currentCluster.question_en
               : currentCluster.question}
           </h2>
-          {currentCluster.why && (
+          {currentCluster.why && session.language !== "en" && (
             <p className="text-sm text-muted-foreground">{currentCluster.why}</p>
           )}
           {/* Reassuring microcopy */}
