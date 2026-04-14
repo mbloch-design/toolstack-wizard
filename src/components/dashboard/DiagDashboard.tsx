@@ -3,6 +3,9 @@ import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import DashOverview from "./DashOverview";
 import DashGaspillage from "./DashGaspillage";
 import DashStackUtile from "./DashStackUtile";
+import DashOptimisations from "./DashOptimisations";
+import DashActions from "./DashActions";
+import DashShareModal from "./DashShareModal";
 import { Eye, Flame, CheckCircle, Rocket, ListChecks, Menu, X } from "lucide-react";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -24,29 +27,31 @@ const TABS: { id: Tab; icon: typeof Eye; labelFr: string; labelEn: string }[] = 
 export default function DiagDashboard({ result, allTools, t }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>("overview");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showShare, setShowShare] = useState(false);
 
   const renderPage = () => {
     switch (activeTab) {
       case "overview":
-        return <DashOverview result={result} t={t} />;
+        return <DashOverview result={result} t={t} onShare={() => setShowShare(true)} />;
       case "gaspillage":
         return <DashGaspillage result={result} allTools={allTools} t={t} />;
       case "stack":
         return <DashStackUtile result={result} t={t} />;
       case "optimiser":
-        return (
-          <div className="flex items-center justify-center min-h-[40vh] text-muted-foreground">
-            <p>{t("À venir — Prompt 6", "Coming soon — Prompt 6")}</p>
-          </div>
-        );
+        return <DashOptimisations result={result} allTools={allTools} t={t} />;
       case "actions":
-        return (
-          <div className="flex items-center justify-center min-h-[40vh] text-muted-foreground">
-            <p>{t("À venir — Prompt 6", "Coming soon — Prompt 6")}</p>
-          </div>
-        );
+        return <DashActions result={result} allTools={allTools} t={t} />;
     }
   };
+
+  // Mini donut for sidebar
+  const miniDonutProgress = (result.healthScore / 100) * (2 * Math.PI * 16);
+  const miniDonutCirc = 2 * Math.PI * 16;
+  const donutColor =
+    result.healthScore >= 80 ? "hsl(var(--keep))" :
+    result.healthScore >= 60 ? "hsl(45 93% 47%)" :
+    result.healthScore >= 40 ? "hsl(25 95% 53%)" :
+    "hsl(var(--destructive))";
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
@@ -81,13 +86,10 @@ export default function DiagDashboard({ result, allTools, t }: Props) {
       )}
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex flex-col w-[200px] min-h-screen border-r border-border bg-card p-3 gap-1">
+      <aside className="hidden md:flex flex-col w-[200px] min-h-screen border-r border-border bg-card p-3 gap-1 shrink-0">
         <div className="mb-4 px-2">
           <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
             {t("Diagnostic", "Diagnostic")}
-          </p>
-          <p className="text-lg font-bold text-foreground font-['DM_Mono'] mt-0.5">
-            {result.healthScore}<span className="text-xs text-muted-foreground">/100</span>
           </p>
         </div>
         {TABS.map((tab) => (
@@ -105,10 +107,27 @@ export default function DiagDashboard({ result, allTools, t }: Props) {
           </button>
         ))}
 
-        {/* Summary card */}
-        <div className="mt-auto pt-4 px-2 border-t border-border">
-          <div className="text-xs space-y-1 text-muted-foreground">
-            <p>{result.sessionState.selectedTools.length} {t("outils", "tools")}</p>
+        {/* Mini health donut + summary */}
+        <div className="mt-auto pt-4 px-2 border-t border-border space-y-3">
+          <div className="flex items-center gap-2.5">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="16" fill="none" stroke="hsl(var(--border))" strokeWidth="3" />
+              <circle
+                cx="20" cy="20" r="16" fill="none"
+                stroke={donutColor} strokeWidth="3" strokeLinecap="round"
+                strokeDasharray={`${miniDonutProgress} ${miniDonutCirc}`}
+                transform="rotate(-90 20 20)"
+              />
+              <text x="20" y="23" textAnchor="middle" className="fill-foreground text-[10px] font-bold font-['DM_Mono']" fontSize="10">
+                {result.healthScore}
+              </text>
+            </svg>
+            <div className="text-xs">
+              <p className="font-medium text-foreground">{result.healthLabel}</p>
+              <p className="text-muted-foreground">{result.sessionState.selectedTools.length} {t("outils", "tools")}</p>
+            </div>
+          </div>
+          <div className="text-xs space-y-0.5 text-muted-foreground">
             <p className="font-['DM_Mono']">{result.stackTotalCost}€/{t("mois", "mo")}</p>
             {result.estimatedWaste > 0 && (
               <p className="text-destructive font-medium font-['DM_Mono']">
@@ -125,6 +144,9 @@ export default function DiagDashboard({ result, allTools, t }: Props) {
           {renderPage()}
         </div>
       </main>
+
+      {/* Share modal */}
+      {showShare && <DashShareModal result={result} t={t} onClose={() => setShowShare(false)} />}
     </div>
   );
 }
