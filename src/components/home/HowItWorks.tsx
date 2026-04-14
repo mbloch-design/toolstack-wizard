@@ -55,7 +55,7 @@ const HowItWorks = () => {
 
   return (
     <section className="py-24 px-6">
-      <div className="mx-auto max-w-[1100px]">
+      <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-5">

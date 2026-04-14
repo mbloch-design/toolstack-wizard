@@ -104,7 +104,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-24 bg-secondary/30">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Header — Elevo style */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-lg">
