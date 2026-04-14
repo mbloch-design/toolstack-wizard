@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, useRef } from "react";
+import { useState, useCallback, useMemo, useRef, useEffect } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
 import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
@@ -129,6 +129,13 @@ export default function DiagnosticRouter() {
     }, 1500);
   }, []);
 
+  // Trigger save when diagnosticResult is first computed
+  useEffect(() => {
+    if (diagnosticResult && !savingRef.current) {
+      saveToSupabase(session, diagnosticResult);
+    }
+  }, [diagnosticResult]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Step navigation logic
   const nextFrom = useCallback((current: StepId) => {
     switch (current) {
@@ -204,7 +211,7 @@ export default function DiagnosticRouter() {
 
   // If on dashboard step, render full dashboard
   if (step === 12 && diagnosticResult) {
-    return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} />;
+    return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} />;
   }
   return (
     <>
