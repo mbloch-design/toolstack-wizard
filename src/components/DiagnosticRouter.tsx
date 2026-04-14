@@ -94,7 +94,8 @@ export default function DiagnosticRouter() {
           `C'est parti ${session.firstName} ! Calcul en cours…`,
           `Here we go ${session.firstName}! Calculating…`
         ));
-      case 11: return; // TODO: navigate to results page
+      case 11: return goTo(12); // results loading → dashboard
+      case 12: return;
     }
   }, [session.persona, session.firstName, goTo, goToWithTransition, t]);
 
@@ -132,7 +133,7 @@ export default function DiagnosticRouter() {
 
   // Map internal step to visible progress (0-9)
   const progressMap: Record<StepId, number> = {
-    0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8, 11: 9,
+    0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8, 11: 9, 12: 10,
   };
   const progressIndex = progressMap[step];
 
