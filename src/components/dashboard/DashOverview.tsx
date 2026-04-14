@@ -5,6 +5,7 @@ import { Share2, Download } from "lucide-react";
 interface Props {
   result: DiagnosticResult;
   t: (fr: string, en: string) => string;
+  onShare?: () => void;
 }
 
 // ─── Donut Chart SVG ────────────────────────────────────────────
@@ -143,7 +144,7 @@ function CategoryBreakdown({ result, t }: Props) {
   );
 }
 
-export default function DashOverview({ result, t }: Props) {
+export default function DashOverview({ result, t, onShare }: Props) {
   const message = useMemo(() => buildSparringMessage(result, t), [result, t]);
 
   return (
@@ -200,7 +201,7 @@ export default function DashOverview({ result, t }: Props) {
 
       {/* Quick actions */}
       <div className="flex flex-wrap gap-3">
-        <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity">
+        <button onClick={onShare} className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity">
           <Share2 className="w-4 h-4" />
           {t("Partager mon audit", "Share my audit")}
         </button>
