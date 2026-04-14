@@ -118,7 +118,9 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
   // Tools available for current cluster — uses alias resolution + fallback
   const clusterTools = useMemo(() => {
     if (!currentCluster) return [];
-    return currentCluster.tool_ids.map((id) => resolveTool(id));
+    const resolved = currentCluster.tool_ids.map((id) => resolveTool(id));
+    console.log("[DiagClusters] cluster:", currentCluster.question, "tool_ids:", currentCluster.tool_ids, "resolved:", resolved.map(r => r.name));
+    return resolved;
   }, [currentCluster, resolveTool]);
 
   // Persist to localStorage
