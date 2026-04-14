@@ -51,6 +51,12 @@ export default function DiagnosticRouter() {
     createInitialSession(lang === "en" ? "en" : "fr")
   );
 
+  // Compute diagnostic result when reaching dashboard
+  const diagnosticResult = useMemo<DiagnosticResult | null>(() => {
+    if (step < 11) return null;
+    return runDiagnostic(session, { allTools: tools, doublonRules });
+  }, [step, session, tools, doublonRules]);
+
   const updateSession = useCallback((patch: Partial<SessionState>) => {
     setSession((prev) => ({ ...prev, ...patch }));
   }, []);
