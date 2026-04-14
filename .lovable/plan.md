@@ -1,48 +1,44 @@
 
 
-## Plan : Index des comparatifs + Sidebar dynamique
+## Plan : Comparaisons EN + Nouvelles paires + Sitemap
 
-### 1. Nouvelle page `ComparesIndexPage.tsx` — route `/:lang/comparatifs`
+### 1. Internationalisation de `ComparesIndexPage.tsx`
 
-Page d'index SEO listant tous les comparatifs disponibles. Structure :
+Le contenu est déjà bilingue via `t()` pour les textes principaux. Corrections à apporter :
+- La fonction `getPrice()` retourne "Gratuit" en dur → utiliser `t("Gratuit", "Free")`
+- Vérifier que tous les labels statiques utilisent bien `t()`
 
-- **Hero** : H1 "Comparatifs d'outils SaaS", sous-titre, badge "Expert Analysis"
-- **Grille de cards** : une card par comparaison existante (8 statiques + comparatifs dynamiques populaires). Chaque card affiche les 2 logos outils côte à côte, les noms "X vs Y", les prix, un extrait du verdict, et un lien vers `/comparatif/slug-a-vs-slug-b`
-- **Section "Créer un comparatif"** : sélecteur de 2 outils (combobox searchable) avec bouton "Comparer" qui redirige vers la route dynamique
-- **SEO** : H1 unique, meta title/description, JSON-LD CollectionPage, hreflang FR/EN
+### 2. Nouvelles comparaisons featured
 
-### 2. Route dynamique universelle pour `ComparePage`
+Ajouter 6 nouvelles paires pertinentes (dans les deux fichiers `COMPARISONS` / `FEATURED_COMPARISONS`) :
 
-Modifier `ComparePage.tsx` pour accepter **n'importe quelle paire de slugs** (pas seulement les 8 hardcodées) :
+| Paire | Catégorie |
+|-------|-----------|
+| `slack-vs-teams` (slack vs confluence) | Communication — **Non**, plutôt `slack` vs un concurrent direct. Pas de "teams" dans le catalogue → **slack-vs-discord** non plus. Utiliser **notion-vs-coda** (notion vs airtable n'est pas mieux). |
+| `figma-vs-canva` | Design |
+| `linear-vs-jira` | Project Management |
+| `notion-vs-airtable` | Productivity |
+| `vercel-vs-replit` | Dev Platforms |
+| `semrush-vs-similarweb` | Marketing/SEO |
+| `stripe-vs-razorpay` | Payments |
+| `slack-vs-front` | Communication |
 
-- Garder `COMPARISONS[]` comme "featured" mais ne plus bloquer si le slugPair n'est pas dedans
-- Parser `slugPair` → extraire `slugA` et `slugB` via split sur `-vs-`
-- Chercher les 2 outils dans le catalogue par slug/id
-- Si les 2 outils existent → afficher la comparaison dynamique complète
-- Si un outil manque → redirect vers l'index `/comparatifs`
+→ 8 nouvelles paires (total : 16 featured)
 
-### 3. Sidebar fonctionnelle avec sélecteur d'outils
+### 3. Synchronisation des listes
 
-Refactorer `CompareSidebar.tsx` :
+Les arrays `COMPARISONS` et `FEATURED_COMPARISONS` existent en doublon dans `ComparePage.tsx` et `ComparesIndexPage.tsx`. Extraire dans un fichier partagé `src/data/comparisons.ts` pour éviter la désynchronisation.
 
-- **Catégories** : cliquer filtre la liste des comparaisons affichées (pas de navigation, juste un filtre local)
-- **Outils sélectionnés** : afficher les 2 outils actuels avec bouton X pour retirer
-- **Sélecteur "Ajouter un outil"** : ouvre un combobox/dropdown searchable avec tous les outils du catalogue. Sélectionner un outil redirige vers le nouveau comparatif `slugA-vs-slugB`
-- **Liste "Tous les comparatifs"** : affiche les 8 featured + highlight l'actif
+### 4. Mise à jour du sitemap (`vite.config.ts`)
 
-### 4. Routes et navigation
-
-- `App.tsx` : ajouter `<Route path="comparatifs" element={<ComparesIndexPage />} />`
-- `Navbar.tsx` : ajouter lien "Comparatifs" dans le méga-menu Ressources
-- Sitemap : ajouter `/fr/comparatifs` et `/en/comparatifs`
+Ajouter les 8 nouvelles paires dans le tableau `COMPARISONS` du plugin sitemap pour indexation bilingue.
 
 ### Fichiers
 
 | Action | Fichier |
 |--------|---------|
-| Créer | `src/pages/ComparesIndexPage.tsx` |
-| Modifier | `src/pages/ComparePage.tsx` — accepter paires dynamiques |
-| Modifier | `src/components/compare/CompareSidebar.tsx` — sélecteur fonctionnel |
-| Modifier | `src/App.tsx` — nouvelle route |
-| Modifier | `src/components/Navbar.tsx` — lien méga-menu |
+| Créer | `src/data/comparisons.ts` — liste centralisée |
+| Modifier | `src/pages/ComparesIndexPage.tsx` — importer liste + fix i18n prix |
+| Modifier | `src/pages/ComparePage.tsx` — importer liste centralisée |
+| Modifier | `vite.config.ts` — ajouter nouvelles paires au sitemap |
 
