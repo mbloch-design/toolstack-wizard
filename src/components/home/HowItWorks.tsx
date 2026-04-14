@@ -62,7 +62,7 @@ const HowItWorks = () => {
             {t("Processus", "Process")}
           </span>
           <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
-            {t("3 étapes. Aucune approximation.", "3 steps. No guesswork.")}
+            {t("3 étapes. ", "3 steps. ")}<em className="text-primary italic">{t("Aucune approximation.", "No guesswork.")}</em>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">
             {t(

@@ -13,7 +13,7 @@ const FinalCTA = () => {
       <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-extrabold tracking-[-3px] leading-[1.05]">
         {t("Combien", "How much")}
         <br />
-        {t("payez-vous de trop ?", "are you overpaying?")}
+        <em className="text-primary italic">{t("payez-vous de trop ?", "are you overpaying?")}</em>
       </h2>
       <p className="mx-auto mt-4 max-w-[440px] text-base leading-relaxed text-muted-foreground/60">
         {t(
