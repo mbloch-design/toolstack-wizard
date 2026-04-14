@@ -30,6 +30,13 @@ function getPrice(tool: Tool): string {
   return "Gratuit";
 }
 
+function getPriceLabel(tool: Tool, t: (fr: string, en: string) => string): string {
+  const v5 = tool.pricing_v5?.compare_price_monthly_eur;
+  const price = v5 != null && v5 > 0 ? v5 : tool.defaultMonthlyPrice;
+  if (price > 0) return `${price}€/${t("mois", "mo")}`;
+  return t("Gratuit", "Free");
+}
+
 const ComparesIndexPage = () => {
   const { lang, t, prefix } = useLang();
   const { tools, loading } = useTools();
