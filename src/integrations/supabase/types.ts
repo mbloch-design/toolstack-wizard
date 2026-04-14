@@ -285,6 +285,7 @@ export type Database = {
           decision_policy_v3: Json | null
           default_monthly_price: number | null
           downgrade_plan: Json | null
+          force_silence: boolean | null
           free_alternative: string | null
           functional_needs: Json | null
           host_app: string | null
@@ -296,6 +297,7 @@ export type Database = {
           migration_guide: Json | null
           name: string
           personas: Json | null
+          pertinence_by_persona: Json | null
           prescription_block_reasons: Json | null
           prescription_context_questions: Json | null
           prescription_output: Json | null
@@ -336,6 +338,7 @@ export type Database = {
           decision_policy_v3?: Json | null
           default_monthly_price?: number | null
           downgrade_plan?: Json | null
+          force_silence?: boolean | null
           free_alternative?: string | null
           functional_needs?: Json | null
           host_app?: string | null
@@ -347,6 +350,7 @@ export type Database = {
           migration_guide?: Json | null
           name: string
           personas?: Json | null
+          pertinence_by_persona?: Json | null
           prescription_block_reasons?: Json | null
           prescription_context_questions?: Json | null
           prescription_output?: Json | null
@@ -387,6 +391,7 @@ export type Database = {
           decision_policy_v3?: Json | null
           default_monthly_price?: number | null
           downgrade_plan?: Json | null
+          force_silence?: boolean | null
           free_alternative?: string | null
           functional_needs?: Json | null
           host_app?: string | null
@@ -398,6 +403,7 @@ export type Database = {
           migration_guide?: Json | null
           name?: string
           personas?: Json | null
+          pertinence_by_persona?: Json | null
           prescription_block_reasons?: Json | null
           prescription_context_questions?: Json | null
           prescription_output?: Json | null
