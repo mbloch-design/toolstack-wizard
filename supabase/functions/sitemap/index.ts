@@ -45,9 +45,28 @@ Deno.serve(async () => {
     }
   }
 
+  // Comparisons index
+  for (const lang of LANGS) {
+    addUrl(`${BASE}/${lang}/comparatifs`, "weekly", "0.8");
+  }
+
+  // Featured comparisons
+  const COMPARISONS = [
+    "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
+    "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
+    "github-copilot-vs-cursor", "grammarly-vs-claude",
+    "figma-vs-canva", "linear-vs-jira", "notion-vs-airtable",
+    "vercel-vs-replit", "semrush-vs-similarweb", "stripe-vs-razorpay",
+    "slack-vs-front", "notion-vs-coda",
+  ];
+  for (const comp of COMPARISONS) {
+    for (const lang of LANGS) {
+      addUrl(`${BASE}/${lang}/comparatif/${comp}`, "monthly", "0.7");
+    }
+  }
+
   // Posts
   for (const post of posts || []) {
-    addUrl(`${BASE}/${post.lang}/guide/${post.slug}`, "monthly", "0.6");
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
