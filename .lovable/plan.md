@@ -1,42 +1,85 @@
 
 
-## Diagnostic : Articles manquants dans les guides
+## Refonte de la page Comparaison — Design "Precision Curator"
 
-### Le problème
+### Objectif
+Remplacer la page `ComparePage.tsx` actuelle (tableau basique) par un layout premium inspiré de la référence fournie : sidebar catégories + sélecteur d'outils, grille de comparaison visuelle avec barres de score, feature checklist, et verdict bento cards. Fort potentiel SEO grâce à une structure sémantique riche (H1, tableaux structurés, FAQ, JSON-LD).
 
-La fonction `usePosts()` dans `useSupabaseData.ts` (ligne 150) **remplace** les articles locaux par ceux de Supabase dès qu'elle reçoit au moins 1 résultat :
+### Architecture
 
-```typescript
-if (!error && data && data.length > 0) setPosts(data.map(mapPost));
+```text
+┌─────────────────────────────────────────────────┐
+│  HERO — badge "Expert Analysis" + H1 + subtitle │
+├──────────┬──────────────────────────────────────┤
+│ SIDEBAR  │  TOOL HEADERS (sticky, border-top)   │
+│ ──────── │  Logo + Nom + Tagline par outil       │
+│ Catégories│──────────────────────────────────────│
+│ (filtres)│  PRICING ROW — prix côte à côte       │
+│          │──────────────────────────────────────│
+│ Selected │  STRENGTH BARS — 3 métriques visuelles│
+│ Tools    │──────────────────────────────────────│
+│ (chips)  │  FEATURE CHECKLIST — ✓ / ✗ par ligne  │
+│          │──────────────────────────────────────│
+│ + Add    │  BENTO VERDICT — 2 cards côte à côte  │
+│          │  (fond bleu primaire vs blanc)         │
+├──────────┴──────────────────────────────────────┤
+│  FAQ — 3-4 questions structurées (SEO)           │
+│  CTA — liens vers fiches détail                  │
+└─────────────────────────────────────────────────┘
 ```
 
-Or la table `posts` en Supabase ne contient que **6 articles** (1 FR + 5 EN), alors que les fichiers JSON locaux en contiennent **42** (18 FR + 24 EN). Résultat : les 36 articles manquants disparaissent de l'affichage.
+### Étapes d'implémentation
 
-### Solution en 2 étapes
+**1. Refonte complète de `ComparePage.tsx`**
 
-**Étape 1 — Correction immédiate du hook `usePosts`** (fichier `src/hooks/useSupabaseData.ts`)
+Réécrire le composant avec :
+- **Hero** : badge pill "Expert Analysis", H1 avec italique sur "SaaS Decisions", sous-titre, avatars sociaux "Trusted by 24K+ CTOs"
+- **Sidebar gauche** (desktop) : liste des catégories cliquables avec état actif (fond primaire), section "Selected Tools" avec chips et bouton "+ Add Tool"
+- **Headers outils** (sticky top) : cards blanches avec border-top colorée (bleu/orange), icône, nom, tagline
+- **Section Pricing** : prix grand format (DM Mono) côte à côte
+- **Section Strength** : barres verticales animées pour 3 métriques (Scalability, UI, Support) — données dérivées des scores existants
+- **Feature Checklist** : lignes alternées avec check_circle / cancel icons
+- **Bento Verdict** : 2 cards — une fond bleu primaire (gradient), une fond blanc avec border — verdict personnalisé par outil
+- **FAQ** : 3-4 questions expandables (conservées, structure `<details>`)
+- **CTA** : boutons vers fiches détail
 
-Fusionner les articles Supabase avec les articles locaux au lieu de remplacer. Les articles Supabase sont prioritaires (par slug), les articles locaux comblent les manques :
+**2. Adaptation des données**
 
-```typescript
-if (!error && data && data.length > 0) {
-  const supabasePosts = data.map(mapPost);
-  const supabaseSlugs = new Set(supabasePosts.map(p => p.slug));
-  const merged = [...supabasePosts, ...localPosts.filter(p => !supabaseSlugs.has(p.slug))];
-  merged.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-  setPosts(merged);
-} else {
-  setPosts(localPosts);
-}
-```
+- Utiliser les champs existants du `Tool` type : `pros`, `cons`, `verdict`, `pricing`, `defaultMonthlyPrice`, `functional_needs`
+- Mapper les `functional_needs` comme features pour la checklist (Advanced Reporting → check/cross)
+- Dériver les scores de "Platform Strength" depuis `pertinenceScore` ou `prescription_quality`
+- Conserver les 8 comparaisons existantes dans `COMPARISONS[]`
 
-**Étape 2 — Re-seeder tous les articles dans Supabase**
+**3. Tokens design appliqués**
 
-Appeler la Edge Function `seed-content` avec l'action `seed_posts` pour injecter les 42 articles (18 FR + 24 EN) depuis les fichiers `posts-fr.json` et `posts-en.json`. Cela rendra l'étape 1 pérenne : Supabase aura toutes les données et le fallback local ne sera plus nécessaire.
+- Fond page : `#F9F9FA` (background)
+- Cards : `#FFFFFF` (surface-container-lowest) avec ombre ambiante douce
+- Primaire : gradient `#003BC7 → #1E52F1` (135°) pour CTA et card verdict
+- Secondaire/orange : `#FD8534` pour le 2e outil
+- Typo : Plus Jakarta Sans (headlines), Inter (body)
+- Pas de bordures 1px — tonal layering uniquement
+- Border-radius : `lg` (16px) pour cards, `full` pour pills/boutons
+- Ghost borders à 15% opacity max si nécessaire
 
-### Impact
+**4. SEO renforcé**
 
-- Les 42 articles seront immédiatement visibles dans la section Guides (FR et EN)
-- La page d'accueil affichera à nouveau les 3 articles en vedette
-- Les pages outils retrouveront leurs articles liés
+- JSON-LD `Article` + `FAQPage` (déjà en place, conservé)
+- H1 unique par comparaison, H2 pour sections
+- Texte structuré pour les scrapers LLM (answer-first dans le verdict)
+- Hreflang FR/EN conservé
+
+**5. Responsive**
+
+- Mobile : sidebar masquée, layout single-column
+- Headers outils empilés verticalement
+- Barres de score en mode horizontal sur mobile
+
+### Fichiers modifiés
+- `src/pages/ComparePage.tsx` — réécriture complète
+
+### Fichiers potentiellement ajoutés
+- `src/components/compare/CompareHero.tsx` — hero section
+- `src/components/compare/CompareSidebar.tsx` — sidebar catégories
+- `src/components/compare/CompareStrengthBars.tsx` — barres de score visuelles
+- `src/components/compare/CompareVerdictCards.tsx` — bento verdict
 
