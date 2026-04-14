@@ -15,6 +15,7 @@ export function canPrescribe(tool: Tool): boolean {
   if (tool.force_silence) return false;
   if (FORCE_SILENCE.includes(tool.id)) return false;
   if (tool.price > 0 && tool.price < 2) return false;
+  if (tool.includedInBundle) return false; // Can't prescribe cancellation on bundled tools
   return true;
 }
 
@@ -35,6 +36,8 @@ export function computePertinence(
 // ─── 2. Value Index ───────────────────────────────────────────────
 export function computeValueIndex(tool: Tool, tjm: number): number {
   if (tjm === 0) return 0;
+  // Bundled tools have no extra cost → perfect value
+  if (tool.includedInBundle) return 100;
   const tjmHoraire = tjm / 5;
   const hoursSaved = 2;
   const monthlyValue = hoursSaved * tjmHoraire;
@@ -336,7 +339,8 @@ export function runDiagnostic(
     data.allTools, selectedTools, persona, complementarySkills, tjm
   );
 
-  const stackTotalCost = selectedTools.reduce((sum, t) => sum + t.price, 0);
+  // Bundle-aware cost: don't count tools marked as included in a bundle
+  const stackTotalCost = selectedTools.reduce((sum, t) => sum + (t.includedInBundle ? 0 : t.price), 0);
   const allPrescriptions = [...prescriptions.phase1, ...prescriptions.phase2, ...prescriptions.phase3];
   const estimatedWaste = allPrescriptions.reduce((sum, p) => sum + p.savingsEstimate, 0);
   const optimizedCost = Math.max(0, stackTotalCost - estimatedWaste);
