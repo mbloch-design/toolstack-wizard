@@ -27,7 +27,7 @@ function mapTool(t: any): Tool {
     better_alternative: t.better_alternative && typeof t.better_alternative === "object"
       ? JSON.stringify(t.better_alternative)
       : t.better_alternative || undefined,
-    force_silence: t.prescription_quality === "silence",
+    force_silence: t.force_silence === true || t.prescription_quality === "silence",
   };
 }
 
