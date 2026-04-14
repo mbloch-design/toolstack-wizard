@@ -1,7 +1,8 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useRef } from "react";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
 import { Check, ChevronRight } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
+import { supabase } from "@/integrations/supabase/client";
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -11,6 +12,7 @@ interface Props {
   allTools: Tool[];
   t: (fr: string, en: string) => string;
   onNavigate?: (tab: Tab) => void;
+  dbSessionId?: string | null;
 }
 
 interface ActionItem {
@@ -104,19 +106,35 @@ const URGENCY_CONFIG = {
   },
 } as const;
 
-export default function DashActions({ result, allTools, t, onNavigate }: Props) {
+export default function DashActions({ result, allTools, t, onNavigate, dbSessionId }: Props) {
   const actions = useMemo(() => buildActions(result, allTools, t), [result, allTools, t]);
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [lastChecked, setLastChecked] = useState<string | null>(null);
+  const updateTimer = useRef<ReturnType<typeof setTimeout>>();
+
+  const persistActions = useCallback((count: number) => {
+    if (!dbSessionId) return;
+    if (updateTimer.current) clearTimeout(updateTimer.current);
+    updateTimer.current = setTimeout(async () => {
+      try {
+        await (supabase.from("diagnostic_sessions" as any) as any)
+          .update({ actions_completed: count })
+          .eq("id", dbSessionId);
+      } catch (err) {
+        console.error("[DiagActions] Update failed:", err);
+      }
+    }, 1000);
+  }, [dbSessionId]);
 
   const toggle = useCallback((id: string, savings: number) => {
     setChecked((prev) => {
       const next = new Set(prev);
       if (next.has(id)) { next.delete(id); setLastChecked(null); }
       else { next.add(id); setLastChecked(`${savings}€`); }
+      persistActions(next.size);
       return next;
     });
-  }, []);
+  }, [persistActions]);
 
   const totalSavings = actions.reduce((s, a) => s + a.savings, 0);
   const recoveredSavings = actions.filter((a) => checked.has(a.id)).reduce((s, a) => s + a.savings, 0);
