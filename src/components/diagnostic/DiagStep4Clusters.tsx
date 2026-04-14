@@ -53,19 +53,24 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
   // Build fast lookup map: id → Tool, including aliases
   const toolMap = useMemo(() => {
     const map = new Map<string, Tool>();
-    tools.forEach((t) => map.set(t.id, t));
+    tools.forEach((tool) => map.set(tool.id, tool));
     // Register aliases pointing to existing tools
     Object.entries(TOOL_ID_ALIASES).forEach(([alias, realId]) => {
       const tool = map.get(realId);
       if (tool) map.set(alias, tool);
     });
+    console.log("[DiagClusters] toolMap size:", map.size, "tools prop length:", tools.length);
     return map;
   }, [tools]);
 
   /** Resolve a tool_id to a Tool — alias → exact → fallback */
   const resolveTool = useCallback(
     (id: string): Tool => {
-      return toolMap.get(id) || createFallbackTool(id);
+      const found = toolMap.get(id);
+      if (!found) {
+        console.warn("[DiagClusters] tool_id not found, using fallback:", id);
+      }
+      return found || createFallbackTool(id);
     },
     [toolMap]
   );
@@ -74,6 +79,11 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
     () => clusters.filter((c) => c.persona === session.persona).sort((a, b) => a.order - b.order),
     [clusters, session.persona]
   );
+
+  // Debug: log cluster data on mount and when cluster changes
+  useEffect(() => {
+    console.log("[DiagClusters] persona:", session.persona, "clusters:", personaClusters.length, "tools:", tools.length);
+  }, [session.persona, personaClusters.length, tools.length]);
   const [clusterIdx, setClusterIdx] = useState(0);
   const [selectedIds, setSelectedIds] = useState<Set<string>>(() => {
     try {
@@ -108,7 +118,9 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
   // Tools available for current cluster — uses alias resolution + fallback
   const clusterTools = useMemo(() => {
     if (!currentCluster) return [];
-    return currentCluster.tool_ids.map((id) => resolveTool(id));
+    const resolved = currentCluster.tool_ids.map((id) => resolveTool(id));
+    console.log("[DiagClusters] cluster:", currentCluster.question, "tool_ids:", currentCluster.tool_ids, "resolved:", resolved.map(r => r.name));
+    return resolved;
   }, [currentCluster, resolveTool]);
 
   // Persist to localStorage
