@@ -276,8 +276,8 @@ const ComparePage = () => {
                   </summary>
                   <p className="mt-3 text-sm text-muted-foreground">
                     {t(
-                      `${toolA.name} coûte ${getPrice(toolA)}/mois et ${toolB.name} coûte ${getPrice(toolB)}/mois. Prix vérifiés sur les pages officielles.`,
-                      `${toolA.name} costs ${getPrice(toolA)}/month and ${toolB.name} costs ${getPrice(toolB)}/month. Prices verified on official pages.`
+                      `${toolA.name} coûte ${getPriceNum(toolA) > 0 ? getPrice(toolA) + "/mois" : "Gratuit"} et ${toolB.name} coûte ${getPriceNum(toolB) > 0 ? getPrice(toolB) + "/mois" : "Gratuit"}. Prix vérifiés sur les pages officielles.`,
+                      `${toolA.name} costs ${getPriceNum(toolA) > 0 ? getPrice(toolA) + "/month" : "Free"} and ${toolB.name} costs ${getPriceNum(toolB) > 0 ? getPrice(toolB) + "/month" : "Free"}. Prices verified on official pages.`
                     )}
                   </p>
                 </details>
