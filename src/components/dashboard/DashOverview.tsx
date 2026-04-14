@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import type { DiagnosticResult, Prescription } from "@/types/diagnostic";
-import { Share2, Download } from "lucide-react";
+import { Share2 } from "lucide-react";
+import DashPdfExport from "./DashPdfExport";
 
 interface Props {
   result: DiagnosticResult;
@@ -205,10 +206,7 @@ export default function DashOverview({ result, t, onShare }: Props) {
           <Share2 className="w-4 h-4" />
           {t("Partager mon audit", "Share my audit")}
         </button>
-        <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors">
-          <Download className="w-4 h-4" />
-          {t("Télécharger rapport", "Download report")}
-        </button>
+        <DashPdfExport result={result} t={t} />
       </div>
     </div>
   );
