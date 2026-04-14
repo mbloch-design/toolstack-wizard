@@ -51,12 +51,68 @@ export default function DiagnosticRouter() {
   const [session, setSession] = useState<SessionState>(() =>
     createInitialSession(lang === "en" ? "en" : "fr")
   );
+  const [dbSessionId, setDbSessionId] = useState<string | null>(null);
+  const savingRef = useRef(false);
 
   // Compute diagnostic result when reaching dashboard
   const diagnosticResult = useMemo<DiagnosticResult | null>(() => {
     if (step < 11) return null;
     return runDiagnostic(session, { allTools: tools, doublonRules });
   }, [step, session, tools, doublonRules]);
+
+  // Save session to Supabase (non-blocking, called once when results compute)
+  const saveToSupabase = useCallback(async (s: SessionState, result: DiagnosticResult) => {
+    if (savingRef.current) return;
+    savingRef.current = true;
+    try {
+      const discoveryObj: Record<string, number> = {};
+      s.discoveryAnswers.forEach((v, k) => { discoveryObj[k] = v; });
+
+      const toolScoresObj: Record<string, { pertinence: number; valueIndex: number; scoreFinal: number }> = {};
+      result.toolScores.forEach((v, k) => { toolScoresObj[k] = v; });
+
+      const prescriptionsObj = {
+        phase1: result.prescriptions.phase1,
+        phase2: result.prescriptions.phase2,
+        phase3: result.prescriptions.phase3,
+      };
+
+      const { data, error } = await supabase
+        .from("diagnostic_sessions" as any)
+        .insert({
+          first_name: s.firstName || null,
+          persona: s.persona,
+          language: s.language,
+          email: s.email || null,
+          tjm: s.tjm || 0,
+          api_spend_tranche: s.apiSpendTranche || null,
+          selected_tools: s.selectedTools.map((t) => ({ id: t.id, name: t.name, price: t.price, category: t.category })),
+          discovery_answers: discoveryObj,
+          closing_answers: s.closingAnswers,
+          stack_total_cost: result.stackTotalCost,
+          estimated_waste: result.estimatedWaste,
+          optimized_cost: result.optimizedCost,
+          health_score: result.healthScore,
+          health_label: result.healthLabel,
+          annual_savings: result.annualSavings,
+          hours_recoverable: result.hoursRecoverable,
+          prescriptions: prescriptionsObj,
+          recommendations: result.recommendations.map((r) => ({ id: r.id, name: r.name })),
+          tool_scores: toolScoresObj,
+          email_preferences: s.emailPreferences || {},
+        } as any)
+        .select("id")
+        .single();
+
+      if (error) {
+        console.error("[DiagSave] Insert failed:", error.message);
+      } else if (data) {
+        setDbSessionId((data as any).id);
+      }
+    } catch (err) {
+      console.error("[DiagSave] Unexpected error:", err);
+    }
+  }, []);
 
   const updateSession = useCallback((patch: Partial<SessionState>) => {
     setSession((prev) => ({ ...prev, ...patch }));
