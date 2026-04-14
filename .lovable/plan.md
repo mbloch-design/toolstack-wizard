@@ -1,63 +1,86 @@
 
 
-## Diagnostic
+## Diagnostic — Fondations (types, data layer, routing)
 
-Les textes qui restent en français sur `/en/tool/chatgpt` ne sont **pas un bug de code** — c'est un **problème de données**. Les champs suivants n'existent qu'en français dans la table `tools` et le JSON `tools_v4.json` :
+### Constat important
 
-| Champ | Exemple sur ChatGPT EN |
-|---|---|
-| `long_description` | "ChatGPT est l'assistant IA polyvalent d'OpenAI..." |
-| `verdict.threshold` | "Dès que l'attente ou les erreurs..." |
-| `verdict.keepIf[]` | "Usage intensif (>10h/semaine)" |
-| `verdict.avoidIf[]` | "Usage ponctuel", "Recherches simples" |
-| `pros[]` | Tous en français |
-| `cons[]` | Tous en français |
-| `useCases[]` | Tous en français |
-| `pricing.free / paid` | Textes descriptifs en français |
-| `alt.shortDescription` | Descriptions des alternatives en français |
-| `alt.pros[0]` | Premier avantage affiché dans les cartes alternatives |
+Le projet utilise **react-router-dom**, pas wouter. Les instructions mentionnent wouter mais le routeur en place est react-router-dom avec `useParams`, `useNavigate`, `<Routes>`, etc. Le plan suit les conventions react-router-dom existantes.
 
-Les **labels UI** (titres de sections, boutons) sont déjà correctement traduits via `t()`. Le problème concerne uniquement le **contenu des fiches outils**.
+Les tables `clusters`, `doublon_rules` et `discovery_questions` **n'existent pas** en base. Il faut les créer.
 
-## Plan
+### Ce qui sera créé
 
-### Étape 1 — Ajouter les colonnes EN dans la table `tools`
-
-Migration SQL ajoutant 7 colonnes :
-- `short_description_en` (text)
-- `long_description_en` (text)
-- `pros_en` (jsonb)
-- `cons_en` (jsonb)
-- `use_cases_en` (jsonb)
-- `verdict_en` (jsonb) — même structure que `verdict` : `{keepIf, avoidIf, threshold}`
-- `pricing_en` (jsonb) — même structure que `pricing` : `{free, paid}`
-
-### Étape 2 — Mapper les champs EN dans le code
-
-Dans `useSupabaseData.ts` → `mapToolFromJson()`, ajouter le mapping des nouveaux champs EN vers le type `Tool`.
-
-Dans `types.ts`, ajouter les champs optionnels correspondants sur l'interface `Tool`.
-
-### Étape 3 — Utiliser `t()` pour chaque champ de contenu
-
-Dans `ToolDetailPage.tsx` et ses sous-composants, remplacer les affichages directs par des appels `t(frValue, enValue)` :
-
-- **Description** (ligne 171) : `t(tool.longDescription, tool.longDescriptionEn || tool.longDescription)`
-- **Pros/Cons** (lignes 263-278) : mapper avec `t(pro, prosEn[i] || pro)`
-- **Use cases** (lignes 201-206) : idem
-- **Verdict** (ToolVerdictBlock) : `t(tool.verdict.threshold, tool.verdictEn?.threshold || tool.verdict.threshold)`
-- **Pricing** (ToolPricingSection) : `t(tool.pricing.free, tool.pricingEn?.free || tool.pricing.free)`
-- **Alternatives cards** (ToolAlternativesSection, lignes 80-84) : `t(alt.shortDescription, alt.shortDescriptionEn || alt.shortDescription)`
-
-### Étape 4 — Peupler les données EN pour les outils principaux
-
-Insérer les traductions EN pour les outils les plus consultés (ChatGPT, Notion, Figma, Slack, etc.) via une migration SQL `UPDATE`. Les autres outils afficheront le texte FR en fallback jusqu'à traduction.
+**4 fichiers créés, 0 fichier existant modifié** (conformément à la consigne).
 
 ---
 
-### Ce que ça ne touche pas
-- La logique de traduction `t()` et `useLang` existante
-- Les labels UI déjà traduits
-- Les fichiers JSON de contenu des articles
-- Les pages qui fonctionnent déjà
+### 1. Types — `src/types/diagnostic.ts`
+
+Fichier copié tel quel depuis le prompt. Contient `SessionState`, `Tool`, `Cluster`, `DoubleRule`, `DiscoveryQuestion`, `DiagnosticResult`, `Prescription`, `Persona`.
+
+### 2. Pertinence fallback — `src/utils/pertinenceFallback.ts`
+
+Fichier copié tel quel depuis le prompt. Fonction `computePertinenceFallback(tool, persona)` avec la matrice catégorie × persona.
+
+### 3. Tables Supabase — migration SQL
+
+Création de 3 tables avec RLS en lecture publique :
+
+```text
+clusters
+├── id (text PK)
+├── persona (text NOT NULL)
+├── "order" (int NOT NULL)
+├── question (text NOT NULL)
+├── question_en (text)
+├── why (text)
+├── cols (int DEFAULT 2)
+├── tool_ids (jsonb DEFAULT '[]')
+
+doublon_rules
+├── id (uuid PK, gen_random_uuid)
+├── ids (jsonb NOT NULL)
+├── message (text NOT NULL)
+├── savings (numeric DEFAULT 0)
+├── category (text)
+
+discovery_questions
+├── id (text PK)
+├── persona (text NOT NULL)  -- "THEO"|"ALL" etc.
+├── question (text NOT NULL)
+├── subtitle (text)
+├── options (jsonb NOT NULL)
+├── condition_tool_ids (jsonb DEFAULT '[]')
+├── condition_type (text DEFAULT 'any')
+```
+
+### 4. Hook data — `src/hooks/useDiagnosticData.ts`
+
+Hook `useDiagnosticData()` qui :
+- Charge `tools`, `clusters`, `doublon_rules`, `discovery_questions` depuis Supabase
+- Retourne `{ tools, clusters, doublonRules, discoveryQuestions, loading, error }`
+- Mappe les résultats vers les types de `diagnostic.ts`
+
+### 5. Router — `src/components/DiagnosticRouter.tsx`
+
+Composant qui :
+- Reçoit `lang` via `useLang()` (pattern existant, pas useParams direct)
+- Charge les données via `useDiagnosticData()`
+- Gère un `useState<number>(0)` pour le step courant (0-7)
+- Rend un placeholder par step (pas de composants UI dans ce prompt)
+- Utilise `useNavigate` de react-router-dom pour la navigation
+
+Ce composant n'est **pas branché sur les routes** — aucune modification de `App.tsx` ni de `SelectorPage.tsx`. Il sera intégré dans un prochain prompt.
+
+---
+
+### Résumé des fichiers
+
+| Action | Fichier |
+|--------|---------|
+| Créer | `src/types/diagnostic.ts` |
+| Créer | `src/utils/pertinenceFallback.ts` |
+| Créer | `src/hooks/useDiagnosticData.ts` |
+| Créer | `src/components/DiagnosticRouter.tsx` |
+| Migration | 3 nouvelles tables Supabase |
 
