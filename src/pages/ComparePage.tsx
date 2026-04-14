@@ -164,7 +164,7 @@ const ComparePage = () => {
                   <ToolLogo tool={tool} size={40} className="mb-3" />
                   <h3 className="text-lg font-extrabold text-foreground">{tool.name}</h3>
                   <p className={`text-xs font-bold mt-1 ${borderColor === "border-primary" ? "text-primary" : "text-orange-500"}`}>
-                    {getPrice(tool)}/{t("mois", "mo")}
+                    {getPriceNum(tool) > 0 ? `${getPrice(tool)}/${t("mois", "mo")}` : t("Gratuit", "Free")}
                   </p>
                 </Link>
               ))}
