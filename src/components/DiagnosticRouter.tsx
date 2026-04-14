@@ -145,6 +145,10 @@ export default function DiagnosticRouter() {
 
   const showRightPanel = step >= 6 && step <= 10;
 
+  // If on dashboard step, render full dashboard
+  if (step === 12 && diagnosticResult) {
+    return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} />;
+  }
   return (
     <>
       {/* Top bar */}
@@ -223,7 +227,11 @@ export default function DiagnosticRouter() {
             />
           )}
           {step === 11 && (
-            <DiagResultsLoading toolCount={session.selectedTools.length} t={t} />
+            <DiagResultsLoading
+              toolCount={session.selectedTools.length}
+              t={t}
+              onComplete={() => goTo(12)}
+            />
           )}
         </div>
 
