@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
 import type { SessionState, Persona } from "@/types/diagnostic";
 
-const STEP_LABELS = [
-  "Bienvenue",
-  "Persona",
-  "Spécialités",
-  "Sélection outils",
-  "Discovery",
-  "Closing",
-  "Email",
-  "Résultats",
-] as const;
+import DiagStep0Prenom from "@/components/diagnostic/DiagStep0Prenom";
+import DiagStep1Tjm from "@/components/diagnostic/DiagStep1Tjm";
+import DiagStep2Persona from "@/components/diagnostic/DiagStep2Persona";
+import DiagStep2bEmail from "@/components/diagnostic/DiagStep2bEmail";
+import DiagStep2cComplementary from "@/components/diagnostic/DiagStep2cComplementary";
+import DiagStep3SofiaSpecialties from "@/components/diagnostic/DiagStep3SofiaSpecialties";
+import DiagStep4Clusters from "@/components/diagnostic/DiagStep4Clusters";
+
+// Steps: 0=Prenom, 1=TJM, 2=Persona, 3=Email, 4=Complementary, 5=SofiaSpecialties(conditional), 6=Clusters, 7+=future
+type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+
+const TOTAL_VISIBLE_STEPS = 7; // for progress bar
 
 function createInitialSession(language: "fr" | "en"): SessionState {
   return {
@@ -28,15 +30,44 @@ function createInitialSession(language: "fr" | "en"): SessionState {
 }
 
 export default function DiagnosticRouter() {
-  const { lang } = useLang();
+  const { lang, t } = useLang();
   const { tools, clusters, doublonRules, discoveryQuestions, loading, error } = useDiagnosticData();
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState<StepId>(0);
   const [session, setSession] = useState<SessionState>(() =>
     createInitialSession(lang === "en" ? "en" : "fr")
   );
 
-  const next = () => setStep((s) => Math.min(s + 1, STEP_LABELS.length - 1));
-  const prev = () => setStep((s) => Math.max(s - 1, 0));
+  const updateSession = useCallback((patch: Partial<SessionState>) => {
+    setSession((prev) => ({ ...prev, ...patch }));
+  }, []);
+
+  const goTo = (s: StepId) => setStep(s);
+
+  // Step navigation logic with conditional branching
+  const nextFrom = (current: StepId) => {
+    switch (current) {
+      case 0: return goTo(1);
+      case 1: return goTo(2);
+      case 2: return goTo(3); // email
+      case 3: return goTo(4); // complementary
+      case 4: // after complementary → sofia specialties or clusters
+        return session.persona === "SOFIA" ? goTo(5) : goTo(6);
+      case 5: return goTo(6); // sofia → clusters
+      case 6: return; // TODO: next steps (discovery, closing, results)
+    }
+  };
+
+  const prevFrom = (current: StepId) => {
+    switch (current) {
+      case 1: return goTo(0);
+      case 2: return goTo(1);
+      case 3: return goTo(2);
+      case 4: return goTo(3);
+      case 5: return goTo(4);
+      case 6: return session.persona === "SOFIA" ? goTo(5) : goTo(4);
+      default: return;
+    }
+  };
 
   if (loading) {
     return (
@@ -54,47 +85,54 @@ export default function DiagnosticRouter() {
     );
   }
 
+  // Map step to progress index (0-6)
+  const progressIndex = step <= 4 ? step : step === 5 ? 4 : 5;
+
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      {/* Progress indicator */}
+    <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
+      {/* Progress bar */}
       <div className="flex items-center gap-1 mb-8">
-        {STEP_LABELS.map((label, i) => (
+        {Array.from({ length: TOTAL_VISIBLE_STEPS }).map((_, i) => (
           <div
             key={i}
             className={`h-1 flex-1 rounded-full transition-colors ${
-              i <= step ? "bg-primary" : "bg-muted"
+              i <= progressIndex ? "bg-primary" : "bg-muted"
             }`}
           />
         ))}
       </div>
 
-      {/* Step placeholder */}
-      <div className="text-center space-y-4">
-        <p className="text-sm text-muted-foreground">
-          Étape {step + 1} / {STEP_LABELS.length}
-        </p>
-        <h2 className="text-2xl font-bold">{STEP_LABELS[step]}</h2>
-        <p className="text-muted-foreground">
-          {tools.length} outils chargés · {clusters.length} clusters · {doublonRules.length} règles doublons · {discoveryQuestions.length} questions
-        </p>
-
-        <div className="flex justify-center gap-4 pt-6">
-          <button
-            onClick={prev}
-            disabled={step === 0}
-            className="px-4 py-2 rounded border border-border text-sm disabled:opacity-30"
-          >
-            ← Précédent
-          </button>
-          <button
-            onClick={next}
-            disabled={step === STEP_LABELS.length - 1}
-            className="px-4 py-2 rounded bg-primary text-primary-foreground text-sm disabled:opacity-30"
-          >
-            Suivant →
-          </button>
-        </div>
-      </div>
+      {/* Render current step */}
+      {step === 0 && (
+        <DiagStep0Prenom session={session} onUpdate={updateSession} onNext={() => nextFrom(0)} t={t} />
+      )}
+      {step === 1 && (
+        <DiagStep1Tjm session={session} onUpdate={updateSession} onNext={() => nextFrom(1)} t={t} />
+      )}
+      {step === 2 && (
+        <DiagStep2Persona session={session} onUpdate={updateSession} onNext={() => nextFrom(2)} t={t} />
+      )}
+      {step === 3 && (
+        <DiagStep2bEmail session={session} onUpdate={updateSession} onNext={() => nextFrom(3)} t={t} />
+      )}
+      {step === 4 && (
+        <DiagStep2cComplementary session={session} onUpdate={updateSession} onNext={() => nextFrom(4)} t={t} />
+      )}
+      {step === 5 && (
+        <DiagStep3SofiaSpecialties session={session} onUpdate={updateSession} onNext={() => nextFrom(5)} t={t} />
+      )}
+      {step === 6 && (
+        <DiagStep4Clusters
+          session={session}
+          onUpdate={updateSession}
+          onNext={() => nextFrom(6)}
+          onPrev={() => prevFrom(6)}
+          clusters={clusters}
+          tools={tools}
+          doublonRules={doublonRules}
+          t={t}
+        />
+      )}
     </div>
   );
 }
