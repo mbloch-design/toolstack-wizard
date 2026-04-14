@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import DashOverview from "./DashOverview";
 import DashGaspillage from "./DashGaspillage";
@@ -29,18 +29,30 @@ export default function DiagDashboard({ result, allTools, t }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showShare, setShowShare] = useState(false);
 
+  const navigate = useCallback((tab: Tab) => {
+    setActiveTab(tab);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const renderPage = () => {
     switch (activeTab) {
       case "overview":
-        return <DashOverview result={result} t={t} onShare={() => setShowShare(true)} />;
+        return (
+          <DashOverview
+            result={result}
+            t={t}
+            onShare={() => setShowShare(true)}
+            onNavigate={navigate}
+          />
+        );
       case "gaspillage":
         return <DashGaspillage result={result} allTools={allTools} t={t} />;
       case "stack":
         return <DashStackUtile result={result} t={t} />;
       case "optimiser":
-        return <DashOptimisations result={result} allTools={allTools} t={t} />;
+        return <DashOptimisations result={result} allTools={allTools} t={t} onNavigate={navigate} />;
       case "actions":
-        return <DashActions result={result} allTools={allTools} t={t} />;
+        return <DashActions result={result} allTools={allTools} t={t} onNavigate={navigate} />;
     }
   };
 
@@ -54,7 +66,7 @@ export default function DiagDashboard({ result, allTools, t }: Props) {
     "hsl(var(--destructive))";
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+    <div className="min-h-screen flex flex-col md:flex-row bg-background">
       {/* Mobile header */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 border-b border-border bg-card">
         <span className="font-semibold text-sm text-foreground font-['DM_Mono']">
@@ -71,7 +83,7 @@ export default function DiagDashboard({ result, allTools, t }: Props) {
           {TABS.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => { setActiveTab(tab.id); setMobileOpen(false); }}
+              onClick={() => { navigate(tab.id); setMobileOpen(false); }}
               className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-colors ${
                 activeTab === tab.id
                   ? "bg-primary/10 text-primary font-medium"
@@ -86,7 +98,7 @@ export default function DiagDashboard({ result, allTools, t }: Props) {
       )}
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex flex-col w-[200px] min-h-screen border-r border-border bg-card p-3 gap-1 shrink-0">
+      <aside className="hidden md:flex flex-col w-[200px] min-h-screen border-r border-border bg-card p-3 gap-1 shrink-0 sticky top-0 h-screen">
         <div className="mb-4 px-2">
           <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
             {t("Diagnostic", "Diagnostic")}
@@ -95,7 +107,7 @@ export default function DiagDashboard({ result, allTools, t }: Props) {
         {TABS.map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => navigate(tab.id)}
             className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-colors text-left ${
               activeTab === tab.id
                 ? "bg-primary/10 text-primary font-medium"
