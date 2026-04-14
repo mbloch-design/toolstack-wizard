@@ -323,7 +323,7 @@ export default function DashGaspillage({ result, allTools, t }: Props) {
                   "border-border"
                 } hover:bg-muted/50`}
               >
-                <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
+                <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{item.tool.name.charAt(0)}</div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground truncate">{item.tool.name}</p>
                   {item.prescription && (
