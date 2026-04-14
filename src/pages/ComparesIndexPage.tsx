@@ -183,7 +183,7 @@ const ComparesIndexPage = () => {
                         >
                           <ToolLogo tool={tool} size={20} />
                           <span className="font-medium">{tool.name}</span>
-                          <span className="ml-auto text-xs text-muted-foreground">{getPrice(tool)}/{t("mois", "mo")}</span>
+                          <span className="ml-auto text-xs text-muted-foreground">{getPriceLabel(tool, t)}</span>
                         </button>
                       ))}
                     </div>
@@ -234,7 +234,7 @@ const ComparesIndexPage = () => {
                         >
                           <ToolLogo tool={tool} size={20} />
                           <span className="font-medium">{tool.name}</span>
-                          <span className="ml-auto text-xs text-muted-foreground">{getPrice(tool)}/{t("mois", "mo")}</span>
+                          <span className="ml-auto text-xs text-muted-foreground">{getPriceLabel(tool, t)}</span>
                         </button>
                       ))}
                     </div>
@@ -287,9 +287,9 @@ const ComparesIndexPage = () => {
 
                   {/* Pricing */}
                   <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                    <span className="font-mono font-bold text-foreground">{getPrice(a)}/{t("mois", "mo")}</span>
+                    <span className="font-mono font-bold text-foreground">{getPriceLabel(a, t)}</span>
                     <span className="text-muted-foreground/50">{t("vs", "vs")}</span>
-                    <span className="font-mono font-bold text-foreground">{getPrice(b)}/{t("mois", "mo")}</span>
+                    <span className="font-mono font-bold text-foreground">{getPriceLabel(b, t)}</span>
                   </div>
 
                   {/* Verdict snippet */}
