@@ -232,7 +232,7 @@ export default function DashActions({ result, allTools, t, onNavigate }: Props) 
 
                     {/* Logo */}
                     {action.tool && (
-                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{tool.name.charAt(0)}</div>
+                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground"><div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{action.tool.name.charAt(0)}</div></div>
                     )}
 
                     {/* Label */}
