@@ -1,85 +1,48 @@
 
 
-## Refonte de la page Comparaison — Design "Precision Curator"
+## Plan : Index des comparatifs + Sidebar dynamique
 
-### Objectif
-Remplacer la page `ComparePage.tsx` actuelle (tableau basique) par un layout premium inspiré de la référence fournie : sidebar catégories + sélecteur d'outils, grille de comparaison visuelle avec barres de score, feature checklist, et verdict bento cards. Fort potentiel SEO grâce à une structure sémantique riche (H1, tableaux structurés, FAQ, JSON-LD).
+### 1. Nouvelle page `ComparesIndexPage.tsx` — route `/:lang/comparatifs`
 
-### Architecture
+Page d'index SEO listant tous les comparatifs disponibles. Structure :
 
-```text
-┌─────────────────────────────────────────────────┐
-│  HERO — badge "Expert Analysis" + H1 + subtitle │
-├──────────┬──────────────────────────────────────┤
-│ SIDEBAR  │  TOOL HEADERS (sticky, border-top)   │
-│ ──────── │  Logo + Nom + Tagline par outil       │
-│ Catégories│──────────────────────────────────────│
-│ (filtres)│  PRICING ROW — prix côte à côte       │
-│          │──────────────────────────────────────│
-│ Selected │  STRENGTH BARS — 3 métriques visuelles│
-│ Tools    │──────────────────────────────────────│
-│ (chips)  │  FEATURE CHECKLIST — ✓ / ✗ par ligne  │
-│          │──────────────────────────────────────│
-│ + Add    │  BENTO VERDICT — 2 cards côte à côte  │
-│          │  (fond bleu primaire vs blanc)         │
-├──────────┴──────────────────────────────────────┤
-│  FAQ — 3-4 questions structurées (SEO)           │
-│  CTA — liens vers fiches détail                  │
-└─────────────────────────────────────────────────┘
-```
+- **Hero** : H1 "Comparatifs d'outils SaaS", sous-titre, badge "Expert Analysis"
+- **Grille de cards** : une card par comparaison existante (8 statiques + comparatifs dynamiques populaires). Chaque card affiche les 2 logos outils côte à côte, les noms "X vs Y", les prix, un extrait du verdict, et un lien vers `/comparatif/slug-a-vs-slug-b`
+- **Section "Créer un comparatif"** : sélecteur de 2 outils (combobox searchable) avec bouton "Comparer" qui redirige vers la route dynamique
+- **SEO** : H1 unique, meta title/description, JSON-LD CollectionPage, hreflang FR/EN
 
-### Étapes d'implémentation
+### 2. Route dynamique universelle pour `ComparePage`
 
-**1. Refonte complète de `ComparePage.tsx`**
+Modifier `ComparePage.tsx` pour accepter **n'importe quelle paire de slugs** (pas seulement les 8 hardcodées) :
 
-Réécrire le composant avec :
-- **Hero** : badge pill "Expert Analysis", H1 avec italique sur "SaaS Decisions", sous-titre, avatars sociaux "Trusted by 24K+ CTOs"
-- **Sidebar gauche** (desktop) : liste des catégories cliquables avec état actif (fond primaire), section "Selected Tools" avec chips et bouton "+ Add Tool"
-- **Headers outils** (sticky top) : cards blanches avec border-top colorée (bleu/orange), icône, nom, tagline
-- **Section Pricing** : prix grand format (DM Mono) côte à côte
-- **Section Strength** : barres verticales animées pour 3 métriques (Scalability, UI, Support) — données dérivées des scores existants
-- **Feature Checklist** : lignes alternées avec check_circle / cancel icons
-- **Bento Verdict** : 2 cards — une fond bleu primaire (gradient), une fond blanc avec border — verdict personnalisé par outil
-- **FAQ** : 3-4 questions expandables (conservées, structure `<details>`)
-- **CTA** : boutons vers fiches détail
+- Garder `COMPARISONS[]` comme "featured" mais ne plus bloquer si le slugPair n'est pas dedans
+- Parser `slugPair` → extraire `slugA` et `slugB` via split sur `-vs-`
+- Chercher les 2 outils dans le catalogue par slug/id
+- Si les 2 outils existent → afficher la comparaison dynamique complète
+- Si un outil manque → redirect vers l'index `/comparatifs`
 
-**2. Adaptation des données**
+### 3. Sidebar fonctionnelle avec sélecteur d'outils
 
-- Utiliser les champs existants du `Tool` type : `pros`, `cons`, `verdict`, `pricing`, `defaultMonthlyPrice`, `functional_needs`
-- Mapper les `functional_needs` comme features pour la checklist (Advanced Reporting → check/cross)
-- Dériver les scores de "Platform Strength" depuis `pertinenceScore` ou `prescription_quality`
-- Conserver les 8 comparaisons existantes dans `COMPARISONS[]`
+Refactorer `CompareSidebar.tsx` :
 
-**3. Tokens design appliqués**
+- **Catégories** : cliquer filtre la liste des comparaisons affichées (pas de navigation, juste un filtre local)
+- **Outils sélectionnés** : afficher les 2 outils actuels avec bouton X pour retirer
+- **Sélecteur "Ajouter un outil"** : ouvre un combobox/dropdown searchable avec tous les outils du catalogue. Sélectionner un outil redirige vers le nouveau comparatif `slugA-vs-slugB`
+- **Liste "Tous les comparatifs"** : affiche les 8 featured + highlight l'actif
 
-- Fond page : `#F9F9FA` (background)
-- Cards : `#FFFFFF` (surface-container-lowest) avec ombre ambiante douce
-- Primaire : gradient `#003BC7 → #1E52F1` (135°) pour CTA et card verdict
-- Secondaire/orange : `#FD8534` pour le 2e outil
-- Typo : Plus Jakarta Sans (headlines), Inter (body)
-- Pas de bordures 1px — tonal layering uniquement
-- Border-radius : `lg` (16px) pour cards, `full` pour pills/boutons
-- Ghost borders à 15% opacity max si nécessaire
+### 4. Routes et navigation
 
-**4. SEO renforcé**
+- `App.tsx` : ajouter `<Route path="comparatifs" element={<ComparesIndexPage />} />`
+- `Navbar.tsx` : ajouter lien "Comparatifs" dans le méga-menu Ressources
+- Sitemap : ajouter `/fr/comparatifs` et `/en/comparatifs`
 
-- JSON-LD `Article` + `FAQPage` (déjà en place, conservé)
-- H1 unique par comparaison, H2 pour sections
-- Texte structuré pour les scrapers LLM (answer-first dans le verdict)
-- Hreflang FR/EN conservé
+### Fichiers
 
-**5. Responsive**
-
-- Mobile : sidebar masquée, layout single-column
-- Headers outils empilés verticalement
-- Barres de score en mode horizontal sur mobile
-
-### Fichiers modifiés
-- `src/pages/ComparePage.tsx` — réécriture complète
-
-### Fichiers potentiellement ajoutés
-- `src/components/compare/CompareHero.tsx` — hero section
-- `src/components/compare/CompareSidebar.tsx` — sidebar catégories
-- `src/components/compare/CompareStrengthBars.tsx` — barres de score visuelles
-- `src/components/compare/CompareVerdictCards.tsx` — bento verdict
+| Action | Fichier |
+|--------|---------|
+| Créer | `src/pages/ComparesIndexPage.tsx` |
+| Modifier | `src/pages/ComparePage.tsx` — accepter paires dynamiques |
+| Modifier | `src/components/compare/CompareSidebar.tsx` — sélecteur fonctionnel |
+| Modifier | `src/App.tsx` — nouvelle route |
+| Modifier | `src/components/Navbar.tsx` — lien méga-menu |
 
