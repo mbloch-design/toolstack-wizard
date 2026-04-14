@@ -2,6 +2,7 @@ import { useLang } from "@/hooks/useLang";
 import { ReactNode } from "react";
 
 /** Tiny inline logo from Google favicons */
+/** Tiny inline logo from Google favicons — with error fallback */
 const L = ({ d }: { d: string }) => (
   <img
     src={`https://www.google.com/s2/favicons?domain=${d}&sz=32`}
@@ -11,6 +12,7 @@ const L = ({ d }: { d: string }) => (
     loading="lazy"
     className="inline-block shrink-0 rounded-sm"
     style={{ width: 16, height: 16 }}
+    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
   />
 );
 
