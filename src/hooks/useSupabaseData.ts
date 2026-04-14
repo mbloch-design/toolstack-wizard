@@ -147,7 +147,13 @@ export function usePosts(lang: string) {
   useEffect(() => {
     (async () => {
       const { data, error } = await supabase.from("posts").select("*").eq("lang", lang).order("date", { ascending: false });
-      if (!error && data && data.length > 0) setPosts(data.map(mapPost));
+      if (!error && data && data.length > 0) {
+        const supabasePosts = data.map(mapPost);
+        const supabaseSlugs = new Set(supabasePosts.map(p => p.slug));
+        const merged = [...supabasePosts, ...localPosts.filter(p => !supabaseSlugs.has(p.slug))];
+        merged.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+        setPosts(merged);
+      }
       setLoading(false);
     })();
   }, [lang]);
