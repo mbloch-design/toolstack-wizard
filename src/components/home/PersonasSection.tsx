@@ -99,7 +99,7 @@ const PersonasSection = () => {
             {t("Pour qui", "Who it's for")}
           </span>
           <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
-            {t("Conçu pour 5 expertises métier", "Built for 5 professional profiles")}
+            {t("Conçu pour ", "Built for ")}<em className="text-primary italic">{t("5 expertises métier", "5 professional profiles")}</em>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">
             {t(

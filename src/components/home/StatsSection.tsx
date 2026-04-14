@@ -71,7 +71,7 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
             {t("Économies identifiées", "Savings identified")}
           </span>
           <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
-            {t("Des chiffres, pas des promesses", "Numbers, not promises")}
+            {t("Des chiffres, ", "Numbers, ")}<em className="not-italic text-primary italic">{t("pas des promesses", "not promises")}</em>
           </h2>
         </div>
 

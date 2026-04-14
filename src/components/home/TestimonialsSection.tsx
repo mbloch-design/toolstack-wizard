@@ -109,7 +109,7 @@ const TestimonialsSection = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-lg">
             <h2 className="text-4xl md:text-[44px] font-extrabold tracking-[-1.5px] leading-[1.1] text-foreground">
-              {t("Ils ont repris le contrôle de leur stack.", "They took back control of their stack.")}
+              {t("Ils ont repris le contrôle ", "They took back control ")}<em className="text-primary italic">{t("de leur stack.", "of their stack.")}</em>
             </h2>
           </div>
           <div className="flex flex-wrap gap-8">

@@ -19,9 +19,8 @@ const DiffTable = ({ toolCount }: { toolCount: number }) => {
         <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
           {t("Positionnement", "Positioning")}
         </p>
-        <h2 className="text-4xl font-bold tracking-[-1.5px]">
-          {t("Pas un annuaire.", "Not a directory.")}{" "}
-          <span className="text-muted-foreground/25">{t("Un diagnostic.", "A diagnosis.")}</span>
+        <h2 className="text-4xl font-extrabold tracking-[-1.5px]">
+          {t("Pas un annuaire. ", "Not a directory. ")}<em className="text-primary italic">{t("Un diagnostic.", "A diagnosis.")}</em>
         </h2>
 
         <div className="mt-10 overflow-hidden rounded-xl border border-border">
