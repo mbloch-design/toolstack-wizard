@@ -180,11 +180,11 @@ const ComparePage = () => {
                   </div>
                   <div className="text-center md:text-left">
                     <span className="text-3xl font-mono font-black text-foreground">{getPrice(toolA)}</span>
-                    <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>
+                    {getPriceNum(toolA) > 0 && <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>}
                   </div>
                   <div className="text-center md:text-left">
                     <span className="text-3xl font-mono font-black text-foreground">{getPrice(toolB)}</span>
-                    <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>
+                    {getPriceNum(toolB) > 0 && <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>}
                   </div>
                 </div>
               </div>
