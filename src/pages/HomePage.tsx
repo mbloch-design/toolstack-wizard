@@ -94,7 +94,7 @@ const HomePage = () => {
 
       {/* 7. Categories */}
       <section className="border-t border-border py-20">
-        <div className="container">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="flex items-end justify-between">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
@@ -131,7 +131,7 @@ const HomePage = () => {
 
       {/* 8. Popular tools */}
       <section className="border-t border-border bg-secondary/20 py-20">
-        <div className="container">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="flex items-end justify-between">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
@@ -206,7 +206,7 @@ const HomePage = () => {
 
       {/* 12. FAQ */}
       <section className="border-t border-border py-20">
-        <div className="container mx-auto max-w-3xl">
+        <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-extrabold tracking-tighter text-center">{t("Questions ", "Frequently Asked ")}<em className="text-primary italic">{t("fréquentes", "Questions")}</em></h2>
           <div className="mt-10 space-y-4">
             {faq.map((item, i) => (

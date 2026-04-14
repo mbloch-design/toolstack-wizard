@@ -15,7 +15,7 @@ const DiffTable = ({ toolCount }: { toolCount: number }) => {
 
   return (
     <section className="border-t border-border py-20 px-6">
-      <div className="mx-auto max-w-[1100px]">
+      <div className="mx-auto max-w-6xl">
         <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
           {t("Positionnement", "Positioning")}
         </p>

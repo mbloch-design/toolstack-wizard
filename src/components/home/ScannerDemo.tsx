@@ -88,7 +88,7 @@ const ScannerDemo = () => {
 
   return (
     <section className="py-20 px-6">
-      <div className="mx-auto grid max-w-[1100px] items-center gap-16 md:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
         {/* Copy */}
         <div>
           <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-4">
