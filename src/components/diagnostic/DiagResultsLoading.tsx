@@ -1,9 +1,18 @@
+import { useEffect } from "react";
+
 interface Props {
   toolCount: number;
   t: (fr: string, en: string) => string;
+  onComplete?: () => void;
 }
 
-export default function DiagResultsLoading({ toolCount, t }: Props) {
+export default function DiagResultsLoading({ toolCount, t, onComplete }: Props) {
+  useEffect(() => {
+    if (!onComplete) return;
+    const timer = setTimeout(onComplete, 2500);
+    return () => clearTimeout(timer);
+  }, [onComplete]);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] gap-6 text-center">
       <div className="relative">

@@ -1,7 +1,8 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
-import type { SessionState, Persona } from "@/types/diagnostic";
+import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
+import { runDiagnostic } from "@/utils/scoring";
 
 import DiagStep0Prenom from "@/components/diagnostic/DiagStep0Prenom";
 import DiagStep1Tjm from "@/components/diagnostic/DiagStep1Tjm";
@@ -15,6 +16,7 @@ import DiagStep6Discovery from "@/components/diagnostic/DiagStep6Discovery";
 import DiagStep6bEmailRecap from "@/components/diagnostic/DiagStep6bEmailRecap";
 import DiagStep7Closing from "@/components/diagnostic/DiagStep7Closing";
 import DiagResultsLoading from "@/components/diagnostic/DiagResultsLoading";
+import DiagDashboard from "@/components/dashboard/DiagDashboard";
 import DiagTopBar from "@/components/diagnostic/DiagTopBar";
 import DiagRightPanel from "@/components/diagnostic/DiagRightPanel";
 import DiagSaveIndicator from "@/components/diagnostic/DiagSaveIndicator";
@@ -22,8 +24,8 @@ import DiagTransitionOverlay from "@/components/diagnostic/DiagTransitionOverlay
 
 // Steps: 0=Prenom, 1=TJM, 2=Persona, 3=Email, 4=Complementary,
 // 5=SofiaSpecialties(conditional), 6=Clusters, 7=ApiCosts(conditional),
-// 8=Discovery, 9=EmailRecap, 10=Closing, 11=ResultsLoading
-type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
+// 8=Discovery, 9=EmailRecap, 10=Closing, 11=ResultsLoading, 12=Dashboard
+type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 const TOTAL_VISIBLE_STEPS = 10;
 
@@ -48,6 +50,12 @@ export default function DiagnosticRouter() {
   const [session, setSession] = useState<SessionState>(() =>
     createInitialSession(lang === "en" ? "en" : "fr")
   );
+
+  // Compute diagnostic result when reaching dashboard
+  const diagnosticResult = useMemo<DiagnosticResult | null>(() => {
+    if (step < 11) return null;
+    return runDiagnostic(session, { allTools: tools, doublonRules });
+  }, [step, session, tools, doublonRules]);
 
   const updateSession = useCallback((patch: Partial<SessionState>) => {
     setSession((prev) => ({ ...prev, ...patch }));
@@ -92,7 +100,8 @@ export default function DiagnosticRouter() {
           `C'est parti ${session.firstName} ! Calcul en cours…`,
           `Here we go ${session.firstName}! Calculating…`
         ));
-      case 11: return; // TODO: navigate to results page
+      case 11: return goTo(12); // results loading → dashboard
+      case 12: return;
     }
   }, [session.persona, session.firstName, goTo, goToWithTransition, t]);
 
@@ -130,12 +139,16 @@ export default function DiagnosticRouter() {
 
   // Map internal step to visible progress (0-9)
   const progressMap: Record<StepId, number> = {
-    0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8, 11: 9,
+    0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8, 11: 9, 12: 10,
   };
   const progressIndex = progressMap[step];
 
   const showRightPanel = step >= 6 && step <= 10;
 
+  // If on dashboard step, render full dashboard
+  if (step === 12 && diagnosticResult) {
+    return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} />;
+  }
   return (
     <>
       {/* Top bar */}
@@ -214,7 +227,11 @@ export default function DiagnosticRouter() {
             />
           )}
           {step === 11 && (
-            <DiagResultsLoading toolCount={session.selectedTools.length} t={t} />
+            <DiagResultsLoading
+              toolCount={session.selectedTools.length}
+              t={t}
+              onComplete={() => goTo(12)}
+            />
           )}
         </div>
 
