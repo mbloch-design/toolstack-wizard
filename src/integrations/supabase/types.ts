@@ -35,6 +35,93 @@ export type Database = {
         }
         Relationships: []
       }
+      clusters: {
+        Row: {
+          cols: number | null
+          id: string
+          order: number
+          persona: string
+          question: string
+          question_en: string | null
+          tool_ids: Json | null
+          why: string | null
+        }
+        Insert: {
+          cols?: number | null
+          id: string
+          order: number
+          persona: string
+          question: string
+          question_en?: string | null
+          tool_ids?: Json | null
+          why?: string | null
+        }
+        Update: {
+          cols?: number | null
+          id?: string
+          order?: number
+          persona?: string
+          question?: string
+          question_en?: string | null
+          tool_ids?: Json | null
+          why?: string | null
+        }
+        Relationships: []
+      }
+      discovery_questions: {
+        Row: {
+          condition_tool_ids: Json | null
+          condition_type: string | null
+          id: string
+          options: Json
+          persona: string
+          question: string
+          subtitle: string | null
+        }
+        Insert: {
+          condition_tool_ids?: Json | null
+          condition_type?: string | null
+          id: string
+          options: Json
+          persona: string
+          question: string
+          subtitle?: string | null
+        }
+        Update: {
+          condition_tool_ids?: Json | null
+          condition_type?: string | null
+          id?: string
+          options?: Json
+          persona?: string
+          question?: string
+          subtitle?: string | null
+        }
+        Relationships: []
+      }
+      doublon_rules: {
+        Row: {
+          category: string | null
+          id: string
+          ids: Json
+          message: string
+          savings: number | null
+        }
+        Insert: {
+          category?: string | null
+          id?: string
+          ids: Json
+          message: string
+          savings?: number | null
+        }
+        Update: {
+          category?: string | null
+          id?: string
+          ids?: Json
+          message?: string
+          savings?: number | null
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           ai_usage_level: string | null
