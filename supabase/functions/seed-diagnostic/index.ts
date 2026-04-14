@@ -379,8 +379,15 @@ serve(async (req) => {
     return new Response("ok", { headers: corsHeaders });
   }
 
-  // Auth: skip check for this one-time seed operation
-  // Re-enable admin key check after seeding is complete
+  // Verify admin key
+  const adminKey = req.headers.get("x-admin-key");
+  const expectedKey = Deno.env.get("SEED_ADMIN_KEY");
+  if (!adminKey || adminKey !== expectedKey) {
+    return new Response(JSON.stringify({ error: "Unauthorized" }), {
+      status: 401,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
 
   const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
   const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
