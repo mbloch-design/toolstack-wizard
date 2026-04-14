@@ -61,13 +61,20 @@ function sitemapPlugin(): Plugin {
           add(`${BASE}/en/guide/${enSlug}`, "monthly", "0.7");
         }
 
+        // Comparisons index page
+        for (const lang of LANGS) {
+          add(`${BASE}/${lang}/comparatifs`, "weekly", "0.8");
+        }
+
         const COMPARISONS = [
           "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
           "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
           "github-copilot-vs-cursor", "grammarly-vs-claude",
         ];
         for (const comp of COMPARISONS) {
-          add(`${BASE}/fr/comparatif/${comp}`, "monthly", "0.7");
+          for (const lang of LANGS) {
+            add(`${BASE}/${lang}/comparatif/${comp}`, "monthly", "0.7");
+          }
         }
 
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
