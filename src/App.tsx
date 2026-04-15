@@ -78,6 +78,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <DynamicCanonical />
         <Suspense fallback={<LazyFallback />}>
           <Routes>
             <Route path="/" element={<Navigate to="/fr" replace />} />
