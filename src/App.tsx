@@ -9,6 +9,7 @@ import { Lang } from "@/data/types";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import DynamicCanonical from "@/components/DynamicCanonical";
 
 // Critical: HomePage loaded eagerly for FCP
 import HomePage from "@/pages/HomePage";
@@ -77,6 +78,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <DynamicCanonical />
         <Suspense fallback={<LazyFallback />}>
           <Routes>
             <Route path="/" element={<Navigate to="/fr" replace />} />

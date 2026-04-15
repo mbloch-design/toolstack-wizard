@@ -17,16 +17,9 @@ export function setMeta(nameOrProp: string, content: string) {
   el.content = content;
 }
 
-export function setCanonical(url: string) {
-  // Strip query params for canonical
-  const cleanUrl = url.split("?")[0].replace(/\/+$/, "");
-  let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-  if (!canonical) {
-    canonical = document.createElement("link");
-    canonical.rel = "canonical";
-    document.head.appendChild(canonical);
-  }
-  canonical.href = cleanUrl.replace("https://tooltrim.io", "https://www.tooltrim.io");
+/** @deprecated Canonical is now managed by react-helmet-async via DynamicCanonical */
+export function setCanonical(_url: string) {
+  // no-op: canonical is handled by <DynamicCanonical /> in App.tsx
 }
 
 export function setJsonLd(id: string, data: Record<string, unknown>) {
@@ -71,7 +64,7 @@ export function removeNoindex() {
 
 export function cleanupSeo(ids: string[]) {
   ids.forEach((id) => document.getElementById(id)?.remove());
-  document.querySelector('link[rel="canonical"]')?.remove();
+  // canonical is managed by react-helmet-async, no manual cleanup needed
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
   removeNoindex();
 }
