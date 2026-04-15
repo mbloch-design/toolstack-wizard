@@ -18,9 +18,6 @@ const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
 const ResultsPage = lazy(() => import("@/pages/ResultsPage"));
 const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
 const ToolDetailPage = lazy(() => import("@/pages/ToolDetailPage"));
-const UpdateToolsV3 = lazy(() => import("@/pages/UpdateToolsV3"));
-const UpdateToolsV4 = lazy(() => import("@/pages/UpdateToolsV4"));
-const UpdateToolsV10 = lazy(() => import("@/pages/UpdateToolsV10"));
 const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
@@ -115,9 +112,6 @@ const App = () => (
               <Route path="legal-notice" element={<LegalNoticePage />} />
               <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="terms" element={<TermsPage />} />
-              <Route path="update-tools-v3" element={<UpdateToolsV3 />} />
-              <Route path="update-tools-v4" element={<UpdateToolsV4 />} />
-              <Route path="update-tools-v10" element={<UpdateToolsV10 />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
