@@ -10,7 +10,7 @@ const FinalCTA = () => {
       <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-5">
         {t("Prêt ?", "Ready?")}
       </p>
-      <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-extrabold tracking-[-3px] leading-[1.05]">
+      <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
         {t("Combien", "How much")}
         <br />
         <em className="text-primary italic">{t("payez-vous de trop ?", "are you overpaying?")}</em>
