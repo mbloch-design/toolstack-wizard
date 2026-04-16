@@ -107,6 +107,13 @@ const CategoryPage = () => {
   // Related categories
   const relatedCats = categories.filter(c => c.id !== category.id).slice(0, 4);
 
+  // Related guides for this category
+  const catToolNames = allCatTools.map(t => t.name.toLowerCase());
+  const relatedGuides = posts.filter(p => {
+    const text = `${p.title} ${p.excerpt} ${p.content || ""}`.toLowerCase();
+    return catToolNames.some(name => text.includes(name)) || (p.category && catName.toLowerCase().includes(p.category.toLowerCase()));
+  }).slice(0, 3);
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
