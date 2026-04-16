@@ -205,6 +205,13 @@ const ToolDetailPage = () => {
                     </div>
                   ))}
                 </div>
+                {category && (
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    <Link to={`${prefix}/category/${category.slug}`} className="text-primary hover:underline">
+                      {t(`Découvrir tous les outils de ${category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "")}`, `Discover all ${category.nameEn || category.name} tools`)}
+                    </Link>
+                  </p>
+                )}
               </section>
             )}
 
@@ -283,7 +290,7 @@ const ToolDetailPage = () => {
             </section>
 
             {/* ── SECTION 6: Verdict ── */}
-            <ToolVerdictBlock tool={tool} lang={lang} t={t} />
+            <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
 
             {/* ── SECTION 7: Pricing ── */}
             <ToolPricingSection
@@ -348,6 +355,36 @@ const ToolDetailPage = () => {
             t={t}
           />
         </div>
+
+        {/* ── SECTION 8b: Cluster-related tools ── */}
+        {tool.substitution_cluster_v2 && (() => {
+          const clusterTools = tools
+            .filter((ct: any) => ct.substitution_cluster_v2 === tool.substitution_cluster_v2 && ct.id !== tool.id)
+            .slice(0, 5);
+          if (clusterTools.length === 0) return null;
+          return (
+            <div className="mt-10 border-t border-border pt-8">
+              <h2 className="text-lg font-bold tracking-tighter">
+                {t("Outils substituables", "Substitutable tools")}
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t(
+                  `Ces outils couvrent les mêmes besoins que ${tool.name} et peuvent le remplacer directement.`,
+                  `These tools cover the same needs as ${tool.name} and can directly replace it.`
+                )}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {clusterTools.map((ct: any) => (
+                  <Link key={ct.id} to={`${prefix}/tool/${ct.slug || ct.id}`}
+                    className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium hover:border-primary/30 hover:text-primary transition-colors">
+                    <ToolLogo tool={ct} size={20} />
+                    {ct.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* ── SECTION 9: FAQ (visible in HTML, open by default for top 2) ── */}
         <div className="mt-14 border-t border-border pt-10">

@@ -90,6 +90,17 @@ const GuideDetailPage = () => {
       .map((r) => r.post);
   }, [post, allPosts]);
 
+  // Build tool name → internal URL map for auto-linking
+  const toolLinkMap = useMemo(() => {
+    const map = new Map<string, string>();
+    tools.forEach(t => {
+      if (t.name.length >= 3) {
+        map.set(t.name, `/${lang}/tool/${t.slug || t.id}`);
+      }
+    });
+    return map;
+  }, [tools, lang]);
+
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href).then(() => {
       setCopied(true);
@@ -132,7 +143,7 @@ const GuideDetailPage = () => {
   }
 
   const gradient = getArticleGradient(post.slug, post.category);
-  const htmlContent = markdownToHtml(post.content, toc, post.title);
+  const htmlContent = markdownToHtml(post.content, toc, post.title, toolLinkMap);
 
   return (
     <>
@@ -312,6 +323,36 @@ const GuideDetailPage = () => {
               </div>
             </div>
 
+            {/* Mentioned tools — full cards */}
+            {mentionedTools.length > 0 && (
+              <section className="mt-14 border-t border-border pt-10">
+                <h2 className="text-xl font-bold tracking-tighter mb-2">
+                  {t("Outils mentionnés dans cet article", "Tools mentioned in this article")}
+                </h2>
+                <p className="text-sm text-muted-foreground mb-5">
+                  {t("Consultez la fiche complète de chaque outil pour un avis détaillé.", "See the full review of each tool for a detailed verdict.")}
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {mentionedTools.slice(0, 6).map((tool) => (
+                    <ToolMentionedCard key={tool.id} tool={tool} prefix={prefix} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* CTA diagnostic */}
+            <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <p className="font-semibold text-foreground">{t("Analysez votre stack complète", "Analyze your full stack")}</p>
+                <p className="mt-0.5 text-sm text-muted-foreground">{t("Diagnostic gratuit en 3 minutes — recommandations personnalisées.", "Free 3-minute diagnostic — personalized recommendations.")}</p>
+              </div>
+              <Link to={`${prefix}/diagnostic`}
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/85 transition-colors shrink-0">
+                {t("Lancer le diagnostic", "Start diagnostic")}
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
             {/* Related */}
             {relatedPosts.length > 0 && (
               <section className="mt-14">
@@ -421,7 +462,7 @@ function getToolDomain(tool: { websiteUrl?: string; affiliateLink: string }): st
   catch { return ""; }
 }
 
-function markdownToHtml(md: string, toc: { id: string; level: number; text: string }[], articleTitle: string): string {
+function markdownToHtml(md: string, toc: { id: string; level: number; text: string }[], articleTitle: string, toolMap?: Map<string, string>): string {
   let html = md;
   let tocIndex = 0;
 
@@ -455,6 +496,23 @@ function markdownToHtml(md: string, toc: { id: string; level: number; text: stri
   html = html.replace(/^---$/gm, "<hr />");
   html = html.replace(/^(?!<[a-z/]|$)(.+)$/gm, "<p>$1</p>");
   html = html.replace(/<p>\s*<\/p>/g, "");
+
+  // Auto-link tool names (only first occurrence per tool, skip already-linked text)
+  if (toolMap && toolMap.size > 0) {
+    const linked = new Set<string>();
+    toolMap.forEach((slug, name) => {
+      if (linked.has(name)) return;
+      // Only match tool name NOT already inside an <a> tag or href
+      const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`(?<!<[^>]*)\\b(${escaped})\\b(?![^<]*<\\/a>)`, "i");
+      const match = html.match(regex);
+      if (match) {
+        html = html.replace(regex, `<a href="${slug}" class="text-primary underline underline-offset-2">${match[1]}</a>`);
+        linked.add(name);
+      }
+    });
+  }
+
   return html;
 }
 
