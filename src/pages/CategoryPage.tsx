@@ -17,6 +17,7 @@ const CategoryPage = () => {
   const { slug } = useParams();
   const { tools } = useTools();
   const { categories } = useCategories();
+  const { posts } = usePosts(lang);
   const category = categories.find((c) => c.slug === slug);
   const allCatTools = category ? tools.filter((t) => t.categoryId === category.id) : [];
 
