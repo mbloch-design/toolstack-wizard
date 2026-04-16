@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
-import { Check, X, Award, TrendingDown, ArrowRightLeft, Sparkles } from "lucide-react";
+import { Check, X, Award, TrendingDown, ArrowRightLeft, Sparkles, ArrowRight } from "lucide-react";
 
 interface Props {
   tool: Tool;
   lang?: string;
+  prefix?: string;
+  allTools?: Tool[];
   t: (fr: string, en: string) => string;
 }
 
@@ -47,7 +50,7 @@ function getActionIcon(action: string | undefined) {
   }
 }
 
-export default function ToolVerdictBlock({ tool, lang, t }: Props) {
+export default function ToolVerdictBlock({ tool, lang, prefix = "", allTools = [], t }: Props) {
   const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
   const keepItems = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean);
   const avoidItems = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean);
@@ -56,6 +59,10 @@ export default function ToolVerdictBlock({ tool, lang, t }: Props) {
   const actionLabel = getActionLabel(prescription?.action, prescription?.replacement_tool, t);
   const ActionIcon = getActionIcon(prescription?.action);
   const gain = prescription?.gain_monthly_eur;
+
+  // Resolve betterAlternative or prescription replacement to a linkable tool
+  const altSlug = tool.betterAlternative?.tool || prescription?.replacement_tool;
+  const altTool = altSlug ? allTools.find(t => t.id === altSlug || t.slug === altSlug || t.name.toLowerCase() === altSlug.toLowerCase()) : null;
 
   return (
     <section className="rounded-2xl border border-primary/20 bg-gradient-to-br from-accent/40 via-card to-accent/20 overflow-hidden">
@@ -98,7 +105,32 @@ export default function ToolVerdictBlock({ tool, lang, t }: Props) {
                   {t("Économie potentielle", "Potential savings")}: +{Math.round(gain)}€/{t("mois", "mo")}
                 </p>
               )}
+              {/* Link to the recommended alternative */}
+              {altTool && (
+                <Link
+                  to={`${prefix}/tool/${altTool.slug || altTool.id}`}
+                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                >
+                  {t(`Voir la fiche de ${altTool.name}`, `See ${altTool.name} review`)}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              )}
             </div>
+          </div>
+        )}
+
+        {/* betterAlternative standalone (if no prescription but betterAlternative exists) */}
+        {tool.prescription_quality !== "ferme" && tool.betterAlternative && altTool && (
+          <div className="rounded-xl border border-border bg-card p-4">
+            <p className="text-sm text-muted-foreground">{tool.betterAlternative.reason}</p>
+            <Link
+              to={`${prefix}/tool/${altTool.slug || altTool.id}`}
+              className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+            >
+              {t(`Découvrir ${altTool.name}, une alternative`, `Discover ${altTool.name}, an alternative`)}
+              {tool.betterAlternative.saving > 0 && ` (−${Math.round(tool.betterAlternative.saving)}€/${t("mois", "mo")})`}
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         )}
 
@@ -139,6 +171,20 @@ export default function ToolVerdictBlock({ tool, lang, t }: Props) {
             )}
           </div>
         )}
+
+        {/* CTA diagnostic */}
+        <div className="pt-2">
+          <Link
+            to={`${prefix}/diagnostic`}
+            className="inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
+          >
+            {t(
+              `Pas sûr ? Testez notre diagnostic gratuit pour savoir si ${tool.name} est fait pour vous`,
+              `Not sure? Try our free diagnostic to know if ${tool.name} is right for you`
+            )}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
       </div>
     </section>
   );

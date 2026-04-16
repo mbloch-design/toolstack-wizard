@@ -205,6 +205,13 @@ const ToolDetailPage = () => {
                     </div>
                   ))}
                 </div>
+                {category && (
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    <Link to={`${prefix}/category/${category.slug}`} className="text-primary hover:underline">
+                      {t(`Découvrir tous les outils de ${category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "")}`, `Discover all ${category.nameEn || category.name} tools`)}
+                    </Link>
+                  </p>
+                )}
               </section>
             )}
 
@@ -283,7 +290,7 @@ const ToolDetailPage = () => {
             </section>
 
             {/* ── SECTION 6: Verdict ── */}
-            <ToolVerdictBlock tool={tool} lang={lang} t={t} />
+            <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
 
             {/* ── SECTION 7: Pricing ── */}
             <ToolPricingSection
