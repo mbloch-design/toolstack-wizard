@@ -451,7 +451,7 @@ function getToolDomain(tool: { websiteUrl?: string; affiliateLink: string }): st
   catch { return ""; }
 }
 
-function markdownToHtml(md: string, toc: { id: string; level: number; text: string }[], articleTitle: string): string {
+function markdownToHtml(md: string, toc: { id: string; level: number; text: string }[], articleTitle: string, toolMap?: Map<string, string>): string {
   let html = md;
   let tocIndex = 0;
 
@@ -485,6 +485,23 @@ function markdownToHtml(md: string, toc: { id: string; level: number; text: stri
   html = html.replace(/^---$/gm, "<hr />");
   html = html.replace(/^(?!<[a-z/]|$)(.+)$/gm, "<p>$1</p>");
   html = html.replace(/<p>\s*<\/p>/g, "");
+
+  // Auto-link tool names (only first occurrence per tool, skip already-linked text)
+  if (toolMap && toolMap.size > 0) {
+    const linked = new Set<string>();
+    toolMap.forEach((slug, name) => {
+      if (linked.has(name)) return;
+      // Only match tool name NOT already inside an <a> tag or href
+      const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`(?<!<[^>]*)\\b(${escaped})\\b(?![^<]*<\\/a>)`, "i");
+      const match = html.match(regex);
+      if (match) {
+        html = html.replace(regex, `<a href="${slug}" class="text-primary underline underline-offset-2">${match[1]}</a>`);
+        linked.add(name);
+      }
+    });
+  }
+
   return html;
 }
 
