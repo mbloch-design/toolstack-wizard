@@ -90,6 +90,17 @@ const GuideDetailPage = () => {
       .map((r) => r.post);
   }, [post, allPosts]);
 
+  // Build tool name → internal URL map for auto-linking
+  const toolLinkMap = useMemo(() => {
+    const map = new Map<string, string>();
+    tools.forEach(t => {
+      if (t.name.length >= 3) {
+        map.set(t.name, `/${lang}/tool/${t.slug || t.id}`);
+      }
+    });
+    return map;
+  }, [tools, lang]);
+
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href).then(() => {
       setCopied(true);
@@ -132,18 +143,6 @@ const GuideDetailPage = () => {
   }
 
   const gradient = getArticleGradient(post.slug, post.category);
-
-  // Build tool name → internal URL map for auto-linking
-  const toolLinkMap = useMemo(() => {
-    const map = new Map<string, string>();
-    tools.forEach(t => {
-      if (t.name.length >= 3) { // skip very short names to avoid false matches
-        map.set(t.name, `/${lang}/tool/${t.slug || t.id}`);
-      }
-    });
-    return map;
-  }, [tools, lang]);
-
   const htmlContent = markdownToHtml(post.content, toc, post.title, toolLinkMap);
 
   return (
