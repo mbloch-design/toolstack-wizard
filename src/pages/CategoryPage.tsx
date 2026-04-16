@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
 import { useLang } from "@/hooks/useLang";
-import { useTools, useCategories } from "@/hooks/useSupabaseData";
+import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
-import { Search, Check, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Search, Check, X, ChevronDown, ArrowRight, BookOpen } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
