@@ -190,6 +190,38 @@ const CategoryPage = () => {
         </div>
       </section>
 
+      {/* Guides + CTA diagnostic */}
+      {(relatedGuides.length > 0 || allCatTools.length > 0) && (
+        <section className="container mx-auto max-w-6xl px-4 pt-8 pb-2">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            {relatedGuides.length > 0 && (
+              <div className="flex-1">
+                <h2 className="text-lg font-bold tracking-tighter flex items-center gap-2">
+                  <BookOpen className="h-4.5 w-4.5 text-primary" />
+                  {t("Guides recommandés", "Recommended guides")}
+                </h2>
+                <div className="mt-3 space-y-2">
+                  {relatedGuides.map(guide => (
+                    <Link key={guide.slug} to={`${prefix}/guide/${guide.slug}`}
+                      className="block rounded-lg border border-border bg-card p-3 text-sm hover:border-primary/30 hover:shadow-sm transition-all">
+                      <p className="font-medium line-clamp-1">{guide.title}</p>
+                      {guide.readTime && <p className="mt-0.5 text-xs text-muted-foreground">{guide.readTime}</p>}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div className="sm:shrink-0 sm:self-center">
+              <Link to={`${prefix}/diagnostic`}
+                className="inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary hover:bg-primary/10 transition-colors">
+                {t("Pas sûr de votre choix ? Diagnostic gratuit", "Not sure? Free diagnostic")}
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Results */}
       <section className="container mx-auto max-w-6xl px-4 py-10">
         <p className="mb-4 text-sm text-muted-foreground">
