@@ -130,12 +130,8 @@ function staticPrerenderPlugin(): Plugin {
             const description = isFr ? descFr : descEn;
             const url = `https://www.tooltrim.io/${lang}/tool/${slug}`;
 
-            const canonical = `<link rel="canonical" href="${url}" />`;
-            const hreflangs = [
-              `<link rel="alternate" hreflang="fr" href="https://www.tooltrim.io/fr/tool/${slug}" />`,
-              `<link rel="alternate" hreflang="en" href="https://www.tooltrim.io/en/tool/${slug}" />`,
-              `<link rel="alternate" hreflang="x-default" href="https://www.tooltrim.io/fr/tool/${slug}" />`,
-            ].join("\n    ");
+            // Canonical + hreflang are injected at runtime by react-helmet-async (DynamicCanonical).
+            // Do NOT hardcode them here to avoid duplicate canonicals in the rendered HTML.
 
             const jsonLd: Record<string, any> = {
               "@context": "https://schema.org",
@@ -158,8 +154,6 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
-              canonical,
-              hreflangs,
               `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
             ].join("\n    ");
 
@@ -218,10 +212,7 @@ function staticPrerenderPlugin(): Plugin {
             `<meta property="og:description" content="${lp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:url" content="${lp.canonical}" />`,
             `<meta property="og:site_name" content="ToolTrim" />`,
-            `<link rel="canonical" href="${lp.canonical}" />`,
-            `<link rel="alternate" hreflang="fr" href="https://www.tooltrim.io/fr" />`,
-            `<link rel="alternate" hreflang="en" href="https://www.tooltrim.io/en" />`,
-            `<link rel="alternate" hreflang="x-default" href="https://www.tooltrim.io/fr" />`,
+            // Canonical + hreflang injected at runtime by react-helmet-async (DynamicCanonical).
           ].join("\n    ");
 
           const staticParagraph = `<noscript><p>${lp.bodyText}</p></noscript>`;
