@@ -54,6 +54,19 @@ Deno.serve(async () => {
   addUrl(`${BASE}/fr/audit-saas-gratuit`, "weekly", "0.9");
   addUrl(`${BASE}/en/free-saas-audit`, "weekly", "0.9");
 
+  // Persona pillar guides (localized slugs FR/EN)
+  const PILLAR_GUIDES: [string, string][] = [
+    ["meilleurs-outils-developpeur-freelance", "best-tools-freelance-developer"],
+    ["meilleurs-outils-designer-freelance", "best-tools-freelance-designer"],
+    ["meilleurs-outils-consultant-freelance", "best-tools-freelance-consultant"],
+    ["meilleurs-outils-createur-contenu-freelance", "best-tools-freelance-content-creator"],
+    ["meilleurs-outils-ops-manager-freelance", "best-tools-freelance-ops-manager"],
+  ];
+  for (const [frSlug, enSlug] of PILLAR_GUIDES) {
+    addUrl(`${BASE}/fr/guide/${frSlug}`, "weekly", "0.9");
+    addUrl(`${BASE}/en/guide/${enSlug}`, "weekly", "0.9");
+  }
+
   // Featured comparisons
   const COMPARISONS = [
     "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
