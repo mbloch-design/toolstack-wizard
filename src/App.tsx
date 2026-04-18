@@ -34,6 +34,7 @@ const ComparePage = lazy(() => import("@/pages/ComparePage"));
 const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
+const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
@@ -103,6 +104,17 @@ const App = () => (
               <Route path="category" element={<CategoriesIndexPage />} />
               <Route path="category/:slug" element={<CategoryPage />} />
               <Route path="guides" element={<GuidesPage />} />
+              {/* Persona pillar pages — declared BEFORE guide/:slug to take precedence */}
+              <Route path="guide/meilleurs-outils-developpeur-freelance" element={<PersonaPillarPage persona="THEO" lang="fr" />} />
+              <Route path="guide/best-tools-freelance-developer" element={<PersonaPillarPage persona="THEO" lang="en" />} />
+              <Route path="guide/meilleurs-outils-designer-freelance" element={<PersonaPillarPage persona="SOFIA" lang="fr" />} />
+              <Route path="guide/best-tools-freelance-designer" element={<PersonaPillarPage persona="SOFIA" lang="en" />} />
+              <Route path="guide/meilleurs-outils-consultant-freelance" element={<PersonaPillarPage persona="MARC" lang="fr" />} />
+              <Route path="guide/best-tools-freelance-consultant" element={<PersonaPillarPage persona="MARC" lang="en" />} />
+              <Route path="guide/meilleurs-outils-createur-contenu-freelance" element={<PersonaPillarPage persona="ALIX" lang="fr" />} />
+              <Route path="guide/best-tools-freelance-content-creator" element={<PersonaPillarPage persona="ALIX" lang="en" />} />
+              <Route path="guide/meilleurs-outils-ops-manager-freelance" element={<PersonaPillarPage persona="CLAIRE" lang="fr" />} />
+              <Route path="guide/best-tools-freelance-ops-manager" element={<PersonaPillarPage persona="CLAIRE" lang="en" />} />
               <Route path="guide/:slug" element={<GuideDetailPage />} />
               <Route path="article/:slug" element={<RedirectArticleToGuide />} />
               <Route path="comparatifs" element={<ComparesIndexPage />} />
