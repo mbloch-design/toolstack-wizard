@@ -33,6 +33,7 @@ const TermsPage = lazy(() => import("@/pages/TermsPage"));
 const ComparePage = lazy(() => import("@/pages/ComparePage"));
 const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
+const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
@@ -114,6 +115,9 @@ const App = () => (
               <Route path="legal-notice" element={<LegalNoticePage />} />
               <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="terms" element={<TermsPage />} />
+              {/* SEO landing — localized slugs (FR + EN) under same LangLayout */}
+              <Route path="audit-saas-gratuit" element={<AuditLanding />} />
+              <Route path="free-saas-audit" element={<AuditLanding />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

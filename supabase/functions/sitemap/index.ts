@@ -50,6 +50,10 @@ Deno.serve(async () => {
     addUrl(`${BASE}/${lang}/comparatifs`, "weekly", "0.8");
   }
 
+  // SEO landing pages (localized slugs)
+  addUrl(`${BASE}/fr/audit-saas-gratuit`, "weekly", "0.9");
+  addUrl(`${BASE}/en/free-saas-audit`, "weekly", "0.9");
+
   // Featured comparisons
   const COMPARISONS = [
     "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
