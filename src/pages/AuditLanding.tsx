@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setHreflang, SEO_BASE } from "@/lib/seo";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const content = {
@@ -90,6 +90,20 @@ export default function AuditLanding() {
       url: `${SEO_BASE}${c.canonicalPath}`,
       locale: lang === "fr" ? "fr_FR" : "en_US",
     });
+    // Override hreflang because FR/EN slugs differ (audit-saas-gratuit vs free-saas-audit)
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+    const links: [string, string][] = [
+      ["fr", `${SEO_BASE}/fr/audit-saas-gratuit`],
+      ["en", `${SEO_BASE}/en/free-saas-audit`],
+      ["x-default", `${SEO_BASE}/fr/audit-saas-gratuit`],
+    ];
+    for (const [hl, href] of links) {
+      const link = document.createElement("link");
+      link.rel = "alternate";
+      link.hreflang = hl;
+      link.href = href;
+      document.head.appendChild(link);
+    }
   }, [lang, c]);
 
   return (
