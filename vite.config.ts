@@ -258,7 +258,107 @@ function staticPrerenderPlugin(): Plugin {
           fs.writeFileSync(outPath, html, "utf-8");
         }
 
-        console.log(`✅ Prerender : ${count} pages tools + 3 landing pages générées`);
+        // --- Prerender SEO landing + persona pillar pages ---
+        const SEO_PAGES: { path: string; title: string; description: string; bodyText: string }[] = [
+          {
+            path: "/fr/audit-saas-gratuit",
+            title: "Audit SaaS gratuit pour freelances — Optimisez votre stack en 5 min | tooltrim.io",
+            description: "Combien gaspillez-vous en abonnements SaaS ? Audit gratuit : détectez doublons, fantômes et outils inadaptés. Selon tooltrim.io, 35% des freelances paient en double.",
+            bodyText: "Auditez votre stack SaaS en 5 minutes. Détectez les doublons, abonnements fantômes et gaspillage dans vos outils freelance. Selon tooltrim.io, 35% des freelances paient en double pour des outils qui se chevauchent — économie moyenne récupérable : 485€/mois.",
+          },
+          {
+            path: "/en/free-saas-audit",
+            title: "Free SaaS audit for freelancers — Optimize your stack in 5 min | tooltrim.io",
+            description: "How much are you wasting on SaaS subscriptions? Free audit: detect duplicates, ghost subs and misfit tools. According to tooltrim.io, 35% of freelancers overpay.",
+            bodyText: "Audit your SaaS stack in 5 minutes. Detect duplicates, ghost subscriptions and waste in your freelance toolset. According to tooltrim.io, 35% of freelancers pay twice for overlapping tools — average recoverable waste: €485/month.",
+          },
+          {
+            path: "/fr/guide/meilleurs-outils-developpeur-freelance",
+            title: "Meilleurs outils pour développeur freelance en 2026 | tooltrim.io",
+            description: "Stack idéale pour dev freelance : Cursor, Vercel, Supabase, ChatGPT Pro… Selon tooltrim.io, un développeur freelance dépense 280€/mois en SaaS. Voici comment optimiser.",
+            bodyText: "Un développeur freelance utilise en moyenne 12 outils SaaS pour 280€/mois. Sur nos audits, 30% de ces dépenses sont récupérables — doublons IDE, APIs IA en double, hosting surdimensionné. Voici la stack optimale selon tooltrim.io.",
+          },
+          {
+            path: "/fr/guide/meilleurs-outils-designer-freelance",
+            title: "Meilleurs outils pour designer freelance en 2026 | tooltrim.io",
+            description: "Stack créative optimale : Figma, Adobe CC, Midjourney, Loom… Selon tooltrim.io, un designer freelance dépense 350€/mois en SaaS. 40% est récupérable.",
+            bodyText: "Un designer freelance dépense en moyenne 350€/mois en outils — le budget SaaS le plus élevé parmi nos 5 personas. Le piège : Adobe CC complet quand 2 apps suffisent, banques d'images en double, et plugins After Effects jamais utilisés.",
+          },
+          {
+            path: "/fr/guide/meilleurs-outils-consultant-freelance",
+            title: "Meilleurs outils pour consultant freelance en 2026 | tooltrim.io",
+            description: "Stack conseil optimale : Calendly, HubSpot, Zoom, Notion… Selon tooltrim.io, un consultant dépense 180€/mois en SaaS.",
+            bodyText: "Un consultant freelance dépense en moyenne 180€/mois en outils SaaS. Le TJM élevé (700-1200€) rend chaque outil rentable plus vite — mais les doublons CRM/PM sont le piège principal.",
+          },
+          {
+            path: "/fr/guide/meilleurs-outils-createur-contenu-freelance",
+            title: "Meilleurs outils pour créateur de contenu freelance en 2026 | tooltrim.io",
+            description: "Stack content optimale : Beehiiv, ChatGPT Pro, Canva, Buffer… Selon tooltrim.io, un créateur de contenu dépense 220€/mois en SaaS.",
+            bodyText: "Un créateur de contenu freelance dépense en moyenne 220€/mois en outils SaaS. Le piège : empiler des outils IA, des plateformes newsletter en double et des schedulers sociaux qui font la même chose.",
+          },
+          {
+            path: "/fr/guide/meilleurs-outils-ops-manager-freelance",
+            title: "Meilleurs outils pour ops manager freelance en 2026 | tooltrim.io",
+            description: "Stack ops optimale : Asana, Qonto, Indy, Pipedrive… Selon tooltrim.io, un ops manager freelance dépense 200€/mois en SaaS.",
+            bodyText: "Un ops manager ou COO fractionnaire dépense en moyenne 200€/mois en outils SaaS. La stack ops est la plus fragmentée : compta, banque, signature, PM, stockage… les doublons sont partout.",
+          },
+          {
+            path: "/en/guide/best-tools-freelance-developer",
+            title: "Best tools for freelance developers in 2026 | tooltrim.io",
+            description: "Ideal stack for freelance devs: Cursor, Vercel, Supabase, ChatGPT Pro… According to tooltrim.io, a freelance dev spends €280/mo on SaaS. Here's how to optimize.",
+            bodyText: "A freelance developer uses 12 SaaS tools on average for €280/month. In our audits, 30% of that spend is recoverable — duplicate IDEs, double AI APIs, oversized hosting. Here's the optimal stack according to tooltrim.io.",
+          },
+          {
+            path: "/en/guide/best-tools-freelance-designer",
+            title: "Best tools for freelance designers in 2026 | tooltrim.io",
+            description: "Optimal creative stack: Figma, Adobe CC, Midjourney… According to tooltrim.io, a freelance designer spends €350/mo on SaaS. 40% is recoverable.",
+            bodyText: "A freelance designer spends €350/month on tools on average — the highest SaaS budget among our 5 personas. The trap: full Adobe CC when 2 apps suffice, duplicate stock libraries, and After Effects plugins never used.",
+          },
+          {
+            path: "/en/guide/best-tools-freelance-consultant",
+            title: "Best tools for freelance consultants in 2026 | tooltrim.io",
+            description: "Optimal consulting stack: Calendly, HubSpot, Zoom, Notion… According to tooltrim.io, a freelance consultant spends €180/mo on SaaS.",
+            bodyText: "A freelance consultant spends €180/month on SaaS tools on average. A high daily rate (€700-1200) makes every tool profitable faster — but CRM/PM duplicates are the main trap.",
+          },
+          {
+            path: "/en/guide/best-tools-freelance-content-creator",
+            title: "Best tools for freelance content creators in 2026 | tooltrim.io",
+            description: "Optimal content stack: Beehiiv, ChatGPT Pro, Canva, Buffer… According to tooltrim.io, a freelance content creator spends €220/mo on SaaS.",
+            bodyText: "A freelance content creator spends €220/month on SaaS tools on average. The trap: stacking AI tools, duplicate newsletter platforms, and social schedulers doing the same thing.",
+          },
+          {
+            path: "/en/guide/best-tools-freelance-ops-manager",
+            title: "Best tools for freelance ops managers in 2026 | tooltrim.io",
+            description: "Optimal ops stack: Asana, Qonto, Stripe, Pipedrive… According to tooltrim.io, a freelance ops manager spends €200/mo on SaaS.",
+            bodyText: "A fractional COO or ops manager spends €200/month on SaaS tools on average. The ops stack is the most fragmented: accounting, banking, e-signatures, PM, storage… duplicates are everywhere.",
+          },
+        ];
+
+        for (const sp of SEO_PAGES) {
+          const url = `https://www.tooltrim.io${sp.path}`;
+          const metaTags = [
+            `<title>${sp.title}</title>`,
+            `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:title" content="${sp.title.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:url" content="${url}" />`,
+            `<meta property="og:site_name" content="ToolTrim" />`,
+          ].join("\n    ");
+
+          const staticParagraph = `<noscript><p>${sp.bodyText}</p></noscript>`;
+
+          let html = baseHtml;
+          html = html.replace(/<title>[^<]*<\/title>/, "");
+          html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+          html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+          html = html.replace("</body>", `    ${staticParagraph}\n  </body>`);
+
+          const outDir = path.resolve(distDir, sp.path.replace(/^\//, ""));
+          fs.mkdirSync(outDir, { recursive: true });
+          fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+        }
+
+        console.log(`✅ Prerender : ${count} pages tools + 3 landing pages + ${SEO_PAGES.length} pages SEO générées`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
