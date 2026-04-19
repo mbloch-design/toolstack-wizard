@@ -249,6 +249,11 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
   return (
     <>
       <Helmet>
+        {/* Override canonical + hreflang (slugs differ between FR/EN) */}
+        <link rel="canonical" href={canonicalHref} />
+        <link rel="alternate" hrefLang="fr" href={frHref} />
+        <link rel="alternate" hrefLang="en" href={enHref} />
+        <link rel="alternate" hrefLang="x-default" href={frHref} />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>
