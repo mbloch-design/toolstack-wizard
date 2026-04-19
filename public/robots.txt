@@ -1,18 +1,16 @@
-User-agent: Googlebot
-Allow: /
+# tooltrim.io — robots.txt
 
-User-agent: Bingbot
+User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /fr/selector
+Disallow: /en/selector
+Disallow: /fr/diagnostic
+Disallow: /en/diagnostic
 
-User-agent: Twitterbot
-Allow: /
+Sitemap: https://www.tooltrim.io/sitemap.xml
 
-User-agent: facebookexternalhit
-Allow: /
-
-# LLM crawlers — explicitly allowed
-User-agent: PerplexityBot
-Allow: /
+# LLM Crawlers — autorisés (stratégie GEO)
 
 User-agent: GPTBot
 Allow: /
@@ -20,24 +18,13 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
+# Empêcher le crawl des assets
 
 User-agent: *
-Allow: /
-
-# Block UTM parameters from indexation
-Disallow: /*?utm_source=
-Disallow: /*?utm_medium=
-Disallow: /*?utm_campaign=
-
-# Block dynamic results pages
-Disallow: /*/selector/results
-
-Sitemap: https://www.tooltrim.io/sitemap.xml
+Disallow: /assets/
