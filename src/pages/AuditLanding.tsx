@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setHreflang, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, SEO_BASE } from "@/lib/seo";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const content = {
@@ -90,24 +91,18 @@ export default function AuditLanding() {
       url: `${SEO_BASE}${c.canonicalPath}`,
       locale: lang === "fr" ? "fr_FR" : "en_US",
     });
-    // Override hreflang because FR/EN slugs differ (audit-saas-gratuit vs free-saas-audit)
-    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
-    const links: [string, string][] = [
-      ["fr", `${SEO_BASE}/fr/audit-saas-gratuit`],
-      ["en", `${SEO_BASE}/en/free-saas-audit`],
-      ["x-default", `${SEO_BASE}/fr/audit-saas-gratuit`],
-    ];
-    for (const [hl, href] of links) {
-      const link = document.createElement("link");
-      link.rel = "alternate";
-      link.hreflang = hl;
-      link.href = href;
-      document.head.appendChild(link);
-    }
   }, [lang, c]);
 
   return (
     <div className="min-h-screen">
+      {/* Override canonical + hreflang via Helmet (slugs differ FR/EN, DynamicCanonical defaults are wrong here) */}
+      <Helmet>
+        <link rel="canonical" href={`${SEO_BASE}${c.canonicalPath}`} />
+        <link rel="alternate" hrefLang="fr" href={`${SEO_BASE}/fr/audit-saas-gratuit`} />
+        <link rel="alternate" hrefLang="en" href={`${SEO_BASE}/en/free-saas-audit`} />
+        <link rel="alternate" hrefLang="x-default" href={`${SEO_BASE}/fr/audit-saas-gratuit`} />
+      </Helmet>
+
       <div className="container mx-auto max-w-5xl px-6 pt-8">
         <Breadcrumb items={[{ label: c.breadcrumb }]} />
       </div>
