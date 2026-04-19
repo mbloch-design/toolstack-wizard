@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
 import { useTools } from "@/hooks/useSupabaseData";
-import { setSeoTags, setHreflang, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, SEO_BASE } from "@/lib/seo";
 import { ArrowRight, Sparkles, AlertTriangle } from "lucide-react";
 
 type Persona = "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE";
@@ -192,12 +192,9 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
   const m = META[persona][lang];
   const { tools, loading } = useTools();
 
-  // SEO: title/description + hreflang with cross-language slugs (slugs differ FR/EN)
+  // SEO: title/description (canonical + hreflang are overridden via <Helmet> below)
   useEffect(() => {
-    const otherLang: Lang = lang === "fr" ? "en" : "fr";
-    const otherSlug = META[persona][otherLang].slug;
     const canonicalUrl = `${SEO_BASE}/${lang}/guide/${m.slug}`;
-
     setSeoTags({
       title: m.title,
       description: m.description,
@@ -205,22 +202,11 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
       type: "article",
       locale: lang === "fr" ? "fr_FR" : "en_US",
     });
-
-    // Override hreflang because slugs differ between FR/EN
-    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
-    const links: [string, string][] = [
-      ["fr", `${SEO_BASE}/fr/guide/${META[persona].fr.slug}`],
-      ["en", `${SEO_BASE}/en/guide/${META[persona].en.slug}`],
-      ["x-default", `${SEO_BASE}/fr/guide/${META[persona].fr.slug}`],
-    ];
-    for (const [hl, href] of links) {
-      const link = document.createElement("link");
-      link.rel = "alternate";
-      link.hreflang = hl;
-      link.href = href;
-      document.head.appendChild(link);
-    }
   }, [persona, lang, m]);
+
+  const frHref = `${SEO_BASE}/fr/guide/${META[persona].fr.slug}`;
+  const enHref = `${SEO_BASE}/en/guide/${META[persona].en.slug}`;
+  const canonicalHref = `${SEO_BASE}/${lang}/guide/${m.slug}`;
 
   // Filter tools by persona pertinence (>= 60), fallback to first 12 by name.
   const recommendedTools = useMemo(() => {
