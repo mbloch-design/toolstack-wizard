@@ -4,10 +4,30 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
-const BASE = "https://tooltrim.io";
+const BASE = "https://www.tooltrim.io";
 const LANGS = ["fr", "en"];
-const STATIC_PAGES = ["", "tools", "category", "guides", "selector", "about", "methodology", "transparency", "contact"];
-const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"]; // methodology redirected from old URL
+// /selector excluded from sitemap (noindex tunnel)
+const STATIC_PAGES = ["", "tools", "category", "guides", "about", "methodology", "transparency", "contact"];
+const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
+
+// SEO landing + persona pillar pages (localized slugs)
+const SEO_LANDING_PAGES: { path: string; priority: string }[] = [
+  { path: "/fr/audit-saas-gratuit", priority: "0.9" },
+  { path: "/en/free-saas-audit", priority: "0.9" },
+];
+
+const PERSONA_PILLARS: { path: string; priority: string }[] = [
+  { path: "/fr/guide/meilleurs-outils-developpeur-freelance", priority: "0.8" },
+  { path: "/fr/guide/meilleurs-outils-designer-freelance", priority: "0.8" },
+  { path: "/fr/guide/meilleurs-outils-consultant-freelance", priority: "0.8" },
+  { path: "/fr/guide/meilleurs-outils-createur-contenu-freelance", priority: "0.8" },
+  { path: "/fr/guide/meilleurs-outils-ops-manager-freelance", priority: "0.8" },
+  { path: "/en/guide/best-tools-freelance-developer", priority: "0.8" },
+  { path: "/en/guide/best-tools-freelance-designer", priority: "0.8" },
+  { path: "/en/guide/best-tools-freelance-consultant", priority: "0.8" },
+  { path: "/en/guide/best-tools-freelance-content-creator", priority: "0.8" },
+  { path: "/en/guide/best-tools-freelance-ops-manager", priority: "0.8" },
+];
 
 function sitemapPlugin(): Plugin {
   return {
@@ -78,6 +98,16 @@ function sitemapPlugin(): Plugin {
           for (const lang of LANGS) {
             add(`${BASE}/${lang}/comparatif/${comp}`, "monthly", "0.7");
           }
+        }
+
+        // SEO landing pages (audit)
+        for (const lp of SEO_LANDING_PAGES) {
+          add(`${BASE}${lp.path}`, "monthly", lp.priority);
+        }
+
+        // Persona pillar pages
+        for (const pp of PERSONA_PILLARS) {
+          add(`${BASE}${pp.path}`, "monthly", pp.priority);
         }
 
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
