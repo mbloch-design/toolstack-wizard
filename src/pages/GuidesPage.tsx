@@ -6,6 +6,7 @@ import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
 import { setHreflang } from "@/lib/seo";
+import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import type { Tool } from "@/data/types";
 
 const GuidesPage = () => {
@@ -90,6 +91,9 @@ const GuidesPage = () => {
           )}
         </div>
       </section>
+
+      {/* Persona pillar guides */}
+      <PersonaGuidesSection lang={lang} />
 
       {/* Content */}
       <section className="container mx-auto max-w-6xl px-4 py-12">

@@ -11,6 +11,7 @@ import { ToolLogoStrip } from "@/components/ToolMentionedCard";
 import type { Tool } from "@/data/types";
 
 import HeroSection from "@/components/home/HeroSection";
+import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
 import ScannerDemo from "@/components/home/ScannerDemo";
@@ -223,6 +224,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* 12bis. Persona guides (SEO pillar links) */}
+      <PersonaGuidesSection lang={lang} />
 
       {/* 13. Final CTA */}
       <FinalCTA />
