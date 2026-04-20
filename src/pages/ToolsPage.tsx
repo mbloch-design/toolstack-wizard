@@ -33,7 +33,7 @@ const ToolsPage = () => {
     const desc = lang === "fr"
       ? `Comparez ${tools.length}+ outils SaaS classés par catégorie. Prix, avantages, alternatives — tout pour optimiser votre stack.`
       : `Compare ${tools.length}+ SaaS tools by category. Pricing, pros, alternatives — everything to optimize your stack.`;
-    const url = `https://www.tooltrim.io/${lang}/tools`;
+    const url = `https://tooltrim.io/${lang}/tools`;
 
     setSeoTags({ title, description: desc, url });
     setHreflang(`/${lang}/tools`);
@@ -51,7 +51,7 @@ const ToolsPage = () => {
           "@type": "ListItem",
           position: i + 1,
           name: tool.name,
-          url: `https://www.tooltrim.io/${lang}/tool/${tool.slug || tool.id}`,
+          url: `https://tooltrim.io/${lang}/tool/${tool.slug || tool.id}`,
         })),
       },
     });
