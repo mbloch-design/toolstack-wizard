@@ -7,6 +7,9 @@ Disallow: /fr/selector
 Disallow: /en/selector
 Disallow: /fr/diagnostic
 Disallow: /en/diagnostic
+Disallow: /*?utm_source=
+Disallow: /*?utm_medium=
+Disallow: /*?utm_campaign=
 
 Sitemap: https://tooltrim.io/sitemap.xml
 
