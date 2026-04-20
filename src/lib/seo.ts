@@ -3,7 +3,7 @@
  */
 
 export const SEO_BASE = "https://www.tooltrim.io";
-export const OG_IMAGE = "https://www.tooltrim.io/og-image.svg";
+export const OG_IMAGE = "https://www.tooltrim.io/og-image.png";
 
 export function setMeta(nameOrProp: string, content: string) {
   const isOg = nameOrProp.startsWith("og:") || nameOrProp.startsWith("article:");
