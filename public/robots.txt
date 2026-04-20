@@ -8,7 +8,7 @@ Disallow: /en/selector
 Disallow: /fr/diagnostic
 Disallow: /en/diagnostic
 
-Sitemap: https://www.tooltrim.io/sitemap.xml
+Sitemap: https://tooltrim.io/sitemap.xml
 
 # LLM Crawlers — autorisés (stratégie GEO)
 
