@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
-const BASE = "https://www.tooltrim.io";
+const BASE = "https://tooltrim.io";
 const LANGS = ["fr", "en"];
 // /selector excluded from sitemap (noindex tunnel)
 const STATIC_PAGES = ["", "tools", "category", "guides", "about", "methodology", "transparency", "contact"];
@@ -158,7 +158,7 @@ function staticPrerenderPlugin(): Plugin {
               ? `${name} — Avis, prix et alternatives | ToolTrim`
               : `${name} — Review, pricing and alternatives | ToolTrim`;
             const description = isFr ? descFr : descEn;
-            const url = `https://www.tooltrim.io/${lang}/tool/${slug}`;
+            const url = `https://tooltrim.io/${lang}/tool/${slug}`;
 
             // Canonical + hreflang are injected at runtime by react-helmet-async (DynamicCanonical).
             // Do NOT hardcode them here to avoid duplicate canonicals in the rendered HTML.
@@ -208,7 +208,7 @@ function staticPrerenderPlugin(): Plugin {
           {
             file: "index.html",
             lang: "fr",
-            canonical: "https://www.tooltrim.io/fr",
+            canonical: "https://tooltrim.io/fr",
             title: "ToolTrim — Optimisez votre stack SaaS | Avis, prix et alternatives",
             description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
             bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
@@ -216,7 +216,7 @@ function staticPrerenderPlugin(): Plugin {
           {
             file: "fr/index.html",
             lang: "fr",
-            canonical: "https://www.tooltrim.io/fr",
+            canonical: "https://tooltrim.io/fr",
             title: "ToolTrim — Optimisez votre stack SaaS | Avis, prix et alternatives",
             description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
             bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
@@ -224,7 +224,7 @@ function staticPrerenderPlugin(): Plugin {
           {
             file: "en/index.html",
             lang: "en",
-            canonical: "https://www.tooltrim.io/en",
+            canonical: "https://tooltrim.io/en",
             title: "ToolTrim — Optimize your SaaS stack | Reviews, pricing & alternatives",
             description: "ToolTrim analyzes your SaaS tools and helps you cut costs. Compare pricing, find free alternatives and optimize your stack in just a few clicks.",
             bodyText: "ToolTrim is the independent SaaS tool comparison platform for freelancers, startups and tech teams. Audit your current stack, spot unnecessary subscriptions and discover cheaper alternatives. Every tool is manually tested for 2 to 4 weeks. Our recommendations are unbiased, verified and designed to save you time and money.",
@@ -233,7 +233,7 @@ function staticPrerenderPlugin(): Plugin {
 
         for (const lp of landings) {
           const altLang = lp.lang === "fr" ? "en" : "fr";
-          const altCanonical = lp.lang === "fr" ? "https://www.tooltrim.io/en" : "https://www.tooltrim.io/fr";
+          const altCanonical = lp.lang === "fr" ? "https://tooltrim.io/en" : "https://tooltrim.io/fr";
 
           const metaTags = [
             `<title>${lp.title}</title>`,
@@ -335,7 +335,7 @@ function staticPrerenderPlugin(): Plugin {
         ];
 
         for (const sp of SEO_PAGES) {
-          const url = `https://www.tooltrim.io${sp.path}`;
+          const url = `https://tooltrim.io${sp.path}`;
           const metaTags = [
             `<title>${sp.title}</title>`,
             `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,

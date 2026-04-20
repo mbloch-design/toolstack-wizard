@@ -9,7 +9,7 @@ const TermsPage = () => {
     setSeoTags({
       title: t("Conditions générales — ToolTrim", "Terms of Service — ToolTrim"),
       description: t("Conditions générales d'utilisation du site ToolTrim.io", "Terms of service for ToolTrim.io"),
-      url: `https://www.tooltrim.io/${lang}/terms`,
+      url: `https://tooltrim.io/${lang}/terms`,
     });
     setHreflang(`/${lang}/terms`);
     return () => cleanupSeo([]);
