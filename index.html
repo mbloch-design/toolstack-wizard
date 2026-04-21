@@ -27,6 +27,33 @@
     <meta name="twitter:site" content="@tooltrim" />
     <meta name="twitter:image" content="https://tooltrim.io/og-image.png" />
 
+    <!-- Static JSON-LD: Organization + WebSite (visible to crawlers without JS) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "ToolTrim",
+          "url": "https://tooltrim.io",
+          "logo": "https://tooltrim.io/og-image.png",
+          "description": "Independent SaaS stack auditor with human-verified pricing for 212 tools.",
+          "sameAs": ["https://twitter.com/tooltrim", "https://www.crunchbase.com/organization/tooltrim"]
+        },
+        {
+          "@type": "WebSite",
+          "name": "ToolTrim",
+          "url": "https://tooltrim.io",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://tooltrim.io/fr/tools?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/picto-logo.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/picto-logo.svg" />
     <link rel="apple-touch-icon" href="/picto-logo.svg" />
