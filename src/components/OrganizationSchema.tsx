@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { SEO_BASE } from "@/lib/seo";
 
 /**
- * Injects an Organization JSON-LD via react-helmet-async.
+ * Injects an Organization + WebSite JSON-LD via react-helmet-async.
  *
  * ⚠️ HomePage already injects an Organization schema imperatively via setJsonLd().
  * Do NOT mount this on HomePage to avoid duplicates. Use it on secondary pages
@@ -11,19 +11,29 @@ import { SEO_BASE } from "@/lib/seo";
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "ToolTrim",
-    url: SEO_BASE,
-    logo: `${SEO_BASE}/picto-logo.svg`,
-    description:
-      "SaaS stack audit tool for freelancers. Detect duplicates, ghost subscriptions and optimize your tool costs.",
-    sameAs: [],
-    foundingDate: "2026",
-    knowsAbout: [
-      "SaaS",
-      "freelance tools",
-      "software audit",
-      "subscription management",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "ToolTrim",
+        url: SEO_BASE,
+        logo: `${SEO_BASE}/og-image.png`,
+        description:
+          "Independent SaaS stack auditor with human-verified pricing for 212 tools.",
+        sameAs: [
+          "https://twitter.com/tooltrim",
+          "https://www.crunchbase.com/organization/tooltrim",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        name: "ToolTrim",
+        url: SEO_BASE,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${SEO_BASE}/fr/tools?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
     ],
   };
 
