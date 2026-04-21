@@ -28,11 +28,11 @@ const ToolsPage = () => {
   // SEO
   useEffect(() => {
     const title = lang === "fr"
-      ? `Catalogue de ${tools.length}+ outils SaaS — ToolTrim`
-      : `${tools.length}+ SaaS Tool Catalog — ToolTrim`;
+      ? `Comparateur SaaS — ${tools.length} outils avec prix réels et alternatives | ToolTrim`
+      : `SaaS Comparison — ${tools.length} tools with real pricing & alternatives | ToolTrim`;
     const desc = lang === "fr"
-      ? `Comparez ${tools.length}+ outils SaaS classés par catégorie. Prix, avantages, alternatives — tout pour optimiser votre stack.`
-      : `Compare ${tools.length}+ SaaS tools by category. Pricing, pros, alternatives — everything to optimize your stack.`;
+      ? `Abonnements trop chers, outils en doublon, alternatives gratuites ignorées — on a tout vérifié pour toi. ${tools.length} outils SaaS analysés indépendamment, sans affiliation.`
+      : `Overpriced subscriptions, duplicate tools, free alternatives you're missing — we checked everything. ${tools.length} SaaS tools reviewed independently, no affiliate bias.`;
     const url = `https://tooltrim.io/${lang}/tools`;
 
     setSeoTags({ title, description: desc, url });
@@ -128,7 +128,10 @@ const ToolsPage = () => {
           </div>
 
           <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl lg:text-5xl">
-            {t("Le catalogue SaaS le plus complet", "The most comprehensive SaaS catalog")}
+            {t(
+              `${stats.total} outils SaaS passés au crible — prix vérifiés, sans bullshit`,
+              `${stats.total} SaaS tools reviewed — real pricing, no fluff`
+            )}
           </h1>
           <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             {t(

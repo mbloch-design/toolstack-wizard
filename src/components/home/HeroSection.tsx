@@ -29,11 +29,11 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         </div>
 
         <h1 className="max-w-3xl text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1] tracking-[-3px]">
-          {lang === "fr" ? "Votre stack SaaS" : "Your SaaS stack"}
+          {lang === "fr" ? "Ton stack SaaS te" : "Your SaaS stack"}{" "}
+          <span className="text-muted-foreground/25">{lang === "fr" ? "coûte trop cher." : "costs too much."}</span>
           <br />
-          <span className="text-muted-foreground/25">{lang === "fr" ? "vous coûte" : "costs you"}</span>{" "}
           <span className="relative inline-block text-primary">
-            {lang === "fr" ? "trop cher." : "too much."}
+            {lang === "fr" ? "On t'aide à couper le gras." : "We help you cut the fat."}
             <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-primary to-transparent" />
           </span>
         </h1>
