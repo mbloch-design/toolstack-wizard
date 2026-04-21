@@ -3,6 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const BASE = "https://tooltrim.io";
 const LANGS = ["fr", "en"];
 const STATIC_PAGES = ["", "tools", "category", "guides", "selector", "about", "transparency", "contact"];
+const TODAYS_DATE = "2026-04-20";
 
 Deno.serve(async () => {
   const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
@@ -19,7 +20,7 @@ Deno.serve(async () => {
   const urls: string[] = [];
 
   const addUrl = (loc: string, changefreq: string, priority: string) => {
-    urls.push(`  <url>\n    <loc>${loc}</loc>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`);
+    urls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${TODAYS_DATE}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`);
   };
 
   // Static pages
