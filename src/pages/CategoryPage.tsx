@@ -30,12 +30,13 @@ const CategoryPage = () => {
   useEffect(() => {
     if (!category) return;
     const catName = category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
+    const catNameEn = category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName;
     const title = lang === "fr"
-      ? `${catName} — ${allCatTools.length} outils comparés | ToolTrim`
-      : `${category.nameEn || catName} — ${allCatTools.length} tools compared | ToolTrim`;
+      ? `Meilleurs outils ${catName} SaaS — comparatif prix et alternatives | ToolTrim`
+      : `Best ${catNameEn} SaaS tools — pricing comparison & alternatives | ToolTrim`;
     const desc = lang === "fr"
-      ? `Comparez ${allCatTools.length} outils ${catName.toLowerCase()} : prix, avantages, alternatives. Trouvez le meilleur pour votre activité.`
-      : `Compare ${allCatTools.length} ${(category.nameEn || catName).toLowerCase()} tools: pricing, pros, alternatives. Find the best for your business.`;
+      ? `On a comparé les prix réels et les alternatives de tous les outils ${catName}. Sans pub, sans affiliation. Que du concret.`
+      : `We compared real pricing and alternatives for every ${catNameEn} tool. No ads, no affiliation. Just facts.`;
     const url = `${SEO_BASE}/${lang}/category/${category.slug}`;
 
     // Noindex empty categories
@@ -132,7 +133,10 @@ const CategoryPage = () => {
             </div>
             <div>
               <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">
-                {t(catName, category.nameEn || catName)}
+                {t(
+                  `Outils ${catName} — lesquels valent vraiment le coup en ${new Date().getFullYear()} ?`,
+                  `${category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName} tools — which ones are actually worth it in ${new Date().getFullYear()} ?`
+                )}
               </h1>
               {category.description && (
                 <p className="mt-2 max-w-2xl text-lg leading-relaxed text-muted-foreground">
