@@ -133,7 +133,21 @@ const ToolDetailPage = () => {
             <div className="flex items-start gap-4">
               <ToolLogo tool={tool} size={56} className="ring-2 ring-border rounded-xl" />
               <div>
-                <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">{tool.name}</h1>
+                <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">
+                  {(() => {
+                    const isFreemium = displayPrice === 0 && tool.pricing?.paid;
+                    const isFree = displayPrice === 0 && !tool.pricing?.paid;
+                    const hasPrice = displayPrice != null && displayPrice > 0;
+                    if (lang === "fr") {
+                      if (hasPrice) return `${tool.name} — vaut-il vraiment ${displayPrice}€/mois ? Notre avis honnête`;
+                      if (isFree || isFreemium) return `${tool.name} — le plan gratuit suffit-il vraiment ?`;
+                      return `${tool.name} — payant ou pas, voici ce qu'on en pense`;
+                    }
+                    if (hasPrice) return `${tool.name} — is it really worth €${displayPrice}/mo? Our honest review`;
+                    if (isFree || isFreemium) return `${tool.name} — is the free plan really enough?`;
+                    return `${tool.name} — paid or not, here's what we think`;
+                  })()}
+                </h1>
                 {category && (
                   <Link to={`${prefix}/category/${category.slug}`} className="mt-1 inline-flex items-center gap-1.5 text-sm text-primary hover:underline">
                     {CategoryIcon && <CategoryIcon className="h-3.5 w-3.5" />}
