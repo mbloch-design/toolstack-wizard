@@ -31,12 +31,18 @@ const ToolDetailPage = () => {
     if (!tool) return;
     const v5Price = tool.pricing_v5?.compare_price_monthly_eur;
     const price = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
+    const hasPrice = price != null && price > 0;
+    const year = new Date().getFullYear();
     const seoTitle = lang === "fr"
-      ? `${tool.name} — Avis, prix vérifié et alternatives ${new Date().getFullYear()} | ToolTrim`
-      : `${tool.name} — Review, Verified Pricing & Alternatives ${new Date().getFullYear()} | ToolTrim`;
+      ? `${tool.name} — Prix, avis et alternatives ${year} | ToolTrim`
+      : `${tool.name} — Pricing, review & alternatives ${year} | ToolTrim`;
     const seoDesc = lang === "fr"
-      ? `${tool.name} coûte ${price}€/mois. Faut-il le garder ? Verdict indépendant, alternatives gratuites et guide de migration.`
-      : `${tool.name} costs €${price}/month. Should you keep it? Independent verdict, free alternatives and migration guide.`;
+      ? (hasPrice
+          ? `${tool.name} coûte ${price}€/mois. On l'a testé : voici si ça vaut le coup, et les meilleures alternatives moins chères.`
+          : `On a analysé ${tool.name} de fond en comble : verdict, prix réel et alternatives testées.`)
+      : (hasPrice
+          ? `${tool.name} costs €${price}/mo. We tested it — here's our honest verdict and the best cheaper alternatives.`
+          : `We analyzed ${tool.name} thoroughly: verdict, real pricing and tested alternatives.`);
     const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
 
     const toolDomain = tool.websiteUrl || tool.affiliateLink;
