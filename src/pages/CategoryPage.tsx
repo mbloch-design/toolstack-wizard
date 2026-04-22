@@ -31,12 +31,13 @@ const CategoryPage = () => {
     if (!category) return;
     const catName = category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
     const catNameEn = category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName;
+    const year = new Date().getFullYear();
     const title = lang === "fr"
-      ? `Meilleurs outils ${catName} SaaS — comparatif prix et alternatives | ToolTrim`
-      : `Best ${catNameEn} SaaS tools — pricing comparison & alternatives | ToolTrim`;
+      ? `Outils ${catName} — comparatif prix et alternatives ${year} | ToolTrim`
+      : `${catNameEn} tools — pricing comparison & alternatives ${year} | ToolTrim`;
     const desc = lang === "fr"
-      ? `On a comparé les prix réels et les alternatives de tous les outils ${catName}. Sans pub, sans affiliation. Que du concret.`
-      : `We compared real pricing and alternatives for every ${catNameEn} tool. No ads, no affiliation. Just facts.`;
+      ? `On a analysé et classé les meilleurs outils ${catName} : prix vérifiés manuellement, alternatives gratuites identifiées, sans affiliation. Que du concret.`
+      : `We ranked the best ${catNameEn} tools with manually verified pricing, free alternatives, and zero affiliate bias. Just facts.`;
     const url = `${SEO_BASE}/${lang}/category/${category.slug}`;
 
     // Noindex empty categories
@@ -134,8 +135,8 @@ const CategoryPage = () => {
             <div>
               <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">
                 {t(
-                  `Outils ${catName} — lesquels valent vraiment le coup en ${new Date().getFullYear()} ?`,
-                  `${category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName} tools — which ones are actually worth it in ${new Date().getFullYear()} ?`
+                  `Meilleurs outils ${catName} en ${new Date().getFullYear()} — prix réels et alternatives testées`,
+                  `Best ${category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName} tools in ${new Date().getFullYear()} — real pricing & tested alternatives`
                 )}
               </h1>
               {category.description && (
