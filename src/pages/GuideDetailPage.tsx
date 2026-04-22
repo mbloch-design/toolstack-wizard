@@ -35,8 +35,12 @@ const GuideDetailPage = () => {
   // SEO
   useEffect(() => {
     if (!post) return;
-    const seoTitle = post.seo?.metaTitle || `${post.title} — ToolTrim`;
-    const seoDesc = post.seo?.metaDescription || post.excerpt;
+    const fallbackDesc = lang === "fr"
+      ? `Guide ToolTrim — ${post.title}. Prix vérifiés, outils testés, sans affiliation.`
+      : `ToolTrim guide — ${post.title}. Verified pricing, tested tools, no affiliate bias.`;
+    const seoTitle = post.seo?.metaTitle || `${post.title} | ToolTrim`;
+    const rawDesc = post.seo?.metaDescription || post.excerpt || fallbackDesc;
+    const seoDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152).trimEnd() + "…" : rawDesc;
     const canonicalUrl = `https://tooltrim.io/${lang}/guide/${post.slug}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, type: "article" });
