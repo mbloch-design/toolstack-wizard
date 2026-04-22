@@ -73,11 +73,12 @@ const ComparePage = () => {
   useEffect(() => {
     if (!toolA || !toolB) return;
     const year = new Date().getFullYear();
-    const title = `${toolA.name} vs ${toolB.name} — ${t("lequel choisir en", "which to choose in")} ${year} ? | ToolTrim`;
-    const desc = t(
-      `Comparatif ${toolA.name} vs ${toolB.name} : prix vérifiés, fonctionnalités, verdict ToolTrim. Trouvez le meilleur outil pour votre usage.`,
-      `${toolA.name} vs ${toolB.name} comparison: verified pricing, features, ToolTrim verdict. Find the best tool for your use case.`
-    );
+    const title = lang === "fr"
+      ? `${toolA.name} vs ${toolB.name} ${year} — prix, avis et verdict | ToolTrim`
+      : `${toolA.name} vs ${toolB.name} ${year} — pricing, review & verdict | ToolTrim`;
+    const desc = lang === "fr"
+      ? `${toolA.name} ou ${toolB.name} ? On a testé les deux : prix réels, fonctionnalités clés, et notre verdict sans langue de bois. Décide en 5 minutes.`
+      : `${toolA.name} or ${toolB.name}? We tested both — real pricing, key features, and a straight verdict. Decide in 5 minutes.`;
     const url = `${SEO_BASE}/${lang}/comparatif/${slugPair}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/comparatif/${slugPair}`);
@@ -95,7 +96,7 @@ const ComparePage = () => {
     });
 
     return () => cleanupSeo(["compare-jsonld"]);
-  }, [toolA, toolB, lang, slugPair]);
+  }, [toolA, toolB, lang, slugPair, t]);
 
   if (loading) {
     return (
