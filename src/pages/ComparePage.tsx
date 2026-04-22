@@ -4,7 +4,7 @@ import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo } from "react";
 import { Check, X, ArrowRight, CheckCircle, XCircle } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import CompareHero from "@/components/compare/CompareHero";
+
 import CompareSidebar from "@/components/compare/CompareSidebar";
 import CompareStrengthBars from "@/components/compare/CompareStrengthBars";
 import CompareVerdictCards from "@/components/compare/CompareVerdictCards";
