@@ -135,8 +135,8 @@ const CategoryPage = () => {
             <div>
               <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">
                 {t(
-                  `Outils ${catName} — lesquels valent vraiment le coup en ${new Date().getFullYear()} ?`,
-                  `${category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName} tools — which ones are actually worth it in ${new Date().getFullYear()} ?`
+                  `Meilleurs outils ${catName} en ${new Date().getFullYear()} — prix réels et alternatives testées`,
+                  `Best ${category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName} tools in ${new Date().getFullYear()} — real pricing & tested alternatives`
                 )}
               </h1>
               {category.description && (
