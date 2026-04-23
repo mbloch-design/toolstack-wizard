@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, useRef } from "react";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
 import { Check, ChevronRight } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
-import { supabase } from "@/integrations/supabase/client";
+
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
