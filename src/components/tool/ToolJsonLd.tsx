@@ -72,7 +72,22 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       itemListElement: breadcrumbItems,
     });
 
-    // 3. SoftwareApplication + Offer
+    // 3. SoftwareApplication + Offer + AggregateRating + Review
+    // Derive ToolTrim score (out of 100) from pros/cons ratio, fallback 75/100
+    const prosCount = tool.pros?.length || 0;
+    const consCount = tool.cons?.length || 0;
+    const total = prosCount + consCount;
+    const scoreOn100 = total > 0
+      ? Math.round((prosCount / total) * 50 + 50) // 50-100 range based on pros ratio
+      : 75;
+    const ratingValue = (Math.round((scoreOn100 / 20) * 10) / 10).toFixed(1); // 0-5, 1 decimal
+    const reviewBody =
+      (lang === "en" ? tool.verdictEn?.threshold : tool.verdict?.threshold) ||
+      tool.verdict?.threshold ||
+      (lang === "en" && tool.longDescriptionEn ? tool.longDescriptionEn : tool.longDescription) ||
+      tool.shortDescription ||
+      `${tool.name} review by ToolTrim.`;
+
     setJsonLd("tool-software-jsonld", {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -92,14 +107,28 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
           },
         }),
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue,
+        bestRating: "5",
+        worstRating: "1",
+        ratingCount: "1",
+        reviewCount: "1",
+      },
       review: {
         "@type": "Review",
-        reviewBody: tool.verdict?.threshold || tool.pros?.slice(0, 3).join(". ") + "." || "",
         author: {
           "@type": "Organization",
           name: "ToolTrim",
           url: SEO_BASE,
         },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue,
+          bestRating: "5",
+          worstRating: "1",
+        },
+        reviewBody,
       },
     });
 
