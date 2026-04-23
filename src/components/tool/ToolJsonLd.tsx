@@ -73,14 +73,51 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
     });
 
     // 3. SoftwareApplication + Offer + AggregateRating + Review
-    // Derive ToolTrim score (out of 100) from pros/cons ratio, fallback 75/100
+    // ToolTrim score (0-100) — multi-signal weighted algorithm:
+    //   • Pros/Cons balance (40%) — quality from user-facing tradeoffs
+    //   • Verdict signal (30%)    — keepIf strength minus avoidIf penalty
+    //   • Alternatives (15%)      — fewer credible alternatives = stronger position
+    //   • Data completeness (15%) — how thoroughly the tool is documented
     const prosCount = tool.pros?.length || 0;
     const consCount = tool.cons?.length || 0;
-    const total = prosCount + consCount;
-    const scoreOn100 = total > 0
-      ? Math.round((prosCount / total) * 50 + 50) // 50-100 range based on pros ratio
-      : 75;
-    const ratingValue = (Math.round((scoreOn100 / 20) * 10) / 10).toFixed(1); // 0-5, 1 decimal
+    const totalPC = prosCount + consCount;
+
+    // 1. Pros/cons component → 40 to 100
+    const prosConsScore = totalPC > 0
+      ? (prosCount / totalPC) * 60 + 40
+      : 70;
+
+    // 2. Verdict component — reward "keepIf" reasons, penalize "avoidIf"
+    const keepCount = tool.verdict?.keepIf?.length || 0;
+    const avoidCount = tool.verdict?.avoidIf?.length || 0;
+    const hasThreshold = !!tool.verdict?.threshold;
+    let verdictScore = 70;
+    if (keepCount + avoidCount > 0) {
+      verdictScore = (keepCount / (keepCount + avoidCount)) * 50 + 50; // 50-100
+    }
+    if (hasThreshold) verdictScore = Math.min(100, verdictScore + 5);
+
+    // 3. Alternatives component — saturating: 0 alts = neutral, 1-3 strong, 4+ diluted
+    const altCount = tool.alternatives?.length || 0;
+    const altsScore = altCount === 0 ? 75
+      : altCount <= 3 ? 85
+      : altCount <= 6 ? 70
+      : 60;
+
+    // 4. Data completeness — count of non-empty key fields
+    const completenessFields = [
+      tool.longDescription, tool.shortDescription, tool.useCases?.length,
+      tool.soloRelevance, tool.teamRelevance, tool.pricing?.free || tool.pricing?.paid,
+    ].filter(Boolean).length;
+    const completenessScore = 50 + (completenessFields / 6) * 50;
+
+    const scoreOn100 = Math.round(
+      prosConsScore * 0.40 +
+      verdictScore * 0.30 +
+      altsScore * 0.15 +
+      completenessScore * 0.15
+    );
+    const ratingValue = (Math.round((scoreOn100 / 20) * 10) / 10).toFixed(1); // /5, 1 decimal
     const reviewBody =
       (lang === "en" ? tool.verdictEn?.threshold : tool.verdict?.threshold) ||
       tool.verdict?.threshold ||
