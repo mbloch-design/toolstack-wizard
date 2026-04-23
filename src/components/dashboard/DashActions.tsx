@@ -13,6 +13,7 @@ interface Props {
   t: (fr: string, en: string) => string;
   onNavigate?: (tab: Tab) => void;
   dbSessionId?: string | null;
+  dbSessionToken?: string | null;
 }
 
 interface ActionItem {
@@ -106,25 +107,26 @@ const URGENCY_CONFIG = {
   },
 } as const;
 
-export default function DashActions({ result, allTools, t, onNavigate, dbSessionId }: Props) {
+export default function DashActions({ result, allTools, t, onNavigate, dbSessionId, dbSessionToken }: Props) {
   const actions = useMemo(() => buildActions(result, allTools, t), [result, allTools, t]);
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [lastChecked, setLastChecked] = useState<string | null>(null);
   const updateTimer = useRef<ReturnType<typeof setTimeout>>();
 
   const persistActions = useCallback((count: number) => {
-    if (!dbSessionId) return;
+    if (!dbSessionId || !dbSessionToken) return;
     if (updateTimer.current) clearTimeout(updateTimer.current);
     updateTimer.current = setTimeout(async () => {
       try {
+        // Send the session token via header so RLS allows the update
         await (supabase.from("diagnostic_sessions" as any) as any)
-          .update({ actions_completed: count })
+          .update({ actions_completed: count }, { headers: { "x-session-token": dbSessionToken } })
           .eq("id", dbSessionId);
       } catch (err) {
         console.error("[DiagActions] Update failed:", err);
       }
     }, 1000);
-  }, [dbSessionId]);
+  }, [dbSessionId, dbSessionToken]);
 
   const toggle = useCallback((id: string, savings: number) => {
     setChecked((prev) => {

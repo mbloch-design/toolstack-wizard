@@ -52,6 +52,7 @@ export default function DiagnosticRouter() {
     createInitialSession(lang === "en" ? "en" : "fr")
   );
   const [dbSessionId, setDbSessionId] = useState<string | null>(null);
+  const [dbSessionToken, setDbSessionToken] = useState<string | null>(null);
   const savingRef = useRef(false);
 
   // Compute diagnostic result when reaching dashboard
@@ -101,13 +102,14 @@ export default function DiagnosticRouter() {
           tool_scores: toolScoresObj,
           email_preferences: s.emailPreferences || {},
         } as any)
-        .select("id")
+        .select("id, session_token")
         .single();
 
       if (error) {
         console.error("[DiagSave] Insert failed:", error.message);
       } else if (data) {
         setDbSessionId((data as any).id);
+        setDbSessionToken((data as any).session_token ?? null);
       }
     } catch (err) {
       console.error("[DiagSave] Unexpected error:", err);
@@ -211,7 +213,7 @@ export default function DiagnosticRouter() {
 
   // If on dashboard step, render full dashboard
   if (step === 12 && diagnosticResult) {
-    return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} />;
+    return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} dbSessionToken={dbSessionToken} />;
   }
   return (
     <>
