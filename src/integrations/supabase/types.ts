@@ -90,6 +90,7 @@ export type Database = {
           prescriptions: Json | null
           recommendations: Json | null
           selected_tools: Json | null
+          session_token: string
           stack_total_cost: number | null
           tjm: number | null
           tool_scores: Json | null
@@ -115,6 +116,7 @@ export type Database = {
           prescriptions?: Json | null
           recommendations?: Json | null
           selected_tools?: Json | null
+          session_token?: string
           stack_total_cost?: number | null
           tjm?: number | null
           tool_scores?: Json | null
@@ -140,6 +142,7 @@ export type Database = {
           prescriptions?: Json | null
           recommendations?: Json | null
           selected_tools?: Json | null
+          session_token?: string
           stack_total_cost?: number | null
           tjm?: number | null
           tool_scores?: Json | null
