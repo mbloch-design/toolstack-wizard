@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, useRef } from "react";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
 import { Check, ChevronRight } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
-import { supabase } from "@/integrations/supabase/client";
+
 
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
@@ -13,6 +13,7 @@ interface Props {
   t: (fr: string, en: string) => string;
   onNavigate?: (tab: Tab) => void;
   dbSessionId?: string | null;
+  dbSessionToken?: string | null;
 }
 
 interface ActionItem {
@@ -106,25 +107,39 @@ const URGENCY_CONFIG = {
   },
 } as const;
 
-export default function DashActions({ result, allTools, t, onNavigate, dbSessionId }: Props) {
+export default function DashActions({ result, allTools, t, onNavigate, dbSessionId, dbSessionToken }: Props) {
   const actions = useMemo(() => buildActions(result, allTools, t), [result, allTools, t]);
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [lastChecked, setLastChecked] = useState<string | null>(null);
   const updateTimer = useRef<ReturnType<typeof setTimeout>>();
 
   const persistActions = useCallback((count: number) => {
-    if (!dbSessionId) return;
+    if (!dbSessionId || !dbSessionToken) return;
     if (updateTimer.current) clearTimeout(updateTimer.current);
     updateTimer.current = setTimeout(async () => {
       try {
-        await (supabase.from("diagnostic_sessions" as any) as any)
-          .update({ actions_completed: count })
-          .eq("id", dbSessionId);
+        // Direct PostgREST call so we can pass the per-session token header (required by RLS)
+        const SUPABASE_URL = "https://rtfyfuwfdpnsogovkwai.supabase.co";
+        const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0ZnlmdXdmZHBuc29nb3Zrd2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyOTcyMDcsImV4cCI6MjA4ODg3MzIwN30.pwpmh9Qe8dLZFq1rMqtCRmEMJ9dnbcdvT_B4CjIu4Xc";
+        await fetch(
+          `${SUPABASE_URL}/rest/v1/diagnostic_sessions?id=eq.${encodeURIComponent(dbSessionId)}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              apikey: ANON_KEY,
+              Authorization: `Bearer ${ANON_KEY}`,
+              "x-session-token": dbSessionToken,
+              Prefer: "return=minimal",
+            },
+            body: JSON.stringify({ actions_completed: count }),
+          }
+        );
       } catch (err) {
         console.error("[DiagActions] Update failed:", err);
       }
     }, 1000);
-  }, [dbSessionId]);
+  }, [dbSessionId, dbSessionToken]);
 
   const toggle = useCallback((id: string, savings: number) => {
     setChecked((prev) => {

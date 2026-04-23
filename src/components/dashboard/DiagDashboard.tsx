@@ -15,6 +15,7 @@ interface Props {
   allTools: Tool[];
   t: (fr: string, en: string) => string;
   dbSessionId?: string | null;
+  dbSessionToken?: string | null;
 }
 
 const TABS: { id: Tab; icon: typeof Eye; labelFr: string; labelEn: string }[] = [
@@ -25,7 +26,7 @@ const TABS: { id: Tab; icon: typeof Eye; labelFr: string; labelEn: string }[] = 
   { id: "actions", icon: ListChecks, labelFr: "Mes actions", labelEn: "My Actions" },
 ];
 
-export default function DiagDashboard({ result, allTools, t, dbSessionId }: Props) {
+export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSessionToken }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>("overview");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showShare, setShowShare] = useState(false);
@@ -53,7 +54,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId }: Prop
       case "optimiser":
         return <DashOptimisations result={result} allTools={allTools} t={t} onNavigate={navigate} />;
       case "actions":
-        return <DashActions result={result} allTools={allTools} t={t} onNavigate={navigate} dbSessionId={dbSessionId} />;
+        return <DashActions result={result} allTools={allTools} t={t} onNavigate={navigate} dbSessionId={dbSessionId} dbSessionToken={dbSessionToken} />;
     }
   };
 
