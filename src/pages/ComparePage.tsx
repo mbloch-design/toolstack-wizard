@@ -125,7 +125,11 @@ const ComparePage = () => {
     <div className="bg-background min-h-screen">
       {/* Dynamic Hero with H1 */}
       <header className="pt-24 pb-10 md:pt-28 md:pb-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-bold uppercase tracking-widest mb-5">
+        <Breadcrumb items={[
+          { label: t("Comparatifs", "Comparisons"), href: `/${lang}/comparatifs` },
+          { label: `${toolA.name} vs ${toolB.name}` },
+        ]} />
+        <span className="inline-block mt-4 px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-bold uppercase tracking-widest mb-5">
           {t("Comparatif honnête", "Honest comparison")}
         </span>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-[1.1] max-w-4xl">
