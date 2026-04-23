@@ -6,6 +6,7 @@ import { Check, X, ArrowRight, CheckCircle, XCircle } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 
 import CompareSidebar from "@/components/compare/CompareSidebar";
+import Breadcrumb from "@/components/Breadcrumb";
 import CompareStrengthBars from "@/components/compare/CompareStrengthBars";
 import CompareVerdictCards from "@/components/compare/CompareVerdictCards";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
