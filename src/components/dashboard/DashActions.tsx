@@ -118,10 +118,23 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
     if (updateTimer.current) clearTimeout(updateTimer.current);
     updateTimer.current = setTimeout(async () => {
       try {
-        // Send the session token via header so RLS allows the update
-        await (supabase.from("diagnostic_sessions" as any) as any)
-          .update({ actions_completed: count }, { headers: { "x-session-token": dbSessionToken } })
-          .eq("id", dbSessionId);
+        // Direct PostgREST call so we can pass the per-session token header (required by RLS)
+        const SUPABASE_URL = "https://rtfyfuwfdpnsogovkwai.supabase.co";
+        const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0ZnlmdXdmZHBuc29nb3Zrd2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyOTcyMDcsImV4cCI6MjA4ODg3MzIwN30.pwpmh9Qe8dLZFq1rMqtCRmEMJ9dnbcdvT_B4CjIu4Xc";
+        await fetch(
+          `${SUPABASE_URL}/rest/v1/diagnostic_sessions?id=eq.${encodeURIComponent(dbSessionId)}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              apikey: ANON_KEY,
+              Authorization: `Bearer ${ANON_KEY}`,
+              "x-session-token": dbSessionToken,
+              Prefer: "return=minimal",
+            },
+            body: JSON.stringify({ actions_completed: count }),
+          }
+        );
       } catch (err) {
         console.error("[DiagActions] Update failed:", err);
       }
