@@ -60,7 +60,21 @@ const GuideDetailPage = () => {
       ...(post.tags?.length ? { keywords: post.tags.join(", ") } : {}),
     });
 
-    return () => cleanupSeo(["article-jsonld"]);
+    // FAQPage JSON-LD when post.faq is provided
+    const faqList = (post as Post & { faq?: { question: string; answer: string }[] }).faq;
+    if (faqList && faqList.length > 0) {
+      setJsonLd("article-faq-jsonld", {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqList.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      });
+    }
+
+    return () => cleanupSeo(["article-jsonld", "article-faq-jsonld"]);
   }, [post, lang]);
 
   // TOC: only H2s for compact view
