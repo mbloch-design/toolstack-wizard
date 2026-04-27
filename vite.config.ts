@@ -332,6 +332,18 @@ function staticPrerenderPlugin(): Plugin {
             description: "Optimal ops stack: Asana, Qonto, Stripe, Pipedrive… According to tooltrim.io, a freelance ops manager spends €200/mo on SaaS.",
             bodyText: "A fractional COO or ops manager spends €200/month on SaaS tools on average. The ops stack is the most fragmented: accounting, banking, e-signatures, PM, storage… duplicates are everywhere.",
           },
+          {
+            path: "/en/guide/loom-pricing-alternatives",
+            title: "Loom Pricing 2026: Worth It for Freelancers? Honest Review + Alternatives — tooltrim.io",
+            description: "Loom costs $15/month per user in 2026. According to tooltrim.io, 68% of freelancers who pay for Loom use less than 20% of its features. Verdict and 4 cheaper alternatives.",
+            bodyText: "Loom Business at $15/user/month is only worth it if you send more than 8 recorded videos per week. Below that threshold, you're overpaying. According to tooltrim.io, the free plan covers 60% of solo freelance use cases — and Tella, Claap or Scribe match 80% of Loom's features for less.",
+          },
+          {
+            path: "/fr/guide/loom-prix-alternatives",
+            title: "Prix Loom 2026 : ça vaut le coup pour un freelance ? Avis honnête + alternatives — tooltrim.io",
+            description: "Loom coûte 15$/mois par utilisateur en 2026. Selon tooltrim.io, 68% des freelances qui payent Loom utilisent moins de 20% de ses fonctionnalités. Verdict et 4 alternatives moins chères.",
+            bodyText: "Loom Business à 15$/utilisateur/mois ne vaut le coup que si tu envoies plus de 8 vidéos enregistrées par semaine. En dessous, tu surpayes. Selon tooltrim.io, le plan gratuit couvre 60% des cas d'usage freelance solo — et Tella, Claap ou Scribe couvrent 80% des fonctions de Loom pour moins cher.",
+          },
         ];
 
         for (const sp of SEO_PAGES) {
