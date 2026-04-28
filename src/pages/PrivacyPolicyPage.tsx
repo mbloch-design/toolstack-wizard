@@ -86,8 +86,8 @@ const PrivacyPolicyPage = () => {
               <li>{t("Droit d'opposition au traitement", "Right to object to processing")}</li>
             </ul>
             <p className="mt-3">{t(
-              "Pour exercer ces droits, contactez-nous à : contact@tooltrim.io",
-              "To exercise these rights, contact us at: contact@tooltrim.io"
+              "Pour exercer ces droits, contactez-nous à : contact@tooltrim.com",
+              "To exercise these rights, contact us at: contact@tooltrim.com"
             )}</p>
           </section>
 

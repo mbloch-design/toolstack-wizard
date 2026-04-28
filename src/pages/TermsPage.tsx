@@ -32,8 +32,8 @@ const TermsPage = () => {
           <section>
             <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">{t("Objet", "Purpose")}</h2>
             <p>{t(
-              "Les présentes conditions régissent l'utilisation du site tooltrim.io et de ses services, notamment le comparateur d'outils SaaS et le diagnostic de stack.",
-              "These terms govern the use of the tooltrim.io website and its services, including the SaaS tool comparator and stack diagnostic."
+              "Les présentes conditions régissent l'utilisation du site tooltrim.com et de ses services, notamment le comparateur d'outils SaaS et le diagnostic de stack.",
+              "These terms govern the use of the tooltrim.com website and its services, including the SaaS tool comparator and stack diagnostic."
             )}</p>
           </section>
 
@@ -88,8 +88,8 @@ const TermsPage = () => {
           <section>
             <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">Contact</h2>
             <p>{t(
-              "Pour toute question relative aux présentes conditions, contactez-nous à : contact@tooltrim.io",
-              "For any questions regarding these terms, contact us at: contact@tooltrim.io"
+              "Pour toute question relative aux présentes conditions, contactez-nous à : contact@tooltrim.com",
+              "For any questions regarding these terms, contact us at: contact@tooltrim.com"
             )}</p>
           </section>
         </div>

@@ -72,7 +72,7 @@ Deno.serve(async (req) => {
     function addFooter(page: number) {
       doc.setFontSize(8);
       doc.setTextColor(...GRAY);
-      doc.text(`tooltrim.io — ${t("Rapport diagnostic", "Diagnostic Report")}`, M, H - 10);
+      doc.text(`tooltrim.com — ${t("Rapport diagnostic", "Diagnostic Report")}`, M, H - 10);
       doc.text(`${page}`, W - M, H - 10, { align: "right" });
     }
 
