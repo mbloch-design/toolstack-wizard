@@ -11,7 +11,7 @@ Disallow: /*?utm_source=
 Disallow: /*?utm_medium=
 Disallow: /*?utm_campaign=
 
-Sitemap: https://tooltrim.com/sitemap.xml
+Sitemap: https://www.tooltrim.com/sitemap.xml
 
 # LLM Crawlers — autorisés (stratégie GEO)
 
