@@ -25,8 +25,8 @@ export default function DashShareModal({ result, t, onClose }: Props) {
   };
 
   const shareText = t(
-    `J'ai fait mon diagnostic stack sur tooltrim.io — score ${result.healthScore}/100, ${Math.round(result.estimatedWaste)}€ d'économies identifiées !`,
-    `I ran my stack diagnostic on tooltrim.io — score ${result.healthScore}/100, ${Math.round(result.estimatedWaste)}€ savings identified!`
+    `J'ai fait mon diagnostic stack sur tooltrim.com — score ${result.healthScore}/100, ${Math.round(result.estimatedWaste)}€ d'économies identifiées !`,
+    `I ran my stack diagnostic on tooltrim.com — score ${result.healthScore}/100, ${Math.round(result.estimatedWaste)}€ savings identified!`
   );
 
   const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;

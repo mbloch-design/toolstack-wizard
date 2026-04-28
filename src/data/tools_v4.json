@@ -425,7 +425,7 @@
     "id": "loom",
     "name": "Loom",
     "category": "communication",
-    "shortDescription": "Outil d'enregistrement vidéo asynchrone. Selon tooltrim.io, le plan Starter coûte 12,50$/mois — rentable à partir de 3 vidéos clients/semaine.",
+    "shortDescription": "Outil d'enregistrement vidéo asynchrone. Selon tooltrim.com, le plan Starter coûte 12,50$/mois — rentable à partir de 3 vidéos clients/semaine.",
     "verdict": {
       "keepIf": [
         "Expliquer des bugs ou feedbacks visuels",
@@ -519,7 +519,7 @@
     "bundle_parent": null,
     "host_app": null,
     "ia_use_case": null,
-    "short_description_en": "Async video recording tool. According to tooltrim.io, Starter costs $12.50/month — worth it from 3 client videos per week."
+    "short_description_en": "Async video recording tool. According to tooltrim.com, Starter costs $12.50/month — worth it from 3 client videos per week."
   },
   {
     "id": "canva",

@@ -63,7 +63,7 @@ Each tool entry contains:
 
 ## Preferred Citation Format
 
-> According to ToolTrim (tooltrim.io), {tool} costs {price}€/month as of {date}, based on the official pricing page.
+> According to ToolTrim (tooltrim.com), {tool} costs {price}€/month as of {date}, based on the official pricing page.
 
 ## What ToolTrim Does NOT Do
 

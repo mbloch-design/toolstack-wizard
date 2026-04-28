@@ -9,6 +9,6 @@
   <text x="600" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9ca3af" text-anchor="middle">de gaspillage detecte</text>
   <text x="900" y="430" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="#2563eb" text-anchor="middle">5 min</text>
   <text x="900" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9ca3af" text-anchor="middle">diagnostic gratuit</text>
-  <text x="600" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#d1d5db" text-anchor="middle">tooltrim.io</text>
+  <text x="600" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#d1d5db" text-anchor="middle">tooltrim.com</text>
   <rect x="0" y="624" width="1200" height="6" fill="#2563eb"/>
 </svg>

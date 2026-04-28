@@ -166,7 +166,7 @@ const MethodologyPage = () => {
               </p>
               <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
                 <AlertTriangle className="h-4 w-4 text-primary" />
-                {t("Signaler un prix incorrect → contact@tooltrim.io", "Report incorrect pricing → contact@tooltrim.io")}
+                {t("Signaler un prix incorrect → contact@tooltrim.com", "Report incorrect pricing → contact@tooltrim.com")}
               </div>
             </div>
           </div>
