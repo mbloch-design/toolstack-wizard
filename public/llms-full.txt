@@ -1,6 +1,6 @@
 # ToolTrim — Top 50 tools (verified pricing)
 # Last verified: 2026-03-29
-# Source: https://tooltrim.io
+# Source: https://tooltrim.com
 # Format: JSON array; one object per tool
 # Fields: name, slug, price (monthly EUR), currency, verdict (ferme|question|silence), verified (YYYY-MM-DD)
 

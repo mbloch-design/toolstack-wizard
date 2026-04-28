@@ -1,2427 +1,2427 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tooltrim.io/fr</loc>
+    <loc>https://tooltrim.com/fr</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tools</loc>
+    <loc>https://tooltrim.com/fr/tools</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category</loc>
+    <loc>https://tooltrim.com/fr/category</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/guides</loc>
+    <loc>https://tooltrim.com/fr/guides</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/selector</loc>
+    <loc>https://tooltrim.com/fr/selector</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/about</loc>
+    <loc>https://tooltrim.com/fr/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/methodology</loc>
+    <loc>https://tooltrim.com/fr/methodology</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/transparency</loc>
+    <loc>https://tooltrim.com/fr/transparency</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/contact</loc>
+    <loc>https://tooltrim.com/fr/contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en</loc>
+    <loc>https://tooltrim.com/en</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tools</loc>
+    <loc>https://tooltrim.com/en/tools</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category</loc>
+    <loc>https://tooltrim.com/en/category</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/guides</loc>
+    <loc>https://tooltrim.com/en/guides</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/selector</loc>
+    <loc>https://tooltrim.com/en/selector</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/about</loc>
+    <loc>https://tooltrim.com/en/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/methodology</loc>
+    <loc>https://tooltrim.com/en/methodology</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/transparency</loc>
+    <loc>https://tooltrim.com/en/transparency</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/contact</loc>
+    <loc>https://tooltrim.com/en/contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/chatgpt</loc>
+    <loc>https://tooltrim.com/fr/tool/chatgpt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/chatgpt</loc>
+    <loc>https://tooltrim.com/en/tool/chatgpt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/claude</loc>
+    <loc>https://tooltrim.com/fr/tool/claude</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/claude</loc>
+    <loc>https://tooltrim.com/en/tool/claude</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/notion</loc>
+    <loc>https://tooltrim.com/fr/tool/notion</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/notion</loc>
+    <loc>https://tooltrim.com/en/tool/notion</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/calendly</loc>
+    <loc>https://tooltrim.com/fr/tool/calendly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/calendly</loc>
+    <loc>https://tooltrim.com/en/tool/calendly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/loom</loc>
+    <loc>https://tooltrim.com/fr/tool/loom</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/loom</loc>
+    <loc>https://tooltrim.com/en/tool/loom</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/canva</loc>
+    <loc>https://tooltrim.com/fr/tool/canva</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/canva</loc>
+    <loc>https://tooltrim.com/en/tool/canva</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/grammarly</loc>
+    <loc>https://tooltrim.com/fr/tool/grammarly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/grammarly</loc>
+    <loc>https://tooltrim.com/en/tool/grammarly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/stripe</loc>
+    <loc>https://tooltrim.com/fr/tool/stripe</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/stripe</loc>
+    <loc>https://tooltrim.com/en/tool/stripe</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/indy</loc>
+    <loc>https://tooltrim.com/fr/tool/indy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/indy</loc>
+    <loc>https://tooltrim.com/en/tool/indy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/google-drive</loc>
+    <loc>https://tooltrim.com/fr/tool/google-drive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/google-drive</loc>
+    <loc>https://tooltrim.com/en/tool/google-drive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/perplexity</loc>
+    <loc>https://tooltrim.com/fr/tool/perplexity</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/perplexity</loc>
+    <loc>https://tooltrim.com/en/tool/perplexity</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/tally</loc>
+    <loc>https://tooltrim.com/fr/tool/tally</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/tally</loc>
+    <loc>https://tooltrim.com/en/tool/tally</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/todoist</loc>
+    <loc>https://tooltrim.com/fr/tool/todoist</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/todoist</loc>
+    <loc>https://tooltrim.com/en/tool/todoist</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/obsidian</loc>
+    <loc>https://tooltrim.com/fr/tool/obsidian</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/obsidian</loc>
+    <loc>https://tooltrim.com/en/tool/obsidian</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/make</loc>
+    <loc>https://tooltrim.com/fr/tool/make</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/make</loc>
+    <loc>https://tooltrim.com/en/tool/make</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/raycast</loc>
+    <loc>https://tooltrim.com/fr/tool/raycast</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/raycast</loc>
+    <loc>https://tooltrim.com/en/tool/raycast</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/superhuman</loc>
+    <loc>https://tooltrim.com/fr/tool/superhuman</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/superhuman</loc>
+    <loc>https://tooltrim.com/en/tool/superhuman</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/linear</loc>
+    <loc>https://tooltrim.com/fr/tool/linear</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/linear</loc>
+    <loc>https://tooltrim.com/en/tool/linear</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/cal-com</loc>
+    <loc>https://tooltrim.com/fr/tool/cal-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/cal-com</loc>
+    <loc>https://tooltrim.com/en/tool/cal-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/midjourney</loc>
+    <loc>https://tooltrim.com/fr/tool/midjourney</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/midjourney</loc>
+    <loc>https://tooltrim.com/en/tool/midjourney</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/base44</loc>
+    <loc>https://tooltrim.com/fr/tool/base44</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/base44</loc>
+    <loc>https://tooltrim.com/en/tool/base44</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/sellsy</loc>
+    <loc>https://tooltrim.com/fr/tool/sellsy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/sellsy</loc>
+    <loc>https://tooltrim.com/en/tool/sellsy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/elevenlabs</loc>
+    <loc>https://tooltrim.com/fr/tool/elevenlabs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/elevenlabs</loc>
+    <loc>https://tooltrim.com/en/tool/elevenlabs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/clickup</loc>
+    <loc>https://tooltrim.com/fr/tool/clickup</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/clickup</loc>
+    <loc>https://tooltrim.com/en/tool/clickup</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/sanebox</loc>
+    <loc>https://tooltrim.com/fr/tool/sanebox</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/sanebox</loc>
+    <loc>https://tooltrim.com/en/tool/sanebox</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/getresponse</loc>
+    <loc>https://tooltrim.com/fr/tool/getresponse</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/getresponse</loc>
+    <loc>https://tooltrim.com/en/tool/getresponse</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/trello</loc>
+    <loc>https://tooltrim.com/fr/tool/trello</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/trello</loc>
+    <loc>https://tooltrim.com/en/tool/trello</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/airtable</loc>
+    <loc>https://tooltrim.com/fr/tool/airtable</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/airtable</loc>
+    <loc>https://tooltrim.com/en/tool/airtable</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/mailchimp</loc>
+    <loc>https://tooltrim.com/fr/tool/mailchimp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/mailchimp</loc>
+    <loc>https://tooltrim.com/en/tool/mailchimp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/slack</loc>
+    <loc>https://tooltrim.com/fr/tool/slack</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/slack</loc>
+    <loc>https://tooltrim.com/en/tool/slack</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/figma</loc>
+    <loc>https://tooltrim.com/fr/tool/figma</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/figma</loc>
+    <loc>https://tooltrim.com/en/tool/figma</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/1password</loc>
+    <loc>https://tooltrim.com/fr/tool/1password</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/1password</loc>
+    <loc>https://tooltrim.com/en/tool/1password</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/toggl</loc>
+    <loc>https://tooltrim.com/fr/tool/toggl</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/toggl</loc>
+    <loc>https://tooltrim.com/en/tool/toggl</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/webflow</loc>
+    <loc>https://tooltrim.com/fr/tool/webflow</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/webflow</loc>
+    <loc>https://tooltrim.com/en/tool/webflow</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/plausible</loc>
+    <loc>https://tooltrim.com/fr/tool/plausible</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/plausible</loc>
+    <loc>https://tooltrim.com/en/tool/plausible</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/pitch</loc>
+    <loc>https://tooltrim.com/fr/tool/pitch</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/pitch</loc>
+    <loc>https://tooltrim.com/en/tool/pitch</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/learnworlds</loc>
+    <loc>https://tooltrim.com/fr/tool/learnworlds</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/learnworlds</loc>
+    <loc>https://tooltrim.com/en/tool/learnworlds</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/prezi</loc>
+    <loc>https://tooltrim.com/fr/tool/prezi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/prezi</loc>
+    <loc>https://tooltrim.com/en/tool/prezi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/krispcall</loc>
+    <loc>https://tooltrim.com/fr/tool/krispcall</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/krispcall</loc>
+    <loc>https://tooltrim.com/en/tool/krispcall</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/megahr</loc>
+    <loc>https://tooltrim.com/fr/tool/megahr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/megahr</loc>
+    <loc>https://tooltrim.com/en/tool/megahr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/logomeai</loc>
+    <loc>https://tooltrim.com/fr/tool/logomeai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/logomeai</loc>
+    <loc>https://tooltrim.com/en/tool/logomeai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/replyio</loc>
+    <loc>https://tooltrim.com/fr/tool/replyio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/replyio</loc>
+    <loc>https://tooltrim.com/en/tool/replyio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/turbotic</loc>
+    <loc>https://tooltrim.com/fr/tool/turbotic</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/turbotic</loc>
+    <loc>https://tooltrim.com/en/tool/turbotic</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/convertkit</loc>
+    <loc>https://tooltrim.com/fr/tool/convertkit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/convertkit</loc>
+    <loc>https://tooltrim.com/en/tool/convertkit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/ignition</loc>
+    <loc>https://tooltrim.com/fr/tool/ignition</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/ignition</loc>
+    <loc>https://tooltrim.com/en/tool/ignition</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/landingi</loc>
+    <loc>https://tooltrim.com/fr/tool/landingi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/landingi</loc>
+    <loc>https://tooltrim.com/en/tool/landingi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/adcreative</loc>
+    <loc>https://tooltrim.com/fr/tool/adcreative</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/adcreative</loc>
+    <loc>https://tooltrim.com/en/tool/adcreative</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/8fig</loc>
+    <loc>https://tooltrim.com/fr/tool/8fig</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/8fig</loc>
+    <loc>https://tooltrim.com/en/tool/8fig</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/adobe</loc>
+    <loc>https://tooltrim.com/fr/tool/adobe</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/adobe</loc>
+    <loc>https://tooltrim.com/en/tool/adobe</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/aircall-inc</loc>
+    <loc>https://tooltrim.com/fr/tool/aircall-inc</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/aircall-inc</loc>
+    <loc>https://tooltrim.com/en/tool/aircall-inc</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/airslate</loc>
+    <loc>https://tooltrim.com/fr/tool/airslate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/airslate</loc>
+    <loc>https://tooltrim.com/en/tool/airslate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/albato</loc>
+    <loc>https://tooltrim.com/fr/tool/albato</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/albato</loc>
+    <loc>https://tooltrim.com/en/tool/albato</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/allstate</loc>
+    <loc>https://tooltrim.com/fr/tool/allstate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/allstate</loc>
+    <loc>https://tooltrim.com/en/tool/allstate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/aloware</loc>
+    <loc>https://tooltrim.com/fr/tool/aloware</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/aloware</loc>
+    <loc>https://tooltrim.com/en/tool/aloware</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/apollo-io</loc>
+    <loc>https://tooltrim.com/fr/tool/apollo-io</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/apollo-io</loc>
+    <loc>https://tooltrim.com/en/tool/apollo-io</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/arounddeal</loc>
+    <loc>https://tooltrim.com/fr/tool/arounddeal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/arounddeal</loc>
+    <loc>https://tooltrim.com/en/tool/arounddeal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/asana</loc>
+    <loc>https://tooltrim.com/fr/tool/asana</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/asana</loc>
+    <loc>https://tooltrim.com/en/tool/asana</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/autonix</loc>
+    <loc>https://tooltrim.com/fr/tool/autonix</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/autonix</loc>
+    <loc>https://tooltrim.com/en/tool/autonix</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/auvik</loc>
+    <loc>https://tooltrim.com/fr/tool/auvik</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/auvik</loc>
+    <loc>https://tooltrim.com/en/tool/auvik</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/aweber</loc>
+    <loc>https://tooltrim.com/fr/tool/aweber</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/aweber</loc>
+    <loc>https://tooltrim.com/en/tool/aweber</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/basecamp</loc>
+    <loc>https://tooltrim.com/fr/tool/basecamp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/basecamp</loc>
+    <loc>https://tooltrim.com/en/tool/basecamp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/blueink-esignatures</loc>
+    <loc>https://tooltrim.com/fr/tool/blueink-esignatures</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/blueink-esignatures</loc>
+    <loc>https://tooltrim.com/en/tool/blueink-esignatures</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/boast</loc>
+    <loc>https://tooltrim.com/fr/tool/boast</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/boast</loc>
+    <loc>https://tooltrim.com/en/tool/boast</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/bolt-business</loc>
+    <loc>https://tooltrim.com/fr/tool/bolt-business</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/bolt-business</loc>
+    <loc>https://tooltrim.com/en/tool/bolt-business</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/boompop</loc>
+    <loc>https://tooltrim.com/fr/tool/boompop</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/boompop</loc>
+    <loc>https://tooltrim.com/en/tool/boompop</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/box</loc>
+    <loc>https://tooltrim.com/fr/tool/box</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/box</loc>
+    <loc>https://tooltrim.com/en/tool/box</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/brand24</loc>
+    <loc>https://tooltrim.com/fr/tool/brand24</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/brand24</loc>
+    <loc>https://tooltrim.com/en/tool/brand24</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/breezy-hr</loc>
+    <loc>https://tooltrim.com/fr/tool/breezy-hr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/breezy-hr</loc>
+    <loc>https://tooltrim.com/en/tool/breezy-hr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/buddy-punch</loc>
+    <loc>https://tooltrim.com/fr/tool/buddy-punch</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/buddy-punch</loc>
+    <loc>https://tooltrim.com/en/tool/buddy-punch</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/bugherd</loc>
+    <loc>https://tooltrim.com/fr/tool/bugherd</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/bugherd</loc>
+    <loc>https://tooltrim.com/en/tool/bugherd</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/callhippo</loc>
+    <loc>https://tooltrim.com/fr/tool/callhippo</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/callhippo</loc>
+    <loc>https://tooltrim.com/en/tool/callhippo</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/callrail</loc>
+    <loc>https://tooltrim.com/fr/tool/callrail</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/callrail</loc>
+    <loc>https://tooltrim.com/en/tool/callrail</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/calltrackingmetrics</loc>
+    <loc>https://tooltrim.com/fr/tool/calltrackingmetrics</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/calltrackingmetrics</loc>
+    <loc>https://tooltrim.com/en/tool/calltrackingmetrics</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/campaigner</loc>
+    <loc>https://tooltrim.com/fr/tool/campaigner</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/campaigner</loc>
+    <loc>https://tooltrim.com/en/tool/campaigner</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/capsule</loc>
+    <loc>https://tooltrim.com/fr/tool/capsule</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/capsule</loc>
+    <loc>https://tooltrim.com/en/tool/capsule</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/castmagic</loc>
+    <loc>https://tooltrim.com/fr/tool/castmagic</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/castmagic</loc>
+    <loc>https://tooltrim.com/en/tool/castmagic</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/clearbit</loc>
+    <loc>https://tooltrim.com/fr/tool/clearbit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/clearbit</loc>
+    <loc>https://tooltrim.com/en/tool/clearbit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/clockshark</loc>
+    <loc>https://tooltrim.com/fr/tool/clockshark</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/clockshark</loc>
+    <loc>https://tooltrim.com/en/tool/clockshark</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/close</loc>
+    <loc>https://tooltrim.com/fr/tool/close</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/close</loc>
+    <loc>https://tooltrim.com/en/tool/close</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/cloudtask-marketplace</loc>
+    <loc>https://tooltrim.com/fr/tool/cloudtask-marketplace</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/cloudtask-marketplace</loc>
+    <loc>https://tooltrim.com/en/tool/cloudtask-marketplace</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/coast</loc>
+    <loc>https://tooltrim.com/fr/tool/coast</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/coast</loc>
+    <loc>https://tooltrim.com/en/tool/coast</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/cognism</loc>
+    <loc>https://tooltrim.com/fr/tool/cognism</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/cognism</loc>
+    <loc>https://tooltrim.com/en/tool/cognism</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/connecteam</loc>
+    <loc>https://tooltrim.com/fr/tool/connecteam</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/connecteam</loc>
+    <loc>https://tooltrim.com/en/tool/connecteam</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/crowdfire-inc</loc>
+    <loc>https://tooltrim.com/fr/tool/crowdfire-inc</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/crowdfire-inc</loc>
+    <loc>https://tooltrim.com/en/tool/crowdfire-inc</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/deel</loc>
+    <loc>https://tooltrim.com/fr/tool/deel</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/deel</loc>
+    <loc>https://tooltrim.com/en/tool/deel</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/deputy</loc>
+    <loc>https://tooltrim.com/fr/tool/deputy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/deputy</loc>
+    <loc>https://tooltrim.com/en/tool/deputy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/deskpro</loc>
+    <loc>https://tooltrim.com/fr/tool/deskpro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/deskpro</loc>
+    <loc>https://tooltrim.com/en/tool/deskpro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/desktopready</loc>
+    <loc>https://tooltrim.com/fr/tool/desktopready</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/desktopready</loc>
+    <loc>https://tooltrim.com/en/tool/desktopready</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/docyt</loc>
+    <loc>https://tooltrim.com/fr/tool/docyt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/docyt</loc>
+    <loc>https://tooltrim.com/en/tool/docyt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/doola</loc>
+    <loc>https://tooltrim.com/fr/tool/doola</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/doola</loc>
+    <loc>https://tooltrim.com/en/tool/doola</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/draftbit</loc>
+    <loc>https://tooltrim.com/fr/tool/draftbit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/draftbit</loc>
+    <loc>https://tooltrim.com/en/tool/draftbit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/dropbox</loc>
+    <loc>https://tooltrim.com/fr/tool/dropbox</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/dropbox</loc>
+    <loc>https://tooltrim.com/en/tool/dropbox</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/easydmarc</loc>
+    <loc>https://tooltrim.com/fr/tool/easydmarc</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/easydmarc</loc>
+    <loc>https://tooltrim.com/en/tool/easydmarc</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/extensis</loc>
+    <loc>https://tooltrim.com/fr/tool/extensis</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/extensis</loc>
+    <loc>https://tooltrim.com/en/tool/extensis</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/finale-inventory</loc>
+    <loc>https://tooltrim.com/fr/tool/finale-inventory</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/finale-inventory</loc>
+    <loc>https://tooltrim.com/en/tool/finale-inventory</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/flexiquiz</loc>
+    <loc>https://tooltrim.com/fr/tool/flexiquiz</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/flexiquiz</loc>
+    <loc>https://tooltrim.com/en/tool/flexiquiz</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/format</loc>
+    <loc>https://tooltrim.com/fr/tool/format</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/format</loc>
+    <loc>https://tooltrim.com/en/tool/format</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/freshbooks</loc>
+    <loc>https://tooltrim.com/fr/tool/freshbooks</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/freshbooks</loc>
+    <loc>https://tooltrim.com/en/tool/freshbooks</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/front</loc>
+    <loc>https://tooltrim.com/fr/tool/front</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/front</loc>
+    <loc>https://tooltrim.com/en/tool/front</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/gelato</loc>
+    <loc>https://tooltrim.com/fr/tool/gelato</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/gelato</loc>
+    <loc>https://tooltrim.com/en/tool/gelato</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/getida</loc>
+    <loc>https://tooltrim.com/fr/tool/getida</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/getida</loc>
+    <loc>https://tooltrim.com/en/tool/getida</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/glide</loc>
+    <loc>https://tooltrim.com/fr/tool/glide</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/glide</loc>
+    <loc>https://tooltrim.com/en/tool/glide</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/gorgias</loc>
+    <loc>https://tooltrim.com/fr/tool/gorgias</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/gorgias</loc>
+    <loc>https://tooltrim.com/en/tool/gorgias</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/hive</loc>
+    <loc>https://tooltrim.com/fr/tool/hive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/hive</loc>
+    <loc>https://tooltrim.com/en/tool/hive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/hootsuite</loc>
+    <loc>https://tooltrim.com/fr/tool/hootsuite</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/hootsuite</loc>
+    <loc>https://tooltrim.com/en/tool/hootsuite</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/hostfully</loc>
+    <loc>https://tooltrim.com/fr/tool/hostfully</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/hostfully</loc>
+    <loc>https://tooltrim.com/en/tool/hostfully</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/houzz-pro</loc>
+    <loc>https://tooltrim.com/fr/tool/houzz-pro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/houzz-pro</loc>
+    <loc>https://tooltrim.com/en/tool/houzz-pro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/icontact</loc>
+    <loc>https://tooltrim.com/fr/tool/icontact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/icontact</loc>
+    <loc>https://tooltrim.com/en/tool/icontact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/inboxally</loc>
+    <loc>https://tooltrim.com/fr/tool/inboxally</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/inboxally</loc>
+    <loc>https://tooltrim.com/en/tool/inboxally</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/inflow-inventory</loc>
+    <loc>https://tooltrim.com/fr/tool/inflow-inventory</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/inflow-inventory</loc>
+    <loc>https://tooltrim.com/en/tool/inflow-inventory</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/insightly</loc>
+    <loc>https://tooltrim.com/fr/tool/insightly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/insightly</loc>
+    <loc>https://tooltrim.com/en/tool/insightly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/instapage</loc>
+    <loc>https://tooltrim.com/fr/tool/instapage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/instapage</loc>
+    <loc>https://tooltrim.com/en/tool/instapage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/jobber</loc>
+    <loc>https://tooltrim.com/fr/tool/jobber</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/jobber</loc>
+    <loc>https://tooltrim.com/en/tool/jobber</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/katana-cloud-manufacturing</loc>
+    <loc>https://tooltrim.com/fr/tool/katana-cloud-manufacturing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/katana-cloud-manufacturing</loc>
+    <loc>https://tooltrim.com/en/tool/katana-cloud-manufacturing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/kavkom</loc>
+    <loc>https://tooltrim.com/fr/tool/kavkom</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/kavkom</loc>
+    <loc>https://tooltrim.com/en/tool/kavkom</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/keeptruckin</loc>
+    <loc>https://tooltrim.com/fr/tool/keeptruckin</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/keeptruckin</loc>
+    <loc>https://tooltrim.com/en/tool/keeptruckin</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/kissmetrics</loc>
+    <loc>https://tooltrim.com/fr/tool/kissmetrics</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/kissmetrics</loc>
+    <loc>https://tooltrim.com/en/tool/kissmetrics</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/kixie</loc>
+    <loc>https://tooltrim.com/fr/tool/kixie</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/kixie</loc>
+    <loc>https://tooltrim.com/en/tool/kixie</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/landbot</loc>
+    <loc>https://tooltrim.com/fr/tool/landbot</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/landbot</loc>
+    <loc>https://tooltrim.com/en/tool/landbot</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/lano</loc>
+    <loc>https://tooltrim.com/fr/tool/lano</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/lano</loc>
+    <loc>https://tooltrim.com/en/tool/lano</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/later</loc>
+    <loc>https://tooltrim.com/fr/tool/later</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/later</loc>
+    <loc>https://tooltrim.com/en/tool/later</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/leadflow</loc>
+    <loc>https://tooltrim.com/fr/tool/leadflow</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/leadflow</loc>
+    <loc>https://tooltrim.com/en/tool/leadflow</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/leadpages</loc>
+    <loc>https://tooltrim.com/fr/tool/leadpages</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/leadpages</loc>
+    <loc>https://tooltrim.com/en/tool/leadpages</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/leadsquared</loc>
+    <loc>https://tooltrim.com/fr/tool/leadsquared</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/leadsquared</loc>
+    <loc>https://tooltrim.com/en/tool/leadsquared</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/lendio</loc>
+    <loc>https://tooltrim.com/fr/tool/lendio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/lendio</loc>
+    <loc>https://tooltrim.com/en/tool/lendio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/liquid-web-partner-program</loc>
+    <loc>https://tooltrim.com/fr/tool/liquid-web-partner-program</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/liquid-web-partner-program</loc>
+    <loc>https://tooltrim.com/en/tool/liquid-web-partner-program</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/looka</loc>
+    <loc>https://tooltrim.com/fr/tool/looka</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/looka</loc>
+    <loc>https://tooltrim.com/en/tool/looka</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/lucid-software</loc>
+    <loc>https://tooltrim.com/fr/tool/lucid-software</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/lucid-software</loc>
+    <loc>https://tooltrim.com/en/tool/lucid-software</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/mailgun</loc>
+    <loc>https://tooltrim.com/fr/tool/mailgun</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/mailgun</loc>
+    <loc>https://tooltrim.com/en/tool/mailgun</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/manifest-ai</loc>
+    <loc>https://tooltrim.com/fr/tool/manifest-ai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/manifest-ai</loc>
+    <loc>https://tooltrim.com/en/tool/manifest-ai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/masv</loc>
+    <loc>https://tooltrim.com/fr/tool/masv</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/masv</loc>
+    <loc>https://tooltrim.com/en/tool/masv</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/moosend</loc>
+    <loc>https://tooltrim.com/fr/tool/moosend</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/moosend</loc>
+    <loc>https://tooltrim.com/en/tool/moosend</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/mrpeasy</loc>
+    <loc>https://tooltrim.com/fr/tool/mrpeasy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/mrpeasy</loc>
+    <loc>https://tooltrim.com/en/tool/mrpeasy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/mycase</loc>
+    <loc>https://tooltrim.com/fr/tool/mycase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/mycase</loc>
+    <loc>https://tooltrim.com/en/tool/mycase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/navan</loc>
+    <loc>https://tooltrim.com/fr/tool/navan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/navan</loc>
+    <loc>https://tooltrim.com/en/tool/navan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/nearst</loc>
+    <loc>https://tooltrim.com/fr/tool/nearst</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/nearst</loc>
+    <loc>https://tooltrim.com/en/tool/nearst</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/netchex</loc>
+    <loc>https://tooltrim.com/fr/tool/netchex</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/netchex</loc>
+    <loc>https://tooltrim.com/en/tool/netchex</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/omniconvert-explore</loc>
+    <loc>https://tooltrim.com/fr/tool/omniconvert-explore</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/omniconvert-explore</loc>
+    <loc>https://tooltrim.com/en/tool/omniconvert-explore</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/onramp-funds</loc>
+    <loc>https://tooltrim.com/fr/tool/onramp-funds</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/onramp-funds</loc>
+    <loc>https://tooltrim.com/en/tool/onramp-funds</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/openphone</loc>
+    <loc>https://tooltrim.com/fr/tool/openphone</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/openphone</loc>
+    <loc>https://tooltrim.com/en/tool/openphone</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/ownr</loc>
+    <loc>https://tooltrim.com/fr/tool/ownr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/ownr</loc>
+    <loc>https://tooltrim.com/en/tool/ownr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/oyster</loc>
+    <loc>https://tooltrim.com/fr/tool/oyster</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/oyster</loc>
+    <loc>https://tooltrim.com/en/tool/oyster</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/packhelp</loc>
+    <loc>https://tooltrim.com/fr/tool/packhelp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/packhelp</loc>
+    <loc>https://tooltrim.com/en/tool/packhelp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/pagecloud</loc>
+    <loc>https://tooltrim.com/fr/tool/pagecloud</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/pagecloud</loc>
+    <loc>https://tooltrim.com/en/tool/pagecloud</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/payoneer</loc>
+    <loc>https://tooltrim.com/fr/tool/payoneer</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/payoneer</loc>
+    <loc>https://tooltrim.com/en/tool/payoneer</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/pipedrive</loc>
+    <loc>https://tooltrim.com/fr/tool/pipedrive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/pipedrive</loc>
+    <loc>https://tooltrim.com/en/tool/pipedrive</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/pipelinepro</loc>
+    <loc>https://tooltrim.com/fr/tool/pipelinepro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/pipelinepro</loc>
+    <loc>https://tooltrim.com/en/tool/pipelinepro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/printify</loc>
+    <loc>https://tooltrim.com/fr/tool/printify</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/printify</loc>
+    <loc>https://tooltrim.com/en/tool/printify</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/process-street</loc>
+    <loc>https://tooltrim.com/fr/tool/process-street</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/process-street</loc>
+    <loc>https://tooltrim.com/en/tool/process-street</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/productioncrate</loc>
+    <loc>https://tooltrim.com/fr/tool/productioncrate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/productioncrate</loc>
+    <loc>https://tooltrim.com/en/tool/productioncrate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/promo-com</loc>
+    <loc>https://tooltrim.com/fr/tool/promo-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/promo-com</loc>
+    <loc>https://tooltrim.com/en/tool/promo-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/pushowl-web-push-notifications</loc>
+    <loc>https://tooltrim.com/fr/tool/pushowl-web-push-notifications</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/pushowl-web-push-notifications</loc>
+    <loc>https://tooltrim.com/en/tool/pushowl-web-push-notifications</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/quadient</loc>
+    <loc>https://tooltrim.com/fr/tool/quadient</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/quadient</loc>
+    <loc>https://tooltrim.com/en/tool/quadient</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/quartile</loc>
+    <loc>https://tooltrim.com/fr/tool/quartile</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/quartile</loc>
+    <loc>https://tooltrim.com/en/tool/quartile</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/quick-base</loc>
+    <loc>https://tooltrim.com/fr/tool/quick-base</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/quick-base</loc>
+    <loc>https://tooltrim.com/en/tool/quick-base</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/quickbooks</loc>
+    <loc>https://tooltrim.com/fr/tool/quickbooks</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/quickbooks</loc>
+    <loc>https://tooltrim.com/en/tool/quickbooks</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/razorpay</loc>
+    <loc>https://tooltrim.com/fr/tool/razorpay</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/razorpay</loc>
+    <loc>https://tooltrim.com/en/tool/razorpay</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/respond-io</loc>
+    <loc>https://tooltrim.com/fr/tool/respond-io</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/respond-io</loc>
+    <loc>https://tooltrim.com/en/tool/respond-io</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/responsetap</loc>
+    <loc>https://tooltrim.com/fr/tool/responsetap</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/responsetap</loc>
+    <loc>https://tooltrim.com/en/tool/responsetap</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/restream</loc>
+    <loc>https://tooltrim.com/fr/tool/restream</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/restream</loc>
+    <loc>https://tooltrim.com/en/tool/restream</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/rocketlink</loc>
+    <loc>https://tooltrim.com/fr/tool/rocketlink</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/rocketlink</loc>
+    <loc>https://tooltrim.com/en/tool/rocketlink</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/ruby</loc>
+    <loc>https://tooltrim.com/fr/tool/ruby</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/ruby</loc>
+    <loc>https://tooltrim.com/en/tool/ruby</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/salesflare</loc>
+    <loc>https://tooltrim.com/fr/tool/salesflare</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/salesflare</loc>
+    <loc>https://tooltrim.com/en/tool/salesflare</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/salesforce</loc>
+    <loc>https://tooltrim.com/fr/tool/salesforce</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/salesforce</loc>
+    <loc>https://tooltrim.com/en/tool/salesforce</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/sellersfi</loc>
+    <loc>https://tooltrim.com/fr/tool/sellersfi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/sellersfi</loc>
+    <loc>https://tooltrim.com/en/tool/sellersfi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/sellfy</loc>
+    <loc>https://tooltrim.com/fr/tool/sellfy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/sellfy</loc>
+    <loc>https://tooltrim.com/en/tool/sellfy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/semrush</loc>
+    <loc>https://tooltrim.com/fr/tool/semrush</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/semrush</loc>
+    <loc>https://tooltrim.com/en/tool/semrush</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/sendinblue</loc>
+    <loc>https://tooltrim.com/fr/tool/sendinblue</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/sendinblue</loc>
+    <loc>https://tooltrim.com/en/tool/sendinblue</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/shogun</loc>
+    <loc>https://tooltrim.com/fr/tool/shogun</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/shogun</loc>
+    <loc>https://tooltrim.com/en/tool/shogun</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/shophero</loc>
+    <loc>https://tooltrim.com/fr/tool/shophero</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/shophero</loc>
+    <loc>https://tooltrim.com/en/tool/shophero</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/shopify</loc>
+    <loc>https://tooltrim.com/fr/tool/shopify</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/shopify</loc>
+    <loc>https://tooltrim.com/en/tool/shopify</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/similarweb</loc>
+    <loc>https://tooltrim.com/fr/tool/similarweb</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/similarweb</loc>
+    <loc>https://tooltrim.com/en/tool/similarweb</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/simpletexting</loc>
+    <loc>https://tooltrim.com/fr/tool/simpletexting</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/simpletexting</loc>
+    <loc>https://tooltrim.com/en/tool/simpletexting</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/simvoly</loc>
+    <loc>https://tooltrim.com/fr/tool/simvoly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/simvoly</loc>
+    <loc>https://tooltrim.com/en/tool/simvoly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/smartsuite</loc>
+    <loc>https://tooltrim.com/fr/tool/smartsuite</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/smartsuite</loc>
+    <loc>https://tooltrim.com/en/tool/smartsuite</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/smtp-com</loc>
+    <loc>https://tooltrim.com/fr/tool/smtp-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/smtp-com</loc>
+    <loc>https://tooltrim.com/en/tool/smtp-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/socialbee</loc>
+    <loc>https://tooltrim.com/fr/tool/socialbee</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/socialbee</loc>
+    <loc>https://tooltrim.com/en/tool/socialbee</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/softr</loc>
+    <loc>https://tooltrim.com/fr/tool/softr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/softr</loc>
+    <loc>https://tooltrim.com/en/tool/softr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/spaceiq</loc>
+    <loc>https://tooltrim.com/fr/tool/spaceiq</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/spaceiq</loc>
+    <loc>https://tooltrim.com/en/tool/spaceiq</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/squarespace</loc>
+    <loc>https://tooltrim.com/fr/tool/squarespace</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/squarespace</loc>
+    <loc>https://tooltrim.com/en/tool/squarespace</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/surveysparrow</loc>
+    <loc>https://tooltrim.com/fr/tool/surveysparrow</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/surveysparrow</loc>
+    <loc>https://tooltrim.com/en/tool/surveysparrow</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/sysaid</loc>
+    <loc>https://tooltrim.com/fr/tool/sysaid</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/sysaid</loc>
+    <loc>https://tooltrim.com/en/tool/sysaid</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/teamwork</loc>
+    <loc>https://tooltrim.com/fr/tool/teamwork</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/teamwork</loc>
+    <loc>https://tooltrim.com/en/tool/teamwork</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/teachable</loc>
+    <loc>https://tooltrim.com/fr/tool/teachable</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/teachable</loc>
+    <loc>https://tooltrim.com/en/tool/teachable</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/tidio</loc>
+    <loc>https://tooltrim.com/fr/tool/tidio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/tidio</loc>
+    <loc>https://tooltrim.com/en/tool/tidio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/time-doctor</loc>
+    <loc>https://tooltrim.com/fr/tool/time-doctor</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/time-doctor</loc>
+    <loc>https://tooltrim.com/en/tool/time-doctor</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/trustpilot</loc>
+    <loc>https://tooltrim.com/fr/tool/trustpilot</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/trustpilot</loc>
+    <loc>https://tooltrim.com/en/tool/trustpilot</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/typeform</loc>
+    <loc>https://tooltrim.com/fr/tool/typeform</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/typeform</loc>
+    <loc>https://tooltrim.com/en/tool/typeform</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/unbounce</loc>
+    <loc>https://tooltrim.com/fr/tool/unbounce</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/unbounce</loc>
+    <loc>https://tooltrim.com/en/tool/unbounce</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/upwork</loc>
+    <loc>https://tooltrim.com/fr/tool/upwork</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/upwork</loc>
+    <loc>https://tooltrim.com/en/tool/upwork</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/vimeo</loc>
+    <loc>https://tooltrim.com/fr/tool/vimeo</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/vimeo</loc>
+    <loc>https://tooltrim.com/en/tool/vimeo</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/wix</loc>
+    <loc>https://tooltrim.com/fr/tool/wix</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/wix</loc>
+    <loc>https://tooltrim.com/en/tool/wix</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/woocommerce</loc>
+    <loc>https://tooltrim.com/fr/tool/woocommerce</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/woocommerce</loc>
+    <loc>https://tooltrim.com/en/tool/woocommerce</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/wordpress-com</loc>
+    <loc>https://tooltrim.com/fr/tool/wordpress-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/wordpress-com</loc>
+    <loc>https://tooltrim.com/en/tool/wordpress-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/wrike</loc>
+    <loc>https://tooltrim.com/fr/tool/wrike</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/wrike</loc>
+    <loc>https://tooltrim.com/en/tool/wrike</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/wunderlist</loc>
+    <loc>https://tooltrim.com/fr/tool/wunderlist</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/wunderlist</loc>
+    <loc>https://tooltrim.com/en/tool/wunderlist</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/zapier</loc>
+    <loc>https://tooltrim.com/fr/tool/zapier</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/zapier</loc>
+    <loc>https://tooltrim.com/en/tool/zapier</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/zendesk</loc>
+    <loc>https://tooltrim.com/fr/tool/zendesk</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/zendesk</loc>
+    <loc>https://tooltrim.com/en/tool/zendesk</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/zoho</loc>
+    <loc>https://tooltrim.com/fr/tool/zoho</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/zoho</loc>
+    <loc>https://tooltrim.com/en/tool/zoho</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/honeybook</loc>
+    <loc>https://tooltrim.com/fr/tool/honeybook</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/honeybook</loc>
+    <loc>https://tooltrim.com/en/tool/honeybook</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/dubsado</loc>
+    <loc>https://tooltrim.com/fr/tool/dubsado</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/dubsado</loc>
+    <loc>https://tooltrim.com/en/tool/dubsado</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/visme</loc>
+    <loc>https://tooltrim.com/fr/tool/visme</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/visme</loc>
+    <loc>https://tooltrim.com/en/tool/visme</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/plutio</loc>
+    <loc>https://tooltrim.com/fr/tool/plutio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/plutio</loc>
+    <loc>https://tooltrim.com/en/tool/plutio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/snov-io</loc>
+    <loc>https://tooltrim.com/fr/tool/snov-io</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/snov-io</loc>
+    <loc>https://tooltrim.com/en/tool/snov-io</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/elfsight</loc>
+    <loc>https://tooltrim.com/fr/tool/elfsight</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/elfsight</loc>
+    <loc>https://tooltrim.com/en/tool/elfsight</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/prowritingaid</loc>
+    <loc>https://tooltrim.com/fr/tool/prowritingaid</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/prowritingaid</loc>
+    <loc>https://tooltrim.com/en/tool/prowritingaid</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/vcita</loc>
+    <loc>https://tooltrim.com/fr/tool/vcita</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/vcita</loc>
+    <loc>https://tooltrim.com/en/tool/vcita</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/sendible</loc>
+    <loc>https://tooltrim.com/fr/tool/sendible</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/sendible</loc>
+    <loc>https://tooltrim.com/en/tool/sendible</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/clockify</loc>
+    <loc>https://tooltrim.com/fr/tool/clockify</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/clockify</loc>
+    <loc>https://tooltrim.com/en/tool/clockify</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/timecamp</loc>
+    <loc>https://tooltrim.com/fr/tool/timecamp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/timecamp</loc>
+    <loc>https://tooltrim.com/en/tool/timecamp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/deepseek</loc>
+    <loc>https://tooltrim.com/fr/tool/deepseek</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/deepseek</loc>
+    <loc>https://tooltrim.com/en/tool/deepseek</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/tool/gemini</loc>
+    <loc>https://tooltrim.com/fr/tool/gemini</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/tool/gemini</loc>
+    <loc>https://tooltrim.com/en/tool/gemini</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/ia-generaliste</loc>
+    <loc>https://tooltrim.com/fr/category/ia-generaliste</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/ia-generaliste</loc>
+    <loc>https://tooltrim.com/en/category/ia-generaliste</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/organisation</loc>
+    <loc>https://tooltrim.com/fr/category/organisation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/organisation</loc>
+    <loc>https://tooltrim.com/en/category/organisation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/communication</loc>
+    <loc>https://tooltrim.com/fr/category/communication</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/communication</loc>
+    <loc>https://tooltrim.com/en/category/communication</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/creation-design</loc>
+    <loc>https://tooltrim.com/fr/category/creation-design</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/creation-design</loc>
+    <loc>https://tooltrim.com/en/category/creation-design</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/finance-facturation</loc>
+    <loc>https://tooltrim.com/fr/category/finance-facturation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/finance-facturation</loc>
+    <loc>https://tooltrim.com/en/category/finance-facturation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/stockage</loc>
+    <loc>https://tooltrim.com/fr/category/stockage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/stockage</loc>
+    <loc>https://tooltrim.com/en/category/stockage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/automatisation</loc>
+    <loc>https://tooltrim.com/fr/category/automatisation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/automatisation</loc>
+    <loc>https://tooltrim.com/en/category/automatisation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/gestion-projet</loc>
+    <loc>https://tooltrim.com/fr/category/gestion-projet</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/gestion-projet</loc>
+    <loc>https://tooltrim.com/en/category/gestion-projet</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/email-marketing</loc>
+    <loc>https://tooltrim.com/fr/category/email-marketing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/email-marketing</loc>
+    <loc>https://tooltrim.com/en/category/email-marketing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/communication-equipe</loc>
+    <loc>https://tooltrim.com/fr/category/communication-equipe</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/communication-equipe</loc>
+    <loc>https://tooltrim.com/en/category/communication-equipe</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/design-prototypage</loc>
+    <loc>https://tooltrim.com/fr/category/design-prototypage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/design-prototypage</loc>
+    <loc>https://tooltrim.com/en/category/design-prototypage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/securite</loc>
+    <loc>https://tooltrim.com/fr/category/securite</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/securite</loc>
+    <loc>https://tooltrim.com/en/category/securite</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/suivi-temps</loc>
+    <loc>https://tooltrim.com/fr/category/suivi-temps</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/suivi-temps</loc>
+    <loc>https://tooltrim.com/en/category/suivi-temps</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/nocode-web</loc>
+    <loc>https://tooltrim.com/fr/category/nocode-web</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/nocode-web</loc>
+    <loc>https://tooltrim.com/en/category/nocode-web</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/analytics</loc>
+    <loc>https://tooltrim.com/fr/category/analytics</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/analytics</loc>
+    <loc>https://tooltrim.com/en/category/analytics</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/category/formation-education</loc>
+    <loc>https://tooltrim.com/fr/category/formation-education</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/category/formation-education</loc>
+    <loc>https://tooltrim.com/en/category/formation-education</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/guide/stack-minimaliste-freelance-2026</loc>
+    <loc>https://tooltrim.com/fr/guide/stack-minimaliste-freelance-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/comparatif/chatgpt-vs-claude</loc>
+    <loc>https://tooltrim.com/fr/comparatif/chatgpt-vs-claude</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/comparatif/dropbox-vs-google-drive</loc>
+    <loc>https://tooltrim.com/fr/comparatif/dropbox-vs-google-drive</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/comparatif/zapier-vs-make</loc>
+    <loc>https://tooltrim.com/fr/comparatif/zapier-vs-make</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/comparatif/notion-vs-obsidian</loc>
+    <loc>https://tooltrim.com/fr/comparatif/notion-vs-obsidian</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/comparatif/typeform-vs-tally</loc>
+    <loc>https://tooltrim.com/fr/comparatif/typeform-vs-tally</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/comparatif/midjourney-vs-firefly</loc>
+    <loc>https://tooltrim.com/fr/comparatif/midjourney-vs-firefly</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/comparatif/github-copilot-vs-cursor</loc>
+    <loc>https://tooltrim.com/fr/comparatif/github-copilot-vs-cursor</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/comparatif/grammarly-vs-claude</loc>
+    <loc>https://tooltrim.com/fr/comparatif/grammarly-vs-claude</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/en/guide/loom-pricing-alternatives</loc>
+    <loc>https://tooltrim.com/en/guide/loom-pricing-alternatives</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.io/fr/guide/loom-prix-alternatives</loc>
+    <loc>https://tooltrim.com/fr/guide/loom-prix-alternatives</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
