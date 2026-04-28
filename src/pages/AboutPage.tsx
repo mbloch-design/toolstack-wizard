@@ -24,13 +24,13 @@ const AboutPage = () => {
       `ToolTrim analyse ${stats.tools}+ outils SaaS pour aider les freelances à optimiser leur stack. Découvrez notre méthodologie indépendante.`,
       `ToolTrim analyzes ${stats.tools}+ SaaS tools to help freelancers optimize their stack. Discover our independent methodology.`
     );
-    setSeoTags({ title, description: desc, url: `https://tooltrim.io/${lang}/about` });
+    setSeoTags({ title, description: desc, url: `https://tooltrim.com/${lang}/about` });
     setHreflang(`/${lang}/about`);
     setJsonLd("about-jsonld", {
       "@context": "https://schema.org",
       "@type": "AboutPage",
       name: "ToolTrim",
-      url: `https://tooltrim.io/${lang}/about`,
+      url: `https://tooltrim.com/${lang}/about`,
       description: desc,
     });
     return () => cleanupSeo(["about-jsonld"]);

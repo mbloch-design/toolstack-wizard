@@ -31,7 +31,7 @@ Generate from `src/data/tools_v10.json`. Top 50 tools selected by presence of ve
 ```
 # ToolTrim — Top 50 tools (verified pricing)
 # Last verified: 2026-03-29
-# Source: https://www.tooltrim.io
+# Source: https://www.tooltrim.com
 
 [
   {"name":"ChatGPT","slug":"chatgpt","price":20,"currency":"EUR","verdict":"keep","verified":"2026-03-29"},

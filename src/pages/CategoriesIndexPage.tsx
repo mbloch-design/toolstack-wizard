@@ -19,7 +19,7 @@ const CategoriesIndexPage = () => {
     const desc = lang === "fr"
       ? `Explorez ${categories.length} catégories d'outils SaaS : IA, gestion de projet, communication, design et plus. Trouvez les meilleurs outils par usage.`
       : `Explore ${categories.length} SaaS tool categories: AI, project management, communication, design and more. Find the best tools by use case.`;
-    const url = `https://tooltrim.io/${lang}/category`;
+    const url = `https://tooltrim.com/${lang}/category`;
 
     setSeoTags({ title, description: desc, url });
     setHreflang(`/${lang}/category`);

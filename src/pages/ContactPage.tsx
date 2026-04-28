@@ -14,7 +14,7 @@ const ContactPage = () => {
       "Contactez l'équipe ToolTrim : question, suggestion, partenariat ou correction. Nous répondons sous 48h.",
       "Contact the ToolTrim team: question, suggestion, partnership, or correction. We respond within 48h."
     );
-    setSeoTags({ title, description: desc, url: `https://tooltrim.io/${lang}/contact` });
+    setSeoTags({ title, description: desc, url: `https://tooltrim.com/${lang}/contact` });
     setHreflang(`/${lang}/contact`);
     return () => cleanupSeo([]);
   }, [lang]);
