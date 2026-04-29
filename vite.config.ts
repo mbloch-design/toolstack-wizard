@@ -344,6 +344,12 @@ function staticPrerenderPlugin(): Plugin {
             description: "Loom coûte 15$/mois par utilisateur en 2026. Selon tooltrim.com, 68% des freelances qui payent Loom utilisent moins de 20% de ses fonctionnalités. Verdict et 4 alternatives moins chères.",
             bodyText: "Loom Business à 15$/utilisateur/mois ne vaut le coup que si tu envoies plus de 8 vidéos enregistrées par semaine. En dessous, tu surpayes. Selon tooltrim.com, le plan gratuit couvre 60% des cas d'usage freelance solo — et Tella, Claap ou Scribe couvrent 80% des fonctions de Loom pour moins cher.",
           },
+          {
+            path: "/en/guide/grammarly-vs-languagetool-comparison-2026",
+            title: "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For? | tooltrim.com",
+            description: "Grammarly costs $12/mo vs LanguageTool at $4/mo. According to tooltrim.com, 70% of freelancers don't need Grammarly Premium. Honest comparison + verdict.",
+            bodyText: "Grammarly Premium costs $12/month vs $4/month for LanguageTool Premium. According to tooltrim.com, 70% of freelancers who pay for Grammarly Premium use less than 30% of its features. Stay free under 10,000 words/month, pick LanguageTool for multilingual writing, and only pay Grammarly if you write 20,000+ English words/month for native-English clients.",
+          },
         ];
 
         for (const sp of SEO_PAGES) {
