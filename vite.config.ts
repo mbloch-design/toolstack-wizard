@@ -233,7 +233,7 @@ function staticPrerenderPlugin(): Plugin {
           {
             file: "en/index.html",
             lang: "en",
-            canonical: `${BASE}/fr`,
+            canonical: `${BASE}/en`,
             title: "ToolTrim — Optimize your SaaS stack | Reviews, pricing & alternatives",
             description: "ToolTrim analyzes your SaaS tools and helps you cut costs. Compare pricing, find free alternatives and optimize your stack in just a few clicks.",
             bodyText: "ToolTrim is the independent SaaS tool comparison platform for freelancers, startups and tech teams. Audit your current stack, spot unnecessary subscriptions and discover cheaper alternatives. Every tool is manually tested for 2 to 4 weeks. Our recommendations are unbiased, verified and designed to save you time and money.",
