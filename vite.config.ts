@@ -229,11 +229,12 @@ function staticPrerenderPlugin(): Plugin {
             const url = `${BASE}/${lang}/tool/${slug}`;
 
 
+            const productUrl = tool.websiteUrl || tool.affiliateLink || tool.website_url || tool.affiliate_link || "";
             const jsonLd: Record<string, any> = {
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               name,
-              url,
+              ...(productUrl ? { url: productUrl } : {}),
               description: description || title,
               applicationCategory: "BusinessApplication",
               operatingSystem: "Web",
