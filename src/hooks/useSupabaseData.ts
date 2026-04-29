@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Category } from "@/data/types";
 
-// ---------- type & mapper ----------
+// ---------- types & mappers ----------
 
 export interface Post {
   id: number; slug: string; lang: string; title: string; excerpt: string;
@@ -78,41 +78,34 @@ function mapSupabaseCat(c: any): Category {
   return { id: c.id, slug: c.slug, name: c.name, description: c.description || "" };
 }
 
-// ---------- async loaders with module-level cache ----------
+// ---------- lazy loaders with module-level cache ----------
 
 let _toolsCache: Tool[] | null = null;
 async function loadStaticTools(): Promise<Tool[]> {
   if (_toolsCache) return _toolsCache;
-  try {
-    const r = await fetch("/data/tools_v4.json");
-    const json = await r.json();
-    _toolsCache = (json as any[]).map(mapToolFromJson);
-    return _toolsCache;
-  } catch { return []; }
+  const { default: json } = await import("@/data/tools_v4.json");
+  _toolsCache = (json as any[]).map(mapToolFromJson);
+  return _toolsCache;
 }
 
 let _categoriesCache: Category[] | null = null;
 async function loadStaticCategories(): Promise<Category[]> {
   if (_categoriesCache) return _categoriesCache;
-  try {
-    const r = await fetch("/data/content.json");
-    const json = await r.json();
-    _categoriesCache = (json.categories || []).map((c: any) => ({
-      id: c.id, slug: c.slug, name: c.name, description: c.description, tools: c.tools,
-    }));
-    return _categoriesCache;
-  } catch { return []; }
+  const { default: json } = await import("@/data/content.json");
+  _categoriesCache = ((json as any).categories || []).map((c: any) => ({
+    id: c.id, slug: c.slug, name: c.name, description: c.description, tools: c.tools,
+  }));
+  return _categoriesCache;
 }
 
 const _postsCache: Record<string, Post[]> = {};
 async function loadStaticPosts(lang: string): Promise<Post[]> {
   if (_postsCache[lang]) return _postsCache[lang];
-  try {
-    const r = await fetch(`/data/posts-${lang}.json`);
-    const json = await r.json();
-    _postsCache[lang] = (json as any[]).map(mapPost);
-    return _postsCache[lang];
-  } catch { return []; }
+  const mod = lang === "en"
+    ? await import("@/data/posts-en.json")
+    : await import("@/data/posts-fr.json");
+  _postsCache[lang] = (mod.default as any[]).map(mapPost);
+  return _postsCache[lang];
 }
 
 // ---------- hooks ----------
@@ -170,7 +163,7 @@ export function useToolBySlug(slug: string | undefined) {
           setTool(mapToolFromJson(data));
         } else {
           const staticTools = await loadStaticTools();
-          const found = staticTools.find((t) => t.slug === slug || t.id === slug);
+          const found = staticTools.find(t => t.slug === slug || t.id === slug);
           setTool(found || null);
         }
         setLoading(false);
@@ -226,7 +219,7 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
           setPost(mapPost(data));
         } else {
           const localPosts = await loadStaticPosts(lang);
-          const found = localPosts.find((p: any) => p.slug === slug);
+          const found = localPosts.find(p => p.slug === slug);
           setPost(found ? mapPost(found) : null);
         }
         setLoading(false);
