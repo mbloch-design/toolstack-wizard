@@ -274,6 +274,11 @@ function staticPrerenderPlugin(): Plugin {
             html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
             // Inject before </head>
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+            // Inject noscript body text for crawlers
+            const toolBodyText = isFr
+              ? `${name} — ${description} Avis, prix vérifiés et alternatives moins chères sur ToolTrim.`
+              : `${name} — ${description} Honest review, verified pricing and cheaper alternatives on ToolTrim.`;
+            html = html.replace("</body>", `    <noscript><p>${toolBodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
             const outDir = path.resolve(distDir, lang, "tool", slug);
             fs.mkdirSync(outDir, { recursive: true });
@@ -548,6 +553,7 @@ function staticPrerenderPlugin(): Plugin {
             html = html.replace(/<title>[^<]*<\/title>/, "");
             html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+            html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
             const outDir = path.resolve(distDir, lang, "category", slug);
             fs.mkdirSync(outDir, { recursive: true });
@@ -614,6 +620,7 @@ function staticPrerenderPlugin(): Plugin {
             html = html.replace(/<title>[^<]*<\/title>/, "");
             html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+            html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
             const outDir = path.resolve(distDir, lang, "comparatif", comp);
             fs.mkdirSync(outDir, { recursive: true });
