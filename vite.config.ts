@@ -573,6 +573,21 @@ function staticPrerenderPlugin(): Plugin {
               ],
             };
 
+            const catTools = tools.filter((t: any) => t.categoryId === cat.id).slice(0, 10);
+            const itemList = catTools.length > 0 ? {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              name: isFr ? `Meilleurs outils ${catName}` : `Best ${catName} tools`,
+              url,
+              numberOfItems: catTools.length,
+              itemListElement: catTools.map((t: any, i: number) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${BASE}/${lang}/tool/${t.slug}`,
+                name: t.name,
+              })),
+            } : null;
+
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
@@ -584,6 +599,7 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
               `<script type="application/ld+json">${JSON.stringify(catBreadcrumb)}</script>`,
+              ...(itemList ? [`<script type="application/ld+json">${JSON.stringify(itemList)}</script>`] : []),
             ].join("\n    ");
 
             let html = baseHtml;

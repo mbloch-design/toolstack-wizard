@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, lazy, Suspense } from "react";
 import { ArrowRight, Check, BookOpen, Clock } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
@@ -11,15 +11,16 @@ import { ToolLogoStrip } from "@/components/ToolMentionedCard";
 import type { Tool } from "@/data/types";
 
 import HeroSection from "@/components/home/HeroSection";
-import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
-import ScannerDemo from "@/components/home/ScannerDemo";
-import HowItWorks from "@/components/home/HowItWorks";
-import PersonasSection from "@/components/home/PersonasSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import DiffTable from "@/components/home/DiffTable";
-import FinalCTA from "@/components/home/FinalCTA";
+
+const PersonaGuidesSection = lazy(() => import("@/components/PersonaGuidesSection"));
+const ScannerDemo = lazy(() => import("@/components/home/ScannerDemo"));
+const HowItWorks = lazy(() => import("@/components/home/HowItWorks"));
+const PersonasSection = lazy(() => import("@/components/home/PersonasSection"));
+const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSection"));
+const DiffTable = lazy(() => import("@/components/home/DiffTable"));
+const FinalCTA = lazy(() => import("@/components/home/FinalCTA"));
 
 const FAQ_FR = [
   { q: "Comment ToolTrim analyse-t-il ma stack ?", a: "ToolTrim compare vos outils à une base de 314 outils vérifiés. Il détecte les doublons, les outils dormants et les remplacements possibles — avec des prix vérifiés sur les pages officielles." },
@@ -85,13 +86,13 @@ const HomePage = () => {
       <StatsSection toolCount={stats.total} categoryCount={stats.categories} />
 
       {/* 4. Interactive Scanner Demo */}
-      <ScannerDemo />
+      <Suspense fallback={null}><ScannerDemo /></Suspense>
 
       {/* 5. How it works */}
-      <HowItWorks />
+      <Suspense fallback={null}><HowItWorks /></Suspense>
 
       {/* 6. Personas (5 expertise types, no names) */}
-      <PersonasSection />
+      <Suspense fallback={null}><PersonasSection /></Suspense>
 
       {/* 7. Categories */}
       <section className="border-t border-border py-20">
@@ -176,7 +177,7 @@ const HomePage = () => {
       </section>
 
       {/* 9. Testimonials */}
-      <TestimonialsSection />
+      <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
       {/* 10. Guides — styled like GuidesPage */}
       {featuredPosts.length > 0 && (
@@ -203,7 +204,7 @@ const HomePage = () => {
       )}
 
       {/* 11. Diff table */}
-      <DiffTable toolCount={stats.total} />
+      <Suspense fallback={null}><DiffTable toolCount={stats.total} /></Suspense>
 
       {/* 12. FAQ */}
       <section className="border-t border-border py-20">
@@ -226,10 +227,10 @@ const HomePage = () => {
       </section>
 
       {/* 12bis. Persona guides (SEO pillar links) */}
-      <PersonaGuidesSection lang={lang} />
+      <Suspense fallback={null}><PersonaGuidesSection lang={lang} /></Suspense>
 
       {/* 13. Final CTA */}
-      <FinalCTA />
+      <Suspense fallback={null}><FinalCTA /></Suspense>
     </div>
   );
 };
