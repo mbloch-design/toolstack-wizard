@@ -250,6 +250,16 @@ function staticPrerenderPlugin(): Plugin {
             const frToolUrl = `${BASE}/fr/tool/${slug}`;
             const enToolUrl = `${BASE}/en/tool/${slug}`;
 
+            const breadcrumb = {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
+                { "@type": "ListItem", position: 2, name: isFr ? "Outils" : "Tools", item: `${BASE}/${lang}/tools` },
+                { "@type": "ListItem", position: 3, name, item: url },
+              ],
+            };
+
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frToolUrl}" />`,
@@ -261,6 +271,7 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
               `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
+              `<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
             ].join("\n    ");
 
             // Inject into <head>, replacing existing title/meta if present
@@ -536,6 +547,16 @@ function staticPrerenderPlugin(): Plugin {
             const frUrl = `${BASE}/fr/category/${slug}`;
             const enUrl = `${BASE}/en/category/${slug}`;
 
+            const catBreadcrumb = {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
+                { "@type": "ListItem", position: 2, name: isFr ? "Catégories" : "Categories", item: `${BASE}/${lang}/tools` },
+                { "@type": "ListItem", position: 3, name: catName, item: url },
+              ],
+            };
+
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
@@ -546,6 +567,7 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
+              `<script type="application/ld+json">${JSON.stringify(catBreadcrumb)}</script>`,
             ].join("\n    ");
 
             let html = baseHtml;
@@ -603,6 +625,16 @@ function staticPrerenderPlugin(): Plugin {
             const frUrl = `${BASE}/fr/comparatif/${comp}`;
             const enUrl = `${BASE}/en/comparatif/${comp}`;
 
+            const compBreadcrumb = {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
+                { "@type": "ListItem", position: 2, name: isFr ? "Comparatifs" : "Comparisons", item: `${BASE}/${lang}/comparatifs` },
+                { "@type": "ListItem", position: 3, name: label, item: url },
+              ],
+            };
+
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
@@ -613,6 +645,7 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
+              `<script type="application/ld+json">${JSON.stringify(compBreadcrumb)}</script>`,
             ].join("\n    ");
 
             let html = baseHtml;
