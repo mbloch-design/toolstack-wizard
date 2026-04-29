@@ -728,8 +728,12 @@ function staticPrerenderPlugin(): Plugin {
             description: description,
             datePublished: post.date || "",
             dateModified: post.date || "",
-            author: { "@type": "Organization", name: "ToolTrim", url: BASE },
-            publisher: { "@type": "Organization", name: "ToolTrim", url: BASE },
+            author: {
+              "@type": "Person",
+              name: "Équipe ToolTrim",
+              url: `${BASE}/methodology`,
+            },
+            publisher: { "@type": "Organization", name: "ToolTrim", url: BASE, logo: { "@type": "ImageObject", url: `${BASE}/og-image.png` } },
             url,
           };
 
