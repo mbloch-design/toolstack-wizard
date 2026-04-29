@@ -394,7 +394,20 @@ function staticPrerenderPlugin(): Plugin {
           fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
         }
 
-        console.log(`✅ Prerender : ${count} pages tools + 3 landing pages + ${SEO_PAGES.length} pages SEO générées`);
+        // --- Generate 404.html for Vercel custom error page ---
+        const meta404 = [
+          `<title>Page introuvable | ToolTrim</title>`,
+          `<meta name="description" content="Cette page n'existe pas. Découvrez nos avis et comparatifs d'outils SaaS sur ToolTrim." />`,
+          `<meta name="robots" content="noindex, follow" />`,
+        ].join("\n    ");
+        let html404 = baseHtml;
+        html404 = html404.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
+        html404 = html404.replace(/<title>[^<]*<\/title>/, "");
+        html404 = html404.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+        html404 = html404.replace("</head>", `    ${meta404}\n  </head>`);
+        fs.writeFileSync(path.resolve(distDir, "404.html"), html404, "utf-8");
+
+        console.log(`✅ Prerender : ${count} pages tools + 3 landing pages + ${SEO_PAGES.length} pages SEO générées + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
