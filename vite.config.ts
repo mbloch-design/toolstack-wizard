@@ -158,10 +158,8 @@ function staticPrerenderPlugin(): Plugin {
               ? `${name} — Avis, prix et alternatives | ToolTrim`
               : `${name} — Review, pricing and alternatives | ToolTrim`;
             const description = isFr ? descFr : descEn;
-            const url = `https://tooltrim.com/${lang}/tool/${slug}`;
+            const url = `${BASE}/${lang}/tool/${slug}`;
 
-            // Canonical + hreflang are injected at runtime by react-helmet-async (DynamicCanonical).
-            // Do NOT hardcode them here to avoid duplicate canonicals in the rendered HTML.
 
             const jsonLd: Record<string, any> = {
               "@context": "https://schema.org",
@@ -178,7 +176,14 @@ function staticPrerenderPlugin(): Plugin {
               };
             }
 
+            const frToolUrl = `${BASE}/fr/tool/${slug}`;
+            const enToolUrl = `${BASE}/en/tool/${slug}`;
+
             const metaTags = [
+              `<link rel="canonical" href="${url}" />`,
+              `<link rel="alternate" hreflang="fr" href="${frToolUrl}" />`,
+              `<link rel="alternate" hreflang="en" href="${enToolUrl}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${frToolUrl}" />`,
               `<title>${title}</title>`,
               `<meta name="description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -189,6 +194,10 @@ function staticPrerenderPlugin(): Plugin {
 
             // Inject into <head>, replacing existing title/meta if present
             let html = baseHtml;
+            // Fix lang attribute for this locale
+            html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${lang}"`);
+            // Remove existing canonical (re-injected per-page above)
+            html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
             // Remove existing title
             html = html.replace(/<title>[^<]*<\/title>/, "");
             // Remove existing meta description
@@ -208,7 +217,7 @@ function staticPrerenderPlugin(): Plugin {
           {
             file: "index.html",
             lang: "fr",
-            canonical: "https://tooltrim.com/fr",
+            canonical: `${BASE}/fr`,
             title: "ToolTrim — Optimisez votre stack SaaS | Avis, prix et alternatives",
             description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
             bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
@@ -216,7 +225,7 @@ function staticPrerenderPlugin(): Plugin {
           {
             file: "fr/index.html",
             lang: "fr",
-            canonical: "https://tooltrim.com/fr",
+            canonical: `${BASE}/fr`,
             title: "ToolTrim — Optimisez votre stack SaaS | Avis, prix et alternatives",
             description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
             bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
@@ -224,7 +233,7 @@ function staticPrerenderPlugin(): Plugin {
           {
             file: "en/index.html",
             lang: "en",
-            canonical: "https://tooltrim.com/en",
+            canonical: `${BASE}/fr`,
             title: "ToolTrim — Optimize your SaaS stack | Reviews, pricing & alternatives",
             description: "ToolTrim analyzes your SaaS tools and helps you cut costs. Compare pricing, find free alternatives and optimize your stack in just a few clicks.",
             bodyText: "ToolTrim is the independent SaaS tool comparison platform for freelancers, startups and tech teams. Audit your current stack, spot unnecessary subscriptions and discover cheaper alternatives. Every tool is manually tested for 2 to 4 weeks. Our recommendations are unbiased, verified and designed to save you time and money.",
@@ -232,22 +241,27 @@ function staticPrerenderPlugin(): Plugin {
         ];
 
         for (const lp of landings) {
-          const altLang = lp.lang === "fr" ? "en" : "fr";
-          const altCanonical = lp.lang === "fr" ? "https://tooltrim.com/en" : "https://tooltrim.com/fr";
+          const frCanonical = `${BASE}/fr`;
+          const enCanonical = `${BASE}/en`;
 
           const metaTags = [
+            `<link rel="canonical" href="${lp.canonical}" />`,
+            `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
+            `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
+            `<link rel="alternate" hreflang="x-default" href="${frCanonical}" />`,
             `<title>${lp.title}</title>`,
             `<meta name="description" content="${lp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:title" content="${lp.title.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:description" content="${lp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:url" content="${lp.canonical}" />`,
             `<meta property="og:site_name" content="ToolTrim" />`,
-            // Canonical + hreflang injected at runtime by react-helmet-async (DynamicCanonical).
           ].join("\n    ");
 
           const staticParagraph = `<noscript><p>${lp.bodyText}</p></noscript>`;
 
           let html = baseHtml;
+          html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${lp.lang}"`);
+          html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
           html = html.replace(/<title>[^<]*<\/title>/, "");
           html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
           html = html.replace("</head>", `    ${metaTags}\n  </head>`);
@@ -353,8 +367,10 @@ function staticPrerenderPlugin(): Plugin {
         ];
 
         for (const sp of SEO_PAGES) {
-          const url = `https://tooltrim.com${sp.path}`;
+          const url = `${BASE}${sp.path}`;
+          const spLang = sp.path.startsWith("/en/") ? "en" : "fr";
           const metaTags = [
+            `<link rel="canonical" href="${url}" />`,
             `<title>${sp.title}</title>`,
             `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:title" content="${sp.title.replace(/"/g, "&quot;")}" />`,
@@ -366,6 +382,8 @@ function staticPrerenderPlugin(): Plugin {
           const staticParagraph = `<noscript><p>${sp.bodyText}</p></noscript>`;
 
           let html = baseHtml;
+          html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${spLang}"`);
+          html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
           html = html.replace(/<title>[^<]*<\/title>/, "");
           html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
           html = html.replace("</head>", `    ${metaTags}\n  </head>`);
