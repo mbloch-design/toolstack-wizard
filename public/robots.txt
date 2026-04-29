@@ -2,6 +2,7 @@
 
 User-agent: *
 Allow: /
+Allow: /assets/
 Disallow: /api/
 Disallow: /fr/selector
 Disallow: /en/selector
@@ -10,6 +11,9 @@ Disallow: /en/diagnostic
 Disallow: /*?utm_source=
 Disallow: /*?utm_medium=
 Disallow: /*?utm_campaign=
+Disallow: /*&utm_source=
+Disallow: /*&utm_medium=
+Disallow: /*&utm_campaign=
 
 Sitemap: https://www.tooltrim.com/sitemap.xml
 
@@ -26,8 +30,3 @@ Allow: /
 
 User-agent: Google-Extended
 Allow: /
-
-# Empêcher le crawl des assets
-
-User-agent: *
-Disallow: /assets/
