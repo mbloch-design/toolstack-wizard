@@ -465,7 +465,7 @@ function staticPrerenderPlugin(): Plugin {
         const categories = content.categories || [];
         for (const cat of categories) {
           const slug = cat.slug;
-          const frName = (cat.name || slug).replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\s]+/gu, "").trim() || cat.name;
+          const frName = ((cat.name || slug).replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]+/gu, "").replace(/\s+/g, " ").trim()) || cat.name;
           const frDesc = cat.description || "";
           const enData = CATEGORY_EN[slug] || { name: frName, description: frDesc };
 
