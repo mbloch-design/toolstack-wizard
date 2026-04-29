@@ -35,7 +35,7 @@ const ToolDetailPage = () => {
     const year = new Date().getFullYear();
     const seoTitle = lang === "fr"
       ? `${tool.name} — Prix, avis et alternatives ${year} | ToolTrim`
-      : `${tool.name} — Pricing, review & alternatives ${year} | ToolTrim`;
+      : `${tool.name} — Review & alternatives | ToolTrim`;
     const seoDesc = lang === "fr"
       ? (hasPrice
           ? `${tool.name} coûte ${price}€/mois. On l'a testé : voici si ça vaut le coup, et les meilleures alternatives moins chères.`

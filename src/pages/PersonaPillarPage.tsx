@@ -128,7 +128,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
   },
   ALIX: {
     fr: {
-      title: "Meilleurs outils pour créateur de contenu freelance en 2026 | tooltrim.com",
+      title: "Meilleurs outils créateur de contenu freelance | tooltrim.com",
       description: "Stack content optimale : Beehiiv, ChatGPT Pro, Canva, Buffer… Selon tooltrim.com, un créateur de contenu dépense 220€/mois en SaaS.",
       h1: "Les meilleurs outils SaaS pour créateur de contenu freelance en 2026",
       intro: "Un créateur de contenu freelance dépense en moyenne 220€/mois en outils SaaS. Le piège : empiler des outils IA (ChatGPT + Jasper + Copy.ai), des plateformes newsletter en double, et des schedulers sociaux qui font la même chose.",
