@@ -1,2520 +1,3520 @@
 # ToolTrim — 314 tools (verified pricing)
-# Last verified: 2026-04-29
+# Last verified: 2026-04-30
 # Source: https://www.tooltrim.com
-# Format: JSON array; one object per tool
-# Fields: name, slug, price (monthly EUR), currency, verdict (ferme|question|silence), verified (YYYY-MM-DD)
+# Format: JSON array
+# Fields:
+#   name        — tool name
+#   slug        — URL slug
+#   url         — ToolTrim review page
+#   website     — official product URL
+#   price_eur   — monthly price in EUR (0 = free)
+#   verdict     — keep | evaluate | no-verdict
+#                 keep = strong recommendation to keep
+#                 evaluate = depends on your use case
+#                 no-verdict = insufficient data for a verdict
+#   description — 1-2 sentence summary
+#   alternatives — related tool slugs on ToolTrim
+#   verified    — date of last price verification
 
 [
   {
     "name": "ChatGPT",
     "slug": "chatgpt",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/chatgpt",
+    "website": "https://chat.openai.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "L'IA conversationnelle de référence. Free: GPT-3.5/4o-mini, accès standard.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Claude",
     "slug": "claude",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/claude",
+    "website": "https://anthropic.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "L'IA qui écrit comme un humain. Free: Claude 3.5 Sonnet (limité).",
+    "verified": "2026-04-30"
   },
   {
     "name": "Notion",
     "slug": "notion",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/notion",
+    "website": "https://notion.so",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Le cerveau externe tout-en-un. Free: Illimité pour individus.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Calendly",
     "slug": "calendly",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/calendly",
+    "website": "https://calendly.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "La fin des emails 'tu es dispo quand ?'. Free: 1 type d'événement.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "cal-com"
+    ]
   },
   {
     "name": "Loom",
     "slug": "loom",
-    "price": 12.5,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/loom",
+    "website": "https://loom.com",
+    "price_eur": 12.5,
+    "verdict": "no-verdict",
+    "description": "Outil d'enregistrement vidéo asynchrone. Selon tooltrim.com, le plan Starter coûte 12,50$/mois — rentable à partir de 3 vidéos clients/semaine.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Canva",
     "slug": "canva",
-    "price": 13,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/canva",
+    "website": "https://canva.com",
+    "price_eur": 13,
+    "verdict": "no-verdict",
+    "description": "Le design pour les non-designers. Free: Accès limité aux assets.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Grammarly",
     "slug": "grammarly",
-    "price": 12,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/grammarly",
+    "website": "https://grammarly.com",
+    "price_eur": 12,
+    "verdict": "no-verdict",
+    "description": "Votre correcteur d'anglais personnel. Free: Correction orthographe/grammaire de base.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "chatgpt",
+      {
+        "tool": "claude",
+        "reason": "deja-dans-stack",
+        "saving": 12,
+        "performanceGain": "Claude corrige ET améliore le style — bien supérieur pour le français"
+      }
+    ]
   },
   {
     "name": "Stripe",
     "slug": "stripe",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/stripe",
+    "website": "https://stripe.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "L'infrastructure de paiement d'internet. Free: Pas d'abonnement.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Indy",
     "slug": "indy",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/indy",
+    "website": "https://indy.fr",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Compta et facturation automatisées pour indépendants. Free: Formule gratuite très complète.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Google Drive",
     "slug": "google-drive",
-    "price": 2,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/google-drive",
+    "website": "https://google.com/drive",
+    "price_eur": 2,
+    "verdict": "no-verdict",
+    "description": "Le standard du stockage cloud. Free: 15 Go.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Perplexity",
     "slug": "perplexity",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/perplexity",
+    "website": "https://perplexity.ai",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le moteur de recherche du futur. Free: Recherche standard illimitée.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Tally",
     "slug": "tally",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/tally",
+    "website": "https://tally.so",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le Typeform gratuit (en mieux). Free: 99% des fonctionnalités (illimité).",
+    "verified": "2026-04-30"
   },
   {
     "name": "Todoist",
     "slug": "todoist",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/todoist",
+    "website": "https://todoist.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "La to-do list pure et dure. Free: 5 projets actifs.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Obsidian",
     "slug": "obsidian",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/obsidian",
+    "website": "https://obsidian.md",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Votre second cerveau, en local. Free: 100% gratuit pour usage personnel.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Make",
     "slug": "make",
-    "price": 9,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/make",
+    "website": "https://make.com",
+    "price_eur": 9,
+    "verdict": "no-verdict",
+    "description": "L'automatisation visuelle sans limite. Free: 1000 opérations/mois.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Raycast",
     "slug": "raycast",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/raycast",
+    "website": "https://raycast.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le lanceur d'applications qui remplace 10 outils. Free: 100% gratuit pour usage personnel.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Superhuman",
     "slug": "superhuman",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/superhuman",
+    "website": "https://superhuman.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "L'expérience email la plus rapide au monde. Free: Aucune version gratuite.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Linear",
     "slug": "linear",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/linear",
+    "website": "https://linear.app",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "La gestion de projet pour les équipes tech exigeantes. Free: Illimité pour 1 personne.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Cal.com",
     "slug": "cal-com",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/cal-com",
+    "website": "https://cal.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "L'alternative Open Source et flexible à Calendly. Free: Illimité pour les individus.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Midjourney",
     "slug": "midjourney",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/midjourney",
+    "website": "https://midjourney.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "L'IA génératrice d'images pour les pros. Free: Essai très limité.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Base44",
     "slug": "base44",
-    "price": 29,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/base44",
+    "website": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base",
+    "price_eur": 29,
+    "verdict": "no-verdict",
+    "description": "Créez des apps complètes avec l'IA, sans coder. Free: 25 messages IA/mois + 100 crédits d'intégration (auth, database inclus).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "make"
+    ]
   },
   {
     "name": "Sellsy",
     "slug": "sellsy",
-    "price": 50,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sellsy",
+    "website": "https://go.sellsy.com",
+    "price_eur": 50,
+    "verdict": "no-verdict",
+    "description": "La suite CRM + Facturation française tout-en-un. Free: Essai 15 jours (pas de version gratuite).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "indy"
+    ]
   },
   {
     "name": "ElevenLabs",
     "slug": "elevenlabs",
-    "price": 5,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/elevenlabs",
+    "website": "https://elevenlabs.io",
+    "price_eur": 5,
+    "verdict": "no-verdict",
+    "description": "L'IA de synthèse vocale ultra-réaliste pour créer du contenu audio.",
+    "verified": "2026-04-30"
   },
   {
     "name": "ClickUp",
     "slug": "clickup",
-    "price": 7,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/clickup",
+    "website": "https://clickup.com",
+    "price_eur": 7,
+    "verdict": "no-verdict",
+    "description": "La plateforme tout-en-un pour gérer projets, tâches et collaboration.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "notion"
+    ]
   },
   {
     "name": "SaneBox",
     "slug": "sanebox",
-    "price": 7,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sanebox",
+    "website": "https://www.sanebox.com",
+    "price_eur": 7,
+    "verdict": "no-verdict",
+    "description": "L'IA qui trie vos emails et vous fait gagner 12h par mois. Free: Essai 14 jours (pas de version gratuite).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "gmail"
+    ]
   },
   {
     "name": "GetResponse",
     "slug": "getresponse",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/getresponse",
+    "website": "https://www.getresponse.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "La plateforme tout-en-un pour email marketing et automatisation.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "brevo"
+    ]
   },
   {
     "name": "Trello",
     "slug": "trello",
-    "price": 5,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/trello",
+    "website": "https://trello.com",
+    "price_eur": 5,
+    "verdict": "no-verdict",
+    "description": "Le Kanban visuel pour organiser ses projets sans complexité.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "notion"
+    ]
   },
   {
     "name": "Airtable",
     "slug": "airtable",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/airtable",
+    "website": "https://airtable.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "La base de données flexible qui remplace 5 outils (CRM, projets, contenus).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "notion"
+    ]
   },
   {
     "name": "Mailchimp",
     "slug": "mailchimp",
-    "price": 13,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/mailchimp",
+    "website": "https://mailchimp.com",
+    "price_eur": 13,
+    "verdict": "no-verdict",
+    "description": "L'incontournable de l'email marketing pour petites listes. Free: Gratuit jusqu'à 500 contacts (1 audience).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "brevo"
+    ]
   },
   {
     "name": "Slack",
     "slug": "slack",
-    "price": 7.25,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/slack",
+    "website": "https://slack.com",
+    "price_eur": 7.25,
+    "verdict": "no-verdict",
+    "description": "La messagerie pro pour échanger avec clients et partenaires.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "discord"
+    ]
   },
   {
     "name": "Figma",
     "slug": "figma",
-    "price": 12,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/figma",
+    "website": "https://figma.com",
+    "price_eur": 12,
+    "verdict": "no-verdict",
+    "description": "L'outil de design d'interfaces pour créer maquettes et prototypes.",
+    "verified": "2026-04-30"
   },
   {
     "name": "1Password",
     "slug": "1password",
-    "price": 2.99,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/1password",
+    "website": "https://1password.com",
+    "price_eur": 2.99,
+    "verdict": "no-verdict",
+    "description": "Le gestionnaire de mots de passe pro pour sécuriser tous vos comptes.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "bitwarden"
+    ]
   },
   {
     "name": "Toggl Track",
     "slug": "toggl",
-    "price": 9,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/toggl",
+    "website": "https://toggl.com",
+    "price_eur": 9,
+    "verdict": "no-verdict",
+    "description": "Le tracker de temps pour facturer au juste prix. Free: Illimité pour 1 utilisateur.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Webflow",
     "slug": "webflow",
-    "price": 14,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/webflow",
+    "website": "https://webflow.com",
+    "price_eur": 14,
+    "verdict": "no-verdict",
+    "description": "Créer des sites web pros sans coder, avec contrôle total du design.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "carrd"
+    ]
   },
   {
     "name": "Plausible Analytics",
     "slug": "plausible",
-    "price": 9,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/plausible",
+    "website": "https://plausible.io",
+    "price_eur": 9,
+    "verdict": "no-verdict",
+    "description": "L'alternative RGPD-friendly à Google Analytics, simple et respectueuse.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "google-analytics"
+    ]
   },
   {
     "name": "Pitch",
     "slug": "pitch",
-    "price": 8,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/pitch",
+    "website": "https://pitch.com",
+    "price_eur": 8,
+    "verdict": "no-verdict",
+    "description": "Créer des présentations modernes et collaboratives pour impressionner les clients.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "canva"
+    ]
   },
   {
     "name": "LearnWorlds",
     "slug": "learnworlds",
-    "price": 29,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/learnworlds",
+    "website": "https://get.learnworlds.com/7gzw9pjf9sz6",
+    "price_eur": 29,
+    "verdict": "no-verdict",
+    "description": "Plateforme pour créer et vendre des cours en ligne. Free: Essai gratuit 30 jours.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "teachable",
+      "podia",
+      "gumroad"
+    ]
   },
   {
     "name": "Prezi",
     "slug": "prezi",
-    "price": 5,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/prezi",
+    "website": "https://try.prezi.com/6op8bpbxu641",
+    "price_eur": 5,
+    "verdict": "no-verdict",
+    "description": "Présentations dynamiques avec zoom et animations. Free: Plan Basic gratuit (présentations publiques uniquement).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "google-slides",
+      "pitch",
+      "canva-pr-sentation"
+    ]
   },
   {
     "name": "KrispCall",
     "slug": "krispcall",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/krispcall",
+    "website": "https://try.krispcall.com/t1akmbaetinc",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Téléphonie cloud avec numéros virtuels internationaux. Free: Essai gratuit 14 jours.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "whatsapp-business",
+      "google-voice",
+      "aircall"
+    ]
   },
   {
     "name": "Mega HR",
     "slug": "megahr",
-    "price": 8,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/megahr",
+    "website": "https://try.megahr.com/j41a7b17mmfs",
+    "price_eur": 8,
+    "verdict": "no-verdict",
+    "description": "Solution RH et paie pour gérer salariés et congés. Free: Essai gratuit 15 jours.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "indy",
+      "payfit",
+      "silae"
+    ]
   },
   {
     "name": "Logome.ai",
     "slug": "logomeai",
-    "price": 29,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/logomeai",
+    "website": "https://logomeai.partnerlinks.io/qixva38jv07p",
+    "price_eur": 29,
+    "verdict": "no-verdict",
+    "description": "Générateur de logos IA en quelques minutes. Free: Aperçu gratuit.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "canva",
+      "looka",
+      "fiverr"
+    ]
   },
   {
     "name": "Reply.io",
     "slug": "replyio",
-    "price": 60,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/replyio",
+    "website": "https://get.reply.io/nnswatq9mgm4-p7peoq",
+    "price_eur": 60,
+    "verdict": "no-verdict",
+    "description": "Automatisation cold email et prospection multi-canaux. Free: Essai gratuit 14 jours.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "lemlist",
+      "mailchimp",
+      "hunter-io"
+    ]
   },
   {
     "name": "Turbotic",
     "slug": "turbotic",
-    "price": 49,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/turbotic",
+    "website": "https://try.turbotic.com/0ijk0lvs0etc",
+    "price_eur": 49,
+    "verdict": "no-verdict",
+    "description": "Automatisation IA pour orchestrer vos processus métier. Free: Essai gratuit disponible.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "zapier",
+      "make-ex-integromat",
+      "n8n"
+    ]
   },
   {
     "name": "ConvertKit",
     "slug": "convertkit",
-    "price": 29,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/convertkit",
+    "website": "https://partners.kit.com/u037oht6r48p",
+    "price_eur": 29,
+    "verdict": "no-verdict",
+    "description": "Email marketing et newsletters pour créateurs. Free: Gratuit jusqu'à 1000 abonnés (fonctionnalités limitées).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "substack",
+      "mailchimp",
+      "beehiiv"
+    ]
   },
   {
     "name": "Ignition",
     "slug": "ignition",
-    "price": 35,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ignition",
+    "website": "https://get.practiceignition.com/e261f8d417a0",
+    "price_eur": 35,
+    "verdict": "no-verdict",
+    "description": "Propositions commerciales et contrats professionnels. Free: Essai gratuit 14 jours.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "google-docs-docusign-gratuit",
+      "pandadoc",
+      "notion-stripe-payment-links"
+    ]
   },
   {
     "name": "Landingi",
     "slug": "landingi",
-    "price": 29,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/landingi",
+    "website": "https://try.landingi.com/8he4kr5kasjb",
+    "price_eur": 29,
+    "verdict": "no-verdict",
+    "description": "Création de landing pages no-code avec A/B testing. Free: Essai gratuit 14 jours.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "carrd",
+      "webflow",
+      "notion-super-so"
+    ]
   },
   {
     "name": "AdCreative.ai",
     "slug": "adcreative",
-    "price": 29,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adcreative",
+    "website": "https://free-trial.adcreative.ai/bl7nxarn1exp",
+    "price_eur": 29,
+    "verdict": "no-verdict",
+    "description": "Création publicitaire automatique avec IA. Free: Essai gratuit 7 jours (10 crédits).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "canva-pro-chatgpt",
+      "figma-templates-gratuits",
+      "creatopy"
+    ]
   },
   {
     "name": "8fig",
     "slug": "8fig",
-    "price": 5,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/8fig",
+    "website": "https://8fig.com",
+    "price_eur": 5,
+    "verdict": "no-verdict",
+    "description": "Plateforme de financement de croissance pour les fondateurs e-commerce.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Adobe",
     "slug": "adobe",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adobe",
+    "website": "https://adobe.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciels pour les professionnels de la création et le marketing numérique.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Aircall Inc.",
     "slug": "aircall-inc",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/aircall-inc",
+    "website": "https://aircall.io",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Solution de centre d’appels cloud pour les entreprises modernes.",
+    "verified": "2026-04-30"
   },
   {
     "name": "airSlate",
     "slug": "airslate",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/airslate",
+    "website": "https://airslate.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’automatisation de workflows documentaires. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Albato",
     "slug": "albato",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/albato",
+    "website": "https://albato.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme no-code pour étendre les intégrations et automatisations SaaS.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Allstate",
     "slug": "allstate",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/allstate",
+    "website": "https://allstate.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Fournit des plans de santé pour petites entreprises aux États-Unis.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Aloware",
     "slug": "aloware",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/aloware",
+    "website": "https://aloware.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Solution de centre de contact pour appels et SMS. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Apollo.io",
     "slug": "apollo-io",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/apollo-io",
+    "website": "https://apollo.io",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’intelligence commerciale B2B et d’engagement des ventes.",
+    "verified": "2026-04-30"
   },
   {
     "name": "AroundDeal",
     "slug": "arounddeal",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/arounddeal",
+    "website": "https://arounddeal.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’intelligence B2B pour contacts et informations d’entreprises.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Asana",
     "slug": "asana",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/asana",
+    "website": "https://asana.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion du travail pour les équipes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "linear",
+        "reason": "plus-adapte-tech",
+        "saving": 5,
+        "performanceGain": "Linear est 10x plus rapide, pensé pour les équipes produit/tech"
+      }
+    ]
   },
   {
     "name": "Autonix",
     "slug": "autonix",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/autonix",
+    "website": "https://autonix.io",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outil de suivi de QR codes et d’analytique pour agences et marketers.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Auvik",
     "slug": "auvik",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/auvik",
+    "website": "https://auvik.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion IT pour les réseaux et infrastructures.",
+    "verified": "2026-04-30"
   },
   {
     "name": "AWeber",
     "slug": "aweber",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/aweber",
+    "website": "https://aweber.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’email marketing et d’automatisation. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Basecamp",
     "slug": "basecamp",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/basecamp",
+    "website": "https://basecamp.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion de projet et de collaboration d’équipe. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Blueink eSignatures",
     "slug": "blueink-esignatures",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/blueink-esignatures",
+    "website": "https://blueink.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme de signatures électroniques et suivi de documents.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Boast",
     "slug": "boast",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/boast",
+    "website": "https://boast.ai",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’automatisation des déclarations de crédit R&D. Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Bolt Business",
     "slug": "bolt-business",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/bolt-business",
+    "website": "https://bolt.eu/business",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme polyvalente de gestion de la mobilité et des flottes.",
+    "verified": "2026-04-30"
   },
   {
     "name": "BoomPop",
     "slug": "boompop",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/boompop",
+    "website": "https://boompop.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Service d’organisation d’événements d’entreprise et networking.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Box",
     "slug": "box",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/box",
+    "website": "https://box.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Service cloud de gestion de contenu et partage de fichiers. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Brand24",
     "slug": "brand24",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/brand24",
+    "website": "https://brand24.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Outil de veille médiatique pour suivre les mentions de marque en ligne.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Breezy HR",
     "slug": "breezy-hr",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/breezy-hr",
+    "website": "https://breezy.hr",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de recrutement de bout en bout pour attirer et embaucher des talents.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Buddy Punch",
     "slug": "buddy-punch",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/buddy-punch",
+    "website": "https://buddypunch.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Pointage en ligne pour le suivi du temps des employés. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "BugHerd",
     "slug": "bugherd",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/bugherd",
+    "website": "https://bugherd.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Outil de feedback et suivi de bugs pour sites web (développeurs/designers).",
+    "verified": "2026-04-30"
   },
   {
     "name": "CallHippo",
     "slug": "callhippo",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/callhippo",
+    "website": "https://callhippo.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Système de téléphonie cloud pour entreprises. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "CallRail",
     "slug": "callrail",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/callrail",
+    "website": "https://callrail.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’intelligence d’appels pour suivi et attribution de leads.",
+    "verified": "2026-04-30"
   },
   {
     "name": "CallTrackingMetrics",
     "slug": "calltrackingmetrics",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/calltrackingmetrics",
+    "website": "https://calltrackingmetrics.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Logiciel de suivi d’appels et automatisation pour marketing & support.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Campaigner",
     "slug": "campaigner",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/campaigner",
+    "website": "https://campaigner.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Solution puissante de marketing email et SMS pour entreprises.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Capsule",
     "slug": "capsule",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/capsule",
+    "website": "https://capsulecrm.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "CRM pour gérer les ventes et relations client. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Castmagic",
     "slug": "castmagic",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/castmagic",
+    "website": "https://castmagic.io",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outil de transformation rapide de tout format audio en contenu.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Clearbit",
     "slug": "clearbit",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/clearbit",
+    "website": "https://clearbit.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Outil d’enrichissement de données et insights pour marketing et ventes.",
+    "verified": "2026-04-30"
   },
   {
     "name": "ClockShark",
     "slug": "clockshark",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/clockshark",
+    "website": "https://clockshark.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Application de feuilles de temps pour BTP ou entreprises de terrain.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Close",
     "slug": "close",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/close",
+    "website": "https://close.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "CRM avec outils de communication intégrés pour les ventes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "CloudTask Marketplace",
     "slug": "cloudtask-marketplace",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/cloudtask-marketplace",
+    "website": "https://cloudtask.com/marketplace",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Marketplace de talents B2B RevOps en freelance. Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Coast",
     "slug": "coast",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/coast",
+    "website": "https://coastpay.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Carte carburant intelligente et gestion des dépenses pour entreprises.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Cognism",
     "slug": "cognism",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/cognism",
+    "website": "https://cognism.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’intelligence commerciale B2B (contacts et données entreprises).",
+    "verified": "2026-04-30"
   },
   {
     "name": "Connecteam",
     "slug": "connecteam",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/connecteam",
+    "website": "https://connecteam.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Application tout-en-un pour gérer les employés sans bureau. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Crowdfire Inc",
     "slug": "crowdfire-inc",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/crowdfire-inc",
+    "website": "https://crowdfireapp.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion des réseaux sociaux. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Deel",
     "slug": "deel",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/deel",
+    "website": "https://deel.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme pour embaucher des talents dans 150 pays. Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Deputy",
     "slug": "deputy",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/deputy",
+    "website": "https://deputy.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Simplifie la planification et réduit les coûts de main-d’œuvre.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Deskpro",
     "slug": "deskpro",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/deskpro",
+    "website": "https://deskpro.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Logiciel de helpdesk pour offrir une expérience client de qualité.",
+    "verified": "2026-04-30"
   },
   {
     "name": "DesktopReady",
     "slug": "desktopready",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/desktopready",
+    "website": "https://desktopready.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Solution de bureau virtuel Azure. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Docyt",
     "slug": "docyt",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/docyt",
+    "website": "https://docyt.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme logicielle d’automatisation comptable. Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "doola",
     "slug": "doola",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/doola",
+    "website": "https://doola.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Aide les entrepreneurs web2 & web3 à créer et gérer leur entreprise.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Draftbit",
     "slug": "draftbit",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/draftbit",
+    "website": "https://draftbit.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Générateur d’applications natives (avec code) pour mobiles. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Dropbox",
     "slug": "dropbox",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/dropbox",
+    "website": "https://dropbox.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Service de stockage cloud et synchronisation de fichiers. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "google-drive",
+        "reason": "moins-cher-mieux-integre",
+        "saving": 10,
+        "performanceGain": "Google Drive s'intègre nativement avec Docs, Sheets, Gmail"
+      }
+    ]
   },
   {
     "name": "EasyDMARC",
     "slug": "easydmarc",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/easydmarc",
+    "website": "https://easydmarc.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "SaaS pour résoudre les problèmes de sécurité et délivrabilité email.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Extensis",
     "slug": "extensis",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/extensis",
+    "website": "https://extensis.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion de polices et ressources créatives. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Finale Inventory",
     "slug": "finale-inventory",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/finale-inventory",
+    "website": "https://finaleinventory.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Solution de gestion des stocks pour vendeurs à gros volume. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "FlexiQuiz",
     "slug": "flexiquiz",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/flexiquiz",
+    "website": "https://flexiquiz.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Générateur de quiz personnalisés avec fonctionnalités LMS. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Format",
     "slug": "format",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/format",
+    "website": "https://format.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Constructeur de portfolio en ligne pour professionnels créatifs.",
+    "verified": "2026-04-30"
   },
   {
     "name": "FreshBooks",
     "slug": "freshbooks",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/freshbooks",
+    "website": "https://freshbooks.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de comptabilité pour petites entreprises. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Front",
     "slug": "front",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/front",
+    "website": "https://front.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Hub de communication client pour les équipes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Gelato",
     "slug": "gelato",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/gelato",
+    "website": "https://gelato.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’impression à la demande avec production locale.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Getida",
     "slug": "getida",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/getida",
+    "website": "https://getida.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Solution d’audit et remboursement Amazon FBA. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Glide",
     "slug": "glide",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/glide",
+    "website": "https://glideapps.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme pour créer des applications métier personnalisées sans code.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Gorgias",
     "slug": "gorgias",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/gorgias",
+    "website": "https://gorgias.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Service client e-commerce transformant le support en centre de profit.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Hive",
     "slug": "hive",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/hive",
+    "website": "https://hive.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme de productivité pour équipes performantes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Hootsuite",
     "slug": "hootsuite",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/hootsuite",
+    "website": "https://hootsuite.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion des réseaux sociaux. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Hostfully",
     "slug": "hostfully",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/hostfully",
+    "website": "https://hostfully.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion de locations de vacances. Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Houzz Pro",
     "slug": "houzz-pro",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/houzz-pro",
+    "website": "https://houzz.com/pro",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Solution tout-en-un pour gérer les projets de construction résidentielle.",
+    "verified": "2026-04-30"
   },
   {
     "name": "iContact",
     "slug": "icontact",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/icontact",
+    "website": "https://icontact.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outils d’email marketing pour PME pour engager les clients. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "InboxAlly",
     "slug": "inboxally",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/inboxally",
+    "website": "https://inboxally.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme pour améliorer la délivrabilité et taux d’ouverture des emails.",
+    "verified": "2026-04-30"
   },
   {
     "name": "inFlow Inventory",
     "slug": "inflow-inventory",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/inflow-inventory",
+    "website": "https://inflowinventory.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion des stocks pour petites entreprises. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Insightly",
     "slug": "insightly",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/insightly",
+    "website": "https://insightly.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "CRM pour entreprises en croissance. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Instapage",
     "slug": "instapage",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/instapage",
+    "website": "https://instapage.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Générateur de landing pages et plateforme d’optimisation. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Jobber",
     "slug": "jobber",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/jobber",
+    "website": "https://getjobber.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Logiciel pour gérer et développer les entreprises de services.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Katana Cloud Manufacturing",
     "slug": "katana-cloud-manufacturing",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/katana-cloud-manufacturing",
+    "website": "https://katanamrp.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel cloud de gestion manufacturière intégrée au e-commerce.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Kavkom",
     "slug": "kavkom",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/kavkom",
+    "website": "https://kavkom.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Solution de téléphonie IP pour communications d’entreprise. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "KeepTruckin",
     "slug": "keeptruckin",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/keeptruckin",
+    "website": "https://keeptruckin.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion de flottes pour entreprises de transport.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Kissmetrics",
     "slug": "kissmetrics",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/kissmetrics",
+    "website": "https://kissmetrics.io",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outil d’analytics comportemental pour augmenter conversions & engagement.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Kixie",
     "slug": "kixie",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/kixie",
+    "website": "https://kixie.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’engagement commercial avec appels et SMS intégrés.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Landbot",
     "slug": "landbot",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/landbot",
+    "website": "https://landbot.io",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Générateur de chatbot pour automatiser la capture de leads et interactions client.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Lano",
     "slug": "lano",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/lano",
+    "website": "https://lano.io",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Solution globale d’employeur de référence et gestion de paie.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Later",
     "slug": "later",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/later",
+    "website": "https://later.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outil complet de gestion des réseaux sociaux et Link in Bio.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Leadflow",
     "slug": "leadflow",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/leadflow",
+    "website": "https://leadflow.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Générateur de leads immobilier alimenté par l’IA. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Leadpages",
     "slug": "leadpages",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/leadpages",
+    "website": "https://leadpages.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Logiciel marketing pour créer des landing pages et convertir.",
+    "verified": "2026-04-30"
   },
   {
     "name": "LeadSquared",
     "slug": "leadsquared",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/leadsquared",
+    "website": "https://leadsquared.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’exécution commerciale et d’automatisation marketing.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Lendio",
     "slug": "lendio",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/lendio",
+    "website": "https://lendio.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Service de prêts professionnels avec multiples options de financement.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Liquid Web Partner+ Program",
     "slug": "liquid-web-partner-program",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/liquid-web-partner-program",
+    "website": "https://liquidweb.com/partner-program",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Fournisseur d’hébergement cloud et web managé. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Looka",
     "slug": "looka",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/looka",
+    "website": "https://looka.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme de création de logos par IA. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Lucid Software",
     "slug": "lucid-software",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/lucid-software",
+    "website": "https://lucid.co",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Solutions de diagrammes intelligents et tableau blanc en ligne.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Mailgun",
     "slug": "mailgun",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/mailgun",
+    "website": "https://mailgun.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Service d’envoi d’emails pour développeurs. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Manifest AI",
     "slug": "manifest-ai",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/manifest-ai",
+    "website": "https://manifestai.io",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Chatbot IA alimenté par GPT pour de meilleures interactions client.",
+    "verified": "2026-04-30"
   },
   {
     "name": "MASV",
     "slug": "masv",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/masv",
+    "website": "https://massive.io",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Service de transfert de fichiers volumineux pour vidéastes et médias.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Moosend",
     "slug": "moosend",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/moosend",
+    "website": "https://moosend.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outil d’email marketing et d’automatisation. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "MRPeasy",
     "slug": "mrpeasy",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/mrpeasy",
+    "website": "https://mrpeasy.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "ERP/MRP pour petites entreprises manufacturières. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "MyCase",
     "slug": "mycase",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/mycase",
+    "website": "https://mycase.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Solution de gestion de dossiers juridiques pour cabinets B2C.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Navan",
     "slug": "navan",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/navan",
+    "website": "https://navan.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Solution tout-en-un de gestion des voyages et notes de frais.",
+    "verified": "2026-04-30"
   },
   {
     "name": "NearSt",
     "slug": "nearst",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/nearst",
+    "website": "https://near.st",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Convertit les visiteurs en ligne en clients en magasin en montrant les stocks locaux.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Netchex",
     "slug": "netchex",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/netchex",
+    "website": "https://netchex.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Solution de gestion RH et paie. Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Omniconvert Explore",
     "slug": "omniconvert-explore",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/omniconvert-explore",
+    "website": "https://omniconvert.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outil d’optimisation des conversions (CRO) pour améliorer l’expérience utilisateur.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Onramp Funds",
     "slug": "onramp-funds",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/onramp-funds",
+    "website": "https://onrampfunds.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Fournit des financements aux marchands pour soutenir leur croissance.",
+    "verified": "2026-04-30"
   },
   {
     "name": "OpenPhone",
     "slug": "openphone",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/openphone",
+    "website": "https://openphone.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Système téléphonique tout-en-un pour équipes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Ownr",
     "slug": "ownr",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ownr",
+    "website": "https://ownr.co",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’enregistrement et de création d’entreprises (Canada).",
+    "verified": "2026-04-30"
   },
   {
     "name": "Oyster®",
     "slug": "oyster",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/oyster",
+    "website": "https://oysterhr.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme RH pour entreprises distribuées mondialement. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Packhelp",
     "slug": "packhelp",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/packhelp",
+    "website": "https://packhelp.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Marketplace de packagings personnalisés. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Pagecloud",
     "slug": "pagecloud",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/pagecloud",
+    "website": "https://pagecloud.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Constructeur de site web et boutique en ligne. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Payoneer",
     "slug": "payoneer",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/payoneer",
+    "website": "https://payoneer.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme de paiements transfrontaliers pour entreprises. Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Pipedrive",
     "slug": "pipedrive",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/pipedrive",
+    "website": "https://pipedrive.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "CRM simple d’utilisation pour les ventes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "PipelinePRO",
     "slug": "pipelinepro",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/pipelinepro",
+    "website": "https://pipelinepro.io",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion de pipeline de ventes et d’automatisation marketing.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Printify",
     "slug": "printify",
-    "price": 5,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/printify",
+    "website": "https://printify.com",
+    "price_eur": 5,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’impression à la demande pour entrepreneurs. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Process Street",
     "slug": "process-street",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/process-street",
+    "website": "https://process.st",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion de processus pour équipes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "ProductionCrate",
     "slug": "productioncrate",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/productioncrate",
+    "website": "https://productioncrate.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Bibliothèques numériques pour la création vidéo. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Promo.com",
     "slug": "promo-com",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/promo-com",
+    "website": "https://promo.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme de création vidéo pour entreprises et agences. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "PushOwl Web Push Notifications",
     "slug": "pushowl-web-push-notifications",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/pushowl-web-push-notifications",
+    "website": "https://pushowl.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Application de notifications push web pour Shopify. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Quadient",
     "slug": "quadient",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/quadient",
+    "website": "https://quadient.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Solutions d’automatisation des comptes clients et fournisseurs.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Quartile",
     "slug": "quartile",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/quartile",
+    "website": "https://quartile.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme publicitaire multicanal pour optimiser la performance e-commerce.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Quick Base",
     "slug": "quick-base",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/quick-base",
+    "website": "https://quickbase.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme de développement d’applications sans code. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "QuickBooks",
     "slug": "quickbooks",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/quickbooks",
+    "website": "https://quickbooks.intuit.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Logiciel de comptabilité pour petites entreprises. Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Razorpay",
     "slug": "razorpay",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/razorpay",
+    "website": "https://razorpay.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Passerelle de paiement et services financiers pour entreprises en Inde.",
+    "verified": "2026-04-30"
   },
   {
     "name": "respond.io",
     "slug": "respond-io",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/respond-io",
+    "website": "https://respond.io",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Logiciel de messagerie alimenté par l’IA pour entreprises B2C.",
+    "verified": "2026-04-30"
   },
   {
     "name": "ResponseTap",
     "slug": "responsetap",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/responsetap",
+    "website": "https://responsetap.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de suivi des appels pour les marketers. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Restream",
     "slug": "restream",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/restream",
+    "website": "https://restream.io",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Service de diffusion en direct multi-plateformes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "RocketLink",
     "slug": "rocketlink",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/rocketlink",
+    "website": "https://rocketlink.io",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Raccourcisseur d’URL avec reciblage publicitaire. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Ruby",
     "slug": "ruby",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ruby",
+    "website": "https://ruby.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Standard téléphonique virtuel et chat en direct pour entreprises.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Salesflare",
     "slug": "salesflare",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/salesflare",
+    "website": "https://salesflare.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "CRM pour PME vendant en B2B. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Salesforce",
     "slug": "salesforce",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/salesforce",
+    "website": "https://salesforce.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion de la relation client et solutions cloud.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SellersFi",
     "slug": "sellersfi",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sellersfi",
+    "website": "https://sellersfi.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Fintech pour commerçants e-commerce (financement). Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Sellfy",
     "slug": "sellfy",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sellfy",
+    "website": "https://sellfy.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme e-commerce pour créer des boutiques en ligne. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SEMrush",
     "slug": "semrush",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/semrush",
+    "website": "https://semrush.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme SaaS de marketing digital et SEO. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Sendinblue",
     "slug": "sendinblue",
-    "price": 5,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sendinblue",
+    "website": "https://sendinblue.com",
+    "price_eur": 5,
+    "verdict": "no-verdict",
+    "description": "Logiciel d’automatisation marketing et emailing. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Shogun",
     "slug": "shogun",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/shogun",
+    "website": "https://getshogun.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Outils d’optimisation et merchandising pour boutiques Shopify.",
+    "verified": "2026-04-30"
   },
   {
     "name": "ShopHero",
     "slug": "shophero",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/shophero",
+    "website": "https://shophero.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion e-commerce et supply chain. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Shopify",
     "slug": "shopify",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/shopify",
+    "website": "https://shopify.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme e-commerce pour boutiques en ligne et points de vente.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Similarweb",
     "slug": "similarweb",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/similarweb",
+    "website": "https://similarweb.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Fournit des données numériques pour améliorer les stratégies marketing.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SimpleTexting",
     "slug": "simpletexting",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/simpletexting",
+    "website": "https://simpletexting.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’envoi de campagnes SMS marketing et alertes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Simvoly",
     "slug": "simvoly",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/simvoly",
+    "website": "https://simvoly.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Constructeur de sites web et plateforme e-commerce. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SmartSuite",
     "slug": "smartsuite",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/smartsuite",
+    "website": "https://smartsuite.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme collaborative de gestion du travail pour équipes.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SMTP.com",
     "slug": "smtp-com",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/smtp-com",
+    "website": "https://smtp.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Service d’emails transactionnels et API avec haute délivrabilité.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SocialBee",
     "slug": "socialbee",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/socialbee",
+    "website": "https://socialbee.io",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion des réseaux sociaux et services de marketing digital.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Softr",
     "slug": "softr",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/softr",
+    "website": "https://softr.io",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme pour créer des outils internes et portails sans code.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SpaceIQ",
     "slug": "spaceiq",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/spaceiq",
+    "website": "https://spaceiq.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion des espaces de travail et des actifs. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Squarespace",
     "slug": "squarespace",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/squarespace",
+    "website": "https://squarespace.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Service de création de sites web et hébergement. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SurveySparrow",
     "slug": "surveysparrow",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/surveysparrow",
+    "website": "https://surveysparrow.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’enquêtes et collecte de feedback. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SysAid",
     "slug": "sysaid",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sysaid",
+    "website": "https://sysaid.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion des services IT (ITSM). Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Teamwork",
     "slug": "teamwork",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/teamwork",
+    "website": "https://teamwork.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion de projet pour équipes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Teachable",
     "slug": "teachable",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/teachable",
+    "website": "https://teachable.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Plateforme pour créer et vendre des cours en ligne. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Tidio",
     "slug": "tidio",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/tidio",
+    "website": "https://tidio.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Solution de chat en direct et chatbot pour entreprises. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Time Doctor",
     "slug": "time-doctor",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/time-doctor",
+    "website": "https://timedoctor.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Logiciel de suivi du temps et productivité des employés. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Trustpilot",
     "slug": "trustpilot",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/trustpilot",
+    "website": "https://trustpilot.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’avis en ligne pour entreprises et consommateurs.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Typeform",
     "slug": "typeform",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/typeform",
+    "website": "https://typeform.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Outil en ligne de création de formulaires et enquêtes interactifs.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Unbounce",
     "slug": "unbounce",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/unbounce",
+    "website": "https://unbounce.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Générateur de landing pages et plateforme d’optimisation de conversion.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Upwork",
     "slug": "upwork",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/upwork",
+    "website": "https://upwork.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Place de marché freelance reliant entreprises et freelances.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Vimeo",
     "slug": "vimeo",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/vimeo",
+    "website": "https://vimeo.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’hébergement et de partage vidéo professionnelle.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Wix",
     "slug": "wix",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/wix",
+    "website": "https://wix.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Constructeur de site web avec templates personnalisables. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "WooCommerce",
     "slug": "woocommerce",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/woocommerce",
+    "website": "https://woocommerce.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme e-commerce pour WordPress. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "WordPress.com",
     "slug": "wordpress-com",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/wordpress-com",
+    "website": "https://wordpress.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Constructeur de site web et plateforme de blog. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Wrike",
     "slug": "wrike",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/wrike",
+    "website": "https://wrike.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion de projet pour équipes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Wunderlist",
     "slug": "wunderlist",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/wunderlist",
+    "website": "https://wunderlist.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Application de gestion de tâches et de listes. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Zapier",
     "slug": "zapier",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/zapier",
+    "website": "https://zapier.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Outil d’automatisation pour connecter des applications et workflows.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "make",
+        "reason": "moins-cher-plus-puissant",
+        "saving": 9,
+        "performanceGain": "Make est 3x moins cher et gère des scénarios plus complexes visuellement"
+      }
+    ]
   },
   {
     "name": "Zendesk",
     "slug": "zendesk",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/zendesk",
+    "website": "https://zendesk.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Plateforme de service client et engagement client. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Zoho",
     "slug": "zoho",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/zoho",
+    "website": "https://zoho.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Suite d’outils de productivité en ligne et applications SaaS.",
+    "verified": "2026-04-30"
   },
   {
     "name": "HoneyBook",
     "slug": "honeybook",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/honeybook",
+    "website": " facturation).",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Logiciel de gestion client pour petites entreprises (CRM Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Dubsado",
     "slug": "dubsado",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/dubsado",
+    "website": " planning).",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Suite de gestion d’entreprise pour créatifs (contrats Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Visme",
     "slug": "visme",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/visme",
+    "website": " infographies).",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme de création de contenus visuels (présentations Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Plutio",
     "slug": "plutio",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/plutio",
+    "website": "",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion tout-en-un pour freelances (projets, facturation, CRM, finances).",
+    "verified": "2026-04-30"
   },
   {
     "name": "Snov.io",
     "slug": "snov-io",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/snov-io",
+    "website": " campagnes).",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme d’automatisation des ventes (recherche d’emails Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Elfsight",
     "slug": "elfsight",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/elfsight",
+    "website": " formulaires…).",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Collection de widgets pour sites web (flux sociaux Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "ProWritingAid",
     "slug": "prowritingaid",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/prowritingaid",
+    "website": " grammaire et clarté.",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Assistant d’écriture pour améliorer style Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "vcita",
     "slug": "vcita",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/vcita",
+    "website": " paiements).",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme de gestion clients pour PME (rendez-vous Free: Toutes les fonctionnalités.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Sendible",
     "slug": "sendible",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sendible",
+    "website": " rapports).",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Outil de gestion des réseaux sociaux pour agences (programmation",
+    "verified": "2026-04-30"
   },
   {
     "name": "Clockify",
     "slug": "clockify",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/clockify",
+    "website": "https://clockify.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Logiciel de suivi du temps (gratuit) pour équipes et projets.",
+    "verified": "2026-04-30"
   },
   {
     "name": "TimeCamp",
     "slug": "timecamp",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/timecamp",
+    "website": "https://timecamp.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outil de suivi du temps et rapports pour la productivité. Free: Fonctionnalités de base.",
+    "verified": "2026-04-30"
   },
   {
     "name": "DeepSeek",
     "slug": "deepseek",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/deepseek",
+    "website": "https://www.deepseek.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "L'IA chinoise open-source qui défie ChatGPT. Free: Application gratuite + modèles open-source téléchargeables.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "claude",
+        "reason": "meilleure-qualite-fr",
+        "saving": 0,
+        "performanceGain": "Meilleur en français et raisonnement complexe"
+      }
+    ]
   },
   {
     "name": "Gemini",
     "slug": "gemini",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/gemini",
+    "website": "https://gemini.google.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "L'IA de Google qui double ses performances tous les 3 mois. Free: Gemini app (limité).",
+    "verified": "2026-04-30"
   },
   {
     "name": "Adobe Photoshop",
     "slug": "adobe-photoshop",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adobe-photoshop",
+    "website": "https://adobe.com/products/photoshop",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le standard mondial de la retouche photo et du compositing.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "affinity-photo"
+    ]
   },
   {
     "name": "Adobe Illustrator",
     "slug": "adobe-illustrator",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adobe-illustrator",
+    "website": "https://adobe.com/products/illustrator",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le standard du design vectoriel et de l'illustration.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "affinity-designer"
+    ]
   },
   {
     "name": "Adobe Premiere Pro",
     "slug": "adobe-premiere-pro",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adobe-premiere-pro",
+    "website": "https://adobe.com/products/premiere",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le logiciel de montage vidéo professionnel de référence.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "davinci-resolve"
+    ]
   },
   {
     "name": "Adobe After Effects",
     "slug": "adobe-after-effects",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adobe-after-effects",
+    "website": "https://adobe.com/products/aftereffects",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le standard du motion design et des effets visuels.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Adobe Lightroom",
     "slug": "adobe-lightroom",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adobe-lightroom",
+    "website": "https://adobe.com/products/lightroom",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le standard de la gestion et retouche photo RAW.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "capture-one",
+        "reason": "meilleur rendu couleur",
+        "saving": -12,
+        "performanceGain": "Meilleur rendu couleur, plus rapide sur gros catalogues"
+      }
+    ]
   },
   {
     "name": "Adobe Creative Cloud",
     "slug": "adobe-cc",
-    "price": 60,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adobe-cc",
+    "website": "https://adobe.com/creativecloud",
+    "price_eur": 60,
+    "verdict": "no-verdict",
+    "description": "La suite complète : Photoshop, Illustrator, Premiere, After Effects, Lightroom et +20 apps.",
+    "verified": "2026-04-30"
   },
   {
     "name": "DaVinci Resolve",
     "slug": "davinci-resolve",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/davinci-resolve",
+    "website": "https://blackmagicdesign.com/products/davinciresolve",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Montage, étalonnage, effets visuels et audio en un seul logiciel. Gratuit.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Capture One",
     "slug": "capture-one",
-    "price": 24,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/capture-one",
+    "website": "https://captureone.com",
+    "price_eur": 24,
+    "verdict": "no-verdict",
+    "description": "Le logiciel de retouche RAW préféré des photographes professionnels.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Blender",
     "slug": "blender",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/blender",
+    "website": "https://blender.org",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Suite 3D complète open source : modélisation, animation, rendu, compositing.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Frame.io",
     "slug": "frame-io",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/frame-io",
+    "website": "https://frame.io",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "La plateforme de review et collaboration vidéo pour les équipes créatives.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "dropbox-replay",
+        "reason": "moins-cher",
+        "saving": 15,
+        "performanceGain": null
+      }
+    ]
   },
   {
     "name": "Pixieset",
     "slug": "pixieset",
-    "price": 12,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/pixieset",
+    "website": "https://pixieset.com",
+    "price_eur": 12,
+    "verdict": "no-verdict",
+    "description": "Galeries en ligne professionnelles pour photographes avec vente de tirages.",
+    "verified": "2026-04-30"
   },
   {
     "name": "GitHub",
     "slug": "github",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/github",
+    "website": "https://github.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "La plateforme de versioning et collaboration code de référence.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Cursor",
     "slug": "cursor",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/cursor",
+    "website": "https://cursor.sh",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "L'IDE IA qui code avec vous en temps réel. Free: 2 semaines trial.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Vercel",
     "slug": "vercel",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/vercel",
+    "website": "https://vercel.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "La plateforme de déploiement frontend la plus rapide. Free: Hobby plan complet.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Runway",
     "slug": "runway",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/runway",
+    "website": "https://runwayml.com",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Génération et édition vidéo par IA. Le standard du genre. Free: 125 crédits/mois.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Adobe Firefly",
     "slug": "firefly",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/firefly",
+    "website": "https://firefly.adobe.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "La génération d'images IA intégrée dans Adobe CC.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Leonardo AI",
     "slug": "leonardo-ai",
-    "price": 12,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/leonardo-ai",
+    "website": "https://leonardo.ai",
+    "price_eur": 12,
+    "verdict": "no-verdict",
+    "description": "Génération d'images IA avec fine-tuning et modèles spécialisés.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Topaz Video AI",
     "slug": "topaz-video-ai",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/topaz-video-ai",
+    "website": "https://topazlabs.com/topaz-video-ai",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Upscaling et amélioration vidéo par IA. Paid: 299$ achat unique ou 99$/an.",
+    "verified": "2026-04-30"
   },
   {
     "name": "HeyGen",
     "slug": "heygen",
-    "price": 29,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/heygen",
+    "website": "https://heygen.com",
+    "price_eur": 29,
+    "verdict": "no-verdict",
+    "description": "Création de vidéos avec avatars IA et traduction automatique.",
+    "verified": "2026-04-30"
   },
   {
     "name": "GitHub Copilot",
     "slug": "github-copilot",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/github-copilot",
+    "website": "https://github.com/features/copilot",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "L'assistant de code IA intégré dans votre éditeur. From €10/month.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "cursor",
+        "reason": "plus-complet-meme-prix",
+        "saving": 0,
+        "performanceGain": "Cursor intègre Copilot et ajoute la compréhension du codebase entier + chat contextuel"
+      }
+    ]
   },
   {
     "name": "Flow (aescripts)",
     "slug": "aescripts-flow",
-    "price": 8,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/aescripts-flow",
+    "website": "https://aescripts.com/flow",
+    "price_eur": 8,
+    "verdict": "no-verdict",
+    "description": "Le plugin d'animation de courbes le plus populaire pour After Effects.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Motion Bro",
     "slug": "motion-bro",
-    "price": 9,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/motion-bro",
+    "website": "https://motionbro.net",
+    "price_eur": 9,
+    "verdict": "no-verdict",
+    "description": "Gestionnaire de presets et extensions pour After Effects. From €9/month.",
+    "verified": "2026-04-30"
   },
   {
     "name": "CapCut",
     "slug": "capcut",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/capcut",
+    "website": "https://capcut.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Montage vidéo mobile et desktop pour les créateurs de contenu.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Riverside",
     "slug": "riverside",
-    "price": 15,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/riverside",
+    "website": "https://riverside.fm",
+    "price_eur": 15,
+    "verdict": "no-verdict",
+    "description": "Enregistrement podcast et vidéo en qualité studio, à distance.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Beehiiv",
     "slug": "beehiiv",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/beehiiv",
+    "website": "https://beehiiv.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "La plateforme newsletter conçue pour la croissance et la monétisation.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Intercom",
     "slug": "intercom",
-    "price": 74,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/intercom",
+    "website": "https://intercom.com",
+    "price_eur": 74,
+    "verdict": "no-verdict",
+    "description": "La plateforme de support client et d'onboarding pour SaaS. From €74/month.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "crisp"
+    ]
   },
   {
     "name": "Amplitude",
     "slug": "amplitude",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/amplitude",
+    "website": "https://amplitude.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "La plateforme d'analytics produit pour comprendre le comportement utilisateur.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "posthog",
+        "reason": "open-source-plus-complet",
+        "saving": 0,
+        "performanceGain": "PostHog combine analytics, replays, feature flags et A/B testing"
+      }
+    ]
   },
   {
     "name": "PostHog",
     "slug": "posthog",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/posthog",
+    "website": "https://posthog.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Suite analytics produit open source : events, replays, feature flags, A/B.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Spendesk",
     "slug": "spendesk",
-    "price": 99,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/spendesk",
+    "website": "https://spendesk.com",
+    "price_eur": 99,
+    "verdict": "no-verdict",
+    "description": "Gestion des dépenses d'entreprise : cartes virtuelles, notes de frais, approbations.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Pika Labs",
     "slug": "pika-labs",
-    "price": 8,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/pika-labs",
+    "website": "https://pika.art",
+    "price_eur": 8,
+    "verdict": "no-verdict",
+    "description": "Génération vidéo IA centrée sur l'animation de personnages et d'objets.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "runway",
+        "reason": "plus-polyvalent",
+        "saving": -7,
+        "performanceGain": "Runway couvre plus de cas (rotoscopie, suppression fond, inpainting)"
+      }
+    ]
   },
   {
     "name": "Kling AI",
     "slug": "kling-ai",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/kling-ai",
+    "website": "https://klingai.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Génération vidéo IA réaliste jusqu'à 2 minutes. Alternative sérieuse à Runway.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "runway",
+        "reason": "plus-mature-ecosysteme",
+        "saving": -5,
+        "performanceGain": "Runway a un écosystème plus complet (formation, templates, intégrations)"
+      }
+    ]
   },
   {
     "name": "Krea AI",
     "slug": "krea-ai",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/krea-ai",
+    "website": "https://krea.ai",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Génération d'images IA en temps réel avec contrôle créatif avancé.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Magnific AI",
     "slug": "magnific-ai",
-    "price": 39,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/magnific-ai",
+    "website": "https://magnific.ai",
+    "price_eur": 39,
+    "verdict": "no-verdict",
+    "description": "Upscaling IA d'images avec ajout de détails hallucinés. Résultats uniques.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "topaz-video-ai",
+        "reason": "moins-cher-pour-video",
+        "saving": 39,
+        "performanceGain": null
+      }
+    ]
   },
   {
     "name": "Ideogram",
     "slug": "ideogram",
-    "price": 8,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ideogram",
+    "website": "https://ideogram.ai",
+    "price_eur": 8,
+    "verdict": "no-verdict",
+    "description": "Génération d'images IA avec texte intégré — le meilleur du marché pour la typo.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Udio",
     "slug": "udio",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/udio",
+    "website": "https://udio.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Génération musicale IA de haute qualité à partir d'un prompt texte.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Suno",
     "slug": "suno",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/suno",
+    "website": "https://suno.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Génération musicale IA avec paroles et voix intégrées. Free: 50 crédits/jour.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "udio",
+        "reason": "meilleure-qualite-musicale",
+        "saving": 0,
+        "performanceGain": "Udio produit une meilleure qualité instrumentale, Suno est meilleur pour la voix"
+      }
+    ]
   },
   {
     "name": "Descript",
     "slug": "descript",
-    "price": 12,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/descript",
+    "website": "https://descript.com",
+    "price_eur": 12,
+    "verdict": "no-verdict",
+    "description": "Édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Otter.ai",
     "slug": "otter-ai",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/otter-ai",
+    "website": "https://otter.ai",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Transcription et résumé automatique de réunions en temps réel.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "descript",
+        "reason": "plus-complet",
+        "saving": -2,
+        "performanceGain": "Descript transcrit ET monte — évite un outil supplémentaire"
+      }
+    ]
   },
   {
     "name": "Bolt.new",
     "slug": "bolt-new",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/bolt-new",
+    "website": "https://bolt.new",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Génération d'applications web complètes depuis un prompt. Alternative à Lovable.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Lovable",
     "slug": "lovable",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/lovable",
+    "website": "https://lovable.dev",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Génération d'applications full-stack depuis un prompt avec Supabase intégré.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Replit",
     "slug": "replit",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/replit",
+    "website": "https://replit.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "IDE en ligne avec IA intégrée, hébergement et collaboration en temps réel.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "cursor",
+        "reason": "plus-puissant-local",
+        "saving": 0,
+        "performanceGain": "Cursor + Vercel = workflow plus pro et plus rapide pour les projets sérieux"
+      }
+    ]
   },
   {
     "name": "Tabnine",
     "slug": "tabnine",
-    "price": 12,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/tabnine",
+    "website": "https://tabnine.com",
+    "price_eur": 12,
+    "verdict": "no-verdict",
+    "description": "Assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "cursor",
+        "reason": "plus-complet",
+        "saving": -8,
+        "performanceGain": "Cursor comprend tout le codebase, pas seulement la ligne courante"
+      }
+    ]
   },
   {
     "name": "Stable Diffusion",
     "slug": "stable-diffusion",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/stable-diffusion",
+    "website": "https://stability.ai",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Génération d'images IA open source — contrôle total, hébergement local possible.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Notion AI",
     "slug": "notion-ai",
-    "price": 8,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/notion-ai",
+    "website": "https://notion.so/product/ai",
+    "price_eur": 8,
+    "verdict": "no-verdict",
+    "description": "IA intégrée dans Notion : rédaction, résumé, traduction directement dans vos docs.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "claude",
+        "reason": "deja-dans-stack-plus-puissant",
+        "saving": 8,
+        "performanceGain": "Claude est bien plus puissant — inutile de payer Notion AI en plus"
+      }
+    ]
   },
   {
     "name": "Mem AI",
     "slug": "mem-ai",
-    "price": 14,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/mem-ai",
+    "website": "https://mem.ai",
+    "price_eur": 14,
+    "verdict": "no-verdict",
+    "description": "Note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "notion",
+        "reason": "plus-complet-moins-cher",
+        "saving": 4,
+        "performanceGain": "Notion + Notion AI couvre les mêmes besoins avec plus de flexibilité"
+      }
+    ]
   },
   {
     "name": "Adobe Podcast AI",
     "slug": "adobe-podcast-ai",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/adobe-podcast-ai",
+    "website": "https://podcast.adobe.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Amélioration audio IA : suppression de bruit, égalisation automatique, studio qualité.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Flux (Black Forest Labs)",
     "slug": "flux",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/flux",
+    "website": "https://blackforestlabs.ai",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Modèle de génération d'images IA open source — qualité supérieure à Stable Diffusion.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Whisper (OpenAI)",
     "slug": "whisper",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/whisper",
+    "website": "https://openai.com/research/whisper",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Transcription audio open source d'OpenAI. Précis, multilingue, gratuit.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Buzzsprout",
     "slug": "buzzsprout",
-    "price": 12,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/buzzsprout",
+    "website": "https://buzzsprout.com",
+    "price_eur": 12,
+    "verdict": "no-verdict",
+    "description": "L'hébergement podcast le plus simple à prendre en main. Distribution automatique.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "anchor-spotify"
+    ]
   },
   {
     "name": "Spotify for Podcasters",
     "slug": "anchor-spotify",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/anchor-spotify",
+    "website": "https://podcasters.spotify.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Hébergement et distribution podcast 100% gratuit par Spotify.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "buzzsprout",
+        "reason": "analytics-superieurs",
+        "saving": -12,
+        "performanceGain": "Analytics plus fins et meilleur support si vous monétisez"
+      }
+    ]
   },
   {
     "name": "Audacity",
     "slug": "audacity",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/audacity",
+    "website": "https://audacityteam.org",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Logiciel de montage audio open source. Gratuit, puissant, universel.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "descript",
+        "reason": "montage-par-texte",
+        "saving": -12,
+        "performanceGain": "Descript permet de monter en éditant le texte — 3x plus rapide"
+      }
+    ]
   },
   {
     "name": "Podbean",
     "slug": "podbean",
-    "price": 9,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/podbean",
+    "website": "https://podbean.com",
+    "price_eur": 9,
+    "verdict": "no-verdict",
+    "description": "Hébergement podcast avec monétisation intégrée (dynamic ads, abonnements).",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "anchor-spotify"
+    ]
   },
   {
     "name": "Buffer",
     "slug": "buffer",
-    "price": 6,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/buffer",
+    "website": "https://buffer.com",
+    "price_eur": 6,
+    "verdict": "no-verdict",
+    "description": "Planification de posts sur tous les réseaux. Simple, propre, efficace.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Sprout Social",
     "slug": "sprout-social",
-    "price": 249,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sprout-social",
+    "website": "https://sproutsocial.com",
+    "price_eur": 249,
+    "verdict": "no-verdict",
+    "description": "Gestion réseaux sociaux premium avec CRM social et analytics avancés.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "buffer"
+    ]
   },
   {
     "name": "TubeBuddy",
     "slug": "tubebody",
-    "price": 5,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/tubebody",
+    "website": "https://tubebuddy.com",
+    "price_eur": 5,
+    "verdict": "no-verdict",
+    "description": "Extension YouTube pour optimiser le SEO, les tags et la performance de vos vidéos.",
+    "verified": "2026-04-30"
   },
   {
     "name": "VidIQ",
     "slug": "vidiq",
-    "price": 7,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/vidiq",
+    "website": "https://vidiq.com",
+    "price_eur": 7,
+    "verdict": "no-verdict",
+    "description": "Analytics YouTube et IA pour trouver les sujets viraux et optimiser chaque vidéo.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Substack",
     "slug": "substack",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/substack",
+    "website": "https://substack.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Plateforme newsletter et blog avec monétisation intégrée. Zéro friction.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "beehiiv",
+        "reason": "moins-de-commission-plus-features",
+        "saving": 0,
+        "performanceGain": "Beehiiv prend 0% de commission et offre plus d'outils de croissance"
+      }
+    ]
   },
   {
     "name": "Typefully",
     "slug": "typefully",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/typefully",
+    "website": "https://typefully.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Rédaction et planification de threads Twitter/X et posts LinkedIn sans distraction.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Lever",
     "slug": "lever",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/lever",
+    "website": "https://lever.co",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "ATS (Applicant Tracking System) moderne pour équipes de recrutement.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Workable",
     "slug": "workable",
-    "price": 189,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/workable",
+    "website": "https://workable.com",
+    "price_eur": 189,
+    "verdict": "no-verdict",
+    "description": "ATS tout-en-un avec sourcing IA, job boards et onboarding. From €189/month.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Personio",
     "slug": "personio",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/personio",
+    "website": "https://personio.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "SIRH complet pour PME : recrutement, onboarding, paie, congés.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Kajabi",
     "slug": "kajabi",
-    "price": 55,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/kajabi",
+    "website": "https://kajabi.com",
+    "price_eur": 55,
+    "verdict": "no-verdict",
+    "description": "La plateforme tout-en-un pour créateurs : cours, communauté, email, paiements.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Podia",
     "slug": "podia",
-    "price": 33,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/podia",
+    "website": "https://podia.com",
+    "price_eur": 33,
+    "verdict": "no-verdict",
+    "description": "Vente de cours, webinaires et téléchargements numériques. 0% commission.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "kajabi",
+        "reason": "plus-complet",
+        "saving": -22,
+        "performanceGain": "Kajabi intègre email + communauté — évite 2 outils supplémentaires"
+      }
+    ]
   },
   {
     "name": "Thinkific",
     "slug": "thinkific",
-    "price": 36,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/thinkific",
+    "website": "https://thinkific.com",
+    "price_eur": 36,
+    "verdict": "no-verdict",
+    "description": "Plateforme de création de cours en ligne avec branding personnalisé.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "kajabi",
+        "reason": "tout-en-un",
+        "saving": -19,
+        "performanceGain": "Kajabi inclut email et communauté — moins d'outils à gérer"
+      }
+    ]
   },
   {
     "name": "Circle",
     "slug": "circle",
-    "price": 49,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/circle",
+    "website": "https://circle.so",
+    "price_eur": 49,
+    "verdict": "no-verdict",
+    "description": "La plateforme de communauté en ligne pour créateurs et formateurs.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Metabase",
     "slug": "metabase",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/metabase",
+    "website": "https://metabase.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Outil de BI open source. Créez des dashboards depuis votre base de données sans SQL.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Looker Studio",
     "slug": "looker-studio",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/looker-studio",
+    "website": "https://lookerstudio.google.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Outil de reporting et dashboards Google. Connexion native à GA4, Sheets, BigQuery.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Retool",
     "slug": "retool",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/retool",
+    "website": "https://retool.com",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Construire des outils internes rapidement : dashboards, admin panels, CRUD.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Datadog",
     "slug": "datadog",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/datadog",
+    "website": "https://datadoghq.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Observabilité complète : logs, métriques, APM, alertes en temps réel.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "sentry"
+    ]
   },
   {
     "name": "Sentry",
     "slug": "sentry",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sentry",
+    "website": "https://sentry.io",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Monitoring des erreurs et performance applicative. Le standard des devs.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Jira",
     "slug": "jira",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/jira",
+    "website": "https://atlassian.com/software/jira",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "La référence de la gestion de projet Agile pour équipes tech.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "linear",
+        "reason": "plus-rapide-moderne",
+        "saving": 0,
+        "performanceGain": "Linear est 10x plus rapide et bien plus agréable à utiliser"
+      }
+    ]
   },
   {
     "name": "Confluence",
     "slug": "confluence",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/confluence",
+    "website": "https://atlassian.com/software/confluence",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Wiki d'entreprise Atlassian. Documentation technique et knowledge base.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "notion",
+        "reason": "plus-flexible-moins-cher",
+        "saving": 0,
+        "performanceGain": "Notion combine wiki + projet + base de données — bien plus flexible"
+      }
+    ]
   },
   {
     "name": "Productboard",
     "slug": "productboard",
-    "price": 20,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/productboard",
+    "website": "https://productboard.com",
+    "price_eur": 20,
+    "verdict": "no-verdict",
+    "description": "Outil de discovery produit : collecte feedback, priorisation, roadmap.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "linear",
+        "reason": "tout-en-un",
+        "saving": 20,
+        "performanceGain": "Linear couvre roadmap + sprint en un seul outil"
+      }
+    ]
   },
   {
     "name": "Canny",
     "slug": "canny",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/canny",
+    "website": "https://canny.io",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Collecte et vote de feedback utilisateurs. Roadmap publique ou privée.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Hex",
     "slug": "hex",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/hex",
+    "website": "https://hex.tech",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Notebooks data collaboratifs avec publication en apps interactives.",
+    "verified": "2026-04-30"
   },
   {
     "name": "PagerDuty",
     "slug": "pagerduty",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/pagerduty",
+    "website": "https://pagerduty.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Gestion des incidents en temps réel avec astreintes et escalade automatique.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Overlord",
     "slug": "ae-overlord",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-overlord",
+    "website": "https://battleaxe.co/overlord",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif.",
+    "verified": "2026-04-30"
   },
   {
     "name": "BAO Boa",
     "slug": "ae-bao-boa",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-bao-boa",
+    "website": "https://aescripts.com/boa",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Animation de lignes et formes SVG dans After Effects. Tracés organiques.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Newton 3",
     "slug": "ae-newton3",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-newton3",
+    "website": "https://aescripts.com/newton",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Animation Composer 3",
     "slug": "ae-animation-composer",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-animation-composer",
+    "website": "https://misterhorse.com/animation-composer",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Bibliothèque de presets d'animation et de transitions pour After Effects.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Duik Ángela",
     "slug": "ae-duik",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-duik",
+    "website": "https://rxlaboratoire.com/duik",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Le plugin de rigging de personnages de référence pour After Effects. Gratuit.",
+    "verified": "2026-04-30"
   },
   {
     "name": "GifGun",
     "slug": "ae-gifgun",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-gifgun",
+    "website": "https://aescripts.com/gifgun",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Export GIF directement depuis After Effects en un clic. Paid: 29$ achat unique.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Bodymovin / Lottie",
     "slug": "ae-bodymovin",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-bodymovin",
+    "website": "https://aescripts.com/bodymovin",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
+    "verified": "2026-04-30"
   },
   {
     "name": "RubberHose 2",
     "slug": "ae-rubberhose",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-rubberhose",
+    "website": "https://aescripts.com/rubberhose",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Animation de membres et tentacules organiques sans rigging complexe dans AE.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "ae-duik",
+        "reason": "plus-complet-gratuit",
+        "saving": 45,
+        "performanceGain": "Duik est plus complet et entièrement gratuit"
+      }
+    ]
   },
   {
     "name": "Red Giant Magic Bullet Suite",
     "slug": "ae-red-giant",
-    "price": 10,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/ae-red-giant",
+    "website": "https://maxon.net/red-giant",
+    "price_eur": 10,
+    "verdict": "no-verdict",
+    "description": "Suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Figma Tokens (Tokens Studio)",
     "slug": "figma-tokens",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/figma-tokens",
+    "website": "https://tokens.studio",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Gestion des design tokens dans Figma avec sync Git. Indispensable pour les design systems.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Iconify for Figma",
     "slug": "figma-iconify",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/figma-iconify",
+    "website": "https://iconify.design",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Accès à 150 000+ icônes de toutes les bibliothèques directement dans Figma.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Anima",
     "slug": "figma-anima",
-    "price": 31,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/figma-anima",
+    "website": "https://animaapp.com",
+    "price_eur": 31,
+    "verdict": "no-verdict",
+    "description": "Export de designs Figma en code React/HTML/CSS. Handoff développeur automatisé.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Stark",
     "slug": "figma-stark",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/figma-stark",
+    "website": "https://stark.so",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Vérification de l'accessibilité (contrastes, daltonisme) directement dans Figma.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Luminar Neo",
     "slug": "luminar-neo",
-    "price": 14,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/luminar-neo",
+    "website": "https://skylum.com/luminar-neo",
+    "price_eur": 14,
+    "verdict": "no-verdict",
+    "description": "Retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Nik Collection",
     "slug": "nik-collection",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/nik-collection",
+    "website": "https://nikcollection.dxo.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Topaz Gigapixel AI",
     "slug": "topaz-gigapixel",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/topaz-gigapixel",
+    "website": "https://topazlabs.com/gigapixel",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Revit",
     "slug": "revit",
-    "price": 310,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/revit",
+    "website": "https://autodesk.com/products/revit",
+    "price_eur": 310,
+    "verdict": "no-verdict",
+    "description": "Le logiciel BIM de référence pour architectes et ingénieurs structure.",
+    "verified": "2026-04-30"
   },
   {
     "name": "AutoCAD",
     "slug": "autocad",
-    "price": 220,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/autocad",
+    "website": "https://autodesk.com/products/autocad",
+    "price_eur": 220,
+    "verdict": "no-verdict",
+    "description": "Le standard mondial du dessin technique 2D et 3D. From €220/month.",
+    "verified": "2026-04-30"
   },
   {
     "name": "SketchUp Pro",
     "slug": "sketchup-pro",
-    "price": 34,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/sketchup-pro",
+    "website": "https://sketchup.com",
+    "price_eur": 34,
+    "verdict": "no-verdict",
+    "description": "Modélisation 3D intuitive pour architectes, décorateurs et scénographes.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "blender"
+    ]
   },
   {
     "name": "Enscape",
     "slug": "enscape",
-    "price": 84,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/enscape",
+    "website": "https://enscape3d.com",
+    "price_eur": 84,
+    "verdict": "no-verdict",
+    "description": "Rendu temps réel et VR pour Revit, SketchUp, Rhino. Présentations client immersives.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Lumion",
     "slug": "lumion",
-    "price": 179,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/lumion",
+    "website": "https://lumion.com",
+    "price_eur": 179,
+    "verdict": "no-verdict",
+    "description": "Rendu architectural 3D rapide avec bibliothèque massive d'assets.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      "blender"
+    ]
   },
   {
     "name": "Maze",
     "slug": "maze",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/maze",
+    "website": "https://maze.co",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Tests utilisateurs continus directement depuis vos prototypes Figma.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Hotjar",
     "slug": "hotjar",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/hotjar",
+    "website": "https://hotjar.com",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "posthog",
+        "reason": "tout-en-un",
+        "saving": 0,
+        "performanceGain": "PostHog combine replays + analytics produit + feature flags en open source"
+      }
+    ]
   },
   {
     "name": "Zeplin",
     "slug": "zeplin",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/zeplin",
+    "website": "https://zeplin.io",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Handoff design-développement avec specs automatiques et assets exportés.",
+    "verified": "2026-04-30",
+    "alternatives": [
+      {
+        "tool": "figma",
+        "reason": "dev-mode-integre",
+        "saving": 8,
+        "performanceGain": "Figma Dev Mode remplace Zeplin — inutile si vous avez Figma"
+      }
+    ]
   },
   {
     "name": "ProtoPie",
     "slug": "protopie",
-    "price": 13,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/protopie",
+    "website": "https://protopie.io",
+    "price_eur": 13,
+    "verdict": "no-verdict",
+    "description": "Prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma.",
+    "verified": "2026-04-30"
   },
   {
     "name": "Rive",
     "slug": "rive",
-    "price": 0,
-    "currency": "EUR",
-    "verdict": "silence",
-    "verified": "2026-04-29"
+    "url": "https://www.tooltrim.com/fr/tool/rive",
+    "website": "https://rive.app",
+    "price_eur": 0,
+    "verdict": "no-verdict",
+    "description": "Animation interactive native pour le web et mobile. Remplace Lottie pour les projets complexes.",
+    "verified": "2026-04-30"
   }
 ]
