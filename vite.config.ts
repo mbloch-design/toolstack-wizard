@@ -621,6 +621,11 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks(id) {
+          // Data files → separate cached chunks (still static, loaded before render)
+          if (id.includes("/data/tools_v4.json"))  return "data-tools";
+          if (id.includes("/data/content.json"))   return "data-content";
+          if (id.includes("/data/posts-fr.json"))  return "data-posts-fr";
+          if (id.includes("/data/posts-en.json"))  return "data-posts-en";
           if (id.includes("node_modules")) {
             if (id.includes("@supabase") || id.includes("@postgrest")) return "vendor-supabase";
             if (id.includes("lucide-react"))                            return "vendor-lucide";
