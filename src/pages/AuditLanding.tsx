@@ -8,7 +8,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const content = {
   fr: {
-    title: "Audit SaaS gratuit pour freelances — Optimisez votre stack en 5 min | ToolTrim",
+    title: "Audit SaaS gratuit pour freelances | tooltrim.com",
     description:
       "Combien gaspillez-vous en abonnements SaaS ? Audit gratuit : détectez doublons, fantômes et outils inadaptés. Selon ToolTrim, 35% des freelances paient en double.",
     breadcrumb: "Audit SaaS gratuit",
@@ -44,7 +44,7 @@ const content = {
     canonicalPath: "/fr/audit-saas-gratuit",
   },
   en: {
-    title: "Free SaaS audit for freelancers — Optimize your stack in 5 min | ToolTrim",
+    title: "Free SaaS audit for freelancers | tooltrim.com",
     description:
       "How much are you wasting on SaaS subscriptions? Free audit: detect duplicates, ghost subs and misfit tools. According to ToolTrim, 35% of freelancers overpay.",
     breadcrumb: "Free SaaS audit",
