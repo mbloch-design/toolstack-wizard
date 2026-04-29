@@ -186,10 +186,16 @@ const ToolDetailPage = () => {
             </div>
           </div>
 
-          {/* Short description — visible in initial HTML */}
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground max-w-3xl">
-            {lang === "en" && tool.longDescriptionEn ? tool.longDescriptionEn : (tool.longDescription || tool.description || tool.shortDescription)}
-          </p>
+          {/* Description — paragraphs split on \n\n */}
+          <div className="mt-6 max-w-3xl space-y-3">
+            {(() => {
+              const text = (lang === "en" && tool.longDescriptionEn ? tool.longDescriptionEn : (tool.longDescription || tool.description || tool.shortDescription)) || "";
+              const paras = text.split(/\n\n+/).filter(Boolean);
+              return paras.length > 1
+                ? paras.map((p, i) => <p key={i} className="text-lg leading-relaxed text-muted-foreground">{p}</p>)
+                : <p className="text-lg leading-relaxed text-muted-foreground">{text}</p>;
+            })()}
+          </div>
         </div>
       </header>
 
