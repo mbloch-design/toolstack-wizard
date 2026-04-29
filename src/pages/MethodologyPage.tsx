@@ -1,9 +1,9 @@
 import { useLang } from "@/hooks/useLang";
 import { Link } from "react-router-dom";
-import { useTools, useCategories } from "@/hooks/useSupabaseData";
+import { useTools } from "@/hooks/useSupabaseData";
 import { useMemo, useEffect } from "react";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { Shield, BarChart3, Ban, Eye, Clock, AlertTriangle } from "lucide-react";
+import { Shield, BarChart3, Ban, Eye, Clock, AlertTriangle, Quote } from "lucide-react";
 
 const MethodologyPage = () => {
   const { t, prefix, lang } = useLang();
@@ -17,105 +17,68 @@ const MethodologyPage = () => {
 
   useEffect(() => {
     const title = t(
-      "Notre méthode d'analyse | ToolTrim",
-      "Our Analysis Method | ToolTrim"
+      "Notre méthode | ToolTrim — Prix vérifiés, recommandations sans biais",
+      "Our methodology | ToolTrim — Verified pricing, unbiased recommendations"
     );
     const desc = t(
-      "Comment ToolTrim vérifie les prix, évalue les alternatives et produit des recommandations actionnables pour votre stack SaaS.",
-      "How ToolTrim verifies pricing, evaluates alternatives, and produces actionable recommendations for your SaaS stack."
+      "ToolTrim est construit par un freelance indépendant qui a lui-même perdu des centaines d'euros en abonnements inutiles. Voici comment on vérifie les prix et produit des recommandations honnêtes.",
+      "ToolTrim is built by an independent freelancer who lost hundreds of euros in unused subscriptions. Here's how we verify pricing and produce honest recommendations."
     );
     setSeoTags({ title, description: desc, url: `${SEO_BASE}/${lang}/methodology`, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/methodology`);
     setJsonLd("methodology-jsonld", {
       "@context": "https://schema.org",
-      "@type": "WebPage",
+      "@type": "AboutPage",
       name: title,
       url: `${SEO_BASE}/${lang}/methodology`,
       description: desc,
+      author: { "@type": "Person", name: "Équipe ToolTrim", url: `${SEO_BASE}/methodology` },
       publisher: { "@type": "Organization", name: "ToolTrim", url: SEO_BASE },
     });
     return () => cleanupSeo(["methodology-jsonld"]);
   }, [lang, stats.tools]);
 
-  const sections = [
-    {
-      icon: Eye,
-      title: t("Notre processus de vérification des prix", "Our pricing verification process"),
-      content: [
-        t("Chaque prix est issu de la page officielle de l'outil — pas d'un blog tiers ou d'un agrégateur.",
-          "Each price comes from the tool's official page — not from a third-party blog or aggregator."),
-        t(`URL source stockée par outil. ${stats.verified} outils ont un prix vérifié avec source.`,
-          `Source URL stored per tool. ${stats.verified} tools have verified pricing with source.`),
-        t("Date de vérification disponible sur chaque fiche. Dernière vérification : 13 mars 2026.",
-          "Verification date available on each tool page. Last verification: March 13, 2026."),
-        t("3 niveaux de fiabilité : official_explicit (prix affiché clairement), official_contextual (prix déduit du contexte), low (à confirmer).",
-          "3 reliability levels: official_explicit (clearly displayed price), official_contextual (price inferred from context), low (to be confirmed)."),
-      ],
-    },
-    {
-      icon: BarChart3,
-      title: t("Comment nous produisons nos recommandations", "How we produce our recommendations"),
-      content: [
-        t(`Une prescription n'est affichée que si 7 règles sont validées. ${stats.ferme} outils ont une prescription ferme.`,
-          `A prescription is only displayed when 7 rules are validated. ${stats.ferme} tools have a firm prescription.`),
-        t("Pas de prescription si le prix n'est pas vérifié sur la page officielle.",
-          "No prescription if the price isn't verified on the official page."),
-        t("Pas de prescription si les outils ne sont pas dans le même cluster fonctionnel (substitution_cluster_v2).",
-          "No prescription if the tools are not in the same functional cluster (substitution_cluster_v2)."),
-        t("Pas de prescription sur les outils métier non substituables (outil de production central).",
-          "No prescription on non-substitutable business tools (core production tools)."),
-      ],
-    },
-    {
-      icon: Ban,
-      title: t("Ce que nous ne faisons pas", "What we don't do"),
-      content: [
-        t("Nous ne recommandons pas un outil parce qu'il nous verse une commission.",
-          "We don't recommend a tool because it pays us a commission."),
-        t("Nous ne comparons pas des outils d'usages différents.",
-          "We don't compare tools with different use cases."),
-        t("Nous n'affichons pas une économie si nous ne pouvons pas la vérifier.",
-          "We don't display savings we can't verify."),
-      ],
-    },
-    {
-      icon: Clock,
-      title: t("Fréquence de mise à jour", "Update frequency"),
-      content: [
-        t("Prix mis à jour manuellement depuis les pages officielles.",
-          "Prices updated manually from official pages."),
-        t("Dernière vérification : 13 mars 2026.",
-          "Last verification: March 13, 2026."),
-        t("Les outils avec prix « low reliability » sont signalés explicitement.",
-          "Tools with 'low reliability' pricing are explicitly flagged."),
-      ],
-    },
-  ];
-
   return (
     <div className="py-16 md:py-24">
       <div className="container mx-auto max-w-4xl">
+
+        {/* Hero — founder story */}
         <div className="text-center">
-          <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-accent-foreground mb-6">
+          <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-accent-foreground mb-6">
             {t("Méthodologie", "Methodology")}
           </span>
-          <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl">
-            {t("Comment ToolTrim vérifie les données", "How ToolTrim verifies data")}
+          <h1 className="font-heading text-4xl font-extrabold tracking-tight md:text-5xl">
+            {t(
+              <>Construit par un freelance<br /><em className="text-primary italic">qui en avait marre</em></>,
+              <>Built by a freelancer<br /><em className="text-primary italic">who'd had enough</em></>
+            )}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             {t(
-              "Comment ToolTrim vérifie les prix, évalue les alternatives et produit des recommandations actionnables pour votre stack SaaS.",
-              "How ToolTrim verifies pricing, evaluates alternatives, and produces actionable recommendations for your SaaS stack."
+              "ToolTrim est né d'un constat simple : je payais plus de 300€/mois pour des outils dont j'utilisais 20% des fonctionnalités. Personne ne proposait une analyse honnête, sans affiliation. Alors j'ai construit ça.",
+              "ToolTrim came from a simple observation: I was paying over €300/month for tools I used at 20% capacity. Nobody offered an honest, unaffiliated analysis. So I built this."
             )}
           </p>
         </div>
+
+        {/* Pull quote */}
+        <blockquote className="mt-12 rounded-2xl border-l-4 border-primary bg-primary/5 px-8 py-6">
+          <Quote className="h-5 w-5 text-primary/40 mb-3" />
+          <p className="text-base font-medium leading-relaxed text-foreground italic">
+            {t(
+              "\"Le problème avec les comparatifs SaaS, c'est que tous ceux qui les font ont un accord d'affiliation avec les outils qu'ils recommandent. Moi, non.\"",
+              "\"The problem with SaaS comparisons is that everyone who writes them has an affiliate deal with the tools they recommend. I don't.\""
+            )}
+          </p>
+          <footer className="mt-3 text-sm text-muted-foreground">— {t("Fondateur, ToolTrim", "Founder, ToolTrim")}</footer>
+        </blockquote>
 
         {/* Stats */}
         <div className="mt-16 grid grid-cols-3 gap-6 rounded-2xl border border-border bg-card p-8">
           {[
             { value: `${stats.tools}`, label: t("Outils analysés", "Tools analyzed") },
-            { value: `${stats.verified}`, label: t("Prix vérifiés", "Verified prices") },
-            { value: `${stats.ferme}`, label: t("Prescriptions fermes", "Firm prescriptions") },
+            { value: `${stats.verified}`, label: t("Prix vérifiés manuellement", "Manually verified prices") },
+            { value: `${stats.ferme}`, label: t("Recommandations fermes", "Firm recommendations") },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <p className="font-mono text-3xl font-bold text-primary">{s.value}</p>
@@ -125,48 +88,157 @@ const MethodologyPage = () => {
         </div>
 
         {/* Sections */}
-        <div className="mt-16 space-y-10">
-          {sections.map((section) => (
-            <div key={section.title} className="rounded-2xl border border-border bg-card p-8">
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent">
-                  <section.icon className="h-5 w-5 text-accent-foreground" />
-                </div>
-                <div>
-                  <h2 className="font-heading text-xl font-bold">{section.title}</h2>
-                  <ul className="mt-4 space-y-3">
-                    {section.content.map((text, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
-                        <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                        {text}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+        <div className="mt-16 space-y-8">
+
+          {/* 1. Prix */}
+          <div className="rounded-2xl border border-border bg-card p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent">
+                <Eye className="h-5 w-5 text-accent-foreground" />
+              </div>
+              <div>
+                <h2 className="font-heading text-xl font-bold">
+                  {t("Comment on vérifie les prix", "How we verify pricing")}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {t(
+                    "Chaque prix est relevé directement sur la page officielle de l'outil — pas depuis un blog, pas depuis un agrégateur. On stocke l'URL source et la date de vérification pour chaque fiche.",
+                    "Every price is taken directly from the tool's official page — not from a blog, not from an aggregator. We store the source URL and verification date on every tool page."
+                  )}
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {[
+                    t("Prix de départ par utilisateur, facturation mensuelle", "Starting price per user, monthly billing"),
+                    t("3 niveaux de fiabilité : officiel explicite, officiel contextuel, faible (signalé)", "3 reliability levels: explicit official, contextual official, low (flagged)"),
+                    t("Mise à jour régulière — la date est visible sur chaque fiche outil", "Regular updates — the date is visible on every tool page"),
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* 2. Recommandations */}
+          <div className="rounded-2xl border border-border bg-card p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent">
+                <BarChart3 className="h-5 w-5 text-accent-foreground" />
+              </div>
+              <div>
+                <h2 className="font-heading text-xl font-bold">
+                  {t("Comment on produit les recommandations", "How we produce recommendations")}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {t(
+                    "Une recommandation n'est affichée que si plusieurs conditions sont réunies : prix vérifié, outils fonctionnellement substituables, et économie réelle calculable. Quand les données sont insuffisantes, on ne prescrit pas — on le dit.",
+                    "A recommendation is only shown when several conditions are met: verified price, functionally substitutable tools, and a calculable real saving. When data is insufficient, we don't prescribe — we say so."
+                  )}
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {[
+                    t(`${stats.ferme} outils ont une recommandation ferme — les autres affichent « pas de verdict »`, `${stats.ferme} tools have a firm recommendation — others show "no verdict"`),
+                    t("Pas de recommandation si les outils couvrent des usages différents", "No recommendation if tools cover different use cases"),
+                    t("Pas d'économie affichée si elle ne peut pas être vérifiée", "No savings shown if they can't be verified"),
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Ce qu'on ne fait pas */}
+          <div className="rounded-2xl border border-border bg-card p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent">
+                <Ban className="h-5 w-5 text-accent-foreground" />
+              </div>
+              <div>
+                <h2 className="font-heading text-xl font-bold">
+                  {t("Ce que ToolTrim ne fait pas", "What ToolTrim doesn't do")}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {t(
+                    "C'est peut-être la partie la plus importante. L'indépendance, ça se prouve par ce qu'on refuse, pas par ce qu'on affirme.",
+                    "This might be the most important section. Independence is proven by what you refuse, not by what you claim."
+                  )}
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {[
+                    t("Aucun accord d'affiliation avec les outils analysés", "No affiliate deals with any analyzed tool"),
+                    t("Aucun contenu sponsorisé — personne ne peut payer pour apparaître en « recommandé »", "No sponsored content — nobody can pay to appear as 'recommended'"),
+                    t("Aucune comparaison entre des outils qui ne sont pas substituables", "No comparisons between tools that aren't substitutable"),
+                    t("Aucune économie affichée qu'on ne peut pas chiffrer avec des données vérifiées", "No savings displayed that we can't quantify with verified data"),
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Mise à jour */}
+          <div className="rounded-2xl border border-border bg-card p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent">
+                <Clock className="h-5 w-5 text-accent-foreground" />
+              </div>
+              <div>
+                <h2 className="font-heading text-xl font-bold">
+                  {t("Fraîcheur des données", "Data freshness")}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {t(
+                    "Les prix SaaS changent souvent — parfois sans préavis. On actualise régulièrement les fiches et on affiche la date de dernière vérification sur chaque outil. Si vous constatez un prix incorrect, signalez-le — on corrige sous 48h.",
+                    "SaaS pricing changes often — sometimes without notice. We regularly update tool pages and display the last verification date on each one. If you spot incorrect pricing, report it — we'll fix it within 48h."
+                  )}
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {[
+                    t("Date de vérification visible sur chaque fiche outil", "Verification date visible on every tool page"),
+                    t("Les outils avec prix peu fiables sont signalés explicitement", "Tools with low-reliability pricing are explicitly flagged"),
+                    t("Erreur à signaler : contact@tooltrim.com", "Report errors: contact@tooltrim.com"),
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* E-E-A-T trust signals */}
-        <div className="mt-16 rounded-2xl border border-primary/20 bg-accent/30 p-8 md:p-12">
+        {/* Trust block */}
+        <div className="mt-16 rounded-2xl border border-primary/20 bg-primary/5 p-8 md:p-12">
           <div className="flex items-start gap-4">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
               <Shield className="h-6 w-6 text-primary" />
             </div>
             <div>
               <h2 className="font-heading text-xl font-bold">
-                {t("Notre engagement de confiance", "Our trust commitment")}
+                {t("Pourquoi vous pouvez nous faire confiance", "Why you can trust us")}
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {t(
-                  "ToolTrim est développé par des praticiens du SaaS qui ont eux-mêmes géré des stacks d'outils à plusieurs milliers d'euros par mois. Les recommandations sont basées sur des données vérifiées, pas sur des opinions ou des affiliations commerciales.",
-                  "ToolTrim is developed by SaaS practitioners who have themselves managed tool stacks costing thousands of euros per month. Recommendations are based on verified data, not opinions or commercial affiliations."
+                  "ToolTrim est construit par un freelance indépendant confronté au même problème que vous. Pas de VC, pas d'accord commercial, pas de pression pour favoriser un outil plutôt qu'un autre. Les recommandations viennent des données — et quand les données manquent, on le dit clairement plutôt que d'inventer un verdict.",
+                  "ToolTrim is built by an independent freelancer facing the same problem as you. No VC, no commercial deals, no pressure to favor one tool over another. Recommendations come from data — and when data is missing, we say so clearly rather than inventing a verdict."
                 )}
               </p>
-              <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-                <AlertTriangle className="h-4 w-4 text-primary" />
-                {t("Signaler un prix incorrect → contact@tooltrim.com", "Report incorrect pricing → contact@tooltrim.com")}
+              <div className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
+                <AlertTriangle className="h-4 w-4 text-primary shrink-0" />
+                <span>{t("Prix incorrect ? → contact@tooltrim.com", "Incorrect price? → contact@tooltrim.com")}</span>
               </div>
             </div>
           </div>
@@ -181,12 +253,13 @@ const MethodologyPage = () => {
             {t("Analyser ma stack →", "Analyze my stack →")}
           </Link>
           <Link
-            to={`${prefix}/transparency`}
+            to={`${prefix}/tools`}
             className="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 text-sm font-semibold transition-colors hover:bg-accent"
           >
-            {t("Notre politique de transparence", "Our transparency policy")}
+            {t("Voir les 314 outils", "Browse 314 tools")}
           </Link>
         </div>
+
       </div>
     </div>
   );
