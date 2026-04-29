@@ -270,6 +270,8 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
+              `<meta property="og:image" content="https://www.tooltrim.com/og-image.png" />`,
+              `<meta name="twitter:image" content="https://www.tooltrim.com/og-image.png" />`,
               `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
               `<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
             ].join("\n    ");
