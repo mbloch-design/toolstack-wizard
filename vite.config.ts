@@ -138,6 +138,20 @@ function sitemapPlugin(): Plugin {
           add(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6", articleDate);
         }
 
+        // Posts from posts-fr.json and posts-en.json
+        const postsFrRaw = fs.readFileSync(path.resolve(__dirname, "src/data/posts-fr.json"), "utf-8");
+        const postsEnRaw = fs.readFileSync(path.resolve(__dirname, "src/data/posts-en.json"), "utf-8");
+        const allPosts = [
+          ...(JSON.parse(postsFrRaw) as any[]).map((p: any) => ({ ...p, lang: "fr" })),
+          ...(JSON.parse(postsEnRaw) as any[]).map((p: any) => ({ ...p, lang: "en" })),
+        ];
+        const contentArticleSlugs = new Set((data.articles || []).map((a: any) => a.slug));
+        for (const post of allPosts) {
+          if (!contentArticleSlugs.has(post.slug)) {
+            add(`${BASE}/${post.lang}/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
+          }
+        }
+
         // Comparative guides with localized slugs
         const GUIDE_COMPARISONS: [string, string][] = [
           ["notion-vs-coda-comparatif-2026", "notion-vs-coda-comparison-2026"],
@@ -662,6 +676,76 @@ function staticPrerenderPlugin(): Plugin {
             fs.mkdirSync(outDir, { recursive: true });
             fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
           }
+        }
+
+        // --- Prerender blog post / guide pages ---
+        const postsFrData: any[] = JSON.parse(fs.readFileSync(path.resolve(__dirname, "src/data/posts-fr.json"), "utf-8"));
+        const postsEnData: any[] = JSON.parse(fs.readFileSync(path.resolve(__dirname, "src/data/posts-en.json"), "utf-8"));
+        const allPostsData = [
+          ...postsFrData.map((p: any) => ({ ...p, lang: "fr" })),
+          ...postsEnData.map((p: any) => ({ ...p, lang: "en" })),
+        ];
+
+        for (const post of allPostsData) {
+          const lang: string = post.lang;
+          const slug: string = post.slug;
+          const url = `${BASE}/${lang}/guide/${slug}`;
+          const frUrl = `${BASE}/fr/guide/${slug}`;
+          const enUrl = `${BASE}/en/guide/${slug}`;
+          const title = post.seo?.metaTitle || post.title || slug;
+          const description = post.seo?.metaDescription || post.excerpt || "";
+
+          const postBreadcrumb = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
+              { "@type": "ListItem", position: 2, name: lang === "fr" ? "Guides" : "Guides", item: `${BASE}/${lang}/guides` },
+              { "@type": "ListItem", position: 3, name: post.title || slug, item: url },
+            ],
+          };
+
+          const articleSchema = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title || slug,
+            description: description,
+            datePublished: post.date || "",
+            dateModified: post.date || "",
+            author: { "@type": "Organization", name: "ToolTrim", url: BASE },
+            publisher: { "@type": "Organization", name: "ToolTrim", url: BASE },
+            url,
+          };
+
+          const postMetaTags = [
+            `<link rel="canonical" href="${url}" />`,
+            `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
+            `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
+            `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+            `<title>${title.replace(/</g, "&lt;")}</title>`,
+            `<meta name="description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
+            `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
+            `<meta property="og:url" content="${url}" />`,
+            `<meta property="og:image" content="https://www.tooltrim.com/og-image.png" />`,
+            `<meta name="twitter:image" content="https://www.tooltrim.com/og-image.png" />`,
+            ...(post.seo?.keywords ? [`<meta name="keywords" content="${post.seo.keywords.replace(/"/g, "&quot;")}" />`] : []),
+            `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`,
+            `<script type="application/ld+json">${JSON.stringify(postBreadcrumb)}</script>`,
+          ].join("\n    ");
+
+          let html = baseHtml;
+          html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${lang}"`);
+          html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
+          html = html.replace(/<title>[^<]*<\/title>/, "");
+          html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+          html = html.replace("</head>", `    ${postMetaTags}\n  </head>`);
+          html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;").substring(0, 300)}</p></noscript>\n  </body>`);
+
+          const outDir = path.resolve(distDir, lang, "guide", slug);
+          fs.mkdirSync(outDir, { recursive: true });
+          fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+          count++;
         }
 
         // --- Generate 404.html for Vercel custom error page ---
