@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import type { Tool, Category, BlogPost } from "@/data/types";
-import contentJson from "@/data/content.json";
-import toolsV4Json from "@/data/tools_v4.json";
-import postsFrJson from "@/data/posts-fr.json";
-import postsEnJson from "@/data/posts-en.json";
+import type { Tool, Category } from "@/data/types";
 
-// Static fallback data
-const staticCategories: Category[] = (contentJson as any).categories.map((c: any) => ({
-  id: c.id, slug: c.slug, name: c.name, description: c.description, tools: c.tools,
-}));
+// ---------- type & mapper ----------
+
+export interface Post {
+  id: number; slug: string; lang: string; title: string; excerpt: string;
+  date: string; category: string; toolId: string | null; content: string;
+  tags: string[]; readTime: string;
+  seo: { metaTitle?: string; metaDescription?: string; keywords?: string } | null;
+}
 
 function mapToolFromJson(t: any): Tool {
   return {
@@ -45,7 +45,6 @@ function mapToolFromJson(t: any): Tool {
     articles: t.articles || [],
     timeGainedHoursPerMonth: t.timeGainedHoursPerMonth ?? t.time_gained_hours_per_month ?? undefined,
     freeAlternative: t.freeAlternative || t.free_alternative || null,
-    // v4 fields
     tool_type: t.tool_type || "satellite",
     substitutable: t.substitutable ?? true,
     host_app: t.host_app || null,
@@ -56,7 +55,6 @@ function mapToolFromJson(t: any): Tool {
     betterAlternative: t.betterAlternative || t.better_alternative || null,
     migrationGuide: t.migrationGuide || t.migration_guide || null,
     downgradePlan: t.downgradePlan || t.downgrade_plan || null,
-    // v10 prescription fields
     prescription_quality: t.prescription_quality || "silence",
     prescription_output: t.prescription_output || null,
     prescription_block_reasons: t.prescription_block_reasons || [],
@@ -67,37 +65,91 @@ function mapToolFromJson(t: any): Tool {
   };
 }
 
-const staticTools: Tool[] = (toolsV4Json as any[]).map(mapToolFromJson);
+function mapPost(p: any): Post {
+  return {
+    id: p.id, slug: p.slug, lang: p.lang, title: p.title, excerpt: p.excerpt || "",
+    date: p.date, category: p.category || "", toolId: p.tool_id || null,
+    content: p.content || "", tags: p.tags || [], readTime: p.read_time || p.readTime || "",
+    seo: p.seo || null,
+  };
+}
 
 function mapSupabaseCat(c: any): Category {
   return { id: c.id, slug: c.slug, name: c.name, description: c.description || "" };
 }
 
+// ---------- async loaders with module-level cache ----------
+
+let _toolsCache: Tool[] | null = null;
+async function loadStaticTools(): Promise<Tool[]> {
+  if (_toolsCache) return _toolsCache;
+  try {
+    const r = await fetch("/data/tools_v4.json");
+    const json = await r.json();
+    _toolsCache = (json as any[]).map(mapToolFromJson);
+    return _toolsCache;
+  } catch { return []; }
+}
+
+let _categoriesCache: Category[] | null = null;
+async function loadStaticCategories(): Promise<Category[]> {
+  if (_categoriesCache) return _categoriesCache;
+  try {
+    const r = await fetch("/data/content.json");
+    const json = await r.json();
+    _categoriesCache = (json.categories || []).map((c: any) => ({
+      id: c.id, slug: c.slug, name: c.name, description: c.description, tools: c.tools,
+    }));
+    return _categoriesCache;
+  } catch { return []; }
+}
+
+const _postsCache: Record<string, Post[]> = {};
+async function loadStaticPosts(lang: string): Promise<Post[]> {
+  if (_postsCache[lang]) return _postsCache[lang];
+  try {
+    const r = await fetch(`/data/posts-${lang}.json`);
+    const json = await r.json();
+    _postsCache[lang] = (json as any[]).map(mapPost);
+    return _postsCache[lang];
+  } catch { return []; }
+}
+
+// ---------- hooks ----------
+
 export function useCategories() {
-  const [categories, setCategories] = useState<Category[]>(staticCategories);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      const { data, error } = await supabase.from("categories").select("*");
-      if (!error && data && data.length > 0) setCategories(data.map(mapSupabaseCat));
-      setLoading(false);
-    })();
+    let mounted = true;
+    loadStaticCategories().then(data => { if (mounted && data.length) setCategories(data); });
+    supabase.from("categories").select("*").then(({ data, error }) => {
+      if (mounted) {
+        if (!error && data?.length) setCategories(data.map(mapSupabaseCat));
+        setLoading(false);
+      }
+    });
+    return () => { mounted = false; };
   }, []);
 
   return { categories, loading };
 }
 
 export function useTools() {
-  const [tools, setTools] = useState<Tool[]>(staticTools);
+  const [tools, setTools] = useState<Tool[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      const { data, error } = await supabase.from("tools").select("*").limit(500);
-      if (!error && data && data.length > 0) setTools(data.map(mapToolFromJson));
-      setLoading(false);
-    })();
+    let mounted = true;
+    loadStaticTools().then(data => { if (mounted && data.length) setTools(data); });
+    supabase.from("tools").select("*").limit(500).then(({ data, error }) => {
+      if (mounted) {
+        if (!error && data?.length) setTools(data.map(mapToolFromJson));
+        setLoading(false);
+      }
+    });
+    return () => { mounted = false; };
   }, []);
 
   return { tools, loading };
@@ -109,53 +161,52 @@ export function useToolBySlug(slug: string | undefined) {
 
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
+    let mounted = true;
     (async () => {
       let { data } = await supabase.from("tools").select("*").eq("slug", slug).maybeSingle();
       if (!data) ({ data } = await supabase.from("tools").select("*").eq("id", slug).maybeSingle());
-      if (data) setTool(mapToolFromJson(data));
-      else {
-        const found = staticTools.find((t) => t.slug === slug || t.id === slug);
-        setTool(found || null);
+      if (mounted) {
+        if (data) {
+          setTool(mapToolFromJson(data));
+        } else {
+          const staticTools = await loadStaticTools();
+          const found = staticTools.find((t) => t.slug === slug || t.id === slug);
+          setTool(found || null);
+        }
+        setLoading(false);
       }
-      setLoading(false);
     })();
+    return () => { mounted = false; };
   }, [slug]);
 
   return { tool, loading };
 }
 
-export interface Post {
-  id: number; slug: string; lang: string; title: string; excerpt: string;
-  date: string; category: string; toolId: string | null; content: string;
-  tags: string[]; readTime: string;
-  seo: { metaTitle?: string; metaDescription?: string; keywords?: string } | null;
-}
-
-function mapPost(p: any): Post {
-  return {
-    id: p.id, slug: p.slug, lang: p.lang, title: p.title, excerpt: p.excerpt || "",
-    date: p.date, category: p.category || "", toolId: p.tool_id || null,
-    content: p.content || "", tags: p.tags || [], readTime: p.read_time || "", seo: p.seo || null,
-  };
-}
-
 export function usePosts(lang: string) {
-  const localPosts: Post[] = (lang === "en" ? postsEnJson : postsFrJson).map(mapPost);
-  const [posts, setPosts] = useState<Post[]>(localPosts);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      const { data, error } = await supabase.from("posts").select("*").eq("lang", lang).order("date", { ascending: false });
-      if (!error && data && data.length > 0) {
-        const supabasePosts = data.map(mapPost);
-        const supabaseSlugs = new Set(supabasePosts.map(p => p.slug));
-        const merged = [...supabasePosts, ...localPosts.filter(p => !supabaseSlugs.has(p.slug))];
-        merged.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-        setPosts(merged);
+    let mounted = true;
+    loadStaticPosts(lang).then(localPosts => {
+      if (mounted && localPosts.length) setPosts(localPosts);
+    });
+    supabase.from("posts").select("*").eq("lang", lang).order("date", { ascending: false }).then(({ data, error }) => {
+      if (mounted) {
+        if (!error && data?.length) {
+          loadStaticPosts(lang).then(localPosts => {
+            if (!mounted) return;
+            const supabasePosts = data.map(mapPost);
+            const supabaseSlugs = new Set(supabasePosts.map(p => p.slug));
+            const merged = [...supabasePosts, ...localPosts.filter(p => !supabaseSlugs.has(p.slug))];
+            merged.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+            setPosts(merged);
+          });
+        }
+        setLoading(false);
       }
-      setLoading(false);
-    })();
+    });
+    return () => { mounted = false; };
   }, [lang]);
 
   return { posts, loading };
@@ -167,32 +218,32 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
 
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
+    let mounted = true;
     (async () => {
       const { data } = await supabase.from("posts").select("*").eq("slug", slug).eq("lang", lang).maybeSingle();
-      if (data) {
-        setPost(mapPost(data));
-      } else {
-        const localPosts = lang === "en" ? postsEnJson : postsFrJson;
-        const found = localPosts.find((p: any) => p.slug === slug);
-        setPost(found ? mapPost(found) : null);
+      if (mounted) {
+        if (data) {
+          setPost(mapPost(data));
+        } else {
+          const localPosts = await loadStaticPosts(lang);
+          const found = localPosts.find((p: any) => p.slug === slug);
+          setPost(found ? mapPost(found) : null);
+        }
+        setLoading(false);
       }
-      setLoading(false);
     })();
+    return () => { mounted = false; };
   }, [slug, lang]);
 
   return { post, loading };
 }
 
 export function getToolLogoUrl(tool: Tool): string | null {
-  // 1. Use logo field from DB if populated
   if (tool.logo && tool.logo.startsWith("http")) return tool.logo;
-
-  // 2. Extract domain for favicon services
   const url = tool.websiteUrl || tool.affiliateLink;
   if (!url) return null;
   try {
     const domain = new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-    // Google Favicon service (more reliable than Clearbit)
     return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
   } catch { return null; }
 }
