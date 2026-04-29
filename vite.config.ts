@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
-const BASE = "https://tooltrim.com";
+const BASE = "https://www.tooltrim.com";
 const LANGS = ["fr", "en"];
 // /selector excluded from sitemap (noindex tunnel)
 const STATIC_PAGES = ["", "tools", "category", "guides", "about", "methodology", "transparency", "contact"];
