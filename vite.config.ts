@@ -16,6 +16,25 @@ const SEO_LANDING_PAGES: { path: string; priority: string }[] = [
   { path: "/en/free-saas-audit", priority: "0.9" },
 ];
 
+const CATEGORY_EN: Record<string, { name: string; description: string }> = {
+  "ia-generaliste":       { name: "AI & Generative Tools",  description: "AI tools for writing, research and brainstorming for freelancers." },
+  "organisation":         { name: "Organisation",           description: "Keep your work organized without spending hours on setup." },
+  "communication":        { name: "Communication",          description: "Manage clients and meetings without losing your mind." },
+  "creation-design":      { name: "Content Creation",       description: "Create professional visuals and copy without being a designer." },
+  "finance-facturation":  { name: "Finance & Invoicing",    description: "Get paid fast and stay compliant with invoicing tools." },
+  "stockage":             { name: "Storage",                description: "Keep your files safe and accessible anywhere." },
+  "automatisation":       { name: "Automation",             description: "Let the robots do the work for you." },
+  "gestion-projet":       { name: "Project Management",     description: "Organize tasks and collaborate efficiently." },
+  "email-marketing":      { name: "Email & Marketing",      description: "Master your inbox and automate marketing." },
+  "communication-equipe": { name: "Team Communication",     description: "Collaborate and communicate with clients and partners." },
+  "design-prototypage":   { name: "Design & Prototyping",   description: "Create professional interfaces and mockups." },
+  "securite":             { name: "Security",               description: "Protect your data and manage passwords securely." },
+  "suivi-temps":          { name: "Time Tracking",          description: "Track your time to bill at the right rate." },
+  "nocode-web":           { name: "No-Code & Web",          description: "Build websites and products without writing code." },
+  "analytics":            { name: "Analytics",              description: "Analyze your site traffic while respecting privacy." },
+  "formation-education":  { name: "Education & Training",   description: "Create and sell online courses or train your clients." },
+};
+
 const PERSONA_PILLARS: { path: string; priority: string }[] = [
   { path: "/fr/guide/meilleurs-outils-developpeur-freelance", priority: "0.8" },
   { path: "/fr/guide/meilleurs-outils-designer-freelance", priority: "0.8" },
@@ -394,6 +413,163 @@ function staticPrerenderPlugin(): Plugin {
           fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
         }
 
+        // --- Prerender static section pages (/fr/tools, /fr/guides, etc.) ---
+        const SECTION_PAGES: { path: string; lang: string; title: string; description: string }[] = [
+          { path: "/fr/tools",      lang: "fr", title: "Tous les outils SaaS pour freelances | ToolTrim",         description: "Comparez 200+ outils SaaS : avis honnêtes, prix vérifiés et alternatives moins chères. Filtrez par catégorie et trouvez la meilleure stack pour votre activité." },
+          { path: "/en/tools",      lang: "en", title: "All SaaS tools for freelancers | ToolTrim",               description: "Compare 200+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business." },
+          { path: "/fr/guides",     lang: "fr", title: "Guides et comparatifs SaaS pour freelances | ToolTrim",   description: "Nos guides pratiques pour choisir les meilleurs outils SaaS : comparatifs, analyses de prix et recommandations par profil freelance." },
+          { path: "/en/guides",     lang: "en", title: "SaaS guides and comparisons for freelancers | ToolTrim",  description: "Practical guides to choose the best SaaS tools: comparisons, pricing analyses and recommendations by freelance profile." },
+          { path: "/fr/comparatifs",lang: "fr", title: "Comparatifs d'outils SaaS 2026 | ToolTrim",              description: "Comparez les meilleurs outils SaaS face à face : fonctionnalités, prix réels et verdict pour chaque profil freelance." },
+          { path: "/en/comparatifs",lang: "en", title: "SaaS tool comparisons 2026 | ToolTrim",                  description: "Compare the best SaaS tools head-to-head: features, real pricing and verdict for every freelance profile." },
+          { path: "/fr/about",      lang: "fr", title: "À propos de ToolTrim | Audit SaaS indépendant",           description: "ToolTrim est un comparateur indépendant d'outils SaaS. Prix vérifiés manuellement, aucune affiliation commerciale. Notre mission : vous aider à payer moins." },
+          { path: "/en/about",      lang: "en", title: "About ToolTrim | Independent SaaS auditor",               description: "ToolTrim is an independent SaaS tool comparator. Manually verified pricing, no commercial affiliation. Our mission: help you pay less." },
+          { path: "/fr/contact",    lang: "fr", title: "Contactez ToolTrim | Questions et suggestions",           description: "Vous avez une question sur ToolTrim ou une suggestion d'outil ? Contactez-nous, on répond à tous les messages." },
+          { path: "/en/contact",    lang: "en", title: "Contact ToolTrim | Questions and suggestions",            description: "Have a question about ToolTrim or a tool suggestion? Contact us — we reply to every message." },
+          { path: "/fr/transparency",lang:"fr", title: "Transparence et méthodologie | ToolTrim",                 description: "Comment ToolTrim évalue les outils SaaS : critères de sélection, fréquence de mise à jour et politique d'indépendance éditoriale." },
+          { path: "/en/transparency",lang:"en", title: "Transparency and methodology | ToolTrim",                 description: "How ToolTrim evaluates SaaS tools: selection criteria, update frequency and editorial independence policy." },
+        ];
+
+        for (const sp of SECTION_PAGES) {
+          const url = `${BASE}${sp.path}`;
+          const altLang = sp.lang === "fr" ? "en" : "fr";
+          const altPath = sp.path.replace(`/${sp.lang}/`, `/${altLang}/`);
+          const metaTags = [
+            `<link rel="canonical" href="${url}" />`,
+            `<link rel="alternate" hreflang="${sp.lang}" href="${url}" />`,
+            `<link rel="alternate" hreflang="${altLang}" href="${BASE}${altPath}" />`,
+            `<link rel="alternate" hreflang="x-default" href="${BASE}${sp.path.replace(`/${sp.lang}/`, "/fr/")}" />`,
+            `<title>${sp.title}</title>`,
+            `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:title" content="${sp.title.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
+            `<meta property="og:url" content="${url}" />`,
+          ].join("\n    ");
+
+          let html = baseHtml;
+          html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${sp.lang}"`);
+          html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
+          html = html.replace(/<title>[^<]*<\/title>/, "");
+          html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+          html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+
+          const outDir = path.resolve(distDir, sp.path.replace(/^\//, ""));
+          fs.mkdirSync(outDir, { recursive: true });
+          fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+        }
+
+        // --- Prerender category pages ---
+        const categories = content.categories || [];
+        for (const cat of categories) {
+          const slug = cat.slug;
+          const frName = (cat.name || slug).replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\s]+/gu, "").trim() || cat.name;
+          const frDesc = cat.description || "";
+          const enData = CATEGORY_EN[slug] || { name: frName, description: frDesc };
+
+          for (const lang of LANGS) {
+            const isFr = lang === "fr";
+            const catName = isFr ? frName : enData.name;
+            const catDesc = isFr ? frDesc : enData.description;
+            const title = isFr
+              ? `${catName} — Meilleurs outils SaaS pour freelances | ToolTrim`
+              : `${catName} — Best SaaS tools for freelancers | ToolTrim`;
+            const description = isFr
+              ? `${catDesc} Comparez les meilleurs outils de la catégorie ${catName} : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.`
+              : `${catDesc} Compare the best ${catName} tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.`;
+            const url = `${BASE}/${lang}/category/${slug}`;
+            const frUrl = `${BASE}/fr/category/${slug}`;
+            const enUrl = `${BASE}/en/category/${slug}`;
+
+            const metaTags = [
+              `<link rel="canonical" href="${url}" />`,
+              `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
+              `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+              `<title>${title}</title>`,
+              `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:url" content="${url}" />`,
+            ].join("\n    ");
+
+            let html = baseHtml;
+            html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${lang}"`);
+            html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
+            html = html.replace(/<title>[^<]*<\/title>/, "");
+            html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+            html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+
+            const outDir = path.resolve(distDir, lang, "category", slug);
+            fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+          }
+        }
+
+        // --- Prerender comparison pages ---
+        const BRAND_NAMES: Record<string, string> = {
+          chatgpt: "ChatGPT", claude: "Claude", github: "GitHub", google: "Google",
+          hubspot: "HubSpot", typeform: "Typeform", languagetool: "LanguageTool",
+          airtable: "Airtable", midjourney: "Midjourney", semrush: "SEMrush",
+          dropbox: "Dropbox", notion: "Notion", zapier: "Zapier", figma: "Figma",
+          canva: "Canva", linear: "Linear", jira: "Jira", obsidian: "Obsidian",
+          firefly: "Firefly", cursor: "Cursor", grammarly: "Grammarly",
+          similarweb: "Similarweb", stripe: "Stripe", razorpay: "Razorpay",
+          slack: "Slack", front: "Front", coda: "Coda", vercel: "Vercel",
+          replit: "Replit", drive: "Drive", copilot: "Copilot", make: "Make",
+          tally: "Tally", loom: "Loom",
+        };
+        const toBrandName = (slug: string) =>
+          slug.split("-").map(w => BRAND_NAMES[w.toLowerCase()] ?? (w.charAt(0).toUpperCase() + w.slice(1))).join(" ");
+
+        const COMPARISONS_PRERENDER = [
+          "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
+          "notion-vs-obsidian", "typeform-vs-tally", "midjourney-vs-firefly",
+          "github-copilot-vs-cursor", "grammarly-vs-claude",
+          "figma-vs-canva", "linear-vs-jira", "notion-vs-airtable",
+          "vercel-vs-replit", "semrush-vs-similarweb", "stripe-vs-razorpay",
+          "slack-vs-front", "notion-vs-coda",
+        ];
+        for (const comp of COMPARISONS_PRERENDER) {
+          const parts = comp.split("-vs-");
+          const toolA = toBrandName(parts[0]);
+          const toolB = parts[1] ? toBrandName(parts[1]) : "";
+          const label = `${toolA} vs ${toolB}`;
+          for (const lang of LANGS) {
+            const isFr = lang === "fr";
+            const title = isFr
+              ? `${label} — Comparatif 2026 | ToolTrim`
+              : `${label} — Comparison 2026 | ToolTrim`;
+            const description = isFr
+              ? `Comparatif ${label} : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?`
+              : `${label} comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?`;
+            const url = `${BASE}/${lang}/comparatif/${comp}`;
+            const frUrl = `${BASE}/fr/comparatif/${comp}`;
+            const enUrl = `${BASE}/en/comparatif/${comp}`;
+
+            const metaTags = [
+              `<link rel="canonical" href="${url}" />`,
+              `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
+              `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+              `<title>${title}</title>`,
+              `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:url" content="${url}" />`,
+            ].join("\n    ");
+
+            let html = baseHtml;
+            html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${lang}"`);
+            html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
+            html = html.replace(/<title>[^<]*<\/title>/, "");
+            html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+            html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+
+            const outDir = path.resolve(distDir, lang, "comparatif", comp);
+            fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+          }
+        }
+
         // --- Generate 404.html for Vercel custom error page ---
         const meta404 = [
           `<title>Page introuvable | ToolTrim</title>`,
@@ -407,7 +583,7 @@ function staticPrerenderPlugin(): Plugin {
         html404 = html404.replace("</head>", `    ${meta404}\n  </head>`);
         fs.writeFileSync(path.resolve(distDir, "404.html"), html404, "utf-8");
 
-        console.log(`✅ Prerender : ${count} pages tools + 3 landing pages + ${SEO_PAGES.length} pages SEO générées + 404.html`);
+        console.log(`✅ Prerender : ${count} tool pages + 3 landings + ${SEO_PAGES.length} SEO pages + ${SECTION_PAGES.length} sections + ${categories.length * 2} categories + ${COMPARISONS_PRERENDER.length * 2} comparisons + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
