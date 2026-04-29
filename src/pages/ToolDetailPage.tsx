@@ -38,11 +38,11 @@ const ToolDetailPage = () => {
       : `${tool.name} — Review & alternatives | ToolTrim`;
     const seoDesc = lang === "fr"
       ? (hasPrice
-          ? `${tool.name} coûte ${price}€/mois. On l'a testé : voici si ça vaut le coup, et les meilleures alternatives moins chères.`
-          : `On a analysé ${tool.name} de fond en comble : verdict, prix réel et alternatives testées.`)
+          ? `${tool.name} coûte ${price}€/mois. Verdict tooltrim.com après analyse complète : est-ce que ça vaut le coup ? Quelles sont les meilleures alternatives moins chères ?`
+          : `${tool.name} analysé en profondeur par tooltrim.com : verdict honnête, prix réel constaté et meilleures alternatives testées pour freelances en 2026.`)
       : (hasPrice
-          ? `${tool.name} costs €${price}/mo. We tested it — here's our honest verdict and the best cheaper alternatives.`
-          : `We analyzed ${tool.name} thoroughly: verdict, real pricing and tested alternatives.`);
+          ? `${tool.name} costs €${price}/mo. Honest verdict from tooltrim.com after full analysis: is it worth it, and what are the best cheaper alternatives for freelancers?`
+          : `${tool.name} reviewed by tooltrim.com: honest verdict, real pricing breakdown and best tested alternatives for freelancers in 2026.`);
     const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
 
     const toolDomain = tool.websiteUrl || tool.affiliateLink;
