@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo } from "react";
-import { Check, X, ArrowRight, CheckCircle, XCircle } from "lucide-react";
+import { Check, X, ArrowRight, CheckCircle, XCircle, Trophy } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 
 import CompareSidebar from "@/components/compare/CompareSidebar";
@@ -15,6 +15,64 @@ import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 
 function findTool(tools: Tool[], idOrSlug: string): Tool | undefined {
   return tools.find(t => t.id === idOrSlug || t.slug === idOrSlug);
+}
+
+function QuickVerdict({ toolA, toolB, lang }: { toolA: Tool; toolB: Tool; lang: "fr" | "en" }) {
+  const priceA = toolA.pricing_v5?.compare_price_monthly_eur ?? toolA.defaultMonthlyPrice ?? 0;
+  const priceB = toolB.pricing_v5?.compare_price_monthly_eur ?? toolB.defaultMonthlyPrice ?? 0;
+
+  const winner: Tool | null = (() => {
+    const aFerme = toolA.prescription_quality === "ferme";
+    const bFerme = toolB.prescription_quality === "ferme";
+    if (aFerme && !bFerme) return toolA;
+    if (bFerme && !aFerme) return toolB;
+    if (priceA > 0 && priceB > 0) return priceA <= priceB ? toolA : toolB;
+    if (priceA === 0 && priceB > 0) return toolA;
+    if (priceB === 0 && priceA > 0) return toolB;
+    return null;
+  })();
+
+  const loser = winner ? (winner === toolA ? toolB : toolA) : null;
+  const winnerPrice = winner === toolA ? priceA : priceB;
+  const loserPrice = winner === toolA ? priceB : priceA;
+  const saving = loserPrice > 0 && winnerPrice < loserPrice ? loserPrice - winnerPrice : 0;
+  const keepIf = winner ? (winner.verdict?.keepIf || [])[0] : null;
+
+  const label = lang === "fr" ? "Résultat rapide" : "Quick verdict";
+  const winnerLabel = lang === "fr" ? "Recommandé" : "Recommended";
+  const drawLabel = lang === "fr" ? "Dépend de votre usage" : "Depends on your use case";
+  const savingLabel = lang === "fr"
+    ? `Économisez ${saving}€/mois vs ${loser?.name}`
+    : `Save €${saving}/mo vs ${loser?.name}`;
+  const reasonPrefix = lang === "fr" ? "Idéal si : " : "Best if: ";
+
+  return (
+    <div className="mt-6 flex items-start gap-4 rounded-2xl border border-primary/20 bg-primary/5 px-5 py-4">
+      <Trophy className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+      <div className="flex-1 min-w-0">
+        <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-primary mb-1">{label}</p>
+        {winner ? (
+          <>
+            <p className="font-bold text-foreground">
+              <span className="text-primary">{winner.name}</span>
+              {" "}
+              <span className="font-normal text-muted-foreground text-sm">— {winnerLabel}</span>
+            </p>
+            {keepIf && (
+              <p className="mt-0.5 text-sm text-muted-foreground">
+                {reasonPrefix}<span className="font-medium text-foreground">{keepIf}</span>
+              </p>
+            )}
+            {saving > 0 && (
+              <p className="mt-1 text-xs font-semibold text-primary">{savingLabel}</p>
+            )}
+          </>
+        ) : (
+          <p className="font-semibold text-foreground">{drawLabel}</p>
+        )}
+      </div>
+    </div>
+  );
 }
 
 function getPrice(tool: Tool): string {
@@ -144,6 +202,9 @@ const ComparePage = () => {
             ? `${toolA.name} ou ${toolB.name} ? On a testé les deux : prix réels, fonctionnalités clés, et notre verdict sans langue de bois.`
             : `${toolA.name} or ${toolB.name}? We tested both — real pricing, key features, and a straight verdict.`}
         </p>
+        <div className="max-w-2xl">
+          <QuickVerdict toolA={toolA} toolB={toolB} lang={lang} />
+        </div>
       </header>
 
       {/* Main: Sidebar + Content */}
