@@ -57,8 +57,9 @@ function sitemapPlugin(): Plugin {
         const data = JSON.parse(raw);
         const urls: string[] = [];
 
-        const add = (loc: string, freq: string, prio: string) => {
-          urls.push(`  <url>\n    <loc>${loc}</loc>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`);
+        const buildDate = new Date().toISOString().split("T")[0];
+        const add = (loc: string, freq: string, prio: string, lastmod = buildDate) => {
+          urls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`);
         };
 
         for (const lang of LANGS) {
@@ -84,7 +85,8 @@ function sitemapPlugin(): Plugin {
 
         for (const a of data.articles || []) {
           const lang = a.lang || "fr";
-          add(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6");
+          const articleDate = a.date || buildDate;
+          add(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6", articleDate);
         }
 
         // Comparative guides with localized slugs
@@ -184,8 +186,10 @@ function staticPrerenderPlugin(): Plugin {
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               name,
+              url,
               description: description || title,
               applicationCategory: "BusinessApplication",
+              operatingSystem: "Web",
             };
             if (price && typeof price === "number" && price > 0) {
               jsonLd.offers = {
