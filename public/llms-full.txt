@@ -1,6 +1,6 @@
-# ToolTrim — Top 50 tools (verified pricing)
-# Last verified: 2026-03-29
-# Source: https://tooltrim.com
+# ToolTrim — 314 tools (verified pricing)
+# Last verified: 2026-04-29
+# Source: https://www.tooltrim.com
 # Format: JSON array; one object per tool
 # Fields: name, slug, price (monthly EUR), currency, verdict (ferme|question|silence), verified (YYYY-MM-DD)
 
@@ -8,401 +8,2513 @@
   {
     "name": "ChatGPT",
     "slug": "chatgpt",
-    "price": 17.32,
+    "price": 20,
     "currency": "EUR",
-    "verdict": "ferme",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Claude",
     "slug": "claude",
-    "price": 14.43,
+    "price": 20,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Notion",
     "slug": "notion",
-    "price": 9.5,
+    "price": 10,
     "currency": "EUR",
-    "verdict": "ferme",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Calendly",
     "slug": "calendly",
-    "price": 8.66,
+    "price": 10,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Loom",
     "slug": "loom",
-    "price": 15.59,
+    "price": 12.5,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Canva",
     "slug": "canva",
-    "price": 11.26,
+    "price": 13,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Grammarly",
     "slug": "grammarly",
     "price": 12,
     "currency": "EUR",
-    "verdict": "ferme",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Stripe",
+    "slug": "stripe",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Indy",
     "slug": "indy",
-    "price": 20,
+    "price": 0,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Google Drive",
     "slug": "google-drive",
-    "price": 1.73,
+    "price": 2,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Perplexity",
     "slug": "perplexity",
-    "price": 14.43,
+    "price": 0,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Tally",
+    "slug": "tally",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Todoist",
     "slug": "todoist",
-    "price": 5,
+    "price": 0,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Obsidian",
+    "slug": "obsidian",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Make",
     "slug": "make",
-    "price": 7.79,
+    "price": 9,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "Raycast",
     "slug": "raycast",
-    "price": 6.93,
+    "price": 0,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Superhuman",
     "slug": "superhuman",
-    "price": 21.65,
+    "price": 0,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "Linear",
     "slug": "linear",
-    "price": 8.66,
+    "price": 0,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "Cal.com",
     "slug": "cal-com",
-    "price": 10.39,
+    "price": 0,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Midjourney",
     "slug": "midjourney",
-    "price": 8.66,
+    "price": 0,
     "currency": "EUR",
-    "verdict": "ferme",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Base44",
     "slug": "base44",
-    "price": 17.32,
+    "price": 29,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Sellsy",
     "slug": "sellsy",
-    "price": 29,
+    "price": 50,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "ElevenLabs",
     "slug": "elevenlabs",
-    "price": 4.33,
+    "price": 5,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "ClickUp",
     "slug": "clickup",
-    "price": 6.06,
+    "price": 7,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "SaneBox",
     "slug": "sanebox",
-    "price": 6.06,
+    "price": 7,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "GetResponse",
     "slug": "getresponse",
-    "price": 12.99,
+    "price": 15,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Trello",
     "slug": "trello",
-    "price": 8.66,
+    "price": 5,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "Airtable",
     "slug": "airtable",
-    "price": 17.32,
+    "price": 10,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "Mailchimp",
     "slug": "mailchimp",
-    "price": 11.26,
+    "price": 13,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "Slack",
     "slug": "slack",
-    "price": 6.28,
+    "price": 7.25,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Figma",
     "slug": "figma",
-    "price": 16,
+    "price": 12,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "1Password",
     "slug": "1password",
-    "price": 3.46,
+    "price": 2.99,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Toggl Track",
     "slug": "toggl",
-    "price": 7.79,
+    "price": 9,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Webflow",
     "slug": "webflow",
-    "price": 12.12,
+    "price": 14,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
   },
   {
     "name": "Plausible Analytics",
     "slug": "plausible",
-    "price": 7.79,
+    "price": 9,
     "currency": "EUR",
-    "verdict": "ferme",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Pitch",
     "slug": "pitch",
-    "price": 6.93,
+    "price": 8,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "LearnWorlds",
     "slug": "learnworlds",
-    "price": 25.11,
+    "price": 29,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Prezi",
     "slug": "prezi",
-    "price": 4.33,
+    "price": 5,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "KrispCall",
     "slug": "krispcall",
-    "price": 12.99,
+    "price": 15,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Mega HR",
     "slug": "megahr",
     "price": 8,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Logome.ai",
     "slug": "logomeai",
-    "price": 1.45,
+    "price": 29,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Reply.io",
     "slug": "replyio",
-    "price": 51.96,
+    "price": 60,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Turbotic",
     "slug": "turbotic",
-    "price": 8.66,
-    "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
-  },
-  {
-    "name": "Kit",
-    "slug": "convertkit",
-    "price": 28.15,
+    "price": 49,
     "currency": "EUR",
     "verdict": "silence",
-    "verified": "2026-03-13"
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "ConvertKit",
+    "slug": "convertkit",
+    "price": 29,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Ignition",
     "slug": "ignition",
-    "price": 59.76,
+    "price": 35,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Landingi",
     "slug": "landingi",
-    "price": 25.11,
+    "price": 29,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "AdCreative.ai",
     "slug": "adcreative",
-    "price": 18.19,
+    "price": 29,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "8fig",
     "slug": "8fig",
     "price": 5,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Adobe",
     "slug": "adobe",
     "price": 15,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Aircall Inc.",
     "slug": "aircall-inc",
     "price": 20,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "airSlate",
     "slug": "airslate",
     "price": 10,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Albato",
     "slug": "albato",
     "price": 15,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Allstate",
+    "slug": "allstate",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
   },
   {
     "name": "Aloware",
     "slug": "aloware",
     "price": 20,
     "currency": "EUR",
-    "verdict": "question",
-    "verified": "2026-03-13"
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Apollo.io",
+    "slug": "apollo-io",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "AroundDeal",
+    "slug": "arounddeal",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Asana",
+    "slug": "asana",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Autonix",
+    "slug": "autonix",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Auvik",
+    "slug": "auvik",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "AWeber",
+    "slug": "aweber",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Basecamp",
+    "slug": "basecamp",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Blueink eSignatures",
+    "slug": "blueink-esignatures",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Boast",
+    "slug": "boast",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Bolt Business",
+    "slug": "bolt-business",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "BoomPop",
+    "slug": "boompop",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Box",
+    "slug": "box",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Brand24",
+    "slug": "brand24",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Breezy HR",
+    "slug": "breezy-hr",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Buddy Punch",
+    "slug": "buddy-punch",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "BugHerd",
+    "slug": "bugherd",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "CallHippo",
+    "slug": "callhippo",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "CallRail",
+    "slug": "callrail",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "CallTrackingMetrics",
+    "slug": "calltrackingmetrics",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Campaigner",
+    "slug": "campaigner",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Capsule",
+    "slug": "capsule",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Castmagic",
+    "slug": "castmagic",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Clearbit",
+    "slug": "clearbit",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "ClockShark",
+    "slug": "clockshark",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Close",
+    "slug": "close",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "CloudTask Marketplace",
+    "slug": "cloudtask-marketplace",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Coast",
+    "slug": "coast",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Cognism",
+    "slug": "cognism",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Connecteam",
+    "slug": "connecteam",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Crowdfire Inc",
+    "slug": "crowdfire-inc",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Deel",
+    "slug": "deel",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Deputy",
+    "slug": "deputy",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Deskpro",
+    "slug": "deskpro",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "DesktopReady",
+    "slug": "desktopready",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Docyt",
+    "slug": "docyt",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "doola",
+    "slug": "doola",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Draftbit",
+    "slug": "draftbit",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Dropbox",
+    "slug": "dropbox",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "EasyDMARC",
+    "slug": "easydmarc",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Extensis",
+    "slug": "extensis",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Finale Inventory",
+    "slug": "finale-inventory",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "FlexiQuiz",
+    "slug": "flexiquiz",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Format",
+    "slug": "format",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "FreshBooks",
+    "slug": "freshbooks",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Front",
+    "slug": "front",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Gelato",
+    "slug": "gelato",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Getida",
+    "slug": "getida",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Glide",
+    "slug": "glide",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Gorgias",
+    "slug": "gorgias",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Hive",
+    "slug": "hive",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Hootsuite",
+    "slug": "hootsuite",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Hostfully",
+    "slug": "hostfully",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Houzz Pro",
+    "slug": "houzz-pro",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "iContact",
+    "slug": "icontact",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "InboxAlly",
+    "slug": "inboxally",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "inFlow Inventory",
+    "slug": "inflow-inventory",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Insightly",
+    "slug": "insightly",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Instapage",
+    "slug": "instapage",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Jobber",
+    "slug": "jobber",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Katana Cloud Manufacturing",
+    "slug": "katana-cloud-manufacturing",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Kavkom",
+    "slug": "kavkom",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "KeepTruckin",
+    "slug": "keeptruckin",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Kissmetrics",
+    "slug": "kissmetrics",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Kixie",
+    "slug": "kixie",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Landbot",
+    "slug": "landbot",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Lano",
+    "slug": "lano",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Later",
+    "slug": "later",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Leadflow",
+    "slug": "leadflow",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Leadpages",
+    "slug": "leadpages",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "LeadSquared",
+    "slug": "leadsquared",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Lendio",
+    "slug": "lendio",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Liquid Web Partner+ Program",
+    "slug": "liquid-web-partner-program",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Looka",
+    "slug": "looka",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Lucid Software",
+    "slug": "lucid-software",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Mailgun",
+    "slug": "mailgun",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Manifest AI",
+    "slug": "manifest-ai",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "MASV",
+    "slug": "masv",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Moosend",
+    "slug": "moosend",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "MRPeasy",
+    "slug": "mrpeasy",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "MyCase",
+    "slug": "mycase",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Navan",
+    "slug": "navan",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "NearSt",
+    "slug": "nearst",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Netchex",
+    "slug": "netchex",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Omniconvert Explore",
+    "slug": "omniconvert-explore",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Onramp Funds",
+    "slug": "onramp-funds",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "OpenPhone",
+    "slug": "openphone",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Ownr",
+    "slug": "ownr",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Oyster®",
+    "slug": "oyster",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Packhelp",
+    "slug": "packhelp",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Pagecloud",
+    "slug": "pagecloud",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Payoneer",
+    "slug": "payoneer",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Pipedrive",
+    "slug": "pipedrive",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "PipelinePRO",
+    "slug": "pipelinepro",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Printify",
+    "slug": "printify",
+    "price": 5,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Process Street",
+    "slug": "process-street",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "ProductionCrate",
+    "slug": "productioncrate",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Promo.com",
+    "slug": "promo-com",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "PushOwl Web Push Notifications",
+    "slug": "pushowl-web-push-notifications",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Quadient",
+    "slug": "quadient",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Quartile",
+    "slug": "quartile",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Quick Base",
+    "slug": "quick-base",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "QuickBooks",
+    "slug": "quickbooks",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Razorpay",
+    "slug": "razorpay",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "respond.io",
+    "slug": "respond-io",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "ResponseTap",
+    "slug": "responsetap",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Restream",
+    "slug": "restream",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "RocketLink",
+    "slug": "rocketlink",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Ruby",
+    "slug": "ruby",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Salesflare",
+    "slug": "salesflare",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Salesforce",
+    "slug": "salesforce",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SellersFi",
+    "slug": "sellersfi",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Sellfy",
+    "slug": "sellfy",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SEMrush",
+    "slug": "semrush",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Sendinblue",
+    "slug": "sendinblue",
+    "price": 5,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Shogun",
+    "slug": "shogun",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "ShopHero",
+    "slug": "shophero",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Shopify",
+    "slug": "shopify",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Similarweb",
+    "slug": "similarweb",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SimpleTexting",
+    "slug": "simpletexting",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Simvoly",
+    "slug": "simvoly",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SmartSuite",
+    "slug": "smartsuite",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SMTP.com",
+    "slug": "smtp-com",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SocialBee",
+    "slug": "socialbee",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Softr",
+    "slug": "softr",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SpaceIQ",
+    "slug": "spaceiq",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Squarespace",
+    "slug": "squarespace",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SurveySparrow",
+    "slug": "surveysparrow",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SysAid",
+    "slug": "sysaid",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Teamwork",
+    "slug": "teamwork",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Teachable",
+    "slug": "teachable",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Tidio",
+    "slug": "tidio",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Time Doctor",
+    "slug": "time-doctor",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Trustpilot",
+    "slug": "trustpilot",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Typeform",
+    "slug": "typeform",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Unbounce",
+    "slug": "unbounce",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Upwork",
+    "slug": "upwork",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Vimeo",
+    "slug": "vimeo",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Wix",
+    "slug": "wix",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "WooCommerce",
+    "slug": "woocommerce",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "WordPress.com",
+    "slug": "wordpress-com",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Wrike",
+    "slug": "wrike",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Wunderlist",
+    "slug": "wunderlist",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Zapier",
+    "slug": "zapier",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Zendesk",
+    "slug": "zendesk",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Zoho",
+    "slug": "zoho",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "HoneyBook",
+    "slug": "honeybook",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Dubsado",
+    "slug": "dubsado",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Visme",
+    "slug": "visme",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Plutio",
+    "slug": "plutio",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Snov.io",
+    "slug": "snov-io",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Elfsight",
+    "slug": "elfsight",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "ProWritingAid",
+    "slug": "prowritingaid",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "vcita",
+    "slug": "vcita",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Sendible",
+    "slug": "sendible",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Clockify",
+    "slug": "clockify",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "TimeCamp",
+    "slug": "timecamp",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "DeepSeek",
+    "slug": "deepseek",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Gemini",
+    "slug": "gemini",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Adobe Photoshop",
+    "slug": "adobe-photoshop",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Adobe Illustrator",
+    "slug": "adobe-illustrator",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Adobe Premiere Pro",
+    "slug": "adobe-premiere-pro",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Adobe After Effects",
+    "slug": "adobe-after-effects",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Adobe Lightroom",
+    "slug": "adobe-lightroom",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Adobe Creative Cloud",
+    "slug": "adobe-cc",
+    "price": 60,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "DaVinci Resolve",
+    "slug": "davinci-resolve",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Capture One",
+    "slug": "capture-one",
+    "price": 24,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Blender",
+    "slug": "blender",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Frame.io",
+    "slug": "frame-io",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Pixieset",
+    "slug": "pixieset",
+    "price": 12,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "GitHub",
+    "slug": "github",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Cursor",
+    "slug": "cursor",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Vercel",
+    "slug": "vercel",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Runway",
+    "slug": "runway",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Adobe Firefly",
+    "slug": "firefly",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Leonardo AI",
+    "slug": "leonardo-ai",
+    "price": 12,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Topaz Video AI",
+    "slug": "topaz-video-ai",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "HeyGen",
+    "slug": "heygen",
+    "price": 29,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "GitHub Copilot",
+    "slug": "github-copilot",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Flow (aescripts)",
+    "slug": "aescripts-flow",
+    "price": 8,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Motion Bro",
+    "slug": "motion-bro",
+    "price": 9,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "CapCut",
+    "slug": "capcut",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Riverside",
+    "slug": "riverside",
+    "price": 15,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Beehiiv",
+    "slug": "beehiiv",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Intercom",
+    "slug": "intercom",
+    "price": 74,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Amplitude",
+    "slug": "amplitude",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "PostHog",
+    "slug": "posthog",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Spendesk",
+    "slug": "spendesk",
+    "price": 99,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Pika Labs",
+    "slug": "pika-labs",
+    "price": 8,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Kling AI",
+    "slug": "kling-ai",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Krea AI",
+    "slug": "krea-ai",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Magnific AI",
+    "slug": "magnific-ai",
+    "price": 39,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Ideogram",
+    "slug": "ideogram",
+    "price": 8,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Udio",
+    "slug": "udio",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Suno",
+    "slug": "suno",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Descript",
+    "slug": "descript",
+    "price": 12,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Otter.ai",
+    "slug": "otter-ai",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Bolt.new",
+    "slug": "bolt-new",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Lovable",
+    "slug": "lovable",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Replit",
+    "slug": "replit",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Tabnine",
+    "slug": "tabnine",
+    "price": 12,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Stable Diffusion",
+    "slug": "stable-diffusion",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Notion AI",
+    "slug": "notion-ai",
+    "price": 8,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Mem AI",
+    "slug": "mem-ai",
+    "price": 14,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Adobe Podcast AI",
+    "slug": "adobe-podcast-ai",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Flux (Black Forest Labs)",
+    "slug": "flux",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Whisper (OpenAI)",
+    "slug": "whisper",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Buzzsprout",
+    "slug": "buzzsprout",
+    "price": 12,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Spotify for Podcasters",
+    "slug": "anchor-spotify",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Audacity",
+    "slug": "audacity",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Podbean",
+    "slug": "podbean",
+    "price": 9,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Buffer",
+    "slug": "buffer",
+    "price": 6,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Sprout Social",
+    "slug": "sprout-social",
+    "price": 249,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "TubeBuddy",
+    "slug": "tubebody",
+    "price": 5,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "VidIQ",
+    "slug": "vidiq",
+    "price": 7,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Substack",
+    "slug": "substack",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Typefully",
+    "slug": "typefully",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Lever",
+    "slug": "lever",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Workable",
+    "slug": "workable",
+    "price": 189,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Personio",
+    "slug": "personio",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Kajabi",
+    "slug": "kajabi",
+    "price": 55,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Podia",
+    "slug": "podia",
+    "price": 33,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Thinkific",
+    "slug": "thinkific",
+    "price": 36,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Circle",
+    "slug": "circle",
+    "price": 49,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Metabase",
+    "slug": "metabase",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Looker Studio",
+    "slug": "looker-studio",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Retool",
+    "slug": "retool",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Datadog",
+    "slug": "datadog",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Sentry",
+    "slug": "sentry",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Jira",
+    "slug": "jira",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Confluence",
+    "slug": "confluence",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Productboard",
+    "slug": "productboard",
+    "price": 20,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Canny",
+    "slug": "canny",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Hex",
+    "slug": "hex",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "PagerDuty",
+    "slug": "pagerduty",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Overlord",
+    "slug": "ae-overlord",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "BAO Boa",
+    "slug": "ae-bao-boa",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Newton 3",
+    "slug": "ae-newton3",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Animation Composer 3",
+    "slug": "ae-animation-composer",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Duik Ángela",
+    "slug": "ae-duik",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "GifGun",
+    "slug": "ae-gifgun",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Bodymovin / Lottie",
+    "slug": "ae-bodymovin",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "RubberHose 2",
+    "slug": "ae-rubberhose",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Red Giant Magic Bullet Suite",
+    "slug": "ae-red-giant",
+    "price": 10,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Figma Tokens (Tokens Studio)",
+    "slug": "figma-tokens",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Iconify for Figma",
+    "slug": "figma-iconify",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Anima",
+    "slug": "figma-anima",
+    "price": 31,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Stark",
+    "slug": "figma-stark",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Luminar Neo",
+    "slug": "luminar-neo",
+    "price": 14,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Nik Collection",
+    "slug": "nik-collection",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Topaz Gigapixel AI",
+    "slug": "topaz-gigapixel",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Revit",
+    "slug": "revit",
+    "price": 310,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "AutoCAD",
+    "slug": "autocad",
+    "price": 220,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "SketchUp Pro",
+    "slug": "sketchup-pro",
+    "price": 34,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Enscape",
+    "slug": "enscape",
+    "price": 84,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Lumion",
+    "slug": "lumion",
+    "price": 179,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Maze",
+    "slug": "maze",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Hotjar",
+    "slug": "hotjar",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Zeplin",
+    "slug": "zeplin",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "ProtoPie",
+    "slug": "protopie",
+    "price": 13,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
+  },
+  {
+    "name": "Rive",
+    "slug": "rive",
+    "price": 0,
+    "currency": "EUR",
+    "verdict": "silence",
+    "verified": "2026-04-29"
   }
 ]

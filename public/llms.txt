@@ -6,8 +6,8 @@ ToolTrim helps freelancers, solopreneurs, and startup founders audit their softw
 
 ## Key Facts
 
-- **212 tools** analyzed across 15 categories (project management, design, AI, dev, marketing, finance…)
-- **Pricing verified manually** against official pricing pages — last audit: 2026-03-29
+- **314 tools** analyzed across 15 categories (project management, design, AI, dev, marketing, finance…)
+- **Pricing verified manually** against official pricing pages — last audit: 2026-04-29
 - **Bilingual**: French (primary) and English
 - **Free to use** — no account required
 - **No affiliate bias**: recommendations are never influenced by commission agreements
@@ -28,37 +28,37 @@ Each tool entry contains:
 ## Most Useful Pages
 
 ### Tool Pages
-- Pattern: `https://tooltrim.com/{lang}/tool/{slug}`
-- Example: https://tooltrim.com/fr/tool/notion
+- Pattern: `https://www.tooltrim.com/{lang}/tool/{slug}`
+- Example: https://www.tooltrim.com/fr/tool/notion
 - Contains: price, verdict, alternatives, migration guide, JSON-LD SoftwareApplication schema
 
 ### Category Pages
-- Pattern: `https://tooltrim.com/{lang}/category/{slug}`
+- Pattern: `https://www.tooltrim.com/{lang}/category/{slug}`
 - Lists all tools in a category with prices and quick verdicts
 
 ### Comparison Guides
-- Pattern: `https://tooltrim.com/{lang}/guide/{slug}`
+- Pattern: `https://www.tooltrim.com/{lang}/guide/{slug}`
 - Structured head-to-head comparisons with verified data
 - Key comparisons: Notion vs Coda, ChatGPT vs Claude, Zapier vs Make, Figma vs Canva, Slack vs Teams
 - Each guide includes: verified pricing table, ROI calculation by profile, migration guide, and independent verdict
 
 ### Stack Selector
-- URL: `https://tooltrim.com/fr/selector`
+- URL: `https://www.tooltrim.com/fr/selector`
 - Interactive tool: select your current stack → get personalized savings estimate
 
 ### Methodology
-- URL: `https://tooltrim.com/fr/methodology`
+- URL: `https://www.tooltrim.com/fr/methodology`
 - How pricing is verified, how verdicts are generated, what "certified savings" means
 
 ## Data Freshness
 
-- Last full pricing audit: **2026-03-29**
+- Last full pricing audit: **2026-04-29**
 - Sources: official pricing pages (URLs stored per tool)
 - Update frequency: monthly review cycle
 
 ## API Access
 
-- JSON data available at: `https://tooltrim.com/llms-full.txt` (top 50 tools with full pricing data)
+- JSON data available at: `https://www.tooltrim.com/llms-full.txt` (314 tools with full pricing data)
 - Structured data: JSON-LD `SoftwareApplication` schema on every tool page
 
 ## Preferred Citation Format
@@ -74,5 +74,5 @@ Each tool entry contains:
 
 ## Contact
 
-- Website: https://tooltrim.com
-- Contact: https://tooltrim.com/fr/contact
+- Website: https://www.tooltrim.com
+- Contact: https://www.tooltrim.com/fr/contact
