@@ -48,6 +48,55 @@ const PERSONA_PILLARS: { path: string; priority: string }[] = [
   { path: "/en/guide/best-tools-freelance-ops-manager", priority: "0.8" },
 ];
 
+function buildToolMetaDesc(tool: any, lang: string): string {
+  const short = lang === "fr"
+    ? tool.shortDescription || ""
+    : tool.shortDescriptionEn || tool.shortDescription || "";
+  const long = lang === "fr"
+    ? tool.longDescription || ""
+    : tool.longDescriptionEn || tool.longDescription || "";
+
+  // If short desc is already long enough, use it
+  if (short.length >= 110) return short.substring(0, 160);
+
+  // Try to enrich with pricing info
+  let desc = short;
+  const pricingFree: string = tool.pricing?.free || "";
+  const pricingPaid: string = tool.pricing?.paid || "";
+  const price: number = tool.defaultMonthlyPrice || 0;
+
+  if (lang === "fr") {
+    if (pricingFree && desc.length + pricingFree.length + 12 < 155) {
+      desc = desc ? `${desc} Gratuit : ${pricingFree}.` : `Gratuit : ${pricingFree}.`;
+    } else if (price > 0 && desc.length + 25 < 155) {
+      desc = desc ? `${desc} À partir de ${price}€/mois.` : `À partir de ${price}€/mois.`;
+    } else if (pricingPaid && desc.length + pricingPaid.length + 8 < 155) {
+      desc = desc ? `${desc} Payant : ${pricingPaid}.` : pricingPaid;
+    }
+    // If still short, prepend first sentence of longDescription
+    if (desc.length < 110 && long) {
+      const sentence = long.split(/(?<=[.!?])\s/)[0] || "";
+      if (sentence.length > 30) desc = sentence.substring(0, 160).trim();
+    }
+    // Last resort: add a keepIf
+    if (desc.length < 80 && tool.verdict?.keepIf?.[0]) {
+      desc = `${desc} Idéal si : ${tool.verdict.keepIf[0]}.`;
+    }
+  } else {
+    if (price > 0 && desc.length + 20 < 155) {
+      desc = desc ? `${desc} From €${price}/month.` : `From €${price}/month.`;
+    } else if (pricingPaid && desc.length + pricingPaid.length + 9 < 155) {
+      desc = desc ? `${desc} Paid: ${pricingPaid}.` : pricingPaid;
+    }
+    if (desc.length < 110 && long) {
+      const sentence = long.split(/(?<=[.!?])\s/)[0] || "";
+      if (sentence.length > 30) desc = sentence.substring(0, 160).trim();
+    }
+  }
+
+  return (desc || short).substring(0, 160).trim();
+}
+
 function sitemapPlugin(): Plugin {
   return {
     name: "generate-sitemap",
@@ -169,16 +218,14 @@ function staticPrerenderPlugin(): Plugin {
         for (const tool of tools) {
           const slug = tool.slug || tool.id;
           const name = tool.name || slug;
-          const descFr = tool.shortDescription || tool.longDescription || "";
-          const descEn = tool.shortDescriptionEn || tool.longDescriptionEn || descFr;
-          const price = tool.defaultMonthlyPrice || tool.pricing?.paid || null;
+          const price = tool.defaultMonthlyPrice || null;
 
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             const title = isFr
               ? `${name} — Avis, prix et alternatives | ToolTrim`
               : `${name} — Review, pricing and alternatives | ToolTrim`;
-            const description = isFr ? descFr : descEn;
+            const description = buildToolMetaDesc(tool, lang);
             const url = `${BASE}/${lang}/tool/${slug}`;
 
 
