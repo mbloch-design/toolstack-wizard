@@ -67,8 +67,11 @@ const Navbar = () => {
         {/* ─── Logo ─── */}
         <Link to={prefix} className="flex items-center gap-2 shrink-0" onClick={closeMega}>
           <img src={pictoLogo} alt="ToolTrim" className="h-5 w-5" />
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.04em" }}>
-            <span className="text-foreground/60">TOOL</span><span className="text-primary">TRIM</span>
+          <span
+            className="font-display select-none"
+            style={{ fontSize: "1rem", fontWeight: 700, letterSpacing: "-0.02em" }}
+          >
+            <span style={{ color: "hsl(var(--foreground) / 0.45)" }}>Tool</span><span className="text-primary">Trim</span>
           </span>
         </Link>
 
@@ -77,7 +80,7 @@ const Navbar = () => {
 
           {/* Tools */}
           <div onMouseEnter={() => handleMegaEnter("tools")} onMouseLeave={handleMegaLeave} className="relative">
-            <button className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-medium transition-colors
+            <button className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-medium transition-colors duration-150
               ${activeMega === "tools" || isActive(`${prefix}/tool`) || isActive(`${prefix}/category`)
                 ? "text-foreground"
                 : "text-muted-foreground hover:text-foreground"}`}>
@@ -88,56 +91,52 @@ const Navbar = () => {
             {activeMega === "tools" && (
               <div className="absolute left-1/2 top-full pt-2.5 -translate-x-1/2"
                 onMouseEnter={() => handleMegaEnter("tools")} onMouseLeave={handleMegaLeave}>
-                <div className="w-[480px] rounded-xl border border-border/60 bg-background shadow-lg shadow-foreground/[0.04] overflow-hidden">
-                  <div className="grid grid-cols-[1fr,1px,1fr]">
+                <div className="w-[480px] rounded-xl border border-border bg-background shadow-xl shadow-black/20 overflow-hidden">
+                  <div className="grid grid-cols-[1fr_1px_1fr]">
                     {/* Categories col */}
                     <div className="p-4">
-                      <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/70">
-                        {t("Catégories", "Categories")}
-                      </p>
+                      <p className="label-section mb-3">{t("Catégories", "Categories")}</p>
                       <div className="space-y-0.5">
                         {topCategories.map(cat => {
                           const Icon = getCategoryIcon(cat.id);
                           const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
                           return (
                             <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} onClick={closeMega}
-                              className="group flex items-center gap-2.5 rounded-lg px-2 py-2 transition-colors hover:bg-accent/50">
-                              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/60 text-accent-foreground transition-colors group-hover:bg-accent">
+                              className="group flex items-center gap-2.5 rounded-lg px-2 py-2 transition-colors duration-100 hover:bg-primary/5">
+                              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/8 text-primary transition-colors duration-100 group-hover:bg-primary/15">
                                 <Icon className="h-4 w-4" />
                               </div>
                               <div className="min-w-0">
-                                <p className="text-[13px] font-medium leading-tight text-foreground">{t(catName, cat.nameEn || catName)}</p>
-                                <p className="text-[11px] text-muted-foreground font-mono tabular-nums">{cat.count} {t("outils", "tools")}</p>
+                                <p className="text-[13px] font-medium leading-tight text-foreground truncate">{t(catName, cat.nameEn || catName)}</p>
+                                <p className="text-[11px] tabular-nums" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}>{cat.count} {t("outils", "tools")}</p>
                               </div>
                             </Link>
                           );
                         })}
                       </div>
                       <Link to={`${prefix}/category`} onClick={closeMega}
-                        className="mt-3 inline-flex items-center gap-1 px-2 text-[12px] font-medium text-primary hover:text-primary/80 transition-colors">
+                        className="mt-3 inline-flex items-center gap-1 px-2 text-[12px] font-medium text-primary hover:text-primary/80 transition-colors duration-100">
                         {t("Toutes les catégories", "All categories")} <ArrowRight className="h-3 w-3" />
                       </Link>
                     </div>
 
                     {/* Divider */}
-                    <div className="bg-border/60" />
+                    <div className="bg-border" />
 
                     {/* Popular col */}
                     <div className="p-4">
-                      <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/70">
-                        {t("Populaires", "Popular")}
-                      </p>
+                      <p className="label-section mb-3">{t("Populaires", "Popular")}</p>
                       <div className="space-y-0.5">
                         {topTools.map(tool => (
                           <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} onClick={closeMega}
-                            className="group flex items-center gap-2.5 rounded-lg px-2 py-2 transition-colors hover:bg-accent/50">
+                            className="group flex items-center gap-2.5 rounded-lg px-2 py-2 transition-colors duration-100 hover:bg-primary/5">
                             <ToolLogo tool={tool} size={28} className="rounded-md" />
                             <p className="text-[13px] font-medium truncate text-foreground">{tool.name}</p>
                           </Link>
                         ))}
                       </div>
                       <Link to={`${prefix}/tools`} onClick={closeMega}
-                        className="mt-3 inline-flex items-center gap-1 px-2 text-[12px] font-medium text-primary hover:text-primary/80 transition-colors">
+                        className="mt-3 inline-flex items-center gap-1 px-2 text-[12px] font-medium text-primary hover:text-primary/80 transition-colors duration-100">
                         {t("Tous les outils", "All tools")} <ArrowRight className="h-3 w-3" />
                       </Link>
                     </div>
@@ -149,7 +148,7 @@ const Navbar = () => {
 
           {/* Resources */}
           <div onMouseEnter={() => handleMegaEnter("resources")} onMouseLeave={handleMegaLeave} className="relative">
-            <button className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-medium transition-colors
+            <button className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-medium transition-colors duration-150
               ${activeMega === "resources" || isActive(`${prefix}/guides`) || isActive(`${prefix}/about`)
                 ? "text-foreground"
                 : "text-muted-foreground hover:text-foreground"}`}>
@@ -160,7 +159,7 @@ const Navbar = () => {
             {activeMega === "resources" && (
               <div className="absolute left-1/2 top-full pt-2.5 -translate-x-1/2"
                 onMouseEnter={() => handleMegaEnter("resources")} onMouseLeave={handleMegaLeave}>
-                <div className="w-[280px] rounded-xl border border-border/60 bg-background shadow-lg shadow-foreground/[0.04] overflow-hidden p-2">
+                <div className="w-[260px] rounded-xl border border-border bg-background shadow-xl shadow-black/20 overflow-hidden p-1.5">
                   {[
                     { icon: BookOpen, label: t("Guides & comparatifs", "Guides & comparisons"), to: `${prefix}/guides` },
                     { icon: Scale, label: t("Comparatifs", "Comparisons"), to: `${prefix}/comparatifs` },
@@ -169,8 +168,8 @@ const Navbar = () => {
                     { icon: HelpCircle, label: t("À propos", "About"), to: `${prefix}/about` },
                   ].map(item => (
                     <Link key={item.to} to={item.to} onClick={closeMega}
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 transition-colors hover:bg-accent/50">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent/60 text-accent-foreground">
+                      className="group flex items-center gap-2.5 rounded-lg px-3 py-2.5 transition-colors duration-100 hover:bg-primary/5">
+                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary/8 text-primary transition-colors duration-100 group-hover:bg-primary/15">
                         <item.icon className="h-3.5 w-3.5" />
                       </div>
                       <p className="text-[13px] font-medium text-foreground">{item.label}</p>
@@ -183,33 +182,33 @@ const Navbar = () => {
 
           {/* Diagnostic link */}
           <Link to={`${prefix}/selector`}
-            className={`px-3 py-2 text-[13px] font-medium transition-colors
+            className={`px-3 py-2 text-[13px] font-medium transition-colors duration-150
               ${isActive(`${prefix}/selector`) ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}>
             {t("Diagnostic", "Diagnostic")}
           </Link>
         </div>
 
         {/* ─── Desktop right actions ─── */}
-        <div className="hidden items-center gap-1.5 lg:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           <button onClick={toggle} aria-label="Toggle theme"
-            className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground">
+            className="rounded-lg p-2 text-muted-foreground transition-colors duration-150 hover:bg-accent/50 hover:text-foreground cursor-pointer">
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
           <a href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
             hrefLang={otherLang}
             rel="alternate"
-            className="rounded-lg px-2 py-1.5 text-[11px] font-semibold uppercase text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground tracking-wide">
+            className="rounded-lg px-2 py-1.5 text-[11px] font-semibold uppercase text-muted-foreground transition-colors duration-150 hover:bg-accent/50 hover:text-foreground tracking-wide">
             {otherLang.toUpperCase()}
           </a>
           <Link to={`${prefix}/selector`}
-            className="ml-1 rounded-lg bg-foreground px-4 py-2 text-[13px] font-semibold text-background transition-all hover:bg-foreground/85 hover:shadow-md">
+            className="ml-1.5 rounded-lg bg-primary px-4 py-2 text-[13px] font-semibold text-primary-foreground transition-colors duration-150 hover:bg-primary/90">
             {t("Analyser ma stack", "Analyze my stack")}
           </Link>
         </div>
 
         {/* ─── Mobile controls ─── */}
         <div className="flex items-center gap-1 lg:hidden">
-          <button onClick={toggle} className="rounded-lg p-2 text-muted-foreground" aria-label="Toggle theme">
+          <button onClick={toggle} className="rounded-lg p-2 text-muted-foreground cursor-pointer" aria-label="Toggle theme">
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
           <a href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
@@ -219,7 +218,7 @@ const Navbar = () => {
             {otherLang.toUpperCase()}
           </a>
           <button onClick={() => { setMobileOpen(!mobileOpen); setMobileExpanded(null); }}
-            className="rounded-lg p-2 text-muted-foreground">
+            className="rounded-lg p-2 text-muted-foreground cursor-pointer">
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
@@ -227,22 +226,22 @@ const Navbar = () => {
 
       {/* ─── Mobile menu ─── */}
       {mobileOpen && (
-        <div className="absolute inset-x-0 top-full z-50 max-h-[calc(100vh-3.5rem)] overflow-y-auto border-b border-border/60 bg-background lg:hidden">
+        <div className="absolute inset-x-0 top-full z-50 max-h-[calc(100vh-3.5rem)] overflow-y-auto border-b border-border bg-background lg:hidden">
           <div className="px-4 py-3 space-y-0.5">
             {/* Tools */}
             <button onClick={() => setMobileExpanded(mobileExpanded === "tools" ? null : "tools")}
-              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-[13px] font-medium hover:bg-accent/40 transition-colors">
+              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-[13px] font-medium hover:bg-primary/5 transition-colors duration-100 cursor-pointer">
               {t("Outils", "Tools")}
-              <ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform ${mobileExpanded === "tools" ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform duration-200 ${mobileExpanded === "tools" ? "rotate-180" : ""}`} />
             </button>
             {mobileExpanded === "tools" && (
-              <div className="ml-2 space-y-0.5 border-l border-border/50 pl-3 pb-2">
+              <div className="ml-2 space-y-0.5 border-l border-border pl-3 pb-2">
                 <Link to={`${prefix}/tools`} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-accent/30 transition-colors">
+                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
                   <Wrench className="h-3.5 w-3.5" /> {t("Tous les outils", "All tools")}
                 </Link>
                 <Link to={`${prefix}/category`} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-accent/30 transition-colors">
+                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
                   <BarChart3 className="h-3.5 w-3.5" /> {t("Catégories", "Categories")}
                 </Link>
                 {topCategories.slice(0, 4).map(cat => {
@@ -250,7 +249,7 @@ const Navbar = () => {
                   const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
                   return (
                     <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-accent/30 transition-colors">
+                      className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
                       <Icon className="h-3.5 w-3.5" /> {t(catName, cat.nameEn || catName)}
                     </Link>
                   );
@@ -260,40 +259,40 @@ const Navbar = () => {
 
             {/* Resources */}
             <button onClick={() => setMobileExpanded(mobileExpanded === "resources" ? null : "resources")}
-              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-[13px] font-medium hover:bg-accent/40 transition-colors">
+              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-[13px] font-medium hover:bg-primary/5 transition-colors duration-100 cursor-pointer">
               {t("Ressources", "Resources")}
-              <ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform ${mobileExpanded === "resources" ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform duration-200 ${mobileExpanded === "resources" ? "rotate-180" : ""}`} />
             </button>
             {mobileExpanded === "resources" && (
-              <div className="ml-2 space-y-0.5 border-l border-border/50 pl-3 pb-2">
+              <div className="ml-2 space-y-0.5 border-l border-border pl-3 pb-2">
                 <Link to={`${prefix}/guides`} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-accent/30 transition-colors">
+                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
                   <BookOpen className="h-3.5 w-3.5" /> {t("Guides", "Guides")}
                 </Link>
                 <Link to={`${prefix}/about`} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-accent/30 transition-colors">
+                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
                   <HelpCircle className="h-3.5 w-3.5" /> {t("À propos", "About")}
                 </Link>
                 <Link to={`${prefix}/transparency`} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-accent/30 transition-colors">
+                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
                   <Shield className="h-3.5 w-3.5" /> {t("Transparence", "Transparency")}
                 </Link>
                 <Link to={`${prefix}/contact`} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-accent/30 transition-colors">
+                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
                   <Mail className="h-3.5 w-3.5" /> Contact
                 </Link>
               </div>
             )}
 
             <Link to={`${prefix}/selector`} onClick={() => setMobileOpen(false)}
-              className="flex items-center rounded-lg px-3 py-3 text-[13px] font-medium hover:bg-accent/40 transition-colors">
+              className="flex items-center rounded-lg px-3 py-3 text-[13px] font-medium hover:bg-primary/5 transition-colors duration-100">
               {t("Diagnostic gratuit", "Free diagnostic")}
             </Link>
 
             {/* CTA */}
-            <div className="pt-3 mt-1 border-t border-border/50">
+            <div className="pt-3 mt-1 border-t border-border">
               <Link to={`${prefix}/selector`} onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-lg bg-foreground px-4 py-3 text-[13px] font-semibold text-background transition-colors hover:bg-foreground/85">
+                className="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-[13px] font-semibold text-primary-foreground transition-colors duration-150 hover:bg-primary/90">
                 {t("Analyser ma stack", "Analyze my stack")} <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
