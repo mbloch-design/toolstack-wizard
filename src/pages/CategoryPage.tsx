@@ -133,7 +133,7 @@ const CategoryPage = () => {
               <Icon className="h-7 w-7" />
             </div>
             <div>
-              <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">
+              <h1 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.8rem)", fontWeight: 600, letterSpacing: "-0.022em", lineHeight: 1.15 }}>
                 {t(
                   `Meilleurs outils ${catName} en ${new Date().getFullYear()} — prix réels et alternatives testées`,
                   `Best ${category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName} tools in ${new Date().getFullYear()} — real pricing & tested alternatives`

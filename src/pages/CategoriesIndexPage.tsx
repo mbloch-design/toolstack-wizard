@@ -44,13 +44,13 @@ const CategoriesIndexPage = () => {
             ]} />
           </div>
           <div className="flex items-center gap-2 text-primary mb-3">
-            <LayoutGrid className="h-5 w-5" />
-            <span className="text-sm font-semibold uppercase tracking-wider">{t("Catégories", "Categories")}</span>
+            <LayoutGrid className="h-4 w-4" />
+            <span className="label-section">{t("Catégories", "Categories")}</span>
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">
+          <h1 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.022em" }}>
             {t("Toutes les catégories d'outils", "All tool categories")}
           </h1>
-          <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             {t(
               `${categories.length} catégories couvrant ${tools.length}+ outils SaaS. Explorez par usage pour trouver l'outil parfait.`,
               `${categories.length} categories covering ${tools.length}+ SaaS tools. Browse by use case to find the perfect tool.`

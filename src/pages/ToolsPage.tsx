@@ -123,17 +123,17 @@ const ToolsPage = () => {
           </div>
 
           <div className="flex items-center gap-2 text-primary mb-3">
-            <LayoutGrid className="h-5 w-5" />
-            <span className="text-sm font-semibold uppercase tracking-wider">{t("Catalogue", "Catalog")}</span>
+            <LayoutGrid className="h-4 w-4" />
+            <span className="label-section">{t("Catalogue", "Catalog")}</span>
           </div>
 
-          <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl lg:text-5xl">
+          <h1 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.022em" }}>
             {t(
               `${stats.total} outils SaaS passés au crible — prix vérifiés, sans bullshit`,
               `${stats.total} SaaS tools reviewed — real pricing, no fluff`
             )}
           </h1>
-          <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             {t(
               `${stats.total} outils analysés, comparés et classés en ${stats.categories} catégories. Trouvez l'outil parfait pour votre activité.`,
               `${stats.total} tools analyzed, compared and categorized in ${stats.categories} categories. Find the perfect tool for your business.`

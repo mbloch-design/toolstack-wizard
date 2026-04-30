@@ -135,7 +135,7 @@ const ToolDetailPage = () => {
             <div className="flex items-start gap-4">
               <ToolLogo tool={tool} size={56} className="ring-2 ring-border rounded-xl" />
               <div>
-                <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">
+                <h1 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.022em", lineHeight: 1.15 }}>
                   {(() => {
                     const isFreemium = displayPrice === 0 && tool.pricing?.paid;
                     const isFree = displayPrice === 0 && !tool.pricing?.paid;
@@ -222,7 +222,7 @@ const ToolDetailPage = () => {
             {/* ── SECTION 3: Use cases ── */}
             {tool.useCases && tool.useCases.length > 0 && (
               <section>
-                <h2 className="text-lg font-bold tracking-tighter">
+                <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
                   {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
                 </h2>
                 <div className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -246,7 +246,7 @@ const ToolDetailPage = () => {
             {/* ── SECTION 4: Who is it for? ── */}
             {(tool.soloRelevance || tool.teamRelevance) && (
               <section>
-                <h2 className="text-lg font-bold tracking-tighter">
+                <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
                   {t(`Pour qui ${tool.name} est-il adapté ?`, `Who is ${tool.name} best for?`)}
                 </h2>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -286,7 +286,7 @@ const ToolDetailPage = () => {
 
             {/* ── SECTION 5: Pros / Cons ── */}
             <section>
-              <h2 className="text-lg font-bold tracking-tighter">
+              <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
                 {t(`Avantages et inconvénients de ${tool.name}`, `${tool.name} Pros and Cons`)}
               </h2>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -395,7 +395,7 @@ const ToolDetailPage = () => {
           if (clusterTools.length === 0) return null;
           return (
             <div className="mt-10 border-t border-border pt-8">
-              <h2 className="text-lg font-bold tracking-tighter">
+              <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
                 {t("Outils substituables", "Substitutable tools")}
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
@@ -432,7 +432,7 @@ const ToolDetailPage = () => {
           if (compareTools.length === 0) return null;
           return (
             <div className="mt-10 border-t border-border pt-8">
-              <h2 className="text-lg font-bold tracking-tighter">
+              <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
                 {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
               </h2>
               <div className="mt-4 flex flex-wrap gap-2">

@@ -187,10 +187,8 @@ const ComparePage = () => {
           { label: t("Comparatifs", "Comparisons"), href: `/${lang}/comparatifs` },
           { label: `${toolA.name} vs ${toolB.name}` },
         ]} />
-        <span className="inline-block mt-4 px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-bold uppercase tracking-widest mb-5">
-          {t("Comparatif honnête", "Honest comparison")}
-        </span>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-[1.1] max-w-4xl">
+        <span className="label-section inline-block mt-4 mb-5 text-primary">{t("Comparatif honnête", "Honest comparison")}</span>
+        <h1 className="max-w-4xl text-foreground" style={{ fontSize: "clamp(1.9rem, 4vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.022em", lineHeight: 1.1 }}>
           {lang === "fr" ? (
             <>{toolA.name} <span className="text-primary italic">vs</span> {toolB.name} — lequel choisir en {year} ? Comparatif honnête</>
           ) : (
@@ -235,7 +233,7 @@ const ComparePage = () => {
                   className={`bg-card p-5 rounded-2xl shadow-sm border-t-4 ${borderColor} hover:shadow-md transition-shadow`}
                 >
                   <ToolLogo tool={tool} size={40} className="mb-3" />
-                  <h3 className="text-lg font-extrabold text-foreground">{tool.name}</h3>
+                  <h3 className="text-base font-medium text-foreground" style={{ letterSpacing: "-0.012em" }}>{tool.name}</h3>
                   <p className={`text-xs font-bold mt-1 ${borderColor === "border-primary" ? "text-primary" : "text-orange-500"}`}>
                     {getPriceNum(tool) > 0 ? `${getPrice(tool)}/${t("mois", "mo")}` : t("Gratuit", "Free")}
                   </p>

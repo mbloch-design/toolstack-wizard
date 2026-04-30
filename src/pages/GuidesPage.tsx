@@ -47,15 +47,13 @@ const GuidesPage = () => {
       <section className="border-b border-border bg-gradient-to-b from-accent/40 to-background">
         <div className="container mx-auto max-w-6xl px-4 pb-10 pt-16 md:pt-20">
           <div className="flex items-center gap-2 text-primary mb-4">
-            <BookOpen className="h-5 w-5" />
-            <span className="text-sm font-semibold uppercase tracking-wider">
-              {t("Ressources", "Resources")}
-            </span>
+            <BookOpen className="h-4 w-4" />
+            <span className="label-section">{t("Ressources", "Resources")}</span>
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl">
+          <h1 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.022em" }}>
             {t("Guides & Comparatifs", "Guides & Comparisons")}
           </h1>
-          <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             {t(
               "Analyses approfondies, comparatifs détaillés et conseils pratiques pour construire la stack d'outils parfaite.",
               "In-depth analyses, detailed comparisons and practical advice to build the perfect tool stack."
@@ -183,7 +181,7 @@ function FeaturedCard({
             </span>
             <span>{post.date}</span>
           </div>
-          <h2 className="mt-4 text-2xl font-bold tracking-tighter leading-tight md:text-3xl group-hover:text-primary transition-colors">
+          <h2 className="mt-4 group-hover:text-primary transition-colors duration-150" style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)", fontWeight: 600, letterSpacing: "-0.018em", lineHeight: 1.25 }}>
             {post.title}
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed line-clamp-3">
