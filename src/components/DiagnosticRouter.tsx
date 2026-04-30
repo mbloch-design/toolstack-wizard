@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo, useRef, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
 import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
@@ -45,6 +46,8 @@ function createInitialSession(language: "fr" | "en"): SessionState {
 
 export default function DiagnosticRouter() {
   const { lang, t } = useLang();
+  const [searchParams] = useSearchParams();
+  const fromTool = searchParams.get("from") || undefined;
   const { tools, clusters, doublonRules, discoveryQuestions, loading, error } = useDiagnosticData();
   const [step, setStep] = useState<StepId>(0);
   const [showTransition, setShowTransition] = useState<string | null>(null);
@@ -238,7 +241,7 @@ export default function DiagnosticRouter() {
         {/* Main content */}
         <div className="flex-1 min-w-0">
           {step === 0 && (
-            <DiagStep0Prenom session={session} onUpdate={updateSession} onNext={() => nextFrom(0)} t={t} />
+            <DiagStep0Prenom session={session} onUpdate={updateSession} onNext={() => nextFrom(0)} t={t} fromTool={fromTool} />
           )}
           {step === 1 && (
             <DiagStep1Tjm session={session} onUpdate={updateSession} onNext={() => nextFrom(1)} t={t} />

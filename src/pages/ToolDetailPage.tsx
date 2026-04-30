@@ -17,6 +17,7 @@ import ToolPricingSection from "@/components/tool/ToolPricingSection";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
+import ToolDiagCta from "@/components/tool/ToolDiagCta";
 
 const ToolDetailPage = () => {
   const { lang, t, prefix } = useLang();
@@ -329,6 +330,9 @@ const ToolDetailPage = () => {
               lang={lang}
               t={t}
             />
+
+            {/* ── SECTION 7b: Diagnostic CTA ── */}
+            <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
           </div>
 
           {/* ── RIGHT SIDEBAR ── */}
