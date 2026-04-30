@@ -3,7 +3,6 @@ import { useLang } from "@/hooks/useLang";
 import { useCategories, useTools } from "@/hooks/useSupabaseData";
 import { useMemo } from "react";
 import { ArrowRight } from "lucide-react";
-import pictoLogo from "@/assets/picto-logo.svg";
 
 const Footer = () => {
   const { t, prefix } = useLang();
@@ -31,8 +30,7 @@ const Footer = () => {
 
           {/* Big wordmark */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7 opacity-60" />
+            <div className="mb-4">
               <span
                 className="font-display text-foreground select-none"
                 style={{
