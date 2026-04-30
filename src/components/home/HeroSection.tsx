@@ -2,73 +2,96 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { ArrowRight } from "lucide-react";
 
+const TOOL_LOGOS = [
+  { name: "Figma",    domain: "figma.com" },
+  { name: "Notion",   domain: "notion.so" },
+  { name: "Slack",    domain: "slack.com" },
+  { name: "HubSpot",  domain: "hubspot.com" },
+  { name: "Zapier",   domain: "zapier.com" },
+  { name: "Asana",    domain: "asana.com" },
+  { name: "Linear",   domain: "linear.app" },
+  { name: "Airtable", domain: "airtable.com" },
+];
+
 const HeroSection = ({ toolCount }: { toolCount: number }) => {
   const { lang, t, prefix } = useLang();
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Grid pattern */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(var(--primary) / 0.04) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.04) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          maskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%)",
-        }}
-      />
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,hsl(var(--primary)/0.12)_0%,transparent_70%)]" />
+    <section className="relative overflow-hidden border-b border-border/40">
+      <div className="mx-auto max-w-5xl px-6 pb-20 pt-24 md:pb-28 md:pt-36">
 
-      <div className="relative z-10 flex flex-col items-center px-6 pb-16 pt-24 text-center md:pb-20 md:pt-32">
-        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-          <span className="text-[11px] font-medium uppercase tracking-widest text-primary">
-            {t("Analyse de stack · Indépendant · <3 min", "Stack analysis · Independent · <3 min")}
+        {/* Badge */}
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3.5 py-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+          <span className="text-[11px] font-medium text-muted-foreground tracking-wide">
+            {t("Indépendant · Gratuit · Résultats en 3 min", "Independent · Free · Results in 3 min")}
           </span>
         </div>
 
-        <h1 className="max-w-3xl text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1] tracking-[-3px]">
-          {lang === "fr" ? "Ton stack SaaS te" : "Your SaaS stack"}{" "}
-          <span className="text-muted-foreground/25">{lang === "fr" ? "coûte trop cher." : "costs too much."}</span>
-          <br />
-          <span className="relative inline-block text-primary">
-            {lang === "fr" ? "On t'aide à couper le gras." : "We help you cut the fat."}
-            <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-primary to-transparent" />
-          </span>
+        {/* Headline */}
+        <h1
+          className="font-extrabold text-foreground leading-[0.95] tracking-[-0.04em]"
+          style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)" }}
+        >
+          {t("Ta stack SaaS", "Your SaaS stack")}<br />
+          <span className="text-primary">{t("coûte trop cher.", "costs too much.")}</span>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-[440px] text-[17px] leading-relaxed text-muted-foreground/60">
-          {lang === "fr" ? (
-            <>Scannez votre stack, découvrez ce que vous <strong className="font-medium text-muted-foreground">surpayez</strong>.</>
-          ) : (
-            <>Scan your stack, find what you're <strong className="font-medium text-muted-foreground">overpaying</strong>.</>
+        {/* Subheadline */}
+        <p
+          className="mt-6 text-muted-foreground leading-relaxed max-w-xl"
+          style={{ fontSize: "clamp(1rem, 2vw, 1.2rem)" }}
+        >
+          {t(
+            "On détecte les doublons, les outils dormants et les abonnements inutiles. Tu récupères en moyenne ",
+            "We detect duplicates, dormant tools and unnecessary subscriptions. You recover on average "
           )}
+          <strong className="text-foreground font-semibold">847€/an</strong>
+          {t(" — en 5 minutes.", " — in 5 minutes.")}
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        {/* CTA */}
+        <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             to={`${prefix}/selector`}
-            className="inline-flex items-center gap-2 rounded-[10px] bg-primary px-7 py-3.5 text-[15px] font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30"
+            className="inline-flex items-center gap-2.5 rounded-xl bg-foreground px-7 py-3.5 text-[15px] font-semibold text-background shadow-sm transition-all hover:opacity-85 hover:-translate-y-0.5"
           >
-            {t("Analyser ma stack gratuitement", "Analyze my stack for free")} <ArrowRight className="h-4 w-4" />
+            {t("Analyser ma stack gratuitement", "Analyze my stack for free")}
+            <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             to={`${prefix}/tools`}
-            className="inline-flex items-center gap-2 rounded-[10px] border border-border px-6 py-3.5 text-sm font-medium text-muted-foreground transition-all hover:border-muted-foreground/25 hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            {t("Voir un exemple d'analyse", "See an example analysis")}
+            {t("Explorer les outils →", "Browse tools →")}
           </Link>
         </div>
 
-        <div className="mt-6 flex items-center gap-3 text-xs text-muted-foreground/40">
-          <span className="h-px w-12 bg-border" />
-          {t(
-            "Freelances, solopreneurs, fondateurs · Résultats en 3 minutes · Sans inscription",
-            "Freelancers, solopreneurs, founders · Results in 3 minutes · No signup"
-          )}
-          <span className="h-px w-12 bg-border" />
+        {/* Social proof — tool logos */}
+        <div className="mt-16 flex flex-col gap-3">
+          <p className="text-xs text-muted-foreground/60 uppercase tracking-widest">
+            {t(`${toolCount} outils analysés`, `${toolCount} tools analyzed`)}
+          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            {TOOL_LOGOS.map((tool) => (
+              <div
+                key={tool.domain}
+                title={tool.name}
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card shadow-sm"
+              >
+                <img
+                  src={`https://www.google.com/s2/favicons?domain=${tool.domain}&sz=64`}
+                  alt={tool.name}
+                  className="h-5 w-5 rounded object-contain"
+                  loading="lazy"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                />
+              </div>
+            ))}
+            <span className="text-sm text-muted-foreground/50 ml-1">+{toolCount - 8}</span>
+          </div>
         </div>
+
       </div>
     </section>
   );
