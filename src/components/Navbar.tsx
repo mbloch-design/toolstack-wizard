@@ -61,7 +61,7 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname.startsWith(path);
 
   return (
-    <nav ref={navRef} className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+    <nav ref={navRef} className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="container flex h-14 items-center justify-between">
 
         {/* ─── Logo ─── */}

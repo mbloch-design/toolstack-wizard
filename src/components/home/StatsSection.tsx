@@ -54,7 +54,7 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
   ];
 
   return (
-    <section className="py-24 px-6" style={{ background: "hsl(var(--secondary) / 0.3)" }}>
+    <section className="py-24 px-6 border-t border-border" style={{ background: "hsl(var(--background))" }}>
       <div className="mx-auto max-w-6xl">
 
         {/* Header */}
@@ -71,7 +71,7 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
 
           {/* Hero stat — billboard */}
           <div
-            className="md:row-span-2 border-2 border-primary/30 bg-card flex flex-col justify-center items-center text-center p-10 md:p-12"
+            className="md:row-span-2 border border-border bg-card flex flex-col justify-center items-center text-center p-10 md:p-12"
             style={{ borderRadius: "2px" }}
           >
             <p className="label-section mb-5" style={{ color: "hsl(224 76% 68%)" }}>
