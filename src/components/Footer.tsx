@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, useTools } from "@/hooks/useSupabaseData";
 import { useMemo } from "react";
-import { getCategoryIcon } from "@/lib/categoryIcons";
 import pictoLogo from "@/assets/picto-logo.svg";
 
 const Footer = () => {
@@ -23,45 +22,92 @@ const Footer = () => {
   );
 
   return (
-    <footer className="border-t border-border bg-card">
-      {/* Main footer */}
-      <div className="container py-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+    <footer className="border-t border-border">
+
+      {/* ── Main grid ── */}
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[280px_1fr_1fr_1fr_1fr]">
+
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link to={prefix} className="flex items-center gap-2">
-              <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7" style={{ borderRadius: "2px" }} />
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.04em" }}>
-                <span className="text-foreground/50">TOOL</span><span className="text-primary">TRIM</span>
+          <div className="lg:pr-8">
+            <Link to={prefix} className="inline-flex items-center gap-2 group">
+              <img src={pictoLogo} alt="ToolTrim" className="h-5 w-5 transition-opacity duration-150 group-hover:opacity-80" />
+              <span
+                className="font-display select-none text-foreground transition-opacity duration-150 group-hover:opacity-80"
+                style={{ fontSize: "1.05rem", fontWeight: 800, letterSpacing: "-0.03em" }}
+              >
+                ToolTrim
               </span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-xs">
+
+            <p
+              className="mt-4 text-sm leading-relaxed"
+              style={{ color: "hsl(var(--muted-foreground))", maxWidth: "220px" }}
+            >
               {t(
-                "Le comparateur SaaS indépendant pour freelances et petites équipes. Analysez, comparez et optimisez votre stack d'outils.",
-                "The independent SaaS comparator for freelancers and small teams. Analyze, compare and optimize your tool stack."
+                "Audit de stack SaaS indépendant pour freelances et petites équipes.",
+                "Independent SaaS stack audit for freelancers and small teams."
               )}
             </p>
+
+            {/* Independence badge */}
+            <div
+              className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1"
+            >
+              <span
+                className="h-1.5 w-1.5 rounded-full"
+                style={{ background: "hsl(145 60% 36%)" }}
+              />
+              <span
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.6rem",
+                  letterSpacing: "0.07em",
+                  textTransform: "uppercase",
+                  color: "hsl(var(--muted-foreground) / 0.7)",
+                }}
+              >
+                {t("100% indépendant", "100% independent")}
+              </span>
+            </div>
           </div>
 
           {/* Product */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">{t("Produit", "Product")}</h3>
-            <nav className="flex flex-col gap-2.5 text-sm text-muted-foreground">
-              <Link to={`${prefix}/tools`} className="hover:text-foreground transition-colors">{t("Catalogue d'outils", "Tool catalog")}</Link>
-              <Link to={`${prefix}/category`} className="hover:text-foreground transition-colors">{t("Catégories", "Categories")}</Link>
-              <Link to={`${prefix}/selector`} className="hover:text-foreground transition-colors">{t("Sélecteur de stack", "Stack selector")}</Link>
-              <Link to={`${prefix}/guides`} className="hover:text-foreground transition-colors">{t("Guides & comparatifs", "Guides & comparisons")}</Link>
+            <p className="label-section mb-4">{t("Produit", "Product")}</p>
+            <nav className="flex flex-col gap-2.5">
+              {[
+                { to: `${prefix}/selector`, label: t("Audit de stack", "Stack audit") },
+                { to: `${prefix}/tools`, label: t("Catalogue d'outils", "Tool catalog") },
+                { to: `${prefix}/category`, label: t("Catégories", "Categories") },
+                { to: `${prefix}/guides`, label: t("Guides", "Guides") },
+                { to: `${prefix}/comparatifs`, label: t("Comparatifs", "Comparisons") },
+              ].map(item => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="text-sm transition-colors duration-150 hover:text-foreground"
+                  style={{ color: "hsl(var(--muted-foreground))" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
-          {/* Categories (SEO links) */}
+          {/* Categories */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">{t("Catégories populaires", "Popular categories")}</h3>
-            <nav className="flex flex-col gap-2.5 text-sm text-muted-foreground">
+            <p className="label-section mb-4">{t("Catégories", "Categories")}</p>
+            <nav className="flex flex-col gap-2.5">
               {topCategories.map(cat => {
                 const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
                 return (
-                  <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} className="hover:text-foreground transition-colors">
+                  <Link
+                    key={cat.id}
+                    to={`${prefix}/category/${cat.slug}`}
+                    className="text-sm transition-colors duration-150 hover:text-foreground"
+                    style={{ color: "hsl(var(--muted-foreground))" }}
+                  >
                     {t(catName, cat.nameEn || catName)}
                   </Link>
                 );
@@ -69,51 +115,108 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Popular tools (SEO links) */}
+          {/* Popular tools */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">{t("Outils populaires", "Popular tools")}</h3>
-            <nav className="flex flex-col gap-2.5 text-sm text-muted-foreground">
+            <p className="label-section mb-4">{t("Outils", "Tools")}</p>
+            <nav className="flex flex-col gap-2.5">
               {topTools.map(tool => (
-                <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="hover:text-foreground transition-colors">
+                <Link
+                  key={tool.id}
+                  to={`${prefix}/tool/${tool.slug}`}
+                  className="text-sm transition-colors duration-150 hover:text-foreground"
+                  style={{ color: "hsl(var(--muted-foreground))" }}
+                >
                   {tool.name}
                 </Link>
               ))}
             </nav>
           </div>
 
-          {/* Company */}
+          {/* Company + Legal */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">{t("Entreprise", "Company")}</h3>
-            <nav className="flex flex-col gap-2.5 text-sm text-muted-foreground">
-              <Link to={`${prefix}/about`} className="hover:text-foreground transition-colors">{t("À propos", "About")}</Link>
-              <Link to={`${prefix}/transparency`} className="hover:text-foreground transition-colors">{t("Transparence", "Transparency")}</Link>
-              <Link to={`${prefix}/contact`} className="hover:text-foreground transition-colors">Contact</Link>
+            <p className="label-section mb-4">{t("Entreprise", "Company")}</p>
+            <nav className="flex flex-col gap-2.5">
+              {[
+                { to: `${prefix}/about`, label: t("À propos", "About") },
+                { to: `${prefix}/transparency`, label: t("Transparence", "Transparency") },
+                { to: `${prefix}/contact`, label: "Contact" },
+              ].map(item => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="text-sm transition-colors duration-150 hover:text-foreground"
+                  style={{ color: "hsl(var(--muted-foreground))" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
-            <h3 className="mb-3 mt-6 text-sm font-semibold">{t("Légal", "Legal")}</h3>
-            <nav className="flex flex-col gap-2.5 text-sm text-muted-foreground">
-              <Link to={`${prefix}/legal-notice`} className="hover:text-foreground transition-colors">{t("Mentions légales", "Legal notice")}</Link>
-              <Link to={`${prefix}/privacy-policy`} className="hover:text-foreground transition-colors">{t("Confidentialité", "Privacy")}</Link>
-              <Link to={`${prefix}/terms`} className="hover:text-foreground transition-colors">{t("CGV", "Terms")}</Link>
+
+            <p className="label-section mb-3 mt-7">{t("Légal", "Legal")}</p>
+            <nav className="flex flex-col gap-2.5">
+              {[
+                { to: `${prefix}/legal-notice`, label: t("Mentions légales", "Legal notice") },
+                { to: `${prefix}/privacy-policy`, label: t("Confidentialité", "Privacy") },
+                { to: `${prefix}/terms`, label: t("CGV", "Terms") },
+              ].map(item => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="text-sm transition-colors duration-150 hover:text-foreground"
+                  style={{ color: "hsl(var(--muted-foreground))" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
+          </div>
+
+        </div>
+      </div>
+
+      {/* ── Bottom bar ── */}
+      <div className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p
+            style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.65rem",
+              letterSpacing: "0.05em",
+              color: "hsl(var(--muted-foreground) / 0.5)",
+            }}
+          >
+            © {new Date().getFullYear()} ToolTrim
+          </p>
+          <div className="flex items-center gap-4">
+            {[
+              { to: `${prefix}/privacy-policy`, label: t("Confidentialité", "Privacy") },
+              { to: `${prefix}/terms`, label: t("CGV", "Terms") },
+              { to: `${prefix}/legal-notice`, label: t("Mentions légales", "Legal") },
+            ].map((item, i, arr) => (
+              <span key={item.to} className="flex items-center gap-4">
+                <Link
+                  to={item.to}
+                  style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "0.65rem",
+                    letterSpacing: "0.05em",
+                    color: "hsl(var(--muted-foreground) / 0.5)",
+                    transition: "color 150ms",
+                  }}
+                  onMouseEnter={e => ((e.target as HTMLElement).style.color = "hsl(var(--muted-foreground))")}
+                  onMouseLeave={e => ((e.target as HTMLElement).style.color = "hsl(var(--muted-foreground) / 0.5)")}
+                >
+                  {item.label}
+                </Link>
+                {i < arr.length - 1 && (
+                  <span style={{ color: "hsl(var(--border))" }}>·</span>
+                )}
+              </span>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-border">
-        <div className="container flex flex-col items-center justify-between gap-3 py-5 sm:flex-row">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} ToolTrim. {t("Tous droits réservés.", "All rights reserved.")}
-          </p>
-          <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <Link to={`/${lang === "fr" ? "en" : "fr"}`} className="hover:text-foreground transition-colors">
-              {lang === "fr" ? "English" : "Français"}
-            </Link>
-            <span className="text-border">·</span>
-            <span>{t("Fait avec ♥ pour les indépendants", "Made with ♥ for independents")}</span>
-          </div>
-        </div>
-      </div>
     </footer>
   );
 };
