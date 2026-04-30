@@ -16,94 +16,202 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
           let start = 0;
           const target = 847;
           const step = target / (1200 / 16);
-          const interval = setInterval(() => {
+          const timer = setInterval(() => {
             start = Math.min(start + step, target);
             el.textContent = Math.round(start).toLocaleString("fr-FR");
-            if (start >= target) clearInterval(interval);
+            if (start >= target) clearInterval(timer);
           }, 16);
           obs.disconnect();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.4 }
     );
     obs.observe(el);
     return () => obs.disconnect();
   }, [counted]);
 
-  const subStats = [
+  const stats = [
     {
       value: `${toolCount}+`,
-      label: t(`outils analysés sur ${categoryCount} catégories métier`, `tools analyzed across ${categoryCount} categories`),
-      chip: t("base vivante", "live database"),
+      label: t("outils couverts", "tools covered"),
+      sub: t(`sur ${categoryCount} catégories`, `across ${categoryCount} categories`),
     },
     {
       value: "0",
-      label: t("accord d'affiliation qui biaise nos recommandations", "affiliate deal biasing our recommendations"),
-      chip: t("100% indépendant", "100% independent"),
+      label: t("accord d'affiliation", "affiliate deal"),
+      sub: t("100% indépendant", "100% independent"),
     },
     {
       value: "2,3",
-      label: t("outils à couper ou swapper identifiés en moyenne", "tools to cut or swap identified on average"),
-      chip: t("par analyse", "per analysis"),
+      label: t("outils à couper", "tools to cut"),
+      sub: t("identifiés par analyse", "identified per analysis"),
     },
     {
-      value: "<3",
-      label: t("minutes pour obtenir votre diagnostic complet", "minutes to get your complete diagnostic"),
-      chip: t("temps réel", "real-time"),
+      value: "<3 min",
+      label: t("pour votre diagnostic", "for your diagnostic"),
+      sub: t("résultats instantanés", "instant results"),
     },
   ];
 
   return (
-    <section className="py-24 px-6 border-t border-border" style={{ background: "hsl(var(--background))" }}>
-      <div className="mx-auto max-w-6xl">
+    <section className="border-t border-border">
+      <div className="mx-auto max-w-6xl px-6 py-24">
 
-        {/* Header */}
-        <div className="text-center mb-14">
-          <p className="label-section mb-4">{t("Économies identifiées", "Savings identified")}</p>
-          <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.022em" }}>
+        {/* Section header */}
+        <div className="mb-12">
+          <p className="label-section mb-3">{t("Économies identifiées", "Savings identified")}</p>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 700, letterSpacing: "-0.025em" }}
+          >
             {t("Des chiffres, ", "Numbers, ")}
-            <em className="text-primary not-italic">{t("pas des promesses", "not promises")}</em>
+            <span className="text-primary">{t("pas des promesses.", "not promises.")}</span>
           </h2>
         </div>
 
-        {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* ── HERO STAT ── */}
+        <div
+          className="relative rounded-xl border border-border bg-card overflow-hidden mb-4"
+          style={{ padding: "clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 5vw, 4rem)" }}
+        >
+          {/* Background glow */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            aria-hidden
+            style={{
+              background:
+                "radial-gradient(ellipse 55% 70% at 50% 110%, hsl(var(--primary) / 0.1) 0%, transparent 70%)",
+            }}
+          />
 
-          {/* Hero stat — billboard */}
-          <div className="md:row-span-2 rounded-xl border border-border bg-card flex flex-col justify-center items-center text-center p-10 md:p-12 relative overflow-hidden">
-            <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 60%, hsl(var(--primary) / 0.07) 0%, transparent 70%)" }} />
-            <p className="label-section mb-5" style={{ color: "hsl(224 76% 68%)" }}>
-              {t("Économies identifiées en moyenne", "Average savings identified")}
-            </p>
-            <p
-              className="num-mono leading-none text-primary relative"
-              style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: "clamp(4.5rem, 12vw, 7rem)", fontWeight: 800, letterSpacing: "-0.05em" }}
-            >
-              <span ref={counterRef}>0</span>€
-            </p>
-            <p className="mt-5 max-w-[240px] text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
-              {t("par freelance et par an, sur des abonnements déjà actifs.", "per freelancer per year, on already active subscriptions.")}
-            </p>
-          </div>
+          <div className="relative grid md:grid-cols-[1fr_auto] gap-8 items-center">
 
-          {/* Sub-stat cards */}
-          {subStats.map((s, i) => (
-            <div key={i} className="rounded-xl border border-border bg-card p-7 flex flex-col justify-between cursor-default">
-              <div>
-                <p
-                  className="text-primary leading-none"
-                  style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: "clamp(2.2rem, 4vw, 3rem)", fontWeight: 700, letterSpacing: "-0.03em" }}
+            {/* Left: number */}
+            <div>
+              <p
+                className="label-section mb-4"
+                style={{ color: "hsl(var(--primary) / 0.8)" }}
+              >
+                {t("économies identifiées en moyenne", "average savings identified")}
+              </p>
+
+              <div className="flex items-start gap-2">
+                <span
+                  className="font-display leading-none text-foreground"
+                  style={{
+                    fontSize: "clamp(4rem, 11vw, 8rem)",
+                    fontWeight: 800,
+                    letterSpacing: "-0.045em",
+                    lineHeight: 0.95,
+                  }}
                 >
-                  {s.value}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>{s.label}</p>
+                  <span ref={counterRef}>0</span>
+                </span>
+                <span
+                  className="font-display text-primary"
+                  style={{
+                    fontSize: "clamp(1.8rem, 4vw, 3.2rem)",
+                    fontWeight: 700,
+                    letterSpacing: "-0.02em",
+                    marginTop: "0.3em",
+                  }}
+                >
+                  €
+                </span>
               </div>
-              <span className="mt-5 inline-flex w-fit items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[11px] font-medium tracking-wide text-primary">
-                {s.chip}
-              </span>
+
+              <p
+                className="mt-4 max-w-xs text-sm leading-relaxed"
+                style={{ color: "hsl(var(--muted-foreground))" }}
+              >
+                {t(
+                  "par freelance et par an, sur des abonnements déjà actifs.",
+                  "per freelancer per year, on already active subscriptions."
+                )}
+              </p>
+            </div>
+
+            {/* Right: context pill */}
+            <div className="hidden md:flex flex-col items-end gap-3 self-start pt-1">
+              <div
+                className="rounded-lg border border-border bg-background px-4 py-3 text-right"
+              >
+                <p
+                  className="font-display text-foreground"
+                  style={{ fontSize: "1.5rem", fontWeight: 700, letterSpacing: "-0.025em" }}
+                >
+                  847€
+                </p>
+                <p
+                  className="mt-0.5 text-xs"
+                  style={{
+                    fontFamily: "'DM Mono', monospace",
+                    letterSpacing: "0.04em",
+                    color: "hsl(var(--muted-foreground))",
+                  }}
+                >
+                  {t("/ an / freelance", "/ year / freelancer")}
+                </p>
+              </div>
+              <p
+                className="label-section text-right"
+                style={{ maxWidth: "160px", lineHeight: 1.6 }}
+              >
+                {t("moyenne sur analyses\ncomplétées", "average across\ncompleted analyses")}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── 4-STAT STRIP — bordered grid, no card background noise ── */}
+        <div className="grid grid-cols-2 md:grid-cols-4 rounded-xl border border-border overflow-hidden">
+          {stats.map((s, i) => (
+            <div
+              key={i}
+              className="relative px-7 py-8 bg-card"
+              style={{
+                borderRight: i < stats.length - 1 ? "1px solid hsl(var(--border))" : undefined,
+              }}
+            >
+              {/* Mobile: bottom border for first row */}
+              {i < 2 && (
+                <div
+                  className="md:hidden absolute bottom-0 left-0 right-0 border-b border-border"
+                />
+              )}
+
+              <p
+                className="font-display text-foreground leading-none"
+                style={{
+                  fontSize: "clamp(1.7rem, 3.5vw, 2.6rem)",
+                  fontWeight: 700,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                {s.value}
+              </p>
+              <p
+                className="mt-2 text-sm font-medium"
+                style={{ color: "hsl(var(--foreground) / 0.75)" }}
+              >
+                {s.label}
+              </p>
+              <p
+                className="mt-0.5"
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.65rem",
+                  letterSpacing: "0.06em",
+                  color: "hsl(var(--muted-foreground) / 0.6)",
+                  textTransform: "uppercase",
+                }}
+              >
+                {s.sub}
+              </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
