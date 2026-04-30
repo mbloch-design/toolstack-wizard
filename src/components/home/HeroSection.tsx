@@ -1,22 +1,32 @@
-import { Link } from "react-router-dom";
+import { useState, useMemo, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { ArrowRight } from "lucide-react";
+import { useTools } from "@/hooks/useSupabaseData";
+import { Search } from "lucide-react";
 
-const LOGOS = [
-  { domain: "figma.com",     x: 4,  y: 12, size: 40, opacity: 0.6,  dur: 9,  delay: 0   },
-  { domain: "notion.so",     x: 11, y: 35, size: 34, opacity: 0.38, dur: 12, delay: 3.5 },
-  { domain: "slack.com",     x: 3,  y: 57, size: 40, opacity: 0.5,  dur: 10, delay: 1.2 },
-  { domain: "hubspot.com",   x: 13, y: 77, size: 32, opacity: 0.3,  dur: 14, delay: 5   },
-  { domain: "zapier.com",    x: 5,  y: 89, size: 38, opacity: 0.45, dur: 8,  delay: 2.5 },
-  { domain: "linear.app",    x: 88, y: 10, size: 36, opacity: 0.45, dur: 11, delay: 1   },
-  { domain: "airtable.com",  x: 82, y: 32, size: 42, opacity: 0.65, dur: 9,  delay: 4   },
-  { domain: "intercom.com",  x: 91, y: 53, size: 34, opacity: 0.32, dur: 13, delay: 0.5 },
-  { domain: "stripe.com",    x: 83, y: 73, size: 40, opacity: 0.55, dur: 10, delay: 3   },
-  { domain: "loom.com",      x: 90, y: 89, size: 32, opacity: 0.38, dur: 15, delay: 2   },
-  { domain: "asana.com",     x: 33, y: 5,  size: 34, opacity: 0.32, dur: 12, delay: 6   },
-  { domain: "calendly.com",  x: 63, y: 6,  size: 36, opacity: 0.42, dur: 10, delay: 1.8 },
-  { domain: "github.com",    x: 36, y: 91, size: 36, opacity: 0.38, dur: 11, delay: 4.5 },
-  { domain: "atlassian.com", x: 62, y: 90, size: 32, opacity: 0.28, dur: 9,  delay: 0.8 },
+// Featured tool slugs — shown as chips by default
+const FEATURED_SLUGS = [
+  "figma", "notion", "slack", "hubspot", "zapier",
+  "stripe", "linear", "asana", "airtable", "loom",
+  "intercom", "calendly",
+];
+
+// Background floating logos — purely decorative
+const BG_LOGOS = [
+  { domain: "figma.com",     x: 4,  y: 14, size: 36, opacity: 0.12, dur: 9,  delay: 0   },
+  { domain: "notion.so",     x: 10, y: 36, size: 30, opacity: 0.09, dur: 12, delay: 3.5 },
+  { domain: "slack.com",     x: 3,  y: 60, size: 36, opacity: 0.11, dur: 10, delay: 1.2 },
+  { domain: "hubspot.com",   x: 12, y: 80, size: 28, opacity: 0.08, dur: 14, delay: 5   },
+  { domain: "zapier.com",    x: 5,  y: 90, size: 34, opacity: 0.10, dur: 8,  delay: 2.5 },
+  { domain: "linear.app",    x: 88, y: 12, size: 32, opacity: 0.10, dur: 11, delay: 1   },
+  { domain: "airtable.com",  x: 83, y: 33, size: 38, opacity: 0.13, dur: 9,  delay: 4   },
+  { domain: "intercom.com",  x: 90, y: 55, size: 30, opacity: 0.08, dur: 13, delay: 0.5 },
+  { domain: "stripe.com",    x: 84, y: 75, size: 36, opacity: 0.11, dur: 10, delay: 3   },
+  { domain: "loom.com",      x: 91, y: 90, size: 28, opacity: 0.09, dur: 15, delay: 2   },
+  { domain: "asana.com",     x: 34, y: 5,  size: 30, opacity: 0.08, dur: 12, delay: 6   },
+  { domain: "calendly.com",  x: 64, y: 6,  size: 32, opacity: 0.10, dur: 10, delay: 1.8 },
+  { domain: "github.com",    x: 37, y: 92, size: 32, opacity: 0.09, dur: 11, delay: 4.5 },
+  { domain: "atlassian.com", x: 63, y: 91, size: 28, opacity: 0.07, dur: 9,  delay: 0.8 },
 ];
 
 const DRIFTS = ["drift-a", "drift-b", "drift-c"];
@@ -43,27 +53,80 @@ const KEYFRAMES = `
   }
 `;
 
+function getToolDomain(tool: any): string {
+  const url = tool.websiteUrl || tool.affiliateLink;
+  if (!url) return "";
+  try {
+    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
+  } catch {
+    return "";
+  }
+}
+
 const HeroSection = ({ toolCount }: { toolCount: number }) => {
   const { lang, t, prefix } = useLang();
+  const { tools } = useTools();
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Build featured chips from slug list
+  const featuredTools = useMemo(() => {
+    if (!tools.length) return [];
+    const bySlug = new Map(tools.map((tool) => [tool.slug || tool.id, tool]));
+    return FEATURED_SLUGS.flatMap((slug) => {
+      const tool = bySlug.get(slug);
+      return tool ? [tool] : [];
+    });
+  }, [tools]);
+
+  // Search results when query is active
+  const searchResults = useMemo(() => {
+    if (!query.trim() || query.length < 2) return [];
+    const q = query.toLowerCase();
+    return tools
+      .filter((tool) =>
+        tool.name.toLowerCase().includes(q) ||
+        (tool.slug || tool.id).toLowerCase().includes(q)
+      )
+      .slice(0, 8);
+  }, [query, tools]);
+
+  const displayedTools = query.length >= 2 ? searchResults : featuredTools;
+
+  const handleToolClick = (tool: any) => {
+    const slug = tool.slug || tool.id;
+    navigate(`${prefix}/selector?from=${slug}`);
+  };
+
+  const handleSearchKey = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && displayedTools.length > 0) {
+      handleToolClick(displayedTools[0]);
+    }
+  };
 
   return (
     <section
       className="relative overflow-hidden"
-      style={{ minHeight: "clamp(580px, 88vh, 820px)" }}
+      style={{ minHeight: "clamp(600px, 90vh, 860px)" }}
     >
       <style>{KEYFRAMES}</style>
 
-      {/* Glow bleu centré — très discret */}
+      {/* Glow — subtil */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse 55% 45% at 50% 46%, hsl(224 76% 60% / 0.08) 0%, transparent 65%)",
+          background:
+            "radial-gradient(ellipse 55% 40% at 50% 44%, hsl(224 76% 60% / 0.07) 0%, transparent 65%)",
         }}
       />
 
-      {/* Logos flottants — desktop */}
-      <div className="pointer-events-none absolute inset-0 hidden md:block select-none" aria-hidden>
-        {LOGOS.map((logo, i) => (
+      {/* Logos flottants — décoratifs, très discrets */}
+      <div
+        className="pointer-events-none absolute inset-0 hidden md:block select-none"
+        aria-hidden
+      >
+        {BG_LOGOS.map((logo, i) => (
           <div
             key={logo.domain}
             data-float
@@ -77,11 +140,11 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             }}
           >
             <div
-              className="flex items-center justify-center rounded-xl border border-border bg-card"
+              className="flex items-center justify-center rounded-lg border border-border bg-card"
               style={{
                 width: logo.size,
                 height: logo.size,
-                boxShadow: "0 1px 8px hsl(0 0% 0% / 0.35)",
+                boxShadow: "0 1px 6px hsl(0 0% 0% / 0.3)",
               }}
             >
               <img
@@ -91,7 +154,9 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
                 height={Math.round(logo.size * 0.48)}
                 className="rounded object-contain"
                 loading="lazy"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
               />
             </div>
           </div>
@@ -99,17 +164,17 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
       </div>
 
       {/* Contenu central */}
-      <div className="relative z-10 flex min-h-[inherit] flex-col items-center justify-center px-6 py-24 text-center">
+      <div className="relative z-10 flex min-h-[inherit] flex-col items-center justify-center px-6 py-20 text-center">
 
-        {/* Label section */}
+        {/* Eyebrow */}
         <p className="label-section mb-6">
           {t("Diagnostic SaaS · Indépendant · Gratuit", "SaaS Diagnostic · Independent · Free")}
         </p>
 
-        {/* Headline — 600, pas d'extrabold */}
+        {/* Headline */}
         <h1
-          className="max-w-xl text-foreground"
-          style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)" }}
+          className="max-w-2xl text-foreground"
+          style={{ fontSize: "clamp(2.1rem, 4.2vw, 3.6rem)" }}
         >
           {t("Ta stack SaaS", "Your SaaS stack")}<br />
           <span className="text-primary">
@@ -117,47 +182,121 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
           </span>
         </h1>
 
-        {/* Sous-titre — niveau 2 de la hiérarchie */}
+        {/* Sous-titre */}
         <p
           className="mx-auto mt-5 max-w-sm"
-          style={{ fontSize: "0.95rem", color: "hsl(var(--muted-foreground))", lineHeight: 1.7 }}
+          style={{
+            fontSize: "0.95rem",
+            color: "hsl(var(--muted-foreground))",
+            lineHeight: 1.7,
+          }}
         >
           {t(
-            "Doublons, dormants, inutiles — détectés en 5 min. 847€/an récupérés en moyenne.",
-            "Duplicates, dormant, wasted — found in 5 min. 847€/yr saved on average."
+            "Commence par ton outil le plus cher — le diagnostic fait le reste.",
+            "Start with your most expensive tool — the diagnostic does the rest."
           )}
         </p>
 
-        {/* CTA */}
-        <div className="mt-8 flex flex-col items-center gap-2.5">
-          <Link
-            to={`${prefix}/selector`}
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-150 hover:opacity-90 hover:-translate-y-px"
-            style={{ boxShadow: "0 0 20px hsl(224 76% 60% / 0.25), 0 2px 8px hsl(0 0% 0% / 0.3)" }}
+        {/* Zone interactive */}
+        <div className="mt-10 w-full max-w-lg">
+
+          {/* Search input */}
+          <div className="relative mb-5">
+            <Search
+              className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/50"
+            />
+            <input
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleSearchKey}
+              placeholder={t("Rechercher un outil…", "Search a tool…")}
+              className="w-full rounded-xl border border-border bg-card py-3 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/50 focus:ring-1 focus:ring-primary/20"
+              style={{ boxShadow: "0 1px 8px hsl(0 0% 0% / 0.2)" }}
+            />
+          </div>
+
+          {/* Tool chips */}
+          <div className="flex flex-wrap justify-center gap-2">
+            {displayedTools.length > 0 ? (
+              displayedTools.map((tool) => {
+                const domain = getToolDomain(tool);
+                return (
+                  <button
+                    key={tool.id}
+                    onClick={() => handleToolClick(tool)}
+                    className="group inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-foreground transition-all duration-150 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-px"
+                    style={{ boxShadow: "0 1px 4px hsl(0 0% 0% / 0.2)" }}
+                  >
+                    {domain && (
+                      <img
+                        src={`https://www.google.com/s2/favicons?domain=${domain}&sz=32`}
+                        alt=""
+                        width={14}
+                        height={14}
+                        className="rounded-sm object-contain opacity-80 group-hover:opacity-100"
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                    )}
+                    {tool.name}
+                  </button>
+                );
+              })
+            ) : query.length >= 2 ? (
+              <p
+                className="text-sm"
+                style={{ color: "hsl(var(--muted-foreground))" }}
+              >
+                {t("Aucun outil trouvé. ", "No tool found. ")}
+                <button
+                  onClick={() => navigate(`${prefix}/selector`)}
+                  className="text-primary underline underline-offset-2"
+                >
+                  {t("Lancer le diagnostic →", "Start diagnostic →")}
+                </button>
+              </p>
+            ) : null}
+          </div>
+
+          {/* Hint */}
+          <p
+            className="mt-5"
+            style={{
+              fontSize: "0.72rem",
+              color: "hsl(var(--muted-foreground) / 0.4)",
+              letterSpacing: "0.04em",
+            }}
           >
-            {t("Analyser ma stack — gratuit", "Analyze my stack — free")}
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-          <p style={{ fontSize: "0.72rem", color: "hsl(var(--muted-foreground) / 0.45)", letterSpacing: "0.04em" }}>
-            {t(`Sans inscription · ${toolCount} outils couverts`, `No signup · ${toolCount} tools covered`)}
+            {t(
+              `Sans inscription · ${toolCount} outils couverts`,
+              `No signup · ${toolCount} tools covered`
+            )}
           </p>
         </div>
 
-        {/* Logos mobile */}
+        {/* Logos mobile — fallback visuel */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-2 md:hidden">
-          {LOGOS.slice(0, 8).map((logo) => (
-            <div key={logo.domain} className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card">
+          {BG_LOGOS.slice(0, 8).map((logo) => (
+            <div
+              key={logo.domain}
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card"
+            >
               <img
                 src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`}
                 alt=""
                 className="h-4 w-4 rounded object-contain"
                 loading="lazy"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
               />
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
