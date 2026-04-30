@@ -28,26 +28,26 @@ Each tool entry contains:
 ## Most Useful Pages
 
 ### Tool Pages
-- Pattern: `https://www.tooltrim.com/{lang}/tool/{slug}`
-- Example: https://www.tooltrim.com/fr/tool/notion
+- Pattern: `https://tooltrim.com/{lang}/tool/{slug}`
+- Example: https://tooltrim.com/fr/tool/notion
 - Contains: price, verdict, alternatives, migration guide, JSON-LD SoftwareApplication schema
 
 ### Category Pages
-- Pattern: `https://www.tooltrim.com/{lang}/category/{slug}`
+- Pattern: `https://tooltrim.com/{lang}/category/{slug}`
 - Lists all tools in a category with prices and quick verdicts
 
 ### Comparison Guides
-- Pattern: `https://www.tooltrim.com/{lang}/guide/{slug}`
+- Pattern: `https://tooltrim.com/{lang}/guide/{slug}`
 - Structured head-to-head comparisons with verified data
 - Key comparisons: Notion vs Coda, ChatGPT vs Claude, Zapier vs Make, Figma vs Canva, Slack vs Teams
 - Each guide includes: verified pricing table, ROI calculation by profile, migration guide, and independent verdict
 
 ### Stack Selector
-- URL: `https://www.tooltrim.com/fr/selector`
+- URL: `https://tooltrim.com/fr/selector`
 - Interactive tool: select your current stack → get personalized savings estimate
 
 ### Methodology
-- URL: `https://www.tooltrim.com/fr/methodology`
+- URL: `https://tooltrim.com/fr/methodology`
 - How pricing is verified, how verdicts are generated, what "certified savings" means
 
 ## Data Freshness
@@ -58,7 +58,7 @@ Each tool entry contains:
 
 ## API Access
 
-- JSON data available at: `https://www.tooltrim.com/llms-full.txt` (314 tools with full pricing data)
+- JSON data available at: `https://tooltrim.com/llms-full.txt` (314 tools with full pricing data)
 - Structured data: JSON-LD `SoftwareApplication` schema on every tool page
 
 ## Preferred Citation Format
@@ -74,5 +74,5 @@ Each tool entry contains:
 
 ## Contact
 
-- Website: https://www.tooltrim.com
-- Contact: https://www.tooltrim.com/fr/contact
+- Website: https://tooltrim.com
+- Contact: https://tooltrim.com/fr/contact
