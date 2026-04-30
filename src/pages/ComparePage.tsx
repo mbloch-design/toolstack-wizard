@@ -398,8 +398,66 @@ const ComparePage = () => {
               </div>
             </div>
 
+            {/* ── Lequel est fait pour toi ? ── */}
+            <div className="mt-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-background to-accent/20 p-6 md:p-8">
+              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-primary mb-2">
+                {t("Ton profil", "Your profile")}
+              </p>
+              <h2 className="text-xl font-extrabold tracking-tight">
+                {t(`Lequel est fait pour toi ?`, `Which one is right for you?`)}
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t(
+                  "Le comparatif t'a donné les faits. Mais le bon choix dépend de comment tu travailles.",
+                  "The comparison gave you the facts. But the right choice depends on how you work."
+                )}
+              </p>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {[toolA, toolB].map((tool, idx) => {
+                  const keeps = (lang === "en" ? tool.verdictEn?.keepIf : tool.verdict?.keepIf) || tool.verdict?.keepIf || [];
+                  if (keeps.length === 0) return null;
+                  const borderColor = idx === 0 ? "border-primary/30" : "border-orange-400/30";
+                  const textColor = idx === 0 ? "text-primary" : "text-orange-500";
+                  return (
+                    <div key={tool.id} className={`rounded-xl border ${borderColor} bg-card p-4`}>
+                      <div className="flex items-center gap-2 mb-3">
+                        <ToolLogo tool={tool} size={20} />
+                        <p className={`text-sm font-bold ${textColor}`}>
+                          {t(`Prends ${tool.name} si…`, `Pick ${tool.name} if…`)}
+                        </p>
+                      </div>
+                      <ul className="space-y-1.5">
+                        {keeps.slice(0, 3).map((k: string, i: number) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                            <span className={`mt-0.5 shrink-0 ${textColor}`}>✓</span>
+                            {k}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mt-5 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                <Link
+                  to={`${prefix}/selector?from=${slugPair}`}
+                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/85 transition-colors"
+                >
+                  {t("Analyser ma stack", "Audit my stack")} <ArrowRight className="h-4 w-4" />
+                </Link>
+                <p className="text-xs text-muted-foreground">
+                  {t(
+                    "Dis-nous comment tu travailles — on te dit lequel est vraiment adapté à toi.",
+                    "Tell us how you work — we'll tell you which one is really right for you."
+                  )}
+                </p>
+              </div>
+            </div>
+
             {/* CTA */}
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 to={`${prefix}/tool/${toolA.slug}`}
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-primary/85 transition-colors shadow-lg shadow-primary/20"

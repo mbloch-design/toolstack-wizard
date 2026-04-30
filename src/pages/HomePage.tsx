@@ -2,12 +2,10 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense } from "react";
-import { ArrowRight, Check, BookOpen, Clock } from "lucide-react";
+import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
-import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
-import { ToolLogoStrip } from "@/components/ToolMentionedCard";
 import type { Tool } from "@/data/types";
 
 import HeroSection from "@/components/home/HeroSection";
@@ -50,11 +48,6 @@ const HomePage = () => {
     return { total: tools.length, free, withFree, categories: categories.length };
   }, [tools, categories]);
 
-  const featuredTools = useMemo(() =>
-    [...tools].sort((a, b) => (b.pros?.length || 0) - (a.pros?.length || 0)).slice(0, 6),
-    [tools]
-  );
-
   const featuredPosts = posts.slice(0, 3);
   const faq = lang === "fr" ? FAQ_FR : FAQ_EN;
 
@@ -91,10 +84,16 @@ const HomePage = () => {
       {/* 5. How it works */}
       <Suspense fallback={null}><HowItWorks /></Suspense>
 
-      {/* 6. Personas (5 expertise types, no names) */}
+      {/* 6. Differentiator — "not a directory, a diagnostic" */}
+      <Suspense fallback={null}><DiffTable toolCount={stats.total} /></Suspense>
+
+      {/* 7. Personas — "is this for me?" */}
       <Suspense fallback={null}><PersonasSection /></Suspense>
 
-      {/* 7. Categories */}
+      {/* 8. Testimonials */}
+      <Suspense fallback={null}><TestimonialsSection /></Suspense>
+
+      {/* 9. Categories */}
       <section className="border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex items-end justify-between">
@@ -131,55 +130,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 8. Popular tools */}
-      <section className="border-t border-border bg-secondary/20 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex items-end justify-between">
-            <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
-                {t("Sélection", "Selection")}
-              </p>
-              <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">{t("Outils ", "Popular ")}<em className="text-primary italic">{t("populaires", "tools")}</em></h2>
-              <p className="mt-2 text-muted-foreground">{t("Les outils les mieux notés par notre équipe.", "Top-rated tools by our team.")}</p>
-            </div>
-            <Link to={`${prefix}/tools`} className="text-sm font-medium text-primary hover:underline">{t("Voir tout", "See all")} →</Link>
-          </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredTools.map((tool) => {
-              const priceBadge = tool.defaultMonthlyPrice === 0
-                ? (tool.pricing?.paid ? "Freemium" : t("Gratuit", "Free"))
-                : `${tool.defaultMonthlyPrice}€/${t("mois", "mo")}`;
-              const badgeClass = tool.defaultMonthlyPrice === 0 ? "bg-primary/10 text-primary" : "bg-secondary text-muted-foreground";
-              return (
-                <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="group rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
-                  <div className="flex items-start gap-3">
-                    <ToolLogo tool={tool} size={40} />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2">
-                        <h3 className="font-semibold group-hover:text-primary truncate">{tool.name}</h3>
-                        <span className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${badgeClass}`}>{priceBadge}</span>
-                      </div>
-                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground line-clamp-2">{t(tool.shortDescription, tool.shortDescriptionEn || tool.shortDescription)}</p>
-                    </div>
-                  </div>
-                  {tool.pros?.length > 0 && (
-                    <div className="mt-3 pt-3 border-t border-border/50">
-                      <div className="flex items-start gap-1.5 text-xs text-muted-foreground">
-                        <Check className="h-3 w-3 mt-0.5 shrink-0 text-primary" /><span className="line-clamp-1">{tool.pros[0]}</span>
-                      </div>
-                    </div>
-                  )}
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. Testimonials */}
-      <Suspense fallback={null}><TestimonialsSection /></Suspense>
-
-      {/* 10. Guides — styled like GuidesPage */}
+      {/* 9. Guides */}
       {featuredPosts.length > 0 && (
         <section className="border-t border-border bg-secondary/20 py-20">
           <div className="container mx-auto max-w-6xl">
@@ -203,10 +154,7 @@ const HomePage = () => {
         </section>
       )}
 
-      {/* 11. Diff table */}
-      <Suspense fallback={null}><DiffTable toolCount={stats.total} /></Suspense>
-
-      {/* 12. FAQ */}
+      {/* 10. FAQ */}
       <section className="border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px] text-center">{t("Questions ", "Frequently Asked ")}<em className="text-primary italic">{t("fréquentes", "Questions")}</em></h2>
@@ -226,10 +174,10 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 12bis. Persona guides (SEO pillar links) */}
+      {/* 11. Persona guides (SEO pillar links) */}
       <Suspense fallback={null}><PersonaGuidesSection lang={lang} /></Suspense>
 
-      {/* 13. Final CTA */}
+      {/* 12. Final CTA */}
       <Suspense fallback={null}><FinalCTA /></Suspense>
     </div>
   );
