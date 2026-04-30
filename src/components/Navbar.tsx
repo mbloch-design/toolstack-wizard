@@ -190,9 +190,60 @@ const Navbar = () => {
 
         {/* ─── Desktop right actions ─── */}
         <div className="hidden items-center gap-1 lg:flex">
-          <button onClick={toggle} aria-label="Toggle theme"
-            className="rounded-lg p-2 text-muted-foreground transition-colors duration-150 hover:bg-accent/50 hover:text-foreground cursor-pointer">
-            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          {/* Theme toggle — pill */}
+          <button
+            onClick={toggle}
+            aria-label="Toggle theme"
+            className="relative cursor-pointer rounded-full border border-border transition-colors duration-200 hover:border-primary/40"
+            style={{
+              width: 50,
+              height: 26,
+              padding: 3,
+              background: theme === "dark"
+                ? "hsl(var(--primary) / 0.12)"
+                : "hsl(var(--muted) / 0.6)",
+            }}
+          >
+            {/* Track icons */}
+            <Sun
+              className="absolute"
+              style={{
+                left: 6,
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: 11,
+                height: 11,
+                color: theme === "dark"
+                  ? "hsl(var(--muted-foreground) / 0.3)"
+                  : "hsl(var(--foreground) / 0.5)",
+                transition: "color 200ms",
+              }}
+            />
+            <Moon
+              className="absolute"
+              style={{
+                right: 6,
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: 11,
+                height: 11,
+                color: theme === "dark"
+                  ? "hsl(var(--primary))"
+                  : "hsl(var(--muted-foreground) / 0.3)",
+                transition: "color 200ms",
+              }}
+            />
+            {/* Sliding thumb */}
+            <div
+              className="absolute top-[3px] flex items-center justify-center rounded-full bg-background shadow-sm"
+              style={{
+                width: 20,
+                height: 20,
+                left: theme === "dark" ? 27 : 3,
+                transition: "left 200ms cubic-bezier(0.4, 0, 0.2, 1)",
+                boxShadow: "0 1px 3px hsl(0 0% 0% / 0.2)",
+              }}
+            />
           </button>
           <a href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
             hrefLang={otherLang}
@@ -207,9 +258,54 @@ const Navbar = () => {
         </div>
 
         {/* ─── Mobile controls ─── */}
-        <div className="flex items-center gap-1 lg:hidden">
-          <button onClick={toggle} className="rounded-lg p-2 text-muted-foreground cursor-pointer" aria-label="Toggle theme">
-            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+        <div className="flex items-center gap-1.5 lg:hidden">
+          <button
+            onClick={toggle}
+            aria-label="Toggle theme"
+            className="relative cursor-pointer rounded-full border border-border"
+            style={{
+              width: 46,
+              height: 24,
+              padding: 3,
+              background: theme === "dark"
+                ? "hsl(var(--primary) / 0.12)"
+                : "hsl(var(--muted) / 0.6)",
+            }}
+          >
+            <Sun
+              className="absolute"
+              style={{
+                left: 5,
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: 10,
+                height: 10,
+                color: theme === "dark" ? "hsl(var(--muted-foreground) / 0.3)" : "hsl(var(--foreground) / 0.5)",
+                transition: "color 200ms",
+              }}
+            />
+            <Moon
+              className="absolute"
+              style={{
+                right: 5,
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: 10,
+                height: 10,
+                color: theme === "dark" ? "hsl(var(--primary))" : "hsl(var(--muted-foreground) / 0.3)",
+                transition: "color 200ms",
+              }}
+            />
+            <div
+              className="absolute top-[3px] rounded-full bg-background"
+              style={{
+                width: 18,
+                height: 18,
+                left: theme === "dark" ? 25 : 3,
+                transition: "left 200ms cubic-bezier(0.4, 0, 0.2, 1)",
+                boxShadow: "0 1px 3px hsl(0 0% 0% / 0.2)",
+              }}
+            />
           </button>
           <a href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
             hrefLang={otherLang}
