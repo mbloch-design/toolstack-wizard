@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, useTools } from "@/hooks/useSupabaseData";
 import { useMemo } from "react";
+import { ArrowRight } from "lucide-react";
 import pictoLogo from "@/assets/picto-logo.svg";
 
 const Footer = () => {
-  const { t, prefix, lang } = useLang();
+  const { t, prefix } = useLang();
   const { categories } = useCategories();
   const { tools } = useTools();
 
@@ -24,167 +25,173 @@ const Footer = () => {
   return (
     <footer className="border-t border-border">
 
-      {/* ── Main grid ── */}
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[280px_1fr_1fr_1fr_1fr]">
+      {/* ── Brand statement ── */}
+      <div className="mx-auto max-w-6xl px-6 pt-16 pb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
 
-          {/* Brand */}
-          <div className="lg:pr-8">
-            <Link to={prefix} className="inline-flex items-center gap-2 group">
-              <img src={pictoLogo} alt="ToolTrim" className="h-5 w-5 transition-opacity duration-150 group-hover:opacity-80" />
+          {/* Big wordmark */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7 opacity-60" />
               <span
-                className="font-display select-none text-foreground transition-opacity duration-150 group-hover:opacity-80"
-                style={{ fontSize: "1.05rem", fontWeight: 800, letterSpacing: "-0.03em" }}
+                className="font-display text-foreground select-none"
+                style={{
+                  fontSize: "clamp(2.8rem, 6vw, 5rem)",
+                  fontWeight: 800,
+                  letterSpacing: "-0.04em",
+                  lineHeight: 1,
+                }}
               >
                 ToolTrim
               </span>
-            </Link>
-
+            </div>
             <p
-              className="mt-4 text-sm leading-relaxed"
-              style={{ color: "hsl(var(--muted-foreground))", maxWidth: "220px" }}
+              className="font-display"
+              style={{
+                fontSize: "clamp(1rem, 1.8vw, 1.3rem)",
+                fontWeight: 500,
+                letterSpacing: "-0.02em",
+                color: "hsl(var(--muted-foreground))",
+                maxWidth: "420px",
+              }}
             >
               {t(
-                "Audit de stack SaaS indépendant pour freelances et petites équipes.",
-                "Independent SaaS stack audit for freelancers and small teams."
-              )}
-            </p>
-
-            {/* Independence badge */}
-            <div
-              className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1"
-            >
-              <span
-                className="h-1.5 w-1.5 rounded-full"
-                style={{ background: "hsl(145 60% 36%)" }}
-              />
-              <span
-                style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.07em",
-                  textTransform: "uppercase",
-                  color: "hsl(var(--muted-foreground) / 0.7)",
-                }}
-              >
-                {t("100% indépendant", "100% independent")}
+                "Votre stack coûte trop cher.",
+                "Your stack costs too much."
+              )}{" "}
+              <span style={{ color: "hsl(var(--foreground) / 0.4)" }}>
+                {t("On le prouve en 3 minutes.", "We prove it in 3 minutes.")}
               </span>
-            </div>
+            </p>
           </div>
 
-          {/* Product */}
-          <div>
-            <p className="label-section mb-4">{t("Produit", "Product")}</p>
-            <nav className="flex flex-col gap-2.5">
-              {[
-                { to: `${prefix}/selector`, label: t("Audit de stack", "Stack audit") },
-                { to: `${prefix}/tools`, label: t("Catalogue d'outils", "Tool catalog") },
-                { to: `${prefix}/category`, label: t("Catégories", "Categories") },
-                { to: `${prefix}/guides`, label: t("Guides", "Guides") },
-                { to: `${prefix}/comparatifs`, label: t("Comparatifs", "Comparisons") },
-              ].map(item => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className="text-sm transition-colors duration-150 hover:text-foreground"
-                  style={{ color: "hsl(var(--muted-foreground))" }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+          {/* CTA */}
+          <div className="shrink-0 mb-1">
+            <Link
+              to={`${prefix}/selector`}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors duration-150 hover:border-primary/40 hover:text-primary"
+            >
+              {t("Lancer mon analyse", "Start my analysis")}
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            <p
+              className="mt-2 text-center"
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "0.6rem",
+                letterSpacing: "0.07em",
+                textTransform: "uppercase",
+                color: "hsl(var(--muted-foreground) / 0.4)",
+              }}
+            >
+              {t("Gratuit · Sans inscription", "Free · No signup")}
+            </p>
           </div>
+        </div>
+      </div>
 
-          {/* Categories */}
-          <div>
-            <p className="label-section mb-4">{t("Catégories", "Categories")}</p>
-            <nav className="flex flex-col gap-2.5">
-              {topCategories.map(cat => {
-                const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
-                return (
-                  <Link
-                    key={cat.id}
-                    to={`${prefix}/category/${cat.slug}`}
+      {/* ── Link columns ── */}
+      <div className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+
+            {/* Product */}
+            <div>
+              <p className="label-section mb-4">{t("Produit", "Product")}</p>
+              <nav className="flex flex-col gap-2.5">
+                {[
+                  { to: `${prefix}/selector`, label: t("Audit de stack", "Stack audit") },
+                  { to: `${prefix}/tools`, label: t("Catalogue d'outils", "Tool catalog") },
+                  { to: `${prefix}/category`, label: t("Catégories", "Categories") },
+                  { to: `${prefix}/guides`, label: t("Guides", "Guides") },
+                  { to: `${prefix}/comparatifs`, label: t("Comparatifs", "Comparisons") },
+                ].map(item => (
+                  <Link key={item.to} to={item.to}
                     className="text-sm transition-colors duration-150 hover:text-foreground"
-                    style={{ color: "hsl(var(--muted-foreground))" }}
-                  >
-                    {t(catName, cat.nameEn || catName)}
+                    style={{ color: "hsl(var(--muted-foreground))" }}>
+                    {item.label}
                   </Link>
-                );
-              })}
-            </nav>
+                ))}
+              </nav>
+            </div>
+
+            {/* Categories */}
+            <div>
+              <p className="label-section mb-4">{t("Catégories", "Categories")}</p>
+              <nav className="flex flex-col gap-2.5">
+                {topCategories.map(cat => {
+                  const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
+                  return (
+                    <Link key={cat.id} to={`${prefix}/category/${cat.slug}`}
+                      className="text-sm transition-colors duration-150 hover:text-foreground"
+                      style={{ color: "hsl(var(--muted-foreground))" }}>
+                      {t(catName, cat.nameEn || catName)}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
+
+            {/* Tools */}
+            <div>
+              <p className="label-section mb-4">{t("Outils", "Tools")}</p>
+              <nav className="flex flex-col gap-2.5">
+                {topTools.map(tool => (
+                  <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`}
+                    className="text-sm transition-colors duration-150 hover:text-foreground"
+                    style={{ color: "hsl(var(--muted-foreground))" }}>
+                    {tool.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Company + Legal */}
+            <div>
+              <p className="label-section mb-4">{t("Entreprise", "Company")}</p>
+              <nav className="flex flex-col gap-2.5">
+                {[
+                  { to: `${prefix}/about`, label: t("À propos", "About") },
+                  { to: `${prefix}/transparency`, label: t("Transparence", "Transparency") },
+                  { to: `${prefix}/contact`, label: "Contact" },
+                ].map(item => (
+                  <Link key={item.to} to={item.to}
+                    className="text-sm transition-colors duration-150 hover:text-foreground"
+                    style={{ color: "hsl(var(--muted-foreground))" }}>
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+
+              <p className="label-section mb-3 mt-7">{t("Légal", "Legal")}</p>
+              <nav className="flex flex-col gap-2.5">
+                {[
+                  { to: `${prefix}/legal-notice`, label: t("Mentions légales", "Legal notice") },
+                  { to: `${prefix}/privacy-policy`, label: t("Confidentialité", "Privacy") },
+                  { to: `${prefix}/terms`, label: t("CGV", "Terms") },
+                ].map(item => (
+                  <Link key={item.to} to={item.to}
+                    className="text-sm transition-colors duration-150 hover:text-foreground"
+                    style={{ color: "hsl(var(--muted-foreground))" }}>
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
           </div>
-
-          {/* Popular tools */}
-          <div>
-            <p className="label-section mb-4">{t("Outils", "Tools")}</p>
-            <nav className="flex flex-col gap-2.5">
-              {topTools.map(tool => (
-                <Link
-                  key={tool.id}
-                  to={`${prefix}/tool/${tool.slug}`}
-                  className="text-sm transition-colors duration-150 hover:text-foreground"
-                  style={{ color: "hsl(var(--muted-foreground))" }}
-                >
-                  {tool.name}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Company + Legal */}
-          <div>
-            <p className="label-section mb-4">{t("Entreprise", "Company")}</p>
-            <nav className="flex flex-col gap-2.5">
-              {[
-                { to: `${prefix}/about`, label: t("À propos", "About") },
-                { to: `${prefix}/transparency`, label: t("Transparence", "Transparency") },
-                { to: `${prefix}/contact`, label: "Contact" },
-              ].map(item => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className="text-sm transition-colors duration-150 hover:text-foreground"
-                  style={{ color: "hsl(var(--muted-foreground))" }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-
-            <p className="label-section mb-3 mt-7">{t("Légal", "Legal")}</p>
-            <nav className="flex flex-col gap-2.5">
-              {[
-                { to: `${prefix}/legal-notice`, label: t("Mentions légales", "Legal notice") },
-                { to: `${prefix}/privacy-policy`, label: t("Confidentialité", "Privacy") },
-                { to: `${prefix}/terms`, label: t("CGV", "Terms") },
-              ].map(item => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className="text-sm transition-colors duration-150 hover:text-foreground"
-                  style={{ color: "hsl(var(--muted-foreground))" }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
         </div>
       </div>
 
       {/* ── Bottom bar ── */}
       <div className="border-t border-border">
         <div className="mx-auto max-w-6xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p
-            style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: "0.65rem",
-              letterSpacing: "0.05em",
-              color: "hsl(var(--muted-foreground) / 0.5)",
-            }}
-          >
+          <p style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "0.65rem",
+            letterSpacing: "0.05em",
+            color: "hsl(var(--muted-foreground) / 0.4)",
+          }}>
             © {new Date().getFullYear()} ToolTrim
           </p>
           <div className="flex items-center gap-4">
@@ -194,17 +201,16 @@ const Footer = () => {
               { to: `${prefix}/legal-notice`, label: t("Mentions légales", "Legal") },
             ].map((item, i, arr) => (
               <span key={item.to} className="flex items-center gap-4">
-                <Link
-                  to={item.to}
+                <Link to={item.to}
                   style={{
                     fontFamily: "'DM Mono', monospace",
                     fontSize: "0.65rem",
                     letterSpacing: "0.05em",
-                    color: "hsl(var(--muted-foreground) / 0.5)",
+                    color: "hsl(var(--muted-foreground) / 0.4)",
                     transition: "color 150ms",
                   }}
                   onMouseEnter={e => ((e.target as HTMLElement).style.color = "hsl(var(--muted-foreground))")}
-                  onMouseLeave={e => ((e.target as HTMLElement).style.color = "hsl(var(--muted-foreground) / 0.5)")}
+                  onMouseLeave={e => ((e.target as HTMLElement).style.color = "hsl(var(--muted-foreground) / 0.4)")}
                 >
                   {item.label}
                 </Link>
