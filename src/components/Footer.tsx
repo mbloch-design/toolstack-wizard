@@ -31,7 +31,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <Link to={prefix} className="flex items-center gap-2">
               <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7 rounded-md" />
-              <span className="text-lg font-extrabold tracking-tighter">
+              <span style={{ fontSize: "1.05rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                 Tool<span className="text-primary">trim</span>
               </span>
             </Link>

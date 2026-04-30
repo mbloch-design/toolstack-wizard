@@ -174,16 +174,35 @@ const HomePage = () => {
           <h2 className="text-center" style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.02em" }}>
             {t("Questions ", "Frequently Asked ")}<em className="text-primary not-italic">{t("fréquentes", "Questions")}</em>
           </h2>
-          <div className="mt-10 space-y-4">
+          <div className="mt-10 space-y-3">
             {faq.map((item, i) => (
-              <details key={i} className="group rounded-xl border border-border bg-card p-5">
-                <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-                  {item.q}
-                  <svg className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <details
+                key={i}
+                className="group rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm p-5 transition-all duration-200 open:border-primary/20"
+                onMouseEnter={(e) => {
+                  if (!(e.currentTarget as HTMLDetailsElement).open) {
+                    (e.currentTarget as HTMLElement).style.borderColor = "hsl(224 76% 60% / 0.25)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 16px hsl(224 76% 60% / 0.08)";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!(e.currentTarget as HTMLDetailsElement).open) {
+                    (e.currentTarget as HTMLElement).style.borderColor = "";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "";
+                  }
+                }}
+              >
+                <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between gap-4 select-none">
+                  <span className="group-open:text-primary transition-colors duration-150">{item.q}</span>
+                  <svg
+                    className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                    style={{ color: "hsl(var(--muted-foreground) / 0.5)" }}
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+                <p className="mt-4 text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>{item.a}</p>
               </details>
             ))}
           </div>
@@ -204,7 +223,15 @@ function GuideCard({ post, prefix, tools }: { post: any; prefix: string; tools: 
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
-      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5"
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px hsl(224 76% 60% / 0.12), 0 4px 16px hsl(0 0% 0% / 0.25)";
+        (e.currentTarget as HTMLElement).style.borderColor = "hsl(224 76% 60% / 0.35)";
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLElement).style.boxShadow = "";
+        (e.currentTarget as HTMLElement).style.borderColor = "";
+      }}
     >
       <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} px-4 py-6`}>
         {mentionedTools.length > 0 ? (

@@ -67,7 +67,7 @@ const Navbar = () => {
         {/* ─── Logo ─── */}
         <Link to={prefix} className="flex items-center gap-2 shrink-0" onClick={closeMega}>
           <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7" />
-          <span className="font-heading text-[17px] font-bold tracking-tight text-foreground">
+          <span style={{ fontSize: "1.05rem", fontWeight: 500, letterSpacing: "-0.015em" }} className="text-foreground">
             Tooltrim
           </span>
         </Link>
