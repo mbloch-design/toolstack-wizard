@@ -48,8 +48,9 @@ const MethodologyPage = () => {
             {t("Méthodologie", "Methodology")}
           </span>
           <h1 className="font-heading text-4xl font-extrabold tracking-tight md:text-5xl">
-            {t(
-              <>Construit par un freelance<br /><em className="text-primary italic">qui en avait marre</em></>,
+            {lang === "fr" ? (
+              <>Construit par un freelance<br /><em className="text-primary italic">qui en avait marre</em></>
+            ) : (
               <>Built by a freelancer<br /><em className="text-primary italic">who'd had enough</em></>
             )}
           </h1>
