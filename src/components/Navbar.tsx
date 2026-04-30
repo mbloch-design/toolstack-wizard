@@ -65,13 +65,13 @@ const Navbar = () => {
       <div className="container flex h-14 items-center justify-between">
 
         {/* ─── Logo ─── */}
-        <Link to={prefix} className="flex items-center gap-2 shrink-0" onClick={closeMega}>
-          <img src={pictoLogo} alt="ToolTrim" className="h-5 w-5" />
+        <Link to={prefix} className="flex items-center gap-2 shrink-0 group" onClick={closeMega}>
+          <img src={pictoLogo} alt="ToolTrim" className="h-5 w-5 transition-opacity duration-150 group-hover:opacity-80" />
           <span
-            className="font-display select-none"
-            style={{ fontSize: "1rem", fontWeight: 700, letterSpacing: "-0.02em" }}
+            className="font-display select-none text-foreground transition-opacity duration-150 group-hover:opacity-80"
+            style={{ fontSize: "1.05rem", fontWeight: 800, letterSpacing: "-0.03em" }}
           >
-            <span style={{ color: "hsl(var(--foreground) / 0.45)" }}>Tool</span><span className="text-primary">Trim</span>
+            ToolTrim
           </span>
         </Link>
 
