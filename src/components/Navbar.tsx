@@ -245,11 +245,35 @@ const Navbar = () => {
               }}
             />
           </button>
-          <a href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
+          {/* Lang toggle pill */}
+          <a
+            href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
             hrefLang={otherLang}
             rel="alternate"
-            className="rounded-lg px-2 py-1.5 text-[11px] font-semibold uppercase text-muted-foreground transition-colors duration-150 hover:bg-accent/50 hover:text-foreground tracking-wide">
-            {otherLang.toUpperCase()}
+            aria-label={`Switch to ${otherLang === "en" ? "English" : "Français"}`}
+            className="group flex items-center rounded-full border border-border transition-colors duration-150 hover:border-primary/40 cursor-pointer"
+            style={{ padding: "3px 3px" }}
+          >
+            {(["fr", "en"] as const).map((l) => (
+              <span
+                key={l}
+                className="rounded-full transition-all duration-150"
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.65rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  padding: "3px 8px",
+                  background: lang === l ? "hsl(var(--foreground))" : "transparent",
+                  color: lang === l
+                    ? "hsl(var(--background))"
+                    : "hsl(var(--muted-foreground) / 0.5)",
+                }}
+              >
+                {l}
+              </span>
+            ))}
           </a>
           <Link to={`${prefix}/selector`}
             className="ml-1.5 rounded-lg bg-primary px-4 py-2 text-[13px] font-semibold text-primary-foreground transition-colors duration-150 hover:bg-primary/90">
@@ -307,11 +331,35 @@ const Navbar = () => {
               }}
             />
           </button>
-          <a href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
+          {/* Lang toggle pill — mobile */}
+          <a
+            href={`/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`}
             hrefLang={otherLang}
             rel="alternate"
-            className="rounded-lg px-2 py-1 text-[11px] font-semibold uppercase text-muted-foreground tracking-wide">
-            {otherLang.toUpperCase()}
+            aria-label={`Switch to ${otherLang === "en" ? "English" : "Français"}`}
+            className="flex items-center rounded-full border border-border transition-colors duration-150 hover:border-primary/40 cursor-pointer"
+            style={{ padding: "2px 2px" }}
+          >
+            {(["fr", "en"] as const).map((l) => (
+              <span
+                key={l}
+                className="rounded-full transition-all duration-150"
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.6rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  padding: "2px 7px",
+                  background: lang === l ? "hsl(var(--foreground))" : "transparent",
+                  color: lang === l
+                    ? "hsl(var(--background))"
+                    : "hsl(var(--muted-foreground) / 0.5)",
+                }}
+              >
+                {l}
+              </span>
+            ))}
           </a>
           <button onClick={() => { setMobileOpen(!mobileOpen); setMobileExpanded(null); }}
             className="rounded-lg p-2 text-muted-foreground cursor-pointer">
