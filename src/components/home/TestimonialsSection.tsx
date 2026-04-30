@@ -108,14 +108,15 @@ const TestimonialsSection = () => {
         {/* Header — Elevo style */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-lg">
-            <h2 className="text-4xl md:text-[44px] font-extrabold tracking-[-1.5px] leading-[1.1] text-foreground">
-              {t("Ils ont repris le contrôle ", "They took back control ")}<em className="text-primary italic">{t("de leur stack.", "of their stack.")}</em>
+            <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.022em", lineHeight: 1.1 }}>
+              {t("Ils ont repris le contrôle ", "They took back control ")}
+              <em className="text-primary not-italic">{t("de leur stack.", "of their stack.")}</em>
             </h2>
           </div>
           <div className="flex flex-wrap gap-8">
             {STATS.slice(0, 2).map((s, i) => (
               <div key={i} className="text-right">
-                <p className="text-3xl md:text-4xl font-extrabold tracking-[-1.5px] text-foreground">{s.value}</p>
+                <p className="text-foreground" style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.03em" }}>{s.value}</p>
                 <p className="text-xs text-muted-foreground mt-1 max-w-[180px] leading-relaxed">
                   {lang === "en" ? s.labelEn : s.labelFr}
                 </p>
@@ -232,7 +233,7 @@ const TestimonialsSection = () => {
         <div className="mt-16 pt-10 border-t border-border/50 grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((stat, i) => (
             <div key={i}>
-              <p className="text-2xl md:text-3xl font-extrabold tracking-[-1px] text-foreground">{stat.value}</p>
+              <p className="text-foreground" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)", fontWeight: 600, letterSpacing: "-0.025em" }}>{stat.value}</p>
               <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
                 {lang === "en" ? stat.labelEn : stat.labelFr}
               </p>

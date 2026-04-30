@@ -54,17 +54,17 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 border-t border-border">
       <div className="mx-auto max-w-6xl">
+
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-5">
-            {t("Processus", "Process")}
-          </span>
-          <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
-            {t("3 étapes. ", "3 steps. ")}<em className="text-primary italic">{t("Aucune approximation.", "No guesswork.")}</em>
+          <p className="label-section mb-4">{t("Processus", "Process")}</p>
+          <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.022em" }}>
+            {t("3 étapes. ", "3 steps. ")}
+            <em className="text-primary not-italic">{t("Aucune approximation.", "No guesswork.")}</em>
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">
+          <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
             {t(
               "Contrairement aux annuaires génériques, chaque recommandation est filtrée par votre contexte réel.",
               "Unlike generic directories, every recommendation is filtered by your real context."
@@ -72,48 +72,65 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        {/* Steps — vertical flow, Elevo-inspired */}
-        <div className="space-y-6">
+        {/* Steps */}
+        <div className="space-y-4">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
               <div
                 key={i}
-                className="group rounded-2xl border border-border bg-card transition-all hover:border-primary/20 hover:shadow-sm"
+                className="group rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm overflow-hidden transition-all duration-200"
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 24px hsl(224 76% 60% / 0.10), 0 4px 20px hsl(0 0% 0% / 0.2)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "hsl(224 76% 60% / 0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = "";
+                  (e.currentTarget as HTMLElement).style.borderColor = "";
+                }}
               >
-                <div className="grid md:grid-cols-[80px_1fr_1fr] items-stretch">
+                <div className="grid md:grid-cols-[72px_1fr_1fr] items-stretch">
+
                   {/* Step number */}
-                  <div className="hidden md:flex items-center justify-center border-r border-border">
-                    <span className="text-3xl font-extrabold tracking-[-2px] text-primary/20 group-hover:text-primary/40 transition-colors">
+                  <div className="hidden md:flex items-center justify-center border-r border-border/40">
+                    <span
+                      className="text-primary/15 group-hover:text-primary/35 transition-colors duration-200"
+                      style={{ fontSize: "1.75rem", fontWeight: 600, letterSpacing: "-0.03em" }}
+                    >
                       {step.num}
                     </span>
                   </div>
 
                   {/* Content */}
-                  <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border">
+                  <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border/40">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                        <Icon className="h-5 w-5" />
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <Icon className="h-4 w-4" />
                       </div>
-                      <span className="md:hidden text-sm font-bold text-primary/40">{step.num}</span>
+                      <span className="md:hidden text-xs font-semibold text-primary/40">{step.num}</span>
                     </div>
-                    <h3 className="text-xl font-bold tracking-[-0.5px] mb-3">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                    <h3 className="mb-3" style={{ fontSize: "1rem", fontWeight: 500, letterSpacing: "-0.012em" }}>
+                      {step.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+                      {step.desc}
+                    </p>
 
-                    {/* Chips preview for step 1 */}
                     {step.chips && (
-                      <div className="mt-5 space-y-2.5">
+                      <div className="mt-5 space-y-2">
                         {step.chips.map((row) => (
                           <div key={row.label} className="flex items-center gap-2">
-                            <span className="w-12 shrink-0 text-[11px] text-muted-foreground/50">{row.label}</span>
+                            <span className="w-12 shrink-0 text-[11px]" style={{ color: "hsl(var(--muted-foreground) / 0.5)" }}>
+                              {row.label}
+                            </span>
                             <div className="flex flex-wrap gap-1.5">
                               {row.values.map((v, vi) => (
                                 <span
                                   key={v}
-                                  className={`rounded-md border px-2.5 py-1 text-xs font-medium ${
+                                  className={`rounded-md border px-2 py-0.5 text-xs font-medium ${
                                     vi === 0
                                       ? "border-primary/20 bg-primary/10 text-primary"
-                                      : "border-border bg-secondary text-muted-foreground/50"
+                                      : "border-border/40 bg-secondary/50 text-muted-foreground/40"
                                   }`}
                                 >
                                   {v}
@@ -126,12 +143,10 @@ const HowItWorks = () => {
                     )}
                   </div>
 
-                  {/* Insight panel */}
-                  <div className="p-8 md:p-10 bg-secondary/30 flex flex-col justify-center">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary mb-3">
-                      {t("Pourquoi c'est différent", "Why it's different")}
-                    </p>
-                    <p className="text-sm text-foreground leading-relaxed">{step.detail}</p>
+                  {/* Insight */}
+                  <div className="p-8 md:p-10 flex flex-col justify-center" style={{ background: "hsl(var(--secondary) / 0.4)" }}>
+                    <p className="label-section mb-3 text-primary">{t("Pourquoi c'est différent", "Why it's different")}</p>
+                    <p className="text-sm leading-relaxed text-foreground/80">{step.detail}</p>
                   </div>
                 </div>
               </div>
@@ -143,12 +158,19 @@ const HowItWorks = () => {
         <div className="mt-12 text-center">
           <Link
             to={`${prefix}/selector`}
-            className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/15 transition-all hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-px"
+            style={{ boxShadow: "0 0 20px hsl(224 76% 60% / 0.25), 0 2px 10px hsl(0 0% 0% / 0.3)" }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 32px hsl(224 76% 60% / 0.4), 0 4px 16px hsl(0 0% 0% / 0.3)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px hsl(224 76% 60% / 0.25), 0 2px 10px hsl(0 0% 0% / 0.3)";
+            }}
           >
             {t("Lancer mon analyse gratuite", "Start my free analysis")}
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
-          <p className="mt-3 text-xs text-muted-foreground">
+          <p className="mt-3 text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.5)" }}>
             {t("Gratuit · Sans inscription · Résultats en 3 minutes", "Free · No signup · Results in 3 minutes")}
           </p>
         </div>
