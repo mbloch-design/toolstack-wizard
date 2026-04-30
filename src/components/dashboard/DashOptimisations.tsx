@@ -1,4 +1,6 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
+import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import { computeScoreFinal } from "@/utils/scoring";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
@@ -29,7 +31,7 @@ const PERSONA_REASONS: Record<string, { fr: string; en: string }> = {
   CLAIRE: { fr: "Simplifie ta gestion quotidienne", en: "Simplifies your daily operations" },
 };
 
-function SwapCard({ swap, t, onAccept }: { swap: SwapData; t: Props["t"]; onAccept: () => void }) {
+function SwapCard({ swap, t, onAccept, prefix }: { swap: SwapData; t: Props["t"]; onAccept: () => void; prefix: string }) {
   const [showSteps, setShowSteps] = useState(false);
 
   return (
@@ -42,9 +44,9 @@ function SwapCard({ swap, t, onAccept }: { swap: SwapData; t: Props["t"]; onAcce
           <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">{swap.alternative.name.charAt(0)}</div>
           <div className="flex-1 min-w-0">
             <p className="text-sm text-foreground">
-              <span className="text-muted-foreground line-through">{swap.current.name}</span>
+              <Link to={`${prefix}/tool/${swap.current.id}`} className="text-muted-foreground line-through hover:text-foreground transition-colors">{swap.current.name}</Link>
               {" → "}
-              <strong>{swap.alternative.name}</strong>
+              <Link to={`${prefix}/tool/${swap.alternative.id}`} className="font-semibold text-primary hover:underline">{swap.alternative.name}</Link>
             </p>
           </div>
         </div>
@@ -92,6 +94,7 @@ function SwapCard({ swap, t, onAccept }: { swap: SwapData; t: Props["t"]; onAcce
 }
 
 export default function DashOptimisations({ result, allTools, t, onNavigate }: Props) {
+  const { prefix } = useLang();
   const { sessionState } = result;
 
   const swaps = useMemo(() => {
@@ -141,6 +144,7 @@ export default function DashOptimisations({ result, allTools, t, onNavigate }: P
                 swap={swap}
                 t={t}
                 onAccept={() => onNavigate?.("actions")}
+                prefix={prefix}
               />
             ))}
           </div>

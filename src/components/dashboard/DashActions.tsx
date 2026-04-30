@@ -1,6 +1,8 @@
 import { useState, useMemo, useCallback, useRef } from "react";
+import { Link } from "react-router-dom";
+import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, ExternalLink } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 
 
@@ -108,6 +110,7 @@ const URGENCY_CONFIG = {
 } as const;
 
 export default function DashActions({ result, allTools, t, onNavigate, dbSessionId, dbSessionToken }: Props) {
+  const { prefix } = useLang();
   const actions = useMemo(() => buildActions(result, allTools, t), [result, allTools, t]);
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [lastChecked, setLastChecked] = useState<string | null>(null);
@@ -283,8 +286,19 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                       <span className="text-xs text-muted-foreground">
                         {action.timeMinutes < 60 ? `${action.timeMinutes}min` : `${Math.round(action.timeMinutes / 60)}h`}
                       </span>
-                      {/* Link to detail */}
-                      {action.prescription && (
+                      {/* Link to tool page */}
+                      {action.tool && (
+                        <Link
+                          to={`${prefix}/tool/${action.tool.id}`}
+                          className="p-1 rounded hover:bg-muted"
+                          title={t("Voir la fiche outil", "View tool page")}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <ExternalLink className="w-3.5 h-3.5 text-muted-foreground hover:text-primary transition-colors" />
+                        </Link>
+                      )}
+                      {/* Link to waste detail */}
+                      {action.prescription && !action.tool && (
                         <button
                           onClick={() => onNavigate?.("gaspillage")}
                           className="p-1 rounded hover:bg-muted"

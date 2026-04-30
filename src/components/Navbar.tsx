@@ -164,7 +164,7 @@ const Navbar = () => {
                   {[
                     { icon: BookOpen, label: t("Guides & comparatifs", "Guides & comparisons"), to: `${prefix}/guides` },
                     { icon: Scale, label: t("Comparatifs", "Comparisons"), to: `${prefix}/comparatifs` },
-                    { icon: Layers, label: t("Sélecteur de stack", "Stack selector"), to: `${prefix}/selector` },
+                    { icon: Layers, label: t("Audit de stack", "Stack audit"), to: `${prefix}/selector` },
                     { icon: Shield, label: t("Transparence", "Transparency"), to: `${prefix}/transparency` },
                     { icon: HelpCircle, label: t("À propos", "About"), to: `${prefix}/about` },
                   ].map(item => (
@@ -181,11 +181,11 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Selector link */}
+          {/* Diagnostic link */}
           <Link to={`${prefix}/selector`}
             className={`px-3 py-2 text-[13px] font-medium transition-colors
               ${isActive(`${prefix}/selector`) ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}>
-            {t("Sélecteur", "Selector")}
+            {t("Diagnostic", "Diagnostic")}
           </Link>
         </div>
 
@@ -287,7 +287,7 @@ const Navbar = () => {
 
             <Link to={`${prefix}/selector`} onClick={() => setMobileOpen(false)}
               className="flex items-center rounded-lg px-3 py-3 text-[13px] font-medium hover:bg-accent/40 transition-colors">
-              {t("Sélecteur", "Selector")}
+              {t("Diagnostic gratuit", "Free diagnostic")}
             </Link>
 
             {/* CTA */}
