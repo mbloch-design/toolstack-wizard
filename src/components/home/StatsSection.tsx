@@ -69,19 +69,34 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
         {/* Bento grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-          {/* Hero stat */}
+          {/* Hero stat — billboard */}
           <div
-            className="md:row-span-2 rounded-2xl border border-primary/20 flex flex-col justify-center items-center text-center p-10 md:p-12"
-            style={{ background: "hsl(224 76% 60% / 0.07)" }}
+            className="md:row-span-2 rounded-2xl border border-primary/20 flex flex-col justify-center items-center text-center p-10 md:p-12 relative overflow-hidden"
+            style={{ background: "hsl(224 76% 60% / 0.06)" }}
           >
-            <p className="label-section mb-5 text-primary">{t("Économies identifiées en moyenne", "Average savings identified")}</p>
+            {/* Glow behind number */}
+            <div className="pointer-events-none absolute inset-0" style={{
+              background: "radial-gradient(ellipse 70% 50% at 50% 55%, hsl(224 76% 60% / 0.18) 0%, transparent 70%)",
+            }} />
+            <p className="label-section mb-5 relative" style={{ color: "hsl(224 76% 68%)" }}>
+              {t("Économies identifiées en moyenne", "Average savings identified")}
+            </p>
             <p
-              className="leading-none text-primary"
-              style={{ fontSize: "clamp(4rem, 10vw, 6rem)", fontWeight: 600, letterSpacing: "-0.04em" }}
+              className="leading-none relative"
+              style={{
+                fontSize: "clamp(4.5rem, 12vw, 7rem)",
+                fontWeight: 600,
+                letterSpacing: "-0.05em",
+                backgroundImage: "linear-gradient(135deg, hsl(224 76% 80%) 0%, hsl(200 85% 85%) 50%, hsl(224 76% 72%) 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                color: "transparent",
+              }}
             >
               <span ref={counterRef}>0</span>€
             </p>
-            <p className="mt-5 max-w-[260px] text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+            <p className="mt-5 max-w-[240px] text-sm leading-relaxed relative" style={{ color: "hsl(var(--muted-foreground))" }}>
               {t("par freelance et par an, sur des abonnements déjà actifs.", "per freelancer per year, on already active subscriptions.")}
             </p>
           </div>

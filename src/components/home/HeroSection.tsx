@@ -112,12 +112,25 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
     >
       <style>{KEYFRAMES}</style>
 
-      {/* Glow — subtil */}
+      {/* Grid background — signature visuelle */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden
+        style={{
+          backgroundImage:
+            "radial-gradient(hsl(224 76% 60% / 0.07) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          maskImage: "radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)",
+        }}
+      />
+
+      {/* Glow central */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 55% 40% at 50% 44%, hsl(224 76% 60% / 0.07) 0%, transparent 65%)",
+            "radial-gradient(ellipse 60% 50% at 50% 44%, hsl(224 76% 60% / 0.10) 0%, transparent 70%)",
         }}
       />
 
@@ -167,27 +180,41 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
       <div className="relative z-10 flex min-h-[inherit] flex-col items-center justify-center px-6 py-20 text-center">
 
         {/* Eyebrow */}
-        <p className="label-section mb-6">
-          {t("Diagnostic SaaS · Indépendant · Gratuit", "SaaS Diagnostic · Independent · Free")}
-        </p>
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+          <span className="label-section text-primary/80">
+            {t("Diagnostic SaaS · Indépendant · Gratuit", "SaaS Diagnostic · Independent · Free")}
+          </span>
+        </div>
 
         {/* Headline */}
         <h1
-          className="max-w-2xl text-foreground"
-          style={{ fontSize: "clamp(2.1rem, 4.2vw, 3.6rem)" }}
+          className="max-w-2xl"
+          style={{ fontSize: "clamp(2.4rem, 5vw, 4.2rem)", fontWeight: 600, letterSpacing: "-0.028em", lineHeight: 1.05 }}
         >
-          {t("Ta stack SaaS", "Your SaaS stack")}<br />
-          <span className="text-primary">
+          <span className="text-foreground/90">
+            {t("Ta stack SaaS", "Your SaaS stack")}
+          </span>
+          <br />
+          <span
+            style={{
+              backgroundImage: "linear-gradient(135deg, hsl(224 76% 72%) 0%, hsl(200 85% 78%) 45%, hsl(224 76% 68%) 100%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              color: "transparent",
+            }}
+          >
             {t("te coûte trop cher.", "is costing you too much.")}
           </span>
         </h1>
 
         {/* Sous-titre */}
         <p
-          className="mx-auto mt-5 max-w-sm"
+          className="mx-auto mt-6 max-w-md"
           style={{
-            fontSize: "0.95rem",
-            color: "hsl(var(--muted-foreground))",
+            fontSize: "0.975rem",
+            color: "hsl(var(--muted-foreground) / 0.8)",
             lineHeight: 1.7,
           }}
         >
@@ -203,7 +230,8 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
           {/* Search input */}
           <div className="relative mb-5">
             <Search
-              className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/50"
+              className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2"
+              style={{ color: "hsl(var(--primary) / 0.5)" }}
             />
             <input
               ref={inputRef}
@@ -211,9 +239,20 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleSearchKey}
-              placeholder={t("Rechercher un outil…", "Search a tool…")}
-              className="w-full rounded-xl border border-border bg-card py-3 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/50 focus:ring-1 focus:ring-primary/20"
-              style={{ boxShadow: "0 1px 8px hsl(0 0% 0% / 0.2)" }}
+              placeholder={t("Quel outil veux-tu analyser ?", "Which tool do you want to analyze?")}
+              className="w-full rounded-xl border bg-card/60 py-3.5 pl-11 pr-4 text-sm text-foreground placeholder:text-muted-foreground/35 outline-none backdrop-blur-sm transition-all duration-200"
+              style={{
+                borderColor: "hsl(var(--border))",
+                boxShadow: "0 0 0 1px hsl(224 76% 60% / 0.08), 0 2px 12px hsl(0 0% 0% / 0.25)",
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.borderColor = "hsl(224 76% 60% / 0.5)";
+                e.currentTarget.style.boxShadow = "0 0 0 3px hsl(224 76% 60% / 0.12), 0 2px 12px hsl(0 0% 0% / 0.25)";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.borderColor = "hsl(var(--border))";
+                e.currentTarget.style.boxShadow = "0 0 0 1px hsl(224 76% 60% / 0.08), 0 2px 12px hsl(0 0% 0% / 0.25)";
+              }}
             />
           </div>
 

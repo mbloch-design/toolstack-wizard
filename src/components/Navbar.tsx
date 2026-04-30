@@ -66,9 +66,14 @@ const Navbar = () => {
 
         {/* ─── Logo ─── */}
         <Link to={prefix} className="flex items-center gap-2 shrink-0" onClick={closeMega}>
-          <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7" />
-          <span style={{ fontSize: "1.05rem", fontWeight: 500, letterSpacing: "-0.015em" }} className="text-foreground">
-            Tooltrim
+          <img src={pictoLogo} alt="ToolTrim" className="h-6 w-6" />
+          <span style={{ fontSize: "1rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
+            <span className="text-foreground/75">Tool</span><span style={{
+              backgroundImage: "linear-gradient(135deg, hsl(224 76% 68%), hsl(200 85% 75%))",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}>trim</span>
           </span>
         </Link>
 
