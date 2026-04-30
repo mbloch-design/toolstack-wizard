@@ -112,25 +112,14 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
     >
       <style>{KEYFRAMES}</style>
 
-      {/* Grid background — signature visuelle */}
+      {/* Grid structurel — colonnes visibles */}
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden
         style={{
           backgroundImage:
-            "radial-gradient(hsl(224 76% 60% / 0.07) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-          maskImage: "radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)",
-        }}
-      />
-
-      {/* Glow central */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 50% 44%, hsl(224 76% 60% / 0.10) 0%, transparent 70%)",
+            "linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
         }}
       />
 
@@ -179,59 +168,50 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
       {/* Contenu central */}
       <div className="relative z-10 flex min-h-[inherit] flex-col items-center justify-center px-6 py-20 text-center">
 
-        {/* Eyebrow */}
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5">
-          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="label-section text-primary/80">
-            {t("Diagnostic SaaS · Indépendant · Gratuit", "SaaS Diagnostic · Independent · Free")}
-          </span>
-        </div>
+        {/* Eyebrow — monospace brut */}
+        <p className="label-section mb-8 tracking-widest">
+          <span className="text-primary/60 mr-2">//</span>
+          {t("diagnostic SaaS · indépendant · gratuit", "saas diagnostic · independent · free")}
+        </p>
 
-        {/* Headline */}
+        {/* Headline — brutaliste, poids maximal */}
         <h1
           className="max-w-2xl"
-          style={{ fontSize: "clamp(2.4rem, 5vw, 4.2rem)", fontWeight: 600, letterSpacing: "-0.028em", lineHeight: 1.05 }}
+          style={{ fontSize: "clamp(2.8rem, 6vw, 5rem)", fontWeight: 800, letterSpacing: "-0.035em", lineHeight: 0.98 }}
         >
-          <span className="text-foreground/90">
+          <span className="text-foreground">
             {t("Ta stack SaaS", "Your SaaS stack")}
           </span>
           <br />
-          <span
-            style={{
-              backgroundImage: "linear-gradient(135deg, hsl(224 76% 72%) 0%, hsl(200 85% 78%) 45%, hsl(224 76% 68%) 100%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              color: "transparent",
-            }}
-          >
+          <span className="text-primary">
             {t("te coûte trop cher.", "is costing you too much.")}
           </span>
         </h1>
 
-        {/* Sous-titre */}
+        {/* Sous-titre — mono, petit, dense */}
         <p
-          className="mx-auto mt-6 max-w-md"
+          className="mx-auto mt-7 max-w-sm font-mono"
           style={{
-            fontSize: "0.975rem",
-            color: "hsl(var(--muted-foreground) / 0.8)",
-            lineHeight: 1.7,
+            fontSize: "0.8rem",
+            color: "hsl(var(--muted-foreground) / 0.65)",
+            lineHeight: 1.8,
+            letterSpacing: "0.01em",
           }}
         >
           {t(
-            "Commence par ton outil le plus cher — le diagnostic fait le reste.",
-            "Start with your most expensive tool — the diagnostic does the rest."
+            "→ commence par ton outil le plus cher — le diagnostic fait le reste.",
+            "→ start with your most expensive tool — the diagnostic does the rest."
           )}
         </p>
 
         {/* Zone interactive */}
         <div className="mt-10 w-full max-w-lg">
 
-          {/* Search input */}
+          {/* Search input — brutal */}
           <div className="relative mb-5">
             <Search
-              className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2"
-              style={{ color: "hsl(var(--primary) / 0.5)" }}
+              className="pointer-events-none absolute left-4 top-1/2 h-3.5 w-3.5 -translate-y-1/2"
+              style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}
             />
             <input
               ref={inputRef}
@@ -239,20 +219,14 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleSearchKey}
-              placeholder={t("Quel outil veux-tu analyser ?", "Which tool do you want to analyze?")}
-              className="w-full rounded-xl border bg-card/60 py-3.5 pl-11 pr-4 text-sm text-foreground placeholder:text-muted-foreground/35 outline-none backdrop-blur-sm transition-all duration-200"
+              placeholder={t("quel outil veux-tu analyser ?", "which tool do you want to analyze?")}
+              className="w-full border-2 bg-card py-3.5 pl-11 pr-4 text-sm text-foreground placeholder:text-muted-foreground/30 outline-none font-mono transition-colors duration-150"
               style={{
+                borderRadius: "2px",
                 borderColor: "hsl(var(--border))",
-                boxShadow: "0 0 0 1px hsl(224 76% 60% / 0.08), 0 2px 12px hsl(0 0% 0% / 0.25)",
               }}
-              onFocus={(e) => {
-                e.currentTarget.style.borderColor = "hsl(224 76% 60% / 0.5)";
-                e.currentTarget.style.boxShadow = "0 0 0 3px hsl(224 76% 60% / 0.12), 0 2px 12px hsl(0 0% 0% / 0.25)";
-              }}
-              onBlur={(e) => {
-                e.currentTarget.style.borderColor = "hsl(var(--border))";
-                e.currentTarget.style.boxShadow = "0 0 0 1px hsl(224 76% 60% / 0.08), 0 2px 12px hsl(0 0% 0% / 0.25)";
-              }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary))"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; }}
             />
           </div>
 
@@ -265,17 +239,15 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
                   <button
                     key={tool.id}
                     onClick={() => handleToolClick(tool)}
-                    className="group inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-foreground cursor-pointer transition-all duration-200 hover:-translate-y-px"
-                    style={{ boxShadow: "0 1px 4px hsl(0 0% 0% / 0.2)" }}
+                    className="group inline-flex items-center gap-2 border border-border bg-card px-3 py-1.5 text-xs font-mono text-foreground cursor-pointer transition-colors duration-100"
+                    style={{ borderRadius: "2px" }}
                     onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.boxShadow = "0 0 14px hsl(224 76% 60% / 0.25), 0 2px 8px hsl(0 0% 0% / 0.25)";
-                      (e.currentTarget as HTMLElement).style.borderColor = "hsl(224 76% 60% / 0.5)";
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "hsl(224 76% 60% / 0.06)";
+                      (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary))";
+                      (e.currentTarget as HTMLElement).style.color = "hsl(var(--primary))";
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.boxShadow = "0 1px 4px hsl(0 0% 0% / 0.2)";
                       (e.currentTarget as HTMLElement).style.borderColor = "";
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "";
+                      (e.currentTarget as HTMLElement).style.color = "";
                     }}
                   >
                     {domain && (

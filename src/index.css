@@ -34,7 +34,7 @@
     --input: 220 13% 91%;
     --ring: 224 76% 53%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
     --savings: 224 76% 53%;
     --savings-foreground: 0 0% 100%;
@@ -54,24 +54,23 @@
   }
 
   .dark {
-    /* Cursor-inspired dark system */
-    --background: 222 14% 5%;          /* #0A0B0F — noir froid, pas neutre */
-    --foreground: 0 0% 96%;            /* blanc doux */
+    --background: 0 0% 4%;             /* #0A0A0A — noir pur, brutal */
+    --foreground: 0 0% 95%;
 
-    --card: 222 14% 8%;                /* #0F1117 — légèrement plus clair */
-    --card-foreground: 0 0% 96%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222 14% 8%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 224 76% 60%;            /* bleu légèrement plus lumineux sur dark */
+    --primary: 224 76% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 14% 12%;          /* surfaces secondaires */
+    --secondary: 0 0% 9%;
     --secondary-foreground: 0 0% 90%;
 
-    --muted: 222 14% 12%;
-    --muted-foreground: 220 10% 52%;   /* texte de support — ni trop clair ni trop sombre */
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 45%;
 
     --accent: 224 50% 16%;
     --accent-foreground: 224 76% 72%;
@@ -79,8 +78,8 @@
     --destructive: 0 62% 40%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 14% 13%;             /* bords très discrets */
-    --input: 222 14% 13%;
+    --border: 0 0% 14%;              /* bords plus visibles — brutal */
+    --input: 0 0% 14%;
     --ring: 224 76% 60%;
 
     --keep: 142 55% 42%;
@@ -90,15 +89,45 @@
     --savings: 224 76% 60%;
     --savings-foreground: 0 0% 100%;
 
-    --sidebar-background: 222 14% 5%;
+    --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 90%;
     --sidebar-primary: 224 76% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 14% 10%;
+    --sidebar-accent: 0 0% 8%;
     --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 222 14% 13%;
+    --sidebar-border: 0 0% 14%;
     --sidebar-ring: 224 76% 60%;
   }
+}
+
+/* ─── Film grain animé ─── */
+@keyframes grain {
+  0%,100% { transform: translate(0,0); }
+  10%     { transform: translate(-2%,-3%); }
+  20%     { transform: translate(3%, 2%); }
+  30%     { transform: translate(-1%, 5%); }
+  40%     { transform: translate(4%,-2%); }
+  50%     { transform: translate(-3%, 1%); }
+  60%     { transform: translate(2%, 4%); }
+  70%     { transform: translate(-4%,-1%); }
+  80%     { transform: translate(1%,-4%); }
+  90%     { transform: translate(3%, 3%); }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: grain 0.35s steps(1) infinite;
 }
 
 @layer base {
@@ -113,16 +142,15 @@
     letter-spacing: 0.01em;
   }
 
-  /* Typographie calibrée — poids et tracking précis par niveau */
   h1 {
-    font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: -0.022em;
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
   }
   h2 {
     font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.018em;
+    line-height: 1.12;
+    letter-spacing: -0.022em;
   }
   h3 {
     font-weight: 500;
@@ -142,21 +170,29 @@
 }
 
 @layer utilities {
-  /* Label section — signature ToolTrim */
+  /* Label — monospace brut, signature ToolTrim */
   .label-section {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.11em;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: hsl(var(--muted-foreground) / 0.55);
+    color: hsl(var(--muted-foreground) / 0.5);
   }
 
-  /* Gradient text — headline accent */
+  /* Gradient text */
   .text-gradient {
     background-image: linear-gradient(135deg, hsl(224 76% 72%) 0%, hsl(200 85% 78%) 45%, hsl(224 76% 68%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+  }
+
+  /* Mono number — chiffres bruts */
+  .num-brutal {
+    font-family: 'DM Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
   }
 }
