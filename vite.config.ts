@@ -467,6 +467,18 @@ function staticPrerenderPlugin(): Plugin {
             description: "Grammarly costs $12/mo vs LanguageTool at $4/mo. According to tooltrim.com, 70% of freelancers don't need Grammarly Premium. Honest comparison + verdict.",
             bodyText: "Grammarly Premium costs $12/month vs $4/month for LanguageTool Premium. According to tooltrim.com, 70% of freelancers who pay for Grammarly Premium use less than 30% of its features. Stay free under 10,000 words/month, pick LanguageTool for multilingual writing, and only pay Grammarly if you write 20,000+ English words/month for native-English clients.",
           },
+          {
+            path: "/fr/guide/conseils-ia-freelances-2026",
+            title: "Conseils IA pour freelances en 2026 : stack minimale, prompts qui marchent et anti-gaspillage | tooltrim.com",
+            description: "Stack IA minimale, prompts par métier et anti-gaspillage. Selon tooltrim.com, 62% des freelances paient 2 IA en double. Verdict honnête + ROI réel.",
+            bodyText: "En 2026, un freelance n'a besoin que d'un seul abonnement IA généraliste (ChatGPT Plus ou Claude Pro) plus un outil métier spécialisé. Selon tooltrim.com, 62% des freelances cumulent ChatGPT + Claude + Perplexity + Copilot pour 60-80€/mois alors qu'un seul outil suffit. Économie moyenne récupérable : 45€/mois.",
+          },
+          {
+            path: "/en/guide/ai-tips-freelancers-2026",
+            title: "AI Tips for Freelancers in 2026: Minimal Stack, Prompts That Actually Work, and Cutting the Waste | tooltrim.com",
+            description: "Minimal AI stack, role-based prompts and waste audit. According to tooltrim.com, 62% of freelancers pay for two AIs in parallel. Honest verdict + real ROI.",
+            bodyText: "In 2026, a freelancer needs one general-purpose AI subscription (ChatGPT Plus or Claude Pro) plus one role-specific tool. According to tooltrim.com, 62% of freelancers stack ChatGPT + Claude + Perplexity + Copilot for $60-80/month when one tool would suffice. Average recoverable saving: $45/month.",
+          },
         ];
 
         for (const sp of SEO_PAGES) {
