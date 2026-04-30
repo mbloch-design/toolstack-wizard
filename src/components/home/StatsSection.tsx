@@ -67,36 +67,23 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
         </div>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
 
           {/* Hero stat — billboard */}
           <div
-            className="md:row-span-2 rounded-2xl border border-primary/20 flex flex-col justify-center items-center text-center p-10 md:p-12 relative overflow-hidden"
-            style={{ background: "hsl(224 76% 60% / 0.06)" }}
+            className="md:row-span-2 border-2 border-primary/30 bg-card flex flex-col justify-center items-center text-center p-10 md:p-12"
+            style={{ borderRadius: "2px" }}
           >
-            {/* Glow behind number */}
-            <div className="pointer-events-none absolute inset-0" style={{
-              background: "radial-gradient(ellipse 70% 50% at 50% 55%, hsl(224 76% 60% / 0.18) 0%, transparent 70%)",
-            }} />
-            <p className="label-section mb-5 relative" style={{ color: "hsl(224 76% 68%)" }}>
+            <p className="label-section mb-5" style={{ color: "hsl(224 76% 68%)" }}>
               {t("Économies identifiées en moyenne", "Average savings identified")}
             </p>
             <p
-              className="leading-none relative"
-              style={{
-                fontSize: "clamp(4.5rem, 12vw, 7rem)",
-                fontWeight: 600,
-                letterSpacing: "-0.05em",
-                backgroundImage: "linear-gradient(135deg, hsl(224 76% 80%) 0%, hsl(200 85% 85%) 50%, hsl(224 76% 72%) 100%)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                color: "transparent",
-              }}
+              className="num-brutal leading-none text-primary"
+              style={{ fontSize: "clamp(4.5rem, 12vw, 7rem)", fontWeight: 800, letterSpacing: "-0.05em" }}
             >
               <span ref={counterRef}>0</span>€
             </p>
-            <p className="mt-5 max-w-[240px] text-sm leading-relaxed relative" style={{ color: "hsl(var(--muted-foreground))" }}>
+            <p className="mt-5 max-w-[240px] text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
               {t("par freelance et par an, sur des abonnements déjà actifs.", "per freelancer per year, on already active subscriptions.")}
             </p>
           </div>
@@ -105,26 +92,22 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
           {subStats.map((s, i) => (
             <div
               key={i}
-              className="group rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm p-7 flex flex-col justify-between cursor-default transition-all duration-200"
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px hsl(224 76% 60% / 0.12), 0 4px 16px hsl(0 0% 0% / 0.25)";
-                (e.currentTarget as HTMLElement).style.borderColor = "hsl(224 76% 60% / 0.3)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "";
-                (e.currentTarget as HTMLElement).style.borderColor = "";
-              }}
+              className="bg-card border border-border p-7 flex flex-col justify-between cursor-default"
+              style={{ borderRadius: "2px" }}
             >
               <div>
                 <p
-                  className="text-primary leading-none"
-                  style={{ fontSize: "clamp(2.2rem, 4vw, 3rem)", fontWeight: 600, letterSpacing: "-0.03em" }}
+                  className="num-brutal text-primary leading-none"
+                  style={{ fontSize: "clamp(2.2rem, 4vw, 3rem)", fontWeight: 700, letterSpacing: "-0.03em" }}
                 >
                   {s.value}
                 </p>
                 <p className="mt-2 text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>{s.label}</p>
               </div>
-              <span className="mt-5 inline-flex w-fit items-center rounded-full border border-primary/15 bg-primary/5 px-3 py-1 text-[11px] font-medium tracking-wide text-primary">
+              <span
+                className="mt-5 inline-flex w-fit items-center border border-primary/20 bg-primary/5 px-2.5 py-0.5 text-[11px] font-mono tracking-wide text-primary"
+                style={{ borderRadius: "2px" }}
+              >
                 {s.chip}
               </span>
             </div>

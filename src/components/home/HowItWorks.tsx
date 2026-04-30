@@ -79,15 +79,10 @@ const HowItWorks = () => {
             return (
               <div
                 key={i}
-                className="group rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm overflow-hidden transition-all duration-200"
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 24px hsl(224 76% 60% / 0.10), 0 4px 20px hsl(0 0% 0% / 0.2)";
-                  (e.currentTarget as HTMLElement).style.borderColor = "hsl(224 76% 60% / 0.3)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = "";
-                  (e.currentTarget as HTMLElement).style.borderColor = "";
-                }}
+                className="group border border-border bg-card overflow-hidden transition-colors duration-150"
+                style={{ borderRadius: "2px" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.5)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = ""; }}
               >
                 <div className="grid md:grid-cols-[72px_1fr_1fr] items-stretch">
 
@@ -104,7 +99,7 @@ const HowItWorks = () => {
                   {/* Content */}
                   <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border/40">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <div className="flex h-9 w-9 items-center justify-center bg-primary/10 text-primary" style={{ borderRadius: "2px" }}>
                         <Icon className="h-4 w-4" />
                       </div>
                       <span className="md:hidden text-xs font-semibold text-primary/40">{step.num}</span>
@@ -127,7 +122,7 @@ const HowItWorks = () => {
                               {row.values.map((v, vi) => (
                                 <span
                                   key={v}
-                                  className={`rounded-md border px-2 py-0.5 text-xs font-medium ${
+                                  className={`border px-2 py-0.5 text-xs font-mono ${
                                     vi === 0
                                       ? "border-primary/20 bg-primary/10 text-primary"
                                       : "border-border/40 bg-secondary/50 text-muted-foreground/40"
@@ -158,14 +153,8 @@ const HowItWorks = () => {
         <div className="mt-12 text-center">
           <Link
             to={`${prefix}/selector`}
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-px"
-            style={{ boxShadow: "0 0 20px hsl(224 76% 60% / 0.25), 0 2px 10px hsl(0 0% 0% / 0.3)" }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 32px hsl(224 76% 60% / 0.4), 0 4px 16px hsl(0 0% 0% / 0.3)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px hsl(224 76% 60% / 0.25), 0 2px 10px hsl(0 0% 0% / 0.3)";
-            }}
+            className="inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-mono font-medium text-primary-foreground transition-colors duration-150 hover:bg-primary/90"
+            style={{ borderRadius: "2px" }}
           >
             {t("Lancer mon analyse gratuite", "Start my free analysis")}
             <ArrowRight className="h-3.5 w-3.5" />

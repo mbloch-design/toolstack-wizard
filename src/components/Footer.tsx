@@ -30,14 +30,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to={prefix} className="flex items-center gap-2">
-              <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7 rounded-md" />
-              <span style={{ fontSize: "1rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                <span className="text-foreground/75">Tool</span><span style={{
-                  backgroundImage: "linear-gradient(135deg, hsl(224 76% 68%), hsl(200 85% 75%))",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}>trim</span>
+              <img src={pictoLogo} alt="ToolTrim" className="h-7 w-7" style={{ borderRadius: "2px" }} />
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.04em" }}>
+                <span className="text-foreground/50">TOOL</span><span className="text-primary">TRIM</span>
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-xs">
