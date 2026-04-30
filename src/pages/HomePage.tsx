@@ -98,10 +98,10 @@ const HomePage = () => {
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
+              <p className="label-section mb-3">
                 {t("Catalogue", "Catalog")}
               </p>
-              <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">{t("Catégories ", "Tool ")}<em className="text-primary italic">{t("d'outils", "categories")}</em></h2>
+              <h2 className="text-2xl font-semibold">{t("Catégories ", "Tool ")}<em className="text-primary italic">{t("d'outils", "categories")}</em></h2>
               <p className="mt-2 text-muted-foreground">{t(`${stats.categories} catégories couvrant tous les besoins de votre activité.`, `${stats.categories} categories covering all your business needs.`)}</p>
             </div>
             <Link to={`${prefix}/category`} className="hidden md:inline-flex text-sm font-medium text-primary hover:underline">{t("Voir toutes →", "See all →")}</Link>
@@ -140,7 +140,7 @@ const HomePage = () => {
                   <BookOpen className="h-4 w-4" />
                   <span className="text-[10px] font-medium uppercase tracking-[0.14em]">{t("Ressources", "Resources")}</span>
                 </div>
-                <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">{t("Derniers ", "Latest ")}<em className="text-primary italic">{t("guides", "guides")}</em></h2>
+                <h2 className="text-2xl font-semibold">{t("Derniers ", "Latest ")}<em className="text-primary italic">{t("guides", "guides")}</em></h2>
                 <p className="mt-2 text-muted-foreground">{t("Comparatifs, tutoriels et conseils pour optimiser votre stack.", "Comparisons, tutorials and tips to optimize your stack.")}</p>
               </div>
               <Link to={`${prefix}/guides`} className="text-sm font-medium text-primary hover:underline">{t("Tous les guides", "All guides")} →</Link>
@@ -157,7 +157,7 @@ const HomePage = () => {
       {/* 10. FAQ */}
       <section className="border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px] text-center">{t("Questions ", "Frequently Asked ")}<em className="text-primary italic">{t("fréquentes", "Questions")}</em></h2>
+          <h2 className="text-2xl font-semibold text-center">{t("Questions ", "Frequently Asked ")}<em className="text-primary italic">{t("fréquentes", "Questions")}</em></h2>
           <div className="mt-10 space-y-4">
             {faq.map((item, i) => (
               <details key={i} className="group rounded-xl border border-border bg-card p-5">
