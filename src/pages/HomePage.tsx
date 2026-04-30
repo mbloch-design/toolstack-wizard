@@ -107,13 +107,12 @@ const HomePage = () => {
                 <Link
                   key={cat.id}
                   to={`${prefix}/category/${cat.slug}`}
-                  className="group border border-border bg-card p-5 cursor-pointer transition-colors duration-150"
-                  style={{ borderRadius: "2px" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.5)"; }}
+                  className="group rounded-xl border border-border bg-card p-5 cursor-pointer transition-colors duration-150"
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.4)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = ""; }}
                 >
                   <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/20" style={{ borderRadius: "2px" }}>
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/20">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -170,11 +169,10 @@ const HomePage = () => {
             {faq.map((item, i) => (
               <details
                 key={i}
-                className="group border border-border bg-card p-5 transition-colors duration-150 open:border-primary/30"
-                style={{ borderRadius: "2px" }}
+                className="group rounded-xl border border-border bg-card p-5 transition-colors duration-150 open:border-primary/25"
                 onMouseEnter={(e) => {
                   if (!(e.currentTarget as HTMLDetailsElement).open)
-                    (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.4)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.35)";
                 }}
                 onMouseLeave={(e) => {
                   if (!(e.currentTarget as HTMLDetailsElement).open)
@@ -212,16 +210,15 @@ function GuideCard({ post, prefix, tools }: { post: any; prefix: string; tools: 
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
-      className="group flex flex-col overflow-hidden border border-border bg-card transition-colors duration-150"
-      style={{ borderRadius: "2px" }}
-      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.5)"; }}
+      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors duration-150"
+      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.4)"; }}
       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = ""; }}
     >
       <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} px-4 py-6`}>
         {mentionedTools.length > 0 ? (
           <div className="flex items-center gap-2">
             {mentionedTools.slice(0, 4).map((tool) => (
-              <div key={tool.id} className="flex h-10 w-10 items-center justify-center border border-border bg-card" style={{ borderRadius: "2px" }}>
+              <div key={tool.id} className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card">
                 <img
                   src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=64`}
                   alt={tool.name}
@@ -232,7 +229,7 @@ function GuideCard({ post, prefix, tools }: { post: any; prefix: string; tools: 
               </div>
             ))}
             {mentionedTools.length > 4 && (
-              <div className="flex h-10 w-10 items-center justify-center border border-border bg-card text-xs font-mono font-bold text-muted-foreground" style={{ borderRadius: "2px" }}>
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-xs font-bold text-muted-foreground">
                 +{mentionedTools.length - 4}
               </div>
             )}
@@ -244,7 +241,7 @@ function GuideCard({ post, prefix, tools }: { post: any; prefix: string; tools: 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           {post.category && (
-            <span className="bg-primary/10 px-2 py-0.5 text-[10px] font-mono font-semibold text-primary" style={{ borderRadius: "2px" }}>{post.category}</span>
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold text-primary">{post.category}</span>
           )}
           <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime || "5 min"}</span>
         </div>

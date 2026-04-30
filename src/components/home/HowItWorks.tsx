@@ -79,9 +79,8 @@ const HowItWorks = () => {
             return (
               <div
                 key={i}
-                className="group border border-border bg-card overflow-hidden transition-colors duration-150"
-                style={{ borderRadius: "2px" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.5)"; }}
+                className="group rounded-xl border border-border bg-card overflow-hidden transition-colors duration-150"
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.4)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = ""; }}
               >
                 <div className="grid md:grid-cols-[72px_1fr_1fr] items-stretch">
@@ -99,7 +98,7 @@ const HowItWorks = () => {
                   {/* Content */}
                   <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border/40">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="flex h-9 w-9 items-center justify-center bg-primary/10 text-primary" style={{ borderRadius: "2px" }}>
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
                         <Icon className="h-4 w-4" />
                       </div>
                       <span className="md:hidden text-xs font-semibold text-primary/40">{step.num}</span>
@@ -122,7 +121,7 @@ const HowItWorks = () => {
                               {row.values.map((v, vi) => (
                                 <span
                                   key={v}
-                                  className={`border px-2 py-0.5 text-xs font-mono ${
+                                  className={`rounded-md border px-2 py-0.5 text-xs font-medium ${
                                     vi === 0
                                       ? "border-primary/20 bg-primary/10 text-primary"
                                       : "border-border/40 bg-secondary/50 text-muted-foreground/40"
@@ -153,8 +152,7 @@ const HowItWorks = () => {
         <div className="mt-12 text-center">
           <Link
             to={`${prefix}/selector`}
-            className="inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-mono font-medium text-primary-foreground transition-colors duration-150 hover:bg-primary/90"
-            style={{ borderRadius: "2px" }}
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-colors duration-150 hover:bg-primary/90"
           >
             {t("Lancer mon analyse gratuite", "Start my free analysis")}
             <ArrowRight className="h-3.5 w-3.5" />

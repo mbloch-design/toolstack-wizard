@@ -1,4 +1,4 @@
-/* Fonts loaded via <link> in index.html to avoid MIME type issues */
+/* Fonts loaded via <link> in index.html */
 
 @tailwind base;
 @tailwind components;
@@ -6,80 +6,80 @@
 
 @layer base {
   :root {
-    --background: 40 15% 97%;       /* off-white chaud — signature éditoriale */
-    --foreground: 0 0% 7%;          /* quasi-noir */
+    --background: 0 0% 99%;
+    --foreground: 0 0% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 224 76% 48%;         /* bleu dense sur fond clair */
+    --primary: 224 76% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 12% 93%;
-    --secondary-foreground: 0 0% 7%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 40 12% 93%;
-    --muted-foreground: 220 8% 42%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 224 76% 94%;
-    --accent-foreground: 224 76% 40%;
+    --accent: 224 76% 95%;
+    --accent-foreground: 224 76% 44%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 86%;          /* bordures douces mais visibles */
-    --input: 220 10% 86%;
-    --ring: 224 76% 48%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 76% 50%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
-    --savings: 224 76% 48%;
+    --savings: 224 76% 50%;
     --savings-foreground: 0 0% 100%;
     --cancel: 0 72% 55%;
     --cancel-foreground: 0 0% 100%;
-    --keep: 142 60% 35%;
+    --keep: 142 60% 38%;
     --keep-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 8% 42%;
-    --sidebar-primary: 224 76% 48%;
+    --sidebar-foreground: 220 9% 46%;
+    --sidebar-primary: 224 76% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 12% 93%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 220 10% 86%;
-    --sidebar-ring: 224 76% 48%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 224 76% 50%;
   }
 
   .dark {
-    --background: 0 0% 4%;             /* #0A0A0A — noir pur, brutal */
-    --foreground: 0 0% 95%;
+    --background: 0 0% 5%;        /* #0D0D0D — Linear-style near-black */
+    --foreground: 0 0% 93%;       /* #EDEDED */
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 7%;              /* #121212 */
+    --card-foreground: 0 0% 93%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 93%;
 
     --primary: 224 76% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 9%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary-foreground: 0 0% 88%;
 
     --muted: 0 0% 9%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 50%;  /* #808080 */
 
-    --accent: 224 50% 16%;
+    --accent: 224 40% 14%;
     --accent-foreground: 224 76% 72%;
 
-    --destructive: 0 62% 40%;
+    --destructive: 0 62% 42%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 14%;              /* bords plus visibles — brutal */
-    --input: 0 0% 14%;
+    --border: 0 0% 13%;            /* #212121 — subtil, pas brutal */
+    --input: 0 0% 13%;
     --ring: 224 76% 60%;
 
     --keep: 142 55% 42%;
@@ -89,18 +89,16 @@
     --savings: 224 76% 60%;
     --savings-foreground: 0 0% 100%;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 90%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 88%;
     --sidebar-primary: 224 76% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 8%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 0 0% 14%;
+    --sidebar-accent: 0 0% 9%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 0 0% 13%;
     --sidebar-ring: 224 76% 60%;
   }
 }
-
-/* ─── Pas de grain — esthétique éditoriale clean ─── */
 
 @layer base {
   * {
@@ -108,31 +106,37 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
     font-size: 15px;
     line-height: 1.65;
     letter-spacing: 0.01em;
   }
 
+  /* Bricolage Grotesque pour tous les titres */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;
+  }
+
   h1 {
-    font-weight: 700;
-    line-height: 1.06;
-    letter-spacing: -0.03em;
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
   }
   h2 {
-    font-weight: 600;
-    line-height: 1.12;
-    letter-spacing: -0.022em;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
   }
   h3 {
-    font-weight: 500;
-    line-height: 1.3;
-    letter-spacing: -0.012em;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
   }
   h4, h5, h6 {
     font-weight: 500;
     line-height: 1.4;
-    letter-spacing: -0.008em;
+    letter-spacing: -0.01em;
   }
 
   p {
@@ -142,29 +146,34 @@
 }
 
 @layer utilities {
-  /* Label — monospace brut, signature ToolTrim */
+  /* Label section — DM Mono, signature ToolTrim */
   .label-section {
     font-family: 'DM Mono', monospace;
     font-size: 0.65rem;
     font-weight: 400;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: hsl(var(--muted-foreground) / 0.5);
+    color: hsl(var(--muted-foreground) / 0.6);
   }
 
-  /* Gradient text */
+  /* Headline display — Bricolage Grotesque explicit */
+  .font-display {
+    font-family: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;
+  }
+
+  /* Mono numbers */
+  .num-mono {
+    font-family: 'DM Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+  }
+
+  /* Subtle gradient text pour les accents */
   .text-gradient {
-    background-image: linear-gradient(135deg, hsl(224 76% 72%) 0%, hsl(200 85% 78%) 45%, hsl(224 76% 68%) 100%);
+    background-image: linear-gradient(135deg, hsl(224 76% 72%) 0%, hsl(210 90% 78%) 50%, hsl(224 76% 68%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-  }
-
-  /* Mono number — chiffres bruts */
-  .num-brutal {
-    font-family: 'DM Mono', monospace;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.04em;
   }
 }
