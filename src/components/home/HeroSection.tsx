@@ -226,8 +226,18 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
                   <button
                     key={tool.id}
                     onClick={() => handleToolClick(tool)}
-                    className="group inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-foreground transition-all duration-150 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-px"
+                    className="group inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-foreground cursor-pointer transition-all duration-200 hover:-translate-y-px"
                     style={{ boxShadow: "0 1px 4px hsl(0 0% 0% / 0.2)" }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.boxShadow = "0 0 14px hsl(224 76% 60% / 0.25), 0 2px 8px hsl(0 0% 0% / 0.25)";
+                      (e.currentTarget as HTMLElement).style.borderColor = "hsl(224 76% 60% / 0.5)";
+                      (e.currentTarget as HTMLElement).style.backgroundColor = "hsl(224 76% 60% / 0.06)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.boxShadow = "0 1px 4px hsl(0 0% 0% / 0.2)";
+                      (e.currentTarget as HTMLElement).style.borderColor = "";
+                      (e.currentTarget as HTMLElement).style.backgroundColor = "";
+                    }}
                   >
                     {domain && (
                       <img

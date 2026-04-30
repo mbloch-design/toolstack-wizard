@@ -12,10 +12,7 @@ import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
 
-const PersonaGuidesSection = lazy(() => import("@/components/PersonaGuidesSection"));
-const ScannerDemo = lazy(() => import("@/components/home/ScannerDemo"));
 const HowItWorks = lazy(() => import("@/components/home/HowItWorks"));
-const PersonasSection = lazy(() => import("@/components/home/PersonasSection"));
 const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSection"));
 const DiffTable = lazy(() => import("@/components/home/DiffTable"));
 const FinalCTA = lazy(() => import("@/components/home/FinalCTA"));
@@ -78,74 +75,91 @@ const HomePage = () => {
       {/* 3. Stats */}
       <StatsSection toolCount={stats.total} categoryCount={stats.categories} />
 
-      {/* 4. Interactive Scanner Demo */}
-      <Suspense fallback={null}><ScannerDemo /></Suspense>
-
-      {/* 5. How it works */}
+      {/* 4. How it works */}
       <Suspense fallback={null}><HowItWorks /></Suspense>
 
-      {/* 6. Differentiator — "not a directory, a diagnostic" */}
+      {/* 5. Differentiator */}
       <Suspense fallback={null}><DiffTable toolCount={stats.total} /></Suspense>
 
-      {/* 7. Personas — "is this for me?" */}
-      <Suspense fallback={null}><PersonasSection /></Suspense>
-
-      {/* 8. Testimonials */}
+      {/* 6. Testimonials */}
       <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
-      {/* 9. Categories */}
-      <section className="border-t border-border py-20">
+      {/* 7. Categories */}
+      <section className="border-t border-border py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="flex items-end justify-between">
+          <div className="flex items-end justify-between mb-10">
             <div>
-              <p className="label-section mb-3">
-                {t("Catalogue", "Catalog")}
+              <p className="label-section mb-3">{t("Catalogue", "Catalog")}</p>
+              <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.02em" }}>
+                {t("Catégories ", "Tool ")}<em className="text-primary not-italic">{t("d'outils", "categories")}</em>
+              </h2>
+              <p className="mt-2 text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {t(`${stats.categories} catégories couvrant tous les besoins de votre activité.`, `${stats.categories} categories covering all your business needs.`)}
               </p>
-              <h2 className="text-2xl font-semibold">{t("Catégories ", "Tool ")}<em className="text-primary italic">{t("d'outils", "categories")}</em></h2>
-              <p className="mt-2 text-muted-foreground">{t(`${stats.categories} catégories couvrant tous les besoins de votre activité.`, `${stats.categories} categories covering all your business needs.`)}</p>
             </div>
             <Link to={`${prefix}/category`} className="hidden md:inline-flex text-sm font-medium text-primary hover:underline">{t("Voir toutes →", "See all →")}</Link>
           </div>
-          <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {categories.map((cat) => {
               const Icon = getCategoryIcon(cat.id);
               const count = tools.filter((tool) => tool.categoryId === cat.id).length;
               return (
-                <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} className="group rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-5 transition-all duration-300 hover:bg-card hover:border-primary/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5">
+                <Link
+                  key={cat.id}
+                  to={`${prefix}/category/${cat.slug}`}
+                  className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm p-5 transition-all duration-250 cursor-pointer hover:-translate-y-0.5"
+                  style={{ transition: "transform 200ms, box-shadow 200ms, border-color 200ms, background-color 200ms" }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px hsl(224 76% 60% / 0.15), 0 4px 16px hsl(0 0% 0% / 0.3)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "hsl(224 76% 60% / 0.4)";
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "hsl(var(--card) / 0.7)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.boxShadow = "";
+                    (e.currentTarget as HTMLElement).style.borderColor = "";
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "";
+                  }}
+                >
                   <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/15">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/20">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold tracking-tight group-hover:text-primary transition-colors truncate">{t(cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), cat.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""))}</p>
-                      <p className="mt-0.5 text-sm text-muted-foreground">{count} {t("outils", "tools")}</p>
+                      <p className="font-medium tracking-tight group-hover:text-primary transition-colors duration-200 truncate text-sm">
+                        {t(cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), cat.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""))}
+                      </p>
+                      <p className="mt-0.5 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>{count} {t("outils", "tools")}</p>
                     </div>
-                    <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground/40 transition-all duration-300 group-hover:text-primary group-hover:translate-x-1" />
+                    <ArrowRight className="h-3.5 w-3.5 shrink-0 opacity-30 transition-all duration-200 group-hover:opacity-100 group-hover:text-primary group-hover:translate-x-0.5" />
                   </div>
                 </Link>
               );
             })}
           </div>
-          <Link to={`${prefix}/category`} className="mt-4 inline-flex md:hidden text-sm font-medium text-primary hover:underline">{t("Voir toutes les catégories →", "See all categories →")}</Link>
+          <Link to={`${prefix}/category`} className="mt-5 inline-flex md:hidden text-sm font-medium text-primary hover:underline">{t("Voir toutes les catégories →", "See all categories →")}</Link>
         </div>
       </section>
 
-      {/* 9. Guides */}
+      {/* 8. Guides */}
       {featuredPosts.length > 0 && (
-        <section className="border-t border-border bg-secondary/20 py-20">
-          <div className="container mx-auto max-w-6xl">
-            <div className="flex items-end justify-between">
+        <section className="border-t border-border bg-secondary/20 py-24">
+          <div className="container mx-auto max-w-6xl px-6">
+            <div className="flex items-end justify-between mb-10">
               <div>
                 <div className="flex items-center gap-2 text-primary mb-3">
                   <BookOpen className="h-4 w-4" />
-                  <span className="text-[10px] font-medium uppercase tracking-[0.14em]">{t("Ressources", "Resources")}</span>
+                  <span className="label-section">{t("Ressources", "Resources")}</span>
                 </div>
-                <h2 className="text-2xl font-semibold">{t("Derniers ", "Latest ")}<em className="text-primary italic">{t("guides", "guides")}</em></h2>
-                <p className="mt-2 text-muted-foreground">{t("Comparatifs, tutoriels et conseils pour optimiser votre stack.", "Comparisons, tutorials and tips to optimize your stack.")}</p>
+                <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.02em" }}>
+                  {t("Derniers ", "Latest ")}<em className="text-primary not-italic">{t("guides", "guides")}</em>
+                </h2>
+                <p className="mt-2 text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
+                  {t("Comparatifs, tutoriels et conseils pour optimiser votre stack.", "Comparisons, tutorials and tips to optimize your stack.")}
+                </p>
               </div>
               <Link to={`${prefix}/guides`} className="text-sm font-medium text-primary hover:underline">{t("Tous les guides", "All guides")} →</Link>
             </div>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-3">
               {featuredPosts.map((post) => (
                 <GuideCard key={post.slug} post={post} prefix={prefix} tools={tools} />
               ))}
@@ -154,10 +168,12 @@ const HomePage = () => {
         </section>
       )}
 
-      {/* 10. FAQ */}
-      <section className="border-t border-border py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-semibold text-center">{t("Questions ", "Frequently Asked ")}<em className="text-primary italic">{t("fréquentes", "Questions")}</em></h2>
+      {/* 9. FAQ */}
+      <section className="border-t border-border py-24">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-center" style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.02em" }}>
+            {t("Questions ", "Frequently Asked ")}<em className="text-primary not-italic">{t("fréquentes", "Questions")}</em>
+          </h2>
           <div className="mt-10 space-y-4">
             {faq.map((item, i) => (
               <details key={i} className="group rounded-xl border border-border bg-card p-5">
@@ -174,10 +190,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 11. Persona guides (SEO pillar links) */}
-      <Suspense fallback={null}><PersonaGuidesSection lang={lang} /></Suspense>
-
-      {/* 12. Final CTA */}
+      {/* 9. Final CTA */}
       <Suspense fallback={null}><FinalCTA /></Suspense>
     </div>
   );
