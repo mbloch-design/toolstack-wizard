@@ -17,7 +17,7 @@ export default function ToolDiagCta({ tool, prefix, lang, t }: Props) {
       <div className="flex flex-col sm:flex-row sm:items-center gap-5">
         <div className="flex items-center gap-3 shrink-0">
           <div className="rounded-xl bg-background p-2 shadow-sm ring-1 ring-border">
-            <ToolLogo tool={tool} size={36} />
+            <ToolLogo tool={tool as any} size={36} />
           </div>
           <Sparkles className="h-5 w-5 text-primary shrink-0" />
         </div>
