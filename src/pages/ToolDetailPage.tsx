@@ -7,6 +7,7 @@ import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
+import { FEATURED_COMPARISONS } from "@/data/comparisons";
 
 // Reusable tool page components
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
@@ -405,6 +406,37 @@ const ToolDetailPage = () => {
                     className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium hover:border-primary/30 hover:text-primary transition-colors">
                     <ToolLogo tool={ct} size={20} />
                     {ct.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* ── SECTION 8c: Comparatifs ── */}
+        {(() => {
+          const toolId = tool.slug || tool.id;
+          const comparisons = FEATURED_COMPARISONS.filter(
+            c => c.toolA === toolId || c.toolB === toolId
+          );
+          if (comparisons.length === 0) return null;
+          const compareTools = comparisons.map(c => {
+            const otherId = c.toolA === toolId ? c.toolB : c.toolA;
+            const other = tools.find((t: any) => t.id === otherId || t.slug === otherId);
+            return other ? { slugPair: c.slugPair, other } : null;
+          }).filter(Boolean) as { slugPair: string; other: any }[];
+          if (compareTools.length === 0) return null;
+          return (
+            <div className="mt-10 border-t border-border pt-8">
+              <h2 className="text-lg font-bold tracking-tighter">
+                {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
+              </h2>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {compareTools.map(({ slugPair, other }) => (
+                  <Link key={slugPair} to={`${prefix}/comparatif/${slugPair}`}
+                    className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium hover:border-primary/30 hover:text-primary transition-colors">
+                    <ToolLogo tool={other} size={20} />
+                    {other.name}
                   </Link>
                 ))}
               </div>
