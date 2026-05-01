@@ -68,7 +68,7 @@ const ToolsPage = () => {
 
   // Filtered & sorted
   const filtered = useMemo(() => {
-    let result = tools.filter((tool) => {
+    const result = tools.filter((tool) => {
       const matchSearch = !search ||
         tool.name.toLowerCase().includes(search.toLowerCase()) ||
         tool.shortDescription.toLowerCase().includes(search.toLowerCase());

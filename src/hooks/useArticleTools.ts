@@ -2,11 +2,13 @@ import { useMemo } from "react";
 import type { Tool } from "@/data/types";
 import type { Post } from "@/hooks/useSupabaseData";
 
+type ArticleTool = Pick<Tool, "id" | "slug" | "name" | "websiteUrl" | "affiliateLink">;
+
 /**
  * Extracts tools mentioned in a post by matching tool names in content/title/tags.
  * Returns matched Tool objects sorted by relevance (title match first).
  */
-export function useArticleTools(post: Post | null, tools: Tool[]): Tool[] {
+export function useArticleTools<T extends ArticleTool>(post: Post | null, tools: T[]): T[] {
   return useMemo(() => {
     if (!post || tools.length === 0) return [];
 

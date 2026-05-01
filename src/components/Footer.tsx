@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useCategories, useTools } from "@/hooks/useSupabaseData";
+import { useCategories, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useMemo } from "react";
 import { ArrowRight } from "lucide-react";
 import pictoLogo from "@/assets/picto-logo.svg";
@@ -8,7 +8,7 @@ import pictoLogo from "@/assets/picto-logo.svg";
 const Footer = () => {
   const { t, prefix } = useLang();
   const { categories } = useCategories();
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
 
   const topCategories = useMemo(() => {
     return categories
@@ -17,10 +17,7 @@ const Footer = () => {
       .slice(0, 8);
   }, [categories, tools]);
 
-  const topTools = useMemo(() =>
-    [...tools].sort((a, b) => (b.pros?.length || 0) - (a.pros?.length || 0)).slice(0, 8),
-    [tools]
-  );
+  const topTools = useMemo(() => tools.slice(0, 8), [tools]);
 
   return (
     <footer className="border-t border-border" style={{ background: "hsl(var(--card))" }}>

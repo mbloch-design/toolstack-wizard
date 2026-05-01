@@ -926,6 +926,36 @@ export default defineConfig(({ mode }) => ({
     sitemapPlugin(),
     staticPrerenderPlugin(),
   ].filter(Boolean),
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("/src/data/tools_v4.json")) return "data-tools";
+          if (id.includes("/src/data/tools_index.json")) return "data-tool-index";
+          if (id.includes("/src/data/categories_index.json")) return "data-category-index";
+          if (id.includes("/src/data/content.json")) return "data-content";
+          if (id.includes("/src/data/posts-fr.json")) return "data-posts-fr";
+          if (id.includes("/src/data/posts-en.json")) return "data-posts-en";
+          if (id.includes("/src/data/")) return "data-catalog";
+          if (!id.includes("node_modules")) return undefined;
+
+          if (id.includes("@supabase")) return "vendor-supabase";
+          if (
+            id.includes("/react/") ||
+            id.includes("/react-dom/") ||
+            id.includes("/react-router-dom/") ||
+            id.includes("@tanstack/react-query")
+          ) {
+            return "vendor-react";
+          }
+          if (id.includes("@radix-ui")) return "vendor-radix";
+          if (id.includes("lucide-react")) return "vendor-icons";
+
+          return "vendor";
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -26,7 +26,9 @@ export default function DiagSaveIndicator({ session, t }: Props) {
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(serializable));
         setShowSaved(true);
         setTimeout(() => setShowSaved(false), 2000);
-      } catch {}
+      } catch {
+        // Autosave is best-effort; private browsing or full storage can fail.
+      }
     }, 2000);
 
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };

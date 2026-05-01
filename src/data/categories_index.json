@@ -1,0 +1,200 @@
+[
+  {
+    "id": "ai-general",
+    "slug": "ia-generaliste",
+    "name": "🤖 IA Généraliste",
+    "nameEn": "",
+    "description": "Les cerveaux numériques pour rédiger, chercher et brainstormer.",
+    "descriptionEn": "",
+    "tools": [
+      "chatgpt",
+      "claude",
+      "elevenlabs"
+    ]
+  },
+  {
+    "id": "organization",
+    "slug": "organisation",
+    "name": "✂️ Organisation",
+    "nameEn": "",
+    "description": "Mettre de l'ordre dans le chaos sans passer sa vie à configurer.",
+    "descriptionEn": "",
+    "tools": [
+      "notion"
+    ]
+  },
+  {
+    "id": "communication",
+    "slug": "communication",
+    "name": "💬 Communication",
+    "nameEn": "",
+    "description": "Gérer les clients et les réunions sans perdre son âme.",
+    "descriptionEn": "",
+    "tools": [
+      "calendly",
+      "loom",
+      "krispcall"
+    ]
+  },
+  {
+    "id": "creation",
+    "slug": "creation-design",
+    "name": "🎨 Création de contenu",
+    "nameEn": "",
+    "description": "Produire des visuels et des textes pros sans être graphiste.",
+    "descriptionEn": "",
+    "tools": [
+      "canva",
+      "grammarly",
+      "prezi",
+      "adcreative"
+    ]
+  },
+  {
+    "id": "finance",
+    "slug": "finance-facturation",
+    "name": "💰 Finance & Facturation",
+    "nameEn": "",
+    "description": "Se faire payer vite et rester en règle avec le fisc.",
+    "descriptionEn": "",
+    "tools": [
+      "stripe",
+      "indy",
+      "sellsy",
+      "megahr",
+      "ignition"
+    ]
+  },
+  {
+    "id": "storage",
+    "slug": "stockage",
+    "name": "Stockage",
+    "nameEn": "",
+    "description": "Garder ses fichiers en sécurité et accessibles partout.",
+    "descriptionEn": "",
+    "tools": [
+      "google-drive"
+    ]
+  },
+  {
+    "id": "automation",
+    "slug": "automatisation",
+    "name": "Automatisation",
+    "nameEn": "",
+    "description": "Faire travailler les robots à votre place.",
+    "descriptionEn": "",
+    "tools": [
+      "make",
+      "base44",
+      "turbotic"
+    ]
+  },
+  {
+    "id": "project-management",
+    "slug": "gestion-projet",
+    "name": "📋 Gestion de Projet",
+    "nameEn": "",
+    "description": "Organiser les tâches et collaborer efficacement.",
+    "descriptionEn": "",
+    "tools": [
+      "clickup",
+      "trello",
+      "airtable"
+    ]
+  },
+  {
+    "id": "email-productivity",
+    "slug": "email-marketing",
+    "name": "📧 Email & Marketing",
+    "nameEn": "",
+    "description": "Maîtriser sa boîte mail et automatiser le marketing.",
+    "descriptionEn": "",
+    "tools": [
+      "sanebox",
+      "getresponse",
+      "mailchimp",
+      "replyio",
+      "convertkit"
+    ]
+  },
+  {
+    "id": "communication-team",
+    "slug": "communication-equipe",
+    "name": "💬 Communication Équipe",
+    "nameEn": "",
+    "description": "Collaborer et échanger efficacement avec clients et partenaires.",
+    "descriptionEn": "",
+    "tools": [
+      "slack"
+    ]
+  },
+  {
+    "id": "design-tools",
+    "slug": "design-prototypage",
+    "name": "🎨 Design & Prototypage",
+    "nameEn": "",
+    "description": "Créer des interfaces et maquettes professionnelles.",
+    "descriptionEn": "",
+    "tools": [
+      "figma",
+      "pitch",
+      "logomeai"
+    ]
+  },
+  {
+    "id": "security",
+    "slug": "securite",
+    "name": "🔐 Sécurité",
+    "nameEn": "",
+    "description": "Protéger ses données et gérer ses mots de passe en toute sécurité.",
+    "descriptionEn": "",
+    "tools": [
+      "1password"
+    ]
+  },
+  {
+    "id": "productivity-tracking",
+    "slug": "suivi-temps",
+    "name": "⏱️ Suivi du Temps",
+    "nameEn": "",
+    "description": "Tracker son temps pour facturer au juste prix.",
+    "descriptionEn": "",
+    "tools": [
+      "toggl"
+    ]
+  },
+  {
+    "id": "nocode-web",
+    "slug": "nocode-web",
+    "name": "🚀 No-Code & Web",
+    "nameEn": "",
+    "description": "Créer des sites web sans coder.",
+    "descriptionEn": "",
+    "tools": [
+      "webflow",
+      "landingi"
+    ]
+  },
+  {
+    "id": "analytics",
+    "slug": "analytics",
+    "name": "📈 Analytics",
+    "nameEn": "",
+    "description": "Analyser le trafic de son site en respectant la vie privée.",
+    "descriptionEn": "",
+    "tools": [
+      "plausible"
+    ]
+  },
+  {
+    "id": "formation-education",
+    "slug": "formation-education",
+    "name": "📚 Formation & Éducation",
+    "nameEn": "",
+    "description": "Plateformes pour créer et vendre des cours en ligne, former vos clients ou monétiser votre expertise.",
+    "descriptionEn": "",
+    "tools": [
+      "learnworlds"
+    ]
+  }
+]

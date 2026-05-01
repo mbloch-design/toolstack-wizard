@@ -1,0 +1,4988 @@
+[
+  {
+    "id": "chatgpt",
+    "slug": "chatgpt",
+    "name": "ChatGPT",
+    "categoryId": "ai-general",
+    "shortDescription": "L'IA conversationnelle de référence.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "GPT-3.5/4o-mini, accès standard",
+      "paid": "20$/mois (Plus) pour GPT-4o, o1, analyse données"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://chat.openai.com",
+    "websiteUrl": "https://chat.openai.com",
+    "logo": ""
+  },
+  {
+    "id": "claude",
+    "slug": "claude",
+    "name": "Claude",
+    "categoryId": "ai-general",
+    "shortDescription": "L'IA qui écrit comme un humain.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Claude 3.5 Sonnet (limité)",
+      "paid": "20$/mois (Pro) pour usage illimité et modèles Opus"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://anthropic.com",
+    "websiteUrl": "https://anthropic.com",
+    "logo": ""
+  },
+  {
+    "id": "notion",
+    "slug": "notion",
+    "name": "Notion",
+    "categoryId": "organization",
+    "shortDescription": "Le cerveau externe tout-en-un.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité pour individus",
+      "paid": "10$/mois (Plus) pour historique illimité et uploads > 5Mo"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://notion.so",
+    "websiteUrl": "https://notion.so",
+    "logo": ""
+  },
+  {
+    "id": "calendly",
+    "slug": "calendly",
+    "name": "Calendly",
+    "categoryId": "communication",
+    "shortDescription": "La fin des emails 'tu es dispo quand ?'.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "1 type d'événement",
+      "paid": "10$/mois (Standard) pour types illimités et workflows"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://calendly.com",
+    "websiteUrl": "https://calendly.com",
+    "logo": ""
+  },
+  {
+    "id": "loom",
+    "slug": "loom",
+    "name": "Loom",
+    "categoryId": "communication",
+    "shortDescription": "Outil d'enregistrement vidéo asynchrone. Selon tooltrim.com, le plan Starter coûte 12,50$/mois — rentable à partir de 3 vidéos clients/semaine.",
+    "shortDescriptionEn": "Async video recording tool. According to tooltrim.com, Starter costs $12.50/month — worth it from 3 client videos per week.",
+    "pricing": {
+      "free": "25 vidéos de 5 min max",
+      "paid": "12.50$/mois pour illimité"
+    },
+    "defaultMonthlyPrice": 12.5,
+    "affiliateLink": "https://loom.com",
+    "websiteUrl": "https://loom.com",
+    "logo": ""
+  },
+  {
+    "id": "canva",
+    "slug": "canva",
+    "name": "Canva",
+    "categoryId": "creation",
+    "shortDescription": "Le design pour les non-designers.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Accès limité aux assets",
+      "paid": "12$/mois (Pro) pour tout illimité et outils IA"
+    },
+    "defaultMonthlyPrice": 13,
+    "affiliateLink": "https://canva.com",
+    "websiteUrl": "https://canva.com",
+    "logo": ""
+  },
+  {
+    "id": "grammarly",
+    "slug": "grammarly",
+    "name": "Grammarly",
+    "categoryId": "creation",
+    "shortDescription": "Votre correcteur d'anglais personnel.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Correction orthographe/grammaire de base",
+      "paid": "12$/mois (Premium) pour style, ton et clarté"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "https://grammarly.com",
+    "websiteUrl": "https://grammarly.com",
+    "logo": ""
+  },
+  {
+    "id": "stripe",
+    "slug": "stripe",
+    "name": "Stripe",
+    "categoryId": "finance",
+    "shortDescription": "L'infrastructure de paiement d'internet.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Pas d'abonnement",
+      "paid": "Commission par transaction (1.5% + 0.25€ en UE)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://stripe.com",
+    "websiteUrl": "https://stripe.com",
+    "logo": ""
+  },
+  {
+    "id": "indy",
+    "slug": "indy",
+    "name": "Indy",
+    "categoryId": "finance",
+    "shortDescription": "Compta et facturation automatisées pour indépendants.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Formule gratuite très complète",
+      "paid": "20€/mois pour déclarations automatisées"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://indy.fr",
+    "websiteUrl": "https://indy.fr",
+    "logo": ""
+  },
+  {
+    "id": "google-drive",
+    "slug": "google-drive",
+    "name": "Google Drive",
+    "categoryId": "storage",
+    "shortDescription": "Le standard du stockage cloud.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "15 Go",
+      "paid": "2$/mois pour 100 Go"
+    },
+    "defaultMonthlyPrice": 2,
+    "affiliateLink": "https://google.com/drive",
+    "websiteUrl": "https://google.com/drive",
+    "logo": ""
+  },
+  {
+    "id": "perplexity",
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "categoryId": "ai-general",
+    "shortDescription": "Le moteur de recherche du futur.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Recherche standard illimitée",
+      "paid": "20$/mois (Pro) pour modèles avancés (Claude 3, GPT-4o)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://perplexity.ai",
+    "websiteUrl": "https://perplexity.ai",
+    "logo": ""
+  },
+  {
+    "id": "tally",
+    "slug": "tally",
+    "name": "Tally",
+    "categoryId": "communication",
+    "shortDescription": "Le Typeform gratuit (en mieux).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "99% des fonctionnalités (illimité)",
+      "paid": "29$/mois pour équipe et domaine perso"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://tally.so",
+    "websiteUrl": "https://tally.so",
+    "logo": ""
+  },
+  {
+    "id": "todoist",
+    "slug": "todoist",
+    "name": "Todoist",
+    "categoryId": "organization",
+    "shortDescription": "La to-do list pure et dure.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "5 projets actifs",
+      "paid": "4$/mois pour projets illimités et rappels"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://todoist.com",
+    "websiteUrl": "https://todoist.com",
+    "logo": ""
+  },
+  {
+    "id": "obsidian",
+    "slug": "obsidian",
+    "name": "Obsidian",
+    "categoryId": "organization",
+    "shortDescription": "Votre second cerveau, en local.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "100% gratuit pour usage personnel",
+      "paid": "Sync (8$/mois) pour synchro facile entre appareils"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://obsidian.md",
+    "websiteUrl": "https://obsidian.md",
+    "logo": ""
+  },
+  {
+    "id": "make",
+    "slug": "make",
+    "name": "Make",
+    "categoryId": "automation",
+    "shortDescription": "L'automatisation visuelle sans limite.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "1000 opérations/mois",
+      "paid": "9$/mois pour plus de volume"
+    },
+    "defaultMonthlyPrice": 9,
+    "affiliateLink": "https://make.com",
+    "websiteUrl": "https://make.com",
+    "logo": ""
+  },
+  {
+    "id": "raycast",
+    "slug": "raycast",
+    "name": "Raycast",
+    "categoryId": "organization",
+    "shortDescription": "Le lanceur d'applications qui remplace 10 outils.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "100% gratuit pour usage personnel",
+      "paid": "8$/mois pour l'IA intégrée"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://raycast.com",
+    "websiteUrl": "https://raycast.com",
+    "logo": ""
+  },
+  {
+    "id": "superhuman",
+    "slug": "superhuman",
+    "name": "Superhuman",
+    "categoryId": "communication",
+    "shortDescription": "L'expérience email la plus rapide au monde.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Aucune version gratuite",
+      "paid": "30$/mois (C'est cher, mais ça les vaut pour l'élite)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://superhuman.com",
+    "websiteUrl": "https://superhuman.com",
+    "logo": ""
+  },
+  {
+    "id": "linear",
+    "slug": "linear",
+    "name": "Linear",
+    "categoryId": "organization",
+    "shortDescription": "La gestion de projet pour les équipes tech exigeantes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité pour 1 personne",
+      "paid": "8$/mois par utilisateur"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://linear.app",
+    "websiteUrl": "https://linear.app",
+    "logo": ""
+  },
+  {
+    "id": "cal-com",
+    "slug": "cal-com",
+    "name": "Cal.com",
+    "categoryId": "communication",
+    "shortDescription": "L'alternative Open Source et flexible à Calendly.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité pour les individus",
+      "paid": "15$/mois pour les équipes"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://cal.com",
+    "websiteUrl": "https://cal.com",
+    "logo": ""
+  },
+  {
+    "id": "midjourney",
+    "slug": "midjourney",
+    "name": "Midjourney",
+    "categoryId": "creation",
+    "shortDescription": "L'IA génératrice d'images pour les pros.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai très limité",
+      "paid": "10$/mois pour commencer"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://midjourney.com",
+    "websiteUrl": "https://midjourney.com",
+    "logo": ""
+  },
+  {
+    "id": "base44",
+    "slug": "base44",
+    "name": "Base44",
+    "categoryId": "automation",
+    "shortDescription": "Créez des apps complètes avec l'IA, sans coder.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "25 messages IA/mois + 100 crédits d'intégration (auth, database inclus)",
+      "paid": "20$/mois (Starter) pour 100 messages + 2000 intégrations"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base",
+    "websiteUrl": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base",
+    "logo": ""
+  },
+  {
+    "id": "sellsy",
+    "slug": "sellsy",
+    "name": "Sellsy",
+    "categoryId": "finance",
+    "shortDescription": "La suite CRM + Facturation française tout-en-un.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai 15 jours (pas de version gratuite)",
+      "paid": "29€ HT/utilisateur/mois (minimum 2 utilisateurs = 58€/mois)"
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://go.sellsy.com",
+    "websiteUrl": "https://go.sellsy.com",
+    "logo": ""
+  },
+  {
+    "id": "elevenlabs",
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "categoryId": "ai-general",
+    "shortDescription": "L'IA de synthèse vocale ultra-réaliste pour créer du contenu audio.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "10 000 caractères/mois (environ 10 minutes d'audio)",
+      "paid": "5$/mois (Starter) à 99$/mois (Creator)"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "https://elevenlabs.io",
+    "websiteUrl": "https://elevenlabs.io",
+    "logo": ""
+  },
+  {
+    "id": "clickup",
+    "slug": "clickup",
+    "name": "ClickUp",
+    "categoryId": "project-management",
+    "shortDescription": "La plateforme tout-en-un pour gérer projets, tâches et collaboration.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité avec 100 MB de stockage",
+      "paid": "7$/mois par utilisateur (Unlimited)"
+    },
+    "defaultMonthlyPrice": 7,
+    "affiliateLink": "https://clickup.com",
+    "websiteUrl": "https://clickup.com",
+    "logo": ""
+  },
+  {
+    "id": "sanebox",
+    "slug": "sanebox",
+    "name": "SaneBox",
+    "categoryId": "email-productivity",
+    "shortDescription": "L'IA qui trie vos emails et vous fait gagner 12h par mois.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai 14 jours (pas de version gratuite)",
+      "paid": "7$/mois (Snack) à 36$/mois (Lunch)"
+    },
+    "defaultMonthlyPrice": 7,
+    "affiliateLink": "https://www.sanebox.com",
+    "websiteUrl": "https://www.sanebox.com",
+    "logo": ""
+  },
+  {
+    "id": "getresponse",
+    "slug": "getresponse",
+    "name": "GetResponse",
+    "categoryId": "email-productivity",
+    "shortDescription": "La plateforme tout-en-un pour email marketing et automatisation.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Gratuit jusqu'à 500 contacts",
+      "paid": "19$/mois (Email Marketing) à 99$/mois (Marketing Automation)"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://www.getresponse.com",
+    "websiteUrl": "https://www.getresponse.com",
+    "logo": ""
+  },
+  {
+    "id": "trello",
+    "slug": "trello",
+    "name": "Trello",
+    "categoryId": "project-management",
+    "shortDescription": "Le Kanban visuel pour organiser ses projets sans complexité.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité avec 10 tableaux",
+      "paid": "5$/mois par utilisateur (Standard)"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "https://trello.com",
+    "websiteUrl": "https://trello.com",
+    "logo": ""
+  },
+  {
+    "id": "airtable",
+    "slug": "airtable",
+    "name": "Airtable",
+    "categoryId": "project-management",
+    "shortDescription": "La base de données flexible qui remplace 5 outils (CRM, projets, contenus).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité avec 1000 enregistrements par base",
+      "paid": "10$/mois par utilisateur (Plus)"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://airtable.com",
+    "websiteUrl": "https://airtable.com",
+    "logo": ""
+  },
+  {
+    "id": "mailchimp",
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "categoryId": "email-productivity",
+    "shortDescription": "L'incontournable de l'email marketing pour petites listes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Gratuit jusqu'à 500 contacts (1 audience)",
+      "paid": "13$/mois (Essentials) à 350$/mois (Premium)"
+    },
+    "defaultMonthlyPrice": 13,
+    "affiliateLink": "https://mailchimp.com",
+    "websiteUrl": "https://mailchimp.com",
+    "logo": ""
+  },
+  {
+    "id": "slack",
+    "slug": "slack",
+    "name": "Slack",
+    "categoryId": "communication-team",
+    "shortDescription": "La messagerie pro pour échanger avec clients et partenaires.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité avec historique de 90 jours",
+      "paid": "7.25$/mois par utilisateur (Pro)"
+    },
+    "defaultMonthlyPrice": 7.25,
+    "affiliateLink": "https://slack.com",
+    "websiteUrl": "https://slack.com",
+    "logo": ""
+  },
+  {
+    "id": "figma",
+    "slug": "figma",
+    "name": "Figma",
+    "categoryId": "design-tools",
+    "shortDescription": "L'outil de design d'interfaces pour créer maquettes et prototypes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité pour 1 utilisateur (3 projets)",
+      "paid": "12$/mois par éditeur (Professional)"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "https://figma.com",
+    "websiteUrl": "https://figma.com",
+    "logo": ""
+  },
+  {
+    "id": "1password",
+    "slug": "1password",
+    "name": "1Password",
+    "categoryId": "security",
+    "shortDescription": "Le gestionnaire de mots de passe pro pour sécuriser tous vos comptes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai 14 jours (pas de version gratuite)",
+      "paid": "2.99$/mois (Individual)"
+    },
+    "defaultMonthlyPrice": 2.99,
+    "affiliateLink": "https://1password.com",
+    "websiteUrl": "https://1password.com",
+    "logo": ""
+  },
+  {
+    "id": "toggl",
+    "slug": "toggl",
+    "name": "Toggl Track",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Le tracker de temps pour facturer au juste prix.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité pour 1 utilisateur",
+      "paid": "9$/mois par utilisateur (Starter)"
+    },
+    "defaultMonthlyPrice": 9,
+    "affiliateLink": "https://toggl.com",
+    "websiteUrl": "https://toggl.com",
+    "logo": ""
+  },
+  {
+    "id": "webflow",
+    "slug": "webflow",
+    "name": "Webflow",
+    "categoryId": "nocode-web",
+    "shortDescription": "Créer des sites web pros sans coder, avec contrôle total du design.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "2 projets (non publiables)",
+      "paid": "14$/mois (Basic) à 39$/mois (CMS)"
+    },
+    "defaultMonthlyPrice": 14,
+    "affiliateLink": "https://webflow.com",
+    "websiteUrl": "https://webflow.com",
+    "logo": ""
+  },
+  {
+    "id": "plausible",
+    "slug": "plausible",
+    "name": "Plausible Analytics",
+    "categoryId": "analytics",
+    "shortDescription": "L'alternative RGPD-friendly à Google Analytics, simple et respectueuse.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai 30 jours (pas de version gratuite)",
+      "paid": "9$/mois (10k pages vues) à 69$/mois (1M pages vues)"
+    },
+    "defaultMonthlyPrice": 9,
+    "affiliateLink": "https://plausible.io",
+    "websiteUrl": "https://plausible.io",
+    "logo": ""
+  },
+  {
+    "id": "pitch",
+    "slug": "pitch",
+    "name": "Pitch",
+    "categoryId": "design-tools",
+    "shortDescription": "Créer des présentations modernes et collaboratives pour impressionner les clients.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Illimité pour 1 utilisateur (5 présentations)",
+      "paid": "8$/mois par utilisateur (Pro)"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://pitch.com",
+    "websiteUrl": "https://pitch.com",
+    "logo": ""
+  },
+  {
+    "id": "learnworlds",
+    "slug": "learnworlds",
+    "name": "LearnWorlds",
+    "categoryId": "formation-education",
+    "shortDescription": "Plateforme pour créer et vendre des cours en ligne.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai gratuit 30 jours",
+      "paid": "À partir de 29$/mois (Starter) - 99$/mois (Pro Trainer) - 299$/mois (Learning Center)"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "https://get.learnworlds.com/7gzw9pjf9sz6",
+    "websiteUrl": "https://get.learnworlds.com/7gzw9pjf9sz6",
+    "logo": ""
+  },
+  {
+    "id": "prezi",
+    "slug": "prezi",
+    "name": "Prezi",
+    "categoryId": "creation",
+    "shortDescription": "Présentations dynamiques avec zoom et animations.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Plan Basic gratuit (présentations publiques uniquement)",
+      "paid": "À partir de 5$/mois (Plus) - 15$/mois (Premium)"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "https://try.prezi.com/6op8bpbxu641",
+    "websiteUrl": "https://try.prezi.com/6op8bpbxu641",
+    "logo": ""
+  },
+  {
+    "id": "krispcall",
+    "slug": "krispcall",
+    "name": "KrispCall",
+    "categoryId": "communication",
+    "shortDescription": "Téléphonie cloud avec numéros virtuels internationaux.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai gratuit 14 jours",
+      "paid": "À partir de 15$/mois (Essential) - 45$/mois (Enterprise)"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://try.krispcall.com/t1akmbaetinc",
+    "websiteUrl": "https://try.krispcall.com/t1akmbaetinc",
+    "logo": ""
+  },
+  {
+    "id": "megahr",
+    "slug": "megahr",
+    "name": "Mega HR",
+    "categoryId": "finance",
+    "shortDescription": "Solution RH et paie pour gérer salariés et congés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai gratuit 15 jours",
+      "paid": "À partir de 4€/salarié/mois"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://try.megahr.com/j41a7b17mmfs",
+    "websiteUrl": "https://try.megahr.com/j41a7b17mmfs",
+    "logo": ""
+  },
+  {
+    "id": "logomeai",
+    "slug": "logomeai",
+    "name": "Logome.ai",
+    "categoryId": "design-tools",
+    "shortDescription": "Générateur de logos IA en quelques minutes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Aperçu gratuit",
+      "paid": "À partir de 20$ (pack basique) - 65$ (pack premium avec brand kit)"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "https://logomeai.partnerlinks.io/qixva38jv07p",
+    "websiteUrl": "https://logomeai.partnerlinks.io/qixva38jv07p",
+    "logo": ""
+  },
+  {
+    "id": "replyio",
+    "slug": "replyio",
+    "name": "Reply.io",
+    "categoryId": "email-productivity",
+    "shortDescription": "Automatisation cold email et prospection multi-canaux.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai gratuit 14 jours",
+      "paid": "À partir de 60$/mois (Starter) - 90$/mois (Professional)"
+    },
+    "defaultMonthlyPrice": 60,
+    "affiliateLink": "https://get.reply.io/nnswatq9mgm4-p7peoq",
+    "websiteUrl": "https://get.reply.io/nnswatq9mgm4-p7peoq",
+    "logo": ""
+  },
+  {
+    "id": "turbotic",
+    "slug": "turbotic",
+    "name": "Turbotic",
+    "categoryId": "automation",
+    "shortDescription": "Automatisation IA pour orchestrer vos processus métier.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai gratuit disponible",
+      "paid": "À partir de 10$/utilisateur/mois (Professional) - 25$/utilisateur/mois (Premium)"
+    },
+    "defaultMonthlyPrice": 49,
+    "affiliateLink": "https://try.turbotic.com/0ijk0lvs0etc",
+    "websiteUrl": "https://try.turbotic.com/0ijk0lvs0etc",
+    "logo": ""
+  },
+  {
+    "id": "convertkit",
+    "slug": "convertkit",
+    "name": "ConvertKit",
+    "categoryId": "email-productivity",
+    "shortDescription": "Email marketing et newsletters pour créateurs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Gratuit jusqu'à 1000 abonnés (fonctionnalités limitées)",
+      "paid": "À partir de 15$/mois (Creator) - 29$/mois (Creator Pro)"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "https://partners.kit.com/u037oht6r48p",
+    "websiteUrl": "https://partners.kit.com/u037oht6r48p",
+    "logo": ""
+  },
+  {
+    "id": "ignition",
+    "slug": "ignition",
+    "name": "Ignition",
+    "categoryId": "finance",
+    "shortDescription": "Propositions commerciales et contrats professionnels.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai gratuit 14 jours",
+      "paid": "À partir de 69$/mois (Professional) - 149$/mois (Business)"
+    },
+    "defaultMonthlyPrice": 35,
+    "affiliateLink": "https://get.practiceignition.com/e261f8d417a0",
+    "websiteUrl": "https://get.practiceignition.com/e261f8d417a0",
+    "logo": ""
+  },
+  {
+    "id": "landingi",
+    "slug": "landingi",
+    "name": "Landingi",
+    "categoryId": "nocode-web",
+    "shortDescription": "Création de landing pages no-code avec A/B testing.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai gratuit 14 jours",
+      "paid": "À partir de 29$/mois (Core) - 69$/mois (Create) - 109$/mois (Automate)"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "https://try.landingi.com/8he4kr5kasjb",
+    "websiteUrl": "https://try.landingi.com/8he4kr5kasjb",
+    "logo": ""
+  },
+  {
+    "id": "adcreative",
+    "slug": "adcreative",
+    "name": "AdCreative.ai",
+    "categoryId": "creation",
+    "shortDescription": "Création publicitaire automatique avec IA.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Essai gratuit 7 jours (10 crédits)",
+      "paid": "À partir de 21$/mois (Starter) - 44$/mois (Professional) - 74$/mois (Ultimate)"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "https://free-trial.adcreative.ai/bl7nxarn1exp",
+    "websiteUrl": "https://free-trial.adcreative.ai/bl7nxarn1exp",
+    "logo": ""
+  },
+  {
+    "id": "8fig",
+    "slug": "8fig",
+    "name": "8fig",
+    "categoryId": "finance",
+    "shortDescription": "Plateforme de financement de croissance pour les fondateurs e-commerce.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "5€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "https://8fig.com",
+    "websiteUrl": "https://8fig.com",
+    "logo": ""
+  },
+  {
+    "id": "adobe",
+    "slug": "adobe",
+    "name": "Adobe",
+    "categoryId": "creation",
+    "shortDescription": "Logiciels pour les professionnels de la création et le marketing numérique.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://adobe.com",
+    "websiteUrl": "https://adobe.com",
+    "logo": ""
+  },
+  {
+    "id": "aircall-inc",
+    "slug": "aircall-inc",
+    "name": "Aircall Inc.",
+    "categoryId": "communication",
+    "shortDescription": "Solution de centre d’appels cloud pour les entreprises modernes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://aircall.io",
+    "websiteUrl": "https://aircall.io",
+    "logo": ""
+  },
+  {
+    "id": "airslate",
+    "slug": "airslate",
+    "name": "airSlate",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme d’automatisation de workflows documentaires.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://airslate.com",
+    "websiteUrl": "https://airslate.com",
+    "logo": ""
+  },
+  {
+    "id": "albato",
+    "slug": "albato",
+    "name": "Albato",
+    "categoryId": "automation",
+    "shortDescription": "Plateforme no-code pour étendre les intégrations et automatisations SaaS.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://albato.com",
+    "websiteUrl": "https://albato.com",
+    "logo": ""
+  },
+  {
+    "id": "allstate",
+    "slug": "allstate",
+    "name": "Allstate",
+    "categoryId": "organization",
+    "shortDescription": "Fournit des plans de santé pour petites entreprises aux États-Unis.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://allstate.com",
+    "websiteUrl": "https://allstate.com",
+    "logo": ""
+  },
+  {
+    "id": "aloware",
+    "slug": "aloware",
+    "name": "Aloware",
+    "categoryId": "communication",
+    "shortDescription": "Solution de centre de contact pour appels et SMS.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://aloware.com",
+    "websiteUrl": "https://aloware.com",
+    "logo": ""
+  },
+  {
+    "id": "apollo-io",
+    "slug": "apollo-io",
+    "name": "Apollo.io",
+    "categoryId": "communication",
+    "shortDescription": "Plateforme d’intelligence commerciale B2B et d’engagement des ventes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://apollo.io",
+    "websiteUrl": "https://apollo.io",
+    "logo": ""
+  },
+  {
+    "id": "arounddeal",
+    "slug": "arounddeal",
+    "name": "AroundDeal",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme d’intelligence B2B pour contacts et informations d’entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://arounddeal.com",
+    "websiteUrl": "https://arounddeal.com",
+    "logo": ""
+  },
+  {
+    "id": "asana",
+    "slug": "asana",
+    "name": "Asana",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme de gestion du travail pour les équipes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://asana.com",
+    "websiteUrl": "https://asana.com",
+    "logo": ""
+  },
+  {
+    "id": "autonix",
+    "slug": "autonix",
+    "name": "Autonix",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil de suivi de QR codes et d’analytique pour agences et marketers.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://autonix.io",
+    "websiteUrl": "https://autonix.io",
+    "logo": ""
+  },
+  {
+    "id": "auvik",
+    "slug": "auvik",
+    "name": "Auvik",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme de gestion IT pour les réseaux et infrastructures.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://auvik.com",
+    "websiteUrl": "https://auvik.com",
+    "logo": ""
+  },
+  {
+    "id": "aweber",
+    "slug": "aweber",
+    "name": "AWeber",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme d’email marketing et d’automatisation.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://aweber.com",
+    "websiteUrl": "https://aweber.com",
+    "logo": ""
+  },
+  {
+    "id": "basecamp",
+    "slug": "basecamp",
+    "name": "Basecamp",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de gestion de projet et de collaboration d’équipe.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://basecamp.com",
+    "websiteUrl": "https://basecamp.com",
+    "logo": ""
+  },
+  {
+    "id": "blueink-esignatures",
+    "slug": "blueink-esignatures",
+    "name": "Blueink eSignatures",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme de signatures électroniques et suivi de documents.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://blueink.com",
+    "websiteUrl": "https://blueink.com",
+    "logo": ""
+  },
+  {
+    "id": "boast",
+    "slug": "boast",
+    "name": "Boast",
+    "categoryId": "finance",
+    "shortDescription": "Plateforme d’automatisation des déclarations de crédit R&D.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://boast.ai",
+    "websiteUrl": "https://boast.ai",
+    "logo": ""
+  },
+  {
+    "id": "bolt-business",
+    "slug": "bolt-business",
+    "name": "Bolt Business",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme polyvalente de gestion de la mobilité et des flottes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://bolt.eu/business",
+    "websiteUrl": "https://bolt.eu/business",
+    "logo": ""
+  },
+  {
+    "id": "boompop",
+    "slug": "boompop",
+    "name": "BoomPop",
+    "categoryId": "organization",
+    "shortDescription": "Service d’organisation d’événements d’entreprise et networking.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://boompop.com",
+    "websiteUrl": "https://boompop.com",
+    "logo": ""
+  },
+  {
+    "id": "box",
+    "slug": "box",
+    "name": "Box",
+    "categoryId": "organization",
+    "shortDescription": "Service cloud de gestion de contenu et partage de fichiers.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://box.com",
+    "websiteUrl": "https://box.com",
+    "logo": ""
+  },
+  {
+    "id": "brand24",
+    "slug": "brand24",
+    "name": "Brand24",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil de veille médiatique pour suivre les mentions de marque en ligne.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://brand24.com",
+    "websiteUrl": "https://brand24.com",
+    "logo": ""
+  },
+  {
+    "id": "breezy-hr",
+    "slug": "breezy-hr",
+    "name": "Breezy HR",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de recrutement de bout en bout pour attirer et embaucher des talents.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://breezy.hr",
+    "websiteUrl": "https://breezy.hr",
+    "logo": ""
+  },
+  {
+    "id": "buddy-punch",
+    "slug": "buddy-punch",
+    "name": "Buddy Punch",
+    "categoryId": "organization",
+    "shortDescription": "Pointage en ligne pour le suivi du temps des employés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://buddypunch.com",
+    "websiteUrl": "https://buddypunch.com",
+    "logo": ""
+  },
+  {
+    "id": "bugherd",
+    "slug": "bugherd",
+    "name": "BugHerd",
+    "categoryId": "organization",
+    "shortDescription": "Outil de feedback et suivi de bugs pour sites web (développeurs/designers).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://bugherd.com",
+    "websiteUrl": "https://bugherd.com",
+    "logo": ""
+  },
+  {
+    "id": "callhippo",
+    "slug": "callhippo",
+    "name": "CallHippo",
+    "categoryId": "communication",
+    "shortDescription": "Système de téléphonie cloud pour entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://callhippo.com",
+    "websiteUrl": "https://callhippo.com",
+    "logo": ""
+  },
+  {
+    "id": "callrail",
+    "slug": "callrail",
+    "name": "CallRail",
+    "categoryId": "communication",
+    "shortDescription": "Plateforme d’intelligence d’appels pour suivi et attribution de leads.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://callrail.com",
+    "websiteUrl": "https://callrail.com",
+    "logo": ""
+  },
+  {
+    "id": "calltrackingmetrics",
+    "slug": "calltrackingmetrics",
+    "name": "CallTrackingMetrics",
+    "categoryId": "communication",
+    "shortDescription": "Logiciel de suivi d’appels et automatisation pour marketing & support.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://calltrackingmetrics.com",
+    "websiteUrl": "https://calltrackingmetrics.com",
+    "logo": ""
+  },
+  {
+    "id": "campaigner",
+    "slug": "campaigner",
+    "name": "Campaigner",
+    "categoryId": "email-productivity",
+    "shortDescription": "Solution puissante de marketing email et SMS pour entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://campaigner.com",
+    "websiteUrl": "https://campaigner.com",
+    "logo": ""
+  },
+  {
+    "id": "capsule",
+    "slug": "capsule",
+    "name": "Capsule",
+    "categoryId": "communication",
+    "shortDescription": "CRM pour gérer les ventes et relations client.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://capsulecrm.com",
+    "websiteUrl": "https://capsulecrm.com",
+    "logo": ""
+  },
+  {
+    "id": "castmagic",
+    "slug": "castmagic",
+    "name": "Castmagic",
+    "categoryId": "creation",
+    "shortDescription": "Outil de transformation rapide de tout format audio en contenu.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://castmagic.io",
+    "websiteUrl": "https://castmagic.io",
+    "logo": ""
+  },
+  {
+    "id": "clearbit",
+    "slug": "clearbit",
+    "name": "Clearbit",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil d’enrichissement de données et insights pour marketing et ventes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://clearbit.com",
+    "websiteUrl": "https://clearbit.com",
+    "logo": ""
+  },
+  {
+    "id": "clockshark",
+    "slug": "clockshark",
+    "name": "ClockShark",
+    "categoryId": "organization",
+    "shortDescription": "Application de feuilles de temps pour BTP ou entreprises de terrain.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://clockshark.com",
+    "websiteUrl": "https://clockshark.com",
+    "logo": ""
+  },
+  {
+    "id": "close",
+    "slug": "close",
+    "name": "Close",
+    "categoryId": "communication",
+    "shortDescription": "CRM avec outils de communication intégrés pour les ventes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://close.com",
+    "websiteUrl": "https://close.com",
+    "logo": ""
+  },
+  {
+    "id": "cloudtask-marketplace",
+    "slug": "cloudtask-marketplace",
+    "name": "CloudTask Marketplace",
+    "categoryId": "communication",
+    "shortDescription": "Marketplace de talents B2B RevOps en freelance.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://cloudtask.com/marketplace",
+    "websiteUrl": "https://cloudtask.com/marketplace",
+    "logo": ""
+  },
+  {
+    "id": "coast",
+    "slug": "coast",
+    "name": "Coast",
+    "categoryId": "finance",
+    "shortDescription": "Carte carburant intelligente et gestion des dépenses pour entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://coastpay.com",
+    "websiteUrl": "https://coastpay.com",
+    "logo": ""
+  },
+  {
+    "id": "cognism",
+    "slug": "cognism",
+    "name": "Cognism",
+    "categoryId": "communication",
+    "shortDescription": "Plateforme d’intelligence commerciale B2B (contacts et données entreprises).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://cognism.com",
+    "websiteUrl": "https://cognism.com",
+    "logo": ""
+  },
+  {
+    "id": "connecteam",
+    "slug": "connecteam",
+    "name": "Connecteam",
+    "categoryId": "organization",
+    "shortDescription": "Application tout-en-un pour gérer les employés sans bureau.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://connecteam.com",
+    "websiteUrl": "https://connecteam.com",
+    "logo": ""
+  },
+  {
+    "id": "crowdfire-inc",
+    "slug": "crowdfire-inc",
+    "name": "Crowdfire Inc",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme de gestion des réseaux sociaux.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://crowdfireapp.com",
+    "websiteUrl": "https://crowdfireapp.com",
+    "logo": ""
+  },
+  {
+    "id": "deel",
+    "slug": "deel",
+    "name": "Deel",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme pour embaucher des talents dans 150 pays.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://deel.com",
+    "websiteUrl": "https://deel.com",
+    "logo": ""
+  },
+  {
+    "id": "deputy",
+    "slug": "deputy",
+    "name": "Deputy",
+    "categoryId": "organization",
+    "shortDescription": "Simplifie la planification et réduit les coûts de main-d’œuvre.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://deputy.com",
+    "websiteUrl": "https://deputy.com",
+    "logo": ""
+  },
+  {
+    "id": "deskpro",
+    "slug": "deskpro",
+    "name": "Deskpro",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de helpdesk pour offrir une expérience client de qualité.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://deskpro.com",
+    "websiteUrl": "https://deskpro.com",
+    "logo": ""
+  },
+  {
+    "id": "desktopready",
+    "slug": "desktopready",
+    "name": "DesktopReady",
+    "categoryId": "organization",
+    "shortDescription": "Solution de bureau virtuel Azure.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://desktopready.com",
+    "websiteUrl": "https://desktopready.com",
+    "logo": ""
+  },
+  {
+    "id": "docyt",
+    "slug": "docyt",
+    "name": "Docyt",
+    "categoryId": "finance",
+    "shortDescription": "Plateforme logicielle d’automatisation comptable.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://docyt.com",
+    "websiteUrl": "https://docyt.com",
+    "logo": ""
+  },
+  {
+    "id": "doola",
+    "slug": "doola",
+    "name": "doola",
+    "categoryId": "finance",
+    "shortDescription": "Aide les entrepreneurs web2 & web3 à créer et gérer leur entreprise.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://doola.com",
+    "websiteUrl": "https://doola.com",
+    "logo": ""
+  },
+  {
+    "id": "draftbit",
+    "slug": "draftbit",
+    "name": "Draftbit",
+    "categoryId": "automation",
+    "shortDescription": "Générateur d’applications natives (avec code) pour mobiles.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://draftbit.com",
+    "websiteUrl": "https://draftbit.com",
+    "logo": ""
+  },
+  {
+    "id": "dropbox",
+    "slug": "dropbox",
+    "name": "Dropbox",
+    "categoryId": "organization",
+    "shortDescription": "Service de stockage cloud et synchronisation de fichiers.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://dropbox.com",
+    "websiteUrl": "https://dropbox.com",
+    "logo": ""
+  },
+  {
+    "id": "easydmarc",
+    "slug": "easydmarc",
+    "name": "EasyDMARC",
+    "categoryId": "automation",
+    "shortDescription": "SaaS pour résoudre les problèmes de sécurité et délivrabilité email.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://easydmarc.com",
+    "websiteUrl": "https://easydmarc.com",
+    "logo": ""
+  },
+  {
+    "id": "extensis",
+    "slug": "extensis",
+    "name": "Extensis",
+    "categoryId": "creation",
+    "shortDescription": "Plateforme de gestion de polices et ressources créatives.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://extensis.com",
+    "websiteUrl": "https://extensis.com",
+    "logo": ""
+  },
+  {
+    "id": "finale-inventory",
+    "slug": "finale-inventory",
+    "name": "Finale Inventory",
+    "categoryId": "nocode-web",
+    "shortDescription": "Solution de gestion des stocks pour vendeurs à gros volume.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://finaleinventory.com",
+    "websiteUrl": "https://finaleinventory.com",
+    "logo": ""
+  },
+  {
+    "id": "flexiquiz",
+    "slug": "flexiquiz",
+    "name": "FlexiQuiz",
+    "categoryId": "creation",
+    "shortDescription": "Générateur de quiz personnalisés avec fonctionnalités LMS.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://flexiquiz.com",
+    "websiteUrl": "https://flexiquiz.com",
+    "logo": ""
+  },
+  {
+    "id": "format",
+    "slug": "format",
+    "name": "Format",
+    "categoryId": "creation",
+    "shortDescription": "Constructeur de portfolio en ligne pour professionnels créatifs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://format.com",
+    "websiteUrl": "https://format.com",
+    "logo": ""
+  },
+  {
+    "id": "freshbooks",
+    "slug": "freshbooks",
+    "name": "FreshBooks",
+    "categoryId": "finance",
+    "shortDescription": "Logiciel de comptabilité pour petites entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://freshbooks.com",
+    "websiteUrl": "https://freshbooks.com",
+    "logo": ""
+  },
+  {
+    "id": "front",
+    "slug": "front",
+    "name": "Front",
+    "categoryId": "organization",
+    "shortDescription": "Hub de communication client pour les équipes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://front.com",
+    "websiteUrl": "https://front.com",
+    "logo": ""
+  },
+  {
+    "id": "gelato",
+    "slug": "gelato",
+    "name": "Gelato",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme d’impression à la demande avec production locale.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://gelato.com",
+    "websiteUrl": "https://gelato.com",
+    "logo": ""
+  },
+  {
+    "id": "getida",
+    "slug": "getida",
+    "name": "Getida",
+    "categoryId": "nocode-web",
+    "shortDescription": "Solution d’audit et remboursement Amazon FBA.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://getida.com",
+    "websiteUrl": "https://getida.com",
+    "logo": ""
+  },
+  {
+    "id": "glide",
+    "slug": "glide",
+    "name": "Glide",
+    "categoryId": "automation",
+    "shortDescription": "Plateforme pour créer des applications métier personnalisées sans code.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://glideapps.com",
+    "websiteUrl": "https://glideapps.com",
+    "logo": ""
+  },
+  {
+    "id": "gorgias",
+    "slug": "gorgias",
+    "name": "Gorgias",
+    "categoryId": "nocode-web",
+    "shortDescription": "Service client e-commerce transformant le support en centre de profit.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://gorgias.com",
+    "websiteUrl": "https://gorgias.com",
+    "logo": ""
+  },
+  {
+    "id": "hive",
+    "slug": "hive",
+    "name": "Hive",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme de productivité pour équipes performantes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://hive.com",
+    "websiteUrl": "https://hive.com",
+    "logo": ""
+  },
+  {
+    "id": "hootsuite",
+    "slug": "hootsuite",
+    "name": "Hootsuite",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme de gestion des réseaux sociaux.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://hootsuite.com",
+    "websiteUrl": "https://hootsuite.com",
+    "logo": ""
+  },
+  {
+    "id": "hostfully",
+    "slug": "hostfully",
+    "name": "Hostfully",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme de gestion de locations de vacances.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://hostfully.com",
+    "websiteUrl": "https://hostfully.com",
+    "logo": ""
+  },
+  {
+    "id": "houzz-pro",
+    "slug": "houzz-pro",
+    "name": "Houzz Pro",
+    "categoryId": "organization",
+    "shortDescription": "Solution tout-en-un pour gérer les projets de construction résidentielle.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://houzz.com/pro",
+    "websiteUrl": "https://houzz.com/pro",
+    "logo": ""
+  },
+  {
+    "id": "icontact",
+    "slug": "icontact",
+    "name": "iContact",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outils d’email marketing pour PME pour engager les clients.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://icontact.com",
+    "websiteUrl": "https://icontact.com",
+    "logo": ""
+  },
+  {
+    "id": "inboxally",
+    "slug": "inboxally",
+    "name": "InboxAlly",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme pour améliorer la délivrabilité et taux d’ouverture des emails.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://inboxally.com",
+    "websiteUrl": "https://inboxally.com",
+    "logo": ""
+  },
+  {
+    "id": "inflow-inventory",
+    "slug": "inflow-inventory",
+    "name": "inFlow Inventory",
+    "categoryId": "nocode-web",
+    "shortDescription": "Logiciel de gestion des stocks pour petites entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://inflowinventory.com",
+    "websiteUrl": "https://inflowinventory.com",
+    "logo": ""
+  },
+  {
+    "id": "insightly",
+    "slug": "insightly",
+    "name": "Insightly",
+    "categoryId": "communication",
+    "shortDescription": "CRM pour entreprises en croissance.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://insightly.com",
+    "websiteUrl": "https://insightly.com",
+    "logo": ""
+  },
+  {
+    "id": "instapage",
+    "slug": "instapage",
+    "name": "Instapage",
+    "categoryId": "email-productivity",
+    "shortDescription": "Générateur de landing pages et plateforme d’optimisation.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://instapage.com",
+    "websiteUrl": "https://instapage.com",
+    "logo": ""
+  },
+  {
+    "id": "jobber",
+    "slug": "jobber",
+    "name": "Jobber",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel pour gérer et développer les entreprises de services.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://getjobber.com",
+    "websiteUrl": "https://getjobber.com",
+    "logo": ""
+  },
+  {
+    "id": "katana-cloud-manufacturing",
+    "slug": "katana-cloud-manufacturing",
+    "name": "Katana Cloud Manufacturing",
+    "categoryId": "nocode-web",
+    "shortDescription": "Logiciel cloud de gestion manufacturière intégrée au e-commerce.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://katanamrp.com",
+    "websiteUrl": "https://katanamrp.com",
+    "logo": ""
+  },
+  {
+    "id": "kavkom",
+    "slug": "kavkom",
+    "name": "Kavkom",
+    "categoryId": "communication",
+    "shortDescription": "Solution de téléphonie IP pour communications d’entreprise.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://kavkom.com",
+    "websiteUrl": "https://kavkom.com",
+    "logo": ""
+  },
+  {
+    "id": "keeptruckin",
+    "slug": "keeptruckin",
+    "name": "KeepTruckin",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de gestion de flottes pour entreprises de transport.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://keeptruckin.com",
+    "websiteUrl": "https://keeptruckin.com",
+    "logo": ""
+  },
+  {
+    "id": "kissmetrics",
+    "slug": "kissmetrics",
+    "name": "Kissmetrics",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil d’analytics comportemental pour augmenter conversions & engagement.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://kissmetrics.io",
+    "websiteUrl": "https://kissmetrics.io",
+    "logo": ""
+  },
+  {
+    "id": "kixie",
+    "slug": "kixie",
+    "name": "Kixie",
+    "categoryId": "communication",
+    "shortDescription": "Plateforme d’engagement commercial avec appels et SMS intégrés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://kixie.com",
+    "websiteUrl": "https://kixie.com",
+    "logo": ""
+  },
+  {
+    "id": "landbot",
+    "slug": "landbot",
+    "name": "Landbot",
+    "categoryId": "email-productivity",
+    "shortDescription": "Générateur de chatbot pour automatiser la capture de leads et interactions client.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://landbot.io",
+    "websiteUrl": "https://landbot.io",
+    "logo": ""
+  },
+  {
+    "id": "lano",
+    "slug": "lano",
+    "name": "Lano",
+    "categoryId": "organization",
+    "shortDescription": "Solution globale d’employeur de référence et gestion de paie.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://lano.io",
+    "websiteUrl": "https://lano.io",
+    "logo": ""
+  },
+  {
+    "id": "later",
+    "slug": "later",
+    "name": "Later",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil complet de gestion des réseaux sociaux et Link in Bio.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://later.com",
+    "websiteUrl": "https://later.com",
+    "logo": ""
+  },
+  {
+    "id": "leadflow",
+    "slug": "leadflow",
+    "name": "Leadflow",
+    "categoryId": "email-productivity",
+    "shortDescription": "Générateur de leads immobilier alimenté par l’IA.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://leadflow.com",
+    "websiteUrl": "https://leadflow.com",
+    "logo": ""
+  },
+  {
+    "id": "leadpages",
+    "slug": "leadpages",
+    "name": "Leadpages",
+    "categoryId": "email-productivity",
+    "shortDescription": "Logiciel marketing pour créer des landing pages et convertir.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://leadpages.com",
+    "websiteUrl": "https://leadpages.com",
+    "logo": ""
+  },
+  {
+    "id": "leadsquared",
+    "slug": "leadsquared",
+    "name": "LeadSquared",
+    "categoryId": "communication",
+    "shortDescription": "Plateforme d’exécution commerciale et d’automatisation marketing.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://leadsquared.com",
+    "websiteUrl": "https://leadsquared.com",
+    "logo": ""
+  },
+  {
+    "id": "lendio",
+    "slug": "lendio",
+    "name": "Lendio",
+    "categoryId": "finance",
+    "shortDescription": "Service de prêts professionnels avec multiples options de financement.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://lendio.com",
+    "websiteUrl": "https://lendio.com",
+    "logo": ""
+  },
+  {
+    "id": "liquid-web-partner-program",
+    "slug": "liquid-web-partner-program",
+    "name": "Liquid Web Partner+ Program",
+    "categoryId": "nocode-web",
+    "shortDescription": "Fournisseur d’hébergement cloud et web managé.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://liquidweb.com/partner-program",
+    "websiteUrl": "https://liquidweb.com/partner-program",
+    "logo": ""
+  },
+  {
+    "id": "looka",
+    "slug": "looka",
+    "name": "Looka",
+    "categoryId": "creation",
+    "shortDescription": "Plateforme de création de logos par IA.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://looka.com",
+    "websiteUrl": "https://looka.com",
+    "logo": ""
+  },
+  {
+    "id": "lucid-software",
+    "slug": "lucid-software",
+    "name": "Lucid Software",
+    "categoryId": "creation",
+    "shortDescription": "Solutions de diagrammes intelligents et tableau blanc en ligne.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://lucid.co",
+    "websiteUrl": "https://lucid.co",
+    "logo": ""
+  },
+  {
+    "id": "mailgun",
+    "slug": "mailgun",
+    "name": "Mailgun",
+    "categoryId": "email-productivity",
+    "shortDescription": "Service d’envoi d’emails pour développeurs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://mailgun.com",
+    "websiteUrl": "https://mailgun.com",
+    "logo": ""
+  },
+  {
+    "id": "manifest-ai",
+    "slug": "manifest-ai",
+    "name": "Manifest AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Chatbot IA alimenté par GPT pour de meilleures interactions client.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://manifestai.io",
+    "websiteUrl": "https://manifestai.io",
+    "logo": ""
+  },
+  {
+    "id": "masv",
+    "slug": "masv",
+    "name": "MASV",
+    "categoryId": "creation",
+    "shortDescription": "Service de transfert de fichiers volumineux pour vidéastes et médias.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://massive.io",
+    "websiteUrl": "https://massive.io",
+    "logo": ""
+  },
+  {
+    "id": "moosend",
+    "slug": "moosend",
+    "name": "Moosend",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil d’email marketing et d’automatisation.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://moosend.com",
+    "websiteUrl": "https://moosend.com",
+    "logo": ""
+  },
+  {
+    "id": "mrpeasy",
+    "slug": "mrpeasy",
+    "name": "MRPeasy",
+    "categoryId": "nocode-web",
+    "shortDescription": "ERP/MRP pour petites entreprises manufacturières.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://mrpeasy.com",
+    "websiteUrl": "https://mrpeasy.com",
+    "logo": ""
+  },
+  {
+    "id": "mycase",
+    "slug": "mycase",
+    "name": "MyCase",
+    "categoryId": "organization",
+    "shortDescription": "Solution de gestion de dossiers juridiques pour cabinets B2C.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://mycase.com",
+    "websiteUrl": "https://mycase.com",
+    "logo": ""
+  },
+  {
+    "id": "navan",
+    "slug": "navan",
+    "name": "Navan",
+    "categoryId": "organization",
+    "shortDescription": "Solution tout-en-un de gestion des voyages et notes de frais.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://navan.com",
+    "websiteUrl": "https://navan.com",
+    "logo": ""
+  },
+  {
+    "id": "nearst",
+    "slug": "nearst",
+    "name": "NearSt",
+    "categoryId": "email-productivity",
+    "shortDescription": "Convertit les visiteurs en ligne en clients en magasin en montrant les stocks locaux.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://near.st",
+    "websiteUrl": "https://near.st",
+    "logo": ""
+  },
+  {
+    "id": "netchex",
+    "slug": "netchex",
+    "name": "Netchex",
+    "categoryId": "organization",
+    "shortDescription": "Solution de gestion RH et paie.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://netchex.com",
+    "websiteUrl": "https://netchex.com",
+    "logo": ""
+  },
+  {
+    "id": "omniconvert-explore",
+    "slug": "omniconvert-explore",
+    "name": "Omniconvert Explore",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil d’optimisation des conversions (CRO) pour améliorer l’expérience utilisateur.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://omniconvert.com",
+    "websiteUrl": "https://omniconvert.com",
+    "logo": ""
+  },
+  {
+    "id": "onramp-funds",
+    "slug": "onramp-funds",
+    "name": "Onramp Funds",
+    "categoryId": "finance",
+    "shortDescription": "Fournit des financements aux marchands pour soutenir leur croissance.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://onrampfunds.com",
+    "websiteUrl": "https://onrampfunds.com",
+    "logo": ""
+  },
+  {
+    "id": "openphone",
+    "slug": "openphone",
+    "name": "OpenPhone",
+    "categoryId": "communication",
+    "shortDescription": "Système téléphonique tout-en-un pour équipes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://openphone.com",
+    "websiteUrl": "https://openphone.com",
+    "logo": ""
+  },
+  {
+    "id": "ownr",
+    "slug": "ownr",
+    "name": "Ownr",
+    "categoryId": "finance",
+    "shortDescription": "Plateforme d’enregistrement et de création d’entreprises (Canada).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://ownr.co",
+    "websiteUrl": "https://ownr.co",
+    "logo": ""
+  },
+  {
+    "id": "oyster",
+    "slug": "oyster",
+    "name": "Oyster®",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme RH pour entreprises distribuées mondialement.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://oysterhr.com",
+    "websiteUrl": "https://oysterhr.com",
+    "logo": ""
+  },
+  {
+    "id": "packhelp",
+    "slug": "packhelp",
+    "name": "Packhelp",
+    "categoryId": "nocode-web",
+    "shortDescription": "Marketplace de packagings personnalisés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://packhelp.com",
+    "websiteUrl": "https://packhelp.com",
+    "logo": ""
+  },
+  {
+    "id": "pagecloud",
+    "slug": "pagecloud",
+    "name": "Pagecloud",
+    "categoryId": "automation",
+    "shortDescription": "Constructeur de site web et boutique en ligne.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://pagecloud.com",
+    "websiteUrl": "https://pagecloud.com",
+    "logo": ""
+  },
+  {
+    "id": "payoneer",
+    "slug": "payoneer",
+    "name": "Payoneer",
+    "categoryId": "finance",
+    "shortDescription": "Plateforme de paiements transfrontaliers pour entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://payoneer.com",
+    "websiteUrl": "https://payoneer.com",
+    "logo": ""
+  },
+  {
+    "id": "pipedrive",
+    "slug": "pipedrive",
+    "name": "Pipedrive",
+    "categoryId": "communication",
+    "shortDescription": "CRM simple d’utilisation pour les ventes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://pipedrive.com",
+    "websiteUrl": "https://pipedrive.com",
+    "logo": ""
+  },
+  {
+    "id": "pipelinepro",
+    "slug": "pipelinepro",
+    "name": "PipelinePRO",
+    "categoryId": "communication",
+    "shortDescription": "Plateforme de gestion de pipeline de ventes et d’automatisation marketing.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://pipelinepro.io",
+    "websiteUrl": "https://pipelinepro.io",
+    "logo": ""
+  },
+  {
+    "id": "printify",
+    "slug": "printify",
+    "name": "Printify",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme d’impression à la demande pour entrepreneurs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "5€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "https://printify.com",
+    "websiteUrl": "https://printify.com",
+    "logo": ""
+  },
+  {
+    "id": "process-street",
+    "slug": "process-street",
+    "name": "Process Street",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme de gestion de processus pour équipes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://process.st",
+    "websiteUrl": "https://process.st",
+    "logo": ""
+  },
+  {
+    "id": "productioncrate",
+    "slug": "productioncrate",
+    "name": "ProductionCrate",
+    "categoryId": "creation",
+    "shortDescription": "Bibliothèques numériques pour la création vidéo.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://productioncrate.com",
+    "websiteUrl": "https://productioncrate.com",
+    "logo": ""
+  },
+  {
+    "id": "promo-com",
+    "slug": "promo-com",
+    "name": "Promo.com",
+    "categoryId": "creation",
+    "shortDescription": "Plateforme de création vidéo pour entreprises et agences.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://promo.com",
+    "websiteUrl": "https://promo.com",
+    "logo": ""
+  },
+  {
+    "id": "pushowl-web-push-notifications",
+    "slug": "pushowl-web-push-notifications",
+    "name": "PushOwl Web Push Notifications",
+    "categoryId": "email-productivity",
+    "shortDescription": "Application de notifications push web pour Shopify.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://pushowl.com",
+    "websiteUrl": "https://pushowl.com",
+    "logo": ""
+  },
+  {
+    "id": "quadient",
+    "slug": "quadient",
+    "name": "Quadient",
+    "categoryId": "finance",
+    "shortDescription": "Solutions d’automatisation des comptes clients et fournisseurs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://quadient.com",
+    "websiteUrl": "https://quadient.com",
+    "logo": ""
+  },
+  {
+    "id": "quartile",
+    "slug": "quartile",
+    "name": "Quartile",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme publicitaire multicanal pour optimiser la performance e-commerce.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://quartile.com",
+    "websiteUrl": "https://quartile.com",
+    "logo": ""
+  },
+  {
+    "id": "quick-base",
+    "slug": "quick-base",
+    "name": "Quick Base",
+    "categoryId": "automation",
+    "shortDescription": "Plateforme de développement d’applications sans code.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://quickbase.com",
+    "websiteUrl": "https://quickbase.com",
+    "logo": ""
+  },
+  {
+    "id": "quickbooks",
+    "slug": "quickbooks",
+    "name": "QuickBooks",
+    "categoryId": "finance",
+    "shortDescription": "Logiciel de comptabilité pour petites entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://quickbooks.intuit.com",
+    "websiteUrl": "https://quickbooks.intuit.com",
+    "logo": ""
+  },
+  {
+    "id": "razorpay",
+    "slug": "razorpay",
+    "name": "Razorpay",
+    "categoryId": "finance",
+    "shortDescription": "Passerelle de paiement et services financiers pour entreprises en Inde.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://razorpay.com",
+    "websiteUrl": "https://razorpay.com",
+    "logo": ""
+  },
+  {
+    "id": "respond-io",
+    "slug": "respond-io",
+    "name": "respond.io",
+    "categoryId": "email-productivity",
+    "shortDescription": "Logiciel de messagerie alimenté par l’IA pour entreprises B2C.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://respond.io",
+    "websiteUrl": "https://respond.io",
+    "logo": ""
+  },
+  {
+    "id": "responsetap",
+    "slug": "responsetap",
+    "name": "ResponseTap",
+    "categoryId": "communication",
+    "shortDescription": "Logiciel de suivi des appels pour les marketers.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://responsetap.com",
+    "websiteUrl": "https://responsetap.com",
+    "logo": ""
+  },
+  {
+    "id": "restream",
+    "slug": "restream",
+    "name": "Restream",
+    "categoryId": "creation",
+    "shortDescription": "Service de diffusion en direct multi-plateformes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://restream.io",
+    "websiteUrl": "https://restream.io",
+    "logo": ""
+  },
+  {
+    "id": "rocketlink",
+    "slug": "rocketlink",
+    "name": "RocketLink",
+    "categoryId": "email-productivity",
+    "shortDescription": "Raccourcisseur d’URL avec reciblage publicitaire.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://rocketlink.io",
+    "websiteUrl": "https://rocketlink.io",
+    "logo": ""
+  },
+  {
+    "id": "ruby",
+    "slug": "ruby",
+    "name": "Ruby",
+    "categoryId": "organization",
+    "shortDescription": "Standard téléphonique virtuel et chat en direct pour entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://ruby.com",
+    "websiteUrl": "https://ruby.com",
+    "logo": ""
+  },
+  {
+    "id": "salesflare",
+    "slug": "salesflare",
+    "name": "Salesflare",
+    "categoryId": "communication",
+    "shortDescription": "CRM pour PME vendant en B2B.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://salesflare.com",
+    "websiteUrl": "https://salesflare.com",
+    "logo": ""
+  },
+  {
+    "id": "salesforce",
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "categoryId": "communication",
+    "shortDescription": "Logiciel de gestion de la relation client et solutions cloud.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://salesforce.com",
+    "websiteUrl": "https://salesforce.com",
+    "logo": ""
+  },
+  {
+    "id": "sellersfi",
+    "slug": "sellersfi",
+    "name": "SellersFi",
+    "categoryId": "finance",
+    "shortDescription": "Fintech pour commerçants e-commerce (financement).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://sellersfi.com",
+    "websiteUrl": "https://sellersfi.com",
+    "logo": ""
+  },
+  {
+    "id": "sellfy",
+    "slug": "sellfy",
+    "name": "Sellfy",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme e-commerce pour créer des boutiques en ligne.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://sellfy.com",
+    "websiteUrl": "https://sellfy.com",
+    "logo": ""
+  },
+  {
+    "id": "semrush",
+    "slug": "semrush",
+    "name": "SEMrush",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme SaaS de marketing digital et SEO.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://semrush.com",
+    "websiteUrl": "https://semrush.com",
+    "logo": ""
+  },
+  {
+    "id": "sendinblue",
+    "slug": "sendinblue",
+    "name": "Sendinblue",
+    "categoryId": "email-productivity",
+    "shortDescription": "Logiciel d’automatisation marketing et emailing.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "5€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "https://sendinblue.com",
+    "websiteUrl": "https://sendinblue.com",
+    "logo": ""
+  },
+  {
+    "id": "shogun",
+    "slug": "shogun",
+    "name": "Shogun",
+    "categoryId": "nocode-web",
+    "shortDescription": "Outils d’optimisation et merchandising pour boutiques Shopify.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://getshogun.com",
+    "websiteUrl": "https://getshogun.com",
+    "logo": ""
+  },
+  {
+    "id": "shophero",
+    "slug": "shophero",
+    "name": "ShopHero",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme de gestion e-commerce et supply chain.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://shophero.com",
+    "websiteUrl": "https://shophero.com",
+    "logo": ""
+  },
+  {
+    "id": "shopify",
+    "slug": "shopify",
+    "name": "Shopify",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme e-commerce pour boutiques en ligne et points de vente.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://shopify.com",
+    "websiteUrl": "https://shopify.com",
+    "logo": ""
+  },
+  {
+    "id": "similarweb",
+    "slug": "similarweb",
+    "name": "Similarweb",
+    "categoryId": "email-productivity",
+    "shortDescription": "Fournit des données numériques pour améliorer les stratégies marketing.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://similarweb.com",
+    "websiteUrl": "https://similarweb.com",
+    "logo": ""
+  },
+  {
+    "id": "simpletexting",
+    "slug": "simpletexting",
+    "name": "SimpleTexting",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme d’envoi de campagnes SMS marketing et alertes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://simpletexting.com",
+    "websiteUrl": "https://simpletexting.com",
+    "logo": ""
+  },
+  {
+    "id": "simvoly",
+    "slug": "simvoly",
+    "name": "Simvoly",
+    "categoryId": "automation",
+    "shortDescription": "Constructeur de sites web et plateforme e-commerce.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://simvoly.com",
+    "websiteUrl": "https://simvoly.com",
+    "logo": ""
+  },
+  {
+    "id": "smartsuite",
+    "slug": "smartsuite",
+    "name": "SmartSuite",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme collaborative de gestion du travail pour équipes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://smartsuite.com",
+    "websiteUrl": "https://smartsuite.com",
+    "logo": ""
+  },
+  {
+    "id": "smtp-com",
+    "slug": "smtp-com",
+    "name": "SMTP.com",
+    "categoryId": "email-productivity",
+    "shortDescription": "Service d’emails transactionnels et API avec haute délivrabilité.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://smtp.com",
+    "websiteUrl": "https://smtp.com",
+    "logo": ""
+  },
+  {
+    "id": "socialbee",
+    "slug": "socialbee",
+    "name": "SocialBee",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme de gestion des réseaux sociaux et services de marketing digital.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://socialbee.io",
+    "websiteUrl": "https://socialbee.io",
+    "logo": ""
+  },
+  {
+    "id": "softr",
+    "slug": "softr",
+    "name": "Softr",
+    "categoryId": "automation",
+    "shortDescription": "Plateforme pour créer des outils internes et portails sans code.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://softr.io",
+    "websiteUrl": "https://softr.io",
+    "logo": ""
+  },
+  {
+    "id": "spaceiq",
+    "slug": "spaceiq",
+    "name": "SpaceIQ",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de gestion des espaces de travail et des actifs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://spaceiq.com",
+    "websiteUrl": "https://spaceiq.com",
+    "logo": ""
+  },
+  {
+    "id": "squarespace",
+    "slug": "squarespace",
+    "name": "Squarespace",
+    "categoryId": "automation",
+    "shortDescription": "Service de création de sites web et hébergement.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://squarespace.com",
+    "websiteUrl": "https://squarespace.com",
+    "logo": ""
+  },
+  {
+    "id": "surveysparrow",
+    "slug": "surveysparrow",
+    "name": "SurveySparrow",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme d’enquêtes et collecte de feedback.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://surveysparrow.com",
+    "websiteUrl": "https://surveysparrow.com",
+    "logo": ""
+  },
+  {
+    "id": "sysaid",
+    "slug": "sysaid",
+    "name": "SysAid",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de gestion des services IT (ITSM).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "10€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://sysaid.com",
+    "websiteUrl": "https://sysaid.com",
+    "logo": ""
+  },
+  {
+    "id": "teamwork",
+    "slug": "teamwork",
+    "name": "Teamwork",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de gestion de projet pour équipes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://teamwork.com",
+    "websiteUrl": "https://teamwork.com",
+    "logo": ""
+  },
+  {
+    "id": "teachable",
+    "slug": "teachable",
+    "name": "Teachable",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme pour créer et vendre des cours en ligne.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://teachable.com",
+    "websiteUrl": "https://teachable.com",
+    "logo": ""
+  },
+  {
+    "id": "tidio",
+    "slug": "tidio",
+    "name": "Tidio",
+    "categoryId": "communication",
+    "shortDescription": "Solution de chat en direct et chatbot pour entreprises.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://tidio.com",
+    "websiteUrl": "https://tidio.com",
+    "logo": ""
+  },
+  {
+    "id": "time-doctor",
+    "slug": "time-doctor",
+    "name": "Time Doctor",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de suivi du temps et productivité des employés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://timedoctor.com",
+    "websiteUrl": "https://timedoctor.com",
+    "logo": ""
+  },
+  {
+    "id": "trustpilot",
+    "slug": "trustpilot",
+    "name": "Trustpilot",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme d’avis en ligne pour entreprises et consommateurs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://trustpilot.com",
+    "websiteUrl": "https://trustpilot.com",
+    "logo": ""
+  },
+  {
+    "id": "typeform",
+    "slug": "typeform",
+    "name": "Typeform",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil en ligne de création de formulaires et enquêtes interactifs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://typeform.com",
+    "websiteUrl": "https://typeform.com",
+    "logo": ""
+  },
+  {
+    "id": "unbounce",
+    "slug": "unbounce",
+    "name": "Unbounce",
+    "categoryId": "email-productivity",
+    "shortDescription": "Générateur de landing pages et plateforme d’optimisation de conversion.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://unbounce.com",
+    "websiteUrl": "https://unbounce.com",
+    "logo": ""
+  },
+  {
+    "id": "upwork",
+    "slug": "upwork",
+    "name": "Upwork",
+    "categoryId": "organization",
+    "shortDescription": "Place de marché freelance reliant entreprises et freelances.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://upwork.com",
+    "websiteUrl": "https://upwork.com",
+    "logo": ""
+  },
+  {
+    "id": "vimeo",
+    "slug": "vimeo",
+    "name": "Vimeo",
+    "categoryId": "creation",
+    "shortDescription": "Plateforme d’hébergement et de partage vidéo professionnelle.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://vimeo.com",
+    "websiteUrl": "https://vimeo.com",
+    "logo": ""
+  },
+  {
+    "id": "wix",
+    "slug": "wix",
+    "name": "Wix",
+    "categoryId": "automation",
+    "shortDescription": "Constructeur de site web avec templates personnalisables.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://wix.com",
+    "websiteUrl": "https://wix.com",
+    "logo": ""
+  },
+  {
+    "id": "woocommerce",
+    "slug": "woocommerce",
+    "name": "WooCommerce",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme e-commerce pour WordPress.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://woocommerce.com",
+    "websiteUrl": "https://woocommerce.com",
+    "logo": ""
+  },
+  {
+    "id": "wordpress-com",
+    "slug": "wordpress-com",
+    "name": "WordPress.com",
+    "categoryId": "automation",
+    "shortDescription": "Constructeur de site web et plateforme de blog.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://wordpress.com",
+    "websiteUrl": "https://wordpress.com",
+    "logo": ""
+  },
+  {
+    "id": "wrike",
+    "slug": "wrike",
+    "name": "Wrike",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de gestion de projet pour équipes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://wrike.com",
+    "websiteUrl": "https://wrike.com",
+    "logo": ""
+  },
+  {
+    "id": "wunderlist",
+    "slug": "wunderlist",
+    "name": "Wunderlist",
+    "categoryId": "organization",
+    "shortDescription": "Application de gestion de tâches et de listes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://wunderlist.com",
+    "websiteUrl": "https://wunderlist.com",
+    "logo": ""
+  },
+  {
+    "id": "zapier",
+    "slug": "zapier",
+    "name": "Zapier",
+    "categoryId": "automation",
+    "shortDescription": "Outil d’automatisation pour connecter des applications et workflows.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://zapier.com",
+    "websiteUrl": "https://zapier.com",
+    "logo": ""
+  },
+  {
+    "id": "zendesk",
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme de service client et engagement client.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://zendesk.com",
+    "websiteUrl": "https://zendesk.com",
+    "logo": ""
+  },
+  {
+    "id": "zoho",
+    "slug": "zoho",
+    "name": "Zoho",
+    "categoryId": "organization",
+    "shortDescription": "Suite d’outils de productivité en ligne et applications SaaS.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "15€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://zoho.com",
+    "websiteUrl": "https://zoho.com",
+    "logo": ""
+  },
+  {
+    "id": "honeybook",
+    "slug": "honeybook",
+    "name": "HoneyBook",
+    "categoryId": "communication",
+    "shortDescription": "Logiciel de gestion client pour petites entreprises (CRM",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": " facturation).",
+    "websiteUrl": " facturation).",
+    "logo": ""
+  },
+  {
+    "id": "dubsado",
+    "slug": "dubsado",
+    "name": "Dubsado",
+    "categoryId": "organization",
+    "shortDescription": "Suite de gestion d’entreprise pour créatifs (contrats",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": " planning).",
+    "websiteUrl": " planning).",
+    "logo": ""
+  },
+  {
+    "id": "visme",
+    "slug": "visme",
+    "name": "Visme",
+    "categoryId": "creation",
+    "shortDescription": "Plateforme de création de contenus visuels (présentations",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": " infographies).",
+    "websiteUrl": " infographies).",
+    "logo": ""
+  },
+  {
+    "id": "plutio",
+    "slug": "plutio",
+    "name": "Plutio",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme de gestion tout-en-un pour freelances (projets, facturation, CRM, finances).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "",
+    "logo": ""
+  },
+  {
+    "id": "snov-io",
+    "slug": "snov-io",
+    "name": "Snov.io",
+    "categoryId": "communication",
+    "shortDescription": "Plateforme d’automatisation des ventes (recherche d’emails",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": " campagnes).",
+    "websiteUrl": " campagnes).",
+    "logo": ""
+  },
+  {
+    "id": "elfsight",
+    "slug": "elfsight",
+    "name": "Elfsight",
+    "categoryId": "email-productivity",
+    "shortDescription": "Collection de widgets pour sites web (flux sociaux",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": " formulaires…).",
+    "websiteUrl": " formulaires…).",
+    "logo": ""
+  },
+  {
+    "id": "prowritingaid",
+    "slug": "prowritingaid",
+    "name": "ProWritingAid",
+    "categoryId": "creation",
+    "shortDescription": "Assistant d’écriture pour améliorer style",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": " grammaire et clarté.",
+    "websiteUrl": " grammaire et clarté.",
+    "logo": ""
+  },
+  {
+    "id": "vcita",
+    "slug": "vcita",
+    "name": "vcita",
+    "categoryId": "communication",
+    "shortDescription": "Plateforme de gestion clients pour PME (rendez-vous",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": " paiements).",
+    "websiteUrl": " paiements).",
+    "logo": ""
+  },
+  {
+    "id": "sendible",
+    "slug": "sendible",
+    "name": "Sendible",
+    "categoryId": "email-productivity",
+    "shortDescription": "Outil de gestion des réseaux sociaux pour agences (programmation",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Toutes les fonctionnalités",
+      "paid": "Version payante disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": " rapports).",
+    "websiteUrl": " rapports).",
+    "logo": ""
+  },
+  {
+    "id": "clockify",
+    "slug": "clockify",
+    "name": "Clockify",
+    "categoryId": "organization",
+    "shortDescription": "Logiciel de suivi du temps (gratuit) pour équipes et projets.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://clockify.com",
+    "websiteUrl": "https://clockify.com",
+    "logo": ""
+  },
+  {
+    "id": "timecamp",
+    "slug": "timecamp",
+    "name": "TimeCamp",
+    "categoryId": "organization",
+    "shortDescription": "Outil de suivi du temps et rapports pour la productivité.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://timecamp.com",
+    "websiteUrl": "https://timecamp.com",
+    "logo": ""
+  },
+  {
+    "id": "deepseek",
+    "slug": "deepseek",
+    "name": "DeepSeek",
+    "categoryId": "ai-general",
+    "shortDescription": "L'IA chinoise open-source qui défie ChatGPT.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Application gratuite + modèles open-source téléchargeables",
+      "paid": "$0.27/M tokens (API) - 50x moins cher que ChatGPT"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.deepseek.com",
+    "websiteUrl": "https://www.deepseek.com",
+    "logo": ""
+  },
+  {
+    "id": "gemini",
+    "slug": "gemini",
+    "name": "Gemini",
+    "categoryId": "ai-general",
+    "shortDescription": "L'IA de Google qui double ses performances tous les 3 mois.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Gemini app (limité)",
+      "paid": "Google AI Pro/Ultra : $2/$12 par M tokens (API)"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://gemini.google.com",
+    "websiteUrl": "https://gemini.google.com",
+    "logo": ""
+  },
+  {
+    "id": "adobe-photoshop",
+    "slug": "adobe-photoshop",
+    "name": "Adobe Photoshop",
+    "categoryId": "design-tools",
+    "shortDescription": "Le standard mondial de la retouche photo et du compositing.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "bundle": "Inclus dans Adobe Creative Cloud (60€/mois)",
+      "standalone": "24€/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://adobe.com/products/photoshop",
+    "websiteUrl": "https://adobe.com/products/photoshop",
+    "logo": ""
+  },
+  {
+    "id": "adobe-illustrator",
+    "slug": "adobe-illustrator",
+    "name": "Adobe Illustrator",
+    "categoryId": "design-tools",
+    "shortDescription": "Le standard du design vectoriel et de l'illustration.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "bundle": "Inclus dans Adobe Creative Cloud",
+      "standalone": "24€/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://adobe.com/products/illustrator",
+    "websiteUrl": "https://adobe.com/products/illustrator",
+    "logo": ""
+  },
+  {
+    "id": "adobe-premiere-pro",
+    "slug": "adobe-premiere-pro",
+    "name": "Adobe Premiere Pro",
+    "categoryId": "design-tools",
+    "shortDescription": "Le logiciel de montage vidéo professionnel de référence.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "bundle": "Inclus dans Adobe Creative Cloud",
+      "standalone": "24€/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://adobe.com/products/premiere",
+    "websiteUrl": "https://adobe.com/products/premiere",
+    "logo": ""
+  },
+  {
+    "id": "adobe-after-effects",
+    "slug": "adobe-after-effects",
+    "name": "Adobe After Effects",
+    "categoryId": "design-tools",
+    "shortDescription": "Le standard du motion design et des effets visuels.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "bundle": "Inclus dans Adobe Creative Cloud",
+      "standalone": "24€/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://adobe.com/products/aftereffects",
+    "websiteUrl": "https://adobe.com/products/aftereffects",
+    "logo": ""
+  },
+  {
+    "id": "adobe-lightroom",
+    "slug": "adobe-lightroom",
+    "name": "Adobe Lightroom",
+    "categoryId": "design-tools",
+    "shortDescription": "Le standard de la gestion et retouche photo RAW.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "bundle": "Inclus dans Adobe Creative Cloud",
+      "standalone": "12€/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://adobe.com/products/lightroom",
+    "websiteUrl": "https://adobe.com/products/lightroom",
+    "logo": ""
+  },
+  {
+    "id": "adobe-cc",
+    "slug": "adobe-cc",
+    "name": "Adobe Creative Cloud",
+    "categoryId": "design-tools",
+    "shortDescription": "La suite complète : Photoshop, Illustrator, Premiere, After Effects, Lightroom et +20 apps.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "60€/mois (toutes apps) ou 24€/mois (app unique)"
+    },
+    "defaultMonthlyPrice": 60,
+    "affiliateLink": "https://adobe.com/creativecloud",
+    "websiteUrl": "https://adobe.com/creativecloud",
+    "logo": ""
+  },
+  {
+    "id": "davinci-resolve",
+    "slug": "davinci-resolve",
+    "name": "DaVinci Resolve",
+    "categoryId": "design-tools",
+    "shortDescription": "Montage, étalonnage, effets visuels et audio en un seul logiciel. Gratuit.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Version complète gratuite",
+      "paid": "Studio 295€ achat unique"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://blackmagicdesign.com/products/davinciresolve",
+    "websiteUrl": "https://blackmagicdesign.com/products/davinciresolve",
+    "logo": ""
+  },
+  {
+    "id": "capture-one",
+    "slug": "capture-one",
+    "name": "Capture One",
+    "categoryId": "design-tools",
+    "shortDescription": "Le logiciel de retouche RAW préféré des photographes professionnels.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "24€/mois ou 180€/an"
+    },
+    "defaultMonthlyPrice": 24,
+    "affiliateLink": "https://captureone.com",
+    "websiteUrl": "https://captureone.com",
+    "logo": ""
+  },
+  {
+    "id": "blender",
+    "slug": "blender",
+    "name": "Blender",
+    "categoryId": "design-tools",
+    "shortDescription": "Suite 3D complète open source : modélisation, animation, rendu, compositing.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Entièrement gratuit et open source"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://blender.org",
+    "websiteUrl": "https://blender.org",
+    "logo": ""
+  },
+  {
+    "id": "frame-io",
+    "slug": "frame-io",
+    "name": "Frame.io",
+    "categoryId": "communication",
+    "shortDescription": "La plateforme de review et collaboration vidéo pour les équipes créatives.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "2GB stockage",
+      "paid": "15€/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://frame.io",
+    "websiteUrl": "https://frame.io",
+    "logo": ""
+  },
+  {
+    "id": "pixieset",
+    "slug": "pixieset",
+    "name": "Pixieset",
+    "categoryId": "creation",
+    "shortDescription": "Galeries en ligne professionnelles pour photographes avec vente de tirages.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "3GB stockage",
+      "paid": "12€/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "https://pixieset.com",
+    "websiteUrl": "https://pixieset.com",
+    "logo": ""
+  },
+  {
+    "id": "github",
+    "slug": "github",
+    "name": "GitHub",
+    "categoryId": "project-management",
+    "shortDescription": "La plateforme de versioning et collaboration code de référence.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Repos publics et privés illimités",
+      "paid": "4$/mois (Teams)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://github.com",
+    "websiteUrl": "https://github.com",
+    "logo": ""
+  },
+  {
+    "id": "cursor",
+    "slug": "cursor",
+    "name": "Cursor",
+    "categoryId": "ai-general",
+    "shortDescription": "L'IDE IA qui code avec vous en temps réel.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "2 semaines trial",
+      "paid": "20$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://cursor.sh",
+    "websiteUrl": "https://cursor.sh",
+    "logo": ""
+  },
+  {
+    "id": "vercel",
+    "slug": "vercel",
+    "name": "Vercel",
+    "categoryId": "nocode-web",
+    "shortDescription": "La plateforme de déploiement frontend la plus rapide.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Hobby plan complet",
+      "paid": "20$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://vercel.com",
+    "websiteUrl": "https://vercel.com",
+    "logo": ""
+  },
+  {
+    "id": "runway",
+    "slug": "runway",
+    "name": "Runway",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération et édition vidéo par IA. Le standard du genre.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "125 crédits/mois",
+      "paid": "15$/mois (Standard)"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://runwayml.com",
+    "websiteUrl": "https://runwayml.com",
+    "logo": ""
+  },
+  {
+    "id": "firefly",
+    "slug": "firefly",
+    "name": "Adobe Firefly",
+    "categoryId": "ai-general",
+    "shortDescription": "La génération d'images IA intégrée dans Adobe CC.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "bundle": "Inclus dans Adobe CC (crédits mensuels)",
+      "standalone": "5€/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://firefly.adobe.com",
+    "websiteUrl": "https://firefly.adobe.com",
+    "logo": ""
+  },
+  {
+    "id": "leonardo-ai",
+    "slug": "leonardo-ai",
+    "name": "Leonardo AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération d'images IA avec fine-tuning et modèles spécialisés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "150 tokens/jour",
+      "paid": "12$/mois (Artisan)"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "https://leonardo.ai",
+    "websiteUrl": "https://leonardo.ai",
+    "logo": ""
+  },
+  {
+    "id": "topaz-video-ai",
+    "slug": "topaz-video-ai",
+    "name": "Topaz Video AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Upscaling et amélioration vidéo par IA.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "299$ achat unique ou 99$/an"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://topazlabs.com/topaz-video-ai",
+    "websiteUrl": "https://topazlabs.com/topaz-video-ai",
+    "logo": ""
+  },
+  {
+    "id": "heygen",
+    "slug": "heygen",
+    "name": "HeyGen",
+    "categoryId": "ai-general",
+    "shortDescription": "Création de vidéos avec avatars IA et traduction automatique.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "1 vidéo/mois",
+      "paid": "29$/mois (Creator)"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "https://heygen.com",
+    "websiteUrl": "https://heygen.com",
+    "logo": ""
+  },
+  {
+    "id": "github-copilot",
+    "slug": "github-copilot",
+    "name": "GitHub Copilot",
+    "categoryId": "ai-general",
+    "shortDescription": "L'assistant de code IA intégré dans votre éditeur.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "10$/mois (Individual)"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://github.com/features/copilot",
+    "websiteUrl": "https://github.com/features/copilot",
+    "logo": ""
+  },
+  {
+    "id": "aescripts-flow",
+    "slug": "aescripts-flow",
+    "name": "Flow (aescripts)",
+    "categoryId": "design-tools",
+    "shortDescription": "Le plugin d'animation de courbes le plus populaire pour After Effects.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "8€/mois ou 69€ achat unique"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://aescripts.com/flow",
+    "websiteUrl": "https://aescripts.com/flow",
+    "logo": ""
+  },
+  {
+    "id": "motion-bro",
+    "slug": "motion-bro",
+    "name": "Motion Bro",
+    "categoryId": "design-tools",
+    "shortDescription": "Gestionnaire de presets et extensions pour After Effects.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "9€/mois"
+    },
+    "defaultMonthlyPrice": 9,
+    "affiliateLink": "https://motionbro.net",
+    "websiteUrl": "https://motionbro.net",
+    "logo": ""
+  },
+  {
+    "id": "capcut",
+    "slug": "capcut",
+    "name": "CapCut",
+    "categoryId": "creation",
+    "shortDescription": "Montage vidéo mobile et desktop pour les créateurs de contenu.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctionnalités larges gratuites",
+      "paid": "10$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://capcut.com",
+    "websiteUrl": "https://capcut.com",
+    "logo": ""
+  },
+  {
+    "id": "riverside",
+    "slug": "riverside",
+    "name": "Riverside",
+    "categoryId": "communication",
+    "shortDescription": "Enregistrement podcast et vidéo en qualité studio, à distance.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "2h/mois",
+      "paid": "15$/mois (Standard)"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://riverside.fm",
+    "websiteUrl": "https://riverside.fm",
+    "logo": ""
+  },
+  {
+    "id": "beehiiv",
+    "slug": "beehiiv",
+    "name": "Beehiiv",
+    "categoryId": "email-productivity",
+    "shortDescription": "La plateforme newsletter conçue pour la croissance et la monétisation.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Jusqu'à 2500 abonnés",
+      "paid": "39$/mois (Scale)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://beehiiv.com",
+    "websiteUrl": "https://beehiiv.com",
+    "logo": ""
+  },
+  {
+    "id": "intercom",
+    "slug": "intercom",
+    "name": "Intercom",
+    "categoryId": "communication",
+    "shortDescription": "La plateforme de support client et d'onboarding pour SaaS.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "À partir de 74$/mois"
+    },
+    "defaultMonthlyPrice": 74,
+    "affiliateLink": "https://intercom.com",
+    "websiteUrl": "https://intercom.com",
+    "logo": ""
+  },
+  {
+    "id": "amplitude",
+    "slug": "amplitude",
+    "name": "Amplitude",
+    "categoryId": "analytics",
+    "shortDescription": "La plateforme d'analytics produit pour comprendre le comportement utilisateur.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Jusqu'à 50k events/mois",
+      "paid": "Sur devis"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://amplitude.com",
+    "websiteUrl": "https://amplitude.com",
+    "logo": ""
+  },
+  {
+    "id": "posthog",
+    "slug": "posthog",
+    "name": "PostHog",
+    "categoryId": "analytics",
+    "shortDescription": "Suite analytics produit open source : events, replays, feature flags, A/B.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "1M events/mois gratuits",
+      "paid": "Pay-as-you-go après"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://posthog.com",
+    "websiteUrl": "https://posthog.com",
+    "logo": ""
+  },
+  {
+    "id": "spendesk",
+    "slug": "spendesk",
+    "name": "Spendesk",
+    "categoryId": "finance",
+    "shortDescription": "Gestion des dépenses d'entreprise : cartes virtuelles, notes de frais, approbations.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "À partir de 99€/mois"
+    },
+    "defaultMonthlyPrice": 99,
+    "affiliateLink": "https://spendesk.com",
+    "websiteUrl": "https://spendesk.com",
+    "logo": ""
+  },
+  {
+    "id": "pika-labs",
+    "slug": "pika-labs",
+    "name": "Pika Labs",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération vidéo IA centrée sur l'animation de personnages et d'objets.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "150 crédits/mois",
+      "paid": "8$/mois (Basic)"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://pika.art",
+    "websiteUrl": "https://pika.art",
+    "logo": ""
+  },
+  {
+    "id": "kling-ai",
+    "slug": "kling-ai",
+    "name": "Kling AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération vidéo IA réaliste jusqu'à 2 minutes. Alternative sérieuse à Runway.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "166 crédits/mois",
+      "paid": "10$/mois (Basic)"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://klingai.com",
+    "websiteUrl": "https://klingai.com",
+    "logo": ""
+  },
+  {
+    "id": "krea-ai",
+    "slug": "krea-ai",
+    "name": "Krea AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération d'images IA en temps réel avec contrôle créatif avancé.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Accès limité",
+      "paid": "10$/mois (Standard)"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://krea.ai",
+    "websiteUrl": "https://krea.ai",
+    "logo": ""
+  },
+  {
+    "id": "magnific-ai",
+    "slug": "magnific-ai",
+    "name": "Magnific AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Upscaling IA d'images avec ajout de détails hallucinés. Résultats uniques.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "39$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 39,
+    "affiliateLink": "https://magnific.ai",
+    "websiteUrl": "https://magnific.ai",
+    "logo": ""
+  },
+  {
+    "id": "ideogram",
+    "slug": "ideogram",
+    "name": "Ideogram",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération d'images IA avec texte intégré — le meilleur du marché pour la typo.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "10 générations/jour",
+      "paid": "8$/mois (Basic)"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://ideogram.ai",
+    "websiteUrl": "https://ideogram.ai",
+    "logo": ""
+  },
+  {
+    "id": "udio",
+    "slug": "udio",
+    "name": "Udio",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération musicale IA de haute qualité à partir d'un prompt texte.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "100 crédits/mois",
+      "paid": "10$/mois (Standard)"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://udio.com",
+    "websiteUrl": "https://udio.com",
+    "logo": ""
+  },
+  {
+    "id": "suno",
+    "slug": "suno",
+    "name": "Suno",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération musicale IA avec paroles et voix intégrées.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "50 crédits/jour",
+      "paid": "10$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://suno.com",
+    "websiteUrl": "https://suno.com",
+    "logo": ""
+  },
+  {
+    "id": "descript",
+    "slug": "descript",
+    "name": "Descript",
+    "categoryId": "ai-general",
+    "shortDescription": "Édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "1h transcription/mois",
+      "paid": "12$/mois (Creator)"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "https://descript.com",
+    "websiteUrl": "https://descript.com",
+    "logo": ""
+  },
+  {
+    "id": "otter-ai",
+    "slug": "otter-ai",
+    "name": "Otter.ai",
+    "categoryId": "ai-general",
+    "shortDescription": "Transcription et résumé automatique de réunions en temps réel.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "300 minutes/mois",
+      "paid": "10$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://otter.ai",
+    "websiteUrl": "https://otter.ai",
+    "logo": ""
+  },
+  {
+    "id": "bolt-new",
+    "slug": "bolt-new",
+    "name": "Bolt.new",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération d'applications web complètes depuis un prompt. Alternative à Lovable.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Crédits limités",
+      "paid": "20$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://bolt.new",
+    "websiteUrl": "https://bolt.new",
+    "logo": ""
+  },
+  {
+    "id": "lovable",
+    "slug": "lovable",
+    "name": "Lovable",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération d'applications full-stack depuis un prompt avec Supabase intégré.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Crédits limités",
+      "paid": "20$/mois (Starter)"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://lovable.dev",
+    "websiteUrl": "https://lovable.dev",
+    "logo": ""
+  },
+  {
+    "id": "replit",
+    "slug": "replit",
+    "name": "Replit",
+    "categoryId": "ai-general",
+    "shortDescription": "IDE en ligne avec IA intégrée, hébergement et collaboration en temps réel.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Usage limité",
+      "paid": "20$/mois (Core)"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://replit.com",
+    "websiteUrl": "https://replit.com",
+    "logo": ""
+  },
+  {
+    "id": "tabnine",
+    "slug": "tabnine",
+    "name": "Tabnine",
+    "categoryId": "ai-general",
+    "shortDescription": "Assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Modèle basique gratuit",
+      "paid": "12$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "https://tabnine.com",
+    "websiteUrl": "https://tabnine.com",
+    "logo": ""
+  },
+  {
+    "id": "stable-diffusion",
+    "slug": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "categoryId": "ai-general",
+    "shortDescription": "Génération d'images IA open source — contrôle total, hébergement local possible.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Open source gratuit (local)",
+      "paid": "Via Stability AI API : pay-as-you-go"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://stability.ai",
+    "websiteUrl": "https://stability.ai",
+    "logo": ""
+  },
+  {
+    "id": "notion-ai",
+    "slug": "notion-ai",
+    "name": "Notion AI",
+    "categoryId": "ai-general",
+    "shortDescription": "IA intégrée dans Notion : rédaction, résumé, traduction directement dans vos docs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "8$/mois en add-on Notion"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://notion.so/product/ai",
+    "websiteUrl": "https://notion.so/product/ai",
+    "logo": ""
+  },
+  {
+    "id": "mem-ai",
+    "slug": "mem-ai",
+    "name": "Mem AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "14$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 14,
+    "affiliateLink": "https://mem.ai",
+    "websiteUrl": "https://mem.ai",
+    "logo": ""
+  },
+  {
+    "id": "adobe-podcast-ai",
+    "slug": "adobe-podcast-ai",
+    "name": "Adobe Podcast AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Amélioration audio IA : suppression de bruit, égalisation automatique, studio qualité.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Gratuit (beta)",
+      "bundle": "Inclus dans Adobe CC"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://podcast.adobe.com",
+    "websiteUrl": "https://podcast.adobe.com",
+    "logo": ""
+  },
+  {
+    "id": "flux",
+    "slug": "flux",
+    "name": "Flux (Black Forest Labs)",
+    "categoryId": "ai-general",
+    "shortDescription": "Modèle de génération d'images IA open source — qualité supérieure à Stable Diffusion.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Open source",
+      "paid": "Via API Replicate ou fal.ai : pay-as-you-go"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://blackforestlabs.ai",
+    "websiteUrl": "https://blackforestlabs.ai",
+    "logo": ""
+  },
+  {
+    "id": "whisper",
+    "slug": "whisper",
+    "name": "Whisper (OpenAI)",
+    "categoryId": "ai-general",
+    "shortDescription": "Transcription audio open source d'OpenAI. Précis, multilingue, gratuit.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Open source gratuit",
+      "paid": "Via API OpenAI : 0.006$/minute"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://openai.com/research/whisper",
+    "websiteUrl": "https://openai.com/research/whisper",
+    "logo": ""
+  },
+  {
+    "id": "buzzsprout",
+    "slug": "buzzsprout",
+    "name": "Buzzsprout",
+    "categoryId": "creation",
+    "shortDescription": "L'hébergement podcast le plus simple à prendre en main. Distribution automatique.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "2h/mois (90 jours)",
+      "paid": "12$/mois (3h/mois)"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "https://buzzsprout.com",
+    "websiteUrl": "https://buzzsprout.com",
+    "logo": ""
+  },
+  {
+    "id": "anchor-spotify",
+    "slug": "anchor-spotify",
+    "name": "Spotify for Podcasters",
+    "categoryId": "creation",
+    "shortDescription": "Hébergement et distribution podcast 100% gratuit par Spotify.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Entièrement gratuit"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://podcasters.spotify.com",
+    "websiteUrl": "https://podcasters.spotify.com",
+    "logo": ""
+  },
+  {
+    "id": "audacity",
+    "slug": "audacity",
+    "name": "Audacity",
+    "categoryId": "creation",
+    "shortDescription": "Logiciel de montage audio open source. Gratuit, puissant, universel.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Entièrement gratuit et open source"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://audacityteam.org",
+    "websiteUrl": "https://audacityteam.org",
+    "logo": ""
+  },
+  {
+    "id": "podbean",
+    "slug": "podbean",
+    "name": "Podbean",
+    "categoryId": "creation",
+    "shortDescription": "Hébergement podcast avec monétisation intégrée (dynamic ads, abonnements).",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "5h stockage",
+      "paid": "9$/mois (Unlimited Audio)"
+    },
+    "defaultMonthlyPrice": 9,
+    "affiliateLink": "https://podbean.com",
+    "websiteUrl": "https://podbean.com",
+    "logo": ""
+  },
+  {
+    "id": "buffer",
+    "slug": "buffer",
+    "name": "Buffer",
+    "categoryId": "creation",
+    "shortDescription": "Planification de posts sur tous les réseaux. Simple, propre, efficace.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "3 canaux, 10 posts en file",
+      "paid": "6$/mois (Essentials)"
+    },
+    "defaultMonthlyPrice": 6,
+    "affiliateLink": "https://buffer.com",
+    "websiteUrl": "https://buffer.com",
+    "logo": ""
+  },
+  {
+    "id": "sprout-social",
+    "slug": "sprout-social",
+    "name": "Sprout Social",
+    "categoryId": "creation",
+    "shortDescription": "Gestion réseaux sociaux premium avec CRM social et analytics avancés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "249$/mois (Standard)"
+    },
+    "defaultMonthlyPrice": 249,
+    "affiliateLink": "https://sproutsocial.com",
+    "websiteUrl": "https://sproutsocial.com",
+    "logo": ""
+  },
+  {
+    "id": "tubebody",
+    "slug": "tubebody",
+    "name": "TubeBuddy",
+    "categoryId": "creation",
+    "shortDescription": "Extension YouTube pour optimiser le SEO, les tags et la performance de vos vidéos.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Fonctions basiques",
+      "paid": "5$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "https://tubebuddy.com",
+    "websiteUrl": "https://tubebuddy.com",
+    "logo": ""
+  },
+  {
+    "id": "vidiq",
+    "slug": "vidiq",
+    "name": "VidIQ",
+    "categoryId": "creation",
+    "shortDescription": "Analytics YouTube et IA pour trouver les sujets viraux et optimiser chaque vidéo.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Analytics basiques",
+      "paid": "7$/mois (Basic)"
+    },
+    "defaultMonthlyPrice": 7,
+    "affiliateLink": "https://vidiq.com",
+    "websiteUrl": "https://vidiq.com",
+    "logo": ""
+  },
+  {
+    "id": "substack",
+    "slug": "substack",
+    "name": "Substack",
+    "categoryId": "email-productivity",
+    "shortDescription": "Plateforme newsletter et blog avec monétisation intégrée. Zéro friction.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Gratuit (10% commission sur abonnements payants)",
+      "paid": "Aucun abonnement requis"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://substack.com",
+    "websiteUrl": "https://substack.com",
+    "logo": ""
+  },
+  {
+    "id": "typefully",
+    "slug": "typefully",
+    "name": "Typefully",
+    "categoryId": "creation",
+    "shortDescription": "Rédaction et planification de threads Twitter/X et posts LinkedIn sans distraction.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Twitter/X gratuit",
+      "paid": "12$/mois (Creator, LinkedIn inclus)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://typefully.com",
+    "websiteUrl": "https://typefully.com",
+    "logo": ""
+  },
+  {
+    "id": "lever",
+    "slug": "lever",
+    "name": "Lever",
+    "categoryId": "organization",
+    "shortDescription": "ATS (Applicant Tracking System) moderne pour équipes de recrutement.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "Sur devis (environ 200$/mois pour petites équipes)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://lever.co",
+    "websiteUrl": "https://lever.co",
+    "logo": ""
+  },
+  {
+    "id": "workable",
+    "slug": "workable",
+    "name": "Workable",
+    "categoryId": "organization",
+    "shortDescription": "ATS tout-en-un avec sourcing IA, job boards et onboarding.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "189$/mois (Starter)"
+    },
+    "defaultMonthlyPrice": 189,
+    "affiliateLink": "https://workable.com",
+    "websiteUrl": "https://workable.com",
+    "logo": ""
+  },
+  {
+    "id": "personio",
+    "slug": "personio",
+    "name": "Personio",
+    "categoryId": "organization",
+    "shortDescription": "SIRH complet pour PME : recrutement, onboarding, paie, congés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "Sur devis (environ 3€/employé/mois)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://personio.com",
+    "websiteUrl": "https://personio.com",
+    "logo": ""
+  },
+  {
+    "id": "kajabi",
+    "slug": "kajabi",
+    "name": "Kajabi",
+    "categoryId": "formation-education",
+    "shortDescription": "La plateforme tout-en-un pour créateurs : cours, communauté, email, paiements.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "55$/mois (Basic) à 199$/mois (Growth)"
+    },
+    "defaultMonthlyPrice": 55,
+    "affiliateLink": "https://kajabi.com",
+    "websiteUrl": "https://kajabi.com",
+    "logo": ""
+  },
+  {
+    "id": "podia",
+    "slug": "podia",
+    "name": "Podia",
+    "categoryId": "formation-education",
+    "shortDescription": "Vente de cours, webinaires et téléchargements numériques. 0% commission.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "33$/mois (Mover)"
+    },
+    "defaultMonthlyPrice": 33,
+    "affiliateLink": "https://podia.com",
+    "websiteUrl": "https://podia.com",
+    "logo": ""
+  },
+  {
+    "id": "thinkific",
+    "slug": "thinkific",
+    "name": "Thinkific",
+    "categoryId": "formation-education",
+    "shortDescription": "Plateforme de création de cours en ligne avec branding personnalisé.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "1 cours gratuit",
+      "paid": "36$/mois (Basic)"
+    },
+    "defaultMonthlyPrice": 36,
+    "affiliateLink": "https://thinkific.com",
+    "websiteUrl": "https://thinkific.com",
+    "logo": ""
+  },
+  {
+    "id": "circle",
+    "slug": "circle",
+    "name": "Circle",
+    "categoryId": "formation-education",
+    "shortDescription": "La plateforme de communauté en ligne pour créateurs et formateurs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "14 jours trial",
+      "paid": "49$/mois (Basic)"
+    },
+    "defaultMonthlyPrice": 49,
+    "affiliateLink": "https://circle.so",
+    "websiteUrl": "https://circle.so",
+    "logo": ""
+  },
+  {
+    "id": "metabase",
+    "slug": "metabase",
+    "name": "Metabase",
+    "categoryId": "analytics",
+    "shortDescription": "Outil de BI open source. Créez des dashboards depuis votre base de données sans SQL.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Self-hosted gratuit",
+      "paid": "500$/mois (Cloud)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://metabase.com",
+    "websiteUrl": "https://metabase.com",
+    "logo": ""
+  },
+  {
+    "id": "looker-studio",
+    "slug": "looker-studio",
+    "name": "Looker Studio",
+    "categoryId": "analytics",
+    "shortDescription": "Outil de reporting et dashboards Google. Connexion native à GA4, Sheets, BigQuery.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Entièrement gratuit"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://lookerstudio.google.com",
+    "websiteUrl": "https://lookerstudio.google.com",
+    "logo": ""
+  },
+  {
+    "id": "retool",
+    "slug": "retool",
+    "name": "Retool",
+    "categoryId": "nocode-web",
+    "shortDescription": "Construire des outils internes rapidement : dashboards, admin panels, CRUD.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "5 apps en cloud",
+      "paid": "10$/mois/user"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://retool.com",
+    "websiteUrl": "https://retool.com",
+    "logo": ""
+  },
+  {
+    "id": "datadog",
+    "slug": "datadog",
+    "name": "Datadog",
+    "categoryId": "analytics",
+    "shortDescription": "Observabilité complète : logs, métriques, APM, alertes en temps réel.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "5 hosts, 1 jour rétention",
+      "paid": "15$/host/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://datadoghq.com",
+    "websiteUrl": "https://datadoghq.com",
+    "logo": ""
+  },
+  {
+    "id": "sentry",
+    "slug": "sentry",
+    "name": "Sentry",
+    "categoryId": "analytics",
+    "shortDescription": "Monitoring des erreurs et performance applicative. Le standard des devs.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "5k erreurs/mois",
+      "paid": "26$/mois (Team)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://sentry.io",
+    "websiteUrl": "https://sentry.io",
+    "logo": ""
+  },
+  {
+    "id": "jira",
+    "slug": "jira",
+    "name": "Jira",
+    "categoryId": "project-management",
+    "shortDescription": "La référence de la gestion de projet Agile pour équipes tech.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Jusqu'à 10 users",
+      "paid": "7.75$/user/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://atlassian.com/software/jira",
+    "websiteUrl": "https://atlassian.com/software/jira",
+    "logo": ""
+  },
+  {
+    "id": "confluence",
+    "slug": "confluence",
+    "name": "Confluence",
+    "categoryId": "organization",
+    "shortDescription": "Wiki d'entreprise Atlassian. Documentation technique et knowledge base.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Jusqu'à 10 users",
+      "paid": "5.75$/user/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://atlassian.com/software/confluence",
+    "websiteUrl": "https://atlassian.com/software/confluence",
+    "logo": ""
+  },
+  {
+    "id": "productboard",
+    "slug": "productboard",
+    "name": "Productboard",
+    "categoryId": "project-management",
+    "shortDescription": "Outil de discovery produit : collecte feedback, priorisation, roadmap.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "15 jours trial",
+      "paid": "20$/mois (Starter)"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "https://productboard.com",
+    "websiteUrl": "https://productboard.com",
+    "logo": ""
+  },
+  {
+    "id": "canny",
+    "slug": "canny",
+    "name": "Canny",
+    "categoryId": "project-management",
+    "shortDescription": "Collecte et vote de feedback utilisateurs. Roadmap publique ou privée.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Jusqu'à 100 tracked users",
+      "paid": "99$/mois (Growth)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://canny.io",
+    "websiteUrl": "https://canny.io",
+    "logo": ""
+  },
+  {
+    "id": "hex",
+    "slug": "hex",
+    "name": "Hex",
+    "categoryId": "analytics",
+    "shortDescription": "Notebooks data collaboratifs avec publication en apps interactives.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "5 projets publics",
+      "paid": "24$/mois (Starter)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://hex.tech",
+    "websiteUrl": "https://hex.tech",
+    "logo": ""
+  },
+  {
+    "id": "pagerduty",
+    "slug": "pagerduty",
+    "name": "PagerDuty",
+    "categoryId": "analytics",
+    "shortDescription": "Gestion des incidents en temps réel avec astreintes et escalade automatique.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "5 users",
+      "paid": "21$/user/mois (Professional)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://pagerduty.com",
+    "websiteUrl": "https://pagerduty.com",
+    "logo": ""
+  },
+  {
+    "id": "ae-overlord",
+    "slug": "ae-overlord",
+    "name": "Overlord",
+    "categoryId": "design-tools",
+    "shortDescription": "Transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "45$ achat unique"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://battleaxe.co/overlord",
+    "websiteUrl": "https://battleaxe.co/overlord",
+    "logo": ""
+  },
+  {
+    "id": "ae-bao-boa",
+    "slug": "ae-bao-boa",
+    "name": "BAO Boa",
+    "categoryId": "design-tools",
+    "shortDescription": "Animation de lignes et formes SVG dans After Effects. Tracés organiques.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "49$ achat unique"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://aescripts.com/boa",
+    "websiteUrl": "https://aescripts.com/boa",
+    "logo": ""
+  },
+  {
+    "id": "ae-newton3",
+    "slug": "ae-newton3",
+    "name": "Newton 3",
+    "categoryId": "design-tools",
+    "shortDescription": "Simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "249$ achat unique"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://aescripts.com/newton",
+    "websiteUrl": "https://aescripts.com/newton",
+    "logo": ""
+  },
+  {
+    "id": "ae-animation-composer",
+    "slug": "ae-animation-composer",
+    "name": "Animation Composer 3",
+    "categoryId": "design-tools",
+    "shortDescription": "Bibliothèque de presets d'animation et de transitions pour After Effects.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Version de base gratuite",
+      "paid": "49$ achat unique (Pro)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://misterhorse.com/animation-composer",
+    "websiteUrl": "https://misterhorse.com/animation-composer",
+    "logo": ""
+  },
+  {
+    "id": "ae-duik",
+    "slug": "ae-duik",
+    "name": "Duik Ángela",
+    "categoryId": "design-tools",
+    "shortDescription": "Le plugin de rigging de personnages de référence pour After Effects. Gratuit.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Entièrement gratuit et open source"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://rxlaboratoire.com/duik",
+    "websiteUrl": "https://rxlaboratoire.com/duik",
+    "logo": ""
+  },
+  {
+    "id": "ae-gifgun",
+    "slug": "ae-gifgun",
+    "name": "GifGun",
+    "categoryId": "design-tools",
+    "shortDescription": "Export GIF directement depuis After Effects en un clic.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "29$ achat unique"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://aescripts.com/gifgun",
+    "websiteUrl": "https://aescripts.com/gifgun",
+    "logo": ""
+  },
+  {
+    "id": "ae-bodymovin",
+    "slug": "ae-bodymovin",
+    "name": "Bodymovin / Lottie",
+    "categoryId": "design-tools",
+    "shortDescription": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Entièrement gratuit"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://aescripts.com/bodymovin",
+    "websiteUrl": "https://aescripts.com/bodymovin",
+    "logo": ""
+  },
+  {
+    "id": "ae-rubberhose",
+    "slug": "ae-rubberhose",
+    "name": "RubberHose 2",
+    "categoryId": "design-tools",
+    "shortDescription": "Animation de membres et tentacules organiques sans rigging complexe dans AE.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "45$ achat unique"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://aescripts.com/rubberhose",
+    "websiteUrl": "https://aescripts.com/rubberhose",
+    "logo": ""
+  },
+  {
+    "id": "ae-red-giant",
+    "slug": "ae-red-giant",
+    "name": "Red Giant Magic Bullet Suite",
+    "categoryId": "design-tools",
+    "shortDescription": "Suite d'étalonnage et look cinématique : Looks, Colorista, Denoiser.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "10$/mois ou 99$ achat unique"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://maxon.net/red-giant",
+    "websiteUrl": "https://maxon.net/red-giant",
+    "logo": ""
+  },
+  {
+    "id": "figma-tokens",
+    "slug": "figma-tokens",
+    "name": "Figma Tokens (Tokens Studio)",
+    "categoryId": "design-tools",
+    "shortDescription": "Gestion des design tokens dans Figma avec sync Git. Indispensable pour les design systems.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Tokens locaux gratuits",
+      "paid": "9$/mois (Pro, sync Git)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://tokens.studio",
+    "websiteUrl": "https://tokens.studio",
+    "logo": ""
+  },
+  {
+    "id": "figma-iconify",
+    "slug": "figma-iconify",
+    "name": "Iconify for Figma",
+    "categoryId": "design-tools",
+    "shortDescription": "Accès à 150 000+ icônes de toutes les bibliothèques directement dans Figma.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Entièrement gratuit"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://iconify.design",
+    "websiteUrl": "https://iconify.design",
+    "logo": ""
+  },
+  {
+    "id": "figma-anima",
+    "slug": "figma-anima",
+    "name": "Anima",
+    "categoryId": "design-tools",
+    "shortDescription": "Export de designs Figma en code React/HTML/CSS. Handoff développeur automatisé.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "3 exports/mois",
+      "paid": "31$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 31,
+    "affiliateLink": "https://animaapp.com",
+    "websiteUrl": "https://animaapp.com",
+    "logo": ""
+  },
+  {
+    "id": "figma-stark",
+    "slug": "figma-stark",
+    "name": "Stark",
+    "categoryId": "design-tools",
+    "shortDescription": "Vérification de l'accessibilité (contrastes, daltonisme) directement dans Figma.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Vérifications basiques",
+      "paid": "7$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://stark.so",
+    "websiteUrl": "https://stark.so",
+    "logo": ""
+  },
+  {
+    "id": "luminar-neo",
+    "slug": "luminar-neo",
+    "name": "Luminar Neo",
+    "categoryId": "design-tools",
+    "shortDescription": "Retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "14$/mois ou 79$/an"
+    },
+    "defaultMonthlyPrice": 14,
+    "affiliateLink": "https://skylum.com/luminar-neo",
+    "websiteUrl": "https://skylum.com/luminar-neo",
+    "logo": ""
+  },
+  {
+    "id": "nik-collection",
+    "slug": "nik-collection",
+    "name": "Nik Collection",
+    "categoryId": "design-tools",
+    "shortDescription": "Suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "149€ achat unique"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://nikcollection.dxo.com",
+    "websiteUrl": "https://nikcollection.dxo.com",
+    "logo": ""
+  },
+  {
+    "id": "topaz-gigapixel",
+    "slug": "topaz-gigapixel",
+    "name": "Topaz Gigapixel AI",
+    "categoryId": "design-tools",
+    "shortDescription": "Upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "99$/an ou 199$ achat unique"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://topazlabs.com/gigapixel",
+    "websiteUrl": "https://topazlabs.com/gigapixel",
+    "logo": ""
+  },
+  {
+    "id": "revit",
+    "slug": "revit",
+    "name": "Revit",
+    "categoryId": "design-tools",
+    "shortDescription": "Le logiciel BIM de référence pour architectes et ingénieurs structure.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "310$/mois ou 2 545$/an"
+    },
+    "defaultMonthlyPrice": 310,
+    "affiliateLink": "https://autodesk.com/products/revit",
+    "websiteUrl": "https://autodesk.com/products/revit",
+    "logo": ""
+  },
+  {
+    "id": "autocad",
+    "slug": "autocad",
+    "name": "AutoCAD",
+    "categoryId": "design-tools",
+    "shortDescription": "Le standard mondial du dessin technique 2D et 3D.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "220$/mois ou 1 775$/an"
+    },
+    "defaultMonthlyPrice": 220,
+    "affiliateLink": "https://autodesk.com/products/autocad",
+    "websiteUrl": "https://autodesk.com/products/autocad",
+    "logo": ""
+  },
+  {
+    "id": "sketchup-pro",
+    "slug": "sketchup-pro",
+    "name": "SketchUp Pro",
+    "categoryId": "design-tools",
+    "shortDescription": "Modélisation 3D intuitive pour architectes, décorateurs et scénographes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "34$/mois ou 349$/an"
+    },
+    "defaultMonthlyPrice": 34,
+    "affiliateLink": "https://sketchup.com",
+    "websiteUrl": "https://sketchup.com",
+    "logo": ""
+  },
+  {
+    "id": "enscape",
+    "slug": "enscape",
+    "name": "Enscape",
+    "categoryId": "design-tools",
+    "shortDescription": "Rendu temps réel et VR pour Revit, SketchUp, Rhino. Présentations client immersives.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "84$/mois ou 659$/an"
+    },
+    "defaultMonthlyPrice": 84,
+    "affiliateLink": "https://enscape3d.com",
+    "websiteUrl": "https://enscape3d.com",
+    "logo": ""
+  },
+  {
+    "id": "lumion",
+    "slug": "lumion",
+    "name": "Lumion",
+    "categoryId": "design-tools",
+    "shortDescription": "Rendu architectural 3D rapide avec bibliothèque massive d'assets.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "paid": "179$/mois ou 1 499$/an"
+    },
+    "defaultMonthlyPrice": 179,
+    "affiliateLink": "https://lumion.com",
+    "websiteUrl": "https://lumion.com",
+    "logo": ""
+  },
+  {
+    "id": "maze",
+    "slug": "maze",
+    "name": "Maze",
+    "categoryId": "design-tools",
+    "shortDescription": "Tests utilisateurs continus directement depuis vos prototypes Figma.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "1 étude/mois",
+      "paid": "75$/mois (Team)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://maze.co",
+    "websiteUrl": "https://maze.co",
+    "logo": ""
+  },
+  {
+    "id": "hotjar",
+    "slug": "hotjar",
+    "name": "Hotjar",
+    "categoryId": "analytics",
+    "shortDescription": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "35 sessions/jour",
+      "paid": "32$/mois (Plus)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://hotjar.com",
+    "websiteUrl": "https://hotjar.com",
+    "logo": ""
+  },
+  {
+    "id": "zeplin",
+    "slug": "zeplin",
+    "name": "Zeplin",
+    "categoryId": "design-tools",
+    "shortDescription": "Handoff design-développement avec specs automatiques et assets exportés.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "1 projet",
+      "paid": "8$/mois (Starter)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://zeplin.io",
+    "websiteUrl": "https://zeplin.io",
+    "logo": ""
+  },
+  {
+    "id": "protopie",
+    "slug": "protopie",
+    "name": "ProtoPie",
+    "categoryId": "design-tools",
+    "shortDescription": "Prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "30 jours trial",
+      "paid": "13$/mois (Basic)"
+    },
+    "defaultMonthlyPrice": 13,
+    "affiliateLink": "https://protopie.io",
+    "websiteUrl": "https://protopie.io",
+    "logo": ""
+  },
+  {
+    "id": "rive",
+    "slug": "rive",
+    "name": "Rive",
+    "categoryId": "design-tools",
+    "shortDescription": "Animation interactive native pour le web et mobile. Remplace Lottie pour les projets complexes.",
+    "shortDescriptionEn": "",
+    "pricing": {
+      "free": "Projets publics gratuits",
+      "paid": "14$/mois (Pro)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://rive.app",
+    "websiteUrl": "https://rive.app",
+    "logo": ""
+  }
+]

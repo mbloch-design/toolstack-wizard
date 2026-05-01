@@ -114,7 +114,7 @@ const CategoryPage = () => {
 
   // Filter & sort
   const filtered = useMemo(() => {
-    let result = allCatTools.filter((tool) => {
+    const result = allCatTools.filter((tool) => {
       const matchSearch =
         !search ||
         tool.name.toLowerCase().includes(search.toLowerCase()) ||

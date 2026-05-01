@@ -1,14 +1,16 @@
 import type { Tool } from "@/data/types";
 import { useState } from "react";
 
+type LogoTool = Pick<Tool, "name" | "websiteUrl" | "affiliateLink">;
+
 interface ToolLogoProps {
-  tool: Tool;
+  tool: LogoTool;
   size?: number;
   className?: string;
 }
 
 /** Extract domain from a URL for Google favicon */
-function getLogoUrl(tool: Tool): string | null {
+function getLogoUrl(tool: LogoTool): string | null {
   const url = tool.websiteUrl || tool.affiliateLink;
   if (!url) return null;
   try {

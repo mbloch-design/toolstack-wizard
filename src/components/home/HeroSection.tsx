@@ -1,7 +1,7 @@
 import { useState, useMemo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useTools } from "@/hooks/useSupabaseData";
+import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { Search } from "lucide-react";
 
 const FEATURED_SLUGS = [
@@ -23,7 +23,7 @@ const FLOAT_LOGOS = [
   { domain: "intercom.com",  top: "4%",  right: "22%", size: 44, floatDuration: "4.6s", floatDelay: "0.3s", revealDelay: "0.20s" },
 ];
 
-function getToolDomain(tool: any): string {
+function getToolDomain(tool: ToolSummary): string {
   const url = tool.websiteUrl || tool.affiliateLink;
   if (!url) return "";
   try {
@@ -35,7 +35,7 @@ function getToolDomain(tool: any): string {
 
 const HeroSection = ({ toolCount }: { toolCount: number }) => {
   const { lang, t, prefix } = useLang();
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -62,7 +62,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
 
   const displayedTools = query.length >= 2 ? searchResults : featuredTools;
 
-  const handleToolClick = (tool: any) => {
+  const handleToolClick = (tool: ToolSummary) => {
     navigate(`${prefix}/selector?from=${tool.slug || tool.id}`);
   };
 

@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
+import { useToolSummaries, useCategories, usePosts, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense } from "react";
 import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
-import type { Tool } from "@/data/types";
 
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
@@ -35,7 +34,7 @@ const FAQ_EN = [
 
 const HomePage = () => {
   const { lang, t, prefix } = useLang();
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
 
@@ -203,7 +202,7 @@ const HomePage = () => {
 };
 
 /* ── Guide card (styled like GuidesPage) ── */
-function GuideCard({ post, prefix, tools }: { post: any; prefix: string; tools: Tool[] }) {
+function GuideCard({ post, prefix, tools }: { post: Post; prefix: string; tools: ToolSummary[] }) {
   const mentionedTools = useArticleTools(post, tools);
   const gradient = getArticleGradient(post.slug, post.category);
 
@@ -224,7 +223,7 @@ function GuideCard({ post, prefix, tools }: { post: any; prefix: string; tools: 
                   alt={tool.name}
                   className="h-6 w-6 rounded object-contain"
                   loading="lazy"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                  onError={(e) => { e.currentTarget.style.display = "none"; }}
                 />
               </div>
             ))}
@@ -252,8 +251,8 @@ function GuideCard({ post, prefix, tools }: { post: any; prefix: string; tools: 
   );
 }
 
-function getToolDomain(tool: Tool): string {
-  const url = (tool as any).websiteUrl || tool.affiliateLink;
+function getToolDomain(tool: ToolSummary): string {
+  const url = tool.websiteUrl || tool.affiliateLink;
   if (!url) return "";
   try {
     return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");

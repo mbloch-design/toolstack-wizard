@@ -81,7 +81,9 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
     try {
       const saved = localStorage.getItem(LOCALSTORAGE_KEY);
       if (saved) return new Set(JSON.parse(saved));
-    } catch {}
+    } catch {
+      // Restore is best-effort; malformed storage falls back to the session tools.
+    }
     return new Set(session.selectedTools.map((t) => t.id));
   });
 
@@ -194,7 +196,11 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
 
   // ─── Persist ────────────────────────────────────────────────
   useEffect(() => {
-    try { localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(Array.from(selectedIds))); } catch {}
+    try {
+      localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(Array.from(selectedIds)));
+    } catch {
+      // Persistence is best-effort and should not block the diagnostic flow.
+    }
   }, [selectedIds]);
 
   // ─── Doublon check ──────────────────────────────────────────

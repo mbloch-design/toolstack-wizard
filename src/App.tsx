@@ -36,7 +36,6 @@ const NotFound = lazy(() => import("@/pages/NotFound"));
 const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
 
 const LangLayout = () => {

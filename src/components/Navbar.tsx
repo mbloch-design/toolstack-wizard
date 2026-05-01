@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTheme } from "@/hooks/useTheme";
-import { useTools, useCategories } from "@/hooks/useSupabaseData";
+import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench, BarChart3, HelpCircle, Shield, Mail, Layers, Scale, FlaskConical } from "lucide-react";
 import { useState, useRef, useEffect, useMemo } from "react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
@@ -9,6 +9,8 @@ import pictoLogo from "@/assets/picto-logo.svg";
 import ToolLogo from "@/components/ToolLogo";
 
 type MegaMenu = "tools" | "resources" | null;
+
+const POPULAR_TOOL_SLUGS = ["chatgpt", "notion", "figma", "slack", "zapier"];
 
 const Navbar = () => {
   const { t, prefix, lang } = useLang();
@@ -21,13 +23,16 @@ const Navbar = () => {
   const navRef = useRef<HTMLElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>();
 
-  const { tools } = useTools();
+  const { tools } = useToolSummaries();
   const { categories } = useCategories();
 
-  const topTools = useMemo(() =>
-    [...tools].sort((a, b) => (b.pros?.length || 0) - (a.pros?.length || 0)).slice(0, 5),
-    [tools]
-  );
+  const topTools = useMemo(() => {
+    const bySlug = new Map(tools.map((tool) => [tool.slug || tool.id, tool]));
+    return POPULAR_TOOL_SLUGS.flatMap((slug) => {
+      const tool = bySlug.get(slug);
+      return tool ? [tool] : [];
+    });
+  }, [tools]);
 
   const topCategories = useMemo(() => {
     return categories
