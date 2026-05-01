@@ -164,6 +164,7 @@ const Navbar = () => {
                     { icon: BookOpen, label: t("Guides", "Guides"), to: `${prefix}/guides` },
                     { icon: Scale, label: t("Comparatifs", "Comparisons"), to: `${prefix}/comparatifs` },
                     { icon: Layers, label: t("Audit de stack", "Stack audit"), to: `${prefix}/selector` },
+                    { icon: FlaskConical, label: t("Méthodologie", "Methodology"), to: `${prefix}/${lang === "fr" ? "methodologie" : "methodology"}` },
                     { icon: Shield, label: t("Transparence", "Transparency"), to: `${prefix}/transparency` },
                     { icon: HelpCircle, label: t("À propos", "About"), to: `${prefix}/about` },
                   ].map(item => (
