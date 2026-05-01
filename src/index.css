@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Float animation — used by hero floating logos (inline style, not class) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-10px) rotate(1deg); }
+  66%       { transform: translateY(-6px) rotate(-1deg); }
+}
+
 @layer base {
   :root {
     --background: 0 0% 99%;

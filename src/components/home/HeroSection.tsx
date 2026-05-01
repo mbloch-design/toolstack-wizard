@@ -10,16 +10,17 @@ const FEATURED_SLUGS = [
   "intercom", "calendly",
 ];
 
-// Floating tool icons — no card, raw app icon style (Clearbit), scattered
+// Floating tool icons — SaaS tools freelancers actually use
+// Clearbit primary (crisp SVG-quality), Google favicon fallback
 const FLOAT_LOGOS = [
-  { domain: "notion.so",       top: "10%", left: "6%",   size: 52, delay: "0s",   duration: "4.4s" },
-  { domain: "twitch.tv",       top: "42%", left: "2%",   size: 76, delay: "1.0s", duration: "5.1s" },
-  { domain: "klarna.com",      top: "72%", left: "5%",   size: 62, delay: "2.1s", duration: "4.7s" },
-  { domain: "uber.com",        top: "14%", right: "5%",  size: 80, delay: "0.5s", duration: "4.9s" },
-  { domain: "intercom.com",    top: "46%", right: "2%",  size: 62, delay: "1.6s", duration: "5.4s" },
-  { domain: "airbnb.com",      top: "74%", right: "6%",  size: 68, delay: "0.8s", duration: "4.2s" },
-  { domain: "figma.com",       top: "5%",  left: "21%",  size: 44, delay: "1.4s", duration: "3.9s" },
-  { domain: "slack.com",       top: "5%",  right: "21%", size: 44, delay: "0.3s", duration: "4.6s" },
+  { domain: "notion.so",     top: "12%",  left: "5%",   size: 56, delay: "0s",   duration: "4.4s" },
+  { domain: "hubspot.com",   top: "44%",  left: "2%",   size: 72, delay: "1.2s", duration: "5.1s" },
+  { domain: "stripe.com",    top: "74%",  left: "6%",   size: 58, delay: "2.0s", duration: "4.7s" },
+  { domain: "figma.com",     top: "10%",  right: "5%",  size: 72, delay: "0.5s", duration: "4.9s" },
+  { domain: "zapier.com",    top: "46%",  right: "2%",  size: 60, delay: "1.7s", duration: "5.3s" },
+  { domain: "linear.app",    top: "76%",  right: "5%",  size: 64, delay: "0.9s", duration: "4.2s" },
+  { domain: "slack.com",     top: "4%",   left: "22%",  size: 44, delay: "1.5s", duration: "3.9s" },
+  { domain: "github.com",    top: "4%",   right: "22%", size: 44, delay: "0.3s", duration: "4.6s" },
 ];
 
 function getToolDomain(tool: any): string {
@@ -84,11 +85,11 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         }}
       />
 
-      {/* Floating tool icons — desktop only, raw app-icon style */}
+      {/* Floating tool icons — desktop only, real SaaS tools */}
       {FLOAT_LOGOS.map((logo, i) => (
         <img
           key={i}
-          src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`}
+          src={`https://logo.clearbit.com/${logo.domain}?size=128`}
           alt=""
           aria-hidden
           loading="eager"
@@ -104,9 +105,18 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             objectFit: "contain",
             animation: `float ${logo.duration} ease-in-out infinite`,
             animationDelay: logo.delay,
-            boxShadow: "0 8px 32px hsl(0 0% 0% / 0.25)",
+            boxShadow: "0 8px 32px hsl(0 0% 0% / 0.22), 0 2px 8px hsl(0 0% 0% / 0.12)",
           }}
-          onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+          onError={(e) => {
+            // Clearbit failed — try Google favicons as fallback
+            const img = e.target as HTMLImageElement;
+            if (!img.dataset.fallback) {
+              img.dataset.fallback = "1";
+              img.src = `https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`;
+            } else {
+              img.style.display = "none";
+            }
+          }}
         />
       ))}
 
