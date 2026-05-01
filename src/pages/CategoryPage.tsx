@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
-import { Search, ExternalLink, ChevronDown, ArrowRight, X } from "lucide-react";
+import { Search, ExternalLink, ChevronDown, ArrowRight, X, TrendingDown, Sparkles } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -534,26 +534,32 @@ const CategoryPage = () => {
             {/* Cards */}
             <div className="space-y-3">
               {visible.map((tool) => {
-                const domain      = getToolDomain(tool);
-                const isFree      = tool.defaultMonthlyPrice === 0 && !tool.pricing?.paid;
-                const isFreemium  = !!(tool.pricing?.free && tool.pricing?.paid);
-                const hasFreAlt   = !!(tool as any).freeAlternative;
-                const hasCheaper  = !!(tool as any).betterAlternative;
-                const saving      = (tool as any).betterAlternative?.saving as number | undefined;
+                const domain        = getToolDomain(tool);
+                const isFree        = tool.defaultMonthlyPrice === 0 && !tool.pricing?.paid;
+                const isFreemium    = !!(tool.pricing?.free && tool.pricing?.paid);
+                const freeAltSlug   = (tool as any).freeAlternative as string | null;
+                const betterAlt     = (tool as any).betterAlternative as { tool: string; saving: number; performanceGain?: string } | null;
+                const pricingV5     = (tool as any).pricing_v5 as { compare_plan_name?: string; verified_on?: string } | null;
+                const toolType      = (tool as any).tool_type as string;
 
-                const priceBadge = isFree
-                  ? t("Gratuit", "Free")
-                  : isFreemium
-                  ? "Freemium"
-                  : null;
+                // Type pill label
+                const TYPE_SHORT: Record<string, string> = {
+                  ia: "IA", metier: "Métier", gestion: "Gestion", plugin: "Plugin", satellite: "Satellite",
+                };
+
+                // Savings strip logic — show only the strongest signal
+                const hasSavingsStrip = !!(freeAltSlug || (betterAlt && betterAlt.saving > 0));
+                const stripVariant: "free" | "cheaper" = freeAltSlug ? "free" : "cheaper";
 
                 return (
                   <div
                     key={tool.id}
-                    className="group rounded-xl border border-border bg-card transition-all duration-200 hover:border-primary/30 hover:shadow-lg"
+                    className="group rounded-xl border border-border bg-card transition-all duration-200 hover:border-primary/30 hover:shadow-lg overflow-hidden"
                     style={{ boxShadow: "0 1px 3px hsl(0 0% 0% / 0.06)" }}
                   >
+                    {/* ── Main body ── */}
                     <div className="flex items-start gap-4 p-5">
+
                       {/* Logo */}
                       <div className="shrink-0 mt-0.5">
                         <ToolLogo tool={tool} size={48} className="rounded-xl" />
@@ -561,9 +567,10 @@ const CategoryPage = () => {
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
+
+                        {/* Row 1: name + type badge + price */}
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1 min-w-0">
-                            {/* Name + badges */}
                             <div className="flex flex-wrap items-center gap-2">
                               <h3
                                 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-150"
@@ -571,7 +578,25 @@ const CategoryPage = () => {
                               >
                                 {tool.name}
                               </h3>
-                              {priceBadge && (
+                              {/* Tool type badge */}
+                              {toolType && toolType !== "satellite" && (
+                                <span
+                                  className="inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-xs"
+                                  style={{
+                                    fontFamily: "'DM Mono', monospace",
+                                    fontSize: "0.6rem",
+                                    letterSpacing: "0.06em",
+                                    textTransform: "uppercase",
+                                    background: "hsl(var(--muted) / 0.5)",
+                                    color: "hsl(var(--muted-foreground) / 0.7)",
+                                    border: "1px solid hsl(var(--border))",
+                                  }}
+                                >
+                                  {TYPE_SHORT[toolType] ?? toolType}
+                                </span>
+                              )}
+                              {/* Free / Freemium badge */}
+                              {(isFree || isFreemium) && (
                                 <span
                                   className="inline-flex shrink-0 items-center rounded-md border px-2 py-0.5 text-xs font-medium"
                                   style={{
@@ -581,43 +606,17 @@ const CategoryPage = () => {
                                     color: "hsl(var(--primary))",
                                   }}
                                 >
-                                  {priceBadge}
-                                </span>
-                              )}
-                              {hasFreAlt && (
-                                <span
-                                  className="inline-flex shrink-0 items-center rounded-md border px-2 py-0.5 text-xs font-medium"
-                                  style={{
-                                    fontFamily: "'DM Mono', monospace",
-                                    borderColor: "hsl(var(--savings) / 0.35)",
-                                    background: "hsl(var(--savings) / 0.08)",
-                                    color: "hsl(var(--savings))",
-                                  }}
-                                >
-                                  {t("Alt. gratuite", "Free alt.")}
-                                </span>
-                              )}
-                              {hasCheaper && saving && saving > 0 && (
-                                <span
-                                  className="inline-flex shrink-0 items-center rounded-md border px-2 py-0.5 text-xs font-medium"
-                                  style={{
-                                    fontFamily: "'DM Mono', monospace",
-                                    borderColor: "hsl(var(--cancel) / 0.35)",
-                                    background: "hsl(var(--cancel) / 0.08)",
-                                    color: "hsl(var(--cancel))",
-                                  }}
-                                >
-                                  −{saving}€/{t("mois", "mo")}
+                                  {isFree ? t("Gratuit", "Free") : "Freemium"}
                                 </span>
                               )}
                             </div>
 
                             {/* Description */}
                             <p
-                              className="mt-1 text-sm line-clamp-2"
+                              className="mt-1.5 text-sm line-clamp-2"
                               style={{
                                 fontFamily: "'DM Sans', sans-serif",
-                                lineHeight: 1.6,
+                                lineHeight: 1.62,
                                 color: "hsl(var(--muted-foreground))",
                               }}
                             >
@@ -625,40 +624,56 @@ const CategoryPage = () => {
                             </p>
                           </div>
 
-                          {/* Price (paid only) */}
+                          {/* Price block — paid tools */}
                           {!isFree && !isFreemium && tool.defaultMonthlyPrice > 0 && (
                             <div className="shrink-0 text-right">
-                              <span
-                                className="text-lg font-bold text-foreground"
-                                style={{ fontFamily: "'DM Mono', monospace" }}
-                              >
-                                {tool.defaultMonthlyPrice}€
-                              </span>
-                              <span
-                                className="text-xs"
-                                style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}
-                              >
-                                /{t("mois", "mo")}
-                              </span>
+                              <div className="flex items-baseline gap-0.5 justify-end">
+                                <span
+                                  className="text-xl font-bold text-foreground"
+                                  style={{ fontFamily: "'DM Mono', monospace", letterSpacing: "-0.02em" }}
+                                >
+                                  {tool.defaultMonthlyPrice}€
+                                </span>
+                                <span
+                                  className="text-xs"
+                                  style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "'DM Mono', monospace" }}
+                                >
+                                  /{t("mois", "mo")}
+                                </span>
+                              </div>
+                              {pricingV5?.compare_plan_name && (
+                                <p
+                                  className="mt-0.5 text-right"
+                                  style={{
+                                    fontFamily: "'DM Mono', monospace",
+                                    fontSize: "0.58rem",
+                                    letterSpacing: "0.05em",
+                                    color: "hsl(var(--muted-foreground) / 0.4)",
+                                    textTransform: "uppercase",
+                                  }}
+                                >
+                                  {t("Plan", "Plan")} {pricingV5.compare_plan_name}
+                                </p>
+                              )}
                             </div>
                           )}
                         </div>
 
-                        {/* Bottom row: pros + CTAs */}
+                        {/* Row 2: pros + CTAs */}
                         <div className="mt-3 flex items-center justify-between gap-3 flex-wrap">
                           {tool.pros?.length > 0 && (
                             <div className="flex flex-wrap gap-1.5">
                               {(lang === "fr" ? tool.pros : ((tool as any).prosEn || tool.pros))
-                                .slice(0, 3)
+                                .slice(0, 2)
                                 .map((pro: string, i: number) => (
-                                <span
-                                  key={i}
-                                  className="inline-flex items-center rounded-md border border-border px-2 py-0.5 text-xs"
-                                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
-                                >
-                                  {pro.length > 32 ? pro.slice(0, 32) + "…" : pro}
-                                </span>
-                              ))}
+                                  <span
+                                    key={i}
+                                    className="inline-flex items-center rounded-md border border-border px-2 py-0.5 text-xs"
+                                    style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+                                  >
+                                    {pro.length > 35 ? pro.slice(0, 35) + "…" : pro}
+                                  </span>
+                                ))}
                             </div>
                           )}
 
@@ -697,6 +712,83 @@ const CategoryPage = () => {
                         </div>
                       </div>
                     </div>
+
+                    {/* ── Savings strip ── */}
+                    {hasSavingsStrip && (
+                      <div
+                        className="flex items-center gap-3 border-t px-5 py-2.5"
+                        style={{
+                          borderColor: stripVariant === "free"
+                            ? "hsl(var(--savings) / 0.15)"
+                            : "hsl(var(--cancel) / 0.15)",
+                          background: stripVariant === "free"
+                            ? "hsl(var(--savings) / 0.04)"
+                            : "hsl(var(--cancel) / 0.04)",
+                        }}
+                      >
+                        {stripVariant === "free" ? (
+                          <Sparkles
+                            className="h-3.5 w-3.5 shrink-0"
+                            style={{ color: "hsl(var(--savings))" }}
+                          />
+                        ) : (
+                          <TrendingDown
+                            className="h-3.5 w-3.5 shrink-0"
+                            style={{ color: "hsl(var(--cancel))" }}
+                          />
+                        )}
+
+                        <p
+                          className="flex-1 text-xs"
+                          style={{
+                            fontFamily: "'DM Sans', sans-serif",
+                            color: stripVariant === "free"
+                              ? "hsl(var(--savings))"
+                              : "hsl(var(--cancel))",
+                          }}
+                        >
+                          {stripVariant === "free" ? (
+                            <>
+                              <span className="font-medium">
+                                {t("Alternative gratuite :", "Free alternative:")}
+                              </span>{" "}
+                              <span className="capitalize">{freeAltSlug?.replace(/-/g, " ")}</span>
+                              {tool.defaultMonthlyPrice > 0 && (
+                                <span style={{ opacity: 0.7 }}>
+                                  {" "}· {t("économisez", "save")} {tool.defaultMonthlyPrice}€/{t("mois", "mo")}
+                                </span>
+                              )}
+                            </>
+                          ) : (
+                            <>
+                              <span className="font-medium">
+                                {t("Moins cher :", "Cheaper option:")}
+                              </span>{" "}
+                              <span className="capitalize">{betterAlt?.tool?.replace(/-/g, " ")}</span>
+                              {betterAlt && betterAlt.saving > 0 && (
+                                <span style={{ opacity: 0.7 }}>
+                                  {" "}· −{betterAlt.saving}€/{t("mois", "mo")}
+                                </span>
+                              )}
+                            </>
+                          )}
+                        </p>
+
+                        <Link
+                          to={`${prefix}/tool/${tool.slug || tool.id}`}
+                          className="shrink-0 text-xs font-medium underline underline-offset-2 transition-opacity hover:opacity-70"
+                          style={{
+                            fontFamily: "'DM Mono', monospace",
+                            fontSize: "0.65rem",
+                            color: stripVariant === "free"
+                              ? "hsl(var(--savings))"
+                              : "hsl(var(--cancel))",
+                          }}
+                        >
+                          {t("Voir l'analyse →", "See analysis →")}
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 );
               })}
