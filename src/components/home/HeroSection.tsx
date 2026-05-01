@@ -10,17 +10,17 @@ const FEATURED_SLUGS = [
   "intercom", "calendly",
 ];
 
-// Floating tool icons — SaaS tools freelancers actually use
-// Clearbit primary (crisp SVG-quality), Google favicon fallback
+// Floating tool icons — real SaaS tools with clean Clearbit logos
+// floatDelay = continuous bob offset, revealDelay = staggered entrance
 const FLOAT_LOGOS = [
-  { domain: "notion.so",     top: "12%",  left: "5%",   size: 56, delay: "0s",   duration: "4.4s" },
-  { domain: "hubspot.com",   top: "44%",  left: "2%",   size: 72, delay: "1.2s", duration: "5.1s" },
-  { domain: "stripe.com",    top: "74%",  left: "6%",   size: 58, delay: "2.0s", duration: "4.7s" },
-  { domain: "figma.com",     top: "10%",  right: "5%",  size: 72, delay: "0.5s", duration: "4.9s" },
-  { domain: "zapier.com",    top: "46%",  right: "2%",  size: 60, delay: "1.7s", duration: "5.3s" },
-  { domain: "linear.app",    top: "76%",  right: "5%",  size: 64, delay: "0.9s", duration: "4.2s" },
-  { domain: "slack.com",     top: "4%",   left: "22%",  size: 44, delay: "1.5s", duration: "3.9s" },
-  { domain: "github.com",    top: "4%",   right: "22%", size: 44, delay: "0.3s", duration: "4.6s" },
+  { domain: "notion.so",     top: "12%", left: "5%",   size: 56, floatDuration: "4.4s", floatDelay: "0s",   revealDelay: "0.15s" },
+  { domain: "hubspot.com",   top: "44%", left: "2%",   size: 72, floatDuration: "5.1s", floatDelay: "1.2s", revealDelay: "0.45s" },
+  { domain: "stripe.com",    top: "74%", left: "6%",   size: 58, floatDuration: "4.7s", floatDelay: "2.0s", revealDelay: "0.75s" },
+  { domain: "figma.com",     top: "10%", right: "5%",  size: 72, floatDuration: "4.9s", floatDelay: "0.5s", revealDelay: "0.10s" },
+  { domain: "zapier.com",    top: "46%", right: "2%",  size: 60, floatDuration: "5.3s", floatDelay: "1.7s", revealDelay: "0.50s" },
+  { domain: "linear.app",    top: "76%", right: "5%",  size: 64, floatDuration: "4.2s", floatDelay: "0.9s", revealDelay: "0.80s" },
+  { domain: "airtable.com",  top: "4%",  left: "22%",  size: 44, floatDuration: "3.9s", floatDelay: "1.5s", revealDelay: "0.30s" },
+  { domain: "intercom.com",  top: "4%",  right: "22%", size: 44, floatDuration: "4.6s", floatDelay: "0.3s", revealDelay: "0.20s" },
 ];
 
 function getToolDomain(tool: any): string {
@@ -85,39 +85,49 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         }}
       />
 
-      {/* Floating tool icons — desktop only, real SaaS tools */}
+      {/* Floating tool icons — desktop only */}
+      {/* Wrapper: continuous float (translateY) — img: one-shot reveal (scale+opacity) */}
       {FLOAT_LOGOS.map((logo, i) => (
-        <img
+        <div
           key={i}
-          src={`https://logo.clearbit.com/${logo.domain}?size=128`}
-          alt=""
           aria-hidden
-          loading="eager"
-          width={logo.size}
-          height={logo.size}
-          className="pointer-events-none absolute hidden xl:block rounded-2xl"
+          className="pointer-events-none absolute hidden xl:block"
           style={{
             top: logo.top,
             left: "left" in logo ? (logo as any).left : undefined,
             right: "right" in logo ? (logo as any).right : undefined,
             width: logo.size,
             height: logo.size,
-            objectFit: "contain",
-            animation: `float ${logo.duration} ease-in-out infinite`,
-            animationDelay: logo.delay,
-            boxShadow: "0 8px 32px hsl(0 0% 0% / 0.22), 0 2px 8px hsl(0 0% 0% / 0.12)",
+            animation: `float ${logo.floatDuration} ease-in-out ${logo.floatDelay} infinite`,
           }}
-          onError={(e) => {
-            // Clearbit failed — try Google favicons as fallback
-            const img = e.target as HTMLImageElement;
-            if (!img.dataset.fallback) {
-              img.dataset.fallback = "1";
-              img.src = `https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`;
-            } else {
-              img.style.display = "none";
-            }
-          }}
-        />
+        >
+          <img
+            src={`https://logo.clearbit.com/${logo.domain}?size=128`}
+            alt=""
+            loading="eager"
+            width={logo.size}
+            height={logo.size}
+            className="rounded-2xl"
+            style={{
+              width: logo.size,
+              height: logo.size,
+              objectFit: "contain",
+              display: "block",
+              /* Spring reveal: cubic-bezier overshoot gives a pop feel */
+              animation: `logo-reveal 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) ${logo.revealDelay} both`,
+              boxShadow: "0 8px 28px hsl(0 0% 0% / 0.20), 0 2px 6px hsl(0 0% 0% / 0.10)",
+            }}
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              if (!img.dataset.fallback) {
+                img.dataset.fallback = "1";
+                img.src = `https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`;
+              } else {
+                (img.parentElement as HTMLElement).style.display = "none";
+              }
+            }}
+          />
+        </div>
       ))}
 
       {/* Very subtle dot grid */}
