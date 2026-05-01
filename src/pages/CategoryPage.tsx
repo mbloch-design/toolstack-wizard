@@ -5,6 +5,7 @@ import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { Search, ExternalLink, ChevronDown, ArrowRight } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first";
@@ -167,6 +168,14 @@ const CategoryPage = () => {
         />
 
         <div className="relative mx-auto max-w-3xl px-6 py-16">
+          {/* Breadcrumb */}
+          <div className="mb-5 flex justify-center">
+            <Breadcrumb items={[
+              { label: t("Outils", "Tools"), href: `${prefix}/tools` },
+              { label: t(catName, catNameEn) },
+            ]} />
+          </div>
+
           {/* Eyebrow pill */}
           <div className="mb-6 inline-flex items-center gap-2">
             <span
