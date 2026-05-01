@@ -88,10 +88,10 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
       {FLOAT_LOGOS.map((logo, i) => (
         <img
           key={i}
-          src={`https://logo.clearbit.com/${logo.domain}`}
+          src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`}
           alt=""
           aria-hidden
-          loading="lazy"
+          loading="eager"
           width={logo.size}
           height={logo.size}
           className="pointer-events-none absolute hidden xl:block rounded-2xl"
@@ -101,9 +101,10 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             right: "right" in logo ? (logo as any).right : undefined,
             width: logo.size,
             height: logo.size,
+            objectFit: "contain",
             animation: `float ${logo.duration} ease-in-out infinite`,
             animationDelay: logo.delay,
-            boxShadow: "0 8px 24px hsl(0 0% 0% / 0.15)",
+            boxShadow: "0 8px 32px hsl(0 0% 0% / 0.25)",
           }}
           onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
         />
