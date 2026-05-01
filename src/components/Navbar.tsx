@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTheme } from "@/hooks/useTheme";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
-import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench, BarChart3, HelpCircle, Shield, Mail, Layers, Scale } from "lucide-react";
+import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench, BarChart3, HelpCircle, Shield, Mail, Layers, Scale, FlaskConical } from "lucide-react";
 import { useState, useRef, useEffect, useMemo } from "react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import pictoLogo from "@/assets/picto-logo.svg";
@@ -164,6 +164,7 @@ const Navbar = () => {
                     { icon: BookOpen, label: t("Guides", "Guides"), to: `${prefix}/guides` },
                     { icon: Scale, label: t("Comparatifs", "Comparisons"), to: `${prefix}/comparatifs` },
                     { icon: Layers, label: t("Audit de stack", "Stack audit"), to: `${prefix}/selector` },
+                    { icon: FlaskConical, label: t("Méthodologie", "Methodology"), to: `${prefix}/${lang === "fr" ? "methodologie" : "methodology"}` },
                     { icon: Shield, label: t("Transparence", "Transparency"), to: `${prefix}/transparency` },
                     { icon: HelpCircle, label: t("À propos", "About"), to: `${prefix}/about` },
                   ].map(item => (
