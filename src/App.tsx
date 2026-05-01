@@ -100,6 +100,10 @@ const App = () => (
               <Route path="selector/results" element={<ResultsPage />} />
               <Route path="tools" element={<ToolsPage />} />
               <Route path="tool/:slug" element={<ToolDetailPage />} />
+              <Route path="tool/:slug/prix" element={<ToolDetailPage />} />
+              <Route path="tool/:slug/pricing" element={<ToolDetailPage />} />
+              <Route path="tool/:slug/alternatives" element={<ToolDetailPage />} />
+              <Route path="tool/:slug/faq" element={<ToolDetailPage />} />
               <Route path="outils/:slug" element={<RedirectOutils />} />
               <Route path="category" element={<CategoriesIndexPage />} />
               <Route path="category/:slug" element={<CategoryPage />} />

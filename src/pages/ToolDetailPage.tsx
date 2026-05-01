@@ -1,7 +1,7 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect, useState, useRef } from "react";
+import { useEffect } from "react";
 import {
   ExternalLink, Check, X, ArrowRight, AlertTriangle,
   TrendingDown, Sparkles, ShieldCheck, CalendarCheck,
@@ -29,40 +29,82 @@ function getToolDomain(tool: any): string {
 }
 
 const TABS = [
-  { id: "presentation", labelFr: "Présentation",  labelEn: "Overview"      },
-  { id: "prix",         labelFr: "Prix",           labelEn: "Pricing"       },
-  { id: "alternatives", labelFr: "Alternatives",   labelEn: "Alternatives"  },
-  { id: "faq",          labelFr: "FAQ",            labelEn: "FAQ"           },
+  { id: "presentation", labelFr: "Présentation", labelEn: "Overview",      path: ""             },
+  { id: "prix",         labelFr: "Prix",          labelEn: "Pricing",       path: "/prix"        },
+  { id: "alternatives", labelFr: "Alternatives",  labelEn: "Alternatives",  path: "/alternatives"},
+  { id: "faq",          labelFr: "FAQ",           labelEn: "FAQ",           path: "/faq"         },
 ] as const;
 
 const ToolDetailPage = () => {
   const { lang, t, prefix } = useLang();
   const { slug } = useParams();
+  const location = useLocation();
   const { tool, loading } = useToolBySlug(slug);
   const { tools } = useTools();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
-  const [activeTab, setActiveTab] = useState<string>("presentation");
-  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
-  // ── SEO ──
+  // Derive active sub-page from URL path
+  const pathEnd = location.pathname.split("/").pop() || "";
+  const subPage: "presentation" | "prix" | "alternatives" | "faq" =
+    pathEnd === "prix" || pathEnd === "pricing" ? "prix"
+    : pathEnd === "alternatives" ? "alternatives"
+    : pathEnd === "faq" ? "faq"
+    : "presentation";
+
+  // ── SEO — unique title/desc/canonical per sub-page ──
   useEffect(() => {
     if (!tool) return;
     const v5Price = tool.pricing_v5?.compare_price_monthly_eur;
     const price = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
     const hasPrice = price != null && price > 0;
     const year = new Date().getFullYear();
-    const seoTitle = lang === "fr"
-      ? `${tool.name} — Prix, avis et alternatives ${year} | ToolTrim`
-      : `${tool.name} — Pricing, review & alternatives ${year} | ToolTrim`;
-    const seoDesc = lang === "fr"
-      ? (hasPrice
-        ? `${tool.name} coûte ${price}€/mois. Verdict ToolTrim après analyse complète : vaut-il le coût ? Quelles sont les meilleures alternatives moins chères ?`
-        : `${tool.name} analysé par ToolTrim : verdict honnête, prix réel et meilleures alternatives testées.`)
-      : (hasPrice
-        ? `${tool.name} costs €${price}/mo. ToolTrim honest verdict: is it worth it? Best cheaper alternatives.`
-        : `${tool.name} reviewed by ToolTrim: honest verdict, real pricing and best tested alternatives.`);
-    const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
+    const baseSlug = tool.slug || tool.id;
+
+    const SEO: Record<string, { titleFr: string; titleEn: string; descFr: string; descEn: string; suffix: string }> = {
+      presentation: {
+        titleFr: `${tool.name} — Prix, avis et alternatives ${year} | ToolTrim`,
+        titleEn: `${tool.name} — Pricing, review & alternatives ${year} | ToolTrim`,
+        descFr: hasPrice
+          ? `${tool.name} coûte ${price}€/mois. Verdict ToolTrim : vaut-il le coût ? Quelles alternatives moins chères ?`
+          : `${tool.name} analysé par ToolTrim : verdict honnête, prix réel et meilleures alternatives testées.`,
+        descEn: hasPrice
+          ? `${tool.name} costs €${price}/mo. ToolTrim honest verdict: is it worth it? Best cheaper alternatives.`
+          : `${tool.name} reviewed by ToolTrim: honest verdict, real pricing and best tested alternatives.`,
+        suffix: "",
+      },
+      prix: {
+        titleFr: `${tool.name} : prix et tarifs ${year} | ToolTrim`,
+        titleEn: `${tool.name} pricing & plans ${year} | ToolTrim`,
+        descFr: hasPrice
+          ? `Combien coûte vraiment ${tool.name} ? Plans, tarifs détaillés et comparaison — mis à jour ${year}.`
+          : `Plans et tarifs de ${tool.name} : gratuit, freemium ou payant ? Toutes les options détaillées.`,
+        descEn: hasPrice
+          ? `How much does ${tool.name} really cost? Detailed plans, pricing breakdown — updated ${year}.`
+          : `${tool.name} plans and pricing: free, freemium or paid? All options detailed.`,
+        suffix: "/prix",
+      },
+      alternatives: {
+        titleFr: `Meilleures alternatives à ${tool.name} en ${year} | ToolTrim`,
+        titleEn: `Best ${tool.name} alternatives in ${year} | ToolTrim`,
+        descFr: `Quelles sont les meilleures alternatives à ${tool.name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées.`,
+        descEn: `What are the best alternatives to ${tool.name}? ToolTrim compares cheaper, free and better-fit options.`,
+        suffix: "/alternatives",
+      },
+      faq: {
+        titleFr: `${tool.name} : questions fréquentes ${year} | ToolTrim`,
+        titleEn: `${tool.name} FAQ ${year} | ToolTrim`,
+        descFr: `Toutes les questions fréquentes sur ${tool.name} : prix, plans, alternatives, intégrations et conseils d'utilisation.`,
+        descEn: `All frequently asked questions about ${tool.name}: pricing, plans, alternatives, integrations and usage tips.`,
+        suffix: "/faq",
+      },
+    };
+
+    const meta = SEO[subPage] ?? SEO.presentation;
+    const seoTitle = lang === "fr" ? meta.titleFr : meta.titleEn;
+    const seoDesc  = lang === "fr" ? meta.descFr  : meta.descEn;
+    const canonicalUrl = `${SEO_BASE}/${lang}/tool/${baseSlug}${meta.suffix}`;
+
     const toolDomain = tool.websiteUrl || tool.affiliateLink;
     let toolOgImage: string | undefined;
     if (toolDomain) {
@@ -74,33 +116,10 @@ const ToolDetailPage = () => {
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
     if (toolOgImage) setMeta("og:image", toolOgImage);
     setMeta("article:modified_time", tool.pricing_v5?.verified_on || "2026-03-29");
-    setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
+    setHreflang(`/${lang}/tool/${baseSlug}${meta.suffix}`);
     return () => cleanupSeo([]);
-  }, [tool, lang]);
+  }, [tool, lang, subPage]);
 
-  // ── Tab active on scroll ──
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveTab(entry.target.id);
-        });
-      },
-      { rootMargin: "-20% 0px -70% 0px" }
-    );
-    Object.values(sectionRefs.current).forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, [tool]);
-
-  const scrollTo = (id: string) => {
-    const el = sectionRefs.current[id];
-    if (el) {
-      const offset = 80;
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
-    setActiveTab(id);
-  };
 
   if (loading) {
     return (
@@ -416,39 +435,35 @@ const ToolDetailPage = () => {
           {/* ══════════════ MAIN CONTENT ══════════════ */}
           <div className="flex-1 min-w-0">
 
-            {/* ── Tab nav (sticky) ── */}
+            {/* ── Tab nav (sticky) — real links for SEO ── */}
             <nav
               className="sticky top-0 z-20 mb-8 flex items-center gap-1 overflow-x-auto border-b border-border pb-0"
               style={{ background: "hsl(var(--background))" }}
             >
-              {TABS.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => scrollTo(tab.id)}
-                  className="relative shrink-0 px-4 py-3 text-sm font-medium transition-colors duration-150"
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    color: activeTab === tab.id
-                      ? "hsl(var(--foreground))"
-                      : "hsl(var(--muted-foreground))",
-                  }}
-                >
-                  {lang === "fr" ? tab.labelFr : tab.labelEn}
-                  {activeTab === tab.id && (
-                    <span
-                      className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-primary"
-                    />
-                  )}
-                </button>
-              ))}
+              {TABS.map((tab) => {
+                const isActive = subPage === tab.id;
+                return (
+                  <Link
+                    key={tab.id}
+                    to={`${prefix}/tool/${slug}${tab.path}`}
+                    className="relative shrink-0 px-4 py-3 text-sm font-medium transition-colors duration-150"
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      color: isActive ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {lang === "fr" ? tab.labelFr : tab.labelEn}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-primary" />
+                    )}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* ── SECTION: Présentation ── */}
-            <section
-              id="presentation"
-              ref={(el) => { sectionRefs.current["presentation"] = el; }}
-              className="space-y-8"
-            >
+            {subPage === "presentation" && <section className="space-y-8">
               {/* Description longue — mobile only (desktop has left card) */}
               <div className="lg:hidden">
                 <p
@@ -538,14 +553,10 @@ const ToolDetailPage = () => {
 
               {/* Diag CTA */}
               <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
-            </section>
+            </section>}
 
             {/* ── SECTION: Prix ── */}
-            <section
-              id="prix"
-              ref={(el) => { sectionRefs.current["prix"] = el; }}
-              className="mt-16 pt-10 border-t border-border"
-            >
+            {subPage === "prix" && <section className="space-y-8">
               <h2
                 className="font-display mb-6"
                 style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "-0.022em" }}
@@ -557,14 +568,10 @@ const ToolDetailPage = () => {
                 verifiedOn={verifiedOn} sourceDomain={sourceDomain}
                 prefix={prefix} lang={lang} t={t}
               />
-            </section>
+            </section>}
 
             {/* ── SECTION: Alternatives ── */}
-            <section
-              id="alternatives"
-              ref={(el) => { sectionRefs.current["alternatives"] = el; }}
-              className="mt-16 pt-10 border-t border-border"
-            >
+            {subPage === "alternatives" && <section className="space-y-8">
               <ToolAlternativesSection
                 tool={tool} category={category} alternatives={alternatives}
                 prefix={prefix} lang={lang} t={t}
@@ -648,20 +655,16 @@ const ToolDetailPage = () => {
                   </div>
                 );
               })()}
-            </section>
+            </section>}
 
             {/* ── SECTION: FAQ ── */}
-            <section
-              id="faq"
-              ref={(el) => { sectionRefs.current["faq"] = el; }}
-              className="mt-16 pt-10 border-t border-border"
-            >
+            {subPage === "faq" && <section className="space-y-8">
               <ToolFAQSection
                 tool={tool} displayPrice={displayPrice}
                 verifiedOn={verifiedOn} alternatives={alternatives}
                 lang={lang} t={t}
               />
-            </section>
+            </section>}
 
             {/* ── Freshness footer ── */}
             <footer
