@@ -937,21 +937,7 @@ export default defineConfig(({ mode }) => ({
           if (id.includes("/src/data/posts-fr.json")) return "data-posts-fr";
           if (id.includes("/src/data/posts-en.json")) return "data-posts-en";
           if (id.includes("/src/data/")) return "data-catalog";
-          if (!id.includes("node_modules")) return undefined;
-
-          if (id.includes("@supabase")) return "vendor-supabase";
-          if (
-            id.includes("/react/") ||
-            id.includes("/react-dom/") ||
-            id.includes("/react-router-dom/") ||
-            id.includes("@tanstack/react-query")
-          ) {
-            return "vendor-react";
-          }
-          if (id.includes("@radix-ui")) return "vendor-radix";
-          if (id.includes("lucide-react")) return "vendor-icons";
-
-          return "vendor";
+          return undefined;
         },
       },
     },
