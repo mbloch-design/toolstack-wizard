@@ -1,23 +1,39 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect, useState } from "react";
-import { ExternalLink, Check, X, Copy, User, Users, Target, Globe, ArrowRight, AlertTriangle } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+import {
+  ExternalLink, Check, X, ArrowRight, AlertTriangle,
+  TrendingDown, Sparkles, ShieldCheck, CalendarCheck,
+} from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 
-// Reusable tool page components
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
-import ToolFactsCard from "@/components/tool/ToolFactsCard";
 import ToolVerdictBlock from "@/components/tool/ToolVerdictBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import ToolDiagCta from "@/components/tool/ToolDiagCta";
+
+function getToolDomain(tool: any): string {
+  const url = tool.websiteUrl || tool.affiliateLink;
+  if (!url) return "";
+  try {
+    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
+  } catch { return ""; }
+}
+
+const TABS = [
+  { id: "presentation", labelFr: "Présentation",  labelEn: "Overview"      },
+  { id: "prix",         labelFr: "Prix",           labelEn: "Pricing"       },
+  { id: "alternatives", labelFr: "Alternatives",   labelEn: "Alternatives"  },
+  { id: "faq",          labelFr: "FAQ",            labelEn: "FAQ"           },
+] as const;
 
 const ToolDetailPage = () => {
   const { lang, t, prefix } = useLang();
@@ -26,9 +42,10 @@ const ToolDetailPage = () => {
   const { tools } = useTools();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
-  const [copied, setCopied] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>("presentation");
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
-  // SEO meta tags
+  // ── SEO ──
   useEffect(() => {
     if (!tool) return;
     const v5Price = tool.pricing_v5?.compare_price_monthly_eur;
@@ -37,44 +54,52 @@ const ToolDetailPage = () => {
     const year = new Date().getFullYear();
     const seoTitle = lang === "fr"
       ? `${tool.name} — Prix, avis et alternatives ${year} | ToolTrim`
-      : `${tool.name} — Review & alternatives | ToolTrim`;
+      : `${tool.name} — Pricing, review & alternatives ${year} | ToolTrim`;
     const seoDesc = lang === "fr"
       ? (hasPrice
-          ? `${tool.name} coûte ${price}€/mois. Verdict tooltrim.com après analyse complète : est-ce que ça vaut le coup ? Quelles sont les meilleures alternatives moins chères ?`
-          : `${tool.name} analysé en profondeur par tooltrim.com : verdict honnête, prix réel constaté et meilleures alternatives testées pour freelances en 2026.`)
+        ? `${tool.name} coûte ${price}€/mois. Verdict ToolTrim après analyse complète : vaut-il le coût ? Quelles sont les meilleures alternatives moins chères ?`
+        : `${tool.name} analysé par ToolTrim : verdict honnête, prix réel et meilleures alternatives testées.`)
       : (hasPrice
-          ? `${tool.name} costs €${price}/mo. Honest verdict from tooltrim.com after full analysis: is it worth it, and what are the best cheaper alternatives for freelancers?`
-          : `${tool.name} reviewed by tooltrim.com: honest verdict, real pricing breakdown and best tested alternatives for freelancers in 2026.`);
+        ? `${tool.name} costs €${price}/mo. ToolTrim honest verdict: is it worth it? Best cheaper alternatives.`
+        : `${tool.name} reviewed by ToolTrim: honest verdict, real pricing and best tested alternatives.`);
     const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
-
     const toolDomain = tool.websiteUrl || tool.affiliateLink;
     let toolOgImage: string | undefined;
     if (toolDomain) {
       try {
         const hostname = new URL(toolDomain.startsWith("http") ? toolDomain : `https://${toolDomain}`).hostname.replace("www.", "");
         toolOgImage = `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
-      } catch { /* fallback */ }
+      } catch { /* */ }
     }
-
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
     if (toolOgImage) setMeta("og:image", toolOgImage);
     setMeta("article:modified_time", tool.pricing_v5?.verified_on || "2026-03-29");
     setHreflang(`/${lang}/tool/${tool.slug || tool.id}`);
-
     return () => cleanupSeo([]);
   }, [tool, lang]);
 
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  // ── Tab active on scroll ──
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveTab(entry.target.id);
+        });
+      },
+      { rootMargin: "-20% 0px -70% 0px" }
+    );
+    Object.values(sectionRefs.current).forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, [tool]);
 
-  const handleShare = (platform: "twitter" | "linkedin") => {
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent(`${tool?.name} — ${t("Avis et alternatives", "Review and alternatives")} | ToolTrim`);
-    if (platform === "twitter") window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, "_blank");
-    if (platform === "linkedin") window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank");
+  const scrollTo = (id: string) => {
+    const el = sectionRefs.current[id];
+    if (el) {
+      const offset = 80;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+    setActiveTab(id);
   };
 
   if (loading) {
@@ -85,402 +110,591 @@ const ToolDetailPage = () => {
     );
   }
 
-  if (!tool) {
-    return <Navigate to={`${prefix}/tools`} replace />;
-  }
+  if (!tool) return <Navigate to={`${prefix}/tools`} replace />;
 
   const category = categories.find((c: any) => c.id === tool.categoryId);
   const CategoryIcon = category ? getCategoryIcon(category.id) : null;
   const alternatives = tools
-    .filter((t: any) => t.categoryId === tool.categoryId && t.id !== tool.id)
+    .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id)
     .slice(0, 6);
+  const relatedPosts = posts
+    .filter((p: any) => `${p.title} ${p.excerpt} ${p.content}`.toLowerCase().includes(tool.name.toLowerCase()))
+    .slice(0, 3);
 
-  const relatedPosts = posts.filter(p => {
-    const text = `${p.title} ${p.excerpt} ${p.content}`.toLowerCase();
-    return text.includes(tool.name.toLowerCase());
-  }).slice(0, 3);
-
-  const v5Price = tool.pricing_v5?.compare_price_monthly_eur;
+  const v5Price    = tool.pricing_v5?.compare_price_monthly_eur;
   const displayPrice = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
   const verifiedOn = tool.pricing_v5?.verified_on || "2026-03-29";
   const sourceDomain = tool.pricing_v5?.source_domain;
+  const domain     = getToolDomain(tool);
+  const isFree     = displayPrice === 0 && !tool.pricing?.paid;
+  const isFreemium = !!(tool.pricing?.free && tool.pricing?.paid);
+  const freeAlt    = (tool as any).freeAlternative as string | null;
+  const betterAlt  = (tool as any).betterAlternative as { tool: string; saving: number } | null;
+  const catName    = category?.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || "";
+  const catNameEn  = category?.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName;
+
+  const TYPE_LABEL: Record<string, { fr: string; en: string }> = {
+    ia:        { fr: "Intelligence artificielle", en: "AI tool"     },
+    metier:    { fr: "Outil métier",               en: "Core tool"   },
+    gestion:   { fr: "Gestion",                    en: "Management"  },
+    satellite: { fr: "Satellite",                  en: "Satellite"   },
+    plugin:    { fr: "Plugin / Extension",          en: "Plugin"      },
+  };
+  const toolType = (tool as any).tool_type as string;
 
   return (
     <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
-      {/* JSON-LD injection (no visual output) */}
       <ToolJsonLd
-        tool={tool}
-        category={category}
-        displayPrice={displayPrice}
-        verifiedOn={verifiedOn}
-        alternatives={alternatives}
-        lang={lang}
+        tool={tool} category={category} displayPrice={displayPrice}
+        verifiedOn={verifiedOn} alternatives={alternatives} lang={lang}
       />
 
-      {/* ── SECTION 1: Hero with H1 ── */}
-      <header className="border-b border-border bg-gradient-to-br from-accent/60 via-background to-accent/30">
-        <div className="container mx-auto max-w-4xl px-4 pb-8 pt-10 md:pt-14">
-          <div className="mb-6">
-            <Breadcrumb items={[
-              { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-              ...(category ? [{
-                label: t(category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), category.nameEn || category.name),
-                href: `${prefix}/category/${category.slug}`
-              }] : []),
-              { label: tool.name },
-            ]} />
-          </div>
+      {/* ── Hero strip: breadcrumb + headline ── */}
+      <header
+        className="relative overflow-hidden border-b border-border"
+        style={{ background: "hsl(var(--card))" }}
+      >
+        {/* Dot grid */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          aria-hidden
+          style={{
+            backgroundImage: "radial-gradient(hsl(var(--border) / 0.8) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            maskImage: "radial-gradient(ellipse 100% 100% at 50% 0%, black 20%, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(ellipse 100% 100% at 50% 0%, black 20%, transparent 80%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-6xl px-4 py-8">
+          <Breadcrumb items={[
+            { label: t("Outils", "Tools"), href: `${prefix}/tools` },
+            ...(category ? [{
+              label: t(catName, catNameEn),
+              href: `${prefix}/category/${category.slug}`
+            }] : []),
+            { label: tool.name },
+          ]} />
 
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-            <div className="flex items-start gap-4">
-              <ToolLogo tool={tool} size={56} className="ring-2 ring-border rounded-xl" />
-              <div>
-                <h1 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.022em", lineHeight: 1.15 }}>
-                  {(() => {
-                    const isFreemium = displayPrice === 0 && tool.pricing?.paid;
-                    const isFree = displayPrice === 0 && !tool.pricing?.paid;
-                    const hasPrice = displayPrice != null && displayPrice > 0;
-                    if (lang === "fr") {
-                      if (hasPrice) return `${tool.name} — vaut-il vraiment ${displayPrice}€/mois ? Notre avis honnête`;
-                      if (isFree || isFreemium) return `${tool.name} — le plan gratuit suffit-il vraiment ?`;
-                      return `${tool.name} — payant ou pas, voici ce qu'on en pense`;
-                    }
-                    if (hasPrice) return `${tool.name} — is it really worth €${displayPrice}/mo? Our honest review`;
-                    if (isFree || isFreemium) return `${tool.name} — is the free plan really enough?`;
-                    return `${tool.name} — paid or not, here's what we think`;
-                  })()}
-                </h1>
-                {category && (
-                  <Link to={`${prefix}/category/${category.slug}`} className="mt-1 inline-flex items-center gap-1.5 text-sm text-primary hover:underline">
-                    {CategoryIcon && <CategoryIcon className="h-3.5 w-3.5" />}
-                    {t(category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), category.nameEn || category.name)}
-                  </Link>
-                )}
-                <div className="mt-2 flex items-center gap-2">
-                  <span className={`rounded-full px-3 py-1 text-xs font-semibold ${displayPrice === 0 ? "bg-keep/10 text-keep" : "bg-secondary text-foreground"}`}>
-                    {displayPrice === 0
-                      ? (tool.pricing?.paid ? "Freemium" : t("Gratuit", "Free"))
-                      : `${t("À partir de", "From")} ${displayPrice}€/${t("mois", "mo")}`}
+          <h1
+            className="font-display mt-4"
+            style={{
+              fontSize: "clamp(1.5rem, 3.5vw, 2.4rem)",
+              fontWeight: 800,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.12,
+              color: "hsl(var(--foreground))",
+            }}
+          >
+            {(() => {
+              if (lang === "fr") {
+                if (displayPrice > 0) return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>vaut-il vraiment {displayPrice}€/mois ?</span></>;
+                if (isFree || isFreemium) return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>le plan gratuit suffit-il vraiment ?</span></>;
+                return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>notre verdict honnête</span></>;
+              }
+              if (displayPrice > 0) return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>is it really worth €{displayPrice}/mo?</span></>;
+              if (isFree || isFreemium) return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>is the free plan really enough?</span></>;
+              return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>our honest verdict</span></>;
+            })()}
+          </h1>
+        </div>
+      </header>
+
+      {/* ── BODY: left card + tabs + content ── */}
+      <div className="mx-auto max-w-6xl px-4 py-10">
+        <div className="flex gap-8 items-start">
+
+          {/* ══════════════ LEFT STICKY CARD ══════════════ */}
+          <aside className="hidden lg:flex w-60 shrink-0 flex-col gap-4 sticky top-6">
+            <div
+              className="rounded-xl border border-border overflow-hidden"
+              style={{ background: "hsl(var(--card))" }}
+            >
+              {/* Logo + name */}
+              <div className="flex flex-col items-center gap-3 p-5 pb-4 border-b border-border text-center">
+                <ToolLogo tool={tool} size={64} className="rounded-2xl shadow-md" />
+                <div>
+                  <p
+                    className="font-display font-bold"
+                    style={{ fontSize: "1.1rem", letterSpacing: "-0.025em" }}
+                  >
+                    {tool.name}
+                  </p>
+                  {category && (
+                    <Link
+                      to={`${prefix}/category/${category.slug}`}
+                      className="mt-0.5 inline-flex items-center gap-1 text-xs transition-colors hover:text-primary"
+                      style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}
+                    >
+                      {CategoryIcon && <CategoryIcon className="h-2.5 w-2.5" />}
+                      {t(catName, catNameEn)}
+                    </Link>
+                  )}
+                </div>
+              </div>
+
+              {/* Price block */}
+              <div className="px-5 py-4 border-b border-border text-center">
+                {isFree || isFreemium ? (
+                  <span
+                    className="inline-flex items-center rounded-md border px-3 py-1 text-sm font-semibold"
+                    style={{
+                      fontFamily: "'DM Mono', monospace",
+                      borderColor: "hsl(var(--primary) / 0.3)",
+                      background: "hsl(var(--primary) / 0.08)",
+                      color: "hsl(var(--primary))",
+                    }}
+                  >
+                    {isFree ? t("Gratuit", "Free") : "Freemium"}
                   </span>
-                  <time className="text-xs text-muted-foreground" dateTime={verifiedOn}>
-                    {t("Vérifié le", "Verified")} {verifiedOn}
+                ) : (
+                  <div>
+                    <div className="flex items-baseline justify-center gap-0.5">
+                      <span
+                        className="text-2xl font-bold"
+                        style={{ fontFamily: "'DM Mono', monospace", letterSpacing: "-0.02em" }}
+                      >
+                        {displayPrice}€
+                      </span>
+                      <span
+                        className="text-xs"
+                        style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "'DM Mono', monospace" }}
+                      >
+                        /{t("mois", "mo")}
+                      </span>
+                    </div>
+                    {tool.pricing_v5?.compare_plan_name && (
+                      <p
+                        className="mt-0.5"
+                        style={{
+                          fontFamily: "'DM Mono', monospace",
+                          fontSize: "0.6rem",
+                          letterSpacing: "0.06em",
+                          textTransform: "uppercase",
+                          color: "hsl(var(--muted-foreground) / 0.45)",
+                        }}
+                      >
+                        {t("Plan", "Plan")} {tool.pricing_v5.compare_plan_name}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* Short description */}
+              <div className="px-5 py-4 border-b border-border">
+                <p
+                  className="text-xs leading-relaxed line-clamp-4"
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                </p>
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col gap-2 p-4">
+                <a
+                  href={tool.affiliateLink || tool.websiteUrl || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 rounded-lg border border-border px-4 py-2.5 text-xs font-semibold text-foreground transition-all hover:border-primary/40 hover:text-primary"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {t("Essayer gratuitement", "Try for free")}
+                </a>
+                {domain && (
+                  <a
+                    href={`https://${domain}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-semibold transition-colors"
+                    style={{
+                      background: "hsl(var(--foreground))",
+                      color: "hsl(var(--background))",
+                      fontFamily: "'DM Sans', sans-serif",
+                    }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
+                  >
+                    {t("Visiter le site", "Visit website")}
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
+              </div>
+
+              {/* Savings signal */}
+              {(freeAlt || betterAlt) && (
+                <div
+                  className="px-4 py-3 border-t"
+                  style={{
+                    borderColor: freeAlt ? "hsl(var(--savings) / 0.2)" : "hsl(var(--cancel) / 0.2)",
+                    background: freeAlt ? "hsl(var(--savings) / 0.05)" : "hsl(var(--cancel) / 0.05)",
+                  }}
+                >
+                  <div className="flex items-start gap-2">
+                    {freeAlt
+                      ? <Sparkles className="h-3.5 w-3.5 shrink-0 mt-0.5" style={{ color: "hsl(var(--savings))" }} />
+                      : <TrendingDown className="h-3.5 w-3.5 shrink-0 mt-0.5" style={{ color: "hsl(var(--cancel))" }} />
+                    }
+                    <p
+                      className="text-xs leading-snug"
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        color: freeAlt ? "hsl(var(--savings))" : "hsl(var(--cancel))",
+                      }}
+                    >
+                      {freeAlt
+                        ? <><span className="font-medium">{t("Alt. gratuite :", "Free alt:")}</span> <span className="capitalize">{freeAlt.replace(/-/g, " ")}</span></>
+                        : <><span className="font-medium">{t("Moins cher :", "Cheaper:")}</span> <span className="capitalize">{betterAlt?.tool?.replace(/-/g, " ")}</span> {betterAlt?.saving ? `· −${betterAlt.saving}€/mo` : ""}</>
+                      }
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Key facts */}
+              <div
+                className="border-t border-border divide-y divide-border/50"
+                style={{ fontSize: "0.72rem", fontFamily: "'DM Sans', sans-serif" }}
+              >
+                {toolType && (
+                  <div className="flex items-center justify-between px-4 py-2.5">
+                    <span style={{ color: "hsl(var(--muted-foreground))" }}>{t("Type", "Type")}</span>
+                    <span
+                      className="font-medium"
+                      style={{ color: "hsl(var(--foreground))" }}
+                    >
+                      {lang === "fr" ? TYPE_LABEL[toolType]?.fr : TYPE_LABEL[toolType]?.en}
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-center justify-between px-4 py-2.5">
+                  <span style={{ color: "hsl(var(--muted-foreground))" }}>{t("Remplaçable", "Replaceable")}</span>
+                  <span style={{ color: (tool as any).substitutable ? "hsl(var(--savings))" : "hsl(var(--muted-foreground))" }}>
+                    {(tool as any).substitutable ? t("Oui", "Yes") : t("Non", "No")}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between px-4 py-2.5">
+                  <span className="flex items-center gap-1" style={{ color: "hsl(var(--muted-foreground))" }}>
+                    <ShieldCheck className="h-3 w-3" />
+                    {t("Prix vérifié", "Price verified")}
+                  </span>
+                  <time
+                    dateTime={verifiedOn}
+                    style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "'DM Mono', monospace", fontSize: "0.65rem" }}
+                  >
+                    {verifiedOn}
                   </time>
                 </div>
               </div>
             </div>
 
-            {/* CTA + Share */}
-            <div className="flex flex-col gap-2 shrink-0">
-              <a href={tool.affiliateLink || tool.websiteUrl} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/85 transition-colors">
-                {t("Essayer", "Try")} {tool.name} <ExternalLink className="h-4 w-4" />
-              </a>
-              <div className="flex items-center gap-1">
-                <button onClick={handleCopyLink}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-xs hover:bg-secondary transition-colors">
-                  <Copy className="h-3 w-3" /> {copied ? "✓" : t("Copier", "Copy")}
-                </button>
-                <button onClick={() => handleShare("twitter")}
-                  className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-3 py-2 text-xs hover:bg-secondary transition-colors">𝕏</button>
-                <button onClick={() => handleShare("linkedin")}
-                  className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-3 py-2 text-xs hover:bg-secondary transition-colors">in</button>
-              </div>
-            </div>
-          </div>
-
-          {/* Description — paragraphs split on \n\n */}
-          <div className="mt-6 max-w-3xl space-y-3">
-            {(() => {
-              const text = (lang === "en" && tool.longDescriptionEn ? tool.longDescriptionEn : (tool.longDescription || tool.description || tool.shortDescription)) || "";
-              const paras = text.split(/\n\n+/).filter(Boolean);
-              return paras.length > 1
-                ? paras.map((p, i) => <p key={i} className="text-lg leading-relaxed text-muted-foreground">{p}</p>)
-                : <p className="text-lg leading-relaxed text-muted-foreground">{text}</p>;
-            })()}
-          </div>
-        </div>
-      </header>
-
-      {/* ── MAIN CONTENT ── */}
-      <div className="container mx-auto max-w-4xl px-4 py-10">
-
-        {/* ── SECTION 2: Summary block (machine-readable, plain HTML) ── */}
-        <ToolSummaryBlock
-          tool={tool}
-          category={category}
-          alternatives={alternatives}
-          displayPrice={displayPrice}
-          lang={lang}
-          prefix={prefix}
-          t={t}
-        />
-
-        <div className="mt-8 grid gap-8 lg:grid-cols-3">
-          {/* ── LEFT COLUMN ── */}
-          <div className="lg:col-span-2 space-y-8">
-
-            {/* ── SECTION 3: Use cases ── */}
-            {tool.useCases && tool.useCases.length > 0 && (
-              <section>
-                <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
-                  {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
-                </h2>
-                <div className="mt-4 grid gap-2 sm:grid-cols-2">
-                  {(lang === "en" && tool.useCasesEn ? tool.useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
-                    <div key={i} className="flex items-start gap-2 rounded-lg bg-secondary/50 p-3 text-sm">
-                      <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
-                      {uc}
-                    </div>
+            {/* Related posts */}
+            {relatedPosts.length > 0 && (
+              <div>
+                <p className="label-section mb-3">{t("Guides liés", "Related guides")}</p>
+                <div className="flex flex-col gap-2">
+                  {relatedPosts.map((post: any) => (
+                    <Link
+                      key={post.slug}
+                      to={`${prefix}/guide/${post.slug}`}
+                      className="block rounded-lg border border-border bg-card p-3 text-xs transition-all hover:border-primary/30 hover:shadow-sm"
+                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      <p className="font-medium text-foreground line-clamp-2">{post.title}</p>
+                      {post.readTime && (
+                        <p className="mt-1" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace", fontSize: "0.6rem" }}>
+                          {post.readTime}
+                        </p>
+                      )}
+                    </Link>
                   ))}
                 </div>
-                {category && (
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    <Link to={`${prefix}/category/${category.slug}`} className="text-primary hover:underline">
-                      {t(`Découvrir tous les outils de ${category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "")}`, `Discover all ${category.nameEn || category.name} tools`)}
-                    </Link>
-                  </p>
-                )}
-              </section>
+              </div>
             )}
+          </aside>
 
-            {/* ── SECTION 4: Who is it for? ── */}
-            {(tool.soloRelevance || tool.teamRelevance) && (
-              <section>
-                <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
-                  {t(`Pour qui ${tool.name} est-il adapté ?`, `Who is ${tool.name} best for?`)}
+          {/* ══════════════ MAIN CONTENT ══════════════ */}
+          <div className="flex-1 min-w-0">
+
+            {/* ── Tab nav (sticky) ── */}
+            <nav
+              className="sticky top-0 z-20 mb-8 flex items-center gap-1 overflow-x-auto border-b border-border pb-0"
+              style={{ background: "hsl(var(--background))" }}
+            >
+              {TABS.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => scrollTo(tab.id)}
+                  className="relative shrink-0 px-4 py-3 text-sm font-medium transition-colors duration-150"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    color: activeTab === tab.id
+                      ? "hsl(var(--foreground))"
+                      : "hsl(var(--muted-foreground))",
+                  }}
+                >
+                  {lang === "fr" ? tab.labelFr : tab.labelEn}
+                  {activeTab === tab.id && (
+                    <span
+                      className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-primary"
+                    />
+                  )}
+                </button>
+              ))}
+            </nav>
+
+            {/* ── SECTION: Présentation ── */}
+            <section
+              id="presentation"
+              ref={(el) => { sectionRefs.current["presentation"] = el; }}
+              className="space-y-8"
+            >
+              {/* Description longue — mobile only (desktop has left card) */}
+              <div className="lg:hidden">
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                </p>
+              </div>
+
+              {/* Summary block */}
+              <ToolSummaryBlock
+                tool={tool} category={category} alternatives={alternatives}
+                displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
+              />
+
+              {/* Pros / Cons */}
+              <div>
+                <h2
+                  className="font-display mb-4"
+                  style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "-0.022em" }}
+                >
+                  {t(`Avantages et inconvénients de ${tool.name}`, `${tool.name} — Pros & Cons`)}
                 </h2>
-                <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                  {tool.soloRelevance && (
-                    <div className="flex items-start gap-3 rounded-lg bg-secondary/50 p-4">
-                      <User className="h-5 w-5 shrink-0 text-primary mt-0.5" />
-                      <div>
-                        <p className="text-sm font-semibold">{t("Solo / Freelance", "Solo / Freelance")}</p>
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          {tool.soloRelevance === "high"
-                            ? t(`${tool.name} est très pertinent pour les freelances et indépendants.`, `${tool.name} is highly relevant for freelancers and solopreneurs.`)
-                            : tool.soloRelevance === "medium"
-                            ? t(`${tool.name} peut être utile pour certains freelances selon leur activité.`, `${tool.name} can be useful for some freelancers depending on their activity.`)
-                            : t(`${tool.name} est peu adapté à un usage solo.`, `${tool.name} is less suited for solo use.`)}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                  {tool.teamRelevance && (
-                    <div className="flex items-start gap-3 rounded-lg bg-secondary/50 p-4">
-                      <Users className="h-5 w-5 shrink-0 text-primary mt-0.5" />
-                      <div>
-                        <p className="text-sm font-semibold">{t("Équipe / Startup", "Team / Startup")}</p>
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          {tool.teamRelevance === "high"
-                            ? t(`${tool.name} est particulièrement adapté aux équipes et startups.`, `${tool.name} is particularly well-suited for teams and startups.`)
-                            : tool.teamRelevance === "medium"
-                            ? t(`${tool.name} devient intéressant pour les équipes de taille moyenne.`, `${tool.name} becomes valuable for medium-sized teams.`)
-                            : t(`${tool.name} est moins pertinent pour un usage en équipe.`, `${tool.name} is less relevant for team use.`)}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </section>
-            )}
-
-            {/* ── SECTION 5: Pros / Cons ── */}
-            <section>
-              <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
-                {t(`Avantages et inconvénients de ${tool.name}`, `${tool.name} Pros and Cons`)}
-              </h2>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-keep/20 bg-card p-5">
-                  <h3 className="font-semibold text-keep flex items-center gap-2">
-                    <Check className="h-4 w-4" /> {t("Avantages", "Pros")}
-                  </h3>
-                  <ul className="mt-3 space-y-2">
-                    {(lang === "en" && tool.prosEn ? tool.prosEn : tool.pros)?.map((pro: string) => (
-                      <li key={pro} className="flex items-start gap-2 text-sm">
-                        <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-keep/60" />{pro}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-xl border border-cancel/20 bg-card p-5">
-                  <h3 className="font-semibold text-cancel flex items-center gap-2">
-                    <X className="h-4 w-4" /> {t("Inconvénients", "Cons")}
-                  </h3>
-                  <ul className="mt-3 space-y-2">
-                    {(lang === "en" && tool.consEn ? tool.consEn : tool.cons)?.map((con: string) => (
-                      <li key={con} className="flex items-start gap-2 text-sm">
-                        <X className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cancel/60" />{con}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-xl border p-5" style={{ borderColor: "hsl(var(--keep) / 0.25)", background: "hsl(var(--keep) / 0.04)" }}>
+                    <h3
+                      className="mb-3 flex items-center gap-2 text-sm font-semibold"
+                      style={{ color: "hsl(var(--keep))" }}
+                    >
+                      <Check className="h-4 w-4" /> {t("Avantages", "Pros")}
+                    </h3>
+                    <ul className="space-y-2">
+                      {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
+                        <li key={pro} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "'DM Sans', sans-serif" }}>
+                          <Check className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--keep) / 0.7)" }} />
+                          {pro}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="rounded-xl border p-5" style={{ borderColor: "hsl(var(--cancel) / 0.25)", background: "hsl(var(--cancel) / 0.04)" }}>
+                    <h3
+                      className="mb-3 flex items-center gap-2 text-sm font-semibold"
+                      style={{ color: "hsl(var(--cancel))" }}
+                    >
+                      <X className="h-4 w-4" /> {t("Inconvénients", "Cons")}
+                    </h3>
+                    <ul className="space-y-2">
+                      {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
+                        <li key={con} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "'DM Sans', sans-serif" }}>
+                          <X className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--cancel) / 0.7)" }} />
+                          {con}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
+
+              {/* Use cases */}
+              {tool.useCases && tool.useCases.length > 0 && (
+                <div>
+                  <h2
+                    className="font-display mb-4"
+                    style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "-0.022em" }}
+                  >
+                    {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
+                  </h2>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {(lang === "en" && (tool as any).useCasesEn ? (tool as any).useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-2.5 rounded-lg border border-border bg-card p-3 text-sm"
+                        style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      >
+                        <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
+                        {uc}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Verdict */}
+              <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
+
+              {/* Diag CTA */}
+              <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
             </section>
 
-            {/* ── SECTION 6: Verdict ── */}
-            <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
-
-            {/* ── SECTION 7: Pricing ── */}
-            <ToolPricingSection
-              tool={tool}
-              displayPrice={displayPrice}
-              verifiedOn={verifiedOn}
-              sourceDomain={sourceDomain}
-              prefix={prefix}
-              lang={lang}
-              t={t}
-            />
-
-            {/* ── SECTION 7b: Diagnostic CTA ── */}
-            <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
-          </div>
-
-          {/* ── RIGHT SIDEBAR ── */}
-          <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-            {/* Facts card */}
-            <ToolFactsCard
-              tool={tool}
-              category={category}
-              alternatives={alternatives}
-              displayPrice={displayPrice}
-              verifiedOn={verifiedOn}
-              lang={lang}
-              prefix={prefix}
-              t={t}
-            />
-
-            {/* Related articles */}
-            {relatedPosts.length > 0 && (
-              <div className="rounded-xl border border-border bg-card p-5">
-                <h3 className="font-semibold tracking-tighter">{t("Articles liés", "Related articles")}</h3>
-                <div className="mt-3 space-y-2">
-                  {relatedPosts.map(post => (
-                    <Link key={post.slug} to={`${prefix}/guide/${post.slug}`}
-                      className="block rounded-lg bg-secondary/50 p-3 text-sm hover:bg-secondary transition-colors">
-                      <p className="font-medium line-clamp-2">{post.title}</p>
-                      {post.readTime && <p className="mt-1 text-xs text-muted-foreground">{post.readTime}</p>}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* CTA sidebar */}
-            <div className="rounded-xl border border-border bg-card p-5">
-              <a href={tool.affiliateLink || tool.websiteUrl} target="_blank" rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/85 transition-colors w-full">
-                <Globe className="h-4 w-4" /> {t("Voir le site", "Visit website")}
-              </a>
-            </div>
-          </aside>
-        </div>
-
-        {/* ── SECTION 8: Alternatives (full-width) ── */}
-        <div className="mt-14">
-          <ToolAlternativesSection
-            tool={tool}
-            category={category}
-            alternatives={alternatives}
-            prefix={prefix}
-            lang={lang}
-            t={t}
-          />
-        </div>
-
-        {/* ── SECTION 8b: Cluster-related tools ── */}
-        {tool.substitution_cluster_v2 && (() => {
-          const clusterTools = tools
-            .filter((ct: any) => ct.substitution_cluster_v2 === tool.substitution_cluster_v2 && ct.id !== tool.id)
-            .slice(0, 5);
-          if (clusterTools.length === 0) return null;
-          return (
-            <div className="mt-10 border-t border-border pt-8">
-              <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
-                {t("Outils substituables", "Substitutable tools")}
+            {/* ── SECTION: Prix ── */}
+            <section
+              id="prix"
+              ref={(el) => { sectionRefs.current["prix"] = el; }}
+              className="mt-16 pt-10 border-t border-border"
+            >
+              <h2
+                className="font-display mb-6"
+                style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "-0.022em" }}
+              >
+                {t(`Prix de ${tool.name}`, `${tool.name} pricing`)}
               </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {t(
-                  `Ces outils couvrent les mêmes besoins que ${tool.name} et peuvent le remplacer directement.`,
-                  `These tools cover the same needs as ${tool.name} and can directly replace it.`
-                )}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {clusterTools.map((ct: any) => (
-                  <Link key={ct.id} to={`${prefix}/tool/${ct.slug || ct.id}`}
-                    className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium hover:border-primary/30 hover:text-primary transition-colors">
-                    <ToolLogo tool={ct} size={20} />
-                    {ct.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          );
-        })()}
+              <ToolPricingSection
+                tool={tool} displayPrice={displayPrice}
+                verifiedOn={verifiedOn} sourceDomain={sourceDomain}
+                prefix={prefix} lang={lang} t={t}
+              />
+            </section>
 
-        {/* ── SECTION 8c: Comparatifs ── */}
-        {(() => {
-          const toolId = tool.slug || tool.id;
-          const comparisons = FEATURED_COMPARISONS.filter(
-            c => c.toolA === toolId || c.toolB === toolId
-          );
-          if (comparisons.length === 0) return null;
-          const compareTools = comparisons.map(c => {
-            const otherId = c.toolA === toolId ? c.toolB : c.toolA;
-            const other = tools.find((t: any) => t.id === otherId || t.slug === otherId);
-            return other ? { slugPair: c.slugPair, other } : null;
-          }).filter(Boolean) as { slugPair: string; other: any }[];
-          if (compareTools.length === 0) return null;
-          return (
-            <div className="mt-10 border-t border-border pt-8">
-              <h2 className="text-base font-medium" style={{ letterSpacing: "-0.012em" }}>
-                {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
-              </h2>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {compareTools.map(({ slugPair, other }) => (
-                  <Link key={slugPair} to={`${prefix}/comparatif/${slugPair}`}
-                    className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium hover:border-primary/30 hover:text-primary transition-colors">
-                    <ToolLogo tool={other} size={20} />
-                    {other.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          );
-        })()}
+            {/* ── SECTION: Alternatives ── */}
+            <section
+              id="alternatives"
+              ref={(el) => { sectionRefs.current["alternatives"] = el; }}
+              className="mt-16 pt-10 border-t border-border"
+            >
+              <ToolAlternativesSection
+                tool={tool} category={category} alternatives={alternatives}
+                prefix={prefix} lang={lang} t={t}
+              />
 
-        {/* ── SECTION 9: FAQ (visible in HTML, open by default for top 2) ── */}
-        <div className="mt-14 border-t border-border pt-10">
-          <ToolFAQSection
-            tool={tool}
-            displayPrice={displayPrice}
-            verifiedOn={verifiedOn}
-            alternatives={alternatives}
-            lang={lang}
-            t={t}
-          />
-        </div>
+              {/* Cluster tools */}
+              {(tool as any).substitution_cluster_v2 && (() => {
+                const clusterTools = tools
+                  .filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)
+                  .slice(0, 6);
+                if (!clusterTools.length) return null;
+                return (
+                  <div className="mt-8">
+                    <h3
+                      className="font-display mb-3"
+                      style={{ fontSize: "0.95rem", fontWeight: 700, letterSpacing: "-0.018em" }}
+                    >
+                      {t("Outils substituables directement", "Direct substitutes")}
+                    </h3>
+                    <p
+                      className="mb-4 text-sm"
+                      style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {t(
+                        `Ces outils couvrent les mêmes besoins que ${tool.name} et peuvent le remplacer directement.`,
+                        `These tools cover the same needs as ${tool.name} and can replace it directly.`
+                      )}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {clusterTools.map((ct: any) => (
+                        <Link
+                          key={ct.id}
+                          to={`${prefix}/tool/${ct.slug || ct.id}`}
+                          className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium transition-all hover:border-primary/30 hover:text-primary"
+                          style={{ fontFamily: "'DM Sans', sans-serif" }}
+                        >
+                          <ToolLogo tool={ct} size={18} />
+                          {ct.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
 
-        {/* ── SECTION 10: Freshness footer ── */}
-        <footer className="mt-10 flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-t border-border pt-6">
-          <span className="flex items-center gap-1.5">
-            <AlertTriangle className="h-3.5 w-3.5" />
-            {t("Dernière mise à jour :", "Last updated:")} <time dateTime={verifiedOn}>{verifiedOn}</time>
-          </span>
-          {sourceDomain && (
-            <>
+              {/* Comparisons */}
+              {(() => {
+                const toolId = tool.slug || tool.id;
+                const comparisons = FEATURED_COMPARISONS.filter(
+                  (c: any) => c.toolA === toolId || c.toolB === toolId
+                );
+                const compareTools = comparisons
+                  .map((c: any) => {
+                    const otherId = c.toolA === toolId ? c.toolB : c.toolA;
+                    const other = tools.find((tt: any) => tt.id === otherId || tt.slug === otherId);
+                    return other ? { slugPair: c.slugPair, other } : null;
+                  })
+                  .filter(Boolean) as { slugPair: string; other: any }[];
+                if (!compareTools.length) return null;
+                return (
+                  <div className="mt-8">
+                    <h3
+                      className="font-display mb-3"
+                      style={{ fontSize: "0.95rem", fontWeight: 700, letterSpacing: "-0.018em" }}
+                    >
+                      {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {compareTools.map(({ slugPair, other }) => (
+                        <Link
+                          key={slugPair}
+                          to={`${prefix}/comparatif/${slugPair}`}
+                          className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium transition-all hover:border-primary/30 hover:text-primary"
+                          style={{ fontFamily: "'DM Sans', sans-serif" }}
+                        >
+                          <ToolLogo tool={other} size={18} />
+                          {tool.name} vs {other.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
+            </section>
+
+            {/* ── SECTION: FAQ ── */}
+            <section
+              id="faq"
+              ref={(el) => { sectionRefs.current["faq"] = el; }}
+              className="mt-16 pt-10 border-t border-border"
+            >
+              <ToolFAQSection
+                tool={tool} displayPrice={displayPrice}
+                verifiedOn={verifiedOn} alternatives={alternatives}
+                lang={lang} t={t}
+              />
+            </section>
+
+            {/* ── Freshness footer ── */}
+            <footer
+              className="mt-10 flex flex-wrap items-center gap-3 border-t border-border pt-6 text-xs"
+              style={{ color: "hsl(var(--muted-foreground) / 0.5)", fontFamily: "'DM Mono', monospace" }}
+            >
+              <span className="flex items-center gap-1.5">
+                <CalendarCheck className="h-3 w-3" />
+                {t("Mis à jour :", "Updated:")} <time dateTime={verifiedOn}>{verifiedOn}</time>
+              </span>
+              {sourceDomain && (
+                <>
+                  <span>·</span>
+                  <span>
+                    {t("Source :", "Source:")}{" "}
+                    <a
+                      href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-primary transition-colors"
+                    >
+                      {sourceDomain}
+                    </a>
+                  </span>
+                </>
+              )}
               <span>·</span>
-              <span>{t("Source du prix :", "Price source:")} <a href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{sourceDomain}</a></span>
-            </>
-          )}
-          <span>·</span>
-          <a href={`${prefix}/contact`} className="text-primary hover:underline">
-            {t("Signaler un prix incorrect", "Report incorrect pricing")}
-          </a>
-          <span>·</span>
-          <a href={`${prefix}/methodology`} className="text-primary hover:underline">
-            {t("Notre méthodologie", "Our methodology")}
-          </a>
-        </footer>
+              <Link to={`${prefix}/contact`} className="underline underline-offset-2 hover:text-primary transition-colors">
+                {t("Signaler un prix incorrect", "Report incorrect pricing")}
+              </Link>
+            </footer>
+          </div>
+        </div>
       </div>
     </article>
   );
