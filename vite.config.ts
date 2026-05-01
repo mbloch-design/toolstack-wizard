@@ -123,6 +123,10 @@ function sitemapPlugin(): Plugin {
           const slug = t.slug || t.id;
           for (const lang of LANGS) {
             add(`${BASE}/${lang}/tool/${slug}`, "weekly", "0.8");
+            // Sub-pages: own URL, own canonical, own SEO intent
+            add(`${BASE}/${lang}/tool/${slug}/prix`, "monthly", "0.7");
+            add(`${BASE}/${lang}/tool/${slug}/alternatives`, "monthly", "0.7");
+            add(`${BASE}/${lang}/tool/${slug}/faq`, "monthly", "0.6");
           }
         }
 
@@ -312,6 +316,109 @@ function staticPrerenderPlugin(): Plugin {
             fs.mkdirSync(outDir, { recursive: true });
             fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
             count++;
+          }
+        }
+
+        // --- Prerender tool sub-pages: /prix, /alternatives, /faq ---
+        type SubPageDef = {
+          path: string;
+          buildTitle: (name: string, isFr: boolean) => string;
+          buildDesc: (name: string, price: number | null, isFr: boolean) => string;
+          buildBody: (name: string, price: number | null, isFr: boolean) => string;
+        };
+        const TOOL_SUB_PAGES: SubPageDef[] = [
+          {
+            path: "prix",
+            buildTitle: (name, isFr) => isFr
+              ? `${name} : prix et tarifs 2026 | ToolTrim`
+              : `${name} pricing & plans 2026 | ToolTrim`,
+            buildDesc: (name, price, isFr) => isFr
+              ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison — mis à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
+              : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown — updated 2026. Is it worth €${price}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
+            buildBody: (name, price, isFr) => isFr
+              ? `Retrouvez tous les plans et tarifs de ${name}${price ? ` (à partir de ${price}€/mois)` : ""} sur ToolTrim. Analyse indépendante du rapport qualité-prix et des alternatives moins chères.`
+              : `Find all ${name} plans and pricing${price ? ` (from €${price}/month)` : ""} on ToolTrim. Independent analysis of value for money and cheaper alternatives.`,
+          },
+          {
+            path: "alternatives",
+            buildTitle: (name, isFr) => isFr
+              ? `Meilleures alternatives à ${name} en 2026 | ToolTrim`
+              : `Best ${name} alternatives in 2026 | ToolTrim`,
+            buildDesc: (name, _price, isFr) => isFr
+              ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées — mise à jour 2026.`
+              : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options — updated 2026.`,
+            buildBody: (name, _price, isFr) => isFr
+              ? `Alternatives à ${name} sélectionnées par ToolTrim : comparaison des fonctionnalités, des prix et du positionnement pour chaque profil freelance.`
+              : `${name} alternatives selected by ToolTrim: feature comparison, pricing and positioning for every freelance profile.`,
+          },
+          {
+            path: "faq",
+            buildTitle: (name, isFr) => isFr
+              ? `${name} : questions fréquentes 2026 | ToolTrim`
+              : `${name} FAQ 2026 | ToolTrim`,
+            buildDesc: (name, _price, isFr) => isFr
+              ? `Toutes les questions fréquentes sur ${name} : prix, plans, alternatives, intégrations et conseils d'utilisation — réponses ToolTrim 2026.`
+              : `All frequently asked questions about ${name}: pricing, plans, alternatives, integrations and usage tips — ToolTrim answers 2026.`,
+            buildBody: (name, _price, isFr) => isFr
+              ? `FAQ sur ${name} par ToolTrim : combien ça coûte, quelles alternatives, comment annuler, est-ce que ça vaut le coup pour un freelance ?`
+              : `${name} FAQ by ToolTrim: how much does it cost, what are the alternatives, how to cancel, is it worth it for a freelancer?`,
+          },
+        ];
+
+        for (const tool of tools) {
+          const slug = tool.slug || tool.id;
+          const name = tool.name || slug;
+          const price: number | null = tool.defaultMonthlyPrice || null;
+
+          for (const lang of LANGS) {
+            const isFr = lang === "fr";
+            for (const sub of TOOL_SUB_PAGES) {
+              const url      = `${BASE}/${lang}/tool/${slug}/${sub.path}`;
+              const frUrl    = `${BASE}/fr/tool/${slug}/${sub.path}`;
+              const enUrl    = `${BASE}/en/tool/${slug}/${sub.path}`;
+              const mainUrl  = `${BASE}/${lang}/tool/${slug}`;
+              const title    = sub.buildTitle(name, isFr);
+              const desc     = sub.buildDesc(name, price, isFr);
+              const bodyText = sub.buildBody(name, price, isFr);
+
+              // BreadcrumbList for sub-page
+              const breadcrumb = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
+                  { "@type": "ListItem", position: 2, name: isFr ? "Outils" : "Tools", item: `${BASE}/${lang}/tools` },
+                  { "@type": "ListItem", position: 3, name, item: mainUrl },
+                  { "@type": "ListItem", position: 4, name: title.split("|")[0].trim(), item: url },
+                ],
+              };
+
+              const metaTags = [
+                `<link rel="canonical" href="${url}" />`,
+                `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
+                `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
+                `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+                `<title>${title}</title>`,
+                `<meta name="description" content="${desc.replace(/"/g, "&quot;")}" />`,
+                `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
+                `<meta property="og:description" content="${desc.replace(/"/g, "&quot;")}" />`,
+                `<meta property="og:url" content="${url}" />`,
+                `<meta property="og:image" content="${BASE}/og-image.png" />`,
+                `<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
+              ].join("\n    ");
+
+              let html = baseHtml;
+              html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${lang}"`);
+              html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
+              html = html.replace(/<title>[^<]*<\/title>/, "");
+              html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+              html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+              html = html.replace("</body>", `    <noscript><p>${bodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
+
+              const outDir = path.resolve(distDir, lang, "tool", slug, sub.path);
+              fs.mkdirSync(outDir, { recursive: true });
+              fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+            }
           }
         }
 
@@ -793,7 +900,8 @@ function staticPrerenderPlugin(): Plugin {
         html404 = html404.replace("</head>", `    ${meta404}\n  </head>`);
         fs.writeFileSync(path.resolve(distDir, "404.html"), html404, "utf-8");
 
-        console.log(`✅ Prerender : ${count} tool pages + 3 landings + ${SEO_PAGES.length} SEO pages + ${SECTION_PAGES.length} sections + ${categories.length * 2} categories + ${COMPARISONS_PRERENDER.length * 2} comparisons + 404.html`);
+        const subPageCount = tools.length * 2 * 3; // 3 sub-pages × 2 langs
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (/prix, /alternatives, /faq) + 3 landings + ${SEO_PAGES.length} SEO pages + ${SECTION_PAGES.length} sections + ${categories.length * 2} categories + ${COMPARISONS_PRERENDER.length * 2} comparisons + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
