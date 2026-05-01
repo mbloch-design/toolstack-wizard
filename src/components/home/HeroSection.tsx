@@ -10,19 +10,16 @@ const FEATURED_SLUGS = [
   "intercom", "calendly",
 ];
 
-// Floating ambient logos — fixed positions, independent of tool data
+// Floating tool icons — no card, raw app icon style (Clearbit), scattered
 const FLOAT_LOGOS = [
-  // Left column
-  { domain: "notion.so",    top: "16%", left: "3%",   size: 46, delay: "0s",    duration: "4.2s" },
-  { domain: "figma.com",    top: "44%", left: "1.5%", size: 52, delay: "1.1s",  duration: "5s"   },
-  { domain: "zapier.com",   top: "72%", left: "5%",   size: 38, delay: "2.2s",  duration: "4.6s" },
-  // Right column
-  { domain: "slack.com",    top: "20%", right: "3%",  size: 52, delay: "0.6s",  duration: "4.8s" },
-  { domain: "hubspot.com",  top: "48%", right: "1.5%",size: 46, delay: "1.7s",  duration: "4.3s" },
-  { domain: "stripe.com",   top: "74%", right: "6%",  size: 38, delay: "0.3s",  duration: "5.2s" },
-  // Top corners
-  { domain: "linear.app",   top: "8%",  left: "19%",  size: 36, delay: "0.9s",  duration: "3.8s" },
-  { domain: "asana.com",    top: "8%",  right: "19%", size: 36, delay: "1.5s",  duration: "4.5s" },
+  { domain: "notion.so",       top: "10%", left: "6%",   size: 52, delay: "0s",   duration: "4.4s" },
+  { domain: "twitch.tv",       top: "42%", left: "2%",   size: 76, delay: "1.0s", duration: "5.1s" },
+  { domain: "klarna.com",      top: "72%", left: "5%",   size: 62, delay: "2.1s", duration: "4.7s" },
+  { domain: "uber.com",        top: "14%", right: "5%",  size: 80, delay: "0.5s", duration: "4.9s" },
+  { domain: "intercom.com",    top: "46%", right: "2%",  size: 62, delay: "1.6s", duration: "5.4s" },
+  { domain: "airbnb.com",      top: "74%", right: "6%",  size: 68, delay: "0.8s", duration: "4.2s" },
+  { domain: "figma.com",       top: "5%",  left: "21%",  size: 44, delay: "1.4s", duration: "3.9s" },
+  { domain: "slack.com",       top: "5%",  right: "21%", size: 44, delay: "0.3s", duration: "4.6s" },
 ];
 
 function getToolDomain(tool: any): string {
@@ -87,34 +84,29 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         }}
       />
 
-      {/* Floating tool logos — desktop only */}
+      {/* Floating tool icons — desktop only, raw app-icon style */}
       {FLOAT_LOGOS.map((logo, i) => (
-        <div
+        <img
           key={i}
-          className="pointer-events-none absolute hidden xl:flex items-center justify-center rounded-xl border border-border bg-card"
+          src={`https://logo.clearbit.com/${logo.domain}`}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          width={logo.size}
+          height={logo.size}
+          className="pointer-events-none absolute hidden xl:block rounded-2xl"
           style={{
             top: logo.top,
-            left: "left" in logo ? logo.left : undefined,
-            right: "right" in logo ? logo.right : undefined,
+            left: "left" in logo ? (logo as any).left : undefined,
+            right: "right" in logo ? (logo as any).right : undefined,
             width: logo.size,
             height: logo.size,
-            opacity: 0.55,
             animation: `float ${logo.duration} ease-in-out infinite`,
             animationDelay: logo.delay,
-            boxShadow: "0 4px 16px hsl(0 0% 0% / 0.12)",
+            boxShadow: "0 8px 24px hsl(0 0% 0% / 0.15)",
           }}
-        >
-          <img
-            src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`}
-            alt=""
-            aria-hidden
-            width={logo.size * 0.52}
-            height={logo.size * 0.52}
-            loading="lazy"
-            className="rounded-sm object-contain"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-          />
-        </div>
+          onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+        />
       ))}
 
       {/* Very subtle dot grid */}
