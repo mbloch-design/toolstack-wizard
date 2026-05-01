@@ -10,6 +10,21 @@ const FEATURED_SLUGS = [
   "intercom", "calendly",
 ];
 
+// Floating ambient logos — fixed positions, independent of tool data
+const FLOAT_LOGOS = [
+  // Left column
+  { domain: "notion.so",    top: "16%", left: "3%",   size: 46, delay: "0s",    duration: "4.2s" },
+  { domain: "figma.com",    top: "44%", left: "1.5%", size: 52, delay: "1.1s",  duration: "5s"   },
+  { domain: "zapier.com",   top: "72%", left: "5%",   size: 38, delay: "2.2s",  duration: "4.6s" },
+  // Right column
+  { domain: "slack.com",    top: "20%", right: "3%",  size: 52, delay: "0.6s",  duration: "4.8s" },
+  { domain: "hubspot.com",  top: "48%", right: "1.5%",size: 46, delay: "1.7s",  duration: "4.3s" },
+  { domain: "stripe.com",   top: "74%", right: "6%",  size: 38, delay: "0.3s",  duration: "5.2s" },
+  // Top corners
+  { domain: "linear.app",   top: "8%",  left: "19%",  size: 36, delay: "0.9s",  duration: "3.8s" },
+  { domain: "asana.com",    top: "8%",  right: "19%", size: 36, delay: "1.5s",  duration: "4.5s" },
+];
+
 function getToolDomain(tool: any): string {
   const url = tool.websiteUrl || tool.affiliateLink;
   if (!url) return "";
@@ -71,6 +86,36 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             "radial-gradient(ellipse 80% 50% at 50% -10%, hsl(224 76% 60% / 0.12) 0%, transparent 70%)",
         }}
       />
+
+      {/* Floating tool logos — desktop only */}
+      {FLOAT_LOGOS.map((logo, i) => (
+        <div
+          key={i}
+          className="pointer-events-none absolute hidden xl:flex items-center justify-center rounded-xl border border-border bg-card"
+          style={{
+            top: logo.top,
+            left: "left" in logo ? logo.left : undefined,
+            right: "right" in logo ? logo.right : undefined,
+            width: logo.size,
+            height: logo.size,
+            opacity: 0.55,
+            animation: `float ${logo.duration} ease-in-out infinite`,
+            animationDelay: logo.delay,
+            boxShadow: "0 4px 16px hsl(0 0% 0% / 0.12)",
+          }}
+        >
+          <img
+            src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`}
+            alt=""
+            aria-hidden
+            width={logo.size * 0.52}
+            height={logo.size * 0.52}
+            loading="lazy"
+            className="rounded-sm object-contain"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+          />
+        </div>
+      ))}
 
       {/* Very subtle dot grid */}
       <div

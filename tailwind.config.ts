@@ -109,6 +109,10 @@ export default {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -117,6 +121,7 @@ export default {
         "slide-up": "slide-up 0.6s ease-out forwards",
         "count-up": "count-up 0.3s ease-out forwards",
         ticker: "ticker 28s linear infinite",
+        float: "float 4s ease-in-out infinite",
       },
     },
   },
