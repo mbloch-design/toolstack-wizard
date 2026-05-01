@@ -161,7 +161,7 @@ const Navbar = () => {
                 onMouseEnter={() => handleMegaEnter("resources")} onMouseLeave={handleMegaLeave}>
                 <div className="w-[260px] rounded-xl border border-border bg-background shadow-xl shadow-black/20 overflow-hidden p-1.5">
                   {[
-                    { icon: BookOpen, label: t("Guides & comparatifs", "Guides & comparisons"), to: `${prefix}/guides` },
+                    { icon: BookOpen, label: t("Guides", "Guides"), to: `${prefix}/guides` },
                     { icon: Scale, label: t("Comparatifs", "Comparisons"), to: `${prefix}/comparatifs` },
                     { icon: Layers, label: t("Audit de stack", "Stack audit"), to: `${prefix}/selector` },
                     { icon: Shield, label: t("Transparence", "Transparency"), to: `${prefix}/transparency` },
