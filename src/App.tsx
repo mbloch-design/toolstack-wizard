@@ -23,6 +23,8 @@ const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
 const GuideDetailPage = lazy(() => import("@/pages/GuideDetailPage"));
+const StacksPage = lazy(() => import("@/pages/StacksPage"));
+const StackDetailPage = lazy(() => import("@/pages/StackDetailPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));
 const TransparencyPage = lazy(() => import("@/pages/TransparencyPage"));
@@ -107,6 +109,8 @@ const App = () => (
               <Route path="category" element={<CategoriesIndexPage />} />
               <Route path="category/:slug" element={<CategoryPage />} />
               <Route path="guides" element={<GuidesPage />} />
+              <Route path="stacks" element={<StacksPage />} />
+              <Route path="stacks/:slug" element={<StackDetailPage />} />
               {/* Persona pillar pages — declared BEFORE guide/:slug to take precedence */}
               <Route path="guide/meilleurs-outils-developpeur-freelance" element={<PersonaPillarPage persona="THEO" lang="fr" />} />
               <Route path="guide/best-tools-freelance-developer" element={<PersonaPillarPage persona="THEO" lang="en" />} />

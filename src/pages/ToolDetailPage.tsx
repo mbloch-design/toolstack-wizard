@@ -166,6 +166,7 @@ const ToolDetailPage = () => {
       <ToolJsonLd
         tool={tool} category={category} displayPrice={displayPrice}
         verifiedOn={verifiedOn} alternatives={alternatives} lang={lang}
+        includeFaq={subPage === "faq"}
       />
 
       {/* ── Hero strip: breadcrumb + headline ── */}

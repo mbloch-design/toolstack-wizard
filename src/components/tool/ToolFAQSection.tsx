@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import type { Tool } from "@/data/types";
 
 interface Props {
@@ -73,21 +72,8 @@ export default function ToolFAQSection({ tool, displayPrice, verifiedOn, alterna
     });
   }
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map(({ q, a }) => ({
-      "@type": "Question",
-      name: q,
-      acceptedAnswer: { "@type": "Answer", text: a },
-    })),
-  };
-
   return (
     <section>
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
-      </Helmet>
       <h2 className="text-xl font-bold tracking-tighter">
         {t(`Questions fréquentes sur ${tool.name}`, `Frequently asked questions about ${tool.name}`)}
       </h2>

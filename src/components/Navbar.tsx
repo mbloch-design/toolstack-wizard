@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTheme } from "@/hooks/useTheme";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
-import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench, BarChart3, HelpCircle, Shield, Mail, Layers, Scale, FlaskConical } from "lucide-react";
+import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench, BarChart3, HelpCircle, Shield, Mail, Layers, Scale, FlaskConical, Boxes } from "lucide-react";
 import { useState, useRef, useEffect, useMemo } from "react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import pictoLogo from "@/assets/picto-logo.svg";
@@ -154,7 +154,7 @@ const Navbar = () => {
           {/* Resources */}
           <div onMouseEnter={() => handleMegaEnter("resources")} onMouseLeave={handleMegaLeave} className="relative">
             <button className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-medium transition-colors duration-150
-              ${activeMega === "resources" || isActive(`${prefix}/guides`) || isActive(`${prefix}/about`)
+              ${activeMega === "resources" || isActive(`${prefix}/guides`) || isActive(`${prefix}/stacks`) || isActive(`${prefix}/about`)
                 ? "text-foreground"
                 : "text-muted-foreground hover:text-foreground"}`}>
               {t("Ressources", "Resources")}
@@ -167,6 +167,7 @@ const Navbar = () => {
                 <div className="w-[260px] rounded-xl border border-border bg-background shadow-xl shadow-black/20 overflow-hidden p-1.5">
                   {[
                     { icon: BookOpen, label: t("Guides", "Guides"), to: `${prefix}/guides` },
+                    { icon: Boxes, label: t("Stacks types", "Stack templates"), to: `${prefix}/stacks` },
                     { icon: Scale, label: t("Comparatifs", "Comparisons"), to: `${prefix}/comparatifs` },
                     { icon: Layers, label: t("Audit de stack", "Stack audit"), to: `${prefix}/selector` },
                     { icon: FlaskConical, label: t("Méthodologie", "Methodology"), to: `${prefix}/${lang === "fr" ? "methodologie" : "methodology"}` },
@@ -418,6 +419,10 @@ const Navbar = () => {
                 <Link to={`${prefix}/guides`} onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
                   <BookOpen className="h-3.5 w-3.5" /> {t("Guides", "Guides")}
+                </Link>
+                <Link to={`${prefix}/stacks`} onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">
+                  <Boxes className="h-3.5 w-3.5" /> {t("Stacks types", "Stack templates")}
                 </Link>
                 <Link to={`${prefix}/about`} onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors duration-100">

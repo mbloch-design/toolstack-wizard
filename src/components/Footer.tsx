@@ -117,6 +117,7 @@ const Footer = () => {
                   { to: `${prefix}/tools`, label: t("Catalogue d'outils", "Tool catalog") },
                   { to: `${prefix}/category`, label: t("Catégories", "Categories") },
                   { to: `${prefix}/guides`, label: t("Guides", "Guides") },
+                  { to: `${prefix}/stacks`, label: t("Stacks types", "Stack templates") },
                   { to: `${prefix}/comparatifs`, label: t("Comparatifs", "Comparisons") },
                 ].map(item => (
                   <Link key={item.to} to={item.to}

@@ -3,11 +3,12 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
+import { STACKS } from "./src/data/stacks";
 
 const BASE = "https://www.tooltrim.com";
 const LANGS = ["fr", "en"];
 // /selector excluded from sitemap (noindex tunnel)
-const STATIC_PAGES = ["", "tools", "category", "guides", "about", "methodology", "transparency", "contact"];
+const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact"];
 const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
 
 // SEO landing + persona pillar pages (localized slugs)
@@ -191,6 +192,13 @@ function sitemapPlugin(): Plugin {
         // SEO landing pages (audit)
         for (const lp of SEO_LANDING_PAGES) {
           add(`${BASE}${lp.path}`, "monthly", lp.priority);
+        }
+
+        // Stack hub + stack detail pages
+        for (const stack of STACKS) {
+          for (const lang of LANGS) {
+            add(`${BASE}/${lang}/stacks/${stack.slug}`, "monthly", "0.7");
+          }
         }
 
         // Persona pillar pages
@@ -622,6 +630,8 @@ function staticPrerenderPlugin(): Plugin {
           { path: "/en/tools",      lang: "en", title: "All SaaS tools for freelancers | ToolTrim",               description: "Compare 200+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business." },
           { path: "/fr/guides",     lang: "fr", title: "Guides et comparatifs SaaS pour freelances | ToolTrim",   description: "Nos guides pratiques pour choisir les meilleurs outils SaaS : comparatifs, analyses de prix et recommandations par profil freelance." },
           { path: "/en/guides",     lang: "en", title: "SaaS guides and comparisons for freelancers | ToolTrim",  description: "Practical guides to choose the best SaaS tools: comparisons, pricing analyses and recommendations by freelance profile." },
+          { path: "/fr/stacks",     lang: "fr", title: "Stacks SaaS types pour freelances | ToolTrim",             description: "Stacks SaaS sobres par profil freelance, budget et niveau de maturité. Des combinaisons d'outils pensées pour vendre, livrer et payer moins." },
+          { path: "/en/stacks",     lang: "en", title: "SaaS stack templates for freelancers | ToolTrim",          description: "Lean SaaS stack templates by freelance profile, budget, and maturity. Tool combinations designed to sell, deliver, and pay less." },
           { path: "/fr/comparatifs",lang: "fr", title: "Comparatifs d'outils SaaS 2026 | ToolTrim",              description: "Comparez les meilleurs outils SaaS face à face : fonctionnalités, prix réels et verdict pour chaque profil freelance." },
           { path: "/en/comparatifs",lang: "en", title: "SaaS tool comparisons 2026 | ToolTrim",                  description: "Compare the best SaaS tools head-to-head: features, real pricing and verdict for every freelance profile." },
           { path: "/fr/about",      lang: "fr", title: "À propos de ToolTrim | Audit SaaS indépendant",           description: "ToolTrim est un comparateur indépendant d'outils SaaS. Prix vérifiés manuellement, aucune affiliation commerciale. Notre mission : vous aider à payer moins." },
@@ -658,6 +668,46 @@ function staticPrerenderPlugin(): Plugin {
           const outDir = path.resolve(distDir, sp.path.replace(/^\//, ""));
           fs.mkdirSync(outDir, { recursive: true });
           fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+        }
+
+        // --- Prerender stack detail pages ---
+        for (const stack of STACKS) {
+          for (const lang of LANGS) {
+            const isFr = lang === "fr";
+            const title = isFr
+              ? `${stack.title} : outils, usages et budget | ToolTrim`
+              : `${stack.titleEn}: tools, use cases and budget | ToolTrim`;
+            const description = isFr
+              ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois. Stack divisée par usages, risques et alternatives.`
+              : `${stack.subtitleEn} Target budget: €${stack.monthlyBudget}/month. Stack divided by use cases, risks and alternatives.`;
+            const url = `${BASE}/${lang}/stacks/${stack.slug}`;
+            const frUrl = `${BASE}/fr/stacks/${stack.slug}`;
+            const enUrl = `${BASE}/en/stacks/${stack.slug}`;
+
+            const metaTags = [
+              `<link rel="canonical" href="${url}" />`,
+              `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
+              `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+              `<title>${title.replace(/"/g, "&quot;")}</title>`,
+              `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:url" content="${url}" />`,
+            ].join("\n    ");
+
+            let html = baseHtml;
+            html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${lang}"`);
+            html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
+            html = html.replace(/<title>[^<]*<\/title>/, "");
+            html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+            html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+            html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
+
+            const outDir = path.resolve(distDir, lang, "stacks", stack.slug);
+            fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+          }
         }
 
         // --- Prerender category pages ---

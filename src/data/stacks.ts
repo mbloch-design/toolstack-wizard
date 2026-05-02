@@ -1,0 +1,498 @@
+export type StackPersona = "dev" | "designer" | "consultant" | "content" | "ops" | "solo";
+export type StackStage = "starter" | "lean" | "scale";
+export type StackBudget = "free" | "under50" | "under150";
+
+export interface StackToolSlot {
+  role: string;
+  roleEn: string;
+  slug: string;
+  reason: string;
+  reasonEn: string;
+}
+
+export interface StackGuide {
+  id: string;
+  slug: string;
+  title: string;
+  titleEn: string;
+  subtitle: string;
+  subtitleEn: string;
+  persona: StackPersona;
+  stage: StackStage;
+  budget: StackBudget;
+  monthlyBudget: number;
+  savings: number;
+  risk: string;
+  riskEn: string;
+  bestFor: string;
+  bestForEn: string;
+  avoidIf: string;
+  avoidIfEn: string;
+  tools: StackToolSlot[];
+}
+
+export interface StackUseCase {
+  title: string;
+  titleEn: string;
+  description: string;
+  descriptionEn: string;
+  toolSlugs: string[];
+  workflow: string[];
+  workflowEn: string[];
+}
+
+export const STACK_PERSONAS: { value: StackPersona | "all"; label: string; labelEn: string }[] = [
+  { value: "all", label: "Tous", labelEn: "All" },
+  { value: "dev", label: "Dev freelance", labelEn: "Freelance dev" },
+  { value: "designer", label: "Designer", labelEn: "Designer" },
+  { value: "consultant", label: "Consultant", labelEn: "Consultant" },
+  { value: "content", label: "Créateur contenu", labelEn: "Content creator" },
+  { value: "ops", label: "Ops / COO", labelEn: "Ops / COO" },
+  { value: "solo", label: "Solo généraliste", labelEn: "Solo operator" },
+];
+
+export const STACK_STAGES: { value: StackStage | "all"; label: string; labelEn: string }[] = [
+  { value: "all", label: "Tous niveaux", labelEn: "All stages" },
+  { value: "starter", label: "Démarrage", labelEn: "Starter" },
+  { value: "lean", label: "Stack sobre", labelEn: "Lean stack" },
+  { value: "scale", label: "Plus avancé", labelEn: "More advanced" },
+];
+
+export const STACKS: StackGuide[] = [
+  {
+    id: "dev-shipper",
+    slug: "developpeur-freelance-shipper",
+    title: "Livrer des sites clients sans stack produit",
+    titleEn: "Ship client websites without a product stack",
+    subtitle: "Pour le dev freelance qui a besoin de coder, montrer une preview, documenter et encaisser sans payer des outils d'équipe.",
+    subtitleEn: "For freelance devs who need to code, show previews, document, and get paid without paying for team tooling.",
+    persona: "dev",
+    stage: "lean",
+    budget: "under50",
+    monthlyBudget: 32,
+    savings: 58,
+    risk: "Surpayer l'IA et l'hébergement avant d'avoir un vrai volume client.",
+    riskEn: "Overpaying for AI and hosting before there is real client volume.",
+    bestFor: "Sites clients, MVP, apps internes et maintenance freelance.",
+    bestForEn: "Client websites, MVPs, internal apps, and freelance maintenance.",
+    avoidIf: "Tu gères déjà une équipe produit avec roadmap, support et astreinte.",
+    avoidIfEn: "You already run a product team with roadmap, support, and on-call work.",
+    tools: [
+      { role: "Code et repo", roleEn: "Code and repo", slug: "github", reason: "Gratuit, standard client, suffisant pour versionner et livrer.", reasonEn: "Free, client-friendly, enough to version and ship." },
+      { role: "Déploiement", roleEn: "Deployment", slug: "vercel", reason: "Le meilleur ratio vitesse/complexité pour front et petites apps.", reasonEn: "The best speed-to-complexity ratio for frontends and small apps." },
+      { role: "Base de travail", roleEn: "Workspace", slug: "notion", reason: "Cahier des charges, specs et suivi sans outil PM lourd.", reasonEn: "Scope, specs, and tracking without a heavy PM tool." },
+      { role: "IA", roleEn: "AI", slug: "chatgpt", reason: "Un seul abonnement IA généraliste suffit dans 80% des cas.", reasonEn: "One general AI subscription is enough in most cases." },
+      { role: "Paiement", roleEn: "Payment", slug: "stripe", reason: "Simple pour factures et paiements internationaux.", reasonEn: "Simple for invoices and international payments." },
+    ],
+  },
+  {
+    id: "designer-solo",
+    slug: "designer-freelance-solo",
+    title: "Vendre du design sans suite créative dormante",
+    titleEn: "Sell design without dormant creative suites",
+    subtitle: "Pour designer solo qui livre surtout cadrage, maquettes, feedback et supports simples, sans payer une usine créative complète.",
+    subtitleEn: "For solo designers who mostly deliver framing, mockups, feedback, and simple assets without paying for a full creative factory.",
+    persona: "designer",
+    stage: "lean",
+    budget: "under50",
+    monthlyBudget: 45,
+    savings: 90,
+    risk: "Payer une suite créative complète alors que le flux réel est cadrage, design, feedback.",
+    riskEn: "Paying for a full creative suite when the real flow is framing, design, feedback.",
+    bestFor: "Branding léger, UX/UI, landing pages et audits design.",
+    bestForEn: "Light branding, UX/UI, landing pages, and design audits.",
+    avoidIf: "Tu fais de la vidéo, de la 3D ou de la production print lourde chaque semaine.",
+    avoidIfEn: "You do video, 3D, or heavy print production every week.",
+    tools: [
+      { role: "Design", roleEn: "Design", slug: "figma", reason: "Source unique pour maquettes, prototypes et commentaires.", reasonEn: "Single source for mockups, prototypes, and comments." },
+      { role: "Visuels rapides", roleEn: "Fast visuals", slug: "canva", reason: "Utile pour formats sociaux et présentations simples.", reasonEn: "Useful for social formats and simple decks." },
+      { role: "Documentation", roleEn: "Documentation", slug: "notion", reason: "Centralise brief, moodboards et décisions client.", reasonEn: "Centralizes brief, moodboards, and client decisions." },
+      { role: "Feedback vidéo", roleEn: "Video feedback", slug: "loom", reason: "À garder seulement si tu fais du feedback asynchrone régulier.", reasonEn: "Keep only if you do regular async feedback." },
+    ],
+  },
+  {
+    id: "consultant-b2b",
+    slug: "consultant-b2b-propre",
+    title: "Vendre du conseil sans CRM disproportionné",
+    titleEn: "Sell consulting without an oversized CRM",
+    subtitle: "Pour consultant B2B qui doit suivre ses opportunités, booker des appels et livrer proprement, sans recréer une équipe sales.",
+    subtitleEn: "For B2B consultants who need to track opportunities, book calls, and deliver cleanly without rebuilding a sales team.",
+    persona: "consultant",
+    stage: "starter",
+    budget: "under50",
+    monthlyBudget: 37,
+    savings: 65,
+    risk: "Multiplier CRM, prise de RDV et outils de notes qui capturent les mêmes informations.",
+    riskEn: "Multiplying CRM, scheduling, and notes tools that capture the same information.",
+    bestFor: "Conseil, coaching B2B, accompagnement dirigeants, offres packagées.",
+    bestForEn: "Consulting, B2B coaching, executive advisory, packaged offers.",
+    avoidIf: "Tu as une équipe sales avec scoring, séquences et reporting multi-commerciaux.",
+    avoidIfEn: "You have a sales team with scoring, sequences, and multi-rep reporting.",
+    tools: [
+      { role: "Pipeline", roleEn: "Pipeline", slug: "pipedrive", reason: "Plus clair qu'un CRM complet pour un solo orienté vente.", reasonEn: "Clearer than a full CRM for a sales-oriented solo." },
+      { role: "Rendez-vous", roleEn: "Scheduling", slug: "calendly", reason: "Rentable si tu bookes plus de 6 appels qualifiés par mois.", reasonEn: "Worth it if you book more than 6 qualified calls per month." },
+      { role: "Base client", roleEn: "Client base", slug: "notion", reason: "Notes de mission, livrables et suivi post-call.", reasonEn: "Mission notes, deliverables, and post-call tracking." },
+      { role: "Paiement", roleEn: "Payment", slug: "stripe", reason: "Factures simples, cartes, liens de paiement.", reasonEn: "Simple invoices, cards, payment links." },
+    ],
+  },
+  {
+    id: "content-operator",
+    slug: "createur-contenu-operateur",
+    title: "Produire du contenu sans empiler les IA",
+    titleEn: "Produce content without stacking AI tools",
+    subtitle: "Pour créateur ou rédacteur freelance qui veut publier, recycler et capter des demandes sans payer trois copilotes qui font la même chose.",
+    subtitleEn: "For freelance creators or writers who want to publish, repurpose, and capture requests without paying for three copilots doing the same thing.",
+    persona: "content",
+    stage: "lean",
+    budget: "under50",
+    monthlyBudget: 48,
+    savings: 72,
+    risk: "Empiler IA, scheduler social, newsletter et design sans workflow hebdomadaire stable.",
+    riskEn: "Stacking AI, social scheduler, newsletter, and design before having a stable weekly workflow.",
+    bestFor: "LinkedIn, newsletter, articles clients, contenus éducatifs.",
+    bestForEn: "LinkedIn, newsletter, client articles, educational content.",
+    avoidIf: "Ton activité principale est la production vidéo longue ou le média à forte audience.",
+    avoidIfEn: "Your core business is long-form video or a high-audience media brand.",
+    tools: [
+      { role: "Idées et rédaction", roleEn: "Ideas and writing", slug: "chatgpt", reason: "Un copilote éditorial suffit avant d'ajouter des IA spécialisées.", reasonEn: "One editorial copilot is enough before adding specialized AI." },
+      { role: "Organisation", roleEn: "Organization", slug: "notion", reason: "Calendrier éditorial, backlog, briefs et recyclage.", reasonEn: "Editorial calendar, backlog, briefs, and repurposing." },
+      { role: "Visuels", roleEn: "Visuals", slug: "canva", reason: "Rapide pour carrousels, miniatures et assets simples.", reasonEn: "Fast for carousels, thumbnails, and simple assets." },
+      { role: "Formulaires", roleEn: "Forms", slug: "tally", reason: "Capture de demandes sans payer Typeform trop tôt.", reasonEn: "Capture requests without paying for Typeform too early." },
+    ],
+  },
+  {
+    id: "ops-fractional",
+    slug: "ops-manager-fractional-coo",
+    title: "Structurer les opérations sans multiplier les PM tools",
+    titleEn: "Structure operations without multiplying PM tools",
+    subtitle: "Pour ops manager ou COO fractionnaire qui doit créer des process transférables sans jongler entre Asana, ClickUp, Monday et Notion.",
+    subtitleEn: "For ops managers or fractional COOs who need transferable processes without juggling Asana, ClickUp, Monday, and Notion.",
+    persona: "ops",
+    stage: "scale",
+    budget: "under150",
+    monthlyBudget: 84,
+    savings: 110,
+    risk: "Avoir Asana, ClickUp, Monday et Notion en parallèle selon les clients.",
+    riskEn: "Running Asana, ClickUp, Monday, and Notion in parallel across clients.",
+    bestFor: "Missions ops, structuration PME, process, back-office et pilotage.",
+    bestForEn: "Ops missions, SMB structuring, process, back office, and operating cadence.",
+    avoidIf: "Tu ne pilotes que ton activité solo sans clients multi-process.",
+    avoidIfEn: "You only run your solo business without multi-process clients.",
+    tools: [
+      { role: "Pilotage", roleEn: "Operations", slug: "clickup", reason: "Bon compromis vues, tâches, docs et automatisations simples.", reasonEn: "Good balance of views, tasks, docs, and simple automations." },
+      { role: "Base de connaissance", roleEn: "Knowledge base", slug: "notion", reason: "Parfait pour SOP, modèles et docs transférables.", reasonEn: "Great for SOPs, templates, and transferable docs." },
+      { role: "Automatisation", roleEn: "Automation", slug: "make", reason: "Moins cher que Zapier si tu sais cartographier les scénarios.", reasonEn: "Cheaper than Zapier if you can map scenarios." },
+      { role: "Facturation", roleEn: "Billing", slug: "indy", reason: "Suffisant pour activité française solo et suivi simple.", reasonEn: "Enough for solo French activity and simple tracking." },
+    ],
+  },
+  {
+    id: "solo-zero-bloat",
+    slug: "freelance-solo-zero-bloat",
+    title: "Démarrer sans acheter les outils d'une équipe",
+    titleEn: "Start without buying team tools",
+    subtitle: "Pour freelance en lancement : vendre, qualifier, livrer et encaisser avec le minimum viable avant d'ajouter des abonnements.",
+    subtitleEn: "For early freelancers: sell, qualify, deliver, and get paid with the viable minimum before adding subscriptions.",
+    persona: "solo",
+    stage: "starter",
+    budget: "free",
+    monthlyBudget: 12,
+    savings: 85,
+    risk: "Acheter les outils d'une équipe alors que tu n'as pas encore un flux stable.",
+    riskEn: "Buying team tools before you have a stable flow.",
+    bestFor: "Freelance en lancement, side business, activité de service simple.",
+    bestForEn: "Early freelance, side business, simple service business.",
+    avoidIf: "Tu produis déjà à plusieurs ou tu as besoin d'un CRM commercial complet.",
+    avoidIfEn: "You already produce with a team or need a full sales CRM.",
+    tools: [
+      { role: "Organisation", roleEn: "Organization", slug: "notion", reason: "Un espace unique pour offres, clients, tâches et livrables.", reasonEn: "One place for offers, clients, tasks, and deliverables." },
+      { role: "Stockage", roleEn: "Storage", slug: "google-drive", reason: "Peu cher, compris par tous les clients.", reasonEn: "Cheap and understood by every client." },
+      { role: "Paiement", roleEn: "Payment", slug: "stripe", reason: "Démarre gratuitement, paiement à l'usage.", reasonEn: "Starts free, pay as you go." },
+      { role: "Formulaire", roleEn: "Form", slug: "tally", reason: "Brief client et qualification sans coût fixe.", reasonEn: "Client brief and qualification without fixed cost." },
+    ],
+  },
+  {
+    id: "automation-light",
+    slug: "automatisation-legere-freelance",
+    title: "Automatiser seulement ce qui se répète vraiment",
+    titleEn: "Automate only what truly repeats",
+    subtitle: "Pour freelance qui commence à avoir des tâches récurrentes mais pas encore assez de volume pour payer une architecture complexe.",
+    subtitleEn: "For freelancers starting to have recurring tasks but not enough volume to pay for complex architecture.",
+    persona: "ops",
+    stage: "lean",
+    budget: "under50",
+    monthlyBudget: 28,
+    savings: 74,
+    risk: "Payer Zapier alors que deux scénarios Make ou une checklist suffisent.",
+    riskEn: "Paying for Zapier when two Make scenarios or a checklist would be enough.",
+    bestFor: "Collecte de leads, notifications, synchro CRM légère, reporting mensuel.",
+    bestForEn: "Lead capture, notifications, light CRM sync, monthly reporting.",
+    avoidIf: "Tes automatisations sont critiques, volumétriques ou multi-équipes.",
+    avoidIfEn: "Your automations are critical, high-volume, or multi-team.",
+    tools: [
+      { role: "Scénarios", roleEn: "Scenarios", slug: "make", reason: "Bon rapport puissance/prix pour workflows visuels.", reasonEn: "Good power-to-price ratio for visual workflows." },
+      { role: "Capture", roleEn: "Capture", slug: "tally", reason: "Point d'entrée propre pour brief, lead ou demande support.", reasonEn: "Clean entry point for briefs, leads, or support requests." },
+      { role: "Base", roleEn: "Base", slug: "airtable", reason: "Utile si Notion devient trop flou pour tes données.", reasonEn: "Useful when Notion becomes too fuzzy for data." },
+      { role: "Documentation", roleEn: "Documentation", slug: "notion", reason: "Chaque automatisation doit avoir son mode d'emploi.", reasonEn: "Every automation needs its operating note." },
+    ],
+  },
+  {
+    id: "client-delivery",
+    slug: "livraison-client-asynchrone",
+    title: "Livrer à distance sans multiplier les canaux",
+    titleEn: "Deliver remotely without multiplying channels",
+    subtitle: "Pour missions client où il faut réduire les réunions, cadrer les retours et garder une trace claire des décisions.",
+    subtitleEn: "For client missions where you need fewer meetings, structured feedback, and a clean decision trail.",
+    persona: "consultant",
+    stage: "lean",
+    budget: "under50",
+    monthlyBudget: 34,
+    savings: 52,
+    risk: "Confondre collaboration client et multiplication de canaux.",
+    riskEn: "Confusing client collaboration with multiplying channels.",
+    bestFor: "Missions récurrentes, design review, conseil, formation, delivery remote.",
+    bestForEn: "Recurring missions, design review, consulting, training, remote delivery.",
+    avoidIf: "Tes clients imposent déjà Teams, Jira ou leur propre environnement.",
+    avoidIfEn: "Your clients already impose Teams, Jira, or their own environment.",
+    tools: [
+      { role: "Base projet", roleEn: "Project base", slug: "notion", reason: "Une page client claire vaut souvent mieux qu'un espace complet.", reasonEn: "A clear client page often beats a full workspace." },
+      { role: "Vidéo courte", roleEn: "Short video", slug: "loom", reason: "Rentable si elle remplace vraiment des réunions.", reasonEn: "Worth it only when it truly replaces meetings." },
+      { role: "Planification", roleEn: "Scheduling", slug: "calendly", reason: "À garder si le volume d'appels justifie l'abonnement.", reasonEn: "Keep if meeting volume justifies the subscription." },
+      { role: "Documents", roleEn: "Documents", slug: "google-drive", reason: "Contrats, livrables et exports accessibles.", reasonEn: "Contracts, deliverables, and exports stay accessible." },
+    ],
+  },
+];
+
+export const STACK_USES: Record<string, StackUseCase[]> = {
+  "dev-shipper": [
+    {
+      title: "Livrer un site client",
+      titleEn: "Ship a client website",
+      description: "C'est le cas le plus courant : un client veut voir quelque chose vite, comprendre où tu en es, puis payer sans friction. Ici, la stack sert surtout à éviter les allers-retours flous.",
+      descriptionEn: "This is the most common case: a client wants to see progress quickly, understand where things stand, and pay without friction. Here, the stack mostly avoids blurry back-and-forth.",
+      toolSlugs: ["notion", "github", "vercel", "stripe"],
+      workflow: ["Je pose le périmètre et les décisions dans Notion, pour ne pas dépendre d'un fil Slack ou d'un email perdu.", "Je garde le code dans GitHub, même sur un petit projet, parce que c'est mon filet de sécurité.", "Je partage une preview Vercel au lieu d'envoyer des captures.", "Je facture ou j'encaisse avec Stripe quand le jalon est validé."],
+      workflowEn: ["I put scope and decisions in Notion so I do not depend on a lost Slack thread or email.", "I keep code in GitHub, even for a small project, because it is my safety net.", "I share a Vercel preview instead of sending screenshots.", "I bill or collect payment with Stripe once the milestone is approved."],
+    },
+    {
+      title: "Débloquer plus vite avec l'IA",
+      titleEn: "Unblock faster with AI",
+      description: "L'IA est utile quand elle enlève une friction précise. Elle devient chère quand elle remplace ta méthode de travail ou quand tu paies trois assistants pour le même usage.",
+      descriptionEn: "AI is useful when it removes a precise friction. It becomes expensive when it replaces your work method or when you pay three assistants for the same use.",
+      toolSlugs: ["chatgpt", "github"],
+      workflow: ["Je donne à ChatGPT une erreur, un bout de contexte ou une contrainte, pas tout le projet.", "Je lui demande une hypothèse courte plutôt qu'une refonte complète.", "Je n'applique que ce que je comprends.", "Si ça change l'architecture, je laisse une trace dans le repo."],
+      workflowEn: ["I give ChatGPT an error, a bit of context, or a constraint, not the whole project.", "I ask for a short hypothesis rather than a full rewrite.", "I apply only what I understand.", "If it changes architecture, I leave a note in the repo."],
+    },
+    {
+      title: "Maintenir sans outil projet lourd",
+      titleEn: "Maintain without heavy PM tooling",
+      description: "Pour un freelance, la maintenance se complique rarement à cause du manque d'outil. Elle se complique parce que les demandes, les priorités et les décisions sont dispersées.",
+      descriptionEn: "For a freelancer, maintenance rarely gets messy because of missing tooling. It gets messy because requests, priorities, and decisions are scattered.",
+      toolSlugs: ["notion", "github"],
+      workflow: ["Je garde les demandes brutes dans Notion, avec le contexte client.", "Je transforme seulement les sujets mûrs en issues GitHub.", "Je livre par petits lots pour éviter la grande release anxiogène.", "Je note les décisions importantes là où le client peut les relire."],
+      workflowEn: ["I keep raw requests in Notion with client context.", "I turn only mature topics into GitHub issues.", "I ship in small batches to avoid the stressful big release.", "I record important decisions where the client can reread them."],
+    },
+  ],
+  "designer-solo": [
+    {
+      title: "Cadrage et maquette",
+      titleEn: "Framing and mockup",
+      description: "Quand tu vends du design en solo, le risque n'est pas de manquer d'outils. Le risque, c'est d'avoir trop d'endroits où le brief, les retours et la dernière version peuvent se perdre.",
+      descriptionEn: "When you sell design solo, the risk is not lacking tools. The risk is having too many places where the brief, feedback, and latest version can get lost.",
+      toolSlugs: ["figma", "notion"],
+      workflow: ["Je garde le brief et les décisions dans Notion, pas dans dix messages éparpillés.", "Je fais vivre les maquettes dans Figma, avec un seul lien client.", "Je sépare les idées exploratoires des écrans validés.", "Je documente les arbitrages quand le client tranche."],
+      workflowEn: ["I keep the brief and decisions in Notion, not in ten scattered messages.", "I keep mockups alive in Figma with one client link.", "I separate exploratory ideas from approved screens.", "I document trade-offs when the client decides."],
+    },
+    {
+      title: "Production rapide de contenus",
+      titleEn: "Fast content production",
+      description: "Canva a du sens quand il sert à décliner vite, pas quand il devient un deuxième atelier créatif parallèle à Figma.",
+      descriptionEn: "Canva makes sense when it helps you repurpose quickly, not when it becomes a second creative workshop next to Figma.",
+      toolSlugs: ["canva", "figma"],
+      workflow: ["Je crée le système visuel dans Figma, là où la qualité se décide.", "Je garde seulement quelques templates Canva vraiment utilisés.", "Je décline les formats sociaux sans réinventer la direction artistique.", "Je supprime les templates qui dorment au lieu de les collectionner."],
+      workflowEn: ["I create the visual system in Figma, where quality is decided.", "I keep only a few Canva templates that are truly used.", "I repurpose social formats without reinventing the art direction.", "I delete dormant templates instead of collecting them."],
+    },
+    {
+      title: "Feedback asynchrone",
+      titleEn: "Async feedback",
+      description: "Une vidéo de feedback est précieuse si elle évite un rendez-vous et clarifie une décision. Sinon, c'est juste un outil de plus dans la chaîne.",
+      descriptionEn: "A feedback video is valuable if it avoids a meeting and clarifies a decision. Otherwise, it is just another tool in the chain.",
+      toolSlugs: ["loom", "figma"],
+      workflow: ["Je prépare les points à commenter avant d'enregistrer.", "Je montre les zones Figma concernées au lieu de parler dans le vide.", "Je termine par une question de décision, pas par un vague “dis-moi ce que tu en penses”.", "Je colle la vidéo dans la page projet pour garder la trace."],
+      workflowEn: ["I prepare the points before recording.", "I show the relevant Figma areas instead of speaking into the void.", "I end with a decision question, not a vague “tell me what you think”.", "I paste the video into the project page to keep the trace."],
+    },
+  ],
+  "consultant-b2b": [
+    {
+      title: "Acquisition et pipeline",
+      titleEn: "Acquisition and pipeline",
+      description: "Pour un consultant solo, le CRM sert surtout à ne pas oublier qui relancer et pourquoi. Si tu passes plus de temps à configurer le CRM qu'à parler aux prospects, il est trop gros.",
+      descriptionEn: "For a solo consultant, CRM mostly helps you remember who to follow up with and why. If you spend more time configuring the CRM than talking to prospects, it is too big.",
+      toolSlugs: ["pipedrive", "calendly"],
+      workflow: ["Je note seulement les prospects avec une vraie prochaine action.", "Je garde les étapes simples : contacté, échange prévu, proposition, gagné ou perdu.", "J'utilise Calendly quand il évite des allers-retours réels.", "Je planifie la relance dès la fin de l'échange."],
+      workflowEn: ["I only record prospects with a real next action.", "I keep stages simple: contacted, call booked, proposal, won or lost.", "I use Calendly when it avoids real back-and-forth.", "I schedule the follow-up right after the conversation."],
+    },
+    {
+      title: "Delivery de mission",
+      titleEn: "Mission delivery",
+      description: "Le delivery d'un consultant tient souvent à une chose : le client doit retrouver le raisonnement, pas seulement le livrable final.",
+      descriptionEn: "Consulting delivery often comes down to one thing: the client must find the reasoning, not only the final deliverable.",
+      toolSlugs: ["notion", "google-drive"],
+      workflow: ["Je crée une page mission avec objectif, contexte et livrables attendus.", "Je note les décisions importantes après chaque call.", "Je garde les fichiers lourds dans Drive, mais je les contextualise dans Notion.", "Je termine avec une synthèse que le client peut relire trois mois plus tard."],
+      workflowEn: ["I create a mission page with goal, context, and expected deliverables.", "I record important decisions after each call.", "I keep heavy files in Drive, but contextualize them in Notion.", "I end with a summary the client can reread three months later."],
+    },
+    {
+      title: "Facturation et encaissement",
+      titleEn: "Billing and payment",
+      description: "La facturation doit être plus simple que la vente. Si encaisser devient un sujet, ton stack crée de la friction au pire moment.",
+      descriptionEn: "Billing should be simpler than selling. If getting paid becomes a topic, your stack creates friction at the worst moment.",
+      toolSlugs: ["stripe", "pipedrive"],
+      workflow: ["Je marque l'affaire comme gagnée quand le client dit oui, pas quand j'ai envie d'y croire.", "Je crée un lien ou une facture claire.", "Je rattache le paiement au deal pour ne pas perdre le fil.", "Je relance calmement depuis le pipeline si ça traîne."],
+      workflowEn: ["I mark the deal won when the client says yes, not when I hope it will happen.", "I create a clear link or invoice.", "I attach payment to the deal so I do not lose track.", "I follow up calmly from the pipeline if it drags."],
+    },
+  ],
+  "content-operator": [
+    {
+      title: "Production éditoriale",
+      titleEn: "Editorial production",
+      description: "La production de contenu devient vite chère quand chaque étape a son outil. Ici, l'objectif est de garder une chaîne courte : idée, angle, brouillon, publication.",
+      descriptionEn: "Content production quickly gets expensive when every step has its own tool. Here, the goal is to keep a short chain: idea, angle, draft, publish.",
+      toolSlugs: ["notion", "chatgpt"],
+      workflow: ["Je garde les idées dans Notion avec la promesse, pas juste un titre vague.", "Je demande à ChatGPT un angle ou un plan, pas un texte final à publier tel quel.", "Je rédige ou réécris avec ma voix.", "Je note ce qui performe pour nourrir les prochains sujets."],
+      workflowEn: ["I keep ideas in Notion with the promise, not just a vague title.", "I ask ChatGPT for an angle or outline, not a final publish-ready text.", "I write or rewrite in my own voice.", "I note what performs to feed the next topics."],
+    },
+    {
+      title: "Création de visuels",
+      titleEn: "Visual creation",
+      description: "Canva est très rentable quand il sert à répéter un bon système. Il devient un piège quand tu passes ton temps à chercher le template parfait.",
+      descriptionEn: "Canva is very profitable when it repeats a good system. It becomes a trap when you spend time hunting for the perfect template.",
+      toolSlugs: ["canva", "notion"],
+      workflow: ["Je choisis trois formats récurrents maximum.", "Je prépare le texte avant d'ouvrir Canva.", "Je décline le contenu sans changer la direction à chaque fois.", "Je range les assets pour pouvoir les réutiliser."],
+      workflowEn: ["I choose three recurring formats max.", "I prepare copy before opening Canva.", "I repurpose content without changing direction every time.", "I store assets so I can reuse them."],
+    },
+    {
+      title: "Capture de demandes",
+      titleEn: "Request capture",
+      description: "Un formulaire simple peut remplacer beaucoup de conversations mal cadrées. L'intérêt n'est pas le formulaire : c'est la qualité des réponses qu'il force.",
+      descriptionEn: "A simple form can replace many poorly framed conversations. The value is not the form: it is the quality of answers it forces.",
+      toolSlugs: ["tally", "notion"],
+      workflow: ["Je pose seulement les questions qui changent ma réponse commerciale.", "Je relie les demandes à Notion pour garder le contexte.", "Je trie vite : à traiter, à refuser, à clarifier.", "Je réponds avec un message adapté, pas avec une usine automatisée."],
+      workflowEn: ["I ask only questions that change my commercial answer.", "I connect requests to Notion to keep context.", "I sort quickly: handle, decline, clarify.", "I answer with a tailored message, not a heavy automation machine."],
+    },
+  ],
+  "ops-fractional": [
+    {
+      title: "Pilotage opérationnel",
+      titleEn: "Operating cadence",
+      description: "Un outil ops devient utile quand il clarifie qui fait quoi, pas quand il ajoute une couche de management à un problème flou.",
+      descriptionEn: "An ops tool becomes useful when it clarifies who does what, not when it adds a management layer to a vague problem.",
+      toolSlugs: ["clickup", "notion"],
+      workflow: ["Je liste les chantiers qui ont vraiment besoin d'un owner.", "Je crée peu de statuts, mais des statuts compris par tout le monde.", "Je garde ClickUp pour l'exécution, pas pour la documentation longue.", "Je mets les SOP et décisions durables dans Notion."],
+      workflowEn: ["I list workstreams that truly need an owner.", "I create few statuses, but statuses everyone understands.", "I keep ClickUp for execution, not long documentation.", "I put durable SOPs and decisions in Notion."],
+    },
+    {
+      title: "Automatisation de back-office",
+      titleEn: "Back-office automation",
+      description: "Automatiser sans documentation, c'est juste déplacer le problème dans une boîte noire. Pour un freelance ops, la maintenance fait partie du livrable.",
+      descriptionEn: "Automating without documentation just moves the problem into a black box. For an ops freelancer, maintenance is part of the deliverable.",
+      toolSlugs: ["make", "notion"],
+      workflow: ["Je dessine le flux avant d'ouvrir Make.", "Je commence par un scénario que je peux expliquer en deux minutes.", "Je teste avec un vrai cas client, pas avec une donnée parfaite.", "Je documente quoi faire quand le scénario casse."],
+      workflowEn: ["I sketch the flow before opening Make.", "I start with a scenario I can explain in two minutes.", "I test with a real client case, not perfect data.", "I document what to do when the scenario breaks."],
+    },
+    {
+      title: "Gestion administrative",
+      titleEn: "Administrative management",
+      description: "L'administratif doit rester un garde-fou, pas ton deuxième métier. L'idée est de savoir où tu en es sans construire un ERP miniature.",
+      descriptionEn: "Admin should remain a guardrail, not your second job. The idea is to know where you stand without building a miniature ERP.",
+      toolSlugs: ["indy", "stripe"],
+      workflow: ["Je suis les encaissements sans refaire une compta parallèle.", "Je catégorise les dépenses pendant qu'elles sont encore fraîches.", "Je garde un œil sur la marge réelle par mission.", "Je prépare les déclarations avant que ça devienne urgent."],
+      workflowEn: ["I track payments without rebuilding parallel accounting.", "I categorize expenses while they are still fresh.", "I keep an eye on real margin by mission.", "I prepare declarations before they become urgent."],
+    },
+  ],
+  "solo-zero-bloat": [
+    {
+      title: "Vendre une offre simple",
+      titleEn: "Sell a simple offer",
+      description: "Au début, tu n'as pas besoin d'un tunnel complet. Tu as besoin d'une offre claire, d'un moyen de qualifier, et d'un moyen d'encaisser.",
+      descriptionEn: "At the beginning, you do not need a full funnel. You need a clear offer, a way to qualify, and a way to get paid.",
+      toolSlugs: ["notion", "tally", "stripe"],
+      workflow: ["Je décris l'offre dans une page simple, sans site complet si ce n'est pas nécessaire.", "Je qualifie la demande avec Tally pour éviter les appels inutiles.", "J'envoie un paiement clair quand la valeur est comprise.", "Je livre proprement dans un dossier partagé."],
+      workflowEn: ["I describe the offer in a simple page, without a full site if not needed.", "I qualify the request with Tally to avoid useless calls.", "I send a clear payment link when value is understood.", "I deliver cleanly in a shared folder."],
+    },
+    {
+      title: "Gérer les fichiers client",
+      titleEn: "Manage client files",
+      description: "Le bon outil de fichiers est souvent celui que le client ouvre sans réfléchir. Drive n'est pas glamour, mais il évite beaucoup de friction.",
+      descriptionEn: "The right file tool is often the one the client opens without thinking. Drive is not glamorous, but it avoids a lot of friction.",
+      toolSlugs: ["google-drive", "notion"],
+      workflow: ["Je crée un dossier par client, pas par humeur du jour.", "Je nomme les livrables pour qu'ils soient compréhensibles six mois plus tard.", "Je garde le contexte dans Notion et les fichiers dans Drive.", "Je nettoie ou archive quand la mission se termine."],
+      workflowEn: ["I create one folder per client, not per mood of the day.", "I name deliverables so they still make sense six months later.", "I keep context in Notion and files in Drive.", "I clean or archive when the mission ends."],
+    },
+    {
+      title: "Suivre sans CRM",
+      titleEn: "Track without a CRM",
+      description: "Un CRM trop tôt donne l'impression d'être structuré, mais il ajoute souvent plus de saisie que de ventes. Une table claire suffit tant que le volume est faible.",
+      descriptionEn: "A CRM too early gives the feeling of structure, but often adds more data entry than sales. A clear table is enough while volume is low.",
+      toolSlugs: ["notion", "tally"],
+      workflow: ["Je note le prospect, la source et la prochaine action.", "Je garde une vue simple des relances de la semaine.", "Je supprime les opportunités mortes au lieu de les laisser gonfler la base.", "Je passe à un CRM seulement quand je perds vraiment le fil."],
+      workflowEn: ["I note the prospect, source, and next action.", "I keep a simple view of this week's follow-ups.", "I remove dead opportunities instead of letting them inflate the base.", "I move to a CRM only when I truly lose track."],
+    },
+  ],
+  "automation-light": [
+    {
+      title: "Collecte de leads",
+      titleEn: "Lead collection",
+      description: "Une bonne automatisation commence souvent par un bon formulaire. Si l'entrée est propre, le reste devient beaucoup plus simple.",
+      descriptionEn: "A good automation often starts with a good form. If the input is clean, everything else becomes much simpler.",
+      toolSlugs: ["tally", "make", "notion"],
+      workflow: ["Je structure le formulaire autour des décisions à prendre.", "Je déclenche Make seulement après une soumission complète.", "J'envoie une notification utile, pas un bruit de plus.", "Je crée une ligne de suivi lisible dans Notion."],
+      workflowEn: ["I structure the form around decisions to make.", "I trigger Make only after a complete submission.", "I send a useful notification, not more noise.", "I create a readable tracking row in Notion."],
+    },
+    {
+      title: "Base de données légère",
+      titleEn: "Light database",
+      description: "Airtable se justifie quand tu manipules de vraies données, pas quand tu veux juste une jolie table. Sinon, Notion reste souvent suffisant.",
+      descriptionEn: "Airtable is justified when you manipulate real data, not when you just want a prettier table. Otherwise, Notion is often enough.",
+      toolSlugs: ["airtable", "make"],
+      workflow: ["Je définis les champs qui servent vraiment au pilotage.", "Je crée des vues pour des décisions, pas pour décorer.", "Je connecte seulement les entrées stables.", "Je nettoie chaque mois pour éviter la base poubelle."],
+      workflowEn: ["I define fields that truly support decisions.", "I create views for decisions, not decoration.", "I connect only stable inputs.", "I clean monthly to avoid a junk database."],
+    },
+    {
+      title: "Reporting mensuel",
+      titleEn: "Monthly reporting",
+      description: "Le reporting ne mérite d'être automatisé que quand tu sais déjà ce que tu veux raconter. Sinon tu automatises juste de la confusion.",
+      descriptionEn: "Reporting deserves automation only when you already know what you want to say. Otherwise you just automate confusion.",
+      toolSlugs: ["make", "notion"],
+      workflow: ["Je stabilise le format à la main sur deux ou trois cycles.", "Je récupère seulement les données vraiment lues.", "Je génère une synthèse courte.", "Je relis avant envoi, parce que l'automatisation n'assume pas la responsabilité."],
+      workflowEn: ["I stabilize the format manually over two or three cycles.", "I collect only data people actually read.", "I generate a short summary.", "I review before sending, because automation does not carry responsibility."],
+    },
+  ],
+  "client-delivery": [
+    {
+      title: "Réduire les réunions",
+      titleEn: "Reduce meetings",
+      description: "Une vidéo asynchrone doit faire gagner une réunion, pas créer un contenu de plus à regarder. Elle doit amener une réponse claire.",
+      descriptionEn: "An async video should save a meeting, not create one more piece of content to watch. It must lead to a clear answer.",
+      toolSlugs: ["loom", "notion"],
+      workflow: ["Je prépare trois points maximum.", "J'enregistre une vidéo courte, centrée sur la décision.", "Je demande une réponse structurée au client.", "J'archive la décision dans la page projet."],
+      workflowEn: ["I prepare three points max.", "I record a short video centered on the decision.", "I ask the client for a structured answer.", "I archive the decision in the project page."],
+    },
+    {
+      title: "Centraliser les livrables",
+      titleEn: "Centralize deliverables",
+      description: "Drive et Notion sont utiles ensemble si chacun garde son rôle. Sinon tu crées deux endroits où chercher la même information.",
+      descriptionEn: "Drive and Notion are useful together if each keeps its role. Otherwise you create two places to search for the same information.",
+      toolSlugs: ["google-drive", "notion"],
+      workflow: ["Je mets les fichiers dans Drive.", "Je décris le contexte, les versions et les décisions dans Notion.", "Je lien les livrables finaux au bon endroit.", "Je ferme la mission avec une synthèse propre."],
+      workflowEn: ["I put files in Drive.", "I describe context, versions, and decisions in Notion.", "I link final deliverables in the right place.", "I close the mission with a clean summary."],
+    },
+    {
+      title: "Planifier sans friction",
+      titleEn: "Schedule without friction",
+      description: "La planification est un détail qui peut manger beaucoup d'énergie. Mais un outil de rendez-vous doit rester invisible, pas devenir un portail client.",
+      descriptionEn: "Scheduling is a detail that can eat a lot of energy. But a scheduling tool should stay invisible, not become a client portal.",
+      toolSlugs: ["calendly", "notion"],
+      workflow: ["Je limite les types d'appel pour ne pas créer un menu inutile.", "Je propose le lien quand il évite vraiment des allers-retours.", "Je rattache le rendez-vous au contexte projet.", "Je supprime les créneaux ou workflows qui ne servent plus."],
+      workflowEn: ["I limit meeting types to avoid creating a useless menu.", "I share the link when it truly avoids back-and-forth.", "I attach the meeting to project context.", "I remove slots or workflows that no longer help."],
+    },
+  ],
+};

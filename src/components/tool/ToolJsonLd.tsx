@@ -9,21 +9,18 @@ interface Props {
   verifiedOn: string;
   alternatives: Tool[];
   lang: string;
+  includeFaq?: boolean;
 }
 
 /**
  * Manages all JSON-LD schemas for the tool detail page:
  * - WebPage
- * - BreadcrumbList
  * - SoftwareApplication + Offer
- * - FAQPage
+ * - FAQPage when the dedicated FAQ page is rendered
  */
-export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang }: Props) {
+export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false }: Props) {
   useEffect(() => {
     const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
-    const categoryLabel = category
-      ? category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "")
-      : "";
 
     // 1. WebPage
     setJsonLd("tool-webpage-jsonld", {
@@ -40,39 +37,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       },
     });
 
-    // 2. BreadcrumbList
-    const breadcrumbItems = [
-      { "@type": "ListItem", position: 1, name: "ToolTrim", item: SEO_BASE },
-      { "@type": "ListItem", position: 2, name: lang === "fr" ? "Outils" : "Tools", item: `${SEO_BASE}/${lang}/tools` },
-    ];
-    if (category) {
-      breadcrumbItems.push({
-        "@type": "ListItem",
-        position: 3,
-        name: categoryLabel,
-        item: `${SEO_BASE}/${lang}/category/${category.slug}`,
-      });
-      breadcrumbItems.push({
-        "@type": "ListItem",
-        position: 4,
-        name: tool.name,
-        item: canonicalUrl,
-      });
-    } else {
-      breadcrumbItems.push({
-        "@type": "ListItem",
-        position: 3,
-        name: tool.name,
-        item: canonicalUrl,
-      });
-    }
-    setJsonLd("tool-breadcrumb-jsonld", {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: breadcrumbItems,
-    });
-
-    // 3. SoftwareApplication + Offer + AggregateRating + Review
+    // 2. SoftwareApplication + Offer + AggregateRating + Review
     // ToolTrim score (0-100) — multi-signal weighted algorithm:
     //   • Pros/Cons balance (40%) — quality from user-facing tradeoffs
     //   • Verdict signal (30%)    — keepIf strength minus avoidIf penalty
@@ -169,72 +134,74 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       },
     });
 
-    // 4. FAQPage
-    const freeAlts = alternatives.filter(a => a.defaultMonthlyPrice === 0).slice(0, 3);
-    const topAlts = alternatives.slice(0, 5).map(a => a.name).join(", ");
+    // 3. FAQPage
+    if (includeFaq) {
+      const freeAlts = alternatives.filter(a => a.defaultMonthlyPrice === 0).slice(0, 3);
+      const topAlts = alternatives.slice(0, 5).map(a => a.name).join(", ");
 
-    const faqEntries = [
-      {
-        "@type": "Question",
-        name: lang === "fr" ? `À quoi sert ${tool.name} ?` : `What is ${tool.name} used for?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: tool.longDescription || tool.shortDescription || `${tool.name} is a SaaS tool.`,
+      const faqEntries = [
+        {
+          "@type": "Question",
+          name: lang === "fr" ? `À quoi sert ${tool.name} ?` : `What is ${tool.name} used for?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: tool.longDescription || tool.shortDescription || `${tool.name} is a SaaS tool.`,
+          },
         },
-      },
-      {
-        "@type": "Question",
-        name: lang === "fr" ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: lang === "fr"
-            ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}. Prix vérifié le ${verifiedOn}.`
-            : `${tool.name} costs ${displayPrice === 0 ? "€0 (free)" : `€${displayPrice}/month`}. Price verified on ${verifiedOn}.`,
+        {
+          "@type": "Question",
+          name: lang === "fr" ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: lang === "fr"
+              ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}. Prix vérifié le ${verifiedOn}.`
+              : `${tool.name} costs ${displayPrice === 0 ? "€0 (free)" : `€${displayPrice}/month`}. Price verified on ${verifiedOn}.`,
+          },
         },
-      },
-      {
-        "@type": "Question",
-        name: lang === "fr" ? `${tool.name} vaut-il son prix ?` : `Is ${tool.name} worth the price?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: tool.verdict?.threshold || (lang === "fr" ? "Cela dépend de votre usage." : "It depends on your usage."),
+        {
+          "@type": "Question",
+          name: lang === "fr" ? `${tool.name} vaut-il son prix ?` : `Is ${tool.name} worth the price?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: tool.verdict?.threshold || (lang === "fr" ? "Cela dépend de votre usage." : "It depends on your usage."),
+          },
         },
-      },
-      {
-        "@type": "Question",
-        name: lang === "fr" ? `Quelles sont les meilleures alternatives à ${tool.name} ?` : `What are the best alternatives to ${tool.name}?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: topAlts
-            ? (lang === "fr"
-              ? `Les principales alternatives à ${tool.name} sont : ${topAlts}.${freeAlts.length > 0 ? ` Alternatives gratuites : ${freeAlts.map(a => a.name).join(", ")}.` : ""}`
-              : `The main alternatives to ${tool.name} are: ${topAlts}.${freeAlts.length > 0 ? ` Free alternatives: ${freeAlts.map(a => a.name).join(", ")}.` : ""}`)
-            : (lang === "fr" ? "Aucune alternative directe référencée." : "No direct alternative listed."),
+        {
+          "@type": "Question",
+          name: lang === "fr" ? `Quelles sont les meilleures alternatives à ${tool.name} ?` : `What are the best alternatives to ${tool.name}?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: topAlts
+              ? (lang === "fr"
+                ? `Les principales alternatives à ${tool.name} sont : ${topAlts}.${freeAlts.length > 0 ? ` Alternatives gratuites : ${freeAlts.map(a => a.name).join(", ")}.` : ""}`
+                : `The main alternatives to ${tool.name} are: ${topAlts}.${freeAlts.length > 0 ? ` Free alternatives: ${freeAlts.map(a => a.name).join(", ")}.` : ""}`)
+              : (lang === "fr" ? "Aucune alternative directe référencée." : "No direct alternative listed."),
+          },
         },
-      },
-    ];
+      ];
 
-    if (tool.freeAlternative) {
-      faqEntries.push({
-        "@type": "Question",
-        name: lang === "fr" ? `Existe-t-il une alternative gratuite à ${tool.name} ?` : `Is there a free alternative to ${tool.name}?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: lang === "fr"
-            ? `Oui, ${tool.freeAlternative} est une alternative gratuite à ${tool.name}.`
-            : `Yes, ${tool.freeAlternative} is a free alternative to ${tool.name}.`,
-        },
+      if (tool.freeAlternative) {
+        faqEntries.push({
+          "@type": "Question",
+          name: lang === "fr" ? `Existe-t-il une alternative gratuite à ${tool.name} ?` : `Is there a free alternative to ${tool.name}?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: lang === "fr"
+              ? `Oui, ${tool.freeAlternative} est une alternative gratuite à ${tool.name}.`
+              : `Yes, ${tool.freeAlternative} is a free alternative to ${tool.name}.`,
+          },
+        });
+      }
+
+      setJsonLd("tool-faq-jsonld", {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqEntries,
       });
     }
 
-    setJsonLd("tool-faq-jsonld", {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqEntries,
-    });
-
-    return () => cleanupSeo(["tool-webpage-jsonld", "tool-breadcrumb-jsonld", "tool-software-jsonld", "tool-faq-jsonld"]);
-  }, [tool, category, displayPrice, verifiedOn, alternatives, lang]);
+    return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-faq-jsonld"]);
+  }, [tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq]);
 
   return null;
 }
