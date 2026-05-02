@@ -6,7 +6,7 @@ import { ArrowRight, Clock, Tag, ChevronUp, Wrench, Link2, Check } from "lucide-
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolMentionedCard } from "@/components/ToolMentionedCard";
 import ToolLogo from "@/components/ToolLogo";
-import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import DOMPurify from "dompurify";
 
@@ -202,17 +202,17 @@ const GuideDetailPage = () => {
         </div>
       </div>
 
-      {/* Header */}
-      <header className="border-b border-border">
-        <div className="container mx-auto max-w-4xl px-4 pb-8 pt-6">
-          {/* Breadcrumb */}
-          <div className="mb-5">
-            <Breadcrumb items={[
-              { label: t("Guides", "Guides"), href: `${prefix}/guides` },
-              { label: post.title },
-            ]} />
-          </div>
-
+      <PageHero
+        breadcrumb={[
+          { label: t("Guides", "Guides"), href: `${prefix}/guides` },
+          { label: post.title },
+        ]}
+        eyebrow={post.category || t("Guide", "Guide")}
+        icon={<BookOpen className="h-3.5 w-3.5" />}
+        title={post.title}
+        description={post.excerpt}
+        maxWidth="narrow"
+      >
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
             {post.category && (
               <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">{post.category}</span>
@@ -246,8 +246,7 @@ const GuideDetailPage = () => {
               t={t}
             />
           </div>
-        </div>
-      </header>
+      </PageHero>
 
       {/* Body */}
       <div className="container mx-auto max-w-4xl px-4 py-10">

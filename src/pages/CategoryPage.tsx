@@ -5,7 +5,7 @@ import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { Search, ExternalLink, ChevronDown, ArrowRight, X, TrendingDown, Sparkles } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
@@ -204,90 +204,29 @@ const CategoryPage = () => {
 
   return (
     <div className="min-h-screen">
-
-      {/* ── Hero ── */}
-      <section
-        className="relative overflow-hidden border-b border-border text-center"
-        style={{ background: "hsl(var(--card))" }}
-      >
-        <div
-          className="pointer-events-none absolute inset-0"
-          aria-hidden
-          style={{
-            backgroundImage: "radial-gradient(hsl(var(--border) / 0.8) 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-            maskImage: "radial-gradient(ellipse 100% 100% at 50% 0%, black 30%, transparent 90%)",
-            WebkitMaskImage: "radial-gradient(ellipse 100% 100% at 50% 0%, black 30%, transparent 90%)",
-          }}
-        />
-        <div
-          className="pointer-events-none absolute inset-0"
-          aria-hidden
-          style={{ background: "radial-gradient(ellipse 70% 60% at 50% -10%, hsl(var(--primary) / 0.08) 0%, transparent 70%)" }}
-        />
-
-        <div className="relative mx-auto max-w-3xl px-6 py-16">
-          <div className="mb-5 flex justify-center">
-            <Breadcrumb items={[
-              { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-              { label: t(catName, catNameEn) },
-            ]} />
-          </div>
-
-          <div className="mb-6 inline-flex items-center gap-2">
-            <span
-              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1 text-xs"
-              style={{ fontFamily: "'DM Mono', monospace", letterSpacing: "0.05em", color: "hsl(var(--muted-foreground))" }}
-            >
-              <Icon className="h-3 w-3" />
-              {t(catName, catNameEn)}
-            </span>
-          </div>
-
-          <h1
-            className="font-display"
-            style={{ fontSize: "clamp(2rem, 5vw, 3.6rem)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.032em" }}
-          >
-            {t("Meilleurs outils", "Best")}{" "}
-            <span style={{ color: "hsl(var(--primary))" }}>{t(catName, catNameEn)}</span>
-            <br />
-            <span style={{ color: "hsl(var(--foreground) / 0.32)", fontSize: "0.62em", fontWeight: 600, letterSpacing: "-0.01em" }}>
-              {t(`prix réels · alternatives testées · ${year}`, `real pricing · tested alternatives · ${year}`)}
-            </span>
-          </h1>
-
-          {category.description && (
-            <p
-              className="mx-auto mt-4 max-w-xl"
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", lineHeight: 1.65, color: "hsl(var(--muted-foreground))" }}
-            >
-              {t(category.description, (category as any).descriptionEn || category.description)}
-            </p>
-          )}
-
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-1.5 text-xs">
-              <span className="font-semibold text-foreground">{allCatTools.length}</span>
-              <span className="text-muted-foreground">{t("outils analysés", "tools analyzed")}</span>
-            </span>
-            {freeCount > 0 && (
-              <span
-                className="inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-xs font-medium"
-                style={{ borderColor: "hsl(var(--primary) / 0.3)", background: "hsl(var(--primary) / 0.08)", color: "hsl(var(--primary))" }}
-              >
-                <span className="font-semibold">{freeCount}</span>
-                <span>{t("gratuits ou freemium", "free or freemium")}</span>
-              </span>
-            )}
-            {avgPrice > 0 && (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-1.5 text-xs">
-                <span className="text-muted-foreground">{t("Prix moyen", "Avg price")}</span>
-                <span className="font-semibold text-foreground">{Math.round(avgPrice)}€/{t("mois", "mo")}</span>
-              </span>
-            )}
-          </div>
-        </div>
-      </section>
+      <PageHero
+        breadcrumb={[
+          { label: t("Outils", "Tools"), href: `${prefix}/tools` },
+          { label: t(catName, catNameEn) },
+        ]}
+        eyebrow={t(catName, catNameEn)}
+        icon={<Icon className="h-3.5 w-3.5" />}
+        title={
+          <>
+            {t("Meilleurs outils", "Best tools")} <span className="text-primary">{t(catName, catNameEn)}</span>
+          </>
+        }
+        description={
+          category.description
+            ? t(category.description, (category as any).descriptionEn || category.description)
+            : t(`Prix réels, alternatives testées et verdicts ${year}.`, `Real pricing, tested alternatives and ${year} verdicts.`)
+        }
+        stats={[
+          { value: allCatTools.length, label: t("outils analysés", "tools analyzed") },
+          ...(freeCount > 0 ? [{ value: freeCount, label: t("gratuits ou freemium", "free or freemium"), tone: "positive" as const }] : []),
+          ...(avgPrice > 0 ? [{ value: `${Math.round(avgPrice)}€`, label: t("prix moyen", "avg price") }] : []),
+        ]}
+      />
 
       {/* ── Body ── */}
       <div className="mx-auto max-w-6xl px-4 py-10">

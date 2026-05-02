@@ -4,6 +4,7 @@ import { useTools } from "@/hooks/useSupabaseData";
 import { useMemo, useEffect } from "react";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { Check, X, Target, Scale, Calculator, BookOpen } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const MethodologyPage = () => {
   const { t, prefix, lang } = useLang();
@@ -56,31 +57,34 @@ const MethodologyPage = () => {
       ];
 
   return (
-    <div className="py-16 md:py-24">
-      <div className="container mx-auto max-w-4xl px-6">
+    <div>
+      <PageHero
+        breadcrumb={[{ label: t("Méthodologie", "Methodology") }]}
+        eyebrow={t("Méthodologie", "Methodology")}
+        icon={<BookOpen className="h-3.5 w-3.5" />}
+        title={
+          lang === "fr" ? (
+            <>La plupart des comparateurs SaaS vous vendent <span className="text-primary">de l'information. Pas un diagnostic.</span></>
+          ) : (
+            <>Most SaaS comparators sell you <span className="text-primary">information. Not a diagnosis.</span></>
+          )
+        }
+        description={t(
+          "Cette page n'explique pas comment ToolTrim fonctionne en interne. Elle explique pourquoi un annuaire ne pouvait pas faire le travail — et ce qu'on a dû construire à la place.",
+          "This page doesn't explain how ToolTrim works internally. It explains why a directory couldn't do the job — and what we had to build instead."
+        )}
+        stats={[
+          { value: stats.tools, label: t("outils suivis", "tracked tools"), tone: "primary" },
+          { value: stats.verified, label: t("prix vérifiés", "verified prices") },
+          { value: stats.ferme, label: t("verdicts fermes", "strong verdicts") },
+        ]}
+        maxWidth="narrow"
+      />
 
-        {/* Hero — accroche/accusation */}
-        <div>
-          <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-accent-foreground mb-6">
-            {t("Méthodologie", "Methodology")}
-          </span>
-          <h1 className="font-heading text-4xl font-extrabold tracking-tight md:text-5xl leading-[1.05]">
-            {lang === "fr" ? (
-              <>La plupart des comparateurs SaaS vous vendent<br /><em className="text-primary italic not-italic md:italic">de l'information. Pas un diagnostic.</em></>
-            ) : (
-              <>Most SaaS comparators sell you<br /><em className="text-primary italic">information. Not a diagnosis.</em></>
-            )}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            {t(
-              "Cette page n'explique pas comment ToolTrim fonctionne en interne. Elle explique pourquoi un annuaire ne pouvait pas faire le travail — et ce qu'on a dû construire à la place.",
-              "This page doesn't explain how ToolTrim works internally. It explains why a directory couldn't do the job — and what we had to build instead."
-            )}
-          </p>
-        </div>
+      <div className="container mx-auto max-w-4xl px-6 py-16 md:py-20">
 
         {/* Bloc 1 — Le problème avec les annuaires */}
-        <section className="mt-16 rounded-2xl border border-border bg-card p-8 md:p-10">
+        <section className="rounded-2xl border border-border bg-card p-8 md:p-10">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground mb-3">
             {t("Le problème", "The problem")}
           </p>

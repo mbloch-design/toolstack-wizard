@@ -4,6 +4,7 @@ import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { useMemo, useEffect } from "react";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo } from "@/lib/seo";
 import { Target, Eye, Shield, TrendingDown, Users, BarChart3 } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const AboutPage = () => {
   const { t, prefix, lang } = useLang();
@@ -72,28 +73,33 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="py-16 md:py-24">
-      <div className="container mx-auto max-w-4xl">
-        {/* Hero */}
-        <div className="text-center">
-          <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-accent-foreground mb-6">
-            {t("Notre mission", "Our mission")}
-          </span>
-          <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl">
-            {t("Arrêtez de payer pour des outils", "Stop paying for tools")}
-            <br />
+    <div>
+      <PageHero
+        breadcrumb={[{ label: t("À propos", "About") }]}
+        eyebrow={t("Notre mission", "Our mission")}
+        icon={<Target className="h-3.5 w-3.5" />}
+        title={
+          <>
+            {t("Arrêtez de payer pour des outils", "Stop paying for tools")}{" "}
             <span className="text-primary">{t("que vous n'utilisez pas", "you don't use")}</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            {t(
-              "ToolTrim est le premier comparateur SaaS conçu pour les freelances et petites équipes qui veulent une stack efficace — sans abonnements superflus ni outils dormants.",
-              "ToolTrim is the first SaaS comparator built for freelancers and small teams who want an efficient stack — without unnecessary subscriptions or dormant tools."
-            )}
-          </p>
-        </div>
+          </>
+        }
+        description={t(
+          "ToolTrim est conçu pour les freelances et petites équipes qui veulent une stack efficace — sans abonnements superflus ni outils dormants.",
+          "ToolTrim is built for freelancers and small teams who want an efficient stack — without unnecessary subscriptions or dormant tools."
+        )}
+        stats={[
+          { value: `${stats.tools}+`, label: t("outils analysés", "tools analyzed"), tone: "primary" },
+          { value: stats.categories, label: t("catégories", "categories") },
+          { value: "100%", label: t("indépendant", "independent"), tone: "positive" },
+        ]}
+        maxWidth="narrow"
+      />
+
+      <div className="container mx-auto max-w-4xl px-6 py-16 md:py-20">
 
         {/* Stats bar */}
-        <div className="mt-16 grid grid-cols-3 gap-6 rounded-2xl border border-border bg-card p-8">
+        <div className="grid grid-cols-3 gap-6 rounded-2xl border border-border bg-card p-8">
           {[
             { value: `${stats.tools}+`, label: t("Outils analysés", "Tools analyzed") },
             { value: `${stats.categories}`, label: t("Catégories", "Categories") },

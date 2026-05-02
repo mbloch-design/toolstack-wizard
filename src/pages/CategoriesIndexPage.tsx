@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
-import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { LayoutGrid } from "lucide-react";
 
@@ -35,29 +35,23 @@ const CategoriesIndexPage = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="border-b border-border bg-gradient-to-br from-accent/60 via-background to-accent/30">
-        <div className="container mx-auto max-w-6xl px-4 pb-8 pt-10 md:pt-14">
-          <div className="mb-5">
-            <Breadcrumb items={[
-              { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-              { label: t("Catégories", "Categories") },
-            ]} />
-          </div>
-          <div className="flex items-center gap-2 text-primary mb-3">
-            <LayoutGrid className="h-4 w-4" />
-            <span className="label-section">{t("Catégories", "Categories")}</span>
-          </div>
-          <h1 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.022em" }}>
-            {t("Toutes les catégories d'outils", "All tool categories")}
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            {t(
-              `${categories.length} catégories couvrant ${tools.length}+ outils SaaS. Explorez par usage pour trouver l'outil parfait.`,
-              `${categories.length} categories covering ${tools.length}+ SaaS tools. Browse by use case to find the perfect tool.`
-            )}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        breadcrumb={[
+          { label: t("Outils", "Tools"), href: `${prefix}/tools` },
+          { label: t("Catégories", "Categories") },
+        ]}
+        eyebrow={t("Catégories", "Categories")}
+        icon={<LayoutGrid className="h-3.5 w-3.5" />}
+        title={t("Toutes les catégories d'outils", "All tool categories")}
+        description={t(
+          `${categories.length} catégories couvrant ${tools.length}+ outils SaaS. Explorez par usage pour trouver l'outil parfait.`,
+          `${categories.length} categories covering ${tools.length}+ SaaS tools. Browse by use case to find the perfect tool.`
+        )}
+        stats={[
+          { value: categories.length, label: t("catégories", "categories") },
+          { value: tools.length, label: t("outils", "tools"), tone: "primary" },
+        ]}
+      />
 
       <section className="container mx-auto max-w-6xl px-4 py-10">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

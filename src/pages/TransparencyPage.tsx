@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { setSeoTags, setHreflang, cleanupSeo } from "@/lib/seo";
 import { ShieldCheck, Link2, Ban, FileCheck, Scale, Heart } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const TransparencyPage = () => {
   const { t, prefix, lang } = useLang();
@@ -73,28 +74,27 @@ const TransparencyPage = () => {
   ];
 
   return (
-    <div className="py-16 md:py-24">
-      <div className="container mx-auto max-w-4xl">
-        {/* Hero */}
-        <div className="text-center">
-          <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-accent-foreground mb-6">
-            {t("Transparence", "Transparency")}
-          </span>
-          <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl">
-            {t("Comment ToolTrim", "How ToolTrim")}
-            <br />
-            <span className="text-primary">{t("se finance", "is funded")}</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            {t(
-              "Nous croyons qu'un comparateur ne peut être crédible que s'il est transparent sur son modèle économique. Voici exactement comment ToolTrim fonctionne.",
-              "We believe a comparator can only be credible if it's transparent about its business model. Here's exactly how ToolTrim works."
-            )}
-          </p>
-        </div>
+    <div>
+      <PageHero
+        breadcrumb={[{ label: t("Transparence", "Transparency") }]}
+        eyebrow={t("Transparence", "Transparency")}
+        icon={<ShieldCheck className="h-3.5 w-3.5" />}
+        title={
+          <>
+            {t("Comment ToolTrim", "How ToolTrim")} <span className="text-primary">{t("se finance", "is funded")}</span>
+          </>
+        }
+        description={t(
+          "Nous croyons qu'un comparateur ne peut être crédible que s'il est transparent sur son modèle économique. Voici exactement comment ToolTrim fonctionne.",
+          "We believe a comparator can only be credible if it's transparent about its business model. Here's exactly how ToolTrim works."
+        )}
+        maxWidth="narrow"
+      />
+
+      <div className="container mx-auto max-w-4xl px-6 py-16 md:py-20">
 
         {/* Key commitment */}
-        <div className="mt-16 rounded-2xl border-2 border-primary/20 bg-primary/5 p-8 text-center">
+        <div className="rounded-2xl border-2 border-primary/20 bg-primary/5 p-8 text-center">
           <p className="text-xl font-bold text-foreground">
             {t(
               "🎯 Nos recommandations ne sont jamais influencées par les commissions.",

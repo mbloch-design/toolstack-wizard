@@ -5,6 +5,7 @@ import { useState, useMemo, useEffect } from "react";
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
+import PageHero from "@/components/PageHero";
 import { setHreflang } from "@/lib/seo";
 import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import type { Tool } from "@/data/types";
@@ -43,23 +44,16 @@ const GuidesPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero header */}
-      <section className="border-b border-border bg-gradient-to-b from-accent/40 to-background">
-        <div className="container mx-auto max-w-6xl px-4 pb-10 pt-16 md:pt-20">
-          <div className="flex items-center gap-2 text-primary mb-4">
-            <BookOpen className="h-4 w-4" />
-            <span className="label-section">{t("Ressources", "Resources")}</span>
-          </div>
-          <h1 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.022em" }}>
-            {t("Guides & Comparatifs", "Guides & Comparisons")}
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            {t(
-              "Analyses approfondies, comparatifs détaillés et conseils pratiques pour construire la stack d'outils parfaite.",
-              "In-depth analyses, detailed comparisons and practical advice to build the perfect tool stack."
-            )}
-          </p>
-
+      <PageHero
+        breadcrumb={[{ label: t("Guides", "Guides") }]}
+        eyebrow={t("Ressources", "Resources")}
+        icon={<BookOpen className="h-3.5 w-3.5" />}
+        title={t("Guides & Comparatifs", "Guides & Comparisons")}
+        description={t(
+          "Analyses approfondies, comparatifs détaillés et conseils pratiques pour construire une stack d'outils plus légère.",
+          "In-depth analyses, detailed comparisons and practical advice to build a leaner tool stack."
+        )}
+      >
           {allCategories.length > 1 && (
             <div className="mt-8 flex flex-wrap gap-2">
               <button
@@ -87,8 +81,7 @@ const GuidesPage = () => {
               ))}
             </div>
           )}
-        </div>
-      </section>
+      </PageHero>
 
       {/* Persona pillar guides */}
       <PersonaGuidesSection lang={lang} />

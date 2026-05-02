@@ -6,7 +6,7 @@ import { Check, X, ArrowRight, CheckCircle, XCircle, Trophy } from "lucide-react
 import ToolLogo from "@/components/ToolLogo";
 
 import CompareSidebar from "@/components/compare/CompareSidebar";
-import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
 import CompareStrengthBars from "@/components/compare/CompareStrengthBars";
 import CompareVerdictCards from "@/components/compare/CompareVerdictCards";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -181,29 +181,31 @@ const ComparePage = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Dynamic Hero with H1 */}
-      <header className="pt-24 pb-10 md:pt-28 md:pb-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <Breadcrumb items={[
+      <PageHero
+        breadcrumb={[
           { label: t("Comparatifs", "Comparisons"), href: `/${lang}/comparatifs` },
           { label: `${toolA.name} vs ${toolB.name}` },
-        ]} />
-        <span className="label-section inline-block mt-4 mb-5 text-primary">{t("Comparatif honnête", "Honest comparison")}</span>
-        <h1 className="max-w-4xl text-foreground" style={{ fontSize: "clamp(1.9rem, 4vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.022em", lineHeight: 1.1 }}>
-          {lang === "fr" ? (
-            <>{toolA.name} <span className="text-primary italic">vs</span> {toolB.name} — lequel choisir en {year} ? Comparatif honnête</>
+        ]}
+        eyebrow={t("Comparatif honnête", "Honest comparison")}
+        icon={<Trophy className="h-3.5 w-3.5" />}
+        title={
+          lang === "fr" ? (
+            <>{toolA.name} <span className="text-primary italic">vs</span> {toolB.name} — lequel choisir en {year} ?</>
           ) : (
-            <>{toolA.name} <span className="text-primary italic">vs</span> {toolB.name} — which one to pick in {year}? Honest comparison</>
-          )}
-        </h1>
-        <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed font-medium max-w-2xl">
-          {lang === "fr"
+            <>{toolA.name} <span className="text-primary italic">vs</span> {toolB.name} — which one to pick in {year}?</>
+          )
+        }
+        description={
+          lang === "fr"
             ? `${toolA.name} ou ${toolB.name} ? On a testé les deux : prix réels, fonctionnalités clés, et notre verdict sans langue de bois.`
-            : `${toolA.name} or ${toolB.name}? We tested both — real pricing, key features, and a straight verdict.`}
-        </p>
+            : `${toolA.name} or ${toolB.name}? We tested both — real pricing, key features, and a straight verdict.`
+        }
+        maxWidth="normal"
+      >
         <div className="max-w-2xl">
           <QuickVerdict toolA={toolA} toolB={toolB} lang={lang} />
         </div>
-      </header>
+      </PageHero>
 
       {/* Main: Sidebar + Content */}
       <main className="px-4 md:px-8 pb-20 max-w-7xl mx-auto">

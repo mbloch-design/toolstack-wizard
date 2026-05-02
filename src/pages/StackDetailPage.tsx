@@ -2,6 +2,7 @@ import { useEffect, useMemo } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, CheckCircle2, Euro, Layers, Route, Sparkles } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
@@ -43,25 +44,36 @@ const StackDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="border-b border-border bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
-          <Link to={`${prefix}/stacks`} className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-            <ArrowLeft className="h-4 w-4" />
-            {t("Tous les stacks", "All stacks")}
-          </Link>
-
-          <div className="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                {t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"))} · {t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}
-              </p>
-              <h1 className="mt-3 font-display text-4xl font-bold leading-tight text-foreground md:text-6xl">
-                {t(stack.title, stack.titleEn)}
-              </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
-                {t(stack.subtitle, stack.subtitleEn)}
-              </p>
-              <div className="mt-6 max-w-2xl rounded-lg border border-border bg-background p-5">
+      <PageHero
+        breadcrumb={[
+          { label: t("Stacks types", "Stack templates"), href: `${prefix}/stacks` },
+          { label: t(stack.title, stack.titleEn) },
+        ]}
+        eyebrow={`${t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"))} · ${t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}`}
+        icon={<Layers className="h-3.5 w-3.5" />}
+        title={t(stack.title, stack.titleEn)}
+        description={t(stack.subtitle, stack.subtitleEn)}
+        actions={
+          <>
+            <Button asChild size="lg" className="rounded-lg">
+              <Link to={`${prefix}/selector`}>
+                {t("Adapter à mon cas", "Adapt to my case")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="rounded-lg">
+              <a href="#utilisations">{t("Voir les utilisations", "See use cases")}</a>
+            </Button>
+          </>
+        }
+      >
+        <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start">
+          <div className="max-w-2xl">
+            <Link to={`${prefix}/stacks`} className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+              <ArrowLeft className="h-4 w-4" />
+              {t("Tous les stacks", "All stacks")}
+            </Link>
+            <div className="rounded-lg border border-border bg-background p-5">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">{t("En bref", "In short")}</p>
                 <p className="mt-2 text-base leading-7 text-foreground">
                   {t(
@@ -75,17 +87,6 @@ const StackDetailPage = () => {
                     "It is not a universal recipe. It is a baseline to feel when your stack becomes heavier than your real need."
                   )}
                 </p>
-              </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg" className="rounded-lg">
-                  <Link to={`${prefix}/selector`}>
-                    {t("Adapter à mon cas", "Adapt to my case")}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-lg">
-                  <a href="#utilisations">{t("Voir les utilisations", "See use cases")}</a>
-                </Button>
               </div>
             </div>
 
@@ -102,8 +103,7 @@ const StackDetailPage = () => {
               </div>
             </aside>
           </div>
-        </div>
-      </section>
+      </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-10 md:py-14">
         <div className="mb-8 grid gap-3 md:grid-cols-3">
