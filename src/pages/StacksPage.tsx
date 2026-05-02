@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Boxes, CheckCircle2, Search, SlidersHorizontal, Sparkles } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
@@ -66,36 +67,29 @@ const StacksPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="border-b border-border bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <div className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3 py-1.5 text-xs font-semibold text-primary">
-              <Boxes className="h-3.5 w-3.5" />
-              {t("Stacks types", "Stack templates")}
-            </div>
-            <h1 className="font-display text-4xl font-bold leading-tight text-foreground md:text-6xl">
-              {t("Choisis un point de départ. Coupe le reste.", "Choose a starting point. Cut the rest.")}
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
-              {t(
-                "Ces stacks ne sont pas des listes d'outils à copier bêtement. Ce sont des repères pour comprendre ce qui suffit, ce qui se chevauche, et ce qui mérite un diagnostic.",
-                "These stacks are not tool lists to copy blindly. They are baselines to understand what is enough, what overlaps, and what deserves a diagnostic."
-              )}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="rounded-lg">
-                <Link to={`${prefix}/selector`}>
-                  {t("Analyser ma stack actuelle", "Analyze my current stack")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-lg">
-                <a href="#stacks">{t("Voir les modèles", "View templates")}</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        breadcrumb={[{ label: t("Stacks types", "Stack templates") }]}
+        eyebrow={t("Stacks types", "Stack templates")}
+        icon={<Boxes className="h-3.5 w-3.5" />}
+        title={t("Choisis un point de départ. Coupe le reste.", "Choose a starting point. Cut the rest.")}
+        description={t(
+          "Ces stacks ne sont pas des listes d'outils à copier bêtement. Ce sont des repères pour comprendre ce qui suffit, ce qui se chevauche, et ce qui mérite un diagnostic.",
+          "These stacks are not tool lists to copy blindly. They are baselines to understand what is enough, what overlaps, and what deserves a diagnostic."
+        )}
+        actions={
+          <>
+            <Button asChild size="lg" className="rounded-lg">
+              <Link to={`${prefix}/selector`}>
+                {t("Analyser ma stack actuelle", "Analyze my current stack")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="rounded-lg">
+              <a href="#stacks">{t("Voir les modèles", "View templates")}</a>
+            </Button>
+          </>
+        }
+      />
 
       <section className="border-b border-border bg-background">
         <div className="mx-auto max-w-6xl px-6 py-5">

@@ -5,7 +5,7 @@ import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { Search, LayoutGrid, List, ArrowUpDown, ChevronDown, SlidersHorizontal, Check, X, TrendingUp } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
-import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first";
@@ -115,49 +115,21 @@ const ToolsPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="border-b border-border bg-gradient-to-br from-accent/60 via-background to-accent/30">
-        <div className="container mx-auto max-w-6xl px-4 pb-8 pt-12 md:pt-16">
-          <div className="mb-5">
-            <Breadcrumb items={[{ label: t("Outils", "Tools") }]} />
-          </div>
-
-          <div className="flex items-center gap-2 text-primary mb-3">
-            <LayoutGrid className="h-4 w-4" />
-            <span className="label-section">{t("Catalogue", "Catalog")}</span>
-          </div>
-
-          <h1 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, letterSpacing: "-0.022em" }}>
-            {t(
-              `${stats.total} outils SaaS passés au crible — prix vérifiés, sans bullshit`,
-              `${stats.total} SaaS tools reviewed — real pricing, no fluff`
-            )}
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            {t(
-              `${stats.total} outils analysés, comparés et classés en ${stats.categories} catégories. Trouvez l'outil parfait pour votre activité.`,
-              `${stats.total} tools analyzed, compared and categorized in ${stats.categories} categories. Find the perfect tool for your business.`
-            )}
-          </p>
-
-          {/* Stats pills */}
-          <div className="mt-5 flex flex-wrap gap-3">
-            <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 text-sm">
-              <TrendingUp className="h-4 w-4 text-primary" />
-              <span className="font-semibold">{stats.total}</span>
-              <span className="text-muted-foreground">{t("outils", "tools")}</span>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 text-sm">
-              <span className="font-semibold text-keep">{stats.withFreeTier}</span>
-              <span className="text-muted-foreground">{t("avec offre gratuite", "with free tier")}</span>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 text-sm">
-              <span className="font-semibold">{stats.categories}</span>
-              <span className="text-muted-foreground">{t("catégories", "categories")}</span>
-            </div>
-          </div>
-
-          {/* Search + controls */}
+      <PageHero
+        breadcrumb={[{ label: t("Outils", "Tools") }]}
+        eyebrow={t("Catalogue", "Catalog")}
+        icon={<LayoutGrid className="h-3.5 w-3.5" />}
+        title={t(`${stats.total} outils SaaS passés au crible`, `${stats.total} SaaS tools reviewed`)}
+        description={t(
+          `${stats.total} outils analysés, comparés et classés en ${stats.categories} catégories. Prix vérifiés, alternatives visibles, verdicts indépendants.`,
+          `${stats.total} tools analyzed, compared and categorized in ${stats.categories} categories. Verified pricing, visible alternatives, independent verdicts.`
+        )}
+        stats={[
+          { icon: <TrendingUp className="h-4 w-4 text-primary" />, value: stats.total, label: t("outils", "tools") },
+          { value: stats.withFreeTier, label: t("avec offre gratuite", "with free tier"), tone: "positive" },
+          { value: stats.categories, label: t("catégories", "categories") },
+        ]}
+      >
           <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center">
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -240,8 +212,7 @@ const ToolsPage = () => {
               );
             })}
           </div>
-        </div>
-      </section>
+      </PageHero>
 
       {/* Results */}
       <section className="container mx-auto max-w-6xl px-4 py-10">

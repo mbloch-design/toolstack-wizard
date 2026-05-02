@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { ArrowRight, Search, Sparkles, Scale } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import PageHero from "@/components/PageHero";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 
@@ -105,25 +106,21 @@ const ComparesIndexPage = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-20 md:pb-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6">
-            <Scale className="h-3.5 w-3.5" />
-            {t("Analyse d'experts", "Expert Analysis")}
-          </div>
-          <h1 className="text-3xl md:text-5xl font-heading font-extrabold tracking-tight text-foreground mb-4">
-            {t("Comparatifs d'outils SaaS", "SaaS Tool Comparisons")}
-            <span className="block text-primary mt-1">{year}</span>
-          </h1>
-          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-            {t(
-              "Prix vérifiés, fonctionnalités comparées, verdicts tranchés. Chaque comparatif est testé par un humain pendant 2 à 4 semaines.",
-              "Verified pricing, compared features, clear verdicts. Each comparison is tested by a human for 2 to 4 weeks."
-            )}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        breadcrumb={[{ label: t("Comparatifs", "Comparisons") }]}
+        eyebrow={t("Analyse indépendante", "Independent analysis")}
+        icon={<Scale className="h-3.5 w-3.5" />}
+        title={
+          <>
+            {t("Comparatifs d'outils SaaS", "SaaS tool comparisons")}{" "}
+            <span className="text-primary">{year}</span>
+          </>
+        }
+        description={t(
+          "Prix vérifiés, fonctionnalités comparées, verdicts tranchés. Chaque comparatif aide à choisir sans empiler des abonnements inutiles.",
+          "Verified pricing, compared features, clear verdicts. Each comparison helps you choose without stacking unnecessary subscriptions."
+        )}
+      />
 
       <main className="px-4 md:px-8 pb-20 max-w-6xl mx-auto space-y-16">
         {/* Custom Comparator */}
