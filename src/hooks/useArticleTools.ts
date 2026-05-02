@@ -12,7 +12,7 @@ export function useArticleTools<T extends ArticleTool>(post: Post | null, tools:
   return useMemo(() => {
     if (!post || tools.length === 0) return [];
 
-    const matched = new Map<string, { tool: Tool; score: number }>();
+    const matched = new Map<string, { tool: T; score: number }>();
     const searchText = `${post.title} ${post.excerpt} ${post.content}`.toLowerCase();
     const tagText = (post.tags || []).join(" ").toLowerCase();
 
