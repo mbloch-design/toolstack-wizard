@@ -16,6 +16,8 @@ interface Props {
 }
 
 export default function ToolFactsCard({ tool, category, alternatives, displayPrice, verifiedOn, lang, prefix, t }: Props) {
+  const outboundUrl = tool.affiliateLink || tool.websiteUrl;
+  const hasAffiliateOffer = Boolean(tool.affiliateLink);
   const categoryLabel = category
     ? t(category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), category.nameEn || category.name)
     : "—";
@@ -107,12 +109,12 @@ export default function ToolFactsCard({ tool, category, alternatives, displayPri
           <time dateTime={verifiedOn} className="text-muted-foreground tabular-nums">{verifiedOn}</time>
         </Fact>
 
-        {(tool.websiteUrl || tool.affiliateLink) && (
+        {outboundUrl && (
           <div className="px-5 py-3.5">
-            <a href={tool.websiteUrl || tool.affiliateLink} target="_blank" rel="noopener noreferrer"
+            <a href={outboundUrl} target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full rounded-lg bg-primary/10 text-primary font-medium text-sm py-2.5 hover:bg-primary/20 transition-colors">
               <Globe className="h-4 w-4" />
-              {t("Voir le site officiel", "Visit official website")}
+              {hasAffiliateOffer ? t("Voir l’offre", "View offer") : t("Voir le site officiel", "Visit official website")}
               <ExternalLink className="h-3 w-3" />
             </a>
           </div>

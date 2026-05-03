@@ -28,6 +28,13 @@ function getToolDomain(tool: any): string {
   } catch { return ""; }
 }
 
+function getDomainFromUrl(url?: string): string {
+  if (!url) return "";
+  try {
+    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
+  } catch { return ""; }
+}
+
 const TABS = [
   { id: "presentation", labelFr: "Présentation", labelEn: "Overview",      path: ""             },
   { id: "prix",         labelFr: "Prix",          labelEn: "Pricing",       path: "/prix"        },
@@ -144,7 +151,9 @@ const ToolDetailPage = () => {
   const displayPrice = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
   const verifiedOn = tool.pricing_v5?.verified_on || "2026-03-29";
   const sourceDomain = tool.pricing_v5?.source_domain;
-  const domain     = getToolDomain(tool);
+  const domain     = getDomainFromUrl(tool.websiteUrl) || getToolDomain(tool);
+  const primaryCtaUrl = tool.affiliateLink || tool.websiteUrl || "#";
+  const hasAffiliateOffer = Boolean(tool.affiliateLink);
   const isFree     = displayPrice === 0 && !tool.pricing?.paid;
   const isFreemium = !!(tool.pricing?.free && tool.pricing?.paid);
   const freeAlt    = (tool as any).freeAlternative as string | null;
@@ -313,32 +322,21 @@ const ToolDetailPage = () => {
               {/* CTAs */}
               <div className="flex flex-col gap-2 p-4">
                 <a
-                  href={tool.affiliateLink || tool.websiteUrl || "#"}
+                  href={primaryCtaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1.5 rounded-lg border border-border px-4 py-2.5 text-xs font-semibold text-foreground transition-all hover:border-primary/40 hover:text-primary"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  className="flex items-center justify-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-semibold transition-colors"
+                  style={{
+                    background: "hsl(var(--foreground))",
+                    color: "hsl(var(--background))",
+                    fontFamily: "'DM Sans', sans-serif",
+                  }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
                 >
-                  {t("Essayer gratuitement", "Try for free")}
+                  {hasAffiliateOffer ? t(`Voir l’offre ${tool.name}`, `View ${tool.name} offer`) : t("Visiter le site", "Visit website")}
+                  <ExternalLink className="h-3 w-3" />
                 </a>
-                {domain && (
-                  <a
-                    href={`https://${domain}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-semibold transition-colors"
-                    style={{
-                      background: "hsl(var(--foreground))",
-                      color: "hsl(var(--background))",
-                      fontFamily: "'DM Sans', sans-serif",
-                    }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
-                  >
-                    {t("Visiter le site", "Visit website")}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
-                )}
               </div>
 
               {/* Savings signal */}
