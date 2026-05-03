@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
-import { useEffect, useMemo, lazy, Suspense } from "react";
-import { ArrowRight, BookOpen, Clock, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
+import { useEffect, useMemo, lazy, Suspense, useRef } from "react";
+import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Clock, Clock3, Database, Euro, Layers3, ShieldCheck, Sparkles } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
+import { STACKS } from "@/data/stacks";
 
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
@@ -18,7 +19,7 @@ const DiffTable = lazy(() => import("@/components/home/DiffTable"));
 const FinalCTA = lazy(() => import("@/components/home/FinalCTA"));
 
 const FAQ_FR = [
-  { q: "Comment ToolTrim analyse-t-il ma stack ?", a: "ToolTrim compare vos outils à une base de 314 outils vérifiés. Il détecte les doublons, les outils dormants et les remplacements possibles — avec des prix vérifiés sur les pages officielles." },
+  { q: "Comment ToolTrim analyse-t-il ma stack ?", a: "ToolTrim compare vos outils à une base d'outils vérifiés. Il détecte les doublons, les outils dormants et les remplacements possibles, avec des prix vérifiés sur les pages officielles." },
   { q: "Les recommandations sont-elles vraiment fiables ?", a: "ToolTrim ne prescrit que lorsque les données sont vérifiées. Chaque prix est issu de la page officielle de l'outil. Les recommandations incertaines sont signalées explicitement." },
   { q: "ToolTrim est-il gratuit ?", a: "Oui, l'analyse de base est entièrement gratuite." },
   { q: "Combien de temps prend l'analyse ?", a: "Moins de 3 minutes. Vous répondez à quelques questions sur votre profil, sélectionnez vos outils, et recevez instantanément vos recommandations personnalisées." },
@@ -26,11 +27,74 @@ const FAQ_FR = [
 ];
 
 const FAQ_EN = [
-  { q: "How does ToolTrim analyze my stack?", a: "ToolTrim compares your tools against a database of 314 verified tools. It detects duplicates, dormant tools, and possible replacements — with prices verified on official pages." },
+  { q: "How does ToolTrim analyze my stack?", a: "ToolTrim compares your tools against a database of verified tools. It detects duplicates, dormant tools, and possible replacements, with prices verified on official pages." },
   { q: "Are the recommendations really reliable?", a: "ToolTrim only prescribes when data is verified. Each price comes from the tool's official page. Uncertain recommendations are explicitly flagged." },
   { q: "Is ToolTrim free?", a: "Yes, the basic analysis is completely free." },
   { q: "How long does the analysis take?", a: "Less than 3 minutes. You answer a few questions about your profile, select your tools, and instantly receive personalized recommendations." },
   { q: "Is ToolTrim affiliated with recommended tools?", a: "No. ToolTrim is 100% independent. No affiliate deals bias the recommendations. Results are based solely on your profile and objective data." },
+];
+
+const BUSINESS_OBJECTIVES = [
+  {
+    slug: "developpeur-freelance-shipper",
+    labelFr: "Livrer plus vite",
+    labelEn: "Ship faster",
+    titleFr: "Un site client à sortir sans empiler les outils produit",
+    titleEn: "A client website to ship without stacking product tools",
+    descriptionFr: "Code, preview, specs, paiement : la stack sobre pour livrer proprement sans acheter une organisation de startup.",
+    descriptionEn: "Code, previews, specs, payment: a lean stack to deliver cleanly without buying a startup operating system.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "consultant-b2b-propre",
+    labelFr: "Vendre du conseil",
+    labelEn: "Sell consulting",
+    titleFr: "Des prospects, des appels, des missions, sans CRM usine",
+    titleEn: "Prospects, calls, and missions without a heavy CRM",
+    descriptionFr: "Le bon niveau pour suivre les opportunités, cadrer les échanges et facturer, sans recréer une équipe sales.",
+    descriptionEn: "The right level to track opportunities, frame conversations, and invoice without rebuilding a sales team.",
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "createur-contenu-operateur",
+    labelFr: "Produire du contenu",
+    labelEn: "Produce content",
+    titleFr: "Publier régulièrement sans payer trois copilotes IA",
+    titleEn: "Publish consistently without paying for three AI copilots",
+    descriptionFr: "Idées, rédaction, visuels, capture de demandes : une stack éditoriale simple avant d'ajouter des couches.",
+    descriptionEn: "Ideas, writing, visuals, inbound requests: a simple editorial stack before adding more layers.",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "ops-manager-fractional-coo",
+    labelFr: "Structurer l'ops",
+    labelEn: "Structure ops",
+    titleFr: "Des process transférables sans multiplier les PM tools",
+    titleEn: "Transferable processes without multiplying PM tools",
+    descriptionFr: "Pour piloter, documenter et automatiser juste assez quand tu dois rendre une organisation plus fluide.",
+    descriptionEn: "To run, document, and automate just enough when you need to make operations smoother.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "freelance-solo-zero-bloat",
+    labelFr: "Démarrer léger",
+    labelEn: "Start lean",
+    titleFr: "Vendre, livrer et encaisser avant d'acheter des abonnements",
+    titleEn: "Sell, deliver, and get paid before buying subscriptions",
+    descriptionFr: "Le minimum viable pour un solo qui veut avancer sans payer les outils d'une équipe qu'il n'a pas encore.",
+    descriptionEn: "The viable minimum for a solo operator who wants momentum without paying for team tools too early.",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "automatisation-legere-freelance",
+    labelFr: "Automatiser utile",
+    labelEn: "Automate usefully",
+    titleFr: "Automatiser seulement ce qui se répète vraiment",
+    titleEn: "Automate only what truly repeats",
+    descriptionFr: "Une stack pour enlever les tâches répétitives sans construire une architecture trop lourde pour ton volume réel.",
+    descriptionEn: "A stack to remove recurring tasks without building an architecture too heavy for your real volume.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
+  },
 ];
 
 const HomePage = () => {
@@ -75,16 +139,19 @@ const HomePage = () => {
       {/* 3. Stats */}
       <StatsSection toolCount={stats.total} categoryCount={stats.categories} />
 
-      {/* 4. How it works */}
+      {/* 4. Business objectives */}
+      <BusinessObjectivesSection />
+
+      {/* 5. How it works */}
       <Suspense fallback={null}><HowItWorks /></Suspense>
 
-      {/* 5. Differentiator */}
+      {/* 6. Differentiator */}
       <Suspense fallback={null}><DiffTable toolCount={stats.total} /></Suspense>
 
-      {/* 6. Testimonials */}
+      {/* 7. Testimonials */}
       <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
-      {/* 7. Categories */}
+      {/* 8. Categories */}
       <section className="border-t border-border py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex items-end justify-between mb-10">
@@ -131,7 +198,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 8. Guides */}
+      {/* 9. Guides */}
       {featuredPosts.length > 0 && (
         <section className="border-t border-border bg-secondary/20 py-24">
           <div className="container mx-auto max-w-6xl px-6">
@@ -159,7 +226,7 @@ const HomePage = () => {
         </section>
       )}
 
-      {/* 9. FAQ */}
+      {/* 10. FAQ */}
       <section id="faq" className="scroll-mt-24 border-t border-border py-24">
         <div className="mx-auto max-w-6xl px-6">
           <FaqBlock
@@ -183,11 +250,111 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 9. Final CTA */}
+      {/* 11. Final CTA */}
       <Suspense fallback={null}><FinalCTA /></Suspense>
     </div>
   );
 };
+
+function BusinessObjectivesSection() {
+  const { lang, t, prefix } = useLang();
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const objectiveCards = BUSINESS_OBJECTIVES.map((objective) => ({
+    ...objective,
+    stack: STACKS.find((stack) => stack.slug === objective.slug),
+  })).filter((objective) => objective.stack);
+
+  const scrollCards = (direction: "left" | "right") => {
+    const container = scrollRef.current;
+    if (!container) return;
+    container.scrollBy({
+      left: direction === "left" ? -460 : 460,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="overflow-hidden border-t border-border bg-background py-20 md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-10 flex items-end justify-between gap-8">
+          <div className="max-w-4xl">
+            <p className="label-section mb-3">{t("Stacks par objectif", "Stacks by goal")}</p>
+            <h2
+              className="text-balance font-semibold tracking-tight"
+              style={{ fontSize: "clamp(2.35rem, 4.5vw, 4rem)", lineHeight: 1.08 }}
+            >
+              {t(
+                "Choisissez votre objectif et trouvez la stack qui le sert",
+                "Choose your goal and find the stack built for it"
+              )}
+            </h2>
+          </div>
+
+          <div className="hidden shrink-0 items-center gap-2 md:flex">
+            <button
+              type="button"
+              onClick={() => scrollCards("left")}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-background text-primary transition-colors hover:border-primary hover:bg-primary/5"
+              aria-label={t("Objectif précédent", "Previous goal")}
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollCards("right")}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 bg-primary text-primary-foreground transition-colors hover:bg-primary/90"
+              aria-label={t("Objectif suivant", "Next goal")}
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={scrollRef}
+          className="no-scrollbar grid auto-cols-[minmax(19rem,calc(100vw-3rem))] grid-flow-col gap-5 overflow-x-auto scroll-smooth pb-2 [scroll-snap-type:x_mandatory] sm:auto-cols-[minmax(26rem,42rem)] lg:mr-[calc(50%-50vw)] lg:auto-cols-[minmax(26rem,40rem)] lg:pr-6"
+        >
+          {objectiveCards.map((objective) => {
+            const stack = objective.stack!;
+            const title = lang === "fr" ? objective.titleFr : objective.titleEn;
+            const label = lang === "fr" ? objective.labelFr : objective.labelEn;
+
+            return (
+              <Link
+                key={objective.slug}
+                to={`${prefix}/stacks/${stack.slug}`}
+                className="group flex min-h-[28rem] flex-col rounded-lg bg-secondary/70 p-4 transition-colors duration-200 [scroll-snap-align:start] hover:bg-secondary md:min-h-[34rem] md:p-5"
+              >
+                <div className="relative overflow-hidden rounded-md bg-background/60">
+                  <img
+                    src={objective.image}
+                    alt={title}
+                    className="aspect-[1.24/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                    loading="lazy"
+                  />
+                  <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur">
+                    <Layers3 className="h-3.5 w-3.5 text-primary" />
+                    {label}
+                  </div>
+                </div>
+
+                <div className="flex flex-1 flex-col justify-between pt-7">
+                  <h3 className="text-3xl font-semibold leading-tight tracking-tight md:text-[2rem]">
+                    {title}
+                  </h3>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                    {t("Voir la stack type", "View stack template")}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ── Guide card (styled like GuidesPage) ── */
 function GuideCard({ post, prefix, tools }: { post: Post; prefix: string; tools: ToolSummary[] }) {

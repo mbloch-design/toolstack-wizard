@@ -214,4 +214,12 @@
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
