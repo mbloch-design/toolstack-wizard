@@ -55,7 +55,7 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
 
   return (
     <section className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="mx-auto max-w-7xl px-6 py-24">
 
         {/* Section header */}
         <div className="mb-12">

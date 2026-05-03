@@ -215,7 +215,7 @@ const ToolsPage = () => {
       </PageHero>
 
       {/* Results */}
-      <section className="container mx-auto max-w-6xl px-4 py-10">
+      <section className="container mx-auto max-w-7xl px-4 py-10">
         {selectedCatObj && (
           <div className="mb-6">
             <h2 className="text-xl font-bold tracking-tighter">

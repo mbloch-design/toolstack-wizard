@@ -229,7 +229,7 @@ const CategoryPage = () => {
       />
 
       {/* ── Body ── */}
-      <div className="mx-auto max-w-6xl px-4 py-10">
+      <div className="mx-auto max-w-7xl px-4 py-10">
         <div className="flex items-start gap-8">
 
           {/* ══════════════ SIDEBAR ══════════════ */}

@@ -122,7 +122,7 @@ const ComparesIndexPage = () => {
         )}
       />
 
-      <main className="px-4 md:px-8 pb-20 max-w-6xl mx-auto space-y-16">
+      <main className="px-4 md:px-8 pb-20 max-w-7xl mx-auto space-y-16">
         {/* Custom Comparator */}
         <section className="surface-card p-6 md:p-8">
           <div className="flex items-center gap-2 mb-6">

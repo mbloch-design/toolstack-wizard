@@ -105,7 +105,7 @@ const StackDetailPage = () => {
           </div>
       </PageHero>
 
-      <section className="mx-auto max-w-6xl px-6 py-10 md:py-14">
+      <section className="mx-auto max-w-7xl px-6 py-10 md:py-14">
         <div className="mb-8 grid gap-3 md:grid-cols-3">
           {[
             {

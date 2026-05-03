@@ -32,7 +32,7 @@ const Footer = () => {
             background: "radial-gradient(ellipse 60% 80% at 0% 100%, hsl(var(--primary) / 0.07) 0%, transparent 70%)",
           }}
         />
-        <div className="relative mx-auto max-w-6xl px-6 pt-16 pb-12">
+        <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-12">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
 
             {/* Big wordmark */}
@@ -105,7 +105,7 @@ const Footer = () => {
 
       {/* ── Link columns ── */}
       <div className="border-t border-border" style={{ background: "hsl(var(--background))" }}>
-        <div className="mx-auto max-w-6xl px-6 py-10">
+        <div className="mx-auto max-w-7xl px-6 py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
 
             {/* Product */}
@@ -199,7 +199,7 @@ const Footer = () => {
 
       {/* ── Bottom bar ── */}
       <div className="border-t border-border" style={{ background: "hsl(var(--card))" }}>
-        <div className="mx-auto max-w-6xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{
             fontFamily: "'DM Mono', monospace",
             fontSize: "0.65rem",

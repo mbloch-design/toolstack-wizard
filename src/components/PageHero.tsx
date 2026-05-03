@@ -61,12 +61,12 @@ export default function PageHero({
         maxWidth === "narrow"
           ? "max-w-4xl"
           : maxWidth === "article"
-            ? "max-w-6xl"
+            ? "max-w-7xl"
             : maxWidth === "wide"
               ? "max-w-[103rem]"
               : maxWidth === "xl"
                 ? "max-w-7xl"
-              : "max-w-6xl"
+              : "max-w-7xl"
       }`}>
         <div className="mb-5">
           <Breadcrumb items={breadcrumb} />

@@ -7,7 +7,7 @@ const FinalCTA = () => {
 
   return (
     <section className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 py-28">
+      <div className="mx-auto max-w-7xl px-6 py-28">
 
         {/* Inner container — centered, constrained */}
         <div className="mx-auto max-w-2xl text-center">

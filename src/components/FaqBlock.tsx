@@ -27,7 +27,7 @@ export default function FaqBlock({
   className = "",
 }: FaqBlockProps) {
   return (
-    <div className={`mx-auto grid w-full max-w-6xl gap-8 lg:grid-cols-[340px_1fr] lg:gap-16 ${className}`}>
+    <div className={`mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[340px_1fr] lg:gap-16 ${className}`}>
       <h2 className="font-display text-[clamp(2.3rem,4.2vw,4.2rem)] font-bold leading-[1.02] tracking-tight text-foreground">
         {title}
       </h2>

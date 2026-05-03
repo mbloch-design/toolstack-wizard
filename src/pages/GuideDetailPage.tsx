@@ -254,7 +254,7 @@ const GuideDetailPage = () => {
       </PageHero>
 
       {/* Body */}
-      <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
+      <div className="mx-auto max-w-7xl px-4 py-10 md:px-6 md:py-14">
         <div className="grid gap-10 lg:grid-cols-[220px_minmax(0,760px)] lg:justify-center xl:grid-cols-[240px_minmax(0,780px)]">
           {/* Sidebar: compact TOC + tools */}
           <aside className="hidden lg:block">

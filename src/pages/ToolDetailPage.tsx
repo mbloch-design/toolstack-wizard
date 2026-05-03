@@ -185,7 +185,7 @@ const ToolDetailPage = () => {
             WebkitMaskImage: "radial-gradient(ellipse 100% 100% at 50% 0%, black 20%, transparent 80%)",
           }}
         />
-        <div className="relative mx-auto max-w-6xl px-4 py-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-8">
           <Breadcrumb items={[
             { label: t("Outils", "Tools"), href: `${prefix}/tools` },
             ...(category ? [{
@@ -220,7 +220,7 @@ const ToolDetailPage = () => {
       </header>
 
       {/* ── BODY: left card + tabs + content ── */}
-      <div className="mx-auto max-w-6xl px-4 py-10">
+      <div className="mx-auto max-w-7xl px-4 py-10">
         <div className="flex gap-8 items-start">
 
           {/* ══════════════ LEFT STICKY CARD ══════════════ */}

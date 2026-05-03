@@ -153,7 +153,7 @@ const HomePage = () => {
 
       {/* 8. Categories */}
       <section className="border-t border-border py-24">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="flex items-end justify-between mb-10">
             <div>
               <p className="label-section mb-3">{t("Catalogue", "Catalog")}</p>
@@ -201,7 +201,7 @@ const HomePage = () => {
       {/* 9. Guides */}
       {featuredPosts.length > 0 && (
         <section className="border-t border-border bg-secondary/20 py-24">
-          <div className="container mx-auto max-w-6xl px-6">
+          <div className="container mx-auto max-w-7xl px-6">
             <div className="flex items-end justify-between mb-10">
               <div>
                 <div className="flex items-center gap-2 text-primary mb-3">
@@ -228,7 +228,7 @@ const HomePage = () => {
 
       {/* 10. FAQ */}
       <section id="faq" className="scroll-mt-24 border-t border-border py-24">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <FaqBlock
             eyebrow={t("Questions fréquentes", "Frequently asked questions")}
             title={t("Questions fréquentes", "Frequently asked questions")}
@@ -275,7 +275,7 @@ function BusinessObjectivesSection() {
 
   return (
     <section className="overflow-hidden border-t border-border bg-background py-20 md:py-24">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 flex items-end justify-between gap-8">
           <div className="max-w-4xl">
             <p className="label-section mb-3">{t("Stacks par objectif", "Stacks by goal")}</p>

@@ -21,7 +21,7 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
 
   return (
     <div className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
         {/* Left: Logo */}
         <div className="flex items-center gap-2 shrink-0">
           <span className="font-bold text-foreground text-sm">tooltrim</span>

@@ -237,7 +237,7 @@ export default function DiagnosticRouter() {
         />
       )}
 
-      <div className={`max-w-6xl mx-auto px-4 py-8 md:py-12 ${showRightPanel ? "flex gap-6" : ""}`}>
+      <div className={`max-w-7xl mx-auto px-4 py-8 md:py-12 ${showRightPanel ? "flex gap-6" : ""}`}>
         {/* Main content */}
         <div className="flex-1 min-w-0">
           {step === 0 && (

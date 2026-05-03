@@ -53,7 +53,7 @@ const CategoriesIndexPage = () => {
         ]}
       />
 
-      <section className="container mx-auto max-w-6xl px-4 py-10">
+      <section className="container mx-auto max-w-7xl px-4 py-10">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map(cat => {
             const Icon = getCategoryIcon(cat.id);

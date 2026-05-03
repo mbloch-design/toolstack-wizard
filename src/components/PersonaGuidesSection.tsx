@@ -25,7 +25,7 @@ export default function PersonaGuidesSection({ lang }: Props) {
   const items = guides[lang];
   return (
     <section className="border-t border-border py-20">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
           {lang === "fr" ? "Par profil" : "By profile"}
         </p>

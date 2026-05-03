@@ -87,7 +87,7 @@ const GuidesPage = () => {
       <PersonaGuidesSection lang={lang} />
 
       {/* Content */}
-      <section className="container mx-auto max-w-6xl px-4 py-12">
+      <section className="container mx-auto max-w-7xl px-4 py-12">
         {loading ? (
           <LoadingSkeleton />
         ) : filtered.length === 0 ? (
