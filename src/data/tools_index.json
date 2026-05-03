@@ -48,6 +48,22 @@
     "logo": ""
   },
   {
+    "id": "activecampaign",
+    "slug": "activecampaign",
+    "name": "ActiveCampaign",
+    "categoryId": "email-productivity",
+    "shortDescription": "Email marketing, automation et CRM marketing pour PME orientées conversion.",
+    "shortDescriptionEn": "Email marketing, automation and marketing CRM for conversion-focused SMBs.",
+    "pricing": {
+      "free": "Essai gratuit selon offre.",
+      "paid": "Plans publics à partir d’environ 15 $/mois, prix selon contacts et modules."
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://try.activecampaign.com/twe5oenri4zv-b9q17i",
+    "websiteUrl": "https://www.activecampaign.com",
+    "logo": ""
+  },
+  {
     "id": "activepieces",
     "slug": "activepieces",
     "name": "Activepieces",
@@ -305,17 +321,17 @@
   },
   {
     "id": "aircall-inc",
-    "slug": "aircall-inc",
-    "name": "Aircall Inc.",
+    "slug": "aircall",
+    "name": "Aircall",
     "categoryId": "communication",
-    "shortDescription": "Solution de centre d’appels cloud pour les entreprises modernes.",
-    "shortDescriptionEn": "Cloud call center solution for modern businesses.",
+    "shortDescription": "Téléphonie cloud pour équipes commerciales et support, intégrée au CRM.",
+    "shortDescriptionEn": "Cloud phone system for sales and support teams, integrated with CRM workflows.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plans publics par utilisateur, souvent à partir d’environ 30 $/utilisateur/mois selon facturation."
     },
-    "defaultMonthlyPrice": 20,
-    "affiliateLink": "https://aircall.io",
+    "defaultMonthlyPrice": 30,
+    "affiliateLink": "https://get.aircall.io/inlxr1yjycil",
     "websiteUrl": "https://aircall.io",
     "logo": ""
   },
@@ -468,15 +484,15 @@
     "slug": "apollo-io",
     "name": "Apollo.io",
     "categoryId": "communication",
-    "shortDescription": "Plateforme d’intelligence commerciale B2B et d’engagement des ventes.",
-    "shortDescriptionEn": "B2B sales intelligence and sales engagement platform.",
+    "shortDescription": "Base de prospection B2B et séquences outbound pour trouver, qualifier et contacter des leads.",
+    "shortDescriptionEn": "B2B sales intelligence and outbound sequencing to find, qualify and contact leads.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit limité selon volume.",
+      "paid": "Plans payants publics autour de l’entrée de gamme commerciale, puis tarifs plus élevés selon crédits et sièges."
     },
-    "defaultMonthlyPrice": 15,
-    "affiliateLink": "https://apollo.io",
-    "websiteUrl": "https://apollo.io",
+    "defaultMonthlyPrice": 49,
+    "affiliateLink": "https://get.apollo.io/i3ymfre21zro",
+    "websiteUrl": "https://www.apollo.io",
     "logo": ""
   },
   {
@@ -911,30 +927,30 @@
     "slug": "brevo",
     "name": "Brevo",
     "categoryId": "email-productivity",
-    "shortDescription": "Email marketing et automatisation (ex Sendinblue)",
-    "shortDescriptionEn": "Email marketing and automation (formerly Sendinblue).",
+    "shortDescription": "Email marketing, automation, SMS et CRM léger pour PME.",
+    "shortDescriptionEn": "Email marketing, automation, SMS and lightweight CRM for SMBs.",
     "pricing": {
-      "free": "",
-      "paid": ""
+      "free": "Plan gratuit limité en volume quotidien.",
+      "paid": "Plans publics à partir d’environ 9 €/mois selon volume et fonctionnalités."
     },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "",
-    "websiteUrl": "https://brevo.com",
+    "defaultMonthlyPrice": 9,
+    "affiliateLink": "https://get.brevo.com/k11w0iqmh2r0-m7y3c",
+    "websiteUrl": "https://www.brevo.com",
     "logo": ""
   },
   {
     "id": "buddy-punch",
     "slug": "buddy-punch",
     "name": "Buddy Punch",
-    "categoryId": "organization",
-    "shortDescription": "Pointage en ligne pour le suivi du temps des employés.",
-    "shortDescriptionEn": "Online time tracking and attendance software for employees.",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Suivi du temps, pointage et planification pour petites équipes.",
+    "shortDescriptionEn": "Time clock, scheduling and attendance tracking for small teams.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Essai gratuit selon offre.",
+      "paid": "Tarif public composé d’un abonnement de base et/ou prix par utilisateur selon plan."
     },
-    "defaultMonthlyPrice": 15,
-    "affiliateLink": "https://buddypunch.com",
+    "defaultMonthlyPrice": 24,
+    "affiliateLink": "https://try.buddypunch.com/6oeemql0j0q3",
     "websiteUrl": "https://buddypunch.com",
     "logo": ""
   },
@@ -1038,16 +1054,16 @@
     "id": "callrail",
     "slug": "callrail",
     "name": "CallRail",
-    "categoryId": "communication",
-    "shortDescription": "Plateforme d’intelligence d’appels pour suivi et attribution de leads.",
-    "shortDescriptionEn": "Call intelligence platform for lead tracking and attribution.",
+    "categoryId": "analytics",
+    "shortDescription": "Call tracking, attribution marketing et analyse des appels entrants.",
+    "shortDescriptionEn": "Call tracking, marketing attribution and inbound call analytics.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plan Call Tracking public à partir d’environ 45 $/mois, options et volumes en supplément."
     },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://callrail.com",
-    "websiteUrl": "https://callrail.com",
+    "defaultMonthlyPrice": 45,
+    "affiliateLink": "https://partners.callrail.com/80aos1quxy64",
+    "websiteUrl": "https://www.callrail.com",
     "logo": ""
   },
   {
@@ -1661,16 +1677,16 @@
     "id": "deel",
     "slug": "deel",
     "name": "Deel",
-    "categoryId": "organization",
-    "shortDescription": "Plateforme pour embaucher des talents dans 150 pays.",
-    "shortDescriptionEn": "Platform for hiring talent in 150 countries.",
+    "categoryId": "hris-payroll",
+    "shortDescription": "Contrats, paie internationale, EOR et gestion de collaborateurs distribués.",
+    "shortDescriptionEn": "Contracts, global payroll, EOR and distributed workforce management.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Certains modules RH peuvent être gratuits ou inclus selon offre.",
+      "paid": "Deel Contractor Management affiché à partir d’environ 49 $/mois ; EOR, Payroll et modules avancés sur devis."
     },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://deel.com",
-    "websiteUrl": "https://deel.com",
+    "defaultMonthlyPrice": 49,
+    "affiliateLink": "https://get.deel.com/hftlk37l5raa",
+    "websiteUrl": "https://www.deel.com",
     "logo": ""
   },
   {
@@ -1751,6 +1767,22 @@
     "defaultMonthlyPrice": 10,
     "affiliateLink": "https://desktopready.com",
     "websiteUrl": "https://desktopready.com",
+    "logo": ""
+  },
+  {
+    "id": "dext",
+    "slug": "dext",
+    "name": "Dext",
+    "categoryId": "finance",
+    "shortDescription": "Collecte, OCR et préparation des justificatifs comptables pour cabinets et PME.",
+    "shortDescriptionEn": "Receipt capture, OCR and bookkeeping preparation for accountants and SMBs.",
+    "pricing": {
+      "free": "Pas de prix public simple et universel identifié.",
+      "paid": "Tarif selon produit, pays, volume et cabinet comptable."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://join.dext.com/n2kppk0g4xq5",
+    "websiteUrl": "https://dext.com",
     "logo": ""
   },
   {
@@ -2870,6 +2902,22 @@
     "logo": ""
   },
   {
+    "id": "hume-ai",
+    "slug": "hume-ai",
+    "name": "Hume AI",
+    "categoryId": "ai-general",
+    "shortDescription": "API IA vocale et émotionnelle pour interfaces conversationnelles avancées.",
+    "shortDescriptionEn": "Voice and empathic AI API for advanced conversational interfaces.",
+    "pricing": {
+      "free": "Niveau gratuit ou crédits selon offre.",
+      "paid": "Tarification généralement liée à l’usage API, volumes et modèles."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://try.hume.ai/ojin1rg0ivlx",
+    "websiteUrl": "https://www.hume.ai",
+    "logo": ""
+  },
+  {
     "id": "figma-iconify",
     "slug": "figma-iconify",
     "name": "Iconify for Figma",
@@ -3252,18 +3300,18 @@
   },
   {
     "id": "convertkit",
-    "slug": "convertkit",
+    "slug": "kit",
     "name": "Kit",
     "categoryId": "email-productivity",
-    "shortDescription": "Email marketing et newsletters pour créateurs.",
-    "shortDescriptionEn": "Email marketing and newsletters for creators.",
+    "shortDescription": "Newsletter, formulaires et automatisations pour créateurs et indépendants.",
+    "shortDescriptionEn": "Newsletter, forms and automations for creators and independent businesses.",
     "pricing": {
-      "free": "Gratuit jusqu'à 1000 abonnés (fonctionnalités limitées)",
-      "paid": "À partir de 15$/mois (Creator) - 29$/mois (Creator Pro)"
+      "free": "Plan gratuit selon volume et fonctionnalités disponibles.",
+      "paid": "Plan Creator autour de 25 $/mois selon taille de liste et facturation."
     },
-    "defaultMonthlyPrice": 28.15,
+    "defaultMonthlyPrice": 25,
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
-    "websiteUrl": "https://partners.kit.com/u037oht6r48p",
+    "websiteUrl": "https://kit.com",
     "logo": ""
   },
   {
@@ -3319,15 +3367,15 @@
     "slug": "krispcall",
     "name": "KrispCall",
     "categoryId": "communication",
-    "shortDescription": "Téléphonie cloud avec numéros virtuels internationaux.",
-    "shortDescriptionEn": "Cloud telephony with international virtual numbers.",
+    "shortDescription": "Téléphonie cloud, numéros virtuels et centre d’appels léger.",
+    "shortDescriptionEn": "Cloud telephony, virtual numbers and lightweight call center features.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 15$/mois (Essential) - 45$/mois (Enterprise)"
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plans publics à partir d’environ 12 $/utilisateur/mois selon facturation."
     },
-    "defaultMonthlyPrice": 12.99,
+    "defaultMonthlyPrice": 12,
     "affiliateLink": "https://try.krispcall.com/t1akmbaetinc",
-    "websiteUrl": "https://try.krispcall.com/t1akmbaetinc",
+    "websiteUrl": "https://krispcall.com",
     "logo": ""
   },
   {
@@ -3446,16 +3494,16 @@
     "id": "leadpages",
     "slug": "leadpages",
     "name": "Leadpages",
-    "categoryId": "email-productivity",
-    "shortDescription": "Logiciel marketing pour créer des landing pages et convertir.",
-    "shortDescriptionEn": "Marketing software for creating landing pages and converting.",
+    "categoryId": "nocode-web",
+    "shortDescription": "Création de landing pages, pop-ups et formulaires orientés conversion.",
+    "shortDescriptionEn": "Landing pages, pop-ups and forms built for conversion.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Essai gratuit selon période commerciale.",
+      "paid": "Plans publics à partir d’environ 37 $/mois en facturation annuelle, plus en mensuel."
     },
-    "defaultMonthlyPrice": 20,
-    "affiliateLink": "https://leadpages.com",
-    "websiteUrl": "https://leadpages.com",
+    "defaultMonthlyPrice": 37,
+    "affiliateLink": "https://try.leadpages.com/dzadrshoyk4d",
+    "websiteUrl": "https://www.leadpages.com",
     "logo": ""
   },
   {
@@ -3527,15 +3575,15 @@
     "slug": "lemlist",
     "name": "Lemlist",
     "categoryId": "email-productivity",
-    "shortDescription": "Outreach email personnalisé avec séquences automatisées.",
-    "shortDescriptionEn": "Personalised email outreach with automated sequences.",
+    "shortDescription": "Séquences d’email outbound et prospection multicanale personnalisée.",
+    "shortDescriptionEn": "Outbound email sequences and personalized multichannel prospecting.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 39$/mois"
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plans publics à partir d’environ 39 $/mois selon fonctionnalités."
     },
     "defaultMonthlyPrice": 39,
-    "affiliateLink": "",
-    "websiteUrl": "",
+    "affiliateLink": "https://get.lemlist.com/iqofb24egwan",
+    "websiteUrl": "https://www.lemlist.com",
     "logo": ""
   },
   {
@@ -6278,15 +6326,15 @@
     "slug": "socialbee",
     "name": "SocialBee",
     "categoryId": "email-productivity",
-    "shortDescription": "Plateforme de gestion des réseaux sociaux et services de marketing digital.",
-    "shortDescriptionEn": "Social media management platform and digital marketing services.",
+    "shortDescription": "Planification, recyclage et organisation de contenus social media.",
+    "shortDescriptionEn": "Social media scheduling, content categories and evergreen recycling.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Essai gratuit selon offre.",
+      "paid": "Plans publics à partir d’environ 29 $/mois."
     },
-    "defaultMonthlyPrice": 15,
-    "affiliateLink": "https://socialbee.io",
-    "websiteUrl": "https://socialbee.io",
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "https://get.socialbee.io/ezo1u6nhi8ow",
+    "websiteUrl": "https://socialbee.com",
     "logo": ""
   },
   {
@@ -6655,6 +6703,22 @@
     "logo": ""
   },
   {
+    "id": "thordata",
+    "slug": "thordata",
+    "name": "ThorData",
+    "categoryId": "vendor-risk-data",
+    "shortDescription": "Proxy, données web et infrastructure de collecte pour cas d’usage data avancés.",
+    "shortDescriptionEn": "Proxy, web data and collection infrastructure for advanced data workflows.",
+    "pricing": {
+      "free": "Pas de prix mensuel universel fiable : souvent usage, volume ou devis.",
+      "paid": "Tarifs selon type de proxy, volume de trafic et cas d’usage."
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://affiliate.thordata.com/ylwo4jsttq39",
+    "websiteUrl": "https://www.thordata.com",
+    "logo": ""
+  },
+  {
     "id": "tidio",
     "slug": "tidio",
     "name": "Tidio",
@@ -6794,6 +6858,22 @@
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://topazlabs.com/topaz-video-ai",
     "websiteUrl": "https://topazlabs.com/topaz-video-ai",
+    "logo": ""
+  },
+  {
+    "id": "trainual",
+    "slug": "trainual",
+    "name": "Trainual",
+    "categoryId": "formation-education",
+    "shortDescription": "Documentation des process, onboarding et formation interne pour petites équipes.",
+    "shortDescriptionEn": "Process documentation, onboarding and internal training for small teams.",
+    "pricing": {
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plans publics orientés équipe, avec entrée généralement autour de plusieurs centaines de dollars par mois."
+    },
+    "defaultMonthlyPrice": 249,
+    "affiliateLink": "https://start.trainual.com/u4yyiem611lu-rul9tm",
+    "websiteUrl": "https://trainual.com",
     "logo": ""
   },
   {

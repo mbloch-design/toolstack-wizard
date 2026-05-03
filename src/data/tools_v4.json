@@ -357,6 +357,132 @@
     "force_silence": false
   },
   {
+    "id": "activecampaign",
+    "slug": "activecampaign",
+    "name": "ActiveCampaign",
+    "category": "email-productivity",
+    "shortDescription": "Email marketing, automation et CRM marketing pour PME orientées conversion.",
+    "shortDescriptionEn": "Email marketing, automation and marketing CRM for conversion-focused SMBs.",
+    "longDescription": "ActiveCampaign est un outil d’automation marketing plus avancé qu’une simple newsletter. ToolTrim le recommande seulement si tu as déjà des segments, scénarios ou cycles de vente à automatiser. Sinon, Brevo, Kit ou Mailchimp peuvent être plus simples et moins lourds.",
+    "longDescriptionEn": "ActiveCampaign is a deeper marketing automation platform than a simple newsletter tool. ToolTrim recommends it when segmentation and customer journeys are real.",
+    "pricing": {
+      "free": "Essai gratuit selon offre.",
+      "paid": "Plans publics à partir d’environ 15 $/mois, prix selon contacts et modules."
+    },
+    "pricingEn": {
+      "free": "Free trial depending on current offer.",
+      "paid": "Public plans start around $15/month, with price depending on contacts and modules."
+    },
+    "defaultMonthlyPrice": 15,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 15,
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Le prix évolue avec le nombre de contacts et les modules marketing/CRM."
+      ],
+      "source_domain": "activecampaign.com",
+      "official_source_url": "https://www.activecampaign.com/pricing",
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
+    },
+    "affiliateLink": "https://try.activecampaign.com/twe5oenri4zv-b9q17i",
+    "websiteUrl": "https://www.activecampaign.com",
+    "logo": "",
+    "seo": {
+      "metaDescription": "ActiveCampaign sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si ActiveCampaign mérite sa place dans ta stack."
+    },
+    "pros": [
+      "Très fort pour scénarios d’automation.",
+      "Combine email, segmentation et CRM marketing.",
+      "Bon pour tunnels B2B ou e-commerce plus matures."
+    ],
+    "prosEn": [],
+    "cons": [
+      "Trop complexe pour une newsletter simple.",
+      "Peut vite coûter plus cher avec contacts et modules.",
+      "Demande une stratégie d’automation claire."
+    ],
+    "consEn": [],
+    "useCases": [
+      "Créer des séquences nurturing",
+      "Segmenter une base de contacts",
+      "Automatiser relances et campagnes"
+    ],
+    "useCasesEn": [],
+    "covers": [
+      "email-marketing",
+      "marketing-automation",
+      "crm-marketing"
+    ],
+    "relevantFor": [
+      "consultant-b2b",
+      "ecommercant",
+      "fondateur-saas"
+    ],
+    "personas": [
+      "MARC",
+      "ALIX",
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "brevo",
+      "convertkit",
+      "mailchimp"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu as plusieurs segments et parcours à automatiser.",
+        "Ton email marketing influence directement les ventes."
+      ],
+      "avoidIf": [
+        "Tu veux juste envoyer une newsletter mensuelle.",
+        "Tu n’as pas encore assez de contacts qualifiés."
+      ],
+      "threshold": "À choisir quand l’automation rapporte, pas pour paraître mature."
+    },
+    "verdictEn": null,
+    "articles": [],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "soloRelevance": "à vérifier selon volume",
+    "teamRelevance": "utile si usage récurrent",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consultant-b2b",
+      "ecommercant"
+    ],
+    "functional_needs": [
+      "email-marketing",
+      "marketing-automation",
+      "crm-marketing"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "marketing-automation",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
+    },
+    "force_silence": false
+  },
+  {
     "id": "activepieces",
     "slug": "activepieces",
     "name": "Activepieces",
@@ -2093,91 +2219,104 @@
   },
   {
     "id": "aircall-inc",
-    "name": "Aircall Inc.",
-    "shortDescription": "Solution de centre d’appels cloud pour les entreprises modernes.",
+    "name": "Aircall",
+    "shortDescription": "Téléphonie cloud pour équipes commerciales et support, intégrée au CRM.",
     "description": "Aircall Inc., c'est solution de centre d’appels cloud pour les entreprises modernes. À partir de 20€/mois. Pensé pour les managers et DSI et les e-commerçants.\n\nSpécialisé en call tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
     "category": "communication",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plans publics par utilisateur, souvent à partir d’environ 30 $/utilisateur/mois selon facturation."
     },
     "website": "https://aircall.io",
-    "affiliateLink": "https://aircall.io",
+    "affiliateLink": "https://get.aircall.io/inlxr1yjycil",
     "pros": [
-      "Spécialisé en call tracking",
-      "Interface professionnelle"
+      "Très bon pour relier appels, CRM et support.",
+      "Plus lisible qu’un téléphone dispersé entre plusieurs numéros.",
+      "Adapté aux équipes sales/support."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Trop lourd pour peu d’appels.",
+      "Coût par siège à surveiller.",
+      "Demande une discipline CRM pour produire de la valeur."
     ],
     "bestFor": [
       "all"
     ],
     "covers": [
-      "call tracking"
+      "business-phone",
+      "call-center",
+      "crm-calls"
     ],
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 30,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
     },
     "relevantFor": [
-      "all"
+      "consultant-b2b",
+      "fondateur-saas",
+      "manager-dsi"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Plusieurs personnes prennent ou passent des appels clients.",
+        "Tu veux connecter téléphone et CRM."
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu utilises peu le téléphone.",
+        "Un simple numéro pro suffit."
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "Pertinent si les appels sont un vrai workflow, pas seulement un canal ponctuel."
     },
-    "alternatives": [],
+    "alternatives": [
+      "krispcall",
+      "callrail"
+    ],
     "seo": {
-      "metaDescription": "Aircall Inc. : Solution de centre d’appels cloud pour les entreprises modernes. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Aircall sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Aircall mérite sa place dans ta stack."
     },
     "articles": [],
-    "tool_type": "satellite",
+    "tool_type": "gestion",
     "substitutable": true,
     "verticals": [
-      "manager-dsi",
-      "ecommercant",
+      "consultant-b2b",
       "fondateur-saas"
     ],
     "functional_needs": [
-      "call tracking"
+      "business-phone",
+      "call-center",
+      "crm-calls"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
     "bundle_parent": null,
     "host_app": null,
     "ia_use_case": null,
-    "slug": "aircall-inc",
-    "shortDescriptionEn": "Cloud call center solution for modern businesses.",
-    "longDescription": "Aircall Inc., c'est solution de centre d’appels cloud pour les entreprises modernes. À partir de 20€/mois. Pensé pour les managers et DSI et les e-commerçants.\n\nSpécialisé en call tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "Aircall Inc. is cloud call center solution for modern businesses. Starting at €20/month. Built for managers and IT directors and e-commerce sellers.\n\nSpecialized in call tracking, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €20/month.",
+    "slug": "aircall",
+    "shortDescriptionEn": "Cloud phone system for sales and support teams, integrated with CRM workflows.",
+    "longDescription": "Aircall remplace la téléphonie classique par un système cloud connecté au CRM, au support et aux workflows commerciaux. ToolTrim le recommande surtout quand plusieurs personnes gèrent appels entrants, sortants et suivi client. Pour un freelance solo, l’intérêt dépend du volume d’appels et du besoin de reporting.",
+    "longDescriptionEn": "Aircall is a cloud phone system connected to CRM and support workflows. It is strongest for teams handling measurable sales or support calls.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
+      "free": "No durable free plan identified.",
+      "paid": "Public per-seat plans often start around $30/user/month depending on billing."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "compare_price_monthly_eur": 30,
+      "compare_plan_name": "Essentials",
+      "compare_plan_kind": "paid_per_seat",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Prix par utilisateur ; le coût réel dépend du nombre de sièges et des options."
+      ],
       "source_domain": "aircall.io",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "high",
-      "location_sensitive": false,
       "official_source_url": "https://aircall.io/pricing/",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 20
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
     "websiteUrl": "https://aircall.io",
     "logo": "",
@@ -2199,9 +2338,16 @@
     "consEn": [
       "Price to be verified based on usage"
     ],
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "useCases": [
+      "Gérer une ligne commerciale partagée",
+      "Suivre les appels dans un CRM",
+      "Structurer un support téléphonique"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "MARC",
+      "CLAIRE"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
     "prescription_quality": "question",
@@ -2214,14 +2360,14 @@
       "phone_numbers_needed",
       "meeting_volume"
     ],
-    "substitution_cluster_v2": "communication-ops",
+    "substitution_cluster_v2": "business-phone",
     "decision_policy_v3": {
-      "auto_cancel_allowed": true,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -3403,65 +3549,80 @@
   {
     "id": "apollo-io",
     "name": "Apollo.io",
-    "shortDescription": "Plateforme d’intelligence commerciale B2B et d’engagement des ventes.",
+    "shortDescription": "Base de prospection B2B et séquences outbound pour trouver, qualifier et contacter des leads.",
     "description": "Apollo.io, c'est plateforme d’intelligence commerciale B2B et d’engagement des ventes. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les consultants B2B.\n\nSpécialisé en lead generation, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "communication",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit limité selon volume.",
+      "paid": "Plans payants publics autour de l’entrée de gamme commerciale, puis tarifs plus élevés selon crédits et sièges."
     },
     "website": "https://apollo.io",
-    "affiliateLink": "https://apollo.io",
+    "affiliateLink": "https://get.apollo.io/i3ymfre21zro",
     "pros": [
-      "Spécialisé en lead generation",
-      "Interface professionnelle"
+      "Très utile pour créer une base de leads B2B qualifiée.",
+      "Combine données, enrichissement et séquences dans un seul flux.",
+      "Bon levier quand la prospection est déjà mesurée."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Risque de payer pour du volume mal ciblé.",
+      "Peut créer du bruit commercial si le message n’est pas précis.",
+      "Nécessite une hygiène CRM stricte."
     ],
     "bestFor": [
       "consultant",
       "other"
     ],
     "covers": [
-      "lead generation"
+      "lead-generation",
+      "sales-intelligence",
+      "outbound-email",
+      "crm-enrichment"
     ],
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 49,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
     },
     "relevantFor": [
-      "consultant",
-      "other"
+      "consultant-b2b",
+      "fondateur-saas",
+      "business-developer"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu prospectes chaque semaine avec un ICP clair.",
+        "Tu veux enrichir et séquencer sans multiplier les outils."
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu n’as pas encore d’offre ou de cible stable.",
+        "Tu fais moins de 20 prises de contact qualifiées par mois."
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Rentable si la prospection génère au moins un rendez-vous qualifié supplémentaire par mois."
     },
-    "alternatives": [],
+    "alternatives": [
+      "hubspot",
+      "pipedrive",
+      "lemlist",
+      "la-growth-machine"
+    ],
     "seo": {
-      "metaDescription": "Apollo.io : Plateforme d’intelligence commerciale B2B et d’engagement des ventes. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Apollo.io sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Apollo.io mérite sa place dans ta stack."
     },
     "articles": [],
-    "tool_type": "satellite",
+    "tool_type": "gestion",
     "substitutable": true,
     "verticals": [
-      "fondateur-saas",
-      "consultant-b2b"
+      "consultant-b2b",
+      "fondateur-saas"
     ],
     "functional_needs": [
-      "lead generation"
+      "lead-generation",
+      "sales-intelligence",
+      "outbound-email",
+      "crm-enrichment"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -3469,27 +3630,29 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "apollo-io",
-    "shortDescriptionEn": "B2B sales intelligence and sales engagement platform.",
-    "longDescription": "Apollo.io, c'est plateforme d’intelligence commerciale B2B et d’engagement des ventes. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les consultants B2B.\n\nSpécialisé en lead generation, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Apollo.io is b2B sales intelligence and sales engagement platform. Starting at €15/month. Built for SaaS founders and B2B consultants.\n\nSpecialized in lead generation, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €15/month.",
+    "shortDescriptionEn": "B2B sales intelligence and outbound sequencing to find, qualify and contact leads.",
+    "longDescription": "Apollo.io réunit base de contacts B2B, enrichissement, scoring et séquences de prospection. C'est puissant pour un freelance ou une petite équipe commerciale qui veut industrialiser l'outbound, mais ToolTrim le considère comme un outil à cadrer : sans ICP clair, listes propres et volume raisonnable, le coût monte vite et la qualité commerciale baisse.",
+    "longDescriptionEn": "Apollo.io combines B2B contact data, enrichment, scoring and outbound sequences. ToolTrim sees it as useful when prospecting is already structured, not as a substitute for positioning.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Limited free plan depending on volume.",
+      "paid": "Paid plans scale by credits, seats and sales features."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "compare_price_monthly_eur": 49,
+      "compare_plan_name": "Basic / entry paid plan",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Les crédits, enrichissements et sièges peuvent changer fortement le coût réel."
+      ],
       "source_domain": "apollo.io",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "high",
-      "location_sensitive": false,
       "official_source_url": "https://www.apollo.io/pricing",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
-    "websiteUrl": "https://apollo.io",
+    "websiteUrl": "https://www.apollo.io",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -3509,9 +3672,16 @@
     "consEn": [
       "Pricing to be verified based on usage"
     ],
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "useCases": [
+      "Construire une liste de prospects B2B",
+      "Lancer des séquences outbound",
+      "Enrichir des leads avant prise de contact"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "MARC",
+      "CLAIRE"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
     "prescription_quality": "question",
@@ -3524,14 +3694,14 @@
       "phone_numbers_needed",
       "meeting_volume"
     ],
-    "substitution_cluster_v2": "communication-ops",
+    "substitution_cluster_v2": "crm-prospection",
     "decision_policy_v3": {
-      "auto_cancel_allowed": true,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -6784,113 +6954,200 @@
     "slug": "brevo",
     "name": "Brevo",
     "category": "email-productivity",
-    "shortDescription": "Email marketing et automatisation (ex Sendinblue)",
-    "shortDescriptionEn": "Email marketing and automation (formerly Sendinblue).",
+    "shortDescription": "Email marketing, automation, SMS et CRM léger pour PME.",
+    "shortDescriptionEn": "Email marketing, automation, SMS and lightweight CRM for SMBs.",
     "description": "Brevo, c'est email marketing et automatisation (ex Sendinblue). Entièrement gratuit.",
-    "longDescription": "Brevo, c'est email marketing et automatisation (ex Sendinblue). Entièrement gratuit.",
-    "longDescriptionEn": "Brevo is email marketing and automation (formerly Sendinblue). Completely free.",
-    "pricing": null,
-    "pricingEn": null,
-    "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
-    "affiliateLink": "",
-    "websiteUrl": "https://brevo.com",
+    "longDescription": "Brevo est une suite marketing accessible pour newsletters, automatisations, SMS et CRM léger. ToolTrim l’apprécie quand il faut un outil robuste sans prix enterprise, mais recommande de vérifier le volume d’emails et le besoin réel d’automation avant d’empiler avec un CRM ou une plateforme newsletter.",
+    "longDescriptionEn": "Brevo is an accessible marketing suite for newsletters, automation, SMS and lightweight CRM. ToolTrim likes it when email volume and automation needs are real.",
+    "pricing": {
+      "free": "Plan gratuit limité en volume quotidien.",
+      "paid": "Plans publics à partir d’environ 9 €/mois selon volume et fonctionnalités."
+    },
+    "pricingEn": {
+      "free": "Free plan with daily send limits.",
+      "paid": "Public plans start around €9/month depending on volume and features."
+    },
+    "defaultMonthlyPrice": 9,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 9,
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Le prix dépend surtout du volume d’emails et des options marketing."
+      ],
+      "source_domain": "brevo.com",
+      "official_source_url": "https://www.brevo.com/pricing/",
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
+    },
+    "affiliateLink": "https://get.brevo.com/k11w0iqmh2r0-m7y3c",
+    "websiteUrl": "https://www.brevo.com",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Brevo sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Brevo mérite sa place dans ta stack."
+    },
     "articles": [],
-    "covers": [],
+    "covers": [
+      "email-marketing",
+      "newsletter",
+      "automation-email",
+      "sms-marketing"
+    ],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
+    "soloRelevance": "à vérifier selon volume",
+    "teamRelevance": "utile si usage récurrent",
+    "relevantFor": [
+      "createur-contenu",
+      "consultant-b2b",
+      "ecommercant"
+    ],
+    "alternatives": [
+      "convertkit",
+      "mailchimp",
+      "activecampaign"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu veux email + automation sans budget lourd.",
+        "Tu as besoin d’un outil marketing généraliste."
+      ],
+      "avoidIf": [
+        "Tu écris uniquement une newsletter éditoriale simple.",
+        "Tu as déjà un CRM marketing complet."
+      ],
+      "threshold": "Bon choix si l’automation sert vraiment la conversion, pas juste l’accumulation."
+    },
     "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
-    "tool_type": "satellite",
+    "pros": [
+      "Bon rapport fonctionnalité/prix pour newsletters et automation.",
+      "Plan gratuit utile pour démarrer.",
+      "Peut remplacer plusieurs petits outils marketing."
+    ],
+    "prosEn": [],
+    "cons": [
+      "Interface moins spécialisée qu’un outil créateur comme Kit.",
+      "Risque de doublon avec CRM et newsletter.",
+      "Le coût suit le volume d’envoi."
+    ],
+    "consEn": [],
+    "useCases": [
+      "Envoyer une newsletter",
+      "Automatiser une séquence email",
+      "Gérer contacts marketing simples"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "ALIX",
+      "MARC"
+    ],
+    "tool_type": "gestion",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "createur-contenu",
+      "consultant-b2b"
+    ],
+    "functional_needs": [
+      "email-marketing",
+      "newsletter",
+      "automation-email",
+      "sms-marketing"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "force_silence": false
+    "substitution_cluster_v2": "email-marketing",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
+    },
+    "force_silence": false,
+    "timeGainedHoursPerMonth": null
   },
   {
     "id": "buddy-punch",
     "name": "Buddy Punch",
-    "shortDescription": "Pointage en ligne pour le suivi du temps des employés.",
+    "shortDescription": "Suivi du temps, pointage et planification pour petites équipes.",
     "description": "Buddy Punch, c'est pointage en ligne pour le suivi du temps des employés. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en time tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "category": "organization",
+    "category": "productivity-tracking",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Essai gratuit selon offre.",
+      "paid": "Tarif public composé d’un abonnement de base et/ou prix par utilisateur selon plan."
     },
     "website": "https://buddypunch.com",
-    "affiliateLink": "https://buddypunch.com",
+    "affiliateLink": "https://try.buddypunch.com/6oeemql0j0q3",
     "pros": [
-      "Spécialisé en time tracking",
-      "Interface professionnelle"
+      "Simple pour encadrer pointage et présence.",
+      "Adapté aux petites équipes terrain ou support.",
+      "Réduit les feuilles d’heures dispersées."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Peu utile pour un solo sans salariés.",
+      "N’est pas un vrai outil de pilotage projet.",
+      "Le coût dépend du nombre d’utilisateurs."
     ],
     "bestFor": [
       "all"
     ],
     "covers": [
-      "time tracking"
+      "time-clock",
+      "attendance",
+      "employee-scheduling"
     ],
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 24,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
     },
     "relevantFor": [
-      "all"
+      "manager-dsi",
+      "daf-finance"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu dois suivre présence et heures d’une équipe.",
+        "Les feuilles d’heures deviennent une source d’erreur."
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu veux juste tracker ton temps freelance.",
+        "Tu n’as pas de salariés ou prestataires à pointer."
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Utile quand le suivi RH évite erreurs de paie ou de planning."
     },
-    "alternatives": [],
+    "alternatives": [
+      "toggl-track",
+      "clockify",
+      "trainual"
+    ],
     "seo": {
-      "metaDescription": "Buddy Punch : Pointage en ligne pour le suivi du temps des employés. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Buddy Punch sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Buddy Punch mérite sa place dans ta stack."
     },
     "articles": [],
-    "tool_type": "satellite",
+    "tool_type": "gestion",
     "substitutable": true,
     "verticals": [
-      "consultant-b2b",
-      "fondateur-saas"
+      "manager-dsi"
     ],
     "functional_needs": [
-      "time tracking"
+      "time-clock",
+      "attendance",
+      "employee-scheduling"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -6898,25 +7155,27 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "buddy-punch",
-    "shortDescriptionEn": "Online time tracking and attendance software for employees.",
-    "longDescription": "Buddy Punch, c'est pointage en ligne pour le suivi du temps des employés. À partir de 15€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en time tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Buddy Punch is online time tracking and attendance software for employees. Starting at €15/month. Built for B2B consultants and SaaS founders.\n\nSpecialized in time tracking, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
+    "shortDescriptionEn": "Time clock, scheduling and attendance tracking for small teams.",
+    "longDescription": "Buddy Punch sert à suivre les heures, présences, pauses et plannings. Pour ToolTrim, c'est un outil RH opérationnel : utile quand il y a une équipe à coordonner, rarement prioritaire pour un freelance solo qui veut juste suivre son temps projet.",
+    "longDescriptionEn": "Buddy Punch tracks attendance, time clocks and schedules. ToolTrim sees it as an operational HR tool for teams.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Free trial depending on offer.",
+      "paid": "Public pricing usually combines base fee and per-user pricing depending on plan."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "compare_price_monthly_eur": 24,
+      "compare_plan_name": "Entry team setup",
+      "compare_plan_kind": "paid_per_seat",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Comparer le coût total avec base fee + utilisateurs, pas seulement le prix par personne."
+      ],
       "source_domain": "buddypunch.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "high",
-      "location_sensitive": false,
       "official_source_url": "https://buddypunch.com/pricing/",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
     "websiteUrl": "https://buddypunch.com",
     "logo": "",
@@ -6938,9 +7197,15 @@
     "consEn": [
       "Price to be verified based on usage"
     ],
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "useCases": [
+      "Pointer les heures d’une équipe",
+      "Gérer absences et plannings",
+      "Préparer des données de paie"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "CLAIRE"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
     "prescription_quality": "question",
@@ -6953,14 +7218,14 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": "hr-time-tracking",
     "decision_policy_v3": {
-      "auto_cancel_allowed": true,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -7800,63 +8065,74 @@
   {
     "id": "callrail",
     "name": "CallRail",
-    "shortDescription": "Plateforme d’intelligence d’appels pour suivi et attribution de leads.",
+    "shortDescription": "Call tracking, attribution marketing et analyse des appels entrants.",
     "description": "CallRail, c'est plateforme d’intelligence d’appels pour suivi et attribution de leads. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les e-commerçants et les community managers.\n\nSpécialisé en call tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "category": "communication",
+    "category": "analytics",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plan Call Tracking public à partir d’environ 45 $/mois, options et volumes en supplément."
     },
     "website": "https://callrail.com",
-    "affiliateLink": "https://callrail.com",
+    "affiliateLink": "https://partners.callrail.com/80aos1quxy64",
     "pros": [
-      "Spécialisé en call tracking",
-      "Interface professionnelle"
+      "Relie les appels aux campagnes marketing.",
+      "Utile pour arbitrer entre SEO, ads et landing pages.",
+      "Bon outil pour les business locaux ou services à forte conversion téléphonique."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Peu utile si les conversions se font surtout par formulaire ou paiement en ligne.",
+      "Ajoute une couche de tracking à maintenir.",
+      "Le coût dépend vite du volume de numéros et d’appels."
     ],
     "bestFor": [
       "all"
     ],
     "covers": [
-      "call tracking"
+      "call-tracking",
+      "marketing-attribution",
+      "phone-analytics"
     ],
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 45,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "0€/mois"
     },
     "relevantFor": [
-      "all"
+      "consultant-b2b",
+      "agence",
+      "business-local"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Le téléphone est un canal de vente important.",
+        "Tu dois prouver le ROI de campagnes locales ou ads."
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu n’as presque pas d’appels entrants.",
+        "Ton acquisition est déjà suivie proprement par formulaire ou CRM."
       ],
-      "threshold": "Gratuit, à garder si utile"
+      "threshold": "À considérer dès que les appels représentent un canal mesurable, pas juste un moyen de contact."
     },
-    "alternatives": [],
+    "alternatives": [
+      "aircall-inc",
+      "krispcall"
+    ],
     "seo": {
-      "metaDescription": "CallRail : Plateforme d’intelligence d’appels pour suivi et attribution de leads. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "CallRail sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si CallRail mérite sa place dans ta stack."
     },
     "articles": [],
     "tool_type": "satellite",
     "substitutable": true,
     "verticals": [
-      "ecommercant",
-      "community-manager"
+      "consultant-b2b"
     ],
     "functional_needs": [
-      "call tracking"
+      "call-tracking",
+      "marketing-attribution",
+      "phone-analytics"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -7864,29 +8140,29 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "callrail",
-    "shortDescriptionEn": "Call intelligence platform for lead tracking and attribution.",
-    "longDescription": "CallRail, c'est plateforme d’intelligence d’appels pour suivi et attribution de leads. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les e-commerçants et les community managers.\n\nSpécialisé en call tracking, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "CallRail is call intelligence platform for lead tracking and attribution. Free to start, paid plans for more. Built for e-commerce sellers and community managers.\n\nSpecialized in call tracking, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. Free, keep it if it's useful.",
+    "shortDescriptionEn": "Call tracking, marketing attribution and inbound call analytics.",
+    "longDescription": "CallRail sert à comprendre quelles campagnes, pages ou mots-clés déclenchent des appels. C'est pertinent pour les activités où le téléphone est un vrai canal de conversion. Pour ToolTrim, ce n'est pas un outil de communication généraliste : c'est un outil d'attribution à activer quand les appels pèsent réellement dans le chiffre d'affaires.",
+    "longDescriptionEn": "CallRail helps attribute inbound calls to campaigns, landing pages and keywords. It is relevant when phone calls are a measurable acquisition channel.",
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "No durable free plan identified.",
+      "paid": "Call tracking plan starts around $45/month, with add-ons and usage depending on volume."
     },
     "pricing_v5": {
+      "compare_price_monthly_eur": 45,
+      "compare_plan_name": "Call Tracking",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Les numéros, minutes et options d’attribution peuvent ajouter du coût."
       ],
-      "verified_on": "2026-03-13",
       "source_domain": "callrail.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Free",
-      "price_reliability": "high",
-      "location_sensitive": false,
-      "official_source_url": "https://www.callrail.com/pricing",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.callrail.com/pricing/",
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
-    "websiteUrl": "https://callrail.com",
+    "websiteUrl": "https://www.callrail.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -7906,9 +8182,16 @@
     "consEn": [
       "Pricing to be verified based on usage"
     ],
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "useCases": [
+      "Mesurer les appels générés par une campagne",
+      "Comparer landing pages et sources d’acquisition",
+      "Auditer le ROI d’un budget ads local"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "MARC",
+      "CLAIRE"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
     "prescription_quality": "question",
@@ -7922,14 +8205,14 @@
       "phone_numbers_needed",
       "meeting_volume"
     ],
-    "substitution_cluster_v2": "communication-ops",
+    "substitution_cluster_v2": "call-tracking",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -12558,63 +12841,76 @@
   {
     "id": "deel",
     "name": "Deel",
-    "shortDescription": "Plateforme pour embaucher des talents dans 150 pays.",
+    "shortDescription": "Contrats, paie internationale, EOR et gestion de collaborateurs distribués.",
     "description": "Deel, c'est plateforme pour embaucher des talents dans 150 pays. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en global payroll, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "category": "organization",
+    "category": "hris-payroll",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Certains modules RH peuvent être gratuits ou inclus selon offre.",
+      "paid": "Deel Contractor Management affiché à partir d’environ 49 $/mois ; EOR, Payroll et modules avancés sur devis."
     },
     "website": "https://deel.com",
-    "affiliateLink": "https://deel.com",
+    "affiliateLink": "https://get.deel.com/hftlk37l5raa",
     "pros": [
-      "Spécialisé en global payroll",
-      "Interface professionnelle"
+      "Très utile pour gérer des prestataires internationaux.",
+      "Réduit le risque administratif et contractuel.",
+      "Centralise documents, paiements et conformité."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Surdimensionné pour une équipe locale simple.",
+      "Les modules avancés peuvent coûter cher.",
+      "Dépend fortement des pays et statuts."
     ],
     "bestFor": [
       "all"
     ],
     "covers": [
-      "global payroll"
+      "global-payroll",
+      "contractor-management",
+      "hr-compliance"
     ],
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 49,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "0€/mois"
     },
     "relevantFor": [
-      "all"
+      "manager-dsi",
+      "fondateur-saas",
+      "daf-finance"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu travailles avec des prestataires ou salariés dans plusieurs pays.",
+        "La conformité RH devient un vrai risque."
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu paies quelques freelances locaux par facture.",
+        "Tu n’as pas de sujet international."
       ],
-      "threshold": "Gratuit, à garder si utile"
+      "threshold": "À considérer dès que le coût du risque légal dépasse le coût de la plateforme."
     },
-    "alternatives": [],
+    "alternatives": [
+      "remote",
+      "rippling",
+      "bamboohr"
+    ],
     "seo": {
-      "metaDescription": "Deel : Plateforme pour embaucher des talents dans 150 pays. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Deel sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Deel mérite sa place dans ta stack."
     },
     "articles": [],
-    "tool_type": "satellite",
+    "tool_type": "gestion",
     "substitutable": true,
     "verticals": [
-      "consultant-b2b",
+      "manager-dsi",
       "fondateur-saas"
     ],
     "functional_needs": [
-      "global payroll"
+      "global-payroll",
+      "contractor-management",
+      "hr-compliance"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -12622,29 +12918,29 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "deel",
-    "shortDescriptionEn": "Platform for hiring talent in 150 countries.",
-    "longDescription": "Deel, c'est plateforme pour embaucher des talents dans 150 pays. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nSpécialisé en global payroll, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "Deel is platform for hiring talent in 150 countries. Free to start, paid plans for more. Built for B2B consultants and SaaS founders.\n\nSpecialized in global payroll, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. Free; keep if useful.",
+    "shortDescriptionEn": "Contracts, global payroll, EOR and distributed workforce management.",
+    "longDescription": "Deel aide à contractualiser, payer et gérer des collaborateurs ou prestataires dans plusieurs pays. Pour ToolTrim, c’est pertinent dès que le sujet légal/RH dépasse la simple facture freelance. En dessous, il peut être trop structurant et coûteux.",
+    "longDescriptionEn": "Deel helps manage contractors, global payroll and EOR workflows. ToolTrim sees it as useful when international hiring becomes operationally risky.",
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "Some HR modules may be free or included depending on offer.",
+      "paid": "Contractor Management starts around $49/month; EOR, Payroll and advanced modules are quote-based."
     },
     "pricing_v5": {
+      "compare_price_monthly_eur": 49,
+      "compare_plan_name": "Contractor Management",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
       "cautions": [
-        "confirm_if_paid_plan_is_really_used"
+        "Le coût varie fortement entre contractor, EOR, payroll et pays concernés."
       ],
-      "verified_on": "2026-03-13",
       "source_domain": "deel.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Free",
-      "price_reliability": "medium",
-      "location_sensitive": false,
-      "official_source_url": "https://www.deel.com/fr/pricing/",
-      "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.deel.com/pricing",
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
-    "websiteUrl": "https://deel.com",
+    "websiteUrl": "https://www.deel.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -12664,9 +12960,15 @@
     "consEn": [
       "Pricing to be verified based on usage"
     ],
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "useCases": [
+      "Payer des contractors internationaux",
+      "Gérer contrats et conformité pays",
+      "Structurer une équipe distribuée"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "CLAIRE"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
     "prescription_quality": "question",
@@ -12680,14 +12982,14 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": "workspace-ops",
+    "substitution_cluster_v2": "hris-payroll",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -13364,6 +13666,129 @@
       "auto_downgrade_allowed": true,
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
+    },
+    "force_silence": false
+  },
+  {
+    "id": "dext",
+    "slug": "dext",
+    "name": "Dext",
+    "category": "finance",
+    "shortDescription": "Collecte, OCR et préparation des justificatifs comptables pour cabinets et PME.",
+    "shortDescriptionEn": "Receipt capture, OCR and bookkeeping preparation for accountants and SMBs.",
+    "longDescription": "Dext aide à récupérer factures, reçus et justificatifs, puis à les préparer pour la comptabilité. ToolTrim le positionne comme un outil de back-office : très utile quand les documents comptables deviennent récurrents, moins pertinent pour un solo qui peut encore gérer avec son outil de facturation et son expert-comptable.",
+    "longDescriptionEn": "Dext captures receipts and invoices, then prepares bookkeeping data. ToolTrim sees it as a back-office tool for recurring finance operations.",
+    "pricing": {
+      "free": "Pas de prix public simple et universel identifié.",
+      "paid": "Tarif selon produit, pays, volume et cabinet comptable."
+    },
+    "pricingEn": {
+      "free": "No simple universal public price identified.",
+      "paid": "Pricing depends on product, country, volume and accounting partner."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Sur devis / selon produit",
+      "compare_plan_kind": "quote",
+      "price_reliability": "quote_or_location_sensitive",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Prix dépendant du pays, du produit Dext et du volume de documents."
+      ],
+      "source_domain": "dext.com",
+      "official_source_url": "https://dext.com/pricing",
+      "verified_on": "2026-05-03",
+      "verification_status": "public_pricing_not_universal"
+    },
+    "affiliateLink": "https://join.dext.com/n2kppk0g4xq5",
+    "websiteUrl": "https://dext.com",
+    "logo": "",
+    "seo": {
+      "metaDescription": "Dext sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Dext mérite sa place dans ta stack."
+    },
+    "pros": [
+      "Réduit la friction de collecte des justificatifs.",
+      "Bon complément pour cabinets comptables et équipes finance.",
+      "Aide à fiabiliser les flux de dépenses."
+    ],
+    "prosEn": [],
+    "cons": [
+      "Surdimensionné si le volume de factures est faible.",
+      "Dépend de l’intégration avec l’outil comptable.",
+      "Prix difficile à comparer sans contexte."
+    ],
+    "consEn": [],
+    "useCases": [
+      "Collecter des reçus et factures",
+      "Préparer les pièces pour la comptabilité",
+      "Standardiser les justificatifs d’une petite équipe"
+    ],
+    "useCasesEn": [],
+    "covers": [
+      "receipt-capture",
+      "bookkeeping-prep",
+      "expense-documents"
+    ],
+    "relevantFor": [
+      "daf-finance",
+      "ecommercant",
+      "manager-dsi"
+    ],
+    "personas": [
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "quickbooks",
+      "xero",
+      "pennylane"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu traites beaucoup de justificatifs chaque mois.",
+        "Ton cabinet ou ton équipe finance veut un flux plus propre."
+      ],
+      "avoidIf": [
+        "Tu as peu de dépenses et une compta simple.",
+        "Ton outil de facturation couvre déjà le besoin."
+      ],
+      "threshold": "Utile quand le coût administratif des justificatifs dépasse le coût logiciel."
+    },
+    "verdictEn": null,
+    "articles": [],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "soloRelevance": "à vérifier selon volume",
+    "teamRelevance": "utile si usage récurrent",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "daf-finance"
+    ],
+    "functional_needs": [
+      "receipt-capture",
+      "bookkeeping-prep",
+      "expense-documents"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "accounting-ops",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -21747,6 +22172,130 @@
     "force_silence": false
   },
   {
+    "id": "hume-ai",
+    "slug": "hume-ai",
+    "name": "Hume AI",
+    "category": "ai-general",
+    "shortDescription": "API IA vocale et émotionnelle pour interfaces conversationnelles avancées.",
+    "shortDescriptionEn": "Voice and empathic AI API for advanced conversational interfaces.",
+    "longDescription": "Hume AI s’adresse surtout aux équipes qui construisent des expériences vocales ou conversationnelles avancées. ToolTrim le classe comme outil expert : puissant pour un produit IA spécifique, rarement pertinent dans une stack freelance classique.",
+    "longDescriptionEn": "Hume AI is best for teams building advanced voice or empathic AI experiences. ToolTrim treats it as an expert product tool.",
+    "pricing": {
+      "free": "Niveau gratuit ou crédits selon offre.",
+      "paid": "Tarification généralement liée à l’usage API, volumes et modèles."
+    },
+    "pricingEn": {
+      "free": "Free tier or credits depending on current offer.",
+      "paid": "Pricing is generally API usage, volume and model based."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "API usage",
+      "compare_plan_kind": "usage_based",
+      "price_reliability": "usage_based",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Le coût dépend du volume API et du type de modèle utilisé."
+      ],
+      "source_domain": "hume.ai",
+      "official_source_url": "https://www.hume.ai/pricing",
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
+    },
+    "affiliateLink": "https://try.hume.ai/ojin1rg0ivlx",
+    "websiteUrl": "https://www.hume.ai",
+    "logo": "",
+    "seo": {
+      "metaDescription": "Hume AI sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Hume AI mérite sa place dans ta stack."
+    },
+    "pros": [
+      "Très intéressant pour produits vocaux IA.",
+      "Positionnement différenciant autour du signal émotionnel.",
+      "API plutôt qu’outil marketing générique."
+    ],
+    "prosEn": [],
+    "cons": [
+      "Trop spécifique pour une stack freelance standard.",
+      "Coût et intégration dépendent du produit.",
+      "Nécessite un vrai cas d’usage technique."
+    ],
+    "consEn": [],
+    "useCases": [
+      "Créer une interface vocale IA",
+      "Analyser des signaux conversationnels",
+      "Prototyper un produit IA émotionnel"
+    ],
+    "useCasesEn": [],
+    "covers": [
+      "voice-ai",
+      "ai-api",
+      "speech-analysis"
+    ],
+    "relevantFor": [
+      "ai-builder",
+      "fondateur-saas",
+      "createur-contenu"
+    ],
+    "personas": [
+      "THEO",
+      "SOFIA",
+      "ALIX"
+    ],
+    "alternatives": [
+      "elevenlabs",
+      "openai-whisper"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu construis un produit avec une couche voix ou conversation IA.",
+        "Tu as une équipe capable d’intégrer une API."
+      ],
+      "avoidIf": [
+        "Tu veux juste enregistrer ou nettoyer un podcast.",
+        "Tu n’as pas de cas produit clair."
+      ],
+      "threshold": "Pertinent pour produit IA, pas pour productivité quotidienne."
+    },
+    "verdictEn": null,
+    "articles": [],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "soloRelevance": "à vérifier selon volume",
+    "teamRelevance": "utile si usage récurrent",
+    "tool_type": "ia",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ai-builder"
+    ],
+    "functional_needs": [
+      "voice-ai",
+      "ai-api",
+      "speech-analysis"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "ai-voice-api",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
+    },
+    "force_silence": false
+  },
+  {
     "id": "figma-iconify",
     "name": "Iconify for Figma",
     "tool_type": "plugin",
@@ -24781,42 +25330,31 @@
     "name": "Kit",
     "category": "email-productivity",
     "description": "Kit, c'est email marketing et newsletters pour créateurs. À partir de 28.15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : 500+ abonnés et monétisation active (cours, produits, services) ou besoin d'automations marketing avancées. À éviter si : newsletter mensuelle simple sans vente ou moins de 500 abonnés. Dès que vous avez 500+ abonnés et voulez monétiser. Alternative gratuite : brevo.",
-    "shortDescription": "Email marketing et newsletters pour créateurs.",
+    "shortDescription": "Newsletter, formulaires et automatisations pour créateurs et indépendants.",
     "pricing": {
-      "free": "Gratuit jusqu'à 1000 abonnés (fonctionnalités limitées)",
-      "paid": "À partir de 15$/mois (Creator) - 29$/mois (Creator Pro)"
+      "free": "Plan gratuit selon volume et fonctionnalités disponibles.",
+      "paid": "Plan Creator autour de 25 $/mois selon taille de liste et facturation."
     },
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
     "verdict": {
       "keepIf": [
-        "500+ abonnés et monétisation active (cours, produits, services)",
-        "Besoin d'automations marketing avancées",
-        "Vente de produits numériques via email"
+        "Ta newsletter est un vrai canal d’acquisition ou de vente.",
+        "Tu veux automatiser sans usine marketing."
       ],
       "avoidIf": [
-        "Newsletter mensuelle simple sans vente",
-        "Moins de 500 abonnés",
-        "Budget serré (<15$/mois)"
+        "Tu envoies rarement des emails.",
+        "Tu as besoin d’un CRM sales complet."
       ],
-      "threshold": "Dès que vous avez 500+ abonnés et voulez monétiser"
+      "threshold": "Rentable quand l’audience email devient un actif régulier."
     },
     "seo": {
-      "metaDescription": "ConvertKit gratuit vs payant (15€/mois) : guide complet pour créateurs. Quand payer pour email marketing ? Comparatif avec Substack, Mailchimp, Beehiiv."
+      "metaDescription": "Kit sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Kit mérite sa place dans ta stack."
     },
     "articles": [],
     "alternatives": [
-      {
-        "name": "Substack",
-        "reason": "Gratuit, parfait pour newsletters simples sans vente"
-      },
-      {
-        "name": "Mailchimp",
-        "reason": "Gratuit jusqu'à 2000 contacts, plus complet"
-      },
-      {
-        "name": "Beehiiv",
-        "reason": "Alternative moderne, gratuit jusqu'à 2500 abonnés"
-      }
+      "brevo",
+      "mailchimp",
+      "substack"
     ],
     "tags": [
       "email-marketing",
@@ -24831,8 +25369,9 @@
       "content-creator"
     ],
     "covers": [
-      "email-marketing",
       "newsletter",
+      "email-marketing",
+      "creator-commerce",
       "automation-email"
     ],
     "freeAlternative": "brevo",
@@ -24842,28 +25381,26 @@
       "content-creator",
       "writer"
     ],
-    "defaultMonthlyPrice": 28.15,
+    "defaultMonthlyPrice": 25,
     "pricingTiers": {
       "free": "Gratuit jusqu'à 1000 abonnés (fonctionnalités limitées)",
       "paid": "À partir de 15$/mois (Creator) - 29$/mois (Creator Pro)"
     },
     "relevantFor": [
-      "writer",
-      "consultant",
-      "tech",
-      "designer",
-      "content-creator",
-      "other"
+      "createur-contenu",
+      "newslettiste-auteur",
+      "consultant-b2b"
     ],
-    "tool_type": "satellite",
+    "tool_type": "gestion",
     "substitutable": true,
     "verticals": [
-      "ecommercant",
-      "fondateur-saas"
+      "createur-contenu",
+      "newslettiste-auteur"
     ],
     "functional_needs": [
-      "email-marketing",
       "newsletter",
+      "email-marketing",
+      "creator-commerce",
       "automation-email"
     ],
     "betterAlternative": null,
@@ -24871,31 +25408,30 @@
     "bundle_parent": null,
     "host_app": null,
     "ia_use_case": null,
-    "slug": "convertkit",
-    "shortDescriptionEn": "Email marketing and newsletters for creators.",
-    "longDescription": "Kit, c'est email marketing et newsletters pour créateurs. À partir de 28.15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : 500+ abonnés et monétisation active (cours, produits, services) ou besoin d'automations marketing avancées. À éviter si : newsletter mensuelle simple sans vente ou moins de 500 abonnés. Dès que vous avez 500+ abonnés et voulez monétiser. Alternative gratuite : brevo.",
-    "longDescriptionEn": "Kit is email marketing and newsletters for creators. Starting at €28.15/month. Built for e-commerce sellers and SaaS founders.\n\nEstimated time saving: 3h/month.\n\nKeep it if: 500+ subscribers and active monetization (courses, products, services) or need for advanced marketing automations. Skip it if: simple monthly newsletter without sales or fewer than 500 subscribers. As soon as you have 500+ subscribers and want to monetize. Free alternative: brevo.",
+    "slug": "kit",
+    "shortDescriptionEn": "Newsletter, forms and automations for creators and independent businesses.",
+    "longDescription": "Kit, anciennement ConvertKit, est pensé pour les créateurs, auteurs et indépendants qui construisent une audience. ToolTrim le considère pertinent quand la newsletter est un actif business. Si l’email n’est qu’un canal occasionnel, un outil plus simple ou gratuit peut suffire.",
+    "longDescriptionEn": "Kit, formerly ConvertKit, is built for creators and solo businesses growing an audience through email.",
     "pricingEn": {
-      "free": "Free up to 1,000 subscribers (limited features)of",
-      "paid": "From $15/month (Creator) - $29/month (Creator Pro)"
+      "free": "Free plan depending on list size and available features.",
+      "paid": "Creator plan around $25/month depending on list size and billing."
     },
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used",
-        "compare_only_after_usage_or_scope_question"
-      ],
-      "verified_on": "2026-03-13",
-      "source_domain": "kit.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "contact_volume",
+      "compare_price_monthly_eur": 25,
       "compare_plan_name": "Creator",
-      "price_reliability": "high",
-      "location_sensitive": false,
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Le prix dépend de la taille de liste et des fonctionnalités choisies."
+      ],
+      "source_domain": "kit.com",
       "official_source_url": "https://kit.com/pricing",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 28.15
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
-    "websiteUrl": "https://partners.kit.com/u037oht6r48p",
+    "websiteUrl": "https://kit.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -24910,16 +25446,31 @@
       ],
       "threshold": "As soon as you have 500+ subscribers and want to monetize"
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "pros": [
+      "Très adapté aux créateurs et newsletters éditoriales.",
+      "Automations simples mais utiles.",
+      "Bon alignement audience, formulaires et produits."
+    ],
+    "prosEn": [],
+    "cons": [
+      "Moins adapté aux équipes marketing complexes.",
+      "Le prix augmente avec la liste.",
+      "Peut être trop spécialisé pour une PME généraliste."
+    ],
+    "consEn": [],
+    "useCases": [
+      "Publier une newsletter",
+      "Créer une séquence de bienvenue",
+      "Vendre ou promouvoir une offre à une audience"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "ALIX",
+      "MARC"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
       "prix-non-vérifié",
@@ -24936,10 +25487,10 @@
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": "Le bon plan dépend trop du contexte réel d’usage.",
-      "requires_context_questions": true
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -25321,35 +25872,31 @@
     "category": "communication",
     "description": "KrispCall, c'est téléphonie cloud avec numéros virtuels internationaux. À partir de 12.99€/mois. Pensé pour les managers et DSI et les consultants B2B.\n\nGain de temps estimé : 3h/mois.\n\nDès que vous recevez +10 appels clients par semaine ou avez besoin de numéros internationaux. Alternative gratuite : google-meet.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 15$/mois (Essential) - 45$/mois (Enterprise)"
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plans publics à partir d’environ 12 $/utilisateur/mois selon facturation."
     },
     "link": "https://try.krispcall.com/t1akmbaetinc",
     "verdict": {
-      "reasoning": "KrispCall est utile si vous avez besoin d'un numéro professionnel séparé ou de numéros internationaux. Mais pour la plupart des freelances, WhatsApp Business (gratuit) ou Google Voice suffit. Ne payez que si vous gérez un volume d'appels significatif ou avez besoin de fonctions avancées (enregistrement, IVR, analytics).",
-      "threshold": "Dès que vous recevez +10 appels clients par semaine ou avez besoin de numéros internationaux.",
-      "recommendation": "Payez seulement si vous recevez beaucoup d'appels clients"
+      "keepIf": [
+        "Tu veux une téléphonie pro sans solution enterprise.",
+        "Tu gères appels et SMS comme un vrai workflow."
+      ],
+      "avoidIf": [
+        "Tu reçois peu d’appels.",
+        "Un numéro mobile ou une visio suffit."
+      ],
+      "threshold": "Bon choix si le téléphone participe directement à la vente ou au support."
     },
     "alternatives": [
-      {
-        "name": "WhatsApp Business",
-        "reason": "Gratuit, universel, professionnel"
-      },
-      {
-        "name": "Google Voice",
-        "reason": "Gratuit aux USA, numéro virtuel simple"
-      },
-      {
-        "name": "Aircall",
-        "reason": "Plus cher mais meilleur pour les équipes"
-      }
+      "aircall-inc",
+      "callrail"
     ],
-    "shortDescription": "Téléphonie cloud avec numéros virtuels internationaux.",
+    "shortDescription": "Téléphonie cloud, numéros virtuels et centre d’appels léger.",
     "affiliateLink": "https://try.krispcall.com/t1akmbaetinc",
     "covers": [
-      "telephonie",
-      "call-center",
-      "messagerie-professionnelle"
+      "business-phone",
+      "virtual-number",
+      "call-center"
     ],
     "freeAlternative": "google-meet",
     "soloRelevance": "medium",
@@ -25357,30 +25904,29 @@
     "bestFor": [
       "consultant"
     ],
-    "defaultMonthlyPrice": 12.99,
+    "defaultMonthlyPrice": 12,
     "pricingTiers": {
       "free": "Essai gratuit 14 jours",
       "paid": "À partir de 15$/mois (Essential) - 45$/mois (Enterprise)"
     },
     "relevantFor": [
-      "consultant",
-      "other"
+      "consultant-b2b",
+      "fondateur-saas",
+      "manager-dsi"
     ],
     "seo": {
-      "metaDescription": "KrispCall : Téléphonie cloud avec numéros virtuels internationaux. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "KrispCall sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si KrispCall mérite sa place dans ta stack."
     },
     "articles": [],
     "tool_type": "satellite",
     "substitutable": true,
     "verticals": [
-      "manager-dsi",
-      "consultant-b2b",
-      "ecommercant"
+      "consultant-b2b"
     ],
     "functional_needs": [
-      "telephonie",
-      "call-center",
-      "messagerie-professionnelle"
+      "business-phone",
+      "virtual-number",
+      "call-center"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -25388,40 +25934,53 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "krispcall",
-    "shortDescriptionEn": "Cloud telephony with international virtual numbers.",
-    "longDescription": "KrispCall, c'est téléphonie cloud avec numéros virtuels internationaux. À partir de 12.99€/mois. Pensé pour les managers et DSI et les consultants B2B.\n\nGain de temps estimé : 3h/mois.\n\nDès que vous recevez +10 appels clients par semaine ou avez besoin de numéros internationaux. Alternative gratuite : google-meet.",
-    "longDescriptionEn": "KrispCall is cloud telephony with international virtual numbers. Starting at €12.99/month. Built for managers and IT directors and B2B consultants.\n\nEstimated time saving: 3h/month.\n\nAs soon as you receive more than 10 customer calls per week or need international numbers. Free alternative: google-meet.",
+    "shortDescriptionEn": "Cloud telephony, virtual numbers and lightweight call center features.",
+    "longDescription": "KrispCall est une alternative de téléphonie cloud plus accessible pour gérer numéros virtuels, appels, SMS et workflows d’équipe. ToolTrim le positionne comme option pragmatique si Aircall est trop lourd, mais le besoin doit rester réel : sans volume d’appels, le coût reste une friction de plus.",
+    "longDescriptionEn": "KrispCall is a pragmatic cloud telephony option with virtual numbers, calls, SMS and lightweight team workflows.",
     "pricingEn": {
-      "free": "14-day free trial",
-      "paid": "From $15/month (Essential) - $45/month (Enterprise)"
+      "free": "No durable free plan identified.",
+      "paid": "Public plans start around $12/user/month depending on billing."
     },
     "pricing_v5": {
-      "cautions": [
-        "confirm_if_paid_plan_is_really_used"
-      ],
-      "verified_on": "2026-03-13",
-      "source_domain": "try.krispcall.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://try.krispcall.com/t1akmbaetinc",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 12.99
+      "compare_price_monthly_eur": 12,
+      "compare_plan_name": "Essential",
+      "compare_plan_kind": "paid_per_seat",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [],
+      "source_domain": "krispcall.com",
+      "official_source_url": "https://krispcall.com/pricing/",
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
-    "websiteUrl": "https://try.krispcall.com/t1akmbaetinc",
+    "websiteUrl": "https://krispcall.com",
     "logo": "",
     "verdictEn": {
       "threshold": "As soon as you receive more than 10 customer calls per week or need international numbers."
     },
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "pros": [
+      "Prix d’entrée plus accessible que certaines solutions call center.",
+      "Utile pour numéros virtuels internationaux.",
+      "Bon compromis pour petites équipes."
+    ],
+    "prosEn": [],
+    "cons": [
+      "Peu utile si l’appel n’est pas central.",
+      "Peut doublonner avec Aircall ou un CRM téléphonique.",
+      "Qualité et coûts dépendent du pays et du volume."
+    ],
+    "consEn": [],
+    "useCases": [
+      "Obtenir un numéro professionnel",
+      "Gérer appels et SMS clients",
+      "Centraliser une petite activité support"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "MARC",
+      "CLAIRE"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
     "prescription_quality": "question",
@@ -25434,14 +25993,14 @@
       "phone_numbers_needed",
       "meeting_volume"
     ],
-    "substitution_cluster_v2": "communication-ops",
+    "substitution_cluster_v2": "business-phone",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -26287,63 +26846,76 @@
   {
     "id": "leadpages",
     "name": "Leadpages",
-    "shortDescription": "Logiciel marketing pour créer des landing pages et convertir.",
+    "shortDescription": "Création de landing pages, pop-ups et formulaires orientés conversion.",
     "description": "Leadpages, c'est logiciel marketing pour créer des landing pages et convertir. À partir de 20€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en landing page builder, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "category": "email-productivity",
+    "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Essai gratuit selon période commerciale.",
+      "paid": "Plans publics à partir d’environ 37 $/mois en facturation annuelle, plus en mensuel."
     },
     "website": "https://leadpages.com",
-    "affiliateLink": "https://leadpages.com",
+    "affiliateLink": "https://try.leadpages.com/dzadrshoyk4d",
     "pros": [
-      "Spécialisé en landing page builder",
-      "Interface professionnelle"
+      "Rapide pour tester une offre.",
+      "Bon focus conversion formulaire / lead magnet.",
+      "Moins lourd qu’un projet site complet."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Peut faire doublon avec un CMS déjà solide.",
+      "Moins flexible qu’un vrai système web.",
+      "Coût difficile à justifier sans trafic ou campagne."
     ],
     "bestFor": [
       "all"
     ],
     "covers": [
-      "landing page builder"
+      "landing-page-builder",
+      "lead-capture",
+      "conversion-testing"
     ],
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 20,
+    "defaultMonthlyPrice": 37,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
     },
     "relevantFor": [
-      "all"
+      "consultant-b2b",
+      "createur-contenu",
+      "fondateur-saas"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu testes souvent des offres ou pages de campagne.",
+        "Tu veux capter des leads sans mobiliser un développeur."
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Ton site actuel permet déjà de publier vite.",
+        "Tu n’as pas encore de trafic qualifié."
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 20€/mois"
+      "threshold": "Rentable si la page sert une campagne mesurée, pas une simple envie de landing page."
     },
-    "alternatives": [],
+    "alternatives": [
+      "webflow",
+      "framer",
+      "wordpress-com"
+    ],
     "seo": {
-      "metaDescription": "Leadpages : Logiciel marketing pour créer des landing pages et convertir. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Leadpages sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Leadpages mérite sa place dans ta stack."
     },
     "articles": [],
     "tool_type": "satellite",
     "substitutable": true,
     "verticals": [
-      "ecommercant",
-      "fondateur-saas"
+      "consultant-b2b",
+      "createur-contenu"
     ],
     "functional_needs": [
-      "landing page builder"
+      "landing-page-builder",
+      "lead-capture",
+      "conversion-testing"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -26351,27 +26923,29 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "leadpages",
-    "shortDescriptionEn": "Marketing software for creating landing pages and converting.",
-    "longDescription": "Leadpages, c'est logiciel marketing pour créer des landing pages et convertir. À partir de 20€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en landing page builder, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "longDescriptionEn": "Leadpages is marketing software for creating landing pages and converting. Starting at €20/month. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in landing page builder, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be checked based on usage. As soon as the tool saves you more than €20/month.",
+    "shortDescriptionEn": "Landing pages, pop-ups and forms built for conversion.",
+    "longDescription": "Leadpages est un constructeur de pages d’atterrissage pensé pour la conversion plus que pour le design complet d’un site. ToolTrim le classe comme utile quand tu testes des offres, pages ads ou magnets. Si ton site est déjà bien tenu sur Webflow, Framer ou WordPress, il faut éviter la surcouche inutile.",
+    "longDescriptionEn": "Leadpages is a conversion-focused landing page builder. ToolTrim recommends it for offer tests and acquisition pages, not as another layer on top of an already solid website.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
+      "free": "Free trial depending on current offer.",
+      "paid": "Public plans start around $37/month billed annually, higher monthly."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "leadpages.com",
+      "compare_price_monthly_eur": 37,
+      "compare_plan_name": "Standard",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "high",
-      "location_sensitive": false,
+      "cautions": [
+        "Comparer avec ton CMS actuel : le doublon avec Webflow, Framer ou WordPress est fréquent."
+      ],
+      "source_domain": "leadpages.com",
       "official_source_url": "https://www.leadpages.com/pricing",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 20
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
-    "websiteUrl": "https://leadpages.com",
+    "websiteUrl": "https://www.leadpages.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -26391,9 +26965,16 @@
     "consEn": [
       "Pricing to be checked based on usage"
     ],
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "useCases": [
+      "Créer une page de capture",
+      "Tester une offre avant refonte site",
+      "Lancer une campagne ads"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "MARC",
+      "ALIX"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
     "prescription_quality": "question",
@@ -26406,14 +26987,14 @@
       "deliverability_requirement",
       "multichannel_requirement"
     ],
-    "substitution_cluster_v2": "email-outreach",
+    "substitution_cluster_v2": "landing-page-builder",
     "decision_policy_v3": {
-      "auto_cancel_allowed": true,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -26847,63 +27428,87 @@
     "slug": "lemlist",
     "name": "Lemlist",
     "category": "email-productivity",
-    "shortDescription": "Outreach email personnalisé avec séquences automatisées.",
-    "shortDescriptionEn": "Personalised email outreach with automated sequences.",
+    "shortDescription": "Séquences d’email outbound et prospection multicanale personnalisée.",
+    "shortDescriptionEn": "Outbound email sequences and personalized multichannel prospecting.",
     "description": "Lemlist, c'est outreach email personnalisé avec séquences automatisées. À partir de 39€/mois.\n\nPersonnalisation avancée des emails. séquences multi-canal (email + LinkedIn), détection de warmup intégrée. Analytics détaillés par campagne. Concrètement : envoyer des séquences de prospection personnalisées. Ou encore : combiner outreach email et LinkedIn.\n\nÀ garder si : prospection outbound active ou volume 100+ emails/mois. À éviter si : pas de prospection email ou volume < 50 emails/mois. Limite principale : prix significatif pour les solopreneurs. Rentable dès 100+ emails de prospection par mois avec un taux de conversion de 2%+.",
-    "longDescription": "Lemlist, c'est outreach email personnalisé avec séquences automatisées. À partir de 39€/mois.\n\nPersonnalisation avancée des emails. séquences multi-canal (email + LinkedIn), détection de warmup intégrée. Analytics détaillés par campagne. Concrètement : envoyer des séquences de prospection personnalisées. Ou encore : combiner outreach email et LinkedIn.\n\nÀ garder si : prospection outbound active ou volume 100+ emails/mois. À éviter si : pas de prospection email ou volume < 50 emails/mois. Limite principale : prix significatif pour les solopreneurs. Rentable dès 100+ emails de prospection par mois avec un taux de conversion de 2%+.",
-    "longDescriptionEn": "Lemlist is personalised email outreach with automated sequences. Starting at €39/month.",
+    "longDescription": "Lemlist aide à envoyer des séquences de prospection personnalisées et à suivre les réponses. ToolTrim le voit comme un outil de vente, pas d’email marketing généraliste. Il devient utile quand l’offre, la cible et le rythme de prospection sont déjà clairs.",
+    "longDescriptionEn": "Lemlist is for personalized outbound sequences, not general newsletter marketing. It is valuable when positioning and prospecting rhythm are clear.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 39$/mois"
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plans publics à partir d’environ 39 $/mois selon fonctionnalités."
     },
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "No durable free plan identified.",
+      "paid": "Public plans start around $39/month depending on features."
+    },
     "defaultMonthlyPrice": 39,
-    "pricing_v5": null,
-    "affiliateLink": "",
-    "websiteUrl": "",
+    "pricing_v5": {
+      "compare_price_monthly_eur": 39,
+      "compare_plan_name": "Email Starter",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [],
+      "source_domain": "lemlist.com",
+      "official_source_url": "https://www.lemlist.com/pricing",
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
+    },
+    "affiliateLink": "https://get.lemlist.com/iqofb24egwan",
+    "websiteUrl": "https://www.lemlist.com",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Lemlist sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Lemlist mérite sa place dans ta stack."
+    },
     "articles": [],
-    "covers": [],
+    "covers": [
+      "outbound-email",
+      "sales-sequences",
+      "prospecting-followup"
+    ],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
+    "soloRelevance": "à vérifier selon volume",
+    "teamRelevance": "utile si usage récurrent",
+    "relevantFor": [
+      "consultant-b2b",
+      "fondateur-saas"
+    ],
+    "alternatives": [
+      "apollo-io",
+      "la-growth-machine",
+      "activecampaign"
+    ],
     "verdict": {
       "keepIf": [
-        "Prospection outbound active",
-        "Volume 100+ emails/mois",
-        "Besoin de séquences multi-canal"
+        "Tu fais de la prospection B2B chaque semaine.",
+        "Tu as besoin de séquences personnalisées."
       ],
       "avoidIf": [
-        "Pas de prospection email",
-        "Volume < 50 emails/mois",
-        "Inbound uniquement"
+        "Tu veux envoyer une newsletter.",
+        "Tu n’as pas encore validé ton message commercial."
       ],
-      "threshold": "Rentable dès 100+ emails de prospection par mois avec un taux de conversion de 2%+."
+      "threshold": "Rentable si chaque campagne est reliée à un pipeline mesuré."
     },
     "verdictEn": null,
     "pros": [
-      "Personnalisation avancée des emails",
-      "Séquences multi-canal (email + LinkedIn)",
-      "Détection de warmup intégrée",
-      "Analytics détaillés par campagne"
+      "Bon pour structurer une prospection régulière.",
+      "Personnalisation plus avancée qu’un outil emailing classique.",
+      "Adapté aux consultants et commerciaux B2B."
     ],
-    "prosEn": null,
+    "prosEn": [],
     "cons": [
-      "Prix significatif pour les solopreneurs",
-      "Nécessite un volume minimum pour être rentable",
-      "Configuration initiale demandant du temps",
-      "Délivrabilité à surveiller"
+      "Peut nuire à la délivrabilité si mal utilisé.",
+      "Ne remplace pas une offre claire.",
+      "Doublonne vite avec Apollo ou un CRM si mal cadré."
     ],
-    "consEn": null,
+    "consEn": [],
     "useCases": [
-      "Envoyer des séquences de prospection personnalisées",
-      "Combiner outreach email et LinkedIn",
-      "A/B tester des approches commerciales"
+      "Créer des séquences outbound",
+      "Relancer des prospects B2B",
+      "Suivre réponses et rendez-vous"
     ],
-    "useCasesEn": null,
+    "useCasesEn": [],
     "personas": [
       "MARC"
     ],
@@ -26911,19 +27516,33 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
-    "functional_needs": [],
+    "verticals": [
+      "consultant-b2b"
+    ],
+    "functional_needs": [
+      "outbound-email",
+      "sales-sequences",
+      "prospecting-followup"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
-    "decision_policy_v3": null,
-    "force_silence": false
+    "substitution_cluster_v2": "outbound-email",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
+    },
+    "force_silence": false,
+    "timeGainedHoursPerMonth": null
   },
   {
     "id": "lemonsqueezy",
@@ -47849,65 +48468,77 @@
   {
     "id": "socialbee",
     "name": "SocialBee",
-    "shortDescription": "Plateforme de gestion des réseaux sociaux et services de marketing digital.",
+    "shortDescription": "Planification, recyclage et organisation de contenus social media.",
     "description": "SocialBee, c'est plateforme de gestion des réseaux sociaux et services de marketing digital. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Essai gratuit selon offre.",
+      "paid": "Plans publics à partir d’environ 29 $/mois."
     },
     "website": "https://socialbee.io",
-    "affiliateLink": "https://socialbee.io",
+    "affiliateLink": "https://get.socialbee.io/ezo1u6nhi8ow",
     "pros": [
-      "Spécialisé en social media management",
-      "Interface professionnelle"
+      "Bon système de catégories de contenu.",
+      "Aide à maintenir un rythme éditorial.",
+      "Utile pour recycler sans repartir de zéro."
     ],
     "cons": [
-      "Prix à vérifier selon usage"
+      "Pas prioritaire sans stratégie éditoriale.",
+      "Peut doublonner avec Buffer ou Metricool.",
+      "Le ROI dépend de la régularité de publication."
     ],
     "bestFor": [
       "creator",
       "writer"
     ],
     "covers": [
-      "social media management"
+      "social-media-management",
+      "content-scheduling",
+      "content-recycling"
     ],
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 29,
     "pricingTiers": {
       "free": "Fonctionnalités de base",
       "paid": "Toutes les fonctionnalités"
     },
     "relevantFor": [
-      "creator",
-      "writer"
+      "community-manager",
+      "createur-contenu",
+      "consultant-b2b"
     ],
     "verdict": {
       "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
+        "Tu publies chaque semaine sur plusieurs réseaux.",
+        "Tu veux recycler du contenu sans perdre le fil."
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
+        "Tu publies rarement.",
+        "Tu n’as pas encore de ligne éditoriale claire."
       ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
+      "threshold": "Rentable si le calendrier social sert une audience ou un pipeline mesurable."
     },
-    "alternatives": [],
+    "alternatives": [
+      "buffer",
+      "metricool",
+      "publer"
+    ],
     "seo": {
-      "metaDescription": "SocialBee : Plateforme de gestion des réseaux sociaux et services de marketing digital. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "SocialBee sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si SocialBee mérite sa place dans ta stack."
     },
     "articles": [],
     "tool_type": "satellite",
     "substitutable": true,
     "verticals": [
-      "ecommercant",
-      "fondateur-saas"
+      "community-manager",
+      "createur-contenu"
     ],
     "functional_needs": [
-      "social media management"
+      "social-media-management",
+      "content-scheduling",
+      "content-recycling"
     ],
     "betterAlternative": null,
     "migrationGuide": null,
@@ -47915,27 +48546,29 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "socialbee",
-    "shortDescriptionEn": "Social media management platform and digital marketing services.",
-    "longDescription": "SocialBee, c'est plateforme de gestion des réseaux sociaux et services de marketing digital. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "SocialBee is social media management platform and digital marketing services. Starting at €15/month. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in social media management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to check based on usage. As soon as the tool saves you more than €15/month.",
+    "shortDescriptionEn": "Social media scheduling, content categories and evergreen recycling.",
+    "longDescription": "SocialBee aide à organiser des publications sociales par catégories, recycler des contenus et garder un rythme de diffusion. ToolTrim le trouve pertinent pour créateurs et indépendants réguliers, moins pour une présence sociale occasionnelle.",
+    "longDescriptionEn": "SocialBee helps schedule, categorize and recycle social media content. ToolTrim likes it for consistent creators, not occasional posting.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Free trial depending on current offer.",
+      "paid": "Public plans start around $29/month."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "socialbee.com",
+      "compare_price_monthly_eur": 29,
+      "compare_plan_name": "Bootstrap",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "high",
-      "location_sensitive": false,
+      "cautions": [
+        "Comparer avec Buffer, Publer ou Metricool selon réseaux nécessaires."
+      ],
+      "source_domain": "socialbee.com",
       "official_source_url": "https://socialbee.com/pricing/",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
     },
-    "websiteUrl": "https://socialbee.io",
+    "websiteUrl": "https://socialbee.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -47955,9 +48588,16 @@
     "consEn": [
       "Pricing to check based on usage"
     ],
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
+    "useCases": [
+      "Planifier des posts LinkedIn ou réseaux sociaux",
+      "Recycler des contenus evergreen",
+      "Organiser un calendrier éditorial"
+    ],
+    "useCasesEn": [],
+    "personas": [
+      "ALIX",
+      "MARC"
+    ],
     "timeGainedHoursPerMonth": 3,
     "downgradePlan": null,
     "prescription_quality": "question",
@@ -47970,14 +48610,14 @@
       "deliverability_requirement",
       "multichannel_requirement"
     ],
-    "substitution_cluster_v2": "email-outreach",
+    "substitution_cluster_v2": "social-media-scheduler",
     "decision_policy_v3": {
-      "auto_cancel_allowed": true,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
@@ -50744,6 +51384,128 @@
     "force_silence": false
   },
   {
+    "id": "thordata",
+    "slug": "thordata",
+    "name": "ThorData",
+    "category": "vendor-risk-data",
+    "shortDescription": "Proxy, données web et infrastructure de collecte pour cas d’usage data avancés.",
+    "shortDescriptionEn": "Proxy, web data and collection infrastructure for advanced data workflows.",
+    "longDescription": "ThorData est un outil de proxy et collecte de données web. ToolTrim le garde volontairement dans une prescription prudente : utile pour des cas data, scraping ou veille structurée, mais très risqué à recommander sans contexte légal, technique et conformité.",
+    "longDescriptionEn": "ThorData provides proxy and web data infrastructure. ToolTrim treats it carefully because legal, compliance and technical context matters.",
+    "pricing": {
+      "free": "Pas de prix mensuel universel fiable : souvent usage, volume ou devis.",
+      "paid": "Tarifs selon type de proxy, volume de trafic et cas d’usage."
+    },
+    "pricingEn": {
+      "free": "No universal monthly price: usage, volume or quote-based.",
+      "paid": "Pricing depends on proxy type, traffic volume and use case."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Usage / volume",
+      "compare_plan_kind": "usage_based",
+      "price_reliability": "usage_based",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "Vérifier conformité, conditions d’usage et légalité des données collectées avant usage."
+      ],
+      "source_domain": "thordata.com",
+      "official_source_url": "https://www.thordata.com/pricing",
+      "verified_on": "2026-05-03",
+      "verification_status": "usage_based_public_or_quote"
+    },
+    "affiliateLink": "https://affiliate.thordata.com/ylwo4jsttq39",
+    "websiteUrl": "https://www.thordata.com",
+    "logo": "",
+    "seo": {
+      "metaDescription": "ThorData sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si ThorData mérite sa place dans ta stack."
+    },
+    "pros": [
+      "Adapté aux besoins data avancés.",
+      "Peut soutenir veille, collecte ou monitoring à grande échelle.",
+      "Infrastructure plus spécialisée qu’un scraper no-code."
+    ],
+    "prosEn": [],
+    "cons": [
+      "Risque légal/compliance si mal utilisé.",
+      "Pas nécessaire pour la plupart des freelances.",
+      "Coût très dépendant du volume."
+    ],
+    "consEn": [],
+    "useCases": [
+      "Collecte de données web",
+      "Veille tarifaire ou concurrentielle encadrée",
+      "Infrastructure proxy pour workflow data"
+    ],
+    "useCasesEn": [],
+    "covers": [
+      "web-data",
+      "proxy-infrastructure",
+      "data-collection"
+    ],
+    "relevantFor": [
+      "data-analyst",
+      "fondateur-saas",
+      "cto-lead-tech"
+    ],
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "phantombuster",
+      "apify"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu as un cas data encadré, légal et récurrent.",
+        "Tu sais piloter volume, conformité et qualité des données."
+      ],
+      "avoidIf": [
+        "Tu cherches juste à automatiser LinkedIn ou quelques exports.",
+        "Tu n’as pas validé le cadre légal de collecte."
+      ],
+      "threshold": "À garder comme outil expert, pas comme recommandation généraliste."
+    },
+    "verdictEn": null,
+    "articles": [],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "soloRelevance": "à vérifier selon volume",
+    "teamRelevance": "utile si usage récurrent",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "data-analyst"
+    ],
+    "functional_needs": [
+      "web-data",
+      "proxy-infrastructure",
+      "data-collection"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "silence",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "web-data-proxy",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
+    },
+    "force_silence": true
+  },
+  {
     "id": "tidio",
     "name": "Tidio",
     "shortDescription": "Solution de chat en direct et chatbot pour entreprises.",
@@ -51869,6 +52631,131 @@
       "auto_downgrade_allowed": true,
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
+    },
+    "force_silence": false
+  },
+  {
+    "id": "trainual",
+    "slug": "trainual",
+    "name": "Trainual",
+    "category": "formation-education",
+    "shortDescription": "Documentation des process, onboarding et formation interne pour petites équipes.",
+    "shortDescriptionEn": "Process documentation, onboarding and internal training for small teams.",
+    "longDescription": "Trainual sert à transformer les process d’une entreprise en modules d’onboarding et de formation. Pour ToolTrim, c’est intéressant quand une équipe répète les mêmes explications et veut rendre son fonctionnement transférable. Pour un solo, Notion ou Google Docs suffisent souvent.",
+    "longDescriptionEn": "Trainual turns company processes into onboarding and training modules. ToolTrim recommends it when repeated internal training becomes costly.",
+    "pricing": {
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plans publics orientés équipe, avec entrée généralement autour de plusieurs centaines de dollars par mois."
+    },
+    "pricingEn": {
+      "free": "No durable free plan identified.",
+      "paid": "Team-oriented public plans, usually starting in the low hundreds per month."
+    },
+    "defaultMonthlyPrice": 249,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 249,
+      "compare_plan_name": "Small Business / entry team plan",
+      "compare_plan_kind": "paid",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "cautions": [
+        "À comparer au coût réel de l’onboarding répété et au nombre de personnes formées."
+      ],
+      "source_domain": "trainual.com",
+      "official_source_url": "https://trainual.com/pricing",
+      "verified_on": "2026-05-03",
+      "verification_status": "verified_public_pricing_page"
+    },
+    "affiliateLink": "https://start.trainual.com/u4yyiem611lu-rul9tm",
+    "websiteUrl": "https://trainual.com",
+    "logo": "",
+    "seo": {
+      "metaDescription": "Trainual sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Trainual mérite sa place dans ta stack."
+    },
+    "pros": [
+      "Très utile pour standardiser l’onboarding.",
+      "Donne une structure plus claire que de simples docs.",
+      "Bon levier quand les process se répètent."
+    ],
+    "prosEn": [],
+    "cons": [
+      "Trop cher pour un solo ou petite activité peu structurée.",
+      "Nécessite d’écrire les process avant de profiter de l’outil.",
+      "Peut doublonner avec Notion si l’équipe est petite."
+    ],
+    "consEn": [],
+    "useCases": [
+      "Créer un onboarding collaborateur",
+      "Documenter des SOP",
+      "Former une équipe support ou ops"
+    ],
+    "useCasesEn": [],
+    "covers": [
+      "sop-documentation",
+      "employee-onboarding",
+      "internal-training"
+    ],
+    "relevantFor": [
+      "manager-dsi",
+      "fondateur-saas",
+      "coach-formateur"
+    ],
+    "personas": [
+      "CLAIRE",
+      "MARC"
+    ],
+    "alternatives": [
+      "notion",
+      "loom",
+      "slite"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu onboardes régulièrement des collaborateurs.",
+        "Les mêmes explications reviennent chaque semaine."
+      ],
+      "avoidIf": [
+        "Tu travailles seul.",
+        "Tes process ne sont pas encore stabilisés."
+      ],
+      "threshold": "Rentable si l’onboarding répété coûte plus cher que la plateforme."
+    },
+    "verdictEn": null,
+    "articles": [],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "soloRelevance": "à vérifier selon volume",
+    "teamRelevance": "utile si usage récurrent",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "manager-dsi",
+      "coach-formateur"
+    ],
+    "functional_needs": [
+      "sop-documentation",
+      "employee-onboarding",
+      "internal-training"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "ops-training",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Outil monétisé et contextuel : ToolTrim doit vérifier le volume, le rôle dans la stack et le risque de doublon avant recommandation.",
+      "default_decision_lane": "question"
     },
     "force_silence": false
   },
