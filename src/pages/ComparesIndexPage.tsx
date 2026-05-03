@@ -124,7 +124,7 @@ const ComparesIndexPage = () => {
 
       <main className="px-4 md:px-8 pb-20 max-w-6xl mx-auto space-y-16">
         {/* Custom Comparator */}
-        <section className="bg-card rounded-2xl shadow-sm border border-border/15 p-6 md:p-8">
+        <section className="surface-card p-6 md:p-8">
           <div className="flex items-center gap-2 mb-6">
             <Sparkles className="h-5 w-5 text-primary" />
             <h2 className="text-lg font-bold text-foreground">
@@ -139,7 +139,7 @@ const ComparesIndexPage = () => {
                 {t("Outil 1", "Tool 1")}
               </label>
               {selectedA ? (
-                <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-secondary border border-border/15">
+                <div className="flex items-center gap-2 rounded-lg border border-border bg-secondary px-4 py-3">
                   <ToolLogo tool={selectedA} size={24} />
                   <span className="font-medium text-sm">{selectedA.name}</span>
                   <button onClick={() => { setSelectedA(null); setSearchA(""); }} className="ml-auto text-muted-foreground hover:text-foreground">
@@ -157,11 +157,11 @@ const ComparesIndexPage = () => {
                       onFocus={() => setFocusedInput("a")}
                       onBlur={() => setTimeout(() => setFocusedInput(null), 200)}
                       placeholder={t("Rechercher un outil…", "Search a tool…")}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      className="w-full rounded-lg border border-border bg-background py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                     />
                   </div>
                   {focusedInput === "a" && filteredToolsA.length > 0 && (
-                    <div className="absolute z-20 top-full mt-1 w-full bg-card border border-border/60 rounded-xl shadow-lg overflow-hidden">
+                    <div className="surface-card absolute top-full z-20 mt-1 w-full overflow-hidden shadow-lg">
                       {filteredToolsA.map(tool => (
                         <button
                           key={tool.id}
@@ -190,7 +190,7 @@ const ComparesIndexPage = () => {
                 {t("Outil 2", "Tool 2")}
               </label>
               {selectedB ? (
-                <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-secondary border border-border/15">
+                <div className="flex items-center gap-2 rounded-lg border border-border bg-secondary px-4 py-3">
                   <ToolLogo tool={selectedB} size={24} />
                   <span className="font-medium text-sm">{selectedB.name}</span>
                   <button onClick={() => { setSelectedB(null); setSearchB(""); }} className="ml-auto text-muted-foreground hover:text-foreground">
@@ -208,11 +208,11 @@ const ComparesIndexPage = () => {
                       onFocus={() => setFocusedInput("b")}
                       onBlur={() => setTimeout(() => setFocusedInput(null), 200)}
                       placeholder={t("Rechercher un outil…", "Search a tool…")}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      className="w-full rounded-lg border border-border bg-background py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                     />
                   </div>
                   {focusedInput === "b" && filteredToolsB.length > 0 && (
-                    <div className="absolute z-20 top-full mt-1 w-full bg-card border border-border/60 rounded-xl shadow-lg overflow-hidden">
+                    <div className="surface-card absolute top-full z-20 mt-1 w-full overflow-hidden shadow-lg">
                       {filteredToolsB.map(tool => (
                         <button
                           key={tool.id}
@@ -257,7 +257,7 @@ const ComparesIndexPage = () => {
                 <Link
                   key={c.slugPair}
                   to={`${prefix}/comparatif/${c.slugPair}`}
-                  className="group bg-card rounded-2xl p-5 shadow-sm border border-border/15 hover:shadow-md hover:border-primary/20 transition-all"
+                  className="surface-card-hover group p-5"
                 >
                   {/* Logos side by side */}
                   <div className="flex items-center justify-center gap-3 mb-4">

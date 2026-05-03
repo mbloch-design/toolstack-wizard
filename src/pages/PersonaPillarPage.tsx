@@ -2,10 +2,11 @@ import { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Breadcrumb from "@/components/Breadcrumb";
+import FaqBlock from "@/components/FaqBlock";
 import ToolLogo from "@/components/ToolLogo";
 import { useTools } from "@/hooks/useSupabaseData";
 import { setSeoTags, SEO_BASE } from "@/lib/seo";
-import { ArrowRight, Sparkles, AlertTriangle } from "lucide-react";
+import { ArrowRight, Sparkles, AlertTriangle, HelpCircle, Layers, ShieldCheck } from "lucide-react";
 
 type Persona = "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE";
 type Lang = "fr" | "en";
@@ -367,23 +368,20 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
 
       {/* FAQ (visible + structured) */}
       <section className="container mx-auto max-w-4xl px-6 py-10">
-        <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">
-          {t("Questions fréquentes", "Frequently asked questions")}
-        </h2>
-        <div className="mt-6 space-y-3">
-          {m.faqs.map((faq, i) => (
-            <details
-              key={i}
-              className="group rounded-xl border border-border bg-card p-5 open:bg-accent/20"
-              open={i < 2}
-            >
-              <summary className="cursor-pointer list-none font-semibold tracking-tight">
-                {faq.question}
-              </summary>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
-            </details>
-          ))}
-        </div>
+        <FaqBlock
+          eyebrow={t("Questions fréquentes", "Frequently asked questions")}
+          title={t("Questions fréquentes", "Frequently asked questions")}
+          description={t(
+            "On garde une lecture concrète : profil, stack, limites et prochaines décisions utiles.",
+            "We keep it practical: profile, stack, limits, and useful next decisions."
+          )}
+          items={m.faqs.map((faq, index) => ({
+            question: faq.question,
+            answer: faq.answer,
+            icon: [HelpCircle, Layers, ShieldCheck, Sparkles][index] || HelpCircle,
+          }))}
+          openCount={2}
+        />
       </section>
 
       {/* CTA */}

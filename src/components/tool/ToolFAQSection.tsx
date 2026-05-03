@@ -1,4 +1,6 @@
+import FaqBlock from "@/components/FaqBlock";
 import type { Tool } from "@/data/types";
+import { DollarSign, GitCompare, Lightbulb, ShieldCheck, Users } from "lucide-react";
 
 interface Props {
   tool: Tool;
@@ -74,28 +76,24 @@ export default function ToolFAQSection({ tool, displayPrice, verifiedOn, alterna
 
   return (
     <section>
-      <h2 className="text-xl font-bold tracking-tighter">
-        {t(`Questions fréquentes sur ${tool.name}`, `Frequently asked questions about ${tool.name}`)}
-      </h2>
-      <div className="mt-6 space-y-3">
-        {faqs.map((faq, i) => (
-          <details key={i} className="group rounded-xl border border-border bg-card p-5" open={i < 2}>
-            <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-              {faq.q}
-              <ChevronIcon />
-            </summary>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
-          </details>
-        ))}
-      </div>
+      <FaqBlock
+        eyebrow={t("FAQ outil", "Tool FAQ")}
+        title={t(`Questions fréquentes sur ${tool.name}`, `Frequently asked questions about ${tool.name}`)}
+        description={t(
+          "Prix, usage, alternatives et contexte : les réponses utiles avant d'ajouter un outil de plus à ta stack.",
+          "Pricing, usage, alternatives, and context: useful answers before adding one more tool to your stack."
+        )}
+        stats={[
+          { value: displayPrice === 0 ? "0€" : `${displayPrice}€`, label: t("prix repère", "baseline price") },
+          { value: verifiedOn, label: t("prix vérifié", "price verified") },
+        ]}
+        items={faqs.map((faq, index) => ({
+          question: faq.q,
+          answer: faq.a,
+          icon: [Lightbulb, DollarSign, Users, ShieldCheck, GitCompare][index] || ShieldCheck,
+        }))}
+        openCount={2}
+      />
     </section>
-  );
-}
-
-function ChevronIcon() {
-  return (
-    <svg className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
   );
 }

@@ -63,7 +63,7 @@ const CategoriesIndexPage = () => {
 
             return (
               <Link key={cat.id} to={`${prefix}/category/${cat.slug}`}
-                className="group rounded-xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
+                className="surface-card-hover group p-6">
                 <div className="flex items-start gap-4">
                   <div className="inline-flex rounded-xl bg-primary/10 p-3 text-primary">
                     <Icon className="h-6 w-6" />

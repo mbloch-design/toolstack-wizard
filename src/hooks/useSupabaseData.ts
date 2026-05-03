@@ -95,6 +95,13 @@ function mapSupabaseCat(c: any): Category {
   return { id: c.id, slug: c.slug, name: c.name, description: c.description || "" };
 }
 
+function mergeById<T extends { id: string }>(localItems: T[], remoteItems: T[]): T[] {
+  const merged = new Map<string, T>();
+  localItems.forEach((item) => merged.set(item.id, item));
+  remoteItems.forEach((item) => merged.set(item.id, item));
+  return Array.from(merged.values());
+}
+
 export interface Post {
   id: number; slug: string; lang: string; title: string; excerpt: string;
   date: string; category: string; toolId: string | null; content: string;
@@ -125,7 +132,7 @@ export function useCategories() {
   useEffect(() => {
     (async () => {
       const { data, error } = await supabase.from("categories").select("*");
-      if (!error && data && data.length > 0) setCategories(data.map(mapSupabaseCat));
+      if (!error && data && data.length > 0) setCategories(mergeById(staticCategories, data.map(mapSupabaseCat)));
       setLoading(false);
     })();
   }, []);
@@ -148,7 +155,7 @@ export function useTools() {
 
       const { data, error } = await supabase.from("tools").select("*").limit(500);
       if (cancelled) return;
-      if (!error && data && data.length > 0) setTools(data.map(mapToolFromJson));
+      if (!error && data && data.length > 0) setTools(mergeById(localTools, data.map(mapToolFromJson)));
       setLoading(false);
     })();
 
@@ -172,7 +179,7 @@ export function useToolSummaries() {
         .limit(500);
 
       if (!error && data && data.length > 0) {
-        setTools(data.map((t: any) => ({
+        const remoteTools = data.map((t: any) => ({
           id: t.id,
           slug: t.slug || t.id,
           name: t.name,
@@ -184,7 +191,8 @@ export function useToolSummaries() {
           affiliateLink: t.affiliate_link || "",
           websiteUrl: t.website_url || t.affiliate_link || "",
           logo: t.logo || "",
-        })));
+        }));
+        setTools(mergeById(staticToolSummaries, remoteTools));
       }
       setLoading(false);
     })();

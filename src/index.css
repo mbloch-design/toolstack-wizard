@@ -157,6 +157,32 @@
   }
 }
 
+@layer components {
+  .surface-card {
+    @apply rounded-lg border border-border bg-card;
+    box-shadow: 0 1px 0 hsl(var(--foreground) / 0.03);
+  }
+
+  .surface-card-hover {
+    @apply rounded-lg border border-border bg-card transition-colors duration-150 hover:border-primary/30 hover:bg-primary/5;
+    box-shadow: 0 1px 0 hsl(var(--foreground) / 0.03);
+  }
+
+  .surface-panel {
+    @apply rounded-lg border border-border bg-background;
+  }
+
+  .surface-accent {
+    @apply rounded-lg border;
+    border-color: hsl(var(--primary) / 0.2);
+    background: hsl(var(--primary) / 0.08);
+  }
+
+  .surface-control {
+    @apply rounded-lg border border-border bg-background transition-colors duration-150 hover:border-primary/30 hover:bg-primary/5;
+  }
+}
+
 @layer utilities {
   /* Label section — DM Mono, signature ToolTrim */
   .label-section {

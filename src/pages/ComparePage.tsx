@@ -2,10 +2,11 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo } from "react";
-import { Check, X, ArrowRight, CheckCircle, XCircle, Trophy } from "lucide-react";
+import { Check, X, ArrowRight, CheckCircle, XCircle, Trophy, DollarSign, GitCompare, RefreshCw } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 
 import CompareSidebar from "@/components/compare/CompareSidebar";
+import FaqBlock from "@/components/FaqBlock";
 import PageHero from "@/components/PageHero";
 import CompareStrengthBars from "@/components/compare/CompareStrengthBars";
 import CompareVerdictCards from "@/components/compare/CompareVerdictCards";
@@ -47,7 +48,7 @@ function QuickVerdict({ toolA, toolB, lang }: { toolA: Tool; toolB: Tool; lang: 
   const reasonPrefix = lang === "fr" ? "Idéal si : " : "Best if: ";
 
   return (
-    <div className="mt-6 flex items-start gap-4 rounded-2xl border border-primary/20 bg-primary/5 px-5 py-4">
+    <div className="surface-accent mt-6 flex items-start gap-4 px-5 py-4">
       <Trophy className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
       <div className="flex-1 min-w-0">
         <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-primary mb-1">{label}</p>
@@ -178,6 +179,50 @@ const ComparePage = () => {
 
   const year = new Date().getFullYear();
   const features = buildFeatureChecklist(toolA, toolB);
+  const compareFaqItems = [
+    {
+      question: t(
+        `${toolA.name} ou ${toolB.name} — lequel est moins cher ?`,
+        `${toolA.name} or ${toolB.name} — which is cheaper?`
+      ),
+      answer: t(
+        `${toolA.name} coûte ${getPriceNum(toolA) > 0 ? getPrice(toolA) + "/mois" : "Gratuit"} et ${toolB.name} coûte ${getPriceNum(toolB) > 0 ? getPrice(toolB) + "/mois" : "Gratuit"}. Prix vérifiés sur les pages officielles.`,
+        `${toolA.name} costs ${getPriceNum(toolA) > 0 ? getPrice(toolA) + "/month" : "Free"} and ${toolB.name} costs ${getPriceNum(toolB) > 0 ? getPrice(toolB) + "/month" : "Free"}. Prices verified on official pages.`
+      ),
+      icon: DollarSign,
+    },
+    {
+      question: t(
+        `${toolA.name} vs ${toolB.name} : lequel choisir en ${year} ?`,
+        `${toolA.name} vs ${toolB.name}: which to choose in ${year}?`
+      ),
+      answer: t(
+        `Choisissez ${toolA.name} si : ${(toolA.verdict?.keepIf || []).join(", ") || "usage professionnel"}. Choisissez ${toolB.name} si : ${(toolB.verdict?.keepIf || []).join(", ") || "budget serré"}.`,
+        `Choose ${toolA.name} if: ${(toolA.verdict?.keepIf || []).join(", ") || "professional use"}. Choose ${toolB.name} if: ${(toolB.verdict?.keepIf || []).join(", ") || "tight budget"}.`
+      ),
+      icon: GitCompare,
+    },
+    ...((toolA.migrationGuide || toolB.migrationGuide)
+      ? [{
+          question: t(
+            `Peut-on migrer de ${toolA.name} vers ${toolB.name} facilement ?`,
+            `Can I easily migrate from ${toolA.name} to ${toolB.name}?`
+          ),
+          answer: toolA.migrationGuide
+            ? t(
+                `Durée estimée : ${toolA.migrationGuide.timeEstimate}. Étapes : ${toolA.migrationGuide.steps.join(", ")}.`,
+                `Estimated time: ${toolA.migrationGuide.timeEstimate}. Steps: ${toolA.migrationGuide.steps.join(", ")}.`
+              )
+            : toolB.migrationGuide
+            ? t(
+                `Durée estimée : ${toolB.migrationGuide.timeEstimate}. Étapes : ${toolB.migrationGuide.steps.join(", ")}.`,
+                `Estimated time: ${toolB.migrationGuide.timeEstimate}. Steps: ${toolB.migrationGuide.steps.join(", ")}.`
+              )
+            : "—",
+          icon: RefreshCw,
+        }]
+      : []),
+  ];
 
   return (
     <div className="bg-background min-h-screen">
@@ -232,7 +277,7 @@ const ComparePage = () => {
                 <Link
                   key={tool.id}
                   to={`${prefix}/tool/${tool.slug}`}
-                  className={`bg-card p-5 rounded-2xl shadow-sm border-t-4 ${borderColor} hover:shadow-md transition-shadow`}
+                  className={`surface-card-hover border-t-4 p-5 ${borderColor}`}
                 >
                   <ToolLogo tool={tool} size={40} className="mb-3" />
                   <h3 className="text-base font-medium text-foreground" style={{ letterSpacing: "-0.012em" }}>{tool.name}</h3>
@@ -244,7 +289,7 @@ const ComparePage = () => {
             </div>
 
             {/* Pricing section */}
-            <div className="bg-card rounded-2xl shadow-sm overflow-hidden">
+            <div className="surface-card overflow-hidden">
               <div className="p-6 md:p-8 border-b border-secondary">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 items-center">
                   <div>
@@ -301,7 +346,7 @@ const ComparePage = () => {
             {/* Pros/Cons side by side */}
             <div className="grid gap-6 md:grid-cols-2">
               {[toolA, toolB].map((tool) => (
-                <div key={tool.id} className="bg-card rounded-2xl p-5 md:p-6 shadow-sm border border-border/15">
+                <div key={tool.id} className="surface-card p-5 md:p-6">
                   <h3 className="font-bold flex items-center gap-2 mb-4">
                     <ToolLogo tool={tool} size={24} /> {tool.name}
                   </h3>
@@ -337,69 +382,24 @@ const ComparePage = () => {
 
             {/* FAQ */}
             <div className="mt-8 pt-8">
-              <h2 className="text-xl font-bold tracking-tighter mb-6">{t("Questions fréquentes", "FAQ")}</h2>
-              <div className="space-y-3">
-                <details className="group bg-card rounded-2xl p-5 shadow-sm border border-border/15">
-                  <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-                    {t(
-                      `${toolA.name} ou ${toolB.name} — lequel est moins cher ?`,
-                      `${toolA.name} or ${toolB.name} — which is cheaper?`
-                    )}
-                    <ChevronIcon />
-                  </summary>
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    {t(
-                      `${toolA.name} coûte ${getPriceNum(toolA) > 0 ? getPrice(toolA) + "/mois" : "Gratuit"} et ${toolB.name} coûte ${getPriceNum(toolB) > 0 ? getPrice(toolB) + "/mois" : "Gratuit"}. Prix vérifiés sur les pages officielles.`,
-                      `${toolA.name} costs ${getPriceNum(toolA) > 0 ? getPrice(toolA) + "/month" : "Free"} and ${toolB.name} costs ${getPriceNum(toolB) > 0 ? getPrice(toolB) + "/month" : "Free"}. Prices verified on official pages.`
-                    )}
-                  </p>
-                </details>
-
-                <details className="group bg-card rounded-2xl p-5 shadow-sm border border-border/15">
-                  <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-                    {t(
-                      `${toolA.name} vs ${toolB.name} : lequel choisir en ${year} ?`,
-                      `${toolA.name} vs ${toolB.name}: which to choose in ${year}?`
-                    )}
-                    <ChevronIcon />
-                  </summary>
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    {t(
-                      `Choisissez ${toolA.name} si : ${(toolA.verdict?.keepIf || []).join(", ") || "usage professionnel"}. Choisissez ${toolB.name} si : ${(toolB.verdict?.keepIf || []).join(", ") || "budget serré"}.`,
-                      `Choose ${toolA.name} if: ${(toolA.verdict?.keepIf || []).join(", ") || "professional use"}. Choose ${toolB.name} if: ${(toolB.verdict?.keepIf || []).join(", ") || "tight budget"}.`
-                    )}
-                  </p>
-                </details>
-
-                {(toolA.migrationGuide || toolB.migrationGuide) && (
-                  <details className="group bg-card rounded-2xl p-5 shadow-sm border border-border/15">
-                    <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between">
-                      {t(
-                        `Peut-on migrer de ${toolA.name} vers ${toolB.name} facilement ?`,
-                        `Can I easily migrate from ${toolA.name} to ${toolB.name}?`
-                      )}
-                      <ChevronIcon />
-                    </summary>
-                    <p className="mt-3 text-sm text-muted-foreground">
-                      {toolA.migrationGuide
-                        ? t(
-                            `Durée estimée : ${toolA.migrationGuide.timeEstimate}. Étapes : ${toolA.migrationGuide.steps.join(", ")}.`,
-                            `Estimated time: ${toolA.migrationGuide.timeEstimate}. Steps: ${toolA.migrationGuide.steps.join(", ")}.`
-                          )
-                        : toolB.migrationGuide
-                        ? t(
-                            `Durée estimée : ${toolB.migrationGuide.timeEstimate}. Étapes : ${toolB.migrationGuide.steps.join(", ")}.`,
-                            `Estimated time: ${toolB.migrationGuide.timeEstimate}. Steps: ${toolB.migrationGuide.steps.join(", ")}.`
-                          )
-                        : "—"}
-                    </p>
-                  </details>
+              <FaqBlock
+                eyebrow={t("Questions fréquentes", "FAQ")}
+                title={t("Questions fréquentes", "Frequently asked questions")}
+                description={t(
+                  "Prix, usage réel et effort de migration : la FAQ sert à trancher, pas à meubler.",
+                  "Pricing, real usage, and migration effort: this FAQ is here to help decide, not fill space."
                 )}
-              </div>
+                stats={[
+                  { value: getPrice(toolA), label: toolA.name },
+                  { value: getPrice(toolB), label: toolB.name },
+                ]}
+                items={compareFaqItems}
+                openCount={2}
+              />
             </div>
 
             {/* ── Lequel est fait pour toi ? ── */}
-            <div className="mt-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-background to-accent/20 p-6 md:p-8">
+            <div className="surface-accent mt-8 p-6 md:p-8">
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-primary mb-2">
                 {t("Ton profil", "Your profile")}
               </p>
@@ -420,7 +420,7 @@ const ComparePage = () => {
                   const borderColor = idx === 0 ? "border-primary/30" : "border-orange-400/30";
                   const textColor = idx === 0 ? "text-primary" : "text-orange-500";
                   return (
-                    <div key={tool.id} className={`rounded-xl border ${borderColor} bg-card p-4`}>
+                    <div key={tool.id} className={`rounded-lg border ${borderColor} bg-card p-4`}>
                       <div className="flex items-center gap-2 mb-3">
                         <ToolLogo tool={tool} size={20} />
                         <p className={`text-sm font-bold ${textColor}`}>
@@ -477,13 +477,5 @@ const ComparePage = () => {
     </div>
   );
 };
-
-function ChevronIcon() {
-  return (
-    <svg className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-}
 
 export default ComparePage;

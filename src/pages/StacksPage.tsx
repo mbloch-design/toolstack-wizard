@@ -108,7 +108,7 @@ const StacksPage = () => {
                 text: t("La page détail explique quand chaque outil devient vraiment utile.", "The detail page explains when each tool becomes truly useful."),
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-lg border border-border bg-card p-4">
+              <div key={item.title} className="surface-card p-4">
                 <h2 className="text-sm font-semibold text-foreground">{item.title}</h2>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.text}</p>
               </div>
@@ -159,7 +159,7 @@ const StacksPage = () => {
           {filteredStacks.map((stack) => {
             const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
             return (
-              <article key={stack.id} className="rounded-lg border border-border bg-card p-5 shadow-sm">
+              <article key={stack.id} className="surface-card-hover p-5">
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
@@ -169,7 +169,7 @@ const StacksPage = () => {
                       {t(stack.title, stack.titleEn)}
                     </h2>
                   </div>
-                  <div className="rounded-lg border border-border bg-background px-3 py-2 text-right">
+                  <div className="surface-panel px-3 py-2 text-right">
                     <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">{t("Budget", "Budget")}</p>
                     <p className="mt-0.5 whitespace-nowrap text-sm font-bold text-foreground">
                       {stack.monthlyBudget}€/{t("mois", "mo")}
@@ -181,7 +181,7 @@ const StacksPage = () => {
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-[1fr_auto]">
                   <InfoBlock label={t("Utile si", "Useful if")} value={t(stack.bestFor, stack.bestForEn)} />
-                  <div className="rounded-lg border border-primary/20 bg-primary/8 px-3 py-3">
+                  <div className="surface-accent px-3 py-3">
                     <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">{t("Évite", "Avoids")}</p>
                     <p className="mt-1 whitespace-nowrap text-sm font-bold text-foreground">{stack.savings}€/{t("mois", "mo")}</p>
                   </div>
@@ -192,7 +192,7 @@ const StacksPage = () => {
                     <Link
                       key={`${stack.id}-${slot.slug}`}
                       to={`${prefix}/tool/${tool!.slug}`}
-                      className="group inline-flex items-center gap-2 rounded-lg border border-border bg-background px-2.5 py-2 transition-colors hover:border-primary/35 hover:bg-primary/5"
+                      className="surface-control group inline-flex items-center gap-2 px-2.5 py-2"
                     >
                       <ToolLogo tool={tool!} size={24} className="rounded-md" />
                       <span className="text-sm font-medium text-foreground">{tool!.name}</span>
@@ -201,7 +201,7 @@ const StacksPage = () => {
                   ))}
                 </div>
 
-                <div className="mt-5 rounded-lg bg-background px-3 py-3 text-sm leading-6 text-muted-foreground">
+                <div className="surface-panel mt-5 px-3 py-3 text-sm leading-6 text-muted-foreground">
                   <span className="font-semibold text-foreground">{t("N'ouvre pas si : ", "Skip if: ")}</span>
                   {t(stack.avoidIf, stack.avoidIfEn)}
                 </div>
@@ -218,7 +218,7 @@ const StacksPage = () => {
         </div>
 
         {filteredStacks.length === 0 && (
-          <div className="rounded-lg border border-border bg-card p-10 text-center">
+          <div className="surface-card p-10 text-center">
             <p className="font-display text-xl font-bold text-foreground">{t("Aucun stack trouvé.", "No stack found.")}</p>
             <p className="mt-2 text-sm text-muted-foreground">{t("Essaie un autre profil ou enlève la recherche.", "Try another profile or clear the search.")}</p>
           </div>
@@ -267,7 +267,7 @@ function SegmentedFilter({
   lang: "fr" | "en";
 }) {
   return (
-    <div className="flex max-w-full items-center gap-1 overflow-x-auto rounded-lg border border-border bg-card p-1">
+    <div className="surface-card flex max-w-full items-center gap-1 overflow-x-auto p-1">
       <span className="hidden shrink-0 px-2 text-muted-foreground sm:inline-flex">{icon}</span>
       {options.map((option) => (
         <button
@@ -288,7 +288,7 @@ function SegmentedFilter({
 
 function InfoBlock({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg border border-border bg-background px-3 py-3">
+    <div className="surface-panel px-3 py-3">
       <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">{label}</p>
       <p className="mt-1 text-sm leading-5 text-foreground">{value}</p>
     </div>

@@ -129,7 +129,7 @@ function FeaturedCard({
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
-      className="group relative block overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-lg"
+      className="surface-card-hover group relative block overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
       <div className="relative flex flex-col gap-6 md:flex-row">
@@ -209,7 +209,7 @@ function ArticleCard({ post, prefix, tools }: { post: Post; prefix: string; tool
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
-      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+      className="surface-card-hover group flex flex-col overflow-hidden"
     >
       {/* Visual thumbnail */}
       <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} px-4 py-6`}>

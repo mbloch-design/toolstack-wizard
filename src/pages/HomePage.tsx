@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense } from "react";
-import { ArrowRight, BookOpen, Clock } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
@@ -10,6 +10,7 @@ import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
+import FaqBlock from "@/components/FaqBlock";
 
 const HowItWorks = lazy(() => import("@/components/home/HowItWorks"));
 const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSection"));
@@ -159,39 +160,26 @@ const HomePage = () => {
       )}
 
       {/* 9. FAQ */}
-      <section className="border-t border-border py-24">
-        <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-center" style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.02em" }}>
-            {t("Questions ", "Frequently Asked ")}<em className="text-primary not-italic">{t("fréquentes", "Questions")}</em>
-          </h2>
-          <div className="mt-10 space-y-3">
-            {faq.map((item, i) => (
-              <details
-                key={i}
-                className="group rounded-xl border border-border bg-card p-5 transition-colors duration-150 open:border-primary/25"
-                onMouseEnter={(e) => {
-                  if (!(e.currentTarget as HTMLDetailsElement).open)
-                    (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.35)";
-                }}
-                onMouseLeave={(e) => {
-                  if (!(e.currentTarget as HTMLDetailsElement).open)
-                    (e.currentTarget as HTMLElement).style.borderColor = "";
-                }}
-              >
-                <summary className="cursor-pointer font-medium text-sm list-none flex items-center justify-between gap-4 select-none">
-                  <span className="group-open:text-primary transition-colors duration-150">{item.q}</span>
-                  <svg
-                    className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"
-                    style={{ color: "hsl(var(--muted-foreground) / 0.5)" }}
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="mt-4 text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>{item.a}</p>
-              </details>
-            ))}
-          </div>
+      <section id="faq" className="scroll-mt-24 border-t border-border py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <FaqBlock
+            eyebrow={t("Questions fréquentes", "Frequently asked questions")}
+            title={t("Questions fréquentes", "Frequently asked questions")}
+            description={t(
+              "Une FAQ pensée comme une vraie zone de décision : périmètre, fiabilité, prix, durée et indépendance.",
+              "A FAQ designed as a real decision area: scope, reliability, pricing, timing, and independence."
+            )}
+            stats={[
+              { value: `${stats.total}`, label: t("outils vérifiés", "verified tools") },
+              { value: "3 min", label: t("en moyenne", "on average") },
+            ]}
+            items={faq.map((item, index) => ({
+              question: item.q,
+              answer: item.a,
+              icon: [Database, ShieldCheck, Euro, Clock3, Sparkles][index] || Sparkles,
+            }))}
+            openCount={2}
+          />
         </div>
       </section>
 

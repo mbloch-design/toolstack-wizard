@@ -493,8 +493,7 @@ const CategoryPage = () => {
                 return (
                   <div
                     key={tool.id}
-                    className="group rounded-xl border border-border bg-card transition-all duration-200 hover:border-primary/30 hover:shadow-lg overflow-hidden"
-                    style={{ boxShadow: "0 1px 3px hsl(0 0% 0% / 0.06)" }}
+                    className="surface-card-hover group overflow-hidden"
                   >
                     {/* ── Main body ── */}
                     <div className="flex items-start gap-4 p-5">
@@ -783,7 +782,7 @@ const CategoryPage = () => {
                       <Link
                         key={cat.id}
                         to={`${prefix}/category/${cat.slug}`}
-                        className="group rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
+                        className="surface-card-hover group p-4"
                       >
                         <div
                           className="mb-2.5 inline-flex rounded-lg p-2"

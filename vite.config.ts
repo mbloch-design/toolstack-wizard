@@ -105,6 +105,10 @@ function sitemapPlugin(): Plugin {
       try {
         const raw = fs.readFileSync(path.resolve(__dirname, "src/data/content.json"), "utf-8");
         const data = JSON.parse(raw);
+        const toolsRaw = fs.readFileSync(path.resolve(__dirname, "src/data/tools_v4.json"), "utf-8");
+        const categoriesRaw = fs.readFileSync(path.resolve(__dirname, "src/data/categories_index.json"), "utf-8");
+        const tools = JSON.parse(toolsRaw);
+        const categories = JSON.parse(categoriesRaw);
         const urls: string[] = [];
 
         const buildDate = new Date().toISOString().split("T")[0];
@@ -120,7 +124,7 @@ function sitemapPlugin(): Plugin {
           }
         }
 
-        for (const t of data.tools || []) {
+        for (const t of tools || []) {
           const slug = t.slug || t.id;
           for (const lang of LANGS) {
             add(`${BASE}/${lang}/tool/${slug}`, "weekly", "0.8");
@@ -131,7 +135,7 @@ function sitemapPlugin(): Plugin {
           }
         }
 
-        for (const c of data.categories || []) {
+        for (const c of categories || []) {
           for (const lang of LANGS) {
             add(`${BASE}/${lang}/category/${c.slug}`, "weekly", "0.7");
           }
@@ -228,9 +232,10 @@ function staticPrerenderPlugin(): Plugin {
     apply: "build",
     closeBundle() {
       try {
-        const contentRaw = fs.readFileSync(path.resolve(__dirname, "src/data/content.json"), "utf-8");
-        const content = JSON.parse(contentRaw);
-        const tools = content.tools || [];
+        const toolsRaw = fs.readFileSync(path.resolve(__dirname, "src/data/tools_v4.json"), "utf-8");
+        const categoriesRaw = fs.readFileSync(path.resolve(__dirname, "src/data/categories_index.json"), "utf-8");
+        const tools = JSON.parse(toolsRaw);
+        const categories = JSON.parse(categoriesRaw);
 
         const distDir = path.resolve(__dirname, "dist");
         const indexPath = path.resolve(distDir, "index.html");
@@ -711,7 +716,6 @@ function staticPrerenderPlugin(): Plugin {
         }
 
         // --- Prerender category pages ---
-        const categories = content.categories || [];
         for (const cat of categories) {
           const slug = cat.slug;
           const frName = ((cat.name || slug).replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]+/gu, "").replace(/\s+/g, " ").trim()) || cat.name;

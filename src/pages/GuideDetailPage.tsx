@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePostBySlug, usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useEffect, useState, useMemo } from "react";
-import { ArrowRight, Clock, Tag, ChevronUp, Wrench, Link2, Check, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, Tag, ChevronUp, Wrench, Link2, Check } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolMentionedCard } from "@/components/ToolMentionedCard";
 import ToolLogo from "@/components/ToolLogo";
@@ -220,12 +220,6 @@ const GuideDetailPage = () => {
             <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {post.readTime}</span>
             <span>{post.date}</span>
           </div>
-
-          <h1 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tighter md:text-4xl lg:text-[2.75rem]">
-            {post.title}
-          </h1>
-
-          <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted-foreground">{post.excerpt}</p>
 
           {/* Tags + Share */}
           <div className="mt-4 flex flex-wrap items-center justify-between gap-4">

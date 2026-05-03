@@ -296,7 +296,7 @@ const ToolsPage = () => {
               <div className="mt-8 text-center">
                 <button
                   onClick={() => setVisibleCount(c => c + TOOLS_PER_PAGE)}
-                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold hover:bg-secondary transition-colors"
+                  className="surface-control inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold"
                 >
                   <ChevronDown className="h-4 w-4" />
                   {t(`Afficher plus (${filtered.length - visibleCount} restants)`, `Show more (${filtered.length - visibleCount} remaining)`)}
@@ -328,7 +328,7 @@ function ToolCardGrid({ tool, prefix, t }: { tool: any; prefix: string; t: (fr: 
   return (
     <Link
       to={`${prefix}/tool/${tool.slug}`}
-      className="group rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg flex flex-col"
+      className="surface-card-hover group flex flex-col p-5"
     >
       <div className="flex items-start gap-3">
         <ToolLogo tool={tool} size={40} />
@@ -372,7 +372,7 @@ function ToolCardList({ tool, prefix, t }: { tool: any; prefix: string; t: (fr: 
   return (
     <Link
       to={`${prefix}/tool/${tool.slug}`}
-      className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:shadow-md"
+      className="surface-card-hover group flex items-center gap-4 p-4"
     >
       <ToolLogo tool={tool} size={36} />
       <div className="flex-1 min-w-0">

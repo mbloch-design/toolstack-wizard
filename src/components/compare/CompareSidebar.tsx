@@ -75,7 +75,7 @@ const CompareSidebar = ({ categories, activeCategorySlug, selectedTools, compari
       </div>
 
       {/* Selected tools */}
-      <div className="bg-card p-5 rounded-2xl shadow-sm border border-border/15">
+      <div className="surface-card p-5">
         <h4 className="text-xs font-bold text-muted-foreground mb-4 uppercase tracking-widest">
           {t("Outils sélectionnés", "Selected Tools")}
         </h4>
@@ -106,11 +106,11 @@ const CompareSidebar = ({ categories, activeCategorySlug, selectedTools, compari
                 onChange={e => setSearch(e.target.value)}
                 autoFocus
                 placeholder={t("Rechercher un outil…", "Search a tool…")}
-                className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-border bg-background text-xs focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="w-full rounded-lg border border-border bg-background py-2.5 pl-9 pr-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
             </div>
             {filteredTools.length > 0 && (
-              <div className="mt-1 bg-card border border-border/60 rounded-xl shadow-lg overflow-hidden max-h-48 overflow-y-auto">
+              <div className="surface-card mt-1 max-h-48 overflow-y-auto overflow-hidden shadow-lg">
                 {filteredTools.map(tool => (
                   <button
                     key={tool.id}
@@ -133,7 +133,7 @@ const CompareSidebar = ({ categories, activeCategorySlug, selectedTools, compari
         ) : (
           <button
             onClick={() => { setShowSearch(true); setReplacingIndex(null); }}
-            className="mt-4 w-full py-2.5 border border-dashed border-border rounded-xl text-sm font-bold text-muted-foreground hover:text-primary hover:border-primary transition-all flex items-center justify-center gap-1.5"
+            className="mt-4 flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-border py-2.5 text-sm font-bold text-muted-foreground transition-colors hover:border-primary hover:text-primary"
           >
             <Plus className="h-3.5 w-3.5" />
             {t("Changer un outil", "Swap a tool")}
@@ -142,7 +142,7 @@ const CompareSidebar = ({ categories, activeCategorySlug, selectedTools, compari
       </div>
 
       {/* All comparisons list */}
-      <div className="bg-card p-5 rounded-2xl shadow-sm border border-border/15">
+      <div className="surface-card p-5">
         <h4 className="text-xs font-bold text-muted-foreground mb-4 uppercase tracking-widest">
           {t("Comparatifs populaires", "Popular Comparisons")}
         </h4>

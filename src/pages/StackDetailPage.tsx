@@ -73,7 +73,7 @@ const StackDetailPage = () => {
               <ArrowLeft className="h-4 w-4" />
               {t("Tous les stacks", "All stacks")}
             </Link>
-            <div className="rounded-lg border border-border bg-background p-5">
+            <div className="surface-panel p-5">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">{t("En bref", "In short")}</p>
                 <p className="mt-2 text-base leading-7 text-foreground">
                   {t(
@@ -90,7 +90,7 @@ const StackDetailPage = () => {
               </div>
             </div>
 
-            <aside className="rounded-lg border border-border bg-background p-5">
+            <aside className="surface-panel p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{t("Repère rapide", "Quick baseline")}</p>
               <div className="mt-4 grid gap-3">
                 <Metric icon={<Euro className="h-4 w-4" />} label={t("Budget raisonnable", "Reasonable budget")} value={`${stack.monthlyBudget}€/mois`} />
@@ -121,7 +121,7 @@ const StackDetailPage = () => {
               text: t("Le gaspillage commence souvent avec deux outils qui se ressemblent assez pour te rassurer.", "Waste often starts with two tools similar enough to reassure you."),
             },
           ].map((item) => (
-            <div key={item.title} className="rounded-lg border border-border bg-card p-4">
+            <div key={item.title} className="surface-card p-4">
               <h2 className="text-sm font-semibold leading-5 text-foreground">{item.title}</h2>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.text}</p>
             </div>
@@ -129,14 +129,14 @@ const StackDetailPage = () => {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[360px_1fr]">
-          <aside className="h-fit rounded-lg border border-border bg-card p-5 lg:sticky lg:top-20">
+          <aside className="surface-card h-fit p-5 lg:sticky lg:top-20">
             <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{t("La base", "The baseline")}</p>
             <div className="mt-4 space-y-2">
               {stackTools.map(({ slot, tool }) => (
                 <Link
                   key={slot.slug}
                   to={`${prefix}/tool/${tool!.slug}`}
-                  className="group flex items-center gap-3 rounded-lg border border-border bg-background px-3 py-3 transition-colors hover:border-primary/35 hover:bg-primary/5"
+                  className="surface-control group flex items-center gap-3 px-3 py-3"
                 >
                   <ToolLogo tool={tool!} size={34} className="rounded-md" />
                   <div className="min-w-0">
@@ -172,7 +172,7 @@ const StackDetailPage = () => {
                 {uses.map((use, index) => {
                   const useTools = use.toolSlugs.map((toolSlug) => toolBySlug.get(toolSlug)).filter(Boolean);
                   return (
-                    <article key={use.title} className="overflow-hidden rounded-lg border border-border bg-card">
+                    <article key={use.title} className="surface-card overflow-hidden">
                       <div className="border-b border-border bg-background/55 p-5">
                         <div className="flex flex-wrap items-start justify-between gap-4">
                         <div>
@@ -204,7 +204,7 @@ const StackDetailPage = () => {
                           <Link
                             key={tool!.id}
                             to={`${prefix}/tool/${tool!.slug}`}
-                            className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-2.5 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary/35 hover:bg-primary/5"
+                            className="surface-control inline-flex items-center gap-2 px-2.5 py-2 text-sm font-medium text-foreground"
                           >
                             <ToolLogo tool={tool!} size={22} className="rounded" />
                             {tool!.name}
@@ -212,7 +212,7 @@ const StackDetailPage = () => {
                         ))}
                           </div>
                         </div>
-                        <div className="rounded-lg bg-background p-4">
+                        <div className="surface-panel p-4">
                           <p className="text-sm font-medium leading-7 text-foreground">
                             {t("Le déroulé que je garderais simple :", "The flow I would keep simple:")}
                           </p>
@@ -234,15 +234,15 @@ const StackDetailPage = () => {
               </div>
             </section>
 
-            <section className="rounded-lg border border-border bg-card p-5">
+            <section className="surface-card p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">{t("Mon avis", "My take")}</p>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
-                <div className="rounded-lg border border-border bg-background p-4">
+                <div className="surface-panel p-4">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
                   <h3 className="mt-3 font-semibold text-foreground">{t("Ça vaut le coup si", "It is worth it if")}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{t(stack.bestFor, stack.bestForEn)}</p>
                 </div>
-                <div className="rounded-lg border border-border bg-background p-4">
+                <div className="surface-panel p-4">
                   <CheckCircle2 className="h-5 w-5 text-muted-foreground" />
                   <h3 className="mt-3 font-semibold text-foreground">{t("Je ne le copierais pas si", "I would not copy it if")}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{t(stack.avoidIf, stack.avoidIfEn)}</p>
@@ -250,7 +250,7 @@ const StackDetailPage = () => {
               </div>
             </section>
 
-            <section className="rounded-lg border border-primary/20 bg-primary/8 p-6">
+            <section className="surface-accent p-6">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">{t("Diagnostic", "Diagnostic")}</p>
               <h2 className="mt-2 font-display text-3xl font-bold text-foreground">
                 {t("Le bon choix dépend toujours de ce que tu utilises déjà.", "The right choice always depends on what you already use.")}
@@ -277,7 +277,7 @@ const StackDetailPage = () => {
 
 function Metric({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between rounded-lg border border-border bg-card px-3 py-3">
+    <div className="surface-card flex items-center justify-between px-3 py-3">
       <div className="flex items-center gap-2 text-muted-foreground">
         {icon}
         <span className="text-sm">{label}</span>
