@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePostBySlug, usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useEffect, useState, useMemo } from "react";
-import { ArrowRight, Clock, Tag, ChevronUp, Wrench, Link2, Check } from "lucide-react";
+import { ArrowRight, Clock, Tag, ChevronUp, Wrench, Link2, Check, BookOpen } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolMentionedCard } from "@/components/ToolMentionedCard";
 import ToolLogo from "@/components/ToolLogo";
