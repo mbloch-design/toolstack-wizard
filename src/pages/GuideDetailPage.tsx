@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePostBySlug, usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useEffect, useState, useMemo } from "react";
-import { ArrowRight, BookOpen, Clock, Tag, ChevronUp, Wrench, Link2, Check } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, List, Tag, ChevronUp, Wrench, Link2, Check } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolMentionedCard } from "@/components/ToolMentionedCard";
 import ToolLogo from "@/components/ToolLogo";
@@ -20,6 +20,7 @@ const GuideDetailPage = () => {
   const [readProgress, setReadProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [activeHeading, setActiveHeading] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,6 +92,28 @@ const GuideDetailPage = () => {
   // Only show H2s in sidebar for compact TOC
   const compactToc = useMemo(() => toc.filter((item) => item.level === 2), [toc]);
 
+  useEffect(() => {
+    if (compactToc.length === 0) return;
+    setActiveHeading((current) => current || compactToc[0].id);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visible?.target.id) setActiveHeading(visible.target.id);
+      },
+      { rootMargin: "-18% 0px -68% 0px", threshold: [0, 1] },
+    );
+
+    compactToc.forEach((item) => {
+      const heading = document.getElementById(item.id);
+      if (heading) observer.observe(heading);
+    });
+
+    return () => observer.disconnect();
+  }, [compactToc]);
+
   const relatedPosts = useMemo(() => {
     if (!post || allPosts.length === 0) return [];
     return allPosts
@@ -160,7 +183,6 @@ const GuideDetailPage = () => {
     );
   }
 
-  const gradient = getArticleGradient(post.slug, post.category);
   const htmlContent = markdownToHtml(post.content, toc, post.title, toolLinkMap);
 
   return (
@@ -168,38 +190,6 @@ const GuideDetailPage = () => {
       {/* Reading progress */}
       <div className="fixed top-0 left-0 right-0 z-50 h-0.5 bg-muted">
         <div className="h-full bg-primary transition-[width] duration-150 ease-out" style={{ width: `${readProgress}%` }} />
-      </div>
-
-      {/* Hero banner */}
-      <div className={`relative overflow-hidden bg-gradient-to-br ${gradient}`}>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,transparent_0%,hsl(var(--background))_70%)]" />
-        <div className="container mx-auto max-w-4xl px-4 relative">
-          <div className="flex items-center justify-center py-10 md:py-14">
-            {mentionedTools.length > 0 ? (
-              <div className="flex flex-wrap items-center justify-center gap-3">
-                {mentionedTools.slice(0, 6).map((tool) => (
-                  <div key={tool.id} className="flex h-14 w-14 items-center justify-center rounded-xl border border-border/50 bg-card/90 shadow-md backdrop-blur-sm md:h-16 md:w-16">
-                    <img
-                      src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=128`}
-                      alt={tool.name}
-                      className="h-8 w-8 rounded-lg object-contain md:h-9 md:w-9"
-                      loading="lazy"
-                      onError={(e) => {
-                        const el = e.target as HTMLImageElement;
-                        el.style.display = "none";
-                        el.parentElement!.innerHTML = `<span class="text-base font-bold text-muted-foreground">${tool.name.charAt(0)}</span>`;
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-card/50 backdrop-blur-sm">
-                <Wrench className="h-8 w-8 text-primary/30" />
-              </div>
-            )}
-          </div>
-        </div>
       </div>
 
       <PageHero
@@ -211,22 +201,42 @@ const GuideDetailPage = () => {
         icon={<BookOpen className="h-3.5 w-3.5" />}
         title={post.title}
         description={post.excerpt}
-        maxWidth="narrow"
+        maxWidth="article"
       >
+        <div className="max-w-3xl">
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-            {post.category && (
-              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">{post.category}</span>
-            )}
-            <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {post.readTime}</span>
-            <span>{post.date}</span>
+            <span className="flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5">
+              <Clock className="h-3.5 w-3.5" />
+              {post.readTime}
+            </span>
+            <span className="rounded-full border border-border bg-background px-3 py-1.5">{post.date}</span>
           </div>
 
-          {/* Tags + Share */}
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+          {mentionedTools.length > 0 && (
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                {t("Dans ce guide", "In this guide")}
+              </span>
+              {mentionedTools.slice(0, 6).map((tool) => (
+                <Link
+                  key={tool.id}
+                  to={`${prefix}/tool/${tool.slug || tool.id}`}
+                  className="group inline-flex h-10 items-center gap-2 rounded-full border border-border bg-background px-2.5 pr-3 text-xs font-medium text-muted-foreground transition-colors hover:border-primary/30 hover:text-foreground"
+                >
+                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-card">
+                    <ToolLogo tool={tool} size={18} />
+                  </span>
+                  <span>{tool.name}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
-                  <span key={tag} className="inline-flex items-center gap-1.5 rounded-md bg-secondary px-3 py-1 text-xs text-muted-foreground">
+                  <span key={tag} className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1 text-xs text-muted-foreground">
                     <Tag className="h-3 w-3" />{tag}
                   </span>
                 ))}
@@ -240,27 +250,47 @@ const GuideDetailPage = () => {
               t={t}
             />
           </div>
+        </div>
       </PageHero>
 
       {/* Body */}
-      <div className="container mx-auto max-w-4xl px-4 py-10">
-        <div className="flex gap-10">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
+        <div className="grid gap-10 lg:grid-cols-[220px_minmax(0,760px)] lg:justify-center xl:grid-cols-[240px_minmax(0,780px)]">
           {/* Sidebar: compact TOC + tools */}
-          <aside className="hidden lg:block w-52 shrink-0">
-            <div className="sticky top-16 space-y-6">
+          <aside className="hidden lg:block">
+            <div className="sticky top-20 space-y-8">
               {compactToc.length > 1 && (
                 <nav>
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/50">
-                    {t("Sommaire", "Contents")}
-                  </p>
-                  <ul className="space-y-0.5 border-l border-border">
+                  <div>
+                    <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground/70">
+                      <List className="h-3.5 w-3.5" />
+                      {t("Lecture", "Reading")}
+                    </p>
+                    <div className="mt-3 h-1 overflow-hidden rounded-full bg-secondary">
+                      <div className="h-full rounded-full bg-primary transition-[width] duration-150" style={{ width: `${readProgress}%` }} />
+                    </div>
+                  </div>
+
+                  <ul className="relative mt-5 space-y-1 before:absolute before:left-[4.5px] before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-border">
                     {compactToc.map((item) => (
-                      <li key={item.id}>
+                      <li key={item.id} className="relative">
                         <a
                           href={`#${item.id}`}
-                          className="block border-l-2 border-transparent py-0.5 pl-3 text-[13px] leading-snug text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+                          aria-current={activeHeading === item.id ? "location" : undefined}
+                          className={`group flex gap-3 rounded-md py-2 pl-5 pr-2 text-[13px] leading-snug transition-colors ${
+                            activeHeading === item.id
+                              ? "text-foreground"
+                              : "text-muted-foreground hover:text-foreground"
+                          }`}
                         >
-                          {item.text}
+                          <span
+                            className={`absolute left-0 top-3.5 z-10 h-2.5 w-2.5 rounded-full border transition-all ${
+                              activeHeading === item.id
+                                ? "border-primary bg-primary shadow-[0_0_0_5px_hsl(var(--primary)/0.10)]"
+                                : "border-border bg-background group-hover:border-primary/50"
+                            }`}
+                          />
+                          <span>{item.text}</span>
                         </a>
                       </li>
                     ))}
@@ -270,7 +300,7 @@ const GuideDetailPage = () => {
 
               {mentionedTools.length > 0 && (
                 <div>
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/50 flex items-center gap-1">
+                  <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground/70">
                     <Wrench className="h-3 w-3" />
                     {t("Outils", "Tools")}
                   </p>
@@ -286,10 +316,29 @@ const GuideDetailPage = () => {
 
           {/* Article */}
           <article className="min-w-0 flex-1">
+            {compactToc.length > 1 && (
+              <nav className="mb-6 rounded-lg border border-border bg-card p-4 lg:hidden">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/60">
+                  {t("Sommaire", "Contents")}
+                </p>
+                <div className="flex snap-x gap-2 overflow-x-auto pb-1">
+                  {compactToc.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className="snap-start whitespace-nowrap rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground"
+                    >
+                      {item.text}
+                    </a>
+                  ))}
+                </div>
+              </nav>
+            )}
+
             {/* Mobile tools */}
             {mentionedTools.length > 0 && (
               <div className="mb-6 lg:hidden">
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/50 flex items-center gap-1">
+                <p className="mb-2 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/60">
                   <Wrench className="h-3 w-3" />{t("Outils mentionnés", "Tools mentioned")}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -301,26 +350,27 @@ const GuideDetailPage = () => {
             )}
 
             <div
-              className="prose prose-neutral dark:prose-invert max-w-none
-                prose-headings:font-bold prose-headings:tracking-tighter prose-headings:scroll-mt-20
-                prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-3 prose-h2:pb-2 prose-h2:border-b prose-h2:border-border
-                prose-h3:text-xl prose-h3:mt-7 prose-h3:mb-2
-                prose-p:leading-[1.75] prose-p:text-foreground/90
+              className="prose prose-neutral dark:prose-invert max-w-none text-[17px]
+                prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-headings:scroll-mt-24
+                prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-2xl prose-h2:leading-tight md:prose-h2:text-[1.85rem]
+                prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl
+                prose-h4:mt-6 prose-h4:text-base prose-h4:font-semibold
+                prose-p:my-5 prose-p:leading-[1.82] prose-p:text-foreground/90
                 prose-a:text-primary prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-primary/80
                 prose-strong:text-foreground prose-strong:font-semibold
-                prose-ul:my-4 prose-li:leading-relaxed
+                prose-ul:my-5 prose-ol:my-5 prose-li:my-1.5 prose-li:leading-[1.75]
                 prose-table:text-sm prose-table:border prose-table:border-border
                 prose-th:bg-secondary prose-th:px-4 prose-th:py-2
                 prose-td:px-4 prose-td:py-2 prose-td:border-t prose-td:border-border
-                prose-blockquote:border-primary prose-blockquote:bg-accent/30 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
-                prose-hr:border-border prose-hr:my-8
+                prose-blockquote:my-8 prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-primary/20 prose-blockquote:bg-primary/5 prose-blockquote:px-5 prose-blockquote:py-1 prose-blockquote:not-italic
+                prose-hr:border-border prose-hr:my-10
                 prose-img:rounded-xl prose-img:shadow-md
                 prose-code:text-primary prose-code:bg-accent/40 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none"
               dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(htmlContent) }}
             />
 
             {/* Share bottom */}
-            <div className="mt-10 flex flex-wrap items-center gap-3 rounded-xl border border-border bg-card p-4">
+            <div className="mt-12 flex flex-wrap items-center gap-3 rounded-lg border border-border bg-card p-4">
               <span className="text-sm font-medium text-muted-foreground">{t("Cet article vous a été utile ?", "Found this useful?")}</span>
               <div className="ml-auto">
                 <ShareButtons
@@ -336,14 +386,14 @@ const GuideDetailPage = () => {
 
             {/* Mentioned tools — full cards */}
             {mentionedTools.length > 0 && (
-              <section className="mt-14 border-t border-border pt-10">
-                <h2 className="text-xl font-bold tracking-tighter mb-2">
+              <section className="mt-14 rounded-lg border border-border bg-card p-5 md:p-6">
+                <h2 className="font-display text-xl font-bold tracking-tight">
                   {t("Outils mentionnés dans cet article", "Tools mentioned in this article")}
                 </h2>
-                <p className="text-sm text-muted-foreground mb-5">
+                <p className="mt-2 text-sm text-muted-foreground">
                   {t("Consultez la fiche complète de chaque outil pour un avis détaillé.", "See the full review of each tool for a detailed verdict.")}
                 </p>
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
                   {mentionedTools.slice(0, 6).map((tool) => (
                     <ToolMentionedCard key={tool.id} tool={tool} prefix={prefix} />
                   ))}
@@ -352,7 +402,7 @@ const GuideDetailPage = () => {
             )}
 
             {/* CTA diagnostic */}
-            <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="mt-10 flex flex-col gap-4 rounded-lg border border-primary/20 bg-primary/5 p-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="font-semibold text-foreground">{t("Analysez votre stack complète", "Analyze your full stack")}</p>
                 <p className="mt-0.5 text-sm text-muted-foreground">{t("Diagnostic gratuit en 3 minutes — recommandations personnalisées.", "Free 3-minute diagnostic — personalized recommendations.")}</p>
@@ -463,14 +513,6 @@ function RelatedCard({ post, prefix, tools }: { post: Post; prefix: string; tool
       </div>
     </Link>
   );
-}
-
-/* ── Helpers ── */
-function getToolDomain(tool: { websiteUrl?: string; affiliateLink: string }): string {
-  const url = tool.websiteUrl || tool.affiliateLink;
-  if (!url) return "";
-  try { return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", ""); }
-  catch { return ""; }
 }
 
 function markdownToHtml(md: string, toc: { id: string; level: number; text: string }[], articleTitle: string, toolMap?: Map<string, string>): string {

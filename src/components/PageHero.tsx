@@ -22,7 +22,7 @@ interface PageHeroProps {
   actions?: ReactNode;
   stats?: HeroStat[];
   children?: ReactNode;
-  maxWidth?: "normal" | "narrow";
+  maxWidth?: "normal" | "narrow" | "article";
 }
 
 export default function PageHero({
@@ -57,12 +57,18 @@ export default function PageHero({
         }}
       />
 
-      <div className={`relative mx-auto px-6 py-10 md:py-14 ${maxWidth === "narrow" ? "max-w-4xl" : "max-w-6xl"}`}>
+      <div className={`relative mx-auto px-6 py-10 md:py-14 ${
+        maxWidth === "narrow"
+          ? "max-w-4xl"
+          : maxWidth === "article"
+            ? "max-w-6xl"
+            : "max-w-6xl"
+      }`}>
         <div className="mb-5">
           <Breadcrumb items={breadcrumb} />
         </div>
 
-        <div className="max-w-3xl">
+        <div className={maxWidth === "article" ? "max-w-3xl lg:ml-[260px]" : "max-w-3xl"}>
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3 py-1.5 text-xs font-semibold text-primary">
             {icon}
             {eyebrow}
@@ -103,7 +109,11 @@ export default function PageHero({
           )}
         </div>
 
-        {children && <div className="mt-8">{children}</div>}
+        {children && (
+          <div className={maxWidth === "article" ? "mt-8 max-w-3xl lg:ml-[260px]" : "mt-8"}>
+            {children}
+          </div>
+        )}
       </div>
     </section>
   );
