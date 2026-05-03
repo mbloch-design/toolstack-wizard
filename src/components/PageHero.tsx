@@ -22,7 +22,7 @@ interface PageHeroProps {
   actions?: ReactNode;
   stats?: HeroStat[];
   children?: ReactNode;
-  maxWidth?: "normal" | "narrow" | "article";
+  maxWidth?: "normal" | "narrow" | "article" | "wide" | "xl";
 }
 
 export default function PageHero({
@@ -62,13 +62,17 @@ export default function PageHero({
           ? "max-w-4xl"
           : maxWidth === "article"
             ? "max-w-6xl"
-            : "max-w-6xl"
+            : maxWidth === "wide"
+              ? "max-w-[103rem]"
+              : maxWidth === "xl"
+                ? "max-w-7xl"
+              : "max-w-6xl"
       }`}>
         <div className="mb-5">
           <Breadcrumb items={breadcrumb} />
         </div>
 
-        <div className={maxWidth === "article" ? "max-w-3xl lg:ml-[260px]" : "max-w-3xl"}>
+        <div className={maxWidth === "article" ? "max-w-3xl lg:ml-[260px]" : maxWidth === "wide" || maxWidth === "xl" ? "max-w-4xl" : "max-w-3xl"}>
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3 py-1.5 text-xs font-semibold text-primary">
             {icon}
             {eyebrow}
