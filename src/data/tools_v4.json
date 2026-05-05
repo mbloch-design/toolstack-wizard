@@ -37334,8 +37334,152 @@
     "force_silence": false
   },
   {
-    "id": "perplexity",
-    "name": "Perplexity",
+    "id": "qonto",
+    "slug": "qonto",
+    "name": "Qonto",
+    "category": "finance",
+    "shortDescription": "Compte pro en ligne pour freelances et PME : IBAN FR, cartes, factures, compta synchronisée.",
+    "shortDescriptionEn": "Online business banking for freelancers and SMBs: French IBAN, cards, invoicing, accounting sync.",
+    "description": "Qonto, c'est le compte pro pensé pour les freelances et petites équipes. IBAN français, cartes Mastercard, facturation intégrée et synchro auto avec Pennylane, Tiime ou Indy. À partir de 9€/mois HT.",
+    "longDescription": "Qonto, c'est le compte pro pensé pour les freelances et petites équipes. IBAN français FR76, cartes Mastercard physiques et virtuelles, paiement et encaissement instantanés, facturation intégrée et synchro auto avec ton expert-comptable (Pennylane, Tiime, Indy, Cegid, Sage). À partir de 9€/mois HT (plan Basic solo). Alternative crédible à BNP/Société Générale pour qui veut un onboarding 100% en ligne en 10 minutes, des virements SEPA inclus, et un export comptable propre.\n\nÀ garder si : tu factures en France/Europe, tu veux une synchro auto avec ton comptable, ou tu veux séparer perso/pro sans payer 25€/mois à une banque traditionnelle.\n\nÀ éviter si : tu n'as pas encore de structure, tu fais beaucoup de cash/chèques, ou ton activité est principalement hors zone SEPA.\n\nRentable dès 1500€ de CA/mois.",
+    "longDescriptionEn": "Qonto is the business account built for freelancers and small teams. French FR76 IBAN, physical and virtual Mastercard cards, instant payments, built-in invoicing, and auto-sync with French accounting tools (Pennylane, Tiime, Indy, Cegid, Sage). From €9/month (Basic Solo plan). A real alternative to legacy banks: 100% online onboarding in 10 minutes, included SEPA transfers, clean accounting export.",
+    "pricing": {
+      "free": "Essai 30 jours",
+      "paid": "Solo Basic 9€/mois HT — Solo Smart 19€/mois — Solo Premium 39€/mois — Team à partir de 29€/mois"
+    },
+    "pricingEn": {
+      "free": "30-day free trial",
+      "paid": "Solo Basic €9/mo — Solo Smart €19/mo — Solo Premium €39/mo — Team from €29/mo"
+    },
+    "defaultMonthlyPrice": 9,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 9,
+      "compare_plan_name": "Solo Basic",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": ["Prix HT — TVA 20% applicable. Frais additionnels au-delà de 30 virements SEPA/mois sur le plan Basic."],
+      "source_domain": "qonto.com",
+      "verified_on": "2026-05-05",
+      "official_source_url": "https://qonto.com/fr/pricing",
+      "verification_status": "official_verified"
+    },
+    "affiliateLink": "https://lb.affilae.com/r/?p=69a078113f38abd84385e0d9&af=2648&lp=https%3A%2F%2Fqonto.com%2Ffr%3Futm_source%3Dinfluence",
+    "websiteUrl": "https://qonto.com/fr",
+    "logo": "",
+    "seo": {
+      "metaTitle": "Qonto avis 2026 : compte pro freelance, prix, alternatives | Tooltrim",
+      "metaDescription": "Qonto pour freelances : 9€/mois, IBAN FR, synchro Pennylane/Tiime/Indy. Notre verdict honnête, les limites réelles, et quand préférer Shine ou Revolut Business."
+    },
+    "articles": [],
+    "covers": ["compte-pro", "facturation", "cartes-paiement", "virements-sepa", "synchro-compta", "notes-frais"],
+    "freeAlternative": null,
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "bestFor": ["freelance", "consultant", "agence", "startup", "pme"],
+    "relevantFor": ["freelance", "consultant", "agence", "startup", "pme"],
+    "alternatives": ["shine", "blank", "propulse-ca", "revolut-business"],
+    "verdict": {
+      "keepIf": [
+        "Tu factures tes clients en France ou en Europe et veux un IBAN FR propre",
+        "Tu veux une synchro automatique avec ton expert-comptable (Pennylane, Tiime, Indy)",
+        "Tu veux séparer perso/pro sans payer 25€/mois à une banque traditionnelle",
+        "Tu as besoin de cartes virtuelles pour cloisonner SaaS et abonnements"
+      ],
+      "avoidIf": [
+        "Tu n'as pas encore de structure (auto-entrepreneur sans CA — un compte courant dédié suffit la première année)",
+        "Tu fais beaucoup de cash ou de chèques (Qonto ne les accepte pas)",
+        "Ton activité est principalement hors zone SEPA"
+      ],
+      "threshold": "Rentable dès 1500€ de CA/mois : 2-3h/mois de saisie compta économisées + frais cachés des banques traditionnelles évités (15-25€/mois)."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You invoice clients in France or Europe and need a clean French IBAN",
+        "You want auto-sync with your accountant (Pennylane, Tiime, Indy)",
+        "You want to separate personal/business without paying €25/month to a legacy bank",
+        "You need virtual cards for SaaS and subscriptions"
+      ],
+      "avoidIf": [
+        "You don't have a registered business yet",
+        "You handle a lot of cash or paper checks",
+        "Your business is mostly outside the SEPA zone"
+      ],
+      "threshold": "Profitable from €1,500/mo revenue."
+    },
+    "pros": [
+      "IBAN français FR76 — accepté partout en France pour prélèvements et virements",
+      "Onboarding 100% en ligne en 10 minutes (KBIS suffit)",
+      "Synchro native avec Pennylane, Tiime, Indy, Cegid, Sage",
+      "Cartes virtuelles illimitées pour cloisonner les abonnements SaaS",
+      "Facturation intégrée avec relances automatiques (plan Smart+)",
+      "Support client français réactif (chat + téléphone)"
+    ],
+    "prosEn": [
+      "French FR76 IBAN accepted everywhere in France",
+      "100% online onboarding in 10 minutes",
+      "Native sync with Pennylane, Tiime, Indy, Cegid, Sage",
+      "Unlimited virtual cards to isolate SaaS subscriptions",
+      "Built-in invoicing with auto-reminders",
+      "Reactive French customer support"
+    ],
+    "cons": [
+      "Pas de dépôt d'espèces ni de chèques",
+      "Pas d'autorisation de découvert (uniquement avance ponctuelle Pay Later)",
+      "Plan Basic limité à 30 virements SEPA inclus/mois (0,40€ au-delà)",
+      "Pas de prêt bancaire classique (mais financement via Qonto Credit)"
+    ],
+    "consEn": [
+      "No cash or check deposits",
+      "No traditional overdraft",
+      "Basic plan capped at 30 SEPA transfers/month",
+      "No traditional bank loan"
+    ],
+    "useCases": [
+      "Encaisser ses clients par virement SEPA avec un IBAN FR",
+      "Émettre des factures conformes (mentions légales, TVA, numérotation auto)",
+      "Synchroniser automatiquement les transactions avec son expert-comptable",
+      "Gérer les notes de frais et justificatifs en photo depuis l'app",
+      "Cloisonner les abonnements SaaS avec des cartes virtuelles dédiées",
+      "Préparer la TVA avec un export propre par catégorie"
+    ],
+    "useCasesEn": [
+      "Receive client payments via SEPA with a French IBAN",
+      "Issue compliant invoices",
+      "Auto-sync transactions with your accountant",
+      "Manage expense reports with photo receipts",
+      "Isolate SaaS subscriptions with dedicated virtual cards",
+      "Prep VAT with clean per-category exports"
+    ],
+    "tool_type": "gestion",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": ["finance-ops", "freelance-ops", "business-ops"],
+    "functional_needs": ["compte-pro", "facturation", "synchro-compta", "notes-frais"],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "oui",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": ["business_structure", "monthly_revenue", "needs_invoicing"],
+    "substitution_cluster_v2": "compte-pro",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": true,
+      "requires_context_questions": false,
+      "never_auto_cancel_reason": "Outil bancaire critique — ne jamais résilier automatiquement.",
+      "default_decision_lane": "prescribe"
+    },
+    "personas": ["theo", "sofia", "marc", "claire", "alix"],
+    "force_silence": false,
+    "timeGainedHoursPerMonth": 3
+  },
+  {
     "category": "ai-general",
     "shortDescription": "Le moteur de recherche du futur.",
     "verdict": {
