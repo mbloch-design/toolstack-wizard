@@ -4856,7 +4856,22 @@
     "logo": ""
   },
   {
-    "id": "perplexity",
+    "id": "qonto",
+    "slug": "qonto",
+    "name": "Qonto",
+    "categoryId": "finance",
+    "shortDescription": "Compte pro en ligne pour freelances et PME : IBAN FR, cartes, factures, compta synchronisée.",
+    "shortDescriptionEn": "Online business banking for freelancers and SMBs: French IBAN, cards, invoicing, accounting sync.",
+    "pricing": {
+      "free": "Essai 30 jours",
+      "paid": "Solo Basic 9€/mois HT — Solo Smart 19€/mois — Solo Premium 39€/mois"
+    },
+    "defaultMonthlyPrice": 9,
+    "affiliateLink": "https://lb.affilae.com/r/?p=69a078113f38abd84385e0d9&af=2648&lp=https%3A%2F%2Fqonto.com%2Ffr%3Futm_source%3Dinfluence",
+    "websiteUrl": "https://qonto.com/fr",
+    "logo": ""
+  },
+  {
     "slug": "perplexity",
     "name": "Perplexity",
     "categoryId": "ai-general",
