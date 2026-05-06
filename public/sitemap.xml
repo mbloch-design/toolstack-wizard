@@ -21,11 +21,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tooltrim.com/fr/selector</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://tooltrim.com/fr/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -62,11 +57,6 @@
   </url>
   <url>
     <loc>https://tooltrim.com/en/guides</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://tooltrim.com/en/selector</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
