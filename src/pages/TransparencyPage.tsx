@@ -17,7 +17,7 @@ const TransparencyPage = () => {
       "Découvrez comment ToolTrim fonctionne : liens affiliés déclarés, zéro contenu sponsorisé, indépendance éditoriale totale.",
       "Learn how ToolTrim works: declared affiliate links, zero sponsored content, full editorial independence."
     );
-    setSeoTags({ title, description: desc, url: `https://www.tooltrim.com/${lang}/transparency` });
+    setSeoTags({ title, description: desc, url: `https://tooltrim.com/${lang}/transparency` });
     setHreflang(`/${lang}/transparency`);
     return () => cleanupSeo([]);
   }, [lang]);

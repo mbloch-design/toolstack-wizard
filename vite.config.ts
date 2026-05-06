@@ -5,7 +5,7 @@ import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
 
-const BASE = "https://www.tooltrim.com";
+const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
 // /selector excluded from sitemap (noindex tunnel)
 const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact"];
@@ -301,8 +301,8 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
-              `<meta property="og:image" content="https://www.tooltrim.com/og-image.png" />`,
-              `<meta name="twitter:image" content="https://www.tooltrim.com/og-image.png" />`,
+              `<meta property="og:image" content="https://tooltrim.com/og-image.png" />`,
+              `<meta name="twitter:image" content="https://tooltrim.com/og-image.png" />`,
               `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
               `<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
             ].join("\n    ");
@@ -920,8 +920,8 @@ function staticPrerenderPlugin(): Plugin {
             `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
             `<meta property="og:url" content="${url}" />`,
-            `<meta property="og:image" content="https://www.tooltrim.com/og-image.png" />`,
-            `<meta name="twitter:image" content="https://www.tooltrim.com/og-image.png" />`,
+            `<meta property="og:image" content="https://tooltrim.com/og-image.png" />`,
+            `<meta name="twitter:image" content="https://tooltrim.com/og-image.png" />`,
             ...(post.seo?.keywords ? [`<meta name="keywords" content="${post.seo.keywords.replace(/"/g, "&quot;")}" />`] : []),
             `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`,
             `<script type="application/ld+json">${JSON.stringify(postBreadcrumb)}</script>`,

@@ -1,6 +1,6 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const BASE = "https://www.tooltrim.com";
+const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
 const STATIC_PAGES = ["", "tools", "category", "guides", "selector", "about", "transparency", "contact"];
 const TODAYS_DATE = "2026-04-20";
