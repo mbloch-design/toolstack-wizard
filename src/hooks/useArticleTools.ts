@@ -13,10 +13,11 @@ export function useArticleTools<T extends ArticleTool>(post: Post | null, tools:
     if (!post || tools.length === 0) return [];
 
     const matched = new Map<string, { tool: T; score: number }>();
-    const searchText = `${post.title} ${post.excerpt} ${post.content}`.toLowerCase();
+    const searchText = `${post.title ?? ""} ${post.excerpt ?? ""} ${post.content ?? ""}`.toLowerCase();
     const tagText = (post.tags || []).join(" ").toLowerCase();
 
     for (const tool of tools) {
+      if (!tool.name) continue;
       const name = tool.name.toLowerCase();
       // Skip very short names to avoid false positives
       if (name.length < 3) continue;
@@ -24,7 +25,7 @@ export function useArticleTools<T extends ArticleTool>(post: Post | null, tools:
       let score = 0;
 
       // Check title (highest weight)
-      if (post.title.toLowerCase().includes(name)) score += 10;
+      if (post.title?.toLowerCase().includes(name)) score += 10;
       // Check tags
       if (tagText.includes(name)) score += 5;
       // Check content body
