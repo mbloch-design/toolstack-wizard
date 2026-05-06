@@ -9,7 +9,7 @@ const LegalNoticePage = () => {
     setSeoTags({
       title: t("Mentions légales — ToolTrim", "Legal Notice — ToolTrim"),
       description: t("Mentions légales du site ToolTrim.io", "Legal notice for ToolTrim.io"),
-      url: `https://tooltrim.com/${lang}/legal-notice`,
+      url: `https://www.tooltrim.com/${lang}/legal-notice`,
     });
     setHreflang(`/${lang}/legal-notice`);
     return () => cleanupSeo([]);

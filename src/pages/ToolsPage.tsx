@@ -33,7 +33,7 @@ const ToolsPage = () => {
     const desc = lang === "fr"
       ? `Abonnements trop chers, outils en doublon, alternatives gratuites ignorées — on a tout vérifié pour toi. ${tools.length} outils SaaS analysés indépendamment, sans affiliation.`
       : `Overpriced subscriptions, duplicate tools, free alternatives you're missing — we checked everything. ${tools.length} SaaS tools reviewed independently, no affiliate bias.`;
-    const url = `https://tooltrim.com/${lang}/tools`;
+    const url = `https://www.tooltrim.com/${lang}/tools`;
 
     setSeoTags({ title, description: desc, url });
     setHreflang(`/${lang}/tools`);
@@ -51,7 +51,7 @@ const ToolsPage = () => {
           "@type": "ListItem",
           position: i + 1,
           name: tool.name,
-          url: `https://tooltrim.com/${lang}/tool/${tool.slug || tool.id}`,
+          url: `https://www.tooltrim.com/${lang}/tool/${tool.slug || tool.id}`,
         })),
       },
     });

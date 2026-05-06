@@ -37,6 +37,12 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "tooltrim.com" }],
+      "destination": "https://www.tooltrim.com/:path*",
+      "permanent": true
+    },
     { "source": "/", "destination": "/fr", "permanent": true },
     { "source": "/tool/:slug", "destination": "/fr/tool/:slug", "permanent": true },
     { "source": "/category/:slug", "destination": "/fr/category/:slug", "permanent": true },

@@ -1,6 +1,6 @@
 # ToolTrim — 314 tools (verified pricing)
 # Last verified: 2026-04-30
-# Source: https://tooltrim.com
+# Source: https://www.tooltrim.com
 # Format: JSON array
 # Fields:
 #   name        — tool name
@@ -20,7 +20,7 @@
   {
     "name": "ChatGPT",
     "slug": "chatgpt",
-    "url": "https://tooltrim.com/fr/tool/chatgpt",
+    "url": "https://www.tooltrim.com/fr/tool/chatgpt",
     "website": "https://chat.openai.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -30,7 +30,7 @@
   {
     "name": "Claude",
     "slug": "claude",
-    "url": "https://tooltrim.com/fr/tool/claude",
+    "url": "https://www.tooltrim.com/fr/tool/claude",
     "website": "https://anthropic.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -40,7 +40,7 @@
   {
     "name": "Notion",
     "slug": "notion",
-    "url": "https://tooltrim.com/fr/tool/notion",
+    "url": "https://www.tooltrim.com/fr/tool/notion",
     "website": "https://notion.so",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -50,7 +50,7 @@
   {
     "name": "Calendly",
     "slug": "calendly",
-    "url": "https://tooltrim.com/fr/tool/calendly",
+    "url": "https://www.tooltrim.com/fr/tool/calendly",
     "website": "https://calendly.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -63,7 +63,7 @@
   {
     "name": "Loom",
     "slug": "loom",
-    "url": "https://tooltrim.com/fr/tool/loom",
+    "url": "https://www.tooltrim.com/fr/tool/loom",
     "website": "https://loom.com",
     "price_eur": 12.5,
     "verdict": "no-verdict",
@@ -73,7 +73,7 @@
   {
     "name": "Canva",
     "slug": "canva",
-    "url": "https://tooltrim.com/fr/tool/canva",
+    "url": "https://www.tooltrim.com/fr/tool/canva",
     "website": "https://canva.com",
     "price_eur": 13,
     "verdict": "no-verdict",
@@ -83,7 +83,7 @@
   {
     "name": "Grammarly",
     "slug": "grammarly",
-    "url": "https://tooltrim.com/fr/tool/grammarly",
+    "url": "https://www.tooltrim.com/fr/tool/grammarly",
     "website": "https://grammarly.com",
     "price_eur": 12,
     "verdict": "no-verdict",
@@ -102,7 +102,7 @@
   {
     "name": "Stripe",
     "slug": "stripe",
-    "url": "https://tooltrim.com/fr/tool/stripe",
+    "url": "https://www.tooltrim.com/fr/tool/stripe",
     "website": "https://stripe.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -112,7 +112,7 @@
   {
     "name": "Indy",
     "slug": "indy",
-    "url": "https://tooltrim.com/fr/tool/indy",
+    "url": "https://www.tooltrim.com/fr/tool/indy",
     "website": "https://indy.fr",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -122,7 +122,7 @@
   {
     "name": "Google Drive",
     "slug": "google-drive",
-    "url": "https://tooltrim.com/fr/tool/google-drive",
+    "url": "https://www.tooltrim.com/fr/tool/google-drive",
     "website": "https://google.com/drive",
     "price_eur": 2,
     "verdict": "no-verdict",
@@ -132,7 +132,7 @@
   {
     "name": "Perplexity",
     "slug": "perplexity",
-    "url": "https://tooltrim.com/fr/tool/perplexity",
+    "url": "https://www.tooltrim.com/fr/tool/perplexity",
     "website": "https://perplexity.ai",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -142,7 +142,7 @@
   {
     "name": "Tally",
     "slug": "tally",
-    "url": "https://tooltrim.com/fr/tool/tally",
+    "url": "https://www.tooltrim.com/fr/tool/tally",
     "website": "https://tally.so",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -152,7 +152,7 @@
   {
     "name": "Todoist",
     "slug": "todoist",
-    "url": "https://tooltrim.com/fr/tool/todoist",
+    "url": "https://www.tooltrim.com/fr/tool/todoist",
     "website": "https://todoist.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -162,7 +162,7 @@
   {
     "name": "Obsidian",
     "slug": "obsidian",
-    "url": "https://tooltrim.com/fr/tool/obsidian",
+    "url": "https://www.tooltrim.com/fr/tool/obsidian",
     "website": "https://obsidian.md",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -172,7 +172,7 @@
   {
     "name": "Make",
     "slug": "make",
-    "url": "https://tooltrim.com/fr/tool/make",
+    "url": "https://www.tooltrim.com/fr/tool/make",
     "website": "https://make.com",
     "price_eur": 9,
     "verdict": "no-verdict",
@@ -182,7 +182,7 @@
   {
     "name": "Raycast",
     "slug": "raycast",
-    "url": "https://tooltrim.com/fr/tool/raycast",
+    "url": "https://www.tooltrim.com/fr/tool/raycast",
     "website": "https://raycast.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -192,7 +192,7 @@
   {
     "name": "Superhuman",
     "slug": "superhuman",
-    "url": "https://tooltrim.com/fr/tool/superhuman",
+    "url": "https://www.tooltrim.com/fr/tool/superhuman",
     "website": "https://superhuman.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -202,7 +202,7 @@
   {
     "name": "Linear",
     "slug": "linear",
-    "url": "https://tooltrim.com/fr/tool/linear",
+    "url": "https://www.tooltrim.com/fr/tool/linear",
     "website": "https://linear.app",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -212,7 +212,7 @@
   {
     "name": "Cal.com",
     "slug": "cal-com",
-    "url": "https://tooltrim.com/fr/tool/cal-com",
+    "url": "https://www.tooltrim.com/fr/tool/cal-com",
     "website": "https://cal.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -222,7 +222,7 @@
   {
     "name": "Midjourney",
     "slug": "midjourney",
-    "url": "https://tooltrim.com/fr/tool/midjourney",
+    "url": "https://www.tooltrim.com/fr/tool/midjourney",
     "website": "https://midjourney.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -232,7 +232,7 @@
   {
     "name": "Base44",
     "slug": "base44",
-    "url": "https://tooltrim.com/fr/tool/base44",
+    "url": "https://www.tooltrim.com/fr/tool/base44",
     "website": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base",
     "price_eur": 29,
     "verdict": "no-verdict",
@@ -245,7 +245,7 @@
   {
     "name": "Sellsy",
     "slug": "sellsy",
-    "url": "https://tooltrim.com/fr/tool/sellsy",
+    "url": "https://www.tooltrim.com/fr/tool/sellsy",
     "website": "https://go.sellsy.com",
     "price_eur": 50,
     "verdict": "no-verdict",
@@ -258,7 +258,7 @@
   {
     "name": "ElevenLabs",
     "slug": "elevenlabs",
-    "url": "https://tooltrim.com/fr/tool/elevenlabs",
+    "url": "https://www.tooltrim.com/fr/tool/elevenlabs",
     "website": "https://elevenlabs.io",
     "price_eur": 5,
     "verdict": "no-verdict",
@@ -268,7 +268,7 @@
   {
     "name": "ClickUp",
     "slug": "clickup",
-    "url": "https://tooltrim.com/fr/tool/clickup",
+    "url": "https://www.tooltrim.com/fr/tool/clickup",
     "website": "https://clickup.com",
     "price_eur": 7,
     "verdict": "no-verdict",
@@ -281,7 +281,7 @@
   {
     "name": "SaneBox",
     "slug": "sanebox",
-    "url": "https://tooltrim.com/fr/tool/sanebox",
+    "url": "https://www.tooltrim.com/fr/tool/sanebox",
     "website": "https://www.sanebox.com",
     "price_eur": 7,
     "verdict": "no-verdict",
@@ -294,7 +294,7 @@
   {
     "name": "GetResponse",
     "slug": "getresponse",
-    "url": "https://tooltrim.com/fr/tool/getresponse",
+    "url": "https://www.tooltrim.com/fr/tool/getresponse",
     "website": "https://www.getresponse.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -307,7 +307,7 @@
   {
     "name": "Trello",
     "slug": "trello",
-    "url": "https://tooltrim.com/fr/tool/trello",
+    "url": "https://www.tooltrim.com/fr/tool/trello",
     "website": "https://trello.com",
     "price_eur": 5,
     "verdict": "no-verdict",
@@ -320,7 +320,7 @@
   {
     "name": "Airtable",
     "slug": "airtable",
-    "url": "https://tooltrim.com/fr/tool/airtable",
+    "url": "https://www.tooltrim.com/fr/tool/airtable",
     "website": "https://airtable.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -333,7 +333,7 @@
   {
     "name": "Mailchimp",
     "slug": "mailchimp",
-    "url": "https://tooltrim.com/fr/tool/mailchimp",
+    "url": "https://www.tooltrim.com/fr/tool/mailchimp",
     "website": "https://mailchimp.com",
     "price_eur": 13,
     "verdict": "no-verdict",
@@ -346,7 +346,7 @@
   {
     "name": "Slack",
     "slug": "slack",
-    "url": "https://tooltrim.com/fr/tool/slack",
+    "url": "https://www.tooltrim.com/fr/tool/slack",
     "website": "https://slack.com",
     "price_eur": 7.25,
     "verdict": "no-verdict",
@@ -359,7 +359,7 @@
   {
     "name": "Figma",
     "slug": "figma",
-    "url": "https://tooltrim.com/fr/tool/figma",
+    "url": "https://www.tooltrim.com/fr/tool/figma",
     "website": "https://figma.com",
     "price_eur": 12,
     "verdict": "no-verdict",
@@ -369,7 +369,7 @@
   {
     "name": "1Password",
     "slug": "1password",
-    "url": "https://tooltrim.com/fr/tool/1password",
+    "url": "https://www.tooltrim.com/fr/tool/1password",
     "website": "https://1password.com",
     "price_eur": 2.99,
     "verdict": "no-verdict",
@@ -382,7 +382,7 @@
   {
     "name": "Toggl Track",
     "slug": "toggl",
-    "url": "https://tooltrim.com/fr/tool/toggl",
+    "url": "https://www.tooltrim.com/fr/tool/toggl",
     "website": "https://toggl.com",
     "price_eur": 9,
     "verdict": "no-verdict",
@@ -392,7 +392,7 @@
   {
     "name": "Webflow",
     "slug": "webflow",
-    "url": "https://tooltrim.com/fr/tool/webflow",
+    "url": "https://www.tooltrim.com/fr/tool/webflow",
     "website": "https://webflow.com",
     "price_eur": 14,
     "verdict": "no-verdict",
@@ -405,7 +405,7 @@
   {
     "name": "Plausible Analytics",
     "slug": "plausible",
-    "url": "https://tooltrim.com/fr/tool/plausible",
+    "url": "https://www.tooltrim.com/fr/tool/plausible",
     "website": "https://plausible.io",
     "price_eur": 9,
     "verdict": "no-verdict",
@@ -418,7 +418,7 @@
   {
     "name": "Pitch",
     "slug": "pitch",
-    "url": "https://tooltrim.com/fr/tool/pitch",
+    "url": "https://www.tooltrim.com/fr/tool/pitch",
     "website": "https://pitch.com",
     "price_eur": 8,
     "verdict": "no-verdict",
@@ -431,7 +431,7 @@
   {
     "name": "LearnWorlds",
     "slug": "learnworlds",
-    "url": "https://tooltrim.com/fr/tool/learnworlds",
+    "url": "https://www.tooltrim.com/fr/tool/learnworlds",
     "website": "https://get.learnworlds.com/7gzw9pjf9sz6",
     "price_eur": 29,
     "verdict": "no-verdict",
@@ -446,7 +446,7 @@
   {
     "name": "Prezi",
     "slug": "prezi",
-    "url": "https://tooltrim.com/fr/tool/prezi",
+    "url": "https://www.tooltrim.com/fr/tool/prezi",
     "website": "https://try.prezi.com/6op8bpbxu641",
     "price_eur": 5,
     "verdict": "no-verdict",
@@ -461,7 +461,7 @@
   {
     "name": "KrispCall",
     "slug": "krispcall",
-    "url": "https://tooltrim.com/fr/tool/krispcall",
+    "url": "https://www.tooltrim.com/fr/tool/krispcall",
     "website": "https://try.krispcall.com/t1akmbaetinc",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -476,7 +476,7 @@
   {
     "name": "Mega HR",
     "slug": "megahr",
-    "url": "https://tooltrim.com/fr/tool/megahr",
+    "url": "https://www.tooltrim.com/fr/tool/megahr",
     "website": "https://try.megahr.com/j41a7b17mmfs",
     "price_eur": 8,
     "verdict": "no-verdict",
@@ -491,7 +491,7 @@
   {
     "name": "Logome.ai",
     "slug": "logomeai",
-    "url": "https://tooltrim.com/fr/tool/logomeai",
+    "url": "https://www.tooltrim.com/fr/tool/logomeai",
     "website": "https://logomeai.partnerlinks.io/qixva38jv07p",
     "price_eur": 29,
     "verdict": "no-verdict",
@@ -506,7 +506,7 @@
   {
     "name": "Reply.io",
     "slug": "replyio",
-    "url": "https://tooltrim.com/fr/tool/replyio",
+    "url": "https://www.tooltrim.com/fr/tool/replyio",
     "website": "https://get.reply.io/nnswatq9mgm4-p7peoq",
     "price_eur": 60,
     "verdict": "no-verdict",
@@ -521,7 +521,7 @@
   {
     "name": "Turbotic",
     "slug": "turbotic",
-    "url": "https://tooltrim.com/fr/tool/turbotic",
+    "url": "https://www.tooltrim.com/fr/tool/turbotic",
     "website": "https://try.turbotic.com/0ijk0lvs0etc",
     "price_eur": 49,
     "verdict": "no-verdict",
@@ -536,7 +536,7 @@
   {
     "name": "ConvertKit",
     "slug": "convertkit",
-    "url": "https://tooltrim.com/fr/tool/convertkit",
+    "url": "https://www.tooltrim.com/fr/tool/convertkit",
     "website": "https://partners.kit.com/u037oht6r48p",
     "price_eur": 29,
     "verdict": "no-verdict",
@@ -551,7 +551,7 @@
   {
     "name": "Ignition",
     "slug": "ignition",
-    "url": "https://tooltrim.com/fr/tool/ignition",
+    "url": "https://www.tooltrim.com/fr/tool/ignition",
     "website": "https://get.practiceignition.com/e261f8d417a0",
     "price_eur": 35,
     "verdict": "no-verdict",
@@ -566,7 +566,7 @@
   {
     "name": "Landingi",
     "slug": "landingi",
-    "url": "https://tooltrim.com/fr/tool/landingi",
+    "url": "https://www.tooltrim.com/fr/tool/landingi",
     "website": "https://try.landingi.com/8he4kr5kasjb",
     "price_eur": 29,
     "verdict": "no-verdict",
@@ -581,7 +581,7 @@
   {
     "name": "AdCreative.ai",
     "slug": "adcreative",
-    "url": "https://tooltrim.com/fr/tool/adcreative",
+    "url": "https://www.tooltrim.com/fr/tool/adcreative",
     "website": "https://free-trial.adcreative.ai/bl7nxarn1exp",
     "price_eur": 29,
     "verdict": "no-verdict",
@@ -596,7 +596,7 @@
   {
     "name": "8fig",
     "slug": "8fig",
-    "url": "https://tooltrim.com/fr/tool/8fig",
+    "url": "https://www.tooltrim.com/fr/tool/8fig",
     "website": "https://8fig.com",
     "price_eur": 5,
     "verdict": "no-verdict",
@@ -606,7 +606,7 @@
   {
     "name": "Adobe",
     "slug": "adobe",
-    "url": "https://tooltrim.com/fr/tool/adobe",
+    "url": "https://www.tooltrim.com/fr/tool/adobe",
     "website": "https://adobe.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -616,7 +616,7 @@
   {
     "name": "Aircall Inc.",
     "slug": "aircall-inc",
-    "url": "https://tooltrim.com/fr/tool/aircall-inc",
+    "url": "https://www.tooltrim.com/fr/tool/aircall-inc",
     "website": "https://aircall.io",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -626,7 +626,7 @@
   {
     "name": "airSlate",
     "slug": "airslate",
-    "url": "https://tooltrim.com/fr/tool/airslate",
+    "url": "https://www.tooltrim.com/fr/tool/airslate",
     "website": "https://airslate.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -636,7 +636,7 @@
   {
     "name": "Albato",
     "slug": "albato",
-    "url": "https://tooltrim.com/fr/tool/albato",
+    "url": "https://www.tooltrim.com/fr/tool/albato",
     "website": "https://albato.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -646,7 +646,7 @@
   {
     "name": "Allstate",
     "slug": "allstate",
-    "url": "https://tooltrim.com/fr/tool/allstate",
+    "url": "https://www.tooltrim.com/fr/tool/allstate",
     "website": "https://allstate.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -656,7 +656,7 @@
   {
     "name": "Aloware",
     "slug": "aloware",
-    "url": "https://tooltrim.com/fr/tool/aloware",
+    "url": "https://www.tooltrim.com/fr/tool/aloware",
     "website": "https://aloware.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -666,7 +666,7 @@
   {
     "name": "Apollo.io",
     "slug": "apollo-io",
-    "url": "https://tooltrim.com/fr/tool/apollo-io",
+    "url": "https://www.tooltrim.com/fr/tool/apollo-io",
     "website": "https://apollo.io",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -676,7 +676,7 @@
   {
     "name": "AroundDeal",
     "slug": "arounddeal",
-    "url": "https://tooltrim.com/fr/tool/arounddeal",
+    "url": "https://www.tooltrim.com/fr/tool/arounddeal",
     "website": "https://arounddeal.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -686,7 +686,7 @@
   {
     "name": "Asana",
     "slug": "asana",
-    "url": "https://tooltrim.com/fr/tool/asana",
+    "url": "https://www.tooltrim.com/fr/tool/asana",
     "website": "https://asana.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -704,7 +704,7 @@
   {
     "name": "Autonix",
     "slug": "autonix",
-    "url": "https://tooltrim.com/fr/tool/autonix",
+    "url": "https://www.tooltrim.com/fr/tool/autonix",
     "website": "https://autonix.io",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -714,7 +714,7 @@
   {
     "name": "Auvik",
     "slug": "auvik",
-    "url": "https://tooltrim.com/fr/tool/auvik",
+    "url": "https://www.tooltrim.com/fr/tool/auvik",
     "website": "https://auvik.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -724,7 +724,7 @@
   {
     "name": "AWeber",
     "slug": "aweber",
-    "url": "https://tooltrim.com/fr/tool/aweber",
+    "url": "https://www.tooltrim.com/fr/tool/aweber",
     "website": "https://aweber.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -734,7 +734,7 @@
   {
     "name": "Basecamp",
     "slug": "basecamp",
-    "url": "https://tooltrim.com/fr/tool/basecamp",
+    "url": "https://www.tooltrim.com/fr/tool/basecamp",
     "website": "https://basecamp.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -744,7 +744,7 @@
   {
     "name": "Blueink eSignatures",
     "slug": "blueink-esignatures",
-    "url": "https://tooltrim.com/fr/tool/blueink-esignatures",
+    "url": "https://www.tooltrim.com/fr/tool/blueink-esignatures",
     "website": "https://blueink.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -754,7 +754,7 @@
   {
     "name": "Boast",
     "slug": "boast",
-    "url": "https://tooltrim.com/fr/tool/boast",
+    "url": "https://www.tooltrim.com/fr/tool/boast",
     "website": "https://boast.ai",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -764,7 +764,7 @@
   {
     "name": "Bolt Business",
     "slug": "bolt-business",
-    "url": "https://tooltrim.com/fr/tool/bolt-business",
+    "url": "https://www.tooltrim.com/fr/tool/bolt-business",
     "website": "https://bolt.eu/business",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -774,7 +774,7 @@
   {
     "name": "BoomPop",
     "slug": "boompop",
-    "url": "https://tooltrim.com/fr/tool/boompop",
+    "url": "https://www.tooltrim.com/fr/tool/boompop",
     "website": "https://boompop.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -784,7 +784,7 @@
   {
     "name": "Box",
     "slug": "box",
-    "url": "https://tooltrim.com/fr/tool/box",
+    "url": "https://www.tooltrim.com/fr/tool/box",
     "website": "https://box.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -794,7 +794,7 @@
   {
     "name": "Brand24",
     "slug": "brand24",
-    "url": "https://tooltrim.com/fr/tool/brand24",
+    "url": "https://www.tooltrim.com/fr/tool/brand24",
     "website": "https://brand24.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -804,7 +804,7 @@
   {
     "name": "Breezy HR",
     "slug": "breezy-hr",
-    "url": "https://tooltrim.com/fr/tool/breezy-hr",
+    "url": "https://www.tooltrim.com/fr/tool/breezy-hr",
     "website": "https://breezy.hr",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -814,7 +814,7 @@
   {
     "name": "Buddy Punch",
     "slug": "buddy-punch",
-    "url": "https://tooltrim.com/fr/tool/buddy-punch",
+    "url": "https://www.tooltrim.com/fr/tool/buddy-punch",
     "website": "https://buddypunch.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -824,7 +824,7 @@
   {
     "name": "BugHerd",
     "slug": "bugherd",
-    "url": "https://tooltrim.com/fr/tool/bugherd",
+    "url": "https://www.tooltrim.com/fr/tool/bugherd",
     "website": "https://bugherd.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -834,7 +834,7 @@
   {
     "name": "CallHippo",
     "slug": "callhippo",
-    "url": "https://tooltrim.com/fr/tool/callhippo",
+    "url": "https://www.tooltrim.com/fr/tool/callhippo",
     "website": "https://callhippo.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -844,7 +844,7 @@
   {
     "name": "CallRail",
     "slug": "callrail",
-    "url": "https://tooltrim.com/fr/tool/callrail",
+    "url": "https://www.tooltrim.com/fr/tool/callrail",
     "website": "https://callrail.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -854,7 +854,7 @@
   {
     "name": "CallTrackingMetrics",
     "slug": "calltrackingmetrics",
-    "url": "https://tooltrim.com/fr/tool/calltrackingmetrics",
+    "url": "https://www.tooltrim.com/fr/tool/calltrackingmetrics",
     "website": "https://calltrackingmetrics.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -864,7 +864,7 @@
   {
     "name": "Campaigner",
     "slug": "campaigner",
-    "url": "https://tooltrim.com/fr/tool/campaigner",
+    "url": "https://www.tooltrim.com/fr/tool/campaigner",
     "website": "https://campaigner.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -874,7 +874,7 @@
   {
     "name": "Capsule",
     "slug": "capsule",
-    "url": "https://tooltrim.com/fr/tool/capsule",
+    "url": "https://www.tooltrim.com/fr/tool/capsule",
     "website": "https://capsulecrm.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -884,7 +884,7 @@
   {
     "name": "Castmagic",
     "slug": "castmagic",
-    "url": "https://tooltrim.com/fr/tool/castmagic",
+    "url": "https://www.tooltrim.com/fr/tool/castmagic",
     "website": "https://castmagic.io",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -894,7 +894,7 @@
   {
     "name": "Clearbit",
     "slug": "clearbit",
-    "url": "https://tooltrim.com/fr/tool/clearbit",
+    "url": "https://www.tooltrim.com/fr/tool/clearbit",
     "website": "https://clearbit.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -904,7 +904,7 @@
   {
     "name": "ClockShark",
     "slug": "clockshark",
-    "url": "https://tooltrim.com/fr/tool/clockshark",
+    "url": "https://www.tooltrim.com/fr/tool/clockshark",
     "website": "https://clockshark.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -914,7 +914,7 @@
   {
     "name": "Close",
     "slug": "close",
-    "url": "https://tooltrim.com/fr/tool/close",
+    "url": "https://www.tooltrim.com/fr/tool/close",
     "website": "https://close.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -924,7 +924,7 @@
   {
     "name": "CloudTask Marketplace",
     "slug": "cloudtask-marketplace",
-    "url": "https://tooltrim.com/fr/tool/cloudtask-marketplace",
+    "url": "https://www.tooltrim.com/fr/tool/cloudtask-marketplace",
     "website": "https://cloudtask.com/marketplace",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -934,7 +934,7 @@
   {
     "name": "Coast",
     "slug": "coast",
-    "url": "https://tooltrim.com/fr/tool/coast",
+    "url": "https://www.tooltrim.com/fr/tool/coast",
     "website": "https://coastpay.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -944,7 +944,7 @@
   {
     "name": "Cognism",
     "slug": "cognism",
-    "url": "https://tooltrim.com/fr/tool/cognism",
+    "url": "https://www.tooltrim.com/fr/tool/cognism",
     "website": "https://cognism.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -954,7 +954,7 @@
   {
     "name": "Connecteam",
     "slug": "connecteam",
-    "url": "https://tooltrim.com/fr/tool/connecteam",
+    "url": "https://www.tooltrim.com/fr/tool/connecteam",
     "website": "https://connecteam.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -964,7 +964,7 @@
   {
     "name": "Crowdfire Inc",
     "slug": "crowdfire-inc",
-    "url": "https://tooltrim.com/fr/tool/crowdfire-inc",
+    "url": "https://www.tooltrim.com/fr/tool/crowdfire-inc",
     "website": "https://crowdfireapp.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -974,7 +974,7 @@
   {
     "name": "Deel",
     "slug": "deel",
-    "url": "https://tooltrim.com/fr/tool/deel",
+    "url": "https://www.tooltrim.com/fr/tool/deel",
     "website": "https://deel.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -984,7 +984,7 @@
   {
     "name": "Deputy",
     "slug": "deputy",
-    "url": "https://tooltrim.com/fr/tool/deputy",
+    "url": "https://www.tooltrim.com/fr/tool/deputy",
     "website": "https://deputy.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -994,7 +994,7 @@
   {
     "name": "Deskpro",
     "slug": "deskpro",
-    "url": "https://tooltrim.com/fr/tool/deskpro",
+    "url": "https://www.tooltrim.com/fr/tool/deskpro",
     "website": "https://deskpro.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1004,7 +1004,7 @@
   {
     "name": "DesktopReady",
     "slug": "desktopready",
-    "url": "https://tooltrim.com/fr/tool/desktopready",
+    "url": "https://www.tooltrim.com/fr/tool/desktopready",
     "website": "https://desktopready.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1014,7 +1014,7 @@
   {
     "name": "Docyt",
     "slug": "docyt",
-    "url": "https://tooltrim.com/fr/tool/docyt",
+    "url": "https://www.tooltrim.com/fr/tool/docyt",
     "website": "https://docyt.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1024,7 +1024,7 @@
   {
     "name": "doola",
     "slug": "doola",
-    "url": "https://tooltrim.com/fr/tool/doola",
+    "url": "https://www.tooltrim.com/fr/tool/doola",
     "website": "https://doola.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1034,7 +1034,7 @@
   {
     "name": "Draftbit",
     "slug": "draftbit",
-    "url": "https://tooltrim.com/fr/tool/draftbit",
+    "url": "https://www.tooltrim.com/fr/tool/draftbit",
     "website": "https://draftbit.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1044,7 +1044,7 @@
   {
     "name": "Dropbox",
     "slug": "dropbox",
-    "url": "https://tooltrim.com/fr/tool/dropbox",
+    "url": "https://www.tooltrim.com/fr/tool/dropbox",
     "website": "https://dropbox.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1062,7 +1062,7 @@
   {
     "name": "EasyDMARC",
     "slug": "easydmarc",
-    "url": "https://tooltrim.com/fr/tool/easydmarc",
+    "url": "https://www.tooltrim.com/fr/tool/easydmarc",
     "website": "https://easydmarc.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1072,7 +1072,7 @@
   {
     "name": "Extensis",
     "slug": "extensis",
-    "url": "https://tooltrim.com/fr/tool/extensis",
+    "url": "https://www.tooltrim.com/fr/tool/extensis",
     "website": "https://extensis.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1082,7 +1082,7 @@
   {
     "name": "Finale Inventory",
     "slug": "finale-inventory",
-    "url": "https://tooltrim.com/fr/tool/finale-inventory",
+    "url": "https://www.tooltrim.com/fr/tool/finale-inventory",
     "website": "https://finaleinventory.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1092,7 +1092,7 @@
   {
     "name": "FlexiQuiz",
     "slug": "flexiquiz",
-    "url": "https://tooltrim.com/fr/tool/flexiquiz",
+    "url": "https://www.tooltrim.com/fr/tool/flexiquiz",
     "website": "https://flexiquiz.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1102,7 +1102,7 @@
   {
     "name": "Format",
     "slug": "format",
-    "url": "https://tooltrim.com/fr/tool/format",
+    "url": "https://www.tooltrim.com/fr/tool/format",
     "website": "https://format.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1112,7 +1112,7 @@
   {
     "name": "FreshBooks",
     "slug": "freshbooks",
-    "url": "https://tooltrim.com/fr/tool/freshbooks",
+    "url": "https://www.tooltrim.com/fr/tool/freshbooks",
     "website": "https://freshbooks.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1122,7 +1122,7 @@
   {
     "name": "Front",
     "slug": "front",
-    "url": "https://tooltrim.com/fr/tool/front",
+    "url": "https://www.tooltrim.com/fr/tool/front",
     "website": "https://front.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1132,7 +1132,7 @@
   {
     "name": "Gelato",
     "slug": "gelato",
-    "url": "https://tooltrim.com/fr/tool/gelato",
+    "url": "https://www.tooltrim.com/fr/tool/gelato",
     "website": "https://gelato.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1142,7 +1142,7 @@
   {
     "name": "Getida",
     "slug": "getida",
-    "url": "https://tooltrim.com/fr/tool/getida",
+    "url": "https://www.tooltrim.com/fr/tool/getida",
     "website": "https://getida.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1152,7 +1152,7 @@
   {
     "name": "Glide",
     "slug": "glide",
-    "url": "https://tooltrim.com/fr/tool/glide",
+    "url": "https://www.tooltrim.com/fr/tool/glide",
     "website": "https://glideapps.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1162,7 +1162,7 @@
   {
     "name": "Gorgias",
     "slug": "gorgias",
-    "url": "https://tooltrim.com/fr/tool/gorgias",
+    "url": "https://www.tooltrim.com/fr/tool/gorgias",
     "website": "https://gorgias.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1172,7 +1172,7 @@
   {
     "name": "Hive",
     "slug": "hive",
-    "url": "https://tooltrim.com/fr/tool/hive",
+    "url": "https://www.tooltrim.com/fr/tool/hive",
     "website": "https://hive.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1182,7 +1182,7 @@
   {
     "name": "Hootsuite",
     "slug": "hootsuite",
-    "url": "https://tooltrim.com/fr/tool/hootsuite",
+    "url": "https://www.tooltrim.com/fr/tool/hootsuite",
     "website": "https://hootsuite.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1192,7 +1192,7 @@
   {
     "name": "Hostfully",
     "slug": "hostfully",
-    "url": "https://tooltrim.com/fr/tool/hostfully",
+    "url": "https://www.tooltrim.com/fr/tool/hostfully",
     "website": "https://hostfully.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1202,7 +1202,7 @@
   {
     "name": "Houzz Pro",
     "slug": "houzz-pro",
-    "url": "https://tooltrim.com/fr/tool/houzz-pro",
+    "url": "https://www.tooltrim.com/fr/tool/houzz-pro",
     "website": "https://houzz.com/pro",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1212,7 +1212,7 @@
   {
     "name": "iContact",
     "slug": "icontact",
-    "url": "https://tooltrim.com/fr/tool/icontact",
+    "url": "https://www.tooltrim.com/fr/tool/icontact",
     "website": "https://icontact.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1222,7 +1222,7 @@
   {
     "name": "InboxAlly",
     "slug": "inboxally",
-    "url": "https://tooltrim.com/fr/tool/inboxally",
+    "url": "https://www.tooltrim.com/fr/tool/inboxally",
     "website": "https://inboxally.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1232,7 +1232,7 @@
   {
     "name": "inFlow Inventory",
     "slug": "inflow-inventory",
-    "url": "https://tooltrim.com/fr/tool/inflow-inventory",
+    "url": "https://www.tooltrim.com/fr/tool/inflow-inventory",
     "website": "https://inflowinventory.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1242,7 +1242,7 @@
   {
     "name": "Insightly",
     "slug": "insightly",
-    "url": "https://tooltrim.com/fr/tool/insightly",
+    "url": "https://www.tooltrim.com/fr/tool/insightly",
     "website": "https://insightly.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1252,7 +1252,7 @@
   {
     "name": "Instapage",
     "slug": "instapage",
-    "url": "https://tooltrim.com/fr/tool/instapage",
+    "url": "https://www.tooltrim.com/fr/tool/instapage",
     "website": "https://instapage.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1262,7 +1262,7 @@
   {
     "name": "Jobber",
     "slug": "jobber",
-    "url": "https://tooltrim.com/fr/tool/jobber",
+    "url": "https://www.tooltrim.com/fr/tool/jobber",
     "website": "https://getjobber.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1272,7 +1272,7 @@
   {
     "name": "Katana Cloud Manufacturing",
     "slug": "katana-cloud-manufacturing",
-    "url": "https://tooltrim.com/fr/tool/katana-cloud-manufacturing",
+    "url": "https://www.tooltrim.com/fr/tool/katana-cloud-manufacturing",
     "website": "https://katanamrp.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1282,7 +1282,7 @@
   {
     "name": "Kavkom",
     "slug": "kavkom",
-    "url": "https://tooltrim.com/fr/tool/kavkom",
+    "url": "https://www.tooltrim.com/fr/tool/kavkom",
     "website": "https://kavkom.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1292,7 +1292,7 @@
   {
     "name": "KeepTruckin",
     "slug": "keeptruckin",
-    "url": "https://tooltrim.com/fr/tool/keeptruckin",
+    "url": "https://www.tooltrim.com/fr/tool/keeptruckin",
     "website": "https://keeptruckin.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1302,7 +1302,7 @@
   {
     "name": "Kissmetrics",
     "slug": "kissmetrics",
-    "url": "https://tooltrim.com/fr/tool/kissmetrics",
+    "url": "https://www.tooltrim.com/fr/tool/kissmetrics",
     "website": "https://kissmetrics.io",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1312,7 +1312,7 @@
   {
     "name": "Kixie",
     "slug": "kixie",
-    "url": "https://tooltrim.com/fr/tool/kixie",
+    "url": "https://www.tooltrim.com/fr/tool/kixie",
     "website": "https://kixie.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1322,7 +1322,7 @@
   {
     "name": "Landbot",
     "slug": "landbot",
-    "url": "https://tooltrim.com/fr/tool/landbot",
+    "url": "https://www.tooltrim.com/fr/tool/landbot",
     "website": "https://landbot.io",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1332,7 +1332,7 @@
   {
     "name": "Lano",
     "slug": "lano",
-    "url": "https://tooltrim.com/fr/tool/lano",
+    "url": "https://www.tooltrim.com/fr/tool/lano",
     "website": "https://lano.io",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1342,7 +1342,7 @@
   {
     "name": "Later",
     "slug": "later",
-    "url": "https://tooltrim.com/fr/tool/later",
+    "url": "https://www.tooltrim.com/fr/tool/later",
     "website": "https://later.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1352,7 +1352,7 @@
   {
     "name": "Leadflow",
     "slug": "leadflow",
-    "url": "https://tooltrim.com/fr/tool/leadflow",
+    "url": "https://www.tooltrim.com/fr/tool/leadflow",
     "website": "https://leadflow.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1362,7 +1362,7 @@
   {
     "name": "Leadpages",
     "slug": "leadpages",
-    "url": "https://tooltrim.com/fr/tool/leadpages",
+    "url": "https://www.tooltrim.com/fr/tool/leadpages",
     "website": "https://leadpages.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1372,7 +1372,7 @@
   {
     "name": "LeadSquared",
     "slug": "leadsquared",
-    "url": "https://tooltrim.com/fr/tool/leadsquared",
+    "url": "https://www.tooltrim.com/fr/tool/leadsquared",
     "website": "https://leadsquared.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1382,7 +1382,7 @@
   {
     "name": "Lendio",
     "slug": "lendio",
-    "url": "https://tooltrim.com/fr/tool/lendio",
+    "url": "https://www.tooltrim.com/fr/tool/lendio",
     "website": "https://lendio.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1392,7 +1392,7 @@
   {
     "name": "Liquid Web Partner+ Program",
     "slug": "liquid-web-partner-program",
-    "url": "https://tooltrim.com/fr/tool/liquid-web-partner-program",
+    "url": "https://www.tooltrim.com/fr/tool/liquid-web-partner-program",
     "website": "https://liquidweb.com/partner-program",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1402,7 +1402,7 @@
   {
     "name": "Looka",
     "slug": "looka",
-    "url": "https://tooltrim.com/fr/tool/looka",
+    "url": "https://www.tooltrim.com/fr/tool/looka",
     "website": "https://looka.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1412,7 +1412,7 @@
   {
     "name": "Lucid Software",
     "slug": "lucid-software",
-    "url": "https://tooltrim.com/fr/tool/lucid-software",
+    "url": "https://www.tooltrim.com/fr/tool/lucid-software",
     "website": "https://lucid.co",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1422,7 +1422,7 @@
   {
     "name": "Mailgun",
     "slug": "mailgun",
-    "url": "https://tooltrim.com/fr/tool/mailgun",
+    "url": "https://www.tooltrim.com/fr/tool/mailgun",
     "website": "https://mailgun.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1432,7 +1432,7 @@
   {
     "name": "Manifest AI",
     "slug": "manifest-ai",
-    "url": "https://tooltrim.com/fr/tool/manifest-ai",
+    "url": "https://www.tooltrim.com/fr/tool/manifest-ai",
     "website": "https://manifestai.io",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1442,7 +1442,7 @@
   {
     "name": "MASV",
     "slug": "masv",
-    "url": "https://tooltrim.com/fr/tool/masv",
+    "url": "https://www.tooltrim.com/fr/tool/masv",
     "website": "https://massive.io",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1452,7 +1452,7 @@
   {
     "name": "Moosend",
     "slug": "moosend",
-    "url": "https://tooltrim.com/fr/tool/moosend",
+    "url": "https://www.tooltrim.com/fr/tool/moosend",
     "website": "https://moosend.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1462,7 +1462,7 @@
   {
     "name": "MRPeasy",
     "slug": "mrpeasy",
-    "url": "https://tooltrim.com/fr/tool/mrpeasy",
+    "url": "https://www.tooltrim.com/fr/tool/mrpeasy",
     "website": "https://mrpeasy.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1472,7 +1472,7 @@
   {
     "name": "MyCase",
     "slug": "mycase",
-    "url": "https://tooltrim.com/fr/tool/mycase",
+    "url": "https://www.tooltrim.com/fr/tool/mycase",
     "website": "https://mycase.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1482,7 +1482,7 @@
   {
     "name": "Navan",
     "slug": "navan",
-    "url": "https://tooltrim.com/fr/tool/navan",
+    "url": "https://www.tooltrim.com/fr/tool/navan",
     "website": "https://navan.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1492,7 +1492,7 @@
   {
     "name": "NearSt",
     "slug": "nearst",
-    "url": "https://tooltrim.com/fr/tool/nearst",
+    "url": "https://www.tooltrim.com/fr/tool/nearst",
     "website": "https://near.st",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1502,7 +1502,7 @@
   {
     "name": "Netchex",
     "slug": "netchex",
-    "url": "https://tooltrim.com/fr/tool/netchex",
+    "url": "https://www.tooltrim.com/fr/tool/netchex",
     "website": "https://netchex.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1512,7 +1512,7 @@
   {
     "name": "Omniconvert Explore",
     "slug": "omniconvert-explore",
-    "url": "https://tooltrim.com/fr/tool/omniconvert-explore",
+    "url": "https://www.tooltrim.com/fr/tool/omniconvert-explore",
     "website": "https://omniconvert.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1522,7 +1522,7 @@
   {
     "name": "Onramp Funds",
     "slug": "onramp-funds",
-    "url": "https://tooltrim.com/fr/tool/onramp-funds",
+    "url": "https://www.tooltrim.com/fr/tool/onramp-funds",
     "website": "https://onrampfunds.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1532,7 +1532,7 @@
   {
     "name": "OpenPhone",
     "slug": "openphone",
-    "url": "https://tooltrim.com/fr/tool/openphone",
+    "url": "https://www.tooltrim.com/fr/tool/openphone",
     "website": "https://openphone.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1542,7 +1542,7 @@
   {
     "name": "Ownr",
     "slug": "ownr",
-    "url": "https://tooltrim.com/fr/tool/ownr",
+    "url": "https://www.tooltrim.com/fr/tool/ownr",
     "website": "https://ownr.co",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1552,7 +1552,7 @@
   {
     "name": "Oyster®",
     "slug": "oyster",
-    "url": "https://tooltrim.com/fr/tool/oyster",
+    "url": "https://www.tooltrim.com/fr/tool/oyster",
     "website": "https://oysterhr.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1562,7 +1562,7 @@
   {
     "name": "Packhelp",
     "slug": "packhelp",
-    "url": "https://tooltrim.com/fr/tool/packhelp",
+    "url": "https://www.tooltrim.com/fr/tool/packhelp",
     "website": "https://packhelp.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1572,7 +1572,7 @@
   {
     "name": "Pagecloud",
     "slug": "pagecloud",
-    "url": "https://tooltrim.com/fr/tool/pagecloud",
+    "url": "https://www.tooltrim.com/fr/tool/pagecloud",
     "website": "https://pagecloud.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1582,7 +1582,7 @@
   {
     "name": "Payoneer",
     "slug": "payoneer",
-    "url": "https://tooltrim.com/fr/tool/payoneer",
+    "url": "https://www.tooltrim.com/fr/tool/payoneer",
     "website": "https://payoneer.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1592,7 +1592,7 @@
   {
     "name": "Pipedrive",
     "slug": "pipedrive",
-    "url": "https://tooltrim.com/fr/tool/pipedrive",
+    "url": "https://www.tooltrim.com/fr/tool/pipedrive",
     "website": "https://pipedrive.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1602,7 +1602,7 @@
   {
     "name": "PipelinePRO",
     "slug": "pipelinepro",
-    "url": "https://tooltrim.com/fr/tool/pipelinepro",
+    "url": "https://www.tooltrim.com/fr/tool/pipelinepro",
     "website": "https://pipelinepro.io",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1612,7 +1612,7 @@
   {
     "name": "Printify",
     "slug": "printify",
-    "url": "https://tooltrim.com/fr/tool/printify",
+    "url": "https://www.tooltrim.com/fr/tool/printify",
     "website": "https://printify.com",
     "price_eur": 5,
     "verdict": "no-verdict",
@@ -1622,7 +1622,7 @@
   {
     "name": "Process Street",
     "slug": "process-street",
-    "url": "https://tooltrim.com/fr/tool/process-street",
+    "url": "https://www.tooltrim.com/fr/tool/process-street",
     "website": "https://process.st",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1632,7 +1632,7 @@
   {
     "name": "ProductionCrate",
     "slug": "productioncrate",
-    "url": "https://tooltrim.com/fr/tool/productioncrate",
+    "url": "https://www.tooltrim.com/fr/tool/productioncrate",
     "website": "https://productioncrate.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1642,7 +1642,7 @@
   {
     "name": "Promo.com",
     "slug": "promo-com",
-    "url": "https://tooltrim.com/fr/tool/promo-com",
+    "url": "https://www.tooltrim.com/fr/tool/promo-com",
     "website": "https://promo.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1652,7 +1652,7 @@
   {
     "name": "PushOwl Web Push Notifications",
     "slug": "pushowl-web-push-notifications",
-    "url": "https://tooltrim.com/fr/tool/pushowl-web-push-notifications",
+    "url": "https://www.tooltrim.com/fr/tool/pushowl-web-push-notifications",
     "website": "https://pushowl.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1662,7 +1662,7 @@
   {
     "name": "Quadient",
     "slug": "quadient",
-    "url": "https://tooltrim.com/fr/tool/quadient",
+    "url": "https://www.tooltrim.com/fr/tool/quadient",
     "website": "https://quadient.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1672,7 +1672,7 @@
   {
     "name": "Quartile",
     "slug": "quartile",
-    "url": "https://tooltrim.com/fr/tool/quartile",
+    "url": "https://www.tooltrim.com/fr/tool/quartile",
     "website": "https://quartile.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1682,7 +1682,7 @@
   {
     "name": "Quick Base",
     "slug": "quick-base",
-    "url": "https://tooltrim.com/fr/tool/quick-base",
+    "url": "https://www.tooltrim.com/fr/tool/quick-base",
     "website": "https://quickbase.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1692,7 +1692,7 @@
   {
     "name": "QuickBooks",
     "slug": "quickbooks",
-    "url": "https://tooltrim.com/fr/tool/quickbooks",
+    "url": "https://www.tooltrim.com/fr/tool/quickbooks",
     "website": "https://quickbooks.intuit.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1702,7 +1702,7 @@
   {
     "name": "Razorpay",
     "slug": "razorpay",
-    "url": "https://tooltrim.com/fr/tool/razorpay",
+    "url": "https://www.tooltrim.com/fr/tool/razorpay",
     "website": "https://razorpay.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1712,7 +1712,7 @@
   {
     "name": "respond.io",
     "slug": "respond-io",
-    "url": "https://tooltrim.com/fr/tool/respond-io",
+    "url": "https://www.tooltrim.com/fr/tool/respond-io",
     "website": "https://respond.io",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1722,7 +1722,7 @@
   {
     "name": "ResponseTap",
     "slug": "responsetap",
-    "url": "https://tooltrim.com/fr/tool/responsetap",
+    "url": "https://www.tooltrim.com/fr/tool/responsetap",
     "website": "https://responsetap.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1732,7 +1732,7 @@
   {
     "name": "Restream",
     "slug": "restream",
-    "url": "https://tooltrim.com/fr/tool/restream",
+    "url": "https://www.tooltrim.com/fr/tool/restream",
     "website": "https://restream.io",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1742,7 +1742,7 @@
   {
     "name": "RocketLink",
     "slug": "rocketlink",
-    "url": "https://tooltrim.com/fr/tool/rocketlink",
+    "url": "https://www.tooltrim.com/fr/tool/rocketlink",
     "website": "https://rocketlink.io",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1752,7 +1752,7 @@
   {
     "name": "Ruby",
     "slug": "ruby",
-    "url": "https://tooltrim.com/fr/tool/ruby",
+    "url": "https://www.tooltrim.com/fr/tool/ruby",
     "website": "https://ruby.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1762,7 +1762,7 @@
   {
     "name": "Salesflare",
     "slug": "salesflare",
-    "url": "https://tooltrim.com/fr/tool/salesflare",
+    "url": "https://www.tooltrim.com/fr/tool/salesflare",
     "website": "https://salesflare.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1772,7 +1772,7 @@
   {
     "name": "Salesforce",
     "slug": "salesforce",
-    "url": "https://tooltrim.com/fr/tool/salesforce",
+    "url": "https://www.tooltrim.com/fr/tool/salesforce",
     "website": "https://salesforce.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1782,7 +1782,7 @@
   {
     "name": "SellersFi",
     "slug": "sellersfi",
-    "url": "https://tooltrim.com/fr/tool/sellersfi",
+    "url": "https://www.tooltrim.com/fr/tool/sellersfi",
     "website": "https://sellersfi.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1792,7 +1792,7 @@
   {
     "name": "Sellfy",
     "slug": "sellfy",
-    "url": "https://tooltrim.com/fr/tool/sellfy",
+    "url": "https://www.tooltrim.com/fr/tool/sellfy",
     "website": "https://sellfy.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1802,7 +1802,7 @@
   {
     "name": "SEMrush",
     "slug": "semrush",
-    "url": "https://tooltrim.com/fr/tool/semrush",
+    "url": "https://www.tooltrim.com/fr/tool/semrush",
     "website": "https://semrush.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1812,7 +1812,7 @@
   {
     "name": "Sendinblue",
     "slug": "sendinblue",
-    "url": "https://tooltrim.com/fr/tool/sendinblue",
+    "url": "https://www.tooltrim.com/fr/tool/sendinblue",
     "website": "https://sendinblue.com",
     "price_eur": 5,
     "verdict": "no-verdict",
@@ -1822,7 +1822,7 @@
   {
     "name": "Shogun",
     "slug": "shogun",
-    "url": "https://tooltrim.com/fr/tool/shogun",
+    "url": "https://www.tooltrim.com/fr/tool/shogun",
     "website": "https://getshogun.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1832,7 +1832,7 @@
   {
     "name": "ShopHero",
     "slug": "shophero",
-    "url": "https://tooltrim.com/fr/tool/shophero",
+    "url": "https://www.tooltrim.com/fr/tool/shophero",
     "website": "https://shophero.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1842,7 +1842,7 @@
   {
     "name": "Shopify",
     "slug": "shopify",
-    "url": "https://tooltrim.com/fr/tool/shopify",
+    "url": "https://www.tooltrim.com/fr/tool/shopify",
     "website": "https://shopify.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1852,7 +1852,7 @@
   {
     "name": "Similarweb",
     "slug": "similarweb",
-    "url": "https://tooltrim.com/fr/tool/similarweb",
+    "url": "https://www.tooltrim.com/fr/tool/similarweb",
     "website": "https://similarweb.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1862,7 +1862,7 @@
   {
     "name": "SimpleTexting",
     "slug": "simpletexting",
-    "url": "https://tooltrim.com/fr/tool/simpletexting",
+    "url": "https://www.tooltrim.com/fr/tool/simpletexting",
     "website": "https://simpletexting.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1872,7 +1872,7 @@
   {
     "name": "Simvoly",
     "slug": "simvoly",
-    "url": "https://tooltrim.com/fr/tool/simvoly",
+    "url": "https://www.tooltrim.com/fr/tool/simvoly",
     "website": "https://simvoly.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1882,7 +1882,7 @@
   {
     "name": "SmartSuite",
     "slug": "smartsuite",
-    "url": "https://tooltrim.com/fr/tool/smartsuite",
+    "url": "https://www.tooltrim.com/fr/tool/smartsuite",
     "website": "https://smartsuite.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1892,7 +1892,7 @@
   {
     "name": "SMTP.com",
     "slug": "smtp-com",
-    "url": "https://tooltrim.com/fr/tool/smtp-com",
+    "url": "https://www.tooltrim.com/fr/tool/smtp-com",
     "website": "https://smtp.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -1902,7 +1902,7 @@
   {
     "name": "SocialBee",
     "slug": "socialbee",
-    "url": "https://tooltrim.com/fr/tool/socialbee",
+    "url": "https://www.tooltrim.com/fr/tool/socialbee",
     "website": "https://socialbee.io",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1912,7 +1912,7 @@
   {
     "name": "Softr",
     "slug": "softr",
-    "url": "https://tooltrim.com/fr/tool/softr",
+    "url": "https://www.tooltrim.com/fr/tool/softr",
     "website": "https://softr.io",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1922,7 +1922,7 @@
   {
     "name": "SpaceIQ",
     "slug": "spaceiq",
-    "url": "https://tooltrim.com/fr/tool/spaceiq",
+    "url": "https://www.tooltrim.com/fr/tool/spaceiq",
     "website": "https://spaceiq.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1932,7 +1932,7 @@
   {
     "name": "Squarespace",
     "slug": "squarespace",
-    "url": "https://tooltrim.com/fr/tool/squarespace",
+    "url": "https://www.tooltrim.com/fr/tool/squarespace",
     "website": "https://squarespace.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1942,7 +1942,7 @@
   {
     "name": "SurveySparrow",
     "slug": "surveysparrow",
-    "url": "https://tooltrim.com/fr/tool/surveysparrow",
+    "url": "https://www.tooltrim.com/fr/tool/surveysparrow",
     "website": "https://surveysparrow.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1952,7 +1952,7 @@
   {
     "name": "SysAid",
     "slug": "sysaid",
-    "url": "https://tooltrim.com/fr/tool/sysaid",
+    "url": "https://www.tooltrim.com/fr/tool/sysaid",
     "website": "https://sysaid.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -1962,7 +1962,7 @@
   {
     "name": "Teamwork",
     "slug": "teamwork",
-    "url": "https://tooltrim.com/fr/tool/teamwork",
+    "url": "https://www.tooltrim.com/fr/tool/teamwork",
     "website": "https://teamwork.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -1972,7 +1972,7 @@
   {
     "name": "Teachable",
     "slug": "teachable",
-    "url": "https://tooltrim.com/fr/tool/teachable",
+    "url": "https://www.tooltrim.com/fr/tool/teachable",
     "website": "https://teachable.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1982,7 +1982,7 @@
   {
     "name": "Tidio",
     "slug": "tidio",
-    "url": "https://tooltrim.com/fr/tool/tidio",
+    "url": "https://www.tooltrim.com/fr/tool/tidio",
     "website": "https://tidio.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -1992,7 +1992,7 @@
   {
     "name": "Time Doctor",
     "slug": "time-doctor",
-    "url": "https://tooltrim.com/fr/tool/time-doctor",
+    "url": "https://www.tooltrim.com/fr/tool/time-doctor",
     "website": "https://timedoctor.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2002,7 +2002,7 @@
   {
     "name": "Trustpilot",
     "slug": "trustpilot",
-    "url": "https://tooltrim.com/fr/tool/trustpilot",
+    "url": "https://www.tooltrim.com/fr/tool/trustpilot",
     "website": "https://trustpilot.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2012,7 +2012,7 @@
   {
     "name": "Typeform",
     "slug": "typeform",
-    "url": "https://tooltrim.com/fr/tool/typeform",
+    "url": "https://www.tooltrim.com/fr/tool/typeform",
     "website": "https://typeform.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2022,7 +2022,7 @@
   {
     "name": "Unbounce",
     "slug": "unbounce",
-    "url": "https://tooltrim.com/fr/tool/unbounce",
+    "url": "https://www.tooltrim.com/fr/tool/unbounce",
     "website": "https://unbounce.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2032,7 +2032,7 @@
   {
     "name": "Upwork",
     "slug": "upwork",
-    "url": "https://tooltrim.com/fr/tool/upwork",
+    "url": "https://www.tooltrim.com/fr/tool/upwork",
     "website": "https://upwork.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2042,7 +2042,7 @@
   {
     "name": "Vimeo",
     "slug": "vimeo",
-    "url": "https://tooltrim.com/fr/tool/vimeo",
+    "url": "https://www.tooltrim.com/fr/tool/vimeo",
     "website": "https://vimeo.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2052,7 +2052,7 @@
   {
     "name": "Wix",
     "slug": "wix",
-    "url": "https://tooltrim.com/fr/tool/wix",
+    "url": "https://www.tooltrim.com/fr/tool/wix",
     "website": "https://wix.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2062,7 +2062,7 @@
   {
     "name": "WooCommerce",
     "slug": "woocommerce",
-    "url": "https://tooltrim.com/fr/tool/woocommerce",
+    "url": "https://www.tooltrim.com/fr/tool/woocommerce",
     "website": "https://woocommerce.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2072,7 +2072,7 @@
   {
     "name": "WordPress.com",
     "slug": "wordpress-com",
-    "url": "https://tooltrim.com/fr/tool/wordpress-com",
+    "url": "https://www.tooltrim.com/fr/tool/wordpress-com",
     "website": "https://wordpress.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2082,7 +2082,7 @@
   {
     "name": "Wrike",
     "slug": "wrike",
-    "url": "https://tooltrim.com/fr/tool/wrike",
+    "url": "https://www.tooltrim.com/fr/tool/wrike",
     "website": "https://wrike.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2092,7 +2092,7 @@
   {
     "name": "Wunderlist",
     "slug": "wunderlist",
-    "url": "https://tooltrim.com/fr/tool/wunderlist",
+    "url": "https://www.tooltrim.com/fr/tool/wunderlist",
     "website": "https://wunderlist.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2102,7 +2102,7 @@
   {
     "name": "Zapier",
     "slug": "zapier",
-    "url": "https://tooltrim.com/fr/tool/zapier",
+    "url": "https://www.tooltrim.com/fr/tool/zapier",
     "website": "https://zapier.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2120,7 +2120,7 @@
   {
     "name": "Zendesk",
     "slug": "zendesk",
-    "url": "https://tooltrim.com/fr/tool/zendesk",
+    "url": "https://www.tooltrim.com/fr/tool/zendesk",
     "website": "https://zendesk.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2130,7 +2130,7 @@
   {
     "name": "Zoho",
     "slug": "zoho",
-    "url": "https://tooltrim.com/fr/tool/zoho",
+    "url": "https://www.tooltrim.com/fr/tool/zoho",
     "website": "https://zoho.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2140,7 +2140,7 @@
   {
     "name": "HoneyBook",
     "slug": "honeybook",
-    "url": "https://tooltrim.com/fr/tool/honeybook",
+    "url": "https://www.tooltrim.com/fr/tool/honeybook",
     "website": " facturation).",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2150,7 +2150,7 @@
   {
     "name": "Dubsado",
     "slug": "dubsado",
-    "url": "https://tooltrim.com/fr/tool/dubsado",
+    "url": "https://www.tooltrim.com/fr/tool/dubsado",
     "website": " planning).",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2160,7 +2160,7 @@
   {
     "name": "Visme",
     "slug": "visme",
-    "url": "https://tooltrim.com/fr/tool/visme",
+    "url": "https://www.tooltrim.com/fr/tool/visme",
     "website": " infographies).",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2170,7 +2170,7 @@
   {
     "name": "Plutio",
     "slug": "plutio",
-    "url": "https://tooltrim.com/fr/tool/plutio",
+    "url": "https://www.tooltrim.com/fr/tool/plutio",
     "website": "",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2180,7 +2180,7 @@
   {
     "name": "Snov.io",
     "slug": "snov-io",
-    "url": "https://tooltrim.com/fr/tool/snov-io",
+    "url": "https://www.tooltrim.com/fr/tool/snov-io",
     "website": " campagnes).",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2190,7 +2190,7 @@
   {
     "name": "Elfsight",
     "slug": "elfsight",
-    "url": "https://tooltrim.com/fr/tool/elfsight",
+    "url": "https://www.tooltrim.com/fr/tool/elfsight",
     "website": " formulaires…).",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2200,7 +2200,7 @@
   {
     "name": "ProWritingAid",
     "slug": "prowritingaid",
-    "url": "https://tooltrim.com/fr/tool/prowritingaid",
+    "url": "https://www.tooltrim.com/fr/tool/prowritingaid",
     "website": " grammaire et clarté.",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2210,7 +2210,7 @@
   {
     "name": "vcita",
     "slug": "vcita",
-    "url": "https://tooltrim.com/fr/tool/vcita",
+    "url": "https://www.tooltrim.com/fr/tool/vcita",
     "website": " paiements).",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2220,7 +2220,7 @@
   {
     "name": "Sendible",
     "slug": "sendible",
-    "url": "https://tooltrim.com/fr/tool/sendible",
+    "url": "https://www.tooltrim.com/fr/tool/sendible",
     "website": " rapports).",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2230,7 +2230,7 @@
   {
     "name": "Clockify",
     "slug": "clockify",
-    "url": "https://tooltrim.com/fr/tool/clockify",
+    "url": "https://www.tooltrim.com/fr/tool/clockify",
     "website": "https://clockify.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2240,7 +2240,7 @@
   {
     "name": "TimeCamp",
     "slug": "timecamp",
-    "url": "https://tooltrim.com/fr/tool/timecamp",
+    "url": "https://www.tooltrim.com/fr/tool/timecamp",
     "website": "https://timecamp.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2250,7 +2250,7 @@
   {
     "name": "DeepSeek",
     "slug": "deepseek",
-    "url": "https://tooltrim.com/fr/tool/deepseek",
+    "url": "https://www.tooltrim.com/fr/tool/deepseek",
     "website": "https://www.deepseek.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2268,7 +2268,7 @@
   {
     "name": "Gemini",
     "slug": "gemini",
-    "url": "https://tooltrim.com/fr/tool/gemini",
+    "url": "https://www.tooltrim.com/fr/tool/gemini",
     "website": "https://gemini.google.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2278,7 +2278,7 @@
   {
     "name": "Adobe Photoshop",
     "slug": "adobe-photoshop",
-    "url": "https://tooltrim.com/fr/tool/adobe-photoshop",
+    "url": "https://www.tooltrim.com/fr/tool/adobe-photoshop",
     "website": "https://adobe.com/products/photoshop",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2291,7 +2291,7 @@
   {
     "name": "Adobe Illustrator",
     "slug": "adobe-illustrator",
-    "url": "https://tooltrim.com/fr/tool/adobe-illustrator",
+    "url": "https://www.tooltrim.com/fr/tool/adobe-illustrator",
     "website": "https://adobe.com/products/illustrator",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2304,7 +2304,7 @@
   {
     "name": "Adobe Premiere Pro",
     "slug": "adobe-premiere-pro",
-    "url": "https://tooltrim.com/fr/tool/adobe-premiere-pro",
+    "url": "https://www.tooltrim.com/fr/tool/adobe-premiere-pro",
     "website": "https://adobe.com/products/premiere",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2317,7 +2317,7 @@
   {
     "name": "Adobe After Effects",
     "slug": "adobe-after-effects",
-    "url": "https://tooltrim.com/fr/tool/adobe-after-effects",
+    "url": "https://www.tooltrim.com/fr/tool/adobe-after-effects",
     "website": "https://adobe.com/products/aftereffects",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2327,7 +2327,7 @@
   {
     "name": "Adobe Lightroom",
     "slug": "adobe-lightroom",
-    "url": "https://tooltrim.com/fr/tool/adobe-lightroom",
+    "url": "https://www.tooltrim.com/fr/tool/adobe-lightroom",
     "website": "https://adobe.com/products/lightroom",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2345,7 +2345,7 @@
   {
     "name": "Adobe Creative Cloud",
     "slug": "adobe-cc",
-    "url": "https://tooltrim.com/fr/tool/adobe-cc",
+    "url": "https://www.tooltrim.com/fr/tool/adobe-cc",
     "website": "https://adobe.com/creativecloud",
     "price_eur": 60,
     "verdict": "no-verdict",
@@ -2355,7 +2355,7 @@
   {
     "name": "DaVinci Resolve",
     "slug": "davinci-resolve",
-    "url": "https://tooltrim.com/fr/tool/davinci-resolve",
+    "url": "https://www.tooltrim.com/fr/tool/davinci-resolve",
     "website": "https://blackmagicdesign.com/products/davinciresolve",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2365,7 +2365,7 @@
   {
     "name": "Capture One",
     "slug": "capture-one",
-    "url": "https://tooltrim.com/fr/tool/capture-one",
+    "url": "https://www.tooltrim.com/fr/tool/capture-one",
     "website": "https://captureone.com",
     "price_eur": 24,
     "verdict": "no-verdict",
@@ -2375,7 +2375,7 @@
   {
     "name": "Blender",
     "slug": "blender",
-    "url": "https://tooltrim.com/fr/tool/blender",
+    "url": "https://www.tooltrim.com/fr/tool/blender",
     "website": "https://blender.org",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2385,7 +2385,7 @@
   {
     "name": "Frame.io",
     "slug": "frame-io",
-    "url": "https://tooltrim.com/fr/tool/frame-io",
+    "url": "https://www.tooltrim.com/fr/tool/frame-io",
     "website": "https://frame.io",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2403,7 +2403,7 @@
   {
     "name": "Pixieset",
     "slug": "pixieset",
-    "url": "https://tooltrim.com/fr/tool/pixieset",
+    "url": "https://www.tooltrim.com/fr/tool/pixieset",
     "website": "https://pixieset.com",
     "price_eur": 12,
     "verdict": "no-verdict",
@@ -2413,7 +2413,7 @@
   {
     "name": "GitHub",
     "slug": "github",
-    "url": "https://tooltrim.com/fr/tool/github",
+    "url": "https://www.tooltrim.com/fr/tool/github",
     "website": "https://github.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2423,7 +2423,7 @@
   {
     "name": "Cursor",
     "slug": "cursor",
-    "url": "https://tooltrim.com/fr/tool/cursor",
+    "url": "https://www.tooltrim.com/fr/tool/cursor",
     "website": "https://cursor.sh",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2433,7 +2433,7 @@
   {
     "name": "Vercel",
     "slug": "vercel",
-    "url": "https://tooltrim.com/fr/tool/vercel",
+    "url": "https://www.tooltrim.com/fr/tool/vercel",
     "website": "https://vercel.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2443,7 +2443,7 @@
   {
     "name": "Runway",
     "slug": "runway",
-    "url": "https://tooltrim.com/fr/tool/runway",
+    "url": "https://www.tooltrim.com/fr/tool/runway",
     "website": "https://runwayml.com",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2453,7 +2453,7 @@
   {
     "name": "Adobe Firefly",
     "slug": "firefly",
-    "url": "https://tooltrim.com/fr/tool/firefly",
+    "url": "https://www.tooltrim.com/fr/tool/firefly",
     "website": "https://firefly.adobe.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2463,7 +2463,7 @@
   {
     "name": "Leonardo AI",
     "slug": "leonardo-ai",
-    "url": "https://tooltrim.com/fr/tool/leonardo-ai",
+    "url": "https://www.tooltrim.com/fr/tool/leonardo-ai",
     "website": "https://leonardo.ai",
     "price_eur": 12,
     "verdict": "no-verdict",
@@ -2473,7 +2473,7 @@
   {
     "name": "Topaz Video AI",
     "slug": "topaz-video-ai",
-    "url": "https://tooltrim.com/fr/tool/topaz-video-ai",
+    "url": "https://www.tooltrim.com/fr/tool/topaz-video-ai",
     "website": "https://topazlabs.com/topaz-video-ai",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2483,7 +2483,7 @@
   {
     "name": "HeyGen",
     "slug": "heygen",
-    "url": "https://tooltrim.com/fr/tool/heygen",
+    "url": "https://www.tooltrim.com/fr/tool/heygen",
     "website": "https://heygen.com",
     "price_eur": 29,
     "verdict": "no-verdict",
@@ -2493,7 +2493,7 @@
   {
     "name": "GitHub Copilot",
     "slug": "github-copilot",
-    "url": "https://tooltrim.com/fr/tool/github-copilot",
+    "url": "https://www.tooltrim.com/fr/tool/github-copilot",
     "website": "https://github.com/features/copilot",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -2511,7 +2511,7 @@
   {
     "name": "Flow (aescripts)",
     "slug": "aescripts-flow",
-    "url": "https://tooltrim.com/fr/tool/aescripts-flow",
+    "url": "https://www.tooltrim.com/fr/tool/aescripts-flow",
     "website": "https://aescripts.com/flow",
     "price_eur": 8,
     "verdict": "no-verdict",
@@ -2521,7 +2521,7 @@
   {
     "name": "Motion Bro",
     "slug": "motion-bro",
-    "url": "https://tooltrim.com/fr/tool/motion-bro",
+    "url": "https://www.tooltrim.com/fr/tool/motion-bro",
     "website": "https://motionbro.net",
     "price_eur": 9,
     "verdict": "no-verdict",
@@ -2531,7 +2531,7 @@
   {
     "name": "CapCut",
     "slug": "capcut",
-    "url": "https://tooltrim.com/fr/tool/capcut",
+    "url": "https://www.tooltrim.com/fr/tool/capcut",
     "website": "https://capcut.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2541,7 +2541,7 @@
   {
     "name": "Riverside",
     "slug": "riverside",
-    "url": "https://tooltrim.com/fr/tool/riverside",
+    "url": "https://www.tooltrim.com/fr/tool/riverside",
     "website": "https://riverside.fm",
     "price_eur": 15,
     "verdict": "no-verdict",
@@ -2551,7 +2551,7 @@
   {
     "name": "Beehiiv",
     "slug": "beehiiv",
-    "url": "https://tooltrim.com/fr/tool/beehiiv",
+    "url": "https://www.tooltrim.com/fr/tool/beehiiv",
     "website": "https://beehiiv.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2561,7 +2561,7 @@
   {
     "name": "Intercom",
     "slug": "intercom",
-    "url": "https://tooltrim.com/fr/tool/intercom",
+    "url": "https://www.tooltrim.com/fr/tool/intercom",
     "website": "https://intercom.com",
     "price_eur": 74,
     "verdict": "no-verdict",
@@ -2574,7 +2574,7 @@
   {
     "name": "Amplitude",
     "slug": "amplitude",
-    "url": "https://tooltrim.com/fr/tool/amplitude",
+    "url": "https://www.tooltrim.com/fr/tool/amplitude",
     "website": "https://amplitude.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2592,7 +2592,7 @@
   {
     "name": "PostHog",
     "slug": "posthog",
-    "url": "https://tooltrim.com/fr/tool/posthog",
+    "url": "https://www.tooltrim.com/fr/tool/posthog",
     "website": "https://posthog.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2602,7 +2602,7 @@
   {
     "name": "Spendesk",
     "slug": "spendesk",
-    "url": "https://tooltrim.com/fr/tool/spendesk",
+    "url": "https://www.tooltrim.com/fr/tool/spendesk",
     "website": "https://spendesk.com",
     "price_eur": 99,
     "verdict": "no-verdict",
@@ -2612,7 +2612,7 @@
   {
     "name": "Pika Labs",
     "slug": "pika-labs",
-    "url": "https://tooltrim.com/fr/tool/pika-labs",
+    "url": "https://www.tooltrim.com/fr/tool/pika-labs",
     "website": "https://pika.art",
     "price_eur": 8,
     "verdict": "no-verdict",
@@ -2630,7 +2630,7 @@
   {
     "name": "Kling AI",
     "slug": "kling-ai",
-    "url": "https://tooltrim.com/fr/tool/kling-ai",
+    "url": "https://www.tooltrim.com/fr/tool/kling-ai",
     "website": "https://klingai.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -2648,7 +2648,7 @@
   {
     "name": "Krea AI",
     "slug": "krea-ai",
-    "url": "https://tooltrim.com/fr/tool/krea-ai",
+    "url": "https://www.tooltrim.com/fr/tool/krea-ai",
     "website": "https://krea.ai",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -2658,7 +2658,7 @@
   {
     "name": "Magnific AI",
     "slug": "magnific-ai",
-    "url": "https://tooltrim.com/fr/tool/magnific-ai",
+    "url": "https://www.tooltrim.com/fr/tool/magnific-ai",
     "website": "https://magnific.ai",
     "price_eur": 39,
     "verdict": "no-verdict",
@@ -2676,7 +2676,7 @@
   {
     "name": "Ideogram",
     "slug": "ideogram",
-    "url": "https://tooltrim.com/fr/tool/ideogram",
+    "url": "https://www.tooltrim.com/fr/tool/ideogram",
     "website": "https://ideogram.ai",
     "price_eur": 8,
     "verdict": "no-verdict",
@@ -2686,7 +2686,7 @@
   {
     "name": "Udio",
     "slug": "udio",
-    "url": "https://tooltrim.com/fr/tool/udio",
+    "url": "https://www.tooltrim.com/fr/tool/udio",
     "website": "https://udio.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -2696,7 +2696,7 @@
   {
     "name": "Suno",
     "slug": "suno",
-    "url": "https://tooltrim.com/fr/tool/suno",
+    "url": "https://www.tooltrim.com/fr/tool/suno",
     "website": "https://suno.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -2714,7 +2714,7 @@
   {
     "name": "Descript",
     "slug": "descript",
-    "url": "https://tooltrim.com/fr/tool/descript",
+    "url": "https://www.tooltrim.com/fr/tool/descript",
     "website": "https://descript.com",
     "price_eur": 12,
     "verdict": "no-verdict",
@@ -2724,7 +2724,7 @@
   {
     "name": "Otter.ai",
     "slug": "otter-ai",
-    "url": "https://tooltrim.com/fr/tool/otter-ai",
+    "url": "https://www.tooltrim.com/fr/tool/otter-ai",
     "website": "https://otter.ai",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -2742,7 +2742,7 @@
   {
     "name": "Bolt.new",
     "slug": "bolt-new",
-    "url": "https://tooltrim.com/fr/tool/bolt-new",
+    "url": "https://www.tooltrim.com/fr/tool/bolt-new",
     "website": "https://bolt.new",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2752,7 +2752,7 @@
   {
     "name": "Lovable",
     "slug": "lovable",
-    "url": "https://tooltrim.com/fr/tool/lovable",
+    "url": "https://www.tooltrim.com/fr/tool/lovable",
     "website": "https://lovable.dev",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2762,7 +2762,7 @@
   {
     "name": "Replit",
     "slug": "replit",
-    "url": "https://tooltrim.com/fr/tool/replit",
+    "url": "https://www.tooltrim.com/fr/tool/replit",
     "website": "https://replit.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -2780,7 +2780,7 @@
   {
     "name": "Tabnine",
     "slug": "tabnine",
-    "url": "https://tooltrim.com/fr/tool/tabnine",
+    "url": "https://www.tooltrim.com/fr/tool/tabnine",
     "website": "https://tabnine.com",
     "price_eur": 12,
     "verdict": "no-verdict",
@@ -2798,7 +2798,7 @@
   {
     "name": "Stable Diffusion",
     "slug": "stable-diffusion",
-    "url": "https://tooltrim.com/fr/tool/stable-diffusion",
+    "url": "https://www.tooltrim.com/fr/tool/stable-diffusion",
     "website": "https://stability.ai",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2808,7 +2808,7 @@
   {
     "name": "Notion AI",
     "slug": "notion-ai",
-    "url": "https://tooltrim.com/fr/tool/notion-ai",
+    "url": "https://www.tooltrim.com/fr/tool/notion-ai",
     "website": "https://notion.so/product/ai",
     "price_eur": 8,
     "verdict": "no-verdict",
@@ -2826,7 +2826,7 @@
   {
     "name": "Mem AI",
     "slug": "mem-ai",
-    "url": "https://tooltrim.com/fr/tool/mem-ai",
+    "url": "https://www.tooltrim.com/fr/tool/mem-ai",
     "website": "https://mem.ai",
     "price_eur": 14,
     "verdict": "no-verdict",
@@ -2844,7 +2844,7 @@
   {
     "name": "Adobe Podcast AI",
     "slug": "adobe-podcast-ai",
-    "url": "https://tooltrim.com/fr/tool/adobe-podcast-ai",
+    "url": "https://www.tooltrim.com/fr/tool/adobe-podcast-ai",
     "website": "https://podcast.adobe.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2854,7 +2854,7 @@
   {
     "name": "Flux (Black Forest Labs)",
     "slug": "flux",
-    "url": "https://tooltrim.com/fr/tool/flux",
+    "url": "https://www.tooltrim.com/fr/tool/flux",
     "website": "https://blackforestlabs.ai",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2864,7 +2864,7 @@
   {
     "name": "Whisper (OpenAI)",
     "slug": "whisper",
-    "url": "https://tooltrim.com/fr/tool/whisper",
+    "url": "https://www.tooltrim.com/fr/tool/whisper",
     "website": "https://openai.com/research/whisper",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2874,7 +2874,7 @@
   {
     "name": "Buzzsprout",
     "slug": "buzzsprout",
-    "url": "https://tooltrim.com/fr/tool/buzzsprout",
+    "url": "https://www.tooltrim.com/fr/tool/buzzsprout",
     "website": "https://buzzsprout.com",
     "price_eur": 12,
     "verdict": "no-verdict",
@@ -2887,7 +2887,7 @@
   {
     "name": "Spotify for Podcasters",
     "slug": "anchor-spotify",
-    "url": "https://tooltrim.com/fr/tool/anchor-spotify",
+    "url": "https://www.tooltrim.com/fr/tool/anchor-spotify",
     "website": "https://podcasters.spotify.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2905,7 +2905,7 @@
   {
     "name": "Audacity",
     "slug": "audacity",
-    "url": "https://tooltrim.com/fr/tool/audacity",
+    "url": "https://www.tooltrim.com/fr/tool/audacity",
     "website": "https://audacityteam.org",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2923,7 +2923,7 @@
   {
     "name": "Podbean",
     "slug": "podbean",
-    "url": "https://tooltrim.com/fr/tool/podbean",
+    "url": "https://www.tooltrim.com/fr/tool/podbean",
     "website": "https://podbean.com",
     "price_eur": 9,
     "verdict": "no-verdict",
@@ -2936,7 +2936,7 @@
   {
     "name": "Buffer",
     "slug": "buffer",
-    "url": "https://tooltrim.com/fr/tool/buffer",
+    "url": "https://www.tooltrim.com/fr/tool/buffer",
     "website": "https://buffer.com",
     "price_eur": 6,
     "verdict": "no-verdict",
@@ -2946,7 +2946,7 @@
   {
     "name": "Sprout Social",
     "slug": "sprout-social",
-    "url": "https://tooltrim.com/fr/tool/sprout-social",
+    "url": "https://www.tooltrim.com/fr/tool/sprout-social",
     "website": "https://sproutsocial.com",
     "price_eur": 249,
     "verdict": "no-verdict",
@@ -2959,7 +2959,7 @@
   {
     "name": "TubeBuddy",
     "slug": "tubebody",
-    "url": "https://tooltrim.com/fr/tool/tubebody",
+    "url": "https://www.tooltrim.com/fr/tool/tubebody",
     "website": "https://tubebuddy.com",
     "price_eur": 5,
     "verdict": "no-verdict",
@@ -2969,7 +2969,7 @@
   {
     "name": "VidIQ",
     "slug": "vidiq",
-    "url": "https://tooltrim.com/fr/tool/vidiq",
+    "url": "https://www.tooltrim.com/fr/tool/vidiq",
     "website": "https://vidiq.com",
     "price_eur": 7,
     "verdict": "no-verdict",
@@ -2979,7 +2979,7 @@
   {
     "name": "Substack",
     "slug": "substack",
-    "url": "https://tooltrim.com/fr/tool/substack",
+    "url": "https://www.tooltrim.com/fr/tool/substack",
     "website": "https://substack.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -2997,7 +2997,7 @@
   {
     "name": "Typefully",
     "slug": "typefully",
-    "url": "https://tooltrim.com/fr/tool/typefully",
+    "url": "https://www.tooltrim.com/fr/tool/typefully",
     "website": "https://typefully.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3007,7 +3007,7 @@
   {
     "name": "Lever",
     "slug": "lever",
-    "url": "https://tooltrim.com/fr/tool/lever",
+    "url": "https://www.tooltrim.com/fr/tool/lever",
     "website": "https://lever.co",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3017,7 +3017,7 @@
   {
     "name": "Workable",
     "slug": "workable",
-    "url": "https://tooltrim.com/fr/tool/workable",
+    "url": "https://www.tooltrim.com/fr/tool/workable",
     "website": "https://workable.com",
     "price_eur": 189,
     "verdict": "no-verdict",
@@ -3027,7 +3027,7 @@
   {
     "name": "Personio",
     "slug": "personio",
-    "url": "https://tooltrim.com/fr/tool/personio",
+    "url": "https://www.tooltrim.com/fr/tool/personio",
     "website": "https://personio.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3037,7 +3037,7 @@
   {
     "name": "Kajabi",
     "slug": "kajabi",
-    "url": "https://tooltrim.com/fr/tool/kajabi",
+    "url": "https://www.tooltrim.com/fr/tool/kajabi",
     "website": "https://kajabi.com",
     "price_eur": 55,
     "verdict": "no-verdict",
@@ -3047,7 +3047,7 @@
   {
     "name": "Podia",
     "slug": "podia",
-    "url": "https://tooltrim.com/fr/tool/podia",
+    "url": "https://www.tooltrim.com/fr/tool/podia",
     "website": "https://podia.com",
     "price_eur": 33,
     "verdict": "no-verdict",
@@ -3065,7 +3065,7 @@
   {
     "name": "Thinkific",
     "slug": "thinkific",
-    "url": "https://tooltrim.com/fr/tool/thinkific",
+    "url": "https://www.tooltrim.com/fr/tool/thinkific",
     "website": "https://thinkific.com",
     "price_eur": 36,
     "verdict": "no-verdict",
@@ -3083,7 +3083,7 @@
   {
     "name": "Circle",
     "slug": "circle",
-    "url": "https://tooltrim.com/fr/tool/circle",
+    "url": "https://www.tooltrim.com/fr/tool/circle",
     "website": "https://circle.so",
     "price_eur": 49,
     "verdict": "no-verdict",
@@ -3093,7 +3093,7 @@
   {
     "name": "Metabase",
     "slug": "metabase",
-    "url": "https://tooltrim.com/fr/tool/metabase",
+    "url": "https://www.tooltrim.com/fr/tool/metabase",
     "website": "https://metabase.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3103,7 +3103,7 @@
   {
     "name": "Looker Studio",
     "slug": "looker-studio",
-    "url": "https://tooltrim.com/fr/tool/looker-studio",
+    "url": "https://www.tooltrim.com/fr/tool/looker-studio",
     "website": "https://lookerstudio.google.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3113,7 +3113,7 @@
   {
     "name": "Retool",
     "slug": "retool",
-    "url": "https://tooltrim.com/fr/tool/retool",
+    "url": "https://www.tooltrim.com/fr/tool/retool",
     "website": "https://retool.com",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -3123,7 +3123,7 @@
   {
     "name": "Datadog",
     "slug": "datadog",
-    "url": "https://tooltrim.com/fr/tool/datadog",
+    "url": "https://www.tooltrim.com/fr/tool/datadog",
     "website": "https://datadoghq.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3136,7 +3136,7 @@
   {
     "name": "Sentry",
     "slug": "sentry",
-    "url": "https://tooltrim.com/fr/tool/sentry",
+    "url": "https://www.tooltrim.com/fr/tool/sentry",
     "website": "https://sentry.io",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3146,7 +3146,7 @@
   {
     "name": "Jira",
     "slug": "jira",
-    "url": "https://tooltrim.com/fr/tool/jira",
+    "url": "https://www.tooltrim.com/fr/tool/jira",
     "website": "https://atlassian.com/software/jira",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3164,7 +3164,7 @@
   {
     "name": "Confluence",
     "slug": "confluence",
-    "url": "https://tooltrim.com/fr/tool/confluence",
+    "url": "https://www.tooltrim.com/fr/tool/confluence",
     "website": "https://atlassian.com/software/confluence",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3182,7 +3182,7 @@
   {
     "name": "Productboard",
     "slug": "productboard",
-    "url": "https://tooltrim.com/fr/tool/productboard",
+    "url": "https://www.tooltrim.com/fr/tool/productboard",
     "website": "https://productboard.com",
     "price_eur": 20,
     "verdict": "no-verdict",
@@ -3200,7 +3200,7 @@
   {
     "name": "Canny",
     "slug": "canny",
-    "url": "https://tooltrim.com/fr/tool/canny",
+    "url": "https://www.tooltrim.com/fr/tool/canny",
     "website": "https://canny.io",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3210,7 +3210,7 @@
   {
     "name": "Hex",
     "slug": "hex",
-    "url": "https://tooltrim.com/fr/tool/hex",
+    "url": "https://www.tooltrim.com/fr/tool/hex",
     "website": "https://hex.tech",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3220,7 +3220,7 @@
   {
     "name": "PagerDuty",
     "slug": "pagerduty",
-    "url": "https://tooltrim.com/fr/tool/pagerduty",
+    "url": "https://www.tooltrim.com/fr/tool/pagerduty",
     "website": "https://pagerduty.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3230,7 +3230,7 @@
   {
     "name": "Overlord",
     "slug": "ae-overlord",
-    "url": "https://tooltrim.com/fr/tool/ae-overlord",
+    "url": "https://www.tooltrim.com/fr/tool/ae-overlord",
     "website": "https://battleaxe.co/overlord",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3240,7 +3240,7 @@
   {
     "name": "BAO Boa",
     "slug": "ae-bao-boa",
-    "url": "https://tooltrim.com/fr/tool/ae-bao-boa",
+    "url": "https://www.tooltrim.com/fr/tool/ae-bao-boa",
     "website": "https://aescripts.com/boa",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3250,7 +3250,7 @@
   {
     "name": "Newton 3",
     "slug": "ae-newton3",
-    "url": "https://tooltrim.com/fr/tool/ae-newton3",
+    "url": "https://www.tooltrim.com/fr/tool/ae-newton3",
     "website": "https://aescripts.com/newton",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3260,7 +3260,7 @@
   {
     "name": "Animation Composer 3",
     "slug": "ae-animation-composer",
-    "url": "https://tooltrim.com/fr/tool/ae-animation-composer",
+    "url": "https://www.tooltrim.com/fr/tool/ae-animation-composer",
     "website": "https://misterhorse.com/animation-composer",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3270,7 +3270,7 @@
   {
     "name": "Duik Ángela",
     "slug": "ae-duik",
-    "url": "https://tooltrim.com/fr/tool/ae-duik",
+    "url": "https://www.tooltrim.com/fr/tool/ae-duik",
     "website": "https://rxlaboratoire.com/duik",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3280,7 +3280,7 @@
   {
     "name": "GifGun",
     "slug": "ae-gifgun",
-    "url": "https://tooltrim.com/fr/tool/ae-gifgun",
+    "url": "https://www.tooltrim.com/fr/tool/ae-gifgun",
     "website": "https://aescripts.com/gifgun",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3290,7 +3290,7 @@
   {
     "name": "Bodymovin / Lottie",
     "slug": "ae-bodymovin",
-    "url": "https://tooltrim.com/fr/tool/ae-bodymovin",
+    "url": "https://www.tooltrim.com/fr/tool/ae-bodymovin",
     "website": "https://aescripts.com/bodymovin",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3300,7 +3300,7 @@
   {
     "name": "RubberHose 2",
     "slug": "ae-rubberhose",
-    "url": "https://tooltrim.com/fr/tool/ae-rubberhose",
+    "url": "https://www.tooltrim.com/fr/tool/ae-rubberhose",
     "website": "https://aescripts.com/rubberhose",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3318,7 +3318,7 @@
   {
     "name": "Red Giant Magic Bullet Suite",
     "slug": "ae-red-giant",
-    "url": "https://tooltrim.com/fr/tool/ae-red-giant",
+    "url": "https://www.tooltrim.com/fr/tool/ae-red-giant",
     "website": "https://maxon.net/red-giant",
     "price_eur": 10,
     "verdict": "no-verdict",
@@ -3328,7 +3328,7 @@
   {
     "name": "Figma Tokens (Tokens Studio)",
     "slug": "figma-tokens",
-    "url": "https://tooltrim.com/fr/tool/figma-tokens",
+    "url": "https://www.tooltrim.com/fr/tool/figma-tokens",
     "website": "https://tokens.studio",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3338,7 +3338,7 @@
   {
     "name": "Iconify for Figma",
     "slug": "figma-iconify",
-    "url": "https://tooltrim.com/fr/tool/figma-iconify",
+    "url": "https://www.tooltrim.com/fr/tool/figma-iconify",
     "website": "https://iconify.design",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3348,7 +3348,7 @@
   {
     "name": "Anima",
     "slug": "figma-anima",
-    "url": "https://tooltrim.com/fr/tool/figma-anima",
+    "url": "https://www.tooltrim.com/fr/tool/figma-anima",
     "website": "https://animaapp.com",
     "price_eur": 31,
     "verdict": "no-verdict",
@@ -3358,7 +3358,7 @@
   {
     "name": "Stark",
     "slug": "figma-stark",
-    "url": "https://tooltrim.com/fr/tool/figma-stark",
+    "url": "https://www.tooltrim.com/fr/tool/figma-stark",
     "website": "https://stark.so",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3368,7 +3368,7 @@
   {
     "name": "Luminar Neo",
     "slug": "luminar-neo",
-    "url": "https://tooltrim.com/fr/tool/luminar-neo",
+    "url": "https://www.tooltrim.com/fr/tool/luminar-neo",
     "website": "https://skylum.com/luminar-neo",
     "price_eur": 14,
     "verdict": "no-verdict",
@@ -3378,7 +3378,7 @@
   {
     "name": "Nik Collection",
     "slug": "nik-collection",
-    "url": "https://tooltrim.com/fr/tool/nik-collection",
+    "url": "https://www.tooltrim.com/fr/tool/nik-collection",
     "website": "https://nikcollection.dxo.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3388,7 +3388,7 @@
   {
     "name": "Topaz Gigapixel AI",
     "slug": "topaz-gigapixel",
-    "url": "https://tooltrim.com/fr/tool/topaz-gigapixel",
+    "url": "https://www.tooltrim.com/fr/tool/topaz-gigapixel",
     "website": "https://topazlabs.com/gigapixel",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3398,7 +3398,7 @@
   {
     "name": "Revit",
     "slug": "revit",
-    "url": "https://tooltrim.com/fr/tool/revit",
+    "url": "https://www.tooltrim.com/fr/tool/revit",
     "website": "https://autodesk.com/products/revit",
     "price_eur": 310,
     "verdict": "no-verdict",
@@ -3408,7 +3408,7 @@
   {
     "name": "AutoCAD",
     "slug": "autocad",
-    "url": "https://tooltrim.com/fr/tool/autocad",
+    "url": "https://www.tooltrim.com/fr/tool/autocad",
     "website": "https://autodesk.com/products/autocad",
     "price_eur": 220,
     "verdict": "no-verdict",
@@ -3418,7 +3418,7 @@
   {
     "name": "SketchUp Pro",
     "slug": "sketchup-pro",
-    "url": "https://tooltrim.com/fr/tool/sketchup-pro",
+    "url": "https://www.tooltrim.com/fr/tool/sketchup-pro",
     "website": "https://sketchup.com",
     "price_eur": 34,
     "verdict": "no-verdict",
@@ -3431,7 +3431,7 @@
   {
     "name": "Enscape",
     "slug": "enscape",
-    "url": "https://tooltrim.com/fr/tool/enscape",
+    "url": "https://www.tooltrim.com/fr/tool/enscape",
     "website": "https://enscape3d.com",
     "price_eur": 84,
     "verdict": "no-verdict",
@@ -3441,7 +3441,7 @@
   {
     "name": "Lumion",
     "slug": "lumion",
-    "url": "https://tooltrim.com/fr/tool/lumion",
+    "url": "https://www.tooltrim.com/fr/tool/lumion",
     "website": "https://lumion.com",
     "price_eur": 179,
     "verdict": "no-verdict",
@@ -3454,7 +3454,7 @@
   {
     "name": "Maze",
     "slug": "maze",
-    "url": "https://tooltrim.com/fr/tool/maze",
+    "url": "https://www.tooltrim.com/fr/tool/maze",
     "website": "https://maze.co",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3464,7 +3464,7 @@
   {
     "name": "Hotjar",
     "slug": "hotjar",
-    "url": "https://tooltrim.com/fr/tool/hotjar",
+    "url": "https://www.tooltrim.com/fr/tool/hotjar",
     "website": "https://hotjar.com",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3482,7 +3482,7 @@
   {
     "name": "Zeplin",
     "slug": "zeplin",
-    "url": "https://tooltrim.com/fr/tool/zeplin",
+    "url": "https://www.tooltrim.com/fr/tool/zeplin",
     "website": "https://zeplin.io",
     "price_eur": 0,
     "verdict": "no-verdict",
@@ -3500,7 +3500,7 @@
   {
     "name": "ProtoPie",
     "slug": "protopie",
-    "url": "https://tooltrim.com/fr/tool/protopie",
+    "url": "https://www.tooltrim.com/fr/tool/protopie",
     "website": "https://protopie.io",
     "price_eur": 13,
     "verdict": "no-verdict",
@@ -3510,7 +3510,7 @@
   {
     "name": "Rive",
     "slug": "rive",
-    "url": "https://tooltrim.com/fr/tool/rive",
+    "url": "https://www.tooltrim.com/fr/tool/rive",
     "website": "https://rive.app",
     "price_eur": 0,
     "verdict": "no-verdict",
