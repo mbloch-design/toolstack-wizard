@@ -22,6 +22,9 @@ Sitemap: https://www.tooltrim.com/sitemap.xml
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 

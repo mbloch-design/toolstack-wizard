@@ -21,12 +21,12 @@
 
     <!-- Static OG defaults (per-route og:url/og:locale/type injected by react-helmet-async via DynamicCanonical) -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://tooltrim.com/og-image.png" />
+    <meta property="og:image" content="https://www.tooltrim.com/og-image.png" />
     <meta property="og:site_name" content="ToolTrim" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@tooltrim" />
-    <meta name="twitter:image" content="https://tooltrim.com/og-image.png" />
+    <meta name="twitter:image" content="https://www.tooltrim.com/og-image.png" />
 
     <!-- Static JSON-LD: Organization + WebSite (visible to crawlers without JS) -->
     <script type="application/ld+json">
@@ -36,9 +36,14 @@
         {
           "@type": "Organization",
           "name": "ToolTrim",
-          "url": "https://tooltrim.com",
-          "logo": "https://tooltrim.com/og-image.png",
-          "description": "Independent SaaS stack auditor with human-verified pricing for 212 tools.",
+          "url": "https://www.tooltrim.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.tooltrim.com/og-image.png",
+            "width": 1200,
+            "height": 630
+          },
+          "description": "Independent SaaS stack auditor with human-verified pricing for 314 tools.",
           "sameAs": [
             "https://twitter.com/tooltrim",
             "https://www.crunchbase.com/organization/tooltrim",
@@ -49,20 +54,27 @@
         {
           "@type": "WebSite",
           "name": "ToolTrim",
-          "url": "https://tooltrim.com",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://tooltrim.com/fr/tools?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
+          "url": "https://www.tooltrim.com",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": "https://www.tooltrim.com/fr/tools?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            {
+              "@type": "SearchAction",
+              "target": "https://www.tooltrim.com/en/tools?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          ]
         }
       ]
     }
     </script>
 
     <link rel="icon" type="image/svg+xml" href="/picto-logo.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/picto-logo.svg" />
-    <link rel="apple-touch-icon" href="/picto-logo.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/og-image.png" />
 
     <!-- Preconnect for font origin -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
