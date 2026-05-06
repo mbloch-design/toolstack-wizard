@@ -12,9 +12,8 @@ const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "met
 const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
 
 // SEO landing + persona pillar pages (localized slugs)
-const SEO_LANDING_PAGES: { path: string; priority: string }[] = [
-  { path: "/fr/audit-saas-gratuit", priority: "0.9" },
-  { path: "/en/free-saas-audit", priority: "0.9" },
+const SEO_LANDING_PAGE_PAIRS: { fr: string; en: string; priority: string }[] = [
+  { fr: "/fr/audit-saas-gratuit", en: "/en/free-saas-audit", priority: "0.9" },
 ];
 
 const CATEGORY_EN: Record<string, { name: string; description: string }> = {
@@ -36,17 +35,12 @@ const CATEGORY_EN: Record<string, { name: string; description: string }> = {
   "formation-education":  { name: "Education & Training",   description: "Create and sell online courses or train your clients." },
 };
 
-const PERSONA_PILLARS: { path: string; priority: string }[] = [
-  { path: "/fr/guide/meilleurs-outils-developpeur-freelance", priority: "0.8" },
-  { path: "/fr/guide/meilleurs-outils-designer-freelance", priority: "0.8" },
-  { path: "/fr/guide/meilleurs-outils-consultant-freelance", priority: "0.8" },
-  { path: "/fr/guide/meilleurs-outils-createur-contenu-freelance", priority: "0.8" },
-  { path: "/fr/guide/meilleurs-outils-ops-manager-freelance", priority: "0.8" },
-  { path: "/en/guide/best-tools-freelance-developer", priority: "0.8" },
-  { path: "/en/guide/best-tools-freelance-designer", priority: "0.8" },
-  { path: "/en/guide/best-tools-freelance-consultant", priority: "0.8" },
-  { path: "/en/guide/best-tools-freelance-content-creator", priority: "0.8" },
-  { path: "/en/guide/best-tools-freelance-ops-manager", priority: "0.8" },
+const PERSONA_PILLAR_PAIRS: { fr: string; en: string; priority: string }[] = [
+  { fr: "/fr/guide/meilleurs-outils-developpeur-freelance",    en: "/en/guide/best-tools-freelance-developer",      priority: "0.8" },
+  { fr: "/fr/guide/meilleurs-outils-designer-freelance",       en: "/en/guide/best-tools-freelance-designer",       priority: "0.8" },
+  { fr: "/fr/guide/meilleurs-outils-consultant-freelance",     en: "/en/guide/best-tools-freelance-consultant",     priority: "0.8" },
+  { fr: "/fr/guide/meilleurs-outils-createur-contenu-freelance", en: "/en/guide/best-tools-freelance-content-creator", priority: "0.8" },
+  { fr: "/fr/guide/meilleurs-outils-ops-manager-freelance",    en: "/en/guide/best-tools-freelance-ops-manager",    priority: "0.8" },
 ];
 
 function buildToolMetaDesc(tool: any, lang: string): string {
@@ -112,72 +106,91 @@ function sitemapPlugin(): Plugin {
         const urls: string[] = [];
 
         const buildDate = new Date().toISOString().split("T")[0];
-        const add = (loc: string, freq: string, prio: string, lastmod = buildDate) => {
+
+        /** Single URL entry — no hreflang (lang-specific or unpaired content) */
+        const addSingle = (loc: string, freq: string, prio: string, lastmod = buildDate) => {
           urls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`);
         };
 
-        for (const lang of LANGS) {
-          for (const page of STATIC_PAGES) {
-            const p = page ? `/${lang}/${page}` : `/${lang}`;
-            const prio = page === "" ? "1.0" : page === "tools" ? "0.9" : "0.7";
-            add(`${BASE}${p}`, page === "" ? "daily" : "weekly", prio);
-          }
+        /** FR+EN pair — both entries share the same hreflang block (x-default → FR) */
+        const addPair = (frLoc: string, enLoc: string, freq: string, prio: string, lastmod = buildDate) => {
+          const hl = `\n    <xhtml:link rel="alternate" hreflang="fr" href="${frLoc}" />\n    <xhtml:link rel="alternate" hreflang="en" href="${enLoc}" />\n    <xhtml:link rel="alternate" hreflang="x-default" href="${frLoc}" />`;
+          urls.push(`  <url>\n    <loc>${frLoc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
+          urls.push(`  <url>\n    <loc>${enLoc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
+        };
+
+        // ── Static pages ──────────────────────────────────────────────────────
+        for (const page of STATIC_PAGES) {
+          const frPath = page ? `/fr/${page}` : `/fr`;
+          const enPath = page ? `/en/${page}` : `/en`;
+          const prio = page === "" ? "1.0" : page === "tools" ? "0.9" : "0.7";
+          const freq = page === "" ? "daily" : "weekly";
+          addPair(`${BASE}${frPath}`, `${BASE}${enPath}`, freq, prio);
         }
 
+        // ── Tool pages + sub-pages ────────────────────────────────────────────
         for (const t of tools || []) {
           const slug = t.slug || t.id;
-          for (const lang of LANGS) {
-            add(`${BASE}/${lang}/tool/${slug}`, "weekly", "0.8");
-            // Sub-pages: own URL, own canonical, own SEO intent
-            add(`${BASE}/${lang}/tool/${slug}/prix`, "monthly", "0.7");
-            add(`${BASE}/${lang}/tool/${slug}/alternatives`, "monthly", "0.7");
-            add(`${BASE}/${lang}/tool/${slug}/faq`, "monthly", "0.6");
-          }
+          addPair(`${BASE}/fr/tool/${slug}`,              `${BASE}/en/tool/${slug}`,              "weekly",  "0.8");
+          addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/prix`,         "monthly", "0.7");
+          addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7");
+          addPair(`${BASE}/fr/tool/${slug}/faq`,          `${BASE}/en/tool/${slug}/faq`,          "monthly", "0.6");
         }
 
+        // ── Category pages ────────────────────────────────────────────────────
         for (const c of categories || []) {
-          for (const lang of LANGS) {
-            add(`${BASE}/${lang}/category/${c.slug}`, "weekly", "0.7");
-          }
+          addPair(`${BASE}/fr/category/${c.slug}`, `${BASE}/en/category/${c.slug}`, "weekly", "0.7");
         }
 
+        // ── Articles from content.json (lang-specific, no guaranteed pair) ────
         for (const a of data.articles || []) {
           const lang = a.lang || "fr";
           const articleDate = a.date || buildDate;
-          add(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6", articleDate);
+          addSingle(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6", articleDate);
         }
 
-        // Posts from posts-fr.json and posts-en.json
+        // ── Posts from posts-fr.json / posts-en.json ──────────────────────────
         const postsFrRaw = fs.readFileSync(path.resolve(__dirname, "src/data/posts-fr.json"), "utf-8");
         const postsEnRaw = fs.readFileSync(path.resolve(__dirname, "src/data/posts-en.json"), "utf-8");
-        const allPosts = [
-          ...(JSON.parse(postsFrRaw) as any[]).map((p: any) => ({ ...p, lang: "fr" })),
-          ...(JSON.parse(postsEnRaw) as any[]).map((p: any) => ({ ...p, lang: "en" })),
-        ];
+        const postsFr = JSON.parse(postsFrRaw) as any[];
+        const postsEn = JSON.parse(postsEnRaw) as any[];
         const contentArticleSlugs = new Set((data.articles || []).map((a: any) => a.slug));
-        for (const post of allPosts) {
-          if (!contentArticleSlugs.has(post.slug)) {
-            add(`${BASE}/${post.lang}/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
+        const enPostBySlug = new Map(postsEn.map((p: any) => [p.slug, p]));
+        const pairedSlugs = new Set<string>();
+
+        for (const post of postsFr) {
+          if (contentArticleSlugs.has(post.slug)) continue;
+          if (enPostBySlug.has(post.slug)) {
+            // Same slug exists in EN → pair them
+            addPair(
+              `${BASE}/fr/guide/${post.slug}`,
+              `${BASE}/en/guide/${post.slug}`,
+              "monthly", "0.7", post.date || buildDate
+            );
+            pairedSlugs.add(post.slug);
+          } else {
+            addSingle(`${BASE}/fr/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
           }
         }
+        for (const post of postsEn) {
+          if (contentArticleSlugs.has(post.slug) || pairedSlugs.has(post.slug)) continue;
+          addSingle(`${BASE}/en/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
+        }
 
-        // Comparative guides with localized slugs
+        // ── Comparative guides (localized slugs) ──────────────────────────────
         const GUIDE_COMPARISONS: [string, string][] = [
-          ["notion-vs-coda-comparatif-2026", "notion-vs-coda-comparison-2026"],
-          ["chatgpt-vs-claude-comparatif-2026", "chatgpt-vs-claude-comparison-2026"],
-          ["zapier-vs-make-comparatif-2026", "zapier-vs-make-comparison-2026"],
-          ["figma-vs-canva-comparatif-2026", "figma-vs-canva-comparison-2026"],
-          ["slack-vs-teams-comparatif-2026", "slack-vs-teams-comparison-2026"],
+          ["notion-vs-coda-comparatif-2026",       "notion-vs-coda-comparison-2026"],
+          ["chatgpt-vs-claude-comparatif-2026",     "chatgpt-vs-claude-comparison-2026"],
+          ["zapier-vs-make-comparatif-2026",        "zapier-vs-make-comparison-2026"],
+          ["figma-vs-canva-comparatif-2026",        "figma-vs-canva-comparison-2026"],
+          ["slack-vs-teams-comparatif-2026",        "slack-vs-teams-comparison-2026"],
         ];
         for (const [frSlug, enSlug] of GUIDE_COMPARISONS) {
-          add(`${BASE}/fr/guide/${frSlug}`, "monthly", "0.7");
-          add(`${BASE}/en/guide/${enSlug}`, "monthly", "0.7");
+          addPair(`${BASE}/fr/guide/${frSlug}`, `${BASE}/en/guide/${enSlug}`, "monthly", "0.7");
         }
 
-        // Comparisons index page
-        for (const lang of LANGS) {
-          add(`${BASE}/${lang}/comparatifs`, "weekly", "0.8");
-        }
+        // ── Comparisons index + detail pages ──────────────────────────────────
+        addPair(`${BASE}/fr/comparatifs`, `${BASE}/en/comparatifs`, "weekly", "0.8");
 
         const COMPARISONS = [
           "chatgpt-vs-claude", "dropbox-vs-google-drive", "zapier-vs-make",
@@ -188,37 +201,38 @@ function sitemapPlugin(): Plugin {
           "slack-vs-front", "notion-vs-coda",
         ];
         for (const comp of COMPARISONS) {
-          for (const lang of LANGS) {
-            add(`${BASE}/${lang}/comparatif/${comp}`, "monthly", "0.7");
-          }
+          addPair(`${BASE}/fr/comparatif/${comp}`, `${BASE}/en/comparatif/${comp}`, "monthly", "0.7");
         }
 
-        // SEO landing pages (audit)
-        for (const lp of SEO_LANDING_PAGES) {
-          add(`${BASE}${lp.path}`, "monthly", lp.priority);
+        // ── SEO landing pages ─────────────────────────────────────────────────
+        for (const lp of SEO_LANDING_PAGE_PAIRS) {
+          addPair(`${BASE}${lp.fr}`, `${BASE}${lp.en}`, "monthly", lp.priority);
         }
 
-        // Stack hub + stack detail pages
+        // ── Stack hub + stack detail pages ────────────────────────────────────
         for (const stack of STACKS) {
-          for (const lang of LANGS) {
-            add(`${BASE}/${lang}/stacks/${stack.slug}`, "monthly", "0.7");
-          }
+          addPair(`${BASE}/fr/stacks/${stack.slug}`, `${BASE}/en/stacks/${stack.slug}`, "monthly", "0.7");
         }
 
-        // Persona pillar pages
-        for (const pp of PERSONA_PILLARS) {
-          add(`${BASE}${pp.path}`, "monthly", pp.priority);
+        // ── Persona pillar pages ──────────────────────────────────────────────
+        for (const pp of PERSONA_PILLAR_PAIRS) {
+          addPair(`${BASE}${pp.fr}`, `${BASE}${pp.en}`, "monthly", pp.priority);
         }
 
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
+        const xml = [
+          `<?xml version="1.0" encoding="UTF-8"?>`,
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"`,
+          `        xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
+          urls.join("\n"),
+          `</urlset>`,
+        ].join("\n");
 
         const distPath = path.resolve(__dirname, "dist/sitemap.xml");
-        
         if (fs.existsSync(path.resolve(__dirname, "dist"))) {
           fs.writeFileSync(distPath, xml, "utf-8");
         }
-        
-        console.log(`✅ Sitemap generated with ${urls.length} URLs`);
+
+        console.log(`✅ Sitemap generated with ${urls.length} URLs (hreflang included)`);
       } catch (e) {
         console.warn("⚠️ Sitemap generation failed:", e);
       }
