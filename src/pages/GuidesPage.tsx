@@ -6,7 +6,7 @@ import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
 import PageHero from "@/components/PageHero";
-import { setHreflang } from "@/lib/seo";
+import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import type { Tool } from "@/data/types";
 
@@ -24,10 +24,13 @@ const GuidesPage = () => {
     const desc = lang === "fr"
       ? "Analyses approfondies, comparatifs détaillés et conseils pratiques pour construire la stack d'outils parfaite."
       : "In-depth analyses, detailed comparisons and practical advice to build the perfect tool stack.";
-    document.title = title;
-    const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (metaDesc) metaDesc.content = desc;
-    setHreflang(`/${lang}/guides`);
+    setSeoTags({
+      title,
+      description: desc,
+      url: `https://tooltrim.com/${lang}/guides`,
+      locale: lang === "fr" ? "fr_FR" : "en_US",
+    });
+    return () => cleanupSeo([]);
   }, [lang]);
 
   const allCategories = useMemo(() => {
