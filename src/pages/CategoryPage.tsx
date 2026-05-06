@@ -7,20 +7,11 @@ import { Search, ExternalLink, ChevronDown, ArrowRight, X, TrendingDown, Sparkle
 import ToolLogo from "@/components/ToolLogo";
 import PageHero from "@/components/PageHero";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { getToolDomain } from "@/lib/toolUtils";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
 const PER_PAGE = 20;
-
-function getToolDomain(tool: any): string {
-  const url = tool.websiteUrl || tool.affiliateLink;
-  if (!url) return "";
-  try {
-    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-  } catch {
-    return "";
-  }
-}
 
 // ── Profile options (mapped from relevantFor values) ──
 const PROFILE_OPTIONS = [

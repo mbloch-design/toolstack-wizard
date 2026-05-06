@@ -1017,6 +1017,13 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks(id) {
+          // ── Vendor splits ─────────────────────────────────────────────
+          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) return "vendor-react";
+          if (id.includes("node_modules/@supabase/")) return "vendor-supabase";
+          if (id.includes("node_modules/lucide-react/")) return "vendor-lucide";
+          if (id.includes("node_modules/@tanstack/")) return "vendor-query";
+          if (id.includes("node_modules/")) return "vendor-misc";
+          // ── Data chunks (lazy-loaded JSON) ────────────────────────────
           if (id.includes("/src/data/tools_v4.json")) return "data-tools";
           if (id.includes("/src/data/tools_index.json")) return "data-tool-index";
           if (id.includes("/src/data/categories_index.json")) return "data-category-index";

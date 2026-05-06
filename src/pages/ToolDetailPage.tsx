@@ -11,6 +11,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
+import { getToolDomain, getDomainFromUrl } from "@/lib/toolUtils";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolVerdictBlock from "@/components/tool/ToolVerdictBlock";
@@ -19,21 +20,6 @@ import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import ToolDiagCta from "@/components/tool/ToolDiagCta";
-
-function getToolDomain(tool: any): string {
-  const url = tool.websiteUrl || tool.affiliateLink;
-  if (!url) return "";
-  try {
-    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-  } catch { return ""; }
-}
-
-function getDomainFromUrl(url?: string): string {
-  if (!url) return "";
-  try {
-    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-  } catch { return ""; }
-}
 
 const TABS = [
   { id: "presentation", labelFr: "Présentation", labelEn: "Overview",      path: ""             },

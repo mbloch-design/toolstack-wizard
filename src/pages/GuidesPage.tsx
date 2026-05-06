@@ -9,6 +9,7 @@ import PageHero from "@/components/PageHero";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import type { Tool } from "@/data/types";
+import { getToolDomain } from "@/lib/toolUtils";
 
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
@@ -277,16 +278,6 @@ function ArticleCard({ post, prefix, tools }: { post: Post; prefix: string; tool
       </div>
     </Link>
   );
-}
-
-function getToolDomain(tool: Tool): string {
-  const url = tool.websiteUrl || tool.affiliateLink;
-  if (!url) return "";
-  try {
-    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-  } catch {
-    return "";
-  }
 }
 
 /* ── Loading skeleton ── */

@@ -8,6 +8,7 @@ import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { STACKS } from "@/data/stacks";
 
+import { getToolDomain } from "@/lib/toolUtils";
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
@@ -404,16 +405,6 @@ function GuideCard({ post, prefix, tools }: { post: Post; prefix: string; tools:
       </div>
     </Link>
   );
-}
-
-function getToolDomain(tool: ToolSummary): string {
-  const url = tool.websiteUrl || tool.affiliateLink;
-  if (!url) return "";
-  try {
-    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-  } catch {
-    return "";
-  }
 }
 
 export default HomePage;

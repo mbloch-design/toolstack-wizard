@@ -38,7 +38,15 @@ const NotFound = lazy(() => import("@/pages/NotFound"));
 const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000,  // 5 min — avoid refetching on every mount
+      gcTime: 30 * 60 * 1000,    // 30 min — keep unused data in cache
+      retry: 1,
+    },
+  },
+});
 
 const LangLayout = () => {
   const { lang } = useParams<{ lang: string }>();

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { Search } from "lucide-react";
+import { getToolDomain } from "@/lib/toolUtils";
 
 const FEATURED_SLUGS = [
   "figma", "notion", "slack", "hubspot", "zapier",
@@ -22,16 +23,6 @@ const FLOAT_LOGOS = [
   { domain: "airtable.com",  top: "4%",  left: "22%",  size: 44, floatDuration: "3.9s", floatDelay: "1.5s", revealDelay: "0.30s" },
   { domain: "intercom.com",  top: "4%",  right: "22%", size: 44, floatDuration: "4.6s", floatDelay: "0.3s", revealDelay: "0.20s" },
 ];
-
-function getToolDomain(tool: ToolSummary): string {
-  const url = tool.websiteUrl || tool.affiliateLink;
-  if (!url) return "";
-  try {
-    return new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-  } catch {
-    return "";
-  }
-}
 
 const HeroSection = ({ toolCount }: { toolCount: number }) => {
   const { lang, t, prefix } = useLang();
