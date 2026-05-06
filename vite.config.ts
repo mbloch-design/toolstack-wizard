@@ -924,6 +924,22 @@ function staticPrerenderPlugin(): Plugin {
             url,
           };
 
+          // FAQPage schema: use pre-built seo.schema if available, else build from faq[]
+          let faqSchema: object | null = null;
+          if (post.seo?.schema?.["@type"] === "FAQPage") {
+            faqSchema = post.seo.schema;
+          } else if (Array.isArray(post.faq) && post.faq.length > 0) {
+            faqSchema = {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: post.faq.map((item: any) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            };
+          }
+
           const postMetaTags = [
             `<link rel="canonical" href="${url}" />`,
             `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
@@ -931,6 +947,7 @@ function staticPrerenderPlugin(): Plugin {
             `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
             `<title>${title.replace(/</g, "&lt;")}</title>`,
             `<meta name="description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
+            `<meta property="og:type" content="article" />`,
             `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
             `<meta property="og:url" content="${url}" />`,
@@ -939,6 +956,7 @@ function staticPrerenderPlugin(): Plugin {
             ...(post.seo?.keywords ? [`<meta name="keywords" content="${post.seo.keywords.replace(/"/g, "&quot;")}" />`] : []),
             `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`,
             `<script type="application/ld+json">${JSON.stringify(postBreadcrumb)}</script>`,
+            ...(faqSchema ? [`<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`] : []),
           ].join("\n    ");
 
           let html = baseHtml;
@@ -969,7 +987,8 @@ function staticPrerenderPlugin(): Plugin {
         fs.writeFileSync(path.resolve(distDir, "404.html"), html404, "utf-8");
 
         const subPageCount = tools.length * 2 * 3; // 3 sub-pages × 2 langs
-        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (/prix, /alternatives, /faq) + 3 landings + ${SEO_PAGES.length} SEO pages + ${SECTION_PAGES.length} sections + ${categories.length * 2} categories + ${COMPARISONS_PRERENDER.length * 2} comparisons + 404.html`);
+        const guidesCount = allPostsData.length;
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${COMPARISONS_PRERENDER.length * 2} comparisons + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
