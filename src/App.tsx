@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 // Critical: HomePage loaded eagerly for FCP
 import HomePage from "@/pages/HomePage";
@@ -90,6 +91,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <DynamicCanonical />
+        <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
           <Routes>
             <Route path="/" element={<Navigate to="/fr" replace />} />
@@ -149,6 +151,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+        </ErrorBoundary>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
