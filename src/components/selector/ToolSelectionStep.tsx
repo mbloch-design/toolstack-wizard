@@ -62,7 +62,7 @@ function ToolCard({
         />
       ) : (
         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-xs font-bold text-foreground">
-          {tool.name.charAt(0).toUpperCase()}
+          {(tool.name ?? "?").charAt(0).toUpperCase()}
         </div>
       )}
 

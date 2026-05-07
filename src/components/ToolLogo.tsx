@@ -33,7 +33,7 @@ const ToolLogo = ({ tool, size = 32, className = "" }: ToolLogoProps) => {
         style={{ width: size, height: size, minWidth: size, minHeight: size }}
         aria-hidden="true"
       >
-        {tool.name.charAt(0).toUpperCase()}
+        {(tool.name ?? "?").charAt(0).toUpperCase()}
       </div>
     );
   }

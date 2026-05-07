@@ -141,7 +141,7 @@ const CategoryPage = () => {
 
     result.sort((a, b) => {
       switch (sort) {
-        case "name":      return a.name.localeCompare(b.name);
+        case "name":      return (a.name ?? "").localeCompare(b.name ?? "");
         case "price-asc": return (a.defaultMonthlyPrice || 0) - (b.defaultMonthlyPrice || 0);
         case "price-desc":return (b.defaultMonthlyPrice || 0) - (a.defaultMonthlyPrice || 0);
         case "free-first":return (a.defaultMonthlyPrice === 0 ? 0 : 1) - (b.defaultMonthlyPrice === 0 ? 0 : 1);

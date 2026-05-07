@@ -119,7 +119,7 @@ const ProfileRecapPanel = ({ form, tools, currentStep, onGoToStep, onReset }: Pr
                   return logoUrl ? (
                     <img key={tool.id} src={logoUrl} alt="" className="h-5 w-5 rounded" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
                   ) : (
-                    <div key={tool.id} className="flex h-5 w-5 items-center justify-center rounded bg-secondary text-[10px] font-bold">{tool.name.charAt(0)}</div>
+                    <div key={tool.id} className="flex h-5 w-5 items-center justify-center rounded bg-secondary text-[10px] font-bold">{(tool.name ?? "?").charAt(0)}</div>
                   );
                 })}
                 {selectedTools.length > 6 && <span className="text-xs text-muted-foreground">+{selectedTools.length - 6}</span>}

@@ -62,7 +62,7 @@ const Logo = ({ tool, size = 36 }: { tool: Tool; size?: number }) => {
         className="flex shrink-0 items-center justify-center rounded-xl text-xs font-bold text-white"
         style={{ width: size, height: size, minWidth: size, minHeight: size, backgroundColor: `hsl(${hue}, 55%, 45%)` }}
       >
-        {tool.name.charAt(0).toUpperCase()}
+        {(tool.name ?? "?").charAt(0).toUpperCase()}
       </span>
     );
   }
