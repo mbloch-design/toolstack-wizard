@@ -11,6 +11,13 @@ export interface StackToolSlot {
   reasonEn: string;
 }
 
+export interface StackCheckpoint {
+  q: string;
+  qEn: string;
+  hint: string;
+  hintEn: string;
+}
+
 export interface StackGuide {
   id: string;
   slug: string;
@@ -29,6 +36,9 @@ export interface StackGuide {
   bestForEn: string;
   avoidIf: string;
   avoidIfEn: string;
+  editorial: string;
+  editorialEn: string;
+  checkpoints: StackCheckpoint[];
   tools: StackToolSlot[];
 }
 
@@ -78,6 +88,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Client websites, MVPs, internal apps, and freelance maintenance.",
     avoidIf: "Tu gères déjà une équipe produit avec une roadmap, du support et des astreintes.",
     avoidIfEn: "You already run a product team with roadmap, support, and on-call work.",
+    editorial: "La plupart des devs freelance finissent avec 8 à 12 outils — parce qu'ils ont adopté chaque outil au moment d'un projet précis, et personne ne leur a dit de supprimer l'ancien. GitHub + Vercel + Notion + Stripe couvrent 95% des besoins d'un dev solo sur des projets clients. ChatGPT est un bonus, pas une dépendance.",
+    editorialEn: "Most freelance devs end up with 8 to 12 tools because they adopted each one at a specific project moment, and nobody told them to remove the old ones. GitHub + Vercel + Notion + Stripe cover 95% of a solo dev's client work. ChatGPT is a bonus, not a dependency.",
+    checkpoints: [
+      { q: "Tu utilises un outil de ticketing ou de PM pour des projets solo ?", qEn: "Are you using a ticketing or PM tool for solo projects?", hint: "Oui → c'est probablement du confort organisationnel, pas de la nécessité. Notion suffit.", hintEn: "Yes → that is likely organizational comfort, not necessity. Notion is enough." },
+      { q: "Combien d'abonnements IA as-tu actifs en ce moment ?", qEn: "How many active AI subscriptions do you have right now?", hint: "Plus de 2 → liste-les. Lesquels as-tu vraiment ouverts la semaine dernière ?", hintEn: "More than 2 → list them. Which ones did you actually open last week?" },
+      { q: "Ton client peut accéder au code et voir les previews facilement ?", qEn: "Can your client access the code and view previews easily?", hint: "Non → GitHub + Vercel règlent ce problème sans outil supplémentaire.", hintEn: "No → GitHub + Vercel solve this without any extra tool." },
+    ],
     tools: [
       { role: "Code et repo", roleEn: "Code and repo", slug: "github", reason: "Gratuit, standard client, suffisant pour versionner et livrer.", reasonEn: "Free, client-friendly, enough to version and ship." },
       { role: "Déploiement", roleEn: "Deployment", slug: "vercel", reason: "Le meilleur ratio vitesse/complexité pour front et petites apps.", reasonEn: "The best speed-to-complexity ratio for frontends and small apps." },
@@ -104,6 +121,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Light branding, UX/UI, landing pages, and design audits.",
     avoidIf: "Tu fais de la vidéo, de la 3D ou de la production print lourde chaque semaine.",
     avoidIfEn: "You do video, 3D, or heavy print production every week.",
+    editorial: "La plupart des designers solos paient Adobe CC depuis le début de leur carrière — c'est devenu un réflexe. Mais entre Figma qui a remplacé XD, Canva qui couvre 80% des formats marketing, et Photoshop qu'on ouvre de moins en moins, il y a souvent 40 à 60€/mois qui dorment sans qu'on le remarque.",
+    editorialEn: "Most solo designers have been paying for Adobe CC since the start of their career — it became a reflex. But between Figma replacing XD, Canva covering 80% of marketing formats, and Photoshop being opened less and less, there are often €40 to €60/month sitting idle without noticing.",
+    checkpoints: [
+      { q: "Tu as ouvert Illustrator ou InDesign dans les 30 derniers jours ?", qEn: "Have you opened Illustrator or InDesign in the last 30 days?", hint: "Non → tu paies peut-être 60€/mois pour un réflexe. Figma + Canva couvrent 90% de ce travail.", hintEn: "No → you may be paying €60/month out of habit. Figma + Canva cover 90% of that work." },
+      { q: "Tes clients reçoivent un lien de prévisualisation ou un fichier exporté ?", qEn: "Do your clients receive a preview link or an exported file?", hint: "Un fichier → Figma résout ça avec un lien partagé, sans exporter à chaque itération.", hintEn: "A file → Figma solves this with a shared link, no exporting needed on every iteration." },
+      { q: "Tu fais de la retouche photo pro plus d'une fois par semaine ?", qEn: "Do you do professional photo retouching more than once a week?", hint: "Non → Luminar en achat unique coûte moins que 2 mois du plan Adobe Photography.", hintEn: "No → Luminar as a one-time purchase costs less than 2 months of the Adobe Photography plan." },
+    ],
     tools: [
       { role: "Design", roleEn: "Design", slug: "figma", reason: "Source unique pour maquettes, prototypes et commentaires.", reasonEn: "Single source for mockups, prototypes, and comments." },
       { role: "Visuels rapides", roleEn: "Fast visuals", slug: "canva", reason: "Utile pour formats sociaux et présentations simples.", reasonEn: "Useful for social formats and simple decks." },
@@ -129,6 +153,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Consulting, B2B coaching, executive advisory, packaged offers.",
     avoidIf: "Tu gères une équipe commerciale avec du scoring, des séquences et du reporting multi-personnes.",
     avoidIfEn: "You have a sales team with scoring, sequences, and multi-rep reporting.",
+    editorial: "Un consultant solo n'a généralement pas besoin d'un CRM. Il a besoin de ne pas perdre le fil sur 12 à 20 opportunités en cours, de savoir où en sont ses relances, et de passer moins de temps dans l'outil que sur les appels. HubSpot et Salesforce sont faits pour des équipes. Pipedrive + Notion, c'est fait pour quelqu'un qui vend seul.",
+    editorialEn: "A solo consultant generally does not need a CRM. They need to not lose track of 12 to 20 open opportunities, know where their follow-ups stand, and spend less time in the tool than on calls. HubSpot and Salesforce are built for teams. Pipedrive + Notion is built for someone who sells alone.",
+    checkpoints: [
+      { q: "Combien d'opportunités commerciales actives tu suis en ce moment ?", qEn: "How many active sales opportunities are you tracking right now?", hint: "Moins de 15 → une base Notion bien faite remplace Pipedrive pour beaucoup de consultants.", hintEn: "Fewer than 15 → a well-structured Notion base replaces Pipedrive for many consultants." },
+      { q: "Tu ouvres vraiment ton CRM plus de 3 fois par semaine ?", qEn: "Do you actually open your CRM more than 3 times a week?", hint: "Non → tu paies probablement pour de la réassurance organisationnelle, pas pour un vrai usage.", hintEn: "No → you are likely paying for organizational reassurance, not for actual use." },
+      { q: "Ton outil de prise de rendez-vous justifie-t-il son coût mensuel ?", qEn: "Does your scheduling tool justify its monthly cost?", hint: "Moins de 5 appels qualifiés par mois → Calendly en version gratuite suffit largement.", hintEn: "Fewer than 5 qualified calls per month → Calendly's free tier is more than enough." },
+    ],
     tools: [
       { role: "Pipeline", roleEn: "Pipeline", slug: "pipedrive", reason: "Plus clair qu'un CRM complet pour un solo orienté vente.", reasonEn: "Clearer than a full CRM for a sales-oriented solo." },
       { role: "Rendez-vous", roleEn: "Scheduling", slug: "calendly", reason: "Rentable si tu bookes plus de 6 appels qualifiés par mois.", reasonEn: "Worth it if you book more than 6 qualified calls per month." },
@@ -154,6 +185,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "LinkedIn, newsletter, client articles, educational content.",
     avoidIf: "Ton activité principale est la production vidéo longue ou le média à forte audience.",
     avoidIfEn: "Your core business is long-form video or a high-audience media brand.",
+    editorial: "Le gaspillage dans les stacks de créateurs ne vient pas d'un seul outil trop cher. Il vient de l'accumulation : une IA pour les brouillons, une autre pour reformuler, un outil pour programmer, un autre pour la newsletter — le tout sans avoir un rythme de publication stable qui justifie chaque abonnement.",
+    editorialEn: "The waste in creator stacks does not come from one overpriced tool. It comes from accumulation: one AI for drafts, another to rewrite, one tool to schedule, another for the newsletter — all without a stable publishing rhythm that justifies each subscription.",
+    checkpoints: [
+      { q: "Tu as plus d'un outil IA actif pour écrire et reformuler ?", qEn: "Do you have more than one active AI tool for writing and rewriting?", hint: "Oui → garde le plus polyvalent, annule l'autre. Un seul copilote suffit pour 90% des usages texte.", hintEn: "Yes → keep the most versatile one, cancel the other. One copilot covers 90% of text use cases." },
+      { q: "Tu publies à un rythme régulier, au moins deux fois par semaine ?", qEn: "Do you publish at a regular pace, at least twice a week?", hint: "Non → les abonnements de programmation et de newsletter ne se justifient pas encore.", hintEn: "No → scheduling and newsletter subscriptions are not justified yet." },
+      { q: "Ton outil de visuels fait vraiment quelque chose que Canva ne fait pas ?", qEn: "Does your visual tool do something Canva genuinely cannot?", hint: "Non → Canva couvre 80% des formats créateurs sans abonnement supplémentaire.", hintEn: "No → Canva covers 80% of creator formats without an extra subscription." },
+    ],
     tools: [
       { role: "Idées et rédaction", roleEn: "Ideas and writing", slug: "chatgpt", reason: "Un copilote éditorial suffit avant d'ajouter des IA spécialisées.", reasonEn: "One editorial copilot is enough before adding specialized AI." },
       { role: "Organisation", roleEn: "Organization", slug: "notion", reason: "Calendrier éditorial, backlog, briefs et recyclage.", reasonEn: "Editorial calendar, backlog, briefs, and repurposing." },
@@ -179,6 +217,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Ops missions, SMB structuring, process, back office, and operating cadence.",
     avoidIf: "Tu ne pilotes que ton activité en solo, sans clients qui ont leurs propres outils.",
     avoidIfEn: "You only run your solo business without multi-process clients.",
+    editorial: "La difficulté d'une mission ops fractionnaire, c'est que chaque client a déjà son outil. Tu arrives sur Asana, tu repars sur ClickUp, le suivant est sur Monday. À un moment, tu passes plus de temps à naviguer entre les environnements qu'à poser de la vraie structure. La réponse, ce n'est pas d'adopter tous les outils de tous tes clients — c'est d'avoir une base transférable qui s'adapte.",
+    editorialEn: "The challenge of a fractional ops role is that every client already has their tool. You arrive on Asana, leave to ClickUp, the next is on Monday. At some point you spend more time navigating between environments than actually building structure. The answer is not to adopt every client's tool — it is to have a transferable base that adapts.",
+    checkpoints: [
+      { q: "Tu as plus de 3 espaces PM actifs en ce moment entre tes différents clients ?", qEn: "Do you have more than 3 active PM workspaces across your different clients?", hint: "Oui → ce n'est pas un problème d'outils, c'est un problème de gouvernance. Définis une couche qui t'appartient.", hintEn: "Yes → that is not a tooling problem, it is a governance problem. Define a layer that belongs to you." },
+      { q: "Tes SOP et modèles de process sont-ils dans un espace que tu contrôles ?", qEn: "Are your SOPs and process templates in a space you control?", hint: "Non → quand la mission se termine, tu repars les mains vides. Notion résout ça.", hintEn: "No → when the mission ends, you leave empty-handed. Notion solves this." },
+      { q: "Tu automatises tes tâches récurrentes ou tu les fais encore à la main ?", qEn: "Do you automate your recurring tasks or still do them manually?", hint: "À la main → même deux scénarios Make simples économisent 2 à 3h par semaine en ops récurrents.", hintEn: "Manually → even two simple Make scenarios save 2 to 3 hours a week on recurring ops." },
+    ],
     tools: [
       { role: "Pilotage", roleEn: "Operations", slug: "clickup", reason: "Bon compromis vues, tâches, docs et automatisations simples.", reasonEn: "Good balance of views, tasks, docs, and simple automations." },
       { role: "Base de connaissance", roleEn: "Knowledge base", slug: "notion", reason: "Parfait pour SOP, modèles et docs transférables.", reasonEn: "Great for SOPs, templates, and transferable docs." },
@@ -204,6 +249,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Early freelance, side business, simple service business.",
     avoidIf: "Tu travailles déjà avec une équipe ou tu as besoin d'un vrai CRM commercial.",
     avoidIfEn: "You already produce with a team or need a full sales CRM.",
+    editorial: "Au lancement, l'instinct c'est de s'équiper. Tu regardes ce que font les indépendants établis, tu adoptes leurs outils — et tu te retrouves à payer 150€/mois avant d'avoir trois clients réguliers. La règle simple : aucun abonnement ne se justifie avant d'avoir la charge de travail qui l'utilise.",
+    editorialEn: "When starting out, the instinct is to equip yourself. You look at what established freelancers use, you adopt their tools — and you end up paying €150/month before having three regular clients. The simple rule: no subscription is justified before you have the workload that uses it.",
+    checkpoints: [
+      { q: "Tu as des abonnements mensuels actifs avant d'avoir 5 clients récurrents ?", qEn: "Do you have active monthly subscriptions before having 5 recurring clients?", hint: "Oui → reporte les outils avancés. Notion + Google Drive + Stripe = la base viable.", hintEn: "Yes → defer advanced tools. Notion + Google Drive + Stripe is the viable baseline." },
+      { q: "Tu qualifies et briefes tes clients avec un process clair ?", qEn: "Do you qualify and brief your clients with a clear process?", hint: "Non → un formulaire Tally gratuit remplace une heure de call de découverte floue.", hintEn: "No → a free Tally form replaces an hour of vague discovery call." },
+      { q: "Tu peux facturer un client sans friction aujourd'hui ?", qEn: "Can you invoice a client without friction today?", hint: "Non → Stripe en freemium règle ça. C'est la seule urgence réelle au démarrage.", hintEn: "No → Stripe on the free tier solves this. It is the only real priority at launch." },
+    ],
     tools: [
       { role: "Organisation", roleEn: "Organization", slug: "notion", reason: "Un espace unique pour offres, clients, tâches et livrables.", reasonEn: "One place for offers, clients, tasks, and deliverables." },
       { role: "Stockage", roleEn: "Storage", slug: "google-drive", reason: "Peu cher, compris par tous les clients.", reasonEn: "Cheap and understood by every client." },
@@ -229,6 +281,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Lead capture, notifications, light CRM sync, monthly reporting.",
     avoidIf: "Tes automatisations sont critiques, à fort volume ou partagées entre plusieurs personnes.",
     avoidIfEn: "Your automations are critical, high-volume, or multi-team.",
+    editorial: "L'automatisation devient rentable quand la tâche se répète au moins 5 à 10 fois par semaine. En dessous, le temps de configurer et maintenir le scénario dépasse ce qu'il économise. La vraie question n'est pas 'est-ce qu'il faudrait automatiser ?' — c'est 'est-ce que cette tâche se répète assez pour que ça vaille le coup ?'",
+    editorialEn: "Automation becomes profitable when a task repeats at least 5 to 10 times per week. Below that, the time to configure and maintain the scenario exceeds what it saves. The real question is not 'should I automate this?' — it is 'does this task repeat often enough to be worth it?'",
+    checkpoints: [
+      { q: "Tu as identifié des tâches qui se répètent exactement de la même façon chaque semaine ?", qEn: "Have you identified tasks that repeat in exactly the same way every week?", hint: "Non → commence par les noter pendant 2 semaines avant de payer un outil d'automatisation.", hintEn: "No → start by logging them for 2 weeks before paying for an automation tool." },
+      { q: "Tes scénarios Make sont documentés quelque part ?", qEn: "Are your Make scenarios documented somewhere?", hint: "Non → sans documentation, tu passeras autant de temps à les comprendre qu'à les créer.", hintEn: "No → without documentation, you will spend as much time understanding them as creating them." },
+      { q: "Tu utilises Zapier alors que tu n'as que 2 ou 3 automatisations simples ?", qEn: "Are you using Zapier when you only have 2 or 3 simple automations?", hint: "Oui → Make en version gratuite couvre exactement ça, sans le prix de Zapier.", hintEn: "Yes → Make on the free tier covers exactly that, without Zapier's price." },
+    ],
     tools: [
       { role: "Scénarios", roleEn: "Scenarios", slug: "make", reason: "Bon rapport puissance/prix pour workflows visuels.", reasonEn: "Good power-to-price ratio for visual workflows." },
       { role: "Capture", roleEn: "Capture", slug: "tally", reason: "Point d'entrée propre pour brief, lead ou demande support.", reasonEn: "Clean entry point for briefs, leads, or support requests." },
@@ -254,6 +313,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Articles, newsletters, sales emails, LinkedIn posts, rewriting, long-doc summaries.",
     avoidIf: "Tu fais surtout du code, du visuel ou de la voix — d'autres stacks correspondent mieux.",
     avoidIfEn: "You mostly do code, visuals, or voice — see the other niche AI stacks.",
+    editorial: "La vraie question n'est pas 'quelle IA est la meilleure ?' — c'est 'pour quel usage est-ce que je paie vraiment chaque mois ?' Souvent, les gens paient Claude pour la nuance, ChatGPT pour la vitesse, et Perplexity pour les sources — alors qu'un seul des trois couvre l'essentiel de leur usage réel.",
+    editorialEn: "The real question is not 'which AI is best?' — it is 'which use case am I actually paying for each month?' Often people pay for Claude's nuance, ChatGPT's speed, and Perplexity's sources — when just one of the three covers the majority of their actual use.",
+    checkpoints: [
+      { q: "Tu as plus d'un abonnement IA actif pour rédiger et reformuler ?", qEn: "Do you have more than one active AI subscription for writing and rewriting?", hint: "Oui → garde seulement celui que tu utilises en premier réflexe. L'autre est du confort.", hintEn: "Yes → keep only the one you reach for first instinctively. The other is comfort, not necessity." },
+      { q: "Tu cites des sources dans tes contenus écrits régulièrement ?", qEn: "Do you regularly cite sources in your written content?", hint: "Non → Perplexity ne se justifie pas. Claude ou ChatGPT suffit largement.", hintEn: "No → Perplexity is not justified. Claude or ChatGPT is more than enough." },
+      { q: "Ton IA principale te déçoit vraiment sur un usage précis ?", qEn: "Does your main AI genuinely disappoint you on a specific use case?", hint: "Non → c'est la preuve que tu n'as pas besoin d'une deuxième. Annule-la.", hintEn: "No → that is proof you do not need a second one. Cancel it." },
+    ],
     tools: [
       { role: "Rédaction longue", roleEn: "Long-form writing", slug: "claude", reason: "Meilleur sur le ton, la nuance et les textes longs sans hallucination grossière.", reasonEn: "Best at tone, nuance, and long texts without obvious hallucinations." },
       { role: "Polyvalent quotidien", roleEn: "Daily generalist", slug: "chatgpt", reason: "Le couteau suisse pour brouillons, plans, reformulations rapides.", reasonEn: "The Swiss army knife for drafts, outlines, quick rewrites." },
@@ -278,6 +344,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Editorial visuals, moodboards, marketing illustrations, thumbnails, concepts.",
     avoidIf: "Tu produis des visuels pour impression professionnelle ou tu as des contraintes strictes sur les droits commerciaux.",
     avoidIfEn: "You produce pro print assets or need strict enterprise commercial rights.",
+    editorial: "Le problème avec les outils IA image, c'est qu'on s'abonne au moment d'un projet urgent et on oublie d'annuler quand la mission se termine. Midjourney pour le style artistique, Ideogram pour le texte lisible intégré — si tu fais les deux, l'un des deux manque vraiment. L'autre, souvent non.",
+    editorialEn: "The problem with AI image tools is that you subscribe when you urgently need them and forget to cancel when the project ends. Midjourney for artistic style, Ideogram for readable embedded text — if you do both, one is truly needed. The other, often not.",
+    checkpoints: [
+      { q: "Tu as besoin de texte lisible intégré dans tes visuels générés ?", qEn: "Do you need readable text embedded inside your generated visuals?", hint: "Oui → Ideogram est le seul fiable pour ça. Midjourney seul ne suffit pas.", hintEn: "Yes → Ideogram is the only reliable option for this. Midjourney alone is not enough." },
+      { q: "Tes abonnements image IA ont été utilisés au moins 10 fois ce mois ?", qEn: "Have your AI image subscriptions been used at least 10 times this month?", hint: "Non → passe à des crédits ponctuels plutôt qu'un abonnement mensuel.", hintEn: "No → switch to one-off credits rather than a monthly subscription." },
+      { q: "Tu as plusieurs abonnements image IA pour des styles qui se ressemblent ?", qEn: "Do you have multiple AI image subscriptions for styles that are similar?", hint: "Oui → garde le meilleur pour ton style le plus fréquent, annule les autres.", hintEn: "Yes → keep the best one for your most common style, cancel the rest." },
+    ],
     tools: [
       { role: "Image artistique", roleEn: "Artistic image", slug: "midjourney", reason: "Le meilleur rendu esthétique par défaut, références photo et style.", reasonEn: "Best aesthetic output by default, photo and style references." },
       { role: "Image avec texte", roleEn: "Image with text", slug: "ideogram", reason: "Le seul vraiment fiable pour intégrer du texte lisible dans une image.", reasonEn: "The only one truly reliable for embedding readable text in an image." },
@@ -302,6 +375,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Client sites, MVPs, scripts, refactors, debugging, test generation.",
     avoidIf: "Tu travailles dans une grande base de code d'équipe avec des contraintes de sécurité strictes.",
     avoidIfEn: "You work in a large team codebase with strict security constraints.",
+    editorial: "Cursor a changé la façon de coder avec l'IA — pas parce qu'il autocomplète mieux, mais parce qu'il comprend le contexte multi-fichier du projet. Payer Copilot en plus, c'est payer deux fois pour la même fonction dans le même éditeur. Le seul vrai duo qui a du sens : Cursor pour écrire le code, Claude pour réfléchir à l'architecture.",
+    editorialEn: "Cursor changed the way of coding with AI — not because it autocompletes better, but because it understands multi-file project context. Paying for Copilot on top is paying twice for the same function in the same editor. The only real pairing that makes sense: Cursor for writing code, Claude for architecture thinking.",
+    checkpoints: [
+      { q: "Tu as Cursor ET GitHub Copilot actifs en même temps ?", qEn: "Do you have Cursor AND GitHub Copilot active at the same time?", hint: "Oui → c'est un doublon. Cursor inclut l'autocomplétion et le contexte projet. Annule Copilot.", hintEn: "Yes → that is a duplicate. Cursor includes autocompletion and project context. Cancel Copilot." },
+      { q: "Tu utilises ChatGPT pour débugger du code complexe ?", qEn: "Do you use ChatGPT to debug complex code?", hint: "Oui → Claude est meilleur pour lire du code legacy et expliquer une erreur précisément.", hintEn: "Yes → Claude is better at reading legacy code and explaining errors precisely." },
+      { q: "Tu paies plusieurs IA de code sans savoir laquelle t'aide vraiment le plus ?", qEn: "Are you paying for multiple AI coding tools without knowing which helps most?", hint: "Oui → teste une semaine avec une seule. Si tu ne remarques pas le manque, annule l'autre.", hintEn: "Yes → test one week with just one. If you do not notice the absence, cancel the other." },
+    ],
     tools: [
       { role: "Éditeur IA principal", roleEn: "Main AI editor", slug: "cursor", reason: "Bien meilleur que Copilot pour les éditions multi-fichiers et le contexte projet.", reasonEn: "Much better than Copilot for multi-file edits and project context." },
       { role: "Raisonnement et debug", roleEn: "Reasoning and debug", slug: "claude", reason: "Excellent pour expliquer un bug, proposer une architecture, lire du code legacy.", reasonEn: "Excellent at explaining bugs, proposing architecture, reading legacy code." },
@@ -326,6 +406,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Voice-over, podcasts, multilingual dubbing, training avatars, short marketing videos.",
     avoidIf: "Tu publies une vidéo IA par mois — un forfait gratuit ou un crédit ponctuel suffit largement.",
     avoidIfEn: "You publish one AI video per month — a free tier or one-off credit is enough.",
+    editorial: "Dans la vidéo IA, le piège c'est de s'abonner au moment d'un projet et de garder parce que 'ça pourrait servir'. ElevenLabs pour la voix, HeyGen pour les avatars, Descript pour l'édition, Runway pour les plans génératifs — chacun est excellent dans son registre. Mais il est rare d'avoir besoin des quatre chaque mois.",
+    editorialEn: "In AI video, the trap is subscribing for a project and keeping it 'because it might be useful'. ElevenLabs for voice, HeyGen for avatars, Descript for editing, Runway for generative shots — each is excellent in its register. But you rarely need all four every month.",
+    checkpoints: [
+      { q: "Tu produis de la voix off ou du doublage plus d'une fois par semaine ?", qEn: "Do you produce voice-over or dubbing more than once a week?", hint: "Non → ElevenLabs en crédits ponctuels suffit. L'abonnement mensuel ne se justifie pas.", hintEn: "No → ElevenLabs with one-off credits is enough. A monthly subscription is not justified." },
+      { q: "Tes avatars de formation sont utilisés dans de vrais livrables clients ?", qEn: "Are your training avatars used in actual client deliverables?", hint: "Non → HeyGen est souvent abonné sur l'enthousiasme d'un test. Vérifie l'usage réel.", hintEn: "No → HeyGen is often subscribed on the enthusiasm of a test. Check your actual usage." },
+      { q: "Tu édites audio ou vidéo parlée plusieurs fois par semaine ?", qEn: "Do you edit audio or talking video multiple times a week?", hint: "Non → Descript est puissant mais coûteux pour un usage occasionnel.", hintEn: "No → Descript is powerful but expensive for occasional use." },
+    ],
     tools: [
       { role: "Voix synthétique", roleEn: "Synthetic voice", slug: "elevenlabs", reason: "Référence absolue sur le rendu naturel et le clonage de voix.", reasonEn: "Absolute reference for natural voice rendering and voice cloning." },
       { role: "Avatar vidéo", roleEn: "Video avatar", slug: "heygen", reason: "Le plus crédible pour avatars formation, pitch et localisation.", reasonEn: "Most credible for training avatars, pitches, and localization." },
@@ -351,6 +438,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Competitive intelligence, synthesis notes, benchmarks, light due diligence.",
     avoidIf: "Tu as besoin de bases de données spécialisées (juridique, scientifique, financier).",
     avoidIfEn: "You need specialized paid databases (legal, scientific, financial).",
+    editorial: "ChatGPT est mauvais pour la veille — non pas parce qu'il est stupide, mais parce qu'il invente des sources qui semblent convaincantes. Perplexity est conçu exactement pour ce problème : des réponses ancrées dans des sources cliquables que tu peux vérifier. Si tu écris souvent du contenu factuel ou des notes de synthèse pour des clients, c'est l'un des rares cas où deux IA se justifient.",
+    editorialEn: "ChatGPT is bad at research — not because it is dumb, but because it invents sources that look convincing. Perplexity is built exactly for this problem: answers anchored in clickable sources you can verify. If you regularly write factual content or synthesis notes for clients, this is one of the rare cases where two AIs are justified.",
+    checkpoints: [
+      { q: "Tu as déjà livré un contenu basé sur une source qui n'existait pas ?", qEn: "Have you ever delivered content based on a source that did not exist?", hint: "Oui → Perplexity résout exactement ce problème. C'est la seule vraie raison de payer en plus.", hintEn: "Yes → Perplexity solves exactly this problem. It is the only real reason to pay extra." },
+      { q: "Tu lis et synthétises des documents longs (PDF, rapports) pour des clients ?", qEn: "Do you read and synthesize long documents (PDFs, reports) for clients?", hint: "Oui → Claude est imbattable pour ça. 100 pages en 30 secondes avec une synthèse propre.", hintEn: "Yes → Claude is unbeatable for this. 100 pages in 30 seconds with a clean synthesis." },
+      { q: "Tu utilises plusieurs IA pour vérifier une même information ?", qEn: "Do you use multiple AIs to cross-check the same information?", hint: "Non → garde juste Perplexity pour les faits et Claude pour l'analyse. Deux outils bien choisis suffisent.", hintEn: "No → just keep Perplexity for facts and Claude for analysis. Two well-chosen tools are enough." },
+    ],
     tools: [
       { role: "Recherche sourcée", roleEn: "Sourced research", slug: "perplexity", reason: "Réponses avec citations cliquables, le bon réflexe avant de copier-coller.", reasonEn: "Answers with clickable citations — the right reflex before copy-pasting." },
       { role: "Analyse de documents longs", roleEn: "Long document analysis", slug: "claude", reason: "Imbattable pour digérer un PDF de 100 pages et en sortir une synthèse propre.", reasonEn: "Unbeatable at digesting a 100-page PDF and producing a clean synthesis." },
@@ -375,6 +469,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Recurring missions, design review, consulting, training, remote delivery.",
     avoidIf: "Tes clients imposent déjà leur propre environnement — Teams, Jira ou autre.",
     avoidIfEn: "Your clients already impose Teams, Jira, or their own environment.",
+    editorial: "Le vrai coût des communications mal structurées n'est pas le temps passé en réunion — c'est le temps perdu à chercher ce qui avait été décidé. Un espace Notion par client, un Loom pour les retours complexes, et un Calendly pour les appels planifiés : ça évite les messages à 22h et les emails 'suite à notre échange'.",
+    editorialEn: "The real cost of poorly structured communication is not time spent in meetings — it is time lost looking for what was decided. One Notion space per client, a Loom for complex feedback, and Calendly for scheduled calls: it prevents late-night messages and 'following our conversation' emails.",
+    checkpoints: [
+      { q: "Tu passes du temps à chercher des décisions prises dans des emails ou des fils Slack ?", qEn: "Do you spend time looking for decisions made in emails or Slack threads?", hint: "Oui → une page Notion par client avec les décisions clés élimine 80% de ce problème.", hintEn: "Yes → one Notion page per client with key decisions eliminates 80% of this problem." },
+      { q: "Ton client sait toujours où trouver les livrables en cours ?", qEn: "Does your client always know where to find the current deliverables?", hint: "Non → un espace Google Drive partagé + un lien Notion évite les 'tu as le dernier fichier ?'", hintEn: "No → a shared Google Drive space + a Notion link prevents 'do you have the latest file?' messages." },
+      { q: "Tes réunions clients seraient remplaçables par un Loom de 5 minutes ?", qEn: "Could your client meetings be replaced by a 5-minute Loom?", hint: "Souvent → Loom rentabilise l'abonnement à partir de 3 réunions remplacées par mois.", hintEn: "Often → Loom pays for itself once you replace 3 meetings per month." },
+    ],
     tools: [
       { role: "Base projet", roleEn: "Project base", slug: "notion", reason: "Une page client claire vaut souvent mieux qu'un espace complet.", reasonEn: "A clear client page often beats a full workspace." },
       { role: "Vidéo courte", roleEn: "Short video", slug: "loom", reason: "Rentable si elle remplace vraiment des réunions.", reasonEn: "Worth it only when it truly replaces meetings." },
@@ -400,6 +501,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Moodboards, marketing illustrations, concept art, thumbnails, short AI videos.",
     avoidIf: "Tu produis pour l'impression professionnelle avec des contraintes strictes sur les droits commerciaux.",
     avoidIfEn: "You produce pro print with strict enterprise commercial-rights constraints.",
+    editorial: "Krea.ai a changé le jeu pour les créatifs solos en IA visuelle — pas parce qu'elle surpasse Midjourney sur chaque point, mais parce qu'elle consolide génération, amélioration, vidéo et entraînement de style dans un seul abonnement. Si tu paies 4 plateformes pour des usages qui se recoupent à 70%, c'est le moment de réévaluer.",
+    editorialEn: "Krea.ai changed the game for solo creatives in visual AI — not because it beats Midjourney on every point, but because it consolidates generation, enhancement, video, and style training in one subscription. If you are paying for 4 platforms with 70% overlap, it is time to reassess.",
+    checkpoints: [
+      { q: "Tu utilises plus de 2 plateformes IA image différentes ce mois ?", qEn: "Are you using more than 2 different AI image platforms this month?", hint: "Oui → liste ce que chacune fait différemment. Si la réponse est 'à peu près pareil', consolide.", hintEn: "Yes → list what each one does differently. If the answer is 'roughly the same', consolidate." },
+      { q: "Tu paies un outil d'upscale séparément alors que Krea le fait nativement ?", qEn: "Are you paying for a separate upscale tool when Krea does it natively?", hint: "Oui → Magnific a du sens seulement pour du print haute résolution professionnelle.", hintEn: "Yes → Magnific only makes sense for professional high-resolution print output." },
+      { q: "Ton abonnement Midjourney est vraiment utilisé pour son rendu artistique spécifique ?", qEn: "Is your Midjourney subscription genuinely used for its specific artistic output?", hint: "Non → si c'est pour du contenu généraliste, Krea Pro couvre l'essentiel à un prix similaire.", hintEn: "No → if it is for general content, Krea Pro covers the essentials at a similar price." },
+    ],
     tools: [
       { role: "Plateforme principale", roleEn: "Main platform", slug: "krea-ai", reason: "Real-time generation, enhance, vidéo et training de styles dans un seul abonnement.", reasonEn: "Real-time generation, enhance, video, and style training in a single subscription." },
       { role: "Upscale haut de gamme", roleEn: "Premium upscale", slug: "magnific-ai", reason: "À garder seulement si tu livres des visuels print ou très grand format.", reasonEn: "Keep only if you deliver print or very large-format visuals." },
@@ -424,6 +532,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "MVPs, client sites, interactive prototypes, internal dashboards, micro-SaaS.",
     avoidIf: "Tu construis un produit avec des contraintes sérieuses de montée en charge, de sécurité ou de conformité.",
     avoidIfEn: "You build a product with advanced scalability, security, or compliance needs.",
+    editorial: "Le meilleur moment pour utiliser Lovable ou Bolt, c'est quand tu veux valider une idée avant d'écrire du vrai code. Un MVP fonctionnel en 2 heures suffit pour savoir si l'idée vaut quelque chose — sans payer Bubble, Webflow et Zapier en même temps pour ce test. Si ça tient la route, tu peux toujours passer en code propre.",
+    editorialEn: "The best moment to use Lovable or Bolt is when you want to validate an idea before writing real code. A working MVP in 2 hours is enough to know if the idea is worth something — without paying for Bubble, Webflow, and Zapier simultaneously for that test. If it holds up, you can always eject to clean code.",
+    checkpoints: [
+      { q: "Tu paies Bubble + Webflow + un outil d'automatisation pour un projet sans utilisateurs actifs ?", qEn: "Are you paying for Bubble + Webflow + an automation tool for a project without active users?", hint: "Oui → Lovable ou Bolt valide l'idée en quelques heures, pour beaucoup moins.", hintEn: "Yes → Lovable or Bolt validates the idea in a few hours, for much less." },
+      { q: "Ton MVP a besoin d'une logique backend complexe dès le départ ?", qEn: "Does your MVP need complex backend logic from day one?", hint: "Non → commence avec le frontend, montre à de vrais utilisateurs, puis ajoute la complexité si elle se justifie.", hintEn: "No → start with the frontend, show it to real users, then add complexity only if justified." },
+      { q: "Tu choisis l'outil no-code avant de savoir précisément quoi construire ?", qEn: "Are you choosing the no-code tool before knowing precisely what to build?", hint: "Oui → commence par une démo papier ou un Figma cliquable. L'outil no-code vient après.", hintEn: "Yes → start with a paper demo or clickable Figma. The no-code tool comes after." },
+    ],
     tools: [
       { role: "Builder IA principal", roleEn: "Main AI builder", slug: "lovable", reason: "Génère front + back + déploiement à partir de prompts, le plus complet pour un solo.", reasonEn: "Generates front + back + deployment from prompts — the most complete option for a solo." },
       { role: "Alternative rapide", roleEn: "Fast alternative", slug: "bolt-new", reason: "Bon pour prototypes ultra-rapides, à choisir si tu veux itérer en quelques minutes.", reasonEn: "Good for ultra-fast prototypes — pick if you want to iterate in minutes." },
@@ -448,6 +563,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Meeting notes, second brain, searching your docs, daily writing.",
     avoidIf: "Tu es à l'aise avec un seul outil et ton organisation tient déjà dans Notion ou Obsidian.",
     avoidIfEn: "You are fine with a single tool and your workflow already fits in Notion or Obsidian.",
+    editorial: "La productivité IA personnelle échoue souvent non pas par manque d'outils, mais par excès. Quand tu as Notion AI + ChatGPT + Otter + Mem, aucun n'est vraiment utilisé en profondeur — parce que tu passes du temps à choisir quel outil utiliser, pas à travailler dedans. La règle : un outil de notes, un IA de chat, et un outil de transcription seulement si tu as vraiment beaucoup de réunions.",
+    editorialEn: "Personal AI productivity fails often not from lack of tools, but from excess. When you have Notion AI + ChatGPT + Otter + Mem, none is deeply used — because you spend time choosing which tool to use, not working in it. The rule: one note tool, one AI chat, and a transcription tool only if you genuinely have many meetings.",
+    checkpoints: [
+      { q: "Tu as plus de 3 outils IA de productivité actifs ce mois ?", qEn: "Do you have more than 3 active AI productivity tools this month?", hint: "Oui → fais l'inventaire de ce que tu as vraiment ouvert la semaine dernière. Le reste peut partir.", hintEn: "Yes → audit what you actually opened last week. The rest can go." },
+      { q: "Tu vis vraiment dans Notion au quotidien ?", qEn: "Do you actually live in Notion on a daily basis?", hint: "Oui → Notion AI est le meilleur ajout IA dans ce cas. Non → ne paie pas un add-on pour un outil que tu n'ouvres pas.", hintEn: "Yes → Notion AI is the highest-ROI AI add-on in that case. No → do not pay for an add-on to a tool you rarely open." },
+      { q: "Tu as plus de 4 réunions par semaine à transcrire ?", qEn: "Do you have more than 4 meetings per week to transcribe?", hint: "Non → Otter en version gratuite (600 min/mois) suffit. L'abonnement payant n'est pas justifié.", hintEn: "No → Otter on the free tier (600 min/month) is enough. The paid plan is not justified." },
+    ],
     tools: [
       { role: "IA dans tes notes", roleEn: "AI in your notes", slug: "notion-ai", reason: "Si tu vis déjà dans Notion, c'est l'ajout IA le plus rentable, sinon ne paie pas.", reasonEn: "If you already live in Notion, this is the highest-ROI AI add-on; otherwise skip." },
       { role: "Chat polyvalent", roleEn: "General chat", slug: "chatgpt", reason: "Un seul chat IA suffit pour brouillons, plans et reformulations.", reasonEn: "One AI chat is enough for drafts, outlines, and rewrites." },
@@ -472,6 +594,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Early-stage SaaS, growth tracking, light A/B testing, session replay, funnels.",
     avoidIf: "Tu as une équipe data dédiée et des contraintes RGPD strictes gérées par un DPO.",
     avoidIfEn: "You have a dedicated data team and strict GDPR constraints on the DPO side.",
+    editorial: "PostHog a changé le jeu pour les SaaS early-stage — pas parce qu'il surpasse Mixpanel sur chaque point, mais parce qu'il consolide événements, replays de sessions, feature flags et tests A/B dans un seul outil au free tier généreux. Payer Mixpanel + Hotjar + LogRocket pour un produit qui a cent utilisateurs actifs, c'est financer des besoins futurs au détriment de ta trésorerie présente.",
+    editorialEn: "PostHog changed the game for early-stage SaaS — not because it beats Mixpanel on every point, but because it consolidates events, session replays, feature flags, and A/B tests in one tool with a generous free tier. Paying for Mixpanel + Hotjar + LogRocket for a product with a hundred active users is funding future needs at the expense of your current cash flow.",
+    checkpoints: [
+      { q: "Tu paies plusieurs outils analytics pour un produit qui a moins de 500 MAU ?", qEn: "Are you paying for multiple analytics tools for a product with fewer than 500 MAU?", hint: "Oui → PostHog en free tier couvre tous ces besoins. Aucun abonnement ne se justifie à ce stade.", hintEn: "Yes → PostHog on the free tier covers all these needs. No paid subscription is justified at this stage." },
+      { q: "Tu utilises vraiment session replays et feature flags séparément chaque semaine ?", qEn: "Do you genuinely use session replays and feature flags separately every week?", hint: "Non → c'est exactement ce que PostHog consolide. Un seul outil suffit.", hintEn: "No → that is exactly what PostHog consolidates. One tool is enough." },
+      { q: "Tu as une base SQL et tu veux analyser avec des requêtes personnalisées ?", qEn: "Do you have a SQL database and want to analyze with custom queries?", hint: "Oui → Metabase open-source est largement supérieur à n'importe quel SaaS analytics pour ça.", hintEn: "Yes → open-source Metabase is far superior to any analytics SaaS for this." },
+    ],
     tools: [
       { role: "Plateforme tout-en-un", roleEn: "All-in-one platform", slug: "posthog", reason: "Free tier généreux, events + session replay + feature flags + A/B au même endroit.", reasonEn: "Generous free tier, events + session replay + feature flags + A/B in one place." },
       { role: "Analytics web simple", roleEn: "Simple web analytics", slug: "plausible", reason: "À ajouter seulement si tu veux un dashboard public léger pour ton site marketing.", reasonEn: "Add only if you want a lightweight public dashboard for your marketing site." },
@@ -496,6 +625,13 @@ export const STACKS: StackGuide[] = [
     bestForEn: "Branding, UX/UI, social, light photo retouching, marketing assets, vector illustration.",
     avoidIf: "Tu fais de la postproduction vidéo professionnelle, de l'impression complexe ou du motion design avancé.",
     avoidIfEn: "You do broadcast video post-production, complex pro print, or heavy motion design.",
+    editorial: "La question n'est pas 'est-ce qu'Adobe est bon ?' — il est excellent. La question c'est : 'quelles apps de la suite utilises-tu vraiment chaque semaine ?' Pour la plupart des designers et photographes solos, la réponse honnête c'est : Photoshop pour la retouche, et c'est à peu près tout. Figma a remplacé XD. Canva a remplacé InDesign pour les supports courants. Illustrator dort souvent.",
+    editorialEn: "The question is not 'is Adobe good?' — it is excellent. The question is: 'which apps of the suite do you actually use every week?' For most solo designers and photographers, the honest answer is: Photoshop for retouching, and that is about it. Figma replaced XD. Canva replaced InDesign for everyday assets. Illustrator often sleeps.",
+    checkpoints: [
+      { q: "Tu as ouvert Premiere Pro, After Effects ou Audition dans les 30 derniers jours ?", qEn: "Have you opened Premiere Pro, After Effects, or Audition in the last 30 days?", hint: "Non → tu paies la suite complète alors que CapCut ou DaVinci Resolve Free couvrent le même usage.", hintEn: "No → you are paying for the full suite when CapCut or DaVinci Resolve Free covers the same need." },
+      { q: "Tu pourrais passer à Affinity Suite sans perdre de fonctionnalités essentielles ?", qEn: "Could you switch to Affinity Suite without losing essential features?", hint: "Affinity Photo + Designer coûtent 60€ à l'achat — soit moins qu'un mois d'Adobe CC.", hintEn: "Affinity Photo + Designer cost €60 as a one-time purchase — less than one month of Adobe CC." },
+      { q: "Tes clients t'imposent-ils des formats source Adobe (AI, PSD, INDD) ?", qEn: "Do your clients require native Adobe source files (AI, PSD, INDD)?", hint: "Non → tu peux migrer. Oui → garde uniquement le plan Photography à 12€/mois si tu n'utilises que Photoshop.", hintEn: "No → you can migrate. Yes → keep only the Photography plan at €12/month if Photoshop is all you use." },
+    ],
     tools: [
       { role: "Design produit / UI", roleEn: "Product / UI design", slug: "figma", reason: "Référence absolue, gratuit pour solo, remplace XD + une partie d'Illustrator.", reasonEn: "Absolute reference, free for solo, replaces XD and part of Illustrator." },
       { role: "Visuels marketing", roleEn: "Marketing visuals", slug: "canva", reason: "Remplace InDesign et Illustrator pour 80% des supports marketing courants.", reasonEn: "Replaces InDesign and Illustrator for 80% of common marketing assets." },

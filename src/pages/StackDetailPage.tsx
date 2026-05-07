@@ -76,16 +76,7 @@ const StackDetailPage = () => {
             <div className="surface-panel p-5">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">{t("En bref", "In short")}</p>
                 <p className="mt-2 text-base leading-7 text-foreground">
-                  {t(
-                    "Je partirais de cette base si je devais livrer proprement sans transformer mon activité solo en mini-boîte SaaS.",
-                    "I would start from this baseline if I had to deliver cleanly without turning my solo business into a mini SaaS company."
-                  )}
-                </p>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  {t(
-                    "Ce n'est pas une recette universelle. C'est un repère pour sentir quand ton stack devient plus lourd que ton vrai besoin.",
-                    "It is not a universal recipe. It is a baseline to feel when your stack becomes heavier than your real need."
-                  )}
+                  {t(stack.editorial, stack.editorialEn)}
                 </p>
               </div>
             </div>
@@ -107,23 +98,11 @@ const StackDetailPage = () => {
 
       <section className="mx-auto max-w-7xl px-6 py-10 md:py-14">
         <div className="mb-8 grid gap-3 md:grid-cols-3">
-          {[
-            {
-              title: t("Est-ce que ça remplace une vraie friction ?", "Does it remove real friction?"),
-              text: t("Un outil se justifie s'il enlève un blocage que tu rencontres chaque semaine.", "A tool is justified if it removes a blocker you meet every week."),
-            },
-            {
-              title: t("Est-ce que le client comprend le flux ?", "Can the client understand the flow?"),
-              text: t("Si tu dois expliquer ton système pendant 20 minutes, il est probablement trop lourd.", "If you need 20 minutes to explain your system, it is probably too heavy."),
-            },
-            {
-              title: t("Est-ce que tu paies déjà l'équivalent ailleurs ?", "Are you already paying for the same thing?"),
-              text: t("Le gaspillage commence souvent avec deux outils qui se ressemblent assez pour te rassurer.", "Waste often starts with two tools similar enough to reassure you."),
-            },
-          ].map((item) => (
-            <div key={item.title} className="surface-card p-4">
-              <h2 className="text-sm font-semibold leading-5 text-foreground">{item.title}</h2>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.text}</p>
+          {stack.checkpoints.map((cp, i) => (
+            <div key={i} className="surface-card p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">{t("Question", "Question")} {String(i + 1).padStart(2, "0")}</p>
+              <h2 className="mt-2 text-sm font-semibold leading-5 text-foreground">{t(cp.q, cp.qEn)}</h2>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{t(cp.hint, cp.hintEn)}</p>
             </div>
           ))}
         </div>
@@ -136,12 +115,15 @@ const StackDetailPage = () => {
                 <Link
                   key={slot.slug}
                   to={`${prefix}/tool/${tool!.slug}`}
-                  className="surface-control group flex items-center gap-3 px-3 py-3"
+                  className="surface-control group flex items-start gap-3 px-3 py-3"
                 >
-                  <ToolLogo tool={tool!} size={34} className="rounded-md" />
+                  <ToolLogo tool={tool!} size={34} className="mt-0.5 shrink-0 rounded-md" />
                   <div className="min-w-0">
-                    <p className="truncate font-medium text-foreground">{tool!.name}</p>
-                    <p className="text-xs text-muted-foreground">{t(slot.role, slot.roleEn)}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="truncate font-medium text-foreground">{tool!.name}</p>
+                      <span className="shrink-0 rounded-full bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">{t(slot.role, slot.roleEn)}</span>
+                    </div>
+                    <p className="mt-1 text-xs leading-5 text-muted-foreground/80">{t(slot.reason, slot.reasonEn)}</p>
                   </div>
                 </Link>
               ))}
@@ -253,14 +235,19 @@ const StackDetailPage = () => {
             <section className="surface-accent p-6">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">{t("Diagnostic", "Diagnostic")}</p>
               <h2 className="mt-2 font-display text-3xl font-bold text-foreground">
-                {t("Le bon choix dépend toujours de ce que tu utilises déjà.", "The right choice always depends on what you already use.")}
+                {t("Ce que cette stack ne peut pas savoir sur toi.", "What this stack cannot know about you.")}
               </h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
                 {t(
-                  "Si tu as déjà une partie de cette stack, le sujet n'est pas de tout remplacer. Le sujet, c'est de voir ce qui se recoupe, ce qui dort, et ce qui mérite vraiment sa place.",
-                  "If you already have part of this stack, the point is not to replace everything. The point is to see what overlaps, what sleeps, and what truly deserves a seat."
+                  "Un guide comme celui-ci part d'un profil type. Mais tu as peut-être déjà la moitié de ces outils, ou un contexte client qui change tout. Le diagnostic personnalisé regarde ta stack telle qu'elle est réellement — pas telle qu'elle devrait être.",
+                  "A guide like this starts from a typical profile. But you may already have half these tools, or a client context that changes everything. The personalized diagnostic looks at your stack as it actually is — not as it should be."
                 )}
               </p>
+              <div className="mt-4 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                <span className="rounded-full border border-border px-3 py-1.5">{t("Outils actifs vs dormants", "Active vs dormant tools")}</span>
+                <span className="rounded-full border border-border px-3 py-1.5">{t("Doublons détectés", "Duplicate detection")}</span>
+                <span className="rounded-full border border-border px-3 py-1.5">{t("Plans surévalués", "Overpriced plans")}</span>
+              </div>
               <Button asChild className="mt-5 rounded-lg">
                 <Link to={`${prefix}/selector`}>
                   {t("Analyser ma stack", "Analyze my stack")}
