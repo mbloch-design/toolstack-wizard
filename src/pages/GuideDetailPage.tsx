@@ -135,7 +135,7 @@ const GuideDetailPage = () => {
   const toolLinkMap = useMemo(() => {
     const map = new Map<string, string>();
     tools.forEach(t => {
-      if (t.name.length >= 3) {
+      if (t.name && t.name.length >= 3) {
         map.set(t.name, `/${lang}/tool/${t.slug || t.id}`);
       }
     });
