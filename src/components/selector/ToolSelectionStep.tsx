@@ -117,7 +117,7 @@ const ToolSelectionStep = ({
 
     if (search.trim()) {
       const q = search.toLowerCase().trim();
-      filtered = filtered.filter((t) => t.name.toLowerCase().includes(q));
+      filtered = filtered.filter((t) => (t.name ?? "").toLowerCase().includes(q));
     }
 
     return filtered;

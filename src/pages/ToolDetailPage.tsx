@@ -130,7 +130,7 @@ const ToolDetailPage = () => {
     .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id)
     .slice(0, 6);
   const relatedPosts = posts
-    .filter((p: any) => `${p.title} ${p.excerpt} ${p.content}`.toLowerCase().includes(tool.name.toLowerCase()))
+    .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
     .slice(0, 3);
 
   const v5Price    = tool.pricing_v5?.compare_price_monthly_eur;

@@ -26,7 +26,7 @@ const CompareSidebar = ({ categories, activeCategorySlug, selectedTools, compari
     if (!search.trim()) return [];
     const q = search.toLowerCase();
     const selectedIds = new Set(selectedTools.map(t => t.id));
-    return allTools.filter(t => t.name.toLowerCase().includes(q) && !selectedIds.has(t.id)).slice(0, 8);
+    return allTools.filter(t => (t.name ?? "").toLowerCase().includes(q) && !selectedIds.has(t.id)).slice(0, 8);
   }, [search, allTools, selectedTools]);
 
   const handleSelectTool = (tool: Tool) => {

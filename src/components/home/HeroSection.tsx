@@ -45,8 +45,8 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
     const q = query.toLowerCase();
     return tools
       .filter((t) =>
-        t.name.toLowerCase().includes(q) ||
-        (t.slug || t.id).toLowerCase().includes(q)
+        (t.name ?? "").toLowerCase().includes(q) ||
+        (t.slug || t.id || "").toLowerCase().includes(q)
       )
       .slice(0, 8);
   }, [query, tools]);

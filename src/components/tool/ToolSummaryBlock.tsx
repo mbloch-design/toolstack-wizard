@@ -18,8 +18,8 @@ interface Props {
 export default function ToolSummaryBlock({ tool, category, alternatives, displayPrice, lang, prefix, t }: Props) {
   const categoryLabel = category
     ? t(
-        category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "").toLowerCase(),
-        (category.nameEn || category.name).toLowerCase()
+        (category.name ?? "").replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "").toLowerCase(),
+        (category.nameEn || category.name || "").toLowerCase()
       )
     : t("productivité", "productivity");
 

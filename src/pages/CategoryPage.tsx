@@ -108,8 +108,8 @@ const CategoryPage = () => {
     const result = allCatTools.filter((tool) => {
       const matchSearch =
         !search ||
-        tool.name.toLowerCase().includes(search.toLowerCase()) ||
-        tool.shortDescription.toLowerCase().includes(search.toLowerCase());
+        (tool.name ?? "").toLowerCase().includes(search.toLowerCase()) ||
+        (tool.shortDescription ?? "").toLowerCase().includes(search.toLowerCase());
 
       const matchPrice =
         priceFilter === "all" ? true :

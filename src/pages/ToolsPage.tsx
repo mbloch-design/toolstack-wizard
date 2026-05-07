@@ -70,8 +70,8 @@ const ToolsPage = () => {
   const filtered = useMemo(() => {
     const result = tools.filter((tool) => {
       const matchSearch = !search ||
-        tool.name.toLowerCase().includes(search.toLowerCase()) ||
-        tool.shortDescription.toLowerCase().includes(search.toLowerCase());
+        (tool.name ?? "").toLowerCase().includes(search.toLowerCase()) ||
+        (tool.shortDescription ?? "").toLowerCase().includes(search.toLowerCase());
       const matchCat = !selectedCategory || tool.categoryId === selectedCategory;
       const matchPrice =
         priceFilter === "all" ? true :

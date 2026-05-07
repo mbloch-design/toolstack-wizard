@@ -62,7 +62,7 @@ export default function ToolVerdictBlock({ tool, lang, prefix = "", allTools = [
 
   // Resolve betterAlternative or prescription replacement to a linkable tool
   const altSlug = tool.betterAlternative?.tool || prescription?.replacement_tool;
-  const altTool = altSlug ? allTools.find(t => t.id === altSlug || t.slug === altSlug || t.name.toLowerCase() === altSlug.toLowerCase()) : null;
+  const altTool = altSlug ? allTools.find(t => t.id === altSlug || t.slug === altSlug || (t.name ?? "").toLowerCase() === altSlug.toLowerCase()) : null;
 
   return (
     <section className="rounded-2xl border border-primary/20 bg-gradient-to-br from-accent/40 via-card to-accent/20 overflow-hidden">

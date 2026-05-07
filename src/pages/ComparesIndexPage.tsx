@@ -43,13 +43,13 @@ const ComparesIndexPage = () => {
   const filteredToolsA = useMemo(() => {
     if (!searchA.trim()) return [];
     const q = searchA.toLowerCase();
-    return tools.filter(t => t.name.toLowerCase().includes(q) && t.id !== selectedB?.id).slice(0, 6);
+    return tools.filter(t => (t.name ?? "").toLowerCase().includes(q) && t.id !== selectedB?.id).slice(0, 6);
   }, [searchA, tools, selectedB]);
 
   const filteredToolsB = useMemo(() => {
     if (!searchB.trim()) return [];
     const q = searchB.toLowerCase();
-    return tools.filter(t => t.name.toLowerCase().includes(q) && t.id !== selectedA?.id).slice(0, 6);
+    return tools.filter(t => (t.name ?? "").toLowerCase().includes(q) && t.id !== selectedA?.id).slice(0, 6);
   }, [searchB, tools, selectedA]);
 
   const resolvedComparisons = useMemo(() =>
