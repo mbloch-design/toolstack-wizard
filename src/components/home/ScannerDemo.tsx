@@ -94,7 +94,7 @@ const ScannerDemo = () => {
           <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-4">
             {t("Démo interactive", "Interactive demo")}
           </p>
-          <h2 className="text-4xl font-extrabold tracking-[-1.5px] leading-tight">
+          <h2 className="text-4xl font-semibold tracking-[-1.5px] leading-tight">
             {lang === "fr" ? (
               <>Voyez ce que l'analyse <em className="text-primary italic">{" "}fait vraiment</em></>
             ) : (

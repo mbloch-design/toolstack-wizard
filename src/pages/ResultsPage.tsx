@@ -518,7 +518,7 @@ const ResultsPage = () => {
                 <Shield className="h-4 w-4 opacity-70" />
                 <p className="text-xs font-medium uppercase tracking-wider opacity-80">Stack Health</p>
               </div>
-              <p className="font-heading text-4xl font-extrabold tabular-nums leading-none">
+              <p className="font-heading text-4xl font-semibold tabular-nums leading-none">
                 {results.hasCurrentTools && healthPct >= 0 ? healthPct : "—"}
               </p>
               <p className="mt-2 text-xs font-medium opacity-80">
@@ -532,7 +532,7 @@ const ResultsPage = () => {
                 <TrendingDown className="h-4 w-4 text-keep" />
                 <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Économies", "Savings")}</p>
               </div>
-              <p className={`font-heading text-4xl font-extrabold tabular-nums leading-none ${certifiedSavings > 0 ? "text-keep" : "text-muted-foreground/30"}`}>
+              <p className={`font-heading text-4xl font-semibold tabular-nums leading-none ${certifiedSavings > 0 ? "text-keep" : "text-muted-foreground/30"}`}>
                 {certifiedSavings > 0 ? `+${Math.round(certifiedSavings)}€` : "0€"}
               </p>
               <p className="mt-2 text-xs text-muted-foreground">
@@ -546,7 +546,7 @@ const ResultsPage = () => {
                 <Layers className="h-4 w-4 text-primary" />
                 <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("Stack actuelle", "Current Stack")}</p>
               </div>
-              <p className="font-heading text-4xl font-extrabold tabular-nums leading-none">{form.currentTools.length}</p>
+              <p className="font-heading text-4xl font-semibold tabular-nums leading-none">{form.currentTools.length}</p>
               <p className="mt-2 text-xs text-muted-foreground">{t("outils", "tools")} · {stackCost}€/{t("mois", "mo")}</p>
             </div>
 

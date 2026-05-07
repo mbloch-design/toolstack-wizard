@@ -181,7 +181,7 @@ const ComparesIndexPage = () => {
 
             {/* VS badge */}
             <div className="flex items-center justify-center pt-6">
-              <span className="text-sm font-black text-muted-foreground/60">VS</span>
+              <span className="text-sm font-bold text-muted-foreground/60">VS</span>
             </div>
 
             {/* Tool B selector */}
@@ -265,7 +265,7 @@ const ComparesIndexPage = () => {
                       <ToolLogo tool={a} size={36} className="rounded-lg" />
                       <span className="text-xs font-bold text-foreground">{a.name}</span>
                     </div>
-                    <span className="text-sm font-black text-muted-foreground/40 mt-[-16px]">VS</span>
+                    <span className="text-sm font-bold text-muted-foreground/40 mt-[-16px]">VS</span>
                     <div className="flex flex-col items-center gap-1.5">
                       <ToolLogo tool={b} size={36} className="rounded-lg" />
                       <span className="text-xs font-bold text-foreground">{b.name}</span>

@@ -78,7 +78,7 @@ export default function PageHero({
             {eyebrow}
           </div>
 
-          <h1 className="font-display text-4xl font-bold leading-[1.06] tracking-[-0.035em] text-foreground md:text-6xl">
+          <h1 className="font-display text-4xl font-semibold leading-[1.06] tracking-[-0.035em] text-foreground md:text-6xl">
             {title}
           </h1>
 

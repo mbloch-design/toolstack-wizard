@@ -218,7 +218,7 @@ const ToolsPage = () => {
       <section className="container mx-auto max-w-7xl px-4 py-10">
         {selectedCatObj && (
           <div className="mb-6">
-            <h2 className="text-xl font-bold tracking-tighter">
+            <h2 className="text-xl font-semibold tracking-tighter">
               {t(selectedCatObj.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), selectedCatObj.nameEn || selectedCatObj.name)}
             </h2>
             {selectedCatObj.description && (
@@ -242,7 +242,7 @@ const ToolsPage = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
                       <Icon className="h-5 w-5 text-primary" />
-                      <h2 className="text-lg font-bold tracking-tighter">
+                      <h2 className="text-lg font-semibold tracking-tighter">
                         {t(cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), cat.nameEn || cat.name)}
                       </h2>
                       <span className="text-xs text-muted-foreground rounded-full bg-secondary px-2 py-0.5">{catTools.length}</span>

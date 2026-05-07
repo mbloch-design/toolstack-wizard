@@ -297,11 +297,11 @@ const ComparePage = () => {
                     <p className="text-sm text-muted-foreground">{t("Prix de départ par utilisateur", "Starting per user")}</p>
                   </div>
                   <div className="text-center md:text-left">
-                    <span className="text-3xl font-mono font-black text-foreground">{getPrice(toolA)}</span>
+                    <span className="text-3xl font-mono font-bold text-foreground">{getPrice(toolA)}</span>
                     {getPriceNum(toolA) > 0 && <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>}
                   </div>
                   <div className="text-center md:text-left">
-                    <span className="text-3xl font-mono font-black text-foreground">{getPrice(toolB)}</span>
+                    <span className="text-3xl font-mono font-bold text-foreground">{getPrice(toolB)}</span>
                     {getPriceNum(toolB) > 0 && <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>}
                   </div>
                 </div>
@@ -403,7 +403,7 @@ const ComparePage = () => {
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-primary mb-2">
                 {t("Ton profil", "Your profile")}
               </p>
-              <h2 className="text-xl font-extrabold tracking-tight">
+              <h2 className="text-xl font-semibold tracking-tight">
                 {t(`Lequel est fait pour toi ?`, `Which one is right for you?`)}
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">

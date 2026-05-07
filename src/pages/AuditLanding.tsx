@@ -113,7 +113,7 @@ export default function AuditLanding() {
           <Sparkles className="h-3.5 w-3.5 text-primary" />
           {lang === "fr" ? "100% gratuit · 5 minutes" : "100% free · 5 minutes"}
         </span>
-        <h1 className="mt-5 text-4xl font-extrabold tracking-tighter md:text-5xl lg:text-6xl">
+        <h1 className="mt-5 text-4xl font-semibold tracking-tighter md:text-5xl lg:text-6xl">
           {c.h1}
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -139,7 +139,7 @@ export default function AuditLanding() {
               key={stat.label}
               className="rounded-2xl border border-border bg-card p-6 text-center"
             >
-              <p className="font-mono text-3xl font-extrabold tracking-tighter text-primary md:text-4xl">
+              <p className="font-mono text-3xl font-semibold tracking-tighter text-primary md:text-4xl">
                 {stat.value}
               </p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{stat.label}</p>
@@ -190,7 +190,7 @@ export default function AuditLanding() {
       {/* Bottom CTA */}
       <section className="container mx-auto max-w-5xl px-6 pb-20 pt-12">
         <div className="rounded-2xl bg-primary p-8 text-center md:p-12">
-          <h2 className="text-2xl font-extrabold tracking-tighter text-primary-foreground md:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tighter text-primary-foreground md:text-3xl">
             {c.bottomCtaTitle}
           </h2>
           <p className="mt-3 text-sm text-primary-foreground/80">{c.subtitle}</p>

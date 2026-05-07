@@ -51,7 +51,7 @@ const PersonaSavings = () => {
   return (
     <section className="py-16 md:py-20">
       <div className="container mx-auto max-w-3xl">
-        <h2 className="text-center text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
+        <h2 className="text-center text-4xl font-semibold tracking-[-1.5px] md:text-[44px]">
           {t(
             "Vous payez probablement pour des outils en double.",
             "You're probably paying for duplicate tools."

@@ -10,7 +10,7 @@ const CompareHero = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-bold uppercase tracking-widest mb-6">
             {t("Analyse experte", "Expert Analysis")}
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
             {lang === "fr" ? (
               <>Prenez de meilleures <span className="text-primary italic">décisions SaaS.</span></>
             ) : (

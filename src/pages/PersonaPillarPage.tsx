@@ -274,7 +274,7 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
           <Sparkles className="h-3.5 w-3.5 text-primary" />
           {t("Guide pilier", "Pillar guide")} · 2026
         </span>
-        <h1 className="mt-5 text-3xl font-extrabold leading-[1.15] tracking-tighter md:text-4xl lg:text-[2.75rem]">
+        <h1 className="mt-5 text-3xl font-semibold leading-[1.15] tracking-tighter md:text-4xl lg:text-[2.75rem]">
           {m.h1}
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">{m.intro}</p>
@@ -282,7 +282,7 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
         {/* Quick stats */}
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card p-5">
-            <p className="font-mono text-3xl font-extrabold tracking-tighter text-primary">
+            <p className="font-mono text-3xl font-semibold tracking-tighter text-primary">
               {m.avgSpend}
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
@@ -292,7 +292,7 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
           <div className="rounded-2xl border border-border bg-accent/30 p-5">
             <div className="flex items-center gap-2">
               <AlertTriangle className="h-4 w-4 text-primary" />
-              <p className="font-mono text-3xl font-extrabold tracking-tighter">{m.wastePercent}</p>
+              <p className="font-mono text-3xl font-semibold tracking-tighter">{m.wastePercent}</p>
             </div>
             <p className="mt-1 text-sm text-muted-foreground">
               {t("récupérable selon nos audits", "recoverable per our audits")}
@@ -387,7 +387,7 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
       {/* CTA */}
       <section className="container mx-auto max-w-4xl px-6 pb-20 pt-10">
         <div className="rounded-2xl bg-primary p-8 text-center md:p-10">
-          <h2 className="text-2xl font-extrabold tracking-tighter text-primary-foreground md:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tighter text-primary-foreground md:text-3xl">
             {t("Auditez votre stack en 5 minutes", "Audit your stack in 5 minutes")}
           </h2>
           <p className="mt-2 text-sm text-primary-foreground/80">

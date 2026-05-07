@@ -58,7 +58,7 @@ const CompareStrengthBars = ({ toolA, toolB }: CompareStrengthBarsProps) => {
                     className="bg-secondary rounded-t-lg transition-all duration-500 relative hover:opacity-80"
                     style={{ height: `${pct}%` }}
                   >
-                    <span className="absolute bottom-3 left-0 right-0 text-center font-mono font-black text-primary text-sm">
+                    <span className="absolute bottom-3 left-0 right-0 text-center font-mono font-semibold text-primary text-sm">
                       {val.toFixed(1)}
                     </span>
                   </div>
@@ -84,7 +84,7 @@ const CompareStrengthBars = ({ toolA, toolB }: CompareStrengthBarsProps) => {
                     className="bg-secondary rounded-t-lg transition-all duration-500 relative hover:opacity-80"
                     style={{ height: `${pct}%` }}
                   >
-                    <span className="absolute bottom-3 left-0 right-0 text-center font-mono font-black text-orange-500 text-sm">
+                    <span className="absolute bottom-3 left-0 right-0 text-center font-mono font-semibold text-orange-500 text-sm">
                       {val.toFixed(1)}
                     </span>
                   </div>

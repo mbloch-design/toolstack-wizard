@@ -152,7 +152,7 @@ const Navbar = () => {
         <Link to={prefix} className="group flex items-center gap-2.5 shrink-0" onClick={closeMega}>
           <img src={pictoLogo} alt="ToolTrim" className="h-6 w-6 transition-opacity duration-150 group-hover:opacity-80" />
           <div className="leading-none">
-            <span className="font-display text-[1.08rem] font-extrabold tracking-[-0.03em] text-foreground">
+            <span className="font-display text-[1.08rem] font-semibold tracking-[-0.03em] text-foreground">
               ToolTrim
             </span>
             <span className="ml-2 hidden rounded-full border border-border px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground xl:inline-flex">

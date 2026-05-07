@@ -175,7 +175,7 @@ const GuideDetailPage = () => {
   if (!post) {
     return (
       <div className="container mx-auto max-w-4xl px-4 py-20 text-center">
-        <h1 className="text-2xl font-bold">{t("Article introuvable", "Article not found")}</h1>
+        <h1 className="text-2xl font-semibold">{t("Article introuvable", "Article not found")}</h1>
         <Link to={`${prefix}/guides`} className="mt-4 inline-flex items-center gap-2 text-primary hover:underline">
           {t("Retour aux guides", "Back to guides")}
         </Link>
@@ -351,7 +351,7 @@ const GuideDetailPage = () => {
 
             <div
               className="prose prose-neutral dark:prose-invert max-w-none text-[17px]
-                prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-headings:scroll-mt-24
+                prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-headings:scroll-mt-24
                 prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-2xl prose-h2:leading-tight md:prose-h2:text-[1.85rem]
                 prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl
                 prose-h4:mt-6 prose-h4:text-base prose-h4:font-semibold
@@ -387,7 +387,7 @@ const GuideDetailPage = () => {
             {/* Mentioned tools — full cards */}
             {mentionedTools.length > 0 && (
               <section className="mt-14 rounded-lg border border-border bg-card p-5 md:p-6">
-                <h2 className="font-display text-xl font-bold tracking-tight">
+                <h2 className="font-display text-xl font-semibold tracking-tight">
                   {t("Outils mentionnés dans cet article", "Tools mentioned in this article")}
                 </h2>
                 <p className="mt-2 text-sm text-muted-foreground">
@@ -417,7 +417,7 @@ const GuideDetailPage = () => {
             {/* Related */}
             {relatedPosts.length > 0 && (
               <section className="mt-14">
-                <h2 className="text-xl font-bold tracking-tighter mb-5">{t("Articles connexes", "Related articles")}</h2>
+                <h2 className="text-xl font-semibold tracking-tighter mb-5">{t("Articles connexes", "Related articles")}</h2>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {relatedPosts.map((rp) => (
                     <RelatedCard key={rp.slug} post={rp} prefix={prefix} tools={tools} />
@@ -504,7 +504,7 @@ function RelatedCard({ post, prefix, tools }: { post: Post; prefix: string; tool
           {post.category && <span className="rounded-full bg-primary/10 px-2 py-0.5 font-semibold text-primary">{post.category}</span>}
           <span className="flex items-center gap-1"><Clock className="h-2.5 w-2.5" /> {post.readTime}</span>
         </div>
-        <h3 className="mt-2 text-sm font-bold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">
+        <h3 className="mt-2 text-sm font-semibold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">
           {post.title}
         </h3>
         <div className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">

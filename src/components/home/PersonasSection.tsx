@@ -98,7 +98,7 @@ const PersonasSection = () => {
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-5">
             {t("Pour qui", "Who it's for")}
           </span>
-          <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
+          <h2 className="text-4xl font-semibold tracking-[-1.5px] md:text-[44px]">
             {t("Conçu pour ", "Built for ")}<em className="text-primary italic">{t("5 expertises métier", "5 professional profiles")}</em>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">
@@ -177,7 +177,7 @@ const PersonasSection = () => {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-3">
                   {t("Économie moyenne", "Average savings")}
                 </p>
-                <p className="text-5xl font-extrabold tracking-[-3px] text-primary">{p.saving}</p>
+                <p className="text-5xl font-semibold tracking-[-3px] text-primary">{p.saving}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{lang === "en" ? p.noteEn : p.note}</p>
               </div>
 

@@ -1,21 +1,36 @@
-/* Fonts loaded via <link> in index.html */
+/* ─────────────────────────────────────────────
+   FONTS
+   Uncut Sans Variable — self-hosted
+   Inter — Google Fonts (loaded in index.html)
+───────────────────────────────────────────── */
+@font-face {
+  font-family: "Uncut Sans";
+  src: url("/fonts/UncutSans-Variable.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Float animation — used by hero floating logos (inline style, not class) */
+/* ─────────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────────── */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-12px); }
 }
 
-/* Logo reveal — one-shot entrance with spring overshoot */
 @keyframes logo-reveal {
   0%   { opacity: 0; transform: scale(0.55) translateY(18px); }
   100% { opacity: 1; transform: scale(1)    translateY(0px);  }
 }
 
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────────── */
 @layer base {
   :root {
     --background: 0 0% 99%;
@@ -66,10 +81,10 @@
   }
 
   .dark {
-    --background: 0 0% 5%;        /* #0D0D0D — Linear-style near-black */
-    --foreground: 0 0% 93%;       /* #EDEDED */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 93%;
 
-    --card: 0 0% 7%;              /* #121212 */
+    --card: 0 0% 7%;
     --card-foreground: 0 0% 93%;
 
     --popover: 0 0% 8%;
@@ -82,7 +97,7 @@
     --secondary-foreground: 0 0% 88%;
 
     --muted: 0 0% 9%;
-    --muted-foreground: 0 0% 50%;  /* #808080 */
+    --muted-foreground: 0 0% 50%;
 
     --accent: 224 40% 14%;
     --accent-foreground: 224 76% 72%;
@@ -90,7 +105,7 @@
     --destructive: 0 62% 42%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 13%;            /* #212121 — subtil, pas brutal */
+    --border: 0 0% 13%;
     --input: 0 0% 13%;
     --ring: 224 76% 60%;
 
@@ -112,6 +127,9 @@
   }
 }
 
+/* ─────────────────────────────────────────────
+   BASE TYPOGRAPHY
+───────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border;
@@ -119,29 +137,33 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: Inter, system-ui, sans-serif;
     font-size: 15px;
     line-height: 1.65;
-    letter-spacing: 0.01em;
+    font-weight: 400;
+    letter-spacing: 0em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Bricolage Grotesque pour tous les titres */
+  /* ── Headings — Uncut Sans, weights retenues ── */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;
+    font-family: "Uncut Sans", system-ui, sans-serif;
+    color: hsl(var(--foreground));
   }
 
   h1 {
-    font-weight: 800;
-    line-height: 1.04;
-    letter-spacing: -0.035em;
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
   }
   h2 {
-    font-weight: 700;
-    line-height: 1.1;
+    font-weight: 600;
+    line-height: 1.12;
     letter-spacing: -0.025em;
   }
   h3 {
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.25;
     letter-spacing: -0.015em;
   }
@@ -152,11 +174,27 @@
   }
 
   p {
-    color: hsl(var(--muted-foreground));
     line-height: 1.7;
+  }
+
+  /* Prose overrides for guide content */
+  .prose h1, .prose h2, .prose h3,
+  .prose h4, .prose h5, .prose h6 {
+    font-family: "Uncut Sans", system-ui, sans-serif;
+  }
+  .prose p, .prose li, .prose blockquote {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .prose strong {
+    font-weight: 600;
   }
 }
 
+/* ─────────────────────────────────────────────
+   COMPONENTS
+───────────────────────────────────────────── */
 @layer components {
   .surface-card {
     @apply rounded-lg border border-border bg-card;
@@ -183,30 +221,34 @@
   }
 }
 
+/* ─────────────────────────────────────────────
+   UTILITIES
+───────────────────────────────────────────── */
 @layer utilities {
-  /* Label section — DM Mono, signature ToolTrim */
+  /* Eyebrow / section label — Inter, discret */
   .label-section {
-    font-family: 'DM Mono', monospace;
+    font-family: Inter, system-ui, sans-serif;
     font-size: 0.65rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: hsl(var(--muted-foreground) / 0.6);
   }
 
-  /* Headline display — Bricolage Grotesque explicit */
-  .font-display {
-    font-family: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;
+  /* Explicit Uncut Sans override */
+  .font-display,
+  .font-heading {
+    font-family: "Uncut Sans", system-ui, sans-serif;
   }
 
-  /* Mono numbers */
+  /* Tabular numbers for stats / prices */
   .num-mono {
-    font-family: 'DM Mono', monospace;
+    font-family: ui-monospace, SFMono-Regular, monospace;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
   }
 
-  /* Subtle gradient text pour les accents */
+  /* Gradient text accent */
   .text-gradient {
     background-image: linear-gradient(135deg, hsl(224 76% 72%) 0%, hsl(210 90% 78%) 50%, hsl(224 76% 68%) 100%);
     -webkit-background-clip: text;
@@ -218,7 +260,6 @@
   .no-scrollbar {
     scrollbar-width: none;
   }
-
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

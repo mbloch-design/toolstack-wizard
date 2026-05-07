@@ -39,7 +39,7 @@ const CompareVerdictCards = ({ toolA, toolB }: CompareVerdictCardsProps) => {
           <Shield className="h-5 w-5" />
           <span className="text-xs font-bold uppercase tracking-widest opacity-80">{vA.tagline}</span>
         </div>
-        <h4 className="text-xl md:text-2xl font-extrabold mb-4 leading-tight">{vA.headline}</h4>
+        <h4 className="text-xl md:text-2xl font-semibold mb-4 leading-tight">{vA.headline}</h4>
         <p className="text-primary-foreground/80 leading-relaxed text-sm">{vA.body}</p>
         <Link
           to={`${prefix}/tool/${toolA.slug}`}
@@ -55,7 +55,7 @@ const CompareVerdictCards = ({ toolA, toolB }: CompareVerdictCardsProps) => {
           <Zap className="h-5 w-5" />
           <span className="text-xs font-bold uppercase tracking-widest opacity-80">{vB.tagline}</span>
         </div>
-        <h4 className="text-xl md:text-2xl font-extrabold mb-4 text-foreground leading-tight">{vB.headline}</h4>
+        <h4 className="text-xl md:text-2xl font-semibold mb-4 text-foreground leading-tight">{vB.headline}</h4>
         <p className="text-muted-foreground leading-relaxed text-sm">{vB.body}</p>
         <Link
           to={`${prefix}/tool/${toolB.slug}`}

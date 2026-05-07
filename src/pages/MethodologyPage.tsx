@@ -265,7 +265,7 @@ const MethodologyPage = () => {
 
         {/* Clôture */}
         <section className="mt-16 text-center">
-          <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
             {lang === "fr" ? (
               <>Vous méritez un diagnostic.<br /><em className="text-primary italic">Pas une liste.</em></>
             ) : (

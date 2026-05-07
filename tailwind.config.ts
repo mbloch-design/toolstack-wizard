@@ -16,10 +16,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Bricolage Grotesque"', '"DM Sans"', 'system-ui', 'sans-serif'],
-        heading: ['"Bricolage Grotesque"', '"DM Sans"', 'system-ui', 'sans-serif'],
-        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
-        mono: ['"DM Mono"', 'ui-monospace', 'monospace'],
+        display: ['"Uncut Sans"', 'system-ui', 'sans-serif'],
+        heading: ['"Uncut Sans"', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       letterSpacing: {
         tighter: '-0.02em',

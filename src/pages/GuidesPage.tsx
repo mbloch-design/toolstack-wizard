@@ -257,7 +257,7 @@ function ArticleCard({ post, prefix, tools }: { post: Post; prefix: string; tool
             <Clock className="h-3 w-3" /> {post.readTime}
           </span>
         </div>
-        <h3 className="mt-3 text-base font-bold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">
+        <h3 className="mt-3 text-base font-semibold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">
           {post.title}
         </h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">

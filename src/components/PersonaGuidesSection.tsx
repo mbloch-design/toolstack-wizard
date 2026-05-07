@@ -29,7 +29,7 @@ export default function PersonaGuidesSection({ lang }: Props) {
         <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary mb-2">
           {lang === "fr" ? "Par profil" : "By profile"}
         </p>
-        <h2 className="text-4xl font-extrabold tracking-[-1.5px] md:text-[44px]">
+        <h2 className="text-4xl font-semibold tracking-[-1.5px] md:text-[44px]">
           {lang === "fr" ? "Guides par " : "Guides by "}
           <em className="text-primary italic">
             {lang === "fr" ? "profil freelance" : "freelance profile"}
