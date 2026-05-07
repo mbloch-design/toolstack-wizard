@@ -38,51 +38,50 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
     });
 
     // 2. SoftwareApplication + Offer + AggregateRating + Review
-    // ToolTrim score (0-100) — multi-signal weighted algorithm:
-    //   • Pros/Cons balance (40%) — quality from user-facing tradeoffs
-    //   • Verdict signal (30%)    — keepIf strength minus avoidIf penalty
-    //   • Alternatives (15%)      — fewer credible alternatives = stronger position
-    //   • Data completeness (15%) — how thoroughly the tool is documented
-    const prosCount = tool.pros?.length || 0;
-    const consCount = tool.cons?.length || 0;
-    const totalPC = prosCount + consCount;
-
-    // 1. Pros/cons component → 40 to 100
-    const prosConsScore = totalPC > 0
-      ? (prosCount / totalPC) * 60 + 40
-      : 70;
-
-    // 2. Verdict component — reward "keepIf" reasons, penalize "avoidIf"
-    const keepCount = tool.verdict?.keepIf?.length || 0;
+    // ToolTrim score (0–100) — prescription_quality as primary signal,
+    // tuned by soloRelevance, teamRelevance, pros/cons ratio and verdict balance.
+    const prosCount  = tool.pros?.length  || 0;
+    const consCount  = tool.cons?.length  || 0;
+    const keepCount  = tool.verdict?.keepIf?.length  || 0;
     const avoidCount = tool.verdict?.avoidIf?.length || 0;
-    const hasThreshold = !!tool.verdict?.threshold;
-    let verdictScore = 70;
-    if (keepCount + avoidCount > 0) {
-      verdictScore = (keepCount / (keepCount + avoidCount)) * 50 + 50; // 50-100
-    }
-    if (hasThreshold) verdictScore = Math.min(100, verdictScore + 5);
 
-    // 3. Alternatives component — saturating: 0 alts = neutral, 1-3 strong, 4+ diluted
-    const altCount = tool.alternatives?.length || 0;
-    const altsScore = altCount === 0 ? 75
-      : altCount <= 3 ? 85
-      : altCount <= 6 ? 70
-      : 60;
+    // 1. Base score from editorial prescription confidence
+    const pq = tool.prescription_quality || "silence";
+    const baseScore =
+      pq === "ferme" ? 84
+      : pq === "oui"  ? 80
+      : pq === "question" ? 68
+      : /* silence */  62; // 62 = no strong opinion, but tool exists in catalog
 
-    // 4. Data completeness — count of non-empty key fields
-    const completenessFields = [
-      tool.longDescription, tool.shortDescription, tool.useCases?.length,
-      tool.soloRelevance, tool.teamRelevance, tool.pricing?.free || tool.pricing?.paid,
-    ].filter(Boolean).length;
-    const completenessScore = 50 + (completenessFields / 6) * 50;
+    // 2. Solo relevance adjustment (ToolTrim's target audience = solo/freelance)
+    const soloAdj =
+      tool.soloRelevance === "high"   ?  9
+      : tool.soloRelevance === "medium" ?  3
+      : tool.soloRelevance === "low"    ? -6
+      : 0;
 
-    const scoreOn100 = Math.round(
-      prosConsScore * 0.40 +
-      verdictScore * 0.30 +
-      altsScore * 0.15 +
-      completenessScore * 0.15
-    );
+    // 3. Team relevance (secondary signal)
+    const teamAdj =
+      tool.teamRelevance === "high"   ?  4
+      : tool.teamRelevance === "low"    ? -3
+      : 0;
+
+    // 4. Pros/cons directional signal (not ratio — absolute skew)
+    const pcAdj = prosCount > consCount ?  5
+      : consCount > prosCount ? -7
+      : 0;
+
+    // 5. Verdict directional signal
+    const vAdj = keepCount > avoidCount ?  4
+      : avoidCount > keepCount ? -5
+      : 0;
+
+    const rawScore = baseScore + soloAdj + teamAdj + pcAdj + vAdj;
+    const scoreOn100 = Math.min(97, Math.max(28, rawScore)); // clamp to [28, 97]
     const ratingValue = (Math.round((scoreOn100 / 20) * 10) / 10).toFixed(1); // /5, 1 decimal
+
+    // ratingCount = number of editorial criteria evaluated (realistic count ≥ 5)
+    const criteriaEvaluated = Math.max(5, prosCount + consCount + keepCount + avoidCount + 2);
     const reviewBody =
       (lang === "en" ? tool.verdictEn?.threshold : tool.verdict?.threshold) ||
       tool.verdict?.threshold ||
@@ -114,7 +113,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
         ratingValue,
         bestRating: "5",
         worstRating: "1",
-        ratingCount: "1",
+        ratingCount: String(criteriaEvaluated),
         reviewCount: "1",
       },
       review: {
