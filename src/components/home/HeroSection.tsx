@@ -156,9 +156,9 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         <h1
           className="font-display"
           style={{
-            fontSize: "clamp(2.6rem, 6.5vw, 5.2rem)",
-            fontWeight: 800,
-            lineHeight: 1.04,
+            fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)",
+            fontWeight: 600,
+            lineHeight: 1.06,
             letterSpacing: "-0.035em",
             color: "hsl(var(--foreground))",
           }}
@@ -174,7 +174,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         <p
           className="mx-auto mt-5 max-w-md"
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: 'Inter, system-ui, sans-serif',
             fontSize: "0.95rem",
             lineHeight: 1.65,
             color: "hsl(var(--muted-foreground))",
@@ -202,7 +202,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             className="w-full rounded-lg border bg-card py-3.5 pl-11 pr-4 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150"
             style={{
               borderColor: "hsl(var(--border))",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: 'Inter, system-ui, sans-serif',
             }}
             onFocus={(e) => {
               e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.6)";
@@ -225,7 +225,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
                   key={tool.id}
                   onClick={() => handleToolClick(tool)}
                   className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground cursor-pointer transition-all duration-150"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.5)";
                     (e.currentTarget as HTMLElement).style.background = "hsl(var(--accent))";

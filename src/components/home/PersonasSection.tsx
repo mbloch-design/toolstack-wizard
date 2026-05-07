@@ -98,7 +98,7 @@ const PersonasSection = () => {
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-5">
             {t("Pour qui", "Who it's for")}
           </span>
-          <h2 className="text-4xl font-semibold tracking-[-1.5px] md:text-[44px]">
+          <h2 className="font-display font-semibold" style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
             {t("Conçu pour ", "Built for ")}<em className="text-primary italic">{t("5 expertises métier", "5 professional profiles")}</em>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">

@@ -158,7 +158,7 @@ const HomePage = () => {
           <div className="flex items-end justify-between mb-10">
             <div>
               <p className="label-section mb-3">{t("Catalogue", "Catalog")}</p>
-              <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.02em" }}>
+              <h2 style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
                 {t("Catégories ", "Tool ")}<em className="text-primary not-italic">{t("d'outils", "categories")}</em>
               </h2>
               <p className="mt-2 text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
@@ -209,7 +209,7 @@ const HomePage = () => {
                   <BookOpen className="h-4 w-4" />
                   <span className="label-section">{t("Ressources", "Resources")}</span>
                 </div>
-                <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)", fontWeight: 600, letterSpacing: "-0.02em" }}>
+                <h2 style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
                   {t("Derniers ", "Latest ")}<em className="text-primary not-italic">{t("guides", "guides")}</em>
                 </h2>
                 <p className="mt-2 text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
@@ -281,8 +281,8 @@ function BusinessObjectivesSection() {
           <div className="max-w-4xl">
             <p className="label-section mb-3">{t("Stacks par objectif", "Stacks by goal")}</p>
             <h2
-              className="text-balance font-semibold tracking-tight"
-              style={{ fontSize: "clamp(2.35rem, 4.5vw, 4rem)", lineHeight: 1.08 }}
+              className="text-balance font-display font-semibold"
+              style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", letterSpacing: "-0.025em", lineHeight: 1.1 }}
             >
               {t(
                 "Choisissez votre objectif et trouvez la stack qui le sert",
@@ -340,7 +340,7 @@ function BusinessObjectivesSection() {
                 </div>
 
                 <div className="flex flex-1 flex-col justify-between pt-7">
-                  <h3 className="text-3xl font-semibold leading-tight tracking-tight md:text-[2rem]">
+                  <h3 className="font-display font-semibold leading-snug" style={{ fontSize: "clamp(1.25rem, 2vw, 1.5rem)", letterSpacing: "-0.015em", lineHeight: 1.25 }}>
                     {title}
                   </h3>
                   <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">

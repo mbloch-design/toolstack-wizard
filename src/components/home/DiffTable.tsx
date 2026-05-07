@@ -22,7 +22,7 @@ const DiffTable = ({ toolCount }: { toolCount: number }) => {
           <p className="label-section mb-3">{t("Positionnement", "Positioning")}</p>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 700, letterSpacing: "-0.025em" }}
+            style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.1 }}
           >
             {t("Pas un annuaire. ", "Not a directory. ")}
             <span className="text-primary">{t("Un diagnostic.", "A diagnosis.")}</span>

@@ -100,7 +100,7 @@ const TestimonialsSection = () => {
             <p className="label-section mb-3">{t("Témoignages", "Testimonials")}</p>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 700, letterSpacing: "-0.025em" }}
+              style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.1 }}
             >
               {t("Ils ont repris le contrôle ", "They took back control ")}
               <span className="text-primary">{t("de leur stack.", "of their stack.")}</span>
