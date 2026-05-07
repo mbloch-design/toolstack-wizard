@@ -36,7 +36,7 @@ function QuickVerdict({ toolA, toolB, lang }: { toolA: Tool; toolB: Tool; lang: 
   const loser = winner ? (winner === toolA ? toolB : toolA) : null;
   const winnerPrice = winner === toolA ? priceA : priceB;
   const loserPrice = winner === toolA ? priceB : priceA;
-  const saving = loserPrice > 0 && winnerPrice < loserPrice ? loserPrice - winnerPrice : 0;
+  const saving = loserPrice > 0 && winnerPrice < loserPrice ? parseFloat((loserPrice - winnerPrice).toFixed(2)) : 0;
   const keepIf = winner ? (winner.verdict?.keepIf || [])[0] : null;
 
   const label = lang === "fr" ? "Résultat rapide" : "Quick verdict";
@@ -268,7 +268,7 @@ const ComparePage = () => {
           {/* Main content */}
           <div className="lg:col-span-9 space-y-6">
             {/* Sticky tool headers */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 sticky top-20 z-30 pt-4 pb-2 bg-background/95 backdrop-blur-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 sticky top-[65px] z-30 pt-4 pb-2 bg-background/95 backdrop-blur-sm">
               <div className="hidden md:block" />
               {[
                 { tool: toolA, borderColor: "border-primary" },
@@ -297,7 +297,7 @@ const ComparePage = () => {
                     <p className="text-sm text-muted-foreground">{t("Prix de départ par utilisateur", "Starting per user")}</p>
                   </div>
                   <div className="text-center md:text-left">
-                    <span className="text-3xl font-mono font-bold text-foreground">{getPrice(toolA)}</span>
+                    <span className="text-3xl font-bold text-foreground">{getPrice(toolA)}</span>
                     {getPriceNum(toolA) > 0 && <span className="text-sm text-muted-foreground">/{t("mois", "mo")}</span>}
                   </div>
                   <div className="text-center md:text-left">
