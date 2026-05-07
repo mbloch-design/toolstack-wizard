@@ -165,10 +165,10 @@ const StacksPage = () => {
         breadcrumb={[{ label: t("Stacks types", "Stack templates") }]}
         eyebrow={t("Stacks types", "Stack templates")}
         icon={<Boxes className="h-3.5 w-3.5" />}
-        title={t("Choisis ton objectif. Pars avec la bonne stack.", "Choose your goal. Start with the right stack.")}
+        title={t("La stack qu'il te faut, pas celle que tu imagines avoir besoin.", "The stack you need, not the one you think you need.")}
         description={t(
-          "Des modèles sobres pour vendre, livrer, produire, structurer ou automatiser sans acheter une pile d'outils pensée pour une autre réalité que la tienne.",
-          "Lean templates to sell, ship, produce, structure, or automate without buying a tool stack built for someone else's reality."
+          "Des modèles concrets pour vendre, livrer, produire ou automatiser — sans acheter la stack de quelqu'un d'autre par réflexe.",
+          "Practical templates to sell, ship, produce, or automate — without buying someone else's stack out of habit."
         )}
         actions={
           <>
@@ -188,7 +188,7 @@ const StacksPage = () => {
       <section id="stacks" className="scroll-mt-20 bg-background">
         <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">
           <h2 className="max-w-4xl font-display text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
-            {t("Parcourez les stacks par objectif ou moment d'activité", "Browse stacks by goal or business stage")}
+            {t("Cherche par profil, moment ou outil — et pars avec quelque chose de concret.", "Filter by profile, stage, or tool — and leave with something concrete.")}
           </h2>
 
           <div ref={filterRef} className="relative z-10 mt-7 flex flex-wrap items-start gap-x-8 gap-y-4">
@@ -281,8 +281,8 @@ const StacksPage = () => {
                 </div>
 
                 <div className="flex flex-1 flex-col pt-7">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                    {t("Objectif business", "Business goal")}
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                    {t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}
                   </p>
                   <h2 className="mt-3 font-display text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-[2rem]">
                     {t(stack.title, stack.titleEn)}
