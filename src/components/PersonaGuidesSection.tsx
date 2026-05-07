@@ -11,40 +11,40 @@ const guides = {
       label: "Dev / Tech",
       slug: "meilleurs-outils-developpeur-freelance",
       desc: "Cursor, Vercel, Supabase, ChatGPT Pro",
-      // Ville la nuit depuis une fenêtre haute — le dev construit quand les autres dorment, énergie nocturne
-      photo: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=900&q=85",
+      // Vérifié: deux devs au bureau, code visible sur écrans, lumière naturelle
+      photo: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=85",
       wide: true,
     },
     {
       label: "Designer",
       slug: "meilleurs-outils-designer-freelance",
       desc: "Figma, Adobe CC, Midjourney",
-      // Peinture qui déborde, couleur et matière physique — le designer pense avec ses mains avant ses outils
-      photo: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=900&q=85",
+      // Vérifié: designer de dos à son poste dual-écran, tablette en main, studio chaleureux avec bibliothèque
+      photo: "https://images.unsplash.com/photo-1599585795426-3390ee964f96?auto=format&fit=crop&w=900&q=85",
       wide: false,
     },
     {
       label: "Consultant",
       slug: "meilleurs-outils-consultant-freelance",
       desc: "Notion, Pipedrive, Calendly, Zoom",
-      // Aile d'avion au coucher du soleil — toujours en déplacement, la perspective depuis le haut
-      photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85",
+      // Vérifié: présentateur debout devant écran, groupe assis avec laptops, vraie salle de réunion
+      photo: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=85",
       wide: false,
     },
     {
       label: "Content",
       slug: "meilleurs-outils-createur-contenu-freelance",
       desc: "Beehiiv, Canva, Buffer, Descript",
-      // Concert live, lumières et foule — le créateur construit une relation avec son audience, pas juste du contenu
-      photo: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=85",
+      // Vérifié: femme avec casque à son bureau, micro, écran avec dashboard contenu, studio home
+      photo: "https://images.unsplash.com/photo-1593697909703-ff9b5f47c4af?auto=format&fit=crop&w=900&q=85",
       wide: false,
     },
     {
       label: "Ops / PMO",
       slug: "meilleurs-outils-ops-manager-freelance",
       desc: "Asana, Qonto, Make, Pipedrive",
-      // Échangeur autoroutier vu du ciel de nuit — flux, coordination invisible, tout circule sans friction
-      photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85",
+      // Vérifié: équipe serrée autour d'un laptop, quelqu'un pointe l'écran, coordination en direct
+      photo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=85",
       wide: true,
     },
   ],
@@ -53,35 +53,35 @@ const guides = {
       label: "Dev / Tech",
       slug: "best-tools-freelance-developer",
       desc: "Cursor, Vercel, Supabase, ChatGPT Pro",
-      photo: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=900&q=85",
+      photo: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=85",
       wide: true,
     },
     {
       label: "Designer",
       slug: "best-tools-freelance-designer",
       desc: "Figma, Adobe CC, Midjourney",
-      photo: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=900&q=85",
+      photo: "https://images.unsplash.com/photo-1599585795426-3390ee964f96?auto=format&fit=crop&w=900&q=85",
       wide: false,
     },
     {
       label: "Consultant",
       slug: "best-tools-freelance-consultant",
       desc: "Notion, Pipedrive, Calendly, Zoom",
-      photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85",
+      photo: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=85",
       wide: false,
     },
     {
       label: "Content",
       slug: "best-tools-freelance-content-creator",
       desc: "Beehiiv, Canva, Buffer, Descript",
-      photo: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=85",
+      photo: "https://images.unsplash.com/photo-1593697909703-ff9b5f47c4af?auto=format&fit=crop&w=900&q=85",
       wide: false,
     },
     {
       label: "Ops / PMO",
       slug: "best-tools-freelance-ops-manager",
       desc: "Asana, Qonto, Make, Pipedrive",
-      photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85",
+      photo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=85",
       wide: true,
     },
   ],
