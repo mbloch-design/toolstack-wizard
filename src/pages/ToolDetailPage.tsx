@@ -54,41 +54,63 @@ const ToolDetailPage = () => {
     const year = new Date().getFullYear();
     const baseSlug = tool.slug || tool.id;
 
+    // Round price for titles (cleaner display), keep exact for descriptions
+    const priceRounded = hasPrice ? Math.round(price as number) : 0;
+    const planName = tool.pricing_v5?.compare_plan_name || null;
+    const planSuffixFr = planName ? ` (plan ${planName})` : "";
+    const planSuffixEn = planName ? ` (${planName} plan)` : "";
+
     const SEO: Record<string, { titleFr: string; titleEn: string; descFr: string; descEn: string; suffix: string }> = {
       presentation: {
-        titleFr: `${tool.name} — Prix, avis et alternatives ${year} | ToolTrim`,
-        titleEn: `${tool.name} — Pricing, review & alternatives ${year} | ToolTrim`,
+        titleFr: hasPrice
+          ? `${tool.name} Avis ${year} : ${priceRounded}€/mois — Vaut-il le coût ? | ToolTrim`
+          : `${tool.name} Avis ${year} : Gratuit ou Payant ? Verdict honnête | ToolTrim`,
+        titleEn: hasPrice
+          ? `${tool.name} Review ${year}: €${priceRounded}/mo — Is It Worth It? | ToolTrim`
+          : `${tool.name} Review ${year}: Free or Paid? Honest Verdict | ToolTrim`,
         descFr: hasPrice
-          ? `${tool.name} coûte ${price}€/mois. Verdict ToolTrim : vaut-il le coût ? Quelles alternatives moins chères ?`
-          : `${tool.name} analysé par ToolTrim : verdict honnête, prix réel et meilleures alternatives testées.`,
+          ? `${tool.name} coûte ${price}€/mois${planSuffixFr}. Verdict ToolTrim : vaut-il le coût ? Comparatif des meilleures alternatives moins chères en ${year}.`
+          : `${tool.name} est-il vraiment gratuit ? Plans, tarifs cachés et meilleures alternatives analysés par ToolTrim — mis à jour ${year}.`,
         descEn: hasPrice
-          ? `${tool.name} costs €${price}/mo. ToolTrim honest verdict: is it worth it? Best cheaper alternatives.`
-          : `${tool.name} reviewed by ToolTrim: honest verdict, real pricing and best tested alternatives.`,
+          ? `${tool.name} costs €${price}/mo${planSuffixEn}. ToolTrim honest verdict: is it worth it? Best cheaper alternatives compared for ${year}.`
+          : `Is ${tool.name} really free? Plans, hidden costs and best alternatives reviewed by ToolTrim — updated ${year}.`,
         suffix: "",
       },
       prix: {
-        titleFr: `${tool.name} : prix et tarifs ${year} | ToolTrim`,
-        titleEn: `${tool.name} pricing & plans ${year} | ToolTrim`,
+        titleFr: hasPrice
+          ? `${tool.name} Prix ${year} : ${priceRounded}€/mois — Plans & Tarifs | ToolTrim`
+          : `${tool.name} Prix ${year} : Gratuit, Freemium ou Payant ? | ToolTrim`,
+        titleEn: hasPrice
+          ? `${tool.name} Pricing ${year}: €${priceRounded}/mo — Plans & Cost | ToolTrim`
+          : `${tool.name} Pricing ${year}: Free, Freemium or Paid? | ToolTrim`,
         descFr: hasPrice
-          ? `Combien coûte vraiment ${tool.name} ? Plans, tarifs détaillés et comparaison — mis à jour ${year}.`
-          : `Plans et tarifs de ${tool.name} : gratuit, freemium ou payant ? Toutes les options détaillées.`,
+          ? `Combien coûte ${tool.name} en ${year} ? ${priceRounded}€/mois${planName ? ` pour le plan ${planName}` : ""}. Détail de tous les plans, tarifs annuels et alternatives moins chères.`
+          : `${tool.name} est-il gratuit en ${year} ? Détail complet des plans gratuits, freemium et payants avec comparaison des alternatives.`,
         descEn: hasPrice
-          ? `How much does ${tool.name} really cost? Detailed plans, pricing breakdown — updated ${year}.`
-          : `${tool.name} plans and pricing: free, freemium or paid? All options detailed.`,
+          ? `How much does ${tool.name} cost in ${year}? €${priceRounded}/mo${planName ? ` for the ${planName} plan` : ""}. All plans, annual pricing and cheaper alternatives.`
+          : `Is ${tool.name} free in ${year}? Complete breakdown of free, freemium and paid plans with alternatives compared.`,
         suffix: "/prix",
       },
       alternatives: {
-        titleFr: `Meilleures alternatives à ${tool.name} en ${year} | ToolTrim`,
-        titleEn: `Best ${tool.name} alternatives in ${year} | ToolTrim`,
-        descFr: `Quelles sont les meilleures alternatives à ${tool.name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées.`,
-        descEn: `What are the best alternatives to ${tool.name}? ToolTrim compares cheaper, free and better-fit options.`,
+        titleFr: hasPrice
+          ? `Alternatives à ${tool.name} moins chères en ${year} | ToolTrim`
+          : `Meilleures alternatives à ${tool.name} en ${year} | ToolTrim`,
+        titleEn: hasPrice
+          ? `Cheaper ${tool.name} Alternatives in ${year} | ToolTrim`
+          : `Best ${tool.name} Alternatives in ${year} | ToolTrim`,
+        descFr: hasPrice
+          ? `Vous payez ${priceRounded}€/mois pour ${tool.name} ? Voici les meilleures alternatives moins chères, gratuites ou plus adaptées — comparées par ToolTrim.`
+          : `Quelles sont les meilleures alternatives à ${tool.name} ? ToolTrim compare les options gratuites, freemium et payantes les plus adaptées en ${year}.`,
+        descEn: hasPrice
+          ? `Paying €${priceRounded}/mo for ${tool.name}? Here are the best cheaper, free or better-fit alternatives — compared by ToolTrim.`
+          : `What are the best alternatives to ${tool.name}? ToolTrim compares the top free, freemium and paid options for ${year}.`,
         suffix: "/alternatives",
       },
       faq: {
-        titleFr: `${tool.name} : questions fréquentes ${year} | ToolTrim`,
-        titleEn: `${tool.name} FAQ ${year} | ToolTrim`,
-        descFr: `Toutes les questions fréquentes sur ${tool.name} : prix, plans, alternatives, intégrations et conseils d'utilisation.`,
-        descEn: `All frequently asked questions about ${tool.name}: pricing, plans, alternatives, integrations and usage tips.`,
+        titleFr: `${tool.name} FAQ ${year} : Prix, Plans & Alternatives | ToolTrim`,
+        titleEn: `${tool.name} FAQ ${year}: Pricing, Plans & Alternatives | ToolTrim`,
+        descFr: `Tout ce que vous devez savoir sur ${tool.name} : combien ça coûte, quels plans existent, comment migrer et quelles alternatives choisir en ${year}.`,
+        descEn: `Everything you need to know about ${tool.name}: how much it costs, which plans exist, how to migrate and which alternatives to choose in ${year}.`,
         suffix: "/faq",
       },
     };
