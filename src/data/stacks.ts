@@ -1,3 +1,4 @@
+export const STACKS_VERSION = "2026-05-07";
 export type StackPersona = "dev" | "designer" | "consultant" | "content" | "ops" | "solo";
 export type StackStage = "starter" | "lean" | "scale";
 export type StackBudget = "free" | "under50" | "under150";
