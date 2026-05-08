@@ -38,6 +38,7 @@ const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
+const ArticleFacturation = lazy(() => import("@/pages/ArticleFacturation"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -132,6 +133,7 @@ const App = () => (
               <Route path="guide/best-tools-freelance-content-creator" element={<PersonaPillarPage persona="ALIX" lang="en" />} />
               <Route path="guide/meilleurs-outils-ops-manager-freelance" element={<PersonaPillarPage persona="CLAIRE" lang="fr" />} />
               <Route path="guide/best-tools-freelance-ops-manager" element={<PersonaPillarPage persona="CLAIRE" lang="en" />} />
+              <Route path="guide/outils-facturation-freelance-2026" element={<ArticleFacturation />} />
               <Route path="guide/:slug" element={<GuideDetailPage />} />
               <Route path="article/:slug" element={<RedirectArticleToGuide />} />
               <Route path="comparatifs" element={<ComparesIndexPage />} />
