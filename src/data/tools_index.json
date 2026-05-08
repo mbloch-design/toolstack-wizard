@@ -8058,5 +8058,741 @@
     "affiliateLink": "",
     "websiteUrl": "https://www.jotform.com",
     "logo": ""
+  },
+  {
+    "id": "fellow",
+    "slug": "fellow",
+    "name": "Fellow",
+    "categoryId": "ai-general",
+    "shortDescription": "App de réunions IA : agendas collaboratifs, notes et suivi des actions.",
+    "shortDescriptionEn": "AI meeting app: collaborative agendas, notes and action tracking.",
+    "pricing": {
+      "free": "Gratuit avec fonctions de base",
+      "paid": "Pro à partir de 6€/mois"
+    },
+    "defaultMonthlyPrice": 6.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://fellow.app",
+    "logo": ""
+  },
+  {
+    "id": "plane",
+    "slug": "plane",
+    "name": "Plane",
+    "categoryId": "project-management",
+    "shortDescription": "Alternative open-source à Linear — gestion de projets et issues pour équipes dev.",
+    "shortDescriptionEn": "Open-source Linear alternative — project and issue management for dev teams.",
+    "pricing": {
+      "free": "Gratuit en cloud",
+      "paid": "Pro 5€/membre/mois"
+    },
+    "defaultMonthlyPrice": 5.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://plane.so",
+    "logo": ""
+  },
+  {
+    "id": "excalidraw",
+    "slug": "excalidraw",
+    "name": "Excalidraw",
+    "categoryId": "design-tools",
+    "shortDescription": "Tableau blanc collaboratif open-source avec un style dessin à la main.",
+    "shortDescriptionEn": "Open-source collaborative whiteboard with a hand-drawn style.",
+    "pricing": {
+      "free": "Gratuit et open-source",
+      "paid": "Plus 5€/mois"
+    },
+    "defaultMonthlyPrice": 5.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://excalidraw.com",
+    "logo": ""
+  },
+  {
+    "id": "scribe",
+    "slug": "scribe",
+    "name": "Scribe",
+    "categoryId": "organization",
+    "shortDescription": "Génère automatiquement des guides étape par étape depuis ton écran.",
+    "shortDescriptionEn": "Automatically generates step-by-step guides from your screen.",
+    "pricing": {
+      "free": "Gratuit avec fonctions de base",
+      "paid": "Pro 20€/mois"
+    },
+    "defaultMonthlyPrice": 20.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://scribehow.com",
+    "logo": ""
+  },
+  {
+    "id": "superlist",
+    "slug": "superlist",
+    "name": "Superlist",
+    "categoryId": "organization",
+    "shortDescription": "Application de tâches personnelles et d'équipe avec IA — gratuite.",
+    "shortDescriptionEn": "Personal and team task app with AI — free.",
+    "pricing": {
+      "free": "Gratuit pour individus et équipes",
+      "paid": "Plans équipe sur devis"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.superlist.com",
+    "logo": ""
+  },
+  {
+    "id": "gumloop",
+    "slug": "gumloop",
+    "name": "Gumloop",
+    "categoryId": "automation",
+    "shortDescription": "Automatisation no-code IA — construit des workflows intelligents par glisser-déposer.",
+    "shortDescriptionEn": "AI no-code automation — build intelligent workflows with drag and drop.",
+    "pricing": {
+      "free": "Gratuit pour tester",
+      "paid": "Pro ~31€/mois"
+    },
+    "defaultMonthlyPrice": 31.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.gumloop.com",
+    "logo": ""
+  },
+  {
+    "id": "dub",
+    "slug": "dub",
+    "name": "Dub",
+    "categoryId": "nocode-web",
+    "shortDescription": "Raccourcisseur de liens open-source avec analytics avancés et domaine personnalisé.",
+    "shortDescriptionEn": "Open-source link shortener with advanced analytics and custom domain.",
+    "pricing": {
+      "free": "Gratuit avec domaine dub.co",
+      "paid": "Pro ~21€/mois"
+    },
+    "defaultMonthlyPrice": 21.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://dub.co",
+    "logo": ""
+  },
+  {
+    "id": "chatbase",
+    "slug": "chatbase",
+    "name": "Chatbase",
+    "categoryId": "communication",
+    "shortDescription": "Crée un chatbot IA entraîné sur tes données — site, docs, PDF — en quelques minutes.",
+    "shortDescriptionEn": "Build an AI chatbot trained on your data — website, docs, PDF — in minutes.",
+    "pricing": {
+      "free": "Gratuit avec 1 chatbot basique",
+      "paid": "Hobby ~27€/mois"
+    },
+    "defaultMonthlyPrice": 27.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.chatbase.co",
+    "logo": ""
+  },
+  {
+    "id": "milanote",
+    "slug": "milanote",
+    "name": "Milanote",
+    "categoryId": "design-tools",
+    "shortDescription": "Tableau de notes visuelles pour les créatifs — moodboards, briefs et idées organisées.",
+    "shortDescriptionEn": "Visual notes board for creatives — moodboards, briefs and organized ideas.",
+    "pricing": {
+      "free": "Gratuit jusqu'à 100 éléments",
+      "paid": "Pro 8€/mois"
+    },
+    "defaultMonthlyPrice": 8.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://milanote.com",
+    "logo": ""
+  },
+  {
+    "id": "zcal",
+    "slug": "zcal",
+    "name": "zcal",
+    "categoryId": "communication",
+    "shortDescription": "Alternative gratuite à Calendly — prise de rendez-vous avec pages élégantes.",
+    "shortDescriptionEn": "Free Calendly alternative — appointment booking with elegant pages.",
+    "pricing": {
+      "free": "Gratuit pour les fonctionnalités essentielles",
+      "paid": "Plan Pro sur zcal.co"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://zcal.co",
+    "logo": ""
+  },
+  {
+    "id": "paddle",
+    "slug": "paddle",
+    "name": "Paddle",
+    "categoryId": "finance",
+    "shortDescription": "Infrastructure de paiement SaaS avec gestion fiscale mondiale intégrée — modèle à commission.",
+    "shortDescriptionEn": "SaaS payment infrastructure with built-in global tax management — commission model.",
+    "pricing": {
+      "free": "Pas de frais mensuel — commission 5% + 0,50$/transaction",
+      "paid": "Paddle Plus pour volumes élevés"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.paddle.com",
+    "logo": ""
+  },
+  {
+    "id": "quickbooks-online",
+    "slug": "quickbooks-online",
+    "name": "QuickBooks Online",
+    "categoryId": "finance",
+    "shortDescription": "Logiciel de comptabilité et facturation pour freelances, PME et auto-entrepreneurs.",
+    "shortDescriptionEn": "Accounting and invoicing software for freelancers, SMBs and self-employed.",
+    "pricing": {
+      "free": "Essai gratuit 30 jours",
+      "paid": "Simple Start ~32€/mois"
+    },
+    "defaultMonthlyPrice": 32.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://quickbooks.intuit.com",
+    "logo": ""
+  },
+  {
+    "id": "invoicely",
+    "slug": "invoicely",
+    "name": "Invoicely",
+    "categoryId": "finance",
+    "shortDescription": "Outil de facturation simple et gratuit pour freelances et petites entreprises.",
+    "shortDescriptionEn": "Simple and free invoicing tool for freelancers and small businesses.",
+    "pricing": {
+      "free": "Gratuit pour la facturation de base",
+      "paid": "Plans payants disponibles"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://invoicely.com",
+    "logo": ""
+  },
+  {
+    "id": "namecheap",
+    "slug": "namecheap",
+    "name": "Namecheap",
+    "categoryId": "storage",
+    "shortDescription": "Registrar de domaines abordable avec hébergement, SSL et emails inclus.",
+    "shortDescriptionEn": "Affordable domain registrar with hosting, SSL and emails included.",
+    "pricing": {
+      "free": "Pas de plan gratuit",
+      "paid": "Domaines .com à partir de ~9$/an"
+    },
+    "defaultMonthlyPrice": 5.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.namecheap.com",
+    "logo": ""
+  },
+  {
+    "id": "youform",
+    "slug": "youform",
+    "name": "Youform",
+    "categoryId": "nocode-web",
+    "shortDescription": "Créateur de formulaires avec logique conditionnelle, alternative à Typeform.",
+    "shortDescriptionEn": "Form builder with conditional logic, Typeform alternative.",
+    "pricing": {
+      "free": "100 soumissions/mois gratuites",
+      "paid": "Pro 29$/mois"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "https://youform.com",
+    "websiteUrl": "https://youform.com",
+    "logo": ""
+  },
+  {
+    "id": "pics-io",
+    "slug": "pics-io",
+    "name": "Pics.io",
+    "categoryId": "storage",
+    "shortDescription": "Gestionnaire d'assets digitaux (DAM) sur Google Drive ou S3.",
+    "shortDescriptionEn": "Digital asset management (DAM) on top of Google Drive or S3.",
+    "pricing": {
+      "free": "Essai 7 jours",
+      "paid": "Startup 100$/mois"
+    },
+    "defaultMonthlyPrice": 85,
+    "affiliateLink": "https://pics.io",
+    "websiteUrl": "https://pics.io",
+    "logo": ""
+  },
+  {
+    "id": "proofhub",
+    "slug": "proofhub",
+    "name": "ProofHub",
+    "categoryId": "project-management",
+    "shortDescription": "Gestion de projet flat-rate avec tâches, chat et proofing de fichiers.",
+    "shortDescriptionEn": "Flat-rate project management with tasks, chat and file proofing.",
+    "pricing": {
+      "free": "Essai 14 jours",
+      "paid": "Essential 45$/mois"
+    },
+    "defaultMonthlyPrice": 38,
+    "affiliateLink": "https://www.proofhub.com",
+    "websiteUrl": "https://www.proofhub.com",
+    "logo": ""
+  },
+  {
+    "id": "lusha",
+    "slug": "lusha",
+    "name": "Lusha",
+    "categoryId": "communication",
+    "shortDescription": "Enrichissement de contacts B2B avec emails et numéros de téléphone vérifiés.",
+    "shortDescriptionEn": "B2B contact enrichment with verified emails and phone numbers.",
+    "pricing": {
+      "free": "5 crédits/mois gratuits",
+      "paid": "Pro 299$/mois"
+    },
+    "defaultMonthlyPrice": 255,
+    "affiliateLink": "https://www.lusha.com",
+    "websiteUrl": "https://www.lusha.com",
+    "logo": ""
+  },
+  {
+    "id": "rocket-lawyer",
+    "slug": "rocket-lawyer",
+    "name": "Rocket Lawyer",
+    "categoryId": "legal-contracts",
+    "shortDescription": "Plateforme juridique en ligne pour contrats, documents légaux et consultations d'avocats.",
+    "shortDescriptionEn": "Online legal platform for contracts, legal documents and attorney consultations.",
+    "pricing": {
+      "free": "1 document gratuit",
+      "paid": "Premium 99$/mois"
+    },
+    "defaultMonthlyPrice": 85,
+    "affiliateLink": "https://www.rocketlawyer.com",
+    "websiteUrl": "https://www.rocketlawyer.com",
+    "logo": ""
+  },
+  {
+    "id": "samcart",
+    "slug": "samcart",
+    "name": "SamCart",
+    "categoryId": "finance",
+    "shortDescription": "Plateforme de checkout optimisée pour vendre formations et produits numériques.",
+    "shortDescriptionEn": "Checkout platform optimized for selling courses and digital products.",
+    "pricing": {
+      "free": "Essai 7 jours",
+      "paid": "Launch 79$/mois"
+    },
+    "defaultMonthlyPrice": 67,
+    "affiliateLink": "https://www.samcart.com",
+    "websiteUrl": "https://www.samcart.com",
+    "logo": ""
+  },
+  {
+    "id": "brandmark",
+    "slug": "brandmark",
+    "name": "Brandmark",
+    "categoryId": "design-tools",
+    "shortDescription": "Générateur de logo IA avec kit de marque complet, achat unique.",
+    "shortDescriptionEn": "AI logo generator with full brand kit, one-time purchase.",
+    "pricing": {
+      "free": "Aperçu gratuit",
+      "paid": "Basic 25$/mois"
+    },
+    "defaultMonthlyPrice": 30,
+    "affiliateLink": "https://brandmark.io",
+    "websiteUrl": "https://brandmark.io",
+    "logo": ""
+  },
+  {
+    "id": "clipwing",
+    "slug": "clipwing",
+    "name": "Clipwing",
+    "categoryId": "creation",
+    "shortDescription": "Transforme vos longs vidéos en clips courts pour TikTok, Reels et Shorts avec l'IA.",
+    "shortDescriptionEn": "Turns long videos into short clips for TikTok, Reels and Shorts using AI.",
+    "pricing": {
+      "free": "3 clips gratuits",
+      "paid": "Starter 25$/mois"
+    },
+    "defaultMonthlyPrice": 21,
+    "affiliateLink": "https://clipwing.pro",
+    "websiteUrl": "https://clipwing.pro",
+    "logo": ""
+  },
+  {
+    "id": "ahrefs",
+    "slug": "ahrefs",
+    "name": "Ahrefs",
+    "categoryId": "analytics",
+    "shortDescription": "Suite SEO complète : analyse de backlinks, recherche de mots-clés et audit de site.",
+    "shortDescriptionEn": "Full SEO suite: backlink analysis, keyword research and site audit.",
+    "pricing": {
+      "free": "Ahrefs Webmaster Tools gratuit",
+      "paid": "Starter 29$/mois"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "https://ahrefs.com",
+    "websiteUrl": "https://ahrefs.com",
+    "logo": ""
+  },
+  {
+    "id": "carrd",
+    "slug": "carrd",
+    "name": "Carrd",
+    "categoryId": "nocode-web",
+    "shortDescription": "Créateur de sites one-page ultra-simple à 9$/an pour portfolio et landing page.",
+    "shortDescriptionEn": "Ultra-simple one-page site builder at $9/year for portfolio and landing page.",
+    "pricing": {
+      "free": "Sites gratuits avec sous-domaine",
+      "paid": "Pro Standard 9$/an"
+    },
+    "defaultMonthlyPrice": 1,
+    "affiliateLink": "https://carrd.co",
+    "websiteUrl": "https://carrd.co",
+    "logo": ""
+  },
+  {
+    "id": "typedream",
+    "slug": "typedream",
+    "name": "Typedream",
+    "categoryId": "nocode-web",
+    "shortDescription": "Constructeur de site no-code style Notion, simple et rapide.",
+    "shortDescriptionEn": "No-code website builder with a Notion-like interface.",
+    "pricing": {
+      "free": "Plan gratuit avec sous-domaine",
+      "paid": "Starter 12$/mois"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://typedream.com",
+    "websiteUrl": "https://typedream.com",
+    "logo": ""
+  },
+  {
+    "id": "dorik",
+    "slug": "dorik",
+    "name": "Dorik",
+    "categoryId": "nocode-web",
+    "shortDescription": "Constructeur de sites no-code avec IA intégrée et hébergement inclus à 4$/mois.",
+    "shortDescriptionEn": "No-code website builder with built-in AI and hosting included at $4/mo.",
+    "pricing": {
+      "free": "Plan gratuit avec sous-domaine",
+      "paid": "Personal 3.99$/mois (annuel)"
+    },
+    "defaultMonthlyPrice": 3,
+    "affiliateLink": "https://dorik.com",
+    "websiteUrl": "https://dorik.com",
+    "logo": ""
+  },
+  {
+    "id": "fathom-analytics",
+    "slug": "fathom-analytics",
+    "name": "Fathom Analytics",
+    "categoryId": "analytics",
+    "shortDescription": "Analytics web sans cookies, conforme RGPD, alternative à Google Analytics.",
+    "shortDescriptionEn": "Cookieless web analytics, GDPR compliant, Google Analytics alternative.",
+    "pricing": {
+      "free": "Essai 30 jours",
+      "paid": "Starter 14$/mois (100k pageviews)"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://usefathom.com",
+    "websiteUrl": "https://usefathom.com",
+    "logo": ""
+  },
+  {
+    "id": "simple-analytics",
+    "slug": "simple-analytics",
+    "name": "Simple Analytics",
+    "categoryId": "analytics",
+    "shortDescription": "Analytics web minimaliste sans cookies, fondé en Europe, conforme RGPD.",
+    "shortDescriptionEn": "Minimalist cookieless web analytics, European-founded, GDPR compliant.",
+    "pricing": {
+      "free": "Essai 14 jours",
+      "paid": "Starter 15€/mois"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://simpleanalytics.com",
+    "websiteUrl": "https://simpleanalytics.com",
+    "logo": ""
+  },
+  {
+    "id": "spline",
+    "slug": "spline",
+    "name": "Spline",
+    "categoryId": "design-tools",
+    "shortDescription": "Design 3D interactif dans le navigateur pour des expériences web immersives.",
+    "shortDescriptionEn": "Browser-based interactive 3D design for immersive web experiences.",
+    "pricing": {
+      "free": "Plan gratuit avec watermark",
+      "paid": "Pro 12$/mois sans watermark"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://spline.design",
+    "websiteUrl": "https://spline.design",
+    "logo": ""
+  },
+  {
+    "id": "tella",
+    "slug": "tella",
+    "name": "Tella",
+    "categoryId": "creation",
+    "shortDescription": "Enregistrement et montage vidéo simple pour démos, tutoriels et cours en ligne.",
+    "shortDescriptionEn": "Simple screen and camera recording with editing for demos, tutorials and courses.",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Pro 12$/mois"
+    },
+    "defaultMonthlyPrice": 11,
+    "affiliateLink": "https://www.tella.tv",
+    "websiteUrl": "https://www.tella.tv",
+    "logo": ""
+  },
+  {
+    "id": "wized",
+    "slug": "wized",
+    "name": "Wized",
+    "categoryId": "nocode-web",
+    "shortDescription": "Couche logique applicative pour Webflow : API, authentification et données dynamiques.",
+    "shortDescriptionEn": "Application logic layer for Webflow: APIs, auth and dynamic data.",
+    "pricing": {
+      "free": "1 projet gratuit",
+      "paid": "Starter 20$/mois"
+    },
+    "defaultMonthlyPrice": 19,
+    "affiliateLink": "https://www.wized.com",
+    "websiteUrl": "https://www.wized.com",
+    "logo": ""
+  },
+  {
+    "id": "microsoft-365-copilot",
+    "slug": "microsoft-365-copilot",
+    "name": "Microsoft 365 Copilot",
+    "categoryId": "ai-general",
+    "shortDescription": "Couche IA intégrée à Microsoft 365 : Word, Excel, Teams et Outlook.",
+    "shortDescriptionEn": "AI layer built into Microsoft 365: Word, Excel, Teams and Outlook.",
+    "pricing": {
+      "free": "Non disponible",
+      "paid": "30$/user/mois en complément de M365"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "https://www.microsoft.com/microsoft-365/copilot",
+    "websiteUrl": "https://www.microsoft.com/microsoft-365/copilot",
+    "logo": ""
+  },
+  {
+    "id": "liinks",
+    "slug": "liinks",
+    "name": "Liinks",
+    "categoryId": "communication",
+    "shortDescription": "Page de liens bio stylée pour créateurs, alternative design à Linktree.",
+    "shortDescriptionEn": "Stylish bio link page for creators, design-forward Linktree alternative.",
+    "pricing": {
+      "free": "Liens illimités gratuits",
+      "paid": "Pro 3$/mois"
+    },
+    "defaultMonthlyPrice": 3,
+    "affiliateLink": "https://liinks.co",
+    "websiteUrl": "https://liinks.co",
+    "logo": ""
+  },
+  {
+    "id": "seo-mode",
+    "slug": "seo-mode",
+    "name": "SEO Mode",
+    "categoryId": "analytics",
+    "shortDescription": "Outil SEO IA pour optimiser le contenu et booster le classement Google à 2$/mois.",
+    "shortDescriptionEn": "AI SEO tool to optimize content and boost Google rankings at $2/mo.",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Basic 2$/mois"
+    },
+    "defaultMonthlyPrice": 2,
+    "affiliateLink": "https://seomode.com",
+    "websiteUrl": "https://seomode.com",
+    "logo": ""
+  },
+  {
+    "id": "vmake",
+    "slug": "vmake",
+    "name": "Vmake",
+    "categoryId": "creation",
+    "shortDescription": "Amélioration et upscale vidéo par IA en ligne, sans logiciel à installer.",
+    "shortDescriptionEn": "AI video enhancement and upscaling online, no software to install.",
+    "pricing": {
+      "free": "Crédits gratuits limités",
+      "paid": "Basic 28$/mois"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "https://vmake.ai",
+    "websiteUrl": "https://vmake.ai",
+    "logo": ""
+  },
+  {
+    "id": "guideless",
+    "slug": "guideless",
+    "name": "Guideless",
+    "categoryId": "ai-general",
+    "shortDescription": "Assistant IA de planification personnelle pour structurer vos journées de travail.",
+    "shortDescriptionEn": "Personal AI planning assistant to structure your workdays.",
+    "pricing": {
+      "free": "Plan gratuit",
+      "paid": "Pro 29$/mois"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "https://guideless.app",
+    "websiteUrl": "https://guideless.app",
+    "logo": ""
+  },
+  {
+    "id": "cossistant",
+    "slug": "cossistant",
+    "name": "Cossistant",
+    "categoryId": "communication",
+    "shortDescription": "Assistant IA pour automatiser le service client et les tickets support.",
+    "shortDescriptionEn": "AI assistant to automate customer service and support tickets.",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Starter 19$/mois"
+    },
+    "defaultMonthlyPrice": 17,
+    "affiliateLink": "https://cossistant.com",
+    "websiteUrl": "https://cossistant.com",
+    "logo": ""
+  },
+  {
+    "id": "pageai",
+    "slug": "pageai",
+    "name": "PageAI",
+    "categoryId": "nocode-web",
+    "shortDescription": "Générateur de landing pages IA optimisées pour la conversion.",
+    "shortDescriptionEn": "AI landing page generator optimized for conversion.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Pro 149$/mois"
+    },
+    "defaultMonthlyPrice": 127,
+    "affiliateLink": "https://pageai.io",
+    "websiteUrl": "https://pageai.io",
+    "logo": ""
+  },
+  {
+    "id": "voicetypr",
+    "slug": "voicetypr",
+    "name": "VoiceTypr",
+    "categoryId": "ai-general",
+    "shortDescription": "Dictée vocale IA hors-ligne et multi-langue, transcription en temps réel.",
+    "shortDescriptionEn": "Offline AI voice dictation, multi-language, real-time transcription.",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Pro 49$/mois"
+    },
+    "defaultMonthlyPrice": 42,
+    "affiliateLink": "https://voicetypr.com",
+    "websiteUrl": "https://voicetypr.com",
+    "logo": ""
+  },
+  {
+    "id": "crawlbase",
+    "slug": "crawlbase",
+    "name": "Crawlbase",
+    "categoryId": "creation",
+    "shortDescription": "API de web scraping et crawling pour extraire des données de n'importe quel site.",
+    "shortDescriptionEn": "Web scraping and crawling API to extract data from any website.",
+    "pricing": {
+      "free": "1000 requêtes/mois gratuites",
+      "paid": "Pay-as-you-go à partir de 29$/mois"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://crawlbase.com",
+    "websiteUrl": "https://crawlbase.com",
+    "logo": ""
+  },
+  {
+    "id": "pikkovia",
+    "slug": "pikkovia",
+    "name": "Pikkovia",
+    "categoryId": "design-tools",
+    "shortDescription": "Plateforme de création de visuels marketing IA pour réseaux sociaux et publicités.",
+    "shortDescriptionEn": "AI marketing visual creation platform for social media and ads.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Pro 59$/mois"
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://pikkovia.com",
+    "websiteUrl": "https://pikkovia.com",
+    "logo": ""
+  },
+  {
+    "id": "maced-ai",
+    "slug": "maced-ai",
+    "name": "Maced AI",
+    "categoryId": "security",
+    "shortDescription": "Plateforme de cybersécurité IA pour détecter et bloquer les menaces en temps réel.",
+    "shortDescriptionEn": "AI cybersecurity platform to detect and block threats in real time.",
+    "pricing": {
+      "free": "Démo disponible",
+      "paid": "Business 249$/mois"
+    },
+    "defaultMonthlyPrice": 212,
+    "affiliateLink": "https://maced.ai",
+    "websiteUrl": "https://maced.ai",
+    "logo": ""
+  },
+  {
+    "id": "screensage-pro",
+    "slug": "screensage-pro",
+    "name": "ScreenSage Pro",
+    "categoryId": "creation",
+    "shortDescription": "Outil IA de capture et annotation d'écran pour créer des tutoriels et docs visuels.",
+    "shortDescriptionEn": "AI screen capture and annotation tool for creating tutorials and visual docs.",
+    "pricing": {
+      "free": "Plan gratuit",
+      "paid": "Pro 59$/mois"
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://screensage.pro",
+    "websiteUrl": "https://screensage.pro",
+    "logo": ""
+  },
+  {
+    "id": "inbound",
+    "slug": "inbound",
+    "name": "Inbound",
+    "categoryId": "creation",
+    "shortDescription": "Plateforme de création de contenu inbound marketing avec IA : blogs, SEO et lead gen.",
+    "shortDescriptionEn": "AI-powered inbound marketing content platform: blogs, SEO and lead gen.",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Starter 15$/mois"
+    },
+    "defaultMonthlyPrice": 13,
+    "affiliateLink": "https://inbound.so",
+    "websiteUrl": "https://inbound.so",
+    "logo": ""
+  },
+  {
+    "id": "superdev-pro",
+    "slug": "superdev-pro",
+    "name": "SuperDev Pro",
+    "categoryId": "creation",
+    "shortDescription": "Suite d'outils IA pour développeurs : génération de code, revue et documentation.",
+    "shortDescriptionEn": "AI toolkit for developers: code generation, review and documentation.",
+    "pricing": {
+      "free": "Plan gratuit",
+      "paid": "Pro 59$/mois"
+    },
+    "defaultMonthlyPrice": 51,
+    "affiliateLink": "https://superdev.pro",
+    "websiteUrl": "https://superdev.pro",
+    "logo": ""
+  },
+  {
+    "id": "pixco",
+    "slug": "pixco",
+    "name": "Pixco",
+    "categoryId": "creation",
+    "shortDescription": "Éditeur photo IA en ligne pour retouche, suppression de fond et amélioration d'images.",
+    "shortDescriptionEn": "Online AI photo editor for retouching, background removal and image enhancement.",
+    "pricing": {
+      "free": "Crédits gratuits",
+      "paid": "Pro 59$/mois"
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "https://pixco.io",
+    "websiteUrl": "https://pixco.io",
+    "logo": ""
   }
 ]
