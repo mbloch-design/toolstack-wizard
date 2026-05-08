@@ -1135,7 +1135,7 @@
     "slug": "canva-ai",
     "name": "Canva AI",
     "categoryId": "ai-general",
-    "shortDescription": "",
+    "shortDescription": null,
     "shortDescriptionEn": "AI-powered design features built into Canva: image generation, background removal, Magic Write.",
     "pricing": {
       "free": "",
@@ -1151,7 +1151,7 @@
     "slug": "canva-pro",
     "name": "Canva Pro",
     "categoryId": "creation",
-    "shortDescription": "",
+    "shortDescription": null,
     "shortDescriptionEn": "Professional design suite with premium templates and brand kit.",
     "pricing": {
       "free": "",
@@ -4864,26 +4864,11 @@
     "shortDescriptionEn": "Online business banking for freelancers and SMBs: French IBAN, cards, invoicing, accounting sync.",
     "pricing": {
       "free": "Essai 30 jours",
-      "paid": "Solo Basic 9€/mois HT — Solo Smart 19€/mois — Solo Premium 39€/mois"
+      "paid": "Solo Basic 9€/mois HT — Solo Smart 19€/mois — Solo Premium 39€/mois — Team à partir de 29€/mois"
     },
     "defaultMonthlyPrice": 9,
     "affiliateLink": "https://lb.affilae.com/r/?p=69a078113f38abd84385e0d9&af=2648&lp=https%3A%2F%2Fqonto.com%2Ffr%3Futm_source%3Dinfluence",
     "websiteUrl": "https://qonto.com/fr",
-    "logo": ""
-  },
-  {
-    "slug": "perplexity",
-    "name": "Perplexity",
-    "categoryId": "ai-general",
-    "shortDescription": "Le moteur de recherche du futur.",
-    "shortDescriptionEn": "The search engine of the future.",
-    "pricing": {
-      "free": "Free plan available",
-      "paid": "USD 20/month (Pro)"
-    },
-    "defaultMonthlyPrice": 14.43,
-    "affiliateLink": "https://perplexity.ai",
-    "websiteUrl": "https://perplexity.ai",
     "logo": ""
   },
   {
@@ -5480,7 +5465,7 @@
     "slug": "remove-bg",
     "name": "Remove.bg",
     "categoryId": "creation",
-    "shortDescription": "",
+    "shortDescription": null,
     "shortDescriptionEn": "Instant background removal from any image. Free and API available.",
     "pricing": {
       "free": "",
@@ -7551,7 +7536,7 @@
     "slug": "zoom-ai-companion",
     "name": "Zoom AI Companion",
     "categoryId": "ai-general",
-    "shortDescription": "",
+    "shortDescription": null,
     "shortDescriptionEn": "AI assistant built into Zoom: meeting summaries, action items, smart compose.",
     "pricing": {
       "free": "",
@@ -7567,7 +7552,7 @@
     "slug": "zoom-pro",
     "name": "Zoom Pro",
     "categoryId": "communication",
-    "shortDescription": "",
+    "shortDescription": null,
     "shortDescriptionEn": "Zoom paid plan with extended meeting duration and admin controls.",
     "pricing": {
       "free": "",
@@ -7576,6 +7561,502 @@
     "defaultMonthlyPrice": 14,
     "affiliateLink": "",
     "websiteUrl": "https://zoom.us/pricing",
+    "logo": ""
+  },
+  {
+    "id": "taskade",
+    "slug": "taskade",
+    "name": "Taskade",
+    "categoryId": "project-management",
+    "shortDescription": "Espace de travail IA tout-en-un : tâches, agents, docs et automatisations.",
+    "shortDescriptionEn": "All-in-one AI workspace: tasks, agents, docs and automations.",
+    "pricing": {
+      "free": "Free plan with 3,000 one-time credits",
+      "paid": "Starter $6/mo, Pro $16/mo, Business $40/mo"
+    },
+    "defaultMonthlyPrice": 5.52,
+    "affiliateLink": "",
+    "websiteUrl": "https://taskade.com",
+    "logo": ""
+  },
+  {
+    "id": "superwhisper",
+    "slug": "superwhisper",
+    "name": "Superwhisper",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Dictée vocale IA dans toutes tes apps — macOS uniquement.",
+    "shortDescriptionEn": "AI voice dictation in every app — macOS only.",
+    "pricing": {
+      "free": "Free tier with small AI models",
+      "paid": "Pro $8.49/mo or $79/yr, Lifetime $249"
+    },
+    "defaultMonthlyPrice": 7.82,
+    "affiliateLink": "",
+    "websiteUrl": "https://superwhisper.com",
+    "logo": ""
+  },
+  {
+    "id": "fillout",
+    "slug": "fillout",
+    "name": "Fillout",
+    "categoryId": "nocode-web",
+    "shortDescription": "Formulaires intelligents avec logique conditionnelle, paiements et IA.",
+    "shortDescriptionEn": "Smart forms with conditional logic, payments and AI.",
+    "pricing": {
+      "free": "Free — 1,000 responses/month, unlimited forms",
+      "paid": "Starter $15/mo · Pro $40 · Business $75"
+    },
+    "defaultMonthlyPrice": 13.8,
+    "affiliateLink": "",
+    "websiteUrl": "https://fillout.com",
+    "logo": ""
+  },
+  {
+    "id": "firecrawl",
+    "slug": "firecrawl",
+    "name": "Firecrawl",
+    "categoryId": "automation",
+    "shortDescription": "API de scraping web propre : transforme n'importe quel site en données structurées.",
+    "shortDescriptionEn": "Clean web scraping API: turns any website into structured data.",
+    "pricing": {
+      "free": "Free — 1,000 credits/month",
+      "paid": "Hobby $16/mo · Standard $83 · Growth $333"
+    },
+    "defaultMonthlyPrice": 14.74,
+    "affiliateLink": "",
+    "websiteUrl": "https://firecrawl.dev",
+    "logo": ""
+  },
+  {
+    "id": "v0-vercel",
+    "slug": "v0-vercel",
+    "name": "v0 by Vercel",
+    "categoryId": "design-tools",
+    "shortDescription": "Génère des composants UI React/Tailwind à partir d'une description texte.",
+    "shortDescriptionEn": "Generate React/Tailwind UI components from a text description.",
+    "pricing": {
+      "free": "Free with $5/mo credits, 7 messages/day",
+      "paid": "Team $30/user/mo · Business $100/user/mo"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://v0.dev",
+    "logo": ""
+  },
+  {
+    "id": "reclaim-ai",
+    "slug": "reclaim-ai",
+    "name": "Reclaim AI",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "IA qui optimise ton agenda automatiquement : focus time, tâches, réunions.",
+    "shortDescriptionEn": "AI that auto-optimizes your calendar: focus time, tasks, meetings.",
+    "pricing": {
+      "free": "Free with 1-week range, 1 habit",
+      "paid": "Starter $10/seat/mo · Business $15 · Enterprise $22"
+    },
+    "defaultMonthlyPrice": 9.22,
+    "affiliateLink": "",
+    "websiteUrl": "https://reclaim.ai",
+    "logo": ""
+  },
+  {
+    "id": "grok",
+    "slug": "grok",
+    "name": "Grok",
+    "categoryId": "ai-general",
+    "shortDescription": "L'assistant IA d'xAI (Elon Musk) avec accès temps réel à X/Twitter.",
+    "shortDescriptionEn": "xAI's (Elon Musk) AI assistant with real-time access to X/Twitter.",
+    "pricing": {
+      "free": "Free with 10 requests/2h",
+      "paid": "SuperGrok Lite $10/mo · SuperGrok $30/mo · SuperGrok Heavy $300/mo"
+    },
+    "defaultMonthlyPrice": 27.6,
+    "affiliateLink": "",
+    "websiteUrl": "https://grok.com",
+    "logo": ""
+  },
+  {
+    "id": "google-ai-studio",
+    "slug": "google-ai-studio",
+    "name": "Google AI Studio",
+    "categoryId": "ai-general",
+    "shortDescription": "Playground gratuit pour tester et intégrer les modèles Gemini de Google.",
+    "shortDescriptionEn": "Free playground to test and integrate Google's Gemini models.",
+    "pricing": {
+      "free": "Free interface + free API tier",
+      "paid": "Pay-as-you-go API: from $0.30/M tokens (Flash)"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://aistudio.google.com",
+    "logo": ""
+  },
+  {
+    "id": "contra",
+    "slug": "contra",
+    "name": "Contra",
+    "categoryId": "project-management",
+    "shortDescription": "Plateforme de mission freelance sans commission — les clients paient les frais.",
+    "shortDescriptionEn": "Zero-commission freelance platform — clients pay the fees.",
+    "pricing": {
+      "free": "Free — profile, proposals, payments, 0% commission",
+      "paid": "Pro $29/mo or $199/yr"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://contra.com",
+    "logo": ""
+  },
+  {
+    "id": "typotab",
+    "slug": "typotab",
+    "name": "TypoTab",
+    "categoryId": "ai-general",
+    "shortDescription": "Extension Chrome : assistant IA de rédaction dans chaque onglet.",
+    "shortDescriptionEn": "Chrome extension: AI writing assistant in every tab.",
+    "pricing": {
+      "free": "Free with basic features",
+      "paid": "Monthly £6/mo or Annual £4/mo billed yearly"
+    },
+    "defaultMonthlyPrice": 5.52,
+    "affiliateLink": "",
+    "websiteUrl": "https://typotab.com",
+    "logo": ""
+  },
+  {
+    "id": "magic-patterns",
+    "slug": "magic-patterns",
+    "name": "Magic Patterns",
+    "categoryId": "design-tools",
+    "shortDescription": "Générateur IA de composants UI et prototypes à partir d'un prompt.",
+    "shortDescriptionEn": "AI-powered UI component and prototype generator from prompts.",
+    "pricing": {
+      "free": "Gratuit avec crédits limités",
+      "paid": "Starter 20$/mois · Business 100$/mois"
+    },
+    "defaultMonthlyPrice": 18.4,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.magicpatterns.com",
+    "logo": ""
+  },
+  {
+    "id": "dynamic-mockups",
+    "slug": "dynamic-mockups",
+    "name": "Dynamic Mockups",
+    "categoryId": "design-tools",
+    "shortDescription": "Générateur de mockups produit automatisé avec API et batch export.",
+    "shortDescriptionEn": "Automated product mockup generator with API and batch export.",
+    "pricing": {
+      "free": "Gratuit avec 50 crédits de démarrage",
+      "paid": "Pro 15$/mois avec crédits renouvelables et batch illimité"
+    },
+    "defaultMonthlyPrice": 13.8,
+    "affiliateLink": "",
+    "websiteUrl": "https://dynamicmockups.com",
+    "logo": ""
+  },
+  {
+    "id": "motion-app",
+    "slug": "motion-app",
+    "name": "Motion",
+    "categoryId": "organization",
+    "shortDescription": "Calendrier IA qui planifie automatiquement tes tâches et réunions.",
+    "shortDescriptionEn": "AI calendar that automatically schedules your tasks and meetings.",
+    "pricing": {
+      "free": "Essai 7 jours (accès complet, CB requise)",
+      "paid": "Pro AI 19$/mois · Business AI 29$/siège/mois"
+    },
+    "defaultMonthlyPrice": 17.48,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.usemotion.com",
+    "logo": ""
+  },
+  {
+    "id": "hyperbrowser",
+    "slug": "hyperbrowser",
+    "name": "Hyperbrowser",
+    "categoryId": "automation",
+    "shortDescription": "Infrastructure de navigateurs cloud pour agents IA et scraping à grande échelle.",
+    "shortDescriptionEn": "Cloud browser infrastructure for AI agents and large-scale scraping.",
+    "pricing": {
+      "free": "Gratuit avec 1 000 crédits de démarrage",
+      "paid": "Startup 30$/mois · Scale 100$/mois"
+    },
+    "defaultMonthlyPrice": 27.6,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.hyperbrowser.ai",
+    "logo": ""
+  },
+  {
+    "id": "flowmapp",
+    "slug": "flowmapp",
+    "name": "FlowMapp",
+    "categoryId": "design-tools",
+    "shortDescription": "Outil de planification UX : sitemaps, user flows et wireframes collaboratifs.",
+    "shortDescriptionEn": "UX planning tool: collaborative sitemaps, user flows and wireframes.",
+    "pricing": {
+      "free": "Gratuit avec 1 projet actif",
+      "paid": "Pro 15$/mois · Team 35$/mois · Agency 99$/mois"
+    },
+    "defaultMonthlyPrice": 13.8,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.flowmapp.com",
+    "logo": ""
+  },
+  {
+    "id": "postsyncer",
+    "slug": "postsyncer",
+    "name": "PostSyncer",
+    "categoryId": "creation",
+    "shortDescription": "Planificateur de réseaux sociaux avec IA et vidéos IA pour créateurs et agences.",
+    "shortDescriptionEn": "Social media scheduler with AI content and AI videos for creators and agencies.",
+    "pricing": {
+      "free": "Essai 7 jours sans CB",
+      "paid": "Starter 29$/mois · Pro 49$/mois · Pro Plus 99$/mois"
+    },
+    "defaultMonthlyPrice": 26.68,
+    "affiliateLink": "",
+    "websiteUrl": "https://postsyncer.com",
+    "logo": ""
+  },
+  {
+    "id": "crayo-ai",
+    "slug": "crayo-ai",
+    "name": "Crayo AI",
+    "categoryId": "creation",
+    "shortDescription": "Créateur de vidéos virales courtes avec IA — clips, sous-titres et branding en secondes.",
+    "shortDescriptionEn": "AI short-form viral video creator — clips, subtitles and branding in seconds.",
+    "pricing": {
+      "free": "Aucun plan gratuit disponible",
+      "paid": "Hobby 19$/mois · Clipper 39$/mois · Pro 79$/mois (mensuel)"
+    },
+    "defaultMonthlyPrice": 17.48,
+    "affiliateLink": "",
+    "websiteUrl": "https://crayo.ai",
+    "logo": ""
+  },
+  {
+    "id": "rork",
+    "slug": "rork",
+    "name": "Rork",
+    "categoryId": "nocode-web",
+    "shortDescription": "Construis des apps mobiles iOS et Android avec l'IA en quelques minutes.",
+    "shortDescriptionEn": "Build iOS and Android mobile apps with AI in minutes.",
+    "pricing": {
+      "free": "Gratuit avec 35 crédits/mois",
+      "paid": "Junior 25$/mois · Senior 100$/mois · Scale 200$/mois"
+    },
+    "defaultMonthlyPrice": 23.0,
+    "affiliateLink": "",
+    "websiteUrl": "https://rork.com",
+    "logo": ""
+  },
+  {
+    "id": "emergent",
+    "slug": "emergent",
+    "name": "Emergent",
+    "categoryId": "nocode-web",
+    "shortDescription": "Construis des apps web et mobiles avec l'IA — MVP en heures, pas en semaines.",
+    "shortDescriptionEn": "Build web and mobile apps with AI — MVP in hours, not weeks.",
+    "pricing": {
+      "free": "Gratuit avec 10 crédits/mois",
+      "paid": "Standard 20$/mois · Pro 200$/mois · Team 300$/mois"
+    },
+    "defaultMonthlyPrice": 18.4,
+    "affiliateLink": "",
+    "websiteUrl": "https://emergent.sh",
+    "logo": ""
+  },
+  {
+    "id": "hugeicons",
+    "slug": "hugeicons",
+    "name": "Hugeicons",
+    "categoryId": "design-tools",
+    "shortDescription": "Bibliothèque de 51 000+ icônes UI professionnelles pour designers et développeurs.",
+    "shortDescriptionEn": "Library of 51,000+ professional UI icons for designers and developers.",
+    "pricing": {
+      "free": "Gratuit avec 5 100+ icônes",
+      "paid": "Pro 99$/an (8,25$/mois) · Pro Plus 1 197$ achat unique"
+    },
+    "defaultMonthlyPrice": 7.59,
+    "affiliateLink": "",
+    "websiteUrl": "https://hugeicons.com",
+    "logo": ""
+  },
+  {
+    "id": "brandcrowd",
+    "slug": "brandcrowd",
+    "name": "BrandCrowd",
+    "categoryId": "design-tools",
+    "shortDescription": "Créateur de logos, cartes de visite et identités visuelles pour freelances et PME.",
+    "shortDescriptionEn": "Logo, business card and visual identity creator for freelancers and SMBs.",
+    "pricing": {
+      "free": "Gratuit pour générer et prévisualiser",
+      "paid": "Premium 9$/mois · Premium + Site web 14$/mois"
+    },
+    "defaultMonthlyPrice": 8.28,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.brandcrowd.com",
+    "logo": ""
+  },
+  {
+    "id": "perplexity",
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "categoryId": "ai-general",
+    "shortDescription": "Moteur de recherche IA avec citations en temps réel — la recherche réinventée.",
+    "shortDescriptionEn": "AI search engine with real-time citations — search reinvented.",
+    "pricing": {
+      "free": "Gratuit avec 5 recherches Pro/jour",
+      "paid": "Pro 20$/mois (ou 200$/an) · Max 200$/mois"
+    },
+    "defaultMonthlyPrice": 18.4,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.perplexity.ai",
+    "logo": ""
+  },
+  {
+    "id": "monday",
+    "slug": "monday",
+    "name": "Monday.com",
+    "categoryId": "project-management",
+    "shortDescription": "Plateforme de gestion de projets et CRM visuelle pour équipes de toutes tailles.",
+    "shortDescriptionEn": "Visual project management and CRM platform for teams of all sizes.",
+    "pricing": {
+      "free": "Gratuit jusqu'à 2 sièges",
+      "paid": "Basic 9$/siège/mois · Standard 12$ · Pro 19$ (annuel, min 3 sièges)"
+    },
+    "defaultMonthlyPrice": 8.28,
+    "affiliateLink": "",
+    "websiteUrl": "https://monday.com",
+    "logo": ""
+  },
+  {
+    "id": "windsurf",
+    "slug": "windsurf",
+    "name": "Windsurf",
+    "categoryId": "ai-general",
+    "shortDescription": "Éditeur de code IA agentique — l'alternative à Cursor avec Cascade AI.",
+    "shortDescriptionEn": "Agentic AI code editor — the Cursor alternative with Cascade AI.",
+    "pricing": {
+      "free": "Gratuit avec 25 crédits/mois et accès Cascade",
+      "paid": "Pro 15$/mois · Teams 30$/utilisateur/mois · Enterprise 60$/utilisateur"
+    },
+    "defaultMonthlyPrice": 13.8,
+    "affiliateLink": "",
+    "websiteUrl": "https://windsurf.com",
+    "logo": ""
+  },
+  {
+    "id": "opus-clip",
+    "slug": "opus-clip",
+    "name": "Opus Clip",
+    "categoryId": "creation",
+    "shortDescription": "Transforme tes longues vidéos en clips viraux courts avec l'IA.",
+    "shortDescriptionEn": "Turn your long videos into viral short clips with AI.",
+    "pricing": {
+      "free": "Gratuit avec 60 crédits/mois",
+      "paid": "Starter 15$/mois · Pro ~14,50$/mois (annuel)"
+    },
+    "defaultMonthlyPrice": 13.8,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.opus.pro",
+    "logo": ""
+  },
+  {
+    "id": "fathom",
+    "slug": "fathom",
+    "name": "Fathom",
+    "categoryId": "ai-general",
+    "shortDescription": "Assistant IA de prise de notes pour tes réunions Zoom, Meet et Teams.",
+    "shortDescriptionEn": "AI meeting notes assistant for your Zoom, Meet and Teams calls.",
+    "pricing": {
+      "free": "Gratuit avec enregistrement illimité (5 résumés IA/mois)",
+      "paid": "Premium 19$/mois · Team 15$/utilisateur/mois · Business 25$/utilisateur"
+    },
+    "defaultMonthlyPrice": 17.48,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.fathom.ai",
+    "logo": ""
+  },
+  {
+    "id": "whimsical",
+    "slug": "whimsical",
+    "name": "Whimsical",
+    "categoryId": "design-tools",
+    "shortDescription": "Wireframes, flowcharts, mind maps et docs sur canvas infini avec IA.",
+    "shortDescriptionEn": "Wireframes, flowcharts, mind maps and docs on infinite canvas with AI.",
+    "pricing": {
+      "free": "Gratuit avec 3 boards d'équipe",
+      "paid": "Pro 10$/utilisateur/mois"
+    },
+    "defaultMonthlyPrice": 9.2,
+    "affiliateLink": "",
+    "websiteUrl": "https://whimsical.com",
+    "logo": ""
+  },
+  {
+    "id": "penpot",
+    "slug": "penpot",
+    "name": "Penpot",
+    "categoryId": "design-tools",
+    "shortDescription": "Alternative open-source et gratuite à Figma — design et prototypage collaboratif.",
+    "shortDescriptionEn": "Free open-source alternative to Figma — collaborative design and prototyping.",
+    "pricing": {
+      "free": "Gratuit (cloud complet, auto-hébergeable également)",
+      "paid": "Professional à partir de 7$/mois pour les équipes"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://penpot.app",
+    "logo": ""
+  },
+  {
+    "id": "screen-studio",
+    "slug": "screen-studio",
+    "name": "Screen Studio",
+    "categoryId": "creation",
+    "shortDescription": "Enregistreur d'écran Mac avec effets cinématiques automatiques — pour des démos pro.",
+    "shortDescriptionEn": "Mac screen recorder with automatic cinematic effects — for pro demos.",
+    "pricing": {
+      "free": "Gratuit pour enregistrer et prévisualiser",
+      "paid": "Annuel 9$/mois ($108/an) · Mensuel 29$/mois"
+    },
+    "defaultMonthlyPrice": 8.28,
+    "affiliateLink": "",
+    "websiteUrl": "https://screen.studio",
+    "logo": ""
+  },
+  {
+    "id": "granola",
+    "slug": "granola",
+    "name": "Granola",
+    "categoryId": "ai-general",
+    "shortDescription": "Bloc-notes IA pour tes réunions — prend des notes pendant que tu écoutes.",
+    "shortDescriptionEn": "AI notepad for your meetings — takes notes while you listen.",
+    "pricing": {
+      "free": "Gratuit avec historique 30 jours",
+      "paid": "Business 14$/utilisateur/mois · Enterprise 35$/utilisateur"
+    },
+    "defaultMonthlyPrice": 12.88,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.granola.ai",
+    "logo": ""
+  },
+  {
+    "id": "jotform",
+    "slug": "jotform",
+    "name": "Jotform",
+    "categoryId": "nocode-web",
+    "shortDescription": "Créateur de formulaires puissant avec 10 000+ templates, paiements et automatisations.",
+    "shortDescriptionEn": "Powerful form builder with 10,000+ templates, payments and automations.",
+    "pricing": {
+      "free": "Gratuit avec 5 formulaires et 100 soumissions/mois",
+      "paid": "Bronze 34$/mois · Silver 39$/mois · Gold 99$/mois"
+    },
+    "defaultMonthlyPrice": 31.28,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.jotform.com",
     "logo": ""
   }
 ]
