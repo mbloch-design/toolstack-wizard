@@ -37359,7 +37359,9 @@
       "price_reliability": "high",
       "usage_sensitive": false,
       "location_sensitive": true,
-      "cautions": ["Prix HT — TVA 20% applicable. Frais additionnels au-delà de 30 virements SEPA/mois sur le plan Basic."],
+      "cautions": [
+        "Prix HT — TVA 20% applicable. Frais additionnels au-delà de 30 virements SEPA/mois sur le plan Basic."
+      ],
       "source_domain": "qonto.com",
       "verified_on": "2026-05-05",
       "official_source_url": "https://qonto.com/fr/pricing",
@@ -37373,13 +37375,37 @@
       "metaDescription": "Qonto pour freelances : 9€/mois, IBAN FR, synchro Pennylane/Tiime/Indy. Notre verdict honnête, les limites réelles, et quand préférer Shine ou Revolut Business."
     },
     "articles": [],
-    "covers": ["compte-pro", "facturation", "cartes-paiement", "virements-sepa", "synchro-compta", "notes-frais"],
+    "covers": [
+      "compte-pro",
+      "facturation",
+      "cartes-paiement",
+      "virements-sepa",
+      "synchro-compta",
+      "notes-frais"
+    ],
     "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "high",
-    "bestFor": ["freelance", "consultant", "agence", "startup", "pme"],
-    "relevantFor": ["freelance", "consultant", "agence", "startup", "pme"],
-    "alternatives": ["shine", "blank", "propulse-ca", "revolut-business"],
+    "bestFor": [
+      "freelance",
+      "consultant",
+      "agence",
+      "startup",
+      "pme"
+    ],
+    "relevantFor": [
+      "freelance",
+      "consultant",
+      "agence",
+      "startup",
+      "pme"
+    ],
+    "alternatives": [
+      "shine",
+      "blank",
+      "propulse-ca",
+      "revolut-business"
+    ],
     "verdict": {
       "keepIf": [
         "Tu factures tes clients en France ou en Europe et veux un IBAN FR propre",
@@ -37456,8 +37482,17 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": ["finance-ops", "freelance-ops", "business-ops"],
-    "functional_needs": ["compte-pro", "facturation", "synchro-compta", "notes-frais"],
+    "verticals": [
+      "finance-ops",
+      "freelance-ops",
+      "business-ops"
+    ],
+    "functional_needs": [
+      "compte-pro",
+      "facturation",
+      "synchro-compta",
+      "notes-frais"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -37465,7 +37500,11 @@
     "prescription_quality": "oui",
     "prescription_output": null,
     "prescription_block_reasons": [],
-    "prescription_context_questions": ["business_structure", "monthly_revenue", "needs_invoicing"],
+    "prescription_context_questions": [
+      "business_structure",
+      "monthly_revenue",
+      "needs_invoicing"
+    ],
     "substitution_cluster_v2": "compte-pro",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -37475,7 +37514,13 @@
       "never_auto_cancel_reason": "Outil bancaire critique — ne jamais résilier automatiquement.",
       "default_decision_lane": "prescribe"
     },
-    "personas": ["theo", "sofia", "marc", "claire", "alix"],
+    "personas": [
+      "theo",
+      "sofia",
+      "marc",
+      "claire",
+      "alix"
+    ],
     "force_silence": false,
     "timeGainedHoursPerMonth": 3
   },
@@ -58052,5 +58097,1259 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false
+  },
+  {
+    "id": "taskade",
+    "slug": "taskade",
+    "name": "Taskade",
+    "category": "project-management",
+    "websiteUrl": "https://taskade.com",
+    "shortDescription": "Espace de travail IA tout-en-un : tâches, agents, docs et automatisations.",
+    "shortDescriptionEn": "All-in-one AI workspace: tasks, agents, docs and automations.",
+    "longDescription": "Taskade combine gestion de tâches, notes, documents et agents IA dans un seul espace de travail. Contrairement à Notion (statique) ou ClickUp (complexe), Taskade permet de créer des agents IA autonomes qui exécutent des workflows sans intervention manuelle.\n\nA partir de 5,52€/mois (Starter), tu obtiens 10 000 crédits IA/mois, des agents illimités et 5 Go de base de connaissances. En pratique : un agent peut récupérer tes emails, créer des tâches, générer des résumés et mettre à jour un document de suivi — le tout sans cliquer.\n\nÀ garder si : tu gères plusieurs projets en parallèle et tu passes plus d'1h/semaine à créer des tâches ou des résumés. À éviter si : tu travailles seul sur un seul projet ou que tu n'as jamais utilisé d'agents IA (courbe d'apprentissage réelle).",
+    "longDescriptionEn": "Taskade combines task management, notes, documents and AI agents in a single workspace. Unlike Notion (static) or ClickUp (complex), Taskade lets you create autonomous AI agents that execute workflows without manual input.\n\nFrom $6/mo (Starter), you get 10,000 AI credits/month, unlimited agents and 5 GB knowledge base. In practice: an agent can fetch your emails, create tasks, generate summaries and update a tracking doc — all without clicking.\n\nKeep it if: you manage multiple projects simultaneously and spend 1h+/week creating tasks or summaries. Skip it if: you work solo on a single project or have never used AI agents (real learning curve).",
+    "defaultMonthlyPrice": 5.52,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "taskade.com",
+      "official_source_url": "https://taskade.com/pricing",
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 5.52,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": []
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 3 000 crédits unique, 3 apps max",
+      "paid": "Starter 5,52€/mois · Pro 14,73€ · Business 36,84€"
+    },
+    "pricing": {
+      "free": "Free plan with 3,000 one-time credits",
+      "paid": "Starter $6/mo, Pro $16/mo, Business $40/mo"
+    },
+    "pricingEn": {
+      "free": "Free plan available",
+      "paid": "Starter $6/mo · Pro $16/mo · Business $40/mo"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "consultant",
+      "tech",
+      "content-creator",
+      "other"
+    ],
+    "bestFor": [
+      "consultant",
+      "tech",
+      "content-creator"
+    ],
+    "pros": [
+      "Agents IA autonomes qui exécutent des tâches sans supervision",
+      "Interface unifiée : tâches + docs + chats + agents dans un seul outil",
+      "Plan Starter très abordable (5,52€/mois)",
+      "Templates d'agents prêts à l'emploi (résumé, recherche, veille)",
+      "Sync calendrier et intégrations natives (Slack, Gmail, GitHub)"
+    ],
+    "prosEn": [
+      "Autonomous AI agents that execute tasks without supervision",
+      "Unified interface: tasks + docs + chats + agents in one tool",
+      "Very affordable Starter plan ($6/mo)",
+      "Ready-to-use agent templates (summary, research, monitoring)",
+      "Calendar sync and native integrations (Slack, Gmail, GitHub)"
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour configurer les agents IA",
+      "Credits IA consommés vite sur le plan Starter",
+      "Moins mature que Notion pour la documentation pure",
+      "Interface parfois surchargée pour un usage simple"
+    ],
+    "consEn": [
+      "Learning curve to configure AI agents",
+      "AI credits consumed quickly on the Starter plan",
+      "Less mature than Notion for pure documentation",
+      "Interface can feel overwhelming for simple use cases"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu gères 3+ projets simultanément",
+        "Tu veux automatiser des workflows répétitifs (CR, rapports, veille)",
+        "Tu utilises déjà un outil IA au quotidien"
+      ],
+      "avoidIf": [
+        "Tu n'as jamais utilisé d'agents IA",
+        "Un simple outil de tâches suffit à ton usage",
+        "Tu travailles exclusivement sur papier ou en équipe sans outils digitaux"
+      ],
+      "threshold": "Dès que tu passes plus de 2h/semaine à créer des résumés, des CR ou des tâches répétitives."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You manage 3+ projects simultaneously",
+        "You want to automate repetitive workflows (meeting notes, reports, monitoring)",
+        "You already use AI tools daily"
+      ],
+      "avoidIf": [
+        "You have never used AI agents",
+        "A simple task tool covers your needs",
+        "You work exclusively on paper or in a non-digital team"
+      ],
+      "threshold": "As soon as you spend 2h+/week creating summaries, meeting notes or repetitive tasks."
+    },
+    "useCases": [
+      "Créer un agent de veille qui compile des articles chaque matin",
+      "Automatiser la création de compte-rendus de réunion",
+      "Générer des briefs clients à partir d'un template"
+    ],
+    "useCasesEn": [
+      "Create a monitoring agent that compiles articles every morning",
+      "Automate meeting note creation",
+      "Generate client briefs from a template"
+    ],
+    "alternatives": [
+      "clickup",
+      "notion"
+    ],
+    "functional_needs": [
+      "project-management",
+      "task-management",
+      "ai-automation",
+      "team-collaboration"
+    ],
+    "seo": {
+      "metaDescription": "Taskade à 5,52€/mois : agents IA autonomes, gestion de projets et docs dans un seul espace. Vaut-il le coût vs Notion ou ClickUp ? Verdict ToolTrim."
+    }
+  },
+  {
+    "id": "superwhisper",
+    "slug": "superwhisper",
+    "name": "Superwhisper",
+    "category": "productivity-tracking",
+    "websiteUrl": "https://superwhisper.com",
+    "shortDescription": "Dictée vocale IA dans toutes tes apps — macOS uniquement.",
+    "shortDescriptionEn": "AI voice dictation in every app — macOS only.",
+    "longDescription": "Superwhisper transcrit ta voix en texte dans n'importe quelle application macOS : email, Slack, éditeur de code, navigateur. La différence avec les outils de dictée classiques : les modes personnalisables qui reformattent automatiquement selon le contexte (email formel, message slack, commentaire de code).\n\nÀ 7,82€/mois (Pro), tu accèdes à tous les modèles IA (GPT-5, Claude, Gemini), aux traductions temps réel et à la transcription de fichiers audio. En offline, le modèle local Whisper tourne directement sur le Mac, sans envoyer tes données.\n\nCas d'usage concret pour un freelance : dicter ses emails depuis n'importe où, transcrire automatiquement ses calls clients, composer des posts LinkedIn à la voix en 2 minutes.",
+    "longDescriptionEn": "Superwhisper transcribes your voice into text in any macOS application: email, Slack, code editor, browser. The difference from classic dictation tools: customizable modes that auto-reformat based on context (formal email, slack message, code comment).\n\nAt $8.49/mo (Pro), you get access to all AI models (GPT-5, Claude, Gemini), real-time translation and audio file transcription. Offline, the local Whisper model runs directly on your Mac without sending your data.\n\nPractical use case for a freelancer: dictate emails from anywhere, auto-transcribe client calls, compose LinkedIn posts by voice in 2 minutes.",
+    "defaultMonthlyPrice": 7.82,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "superwhisper.com",
+      "official_source_url": "https://superwhisper.com",
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 7.82,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "macos_only"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — transcription de base, modèles IA small",
+      "paid": "Pro 7,82€/mois · Annual 78,14€/an · Lifetime ~230€ unique"
+    },
+    "pricing": {
+      "free": "Free tier with small AI models",
+      "paid": "Pro $8.49/mo or $79/yr, Lifetime $249"
+    },
+    "pricingEn": {
+      "free": "Free with small AI models",
+      "paid": "Pro $8.49/mo · Annual $79/yr · Lifetime $249"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "consultant",
+      "content-creator",
+      "tech",
+      "designer",
+      "other"
+    ],
+    "bestFor": [
+      "consultant",
+      "content-creator",
+      "tech"
+    ],
+    "pros": [
+      "Fonctionne dans toutes les apps macOS sans copy-paste",
+      "Modes personnalisables (email, slack, code, etc.)",
+      "Modèle offline Whisper : données restent sur le Mac",
+      "100+ langues et traduction temps réel",
+      "Raccourcis clavier configurables pour un workflow sans friction"
+    ],
+    "prosEn": [
+      "Works in every macOS app without copy-paste",
+      "Customizable modes (email, slack, code, etc.)",
+      "Offline Whisper model: data stays on your Mac",
+      "100+ languages and real-time translation",
+      "Configurable keyboard shortcuts for frictionless workflow"
+    ],
+    "cons": [
+      "macOS uniquement — aucune version Windows ou mobile",
+      "Plan gratuit limité aux petits modèles IA",
+      "Nécessite une bonne connexion pour les modèles cloud",
+      "Prix Lifetime élevé pour un outil encore en évolution"
+    ],
+    "consEn": [
+      "macOS only — no Windows or mobile version",
+      "Free plan limited to small AI models",
+      "Requires good connection for cloud models",
+      "High Lifetime price for a still-evolving tool"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu es sur Mac et tu tapes plus de 1 000 mots/jour",
+        "Tu fais des calls clients à transcrire régulièrement",
+        "Tu veux composer des emails ou messages à la voix"
+      ],
+      "avoidIf": [
+        "Tu es sur Windows ou Linux",
+        "Tu dictes rarement ou uniquement pour des notes courtes",
+        "La version gratuite de Whisper dans ton navigateur suffit"
+      ],
+      "threshold": "Dès que tu passes 30 min/jour à taper des textes répétitifs (emails, messages, notes)."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You are on Mac and type 1,000+ words/day",
+        "You regularly have client calls to transcribe",
+        "You want to compose emails or messages by voice"
+      ],
+      "avoidIf": [
+        "You are on Windows or Linux",
+        "You rarely dictate or only need short notes",
+        "The free Whisper version in your browser is enough"
+      ],
+      "threshold": "As soon as you spend 30 min/day typing repetitive texts (emails, messages, notes)."
+    },
+    "useCases": [
+      "Dicter ses emails clients directement depuis la boîte mail",
+      "Transcrire automatiquement des appels enregistrés",
+      "Composer des posts LinkedIn à la voix lors d'un déplacement"
+    ],
+    "useCasesEn": [
+      "Dictate client emails directly from your inbox",
+      "Auto-transcribe recorded calls",
+      "Compose LinkedIn posts by voice while commuting"
+    ],
+    "alternatives": [
+      "otter-ai"
+    ],
+    "functional_needs": [
+      "voice-to-text",
+      "transcription",
+      "productivity"
+    ],
+    "seo": {
+      "metaDescription": "Superwhisper Pro à 7,82€/mois : dictée vocale IA dans toutes tes apps macOS. Verdict ToolTrim : vaut-il le coup pour un freelance ?"
+    }
+  },
+  {
+    "id": "fillout",
+    "slug": "fillout",
+    "name": "Fillout",
+    "category": "nocode-web",
+    "websiteUrl": "https://fillout.com",
+    "shortDescription": "Formulaires intelligents avec logique conditionnelle, paiements et IA.",
+    "shortDescriptionEn": "Smart forms with conditional logic, payments and AI.",
+    "longDescription": "Fillout est un outil de création de formulaires qui va bien au-delà de Google Forms : logique conditionnelle avancée, collecte de paiements Stripe, planification de rendez-vous, génération de PDF, et connexion native à Notion, Airtable ou HubSpot.\n\nLe plan gratuit autorise 1 000 réponses/mois avec des formulaires illimités. Le plan Starter à 13,80€/mois monte à 2 000 réponses et ajoute les formulaires de connexion et les redirections personnalisées. En pratique, Fillout remplace Typeform (5× plus cher) pour 90% des cas d'usage freelance : onboarding client, brief projet, collecte de témoignages, questionnaires de satisfaction.",
+    "longDescriptionEn": "Fillout is a form builder that goes well beyond Google Forms: advanced conditional logic, Stripe payment collection, appointment scheduling, PDF generation, and native connections to Notion, Airtable or HubSpot.\n\nThe free plan allows 1,000 responses/month with unlimited forms. The Starter plan at $15/mo scales to 2,000 responses and adds login forms and custom redirects. In practice, Fillout replaces Typeform (5× more expensive) for 90% of freelance use cases: client onboarding, project briefs, testimonial collection, satisfaction surveys.",
+    "defaultMonthlyPrice": 13.8,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "fillout.com",
+      "official_source_url": "https://fillout.com/pricing",
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 13.8,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "volume_sensitive_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 1 000 réponses/mois, formulaires illimités",
+      "paid": "Starter 13,80€/mois · Pro 36,84€ · Business 69,07€"
+    },
+    "pricing": {
+      "free": "Free — 1,000 responses/month, unlimited forms",
+      "paid": "Starter $15/mo · Pro $40 · Business $75"
+    },
+    "pricingEn": {
+      "free": "Free with 1,000 responses/month",
+      "paid": "Starter $15/mo · Pro $40/mo · Business $75/mo"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "consultant",
+      "designer",
+      "content-creator",
+      "other"
+    ],
+    "bestFor": [
+      "consultant",
+      "designer"
+    ],
+    "pros": [
+      "Plan gratuit généreux (1 000 réponses, formulaires illimités)",
+      "Logique conditionnelle parmi les plus puissantes du marché",
+      "Collecte de paiements Stripe directement dans le formulaire",
+      "Connexions natives Notion, Airtable, HubSpot sans Zapier",
+      "Génération de PDF automatique à partir des réponses"
+    ],
+    "prosEn": [
+      "Generous free plan (1,000 responses, unlimited forms)",
+      "Conditional logic among the most powerful on the market",
+      "Stripe payment collection directly in the form",
+      "Native Notion, Airtable, HubSpot connections without Zapier",
+      "Automatic PDF generation from responses"
+    ],
+    "cons": [
+      "Analytics avancées réservées au plan Business (75$/mois)",
+      "Domaine personnalisé uniquement en Business",
+      "Moins connu que Typeform : certains clients peuvent hésiter",
+      "Interface en anglais uniquement"
+    ],
+    "consEn": [
+      "Advanced analytics reserved for the Business plan ($75/mo)",
+      "Custom domain only on Business",
+      "Less known than Typeform: some clients may hesitate",
+      "Interface in English only"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu envoies des formulaires d'onboarding ou des briefs à tes clients",
+        "Tu veux collecter des paiements sans passer par une page dédiée",
+        "Tu utilises déjà Notion ou Airtable et veux synchroniser les réponses"
+      ],
+      "avoidIf": [
+        "Tu as moins de 5 formulaires actifs par an",
+        "Google Forms suffit pour ton usage",
+        "Tu as besoin d'analytics détaillées dès le départ"
+      ],
+      "threshold": "Dès que tu envoies plus de 3 formulaires différents par mois à des clients."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You send onboarding forms or briefs to clients",
+        "You want to collect payments without a dedicated page",
+        "You already use Notion or Airtable and want to sync responses"
+      ],
+      "avoidIf": [
+        "You have fewer than 5 active forms per year",
+        "Google Forms covers your needs",
+        "You need detailed analytics from day one"
+      ],
+      "threshold": "As soon as you send more than 3 different forms per month to clients."
+    },
+    "useCases": [
+      "Formulaire d'onboarding client qui crée automatiquement un projet Notion",
+      "Collecte de témoignages avec génération PDF automatique",
+      "Brief de projet avec logique conditionnelle selon le type de mission"
+    ],
+    "useCasesEn": [
+      "Client onboarding form that auto-creates a Notion project",
+      "Testimonial collection with automatic PDF generation",
+      "Project brief with conditional logic based on mission type"
+    ],
+    "freeAlternative": "google-forms",
+    "alternatives": [
+      "typeform"
+    ],
+    "functional_needs": [
+      "forms",
+      "data-collection",
+      "payments",
+      "no-code"
+    ],
+    "seo": {
+      "metaDescription": "Fillout gratuit ou 13,80€/mois : formulaires avec logique conditionnelle, paiements Stripe et connexion Notion. Alternative à Typeform 5× moins chère."
+    }
+  },
+  {
+    "id": "firecrawl",
+    "slug": "firecrawl",
+    "name": "Firecrawl",
+    "category": "automation",
+    "websiteUrl": "https://firecrawl.dev",
+    "shortDescription": "API de scraping web propre : transforme n'importe quel site en données structurées.",
+    "shortDescriptionEn": "Clean web scraping API: turns any website into structured data.",
+    "longDescription": "Firecrawl est une API de scraping qui transforme n'importe quelle URL en Markdown ou JSON propre, compatible LLM. Contrairement aux scrapers classiques (BeautifulSoup, Puppeteer), Firecrawl gère nativement le JavaScript, les CAPTCHAs, les proxies rotatifs et les sitemaps.\n\nLe plan gratuit offre 1 000 crédits/mois (1 crédit = 1 page scrapée). Le plan Hobby à 14,74€/mois monte à 5 000 crédits. En pratique : extraction de données concurrentes, veille tarifaire, alimentation de pipelines IA, construction de datasets d'entraînement.\n\nÀ utiliser si tu construis des workflows IA qui ont besoin de données web fraîches. À éviter si tu n'as jamais écrit une ligne de code — c'est un outil développeur.",
+    "longDescriptionEn": "Firecrawl is a scraping API that turns any URL into clean, LLM-compatible Markdown or JSON. Unlike classic scrapers (BeautifulSoup, Puppeteer), Firecrawl natively handles JavaScript, CAPTCHAs, rotating proxies and sitemaps.\n\nThe free plan offers 1,000 credits/month (1 credit = 1 scraped page). The Hobby plan at $16/mo scales to 5,000 credits. In practice: competitive data extraction, price monitoring, feeding AI pipelines, building training datasets.\n\nUse it if you are building AI workflows that need fresh web data. Skip it if you have never written a line of code — this is a developer tool.",
+    "defaultMonthlyPrice": 14.74,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "firecrawl.dev",
+      "official_source_url": "https://firecrawl.dev/pricing",
+      "compare_plan_name": "Hobby",
+      "compare_plan_kind": "usage",
+      "compare_price_monthly_eur": 14.74,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 1 000 crédits/mois (1 page = 1 crédit)",
+      "paid": "Hobby 14,74€/mois (5k crédits) · Standard 76,44€ (100k) · Growth 306,94€ (500k)"
+    },
+    "pricing": {
+      "free": "Free — 1,000 credits/month",
+      "paid": "Hobby $16/mo · Standard $83 · Growth $333"
+    },
+    "pricingEn": {
+      "free": "Free with 1,000 credits/month",
+      "paid": "Hobby $16/mo · Standard $83/mo · Growth $333/mo"
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "tech",
+      "consultant",
+      "other"
+    ],
+    "bestFor": [
+      "tech"
+    ],
+    "pros": [
+      "API simple et bien documentée, intégration en 5 minutes",
+      "Gestion native du JavaScript, CAPTCHAs et proxies rotatifs",
+      "Output Markdown propre directement exploitable par un LLM",
+      "Support des sitemaps pour crawler un site entier",
+      "Open-source : peut être self-hébergé"
+    ],
+    "prosEn": [
+      "Simple, well-documented API, integration in 5 minutes",
+      "Native handling of JavaScript, CAPTCHAs and rotating proxies",
+      "Clean Markdown output directly usable by an LLM",
+      "Sitemap support to crawl an entire site",
+      "Open-source: can be self-hosted"
+    ],
+    "cons": [
+      "Outil développeur — pas d'interface no-code",
+      "Crédits consommés vite sur des sites avec beaucoup de pages",
+      "Tarifs élevés dès qu'on passe au Standard (76€/mois)",
+      "Pas adapté au scraping temps réel à très haute fréquence"
+    ],
+    "consEn": [
+      "Developer tool — no no-code interface",
+      "Credits consumed quickly on large sites",
+      "High pricing once you move to Standard ($83/mo)",
+      "Not suited for very high-frequency real-time scraping"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu construis des workflows IA avec des données web",
+        "Tu fais de la veille concurrentielle ou tarifaire automatisée",
+        "Tu as besoin de scraper des sites JavaScript-heavy"
+      ],
+      "avoidIf": [
+        "Tu n'as pas de compétences en code ou API",
+        "Ton besoin est de scraper moins de 100 pages/mois",
+        "Un simple outil de veille (Mention, Google Alerts) suffit"
+      ],
+      "threshold": "Dès que tu construis un pipeline de données qui a besoin de contenu web frais plus d'une fois par semaine."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You are building AI workflows with web data",
+        "You do automated competitive or price monitoring",
+        "You need to scrape JavaScript-heavy sites"
+      ],
+      "avoidIf": [
+        "You have no coding or API skills",
+        "You need to scrape fewer than 100 pages/month",
+        "A simple monitoring tool (Mention, Google Alerts) covers your needs"
+      ],
+      "threshold": "As soon as you build a data pipeline that needs fresh web content more than once a week."
+    },
+    "useCases": [
+      "Scraper les pages pricing de concurrents pour un tableau de bord tarifaire",
+      "Construire une base de données d'articles pour entraîner un agent IA",
+      "Extraire automatiquement les offres d'emploi d'un secteur"
+    ],
+    "useCasesEn": [
+      "Scrape competitor pricing pages for a pricing dashboard",
+      "Build an article database to train an AI agent",
+      "Auto-extract job offers from a sector"
+    ],
+    "alternatives": [],
+    "functional_needs": [
+      "web-scraping",
+      "data-extraction",
+      "automation",
+      "developer-tools"
+    ],
+    "seo": {
+      "metaDescription": "Firecrawl gratuit ou 14,74€/mois : API de scraping qui transforme n'importe quel site en données propres pour vos LLMs. Verdict ToolTrim."
+    }
+  },
+  {
+    "id": "v0-vercel",
+    "slug": "v0-vercel",
+    "name": "v0 by Vercel",
+    "category": "design-tools",
+    "websiteUrl": "https://v0.dev",
+    "shortDescription": "Génère des composants UI React/Tailwind à partir d'une description texte.",
+    "shortDescriptionEn": "Generate React/Tailwind UI components from a text description.",
+    "longDescription": "v0 est l'outil de génération d'interfaces d'Anthropic Vercel. Tu décris ce que tu veux en langage naturel, v0 génère du code React + Tailwind + shadcn/ui prêt à copier ou déployer directement sur Vercel.\n\nLe plan gratuit inclut 5$ de crédits/mois (≈ 10-15 générations). Le plan Team à 27,60€/utilisateur/mois ajoute la collaboration, 30$ de crédits et le déploiement automatique. En pratique : idéal pour les développeurs qui veulent prototyper une interface en 10 minutes plutôt qu'en 3 heures, ou pour les designers qui veulent générer du code sans coder.\n\nLimite principale : v0 génère du React — si ton stack est Vue, Angular ou autre, la valeur est réduite.",
+    "longDescriptionEn": "v0 is Vercel's UI generation tool. You describe what you want in natural language, v0 generates ready-to-copy or deploy React + Tailwind + shadcn/ui code directly on Vercel.\n\nThe free plan includes $5 credits/month (≈ 10-15 generations). The Team plan at $30/user/mo adds collaboration, $30 credits and auto-deployment. In practice: ideal for developers who want to prototype an interface in 10 minutes rather than 3 hours, or designers who want to generate code without coding.\n\nMain limitation: v0 generates React — if your stack is Vue, Angular or other, the value is reduced.",
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "v0.dev",
+      "official_source_url": "https://v0.app/pricing",
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 0,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based_pricing",
+        "react_only"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 5$/mois de crédits, 7 messages/jour",
+      "paid": "Team 27,60€/utilisateur/mois (30$ crédits + collaboration)"
+    },
+    "pricing": {
+      "free": "Free with $5/mo credits, 7 messages/day",
+      "paid": "Team $30/user/mo · Business $100/user/mo"
+    },
+    "pricingEn": {
+      "free": "Free with $5/mo credits, 7 messages/day",
+      "paid": "Team $30/user/mo · Business $100/user/mo"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "tech",
+      "designer"
+    ],
+    "bestFor": [
+      "tech",
+      "designer"
+    ],
+    "pros": [
+      "Génère du code React + Tailwind + shadcn/ui de qualité production",
+      "Déploiement direct sur Vercel en un clic",
+      "Plan gratuit utilisable pour des prototypes réguliers",
+      "Itération rapide : modifier le composant en langage naturel",
+      "Prévisualisation instantanée dans le navigateur"
+    ],
+    "prosEn": [
+      "Generates production-quality React + Tailwind + shadcn/ui code",
+      "One-click deployment directly on Vercel",
+      "Free plan usable for regular prototyping",
+      "Fast iteration: modify the component in natural language",
+      "Instant browser preview"
+    ],
+    "cons": [
+      "Limité à React — Vue, Angular, Svelte non supportés",
+      "Crédits du plan gratuit épuisés rapidement en usage intensif",
+      "Plan Team à 27,60€/mois peut être cher pour un solo",
+      "Composants générés nécessitent souvent des ajustements manuels"
+    ],
+    "consEn": [
+      "React only — Vue, Angular, Svelte not supported",
+      "Free plan credits exhausted quickly with heavy use",
+      "Team plan at $30/mo can be expensive for a solo",
+      "Generated components often need manual adjustments"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu développes en React + Tailwind",
+        "Tu prototypes des interfaces souvent (>2×/semaine)",
+        "Tu es designer et veux générer du code sans l'écrire"
+      ],
+      "avoidIf": [
+        "Ton stack n'est pas React",
+        "Tu construis rarement des interfaces",
+        "Tu as besoin de composants très personnalisés et complexes"
+      ],
+      "threshold": "Dès que tu passes 1h+ à coder une interface que tu aurais pu décrire en 2 phrases."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You develop in React + Tailwind",
+        "You prototype interfaces often (2×+/week)",
+        "You are a designer who wants to generate code without writing it"
+      ],
+      "avoidIf": [
+        "Your stack is not React",
+        "You rarely build interfaces",
+        "You need very custom and complex components"
+      ],
+      "threshold": "As soon as you spend 1h+ coding an interface you could have described in 2 sentences."
+    },
+    "useCases": [
+      "Prototyper un dashboard en 10 minutes depuis une description texte",
+      "Générer les composants de base d'une landing page",
+      "Créer un formulaire complexe avec validation sans coder"
+    ],
+    "useCasesEn": [
+      "Prototype a dashboard in 10 minutes from a text description",
+      "Generate base components for a landing page",
+      "Create a complex validated form without coding"
+    ],
+    "alternatives": [
+      "cursor",
+      "figma"
+    ],
+    "functional_needs": [
+      "ui-generation",
+      "prototyping",
+      "design-to-code",
+      "developer-tools"
+    ],
+    "seo": {
+      "metaDescription": "v0 by Vercel gratuit ou 27,60€/mois : générez des composants React + Tailwind en langage naturel. Verdict ToolTrim pour devs et designers."
+    }
+  },
+  {
+    "id": "reclaim-ai",
+    "slug": "reclaim-ai",
+    "name": "Reclaim AI",
+    "category": "productivity-tracking",
+    "websiteUrl": "https://reclaim.ai",
+    "shortDescription": "IA qui optimise ton agenda automatiquement : focus time, tâches, réunions.",
+    "shortDescriptionEn": "AI that auto-optimizes your calendar: focus time, tasks, meetings.",
+    "longDescription": "Reclaim AI analyse ton calendrier Google et planifie automatiquement tes blocs de travail, tes habitudes (sport, pause déjeuner) et tes tâches en fonction de tes préférences et de tes contraintes. L'IA déplace les événements pour protéger ton focus time quand une réunion s'ajoute.\n\nLe plan gratuit est très limité (1 semaine de planification, 1 habitude). Le plan Starter à 9,22€/siège/mois (annuel) débloque 8 semaines de planification, les liens de scheduling intelligents et l'analyse des personnes avec qui tu passes le plus de temps.\n\nConcrètement : si tu jonglles entre plusieurs clients et que ton agenda est chaotique, Reclaim réduit la charge mentale de la planification de ~45 min/semaine.",
+    "longDescriptionEn": "Reclaim AI analyzes your Google Calendar and automatically schedules your work blocks, habits (exercise, lunch break) and tasks based on your preferences and constraints. The AI moves events to protect your focus time when a meeting is added.\n\nThe free plan is very limited (1-week scheduling range, 1 habit). The Starter plan at $10/seat/mo (annual) unlocks 8-week scheduling, smart scheduling links and analysis of who you spend the most time with.\n\nPractically speaking: if you juggle multiple clients and your calendar is chaotic, Reclaim reduces scheduling mental load by ~45 min/week.",
+    "defaultMonthlyPrice": 9.22,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "reclaim.ai",
+      "official_source_url": "https://reclaim.ai/pricing",
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "seat",
+      "compare_price_monthly_eur": 9.22,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "google_calendar_only"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 1 semaine de planification, 1 habitude",
+      "paid": "Starter 9,22€/siège/mois · Business 13,82€ · Enterprise 20,26€"
+    },
+    "pricing": {
+      "free": "Free with 1-week range, 1 habit",
+      "paid": "Starter $10/seat/mo · Business $15 · Enterprise $22"
+    },
+    "pricingEn": {
+      "free": "Free with limited range",
+      "paid": "Starter $10/seat/mo · Business $15/seat/mo"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "consultant",
+      "other"
+    ],
+    "bestFor": [
+      "consultant"
+    ],
+    "pros": [
+      "Planification automatique des blocs de focus time",
+      "Liens de scheduling intelligents qui respectent tes contraintes",
+      "Analyse du temps passé par projet ou par personne",
+      "Gestion des habitudes (sport, pauses) intégrée au calendrier",
+      "S'adapte en temps réel quand les plans changent"
+    ],
+    "prosEn": [
+      "Automatic scheduling of focus time blocks",
+      "Smart scheduling links that respect your constraints",
+      "Analysis of time spent per project or person",
+      "Habit management (exercise, breaks) integrated in calendar",
+      "Adapts in real time when plans change"
+    ],
+    "cons": [
+      "Fonctionne uniquement avec Google Calendar",
+      "Plan gratuit trop limité pour être utile",
+      "Courbe d'apprentissage pour configurer les préférences IA",
+      "Parfois trop agressif dans la réorganisation de l'agenda"
+    ],
+    "consEn": [
+      "Works only with Google Calendar",
+      "Free plan too limited to be useful",
+      "Learning curve to configure AI preferences",
+      "Sometimes too aggressive in rescheduling"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu as Google Calendar et plus de 5 réunions par semaine",
+        "Tu veux protéger des blocs de travail profond automatiquement",
+        "Tu jonglles entre 3+ clients avec des disponibilités différentes"
+      ],
+      "avoidIf": [
+        "Tu utilises Outlook ou Apple Calendar",
+        "Tu as moins de 3 réunions par semaine",
+        "Tu préfères planifier manuellement"
+      ],
+      "threshold": "Dès que tu passes plus de 30 min/semaine à réorganiser ton agenda manuellement."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You use Google Calendar and have 5+ meetings/week",
+        "You want to auto-protect deep work blocks",
+        "You juggle 3+ clients with different availabilities"
+      ],
+      "avoidIf": [
+        "You use Outlook or Apple Calendar",
+        "You have fewer than 3 meetings per week",
+        "You prefer manual scheduling"
+      ],
+      "threshold": "As soon as you spend 30+ min/week manually reorganizing your calendar."
+    },
+    "useCases": [
+      "Bloquer automatiquement 2h de travail profond chaque matin",
+      "Créer un lien de scheduling qui respecte tes contraintes horaires",
+      "Analyser combien de temps tu passes vraiment par client"
+    ],
+    "useCasesEn": [
+      "Auto-block 2h of deep work every morning",
+      "Create a scheduling link that respects your time constraints",
+      "Analyze how much time you actually spend per client"
+    ],
+    "alternatives": [],
+    "functional_needs": [
+      "calendar-management",
+      "scheduling",
+      "time-tracking",
+      "productivity"
+    ],
+    "seo": {
+      "metaDescription": "Reclaim AI Starter à 9,22€/mois : IA qui optimise ton agenda Google Calendar automatiquement. Focus time, tâches et réunions sans friction."
+    }
+  },
+  {
+    "id": "grok",
+    "slug": "grok",
+    "name": "Grok",
+    "category": "ai-general",
+    "websiteUrl": "https://grok.com",
+    "shortDescription": "L'assistant IA d'xAI (Elon Musk) avec accès temps réel à X/Twitter.",
+    "shortDescriptionEn": "xAI's (Elon Musk) AI assistant with real-time access to X/Twitter.",
+    "longDescription": "Grok est l'assistant IA développé par xAI, la société d'Elon Musk. Sa principale différenciation vs ChatGPT ou Claude : l'accès en temps réel aux données de X (anciennement Twitter), ce qui en fait un outil puissant pour la veille d'actualité, l'analyse de tendances et les recherches sur des sujets récents.\n\nLe plan gratuit est limité (10 requêtes/2h). SuperGrok à 27,60€/mois débloque les modèles Grok 3, la génération d'images et les agents. Grok est aussi inclus dans X Premium à 7,37€/mois si tu utilises déjà X activement.\n\nÀ utiliser si tu veux un assistant IA avec une perspective sur l'actualité en temps réel. À éviter si tu cherches juste un assistant généraliste — ChatGPT ou Claude font mieux pour la plupart des tâches de bureau.",
+    "longDescriptionEn": "Grok is the AI assistant developed by xAI, Elon Musk's company. Its main differentiator vs ChatGPT or Claude: real-time access to X (formerly Twitter) data, making it a powerful tool for news monitoring, trend analysis and research on recent topics.\n\nThe free plan is limited (10 requests/2h). SuperGrok at $30/mo unlocks Grok 3 models, image generation and agents. Grok is also included in X Premium at $8/mo if you already actively use X.\n\nUse it if you want an AI assistant with a real-time view on current events. Skip it if you just need a generalist assistant — ChatGPT or Claude do better for most office tasks.",
+    "defaultMonthlyPrice": 27.6,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "grok.com",
+      "official_source_url": "https://grok.com/plans",
+      "compare_plan_name": "SuperGrok",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 27.6,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "also_included_in_x_premium"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 10 requêtes/2h, modèles limités",
+      "paid": "SuperGrok Lite 9,21€/mois · SuperGrok 27,60€ · SuperGrok Heavy 276€"
+    },
+    "pricing": {
+      "free": "Free with 10 requests/2h",
+      "paid": "SuperGrok Lite $10/mo · SuperGrok $30/mo · SuperGrok Heavy $300/mo"
+    },
+    "pricingEn": {
+      "free": "Free with 10 requests per 2 hours",
+      "paid": "SuperGrok $30/mo or included in X Premium+ ($40/mo)"
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "prescription_quality": "silence",
+    "relevantFor": [
+      "consultant",
+      "content-creator",
+      "other"
+    ],
+    "bestFor": [
+      "content-creator",
+      "consultant"
+    ],
+    "pros": [
+      "Accès en temps réel aux données X/Twitter pour la veille",
+      "Modèle Grok 3 performant sur le raisonnement et la recherche",
+      "Inclus dans X Premium (si déjà abonné)",
+      "Génération d'images avec Aurora (SuperGrok)",
+      "Réponses moins censurées que ChatGPT sur certains sujets"
+    ],
+    "prosEn": [
+      "Real-time access to X/Twitter data for monitoring",
+      "Grok 3 model strong on reasoning and research",
+      "Included in X Premium (if already subscribed)",
+      "Image generation with Aurora (SuperGrok)",
+      "Less censored answers than ChatGPT on some topics"
+    ],
+    "cons": [
+      "Moins performant que Claude ou GPT-4 sur les tâches de bureau classiques",
+      "Valeur limitée si tu n'utilises pas X activement",
+      "SuperGrok à 27,60€/mois cher vs ChatGPT Plus",
+      "Écosystème moins développé (pas de plugins, moins d'intégrations)"
+    ],
+    "consEn": [
+      "Less performant than Claude or GPT-4 on classic office tasks",
+      "Limited value if you don't actively use X",
+      "SuperGrok at $30/mo expensive vs ChatGPT Plus",
+      "Less developed ecosystem (no plugins, fewer integrations)"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu fais de la veille sur X/Twitter régulièrement",
+        "Tu es déjà abonné X Premium (Grok inclus à moindre coût)",
+        "Tu veux un deuxième avis IA sur de l'actualité brûlante"
+      ],
+      "avoidIf": [
+        "Tu n'utilises pas X au quotidien",
+        "Tu cherches un assistant IA généraliste — ChatGPT ou Claude font mieux",
+        "Tu as un budget limité et utilises déjà un autre assistant IA"
+      ],
+      "threshold": "Seulement si tu utilises X activement et que l'accès temps réel aux tendances a une valeur réelle pour ton activité."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly monitor X/Twitter",
+        "You are already subscribed to X Premium (Grok included cheaper)",
+        "You want a second AI opinion on breaking news"
+      ],
+      "avoidIf": [
+        "You don't use X daily",
+        "You need a generalist AI assistant — ChatGPT or Claude do better",
+        "You have a limited budget and already use another AI assistant"
+      ],
+      "threshold": "Only if you actively use X and real-time trend access has real value for your business."
+    },
+    "useCases": [
+      "Suivre les tendances et discussions sur un secteur en temps réel",
+      "Analyser le sentiment autour d'un sujet X/Twitter",
+      "Recherche rapide sur des événements récents non couverts par les LLMs classiques"
+    ],
+    "useCasesEn": [
+      "Track trends and discussions in a sector in real time",
+      "Analyze sentiment around an X/Twitter topic",
+      "Quick research on recent events not covered by classic LLMs"
+    ],
+    "alternatives": [
+      "chatgpt"
+    ],
+    "functional_needs": [
+      "ai-chat",
+      "research",
+      "content-generation",
+      "social-monitoring"
+    ],
+    "seo": {
+      "metaDescription": "Grok SuperGrok à 27,60€/mois : l'IA d'xAI avec accès temps réel à X/Twitter. Vaut-il le coût face à ChatGPT ? Verdict honnête ToolTrim."
+    }
+  },
+  {
+    "id": "google-ai-studio",
+    "slug": "google-ai-studio",
+    "name": "Google AI Studio",
+    "category": "ai-general",
+    "websiteUrl": "https://aistudio.google.com",
+    "shortDescription": "Playground gratuit pour tester et intégrer les modèles Gemini de Google.",
+    "shortDescriptionEn": "Free playground to test and integrate Google's Gemini models.",
+    "longDescription": "Google AI Studio est l'interface web gratuite pour accéder et tester les modèles Gemini de Google. Aucun abonnement — tu crées une clé API gratuitement et accèdes à Gemini 2.5 Pro, Gemini 2.5 Flash et leurs variantes dans un playground interactif.\n\nPourquoi c'est intéressant : Gemini 2.5 Pro a une fenêtre de contexte de 2 millions de tokens (le plus grand du marché), idéal pour analyser de très longs documents. La version Flash est rapide et gratuite sur le tier gratuit de l'API (60 requêtes/minute).\n\nUsage typique freelance : prototyper un agent IA, tester des prompts avant de payer une API, analyser un document de 500 pages d'un seul coup. L'interface est moins polie que ChatGPT mais techniquement plus puissante pour les développeurs.",
+    "longDescriptionEn": "Google AI Studio is the free web interface to access and test Google's Gemini models. No subscription — you create an API key for free and access Gemini 2.5 Pro, Gemini 2.5 Flash and their variants in an interactive playground.\n\nWhy it matters: Gemini 2.5 Pro has a 2 million token context window (largest on the market), ideal for analyzing very long documents. Flash is fast and free on the API free tier (60 requests/minute).\n\nTypical freelance use: prototyping an AI agent, testing prompts before paying an API, analyzing a 500-page document in one shot. The interface is less polished than ChatGPT but technically more powerful for developers.",
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "aistudio.google.com",
+      "official_source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 0,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "api_costs_separate_from_studio"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — interface AI Studio + API tier gratuit (60 req/min sur Flash)",
+      "paid": "API pay-as-you-go : Gemini 2.5 Flash à 0,28$/M tokens input"
+    },
+    "pricing": {
+      "free": "Free interface + free API tier",
+      "paid": "Pay-as-you-go API: from $0.30/M tokens (Flash)"
+    },
+    "pricingEn": {
+      "free": "Free web interface + generous free API tier",
+      "paid": "API pay-as-you-go from $0.30/M input tokens (Flash)"
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "tech",
+      "consultant",
+      "other"
+    ],
+    "bestFor": [
+      "tech"
+    ],
+    "pros": [
+      "Interface web entièrement gratuite sans inscription payante",
+      "Contexte 2M tokens — analyse de très longs documents impossible ailleurs",
+      "API gratuite généreuse pour les prototypes et tests",
+      "Accès aux derniers modèles Gemini dès leur sortie",
+      "Idéal pour tester des prompts avant de déployer en production"
+    ],
+    "prosEn": [
+      "Completely free web interface with no paid sign-up",
+      "2M token context — analyze very long documents impossible elsewhere",
+      "Generous free API for prototypes and testing",
+      "Access to latest Gemini models as soon as released",
+      "Ideal for testing prompts before deploying to production"
+    ],
+    "cons": [
+      "Interface moins intuitive que ChatGPT pour les non-développeurs",
+      "Coûts API peuvent s'envoler en production (pay-as-you-go)",
+      "Gemini parfois moins précis que Claude ou GPT-4 sur le raisonnement fin",
+      "Certaines fonctions avancées nécessitent Google Cloud"
+    ],
+    "consEn": [
+      "Interface less intuitive than ChatGPT for non-developers",
+      "API costs can spike in production (pay-as-you-go)",
+      "Gemini sometimes less precise than Claude or GPT-4 on fine reasoning",
+      "Some advanced features require Google Cloud"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu développes des prototypes IA et veux tester sans payer",
+        "Tu as des documents très longs à analyser (>100 pages)",
+        "Tu construis une API IA et cherches la meilleure offre gratuite"
+      ],
+      "avoidIf": [
+        "Tu cherches un assistant IA pour usage quotidien — ChatGPT est plus ergonomique",
+        "Tu n'as pas de notions techniques basiques",
+        "Tu veux une solution tout-en-un sans configuration"
+      ],
+      "threshold": "Dès que tu prototypes un workflow IA et que les coûts API commencent à compter."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You develop AI prototypes and want to test without paying",
+        "You have very long documents to analyze (100+ pages)",
+        "You are building an AI API and looking for the best free offer"
+      ],
+      "avoidIf": [
+        "You want an AI assistant for daily use — ChatGPT is more ergonomic",
+        "You don't have basic technical knowledge",
+        "You want an all-in-one solution without configuration"
+      ],
+      "threshold": "As soon as you prototype an AI workflow and API costs start to matter."
+    },
+    "useCases": [
+      "Analyser un contrat de 200 pages d'un seul appel API",
+      "Prototyper un chatbot IA avant de migrer vers une API payante",
+      "Tester différents prompts système pour un agent IA"
+    ],
+    "useCasesEn": [
+      "Analyze a 200-page contract in a single API call",
+      "Prototype an AI chatbot before migrating to a paid API",
+      "Test different system prompts for an AI agent"
+    ],
+    "alternatives": [
+      "chatgpt"
+    ],
+    "functional_needs": [
+      "ai-chat",
+      "developer-tools",
+      "prototyping",
+      "document-analysis"
+    ],
+    "seo": {
+      "metaDescription": "Google AI Studio : interface gratuite pour Gemini 2.5 Pro. Contexte 2M tokens, API gratuite. Pour qui ça vaut le coup ? Verdict ToolTrim."
+    }
+  },
+  {
+    "id": "contra",
+    "slug": "contra",
+    "name": "Contra",
+    "category": "project-management",
+    "websiteUrl": "https://contra.com",
+    "shortDescription": "Plateforme de mission freelance sans commission — les clients paient les frais.",
+    "shortDescriptionEn": "Zero-commission freelance platform — clients pay the fees.",
+    "longDescription": "Contra est une plateforme de mise en relation freelance avec un modèle économique inversé par rapport à Upwork ou Fiverr : aucune commission sur tes revenus. Les frais (19$ par contrat) sont facturés au client, pas à toi.\n\nLe plan gratuit permet de créer un profil, proposer des services, envoyer des propositions et recevoir des paiements. Contra Pro à 26,71€/mois (ou 183,90€/an) débloque des outils de portfolio avancés, la mise en avant dans les résultats de recherche et des analytics.\n\nPour un freelance qui facture 3 000€/mois, la différence avec Fiverr (20% de commission) représente 600€ de revenus supplémentaires. La limite : la plateforme est encore plus petite qu'Upwork ou Fiverr, donc moins de clients potentiels.",
+    "longDescriptionEn": "Contra is a freelance marketplace with a reversed economic model compared to Upwork or Fiverr: zero commission on your earnings. Fees ($19 per contract) are charged to the client, not you.\n\nThe free plan lets you create a profile, offer services, send proposals and receive payments. Contra Pro at $29/mo (or $199/yr) unlocks advanced portfolio tools, search result boosting and analytics.\n\nFor a freelancer billing €3,000/month, the difference vs Fiverr (20% commission) represents €600 in extra income. The limitation: the platform is still smaller than Upwork or Fiverr, so fewer potential clients.",
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "contra.com",
+      "official_source_url": "https://contra.com",
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 0,
+      "price_reliability": "medium",
+      "verification_status": "verified",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "client_pays_19_per_contract",
+        "pro_plan_optional"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — profil, propositions, paiements, 0% de commission",
+      "paid": "Contra Pro 26,71€/mois · Annuel 183,90€/an"
+    },
+    "pricing": {
+      "free": "Free — profile, proposals, payments, 0% commission",
+      "paid": "Pro $29/mo or $199/yr"
+    },
+    "pricingEn": {
+      "free": "Free — 0% commission on earnings",
+      "paid": "Pro $29/mo or $199/yr for advanced features"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "consultant",
+      "designer",
+      "content-creator",
+      "tech",
+      "other"
+    ],
+    "bestFor": [
+      "designer",
+      "tech",
+      "consultant"
+    ],
+    "pros": [
+      "0% de commission sur tes revenus — les frais sont payés par le client",
+      "Portfolio professionnel intégré avec projets et témoignages",
+      "Paiements sécurisés et protection du freelance",
+      "Communauté active de freelances tech, design et créatifs",
+      "Interface moderne et bien conçue vs Upwork/Fiverr"
+    ],
+    "prosEn": [
+      "0% commission on your earnings — fees paid by the client",
+      "Integrated professional portfolio with projects and testimonials",
+      "Secure payments and freelancer protection",
+      "Active community of tech, design and creative freelancers",
+      "Modern, well-designed interface vs Upwork/Fiverr"
+    ],
+    "cons": [
+      "Audience client beaucoup plus petite qu'Upwork ou Fiverr",
+      "Frais de 19$ par contrat peuvent rebuter certains clients",
+      "Principalement anglophone — peu de clients français",
+      "Marché encore dominé par les profils tech et design US"
+    ],
+    "consEn": [
+      "Client audience much smaller than Upwork or Fiverr",
+      "$19/contract fee can deter some clients",
+      "Mainly English-speaking — few French clients",
+      "Market still dominated by US tech and design profiles"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu factures 2 000€+/mois et veux arrêter de payer 20% de commission",
+        "Tu as un profil tech, design ou contenu en anglais",
+        "Tu veux un portfolio professionnel intégré à ta plateforme de vente"
+      ],
+      "avoidIf": [
+        "Tes clients sont principalement francophones",
+        "Tu démarres et as besoin d'un flux de clients immédiat",
+        "Tu vends des services sous 500€ (les 19$ de frais pèsent plus)"
+      ],
+      "threshold": "Vaut le coup dès que tu as au moins 2-3 missions récurrentes et que la commission Upwork/Fiverr commence à piquer."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You bill $2,000+/month and want to stop paying 20% commission",
+        "You have a tech, design or content profile in English",
+        "You want an integrated professional portfolio"
+      ],
+      "avoidIf": [
+        "Your clients are mainly French-speaking",
+        "You are starting out and need immediate client flow",
+        "You sell services under $500 (the $19 fee weighs more)"
+      ],
+      "threshold": "Worth it as soon as you have 2-3 recurring missions and Upwork/Fiverr commission starts to sting."
+    },
+    "useCases": [
+      "Afficher son portfolio et recevoir des propositions inbound",
+      "Gérer des contrats récurrents avec un client sans payer de commission",
+      "Trouver des missions tech ou design dans l'écosystème startup US"
+    ],
+    "useCasesEn": [
+      "Showcase your portfolio and receive inbound proposals",
+      "Manage recurring contracts with a client without paying commission",
+      "Find tech or design missions in the US startup ecosystem"
+    ],
+    "alternatives": [
+      "upwork"
+    ],
+    "functional_needs": [
+      "freelance-marketplace",
+      "portfolio",
+      "contracts",
+      "payments"
+    ],
+    "seo": {
+      "metaDescription": "Contra gratuit : plateforme freelance sans commission — 0% sur tes revenus, les clients paient les frais. Vaut-il le coup face à Upwork ? Verdict ToolTrim."
+    }
+  },
+  {
+    "id": "typotab",
+    "slug": "typotab",
+    "name": "TypoTab",
+    "category": "ai-general",
+    "websiteUrl": "https://typotab.com",
+    "shortDescription": "Extension Chrome : assistant IA de rédaction dans chaque onglet.",
+    "shortDescriptionEn": "Chrome extension: AI writing assistant in every tab.",
+    "longDescription": "TypoTab est une extension Chrome qui intègre un assistant IA de rédaction directement dans chaque page web — sans ouvrir un nouvel onglet ou copier-coller. Tu sélectionnes du texte, tu appuies sur un raccourci, et l'IA améliore, reformule ou étend le texte en place.\n\nLe plan payant à partir de 5,52€/mois (6,97€ mensuel ou 4,64€/mois annuel, converti en euros) donne accès aux modèles IA premium et aux fonctions avancées. En pratique : rédiger des emails de réponse depuis Gmail sans changer d'onglet, améliorer un post LinkedIn avant de publier, corriger un document Google Docs en sélectionnant et en appuyant sur un raccourci.\n\nPositionné comme une alternative légère à Grammarly Premium ou aux extensions ChatGPT pour les rédacteurs qui veulent rester dans le flow.",
+    "longDescriptionEn": "TypoTab is a Chrome extension that integrates an AI writing assistant directly into every web page — without opening a new tab or copy-pasting. You select text, press a shortcut, and the AI improves, rephrases or extends the text in place.\n\nThe paid plan from £4/mo (billed annually) gives access to premium AI models and advanced features. In practice: write reply emails from Gmail without switching tabs, improve a LinkedIn post before publishing, correct a Google Doc by selecting and pressing a shortcut.\n\nPositioned as a lightweight alternative to Grammarly Premium or ChatGPT extensions for writers who want to stay in their flow.",
+    "defaultMonthlyPrice": 5.52,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "typotab.com",
+      "official_source_url": "https://typotab.com",
+      "compare_plan_name": "Annual",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 5.52,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "chrome_only",
+        "gbp_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — fonctions basiques, modèles IA limités",
+      "paid": "Mensuel 6,97€/mois · Annuel 4,64€/mois (£4/mois)"
+    },
+    "pricing": {
+      "free": "Free with basic features",
+      "paid": "Monthly £6/mo or Annual £4/mo billed yearly"
+    },
+    "pricingEn": {
+      "free": "Free with basic AI features",
+      "paid": "Monthly £6/mo · Annual £4/mo billed yearly"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "content-creator",
+      "consultant",
+      "designer",
+      "other"
+    ],
+    "bestFor": [
+      "content-creator",
+      "consultant"
+    ],
+    "pros": [
+      "Intégration directe dans chaque page Chrome — zero friction",
+      "Sélectionner + raccourci = amélioration du texte en place",
+      "Fonctionne sur Gmail, LinkedIn, Google Docs, notion.so, etc.",
+      "Prix très abordable vs Grammarly Premium ou ChatGPT Plus",
+      "Pas besoin d'ouvrir un nouvel onglet ou de copier-coller"
+    ],
+    "prosEn": [
+      "Direct integration in every Chrome page — zero friction",
+      "Select + shortcut = in-place text improvement",
+      "Works on Gmail, LinkedIn, Google Docs, notion.so, etc.",
+      "Very affordable vs Grammarly Premium or ChatGPT Plus",
+      "No need to open a new tab or copy-paste"
+    ],
+    "cons": [
+      "Chrome uniquement — pas de Firefox, Safari ou mobile",
+      "Moins puissant que ChatGPT pour des tâches de rédaction longues",
+      "Dépendant des modèles IA tiers (disponibilité et latence variables)",
+      "Outil niche peu connu — support limité"
+    ],
+    "consEn": [
+      "Chrome only — no Firefox, Safari or mobile",
+      "Less powerful than ChatGPT for long writing tasks",
+      "Dependent on third-party AI models (variable availability and latency)",
+      "Niche tool, less known — limited support"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu écris beaucoup dans le navigateur (emails, posts, docs en ligne)",
+        "Tu veux améliorer ton texte sans sortir du contexte",
+        "Tu cherches une alternative légère et abordable à Grammarly"
+      ],
+      "avoidIf": [
+        "Tu n'utilises pas Chrome comme navigateur principal",
+        "Tu fais surtout de la rédaction longue dans un éditeur dédié",
+        "Tu as déjà ChatGPT Plus ou Claude Pro — les extensions suffisent"
+      ],
+      "threshold": "Vaut le coup si tu passes plus de 1h/jour à rédiger dans le navigateur et que le copy-paste vers ChatGPT te ralentit."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You write a lot in the browser (emails, posts, online docs)",
+        "You want to improve text without leaving context",
+        "You want a lightweight, affordable alternative to Grammarly"
+      ],
+      "avoidIf": [
+        "You don't use Chrome as your primary browser",
+        "You mainly write long-form in a dedicated editor",
+        "You already have ChatGPT Plus or Claude Pro — extensions suffice"
+      ],
+      "threshold": "Worth it if you spend 1h+/day writing in the browser and copy-pasting to ChatGPT slows you down."
+    },
+    "useCases": [
+      "Améliorer un email Gmail en sélectionnant le texte + raccourci",
+      "Reformuler un post LinkedIn avant publication",
+      "Corriger et étendre un commentaire Google Docs en contexte"
+    ],
+    "useCasesEn": [
+      "Improve a Gmail email by selecting text + shortcut",
+      "Rephrase a LinkedIn post before publishing",
+      "Correct and extend a Google Docs comment in context"
+    ],
+    "alternatives": [
+      "chatgpt"
+    ],
+    "functional_needs": [
+      "writing-assistance",
+      "ai-tools",
+      "productivity",
+      "chrome-extension"
+    ],
+    "seo": {
+      "metaDescription": "TypoTab à 5,52€/mois : assistant IA de rédaction dans chaque onglet Chrome. Améliore emails, posts LinkedIn et docs sans changer d'onglet."
+    }
   }
 ]
