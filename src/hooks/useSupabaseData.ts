@@ -153,7 +153,7 @@ export function useTools() {
       if (cancelled) return;
       setTools(localTools);
 
-      const { data, error } = await supabase.from("tools").select("*").limit(500);
+      const { data, error } = await supabase.from("tools").select("*").limit(1000);
       if (cancelled) return;
       if (!error && data && data.length > 0) setTools(mergeById(localTools, data.map(mapToolFromJson)));
       setLoading(false);
@@ -176,7 +176,7 @@ export function useToolSummaries() {
       const { data, error } = await supabase
         .from("tools")
         .select("id, slug, name, category, short_description, short_description_en, pricing, pricing_tiers, default_monthly_price, affiliate_link, website_url, logo")
-        .limit(500);
+        .limit(1000);
 
       if (!error && data && data.length > 0) {
         const remoteTools = data.map((t: any) => ({
