@@ -60747,5 +60747,1270 @@
     "seo": {
       "metaDescription": "BrandCrowd avis 2026 : créateur de logos et identité visuelle. Prix 8,28€/mois, alternatives Canva, Looka. Verdict honnête."
     }
+  },
+  {
+    "id": "perplexity",
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "category": "ai-general",
+    "websiteUrl": "https://www.perplexity.ai",
+    "shortDescription": "Moteur de recherche IA avec citations en temps réel — la recherche réinventée.",
+    "shortDescriptionEn": "AI search engine with real-time citations — search reinvented.",
+    "longDescription": "Perplexity est un moteur de recherche propulsé par l'IA qui répond directement à tes questions avec des sources citées et vérifiables, en temps réel. Contrairement à Google qui renvoie des liens, Perplexity synthétise l'information et indique précisément d'où elle vient.\n\nLe plan Pro à 20$/mois (≈18,40€) ou 200$/an (≈15,33€/mois) ajoute des modèles premium (GPT-4o, Claude, Gemini au choix), les recherches illimitées, 5$/mois de crédits API et le téléversement de fichiers illimité. La version gratuite donne déjà accès à 5 recherches Pro/jour.\n\nPour les freelances, consultants et chercheurs qui passent du temps à vérifier des informations, Perplexity remplace avantageusement les heures de recherche Google en fournissant des réponses sourcées directement. Particulièrement utile pour la veille concurrentielle, la recherche de prix et les questions techniques complexes.",
+    "longDescriptionEn": "Perplexity is an AI-powered search engine that answers your questions directly with cited, verifiable sources in real time. Unlike Google which returns links, Perplexity synthesizes information and indicates precisely where it comes from.\n\nThe Pro plan at $20/month (≈€18.40) or $200/year (≈€15.33/month) adds premium models (GPT-4o, Claude, Gemini to choose from), unlimited searches, $5/month in API credits and unlimited file upload. The free version already gives access to 5 Pro searches/day.\n\nFor freelancers, consultants and researchers who spend time verifying information, Perplexity advantageously replaces hours of Google searches by providing sourced answers directly. Particularly useful for competitive intelligence, price research and complex technical questions.",
+    "defaultMonthlyPrice": 18.4,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "perplexity.ai",
+      "official_source_url": "https://www.perplexity.ai/pro",
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 18.4,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "usd_pricing",
+        "annual_billing_cheaper_200yr"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 5 recherches Pro/jour, modèles de base",
+      "paid": "Pro 18,40€/mois · Max 184€/mois (power users)"
+    },
+    "pricing": {
+      "free": "Gratuit avec 5 recherches Pro/jour",
+      "paid": "Pro 20$/mois (ou 200$/an) · Max 200$/mois"
+    },
+    "pricingEn": {
+      "free": "Free with 5 Pro searches/day",
+      "paid": "Pro $20/month (or $200/year) · Max $200/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "consultant",
+      "dev",
+      "content-creator",
+      "other"
+    ],
+    "bestFor": [
+      "consultant",
+      "content-creator"
+    ],
+    "pros": [
+      "Répond directement avec sources citées — pas de liste de liens à trier",
+      "Choix du modèle IA (GPT-4o, Claude, Gemini) sur Pro",
+      "Résultats en temps réel — sources actualisées, pas figées à 2021",
+      "Version gratuite déjà très utilisable (5 Pro/jour)",
+      "Excellent pour la veille, la recherche concurrentielle, les questions techniques"
+    ],
+    "prosEn": [
+      "Answers directly with cited sources — no list of links to sort through",
+      "Choice of AI model (GPT-4o, Claude, Gemini) on Pro",
+      "Real-time results — updated sources, not frozen at 2021",
+      "Free version already very usable (5 Pro/day)",
+      "Excellent for competitive intelligence, research and technical questions"
+    ],
+    "cons": [
+      "20$/mois pour une utilisation intensive — peut sembler cher pour de la recherche",
+      "Parfois des hallucinations malgré les citations — sources à vérifier",
+      "Moins adapté pour la création de contenu long (ChatGPT/Claude sont mieux)",
+      "Plan Max à 200$/mois très cher pour le grand public"
+    ],
+    "consEn": [
+      "$20/month for intensive use — can seem expensive for search",
+      "Sometimes hallucinations despite citations — sources to verify",
+      "Less suited for long-form content creation (ChatGPT/Claude are better)",
+      "Max plan at $200/month very expensive for general public"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu fais de la veille ou de la recherche régulièrement (1h+/semaine)",
+        "Tu veux des réponses sourcées sans passer 20 min à croiser des liens Google",
+        "Tu travailles sur des sujets techniques où les sources récentes comptent"
+      ],
+      "avoidIf": [
+        "Tu veux principalement générer du contenu — Claude ou ChatGPT sont mieux",
+        "Tu fais des recherches simples ou ponctuelles — le plan gratuit suffit",
+        "Tu as déjà Claude Pro ou ChatGPT Plus avec accès au web — redondant"
+      ],
+      "threshold": "Vaut 20$/mois si tu fais plus de 1h de recherche web par jour et que la qualité des sources compte."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do regular research or competitive intelligence (1h+/week)",
+        "You want sourced answers without spending 20 minutes cross-referencing Google links",
+        "You work on technical topics where recent sources matter"
+      ],
+      "avoidIf": [
+        "You mainly want to generate content — Claude or ChatGPT are better",
+        "You do simple or occasional searches — the free plan is enough",
+        "You already have Claude Pro or ChatGPT Plus with web access — redundant"
+      ],
+      "threshold": "Worth $20/month if you spend more than 1h/day on web research and source quality matters."
+    },
+    "useCases": [
+      "Veille concurrentielle : trouver les prix et nouvelles features d'un concurrent en 2 min",
+      "Répondre à une question technique complexe avec des sources récentes et vérifiables",
+      "Préparer un brief client en recherchant rapidement des statistiques avec citations"
+    ],
+    "useCasesEn": [
+      "Competitive intelligence: find a competitor's prices and new features in 2 min",
+      "Answer a complex technical question with recent and verifiable sources",
+      "Prepare a client brief by quickly researching statistics with citations"
+    ],
+    "alternatives": [
+      "chatgpt",
+      "claude",
+      "gemini"
+    ],
+    "functional_needs": [
+      "ai-search",
+      "research",
+      "knowledge-management"
+    ],
+    "seo": {
+      "metaDescription": "Perplexity avis 2026 : moteur de recherche IA avec citations en temps réel. Prix 18,40€/mois, alternatives ChatGPT, Claude."
+    }
+  },
+  {
+    "id": "monday",
+    "slug": "monday",
+    "name": "Monday.com",
+    "category": "project-management",
+    "websiteUrl": "https://monday.com",
+    "shortDescription": "Plateforme de gestion de projets et CRM visuelle pour équipes de toutes tailles.",
+    "shortDescriptionEn": "Visual project management and CRM platform for teams of all sizes.",
+    "longDescription": "Monday.com est une plateforme de gestion du travail tout-en-un : gestion de projets, CRM, gestion des tâches, tableaux kanban, Gantt, automatisations et formulaires. Elle s'adapte à des dizaines de cas d'usage grâce à ses templates et ses 200+ intégrations.\n\nLe plan Basic à 9$/siège/mois (≈8,28€) en facturation annuelle est le plan d'entrée, mais attention : minimum 3 sièges obligatoires, soit 27$/mois minimum. Le plan Standard (12$/siège/mois) est le plus populaire — il ajoute les automatisations, les Gantt et le calendrier.\n\nPour les freelances solo, Monday peut être surdimensionné — Notion ou ClickUp couvrent souvent les mêmes besoins à moindre coût. Mais pour les consultants qui gèrent des équipes client de 3-10 personnes, la clarté visuelle et les automatisations de Monday ont une vraie valeur ajoutée.",
+    "longDescriptionEn": "Monday.com is an all-in-one work management platform: project management, CRM, task management, kanban boards, Gantt, automations and forms. It adapts to dozens of use cases through templates and 200+ integrations.\n\nThe Basic plan at $9/seat/month (≈€8.28) billed annually is the entry plan, but note: minimum 3 seats required, so minimum $27/month. The Standard plan ($12/seat/month) is most popular — it adds automations, Gantt and calendar.\n\nFor solo freelancers, Monday can be oversized — Notion or ClickUp often cover the same needs at lower cost. But for consultants managing client teams of 3-10 people, Monday's visual clarity and automations provide real added value.",
+    "defaultMonthlyPrice": 8.28,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "monday.com",
+      "official_source_url": "https://monday.com/pricing",
+      "compare_plan_name": "Basic (par siège, annuel)",
+      "compare_plan_kind": "per_user",
+      "compare_price_monthly_eur": 8.28,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "minimum_3_seats",
+        "annual_billing",
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 2 sièges max, fonctions limitées",
+      "paid": "Basic 8,28€/siège/mois · Standard 11,04€ · Pro 17,48€ (annuel, min 3 sièges)"
+    },
+    "pricing": {
+      "free": "Gratuit jusqu'à 2 sièges",
+      "paid": "Basic 9$/siège/mois · Standard 12$ · Pro 19$ (annuel, min 3 sièges)"
+    },
+    "pricingEn": {
+      "free": "Free up to 2 seats",
+      "paid": "Basic $9/seat/month · Standard $12 · Pro $19 (annual, min 3 seats)"
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "consultant",
+      "ops",
+      "other"
+    ],
+    "bestFor": [
+      "ops",
+      "consultant"
+    ],
+    "pros": [
+      "Interface visuelle très intuitive — idéal pour les équipes non-techniques",
+      "Flexibilité maximale : kanban, Gantt, formulaires, CRM dans un seul outil",
+      "200+ intégrations avec Slack, HubSpot, Google Workspace, etc.",
+      "Automatisations puissantes sans code sur les plans Standard+",
+      "Templates pour quasiment chaque cas d'usage (marketing, RH, dev, etc.)"
+    ],
+    "prosEn": [
+      "Very intuitive visual interface — ideal for non-technical teams",
+      "Maximum flexibility: kanban, Gantt, forms, CRM in one tool",
+      "200+ integrations with Slack, HubSpot, Google Workspace, etc.",
+      "Powerful no-code automations on Standard+ plans",
+      "Templates for almost every use case (marketing, HR, dev, etc.)"
+    ],
+    "cons": [
+      "Minimum 3 sièges : un solo ne peut pas l'utiliser seul à bon prix",
+      "Peut vite devenir cher pour les grandes équipes vs Notion ou ClickUp",
+      "Courbe d'apprentissage pour configurer des workflows complexes",
+      "Fonctionnalités avancées réservées aux plans Pro/Enterprise"
+    ],
+    "consEn": [
+      "Minimum 3 seats: a solo can't use it alone at a good price",
+      "Can quickly become expensive for large teams vs Notion or ClickUp",
+      "Learning curve for setting up complex workflows",
+      "Advanced features reserved for Pro/Enterprise plans"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu gères une équipe de 3+ personnes avec des projets multiples en parallèle",
+        "Tu veux un outil visuel que tout le monde peut utiliser sans formation",
+        "Tu as besoin d'automatisations et d'un CRM léger intégré"
+      ],
+      "avoidIf": [
+        "Tu es solo — le minimum 3 sièges te fait payer pour des sièges inutilisés",
+        "Tu cherches un outil de notes ou de PKM — Notion est mieux",
+        "Tu as un budget serré — ClickUp ou Trello offrent plus de valeur à moindre coût"
+      ],
+      "threshold": "Le bon choix pour une équipe de 3-15 personnes qui veut une visibilité claire sur les projets sans complexité technique."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You manage a team of 3+ people with multiple parallel projects",
+        "You want a visual tool that everyone can use without training",
+        "You need automations and a lightweight integrated CRM"
+      ],
+      "avoidIf": [
+        "You're solo — the 3-seat minimum makes you pay for unused seats",
+        "You're looking for a notes or PKM tool — Notion is better",
+        "You're on a tight budget — ClickUp or Trello offer more value at lower cost"
+      ],
+      "threshold": "The right choice for a team of 3-15 people wanting clear visibility on projects without technical complexity."
+    },
+    "useCases": [
+      "Coordonner un projet client de 5 personnes avec kanban + Gantt + deadlines",
+      "Créer un CRM léger pour suivre les prospects et opportunités commerciales",
+      "Automatiser l'onboarding client avec des workflows déclenchés par formulaire"
+    ],
+    "useCasesEn": [
+      "Coordinate a 5-person client project with kanban + Gantt + deadlines",
+      "Create a lightweight CRM to track prospects and business opportunities",
+      "Automate client onboarding with form-triggered workflows"
+    ],
+    "alternatives": [
+      "notion",
+      "clickup",
+      "asana"
+    ],
+    "functional_needs": [
+      "project-management",
+      "team-collaboration",
+      "crm"
+    ],
+    "seo": {
+      "metaDescription": "Monday.com avis 2026 : gestion de projets visuelle pour équipes. Prix 8,28€/siège/mois, alternatives Notion, ClickUp."
+    }
+  },
+  {
+    "id": "windsurf",
+    "slug": "windsurf",
+    "name": "Windsurf",
+    "category": "ai-general",
+    "websiteUrl": "https://windsurf.com",
+    "shortDescription": "Éditeur de code IA agentique — l'alternative à Cursor avec Cascade AI.",
+    "shortDescriptionEn": "Agentic AI code editor — the Cursor alternative with Cascade AI.",
+    "longDescription": "Windsurf (anciennement Codeium) est un éditeur de code IA agentique qui concurrence directement Cursor. Son moteur Cascade AI peut non seulement écrire du code mais aussi raisonner sur une codebase entière, exécuter des commandes terminal, débugger et déployer de manière autonome.\n\nLe plan Pro à 15$/mois (≈13,80€) donne 500 crédits/mois pour accéder aux modèles premium (Claude, GPT-4o) et des interactions illimitées avec les modèles de base. La version gratuite inclut 25 crédits/mois et un accès complet à Cascade.\n\nDifférence clé avec Cursor (20$/mois) : Windsurf est 25% moins cher et son agent Cascade est réputé plus autonome sur les tâches multi-fichiers complexes. Pour les développeurs qui passent plus de 2h/jour à coder, c'est l'un des meilleurs ROI outils IA actuellement disponibles.",
+    "longDescriptionEn": "Windsurf (formerly Codeium) is an agentic AI code editor that directly competes with Cursor. Its Cascade AI engine can not only write code but also reason about an entire codebase, execute terminal commands, debug and deploy autonomously.\n\nThe Pro plan at $15/month (≈€13.80) gives 500 credits/month for accessing premium models (Claude, GPT-4o) and unlimited interactions with base models. The free version includes 25 credits/month and full access to Cascade.\n\nKey difference from Cursor ($20/month): Windsurf is 25% cheaper and its Cascade agent is reputed to be more autonomous on complex multi-file tasks. For developers who spend more than 2h/day coding, it's one of the best AI tool ROIs currently available.",
+    "defaultMonthlyPrice": 13.8,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "windsurf.com",
+      "official_source_url": "https://windsurf.com/pricing",
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 13.8,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based",
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 25 crédits/mois, Cascade illimité (modèles de base)",
+      "paid": "Pro 13,80€/mois · Teams 27,60€/utilisateur · Enterprise 55,20€"
+    },
+    "pricing": {
+      "free": "Gratuit avec 25 crédits/mois et accès Cascade",
+      "paid": "Pro 15$/mois · Teams 30$/utilisateur/mois · Enterprise 60$/utilisateur"
+    },
+    "pricingEn": {
+      "free": "Free with 25 credits/month and Cascade access",
+      "paid": "Pro $15/month · Teams $30/user/month · Enterprise $60/user"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "dev"
+    ],
+    "bestFor": [
+      "dev"
+    ],
+    "pros": [
+      "Cascade AI agentique — exécute des tâches multi-fichiers de façon autonome",
+      "25% moins cher que Cursor Pro (15$ vs 20$/mois)",
+      "Plan gratuit fonctionnel avec Cascade inclus",
+      "Accès aux meilleurs modèles : Claude, GPT-4o sur Pro",
+      "Basé sur VS Code — transition facile depuis VSCode ou Cursor"
+    ],
+    "prosEn": [
+      "Agentic Cascade AI — executes multi-file tasks autonomously",
+      "25% cheaper than Cursor Pro ($15 vs $20/month)",
+      "Functional free plan with Cascade included",
+      "Access to best models: Claude, GPT-4o on Pro",
+      "Based on VS Code — easy transition from VSCode or Cursor"
+    ],
+    "cons": [
+      "Crédits premium limités — usage intensif peut épuiser le quota",
+      "Moins d'extensions marketplace que VS Code natif",
+      "Encore en développement actif — certaines features instables",
+      "Concurrent direct Cursor reste plus populaire dans la communauté dev"
+    ],
+    "consEn": [
+      "Limited premium credits — intensive use can exhaust quota",
+      "Fewer marketplace extensions than native VS Code",
+      "Still in active development — some features unstable",
+      "Direct competitor Cursor remains more popular in dev community"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu codes plus de 2h/jour et tu veux un copilote IA agentique",
+        "Tu utilisais Cursor mais tu cherches une alternative moins chère",
+        "Tu veux tester un agent IA capable d'exécuter des tâches entières en autonomie"
+      ],
+      "avoidIf": [
+        "Tu codes occasionnellement — GitHub Copilot ou le plan gratuit suffisent",
+        "Tu as un workflow très spécifique dépendant d'extensions VS Code rares",
+        "Tu ne veux pas changer d'éditeur — GitHub Copilot s'intègre à VS Code natif"
+      ],
+      "threshold": "Excellent ROI si tu codes 2h+/jour — l'accélération est mesurable dès la première semaine."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You code more than 2h/day and want an agentic AI copilot",
+        "You were using Cursor but want a cheaper alternative",
+        "You want to test an AI agent capable of executing entire tasks autonomously"
+      ],
+      "avoidIf": [
+        "You code occasionally — GitHub Copilot or the free plan suffice",
+        "You have a very specific workflow dependent on rare VS Code extensions",
+        "You don't want to change editors — GitHub Copilot integrates into native VS Code"
+      ],
+      "threshold": "Excellent ROI if you code 2h+/day — the acceleration is measurable from the first week."
+    },
+    "useCases": [
+      "Refactoriser une codebase entière en donnant une instruction en langage naturel",
+      "Debugger une erreur complexe multi-fichiers avec Cascade sans expliquer le contexte",
+      "Générer des tests unitaires pour une fonction existante en un prompt"
+    ],
+    "useCasesEn": [
+      "Refactor an entire codebase by giving a natural language instruction",
+      "Debug a complex multi-file error with Cascade without explaining context",
+      "Generate unit tests for an existing function in one prompt"
+    ],
+    "alternatives": [
+      "cursor",
+      "github-copilot",
+      "tabnine"
+    ],
+    "functional_needs": [
+      "ai-coding",
+      "code-editor",
+      "developer-tools"
+    ],
+    "seo": {
+      "metaDescription": "Windsurf avis 2026 : éditeur IA agentique avec Cascade. Prix 13,80€/mois, comparatif Cursor, GitHub Copilot. Verdict."
+    }
+  },
+  {
+    "id": "opus-clip",
+    "slug": "opus-clip",
+    "name": "Opus Clip",
+    "category": "creation",
+    "websiteUrl": "https://www.opus.pro",
+    "shortDescription": "Transforme tes longues vidéos en clips viraux courts avec l'IA.",
+    "shortDescriptionEn": "Turn your long videos into viral short clips with AI.",
+    "longDescription": "Opus Clip est l'outil de référence pour le video repurposing : tu uploades une longue vidéo (podcast, webinar, interview), l'IA identifie les passages les plus percutants et génère des clips courts optimisés pour TikTok, Shorts et Reels, avec sous-titres animés et recadrage automatique.\n\nLe plan Starter à 15$/mois (≈13,80€) donne accès à la génération de clips IA, aux sous-titres animés et aux exports sans watermark. Le système de crédits fonctionne sur la durée de la vidéo source : 1 crédit = 1 minute traitée.\n\nPour un créateur qui produit des contenus longs (YouTube, podcasts, formation) et veut les décliner en short-form sans passer des heures en montage, Opus Clip offre un gain de temps considérable. C'est devenu un standard dans le workflow des créateurs de contenu professionnels.",
+    "longDescriptionEn": "Opus Clip is the reference tool for video repurposing: upload a long video (podcast, webinar, interview), the AI identifies the most impactful passages and generates short clips optimized for TikTok, Shorts and Reels, with animated subtitles and automatic reframing.\n\nThe Starter plan at $15/month (≈€13.80) gives access to AI clip generation, animated subtitles and watermark-free exports. The credit system works on source video duration: 1 credit = 1 minute processed.\n\nFor a creator producing long-form content (YouTube, podcasts, training) who wants to repurpose it into short-form without spending hours editing, Opus Clip offers considerable time savings. It has become a standard in professional content creator workflows.",
+    "defaultMonthlyPrice": 13.8,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "opus.pro",
+      "official_source_url": "https://www.opus.pro/pricing",
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 13.8,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based",
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 60 crédits/mois, clips avec watermark, conservés 3 jours",
+      "paid": "Starter 13,80€/mois · Pro ~13,34€/mois (annuel)"
+    },
+    "pricing": {
+      "free": "Gratuit avec 60 crédits/mois",
+      "paid": "Starter 15$/mois · Pro ~14,50$/mois (annuel)"
+    },
+    "pricingEn": {
+      "free": "Free with 60 credits/month",
+      "paid": "Starter $15/month · Pro ~$14.50/month (annual)"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "content-creator"
+    ],
+    "bestFor": [
+      "content-creator"
+    ],
+    "pros": [
+      "Identifie automatiquement les meilleurs passages d'une longue vidéo",
+      "Sous-titres animés et recadrage auto pour TikTok/Shorts/Reels",
+      "Plan gratuit généreux (60 min de vidéo/mois) pour tester",
+      "Gain de temps massif : 1h de podcast → 5 clips en 15 minutes",
+      "Référence du secteur — workflow éprouvé par des milliers de créateurs"
+    ],
+    "prosEn": [
+      "Automatically identifies the best passages from a long video",
+      "Animated subtitles and auto-reframing for TikTok/Shorts/Reels",
+      "Generous free plan (60 min of video/month) to test",
+      "Massive time savings: 1h podcast → 5 clips in 15 minutes",
+      "Industry reference — workflow proven by thousands of creators"
+    ],
+    "cons": [
+      "Crédits basés sur la durée source — les longues vidéos consomment vite",
+      "Qualité des clips dépend du contenu source — fonctionne mieux sur les sujets parlés",
+      "Moins adapté aux vidéos musicales ou très visuelles (peu de parole)",
+      "Clips générés nécessitent souvent une retouche manuelle pour être parfaits"
+    ],
+    "consEn": [
+      "Credits based on source duration — long videos consume quickly",
+      "Clip quality depends on source content — works better on spoken subjects",
+      "Less suited for music videos or very visual content (little speech)",
+      "Generated clips often need manual tweaking to be perfect"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu produis du contenu long (podcast, YouTube, webinar) et tu veux le décliner en short",
+        "Tu veux alimenter TikTok/Shorts/Reels sans passer des heures en montage",
+        "Tu as un volume de vidéos à repurposer régulièrement (1+/semaine)"
+      ],
+      "avoidIf": [
+        "Tu crées uniquement du contenu court — inutile de repurposer du short en short",
+        "Tes vidéos ont peu de parole (musique, visuels) — l'IA performe moins bien",
+        "Tu veux un contrôle total sur le montage — mieux vaut CapCut ou Descript"
+      ],
+      "threshold": "Rentable si tu as plus de 2h de vidéo longue à repurposer par mois — une heure de podcast peut générer 5-10 clips prêts à publier."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You produce long-form content (podcast, YouTube, webinar) and want to repurpose it as shorts",
+        "You want to feed TikTok/Shorts/Reels without spending hours editing",
+        "You have a volume of videos to repurpose regularly (1+/week)"
+      ],
+      "avoidIf": [
+        "You only create short content — no point repurposing short into short",
+        "Your videos have little speech (music, visuals) — AI performs less well",
+        "You want total control over editing — CapCut or Descript are better"
+      ],
+      "threshold": "Worth it if you have more than 2h of long video to repurpose per month — one hour of podcast can generate 5-10 ready-to-publish clips."
+    },
+    "useCases": [
+      "Transformer 1h de podcast en 8 clips TikTok/Shorts en 15 minutes",
+      "Découper un webinar en extraits LinkedIn percutants pour la semaine",
+      "Repurposer une formation vidéo YouTube en contenu court pour Instagram"
+    ],
+    "useCasesEn": [
+      "Transform 1h of podcast into 8 TikTok/Shorts clips in 15 minutes",
+      "Cut a webinar into impactful LinkedIn extracts for the week",
+      "Repurpose a YouTube video course into short content for Instagram"
+    ],
+    "alternatives": [
+      "descript",
+      "capcut",
+      "crayo-ai"
+    ],
+    "functional_needs": [
+      "video-repurposing",
+      "content-creation",
+      "short-form-video"
+    ],
+    "seo": {
+      "metaDescription": "Opus Clip avis 2026 : repurpose tes longues vidéos en clips viraux avec l'IA. Prix 13,80€/mois, alternatives Descript."
+    }
+  },
+  {
+    "id": "fathom",
+    "slug": "fathom",
+    "name": "Fathom",
+    "category": "ai-general",
+    "websiteUrl": "https://www.fathom.ai",
+    "shortDescription": "Assistant IA de prise de notes pour tes réunions Zoom, Meet et Teams.",
+    "shortDescriptionEn": "AI meeting notes assistant for your Zoom, Meet and Teams calls.",
+    "longDescription": "Fathom est un assistant IA qui rejoint tes réunions vidéo (Zoom, Google Meet, Teams), les enregistre, les transcrit et génère automatiquement un résumé structuré avec les actions à prendre. Tu peux continuer à te concentrer sur la conversation pendant que Fathom prend les notes.\n\nLe plan Premium à 19$/mois (≈17,48€) débloque les résumés IA illimités, les actions automatiques, les emails de suivi générés et l'export vers CRM. La version gratuite est généreuse mais limitée à 5 résumés IA/mois depuis mars 2026.\n\nPour les consultants, commerciaux et chefs de projet qui enchaînent les appels, Fathom élimine la prise de notes manuelle et garantit que rien n'est oublié. À 19$/mois, c'est l'un des meilleurs rapports qualité/prix dans la catégorie meeting notes.",
+    "longDescriptionEn": "Fathom is an AI assistant that joins your video meetings (Zoom, Google Meet, Teams), records them, transcribes them and automatically generates a structured summary with action items. You can keep focusing on the conversation while Fathom takes notes.\n\nThe Premium plan at $19/month (≈€17.48) unlocks unlimited AI summaries, automatic action items, generated follow-up emails and CRM export. The free version is generous but limited to 5 AI summaries/month since March 2026.\n\nFor consultants, salespeople and project managers who chain calls back to back, Fathom eliminates manual note-taking and ensures nothing is forgotten. At $19/month, it's one of the best value-for-money tools in the meeting notes category.",
+    "defaultMonthlyPrice": 17.48,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "fathom.ai",
+      "official_source_url": "https://www.fathom.ai/pricing",
+      "compare_plan_name": "Premium",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 17.48,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "usd_pricing",
+        "free_plan_now_limited_5_summaries_march_2026"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — enregistrement illimité, 5 résumés IA/mois",
+      "paid": "Premium 17,48€/mois · Team 13,80€/utilisateur/mois · Business 23€"
+    },
+    "pricing": {
+      "free": "Gratuit avec enregistrement illimité (5 résumés IA/mois)",
+      "paid": "Premium 19$/mois · Team 15$/utilisateur/mois · Business 25$/utilisateur"
+    },
+    "pricingEn": {
+      "free": "Free with unlimited recording (5 AI summaries/month)",
+      "paid": "Premium $19/month · Team $15/user/month · Business $25/user"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "consultant",
+      "ops",
+      "dev",
+      "other"
+    ],
+    "bestFor": [
+      "consultant"
+    ],
+    "pros": [
+      "Plus besoin de prendre des notes pendant les réunions — Fathom le fait",
+      "Résumés structurés avec actions identifiées automatiquement",
+      "Fonctionne avec Zoom, Google Meet et Microsoft Teams",
+      "Export CRM pour les commerciaux (HubSpot, Salesforce)",
+      "Plan gratuit encore utilisable (5 résumés IA/mois)"
+    ],
+    "prosEn": [
+      "No more taking notes during meetings — Fathom does it",
+      "Structured summaries with automatically identified action items",
+      "Works with Zoom, Google Meet and Microsoft Teams",
+      "CRM export for salespeople (HubSpot, Salesforce)",
+      "Free plan still usable (5 AI summaries/month)"
+    ],
+    "cons": [
+      "Plan gratuit désormais limité à 5 résumés IA/mois (était illimité avant 2026)",
+      "19$/mois pour ce qui était gratuit il y a 1 an — hausse de prix notable",
+      "Moins adapté aux réunions sans beaucoup de parole structurée",
+      "Confidentialité : toutes les réunions sont enregistrées et stockées sur leurs serveurs"
+    ],
+    "consEn": [
+      "Free plan now limited to 5 AI summaries/month (was unlimited before 2026)",
+      "$19/month for what was free 1 year ago — notable price increase",
+      "Less suited for meetings with little structured speech",
+      "Privacy: all meetings are recorded and stored on their servers"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu as plus de 5 réunions importantes par mois avec des actions à suivre",
+        "Tu es consultant ou commercial et tu veux des notes de réunion automatiques",
+        "Tu utilises un CRM et tu veux que les notes s'y envoient automatiquement"
+      ],
+      "avoidIf": [
+        "Tu as moins de 5 réunions/mois — le plan gratuit suffit",
+        "Tes clients sont sensibles à l'enregistrement des appels — risque légal",
+        "Tu as déjà Otter.ai, tl;dv ou Granola dans ton stack"
+      ],
+      "threshold": "Vaut 19$/mois si tu as 10+ réunions par mois et que la prise de notes manuelle te coûte 30+ min/jour."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You have more than 5 important meetings per month with action items to follow",
+        "You're a consultant or salesperson and want automatic meeting notes",
+        "You use a CRM and want notes to be sent there automatically"
+      ],
+      "avoidIf": [
+        "You have fewer than 5 meetings/month — the free plan is enough",
+        "Your clients are sensitive to call recording — legal risk",
+        "You already have Otter.ai, tl;dv or Granola in your stack"
+      ],
+      "threshold": "Worth $19/month if you have 10+ meetings per month and manual note-taking costs you 30+ min/day."
+    },
+    "useCases": [
+      "Enregistrer un appel de vente et récupérer les actions dans HubSpot automatiquement",
+      "Partager un résumé de réunion au client 2 minutes après la fin de l'appel",
+      "Retrouver ce qui a été dit dans un appel de 3 mois il y a 2 semaines"
+    ],
+    "useCasesEn": [
+      "Record a sales call and get action items in HubSpot automatically",
+      "Share a meeting summary to the client 2 minutes after the call ends",
+      "Find what was said in a call from 3 months ago last week"
+    ],
+    "alternatives": [
+      "otter-ai",
+      "tldv",
+      "granola"
+    ],
+    "functional_needs": [
+      "meeting-notes",
+      "transcription",
+      "ai-assistant"
+    ],
+    "seo": {
+      "metaDescription": "Fathom avis 2026 : prise de notes IA pour réunions Zoom, Meet, Teams. Prix 17,48€/mois, alternatives Otter.ai, tl;dv."
+    }
+  },
+  {
+    "id": "whimsical",
+    "slug": "whimsical",
+    "name": "Whimsical",
+    "category": "design-tools",
+    "websiteUrl": "https://whimsical.com",
+    "shortDescription": "Wireframes, flowcharts, mind maps et docs sur canvas infini avec IA.",
+    "shortDescriptionEn": "Wireframes, flowcharts, mind maps and docs on infinite canvas with AI.",
+    "longDescription": "Whimsical est un espace de travail visuel qui réunit wireframes, diagrammes de flux, mind maps, kanban et documentation sur un canvas infini. L'IA intégrée transforme des descriptions textuelles en diagrammes et flowcharts en quelques secondes.\n\nLe plan Pro à 10$/utilisateur/mois (≈9,20€) débloque les boards illimités, le versioning et la collaboration avancée. La version gratuite est déjà solide avec 3 boards d'équipe et 100 actions IA.\n\nDifférence avec Miro : Whimsical est plus léger et plus rapide pour les cas d'usage de design produit (wireframes + flows), là où Miro est plus complet pour les grands workshops. Pour un designer ou chef de produit freelance, Whimsical offre la combinaison parfaite clarté + rapidité.",
+    "longDescriptionEn": "Whimsical is a visual workspace that brings wireframes, flowcharts, mind maps, kanban and documentation together on an infinite canvas. The built-in AI transforms text descriptions into diagrams and flowcharts in seconds.\n\nThe Pro plan at $10/user/month (≈€9.20) unlocks unlimited boards, versioning and advanced collaboration. The free version is already solid with 3 team boards and 100 AI actions.\n\nDifference from Miro: Whimsical is lighter and faster for product design use cases (wireframes + flows), where Miro is more complete for large workshops. For a freelance designer or product manager, Whimsical offers the perfect combination of clarity + speed.",
+    "defaultMonthlyPrice": 9.2,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "whimsical.com",
+      "official_source_url": "https://whimsical.com/pricing",
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "per_user",
+      "compare_price_monthly_eur": 9.2,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 3 boards d'équipe, 100 actions IA total",
+      "paid": "Pro 9,20€/utilisateur/mois — boards illimités"
+    },
+    "pricing": {
+      "free": "Gratuit avec 3 boards d'équipe",
+      "paid": "Pro 10$/utilisateur/mois"
+    },
+    "pricingEn": {
+      "free": "Free with 3 team boards",
+      "paid": "Pro $10/user/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "prescription_quality": "oui",
+    "relevantFor": [
+      "designer",
+      "dev",
+      "consultant"
+    ],
+    "bestFor": [
+      "designer"
+    ],
+    "pros": [
+      "Interface rapide et légère — launch en quelques secondes",
+      "IA qui génère des flowcharts depuis une description en langage naturel",
+      "Wireframes, flows, mind maps et docs dans un seul outil",
+      "Beaucoup plus simple que Miro pour les usages produit",
+      "Plan gratuit généreux pour les solos"
+    ],
+    "prosEn": [
+      "Fast and lightweight interface — loads in seconds",
+      "AI that generates flowcharts from natural language descriptions",
+      "Wireframes, flows, mind maps and docs in one tool",
+      "Much simpler than Miro for product use cases",
+      "Generous free plan for solos"
+    ],
+    "cons": [
+      "Moins de templates et de flexibilité que Miro pour les grands workshops",
+      "Versioning uniquement sur Pro",
+      "Fonctionnalités de présentation moins poussées que FigJam",
+      "Moins intégré dans l'écosystème design (pas de plugin Figma natif)"
+    ],
+    "consEn": [
+      "Fewer templates and less flexibility than Miro for large workshops",
+      "Versioning only on Pro",
+      "Presentation features less advanced than FigJam",
+      "Less integrated in the design ecosystem (no native Figma plugin)"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu fais du wireframing rapide et du mapping de user flows régulièrement",
+        "Tu veux un outil plus simple et plus rapide que Miro pour les workshops produit",
+        "Tu travailles seul ou en petite équipe sur des projets design/produit"
+      ],
+      "avoidIf": [
+        "Tu organises de grands ateliers avec 10+ participants — Miro est plus adapté",
+        "Tu as déjà FigJam dans ton workflow Figma — redondance",
+        "Tu as besoin de présenter le board directement comme un deck"
+      ],
+      "threshold": "Excellent pour les solo et petites équipes produit. Moins nécessaire si tu as déjà Miro ou FigJam dans ton stack."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do rapid wireframing and user flow mapping regularly",
+        "You want a simpler and faster tool than Miro for product workshops",
+        "You work alone or in a small team on design/product projects"
+      ],
+      "avoidIf": [
+        "You organize large workshops with 10+ participants — Miro is more suitable",
+        "You already have FigJam in your Figma workflow — redundancy",
+        "You need to present the board directly as a deck"
+      ],
+      "threshold": "Excellent for solo and small product teams. Less necessary if you already have Miro or FigJam in your stack."
+    },
+    "useCases": [
+      "Mapper un user flow complet d'une app en 30 minutes grâce à l'IA",
+      "Créer des wireframes basse fidélité pour valider une direction UI avec un client",
+      "Organiser les idées d'une session de brainstorming sur un mind map partagé"
+    ],
+    "useCasesEn": [
+      "Map a complete app user flow in 30 minutes with AI",
+      "Create low-fidelity wireframes to validate a UI direction with a client",
+      "Organize brainstorming session ideas on a shared mind map"
+    ],
+    "alternatives": [
+      "miro",
+      "figma",
+      "flowmapp"
+    ],
+    "functional_needs": [
+      "wireframing",
+      "flowcharts",
+      "visual-collaboration"
+    ],
+    "seo": {
+      "metaDescription": "Whimsical avis 2026 : wireframes, flowcharts et mind maps avec IA. Prix 9,20€/mois, alternatives Miro, Figma."
+    }
+  },
+  {
+    "id": "penpot",
+    "slug": "penpot",
+    "name": "Penpot",
+    "category": "design-tools",
+    "websiteUrl": "https://penpot.app",
+    "shortDescription": "Alternative open-source et gratuite à Figma — design et prototypage collaboratif.",
+    "shortDescriptionEn": "Free open-source alternative to Figma — collaborative design and prototyping.",
+    "longDescription": "Penpot est la seule alternative open-source sérieuse à Figma : outil de design vectoriel, prototypage interactif et collaboration en temps réel, accessible gratuitement dans le cloud ou auto-hébergeable. Il utilise des standards web ouverts (SVG, CSS) là où Figma a son format propriétaire.\n\nLa version cloud est entièrement gratuite pour tous les utilisateurs. Les plans payants (Pro à 7$/mois par équipe de 2) sont uniquement pour les fonctionnalités avancées d'équipe. Pour un designer solo, la version gratuite couvre 100% des besoins.\n\nContexte important : avec l'acquisition de Figma par Adobe (annulée), puis le rachat d'Affinity par Canva, Penpot est devenu la seule option réellement indépendante et open-source pour les designers qui ne veulent pas dépendre d'un éditeur propriétaire. La communauté est en pleine croissance.",
+    "longDescriptionEn": "Penpot is the only serious open-source alternative to Figma: vector design tool, interactive prototyping and real-time collaboration, freely accessible in the cloud or self-hostable. It uses open web standards (SVG, CSS) where Figma has its proprietary format.\n\nThe cloud version is completely free for all users. Paid plans (Pro at $7/month per 2-person team) are only for advanced team features. For a solo designer, the free version covers 100% of needs.\n\nImportant context: with Adobe's acquisition of Figma (cancelled), then Canva's acquisition of Affinity, Penpot has become the only truly independent and open-source option for designers who don't want to depend on a proprietary vendor. The community is growing fast.",
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "penpot.app",
+      "official_source_url": "https://penpot.app/pricing",
+      "compare_plan_name": "Cloud (gratuit)",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 0,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "self_hostable",
+        "open_source"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — accès complet en cloud, collaboration, prototypage",
+      "paid": "Professional 7$/mois par équipe de 2 · Team cap 175$/mois · Enterprise 950$/mois"
+    },
+    "pricing": {
+      "free": "Gratuit (cloud complet, auto-hébergeable également)",
+      "paid": "Professional à partir de 7$/mois pour les équipes"
+    },
+    "pricingEn": {
+      "free": "Free (full cloud, also self-hostable)",
+      "paid": "Professional from $7/month for teams"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "oui",
+    "freeAlternative": "Penpot",
+    "relevantFor": [
+      "designer",
+      "dev"
+    ],
+    "bestFor": [
+      "designer"
+    ],
+    "pros": [
+      "Entièrement gratuit pour les solo et petites équipes — zéro coût",
+      "Open-source et auto-hébergeable — indépendance totale des vendors",
+      "Fonctionnalités comparables à Figma : vectoriel, proto, collaboration temps réel",
+      "Formats ouverts SVG/CSS — exportable et lisible sans l'outil",
+      "En pleine croissance : plugins, communauté active et roadmap ambitieuse"
+    ],
+    "prosEn": [
+      "Completely free for solos and small teams — zero cost",
+      "Open-source and self-hostable — full vendor independence",
+      "Features comparable to Figma: vector, prototyping, real-time collaboration",
+      "Open SVG/CSS formats — exportable and readable without the tool",
+      "Fast growing: plugins, active community and ambitious roadmap"
+    ],
+    "cons": [
+      "Moins de plugins et d'intégrations que Figma (communauté plus petite)",
+      "Interface moins polie que Figma — apprentissage nécessaire pour les ex-Figma users",
+      "Performances moins fluides sur de gros fichiers complexes",
+      "Auto-hébergement nécessite des compétences DevOps"
+    ],
+    "consEn": [
+      "Fewer plugins and integrations than Figma (smaller community)",
+      "Less polished interface than Figma — learning curve for ex-Figma users",
+      "Less smooth performance on large complex files",
+      "Self-hosting requires DevOps skills"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu veux une alternative gratuite à Figma sans compromettre les fonctionnalités de base",
+        "Tu travailles dans un contexte où l'open-source et la privacy comptent (données clients)",
+        "Tu commences le design et tu ne veux pas dépenser 15$/mois pour Figma"
+      ],
+      "avoidIf": [
+        "Tu travailles dans un studio ou une agence déjà sur Figma — pas de raison de changer",
+        "Tu as besoin de tous les plugins Figma premium de l'écosystème",
+        "Tes clients utilisent Figma — les fichiers ne sont pas entièrement compatibles"
+      ],
+      "threshold": "Excellent choix pour un designer freelance indépendant ou une startup early-stage. Migrer depuis Figma uniquement si tu as une raison forte."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a free Figma alternative without compromising basic functionality",
+        "You work in a context where open-source and privacy matter (client data)",
+        "You're starting design and don't want to spend $15/month on Figma"
+      ],
+      "avoidIf": [
+        "You work in a studio or agency already on Figma — no reason to switch",
+        "You need all the premium Figma plugins from the ecosystem",
+        "Your clients use Figma — files aren't fully compatible"
+      ],
+      "threshold": "Excellent choice for an independent freelance designer or early-stage startup. Migrate from Figma only if you have a strong reason."
+    },
+    "useCases": [
+      "Designer des maquettes UI pour un client sans payer de licence Figma",
+      "Auto-héberger un outil de design pour une startup soucieuse de ses données",
+      "Créer un prototype interactif pour une app mobile gratuitement"
+    ],
+    "useCasesEn": [
+      "Design UI mockups for a client without paying for a Figma license",
+      "Self-host a design tool for a data-conscious startup",
+      "Create an interactive prototype for a mobile app for free"
+    ],
+    "alternatives": [
+      "figma",
+      "sketch",
+      "adobe-xd"
+    ],
+    "functional_needs": [
+      "ui-design",
+      "prototyping",
+      "vector-design"
+    ],
+    "seo": {
+      "metaDescription": "Penpot avis 2026 : alternative open-source gratuite à Figma. Design vectoriel, prototypage, collaboration. Verdict honnête."
+    }
+  },
+  {
+    "id": "screen-studio",
+    "slug": "screen-studio",
+    "name": "Screen Studio",
+    "category": "creation",
+    "websiteUrl": "https://screen.studio",
+    "shortDescription": "Enregistreur d'écran Mac avec effets cinématiques automatiques — pour des démos pro.",
+    "shortDescriptionEn": "Mac screen recorder with automatic cinematic effects — for pro demos.",
+    "longDescription": "Screen Studio est un enregistreur d'écran macOS qui transforme automatiquement tes enregistrements bruts en démos visuellement impressionnantes : zoom automatique sur les clics, courbes de mouvement fluides, mise en avant des raccourcis clavier, fond personnalisé et cadre d'app.\n\nEn 2026, Screen Studio est passé en abonnement uniquement : 9$/mois en annuel (≈8,28€) ou 29$/mois en mensuel (≈26,68€). L'application est utilisable gratuitement avec toutes ses fonctionnalités — l'export nécessite un abonnement actif.\n\nPour les indie hackers, designers et développeurs qui créent des démos produit, des tutoriels ou des documentations techniques, Screen Studio produit des vidéos de qualité professionnelle sans avoir besoin de Final Cut Pro ou d'un vidéaste. C'est devenu le standard de facto pour les démos SaaS.",
+    "longDescriptionEn": "Screen Studio is a macOS screen recorder that automatically transforms your raw recordings into visually impressive demos: automatic zoom on clicks, smooth motion curves, keyboard shortcut highlighting, custom background and app frame.\n\nIn 2026, Screen Studio moved to subscription-only: $9/month annual (≈€8.28) or $29/month monthly (≈€26.68). The app is usable free with all features — export requires an active subscription.\n\nFor indie hackers, designers and developers creating product demos, tutorials or technical documentation, Screen Studio produces professional-quality videos without needing Final Cut Pro or a videographer. It has become the de facto standard for SaaS demos.",
+    "defaultMonthlyPrice": 8.28,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "screen.studio",
+      "official_source_url": "https://screen.studio",
+      "compare_plan_name": "Annuel",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 8.28,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "macos_only",
+        "annual_billing_required_for_low_price",
+        "subscription_model_since_2026"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit pour enregistrer — export nécessite abonnement",
+      "paid": "Annuel 8,28€/mois (99$/an) · Mensuel 26,68€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit pour enregistrer et prévisualiser",
+      "paid": "Annuel 9$/mois ($108/an) · Mensuel 29$/mois"
+    },
+    "pricingEn": {
+      "free": "Free to record and preview",
+      "paid": "Annual $9/month ($108/year) · Monthly $29/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "dev",
+      "designer",
+      "content-creator"
+    ],
+    "bestFor": [
+      "dev",
+      "designer"
+    ],
+    "pros": [
+      "Zoom automatique sur les clics — démos pro sans montage manuel",
+      "Effets cinématiques (mouvement, fond, cadre) en quelques clics",
+      "Mise en avant des raccourcis clavier automatique",
+      "Utilisable gratuitement — export uniquement en payant",
+      "Standard de facto pour les démos SaaS et tutoriels produit"
+    ],
+    "prosEn": [
+      "Automatic zoom on clicks — pro demos without manual editing",
+      "Cinematic effects (motion, background, frame) in a few clicks",
+      "Automatic keyboard shortcut highlighting",
+      "Usable for free — export only with paid plan",
+      "De facto standard for SaaS demos and product tutorials"
+    ],
+    "cons": [
+      "macOS uniquement — pas de Windows ou Linux",
+      "Passé de licence unique à abonnement en 2026 — frustrant pour les anciens acheteurs",
+      "29$/mois en mensuel est cher pour un usage occasionnel",
+      "Moins adapté pour les longues formations ou screencasts complexes (pas de montage avancé)"
+    ],
+    "consEn": [
+      "macOS only — no Windows or Linux",
+      "Switched from one-time license to subscription in 2026 — frustrating for early buyers",
+      "$29/month monthly is expensive for occasional use",
+      "Less suited for long training videos or complex screencasts (no advanced editing)"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu crées des démos produit ou des tutoriels régulièrement sur Mac",
+        "Tu veux des vidéos pro sans apprendre Final Cut Pro ou Premiere",
+        "Tu vends un SaaS et tu veux des démos qui impressionnent sans effort"
+      ],
+      "avoidIf": [
+        "Tu es sur Windows ou Linux — l'outil n'existe pas pour ces plateformes",
+        "Tu fais des enregistrements longs et complexes — Loom ou Descript sont mieux",
+        "Tu n'expordes qu'1-2 vidéos par an — 108$/an n'est pas justifié"
+      ],
+      "threshold": "Rentable à 108$/an si tu crées au moins 1 démo ou tutoriel par mois — le gain de temps sur le montage est immédiat."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly create product demos or tutorials on Mac",
+        "You want pro videos without learning Final Cut Pro or Premiere",
+        "You sell a SaaS and want impressive demos without effort"
+      ],
+      "avoidIf": [
+        "You're on Windows or Linux — the tool doesn't exist for these platforms",
+        "You do long, complex recordings — Loom or Descript are better",
+        "You only export 1-2 videos per year — $108/year isn't justified"
+      ],
+      "threshold": "Worth $108/year if you create at least 1 demo or tutorial per month — the editing time savings are immediate."
+    },
+    "useCases": [
+      "Créer une démo produit SaaS avec zoom automatique sur les features clés",
+      "Enregistrer un tutoriel technique avec raccourcis clavier mis en avant",
+      "Faire une vidéo onboarding client pour sa documentation produit en 20 minutes"
+    ],
+    "useCasesEn": [
+      "Create a SaaS product demo with automatic zoom on key features",
+      "Record a technical tutorial with keyboard shortcuts highlighted",
+      "Make a client onboarding video for product documentation in 20 minutes"
+    ],
+    "alternatives": [
+      "loom",
+      "descript",
+      "cleanshot-x"
+    ],
+    "functional_needs": [
+      "screen-recording",
+      "demo-creation",
+      "video-tutorial"
+    ],
+    "seo": {
+      "metaDescription": "Screen Studio avis 2026 : enregistreur d'écran Mac avec effets pros automatiques. Prix 8,28€/mois, alternatives Loom."
+    }
+  },
+  {
+    "id": "granola",
+    "slug": "granola",
+    "name": "Granola",
+    "category": "ai-general",
+    "websiteUrl": "https://www.granola.ai",
+    "shortDescription": "Bloc-notes IA pour tes réunions — prend des notes pendant que tu écoutes.",
+    "shortDescriptionEn": "AI notepad for your meetings — takes notes while you listen.",
+    "longDescription": "Granola est une app macOS qui tourne en fond pendant tes réunions (Zoom, Meet, Teams ou en présentiel) et enrichit automatiquement tes notes brutes avec la transcription complète et un résumé structuré par l'IA. Tu notes quelques mots-clés, Granola remplie le reste.\n\nLe plan Business à 14$/utilisateur/mois (≈12,88€) donne accès à l'historique illimité des réunions, aux modèles IA avancés et aux intégrations (Notion, Slack, etc.). La version gratuite inclut l'historique des 30 derniers jours.\n\nDifférence clé avec Fathom ou Otter.ai : Granola ne rejoint pas la réunion comme un bot — elle capture directement le son de ta machine, sans que les autres participants le sachent. Pour les réunions sensibles où tu ne peux pas ajouter un bot visible, c'est un avantage décisif. Levée de 125M$ en mars 2026 à 1,5Md$ de valorisation.",
+    "longDescriptionEn": "Granola is a macOS app that runs in the background during your meetings (Zoom, Meet, Teams or in-person) and automatically enriches your rough notes with the full transcription and an AI-structured summary. You jot down a few keywords, Granola fills in the rest.\n\nThe Business plan at $14/user/month (≈€12.88) gives access to unlimited meeting history, advanced AI models and integrations (Notion, Slack, etc.). The free version includes the last 30 days of history.\n\nKey difference from Fathom or Otter.ai: Granola doesn't join the meeting as a bot — it captures sound directly from your machine, without other participants knowing. For sensitive meetings where you can't add a visible bot, this is a decisive advantage. $125M raise in March 2026 at $1.5B valuation.",
+    "defaultMonthlyPrice": 12.88,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "granola.ai",
+      "official_source_url": "https://www.granola.ai/pricing",
+      "compare_plan_name": "Business",
+      "compare_plan_kind": "per_user",
+      "compare_price_monthly_eur": 12.88,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "macos_only",
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — résumés illimités, historique 30 jours",
+      "paid": "Business 12,88€/utilisateur/mois · Enterprise 32,20€"
+    },
+    "pricing": {
+      "free": "Gratuit avec historique 30 jours",
+      "paid": "Business 14$/utilisateur/mois · Enterprise 35$/utilisateur"
+    },
+    "pricingEn": {
+      "free": "Free with 30-day history",
+      "paid": "Business $14/user/month · Enterprise $35/user"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "consultant",
+      "dev",
+      "ops",
+      "other"
+    ],
+    "bestFor": [
+      "consultant"
+    ],
+    "pros": [
+      "Pas de bot visible dans la réunion — capture discrète depuis la machine",
+      "Enrichit tes propres notes plutôt que de les remplacer entièrement",
+      "Fonctionne aussi en présentiel — pas besoin d'internet pour enregistrer",
+      "App macOS native — très peu de latence et d'impact sur les perfs",
+      "125M$ de financement : produit en développement intense en 2026"
+    ],
+    "prosEn": [
+      "No visible bot in the meeting — discreet capture from your machine",
+      "Enriches your own notes rather than replacing them entirely",
+      "Works in-person too — no internet needed to record",
+      "Native macOS app — very low latency and performance impact",
+      "$125M in funding: product in intense development in 2026"
+    ],
+    "cons": [
+      "macOS uniquement pour l'instant — pas de Windows ou mobile (iOS app en 2026)",
+      "Nécessite d'être sur son Mac pendant la réunion",
+      "Moins de fonctionnalités CRM que Fathom pour les commerciaux",
+      "Encore méconnu — moins de ressources communautaires que Otter.ai"
+    ],
+    "consEn": [
+      "macOS only for now — no Windows or mobile (iOS app in 2026)",
+      "Requires being on your Mac during the meeting",
+      "Fewer CRM features than Fathom for salespeople",
+      "Still less known — fewer community resources than Otter.ai"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu es sur Mac et tu veux des notes de réunion sans ajouter un bot visible",
+        "Tu préfères enrichir tes propres notes plutôt que déléguer entièrement à l'IA",
+        "Tu fais des réunions sensibles où un enregistreur visible poserait problème"
+      ],
+      "avoidIf": [
+        "Tu n'es pas sur Mac — l'outil n'existe que sur macOS (pour l'instant)",
+        "Tu veux un suivi CRM des réunions — Fathom est mieux",
+        "Tu cherches une solution multi-plateforme pour une équipe mixte Mac/Windows"
+      ],
+      "threshold": "Excellent pour les consultants et managers Mac avec 5+ réunions/semaine. La version gratuite couvre bien les besoins basiques."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're on Mac and want meeting notes without adding a visible bot",
+        "You prefer to enrich your own notes rather than fully delegating to AI",
+        "You have sensitive meetings where a visible recorder would be problematic"
+      ],
+      "avoidIf": [
+        "You're not on Mac — the tool only exists on macOS (for now)",
+        "You want CRM tracking of meetings — Fathom is better",
+        "You're looking for a cross-platform solution for a mixed Mac/Windows team"
+      ],
+      "threshold": "Excellent for Mac consultants and managers with 5+ meetings/week. The free version covers basic needs well."
+    },
+    "useCases": [
+      "Prendre des notes pendant un appel client difficile sans qu'il y ait de bot visible",
+      "Enrichir ses notes de réunion présentiel avec transcription complète",
+      "Retrouver ce qui a été dit lors d'une réunion il y a 3 semaines en quelques secondes"
+    ],
+    "useCasesEn": [
+      "Take notes during a difficult client call without a visible bot",
+      "Enrich in-person meeting notes with full transcription",
+      "Find what was said in a meeting 3 weeks ago in seconds"
+    ],
+    "alternatives": [
+      "fathom",
+      "otter-ai",
+      "tldv"
+    ],
+    "functional_needs": [
+      "meeting-notes",
+      "transcription",
+      "ai-assistant"
+    ],
+    "seo": {
+      "metaDescription": "Granola avis 2026 : prise de notes IA discrète pour réunions Mac. Prix 12,88€/mois, alternatives Fathom, Otter.ai."
+    }
+  },
+  {
+    "id": "jotform",
+    "slug": "jotform",
+    "name": "Jotform",
+    "category": "nocode-web",
+    "websiteUrl": "https://www.jotform.com",
+    "shortDescription": "Créateur de formulaires puissant avec 10 000+ templates, paiements et automatisations.",
+    "shortDescriptionEn": "Powerful form builder with 10,000+ templates, payments and automations.",
+    "longDescription": "Jotform est l'un des créateurs de formulaires les plus complets du marché : 10 000+ templates, intégration de paiements (Stripe, PayPal, Square), signatures électroniques, tableaux de bord de données et 200+ intégrations avec les outils tiers. Il couvre des cas d'usage bien au-delà du simple formulaire de contact.\n\nLe plan Bronze à 34$/mois (≈31,28€) ou environ 28$/mois annuel donne accès à 1 000 soumissions/mois, 25 formulaires et 10 GB de stockage. La version gratuite limite à 5 formulaires et 100 soumissions/mois.\n\nDifférence avec Typeform (déjà dans la DB) : Jotform est plus orienté fonctionnalité et volume (plus de champs, plus d'intégrations, paiements avancés), là où Typeform mise sur l'expérience conversationnelle. Pour les freelances et agences qui créent des formulaires clients, des devis, des inscriptions et des paiements, Jotform est l'outil le plus polyvalent.",
+    "longDescriptionEn": "Jotform is one of the most comprehensive form builders on the market: 10,000+ templates, payment integration (Stripe, PayPal, Square), electronic signatures, data dashboards and 200+ integrations with third-party tools. It covers use cases well beyond the simple contact form.\n\nThe Bronze plan at $34/month (≈€31.28) or ~$28/month annual gives access to 1,000 submissions/month, 25 forms and 10 GB storage. The free version limits to 5 forms and 100 submissions/month.\n\nDifference from Typeform (already in DB): Jotform is more feature and volume oriented (more fields, more integrations, advanced payments), while Typeform bets on conversational experience. For freelancers and agencies creating client forms, quotes, registrations and payments, Jotform is the most versatile tool.",
+    "defaultMonthlyPrice": 31.28,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "jotform.com",
+      "official_source_url": "https://www.jotform.com/pricing/",
+      "compare_plan_name": "Bronze",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 31.28,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "usd_pricing",
+        "submission_limits",
+        "single_user_only"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 5 formulaires, 100 soumissions/mois",
+      "paid": "Bronze 31,28€/mois · Silver 35,88€/mois · Gold 91,08€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit avec 5 formulaires et 100 soumissions/mois",
+      "paid": "Bronze 34$/mois · Silver 39$/mois · Gold 99$/mois"
+    },
+    "pricingEn": {
+      "free": "Free with 5 forms and 100 submissions/month",
+      "paid": "Bronze $34/month · Silver $39/month · Gold $99/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "oui",
+    "relevantFor": [
+      "consultant",
+      "ops",
+      "other"
+    ],
+    "bestFor": [
+      "consultant",
+      "other"
+    ],
+    "pros": [
+      "10 000+ templates couvrant tous les secteurs et cas d'usage",
+      "Paiements intégrés (Stripe, PayPal, Square) — formulaires de commande inclus",
+      "Signatures électroniques incluses dès les premiers plans",
+      "200+ intégrations avec Zapier, Notion, HubSpot, Google Sheets",
+      "HIPAA compliance sur Gold — pour les professions de santé"
+    ],
+    "prosEn": [
+      "10,000+ templates covering all sectors and use cases",
+      "Integrated payments (Stripe, PayPal, Square) — order forms included",
+      "Electronic signatures included from the first plans",
+      "200+ integrations with Zapier, Notion, HubSpot, Google Sheets",
+      "HIPAA compliance on Gold — for healthcare professionals"
+    ],
+    "cons": [
+      "Plan Bronze à 34$/mois cher vs Tally ou Fillout qui sont gratuits",
+      "Limites de soumissions strictes — un formulaire viral peut épuiser le quota",
+      "Un seul utilisateur par compte (pas de multi-user sauf Enterprise)",
+      "Interface datée comparée à Typeform ou Fillout"
+    ],
+    "consEn": [
+      "Bronze plan at $34/month expensive vs Tally or Fillout which are free",
+      "Strict submission limits — a viral form can exhaust the quota",
+      "Single user per account (no multi-user except Enterprise)",
+      "Dated interface compared to Typeform or Fillout"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu as besoin de paiements intégrés, signatures et gestion de données dans tes formulaires",
+        "Tu traites un volume important de soumissions (500+/mois) régulièrement",
+        "Tu travailles dans un secteur réglementé (santé, juridique) et tu as besoin de HIPAA"
+      ],
+      "avoidIf": [
+        "Tu as juste besoin de formulaires simples — Tally (gratuit) ou Fillout suffisent",
+        "Tu veux une expérience conversationnelle — Typeform est mieux",
+        "Tu es solo avec peu de soumissions — le plan gratuit ou Tally couvrent le besoin"
+      ],
+      "threshold": "Justifié si tu collectes des paiements en ligne ou des signatures électroniques régulièrement — la version gratuite ne couvre pas ces cas."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need integrated payments, signatures and data management in your forms",
+        "You process a high volume of submissions (500+/month) regularly",
+        "You work in a regulated sector (health, legal) and need HIPAA"
+      ],
+      "avoidIf": [
+        "You just need simple forms — Tally (free) or Fillout suffice",
+        "You want a conversational experience — Typeform is better",
+        "You're solo with few submissions — the free plan or Tally cover the need"
+      ],
+      "threshold": "Justified if you collect online payments or electronic signatures regularly — the free version doesn't cover these cases."
+    },
+    "useCases": [
+      "Créer un formulaire de commande avec paiement Stripe intégré pour des clients",
+      "Collecter des signatures électroniques sur des devis ou contrats clients",
+      "Automatiser l'onboarding client avec un formulaire qui alimente Google Sheets + Slack"
+    ],
+    "useCasesEn": [
+      "Create an order form with integrated Stripe payment for clients",
+      "Collect electronic signatures on client quotes or contracts",
+      "Automate client onboarding with a form feeding Google Sheets + Slack"
+    ],
+    "alternatives": [
+      "typeform",
+      "tally",
+      "fillout"
+    ],
+    "functional_needs": [
+      "forms",
+      "data-collection",
+      "payments"
+    ],
+    "seo": {
+      "metaDescription": "Jotform avis 2026 : formulaires avec paiements et signatures. Prix 31,28€/mois, alternatives Typeform, Tally."
+    }
   }
 ]
