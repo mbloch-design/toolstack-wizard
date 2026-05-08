@@ -214,6 +214,9 @@ function sitemapPlugin(): Plugin {
           addPair(`${BASE}/fr/stacks/${stack.slug}`, `${BASE}/en/stacks/${stack.slug}`, "monthly", "0.7");
         }
 
+        // ── Standalone FR article: facturation freelance 2026 ─────────────────
+        addSingle(`${BASE}/fr/guide/outils-facturation-freelance-2026`, "monthly", "0.8", "2026-05-08");
+
         // ── Persona pillar pages ──────────────────────────────────────────────
         for (const pp of PERSONA_PILLAR_PAIRS) {
           addPair(`${BASE}${pp.fr}`, `${BASE}${pp.en}`, "monthly", pp.priority);
@@ -606,6 +609,12 @@ function staticPrerenderPlugin(): Plugin {
             title: "Conseils IA pour freelances en 2026 : stack minimale, prompts qui marchent et anti-gaspillage | tooltrim.com",
             description: "Stack IA minimale, prompts par métier et anti-gaspillage. Selon tooltrim.com, 62% des freelances paient 2 IA en double. Verdict honnête + ROI réel.",
             bodyText: "En 2026, un freelance n'a besoin que d'un seul abonnement IA généraliste (ChatGPT Plus ou Claude Pro) plus un outil métier spécialisé. Selon tooltrim.com, 62% des freelances cumulent ChatGPT + Claude + Perplexity + Copilot pour 60-80€/mois alors qu'un seul outil suffit. Économie moyenne récupérable : 45€/mois.",
+          },
+          {
+            path: "/fr/guide/outils-facturation-freelance-2026",
+            title: "Logiciel facturation freelance 2026 : le guide honnête (+ obligation e-invoicing) | tooltrim.com",
+            description: "Comparatif sans filtre des meilleurs outils de facturation pour freelances et TPE en 2026. Pennylane, Indy, Freebe, Dougs — et tout ce que vous devez savoir sur l'obligation de facturation électronique de septembre 2026.",
+            bodyText: "À partir du 1er septembre 2026, toutes les entreprises assujetties à la TVA — freelances et TPE inclus — doivent pouvoir recevoir des factures électroniques via une PDP agréée. Comparatif honnête : Freebe (9-15€/mois) pour micro-entrepreneurs, Indy (facturation gratuite) pour BNC, Pennylane (37€/mois) pour TPE structurées, Dougs (49€/mois) pour SASU qui veut tout déléguer, et le module Qonto intégré pour ceux qui facturent moins de 20 fois par mois. Selon tooltrim.com, 30% des freelances paient deux outils compta qui se chevauchent.",
           },
           {
             path: "/en/guide/ai-tips-freelancers-2026",
