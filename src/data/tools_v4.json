@@ -59351,5 +59351,1401 @@
     "seo": {
       "metaDescription": "TypoTab à 5,52€/mois : assistant IA de rédaction dans chaque onglet Chrome. Améliore emails, posts LinkedIn et docs sans changer d'onglet."
     }
+  },
+  {
+    "id": "magic-patterns",
+    "slug": "magic-patterns",
+    "name": "Magic Patterns",
+    "category": "design-tools",
+    "websiteUrl": "https://www.magicpatterns.com",
+    "shortDescription": "Générateur IA de composants UI et prototypes à partir d'un prompt.",
+    "shortDescriptionEn": "AI-powered UI component and prototype generator from prompts.",
+    "longDescription": "Magic Patterns est un outil IA spécialisé dans la génération de composants UI et d'interfaces complètes à partir de descriptions textuelles. Tu décris ce dont tu as besoin — une page de pricing, un formulaire d'inscription, un dashboard — et l'IA génère du code React/Tailwind prêt à intégrer.\n\nLe plan Starter à 20$/mois (≈18,40€) donne accès à la génération illimitée de composants avec crédits mensuels, l'export de code propre et l'intégration dans ton design system. La vraie différence avec v0 ou Lovable : Magic Patterns est centré composant, pas page entière, ce qui le rend plus précis pour les designers produit qui veulent un contrôle fin sur les patterns UI.\n\nIdéal pour un designer freelance ou un indie hacker qui itère vite sur des interfaces sans passer par Figma + développeur.",
+    "longDescriptionEn": "Magic Patterns is an AI tool specialized in generating UI components and full interfaces from text descriptions. Describe what you need — a pricing page, sign-up form, dashboard — and the AI generates ready-to-integrate React/Tailwind code.\n\nThe Starter plan at $20/month gives access to unlimited component generation with monthly credits, clean code export and design system integration. The real difference from v0 or Lovable: Magic Patterns is component-focused, not full-page, making it more precise for product designers who want fine control over UI patterns.\n\nIdeal for a freelance designer or indie hacker iterating fast on interfaces without the Figma + developer roundtrip.",
+    "defaultMonthlyPrice": 18.4,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "magicpatterns.com",
+      "official_source_url": "https://www.magicpatterns.com/pricing",
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 18.4,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based",
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — crédits limités pour tester",
+      "paid": "Starter 18,40€/mois · Business 92€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit avec crédits limités",
+      "paid": "Starter 20$/mois · Business 100$/mois"
+    },
+    "pricingEn": {
+      "free": "Free with limited credits",
+      "paid": "Starter $20/month · Business $100/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "oui",
+    "relevantFor": [
+      "designer",
+      "dev"
+    ],
+    "bestFor": [
+      "designer"
+    ],
+    "pros": [
+      "Génère des composants React/Tailwind directement intégrables",
+      "Centré composant (pas page entière) — contrôle plus précis",
+      "Itération rapide : modifier un composant en un prompt",
+      "Complémentaire avec ton design system existant",
+      "Bien plus rapide que Figma → développeur pour des maquettes rapides"
+    ],
+    "prosEn": [
+      "Generates directly integrable React/Tailwind components",
+      "Component-focused (not full page) — more precise control",
+      "Fast iteration: modify a component in one prompt",
+      "Complementary with your existing design system",
+      "Much faster than Figma → developer for quick mockups"
+    ],
+    "cons": [
+      "Crédits mensuels limités sur Starter — coûteux à l'usage intensif",
+      "Business plan à 100$/mois trop cher pour un solo",
+      "Moins adapté pour générer des pages marketing complètes (v0 est meilleur)",
+      "Nécessite de savoir intégrer du code React pour en tirer le maximum"
+    ],
+    "consEn": [
+      "Limited monthly credits on Starter — expensive for heavy use",
+      "Business plan at $100/month too expensive for solo",
+      "Less adapted for full marketing pages (v0 is better for that)",
+      "Requires knowing how to integrate React code to get the most out of it"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu es designer ou indie dev et tu veux générer des composants UI propres rapidement",
+        "Tu travailles sur un produit SaaS et tu veux itérer vite sur les UI patterns",
+        "Tu maîtrises React/Tailwind et tu veux un copilote pour les composants"
+      ],
+      "avoidIf": [
+        "Tu n'as pas de connaissances en React — le code généré sera inutilisable",
+        "Tu veux générer des pages marketing complètes (préfère v0 by Vercel)",
+        "Tu fais des designs print ou statiques — cet outil est 100% web"
+      ],
+      "threshold": "Utile si tu passes plus de 3h/semaine à créer des composants UI manuellement — la génération IA t'en économise la moitié."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're a designer or indie dev wanting to generate clean UI components quickly",
+        "You work on a SaaS product and want to iterate fast on UI patterns",
+        "You know React/Tailwind and want a copilot for components"
+      ],
+      "avoidIf": [
+        "You don't know React — generated code will be unusable",
+        "You want to generate full marketing pages (prefer v0 by Vercel)",
+        "You do print or static designs — this tool is 100% web"
+      ],
+      "threshold": "Useful if you spend 3h+/week creating UI components manually — AI generation saves you half that time."
+    },
+    "useCases": [
+      "Générer un composant pricing table React/Tailwind en 30 secondes",
+      "Créer une variante de carte produit sans passer par Figma",
+      "Prototyper un dashboard SaaS avec des composants cohérents"
+    ],
+    "useCasesEn": [
+      "Generate a React/Tailwind pricing table component in 30 seconds",
+      "Create a product card variant without going through Figma",
+      "Prototype a SaaS dashboard with consistent components"
+    ],
+    "alternatives": [
+      "v0",
+      "lovable",
+      "figma"
+    ],
+    "functional_needs": [
+      "ui-design",
+      "prototyping",
+      "code-generation"
+    ],
+    "seo": {
+      "metaDescription": "Magic Patterns avis 2026 : génère des composants UI React/Tailwind avec l'IA. Prix, alternatives et verdict honnête."
+    }
+  },
+  {
+    "id": "dynamic-mockups",
+    "slug": "dynamic-mockups",
+    "name": "Dynamic Mockups",
+    "category": "design-tools",
+    "websiteUrl": "https://dynamicmockups.com",
+    "shortDescription": "Générateur de mockups produit automatisé avec API et batch export.",
+    "shortDescriptionEn": "Automated product mockup generator with API and batch export.",
+    "longDescription": "Dynamic Mockups automatise la création de visuels produit à grande échelle. Tu importes tes designs (logo, packaging, print-on-demand), tu choisis un template de mockup parmi des milliers, et l'outil place automatiquement ton visuel sur le produit.\n\nLe plan Pro à 15$/mois (≈13,80€) donne accès aux exports batch illimités, aux crédits mensuels renouvelés et à l'API pour intégrer la génération de mockups dans tes workflows automatisés. La vraie force : tu peux créer 100 variantes produit en quelques minutes là où Photoshop t'en demanderait des heures.\n\nParfait pour un designer freelance qui livre des visuels e-commerce, un créateur print-on-demand qui gère un catalogue large, ou un marketer qui teste des créas publicitaires en volume.",
+    "longDescriptionEn": "Dynamic Mockups automates product visual creation at scale. Import your designs (logo, packaging, print-on-demand), choose a mockup template from thousands, and the tool automatically places your visual on the product.\n\nThe Pro plan at $15/month (≈€13.80) gives access to unlimited batch exports, monthly credit renewals and API for integrating mockup generation into automated workflows. The real strength: you can create 100 product variants in minutes where Photoshop would take hours.\n\nPerfect for a freelance designer delivering e-commerce visuals, a print-on-demand creator managing a large catalog, or a marketer testing ad creatives at volume.",
+    "defaultMonthlyPrice": 13.8,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "dynamicmockups.com",
+      "official_source_url": "https://dynamicmockups.com/pricing/",
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 13.8,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based",
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 50 crédits offerts, 3 images IA/jour",
+      "paid": "Pro à partir de 13,80€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit avec 50 crédits de démarrage",
+      "paid": "Pro 15$/mois avec crédits renouvelables et batch illimité"
+    },
+    "pricingEn": {
+      "free": "Free with 50 starter credits",
+      "paid": "Pro $15/month with renewable credits and unlimited batch"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "designer",
+      "content-creator",
+      "other"
+    ],
+    "bestFor": [
+      "designer",
+      "content-creator"
+    ],
+    "pros": [
+      "Génération de mockups en batch — des centaines de visuels en quelques clics",
+      "API disponible pour automatiser dans tes workflows (Zapier, Make, etc.)",
+      "Pas de watermark même en version gratuite",
+      "Templates professionnels pour t-shirts, mugs, packaging, appareils",
+      "Gain de temps massif vs Photoshop pour les variantes produit"
+    ],
+    "prosEn": [
+      "Batch mockup generation — hundreds of visuals in a few clicks",
+      "API available for automation in your workflows (Zapier, Make, etc.)",
+      "No watermark even in free version",
+      "Professional templates for t-shirts, mugs, packaging, devices",
+      "Massive time savings vs Photoshop for product variants"
+    ],
+    "cons": [
+      "Crédits consommables — usage intensif peut vite dépasser le plan",
+      "Templates limités sur le plan gratuit",
+      "Moins de contrôle créatif que Photoshop pour des mockups très personnalisés",
+      "Outil niche — pas utile si tu ne fais pas de visuels produit"
+    ],
+    "consEn": [
+      "Consumable credits — intensive use can quickly exceed the plan",
+      "Limited templates on the free plan",
+      "Less creative control than Photoshop for highly customized mockups",
+      "Niche tool — not useful if you don't create product visuals"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu crées régulièrement des visuels pour des produits physiques ou digitaux",
+        "Tu gères un catalogue print-on-demand et tu veux automatiser les previews",
+        "Tu fais du marketing et tu testes des créas sur plusieurs formats"
+      ],
+      "avoidIf": [
+        "Tu n'as pas besoin de visuels produit — cet outil est très spécialisé",
+        "Tu fais des mockups ultra-customisés (mieux vaut Photoshop)",
+        "Tu n'as pas de designs à intégrer — l'outil ne crée pas le design initial"
+      ],
+      "threshold": "Rentable dès 10 visuels produit/mois que tu créerais autrement dans Photoshop ou Canva."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly create visuals for physical or digital products",
+        "You manage a print-on-demand catalog and want to automate previews",
+        "You do marketing and test creatives across multiple formats"
+      ],
+      "avoidIf": [
+        "You don't need product visuals — this tool is very specialized",
+        "You create ultra-custom mockups (Photoshop is better)",
+        "You don't have designs to integrate — the tool doesn't create the initial design"
+      ],
+      "threshold": "Worth it from 10 product visuals/month that you'd otherwise create in Photoshop or Canva."
+    },
+    "useCases": [
+      "Créer 50 variantes de mockup t-shirt pour un catalogue POD en 10 minutes",
+      "Générer automatiquement des visuels packaging pour une boutique Shopify",
+      "Tester 20 créas publicitaires différentes avec l'API Dynamic Mockups + Make"
+    ],
+    "useCasesEn": [
+      "Create 50 t-shirt mockup variants for a POD catalog in 10 minutes",
+      "Automatically generate packaging visuals for a Shopify store",
+      "Test 20 different ad creatives with the Dynamic Mockups API + Make"
+    ],
+    "alternatives": [
+      "canva",
+      "placeit"
+    ],
+    "functional_needs": [
+      "design-automation",
+      "mockup-generation",
+      "visual-content"
+    ],
+    "seo": {
+      "metaDescription": "Dynamic Mockups avis 2026 : génère des mockups produit en batch avec API. Prix 13,80€/mois, alternatives et verdict."
+    }
+  },
+  {
+    "id": "motion-app",
+    "slug": "motion-app",
+    "name": "Motion",
+    "category": "organization",
+    "websiteUrl": "https://www.usemotion.com",
+    "shortDescription": "Calendrier IA qui planifie automatiquement tes tâches et réunions.",
+    "shortDescriptionEn": "AI calendar that automatically schedules your tasks and meetings.",
+    "longDescription": "Motion est un calendrier intelligent propulsé par l'IA qui analyse ta charge de travail, tes deadlines et tes créneaux libres pour planifier automatiquement tes tâches à la meilleure heure possible. Tu entres une tâche avec une deadline — Motion décide quand la faire.\n\nLe plan Pro AI à 19$/mois (≈17,48€) inclut la planification automatique illimitée, la gestion des réunions, les rappels intelligents et 7 500 crédits IA/mois. En pratique : si une réunion s'ajoute, Motion réorganise tout ton planning sans que tu aies à le faire.\n\nDifférence avec Notion ou Todoist : Motion est un vrai scheduler IA — il ne te demande pas de planifier toi-même, il le fait pour toi. Pour les freelances et consultants qui jonglent avec plusieurs projets simultanément, c'est un gain de temps réel.",
+    "longDescriptionEn": "Motion is an AI-powered smart calendar that analyzes your workload, deadlines and free slots to automatically schedule your tasks at the best possible time. You enter a task with a deadline — Motion decides when to do it.\n\nThe Pro AI plan at $19/month (≈€17.48) includes unlimited automatic scheduling, meeting management, smart reminders and 7,500 AI credits/month. In practice: if a meeting gets added, Motion reorganizes your entire schedule without you having to.\n\nDifference from Notion or Todoist: Motion is a real AI scheduler — it doesn't ask you to plan yourself, it does it for you. For freelancers and consultants juggling multiple projects simultaneously, it's a real time saver.",
+    "defaultMonthlyPrice": 17.48,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "usemotion.com",
+      "official_source_url": "https://www.usemotion.com/pricing",
+      "compare_plan_name": "Pro AI",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 17.48,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "usd_pricing",
+        "pricing_changes_frequently"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Essai 7 jours gratuit — accès complet",
+      "paid": "Pro AI 17,48€/mois · Business AI 26,68€/siège/mois"
+    },
+    "pricing": {
+      "free": "Essai 7 jours (accès complet, CB requise)",
+      "paid": "Pro AI 19$/mois · Business AI 29$/siège/mois"
+    },
+    "pricingEn": {
+      "free": "7-day free trial (full access, credit card required)",
+      "paid": "Pro AI $19/month · Business AI $29/seat/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "consultant",
+      "dev",
+      "ops",
+      "other"
+    ],
+    "bestFor": [
+      "consultant",
+      "ops"
+    ],
+    "pros": [
+      "Planification automatique IA — tu entres une tâche, Motion choisit le créneau",
+      "Réorganisation dynamique si une réunion s'ajoute ou change",
+      "Gestion unifiée : tâches + réunions + calendrier dans une seule app",
+      "Réduit le temps de planification quotidienne à quasi zéro",
+      "Idéal pour jongler avec plusieurs projets en parallèle"
+    ],
+    "prosEn": [
+      "AI automatic scheduling — you enter a task, Motion chooses the slot",
+      "Dynamic reorganization if a meeting is added or changed",
+      "Unified management: tasks + meetings + calendar in one app",
+      "Reduces daily planning time to near zero",
+      "Ideal for juggling multiple projects in parallel"
+    ],
+    "cons": [
+      "19$/mois cher pour un planificateur de tâches",
+      "Courbe d'apprentissage : il faut faire confiance à l'IA pour planifier",
+      "Pas de version gratuite — essai 7 jours seulement avec CB",
+      "Peut frustrer si tu es très attaché à planifier toi-même",
+      "Moins flexible qu'un calendrier manuel pour les routines créatives"
+    ],
+    "consEn": [
+      "$19/month expensive for a task scheduler",
+      "Learning curve: you need to trust the AI to plan",
+      "No free version — 7-day trial only with credit card",
+      "Can frustrate if you like to plan everything yourself",
+      "Less flexible than a manual calendar for creative routines"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu jonglons avec 3+ projets en parallèle et tu perds du temps à planifier",
+        "Tu as des deadlines multiples à respecter chaque semaine",
+        "Tu as du mal à prioriser et à trouver des créneaux pour le travail profond"
+      ],
+      "avoidIf": [
+        "Tu as un planning simple et régulier — Notion ou Google Calendar suffisent",
+        "Tu veux contrôler ton planning manuellement heure par heure",
+        "Tu es dans une phase de découverte sans deadlines fixes — pas assez de structure à optimiser"
+      ],
+      "threshold": "Rentable si tu passes plus de 30 min/jour à réorganiser ton planning ou à choisir sur quoi travailler ensuite."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You juggle 3+ parallel projects and lose time planning",
+        "You have multiple deadlines to meet every week",
+        "You struggle to prioritize and find slots for deep work"
+      ],
+      "avoidIf": [
+        "You have a simple, regular schedule — Notion or Google Calendar suffice",
+        "You want to control your schedule manually hour by hour",
+        "You're in an exploratory phase without fixed deadlines — not enough structure to optimize"
+      ],
+      "threshold": "Worth it if you spend 30+ min/day reorganizing your schedule or deciding what to work on next."
+    },
+    "useCases": [
+      "Planifier automatiquement 10 tâches client avec deadlines différentes",
+      "Gérer réunions + travail profond sans conflit de créneaux",
+      "Réorganiser son planning en temps réel quand un client annule ou ajoute un appel"
+    ],
+    "useCasesEn": [
+      "Automatically schedule 10 client tasks with different deadlines",
+      "Manage meetings + deep work without scheduling conflicts",
+      "Reorganize your schedule in real-time when a client cancels or adds a call"
+    ],
+    "alternatives": [
+      "notion",
+      "todoist",
+      "reclaim-ai"
+    ],
+    "functional_needs": [
+      "task-management",
+      "calendar",
+      "ai-scheduling"
+    ],
+    "seo": {
+      "metaDescription": "Motion avis 2026 : calendrier IA qui planifie tes tâches automatiquement. Prix 17,48€/mois, alternatives Notion, Todoist."
+    }
+  },
+  {
+    "id": "hyperbrowser",
+    "slug": "hyperbrowser",
+    "name": "Hyperbrowser",
+    "category": "automation",
+    "websiteUrl": "https://www.hyperbrowser.ai",
+    "shortDescription": "Infrastructure de navigateurs cloud pour agents IA et scraping à grande échelle.",
+    "shortDescriptionEn": "Cloud browser infrastructure for AI agents and large-scale scraping.",
+    "longDescription": "Hyperbrowser est une infrastructure cloud qui lance des navigateurs Chromium à distance pour permettre aux agents IA et aux scripts d'automatisation de naviguer sur le web à grande échelle. Résolution de CAPTCHA, gestion de proxies, sessions persistantes — tout est inclus sans configuration.\n\nLe plan Startup à 30$/mois (≈27,60€) donne accès à 25 navigateurs concurrents, 30 000 crédits/mois et 30 jours de rétention des données. Chaque heure de navigation coûte 100 crédits (≈0,10$) et chaque page scrapée 1 crédit.\n\nLe cas d'usage principal : un développeur qui construit un agent IA capable de naviguer sur le web (collecte de leads, veille concurrentielle, tests automatisés, extraction de données structurées). Alternative solide à Browserbase ou Playwright managé.",
+    "longDescriptionEn": "Hyperbrowser is a cloud infrastructure that launches remote Chromium browsers to allow AI agents and automation scripts to browse the web at scale. CAPTCHA solving, proxy management, persistent sessions — all included without configuration.\n\nThe Startup plan at $30/month (≈€27.60) gives access to 25 concurrent browsers, 30,000 credits/month and 30-day data retention. Each hour of browsing costs 100 credits (≈$0.10) and each scraped page 1 credit.\n\nMain use case: a developer building an AI agent capable of browsing the web (lead collection, competitive intelligence, automated testing, structured data extraction). Solid alternative to Browserbase or managed Playwright.",
+    "defaultMonthlyPrice": 27.6,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "hyperbrowser.ai",
+      "official_source_url": "https://www.hyperbrowser.ai/pricing",
+      "compare_plan_name": "Startup",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 27.6,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based",
+        "usd_pricing",
+        "developer_tool"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 1 000 crédits, 1 navigateur concurrent",
+      "paid": "Startup 27,60€/mois · Scale 92€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit avec 1 000 crédits de démarrage",
+      "paid": "Startup 30$/mois · Scale 100$/mois"
+    },
+    "pricingEn": {
+      "free": "Free with 1,000 starter credits",
+      "paid": "Startup $30/month · Scale $100/month"
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "dev"
+    ],
+    "bestFor": [
+      "dev"
+    ],
+    "pros": [
+      "Navigateurs cloud prêts en secondes — pas de setup local complexe",
+      "CAPTCHA solving et gestion de proxies inclus d'office",
+      "API simple pour intégrer dans n'importe quel agent IA ou script",
+      "25 navigateurs concurrents sur Startup — scalable dès le début",
+      "Alternative sérieuse à Browserbase avec des tarifs plus accessibles"
+    ],
+    "prosEn": [
+      "Cloud browsers ready in seconds — no complex local setup",
+      "CAPTCHA solving and proxy management included by default",
+      "Simple API to integrate into any AI agent or script",
+      "25 concurrent browsers on Startup — scalable from day one",
+      "Serious alternative to Browserbase with more accessible pricing"
+    ],
+    "cons": [
+      "Outil technique — réservé aux développeurs, pas aux non-coders",
+      "Crédits consommables : usage intensif peut dépasser le plan rapidement",
+      "30$/mois cher si tu ne scrapes qu'occasionnellement",
+      "Dépendance à un service tiers pour l'infrastructure de navigation",
+      "Moins adapté aux besoins simples de scraping (Apify ou Firecrawl sont plus simples)"
+    ],
+    "consEn": [
+      "Technical tool — for developers only, not for non-coders",
+      "Consumable credits: intensive use can exceed the plan quickly",
+      "$30/month expensive if you only scrape occasionally",
+      "Dependency on a third-party service for browsing infrastructure",
+      "Less suited for simple scraping needs (Apify or Firecrawl are simpler)"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu construis un agent IA qui doit naviguer sur le web de façon autonome",
+        "Tu fais du scraping à grande échelle et les CAPTCHA te bloquent",
+        "Tu veux une infrastructure de navigateur managée sans serveur à maintenir"
+      ],
+      "avoidIf": [
+        "Tu n'es pas développeur — cet outil nécessite du code pour être utilisé",
+        "Tu ne fais que quelques scrapers simples — Firecrawl ou BeautifulSoup suffisent",
+        "Tu cherches un outil no-code pour automatiser des tâches web (Zapier est mieux)"
+      ],
+      "threshold": "Pertinent si tu construis sérieusement des agents IA ou que le scraping est un composant clé de ton produit."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're building an AI agent that needs to browse the web autonomously",
+        "You do large-scale scraping and CAPTCHAs are blocking you",
+        "You want managed browser infrastructure without a server to maintain"
+      ],
+      "avoidIf": [
+        "You're not a developer — this tool requires code to use",
+        "You only do a few simple scrapers — Firecrawl or BeautifulSoup suffice",
+        "You're looking for a no-code tool to automate web tasks (Zapier is better)"
+      ],
+      "threshold": "Relevant if you're seriously building AI agents or scraping is a core component of your product."
+    },
+    "useCases": [
+      "Construire un agent IA de veille concurrentielle qui visite des sites chaque nuit",
+      "Scraper des milliers de pages avec CAPTCHA solving automatique",
+      "Automatiser des tests end-to-end sur plusieurs navigateurs simultanément"
+    ],
+    "useCasesEn": [
+      "Build a competitive intelligence AI agent that visits sites every night",
+      "Scrape thousands of pages with automatic CAPTCHA solving",
+      "Automate end-to-end tests across multiple simultaneous browsers"
+    ],
+    "alternatives": [
+      "browserbase",
+      "firecrawl",
+      "apify"
+    ],
+    "functional_needs": [
+      "web-scraping",
+      "browser-automation",
+      "ai-agents"
+    ],
+    "seo": {
+      "metaDescription": "Hyperbrowser avis 2026 : infrastructure de navigateurs cloud pour agents IA. Prix 27,60€/mois, alternatives Browserbase."
+    }
+  },
+  {
+    "id": "flowmapp",
+    "slug": "flowmapp",
+    "name": "FlowMapp",
+    "category": "design-tools",
+    "websiteUrl": "https://www.flowmapp.com",
+    "shortDescription": "Outil de planification UX : sitemaps, user flows et wireframes collaboratifs.",
+    "shortDescriptionEn": "UX planning tool: collaborative sitemaps, user flows and wireframes.",
+    "longDescription": "FlowMapp est un outil web dédié à la phase de planification UX : créer des sitemaps, tracer des user flows, esquisser des wireframes et organiser l'architecture d'un site ou d'une app. Tout ça dans une interface visuelle sans avoir besoin de Figma ou de Miro pour ces étapes en amont.\n\nLe plan Pro à 15$/mois (≈13,80€) débloque 15 projets actifs, des pages illimitées et des éditeurs illimités. En pratique : idéal pour un UX designer freelance qui livre des livrables de planification à ses clients avant de passer à la conception.\n\nDifférence avec Figma : FlowMapp est spécialisé dans la structure et la logique de navigation — pas dans le design visuel. Il complète Figma plutôt qu'il ne le remplace.",
+    "longDescriptionEn": "FlowMapp is a web tool dedicated to the UX planning phase: creating sitemaps, tracing user flows, sketching wireframes and organizing the architecture of a site or app. All in a visual interface without needing Figma or Miro for these upstream steps.\n\nThe Pro plan at $15/month (≈€13.80) unlocks 15 active projects, unlimited pages and unlimited editors. In practice: ideal for a freelance UX designer delivering planning deliverables to clients before moving to design.\n\nDifference from Figma: FlowMapp specializes in navigation structure and logic — not visual design. It complements Figma rather than replacing it.",
+    "defaultMonthlyPrice": 13.8,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "flowmapp.com",
+      "official_source_url": "https://www.flowmapp.com/pricing",
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 13.8,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "cautions": [
+        "usd_pricing",
+        "ppp_pricing_some_countries"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 1 projet, 20 pages",
+      "paid": "Pro 13,80€/mois · Team 32,20€/mois · Agency 91,08€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit avec 1 projet actif",
+      "paid": "Pro 15$/mois · Team 35$/mois · Agency 99$/mois"
+    },
+    "pricingEn": {
+      "free": "Free with 1 active project",
+      "paid": "Pro $15/month · Team $35/month · Agency $99/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "prescription_quality": "oui",
+    "relevantFor": [
+      "designer",
+      "consultant",
+      "dev"
+    ],
+    "bestFor": [
+      "designer"
+    ],
+    "pros": [
+      "Interface dédiée à la planification UX — pas besoin d'adapter Figma ou Miro",
+      "Sitemaps, user flows et wireframes dans un seul outil",
+      "Parfait pour livrer des livrables structurés à des clients",
+      "Collaboration en temps réel incluse sur Pro",
+      "Prix raisonnable pour un outil de niche bien exécuté"
+    ],
+    "prosEn": [
+      "Interface dedicated to UX planning — no need to adapt Figma or Miro",
+      "Sitemaps, user flows and wireframes in one tool",
+      "Perfect for delivering structured deliverables to clients",
+      "Real-time collaboration included on Pro",
+      "Reasonable price for a well-executed niche tool"
+    ],
+    "cons": [
+      "Outil niche — ne remplace pas Figma pour le design visuel",
+      "Moins connu que Miro ou FigJam pour les workshops UX",
+      "Fonctionnalités wireframe plus basiques que Figma",
+      "Peut sembler redondant si tu as déjà Miro ou Whimsical"
+    ],
+    "consEn": [
+      "Niche tool — doesn't replace Figma for visual design",
+      "Less known than Miro or FigJam for UX workshops",
+      "Wireframe features more basic than Figma",
+      "Can feel redundant if you already have Miro or Whimsical"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu fais du conseil UX et tu livres des sitemaps/user flows à tes clients",
+        "Tu planifies l'architecture de sites ou d'apps avant de designer",
+        "Tu veux un outil dédié plus clair que les infinis canevas de Miro"
+      ],
+      "avoidIf": [
+        "Tu n'as pas de phase de planification UX dans ton travail",
+        "Tu fais tout dans Figma ou FigJam — pas besoin d'un outil supplémentaire",
+        "Tu es développeur backend — cet outil est 100% orienté UX"
+      ],
+      "threshold": "Rentable si tu livres au moins 2 livrables de planification UX par mois à des clients."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do UX consulting and deliver sitemaps/user flows to clients",
+        "You plan the architecture of sites or apps before designing",
+        "You want a dedicated tool clearer than Miro's infinite canvases"
+      ],
+      "avoidIf": [
+        "You don't have a UX planning phase in your work",
+        "You do everything in Figma or FigJam — no need for an extra tool",
+        "You're a backend developer — this tool is 100% UX-oriented"
+      ],
+      "threshold": "Worth it if you deliver at least 2 UX planning deliverables per month to clients."
+    },
+    "useCases": [
+      "Créer le sitemap complet d'un site e-commerce avant le design Figma",
+      "Visualiser le user flow d'un onboarding SaaS pour un client",
+      "Livrer l'architecture d'une app mobile avec les écrans et transitions"
+    ],
+    "useCasesEn": [
+      "Create the complete sitemap of an e-commerce site before Figma design",
+      "Visualize the user flow of a SaaS onboarding for a client",
+      "Deliver the architecture of a mobile app with screens and transitions"
+    ],
+    "alternatives": [
+      "figma",
+      "miro",
+      "whimsical"
+    ],
+    "functional_needs": [
+      "ux-design",
+      "information-architecture",
+      "wireframing"
+    ],
+    "seo": {
+      "metaDescription": "FlowMapp avis 2026 : outil UX pour sitemaps, user flows et wireframes. Prix 13,80€/mois, alternatives Figma, Miro."
+    }
+  },
+  {
+    "id": "postsyncer",
+    "slug": "postsyncer",
+    "name": "PostSyncer",
+    "category": "creation",
+    "websiteUrl": "https://postsyncer.com",
+    "shortDescription": "Planificateur de réseaux sociaux avec IA et vidéos IA pour créateurs et agences.",
+    "shortDescriptionEn": "Social media scheduler with AI content and AI videos for creators and agencies.",
+    "longDescription": "PostSyncer est un outil de planification et publication sur les réseaux sociaux qui combine scheduling multi-plateforme, génération de contenu IA et création de vidéos IA. Tu connectes tes comptes (Instagram, LinkedIn, Twitter/X, TikTok, etc.), tu planifies tes posts et l'IA t'aide à générer le contenu.\n\nLe plan Starter à 29$/mois (≈26,68€) inclut 1 workspace, 200 crédits vidéo IA et la planification multi-plateforme. Différence avec Buffer ou Later : PostSyncer intègre nativement la création de vidéos IA, ce qui en fait un outil plus complet pour les créateurs de contenu vidéo court.\n\nPas le plus connu, mais bien positionné pour les solopreneurs qui font leur social media en solo et veulent aller plus vite sur la création.",
+    "longDescriptionEn": "PostSyncer is a social media scheduling and publishing tool combining multi-platform scheduling, AI content generation and AI video creation. Connect your accounts (Instagram, LinkedIn, Twitter/X, TikTok, etc.), schedule your posts and the AI helps you generate content.\n\nThe Starter plan at $29/month (≈€26.68) includes 1 workspace, 200 AI video credits and multi-platform scheduling. Difference from Buffer or Later: PostSyncer natively integrates AI video creation, making it a more complete tool for short-form video content creators.\n\nNot the most well-known, but well-positioned for solopreneurs doing their own social media and wanting to move faster on creation.",
+    "defaultMonthlyPrice": 26.68,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "postsyncer.com",
+      "official_source_url": "https://postsyncer.com/pricing",
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 26.68,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Essai 7 jours gratuit",
+      "paid": "Starter 26,68€/mois · Pro 45,08€/mois · Pro Plus 91,08€/mois"
+    },
+    "pricing": {
+      "free": "Essai 7 jours sans CB",
+      "paid": "Starter 29$/mois · Pro 49$/mois · Pro Plus 99$/mois"
+    },
+    "pricingEn": {
+      "free": "7-day free trial, no credit card",
+      "paid": "Starter $29/month · Pro $49/month · Pro Plus $99/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "content-creator",
+      "consultant",
+      "other"
+    ],
+    "bestFor": [
+      "content-creator"
+    ],
+    "pros": [
+      "Scheduling multi-plateforme + génération IA dans un seul outil",
+      "Crédits vidéo IA inclus — créer des vidéos courtes directement depuis l'app",
+      "Sans frais par utilisateur — pratique pour les solos",
+      "Essai 7 jours sans CB — facile à tester",
+      "Prix compétitif vs Buffer Pro ou Hootsuite"
+    ],
+    "prosEn": [
+      "Multi-platform scheduling + AI generation in one tool",
+      "AI video credits included — create short videos directly from the app",
+      "No per-user fees — convenient for solos",
+      "7-day free trial without credit card — easy to test",
+      "Competitive pricing vs Buffer Pro or Hootsuite"
+    ],
+    "cons": [
+      "Moins connu que Buffer, Later ou Hootsuite — communauté plus petite",
+      "200 crédits vidéo IA sur Starter — peut être insuffisant pour usage intensif",
+      "Fonctionnalités analytics moins poussées que Sprout Social",
+      "Interface moins polie que certains concurrents établis"
+    ],
+    "consEn": [
+      "Less known than Buffer, Later or Hootsuite — smaller community",
+      "200 AI video credits on Starter — can be insufficient for heavy use",
+      "Analytics features less advanced than Sprout Social",
+      "Interface less polished than some established competitors"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu publies régulièrement sur plusieurs réseaux et tu veux automatiser",
+        "Tu crées du contenu vidéo court et tu veux tout gérer au même endroit",
+        "Tu cherches une alternative moins chère à Hootsuite ou Sprout Social"
+      ],
+      "avoidIf": [
+        "Tu publies sur 1 seul réseau — les apps natives suffisent",
+        "Tu as besoin d'analytics poussés — préfère Sprout Social ou Iconosquare",
+        "Tu gères une grande équipe sociale — les outils enterprise sont mieux adaptés"
+      ],
+      "threshold": "Utile si tu publies au moins 3x/semaine sur 2+ plateformes et que le scheduling manuel te coûte du temps."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You post regularly on multiple networks and want to automate",
+        "You create short video content and want to manage everything in one place",
+        "You're looking for a cheaper alternative to Hootsuite or Sprout Social"
+      ],
+      "avoidIf": [
+        "You post on only 1 network — native apps suffice",
+        "You need advanced analytics — prefer Sprout Social or Iconosquare",
+        "You manage a large social team — enterprise tools are better suited"
+      ],
+      "threshold": "Useful if you post at least 3x/week on 2+ platforms and manual scheduling costs you time."
+    },
+    "useCases": [
+      "Planifier 2 semaines de contenu LinkedIn + Instagram en 1h chaque lundi",
+      "Créer et programmer une vidéo IA courte pour TikTok sans quitter l'app",
+      "Gérer les réseaux sociaux de 2-3 clients depuis un seul workspace"
+    ],
+    "useCasesEn": [
+      "Schedule 2 weeks of LinkedIn + Instagram content in 1h every Monday",
+      "Create and schedule a short AI video for TikTok without leaving the app",
+      "Manage social media for 2-3 clients from a single workspace"
+    ],
+    "alternatives": [
+      "buffer",
+      "hootsuite",
+      "later"
+    ],
+    "functional_needs": [
+      "social-media",
+      "content-scheduling",
+      "video-creation"
+    ],
+    "seo": {
+      "metaDescription": "PostSyncer avis 2026 : planificateur réseaux sociaux avec vidéos IA. Prix 26,68€/mois, alternatives Buffer, Later."
+    }
+  },
+  {
+    "id": "crayo-ai",
+    "slug": "crayo-ai",
+    "name": "Crayo AI",
+    "category": "creation",
+    "websiteUrl": "https://crayo.ai",
+    "shortDescription": "Créateur de vidéos virales courtes avec IA — clips, sous-titres et branding en secondes.",
+    "shortDescriptionEn": "AI short-form viral video creator — clips, subtitles and branding in seconds.",
+    "longDescription": "Crayo AI est spécialisé dans la création de clips courts viraux : tu entres un script ou un sujet, l'IA génère une vidéo avec sous-titres animés, musique de fond, transitions et branding en quelques secondes. Orienté TikTok, YouTube Shorts et Instagram Reels.\n\nLe plan Hobby à 13$/mois annuel (≈11,96€) ou 19$/mois mensuel (≈17,48€) inclut 40 minutes d'export vidéo et les fonctions essentielles. Différence avec CapCut ou Descript : Crayo est centré sur la création de contenu viral en série, pas sur le montage fin. Tu peux générer 10 clips en 10 minutes là où CapCut en demanderait 1h.\n\nIdéal pour un créateur de contenu qui teste des formats ou maintient une cadence de publication élevée sur les réseaux courts.",
+    "longDescriptionEn": "Crayo AI specializes in creating short viral clips: enter a script or topic, the AI generates a video with animated subtitles, background music, transitions and branding in seconds. Oriented toward TikTok, YouTube Shorts and Instagram Reels.\n\nThe Hobby plan at $13/month annual (≈€11.96) or $19/month monthly (≈€17.48) includes 40 minutes of video export and essential features. Difference from CapCut or Descript: Crayo is focused on creating viral content in series, not fine editing. You can generate 10 clips in 10 minutes where CapCut would take 1h.\n\nIdeal for a content creator testing formats or maintaining a high publication cadence on short-form networks.",
+    "defaultMonthlyPrice": 17.48,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "crayo.ai",
+      "official_source_url": "https://crayo.ai/pricing",
+      "compare_plan_name": "Hobby",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 17.48,
+      "price_reliability": "medium",
+      "verification_status": "third_party_confirmed",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "usd_pricing",
+        "annual_billing_only_on_lower_price",
+        "no_free_plan"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Pas de plan gratuit — paiement annuel uniquement",
+      "paid": "Hobby 11,96€/mois (annuel) · Clipper 24,84€/mois (annuel) · Pro 50,60€/mois (annuel)"
+    },
+    "pricing": {
+      "free": "Aucun plan gratuit disponible",
+      "paid": "Hobby 19$/mois · Clipper 39$/mois · Pro 79$/mois (mensuel)"
+    },
+    "pricingEn": {
+      "free": "No free plan available",
+      "paid": "Hobby $19/month · Clipper $39/month · Pro $79/month (monthly billing)"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "prescription_quality": "question",
+    "relevantFor": [
+      "content-creator",
+      "other"
+    ],
+    "bestFor": [
+      "content-creator"
+    ],
+    "pros": [
+      "Génération de clips courts viraux ultra-rapide — 10 clips en 10 minutes",
+      "Sous-titres animés, musique et transitions générés automatiquement",
+      "Optimisé TikTok/Shorts/Reels — format et ratio adaptés d'office",
+      "Idéal pour tester des formats de contenu en volume",
+      "Prix compétitif pour le volume de vidéos générables"
+    ],
+    "prosEn": [
+      "Ultra-fast viral short clip generation — 10 clips in 10 minutes",
+      "Animated subtitles, music and transitions generated automatically",
+      "TikTok/Shorts/Reels optimized — format and ratio adapted by default",
+      "Ideal for testing content formats at volume",
+      "Competitive pricing for the volume of videos that can be generated"
+    ],
+    "cons": [
+      "Pas de plan gratuit — engagement financier dès le départ",
+      "Paiement annuel requis pour le meilleur prix (pas de mensuel abordable)",
+      "Pas de remboursement — engagement à l'année risqué si tu n'aimes pas",
+      "Moins adapté pour le montage vidéo long ou la post-production",
+      "Qualité variable selon les sujets — certains genres marchent mieux"
+    ],
+    "consEn": [
+      "No free plan — financial commitment from the start",
+      "Annual payment required for best price (no affordable monthly)",
+      "No refund — year-long commitment risky if you don't like it",
+      "Less suited for long video editing or post-production",
+      "Variable quality depending on topics — some genres work better"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu crées du contenu TikTok/Shorts en volume et tu veux accélérer la production",
+        "Tu testes des formats viraux et tu as besoin de produire beaucoup pour trouver ce qui marche",
+        "Tu veux automatiser la production de clips répétitifs (top 10, anecdotes, etc.)"
+      ],
+      "avoidIf": [
+        "Tu fais du montage vidéo soigné et narratif — CapCut ou Descript sont mieux",
+        "Tu ne publies que quelques vidéos par mois — le ROI est faible",
+        "Tu veux tester avant d'acheter — pas de free plan ni de remboursement"
+      ],
+      "threshold": "Intéressant si tu publies 10+ Shorts ou TikToks par mois et que la production te prend plus de 2h."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You create TikTok/Shorts content at volume and want to speed up production",
+        "You test viral formats and need to produce a lot to find what works",
+        "You want to automate repetitive clip production (top 10, anecdotes, etc.)"
+      ],
+      "avoidIf": [
+        "You do careful, narrative video editing — CapCut or Descript are better",
+        "You only post a few videos per month — ROI is low",
+        "You want to test before buying — no free plan or refund"
+      ],
+      "threshold": "Interesting if you publish 10+ Shorts or TikToks per month and production takes you 2h+."
+    },
+    "useCases": [
+      "Générer 10 clips TikTok sur un sujet tendance en moins d'une heure",
+      "Créer une série de Shorts YouTube avec sous-titres et branding automatiques",
+      "Tester 5 angles différents d'un même sujet pour voir lequel performe"
+    ],
+    "useCasesEn": [
+      "Generate 10 TikTok clips on a trending topic in under an hour",
+      "Create a YouTube Shorts series with automatic subtitles and branding",
+      "Test 5 different angles of the same topic to see which performs"
+    ],
+    "alternatives": [
+      "capcut",
+      "descript",
+      "opus-clip"
+    ],
+    "functional_needs": [
+      "video-creation",
+      "content-automation",
+      "social-media-video"
+    ],
+    "seo": {
+      "metaDescription": "Crayo AI avis 2026 : créateur de vidéos virales courtes. Prix 17,48€/mois, alternatives CapCut, Descript. Verdict honnête."
+    }
+  },
+  {
+    "id": "rork",
+    "slug": "rork",
+    "name": "Rork",
+    "category": "nocode-web",
+    "websiteUrl": "https://rork.com",
+    "shortDescription": "Construis des apps mobiles iOS et Android avec l'IA en quelques minutes.",
+    "shortDescriptionEn": "Build iOS and Android mobile apps with AI in minutes.",
+    "longDescription": "Rork est un constructeur d'apps mobiles propulsé par l'IA qui génère des applications React Native (iOS + Android) depuis une description textuelle. Tu décris ton app — une to-do list avec rappels, un tracker de fitness, un marketplace simple — et Rork génère le code, l'interface et la logique.\n\nLe plan Junior à 25$/mois (≈23€) donne accès à suffisamment de crédits pour valider une idée et construire une démo. En février 2026, Rork a lancé Rork Max, une version premium qui génère des apps Swift natives (iOS uniquement, plus performant).\n\nPositionné pour les indie hackers, solopreneurs et fondateurs no-tech qui veulent lancer un MVP mobile sans passer par un développeur. Levée de 15M$ en avril 2026 — signal fort de traction.",
+    "longDescriptionEn": "Rork is an AI-powered mobile app builder that generates React Native (iOS + Android) applications from text descriptions. Describe your app — a to-do list with reminders, a fitness tracker, a simple marketplace — and Rork generates the code, interface and logic.\n\nThe Junior plan at $25/month (≈€23) gives enough credits to validate an idea and build a demo. In February 2026, Rork launched Rork Max, a premium version that generates native Swift apps (iOS only, more performant).\n\nPositioned for indie hackers, solopreneurs and non-technical founders who want to launch a mobile MVP without going through a developer. $15M raise in April 2026 — strong traction signal.",
+    "defaultMonthlyPrice": 23.0,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "rork.com",
+      "official_source_url": "https://rork.com",
+      "compare_plan_name": "Junior",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 23.0,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based",
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 35 crédits/mois, 5 crédits/jour max",
+      "paid": "Junior 23€/mois · Senior 92€/mois · Scale 184€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit avec 35 crédits/mois",
+      "paid": "Junior 25$/mois · Senior 100$/mois · Scale 200$/mois"
+    },
+    "pricingEn": {
+      "free": "Free with 35 credits/month",
+      "paid": "Junior $25/month · Senior $100/month · Scale $200/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "prescription_quality": "oui",
+    "relevantFor": [
+      "dev",
+      "other"
+    ],
+    "bestFor": [
+      "dev",
+      "other"
+    ],
+    "pros": [
+      "Génère des apps iOS + Android depuis une description texte",
+      "Crédits gratuits pour tester — plan free disponible",
+      "Rork Max pour apps Swift natives (encore plus performantes)",
+      "Levée de 15M$ en 2026 — produit en développement actif",
+      "Idéal pour valider rapidement un MVP mobile sans développeur"
+    ],
+    "prosEn": [
+      "Generates iOS + Android apps from a text description",
+      "Free credits to test — free plan available",
+      "Rork Max for native Swift apps (even more performant)",
+      "$15M raise in 2026 — product in active development",
+      "Ideal for quickly validating a mobile MVP without a developer"
+    ],
+    "cons": [
+      "Crédits limités — les apps complexes consomment beaucoup",
+      "React Native moins performant que des apps natives pures",
+      "Plan Senior à 100$/mois très cher pour le grand public",
+      "Apps complexes peuvent nécessiter du code pour être finalisées",
+      "Concurrent direct de Lovable, Bolt et Expo pour le no-code mobile"
+    ],
+    "consEn": [
+      "Limited credits — complex apps consume a lot",
+      "React Native less performant than pure native apps",
+      "Senior plan at $100/month very expensive for general public",
+      "Complex apps may require code to be finalized",
+      "Direct competitor to Lovable, Bolt and Expo for no-code mobile"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu veux lancer un MVP mobile sans développeur et sans investir en dev",
+        "Tu es indie hacker et tu veux valider une idée d'app rapidement",
+        "Tu maîtrises un peu React Native et tu veux accélérer le prototypage"
+      ],
+      "avoidIf": [
+        "Tu construis une app complexe avec backend custom — mieux vaut un dev",
+        "Tu as besoin de performances natives maximales (jeux, réalité augmentée)",
+        "Tu es développeur expérimenté — le code généré risque d'être difficile à maintenir"
+      ],
+      "threshold": "Excellent pour valider un concept en 1-2 jours. Moins adapté pour une app de production à long terme sans développeur."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to launch a mobile MVP without a developer and without dev investment",
+        "You're an indie hacker and want to quickly validate an app idea",
+        "You know a bit of React Native and want to accelerate prototyping"
+      ],
+      "avoidIf": [
+        "You're building a complex app with custom backend — better to hire a dev",
+        "You need maximum native performance (games, augmented reality)",
+        "You're an experienced developer — generated code can be hard to maintain"
+      ],
+      "threshold": "Excellent for validating a concept in 1-2 days. Less suited for a long-term production app without a developer."
+    },
+    "useCases": [
+      "Construire un MVP de marketplace mobile en 2 jours pour tester une idée",
+      "Créer une app de tracking personnel simple pour valider une hypothèse",
+      "Prototyper une app cliente pour une présentation sans développeur"
+    ],
+    "useCasesEn": [
+      "Build a mobile marketplace MVP in 2 days to test an idea",
+      "Create a simple personal tracking app to validate a hypothesis",
+      "Prototype a client app for a presentation without a developer"
+    ],
+    "alternatives": [
+      "lovable",
+      "bolt",
+      "flutterflow"
+    ],
+    "functional_needs": [
+      "mobile-app-builder",
+      "no-code",
+      "ai-development"
+    ],
+    "seo": {
+      "metaDescription": "Rork avis 2026 : construis une app mobile iOS/Android avec l'IA. Prix 23€/mois, alternatives Lovable, Bolt. Verdict."
+    }
+  },
+  {
+    "id": "emergent",
+    "slug": "emergent",
+    "name": "Emergent",
+    "category": "nocode-web",
+    "websiteUrl": "https://emergent.sh",
+    "shortDescription": "Construis des apps web et mobiles avec l'IA — MVP en heures, pas en semaines.",
+    "shortDescriptionEn": "Build web and mobile apps with AI — MVP in hours, not weeks.",
+    "longDescription": "Emergent est une plateforme vibe-coding qui permet de construire des applications web et mobiles complètes depuis une description en langage naturel. L'IA comprend les exigences, génère le code, connecte les bases de données et déploie automatiquement.\n\nLe plan Standard à 20$/mois (≈18,40€) donne 100 crédits/mois — assez pour 1-2 MVPs par mois. Le plan Pro à 200$/mois débloque 750 crédits et un contexte de 1M tokens pour comprendre une codebase entière.\n\nDifférence avec Rork ou Lovable : Emergent est plus orienté web apps que mobile, et met l'accent sur la capacité à construire des apps avec des backends complexes. Pour un solopreneur non-tech qui veut lancer un SaaS rapidement, c'est une des options les plus accessibles du marché.",
+    "longDescriptionEn": "Emergent is a vibe-coding platform that enables building complete web and mobile applications from natural language descriptions. The AI understands requirements, generates code, connects databases and deploys automatically.\n\nThe Standard plan at $20/month (≈€18.40) gives 100 credits/month — enough for 1-2 MVPs per month. The Pro plan at $200/month unlocks 750 credits and a 1M token context window to understand an entire codebase.\n\nDifference from Rork or Lovable: Emergent is more web-app oriented than mobile, and emphasizes the ability to build apps with complex backends. For a non-technical solopreneur wanting to launch a SaaS quickly, it's one of the most accessible options on the market.",
+    "defaultMonthlyPrice": 18.4,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "emergent.sh",
+      "official_source_url": "https://emergent.sh/pricing",
+      "compare_plan_name": "Standard",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 18.4,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "credit_based",
+        "usd_pricing"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 10 crédits/mois pour tester",
+      "paid": "Standard 18,40€/mois · Pro 184€/mois · Team 276€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit avec 10 crédits/mois",
+      "paid": "Standard 20$/mois · Pro 200$/mois · Team 300$/mois"
+    },
+    "pricingEn": {
+      "free": "Free with 10 credits/month",
+      "paid": "Standard $20/month · Pro $200/month · Team $300/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "oui",
+    "relevantFor": [
+      "dev",
+      "other"
+    ],
+    "bestFor": [
+      "other"
+    ],
+    "pros": [
+      "Construit des apps web complètes avec backend depuis une description",
+      "Plan gratuit disponible pour tester sans engagement",
+      "Standard à 20$/mois — parmi les plus accessibles pour du vibe-coding",
+      "Déploiement automatique inclus — pas besoin de configurer un hébergement",
+      "Supporte les apps complexes avec bases de données et authentification"
+    ],
+    "prosEn": [
+      "Builds complete web apps with backend from a description",
+      "Free plan available to test without commitment",
+      "Standard at $20/month — among the most accessible for vibe-coding",
+      "Automatic deployment included — no need to configure hosting",
+      "Supports complex apps with databases and authentication"
+    ],
+    "cons": [
+      "100 crédits/mois sur Standard — les apps complexes peuvent épuiser rapidement",
+      "Saut de prix important entre Standard (20$) et Pro (200$)",
+      "Crédits non reportables d'un mois à l'autre",
+      "Apps générées peuvent nécessiter du travail manuel pour la mise en production",
+      "Concurrence intense : Lovable, Bolt, Cursor sont aussi dans cet espace"
+    ],
+    "consEn": [
+      "100 credits/month on Standard — complex apps can exhaust quickly",
+      "Large price jump between Standard ($20) and Pro ($200)",
+      "Credits don't roll over month to month",
+      "Generated apps may require manual work for production deployment",
+      "Intense competition: Lovable, Bolt, Cursor are also in this space"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu veux lancer un SaaS ou une web app sans développeur",
+        "Tu as une idée de produit et tu veux valider le concept en 2-3 jours",
+        "Tu cherches le combo le plus accessible entre prix et capacités backend"
+      ],
+      "avoidIf": [
+        "Tu construis une app à fort trafic dès le départ — scalabilité non garantie",
+        "Tu as une équipe de dev — mieux vaut Cursor ou un stack custom",
+        "Tu veux un contrôle total sur le code généré — plan Pro à 200$ nécessaire"
+      ],
+      "threshold": "Excellent pour le premier MVP à lancer. À dépasser quand le produit prend de la traction et nécessite un vrai développeur."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to launch a SaaS or web app without a developer",
+        "You have a product idea and want to validate the concept in 2-3 days",
+        "You're looking for the most accessible combo of price and backend capabilities"
+      ],
+      "avoidIf": [
+        "You're building a high-traffic app from the start — scalability not guaranteed",
+        "You have a dev team — better to use Cursor or a custom stack",
+        "You want full control over generated code — Pro plan at $200 needed"
+      ],
+      "threshold": "Excellent for the first MVP to launch. Grow beyond it when the product gains traction and needs a real developer."
+    },
+    "useCases": [
+      "Construire un MVP SaaS de facturation en 2 jours pour tester le marché",
+      "Créer une app web de gestion de projets pour ses clients freelances",
+      "Lancer un annuaire ou marketplace web simple sans développeur"
+    ],
+    "useCasesEn": [
+      "Build an invoicing SaaS MVP in 2 days to test the market",
+      "Create a project management web app for freelance clients",
+      "Launch a simple directory or web marketplace without a developer"
+    ],
+    "alternatives": [
+      "lovable",
+      "bolt",
+      "cursor"
+    ],
+    "functional_needs": [
+      "app-builder",
+      "no-code",
+      "saas-development"
+    ],
+    "seo": {
+      "metaDescription": "Emergent avis 2026 : construis une app web ou SaaS avec l'IA. Prix 18,40€/mois, alternatives Lovable, Bolt. Verdict."
+    }
+  },
+  {
+    "id": "hugeicons",
+    "slug": "hugeicons",
+    "name": "Hugeicons",
+    "category": "design-tools",
+    "websiteUrl": "https://hugeicons.com",
+    "shortDescription": "Bibliothèque de 51 000+ icônes UI professionnelles pour designers et développeurs.",
+    "shortDescriptionEn": "Library of 51,000+ professional UI icons for designers and developers.",
+    "longDescription": "Hugeicons est une bibliothèque d'icônes premium proposant 51 000+ icônes dans 10 styles différents (stroke rounded, solid, bulk, duo-tone, etc.) — une des plus complètes du marché. Disponible via plugin Figma, package NPM, formats SVG/PNG et API.\n\nLe plan Pro à 99$/an (≈7,59€/mois) donne accès à toutes les icônes, aux formats dev (NPM, SVG), au plugin Figma et à 300K pageviews/mois pour l'hébergement CDN. Le plan Pro Plus à 1 197$ est un achat unique à vie.\n\nComparé à Heroicons (gratuit, 200 icônes) ou à Phosphor Icons (2 000 icônes), Hugeicons offre une couverture bien plus large pour des projets UI exigeants. Pour les designers qui passent du temps à chercher des icônes dans plusieurs sources différentes, consolider sur Hugeicons Pro fait gagner un temps précieux.",
+    "longDescriptionEn": "Hugeicons is a premium icon library offering 51,000+ icons in 10 different styles (stroke rounded, solid, bulk, duo-tone, etc.) — one of the most comprehensive on the market. Available via Figma plugin, NPM package, SVG/PNG formats and API.\n\nThe Pro plan at $99/year (≈€7.59/month) gives access to all icons, dev formats (NPM, SVG), Figma plugin and 300K pageviews/month for CDN hosting. The Pro Plus plan at $1,197 is a one-time lifetime purchase.\n\nCompared to Heroicons (free, 200 icons) or Phosphor Icons (2,000 icons), Hugeicons offers much wider coverage for demanding UI projects. For designers who spend time searching for icons across multiple sources, consolidating on Hugeicons Pro saves precious time.",
+    "defaultMonthlyPrice": 7.59,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "hugeicons.com",
+      "official_source_url": "https://hugeicons.com/pricing",
+      "compare_plan_name": "Pro (annuel)",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 7.59,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "annual_billing_only",
+        "usd_pricing",
+        "lifetime_option_available"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — 5 100+ icônes stroke rounded",
+      "paid": "Pro 7,59€/mois (91€/an) · Pro Plus 1 101€ achat unique"
+    },
+    "pricing": {
+      "free": "Gratuit avec 5 100+ icônes",
+      "paid": "Pro 99$/an (8,25$/mois) · Pro Plus 1 197$ achat unique"
+    },
+    "pricingEn": {
+      "free": "Free with 5,100+ icons",
+      "paid": "Pro $99/year ($8.25/month) · Pro Plus $1,197 one-time"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "prescription_quality": "ferme",
+    "relevantFor": [
+      "designer",
+      "dev"
+    ],
+    "bestFor": [
+      "designer"
+    ],
+    "pros": [
+      "51 000+ icônes dans 10 styles cohérents — coverage quasi-totale",
+      "Plugin Figma + package NPM + CDN — utilisable design et dev",
+      "Prix très raisonnable pour la taille de la bibliothèque (7,59€/mois)",
+      "Option lifetime à 1 197$ — excellent pour un designer à long terme",
+      "5 100+ icônes gratuites — suffisant pour valider avant d'acheter"
+    ],
+    "prosEn": [
+      "51,000+ icons in 10 consistent styles — near-total coverage",
+      "Figma plugin + NPM package + CDN — usable in design and dev",
+      "Very reasonable price for the library size (€7.59/month)",
+      "Lifetime option at $1,197 — excellent for a long-term designer",
+      "5,100+ free icons — enough to validate before buying"
+    ],
+    "cons": [
+      "Plan Pro en paiement annuel uniquement — pas de mensuel disponible",
+      "51 000 icônes peut être écrasant à naviguer sans bonne recherche",
+      "Heroicons, Lucide et Phosphor couvrent les cas basiques gratuitement",
+      "Moins de visibilité que FontAwesome ou Material Icons dans l'écosystème dev"
+    ],
+    "consEn": [
+      "Pro plan annual payment only — no monthly available",
+      "51,000 icons can be overwhelming to navigate without good search",
+      "Heroicons, Lucide and Phosphor cover basic cases for free",
+      "Less visibility than FontAwesome or Material Icons in the dev ecosystem"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu es designer ou dev et tu travailles régulièrement sur des interfaces UI",
+        "Tu veux une bibliothèque cohérente avec des styles variés (stroke, solid, duo)",
+        "Tu gères un design system et tu veux éviter de mixer plusieurs bibliothèques"
+      ],
+      "avoidIf": [
+        "Tu fais des interfaces ponctuellement — Lucide ou Heroicons (gratuits) suffisent",
+        "Tu travailles uniquement sur du print ou de l'illustration — pas d'icônes UI",
+        "Tu utilises déjà FontAwesome Pro ou une autre bibliothèque complète payante"
+      ],
+      "threshold": "Vaut le coup si tu fais au moins 1 projet UI par trimestre — 91€/an pour éliminer la recherche d'icônes, c'est rentable."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're a designer or dev and regularly work on UI interfaces",
+        "You want a consistent library with varied styles (stroke, solid, duo)",
+        "You manage a design system and want to avoid mixing multiple libraries"
+      ],
+      "avoidIf": [
+        "You do occasional interfaces — Lucide or Heroicons (free) suffice",
+        "You work exclusively on print or illustration — no UI icons needed",
+        "You already use FontAwesome Pro or another complete paid library"
+      ],
+      "threshold": "Worth it if you do at least 1 UI project per quarter — €91/year to eliminate icon searching is cost-effective."
+    },
+    "useCases": [
+      "Intégrer des icônes cohérentes dans un design system Figma complet",
+      "Utiliser le package NPM Hugeicons dans une app React sans gérer les SVG",
+      "Choisir parmi 10 styles d'icônes pour s'adapter à l'identité visuelle d'un client"
+    ],
+    "useCasesEn": [
+      "Integrate consistent icons in a complete Figma design system",
+      "Use the Hugeicons NPM package in a React app without managing SVGs",
+      "Choose from 10 icon styles to match a client's visual identity"
+    ],
+    "alternatives": [
+      "fontawesome",
+      "lucide",
+      "phosphor-icons"
+    ],
+    "functional_needs": [
+      "ui-icons",
+      "design-resources",
+      "design-system"
+    ],
+    "seo": {
+      "metaDescription": "Hugeicons avis 2026 : bibliothèque de 51 000+ icônes UI. Prix 7,59€/mois (plan annuel), alternatives Lucide, FontAwesome."
+    }
+  },
+  {
+    "id": "brandcrowd",
+    "slug": "brandcrowd",
+    "name": "BrandCrowd",
+    "category": "design-tools",
+    "websiteUrl": "https://www.brandcrowd.com",
+    "shortDescription": "Créateur de logos, cartes de visite et identités visuelles pour freelances et PME.",
+    "shortDescriptionEn": "Logo, business card and visual identity creator for freelancers and SMBs.",
+    "longDescription": "BrandCrowd est un outil de création de marque tout-en-un qui combine un générateur de logos IA avec une suite complète de création de visuels marketing : cartes de visite, signatures email, bannières réseaux sociaux, packagings et même un constructeur de site web.\n\nLe plan Premium à 9$/mois (≈8,28€) donne accès à 224 000+ templates, 50+ outils de design et l'export haute résolution. Pour les freelances et petites structures qui n'ont pas de budget pour un designer mais qui ont besoin d'une identité visuelle professionnelle, c'est un des outils les plus complets au meilleur rapport qualité/prix.\n\nDifférence avec Canva : BrandCrowd est centré identité de marque (logo en tête) là où Canva couvre un spectre plus large. Et différence avec Looka : BrandCrowd propose plus de formats de visuels marketing en plus du logo.",
+    "longDescriptionEn": "BrandCrowd is an all-in-one brand creation tool combining an AI logo generator with a complete marketing visual creation suite: business cards, email signatures, social media banners, packaging and even a website builder.\n\nThe Premium plan at $9/month (≈€8.28) gives access to 224,000+ templates, 50+ design tools and high-resolution export. For freelancers and small structures without a designer budget but needing a professional visual identity, it's one of the most complete tools with the best value.\n\nDifference from Canva: BrandCrowd is brand identity-focused (logo first) where Canva covers a wider spectrum. And difference from Looka: BrandCrowd offers more marketing visual formats in addition to the logo.",
+    "defaultMonthlyPrice": 8.28,
+    "pricing_v5": {
+      "verified_on": "2026-05-08",
+      "source_domain": "brandcrowd.com",
+      "official_source_url": "https://www.brandcrowd.com",
+      "compare_plan_name": "Premium",
+      "compare_plan_kind": "individual",
+      "compare_price_monthly_eur": 8.28,
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "cautions": [
+        "usd_pricing",
+        "free_logo_low_resolution_only"
+      ]
+    },
+    "pricingTiers": {
+      "free": "Gratuit — logo généré en basse résolution",
+      "paid": "Premium 8,28€/mois · Premium + Site 12,88€/mois"
+    },
+    "pricing": {
+      "free": "Gratuit pour générer et prévisualiser",
+      "paid": "Premium 9$/mois · Premium + Site web 14$/mois"
+    },
+    "pricingEn": {
+      "free": "Free to generate and preview",
+      "paid": "Premium $9/month · Premium + Website $14/month"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "prescription_quality": "oui",
+    "relevantFor": [
+      "consultant",
+      "content-creator",
+      "other"
+    ],
+    "bestFor": [
+      "other"
+    ],
+    "pros": [
+      "Prix très accessible — 8,28€/mois pour une suite complète de branding",
+      "224 000+ templates de qualité pour logos, cartes, bannières, etc.",
+      "Génération de logo IA + tous les formats visuels marketing en un seul endroit",
+      "Essai gratuit (logo en basse résolution) avant de payer",
+      "Idéal pour les non-designers qui veulent un rendu professionnel"
+    ],
+    "prosEn": [
+      "Very accessible price — €8.28/month for a complete branding suite",
+      "224,000+ quality templates for logos, cards, banners, etc.",
+      "AI logo generation + all marketing visual formats in one place",
+      "Free trial (low-resolution logo) before paying",
+      "Ideal for non-designers wanting a professional result"
+    ],
+    "cons": [
+      "Templates peuvent ressembler à ceux d'autres utilisateurs — unicité limitée",
+      "Moins de contrôle créatif qu'Adobe Illustrator pour un designer",
+      "Logo exporté peut ressembler à un 'template vu partout'",
+      "Moins adapté aux identités de marque premium ou très différenciées",
+      "Version gratuite en basse résolution seulement — paiement requis pour utiliser"
+    ],
+    "consEn": [
+      "Templates may look like other users' — limited uniqueness",
+      "Less creative control than Adobe Illustrator for a designer",
+      "Exported logo may look like a 'seen-everywhere template'",
+      "Less suited for premium or highly differentiated brand identities",
+      "Free version low-resolution only — payment required to use properly"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu lances un projet ou une activité freelance et tu as besoin d'un logo rapidement",
+        "Tu n'as pas de budget pour un designer mais tu veux un rendu professionnel",
+        "Tu veux tous les visuels de ta marque (logo + carte + réseaux) en un seul outil"
+      ],
+      "avoidIf": [
+        "Tu as déjà un designer ou une charte graphique — inutile",
+        "Tu veux un logo vraiment unique et différencié — les templates sont trop génériques",
+        "Tu as Canva Pro — qui couvre en partie les mêmes usages"
+      ],
+      "threshold": "Excellent pour démarrer rapidement. À faire évoluer vers un designer quand ta marque prend de la valeur."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're launching a project or freelance business and need a logo fast",
+        "You don't have a designer budget but want a professional result",
+        "You want all your brand visuals (logo + card + social) in one tool"
+      ],
+      "avoidIf": [
+        "You already have a designer or brand guidelines — unnecessary",
+        "You want a truly unique and differentiated logo — templates are too generic",
+        "You have Canva Pro — which partially covers the same use cases"
+      ],
+      "threshold": "Excellent to get started quickly. Evolve toward a designer when your brand gains real value."
+    },
+    "useCases": [
+      "Créer un logo professionnel pour un nouveau projet freelance en 30 minutes",
+      "Générer un kit de branding complet (logo + carte de visite + réseaux) d'un coup",
+      "Tester plusieurs directions visuelles pour une marque avant d'investir dans un designer"
+    ],
+    "useCasesEn": [
+      "Create a professional logo for a new freelance project in 30 minutes",
+      "Generate a complete branding kit (logo + business card + social) at once",
+      "Test multiple visual directions for a brand before investing in a designer"
+    ],
+    "alternatives": [
+      "canva",
+      "looka",
+      "adobe-express"
+    ],
+    "functional_needs": [
+      "logo-design",
+      "branding",
+      "visual-identity"
+    ],
+    "seo": {
+      "metaDescription": "BrandCrowd avis 2026 : créateur de logos et identité visuelle. Prix 8,28€/mois, alternatives Canva, Looka. Verdict honnête."
+    }
   }
 ]
