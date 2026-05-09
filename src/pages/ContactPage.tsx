@@ -17,7 +17,7 @@ const ContactPage = () => {
     setSeoTags({ title, description: desc, url: `https://tooltrim.com/${lang}/contact` });
     setHreflang(`/${lang}/contact`);
     return () => cleanupSeo([]);
-  }, [lang]);
+  }, [lang, t]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

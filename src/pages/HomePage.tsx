@@ -127,7 +127,7 @@ const HomePage = () => {
     setJsonLd("home-org-jsonld", { "@context": "https://schema.org", "@type": "Organization", name: "ToolTrim", url: SEO_BASE, logo: `${SEO_BASE}/picto-logo.svg`, sameAs: [] });
     setJsonLd("home-faq-jsonld", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) });
     return () => cleanupSeo(["home-jsonld", "home-org-jsonld", "home-faq-jsonld"]);
-  }, [lang, stats.total]);
+  }, [lang, stats.total, faq]);
 
   return (
     <div>

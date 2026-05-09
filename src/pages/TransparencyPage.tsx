@@ -20,7 +20,7 @@ const TransparencyPage = () => {
     setSeoTags({ title, description: desc, url: `https://tooltrim.com/${lang}/transparency` });
     setHreflang(`/${lang}/transparency`);
     return () => cleanupSeo([]);
-  }, [lang]);
+  }, [lang, t]);
 
   const principles = [
     {

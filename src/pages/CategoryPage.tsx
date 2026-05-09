@@ -8,6 +8,7 @@ import ToolLogo from "@/components/ToolLogo";
 import PageHero from "@/components/PageHero";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getToolDomain } from "@/lib/toolUtils";
+import type { PricingV5, ToolType } from "@/data/types";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
@@ -45,7 +46,10 @@ const CategoryPage = () => {
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
   const category = categories.find((c) => c.slug === slug);
-  const allCatTools = category ? tools.filter((tool) => tool.categoryId === category.id) : [];
+  const allCatTools = useMemo(
+    () => category ? tools.filter((tool) => tool.categoryId === category.id) : [],
+    [category, tools]
+  );
 
   const [search, setSearch]               = useState("");
   const [sort, setSort]                   = useState<SortKey>("name");
@@ -55,7 +59,7 @@ const CategoryPage = () => {
   const [savingsFilter, setSavingsFilter] = useState<string[]>([]);
   const [visibleCount, setVisibleCount]   = useState(PER_PAGE);
 
-  const year = new Date().getFullYear();
+  const year = useMemo(() => new Date().getFullYear(), []);
 
   const toggleArr = (arr: string[], val: string) =>
     arr.includes(val) ? arr.filter((x) => x !== val) : [...arr, val];
@@ -101,7 +105,7 @@ const CategoryPage = () => {
       },
     });
     return () => cleanupSeo(["cat-jsonld"]);
-  }, [category, lang, allCatTools.length]);
+  }, [category, lang, allCatTools, year]);
 
   // Filter & sort
   const filtered = useMemo(() => {
@@ -120,19 +124,19 @@ const CategoryPage = () => {
       const matchProfile =
         profileFilter.length === 0 ||
         profileFilter.some((r) =>
-          (tool as any).relevantFor?.includes(r) ||
-          (tool as any).relevantFor?.includes("all")
+          tool.relevantFor?.includes(r) ||
+          tool.relevantFor?.includes("all")
         );
 
       const matchType =
-        typeFilter.length === 0 || typeFilter.includes((tool as any).tool_type);
+        typeFilter.length === 0 || typeFilter.includes(tool.tool_type);
 
       const matchSavings =
         savingsFilter.length === 0 ||
         savingsFilter.every((s) => {
-          if (s === "freeAlt")      return !!(tool as any).freeAlternative;
-          if (s === "substitutable") return (tool as any).substitutable === true;
-          if (s === "cheaperAlt")   return !!(tool as any).betterAlternative;
+          if (s === "freeAlt")      return !!tool.freeAlternative;
+          if (s === "substitutable") return tool.substitutable === true;
+          if (s === "cheaperAlt")   return !!tool.betterAlternative;
           return true;
         });
 
@@ -145,7 +149,7 @@ const CategoryPage = () => {
         case "price-asc": return (a.defaultMonthlyPrice || 0) - (b.defaultMonthlyPrice || 0);
         case "price-desc":return (b.defaultMonthlyPrice || 0) - (a.defaultMonthlyPrice || 0);
         case "free-first":return (a.defaultMonthlyPrice === 0 ? 0 : 1) - (b.defaultMonthlyPrice === 0 ? 0 : 1);
-        case "savings":   return ((b as any).betterAlternative?.saving || 0) - ((a as any).betterAlternative?.saving || 0);
+        case "savings":   return (b.betterAlternative?.saving || 0) - (a.betterAlternative?.saving || 0);
         default: return 0;
       }
     });
@@ -209,7 +213,7 @@ const CategoryPage = () => {
         }
         description={
           category.description
-            ? t(category.description, (category as any).descriptionEn || category.description)
+            ? t(category.description, category.descriptionEn || category.description)
             : t(`Prix réels, alternatives testées et verdicts ${year}.`, `Real pricing, tested alternatives and ${year} verdicts.`)
         }
         stats={[
@@ -467,10 +471,10 @@ const CategoryPage = () => {
                 const domain        = getToolDomain(tool);
                 const isFree        = tool.defaultMonthlyPrice === 0 && !tool.pricing?.paid;
                 const isFreemium    = !!(tool.pricing?.free && tool.pricing?.paid);
-                const freeAltSlug   = (tool as any).freeAlternative as string | null;
-                const betterAlt     = (tool as any).betterAlternative as { tool: string; saving: number; performanceGain?: string } | null;
-                const pricingV5     = (tool as any).pricing_v5 as { compare_plan_name?: string; verified_on?: string } | null;
-                const toolType      = (tool as any).tool_type as string;
+                const freeAltSlug   = tool.freeAlternative;
+                const betterAlt     = tool.betterAlternative;
+                const pricingV5     = tool.pricing_v5 as PricingV5 | null | undefined;
+                const toolType      = tool.tool_type as ToolType;
 
                 // Type pill label
                 const TYPE_SHORT: Record<string, string> = {
@@ -549,7 +553,7 @@ const CategoryPage = () => {
                                 color: "hsl(var(--muted-foreground))",
                               }}
                             >
-                              {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                              {t(tool.shortDescription, tool.shortDescriptionEn || tool.shortDescription)}
                             </p>
                           </div>
 
@@ -592,7 +596,7 @@ const CategoryPage = () => {
                         <div className="mt-3 flex items-center justify-between gap-3 flex-wrap">
                           {tool.pros?.length > 0 && (
                             <div className="flex flex-wrap gap-1.5">
-                              {(lang === "fr" ? tool.pros : ((tool as any).prosEn || tool.pros))
+                              {(lang === "fr" ? tool.pros : (tool.prosEn || tool.pros))
                                 .slice(0, 2)
                                 .map((pro: string, i: number) => (
                                   <span

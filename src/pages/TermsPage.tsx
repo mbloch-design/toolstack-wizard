@@ -13,7 +13,7 @@ const TermsPage = () => {
     });
     setHreflang(`/${lang}/terms`);
     return () => cleanupSeo([]);
-  }, [lang]);
+  }, [lang, t]);
 
   return (
     <div className="py-16 md:py-24">

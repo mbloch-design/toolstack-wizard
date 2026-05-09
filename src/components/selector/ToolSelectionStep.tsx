@@ -95,7 +95,10 @@ const ToolSelectionStep = ({
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const selectedIds = new Set(currentTools.map((ct) => ct.toolId));
+  const selectedIds = useMemo(
+    () => new Set(currentTools.map((ct) => ct.toolId)),
+    [currentTools]
+  );
   const totalCost = currentTools.reduce((sum, ct) => {
     const tool = tools.find((t) => t.id === ct.toolId);
     return sum + (ct.monthlyCost || tool?.defaultMonthlyPrice || 0);

@@ -92,7 +92,7 @@ const ComparesIndexPage = () => {
       inLanguage: lang,
     });
     return () => cleanupSeo(["compares-index-jsonld"]);
-  }, [lang]);
+  }, [lang, t]);
 
   if (loading) {
     return (

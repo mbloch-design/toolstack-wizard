@@ -7,6 +7,7 @@ import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
 import PageHero from "@/components/PageHero";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
+import type { Tool } from "@/data/types";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first";
 type ViewMode = "grid" | "list";
@@ -57,7 +58,7 @@ const ToolsPage = () => {
     });
 
     return () => cleanupSeo(["tools-jsonld"]);
-  }, [lang, tools.length]);
+  }, [lang, tools]);
 
   // Stats
   const stats = useMemo(() => {
@@ -316,7 +317,7 @@ const ToolsPage = () => {
 
 // ---------- Card Components ----------
 
-function ToolCardGrid({ tool, prefix, t }: { tool: any; prefix: string; t: (fr: string, en: string) => string }) {
+function ToolCardGrid({ tool, prefix, t }: { tool: Tool; prefix: string; t: (fr: string, en: string) => string }) {
   const priceBadge = tool.defaultMonthlyPrice === 0
     ? (tool.pricing?.paid ? "Freemium" : t("Gratuit", "Free"))
     : `${tool.defaultMonthlyPrice}€/${t("mois", "mo")}`;
@@ -360,7 +361,7 @@ function ToolCardGrid({ tool, prefix, t }: { tool: any; prefix: string; t: (fr: 
   );
 }
 
-function ToolCardList({ tool, prefix, t }: { tool: any; prefix: string; t: (fr: string, en: string) => string }) {
+function ToolCardList({ tool, prefix, t }: { tool: Tool; prefix: string; t: (fr: string, en: string) => string }) {
   const priceBadge = tool.defaultMonthlyPrice === 0
     ? (tool.pricing?.paid ? "Freemium" : t("Gratuit", "Free"))
     : `${tool.defaultMonthlyPrice}€/${t("mois", "mo")}`;

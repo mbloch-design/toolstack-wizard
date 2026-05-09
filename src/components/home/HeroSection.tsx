@@ -13,7 +13,18 @@ const FEATURED_SLUGS = [
 
 // Floating tool icons — real SaaS tools with clean Clearbit logos
 // floatDelay = continuous bob offset, revealDelay = staggered entrance
-const FLOAT_LOGOS = [
+type FloatingLogo = {
+  domain: string;
+  top: string;
+  left?: string;
+  right?: string;
+  size: number;
+  floatDuration: string;
+  floatDelay: string;
+  revealDelay: string;
+};
+
+const FLOAT_LOGOS: FloatingLogo[] = [
   { domain: "notion.so",     top: "12%", left: "5%",   size: 56, floatDuration: "4.4s", floatDelay: "0s",   revealDelay: "0.15s" },
   { domain: "hubspot.com",   top: "44%", left: "2%",   size: 72, floatDuration: "5.1s", floatDelay: "1.2s", revealDelay: "0.45s" },
   { domain: "stripe.com",    top: "74%", left: "6%",   size: 58, floatDuration: "4.7s", floatDelay: "2.0s", revealDelay: "0.75s" },
@@ -85,8 +96,8 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
           className="pointer-events-none absolute hidden xl:block"
           style={{
             top: logo.top,
-            left: "left" in logo ? (logo as any).left : undefined,
-            right: "right" in logo ? (logo as any).right : undefined,
+            left: logo.left,
+            right: logo.right,
             width: logo.size,
             height: logo.size,
             animation: `float ${logo.floatDuration} ease-in-out ${logo.floatDelay} infinite`,

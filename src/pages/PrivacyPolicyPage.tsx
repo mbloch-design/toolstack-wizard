@@ -14,7 +14,7 @@ const PrivacyPolicyPage = () => {
     setNoindex();
     setHreflang(`/${lang}/privacy-policy`);
     return () => cleanupSeo([]);
-  }, [lang]);
+  }, [lang, t]);
 
   return (
     <div className="py-16 md:py-24">

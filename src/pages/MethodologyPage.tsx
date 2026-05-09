@@ -37,7 +37,7 @@ const MethodologyPage = () => {
       publisher: { "@type": "Organization", name: "ToolTrim", url: SEO_BASE },
     });
     return () => cleanupSeo(["methodology-jsonld"]);
-  }, [lang, stats.tools]);
+  }, [lang, stats.tools, t]);
 
   // Contrast table rows
   const contrastRows: Array<{ them: string; us: string }> = lang === "fr"

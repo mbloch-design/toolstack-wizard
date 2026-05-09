@@ -35,7 +35,7 @@ const AboutPage = () => {
       description: desc,
     });
     return () => cleanupSeo(["about-jsonld"]);
-  }, [lang, stats.tools]);
+  }, [lang, stats.tools, t]);
 
   const values = [
     {
