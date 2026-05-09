@@ -2,6 +2,7 @@ export const STACKS_VERSION = "2026-05-07";
 export type StackPersona = "dev" | "designer" | "consultant" | "content" | "ops" | "solo";
 export type StackStage = "starter" | "lean" | "scale";
 export type StackBudget = "free" | "under50" | "under150";
+export type StackToolDecision = "core" | "conditional" | "challenge";
 export type StackSubProfile =
   | "ui-ux"
   | "brand"
@@ -34,6 +35,9 @@ export interface StackToolSlot {
   role: string;
   roleEn: string;
   slug: string;
+  decision?: StackToolDecision;
+  tip?: string;
+  tipEn?: string;
   reason: string;
   reasonEn: string;
 }
@@ -141,9 +145,9 @@ export const STACKS: StackGuide[] = [
   {
     id: "dev-shipper",
     slug: "developpeur-freelance-shipper",
-    title: "Livrer un site client sans s'équiper comme une startup de dix personnes",
-    titleEn: "Ship client websites without a product stack",
-    subtitle: "Tu codes seul, mais ta stack commence à ressembler à celle d'une équipe. Un outil pour les tickets, un autre pour les specs, un troisième pour la compta — avant même d'avoir trois clients réguliers.",
+    title: "Stack dev freelance : livrer un site client sans stack de startup",
+    titleEn: "Freelance dev stack: ship client sites without a startup stack",
+    subtitle: "La base recommandée pour coder, montrer une preview, documenter les décisions et encaisser sans adopter les outils d'une équipe produit.",
     subtitleEn: "For freelance devs who need to code, show previews, document, and get paid without paying for team tooling.",
     persona: "dev",
     subProfiles: ["web", "product", "client-delivery"],
@@ -188,9 +192,9 @@ export const STACKS: StackGuide[] = [
   {
     id: "designer-solo",
     slug: "designer-freelance-solo",
-    title: "Arrêter de payer Adobe par habitude quand Figma couvre 90% de ton travail",
-    titleEn: "Sell design without dormant creative suites",
-    subtitle: "Tu utilises Figma pour presque tout. Adobe tourne encore en tâche de fond pour quelques réflexes que tu pourrais remplacer — et ça te coûte 60€ par mois depuis des années.",
+    title: "Stack designer freelance : Figma au centre, Adobe seulement si utile",
+    titleEn: "Freelance designer stack: Figma at the center, Adobe only when useful",
+    subtitle: "La base recommandée pour maquettes, branding léger, feedback client, plugins Figma utiles et déclinaisons rapides sans suite créative dormante.",
     subtitleEn: "For solo designers who mostly deliver framing, mockups, feedback, and simple assets without paying for a full creative factory.",
     persona: "designer",
     subProfiles: ["ui-ux", "brand", "web"],
@@ -245,9 +249,9 @@ export const STACKS: StackGuide[] = [
   {
     id: "consultant-b2b",
     slug: "consultant-b2b-propre",
-    title: "Suivre tes prospects sans payer un CRM taillé pour une équipe commerciale",
-    titleEn: "Sell consulting without an oversized CRM",
-    subtitle: "Tu as une quinzaine d'opportunités en cours, quelques relances à faire cette semaine, et un outil qui te coûte 80€ par mois pour ça. La question c'est : est-ce qu'il t'aide vraiment à vendre, ou à te sentir organisé ?",
+    title: "Stack consultant B2B : vendre, relancer et livrer sans CRM lourd",
+    titleEn: "B2B consultant stack: sell, follow up, and deliver without a heavy CRM",
+    subtitle: "La base recommandée pour suivre les opportunités, préparer les appels, formaliser les propositions et livrer proprement.",
     subtitleEn: "For B2B consultants who need to track opportunities, book calls, and deliver cleanly without rebuilding a sales team.",
     persona: "consultant",
     subProfiles: ["crm-sales", "client-delivery", "admin"],
@@ -283,9 +287,9 @@ export const STACKS: StackGuide[] = [
   {
     id: "content-operator",
     slug: "createur-contenu-operateur",
-    title: "Produire du contenu sans payer trois IA pour faire le même travail",
-    titleEn: "Produce content without stacking AI tools",
-    subtitle: "Tu as ChatGPT pour les brouillons, peut-être Claude pour la réécriture, un outil de visuels et un autre pour publier. Ce n'est pas une méthode, c'est une accumulation de réflexes. Et ça coûte plus de 100€/mois.",
+    title: "Stack créateur contenu : produire, recycler et publier sans empiler les IA",
+    titleEn: "Content creator stack: produce, repurpose, and publish without stacking AIs",
+    subtitle: "La base recommandée pour organiser les idées, produire des formats récurrents, recycler les contenus et garder un seul copilote éditorial principal.",
     subtitleEn: "For freelance creators or writers who want to publish, repurpose, and capture requests without paying for three copilots doing the same thing.",
     persona: "content",
     subProfiles: ["copywriting", "newsletter", "social-content"],
@@ -320,9 +324,9 @@ export const STACKS: StackGuide[] = [
   {
     id: "ops-fractional",
     slug: "ops-manager-fractional-coo",
-    title: "Intervenir en ops sans adopter l'outil de chaque client qui t'embauche",
-    titleEn: "Structure operations without multiplying PM tools",
-    subtitle: "Un client est sur Asana, l'autre sur ClickUp, un troisième sur Monday. Toi tu te retrouves à jongler entre quatre espaces de travail, dont tu n'es vraiment maître d'aucun.",
+    title: "Stack Ops / COO : piloter les missions sans subir l'outil de chaque client",
+    titleEn: "Ops / COO stack: run engagements without inheriting every client tool",
+    subtitle: "La base recommandée pour cadrer une mission ops, documenter les process, automatiser ce qui est stable et garder des templates transférables.",
     subtitleEn: "For ops managers or fractional COOs who need transferable processes without juggling Asana, ClickUp, Monday, and Notion.",
     persona: "ops",
     subProfiles: ["operations", "automation", "client-delivery"],
@@ -357,9 +361,9 @@ export const STACKS: StackGuide[] = [
   {
     id: "solo-zero-bloat",
     slug: "freelance-solo-zero-bloat",
-    title: "Commencer à facturer sans acheter la stack d'une PME",
-    titleEn: "Start without buying team tools",
-    subtitle: "Tu viens de lancer — ou tu t'apprêtes à le faire. Avant d'avoir un flux régulier de clients, chaque abonnement est un pari sur une croissance qui n'est pas encore là.",
+    title: "Stack solo généraliste : vendre et livrer sans acheter la stack d'une PME",
+    titleEn: "Solo operator stack: sell and deliver without buying an SMB stack",
+    subtitle: "La base recommandée pour clarifier une offre, qualifier les demandes, stocker les livrables, encaisser et rester léger au démarrage.",
     subtitleEn: "For early freelancers: sell, qualify, deliver, and get paid with the viable minimum before adding subscriptions.",
     persona: "solo",
     subProfiles: ["admin", "crm-sales", "client-delivery"],
@@ -868,13 +872,13 @@ export const STACKS: StackGuide[] = [
       { q: "Tes animations web sont-elles exportées proprement en Lottie ?", qEn: "Are your web animations cleanly exported as Lottie?", hint: "Non → Bodymovin doit être dans la stack si After Effects reste ton outil motion web.", hintEn: "No → Bodymovin belongs in the stack if After Effects remains your web motion tool." },
     ],
     tools: [
-      { role: "Motion avancé", roleEn: "Advanced motion", slug: "adobe-after-effects", reason: "Motion complexe, compositions et exports Lottie via plugin.", reasonEn: "Complex motion, compositions, and Lottie exports via plugin." },
-      { role: "Export Lottie", roleEn: "Lottie export", slug: "ae-bodymovin", reason: "Le plugin clé pour livrer des animations web légères.", reasonEn: "The key plugin for lightweight web animation delivery." },
-      { role: "Animation interactive", roleEn: "Interactive animation", slug: "rive", reason: "Plus adapté qu'After Effects si l'animation vit dans une app.", reasonEn: "Better than After Effects if the animation lives inside an app." },
-      { role: "Montage pro gratuit", roleEn: "Free pro editing", slug: "davinci-resolve", reason: "Montage, colorimétrie et audio sans abonnement pour beaucoup de cas solo.", reasonEn: "Editing, grading, and audio without subscription for many solo cases." },
-      { role: "Formats sociaux", roleEn: "Social formats", slug: "capcut", reason: "Rapide pour sous-titres, cuts courts et déclinaisons verticales.", reasonEn: "Fast for captions, short cuts, and vertical variations." },
-      { role: "Démos produit", roleEn: "Product demos", slug: "screen-studio", reason: "Capture écran premium sans montage lourd.", reasonEn: "Premium screen recording without heavy editing." },
-      { role: "B-roll IA", roleEn: "AI B-roll", slug: "runway", reason: "Plans génératifs courts quand ils servent vraiment le récit.", reasonEn: "Short generative shots when they truly serve the story." },
+      { role: "Démos produit", roleEn: "Product demos", slug: "screen-studio", decision: "core", tip: "Prépare 3 presets : démo SaaS 16:9, extrait LinkedIn 4:5, vertical court 9:16.", tipEn: "Prepare 3 presets: SaaS demo 16:9, LinkedIn clip 4:5, short vertical 9:16.", reason: "Le meilleur socle pour enregistrer des démos propres : auto-zoom, curseur, ratio et export sans montage lourd.", reasonEn: "The best foundation for polished product demos: auto-zoom, cursor, ratio, and export without heavy editing." },
+      { role: "Formats sociaux", roleEn: "Social formats", slug: "capcut", decision: "core", tip: "Garde-le pour sous-titres, cuts courts et déclinaisons verticales. Pas pour les animations produit complexes.", tipEn: "Keep it for captions, short cuts, and vertical variations. Not for complex product animation.", reason: "Rapide pour monter, sous-titrer et décliner des contenus sociaux sans sortir une suite Adobe.", reasonEn: "Fast for editing, captioning, and adapting social content without opening an Adobe suite." },
+      { role: "Montage pro", roleEn: "Pro editing", slug: "davinci-resolve", decision: "core", tip: "DaVinci Free suffit tant que tu n'as pas besoin de collaboration studio, plugins avancés ou workflow broadcast.", tipEn: "DaVinci Free is enough until you need studio collaboration, advanced plugins, or broadcast workflow.", reason: "Montage, colorimétrie et audio solide sans abonnement pour beaucoup de cas solo.", reasonEn: "Solid editing, grading, and audio without subscription for many solo cases." },
+      { role: "Motion avancé", roleEn: "Advanced motion", slug: "adobe-after-effects", decision: "conditional", tip: "À garder si tu livres vraiment du motion complexe ou du Lottie. Sinon il devient vite l'abonnement dormant.", tipEn: "Keep if you truly deliver complex motion or Lottie. Otherwise it quickly becomes the dormant subscription.", reason: "Utile pour compositions, titrages complexes, micro-animations et exports Lottie via plugin.", reasonEn: "Useful for compositions, complex titles, micro-animations, and Lottie exports via plugin." },
+      { role: "Plugin Lottie", roleEn: "Lottie plugin", slug: "ae-bodymovin", decision: "conditional", tip: "Indispensable seulement si l'animation doit être intégrée sur un site ou dans une app.", tipEn: "Essential only if the animation must be embedded in a website or app.", reason: "Le plugin clé pour exporter des animations web légères depuis After Effects.", reasonEn: "The key plugin for exporting lightweight web animations from After Effects." },
+      { role: "Animation interactive", roleEn: "Interactive animation", slug: "rive", decision: "conditional", tip: "Choisis Rive si l'animation réagit à l'utilisateur. Choisis Lottie si elle reste linéaire.", tipEn: "Choose Rive if animation reacts to the user. Choose Lottie if it remains linear.", reason: "Plus pertinent qu'After Effects quand l'animation vit dans une interface et doit avoir des états.", reasonEn: "More relevant than After Effects when animation lives in an interface and needs states." },
+      { role: "B-roll IA", roleEn: "AI B-roll", slug: "runway", decision: "challenge", tip: "Prends des crédits ou un mois ponctuel si tu génères moins de 10 plans par mois.", tipEn: "Use credits or one-off months if you generate fewer than 10 shots per month.", reason: "À garder seulement si les plans génératifs servent vraiment ton format récurrent.", reasonEn: "Keep only if generative shots truly serve your recurring format." },
     ],
   },
   {

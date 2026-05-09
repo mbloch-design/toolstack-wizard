@@ -45,7 +45,6 @@ const ToolLogo = ({ tool, size = 32, className = "" }: ToolLogoProps) => {
       width={size}
       height={size}
       loading="lazy"
-      fetchPriority="low"
       className={`shrink-0 rounded-lg object-contain ${className}`}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
       onError={() => setFailed(true)}

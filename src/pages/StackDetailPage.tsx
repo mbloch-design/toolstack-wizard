@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
-import { STACK_PERSONAS, STACK_STAGES, STACKS, STACK_USES, type StackPersona, type StackStage } from "@/data/stacks";
+import { STACK_PERSONAS, STACK_STAGES, STACKS, STACK_USES, type StackGuide, type StackInsight, type StackPersona, type StackStage } from "@/data/stacks";
 
 const STACK_LAYERS = [
   {
@@ -40,6 +40,68 @@ const STACK_LAYERS = [
     match: ["analytics", "mesure", "support", "ux", "reporting", "tracking", "recherche"],
   },
 ];
+
+const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
+  "developpeur-freelance-shipper": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "GitHub + Vercel + Notion + Stripe. Ajoute Cursor seulement si tu livres du code chaque semaine, sinon ChatGPT suffit pour cadrer et débugger.", detailEn: "GitHub + Vercel + Notion + Stripe. Add Cursor only if you ship code weekly; otherwise ChatGPT is enough for scoping and debugging." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Crée un template Notion par mission avec brief, décisions, changelog et lien preview Vercel. Le client suit sans te relancer.", detailEn: "Create one Notion template per project with brief, decisions, changelog, and Vercel preview link. The client tracks progress without chasing you." },
+    { title: "Plugin / réglage", titleEn: "Plugin / setting", detail: "Ajoute un fichier de règles projet pour Cursor ou ton IA : stack technique, conventions, composants à réutiliser, choses à ne pas modifier.", detailEn: "Add project rules for Cursor or your AI: tech stack, conventions, reusable components, and things not to touch." },
+  ],
+  "designer-freelance-solo": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Figma reste le centre. Plugins minimum : Tokens Studio si système maintenu, Iconify pour les icônes, Stark pour accessibilité. Canva sert aux déclinaisons, pas à la source design.", detailEn: "Figma stays central. Minimum plugins: Tokens Studio for maintained systems, Iconify for icons, Stark for accessibility. Canva handles variations, not the design source." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Prépare une page client Notion avec brief, moodboard, validations et liens Figma. Tu transformes ton process en livrable visible.", detailEn: "Prepare a client Notion page with brief, moodboard, approvals, and Figma links. Your process becomes visible deliverable value." },
+    { title: "À challenger", titleEn: "Challenge", detail: "Adobe complet ne doit rester actif que si tu ouvres vraiment Photoshop, Illustrator ou Lightroom chaque mois. Sinon plan photo ou alternative dédiée.", detailEn: "Full Adobe should stay active only if you actually open Photoshop, Illustrator, or Lightroom monthly. Otherwise use the photo plan or a focused alternative." },
+  ],
+  "consultant-b2b-propre": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Pipedrive si tu as un vrai pipeline, Notion si tu as surtout des missions. Calendly seulement si les rendez-vous sont fréquents.", detailEn: "Pipedrive if you have a real pipeline, Notion if you mostly manage projects. Calendly only if meetings are frequent." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Ajoute trois champs non négociables dans le CRM : montant, prochaine action, date de relance. Sans ça, l'outil ne sert qu'à se rassurer.", detailEn: "Add three non-negotiable CRM fields: amount, next action, follow-up date. Without them, the tool only provides reassurance." },
+    { title: "Fiche à ajouter si besoin", titleEn: "Tool page to add if needed", detail: "Si ton conseil devient très réseau/intros, Folk mérite une vraie fiche produit et peut remplacer un CRM trop commercial.", detailEn: "If your consulting depends on network and intros, Folk deserves a full product page and can replace an overly sales-oriented CRM." },
+  ],
+  "createur-contenu-operateur": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Notion pour backlog, ChatGPT ou Claude pour transformer, Canva pour formats rapides, Buffer seulement si tu publies vraiment sur plusieurs canaux.", detailEn: "Notion for backlog, ChatGPT or Claude for transformation, Canva for fast formats, Buffer only if you truly publish on several channels." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Crée un template de recyclage : idée longue, post LinkedIn, newsletter, carrousel, script court. Un contenu doit générer plusieurs sorties.", detailEn: "Create a repurposing template: long idea, LinkedIn post, newsletter, carousel, short script. One content piece should create several outputs." },
+    { title: "Réglage IA", titleEn: "AI setting", detail: "Configure un prompt permanent avec ton audience, ton niveau de langage, tes interdits éditoriaux et trois exemples de bons textes.", detailEn: "Configure persistent instructions with your audience, language level, editorial no-goes, and three examples of strong writing." },
+  ],
+  "ops-manager-fractional-coo": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "ClickUp ou Notion pour piloter, Make pour automatiser, Airtable seulement quand les données deviennent trop structurées pour Notion.", detailEn: "ClickUp or Notion for operating, Make for automation, Airtable only when data becomes too structured for Notion." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Vends ton kit de mission : kick-off, cadence hebdo, plan 30 jours, SOP, closing. Ce n'est pas l'outil qui fait l'expertise, c'est le système réutilisable.", detailEn: "Sell your engagement kit: kickoff, weekly cadence, 30-day plan, SOP, closing. Expertise is not the tool; it is the reusable system." },
+    { title: "Automatisation utile", titleEn: "Useful automation", detail: "Dans Make, chaque scénario doit avoir un nom métier et une note d'intention. Sinon personne ne saura le maintenir dans trois mois.", detailEn: "In Make, every scenario needs a business name and intent note. Otherwise nobody will maintain it three months later." },
+  ],
+  "freelance-solo-zero-bloat": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Notion + Drive + Tally + Stripe. Ajoute Indy si l'administratif français devient le vrai irritant.", detailEn: "Notion + Drive + Tally + Stripe. Add Indy if French admin becomes the real pain point." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Un formulaire Tally bien écrit vaut mieux qu'un appel découverte flou. Demande contexte, budget, urgence, livrable attendu et décideur.", detailEn: "A well-written Tally form beats a vague discovery call. Ask context, budget, urgency, expected deliverable, and decision-maker." },
+    { title: "À éviter", titleEn: "Avoid", detail: "Ne prends pas CRM, outil projet complet et newsletter avant d'avoir un canal d'acquisition stable.", detailEn: "Do not take CRM, full project management, and newsletter tools before you have a stable acquisition channel." },
+  ],
+  "ecommerce-retention-support": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Shopify, GA4, Klaviyo, Gorgias et Hotjar sur pages à friction. Chaque app doit prouver conversion, réachat, panier moyen ou temps support gagné.", detailEn: "Shopify, GA4, Klaviyo, Gorgias, and Hotjar on friction pages. Each app must prove conversion, repeat purchase, AOV, or support time saved." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Commence par trois flows Klaviyo : abandon panier, post-achat, winback. Le reste vient après un revenu email mesurable.", detailEn: "Start with three Klaviyo flows: cart abandonment, post-purchase, winback. Everything else comes after measurable email revenue." },
+    { title: "À challenger", titleEn: "Challenge", detail: "Les apps Shopify ralentissent la boutique. Coupe toute app sans métrique de marge associée.", detailEn: "Shopify apps slow the store. Cut any app without an attached margin metric." },
+  ],
+  "designer-ui-ux-systeme-produit": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Figma, Tokens Studio, Iconify, Stark. Ajoute Content Reel seulement si tu dois remplir beaucoup d'écrans réalistes.", detailEn: "Figma, Tokens Studio, Iconify, Stark. Add Content Reel only if you need to populate many realistic screens." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Avant le handoff, vérifie tokens, contrastes, états vides, erreurs, loading et responsive. C'est là que le designer gagne la confiance dev.", detailEn: "Before handoff, check tokens, contrast, empty states, errors, loading, and responsive. This is where designers win developer trust." },
+    { title: "Plugin / réglage", titleEn: "Plugin / setting", detail: "Tokens Studio devient utile quand les tokens sortent de Figma vers GitHub ou plusieurs thèmes. Sinon les styles natifs suffisent.", detailEn: "Tokens Studio becomes useful when tokens leave Figma for GitHub or multiple themes. Otherwise native styles are enough." },
+  ],
+  "motion-video-studio-solo": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Screen Studio pour les démos produit, CapCut pour les formats sociaux, DaVinci Resolve pour le montage propre. After Effects vient seulement si le motion complexe ou le Lottie est un livrable régulier.", detailEn: "Screen Studio for product demos, CapCut for social formats, DaVinci Resolve for clean editing. After Effects only comes in when complex motion or Lottie is a recurring deliverable." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Décide le format de sortie avant l'outil : vidéo sociale, démo produit, Lottie web ou animation interactive. Le mauvais format crée vite le mauvais abonnement.", detailEn: "Choose the output format before the tool: social video, product demo, web Lottie, or interactive animation. The wrong format quickly creates the wrong subscription." },
+    { title: "Plugins / crédits", titleEn: "Plugins / credits", detail: "Bodymovin est utile si After Effects exporte vers le web. Rive est meilleur pour les animations avec états. Runway doit rester en crédits ou mois ponctuel tant qu'il ne produit pas un format récurrent.", detailEn: "Bodymovin is useful when After Effects exports to web. Rive is better for state-based animations. Runway should stay on credits or occasional months until it powers a recurring format." },
+  ],
+  "consultant-revops-pipeline": [
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Pipedrive pour le pipe, Folk pour le réseau, Calendly pour la prise de rendez-vous, Notion pour la livraison. HubSpot seulement si marketing et CRM doivent fusionner.", detailEn: "Pipedrive for pipeline, Folk for network, Calendly for scheduling, Notion for delivery. HubSpot only if marketing and CRM must merge." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Sépare opportunité et mission. Le CRM s'arrête à la signature ; la mission commence dans Notion avec objectifs, décisions et livrables.", detailEn: "Separate opportunity and engagement. CRM stops at signature; delivery starts in Notion with goals, decisions, and deliverables." },
+    { title: "À challenger", titleEn: "Challenge", detail: "Aircall et DocuSign sont des outils de volume ou de preuve. S'ils ne changent pas le taux de closing ou le risque, ils attendent.", detailEn: "Aircall and DocuSign are volume or proof tools. If they do not change close rate or risk, they can wait." },
+  ],
+};
+
+const EXPERT_TIPS_BY_PERSONA: Record<StackPersona, StackInsight[]> = {
+  dev: EXPERT_TIPS_BY_STACK["developpeur-freelance-shipper"],
+  designer: EXPERT_TIPS_BY_STACK["designer-freelance-solo"],
+  consultant: EXPERT_TIPS_BY_STACK["consultant-b2b-propre"],
+  content: EXPERT_TIPS_BY_STACK["createur-contenu-operateur"],
+  ops: EXPERT_TIPS_BY_STACK["ops-manager-fractional-coo"],
+  solo: EXPERT_TIPS_BY_STACK["freelance-solo-zero-bloat"],
+};
 
 const StackDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -75,7 +137,7 @@ const StackDetailPage = () => {
   const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
   const toolDecisionStats = stack.tools.reduce(
     (stats, slot) => {
-      const status = getToolDecisionStatus(slot.role).key;
+      const status = getToolDecisionStatus(slot).key;
       stats[status] += 1;
       return stats;
     },
@@ -102,6 +164,7 @@ const StackDetailPage = () => {
       },
     ]
     : stackLayersBase;
+  const expertTips = getExpertTips(stack);
 
   return (
     <div className="min-h-screen bg-background">
@@ -172,6 +235,9 @@ const StackDetailPage = () => {
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#overview">
             {t("Synthèse", "Summary")}
           </a>
+          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#expert">
+            {t("Conseil expert", "Expert read")}
+          </a>
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#stack">
             {t("Cartographie", "Map")}
           </a>
@@ -224,6 +290,25 @@ const StackDetailPage = () => {
           </div>
         </section>
 
+        <section id="expert" className="scroll-mt-24 border-b border-border py-12">
+          <div className="mb-8 max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              {t("Conseil expert", "Expert read")}
+            </p>
+            <h2 className="font-display text-2xl font-semibold leading-tight tracking-tight text-foreground md:text-3xl">
+              {t("Ce que je garderais vraiment dans ce métier.", "What I would actually keep for this role.")}
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {expertTips.map((tip) => (
+              <div key={tip.title} className="rounded-lg border border-border bg-card p-5">
+                <h3 className="text-base font-semibold text-foreground">{t(tip.title, tip.titleEn)}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{t(tip.detail, tip.detailEn)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* ── OUTILS ─────────────────────────────────────────────────────── */}
         <section id="stack" className="scroll-mt-24 border-b border-border py-12">
           <div className="mb-8 max-w-3xl">
@@ -264,7 +349,12 @@ const StackDetailPage = () => {
                       </div>
                       <p className="text-sm font-semibold text-foreground">{t(slot.role, slot.roleEn)}</p>
                       <p className="text-sm leading-6 text-muted-foreground">{t(slot.reason, slot.reasonEn)}</p>
-                      <ToolStatusBadge status={getToolDecisionStatus(slot.role)} t={t} />
+                      <ToolStatusBadge status={getToolDecisionStatus(slot)} t={t} />
+                      {slot.tip && slot.tipEn && (
+                        <p className="rounded-md bg-secondary px-3 py-2 text-xs font-medium leading-5 text-muted-foreground md:col-span-4">
+                          {t("Petit plus", "Small edge")} : {t(slot.tip, slot.tipEn)}
+                        </p>
+                      )}
                     </Link>
                   ))}
                 </div>
@@ -423,6 +513,10 @@ function DecisionNote({ title, text }: { title: string; text: string }) {
   );
 }
 
+function getExpertTips(stack: StackGuide) {
+  return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona];
+}
+
 function ToolStatusBadge({
   status,
   t,
@@ -437,8 +531,35 @@ function ToolStatusBadge({
   );
 }
 
-function getToolDecisionStatus(role: string) {
-  const normalizedRole = role.toLowerCase();
+function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {
+  if (slot.decision === "challenge") {
+    return {
+      key: "challenge" as const,
+      labelFr: "À challenger",
+      labelEn: "Challenge",
+      className: "border-destructive/25 bg-destructive/8 text-destructive",
+    };
+  }
+
+  if (slot.decision === "conditional") {
+    return {
+      key: "conditional" as const,
+      labelFr: "Conditionnel",
+      labelEn: "Conditional",
+      className: "border-primary/25 bg-primary/8 text-primary",
+    };
+  }
+
+  if (slot.decision === "core") {
+    return {
+      key: "core" as const,
+      labelFr: "Socle",
+      labelEn: "Core",
+      className: "border-keep/25 bg-keep/10 text-keep",
+    };
+  }
+
+  const normalizedRole = slot.role.toLowerCase();
   const challengeKeywords = [
     "avancé",
     "advanced",

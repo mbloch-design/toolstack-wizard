@@ -105,12 +105,27 @@ const STACK_FILTER_GROUPS: StackFilterGroup[] = [
 ];
 
 const FEATURED_STACK_SLUGS = [
+  "developpeur-freelance-shipper",
+  "designer-freelance-solo",
+  "consultant-b2b-propre",
+  "createur-contenu-operateur",
+  "ops-manager-fractional-coo",
+  "freelance-solo-zero-bloat",
   "freelance",
   "agence-marketing",
   "solopreneur",
   "ecommerce",
   "startup-saas",
 ];
+
+const PROFILE_RECOMMENDED_STACKS = [
+  { persona: "dev", slug: "developpeur-freelance-shipper" },
+  { persona: "designer", slug: "designer-freelance-solo" },
+  { persona: "consultant", slug: "consultant-b2b-propre" },
+  { persona: "content", slug: "createur-contenu-operateur" },
+  { persona: "ops", slug: "ops-manager-fractional-coo" },
+  { persona: "solo", slug: "freelance-solo-zero-bloat" },
+] as const;
 
 const PERSONA_FILTER_GROUP = STACK_FILTER_GROUPS.find((group) => group.id === "persona")!;
 const SUB_PROFILE_FILTER_GROUP = STACK_FILTER_GROUPS.find((group) => group.id === "subProfile")!;
@@ -188,6 +203,14 @@ const StacksPage = () => {
         label: lang === "fr" ? option?.label || value : option?.labelEn || value,
       };
     }));
+
+  const profileRecommendedStacks = PROFILE_RECOMMENDED_STACKS
+    .map(({ persona, slug }) => ({
+      persona,
+      stack: STACKS.find((item) => item.slug === slug),
+    }))
+    .filter((item): item is { persona: StackPersona; stack: StackListItem } => Boolean(item.stack));
+  const showProfileRecommendations = !query && activeFilters.length === 0;
 
   const toggleFilter = (groupId: StackFilterKey, value: string) => {
     setSelectedFilters((current) => ({
@@ -517,9 +540,50 @@ const StacksPage = () => {
                 )}
               </div>
 
+              {showProfileRecommendations && (
+                <div className="mt-4 rounded-lg border border-border bg-card p-4 md:p-5">
+                  <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                        {t("Recommandées par profil", "Recommended by profile")}
+                      </p>
+                      <h2 className="mt-1 font-display text-xl font-semibold tracking-tight text-foreground">
+                        {t("Commence par la stack de ton métier", "Start with the stack for your role")}
+                      </h2>
+                    </div>
+                    <p className="max-w-md text-sm leading-6 text-muted-foreground">
+                      {t("Une base claire par profil, puis les spécialités pour affiner.", "One clear base per profile, then specialties to refine.")}
+                    </p>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                    {profileRecommendedStacks.map(({ persona, stack }) => (
+                      <Link
+                        key={`recommended-${stack.id}`}
+                        to={`${prefix}/stacks/${stack.slug}`}
+                        className="group rounded-lg border border-border bg-background p-4 transition-colors hover:border-primary/35 hover:bg-primary/5"
+                      >
+                        <div className="flex items-center justify-between gap-3">
+                          <span className="rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
+                            {t(personaLabel(persona, "fr"), personaLabel(persona, "en"))}
+                          </span>
+                          <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                        </div>
+                        <h3 className="mt-3 text-base font-semibold leading-snug text-foreground">
+                          {t(stack.title, stack.titleEn)}
+                        </h3>
+                        <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">
+                          {t(stack.bestFor, stack.bestForEn)}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="mt-4 grid gap-3">
                 {filteredStacks.map((stack) => {
                   const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
+                  const isProfileRecommended = PROFILE_RECOMMENDED_STACKS.some((item) => item.slug === stack.slug);
                   return (
                     <Link
                       key={stack.id}
@@ -550,6 +614,11 @@ const StacksPage = () => {
                             <span className="rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
                               {stack.tools.length} {t("outils", "tools")}
                             </span>
+                            {isProfileRecommended && (
+                              <span className="rounded-full border border-foreground/15 bg-foreground px-3 py-1 text-xs font-semibold text-background">
+                                {t("Stack de base", "Base stack")}
+                              </span>
+                            )}
                           </div>
 
                           <h2 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground md:text-2xl">
