@@ -1,5 +1,14 @@
 [
   {
+    "id": "prototyping",
+    "slug": "prototyping",
+    "name": "🎨 Prototyping",
+    "nameEn": "🎨 Prototyping",
+    "description": "Outils pour créer des maquettes, wireframes et prototypes interactifs.",
+    "descriptionEn": "Tools for creating mockups, wireframes and interactive prototypes.",
+    "tools": ["invision", "balsamiq", "lottie", "framer", "avocode", "origami", "material-swift", "visily", "pterocos"]
+  },
+  {
     "id": "ui-components",
     "slug": "ui-components",
     "name": "🧩 UI Components",
