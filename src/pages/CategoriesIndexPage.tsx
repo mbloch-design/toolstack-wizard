@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Banknote,
   Bot,
+  Boxes,
   Clock3,
   LayoutGrid,
   Lightbulb,
@@ -18,6 +19,7 @@ import {
   Sparkles,
   Workflow,
 } from "lucide-react";
+import { STACKS } from "@/data/stacks";
 
 const PRIORITY_CATEGORY_IDS = [
   "organization",
@@ -124,6 +126,59 @@ const CATEGORY_GROUPS = [
   },
 ];
 
+const STACK_TEMPLATES = [
+  {
+    slug: "freelance",
+    labelFr: "Freelance",
+    labelEn: "Freelance",
+    titleFr: "Vendre, livrer et encaisser sans outil inutile",
+    titleEn: "Sell, deliver, and get paid without useless tools",
+    descriptionFr: "Le socle clair pour gérer clients, livrables et paiement.",
+    descriptionEn: "A clear baseline for clients, deliverables, and payment.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "agence-marketing",
+    labelFr: "Agence marketing",
+    labelEn: "Marketing agency",
+    titleFr: "Produire, piloter et reporter sans dispersion",
+    titleEn: "Produce, manage, and report without dispersion",
+    descriptionFr: "Une stack pour briefs, contenus, campagnes et reporting.",
+    descriptionEn: "A stack for briefs, content, campaigns, and reporting.",
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "solopreneur",
+    labelFr: "Solopreneur",
+    labelEn: "Solopreneur",
+    titleFr: "Vendre seul sans construire une usine",
+    titleEn: "Sell alone without building a machine",
+    descriptionFr: "Offre, contenu, demandes et paiement avec peu d'abonnements.",
+    descriptionEn: "Offer, content, requests, and payment with few subscriptions.",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "ecommerce",
+    labelFr: "E-commerce",
+    labelEn: "E-commerce",
+    titleFr: "Vendre et fidéliser sans empiler les apps",
+    titleEn: "Sell and retain without stacking apps",
+    descriptionFr: "Boutique, email, support et analytics sans perdre la marge.",
+    descriptionEn: "Store, email, support, and analytics without losing margin.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    slug: "startup-saas",
+    labelFr: "Startup SaaS",
+    labelEn: "SaaS startup",
+    titleFr: "Construire, mesurer et vendre sans suréquiper",
+    titleEn: "Build, measure, and sell without over-tooling",
+    descriptionFr: "Produit, code, tracking, support et vente pour early-stage.",
+    descriptionEn: "Product, code, tracking, support, and sales for early-stage.",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85",
+  },
+];
+
 function cleanCategoryName(name: string) {
   return name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
 }
@@ -172,6 +227,13 @@ const CategoriesIndexPage = () => {
       .filter(Boolean);
   }, [activeIntentConfig, categories]);
 
+  const featuredStacks = useMemo(() => {
+    return STACK_TEMPLATES.map((template) => ({
+      ...template,
+      stack: STACKS.find((stack) => stack.slug === template.slug),
+    })).filter((template) => template.stack);
+  }, []);
+
   useEffect(() => {
     const title = lang === "fr"
       ? `${categories.length} catégories d'outils SaaS — ToolTrim`
@@ -212,6 +274,10 @@ const CategoriesIndexPage = () => {
             <Link to={`${prefix}/tools`} className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5">
               {t("Voir tous les outils", "See all tools")}
               <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link to={`${prefix}/stacks`} className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
+              {t("Voir les stacks types", "See stack templates")}
+              <Boxes className="h-4 w-4" />
             </Link>
           </>
         }
@@ -274,6 +340,81 @@ const CategoriesIndexPage = () => {
                     </span>
                   </div>
                 </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-background py-12 md:py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div className="max-w-3xl">
+              <p className="label-section mb-2">{t("Stacks types", "Stack templates")}</p>
+              <SectionTitle>{t("Pars d'une situation réelle", "Start from a real situation")}</SectionTitle>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
+                {t(
+                  "Une catégorie aide à comparer. Une stack type aide à décider quoi garder, remplacer ou éviter selon ton profil.",
+                  "A category helps you compare. A stack template helps you decide what to keep, replace, or avoid for your profile."
+                )}
+              </p>
+            </div>
+            <Link
+              to={`${prefix}/stacks`}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+            >
+              {t("Toutes les stacks types", "All stack templates")}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {featuredStacks.map((template) => {
+              const stack = template.stack!;
+              return (
+                <Link
+                  key={template.slug}
+                  to={`${prefix}/stacks/${template.slug}`}
+                  className="group flex min-h-[27rem] flex-col rounded-lg bg-secondary/70 p-3 transition-colors duration-200 hover:bg-secondary"
+                >
+                  <div className="relative overflow-hidden rounded-md bg-background">
+                    <img
+                      src={template.image}
+                      alt={t(template.labelFr, template.labelEn)}
+                      className="aspect-[1.2/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                      loading="lazy"
+                    />
+                    <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur">
+                      <Boxes className="h-3.5 w-3.5 text-primary" />
+                      {t(template.labelFr, template.labelEn)}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-1 flex-col justify-between px-1 pb-1 pt-5">
+                    <div>
+                      <h3 className="text-lg font-semibold leading-tight tracking-tight text-foreground">
+                        {t(template.titleFr, template.titleEn)}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {t(template.descriptionFr, template.descriptionEn)}
+                      </p>
+                    </div>
+                    <div className="mt-5 border-t border-border/70 pt-4">
+                      <div className="flex items-center justify-between gap-3 text-xs font-semibold text-muted-foreground">
+                        <span>
+                          <span className="num-mono text-foreground">{stack.monthlyBudget}€</span>/{t("mois", "mo")}
+                        </span>
+                        <span>
+                          {t("jusqu'à", "up to")} <span className="num-mono text-primary">{stack.savings}€</span> {t("à revoir", "to review")}
+                        </span>
+                      </div>
+                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                        {t("Voir la stack", "View stack")}
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               );
             })}
           </div>

@@ -106,6 +106,12 @@ const Navbar = () => {
       to: `${prefix}/category`,
     },
     {
+      icon: Boxes,
+      label: t("Stacks types", "Stack templates"),
+      description: t("Partir d'un profil concret", "Start from a concrete profile"),
+      to: `${prefix}/stacks`,
+    },
+    {
       icon: Scale,
       label: t("Comparatifs", "Comparisons"),
       description: t("Décider entre deux outils", "Decide between two tools"),

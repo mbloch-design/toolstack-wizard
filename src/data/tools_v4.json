@@ -70484,5 +70484,119 @@
     "seo": {
       "metaDescription": "Pixco avis : éditeur photo IA en ligne. Suppression de fond et retouche sans Photoshop pour e-commerce."
     }
+  },
+  {
+    "id": "klaviyo",
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "category": "marketing",
+    "shortDescription": "Email et SMS marketing orientés e-commerce.",
+    "shortDescriptionEn": "E-commerce email and SMS marketing.",
+    "description": "Klaviyo centralise les flows e-commerce : abandon panier, post-achat, segmentation client, campagnes email/SMS et suivi du revenu attribué. À garder quand l'email génère un revenu mesurable ; à éviter si la boutique n'a pas encore assez de commandes ou de base clients pour rentabiliser l'outil.",
+    "longDescription": "Klaviyo centralise les flows e-commerce : abandon panier, post-achat, segmentation client, campagnes email/SMS et suivi du revenu attribué. À garder quand l'email génère un revenu mesurable ; à éviter si la boutique n'a pas encore assez de commandes ou de base clients pour rentabiliser l'outil.",
+    "longDescriptionEn": "Klaviyo centralizes e-commerce flows: cart abandonment, post-purchase, customer segmentation, email/SMS campaigns, and attributed revenue tracking. Keep it when email generates measurable revenue; avoid it if the store does not yet have enough orders or customers to justify the tool.",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Prix variable selon contacts et canaux"
+    },
+    "defaultMonthlyPrice": 45,
+    "verdict": {
+      "keepIf": [
+        "Tes flows email génèrent du revenu mesurable",
+        "Tu as assez de commandes pour segmenter achat, abandon panier et réachat",
+        "Shopify ou WooCommerce est au centre de ton activité"
+      ],
+      "avoidIf": [
+        "Tu n'as pas encore de volume e-commerce stable",
+        "Tu envoies seulement une newsletter ponctuelle",
+        "Brevo ou Mailchimp couvre déjà ton besoin simple"
+      ],
+      "threshold": "À garder si les flows couvrent au moins abandon panier, post-achat et winback."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your email flows generate measurable revenue",
+        "You have enough orders to segment purchase, cart abandonment, and repeat purchase",
+        "Shopify or WooCommerce is central to the business"
+      ],
+      "avoidIf": [
+        "You do not yet have stable e-commerce volume",
+        "You only send an occasional newsletter",
+        "Brevo or Mailchimp already covers your simple need"
+      ],
+      "threshold": "Keep if flows cover at least cart abandonment, post-purchase, and winback."
+    },
+    "pros": [
+      "Très fort sur les flows e-commerce",
+      "Segmentation fine",
+      "Revenu attribué lisible"
+    ],
+    "prosEn": [
+      "Very strong on e-commerce flows",
+      "Fine segmentation",
+      "Readable attributed revenue"
+    ],
+    "cons": [
+      "Peut devenir cher avec la base contacts",
+      "Surdimensionné pour une newsletter simple",
+      "Demande un vrai travail de scénario"
+    ],
+    "consEn": [
+      "Can get expensive as the contact base grows",
+      "Oversized for a simple newsletter",
+      "Requires real flow strategy work"
+    ],
+    "useCases": [
+      "Abandon panier",
+      "Post-achat",
+      "Winback client",
+      "Segmentation e-commerce"
+    ],
+    "useCasesEn": [
+      "Cart abandonment",
+      "Post-purchase",
+      "Customer winback",
+      "E-commerce segmentation"
+    ],
+    "covers": [
+      "email-marketing",
+      "ecommerce-retention",
+      "automation"
+    ],
+    "relevantFor": [
+      "ecommerce",
+      "ops",
+      "marketing"
+    ],
+    "personas": [
+      "ops",
+      "solo"
+    ],
+    "websiteUrl": "https://www.klaviyo.com/",
+    "affiliateLink": "",
+    "logo": "",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ecommerce",
+      "marketing"
+    ],
+    "functional_needs": [
+      "email-marketing",
+      "retention",
+      "segmentation"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "substitution_cluster_v2": "email-marketing",
+    "decision_policy_v3": null,
+    "timeGainedHoursPerMonth": 6,
+    "seo": {
+      "metaDescription": "Klaviyo avis : email et SMS marketing e-commerce. À garder si tes flows génèrent du revenu mesurable."
+    }
   }
 ]
