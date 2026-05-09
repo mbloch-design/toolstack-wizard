@@ -106,6 +106,16 @@
         };
       });
     </script>
+
+    <script>
+      // Defer ContentSquare loading to after first paint
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.src = 'https://t.contentsquare.net/uxa/5db061830ccab.js';
+        s.async = true;
+        document.head.appendChild(s);
+      });
+    </script>
   </head>
 
   <body>
