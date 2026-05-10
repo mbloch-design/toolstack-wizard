@@ -28,6 +28,8 @@ const SIMPLE_ICON_SLUGS: Record<string, string> = {
   amplitude: "amplitude",
   angular: "angular",
   asana: "asana",
+  buffer: "buffer",
+  buzzsprout: "buzzsprout",
   brevo: "brevo",
   calendly: "calendly",
   canva: "canva",
@@ -114,20 +116,42 @@ function normalizeKey(value?: string) {
     .replace(/^-|-$/g, "");
 }
 
+function simpleIconCandidateKeys(tool: LogoCandidateTool, domain: string) {
+  const values = [
+    tool.slug,
+    tool.id,
+    tool.name,
+    domain.split(".")[0],
+  ];
+
+  const candidates = new Set<string>();
+  for (const value of values) {
+    const key = normalizeKey(value);
+    if (!key) continue;
+    candidates.add(key);
+    candidates.add(key.replace(/-/g, ""));
+    candidates.add(key.replace(/-io$/, "io"));
+    candidates.add(key.replace(/-ai$/, "ai"));
+    candidates.add(key.replace(/-app$/, "app"));
+    candidates.add(key.replace(/^the-/, ""));
+  }
+  return Array.from(candidates).filter(Boolean);
+}
+
 export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 = 64): string[] {
   const sources: string[] = [];
   if (tool.logo?.startsWith("http")) sources.push(tool.logo);
 
   const key = normalizeKey(tool.slug || tool.id || tool.name);
+  const domain = getDomainFromUrl(tool.websiteUrl) || getDomainFromUrl(tool.affiliateLink);
   const badge = PRODUCT_BADGES[key];
   if (badge) sources.push(makeBadgeSvg(badge));
 
-  const simpleIcon = SIMPLE_ICON_SLUGS[key];
-  if (simpleIcon) {
-    sources.push(`https://cdn.simpleicons.org/${simpleIcon}/${SIMPLE_ICON_COLORS[key] || "111111"}`);
+  for (const candidate of simpleIconCandidateKeys(tool, domain)) {
+    const simpleIcon = SIMPLE_ICON_SLUGS[candidate] || candidate;
+    sources.push(`https://cdn.simpleicons.org/${simpleIcon}/${SIMPLE_ICON_COLORS[candidate] || "111111"}`);
   }
 
-  const domain = getDomainFromUrl(tool.websiteUrl) || getDomainFromUrl(tool.affiliateLink);
   if (domain) sources.push(`https://icons.duckduckgo.com/ip3/${domain}.ico`);
 
   return Array.from(new Set(sources));
