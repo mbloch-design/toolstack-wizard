@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Category } from "@/data/types";
 import categoriesIndexJson from "@/data/categories_index.json";
 import toolsIndexJson from "@/data/tools_index.json";
+import { getToolLogoUrl as resolveToolLogoUrl } from "@/lib/toolLogos";
 
 // Static fallback data (synchronous — available on first render)
 const staticCategories: Category[] = (categoriesIndexJson as any[]).map((c: any) => ({
@@ -302,11 +303,9 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
 }
 
 export function getToolLogoUrl(tool: Tool): string | null {
-  if (tool.logo && tool.logo.startsWith("http")) return tool.logo;
-  return null;
+  return resolveToolLogoUrl(tool, 64);
 }
 
 export function getToolLogoUrlHD(tool: Tool): string | null {
-  if (tool.logo && tool.logo.startsWith("http")) return tool.logo;
-  return null;
+  return resolveToolLogoUrl(tool, 128);
 }

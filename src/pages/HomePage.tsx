@@ -12,6 +12,7 @@ import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
 import FaqBlock from "@/components/FaqBlock";
+import ToolLogo from "@/components/ToolLogo";
 
 const HowItWorks = lazy(() => import("@/components/home/HowItWorks"));
 const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSection"));
@@ -373,9 +374,7 @@ function GuideCard({ post, prefix, tools }: { post: Post; prefix: string; tools:
           <div className="flex items-center gap-2">
             {mentionedTools.slice(0, 4).map((tool) => (
               <div key={tool.id} className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card">
-                <span className="text-xs font-bold text-foreground" aria-hidden="true">
-                  {(tool.name ?? "?").charAt(0).toUpperCase()}
-                </span>
+                <ToolLogo tool={tool} size={24} className="rounded-md" />
               </div>
             ))}
             {mentionedTools.length > 4 && (

@@ -9,6 +9,7 @@ import PageHero from "@/components/PageHero";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import type { Tool } from "@/data/types";
+import ToolLogo from "@/components/ToolLogo";
 
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
@@ -145,9 +146,7 @@ function FeaturedCard({
                   key={tool.id}
                   className="flex h-14 w-14 items-center justify-center rounded-xl border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
                 >
-                  <span className="text-base font-bold text-foreground" aria-hidden="true">
-                    {(tool.name ?? "?").charAt(0).toUpperCase()}
-                  </span>
+                  <ToolLogo tool={tool} size={32} className="rounded-md" />
                 </div>
               ))}
             </div>
@@ -217,9 +216,7 @@ function ArticleCard({ post, prefix, tools }: { post: Post; prefix: string; tool
                 key={tool.id}
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
               >
-                <span className="text-xs font-bold text-foreground" aria-hidden="true">
-                  {(tool.name ?? "?").charAt(0).toUpperCase()}
-                </span>
+                <ToolLogo tool={tool} size={24} className="rounded" />
               </div>
             ))}
             {mentionedTools.length > 4 && (
