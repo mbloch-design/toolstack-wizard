@@ -11,10 +11,49 @@ const FEATURED_SLUGS = [
   "intercom", "calendly",
 ];
 
-// Floating tool marks: local initials avoid third-party favicon failures.
+const BRAND_ICONS: Record<string, string> = {
+  airtable: "airtable",
+  asana: "asana",
+  calendly: "calendly",
+  figma: "figma",
+  hubspot: "hubspot",
+  intercom: "intercom",
+  linear: "linear",
+  loom: "loom",
+  notion: "notion",
+  slack: "slack",
+  stripe: "stripe",
+  zapier: "zapier",
+};
+
+const BRAND_COLORS: Record<string, string> = {
+  airtable: "18BFFF",
+  asana: "F06A6A",
+  calendly: "006BFF",
+  figma: "F24E1E",
+  hubspot: "FF5C35",
+  intercom: "0A7CFF",
+  linear: "5E6AD2",
+  loom: "625DF5",
+  notion: "111111",
+  slack: "4A154B",
+  stripe: "635BFF",
+  zapier: "FF4F00",
+};
+
+const getBrandIcon = (key?: string) => {
+  if (!key) return "";
+  const normalized = key.replace(/^www\./, "").split(".")[0].toLowerCase();
+  const icon = BRAND_ICONS[normalized];
+  if (!icon) return "";
+  return `https://cdn.simpleicons.org/${icon}/${BRAND_COLORS[normalized] || "111111"}`;
+};
+
+// Floating brand marks. We avoid Google favicon, which can emit noisy 404s.
 // floatDelay = continuous bob offset, revealDelay = staggered entrance
 type FloatingLogo = {
   domain: string;
+  label: string;
   top: string;
   left?: string;
   right?: string;
@@ -25,14 +64,14 @@ type FloatingLogo = {
 };
 
 const FLOAT_LOGOS: FloatingLogo[] = [
-  { domain: "notion.so",     top: "12%", left: "5%",   size: 56, floatDuration: "4.4s", floatDelay: "0s",   revealDelay: "0.15s" },
-  { domain: "hubspot.com",   top: "44%", left: "2%",   size: 72, floatDuration: "5.1s", floatDelay: "1.2s", revealDelay: "0.45s" },
-  { domain: "stripe.com",    top: "74%", left: "6%",   size: 58, floatDuration: "4.7s", floatDelay: "2.0s", revealDelay: "0.75s" },
-  { domain: "figma.com",     top: "10%", right: "5%",  size: 72, floatDuration: "4.9s", floatDelay: "0.5s", revealDelay: "0.10s" },
-  { domain: "zapier.com",    top: "46%", right: "2%",  size: 60, floatDuration: "5.3s", floatDelay: "1.7s", revealDelay: "0.50s" },
-  { domain: "linear.app",    top: "76%", right: "5%",  size: 64, floatDuration: "4.2s", floatDelay: "0.9s", revealDelay: "0.80s" },
-  { domain: "airtable.com",  top: "4%",  left: "22%",  size: 44, floatDuration: "3.9s", floatDelay: "1.5s", revealDelay: "0.30s" },
-  { domain: "intercom.com",  top: "4%",  right: "22%", size: 44, floatDuration: "4.6s", floatDelay: "0.3s", revealDelay: "0.20s" },
+  { domain: "notion.so", label: "Notion", top: "12%", left: "5%", size: 56, floatDuration: "4.4s", floatDelay: "0s", revealDelay: "0.15s" },
+  { domain: "hubspot.com", label: "HubSpot", top: "44%", left: "2%", size: 72, floatDuration: "5.1s", floatDelay: "1.2s", revealDelay: "0.45s" },
+  { domain: "stripe.com", label: "Stripe", top: "74%", left: "6%", size: 58, floatDuration: "4.7s", floatDelay: "2.0s", revealDelay: "0.75s" },
+  { domain: "figma.com", label: "Figma", top: "10%", right: "5%", size: 72, floatDuration: "4.9s", floatDelay: "0.5s", revealDelay: "0.10s" },
+  { domain: "zapier.com", label: "Zapier", top: "46%", right: "2%", size: 60, floatDuration: "5.3s", floatDelay: "1.7s", revealDelay: "0.50s" },
+  { domain: "linear.app", label: "Linear", top: "76%", right: "5%", size: 64, floatDuration: "4.2s", floatDelay: "0.9s", revealDelay: "0.80s" },
+  { domain: "airtable.com", label: "Airtable", top: "4%", left: "22%", size: 44, floatDuration: "3.9s", floatDelay: "1.5s", revealDelay: "0.30s" },
+  { domain: "intercom.com", label: "Intercom", top: "4%", right: "22%", size: 44, floatDuration: "4.6s", floatDelay: "0.3s", revealDelay: "0.20s" },
 ];
 
 const HeroSection = ({ toolCount }: { toolCount: number }) => {
@@ -103,20 +142,25 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             animation: `float ${logo.floatDuration} ease-in-out ${logo.floatDelay} infinite`,
           }}
         >
-          <span
-            className="flex items-center justify-center rounded-2xl bg-card font-bold text-foreground ring-1 ring-border"
-            aria-hidden="true"
+          <img
+            src={getBrandIcon(logo.domain)}
+            alt=""
+            loading="eager"
+            width={logo.size}
+            height={logo.size}
+            className="rounded-2xl bg-card p-3 ring-1 ring-border"
             style={{
               width: logo.size,
               height: logo.size,
-              fontSize: Math.max(16, Math.round(logo.size * 0.34)),
+              objectFit: "contain",
               /* Spring reveal: cubic-bezier overshoot gives a pop feel */
               animation: `logo-reveal 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) ${logo.revealDelay} both`,
               boxShadow: "0 8px 28px hsl(0 0% 0% / 0.20), 0 2px 6px hsl(0 0% 0% / 0.10)",
             }}
-          >
-            {logo.domain.charAt(0).toUpperCase()}
-          </span>
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+            }}
+          />
         </div>
       ))}
 
@@ -220,8 +264,8 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           {displayedTools.length > 0 ? (
             displayedTools.map((tool) => {
-              const domain = getToolDomain(tool);
-              return (
+                const iconUrl = getBrandIcon(tool.slug || tool.id || getToolDomain(tool));
+                return (
                 <button
                   key={tool.id}
                   onClick={() => handleToolClick(tool)}
@@ -238,12 +282,23 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
                     (e.currentTarget as HTMLElement).style.color = "";
                   }}
                 >
-                  <span
-                    className="flex h-[13px] w-[13px] shrink-0 items-center justify-center rounded-sm bg-secondary text-[8px] font-bold text-foreground"
-                    aria-hidden="true"
-                  >
-                    {(domain || tool.name || "?").charAt(0).toUpperCase()}
-                  </span>
+                  {iconUrl ? (
+                    <img
+                      src={iconUrl}
+                      alt=""
+                      width={13}
+                      height={13}
+                      className="h-[13px] w-[13px] shrink-0 rounded-sm object-contain"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span
+                      className="flex h-[13px] w-[13px] shrink-0 items-center justify-center rounded-sm bg-secondary text-[8px] font-bold text-foreground"
+                      aria-hidden="true"
+                    >
+                      {(tool.name || "?").charAt(0).toUpperCase()}
+                    </span>
+                  )}
                   {tool.name}
                 </button>
               );
