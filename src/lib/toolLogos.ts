@@ -7,6 +7,9 @@ export type LogoCandidateTool = {
   websiteUrl?: string;
   affiliateLink?: string;
   logo?: string;
+  pricing_v5?: {
+    source_domain?: string;
+  } | null;
 };
 
 const SIMPLE_ICON_SLUGS: Record<string, string> = {
@@ -116,6 +119,32 @@ function normalizeKey(value?: string) {
     .replace(/^-|-$/g, "");
 }
 
+const AFFILIATE_DOMAINS = [
+  "pxf.io",
+  "impact.com",
+  "awin1.com",
+  "partnerstack.com",
+  "shareasale.com",
+  "cj.com",
+];
+
+function isAffiliateDomain(domain: string) {
+  return AFFILIATE_DOMAINS.some((affiliateDomain) => domain === affiliateDomain || domain.endsWith(`.${affiliateDomain}`));
+}
+
+function getVerifiedDomain(tool: LogoCandidateTool) {
+  const sourceDomain = getDomainFromUrl(tool.pricing_v5?.source_domain);
+  if (sourceDomain) return sourceDomain;
+
+  const websiteDomain = getDomainFromUrl(tool.websiteUrl);
+  if (websiteDomain && !isAffiliateDomain(websiteDomain)) return websiteDomain;
+
+  const affiliateDomain = getDomainFromUrl(tool.affiliateLink);
+  if (affiliateDomain && !isAffiliateDomain(affiliateDomain)) return affiliateDomain;
+
+  return "";
+}
+
 function simpleIconCandidateKeys(tool: LogoCandidateTool, domain: string) {
   const values = [
     tool.slug,
@@ -143,13 +172,15 @@ export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 
   if (tool.logo?.startsWith("http")) sources.push(tool.logo);
 
   const key = normalizeKey(tool.slug || tool.id || tool.name);
-  const domain = getDomainFromUrl(tool.websiteUrl) || getDomainFromUrl(tool.affiliateLink);
+  const domain = getVerifiedDomain(tool);
   const badge = PRODUCT_BADGES[key];
   if (badge) sources.push(makeBadgeSvg(badge));
 
   for (const candidate of simpleIconCandidateKeys(tool, domain)) {
-    const simpleIcon = SIMPLE_ICON_SLUGS[candidate] || candidate;
-    sources.push(`https://cdn.simpleicons.org/${simpleIcon}/${SIMPLE_ICON_COLORS[candidate] || "111111"}`);
+    const simpleIcon = SIMPLE_ICON_SLUGS[candidate];
+    if (simpleIcon) {
+      sources.push(`https://cdn.simpleicons.org/${simpleIcon}/${SIMPLE_ICON_COLORS[candidate] || "111111"}`);
+    }
   }
 
   if (domain) sources.push(`https://icons.duckduckgo.com/ip3/${domain}.ico`);
