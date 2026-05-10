@@ -66,7 +66,7 @@ const Logo = ({ tool, size = 36 }: { tool: Tool; size?: number }) => {
       </span>
     );
   }
-  return <img src={src} alt={`${tool.name} logo`} loading="lazy" fetchPriority="low" className="shrink-0 rounded-xl bg-white dark:bg-secondary/50 object-contain" style={{ width: size, height: size, minWidth: size, minHeight: size }} onError={handleError} />;
+  return <img src={src} alt={`${tool.name} logo`} loading="lazy" className="shrink-0 rounded-xl bg-white dark:bg-secondary/50 object-contain" style={{ width: size, height: size, minWidth: size, minHeight: size }} onError={handleError} />;
 };
 
 const BADGE_STYLES: Record<string, string> = {

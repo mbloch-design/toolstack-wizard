@@ -97,6 +97,8 @@ const ContactPage = () => {
               <div>
                 <label className="text-sm font-medium">{t("Nom", "Name")}</label>
                 <input
+                  id="contact-name"
+                  name="name"
                   type="text"
                   required
                   value={formData.name}
@@ -107,6 +109,8 @@ const ContactPage = () => {
               <div>
                 <label className="text-sm font-medium">Email</label>
                 <input
+                  id="contact-email"
+                  name="email"
                   type="email"
                   required
                   value={formData.email}
@@ -118,6 +122,8 @@ const ContactPage = () => {
             <div>
               <label className="text-sm font-medium">{t("Sujet", "Subject")}</label>
               <input
+                id="contact-subject"
+                name="subject"
                 type="text"
                 required
                 value={formData.subject}
@@ -128,6 +134,8 @@ const ContactPage = () => {
             <div>
               <label className="text-sm font-medium">Message</label>
               <textarea
+                id="contact-message"
+                name="message"
                 required
                 rows={5}
                 value={formData.message}

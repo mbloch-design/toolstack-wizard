@@ -60,6 +60,8 @@ export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, t }: P
 
       <div className="w-full max-w-sm space-y-3">
         <input
+          id="diagnostic-report-email"
+          name="report-email"
           type="email"
           value={email}
           onChange={(e) => { setEmail(e.target.value); setError(""); }}

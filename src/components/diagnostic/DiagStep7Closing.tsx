@@ -147,6 +147,8 @@ export default function DiagStep7Closing({ session, onUpdate, onNext, onPrev, t 
         {showCustom && (
           <div className="flex gap-2">
             <input
+              id="diagnostic-custom-manager"
+              name="custom-manager"
               type="text"
               value={customInput}
               onChange={(e) => setCustomInput(e.target.value)}

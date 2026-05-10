@@ -141,6 +141,8 @@ const ToolSelectionStep = ({
       <div className="relative mt-5">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <input
+          id="selector-tool-search"
+          name="selector-tool-search"
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -188,6 +190,8 @@ const ToolSelectionStep = ({
                 {/* Inline cost/usage */}
                 <div className="mt-1 flex gap-2 px-1">
                   <input
+                    id={`selector-tool-cost-${tool.id}`}
+                    name={`selector-tool-cost-${tool.id}`}
                     type="number"
                     placeholder={t("€/mois", "€/mo")}
                     value={currentTools.find((ct) => ct.toolId === tool.id)?.monthlyCost || ""}
@@ -195,6 +199,8 @@ const ToolSelectionStep = ({
                     className="w-24 rounded-lg border border-input bg-background px-2 py-1 text-xs outline-none focus-visible:ring-1 focus-visible:ring-ring"
                   />
                   <select
+                    id={`selector-tool-usage-${tool.id}`}
+                    name={`selector-tool-usage-${tool.id}`}
                     value={currentTools.find((ct) => ct.toolId === tool.id)?.usage || "medium"}
                     onChange={(e) => onUpdateUsage(tool.id, e.target.value as "low" | "medium" | "high")}
                     className="rounded-lg border border-input bg-background px-2 py-1 text-xs outline-none focus-visible:ring-1 focus-visible:ring-ring"

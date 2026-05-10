@@ -48,6 +48,8 @@ export default function DashShareModal({ result, t, onClose }: Props) {
         {/* Link copy */}
         <div className="flex items-center gap-2">
           <input
+            id="share-report-url"
+            name="share-report-url"
             readOnly
             value={shareUrl}
             className="flex-1 text-xs bg-muted rounded-lg px-3 py-2.5 text-foreground font-['DM_Mono'] truncate border-none outline-none"

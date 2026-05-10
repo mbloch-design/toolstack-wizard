@@ -504,6 +504,9 @@ const StacksPage = () => {
                   <label className="relative block">
                     <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                     <input
+                      id="stack-search"
+                      name="stack-search"
+                      type="search"
                       value={query}
                       onChange={(event) => setQuery(event.target.value)}
                       placeholder={t("Rechercher une stack", "Search a stack")}

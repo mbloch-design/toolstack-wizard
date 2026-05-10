@@ -237,6 +237,8 @@ const CategoryPage = () => {
                 style={{ color: "hsl(var(--muted-foreground) / 0.45)" }}
               />
               <input
+                id="category-tool-search"
+                name="category-tool-search"
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -442,6 +444,8 @@ const CategoryPage = () => {
               {/* Mobile controls */}
               <div className="flex gap-2 lg:hidden">
                 <select
+                  id="category-mobile-price-filter"
+                  name="category-mobile-price-filter"
                   value={priceFilter}
                   onChange={(e) => setPriceFilter(e.target.value as PriceFilter)}
                   className="rounded-lg border border-border bg-card px-2 py-1.5 text-xs text-foreground"
@@ -452,6 +456,8 @@ const CategoryPage = () => {
                   <option value="paid">{t("Payant", "Paid")}</option>
                 </select>
                 <select
+                  id="category-mobile-sort"
+                  name="category-mobile-sort"
                   value={sort}
                   onChange={(e) => setSort(e.target.value as SortKey)}
                   className="rounded-lg border border-border bg-card px-2 py-1.5 text-xs text-foreground"

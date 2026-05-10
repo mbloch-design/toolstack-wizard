@@ -135,6 +135,8 @@ const ToolsPage = () => {
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
+                id="tools-search"
+                name="tools-search"
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -146,6 +148,8 @@ const ToolsPage = () => {
             <div className="flex items-center gap-2">
               {/* Price filter */}
               <select
+                id="tools-price-filter"
+                name="tools-price-filter"
                 value={priceFilter}
                 onChange={(e) => setPriceFilter(e.target.value as PriceFilter)}
                 className="rounded-lg border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
@@ -158,6 +162,8 @@ const ToolsPage = () => {
 
               {/* Sort */}
               <select
+                id="tools-sort"
+                name="tools-sort"
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortKey)}
                 className="rounded-lg border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"

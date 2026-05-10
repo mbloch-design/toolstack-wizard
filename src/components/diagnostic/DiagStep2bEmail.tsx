@@ -45,6 +45,8 @@ export default function DiagStep2bEmail({ session, onUpdate, onNext, t }: Props)
 
       <div className="w-full max-w-sm space-y-4">
         <input
+          id="diagnostic-email"
+          name="email"
           type="email"
           value={email}
           onChange={(e) => { setEmail(e.target.value); setError(""); }}
@@ -65,6 +67,8 @@ export default function DiagStep2bEmail({ session, onUpdate, onNext, t }: Props)
           ]).map((item) => (
             <label key={item.key} className="flex items-center gap-3 cursor-pointer py-1">
               <input
+                id={`diagnostic-email-pref-${item.key}`}
+                name={`email-pref-${item.key}`}
                 type="checkbox"
                 checked={prefs[item.key]}
                 onChange={() => togglePref(item.key)}

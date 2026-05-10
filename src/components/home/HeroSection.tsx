@@ -192,6 +192,8 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}
           />
           <input
+            id="home-tool-search"
+            name="home-tool-search"
             ref={inputRef}
             type="text"
             value={query}

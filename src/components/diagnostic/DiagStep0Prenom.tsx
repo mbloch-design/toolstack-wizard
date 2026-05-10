@@ -52,6 +52,8 @@ export default function DiagStep0Prenom({ session, onUpdate, onNext, t, fromTool
 
       <div className="w-full max-w-sm space-y-3">
         <input
+          id="diagnostic-first-name"
+          name="first-name"
           type="text"
           value={value}
           onChange={(e) => { setValue(e.target.value); setError(""); }}

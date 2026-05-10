@@ -629,10 +629,10 @@ export default function DiagStep4Clusters({ session, onUpdate, onNext, onPrev, c
             </button>
           ) : (
             <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-end p-3 rounded-lg border border-border bg-muted/30">
-              <input type="text" value={customName} onChange={(e) => setCustomName(e.target.value)}
+              <input id="diagnostic-custom-tool-name" name="custom-tool-name" type="text" value={customName} onChange={(e) => setCustomName(e.target.value)}
                 placeholder={t("Nom de l'outil", "Tool name")} maxLength={100}
                 className="flex-1 rounded-lg border border-border bg-card px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-              <input type="number" value={customPrice} onChange={(e) => setCustomPrice(e.target.value)}
+              <input id="diagnostic-custom-tool-price" name="custom-tool-price" type="number" value={customPrice} onChange={(e) => setCustomPrice(e.target.value)}
                 placeholder="€/mois" min={0} max={9999}
                 className="w-24 rounded-lg border border-border bg-card px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
               <button onClick={addCustomTool} disabled={customName.trim().length < 2}
