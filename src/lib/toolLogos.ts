@@ -87,6 +87,24 @@ const SIMPLE_ICON_COLORS: Record<string, string> = {
   zapier: "FF4F00",
 };
 
+const PRODUCT_BADGES: Record<string, { label: string; bg: string; fg: string; border: string }> = {
+  "adobe-acrobat-sign": { label: "Ac", bg: "FFF1F1", fg: "E41E26", border: "E41E26" },
+  "adobe-after-effects": { label: "Ae", bg: "1F1148", fg: "D8B5FF", border: "9A6DFF" },
+  "adobe-cc": { label: "CC", bg: "FFF1F1", fg: "E41E26", border: "E41E26" },
+  "adobe-illustrator": { label: "Ai", bg: "2C1400", fg: "FF9A00", border: "FF9A00" },
+  indesign: { label: "Id", bg: "3A0820", fg: "FF5DA2", border: "FF5DA2" },
+  "adobe-lightroom": { label: "Lr", bg: "001E36", fg: "31A8FF", border: "31A8FF" },
+  "adobe-photoshop": { label: "Ps", bg: "001E36", fg: "31A8FF", border: "31A8FF" },
+  "adobe-premiere-pro": { label: "Pr", bg: "1F1148", fg: "D8B5FF", border: "9A6DFF" },
+  "adobe-xd": { label: "Xd", bg: "470137", fg: "FF61F6", border: "FF61F6" },
+  firefly: { label: "Ff", bg: "231F20", fg: "FFB000", border: "FFB000" },
+};
+
+function makeBadgeSvg({ label, bg, fg, border }: { label: string; bg: string; fg: string; border: string }) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect x="5" y="5" width="54" height="54" rx="12" fill="#${bg}" stroke="#${border}" stroke-width="4"/><text x="32" y="39" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#${fg}">${label}</text></svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 function normalizeKey(value?: string) {
   return (value || "")
     .toLowerCase()
@@ -101,6 +119,9 @@ export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 
   if (tool.logo?.startsWith("http")) sources.push(tool.logo);
 
   const key = normalizeKey(tool.slug || tool.id || tool.name);
+  const badge = PRODUCT_BADGES[key];
+  if (badge) sources.push(makeBadgeSvg(badge));
+
   const simpleIcon = SIMPLE_ICON_SLUGS[key];
   if (simpleIcon) {
     sources.push(`https://cdn.simpleicons.org/${simpleIcon}/${SIMPLE_ICON_COLORS[key] || "111111"}`);
