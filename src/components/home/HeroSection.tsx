@@ -104,7 +104,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
           }}
         >
           <img
-            src={`https://logo.clearbit.com/${logo.domain}?size=128`}
+            src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`}
             alt=""
             loading="eager"
             width={logo.size}
@@ -121,12 +121,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             }}
             onError={(e) => {
               const img = e.target as HTMLImageElement;
-              if (!img.dataset.fallback) {
-                img.dataset.fallback = "1";
-                img.src = `https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`;
-              } else {
-                (img.parentElement as HTMLElement).style.display = "none";
-              }
+              (img.parentElement as HTMLElement).style.display = "none";
             }}
           />
         </div>

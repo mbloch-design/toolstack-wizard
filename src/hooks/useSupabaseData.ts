@@ -175,7 +175,7 @@ export function useToolSummaries() {
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, pricing_tiers, default_monthly_price, affiliate_link, website_url, logo")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, logo")
         .limit(1000);
 
       if (!error && data && data.length > 0) {
@@ -186,7 +186,7 @@ export function useToolSummaries() {
           categoryId: t.category || "",
           shortDescription: t.short_description || "",
           shortDescriptionEn: t.short_description_en || "",
-          pricing: t.pricing || t.pricing_tiers || { free: "", paid: "" },
+          pricing: t.pricing || { free: "", paid: "" },
           defaultMonthlyPrice: t.default_monthly_price || 0,
           affiliateLink: t.affiliate_link || "",
           websiteUrl: t.website_url || t.affiliate_link || "",
@@ -317,6 +317,6 @@ export function getToolLogoUrlHD(tool: Tool): string | null {
   if (!url) return null;
   try {
     const domain = new URL(url.startsWith("http") ? url : `https://${url}`).hostname.replace("www.", "");
-    return `https://logo.clearbit.com/${domain}`;
+    return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
   } catch { return null; }
 }
