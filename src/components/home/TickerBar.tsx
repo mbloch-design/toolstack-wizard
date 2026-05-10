@@ -2,16 +2,13 @@ import { useLang } from "@/hooks/useLang";
 import { ReactNode } from "react";
 
 const L = ({ d }: { d: string }) => (
-  <img
-    src={`https://www.google.com/s2/favicons?domain=${d}&sz=32`}
-    alt=""
-    width={14}
-    height={14}
-    loading="lazy"
-    className="inline-block shrink-0 rounded-sm"
-    style={{ width: 14, height: 14, opacity: 0.85 }}
-    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-  />
+  <span
+    aria-hidden="true"
+    className="inline-flex shrink-0 items-center justify-center rounded-sm border border-border bg-secondary text-[9px] font-semibold uppercase text-muted-foreground"
+    style={{ width: 14, height: 14, lineHeight: "14px" }}
+  >
+    {d.charAt(0)}
+  </span>
 );
 
 interface TickerItem {
