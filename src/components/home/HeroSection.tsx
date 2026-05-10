@@ -11,7 +11,7 @@ const FEATURED_SLUGS = [
   "intercom", "calendly",
 ];
 
-// Floating tool icons — real SaaS tools with clean Clearbit logos
+// Floating tool marks: local initials avoid third-party favicon failures.
 // floatDelay = continuous bob offset, revealDelay = staggered entrance
 type FloatingLogo = {
   domain: string;
@@ -103,27 +103,20 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             animation: `float ${logo.floatDuration} ease-in-out ${logo.floatDelay} infinite`,
           }}
         >
-          <img
-            src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`}
-            alt=""
-            loading="eager"
-            width={logo.size}
-            height={logo.size}
-            className="rounded-2xl"
+          <span
+            className="flex items-center justify-center rounded-2xl bg-card font-bold text-foreground ring-1 ring-border"
+            aria-hidden="true"
             style={{
               width: logo.size,
               height: logo.size,
-              objectFit: "contain",
-              display: "block",
+              fontSize: Math.max(16, Math.round(logo.size * 0.34)),
               /* Spring reveal: cubic-bezier overshoot gives a pop feel */
               animation: `logo-reveal 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) ${logo.revealDelay} both`,
               boxShadow: "0 8px 28px hsl(0 0% 0% / 0.20), 0 2px 6px hsl(0 0% 0% / 0.10)",
             }}
-            onError={(e) => {
-              const img = e.target as HTMLImageElement;
-              (img.parentElement as HTMLElement).style.display = "none";
-            }}
-          />
+          >
+            {logo.domain.charAt(0).toUpperCase()}
+          </span>
         </div>
       ))}
 
@@ -243,17 +236,12 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
                     (e.currentTarget as HTMLElement).style.color = "";
                   }}
                 >
-                  {domain && (
-                    <img
-                      src={`https://www.google.com/s2/favicons?domain=${domain}&sz=32`}
-                      alt=""
-                      width={13}
-                      height={13}
-                      className="rounded-sm object-contain opacity-80"
-                      loading="lazy"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                    />
-                  )}
+                  <span
+                    className="flex h-[13px] w-[13px] shrink-0 items-center justify-center rounded-sm bg-secondary text-[8px] font-bold text-foreground"
+                    aria-hidden="true"
+                  >
+                    {(domain || tool.name || "?").charAt(0).toUpperCase()}
+                  </span>
                   {tool.name}
                 </button>
               );

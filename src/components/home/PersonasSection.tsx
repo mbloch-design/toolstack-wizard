@@ -138,13 +138,12 @@ const PersonasSection = () => {
               <div className="space-y-2.5">
                 {p.stack.map((name, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <img
-                      src={`https://www.google.com/s2/favicons?domain=${name.toLowerCase().replace(/\s/g, '')}.com&sz=32`}
-                      alt={name}
-                      className="h-5 w-5 rounded-sm"
-                      loading="lazy"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                    />
+                    <span
+                      className="flex h-5 w-5 shrink-0 items-center justify-center rounded-sm bg-secondary text-[10px] font-bold text-foreground"
+                      aria-hidden="true"
+                    >
+                      {name.charAt(0).toUpperCase()}
+                    </span>
                     <span className="text-sm text-foreground">{name}</span>
                   </div>
                 ))}

@@ -120,16 +120,7 @@ const ToolDetailPage = () => {
     const seoDesc  = lang === "fr" ? meta.descFr  : meta.descEn;
     const canonicalUrl = `${SEO_BASE}/${lang}/tool/${baseSlug}${meta.suffix}`;
 
-    const toolDomain = tool.websiteUrl || tool.affiliateLink;
-    let toolOgImage: string | undefined;
-    if (toolDomain) {
-      try {
-        const hostname = new URL(toolDomain.startsWith("http") ? toolDomain : `https://${toolDomain}`).hostname.replace("www.", "");
-        toolOgImage = `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
-      } catch { /* */ }
-    }
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
-    if (toolOgImage) setMeta("og:image", toolOgImage);
     setMeta("article:modified_time", tool.pricing_v5?.verified_on || "2026-03-29");
     setHreflang(`/${lang}/tool/${baseSlug}${meta.suffix}`);
     return () => cleanupSeo([]);

@@ -8,7 +8,6 @@ import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { STACKS } from "@/data/stacks";
 
-import { getToolDomain } from "@/lib/toolUtils";
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
@@ -374,13 +373,9 @@ function GuideCard({ post, prefix, tools }: { post: Post; prefix: string; tools:
           <div className="flex items-center gap-2">
             {mentionedTools.slice(0, 4).map((tool) => (
               <div key={tool.id} className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card">
-                <img
-                  src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=64`}
-                  alt={tool.name}
-                  className="h-6 w-6 rounded object-contain"
-                  loading="lazy"
-                  onError={(e) => { e.currentTarget.style.display = "none"; }}
-                />
+                <span className="text-xs font-bold text-foreground" aria-hidden="true">
+                  {(tool.name ?? "?").charAt(0).toUpperCase()}
+                </span>
               </div>
             ))}
             {mentionedTools.length > 4 && (

@@ -9,7 +9,6 @@ import PageHero from "@/components/PageHero";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import type { Tool } from "@/data/types";
-import { getToolDomain } from "@/lib/toolUtils";
 
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
@@ -146,15 +145,9 @@ function FeaturedCard({
                   key={tool.id}
                   className="flex h-14 w-14 items-center justify-center rounded-xl border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
                 >
-                  <img
-                    src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=64`}
-                    alt={tool.name}
-                    className="h-8 w-8 rounded-md object-contain"
-                    loading="lazy"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = "none";
-                    }}
-                  />
+                  <span className="text-base font-bold text-foreground" aria-hidden="true">
+                    {(tool.name ?? "?").charAt(0).toUpperCase()}
+                  </span>
                 </div>
               ))}
             </div>
@@ -224,15 +217,9 @@ function ArticleCard({ post, prefix, tools }: { post: Post; prefix: string; tool
                 key={tool.id}
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
               >
-                <img
-                  src={`https://www.google.com/s2/favicons?domain=${getToolDomain(tool)}&sz=64`}
-                  alt={tool.name}
-                  className="h-6 w-6 rounded object-contain"
-                  loading="lazy"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                />
+                <span className="text-xs font-bold text-foreground" aria-hidden="true">
+                  {(tool.name ?? "?").charAt(0).toUpperCase()}
+                </span>
               </div>
             ))}
             {mentionedTools.length > 4 && (

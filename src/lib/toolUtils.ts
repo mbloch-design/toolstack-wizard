@@ -24,12 +24,12 @@ export function getDomainFromUrl(url?: string): string {
   }
 }
 
-/** Build the Google favicons URL for a tool */
+/** Deprecated: logo fallbacks are rendered locally to avoid third-party favicon 404s. */
 export function getToolFaviconUrl(
   tool: { websiteUrl?: string; affiliateLink?: string },
   size: 32 | 64 = 64
 ): string {
-  const domain = getToolDomain(tool);
-  if (!domain) return "";
-  return `https://www.google.com/s2/favicons?domain=${domain}&sz=${size}`;
+  void tool;
+  void size;
+  return "";
 }
