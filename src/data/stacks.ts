@@ -1,4 +1,4 @@
-export const STACKS_VERSION = "2026-05-07";
+export const STACKS_VERSION = "2026-05-10";
 export type StackPersona = "dev" | "designer" | "consultant" | "content" | "ops" | "solo";
 export type StackStage = "starter" | "lean" | "scale";
 export type StackBudget = "free" | "under50" | "under150";
@@ -9,6 +9,7 @@ export type StackSubProfile =
   | "photo"
   | "video"
   | "motion"
+  | "interior-design"
   | "illustration"
   | "art-direction"
   | "web"
@@ -118,6 +119,7 @@ export const STACK_SUB_PROFILES: { value: StackSubProfile | "all"; label: string
   { value: "photo", label: "Photo", labelEn: "Photo", personas: ["designer"] },
   { value: "video", label: "Vidéo", labelEn: "Video", personas: ["designer", "content"] },
   { value: "motion", label: "Motion", labelEn: "Motion", personas: ["designer"] },
+  { value: "interior-design", label: "Architecture intérieure", labelEn: "Interior design", personas: ["designer"] },
   { value: "illustration", label: "Illustration", labelEn: "Illustration", personas: ["designer"] },
   { value: "art-direction", label: "Direction artistique", labelEn: "Art direction", personas: ["designer"] },
   { value: "web", label: "Web", labelEn: "Web", personas: ["designer", "dev"] },
@@ -245,6 +247,1948 @@ export const STACKS: StackGuide[] = [
       { role: "Feedback vidéo", roleEn: "Video feedback", slug: "loom", reason: "À garder si le feedback asynchrone évite vraiment des réunions.", reasonEn: "Keep if async feedback truly removes meetings." },
       { role: "IA rédaction / UX", roleEn: "Writing / UX AI", slug: "chatgpt", reason: "Aide sur microcopy, variantes d'angles, audits et synthèses.", reasonEn: "Helps with microcopy, angles, audits, and summaries." },
     ],
+  },
+  {
+    id: "architecte-interieur-studio",
+    slug: "architecte-interieur",
+    title: "Stack architecte d'intérieur",
+    titleEn: "Interior designer stack",
+    subtitle: "La chaîne recommandée pour passer du brief au chantier : moodboard, plans 2D, 3D, rendus, sourcing, budget, validations et facturation.",
+    subtitleEn: "The recommended chain from brief to site follow-up: moodboards, 2D plans, 3D, renders, sourcing, budget, approvals, and invoicing.",
+    persona: "designer",
+    subProfiles: ["interior-design", "art-direction", "client-delivery", "admin"],
+    stage: "scale",
+    budget: "under150",
+    monthlyBudget: 148,
+    savings: 260,
+    risk: "Payer trop vite une stack BIM, plusieurs moteurs de rendu et des plugins jamais maîtrisés, alors que le vrai gain vient d'une chaîne claire entre modèle, rendu, sourcing et validation client.",
+    riskEn: "Paying too early for BIM, several render engines, and unmanaged plugins when the real gain comes from a clear chain between model, render, sourcing, and client approval.",
+    bestFor: "Architectes d'intérieur indépendants, décorateurs, studios résidentiels, retail léger et projets avec sourcing mobilier ou matières.",
+    bestForEn: "Independent interior designers, decorators, residential studios, light retail projects, and jobs with furniture or material sourcing.",
+    avoidIf: "Tes projets sont déjà en BIM lourd avec bureaux d'études, marchés publics et coordination technique avancée.",
+    avoidIfEn: "Your projects already run on heavy BIM with engineering offices, public tenders, and advanced technical coordination.",
+    editorial: "La bonne stack n'est pas celle qui produit la plus belle image isolée. C'est celle qui relie le brief, le modèle 3D, les plans, les validations, le sourcing, les achats et la facture. SketchUp reste le centre pour aller vite. LayOut transforme ce modèle en documents lisibles. D5 Render couvre le rendu quotidien. Programa ou Notion évitent que mobilier, matières, prix et décisions se dispersent dans Pinterest, mails et PDF.",
+    editorialEn: "The right stack is not the one that produces the prettiest isolated image. It connects the brief, 3D model, plans, approvals, sourcing, purchases, and invoice. SketchUp remains the speed center. LayOut turns that model into readable documents. D5 Render covers daily rendering. Programa or Notion keeps furniture, materials, pricing, and decisions from spreading across Pinterest, emails, and PDFs.",
+    needs: [
+      { title: "Concevoir vite", titleEn: "Design fast", detail: "SketchUp Pro porte les volumes, les variantes et les scènes client. AutoCAD LT reste utile pour les plans 2D propres et les échanges DWG.", detailEn: "SketchUp Pro carries volumes, options, and client scenes. AutoCAD LT remains useful for clean 2D plans and DWG exchanges." },
+      { title: "Présenter avec impact", titleEn: "Present with impact", detail: "D5 Render ou Enscape doivent transformer une intention en validation client rapide. V-Ray attend les images premium vendues comme livrable.", detailEn: "D5 Render or Enscape should turn intent into quick client approval. V-Ray waits for premium images sold as deliverables." },
+      { title: "Piloter sourcing et budget", titleEn: "Run sourcing and budget", detail: "Programa, Notion ou un tableau structuré doivent suivre mobilier, luminaires, matières, prix, fournisseurs, statuts et arbitrages.", detailEn: "Programa, Notion, or a structured sheet must track furniture, lighting, materials, prices, suppliers, statuses, and trade-offs." },
+    ],
+    maturitySignals: [
+      { title: "Plusieurs chantiers en parallèle", titleEn: "Several projects at once", detail: "Passe de Notion seul à Programa ou ClickUp si les validations, commandes et artisans deviennent difficiles à suivre.", detailEn: "Move from Notion alone to Programa or ClickUp when approvals, orders, and contractors become hard to follow." },
+      { title: "Coordination technique régulière", titleEn: "Recurring technical coordination", detail: "Revit ou Archicad deviennent pertinents quand le projet impose BIM, bureaux d'études ou dossiers techniques lourds.", detailEn: "Revit or Archicad become relevant when projects require BIM, engineering offices, or heavier technical files." },
+      { title: "Image comme valeur commerciale", titleEn: "Imagery as commercial value", detail: "V-Ray, Magnific ou Topaz se justifient si la qualité d'image aide vraiment à vendre le projet ou une prestation premium.", detailEn: "V-Ray, Magnific, or Topaz make sense if image quality truly helps sell the project or a premium service." },
+    ],
+    traps: [
+      { title: "Plusieurs moteurs de rendu actifs", titleEn: "Several render engines active", detail: "D5, Enscape, Twinmotion et V-Ray en même temps coûtent vite cher. Choisis selon le livrable dominant : vitesse, visite, vidéo ou image premium.", detailEn: "D5, Enscape, Twinmotion, and V-Ray together get expensive fast. Choose by main deliverable: speed, walkthrough, video, or premium image." },
+      { title: "BIM trop tôt", titleEn: "BIM too early", detail: "Revit ou Archicad sont puissants, mais lourds si tes projets restent résidentiels, rapides et peu coordonnés.", detailEn: "Revit or Archicad are powerful but heavy if your projects remain residential, fast, and lightly coordinated." },
+      { title: "Sourcing non traçable", titleEn: "Untraceable sourcing", detail: "Pinterest inspire, mais ne valide rien. Chaque référence importante doit finir dans une fiche avec prix, fournisseur, statut et décision.", detailEn: "Pinterest inspires but approves nothing. Each important reference needs a record with price, supplier, status, and decision." },
+    ],
+    checkpoints: [
+      { q: "Tes plans client et tes plans techniques repartent-ils du même modèle ?", qEn: "Do your client plans and technical plans come from the same model?", hint: "Non → SketchUp + LayOut évitent de refaire les vues à la main à chaque changement. Tu gagnes surtout sur les modifications tardives.", hintEn: "No → SketchUp + LayOut avoid redrawing views manually after each change. The gain is strongest on late revisions." },
+      { q: "Tu sais où en est chaque meuble, matière et luminaire ?", qEn: "Do you know the status of every furniture piece, material, and light?", hint: "Non → Programa ou une base Notion dédiée doit suivre fournisseur, prix, statut client, commande et alternative.", hintEn: "No → Programa or a dedicated Notion database should track supplier, price, client status, order, and alternative." },
+      { q: "Tu paies un outil parce qu'il est beau ou parce qu'il enlève une friction métier ?", qEn: "Do you pay for a tool because it looks good or because it removes a business friction?", hint: "Si la réponse est floue, garde l'outil en test projet par projet. Le rendu, le BIM et l'IA doivent répondre à un livrable précis.", hintEn: "If the answer is vague, keep the tool on a project-by-project test. Rendering, BIM, and AI must serve a precise deliverable." },
+    ],
+    tools: [
+      { role: "Design / modélisation 3D", roleEn: "Design / 3D modeling", slug: "sketchup-pro", reason: "Le centre du workflow : volumes, variantes, scènes, mobilier et présentations rapides.", reasonEn: "The workflow center: volumes, options, scenes, furniture, and fast presentations." },
+      { role: "Plans / dossiers 2D", roleEn: "Plans / 2D dossiers", slug: "layout-sketchup", reason: "Transforme le modèle SketchUp en plans, coupes, annotations et dossiers liés au projet.", reasonEn: "Turns the SketchUp model into plans, sections, annotations, and linked project documents." },
+      { role: "Plans 2D / DWG", roleEn: "2D plans / DWG", slug: "autocad-lt", reason: "À garder pour les plans précis, échanges artisans, bureaux d'études et fichiers DWG.", reasonEn: "Keep for precise plans, contractor exchanges, engineering offices, and DWG files." },
+      { role: "Rendu quotidien", roleEn: "Daily rendering", slug: "d5-render", reason: "Rapide, visuel, connecté aux outils 3D majeurs et très adapté aux validations client.", reasonEn: "Fast, visual, connected to major 3D tools, and well suited to client approvals." },
+      { role: "Rendu rapide", roleEn: "Fast rendering", slug: "enscape", decision: "conditional", reason: "Très bon si la priorité est la visite en temps réel et la présentation immédiate.", reasonEn: "Great when the priority is real-time walkthroughs and immediate presentation." },
+      { role: "Image premium", roleEn: "Premium imagery", slug: "v-ray", decision: "conditional", reason: "À activer si le photoréalisme devient une prestation vendue ou un vrai avantage commercial.", reasonEn: "Use when photorealism becomes a sold deliverable or a real commercial edge." },
+      { role: "Vidéo / ambiance", roleEn: "Video / atmosphere", slug: "twinmotion", decision: "conditional", reason: "Utile pour parcours, vidéos et mise en scène immersive sans pipeline trop lourd.", reasonEn: "Useful for walkthroughs, videos, and immersive staging without a heavy pipeline." },
+      { role: "Plugin SketchUp", roleEn: "SketchUp plugin", slug: "fredo6-bundle", reason: "Base très utile pour travailler plus vite : formes, arrondis, détails et corrections.", reasonEn: "A very useful base to work faster on forms, roundovers, details, and fixes." },
+      { role: "Plugin profils", roleEn: "Profile plugin", slug: "profile-builder-3", reason: "Excellent pour plinthes, corniches, tasseaux, rails, cadres et éléments répétitifs.", reasonEn: "Excellent for skirting, cornices, battens, rails, frames, and repeated elements." },
+      { role: "Plugin imports 3D", roleEn: "3D import plugin", slug: "transmutr", reason: "Optimise les modèles téléchargés pour éviter les fichiers SketchUp trop lourds.", reasonEn: "Optimizes downloaded models to avoid overly heavy SketchUp files." },
+      { role: "Plugin scène", roleEn: "Scene plugin", slug: "skatter", decision: "conditional", reason: "Ajoute végétation, livres, objets répétés et ambiance sans tout poser à la main.", reasonEn: "Adds vegetation, books, repeated objects, and atmosphere without placing everything manually." },
+      { role: "Hygiène modèle", roleEn: "Model hygiene", slug: "cleanup3", reason: "Nettoie les fichiers et évite les modèles qui ralentissent toute la production.", reasonEn: "Cleans files and prevents models from slowing the whole production chain." },
+      { role: "Contrôle géométrie", roleEn: "Geometry control", slug: "solid-inspector2", reason: "Repère les problèmes de volumes avant export, rendu ou fabrication.", reasonEn: "Finds solid issues before export, rendering, or fabrication." },
+      { role: "Formes complexes", roleEn: "Complex forms", slug: "rhino", decision: "conditional", reason: "À ajouter pour mobilier sur-mesure, courbes, escaliers, banques d'accueil ou pièces sculpturales.", reasonEn: "Add for custom furniture, curves, staircases, reception desks, or sculptural pieces." },
+      { role: "Image / assets", roleEn: "Image / assets", slug: "blender", decision: "conditional", reason: "Puissant pour l'image, l'animation et les assets, mais pas forcément le coeur métier.", reasonEn: "Powerful for imagery, animation, and assets, but not necessarily the business core." },
+      { role: "BIM technique", roleEn: "Technical BIM", slug: "revit", decision: "conditional", reason: "Pertinent pour coordination, bureaux d'études, gros dossiers et logique BIM.", reasonEn: "Relevant for coordination, engineering offices, larger files, and BIM logic." },
+      { role: "BIM architecture", roleEn: "Architecture BIM", slug: "archicad", decision: "conditional", reason: "Alternative BIM solide quand les projets dépassent le simple aménagement intérieur.", reasonEn: "A strong BIM alternative when projects go beyond simple interior fit-out." },
+      { role: "Retouche image", roleEn: "Image retouching", slug: "adobe-photoshop", reason: "Nettoyage, prolongement, corrections de rendu, moodboards et présentations.", reasonEn: "Cleanup, extension, render fixes, moodboards, and presentations." },
+      { role: "Retouche IA", roleEn: "AI retouching", slug: "firefly", reason: "Pratique dans le flux Adobe pour nettoyer, compléter ou varier des visuels.", reasonEn: "Useful inside Adobe flows to clean, extend, or vary visuals." },
+      { role: "Dossier client", roleEn: "Client dossier", slug: "indesign", reason: "Pour dossiers concept, planches, avant-projets et documents plus éditoriaux.", reasonEn: "For concept books, boards, early design packages, and more editorial documents." },
+      { role: "IA structure", roleEn: "Structure AI", slug: "chatgpt", reason: "Brief, comptes rendus, planning, livrables, mails client et clarification des arbitrages.", reasonEn: "Briefs, recaps, planning, deliverables, client emails, and trade-off clarification." },
+      { role: "IA ambiance", roleEn: "Mood AI", slug: "krea-ai", reason: "Explore vite des matières, lumières, styles et variantes d'intérieur à partir d'images.", reasonEn: "Quickly explores materials, lighting, styles, and interior variations from images." },
+      { role: "Exploration visuelle", roleEn: "Visual exploration", slug: "midjourney", decision: "conditional", reason: "Utile pour directions visuelles et moodboards conceptuels, pas pour valider un plan technique.", reasonEn: "Useful for visual directions and concept moodboards, not for validating a technical plan." },
+      { role: "Upscale rendu", roleEn: "Render upscale", slug: "magnific-ai", decision: "conditional", reason: "À réserver aux visuels finaux qui doivent vraiment gagner en impact.", reasonEn: "Reserve for final visuals that truly need extra impact." },
+      { role: "Moodboard", roleEn: "Moodboard", slug: "milanote", reason: "Simple pour rassembler références, ambiance, premières intentions et retours client.", reasonEn: "Simple for gathering references, mood, early intent, and client feedback." },
+      { role: "Recherche visuelle", roleEn: "Visual research", slug: "pinterest", reason: "Indispensable pour inspiration, matières, détails et discussion client en amont.", reasonEn: "Essential for inspiration, materials, details, and early client discussion." },
+      { role: "Bibliothèque images", roleEn: "Image library", slug: "eagle", reason: "Classe références, textures, détails, plans et images sans dépendre d'un board social.", reasonEn: "Organizes references, textures, details, plans, and images without depending on a social board." },
+      { role: "Sourcing FF&E", roleEn: "FF&E sourcing", slug: "programa", reason: "Pensé pour mobilier, matières, fournisseurs, fiches produits, validations et commandes.", reasonEn: "Built for furniture, materials, suppliers, product sheets, approvals, and orders." },
+      { role: "Projet / décisions", roleEn: "Project / decisions", slug: "notion", reason: "Cockpit des briefs, tâches, comptes rendus, budgets, artisans et validations.", reasonEn: "Cockpit for briefs, tasks, recaps, budgets, contractors, and approvals." },
+      { role: "Fichiers / emails", roleEn: "Files / email", slug: "google-workspace", reason: "Drive, Gmail, Calendar, Docs et Sheets restent la base d'échange la plus simple.", reasonEn: "Drive, Gmail, Calendar, Docs, and Sheets remain the simplest exchange base." },
+      { role: "Explication client", roleEn: "Client explanation", slug: "loom", reason: "Pour commenter un plan, un rendu ou une décision sans ajouter une réunion.", reasonEn: "To comment on a plan, render, or decision without adding a meeting." },
+      { role: "Rendez-vous", roleEn: "Scheduling", slug: "calendly", decision: "conditional", reason: "Utile si les prises de rendez-vous créent trop d'allers-retours.", reasonEn: "Useful when scheduling creates too much back-and-forth." },
+      { role: "Facturation", roleEn: "Billing", slug: "indy", reason: "Très adapté aux indépendants pour devis, factures, suivi et déclarations.", reasonEn: "Well suited to independents for quotes, invoices, tracking, and declarations." },
+      { role: "Compte pro", roleEn: "Business account", slug: "qonto", reason: "Compte pro, justificatifs, cartes, virements et suivi des flux.", reasonEn: "Business account, receipts, cards, transfers, and cash-flow tracking." },
+      { role: "Signature", roleEn: "Signature", slug: "yousign", reason: "Devis, contrats, lettres de mission et validations client signés proprement.", reasonEn: "Quotes, contracts, engagement letters, and client approvals signed cleanly." },
+      { role: "Compta société", roleEn: "Company accounting", slug: "pennylane", decision: "conditional", reason: "À envisager quand la structure grossit ou travaille avec un expert-comptable.", reasonEn: "Consider when the structure grows or works with an accountant." },
+    ],
+  },
+  {
+      "id": "scenographe-evenementiel",
+      "slug": "scenographe-evenementiel",
+      "title": "Stack scénographe",
+      "titleEn": "Scenographer stack",
+      "subtitle": "La chaîne pour passer d’un concept narratif à un espace produit : moodboard, plans, 3D, rendu, budget, fournisseurs et dossier client.",
+      "subtitleEn": "A chain from narrative concept to produced space: moodboard, plans, 3D, render, budget, suppliers, and client deck.",
+      "persona": "designer",
+      "subProfiles": [
+          "interior-design",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 142,
+      "savings": 230,
+      "risk": "Multiplier rendu, 3D, présentation et gestion projet sans garder une source claire pour les décisions de production.",
+      "riskEn": "Multiplying render, 3D, presentation, and project management tools without one clear source for production decisions.",
+      "bestFor": "Scénographies d’événement, salons, expositions, conférences, festivals et activations de marque.",
+      "bestForEn": "Event scenography, trade shows, exhibitions, conferences, festivals, and brand activations.",
+      "avoidIf": "Tu fais seulement des moodboards conceptuels sans plans, production ni coordination fournisseur.",
+      "avoidIfEn": "You only create concept moodboards without plans, production, or supplier coordination.",
+      "editorial": "Le bon stack de scénographe doit relier intention, espace et production. SketchUp ou Vectorworks portent le volume, D5 ou Twinmotion rendent l’intention lisible, InDesign ou Figma structure le dossier client, Notion garde décisions, budget et fournisseurs. Le piège : produire de belles images qui ne disent pas comment fabriquer.",
+      "editorialEn": "A scenographer stack must connect intent, space, and production. SketchUp or Vectorworks carries volume, D5 or Twinmotion makes intent readable, InDesign or Figma structures the client deck, and Notion keeps decisions, budget, and suppliers. The trap: beautiful images that do not explain how to build.",
+      "needs": [
+          {
+              "title": "Concept spatial",
+              "titleEn": "Concept spatial",
+              "detail": "Moodboards, références, narration, volumes et premières pistes doivent converger vite.",
+              "detailEn": "Moodboards, références, narration, volumes et premières pistes doivent converger vite."
+          },
+          {
+              "title": "Production lisible",
+              "titleEn": "Production lisible",
+              "detail": "Plans, matériaux, fournisseurs, budget et contraintes doivent rester traçables.",
+              "detailEn": "Plans, matériaux, fournisseurs, budget et contraintes doivent rester traçables."
+          },
+          {
+              "title": "Validation client",
+              "titleEn": "Validation client",
+              "detail": "Le client doit valider une intention et comprendre les arbitrages de fabrication.",
+              "detailEn": "Le client doit valider une intention et comprendre les arbitrages de fabrication."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
+              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+          },
+          {
+              "title": "Client plus exigeant",
+              "titleEn": "Client plus exigeant",
+              "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
+              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Rendu sans production",
+              "titleEn": "Rendu sans production",
+              "detail": "Une image séduisante ne suffit pas si elle ne peut pas devenir un plan ou un budget.",
+              "detailEn": "Une image séduisante ne suffit pas si elle ne peut pas devenir un plan ou un budget."
+          },
+          {
+              "title": "Fichiers lourds",
+              "titleEn": "Fichiers lourds",
+              "detail": "Les assets importés peuvent tuer SketchUp si Transmutr et CleanUp ne sont pas utilisés.",
+              "detailEn": "Les assets importés peuvent tuer SketchUp si Transmutr et CleanUp ne sont pas utilisés."
+          },
+          {
+              "title": "Budget séparé",
+              "titleEn": "Budget séparé",
+              "detail": "Un tableau budget isolé se déconnecte vite des choix créatifs.",
+              "detailEn": "Un tableau budget isolé se déconnecte vite des choix créatifs."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
+              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+          },
+          {
+              "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
+              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+          },
+          {
+              "q": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
+              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Concept / 3D",
+              "roleEn": "Concept / 3D",
+              "slug": "sketchup-pro",
+              "reason": "Rapide pour volumes, scènes et variantes client.",
+              "reasonEn": "Rapide pour volumes, scènes et variantes client."
+          },
+          {
+              "role": "CAO événementielle",
+              "roleEn": "CAO événementielle",
+              "slug": "vectorworks",
+              "reason": "Solide pour plans, événements et implantation plus technique.",
+              "reasonEn": "Solide pour plans, événements et implantation plus technique.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Plans 2D",
+              "roleEn": "Plans 2D",
+              "slug": "autocad",
+              "reason": "Standard pour échanges techniques et prestataires.",
+              "reasonEn": "Standard pour échanges techniques et prestataires.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Rendu rapide",
+              "roleEn": "Rendu rapide",
+              "slug": "d5-render",
+              "reason": "Bon ratio vitesse / impact visuel pour validation.",
+              "reasonEn": "Bon ratio vitesse / impact visuel pour validation."
+          },
+          {
+              "role": "Vidéo immersive",
+              "roleEn": "Vidéo immersive",
+              "slug": "twinmotion",
+              "reason": "Utile pour parcours et ambiance événementielle.",
+              "reasonEn": "Utile pour parcours et ambiance événementielle.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Présentation",
+              "roleEn": "Présentation",
+              "slug": "indesign",
+              "reason": "Dossiers client, planches et rendus structurés.",
+              "reasonEn": "Dossiers client, planches et rendus structurés."
+          },
+          {
+              "role": "Vectoriel / signalétique",
+              "roleEn": "Vectoriel / signalétique",
+              "slug": "adobe-illustrator",
+              "reason": "Plans graphiques, pictos, signalétique et éléments de marque.",
+              "reasonEn": "Plans graphiques, pictos, signalétique et éléments de marque."
+          },
+          {
+              "role": "Retouche",
+              "roleEn": "Retouche",
+              "slug": "adobe-photoshop",
+              "reason": "Nettoyage de rendus, photomontages et moodboards.",
+              "reasonEn": "Nettoyage de rendus, photomontages et moodboards."
+          },
+          {
+              "role": "Moodboard",
+              "roleEn": "Moodboard",
+              "slug": "milanote",
+              "reason": "Références et narration visuelle.",
+              "reasonEn": "Références et narration visuelle."
+          },
+          {
+              "role": "Atelier client",
+              "roleEn": "Atelier client",
+              "slug": "miro",
+              "reason": "Cadrage, parcours et workshop.",
+              "reasonEn": "Cadrage, parcours et workshop.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Pilotage",
+              "roleEn": "Pilotage",
+              "slug": "notion",
+              "reason": "Décisions, budget, fournisseurs et compte rendu.",
+              "reasonEn": "Décisions, budget, fournisseurs et compte rendu."
+          },
+          {
+              "role": "Planning équipe",
+              "roleEn": "Planning équipe",
+              "slug": "monday",
+              "reason": "Utile si plusieurs prestataires avancent en parallèle.",
+              "reasonEn": "Utile si plusieurs prestataires avancent en parallèle.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Plugin profils",
+              "roleEn": "Plugin profils",
+              "slug": "profile-builder-3",
+              "reason": "Structure répétitive, rails, cadres et éléments modulaires.",
+              "reasonEn": "Structure répétitive, rails, cadres et éléments modulaires."
+          },
+          {
+              "role": "Imports 3D",
+              "roleEn": "Imports 3D",
+              "slug": "transmutr",
+              "reason": "Optimise les modèles téléchargés.",
+              "reasonEn": "Optimise les modèles téléchargés."
+          },
+          {
+              "role": "Décor répété",
+              "roleEn": "Décor répété",
+              "slug": "skatter",
+              "reason": "Décors, végétation, public et objets répétés.",
+              "reasonEn": "Décors, végétation, public et objets répétés.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Liste de coupe",
+              "roleEn": "Liste de coupe",
+              "slug": "open-cut-list",
+              "reason": "Préparation fabrication et débits.",
+              "reasonEn": "Préparation fabrication et débits.",
+              "decision": "conditional"
+          },
+          {
+              "role": "IA concept",
+              "roleEn": "IA concept",
+              "slug": "chatgpt",
+              "reason": "Structure brief, narration, livrables et comptes rendus.",
+              "reasonEn": "Structure brief, narration, livrables et comptes rendus."
+          },
+          {
+              "role": "IA ambiance",
+              "roleEn": "IA ambiance",
+              "slug": "midjourney",
+              "reason": "Explore directions visuelles et atmosphères.",
+              "reasonEn": "Explore directions visuelles et atmosphères.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Retouche IA",
+              "roleEn": "Retouche IA",
+              "slug": "firefly",
+              "reason": "Variations et nettoyage visuel.",
+              "reasonEn": "Variations et nettoyage visuel.",
+              "decision": "conditional"
+          }
+      ]
+  },
+  {
+      "id": "designer-stand-retail-popup",
+      "slug": "designer-stand-retail-popup",
+      "title": "Stack stand & retail",
+      "titleEn": "Stand and retail stack",
+      "subtitle": "Pour concevoir stands, corners, pop-ups et vitrines avec une chaîne claire entre concept, 3D, signalétique, fabrication et budget.",
+      "subtitleEn": "For stands, corners, pop-ups, and windows with a clear chain from concept to 3D, signage, fabrication, and budget.",
+      "persona": "designer",
+      "subProfiles": [
+          "interior-design",
+          "brand",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 136,
+      "savings": 210,
+      "risk": "Confondre image de concept et dossier de fabrication : le retail demande une stack qui tient le budget, les matériaux, les délais et les prestataires.",
+      "riskEn": "Confusing concept image and fabrication file: retail needs a stack that holds budget, materials, timelines, and suppliers.",
+      "bestFor": "Stands, pop-ups, corners, vitrines, activations retail et expériences de marque temporaires.",
+      "bestForEn": "Stands, pop-ups, corners, windows, retail activations, and temporary brand experiences.",
+      "avoidIf": "Tu travailles uniquement sur des visuels marketing sans plan, volume ou fabrication.",
+      "avoidIfEn": "You only work on marketing visuals without plans, volume, or fabrication.",
+      "editorial": "Cette stack doit servir la faisabilité. SketchUp et Rhino accélèrent les formes, AutoCAD ou Vectorworks sécurisent les plans, D5 ou V-Ray vendent l’intention, Illustrator et InDesign portent signalétique et dossier. Airtable ou Notion doivent suivre fournisseurs, coûts et statuts.",
+      "editorialEn": "This stack serves feasibility. SketchUp and Rhino speed up forms, AutoCAD or Vectorworks secure plans, D5 or V-Ray sell the intent, Illustrator and InDesign carry signage and deck. Airtable or Notion tracks suppliers, costs, and statuses.",
+      "needs": [
+          {
+              "title": "Concept vendable",
+              "titleEn": "Concept vendable",
+              "detail": "Le client doit comprendre l’expérience et la présence de marque.",
+              "detailEn": "Le client doit comprendre l’expérience et la présence de marque."
+          },
+          {
+              "title": "Fabrication maîtrisée",
+              "titleEn": "Fabrication maîtrisée",
+              "detail": "Plans, mobilier, matériaux et prestataires doivent être alignés.",
+              "detailEn": "Plans, mobilier, matériaux et prestataires doivent être alignés."
+          },
+          {
+              "title": "Budget vivant",
+              "titleEn": "Budget vivant",
+              "detail": "Chaque choix créatif doit avoir un impact prix visible.",
+              "detailEn": "Chaque choix créatif doit avoir un impact prix visible."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
+              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+          },
+          {
+              "title": "Client plus exigeant",
+              "titleEn": "Client plus exigeant",
+              "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
+              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Trop de 3D premium",
+              "titleEn": "Trop de 3D premium",
+              "detail": "V-Ray n’est utile que si l’image premium change la vente.",
+              "detailEn": "V-Ray n’est utile que si l’image premium change la vente."
+          },
+          {
+              "title": "Signalétique hors flux",
+              "titleEn": "Signalétique hors flux",
+              "detail": "Illustrator doit rester connecté au plan et aux contraintes de pose.",
+              "detailEn": "Illustrator doit rester connecté au plan et aux contraintes de pose."
+          },
+          {
+              "title": "Suivi fournisseur flou",
+              "titleEn": "Suivi fournisseur flou",
+              "detail": "Sans statuts et alternatives, le sourcing bloque la production.",
+              "detailEn": "Sans statuts et alternatives, le sourcing bloque la production."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
+              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+          },
+          {
+              "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
+              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+          },
+          {
+              "q": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
+              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Volume rapide",
+              "roleEn": "Volume rapide",
+              "slug": "sketchup-pro",
+              "reason": "Base efficace pour tester implantation, mobilier et circulation.",
+              "reasonEn": "Base efficace pour tester implantation, mobilier et circulation."
+          },
+          {
+              "role": "Formes complexes",
+              "roleEn": "Formes complexes",
+              "slug": "rhino",
+              "reason": "Utile pour mobilier sur-mesure et formes sculpturales.",
+              "reasonEn": "Utile pour mobilier sur-mesure et formes sculpturales.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Plans techniques",
+              "roleEn": "Plans techniques",
+              "slug": "autocad",
+              "reason": "Échanges avec fabricants et prestataires.",
+              "reasonEn": "Échanges avec fabricants et prestataires."
+          },
+          {
+              "role": "CAO retail",
+              "roleEn": "CAO retail",
+              "slug": "vectorworks",
+              "reason": "Option solide pour implantation et dossiers techniques.",
+              "reasonEn": "Option solide pour implantation et dossiers techniques.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Rendu quotidien",
+              "roleEn": "Rendu quotidien",
+              "slug": "d5-render",
+              "reason": "Images rapides pour validation client.",
+              "reasonEn": "Images rapides pour validation client."
+          },
+          {
+              "role": "Image premium",
+              "roleEn": "Image premium",
+              "slug": "v-ray",
+              "reason": "À garder pour les rendus haut de gamme vendus.",
+              "reasonEn": "À garder pour les rendus haut de gamme vendus.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Signalétique",
+              "roleEn": "Signalétique",
+              "slug": "adobe-illustrator",
+              "reason": "Pictos, habillages, adhésifs, panneaux et formats print.",
+              "reasonEn": "Pictos, habillages, adhésifs, panneaux et formats print."
+          },
+          {
+              "role": "Dossier client",
+              "roleEn": "Dossier client",
+              "slug": "indesign",
+              "reason": "Présentation propre des intentions, plans et options.",
+              "reasonEn": "Présentation propre des intentions, plans et options."
+          },
+          {
+              "role": "Retouche",
+              "roleEn": "Retouche",
+              "slug": "adobe-photoshop",
+              "reason": "Photomontages et corrections de rendu.",
+              "reasonEn": "Photomontages et corrections de rendu."
+          },
+          {
+              "role": "Pilotage",
+              "roleEn": "Pilotage",
+              "slug": "notion",
+              "reason": "Décisions, coûts, prestataires et livrables.",
+              "reasonEn": "Décisions, coûts, prestataires et livrables."
+          },
+          {
+              "role": "Base production",
+              "roleEn": "Base production",
+              "slug": "airtable",
+              "reason": "Utile si beaucoup d’items, fournisseurs et statuts.",
+              "reasonEn": "Utile si beaucoup d’items, fournisseurs et statuts.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Budget",
+              "roleEn": "Budget",
+              "slug": "google-sheets",
+              "reason": "Chiffrage simple et partagé.",
+              "reasonEn": "Chiffrage simple et partagé."
+          },
+          {
+              "role": "Planning",
+              "roleEn": "Planning",
+              "slug": "monday",
+              "reason": "Coordination multi-prestataires.",
+              "reasonEn": "Coordination multi-prestataires.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Plugin profils",
+              "roleEn": "Plugin profils",
+              "slug": "profile-builder-3",
+              "reason": "Structures répétitives, rails, cadres et modules.",
+              "reasonEn": "Structures répétitives, rails, cadres et modules."
+          },
+          {
+              "role": "Imports 3D",
+              "roleEn": "Imports 3D",
+              "slug": "transmutr",
+              "reason": "Nettoie les assets importés.",
+              "reasonEn": "Nettoie les assets importés."
+          },
+          {
+              "role": "Débits",
+              "roleEn": "Débits",
+              "slug": "open-cut-list",
+              "reason": "Prépare panneaux et fabrication.",
+              "reasonEn": "Prépare panneaux et fabrication.",
+              "decision": "conditional"
+          },
+          {
+              "role": "IA brief",
+              "roleEn": "IA brief",
+              "slug": "chatgpt",
+              "reason": "Clarifie contraintes, planning, livrables et emails client.",
+              "reasonEn": "Clarifie contraintes, planning, livrables et emails client."
+          },
+          {
+              "role": "IA ambiance",
+              "roleEn": "IA ambiance",
+              "slug": "krea-ai",
+              "reason": "Variations visuelles rapides sur matières et lumières.",
+              "reasonEn": "Variations visuelles rapides sur matières et lumières.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Upscale",
+              "roleEn": "Upscale",
+              "slug": "magnific-ai",
+              "reason": "À réserver aux rendus finaux.",
+              "reasonEn": "À réserver aux rendus finaux.",
+              "decision": "conditional"
+          }
+      ]
+  },
+  {
+      "id": "designer-graphique-pro",
+      "slug": "designer-graphique-pro",
+      "title": "Stack designer graphique",
+      "titleEn": "Graphic designer stack",
+      "subtitle": "Le socle pour identité, print, digital, mockups, typographie, fichiers clients, validation et facturation.",
+      "subtitleEn": "The base for identity, print, digital, mockups, typography, client files, approval, and invoicing.",
+      "persona": "designer",
+      "subProfiles": [
+          "brand",
+          "illustration",
+          "admin"
+      ],
+      "stage": "lean",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 170,
+      "risk": "Payer une suite complète et des banques d’assets sans distinguer ce qui produit vraiment les livrables clients.",
+      "riskEn": "Paying for a full suite and asset libraries without separating what truly produces client deliverables.",
+      "bestFor": "Design print et digital, identité visuelle, campagnes, affiches, supports réseaux sociaux et dossiers client.",
+      "bestForEn": "Print and digital design, visual identity, campaigns, posters, social assets, and client decks.",
+      "avoidIf": "Tu fais surtout de l’UX produit ou du motion, où Figma ou After Effects deviennent plus centraux.",
+      "avoidIfEn": "You mainly do product UX or motion, where Figma or After Effects are more central.",
+      "editorial": "Illustrator, Photoshop et InDesign restent le noyau si le métier touche au print, au vectoriel et aux dossiers propres. Figma est utile pour les systèmes et le digital. Eagle et FontBase évitent la dérive des assets. Canva ne doit servir qu’aux déclinaisons rapides, pas à la source de vérité.",
+      "editorialEn": "Illustrator, Photoshop, and InDesign remain the core when the work touches print, vector, and polished dossiers. Figma helps with systems and digital. Eagle and FontBase prevent asset drift. Canva should handle quick variations, not the source of truth.",
+      "needs": [
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Vectoriel, image, mise en page et PDF doivent sortir proprement.",
+              "detailEn": "Vectoriel, image, mise en page et PDF doivent sortir proprement."
+          },
+          {
+              "title": "Assets rangés",
+              "titleEn": "Assets rangés",
+              "detail": "Polices, mockups, visuels et références doivent être retrouvables.",
+              "detailEn": "Polices, mockups, visuels et références doivent être retrouvables."
+          },
+          {
+              "title": "Livraison claire",
+              "titleEn": "Livraison claire",
+              "detail": "Le client doit recevoir les bons formats et la bonne version.",
+              "detailEn": "Le client doit recevoir les bons formats et la bonne version."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
+              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+          },
+          {
+              "title": "Client plus exigeant",
+              "titleEn": "Client plus exigeant",
+              "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
+              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Canva comme source",
+              "titleEn": "Canva comme source",
+              "detail": "Canva est utile pour décliner, pas pour porter une identité complète.",
+              "detailEn": "Canva est utile pour décliner, pas pour porter une identité complète."
+          },
+          {
+              "title": "Fonts dispersées",
+              "titleEn": "Fonts dispersées",
+              "detail": "Sans gestionnaire, les polices deviennent vite ingérables.",
+              "detailEn": "Sans gestionnaire, les polices deviennent vite ingérables."
+          },
+          {
+              "title": "PDF non contrôlés",
+              "titleEn": "PDF non contrôlés",
+              "detail": "Acrobat reste utile dès que le print compte vraiment.",
+              "detailEn": "Acrobat reste utile dès que le print compte vraiment."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
+              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+          },
+          {
+              "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
+              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+          },
+          {
+              "q": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
+              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Vectoriel",
+              "roleEn": "Vectoriel",
+              "slug": "adobe-illustrator",
+              "reason": "Logo, pictos, formes, print et fichiers sources.",
+              "reasonEn": "Logo, pictos, formes, print et fichiers sources."
+          },
+          {
+              "role": "Retouche",
+              "roleEn": "Retouche",
+              "slug": "adobe-photoshop",
+              "reason": "Images, mockups, détourages et photomontages.",
+              "reasonEn": "Images, mockups, détourages et photomontages."
+          },
+          {
+              "role": "Mise en page",
+              "roleEn": "Mise en page",
+              "slug": "indesign",
+              "reason": "Brochures, dossiers, catalogues et exports print.",
+              "reasonEn": "Brochures, dossiers, catalogues et exports print."
+          },
+          {
+              "role": "Système digital",
+              "roleEn": "Système digital",
+              "slug": "figma",
+              "reason": "Templates digitaux, composants et validations rapides.",
+              "reasonEn": "Templates digitaux, composants et validations rapides.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Déclinaisons",
+              "roleEn": "Déclinaisons",
+              "slug": "canva",
+              "reason": "Formats sociaux et supports simples.",
+              "reasonEn": "Formats sociaux et supports simples.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Visuels rapides",
+              "roleEn": "Visuels rapides",
+              "slug": "adobe-express",
+              "reason": "Déclinaisons Adobe sans ouvrir toute la chaîne.",
+              "reasonEn": "Déclinaisons Adobe sans ouvrir toute la chaîne.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Gestion fontes",
+              "roleEn": "Gestion fontes",
+              "slug": "fontbase",
+              "reason": "Organisation et activation des typographies.",
+              "reasonEn": "Organisation et activation des typographies."
+          },
+          {
+              "role": "Bibliothèque visuelle",
+              "roleEn": "Bibliothèque visuelle",
+              "slug": "eagle",
+              "reason": "Références, mockups, images et textures.",
+              "reasonEn": "Références, mockups, images et textures."
+          },
+          {
+              "role": "Contrôle PDF",
+              "roleEn": "Contrôle PDF",
+              "slug": "adobe-acrobat",
+              "reason": "Annotations, prépresse et PDF final.",
+              "reasonEn": "Annotations, prépresse et PDF final."
+          },
+          {
+              "role": "Projet",
+              "roleEn": "Projet",
+              "slug": "notion",
+              "reason": "Brief, décisions, retours et suivi client.",
+              "reasonEn": "Brief, décisions, retours et suivi client."
+          },
+          {
+              "role": "Fichiers",
+              "roleEn": "Fichiers",
+              "slug": "google-drive",
+              "reason": "Livrables, sources et archives partagées.",
+              "reasonEn": "Livrables, sources et archives partagées."
+          },
+          {
+              "role": "Facturation",
+              "roleEn": "Facturation",
+              "slug": "indy",
+              "reason": "Devis, factures et suivi.",
+              "reasonEn": "Devis, factures et suivi."
+          },
+          {
+              "role": "Plugin Illustrator",
+              "roleEn": "Plugin Illustrator",
+              "slug": "astute-graphics",
+              "reason": "Accélère vectoriel avancé et nettoyage.",
+              "reasonEn": "Accélère vectoriel avancé et nettoyage.",
+              "decision": "conditional"
+          },
+          {
+              "role": "IA structure",
+              "roleEn": "IA structure",
+              "slug": "chatgpt",
+              "reason": "Angles, textes, présentations et mails.",
+              "reasonEn": "Angles, textes, présentations et mails."
+          },
+          {
+              "role": "IA image",
+              "roleEn": "IA image",
+              "slug": "firefly",
+              "reason": "Retouche générative dans le flux Adobe.",
+              "reasonEn": "Retouche générative dans le flux Adobe.",
+              "decision": "conditional"
+          },
+          {
+              "role": "IA exploration",
+              "roleEn": "IA exploration",
+              "slug": "midjourney",
+              "reason": "Univers visuels et moodboards.",
+              "reasonEn": "Univers visuels et moodboards.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Upscale",
+              "roleEn": "Upscale",
+              "slug": "topaz-gigapixel",
+              "reason": "Qualité image ponctuelle.",
+              "reasonEn": "Qualité image ponctuelle.",
+              "decision": "conditional"
+          }
+      ]
+  },
+  {
+      "id": "brand-designer-systeme",
+      "slug": "brand-designer-systeme",
+      "title": "Stack brand designer",
+      "titleEn": "Brand designer stack",
+      "subtitle": "Pour stratégie visuelle, moodboards, logo, guidelines, templates, assets et livraison de marque maintenable.",
+      "subtitleEn": "For visual strategy, moodboards, logo, guidelines, templates, assets, and maintainable brand delivery.",
+      "persona": "designer",
+      "subProfiles": [
+          "brand",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 118,
+      "savings": 190,
+      "risk": "Livrer une belle identité sans système exploitable : guidelines floues, assets dispersés, templates absents et validations perdues.",
+      "riskEn": "Delivering a beautiful identity without an usable system: vague guidelines, scattered assets, missing templates, and lost approvals.",
+      "bestFor": "Identités de marque, plateformes visuelles, chartes, templates, refontes et systèmes graphiques.",
+      "bestForEn": "Brand identities, visual platforms, guidelines, templates, rebrands, and graphic systems.",
+      "avoidIf": "Tu fais seulement des logos ponctuels sans guidelines ni déclinaisons.",
+      "avoidIfEn": "You only do occasional logos without guidelines or variations.",
+      "editorial": "Le brand designer doit sortir plus qu’un logo. Figma ou Illustrator créent le système, InDesign ou Pitch racontent la marque, Brandpad ou Notion livrent les règles, Eagle garde les assets. L’IA sert à explorer des directions, pas à décider la stratégie à la place du designer.",
+      "editorialEn": "A brand designer must deliver more than a logo. Figma or Illustrator creates the system, InDesign or Pitch tells the brand, Brandpad or Notion delivers rules, Eagle keeps assets. AI explores directions, it does not decide strategy for the designer.",
+      "needs": [
+          {
+              "title": "Stratégie claire",
+              "titleEn": "Stratégie claire",
+              "detail": "Positionnement, références et territoire visuel doivent être lisibles.",
+              "detailEn": "Positionnement, références et territoire visuel doivent être lisibles."
+          },
+          {
+              "title": "Système exploitable",
+              "titleEn": "Système exploitable",
+              "detail": "Guidelines, couleurs, typos, composants et templates doivent tenir ensemble.",
+              "detailEn": "Guidelines, couleurs, typos, composants et templates doivent tenir ensemble."
+          },
+          {
+              "title": "Livraison durable",
+              "titleEn": "Livraison durable",
+              "detail": "Le client doit pouvoir réutiliser la marque sans la dégrader.",
+              "detailEn": "Le client doit pouvoir réutiliser la marque sans la dégrader."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
+              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+          },
+          {
+              "title": "Client plus exigeant",
+              "titleEn": "Client plus exigeant",
+              "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
+              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Guidelines en PDF mort",
+              "titleEn": "Guidelines en PDF mort",
+              "detail": "Un PDF seul devient vite obsolète si la marque évolue.",
+              "detailEn": "Un PDF seul devient vite obsolète si la marque évolue."
+          },
+          {
+              "title": "Trop d’assets IA",
+              "titleEn": "Trop d’assets IA",
+              "detail": "L’exploration IA ne remplace pas une direction de marque.",
+              "detailEn": "L’exploration IA ne remplace pas une direction de marque."
+          },
+          {
+              "title": "Tokens inutiles",
+              "titleEn": "Tokens inutiles",
+              "detail": "Specify ou Tokens Studio ne servent que si le système va vers le digital ou le code.",
+              "detailEn": "Specify ou Tokens Studio ne servent que si le système va vers le digital ou le code."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
+              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+          },
+          {
+              "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
+              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+          },
+          {
+              "q": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
+              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Design system",
+              "roleEn": "Design system",
+              "slug": "figma",
+              "reason": "Système visuel, templates, composants et livrables digitaux.",
+              "reasonEn": "Système visuel, templates, composants et livrables digitaux."
+          },
+          {
+              "role": "Vectoriel",
+              "roleEn": "Vectoriel",
+              "slug": "adobe-illustrator",
+              "reason": "Logo, pictos et éléments de marque.",
+              "reasonEn": "Logo, pictos et éléments de marque."
+          },
+          {
+              "role": "Retouche",
+              "roleEn": "Retouche",
+              "slug": "adobe-photoshop",
+              "reason": "Images de marque et mockups.",
+              "reasonEn": "Images de marque et mockups."
+          },
+          {
+              "role": "Guidelines print",
+              "roleEn": "Guidelines print",
+              "slug": "indesign",
+              "reason": "Brand book, règles et dossiers premium.",
+              "reasonEn": "Brand book, règles et dossiers premium."
+          },
+          {
+              "role": "Présentation",
+              "roleEn": "Présentation",
+              "slug": "pitch",
+              "reason": "Decks de marque et propositions.",
+              "reasonEn": "Decks de marque et propositions."
+          },
+          {
+              "role": "Présentation Apple",
+              "roleEn": "Présentation Apple",
+              "slug": "keynote",
+              "reason": "Alternative fluide pour pitch visuel.",
+              "reasonEn": "Alternative fluide pour pitch visuel.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Workshop",
+              "roleEn": "Workshop",
+              "slug": "miro",
+              "reason": "Positionnement, mapping et ateliers.",
+              "reasonEn": "Positionnement, mapping et ateliers."
+          },
+          {
+              "role": "Base projet",
+              "roleEn": "Base projet",
+              "slug": "notion",
+              "reason": "Brief, décisions, livrables et liens.",
+              "reasonEn": "Brief, décisions, livrables et liens."
+          },
+          {
+              "role": "Assets",
+              "roleEn": "Assets",
+              "slug": "eagle",
+              "reason": "Références, logos, visuels, textures et exports.",
+              "reasonEn": "Références, logos, visuels, textures et exports."
+          },
+          {
+              "role": "Veille",
+              "roleEn": "Veille",
+              "slug": "arena",
+              "reason": "Références plus éditoriales et moins standardisées.",
+              "reasonEn": "Références plus éditoriales et moins standardisées.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Recherche visuelle",
+              "roleEn": "Recherche visuelle",
+              "slug": "pinterest",
+              "reason": "Inspiration client et moodboards rapides.",
+              "reasonEn": "Inspiration client et moodboards rapides."
+          },
+          {
+              "role": "Livraison guidelines",
+              "roleEn": "Livraison guidelines",
+              "slug": "brandpad",
+              "reason": "Guidelines en ligne et assets maintenables.",
+              "reasonEn": "Guidelines en ligne et assets maintenables.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Design tokens",
+              "roleEn": "Design tokens",
+              "slug": "specify",
+              "reason": "Utile quand la marque devient système digital.",
+              "reasonEn": "Utile quand la marque devient système digital.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Plugin tokens",
+              "roleEn": "Plugin tokens",
+              "slug": "figma-tokens",
+              "reason": "Variables et tokens Figma.",
+              "reasonEn": "Variables et tokens Figma.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Plugin icônes",
+              "roleEn": "Plugin icônes",
+              "slug": "figma-iconify",
+              "reason": "Accès rapide aux familles d’icônes.",
+              "reasonEn": "Accès rapide aux familles d’icônes."
+          },
+          {
+              "role": "IA stratégie",
+              "roleEn": "IA stratégie",
+              "slug": "chatgpt",
+              "reason": "Structure plateforme, naming, textes et rationale.",
+              "reasonEn": "Structure plateforme, naming, textes et rationale."
+          },
+          {
+              "role": "IA mood",
+              "roleEn": "IA mood",
+              "slug": "midjourney",
+              "reason": "Exploration de territoires visuels.",
+              "reasonEn": "Exploration de territoires visuels.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Retouche IA",
+              "roleEn": "Retouche IA",
+              "slug": "firefly",
+              "reason": "Nettoyage et variations Adobe.",
+              "reasonEn": "Nettoyage et variations Adobe.",
+              "decision": "conditional"
+          }
+      ]
+  },
+  {
+      "id": "directeur-artistique-creative-lead",
+      "slug": "directeur-artistique",
+      "title": "Stack directeur artistique",
+      "titleEn": "Art director stack",
+      "subtitle": "La stack pour piloter une vision : veille, moodboards, concepts, direction image, feedback, assets, présentation et validation client.",
+      "subtitleEn": "The stack to lead a vision: research, moodboards, concepts, image direction, feedback, assets, presentation, and client approval.",
+      "persona": "designer",
+      "subProfiles": [
+          "art-direction",
+          "brand",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 128,
+      "savings": 220,
+      "risk": "Avoir des références, IA, decks et retours dispersés : la DA perd de la force quand la décision créative n’est pas traçable.",
+      "riskEn": "Having references, AI, decks, and feedback scattered: art direction loses strength when creative decisions are not traceable.",
+      "bestFor": "Direction image, campagnes, shootings, identité, vidéo, événement, contenu de marque et supervision créative.",
+      "bestForEn": "Image direction, campaigns, shoots, identity, video, events, branded content, and creative supervision.",
+      "avoidIf": "Tu produis uniquement des fichiers d’exécution sans piloter de vision ou d’arbitrages.",
+      "avoidIfEn": "You only produce execution files without leading vision or trade-offs.",
+      "editorial": "Le directeur artistique a besoin d’une stack de décision, pas seulement de production. Are.na, ShotDeck, Pinterest et Eagle nourrissent la veille. Figma, Keynote ou Pitch formalisent la vision. Frame.io et Loom clarifient les retours. Notion garde le pourquoi derrière chaque choix.",
+      "editorialEn": "An art director needs a decision stack, not only production tools. Are.na, ShotDeck, Pinterest, and Eagle feed research. Figma, Keynote, or Pitch formalize the vision. Frame.io and Loom clarify feedback. Notion keeps the why behind each choice.",
+      "needs": [
+          {
+              "title": "Veille solide",
+              "titleEn": "Veille solide",
+              "detail": "Références image, culture, style et benchmarks doivent être organisés.",
+              "detailEn": "Références image, culture, style et benchmarks doivent être organisés."
+          },
+          {
+              "title": "Vision partageable",
+              "titleEn": "Vision partageable",
+              "detail": "Le concept doit être présenté de façon courte, claire et vendable.",
+              "detailEn": "Le concept doit être présenté de façon courte, claire et vendable."
+          },
+          {
+              "title": "Feedback précis",
+              "titleEn": "Feedback précis",
+              "detail": "Les retours doivent pointer une image, une scène ou une décision.",
+              "detailEn": "Les retours doivent pointer une image, une scène ou une décision."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
+              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+          },
+          {
+              "title": "Client plus exigeant",
+              "titleEn": "Client plus exigeant",
+              "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
+              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Moodboard infini",
+              "titleEn": "Moodboard infini",
+              "detail": "Chercher plus de références peut masquer une décision non prise.",
+              "detailEn": "Chercher plus de références peut masquer une décision non prise."
+          },
+          {
+              "title": "IA sans direction",
+              "titleEn": "IA sans direction",
+              "detail": "Midjourney ou Krea amplifient une intention, ils ne la remplacent pas.",
+              "detailEn": "Midjourney ou Krea amplifient une intention, ils ne la remplacent pas."
+          },
+          {
+              "title": "Feedback oral perdu",
+              "titleEn": "Feedback oral perdu",
+              "detail": "Sans trace, la décision créative revient en arrière.",
+              "detailEn": "Sans trace, la décision créative revient en arrière."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
+              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+          },
+          {
+              "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
+              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+          },
+          {
+              "q": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
+              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Design / deck",
+              "roleEn": "Design / deck",
+              "slug": "figma",
+              "reason": "Boards, systèmes, présentations et annotations.",
+              "reasonEn": "Boards, systèmes, présentations et annotations."
+          },
+          {
+              "role": "Présentation",
+              "roleEn": "Présentation",
+              "slug": "keynote",
+              "reason": "Decks visuels rapides et très maîtrisables.",
+              "reasonEn": "Decks visuels rapides et très maîtrisables."
+          },
+          {
+              "role": "Présentation collaborative",
+              "roleEn": "Présentation collaborative",
+              "slug": "pitch",
+              "reason": "Decks partagés et commentaires.",
+              "reasonEn": "Decks partagés et commentaires.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Moodboard",
+              "roleEn": "Moodboard",
+              "slug": "milanote",
+              "reason": "Références, narration et planches.",
+              "reasonEn": "Références, narration et planches."
+          },
+          {
+              "role": "Veille",
+              "roleEn": "Veille",
+              "slug": "arena",
+              "reason": "Collecte éditoriale et références pointues.",
+              "reasonEn": "Collecte éditoriale et références pointues."
+          },
+          {
+              "role": "Bibliothèque",
+              "roleEn": "Bibliothèque",
+              "slug": "eagle",
+              "reason": "Images, textures, assets et archives.",
+              "reasonEn": "Images, textures, assets et archives."
+          },
+          {
+              "role": "Recherche visuelle",
+              "roleEn": "Recherche visuelle",
+              "slug": "pinterest",
+              "reason": "Références rapides et partage client.",
+              "reasonEn": "Références rapides et partage client."
+          },
+          {
+              "role": "Références cinéma",
+              "roleEn": "Références cinéma",
+              "slug": "shotdeck",
+              "reason": "Cadrage, lumière, couleur et direction image.",
+              "reasonEn": "Cadrage, lumière, couleur et direction image.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Feedback vidéo",
+              "roleEn": "Feedback vidéo",
+              "slug": "frame-io",
+              "reason": "Commentaires précis sur vidéos et visuels.",
+              "reasonEn": "Commentaires précis sur vidéos et visuels.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Pilotage",
+              "roleEn": "Pilotage",
+              "slug": "notion",
+              "reason": "Rationale, décisions, statut et livrables.",
+              "reasonEn": "Rationale, décisions, statut et livrables."
+          },
+          {
+              "role": "Workshop",
+              "roleEn": "Workshop",
+              "slug": "miro",
+              "reason": "Cadrage et co-création client.",
+              "reasonEn": "Cadrage et co-création client.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Fichiers",
+              "roleEn": "Fichiers",
+              "slug": "google-drive",
+              "reason": "Livraison et partage de sources.",
+              "reasonEn": "Livraison et partage de sources."
+          },
+          {
+              "role": "IA concept",
+              "roleEn": "IA concept",
+              "slug": "chatgpt",
+              "reason": "Rationale, structure de deck et notes de direction.",
+              "reasonEn": "Rationale, structure de deck et notes de direction."
+          },
+          {
+              "role": "IA image",
+              "roleEn": "IA image",
+              "slug": "midjourney",
+              "reason": "Exploration visuelle rapide.",
+              "reasonEn": "Exploration visuelle rapide.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Retouche IA",
+              "roleEn": "Retouche IA",
+              "slug": "firefly",
+              "reason": "Nettoyage et variations image.",
+              "reasonEn": "Nettoyage et variations image.",
+              "decision": "conditional"
+          },
+          {
+              "role": "IA vidéo",
+              "roleEn": "IA vidéo",
+              "slug": "runway",
+              "reason": "Tests vidéo et animatiques.",
+              "reasonEn": "Tests vidéo et animatiques.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Upscale",
+              "roleEn": "Upscale",
+              "slug": "magnific-ai",
+              "reason": "Visuels finaux et détails.",
+              "reasonEn": "Visuels finaux et détails.",
+              "decision": "conditional"
+          }
+      ]
+  },
+  {
+      "id": "webflow-nocode-creatif",
+      "slug": "developpeur-webflow-nocode-creatif",
+      "title": "Stack Webflow créatif",
+      "titleEn": "Creative Webflow stack",
+      "subtitle": "Pour construire des sites Webflow propres : cadrage, design, CMS, SEO, formulaires, automatisation, membership, paiement et analytics.",
+      "subtitleEn": "For clean Webflow builds: framing, design, CMS, SEO, forms, automation, membership, payment, and analytics.",
+      "persona": "dev",
+      "subProfiles": [
+          "web",
+          "no-code",
+          "automation"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 124,
+      "savings": 210,
+      "risk": "Empiler apps Webflow, scripts et automatisations sans gouvernance : le site devient fragile, lent et difficile à maintenir.",
+      "riskEn": "Stacking Webflow apps, scripts, and automations without governance: the site becomes fragile, slow, and hard to maintain.",
+      "bestFor": "Sites Webflow, landing pages, CMS éditorial, expériences no-code, formulaires et automatisations légères.",
+      "bestForEn": "Webflow sites, landing pages, editorial CMS, no-code experiences, forms, and light automations.",
+      "avoidIf": "Tu développes une vraie application métier avec logique backend lourde.",
+      "avoidIfEn": "You build a real business app with heavy backend logic.",
+      "editorial": "Le bon stack Webflow commence avant Webflow. Relume aide à cadrer sitemap et wireframes, Figma garde la DA, Webflow porte le build, Finsweet/Client-First structurent le code, Make ou Zapier relient les formulaires, Plausible ou Search Console mesurent. Chaque script doit avoir une raison.",
+      "editorialEn": "A good Webflow stack starts before Webflow. Relume frames sitemap and wireframes, Figma keeps art direction, Webflow carries the build, Finsweet/Client-First structure code, Make or Zapier connects forms, Plausible or Search Console measures. Every script needs a reason.",
+      "needs": [
+          {
+              "title": "Cadrer vite",
+              "titleEn": "Cadrer vite",
+              "detail": "Sitemap, wireframes et composants doivent sortir avant le build.",
+              "detailEn": "Sitemap, wireframes et composants doivent sortir avant le build."
+          },
+          {
+              "title": "Build maintenable",
+              "titleEn": "Build maintenable",
+              "detail": "Classes, CMS, interactions et scripts doivent rester lisibles.",
+              "detailEn": "Classes, CMS, interactions et scripts doivent rester lisibles."
+          },
+          {
+              "title": "Mesurer utile",
+              "titleEn": "Mesurer utile",
+              "detail": "SEO, conversion et performance doivent être suivis sans usine analytics.",
+              "detailEn": "SEO, conversion et performance doivent être suivis sans usine analytics."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
+              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+          },
+          {
+              "title": "Client plus exigeant",
+              "titleEn": "Client plus exigeant",
+              "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
+              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Scripts invisibles",
+              "titleEn": "Scripts invisibles",
+              "detail": "Un custom code non documenté casse la maintenance.",
+              "detailEn": "Un custom code non documenté casse la maintenance."
+          },
+          {
+              "title": "Apps trop nombreuses",
+              "titleEn": "Apps trop nombreuses",
+              "detail": "Chaque app ralentit ou complexifie le site.",
+              "detailEn": "Chaque app ralentit ou complexifie le site."
+          },
+          {
+              "title": "CMS mal pensé",
+              "titleEn": "CMS mal pensé",
+              "detail": "Un CMS confus coûte cher au client après livraison.",
+              "detailEn": "Un CMS confus coûte cher au client après livraison."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
+              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+          },
+          {
+              "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
+              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+          },
+          {
+              "q": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
+              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Build",
+              "roleEn": "Build",
+              "slug": "webflow",
+              "reason": "CMS, pages, interactions et publication.",
+              "reasonEn": "CMS, pages, interactions et publication."
+          },
+          {
+              "role": "Cadrage",
+              "roleEn": "Cadrage",
+              "slug": "relume",
+              "reason": "Sitemap, wireframes et sections prêtes à adapter.",
+              "reasonEn": "Sitemap, wireframes et sections prêtes à adapter."
+          },
+          {
+              "role": "Design",
+              "roleEn": "Design",
+              "slug": "figma",
+              "reason": "DA, composants et validation client.",
+              "reasonEn": "DA, composants et validation client."
+          },
+          {
+              "role": "Prototype rapide",
+              "roleEn": "Prototype rapide",
+              "slug": "framer",
+              "reason": "Option si le projet est plus landing que CMS.",
+              "reasonEn": "Option si le projet est plus landing que CMS.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Automation",
+              "roleEn": "Automation",
+              "slug": "make",
+              "reason": "Connecte formulaires, CRM, emails et bases.",
+              "reasonEn": "Connecte formulaires, CRM, emails et bases."
+          },
+          {
+              "role": "Automation simple",
+              "roleEn": "Automation simple",
+              "slug": "zapier",
+              "reason": "Alternative plus simple pour intégrations rapides.",
+              "reasonEn": "Alternative plus simple pour intégrations rapides.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Base de données",
+              "roleEn": "Base de données",
+              "slug": "airtable",
+              "reason": "Back-office léger ou contenu structuré.",
+              "reasonEn": "Back-office léger ou contenu structuré.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Membership",
+              "roleEn": "Membership",
+              "slug": "memberstack",
+              "reason": "Comptes membres et accès privés Webflow.",
+              "reasonEn": "Comptes membres et accès privés Webflow.",
+              "decision": "conditional"
+          },
+          {
+              "role": "App no-code",
+              "roleEn": "App no-code",
+              "slug": "wized",
+              "reason": "Logique app et front dynamique au-dessus de Webflow.",
+              "reasonEn": "Logique app et front dynamique au-dessus de Webflow.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Synchronisation",
+              "roleEn": "Synchronisation",
+              "slug": "whalesync",
+              "reason": "Sync Webflow avec Airtable ou Notion.",
+              "reasonEn": "Sync Webflow avec Airtable ou Notion.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Formulaire",
+              "roleEn": "Formulaire",
+              "slug": "tally",
+              "reason": "Qualification et formulaires légers.",
+              "reasonEn": "Qualification et formulaires légers."
+          },
+          {
+              "role": "Formulaire avancé",
+              "roleEn": "Formulaire avancé",
+              "slug": "typeform",
+              "reason": "À garder si l’expérience formulaire justifie le coût.",
+              "reasonEn": "À garder si l’expérience formulaire justifie le coût.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Paiement",
+              "roleEn": "Paiement",
+              "slug": "stripe",
+              "reason": "Paiements, acomptes ou offres packagées.",
+              "reasonEn": "Paiements, acomptes ou offres packagées.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Analytics",
+              "roleEn": "Analytics",
+              "slug": "plausible",
+              "reason": "Mesure simple et lisible.",
+              "reasonEn": "Mesure simple et lisible."
+          },
+          {
+              "role": "SEO",
+              "roleEn": "SEO",
+              "slug": "google-search-console",
+              "reason": "Indexation, requêtes et erreurs SEO.",
+              "reasonEn": "Indexation, requêtes et erreurs SEO."
+          },
+          {
+              "role": "IA structure",
+              "roleEn": "IA structure",
+              "slug": "chatgpt",
+              "reason": "Plans de pages, specs, scripts et debug.",
+              "reasonEn": "Plans de pages, specs, scripts et debug."
+          },
+          {
+              "role": "IA recherche",
+              "roleEn": "IA recherche",
+              "slug": "perplexity",
+              "reason": "Benchmarks et vérifications rapides.",
+              "reasonEn": "Benchmarks et vérifications rapides.",
+              "decision": "conditional"
+          }
+      ]
+  },
+  {
+      "id": "monteur-video-pro",
+      "slug": "monteur-video",
+      "title": "Stack monteur vidéo",
+      "titleEn": "Video editor stack",
+      "subtitle": "La chaîne pour dérusher, monter, sous-titrer, étalonner, nettoyer le son, faire valider et livrer sans friction.",
+      "subtitleEn": "The chain to ingest, edit, subtitle, grade, clean audio, approve, and deliver smoothly.",
+      "persona": "designer",
+      "subProfiles": [
+          "video",
+          "client-delivery"
+      ],
+      "stage": "lean",
+      "budget": "under150",
+      "monthlyBudget": 118,
+      "savings": 190,
+      "risk": "Payer plusieurs logiciels de montage, banques audio et outils IA alors qu’un seul workflow stable suffit souvent.",
+      "riskEn": "Paying for several editors, audio libraries, and AI tools when one stable workflow often does the job.",
+      "bestFor": "Interviews, contenus social media, corporate, publicité, formats courts ou longs.",
+      "bestForEn": "Interviews, social content, corporate, ads, short or long formats.",
+      "avoidIf": "Tu fais surtout du motion design avancé ou de la captation sans postproduction.",
+      "avoidIfEn": "You mostly do advanced motion design or capture without post-production.",
+      "editorial": "DaVinci Resolve peut suffire pour beaucoup de monteurs : montage, étalonnage et audio dans un seul outil. Premiere reste logique si le client ou l’équipe vit dans Adobe. Frame.io structure les retours. Descript et CapCut sont utiles sur formats courts. Topaz Video doit rester réservé aux plans qui le méritent.",
+      "editorialEn": "DaVinci Resolve can be enough for many editors: editing, grading, and audio in one tool. Premiere makes sense when the client or team lives in Adobe. Frame.io structures feedback. Descript and CapCut help short formats. Topaz Video should stay reserved for shots that deserve it.",
+      "needs": [
+          {
+              "title": "Montage stable",
+              "titleEn": "Montage stable",
+              "detail": "Un outil principal doit porter 80% du workflow.",
+              "detailEn": "Un outil principal doit porter 80% du workflow."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Les retours doivent être timecodés et actionnables.",
+              "detailEn": "Les retours doivent être timecodés et actionnables."
+          },
+          {
+              "title": "Livraison propre",
+              "titleEn": "Livraison propre",
+              "detail": "Sous-titres, exports, son et formats doivent être maîtrisés.",
+              "detailEn": "Sous-titres, exports, son et formats doivent être maîtrisés."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
+              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+          },
+          {
+              "title": "Client plus exigeant",
+              "titleEn": "Client plus exigeant",
+              "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
+              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Deux NLE payés",
+              "titleEn": "Deux NLE payés",
+              "detail": "Premiere et DaVinci en parallèle doivent avoir des rôles distincts.",
+              "detailEn": "Premiere et DaVinci en parallèle doivent avoir des rôles distincts."
+          },
+          {
+              "title": "IA partout",
+              "titleEn": "IA partout",
+              "detail": "L’IA doit accélérer sous-titres, nettoyage ou upscale, pas remplacer le montage.",
+              "detailEn": "L’IA doit accélérer sous-titres, nettoyage ou upscale, pas remplacer le montage."
+          },
+          {
+              "title": "Audio négligé",
+              "titleEn": "Audio négligé",
+              "detail": "Un bon montage avec un son faible reste perçu comme amateur.",
+              "detailEn": "Un bon montage avec un son faible reste perçu comme amateur."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
+              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+          },
+          {
+              "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
+              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+          },
+          {
+              "q": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
+              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Montage principal",
+              "roleEn": "Montage principal",
+              "slug": "davinci-resolve",
+              "reason": "Montage, étalonnage, audio et exports dans une suite solide.",
+              "reasonEn": "Montage, étalonnage, audio et exports dans une suite solide."
+          },
+          {
+              "role": "Montage Adobe",
+              "roleEn": "Montage Adobe",
+              "slug": "adobe-premiere-pro",
+              "reason": "À garder si clients, templates ou équipe sont Adobe.",
+              "reasonEn": "À garder si clients, templates ou équipe sont Adobe.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Montage Mac",
+              "roleEn": "Montage Mac",
+              "slug": "final-cut-pro",
+              "reason": "Rapide et efficace si ton workflow est 100% Apple.",
+              "reasonEn": "Rapide et efficace si ton workflow est 100% Apple.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Validation",
+              "roleEn": "Validation",
+              "slug": "frame-io",
+              "reason": "Commentaires timecodés et validation client.",
+              "reasonEn": "Commentaires timecodés et validation client."
+          },
+          {
+              "role": "Sous-titres / dérush",
+              "roleEn": "Sous-titres / dérush",
+              "slug": "descript",
+              "reason": "Transcription, montage texte et formats courts.",
+              "reasonEn": "Transcription, montage texte et formats courts.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Social court",
+              "roleEn": "Social court",
+              "slug": "capcut",
+              "reason": "Formats rapides et réseaux sociaux.",
+              "reasonEn": "Formats rapides et réseaux sociaux.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Post-audio",
+              "roleEn": "Post-audio",
+              "slug": "adobe-audition",
+              "reason": "Nettoyage voix, mixage et correction audio.",
+              "reasonEn": "Nettoyage voix, mixage et correction audio.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Musique",
+              "roleEn": "Musique",
+              "slug": "artlist",
+              "reason": "Musique et assets sous licence.",
+              "reasonEn": "Musique et assets sous licence."
+          },
+          {
+              "role": "SFX / musique",
+              "roleEn": "SFX / musique",
+              "slug": "epidemic-sound",
+              "reason": "Alternative solide pour contenus récurrents.",
+              "reasonEn": "Alternative solide pour contenus récurrents.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Stockage",
+              "roleEn": "Stockage",
+              "slug": "dropbox",
+              "reason": "Partage de fichiers lourds et versions.",
+              "reasonEn": "Partage de fichiers lourds et versions.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Drive client",
+              "roleEn": "Drive client",
+              "slug": "google-drive",
+              "reason": "Livraison simple et accessible.",
+              "reasonEn": "Livraison simple et accessible."
+          },
+          {
+              "role": "IA vidéo",
+              "roleEn": "IA vidéo",
+              "slug": "runway",
+              "reason": "Tests, plans générés ou retouches vidéo.",
+              "reasonEn": "Tests, plans générés ou retouches vidéo.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Upscale vidéo",
+              "roleEn": "Upscale vidéo",
+              "slug": "topaz-video",
+              "reason": "À réserver aux plans à sauver ou livrables premium.",
+              "reasonEn": "À réserver aux plans à sauver ou livrables premium.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Voix IA",
+              "roleEn": "Voix IA",
+              "slug": "elevenlabs",
+              "reason": "Voix off, scratch voice ou variations.",
+              "reasonEn": "Voix off, scratch voice ou variations.",
+              "decision": "conditional"
+          },
+          {
+              "role": "IA structure",
+              "roleEn": "IA structure",
+              "slug": "chatgpt",
+              "reason": "Scripts, plan de montage, résumés et emails client.",
+              "reasonEn": "Scripts, plan de montage, résumés et emails client."
+          }
+      ]
+  },
+  {
+      "id": "realisateur-videaste-marque",
+      "slug": "realisateur-videaste",
+      "title": "Stack vidéaste",
+      "titleEn": "Videographer stack",
+      "subtitle": "Pour préparer, tourner, monter, faire valider et facturer des films de marque, interviews, événements ou capsules social media.",
+      "subtitleEn": "To prepare, shoot, edit, approve, and invoice brand films, interviews, events, or social clips.",
+      "persona": "designer",
+      "subProfiles": [
+          "video",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 132,
+      "savings": 210,
+      "risk": "Séparer préproduction, tournage, montage, validation et facturation dans trop d’outils : les décisions de réalisation se perdent.",
+      "riskEn": "Splitting pre-production, shooting, editing, approval, and billing across too many tools: directing decisions get lost.",
+      "bestFor": "Films de marque, interviews, vidéos événementielles, contenus corporate et capsules social media.",
+      "bestForEn": "Brand films, interviews, event videos, corporate content, and social clips.",
+      "avoidIf": "Tu ne fais que du montage à partir de rushs déjà cadrés par une autre équipe.",
+      "avoidIfEn": "You only edit footage already framed by another team.",
+      "editorial": "Le vidéaste a besoin d’une stack avant et après le tournage. Milanote ou Notion cadrent brief, moodboard, shotlist et planning. ShotDeck nourrit la direction image. DaVinci ou Premiere portent la postproduction. Frame.io centralise les retours. Indy, Qonto et Yousign ferment la boucle business.",
+      "editorialEn": "A videographer needs a stack before and after the shoot. Milanote or Notion frames brief, moodboard, shot list, and planning. ShotDeck feeds image direction. DaVinci or Premiere carries post-production. Frame.io centralizes feedback. Indy, Qonto, and Yousign close the business loop.",
+      "needs": [
+          {
+              "title": "Préproduction claire",
+              "titleEn": "Préproduction claire",
+              "detail": "Brief, moodboard, shotlist, planning et autorisations doivent être prêts avant tournage.",
+              "detailEn": "Brief, moodboard, shotlist, planning et autorisations doivent être prêts avant tournage."
+          },
+          {
+              "title": "Postproduction maîtrisée",
+              "titleEn": "Postproduction maîtrisée",
+              "detail": "Montage, étalonnage, son et exports doivent être cohérents.",
+              "detailEn": "Montage, étalonnage, son et exports doivent être cohérents."
+          },
+          {
+              "title": "Business fluide",
+              "titleEn": "Business fluide",
+              "detail": "Devis, validation, acompte et livraison ne doivent pas ralentir le projet.",
+              "detailEn": "Devis, validation, acompte et livraison ne doivent pas ralentir le projet."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
+              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+          },
+          {
+              "title": "Client plus exigeant",
+              "titleEn": "Client plus exigeant",
+              "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
+              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Shotlist absente",
+              "titleEn": "Shotlist absente",
+              "detail": "Le tournage coûte trop cher pour improviser les décisions de base.",
+              "detailEn": "Le tournage coûte trop cher pour improviser les décisions de base."
+          },
+          {
+              "title": "Retour client flou",
+              "titleEn": "Retour client flou",
+              "detail": "Un commentaire non timecodé coûte des heures.",
+              "detailEn": "Un commentaire non timecodé coûte des heures."
+          },
+          {
+              "title": "Musique sans licence",
+              "titleEn": "Musique sans licence",
+              "detail": "La librairie audio doit sécuriser l’usage client.",
+              "detailEn": "La librairie audio doit sécuriser l’usage client."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
+              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+          },
+          {
+              "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
+              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+          },
+          {
+              "q": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
+              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Préproduction",
+              "roleEn": "Préproduction",
+              "slug": "milanote",
+              "reason": "Moodboard, références, séquences et intentions.",
+              "reasonEn": "Moodboard, références, séquences et intentions."
+          },
+          {
+              "role": "Pilotage",
+              "roleEn": "Pilotage",
+              "slug": "notion",
+              "reason": "Brief, planning, shotlist, décisions et livrables.",
+              "reasonEn": "Brief, planning, shotlist, décisions et livrables."
+          },
+          {
+              "role": "Références image",
+              "roleEn": "Références image",
+              "slug": "shotdeck",
+              "reason": "Cadrage, lumière et couleur.",
+              "reasonEn": "Cadrage, lumière et couleur.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Validation",
+              "roleEn": "Validation",
+              "slug": "frame-io",
+              "reason": "Commentaires timecodés et versions.",
+              "reasonEn": "Commentaires timecodés et versions."
+          },
+          {
+              "role": "Montage",
+              "roleEn": "Montage",
+              "slug": "davinci-resolve",
+              "reason": "Montage, couleur, audio et livraison.",
+              "reasonEn": "Montage, couleur, audio et livraison."
+          },
+          {
+              "role": "Montage Adobe",
+              "roleEn": "Montage Adobe",
+              "slug": "adobe-premiere-pro",
+              "reason": "À garder si le workflow client est Adobe.",
+              "reasonEn": "À garder si le workflow client est Adobe.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Montage Mac",
+              "roleEn": "Montage Mac",
+              "slug": "final-cut-pro",
+              "reason": "Option rapide sur workflow Apple.",
+              "reasonEn": "Option rapide sur workflow Apple.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Musique",
+              "roleEn": "Musique",
+              "slug": "artlist",
+              "reason": "Musique et SFX sous licence.",
+              "reasonEn": "Musique et SFX sous licence."
+          },
+          {
+              "role": "Musique alternative",
+              "roleEn": "Musique alternative",
+              "slug": "epidemic-sound",
+              "reason": "Bibliothèque audio récurrente.",
+              "reasonEn": "Bibliothèque audio récurrente.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Captation distante",
+              "roleEn": "Captation distante",
+              "slug": "riverside",
+              "reason": "Interviews à distance propres.",
+              "reasonEn": "Interviews à distance propres.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Fichiers",
+              "roleEn": "Fichiers",
+              "slug": "google-drive",
+              "reason": "Partage client et livraison.",
+              "reasonEn": "Partage client et livraison."
+          },
+          {
+              "role": "Facturation",
+              "roleEn": "Facturation",
+              "slug": "indy",
+              "reason": "Devis, factures et suivi.",
+              "reasonEn": "Devis, factures et suivi."
+          },
+          {
+              "role": "Signature",
+              "roleEn": "Signature",
+              "slug": "yousign",
+              "reason": "Contrats, devis et autorisations signés.",
+              "reasonEn": "Contrats, devis et autorisations signés."
+          },
+          {
+              "role": "IA structure",
+              "roleEn": "IA structure",
+              "slug": "chatgpt",
+              "reason": "Questions d’interview, scripts, planning et comptes rendus.",
+              "reasonEn": "Questions d’interview, scripts, planning et comptes rendus."
+          },
+          {
+              "role": "IA vidéo",
+              "roleEn": "IA vidéo",
+              "slug": "runway",
+              "reason": "Tests, transitions et plans ponctuels.",
+              "reasonEn": "Tests, transitions et plans ponctuels.",
+              "decision": "conditional"
+          },
+          {
+              "role": "IA vidéo générative",
+              "roleEn": "IA vidéo générative",
+              "slug": "kling-ai",
+              "reason": "À tester projet par projet.",
+              "reasonEn": "À tester projet par projet.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Transcription",
+              "roleEn": "Transcription",
+              "slug": "descript",
+              "reason": "Sous-titres, dérush et formats courts.",
+              "reasonEn": "Sous-titres, dérush et formats courts.",
+              "decision": "conditional"
+          },
+          {
+              "role": "Voix",
+              "roleEn": "Voix",
+              "slug": "elevenlabs",
+              "reason": "Voix off temporaire ou version alternative.",
+              "reasonEn": "Voix off temporaire ou version alternative.",
+              "decision": "conditional"
+          }
+      ]
   },
   {
     id: "consultant-b2b",
@@ -1602,6 +3546,588 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       workflow: ["Je prépare les points à commenter avant d'enregistrer.", "Je montre les zones Figma concernées au lieu de parler dans le vide.", "Je termine par une question de décision, pas par un vague “dis-moi ce que tu en penses”.", "Je colle la vidéo dans la page projet pour garder la trace."],
       workflowEn: ["I prepare the points before recording.", "I show the relevant Figma areas instead of speaking into the void.", "I end with a decision question, not a vague “tell me what you think”.", "I paste the video into the project page to keep the trace."],
     },
+  ],
+  "architecte-interieur-studio": [
+    {
+      title: "Brief, concept et moodboard",
+      titleEn: "Brief, concept, and moodboard",
+      description: "Le début du projet doit transformer un besoin flou en direction lisible : contraintes, style, usage, budget, références et premières options.",
+      descriptionEn: "The beginning of the project turns a vague need into a readable direction: constraints, style, use, budget, references, and early options.",
+      toolSlugs: ["notion", "chatgpt", "pinterest", "milanote", "krea-ai"],
+      workflow: ["Je synthétise le brief dans Notion avec objectifs, contraintes, budget et décisions ouvertes.", "J'utilise ChatGPT pour structurer les questions, le compte rendu et la liste de livrables.", "Je cherche l'ambiance dans Pinterest, puis je classe les références utiles dans Milanote ou Eagle.", "Je teste quelques variantes visuelles avec Krea quand le client a besoin de se projeter vite."],
+      workflowEn: ["I summarize the brief in Notion with goals, constraints, budget, and open decisions.", "I use ChatGPT to structure questions, recap, and deliverables.", "I research mood on Pinterest, then organize useful references in Milanote or Eagle.", "I test a few visual variations with Krea when the client needs to project quickly."],
+    },
+    {
+      title: "Plans, 3D et rendu client",
+      titleEn: "Plans, 3D, and client rendering",
+      description: "Le coeur de la stack doit rester court : plan propre, modèle 3D vivant, rendu convaincant et dossier de validation sans refaire le travail à chaque changement.",
+      descriptionEn: "The stack core should stay short: clean plan, living 3D model, convincing render, and approval dossier without redoing work after every change.",
+      toolSlugs: ["autocad-lt", "sketchup-pro", "layout-sketchup", "d5-render", "adobe-photoshop"],
+      workflow: ["Je prépare ou nettoie les plans 2D dans AutoCAD LT quand le DWG est nécessaire.", "Je construis les volumes, variantes et scènes dans SketchUp Pro.", "Je génère les documents lisibles dans LayOut pour garder le lien avec le modèle.", "Je produis les vues de validation dans D5 Render, puis je retouche seulement ce qui aide la décision."],
+      workflowEn: ["I prepare or clean 2D plans in AutoCAD LT when DWG is needed.", "I build volumes, options, and scenes in SketchUp Pro.", "I generate readable documents in LayOut to keep the link with the model.", "I produce approval views in D5 Render, then retouch only what helps the decision."],
+    },
+    {
+      title: "Sourcing, budget et validations",
+      titleEn: "Sourcing, budget, and approvals",
+      description: "C'est souvent là que la rentabilité se joue : mobilier, luminaires, matières, alternatives, prix, délais et validations doivent être traçables.",
+      descriptionEn: "This is often where profitability is won: furniture, lighting, materials, alternatives, prices, lead times, and approvals must be traceable.",
+      toolSlugs: ["programa", "notion", "google-workspace", "yousign"],
+      workflow: ["Je passe les références importantes en fiches avec prix, fournisseur, statut et alternative.", "Je garde les arbitrages dans Notion ou Programa, pas dans un fil de messages.", "Je partage les documents lourds dans Drive avec une structure de dossiers stable.", "Je fais signer devis, lettres de mission ou validations clés avec Yousign."],
+      workflowEn: ["I turn important references into records with price, supplier, status, and alternative.", "I keep trade-offs in Notion or Programa, not in a message thread.", "I share heavy documents in Drive with a stable folder structure.", "I sign quotes, engagement letters, or key approvals with Yousign."],
+    },
+    {
+      title: "Chantier et facturation",
+      titleEn: "Site follow-up and invoicing",
+      description: "Le suivi doit garder la trace des décisions, photos, réserves, artisans, paiements et documents finaux sans créer une couche administrative lourde.",
+      descriptionEn: "Follow-up should keep track of decisions, photos, snagging, contractors, payments, and final documents without creating heavy admin.",
+      toolSlugs: ["notion", "loom", "indy", "qonto"],
+      workflow: ["Je note décisions, photos, réserves et prochaines actions dans la page projet.", "J'utilise Loom pour expliquer une correction de plan ou une option quand une réunion n'apporte rien.", "Je facture les jalons dans Indy et je suis les paiements.", "Je garde le compte pro et les justificatifs dans Qonto pour ne pas reconstruire la compta en fin de mois."],
+      workflowEn: ["I record decisions, photos, snagging, and next actions in the project page.", "I use Loom to explain a plan correction or option when a meeting adds nothing.", "I invoice milestones in Indy and track payments.", "I keep the business account and receipts in Qonto so accounting is not rebuilt at month-end."],
+    },
+  ],
+  "scenographe-evenementiel":   [
+      {
+          "title": "Concept et intention",
+          "titleEn": "Concept et intention",
+          "description": "Structurer narration, moodboard et premières vues avant de passer en production.",
+          "descriptionEn": "Structurer narration, moodboard et premières vues avant de passer en production.",
+          "toolSlugs": [
+              "notion",
+              "milanote",
+              "shotdeck",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "3D et validation",
+          "titleEn": "3D et validation",
+          "description": "Construire le volume, rendre l’intention et faire valider les arbitrages.",
+          "descriptionEn": "Construire le volume, rendre l’intention et faire valider les arbitrages.",
+          "toolSlugs": [
+              "sketchup-pro",
+              "d5-render",
+              "twinmotion",
+              "adobe-photoshop"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Production",
+          "titleEn": "Production",
+          "description": "Suivre plans, fournisseurs, budget et fabrication.",
+          "descriptionEn": "Suivre plans, fournisseurs, budget et fabrication.",
+          "toolSlugs": [
+              "vectorworks",
+              "indesign",
+              "monday",
+              "open-cut-list"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      }
+  ],
+  "designer-stand-retail-popup":   [
+      {
+          "title": "Concept retail",
+          "titleEn": "Concept retail",
+          "description": "Aligner marque, circulation, mobilier et expérience.",
+          "descriptionEn": "Aligner marque, circulation, mobilier et expérience.",
+          "toolSlugs": [
+              "figma",
+              "adobe-illustrator",
+              "sketchup-pro",
+              "krea-ai"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Dossier fabrication",
+          "titleEn": "Dossier fabrication",
+          "description": "Transformer le concept en plans, matériaux et éléments produits.",
+          "descriptionEn": "Transformer le concept en plans, matériaux et éléments produits.",
+          "toolSlugs": [
+              "autocad",
+              "indesign",
+              "profile-builder-3",
+              "google-sheets"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Suivi production",
+          "titleEn": "Suivi production",
+          "description": "Piloter prestataires, coûts et alternatives.",
+          "descriptionEn": "Piloter prestataires, coûts et alternatives.",
+          "toolSlugs": [
+              "notion",
+              "airtable",
+              "monday",
+              "google-drive"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      }
+  ],
+  "designer-graphique-pro":   [
+      {
+          "title": "Identité et supports",
+          "titleEn": "Identité et supports",
+          "description": "Créer les sources visuelles, déclinaisons et fichiers propres.",
+          "descriptionEn": "Créer les sources visuelles, déclinaisons et fichiers propres.",
+          "toolSlugs": [
+              "adobe-illustrator",
+              "adobe-photoshop",
+              "indesign",
+              "figma"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Assets et typos",
+          "titleEn": "Assets et typos",
+          "description": "Ranger références, polices, mockups et exports.",
+          "descriptionEn": "Ranger références, polices, mockups et exports.",
+          "toolSlugs": [
+              "eagle",
+              "fontbase",
+              "adobe-acrobat",
+              "google-drive"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Livraison client",
+          "titleEn": "Livraison client",
+          "description": "Suivre brief, retours, facturation et versions.",
+          "descriptionEn": "Suivre brief, retours, facturation et versions.",
+          "toolSlugs": [
+              "notion",
+              "indy",
+              "canva",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      }
+  ],
+  "brand-designer-systeme":   [
+      {
+          "title": "Plateforme de marque",
+          "titleEn": "Plateforme de marque",
+          "description": "Structurer stratégie, moodboard et territoire visuel.",
+          "descriptionEn": "Structurer stratégie, moodboard et territoire visuel.",
+          "toolSlugs": [
+              "notion",
+              "miro",
+              "arena",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Système visuel",
+          "titleEn": "Système visuel",
+          "description": "Créer identité, guidelines et templates maintenables.",
+          "descriptionEn": "Créer identité, guidelines et templates maintenables.",
+          "toolSlugs": [
+              "figma",
+              "adobe-illustrator",
+              "indesign",
+              "brandpad"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Livraison",
+          "titleEn": "Livraison",
+          "description": "Organiser assets, variantes et règles d’usage.",
+          "descriptionEn": "Organiser assets, variantes et règles d’usage.",
+          "toolSlugs": [
+              "eagle",
+              "google-drive",
+              "specify",
+              "pitch"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      }
+  ],
+  "directeur-artistique-creative-lead":   [
+      {
+          "title": "Veille et direction",
+          "titleEn": "Veille et direction",
+          "description": "Construire une vision avec références et narration.",
+          "descriptionEn": "Construire une vision avec références et narration.",
+          "toolSlugs": [
+              "arena",
+              "shotdeck",
+              "milanote",
+              "midjourney"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Présentation client",
+          "titleEn": "Présentation client",
+          "description": "Vendre l’intention et documenter les choix.",
+          "descriptionEn": "Vendre l’intention et documenter les choix.",
+          "toolSlugs": [
+              "figma",
+              "keynote",
+              "pitch",
+              "notion"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Feedback et production",
+          "titleEn": "Feedback et production",
+          "description": "Centraliser retours, assets et versions.",
+          "descriptionEn": "Centraliser retours, assets et versions.",
+          "toolSlugs": [
+              "frame-io",
+              "eagle",
+              "google-drive",
+              "runway"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      }
+  ],
+  "webflow-nocode-creatif":   [
+      {
+          "title": "Cadrage site",
+          "titleEn": "Cadrage site",
+          "description": "Poser sitemap, wireframes et DA avant build.",
+          "descriptionEn": "Poser sitemap, wireframes et DA avant build.",
+          "toolSlugs": [
+              "relume",
+              "figma",
+              "notion",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Build Webflow",
+          "titleEn": "Build Webflow",
+          "description": "Construire CMS, pages, interactions et formulaires.",
+          "descriptionEn": "Construire CMS, pages, interactions et formulaires.",
+          "toolSlugs": [
+              "webflow",
+              "wized",
+              "memberstack",
+              "tally"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Mesure et automation",
+          "titleEn": "Mesure et automation",
+          "description": "Connecter paiements, bases, formulaires et analytics.",
+          "descriptionEn": "Connecter paiements, bases, formulaires et analytics.",
+          "toolSlugs": [
+              "make",
+              "stripe",
+              "plausible",
+              "google-search-console"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      }
+  ],
+  "monteur-video-pro":   [
+      {
+          "title": "Montage et dérush",
+          "titleEn": "Montage et dérush",
+          "description": "Structurer rushs, montage et premières versions.",
+          "descriptionEn": "Structurer rushs, montage et premières versions.",
+          "toolSlugs": [
+              "davinci-resolve",
+              "adobe-premiere-pro",
+              "descript",
+              "capcut"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Validation",
+          "titleEn": "Validation",
+          "description": "Faire commenter au bon endroit et livrer les bons exports.",
+          "descriptionEn": "Faire commenter au bon endroit et livrer les bons exports.",
+          "toolSlugs": [
+              "frame-io",
+              "google-drive",
+              "dropbox",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Finition",
+          "titleEn": "Finition",
+          "description": "Améliorer son, sous-titres, couleur et plans faibles.",
+          "descriptionEn": "Améliorer son, sous-titres, couleur et plans faibles.",
+          "toolSlugs": [
+              "adobe-audition",
+              "topaz-video",
+              "artlist",
+              "epidemic-sound"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      }
+  ],
+  "realisateur-videaste-marque":   [
+      {
+          "title": "Préproduction",
+          "titleEn": "Préproduction",
+          "description": "Préparer brief, moodboard, shotlist et planning.",
+          "descriptionEn": "Préparer brief, moodboard, shotlist et planning.",
+          "toolSlugs": [
+              "notion",
+              "milanote",
+              "shotdeck",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Postproduction",
+          "titleEn": "Postproduction",
+          "description": "Monter, étalonner, nettoyer et faire valider.",
+          "descriptionEn": "Monter, étalonner, nettoyer et faire valider.",
+          "toolSlugs": [
+              "davinci-resolve",
+              "frame-io",
+              "descript",
+              "runway"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      },
+      {
+          "title": "Business",
+          "titleEn": "Business",
+          "description": "Signer, facturer, livrer et archiver.",
+          "descriptionEn": "Signer, facturer, livrer et archiver.",
+          "toolSlugs": [
+              "yousign",
+              "indy",
+              "google-drive",
+              "riverside"
+          ],
+          "workflow": [
+              "Je clarifie le livrable attendu et la décision à obtenir.",
+              "Je garde les sources et validations dans un seul endroit.",
+              "Je livre une version exploitable, pas seulement une belle intention."
+          ],
+          "workflowEn": [
+              "I clarify the expected deliverable and the decision needed.",
+              "I keep sources and approvals in one place.",
+              "I deliver something usable, not only a nice intention."
+          ]
+      }
   ],
   "consultant-b2b": [
     {

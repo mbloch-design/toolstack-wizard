@@ -6,7 +6,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Plateforme de prototypage et collaboration pour les équipes design.",
     "shortDescriptionEn": "Prototyping and collaboration platform for design teams.",
-    "pricing": { "free": "Plan gratuit (1 prototype)", "paid": "À partir de 15$/mois/utilisateur" },
+    "pricing": {
+      "free": "Plan gratuit (1 prototype)",
+      "paid": "À partir de 15$/mois/utilisateur"
+    },
     "defaultMonthlyPrice": 15,
     "affiliateLink": "",
     "websiteUrl": "https://www.invisionapp.com",
@@ -19,7 +22,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Outil de wireframing rapide avec un rendu intentionnellement \"brouillon\".",
     "shortDescriptionEn": "Fast wireframing tool with an intentionally rough sketch look.",
-    "pricing": { "free": "Essai gratuit 30 jours", "paid": "Cloud à partir de 9$/mois" },
+    "pricing": {
+      "free": "Essai gratuit 30 jours",
+      "paid": "Cloud à partir de 9$/mois"
+    },
     "defaultMonthlyPrice": 9,
     "affiliateLink": "",
     "websiteUrl": "https://balsamiq.com",
@@ -32,7 +38,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Bibliothèque d'animations légères exportées depuis After Effects pour apps natives.",
     "shortDescriptionEn": "Lightweight animation library exported from After Effects for native apps.",
-    "pricing": { "free": "Open source / Gratuit", "paid": "LottieFiles Pro à partir de 19$/mois" },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": "LottieFiles Pro à partir de 19$/mois"
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://lottiefiles.com",
@@ -45,7 +54,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Outil de prototypage avancé avec animations et interactions sans code.",
     "shortDescriptionEn": "Advanced prototyping tool with animations and interactions without code.",
-    "pricing": { "free": "Plan gratuit disponible", "paid": "À partir de 5$/mois" },
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "À partir de 5$/mois"
+    },
     "defaultMonthlyPrice": 5,
     "affiliateLink": "",
     "websiteUrl": "https://www.framer.com",
@@ -58,7 +70,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Outil d'inspection et de handoff design vers développeurs.",
     "shortDescriptionEn": "Design inspection and handoff tool for developers.",
-    "pricing": { "free": "Essai gratuit", "paid": "À partir de 7$/mois/utilisateur" },
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "À partir de 7$/mois/utilisateur"
+    },
     "defaultMonthlyPrice": 7,
     "affiliateLink": "",
     "websiteUrl": "https://avocode.com",
@@ -71,7 +86,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Toolkit de prototypage interactif gratuit pour Mac, créé par Meta.",
     "shortDescriptionEn": "Free interactive prototyping toolkit for Mac, created by Meta.",
-    "pricing": { "free": "Gratuit", "paid": null },
+    "pricing": {
+      "free": "Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://origami.design",
@@ -84,7 +102,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Framework graphique Material Design pour les apps iOS en Swift.",
     "shortDescriptionEn": "Material Design graphics framework for iOS apps in Swift.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://github.com/material-components/material-components-ios",
@@ -97,7 +118,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Outil de wireframing IA pour équipes agiles, simple et collaboratif.",
     "shortDescriptionEn": "AI-powered wireframing tool for agile teams, simple and collaborative.",
-    "pricing": { "free": "Plan gratuit disponible", "paid": "À partir de 12$/mois/utilisateur" },
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "À partir de 12$/mois/utilisateur"
+    },
     "defaultMonthlyPrice": 12,
     "affiliateLink": "",
     "websiteUrl": "https://www.visily.ai",
@@ -110,7 +134,10 @@
     "categoryId": "prototyping",
     "shortDescription": "Outil de prototypage et collaboration design.",
     "shortDescriptionEn": "Design prototyping and collaboration tool.",
-    "pricing": { "free": "Gratuit", "paid": null },
+    "pricing": {
+      "free": "Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://pterocos.com",
@@ -123,7 +150,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Gestion de formulaires React performante avec validation intégrée.",
     "shortDescriptionEn": "Performant React form management with built-in validation.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://react-hook-form.com",
@@ -136,7 +166,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Routing React moderne, type-safe et scalable par les créateurs de TanStack Query.",
     "shortDescriptionEn": "Modern, type-safe and scalable routing for React by the TanStack team.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://tanstack.com/router",
@@ -149,7 +182,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Graphiques SVG interactifs pour React et Vue.js.",
     "shortDescriptionEn": "Interactive SVG charts for React and Vue.js.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://apexcharts.com",
@@ -162,7 +198,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque de composants React accessible, modulaire et stylisable.",
     "shortDescriptionEn": "Accessible, modular and styleable React component library.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://chakra-ui.com",
@@ -175,7 +214,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Composants UI non stylisés et accessibles pour construire des design systems React.",
     "shortDescriptionEn": "Unstyled, accessible UI components for building React design systems.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://www.radix-ui.com/primitives",
@@ -188,7 +230,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Composants UI non stylisés et accessibles par l'équipe Tailwind CSS.",
     "shortDescriptionEn": "Completely unstyled, fully accessible UI components by the Tailwind team.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://headlessui.com",
@@ -201,7 +246,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque React complète avec 100+ composants et dark mode natif.",
     "shortDescriptionEn": "Full-featured React component library with 100+ components and native dark mode.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://mantine.dev",
@@ -214,7 +262,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Framework UI déclaratif ultra-performant sans virtual DOM.",
     "shortDescriptionEn": "Declarative, ultra-performant UI framework without virtual DOM.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://www.solidjs.com",
@@ -227,7 +278,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque JavaScript d'animation professionnelle pour le web.",
     "shortDescriptionEn": "Professional JavaScript animation library for the web.",
-    "pricing": { "free": "Gratuit pour usage personnel/open source", "paid": "Club GSAP à partir de 99$/an" },
+    "pricing": {
+      "free": "Gratuit pour usage personnel/open source",
+      "paid": "Club GSAP à partir de 99$/an"
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://gsap.com",
@@ -240,7 +294,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Framework JavaScript léger pour ajouter de l'interactivité au HTML existant.",
     "shortDescriptionEn": "Lightweight JavaScript framework for adding interactivity to existing HTML.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://alpinejs.dev",
@@ -253,7 +310,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Récupération, mise en cache et synchronisation des données serveur pour React.",
     "shortDescriptionEn": "Data fetching, caching and synchronization for React applications.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://tanstack.com/query",
@@ -266,7 +326,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Le router officiel pour les applications Vue.js.",
     "shortDescriptionEn": "The official router for Vue.js applications.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://router.vuejs.org",
@@ -279,7 +342,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Composants Material Design officiels pour les applications Angular.",
     "shortDescriptionEn": "Official Material Design components for Angular applications.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://material.angular.io",
@@ -292,7 +358,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Outil de scaffolding React officiel — aujourd'hui en fin de vie.",
     "shortDescriptionEn": "Official React scaffolding tool — now end-of-life.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://create-react-app.dev",
@@ -305,7 +374,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque de visualisation de données puissante et gratuite par Apache.",
     "shortDescriptionEn": "Powerful and free data visualization library by Apache.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://echarts.apache.org",
@@ -318,7 +390,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Solution de routing complète pour les applications React.",
     "shortDescriptionEn": "A complete routing solution for React applications.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://reactrouter.com",
@@ -331,7 +406,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Composants React accessibles construits avec Radix UI et Tailwind CSS.",
     "shortDescriptionEn": "Accessible React components built with Radix UI and Tailwind CSS.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://ui.shadcn.com",
@@ -344,7 +422,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque de graphiques React construite avec D3.js.",
     "shortDescriptionEn": "React charting library built on top of D3.js.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://recharts.org",
@@ -357,7 +438,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Système de composants React haut de gamme pour applications d'entreprise.",
     "shortDescriptionEn": "High-quality React component system for enterprise applications.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://ant.design",
@@ -370,7 +454,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Architecture de gestion d'état unidirectionnel pour les apps React, par Meta.",
     "shortDescriptionEn": "Unidirectional data flow architecture for React apps, by Meta.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://facebookarchive.github.io/flux/",
@@ -383,7 +470,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Server-Side Rendering (SSR) pour les applications Angular.",
     "shortDescriptionEn": "Server-Side Rendering (SSR) for Angular applications.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://angular.io/guide/universal",
@@ -396,7 +486,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Alternative légère à React (3kb) avec la même API ES6.",
     "shortDescriptionEn": "Fast 3kb alternative to React with the same ES6 API.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://preactjs.com",
@@ -409,7 +502,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque CSS-in-JS performante pour React et autres frameworks.",
     "shortDescriptionEn": "Performant CSS-in-JS library for React and other frameworks.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://emotion.sh",
@@ -422,7 +518,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Framework GraphQL pour React permettant la colocation des données et composants.",
     "shortDescriptionEn": "GraphQL framework for React enabling data and component colocation.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://relay.dev",
@@ -435,7 +534,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Framework MVVM JavaScript pour des UIs réactives, précurseur de React et Vue.",
     "shortDescriptionEn": "JavaScript MVVM framework for reactive UIs, a precursor to React and Vue.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://knockoutjs.com",
@@ -448,7 +550,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque de graphiques JavaScript interactive et hautement configurable.",
     "shortDescriptionEn": "Interactive and highly configurable JavaScript charting library.",
-    "pricing": { "free": "Gratuit pour usage non commercial", "paid": "Licences à partir de ~1 000$/an" },
+    "pricing": {
+      "free": "Gratuit pour usage non commercial",
+      "paid": "Licences à partir de ~1 000$/an"
+    },
     "defaultMonthlyPrice": 83,
     "affiliateLink": "",
     "websiteUrl": "https://www.highcharts.com",
@@ -461,7 +566,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque JavaScript pour construire des interfaces utilisateur.",
     "shortDescriptionEn": "A JavaScript library for building user interfaces.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://react.dev",
@@ -474,7 +582,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque JavaScript légendaire pour la manipulation du DOM.",
     "shortDescriptionEn": "The legendary JavaScript library for DOM manipulation.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://jquery.com",
@@ -487,7 +598,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque de composants React implémentant le Material Design de Google.",
     "shortDescriptionEn": "React UI component library implementing Google's Material Design.",
-    "pricing": { "free": "Version de base gratuite", "paid": "MUI X Pro à partir de 180$/an/dev" },
+    "pricing": {
+      "free": "Version de base gratuite",
+      "paid": "MUI X Pro à partir de 180$/an/dev"
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://mui.com",
@@ -500,7 +614,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque JavaScript pour créer des visualisations de données sur mesure en SVG.",
     "shortDescriptionEn": "JavaScript library for creating custom data visualizations in SVG.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://d3js.org",
@@ -513,7 +630,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque de graphiques simple, propre et réactive pour le web.",
     "shortDescriptionEn": "Simple, clean and responsive charting library for the web.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://www.chartjs.org",
@@ -526,7 +646,10 @@
     "categoryId": "ui-components",
     "shortDescription": "CSS-in-JS pour styler des composants React avec du CSS dynamique.",
     "shortDescriptionEn": "CSS-in-JS library for styling React components with dynamic CSS.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://styled-components.com",
@@ -539,7 +662,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Framework UI qui compile en JavaScript vanille sans virtual DOM.",
     "shortDescriptionEn": "UI framework that compiles to vanilla JavaScript with no virtual DOM.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://svelte.dev",
@@ -552,7 +678,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Outil pour développer, documenter et tester des composants UI en isolation.",
     "shortDescriptionEn": "Tool for developing, documenting and testing UI components in isolation.",
-    "pricing": { "free": "Open source / Gratuit", "paid": "Chromatic à partir de 149$/mois" },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": "Chromatic à partir de 149$/mois"
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://storybook.js.org",
@@ -565,7 +694,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Bibliothèque pour construire et valider des formulaires React.",
     "shortDescriptionEn": "Library for building and validating React forms.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://formik.org",
@@ -578,7 +710,10 @@
     "categoryId": "ui-components",
     "shortDescription": "Outil de scaffolding officiel pour créer et configurer des projets Vue.js.",
     "shortDescriptionEn": "Official scaffolding tool for creating and configuring Vue.js projects.",
-    "pricing": { "free": "Open source / Gratuit", "paid": null },
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://cli.vuejs.org",
@@ -8431,7 +8566,7 @@
       "free": "Gratuit avec 35 crédits/mois",
       "paid": "Junior 25$/mois · Senior 100$/mois · Scale 200$/mois"
     },
-    "defaultMonthlyPrice": 23.0,
+    "defaultMonthlyPrice": 23,
     "affiliateLink": "",
     "websiteUrl": "https://rork.com",
     "logo": ""
@@ -8655,7 +8790,7 @@
       "free": "Gratuit avec fonctions de base",
       "paid": "Pro à partir de 6€/mois"
     },
-    "defaultMonthlyPrice": 6.0,
+    "defaultMonthlyPrice": 6,
     "affiliateLink": "",
     "websiteUrl": "https://fellow.app",
     "logo": ""
@@ -8671,7 +8806,7 @@
       "free": "Gratuit en cloud",
       "paid": "Pro 5€/membre/mois"
     },
-    "defaultMonthlyPrice": 5.0,
+    "defaultMonthlyPrice": 5,
     "affiliateLink": "",
     "websiteUrl": "https://plane.so",
     "logo": ""
@@ -8687,7 +8822,7 @@
       "free": "Gratuit et open-source",
       "paid": "Plus 5€/mois"
     },
-    "defaultMonthlyPrice": 5.0,
+    "defaultMonthlyPrice": 5,
     "affiliateLink": "",
     "websiteUrl": "https://excalidraw.com",
     "logo": ""
@@ -8703,7 +8838,7 @@
       "free": "Gratuit avec fonctions de base",
       "paid": "Pro 20€/mois"
     },
-    "defaultMonthlyPrice": 20.0,
+    "defaultMonthlyPrice": 20,
     "affiliateLink": "",
     "websiteUrl": "https://scribehow.com",
     "logo": ""
@@ -8735,7 +8870,7 @@
       "free": "Gratuit pour tester",
       "paid": "Pro ~31€/mois"
     },
-    "defaultMonthlyPrice": 31.0,
+    "defaultMonthlyPrice": 31,
     "affiliateLink": "",
     "websiteUrl": "https://www.gumloop.com",
     "logo": ""
@@ -8751,7 +8886,7 @@
       "free": "Gratuit avec domaine dub.co",
       "paid": "Pro ~21€/mois"
     },
-    "defaultMonthlyPrice": 21.0,
+    "defaultMonthlyPrice": 21,
     "affiliateLink": "",
     "websiteUrl": "https://dub.co",
     "logo": ""
@@ -8767,7 +8902,7 @@
       "free": "Gratuit avec 1 chatbot basique",
       "paid": "Hobby ~27€/mois"
     },
-    "defaultMonthlyPrice": 27.0,
+    "defaultMonthlyPrice": 27,
     "affiliateLink": "",
     "websiteUrl": "https://www.chatbase.co",
     "logo": ""
@@ -8783,7 +8918,7 @@
       "free": "Gratuit jusqu'à 100 éléments",
       "paid": "Pro 8€/mois"
     },
-    "defaultMonthlyPrice": 8.0,
+    "defaultMonthlyPrice": 8,
     "affiliateLink": "",
     "websiteUrl": "https://milanote.com",
     "logo": ""
@@ -8831,7 +8966,7 @@
       "free": "Essai gratuit 30 jours",
       "paid": "Simple Start ~32€/mois"
     },
-    "defaultMonthlyPrice": 32.0,
+    "defaultMonthlyPrice": 32,
     "affiliateLink": "",
     "websiteUrl": "https://quickbooks.intuit.com",
     "logo": ""
@@ -8863,7 +8998,7 @@
       "free": "Pas de plan gratuit",
       "paid": "Domaines .com à partir de ~9$/an"
     },
-    "defaultMonthlyPrice": 5.0,
+    "defaultMonthlyPrice": 5,
     "affiliateLink": "",
     "websiteUrl": "https://www.namecheap.com",
     "logo": ""
@@ -9378,6 +9513,806 @@
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://pixco.io",
     "websiteUrl": "https://pixco.io",
+    "logo": ""
+  },
+  {
+    "id": "layout-sketchup",
+    "slug": "layout-sketchup",
+    "name": "LayOut",
+    "categoryId": "design-tools",
+    "shortDescription": "Mise en page 2D liée aux modèles SketchUp : plans, coupes, cotations et dossiers client.",
+    "shortDescriptionEn": "2D documentation linked to SketchUp models: plans, sections, dimensions and client decks.",
+    "pricing": {
+      "free": "Inclus avec SketchUp Pro",
+      "paid": "Inclus dans SketchUp Pro"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.sketchup.com/products/layout",
+    "websiteUrl": "https://www.sketchup.com/products/layout",
+    "logo": ""
+  },
+  {
+    "id": "autocad-lt",
+    "slug": "autocad-lt",
+    "name": "AutoCAD LT",
+    "categoryId": "design-tools",
+    "shortDescription": "Dessin 2D précis pour plans techniques, cotations et échanges artisans.",
+    "shortDescriptionEn": "Precise 2D drafting for technical plans, dimensions and contractor exchanges.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "À partir de 63€/mois environ"
+    },
+    "defaultMonthlyPrice": 63,
+    "affiliateLink": "https://www.autodesk.com/products/autocad-lt/overview",
+    "websiteUrl": "https://www.autodesk.com/products/autocad-lt/overview",
+    "logo": ""
+  },
+  {
+    "id": "archicad",
+    "slug": "archicad",
+    "name": "Archicad",
+    "categoryId": "design-tools",
+    "shortDescription": "Logiciel BIM pour projets architecturaux coordonnés, dossiers techniques et grands projets.",
+    "shortDescriptionEn": "BIM software for coordinated architecture projects, technical files and larger scopes.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Sur abonnement / devis selon pays"
+    },
+    "defaultMonthlyPrice": 250,
+    "affiliateLink": "https://graphisoft.com/solutions/archicad",
+    "websiteUrl": "https://graphisoft.com/solutions/archicad",
+    "logo": ""
+  },
+  {
+    "id": "rhino",
+    "slug": "rhino",
+    "name": "Rhino",
+    "categoryId": "design-tools",
+    "shortDescription": "Modélisation 3D précise pour formes complexes, mobilier sur mesure et volumes organiques.",
+    "shortDescriptionEn": "Precise 3D modelling for complex shapes, custom furniture and organic volumes.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Licence perpétuelle"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.rhino3d.com",
+    "websiteUrl": "https://www.rhino3d.com",
+    "logo": ""
+  },
+  {
+    "id": "fredo6-bundle",
+    "slug": "fredo6-bundle",
+    "name": "Fredo6 Bundle",
+    "categoryId": "design-tools",
+    "shortDescription": "Suite de plugins SketchUp pour accélérer la modélisation, les courbes, arrondis et déformations.",
+    "shortDescriptionEn": "SketchUp plugin suite for faster modelling, curves, rounded corners and deformations.",
+    "pricing": {
+      "free": "Certains plugins gratuits",
+      "paid": "Licences par plugin"
+    },
+    "defaultMonthlyPrice": 4,
+    "affiliateLink": "https://sketchucation.com/pluginstore",
+    "websiteUrl": "https://sketchucation.com/pluginstore",
+    "logo": ""
+  },
+  {
+    "id": "joint-push-pull",
+    "slug": "joint-push-pull",
+    "name": "Joint Push Pull",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp pour extruder des surfaces complexes et créer des épaisseurs propres.",
+    "shortDescriptionEn": "SketchUp plugin to extrude complex surfaces and create clean thicknesses.",
+    "pricing": {
+      "free": "Selon licence SketchUcation",
+      "paid": "Donation/licence selon bundle"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://sketchucation.com/pluginstore",
+    "websiteUrl": "https://sketchucation.com/pluginstore",
+    "logo": ""
+  },
+  {
+    "id": "fredocorner",
+    "slug": "fredocorner",
+    "name": "FredoCorner",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp pour chanfreins, arrondis, angles adoucis et détails de mobilier.",
+    "shortDescriptionEn": "SketchUp plugin for bevels, rounded corners and furniture details.",
+    "pricing": {
+      "free": "Selon licence SketchUcation",
+      "paid": "Donation/licence selon bundle"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://sketchucation.com/pluginstore",
+    "websiteUrl": "https://sketchucation.com/pluginstore",
+    "logo": ""
+  },
+  {
+    "id": "curviloft",
+    "slug": "curviloft",
+    "name": "Curviloft",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp pour générer surfaces tendues, formes organiques et volumes courbes.",
+    "shortDescriptionEn": "SketchUp plugin for lofted surfaces, organic shapes and curved volumes.",
+    "pricing": {
+      "free": "Selon licence SketchUcation",
+      "paid": "Donation/licence selon bundle"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://sketchucation.com/pluginstore",
+    "websiteUrl": "https://sketchucation.com/pluginstore",
+    "logo": ""
+  },
+  {
+    "id": "profile-builder-3",
+    "slug": "profile-builder-3",
+    "name": "Profile Builder 3",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp pour créer rapidement plinthes, corniches, tasseaux, rails et profils répétitifs.",
+    "shortDescriptionEn": "SketchUp plugin to quickly create baseboards, cornices, battens, rails and repeating profiles.",
+    "pricing": {
+      "free": "Essai disponible",
+      "paid": "Licence payante"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://profilebuilder4sketchup.com",
+    "websiteUrl": "https://profilebuilder4sketchup.com",
+    "logo": ""
+  },
+  {
+    "id": "skatter",
+    "slug": "skatter",
+    "name": "Skatter",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp pour distribuer végétation, livres, accessoires et objets répétés dans les scènes.",
+    "shortDescriptionEn": "SketchUp plugin to scatter vegetation, books, accessories and repeated objects in scenes.",
+    "pricing": {
+      "free": "Essai disponible",
+      "paid": "Licence payante"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://getskatter.com",
+    "websiteUrl": "https://getskatter.com",
+    "logo": ""
+  },
+  {
+    "id": "transmutr",
+    "slug": "transmutr",
+    "name": "Transmutr",
+    "categoryId": "design-tools",
+    "shortDescription": "Conversion et optimisation de modèles 3D pour importer des assets lourds dans SketchUp sans casser le fichier.",
+    "shortDescriptionEn": "3D model conversion and optimization to import heavy assets into SketchUp cleanly.",
+    "pricing": {
+      "free": "Essai disponible",
+      "paid": "Licence payante"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "https://transmutr.com",
+    "websiteUrl": "https://transmutr.com",
+    "logo": ""
+  },
+  {
+    "id": "cleanup3",
+    "slug": "cleanup3",
+    "name": "CleanUp³",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp pour nettoyer les modèles, supprimer les éléments inutiles et garder des fichiers légers.",
+    "shortDescriptionEn": "SketchUp plugin to clean models, remove unused geometry and keep files light.",
+    "pricing": {
+      "free": "Gratuit",
+      "paid": "Don possible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
+    "websiteUrl": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
+    "logo": ""
+  },
+  {
+    "id": "solid-inspector2",
+    "slug": "solid-inspector2",
+    "name": "Solid Inspector²",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp pour vérifier les volumes solides et repérer les problèmes de géométrie.",
+    "shortDescriptionEn": "SketchUp plugin to inspect solids and detect geometry issues.",
+    "pricing": {
+      "free": "Gratuit",
+      "paid": "Don possible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://extensions.sketchup.com",
+    "websiteUrl": "https://extensions.sketchup.com",
+    "logo": ""
+  },
+  {
+    "id": "eneroth-face-creator",
+    "slug": "eneroth-face-creator",
+    "name": "Eneroth Face Creator",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp utile après import DWG pour recréer des faces à partir de lignes.",
+    "shortDescriptionEn": "SketchUp plugin useful after DWG import to recreate faces from linework.",
+    "pricing": {
+      "free": "Gratuit",
+      "paid": "Non"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://extensions.sketchup.com",
+    "websiteUrl": "https://extensions.sketchup.com",
+    "logo": ""
+  },
+  {
+    "id": "1001bit-tools",
+    "slug": "1001bit-tools",
+    "name": "1001bit Tools",
+    "categoryId": "design-tools",
+    "shortDescription": "Outils SketchUp pour éléments architecturaux simples : escaliers, ouvertures et détails constructifs.",
+    "shortDescriptionEn": "SketchUp tools for simple architectural elements: stairs, openings and construction details.",
+    "pricing": {
+      "free": "Version gratuite",
+      "paid": "Version Pro disponible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.1001bit.com",
+    "websiteUrl": "https://www.1001bit.com",
+    "logo": ""
+  },
+  {
+    "id": "flextools",
+    "slug": "flextools",
+    "name": "FlexTools",
+    "categoryId": "design-tools",
+    "shortDescription": "Composants dynamiques SketchUp pour portes, fenêtres, ouvertures et éléments paramétriques.",
+    "shortDescriptionEn": "Dynamic SketchUp components for doors, windows, openings and parametric elements.",
+    "pricing": {
+      "free": "Essai disponible",
+      "paid": "Abonnement/licence"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "https://flextools.cc",
+    "websiteUrl": "https://flextools.cc",
+    "logo": ""
+  },
+  {
+    "id": "d5-render",
+    "slug": "d5-render",
+    "name": "D5 Render",
+    "categoryId": "design-tools",
+    "shortDescription": "Rendu temps réel pour architecture intérieure, scènes immersives et exports rapides depuis SketchUp, Revit ou Rhino.",
+    "shortDescriptionEn": "Real-time rendering for interior design, immersive scenes and fast exports from SketchUp, Revit or Rhino.",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "D5 Pro à partir de ~38€/mois"
+    },
+    "defaultMonthlyPrice": 38,
+    "affiliateLink": "https://www.d5render.com",
+    "websiteUrl": "https://www.d5render.com",
+    "logo": ""
+  },
+  {
+    "id": "twinmotion",
+    "slug": "twinmotion",
+    "name": "Twinmotion",
+    "categoryId": "design-tools",
+    "shortDescription": "Visualisation 3D temps réel pour ambiances, parcours, vidéos et présentations immersives.",
+    "shortDescriptionEn": "Real-time 3D visualization for atmosphere, walkthroughs, videos and immersive presentations.",
+    "pricing": {
+      "free": "Gratuit selon usage / essai",
+      "paid": "Licence commerciale selon cas"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.twinmotion.com",
+    "websiteUrl": "https://www.twinmotion.com",
+    "logo": ""
+  },
+  {
+    "id": "v-ray",
+    "slug": "v-ray",
+    "name": "V-Ray",
+    "categoryId": "design-tools",
+    "shortDescription": "Moteur de rendu photoréaliste pour images premium, architecture, produit et visualisation haut de gamme.",
+    "shortDescriptionEn": "Photorealistic render engine for premium images, architecture, product and high-end visualization.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Abonnement Chaos"
+    },
+    "defaultMonthlyPrice": 55,
+    "affiliateLink": "https://www.chaos.com/vray",
+    "websiteUrl": "https://www.chaos.com/vray",
+    "logo": ""
+  },
+  {
+    "id": "programa",
+    "slug": "programa",
+    "name": "Programa",
+    "categoryId": "project-management",
+    "shortDescription": "Plateforme FF&E pour designers et architectes d’intérieur : sourcing, fiches produits, fournisseurs, validations et achats.",
+    "shortDescriptionEn": "FF&E platform for interior designers: sourcing, schedules, suppliers, approvals and procurement.",
+    "pricing": {
+      "free": "Essai disponible",
+      "paid": "Abonnement payant"
+    },
+    "defaultMonthlyPrice": 49,
+    "affiliateLink": "https://programa.design",
+    "websiteUrl": "https://programa.design",
+    "logo": ""
+  },
+  {
+    "id": "pinterest",
+    "slug": "pinterest",
+    "name": "Pinterest",
+    "categoryId": "creation",
+    "shortDescription": "Recherche d’inspirations, moodboards, références d’ambiances, matériaux et détails visuels.",
+    "shortDescriptionEn": "Inspiration search, moodboards, references, materials and visual details.",
+    "pricing": {
+      "free": "Gratuit",
+      "paid": "Publicité optionnelle"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.pinterest.com",
+    "websiteUrl": "https://www.pinterest.com",
+    "logo": ""
+  },
+  {
+    "id": "arena",
+    "slug": "arena",
+    "name": "Are.na",
+    "categoryId": "organization",
+    "shortDescription": "Veille visuelle et curation de références plus éditoriales que les plateformes d’inspiration classiques.",
+    "shortDescriptionEn": "Visual research and reference curation with a more editorial feel than classic inspiration platforms.",
+    "pricing": {
+      "free": "Plan gratuit",
+      "paid": "Premium payant"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "https://www.are.na",
+    "websiteUrl": "https://www.are.na",
+    "logo": ""
+  },
+  {
+    "id": "eagle",
+    "slug": "eagle",
+    "name": "Eagle",
+    "categoryId": "organization",
+    "shortDescription": "Bibliothèque locale pour organiser images, matières, textures, références, plans et inspirations.",
+    "shortDescriptionEn": "Local library to organize images, materials, textures, references, plans and inspiration.",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Licence perpétuelle"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://eagle.cool",
+    "websiteUrl": "https://eagle.cool",
+    "logo": ""
+  },
+  {
+    "id": "figma-slides",
+    "slug": "figma-slides",
+    "name": "Figma Slides",
+    "categoryId": "design-tools",
+    "shortDescription": "Présentations visuelles rapides dans l’écosystème Figma pour concepts, avant-projets et revues client.",
+    "shortDescriptionEn": "Fast visual presentations in the Figma ecosystem for concepts, early design and client reviews.",
+    "pricing": {
+      "free": "Inclus selon plan Figma",
+      "paid": "Selon plan Figma"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.figma.com/slides/",
+    "websiteUrl": "https://www.figma.com/slides/",
+    "logo": ""
+  },
+  {
+    "id": "yousign",
+    "slug": "yousign",
+    "name": "Yousign",
+    "categoryId": "legal-contracts",
+    "shortDescription": "Signature électronique pour devis, contrats, lettres de mission et validations client.",
+    "shortDescriptionEn": "Electronic signature for quotes, contracts, engagement letters and client approvals.",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Plans payants"
+    },
+    "defaultMonthlyPrice": 9,
+    "affiliateLink": "https://yousign.com",
+    "websiteUrl": "https://yousign.com",
+    "logo": ""
+  },
+  {
+    "id": "vectorworks",
+    "slug": "vectorworks",
+    "name": "Vectorworks",
+    "categoryId": "design-tools",
+    "shortDescription": "CAO/BIM et conception 2D/3D très utilisée en architecture, scénographie et événementiel.",
+    "shortDescriptionEn": "CAD/BIM and 2D/3D design used in architecture, scenography, and events.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 153€/mois environ"
+    },
+    "defaultMonthlyPrice": 153,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.vectorworks.net",
+    "logo": ""
+  },
+  {
+    "id": "fontbase",
+    "slug": "fontbase",
+    "name": "FontBase",
+    "categoryId": "design-tools",
+    "shortDescription": "Gestionnaire de fontes simple pour organiser, activer et tester ses typographies.",
+    "shortDescriptionEn": "Simple font manager to organize, activate, and test typefaces.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://fontba.se",
+    "logo": ""
+  },
+  {
+    "id": "adobe-acrobat",
+    "slug": "adobe-acrobat",
+    "name": "Adobe Acrobat Pro",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Outil de référence pour contrôler, annoter, signer et préparer des PDF professionnels.",
+    "shortDescriptionEn": "Reference tool to check, annotate, sign, and prepare professional PDFs.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 20€/mois environ"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.adobe.com/acrobat.html",
+    "logo": ""
+  },
+  {
+    "id": "adobe-express",
+    "slug": "adobe-express",
+    "name": "Adobe Express",
+    "categoryId": "creation",
+    "shortDescription": "Création rapide de supports de marque, formats sociaux et déclinaisons visuelles.",
+    "shortDescriptionEn": "Fast creation of branded assets, social formats, and visual variations.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 10€/mois environ"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.adobe.com/express/",
+    "logo": ""
+  },
+  {
+    "id": "keynote",
+    "slug": "keynote",
+    "name": "Keynote",
+    "categoryId": "creation",
+    "shortDescription": "Outil Apple pour présentations visuelles, pitchs créatifs et dossiers clients.",
+    "shortDescriptionEn": "Apple presentation tool for visual decks, creative pitches, and client dossiers.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.apple.com/keynote/",
+    "logo": ""
+  },
+  {
+    "id": "shotdeck",
+    "slug": "shotdeck",
+    "name": "ShotDeck",
+    "categoryId": "creation",
+    "shortDescription": "Base de références cinématographiques pour moodboards, cadrages, lumière et direction image.",
+    "shortDescriptionEn": "Cinematic reference database for moodboards, framing, lighting, and art direction.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 13€/mois environ"
+    },
+    "defaultMonthlyPrice": 13,
+    "affiliateLink": "",
+    "websiteUrl": "https://shotdeck.com",
+    "logo": ""
+  },
+  {
+    "id": "figjam",
+    "slug": "figjam",
+    "name": "FigJam",
+    "categoryId": "design-tools",
+    "shortDescription": "Whiteboard collaboratif pour ateliers, parcours, cadrage UX et idéation.",
+    "shortDescriptionEn": "Collaborative whiteboard for workshops, journeys, UX framing, and ideation.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 5€/mois environ"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.figma.com/figjam/",
+    "logo": ""
+  },
+  {
+    "id": "dovetail",
+    "slug": "dovetail",
+    "name": "Dovetail",
+    "categoryId": "analytics",
+    "shortDescription": "Recherche utilisateur, analyse d’interviews, tags, insights et repository research.",
+    "shortDescriptionEn": "User research, interview analysis, tagging, insights, and research repository.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 29€/mois environ"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "",
+    "websiteUrl": "https://dovetail.com",
+    "logo": ""
+  },
+  {
+    "id": "lookback",
+    "slug": "lookback",
+    "name": "Lookback",
+    "categoryId": "analytics",
+    "shortDescription": "Tests utilisateurs et interviews vidéo pour observer les parcours en direct ou asynchrone.",
+    "shortDescriptionEn": "User testing and video interviews to observe journeys live or asynchronously.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 25€/mois environ"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.lookback.com",
+    "logo": ""
+  },
+  {
+    "id": "relume",
+    "slug": "relume",
+    "name": "Relume",
+    "categoryId": "nocode-web",
+    "shortDescription": "Sitemap, wireframes et librairie de sections pour accélérer les sites Webflow et Figma.",
+    "shortDescriptionEn": "Sitemaps, wireframes, and section library to speed up Webflow and Figma sites.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 32€/mois environ"
+    },
+    "defaultMonthlyPrice": 32,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.relume.io",
+    "logo": ""
+  },
+  {
+    "id": "lottiefiles",
+    "slug": "lottiefiles",
+    "name": "LottieFiles",
+    "categoryId": "creation",
+    "shortDescription": "Plateforme pour importer, prévisualiser et livrer des animations Lottie légères.",
+    "shortDescriptionEn": "Platform to import, preview, and ship lightweight Lottie animations.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 20€/mois environ"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "",
+    "websiteUrl": "https://lottiefiles.com",
+    "logo": ""
+  },
+  {
+    "id": "gsap",
+    "slug": "gsap",
+    "name": "GSAP",
+    "categoryId": "nocode-web",
+    "shortDescription": "Bibliothèque d’animation web avancée pour interactions, micro-animations et expériences immersives.",
+    "shortDescriptionEn": "Advanced web animation library for interactions, micro-animations, and immersive experiences.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://gsap.com",
+    "logo": ""
+  },
+  {
+    "id": "memberstack",
+    "slug": "memberstack",
+    "name": "Memberstack",
+    "categoryId": "nocode-web",
+    "shortDescription": "Membership et authentification no-code pour sites Webflow et produits légers.",
+    "shortDescriptionEn": "No-code membership and authentication for Webflow sites and lightweight products.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 29€/mois environ"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.memberstack.com",
+    "logo": ""
+  },
+  {
+    "id": "whalesync",
+    "slug": "whalesync",
+    "name": "Whalesync",
+    "categoryId": "automation",
+    "shortDescription": "Synchronisation no-code entre Webflow, Airtable, Notion et bases de données.",
+    "shortDescriptionEn": "No-code sync between Webflow, Airtable, Notion, and databases.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 39€/mois environ"
+    },
+    "defaultMonthlyPrice": 39,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.whalesync.com",
+    "logo": ""
+  },
+  {
+    "id": "cinema-4d",
+    "slug": "cinema-4d",
+    "name": "Cinema 4D",
+    "categoryId": "creation",
+    "shortDescription": "3D orientée motion design, visualisation produit et animation professionnelle.",
+    "shortDescriptionEn": "3D tool for motion design, product visualization, and professional animation.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 95€/mois environ"
+    },
+    "defaultMonthlyPrice": 95,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.maxon.net/cinema-4d",
+    "logo": ""
+  },
+  {
+    "id": "cavalry",
+    "slug": "cavalry",
+    "name": "Cavalry",
+    "categoryId": "creation",
+    "shortDescription": "Animation 2D procédurale et motion design rapide, utile pour systèmes graphiques animés.",
+    "shortDescriptionEn": "Procedural 2D animation and fast motion design for animated graphic systems.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 20€/mois environ"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "",
+    "websiteUrl": "https://cavalry.scenegroup.co",
+    "logo": ""
+  },
+  {
+    "id": "artlist",
+    "slug": "artlist",
+    "name": "Artlist",
+    "categoryId": "creation",
+    "shortDescription": "Musique, effets sonores et assets vidéo sous licence pour productions créatives.",
+    "shortDescriptionEn": "Licensed music, sound effects, and video assets for creative productions.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 17€/mois environ"
+    },
+    "defaultMonthlyPrice": 17,
+    "affiliateLink": "",
+    "websiteUrl": "https://artlist.io",
+    "logo": ""
+  },
+  {
+    "id": "epidemic-sound",
+    "slug": "epidemic-sound",
+    "name": "Epidemic Sound",
+    "categoryId": "creation",
+    "shortDescription": "Bibliothèque de musique et effets sonores pour créateurs, marques et vidéos clients.",
+    "shortDescriptionEn": "Music and sound effects library for creators, brands, and client videos.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 13€/mois environ"
+    },
+    "defaultMonthlyPrice": 13,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.epidemicsound.com",
+    "logo": ""
+  },
+  {
+    "id": "adobe-audition",
+    "slug": "adobe-audition",
+    "name": "Adobe Audition",
+    "categoryId": "creation",
+    "shortDescription": "Nettoyage audio, mixage, voix off et postproduction sonore dans l’écosystème Adobe.",
+    "shortDescriptionEn": "Audio cleanup, mixing, voiceover, and sound post-production in the Adobe ecosystem.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 26€/mois environ"
+    },
+    "defaultMonthlyPrice": 26,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.adobe.com/products/audition.html",
+    "logo": ""
+  },
+  {
+    "id": "open-cut-list",
+    "slug": "open-cut-list",
+    "name": "OpenCutList",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugin SketchUp pour débits, listes de coupe, panneaux et préparation fabrication.",
+    "shortDescriptionEn": "SketchUp plugin for cut lists, panels, and fabrication preparation.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.opencutlist.org",
+    "logo": ""
+  },
+  {
+    "id": "astute-graphics",
+    "slug": "astute-graphics",
+    "name": "Astute Graphics",
+    "categoryId": "design-tools",
+    "shortDescription": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité.",
+    "shortDescriptionEn": "Illustrator plugins for advanced vector work, lettering, shapes, cleanup, and productivity.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 14€/mois environ"
+    },
+    "defaultMonthlyPrice": 14,
+    "affiliateLink": "",
+    "websiteUrl": "https://astutegraphics.com",
+    "logo": ""
+  },
+  {
+    "id": "brandpad",
+    "slug": "brandpad",
+    "name": "Brandpad",
+    "categoryId": "design-tools",
+    "shortDescription": "Plateforme de brand guidelines en ligne pour livrer et maintenir une identité.",
+    "shortDescriptionEn": "Online brand guidelines platform to deliver and maintain an identity.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 30€/mois environ"
+    },
+    "defaultMonthlyPrice": 30,
+    "affiliateLink": "",
+    "websiteUrl": "https://brandpad.io",
+    "logo": ""
+  },
+  {
+    "id": "specify",
+    "slug": "specify",
+    "name": "Specify",
+    "categoryId": "design-tools",
+    "shortDescription": "Synchronisation de design tokens entre outils design et code.",
+    "shortDescriptionEn": "Design token synchronization between design tools and code.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://specifyapp.com",
+    "logo": ""
+  },
+  {
+    "id": "topaz-video",
+    "slug": "topaz-video",
+    "name": "Topaz Video",
+    "categoryId": "creation",
+    "shortDescription": "Amélioration, stabilisation, upscale et nettoyage vidéo assistés par IA.",
+    "shortDescriptionEn": "AI-assisted video enhancement, stabilization, upscaling, and cleanup.",
+    "pricing": {
+      "free": "Essai ou plan selon usage",
+      "paid": "À partir de 25€/mois environ"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.topazlabs.com/topaz-video-ai",
+    "logo": ""
+  },
+  {
+    "id": "google-search-console",
+    "slug": "google-search-console",
+    "name": "Google Search Console",
+    "categoryId": "analytics",
+    "shortDescription": "Suivi SEO gratuit : indexation, requêtes, pages, erreurs et performance de recherche.",
+    "shortDescriptionEn": "Free SEO monitoring: indexing, queries, pages, errors, and search performance.",
+    "pricing": {
+      "free": "Gratuit",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://search.google.com/search-console/about",
     "logo": ""
   }
 ]
