@@ -43,14 +43,24 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.tooltrim.com" }],
+      "destination": "https://tooltrim.com/:path*",
+      "permanent": true
+    },
     { "source": "/", "destination": "/fr", "permanent": true },
     { "source": "/tool/:slug", "destination": "/fr/tool/:slug", "permanent": true },
     { "source": "/category/:slug", "destination": "/fr/category/:slug", "permanent": true },
-    { "source": "/article/:slug", "destination": "/fr/article/:slug", "permanent": true },
+    { "source": "/article/:slug", "destination": "/fr/guide/:slug", "permanent": true },
+    { "source": "/fr/article/:slug", "destination": "/fr/guide/:slug", "permanent": true },
+    { "source": "/en/article/:slug", "destination": "/en/guide/:slug", "permanent": true },
+    { "source": "/en/tool/:slug/prix", "destination": "/en/tool/:slug/pricing", "permanent": true },
+    { "source": "/fr/tool/:slug/pricing", "destination": "/fr/tool/:slug/prix", "permanent": true },
     { "source": "/methodology", "destination": "/fr/methodology", "permanent": true },
-    { "source": "/blog/:slug", "destination": "/fr/article/:slug", "permanent": true },
-    { "source": "/blog", "destination": "/fr", "permanent": true },
-    { "source": "/guides", "destination": "/fr", "permanent": true }
+    { "source": "/blog/:slug", "destination": "/fr/guide/:slug", "permanent": true },
+    { "source": "/blog", "destination": "/fr/guides", "permanent": true },
+    { "source": "/guides", "destination": "/fr/guides", "permanent": true }
   ],
   "rewrites": [
     { "source": "/fr/:path*", "destination": "/index.html" },

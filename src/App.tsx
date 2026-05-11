@@ -100,7 +100,7 @@ const App = () => (
             {/* Legacy redirects */}
             <Route path="/methodology" element={<Navigate to="/fr/methodology" replace />} />
             <Route path="/blog" element={<Navigate to="/fr/guides" replace />} />
-            <Route path="/blog/*" element={<Navigate to="/fr/guides" replace />} />
+            <Route path="/blog/:slug" element={<RedirectBlogToGuide />} />
             <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
             <Route path="/tool/:slug" element={<RedirectToolToFr />} />
             <Route path="/article/:slug" element={<RedirectArticleToFr />} />
@@ -181,6 +181,12 @@ function RedirectArticleToFr() {
 function RedirectArticleToGuide() {
   const { slug, lang } = useParams();
   return <Navigate to={`/${lang || "fr"}/guide/${slug}`} replace />;
+}
+
+/** Redirect /blog/:slug → /fr/guide/:slug */
+function RedirectBlogToGuide() {
+  const { slug } = useParams();
+  return <Navigate to={`/fr/guide/${slug}`} replace />;
 }
 
 /** Redirect /category/:slug → /fr/category/:slug */
