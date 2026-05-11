@@ -116,7 +116,47 @@ export type StackSubProfile =
   | "event-coverage"
   | "brand-content"
   | "repurposing"
-  | "community-creator";
+  | "community-creator"
+  | "fractional-coo"
+  | "ops-manager"
+  | "bizops"
+  | "revops"
+  | "sales-ops"
+  | "customer-ops"
+  | "delivery-ops"
+  | "agency-ops"
+  | "people-ops"
+  | "finance-ops"
+  | "vendor-ops"
+  | "marketing-ops"
+  | "product-ops"
+  | "reporting-ops"
+  | "automation-ops"
+  | "ai-ops"
+  | "remote-ops"
+  | "legal-compliance-ops"
+  | "ecommerce-ops"
+  | "event-ops"
+  | "solopreneur"
+  | "multi-hat-freelance"
+  | "solo-consultant"
+  | "indie-maker"
+  | "creator-operator"
+  | "productized-service"
+  | "solo-coach-trainer"
+  | "micro-agency-one"
+  | "online-business-manager"
+  | "solo-nocode-builder"
+  | "solo-ai-automation"
+  | "solo-sales-bd"
+  | "local-consultant"
+  | "solo-admin-office"
+  | "solo-media-newsletter"
+  | "light-ecommerce-solo"
+  | "solo-course-creator"
+  | "premium-knowledge-worker"
+  | "ai-augmented-solo"
+  | "b2b-all-in-one-solo";
 
 export interface StackToolSlot {
   role: string;
@@ -219,13 +259,13 @@ export const STACK_SUB_PROFILES: { value: StackSubProfile | "all"; label: string
   { value: "training", label: "Formation", labelEn: "Training", personas: ["consultant", "content"] },
   { value: "research", label: "Recherche / veille", labelEn: "Research", personas: ["consultant", "content"] },
   { value: "automation", label: "Automatisation", labelEn: "Automation", personas: ["ops", "solo", "dev", "consultant"] },
-  { value: "operations", label: "Ops", labelEn: "Ops", personas: ["ops", "consultant"] },
-  { value: "ecommerce", label: "E-commerce", labelEn: "E-commerce", personas: ["ops", "consultant"] },
+  { value: "operations", label: "Ops", labelEn: "Ops", personas: ["ops", "consultant", "solo"] },
+  { value: "ecommerce", label: "E-commerce", labelEn: "E-commerce", personas: ["ops", "consultant", "solo"] },
   { value: "product", label: "Produit", labelEn: "Product", personas: ["dev", "ops", "consultant"] },
-  { value: "analytics", label: "Analytics", labelEn: "Analytics", personas: ["ops", "dev", "consultant"] },
+  { value: "analytics", label: "Analytics", labelEn: "Analytics", personas: ["ops", "dev", "consultant", "solo"] },
   { value: "ai-coding", label: "IA code", labelEn: "AI coding", personas: ["dev"] },
-  { value: "no-code", label: "No-code", labelEn: "No-code", personas: ["solo", "dev", "consultant"] },
-  { value: "admin", label: "Admin / finance", labelEn: "Admin / finance", personas: ["solo", "consultant"] },
+  { value: "no-code", label: "No-code", labelEn: "No-code", personas: ["solo", "dev", "consultant", "ops"] },
+  { value: "admin", label: "Admin / finance", labelEn: "Admin / finance", personas: ["solo", "consultant", "ops"] },
   { value: "agency", label: "Agence", labelEn: "Agency", personas: ["ops"] },
   { value: "full-stack", label: "Full-stack", labelEn: "Full-stack", personas: ["dev"] },
   { value: "front-end", label: "Front-end", labelEn: "Front-end", personas: ["dev"] },
@@ -313,6 +353,46 @@ export const STACK_SUB_PROFILES: { value: StackSubProfile | "all"; label: string
   { value: "brand-content", label: "Brand content", labelEn: "Brand content", personas: ["content"] },
   { value: "repurposing", label: "Repurposing", labelEn: "Repurposing", personas: ["content"] },
   { value: "community-creator", label: "Communauté", labelEn: "Community", personas: ["content"] },
+  { value: "fractional-coo", label: "Fractional COO", labelEn: "Fractional COO", personas: ["ops"] },
+  { value: "ops-manager", label: "Operations manager", labelEn: "Operations manager", personas: ["ops"] },
+  { value: "bizops", label: "BizOps", labelEn: "BizOps", personas: ["ops"] },
+  { value: "revops", label: "RevOps", labelEn: "RevOps", personas: ["ops"] },
+  { value: "sales-ops", label: "Sales Ops", labelEn: "Sales Ops", personas: ["ops"] },
+  { value: "customer-ops", label: "Customer Ops", labelEn: "Customer Ops", personas: ["ops"] },
+  { value: "delivery-ops", label: "Delivery Ops", labelEn: "Delivery Ops", personas: ["ops"] },
+  { value: "agency-ops", label: "Agency Ops", labelEn: "Agency Ops", personas: ["ops"] },
+  { value: "people-ops", label: "People Ops", labelEn: "People Ops", personas: ["ops"] },
+  { value: "finance-ops", label: "Finance Ops", labelEn: "Finance Ops", personas: ["ops"] },
+  { value: "vendor-ops", label: "Vendor Ops", labelEn: "Vendor Ops", personas: ["ops"] },
+  { value: "marketing-ops", label: "Marketing Ops", labelEn: "Marketing Ops", personas: ["ops"] },
+  { value: "product-ops", label: "Product Ops", labelEn: "Product Ops", personas: ["ops"] },
+  { value: "reporting-ops", label: "Data / reporting Ops", labelEn: "Data / reporting Ops", personas: ["ops"] },
+  { value: "automation-ops", label: "Automation Ops", labelEn: "Automation Ops", personas: ["ops"] },
+  { value: "ai-ops", label: "AI Operations", labelEn: "AI Operations", personas: ["ops"] },
+  { value: "remote-ops", label: "Remote Ops", labelEn: "Remote Ops", personas: ["ops"] },
+  { value: "legal-compliance-ops", label: "Legal / compliance Ops", labelEn: "Legal / compliance Ops", personas: ["ops"] },
+  { value: "ecommerce-ops", label: "E-commerce Ops", labelEn: "E-commerce Ops", personas: ["ops"] },
+  { value: "event-ops", label: "Event Ops", labelEn: "Event Ops", personas: ["ops"] },
+  { value: "solopreneur", label: "Solopreneur", labelEn: "Solopreneur", personas: ["solo"] },
+  { value: "multi-hat-freelance", label: "Multi-casquettes", labelEn: "Multi-hat freelance", personas: ["solo"] },
+  { value: "solo-consultant", label: "Consultant solo", labelEn: "Solo consultant", personas: ["solo"] },
+  { value: "indie-maker", label: "Indie maker", labelEn: "Indie maker", personas: ["solo"] },
+  { value: "creator-operator", label: "Creator-operator", labelEn: "Creator-operator", personas: ["solo"] },
+  { value: "productized-service", label: "Service productisé", labelEn: "Productized service", personas: ["solo"] },
+  { value: "solo-coach-trainer", label: "Coach / formateur solo", labelEn: "Solo coach / trainer", personas: ["solo"] },
+  { value: "micro-agency-one", label: "Micro-agence solo", labelEn: "One-person micro-agency", personas: ["solo"] },
+  { value: "online-business-manager", label: "OBM / assistant virtuel", labelEn: "OBM / virtual assistant", personas: ["solo"] },
+  { value: "solo-nocode-builder", label: "No-code builder solo", labelEn: "Solo no-code builder", personas: ["solo"] },
+  { value: "solo-ai-automation", label: "AI automation solo", labelEn: "Solo AI automation", personas: ["solo"] },
+  { value: "solo-sales-bd", label: "Solo sales / BD", labelEn: "Solo sales / BD", personas: ["solo"] },
+  { value: "local-consultant", label: "Consultant local", labelEn: "Local consultant", personas: ["solo"] },
+  { value: "solo-admin-office", label: "Admin / office solo", labelEn: "Solo admin / office", personas: ["solo"] },
+  { value: "solo-media-newsletter", label: "Media / newsletter solo", labelEn: "Solo media / newsletter", personas: ["solo"] },
+  { value: "light-ecommerce-solo", label: "E-commerce léger solo", labelEn: "Light e-commerce solo", personas: ["solo"] },
+  { value: "solo-course-creator", label: "Créateur formation solo", labelEn: "Solo course creator", personas: ["solo"] },
+  { value: "premium-knowledge-worker", label: "Knowledge worker premium", labelEn: "Premium knowledge worker", personas: ["solo"] },
+  { value: "ai-augmented-solo", label: "Solo augmenté IA", labelEn: "AI-augmented solo", personas: ["solo"] },
+  { value: "b2b-all-in-one-solo", label: "All-in-one B2B", labelEn: "All-in-one B2B", personas: ["solo"] },
 ];
 
 export const STACKS: StackGuide[] = [
@@ -31909,6 +31989,8966 @@ export const STACKS: StackGuide[] = [
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
         "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "ops-fractional-coo-coo-freelance",
+    "slug": "ops-fractional-coo-coo-freelance",
+    "title": "Stack fractional COO",
+    "titleEn": "fractional COO stack",
+    "subtitle": "Les outils recommandés pour intervient à temps partiel auprès de dirigeants, startups, agences ou pme pour structurer les opérations.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "fractional-coo",
+      "operations"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Intervient à temps partiel auprès de dirigeants, startups, agences ou PME pour structurer les opérations.",
+    "bestForEn": "Intervient à temps partiel auprès de dirigeants, startups, agences ou PME pour structurer les opérations.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit comprendre vite, auditer, prioriser, mettre en place les bons rituels, choisir les outils, créer les dashboards et rendre l’entreprise plus pilotable.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Audit opérationnel",
+        "titleEn": "Audit opérationnel",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "process",
+        "titleEn": "process",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "priorisation",
+        "titleEn": "priorisation",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "organisation",
+        "titleEn": "organisation",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser audit opérationnel sans alourdir le système.",
+        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+      },
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "clickup",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "Planning",
+        "roleEn": "Planning",
+        "slug": "monday",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Planning : utile pour sécuriser priorisation sans alourdir le système.",
+        "reasonEn": "Useful to secure priorisation without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser organisation sans alourdir le système.",
+        "reasonEn": "Useful to secure organisation without weighing down the system."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Suite collaborative : utile pour sécuriser audit opérationnel sans alourdir le système.",
+        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Communication : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "Async",
+        "roleEn": "Async",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Async : utile pour sécuriser priorisation sans alourdir le système.",
+        "reasonEn": "Useful to secure priorisation without weighing down the system."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Atelier : utile pour sécuriser organisation sans alourdir le système.",
+        "reasonEn": "Useful to secure organisation without weighing down the system."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Reporting : utile pour sécuriser audit opérationnel sans alourdir le système.",
+        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser priorisation sans alourdir le système.",
+        "reasonEn": "Useful to secure priorisation without weighing down the system."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "CRM : utile pour sécuriser organisation sans alourdir le système.",
+        "reasonEn": "Useful to secure organisation without weighing down the system."
+      },
+      {
+        "role": "Comptabilité",
+        "roleEn": "Comptabilité",
+        "slug": "pennylane",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Comptabilité : utile pour sécuriser audit opérationnel sans alourdir le système.",
+        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Compte pro : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser priorisation sans alourdir le système.",
+        "reasonEn": "Useful to secure priorisation without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser organisation sans alourdir le système.",
+        "reasonEn": "Useful to secure organisation without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser audit opérationnel sans alourdir le système.",
+        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-operations-manager-freelance",
+    "slug": "ops-operations-manager-freelance",
+    "title": "Stack ops manager",
+    "titleEn": "ops manager stack",
+    "subtitle": "Les outils recommandés pour gère les opérations quotidiennes d’une activité ou d’une équipe.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "ops-manager",
+      "operations"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Gère les opérations quotidiennes d’une activité ou d’une équipe.",
+    "bestForEn": "Gère les opérations quotidiennes d’une activité ou d’une équipe.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit suivre les tâches, résoudre les blocages, documenter les process et fluidifier l’exécution.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Task management",
+        "titleEn": "Task management",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "process",
+        "titleEn": "process",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "coordination",
+        "titleEn": "coordination",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "planning",
+        "titleEn": "planning",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "clickup",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser task management sans alourdir le système.",
+        "reasonEn": "Useful to secure task management without weighing down the system."
+      },
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "asana",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser coordination sans alourdir le système.",
+        "reasonEn": "Useful to secure coordination without weighing down the system."
+      },
+      {
+        "role": "Kanban simple",
+        "roleEn": "Kanban simple",
+        "slug": "trello",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Kanban simple : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Communication : utile pour sécuriser task management sans alourdir le système.",
+        "reasonEn": "Useful to secure task management without weighing down the system."
+      },
+      {
+        "role": "Fichiers",
+        "roleEn": "Fichiers",
+        "slug": "google-drive",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Fichiers : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "Async",
+        "roleEn": "Async",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Async : utile pour sécuriser coordination sans alourdir le système.",
+        "reasonEn": "Useful to secure coordination without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Base métier : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser task management sans alourdir le système.",
+        "reasonEn": "Useful to secure task management without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser coordination sans alourdir le système.",
+        "reasonEn": "Useful to secure coordination without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-business-operations-bizops-consultant",
+    "slug": "ops-business-operations-bizops-consultant",
+    "title": "Stack BizOps",
+    "titleEn": "BizOps stack",
+    "subtitle": "Les outils recommandés pour connecte stratégie, data, finance, produit, sales et opérations.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "bizops",
+      "analytics"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Connecte stratégie, data, finance, produit, sales et opérations.",
+    "bestForEn": "Connecte stratégie, data, finance, produit, sales et opérations.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit transformer des objectifs business en systèmes mesurables et actionnables.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "OKR",
+        "titleEn": "OKR",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "KPI",
+        "titleEn": "KPI",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "dashboard",
+        "titleEn": "dashboard",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "business review",
+        "titleEn": "business review",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser okr sans alourdir le système.",
+        "reasonEn": "Useful to secure okr without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser kpi sans alourdir le système.",
+        "reasonEn": "Useful to secure kpi without weighing down the system."
+      },
+      {
+        "role": "Tableur",
+        "roleEn": "Tableur",
+        "slug": "google-sheets",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Tableur : utile pour sécuriser dashboard sans alourdir le système.",
+        "reasonEn": "Useful to secure dashboard without weighing down the system."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Modèle chiffré : utile pour sécuriser business review sans alourdir le système.",
+        "reasonEn": "Useful to secure business review without weighing down the system."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Reporting : utile pour sécuriser okr sans alourdir le système.",
+        "reasonEn": "Useful to secure okr without weighing down the system."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "BI : utile pour sécuriser kpi sans alourdir le système.",
+        "reasonEn": "Useful to secure kpi without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tableau",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser dashboard sans alourdir le système.",
+        "reasonEn": "Useful to secure dashboard without weighing down the system."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "CRM : utile pour sécuriser business review sans alourdir le système.",
+        "reasonEn": "Useful to secure business review without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Paiement : utile pour sécuriser okr sans alourdir le système.",
+        "reasonEn": "Useful to secure okr without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "chartmogul",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser kpi sans alourdir le système.",
+        "reasonEn": "Useful to secure kpi without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "causal",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser dashboard sans alourdir le système.",
+        "reasonEn": "Useful to secure dashboard without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser business review sans alourdir le système.",
+        "reasonEn": "Useful to secure business review without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser okr sans alourdir le système.",
+        "reasonEn": "Useful to secure okr without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gemini",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser kpi sans alourdir le système.",
+        "reasonEn": "Useful to secure kpi without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-revops-freelance",
+    "slug": "ops-revops-freelance",
+    "title": "Stack RevOps",
+    "titleEn": "RevOps stack",
+    "subtitle": "Les outils recommandés pour aligne marketing, sales, crm, pipeline, conversion et customer success.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "revops",
+      "crm-sales"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Aligne marketing, sales, CRM, pipeline, conversion et customer success.",
+    "bestForEn": "Aligne marketing, sales, CRM, pipeline, conversion et customer success.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Profil très Tooltrim-compatible car il a besoin de CRM, automation, attribution, reporting et process commerciaux.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "pipeline",
+        "titleEn": "pipeline",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "scoring",
+        "titleEn": "scoring",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "campagnes",
+        "titleEn": "campagnes",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "CRM : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Pipeline",
+        "roleEn": "Pipeline",
+        "slug": "pipedrive",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Pipeline : utile pour sécuriser pipeline sans alourdir le système.",
+        "reasonEn": "Useful to secure pipeline without weighing down the system."
+      },
+      {
+        "role": "CRM entreprise",
+        "roleEn": "CRM entreprise",
+        "slug": "salesforce",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "CRM entreprise : utile pour sécuriser scoring sans alourdir le système.",
+        "reasonEn": "Useful to secure scoring without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "attio",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser campagnes sans alourdir le système.",
+        "reasonEn": "Useful to secure campagnes without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "apollo",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lemlist",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser pipeline sans alourdir le système.",
+        "reasonEn": "Useful to secure pipeline without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clay",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser scoring sans alourdir le système.",
+        "reasonEn": "Useful to secure scoring without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser campagnes sans alourdir le système.",
+        "reasonEn": "Useful to secure campagnes without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Reporting : utile pour sécuriser pipeline sans alourdir le système.",
+        "reasonEn": "Useful to secure pipeline without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "chartmogul",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser scoring sans alourdir le système.",
+        "reasonEn": "Useful to secure scoring without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser campagnes sans alourdir le système.",
+        "reasonEn": "Useful to secure campagnes without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-sales-operations-consultant",
+    "slug": "ops-sales-operations-consultant",
+    "title": "Stack sales ops",
+    "titleEn": "sales ops stack",
+    "subtitle": "Les outils recommandés pour structure les process commerciaux, les séquences, le crm et le reporting sales.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "sales-ops",
+      "crm-sales"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Structure les process commerciaux, les séquences, le CRM et le reporting sales.",
+    "bestForEn": "Structure les process commerciaux, les séquences, le CRM et le reporting sales.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il rend les commerciaux plus efficaces et donne de la visibilité au dirigeant.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "pipeline",
+        "titleEn": "pipeline",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "forecast",
+        "titleEn": "forecast",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "scripts",
+        "titleEn": "scripts",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "CRM : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Pipeline",
+        "roleEn": "Pipeline",
+        "slug": "pipedrive",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Pipeline : utile pour sécuriser pipeline sans alourdir le système.",
+        "reasonEn": "Useful to secure pipeline without weighing down the system."
+      },
+      {
+        "role": "CRM entreprise",
+        "roleEn": "CRM entreprise",
+        "slug": "salesforce",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "CRM entreprise : utile pour sécuriser forecast sans alourdir le système.",
+        "reasonEn": "Useful to secure forecast without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "apollo",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser scripts sans alourdir le système.",
+        "reasonEn": "Useful to secure scripts without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lemlist",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "aircall",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser pipeline sans alourdir le système.",
+        "reasonEn": "Useful to secure pipeline without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gong",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser forecast sans alourdir le système.",
+        "reasonEn": "Useful to secure forecast without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Cockpit : utile pour sécuriser scripts sans alourdir le système.",
+        "reasonEn": "Useful to secure scripts without weighing down the system."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Reporting : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser pipeline sans alourdir le système.",
+        "reasonEn": "Useful to secure pipeline without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser forecast sans alourdir le système.",
+        "reasonEn": "Useful to secure forecast without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-customer-operations-customer-success-ops",
+    "slug": "ops-customer-operations-customer-success-ops",
+    "title": "Stack customer ops",
+    "titleEn": "customer ops stack",
+    "subtitle": "Les outils recommandés pour structure l’expérience client après la vente : onboarding, support, rétention, expansion.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "customer-ops",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Structure l’expérience client après la vente : onboarding, support, rétention, expansion.",
+    "bestForEn": "Structure l’expérience client après la vente : onboarding, support, rétention, expansion.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Le besoin de stack est fort : base de connaissance, support, CRM, automatisation, scoring et reporting.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Onboarding client",
+        "titleEn": "Onboarding client",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "support",
+        "titleEn": "support",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "NPS",
+        "titleEn": "NPS",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "health score",
+        "titleEn": "health score",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Support client",
+        "roleEn": "Support client",
+        "slug": "intercom",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Support client : utile pour sécuriser onboarding client sans alourdir le système.",
+        "reasonEn": "Useful to secure onboarding client without weighing down the system."
+      },
+      {
+        "role": "Support",
+        "roleEn": "Support",
+        "slug": "zendesk",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Support : utile pour sécuriser support sans alourdir le système.",
+        "reasonEn": "Useful to secure support without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "helpscout",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser nps sans alourdir le système.",
+        "reasonEn": "Useful to secure nps without weighing down the system."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "CRM : utile pour sécuriser health score sans alourdir le système.",
+        "reasonEn": "Useful to secure health score without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser onboarding client sans alourdir le système.",
+        "reasonEn": "Useful to secure onboarding client without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "coda",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser support sans alourdir le système.",
+        "reasonEn": "Useful to secure support without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Base métier : utile pour sécuriser nps sans alourdir le système.",
+        "reasonEn": "Useful to secure nps without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser health score sans alourdir le système.",
+        "reasonEn": "Useful to secure health score without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser onboarding client sans alourdir le système.",
+        "reasonEn": "Useful to secure onboarding client without weighing down the system."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Formulaires : utile pour sécuriser support sans alourdir le système.",
+        "reasonEn": "Useful to secure support without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser nps sans alourdir le système.",
+        "reasonEn": "Useful to secure nps without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser health score sans alourdir le système.",
+        "reasonEn": "Useful to secure health score without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-project-operations-delivery-ops",
+    "slug": "ops-project-operations-delivery-ops",
+    "title": "Stack delivery ops",
+    "titleEn": "delivery ops stack",
+    "subtitle": "Les outils recommandés pour structure la livraison des projets dans une agence, un studio ou une société de service.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "delivery-ops",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Structure la livraison des projets dans une agence, un studio ou une société de service.",
+    "bestForEn": "Structure la livraison des projets dans une agence, un studio ou une société de service.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit fluidifier le passage de vente à production, réduire les retards et clarifier les responsabilités.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Brief",
+        "titleEn": "Brief",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "planning",
+        "titleEn": "planning",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "capacité",
+        "titleEn": "capacité",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "livraison",
+        "titleEn": "livraison",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "clickup",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser brief sans alourdir le système.",
+        "reasonEn": "Useful to secure brief without weighing down the system."
+      },
+      {
+        "role": "Planning",
+        "roleEn": "Planning",
+        "slug": "monday",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Planning : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "asana",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser capacité sans alourdir le système.",
+        "reasonEn": "Useful to secure capacité without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser livraison sans alourdir le système.",
+        "reasonEn": "Useful to secure livraison without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "harvest",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser brief sans alourdir le système.",
+        "reasonEn": "Useful to secure brief without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "toggl",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "float",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser capacité sans alourdir le système.",
+        "reasonEn": "Useful to secure capacité without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frame-io",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser livraison sans alourdir le système.",
+        "reasonEn": "Useful to secure livraison without weighing down the system."
+      },
+      {
+        "role": "Fichiers",
+        "roleEn": "Fichiers",
+        "slug": "google-drive",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Fichiers : utile pour sécuriser brief sans alourdir le système.",
+        "reasonEn": "Useful to secure brief without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Communication : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser capacité sans alourdir le système.",
+        "reasonEn": "Useful to secure capacité without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser livraison sans alourdir le système.",
+        "reasonEn": "Useful to secure livraison without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clickup-ai",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser brief sans alourdir le système.",
+        "reasonEn": "Useful to secure brief without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-agency-operations-manager",
+    "slug": "ops-agency-operations-manager",
+    "title": "Stack agency ops",
+    "titleEn": "agency ops stack",
+    "subtitle": "Les outils recommandés pour spécialiste des opérations pour agences créatives, studios, cabinets conseil ou production.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "ops-manager",
+      "operations"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Spécialiste des opérations pour agences créatives, studios, cabinets conseil ou production.",
+    "bestForEn": "Spécialiste des opérations pour agences créatives, studios, cabinets conseil ou production.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Très intéressant pour Tooltrim car il mélange ressources, clients, budgets, fichiers, temps passé et validation.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Planning équipe",
+        "titleEn": "Planning équipe",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "time tracking",
+        "titleEn": "time tracking",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "marges",
+        "titleEn": "marges",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "feedback",
+        "titleEn": "feedback",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser planning équipe sans alourdir le système.",
+        "reasonEn": "Useful to secure planning équipe without weighing down the system."
+      },
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "clickup",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser time tracking sans alourdir le système.",
+        "reasonEn": "Useful to secure time tracking without weighing down the system."
+      },
+      {
+        "role": "Planning",
+        "roleEn": "Planning",
+        "slug": "monday",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Planning : utile pour sécuriser marges sans alourdir le système.",
+        "reasonEn": "Useful to secure marges without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "productive-io",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser feedback sans alourdir le système.",
+        "reasonEn": "Useful to secure feedback without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "harvest",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser planning équipe sans alourdir le système.",
+        "reasonEn": "Useful to secure planning équipe without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Communication : utile pour sécuriser time tracking sans alourdir le système.",
+        "reasonEn": "Useful to secure time tracking without weighing down the system."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Suite collaborative : utile pour sécuriser marges sans alourdir le système.",
+        "reasonEn": "Useful to secure marges without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frame-io",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser feedback sans alourdir le système.",
+        "reasonEn": "Useful to secure feedback without weighing down the system."
+      },
+      {
+        "role": "Comptabilité",
+        "roleEn": "Comptabilité",
+        "slug": "pennylane",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Comptabilité : utile pour sécuriser planning équipe sans alourdir le système.",
+        "reasonEn": "Useful to secure planning équipe without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Compte pro : utile pour sécuriser time tracking sans alourdir le système.",
+        "reasonEn": "Useful to secure time tracking without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser marges sans alourdir le système.",
+        "reasonEn": "Useful to secure marges without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser feedback sans alourdir le système.",
+        "reasonEn": "Useful to secure feedback without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clickup-ai",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser planning équipe sans alourdir le système.",
+        "reasonEn": "Useful to secure planning équipe without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-people-ops-freelance",
+    "slug": "ops-people-ops-freelance",
+    "title": "Stack people ops",
+    "titleEn": "people ops stack",
+    "subtitle": "Les outils recommandés pour structure les processus rh légers : recrutement, onboarding, rituels, feedback, documentation.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "people-ops",
+      "hr-consulting"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Structure les processus RH légers : recrutement, onboarding, rituels, feedback, documentation.",
+    "bestForEn": "Structure les processus RH légers : recrutement, onboarding, rituels, feedback, documentation.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Les petites équipes ont besoin de RH simples, pas d’un SIRH lourd.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Recrutement",
+        "titleEn": "Recrutement",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "onboarding",
+        "titleEn": "onboarding",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "entretiens",
+        "titleEn": "entretiens",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "culture",
+        "titleEn": "culture",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser recrutement sans alourdir le système.",
+        "reasonEn": "Useful to secure recrutement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "personio",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser onboarding sans alourdir le système.",
+        "reasonEn": "Useful to secure onboarding without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lucca",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser entretiens sans alourdir le système.",
+        "reasonEn": "Useful to secure entretiens without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "factorial",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser culture sans alourdir le système.",
+        "reasonEn": "Useful to secure culture without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ashby",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser recrutement sans alourdir le système.",
+        "reasonEn": "Useful to secure recrutement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "greenhouse",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser onboarding sans alourdir le système.",
+        "reasonEn": "Useful to secure onboarding without weighing down the system."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Formulaires : utile pour sécuriser entretiens sans alourdir le système.",
+        "reasonEn": "Useful to secure entretiens without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Communication : utile pour sécuriser culture sans alourdir le système.",
+        "reasonEn": "Useful to secure culture without weighing down the system."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Suite collaborative : utile pour sécuriser recrutement sans alourdir le système.",
+        "reasonEn": "Useful to secure recrutement without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser onboarding sans alourdir le système.",
+        "reasonEn": "Useful to secure onboarding without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser entretiens sans alourdir le système.",
+        "reasonEn": "Useful to secure entretiens without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gemini",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser culture sans alourdir le système.",
+        "reasonEn": "Useful to secure culture without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-finance-ops-admin-ops",
+    "slug": "ops-finance-ops-admin-ops",
+    "title": "Stack finance ops",
+    "titleEn": "finance ops stack",
+    "subtitle": "Les outils recommandés pour structure les flux financiers, devis, factures, relances, achats, budget et trésorerie.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "finance-ops",
+      "admin"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Structure les flux financiers, devis, factures, relances, achats, budget et trésorerie.",
+    "bestForEn": "Structure les flux financiers, devis, factures, relances, achats, budget et trésorerie.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "La valeur est immédiate : moins d’oubli, plus de visibilité, meilleure marge.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Facturation",
+        "titleEn": "Facturation",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "trésorerie",
+        "titleEn": "trésorerie",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "achats",
+        "titleEn": "achats",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "reporting",
+        "titleEn": "reporting",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Comptabilité",
+        "roleEn": "Comptabilité",
+        "slug": "pennylane",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Comptabilité : utile pour sécuriser facturation sans alourdir le système.",
+        "reasonEn": "Useful to secure facturation without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Compte pro : utile pour sécuriser trésorerie sans alourdir le système.",
+        "reasonEn": "Useful to secure trésorerie without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser achats sans alourdir le système.",
+        "reasonEn": "Useful to secure achats without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "sellsy",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser reporting sans alourdir le système.",
+        "reasonEn": "Useful to secure reporting without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "axonaut",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser facturation sans alourdir le système.",
+        "reasonEn": "Useful to secure facturation without weighing down the system."
+      },
+      {
+        "role": "Tableur",
+        "roleEn": "Tableur",
+        "slug": "google-sheets",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Tableur : utile pour sécuriser trésorerie sans alourdir le système.",
+        "reasonEn": "Useful to secure trésorerie without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Base métier : utile pour sécuriser achats sans alourdir le système.",
+        "reasonEn": "Useful to secure achats without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser reporting sans alourdir le système.",
+        "reasonEn": "Useful to secure reporting without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Paiement : utile pour sécuriser facturation sans alourdir le système.",
+        "reasonEn": "Useful to secure facturation without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gocardless",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser trésorerie sans alourdir le système.",
+        "reasonEn": "Useful to secure trésorerie without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser achats sans alourdir le système.",
+        "reasonEn": "Useful to secure achats without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser reporting sans alourdir le système.",
+        "reasonEn": "Useful to secure reporting without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pennylane-ai-selon-dispo",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser facturation sans alourdir le système.",
+        "reasonEn": "Useful to secure facturation without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-procurement-vendor-ops",
+    "slug": "ops-procurement-vendor-ops",
+    "title": "Stack vendor ops",
+    "titleEn": "vendor ops stack",
+    "subtitle": "Les outils recommandés pour gère fournisseurs, prestataires, achats, devis, commandes et suivi budgétaire.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "vendor-ops",
+      "procurement"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Gère fournisseurs, prestataires, achats, devis, commandes et suivi budgétaire.",
+    "bestForEn": "Gère fournisseurs, prestataires, achats, devis, commandes et suivi budgétaire.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Très utile pour agences, événements, retail, production, e-commerce.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Fournisseurs",
+        "titleEn": "Fournisseurs",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "devis",
+        "titleEn": "devis",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "commandes",
+        "titleEn": "commandes",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "validations",
+        "titleEn": "validations",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser fournisseurs sans alourdir le système.",
+        "reasonEn": "Useful to secure fournisseurs without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "Tableur",
+        "roleEn": "Tableur",
+        "slug": "google-sheets",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Tableur : utile pour sécuriser commandes sans alourdir le système.",
+        "reasonEn": "Useful to secure commandes without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "spendesk",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser validations sans alourdir le système.",
+        "reasonEn": "Useful to secure validations without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Compte pro : utile pour sécuriser fournisseurs sans alourdir le système.",
+        "reasonEn": "Useful to secure fournisseurs without weighing down the system."
+      },
+      {
+        "role": "Comptabilité",
+        "roleEn": "Comptabilité",
+        "slug": "pennylane",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Comptabilité : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser commandes sans alourdir le système.",
+        "reasonEn": "Useful to secure commandes without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Communication : utile pour sécuriser validations sans alourdir le système.",
+        "reasonEn": "Useful to secure validations without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "docusign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser fournisseurs sans alourdir le système.",
+        "reasonEn": "Useful to secure fournisseurs without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser commandes sans alourdir le système.",
+        "reasonEn": "Useful to secure commandes without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser validations sans alourdir le système.",
+        "reasonEn": "Useful to secure validations without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-marketing-operations",
+    "slug": "ops-marketing-operations",
+    "title": "Stack marketing ops",
+    "titleEn": "marketing ops stack",
+    "subtitle": "Les outils recommandés pour connecte campagnes, outils marketing, crm, tracking, data et automatisation.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "marketing-ops",
+      "marketing-consulting"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Connecte campagnes, outils marketing, CRM, tracking, data et automatisation.",
+    "bestForEn": "Connecte campagnes, outils marketing, CRM, tracking, data et automatisation.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Besoin fort de stack car le métier est fragmenté entre contenu, analytics, email, ads et CRM.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Campagnes",
+        "titleEn": "Campagnes",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "tracking",
+        "titleEn": "tracking",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "email",
+        "titleEn": "email",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "CRM : utile pour sécuriser campagnes sans alourdir le système.",
+        "reasonEn": "Useful to secure campagnes without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "activecampaign",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser tracking sans alourdir le système.",
+        "reasonEn": "Useful to secure tracking without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "brevo",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "customer-io",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser email sans alourdir le système.",
+        "reasonEn": "Useful to secure email without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser campagnes sans alourdir le système.",
+        "reasonEn": "Useful to secure campagnes without weighing down the system."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Reporting : utile pour sécuriser tracking sans alourdir le système.",
+        "reasonEn": "Useful to secure tracking without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "segment",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser email sans alourdir le système.",
+        "reasonEn": "Useful to secure email without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser campagnes sans alourdir le système.",
+        "reasonEn": "Useful to secure campagnes without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser tracking sans alourdir le système.",
+        "reasonEn": "Useful to secure tracking without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser email sans alourdir le système.",
+        "reasonEn": "Useful to secure email without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-product-operations",
+    "slug": "ops-product-operations",
+    "title": "Stack product ops",
+    "titleEn": "product ops stack",
+    "subtitle": "Les outils recommandés pour aide les équipes produit à mieux gérer feedback, roadmap, discovery, releases et documentation.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "product-ops",
+      "product"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Aide les équipes produit à mieux gérer feedback, roadmap, discovery, releases et documentation.",
+    "bestForEn": "Aide les équipes produit à mieux gérer feedback, roadmap, discovery, releases et documentation.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Très pertinent pour SaaS et startups.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Roadmap",
+        "titleEn": "Roadmap",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "feedback",
+        "titleEn": "feedback",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "discovery",
+        "titleEn": "discovery",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "product analytics",
+        "titleEn": "product analytics",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "productboard",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser roadmap sans alourdir le système.",
+        "reasonEn": "Useful to secure roadmap without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "linear",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser feedback sans alourdir le système.",
+        "reasonEn": "Useful to secure feedback without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "jira",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser discovery sans alourdir le système.",
+        "reasonEn": "Useful to secure discovery without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser product analytics sans alourdir le système.",
+        "reasonEn": "Useful to secure product analytics without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "dovetail",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser roadmap sans alourdir le système.",
+        "reasonEn": "Useful to secure roadmap without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "hotjar",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser feedback sans alourdir le système.",
+        "reasonEn": "Useful to secure feedback without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "amplitude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser discovery sans alourdir le système.",
+        "reasonEn": "Useful to secure discovery without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mixpanel",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser product analytics sans alourdir le système.",
+        "reasonEn": "Useful to secure product analytics without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Communication : utile pour sécuriser roadmap sans alourdir le système.",
+        "reasonEn": "Useful to secure roadmap without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser feedback sans alourdir le système.",
+        "reasonEn": "Useful to secure feedback without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser discovery sans alourdir le système.",
+        "reasonEn": "Useful to secure discovery without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "dovetail-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser product analytics sans alourdir le système.",
+        "reasonEn": "Useful to secure product analytics without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-data-reporting-ops",
+    "slug": "ops-data-reporting-ops",
+    "title": "Stack reporting ops",
+    "titleEn": "reporting ops stack",
+    "subtitle": "Les outils recommandés pour crée les dashboards et la visibilité opérationnelle pour une équipe ou un dirigeant.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "reporting-ops",
+      "analytics"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Crée les dashboards et la visibilité opérationnelle pour une équipe ou un dirigeant.",
+    "bestForEn": "Crée les dashboards et la visibilité opérationnelle pour une équipe ou un dirigeant.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit relier les sources, nettoyer les données, produire des indicateurs lisibles.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "KPI",
+        "titleEn": "KPI",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "dashboards",
+        "titleEn": "dashboards",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "data cleaning",
+        "titleEn": "data cleaning",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "consolidation",
+        "titleEn": "consolidation",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Reporting : utile pour sécuriser kpi sans alourdir le système.",
+        "reasonEn": "Useful to secure kpi without weighing down the system."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "BI : utile pour sécuriser dashboards sans alourdir le système.",
+        "reasonEn": "Useful to secure dashboards without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tableau",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser data cleaning sans alourdir le système.",
+        "reasonEn": "Useful to secure data cleaning without weighing down the system."
+      },
+      {
+        "role": "Tableur",
+        "roleEn": "Tableur",
+        "slug": "google-sheets",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Tableur : utile pour sécuriser consolidation sans alourdir le système.",
+        "reasonEn": "Useful to secure consolidation without weighing down the system."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Modèle chiffré : utile pour sécuriser kpi sans alourdir le système.",
+        "reasonEn": "Useful to secure kpi without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Base métier : utile pour sécuriser dashboards sans alourdir le système.",
+        "reasonEn": "Useful to secure dashboards without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "bigquery",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser data cleaning sans alourdir le système.",
+        "reasonEn": "Useful to secure data cleaning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "coupler-io",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser consolidation sans alourdir le système.",
+        "reasonEn": "Useful to secure consolidation without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "supermetrics",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser kpi sans alourdir le système.",
+        "reasonEn": "Useful to secure kpi without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser dashboards sans alourdir le système.",
+        "reasonEn": "Useful to secure dashboards without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser data cleaning sans alourdir le système.",
+        "reasonEn": "Useful to secure data cleaning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gemini",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser consolidation sans alourdir le système.",
+        "reasonEn": "Useful to secure consolidation without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "excel-copilot",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser kpi sans alourdir le système.",
+        "reasonEn": "Useful to secure kpi without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-automation-ops-no-code-ops",
+    "slug": "ops-automation-ops-no-code-ops",
+    "title": "Stack automation ops",
+    "titleEn": "automation ops stack",
+    "subtitle": "Les outils recommandés pour automatise les tâches répétitives entre crm, formulaires, email, fichiers, facturation et reporting.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "automation-ops",
+      "automation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Automatise les tâches répétitives entre CRM, formulaires, email, fichiers, facturation et reporting.",
+    "bestForEn": "Automatise les tâches répétitives entre CRM, formulaires, email, fichiers, facturation et reporting.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Très fort potentiel Tooltrim, car le choix entre Zapier, Make, n8n, Airtable et agents IA est complexe.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Workflows",
+        "titleEn": "Workflows",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "webhooks",
+        "titleEn": "webhooks",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "formulaires",
+        "titleEn": "formulaires",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "routing",
+        "titleEn": "routing",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Automatisation : utile pour sécuriser workflows sans alourdir le système.",
+        "reasonEn": "Useful to secure workflows without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Automatisation : utile pour sécuriser webhooks sans alourdir le système.",
+        "reasonEn": "Useful to secure webhooks without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "n8n",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser formulaires sans alourdir le système.",
+        "reasonEn": "Useful to secure formulaires without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser routing sans alourdir le système.",
+        "reasonEn": "Useful to secure routing without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser workflows sans alourdir le système.",
+        "reasonEn": "Useful to secure workflows without weighing down the system."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Formulaires : utile pour sécuriser webhooks sans alourdir le système.",
+        "reasonEn": "Useful to secure webhooks without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webhooks",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser formulaires sans alourdir le système.",
+        "reasonEn": "Useful to secure formulaires without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Communication : utile pour sécuriser routing sans alourdir le système.",
+        "reasonEn": "Useful to secure routing without weighing down the system."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Suite collaborative : utile pour sécuriser workflows sans alourdir le système.",
+        "reasonEn": "Useful to secure workflows without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser webhooks sans alourdir le système.",
+        "reasonEn": "Useful to secure webhooks without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser formulaires sans alourdir le système.",
+        "reasonEn": "Useful to secure formulaires without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-ai-operations-ai-workflow-architect",
+    "slug": "ops-ai-operations-ai-workflow-architect",
+    "title": "Stack AI ops",
+    "titleEn": "AI ops stack",
+    "subtitle": "Les outils recommandés pour conçoit des workflows intégrant ia, agents, automatisations, bases de connaissance et validation humaine.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "ai-ops",
+      "automation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Conçoit des workflows intégrant IA, agents, automatisations, bases de connaissance et validation humaine.",
+    "bestForEn": "Conçoit des workflows intégrant IA, agents, automatisations, bases de connaissance et validation humaine.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Profil émergent mais stratégique, proche du nouveau cœur de Tooltrim.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Agents",
+        "titleEn": "Agents",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "prompts",
+        "titleEn": "prompts",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "knowledge base",
+        "titleEn": "knowledge base",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "automatisation",
+        "titleEn": "automatisation",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "IA généraliste : utile pour sécuriser agents sans alourdir le système.",
+        "reasonEn": "Useful to secure agents without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Analyse longue : utile pour sécuriser prompts sans alourdir le système.",
+        "reasonEn": "Useful to secure prompts without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gemini",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser knowledge base sans alourdir le système.",
+        "reasonEn": "Useful to secure knowledge base without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Recherche : utile pour sécuriser automatisation sans alourdir le système.",
+        "reasonEn": "Useful to secure automatisation without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Automatisation : utile pour sécuriser agents sans alourdir le système.",
+        "reasonEn": "Useful to secure agents without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser prompts sans alourdir le système.",
+        "reasonEn": "Useful to secure prompts without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "n8n",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser knowledge base sans alourdir le système.",
+        "reasonEn": "Useful to secure knowledge base without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Base métier : utile pour sécuriser automatisation sans alourdir le système.",
+        "reasonEn": "Useful to secure automatisation without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Cockpit : utile pour sécuriser agents sans alourdir le système.",
+        "reasonEn": "Useful to secure agents without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "relevance-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser prompts sans alourdir le système.",
+        "reasonEn": "Useful to secure prompts without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lindy",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser knowledge base sans alourdir le système.",
+        "reasonEn": "Useful to secure knowledge base without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-remote-operations-manager",
+    "slug": "ops-remote-operations-manager",
+    "title": "Stack remote ops",
+    "titleEn": "remote ops stack",
+    "subtitle": "Les outils recommandés pour structure le travail à distance : documentation, rituels, asynchrone, suivi et outils.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "ops-manager",
+      "operations"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Structure le travail à distance : documentation, rituels, asynchrone, suivi et outils.",
+    "bestForEn": "Structure le travail à distance : documentation, rituels, asynchrone, suivi et outils.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Les équipes distribuées ont besoin de clarté, pas de plus de réunions.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Documentation",
+        "titleEn": "Documentation",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "rituels",
+        "titleEn": "rituels",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "communication async",
+        "titleEn": "communication async",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "onboarding",
+        "titleEn": "onboarding",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser documentation sans alourdir le système.",
+        "reasonEn": "Useful to secure documentation without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Communication : utile pour sécuriser rituels sans alourdir le système.",
+        "reasonEn": "Useful to secure rituels without weighing down the system."
+      },
+      {
+        "role": "Async",
+        "roleEn": "Async",
+        "slug": "loom",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Async : utile pour sécuriser communication async sans alourdir le système.",
+        "reasonEn": "Useful to secure communication async without weighing down the system."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Suite collaborative : utile pour sécuriser onboarding sans alourdir le système.",
+        "reasonEn": "Useful to secure onboarding without weighing down the system."
+      },
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "clickup",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser documentation sans alourdir le système.",
+        "reasonEn": "Useful to secure documentation without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "linear",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser rituels sans alourdir le système.",
+        "reasonEn": "Useful to secure rituels without weighing down the system."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Atelier : utile pour sécuriser communication async sans alourdir le système.",
+        "reasonEn": "Useful to secure communication async without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "around",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser onboarding sans alourdir le système.",
+        "reasonEn": "Useful to secure onboarding without weighing down the system."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Rendez-vous : utile pour sécuriser documentation sans alourdir le système.",
+        "reasonEn": "Useful to secure documentation without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser rituels sans alourdir le système.",
+        "reasonEn": "Useful to secure rituels without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser communication async sans alourdir le système.",
+        "reasonEn": "Useful to secure communication async without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-legal-compliance-ops-leger",
+    "slug": "ops-legal-compliance-ops-leger",
+    "title": "Stack legal ops",
+    "titleEn": "legal ops stack",
+    "subtitle": "Les outils recommandés pour met en place contrats, signatures, rgpd, dossiers administratifs et processus de conformité simple.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "legal-compliance-ops",
+      "legal-ops"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Met en place contrats, signatures, RGPD, dossiers administratifs et processus de conformité simple.",
+    "bestForEn": "Met en place contrats, signatures, RGPD, dossiers administratifs et processus de conformité simple.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Très utile pour petites structures qui n’ont pas de juriste interne.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Contrats",
+        "titleEn": "Contrats",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "signature",
+        "titleEn": "signature",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "RGPD",
+        "titleEn": "RGPD",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "archivage",
+        "titleEn": "archivage",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Signature : utile pour sécuriser contrats sans alourdir le système.",
+        "reasonEn": "Useful to secure contrats without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "docusign",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser signature sans alourdir le système.",
+        "reasonEn": "Useful to secure signature without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "captain-contrat",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser rgpd sans alourdir le système.",
+        "reasonEn": "Useful to secure rgpd without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "legalplace",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser archivage sans alourdir le système.",
+        "reasonEn": "Useful to secure archivage without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser contrats sans alourdir le système.",
+        "reasonEn": "Useful to secure contrats without weighing down the system."
+      },
+      {
+        "role": "Fichiers",
+        "roleEn": "Fichiers",
+        "slug": "google-drive",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Fichiers : utile pour sécuriser signature sans alourdir le système.",
+        "reasonEn": "Useful to secure signature without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "onetrust",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser rgpd sans alourdir le système.",
+        "reasonEn": "Useful to secure rgpd without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "chatgpt-pour-brouillons-non-juridiques",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser archivage sans alourdir le système.",
+        "reasonEn": "Useful to secure archivage without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser contrats sans alourdir le système.",
+        "reasonEn": "Useful to secure contrats without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser signature sans alourdir le système.",
+        "reasonEn": "Useful to secure signature without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-e-commerce-operations",
+    "slug": "ops-e-commerce-operations",
+    "title": "Stack e-commerce ops",
+    "titleEn": "e-commerce ops stack",
+    "subtitle": "Les outils recommandés pour gère les opérations e-commerce : catalogue, stocks, commandes, support, retours, reporting.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "ecommerce-ops",
+      "ecommerce"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Gère les opérations e-commerce : catalogue, stocks, commandes, support, retours, reporting.",
+    "bestForEn": "Gère les opérations e-commerce : catalogue, stocks, commandes, support, retours, reporting.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Stack très complète : Shopify, support, analytics, finance, automation.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Catalogue",
+        "titleEn": "Catalogue",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "commandes",
+        "titleEn": "commandes",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "stock",
+        "titleEn": "stock",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "support",
+        "titleEn": "support",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "shopify",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser catalogue sans alourdir le système.",
+        "reasonEn": "Useful to secure catalogue without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "klaviyo",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser commandes sans alourdir le système.",
+        "reasonEn": "Useful to secure commandes without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gorgias",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser stock sans alourdir le système.",
+        "reasonEn": "Useful to secure stock without weighing down the system."
+      },
+      {
+        "role": "Support",
+        "roleEn": "Support",
+        "slug": "zendesk",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Support : utile pour sécuriser support sans alourdir le système.",
+        "reasonEn": "Useful to secure support without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "shipstation",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser catalogue sans alourdir le système.",
+        "reasonEn": "Useful to secure catalogue without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Base métier : utile pour sécuriser commandes sans alourdir le système.",
+        "reasonEn": "Useful to secure commandes without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser stock sans alourdir le système.",
+        "reasonEn": "Useful to secure stock without weighing down the system."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Reporting : utile pour sécuriser support sans alourdir le système.",
+        "reasonEn": "Useful to secure support without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Compte pro : utile pour sécuriser catalogue sans alourdir le système.",
+        "reasonEn": "Useful to secure catalogue without weighing down the system."
+      },
+      {
+        "role": "Comptabilité",
+        "roleEn": "Comptabilité",
+        "slug": "pennylane",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Comptabilité : utile pour sécuriser commandes sans alourdir le système.",
+        "reasonEn": "Useful to secure commandes without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser stock sans alourdir le système.",
+        "reasonEn": "Useful to secure stock without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser support sans alourdir le système.",
+        "reasonEn": "Useful to secure support without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "ops-event-operations-manager",
+    "slug": "ops-event-operations-manager",
+    "title": "Stack event ops",
+    "titleEn": "event ops stack",
+    "subtitle": "Les outils recommandés pour structure les opérations d’événements : planning, prestataires, budget, inscriptions, logistique.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "ops",
+    "subProfiles": [
+      "ops-manager",
+      "operations"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Structure les opérations d’événements : planning, prestataires, budget, inscriptions, logistique.",
+    "bestForEn": "Structure les opérations d’événements : planning, prestataires, budget, inscriptions, logistique.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Très fort besoin de coordination, deadlines, versions, validations et documents.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Planning",
+        "titleEn": "Planning",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "prestataires",
+        "titleEn": "prestataires",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "budget",
+        "titleEn": "budget",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "inscriptions",
+        "titleEn": "inscriptions",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser prestataires sans alourdir le système.",
+        "reasonEn": "Useful to secure prestataires without weighing down the system."
+      },
+      {
+        "role": "Planning",
+        "roleEn": "Planning",
+        "slug": "monday",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Planning : utile pour sécuriser budget sans alourdir le système.",
+        "reasonEn": "Useful to secure budget without weighing down the system."
+      },
+      {
+        "role": "Tableur",
+        "roleEn": "Tableur",
+        "slug": "google-sheets",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Tableur : utile pour sécuriser inscriptions sans alourdir le système.",
+        "reasonEn": "Useful to secure inscriptions without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "eventbrite",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "weezevent",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser prestataires sans alourdir le système.",
+        "reasonEn": "Useful to secure prestataires without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "slido",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser budget sans alourdir le système.",
+        "reasonEn": "Useful to secure budget without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser inscriptions sans alourdir le système.",
+        "reasonEn": "Useful to secure inscriptions without weighing down the system."
+      },
+      {
+        "role": "Fichiers",
+        "roleEn": "Fichiers",
+        "slug": "google-drive",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Fichiers : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser prestataires sans alourdir le système.",
+        "reasonEn": "Useful to secure prestataires without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser budget sans alourdir le système.",
+        "reasonEn": "Useful to secure budget without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-solopreneur-generaliste",
+    "slug": "solo-solopreneur-generaliste",
+    "title": "Stack solopreneur",
+    "titleEn": "solopreneur stack",
+    "subtitle": "Les outils recommandés pour personne seule qui pilote une activité complète : offre, acquisition, production, admin et relation client.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solopreneur",
+      "admin"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Personne seule qui pilote une activité complète : offre, acquisition, production, admin et relation client.",
+    "bestForEn": "Personne seule qui pilote une activité complète : offre, acquisition, production, admin et relation client.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il a besoin d’un système simple qui remplace un mini back-office.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "CRM léger",
+        "titleEn": "CRM léger",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "proposition",
+        "titleEn": "proposition",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "production",
+        "titleEn": "production",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "gestion projet",
+        "titleEn": "gestion projet",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser crm léger sans alourdir le système.",
+        "reasonEn": "Useful to secure crm léger without weighing down the system."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Suite collaborative : utile pour sécuriser proposition sans alourdir le système.",
+        "reasonEn": "Useful to secure proposition without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser production sans alourdir le système.",
+        "reasonEn": "Useful to secure production without weighing down the system."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Rendez-vous : utile pour sécuriser gestion projet sans alourdir le système.",
+        "reasonEn": "Useful to secure gestion projet without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Paiement : utile pour sécuriser crm léger sans alourdir le système.",
+        "reasonEn": "Useful to secure crm léger without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser proposition sans alourdir le système.",
+        "reasonEn": "Useful to secure proposition without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Compte pro : utile pour sécuriser production sans alourdir le système.",
+        "reasonEn": "Useful to secure production without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser gestion projet sans alourdir le système.",
+        "reasonEn": "Useful to secure gestion projet without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser crm léger sans alourdir le système.",
+        "reasonEn": "Useful to secure crm léger without weighing down the system."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Design rapide : utile pour sécuriser proposition sans alourdir le système.",
+        "reasonEn": "Useful to secure proposition without weighing down the system."
+      },
+      {
+        "role": "Async",
+        "roleEn": "Async",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Async : utile pour sécuriser production sans alourdir le système.",
+        "reasonEn": "Useful to secure production without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser gestion projet sans alourdir le système.",
+        "reasonEn": "Useful to secure gestion projet without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser crm léger sans alourdir le système.",
+        "reasonEn": "Useful to secure crm léger without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "canva-ai",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser proposition sans alourdir le système.",
+        "reasonEn": "Useful to secure proposition without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-freelance-multi-casquettes",
+    "slug": "solo-freelance-multi-casquettes",
+    "title": "Stack multi-casquettes",
+    "titleEn": "multi-casquettes stack",
+    "subtitle": "Les outils recommandés pour freelance qui fait conseil, création, gestion client, contenu et admin.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "multi-hat-freelance",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Freelance qui fait conseil, création, gestion client, contenu et admin.",
+    "bestForEn": "Freelance qui fait conseil, création, gestion client, contenu et admin.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit éviter l’empilement d’outils et se construire un cockpit unique.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Prospection",
+        "titleEn": "Prospection",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "devis",
+        "titleEn": "devis",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "production",
+        "titleEn": "production",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "livraison",
+        "titleEn": "livraison",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser prospection sans alourdir le système.",
+        "reasonEn": "Useful to secure prospection without weighing down the system."
+      },
+      {
+        "role": "Fichiers",
+        "roleEn": "Fichiers",
+        "slug": "google-drive",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Fichiers : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gmail",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser production sans alourdir le système.",
+        "reasonEn": "Useful to secure production without weighing down the system."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Rendez-vous : utile pour sécuriser livraison sans alourdir le système.",
+        "reasonEn": "Useful to secure livraison without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser prospection sans alourdir le système.",
+        "reasonEn": "Useful to secure prospection without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Compte pro : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser production sans alourdir le système.",
+        "reasonEn": "Useful to secure production without weighing down the system."
+      },
+      {
+        "role": "Async",
+        "roleEn": "Async",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Async : utile pour sécuriser livraison sans alourdir le système.",
+        "reasonEn": "Useful to secure livraison without weighing down the system."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Design rapide : utile pour sécuriser prospection sans alourdir le système.",
+        "reasonEn": "Useful to secure prospection without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "figma",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser production sans alourdir le système.",
+        "reasonEn": "Useful to secure production without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser livraison sans alourdir le système.",
+        "reasonEn": "Useful to secure livraison without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser prospection sans alourdir le système.",
+        "reasonEn": "Useful to secure prospection without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "krea-selon-metier",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-consultant-solo-generaliste",
+    "slug": "solo-consultant-solo-generaliste",
+    "title": "Stack consultant solo",
+    "titleEn": "consultant solo stack",
+    "subtitle": "Les outils recommandés pour consultant indépendant qui accompagne dirigeants, pme ou startups sur plusieurs sujets.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solo-consultant",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Consultant indépendant qui accompagne dirigeants, PME ou startups sur plusieurs sujets.",
+    "bestForEn": "Consultant indépendant qui accompagne dirigeants, PME ou startups sur plusieurs sujets.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il vend surtout de la clarté, des livrables, des ateliers et du suivi.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Audit",
+        "titleEn": "Audit",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "diagnostic",
+        "titleEn": "diagnostic",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "slides",
+        "titleEn": "slides",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "ateliers",
+        "titleEn": "ateliers",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Atelier : utile pour sécuriser diagnostic sans alourdir le système.",
+        "reasonEn": "Useful to secure diagnostic without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-slides",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "powerpoint",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser ateliers sans alourdir le système.",
+        "reasonEn": "Useful to secure ateliers without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gamma",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Rendez-vous : utile pour sécuriser diagnostic sans alourdir le système.",
+        "reasonEn": "Useful to secure diagnostic without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pennylane-ou-indy",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser ateliers sans alourdir le système.",
+        "reasonEn": "Useful to secure ateliers without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser diagnostic sans alourdir le système.",
+        "reasonEn": "Useful to secure diagnostic without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gamma-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser ateliers sans alourdir le système.",
+        "reasonEn": "Useful to secure ateliers without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-solo-founder-indie-maker",
+    "slug": "solo-solo-founder-indie-maker",
+    "title": "Stack indie maker",
+    "titleEn": "indie maker stack",
+    "subtitle": "Les outils recommandés pour créateur d’un produit, saas, annuaire, newsletter, outil ou service digital.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "indie-maker",
+      "product"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Créateur d’un produit, SaaS, annuaire, newsletter, outil ou service digital.",
+    "bestForEn": "Créateur d’un produit, SaaS, annuaire, newsletter, outil ou service digital.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit construire, lancer, mesurer, vendre et supporter seul.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Build",
+        "titleEn": "Build",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "landing",
+        "titleEn": "landing",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "paiement",
+        "titleEn": "paiement",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "analytics",
+        "titleEn": "analytics",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webflow",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
+        "reasonEn": "Useful to secure build without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "framer",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser landing sans alourdir le système.",
+        "reasonEn": "Useful to secure landing without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lovable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "cursor",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser analytics sans alourdir le système.",
+        "reasonEn": "Useful to secure analytics without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "vercel",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
+        "reasonEn": "Useful to secure build without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "supabase",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser landing sans alourdir le système.",
+        "reasonEn": "Useful to secure landing without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Paiement : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "posthog",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser analytics sans alourdir le système.",
+        "reasonEn": "Useful to secure analytics without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "plausible",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
+        "reasonEn": "Useful to secure build without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Cockpit : utile pour sécuriser landing sans alourdir le système.",
+        "reasonEn": "Useful to secure landing without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser analytics sans alourdir le système.",
+        "reasonEn": "Useful to secure analytics without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser build sans alourdir le système.",
+        "reasonEn": "Useful to secure build without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-creator-operator",
+    "slug": "solo-creator-operator",
+    "title": "Stack creator-operator",
+    "titleEn": "creator-operator stack",
+    "subtitle": "Les outils recommandés pour créateur de contenu qui vend aussi des services, produits, formations ou abonnements.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "creator-operator",
+      "social-content"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Créateur de contenu qui vend aussi des services, produits, formations ou abonnements.",
+    "bestForEn": "Créateur de contenu qui vend aussi des services, produits, formations ou abonnements.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il a besoin d’un système contenu + business + audience.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Calendrier contenu",
+        "titleEn": "Calendrier contenu",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "création",
+        "titleEn": "création",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "distribution",
+        "titleEn": "distribution",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "newsletter",
+        "titleEn": "newsletter",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser calendrier contenu sans alourdir le système.",
+        "reasonEn": "Useful to secure calendrier contenu without weighing down the system."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Design rapide : utile pour sécuriser création sans alourdir le système.",
+        "reasonEn": "Useful to secure création without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser distribution sans alourdir le système.",
+        "reasonEn": "Useful to secure distribution without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "metricool",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser newsletter sans alourdir le système.",
+        "reasonEn": "Useful to secure newsletter without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "convertkit",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser calendrier contenu sans alourdir le système.",
+        "reasonEn": "Useful to secure calendrier contenu without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "beehiiv",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser création sans alourdir le système.",
+        "reasonEn": "Useful to secure création without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Paiement : utile pour sécuriser distribution sans alourdir le système.",
+        "reasonEn": "Useful to secure distribution without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gumroad",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser newsletter sans alourdir le système.",
+        "reasonEn": "Useful to secure newsletter without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser calendrier contenu sans alourdir le système.",
+        "reasonEn": "Useful to secure calendrier contenu without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser création sans alourdir le système.",
+        "reasonEn": "Useful to secure création without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser distribution sans alourdir le système.",
+        "reasonEn": "Useful to secure distribution without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "canva-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser newsletter sans alourdir le système.",
+        "reasonEn": "Useful to secure newsletter without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut-ai",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser calendrier contenu sans alourdir le système.",
+        "reasonEn": "Useful to secure calendrier contenu without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "midjourney",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser création sans alourdir le système.",
+        "reasonEn": "Useful to secure création without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-productized-service-solo",
+    "slug": "solo-productized-service-solo",
+    "title": "Stack service productisé",
+    "titleEn": "service productisé stack",
+    "subtitle": "Les outils recommandés pour freelance qui vend une prestation packagée : audit, design sprint, setup, accompagnement.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "productized-service",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Freelance qui vend une prestation packagée : audit, design sprint, setup, accompagnement.",
+    "bestForEn": "Freelance qui vend une prestation packagée : audit, design sprint, setup, accompagnement.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit standardiser la vente, l’onboarding, la production et la livraison.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Landing",
+        "titleEn": "Landing",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "paiement",
+        "titleEn": "paiement",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "intake form",
+        "titleEn": "intake form",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "SOP",
+        "titleEn": "SOP",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webflow-framer",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser landing sans alourdir le système.",
+        "reasonEn": "Useful to secure landing without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Paiement : utile pour sécuriser intake form sans alourdir le système.",
+        "reasonEn": "Useful to secure intake form without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser sop sans alourdir le système.",
+        "reasonEn": "Useful to secure sop without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser landing sans alourdir le système.",
+        "reasonEn": "Useful to secure landing without weighing down the system."
+      },
+      {
+        "role": "Async",
+        "roleEn": "Async",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Async : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Rendez-vous : utile pour sécuriser intake form sans alourdir le système.",
+        "reasonEn": "Useful to secure intake form without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser sop sans alourdir le système.",
+        "reasonEn": "Useful to secure sop without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser landing sans alourdir le système.",
+        "reasonEn": "Useful to secure landing without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser intake form sans alourdir le système.",
+        "reasonEn": "Useful to secure intake form without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-coach-formateur-solo",
+    "slug": "solo-coach-formateur-solo",
+    "title": "Stack coach solo",
+    "titleEn": "coach solo stack",
+    "subtitle": "Les outils recommandés pour vend accompagnements, sessions, formations, ateliers ou programmes.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solo-coach-trainer",
+      "training"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Vend accompagnements, sessions, formations, ateliers ou programmes.",
+    "bestForEn": "Vend accompagnements, sessions, formations, ateliers ou programmes.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit gérer rendez-vous, contenus, clients, paiements et suivi.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Planning",
+        "titleEn": "Planning",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "booking",
+        "titleEn": "booking",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "paiement",
+        "titleEn": "paiement",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "supports",
+        "titleEn": "supports",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Rendez-vous : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-meet",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser booking sans alourdir le système.",
+        "reasonEn": "Useful to secure booking without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zoom",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser supports sans alourdir le système.",
+        "reasonEn": "Useful to secure supports without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "learnworlds",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "podia",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser booking sans alourdir le système.",
+        "reasonEn": "Useful to secure booking without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Paiement : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser supports sans alourdir le système.",
+        "reasonEn": "Useful to secure supports without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mailerlite",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser booking sans alourdir le système.",
+        "reasonEn": "Useful to secure booking without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "canva-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser supports sans alourdir le système.",
+        "reasonEn": "Useful to secure supports without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "descript",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "elevenlabs",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser booking sans alourdir le système.",
+        "reasonEn": "Useful to secure booking without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-micro-agence-dune-personne",
+    "slug": "solo-micro-agence-dune-personne",
+    "title": "Stack micro-agence",
+    "titleEn": "micro-agence stack",
+    "subtitle": "Les outils recommandés pour solo qui vend comme une agence mais produit seul ou avec quelques freelances.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "micro-agency-one",
+      "agency"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Solo qui vend comme une agence mais produit seul ou avec quelques freelances.",
+    "bestForEn": "Solo qui vend comme une agence mais produit seul ou avec quelques freelances.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il a besoin d’une stack plus robuste : CRM, projets, sous-traitants, marges, livraison.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "planning",
+        "titleEn": "planning",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "gestion prestataires",
+        "titleEn": "gestion prestataires",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "marge",
+        "titleEn": "marge",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "clickup",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Communication : utile pour sécuriser gestion prestataires sans alourdir le système.",
+        "reasonEn": "Useful to secure gestion prestataires without weighing down the system."
+      },
+      {
+        "role": "Fichiers",
+        "roleEn": "Fichiers",
+        "slug": "google-drive",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Fichiers : utile pour sécuriser marge sans alourdir le système.",
+        "reasonEn": "Useful to secure marge without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "harvest",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser gestion prestataires sans alourdir le système.",
+        "reasonEn": "Useful to secure gestion prestataires without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pennylane-qonto",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser marge sans alourdir le système.",
+        "reasonEn": "Useful to secure marge without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clickup-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser gestion prestataires sans alourdir le système.",
+        "reasonEn": "Useful to secure gestion prestataires without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-assistant-virtuel-online-business-manager-solo",
+    "slug": "solo-assistant-virtuel-online-business-manager-solo",
+    "title": "Stack OBM solo",
+    "titleEn": "OBM solo stack",
+    "subtitle": "Les outils recommandés pour aide entrepreneurs et petites équipes à gérer admin, contenu, outils, planning et process.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "online-business-manager",
+      "operations"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Aide entrepreneurs et petites équipes à gérer admin, contenu, outils, planning et process.",
+    "bestForEn": "Aide entrepreneurs et petites équipes à gérer admin, contenu, outils, planning et process.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Le métier repose entièrement sur les outils, les automatisations et l’organisation.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Inbox",
+        "titleEn": "Inbox",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "calendrier",
+        "titleEn": "calendrier",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "process",
+        "titleEn": "process",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Suite collaborative : utile pour sécuriser inbox sans alourdir le système.",
+        "reasonEn": "Useful to secure inbox without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser calendrier sans alourdir le système.",
+        "reasonEn": "Useful to secure calendrier without weighing down the system."
+      },
+      {
+        "role": "Gestion projet",
+        "roleEn": "Gestion projet",
+        "slug": "clickup",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Gestion projet : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Communication : utile pour sécuriser inbox sans alourdir le système.",
+        "reasonEn": "Useful to secure inbox without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser calendrier sans alourdir le système.",
+        "reasonEn": "Useful to secure calendrier without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Design rapide : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Rendez-vous : utile pour sécuriser inbox sans alourdir le système.",
+        "reasonEn": "Useful to secure inbox without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser calendrier sans alourdir le système.",
+        "reasonEn": "Useful to secure calendrier without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser process sans alourdir le système.",
+        "reasonEn": "Useful to secure process without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-no-code-builder-solo",
+    "slug": "solo-no-code-builder-solo",
+    "title": "Stack no-code solo",
+    "titleEn": "no-code solo stack",
+    "subtitle": "Les outils recommandés pour construit sites, apps internes, automatisations ou mvp sans code classique.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solo-nocode-builder",
+      "no-code"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Construit sites, apps internes, automatisations ou MVP sans code classique.",
+    "bestForEn": "Construit sites, apps internes, automatisations ou MVP sans code classique.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Stack très Tooltrim-compatible grâce aux arbitrages entre outils.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Build",
+        "titleEn": "Build",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "base de données",
+        "titleEn": "base de données",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "automatisation",
+        "titleEn": "automatisation",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "auth",
+        "titleEn": "auth",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webflow",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
+        "reasonEn": "Useful to secure build without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "framer",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser base de données sans alourdir le système.",
+        "reasonEn": "Useful to secure base de données without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "bubble",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser automatisation sans alourdir le système.",
+        "reasonEn": "Useful to secure automatisation without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "softr",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser auth sans alourdir le système.",
+        "reasonEn": "Useful to secure auth without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser build sans alourdir le système.",
+        "reasonEn": "Useful to secure build without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "supabase",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser base de données sans alourdir le système.",
+        "reasonEn": "Useful to secure base de données without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser automatisation sans alourdir le système.",
+        "reasonEn": "Useful to secure automatisation without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser auth sans alourdir le système.",
+        "reasonEn": "Useful to secure auth without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "memberstack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
+        "reasonEn": "Useful to secure build without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Paiement : utile pour sécuriser base de données sans alourdir le système.",
+        "reasonEn": "Useful to secure base de données without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser automatisation sans alourdir le système.",
+        "reasonEn": "Useful to secure automatisation without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser auth sans alourdir le système.",
+        "reasonEn": "Useful to secure auth without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lovable",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
+        "reasonEn": "Useful to secure build without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "cursor",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser base de données sans alourdir le système.",
+        "reasonEn": "Useful to secure base de données without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "replit",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser automatisation sans alourdir le système.",
+        "reasonEn": "Useful to secure automatisation without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser auth sans alourdir le système.",
+        "reasonEn": "Useful to secure auth without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-ai-automation-freelancer-solo",
+    "slug": "solo-ai-automation-freelancer-solo",
+    "title": "Stack AI automation solo",
+    "titleEn": "AI automation solo stack",
+    "subtitle": "Les outils recommandés pour vend des automatisations ia, agents, workflows, bots et systèmes internes.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solo-ai-automation",
+      "automation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Vend des automatisations IA, agents, workflows, bots et systèmes internes.",
+    "bestForEn": "Vend des automatisations IA, agents, workflows, bots et systèmes internes.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Profil d’avenir : il a besoin d’une stack précise et d’un discours très clair.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Audit",
+        "titleEn": "Audit",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "workflow",
+        "titleEn": "workflow",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "API",
+        "titleEn": "API",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "agents",
+        "titleEn": "agents",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "n8n",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Automatisation : utile pour sécuriser workflow sans alourdir le système.",
+        "reasonEn": "Useful to secure workflow without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Automatisation : utile pour sécuriser api sans alourdir le système.",
+        "reasonEn": "Useful to secure api without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Base métier : utile pour sécuriser agents sans alourdir le système.",
+        "reasonEn": "Useful to secure agents without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "openai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser workflow sans alourdir le système.",
+        "reasonEn": "Useful to secure workflow without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "anthropic",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser api sans alourdir le système.",
+        "reasonEn": "Useful to secure api without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "relevance-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser agents sans alourdir le système.",
+        "reasonEn": "Useful to secure agents without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lindy",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Communication",
+        "roleEn": "Communication",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Communication : utile pour sécuriser workflow sans alourdir le système.",
+        "reasonEn": "Useful to secure workflow without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser api sans alourdir le système.",
+        "reasonEn": "Useful to secure api without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser agents sans alourdir le système.",
+        "reasonEn": "Useful to secure agents without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gemini",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser workflow sans alourdir le système.",
+        "reasonEn": "Useful to secure workflow without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-solo-sales-business-developer-freelance",
+    "slug": "solo-solo-sales-business-developer-freelance",
+    "title": "Stack sales solo",
+    "titleEn": "sales solo stack",
+    "subtitle": "Les outils recommandés pour génère des leads, prospecte, qualifie et vend pour lui-même ou pour des clients.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solo-sales-bd",
+      "crm-sales"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Génère des leads, prospecte, qualifie et vend pour lui-même ou pour des clients.",
+    "bestForEn": "Génère des leads, prospecte, qualifie et vend pour lui-même ou pour des clients.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Le besoin est clair : CRM, prospection, enrichissement, email, suivi, reporting.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Lead sourcing",
+        "titleEn": "Lead sourcing",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "séquences",
+        "titleEn": "séquences",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "enrichissement",
+        "titleEn": "enrichissement",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "CRM : utile pour sécuriser lead sourcing sans alourdir le système.",
+        "reasonEn": "Useful to secure lead sourcing without weighing down the system."
+      },
+      {
+        "role": "Pipeline",
+        "roleEn": "Pipeline",
+        "slug": "pipedrive",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Pipeline : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "apollo",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser séquences sans alourdir le système.",
+        "reasonEn": "Useful to secure séquences without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clay",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser enrichissement sans alourdir le système.",
+        "reasonEn": "Useful to secure enrichissement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lemlist",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser lead sourcing sans alourdir le système.",
+        "reasonEn": "Useful to secure lead sourcing without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "instantly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Rendez-vous : utile pour sécuriser séquences sans alourdir le système.",
+        "reasonEn": "Useful to secure séquences without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "aircall",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser enrichissement sans alourdir le système.",
+        "reasonEn": "Useful to secure enrichissement without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Cockpit : utile pour sécuriser lead sourcing sans alourdir le système.",
+        "reasonEn": "Useful to secure lead sourcing without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser séquences sans alourdir le système.",
+        "reasonEn": "Useful to secure séquences without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-consultant-local-independant-terrain",
+    "slug": "solo-consultant-local-independant-terrain",
+    "title": "Stack consultant local",
+    "titleEn": "consultant local stack",
+    "subtitle": "Les outils recommandés pour travaille avec commerces, artisans, pme locales, associations ou institutions.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "local-consultant",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Travaille avec commerces, artisans, PME locales, associations ou institutions.",
+    "bestForEn": "Travaille avec commerces, artisans, PME locales, associations ou institutions.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il a besoin d’une stack simple, rassurante, pas trop technique.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Devis",
+        "titleEn": "Devis",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "factures",
+        "titleEn": "factures",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "planning",
+        "titleEn": "planning",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "documents",
+        "titleEn": "documents",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Suite collaborative : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser factures sans alourdir le système.",
+        "reasonEn": "Useful to secure factures without weighing down the system."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Design rapide : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser documents sans alourdir le système.",
+        "reasonEn": "Useful to secure documents without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Compte pro : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser factures sans alourdir le système.",
+        "reasonEn": "Useful to secure factures without weighing down the system."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Rendez-vous : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "whatsapp-business",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser documents sans alourdir le système.",
+        "reasonEn": "Useful to secure documents without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser devis sans alourdir le système.",
+        "reasonEn": "Useful to secure devis without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser factures sans alourdir le système.",
+        "reasonEn": "Useful to secure factures without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "canva-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
+        "reasonEn": "Useful to secure planning without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-solo-admin-office-manager-externalise",
+    "slug": "solo-solo-admin-office-manager-externalise",
+    "title": "Stack admin solo",
+    "titleEn": "admin solo stack",
+    "subtitle": "Les outils recommandés pour gère l’administratif, facturation, relances, documents et organisation pour plusieurs clients.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solo-admin-office",
+      "admin"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Gère l’administratif, facturation, relances, documents et organisation pour plusieurs clients.",
+    "bestForEn": "Gère l’administratif, facturation, relances, documents et organisation pour plusieurs clients.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Profil très opérationnel avec besoin de process et confidentialité.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Documents",
+        "titleEn": "Documents",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "factures",
+        "titleEn": "factures",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "relances",
+        "titleEn": "relances",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "dossiers",
+        "titleEn": "dossiers",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Suite collaborative : utile pour sécuriser documents sans alourdir le système.",
+        "reasonEn": "Useful to secure documents without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser factures sans alourdir le système.",
+        "reasonEn": "Useful to secure factures without weighing down the system."
+      },
+      {
+        "role": "Kanban simple",
+        "roleEn": "Kanban simple",
+        "slug": "trello",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Kanban simple : utile pour sécuriser relances sans alourdir le système.",
+        "reasonEn": "Useful to secure relances without weighing down the system."
+      },
+      {
+        "role": "Comptabilité",
+        "roleEn": "Comptabilité",
+        "slug": "pennylane",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Comptabilité : utile pour sécuriser dossiers sans alourdir le système.",
+        "reasonEn": "Useful to secure dossiers without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser documents sans alourdir le système.",
+        "reasonEn": "Useful to secure documents without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Compte pro : utile pour sécuriser factures sans alourdir le système.",
+        "reasonEn": "Useful to secure factures without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser relances sans alourdir le système.",
+        "reasonEn": "Useful to secure relances without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "dropbox",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser dossiers sans alourdir le système.",
+        "reasonEn": "Useful to secure dossiers without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser documents sans alourdir le système.",
+        "reasonEn": "Useful to secure documents without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser factures sans alourdir le système.",
+        "reasonEn": "Useful to secure factures without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-newsletter-media-solo",
+    "slug": "solo-newsletter-media-solo",
+    "title": "Stack media solo",
+    "titleEn": "media solo stack",
+    "subtitle": "Les outils recommandés pour construit une audience via newsletter, veille, curation, articles ou contenu expert.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solo-media-newsletter",
+      "newsletter"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Construit une audience via newsletter, veille, curation, articles ou contenu expert.",
+    "bestForEn": "Construit une audience via newsletter, veille, curation, articles ou contenu expert.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit produire régulièrement et convertir l’attention en revenus.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Veille",
+        "titleEn": "Veille",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "rédaction",
+        "titleEn": "rédaction",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "newsletter",
+        "titleEn": "newsletter",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "landing",
+        "titleEn": "landing",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "beehiiv",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser veille sans alourdir le système.",
+        "reasonEn": "Useful to secure veille without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "substack",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser rédaction sans alourdir le système.",
+        "reasonEn": "Useful to secure rédaction without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "convertkit",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser newsletter sans alourdir le système.",
+        "reasonEn": "Useful to secure newsletter without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser landing sans alourdir le système.",
+        "reasonEn": "Useful to secure landing without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Recherche : utile pour sécuriser veille sans alourdir le système.",
+        "reasonEn": "Useful to secure veille without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "feedly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser rédaction sans alourdir le système.",
+        "reasonEn": "Useful to secure rédaction without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "readwise",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser newsletter sans alourdir le système.",
+        "reasonEn": "Useful to secure newsletter without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Paiement : utile pour sécuriser landing sans alourdir le système.",
+        "reasonEn": "Useful to secure landing without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "plausible",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser veille sans alourdir le système.",
+        "reasonEn": "Useful to secure veille without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser rédaction sans alourdir le système.",
+        "reasonEn": "Useful to secure rédaction without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser newsletter sans alourdir le système.",
+        "reasonEn": "Useful to secure newsletter without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-solopreneur-e-commerce-leger",
+    "slug": "solo-solopreneur-e-commerce-leger",
+    "title": "Stack e-commerce solo",
+    "titleEn": "e-commerce solo stack",
+    "subtitle": "Les outils recommandés pour vend produits physiques, digitaux ou drops légers seul ou avec prestataires.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solopreneur",
+      "admin"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Vend produits physiques, digitaux ou drops légers seul ou avec prestataires.",
+    "bestForEn": "Vend produits physiques, digitaux ou drops légers seul ou avec prestataires.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Stack très complète malgré la petite taille : boutique, paiement, support, email, logistique.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Boutique",
+        "titleEn": "Boutique",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "catalogue",
+        "titleEn": "catalogue",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "paiement",
+        "titleEn": "paiement",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "email",
+        "titleEn": "email",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "shopify",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser boutique sans alourdir le système.",
+        "reasonEn": "Useful to secure boutique without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Paiement : utile pour sécuriser catalogue sans alourdir le système.",
+        "reasonEn": "Useful to secure catalogue without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "klaviyo",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gorgias-helpscout",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser email sans alourdir le système.",
+        "reasonEn": "Useful to secure email without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser boutique sans alourdir le système.",
+        "reasonEn": "Useful to secure boutique without weighing down the system."
+      },
+      {
+        "role": "Base métier",
+        "roleEn": "Base métier",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Base métier : utile pour sécuriser catalogue sans alourdir le système.",
+        "reasonEn": "Useful to secure catalogue without weighing down the system."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Design rapide : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser email sans alourdir le système.",
+        "reasonEn": "Useful to secure email without weighing down the system."
+      },
+      {
+        "role": "Compte pro",
+        "roleEn": "Compte pro",
+        "slug": "qonto",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Compte pro : utile pour sécuriser boutique sans alourdir le système.",
+        "reasonEn": "Useful to secure boutique without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser catalogue sans alourdir le système.",
+        "reasonEn": "Useful to secure catalogue without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser paiement sans alourdir le système.",
+        "reasonEn": "Useful to secure paiement without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-createur-de-formation-solo",
+    "slug": "solo-createur-de-formation-solo",
+    "title": "Stack formation solo",
+    "titleEn": "formation solo stack",
+    "subtitle": "Les outils recommandés pour produit et vend formations, templates, masterclass ou accompagnements.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "solo-course-creator",
+      "training"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 64,
+    "savings": 150,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Produit et vend formations, templates, masterclass ou accompagnements.",
+    "bestForEn": "Produit et vend formations, templates, masterclass ou accompagnements.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Il doit créer, héberger, vendre, suivre et animer une audience.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Script",
+        "titleEn": "Script",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "slides",
+        "titleEn": "slides",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "vidéo",
+        "titleEn": "vidéo",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "LMS",
+        "titleEn": "LMS",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser script sans alourdir le système.",
+        "reasonEn": "Useful to secure script without weighing down the system."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Design rapide : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      },
+      {
+        "role": "Async",
+        "roleEn": "Async",
+        "slug": "loom",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Async : utile pour sécuriser vidéo sans alourdir le système.",
+        "reasonEn": "Useful to secure vidéo without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "descript",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser lms sans alourdir le système.",
+        "reasonEn": "Useful to secure lms without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "podia",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser script sans alourdir le système.",
+        "reasonEn": "Useful to secure script without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "learnworlds",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Paiement : utile pour sécuriser vidéo sans alourdir le système.",
+        "reasonEn": "Useful to secure vidéo without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "convertkit",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser lms sans alourdir le système.",
+        "reasonEn": "Useful to secure lms without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "circle",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser script sans alourdir le système.",
+        "reasonEn": "Useful to secure script without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser vidéo sans alourdir le système.",
+        "reasonEn": "Useful to secure vidéo without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "canva-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser lms sans alourdir le système.",
+        "reasonEn": "Useful to secure lms without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "elevenlabs",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser script sans alourdir le système.",
+        "reasonEn": "Useful to secure script without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-solo-knowledge-worker-premium",
+    "slug": "solo-solo-knowledge-worker-premium",
+    "title": "Stack knowledge worker",
+    "titleEn": "knowledge worker stack",
+    "subtitle": "Les outils recommandés pour profil expert qui vend de l’analyse, des livrables, de la stratégie ou de la synthèse.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "premium-knowledge-worker",
+      "research"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Profil expert qui vend de l’analyse, des livrables, de la stratégie ou de la synthèse.",
+    "bestForEn": "Profil expert qui vend de l’analyse, des livrables, de la stratégie ou de la synthèse.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Sa valeur repose sur la qualité de pensée, la recherche et la restitution.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Recherche",
+        "titleEn": "Recherche",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "notes",
+        "titleEn": "notes",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "rédaction",
+        "titleEn": "rédaction",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "slides",
+        "titleEn": "slides",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser recherche sans alourdir le système.",
+        "reasonEn": "Useful to secure recherche without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "obsidian",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser notes sans alourdir le système.",
+        "reasonEn": "Useful to secure notes without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "readwise",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser rédaction sans alourdir le système.",
+        "reasonEn": "Useful to secure rédaction without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Recherche : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-docs",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser recherche sans alourdir le système.",
+        "reasonEn": "Useful to secure recherche without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gamma",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser notes sans alourdir le système.",
+        "reasonEn": "Useful to secure notes without weighing down the system."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Atelier : utile pour sécuriser rédaction sans alourdir le système.",
+        "reasonEn": "Useful to secure rédaction without weighing down the system."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Signature : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser recherche sans alourdir le système.",
+        "reasonEn": "Useful to secure recherche without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser notes sans alourdir le système.",
+        "reasonEn": "Useful to secure notes without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser rédaction sans alourdir le système.",
+        "reasonEn": "Useful to secure rédaction without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gemini",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser slides sans alourdir le système.",
+        "reasonEn": "Useful to secure slides without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-solo-generaliste-augmente-par-ia",
+    "slug": "solo-solo-generaliste-augmente-par-ia",
+    "title": "Stack solo IA",
+    "titleEn": "solo IA stack",
+    "subtitle": "Les outils recommandés pour profil transversal qui utilise l’ia comme assistant de recherche, production, automatisation et décision.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "ai-augmented-solo",
+      "automation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Profil transversal qui utilise l’IA comme assistant de recherche, production, automatisation et décision.",
+    "bestForEn": "Profil transversal qui utilise l’IA comme assistant de recherche, production, automatisation et décision.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "C’est probablement le profil le plus actuel pour Tooltrim : il a besoin d’un système cohérent, pas d’un catalogue d’IA.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Recherche",
+        "titleEn": "Recherche",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "prompts",
+        "titleEn": "prompts",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "agents",
+        "titleEn": "agents",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "rédaction",
+        "titleEn": "rédaction",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "IA généraliste : utile pour sécuriser recherche sans alourdir le système.",
+        "reasonEn": "Useful to secure recherche without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Analyse longue : utile pour sécuriser prompts sans alourdir le système.",
+        "reasonEn": "Useful to secure prompts without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Recherche : utile pour sécuriser agents sans alourdir le système.",
+        "reasonEn": "Useful to secure agents without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gemini",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser rédaction sans alourdir le système.",
+        "reasonEn": "Useful to secure rédaction without weighing down the system."
+      },
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser recherche sans alourdir le système.",
+        "reasonEn": "Useful to secure recherche without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser prompts sans alourdir le système.",
+        "reasonEn": "Useful to secure prompts without weighing down the system."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Automatisation : utile pour sécuriser agents sans alourdir le système.",
+        "reasonEn": "Useful to secure agents without weighing down the system."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Design rapide : utile pour sécuriser rédaction sans alourdir le système.",
+        "reasonEn": "Useful to secure rédaction without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser recherche sans alourdir le système.",
+        "reasonEn": "Useful to secure recherche without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "runway",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser prompts sans alourdir le système.",
+        "reasonEn": "Useful to secure prompts without weighing down the system."
+      }
+    ]
+  },
+  {
+    "id": "solo-solo-all-in-one-pour-client-b2b",
+    "slug": "solo-solo-all-in-one-pour-client-b2b",
+    "title": "Stack all-in-one B2B",
+    "titleEn": "all-in-one B2B stack",
+    "subtitle": "Les outils recommandés pour profil qui vend un accompagnement complet à des petites entreprises : site, contenu, crm, outils, automation.",
+    "subtitleEn": "Recommended tools for this operator profile.",
+    "persona": "solo",
+    "subProfiles": [
+      "b2b-all-in-one-solo",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 112,
+    "savings": 240,
+    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
+    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
+    "bestFor": "Profil qui vend un accompagnement complet à des petites entreprises : site, contenu, CRM, outils, automation.",
+    "bestForEn": "Profil qui vend un accompagnement complet à des petites entreprises : site, contenu, CRM, outils, automation.",
+    "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
+    "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
+    "editorial": "Très bon angle Tooltrim car il mélange plusieurs familles déjà couvertes.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
+    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "needs": [
+      {
+        "title": "Audit",
+        "titleEn": "Audit",
+        "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
+        "detailEn": "The system should reduce back-and-forth and make the next action visible."
+      },
+      {
+        "title": "stack client",
+        "titleEn": "stack client",
+        "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
+        "detailEn": "Data should support decisions, not decorate dashboards."
+      },
+      {
+        "title": "site",
+        "titleEn": "site",
+        "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
+        "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
+      },
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
+        "detailEn": "The stack must remain maintainable by a small team or solo operator."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Les mêmes opérations reviennent chaque semaine",
+        "titleEn": "The same operations repeat weekly",
+        "detail": "C’est le bon moment pour documenter, automatiser et mesurer au lieu de tout gérer à la main.",
+        "detailEn": "That is the right moment to document, automate, and measure instead of handling everything manually."
+      },
+      {
+        "title": "Les décisions dépendent de plusieurs personnes",
+        "titleEn": "Decisions depend on several people",
+        "detail": "Il faut alors rendre statuts, responsabilités et validations visibles sans multiplier les réunions.",
+        "detailEn": "Statuses, ownership, and approvals need to be visible without adding meetings."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser un mauvais process",
+        "titleEn": "Automating a bad process",
+        "detail": "Une automatisation utile vient après un flux clair. Sinon elle accélère juste le désordre.",
+        "detailEn": "Useful automation comes after a clear flow. Otherwise it only speeds up disorder."
+      },
+      {
+        "title": "Confondre outil et système",
+        "titleEn": "Confusing tool and system",
+        "detail": "Le système, c’est la règle de travail. L’outil ne fait que la rendre plus facile à appliquer.",
+        "detailEn": "The system is the working rule. The tool only makes it easier to apply."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Qui est responsable de chaque étape ?",
+        "qEn": "Who owns each step?",
+        "hint": "Si la responsabilité est floue, aucun outil ne sauvera le workflow.",
+        "hintEn": "If ownership is blurry, no tool will save the workflow."
+      },
+      {
+        "q": "Qu’est-ce qui doit être automatisé maintenant ?",
+        "qEn": "What should be automated now?",
+        "hint": "Automatise seulement ce qui est stable, fréquent et coûteux en attention.",
+        "hintEn": "Automate only what is stable, frequent, and attention-heavy."
+      },
+      {
+        "q": "Le reporting provoque-t-il une décision ?",
+        "qEn": "Does reporting trigger a decision?",
+        "hint": "Un dashboard qui ne change aucune action doit être simplifié ou supprimé.",
+        "hintEn": "A dashboard that changes no action should be simplified or removed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit",
+        "roleEn": "Cockpit",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Cockpit : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webflow-framer",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser stack client sans alourdir le système.",
+        "reasonEn": "Useful to secure stack client without weighing down the system."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "CRM : utile pour sécuriser site sans alourdir le système.",
+        "reasonEn": "Useful to secure site without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "brevo",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "core",
+        "tip": "À garder dans le socle opérationnel.",
+        "tipEn": "Keep it in the operations core.",
+        "reason": "Outil métier : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zapier-make",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser stack client sans alourdir le système.",
+        "reasonEn": "Useful to secure stack client without weighing down the system."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Reporting : utile pour sécuriser site sans alourdir le système.",
+        "reasonEn": "Useful to secure site without weighing down the system."
+      },
+      {
+        "role": "Async",
+        "roleEn": "Async",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Async : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "IA généraliste : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Analyse longue : utile pour sécuriser stack client sans alourdir le système.",
+        "reasonEn": "Useful to secure stack client without weighing down the system."
+      },
+      {
+        "role": "Recherche",
+        "roleEn": "Recherche",
+        "slug": "perplexity",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Recherche : utile pour sécuriser site sans alourdir le système.",
+        "reasonEn": "Useful to secure site without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "relume-ai",
+        "decision": "conditional",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser crm sans alourdir le système.",
+        "reasonEn": "Useful to secure crm without weighing down the system."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "canva-ai",
+        "decision": "challenge",
+        "tip": "À activer si le volume ou la complexité le justifie.",
+        "tipEn": "Activate if volume or complexity justifies it.",
+        "reason": "Outil métier : utile pour sécuriser audit sans alourdir le système.",
+        "reasonEn": "Useful to secure audit without weighing down the system."
       }
     ]
   },

@@ -114383,5 +114383,3866 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null
+  },
+  {
+    "id": "causal",
+    "slug": "causal",
+    "name": "Causal",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Causal est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "causal.app",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://causal.app",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://causal.app",
+    "websiteUrl": "https://causal.app",
+    "logo": "https://logo.clearbit.com/causal.app",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "attio",
+    "slug": "attio",
+    "name": "Attio",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Attio est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "attio.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://attio.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://attio.com",
+    "websiteUrl": "https://attio.com",
+    "logo": "https://logo.clearbit.com/attio.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "gong",
+    "slug": "gong",
+    "name": "Gong",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Gong est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "gong.io",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://gong.io",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://gong.io",
+    "websiteUrl": "https://gong.io",
+    "logo": "https://logo.clearbit.com/gong.io",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "helpscout",
+    "slug": "helpscout",
+    "name": "Helpscout",
+    "category": "communication",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Helpscout est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "helpscout.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://helpscout.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://helpscout.com",
+    "websiteUrl": "https://helpscout.com",
+    "logo": "https://logo.clearbit.com/helpscout.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "float",
+    "slug": "float",
+    "name": "Float",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Float est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "float.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://float.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://float.com",
+    "websiteUrl": "https://float.com",
+    "logo": "https://logo.clearbit.com/float.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "clickup-ai",
+    "slug": "clickup-ai",
+    "name": "Clickup AI",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Clickup AI est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "clickupai.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://clickupai.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://clickupai.com",
+    "websiteUrl": "https://clickupai.com",
+    "logo": "https://logo.clearbit.com/clickupai.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "productive-io",
+    "slug": "productive-io",
+    "name": "Productive Io",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Productive Io est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "productive.io",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://productive.io",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://productive.io",
+    "websiteUrl": "https://productive.io",
+    "logo": "https://logo.clearbit.com/productive.io",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "ashby",
+    "slug": "ashby",
+    "name": "Ashby",
+    "category": "hris-payroll",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Ashby est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "ashbyhq.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://ashbyhq.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://ashbyhq.com",
+    "websiteUrl": "https://ashbyhq.com",
+    "logo": "https://logo.clearbit.com/ashbyhq.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "axonaut",
+    "slug": "axonaut",
+    "name": "Axonaut",
+    "category": "finance",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Axonaut est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "axonaut.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://axonaut.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://axonaut.com",
+    "websiteUrl": "https://axonaut.com",
+    "logo": "https://logo.clearbit.com/axonaut.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "gocardless",
+    "slug": "gocardless",
+    "name": "Gocardless",
+    "category": "finance",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Gocardless est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "gocardless.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://gocardless.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://gocardless.com",
+    "websiteUrl": "https://gocardless.com",
+    "logo": "https://logo.clearbit.com/gocardless.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "pennylane-ai-selon-dispo",
+    "slug": "pennylane-ai-selon-dispo",
+    "name": "Pennylane AI Selon Dispo",
+    "category": "finance",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Pennylane AI Selon Dispo est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "pennylaneaiselondispo.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://pennylaneaiselondispo.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://pennylaneaiselondispo.com",
+    "websiteUrl": "https://pennylaneaiselondispo.com",
+    "logo": "https://logo.clearbit.com/pennylaneaiselondispo.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "customer-io",
+    "slug": "customer-io",
+    "name": "Customer Io",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Customer Io est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "customer.io",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://customer.io",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://customer.io",
+    "websiteUrl": "https://customer.io",
+    "logo": "https://logo.clearbit.com/customer.io",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "dovetail-ai",
+    "slug": "dovetail-ai",
+    "name": "Dovetail AI",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Dovetail AI est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "dovetailai.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://dovetailai.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://dovetailai.com",
+    "websiteUrl": "https://dovetailai.com",
+    "logo": "https://logo.clearbit.com/dovetailai.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "coupler-io",
+    "slug": "coupler-io",
+    "name": "Coupler Io",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Coupler Io est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "coupler.io",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://coupler.io",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://coupler.io",
+    "websiteUrl": "https://coupler.io",
+    "logo": "https://logo.clearbit.com/coupler.io",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "supermetrics",
+    "slug": "supermetrics",
+    "name": "Supermetrics",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Supermetrics est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "supermetrics.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://supermetrics.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://supermetrics.com",
+    "websiteUrl": "https://supermetrics.com",
+    "logo": "https://logo.clearbit.com/supermetrics.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "excel-copilot",
+    "slug": "excel-copilot",
+    "name": "Excel Copilot",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Excel Copilot est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "excelcopilot.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://excelcopilot.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://excelcopilot.com",
+    "websiteUrl": "https://excelcopilot.com",
+    "logo": "https://logo.clearbit.com/excelcopilot.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "webhooks",
+    "slug": "webhooks",
+    "name": "Webhooks",
+    "category": "automation",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Webhooks est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "webhooks.fyi",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://webhooks.fyi",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://webhooks.fyi",
+    "websiteUrl": "https://webhooks.fyi",
+    "logo": "https://logo.clearbit.com/webhooks.fyi",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "relevance-ai",
+    "slug": "relevance-ai",
+    "name": "Relevance AI",
+    "category": "automation",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Relevance AI est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "relevanceai.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://relevanceai.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://relevanceai.com",
+    "websiteUrl": "https://relevanceai.com",
+    "logo": "https://logo.clearbit.com/relevanceai.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "lindy",
+    "slug": "lindy",
+    "name": "Lindy",
+    "category": "automation",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Lindy est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "lindy.ai",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://lindy.ai",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://lindy.ai",
+    "websiteUrl": "https://lindy.ai",
+    "logo": "https://logo.clearbit.com/lindy.ai",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "around",
+    "slug": "around",
+    "name": "Around",
+    "category": "communication",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Around est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "around.co",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://around.co",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://around.co",
+    "websiteUrl": "https://around.co",
+    "logo": "https://logo.clearbit.com/around.co",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "captain-contrat",
+    "slug": "captain-contrat",
+    "name": "Captain Contrat",
+    "category": "legal-contracts",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Captain Contrat est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "captaincontrat.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://captaincontrat.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://captaincontrat.com",
+    "websiteUrl": "https://captaincontrat.com",
+    "logo": "https://logo.clearbit.com/captaincontrat.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "legalplace",
+    "slug": "legalplace",
+    "name": "Legalplace",
+    "category": "legal-contracts",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Legalplace est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "legalplace.fr",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://legalplace.fr",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://legalplace.fr",
+    "websiteUrl": "https://legalplace.fr",
+    "logo": "https://logo.clearbit.com/legalplace.fr",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "chatgpt-pour-brouillons-non-juridiques",
+    "slug": "chatgpt-pour-brouillons-non-juridiques",
+    "name": "Chatgpt Pour Brouillons Non Juridiques",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Chatgpt Pour Brouillons Non Juridiques est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "chatgptpourbrouillonsnonjuridiques.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://chatgptpourbrouillonsnonjuridiques.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://chatgptpourbrouillonsnonjuridiques.com",
+    "websiteUrl": "https://chatgptpourbrouillonsnonjuridiques.com",
+    "logo": "https://logo.clearbit.com/chatgptpourbrouillonsnonjuridiques.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "weezevent",
+    "slug": "weezevent",
+    "name": "Weezevent",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Weezevent est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "weezevent.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://weezevent.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://weezevent.com",
+    "websiteUrl": "https://weezevent.com",
+    "logo": "https://logo.clearbit.com/weezevent.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "gmail",
+    "slug": "gmail",
+    "name": "Gmail",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Gmail est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "gmail.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://gmail.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://gmail.com",
+    "websiteUrl": "https://gmail.com",
+    "logo": "https://logo.clearbit.com/gmail.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "krea-selon-metier",
+    "slug": "krea-selon-metier",
+    "name": "Krea Selon Metier",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Krea Selon Metier est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "kreaselonmetier.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://kreaselonmetier.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://kreaselonmetier.com",
+    "websiteUrl": "https://kreaselonmetier.com",
+    "logo": "https://logo.clearbit.com/kreaselonmetier.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "pennylane-ou-indy",
+    "slug": "pennylane-ou-indy",
+    "name": "Pennylane Ou Indy",
+    "category": "finance",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Pennylane Ou Indy est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "pennylaneouindy.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://pennylaneouindy.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://pennylaneouindy.com",
+    "websiteUrl": "https://pennylaneouindy.com",
+    "logo": "https://logo.clearbit.com/pennylaneouindy.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "gamma-ai",
+    "slug": "gamma-ai",
+    "name": "Gamma AI",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Gamma AI est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "gammaai.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://gammaai.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://gammaai.com",
+    "websiteUrl": "https://gammaai.com",
+    "logo": "https://logo.clearbit.com/gammaai.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "webflow-framer",
+    "slug": "webflow-framer",
+    "name": "Webflow Framer",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Webflow Framer est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "webflowframer.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://webflowframer.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://webflowframer.com",
+    "websiteUrl": "https://webflowframer.com",
+    "logo": "https://logo.clearbit.com/webflowframer.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "google-meet",
+    "slug": "google-meet",
+    "name": "Google Meet",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Google Meet est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "googlemeet.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://googlemeet.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://googlemeet.com",
+    "websiteUrl": "https://googlemeet.com",
+    "logo": "https://logo.clearbit.com/googlemeet.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "pennylane-qonto",
+    "slug": "pennylane-qonto",
+    "name": "Pennylane Qonto",
+    "category": "finance",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Pennylane Qonto est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "pennylaneqonto.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://pennylaneqonto.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://pennylaneqonto.com",
+    "websiteUrl": "https://pennylaneqonto.com",
+    "logo": "https://logo.clearbit.com/pennylaneqonto.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "openai",
+    "slug": "openai",
+    "name": "Openai",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Openai est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "openai.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://openai.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://openai.com",
+    "websiteUrl": "https://openai.com",
+    "logo": "https://logo.clearbit.com/openai.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "instantly",
+    "slug": "instantly",
+    "name": "Instantly",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Instantly est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "instantly.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://instantly.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://instantly.com",
+    "websiteUrl": "https://instantly.com",
+    "logo": "https://logo.clearbit.com/instantly.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "whatsapp-business",
+    "slug": "whatsapp-business",
+    "name": "Whatsapp Business",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Whatsapp Business est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "whatsappbusiness.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://whatsappbusiness.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://whatsappbusiness.com",
+    "websiteUrl": "https://whatsappbusiness.com",
+    "logo": "https://logo.clearbit.com/whatsappbusiness.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "feedly",
+    "slug": "feedly",
+    "name": "Feedly",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Feedly est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "feedly.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://feedly.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://feedly.com",
+    "websiteUrl": "https://feedly.com",
+    "logo": "https://logo.clearbit.com/feedly.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "readwise",
+    "slug": "readwise",
+    "name": "Readwise",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Readwise est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "readwise.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://readwise.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://readwise.com",
+    "websiteUrl": "https://readwise.com",
+    "logo": "https://logo.clearbit.com/readwise.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "gorgias-helpscout",
+    "slug": "gorgias-helpscout",
+    "name": "Gorgias Helpscout",
+    "category": "communication",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Gorgias Helpscout est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "gorgiashelpscout.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://gorgiashelpscout.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://gorgiashelpscout.com",
+    "websiteUrl": "https://gorgiashelpscout.com",
+    "logo": "https://logo.clearbit.com/gorgiashelpscout.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "zapier-make",
+    "slug": "zapier-make",
+    "name": "Zapier Make",
+    "category": "automation",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Zapier Make est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "zapiermake.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://zapiermake.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://zapiermake.com",
+    "websiteUrl": "https://zapiermake.com",
+    "logo": "https://logo.clearbit.com/zapiermake.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "relume-ai",
+    "slug": "relume-ai",
+    "name": "Relume AI",
+    "category": "project-management",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescription": "Relume AI est référencé pour couvrir un besoin précis dans les stacks Ops, COO et solo généraliste ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim ops and solo stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "relumeai.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://relumeai.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://relumeai.com",
+    "websiteUrl": "https://relumeai.com",
+    "logo": "https://logo.clearbit.com/relumeai.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "operations-workflow"
+    ],
+    "relevantFor": [
+      "ops",
+      "solo"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient chaque semaine ou touche plusieurs clients."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans le système opérationnel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats weekly or touches several clients."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central to the operating system."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "operations"
+    ],
+    "functional_needs": [
+      "operations-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
   }
 ]
