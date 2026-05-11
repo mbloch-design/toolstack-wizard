@@ -12,6 +12,7 @@ import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/se
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl } from "@/lib/toolUtils";
+import { asText, stripLeadingEmoji } from "@/lib/text";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolVerdictBlock from "@/components/tool/ToolVerdictBlock";
@@ -158,8 +159,8 @@ const ToolDetailPage = () => {
   const isFreemium = !!(tool.pricing?.free && tool.pricing?.paid);
   const freeAlt    = (tool as any).freeAlternative as string | null;
   const betterAlt  = (tool as any).betterAlternative as { tool: string; saving: number } | null;
-  const catName    = category?.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || "";
-  const catNameEn  = category?.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName;
+  const catName    = stripLeadingEmoji(category?.name, category?.id || "");
+  const catNameEn  = stripLeadingEmoji(category?.nameEn, catName);
 
   const TYPE_LABEL: Record<string, { fr: string; en: string }> = {
     ia:        { fr: "Intelligence artificielle", en: "AI tool"     },
@@ -361,8 +362,8 @@ const ToolDetailPage = () => {
                       }}
                     >
                       {freeAlt
-                        ? <><span className="font-medium">{t("Alt. gratuite :", "Free alt:")}</span> <span className="capitalize">{freeAlt.replace(/-/g, " ")}</span></>
-                        : <><span className="font-medium">{t("Moins cher :", "Cheaper:")}</span> <span className="capitalize">{betterAlt?.tool?.replace(/-/g, " ")}</span> {betterAlt?.saving ? `· −${betterAlt.saving}€/mo` : ""}</>
+                        ? <><span className="font-medium">{t("Alt. gratuite :", "Free alt:")}</span> <span className="capitalize">{asText(freeAlt).replace(/-/g, " ")}</span></>
+                        : <><span className="font-medium">{t("Moins cher :", "Cheaper:")}</span> <span className="capitalize">{asText(betterAlt?.tool).replace(/-/g, " ")}</span> {betterAlt?.saving ? `· −${betterAlt.saving}€/mo` : ""}</>
                       }
                     </p>
                   </div>

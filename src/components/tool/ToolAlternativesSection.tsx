@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import type { Tool, Category } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
 import { Check } from "lucide-react";
+import { stripLeadingEmoji } from "@/lib/text";
 
 interface Props {
   tool: Tool;
@@ -23,7 +24,7 @@ export default function ToolAlternativesSection({ tool, category, alternatives, 
   const freeAlts = alternatives.filter(a => a.defaultMonthlyPrice === 0);
   const cheaperAlts = alternatives.filter(a => a.defaultMonthlyPrice > 0 && a.defaultMonthlyPrice < tool.defaultMonthlyPrice);
   const categoryLabel = category
-    ? t(category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), category.nameEn || category.name)
+    ? t(stripLeadingEmoji(category.name, category.id), stripLeadingEmoji(category.nameEn, stripLeadingEmoji(category.name, category.id)))
     : "";
 
   return (

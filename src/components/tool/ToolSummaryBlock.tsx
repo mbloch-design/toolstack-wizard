@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Tool, Category } from "@/data/types";
+import { stripLeadingEmoji } from "@/lib/text";
 
 interface Props {
   tool: Tool;
@@ -18,8 +19,8 @@ interface Props {
 export default function ToolSummaryBlock({ tool, category, alternatives, displayPrice, lang, prefix, t }: Props) {
   const categoryLabel = category
     ? t(
-        (category.name ?? "").replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "").toLowerCase(),
-        (category.nameEn || category.name || "").toLowerCase()
+        stripLeadingEmoji(category.name, category.id).toLowerCase(),
+        stripLeadingEmoji(category.nameEn, stripLeadingEmoji(category.name, category.id)).toLowerCase()
       )
     : t("productivité", "productivity");
 

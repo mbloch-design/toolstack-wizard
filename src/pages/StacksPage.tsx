@@ -211,15 +211,6 @@ const StacksPage = () => {
     }))
     .filter((item): item is { persona: StackPersona; stack: StackListItem } => Boolean(item.stack));
   const showProfileRecommendations = !query && activeFilters.length === 0;
-  const quickLinks = [
-    { label: t("Auditer ma stack", "Audit my stack"), to: `${prefix}/selector`, featured: true },
-    { label: t("Stacks Freelance", "Freelance stacks"), to: `${prefix}/stacks#stacks` },
-    { label: t("Stacks Créateur", "Creator stacks"), to: `${prefix}/stacks#stacks` },
-    { label: t("IA Généraliste", "General AI"), to: `${prefix}/category/ia-generaliste` },
-    { label: t("No-Code & Web", "No-Code & Web"), to: `${prefix}/category/nocode-web` },
-    { label: t("Design & Prototypage", "Design & Prototyping"), to: `${prefix}/category/design-prototypage` },
-    { label: t("Finance & Facturation", "Finance & Invoicing"), to: `${prefix}/category/finance-facturation` },
-  ];
 
   const toggleFilter = (groupId: StackFilterKey, value: string) => {
     setSelectedFilters((current) => ({
@@ -332,39 +323,6 @@ const StacksPage = () => {
           </>
         }
       />
-
-      <nav
-        aria-label={t("Navigation rapide des stacks et catégories", "Quick navigation for stacks and categories")}
-        className="border-y border-border bg-background/95"
-      >
-        <div className="mx-auto max-w-7xl px-6 py-4">
-          <ul className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {quickLinks.map((item) => (
-              <li key={item.label} className="shrink-0">
-                <Link
-                  to={item.to}
-                  aria-label={item.featured ? t("Auditer ma stack, raccourci clavier Commande K", "Audit my stack, keyboard shortcut Command K") : item.label}
-                  className={`inline-flex h-11 items-center gap-3 rounded-full border px-4 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35 ${
-                    item.featured
-                      ? "min-w-[12.5rem] justify-between border-primary/20 bg-primary/10 text-primary hover:bg-primary/15"
-                      : "border-border bg-card text-foreground hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
-                  }`}
-                >
-                  <span>{item.label}</span>
-                  {item.featured && (
-                    <span
-                      aria-hidden="true"
-                      className="rounded-full border border-primary/20 bg-background/70 px-2 py-0.5 text-[11px] font-semibold leading-none text-primary/75"
-                    >
-                      ⌘K
-                    </span>
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
 
       <section id="stacks" className="scroll-mt-20 bg-background">
         <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">

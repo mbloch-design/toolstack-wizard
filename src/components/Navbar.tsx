@@ -23,6 +23,7 @@ import {
 import { useLang } from "@/hooks/useLang";
 import { useTheme } from "@/hooks/useTheme";
 import { useCategories, useToolSummaries } from "@/hooks/useSupabaseData";
+import { stripLeadingEmoji } from "@/lib/text";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
 import pictoLogo from "@/assets/picto-logo.svg";
@@ -220,7 +221,8 @@ const Navbar = () => {
                 <div className="grid gap-1.5">
                   {topCategories.slice(0, 3).map((cat) => {
                     const Icon = getCategoryIcon(cat.id);
-                    const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
+                    const catName = stripLeadingEmoji(cat.name, cat.id);
+                    const catNameEn = stripLeadingEmoji(cat.nameEn, catName);
                     return (
                       <Link
                         key={cat.id}
@@ -232,7 +234,7 @@ const Navbar = () => {
                           <Icon className="h-4 w-4" />
                         </div>
                         <div className="min-w-0">
-                          <p className="truncate text-[13px] font-semibold text-foreground">{t(catName, cat.nameEn || catName)}</p>
+                          <p className="truncate text-[13px] font-semibold text-foreground">{t(catName, catNameEn)}</p>
                           <p className="text-[11px] text-muted-foreground">{cat.count} {t("outils", "tools")}</p>
                         </div>
                       </Link>
@@ -367,12 +369,13 @@ const Navbar = () => {
                 ))}
                 {topCategories.slice(0, 4).map((cat) => {
                   const Icon = getCategoryIcon(cat.id);
-                  const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
+                  const catName = stripLeadingEmoji(cat.name, cat.id);
+                  const catNameEn = stripLeadingEmoji(cat.nameEn, catName);
                   return (
                     <MobileTextLink
                       key={cat.id}
                       icon={Icon}
-                      label={t(catName, cat.nameEn || catName)}
+                      label={t(catName, catNameEn)}
                       description={`${cat.count} ${t("outils", "tools")}`}
                       to={`${prefix}/category/${cat.slug}`}
                       onClick={closeMobile}

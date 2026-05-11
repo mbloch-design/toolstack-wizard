@@ -110,8 +110,14 @@ function makeBadgeSvg({ label, bg, fg, border }: { label: string; bg: string; fg
   return `data:image/svg+xml,${encodeURIComponent(svg)}`;
 }
 
-function normalizeKey(value?: string) {
-  return (value || "")
+function normalizeKey(value?: unknown) {
+  const text = typeof value === "string"
+    ? value
+    : typeof value === "number" || typeof value === "boolean"
+      ? String(value)
+      : "";
+
+  return text
     .toLowerCase()
     .replace(/^www\./, "")
     .replace(/\.(com|co|io|so|app|ai|dev|net|org)$/, "")

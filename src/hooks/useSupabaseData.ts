@@ -9,23 +9,36 @@ import { getToolLogoUrl as resolveToolLogoUrl } from "@/lib/toolLogos";
 const staticCategories: Category[] = (categoriesIndexJson as any[]).map((c: any) => ({
   id: c.id,
   slug: c.slug,
-  name: c.name,
-  nameEn: c.nameEn,
-  description: c.description,
-  descriptionEn: c.descriptionEn,
+  name: asLocalizedText(c.name, c.id, "fr"),
+  nameEn: asLocalizedText(c.nameEn, asLocalizedText(c.name, c.id, "en"), "en"),
+  description: asLocalizedText(c.description, "", "fr"),
+  descriptionEn: asLocalizedText(c.descriptionEn, asLocalizedText(c.description, "", "en"), "en"),
   tools: c.tools,
 }));
 
+function asLocalizedText(value: unknown, fallback = "", locale: "fr" | "en" = "fr"): string {
+  if (typeof value === "string") return value;
+  if (typeof value === "number" || typeof value === "boolean") return String(value);
+  if (value && typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    const candidate = record[locale] ?? record.fr ?? record.en ?? record.name ?? record.label;
+    if (candidate != null && candidate !== value) return asLocalizedText(candidate, fallback, locale);
+    const firstText = Object.values(record).find((item) => typeof item === "string");
+    if (firstText) return firstText;
+  }
+  return fallback;
+}
+
 function mapToolFromJson(t: any): Tool {
   return {
-    id: t.id,
-    slug: t.slug || t.id,
-    name: t.name,
-    categoryId: t.category || "",
-    shortDescription: t.shortDescription || t.short_description || "",
-    shortDescriptionEn: t.shortDescriptionEn || t.short_description_en || "",
-    longDescription: t.longDescription || t.long_description || "",
-    longDescriptionEn: t.longDescriptionEn || t.long_description_en || "",
+    id: asLocalizedText(t.id, ""),
+    slug: asLocalizedText(t.slug || t.id, ""),
+    name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
+    categoryId: asLocalizedText(t.category || t.categoryId, ""),
+    shortDescription: asLocalizedText(t.shortDescription || t.short_description, "", "fr"),
+    shortDescriptionEn: asLocalizedText(t.shortDescriptionEn || t.short_description_en || t.shortDescription || t.short_description, "", "en"),
+    longDescription: asLocalizedText(t.longDescription || t.long_description, "", "fr"),
+    longDescriptionEn: asLocalizedText(t.longDescriptionEn || t.long_description_en || t.longDescription || t.long_description, "", "en"),
     pricing: t.pricing || t.pricingTiers || { free: "", paid: "" },
     pricingEn: t.pricingEn || t.pricing_en || null,
     defaultMonthlyPrice: t.defaultMonthlyPrice || t.default_monthly_price || 0,
@@ -40,9 +53,9 @@ function mapToolFromJson(t: any): Tool {
     covers: t.covers || [],
     relevantFor: t.relevantFor || t.relevant_for || [],
     personas: t.personas || [],
-    affiliateLink: t.affiliateLink || t.affiliate_link || "",
-    websiteUrl: t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link || "",
-    logo: t.logo || "",
+    affiliateLink: asLocalizedText(t.affiliateLink || t.affiliate_link, ""),
+    websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
+    logo: asLocalizedText(t.logo, ""),
     soloRelevance: t.soloRelevance || t.solo_relevance || "",
     teamRelevance: t.teamRelevance || t.team_relevance || "",
     alternatives: t.alternatives || [],
@@ -90,10 +103,31 @@ export type ToolSummary = Pick<
   | "logo"
 >;
 
-const staticToolSummaries: ToolSummary[] = toolsIndexJson as ToolSummary[];
+const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
+  id: asLocalizedText(t.id, ""),
+  slug: asLocalizedText(t.slug || t.id, ""),
+  name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
+  categoryId: asLocalizedText(t.categoryId || t.category, ""),
+  shortDescription: asLocalizedText(t.shortDescription || t.short_description, "", "fr"),
+  shortDescriptionEn: asLocalizedText(t.shortDescriptionEn || t.short_description_en || t.shortDescription || t.short_description, "", "en"),
+  pricing: t.pricing || { free: "", paid: "" },
+  defaultMonthlyPrice: Number(t.defaultMonthlyPrice ?? t.default_monthly_price ?? 0) || 0,
+  affiliateLink: asLocalizedText(t.affiliateLink || t.affiliate_link, ""),
+  websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
+  logo: asLocalizedText(t.logo, ""),
+}));
 
 function mapSupabaseCat(c: any): Category {
-  return { id: c.id, slug: c.slug, name: c.name, description: c.description || "" };
+  const localFallback = staticCategories.find((category) => category.id === c.id);
+  return {
+    id: c.id,
+    slug: c.slug || localFallback?.slug || c.id,
+    name: asLocalizedText(c.name, localFallback?.name || c.id, "fr"),
+    nameEn: asLocalizedText(c.name_en ?? c.nameEn ?? c.name, localFallback?.nameEn || localFallback?.name || c.id, "en"),
+    description: asLocalizedText(c.description, localFallback?.description || "", "fr"),
+    descriptionEn: asLocalizedText(c.description_en ?? c.descriptionEn ?? c.description, localFallback?.descriptionEn || localFallback?.description || "", "en"),
+    tools: localFallback?.tools,
+  };
 }
 
 function mergeById<T extends { id: string }>(localItems: T[], remoteItems: T[]): T[] {
@@ -181,17 +215,17 @@ export function useToolSummaries() {
 
       if (!error && data && data.length > 0) {
         const remoteTools = data.map((t: any) => ({
-          id: t.id,
-          slug: t.slug || t.id,
-          name: t.name,
-          categoryId: t.category || "",
-          shortDescription: t.short_description || "",
-          shortDescriptionEn: t.short_description_en || "",
+          id: asLocalizedText(t.id, ""),
+          slug: asLocalizedText(t.slug || t.id, ""),
+          name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
+          categoryId: asLocalizedText(t.category, ""),
+          shortDescription: asLocalizedText(t.short_description, "", "fr"),
+          shortDescriptionEn: asLocalizedText(t.short_description_en || t.short_description, "", "en"),
           pricing: t.pricing || { free: "", paid: "" },
           defaultMonthlyPrice: t.default_monthly_price || 0,
-          affiliateLink: t.affiliate_link || "",
-          websiteUrl: t.website_url || t.affiliate_link || "",
-          logo: t.logo || "",
+          affiliateLink: asLocalizedText(t.affiliate_link, ""),
+          websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, ""),
+          logo: asLocalizedText(t.logo, ""),
         }));
         setTools(mergeById(staticToolSummaries, remoteTools));
       }

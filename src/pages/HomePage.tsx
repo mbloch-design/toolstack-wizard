@@ -5,6 +5,7 @@ import { useEffect, useMemo, lazy, Suspense, useRef } from "react";
 import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Clock, Clock3, Database, Euro, Layers3, ShieldCheck, Sparkles } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { stripLeadingEmoji } from "@/lib/text";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { STACKS } from "@/data/stacks";
 
@@ -171,6 +172,8 @@ const HomePage = () => {
             {categories.map((cat) => {
               const Icon = getCategoryIcon(cat.id);
               const count = tools.filter((tool) => tool.categoryId === cat.id).length;
+              const catName = stripLeadingEmoji(cat.name, cat.id);
+              const catNameEn = stripLeadingEmoji(cat.nameEn, catName);
               return (
                 <Link
                   key={cat.id}
@@ -185,7 +188,7 @@ const HomePage = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-medium tracking-tight group-hover:text-primary transition-colors duration-200 truncate text-sm">
-                        {t(cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), cat.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""))}
+                        {t(catName, catNameEn)}
                       </p>
                       <p className="mt-0.5 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>{count} {t("outils", "tools")}</p>
                     </div>

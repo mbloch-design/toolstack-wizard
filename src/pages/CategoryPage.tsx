@@ -8,6 +8,7 @@ import ToolLogo from "@/components/ToolLogo";
 import PageHero from "@/components/PageHero";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getToolDomain } from "@/lib/toolUtils";
+import { asText, stripLeadingEmoji } from "@/lib/text";
 import type { PricingV5, ToolType } from "@/data/types";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
@@ -75,8 +76,8 @@ const CategoryPage = () => {
   // SEO
   useEffect(() => {
     if (!category) return;
-    const catName = category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
-    const catNameEn = category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName;
+    const catName = stripLeadingEmoji(category.name, category.id);
+    const catNameEn = stripLeadingEmoji(category.nameEn, catName);
     const title = lang === "fr"
       ? `Outils ${catName} — comparatif prix et alternatives ${year} | ToolTrim`
       : `${catNameEn} tools — pricing comparison & alternatives ${year} | ToolTrim`;
@@ -170,8 +171,8 @@ const CategoryPage = () => {
   }
 
   const Icon = getCategoryIcon(category.id);
-  const catName = category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
-  const catNameEn = category.nameEn?.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "") || catName;
+  const catName = stripLeadingEmoji(category.name, category.id);
+  const catNameEn = stripLeadingEmoji(category.nameEn, catName);
   const freeCount = allCatTools.filter((tool) => tool.defaultMonthlyPrice === 0).length;
   const paidTools = allCatTools.filter((tool) => tool.defaultMonthlyPrice > 0);
   const avgPrice  = paidTools.reduce((s, tool) => s + tool.defaultMonthlyPrice, 0) / (paidTools.length || 1);
@@ -691,7 +692,7 @@ const CategoryPage = () => {
                               <span className="font-medium">
                                 {t("Alternative gratuite :", "Free alternative:")}
                               </span>{" "}
-                              <span className="capitalize">{freeAltSlug?.replace(/-/g, " ")}</span>
+                              <span className="capitalize">{asText(freeAltSlug).replace(/-/g, " ")}</span>
                               {tool.defaultMonthlyPrice > 0 && (
                                 <span style={{ opacity: 0.7 }}>
                                   {" "}· {t("économisez", "save")} {tool.defaultMonthlyPrice}€/{t("mois", "mo")}
@@ -703,7 +704,7 @@ const CategoryPage = () => {
                               <span className="font-medium">
                                 {t("Moins cher :", "Cheaper option:")}
                               </span>{" "}
-                              <span className="capitalize">{betterAlt?.tool?.replace(/-/g, " ")}</span>
+                              <span className="capitalize">{asText(betterAlt?.tool).replace(/-/g, " ")}</span>
                               {betterAlt && betterAlt.saving > 0 && (
                                 <span style={{ opacity: 0.7 }}>
                                   {" "}· −{betterAlt.saving}€/{t("mois", "mo")}
@@ -778,7 +779,7 @@ const CategoryPage = () => {
                   {relatedCats.map((cat) => {
                     const CIcon = getCategoryIcon(cat.id);
                     const count = tools.filter((tool) => tool.categoryId === cat.id).length;
-                    const cName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
+                    const cName = stripLeadingEmoji(cat.name, cat.id);
                     return (
                       <Link
                         key={cat.id}

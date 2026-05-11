@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, useToolSummaries } from "@/hooks/useSupabaseData";
+import { stripLeadingEmoji } from "@/lib/text";
 import { useMemo } from "react";
 import { ArrowRight } from "lucide-react";
 import pictoLogo from "@/assets/picto-logo.svg";
@@ -134,12 +135,13 @@ const Footer = () => {
               <p className="label-section mb-4">{t("Catégories", "Categories")}</p>
               <nav className="flex flex-col gap-2.5">
                 {topCategories.map(cat => {
-                  const catName = cat.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
+                  const catName = stripLeadingEmoji(cat.name, cat.id);
+                  const catNameEn = stripLeadingEmoji(cat.nameEn, catName);
                   return (
                     <Link key={cat.id} to={`${prefix}/category/${cat.slug}`}
                       className="text-sm transition-colors duration-150 hover:text-foreground"
                       style={{ color: "hsl(var(--muted-foreground))" }}>
-                      {t(catName, cat.nameEn || catName)}
+                      {t(catName, catNameEn)}
                     </Link>
                   );
                 })}

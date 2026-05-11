@@ -3,6 +3,7 @@ import type { Tool, Category } from "@/data/types";
 import { ExternalLink, Tag, DollarSign, Users, AlertTriangle, ArrowRightLeft, CalendarCheck, Globe } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
+import { stripLeadingEmoji } from "@/lib/text";
 
 interface Props {
   tool: Tool;
@@ -19,7 +20,7 @@ export default function ToolFactsCard({ tool, category, alternatives, displayPri
   const outboundUrl = tool.affiliateLink || tool.websiteUrl;
   const hasAffiliateOffer = Boolean(tool.affiliateLink);
   const categoryLabel = category
-    ? t(category.name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, ""), category.nameEn || category.name)
+    ? t(stripLeadingEmoji(category.name, category.id), stripLeadingEmoji(category.nameEn, stripLeadingEmoji(category.name, category.id)))
     : "—";
 
   const pricingModel = tool.pricing?.free && tool.pricing?.paid
