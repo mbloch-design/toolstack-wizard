@@ -86,7 +86,37 @@ export type StackSubProfile =
   | "fundraising"
   | "innovation"
   | "change-management"
-  | "generalist-consultant";
+  | "generalist-consultant"
+  | "short-video"
+  | "youtube-long"
+  | "audio-creator"
+  | "linkedin-content"
+  | "creator-newsletter"
+  | "instagram-creator"
+  | "ugc-creator"
+  | "influencer"
+  | "educational-content"
+  | "infoproducts"
+  | "ecommerce-content"
+  | "affiliate-content"
+  | "seo-blogging"
+  | "live-streaming"
+  | "gaming-content"
+  | "travel-photo"
+  | "food-content"
+  | "fashion-beauty"
+  | "finance-content"
+  | "health-wellness"
+  | "b2b-saas-content"
+  | "cohort-course"
+  | "digital-products"
+  | "ai-content"
+  | "documentary-content"
+  | "meme-culture"
+  | "event-coverage"
+  | "brand-content"
+  | "repurposing"
+  | "community-creator";
 
 export interface StackToolSlot {
   role: string;
@@ -253,6 +283,36 @@ export const STACK_SUB_PROFILES: { value: StackSubProfile | "all"; label: string
   { value: "innovation", label: "Innovation", labelEn: "Innovation", personas: ["consultant"] },
   { value: "change-management", label: "Change management", labelEn: "Change management", personas: ["consultant"] },
   { value: "generalist-consultant", label: "Généraliste", labelEn: "Generalist", personas: ["consultant"] },
+  { value: "short-video", label: "Short video", labelEn: "Short video", personas: ["content"] },
+  { value: "youtube-long", label: "YouTube long", labelEn: "Long-form YouTube", personas: ["content"] },
+  { value: "audio-creator", label: "Audio / podcast", labelEn: "Audio / podcast", personas: ["content"] },
+  { value: "linkedin-content", label: "LinkedIn", labelEn: "LinkedIn", personas: ["content"] },
+  { value: "creator-newsletter", label: "Newsletter creator", labelEn: "Newsletter creator", personas: ["content"] },
+  { value: "instagram-creator", label: "Instagram", labelEn: "Instagram", personas: ["content"] },
+  { value: "ugc-creator", label: "UGC", labelEn: "UGC", personas: ["content"] },
+  { value: "influencer", label: "Influence", labelEn: "Influencer", personas: ["content"] },
+  { value: "educational-content", label: "Éducation", labelEn: "Education", personas: ["content"] },
+  { value: "infoproducts", label: "Formation / infoproduit", labelEn: "Courses / infoproducts", personas: ["content"] },
+  { value: "ecommerce-content", label: "E-commerce content", labelEn: "E-commerce content", personas: ["content"] },
+  { value: "affiliate-content", label: "Affiliation", labelEn: "Affiliate content", personas: ["content"] },
+  { value: "seo-blogging", label: "Blog SEO", labelEn: "SEO blogging", personas: ["content"] },
+  { value: "live-streaming", label: "Live streaming", labelEn: "Live streaming", personas: ["content"] },
+  { value: "gaming-content", label: "Gaming", labelEn: "Gaming", personas: ["content"] },
+  { value: "travel-photo", label: "Photo / travel", labelEn: "Photo / travel", personas: ["content"] },
+  { value: "food-content", label: "Food", labelEn: "Food", personas: ["content"] },
+  { value: "fashion-beauty", label: "Mode / beauté", labelEn: "Fashion / beauty", personas: ["content"] },
+  { value: "finance-content", label: "Finance / business", labelEn: "Finance / business", personas: ["content"] },
+  { value: "health-wellness", label: "Santé / sport", labelEn: "Health / wellness", personas: ["content"] },
+  { value: "b2b-saas-content", label: "B2B SaaS", labelEn: "B2B SaaS", personas: ["content"] },
+  { value: "cohort-course", label: "Cohort-based course", labelEn: "Cohort-based course", personas: ["content"] },
+  { value: "digital-products", label: "Digital products", labelEn: "Digital products", personas: ["content"] },
+  { value: "ai-content", label: "Création IA", labelEn: "AI content", personas: ["content"] },
+  { value: "documentary-content", label: "Documentaire", labelEn: "Documentary", personas: ["content"] },
+  { value: "meme-culture", label: "Meme / culture internet", labelEn: "Meme / internet culture", personas: ["content"] },
+  { value: "event-coverage", label: "Live coverage", labelEn: "Live coverage", personas: ["content"] },
+  { value: "brand-content", label: "Brand content", labelEn: "Brand content", personas: ["content"] },
+  { value: "repurposing", label: "Repurposing", labelEn: "Repurposing", personas: ["content"] },
+  { value: "community-creator", label: "Communauté", labelEn: "Community", personas: ["content"] },
 ];
 
 export const STACKS: StackGuide[] = [
@@ -23529,6 +23589,8329 @@ export const STACKS: StackGuide[] = [
     ]
   },
 
+  {
+    "id": "createur-createur-tiktok-reels-shorts",
+    "slug": "createur-createur-tiktok-reels-shorts",
+    "title": "Stack short video",
+    "titleEn": "short video stack",
+    "subtitle": "Les outils recommandés pour créateur orienté vidéo courte verticale, rythme rapide, hooks forts, montage dynamique et publication très régulière.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "short-video",
+      "video",
+      "social-content"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur orienté vidéo courte verticale, rythme rapide, hooks forts, montage dynamique et publication très régulière.",
+    "bestForEn": "Créateur orienté vidéo courte verticale, rythme rapide, hooks forts, montage dynamique et publication très régulière.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Ce profil a besoin d’une stack claire pour produire vite, recycler les contenus et analyser ce qui performe.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Scripts courts",
+        "titleEn": "Scripts courts",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "tournage smartphone",
+        "titleEn": "tournage smartphone",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "montage vertical",
+        "titleEn": "montage vertical",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "sous-titres",
+        "titleEn": "sous-titres",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser scripts courts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts courts in the content workflow."
+      },
+      {
+        "role": "Montage pro",
+        "roleEn": "Montage pro",
+        "slug": "adobe-premiere-pro",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage pro : utile pour sécuriser tournage smartphone dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+      },
+      {
+        "role": "Montage pro",
+        "roleEn": "Montage pro",
+        "slug": "final-cut-pro",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage pro : utile pour sécuriser montage vertical dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage vertical in the content workflow."
+      },
+      {
+        "role": "Pilotage TikTok",
+        "roleEn": "Pilotage TikTok",
+        "slug": "tiktok-studio",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Pilotage TikTok : utile pour sécuriser sous-titres dans le workflow contenu.",
+        "reasonEn": "Useful to secure sous-titres in the content workflow."
+      },
+      {
+        "role": "Pilotage YouTube",
+        "roleEn": "Pilotage YouTube",
+        "slug": "youtube-studio",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Pilotage YouTube : utile pour sécuriser scripts courts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts courts in the content workflow."
+      },
+      {
+        "role": "Distribution Instagram",
+        "roleEn": "Distribution Instagram",
+        "slug": "instagram",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Distribution Instagram : utile pour sécuriser tournage smartphone dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+      },
+      {
+        "role": "Planification social",
+        "roleEn": "Planification social",
+        "slug": "metricool",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Planification social : utile pour sécuriser montage vertical dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage vertical in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser sous-titres dans le workflow contenu.",
+        "reasonEn": "Useful to secure sous-titres in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut-templates",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts courts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts courts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "motion-array",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage smartphone dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "envato-elements",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage vertical dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage vertical in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "epidemic-sound",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser sous-titres dans le workflow contenu.",
+        "reasonEn": "Useful to secure sous-titres in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "artlist",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts courts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts courts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "submagic",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage smartphone dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser montage vertical dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage vertical in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser sous-titres dans le workflow contenu.",
+        "reasonEn": "Useful to secure sous-titres in the content workflow."
+      },
+      {
+        "role": "Repurposing vidéo",
+        "roleEn": "Repurposing vidéo",
+        "slug": "opusclip",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Repurposing vidéo : utile pour sécuriser scripts courts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts courts in the content workflow."
+      },
+      {
+        "role": "Sous-titres",
+        "roleEn": "Sous-titres",
+        "slug": "captions",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Sous-titres : utile pour sécuriser tournage smartphone dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-youtuber-long-format",
+    "slug": "createur-youtuber-long-format",
+    "title": "Stack YouTube long",
+    "titleEn": "YouTube long stack",
+    "subtitle": "Les outils recommandés pour créateur de vidéos longues : face caméra, documentaire, analyse, tutoriel, divertissement ou expertise.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "youtube-long",
+      "video"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur de vidéos longues : face caméra, documentaire, analyse, tutoriel, divertissement ou expertise.",
+    "bestForEn": "Créateur de vidéos longues : face caméra, documentaire, analyse, tutoriel, divertissement ou expertise.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Les YouTubers ont un besoin complet : production, optimisation, monétisation, sponsorship et réutilisation en shorts.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Recherche",
+        "titleEn": "Recherche",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "script",
+        "titleEn": "script",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "tournage",
+        "titleEn": "tournage",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "montage long",
+        "titleEn": "montage long",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Montage pro",
+        "roleEn": "Montage pro",
+        "slug": "adobe-premiere-pro",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage pro : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Montage / étalonnage",
+        "roleEn": "Montage / étalonnage",
+        "slug": "davinci-resolve",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage / étalonnage : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      },
+      {
+        "role": "Montage pro",
+        "roleEn": "Montage pro",
+        "slug": "final-cut-pro",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage pro : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Montage texte/audio",
+        "roleEn": "Montage texte/audio",
+        "slug": "descript",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage texte/audio : utile pour sécuriser montage long dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage long in the content workflow."
+      },
+      {
+        "role": "Pilotage YouTube",
+        "roleEn": "Pilotage YouTube",
+        "slug": "youtube-studio",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Pilotage YouTube : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tubebuddy",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "vidiq",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser montage long dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage long in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "artlist",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "epidemic-sound",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "motion-array",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "envato",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage long dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage long in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "storyblocks",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Design rapide : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      },
+      {
+        "role": "Retouche avancée",
+        "roleEn": "Retouche avancée",
+        "slug": "adobe-photoshop",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Retouche avancée : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser montage long dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage long in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "whisper",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-podcasteur-createur-audio",
+    "slug": "createur-podcasteur-createur-audio",
+    "title": "Stack podcasteur / audio",
+    "titleEn": "podcasteur / audio stack",
+    "subtitle": "Les outils recommandés pour créateur d’émissions audio, interviews, récits, formats conversationnels ou expertises longues.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "audio-creator",
+      "podcast"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur d’émissions audio, interviews, récits, formats conversationnels ou expertises longues.",
+    "bestForEn": "Créateur d’émissions audio, interviews, récits, formats conversationnels ou expertises longues.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Le podcast est un bon sujet Tooltrim car la stack couvre audio, vidéo, transcription, distribution et recyclage.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Préparation",
+        "titleEn": "Préparation",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "enregistrement",
+        "titleEn": "enregistrement",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "montage audio",
+        "titleEn": "montage audio",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "nettoyage son",
+        "titleEn": "nettoyage son",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Enregistrement",
+        "roleEn": "Enregistrement",
+        "slug": "riverside",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Enregistrement : utile pour sécuriser préparation dans le workflow contenu.",
+        "reasonEn": "Useful to secure préparation in the content workflow."
+      },
+      {
+        "role": "Montage texte/audio",
+        "roleEn": "Montage texte/audio",
+        "slug": "descript",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage texte/audio : utile pour sécuriser enregistrement dans le workflow contenu.",
+        "reasonEn": "Useful to secure enregistrement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "adobe-audition",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser montage audio dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage audio in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "logic-pro",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser nettoyage son dans le workflow contenu.",
+        "reasonEn": "Useful to secure nettoyage son in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "spotify-for-podcasters",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser préparation dans le workflow contenu.",
+        "reasonEn": "Useful to secure préparation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ausha",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser enregistrement dans le workflow contenu.",
+        "reasonEn": "Useful to secure enregistrement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "acast",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage audio dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage audio in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser nettoyage son dans le workflow contenu.",
+        "reasonEn": "Useful to secure nettoyage son in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "auphonic",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser préparation dans le workflow contenu.",
+        "reasonEn": "Useful to secure préparation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "adobe-enhance-speech",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser enregistrement dans le workflow contenu.",
+        "reasonEn": "Useful to secure enregistrement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "epidemic-sound",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage audio dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage audio in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "artlist",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser nettoyage son dans le workflow contenu.",
+        "reasonEn": "Useful to secure nettoyage son in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "headliner",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser préparation dans le workflow contenu.",
+        "reasonEn": "Useful to secure préparation in the content workflow."
+      },
+      {
+        "role": "Repurposing vidéo",
+        "roleEn": "Repurposing vidéo",
+        "slug": "opusclip",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Repurposing vidéo : utile pour sécuriser enregistrement dans le workflow contenu.",
+        "reasonEn": "Useful to secure enregistrement in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser montage audio dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage audio in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "descript-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser nettoyage son dans le workflow contenu.",
+        "reasonEn": "Useful to secure nettoyage son in the content workflow."
+      },
+      {
+        "role": "Voix IA",
+        "roleEn": "Voix IA",
+        "slug": "elevenlabs",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Voix IA : utile pour sécuriser préparation dans le workflow contenu.",
+        "reasonEn": "Useful to secure préparation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "whisper",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser enregistrement dans le workflow contenu.",
+        "reasonEn": "Useful to secure enregistrement in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-linkedin-personal-branding",
+    "slug": "createur-createur-linkedin-personal-branding",
+    "title": "Stack LinkedIn",
+    "titleEn": "LinkedIn stack",
+    "subtitle": "Les outils recommandés pour créateur expert qui publie idées, analyses, carrousels, posts longs, newsletters et contenus d’autorité.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "linkedin-content",
+      "copywriting"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur expert qui publie idées, analyses, carrousels, posts longs, newsletters et contenus d’autorité.",
+    "bestForEn": "Créateur expert qui publie idées, analyses, carrousels, posts longs, newsletters et contenus d’autorité.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Très pertinent pour Tooltrim : créateurs B2B, freelances, consultants et fondateurs cherchent des stacks très opérationnelles.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Positionnement",
+        "titleEn": "Positionnement",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "calendrier éditorial",
+        "titleEn": "calendrier éditorial",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "rédaction",
+        "titleEn": "rédaction",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "carrousels",
+        "titleEn": "carrousels",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "taplio",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "shield",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser carrousels dans le workflow contenu.",
+        "reasonEn": "Useful to secure carrousels in the content workflow."
+      },
+      {
+        "role": "Design avancé",
+        "roleEn": "Design avancé",
+        "slug": "figma",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design avancé : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "buffer",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+      },
+      {
+        "role": "Planification social",
+        "roleEn": "Planification social",
+        "slug": "metricool",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Planification social : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "linkedin",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser carrousels dans le workflow contenu.",
+        "reasonEn": "Useful to secure carrousels in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-docs",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "figma-templates",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "canva-templates",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "typefully",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser carrousels dans le workflow contenu.",
+        "reasonEn": "Useful to secure carrousels in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "authoredup",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "grammarly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "languagetool",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser carrousels dans le workflow contenu.",
+        "reasonEn": "Useful to secure carrousels in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Recherche sourcée : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-newsletter-creator",
+    "slug": "createur-newsletter-creator",
+    "title": "Stack newsletter",
+    "titleEn": "newsletter stack",
+    "subtitle": "Les outils recommandés pour créateur qui construit une audience via email, avec contenus éditoriaux, curation ou expertise.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "creator-newsletter",
+      "newsletter"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui construit une audience via email, avec contenus éditoriaux, curation ou expertise.",
+    "bestForEn": "Créateur qui construit une audience via email, avec contenus éditoriaux, curation ou expertise.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "La newsletter est un format idéal pour les fiches stack : outils de rédaction, growth, sponsorship, automation et analytics.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Veille",
+        "titleEn": "Veille",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "rédaction",
+        "titleEn": "rédaction",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "segmentation",
+        "titleEn": "segmentation",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "publication",
+        "titleEn": "publication",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Newsletter",
+        "roleEn": "Newsletter",
+        "slug": "beehiiv",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Newsletter : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Newsletter",
+        "roleEn": "Newsletter",
+        "slug": "substack",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Newsletter : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Email marketing",
+        "roleEn": "Email marketing",
+        "slug": "convertkit",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Email marketing : utile pour sécuriser segmentation dans le workflow contenu.",
+        "reasonEn": "Useful to secure segmentation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mailerlite",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser publication dans le workflow contenu.",
+        "reasonEn": "Useful to secure publication in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ghost",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser segmentation dans le workflow contenu.",
+        "reasonEn": "Useful to secure segmentation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "sparkloop",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser publication dans le workflow contenu.",
+        "reasonEn": "Useful to secure publication in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "grammarly",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "languagetool",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser segmentation dans le workflow contenu.",
+        "reasonEn": "Useful to secure segmentation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser publication dans le workflow contenu.",
+        "reasonEn": "Useful to secure publication in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "typeform",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rewardful",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser segmentation dans le workflow contenu.",
+        "reasonEn": "Useful to secure segmentation in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser publication dans le workflow contenu.",
+        "reasonEn": "Useful to secure publication in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Recherche sourcée : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-instagram-lifestyle-esthetique",
+    "slug": "createur-createur-instagram-lifestyle-esthetique",
+    "title": "Stack Instagram",
+    "titleEn": "Instagram stack",
+    "subtitle": "Les outils recommandés pour créateur visuel orienté photo, reels, stories, collaborations, esthétique et narration quotidienne.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "instagram-creator",
+      "photo",
+      "social-content"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur visuel orienté photo, reels, stories, collaborations, esthétique et narration quotidienne.",
+    "bestForEn": "Créateur visuel orienté photo, reels, stories, collaborations, esthétique et narration quotidienne.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Profil très demandeur d’outils simples, visuels, rapides et compatibles mobile.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Shooting",
+        "titleEn": "Shooting",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "retouche",
+        "titleEn": "retouche",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "montage court",
+        "titleEn": "montage court",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "planification",
+        "titleEn": "planification",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Retouche photo",
+        "roleEn": "Retouche photo",
+        "slug": "adobe-lightroom",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Retouche photo : utile pour sécuriser shooting dans le workflow contenu.",
+        "reasonEn": "Useful to secure shooting in the content workflow."
+      },
+      {
+        "role": "Retouche avancée",
+        "roleEn": "Retouche avancée",
+        "slug": "adobe-photoshop",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Retouche avancée : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser montage court dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage court in the content workflow."
+      },
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser planification dans le workflow contenu.",
+        "reasonEn": "Useful to secure planification in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "later",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser shooting dans le workflow contenu.",
+        "reasonEn": "Useful to secure shooting in the content workflow."
+      },
+      {
+        "role": "Planification social",
+        "roleEn": "Planification social",
+        "slug": "metricool",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Planification social : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "planoly",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage court dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage court in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "linktree",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planification dans le workflow contenu.",
+        "reasonEn": "Useful to secure planification in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "stan-store",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser shooting dans le workflow contenu.",
+        "reasonEn": "Useful to secure shooting in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "presets-lightroom",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "canva-kits",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage court dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage court in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "unfold",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planification dans le workflow contenu.",
+        "reasonEn": "Useful to secure planification in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mojo",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser shooting dans le workflow contenu.",
+        "reasonEn": "Useful to secure shooting in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tezza",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "storyluxe",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage court dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage court in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser planification dans le workflow contenu.",
+        "reasonEn": "Useful to secure planification in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser shooting dans le workflow contenu.",
+        "reasonEn": "Useful to secure shooting in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "krea",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-ugc",
+    "slug": "createur-createur-ugc",
+    "title": "Stack UGC",
+    "titleEn": "UGC stack",
+    "subtitle": "Les outils recommandés pour créateur qui produit du contenu pour les marques sans forcément publier sur ses propres comptes.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "ugc-creator",
+      "video",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui produit du contenu pour les marques sans forcément publier sur ses propres comptes.",
+    "bestForEn": "Créateur qui produit du contenu pour les marques sans forcément publier sur ses propres comptes.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Très bon profil business : besoin de stack de production, d’organisation, de contrat et de facturation.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Brief marque",
+        "titleEn": "Brief marque",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "script",
+        "titleEn": "script",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "tournage",
+        "titleEn": "tournage",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "montage",
+        "titleEn": "montage",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser brief marque dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief marque in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      },
+      {
+        "role": "Livraison fichiers",
+        "roleEn": "Livraison fichiers",
+        "slug": "google-drive",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Livraison fichiers : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "trello",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser brief marque dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief marque in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "billo",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "insense",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "fiverr",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Facturation",
+        "roleEn": "Facturation",
+        "slug": "indy",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Facturation : utile pour sécuriser brief marque dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief marque in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "templates-ugc",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "teleprompter-apps",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "music-libraries",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lighting-kits",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser brief marque dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief marque in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frame-guides",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Sous-titres",
+        "roleEn": "Sous-titres",
+        "slug": "captions",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Sous-titres : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser brief marque dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief marque in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
+        "reasonEn": "Useful to secure script in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-influenceur-createur-marque-personnelle",
+    "slug": "createur-influenceur-createur-marque-personnelle",
+    "title": "Stack influenceur / marque personnelle",
+    "titleEn": "influenceur / marque personnelle stack",
+    "subtitle": "Les outils recommandés pour créateur qui monétise par partenariats, affiliation, produits, services ou communauté.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "influencer",
+      "social-content"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui monétise par partenariats, affiliation, produits, services ou communauté.",
+    "bestForEn": "Créateur qui monétise par partenariats, affiliation, produits, services ou communauté.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Ce profil a besoin d’une stack monétisation très claire, au-delà de la simple création.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Media kit",
+        "titleEn": "Media kit",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "calendrier",
+        "titleEn": "calendrier",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "tracking campagnes",
+        "titleEn": "tracking campagnes",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "contrats",
+        "titleEn": "contrats",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser media kit dans le workflow contenu.",
+        "reasonEn": "Useful to secure media kit in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser calendrier dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier in the content workflow."
+      },
+      {
+        "role": "Planification social",
+        "roleEn": "Planification social",
+        "slug": "metricool",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Planification social : utile pour sécuriser tracking campagnes dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking campagnes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-sheets",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser contrats dans le workflow contenu.",
+        "reasonEn": "Useful to secure contrats in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "creatoriq",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser media kit dans le workflow contenu.",
+        "reasonEn": "Useful to secure media kit in the content workflow."
+      },
+      {
+        "role": "Boutique",
+        "roleEn": "Boutique",
+        "slug": "shopify",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Boutique : utile pour sécuriser calendrier dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "stan-store",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tracking campagnes dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking campagnes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "linktree",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contrats dans le workflow contenu.",
+        "reasonEn": "Useful to secure contrats in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rewardful",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser media kit dans le workflow contenu.",
+        "reasonEn": "Useful to secure media kit in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "utm-builders",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser calendrier dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "link-in-bio-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tracking campagnes dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking campagnes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "affiliate-dashboards",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contrats dans le workflow contenu.",
+        "reasonEn": "Useful to secure contrats in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "media-kit-templates",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser media kit dans le workflow contenu.",
+        "reasonEn": "Useful to secure media kit in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser calendrier dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser tracking campagnes dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking campagnes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contrats dans le workflow contenu.",
+        "reasonEn": "Useful to secure contrats in the content workflow."
+      },
+      {
+        "role": "Image IA",
+        "roleEn": "Image IA",
+        "slug": "midjourney",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Image IA : utile pour sécuriser media kit dans le workflow contenu.",
+        "reasonEn": "Useful to secure media kit in the content workflow."
+      },
+      {
+        "role": "Sous-titres",
+        "roleEn": "Sous-titres",
+        "slug": "captions",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Sous-titres : utile pour sécuriser calendrier dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendrier in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-educatif-vulgarisateur",
+    "slug": "createur-createur-educatif-vulgarisateur",
+    "title": "Stack éducation",
+    "titleEn": "éducation stack",
+    "subtitle": "Les outils recommandés pour créateur qui explique, enseigne, vulgarise ou transforme une expertise en contenu accessible.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "educational-content",
+      "training"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui explique, enseigne, vulgarise ou transforme une expertise en contenu accessible.",
+    "bestForEn": "Créateur qui explique, enseigne, vulgarise ou transforme une expertise en contenu accessible.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Excellent profil Tooltrim : forte valeur sur outils de pédagogie, production, visuels et distribution.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Recherche",
+        "titleEn": "Recherche",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "script pédagogique",
+        "titleEn": "script pédagogique",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "schémas",
+        "titleEn": "schémas",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "vidéos",
+        "titleEn": "vidéos",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser script pédagogique dans le workflow contenu.",
+        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+      },
+      {
+        "role": "Design avancé",
+        "roleEn": "Design avancé",
+        "slug": "figma",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design avancé : utile pour sécuriser schémas dans le workflow contenu.",
+        "reasonEn": "Useful to secure schémas in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "loom",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Montage texte/audio",
+        "roleEn": "Montage texte/audio",
+        "slug": "descript",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage texte/audio : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Pilotage YouTube",
+        "roleEn": "Pilotage YouTube",
+        "slug": "youtube-studio",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Pilotage YouTube : utile pour sécuriser script pédagogique dans le workflow contenu.",
+        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "teachable",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser schémas dans le workflow contenu.",
+        "reasonEn": "Useful to secure schémas in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "circle",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "icons8",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "noun-project",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script pédagogique dans le workflow contenu.",
+        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "power-user",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser schémas dans le workflow contenu.",
+        "reasonEn": "Useful to secure schémas in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "genially",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "typeform",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script pédagogique dans le workflow contenu.",
+        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser schémas dans le workflow contenu.",
+        "reasonEn": "Useful to secure schémas in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Recherche sourcée : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gamma",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser script pédagogique dans le workflow contenu.",
+        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-formation-infopreneur",
+    "slug": "createur-createur-formation-infopreneur",
+    "title": "Stack infoproduit",
+    "titleEn": "infoproduit stack",
+    "subtitle": "Les outils recommandés pour créateur qui vend formations, templates, coaching, communautés ou produits numériques.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "infoproducts",
+      "training"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui vend formations, templates, coaching, communautés ou produits numériques.",
+    "bestForEn": "Créateur qui vend formations, templates, coaching, communautés ou produits numériques.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Stack très monétisable : outils chers, vraie intention d’achat, besoin de comparaison.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Landing page",
+        "titleEn": "Landing page",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "paiement",
+        "titleEn": "paiement",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "LMS",
+        "titleEn": "LMS",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "vidéo",
+        "titleEn": "vidéo",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "kajabi",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "podia",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "teachable",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser lms dans le workflow contenu.",
+        "reasonEn": "Useful to secure lms in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "thinkific",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser vidéo dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "systeme-io",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "circle",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Paiement : utile pour sécuriser lms dans le workflow contenu.",
+        "reasonEn": "Useful to secure lms in the content workflow."
+      },
+      {
+        "role": "Email marketing",
+        "roleEn": "Email marketing",
+        "slug": "convertkit",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Email marketing : utile pour sécuriser vidéo dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rewardful",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "thrivecart",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser lms dans le workflow contenu.",
+        "reasonEn": "Useful to secure lms in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéo dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "typeform",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zapier",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "make",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser lms dans le workflow contenu.",
+        "reasonEn": "Useful to secure lms in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "loom",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéo dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-e-commerce-dropshipping-content",
+    "slug": "createur-createur-e-commerce-dropshipping-content",
+    "title": "Stack e-commerce content",
+    "titleEn": "e-commerce content stack",
+    "subtitle": "Les outils recommandés pour créateur qui produit du contenu pour vendre produits, boutiques, ads ou live shopping.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "ecommerce-content",
+      "ecommerce"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui produit du contenu pour vendre produits, boutiques, ads ou live shopping.",
+    "bestForEn": "Créateur qui produit du contenu pour vendre produits, boutiques, ads ou live shopping.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Profil orienté performance et ROI, intéressant pour affiliation outils.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Produits",
+        "titleEn": "Produits",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "scripts ads",
+        "titleEn": "scripts ads",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "vidéos UGC",
+        "titleEn": "vidéos UGC",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "pages produit",
+        "titleEn": "pages produit",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Boutique",
+        "roleEn": "Boutique",
+        "slug": "shopify",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Boutique : utile pour sécuriser produits dans le workflow contenu.",
+        "reasonEn": "Useful to secure produits in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser scripts ads dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts ads in the content workflow."
+      },
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser vidéos ugc dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos ugc in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "klaviyo",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser pages produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure pages produit in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "meta-ads",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser produits dans le workflow contenu.",
+        "reasonEn": "Useful to secure produits in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tiktok-ads",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts ads dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts ads in the content workflow."
+      },
+      {
+        "role": "Analytics",
+        "roleEn": "Analytics",
+        "slug": "ga4",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Analytics : utile pour sécuriser vidéos ugc dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos ugc in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "triple-whale",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser pages produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure pages produit in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gempages",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser produits dans le workflow contenu.",
+        "reasonEn": "Useful to secure produits in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pagefly",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts ads dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts ads in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "loox",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéos ugc dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos ugc in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "judge-me",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser pages produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure pages produit in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "motion",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser produits dans le workflow contenu.",
+        "reasonEn": "Useful to secure produits in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "magicbrief",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts ads dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts ads in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser vidéos ugc dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos ugc in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser pages produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure pages produit in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "adcreative-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser produits dans le workflow contenu.",
+        "reasonEn": "Useful to secure produits in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts ads dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts ads in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-affiliation-niche-sites",
+    "slug": "createur-createur-affiliation-niche-sites",
+    "title": "Stack affiliation",
+    "titleEn": "affiliation stack",
+    "subtitle": "Les outils recommandés pour créateur qui produit contenus comparatifs, guides, seo, vidéos ou newsletters affiliées.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "affiliate-content",
+      "seo"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui produit contenus comparatifs, guides, SEO, vidéos ou newsletters affiliées.",
+    "bestForEn": "Créateur qui produit contenus comparatifs, guides, SEO, vidéos ou newsletters affiliées.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Très proche de Tooltrim : stacks, comparatifs, affiliation, SEO et conversion.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Recherche mots-clés",
+        "titleEn": "Recherche mots-clés",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "contenu SEO",
+        "titleEn": "contenu SEO",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "tracking liens",
+        "titleEn": "tracking liens",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "comparatifs",
+        "titleEn": "comparatifs",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "SEO",
+        "roleEn": "SEO",
+        "slug": "ahrefs",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "SEO : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+      },
+      {
+        "role": "SEO",
+        "roleEn": "SEO",
+        "slug": "semrush",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "SEO : utile pour sécuriser contenu seo dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenu seo in the content workflow."
+      },
+      {
+        "role": "SEO data",
+        "roleEn": "SEO data",
+        "slug": "google-search-console",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "SEO data : utile pour sécuriser tracking liens dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking liens in the content workflow."
+      },
+      {
+        "role": "Publication SEO",
+        "roleEn": "Publication SEO",
+        "slug": "wordpress",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Publication SEO : utile pour sécuriser comparatifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure comparatifs in the content workflow."
+      },
+      {
+        "role": "Site / landing",
+        "roleEn": "Site / landing",
+        "slug": "webflow",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Site / landing : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rewardful",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contenu seo dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenu seo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "partnerstack",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tracking liens dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking liens in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "impact",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser comparatifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure comparatifs in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rankmath",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "yoast",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contenu seo dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenu seo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pretty-links",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tracking liens dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking liens in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "thirstyaffiliates",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser comparatifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure comparatifs in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tablepress",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser contenu seo dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenu seo in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser tracking liens dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking liens in the content workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Recherche sourcée : utile pour sécuriser comparatifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure comparatifs in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "surferseo",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frase",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contenu seo dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenu seo in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-seo-blogueur-expert",
+    "slug": "createur-createur-seo-blogueur-expert",
+    "title": "Stack blog SEO",
+    "titleEn": "blog SEO stack",
+    "subtitle": "Les outils recommandés pour créateur de contenus longs optimisés google, guides, comparatifs, dossiers et contenus evergreen.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "seo-blogging",
+      "seo"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur de contenus longs optimisés Google, guides, comparatifs, dossiers et contenus evergreen.",
+    "bestForEn": "Créateur de contenus longs optimisés Google, guides, comparatifs, dossiers et contenus evergreen.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Intéressant pour Tooltrim car la stack est technique, durable et directement liée à l’acquisition.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Recherche",
+        "titleEn": "Recherche",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "plan",
+        "titleEn": "plan",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "rédaction",
+        "titleEn": "rédaction",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "optimisation",
+        "titleEn": "optimisation",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Publication SEO",
+        "roleEn": "Publication SEO",
+        "slug": "wordpress",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Publication SEO : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Site / landing",
+        "roleEn": "Site / landing",
+        "slug": "webflow",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Site / landing : utile pour sécuriser plan dans le workflow contenu.",
+        "reasonEn": "Useful to secure plan in the content workflow."
+      },
+      {
+        "role": "SEO",
+        "roleEn": "SEO",
+        "slug": "ahrefs",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "SEO : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "SEO",
+        "roleEn": "SEO",
+        "slug": "semrush",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "SEO : utile pour sécuriser optimisation dans le workflow contenu.",
+        "reasonEn": "Useful to secure optimisation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gsc",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Analytics",
+        "roleEn": "Analytics",
+        "slug": "ga4",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Analytics : utile pour sécuriser plan dans le workflow contenu.",
+        "reasonEn": "Useful to secure plan in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "surferseo",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frase",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser optimisation dans le workflow contenu.",
+        "reasonEn": "Useful to secure optimisation in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rankmath",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser plan dans le workflow contenu.",
+        "reasonEn": "Useful to secure plan in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "yoast",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "link-whisper",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser optimisation dans le workflow contenu.",
+        "reasonEn": "Useful to secure optimisation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "wp-rocket",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "shortpixel",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser plan dans le workflow contenu.",
+        "reasonEn": "Useful to secure plan in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser rédaction dans le workflow contenu.",
+        "reasonEn": "Useful to secure rédaction in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser optimisation dans le workflow contenu.",
+        "reasonEn": "Useful to secure optimisation in the content workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Recherche sourcée : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "surfer-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser plan dans le workflow contenu.",
+        "reasonEn": "Useful to secure plan in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-live-streaming",
+    "slug": "createur-createur-live-streaming",
+    "title": "Stack live",
+    "titleEn": "live stack",
+    "subtitle": "Les outils recommandés pour créateur en direct sur twitch, youtube live, tiktok live, linkedin live ou événements virtuels.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "live-streaming",
+      "video"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur en direct sur Twitch, YouTube Live, TikTok Live, LinkedIn Live ou événements virtuels.",
+    "bestForEn": "Créateur en direct sur Twitch, YouTube Live, TikTok Live, LinkedIn Live ou événements virtuels.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Stack riche en matériel, logiciels et plugins ; très utile pour guides pratiques.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Streaming",
+        "titleEn": "Streaming",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "overlays",
+        "titleEn": "overlays",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "son",
+        "titleEn": "son",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "modération",
+        "titleEn": "modération",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Streaming",
+        "roleEn": "Streaming",
+        "slug": "obs",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Streaming : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "streamlabs",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser overlays dans le workflow contenu.",
+        "reasonEn": "Useful to secure overlays in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "restream",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser son dans le workflow contenu.",
+        "reasonEn": "Useful to secure son in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "twitch-studio",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser modération dans le workflow contenu.",
+        "reasonEn": "Useful to secure modération in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "youtube-live",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      },
+      {
+        "role": "Communauté",
+        "roleEn": "Communauté",
+        "slug": "discord",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Communauté : utile pour sécuriser overlays dans le workflow contenu.",
+        "reasonEn": "Useful to secure overlays in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "streamelements",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser son dans le workflow contenu.",
+        "reasonEn": "Useful to secure son in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "elgato-stream-deck",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser modération dans le workflow contenu.",
+        "reasonEn": "Useful to secure modération in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "overlays",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "nightbot",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser overlays dans le workflow contenu.",
+        "reasonEn": "Useful to secure overlays in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "moobot",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser son dans le workflow contenu.",
+        "reasonEn": "Useful to secure son in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "streamelements-widgets",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser modération dans le workflow contenu.",
+        "reasonEn": "Useful to secure modération in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      },
+      {
+        "role": "Repurposing vidéo",
+        "roleEn": "Repurposing vidéo",
+        "slug": "opusclip",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Repurposing vidéo : utile pour sécuriser overlays dans le workflow contenu.",
+        "reasonEn": "Useful to secure overlays in the content workflow."
+      },
+      {
+        "role": "Sous-titres",
+        "roleEn": "Sous-titres",
+        "slug": "captions",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Sous-titres : utile pour sécuriser son dans le workflow contenu.",
+        "reasonEn": "Useful to secure son in the content workflow."
+      },
+      {
+        "role": "Voix IA",
+        "roleEn": "Voix IA",
+        "slug": "elevenlabs",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Voix IA : utile pour sécuriser modération dans le workflow contenu.",
+        "reasonEn": "Useful to secure modération in the content workflow."
+      },
+      {
+        "role": "Vidéo IA",
+        "roleEn": "Vidéo IA",
+        "slug": "runway",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Vidéo IA : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-gaming",
+    "slug": "createur-createur-gaming",
+    "title": "Stack gaming",
+    "titleEn": "gaming stack",
+    "subtitle": "Les outils recommandés pour créateur jeux vidéo : streaming, tests, highlights, tutoriels, communauté.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "gaming-content",
+      "live-streaming"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur jeux vidéo : streaming, tests, highlights, tutoriels, communauté.",
+    "bestForEn": "Créateur jeux vidéo : streaming, tests, highlights, tutoriels, communauté.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Audience massive, stack spécifique et forte demande d’optimisation production.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Capture",
+        "titleEn": "Capture",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "streaming",
+        "titleEn": "streaming",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "montage",
+        "titleEn": "montage",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "miniatures",
+        "titleEn": "miniatures",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Streaming",
+        "roleEn": "Streaming",
+        "slug": "obs",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Streaming : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Communauté",
+        "roleEn": "Communauté",
+        "slug": "discord",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Communauté : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "twitch",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Pilotage YouTube",
+        "roleEn": "Pilotage YouTube",
+        "slug": "youtube-studio",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Pilotage YouTube : utile pour sécuriser miniatures dans le workflow contenu.",
+        "reasonEn": "Useful to secure miniatures in the content workflow."
+      },
+      {
+        "role": "Montage / étalonnage",
+        "roleEn": "Montage / étalonnage",
+        "slug": "davinci-resolve",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage / étalonnage : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Montage vertical : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "streamlabs",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Design rapide : utile pour sécuriser miniatures dans le workflow contenu.",
+        "reasonEn": "Useful to secure miniatures in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "elgato",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "streamelements",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "nightbot",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gaming-overlays",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser miniatures dans le workflow contenu.",
+        "reasonEn": "Useful to secure miniatures in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "music-libraries",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      },
+      {
+        "role": "Repurposing vidéo",
+        "roleEn": "Repurposing vidéo",
+        "slug": "opusclip",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Repurposing vidéo : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Sous-titres",
+        "roleEn": "Sous-titres",
+        "slug": "captions",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Sous-titres : utile pour sécuriser miniatures dans le workflow contenu.",
+        "reasonEn": "Useful to secure miniatures in the content workflow."
+      },
+      {
+        "role": "Image IA",
+        "roleEn": "Image IA",
+        "slug": "midjourney",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Image IA : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser streaming dans le workflow contenu.",
+        "reasonEn": "Useful to secure streaming in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-photo-travel-content",
+    "slug": "createur-createur-photo-travel-content",
+    "title": "Stack photo travel",
+    "titleEn": "photo travel stack",
+    "subtitle": "Les outils recommandés pour créateur orienté voyage, photo, récit visuel, blogs, reels et collaborations tourisme.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "travel-photo",
+      "photo"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur orienté voyage, photo, récit visuel, blogs, reels et collaborations tourisme.",
+    "bestForEn": "Créateur orienté voyage, photo, récit visuel, blogs, reels et collaborations tourisme.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Profil très visuel avec besoins matériels et logiciels, mais parfois moins SaaS B2B.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Photo",
+        "titleEn": "Photo",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "vidéo mobile",
+        "titleEn": "vidéo mobile",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "retouche",
+        "titleEn": "retouche",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "montage",
+        "titleEn": "montage",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Retouche photo",
+        "roleEn": "Retouche photo",
+        "slug": "adobe-lightroom",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Retouche photo : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Retouche avancée",
+        "roleEn": "Retouche avancée",
+        "slug": "adobe-photoshop",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Retouche avancée : utile pour sécuriser vidéo mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+      },
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "premiere-rush",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-maps",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser vidéo mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "later",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Distribution Instagram",
+        "roleEn": "Distribution Instagram",
+        "slug": "instagram",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Distribution Instagram : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "presets",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tezza",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéo mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "unfold",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "storyluxe",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "map-tools",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "music-libraries",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéo mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "krea",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Image IA",
+        "roleEn": "Image IA",
+        "slug": "midjourney",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Image IA : utile pour sécuriser vidéo mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-food-content",
+    "slug": "createur-createur-food-content",
+    "title": "Stack food",
+    "titleEn": "food stack",
+    "subtitle": "Les outils recommandés pour créateur recettes, vidéos cuisine, photos, shorts, livres numériques, newsletters.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "food-content",
+      "photo"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur recettes, vidéos cuisine, photos, shorts, livres numériques, newsletters.",
+    "bestForEn": "Créateur recettes, vidéos cuisine, photos, shorts, livres numériques, newsletters.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Très bon angle de fiche : tournage, lumière, montage, fiches recettes, monétisation.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Recettes",
+        "titleEn": "Recettes",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "tournage",
+        "titleEn": "tournage",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "montage vertical",
+        "titleEn": "montage vertical",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "photo",
+        "titleEn": "photo",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser recettes dans le workflow contenu.",
+        "reasonEn": "Useful to secure recettes in the content workflow."
+      },
+      {
+        "role": "Retouche photo",
+        "roleEn": "Retouche photo",
+        "slug": "adobe-lightroom",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Retouche photo : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser montage vertical dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage vertical in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pinterest",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser recettes dans le workflow contenu.",
+        "reasonEn": "Useful to secure recettes in the content workflow."
+      },
+      {
+        "role": "Distribution Instagram",
+        "roleEn": "Distribution Instagram",
+        "slug": "instagram",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Distribution Instagram : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Pilotage YouTube",
+        "roleEn": "Pilotage YouTube",
+        "slug": "youtube-studio",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Pilotage YouTube : utile pour sécuriser montage vertical dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage vertical in the content workflow."
+      },
+      {
+        "role": "Newsletter",
+        "roleEn": "Newsletter",
+        "slug": "beehiiv",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Newsletter : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "recipe-card-templates",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recettes dans le workflow contenu.",
+        "reasonEn": "Useful to secure recettes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lightroom-presets",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "music-libraries",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage vertical dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage vertical in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "teleprompter-apps",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser recettes dans le workflow contenu.",
+        "reasonEn": "Useful to secure recettes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "krea",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage vertical dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage vertical in the content workflow."
+      },
+      {
+        "role": "Image IA",
+        "roleEn": "Image IA",
+        "slug": "midjourney",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Image IA : utile pour sécuriser photo dans le workflow contenu.",
+        "reasonEn": "Useful to secure photo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recettes dans le workflow contenu.",
+        "reasonEn": "Useful to secure recettes in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-mode-beaute",
+    "slug": "createur-createur-mode-beaute",
+    "title": "Stack mode beauté",
+    "titleEn": "mode beauté stack",
+    "subtitle": "Les outils recommandés pour créateur looks, tutos, shopping, routines, collaborations, affiliation.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "fashion-beauty",
+      "photo"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur looks, tutos, shopping, routines, collaborations, affiliation.",
+    "bestForEn": "Créateur looks, tutos, shopping, routines, collaborations, affiliation.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Bonne niche, mais attention à l’angle : authenticité et transparence IA deviennent importantes.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Planning looks",
+        "titleEn": "Planning looks",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "tournage",
+        "titleEn": "tournage",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "retouche",
+        "titleEn": "retouche",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "montage",
+        "titleEn": "montage",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser planning looks dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning looks in the content workflow."
+      },
+      {
+        "role": "Retouche photo",
+        "roleEn": "Retouche photo",
+        "slug": "adobe-lightroom",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Retouche photo : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ltk",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "shopmy",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser planning looks dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning looks in the content workflow."
+      },
+      {
+        "role": "Distribution Instagram",
+        "roleEn": "Distribution Instagram",
+        "slug": "instagram",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Distribution Instagram : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tiktok",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Planification social",
+        "roleEn": "Planification social",
+        "slug": "metricool",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Planification social : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "presets",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planning looks dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning looks in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "templates",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "link-in-bio",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "affiliate-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "storyluxe",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planning looks dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning looks in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser tournage dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
+        "reasonEn": "Useful to secure retouche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "krea",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Image IA",
+        "roleEn": "Image IA",
+        "slug": "midjourney",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Image IA : utile pour sécuriser planning looks dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning looks in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-finance-business",
+    "slug": "createur-createur-finance-business",
+    "title": "Stack finance",
+    "titleEn": "finance stack",
+    "subtitle": "Les outils recommandés pour créateur d’analyses, threads, vidéos, newsletters, infographies, contenus éducatifs.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "finance-content",
+      "newsletter"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur d’analyses, threads, vidéos, newsletters, infographies, contenus éducatifs.",
+    "bestForEn": "Créateur d’analyses, threads, vidéos, newsletters, infographies, contenus éducatifs.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Profil à fort revenu potentiel, avec besoin de fiabilité, sources et organisation.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Recherche",
+        "titleEn": "Recherche",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "sources",
+        "titleEn": "sources",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "graphes",
+        "titleEn": "graphes",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "scripts",
+        "titleEn": "scripts",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Newsletter",
+        "roleEn": "Newsletter",
+        "slug": "beehiiv",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Newsletter : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      },
+      {
+        "role": "Newsletter",
+        "roleEn": "Newsletter",
+        "slug": "substack",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Newsletter : utile pour sécuriser graphes dans le workflow contenu.",
+        "reasonEn": "Useful to secure graphes in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser scripts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts in the content workflow."
+      },
+      {
+        "role": "Design avancé",
+        "roleEn": "Design avancé",
+        "slug": "figma",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design avancé : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "flourish",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "datawrapper",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser graphes dans le workflow contenu.",
+        "reasonEn": "Useful to secure graphes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tradingview",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "chart-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "screenshot-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "newsletter-referral-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser graphes dans le workflow contenu.",
+        "reasonEn": "Useful to secure graphes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "grammarly",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Recherche sourcée : utile pour sécuriser graphes dans le workflow contenu.",
+        "reasonEn": "Useful to secure graphes in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gamma",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser scripts dans le workflow contenu.",
+        "reasonEn": "Useful to secure scripts in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-sante-sport-bien-etre",
+    "slug": "createur-createur-sante-sport-bien-etre",
+    "title": "Stack santé sport",
+    "titleEn": "santé sport stack",
+    "subtitle": "Les outils recommandés pour créateur de programmes, vidéos, newsletters, challenges, coaching et communautés.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "health-wellness",
+      "video"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur de programmes, vidéos, newsletters, challenges, coaching et communautés.",
+    "bestForEn": "Créateur de programmes, vidéos, newsletters, challenges, coaching et communautés.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Stack utile, mais nécessite un cadre responsable et prudent sur les conseils santé.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Plans",
+        "titleEn": "Plans",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "vidéos",
+        "titleEn": "vidéos",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "calendriers",
+        "titleEn": "calendriers",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "tracking",
+        "titleEn": "tracking",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser plans dans le workflow contenu.",
+        "reasonEn": "Useful to secure plans in the content workflow."
+      },
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "trainerize",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser calendriers dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendriers in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "truecoach",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser tracking dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "circle",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser plans dans le workflow contenu.",
+        "reasonEn": "Useful to secure plans in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "kajabi",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Paiement : utile pour sécuriser calendriers dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendriers in the content workflow."
+      },
+      {
+        "role": "Email marketing",
+        "roleEn": "Email marketing",
+        "slug": "convertkit",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Email marketing : utile pour sécuriser tracking dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "workout-templates",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser plans dans le workflow contenu.",
+        "reasonEn": "Useful to secure plans in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "form-apps",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "scheduling-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser calendriers dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendriers in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "link-in-bio",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tracking dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "music-libraries",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser plans dans le workflow contenu.",
+        "reasonEn": "Useful to secure plans in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser calendriers dans le workflow contenu.",
+        "reasonEn": "Useful to secure calendriers in the content workflow."
+      },
+      {
+        "role": "Sous-titres",
+        "roleEn": "Sous-titres",
+        "slug": "captions",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Sous-titres : utile pour sécuriser tracking dans le workflow contenu.",
+        "reasonEn": "Useful to secure tracking in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser plans dans le workflow contenu.",
+        "reasonEn": "Useful to secure plans in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-b2b-saas-founder-led-content",
+    "slug": "createur-createur-b2b-saas-founder-led-content",
+    "title": "Stack B2B SaaS",
+    "titleEn": "B2B SaaS stack",
+    "subtitle": "Les outils recommandés pour fondateur ou marketer qui crée du contenu pour vendre un saas, construire une audience et générer des leads.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "b2b-saas-content",
+      "linkedin-content"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Fondateur ou marketer qui crée du contenu pour vendre un SaaS, construire une audience et générer des leads.",
+    "bestForEn": "Fondateur ou marketer qui crée du contenu pour vendre un SaaS, construire une audience et générer des leads.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Profil ultra Tooltrim : outils, growth, conversion, stack commerciale et contenu.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Positionnement",
+        "titleEn": "Positionnement",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "posts",
+        "titleEn": "posts",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "vidéos",
+        "titleEn": "vidéos",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "démos",
+        "titleEn": "démos",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Design avancé",
+        "roleEn": "Design avancé",
+        "slug": "figma",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design avancé : utile pour sécuriser posts dans le workflow contenu.",
+        "reasonEn": "Useful to secure posts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "loom",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Montage texte/audio",
+        "roleEn": "Montage texte/audio",
+        "slug": "descript",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage texte/audio : utile pour sécuriser démos dans le workflow contenu.",
+        "reasonEn": "Useful to secure démos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Site / landing",
+        "roleEn": "Site / landing",
+        "slug": "webflow",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Site / landing : utile pour sécuriser posts dans le workflow contenu.",
+        "reasonEn": "Useful to secure posts in the content workflow."
+      },
+      {
+        "role": "Newsletter",
+        "roleEn": "Newsletter",
+        "slug": "beehiiv",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Newsletter : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "linkedin",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser démos dans le workflow contenu.",
+        "reasonEn": "Useful to secure démos in the content workflow."
+      },
+      {
+        "role": "Pilotage YouTube",
+        "roleEn": "Pilotage YouTube",
+        "slug": "youtube-studio",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Pilotage YouTube : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser posts dans le workflow contenu.",
+        "reasonEn": "Useful to secure posts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rewardful",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser démos dans le workflow contenu.",
+        "reasonEn": "Useful to secure démos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clearbit",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clay",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser posts dans le workflow contenu.",
+        "reasonEn": "Useful to secure posts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "wistia",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
+        "reasonEn": "Useful to secure vidéos in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "vidyard",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser démos dans le workflow contenu.",
+        "reasonEn": "Useful to secure démos in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser positionnement dans le workflow contenu.",
+        "reasonEn": "Useful to secure positionnement in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser posts dans le workflow contenu.",
+        "reasonEn": "Useful to secure posts in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-de-cours-cohort-based-communaute",
+    "slug": "createur-createur-de-cours-cohort-based-communaute",
+    "title": "Stack cohort course",
+    "titleEn": "cohort course stack",
+    "subtitle": "Les outils recommandés pour créateur qui anime des cohortes, ateliers, masterclasses ou communautés payantes.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "cohort-course",
+      "community-creator"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui anime des cohortes, ateliers, masterclasses ou communautés payantes.",
+    "bestForEn": "Créateur qui anime des cohortes, ateliers, masterclasses ou communautés payantes.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Très intéressant car la stack va de la production au business model.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Programme",
+        "titleEn": "Programme",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "onboarding",
+        "titleEn": "onboarding",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "live",
+        "titleEn": "live",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "replays",
+        "titleEn": "replays",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "circle",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser programme dans le workflow contenu.",
+        "reasonEn": "Useful to secure programme in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "kajabi",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser onboarding dans le workflow contenu.",
+        "reasonEn": "Useful to secure onboarding in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "maven",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser live dans le workflow contenu.",
+        "reasonEn": "Useful to secure live in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zoom",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser replays dans le workflow contenu.",
+        "reasonEn": "Useful to secure replays in the content workflow."
+      },
+      {
+        "role": "Enregistrement",
+        "roleEn": "Enregistrement",
+        "slug": "riverside",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Enregistrement : utile pour sécuriser programme dans le workflow contenu.",
+        "reasonEn": "Useful to secure programme in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser onboarding dans le workflow contenu.",
+        "reasonEn": "Useful to secure onboarding in the content workflow."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Paiement : utile pour sécuriser live dans le workflow contenu.",
+        "reasonEn": "Useful to secure live in the content workflow."
+      },
+      {
+        "role": "Email marketing",
+        "roleEn": "Email marketing",
+        "slug": "convertkit",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Email marketing : utile pour sécuriser replays dans le workflow contenu.",
+        "reasonEn": "Useful to secure replays in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "slack",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser programme dans le workflow contenu.",
+        "reasonEn": "Useful to secure programme in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser onboarding dans le workflow contenu.",
+        "reasonEn": "Useful to secure onboarding in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser live dans le workflow contenu.",
+        "reasonEn": "Useful to secure live in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser replays dans le workflow contenu.",
+        "reasonEn": "Useful to secure replays in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zapier",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser programme dans le workflow contenu.",
+        "reasonEn": "Useful to secure programme in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "make",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser onboarding dans le workflow contenu.",
+        "reasonEn": "Useful to secure onboarding in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "calendly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser live dans le workflow contenu.",
+        "reasonEn": "Useful to secure live in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser replays dans le workflow contenu.",
+        "reasonEn": "Useful to secure replays in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser programme dans le workflow contenu.",
+        "reasonEn": "Useful to secure programme in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gamma",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser onboarding dans le workflow contenu.",
+        "reasonEn": "Useful to secure onboarding in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-de-templates-digital-products",
+    "slug": "createur-createur-de-templates-digital-products",
+    "title": "Stack digital products",
+    "titleEn": "digital products stack",
+    "subtitle": "Les outils recommandés pour créateur qui vend templates notion, canva, figma, prompts, presets, ebooks, fichiers numériques.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "digital-products",
+      "no-code"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui vend templates Notion, Canva, Figma, prompts, presets, ebooks, fichiers numériques.",
+    "bestForEn": "Créateur qui vend templates Notion, Canva, Figma, prompts, presets, ebooks, fichiers numériques.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Un des meilleurs profils pour Tooltrim : faible friction, forte intention d’achat, stack no-code/creator.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Création produit",
+        "titleEn": "Création produit",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "mockup",
+        "titleEn": "mockup",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "landing page",
+        "titleEn": "landing page",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "paiement",
+        "titleEn": "paiement",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser création produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure création produit in the content workflow."
+      },
+      {
+        "role": "Design avancé",
+        "roleEn": "Design avancé",
+        "slug": "figma",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design avancé : utile pour sécuriser mockup dans le workflow contenu.",
+        "reasonEn": "Useful to secure mockup in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gumroad",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lemon-squeezy",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser création produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure création produit in the content workflow."
+      },
+      {
+        "role": "Boutique",
+        "roleEn": "Boutique",
+        "slug": "shopify",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Boutique : utile pour sécuriser mockup dans le workflow contenu.",
+        "reasonEn": "Useful to secure mockup in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "framer",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Site / landing",
+        "roleEn": "Site / landing",
+        "slug": "webflow",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Site / landing : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mockup-plugins",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser création produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure création produit in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rewardful",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser mockup dans le workflow contenu.",
+        "reasonEn": "Useful to secure mockup in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "make",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser création produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure création produit in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "product-hunt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser mockup dans le workflow contenu.",
+        "reasonEn": "Useful to secure mockup in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser landing page dans le workflow contenu.",
+        "reasonEn": "Useful to secure landing page in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser paiement dans le workflow contenu.",
+        "reasonEn": "Useful to secure paiement in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser création produit dans le workflow contenu.",
+        "reasonEn": "Useful to secure création produit in the content workflow."
+      },
+      {
+        "role": "Image IA",
+        "roleEn": "Image IA",
+        "slug": "midjourney",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Image IA : utile pour sécuriser mockup dans le workflow contenu.",
+        "reasonEn": "Useful to secure mockup in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-ia-ai-content-creator",
+    "slug": "createur-createur-ia-ai-content-creator",
+    "title": "Stack IA content",
+    "titleEn": "IA content stack",
+    "subtitle": "Les outils recommandés pour créateur spécialisé dans contenus générés ou augmentés par ia : images, vidéos, avatars, voix, automation.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "ai-content",
+      "video"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur spécialisé dans contenus générés ou augmentés par IA : images, vidéos, avatars, voix, automation.",
+    "bestForEn": "Créateur spécialisé dans contenus générés ou augmentés par IA : images, vidéos, avatars, voix, automation.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Niche en forte croissance, mais il faut insister sur authenticité, droits et transparence.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Prompts",
+        "titleEn": "Prompts",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "génération image/vidéo",
+        "titleEn": "génération image/vidéo",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "avatars",
+        "titleEn": "avatars",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "voix",
+        "titleEn": "voix",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Image IA",
+        "roleEn": "Image IA",
+        "slug": "midjourney",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Image IA : utile pour sécuriser prompts dans le workflow contenu.",
+        "reasonEn": "Useful to secure prompts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "krea",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser génération image/vidéo dans le workflow contenu.",
+        "reasonEn": "Useful to secure génération image/vidéo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser avatars dans le workflow contenu.",
+        "reasonEn": "Useful to secure avatars in the content workflow."
+      },
+      {
+        "role": "Vidéo IA",
+        "roleEn": "Vidéo IA",
+        "slug": "runway",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Vidéo IA : utile pour sécuriser voix dans le workflow contenu.",
+        "reasonEn": "Useful to secure voix in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "kling",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser prompts dans le workflow contenu.",
+        "reasonEn": "Useful to secure prompts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "heygen",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser génération image/vidéo dans le workflow contenu.",
+        "reasonEn": "Useful to secure génération image/vidéo in the content workflow."
+      },
+      {
+        "role": "Voix IA",
+        "roleEn": "Voix IA",
+        "slug": "elevenlabs",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Voix IA : utile pour sécuriser avatars dans le workflow contenu.",
+        "reasonEn": "Useful to secure avatars in the content workflow."
+      },
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Montage vertical : utile pour sécuriser voix dans le workflow contenu.",
+        "reasonEn": "Useful to secure voix in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser prompts dans le workflow contenu.",
+        "reasonEn": "Useful to secure prompts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "magnific",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser génération image/vidéo dans le workflow contenu.",
+        "reasonEn": "Useful to secure génération image/vidéo in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "topaz",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser avatars dans le workflow contenu.",
+        "reasonEn": "Useful to secure avatars in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "comfyui-workflows",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser voix dans le workflow contenu.",
+        "reasonEn": "Useful to secure voix in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "prompt-libraries",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser prompts dans le workflow contenu.",
+        "reasonEn": "Useful to secure prompts in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "content-credentials-tools",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser génération image/vidéo dans le workflow contenu.",
+        "reasonEn": "Useful to secure génération image/vidéo in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser avatars dans le workflow contenu.",
+        "reasonEn": "Useful to secure avatars in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser voix dans le workflow contenu.",
+        "reasonEn": "Useful to secure voix in the content workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Recherche sourcée : utile pour sécuriser prompts dans le workflow contenu.",
+        "reasonEn": "Useful to secure prompts in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-documentaire-enquete",
+    "slug": "createur-createur-documentaire-enquete",
+    "title": "Stack documentaire",
+    "titleEn": "documentaire stack",
+    "subtitle": "Les outils recommandés pour créateur long format, investigation, récit, sources, interviews, archives.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "documentary-content",
+      "youtube-long"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur long format, investigation, récit, sources, interviews, archives.",
+    "bestForEn": "Créateur long format, investigation, récit, sources, interviews, archives.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Profil premium : gros besoin d’organisation, recherche et traçabilité des sources.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Recherche",
+        "titleEn": "Recherche",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "sources",
+        "titleEn": "sources",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "interviews",
+        "titleEn": "interviews",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "transcription",
+        "titleEn": "transcription",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "obsidian",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zotero",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser interviews dans le workflow contenu.",
+        "reasonEn": "Useful to secure interviews in the content workflow."
+      },
+      {
+        "role": "Montage texte/audio",
+        "roleEn": "Montage texte/audio",
+        "slug": "descript",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage texte/audio : utile pour sécuriser transcription dans le workflow contenu.",
+        "reasonEn": "Useful to secure transcription in the content workflow."
+      },
+      {
+        "role": "Montage pro",
+        "roleEn": "Montage pro",
+        "slug": "adobe-premiere-pro",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage pro : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Montage / étalonnage",
+        "roleEn": "Montage / étalonnage",
+        "slug": "davinci-resolve",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Montage / étalonnage : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frame-io",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser interviews dans le workflow contenu.",
+        "reasonEn": "Useful to secure interviews in the content workflow."
+      },
+      {
+        "role": "Livraison fichiers",
+        "roleEn": "Livraison fichiers",
+        "slug": "google-drive",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Livraison fichiers : utile pour sécuriser transcription dans le workflow contenu.",
+        "reasonEn": "Useful to secure transcription in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "whisper",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rev",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "otter",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser interviews dans le workflow contenu.",
+        "reasonEn": "Useful to secure interviews in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "archive-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser transcription dans le workflow contenu.",
+        "reasonEn": "Useful to secure transcription in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "music-libraries",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "stock-footage",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser interviews dans le workflow contenu.",
+        "reasonEn": "Useful to secure interviews in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser transcription dans le workflow contenu.",
+        "reasonEn": "Useful to secure transcription in the content workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Recherche sourcée : utile pour sécuriser recherche dans le workflow contenu.",
+        "reasonEn": "Useful to secure recherche in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser sources dans le workflow contenu.",
+        "reasonEn": "Useful to secure sources in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-meme-culture-internet",
+    "slug": "createur-createur-meme-culture-internet",
+    "title": "Stack meme culture",
+    "titleEn": "meme culture stack",
+    "subtitle": "Les outils recommandés pour créateur réactif qui produit formats viraux, memes, remixes, posts culturels.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "meme-culture",
+      "social-content"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur réactif qui produit formats viraux, memes, remixes, posts culturels.",
+    "bestForEn": "Créateur réactif qui produit formats viraux, memes, remixes, posts culturels.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Pertinent mais moins premium : valeur surtout sur rapidité, veille et publication.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Veille",
+        "titleEn": "Veille",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "capture",
+        "titleEn": "capture",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "montage rapide",
+        "titleEn": "montage rapide",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "templates",
+        "titleEn": "templates",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Retouche avancée",
+        "roleEn": "Retouche avancée",
+        "slug": "adobe-photoshop",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Retouche avancée : utile pour sécuriser montage rapide dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage rapide in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "x",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser templates dans le workflow contenu.",
+        "reasonEn": "Useful to secure templates in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tiktok",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Distribution Instagram",
+        "roleEn": "Distribution Instagram",
+        "slug": "instagram",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Distribution Instagram : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Communauté",
+        "roleEn": "Communauté",
+        "slug": "discord",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Communauté : utile pour sécuriser montage rapide dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage rapide in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "buffer",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser templates dans le workflow contenu.",
+        "reasonEn": "Useful to secure templates in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "meme-templates",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "giphy",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tenor",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage rapide dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage rapide in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "screen-capture-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser templates dans le workflow contenu.",
+        "reasonEn": "Useful to secure templates in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "emoji-sticker-packs",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser capture dans le workflow contenu.",
+        "reasonEn": "Useful to secure capture in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage rapide dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage rapide in the content workflow."
+      },
+      {
+        "role": "Image IA",
+        "roleEn": "Image IA",
+        "slug": "midjourney",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Image IA : utile pour sécuriser templates dans le workflow contenu.",
+        "reasonEn": "Useful to secure templates in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
+        "reasonEn": "Useful to secure veille in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-evenementiel-live-coverage",
+    "slug": "createur-createur-evenementiel-live-coverage",
+    "title": "Stack live coverage",
+    "titleEn": "live coverage stack",
+    "subtitle": "Les outils recommandés pour créateur qui couvre événements, conférences, salons, festivals, lancements en temps réel.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "event-coverage",
+      "video"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui couvre événements, conférences, salons, festivals, lancements en temps réel.",
+    "bestForEn": "Créateur qui couvre événements, conférences, salons, festivals, lancements en temps réel.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Très utile pour agences, event designers, community managers et créateurs terrain.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Planning",
+        "titleEn": "Planning",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "tournage mobile",
+        "titleEn": "tournage mobile",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "montage express",
+        "titleEn": "montage express",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "publication live",
+        "titleEn": "publication live",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Montage vertical",
+        "roleEn": "Montage vertical",
+        "slug": "capcut",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage vertical : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lightroom-mobile",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser tournage mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage mobile in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Design rapide : utile pour sécuriser montage express dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage express in the content workflow."
+      },
+      {
+        "role": "Livraison fichiers",
+        "roleEn": "Livraison fichiers",
+        "slug": "google-drive",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Livraison fichiers : utile pour sécuriser publication live dans le workflow contenu.",
+        "reasonEn": "Useful to secure publication live in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frame-io",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      },
+      {
+        "role": "Planification social",
+        "roleEn": "Planification social",
+        "slug": "metricool",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Planification social : utile pour sécuriser tournage mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage mobile in the content workflow."
+      },
+      {
+        "role": "Distribution Instagram",
+        "roleEn": "Distribution Instagram",
+        "slug": "instagram",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Distribution Instagram : utile pour sécuriser montage express dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage express in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tiktok",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser publication live dans le workflow contenu.",
+        "reasonEn": "Useful to secure publication live in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mobile-gimbal-apps",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "teleprompter",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser tournage mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage mobile in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "caption-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage express dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage express in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "presets",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser publication live dans le workflow contenu.",
+        "reasonEn": "Useful to secure publication live in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "shared-cloud-folders",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser tournage mobile dans le workflow contenu.",
+        "reasonEn": "Useful to secure tournage mobile in the content workflow."
+      },
+      {
+        "role": "Sous-titres",
+        "roleEn": "Sous-titres",
+        "slug": "captions",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Sous-titres : utile pour sécuriser montage express dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage express in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser publication live dans le workflow contenu.",
+        "reasonEn": "Useful to secure publication live in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-corporate-brand-content",
+    "slug": "createur-createur-corporate-brand-content",
+    "title": "Stack brand content",
+    "titleEn": "brand content stack",
+    "subtitle": "Les outils recommandés pour créateur qui produit contenus pour entreprises : interviews, posts, reels, vidéos internes, employer branding.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "brand-content",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui produit contenus pour entreprises : interviews, posts, reels, vidéos internes, employer branding.",
+    "bestForEn": "Créateur qui produit contenus pour entreprises : interviews, posts, reels, vidéos internes, employer branding.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Profil très monétisable : vraie demande B2B et stack complète de production client.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Brief client",
+        "titleEn": "Brief client",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "planning",
+        "titleEn": "planning",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "interviews",
+        "titleEn": "interviews",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "montage",
+        "titleEn": "montage",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser brief client dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief client in the content workflow."
+      },
+      {
+        "role": "Livraison fichiers",
+        "roleEn": "Livraison fichiers",
+        "slug": "google-drive",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Livraison fichiers : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frame-io",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser interviews dans le workflow contenu.",
+        "reasonEn": "Useful to secure interviews in the content workflow."
+      },
+      {
+        "role": "Montage pro",
+        "roleEn": "Montage pro",
+        "slug": "adobe-premiere-pro",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage pro : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Montage texte/audio",
+        "roleEn": "Montage texte/audio",
+        "slug": "descript",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage texte/audio : utile pour sécuriser brief client dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief client in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Design rapide : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      },
+      {
+        "role": "Design avancé",
+        "roleEn": "Design avancé",
+        "slug": "figma",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Design avancé : utile pour sécuriser interviews dans le workflow contenu.",
+        "reasonEn": "Useful to secure interviews in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rev",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser brief client dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief client in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "whisper",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "motion-array",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser interviews dans le workflow contenu.",
+        "reasonEn": "Useful to secure interviews in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "brand-kits",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "subtitle-tools",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser brief client dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief client in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "review-tools",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser interviews dans le workflow contenu.",
+        "reasonEn": "Useful to secure interviews in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser montage dans le workflow contenu.",
+        "reasonEn": "Useful to secure montage in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "firefly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser brief client dans le workflow contenu.",
+        "reasonEn": "Useful to secure brief client in the content workflow."
+      },
+      {
+        "role": "Vidéo IA",
+        "roleEn": "Vidéo IA",
+        "slug": "runway",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Vidéo IA : utile pour sécuriser planning dans le workflow contenu.",
+        "reasonEn": "Useful to secure planning in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-multi-plateforme-content-repurposer",
+    "slug": "createur-createur-multi-plateforme-content-repurposer",
+    "title": "Stack repurposing",
+    "titleEn": "repurposing stack",
+    "subtitle": "Les outils recommandés pour créateur ou assistant qui transforme un contenu long en posts, shorts, newsletters, carrousels, scripts.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "repurposing",
+      "social-content"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 96,
+    "savings": 220,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur ou assistant qui transforme un contenu long en posts, shorts, newsletters, carrousels, scripts.",
+    "bestForEn": "Créateur ou assistant qui transforme un contenu long en posts, shorts, newsletters, carrousels, scripts.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "Très bon angle Tooltrim : le recyclage de contenu est un besoin transversal et très concret.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Découpe",
+        "titleEn": "Découpe",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "transcription",
+        "titleEn": "transcription",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "réécriture",
+        "titleEn": "réécriture",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "formats",
+        "titleEn": "formats",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Montage texte/audio",
+        "roleEn": "Montage texte/audio",
+        "slug": "descript",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Montage texte/audio : utile pour sécuriser découpe dans le workflow contenu.",
+        "reasonEn": "Useful to secure découpe in the content workflow."
+      },
+      {
+        "role": "Repurposing vidéo",
+        "roleEn": "Repurposing vidéo",
+        "slug": "opusclip",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Repurposing vidéo : utile pour sécuriser transcription dans le workflow contenu.",
+        "reasonEn": "Useful to secure transcription in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "repurpose-io",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser réécriture dans le workflow contenu.",
+        "reasonEn": "Useful to secure réécriture in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Cockpit contenu : utile pour sécuriser formats dans le workflow contenu.",
+        "reasonEn": "Useful to secure formats in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser découpe dans le workflow contenu.",
+        "reasonEn": "Useful to secure découpe in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "buffer",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser transcription dans le workflow contenu.",
+        "reasonEn": "Useful to secure transcription in the content workflow."
+      },
+      {
+        "role": "Planification social",
+        "roleEn": "Planification social",
+        "slug": "metricool",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Planification social : utile pour sécuriser réécriture dans le workflow contenu.",
+        "reasonEn": "Useful to secure réécriture in the content workflow."
+      },
+      {
+        "role": "Design rapide",
+        "roleEn": "Design rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Design rapide : utile pour sécuriser formats dans le workflow contenu.",
+        "reasonEn": "Useful to secure formats in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser découpe dans le workflow contenu.",
+        "reasonEn": "Useful to secure découpe in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser transcription dans le workflow contenu.",
+        "reasonEn": "Useful to secure transcription in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tally",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser réécriture dans le workflow contenu.",
+        "reasonEn": "Useful to secure réécriture in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "subtitle-tools",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser formats dans le workflow contenu.",
+        "reasonEn": "Useful to secure formats in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "social-schedulers",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser découpe dans le workflow contenu.",
+        "reasonEn": "Useful to secure découpe in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser transcription dans le workflow contenu.",
+        "reasonEn": "Useful to secure transcription in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser réécriture dans le workflow contenu.",
+        "reasonEn": "Useful to secure réécriture in the content workflow."
+      },
+      {
+        "role": "Sous-titres",
+        "roleEn": "Sous-titres",
+        "slug": "captions",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Sous-titres : utile pour sécuriser formats dans le workflow contenu.",
+        "reasonEn": "Useful to secure formats in the content workflow."
+      }
+    ]
+  },
+  {
+    "id": "createur-createur-communaute-community-led-creator",
+    "slug": "createur-createur-communaute-community-led-creator",
+    "title": "Stack community",
+    "titleEn": "community stack",
+    "subtitle": "Les outils recommandés pour créateur qui construit une communauté sur discord, circle, slack, whatsapp, patreon ou substack.",
+    "subtitleEn": "Recommended tools for this creator profile.",
+    "persona": "content",
+    "subProfiles": [
+      "community-creator",
+      "social-content"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 58,
+    "savings": 130,
+    "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
+    "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
+    "bestFor": "Créateur qui construit une communauté sur Discord, Circle, Slack, WhatsApp, Patreon ou Substack.",
+    "bestForEn": "Créateur qui construit une communauté sur Discord, Circle, Slack, WhatsApp, Patreon ou Substack.",
+    "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
+    "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
+    "editorial": "La stack communauté devient centrale : contenu, relation, rétention et revenus récurrents.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
+    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "needs": [
+      {
+        "title": "Animation",
+        "titleEn": "Animation",
+        "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
+        "detailEn": "The workflow should start from the real format, not a trendy tool."
+      },
+      {
+        "title": "contenus exclusifs",
+        "titleEn": "contenus exclusifs",
+        "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
+        "detailEn": "Production time saved should go back into concept, hook, and distribution."
+      },
+      {
+        "title": "events",
+        "titleEn": "events",
+        "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
+        "detailEn": "Paid tools should help publish, measure, or sell better."
+      },
+      {
+        "title": "membres",
+        "titleEn": "membres",
+        "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
+        "detailEn": "The stack should keep files, rights, and approvals easy to find."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le contenu se recycle",
+        "titleEn": "Content gets repurposed",
+        "detail": "Un bon format source donne plusieurs posts, shorts, newsletters ou extraits sans refaire tout le travail.",
+        "detailEn": "A good source format creates several posts, shorts, newsletters, or clips without redoing all the work."
+      },
+      {
+        "title": "La monétisation se structure",
+        "titleEn": "Monetization gets structured",
+        "detail": "Dès que partenariats, produits ou affiliation arrivent, il faut suivre les contrats, liens, droits et paiements.",
+        "detailEn": "Once sponsorships, products, or affiliates arrive, contracts, links, rights, and payments need tracking."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Automatiser le ton",
+        "titleEn": "Automating the voice",
+        "detail": "L’IA doit accélérer les brouillons et déclinaisons, pas produire une voix générique qui abîme la relation avec l’audience.",
+        "detailEn": "AI should speed drafts and variants, not create a generic voice that hurts audience trust."
+      },
+      {
+        "title": "Payer trop tôt la stack premium",
+        "titleEn": "Paying too early for the premium stack",
+        "detail": "Avant d’avoir un rythme clair, commence par les outils qui débloquent la publication et la mesure.",
+        "detailEn": "Before having a clear cadence, start with tools that unlock publishing and measurement."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Est-ce que chaque outil accélère une étape précise ?",
+        "qEn": "Does each tool speed up a precise step?",
+        "hint": "Si tu ne peux pas nommer l’étape, l’outil est probablement décoratif.",
+        "hintEn": "If you cannot name the step, the tool is probably decorative."
+      },
+      {
+        "q": "Le contenu peut-il être retrouvé et réutilisé facilement ?",
+        "qEn": "Can content be found and reused easily?",
+        "hint": "La bibliothèque de rushs, scripts et assets vaut autant que le calendrier éditorial.",
+        "hintEn": "The library of footage, scripts, and assets is as valuable as the editorial calendar."
+      },
+      {
+        "q": "La stack aide-t-elle à vendre ou mesurer ?",
+        "qEn": "Does the stack help sell or measure?",
+        "hint": "Au-delà de la création, garde une trace des campagnes, revenus, liens et performances.",
+        "hintEn": "Beyond creation, track campaigns, revenue, links, and performance."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "circle",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser animation dans le workflow contenu.",
+        "reasonEn": "Useful to secure animation in the content workflow."
+      },
+      {
+        "role": "Communauté",
+        "roleEn": "Communauté",
+        "slug": "discord",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Communauté : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "slack",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser events dans le workflow contenu.",
+        "reasonEn": "Useful to secure events in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "patreon",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Outil métier : utile pour sécuriser membres dans le workflow contenu.",
+        "reasonEn": "Useful to secure membres in the content workflow."
+      },
+      {
+        "role": "Newsletter",
+        "roleEn": "Newsletter",
+        "slug": "substack",
+        "decision": "core",
+        "tip": "À garder dans le socle de production.",
+        "tipEn": "Keep it in the production core.",
+        "reason": "Newsletter : utile pour sécuriser animation dans le workflow contenu.",
+        "reasonEn": "Useful to secure animation in the content workflow."
+      },
+      {
+        "role": "Email marketing",
+        "roleEn": "Email marketing",
+        "slug": "convertkit",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Email marketing : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Paiement",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Paiement : utile pour sécuriser events dans le workflow contenu.",
+        "reasonEn": "Useful to secure events in the content workflow."
+      },
+      {
+        "role": "Cockpit contenu",
+        "roleEn": "Cockpit contenu",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Cockpit contenu : utile pour sécuriser membres dans le workflow contenu.",
+        "reasonEn": "Useful to secure membres in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "eventbrite",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser animation dans le workflow contenu.",
+        "reasonEn": "Useful to secure animation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "bots-discord",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser events dans le workflow contenu.",
+        "reasonEn": "Useful to secure events in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser membres dans le workflow contenu.",
+        "reasonEn": "Useful to secure membres in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "memberful",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser animation dans le workflow contenu.",
+        "reasonEn": "Useful to secure animation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "rewardful",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "calendly",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser events dans le workflow contenu.",
+        "reasonEn": "Useful to secure events in the content workflow."
+      },
+      {
+        "role": "Idées et scripts",
+        "roleEn": "Idées et scripts",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Idées et scripts : utile pour sécuriser membres dans le workflow contenu.",
+        "reasonEn": "Useful to secure membres in the content workflow."
+      },
+      {
+        "role": "Rédaction longue",
+        "roleEn": "Rédaction longue",
+        "slug": "claude",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Rédaction longue : utile pour sécuriser animation dans le workflow contenu.",
+        "reasonEn": "Useful to secure animation in the content workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "notion-ai",
+        "decision": "challenge",
+        "tip": "À activer selon le format et la monétisation.",
+        "tipEn": "Activate based on format and monetization.",
+        "reason": "Outil métier : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
+        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+      }
+    ]
+  },
 ];
 
 export const STACK_USES: Record<string, StackUseCase[]> = {
