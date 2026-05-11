@@ -96939,5 +96939,3337 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     }
+  },
+  {
+    "id": "lucidchart",
+    "slug": "lucidchart",
+    "name": "Lucidchart",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Lucidchart est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "lucidchart.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://lucidchart.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://lucidchart.com",
+    "websiteUrl": "https://lucidchart.com",
+    "logo": "https://logo.clearbit.com/lucidchart.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "smartsheet",
+    "slug": "smartsheet",
+    "name": "Smartsheet",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Smartsheet est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "smartsheet.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://smartsheet.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://smartsheet.com",
+    "websiteUrl": "https://smartsheet.com",
+    "logo": "https://logo.clearbit.com/smartsheet.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "mixpanel",
+    "slug": "mixpanel",
+    "name": "Mixpanel",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Mixpanel est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "mixpanel.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://mixpanel.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://mixpanel.com",
+    "websiteUrl": "https://mixpanel.com",
+    "logo": "https://logo.clearbit.com/mixpanel.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "adobe-creative-cloud",
+    "slug": "adobe-creative-cloud",
+    "name": "Adobe Creative Cloud",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Adobe Creative Cloud est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "adobecreativecloud.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://adobecreativecloud.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://adobecreativecloud.com",
+    "websiteUrl": "https://adobecreativecloud.com",
+    "logo": "https://logo.clearbit.com/adobecreativecloud.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "are-na",
+    "slug": "are-na",
+    "name": "Are Na",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Are Na est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "arena.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://arena.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://arena.com",
+    "websiteUrl": "https://arena.com",
+    "logo": "https://logo.clearbit.com/arena.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "meltwater",
+    "slug": "meltwater",
+    "name": "Meltwater",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Meltwater est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "meltwater.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://meltwater.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://meltwater.com",
+    "websiteUrl": "https://meltwater.com",
+    "logo": "https://logo.clearbit.com/meltwater.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "cision",
+    "slug": "cision",
+    "name": "Cision",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Cision est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "cision.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://cision.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://cision.com",
+    "websiteUrl": "https://cision.com",
+    "logo": "https://logo.clearbit.com/cision.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "prowly",
+    "slug": "prowly",
+    "name": "Prowly",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Prowly est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "prowly.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://prowly.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://prowly.com",
+    "websiteUrl": "https://prowly.com",
+    "logo": "https://logo.clearbit.com/prowly.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "linkedin-recruiter",
+    "slug": "linkedin-recruiter",
+    "name": "Linkedin Recruiter",
+    "category": "hris-payroll",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Linkedin Recruiter est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "business.linkedin.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://business.linkedin.com/talent-solutions/recruiter",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://business.linkedin.com/talent-solutions/recruiter",
+    "websiteUrl": "https://business.linkedin.com/talent-solutions/recruiter",
+    "logo": "https://logo.clearbit.com/business.linkedin.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "apollo",
+    "slug": "apollo",
+    "name": "Apollo",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Apollo est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "apollo.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://apollo.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://apollo.com",
+    "websiteUrl": "https://apollo.com",
+    "logo": "https://logo.clearbit.com/apollo.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "greenhouse",
+    "slug": "greenhouse",
+    "name": "Greenhouse",
+    "category": "hris-payroll",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Greenhouse est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "greenhouse.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://greenhouse.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://greenhouse.com",
+    "websiteUrl": "https://greenhouse.com",
+    "logo": "https://logo.clearbit.com/greenhouse.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "agicap",
+    "slug": "agicap",
+    "name": "Agicap",
+    "category": "finance",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Agicap est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "agicap.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://agicap.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://agicap.com",
+    "websiteUrl": "https://agicap.com",
+    "logo": "https://logo.clearbit.com/agicap.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "profitwell",
+    "slug": "profitwell",
+    "name": "Profitwell",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Profitwell est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "profitwell.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://profitwell.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://profitwell.com",
+    "websiteUrl": "https://profitwell.com",
+    "logo": "https://logo.clearbit.com/profitwell.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "chartmogul",
+    "slug": "chartmogul",
+    "name": "Chartmogul",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Chartmogul est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "chartmogul.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://chartmogul.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://chartmogul.com",
+    "websiteUrl": "https://chartmogul.com",
+    "logo": "https://logo.clearbit.com/chartmogul.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "triple-whale",
+    "slug": "triple-whale",
+    "name": "Triple Whale",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Triple Whale est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "triplewhale.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://triplewhale.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://triplewhale.com",
+    "websiteUrl": "https://triplewhale.com",
+    "logo": "https://logo.clearbit.com/triplewhale.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "microsoft-clarity",
+    "slug": "microsoft-clarity",
+    "name": "Microsoft Clarity",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Microsoft Clarity est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "clarity.microsoft.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://clarity.microsoft.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://clarity.microsoft.com",
+    "websiteUrl": "https://clarity.microsoft.com",
+    "logo": "https://logo.clearbit.com/clarity.microsoft.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "vwo",
+    "slug": "vwo",
+    "name": "Vwo",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Vwo est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "vwo.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://vwo.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://vwo.com",
+    "websiteUrl": "https://vwo.com",
+    "logo": "https://logo.clearbit.com/vwo.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "optimizely",
+    "slug": "optimizely",
+    "name": "Optimizely",
+    "category": "analytics",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Optimizely est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "optimizely.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://optimizely.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://optimizely.com",
+    "websiteUrl": "https://optimizely.com",
+    "logo": "https://logo.clearbit.com/optimizely.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "bubble",
+    "slug": "bubble",
+    "name": "Bubble",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Bubble est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "bubble.io",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://bubble.io",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://bubble.io",
+    "websiteUrl": "https://bubble.io",
+    "logo": "https://logo.clearbit.com/bubble.io",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "usertesting",
+    "slug": "usertesting",
+    "name": "Usertesting",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Usertesting est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "usertesting.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://usertesting.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://usertesting.com",
+    "websiteUrl": "https://usertesting.com",
+    "logo": "https://logo.clearbit.com/usertesting.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "snipe-it",
+    "slug": "snipe-it",
+    "name": "Snipe IT",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Snipe IT est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "snipeitapp.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://snipeitapp.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://snipeitapp.com",
+    "websiteUrl": "https://snipeitapp.com",
+    "logo": "https://logo.clearbit.com/snipeitapp.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "freshservice",
+    "slug": "freshservice",
+    "name": "Freshservice",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Freshservice est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "freshworks.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://freshworks.com/freshservice",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://freshworks.com/freshservice",
+    "websiteUrl": "https://freshworks.com/freshservice",
+    "logo": "https://logo.clearbit.com/freshworks.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "microsoft-defender",
+    "slug": "microsoft-defender",
+    "name": "Microsoft Defender",
+    "category": "security",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Microsoft Defender est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "microsoft.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://microsoft.com/security/business/microsoft-defender",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://microsoft.com/security/business/microsoft-defender",
+    "websiteUrl": "https://microsoft.com/security/business/microsoft-defender",
+    "logo": "https://logo.clearbit.com/microsoft.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "crowdstrike",
+    "slug": "crowdstrike",
+    "name": "Crowdstrike",
+    "category": "security",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Crowdstrike est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "crowdstrike.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://crowdstrike.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://crowdstrike.com",
+    "websiteUrl": "https://crowdstrike.com",
+    "logo": "https://logo.clearbit.com/crowdstrike.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "drata",
+    "slug": "drata",
+    "name": "Drata",
+    "category": "security",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Drata est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "drata.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://drata.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://drata.com",
+    "websiteUrl": "https://drata.com",
+    "logo": "https://logo.clearbit.com/drata.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "axeptio",
+    "slug": "axeptio",
+    "name": "Axeptio",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Axeptio est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "axeptio.eu",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://axeptio.eu",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://axeptio.eu",
+    "websiteUrl": "https://axeptio.eu",
+    "logo": "https://logo.clearbit.com/axeptio.eu",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "didomi",
+    "slug": "didomi",
+    "name": "Didomi",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Didomi est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "didomi.io",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://didomi.io",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://didomi.io",
+    "websiteUrl": "https://didomi.io",
+    "logo": "https://logo.clearbit.com/didomi.io",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "greenly",
+    "slug": "greenly",
+    "name": "Greenly",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Greenly est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "greenly.earth",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://greenly.earth",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://greenly.earth",
+    "websiteUrl": "https://greenly.earth",
+    "logo": "https://logo.clearbit.com/greenly.earth",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "sweep",
+    "slug": "sweep",
+    "name": "Sweep",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Sweep est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "sweep.net",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://sweep.net",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://sweep.net",
+    "websiteUrl": "https://sweep.net",
+    "logo": "https://logo.clearbit.com/sweep.net",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "sami",
+    "slug": "sami",
+    "name": "Sami",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Sami est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "sami.eco",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://sami.eco",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://sami.eco",
+    "websiteUrl": "https://sami.eco",
+    "logo": "https://logo.clearbit.com/sami.eco",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "coupa",
+    "slug": "coupa",
+    "name": "Coupa",
+    "category": "finance",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Coupa est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "coupa.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://coupa.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://coupa.com",
+    "websiteUrl": "https://coupa.com",
+    "logo": "https://logo.clearbit.com/coupa.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "safetyculture",
+    "slug": "safetyculture",
+    "name": "Safetyculture",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Safetyculture est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "safetyculture.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://safetyculture.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://safetyculture.com",
+    "websiteUrl": "https://safetyculture.com",
+    "logo": "https://logo.clearbit.com/safetyculture.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "pandadoc",
+    "slug": "pandadoc",
+    "name": "Pandadoc",
+    "category": "legal-contracts",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Pandadoc est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "pandadoc.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://pandadoc.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://pandadoc.com",
+    "websiteUrl": "https://pandadoc.com",
+    "logo": "https://logo.clearbit.com/pandadoc.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
+  },
+  {
+    "id": "condeco",
+    "slug": "condeco",
+    "name": "Condeco",
+    "category": "organization",
+    "shortDescription": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "shortDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "description": "Outil spécialisé utilisé dans les stacks consultants ToolTrim.",
+    "longDescription": "Condeco est référencé pour couvrir un besoin précis dans les stacks consultants ToolTrim.",
+    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricingEn": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "custom",
+      "price_reliability": "official_context_required",
+      "usage_sensitive": true,
+      "location_sensitive": false,
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "source_domain": "condecosoftware.com",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://condecosoftware.com",
+      "verification_status": "needs_official_quote"
+    },
+    "affiliateLink": "https://condecosoftware.com",
+    "websiteUrl": "https://condecosoftware.com",
+    "logo": "https://logo.clearbit.com/condecosoftware.com",
+    "seo": {},
+    "pros": [],
+    "prosEn": [],
+    "cons": [],
+    "consEn": [],
+    "useCases": [],
+    "useCasesEn": [],
+    "covers": [
+      "consulting-workflow"
+    ],
+    "relevantFor": [
+      "consultant"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [],
+    "verdict": {
+      "keepIf": [
+        "Le besoin revient dans plusieurs missions."
+      ],
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "The need repeats across engagements."
+      ],
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "threshold": "Add only if the role is central."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 3,
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consulting"
+    ],
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": null
   }
 ]

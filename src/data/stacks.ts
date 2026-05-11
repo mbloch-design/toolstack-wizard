@@ -54,7 +54,39 @@ export type StackSubProfile =
   | "maintenance-dev"
   | "mvp-startup"
   | "web-redesign"
-  | "accessibility-dev";
+  | "accessibility-dev"
+  | "strategy-consulting"
+  | "management-consulting"
+  | "digital-transformation"
+  | "ai-automation-consulting"
+  | "marketing-consulting"
+  | "growth-consulting"
+  | "editorial-consulting"
+  | "social-media-consulting"
+  | "brand-consulting"
+  | "communication-consulting"
+  | "pr-influence"
+  | "hr-consulting"
+  | "recruiting"
+  | "coaching"
+  | "finance-cfo"
+  | "pricing"
+  | "sales-bd"
+  | "cro-conversion"
+  | "it-systems"
+  | "cybersecurity-consulting"
+  | "compliance-rgpd"
+  | "sustainability-rse"
+  | "procurement"
+  | "supply-chain"
+  | "quality-iso"
+  | "legal-ops"
+  | "workplace"
+  | "event-consulting"
+  | "fundraising"
+  | "innovation"
+  | "change-management"
+  | "generalist-consultant";
 
 export interface StackToolSlot {
   role: string;
@@ -156,13 +188,13 @@ export const STACK_SUB_PROFILES: { value: StackSubProfile | "all"; label: string
   { value: "client-delivery", label: "Mission client", labelEn: "Client delivery", personas: ["consultant", "solo", "dev", "ops"] },
   { value: "training", label: "Formation", labelEn: "Training", personas: ["consultant", "content"] },
   { value: "research", label: "Recherche / veille", labelEn: "Research", personas: ["consultant", "content"] },
-  { value: "automation", label: "Automatisation", labelEn: "Automation", personas: ["ops", "solo", "dev"] },
+  { value: "automation", label: "Automatisation", labelEn: "Automation", personas: ["ops", "solo", "dev", "consultant"] },
   { value: "operations", label: "Ops", labelEn: "Ops", personas: ["ops", "consultant"] },
-  { value: "ecommerce", label: "E-commerce", labelEn: "E-commerce", personas: ["ops"] },
-  { value: "product", label: "Produit", labelEn: "Product", personas: ["dev", "ops"] },
-  { value: "analytics", label: "Analytics", labelEn: "Analytics", personas: ["ops", "dev"] },
+  { value: "ecommerce", label: "E-commerce", labelEn: "E-commerce", personas: ["ops", "consultant"] },
+  { value: "product", label: "Produit", labelEn: "Product", personas: ["dev", "ops", "consultant"] },
+  { value: "analytics", label: "Analytics", labelEn: "Analytics", personas: ["ops", "dev", "consultant"] },
   { value: "ai-coding", label: "IA code", labelEn: "AI coding", personas: ["dev"] },
-  { value: "no-code", label: "No-code", labelEn: "No-code", personas: ["solo", "dev"] },
+  { value: "no-code", label: "No-code", labelEn: "No-code", personas: ["solo", "dev", "consultant"] },
   { value: "admin", label: "Admin / finance", labelEn: "Admin / finance", personas: ["solo", "consultant"] },
   { value: "agency", label: "Agence", labelEn: "Agency", personas: ["ops"] },
   { value: "full-stack", label: "Full-stack", labelEn: "Full-stack", personas: ["dev"] },
@@ -189,6 +221,38 @@ export const STACK_SUB_PROFILES: { value: StackSubProfile | "all"; label: string
   { value: "mvp-startup", label: "MVP startup", labelEn: "Startup MVP", personas: ["dev"] },
   { value: "web-redesign", label: "Refonte web", labelEn: "Web redesign", personas: ["dev"] },
   { value: "accessibility-dev", label: "Accessibilité", labelEn: "Accessibility", personas: ["dev"] },
+  { value: "strategy-consulting", label: "Stratégie", labelEn: "Strategy", personas: ["consultant"] },
+  { value: "management-consulting", label: "Organisation", labelEn: "Organization", personas: ["consultant"] },
+  { value: "digital-transformation", label: "Transformation digitale", labelEn: "Digital transformation", personas: ["consultant"] },
+  { value: "ai-automation-consulting", label: "IA / automation", labelEn: "AI / automation", personas: ["consultant"] },
+  { value: "marketing-consulting", label: "Marketing", labelEn: "Marketing", personas: ["consultant"] },
+  { value: "growth-consulting", label: "Growth", labelEn: "Growth", personas: ["consultant"] },
+  { value: "editorial-consulting", label: "Contenu éditorial", labelEn: "Editorial content", personas: ["consultant"] },
+  { value: "social-media-consulting", label: "Social media", labelEn: "Social media", personas: ["consultant"] },
+  { value: "brand-consulting", label: "Brand consulting", labelEn: "Brand consulting", personas: ["consultant"] },
+  { value: "communication-consulting", label: "Communication", labelEn: "Communication", personas: ["consultant"] },
+  { value: "pr-influence", label: "RP / influence", labelEn: "PR / influence", personas: ["consultant"] },
+  { value: "hr-consulting", label: "RH", labelEn: "HR", personas: ["consultant"] },
+  { value: "recruiting", label: "Recrutement", labelEn: "Recruiting", personas: ["consultant"] },
+  { value: "coaching", label: "Coaching", labelEn: "Coaching", personas: ["consultant"] },
+  { value: "finance-cfo", label: "Finance / CFO", labelEn: "Finance / CFO", personas: ["consultant"] },
+  { value: "pricing", label: "Pricing", labelEn: "Pricing", personas: ["consultant"] },
+  { value: "sales-bd", label: "Sales / BD", labelEn: "Sales / BD", personas: ["consultant"] },
+  { value: "cro-conversion", label: "CRO", labelEn: "CRO", personas: ["consultant"] },
+  { value: "it-systems", label: "IT / systèmes", labelEn: "IT / systems", personas: ["consultant"] },
+  { value: "cybersecurity-consulting", label: "Cybersécurité", labelEn: "Cybersecurity", personas: ["consultant"] },
+  { value: "compliance-rgpd", label: "RGPD / conformité", labelEn: "GDPR / compliance", personas: ["consultant"] },
+  { value: "sustainability-rse", label: "RSE", labelEn: "Sustainability", personas: ["consultant"] },
+  { value: "procurement", label: "Achats", labelEn: "Procurement", personas: ["consultant"] },
+  { value: "supply-chain", label: "Supply chain", labelEn: "Supply chain", personas: ["consultant"] },
+  { value: "quality-iso", label: "Qualité / ISO", labelEn: "Quality / ISO", personas: ["consultant"] },
+  { value: "legal-ops", label: "Legal ops", labelEn: "Legal ops", personas: ["consultant"] },
+  { value: "workplace", label: "Workplace", labelEn: "Workplace", personas: ["consultant"] },
+  { value: "event-consulting", label: "Événementiel", labelEn: "Events", personas: ["consultant"] },
+  { value: "fundraising", label: "Fundraising", labelEn: "Fundraising", personas: ["consultant"] },
+  { value: "innovation", label: "Innovation", labelEn: "Innovation", personas: ["consultant"] },
+  { value: "change-management", label: "Change management", labelEn: "Change management", personas: ["consultant"] },
+  { value: "generalist-consultant", label: "Généraliste", labelEn: "Generalist", personas: ["consultant"] },
 ];
 
 export const STACKS: StackGuide[] = [
@@ -16082,6 +16146,7389 @@ export const STACKS: StackGuide[] = [
       }
     ]
   },
+  {
+    "id": "consultant-strategie",
+    "slug": "consultant-strategie",
+    "title": "Stack stratégie",
+    "titleEn": "stratégie stack",
+    "subtitle": "Les outils recommandés pour consultant stratégie",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "strategy-consulting",
+      "research"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant stratégie",
+    "bestForEn": "Consultant stratégie",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Recherche marché",
+        "titleEn": "Recherche marché",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "diagnostic",
+        "titleEn": "diagnostic",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "benchmark",
+        "titleEn": "benchmark",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "IA généraliste : utile pour sécuriser recherche marché sans disperser le workflow.",
+        "reasonEn": "Useful to secure recherche marché without scattering the workflow."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Analyse longue : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Recherche sourcée : utile pour sécuriser benchmark sans disperser le workflow.",
+        "reasonEn": "Useful to secure benchmark without scattering the workflow."
+      },
+      {
+        "role": "Deck client",
+        "roleEn": "Deck client",
+        "slug": "pitch",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Deck client : utile pour sécuriser recherche marché sans disperser le workflow.",
+        "reasonEn": "Useful to secure recherche marché without scattering the workflow."
+      },
+      {
+        "role": "Deck exécutif",
+        "roleEn": "Deck exécutif",
+        "slug": "powerpoint",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Deck exécutif : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser benchmark sans disperser le workflow.",
+        "reasonEn": "Useful to secure benchmark without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser recherche marché sans disperser le workflow.",
+        "reasonEn": "Useful to secure recherche marché without scattering the workflow."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Modèle chiffré : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "CRM : utile pour sécuriser benchmark sans disperser le workflow.",
+        "reasonEn": "Useful to secure benchmark without scattering the workflow."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Signature : utile pour sécuriser recherche marché sans disperser le workflow.",
+        "reasonEn": "Useful to secure recherche marché without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pennylane",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-management-organisation",
+    "slug": "consultant-management-organisation",
+    "title": "Stack organisation",
+    "titleEn": "organisation stack",
+    "subtitle": "Les outils recommandés pour consultant management / organisation",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "management-consulting",
+      "change-management"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant management / organisation",
+    "bestForEn": "Consultant management / organisation",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Cartographie organisationnelle",
+        "titleEn": "Cartographie organisationnelle",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "interviews",
+        "titleEn": "interviews",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "ateliers",
+        "titleEn": "ateliers",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Atelier : utile pour sécuriser cartographie organisationnelle sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie organisationnelle without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "figjam",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser ateliers sans disperser le workflow.",
+        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clickup",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser cartographie organisationnelle sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie organisationnelle without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Suite collaborative : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Deck exécutif",
+        "roleEn": "Deck exécutif",
+        "slug": "powerpoint",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Deck exécutif : utile pour sécuriser ateliers sans disperser le workflow.",
+        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Formulaires : utile pour sécuriser cartographie organisationnelle sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie organisationnelle without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Vidéo asynchrone",
+        "roleEn": "Vidéo asynchrone",
+        "slug": "loom",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Vidéo asynchrone : utile pour sécuriser ateliers sans disperser le workflow.",
+        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-operations",
+    "slug": "consultant-operations",
+    "title": "Stack opérations",
+    "titleEn": "opérations stack",
+    "subtitle": "Les outils recommandés pour consultant opérations",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "operations",
+      "analytics"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant opérations",
+    "bestForEn": "Consultant opérations",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Process mapping",
+        "titleEn": "Process mapping",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "SOP",
+        "titleEn": "SOP",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "KPI",
+        "titleEn": "KPI",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Atelier : utile pour sécuriser process mapping sans disperser le workflow.",
+        "reasonEn": "Useful to secure process mapping without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lucidchart",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser sop sans disperser le workflow.",
+        "reasonEn": "Useful to secure sop without scattering the workflow."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Modèle chiffré : utile pour sécuriser kpi sans disperser le workflow.",
+        "reasonEn": "Useful to secure kpi without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser process mapping sans disperser le workflow.",
+        "reasonEn": "Useful to secure process mapping without scattering the workflow."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "BI : utile pour sécuriser sop sans disperser le workflow.",
+        "reasonEn": "Useful to secure sop without scattering the workflow."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Reporting : utile pour sécuriser kpi sans disperser le workflow.",
+        "reasonEn": "Useful to secure kpi without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser process mapping sans disperser le workflow.",
+        "reasonEn": "Useful to secure process mapping without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clickup",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser sop sans disperser le workflow.",
+        "reasonEn": "Useful to secure sop without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "smartsheet",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser kpi sans disperser le workflow.",
+        "reasonEn": "Useful to secure kpi without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-transformation-digitale",
+    "slug": "consultant-transformation-digitale",
+    "title": "Stack transformation digitale",
+    "titleEn": "transformation digitale stack",
+    "subtitle": "Les outils recommandés pour consultant transformation digitale",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "digital-transformation",
+      "automation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant transformation digitale",
+    "bestForEn": "Consultant transformation digitale",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit outils",
+        "titleEn": "Audit outils",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "cartographie SI",
+        "titleEn": "cartographie SI",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "roadmap",
+        "titleEn": "roadmap",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Atelier : utile pour sécuriser audit outils sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit outils without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser cartographie si sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie si without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser roadmap sans disperser le workflow.",
+        "reasonEn": "Useful to secure roadmap without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Automatisation : utile pour sécuriser audit outils sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit outils without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Automatisation : utile pour sécuriser cartographie si sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie si without scattering the workflow."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "CRM : utile pour sécuriser roadmap sans disperser le workflow.",
+        "reasonEn": "Useful to secure roadmap without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Suite collaborative : utile pour sécuriser audit outils sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit outils without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "microsoft-365",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser cartographie si sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie si without scattering the workflow."
+      },
+      {
+        "role": "Vidéo asynchrone",
+        "roleEn": "Vidéo asynchrone",
+        "slug": "loom",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Vidéo asynchrone : utile pour sécuriser roadmap sans disperser le workflow.",
+        "reasonEn": "Useful to secure roadmap without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-ia-automation",
+    "slug": "consultant-ia-automation",
+    "title": "Stack ia",
+    "titleEn": "ia stack",
+    "subtitle": "Les outils recommandés pour consultant ia / automation",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "ai-automation-consulting",
+      "automation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant IA / automation",
+    "bestForEn": "Consultant IA / automation",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Use cases",
+        "titleEn": "Use cases",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "prompts",
+        "titleEn": "prompts",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "agents",
+        "titleEn": "agents",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "IA généraliste : utile pour sécuriser use cases sans disperser le workflow.",
+        "reasonEn": "Useful to secure use cases without scattering the workflow."
+      },
+      {
+        "role": "Analyse longue",
+        "roleEn": "Analyse longue",
+        "slug": "claude",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Analyse longue : utile pour sécuriser prompts sans disperser le workflow.",
+        "reasonEn": "Useful to secure prompts without scattering the workflow."
+      },
+      {
+        "role": "Recherche sourcée",
+        "roleEn": "Recherche sourcée",
+        "slug": "perplexity",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Recherche sourcée : utile pour sécuriser agents sans disperser le workflow.",
+        "reasonEn": "Useful to secure agents without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Automatisation : utile pour sécuriser use cases sans disperser le workflow.",
+        "reasonEn": "Useful to secure use cases without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "n8n",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser prompts sans disperser le workflow.",
+        "reasonEn": "Useful to secure prompts without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Automatisation : utile pour sécuriser agents sans disperser le workflow.",
+        "reasonEn": "Useful to secure agents without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser use cases sans disperser le workflow.",
+        "reasonEn": "Useful to secure use cases without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser prompts sans disperser le workflow.",
+        "reasonEn": "Useful to secure prompts without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lovable",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser agents sans disperser le workflow.",
+        "reasonEn": "Useful to secure agents without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "cursor",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser use cases sans disperser le workflow.",
+        "reasonEn": "Useful to secure use cases without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "openai-api",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser prompts sans disperser le workflow.",
+        "reasonEn": "Useful to secure prompts without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-marketing",
+    "slug": "consultant-marketing",
+    "title": "Stack marketing",
+    "titleEn": "marketing stack",
+    "subtitle": "Les outils recommandés pour consultant marketing",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "marketing-consulting"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant marketing",
+    "bestForEn": "Consultant marketing",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit marketing",
+        "titleEn": "Audit marketing",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "persona",
+        "titleEn": "persona",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "funnel",
+        "titleEn": "funnel",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "CRM : utile pour sécuriser audit marketing sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit marketing without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "semrush",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser persona sans disperser le workflow.",
+        "reasonEn": "Useful to secure persona without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ahrefs",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser funnel sans disperser le workflow.",
+        "reasonEn": "Useful to secure funnel without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit marketing sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit marketing without scattering the workflow."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Reporting : utile pour sécuriser persona sans disperser le workflow.",
+        "reasonEn": "Useful to secure persona without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser funnel sans disperser le workflow.",
+        "reasonEn": "Useful to secure funnel without scattering the workflow."
+      },
+      {
+        "role": "Création rapide",
+        "roleEn": "Création rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Création rapide : utile pour sécuriser audit marketing sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit marketing without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mailchimp",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser persona sans disperser le workflow.",
+        "reasonEn": "Useful to secure persona without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "brevo",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser funnel sans disperser le workflow.",
+        "reasonEn": "Useful to secure funnel without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-growth",
+    "slug": "consultant-growth",
+    "title": "Stack growth",
+    "titleEn": "growth stack",
+    "subtitle": "Les outils recommandés pour consultant growth",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "growth-consulting",
+      "crm-sales",
+      "analytics"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant growth",
+    "bestForEn": "Consultant growth",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Tracking",
+        "titleEn": "Tracking",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "landing pages",
+        "titleEn": "landing pages",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webflow",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser tracking sans disperser le workflow.",
+        "reasonEn": "Useful to secure tracking without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "framer",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser landing pages sans disperser le workflow.",
+        "reasonEn": "Useful to secure landing pages without scattering the workflow."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "CRM : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pipedrive",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser tracking sans disperser le workflow.",
+        "reasonEn": "Useful to secure tracking without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser landing pages sans disperser le workflow.",
+        "reasonEn": "Useful to secure landing pages without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "posthog",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "amplitude",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser tracking sans disperser le workflow.",
+        "reasonEn": "Useful to secure tracking without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mixpanel",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser landing pages sans disperser le workflow.",
+        "reasonEn": "Useful to secure landing pages without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "hotjar",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Automatisation : utile pour sécuriser tracking sans disperser le workflow.",
+        "reasonEn": "Useful to secure tracking without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-seo",
+    "slug": "consultant-seo",
+    "title": "Stack seo",
+    "titleEn": "seo stack",
+    "subtitle": "Les outils recommandés pour consultant seo",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "seo",
+      "analytics"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant SEO",
+    "bestForEn": "Consultant SEO",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit technique",
+        "titleEn": "Audit technique",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "mots-clés",
+        "titleEn": "mots-clés",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "contenus",
+        "titleEn": "contenus",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ahrefs",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit technique sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit technique without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "semrush",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser mots-clés sans disperser le workflow.",
+        "reasonEn": "Useful to secure mots-clés without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "screaming-frog",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser contenus sans disperser le workflow.",
+        "reasonEn": "Useful to secure contenus without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-search-console",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit technique sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit technique without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser mots-clés sans disperser le workflow.",
+        "reasonEn": "Useful to secure mots-clés without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "surferseo",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser contenus sans disperser le workflow.",
+        "reasonEn": "Useful to secure contenus without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "frase",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser audit technique sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit technique without scattering the workflow."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Reporting : utile pour sécuriser mots-clés sans disperser le workflow.",
+        "reasonEn": "Useful to secure mots-clés without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser contenus sans disperser le workflow.",
+        "reasonEn": "Useful to secure contenus without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-contenu-editorial",
+    "slug": "consultant-contenu-editorial",
+    "title": "Stack éditoriale",
+    "titleEn": "éditoriale stack",
+    "subtitle": "Les outils recommandés pour consultant contenu / éditorial",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "editorial-consulting",
+      "copywriting",
+      "newsletter"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant contenu / éditorial",
+    "bestForEn": "Consultant contenu / éditorial",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Calendrier",
+        "titleEn": "Calendrier",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "briefs",
+        "titleEn": "briefs",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "articles",
+        "titleEn": "articles",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser calendrier sans disperser le workflow.",
+        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser briefs sans disperser le workflow.",
+        "reasonEn": "Useful to secure briefs without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-docs",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser articles sans disperser le workflow.",
+        "reasonEn": "Useful to secure articles without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "grammarly",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser calendrier sans disperser le workflow.",
+        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "languagetool",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser briefs sans disperser le workflow.",
+        "reasonEn": "Useful to secure briefs without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "antidote",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser articles sans disperser le workflow.",
+        "reasonEn": "Useful to secure articles without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mailchimp",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser calendrier sans disperser le workflow.",
+        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "brevo",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser briefs sans disperser le workflow.",
+        "reasonEn": "Useful to secure briefs without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "buffer",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser articles sans disperser le workflow.",
+        "reasonEn": "Useful to secure articles without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-social-media",
+    "slug": "consultant-social-media",
+    "title": "Stack social media",
+    "titleEn": "social media stack",
+    "subtitle": "Les outils recommandés pour consultant social media",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "social-media-consulting",
+      "social-content"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant social media",
+    "bestForEn": "Consultant social media",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit social",
+        "titleEn": "Audit social",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "ligne éditoriale",
+        "titleEn": "ligne éditoriale",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "planning",
+        "titleEn": "planning",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "metricool",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit social sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit social without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "buffer",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser ligne éditoriale sans disperser le workflow.",
+        "reasonEn": "Useful to secure ligne éditoriale without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "later",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser planning sans disperser le workflow.",
+        "reasonEn": "Useful to secure planning without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "hootsuite",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit social sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit social without scattering the workflow."
+      },
+      {
+        "role": "Création rapide",
+        "roleEn": "Création rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Création rapide : utile pour sécuriser ligne éditoriale sans disperser le workflow.",
+        "reasonEn": "Useful to secure ligne éditoriale without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "capcut",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser planning sans disperser le workflow.",
+        "reasonEn": "Useful to secure planning without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser audit social sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit social without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-sheets",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser ligne éditoriale sans disperser le workflow.",
+        "reasonEn": "Useful to secure ligne éditoriale without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-branding",
+    "slug": "consultant-branding",
+    "title": "Stack branding",
+    "titleEn": "branding stack",
+    "subtitle": "Les outils recommandés pour consultant branding",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "brand-consulting",
+      "brand"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant branding",
+    "bestForEn": "Consultant branding",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit marque",
+        "titleEn": "Audit marque",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "plateforme",
+        "titleEn": "plateforme",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "manifesto",
+        "titleEn": "manifesto",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Atelier : utile pour sécuriser audit marque sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit marque without scattering the workflow."
+      },
+      {
+        "role": "Maquette",
+        "roleEn": "Maquette",
+        "slug": "figma",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Maquette : utile pour sécuriser plateforme sans disperser le workflow.",
+        "reasonEn": "Useful to secure plateforme without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "adobe-creative-cloud",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser manifesto sans disperser le workflow.",
+        "reasonEn": "Useful to secure manifesto without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser audit marque sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit marque without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "milanote",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser plateforme sans disperser le workflow.",
+        "reasonEn": "Useful to secure plateforme without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "are-na",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser manifesto sans disperser le workflow.",
+        "reasonEn": "Useful to secure manifesto without scattering the workflow."
+      },
+      {
+        "role": "Deck client",
+        "roleEn": "Deck client",
+        "slug": "pitch",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Deck client : utile pour sécuriser audit marque sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit marque without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gamma",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser plateforme sans disperser le workflow.",
+        "reasonEn": "Useful to secure plateforme without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-communication",
+    "slug": "consultant-communication",
+    "title": "Stack communication",
+    "titleEn": "communication stack",
+    "subtitle": "Les outils recommandés pour consultant communication",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "communication-consulting"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant communication",
+    "bestForEn": "Consultant communication",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Plan de communication",
+        "titleEn": "Plan de communication",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "messages clés",
+        "titleEn": "messages clés",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "calendrier",
+        "titleEn": "calendrier",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser plan de communication sans disperser le workflow.",
+        "reasonEn": "Useful to secure plan de communication without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Suite collaborative : utile pour sécuriser messages clés sans disperser le workflow.",
+        "reasonEn": "Useful to secure messages clés without scattering the workflow."
+      },
+      {
+        "role": "Création rapide",
+        "roleEn": "Création rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Création rapide : utile pour sécuriser calendrier sans disperser le workflow.",
+        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+      },
+      {
+        "role": "Deck exécutif",
+        "roleEn": "Deck exécutif",
+        "slug": "powerpoint",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Deck exécutif : utile pour sécuriser plan de communication sans disperser le workflow.",
+        "reasonEn": "Useful to secure plan de communication without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser messages clés sans disperser le workflow.",
+        "reasonEn": "Useful to secure messages clés without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mailchimp",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser calendrier sans disperser le workflow.",
+        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "brevo",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser plan de communication sans disperser le workflow.",
+        "reasonEn": "Useful to secure plan de communication without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Formulaires : utile pour sécuriser messages clés sans disperser le workflow.",
+        "reasonEn": "Useful to secure messages clés without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-relations-presse-influence",
+    "slug": "consultant-relations-presse-influence",
+    "title": "Stack rp influence",
+    "titleEn": "rp influence stack",
+    "subtitle": "Les outils recommandés pour consultant relations presse / influence",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "pr-influence",
+      "communication-consulting"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant relations presse / influence",
+    "bestForEn": "Consultant relations presse / influence",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Fichier journalistes",
+        "titleEn": "Fichier journalistes",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "communiqués",
+        "titleEn": "communiqués",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "pitchs",
+        "titleEn": "pitchs",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "meltwater",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser fichier journalistes sans disperser le workflow.",
+        "reasonEn": "Useful to secure fichier journalistes without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "cision",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser communiqués sans disperser le workflow.",
+        "reasonEn": "Useful to secure communiqués without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "prowly",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser pitchs sans disperser le workflow.",
+        "reasonEn": "Useful to secure pitchs without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser fichier journalistes sans disperser le workflow.",
+        "reasonEn": "Useful to secure fichier journalistes without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser communiqués sans disperser le workflow.",
+        "reasonEn": "Useful to secure communiqués without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-docs",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser pitchs sans disperser le workflow.",
+        "reasonEn": "Useful to secure pitchs without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "mailchimp",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser fichier journalistes sans disperser le workflow.",
+        "reasonEn": "Useful to secure fichier journalistes without scattering the workflow."
+      },
+      {
+        "role": "Création rapide",
+        "roleEn": "Création rapide",
+        "slug": "canva",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Création rapide : utile pour sécuriser communiqués sans disperser le workflow.",
+        "reasonEn": "Useful to secure communiqués without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-rh",
+    "slug": "consultant-rh",
+    "title": "Stack rh",
+    "titleEn": "rh stack",
+    "subtitle": "Les outils recommandés pour consultant rh",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "hr-consulting"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant RH",
+    "bestForEn": "Consultant RH",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit RH",
+        "titleEn": "Audit RH",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "entretiens",
+        "titleEn": "entretiens",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "processus",
+        "titleEn": "processus",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser audit rh sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit rh without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "factorial",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser entretiens sans disperser le workflow.",
+        "reasonEn": "Useful to secure entretiens without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lucca",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser processus sans disperser le workflow.",
+        "reasonEn": "Useful to secure processus without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "personio",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit rh sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit rh without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Formulaires : utile pour sécuriser entretiens sans disperser le workflow.",
+        "reasonEn": "Useful to secure entretiens without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser processus sans disperser le workflow.",
+        "reasonEn": "Useful to secure processus without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Suite collaborative : utile pour sécuriser audit rh sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit rh without scattering the workflow."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Rendez-vous : utile pour sécuriser entretiens sans disperser le workflow.",
+        "reasonEn": "Useful to secure entretiens without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-recrutement-talent-acquisition",
+    "slug": "consultant-recrutement-talent-acquisition",
+    "title": "Stack recrutement",
+    "titleEn": "recrutement stack",
+    "subtitle": "Les outils recommandés pour consultant recrutement / talent acquisition",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "recruiting",
+      "hr-consulting"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant recrutement / talent acquisition",
+    "bestForEn": "Consultant recrutement / talent acquisition",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Sourcing",
+        "titleEn": "Sourcing",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "pipeline candidats",
+        "titleEn": "pipeline candidats",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "scorecards",
+        "titleEn": "scorecards",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "linkedin-recruiter",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser sourcing sans disperser le workflow.",
+        "reasonEn": "Useful to secure sourcing without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "apollo",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser pipeline candidats sans disperser le workflow.",
+        "reasonEn": "Useful to secure pipeline candidats without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser scorecards sans disperser le workflow.",
+        "reasonEn": "Useful to secure scorecards without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser sourcing sans disperser le workflow.",
+        "reasonEn": "Useful to secure sourcing without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "greenhouse",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser pipeline candidats sans disperser le workflow.",
+        "reasonEn": "Useful to secure pipeline candidats without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lever",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser scorecards sans disperser le workflow.",
+        "reasonEn": "Useful to secure scorecards without scattering the workflow."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Rendez-vous : utile pour sécuriser sourcing sans disperser le workflow.",
+        "reasonEn": "Useful to secure sourcing without scattering the workflow."
+      },
+      {
+        "role": "Vidéo asynchrone",
+        "roleEn": "Vidéo asynchrone",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Vidéo asynchrone : utile pour sécuriser pipeline candidats sans disperser le workflow.",
+        "reasonEn": "Useful to secure pipeline candidats without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-formation",
+    "slug": "consultant-formation",
+    "title": "Stack formation",
+    "titleEn": "formation stack",
+    "subtitle": "Les outils recommandés pour consultant formation",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "training"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant formation",
+    "bestForEn": "Consultant formation",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Ingénierie pédagogique",
+        "titleEn": "Ingénierie pédagogique",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "slides",
+        "titleEn": "slides",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "modules",
+        "titleEn": "modules",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser ingénierie pédagogique sans disperser le workflow.",
+        "reasonEn": "Useful to secure ingénierie pédagogique without scattering the workflow."
+      },
+      {
+        "role": "Deck exécutif",
+        "roleEn": "Deck exécutif",
+        "slug": "powerpoint",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Deck exécutif : utile pour sécuriser slides sans disperser le workflow.",
+        "reasonEn": "Useful to secure slides without scattering the workflow."
+      },
+      {
+        "role": "Création rapide",
+        "roleEn": "Création rapide",
+        "slug": "canva",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Création rapide : utile pour sécuriser modules sans disperser le workflow.",
+        "reasonEn": "Useful to secure modules without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "genially",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser ingénierie pédagogique sans disperser le workflow.",
+        "reasonEn": "Useful to secure ingénierie pédagogique without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "articulate",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser slides sans disperser le workflow.",
+        "reasonEn": "Useful to secure slides without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "moodle",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser modules sans disperser le workflow.",
+        "reasonEn": "Useful to secure modules without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "learnworlds",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser ingénierie pédagogique sans disperser le workflow.",
+        "reasonEn": "Useful to secure ingénierie pédagogique without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Formulaires : utile pour sécuriser slides sans disperser le workflow.",
+        "reasonEn": "Useful to secure slides without scattering the workflow."
+      },
+      {
+        "role": "Vidéo asynchrone",
+        "roleEn": "Vidéo asynchrone",
+        "slug": "loom",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Vidéo asynchrone : utile pour sécuriser modules sans disperser le workflow.",
+        "reasonEn": "Useful to secure modules without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-coach-executif",
+    "slug": "consultant-coach-executif",
+    "title": "Stack coaching",
+    "titleEn": "coaching stack",
+    "subtitle": "Les outils recommandés pour coach professionnel / executive coach",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "coaching",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Coach professionnel / executive coach",
+    "bestForEn": "Coach professionnel / executive coach",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Diagnostic",
+        "titleEn": "Diagnostic",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "séances",
+        "titleEn": "séances",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "notes",
+        "titleEn": "notes",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Rendez-vous : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "zoom",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser séances sans disperser le workflow.",
+        "reasonEn": "Useful to secure séances without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser notes sans disperser le workflow.",
+        "reasonEn": "Useful to secure notes without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-docs",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Formulaires : utile pour sécuriser séances sans disperser le workflow.",
+        "reasonEn": "Useful to secure séances without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser notes sans disperser le workflow.",
+        "reasonEn": "Useful to secure notes without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Signature : utile pour sécuriser séances sans disperser le workflow.",
+        "reasonEn": "Useful to secure séances without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-finance-cfo-freelance",
+    "slug": "consultant-finance-cfo-freelance",
+    "title": "Stack cfo freelance",
+    "titleEn": "cfo freelance stack",
+    "subtitle": "Les outils recommandés pour consultant finance / cfo freelance",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "finance-cfo",
+      "admin",
+      "analytics"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant finance / CFO freelance",
+    "bestForEn": "Consultant finance / CFO freelance",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Modèles financiers",
+        "titleEn": "Modèles financiers",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "dashboards",
+        "titleEn": "dashboards",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "prévisionnel",
+        "titleEn": "prévisionnel",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Modèle chiffré : utile pour sécuriser modèles financiers sans disperser le workflow.",
+        "reasonEn": "Useful to secure modèles financiers without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-sheets",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser dashboards sans disperser le workflow.",
+        "reasonEn": "Useful to secure dashboards without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pennylane",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser prévisionnel sans disperser le workflow.",
+        "reasonEn": "Useful to secure prévisionnel without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "qonto",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser modèles financiers sans disperser le workflow.",
+        "reasonEn": "Useful to secure modèles financiers without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "agicap",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser dashboards sans disperser le workflow.",
+        "reasonEn": "Useful to secure dashboards without scattering the workflow."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "BI : utile pour sécuriser prévisionnel sans disperser le workflow.",
+        "reasonEn": "Useful to secure prévisionnel without scattering the workflow."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Reporting : utile pour sécuriser modèles financiers sans disperser le workflow.",
+        "reasonEn": "Useful to secure modèles financiers without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser dashboards sans disperser le workflow.",
+        "reasonEn": "Useful to secure dashboards without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-pricing",
+    "slug": "consultant-pricing",
+    "title": "Stack pricing",
+    "titleEn": "pricing stack",
+    "subtitle": "Les outils recommandés pour consultant pricing",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "pricing",
+      "analytics"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant pricing",
+    "bestForEn": "Consultant pricing",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Analyse coûts",
+        "titleEn": "Analyse coûts",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "benchmark",
+        "titleEn": "benchmark",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "segmentation",
+        "titleEn": "segmentation",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Modèle chiffré : utile pour sécuriser analyse coûts sans disperser le workflow.",
+        "reasonEn": "Useful to secure analyse coûts without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser benchmark sans disperser le workflow.",
+        "reasonEn": "Useful to secure benchmark without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser segmentation sans disperser le workflow.",
+        "reasonEn": "Useful to secure segmentation without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Formulaires : utile pour sécuriser analyse coûts sans disperser le workflow.",
+        "reasonEn": "Useful to secure analyse coûts without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser benchmark sans disperser le workflow.",
+        "reasonEn": "Useful to secure benchmark without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "stripe",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser segmentation sans disperser le workflow.",
+        "reasonEn": "Useful to secure segmentation without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "profitwell",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser analyse coûts sans disperser le workflow.",
+        "reasonEn": "Useful to secure analyse coûts without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "chartmogul",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser benchmark sans disperser le workflow.",
+        "reasonEn": "Useful to secure benchmark without scattering the workflow."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "BI : utile pour sécuriser segmentation sans disperser le workflow.",
+        "reasonEn": "Useful to secure segmentation without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-sales-business-development",
+    "slug": "consultant-sales-business-development",
+    "title": "Stack sales",
+    "titleEn": "sales stack",
+    "subtitle": "Les outils recommandés pour consultant sales / business development",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "sales-bd",
+      "crm-sales"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant sales / business development",
+    "bestForEn": "Consultant sales / business development",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "scripts",
+        "titleEn": "scripts",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "séquences",
+        "titleEn": "séquences",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "CRM : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pipedrive",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser scripts sans disperser le workflow.",
+        "reasonEn": "Useful to secure scripts without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "salesforce",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser séquences sans disperser le workflow.",
+        "reasonEn": "Useful to secure séquences without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "apollo",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lemlist",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser scripts sans disperser le workflow.",
+        "reasonEn": "Useful to secure scripts without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "folk",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser séquences sans disperser le workflow.",
+        "reasonEn": "Useful to secure séquences without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "aircall",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser scripts sans disperser le workflow.",
+        "reasonEn": "Useful to secure scripts without scattering the workflow."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Rendez-vous : utile pour sécuriser séquences sans disperser le workflow.",
+        "reasonEn": "Useful to secure séquences without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-crm",
+    "slug": "consultant-crm",
+    "title": "Stack crm",
+    "titleEn": "crm stack",
+    "subtitle": "Les outils recommandés pour consultant crm",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "crm-sales",
+      "digital-transformation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant CRM",
+    "bestForEn": "Consultant CRM",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit CRM",
+        "titleEn": "Audit CRM",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "structure pipeline",
+        "titleEn": "structure pipeline",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "workflows",
+        "titleEn": "workflows",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "CRM : utile pour sécuriser audit crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit crm without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "salesforce",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser structure pipeline sans disperser le workflow.",
+        "reasonEn": "Useful to secure structure pipeline without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pipedrive",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser workflows sans disperser le workflow.",
+        "reasonEn": "Useful to secure workflows without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "folk",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit crm without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser structure pipeline sans disperser le workflow.",
+        "reasonEn": "Useful to secure structure pipeline without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Automatisation : utile pour sécuriser workflows sans disperser le workflow.",
+        "reasonEn": "Useful to secure workflows without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Automatisation : utile pour sécuriser audit crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit crm without scattering the workflow."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Reporting : utile pour sécuriser structure pipeline sans disperser le workflow.",
+        "reasonEn": "Useful to secure structure pipeline without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-e-commerce",
+    "slug": "consultant-e-commerce",
+    "title": "Stack e-commerce",
+    "titleEn": "e-commerce stack",
+    "subtitle": "Les outils recommandés pour consultant e-commerce",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "ecommerce",
+      "analytics"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant e-commerce",
+    "bestForEn": "Consultant e-commerce",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit site",
+        "titleEn": "Audit site",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "CRO",
+        "titleEn": "CRO",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "Shopify",
+        "titleEn": "Shopify",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "shopify",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit site sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit site without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "klaviyo",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser cro sans disperser le workflow.",
+        "reasonEn": "Useful to secure cro without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "gorgias",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser shopify sans disperser le workflow.",
+        "reasonEn": "Useful to secure shopify without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "recharge",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit site sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit site without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser cro sans disperser le workflow.",
+        "reasonEn": "Useful to secure cro without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "hotjar",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser shopify sans disperser le workflow.",
+        "reasonEn": "Useful to secure shopify without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "triple-whale",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser audit site sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit site without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser cro sans disperser le workflow.",
+        "reasonEn": "Useful to secure cro without scattering the workflow."
+      },
+      {
+        "role": "Maquette",
+        "roleEn": "Maquette",
+        "slug": "figma",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Maquette : utile pour sécuriser shopify sans disperser le workflow.",
+        "reasonEn": "Useful to secure shopify without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-cro-conversion",
+    "slug": "consultant-cro-conversion",
+    "title": "Stack cro",
+    "titleEn": "cro stack",
+    "subtitle": "Les outils recommandés pour consultant cro / conversion",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "cro-conversion",
+      "analytics"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant CRO / conversion",
+    "bestForEn": "Consultant CRO / conversion",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit UX",
+        "titleEn": "Audit UX",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "heatmaps",
+        "titleEn": "heatmaps",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "tests",
+        "titleEn": "tests",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "hotjar",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit ux sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit ux without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "microsoft-clarity",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser heatmaps sans disperser le workflow.",
+        "reasonEn": "Useful to secure heatmaps without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ga4",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser tests sans disperser le workflow.",
+        "reasonEn": "Useful to secure tests without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "vwo",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit ux sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit ux without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "optimizely",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser heatmaps sans disperser le workflow.",
+        "reasonEn": "Useful to secure heatmaps without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webflow",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser tests sans disperser le workflow.",
+        "reasonEn": "Useful to secure tests without scattering the workflow."
+      },
+      {
+        "role": "Maquette",
+        "roleEn": "Maquette",
+        "slug": "figma",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Maquette : utile pour sécuriser audit ux sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit ux without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser heatmaps sans disperser le workflow.",
+        "reasonEn": "Useful to secure heatmaps without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-data-bi",
+    "slug": "consultant-data-bi",
+    "title": "Stack data",
+    "titleEn": "data stack",
+    "subtitle": "Les outils recommandés pour consultant data / bi",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "analytics"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant data / BI",
+    "bestForEn": "Consultant data / BI",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Data sources",
+        "titleEn": "Data sources",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "dashboards",
+        "titleEn": "dashboards",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "nettoyage",
+        "titleEn": "nettoyage",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "BI : utile pour sécuriser data sources sans disperser le workflow.",
+        "reasonEn": "Useful to secure data sources without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tableau",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser dashboards sans disperser le workflow.",
+        "reasonEn": "Useful to secure dashboards without scattering the workflow."
+      },
+      {
+        "role": "Reporting",
+        "roleEn": "Reporting",
+        "slug": "looker-studio",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Reporting : utile pour sécuriser nettoyage sans disperser le workflow.",
+        "reasonEn": "Useful to secure nettoyage without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "bigquery",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser data sources sans disperser le workflow.",
+        "reasonEn": "Useful to secure data sources without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser dashboards sans disperser le workflow.",
+        "reasonEn": "Useful to secure dashboards without scattering the workflow."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Modèle chiffré : utile pour sécuriser nettoyage sans disperser le workflow.",
+        "reasonEn": "Useful to secure nettoyage without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "dbt",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser data sources sans disperser le workflow.",
+        "reasonEn": "Useful to secure data sources without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser dashboards sans disperser le workflow.",
+        "reasonEn": "Useful to secure dashboards without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-no-code",
+    "slug": "consultant-no-code",
+    "title": "Stack no-code",
+    "titleEn": "no-code stack",
+    "subtitle": "Les outils recommandés pour consultant no-code",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "no-code",
+      "automation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant no-code",
+    "bestForEn": "Consultant no-code",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit workflow",
+        "titleEn": "Audit workflow",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "prototype",
+        "titleEn": "prototype",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "apps internes",
+        "titleEn": "apps internes",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser audit workflow sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit workflow without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "softr",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser prototype sans disperser le workflow.",
+        "reasonEn": "Useful to secure prototype without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "glide",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser apps internes sans disperser le workflow.",
+        "reasonEn": "Useful to secure apps internes without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "bubble",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit workflow sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit workflow without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "make",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Automatisation : utile pour sécuriser prototype sans disperser le workflow.",
+        "reasonEn": "Useful to secure prototype without scattering the workflow."
+      },
+      {
+        "role": "Automatisation",
+        "roleEn": "Automatisation",
+        "slug": "zapier",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Automatisation : utile pour sécuriser apps internes sans disperser le workflow.",
+        "reasonEn": "Useful to secure apps internes without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "n8n",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser audit workflow sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit workflow without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser prototype sans disperser le workflow.",
+        "reasonEn": "Useful to secure prototype without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webflow",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser apps internes sans disperser le workflow.",
+        "reasonEn": "Useful to secure apps internes without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-product-management",
+    "slug": "consultant-product-management",
+    "title": "Stack product management",
+    "titleEn": "product management stack",
+    "subtitle": "Les outils recommandés pour consultant product management",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "management-consulting",
+      "change-management"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant product management",
+    "bestForEn": "Consultant product management",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Roadmap",
+        "titleEn": "Roadmap",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "interviews",
+        "titleEn": "interviews",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "priorisation",
+        "titleEn": "priorisation",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "productboard",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser roadmap sans disperser le workflow.",
+        "reasonEn": "Useful to secure roadmap without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "linear",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "jira",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser priorisation sans disperser le workflow.",
+        "reasonEn": "Useful to secure priorisation without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser roadmap sans disperser le workflow.",
+        "reasonEn": "Useful to secure roadmap without scattering the workflow."
+      },
+      {
+        "role": "Maquette",
+        "roleEn": "Maquette",
+        "slug": "figma",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Maquette : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "maze",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser priorisation sans disperser le workflow.",
+        "reasonEn": "Useful to secure priorisation without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "dovetail",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser roadmap sans disperser le workflow.",
+        "reasonEn": "Useful to secure roadmap without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "amplitude",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser priorisation sans disperser le workflow.",
+        "reasonEn": "Useful to secure priorisation without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-ux-research",
+    "slug": "consultant-ux-research",
+    "title": "Stack ux research",
+    "titleEn": "ux research stack",
+    "subtitle": "Les outils recommandés pour consultant ux research",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "research"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant UX research",
+    "bestForEn": "Consultant UX research",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Interviews",
+        "titleEn": "Interviews",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "tests",
+        "titleEn": "tests",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "personas",
+        "titleEn": "personas",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "dovetail",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "maze",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser tests sans disperser le workflow.",
+        "reasonEn": "Useful to secure tests without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lookback",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser personas sans disperser le workflow.",
+        "reasonEn": "Useful to secure personas without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "usertesting",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Formulaires : utile pour sécuriser tests sans disperser le workflow.",
+        "reasonEn": "Useful to secure tests without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser personas sans disperser le workflow.",
+        "reasonEn": "Useful to secure personas without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "figjam",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser interviews sans disperser le workflow.",
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser tests sans disperser le workflow.",
+        "reasonEn": "Useful to secure tests without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-it-systemes",
+    "slug": "consultant-it-systemes",
+    "title": "Stack it",
+    "titleEn": "it stack",
+    "subtitle": "Les outils recommandés pour consultant it / systèmes",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "it-systems",
+      "digital-transformation"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant IT / systèmes",
+    "bestForEn": "Consultant IT / systèmes",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit SI",
+        "titleEn": "Audit SI",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "architecture",
+        "titleEn": "architecture",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "migration",
+        "titleEn": "migration",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "microsoft-365",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit si sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit si without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Suite collaborative : utile pour sécuriser architecture sans disperser le workflow.",
+        "reasonEn": "Useful to secure architecture without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "jira",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser migration sans disperser le workflow.",
+        "reasonEn": "Useful to secure migration without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "confluence",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit si sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit si without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser architecture sans disperser le workflow.",
+        "reasonEn": "Useful to secure architecture without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser migration sans disperser le workflow.",
+        "reasonEn": "Useful to secure migration without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "snipe-it",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser audit si sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit si without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "freshservice",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser architecture sans disperser le workflow.",
+        "reasonEn": "Useful to secure architecture without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-cybersecurite",
+    "slug": "consultant-cybersecurite",
+    "title": "Stack cybersécurité",
+    "titleEn": "cybersécurité stack",
+    "subtitle": "Les outils recommandés pour consultant cybersécurité",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "it-systems",
+      "digital-transformation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant cybersécurité",
+    "bestForEn": "Consultant cybersécurité",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit sécurité",
+        "titleEn": "Audit sécurité",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "politiques",
+        "titleEn": "politiques",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "sensibilisation",
+        "titleEn": "sensibilisation",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "1password",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit sécurité sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit sécurité without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "bitwarden",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser politiques sans disperser le workflow.",
+        "reasonEn": "Useful to secure politiques without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "microsoft-defender",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser sensibilisation sans disperser le workflow.",
+        "reasonEn": "Useful to secure sensibilisation without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "crowdstrike",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit sécurité sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit sécurité without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "vanta",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser politiques sans disperser le workflow.",
+        "reasonEn": "Useful to secure politiques without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "drata",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser sensibilisation sans disperser le workflow.",
+        "reasonEn": "Useful to secure sensibilisation without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser audit sécurité sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit sécurité without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser politiques sans disperser le workflow.",
+        "reasonEn": "Useful to secure politiques without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-conformite-rgpd",
+    "slug": "consultant-conformite-rgpd",
+    "title": "Stack conformité",
+    "titleEn": "conformité stack",
+    "subtitle": "Les outils recommandés pour consultant conformité / rgpd",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "it-systems",
+      "digital-transformation"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant conformité / RGPD",
+    "bestForEn": "Consultant conformité / RGPD",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit RGPD",
+        "titleEn": "Audit RGPD",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "registre",
+        "titleEn": "registre",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "DPA",
+        "titleEn": "DPA",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser audit rgpd sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit rgpd without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser registre sans disperser le workflow.",
+        "reasonEn": "Useful to secure registre without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "axeptio",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser dpa sans disperser le workflow.",
+        "reasonEn": "Useful to secure dpa without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "didomi",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser audit rgpd sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit rgpd without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "onetrust",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser registre sans disperser le workflow.",
+        "reasonEn": "Useful to secure registre without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-docs",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser dpa sans disperser le workflow.",
+        "reasonEn": "Useful to secure dpa without scattering the workflow."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Signature : utile pour sécuriser audit rgpd sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit rgpd without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "docusign",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser registre sans disperser le workflow.",
+        "reasonEn": "Useful to secure registre without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-sustainability-rse",
+    "slug": "consultant-sustainability-rse",
+    "title": "Stack rse",
+    "titleEn": "rse stack",
+    "subtitle": "Les outils recommandés pour consultant sustainability / rse",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "it-systems",
+      "digital-transformation"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant sustainability / RSE",
+    "bestForEn": "Consultant sustainability / RSE",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Diagnostic",
+        "titleEn": "Diagnostic",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "matérialité",
+        "titleEn": "matérialité",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "indicateurs",
+        "titleEn": "indicateurs",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Modèle chiffré : utile pour sécuriser matérialité sans disperser le workflow.",
+        "reasonEn": "Useful to secure matérialité without scattering the workflow."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "BI : utile pour sécuriser indicateurs sans disperser le workflow.",
+        "reasonEn": "Useful to secure indicateurs without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "greenly",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "sweep",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser matérialité sans disperser le workflow.",
+        "reasonEn": "Useful to secure matérialité without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "sami",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser indicateurs sans disperser le workflow.",
+        "reasonEn": "Useful to secure indicateurs without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser diagnostic sans disperser le workflow.",
+        "reasonEn": "Useful to secure diagnostic without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Suite collaborative : utile pour sécuriser matérialité sans disperser le workflow.",
+        "reasonEn": "Useful to secure matérialité without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-achats-procurement",
+    "slug": "consultant-achats-procurement",
+    "title": "Stack achats",
+    "titleEn": "achats stack",
+    "subtitle": "Les outils recommandés pour consultant achats / procurement",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "procurement",
+      "finance-cfo"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant achats / procurement",
+    "bestForEn": "Consultant achats / procurement",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Cartographie achats",
+        "titleEn": "Cartographie achats",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "fournisseurs",
+        "titleEn": "fournisseurs",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "scoring",
+        "titleEn": "scoring",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Modèle chiffré : utile pour sécuriser cartographie achats sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie achats without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser fournisseurs sans disperser le workflow.",
+        "reasonEn": "Useful to secure fournisseurs without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser scoring sans disperser le workflow.",
+        "reasonEn": "Useful to secure scoring without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "coupa",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser cartographie achats sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie achats without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "spendesk",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser fournisseurs sans disperser le workflow.",
+        "reasonEn": "Useful to secure fournisseurs without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "docusign",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser scoring sans disperser le workflow.",
+        "reasonEn": "Useful to secure scoring without scattering the workflow."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Signature : utile pour sécuriser cartographie achats sans disperser le workflow.",
+        "reasonEn": "Useful to secure cartographie achats without scattering the workflow."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "BI : utile pour sécuriser fournisseurs sans disperser le workflow.",
+        "reasonEn": "Useful to secure fournisseurs without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-supply-chain",
+    "slug": "consultant-supply-chain",
+    "title": "Stack supply chain",
+    "titleEn": "supply chain stack",
+    "subtitle": "Les outils recommandés pour consultant supply chain",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "supply-chain",
+      "operations"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant supply chain",
+    "bestForEn": "Consultant supply chain",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Forecast",
+        "titleEn": "Forecast",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "stocks",
+        "titleEn": "stocks",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "SLA",
+        "titleEn": "SLA",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Modèle chiffré : utile pour sécuriser forecast sans disperser le workflow.",
+        "reasonEn": "Useful to secure forecast without scattering the workflow."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "BI : utile pour sécuriser stocks sans disperser le workflow.",
+        "reasonEn": "Useful to secure stocks without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "tableau",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser sla sans disperser le workflow.",
+        "reasonEn": "Useful to secure sla without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "smartsheet",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser forecast sans disperser le workflow.",
+        "reasonEn": "Useful to secure forecast without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser stocks sans disperser le workflow.",
+        "reasonEn": "Useful to secure stocks without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lucidchart",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser sla sans disperser le workflow.",
+        "reasonEn": "Useful to secure sla without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser forecast sans disperser le workflow.",
+        "reasonEn": "Useful to secure forecast without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser stocks sans disperser le workflow.",
+        "reasonEn": "Useful to secure stocks without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-qualite-iso",
+    "slug": "consultant-qualite-iso",
+    "title": "Stack qualité iso",
+    "titleEn": "qualité iso stack",
+    "subtitle": "Les outils recommandés pour consultant qualité / iso",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "it-systems",
+      "digital-transformation"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant qualité / ISO",
+    "bestForEn": "Consultant qualité / ISO",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Process",
+        "titleEn": "Process",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "procédures",
+        "titleEn": "procédures",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "non-conformités",
+        "titleEn": "non-conformités",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser process sans disperser le workflow.",
+        "reasonEn": "Useful to secure process without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "confluence",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser procédures sans disperser le workflow.",
+        "reasonEn": "Useful to secure procédures without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Atelier : utile pour sécuriser non-conformités sans disperser le workflow.",
+        "reasonEn": "Useful to secure non-conformités without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lucidchart",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser process sans disperser le workflow.",
+        "reasonEn": "Useful to secure process without scattering the workflow."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Modèle chiffré : utile pour sécuriser procédures sans disperser le workflow.",
+        "reasonEn": "Useful to secure procédures without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser non-conformités sans disperser le workflow.",
+        "reasonEn": "Useful to secure non-conformités without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "safetyculture",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser process sans disperser le workflow.",
+        "reasonEn": "Useful to secure process without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clickup",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser procédures sans disperser le workflow.",
+        "reasonEn": "Useful to secure procédures without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-legal-ops-contrats",
+    "slug": "consultant-legal-ops-contrats",
+    "title": "Stack legal ops",
+    "titleEn": "legal ops stack",
+    "subtitle": "Les outils recommandés pour consultant legal ops / contrats",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "legal-ops"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant legal ops / contrats",
+    "bestForEn": "Consultant legal ops / contrats",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Contract management",
+        "titleEn": "Contract management",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "templates",
+        "titleEn": "templates",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "approval workflows",
+        "titleEn": "approval workflows",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Signature : utile pour sécuriser contract management sans disperser le workflow.",
+        "reasonEn": "Useful to secure contract management without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "docusign",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser templates sans disperser le workflow.",
+        "reasonEn": "Useful to secure templates without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "ironclad",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser approval workflows sans disperser le workflow.",
+        "reasonEn": "Useful to secure approval workflows without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser contract management sans disperser le workflow.",
+        "reasonEn": "Useful to secure contract management without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser templates sans disperser le workflow.",
+        "reasonEn": "Useful to secure templates without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-docs",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser approval workflows sans disperser le workflow.",
+        "reasonEn": "Useful to secure approval workflows without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "pandadoc",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser contract management sans disperser le workflow.",
+        "reasonEn": "Useful to secure contract management without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-immobilier-workplace",
+    "slug": "consultant-immobilier-workplace",
+    "title": "Stack immobilier",
+    "titleEn": "immobilier stack",
+    "subtitle": "Les outils recommandés pour consultant immobilier / workplace",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "workplace",
+      "operations"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant immobilier / workplace",
+    "bestForEn": "Consultant immobilier / workplace",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Audit usages",
+        "titleEn": "Audit usages",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "occupation",
+        "titleEn": "occupation",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "parcours",
+        "titleEn": "parcours",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Atelier : utile pour sécuriser audit usages sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit usages without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Formulaires : utile pour sécuriser occupation sans disperser le workflow.",
+        "reasonEn": "Useful to secure occupation without scattering the workflow."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Modèle chiffré : utile pour sécuriser parcours sans disperser le workflow.",
+        "reasonEn": "Useful to secure parcours without scattering the workflow."
+      },
+      {
+        "role": "BI",
+        "roleEn": "BI",
+        "slug": "power-bi",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "BI : utile pour sécuriser audit usages sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit usages without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "sketchup-pro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser occupation sans disperser le workflow.",
+        "reasonEn": "Useful to secure occupation without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Cockpit mission : utile pour sécuriser parcours sans disperser le workflow.",
+        "reasonEn": "Useful to secure parcours without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Suite collaborative : utile pour sécuriser audit usages sans disperser le workflow.",
+        "reasonEn": "Useful to secure audit usages without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "condeco",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser occupation sans disperser le workflow.",
+        "reasonEn": "Useful to secure occupation without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-evenementiel",
+    "slug": "consultant-evenementiel",
+    "title": "Stack événementiel",
+    "titleEn": "événementiel stack",
+    "subtitle": "Les outils recommandés pour consultant événementiel",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "event-consulting",
+      "communication-consulting"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant événementiel",
+    "bestForEn": "Consultant événementiel",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Concept",
+        "titleEn": "Concept",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "planning",
+        "titleEn": "planning",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "budget",
+        "titleEn": "budget",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser concept sans disperser le workflow.",
+        "reasonEn": "Useful to secure concept without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "monday",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser planning sans disperser le workflow.",
+        "reasonEn": "Useful to secure planning without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Base structurée : utile pour sécuriser budget sans disperser le workflow.",
+        "reasonEn": "Useful to secure budget without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "google-sheets",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser concept sans disperser le workflow.",
+        "reasonEn": "Useful to secure concept without scattering the workflow."
+      },
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Atelier : utile pour sécuriser planning sans disperser le workflow.",
+        "reasonEn": "Useful to secure planning without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "eventbrite",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser budget sans disperser le workflow.",
+        "reasonEn": "Useful to secure budget without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "slido",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser concept sans disperser le workflow.",
+        "reasonEn": "Useful to secure concept without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Formulaires : utile pour sécuriser planning sans disperser le workflow.",
+        "reasonEn": "Useful to secure planning without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-fundraising-pitch-deck",
+    "slug": "consultant-fundraising-pitch-deck",
+    "title": "Stack fundraising",
+    "titleEn": "fundraising stack",
+    "subtitle": "Les outils recommandés pour consultant fundraising / pitch deck",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "it-systems",
+      "digital-transformation"
+    ],
+    "stage": "lean",
+    "budget": "under150",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant fundraising / pitch deck",
+    "bestForEn": "Consultant fundraising / pitch deck",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Narratif",
+        "titleEn": "Narratif",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "deck",
+        "titleEn": "deck",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "business plan",
+        "titleEn": "business plan",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Deck client",
+        "roleEn": "Deck client",
+        "slug": "pitch",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Deck client : utile pour sécuriser narratif sans disperser le workflow.",
+        "reasonEn": "Useful to secure narratif without scattering the workflow."
+      },
+      {
+        "role": "Deck exécutif",
+        "roleEn": "Deck exécutif",
+        "slug": "powerpoint",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Deck exécutif : utile pour sécuriser deck sans disperser le workflow.",
+        "reasonEn": "Useful to secure deck without scattering the workflow."
+      },
+      {
+        "role": "Maquette",
+        "roleEn": "Maquette",
+        "slug": "figma",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Maquette : utile pour sécuriser business plan sans disperser le workflow.",
+        "reasonEn": "Useful to secure business plan without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser narratif sans disperser le workflow.",
+        "reasonEn": "Useful to secure narratif without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "docsend",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser deck sans disperser le workflow.",
+        "reasonEn": "Useful to secure deck without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "visible",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser business plan sans disperser le workflow.",
+        "reasonEn": "Useful to secure business plan without scattering the workflow."
+      },
+      {
+        "role": "Modèle chiffré",
+        "roleEn": "Modèle chiffré",
+        "slug": "excel",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Modèle chiffré : utile pour sécuriser narratif sans disperser le workflow.",
+        "reasonEn": "Useful to secure narratif without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser deck sans disperser le workflow.",
+        "reasonEn": "Useful to secure deck without scattering the workflow."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "CRM : utile pour sécuriser business plan sans disperser le workflow.",
+        "reasonEn": "Useful to secure business plan without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-innovation",
+    "slug": "consultant-innovation",
+    "title": "Stack innovation",
+    "titleEn": "innovation stack",
+    "subtitle": "Les outils recommandés pour consultant innovation",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "innovation",
+      "product"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant innovation",
+    "bestForEn": "Consultant innovation",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Ateliers",
+        "titleEn": "Ateliers",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "sprint",
+        "titleEn": "sprint",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "prototypes",
+        "titleEn": "prototypes",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Atelier : utile pour sécuriser ateliers sans disperser le workflow.",
+        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "figjam",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser sprint sans disperser le workflow.",
+        "reasonEn": "Useful to secure sprint without scattering the workflow."
+      },
+      {
+        "role": "Maquette",
+        "roleEn": "Maquette",
+        "slug": "figma",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Maquette : utile pour sécuriser prototypes sans disperser le workflow.",
+        "reasonEn": "Useful to secure prototypes without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser ateliers sans disperser le workflow.",
+        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Formulaires : utile pour sécuriser sprint sans disperser le workflow.",
+        "reasonEn": "Useful to secure sprint without scattering the workflow."
+      },
+      {
+        "role": "Base structurée",
+        "roleEn": "Base structurée",
+        "slug": "airtable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Base structurée : utile pour sécuriser prototypes sans disperser le workflow.",
+        "reasonEn": "Useful to secure prototypes without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "lovable",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser ateliers sans disperser le workflow.",
+        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "webflow",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser sprint sans disperser le workflow.",
+        "reasonEn": "Useful to secure sprint without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-change-management",
+    "slug": "consultant-change-management",
+    "title": "Stack change",
+    "titleEn": "change stack",
+    "subtitle": "Les outils recommandés pour consultant change management",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "management-consulting",
+      "change-management"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 90,
+    "savings": 160,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant change management",
+    "bestForEn": "Consultant change management",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Analyse impact",
+        "titleEn": "Analyse impact",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "parties prenantes",
+        "titleEn": "parties prenantes",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "communication",
+        "titleEn": "communication",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Atelier",
+        "roleEn": "Atelier",
+        "slug": "miro",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Atelier : utile pour sécuriser analyse impact sans disperser le workflow.",
+        "reasonEn": "Useful to secure analyse impact without scattering the workflow."
+      },
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser parties prenantes sans disperser le workflow.",
+        "reasonEn": "Useful to secure parties prenantes without scattering the workflow."
+      },
+      {
+        "role": "Formulaires",
+        "roleEn": "Formulaires",
+        "slug": "typeform",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Formulaires : utile pour sécuriser communication sans disperser le workflow.",
+        "reasonEn": "Useful to secure communication without scattering the workflow."
+      },
+      {
+        "role": "Vidéo asynchrone",
+        "roleEn": "Vidéo asynchrone",
+        "slug": "loom",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Vidéo asynchrone : utile pour sécuriser analyse impact sans disperser le workflow.",
+        "reasonEn": "Useful to secure analyse impact without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Suite collaborative : utile pour sécuriser parties prenantes sans disperser le workflow.",
+        "reasonEn": "Useful to secure parties prenantes without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "microsoft-teams",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser communication sans disperser le workflow.",
+        "reasonEn": "Useful to secure communication without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "clickup",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser analyse impact sans disperser le workflow.",
+        "reasonEn": "Useful to secure analyse impact without scattering the workflow."
+      }
+    ]
+  },
+  {
+    "id": "consultant-freelance-generaliste-solopreneur",
+    "slug": "consultant-freelance-generaliste-solopreneur",
+    "title": "Stack freelance généraliste",
+    "titleEn": "freelance généraliste stack",
+    "subtitle": "Les outils recommandés pour consultant freelance généraliste / solopreneur",
+    "subtitleEn": "Recommended tools for this consulting profile.",
+    "persona": "consultant",
+    "subProfiles": [
+      "generalist-consultant",
+      "client-delivery",
+      "admin"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 128,
+    "savings": 240,
+    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
+    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
+    "bestFor": "Consultant freelance généraliste / solopreneur",
+    "bestForEn": "Consultant freelance généraliste / solopreneur",
+    "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
+    "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
+    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
+    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "needs": [
+      {
+        "title": "Positionnement",
+        "titleEn": "Positionnement",
+        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
+        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+      },
+      {
+        "title": "prospection",
+        "titleEn": "prospection",
+        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
+        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+      },
+      {
+        "title": "CRM",
+        "titleEn": "CRM",
+        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
+        "detailEn": "Each tool needs a clear role in the engagement."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Le process se répète",
+        "titleEn": "The process repeats",
+        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
+        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+      },
+      {
+        "title": "Le reporting devient attendu",
+        "titleEn": "Reporting is expected",
+        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
+        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Payer pour paraître senior",
+        "titleEn": "Paying to look senior",
+        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
+        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+      },
+      {
+        "title": "Créer un espace client trop lourd",
+        "titleEn": "Overbuilding the client space",
+        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
+        "detailEn": "The client should find decisions in two clicks, not learn your system."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le livrable final aide-t-il vraiment le client à décider ?",
+        "qEn": "Does the final deliverable really help the client decide?",
+        "hint": "Si la réponse est non, simplifie le deck avant d’ajouter un outil.",
+        "hintEn": "If not, simplify the deck before adding another tool."
+      },
+      {
+        "q": "Le client sait-il où trouver les décisions et la prochaine action ?",
+        "qEn": "Does the client know where decisions and next actions live?",
+        "hint": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "hintEn": "One clear project page beats three shared spaces."
+      },
+      {
+        "q": "Les outils payants sont-ils liés à un volume réel ?",
+        "qEn": "Are paid tools tied to real volume?",
+        "hint": "Garde les outils coûteux pour les missions où ils changent vraiment la qualité ou la vitesse.",
+        "hintEn": "Keep costly tools for missions where they truly change quality or speed."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Cockpit mission",
+        "roleEn": "Cockpit mission",
+        "slug": "notion",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Cockpit mission : utile pour sécuriser positionnement sans disperser le workflow.",
+        "reasonEn": "Useful to secure positionnement without scattering the workflow."
+      },
+      {
+        "role": "CRM",
+        "roleEn": "CRM",
+        "slug": "hubspot",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "CRM : utile pour sécuriser prospection sans disperser le workflow.",
+        "reasonEn": "Useful to secure prospection without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "folk",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Outil métier : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "Suite collaborative",
+        "roleEn": "Suite collaborative",
+        "slug": "google-workspace",
+        "decision": "core",
+        "tip": "À garder dans le socle de mission.",
+        "tipEn": "Keep it in the mission core.",
+        "reason": "Suite collaborative : utile pour sécuriser positionnement sans disperser le workflow.",
+        "reasonEn": "Useful to secure positionnement without scattering the workflow."
+      },
+      {
+        "role": "Rendez-vous",
+        "roleEn": "Rendez-vous",
+        "slug": "calendly",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Rendez-vous : utile pour sécuriser prospection sans disperser le workflow.",
+        "reasonEn": "Useful to secure prospection without scattering the workflow."
+      },
+      {
+        "role": "Vidéo asynchrone",
+        "roleEn": "Vidéo asynchrone",
+        "slug": "loom",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Vidéo asynchrone : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "Signature",
+        "roleEn": "Signature",
+        "slug": "yousign",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Signature : utile pour sécuriser positionnement sans disperser le workflow.",
+        "reasonEn": "Useful to secure positionnement without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "indy",
+        "decision": "conditional",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser prospection sans disperser le workflow.",
+        "reasonEn": "Useful to secure prospection without scattering the workflow."
+      },
+      {
+        "role": "Outil métier",
+        "roleEn": "Specialist tool",
+        "slug": "qonto",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "Outil métier : utile pour sécuriser crm sans disperser le workflow.",
+        "reasonEn": "Useful to secure crm without scattering the workflow."
+      },
+      {
+        "role": "IA généraliste",
+        "roleEn": "IA généraliste",
+        "slug": "chatgpt",
+        "decision": "challenge",
+        "tip": "À activer seulement si la mission le justifie.",
+        "tipEn": "Activate only when the mission requires it.",
+        "reason": "IA généraliste : utile pour sécuriser positionnement sans disperser le workflow.",
+        "reasonEn": "Useful to secure positionnement without scattering the workflow."
+      }
+    ]
+  },
+
 ];
 
 export const STACK_USES: Record<string, StackUseCase[]> = {
