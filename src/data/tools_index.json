@@ -11290,5 +11290,2485 @@
     "affiliateLink": "",
     "websiteUrl": "https://procreate.com",
     "logo": ""
+  },
+  {
+    "id": "acf",
+    "slug": "acf",
+    "name": "Advanced Custom Fields",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plugin WordPress pour structurer champs, contenus et interfaces d’administration.",
+    "shortDescriptionEn": "WordPress plugin for structured fields, content, and admin interfaces.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.advancedcustomfields.com",
+    "logo": ""
+  },
+  {
+    "id": "airbyte",
+    "slug": "airbyte",
+    "name": "Airbyte",
+    "categoryId": "analytics",
+    "shortDescription": "Connecteurs ELT open source pour synchroniser sources de données.",
+    "shortDescriptionEn": "Open-source ELT connectors for syncing data sources.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://airbyte.com",
+    "logo": ""
+  },
+  {
+    "id": "algolia",
+    "slug": "algolia",
+    "name": "Algolia",
+    "categoryId": "analytics",
+    "shortDescription": "Recherche hébergée rapide pour catalogues, contenus et apps.",
+    "shortDescriptionEn": "Fast hosted search for catalogs, content, and apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.algolia.com",
+    "logo": ""
+  },
+  {
+    "id": "anthropic",
+    "slug": "anthropic",
+    "name": "Anthropic API",
+    "categoryId": "ai-general",
+    "shortDescription": "API Claude pour raisonnement, analyse longue, code et agents.",
+    "shortDescriptionEn": "Claude API for reasoning, long analysis, coding, and agents.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.anthropic.com/api",
+    "logo": ""
+  },
+  {
+    "id": "app-store-connect",
+    "slug": "app-store-connect",
+    "name": "App Store Connect",
+    "categoryId": "nocode-web",
+    "shortDescription": "Portail Apple pour soumettre, tester et gérer les apps iOS.",
+    "shortDescriptionEn": "Apple portal for submitting, testing, and managing iOS apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://appstoreconnect.apple.com",
+    "logo": ""
+  },
+  {
+    "id": "appsmith",
+    "slug": "appsmith",
+    "name": "Appsmith",
+    "categoryId": "nocode-web",
+    "shortDescription": "Low-code open source pour outils internes et interfaces CRUD.",
+    "shortDescriptionEn": "Open-source low-code platform for internal tools and CRUD interfaces.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.appsmith.com",
+    "logo": ""
+  },
+  {
+    "id": "auth-js",
+    "slug": "auth-js",
+    "name": "Auth.js",
+    "categoryId": "security",
+    "shortDescription": "Librairie open source pour ajouter une authentification flexible aux apps JavaScript.",
+    "shortDescriptionEn": "Open-source library for adding flexible authentication to JavaScript apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://authjs.dev",
+    "logo": ""
+  },
+  {
+    "id": "aws",
+    "slug": "aws",
+    "name": "AWS",
+    "categoryId": "nocode-web",
+    "shortDescription": "Cloud complet pour compute, stockage, réseau, data et services managés.",
+    "shortDescriptionEn": "Full cloud for compute, storage, networking, data, and managed services.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://aws.amazon.com",
+    "logo": ""
+  },
+  {
+    "id": "axe-devtools",
+    "slug": "axe-devtools",
+    "name": "Axe DevTools",
+    "categoryId": "security",
+    "shortDescription": "Audit accessibilité dans le navigateur pour repérer erreurs WCAG fréquentes.",
+    "shortDescriptionEn": "Browser accessibility audit for spotting common WCAG issues.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.deque.com/axe/devtools/",
+    "logo": ""
+  },
+  {
+    "id": "babylon-js",
+    "slug": "babylon-js",
+    "name": "Babylon.js",
+    "categoryId": "creation",
+    "shortDescription": "Moteur 3D web pour applications, jeux et expériences WebXR.",
+    "shortDescriptionEn": "Web 3D engine for apps, games, and WebXR experiences.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.babylonjs.com",
+    "logo": ""
+  },
+  {
+    "id": "better-stack",
+    "slug": "better-stack",
+    "name": "Better Stack",
+    "categoryId": "analytics",
+    "shortDescription": "Monitoring uptime, logs et alerting moderne pour apps web.",
+    "shortDescriptionEn": "Modern uptime, logs, and alerting for web apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://betterstack.com",
+    "logo": ""
+  },
+  {
+    "id": "bigquery",
+    "slug": "bigquery",
+    "name": "BigQuery",
+    "categoryId": "analytics",
+    "shortDescription": "Data warehouse Google managé pour analytics à grande échelle.",
+    "shortDescriptionEn": "Managed Google data warehouse for large-scale analytics.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://cloud.google.com/bigquery",
+    "logo": ""
+  },
+  {
+    "id": "bloc",
+    "slug": "bloc",
+    "name": "Bloc",
+    "categoryId": "nocode-web",
+    "shortDescription": "Pattern et librairie Flutter pour séparer logique métier et interface.",
+    "shortDescriptionEn": "Flutter pattern and library for separating business logic and UI.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://bloclibrary.dev",
+    "logo": ""
+  },
+  {
+    "id": "bricks",
+    "slug": "bricks",
+    "name": "Bricks",
+    "categoryId": "nocode-web",
+    "shortDescription": "Builder WordPress apprécié pour performance, flexibilité et sites sur mesure.",
+    "shortDescriptionEn": "WordPress builder valued for performance, flexibility, and custom sites.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "",
+    "websiteUrl": "https://bricksbuilder.io",
+    "logo": ""
+  },
+  {
+    "id": "browserstack",
+    "slug": "browserstack",
+    "name": "BrowserStack",
+    "categoryId": "nocode-web",
+    "shortDescription": "Tests cross-browser, devices réels et QA web/mobile.",
+    "shortDescriptionEn": "Cross-browser testing, real devices, and web/mobile QA.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.browserstack.com",
+    "logo": ""
+  },
+  {
+    "id": "budibase",
+    "slug": "budibase",
+    "name": "Budibase",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme low-code pour apps internes, formulaires et workflows.",
+    "shortDescriptionEn": "Low-code platform for internal apps, forms, and workflows.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://budibase.com",
+    "logo": ""
+  },
+  {
+    "id": "bullmq",
+    "slug": "bullmq",
+    "name": "BullMQ",
+    "categoryId": "nocode-web",
+    "shortDescription": "Queues Node.js basées sur Redis pour jobs, retries et workers.",
+    "shortDescriptionEn": "Redis-backed Node.js queues for jobs, retries, and workers.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://bullmq.io",
+    "logo": ""
+  },
+  {
+    "id": "burp-suite",
+    "slug": "burp-suite",
+    "name": "Burp Suite",
+    "categoryId": "security",
+    "shortDescription": "Suite de pentest web pour proxy, scanning et tests manuels.",
+    "shortDescriptionEn": "Web pentest suite for proxying, scanning, and manual testing.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://portswigger.net/burp",
+    "logo": ""
+  },
+  {
+    "id": "celery",
+    "slug": "celery",
+    "name": "Celery",
+    "categoryId": "nocode-web",
+    "shortDescription": "Queue de tâches Python pour workers, jobs asynchrones et retries.",
+    "shortDescriptionEn": "Python task queue for workers, async jobs, and retries.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://docs.celeryq.dev",
+    "logo": ""
+  },
+  {
+    "id": "chromatic",
+    "slug": "chromatic",
+    "name": "Chromatic",
+    "categoryId": "ui-components",
+    "shortDescription": "Tests visuels et publication Storybook pour design systems et composants.",
+    "shortDescriptionEn": "Visual testing and Storybook publishing for design systems and components.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.chromatic.com",
+    "logo": ""
+  },
+  {
+    "id": "chrome-devtools",
+    "slug": "chrome-devtools",
+    "name": "Chrome DevTools",
+    "categoryId": "nocode-web",
+    "shortDescription": "Outils navigateur pour debug, performance, réseau, accessibilité et CSS.",
+    "shortDescriptionEn": "Browser tools for debugging, performance, network, accessibility, and CSS.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://developer.chrome.com/docs/devtools",
+    "logo": ""
+  },
+  {
+    "id": "clerk",
+    "slug": "clerk",
+    "name": "Clerk",
+    "categoryId": "security",
+    "shortDescription": "Authentification moderne pour apps web avec login, organisations et gestion utilisateurs.",
+    "shortDescriptionEn": "Modern authentication for web apps with login, organizations, and user management.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "",
+    "websiteUrl": "https://clerk.com",
+    "logo": ""
+  },
+  {
+    "id": "client-first",
+    "slug": "client-first",
+    "name": "Client-First",
+    "categoryId": "nocode-web",
+    "shortDescription": "Convention de naming Webflow pour rendre les projets maintenables.",
+    "shortDescriptionEn": "Webflow naming convention for maintainable builds.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://finsweet.com/client-first",
+    "logo": ""
+  },
+  {
+    "id": "cloudflare",
+    "slug": "cloudflare",
+    "name": "Cloudflare",
+    "categoryId": "security",
+    "shortDescription": "CDN, DNS, sécurité, cache et protection edge pour sites et apps.",
+    "shortDescriptionEn": "CDN, DNS, security, cache, and edge protection for sites and apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.cloudflare.com",
+    "logo": ""
+  },
+  {
+    "id": "cloudinary",
+    "slug": "cloudinary",
+    "name": "Cloudinary",
+    "categoryId": "storage",
+    "shortDescription": "Gestion, optimisation et transformation d’images et vidéos.",
+    "shortDescriptionEn": "Image and video management, optimization, and transformation.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://cloudinary.com",
+    "logo": ""
+  },
+  {
+    "id": "codemagic",
+    "slug": "codemagic",
+    "name": "Codemagic",
+    "categoryId": "nocode-web",
+    "shortDescription": "CI/CD mobile pour Flutter, React Native, iOS et Android.",
+    "shortDescriptionEn": "Mobile CI/CD for Flutter, React Native, iOS, and Android.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://codemagic.io",
+    "logo": ""
+  },
+  {
+    "id": "contentful",
+    "slug": "contentful",
+    "name": "Contentful",
+    "categoryId": "nocode-web",
+    "shortDescription": "CMS headless SaaS pour contenus structurés et équipes éditoriales.",
+    "shortDescriptionEn": "SaaS headless CMS for structured content and editorial teams.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.contentful.com",
+    "logo": ""
+  },
+  {
+    "id": "crisp",
+    "slug": "crisp",
+    "name": "Crisp",
+    "categoryId": "communication",
+    "shortDescription": "Chat support client simple pour SaaS, sites et petites équipes.",
+    "shortDescriptionEn": "Simple customer support chat for SaaS, websites, and small teams.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://crisp.chat",
+    "logo": ""
+  },
+  {
+    "id": "cypress",
+    "slug": "cypress",
+    "name": "Cypress",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework de test front-end et end-to-end pour applications web.",
+    "shortDescriptionEn": "Frontend and end-to-end testing framework for web apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.cypress.io",
+    "logo": ""
+  },
+  {
+    "id": "dart",
+    "slug": "dart",
+    "name": "Dart",
+    "categoryId": "nocode-web",
+    "shortDescription": "Langage de programmation utilisé par Flutter.",
+    "shortDescriptionEn": "Programming language used by Flutter.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://dart.dev",
+    "logo": ""
+  },
+  {
+    "id": "dbt",
+    "slug": "dbt",
+    "name": "dbt",
+    "categoryId": "analytics",
+    "shortDescription": "Transformation SQL, modèles data et documentation de pipelines analytiques.",
+    "shortDescriptionEn": "SQL transformation, data models, and analytics pipeline documentation.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.getdbt.com",
+    "logo": ""
+  },
+  {
+    "id": "dependabot",
+    "slug": "dependabot",
+    "name": "Dependabot",
+    "categoryId": "security",
+    "shortDescription": "Mises à jour automatisées des dépendances et alertes sécurité GitHub.",
+    "shortDescriptionEn": "Automated dependency updates and GitHub security alerts.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://github.com/dependabot",
+    "logo": ""
+  },
+  {
+    "id": "directus",
+    "slug": "directus",
+    "name": "Directus",
+    "categoryId": "nocode-web",
+    "shortDescription": "Data platform / CMS headless au-dessus de bases SQL.",
+    "shortDescriptionEn": "Data platform / headless CMS on top of SQL databases.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://directus.io",
+    "logo": ""
+  },
+  {
+    "id": "docker",
+    "slug": "docker",
+    "name": "Docker",
+    "categoryId": "nocode-web",
+    "shortDescription": "Conteneurs pour reproduire environnements, services et dépendances sans surprises.",
+    "shortDescriptionEn": "Containers to reproduce environments, services, and dependencies reliably.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.docker.com",
+    "logo": ""
+  },
+  {
+    "id": "eas-build",
+    "slug": "eas-build",
+    "name": "EAS Build",
+    "categoryId": "nocode-web",
+    "shortDescription": "Service Expo pour compiler et distribuer des apps mobiles.",
+    "shortDescriptionEn": "Expo service for building and distributing mobile apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://expo.dev/eas",
+    "logo": ""
+  },
+  {
+    "id": "elementor",
+    "slug": "elementor",
+    "name": "Elementor",
+    "categoryId": "nocode-web",
+    "shortDescription": "Builder WordPress visuel pour produire des pages vite avec écosystème riche.",
+    "shortDescriptionEn": "Visual WordPress builder for shipping pages fast with a rich ecosystem.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "",
+    "websiteUrl": "https://elementor.com",
+    "logo": ""
+  },
+  {
+    "id": "eslint",
+    "slug": "eslint",
+    "name": "ESLint",
+    "categoryId": "nocode-web",
+    "shortDescription": "Linting JavaScript/TypeScript pour éviter erreurs, dette et incohérences de code.",
+    "shortDescriptionEn": "JavaScript/TypeScript linting to avoid errors, debt, and code inconsistencies.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://eslint.org",
+    "logo": ""
+  },
+  {
+    "id": "expo",
+    "slug": "expo",
+    "name": "Expo",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme React Native pour build, preview, déploiement et services mobiles.",
+    "shortDescriptionEn": "React Native platform for builds, previews, deployment, and mobile services.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://expo.dev",
+    "logo": ""
+  },
+  {
+    "id": "fastapi",
+    "slug": "fastapi",
+    "name": "FastAPI",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework Python rapide pour API typées, docs OpenAPI et backends modernes.",
+    "shortDescriptionEn": "Fast Python framework for typed APIs, OpenAPI docs, and modern backends.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://fastapi.tiangolo.com",
+    "logo": ""
+  },
+  {
+    "id": "finsweet",
+    "slug": "finsweet",
+    "name": "Finsweet",
+    "categoryId": "nocode-web",
+    "shortDescription": "Extensions et attributs Webflow pour filtres, CMS, interactions et logique avancée.",
+    "shortDescriptionEn": "Webflow extensions and attributes for filters, CMS, interactions, and advanced logic.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://finsweet.com",
+    "logo": ""
+  },
+  {
+    "id": "flutter",
+    "slug": "flutter",
+    "name": "Flutter",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework Google pour apps mobiles, desktop et web avec Dart.",
+    "shortDescriptionEn": "Google framework for mobile, desktop, and web apps with Dart.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://flutter.dev",
+    "logo": ""
+  },
+  {
+    "id": "fmod",
+    "slug": "fmod",
+    "name": "FMOD",
+    "categoryId": "creation",
+    "shortDescription": "Middleware audio interactif pour jeux et expériences temps réel.",
+    "shortDescriptionEn": "Interactive audio middleware for games and real-time experiences.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.fmod.com",
+    "logo": ""
+  },
+  {
+    "id": "framer-motion",
+    "slug": "framer-motion",
+    "name": "Framer Motion",
+    "categoryId": "ui-components",
+    "shortDescription": "Librairie d’animation React pour transitions, micro-interactions et motion produit.",
+    "shortDescriptionEn": "React animation library for transitions, micro-interactions, and product motion.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.framer.com/motion/",
+    "logo": ""
+  },
+  {
+    "id": "github-actions",
+    "slug": "github-actions",
+    "name": "GitHub Actions",
+    "categoryId": "project-management",
+    "shortDescription": "CI/CD intégré à GitHub pour tests, builds, déploiements et automatisations repo.",
+    "shortDescriptionEn": "CI/CD built into GitHub for tests, builds, deployments, and repo automation.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://github.com/features/actions",
+    "logo": ""
+  },
+  {
+    "id": "github-advanced-security",
+    "slug": "github-advanced-security",
+    "name": "GitHub Advanced Security",
+    "categoryId": "security",
+    "shortDescription": "Code scanning, secret scanning et sécurité avancée dans GitHub.",
+    "shortDescriptionEn": "Code scanning, secret scanning, and advanced security inside GitHub.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://github.com/security/advanced-security",
+    "logo": ""
+  },
+  {
+    "id": "gitlens",
+    "slug": "gitlens",
+    "name": "GitLens",
+    "categoryId": "nocode-web",
+    "shortDescription": "Extension VS Code pour comprendre historique Git, auteurs et contexte de changement.",
+    "shortDescriptionEn": "VS Code extension to understand Git history, authors, and change context.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.gitkraken.com/gitlens",
+    "logo": ""
+  },
+  {
+    "id": "go",
+    "slug": "go",
+    "name": "Go",
+    "categoryId": "nocode-web",
+    "shortDescription": "Langage serveur performant pour services, CLI, API et workloads simples à déployer.",
+    "shortDescriptionEn": "Performant server language for services, CLIs, APIs, and deployable workloads.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://go.dev",
+    "logo": ""
+  },
+  {
+    "id": "godot",
+    "slug": "godot",
+    "name": "Godot",
+    "categoryId": "creation",
+    "shortDescription": "Moteur de jeu open source pour 2D, 3D et prototypes indépendants.",
+    "shortDescriptionEn": "Open-source game engine for 2D, 3D, and indie prototypes.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://godotengine.org",
+    "logo": ""
+  },
+  {
+    "id": "gcp",
+    "slug": "gcp",
+    "name": "Google Cloud",
+    "categoryId": "nocode-web",
+    "shortDescription": "Cloud Google pour compute, data, IA, services managés et infrastructure.",
+    "shortDescriptionEn": "Google cloud for compute, data, AI, managed services, and infrastructure.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://cloud.google.com",
+    "logo": ""
+  },
+  {
+    "id": "google-play-console",
+    "slug": "google-play-console",
+    "name": "Google Play Console",
+    "categoryId": "nocode-web",
+    "shortDescription": "Portail Google pour publier, tester et suivre les apps Android.",
+    "shortDescriptionEn": "Google portal for publishing, testing, and monitoring Android apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://play.google.com/console",
+    "logo": ""
+  },
+  {
+    "id": "google-tag-manager",
+    "slug": "google-tag-manager",
+    "name": "Google Tag Manager",
+    "categoryId": "analytics",
+    "shortDescription": "Gestion de tags, pixels et tracking sans redéployer le site.",
+    "shortDescriptionEn": "Manage tags, pixels, and tracking without redeploying the site.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://tagmanager.google.com",
+    "logo": ""
+  },
+  {
+    "id": "grafana",
+    "slug": "grafana",
+    "name": "Grafana",
+    "categoryId": "analytics",
+    "shortDescription": "Tableaux de bord logs, métriques et alerting pour stacks techniques.",
+    "shortDescriptionEn": "Dashboards, logs, metrics, and alerting for technical stacks.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://grafana.com",
+    "logo": ""
+  },
+  {
+    "id": "graphql",
+    "slug": "graphql",
+    "name": "GraphQL",
+    "categoryId": "nocode-web",
+    "shortDescription": "Langage de requête API pour données flexibles, schémas et intégrations modernes.",
+    "shortDescriptionEn": "API query language for flexible data, schemas, and modern integrations.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://graphql.org",
+    "logo": ""
+  },
+  {
+    "id": "helicone",
+    "slug": "helicone",
+    "name": "Helicone",
+    "categoryId": "ai-general",
+    "shortDescription": "Observabilité LLM : coûts, latence, prompts, logs et monitoring.",
+    "shortDescriptionEn": "LLM observability: costs, latency, prompts, logs, and monitoring.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.helicone.ai",
+    "logo": ""
+  },
+  {
+    "id": "hydrogen",
+    "slug": "hydrogen",
+    "name": "Hydrogen",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework React de Shopify pour vitrines headless commerce.",
+    "shortDescriptionEn": "Shopify React framework for headless commerce storefronts.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://hydrogen.shopify.dev",
+    "logo": ""
+  },
+  {
+    "id": "infomaniak",
+    "slug": "infomaniak",
+    "name": "Infomaniak",
+    "categoryId": "nocode-web",
+    "shortDescription": "Hébergement suisse pour sites, emails, cloud et outils collaboratifs.",
+    "shortDescriptionEn": "Swiss hosting for websites, email, cloud, and collaboration tools.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 7,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.infomaniak.com",
+    "logo": ""
+  },
+  {
+    "id": "insomnia",
+    "slug": "insomnia",
+    "name": "Insomnia",
+    "categoryId": "nocode-web",
+    "shortDescription": "Client API pour tester REST, GraphQL et collections de requêtes.",
+    "shortDescriptionEn": "API client for testing REST, GraphQL, and request collections.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://insomnia.rest",
+    "logo": ""
+  },
+  {
+    "id": "itch-io",
+    "slug": "itch-io",
+    "name": "itch.io",
+    "categoryId": "creation",
+    "shortDescription": "Plateforme de distribution pour jeux indés, prototypes et game jams.",
+    "shortDescriptionEn": "Distribution platform for indie games, prototypes, and game jams.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://itch.io",
+    "logo": ""
+  },
+  {
+    "id": "jest",
+    "slug": "jest",
+    "name": "Jest",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework de test JavaScript largement utilisé.",
+    "shortDescriptionEn": "Widely used JavaScript testing framework.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://jestjs.io",
+    "logo": ""
+  },
+  {
+    "id": "jupyter",
+    "slug": "jupyter",
+    "name": "Jupyter",
+    "categoryId": "analytics",
+    "shortDescription": "Notebooks pour exploration data, analyses, prototypage et documentation vivante.",
+    "shortDescriptionEn": "Notebooks for data exploration, analysis, prototyping, and living documentation.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://jupyter.org",
+    "logo": ""
+  },
+  {
+    "id": "kinsta",
+    "slug": "kinsta",
+    "name": "Kinsta",
+    "categoryId": "nocode-web",
+    "shortDescription": "Hébergement WordPress managé premium pour performance et support.",
+    "shortDescriptionEn": "Premium managed WordPress hosting for performance and support.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 30,
+    "affiliateLink": "",
+    "websiteUrl": "https://kinsta.com",
+    "logo": ""
+  },
+  {
+    "id": "klaviyo",
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "categoryId": "email-productivity",
+    "shortDescription": "Email/SMS marketing e-commerce pour segmentation, flows et revenus Shopify.",
+    "shortDescriptionEn": "E-commerce email/SMS marketing for segmentation, flows, and Shopify revenue.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.klaviyo.com",
+    "logo": ""
+  },
+  {
+    "id": "kubernetes",
+    "slug": "kubernetes",
+    "name": "Kubernetes",
+    "categoryId": "nocode-web",
+    "shortDescription": "Orchestration de containers pour workloads distribués et environnements complexes.",
+    "shortDescriptionEn": "Container orchestration for distributed workloads and complex environments.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://kubernetes.io",
+    "logo": ""
+  },
+  {
+    "id": "langchain",
+    "slug": "langchain",
+    "name": "LangChain",
+    "categoryId": "ai-general",
+    "shortDescription": "Framework pour chaînes, agents, outils et orchestration LLM.",
+    "shortDescriptionEn": "Framework for chains, agents, tools, and LLM orchestration.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.langchain.com",
+    "logo": ""
+  },
+  {
+    "id": "langsmith",
+    "slug": "langsmith",
+    "name": "LangSmith",
+    "categoryId": "ai-general",
+    "shortDescription": "Debug, tracing et évaluation des applications LLM.",
+    "shortDescriptionEn": "Debugging, tracing, and evaluation for LLM applications.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.langchain.com/langsmith",
+    "logo": ""
+  },
+  {
+    "id": "lemon-squeezy",
+    "slug": "lemon-squeezy",
+    "name": "Lemon Squeezy",
+    "categoryId": "finance",
+    "shortDescription": "Paiement, taxe et merchant of record pour produits numériques.",
+    "shortDescriptionEn": "Payments, tax, and merchant of record for digital products.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.lemonsqueezy.com",
+    "logo": ""
+  },
+  {
+    "id": "lighthouse",
+    "slug": "lighthouse",
+    "name": "Lighthouse",
+    "categoryId": "analytics",
+    "shortDescription": "Audit performance, accessibilité, SEO et bonnes pratiques depuis Chrome.",
+    "shortDescriptionEn": "Performance, accessibility, SEO, and best-practice audit from Chrome.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://developer.chrome.com/docs/lighthouse",
+    "logo": ""
+  },
+  {
+    "id": "liquid",
+    "slug": "liquid",
+    "name": "Liquid",
+    "categoryId": "nocode-web",
+    "shortDescription": "Langage de template utilisé par Shopify pour thèmes et vitrines.",
+    "shortDescriptionEn": "Template language used by Shopify for themes and storefronts.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://shopify.github.io/liquid/",
+    "logo": ""
+  },
+  {
+    "id": "llamaindex",
+    "slug": "llamaindex",
+    "name": "LlamaIndex",
+    "categoryId": "ai-general",
+    "shortDescription": "Framework orienté données pour RAG, indexation et apps LLM.",
+    "shortDescriptionEn": "Data-oriented framework for RAG, indexing, and LLM apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.llamaindex.ai",
+    "logo": ""
+  },
+  {
+    "id": "localwp",
+    "slug": "localwp",
+    "name": "LocalWP",
+    "categoryId": "nocode-web",
+    "shortDescription": "Environnement local WordPress pour développer, tester et migrer sans casser le site.",
+    "shortDescriptionEn": "Local WordPress environment for developing, testing, and migrating safely.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://localwp.com",
+    "logo": ""
+  },
+  {
+    "id": "logtail",
+    "slug": "logtail",
+    "name": "Logtail",
+    "categoryId": "analytics",
+    "shortDescription": "Logs structurés et recherche via Better Stack.",
+    "shortDescriptionEn": "Structured logs and search through Better Stack.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://betterstack.com/logtail",
+    "logo": ""
+  },
+  {
+    "id": "loops",
+    "slug": "loops",
+    "name": "Loops",
+    "categoryId": "email-productivity",
+    "shortDescription": "Email produit pour onboarding, lifecycle et annonces SaaS.",
+    "shortDescriptionEn": "Product email for onboarding, lifecycle, and SaaS announcements.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://loops.so",
+    "logo": ""
+  },
+  {
+    "id": "mainwp",
+    "slug": "mainwp",
+    "name": "MainWP",
+    "categoryId": "nocode-web",
+    "shortDescription": "Gestion WordPress auto-hébergée pour maintenance, mises à jour et clients.",
+    "shortDescriptionEn": "Self-hosted WordPress management for maintenance, updates, and clients.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://mainwp.com",
+    "logo": ""
+  },
+  {
+    "id": "managewp",
+    "slug": "managewp",
+    "name": "ManageWP",
+    "categoryId": "nocode-web",
+    "shortDescription": "Gestion multi-sites WordPress : mises à jour, sauvegardes, monitoring et rapports.",
+    "shortDescriptionEn": "Multi-site WordPress management: updates, backups, monitoring, and reports.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://managewp.com",
+    "logo": ""
+  },
+  {
+    "id": "medusa",
+    "slug": "medusa",
+    "name": "Medusa",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework commerce headless pour boutiques et plateformes sur mesure.",
+    "shortDescriptionEn": "Headless commerce framework for custom stores and platforms.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://medusajs.com",
+    "logo": ""
+  },
+  {
+    "id": "meta-quest-developer-tools",
+    "slug": "meta-quest-developer-tools",
+    "name": "Meta Quest Developer Tools",
+    "categoryId": "creation",
+    "shortDescription": "Outils développeur pour apps et expériences Meta Quest.",
+    "shortDescriptionEn": "Developer tools for Meta Quest apps and experiences.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://developer.oculus.com",
+    "logo": ""
+  },
+  {
+    "id": "azure",
+    "slug": "azure",
+    "name": "Microsoft Azure",
+    "categoryId": "nocode-web",
+    "shortDescription": "Cloud Microsoft pour infrastructure, applications, data et entreprises.",
+    "shortDescriptionEn": "Microsoft cloud for infrastructure, applications, data, and enterprise work.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://azure.microsoft.com",
+    "logo": ""
+  },
+  {
+    "id": "nestjs",
+    "slug": "nestjs",
+    "name": "NestJS",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework Node.js structuré pour API, services et backends maintenables.",
+    "shortDescriptionEn": "Structured Node.js framework for APIs, services, and maintainable backends.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://nestjs.com",
+    "logo": ""
+  },
+  {
+    "id": "newman",
+    "slug": "newman",
+    "name": "Newman",
+    "categoryId": "nocode-web",
+    "shortDescription": "CLI Postman pour lancer collections API en CI.",
+    "shortDescriptionEn": "Postman CLI for running API collections in CI.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://github.com/postmanlabs/newman",
+    "logo": ""
+  },
+  {
+    "id": "next-js",
+    "slug": "next-js",
+    "name": "Next.js",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework React pour applications, sites, dashboards et produits SaaS modernes.",
+    "shortDescriptionEn": "React framework for modern apps, websites, dashboards, and SaaS products.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://nextjs.org",
+    "logo": ""
+  },
+  {
+    "id": "node-js",
+    "slug": "node-js",
+    "name": "Node.js",
+    "categoryId": "nocode-web",
+    "shortDescription": "Runtime JavaScript côté serveur pour API, scripts, intégrations et apps full-stack.",
+    "shortDescriptionEn": "Server-side JavaScript runtime for APIs, scripts, integrations, and full-stack apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://nodejs.org",
+    "logo": ""
+  },
+  {
+    "id": "nvda",
+    "slug": "nvda",
+    "name": "NVDA",
+    "categoryId": "security",
+    "shortDescription": "Lecteur d’écran Windows gratuit pour tests accessibilité.",
+    "shortDescriptionEn": "Free Windows screen reader for accessibility testing.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.nvaccess.org",
+    "logo": ""
+  },
+  {
+    "id": "openai-api",
+    "slug": "openai-api",
+    "name": "OpenAI API",
+    "categoryId": "ai-general",
+    "shortDescription": "API de modèles IA pour chat, génération, agents, embeddings et outils.",
+    "shortDescriptionEn": "AI model API for chat, generation, agents, embeddings, and tools.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://platform.openai.com",
+    "logo": ""
+  },
+  {
+    "id": "openapi",
+    "slug": "openapi",
+    "name": "OpenAPI",
+    "categoryId": "nocode-web",
+    "shortDescription": "Standard de description d’API pour docs, contrats, SDK et tests.",
+    "shortDescriptionEn": "API description standard for docs, contracts, SDKs, and tests.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.openapis.org",
+    "logo": ""
+  },
+  {
+    "id": "ovh",
+    "slug": "ovh",
+    "name": "OVHcloud",
+    "categoryId": "nocode-web",
+    "shortDescription": "Hébergement et cloud européen pour sites, serveurs et infrastructures.",
+    "shortDescriptionEn": "European hosting and cloud for websites, servers, and infrastructure.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.ovhcloud.com",
+    "logo": ""
+  },
+  {
+    "id": "owasp-zap",
+    "slug": "owasp-zap",
+    "name": "OWASP ZAP",
+    "categoryId": "security",
+    "shortDescription": "Proxy et scanner open source pour tests sécurité web.",
+    "shortDescriptionEn": "Open-source proxy and scanner for web security testing.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.zaproxy.org",
+    "logo": ""
+  },
+  {
+    "id": "p5-js",
+    "slug": "p5-js",
+    "name": "p5.js",
+    "categoryId": "creation",
+    "shortDescription": "Librairie JavaScript créative pour dessin, interaction et apprentissage code.",
+    "shortDescriptionEn": "Creative JavaScript library for drawing, interaction, and code learning.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://p5js.org",
+    "logo": ""
+  },
+  {
+    "id": "pagespeed-insights",
+    "slug": "pagespeed-insights",
+    "name": "PageSpeed Insights",
+    "categoryId": "analytics",
+    "shortDescription": "Audit Google des performances et Core Web Vitals.",
+    "shortDescriptionEn": "Google audit for performance and Core Web Vitals.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://pagespeed.web.dev",
+    "logo": ""
+  },
+  {
+    "id": "partytown",
+    "slug": "partytown",
+    "name": "Partytown",
+    "categoryId": "analytics",
+    "shortDescription": "Déporte les scripts tiers dans un worker pour améliorer la performance front.",
+    "shortDescriptionEn": "Moves third-party scripts into a worker to improve frontend performance.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://partytown.builder.io",
+    "logo": ""
+  },
+  {
+    "id": "payload-cms",
+    "slug": "payload-cms",
+    "name": "Payload CMS",
+    "categoryId": "nocode-web",
+    "shortDescription": "CMS headless TypeScript pour apps modernes et back-offices custom.",
+    "shortDescriptionEn": "TypeScript headless CMS for modern apps and custom back offices.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://payloadcms.com",
+    "logo": ""
+  },
+  {
+    "id": "percy",
+    "slug": "percy",
+    "name": "Percy",
+    "categoryId": "ui-components",
+    "shortDescription": "Tests visuels automatisés pour détecter régressions UI.",
+    "shortDescriptionEn": "Automated visual testing to catch UI regressions.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://percy.io",
+    "logo": ""
+  },
+  {
+    "id": "pgvector",
+    "slug": "pgvector",
+    "name": "pgvector",
+    "categoryId": "ai-general",
+    "shortDescription": "Extension PostgreSQL pour stocker et chercher des embeddings.",
+    "shortDescriptionEn": "PostgreSQL extension for storing and searching embeddings.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://github.com/pgvector/pgvector",
+    "logo": ""
+  },
+  {
+    "id": "php",
+    "slug": "php",
+    "name": "PHP",
+    "categoryId": "nocode-web",
+    "shortDescription": "Langage serveur central pour WordPress, WooCommerce et beaucoup de sites existants.",
+    "shortDescriptionEn": "Server language central to WordPress, WooCommerce, and many existing sites.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.php.net",
+    "logo": ""
+  },
+  {
+    "id": "pinecone",
+    "slug": "pinecone",
+    "name": "Pinecone",
+    "categoryId": "ai-general",
+    "shortDescription": "Base vectorielle managée pour recherche sémantique et RAG.",
+    "shortDescriptionEn": "Managed vector database for semantic search and RAG.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.pinecone.io",
+    "logo": ""
+  },
+  {
+    "id": "playwright",
+    "slug": "playwright",
+    "name": "Playwright",
+    "categoryId": "nocode-web",
+    "shortDescription": "Tests end-to-end fiables pour vérifier parcours, navigateurs et régressions UI.",
+    "shortDescriptionEn": "Reliable end-to-end testing for flows, browsers, and UI regressions.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://playwright.dev",
+    "logo": ""
+  },
+  {
+    "id": "poetry",
+    "slug": "poetry",
+    "name": "Poetry",
+    "categoryId": "nocode-web",
+    "shortDescription": "Gestion de dépendances et packaging Python pour projets maintenables.",
+    "shortDescriptionEn": "Python dependency management and packaging for maintainable projects.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://python-poetry.org",
+    "logo": ""
+  },
+  {
+    "id": "postgresql",
+    "slug": "postgresql",
+    "name": "PostgreSQL",
+    "categoryId": "nocode-web",
+    "shortDescription": "Base de données relationnelle robuste pour SaaS, back-offices et applications métier.",
+    "shortDescriptionEn": "Robust relational database for SaaS, back offices, and business apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.postgresql.org",
+    "logo": ""
+  },
+  {
+    "id": "postman",
+    "slug": "postman",
+    "name": "Postman",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme de test, documentation et collaboration autour des API.",
+    "shortDescriptionEn": "API testing, documentation, and collaboration platform.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.postman.com",
+    "logo": ""
+  },
+  {
+    "id": "prettier",
+    "slug": "prettier",
+    "name": "Prettier",
+    "categoryId": "nocode-web",
+    "shortDescription": "Formatage automatique du code pour réduire les débats et les diffs inutiles.",
+    "shortDescriptionEn": "Automatic code formatting to reduce debates and noisy diffs.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://prettier.io",
+    "logo": ""
+  },
+  {
+    "id": "prisma",
+    "slug": "prisma",
+    "name": "Prisma",
+    "categoryId": "nocode-web",
+    "shortDescription": "ORM TypeScript pour modéliser la base, écrire des requêtes et accélérer les migrations.",
+    "shortDescriptionEn": "TypeScript ORM for modeling databases, writing queries, and speeding up migrations.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.prisma.io",
+    "logo": ""
+  },
+  {
+    "id": "processing",
+    "slug": "processing",
+    "name": "Processing",
+    "categoryId": "creation",
+    "shortDescription": "Environnement creative coding pour arts visuels et prototypage.",
+    "shortDescriptionEn": "Creative coding environment for visual arts and prototyping.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://processing.org",
+    "logo": ""
+  },
+  {
+    "id": "prometheus",
+    "slug": "prometheus",
+    "name": "Prometheus",
+    "categoryId": "analytics",
+    "shortDescription": "Monitoring open source orienté métriques et alerting.",
+    "shortDescriptionEn": "Open-source monitoring focused on metrics and alerting.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://prometheus.io",
+    "logo": ""
+  },
+  {
+    "id": "pytest",
+    "slug": "pytest",
+    "name": "Pytest",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework de tests Python simple et puissant.",
+    "shortDescriptionEn": "Simple, powerful Python testing framework.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://pytest.org",
+    "logo": ""
+  },
+  {
+    "id": "python",
+    "slug": "python",
+    "name": "Python",
+    "categoryId": "nocode-web",
+    "shortDescription": "Langage polyvalent pour API, scripts, data, automatisation et IA.",
+    "shortDescriptionEn": "Versatile language for APIs, scripts, data, automation, and AI.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.python.org",
+    "logo": ""
+  },
+  {
+    "id": "qdrant",
+    "slug": "qdrant",
+    "name": "Qdrant",
+    "categoryId": "ai-general",
+    "shortDescription": "Base vectorielle open source pour recherche sémantique et recommandations.",
+    "shortDescriptionEn": "Open-source vector database for semantic search and recommendations.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://qdrant.tech",
+    "logo": ""
+  },
+  {
+    "id": "rank-math",
+    "slug": "rank-math",
+    "name": "Rank Math",
+    "categoryId": "analytics",
+    "shortDescription": "Plugin SEO WordPress pour métas, schema, sitemaps et optimisation contenu.",
+    "shortDescriptionEn": "WordPress SEO plugin for metadata, schema, sitemaps, and content optimization.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://rankmath.com",
+    "logo": ""
+  },
+  {
+    "id": "react-native",
+    "slug": "react-native",
+    "name": "React Native",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework JavaScript pour créer des apps iOS et Android avec React.",
+    "shortDescriptionEn": "JavaScript framework for building iOS and Android apps with React.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://reactnative.dev",
+    "logo": ""
+  },
+  {
+    "id": "recharge",
+    "slug": "recharge",
+    "name": "Recharge",
+    "categoryId": "nocode-web",
+    "shortDescription": "Abonnements e-commerce pour Shopify : récurrence, portail client et retention.",
+    "shortDescriptionEn": "E-commerce subscriptions for Shopify: recurring billing, customer portal, and retention.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 99,
+    "affiliateLink": "",
+    "websiteUrl": "https://getrecharge.com",
+    "logo": ""
+  },
+  {
+    "id": "redirect-path",
+    "slug": "redirect-path",
+    "name": "Redirect Path",
+    "categoryId": "analytics",
+    "shortDescription": "Extension navigateur pour voir redirections et headers HTTP.",
+    "shortDescriptionEn": "Browser extension for seeing redirects and HTTP headers.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.ayima.com/redirect-path",
+    "logo": ""
+  },
+  {
+    "id": "redis",
+    "slug": "redis",
+    "name": "Redis",
+    "categoryId": "nocode-web",
+    "shortDescription": "Stockage clé-valeur pour cache, queues, rate limiting et sessions.",
+    "shortDescriptionEn": "Key-value store for cache, queues, rate limiting, and sessions.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://redis.io",
+    "logo": ""
+  },
+  {
+    "id": "remix",
+    "slug": "remix",
+    "name": "Remix",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework web full-stack orienté routes, loaders et expérience utilisateur rapide.",
+    "shortDescriptionEn": "Full-stack web framework focused on routes, loaders, and fast UX.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://remix.run",
+    "logo": ""
+  },
+  {
+    "id": "resend",
+    "slug": "resend",
+    "name": "Resend",
+    "categoryId": "email-productivity",
+    "shortDescription": "API email développeur pour emails transactionnels propres.",
+    "shortDescriptionEn": "Developer email API for clean transactional email.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://resend.com",
+    "logo": ""
+  },
+  {
+    "id": "rest-client",
+    "slug": "rest-client",
+    "name": "REST Client",
+    "categoryId": "nocode-web",
+    "shortDescription": "Extension VS Code pour lancer des requêtes HTTP depuis des fichiers versionnés.",
+    "shortDescriptionEn": "VS Code extension for running HTTP requests from versioned files.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://marketplace.visualstudio.com/items?itemName=humao.rest-client",
+    "logo": ""
+  },
+  {
+    "id": "revenuecat",
+    "slug": "revenuecat",
+    "name": "RevenueCat",
+    "categoryId": "finance",
+    "shortDescription": "Gestion des achats in-app, abonnements et entitlements mobile.",
+    "shortDescriptionEn": "In-app purchases, subscriptions, and mobile entitlement management.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.revenuecat.com",
+    "logo": ""
+  },
+  {
+    "id": "riverpod",
+    "slug": "riverpod",
+    "name": "Riverpod",
+    "categoryId": "nocode-web",
+    "shortDescription": "State management Flutter/Dart robuste pour apps maintenables.",
+    "shortDescriptionEn": "Robust Flutter/Dart state management for maintainable apps.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://riverpod.dev",
+    "logo": ""
+  },
+  {
+    "id": "saleor",
+    "slug": "saleor",
+    "name": "Saleor",
+    "categoryId": "nocode-web",
+    "shortDescription": "Plateforme commerce GraphQL headless pour projets e-commerce avancés.",
+    "shortDescriptionEn": "GraphQL headless commerce platform for advanced e-commerce projects.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://saleor.io",
+    "logo": ""
+  },
+  {
+    "id": "sanity",
+    "slug": "sanity",
+    "name": "Sanity",
+    "categoryId": "nocode-web",
+    "shortDescription": "CMS headless structuré avec studio personnalisable et API contenu.",
+    "shortDescriptionEn": "Structured headless CMS with customizable studio and content APIs.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.sanity.io",
+    "logo": ""
+  },
+  {
+    "id": "screaming-frog",
+    "slug": "screaming-frog",
+    "name": "Screaming Frog",
+    "categoryId": "analytics",
+    "shortDescription": "Crawler SEO technique pour audits, migrations et refontes.",
+    "shortDescriptionEn": "Technical SEO crawler for audits, migrations, and redesigns.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.screamingfrog.co.uk/seo-spider/",
+    "logo": ""
+  },
+  {
+    "id": "segment",
+    "slug": "segment",
+    "name": "Segment",
+    "categoryId": "analytics",
+    "shortDescription": "CDP pour collecter, router et gouverner les données clients.",
+    "shortDescriptionEn": "CDP for collecting, routing, and governing customer data.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://segment.com",
+    "logo": ""
+  },
+  {
+    "id": "semgrep",
+    "slug": "semgrep",
+    "name": "Semgrep",
+    "categoryId": "security",
+    "shortDescription": "Analyse statique rapide pour règles sécurité, qualité et conformité.",
+    "shortDescriptionEn": "Fast static analysis for security, quality, and compliance rules.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://semgrep.dev",
+    "logo": ""
+  },
+  {
+    "id": "seo-meta-in-1-click",
+    "slug": "seo-meta-in-1-click",
+    "name": "SEO Meta in 1 Click",
+    "categoryId": "analytics",
+    "shortDescription": "Extension pour vérifier titres, métas, headings et données SEO d’une page.",
+    "shortDescriptionEn": "Extension for checking titles, metadata, headings, and SEO page data.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.seo-extension.com",
+    "logo": ""
+  },
+  {
+    "id": "shipstation",
+    "slug": "shipstation",
+    "name": "ShipStation",
+    "categoryId": "nocode-web",
+    "shortDescription": "Gestion d’expéditions, étiquettes et transporteurs pour e-commerce.",
+    "shortDescriptionEn": "Shipping labels, carriers, and fulfillment workflows for e-commerce.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.shipstation.com",
+    "logo": ""
+  },
+  {
+    "id": "shopify-cli",
+    "slug": "shopify-cli",
+    "name": "Shopify CLI",
+    "categoryId": "nocode-web",
+    "shortDescription": "CLI officielle pour thèmes, apps Shopify et workflows développeur.",
+    "shortDescriptionEn": "Official CLI for Shopify themes, apps, and developer workflows.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://shopify.dev/docs/api/shopify-cli",
+    "logo": ""
+  },
+  {
+    "id": "shopify-payments",
+    "slug": "shopify-payments",
+    "name": "Shopify Payments",
+    "categoryId": "finance",
+    "shortDescription": "Paiement intégré Shopify pour cartes, checkout et gestion e-commerce.",
+    "shortDescriptionEn": "Built-in Shopify payment solution for cards, checkout, and commerce management.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.shopify.com/payments",
+    "logo": ""
+  },
+  {
+    "id": "snowflake",
+    "slug": "snowflake",
+    "name": "Snowflake",
+    "categoryId": "analytics",
+    "shortDescription": "Data cloud / warehouse pour données, partage et workloads analytiques.",
+    "shortDescriptionEn": "Data cloud / warehouse for data, sharing, and analytics workloads.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.snowflake.com",
+    "logo": ""
+  },
+  {
+    "id": "snyk",
+    "slug": "snyk",
+    "name": "Snyk",
+    "categoryId": "security",
+    "shortDescription": "Scan dépendances, containers et code pour vulnérabilités.",
+    "shortDescriptionEn": "Dependency, container, and code scanning for vulnerabilities.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://snyk.io",
+    "logo": ""
+  },
+  {
+    "id": "sqlalchemy",
+    "slug": "sqlalchemy",
+    "name": "SQLAlchemy",
+    "categoryId": "nocode-web",
+    "shortDescription": "ORM Python mature pour modéliser bases relationnelles et requêtes complexes.",
+    "shortDescriptionEn": "Mature Python ORM for modeling relational databases and complex queries.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.sqlalchemy.org",
+    "logo": ""
+  },
+  {
+    "id": "stark",
+    "slug": "stark",
+    "name": "Stark",
+    "categoryId": "design-tools",
+    "shortDescription": "Outil accessibilité design pour contrastes, annotations et conformité.",
+    "shortDescriptionEn": "Design accessibility tool for contrast, annotations, and compliance.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.getstark.co",
+    "logo": ""
+  },
+  {
+    "id": "steamworks",
+    "slug": "steamworks",
+    "name": "Steamworks",
+    "categoryId": "creation",
+    "shortDescription": "Portail développeur Steam pour publier, tester et gérer un jeu.",
+    "shortDescriptionEn": "Steam developer portal for publishing, testing, and managing a game.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://partner.steamgames.com",
+    "logo": ""
+  },
+  {
+    "id": "strapi",
+    "slug": "strapi",
+    "name": "Strapi",
+    "categoryId": "nocode-web",
+    "shortDescription": "CMS headless open source Node.js pour API contenu et back-office.",
+    "shortDescriptionEn": "Open-source Node.js headless CMS for content APIs and admin panels.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://strapi.io",
+    "logo": ""
+  },
+  {
+    "id": "tailwind-css",
+    "slug": "tailwind-css",
+    "name": "Tailwind CSS",
+    "categoryId": "ui-components",
+    "shortDescription": "Framework CSS utilitaire pour construire vite des interfaces propres et cohérentes.",
+    "shortDescriptionEn": "Utility-first CSS framework for quickly building clean, consistent interfaces.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://tailwindcss.com",
+    "logo": ""
+  },
+  {
+    "id": "terraform",
+    "slug": "terraform",
+    "name": "Terraform",
+    "categoryId": "nocode-web",
+    "shortDescription": "Infrastructure as code pour provisionner cloud, réseaux et services.",
+    "shortDescriptionEn": "Infrastructure as code for provisioning cloud, networks, and services.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.terraform.io",
+    "logo": ""
+  },
+  {
+    "id": "three-js",
+    "slug": "three-js",
+    "name": "Three.js",
+    "categoryId": "creation",
+    "shortDescription": "Librairie JavaScript 3D/WebGL pour expériences web immersives.",
+    "shortDescriptionEn": "JavaScript 3D/WebGL library for immersive web experiences.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://threejs.org",
+    "logo": ""
+  },
+  {
+    "id": "thunder-client",
+    "slug": "thunder-client",
+    "name": "Thunder Client",
+    "categoryId": "nocode-web",
+    "shortDescription": "Client API léger intégré à VS Code pour tester endpoints et collections simples.",
+    "shortDescriptionEn": "Lightweight API client inside VS Code for testing endpoints and simple collections.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.thunderclient.com",
+    "logo": ""
+  },
+  {
+    "id": "timber",
+    "slug": "timber",
+    "name": "Timber",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework WordPress avec Twig pour séparer logique PHP et templates.",
+    "shortDescriptionEn": "WordPress framework using Twig to separate PHP logic and templates.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://timber.github.io/docs/",
+    "logo": ""
+  },
+  {
+    "id": "tremor",
+    "slug": "tremor",
+    "name": "Tremor",
+    "categoryId": "ui-components",
+    "shortDescription": "Composants React pour dashboards, métriques et dataviz produit.",
+    "shortDescriptionEn": "React components for dashboards, metrics, and product dataviz.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.tremor.so",
+    "logo": ""
+  },
+  {
+    "id": "typescript",
+    "slug": "typescript",
+    "name": "TypeScript",
+    "categoryId": "nocode-web",
+    "shortDescription": "Surcouche typée de JavaScript devenue centrale dans les stacks web modernes.",
+    "shortDescriptionEn": "Typed JavaScript layer that has become central in modern web stacks.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.typescriptlang.org",
+    "logo": ""
+  },
+  {
+    "id": "uptimerobot",
+    "slug": "uptimerobot",
+    "name": "UptimeRobot",
+    "categoryId": "analytics",
+    "shortDescription": "Monitoring disponibilité simple avec alertes HTTP, ping et ports.",
+    "shortDescriptionEn": "Simple uptime monitoring with HTTP, ping, and port alerts.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://uptimerobot.com",
+    "logo": ""
+  },
+  {
+    "id": "uv",
+    "slug": "uv",
+    "name": "uv",
+    "categoryId": "nocode-web",
+    "shortDescription": "Gestionnaire Python rapide pour environnements, packages et exécution.",
+    "shortDescriptionEn": "Fast Python manager for environments, packages, and execution.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://github.com/astral-sh/uv",
+    "logo": ""
+  },
+  {
+    "id": "vercel-ai-sdk",
+    "slug": "vercel-ai-sdk",
+    "name": "Vercel AI SDK",
+    "categoryId": "ai-general",
+    "shortDescription": "SDK TypeScript pour interfaces IA, streaming et appels modèles.",
+    "shortDescriptionEn": "TypeScript SDK for AI interfaces, streaming, and model calls.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://sdk.vercel.ai",
+    "logo": ""
+  },
+  {
+    "id": "vercel-analytics",
+    "slug": "vercel-analytics",
+    "name": "Vercel Analytics",
+    "categoryId": "analytics",
+    "shortDescription": "Analytics web et vitesse intégrés à Vercel.",
+    "shortDescriptionEn": "Web analytics and speed insights integrated with Vercel.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://vercel.com/analytics",
+    "logo": ""
+  },
+  {
+    "id": "vitest",
+    "slug": "vitest",
+    "name": "Vitest",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework de test rapide pour projets Vite, TypeScript et React.",
+    "shortDescriptionEn": "Fast test framework for Vite, TypeScript, and React projects.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://vitest.dev",
+    "logo": ""
+  },
+  {
+    "id": "voiceover",
+    "slug": "voiceover",
+    "name": "VoiceOver",
+    "categoryId": "security",
+    "shortDescription": "Lecteur d’écran Apple intégré à macOS et iOS.",
+    "shortDescriptionEn": "Apple screen reader built into macOS and iOS.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://support.apple.com/guide/voiceover/welcome/mac",
+    "logo": ""
+  },
+  {
+    "id": "vs-code",
+    "slug": "vs-code",
+    "name": "VS Code",
+    "categoryId": "nocode-web",
+    "shortDescription": "Éditeur de code standard, léger et extensible pour projets web, mobile, data et scripts.",
+    "shortDescriptionEn": "Standard lightweight, extensible code editor for web, mobile, data, and scripting work.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://code.visualstudio.com",
+    "logo": ""
+  },
+  {
+    "id": "webpagetest",
+    "slug": "webpagetest",
+    "name": "WebPageTest",
+    "categoryId": "analytics",
+    "shortDescription": "Tests de performance détaillés par localisation, réseau et navigateur.",
+    "shortDescriptionEn": "Detailed performance tests by location, network, and browser.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.webpagetest.org",
+    "logo": ""
+  },
+  {
+    "id": "webxr",
+    "slug": "webxr",
+    "name": "WebXR",
+    "categoryId": "creation",
+    "shortDescription": "Standard web pour expériences AR/VR dans le navigateur.",
+    "shortDescriptionEn": "Web standard for AR/VR experiences in the browser.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://immersiveweb.dev",
+    "logo": ""
+  },
+  {
+    "id": "wordfence",
+    "slug": "wordfence",
+    "name": "Wordfence",
+    "categoryId": "security",
+    "shortDescription": "Sécurité WordPress : firewall, scans, alertes et protection brute force.",
+    "shortDescriptionEn": "WordPress security: firewall, scans, alerts, and brute-force protection.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.wordfence.com",
+    "logo": ""
+  },
+  {
+    "id": "wordpress",
+    "slug": "wordpress",
+    "name": "WordPress",
+    "categoryId": "nocode-web",
+    "shortDescription": "CMS dominant pour sites éditoriaux, vitrines, contenus et écosystème plugin.",
+    "shortDescriptionEn": "Dominant CMS for editorial sites, business websites, content, and plugins.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://wordpress.org",
+    "logo": ""
+  },
+  {
+    "id": "wp-rocket",
+    "slug": "wp-rocket",
+    "name": "WP Rocket",
+    "categoryId": "analytics",
+    "shortDescription": "Plugin cache WordPress pour améliorer vitesse, Core Web Vitals et expérience.",
+    "shortDescriptionEn": "WordPress cache plugin for speed, Core Web Vitals, and experience.",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "",
+    "websiteUrl": "https://wp-rocket.me",
+    "logo": ""
+  },
+  {
+    "id": "wwise",
+    "slug": "wwise",
+    "name": "Wwise",
+    "categoryId": "creation",
+    "shortDescription": "Middleware audio professionnel pour jeux vidéo et expériences interactives.",
+    "shortDescriptionEn": "Professional audio middleware for video games and interactive experiences.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.audiokinetic.com",
+    "logo": ""
+  },
+  {
+    "id": "radix-ui",
+    "slug": "radix-ui",
+    "name": "Radix UI",
+    "categoryId": "ui-components",
+    "shortDescription": "Composants React headless pour construire des interfaces accessibles et personnalisables.",
+    "shortDescriptionEn": "Headless React components for accessible, customizable interfaces.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.radix-ui.com",
+    "logo": ""
+  },
+  {
+    "id": "django",
+    "slug": "django",
+    "name": "Django",
+    "categoryId": "nocode-web",
+    "shortDescription": "Framework Python batteries-included pour applications web, back-offices et API.",
+    "shortDescriptionEn": "Batteries-included Python framework for web apps, back offices, and APIs.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.djangoproject.com",
+    "logo": ""
+  },
+  {
+    "id": "flask",
+    "slug": "flask",
+    "name": "Flask",
+    "categoryId": "nocode-web",
+    "shortDescription": "Micro-framework Python pour API, prototypes et services légers.",
+    "shortDescriptionEn": "Python micro-framework for APIs, prototypes, and lightweight services.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://flask.palletsprojects.com",
+    "logo": ""
+  },
+  {
+    "id": "pandas",
+    "slug": "pandas",
+    "name": "Pandas",
+    "categoryId": "analytics",
+    "shortDescription": "Librairie Python pour manipulation, nettoyage et analyse de données.",
+    "shortDescriptionEn": "Python library for data manipulation, cleaning, and analysis.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://pandas.pydata.org",
+    "logo": ""
+  },
+  {
+    "id": "sql",
+    "slug": "sql",
+    "name": "SQL",
+    "categoryId": "analytics",
+    "shortDescription": "Langage de requête pour bases relationnelles, analytics et transformations data.",
+    "shortDescriptionEn": "Query language for relational databases, analytics, and data transformations.",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://en.wikipedia.org/wiki/SQL",
+    "logo": ""
   }
 ]

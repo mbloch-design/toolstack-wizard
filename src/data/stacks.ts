@@ -30,7 +30,31 @@ export type StackSubProfile =
   | "ai-coding"
   | "no-code"
   | "admin"
-  | "agency";
+  | "agency"
+  | "full-stack"
+  | "front-end"
+  | "back-end"
+  | "next-react"
+  | "wordpress-dev"
+  | "shopify-dev"
+  | "webflow-dev"
+  | "mobile-dev"
+  | "devops"
+  | "python-dev"
+  | "data-dev"
+  | "api-integration"
+  | "internal-tools"
+  | "appsec"
+  | "performance-web"
+  | "headless-cms"
+  | "qa-automation"
+  | "game-dev"
+  | "ar-vr"
+  | "creative-coding"
+  | "maintenance-dev"
+  | "mvp-startup"
+  | "web-redesign"
+  | "accessibility-dev";
 
 export interface StackToolSlot {
   role: string;
@@ -141,6 +165,30 @@ export const STACK_SUB_PROFILES: { value: StackSubProfile | "all"; label: string
   { value: "no-code", label: "No-code", labelEn: "No-code", personas: ["solo", "dev"] },
   { value: "admin", label: "Admin / finance", labelEn: "Admin / finance", personas: ["solo", "consultant"] },
   { value: "agency", label: "Agence", labelEn: "Agency", personas: ["ops"] },
+  { value: "full-stack", label: "Full-stack", labelEn: "Full-stack", personas: ["dev"] },
+  { value: "front-end", label: "Front-end", labelEn: "Front-end", personas: ["dev"] },
+  { value: "back-end", label: "Back-end", labelEn: "Back-end", personas: ["dev"] },
+  { value: "next-react", label: "Next.js / React", labelEn: "Next.js / React", personas: ["dev"] },
+  { value: "wordpress-dev", label: "WordPress", labelEn: "WordPress", personas: ["dev"] },
+  { value: "shopify-dev", label: "Shopify", labelEn: "Shopify", personas: ["dev"] },
+  { value: "webflow-dev", label: "Webflow avancé", labelEn: "Advanced Webflow", personas: ["dev"] },
+  { value: "mobile-dev", label: "Mobile", labelEn: "Mobile", personas: ["dev"] },
+  { value: "devops", label: "DevOps", labelEn: "DevOps", personas: ["dev"] },
+  { value: "python-dev", label: "Python", labelEn: "Python", personas: ["dev"] },
+  { value: "data-dev", label: "Data / analytics dev", labelEn: "Data / analytics dev", personas: ["dev"] },
+  { value: "api-integration", label: "API / intégrations", labelEn: "API / integrations", personas: ["dev"] },
+  { value: "internal-tools", label: "Apps internes", labelEn: "Internal tools", personas: ["dev"] },
+  { value: "appsec", label: "Sécurité applicative", labelEn: "Application security", personas: ["dev"] },
+  { value: "performance-web", label: "Performance web", labelEn: "Web performance", personas: ["dev"] },
+  { value: "headless-cms", label: "CMS headless", labelEn: "Headless CMS", personas: ["dev"] },
+  { value: "qa-automation", label: "QA automation", labelEn: "QA automation", personas: ["dev"] },
+  { value: "game-dev", label: "Game dev", labelEn: "Game dev", personas: ["dev"] },
+  { value: "ar-vr", label: "AR/VR", labelEn: "AR/VR", personas: ["dev"] },
+  { value: "creative-coding", label: "Creative coding", labelEn: "Creative coding", personas: ["dev"] },
+  { value: "maintenance-dev", label: "Maintenance", labelEn: "Maintenance", personas: ["dev"] },
+  { value: "mvp-startup", label: "MVP startup", labelEn: "Startup MVP", personas: ["dev"] },
+  { value: "web-redesign", label: "Refonte web", labelEn: "Web redesign", personas: ["dev"] },
+  { value: "accessibility-dev", label: "Accessibilité", labelEn: "Accessibility", personas: ["dev"] },
 ];
 
 export const STACKS: StackGuide[] = [
@@ -9843,6 +9891,6196 @@ export const STACKS: StackGuide[] = [
       { role: "Vente", roleEn: "Sales", slug: "pipedrive", reason: "Suffisant pour pipeline fondateur avant une suite CRM complète.", reasonEn: "Enough for founder-led sales before a full CRM suite." },
       { role: "Paiement", roleEn: "Payment", slug: "stripe", reason: "Abonnements, paiement et facturation SaaS.", reasonEn: "Subscriptions, payments, and SaaS billing." },
     ],
+  },
+  {
+    "id": "dev-fullstack-freelance",
+    "slug": "developpeur-full-stack-freelance",
+    "title": "Stack full-stack",
+    "titleEn": "Full-stack stack",
+    "subtitle": "Next.js, API, auth, DB, déploiement, monitoring et paiement dans une chaîne cohérente.",
+    "subtitleEn": "Next.js, API, auth, DB, déploiement, monitoring et paiement dans une chaîne cohérente.",
+    "persona": "dev",
+    "subProfiles": [
+      "full-stack",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 78,
+    "savings": 140,
+    "risk": "Le piège : empiler services front, back, DB et auth sans responsabilité claire. Un full-stack freelance doit livrer une app maintenable, pas une architecture de scale-up.",
+    "riskEn": "Le piège : empiler services front, back, DB et auth sans responsabilité claire. Un full-stack freelance doit livrer une app maintenable, pas une architecture de scale-up.",
+    "bestFor": "Sites, apps métier, MVP et plateformes complètes pour clients PME/startups.",
+    "bestForEn": "Sites, apps métier, MVP et plateformes complètes pour clients PME/startups.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : empiler services front, back, DB et auth sans responsabilité claire. Un full-stack freelance doit livrer une app maintenable, pas une architecture de scale-up. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : empiler services front, back, DB et auth sans responsabilité claire. Un full-stack freelance doit livrer une app maintenable, pas une architecture de scale-up. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "IDE IA",
+        "roleEn": "AI IDE",
+        "slug": "cursor",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Typage",
+        "roleEn": "Typing",
+        "slug": "typescript",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "UI",
+        "roleEn": "UI",
+        "slug": "react",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "node-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "nestjs",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "postgresql",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "prisma",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-frontend",
+    "slug": "developpeur-front-end-freelance",
+    "title": "Stack front-end",
+    "titleEn": "Front-end stack",
+    "subtitle": "La stack doit relier design, composants, tests visuels et preview client.",
+    "subtitleEn": "La stack doit relier design, composants, tests visuels et preview client.",
+    "persona": "dev",
+    "subProfiles": [
+      "front-end",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 52,
+    "savings": 110,
+    "risk": "Le piège : confondre bibliothèque UI et design system. Sans Storybook, tests et règles d’accessibilité, les composants deviennent fragiles.",
+    "riskEn": "Le piège : confondre bibliothèque UI et design system. Sans Storybook, tests et règles d’accessibilité, les composants deviennent fragiles.",
+    "bestFor": "Interfaces, design systems, performance, accessibilité et intégration produit.",
+    "bestForEn": "Interfaces, design systems, performance, accessibilité et intégration produit.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : confondre bibliothèque UI et design system. Sans Storybook, tests et règles d’accessibilité, les composants deviennent fragiles. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : confondre bibliothèque UI et design system. Sans Storybook, tests et règles d’accessibilité, les composants deviennent fragiles. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "IDE IA",
+        "roleEn": "AI IDE",
+        "slug": "cursor",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Typage",
+        "roleEn": "Typing",
+        "slug": "typescript",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "UI",
+        "roleEn": "UI",
+        "slug": "react",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "CSS",
+        "roleEn": "CSS",
+        "slug": "tailwind-css",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "UI kit",
+        "roleEn": "UI kit",
+        "slug": "shadcn-ui",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "storybook",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "framer-motion",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "playwright",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-backend",
+    "slug": "developpeur-back-end-freelance",
+    "title": "Stack back-end",
+    "titleEn": "Back-end stack",
+    "subtitle": "La stack doit couvrir contrat API, DB, queues, logs, tests et secrets.",
+    "subtitleEn": "La stack doit couvrir contrat API, DB, queues, logs, tests et secrets.",
+    "persona": "dev",
+    "subProfiles": [
+      "back-end",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 68,
+    "savings": 130,
+    "risk": "Le piège : livrer une API qui marche en local mais sans logs, retries ni doc. En freelance, la maintenance se vend dès l’architecture.",
+    "riskEn": "Le piège : livrer une API qui marche en local mais sans logs, retries ni doc. En freelance, la maintenance se vend dès l’architecture.",
+    "bestFor": "API, logique métier, intégrations, jobs et sécurité serveur.",
+    "bestForEn": "API, logique métier, intégrations, jobs et sécurité serveur.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : livrer une API qui marche en local mais sans logs, retries ni doc. En freelance, la maintenance se vend dès l’architecture. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : livrer une API qui marche en local mais sans logs, retries ni doc. En freelance, la maintenance se vend dès l’architecture. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "IDE IA",
+        "roleEn": "AI IDE",
+        "slug": "cursor",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "node-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "nestjs",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "python",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "fastapi",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "go",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "postgresql",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "redis",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "prisma",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-next-react",
+    "slug": "developpeur-nextjs-react-freelance",
+    "title": "Stack Next.js",
+    "titleEn": "Next.js stack",
+    "subtitle": "Next.js doit porter front, routing, API légère, SEO, auth et preview sans sur-ingénierie.",
+    "subtitleEn": "Next.js doit porter front, routing, API légère, SEO, auth et preview sans sur-ingénierie.",
+    "persona": "dev",
+    "subProfiles": [
+      "next-react",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 56,
+    "savings": 120,
+    "risk": "Le piège : ajouter un backend séparé trop tôt. Pour beaucoup de missions, Next.js + Supabase + Vercel suffit.",
+    "riskEn": "Le piège : ajouter un backend séparé trop tôt. Pour beaucoup de missions, Next.js + Supabase + Vercel suffit.",
+    "bestFor": "SaaS, dashboards, landing pages et applications React modernes.",
+    "bestForEn": "SaaS, dashboards, landing pages et applications React modernes.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : ajouter un backend séparé trop tôt. Pour beaucoup de missions, Next.js + Supabase + Vercel suffit. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : ajouter un backend séparé trop tôt. Pour beaucoup de missions, Next.js + Supabase + Vercel suffit. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "IDE IA",
+        "roleEn": "AI IDE",
+        "slug": "cursor",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "UI",
+        "roleEn": "UI",
+        "slug": "react",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Typage",
+        "roleEn": "Typing",
+        "slug": "typescript",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "CSS",
+        "roleEn": "CSS",
+        "slug": "tailwind-css",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "UI kit",
+        "roleEn": "UI kit",
+        "slug": "shadcn-ui",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "radix-ui",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "prisma",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-wordpress",
+    "slug": "developpeur-wordpress-freelance",
+    "title": "Stack WordPress",
+    "titleEn": "WordPress stack",
+    "subtitle": "La stack doit sécuriser local, thème, plugins, cache, backup, SEO et maintenance multi-sites.",
+    "subtitleEn": "La stack doit sécuriser local, thème, plugins, cache, backup, SEO et maintenance multi-sites.",
+    "persona": "dev",
+    "subProfiles": [
+      "wordpress-dev",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 82,
+    "savings": 160,
+    "risk": "Le piège : installer un plugin pour chaque problème. Un WordPress rentable est sobre, sauvegardé et surveillé.",
+    "riskEn": "Le piège : installer un plugin pour chaque problème. Un WordPress rentable est sobre, sauvegardé et surveillé.",
+    "bestFor": "Sites vitrines, WooCommerce, maintenance, performance et SEO technique.",
+    "bestForEn": "Sites vitrines, WooCommerce, maintenance, performance et SEO technique.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : installer un plugin pour chaque problème. Un WordPress rentable est sobre, sauvegardé et surveillé. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : installer un plugin pour chaque problème. Un WordPress rentable est sobre, sauvegardé et surveillé. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "wordpress",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "php",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "acf",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "timber",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "elementor",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "bricks",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "woocommerce",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "localwp",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "wp-rocket",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "rank-math",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-shopify",
+    "slug": "developpeur-shopify-freelance",
+    "title": "Stack Shopify",
+    "titleEn": "Shopify stack",
+    "subtitle": "La stack doit couvrir thème, Liquid, app dev, analytics, email, paiement, abonnement et logistique.",
+    "subtitleEn": "La stack doit couvrir thème, Liquid, app dev, analytics, email, paiement, abonnement et logistique.",
+    "persona": "dev",
+    "subProfiles": [
+      "shopify-dev",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 88,
+    "savings": 170,
+    "risk": "Le piège : vendre une boutique sans tracking, emails ni logique de conversion. Shopify dev doit penser revenus, pas seulement thème.",
+    "riskEn": "Le piège : vendre une boutique sans tracking, emails ni logique de conversion. Shopify dev doit penser revenus, pas seulement thème.",
+    "bestFor": "Thèmes, boutiques, apps, checkout, tracking et intégrations e-commerce.",
+    "bestForEn": "Thèmes, boutiques, apps, checkout, tracking et intégrations e-commerce.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : vendre une boutique sans tracking, emails ni logique de conversion. Shopify dev doit penser revenus, pas seulement thème. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : vendre une boutique sans tracking, emails ni logique de conversion. Shopify dev doit penser revenus, pas seulement thème. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "shopify",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "shopify-cli",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "liquid",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "hydrogen",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "remix",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "graphql",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "klaviyo",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "ga4",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "google-tag-manager",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Payment",
+        "slug": "stripe",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-webflow",
+    "slug": "developpeur-webflow-avance",
+    "title": "Stack Webflow",
+    "titleEn": "Webflow stack",
+    "subtitle": "Webflow doit rester maintenable : naming, CMS propre, scripts documentés, formulaires et analytics.",
+    "subtitleEn": "Webflow doit rester maintenable : naming, CMS propre, scripts documentés, formulaires et analytics.",
+    "persona": "dev",
+    "subProfiles": [
+      "webflow-dev",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 64,
+    "savings": 130,
+    "risk": "Le piège : une pile de scripts invisibles. Sans convention Client-First et doc, le site devient impossible à reprendre.",
+    "riskEn": "Le piège : une pile de scripts invisibles. Sans convention Client-First et doc, le site devient impossible à reprendre.",
+    "bestFor": "Sites Webflow complexes, CMS, interactions, custom code et automatisations.",
+    "bestForEn": "Sites Webflow complexes, CMS, interactions, custom code et automatisations.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : une pile de scripts invisibles. Sans convention Client-First et doc, le site devient impossible à reprendre. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : une pile de scripts invisibles. Sans convention Client-First et doc, le site devient impossible à reprendre. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "webflow",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "finsweet",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "client-first",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "relume",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "wized",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "memberstack",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "make",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "zapier",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "airtable",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "tally",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-react-native",
+    "slug": "developpeur-mobile-react-native",
+    "title": "Stack React Native",
+    "titleEn": "React Native stack",
+    "subtitle": "La stack doit inclure Expo, backend, push, achats, crash reporting et publication stores.",
+    "subtitleEn": "La stack doit inclure Expo, backend, push, achats, crash reporting et publication stores.",
+    "persona": "dev",
+    "subProfiles": [
+      "mobile-dev",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 56,
+    "savings": 115,
+    "risk": "Le piège : sous-estimer build, certificats, stores et crash reporting. L’app mobile ne s’arrête pas au code.",
+    "riskEn": "Le piège : sous-estimer build, certificats, stores et crash reporting. L’app mobile ne s’arrête pas au code.",
+    "bestFor": "Apps iOS/Android en JS/TS avec auth, API, build et stores.",
+    "bestForEn": "Apps iOS/Android en JS/TS avec auth, API, build et stores.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : sous-estimer build, certificats, stores et crash reporting. L’app mobile ne s’arrête pas au code. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : sous-estimer build, certificats, stores et crash reporting. L’app mobile ne s’arrête pas au code. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "react-native",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "expo",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Typage",
+        "roleEn": "Typing",
+        "slug": "typescript",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "firebase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "revenuecat",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Erreurs",
+        "roleEn": "Errors",
+        "slug": "sentry",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "eas-build",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "app-store-connect",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "google-play-console",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-flutter",
+    "slug": "developpeur-mobile-flutter",
+    "title": "Stack Flutter",
+    "titleEn": "Flutter stack",
+    "subtitle": "La stack doit cadrer UI, state management, backend, CI mobile, achats et stores.",
+    "subtitleEn": "La stack doit cadrer UI, state management, backend, CI mobile, achats et stores.",
+    "persona": "dev",
+    "subProfiles": [
+      "mobile-dev",
+      "client-delivery"
+    ],
+    "stage": "starter",
+    "budget": "under50",
+    "monthlyBudget": 48,
+    "savings": 110,
+    "risk": "Le piège : choisir Flutter pour aller vite puis bricoler state, builds et stores. La structure compte dès le départ.",
+    "riskEn": "Le piège : choisir Flutter pour aller vite puis bricoler state, builds et stores. La structure compte dès le départ.",
+    "bestFor": "Apps mobiles multiplateformes performantes avec Dart.",
+    "bestForEn": "Apps mobiles multiplateformes performantes avec Dart.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : choisir Flutter pour aller vite puis bricoler state, builds et stores. La structure compte dès le départ. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : choisir Flutter pour aller vite puis bricoler state, builds et stores. La structure compte dès le départ. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "flutter",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "dart",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "firebase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "riverpod",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "bloc",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "codemagic",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "revenuecat",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Erreurs",
+        "roleEn": "Errors",
+        "slug": "sentry",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "app-store-connect",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-saas-solo",
+    "slug": "developpeur-saas-solo",
+    "title": "Stack SaaS solo",
+    "titleEn": "Solo SaaS stack",
+    "subtitle": "La stack doit apprendre vite sans payer une stack scale-up. Auth, paiement, analytics et support doivent être simples.",
+    "subtitleEn": "La stack doit apprendre vite sans payer une stack scale-up. Auth, paiement, analytics et support doivent être simples.",
+    "persona": "dev",
+    "subProfiles": [
+      "mvp-startup",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 92,
+    "savings": 220,
+    "risk": "Le piège : construire une architecture de startup financée avant d’avoir activation, usage et clients payants.",
+    "riskEn": "Le piège : construire une architecture de startup financée avant d’avoir activation, usage et clients payants.",
+    "bestFor": "Produit vendable : app, auth, paiement, emails, analytics, support et monitoring.",
+    "bestForEn": "Produit vendable : app, auth, paiement, emails, analytics, support et monitoring.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : construire une architecture de startup financée avant d’avoir activation, usage et clients payants. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : construire une architecture de startup financée avant d’avoir activation, usage et clients payants. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "IDE IA",
+        "roleEn": "AI IDE",
+        "slug": "cursor",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "neon",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "prisma",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Auth",
+        "roleEn": "Auth",
+        "slug": "clerk",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Payment",
+        "slug": "stripe",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "resend",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "loops",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-ia-llm",
+    "slug": "developpeur-ia-llm-app-builder",
+    "title": "Stack IA / LLM",
+    "titleEn": "AI / LLM stack",
+    "subtitle": "La stack doit suivre prompts, coûts, latence, evals, sécurité et observabilité LLM.",
+    "subtitleEn": "La stack doit suivre prompts, coûts, latence, evals, sécurité et observabilité LLM.",
+    "persona": "dev",
+    "subProfiles": [
+      "ai-coding",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 74,
+    "savings": 180,
+    "risk": "Le piège : faire une démo magique sans traces, evals ni contrôle des coûts. Une app LLM sérieuse s’observe comme un produit.",
+    "riskEn": "Le piège : faire une démo magique sans traces, evals ni contrôle des coûts. Une app LLM sérieuse s’observe comme un produit.",
+    "bestFor": "Apps avec API LLM, RAG, embeddings, agents et workflows IA.",
+    "bestForEn": "Apps avec API LLM, RAG, embeddings, agents et workflows IA.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : faire une démo magique sans traces, evals ni contrôle des coûts. Une app LLM sérieuse s’observe comme un produit. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : faire une démo magique sans traces, evals ni contrôle des coûts. Une app LLM sérieuse s’observe comme un produit. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "openai-api",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "anthropic",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "gemini",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "langchain",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "llamaindex",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "vercel-ai-sdk",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "pgvector",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "pinecone",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "qdrant",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-automation",
+    "slug": "developpeur-automation-n8n-make",
+    "title": "Stack automation",
+    "titleEn": "Automation stack",
+    "subtitle": "La stack doit sécuriser entrées, erreurs, logs, retries et documentation de chaque scénario.",
+    "subtitleEn": "La stack doit sécuriser entrées, erreurs, logs, retries et documentation de chaque scénario.",
+    "persona": "dev",
+    "subProfiles": [
+      "automation",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 58,
+    "savings": 125,
+    "risk": "Le piège : automatiser un process flou. Si le workflow manuel n’est pas stable, n8n ou Make automatisent juste le désordre.",
+    "riskEn": "Le piège : automatiser un process flou. Si le workflow manuel n’est pas stable, n8n ou Make automatisent juste le désordre.",
+    "bestFor": "Automatisations métier, webhooks, API, CRM, reporting et workflows low-code.",
+    "bestForEn": "Automatisations métier, webhooks, API, CRM, reporting et workflows low-code.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : automatiser un process flou. Si le workflow manuel n’est pas stable, n8n ou Make automatisent juste le désordre. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : automatiser un process flou. Si le workflow manuel n’est pas stable, n8n ou Make automatisent juste le désordre. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "n8n",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "make",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "zapier",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "airtable",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "google-sheets",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "hubspot",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "pipedrive",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "slack",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "tally",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-devops",
+    "slug": "developpeur-devops-freelance",
+    "title": "Stack DevOps",
+    "titleEn": "DevOps stack",
+    "subtitle": "La stack doit choisir le bon niveau : Vercel/Railway pour simple, Terraform/Kubernetes seulement si besoin réel.",
+    "subtitleEn": "La stack doit choisir le bon niveau : Vercel/Railway pour simple, Terraform/Kubernetes seulement si besoin réel.",
+    "persona": "dev",
+    "subProfiles": [
+      "devops",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 86,
+    "savings": 210,
+    "risk": "Le piège : vendre Kubernetes quand un déploiement Vercel ou Render répond au besoin. DevOps freelance = proportionner le risque.",
+    "riskEn": "Le piège : vendre Kubernetes quand un déploiement Vercel ou Render répond au besoin. DevOps freelance = proportionner le risque.",
+    "bestFor": "CI/CD, cloud, Docker, monitoring, backups, secrets et infra as code.",
+    "bestForEn": "CI/CD, cloud, Docker, monitoring, backups, secrets et infra as code.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : vendre Kubernetes quand un déploiement Vercel ou Render répond au besoin. DevOps freelance = proportionner le risque. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : vendre Kubernetes quand un déploiement Vercel ou Render répond au besoin. DevOps freelance = proportionner le risque. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Environnements",
+        "roleEn": "Environments",
+        "slug": "docker",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "CI/CD",
+        "roleEn": "CI/CD",
+        "slug": "github-actions",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "terraform",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "kubernetes",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "aws",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "gcp",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "azure",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Déploiement",
+        "roleEn": "Deployment",
+        "slug": "vercel",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "railway",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "render",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-python",
+    "slug": "developpeur-python-freelance",
+    "title": "Stack Python",
+    "titleEn": "Python stack",
+    "subtitle": "La stack doit gérer environnements, dépendances, tests, packaging, notebooks et déploiement.",
+    "subtitleEn": "La stack doit gérer environnements, dépendances, tests, packaging, notebooks et déploiement.",
+    "persona": "dev",
+    "subProfiles": [
+      "python-dev",
+      "client-delivery"
+    ],
+    "stage": "starter",
+    "budget": "under50",
+    "monthlyBudget": 42,
+    "savings": 95,
+    "risk": "Le piège : des scripts utiles mais impossibles à relancer. Un freelance Python doit livrer un environnement reproductible.",
+    "riskEn": "Le piège : des scripts utiles mais impossibles à relancer. Un freelance Python doit livrer un environnement reproductible.",
+    "bestFor": "Scripts, API, data, automatisation, scraping légal, IA légère et backends.",
+    "bestForEn": "Scripts, API, data, automatisation, scraping légal, IA légère et backends.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : des scripts utiles mais impossibles à relancer. Un freelance Python doit livrer un environnement reproductible. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : des scripts utiles mais impossibles à relancer. Un freelance Python doit livrer un environnement reproductible. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "python",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "fastapi",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "django",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "flask",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "uv",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "poetry",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "pytest",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "pandas",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "jupyter",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Environnements",
+        "roleEn": "Environments",
+        "slug": "docker",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-data-analytics",
+    "slug": "developpeur-data-analytics-freelance",
+    "title": "Stack data dev",
+    "titleEn": "Data dev stack",
+    "subtitle": "La stack doit relier collecte, transformation, documentation, visualisation et activation métier.",
+    "subtitleEn": "La stack doit relier collecte, transformation, documentation, visualisation et activation métier.",
+    "persona": "dev",
+    "subProfiles": [
+      "data-dev",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 72,
+    "savings": 150,
+    "risk": "Le piège : livrer un dashboard joli mais sans pipeline fiable. La valeur est dans la donnée propre et le rafraîchissement.",
+    "riskEn": "Le piège : livrer un dashboard joli mais sans pipeline fiable. La valeur est dans la donnée propre et le rafraîchissement.",
+    "bestFor": "Pipelines, dashboards, tracking, warehouse et nettoyage de données.",
+    "bestForEn": "Pipelines, dashboards, tracking, warehouse et nettoyage de données.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : livrer un dashboard joli mais sans pipeline fiable. La valeur est dans la donnée propre et le rafraîchissement. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : livrer un dashboard joli mais sans pipeline fiable. La valeur est dans la donnée propre et le rafraîchissement. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "python",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "sql",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "dbt",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "airbyte",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "bigquery",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "snowflake",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "postgresql",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "metabase",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "power-bi",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-ecommerce-custom",
+    "slug": "developpeur-ecommerce-custom",
+    "title": "Stack e-commerce custom",
+    "titleEn": "Custom e-commerce stack",
+    "subtitle": "La stack doit couvrir catalogue, search, checkout, taxes, emails, analytics et back-office.",
+    "subtitleEn": "La stack doit couvrir catalogue, search, checkout, taxes, emails, analytics et back-office.",
+    "persona": "dev",
+    "subProfiles": [
+      "ecommerce",
+      "client-delivery"
+    ],
+    "stage": "scale",
+    "budget": "under150",
+    "monthlyBudget": 78,
+    "savings": 180,
+    "risk": "Le piège : refaire Shopify sans raison. Le custom se justifie par logique métier, marketplace ou intégrations fortes.",
+    "riskEn": "Le piège : refaire Shopify sans raison. Le custom se justifie par logique métier, marketplace ou intégrations fortes.",
+    "bestFor": "Commerce headless, marketplace, paiement, catalogue, stock et ERP léger.",
+    "bestForEn": "Commerce headless, marketplace, paiement, catalogue, stock et ERP léger.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : refaire Shopify sans raison. Le custom se justifie par logique métier, marketplace ou intégrations fortes. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : refaire Shopify sans raison. Le custom se justifie par logique métier, marketplace ou intégrations fortes. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "medusa",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "saleor",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "shopify",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Payment",
+        "slug": "stripe",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "algolia",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "sanity",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "strapi",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "postgresql",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-api-integrations",
+    "slug": "developpeur-api-integrations",
+    "title": "Stack API intégrations",
+    "titleEn": "API integrations stack",
+    "subtitle": "La stack doit gérer OAuth, webhooks, retries, queues, logs, docs et secrets.",
+    "subtitleEn": "La stack doit gérer OAuth, webhooks, retries, queues, logs, docs et secrets.",
+    "persona": "dev",
+    "subProfiles": [
+      "api-integration",
+      "client-delivery"
+    ],
+    "stage": "starter",
+    "budget": "under50",
+    "monthlyBudget": 48,
+    "savings": 105,
+    "risk": "Le piège : un script de synchro sans logs ni retries. L’intégration est fiable seulement quand les erreurs sont prévues.",
+    "riskEn": "Le piège : un script de synchro sans logs ni retries. L’intégration est fiable seulement quand les erreurs sont prévues.",
+    "bestFor": "Connexions CRM, ERP, paiement, marketing, data et systèmes internes.",
+    "bestForEn": "Connexions CRM, ERP, paiement, marketing, data et systèmes internes.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : un script de synchro sans logs ni retries. L’intégration est fiable seulement quand les erreurs sont prévues. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : un script de synchro sans logs ni retries. L’intégration est fiable seulement quand les erreurs sont prévues. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "node-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "python",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "fastapi",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "nestjs",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "postman",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "insomnia",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "openapi",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "redis",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "bullmq",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "celery",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-internal-tools",
+    "slug": "developpeur-app-interne-dashboard",
+    "title": "Stack outils internes",
+    "titleEn": "Internal tools stack",
+    "subtitle": "La stack doit choisir entre low-code rapide et code custom selon complexité métier.",
+    "subtitleEn": "La stack doit choisir entre low-code rapide et code custom selon complexité métier.",
+    "persona": "dev",
+    "subProfiles": [
+      "internal-tools",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 55,
+    "savings": 140,
+    "risk": "Le piège : coder un back-office complet quand Retool ou Appsmith suffisent. Le custom doit être réservé aux contraintes fortes.",
+    "riskEn": "Le piège : coder un back-office complet quand Retool ou Appsmith suffisent. Le custom doit être réservé aux contraintes fortes.",
+    "bestFor": "Back-offices, dashboards, CRM custom, tables, rôles et workflows internes.",
+    "bestForEn": "Back-offices, dashboards, CRM custom, tables, rôles et workflows internes.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : coder un back-office complet quand Retool ou Appsmith suffisent. Le custom doit être réservé aux contraintes fortes. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : coder un back-office complet quand Retool ou Appsmith suffisent. Le custom doit être réservé aux contraintes fortes. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "retool",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "appsmith",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "budibase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "postgresql",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Auth",
+        "roleEn": "Auth",
+        "slug": "clerk",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "tremor",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "recharts",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Déploiement",
+        "roleEn": "Deployment",
+        "slug": "vercel",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-appsec",
+    "slug": "developpeur-securite-applicative",
+    "title": "Stack sécurité applicative",
+    "titleEn": "App security stack",
+    "subtitle": "La stack doit combiner scan automatique, vérification manuelle et rapport exploitable par le client.",
+    "subtitleEn": "La stack doit combiner scan automatique, vérification manuelle et rapport exploitable par le client.",
+    "persona": "dev",
+    "subProfiles": [
+      "appsec",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 64,
+    "savings": 160,
+    "risk": "Le piège : confondre scan et audit. Un bon livrable explique risque, impact, correction et priorité.",
+    "riskEn": "Le piège : confondre scan et audit. Un bon livrable explique risque, impact, correction et priorité.",
+    "bestFor": "Audit apps, dépendances, secrets, auth, headers, RGPD et rapports sécurité.",
+    "bestForEn": "Audit apps, dépendances, secrets, auth, headers, RGPD et rapports sécurité.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : confondre scan et audit. Un bon livrable explique risque, impact, correction et priorité. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : confondre scan et audit. Un bon livrable explique risque, impact, correction et priorité. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "snyk",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "github-advanced-security",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "dependabot",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "semgrep",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "owasp-zap",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "burp-suite",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "1password",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "doppler",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Erreurs",
+        "roleEn": "Errors",
+        "slug": "sentry",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "cloudflare",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-performance-web",
+    "slug": "developpeur-performance-web",
+    "title": "Stack performance web",
+    "titleEn": "Web performance stack",
+    "subtitle": "La stack doit mesurer terrain + labo, puis prioriser les gains visibles utilisateur.",
+    "subtitleEn": "La stack doit mesurer terrain + labo, puis prioriser les gains visibles utilisateur.",
+    "persona": "dev",
+    "subProfiles": [
+      "performance-web",
+      "client-delivery"
+    ],
+    "stage": "starter",
+    "budget": "under50",
+    "monthlyBudget": 39,
+    "savings": 90,
+    "risk": "Le piège : optimiser un score Lighthouse sans regarder les vrais utilisateurs, le business et les scripts tiers.",
+    "riskEn": "Le piège : optimiser un score Lighthouse sans regarder les vrais utilisateurs, le business et les scripts tiers.",
+    "bestFor": "Core Web Vitals, bundle, images, cache, scripts tiers et monitoring vitesse.",
+    "bestForEn": "Core Web Vitals, bundle, images, cache, scripts tiers et monitoring vitesse.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : optimiser un score Lighthouse sans regarder les vrais utilisateurs, le business et les scripts tiers. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : optimiser un score Lighthouse sans regarder les vrais utilisateurs, le business et les scripts tiers. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "lighthouse",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "pagespeed-insights",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "webpagetest",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "chrome-devtools",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Erreurs",
+        "roleEn": "Errors",
+        "slug": "sentry",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "vercel-analytics",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "cloudflare",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "partytown",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "plausible",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-headless-cms",
+    "slug": "developpeur-cms-headless",
+    "title": "Stack CMS headless",
+    "titleEn": "Headless CMS stack",
+    "subtitle": "La stack doit cadrer modèle de contenu, permissions, preview, recherche, médias et migrations.",
+    "subtitleEn": "La stack doit cadrer modèle de contenu, permissions, preview, recherche, médias et migrations.",
+    "persona": "dev",
+    "subProfiles": [
+      "headless-cms",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 62,
+    "savings": 135,
+    "risk": "Le piège : choisir un CMS pour le dev au lieu de l’équipe éditoriale. Le meilleur CMS est celui que le client utilise proprement.",
+    "riskEn": "Le piège : choisir un CMS pour le dev au lieu de l’équipe éditoriale. Le meilleur CMS est celui que le client utilise proprement.",
+    "bestFor": "Sites et apps avec contenus structurés, preview, API et SEO.",
+    "bestForEn": "Sites et apps avec contenus structurés, preview, API et SEO.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : choisir un CMS pour le dev au lieu de l’équipe éditoriale. Le meilleur CMS est celui que le client utilise proprement. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : choisir un CMS pour le dev au lieu de l’équipe éditoriale. Le meilleur CMS est celui que le client utilise proprement. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "sanity",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "contentful",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "strapi",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "directus",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "payload-cms",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Déploiement",
+        "roleEn": "Deployment",
+        "slug": "vercel",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "algolia",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "cloudinary",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Analytics",
+        "roleEn": "Analytics",
+        "slug": "posthog",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-crm-hubspot-salesforce",
+    "slug": "developpeur-crm-hubspot-salesforce",
+    "title": "Stack CRM dev",
+    "titleEn": "CRM dev stack",
+    "subtitle": "La stack doit relier CRM, automation, tracking, data qualité et documentation.",
+    "subtitleEn": "La stack doit relier CRM, automation, tracking, data qualité et documentation.",
+    "persona": "dev",
+    "subProfiles": [
+      "crm-sales",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 66,
+    "savings": 145,
+    "risk": "Le piège : automatiser un CRM sale. Avant workflow, il faut clarifier champs, pipeline et responsabilités.",
+    "riskEn": "Le piège : automatiser un CRM sale. Avant workflow, il faut clarifier champs, pipeline et responsabilités.",
+    "bestFor": "Paramétrage CRM, formulaires, workflows, intégrations, reporting et API.",
+    "bestForEn": "Paramétrage CRM, formulaires, workflows, intégrations, reporting et API.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : automatiser un CRM sale. Avant workflow, il faut clarifier champs, pipeline et responsabilités. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : automatiser un CRM sale. Avant workflow, il faut clarifier champs, pipeline et responsabilités. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "hubspot",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "salesforce",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "pipedrive",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "make",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "zapier",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "n8n",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "postman",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "google-sheets",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "looker-studio",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "segment",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-qa-automation",
+    "slug": "developpeur-qa-automation",
+    "title": "Stack QA automation",
+    "titleEn": "QA automation stack",
+    "subtitle": "La stack doit intégrer tests navigateur, API, CI et rapports compréhensibles par l’équipe.",
+    "subtitleEn": "La stack doit intégrer tests navigateur, API, CI et rapports compréhensibles par l’équipe.",
+    "persona": "dev",
+    "subProfiles": [
+      "qa-automation",
+      "client-delivery"
+    ],
+    "stage": "starter",
+    "budget": "under50",
+    "monthlyBudget": 44,
+    "savings": 110,
+    "risk": "Le piège : écrire beaucoup de tests fragiles. Une bonne QA freelance teste les parcours qui coûtent cher quand ils cassent.",
+    "riskEn": "Le piège : écrire beaucoup de tests fragiles. Une bonne QA freelance teste les parcours qui coûtent cher quand ils cassent.",
+    "bestFor": "Tests e2e, API, fixtures, CI, rapports qualité et régressions visuelles.",
+    "bestForEn": "Tests e2e, API, fixtures, CI, rapports qualité et régressions visuelles.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : écrire beaucoup de tests fragiles. Une bonne QA freelance teste les parcours qui coûtent cher quand ils cassent. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : écrire beaucoup de tests fragiles. Une bonne QA freelance teste les parcours qui coûtent cher quand ils cassent. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "playwright",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "cypress",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "vitest",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "jest",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "postman",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "newman",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "CI/CD",
+        "roleEn": "CI/CD",
+        "slug": "github-actions",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "browserstack",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "percy",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "chromatic",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-game",
+    "slug": "developpeur-game-freelance",
+    "title": "Stack game dev",
+    "titleEn": "Game dev stack",
+    "subtitle": "La stack doit couvrir moteur, assets, audio, versioning, QA et distribution.",
+    "subtitleEn": "La stack doit couvrir moteur, assets, audio, versioning, QA et distribution.",
+    "persona": "dev",
+    "subProfiles": [
+      "game-dev",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 52,
+    "savings": 130,
+    "risk": "Le piège : sous-estimer versioning gros fichiers, builds et QA. Un jeu freelance a besoin de pipeline autant que de gameplay.",
+    "riskEn": "Le piège : sous-estimer versioning gros fichiers, builds et QA. Un jeu freelance a besoin de pipeline autant que de gameplay.",
+    "bestFor": "Prototypes, jeux indés, expériences interactives, serious games et builds.",
+    "bestForEn": "Prototypes, jeux indés, expériences interactives, serious games et builds.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : sous-estimer versioning gros fichiers, builds et QA. Un jeu freelance a besoin de pipeline autant que de gameplay. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : sous-estimer versioning gros fichiers, builds et QA. Un jeu freelance a besoin de pipeline autant que de gameplay. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "unity",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "unreal-engine",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "godot",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "blender",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "fmod",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "wwise",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "perforce",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "jira",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Roadmap",
+        "roleEn": "Roadmap",
+        "slug": "linear",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-ar-vr-spatial",
+    "slug": "developpeur-ar-vr-spatial",
+    "title": "Stack AR/VR",
+    "titleEn": "AR/VR stack",
+    "subtitle": "La stack doit gérer moteur, assets 3D, performance device, tracking et tests sur matériel.",
+    "subtitleEn": "La stack doit gérer moteur, assets 3D, performance device, tracking et tests sur matériel.",
+    "persona": "dev",
+    "subProfiles": [
+      "ar-vr",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 58,
+    "savings": 150,
+    "risk": "Le piège : développer sans tester tôt sur device. En AR/VR, la performance et le confort se valident dans le casque.",
+    "riskEn": "Le piège : développer sans tester tôt sur device. En AR/VR, la performance et le confort se valident dans le casque.",
+    "bestFor": "Expériences immersives, WebXR, prototypes 3D et apps casque.",
+    "bestForEn": "Expériences immersives, WebXR, prototypes 3D et apps casque.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : développer sans tester tôt sur device. En AR/VR, la performance et le confort se valident dans le casque. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : développer sans tester tôt sur device. En AR/VR, la performance et le confort se valident dans le casque. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "unity",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "unreal-engine",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "three-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "babylon-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "webxr",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "blender",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "meta-quest-developer-tools",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Erreurs",
+        "roleEn": "Errors",
+        "slug": "sentry",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-creative-coding",
+    "slug": "developpeur-creative-coding",
+    "title": "Stack creative coding",
+    "titleEn": "Creative coding stack",
+    "subtitle": "La stack doit favoriser prototypage rapide, export propre, performance et déploiement web.",
+    "subtitleEn": "La stack doit favoriser prototypage rapide, export propre, performance et déploiement web.",
+    "persona": "dev",
+    "subProfiles": [
+      "creative-coding",
+      "client-delivery"
+    ],
+    "stage": "starter",
+    "budget": "under50",
+    "monthlyBudget": 42,
+    "savings": 105,
+    "risk": "Le piège : garder les prototypes dans un dossier local. Le client doit voir, tester et valider l’expérience en ligne.",
+    "riskEn": "Le piège : garder les prototypes dans un dossier local. Le client doit voir, tester et valider l’expérience en ligne.",
+    "bestFor": "Installations, génératif, motion web, shaders, canvas et expériences visuelles.",
+    "bestForEn": "Installations, génératif, motion web, shaders, canvas et expériences visuelles.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : garder les prototypes dans un dossier local. Le client doit voir, tester et valider l’expérience en ligne. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : garder les prototypes dans un dossier local. Le client doit voir, tester et valider l’expérience en ligne. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "three-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "p5-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "processing",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "touchdesigner",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "rive",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "gsap",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "spline",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Déploiement",
+        "roleEn": "Deployment",
+        "slug": "vercel",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-maintenance",
+    "slug": "developpeur-maintenance-freelance",
+    "title": "Stack maintenance dev",
+    "titleEn": "Maintenance dev stack",
+    "subtitle": "La stack doit auditer vite, sécuriser dépendances, suivre erreurs, documenter décisions et gérer tickets.",
+    "subtitleEn": "La stack doit auditer vite, sécuriser dépendances, suivre erreurs, documenter décisions et gérer tickets.",
+    "persona": "dev",
+    "subProfiles": [
+      "maintenance-dev",
+      "client-delivery"
+    ],
+    "stage": "starter",
+    "budget": "under50",
+    "monthlyBudget": 46,
+    "savings": 120,
+    "risk": "Le piège : corriger sans observer. Une mission de maintenance rentable commence par monitoring, inventaire et historique.",
+    "riskEn": "Le piège : corriger sans observer. Une mission de maintenance rentable commence par monitoring, inventaire et historique.",
+    "bestFor": "Reprise de projets, bugs, mises à jour, sécurité, documentation et support.",
+    "bestForEn": "Reprise de projets, bugs, mises à jour, sécurité, documentation et support.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : corriger sans observer. Une mission de maintenance rentable commence par monitoring, inventaire et historique. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : corriger sans observer. Une mission de maintenance rentable commence par monitoring, inventaire et historique. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Repo",
+        "roleEn": "Repo",
+        "slug": "github",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "IDE",
+        "roleEn": "IDE",
+        "slug": "vs-code",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "IDE IA",
+        "roleEn": "AI IDE",
+        "slug": "cursor",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Erreurs",
+        "roleEn": "Errors",
+        "slug": "sentry",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "dependabot",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "snyk",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "uptimerobot",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "better-stack",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Pilotage",
+        "roleEn": "Project cockpit",
+        "slug": "notion",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Roadmap",
+        "roleEn": "Roadmap",
+        "slug": "linear",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-mvp-startup",
+    "slug": "developpeur-mvp-startup",
+    "title": "Stack MVP startup",
+    "titleEn": "Startup MVP stack",
+    "subtitle": "La stack doit accélérer discovery, build, paiement, analytics, onboarding et feedback.",
+    "subtitleEn": "La stack doit accélérer discovery, build, paiement, analytics, onboarding et feedback.",
+    "persona": "dev",
+    "subProfiles": [
+      "mvp-startup",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 68,
+    "savings": 160,
+    "risk": "Le piège : partir sur une architecture définitive avant d’avoir testé le problème. Le MVP doit apprendre, pas impressionner.",
+    "riskEn": "Le piège : partir sur une architecture définitive avant d’avoir testé le problème. Le MVP doit apprendre, pas impressionner.",
+    "bestFor": "Première version produit pour valider marché, usage et paiement.",
+    "bestForEn": "Première version produit pour valider marché, usage et paiement.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : partir sur une architecture définitive avant d’avoir testé le problème. Le MVP doit apprendre, pas impressionner. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : partir sur une architecture définitive avant d’avoir testé le problème. Le MVP doit apprendre, pas impressionner. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Backend",
+        "roleEn": "Backend",
+        "slug": "supabase",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Déploiement",
+        "roleEn": "Deployment",
+        "slug": "vercel",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Paiement",
+        "roleEn": "Payment",
+        "slug": "stripe",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Analytics",
+        "roleEn": "Analytics",
+        "slug": "posthog",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "resend",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Auth",
+        "roleEn": "Auth",
+        "slug": "clerk",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Roadmap",
+        "roleEn": "Roadmap",
+        "slug": "linear",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Pilotage",
+        "roleEn": "Project cockpit",
+        "slug": "notion",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "tally",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-refonte-web",
+    "slug": "developpeur-refonte-web-seo",
+    "title": "Stack refonte web",
+    "titleEn": "Web redesign stack",
+    "subtitle": "La stack doit couvrir crawl, inventaire URL, tracking, redirections, performance et monitoring post-lancement.",
+    "subtitleEn": "La stack doit couvrir crawl, inventaire URL, tracking, redirections, performance et monitoring post-lancement.",
+    "persona": "dev",
+    "subProfiles": [
+      "web-redesign",
+      "client-delivery"
+    ],
+    "stage": "lean",
+    "budget": "under50",
+    "monthlyBudget": 58,
+    "savings": 145,
+    "risk": "Le piège : lancer une refonte sans plan de redirection. Le design peut être meilleur et le trafic s’effondrer.",
+    "riskEn": "Le piège : lancer une refonte sans plan de redirection. Le design peut être meilleur et le trafic s’effondrer.",
+    "bestFor": "Refonte UX, CMS, migration, SEO technique, redirections et performance.",
+    "bestForEn": "Refonte UX, CMS, migration, SEO technique, redirections et performance.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : lancer une refonte sans plan de redirection. Le design peut être meilleur et le trafic s’effondrer. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : lancer une refonte sans plan de redirection. Le design peut être meilleur et le trafic s’effondrer. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Framework",
+        "roleEn": "Framework",
+        "slug": "next-js",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "webflow",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "wordpress",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "screaming-frog",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "google-search-console",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "ga4",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "ahrefs",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Déploiement",
+        "roleEn": "Deployment",
+        "slug": "vercel",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "kinsta",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "cloudflare",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
+  },
+  {
+    "id": "dev-accessibilite",
+    "slug": "developpeur-accessibilite-freelance",
+    "title": "Stack accessibilité",
+    "titleEn": "Accessibility stack",
+    "subtitle": "La stack doit combiner audit automatique, test clavier, lecteur d’écran et correction composants.",
+    "subtitleEn": "La stack doit combiner audit automatique, test clavier, lecteur d’écran et correction composants.",
+    "persona": "dev",
+    "subProfiles": [
+      "accessibility-dev",
+      "client-delivery"
+    ],
+    "stage": "starter",
+    "budget": "under50",
+    "monthlyBudget": 34,
+    "savings": 90,
+    "risk": "Le piège : croire qu’un score automatique suffit. L’accessibilité utile se valide avec parcours, clavier et technologie d’assistance.",
+    "riskEn": "Le piège : croire qu’un score automatique suffit. L’accessibilité utile se valide avec parcours, clavier et technologie d’assistance.",
+    "bestFor": "Audit RGAA/WCAG, composants, contrastes, clavier, lecteurs d’écran et rapports.",
+    "bestForEn": "Audit RGAA/WCAG, composants, contrastes, clavier, lecteurs d’écran et rapports.",
+    "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
+    "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
+    "editorial": "Le piège : croire qu’un score automatique suffit. L’accessibilité utile se valide avec parcours, clavier et technologie d’assistance. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
+    "editorialEn": "Le piège : croire qu’un score automatique suffit. L’accessibilité utile se valide avec parcours, clavier et technologie d’assistance. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "needs": [
+      {
+        "title": "Cadrer avant de coder",
+        "titleEn": "Scope before coding",
+        "detail": "Brief, livrables, limites, accès et critères de validation doivent être posés avant le choix final des outils.",
+        "detailEn": "Brief, deliverables, limits, access, and acceptance criteria must be set before final tooling choices."
+      },
+      {
+        "title": "Livrer une chaîne complète",
+        "titleEn": "Deliver the full chain",
+        "detail": "Code, preview, tests, logs, documentation et facturation doivent être pensés ensemble.",
+        "detailEn": "Code, preview, tests, logs, documentation, and billing must be designed together."
+      },
+      {
+        "title": "Rendre la reprise possible",
+        "titleEn": "Make handover possible",
+        "detail": "Le client doit pouvoir comprendre quoi existe, où c’est hébergé, comment déployer et quoi surveiller.",
+        "detailEn": "The client must understand what exists, where it is hosted, how to deploy, and what to monitor."
+      }
+    ],
+    "maturitySignals": [
+      {
+        "title": "Plusieurs clients actifs",
+        "titleEn": "Several active clients",
+        "detail": "Standardise templates, checklists, conventions et onboarding projet.",
+        "detailEn": "Standardize templates, checklists, conventions, and project onboarding."
+      },
+      {
+        "title": "Risques de production",
+        "titleEn": "Production risk",
+        "detail": "Ajoute monitoring, alertes, backups, secrets et tests avant d’ajouter de nouveaux frameworks.",
+        "detailEn": "Add monitoring, alerts, backups, secrets, and tests before adding new frameworks."
+      },
+      {
+        "title": "Maintenance récurrente",
+        "titleEn": "Recurring maintenance",
+        "detail": "Passe d’une livraison ponctuelle à un système de suivi : changelog, tickets, SLA léger et rapport mensuel.",
+        "detailEn": "Move from one-shot delivery to a tracking system: changelog, tickets, light SLA, and monthly report."
+      }
+    ],
+    "traps": [
+      {
+        "title": "Stack trop lourde",
+        "titleEn": "Overbuilt stack",
+        "detail": "Une stack senior n’est pas une stack énorme. Elle retire autant qu’elle ajoute.",
+        "detailEn": "A senior stack is not a huge stack. It removes as much as it adds."
+      },
+      {
+        "title": "Pas de monitoring",
+        "titleEn": "No monitoring",
+        "detail": "Sans erreurs, logs et uptime, tu découvres les problèmes par le client.",
+        "detailEn": "Without errors, logs, and uptime, you discover issues through the client."
+      },
+      {
+        "title": "IA sans garde-fous",
+        "titleEn": "AI without guardrails",
+        "detail": "L’IA accélère mais ne remplace ni tests, ni revue, ni décision technique.",
+        "detailEn": "AI accelerates but does not replace tests, review, or technical judgment."
+      }
+    ],
+    "checkpoints": [
+      {
+        "q": "Le client peut-il voir une version à jour sans te demander ?",
+        "qEn": "Can the client see an up-to-date version without asking?",
+        "hint": "Non → ajoute preview, changelog court et lien stable dans la page projet.",
+        "hintEn": "No → add preview, short changelog, and stable link in the project page."
+      },
+      {
+        "q": "Tu sais quoi surveiller après mise en production ?",
+        "qEn": "Do you know what to monitor after production?",
+        "hint": "Non → commence par erreurs, uptime, logs utiles et événement métier principal.",
+        "hintEn": "No → start with errors, uptime, useful logs, and the main business event."
+      },
+      {
+        "q": "La stack est-elle explicable en cinq minutes au client ?",
+        "qEn": "Can the stack be explained to the client in five minutes?",
+        "hint": "Non → elle est probablement trop dispersée ou pas assez documentée.",
+        "hintEn": "No → it is probably too scattered or not documented enough."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "axe-devtools",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "lighthouse",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Socle",
+        "roleEn": "Foundation",
+        "slug": "wave",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "nvda",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "voiceover",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "figma",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Production",
+        "roleEn": "Production",
+        "slug": "stark",
+        "decision": "core",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À documenter dès le premier projet pour rester maintenable.",
+        "tipEn": "Document from the first project to stay maintainable."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "playwright",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Contrôle",
+        "roleEn": "Control",
+        "slug": "storybook",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      },
+      {
+        "role": "Pilotage",
+        "roleEn": "Project cockpit",
+        "slug": "notion",
+        "decision": "conditional",
+        "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
+        "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
+        "tip": "À activer quand le volume, le risque ou la complexité le justifie.",
+        "tipEn": "Enable when volume, risk, or complexity justifies it."
+      }
+    ]
   },
 ];
 
