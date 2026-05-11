@@ -28061,7 +28061,9 @@
       "content-creator",
       "other"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "shine"
+    ],
     "seo": {
       "metaDescription": "Indy : Compta et facturation automatisées pour indépendants. Découvrez si cet outil vaut le coup pour votre activité freelance."
     },
@@ -42290,7 +42292,9 @@
       "enterprise",
       "scaleup"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "shine"
+    ],
     "verdict": {
       "keepIf": [
         "L’outil est déjà une source de vérité dans l’organisation",
@@ -42579,6 +42583,175 @@
     ],
     "force_silence": false,
     "timeGainedHoursPerMonth": 3
+  },
+  {
+    "id": "shine",
+    "slug": "shine",
+    "name": "Shine",
+    "category": "finance",
+    "shortDescription": "Compte pro français avec facturation gratuite, devis, encaissement et suivi administratif.",
+    "shortDescriptionEn": "French business account with free invoicing, quotes, payments, and admin tracking.",
+    "description": "Shine combine compte pro, outil de facturation gratuit, devis, relances, encaissement et suivi administratif pour indépendants et petites entreprises françaises.",
+    "longDescription": "Shine, c’est un compte pro français pensé pour les indépendants, freelances et petites entreprises qui veulent gérer factures, devis, encaissements et administratif au même endroit. Le lien ToolTrim pointe vers l’outil de facturation gratuit : intéressant si tu veux émettre des factures conformes sans ajouter tout de suite un logiciel comptable lourd. Shine devient surtout pertinent quand tu veux rapprocher facturation, compte bancaire, justificatifs et rappels de paiement dans une seule interface.\n\nÀ garder si : tu es freelance, micro-entrepreneur, consultant ou petite structure française et tu veux un compte pro simple avec facturation intégrée. À éviter si : tu as déjà Qonto + un outil de facturation bien configuré, ou si ton expert-comptable impose un autre circuit.\n\nLe bon arbitrage ToolTrim : Shine est plus pertinent qu’un outil isolé si ton problème n’est pas seulement de faire une facture, mais de suivre l’argent, les justificatifs et les relances sans multiplier les abonnements.",
+    "longDescriptionEn": "Shine is a French business account for freelancers and small businesses that want invoicing, quotes, payments, receipts, and admin tracking in one place. ToolTrim links to its free invoicing tool. It is relevant when the real need is not only creating an invoice, but connecting billing, banking, and payment follow-up without adding too many subscriptions.",
+    "pricing": {
+      "free": "Outil de facturation gratuit",
+      "paid": "Compte pro à partir de 7,90€/mois HT selon formule"
+    },
+    "pricingEn": {
+      "free": "Free invoicing tool",
+      "paid": "Business account from €7.90/mo excl. VAT depending on plan"
+    },
+    "defaultMonthlyPrice": 7.9,
+    "pricingTiers": {
+      "free": "Outil de facturation gratuit",
+      "paid": "Compte pro à partir de 7,90€/mois HT selon formule"
+    },
+    "pricing_v5": {
+      "compare_price_monthly_eur": 7.9,
+      "compare_plan_name": "Compte pro Basic",
+      "compare_plan_kind": "business_account",
+      "price_reliability": "medium",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "cautions": [
+        "Prix HT et offres susceptibles de varier selon statut, options et période promotionnelle. Vérifier la page officielle avant décision."
+      ],
+      "source_domain": "shine.fr",
+      "verified_on": "2026-05-11",
+      "official_source_url": "https://www.shine.fr/",
+      "verification_status": "affiliate_page_reviewed"
+    },
+    "affiliateLink": "https://www.shine.fr/lp/outil-facturation-gratuit/?utm_source=affilae&utm_medium=affiliation&utm_campaign=tooltrim&ae=1734",
+    "websiteUrl": "https://www.shine.fr",
+    "logo": "",
+    "verdict": {
+      "keepIf": [
+        "Tu veux facturation + compte pro dans le même outil",
+        "Tu es indépendant ou petite structure en France",
+        "Tu veux éviter de payer un logiciel de facturation séparé trop tôt"
+      ],
+      "avoidIf": [
+        "Tu as déjà Qonto ou Pennylane bien intégré",
+        "Ton expert-comptable impose un autre flux",
+        "Tu as besoin d’une comptabilité analytique avancée"
+      ],
+      "threshold": "À envisager dès que factures, relances, justificatifs et compte pro doivent être suivis ensemble."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want invoicing and business banking in one tool",
+        "You are a French freelancer or small business",
+        "You want to avoid paying for a separate invoicing tool too early"
+      ],
+      "avoidIf": [
+        "Qonto or Pennylane is already well integrated",
+        "Your accountant requires another workflow",
+        "You need advanced management accounting"
+      ],
+      "threshold": "Consider it when invoices, reminders, receipts, and business banking need to be tracked together."
+    },
+    "pros": [
+      "Facturation gratuite mise en avant",
+      "Compte pro et factures dans la même interface",
+      "Pertinent pour freelances et petites structures françaises",
+      "Réduit le besoin d’un outil de facturation séparé au démarrage"
+    ],
+    "prosEn": [
+      "Free invoicing highlighted",
+      "Business account and invoices in one interface",
+      "Relevant for French freelancers and small businesses",
+      "Can reduce the need for a separate invoicing tool early on"
+    ],
+    "cons": [
+      "Moins adapté si la comptabilité est déjà structurée ailleurs",
+      "Prix et options à vérifier selon formule",
+      "Pertinence surtout française"
+    ],
+    "consEn": [
+      "Less relevant if accounting is already structured elsewhere",
+      "Pricing and options need verification by plan",
+      "Mostly relevant for French businesses"
+    ],
+    "covers": [
+      "facturation",
+      "paiements",
+      "compte-pro",
+      "comptabilite",
+      "admin"
+    ],
+    "functional_needs": [
+      "facturation",
+      "paiements",
+      "compte-pro",
+      "admin"
+    ],
+    "verticals": [
+      "finance",
+      "solo",
+      "consultant",
+      "ops"
+    ],
+    "relevantFor": [
+      "consultant",
+      "designer",
+      "writer",
+      "content-creator",
+      "ops",
+      "other"
+    ],
+    "personas": [
+      "freelance",
+      "solo",
+      "startup"
+    ],
+    "bestFor": [
+      "freelance",
+      "solo",
+      "tpe",
+      "consultant"
+    ],
+    "alternatives": [
+      "qonto",
+      "indy",
+      "pennylane"
+    ],
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "ia_use_case": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "available": false,
+      "freeTier": "Outil de facturation gratuit"
+    },
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "As-tu déjà un compte pro séparé ?",
+      "Combien de factures émets-tu par mois ?",
+      "Ton expert-comptable impose-t-il un outil ?"
+    ],
+    "substitution_cluster_v2": "finance-billing-business-account",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": true,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Compte pro et facturation touchent au légal, au bancaire et à la comptabilité.",
+      "default_decision_lane": "review"
+    },
+    "seo": {
+      "metaDescription": "Shine : compte pro et outil de facturation gratuit pour freelances et petites entreprises. Avis ToolTrim, limites, prix et alternatives."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 2
   },
   {
     "category": "ai-general",

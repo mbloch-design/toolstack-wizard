@@ -10,7 +10,7 @@ export default function ArticleFacturation() {
       title:
         "Logiciel facturation freelance 2026 : le guide honnête (+ obligation e-invoicing) | tooltrim.com",
       description:
-        "Comparatif sans filtre des meilleurs outils de facturation pour freelances et TPE en 2026. Pennylane, Indy, Freebe, Dougs — et tout ce que vous devez savoir sur l'obligation de facturation électronique de septembre 2026.",
+        "Comparatif sans filtre des meilleurs outils de facturation pour freelances et TPE en 2026. Shine, Pennylane, Indy, Freebe, Dougs — et tout ce que vous devez savoir sur l'obligation de facturation électronique de septembre 2026.",
       url: `${SEO_BASE}/fr/guide/outils-facturation-freelance-2026`,
       type: "article",
     });
@@ -38,7 +38,7 @@ export default function ArticleFacturation() {
         name: "Quel est le meilleur logiciel de facturation pour freelance en 2026 ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Selon les audits tooltrim.com, le choix dépend du statut juridique. Pour un micro-entrepreneur : Freebe ou Indy (facturation gratuite). Pour une SASU ou EURL : Pennylane ou Dougs. Pour une facturation simple avec néobanque : Qonto intégré. L'essentiel est de choisir un outil certifié ou en cours de certification PDP pour la réforme e-invoicing 2026.",
+          text: "Selon les audits tooltrim.com, le choix dépend du statut juridique. Pour un micro-entrepreneur : Freebe, Indy ou Shine selon le besoin compte pro. Pour une SASU ou EURL : Pennylane ou Dougs. Pour une facturation simple avec néobanque : Qonto ou Shine intégré. L'essentiel est de choisir un outil certifié ou en cours de certification PDP pour la réforme e-invoicing 2026.",
         },
       },
       {
@@ -86,12 +86,12 @@ export default function ArticleFacturation() {
   };
 
   const matrice = [
-    { profil: "Micro-entrepreneur / auto-entrepreneur", outil: "Freebe ou Indy", raison: "Pensé pour ce statut, prix cohérent" },
+    { profil: "Micro-entrepreneur / auto-entrepreneur", outil: "Freebe, Indy ou Shine", raison: "Facturation simple ; Shine si tu veux aussi le compte pro" },
     { profil: "Freelance professions libérales (BNC)", outil: "Indy", raison: "Compta automatisée, TVA incluse" },
     { profil: "Freelance en SASU active", outil: "Pennylane ou Dougs", raison: "Besoin d'un vrai suivi comptable" },
     { profil: "TPE 2–10 salariés", outil: "Pennylane", raison: "Vision trésorerie + expert-comptable" },
     { profil: "TPE qui veut tout déléguer", outil: "Dougs", raison: "Package tout-en-un" },
-    { profil: "Déjà sur Qonto, facturation simple", outil: "Module Qonto intégré", raison: "Évite un doublon inutile" },
+    { profil: "Besoin compte pro + factures", outil: "Shine ou Qonto intégré", raison: "Évite un doublon banque + facturation" },
   ];
 
   const faqDisplay = [
@@ -101,7 +101,7 @@ export default function ArticleFacturation() {
     },
     {
       q: "Quel est le meilleur logiciel de facturation pour freelance en 2026 ?",
-      a: "Selon les audits tooltrim.com, ça dépend du statut juridique. Micro-entrepreneur : Freebe ou Indy. Freelance BNC : Indy. SASU/EURL : Pennylane ou Dougs. Déjà sur Qonto : module intégré suffit. L'essentiel est de choisir un outil certifié ou en cours de certification PDP.",
+      a: "Selon les audits tooltrim.com, ça dépend du statut juridique. Micro-entrepreneur : Freebe, Indy ou Shine si tu veux aussi le compte pro. Freelance BNC : Indy. SASU/EURL : Pennylane ou Dougs. Déjà sur Qonto ou Shine : le module intégré peut suffire. L'essentiel est de choisir un outil certifié ou en cours de certification PDP.",
     },
     {
       q: "Pennylane ou Indy : lequel choisir ?",
@@ -169,6 +169,14 @@ export default function ArticleFacturation() {
             moins: "Optimisé pour professions libérales et micro-entrepreneurs. Si tu es en SAS ou SARL, les fonctionnalités comptables deviennent moins pertinentes.",
             pour: "freelance BNC, indépendant qui veut automatiser sa compta sans payer cher.",
             link: "/fr/tool/indy",
+          },
+          {
+            name: "Shine",
+            price: "Facturation gratuite",
+            bien: "Très intéressant si ton besoin réel est de relier compte pro, devis, factures, relances et justificatifs. L'outil de facturation gratuit évite de payer trop tôt un logiciel dédié.",
+            moins: "Moins pertinent si tu as déjà Qonto, Pennylane ou un flux imposé par ton expert-comptable. À vérifier selon ton statut et les options du compte pro.",
+            pour: "freelance, micro-entrepreneur, petite structure française qui veut compte pro + factures dans le même flux.",
+            link: "/fr/tool/shine",
           },
           {
             name: "Pennylane",

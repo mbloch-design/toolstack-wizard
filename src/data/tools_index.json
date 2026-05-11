@@ -3730,7 +3730,10 @@
     "defaultMonthlyPrice": 20,
     "affiliateLink": "https://indy.fr",
     "websiteUrl": "https://indy.fr",
-    "logo": ""
+    "logo": "",
+    "alternatives": [
+      "shine"
+    ]
   },
   {
     "id": "infisical",
@@ -5589,6 +5592,25 @@
     "defaultMonthlyPrice": 9,
     "affiliateLink": "https://lb.affilae.com/r/?p=69a078113f38abd84385e0d9&af=2648&lp=https%3A%2F%2Fqonto.com%2Ffr%3Futm_source%3Dinfluence",
     "websiteUrl": "https://qonto.com/fr",
+    "logo": "",
+    "alternatives": [
+      "shine"
+    ]
+  },
+  {
+    "id": "shine",
+    "slug": "shine",
+    "name": "Shine",
+    "categoryId": "finance",
+    "shortDescription": "Compte pro français avec facturation gratuite, devis, encaissement et suivi administratif.",
+    "shortDescriptionEn": "French business account with free invoicing, quotes, payments, and admin tracking.",
+    "pricing": {
+      "free": "Outil de facturation gratuit",
+      "paid": "Compte pro à partir de 7,90€/mois HT selon formule"
+    },
+    "defaultMonthlyPrice": 7.9,
+    "affiliateLink": "https://www.shine.fr/lp/outil-facturation-gratuit/?utm_source=affilae&utm_medium=affiliation&utm_campaign=tooltrim&ae=1734",
+    "websiteUrl": "https://www.shine.fr",
     "logo": ""
   },
   {
