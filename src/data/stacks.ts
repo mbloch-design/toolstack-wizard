@@ -1,4 +1,4 @@
-export const STACKS_VERSION = "2026-05-10";
+export const STACKS_VERSION = "2026-05-11";
 export type StackPersona = "dev" | "designer" | "consultant" | "content" | "ops" | "solo";
 export type StackStage = "starter" | "lean" | "scale";
 export type StackBudget = "free" | "under50" | "under150";
@@ -2191,6 +2191,6464 @@ export const STACKS: StackGuide[] = [
       ]
   },
   {
+      "id": "designer-editorial-print",
+      "slug": "designer-editorial-print",
+      "title": "Stack designer éditorial",
+      "titleEn": "Designer editorial / print stack",
+      "subtitle": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
+      "subtitleEn": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
+      "persona": "designer",
+      "subProfiles": [
+          "brand",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
+      "bestForEn": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "indesign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-acrobat",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "fontbase",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "rightfont",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "eagle",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "languagetool",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "antidote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-drive",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "claude",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "packaging-designer",
+      "slug": "packaging-designer",
+      "title": "Stack packaging designer",
+      "titleEn": "Packaging designer stack",
+      "subtitle": "Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison.",
+      "subtitleEn": "Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison.",
+      "persona": "designer",
+      "subProfiles": [
+          "brand",
+          "illustration",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison.",
+      "bestForEn": "Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "indesign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "esko-studio",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "pacdora",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-substance-3d",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "blender",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-acrobat",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "astute-graphics",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "magnific-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "designer-3d-produit",
+      "slug": "designer-3d-produit",
+      "title": "Stack 3D produit",
+      "titleEn": "Product visualization stack",
+      "subtitle": "Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes.",
+      "subtitleEn": "Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes.",
+      "persona": "designer",
+      "subProfiles": [
+          "art-direction",
+          "product",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes.",
+      "bestForEn": "Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "blender",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "cinema-4d",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "keyshot",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "rhino",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "plasticity",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "substance-3d-painter",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "octane-render",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "redshift",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "pure-ref",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "magnific-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "runway",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "archviz-artist",
+      "slug": "archviz-artist",
+      "title": "Stack archviz artist",
+      "titleEn": "Archviz artist stack",
+      "subtitle": "Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction.",
+      "subtitleEn": "Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction.",
+      "persona": "designer",
+      "subProfiles": [
+          "interior-design",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction.",
+      "bestForEn": "Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "3ds-max",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "corona-renderer",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "v-ray",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "d5-render",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "twinmotion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "sketchup-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "blender",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "quixel-megascans",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "pure-ref",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "transmutr",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "skatter",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "magnific-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "game-artist",
+      "slug": "game-artist",
+      "title": "Stack game artist",
+      "titleEn": "Game artist stack",
+      "subtitle": "Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo.",
+      "subtitleEn": "Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo.",
+      "persona": "designer",
+      "subProfiles": [
+          "illustration",
+          "art-direction",
+          "product"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo.",
+      "bestForEn": "Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "blender",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "maya",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "zbrush",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "substance-3d-painter",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "unreal-engine",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "unity",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "marmoset-toolbag",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "pure-ref",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "perforce",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "github",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "runway",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "concept-artist",
+      "slug": "concept-artist",
+      "title": "Stack concept artist",
+      "titleEn": "Concept artist stack",
+      "subtitle": "Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio.",
+      "subtitleEn": "Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio.",
+      "persona": "designer",
+      "subProfiles": [
+          "illustration",
+          "art-direction"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio.",
+      "bestForEn": "Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "procreate",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "blender",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "pure-ref",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "eagle",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "artstation",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "milanote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "pinterest",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "magnific-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "runway",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "designer-industriel-produit",
+      "slug": "designer-industriel-produit",
+      "title": "Stack designer industriel",
+      "titleEn": "Industrial product designer stack",
+      "subtitle": "Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit.",
+      "subtitleEn": "Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit.",
+      "persona": "designer",
+      "subProfiles": [
+          "product",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit.",
+      "bestForEn": "Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "rhino",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "fusion-360",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "solidworks",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "keyshot",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "blender",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "miro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "grabcad",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "magnific-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "designer-mobilier",
+      "slug": "designer-mobilier",
+      "title": "Stack designer mobilier",
+      "titleEn": "Furniture designer stack",
+      "subtitle": "Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication.",
+      "subtitleEn": "Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication.",
+      "persona": "designer",
+      "subProfiles": [
+          "interior-design",
+          "product",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication.",
+      "bestForEn": "Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "rhino",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "sketchup-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "fusion-360",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "autocad",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "keyshot",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "d5-render",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "open-cut-list",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-sheets",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "profile-builder-3",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "fredo6-bundle",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "transmutr",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "designer-textile-mode",
+      "slug": "designer-textile-mode",
+      "title": "Stack textile & mode",
+      "titleEn": "Textile and fashion stack",
+      "subtitle": "Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production.",
+      "subtitleEn": "Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production.",
+      "persona": "designer",
+      "subProfiles": [
+          "illustration",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production.",
+      "bestForEn": "Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "procreate",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "clo-3d",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "browzwear",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "milanote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "pinterest",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "techpacker",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "airtable",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "astute-graphics",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "social-media-designer",
+      "slug": "social-media-designer",
+      "title": "Stack social media designer",
+      "titleEn": "Social media designer stack",
+      "subtitle": "Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu.",
+      "subtitleEn": "Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu.",
+      "persona": "content",
+      "subProfiles": [
+          "social-content",
+          "video",
+          "copywriting"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu.",
+      "bestForEn": "Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "canva",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-express",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "capcut",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-premiere-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "metricool",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "buffer",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "later",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-drive",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "elevenlabs",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "copywriter-concepteur-redacteur",
+      "slug": "copywriter-concepteur-redacteur",
+      "title": "Stack copywriter",
+      "titleEn": "Copywriter stack",
+      "subtitle": "Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation.",
+      "subtitleEn": "Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation.",
+      "persona": "content",
+      "subProfiles": [
+          "copywriting",
+          "seo",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation.",
+      "bestForEn": "Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "chatgpt",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "claude",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "perplexity",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-docs",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "grammarly",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "languagetool",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "antidote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "ahrefs",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "semrush",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "surferseo",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "indy",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "content-strategist",
+      "slug": "content-strategist",
+      "title": "Stack content strategist",
+      "titleEn": "Content strategist stack",
+      "subtitle": "Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation.",
+      "subtitleEn": "Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation.",
+      "persona": "content",
+      "subProfiles": [
+          "seo",
+          "copywriting",
+          "analytics"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation.",
+      "bestForEn": "Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "airtable",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "ahrefs",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "semrush",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-search-console",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "ga4",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "looker-studio",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "surferseo",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "frase",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-docs",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "claude",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "perplexity",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "community-manager-creatif",
+      "slug": "community-manager-creatif",
+      "title": "Stack community manager créatif",
+      "titleEn": "Creative community manager stack",
+      "subtitle": "Planning, création visuelle, montage court, publication, modération, reporting et veille social media.",
+      "subtitleEn": "Planning, création visuelle, montage court, publication, modération, reporting et veille social media.",
+      "persona": "content",
+      "subProfiles": [
+          "social-content",
+          "video",
+          "analytics"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Planning, création visuelle, montage court, publication, modération, reporting et veille social media.",
+      "bestForEn": "Planning, création visuelle, montage court, publication, modération, reporting et veille social media.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Planning, création visuelle, montage court, publication, modération, reporting et veille social media. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Planning, création visuelle, montage court, publication, modération, reporting et veille social media. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "metricool",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "buffer",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "later",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "hootsuite",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "canva",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "capcut",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-express",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-sheets",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "designer-exposition-museographe",
+      "slug": "designer-exposition-museographe",
+      "title": "Stack muséographe",
+      "titleEn": "Exhibition designer stack",
+      "subtitle": "Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle.",
+      "subtitleEn": "Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle.",
+      "persona": "designer",
+      "subProfiles": [
+          "interior-design",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle.",
+      "bestForEn": "Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "sketchup-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "vectorworks",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "autocad",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "rhino",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "d5-render",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "indesign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "miro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-drive",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "profile-builder-3",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "transmutr",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "designer-signaletique-wayfinding",
+      "slug": "designer-signaletique-wayfinding",
+      "title": "Stack signalétique",
+      "titleEn": "Wayfinding designer stack",
+      "subtitle": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
+      "subtitleEn": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
+      "persona": "designer",
+      "subProfiles": [
+          "brand",
+          "interior-design",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
+      "bestForEn": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "indesign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "autocad",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "sketchup-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "fontbase",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "rightfont",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-acrobat",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-drive",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "astute-graphics",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "figma-iconify",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "spatial-brand-designer",
+      "slug": "spatial-brand-designer",
+      "title": "Stack spatial brand designer",
+      "titleEn": "Spatial brand designer stack",
+      "subtitle": "Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs.",
+      "subtitleEn": "Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs.",
+      "persona": "designer",
+      "subProfiles": [
+          "interior-design",
+          "brand",
+          "art-direction"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs.",
+      "bestForEn": "Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "indesign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "sketchup-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "rhino",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "d5-render",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "miro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "frame-io",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-drive",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "runway",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "magnific-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "sound-designer-podcasteur",
+      "slug": "sound-designer-podcasteur",
+      "title": "Stack sound designer / podcasteur",
+      "titleEn": "Sound designer / podcaster stack",
+      "subtitle": "Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution.",
+      "subtitleEn": "Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution.",
+      "persona": "content",
+      "subProfiles": [
+          "podcast",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution.",
+      "bestForEn": "Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-audition",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "logic-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "ableton-live",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "pro-tools",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "descript",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "riverside",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "auphonic",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "spotify-for-podcasters",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "ausha",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-drive",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "elevenlabs",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "instructional-designer",
+      "slug": "instructional-designer",
+      "title": "Stack instructional designer",
+      "titleEn": "Instructional designer stack",
+      "subtitle": "Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage.",
+      "subtitleEn": "Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage.",
+      "persona": "content",
+      "subProfiles": [
+          "training",
+          "video",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage.",
+      "bestForEn": "Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "google-slides",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "powerpoint",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "canva",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "articulate",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "genially",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "loom",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "descript",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "moodle",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "learnworlds",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "typeform",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "tally",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "claude",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "elevenlabs",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "freelancer-creatif-generaliste",
+      "slug": "freelancer-creatif-generaliste",
+      "title": "Stack créatif généraliste",
+      "titleEn": "Generalist creative freelancer stack",
+      "subtitle": "Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client.",
+      "subtitleEn": "Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client.",
+      "persona": "solo",
+      "subProfiles": [
+          "admin",
+          "client-delivery",
+          "brand"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client.",
+      "bestForEn": "Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "google-workspace",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "canva",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "chatgpt",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "indy",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "qonto",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "yousign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "loom",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "calendly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "tally",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "agence-creative-petit-studio",
+      "slug": "agence-creative-petit-studio",
+      "title": "Stack petit studio créatif",
+      "titleEn": "Small creative studio stack",
+      "subtitle": "Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting.",
+      "subtitleEn": "Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting.",
+      "persona": "ops",
+      "subProfiles": [
+          "agency",
+          "operations",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting.",
+      "bestForEn": "Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "clickup",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "wrike",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "monday",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "asana",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "slack",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-workspace",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "frame-io",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "bynder",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "harvest",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "toggl",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "pennylane",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "qonto",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "yousign",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "creatif-augmente-ia",
+      "slug": "creatif-augmente-ia",
+      "title": "Stack créatif IA",
+      "titleEn": "AI-augmented creative stack",
+      "subtitle": "Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client.",
+      "subtitleEn": "Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client.",
+      "persona": "designer",
+      "subProfiles": [
+          "art-direction",
+          "ai-coding",
+          "research"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client.",
+      "bestForEn": "Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "chatgpt",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "claude",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "perplexity",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "midjourney",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "firefly",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "krea-ai",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "runway",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "kling-ai",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "magnific-ai",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "topaz-gigapixel",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "adobe-photoshop",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "figma",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "milanote",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "photo-producer-art-director",
+      "slug": "photo-producer-art-director",
+      "title": "Stack photo producer",
+      "titleEn": "Photo producer / photo art director stack",
+      "subtitle": "Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison.",
+      "subtitleEn": "Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison.",
+      "persona": "designer",
+      "subProfiles": [
+          "photo",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison.",
+      "bestForEn": "Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "milanote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "shotdeck",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "pinterest",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "arena",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-drive",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "frame-io",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "capture-one",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "indy",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "yousign",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "set-designer-decorateur-plateau",
+      "slug": "set-designer-decorateur-plateau",
+      "title": "Stack set designer",
+      "titleEn": "Set designer stack",
+      "subtitle": "Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget.",
+      "subtitleEn": "Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget.",
+      "persona": "designer",
+      "subProfiles": [
+          "interior-design",
+          "art-direction",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget.",
+      "bestForEn": "Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "sketchup-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "rhino",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "vectorworks",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "d5-render",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "milanote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "pinterest",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "eagle",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-sheets",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-drive",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "profile-builder-3",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "transmutr",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "skatter",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "visual-merchandiser-window-designer",
+      "slug": "visual-merchandiser-window-designer",
+      "title": "Stack visual merchandiser",
+      "titleEn": "Visual merchandiser stack",
+      "subtitle": "Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting.",
+      "subtitleEn": "Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting.",
+      "persona": "designer",
+      "subProfiles": [
+          "interior-design",
+          "brand",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting.",
+      "bestForEn": "Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "sketchup-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "indesign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "d5-render",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "milanote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-drive",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "airtable",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "profile-builder-3",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "fredo6-bundle",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "floral-designer-vegetal",
+      "slug": "floral-designer-vegetal",
+      "title": "Stack designer végétal",
+      "titleEn": "Floral designer stack",
+      "subtitle": "Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo.",
+      "subtitleEn": "Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo.",
+      "persona": "designer",
+      "subProfiles": [
+          "art-direction",
+          "client-delivery",
+          "admin"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo.",
+      "bestForEn": "Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "pinterest",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "milanote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "canva",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "airtable",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-sheets",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "indy",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "qonto",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "adobe-lightroom",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "instagram",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "event-designer",
+      "slug": "event-designer",
+      "title": "Stack event designer",
+      "titleEn": "Event designer stack",
+      "subtitle": "Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show.",
+      "subtitleEn": "Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show.",
+      "persona": "ops",
+      "subProfiles": [
+          "agency",
+          "operations",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show.",
+      "bestForEn": "Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "monday",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "airtable",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-sheets",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "miro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "sketchup-pro",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "indesign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "d5-render",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "slido",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "eventbrite",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "krea-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "runway",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "presentation-designer",
+      "slug": "presentation-designer",
+      "title": "Stack presentation designer",
+      "titleEn": "Presentation designer stack",
+      "subtitle": "Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports.",
+      "subtitleEn": "Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports.",
+      "persona": "designer",
+      "subProfiles": [
+          "brand",
+          "copywriting",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports.",
+      "bestForEn": "Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "powerpoint",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "keynote",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "google-slides",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "figma-slides",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "pitch",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "gamma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "beautiful-ai",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "adobe-photoshop",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "lottiefiles",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "data-visualization-designer",
+      "slug": "data-visualization-designer",
+      "title": "Stack dataviz designer",
+      "titleEn": "Data visualization designer stack",
+      "subtitle": "Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports.",
+      "subtitleEn": "Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports.",
+      "persona": "designer",
+      "subProfiles": [
+          "analytics",
+          "research",
+          "client-delivery"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports.",
+      "bestForEn": "Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "tableau",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "power-bi",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "looker-studio",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "flourish",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "datawrapper",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-sheets",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "excel",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "claude",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "designer-cartographe-map",
+      "slug": "designer-cartographe-map",
+      "title": "Stack designer cartographe",
+      "titleEn": "Map designer stack",
+      "subtitle": "Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print.",
+      "subtitleEn": "Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print.",
+      "persona": "designer",
+      "subProfiles": [
+          "analytics",
+          "art-direction",
+          "research"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print.",
+      "bestForEn": "Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "qgis",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "mapbox",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "arcgis",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "datawrapper",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "adobe-illustrator",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "indesign",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "google-earth-studio",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "claude",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "firefly",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "designer-installation-immersive",
+      "slug": "designer-installation-immersive",
+      "title": "Stack installation immersive",
+      "titleEn": "Immersive installation designer stack",
+      "subtitle": "Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel.",
+      "subtitleEn": "Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel.",
+      "persona": "designer",
+      "subProfiles": [
+          "motion",
+          "art-direction",
+          "automation"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel.",
+      "bestForEn": "Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "touchdesigner",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "unreal-engine",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "unity",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "notch",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "blender",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "cinema-4d",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "madmapper",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "resolume",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "ableton-live",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "figma",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "notion",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "runway",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "kling-ai",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "midjourney",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "elevenlabs",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
+      "id": "createur-sites-ia-automation",
+      "slug": "createur-sites-ia-automation",
+      "title": "Stack sites IA & automation",
+      "titleEn": "AI sites and automation builder stack",
+      "subtitle": "Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement.",
+      "subtitleEn": "Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement.",
+      "persona": "dev",
+      "subProfiles": [
+          "no-code",
+          "automation",
+          "ai-coding"
+      ],
+      "stage": "scale",
+      "budget": "under150",
+      "monthlyBudget": 96,
+      "savings": 180,
+      "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
+      "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
+      "bestFor": "Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement.",
+      "bestForEn": "Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement.",
+      "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
+      "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
+      "editorial": "Cette stack sert un métier précis : Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
+      "editorialEn": "This stack serves a precise role: Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "needs": [
+          {
+              "title": "Source de vérité",
+              "titleEn": "Source de vérité",
+              "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
+              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+          },
+          {
+              "title": "Production fiable",
+              "titleEn": "Production fiable",
+              "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
+              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+          },
+          {
+              "title": "Validation claire",
+              "titleEn": "Validation claire",
+              "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
+              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+          }
+      ],
+      "maturitySignals": [
+          {
+              "title": "Volume récurrent",
+              "titleEn": "Volume récurrent",
+              "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
+              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+          },
+          {
+              "title": "Plusieurs parties prenantes",
+              "titleEn": "Plusieurs parties prenantes",
+              "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
+              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+          }
+      ],
+      "traps": [
+          {
+              "title": "Abonnements dormants",
+              "titleEn": "Abonnements dormants",
+              "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
+              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+          },
+          {
+              "title": "Assets dispersés",
+              "titleEn": "Assets dispersés",
+              "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
+              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+          },
+          {
+              "title": "IA sans intention",
+              "titleEn": "IA sans intention",
+              "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
+              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+          }
+      ],
+      "checkpoints": [
+          {
+              "q": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "hint": "Si non, il manque une source de vérité projet.",
+              "hintEn": "Si non, il manque une source de vérité projet."
+          },
+          {
+              "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
+              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+          },
+          {
+              "q": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "hint": "Si non, le feedback va créer des allers-retours inutiles.",
+              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+          }
+      ],
+      "tools": [
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "lovable",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "cursor",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Socle métier",
+              "roleEn": "Core workflow",
+              "slug": "replit",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "vercel",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "supabase",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "airtable",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "make",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Production",
+              "roleEn": "Production",
+              "slug": "zapier",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "n8n",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "webflow",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "framer",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "stripe",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "posthog",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "plausible",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "google-search-console",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "chatgpt",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "claude",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          },
+          {
+              "role": "Support / finition",
+              "roleEn": "Support / finish",
+              "slug": "perplexity",
+              "decision": "conditional",
+              "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
+              "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
+          }
+      ]
+  },
+  {
     id: "consultant-b2b",
     slug: "consultant-b2b-propre",
     title: "Stack consultant B2B",
@@ -4126,6 +10584,2114 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
               "I clarify the expected deliverable and the decision needed.",
               "I keep sources and approvals in one place.",
               "I deliver something usable, not only a nice intention."
+          ]
+      }
+  ],
+  "designer-editorial-print":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "indesign",
+              "adobe-photoshop",
+              "adobe-illustrator",
+              "adobe-acrobat"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "fontbase",
+              "rightfont",
+              "eagle",
+              "languagetool"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "antidote",
+              "google-drive",
+              "notion",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "packaging-designer":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "adobe-illustrator",
+              "adobe-photoshop",
+              "indesign",
+              "esko-studio"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "pacdora",
+              "adobe-substance-3d",
+              "blender",
+              "adobe-acrobat"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "notion",
+              "astute-graphics",
+              "chatgpt",
+              "midjourney"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "designer-3d-produit":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "blender",
+              "cinema-4d",
+              "keyshot",
+              "rhino"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "plasticity",
+              "substance-3d-painter",
+              "octane-render",
+              "redshift"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "adobe-photoshop",
+              "pure-ref",
+              "notion",
+              "krea-ai"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "archviz-artist":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "3ds-max",
+              "corona-renderer",
+              "v-ray",
+              "d5-render"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "twinmotion",
+              "sketchup-pro",
+              "blender",
+              "quixel-megascans"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "adobe-photoshop",
+              "pure-ref",
+              "transmutr",
+              "skatter"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "game-artist":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "blender",
+              "maya",
+              "zbrush",
+              "substance-3d-painter"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "unreal-engine",
+              "unity",
+              "marmoset-toolbag",
+              "pure-ref"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "perforce",
+              "github",
+              "notion",
+              "midjourney"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "concept-artist":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "adobe-photoshop",
+              "procreate",
+              "blender",
+              "pure-ref"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "eagle",
+              "artstation",
+              "milanote",
+              "pinterest"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "midjourney",
+              "krea-ai",
+              "firefly",
+              "magnific-ai"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "designer-industriel-produit":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "rhino",
+              "fusion-360",
+              "solidworks",
+              "keyshot"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "blender",
+              "adobe-illustrator",
+              "adobe-photoshop",
+              "miro"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "notion",
+              "grabcad",
+              "chatgpt",
+              "midjourney"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "designer-mobilier":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "rhino",
+              "sketchup-pro",
+              "fusion-360",
+              "autocad"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "keyshot",
+              "d5-render",
+              "open-cut-list",
+              "adobe-illustrator"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "notion",
+              "google-sheets",
+              "profile-builder-3",
+              "fredo6-bundle"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "designer-textile-mode":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "adobe-illustrator",
+              "adobe-photoshop",
+              "procreate",
+              "clo-3d"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "browzwear",
+              "milanote",
+              "pinterest",
+              "techpacker"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "notion",
+              "airtable",
+              "astute-graphics",
+              "midjourney"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "social-media-designer":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "canva",
+              "adobe-express",
+              "capcut",
+              "adobe-premiere-pro"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "figma",
+              "metricool",
+              "buffer",
+              "later"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "notion",
+              "google-drive",
+              "chatgpt",
+              "firefly"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "copywriter-concepteur-redacteur":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "chatgpt",
+              "claude",
+              "perplexity",
+              "google-docs"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "notion",
+              "grammarly",
+              "languagetool",
+              "antidote"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "ahrefs",
+              "semrush",
+              "surferseo",
+              "indy"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "content-strategist":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "notion",
+              "airtable",
+              "ahrefs",
+              "semrush"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "google-search-console",
+              "ga4",
+              "looker-studio",
+              "surferseo"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "frase",
+              "google-docs",
+              "chatgpt",
+              "claude"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "community-manager-creatif":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "metricool",
+              "buffer",
+              "later",
+              "hootsuite"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "canva",
+              "capcut",
+              "adobe-express",
+              "notion"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "google-sheets",
+              "chatgpt",
+              "firefly",
+              "midjourney"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "designer-exposition-museographe":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "sketchup-pro",
+              "vectorworks",
+              "autocad",
+              "rhino"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "d5-render",
+              "adobe-illustrator",
+              "indesign",
+              "adobe-photoshop"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "miro",
+              "notion",
+              "google-drive",
+              "profile-builder-3"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "designer-signaletique-wayfinding":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "adobe-illustrator",
+              "indesign",
+              "autocad",
+              "sketchup-pro"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "figma",
+              "fontbase",
+              "rightfont",
+              "adobe-acrobat"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "notion",
+              "google-drive",
+              "astute-graphics",
+              "figma-iconify"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "spatial-brand-designer":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "figma",
+              "adobe-illustrator",
+              "adobe-photoshop",
+              "indesign"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "sketchup-pro",
+              "rhino",
+              "d5-render",
+              "miro"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "notion",
+              "frame-io",
+              "google-drive",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "sound-designer-podcasteur":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "adobe-audition",
+              "logic-pro",
+              "ableton-live",
+              "pro-tools"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "descript",
+              "riverside",
+              "auphonic",
+              "spotify-for-podcasters"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "ausha",
+              "notion",
+              "google-drive",
+              "elevenlabs"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "instructional-designer":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "notion",
+              "google-slides",
+              "powerpoint",
+              "canva"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "articulate",
+              "genially",
+              "loom",
+              "descript"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "moodle",
+              "learnworlds",
+              "typeform",
+              "tally"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "freelancer-creatif-generaliste":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "notion",
+              "google-workspace",
+              "figma",
+              "canva"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "adobe-photoshop",
+              "chatgpt",
+              "indy",
+              "qonto"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "yousign",
+              "loom",
+              "calendly",
+              "tally"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "agence-creative-petit-studio":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "notion",
+              "clickup",
+              "wrike",
+              "monday"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "asana",
+              "slack",
+              "google-workspace",
+              "figma"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "frame-io",
+              "bynder",
+              "harvest",
+              "toggl"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "creatif-augmente-ia":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "chatgpt",
+              "claude",
+              "perplexity",
+              "midjourney"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "firefly",
+              "krea-ai",
+              "runway",
+              "kling-ai"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "magnific-ai",
+              "topaz-gigapixel",
+              "adobe-photoshop",
+              "figma"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "photo-producer-art-director":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "milanote",
+              "shotdeck",
+              "pinterest",
+              "arena"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "notion",
+              "google-drive",
+              "frame-io",
+              "capture-one"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "adobe-photoshop",
+              "indy",
+              "yousign",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "set-designer-decorateur-plateau":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "sketchup-pro",
+              "rhino",
+              "vectorworks",
+              "d5-render"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "milanote",
+              "pinterest",
+              "eagle",
+              "notion"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "google-sheets",
+              "google-drive",
+              "profile-builder-3",
+              "transmutr"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "visual-merchandiser-window-designer":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "sketchup-pro",
+              "adobe-illustrator",
+              "adobe-photoshop",
+              "indesign"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "d5-render",
+              "milanote",
+              "notion",
+              "google-drive"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "airtable",
+              "profile-builder-3",
+              "fredo6-bundle",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "floral-designer-vegetal":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "pinterest",
+              "milanote",
+              "canva",
+              "notion"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "airtable",
+              "google-sheets",
+              "indy",
+              "qonto"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "adobe-lightroom",
+              "instagram",
+              "chatgpt",
+              "midjourney"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "event-designer":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "notion",
+              "monday",
+              "airtable",
+              "google-sheets"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "miro",
+              "figma",
+              "sketchup-pro",
+              "adobe-illustrator"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "indesign",
+              "d5-render",
+              "slido",
+              "eventbrite"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "presentation-designer":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "powerpoint",
+              "keynote",
+              "google-slides",
+              "figma-slides"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "pitch",
+              "gamma",
+              "beautiful-ai",
+              "adobe-illustrator"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "adobe-photoshop",
+              "notion",
+              "chatgpt",
+              "firefly"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "data-visualization-designer":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "tableau",
+              "power-bi",
+              "looker-studio",
+              "flourish"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "datawrapper",
+              "figma",
+              "adobe-illustrator",
+              "google-sheets"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "excel",
+              "notion",
+              "chatgpt",
+              "claude"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "designer-cartographe-map":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "qgis",
+              "mapbox",
+              "arcgis",
+              "datawrapper"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "adobe-illustrator",
+              "figma",
+              "indesign",
+              "google-earth-studio"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "notion",
+              "chatgpt",
+              "claude",
+              "firefly"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "designer-installation-immersive":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "touchdesigner",
+              "unreal-engine",
+              "unity",
+              "notch"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "blender",
+              "cinema-4d",
+              "madmapper",
+              "resolume"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "ableton-live",
+              "figma",
+              "notion",
+              "chatgpt"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
+          ]
+      }
+  ],
+  "createur-sites-ia-automation":   [
+      {
+          "title": "Cadrage et recherche",
+          "titleEn": "Framing and research",
+          "description": "Clarifier le brief, les références et les contraintes avant production.",
+          "descriptionEn": "Clarify brief, references, and constraints before production.",
+          "toolSlugs": [
+              "lovable",
+              "cursor",
+              "replit",
+              "vercel"
+          ],
+          "workflow": [
+              "Je rassemble brief, références et contraintes.",
+              "Je définis le livrable et le niveau de finition attendu.",
+              "Je garde la décision dans la page projet."
+          ],
+          "workflowEn": [
+              "I gather brief, references, and constraints.",
+              "I define deliverable and finish level.",
+              "I keep the decision in the project page."
+          ]
+      },
+      {
+          "title": "Production et validation",
+          "titleEn": "Production and approval",
+          "description": "Produire une version exploitable, faire valider, puis préparer la livraison.",
+          "descriptionEn": "Produce a usable version, get approval, then prepare delivery.",
+          "toolSlugs": [
+              "supabase",
+              "airtable",
+              "make",
+              "zapier"
+          ],
+          "workflow": [
+              "Je produis dans l’outil source le plus adapté.",
+              "Je partage une version annotable ou visible.",
+              "Je verrouille les retours avant export final."
+          ],
+          "workflowEn": [
+              "I produce in the most suitable source tool.",
+              "I share a viewable or commentable version.",
+              "I lock feedback before final export."
+          ]
+      },
+      {
+          "title": "Livraison et suivi",
+          "titleEn": "Delivery and follow-up",
+          "description": "Livrer proprement, archiver les sources et garder la trace business.",
+          "descriptionEn": "Deliver cleanly, archive sources, and keep business trace.",
+          "toolSlugs": [
+              "n8n",
+              "webflow",
+              "framer",
+              "stripe"
+          ],
+          "workflow": [
+              "Je range sources, exports et versions finales.",
+              "Je documente les décisions importantes.",
+              "Je facture ou prépare la suite."
+          ],
+          "workflowEn": [
+              "I store sources, exports, and final versions.",
+              "I document important decisions.",
+              "I invoice or prepare the next step."
           ]
       }
   ],

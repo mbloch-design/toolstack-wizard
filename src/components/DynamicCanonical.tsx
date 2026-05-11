@@ -16,15 +16,22 @@ import { SEO_BASE, OG_IMAGE } from "@/lib/seo";
 export default function DynamicCanonical() {
   const { pathname } = useLocation();
   const clean = pathname.replace(/\/+$/, "") || "";
-  const canonical = `${SEO_BASE}${clean}`;
+  const canonicalPath = getCanonicalPath(clean);
+  const canonical = `${SEO_BASE}${canonicalPath}`;
 
-  const frMatch = clean.match(/^\/fr(\/.*)?$/);
-  const enMatch = clean.match(/^\/en(\/.*)?$/);
+  const frMatch = canonicalPath.match(/^\/fr(\/.*)?$/);
+  const enMatch = canonicalPath.match(/^\/en(\/.*)?$/);
 
   let frHref: string | null = null;
   let enHref: string | null = null;
 
-  if (frMatch) {
+  const toolPricingMatch = canonicalPath.match(/^\/(fr|en)\/tool\/([^/]+)\/(?:prix|pricing)$/);
+
+  if (toolPricingMatch) {
+    const slug = toolPricingMatch[2];
+    frHref = `${SEO_BASE}/fr/tool/${slug}/prix`;
+    enHref = `${SEO_BASE}/en/tool/${slug}/pricing`;
+  } else if (frMatch) {
     const rest = frMatch[1] || "";
     frHref = `${SEO_BASE}/fr${rest}`;
     enHref = `${SEO_BASE}/en${rest}`;
@@ -37,7 +44,7 @@ export default function DynamicCanonical() {
   const isEn = !!enMatch;
   const locale = isEn ? "en_US" : "fr_FR";
   const isFunnel =
-    /\/selector(\/|$)/.test(clean) || /\/diagnostic(\/|$)/.test(clean);
+    /\/selector(\/|$)/.test(canonicalPath) || /\/diagnostic(\/|$)/.test(canonicalPath);
 
   return (
     <Helmet>
@@ -65,4 +72,12 @@ export default function DynamicCanonical() {
       {isFunnel && <meta name="robots" content="noindex, nofollow" />}
     </Helmet>
   );
+}
+
+function getCanonicalPath(pathname: string) {
+  const toolPricingAlias = pathname.match(/^\/(fr|en)\/tool\/([^/]+)\/(prix|pricing)$/);
+  if (!toolPricingAlias) return pathname;
+
+  const [, lang, slug] = toolPricingAlias;
+  return `/${lang}/tool/${slug}/${lang === "fr" ? "prix" : "pricing"}`;
 }

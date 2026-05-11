@@ -132,7 +132,7 @@ function sitemapPlugin(): Plugin {
         for (const t of tools || []) {
           const slug = t.slug || t.id;
           addPair(`${BASE}/fr/tool/${slug}`,              `${BASE}/en/tool/${slug}`,              "weekly",  "0.8");
-          addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/prix`,         "monthly", "0.7");
+          addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/pricing`,      "monthly", "0.7");
           addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7");
           addPair(`${BASE}/fr/tool/${slug}/faq`,          `${BASE}/en/tool/${slug}/faq`,          "monthly", "0.6");
         }
@@ -186,7 +186,11 @@ function sitemapPlugin(): Plugin {
           ["slack-vs-teams-comparatif-2026",        "slack-vs-teams-comparison-2026"],
         ];
         for (const [frSlug, enSlug] of GUIDE_COMPARISONS) {
-          addPair(`${BASE}/fr/guide/${frSlug}`, `${BASE}/en/guide/${enSlug}`, "monthly", "0.7");
+          const frExists = postsFr.some((post: any) => post.slug === frSlug);
+          const enExists = postsEn.some((post: any) => post.slug === enSlug);
+          if (frExists && enExists) {
+            addPair(`${BASE}/fr/guide/${frSlug}`, `${BASE}/en/guide/${enSlug}`, "monthly", "0.7");
+          }
         }
 
         // ── Comparisons index + detail pages ──────────────────────────────────
@@ -403,9 +407,10 @@ function staticPrerenderPlugin(): Plugin {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             for (const sub of TOOL_SUB_PAGES) {
-              const url      = `${BASE}/${lang}/tool/${slug}/${sub.path}`;
+              const localizedPath = sub.path === "prix" && !isFr ? "pricing" : sub.path;
+              const url      = `${BASE}/${lang}/tool/${slug}/${localizedPath}`;
               const frUrl    = `${BASE}/fr/tool/${slug}/${sub.path}`;
-              const enUrl    = `${BASE}/en/tool/${slug}/${sub.path}`;
+              const enUrl    = `${BASE}/en/tool/${slug}/${sub.path === "prix" ? "pricing" : sub.path}`;
               const mainUrl  = `${BASE}/${lang}/tool/${slug}`;
               const title    = sub.buildTitle(name, isFr);
               const desc     = sub.buildDesc(name, price, isFr);
@@ -445,7 +450,7 @@ function staticPrerenderPlugin(): Plugin {
               html = html.replace("</head>", `    ${metaTags}\n  </head>`);
               html = html.replace("</body>", `    <noscript><p>${bodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
-              const outDir = path.resolve(distDir, lang, "tool", slug, sub.path);
+              const outDir = path.resolve(distDir, lang, "tool", slug, localizedPath);
               fs.mkdirSync(outDir, { recursive: true });
               fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
             }

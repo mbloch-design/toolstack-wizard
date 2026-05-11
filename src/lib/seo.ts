@@ -37,12 +37,21 @@ export function setHreflang(path: string, base = SEO_BASE) {
   // Remove existing hreflang links
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
 
-  const cleanPath = path.replace(/^\/(fr|en)/, "");
-  const entries: [string, string][] = [
-    ["fr", `${base}/fr${cleanPath}`],
-    ["en", `${base}/en${cleanPath}`],
-    ["x-default", `${base}/fr${cleanPath}`],
-  ];
+  const toolPricingMatch = path.match(/^\/(?:fr|en)\/tool\/([^/]+)\/(?:prix|pricing)$/);
+  const entries: [string, string][] = toolPricingMatch
+    ? [
+        ["fr", `${base}/fr/tool/${toolPricingMatch[1]}/prix`],
+        ["en", `${base}/en/tool/${toolPricingMatch[1]}/pricing`],
+        ["x-default", `${base}/fr/tool/${toolPricingMatch[1]}/prix`],
+      ]
+    : (() => {
+        const cleanPath = path.replace(/^\/(fr|en)/, "");
+        return [
+          ["fr", `${base}/fr${cleanPath}`],
+          ["en", `${base}/en${cleanPath}`],
+          ["x-default", `${base}/fr${cleanPath}`],
+        ] as [string, string][];
+      })();
 
   for (const [lang, href] of entries) {
     const link = document.createElement("link");

@@ -76153,5 +76153,4030 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null
+  },
+  {
+    "id": "rightfont",
+    "slug": "rightfont",
+    "name": "RightFont",
+    "categoryId": "design-tools",
+    "shortDescription": "Gestionnaire de polices professionnel pour équipes design et studios.",
+    "shortDescriptionEn": "Professional font manager for design teams and studios.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 5€/mois environ"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "",
+    "websiteUrl": "https://rightfontapp.com",
+    "logo": "",
+    "category": "design-tools",
+    "longDescription": "Gestionnaire de polices professionnel pour équipes design et studios.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "languagetool",
+    "slug": "languagetool",
+    "name": "LanguageTool",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Correction grammaticale, style et orthographe multilingue.",
+    "shortDescriptionEn": "Multilingual grammar, style, and spelling correction.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 5€/mois environ"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "",
+    "websiteUrl": "https://languagetool.org",
+    "logo": "",
+    "category": "productivity-tracking",
+    "longDescription": "Correction grammaticale, style et orthographe multilingue.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "antidote",
+    "slug": "antidote",
+    "name": "Antidote",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Suite avancée de correction et dictionnaires pour rédaction française.",
+    "shortDescriptionEn": "Advanced correction and dictionaries suite for French writing.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 5€/mois environ"
+    },
+    "defaultMonthlyPrice": 5,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.antidote.info",
+    "logo": "",
+    "category": "productivity-tracking",
+    "longDescription": "Suite avancée de correction et dictionnaires pour rédaction française.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "esko-studio",
+    "slug": "esko-studio",
+    "name": "Esko Studio",
+    "categoryId": "design-tools",
+    "shortDescription": "Suite packaging pour mockups, prévisualisation 3D et prépresse.",
+    "shortDescriptionEn": "Packaging suite for mockups, 3D preview, and prepress.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 99€/mois environ"
+    },
+    "defaultMonthlyPrice": 99,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.esko.com/en/products/studio",
+    "logo": "",
+    "category": "design-tools",
+    "longDescription": "Suite packaging pour mockups, prévisualisation 3D et prépresse.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "pacdora",
+    "slug": "pacdora",
+    "name": "Pacdora",
+    "categoryId": "design-tools",
+    "shortDescription": "Plateforme packaging 3D pour dielines, mockups et rendus produits.",
+    "shortDescriptionEn": "3D packaging platform for dielines, mockups, and product renders.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 29€/mois environ"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.pacdora.com",
+    "logo": "",
+    "category": "design-tools",
+    "longDescription": "Plateforme packaging 3D pour dielines, mockups et rendus produits.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "adobe-substance-3d",
+    "slug": "adobe-substance-3d",
+    "name": "Adobe Substance 3D",
+    "categoryId": "creation",
+    "shortDescription": "Suite 3D Adobe pour matériaux, textures, staging et visualisation produit.",
+    "shortDescriptionEn": "Adobe 3D suite for materials, textures, staging, and product visualization.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 50€/mois environ"
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.adobe.com/products/substance3d.html",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Suite 3D Adobe pour matériaux, textures, staging et visualisation produit.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "keyshot",
+    "slug": "keyshot",
+    "name": "KeyShot",
+    "categoryId": "creation",
+    "shortDescription": "Rendu produit rapide et premium pour design industriel et visualisation.",
+    "shortDescriptionEn": "Fast premium product rendering for industrial design and visualization.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 99€/mois environ"
+    },
+    "defaultMonthlyPrice": 99,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.keyshot.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Rendu produit rapide et premium pour design industriel et visualisation.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "plasticity",
+    "slug": "plasticity",
+    "name": "Plasticity",
+    "categoryId": "design-tools",
+    "shortDescription": "Modeleur 3D CAD rapide pour concepts produit, hard surface et formes précises.",
+    "shortDescriptionEn": "Fast CAD modeler for product concepts, hard surface, and precise forms.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 12€/mois environ"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.plasticity.xyz",
+    "logo": "",
+    "category": "design-tools",
+    "longDescription": "Modeleur 3D CAD rapide pour concepts produit, hard surface et formes précises.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "substance-3d-painter",
+    "slug": "substance-3d-painter",
+    "name": "Substance 3D Painter",
+    "categoryId": "creation",
+    "shortDescription": "Texturing 3D professionnel pour assets, produits et jeux vidéo.",
+    "shortDescriptionEn": "Professional 3D texturing for assets, products, and games.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 20€/mois environ"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.adobe.com/products/substance3d-painter.html",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Texturing 3D professionnel pour assets, produits et jeux vidéo.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "octane-render",
+    "slug": "octane-render",
+    "name": "Octane Render",
+    "categoryId": "creation",
+    "shortDescription": "Moteur de rendu GPU photoréaliste pour 3D et motion design.",
+    "shortDescriptionEn": "Photorealistic GPU render engine for 3D and motion design.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 20€/mois environ"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "",
+    "websiteUrl": "https://home.otoy.com/render/octane-render/",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Moteur de rendu GPU photoréaliste pour 3D et motion design.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "redshift",
+    "slug": "redshift",
+    "name": "Redshift",
+    "categoryId": "creation",
+    "shortDescription": "Moteur de rendu GPU orienté production, motion et 3D professionnelle.",
+    "shortDescriptionEn": "Production-focused GPU render engine for motion and professional 3D.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 46€/mois environ"
+    },
+    "defaultMonthlyPrice": 46,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.maxon.net/redshift",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Moteur de rendu GPU orienté production, motion et 3D professionnelle.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "pure-ref",
+    "slug": "pure-ref",
+    "name": "PureRef",
+    "categoryId": "design-tools",
+    "shortDescription": "Planche de références ultra légère pour artistes, illustrateurs et 3D.",
+    "shortDescriptionEn": "Lightweight reference board for artists, illustrators, and 3D.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.pureref.com",
+    "logo": "",
+    "category": "design-tools",
+    "longDescription": "Planche de références ultra légère pour artistes, illustrateurs et 3D.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "3ds-max",
+    "slug": "3ds-max",
+    "name": "3ds Max",
+    "categoryId": "creation",
+    "shortDescription": "Logiciel Autodesk pour modélisation, rendu et archviz professionnelle.",
+    "shortDescriptionEn": "Autodesk software for modeling, rendering, and professional archviz.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 245€/mois environ"
+    },
+    "defaultMonthlyPrice": 245,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.autodesk.com/products/3ds-max/overview",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Logiciel Autodesk pour modélisation, rendu et archviz professionnelle.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "corona-renderer",
+    "slug": "corona-renderer",
+    "name": "Corona Renderer",
+    "categoryId": "creation",
+    "shortDescription": "Moteur de rendu photoréaliste très utilisé en archviz.",
+    "shortDescriptionEn": "Photorealistic render engine widely used in archviz.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 50€/mois environ"
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.chaos.com/corona",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Moteur de rendu photoréaliste très utilisé en archviz.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "quixel-megascans",
+    "slug": "quixel-megascans",
+    "name": "Quixel Megascans",
+    "categoryId": "creation",
+    "shortDescription": "Bibliothèque d’assets et surfaces 3D scannés pour rendu et temps réel.",
+    "shortDescriptionEn": "Library of scanned 3D assets and surfaces for rendering and real time.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://quixel.com/megascans",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Bibliothèque d’assets et surfaces 3D scannés pour rendu et temps réel.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "maya",
+    "slug": "maya",
+    "name": "Maya",
+    "categoryId": "creation",
+    "shortDescription": "Standard 3D pour animation, personnages, rigging et production jeu/film.",
+    "shortDescriptionEn": "3D standard for animation, characters, rigging, and game/film production.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 245€/mois environ"
+    },
+    "defaultMonthlyPrice": 245,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.autodesk.com/products/maya/overview",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Standard 3D pour animation, personnages, rigging et production jeu/film.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "zbrush",
+    "slug": "zbrush",
+    "name": "ZBrush",
+    "categoryId": "creation",
+    "shortDescription": "Sculpture numérique avancée pour personnages, props et concept 3D.",
+    "shortDescriptionEn": "Advanced digital sculpting for characters, props, and 3D concept.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 40€/mois environ"
+    },
+    "defaultMonthlyPrice": 40,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.maxon.net/zbrush",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Sculpture numérique avancée pour personnages, props et concept 3D.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "unreal-engine",
+    "slug": "unreal-engine",
+    "name": "Unreal Engine",
+    "categoryId": "creation",
+    "shortDescription": "Moteur temps réel pour jeu, visualisation, animation et expériences immersives.",
+    "shortDescriptionEn": "Real-time engine for games, visualization, animation, and immersive experiences.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.unrealengine.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Moteur temps réel pour jeu, visualisation, animation et expériences immersives.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "unity",
+    "slug": "unity",
+    "name": "Unity",
+    "categoryId": "creation",
+    "shortDescription": "Moteur temps réel pour jeux, applications interactives et expériences 3D.",
+    "shortDescriptionEn": "Real-time engine for games, interactive apps, and 3D experiences.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://unity.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Moteur temps réel pour jeux, applications interactives et expériences 3D.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "marmoset-toolbag",
+    "slug": "marmoset-toolbag",
+    "name": "Marmoset Toolbag",
+    "categoryId": "creation",
+    "shortDescription": "Rendu temps réel, baking et présentation d’assets 3D.",
+    "shortDescriptionEn": "Real-time rendering, baking, and 3D asset presentation.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 16€/mois environ"
+    },
+    "defaultMonthlyPrice": 16,
+    "affiliateLink": "",
+    "websiteUrl": "https://marmoset.co/toolbag/",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Rendu temps réel, baking et présentation d’assets 3D.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "perforce",
+    "slug": "perforce",
+    "name": "Perforce",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Versioning robuste pour gros fichiers, jeux vidéo et pipelines créatifs.",
+    "shortDescriptionEn": "Robust versioning for large files, games, and creative pipelines.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.perforce.com",
+    "logo": "",
+    "category": "productivity-tracking",
+    "longDescription": "Versioning robuste pour gros fichiers, jeux vidéo et pipelines créatifs.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "artstation",
+    "slug": "artstation",
+    "name": "ArtStation",
+    "categoryId": "creation",
+    "shortDescription": "Portfolio et plateforme de visibilité pour artistes concept, 3D et game art.",
+    "shortDescriptionEn": "Portfolio and visibility platform for concept, 3D, and game artists.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.artstation.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Portfolio et plateforme de visibilité pour artistes concept, 3D et game art.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "fusion-360",
+    "slug": "fusion-360",
+    "name": "Fusion 360",
+    "categoryId": "design-tools",
+    "shortDescription": "CAO/FAO Autodesk pour conception produit, prototypage et fabrication.",
+    "shortDescriptionEn": "Autodesk CAD/CAM for product design, prototyping, and manufacturing.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 70€/mois environ"
+    },
+    "defaultMonthlyPrice": 70,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.autodesk.com/products/fusion-360/overview",
+    "logo": "",
+    "category": "design-tools",
+    "longDescription": "CAO/FAO Autodesk pour conception produit, prototypage et fabrication.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "solidworks",
+    "slug": "solidworks",
+    "name": "SolidWorks",
+    "categoryId": "design-tools",
+    "shortDescription": "CAO industrielle paramétrique pour conception produit et mécanique.",
+    "shortDescriptionEn": "Parametric industrial CAD for product and mechanical design.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 250€/mois environ"
+    },
+    "defaultMonthlyPrice": 250,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.solidworks.com",
+    "logo": "",
+    "category": "design-tools",
+    "longDescription": "CAO industrielle paramétrique pour conception produit et mécanique.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "grabcad",
+    "slug": "grabcad",
+    "name": "GrabCAD",
+    "categoryId": "design-tools",
+    "shortDescription": "Bibliothèque et plateforme collaborative autour des fichiers CAO.",
+    "shortDescriptionEn": "CAD file library and collaboration platform.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://grabcad.com",
+    "logo": "",
+    "category": "design-tools",
+    "longDescription": "Bibliothèque et plateforme collaborative autour des fichiers CAO.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "clo-3d",
+    "slug": "clo-3d",
+    "name": "CLO 3D",
+    "categoryId": "creation",
+    "shortDescription": "Simulation vêtement 3D pour mode, textile et prototypage collection.",
+    "shortDescriptionEn": "3D garment simulation for fashion, textile, and collection prototyping.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 50€/mois environ"
+    },
+    "defaultMonthlyPrice": 50,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.clo3d.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Simulation vêtement 3D pour mode, textile et prototypage collection.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "browzwear",
+    "slug": "browzwear",
+    "name": "Browzwear",
+    "categoryId": "creation",
+    "shortDescription": "Solution 3D mode pour prototypage vêtement et production textile.",
+    "shortDescriptionEn": "3D fashion solution for garment prototyping and textile production.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 99€/mois environ"
+    },
+    "defaultMonthlyPrice": 99,
+    "affiliateLink": "",
+    "websiteUrl": "https://browzwear.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Solution 3D mode pour prototypage vêtement et production textile.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "techpacker",
+    "slug": "techpacker",
+    "name": "Techpacker",
+    "categoryId": "project-management",
+    "shortDescription": "Fiches techniques mode, spécifications produit et suivi production.",
+    "shortDescriptionEn": "Fashion tech packs, product specs, and production tracking.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 49€/mois environ"
+    },
+    "defaultMonthlyPrice": 49,
+    "affiliateLink": "",
+    "websiteUrl": "https://techpacker.com",
+    "logo": "",
+    "category": "project-management",
+    "longDescription": "Fiches techniques mode, spécifications produit et suivi production.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "surferseo",
+    "slug": "surferseo",
+    "name": "Surfer SEO",
+    "categoryId": "analytics",
+    "shortDescription": "Optimisation SEO de contenus, briefs et scoring sémantique.",
+    "shortDescriptionEn": "SEO content optimization, briefs, and semantic scoring.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 89€/mois environ"
+    },
+    "defaultMonthlyPrice": 89,
+    "affiliateLink": "",
+    "websiteUrl": "https://surferseo.com",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Optimisation SEO de contenus, briefs et scoring sémantique.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "frase",
+    "slug": "frase",
+    "name": "Frase",
+    "categoryId": "analytics",
+    "shortDescription": "Briefs SEO, recherche SERP et optimisation de contenu.",
+    "shortDescriptionEn": "SEO briefs, SERP research, and content optimization.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 15€/mois environ"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.frase.io",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Briefs SEO, recherche SERP et optimisation de contenu.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "ga4",
+    "slug": "ga4",
+    "name": "Google Analytics 4",
+    "categoryId": "analytics",
+    "shortDescription": "Analytics web et produit gratuit pour acquisition, comportement et conversion.",
+    "shortDescriptionEn": "Free web and product analytics for acquisition, behavior, and conversion.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://analytics.google.com",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Analytics web et produit gratuit pour acquisition, comportement et conversion.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "harvest",
+    "slug": "harvest",
+    "name": "Harvest",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Suivi du temps, budgets projets et facturation pour équipes et studios.",
+    "shortDescriptionEn": "Time tracking, project budgets, and invoicing for teams and studios.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 12€/mois environ"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.getharvest.com",
+    "logo": "",
+    "category": "productivity-tracking",
+    "longDescription": "Suivi du temps, budgets projets et facturation pour équipes et studios.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "bynder",
+    "slug": "bynder",
+    "name": "Bynder",
+    "categoryId": "storage",
+    "shortDescription": "DAM professionnel pour assets de marque, campagnes et équipes créatives.",
+    "shortDescriptionEn": "Professional DAM for brand assets, campaigns, and creative teams.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 300€/mois environ"
+    },
+    "defaultMonthlyPrice": 300,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.bynder.com",
+    "logo": "",
+    "category": "storage",
+    "longDescription": "DAM professionnel pour assets de marque, campagnes et équipes créatives.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "powerpoint",
+    "slug": "powerpoint",
+    "name": "Microsoft PowerPoint",
+    "categoryId": "creation",
+    "shortDescription": "Standard des présentations business, commerciales et institutionnelles.",
+    "shortDescriptionEn": "Standard for business, sales, and institutional presentations.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 7€/mois environ"
+    },
+    "defaultMonthlyPrice": 7,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.microsoft.com/microsoft-365/powerpoint",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Standard des présentations business, commerciales et institutionnelles.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "beautiful-ai",
+    "slug": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "categoryId": "creation",
+    "shortDescription": "Création de présentations assistée par IA avec templates structurés.",
+    "shortDescriptionEn": "AI-assisted presentation creation with structured templates.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 12€/mois environ"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.beautiful.ai",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Création de présentations assistée par IA avec templates structurés.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "tableau",
+    "slug": "tableau",
+    "name": "Tableau",
+    "categoryId": "analytics",
+    "shortDescription": "Plateforme BI et dataviz pour dashboards et analyses avancées.",
+    "shortDescriptionEn": "BI and dataviz platform for dashboards and advanced analysis.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 75€/mois environ"
+    },
+    "defaultMonthlyPrice": 75,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.tableau.com",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Plateforme BI et dataviz pour dashboards et analyses avancées.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "power-bi",
+    "slug": "power-bi",
+    "name": "Power BI",
+    "categoryId": "analytics",
+    "shortDescription": "Solution Microsoft BI pour dashboards, rapports et analyses business.",
+    "shortDescriptionEn": "Microsoft BI solution for dashboards, reports, and business analysis.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 10€/mois environ"
+    },
+    "defaultMonthlyPrice": 10,
+    "affiliateLink": "",
+    "websiteUrl": "https://powerbi.microsoft.com",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Solution Microsoft BI pour dashboards, rapports et analyses business.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "flourish",
+    "slug": "flourish",
+    "name": "Flourish",
+    "categoryId": "analytics",
+    "shortDescription": "Dataviz éditoriale interactive, graphiques, cartes et stories data.",
+    "shortDescriptionEn": "Interactive editorial dataviz, charts, maps, and data stories.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://flourish.studio",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Dataviz éditoriale interactive, graphiques, cartes et stories data.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "datawrapper",
+    "slug": "datawrapper",
+    "name": "Datawrapper",
+    "categoryId": "analytics",
+    "shortDescription": "Création rapide de graphiques, cartes et tables éditoriales.",
+    "shortDescriptionEn": "Fast creation of editorial charts, maps, and tables.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.datawrapper.de",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Création rapide de graphiques, cartes et tables éditoriales.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "excel",
+    "slug": "excel",
+    "name": "Microsoft Excel",
+    "categoryId": "analytics",
+    "shortDescription": "Tableur de référence pour données, budgets, modèles et analyses.",
+    "shortDescriptionEn": "Reference spreadsheet for data, budgets, models, and analysis.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 7€/mois environ"
+    },
+    "defaultMonthlyPrice": 7,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.microsoft.com/microsoft-365/excel",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Tableur de référence pour données, budgets, modèles et analyses.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "qgis",
+    "slug": "qgis",
+    "name": "QGIS",
+    "categoryId": "analytics",
+    "shortDescription": "SIG open source pour cartographie, analyse spatiale et données géographiques.",
+    "shortDescriptionEn": "Open-source GIS for mapping, spatial analysis, and geographic data.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://qgis.org",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "SIG open source pour cartographie, analyse spatiale et données géographiques.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "mapbox",
+    "slug": "mapbox",
+    "name": "Mapbox",
+    "categoryId": "analytics",
+    "shortDescription": "Cartographie web, styles de cartes, données géographiques et APIs.",
+    "shortDescriptionEn": "Web maps, map styles, geographic data, and APIs.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.mapbox.com",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Cartographie web, styles de cartes, données géographiques et APIs.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "arcgis",
+    "slug": "arcgis",
+    "name": "ArcGIS",
+    "categoryId": "analytics",
+    "shortDescription": "Suite SIG professionnelle pour cartographie et analyse géospatiale.",
+    "shortDescriptionEn": "Professional GIS suite for mapping and geospatial analysis.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 100€/mois environ"
+    },
+    "defaultMonthlyPrice": 100,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.arcgis.com",
+    "logo": "",
+    "category": "analytics",
+    "longDescription": "Suite SIG professionnelle pour cartographie et analyse géospatiale.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "google-earth-studio",
+    "slug": "google-earth-studio",
+    "name": "Google Earth Studio",
+    "categoryId": "creation",
+    "shortDescription": "Animation de cartes et vues satellite pour vidéos et cartographie narrative.",
+    "shortDescriptionEn": "Map and satellite view animation for videos and narrative cartography.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.google.com/earth/studio/",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Animation de cartes et vues satellite pour vidéos et cartographie narrative.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "touchdesigner",
+    "slug": "touchdesigner",
+    "name": "TouchDesigner",
+    "categoryId": "creation",
+    "shortDescription": "Environnement node-based pour installations interactives, temps réel et projection.",
+    "shortDescriptionEn": "Node-based environment for interactive installations, real-time visuals, and projection.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://derivative.ca",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Environnement node-based pour installations interactives, temps réel et projection.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "notch",
+    "slug": "notch",
+    "name": "Notch",
+    "categoryId": "creation",
+    "shortDescription": "Outil temps réel pour motion graphics, VFX live et expériences immersives.",
+    "shortDescriptionEn": "Real-time tool for motion graphics, live VFX, and immersive experiences.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 90€/mois environ"
+    },
+    "defaultMonthlyPrice": 90,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.notch.one",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Outil temps réel pour motion graphics, VFX live et expériences immersives.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "madmapper",
+    "slug": "madmapper",
+    "name": "MadMapper",
+    "categoryId": "creation",
+    "shortDescription": "Mapping vidéo, projection, LED et installations visuelles.",
+    "shortDescriptionEn": "Video mapping, projection, LED, and visual installations.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 45€/mois environ"
+    },
+    "defaultMonthlyPrice": 45,
+    "affiliateLink": "",
+    "websiteUrl": "https://madmapper.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Mapping vidéo, projection, LED et installations visuelles.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "resolume",
+    "slug": "resolume",
+    "name": "Resolume",
+    "categoryId": "creation",
+    "shortDescription": "VJing, vidéo live, mapping et performance audiovisuelle.",
+    "shortDescriptionEn": "VJing, live video, mapping, and audiovisual performance.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 40€/mois environ"
+    },
+    "defaultMonthlyPrice": 40,
+    "affiliateLink": "",
+    "websiteUrl": "https://resolume.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "VJing, vidéo live, mapping et performance audiovisuelle.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "ableton-live",
+    "slug": "ableton-live",
+    "name": "Ableton Live",
+    "categoryId": "creation",
+    "shortDescription": "Production musicale, live performance et sound design.",
+    "shortDescriptionEn": "Music production, live performance, and sound design.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 20€/mois environ"
+    },
+    "defaultMonthlyPrice": 20,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.ableton.com/live/",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Production musicale, live performance et sound design.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "logic-pro",
+    "slug": "logic-pro",
+    "name": "Logic Pro",
+    "categoryId": "creation",
+    "shortDescription": "Station audio Apple pour composition, mixage et postproduction.",
+    "shortDescriptionEn": "Apple DAW for composition, mixing, and post-production.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.apple.com/logic-pro/",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Station audio Apple pour composition, mixage et postproduction.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "pro-tools",
+    "slug": "pro-tools",
+    "name": "Pro Tools",
+    "categoryId": "creation",
+    "shortDescription": "DAW standard studio pour audio professionnel, mixage et postproduction.",
+    "shortDescriptionEn": "Studio-standard DAW for professional audio, mixing, and post-production.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 30€/mois environ"
+    },
+    "defaultMonthlyPrice": 30,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.avid.com/pro-tools",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "DAW standard studio pour audio professionnel, mixage et postproduction.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "auphonic",
+    "slug": "auphonic",
+    "name": "Auphonic",
+    "categoryId": "creation",
+    "shortDescription": "Nettoyage, leveling et mastering automatique pour podcast et audio.",
+    "shortDescriptionEn": "Automatic cleanup, leveling, and mastering for podcast and audio.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 11€/mois environ"
+    },
+    "defaultMonthlyPrice": 11,
+    "affiliateLink": "",
+    "websiteUrl": "https://auphonic.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Nettoyage, leveling et mastering automatique pour podcast et audio.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "spotify-for-podcasters",
+    "slug": "spotify-for-podcasters",
+    "name": "Spotify for Podcasters",
+    "categoryId": "creation",
+    "shortDescription": "Hébergement et distribution podcast gratuits par Spotify.",
+    "shortDescriptionEn": "Free podcast hosting and distribution by Spotify.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://podcasters.spotify.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Hébergement et distribution podcast gratuits par Spotify.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "ausha",
+    "slug": "ausha",
+    "name": "Ausha",
+    "categoryId": "creation",
+    "shortDescription": "Hébergement, distribution et promotion de podcasts.",
+    "shortDescriptionEn": "Podcast hosting, distribution, and promotion.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 13€/mois environ"
+    },
+    "defaultMonthlyPrice": 13,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.ausha.co",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Hébergement, distribution et promotion de podcasts.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "moodle",
+    "slug": "moodle",
+    "name": "Moodle",
+    "categoryId": "formation-education",
+    "shortDescription": "LMS open source pour formations, parcours et suivi apprenants.",
+    "shortDescriptionEn": "Open-source LMS for training, courses, and learner tracking.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://moodle.org",
+    "logo": "",
+    "category": "formation-education",
+    "longDescription": "LMS open source pour formations, parcours et suivi apprenants.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "articulate",
+    "slug": "articulate",
+    "name": "Articulate 360",
+    "categoryId": "formation-education",
+    "shortDescription": "Suite e-learning pour modules interactifs, quiz et formation professionnelle.",
+    "shortDescriptionEn": "E-learning suite for interactive modules, quizzes, and professional training.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 99€/mois environ"
+    },
+    "defaultMonthlyPrice": 99,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.articulate.com/360/",
+    "logo": "",
+    "category": "formation-education",
+    "longDescription": "Suite e-learning pour modules interactifs, quiz et formation professionnelle.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "genially",
+    "slug": "genially",
+    "name": "Genially",
+    "categoryId": "formation-education",
+    "shortDescription": "Contenus interactifs, présentations, modules pédagogiques et infographies.",
+    "shortDescriptionEn": "Interactive content, presentations, learning modules, and infographics.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 8€/mois environ"
+    },
+    "defaultMonthlyPrice": 8,
+    "affiliateLink": "",
+    "websiteUrl": "https://genially.com",
+    "logo": "",
+    "category": "formation-education",
+    "longDescription": "Contenus interactifs, présentations, modules pédagogiques et infographies.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "slido",
+    "slug": "slido",
+    "name": "Slido",
+    "categoryId": "communication",
+    "shortDescription": "Questions, sondages et interaction live pour événements et formations.",
+    "shortDescriptionEn": "Q&A, polls, and live interaction for events and training.",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 15€/mois environ"
+    },
+    "defaultMonthlyPrice": 15,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.slido.com",
+    "logo": "",
+    "category": "communication",
+    "longDescription": "Questions, sondages et interaction live pour événements et formations.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "eventbrite",
+    "slug": "eventbrite",
+    "name": "Eventbrite",
+    "categoryId": "communication",
+    "shortDescription": "Billetterie, inscriptions et gestion d’événements.",
+    "shortDescriptionEn": "Ticketing, registration, and event management.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.eventbrite.com",
+    "logo": "",
+    "category": "communication",
+    "longDescription": "Billetterie, inscriptions et gestion d’événements.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "instagram",
+    "slug": "instagram",
+    "name": "Instagram",
+    "categoryId": "communication",
+    "shortDescription": "Canal social visuel pour portfolio, veille, communauté et acquisition créative.",
+    "shortDescriptionEn": "Visual social channel for portfolio, research, community, and creative acquisition.",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.instagram.com",
+    "logo": "",
+    "category": "communication",
+    "longDescription": "Canal social visuel pour portfolio, veille, communauté et acquisition créative.",
+    "verdict": {
+      "keepIf": [
+        "L’outil répond à un livrable récurrent du métier."
+      ],
+      "avoidIf": [
+        "Il sert seulement de doublon ou de test ponctuel."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou intégré à une prestation facturée."
+    },
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Aide à professionnaliser la production ou la livraison."
+    ],
+    "cons": [
+      "Peut devenir dormant si le besoin n’est pas récurrent."
+    ],
+    "useCases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Utile si le livrable associé revient souvent.",
+    "teamRelevance": "Utile en studio si l’outil standardise la production.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
+  },
+  {
+    "id": "procreate",
+    "slug": "procreate",
+    "name": "Procreate",
+    "categoryId": "creation",
+    "shortDescription": "Application de dessin et illustration numérique sur iPad, très utilisée par illustrateurs et concept artists.",
+    "shortDescriptionEn": "iPad digital drawing and illustration app used by illustrators and concept artists.",
+    "pricing": {
+      "free": "Achat unique / plan gratuit selon usage",
+      "paid": null
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://procreate.com",
+    "logo": "",
+    "category": "creation",
+    "longDescription": "Application de dessin et illustration numérique sur iPad, très utilisée par illustrateurs et concept artists.",
+    "verdict": {
+      "keepIf": [
+        "Dessin ou illustration récurrente sur iPad."
+      ],
+      "avoidIf": [
+        "Le workflow est uniquement vectoriel ou desktop."
+      ],
+      "threshold": "À garder si l’iPad est un vrai outil de production."
+    },
+    "pros": [
+      "Rapide, fluide et adapté au dessin créatif."
+    ],
+    "cons": [
+      "Moins adapté aux livrables vectoriels ou prépresse."
+    ],
+    "useCases": [
+      "Dessin numérique",
+      "Illustration",
+      "Concept art"
+    ],
+    "covers": [],
+    "relevantFor": [],
+    "personas": [
+      "designer"
+    ],
+    "soloRelevance": "Très utile pour illustrateurs et créatifs visuels.",
+    "teamRelevance": "Utile comme outil de production individuel.",
+    "alternatives": [],
+    "articles": [],
+    "freeAlternative": null,
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "creative"
+    ],
+    "functional_needs": [],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "contextual",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": null
   }
 ]

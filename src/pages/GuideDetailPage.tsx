@@ -78,6 +78,16 @@ const GuideDetailPage = () => {
     return () => cleanupSeo(["article-jsonld", "article-faq-jsonld"]);
   }, [post, lang]);
 
+  useEffect(() => {
+    if (loading || post) return;
+    document.title = lang === "fr" ? "Article introuvable - ToolTrim" : "Article not found - ToolTrim";
+    setMeta("robots", "noindex, nofollow");
+
+    return () => {
+      document.querySelector<HTMLMetaElement>('meta[name="robots"][content*="noindex"]')?.remove();
+    };
+  }, [loading, post, lang]);
+
   // TOC: only H2s for compact view
   const toc = useMemo(() => {
     if (!post?.content) return [];

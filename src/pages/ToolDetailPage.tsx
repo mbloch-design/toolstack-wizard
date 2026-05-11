@@ -118,11 +118,12 @@ const ToolDetailPage = () => {
     const meta = SEO[subPage] ?? SEO.presentation;
     const seoTitle = lang === "fr" ? meta.titleFr : meta.titleEn;
     const seoDesc  = lang === "fr" ? meta.descFr  : meta.descEn;
-    const canonicalUrl = `${SEO_BASE}/${lang}/tool/${baseSlug}${meta.suffix}`;
+    const canonicalSuffix = subPage === "prix" && lang === "en" ? "/pricing" : meta.suffix;
+    const canonicalUrl = `${SEO_BASE}/${lang}/tool/${baseSlug}${canonicalSuffix}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setMeta("article:modified_time", tool.pricing_v5?.verified_on || "2026-03-29");
-    setHreflang(`/${lang}/tool/${baseSlug}${meta.suffix}`);
+    setHreflang(`/${lang}/tool/${baseSlug}${canonicalSuffix}`);
     return () => cleanupSeo([]);
   }, [tool, lang, subPage]);
 
@@ -440,10 +441,11 @@ const ToolDetailPage = () => {
             >
               {TABS.map((tab) => {
                 const isActive = subPage === tab.id;
+                const tabPath = tab.id === "prix" && lang === "en" ? "/pricing" : tab.path;
                 return (
                   <Link
                     key={tab.id}
-                    to={`${prefix}/tool/${slug}${tab.path}`}
+                    to={`${prefix}/tool/${slug}${tabPath}`}
                     className="relative shrink-0 px-4 py-3 text-sm font-medium transition-colors duration-150"
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
