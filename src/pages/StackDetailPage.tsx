@@ -249,17 +249,6 @@ const StackDetailPage = () => {
             {t(stack.editorial, stack.editorialEn)}
           </p>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <StackMetric label={t("Outils cartographiés", "Mapped tools")} value={`${stack.tools.length}`} />
-            <StackMetric label={t("Budget repère", "Budget baseline")} value={`${stack.monthlyBudget}€/${t("mois", "mo")}`} />
-            <StackMetric label={t("Économie repère", "Savings baseline")} value={`${stack.savings}€/${t("mois", "mo")}`} />
-            <StackMetric
-              label={t("Décisions", "Decisions")}
-              value={`${toolDecisionStats.core} ${t("socles", "core")}`}
-              hint={`${toolDecisionStats.conditional} ${t("conditionnel", "conditional")} · ${toolDecisionStats.challenge} ${t("à challenger", "to challenge")}`}
-            />
-          </div>
-
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="rounded-lg">
               <Link to={`${prefix}/selector`}>
