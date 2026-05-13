@@ -28,7 +28,7 @@ import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import ToolDiagCta from "@/components/tool/ToolDiagCta";
 
 const TABS = [
-  { id: "presentation", labelFr: "Présentation", labelEn: "Overview",      path: ""             },
+  { id: "presentation", labelFr: "Analyse",       labelEn: "Overview",      path: ""             },
   { id: "prix",         labelFr: "Prix",          labelEn: "Pricing",       path: "/prix"        },
   { id: "alternatives", labelFr: "Alternatives",  labelEn: "Alternatives",  path: "/alternatives"},
   { id: "avis",         labelFr: "Avis",          labelEn: "Reviews",       path: "/avis"        },
@@ -388,7 +388,11 @@ const ToolDetailPage = () => {
                   className="flex w-full items-center justify-center gap-1.5 rounded-xl py-2.5 text-[0.8125rem] font-semibold transition-opacity hover:opacity-85"
                   style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
                 >
-                  {hasAffiliateOffer ? t(`Voir l’offre`, `View offer`) : t("Visiter le site", "Visit website")}
+                  {hasAffiliateOffer
+                    ? t(`Voir l’offre ${tool.name}`, `View ${tool.name} offer`)
+                    : isFree
+                    ? t(`Ouvrir ${tool.name} — gratuit`, `Open ${tool.name} — free`)
+                    : t(`Essayer ${tool.name}`, `Try ${tool.name}`)}
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
 
@@ -449,24 +453,16 @@ const ToolDetailPage = () => {
 
               {/* Key facts */}
               <div className="border-t border-border/60 px-5 py-3.5 space-y-2.5" style={{ fontSize: "0.75rem" }}>
-                {toolType && (
-                  <div className="flex items-center justify-between">
-                    <span style={{ color: "hsl(var(--muted-foreground))" }}>{t("Type", "Type")}</span>
-                    <span className="font-medium" style={{ color: "hsl(var(--foreground))" }}>
-                      {lang === "fr" ? TYPE_LABEL[toolType]?.fr : TYPE_LABEL[toolType]?.en}
-                    </span>
-                  </div>
-                )}
                 <div className="flex items-center justify-between">
-                  <span style={{ color: "hsl(var(--muted-foreground))" }}>{t("Remplaçable", "Replaceable")}</span>
+                  <span style={{ color: "hsl(var(--muted-foreground))" }}>{t("Substituable", "Substitutable")}</span>
                   <span style={{ color: (tool as any).substitutable ? "hsl(var(--savings))" : "hsl(var(--muted-foreground))" }}>
-                    {(tool as any).substitutable ? t("Oui", "Yes") : t("Non", "No")}
+                    {(tool as any).substitutable ? t("Oui — alternatives dispo", "Yes — alternatives exist") : t("Non — outil unique", "No — unique tool")}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="flex items-center gap-1" style={{ color: "hsl(var(--muted-foreground))" }}>
                     <ShieldCheck className="h-3 w-3" />
-                    {t("Vérifié", "Verified")}
+                    {t("Prix vérifié le", "Price verified")}
                   </span>
                   <time dateTime={verifiedOn} className="num-mono" style={{ color: "hsl(var(--muted-foreground) / 0.55)", fontSize: "0.7rem" }}>
                     {verifiedOn}
@@ -678,7 +674,7 @@ const ToolDetailPage = () => {
                       {t("Notre analyse", "Our analysis")}
                     </p>
                     <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                      {t(`${tool.name} en détail`, `${tool.name} — in depth`)}
+                      {t(`Notre analyse de ${tool.name}`, `Our take on ${tool.name}`)}
                     </h2>
                     {paras.map((para: string, i: number) => (
                       <p key={i} className={i === 0

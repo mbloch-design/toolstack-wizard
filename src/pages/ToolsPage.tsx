@@ -149,7 +149,7 @@ const ToolsPage = () => {
               {t("Trouvez les bons outils\npour votre stack", "Find the right tools\nfor your stack")}
             </h1>
             <p className="mt-3 leading-relaxed" style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))", maxWidth: "44ch", fontWeight: 400 }}>
-              {t("Prix vérifiés, alternatives visibles, verdicts honnêtes. Aucune commission.", "Verified pricing, visible alternatives, honest verdicts. No commissions.")}
+              {t("Des prix vérifiés, des alternatives honnêtes — sans commission, sans biais.", "Verified pricing, honest alternatives — no commissions, no bias.")}
             </p>
             <div
               className="relative mt-6 flex items-center rounded-xl border bg-white"
@@ -227,10 +227,10 @@ const ToolsPage = () => {
             {/* Bottom CTA */}
             <div className="mt-8 border-t border-border pt-6">
               <p className="text-[0.8125rem] font-semibold" style={{ color: "hsl(var(--foreground))" }}>
-                {t("Prêt à optimiser ?", "Ready to optimize?")}
+                {t("Votre stack coûte combien ?", "How much is your stack costing you?")}
               </p>
               <p className="mt-1 text-[0.75rem] leading-5" style={{ color: "hsl(var(--muted-foreground))", fontWeight: 400 }}>
-                {t("Analysez votre stack actuelle.", "Analyze your current stack.")}
+                {t("Calculez ce que vous payez vraiment.", "Calculate what you're actually paying.")}
               </p>
               <Link
                 to={`${prefix}/diagnostic`}
@@ -260,10 +260,10 @@ const ToolsPage = () => {
           {!isFiltering && noteworthy.length > 0 && (
             <section className="mb-12">
               <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-                {t("Sélection", "Selection")}
+                {t("Sélection éditoriale", "Editor's picks")}
               </p>
               <h2 className="mb-5 font-display" style={{ fontSize: "1.125rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
-                {t("Recommandés & à la une", "New & Noteworthy")}
+                {t("Les outils qu'on recommande vraiment", "Tools we actually recommend")}
               </h2>
               <div className="grid gap-3 sm:grid-cols-2">
                 {noteworthy.map(tool => <AppCard key={tool.id} tool={tool} prefix={prefix} t={t} />)}
