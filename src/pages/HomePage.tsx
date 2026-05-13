@@ -126,7 +126,35 @@ const HomePage = () => {
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}`);
     setJsonLd("home-jsonld", { "@context": "https://schema.org", "@type": "WebSite", name: "ToolTrim", url: SEO_BASE, description: desc, potentialAction: { "@type": "SearchAction", target: `${SEO_BASE}/${lang}/tools?q={search_term_string}`, "query-input": "required name=search_term_string" } });
-    setJsonLd("home-org-jsonld", { "@context": "https://schema.org", "@type": "Organization", name: "ToolTrim", url: SEO_BASE, logo: `${SEO_BASE}/picto-logo.svg`, sameAs: [] });
+    setJsonLd("home-org-jsonld", {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "ToolTrim",
+      url: SEO_BASE,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SEO_BASE}/picto-logo.svg`,
+        width: 512,
+        height: 512,
+      },
+      description: "Independent SaaS tool directory with human-verified pricing, honest alternatives and zero affiliate bias.",
+      foundingDate: "2024",
+      email: "contact@tooltrim.com",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: "contact@tooltrim.com",
+        url: `${SEO_BASE}/fr/contact`,
+        availableLanguage: ["French", "English"],
+      },
+      sameAs: [
+        "https://twitter.com/tooltrim",
+        "https://www.linkedin.com/company/tooltrim",
+        "https://github.com/tooltrim",
+        "https://www.producthunt.com/products/tooltrim",
+        "https://www.crunchbase.com/organization/tooltrim",
+      ],
+    });
     setJsonLd("home-faq-jsonld", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) });
     return () => cleanupSeo(["home-jsonld", "home-org-jsonld", "home-faq-jsonld"]);
   }, [lang, stats.total, faq]);
