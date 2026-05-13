@@ -306,65 +306,78 @@ const StackDetailPage = () => {
 
         {/* ── OUTILS ─────────────────────────────────────────────────────── */}
         <section id="stack" className="scroll-mt-24 border-b border-border py-12">
-          <div className="mb-8 max-w-3xl">
+          <div className="mb-8">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
               {t("Cartographie", "Map")}
             </p>
-            <h2 className="font-display text-2xl font-semibold leading-tight tracking-tight text-foreground md:text-3xl">
-              {t("Les outils rangés par rôle, avec le niveau de décision.", "Tools grouped by role, with the decision level.")}
-            </h2>
+            <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-keep/60" />
+                {t("Socle — indispensable", "Core — essential")}
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-primary/60" />
+                {t("Conditionnel — selon usage", "Conditional — depends on use")}
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-destructive/60" />
+                {t("À challenger — justifier l'abonnement", "Challenge — justify the cost")}
+              </span>
+            </div>
           </div>
 
-          {/* ── Tech stack grid ── */}
-          <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
-            <div
-              className="grid min-w-max border-t border-border"
-              style={{ gridTemplateColumns: `repeat(${stackLayers.length}, minmax(168px, 1fr))` }}
-            >
-              {/* Column headers */}
-              {stackLayers.map((layer, i) => (
-                <div
-                  key={`h-${layer.id}`}
-                  className={`py-5 px-6 ${i > 0 ? "border-l border-dashed border-border" : ""}`}
-                >
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-foreground">
+          {/* ── Tool cards grouped by layer ── */}
+          <div className="space-y-10">
+            {stackLayers.map((layer) => (
+              <div key={layer.id}>
+
+                {/* Layer header */}
+                <div className="flex items-center gap-3 mb-4">
+                  <p className="shrink-0 text-[10px] font-bold uppercase tracking-[0.14em] text-foreground">
                     {t(layer.titleFr, layer.titleEn)}
                   </p>
-                  <div className="mt-1.5 h-[2px] w-5 rounded-full bg-primary" />
+                  <div className="flex-1 h-px bg-border" />
+                  <span className="shrink-0 text-[10px] font-mono text-muted-foreground">
+                    {layer.tools.length}
+                  </span>
                 </div>
-              ))}
 
-              {/* Tool columns */}
-              {stackLayers.map((layer, i) => (
-                <div
-                  key={`col-${layer.id}`}
-                  className={`border-t border-border py-7 px-6 flex flex-col gap-6 ${i > 0 ? "border-l border-dashed border-border" : ""}`}
-                >
+                {/* Tool cards */}
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {layer.tools.map(({ slot, tool }) => {
                     const status = getToolDecisionStatus(slot);
                     return (
                       <Link
                         key={slot.slug}
                         to={`${prefix}/tool/${tool!.slug}`}
-                        className="group flex flex-col items-center gap-2.5 text-center cursor-pointer"
+                        className="group flex items-start gap-3.5 rounded-xl border border-border bg-card p-4 transition-all duration-150 hover:border-primary/40 hover:bg-primary/[0.02] cursor-pointer"
                       >
-                        <div className={`rounded-xl p-1.5 ring-1 transition-all duration-150 group-hover:ring-2 ${status.className}`}>
-                          <ToolLogo tool={tool!} size={44} className="rounded-lg" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
-                            {tool!.name}
-                          </p>
-                          <p className="mt-0.5 text-[10px] leading-tight text-muted-foreground">
+                        {/* Logo */}
+                        <ToolLogo tool={tool!} size={44} className="shrink-0 rounded-lg mt-0.5" />
+
+                        {/* Content */}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-start justify-between gap-2">
+                            <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                              {tool!.name}
+                            </p>
+                            <span className={`shrink-0 inline-flex rounded-full border px-2 py-0.5 text-[9px] font-bold leading-none pt-[3px] ${status.className}`}>
+                              {t(status.labelFr, status.labelEn)}
+                            </span>
+                          </div>
+                          <p className="mt-0.5 text-[11px] font-medium text-muted-foreground">
                             {t(slot.role, slot.roleEn)}
+                          </p>
+                          <p className="mt-1.5 text-[11px] leading-[1.55] text-muted-foreground line-clamp-2">
+                            {t(slot.reason, slot.reasonEn)}
                           </p>
                         </div>
                       </Link>
                     );
                   })}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </section>
 
