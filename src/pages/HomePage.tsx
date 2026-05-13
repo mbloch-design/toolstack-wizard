@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
-import { useEffect, useMemo, lazy, Suspense, useRef, useState } from "react";
+import { useEffect, useMemo, lazy, Suspense, useRef } from "react";
 import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Clock, Clock3, Database, Euro, Layers3, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { STACKS } from "@/data/stacks";
-import { getToolLogoSources } from "@/lib/toolLogos";
 
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
@@ -265,43 +264,6 @@ const HomePage = () => {
   );
 };
 
-/* ── Per-objective gradient texture config ── */
-const OBJECTIVE_TEXTURES: Record<string, { gradient: string; pillColor: string }> = {
-  "developpeur-freelance-shipper": {
-    gradient:
-      "radial-gradient(ellipse at 20% 65%, #312e81 0%, transparent 55%), radial-gradient(ellipse at 78% 18%, #6366f1 0%, transparent 52%), linear-gradient(155deg, #1e1b4b 0%, #2e2a63 100%)",
-    pillColor: "bg-indigo-500/20 text-indigo-200 ring-indigo-400/20",
-  },
-  "consultant-b2b-propre": {
-    gradient:
-      "radial-gradient(ellipse at 22% 70%, #92400e 0%, transparent 55%), radial-gradient(ellipse at 80% 15%, #d97706 0%, transparent 50%), linear-gradient(155deg, #451a03 0%, #7c2d12 100%)",
-    pillColor: "bg-amber-500/20 text-amber-200 ring-amber-400/20",
-  },
-  "createur-contenu-operateur": {
-    gradient:
-      "radial-gradient(ellipse at 25% 65%, #9d174d 0%, transparent 55%), radial-gradient(ellipse at 76% 18%, #ec4899 0%, transparent 52%), linear-gradient(155deg, #500724 0%, #881337 100%)",
-    pillColor: "bg-pink-500/20 text-pink-200 ring-pink-400/20",
-  },
-  "ops-manager-fractional-coo": {
-    gradient:
-      "radial-gradient(ellipse at 20% 68%, #134e4a 0%, transparent 55%), radial-gradient(ellipse at 78% 16%, #0f766e 0%, transparent 52%), linear-gradient(155deg, #042f2e 0%, #0f4c48 100%)",
-    pillColor: "bg-teal-500/20 text-teal-200 ring-teal-400/20",
-  },
-  "freelance-solo-zero-bloat": {
-    gradient:
-      "radial-gradient(ellipse at 22% 68%, #14532d 0%, transparent 55%), radial-gradient(ellipse at 78% 16%, #16a34a 0%, transparent 52%), linear-gradient(155deg, #052e16 0%, #166534 100%)",
-    pillColor: "bg-emerald-500/20 text-emerald-200 ring-emerald-400/20",
-  },
-  "automatisation-legere-freelance": {
-    gradient:
-      "radial-gradient(ellipse at 20% 65%, #1e3a8a 0%, transparent 55%), radial-gradient(ellipse at 78% 18%, #2563eb 0%, transparent 52%), linear-gradient(155deg, #0c1445 0%, #1e3a6e 100%)",
-    pillColor: "bg-blue-500/20 text-blue-200 ring-blue-400/20",
-  },
-};
-
-// SVG noise grain as data URI — adds micro-texture over the gradient
-const GRAIN_URI =
-  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E\")";
 
 function BusinessObjectivesSection() {
   const { lang, t, prefix } = useLang();
@@ -374,57 +336,40 @@ function BusinessObjectivesSection() {
                 className="group flex flex-col rounded-lg bg-secondary/70 p-4 transition-colors duration-200 [scroll-snap-align:start] hover:bg-secondary md:p-5"
               >
                 {/* Texture visual panel */}
-                {(() => {
-                  const tex = OBJECTIVE_TEXTURES[objective.slug] ?? OBJECTIVE_TEXTURES["developpeur-freelance-shipper"];
-                  return (
-                    <div className="relative overflow-hidden rounded-md" style={{ background: tex.gradient }}>
-                      {/* Grain texture overlay */}
-                      <div
-                        className="pointer-events-none absolute inset-0 opacity-[0.22] mix-blend-overlay"
-                        style={{ backgroundImage: GRAIN_URI, backgroundSize: "200px 200px" }}
-                      />
+                {/* Photo + overlays */}
+                <div className="relative overflow-hidden rounded-md bg-secondary">
+                  <img
+                    src={objective.image}
+                    alt={title}
+                    className="aspect-[1.28/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                    loading="lazy"
+                  />
 
-                      {/* Subtle vignette at bottom edge */}
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/30 to-transparent" />
+                  {/* Bottom vignette so overlays read clearly */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 to-transparent" />
 
-                      {/* Floating tool name pills — decorative */}
-                      <div className="relative flex aspect-[1.28/1] w-full flex-col justify-end gap-0 p-4 pb-3">
-                        <div className="flex flex-wrap gap-1.5">
-                          {stack.tools.slice(0, 4).map((tool) => (
-                            <span
-                              key={tool.slug}
-                              className={`rounded-full px-2.5 py-1 text-[11px] font-medium ring-1 backdrop-blur-sm ${tex.pillColor}`}
-                            >
-                              {tool.slug.replace(/-/g, "‑")}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Budget + savings bar */}
-                      <div className="flex items-center justify-between bg-black/30 px-4 py-2.5 backdrop-blur-sm">
-                        <span className="text-[11px] font-medium text-white/60">
-                          {t("Stack optimisée", "Optimized stack")}
-                        </span>
-                        <div className="flex items-center gap-2.5">
-                          <span className="text-sm font-semibold text-white tabular-nums">
-                            {stack.monthlyBudget}€<span className="font-normal text-white/50 text-xs">/m</span>
-                          </span>
-                          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-400/20 px-2 py-0.5 text-[10px] font-bold text-emerald-300 ring-1 ring-emerald-400/25">
-                            <TrendingDown className="h-2.5 w-2.5" />
-                            −{stack.savings}€/m
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Label badge — absolute over gradient */}
-                      <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/40 px-2.5 py-1 text-xs font-semibold text-white shadow-sm backdrop-blur-sm ring-1 ring-white/15">
-                        <Layers3 className="h-3 w-3 text-white/70" />
-                        {label}
-                      </div>
+                  {/* Budget + savings bar — over photo */}
+                  <div className="absolute inset-x-0 bottom-0 flex items-center justify-between px-3.5 pb-3 pt-1">
+                    <span className="text-[11px] font-medium text-white/70">
+                      {t("Stack optimisée", "Optimized stack")}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold text-white tabular-nums">
+                        {stack.monthlyBudget}€<span className="font-normal text-white/55 text-xs">/m</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-400/25 px-2 py-0.5 text-[10px] font-bold text-emerald-300 ring-1 ring-emerald-400/30">
+                        <TrendingDown className="h-2.5 w-2.5" />
+                        −{stack.savings}€/m
+                      </span>
                     </div>
-                  );
-                })()}
+                  </div>
+
+                  {/* Label badge */}
+                  <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/40 px-2.5 py-1 text-xs font-semibold text-white shadow-sm backdrop-blur-sm ring-1 ring-white/15">
+                    <Layers3 className="h-3 w-3 text-white/70" />
+                    {label}
+                  </div>
+                </div>
 
                 <div className="flex flex-1 flex-col justify-between pt-5">
                   <div>
