@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
-import { useEffect, useMemo, lazy, Suspense, useRef } from "react";
-import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Clock, Clock3, Database, Euro, Layers3, ShieldCheck, Sparkles } from "lucide-react";
+import { useEffect, useMemo, lazy, Suspense, useRef, useState } from "react";
+import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Clock, Clock3, Database, Euro, Layers3, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { STACKS } from "@/data/stacks";
+import { getToolLogoSources } from "@/lib/toolLogos";
 
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
+import PersonasSection from "@/components/home/PersonasSection";
 import FaqBlock from "@/components/FaqBlock";
 import ToolLogo from "@/components/ToolLogo";
 
@@ -141,19 +143,22 @@ const HomePage = () => {
       {/* 3. Stats */}
       <StatsSection toolCount={stats.total} categoryCount={stats.categories} />
 
-      {/* 4. Business objectives */}
+      {/* 4. Who it's for */}
+      <PersonasSection />
+
+      {/* 5. Business objectives */}
       <BusinessObjectivesSection />
 
-      {/* 5. How it works */}
+      {/* 6. How it works */}
       <Suspense fallback={null}><HowItWorks /></Suspense>
 
-      {/* 6. Differentiator */}
+      {/* 7. Differentiator */}
       <Suspense fallback={null}><DiffTable toolCount={stats.total} /></Suspense>
 
-      {/* 7. Testimonials */}
+      {/* 8. Testimonials */}
       <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
-      {/* 8. Categories */}
+      {/* 9. Categories */}
       <section className="border-t border-border py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex items-end justify-between mb-10">
@@ -202,7 +207,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 9. Guides */}
+      {/* 10. Guides */}
       {featuredPosts.length > 0 && (
         <section className="border-t border-border bg-secondary/20 py-24">
           <div className="container mx-auto max-w-7xl px-6">
@@ -230,7 +235,7 @@ const HomePage = () => {
         </section>
       )}
 
-      {/* 10. FAQ */}
+      {/* 11. FAQ */}
       <section id="faq" className="scroll-mt-24 border-t border-border py-24">
         <div className="mx-auto max-w-7xl px-6">
           <FaqBlock
@@ -254,11 +259,39 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 11. Final CTA */}
+      {/* 12. Final CTA */}
       <Suspense fallback={null}><FinalCTA /></Suspense>
     </div>
   );
 };
+
+/* ── Tool logo with fallback ── */
+function StackToolLogo({ slug }: { slug: string }) {
+  const sources = useMemo(() => getToolLogoSources({ slug }, 64), [slug]);
+  const [srcIdx, setSrcIdx] = useState(0);
+  const src = sources[srcIdx];
+
+  if (!src) {
+    return (
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-xs font-bold text-foreground ring-1 ring-border/60">
+        {slug.charAt(0).toUpperCase()}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={slug}
+      width={36}
+      height={36}
+      loading="lazy"
+      className="h-9 w-9 rounded-lg object-contain ring-1 ring-border/60 bg-card"
+      style={{ padding: 6 }}
+      onError={() => setSrcIdx((i) => i + 1)}
+    />
+  );
+}
 
 function BusinessObjectivesSection() {
   const { lang, t, prefix } = useLang();
@@ -322,31 +355,61 @@ function BusinessObjectivesSection() {
             const stack = objective.stack!;
             const title = lang === "fr" ? objective.titleFr : objective.titleEn;
             const label = lang === "fr" ? objective.labelFr : objective.labelEn;
+            const desc = lang === "fr" ? objective.descriptionFr : objective.descriptionEn;
 
             return (
               <Link
                 key={objective.slug}
                 to={`${prefix}/stacks/${stack.slug}`}
-                className="group flex min-h-[28rem] flex-col rounded-lg bg-secondary/70 p-4 transition-colors duration-200 [scroll-snap-align:start] hover:bg-secondary md:min-h-[34rem] md:p-5"
+                className="group flex flex-col rounded-lg bg-secondary/70 p-4 transition-colors duration-200 [scroll-snap-align:start] hover:bg-secondary md:p-5"
               >
-                <div className="relative overflow-hidden rounded-md bg-background/60">
-                  <img
-                    src={objective.image}
-                    alt={title}
-                    className="aspect-[1.24/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-                    loading="lazy"
-                  />
-                  <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur">
-                    <Layers3 className="h-3.5 w-3.5 text-primary" />
+                {/* Tool logos + budget panel — replaces stock photo */}
+                <div className="relative overflow-hidden rounded-md bg-card">
+                  {/* Tool logos grid */}
+                  <div className="flex flex-wrap items-center justify-center gap-2.5 p-6 pt-8 pb-5">
+                    {stack.tools.slice(0, 5).map((tool) => (
+                      <StackToolLogo key={tool.slug} slug={tool.slug} />
+                    ))}
+                    {stack.tools.length > 5 && (
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-[10px] font-bold text-muted-foreground ring-1 ring-border/60">
+                        +{stack.tools.length - 5}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Budget + savings bar */}
+                  <div className="flex items-center justify-between border-t border-border/60 bg-secondary/40 px-4 py-2.5">
+                    <span className="text-[11px] font-medium text-muted-foreground">
+                      {t("Stack optimisée", "Optimized stack")}
+                    </span>
+                    <div className="flex items-center gap-2.5">
+                      <span className="text-sm font-semibold text-foreground tabular-nums">
+                        {stack.monthlyBudget}€<span className="font-normal text-muted-foreground text-xs">/m</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                        <TrendingDown className="h-2.5 w-2.5" />
+                        −{stack.savings}€/m
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Label badge */}
+                  <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-background/90 px-2.5 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur-sm ring-1 ring-border/50">
+                    <Layers3 className="h-3 w-3 text-primary" />
                     {label}
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col justify-between pt-7">
-                  <h3 className="font-display font-semibold leading-snug" style={{ fontSize: "clamp(1.25rem, 2vw, 1.5rem)", letterSpacing: "-0.015em", lineHeight: 1.25 }}>
-                    {title}
-                  </h3>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="flex flex-1 flex-col justify-between pt-5">
+                  <div>
+                    <h3 className="font-display font-semibold leading-snug" style={{ fontSize: "clamp(1.125rem, 1.8vw, 1.375rem)", letterSpacing: "-0.015em", lineHeight: 1.3 }}>
+                      {title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-2">
+                      {desc}
+                    </p>
+                  </div>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">
                     {t("Voir la stack type", "View stack template")}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </span>
