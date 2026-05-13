@@ -256,10 +256,10 @@ const ToolDetailPage = () => {
           <h1
             className="font-display mt-4"
             style={{
-              fontSize: "clamp(1.5rem, 3.5vw, 2.4rem)",
-              fontWeight: 800,
-              letterSpacing: "-0.03em",
-              lineHeight: 1.12,
+              fontSize: "clamp(1.375rem, 3vw, 2.125rem)",
+              fontWeight: 700,
+              letterSpacing: "-0.025em",
+              lineHeight: 1.14,
               color: "hsl(var(--foreground))",
             }}
           >
@@ -293,8 +293,8 @@ const ToolDetailPage = () => {
                 <ToolLogo tool={tool} size={64} className="rounded-2xl shadow-md" />
                 <div>
                   <p
-                    className="font-display font-bold"
-                    style={{ fontSize: "1.1rem", letterSpacing: "-0.025em" }}
+                    className="font-display"
+                    style={{ fontSize: "0.9375rem", fontWeight: 600, letterSpacing: "-0.02em" }}
                   >
                     {tool.name}
                   </p>
@@ -302,7 +302,7 @@ const ToolDetailPage = () => {
                     <Link
                       to={`${prefix}/category/${category.slug}`}
                       className="mt-0.5 inline-flex items-center gap-1 text-xs transition-colors hover:text-primary"
-                      style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}
+                      style={{ color: "hsl(var(--muted-foreground))" }}
                     >
                       {CategoryIcon && <CategoryIcon className="h-2.5 w-2.5" />}
                       {t(catName, catNameEn)}
@@ -350,7 +350,7 @@ const ToolDetailPage = () => {
                   <span
                     className="inline-flex items-center rounded-md border px-3 py-1 text-sm font-semibold"
                     style={{
-                      fontFamily: "'DM Mono', monospace",
+                      fontFamily: "ui-monospace, monospace",
                       borderColor: "hsl(var(--primary) / 0.3)",
                       background: "hsl(var(--primary) / 0.08)",
                       color: "hsl(var(--primary))",
@@ -363,13 +363,13 @@ const ToolDetailPage = () => {
                     <div className="flex items-baseline justify-center gap-0.5">
                       <span
                         className="text-2xl font-bold"
-                        style={{ fontFamily: "'DM Mono', monospace", letterSpacing: "-0.02em" }}
+                        style={{ fontFamily: "ui-monospace, monospace", letterSpacing: "-0.02em" }}
                       >
                         {displayPrice}€
                       </span>
                       <span
                         className="text-xs"
-                        style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "'DM Mono', monospace" }}
+                        style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "ui-monospace, monospace" }}
                       >
                         /{t("mois", "mo")}
                       </span>
@@ -378,7 +378,7 @@ const ToolDetailPage = () => {
                       <p
                         className="mt-0.5"
                         style={{
-                          fontFamily: "'DM Mono', monospace",
+                          fontFamily: "ui-monospace, monospace",
                           fontSize: "0.6rem",
                           letterSpacing: "0.06em",
                           textTransform: "uppercase",
@@ -396,7 +396,7 @@ const ToolDetailPage = () => {
               <div className="px-5 py-4 border-b border-border">
                 <p
                   className="text-xs leading-relaxed line-clamp-4"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit" }}
                 >
                   {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
                 </p>
@@ -412,7 +412,7 @@ const ToolDetailPage = () => {
                   style={{
                     background: "hsl(var(--foreground))",
                     color: "hsl(var(--background))",
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "inherit",
                   }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
@@ -439,7 +439,7 @@ const ToolDetailPage = () => {
                     <p
                       className="text-xs leading-snug"
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "inherit",
                         color: freeAlt ? "hsl(var(--savings))" : "hsl(var(--cancel))",
                       }}
                     >
@@ -487,7 +487,7 @@ const ToolDetailPage = () => {
               {/* Key facts */}
               <div
                 className="border-t border-border divide-y divide-border/50"
-                style={{ fontSize: "0.72rem", fontFamily: "'DM Sans', sans-serif" }}
+                style={{ fontSize: "0.72rem", fontFamily: "inherit" }}
               >
                 {toolType && (
                   <div className="flex items-center justify-between px-4 py-2.5">
@@ -513,7 +513,7 @@ const ToolDetailPage = () => {
                   </span>
                   <time
                     dateTime={verifiedOn}
-                    style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "'DM Mono', monospace", fontSize: "0.65rem" }}
+                    style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "ui-monospace, monospace", fontSize: "0.65rem" }}
                   >
                     {verifiedOn}
                   </time>
@@ -531,11 +531,11 @@ const ToolDetailPage = () => {
                       key={post.slug}
                       to={`${prefix}/guide/${post.slug}`}
                       className="block rounded-lg border border-border bg-card p-3 text-xs transition-all hover:border-primary/30 hover:shadow-sm"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      style={{ fontFamily: "inherit" }}
                     >
                       <p className="font-medium text-foreground line-clamp-2">{post.title}</p>
                       {post.readTime && (
-                        <p className="mt-1" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace", fontSize: "0.6rem" }}>
+                        <p className="mt-1" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "ui-monospace, monospace", fontSize: "0.6rem" }}>
                           {post.readTime}
                         </p>
                       )}
@@ -565,14 +565,14 @@ const ToolDetailPage = () => {
                   <div className="flex items-center gap-3 px-4 py-4 border-b border-border">
                     <ToolLogo tool={tool} size={44} className="rounded-xl shadow-sm shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="font-bold text-foreground truncate" style={{ fontSize: "1rem", letterSpacing: "-0.02em" }}>
+                      <p className="font-display text-foreground truncate" style={{ fontSize: "0.9375rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                         {tool.name}
                       </p>
                       {category && (
                         <Link
                           to={`${prefix}/category/${category.slug}`}
                           className="text-xs hover:text-primary transition-colors"
-                          style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}
+                          style={{ color: "hsl(var(--muted-foreground))" }}
                         >
                           {t(catName, catNameEn)}
                         </Link>
@@ -586,13 +586,13 @@ const ToolDetailPage = () => {
                             borderColor: "hsl(var(--primary) / 0.3)",
                             background: "hsl(var(--primary) / 0.08)",
                             color: "hsl(var(--primary))",
-                            fontFamily: "'DM Mono', monospace",
+                            fontFamily: "ui-monospace, monospace",
                           }}
                         >
                           {isFree ? t("Gratuit", "Free") : "Freemium"}
                         </span>
                       ) : (
-                        <p style={{ fontFamily: "'DM Mono', monospace" }}>
+                        <p style={{ fontFamily: "ui-monospace, monospace" }}>
                           <span className="text-lg font-black text-foreground">{displayPrice}€</span>
                           <span className="text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}>/{t("mois", "mo")}</span>
                         </p>
@@ -620,7 +620,7 @@ const ToolDetailPage = () => {
                         {t(ts.labelFr, ts.labelEn)}
                       </span>
                     </div>
-                    <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}>
+                    <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "ui-monospace, monospace" }}>
                       Score ToolTrim →
                     </span>
                   </Link>
@@ -656,7 +656,7 @@ const ToolDetailPage = () => {
                         style={{
                           background: "hsl(var(--foreground))",
                           color: "hsl(var(--background))",
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "inherit",
                         }}
                       >
                         {t("Visiter", "Visit")}
@@ -680,9 +680,10 @@ const ToolDetailPage = () => {
                   <Link
                     key={tab.id}
                     to={`${prefix}/tool/${slug}${tabPath}`}
-                    className="relative shrink-0 px-4 py-3 text-sm font-medium transition-colors duration-150"
+                    className="relative shrink-0 px-4 py-3 transition-colors duration-150"
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "0.8125rem",
+                      fontWeight: isActive ? 500 : 400,
                       color: isActive ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))",
                       textDecoration: "none",
                     }}
@@ -703,8 +704,8 @@ const ToolDetailPage = () => {
               {tool.shortDescription && (
                 <div className="pb-8">
                   <p
-                    className="text-[15px] leading-8 text-foreground"
-                    style={{ fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                    className="text-foreground leading-7"
+                    style={{ fontSize: "0.9375rem", maxWidth: "72ch", fontWeight: 400 }}
                   >
                     {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
                   </p>
@@ -719,11 +720,11 @@ const ToolDetailPage = () => {
                 if (!longDesc || longDesc.length < 80) return null;
                 const paras = longDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean);
                 return (
-                  <div className="py-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                  <div className="py-8" style={{ fontFamily: "inherit" }}>
                     <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
                       {t("Notre analyse", "Our analysis")}
                     </p>
-                    <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                    <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                       {t(`${tool.name} en détail`, `${tool.name} — in depth`)}
                     </h2>
                     {paras.map((para: string, i: number) => (
@@ -760,7 +761,7 @@ const ToolDetailPage = () => {
                   <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
                     {t("Points clés", "Key points")}
                   </p>
-                  <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                  <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                     {t(`Avantages et inconvénients de ${tool.name}`, `${tool.name} — Pros & Cons`)}
                   </h2>
                   <div className="grid gap-4 sm:grid-cols-2">
@@ -770,7 +771,7 @@ const ToolDetailPage = () => {
                       </h3>
                       <ul className="space-y-2">
                         {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
-                          <li key={pro} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "'DM Sans', sans-serif" }}>
+                          <li key={pro} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "inherit" }}>
                             <Check className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--keep) / 0.7)" }} />
                             {pro}
                           </li>
@@ -783,7 +784,7 @@ const ToolDetailPage = () => {
                       </h3>
                       <ul className="space-y-2">
                         {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
-                          <li key={con} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "'DM Sans', sans-serif" }}>
+                          <li key={con} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "inherit" }}>
                             <X className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--cancel) / 0.7)" }} />
                             {con}
                           </li>
@@ -800,12 +801,12 @@ const ToolDetailPage = () => {
                   <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
                     {t("Cas d'usage", "Use cases")}
                   </p>
-                  <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                  <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                     {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
                   </h2>
                   <div className="grid gap-2 sm:grid-cols-2">
                     {(lang === "en" && (tool as any).useCasesEn ? (tool as any).useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
-                      <div key={i} className="flex items-start gap-2.5 rounded-lg border border-border bg-card p-3 text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                      <div key={i} className="flex items-start gap-2.5 rounded-lg border border-border bg-card p-3 text-sm" style={{ fontFamily: "inherit" }}>
                         <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
                         {uc}
                       </div>
@@ -830,7 +831,7 @@ const ToolDetailPage = () => {
                 <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
                   {t("Verdict", "Verdict")}
                 </p>
-                <h2 className="mb-4 font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
+                <h2 className="mb-4 font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                   {t(`Notre avis sur ${tool.name}`, `Our verdict on ${tool.name}`)}
                 </h2>
                 <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
@@ -856,12 +857,12 @@ const ToolDetailPage = () => {
                 <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
                   {t("Tarifs", "Pricing")}
                 </p>
-                <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                   {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
                 </h2>
                 <p
                   className="text-sm leading-7 pt-1"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit", maxWidth: "72ch" }}
                 >
                   {lang === "fr"
                     ? (() => {
@@ -895,12 +896,12 @@ const ToolDetailPage = () => {
                 <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
                   {t("Comparatif", "Comparison")}
                 </p>
-                <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                   {t(`Meilleures alternatives à ${tool.name}`, `Best alternatives to ${tool.name}`)}
                 </h2>
                 <p
                   className="text-sm leading-7 pt-1"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit", maxWidth: "72ch" }}
                 >
                   {lang === "fr"
                     ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""} comparées selon le prix, les fonctionnalités et la pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois de ${tool.name}.` : ""}`
@@ -932,13 +933,13 @@ const ToolDetailPage = () => {
                   <div className="mt-8">
                     <h3
                       className="font-display mb-3"
-                      style={{ fontSize: "0.95rem", fontWeight: 700, letterSpacing: "-0.018em" }}
+                      style={{ fontSize: "0.875rem", fontWeight: 600, letterSpacing: "-0.015em" }}
                     >
                       {t("Outils substituables directement", "Direct substitutes")}
                     </h3>
                     <p
                       className="mb-4 text-sm"
-                      style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+                      style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit" }}
                     >
                       {t(
                         `Ces outils couvrent les mêmes besoins que ${tool.name} et peuvent le remplacer directement.`,
@@ -951,7 +952,7 @@ const ToolDetailPage = () => {
                           key={ct.id}
                           to={`${prefix}/tool/${ct.slug || ct.id}`}
                           className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium transition-all hover:border-primary/30 hover:text-primary"
-                          style={{ fontFamily: "'DM Sans', sans-serif" }}
+                          style={{ fontFamily: "inherit" }}
                         >
                           <ToolLogo tool={ct} size={18} />
                           {ct.name}
@@ -980,7 +981,7 @@ const ToolDetailPage = () => {
                   <div className="mt-8">
                     <h3
                       className="font-display mb-3"
-                      style={{ fontSize: "0.95rem", fontWeight: 700, letterSpacing: "-0.018em" }}
+                      style={{ fontSize: "0.875rem", fontWeight: 600, letterSpacing: "-0.015em" }}
                     >
                       {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
                     </h3>
@@ -990,7 +991,7 @@ const ToolDetailPage = () => {
                           key={slugPair}
                           to={`${prefix}/comparatif/${slugPair}`}
                           className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium transition-all hover:border-primary/30 hover:text-primary"
-                          style={{ fontFamily: "'DM Sans', sans-serif" }}
+                          style={{ fontFamily: "inherit" }}
                         >
                           <ToolLogo tool={other} size={18} />
                           {tool.name} vs {other.name}
@@ -1009,12 +1010,12 @@ const ToolDetailPage = () => {
                 <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
                   {t("Évaluation", "Rating")}
                 </p>
-                <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
+                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                   {t(`Avis sur ${tool.name} — Note & Verdict ToolTrim`, `${tool.name} Reviews — ToolTrim Rating & Verdict`)}
                 </h2>
                 <p
                   className="text-sm leading-7 pt-1"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit", maxWidth: "72ch" }}
                 >
                   {lang === "fr"
                     ? `${tool.shortDescription ? `${tool.shortDescription.split(/[.!?]/)[0]}. ` : ""}Notre analyse indépendante de ${tool.name} en ${new Date().getFullYear()} : score éditorial, signaux de valeur, points forts et limites identifiés.`
@@ -1130,12 +1131,12 @@ const ToolDetailPage = () => {
                 <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
                   {t("FAQ", "FAQ")}
                 </p>
-                <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                   {t(`Questions fréquentes sur ${tool.name}`, `Frequently asked questions about ${tool.name}`)}
                 </h2>
                 <p
                   className="text-sm leading-7 pt-1"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit", maxWidth: "72ch" }}
                 >
                   {lang === "fr"
                     ? `Prix, plans, utilité et alternatives à ${tool.name}${catName ? ` (${catName})` : ""} — les réponses essentielles avant d'ajouter cet outil à votre stack en ${new Date().getFullYear()}.`
@@ -1154,7 +1155,7 @@ const ToolDetailPage = () => {
             {/* ── Freshness footer ── */}
             <footer
               className="mt-10 flex flex-wrap items-center gap-3 border-t border-border pt-6 text-xs"
-              style={{ color: "hsl(var(--muted-foreground) / 0.5)", fontFamily: "'DM Mono', monospace" }}
+              style={{ color: "hsl(var(--muted-foreground) / 0.5)", fontFamily: "ui-monospace, monospace" }}
             >
               <span className="flex items-center gap-1.5">
                 <CalendarCheck className="h-3 w-3" />
