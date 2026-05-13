@@ -12,13 +12,18 @@ export type LogoCandidateTool = {
   } | null;
 };
 
+// ── Manual slug map: tool-id / slug → simpleicons.org slug ──────────────────
+// Only needed when the normalized candidate key doesn't match the simpleicons slug directly.
+// Auto-probing (below) handles the common case where they match.
 const SIMPLE_ICON_SLUGS: Record<string, string> = {
+  // A
   "1password": "1password",
   activecampaign: "activecampaign",
   adobe: "adobe",
   "adobe-acrobat-sign": "adobeacrobatreader",
   "adobe-after-effects": "adobeaftereffects",
   "adobe-cc": "adobecreativecloud",
+  "adobe-creative-cloud": "adobecreativecloud",
   "adobe-illustrator": "adobeillustrator",
   indesign: "adobeindesign",
   "adobe-lightroom": "adobelightroom",
@@ -30,66 +35,178 @@ const SIMPLE_ICON_SLUGS: Record<string, string> = {
   airtable: "airtable",
   amplitude: "amplitude",
   angular: "angular",
+  anthropic: "anthropic",
   asana: "asana",
+  auth0: "auth0",
+  aws: "amazonaws",
+  "amazon-web-services": "amazonaws",
+  azure: "microsoftazure",
+  // B
+  basecamp: "basecamp",
+  beehiiv: "beehiiv",
+  bitwarden: "bitwarden",
+  blender: "blender",
+  box: "box",
+  brevo: "brevo",
   buffer: "buffer",
   buzzsprout: "buzzsprout",
-  brevo: "brevo",
+  // C
   calendly: "calendly",
   canva: "canva",
+  carrd: "carrd",
   chatgpt: "openai",
+  chargebee: "chargebee",
+  chrome: "googlechrome",
   claude: "anthropic",
   clickup: "clickup",
+  cloudflare: "cloudflare",
+  contentful: "contentful",
+  cypress: "cypress",
+  // D
+  datadog: "datadog",
+  dbt: "dbt",
   discord: "discord",
+  docker: "docker",
+  docusign: "docusign",
+  drift: "drift",
   dropbox: "dropbox",
+  // E
+  elasticsearch: "elasticsearch",
+  excel: "microsoftexcel",
+  // F
+  facebook: "facebook",
   figma: "figma",
+  firebase: "firebase",
   framer: "framer",
+  freshdesk: "freshdesk",
+  // G
+  gcp: "googlecloud",
+  "google-cloud": "googlecloud",
+  "google-analytics": "googleanalytics",
+  "google-drive": "googledrive",
+  "google-workspace": "google",
+  ghost: "ghost",
+  gitbook: "gitbook",
   github: "github",
   gitlab: "gitlab",
   google: "google",
-  "google-analytics": "googleanalytics",
-  "google-drive": "googledrive",
+  grafana: "grafana",
+  // H
+  helpscout: "helpscout",
+  heroku: "heroku",
+  hotjar: "hotjar",
   hubspot: "hubspot",
+  // I
+  instagram: "instagram",
   intercom: "intercom",
+  insomnia: "insomnia",
+  // J
+  jest: "jest",
+  jira: "jira",
+  // K
+  kibana: "kibana",
+  klaviyo: "klaviyo",
+  kubernetes: "kubernetes",
+  // L
   linear: "linear",
+  linkedin: "linkedin",
   loom: "loom",
+  // M
   mailchimp: "mailchimp",
+  mailerlite: "mailerlite",
   make: "make",
+  mapbox: "mapbox",
+  meta: "meta",
   miro: "miro",
+  mixpanel: "mixpanel",
+  mongodb: "mongodb",
   monday: "mondaydotcom",
+  "monday-com": "mondaydotcom",
+  // N
+  namecheap: "namecheap",
+  netlify: "netlify",
+  "next-js": "nextdotjs",
+  nextjs: "nextdotjs",
+  nginx: "nginx",
   notion: "notion",
+  npm: "npm",
+  nuxt: "nuxt",
+  nuxtjs: "nuxt",
+  // O
+  okta: "okta",
+  onedrive: "microsoftonedrive",
   openai: "openai",
+  outlook: "microsoftoutlook",
+  // P
+  pagerduty: "pagerduty",
+  paypal: "paypal",
   perplexity: "perplexity",
+  pinterest: "pinterest",
+  pipedrive: "pipedrive",
+  postgresql: "postgresql",
+  posthog: "posthog",
+  postman: "postman",
+  powerpoint: "microsoftpowerpoint",
+  prisma: "prisma",
+  // R
   raycast: "raycast",
+  react: "react",
+  redis: "redis",
+  reddit: "reddit",
+  // S
   salesforce: "salesforce",
+  sendgrid: "sendgrid",
   sentry: "sentry",
   shopify: "shopify",
+  sketch: "sketch",
   slack: "slack",
+  spotify: "spotify",
+  storybook: "storybook",
   stripe: "stripe",
   supabase: "supabase",
+  svelte: "svelte",
+  sveltekit: "svelte",
+  // T
+  tailwind: "tailwindcss",
+  tailwindcss: "tailwindcss",
+  teams: "microsoftteams",
+  "microsoft-teams": "microsoftteams",
+  telegram: "telegram",
+  terraform: "terraform",
+  todoist: "todoist",
   trello: "trello",
+  twilio: "twilio",
+  tiktok: "tiktok",
+  twitter: "x",
+  typescript: "typescript",
+  typeform: "typeform",
+  // V
   vercel: "vercel",
+  vue: "vuedotjs",
+  vuejs: "vuedotjs",
+  vscode: "visualstudiocode",
+  // W
   webflow: "webflow",
+  webpack: "webpack",
+  whatsapp: "whatsapp",
   wix: "wix",
   wordpress: "wordpress",
+  word: "microsoftword",
+  // X
+  xero: "xero",
+  // Y
+  youtube: "youtube",
+  // Z
   zapier: "zapier",
   zendesk: "zendesk",
   zoom: "zoom",
 };
 
+// Brand color overrides — only when simpleicons brand color is wrong/too light for UI.
+// Leave empty to auto-use the brand's own color from simpleicons.
 const SIMPLE_ICON_COLORS: Record<string, string> = {
-  adobe: "FF0000",
-  asana: "F06A6A",
-  brevo: "0B996E",
-  calendly: "006BFF",
-  figma: "F24E1E",
-  hubspot: "FF5C35",
-  intercom: "0A7CFF",
-  linear: "5E6AD2",
-  loom: "625DF5",
   notion: "111111",
-  slack: "4A154B",
-  stripe: "635BFF",
-  zapier: "FF4F00",
+  github: "181717",
 };
 
 const PRODUCT_BADGES: Record<string, { label: string; bg: string; fg: string; border: string }> = {
@@ -175,21 +292,55 @@ function simpleIconCandidateKeys(tool: LogoCandidateTool, domain: string) {
 
 export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 = 64): string[] {
   const sources: string[] = [];
+
+  // 1. Custom logo override (Clearbit URL stored in tool.logo)
   if (tool.logo?.startsWith("http")) sources.push(tool.logo);
 
   const key = normalizeKey(tool.slug || tool.id || tool.name);
   const domain = getVerifiedDomain(tool);
+
+  // 2. Adobe product badges (SVG data-URI)
   const badge = PRODUCT_BADGES[key];
   if (badge) sources.push(makeBadgeSvg(badge));
 
-  for (const candidate of simpleIconCandidateKeys(tool, domain)) {
+  const candidateKeys = simpleIconCandidateKeys(tool, domain);
+  const usedSimpleIconSlugs = new Set<string>();
+
+  // 3. SimpleIcons — manual map (exact slug known)
+  for (const candidate of candidateKeys) {
     const simpleIcon = SIMPLE_ICON_SLUGS[candidate];
-    if (simpleIcon) {
-      sources.push(`https://cdn.simpleicons.org/${simpleIcon}/${SIMPLE_ICON_COLORS[candidate] || "111111"}`);
+    if (simpleIcon && !usedSimpleIconSlugs.has(simpleIcon)) {
+      usedSimpleIconSlugs.add(simpleIcon);
+      const colorOverride = SIMPLE_ICON_COLORS[candidate];
+      sources.push(
+        colorOverride
+          ? `https://cdn.simpleicons.org/${simpleIcon}/${colorOverride}`
+          : `https://cdn.simpleicons.org/${simpleIcon}`
+      );
     }
   }
 
-  if (domain) sources.push(`https://icons.duckduckgo.com/ip3/${domain}.ico`);
+  // 4. SimpleIcons — direct CDN probing for unmatched candidate keys
+  // simpleicons slugs are lowercase, no dashes/spaces. Try candidate without dashes.
+  // The CDN returns 404 for unknown slugs — handled by onError in ToolLogo.
+  for (const candidate of candidateKeys) {
+    const probeSlug = candidate.replace(/-/g, "");
+    // Skip if already covered by manual map
+    if (!usedSimpleIconSlugs.has(probeSlug) && !usedSimpleIconSlugs.has(candidate)) {
+      const url = `https://cdn.simpleicons.org/${probeSlug}`;
+      if (!sources.includes(url)) sources.push(url);
+    }
+  }
+
+  if (domain) {
+    // 5. Google Favicon V2 — returns colored, high-quality logos (replaces DuckDuckGo)
+    sources.push(
+      `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${domain}&size=${size}`
+    );
+
+    // 6. DuckDuckGo favicon — last resort (16×16 ICO, low quality but universal)
+    sources.push(`https://icons.duckduckgo.com/ip3/${domain}.ico`);
+  }
 
   return Array.from(new Set(sources));
 }
