@@ -17,14 +17,27 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
   const hostAppSlug = (tool as any).host_app as string | undefined;
   const bundleParentSlug = (tool as any).bundle_parent as string | undefined;
 
+  // Bidirectional slug matching: "after-effects" matches "adobe-after-effects"
+  // because adobe-after-effects ends with "-after-effects"
+  function slugMatches(toolSlug: string, hostValue: string): boolean {
+    return toolSlug === hostValue ||
+      toolSlug.endsWith(`-${hostValue}`) ||
+      toolSlug.replace(/^[^-]+-/, "") === hostValue; // strip first segment: adobe-after-effects → after-effects
+  }
+
   // ── Case 1: this tool is a plugin/satellite — find the host app
   const hostApp = hostAppSlug
-    ? allTools.find(t => t.slug === hostAppSlug || (t as any).id === hostAppSlug)
+    ? allTools.find(t => slugMatches((t as any).slug || t.id, hostAppSlug))
     : null;
 
   // ── Case 2: this tool is a host — find all its plugins
+  // Match plugins whose host_app matches this tool's slug (either exact or prefix-stripped)
   const childPlugins = allTools
-    .filter(t => (t as any).host_app === toolId && (t as any).tool_type === "plugin")
+    .filter(t => {
+      const ha = (t as any).host_app as string | undefined;
+      if (!ha) return false;
+      return (t as any).tool_type === "plugin" && slugMatches(toolId, ha);
+    })
     .slice(0, 8);
 
   // ── Case 3: this tool is part of a bundle
