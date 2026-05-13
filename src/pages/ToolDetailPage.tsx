@@ -539,8 +539,9 @@ const ToolDetailPage = () => {
             </nav>
 
             {/* ── SECTION: Présentation ── */}
-            {subPage === "presentation" && <section className="space-y-8">
-              {/* Description longue — mobile only (desktop has left card) */}
+            {subPage === "presentation" && <section className="space-y-10">
+
+              {/* Description courte — mobile uniquement */}
               <div className="lg:hidden">
                 <p
                   className="text-sm leading-relaxed"
@@ -550,76 +551,23 @@ const ToolDetailPage = () => {
                 </p>
               </div>
 
-              {/* Summary block */}
-              <ToolSummaryBlock
-                tool={tool} category={category} alternatives={alternatives}
-                displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
-              />
-
-              {/* Notre analyse — longDescription */}
+              {/* Analyse éditoriale — prose libre, sans carte */}
               {(() => {
                 const longDesc = lang === "en"
                   ? ((tool as any).longDescriptionEn || (tool as any).longDescription || "")
                   : ((tool as any).longDescription || "");
                 if (!longDesc || longDesc.length < 80) return null;
+                const paras = longDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean);
                 return (
-                  <div>
-                    <h2
-                      className="font-display mb-4"
-                      style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "-0.022em" }}
-                    >
-                      {t(`Notre analyse de ${tool.name}`, `Our ${tool.name} analysis`)}
-                    </h2>
-                    <div
-                      className="rounded-xl border border-border bg-card p-5 space-y-3"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
-                    >
-                      {longDesc.split(/\n\n+/).filter(Boolean).map((para: string, i: number) => (
-                        <p key={i} className="text-sm leading-7" style={{ color: i === 0 ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))" }}>
-                          {para.trim()}
-                        </p>
-                      ))}
-                      <div className="flex items-center gap-2 pt-2 border-t border-border">
-                        <ShieldCheck className="h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--muted-foreground))" }} />
-                        <p className="text-xs" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}>
-                          {t("Analyse ToolTrim · indépendante · sans affiliation commerciale", "ToolTrim analysis · independent · no commercial affiliation")}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })()}
-
-              {/* Fonctionnalités couvertes — covers chips */}
-              {(() => {
-                const raw: string[] = Array.from(new Set([
-                  ...((tool as any).covers || []),
-                  ...((tool as any).functional_needs || []),
-                ]));
-                if (!raw.length) return null;
-                const toLabel = (slug: string) => slug
-                  .replace(/-/g, " ")
-                  .replace(/\b(\w)/g, (l: string) => l.toUpperCase())
-                  .replace(/^(\w)/, (l: string) => l.toUpperCase());
-                return (
-                  <div>
-                    <h2
-                      className="font-display mb-4"
-                      style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "-0.022em" }}
-                    >
-                      {t(`Ce que couvre ${tool.name}`, `What ${tool.name} covers`)}
-                    </h2>
-                    <div className="flex flex-wrap gap-2">
-                      {raw.map((slug: string) => (
-                        <span
-                          key={slug}
-                          className="rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs font-medium"
-                          style={{ color: "hsl(var(--foreground))", fontFamily: "'DM Sans', sans-serif" }}
-                        >
-                          {toLabel(slug)}
-                        </span>
-                      ))}
-                    </div>
+                  <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    {paras.map((para: string, i: number) => (
+                      <p
+                        key={i}
+                        className={i === 0 ? "text-[15px] leading-8 text-foreground mb-4" : "text-sm leading-7 text-muted-foreground mb-3"}
+                      >
+                        {para}
+                      </p>
+                    ))}
                   </div>
                 );
               })()}
@@ -697,6 +645,12 @@ const ToolDetailPage = () => {
 
               {/* Diag CTA */}
               <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
+
+              {/* Summary block — SEO/LLM, visuellement discret, en bas de section */}
+              <ToolSummaryBlock
+                tool={tool} category={category} alternatives={alternatives}
+                displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
+              />
             </section>}
 
             {/* ── SECTION: Prix ── */}
