@@ -351,25 +351,25 @@
     "longDescription": "Framer a radicalement évolué : ce n'est plus seulement un outil de prototypage, c'est aujourd'hui l'un des meilleurs créateurs de sites web no-code pour designers. Là où Webflow demande une courbe d'apprentissage importante et Figma ne publie rien, Framer occupe un créneau unique : on conçoit visuellement avec une précision de designer, on ajoute des animations dignes d'une agence (scroll effects, parallax, transitions de page), et on publie directement sur un vrai site optimisé pour le SEO.\n\nPour les indépendants et freelances, les atouts sont immédiats : templates haut de gamme souvent gratuits, CMS intégré pour les pages dynamiques (blog, études de cas, liste de projets), hébergement + CDN inclus, et depuis 2024 une IA générative qui peut créer des sections entières depuis un prompt. La courbe d'apprentissage est réelle mais inférieure à Webflow — en quelques heures on produit quelque chose de convaincant.\n\nLes limites sont claires : Framer n'est pas un outil de design (pas de remplacement pour Figma), pas adapté au e-commerce ou aux applications complexes, et le CMS reste léger comparé à un headless CMS dédié. C'est un outil taillé pour les sites vitrines et les landing pages premium — dans ce périmètre, il est difficile à battre.",
     "longDescriptionEn": "Framer has radically evolved: it's no longer just a prototyping tool, it's now one of the best no-code website builders for designers. Where Webflow has a steep learning curve and Figma publishes nothing, Framer fills a unique space — design with precision, add agency-quality animations (scroll effects, parallax, page transitions), and publish directly to an SEO-optimized website.\n\nFor freelancers and independents, the benefits are immediate: premium templates often free, built-in CMS for dynamic pages (blog, case studies, project lists), hosting + CDN included, and since 2024 a generative AI that can create entire sections from a prompt. The learning curve is real but lower than Webflow — within a few hours you can produce something compelling.\n\nThe limits are clear: Framer is not a design tool (no Figma replacement), not suited for e-commerce or complex applications, and the CMS remains lightweight compared to a dedicated headless CMS. It's a tool built for showcase sites and premium landing pages — within that scope, it's hard to beat.",
     "pricing": {
-      "free": "Plan gratuit : 1 site, sous-domaine framer.site, pages illimitées, sans CMS",
-      "paid": "Mini 5€/mois (domaine custom), Basic 15€/mois (CMS inclus), Pro 25€/mois (code custom, membres illimités)"
+      "free": "Plan gratuit : domaine framer.site, 1 000 pages, 1 collection CMS (1 000 items), collaboration jusqu'à 3 éditeurs — sans domaine custom",
+      "paid": "Basic 10$/mois (domaine custom, 30 pages, 1 CMS collection) · Pro 30$/mois (150 pages, 10 collections, staging) · Scale 100$/mois (300 pages, 20 collections, CDN premium)"
     },
     "pricingEn": {
-      "free": "Free plan: 1 site, framer.site subdomain, unlimited pages, no CMS",
-      "paid": "Mini €5/mo (custom domain), Basic €15/mo (CMS included), Pro €25/mo (custom code, unlimited members)"
+      "free": "Free plan: framer.site domain, 1,000 pages, 1 CMS collection (1,000 items), up to 3 editors — no custom domain",
+      "paid": "Basic $10/mo (custom domain, 30 pages, 1 CMS collection) · Pro $30/mo (150 pages, 10 collections, staging) · Scale $100/mo (300 pages, 20 collections, premium CDN)"
     },
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 10,
     "pricing_v5": {
-      "compare_price_monthly_eur": 15,
+      "compare_price_monthly_eur": 10,
       "compare_plan_name": "Basic",
-      "verified_on": "2025-04-01",
+      "verified_on": "2025-05-13",
       "source_domain": "framer.com",
       "official_source_url": "https://www.framer.com/pricing/",
       "cautions": [
-        "Le plan gratuit est limité à un seul site sur sous-domaine framer.site — pas de domaine custom",
-        "Le CMS (pages dynamiques, blog) n'est disponible qu'à partir du plan Basic (15€/mois)",
-        "Les membres d'équipe supplémentaires sont facturés en supplément sur les plans payants",
-        "Les animations lourdes peuvent dégrader les Core Web Vitals sur des sites très chargés"
+        "Le plan gratuit n'inclut pas de domaine custom — publication sur framer.site uniquement",
+        "Le plan Basic est limité à 30 pages publiées et 1 collection CMS seulement",
+        "Les éditeurs supplémentaires sont facturés 20$/mois sur Basic, 40$/mois sur Pro et Scale",
+        "Les tarifs sont en dollars — conversion EUR variable selon le taux de change"
       ]
     },
     "affiliateLink": "",
