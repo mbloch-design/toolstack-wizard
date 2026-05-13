@@ -17,6 +17,7 @@ import { asText, stripLeadingEmoji } from "@/lib/text";
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolVerdictBlock from "@/components/tool/ToolVerdictBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
+import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
@@ -574,6 +575,16 @@ const ToolDetailPage = () => {
                   </div>
                 );
               })()}
+
+              {/* ── Fonctionnalités ── */}
+              {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
+                <ToolFeaturesBlock
+                  covers={(tool as any).covers || []}
+                  functionalNeeds={(tool as any).functional_needs || []}
+                  toolName={tool.name}
+                  t={t}
+                />
+              )}
 
               {/* ── Avantages & inconvénients ── */}
               {((tool.pros?.length ?? 0) > 0 || (tool.cons?.length ?? 0) > 0) && (
