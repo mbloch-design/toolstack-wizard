@@ -271,9 +271,6 @@ const StackDetailPage = () => {
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#avis">
             {t("Avis", "Reviews")}
           </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#pieges">
-            {t("Pièges", "Traps")}
-          </a>
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#stacks-proches">
             {t("Stacks proches", "Related")}
           </a>
@@ -454,50 +451,6 @@ const StackDetailPage = () => {
           </div>
         </section>
 
-        {/* ── PIÈGES ─────────────────────────────────────────────────────── */}
-        {(stack.traps?.length ?? 0) > 0 && (
-          <section id="pieges" className="scroll-mt-24 border-b border-border py-12">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
-              {t("Pièges courants", "Common traps")}
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {(stack.traps ?? []).map((trap) => (
-                <div key={trap.title} className="flex gap-4 rounded-xl border border-destructive/20 bg-destructive/[0.025] p-5">
-                  <div className="shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-destructive/10 mt-0.5">
-                    <span className="text-[11px] font-bold text-destructive leading-none">!</span>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">{t(trap.title, trap.titleEn)}</p>
-                    <p className="mt-1.5 text-sm leading-6 text-muted-foreground">{t(trap.detail, trap.detailEn)}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── SIGNAUX DE MATURITÉ ─────────────────────────────────────────── */}
-        {(stack.maturitySignals?.length ?? 0) > 0 && (
-          <section id="upgrade" className="scroll-mt-24 border-b border-border py-12">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-              {t("Quand faire évoluer cette stack ?", "When to upgrade this stack?")}
-            </p>
-            <p className="text-sm text-muted-foreground mb-6">
-              {t("Ces signaux indiquent que tu as dépassé ce niveau.", "These signals mean you've outgrown this setup.")}
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {(stack.maturitySignals ?? []).map((signal) => (
-                <div key={signal.title} className="flex gap-4 rounded-xl border border-border bg-card p-5">
-                  <div className="shrink-0 h-2 w-2 rounded-full bg-primary mt-2" />
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">{t(signal.title, signal.titleEn)}</p>
-                    <p className="mt-1.5 text-sm leading-6 text-muted-foreground">{t(signal.detail, signal.detailEn)}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
 
         {/* ── STACKS PROCHES ──────────────────────────────────────────────── */}
         {relatedStacks.length > 0 && (
