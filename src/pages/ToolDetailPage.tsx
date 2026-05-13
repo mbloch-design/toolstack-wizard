@@ -4,7 +4,7 @@ import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSup
 import { useEffect } from "react";
 import {
   ExternalLink, Check, X, ArrowRight, AlertTriangle,
-  TrendingDown, Sparkles, ShieldCheck, CalendarCheck, Award,
+  TrendingDown, Sparkles, ShieldCheck, CalendarCheck,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -634,8 +634,7 @@ const ToolDetailPage = () => {
 
               {/* ── Verdict ── */}
               <div className="py-8">
-                <p className="text-xs font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5" style={{ color: "hsl(var(--primary))" }}>
-                  <Award className="h-3.5 w-3.5" />
+                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
                   {t("Verdict", "Verdict")}
                 </p>
                 <h2 className="mb-4 font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
