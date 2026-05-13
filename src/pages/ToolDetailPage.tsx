@@ -1124,6 +1124,26 @@ const ToolDetailPage = () => {
 
             {/* ── SECTION: FAQ ── */}
             {subPage === "faq" && <section className="space-y-8">
+
+              {/* Intro prose — same treatment as all other tabs */}
+              <div className="space-y-1">
+                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
+                  {t("FAQ", "FAQ")}
+                </p>
+                <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                  {t(`Questions fréquentes sur ${tool.name}`, `Frequently asked questions about ${tool.name}`)}
+                </h2>
+                <p
+                  className="text-sm leading-7 pt-1"
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                >
+                  {lang === "fr"
+                    ? `Prix, plans, utilité et alternatives à ${tool.name}${catName ? ` (${catName})` : ""} — les réponses essentielles avant d'ajouter cet outil à votre stack en ${new Date().getFullYear()}.`
+                    : `Pricing, plans, use cases and alternatives to ${tool.name}${catNameEn ? ` (${catNameEn})` : ""} — key answers before adding this tool to your stack in ${new Date().getFullYear()}.`
+                  }
+                </p>
+              </div>
+
               <ToolFAQSection
                 tool={tool} displayPrice={displayPrice}
                 verifiedOn={verifiedOn} alternatives={alternatives}

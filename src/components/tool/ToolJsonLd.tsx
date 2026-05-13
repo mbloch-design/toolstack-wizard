@@ -200,7 +200,70 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       });
     }
 
-    return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-faq-jsonld"]);
+    // 4. BreadcrumbList — helps Google display path in SERP snippet
+    const toolUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
+    const breadcrumbItems: object[] = [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: lang === "fr" ? "Accueil" : "Home",
+        item: `${SEO_BASE}/${lang}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: lang === "fr" ? "Outils" : "Tools",
+        item: `${SEO_BASE}/${lang}/tools`,
+      },
+    ];
+    if (category) {
+      breadcrumbItems.push({
+        "@type": "ListItem",
+        position: 3,
+        name: lang === "fr" ? (category.name || category.id) : (category.nameEn || category.name || category.id),
+        item: `${SEO_BASE}/${lang}/category/${category.slug || category.id}`,
+      });
+    }
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: breadcrumbItems.length + 1,
+      name: tool.name,
+      item: canonicalUrl !== toolUrl ? toolUrl : canonicalUrl,
+    });
+    // If we're on a sub-page, add it as the last crumb
+    if (canonicalUrl !== toolUrl) {
+      const subLabel =
+        canonicalUrl.endsWith("/prix") || canonicalUrl.endsWith("/pricing")
+          ? (lang === "fr" ? "Prix" : "Pricing")
+          : canonicalUrl.endsWith("/alternatives")
+          ? (lang === "fr" ? "Alternatives" : "Alternatives")
+          : canonicalUrl.endsWith("/avis") || canonicalUrl.endsWith("/reviews")
+          ? (lang === "fr" ? "Avis" : "Reviews")
+          : canonicalUrl.endsWith("/faq")
+          ? "FAQ"
+          : null;
+      if (subLabel) {
+        breadcrumbItems[breadcrumbItems.length - 1] = {
+          "@type": "ListItem",
+          position: breadcrumbItems.length,
+          name: tool.name,
+          item: toolUrl,
+        };
+        breadcrumbItems.push({
+          "@type": "ListItem",
+          position: breadcrumbItems.length + 1,
+          name: subLabel,
+          item: canonicalUrl,
+        });
+      }
+    }
+    setJsonLd("tool-breadcrumb-jsonld", {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems,
+    });
+
+    return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-faq-jsonld", "tool-breadcrumb-jsonld"]);
   }, [tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq]);
 
   return null;
