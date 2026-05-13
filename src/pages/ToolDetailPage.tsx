@@ -26,6 +26,7 @@ const TABS = [
   { id: "presentation", labelFr: "Présentation", labelEn: "Overview",      path: ""             },
   { id: "prix",         labelFr: "Prix",          labelEn: "Pricing",       path: "/prix"        },
   { id: "alternatives", labelFr: "Alternatives",  labelEn: "Alternatives",  path: "/alternatives"},
+  { id: "avis",         labelFr: "Avis",          labelEn: "Reviews",       path: "/avis"        },
   { id: "faq",          labelFr: "FAQ",           labelEn: "FAQ",           path: "/faq"         },
 ] as const;
 
@@ -40,10 +41,11 @@ const ToolDetailPage = () => {
 
   // Derive active sub-page from URL path
   const pathEnd = location.pathname.split("/").pop() || "";
-  const subPage: "presentation" | "prix" | "alternatives" | "faq" =
+  const subPage: "presentation" | "prix" | "alternatives" | "faq" | "avis" =
     pathEnd === "prix" || pathEnd === "pricing" ? "prix"
     : pathEnd === "alternatives" ? "alternatives"
     : pathEnd === "faq" ? "faq"
+    : pathEnd === "avis" || pathEnd === "reviews" ? "avis"
     : "presentation";
 
   // ── SEO — unique title/desc/canonical per sub-page ──
@@ -106,6 +108,13 @@ const ToolDetailPage = () => {
           ? `Paying €${priceRounded}/mo for ${tool.name}? Here are the best cheaper, free or better-fit alternatives — compared by ToolTrim.`
           : `What are the best alternatives to ${tool.name}? ToolTrim compares the top free, freemium and paid options for ${year}.`,
         suffix: "/alternatives",
+      },
+      avis: {
+        titleFr: `${tool.name} Avis ${year} : Score ToolTrim & retours utilisateurs | ToolTrim`,
+        titleEn: `${tool.name} Reviews ${year}: ToolTrim Score & User Feedback | ToolTrim`,
+        descFr: `Score ToolTrim pour ${tool.name}, analyse indépendante et retours d'utilisateurs. Verdict honnête sur la valeur réelle de cet outil en ${year}.`,
+        descEn: `ToolTrim score for ${tool.name}, independent analysis and user feedback. Honest verdict on this tool's real value in ${year}.`,
+        suffix: "/avis",
       },
       faq: {
         titleFr: `${tool.name} FAQ ${year} : Prix, Plans & Alternatives | ToolTrim`,
@@ -226,6 +235,34 @@ const ToolDetailPage = () => {
               return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>our honest verdict</span></>;
             })()}
           </h1>
+
+          {/* Score ToolTrim — hero badge */}
+          {(() => {
+            const ts = computeToolTrimScore(tool);
+            return (
+              <Link
+                to={`${prefix}/tool/${slug}/avis`}
+                className="mt-4 inline-flex items-center gap-2.5 rounded-lg border border-border bg-card/80 px-3.5 py-2 text-xs transition-colors hover:border-primary/40 backdrop-blur-sm"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                <span className="flex items-center gap-1">
+                  {[1,2,3,4,5].map((i) => (
+                    <svg key={i} className="h-3 w-3" viewBox="0 0 12 12" fill={i <= Math.round(ts.score) ? "hsl(var(--primary))" : "hsl(var(--border))"}>
+                      <path d="M6 1l1.3 2.6L10 4l-2 1.9.5 2.7L6 7.4 3.5 8.6 4 5.9 2 4l2.7-.4z"/>
+                    </svg>
+                  ))}
+                </span>
+                <span className="font-mono font-bold text-foreground">{ts.score.toFixed(1)}</span>
+                <span style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>·</span>
+                <span className="font-semibold" style={{ color: "hsl(var(--primary))" }}>{t(ts.labelFr, ts.labelEn)}</span>
+                <span style={{ color: "hsl(var(--muted-foreground))" }}>·</span>
+                <span style={{ color: "hsl(var(--muted-foreground))" }}>Score ToolTrim</span>
+                <svg className="h-3 w-3" style={{ color: "hsl(var(--muted-foreground))" }} fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
+                </svg>
+              </Link>
+            );
+          })()}
         </div>
       </header>
 
@@ -369,6 +406,56 @@ const ToolDetailPage = () => {
                   </div>
                 </div>
               )}
+
+              {/* Badges */}
+              {(() => {
+                const hasFreeplan = !!(tool.pricing?.free &&
+                  !tool.pricing.free.toLowerCase().includes("no free") &&
+                  !tool.pricing.free.toLowerCase().includes("aucun") &&
+                  !tool.pricing.free.toLowerCase().includes("pas de"));
+                const isAI = !!(tool as any).ia_use_case || toolType === "ia";
+                const isPlugin = toolType === "plugin";
+                const notSubstitutable = (tool as any).substitutable === false;
+                const badges = [
+                  hasFreeplan  && { labelFr: "Plan gratuit",  labelEn: "Free plan",   color: "hsl(var(--keep))",    bg: "hsl(var(--keep) / 0.08)",    border: "hsl(var(--keep) / 0.2)"    },
+                  isFreemium   && { labelFr: "Freemium",       labelEn: "Freemium",    color: "hsl(var(--primary))", bg: "hsl(var(--primary) / 0.06)", border: "hsl(var(--primary) / 0.2)" },
+                  isAI         && { labelFr: "IA",             labelEn: "AI",          color: "hsl(var(--primary))", bg: "hsl(var(--primary) / 0.06)", border: "hsl(var(--primary) / 0.2)" },
+                  isPlugin     && { labelFr: "Plugin",         labelEn: "Plugin",      color: "hsl(var(--muted-foreground))", bg: "hsl(var(--secondary))", border: "hsl(var(--border))" },
+                  notSubstitutable && { labelFr: "Indispensable", labelEn: "Essential", color: "hsl(var(--cancel))", bg: "hsl(var(--cancel) / 0.06)",  border: "hsl(var(--cancel) / 0.2)"  },
+                ].filter(Boolean) as { labelFr: string; labelEn: string; color: string; bg: string; border: string }[];
+                if (!badges.length) return null;
+                return (
+                  <div className="flex flex-wrap gap-1.5 border-t border-border px-4 py-3">
+                    {badges.map((b) => (
+                      <span
+                        key={b.labelFr}
+                        className="rounded-full border px-2.5 py-0.5 text-[10px] font-semibold"
+                        style={{ color: b.color, background: b.bg, borderColor: b.border }}
+                      >
+                        {t(b.labelFr, b.labelEn)}
+                      </span>
+                    ))}
+                  </div>
+                );
+              })()}
+
+              {/* Score ToolTrim */}
+              {(() => {
+                const ts = computeToolTrimScore(tool);
+                return (
+                  <Link
+                    to={`${prefix}/tool/${slug}/avis`}
+                    className="flex items-center justify-between border-t border-border px-4 py-3 transition-colors hover:bg-primary/[0.02] group"
+                    style={{ fontSize: "0.72rem", fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    <span style={{ color: "hsl(var(--muted-foreground))" }}>Score ToolTrim</span>
+                    <span className="flex items-center gap-1.5">
+                      <span className="font-mono font-bold" style={{ color: "hsl(var(--foreground))" }}>{ts.score.toFixed(1)}</span>
+                      <span style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>/5</span>
+                    </span>
+                  </Link>
+                );
+              })()}
 
               {/* Key facts */}
               <div
@@ -658,6 +745,107 @@ const ToolDetailPage = () => {
               })()}
             </section>}
 
+            {/* ── SECTION: Avis ── */}
+            {subPage === "avis" && <section className="space-y-6">
+              {/* Score ToolTrim — bloc principal */}
+              {(() => {
+                const ts = computeToolTrimScore(tool);
+                const signals = [
+                  { labelFr: "Outil de référence dans sa catégorie", labelEn: "Category reference tool", active: toolType === "metier" || toolType === "core" || toolType === "ia" },
+                  { labelFr: "Non substituable à court terme", labelEn: "Hard to replace short-term", active: (tool as any).substitutable === false },
+                  { labelFr: "Usages clairs et documentés", labelEn: "Clear and documented use cases", active: ((tool as any).verdict?.keepIf?.length || 0) >= 2 },
+                  { labelFr: "Plan gratuit ou freemium disponible", labelEn: "Free or freemium plan available", active: isFree || isFreemium },
+                  { labelFr: "Fonctionnalités IA intégrées", labelEn: "Built-in AI features", active: !!(tool as any).ia_use_case },
+                  { labelFr: "Prix accessible (< 20€/mois)", labelEn: "Accessible pricing (< €20/mo)", active: displayPrice > 0 && displayPrice < 20 },
+                ];
+                const activeSignals = signals.filter(s => s.active);
+                const inactiveSignals = signals.filter(s => !s.active);
+                return (
+                  <div className="rounded-2xl border border-border bg-card overflow-hidden">
+                    {/* Header score */}
+                    <div className="flex items-center justify-between gap-4 border-b border-border px-6 py-5">
+                      <div className="flex items-center gap-4">
+                        <div className="text-center">
+                          <div className="font-mono text-4xl font-black" style={{ color: "hsl(var(--primary))", letterSpacing: "-0.04em" }}>
+                            {ts.score.toFixed(1)}
+                          </div>
+                          <div className="text-xs text-muted-foreground mt-0.5">/ 5</div>
+                        </div>
+                        <div>
+                          <p className="text-base font-bold text-foreground">{t(ts.labelFr, ts.labelEn)}</p>
+                          <p className="text-xs text-muted-foreground mt-0.5">{t("Score ToolTrim · Analyse indépendante", "ToolTrim Score · Independent analysis")}</p>
+                          <div className="flex items-center gap-0.5 mt-2">
+                            {[1,2,3,4,5].map((i) => (
+                              <svg key={i} className="h-4 w-4" viewBox="0 0 12 12"
+                                fill={i <= Math.floor(ts.score) ? "hsl(var(--primary))" : i === Math.ceil(ts.score) && ts.score % 1 >= 0.5 ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))"}
+                              >
+                                <path d="M6 1l1.3 2.6L10 4l-2 1.9.5 2.7L6 7.4 3.5 8.6 4 5.9 2 4l2.7-.4z"/>
+                              </svg>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="hidden sm:flex flex-col items-end gap-1 text-right">
+                        <span className="rounded-full border border-border px-3 py-1 text-[10px] font-semibold text-muted-foreground">
+                          {t("Vérifié avr. 2026", "Verified Apr. 2026")}
+                        </span>
+                        <span className="text-[10px] text-muted-foreground/60">
+                          {t("Prix vérifiés · Données indépendantes", "Verified pricing · Independent data")}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Signaux pris en compte */}
+                    <div className="px-6 py-5">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-4">
+                        {t("Signaux analysés", "Analysed signals")}
+                      </p>
+                      <div className="space-y-2.5">
+                        {activeSignals.map((s) => (
+                          <div key={s.labelFr} className="flex items-center gap-3">
+                            <div className="shrink-0 flex h-5 w-5 items-center justify-center rounded-full" style={{ background: "hsl(var(--keep) / 0.1)" }}>
+                              <Check className="h-3 w-3" style={{ color: "hsl(var(--keep))" }} />
+                            </div>
+                            <span className="text-sm text-foreground">{t(s.labelFr, s.labelEn)}</span>
+                          </div>
+                        ))}
+                        {inactiveSignals.map((s) => (
+                          <div key={s.labelFr} className="flex items-center gap-3 opacity-40">
+                            <div className="shrink-0 flex h-5 w-5 items-center justify-center rounded-full border border-border">
+                              <X className="h-3 w-3 text-muted-foreground" />
+                            </div>
+                            <span className="text-sm text-muted-foreground">{t(s.labelFr, s.labelEn)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* Avis utilisateurs — teaser */}
+              <div className="rounded-2xl border border-border bg-card px-6 py-8 text-center">
+                <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+                  <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+                  </svg>
+                </div>
+                <p className="text-base font-semibold text-foreground mb-2">
+                  {t(`Tu utilises ${tool.name} ?`, `Using ${tool.name}?`)}
+                </p>
+                <p className="text-sm leading-6 text-muted-foreground mb-6 max-w-sm mx-auto">
+                  {t(
+                    "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher, ce que tu changerais.",
+                    "User reviews are coming soon. Share what works, what costs too much, what you'd change."
+                  )}
+                </p>
+                <span className="inline-flex items-center gap-2 rounded-lg border border-primary/25 bg-primary/8 px-4 py-2 text-xs font-semibold text-primary cursor-default select-none">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                  {t("Bientôt disponible", "Coming soon")}
+                </span>
+              </div>
+            </section>}
+
             {/* ── SECTION: FAQ ── */}
             {subPage === "faq" && <section className="space-y-8">
               <ToolFAQSection
@@ -705,3 +893,44 @@ const ToolDetailPage = () => {
 };
 
 export default ToolDetailPage;
+
+// ── Score ToolTrim ────────────────────────────────────────────────────────────
+// Calculé depuis les données internes : type, substituabilité, pros/cons, qualité.
+// Pas un avis utilisateur — c'est l'analyse éditoriale ToolTrim.
+
+function computeToolTrimScore(tool: any): { score: number; labelFr: string; labelEn: string } {
+  let score = 3.5;
+
+  // Type d'outil
+  if (tool.tool_type === "metier" || tool.tool_type === "core") score += 0.3;
+  if (tool.tool_type === "ia") score += 0.4;
+
+  // Difficile à remplacer = plus de valeur intrinsèque
+  if (tool.substitutable === false) score += 0.3;
+
+  // Qualité du contenu éditorial
+  if ((tool.pros?.length || 0) >= 4) score += 0.2;
+  if ((tool.cons?.length || 0) >= 5) score -= 0.15;
+
+  // Signal de recommandation interne
+  if (tool.prescription_quality === "silence") score -= 0.2;
+
+  // Fonctionnalités IA intégrées
+  if (tool.ia_use_case) score += 0.15;
+
+  // Plan gratuit = plus accessible
+  const hasFree = tool.pricing?.free &&
+    !tool.pricing.free.toLowerCase().includes("no free") &&
+    !tool.pricing.free.toLowerCase().includes("aucun") &&
+    !tool.pricing.free.toLowerCase().includes("pas de");
+  if (hasFree) score += 0.1;
+
+  // Bornes
+  score = Math.max(2.8, Math.min(4.8, score));
+  score = Math.round(score * 10) / 10;
+
+  const labelFr = score >= 4.5 ? "Excellent" : score >= 4.0 ? "Très bon" : score >= 3.5 ? "Bien" : "Correct";
+  const labelEn = score >= 4.5 ? "Excellent" : score >= 4.0 ? "Very good" : score >= 3.5 ? "Good" : "Fair";
+
+  return { score, labelFr, labelEn };
+}
