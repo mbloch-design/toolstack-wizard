@@ -134,6 +134,7 @@ function sitemapPlugin(): Plugin {
           addPair(`${BASE}/fr/tool/${slug}`,              `${BASE}/en/tool/${slug}`,              "weekly",  "0.8");
           addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/pricing`,      "monthly", "0.7");
           addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7");
+          addPair(`${BASE}/fr/tool/${slug}/avis`,         `${BASE}/en/tool/${slug}/reviews`,      "monthly", "0.6");
           addPair(`${BASE}/fr/tool/${slug}/faq`,          `${BASE}/en/tool/${slug}/faq`,          "monthly", "0.6");
         }
 
