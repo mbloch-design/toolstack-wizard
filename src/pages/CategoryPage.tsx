@@ -188,7 +188,7 @@ const CategoryPage = () => {
       onClick={onClick}
       className="rounded-md border px-3 py-1.5 text-xs font-medium transition-all duration-150 text-left"
       style={{
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "inherit",
         borderColor: active ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))",
         background:  active ? "hsl(var(--primary) / 0.1)"  : "hsl(var(--card))",
         color:       active ? "hsl(var(--primary))"         : "hsl(var(--muted-foreground))",
@@ -319,7 +319,7 @@ const CategoryPage = () => {
                       onClick={() => setSavingsFilter((f) => toggleArr(f, s.key))}
                       className="flex items-start gap-2.5 rounded-md border px-3 py-2 text-left text-xs transition-all duration-150"
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "inherit",
                         borderColor: active ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))",
                         background:  active ? "hsl(var(--primary) / 0.08)" : "transparent",
                         color:       active ? "hsl(var(--primary))"        : "hsl(var(--muted-foreground))",
@@ -361,7 +361,7 @@ const CategoryPage = () => {
                     onClick={() => setSort(key)}
                     className="flex items-center gap-2 rounded-md border px-3 py-2 text-left text-xs transition-all duration-150"
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "inherit",
                       borderColor: sort === key ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))",
                       background:  sort === key ? "hsl(var(--primary) / 0.08)" : "transparent",
                       color:       sort === key ? "hsl(var(--primary))"        : "hsl(var(--muted-foreground))",
@@ -379,7 +379,7 @@ const CategoryPage = () => {
               <button
                 onClick={resetFilters}
                 className="inline-flex items-center gap-1.5 text-xs transition-colors"
-                style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}
+                style={{ color: "hsl(var(--muted-foreground))", fontFamily: "ui-monospace, monospace" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(var(--foreground))")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(var(--muted-foreground))")}
               >
@@ -423,7 +423,7 @@ const CategoryPage = () => {
             <div className="mb-5 flex items-center justify-between gap-3">
               <p
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "ui-monospace, monospace",
                   fontSize: "0.68rem",
                   letterSpacing: "0.06em",
                   color: "hsl(var(--muted-foreground) / 0.5)",
@@ -502,7 +502,7 @@ const CategoryPage = () => {
 
                       {/* Logo */}
                       <div className="shrink-0 mt-0.5">
-                        <ToolLogo tool={tool} size={48} className="rounded-xl" />
+                        <ToolLogo tool={tool} size={56} className="rounded-xl" />
                       </div>
 
                       {/* Content */}
@@ -513,51 +513,47 @@ const CategoryPage = () => {
                           <div className="flex-1 min-w-0">
                             <div className="flex flex-wrap items-center gap-2">
                               <h3
-                                className="font-semibold text-foreground group-hover:text-primary transition-colors duration-150"
-                                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                                className="font-display text-foreground group-hover:text-primary transition-colors duration-150"
+                                style={{ fontSize: "0.875rem", fontWeight: 600, letterSpacing: "-0.01em" }}
                               >
                                 {tool.name}
                               </h3>
                               {/* Tool type badge */}
                               {toolType && toolType !== "satellite" && (
                                 <span
-                                  className="inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-xs"
+                                  className="inline-flex shrink-0 items-center rounded px-1.5 py-0.5"
                                   style={{
-                                    fontFamily: "'DM Mono', monospace",
-                                    fontSize: "0.6rem",
-                                    letterSpacing: "0.06em",
+                                    fontSize: "0.65rem",
+                                    letterSpacing: "0.05em",
                                     textTransform: "uppercase",
-                                    background: "hsl(var(--muted) / 0.5)",
-                                    color: "hsl(var(--muted-foreground) / 0.7)",
+                                    background: "hsl(var(--secondary))",
+                                    color: "hsl(var(--muted-foreground))",
                                     border: "1px solid hsl(var(--border))",
+                                    fontWeight: 500,
                                   }}
                                 >
                                   {TYPE_SHORT[toolType] ?? toolType}
                                 </span>
                               )}
-                              {/* Free / Freemium badge */}
+                              {/* Free / Freemium badge — aligned with ToolsPage (green) */}
                               {(isFree || isFreemium) && (
                                 <span
-                                  className="inline-flex shrink-0 items-center rounded-md border px-2 py-0.5 text-xs font-medium"
-                                  style={{
-                                    fontFamily: "'DM Mono', monospace",
-                                    borderColor: "hsl(var(--primary) / 0.3)",
-                                    background: "hsl(var(--primary) / 0.08)",
-                                    color: "hsl(var(--primary))",
-                                  }}
+                                  className="inline-flex shrink-0 items-center rounded-md px-2 py-0.5 text-[11px] font-medium"
+                                  style={{ background: "#dcfce7", color: "#15803d" }}
                                 >
-                                  {isFree ? t("Gratuit", "Free") : "Freemium"}
+                                  {isFree ? t("Gratuit", "Free") : t("Plan gratuit", "Free plan")}
                                 </span>
                               )}
                             </div>
 
                             {/* Description */}
                             <p
-                              className="mt-1.5 text-sm line-clamp-2"
+                              className="mt-1.5 line-clamp-2"
                               style={{
-                                fontFamily: "'DM Sans', sans-serif",
-                                lineHeight: 1.62,
+                                fontSize: "0.8125rem",
+                                lineHeight: 1.55,
                                 color: "hsl(var(--muted-foreground))",
+                                fontWeight: 400,
                               }}
                             >
                               {t(tool.shortDescription, tool.shortDescriptionEn || tool.shortDescription)}
@@ -570,13 +566,13 @@ const CategoryPage = () => {
                               <div className="flex items-baseline gap-0.5 justify-end">
                                 <span
                                   className="text-xl font-bold text-foreground"
-                                  style={{ fontFamily: "'DM Mono', monospace", letterSpacing: "-0.02em" }}
+                                  style={{ fontFamily: "ui-monospace, monospace", letterSpacing: "-0.02em" }}
                                 >
                                   {tool.defaultMonthlyPrice}€
                                 </span>
                                 <span
                                   className="text-xs"
-                                  style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "'DM Mono', monospace" }}
+                                  style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "ui-monospace, monospace" }}
                                 >
                                   /{t("mois", "mo")}
                                 </span>
@@ -585,7 +581,7 @@ const CategoryPage = () => {
                                 <p
                                   className="mt-0.5 text-right"
                                   style={{
-                                    fontFamily: "'DM Mono', monospace",
+                                    fontFamily: "ui-monospace, monospace",
                                     fontSize: "0.58rem",
                                     letterSpacing: "0.05em",
                                     color: "hsl(var(--muted-foreground) / 0.4)",
@@ -634,7 +630,7 @@ const CategoryPage = () => {
                                 style={{
                                   background: "hsl(var(--foreground))",
                                   color: "hsl(var(--background))",
-                                  fontFamily: "'DM Sans', sans-serif",
+                                  fontFamily: "inherit",
                                 }}
                                 onMouseEnter={(e) => {
                                   (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)";
@@ -681,7 +677,7 @@ const CategoryPage = () => {
                         <p
                           className="flex-1 text-xs"
                           style={{
-                            fontFamily: "'DM Sans', sans-serif",
+                            fontFamily: "inherit",
                             color: stripVariant === "free"
                               ? "hsl(var(--savings))"
                               : "hsl(var(--cancel))",
@@ -690,9 +686,9 @@ const CategoryPage = () => {
                           {stripVariant === "free" ? (
                             <>
                               <span className="font-medium">
-                                {t("Alternative gratuite :", "Free alternative:")}
+                                {t("Alt. gratuite :", "Free alt:")}
                               </span>{" "}
-                              <span className="capitalize">{asText(freeAltSlug).replace(/-/g, " ")}</span>
+                              <span>{asText(freeAltSlug).split(/[\s([/]/)[0]}</span>
                               {tool.defaultMonthlyPrice > 0 && (
                                 <span style={{ opacity: 0.7 }}>
                                   {" "}· {t("économisez", "save")} {tool.defaultMonthlyPrice}€/{t("mois", "mo")}
@@ -702,9 +698,9 @@ const CategoryPage = () => {
                           ) : (
                             <>
                               <span className="font-medium">
-                                {t("Moins cher :", "Cheaper option:")}
+                                {t("Moins cher :", "Cheaper:")}
                               </span>{" "}
-                              <span className="capitalize">{asText(betterAlt?.tool).replace(/-/g, " ")}</span>
+                              <span>{asText(betterAlt?.tool).split(/[\s([/]/)[0]}</span>
                               {betterAlt && betterAlt.saving > 0 && (
                                 <span style={{ opacity: 0.7 }}>
                                   {" "}· −{betterAlt.saving}€/{t("mois", "mo")}
@@ -718,7 +714,7 @@ const CategoryPage = () => {
                           to={`${prefix}/tool/${tool.slug || tool.id}`}
                           className="shrink-0 text-xs font-medium underline underline-offset-2 transition-opacity hover:opacity-70"
                           style={{
-                            fontFamily: "'DM Mono', monospace",
+                            fontFamily: "ui-monospace, monospace",
                             fontSize: "0.65rem",
                             color: stripVariant === "free"
                               ? "hsl(var(--savings))"
@@ -762,7 +758,7 @@ const CategoryPage = () => {
                 <button
                   onClick={resetFilters}
                   className="mt-3 text-xs text-primary underline underline-offset-2"
-                  style={{ fontFamily: "'DM Mono', monospace" }}
+                  style={{ fontFamily: "ui-monospace, monospace" }}
                 >
                   {t("Réinitialiser les filtres", "Reset filters")}
                 </button>
@@ -772,7 +768,7 @@ const CategoryPage = () => {
             {/* Related categories */}
             {relatedCats.length > 0 && (
               <div className="mt-14 border-t border-border pt-10">
-                <h2 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
                   {t("Catégories connexes", "Related categories")}
                 </h2>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -795,7 +791,7 @@ const CategoryPage = () => {
                         <p className="font-semibold group-hover:text-primary transition-colors" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                           {t(cName, cat.nameEn || cName)}
                         </p>
-                        <p className="mt-1 text-xs font-medium" style={{ color: "hsl(var(--primary))", fontFamily: "'DM Mono', monospace" }}>
+                        <p className="mt-1 text-xs font-medium" style={{ color: "hsl(var(--primary))", fontFamily: "ui-monospace, monospace" }}>
                           {count} {t("outils", "tools")} →
                         </p>
                       </Link>
