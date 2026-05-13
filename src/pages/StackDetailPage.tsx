@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ExternalLink, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Lightbulb, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetClose } from "@/components/ui/sheet";
@@ -511,119 +511,234 @@ const StackDetailPage = () => {
 
       {/* ── TOOL QUICK PANEL ────────────────────────────────────────────── */}
       <Sheet open={selectedIndex !== null} onOpenChange={(open) => { if (!open) setSelectedIndex(null); }}>
-        <SheetContent side="right" className="w-full sm:max-w-md p-0 flex flex-col gap-0 overflow-hidden">
-          {selectedIndex !== null && (() => {
-            const { slot, tool } = stackTools[selectedIndex];
-            const status = getToolDecisionStatus(slot);
-            const price = tool!.defaultMonthlyPrice;
-            const hasPrev = selectedIndex > 0;
-            const hasNext = selectedIndex < stackTools.length - 1;
-            return (
-              <>
-                {/* Header */}
-                <div className="flex items-start justify-between gap-4 border-b border-border px-6 py-5">
-                  <div className="flex items-center gap-4">
-                    <ToolLogo tool={tool!} size={52} className="rounded-xl shrink-0" />
-                    <div>
-                      <p className="text-base font-semibold text-foreground leading-tight">{tool!.name}</p>
-                      <span className={`mt-1.5 inline-flex rounded-full border px-2.5 py-0.5 text-[10px] font-bold ${status.className}`}>
-                        {t(status.labelFr, status.labelEn)}
-                      </span>
-                    </div>
-                  </div>
-                  <SheetClose className="shrink-0 rounded-md p-1.5 text-muted-foreground hover:text-foreground transition-colors">
-                    <X className="h-4 w-4" />
-                  </SheetClose>
-                </div>
-
-                {/* Body */}
-                <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
-
-                  {/* Rôle dans cette stack */}
-                  <div className="rounded-xl bg-secondary/60 p-4 space-y-2">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                      {t("Rôle dans cette stack", "Role in this stack")}
-                    </p>
-                    <p className="text-sm font-semibold text-foreground">{t(slot.role, slot.roleEn)}</p>
-                    <p className="text-sm leading-6 text-muted-foreground">{t(slot.reason, slot.reasonEn)}</p>
-                    {slot.tip && slot.tipEn && (
-                      <div className="pt-2 border-t border-border">
-                        <p className="text-xs font-medium text-primary">
-                          {t("Petit plus", "Small edge")} — {t(slot.tip, slot.tipEn)}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Description */}
-                  {(tool!.shortDescription || tool!.shortDescriptionEn) && (
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2">
-                        {t("En résumé", "About")}
-                      </p>
-                      <p className="text-sm leading-6 text-muted-foreground">
-                        {t(tool!.shortDescription ?? "", tool!.shortDescriptionEn ?? "")}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Prix */}
-                  <div className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                      {t("Prix de référence", "Reference price")}
-                    </p>
-                    <p className="text-sm font-bold text-foreground">
-                      {price === 0
-                        ? t("Gratuit", "Free")
-                        : `${price}€/${t("mois", "mo")}`}
-                    </p>
-                  </div>
-
-                </div>
-
-                {/* Footer */}
-                <div className="border-t border-border px-6 py-4 flex items-center justify-between gap-3">
-                  {/* Prev / Next */}
-                  <div className="flex items-center gap-1">
-                    <button
-                      type="button"
-                      disabled={!hasPrev}
-                      onClick={() => setSelectedIndex((i) => (i ?? 0) - 1)}
-                      className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed"
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
-                    <span className="min-w-[3rem] text-center text-xs text-muted-foreground tabular-nums">
-                      {selectedIndex + 1} / {stackTools.length}
-                    </span>
-                    <button
-                      type="button"
-                      disabled={!hasNext}
-                      onClick={() => setSelectedIndex((i) => (i ?? 0) + 1)}
-                      className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed"
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
-
-                  {/* Link fiche complète */}
-                  <Link
-                    to={`${prefix}/tool/${tool!.slug}`}
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    {t("Fiche complète", "Full details")}
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </Link>
-                </div>
-              </>
-            );
-          })()}
+        <SheetContent side="right" className="w-full sm:max-w-[420px] p-0 flex flex-col gap-0 overflow-hidden">
+          {selectedIndex !== null && (
+            <ToolPanel
+              stackTools={stackTools}
+              selectedIndex={selectedIndex}
+              onNavigate={setSelectedIndex}
+              prefix={prefix}
+              t={t}
+            />
+          )}
         </SheetContent>
       </Sheet>
 
     </div>
   );
 };
+
+// ── TOOL PANEL ──────────────────────────────────────────────────────────────
+
+interface ToolPanelProps {
+  stackTools: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>;
+  selectedIndex: number;
+  onNavigate: (index: number) => void;
+  prefix: string;
+  t: (fr: string, en: string) => string;
+}
+
+function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPanelProps) {
+  const { slot, tool } = stackTools[selectedIndex];
+  const status = getToolDecisionStatus(slot);
+  const hasPrev = selectedIndex > 0;
+  const hasNext = selectedIndex < stackTools.length - 1;
+
+  // Keyboard navigation
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "ArrowLeft" && hasPrev) onNavigate(selectedIndex - 1);
+      if (e.key === "ArrowRight" && hasNext) onNavigate(selectedIndex + 1);
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [selectedIndex, hasPrev, hasNext, onNavigate]);
+
+  const callout = {
+    core: {
+      fr: "Outil central de cette stack. Inutile de chercher une alternative — c'est lui qui tient tout.",
+      en: "Core tool in this stack. No need to look for an alternative — it holds everything together.",
+      textClass: "text-keep",
+      borderClass: "border-keep/25 bg-keep/[0.05]",
+      dotClass: "bg-keep",
+    },
+    conditional: {
+      fr: "Utile selon les contextes. Vérifie que tu l'utilises vraiment chaque mois avant de renouveler.",
+      en: "Useful in some contexts. Check you actually use it every month before renewing.",
+      textClass: "text-primary",
+      borderClass: "border-primary/25 bg-primary/[0.04]",
+      dotClass: "bg-primary",
+    },
+    challenge: {
+      fr: "Candidat au downgrade. Cet outil doit prouver sa valeur par un résultat concret et mesurable.",
+      en: "Downgrade candidate. This tool needs to prove its value through concrete, measurable results.",
+      textClass: "text-destructive",
+      borderClass: "border-destructive/25 bg-destructive/[0.04]",
+      dotClass: "bg-destructive",
+    },
+  }[status.key];
+
+  const headerTint = {
+    core: "from-keep/[0.06]",
+    conditional: "from-primary/[0.06]",
+    challenge: "from-destructive/[0.06]",
+  }[status.key];
+
+  return (
+    <>
+      {/* ── Header ── */}
+      <div className={`relative border-b border-border px-6 pb-5 pt-5 bg-gradient-to-b ${headerTint} to-transparent`}>
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <ToolLogo tool={tool!} size={64} className="rounded-2xl shrink-0 shadow-sm ring-1 ring-border" />
+            <div className="min-w-0">
+              <p className="text-base font-bold text-foreground leading-tight truncate">{tool!.name}</p>
+              <p className="mt-0.5 text-xs text-muted-foreground truncate">{t(slot.role, slot.roleEn ?? slot.role)}</p>
+              <span className={`mt-2 inline-flex rounded-full border px-2.5 py-0.5 text-[10px] font-bold tracking-wide ${status.className}`}>
+                {t(status.labelFr, status.labelEn)}
+              </span>
+            </div>
+          </div>
+          <SheetClose className="shrink-0 rounded-md p-1.5 text-muted-foreground hover:text-foreground transition-colors mt-0.5">
+            <X className="h-4 w-4" />
+          </SheetClose>
+        </div>
+      </div>
+
+      {/* ── Body ── */}
+      <div className="flex-1 overflow-y-auto px-5 py-5 space-y-4">
+
+        {/* Decision callout */}
+        <div className={`flex items-start gap-3 rounded-xl border p-4 ${callout.borderClass}`}>
+          <div className={`mt-[5px] shrink-0 h-2 w-2 rounded-full ${callout.dotClass}`} />
+          <p className={`text-sm font-medium leading-6 ${callout.textClass}`}>
+            {t(callout.fr, callout.en)}
+          </p>
+        </div>
+
+        {/* Dans cette stack */}
+        <div className="rounded-xl border border-border bg-secondary/40 p-4 space-y-3">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            {t("Dans cette stack", "In this stack")}
+          </p>
+          <p className="text-sm leading-6 text-foreground/80">{t(slot.reason, slot.reasonEn ?? slot.reason)}</p>
+          {slot.tip && (
+            <div className="flex items-start gap-2.5 pt-3 border-t border-border/60">
+              <Lightbulb className="h-3.5 w-3.5 shrink-0 mt-0.5 text-primary" />
+              <p className="text-xs font-medium text-primary leading-5">
+                {t(slot.tip, slot.tipEn ?? slot.tip)}
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Description courte */}
+        {(tool?.shortDescription || tool?.shortDescriptionEn) && (
+          <div className="px-1">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2">
+              {t("En résumé", "About")}
+            </p>
+            <p className="text-sm leading-6 text-muted-foreground">
+              {t(tool.shortDescription ?? "", tool.shortDescriptionEn ?? "")}
+            </p>
+          </div>
+        )}
+
+        {/* Pricing — deux cases côte à côte */}
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-3 px-1">
+            {t("Tarifs", "Pricing")}
+          </p>
+          <div className="grid grid-cols-2 gap-2.5">
+            {/* Gratuit */}
+            {tool?.pricing?.free ? (
+              <div className="rounded-xl border border-keep/25 bg-keep/[0.05] p-3.5">
+                <p className="text-[10px] font-bold uppercase tracking-wide text-keep mb-2">
+                  {t("Gratuit", "Free")}
+                </p>
+                <p className="text-xs leading-5 text-muted-foreground">{tool.pricing.free}</p>
+              </div>
+            ) : (
+              <div className="rounded-xl border border-border bg-secondary/30 p-3.5 flex items-center justify-center">
+                <p className="text-xs text-muted-foreground/50 text-center">
+                  {t("Pas de plan gratuit", "No free plan")}
+                </p>
+              </div>
+            )}
+            {/* Payant */}
+            <div className="rounded-xl border border-border bg-secondary/30 p-3.5">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground mb-2">
+                {t("Payant", "Paid")}
+              </p>
+              {tool?.pricing?.paid ? (
+                <p className="text-xs leading-5 text-muted-foreground">{tool.pricing.paid}</p>
+              ) : (
+                <p className="text-sm font-bold text-foreground">
+                  {(tool?.defaultMonthlyPrice ?? 0) === 0
+                    ? t("Gratuit", "Free")
+                    : `${tool?.defaultMonthlyPrice}€/${t("mois", "mo")}`}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Lien site officiel */}
+        {tool?.websiteUrl && (
+          <a
+            href={tool.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 transition-all hover:border-primary/40 hover:bg-primary/[0.02] group"
+          >
+            <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors truncate pr-3">
+              {tool.websiteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+            </span>
+            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
+          </a>
+        )}
+
+      </div>
+
+      {/* ── Footer ── */}
+      <div className="border-t border-border px-5 py-4 flex items-center justify-between gap-3 bg-background/50">
+        {/* Prev / Next */}
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            disabled={!hasPrev}
+            onClick={() => onNavigate(selectedIndex - 1)}
+            title={t("Outil précédent (←)", "Previous tool (←)")}
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <span className="min-w-[3.25rem] text-center text-xs tabular-nums text-muted-foreground">
+            {selectedIndex + 1} / {stackTools.length}
+          </span>
+          <button
+            type="button"
+            disabled={!hasNext}
+            onClick={() => onNavigate(selectedIndex + 1)}
+            title={t("Outil suivant (→)", "Next tool (→)")}
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+
+        {/* Fiche complète */}
+        <Link
+          to={`${prefix}/tool/${tool!.slug}`}
+          className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+        >
+          {t("Fiche complète", "Full details")}
+          <ExternalLink className="h-3.5 w-3.5" />
+        </Link>
+      </div>
+    </>
+  );
+}
 
 function personaLabel(persona: StackPersona, locale: "fr" | "en") {
   const item = STACK_PERSONAS.find((option) => option.value === persona);
