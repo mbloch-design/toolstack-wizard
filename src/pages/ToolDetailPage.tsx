@@ -20,6 +20,7 @@ import ToolPricingSection from "@/components/tool/ToolPricingSection";
 import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
+import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
 import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
@@ -707,6 +708,12 @@ const ToolDetailPage = () => {
                   t={t}
                 />
               )}
+
+              {/* ── Plugins / Host app / Bundle ── */}
+              <ToolPluginsBlock
+                tool={tool} allTools={tools}
+                prefix={prefix} lang={lang} t={t}
+              />
 
               {/* ── Avantages & inconvénients ── */}
               {((tool.pros?.length ?? 0) > 0 || (tool.cons?.length ?? 0) > 0) && (
