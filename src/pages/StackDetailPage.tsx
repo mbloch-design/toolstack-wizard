@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Layers3 } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/hooks/useLang";
@@ -315,46 +315,56 @@ const StackDetailPage = () => {
             </h2>
           </div>
 
-          <div className="space-y-10">
-            {stackLayers.map((layer) => (
-              <div key={layer.id}>
-                <div className="mb-3 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-2">
-                  <div className="flex items-center gap-2">
-                    <Layers3 className="h-4 w-4 text-primary" />
-                    <h3 className="font-display text-xl font-semibold tracking-tight text-foreground">
-                      {t(layer.titleFr, layer.titleEn)}
-                    </h3>
-                  </div>
-                  <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground">
-                    {layer.tools.length} {t("outils", "tools")}
-                  </span>
+          {/* ── Tech stack grid ── */}
+          <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+            <div
+              className="grid min-w-max border-t border-border"
+              style={{ gridTemplateColumns: `repeat(${stackLayers.length}, minmax(168px, 1fr))` }}
+            >
+              {/* Column headers */}
+              {stackLayers.map((layer, i) => (
+                <div
+                  key={`h-${layer.id}`}
+                  className={`py-5 px-6 ${i > 0 ? "border-l border-dashed border-border" : ""}`}
+                >
+                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-foreground">
+                    {t(layer.titleFr, layer.titleEn)}
+                  </p>
+                  <div className="mt-1.5 h-[2px] w-5 rounded-full bg-primary" />
                 </div>
-                <div className="divide-y divide-border rounded-lg border border-border bg-card">
-                  {layer.tools.map(({ slot, tool }) => (
-                    <Link
-                      key={slot.slug}
-                      to={`${prefix}/tool/${tool!.slug}`}
-                      className="group grid gap-4 p-4 transition-colors hover:bg-primary/5 md:grid-cols-[1.05fr_0.95fr_1.25fr_auto] md:items-center"
-                    >
-                      <div className="flex items-center gap-3">
-                        <ToolLogo tool={tool!} size={36} className="shrink-0 rounded-md" />
-                        <span className="font-semibold text-foreground transition-colors group-hover:text-primary">
-                          {tool!.name}
-                        </span>
-                      </div>
-                      <p className="text-sm font-semibold text-foreground">{t(slot.role, slot.roleEn)}</p>
-                      <p className="text-sm leading-6 text-muted-foreground">{t(slot.reason, slot.reasonEn)}</p>
-                      <ToolStatusBadge status={getToolDecisionStatus(slot)} t={t} />
-                      {slot.tip && slot.tipEn && (
-                        <p className="rounded-md bg-secondary px-3 py-2 text-xs font-medium leading-5 text-muted-foreground md:col-span-4">
-                          {t("Petit plus", "Small edge")} : {t(slot.tip, slot.tipEn)}
-                        </p>
-                      )}
-                    </Link>
-                  ))}
+              ))}
+
+              {/* Tool columns */}
+              {stackLayers.map((layer, i) => (
+                <div
+                  key={`col-${layer.id}`}
+                  className={`border-t border-border py-7 px-6 flex flex-col gap-6 ${i > 0 ? "border-l border-dashed border-border" : ""}`}
+                >
+                  {layer.tools.map(({ slot, tool }) => {
+                    const status = getToolDecisionStatus(slot);
+                    return (
+                      <Link
+                        key={slot.slug}
+                        to={`${prefix}/tool/${tool!.slug}`}
+                        className="group flex flex-col items-center gap-2.5 text-center cursor-pointer"
+                      >
+                        <div className={`rounded-xl p-1.5 ring-1 transition-all duration-150 group-hover:ring-2 ${status.className}`}>
+                          <ToolLogo tool={tool!} size={44} className="rounded-lg" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                            {tool!.name}
+                          </p>
+                          <p className="mt-0.5 text-[10px] leading-tight text-muted-foreground">
+                            {t(slot.role, slot.roleEn)}
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
