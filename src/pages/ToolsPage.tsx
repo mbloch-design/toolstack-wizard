@@ -144,7 +144,7 @@ const ToolsPage = () => {
           <div className="relative z-10">
             <h1
               className="font-display"
-              style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.08, color: "hsl(var(--foreground))" }}
+              style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.08, color: "hsl(var(--foreground))", maxWidth: "16ch" }}
             >
               {t("Trouvez les bons outils\npour votre stack", "Find the right tools\nfor your stack")}
             </h1>
@@ -258,7 +258,10 @@ const ToolsPage = () => {
 
           {/* ── Section 1: Noteworthy (only when not filtering) ── */}
           {!isFiltering && noteworthy.length > 0 && (
-            <section className="mb-10">
+            <section className="mb-12">
+              <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {t("Sélection", "Selection")}
+              </p>
               <h2 className="mb-5 font-display" style={{ fontSize: "1.125rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
                 {t("Recommandés & à la une", "New & Noteworthy")}
               </h2>
@@ -269,7 +272,7 @@ const ToolsPage = () => {
           )}
 
           {/* ── Section 2: All apps ── */}
-          <section>
+          <section className={!isFiltering && noteworthy.length > 0 ? "border-t border-border/50 pt-10" : ""}>
             <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
               <h2 className="font-display" style={{ fontSize: "1.125rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
                 {isFiltering

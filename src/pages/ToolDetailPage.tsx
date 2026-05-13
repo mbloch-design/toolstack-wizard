@@ -407,8 +407,8 @@ const ToolDetailPage = () => {
                     }
                     <span>
                       {freeAlt
-                        ? <>{t("Alt. gratuite :", "Free alt:")} <span className="font-medium capitalize">{asText(freeAlt).replace(/-/g, " ")}</span></>
-                        : <>{t("Moins cher :", "Cheaper:")} <span className="font-medium capitalize">{asText(betterAlt?.tool).replace(/-/g, " ")}</span>{betterAlt?.saving ? ` · −${betterAlt.saving}€` : ""}</>
+                        ? <>{t("Alt. gratuite :", "Free alt:")} <span className="font-medium">{asText(freeAlt).split(/[\s([/]/)[0]}</span></>
+                        : <>{t("Moins cher :", "Cheaper:")} <span className="font-medium">{asText(betterAlt?.tool).split(/[\s([/]/)[0]}</span>{betterAlt?.saving ? ` · −${betterAlt.saving}€` : ""}</>
                       }
                     </span>
                   </div>
@@ -637,7 +637,7 @@ const ToolDetailPage = () => {
                     style={{
                       fontSize: "0.8125rem",
                       fontWeight: isActive ? 500 : 400,
-                      color: isActive ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))",
+                      color: isActive ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground) / 0.7)",
                       textDecoration: "none",
                     }}
                   >
@@ -682,8 +682,8 @@ const ToolDetailPage = () => {
                     </h2>
                     {paras.map((para: string, i: number) => (
                       <p key={i} className={i === 0
-                        ? "text-[15px] font-medium leading-8 text-foreground mb-4"
-                        : "text-sm leading-7 text-muted-foreground mb-3 last:mb-0"
+                        ? "text-[15px] font-medium leading-8 text-foreground mb-6"
+                        : "text-sm leading-7 text-muted-foreground mb-5 last:mb-0"
                       }>
                         {para}
                       </p>
