@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
-import { STACK_PERSONAS, STACK_STAGES, STACKS, STACK_USES, type StackGuide, type StackInsight, type StackPersona, type StackStage } from "@/data/stacks";
+import { STACK_PERSONAS, STACK_STAGES, STACKS, type StackGuide, type StackInsight, type StackPersona, type StackStage } from "@/data/stacks";
 
 const STACK_LAYERS = [
   {
@@ -178,16 +178,13 @@ const StackDetailPage = () => {
 
   if (!stack) return <Navigate to={`${prefix}/stacks`} replace />;
 
-  const uses = STACK_USES[stack.id] || [];
   const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
-  const toolDecisionStats = stack.tools.reduce(
-    (stats, slot) => {
-      const status = getToolDecisionStatus(slot).key;
-      stats[status] += 1;
-      return stats;
-    },
-    { core: 0, conditional: 0, challenge: 0 }
-  );
+  const relatedStacks = useMemo(() => {
+    const samePersona = STACKS.filter((s) => s.slug !== stack.slug && s.persona === stack.persona);
+    if (samePersona.length >= 3) return samePersona.slice(0, 3);
+    const fill = STACKS.filter((s) => s.slug !== stack.slug && s.persona !== stack.persona);
+    return [...samePersona, ...fill].slice(0, 3);
+  }, [stack]);
   const stackLayersBase = STACK_LAYERS.map((layer) => ({
     ...layer,
     tools: stackTools.filter(({ slot }) => {
@@ -256,9 +253,6 @@ const StackDetailPage = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-lg">
-              <a href="#utilisations">{t("Voir les cas d'usage", "See use cases")}</a>
-            </Button>
           </div>
 
         </div>
@@ -275,11 +269,11 @@ const StackDetailPage = () => {
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#expert">
             {t("Conseil expert", "Expert read")}
           </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#utilisations">
-            {t("Scénarios", "Scenarios")}
+          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#pieges">
+            {t("Pièges", "Traps")}
           </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#questions">
-            {t("Auto-check", "Self-check")}
+          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#stacks-proches">
+            {t("Stacks proches", "Related")}
           </a>
         </div>
       </nav>
@@ -400,96 +394,89 @@ const StackDetailPage = () => {
           </div>
         </section>
 
-        {/* ── CAS D'USAGE ────────────────────────────────────────────────── */}
-        <section id="utilisations" className="scroll-mt-24 border-b border-border py-12">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-8">
-            {t("Dans la vraie vie", "In real life")}
-          </p>
-          <div className="space-y-12">
-            {uses.map((use, index) => {
-              const useTools = use.toolSlugs.map((toolSlug) => toolBySlug.get(toolSlug)).filter(Boolean);
-              return (
-                <article key={use.title}>
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                    <div>
-                      <p className="text-xs font-mono text-muted-foreground mb-1">
-                        {t("Scénario", "Scenario")} {String(index + 1).padStart(2, "0")}
-                      </p>
-                      <h3
-                        className="font-display text-foreground"
-                        style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)", fontWeight: 600, letterSpacing: "-0.015em" }}
-                      >
-                        {t(use.title, use.titleEn)}
-                      </h3>
-                    </div>
-                    <div className="flex -space-x-2 shrink-0">
-                      {useTools.map((tool) => (
-                        <ToolLogo key={tool!.id} tool={tool!} size={32} className="rounded-md border-2 border-background bg-background" />
-                      ))}
-                    </div>
+        {/* ── PIÈGES ─────────────────────────────────────────────────────── */}
+        {(stack.traps?.length ?? 0) > 0 && (
+          <section id="pieges" className="scroll-mt-24 border-b border-border py-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
+              {t("Pièges courants", "Common traps")}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {(stack.traps ?? []).map((trap) => (
+                <div key={trap.title} className="flex gap-4 rounded-xl border border-destructive/20 bg-destructive/[0.025] p-5">
+                  <div className="shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-destructive/10 mt-0.5">
+                    <span className="text-[11px] font-bold text-destructive leading-none">!</span>
                   </div>
-
-                  <p className="text-sm leading-7 text-muted-foreground mb-6">
-                    {t(use.description, use.descriptionEn)}
-                  </p>
-
-                  <ol className="space-y-3 border-l-2 border-border pl-5">
-                    {(lang === "fr" ? use.workflow : use.workflowEn).map((step, stepIndex) => (
-                      <li key={step} className="relative">
-                        <span className="absolute -left-[1.65rem] flex h-5 w-5 items-center justify-center rounded-full bg-background border border-border">
-                          <span className="font-mono text-[10px] font-bold text-primary">
-                            {String(stepIndex + 1)}
-                          </span>
-                        </span>
-                        <p className="text-sm leading-6 text-foreground">{step}</p>
-                      </li>
-                    ))}
-                  </ol>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {useTools.map((tool) => (
-                      <Link
-                        key={tool!.id}
-                        to={`${prefix}/tool/${tool!.slug}`}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
-                      >
-                        <ToolLogo tool={tool!} size={14} className="rounded" />
-                        {tool!.name}
-                      </Link>
-                    ))}
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{t(trap.title, trap.titleEn)}</p>
+                    <p className="mt-1.5 text-sm leading-6 text-muted-foreground">{t(trap.detail, trap.detailEn)}</p>
                   </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* ── AUTO-CHECK ─────────────────────────────────────────────────── */}
-        <section id="questions" className="scroll-mt-24 border-b border-border py-12">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-8">
-            {t("Avant d'adopter cette stack", "Before adopting this stack")}
-          </p>
-          <div className="space-y-10">
-            {stack.checkpoints.map((cp, i) => (
-              <div key={i} className="grid grid-cols-[2rem_1fr] gap-4">
-                <span
-                  className="font-mono text-2xl font-bold leading-none"
-                  style={{ color: "hsl(var(--muted-foreground) / 0.25)" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <p className="text-base font-semibold leading-6 text-foreground">
-                    {t(cp.q, cp.qEn)}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    {t(cp.hint, cp.hintEn)}
-                  </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── SIGNAUX DE MATURITÉ ─────────────────────────────────────────── */}
+        {(stack.maturitySignals?.length ?? 0) > 0 && (
+          <section id="upgrade" className="scroll-mt-24 border-b border-border py-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+              {t("Quand faire évoluer cette stack ?", "When to upgrade this stack?")}
+            </p>
+            <p className="text-sm text-muted-foreground mb-6">
+              {t("Ces signaux indiquent que tu as dépassé ce niveau.", "These signals mean you've outgrown this setup.")}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {(stack.maturitySignals ?? []).map((signal) => (
+                <div key={signal.title} className="flex gap-4 rounded-xl border border-border bg-card p-5">
+                  <div className="shrink-0 h-2 w-2 rounded-full bg-primary mt-2" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{t(signal.title, signal.titleEn)}</p>
+                    <p className="mt-1.5 text-sm leading-6 text-muted-foreground">{t(signal.detail, signal.detailEn)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── STACKS PROCHES ──────────────────────────────────────────────── */}
+        {relatedStacks.length > 0 && (
+          <section id="stacks-proches" className="scroll-mt-24 border-b border-border py-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
+              {t("Stacks proches", "Related stacks")}
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedStacks.map((related) => (
+                <Link
+                  key={related.slug}
+                  to={`${prefix}/stacks/${related.slug}`}
+                  className="group flex flex-col justify-between rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 cursor-pointer"
+                >
+                  <div>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <span className="rounded-full border border-border px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground">
+                        {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
+                      </span>
+                      <span className="rounded-full border border-primary/30 bg-primary/8 px-2.5 py-0.5 text-[10px] font-semibold text-primary">
+                        {related.monthlyBudget}€/mois
+                      </span>
+                    </div>
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
+                      {t(related.title, related.titleEn)}
+                    </p>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground line-clamp-2">
+                      {t(related.subtitle, related.subtitleEn)}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-1 mt-5 text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors">
+                    {t("Voir la stack", "View stack")}
+                    <ArrowRight className="h-3 w-3" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── CTA ────────────────────────────────────────────────────────── */}
         <section className="py-16">
