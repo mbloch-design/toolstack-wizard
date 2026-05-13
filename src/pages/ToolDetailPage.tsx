@@ -699,12 +699,17 @@ const ToolDetailPage = () => {
             {/* ── SECTION: Présentation ── */}
             {subPage === "presentation" && <section className="divide-y divide-border">
 
-              {/* Description courte — mobile uniquement */}
-              <div className="lg:hidden pb-8">
-                <p className="text-sm leading-relaxed text-muted-foreground" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
-                </p>
-              </div>
+              {/* Description courte — lead paragraph, toujours visible */}
+              {tool.shortDescription && (
+                <div className="pb-8">
+                  <p
+                    className="text-[15px] leading-8 text-foreground"
+                    style={{ fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                  >
+                    {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                  </p>
+                </div>
+              )}
 
               {/* ── Analyse éditoriale ── */}
               {(() => {
@@ -845,6 +850,36 @@ const ToolDetailPage = () => {
 
             {/* ── SECTION: Prix ── */}
             {subPage === "prix" && <section className="space-y-8">
+
+              {/* Intro prose — keyword-rich context for this tab */}
+              <div className="space-y-1">
+                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
+                  {t("Tarifs", "Pricing")}
+                </p>
+                <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                  {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
+                </h2>
+                <p
+                  className="text-sm leading-7 pt-1"
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                >
+                  {lang === "fr"
+                    ? (() => {
+                        if (displayPrice === 0)
+                          return `${tool.name} propose un plan gratuit${tool.shortDescription ? ` — ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail complet des plans disponibles en ${new Date().getFullYear()}.`;
+                        const plan = tool.pricing_v5?.compare_plan_name;
+                        return `${tool.name} est facturé ${displayPrice}€/mois${plan ? ` (plan ${plan})` : ""}${tool.shortDescription ? ` — ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail des tarifs et ce qu'ils incluent réellement.`;
+                      })()
+                    : (() => {
+                        if (displayPrice === 0)
+                          return `${tool.name} offers a free plan${tool.shortDescription ? ` — ${((tool as any).shortDescriptionEn || tool.shortDescription).split(/[.!?]/)[0].toLowerCase()}` : ""}. Here's the full breakdown of available plans for ${new Date().getFullYear()}.`;
+                        const plan = tool.pricing_v5?.compare_plan_name;
+                        return `${tool.name} is priced at €${displayPrice}/mo${plan ? ` (${plan} plan)` : ""}${tool.shortDescription ? ` — ${((tool as any).shortDescriptionEn || tool.shortDescription).split(/[.!?]/)[0].toLowerCase()}` : ""}. Here's what each plan actually includes.`;
+                      })()
+                  }
+                </p>
+              </div>
+
               <ToolPricingSection
                 tool={tool} displayPrice={displayPrice}
                 verifiedOn={verifiedOn} sourceDomain={sourceDomain}
@@ -854,6 +889,26 @@ const ToolDetailPage = () => {
 
             {/* ── SECTION: Alternatives ── */}
             {subPage === "alternatives" && <section className="space-y-8">
+
+              {/* Intro prose */}
+              <div className="space-y-1">
+                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
+                  {t("Comparatif", "Comparison")}
+                </p>
+                <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                  {t(`Meilleures alternatives à ${tool.name}`, `Best alternatives to ${tool.name}`)}
+                </h2>
+                <p
+                  className="text-sm leading-7 pt-1"
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                >
+                  {lang === "fr"
+                    ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""} comparées selon le prix, les fonctionnalités et la pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois de ${tool.name}.` : ""}`
+                    : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""} compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
+                  }
+                </p>
+              </div>
+
               {/* Comparison table — first thing user sees */}
               {alternatives.length > 0 && (
                 <ToolComparisonTable
@@ -949,14 +1004,23 @@ const ToolDetailPage = () => {
 
             {/* ── SECTION: Avis ── */}
             {subPage === "avis" && <section className="space-y-6">
-              {/* Eyebrow + heading */}
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
+              {/* Eyebrow + heading + intro prose */}
+              <div className="space-y-2">
+                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
                   {t("Évaluation", "Rating")}
                 </p>
                 <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
-                  {t(`Score & avis — ${tool.name}`, `Score & reviews — ${tool.name}`)}
+                  {t(`Avis sur ${tool.name} — Note & Verdict ToolTrim`, `${tool.name} Reviews — ToolTrim Rating & Verdict`)}
                 </h2>
+                <p
+                  className="text-sm leading-7 pt-1"
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "72ch" }}
+                >
+                  {lang === "fr"
+                    ? `${tool.shortDescription ? `${tool.shortDescription.split(/[.!?]/)[0]}. ` : ""}Notre analyse indépendante de ${tool.name} en ${new Date().getFullYear()} : score éditorial, signaux de valeur, points forts et limites identifiés.`
+                    : `${(tool as any).shortDescriptionEn ? `${((tool as any).shortDescriptionEn as string).split(/[.!?]/)[0]}. ` : tool.shortDescription ? `${tool.shortDescription.split(/[.!?]/)[0]}. ` : ""}Our independent analysis of ${tool.name} for ${new Date().getFullYear()}: editorial score, value signals, key strengths and identified limitations.`
+                  }
+                </p>
               </div>
 
               {/* Score ToolTrim — bloc principal */}
