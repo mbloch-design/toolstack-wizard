@@ -19,6 +19,7 @@ import ToolVerdictBlock from "@/components/tool/ToolVerdictBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
 import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
+import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
 import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
@@ -513,6 +514,125 @@ const ToolDetailPage = () => {
           {/* ══════════════ MAIN CONTENT ══════════════ */}
           <div className="flex-1 min-w-0">
 
+            {/* ── Mobile summary card (lg:hidden — sidebar is hidden on mobile) ── */}
+            {(() => {
+              const ts = computeToolTrimScore(tool);
+              const hasFreeplanMobile = !!(tool.pricing?.free &&
+                !tool.pricing.free.toLowerCase().includes("no free") &&
+                !tool.pricing.free.toLowerCase().includes("aucun") &&
+                !tool.pricing.free.toLowerCase().includes("pas de"));
+              const isAIMobile = !!(tool as any).ia_use_case || toolType === "ia";
+              const notSubMobile = (tool as any).substitutable === false;
+
+              return (
+                <div className="lg:hidden mb-6 rounded-xl border border-border bg-card overflow-hidden">
+                  {/* Top row: logo + name + price */}
+                  <div className="flex items-center gap-3 px-4 py-4 border-b border-border">
+                    <ToolLogo tool={tool} size={44} className="rounded-xl shadow-sm shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-foreground truncate" style={{ fontSize: "1rem", letterSpacing: "-0.02em" }}>
+                        {tool.name}
+                      </p>
+                      {category && (
+                        <Link
+                          to={`${prefix}/category/${category.slug}`}
+                          className="text-xs hover:text-primary transition-colors"
+                          style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}
+                        >
+                          {t(catName, catNameEn)}
+                        </Link>
+                      )}
+                    </div>
+                    <div className="shrink-0 text-right">
+                      {isFree || isFreemium ? (
+                        <span
+                          className="inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-bold"
+                          style={{
+                            borderColor: "hsl(var(--primary) / 0.3)",
+                            background: "hsl(var(--primary) / 0.08)",
+                            color: "hsl(var(--primary))",
+                            fontFamily: "'DM Mono', monospace",
+                          }}
+                        >
+                          {isFree ? t("Gratuit", "Free") : "Freemium"}
+                        </span>
+                      ) : (
+                        <p style={{ fontFamily: "'DM Mono', monospace" }}>
+                          <span className="text-lg font-black text-foreground">{displayPrice}€</span>
+                          <span className="text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}>/{t("mois", "mo")}</span>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Score row */}
+                  <Link
+                    to={`${prefix}/tool/${slug}/avis`}
+                    className="flex items-center justify-between gap-3 px-4 py-3 border-b border-border hover:bg-muted/30 transition-colors"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-0.5">
+                        {[1,2,3,4,5].map((i) => (
+                          <svg key={i} className="h-4 w-4" viewBox="0 0 24 24" fill={starFill(i, ts.score)}>
+                            <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>
+                          </svg>
+                        ))}
+                      </div>
+                      <span className="font-mono font-black text-sm" style={{ color: "hsl(var(--foreground))" }}>
+                        {ts.score.toFixed(1)}
+                      </span>
+                      <span className="text-xs font-semibold" style={{ color: "hsl(var(--primary))" }}>
+                        {t(ts.labelFr, ts.labelEn)}
+                      </span>
+                    </div>
+                    <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}>
+                      Score ToolTrim →
+                    </span>
+                  </Link>
+
+                  {/* Badges + CTA */}
+                  <div className="px-4 py-3 flex items-center justify-between gap-3">
+                    <div className="flex flex-wrap gap-1.5">
+                      {hasFreeplanMobile && (
+                        <span className="rounded-full border px-2 py-0.5 text-[10px] font-semibold"
+                          style={{ color: "hsl(var(--keep))", background: "hsl(var(--keep)/0.08)", borderColor: "hsl(var(--keep)/0.2)" }}>
+                          {t("Plan gratuit", "Free plan")}
+                        </span>
+                      )}
+                      {isAIMobile && (
+                        <span className="rounded-full border px-2 py-0.5 text-[10px] font-semibold"
+                          style={{ color: "hsl(var(--primary))", background: "hsl(var(--primary)/0.06)", borderColor: "hsl(var(--primary)/0.2)" }}>
+                          IA
+                        </span>
+                      )}
+                      {notSubMobile && (
+                        <span className="rounded-full border px-2 py-0.5 text-[10px] font-semibold"
+                          style={{ color: "hsl(var(--cancel))", background: "hsl(var(--cancel)/0.06)", borderColor: "hsl(var(--cancel)/0.2)" }}>
+                          {t("Indispensable", "Essential")}
+                        </span>
+                      )}
+                    </div>
+                    {primaryCtaUrl && (
+                      <a
+                        href={primaryCtaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold shrink-0 transition-colors"
+                        style={{
+                          background: "hsl(var(--foreground))",
+                          color: "hsl(var(--background))",
+                          fontFamily: "'DM Sans', sans-serif",
+                        }}
+                      >
+                        {t("Visiter", "Visit")}
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              );
+            })()}
+
             {/* ── Tab nav (sticky) — real links for SEO ── */}
             <nav
               className="sticky top-0 z-20 mb-8 flex items-center gap-1 overflow-x-auto border-b border-border pb-0"
@@ -646,6 +766,17 @@ const ToolDetailPage = () => {
                     ))}
                   </div>
                 </div>
+              )}
+
+              {/* ── Pour qui ? ── */}
+              {((tool as any).relevantFor?.length > 0) && (
+                <ToolAudienceBlock
+                  relevantFor={(tool as any).relevantFor || []}
+                  soloRelevance={tool.soloRelevance}
+                  teamRelevance={tool.teamRelevance}
+                  toolName={tool.name}
+                  t={t}
+                />
               )}
 
               {/* ── Verdict ── */}
