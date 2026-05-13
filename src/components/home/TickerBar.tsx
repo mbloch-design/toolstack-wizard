@@ -1,15 +1,45 @@
 import { useLang } from "@/hooks/useLang";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
-const L = ({ d }: { d: string }) => (
-  <span
-    aria-hidden="true"
-    className="inline-flex shrink-0 items-center justify-center rounded-sm border border-border bg-secondary text-[9px] font-semibold uppercase text-muted-foreground"
-    style={{ width: 14, height: 14, lineHeight: "14px" }}
-  >
-    {d.charAt(0)}
-  </span>
-);
+/**
+ * Tiny 14px logo for a given domain.
+ * Chain: SimpleIcons CDN (auto-probe) → Google Favicon V2 → letter fallback
+ */
+const L = ({ d }: { d: string }) => {
+  const domainSlug = d.split(".")[0]; // figma, notion, slack, hubspot …
+  const [srcIndex, setSrcIndex] = useState(0);
+
+  const sources = [
+    `https://cdn.simpleicons.org/${domainSlug}`,
+    `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${d}&size=32`,
+  ];
+
+  if (srcIndex < sources.length) {
+    return (
+      <img
+        src={sources[srcIndex]}
+        alt=""
+        aria-hidden
+        width={14}
+        height={14}
+        className="inline-block shrink-0 rounded-sm object-contain"
+        style={{ width: 14, height: 14, verticalAlign: "middle", background: "hsl(var(--card))" }}
+        onError={() => setSrcIndex((i) => i + 1)}
+      />
+    );
+  }
+
+  // Letter fallback
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-flex shrink-0 items-center justify-center rounded-sm border border-border bg-secondary text-[9px] font-semibold uppercase text-muted-foreground"
+      style={{ width: 14, height: 14, lineHeight: "14px" }}
+    >
+      {d.charAt(0).toUpperCase()}
+    </span>
+  );
+};
 
 interface TickerItem {
   tag: string;
@@ -76,7 +106,7 @@ const TickerBar = () => {
             {/* Tag pill — DM Mono, primary tint */}
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "ui-monospace, monospace",
                 fontSize: "0.6rem",
                 letterSpacing: "0.07em",
                 textTransform: "uppercase",
