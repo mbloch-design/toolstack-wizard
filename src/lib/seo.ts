@@ -38,17 +38,24 @@ export function setHreflang(path: string, base = SEO_BASE) {
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
 
   const toolPricingMatch = path.match(/^\/(?:fr|en)\/tool\/([^/]+)\/(?:prix|pricing)$/);
+  const toolAvisMatch    = path.match(/^\/(?:fr|en)\/tool\/([^/]+)\/(?:avis|reviews)$/);
   const entries: [string, string][] = toolPricingMatch
     ? [
-        ["fr", `${base}/fr/tool/${toolPricingMatch[1]}/prix`],
-        ["en", `${base}/en/tool/${toolPricingMatch[1]}/pricing`],
+        ["fr",        `${base}/fr/tool/${toolPricingMatch[1]}/prix`],
+        ["en",        `${base}/en/tool/${toolPricingMatch[1]}/pricing`],
         ["x-default", `${base}/fr/tool/${toolPricingMatch[1]}/prix`],
+      ]
+    : toolAvisMatch
+    ? [
+        ["fr",        `${base}/fr/tool/${toolAvisMatch[1]}/avis`],
+        ["en",        `${base}/en/tool/${toolAvisMatch[1]}/reviews`],
+        ["x-default", `${base}/fr/tool/${toolAvisMatch[1]}/avis`],
       ]
     : (() => {
         const cleanPath = path.replace(/^\/(fr|en)/, "");
         return [
-          ["fr", `${base}/fr${cleanPath}`],
-          ["en", `${base}/en${cleanPath}`],
+          ["fr",        `${base}/fr${cleanPath}`],
+          ["en",        `${base}/en${cleanPath}`],
           ["x-default", `${base}/fr${cleanPath}`],
         ] as [string, string][];
       })();

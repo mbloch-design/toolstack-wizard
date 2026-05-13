@@ -133,7 +133,10 @@ const ToolDetailPage = () => {
     const meta = SEO[subPage] ?? SEO.presentation;
     const seoTitle = lang === "fr" ? meta.titleFr : meta.titleEn;
     const seoDesc  = lang === "fr" ? meta.descFr  : meta.descEn;
-    const canonicalSuffix = subPage === "prix" && lang === "en" ? "/pricing" : meta.suffix;
+    const canonicalSuffix =
+      subPage === "prix" && lang === "en" ? "/pricing" :
+      subPage === "avis" && lang === "en" ? "/reviews" :
+      meta.suffix;
     const canonicalUrl = `${SEO_BASE}/${lang}/tool/${baseSlug}${canonicalSuffix}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
@@ -191,6 +194,12 @@ const ToolDetailPage = () => {
         tool={tool} category={category} displayPrice={displayPrice}
         verifiedOn={verifiedOn} alternatives={alternatives} lang={lang}
         includeFaq={subPage === "faq"}
+        canonicalUrl={`https://tooltrim.com/${lang}/tool/${tool.slug || tool.id}${
+          subPage === "prix" ? (lang === "en" ? "/pricing" : "/prix") :
+          subPage === "alternatives" ? "/alternatives" :
+          subPage === "avis" ? (lang === "en" ? "/reviews" : "/avis") :
+          subPage === "faq" ? "/faq" : ""
+        }`}
       />
 
       {/* ── Hero strip: breadcrumb + headline ── */}

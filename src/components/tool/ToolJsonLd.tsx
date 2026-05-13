@@ -10,6 +10,7 @@ interface Props {
   alternatives: Tool[];
   lang: string;
   includeFaq?: boolean;
+  canonicalUrl?: string;
 }
 
 /**
@@ -18,9 +19,9 @@ interface Props {
  * - SoftwareApplication + Offer
  * - FAQPage when the dedicated FAQ page is rendered
  */
-export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false }: Props) {
+export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false, canonicalUrl: pageCanonicalUrl }: Props) {
   useEffect(() => {
-    const canonicalUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
+    const canonicalUrl = pageCanonicalUrl || `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
 
     // 1. WebPage
     setJsonLd("tool-webpage-jsonld", {
@@ -144,7 +145,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
           name: lang === "fr" ? `À quoi sert ${tool.name} ?` : `What is ${tool.name} used for?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: tool.longDescription || tool.shortDescription || `${tool.name} is a SaaS tool.`,
+            text: (lang === "en" && (tool as any).shortDescriptionEn ? (tool as any).shortDescriptionEn : tool.shortDescription) || `${tool.name} is a SaaS tool.`,
           },
         },
         {
