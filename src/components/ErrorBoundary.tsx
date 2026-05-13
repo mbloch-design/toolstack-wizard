@@ -26,6 +26,21 @@ export class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: ErrorInfo) {
     console.error("[ErrorBoundary]", error, info.componentStack);
+
+    // Chunk loading errors happen after a new deployment invalidates old Vite chunks.
+    // Auto-reload once to fetch the fresh bundle — avoids a blank error screen.
+    const isChunkError =
+      error.message?.includes("Failed to fetch dynamically imported module") ||
+      error.message?.includes("Importing a module script failed") ||
+      error.name === "ChunkLoadError";
+
+    if (isChunkError) {
+      const reloadKey = "chunk_reload_attempted";
+      if (!sessionStorage.getItem(reloadKey)) {
+        sessionStorage.setItem(reloadKey, "1");
+        window.location.reload();
+      }
+    }
   }
 
   handleReset = () => {
@@ -43,11 +58,13 @@ export class ErrorBoundary extends Component<Props, State> {
           </div>
           <h2 className="text-lg font-semibold">Une erreur est survenue</h2>
           <p className="max-w-sm text-sm text-muted-foreground">
-            {this.state.error?.message ?? "Erreur inattendue. Rechargez la page."}
+            {this.state.error?.message?.includes("dynamically imported module")
+              ? "La page a été mise à jour. Rechargez pour continuer."
+              : (this.state.error?.message ?? "Erreur inattendue. Rechargez la page.")}
           </p>
           <div className="flex gap-3">
             <button
-              onClick={this.handleReset}
+              onClick={() => window.location.reload()}
               className="rounded-lg border border-border px-4 py-2 text-sm font-medium hover:bg-secondary transition-colors"
             >
               Réessayer
