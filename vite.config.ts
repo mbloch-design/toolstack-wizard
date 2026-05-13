@@ -226,11 +226,21 @@ function sitemapPlugin(): Plugin {
           addPair(`${BASE}${pp.fr}`, `${BASE}${pp.en}`, "monthly", pp.priority);
         }
 
+        // Deduplicate — tool slugs in data may have duplicates (flux, framer, perplexity …)
+        const seenLocs = new Set<string>();
+        const deduped = urls.filter((entry) => {
+          const match = entry.match(/<loc>(.*?)<\/loc>/);
+          if (!match) return true;
+          if (seenLocs.has(match[1])) return false;
+          seenLocs.add(match[1]);
+          return true;
+        });
+
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
           `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"`,
           `        xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
-          urls.join("\n"),
+          deduped.join("\n"),
           `</urlset>`,
         ].join("\n");
 
@@ -239,7 +249,8 @@ function sitemapPlugin(): Plugin {
           fs.writeFileSync(distPath, xml, "utf-8");
         }
 
-        console.log(`✅ Sitemap generated with ${urls.length} URLs (hreflang included)`);
+        const dupeCount = urls.length - deduped.length;
+        console.log(`✅ Sitemap generated with ${deduped.length} URLs (hreflang included)${dupeCount > 0 ? ` — ${dupeCount} duplicates removed` : ""}`);
       } catch (e) {
         console.warn("⚠️ Sitemap generation failed:", e);
       }
