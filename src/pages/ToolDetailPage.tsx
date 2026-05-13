@@ -283,174 +283,137 @@ const ToolDetailPage = () => {
         <div className="flex gap-8 items-start">
 
           {/* ══════════════ LEFT STICKY CARD ══════════════ */}
-          <aside className="hidden lg:flex w-60 shrink-0 flex-col gap-4 sticky top-6">
+          <aside className="hidden lg:flex w-56 shrink-0 flex-col gap-3 sticky top-6">
+
+            {/* ── Main card ── */}
             <div
-              className="rounded-xl border border-border overflow-hidden"
-              style={{ background: "hsl(var(--card))" }}
+              className="rounded-2xl overflow-hidden"
+              style={{
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
+                boxShadow: "0 1px 6px hsl(var(--foreground) / 0.05)",
+              }}
             >
-              {/* Logo + name + score */}
-              <div className="flex flex-col items-center gap-3 p-5 pb-4 border-b border-border text-center">
-                <ToolLogo tool={tool} size={64} className="rounded-2xl shadow-md" />
-                <div>
-                  <p
-                    className="font-display"
-                    style={{ fontSize: "0.9375rem", fontWeight: 600, letterSpacing: "-0.02em" }}
-                  >
+              {/* Identity: logo + name + category */}
+              <div className="flex flex-col items-center gap-2.5 px-5 pt-6 pb-5 text-center">
+                <ToolLogo tool={tool} size={72} className="rounded-2xl" style={{ boxShadow: "0 4px 16px hsl(var(--foreground) / 0.10)" }} />
+                <div className="space-y-1">
+                  <p className="font-display" style={{ fontSize: "0.9375rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
                     {tool.name}
                   </p>
                   {category && (
                     <Link
                       to={`${prefix}/category/${category.slug}`}
-                      className="mt-0.5 inline-flex items-center gap-1 text-xs transition-colors hover:text-primary"
-                      style={{ color: "hsl(var(--muted-foreground))" }}
+                      className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-medium transition-colors hover:text-primary"
+                      style={{
+                        background: "hsl(var(--secondary))",
+                        color: "hsl(var(--muted-foreground))",
+                      }}
                     >
-                      {CategoryIcon && <CategoryIcon className="h-2.5 w-2.5" />}
+                      {CategoryIcon && <CategoryIcon className="h-3 w-3" />}
                       {t(catName, catNameEn)}
                     </Link>
                   )}
                 </div>
 
-                {/* Score ToolTrim — étoiles visibles */}
+                {/* Score compact — une seule ligne */}
                 {(() => {
                   const ts = computeToolTrimScore(tool);
                   return (
                     <Link
                       to={`${prefix}/tool/${slug}/avis`}
-                      className="flex flex-col items-center gap-1.5 rounded-xl border border-border bg-secondary/40 px-4 py-3 w-full transition-colors hover:border-primary/30 hover:bg-primary/[0.03] group"
+                      className="mt-1 flex items-center gap-2 rounded-xl px-3 py-2 w-full transition-colors hover:bg-secondary/60 group"
+                      style={{ background: "hsl(var(--secondary) / 0.5)" }}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-0.5">
                         {[1,2,3,4,5].map((i) => (
-                          <svg key={i} className="h-5 w-5" viewBox="0 0 24 24"
-                            fill={starFill(i, ts.score)}
-                          >
+                          <svg key={i} className="h-3.5 w-3.5" viewBox="0 0 24 24" fill={starFill(i, ts.score)}>
                             <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>
                           </svg>
                         ))}
                       </div>
-                      <div className="flex items-baseline gap-1">
-                        <span className="font-mono text-xl font-black" style={{ color: "hsl(var(--foreground))", letterSpacing: "-0.03em" }}>
-                          {ts.score.toFixed(1)}
-                        </span>
-                        <span className="text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.5)" }}>/5</span>
-                        <span className="ml-1 text-xs font-semibold" style={{ color: "hsl(var(--primary))" }}>
-                          {t(ts.labelFr, ts.labelEn)}
-                        </span>
-                      </div>
-                      <span className="text-[10px]" style={{ color: "hsl(var(--muted-foreground))" }}>
-                        Score ToolTrim →
+                      <span className="font-mono text-sm font-bold" style={{ color: "hsl(var(--foreground))", letterSpacing: "-0.02em" }}>
+                        {ts.score.toFixed(1)}
                       </span>
+                      <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground))" }}>
+                        {t(ts.labelFr, ts.labelEn)}
+                      </span>
+                      <ArrowRight className="ml-auto h-3 w-3 opacity-40 group-hover:opacity-70 transition-opacity" />
                     </Link>
                   );
                 })()}
               </div>
 
-              {/* Price block */}
-              <div className="px-5 py-4 border-b border-border text-center">
-                {isFree || isFreemium ? (
-                  <span
-                    className="inline-flex items-center rounded-md border px-3 py-1 text-sm font-semibold"
-                    style={{
-                      fontFamily: "ui-monospace, monospace",
-                      borderColor: "hsl(var(--primary) / 0.3)",
-                      background: "hsl(var(--primary) / 0.08)",
-                      color: "hsl(var(--primary))",
-                    }}
-                  >
-                    {isFree ? t("Gratuit", "Free") : "Freemium"}
-                  </span>
-                ) : (
-                  <div>
-                    <div className="flex items-baseline justify-center gap-0.5">
+              {/* Price + CTA — hero block */}
+              <div className="px-5 pb-5 space-y-3">
+                {/* Price display */}
+                <div className="text-center">
+                  {isFree || isFreemium ? (
+                    <div>
                       <span
-                        className="text-2xl font-bold"
-                        style={{ fontFamily: "ui-monospace, monospace", letterSpacing: "-0.02em" }}
-                      >
-                        {displayPrice}€
-                      </span>
-                      <span
-                        className="text-xs"
-                        style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "ui-monospace, monospace" }}
-                      >
-                        /{t("mois", "mo")}
-                      </span>
-                    </div>
-                    {tool.pricing_v5?.compare_plan_name && (
-                      <p
-                        className="mt-0.5"
+                        className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-semibold"
                         style={{
-                          fontFamily: "ui-monospace, monospace",
-                          fontSize: "0.6rem",
-                          letterSpacing: "0.06em",
-                          textTransform: "uppercase",
-                          color: "hsl(var(--muted-foreground) / 0.45)",
+                          background: "hsl(var(--primary) / 0.08)",
+                          color: "hsl(var(--primary))",
+                          border: "1px solid hsl(var(--primary) / 0.2)",
                         }}
                       >
-                        {t("Plan", "Plan")} {tool.pricing_v5.compare_plan_name}
-                      </p>
-                    )}
-                  </div>
-                )}
-              </div>
+                        {isFree ? t("Gratuit", "Free") : "Freemium"}
+                      </span>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="flex items-baseline justify-center gap-1">
+                        <span className="num-mono" style={{ fontSize: "1.75rem", fontWeight: 700, letterSpacing: "-0.03em", color: "hsl(var(--foreground))" }}>
+                          {displayPrice}€
+                        </span>
+                        <span style={{ fontSize: "0.8125rem", color: "hsl(var(--muted-foreground))", fontWeight: 400 }}>
+                          /{t("mois", "mo")}
+                        </span>
+                      </div>
+                      {tool.pricing_v5?.compare_plan_name && (
+                        <p className="mt-0.5 text-[11px] uppercase tracking-wider" style={{ color: "hsl(var(--muted-foreground) / 0.5)", letterSpacing: "0.08em" }}>
+                          {t("Plan", "Plan")} {tool.pricing_v5.compare_plan_name}
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
 
-              {/* Short description */}
-              <div className="px-5 py-4 border-b border-border">
-                <p
-                  className="text-xs leading-relaxed line-clamp-4"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit" }}
-                >
-                  {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
-                </p>
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-col gap-2 p-4">
+                {/* CTA */}
                 <a
                   href={primaryCtaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-semibold transition-colors"
-                  style={{
-                    background: "hsl(var(--foreground))",
-                    color: "hsl(var(--background))",
-                    fontFamily: "inherit",
-                  }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
+                  className="flex w-full items-center justify-center gap-1.5 rounded-xl py-2.5 text-[0.8125rem] font-semibold transition-opacity hover:opacity-85"
+                  style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
                 >
-                  {hasAffiliateOffer ? t(`Voir l’offre ${tool.name}`, `View ${tool.name} offer`) : t("Visiter le site", "Visit website")}
-                  <ExternalLink className="h-3 w-3" />
+                  {hasAffiliateOffer ? t(`Voir l’offre`, `View offer`) : t("Visiter le site", "Visit website")}
+                  <ExternalLink className="h-3.5 w-3.5" />
                 </a>
-              </div>
 
-              {/* Savings signal */}
-              {(freeAlt || betterAlt) && (
-                <div
-                  className="px-4 py-3 border-t"
-                  style={{
-                    borderColor: freeAlt ? "hsl(var(--savings) / 0.2)" : "hsl(var(--cancel) / 0.2)",
-                    background: freeAlt ? "hsl(var(--savings) / 0.05)" : "hsl(var(--cancel) / 0.05)",
-                  }}
-                >
-                  <div className="flex items-start gap-2">
+                {/* Savings signal — inline sous le CTA */}
+                {(freeAlt || betterAlt) && (
+                  <div
+                    className="flex items-start gap-1.5 rounded-lg px-3 py-2 text-[11px]"
+                    style={{
+                      background: freeAlt ? "hsl(var(--savings) / 0.07)" : "hsl(var(--cancel) / 0.06)",
+                      color: freeAlt ? "hsl(var(--savings))" : "hsl(var(--cancel))",
+                    }}
+                  >
                     {freeAlt
-                      ? <Sparkles className="h-3.5 w-3.5 shrink-0 mt-0.5" style={{ color: "hsl(var(--savings))" }} />
-                      : <TrendingDown className="h-3.5 w-3.5 shrink-0 mt-0.5" style={{ color: "hsl(var(--cancel))" }} />
+                      ? <Sparkles className="h-3 w-3 shrink-0 mt-px" />
+                      : <TrendingDown className="h-3 w-3 shrink-0 mt-px" />
                     }
-                    <p
-                      className="text-xs leading-snug"
-                      style={{
-                        fontFamily: "inherit",
-                        color: freeAlt ? "hsl(var(--savings))" : "hsl(var(--cancel))",
-                      }}
-                    >
+                    <span>
                       {freeAlt
-                        ? <><span className="font-medium">{t("Alt. gratuite :", "Free alt:")}</span> <span className="capitalize">{asText(freeAlt).replace(/-/g, " ")}</span></>
-                        : <><span className="font-medium">{t("Moins cher :", "Cheaper:")}</span> <span className="capitalize">{asText(betterAlt?.tool).replace(/-/g, " ")}</span> {betterAlt?.saving ? `· −${betterAlt.saving}€/mo` : ""}</>
+                        ? <>{t("Alt. gratuite :", "Free alt:")} <span className="font-medium capitalize">{asText(freeAlt).replace(/-/g, " ")}</span></>
+                        : <>{t("Moins cher :", "Cheaper:")} <span className="font-medium capitalize">{asText(betterAlt?.tool).replace(/-/g, " ")}</span>{betterAlt?.saving ? ` · −${betterAlt.saving}€` : ""}</>
                       }
-                    </p>
+                    </span>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
 
               {/* Badges */}
               {(() => {
@@ -470,11 +433,11 @@ const ToolDetailPage = () => {
                 ].filter(Boolean) as { labelFr: string; labelEn: string; color: string; bg: string; border: string }[];
                 if (!badges.length) return null;
                 return (
-                  <div className="flex flex-wrap gap-1.5 border-t border-border px-4 py-3">
+                  <div className="flex flex-wrap gap-1.5 border-t border-border/60 px-5 py-3.5">
                     {badges.map((b) => (
                       <span
                         key={b.labelFr}
-                        className="rounded-full border px-2.5 py-0.5 text-[10px] font-semibold"
+                        className="rounded-full border px-2.5 py-0.5 text-[11px] font-medium"
                         style={{ color: b.color, background: b.bg, borderColor: b.border }}
                       >
                         {t(b.labelFr, b.labelEn)}
@@ -485,36 +448,27 @@ const ToolDetailPage = () => {
               })()}
 
               {/* Key facts */}
-              <div
-                className="border-t border-border divide-y divide-border/50"
-                style={{ fontSize: "0.72rem", fontFamily: "inherit" }}
-              >
+              <div className="border-t border-border/60 px-5 py-3.5 space-y-2.5" style={{ fontSize: "0.75rem" }}>
                 {toolType && (
-                  <div className="flex items-center justify-between px-4 py-2.5">
+                  <div className="flex items-center justify-between">
                     <span style={{ color: "hsl(var(--muted-foreground))" }}>{t("Type", "Type")}</span>
-                    <span
-                      className="font-medium"
-                      style={{ color: "hsl(var(--foreground))" }}
-                    >
+                    <span className="font-medium" style={{ color: "hsl(var(--foreground))" }}>
                       {lang === "fr" ? TYPE_LABEL[toolType]?.fr : TYPE_LABEL[toolType]?.en}
                     </span>
                   </div>
                 )}
-                <div className="flex items-center justify-between px-4 py-2.5">
+                <div className="flex items-center justify-between">
                   <span style={{ color: "hsl(var(--muted-foreground))" }}>{t("Remplaçable", "Replaceable")}</span>
                   <span style={{ color: (tool as any).substitutable ? "hsl(var(--savings))" : "hsl(var(--muted-foreground))" }}>
                     {(tool as any).substitutable ? t("Oui", "Yes") : t("Non", "No")}
                   </span>
                 </div>
-                <div className="flex items-center justify-between px-4 py-2.5">
+                <div className="flex items-center justify-between">
                   <span className="flex items-center gap-1" style={{ color: "hsl(var(--muted-foreground))" }}>
                     <ShieldCheck className="h-3 w-3" />
-                    {t("Prix vérifié", "Price verified")}
+                    {t("Vérifié", "Verified")}
                   </span>
-                  <time
-                    dateTime={verifiedOn}
-                    style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "ui-monospace, monospace", fontSize: "0.65rem" }}
-                  >
+                  <time dateTime={verifiedOn} className="num-mono" style={{ color: "hsl(var(--muted-foreground) / 0.55)", fontSize: "0.7rem" }}>
                     {verifiedOn}
                   </time>
                 </div>
@@ -524,18 +478,17 @@ const ToolDetailPage = () => {
             {/* Related posts */}
             {relatedPosts.length > 0 && (
               <div>
-                <p className="label-section mb-3">{t("Guides liés", "Related guides")}</p>
-                <div className="flex flex-col gap-2">
+                <p className="label-section mb-2">{t("Guides liés", "Related guides")}</p>
+                <div className="flex flex-col gap-1.5">
                   {relatedPosts.map((post: any) => (
                     <Link
                       key={post.slug}
                       to={`${prefix}/guide/${post.slug}`}
-                      className="block rounded-lg border border-border bg-card p-3 text-xs transition-all hover:border-primary/30 hover:shadow-sm"
-                      style={{ fontFamily: "inherit" }}
+                      className="block rounded-xl border border-border bg-card px-3 py-2.5 text-[0.8125rem] transition-all hover:border-primary/30 hover:shadow-sm"
                     >
-                      <p className="font-medium text-foreground line-clamp-2">{post.title}</p>
+                      <p className="font-medium text-foreground line-clamp-2 leading-snug">{post.title}</p>
                       {post.readTime && (
-                        <p className="mt-1" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "ui-monospace, monospace", fontSize: "0.6rem" }}>
+                        <p className="mt-1 text-[11px]" style={{ color: "hsl(var(--muted-foreground))" }}>
                           {post.readTime}
                         </p>
                       )}
