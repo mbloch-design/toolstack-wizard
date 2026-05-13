@@ -144,11 +144,11 @@ const ToolsPage = () => {
           <div className="relative z-10">
             <h1
               className="font-display"
-              style={{ fontSize: "clamp(2rem, 3.8vw, 3rem)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.1, color: "hsl(var(--foreground))" }}
+              style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.08, color: "hsl(var(--foreground))" }}
             >
               {t("Trouvez les bons outils\npour votre stack", "Find the right tools\nfor your stack")}
             </h1>
-            <p className="mt-3 text-base leading-7" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif", maxWidth: "42ch" }}>
+            <p className="mt-3 leading-relaxed" style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))", maxWidth: "44ch", fontWeight: 400 }}>
               {t("Prix vérifiés, alternatives visibles, verdicts honnêtes. Aucune commission.", "Verified pricing, visible alternatives, honest verdicts. No commissions.")}
             </p>
             <div
@@ -192,7 +192,7 @@ const ToolsPage = () => {
         {/* ── SIDEBAR ── */}
         <aside className="hidden lg:block">
           <div className="sticky top-24">
-            <p className="mb-3 text-sm font-bold" style={{ color: "hsl(var(--foreground))" }}>
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
               {t("Catégories", "Categories")}
             </p>
             <nav className="space-y-0.5">
@@ -226,10 +226,10 @@ const ToolsPage = () => {
 
             {/* Bottom CTA */}
             <div className="mt-8 border-t border-border pt-6">
-              <p className="text-sm font-bold" style={{ color: "hsl(var(--foreground))" }}>
+              <p className="text-[0.8125rem] font-semibold" style={{ color: "hsl(var(--foreground))" }}>
                 {t("Prêt à optimiser ?", "Ready to optimize?")}
               </p>
-              <p className="mt-1 text-xs leading-5" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}>
+              <p className="mt-1 text-[0.75rem] leading-5" style={{ color: "hsl(var(--muted-foreground))", fontWeight: 400 }}>
                 {t("Analysez votre stack actuelle.", "Analyze your current stack.")}
               </p>
               <Link
@@ -259,7 +259,7 @@ const ToolsPage = () => {
           {/* ── Section 1: Noteworthy (only when not filtering) ── */}
           {!isFiltering && noteworthy.length > 0 && (
             <section className="mb-10">
-              <h2 className="mb-5 font-display font-bold" style={{ fontSize: "1.5rem", letterSpacing: "-0.025em", color: "hsl(var(--foreground))" }}>
+              <h2 className="mb-5 font-display" style={{ fontSize: "1.125rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
                 {t("Recommandés & à la une", "New & Noteworthy")}
               </h2>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -271,7 +271,7 @@ const ToolsPage = () => {
           {/* ── Section 2: All apps ── */}
           <section>
             <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-              <h2 className="font-display font-bold" style={{ fontSize: "1.5rem", letterSpacing: "-0.025em", color: "hsl(var(--foreground))" }}>
+              <h2 className="font-display" style={{ fontSize: "1.125rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
                 {isFiltering
                   ? (selectedCatObj ? (getCatLabel(selectedCatObj) as string) : t("Résultats", "Results"))
                   : t("Tous les outils", "Apps")}
@@ -352,7 +352,8 @@ function SidebarItem({ active, onClick, icon, label }: {
 }) {
   return (
     <button type="button" onClick={onClick}
-      className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors"
+      className="flex w-full items-center gap-2.5 rounded-lg px-3 py-1.5 transition-colors"
+      style={{ fontSize: "0.8125rem", fontWeight: active ? 500 : 400 }}
       style={{
         background: active ? "hsl(var(--primary) / 0.08)" : "transparent",
         color: active ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))",
@@ -417,46 +418,36 @@ function AppCard({ tool, prefix, t }: {
       <div className="min-w-0 flex-1 pt-0.5">
         {/* Name */}
         <h3
-          className="font-semibold leading-tight transition-colors group-hover:text-primary"
-          style={{ fontSize: "0.95rem", color: "hsl(var(--foreground))", letterSpacing: "-0.015em" }}
+          className="font-display leading-snug transition-colors group-hover:text-primary"
+          style={{ fontSize: "0.875rem", fontWeight: 600, color: "hsl(var(--foreground))", letterSpacing: "-0.01em" }}
         >
           {tool.name}
         </h3>
 
         {/* Badges row */}
         <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-          {isFree && (
-            <span className="rounded px-1.5 py-0.5 text-[10px] font-semibold" style={{ background: "#e8f5e9", color: "#2e7d32" }}>
-              {t("Gratuit", "Free")}
-            </span>
-          )}
-          {isFreemium && (
-            <span className="rounded px-1.5 py-0.5 text-[10px] font-semibold" style={{ background: "#e8f5e9", color: "#2e7d32" }}>
-              {t("Plan gratuit disponible", "Free plan available")}
-            </span>
-          )}
-          {!isFree && !isFreemium && hasFreeTier && (
-            <span className="rounded px-1.5 py-0.5 text-[10px] font-semibold" style={{ background: "#e8f5e9", color: "#2e7d32" }}>
-              {t("Plan gratuit disponible", "Free plan available")}
+          {(isFree || isFreemium || (!isFree && !isFreemium && hasFreeTier)) && (
+            <span className="rounded-md px-1.5 py-px text-[11px] font-medium" style={{ background: "#dcfce7", color: "#15803d", letterSpacing: "0" }}>
+              {isFree ? t("Gratuit", "Free") : t("Plan gratuit", "Free plan")}
             </span>
           )}
           {!isFree && !isFreemium && !hasFreeTier && tool.defaultMonthlyPrice > 0 && (
-            <span className="text-[11px] font-semibold" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Mono', monospace" }}>
+            <span className="num-mono text-[11px]" style={{ color: "hsl(var(--muted-foreground))", fontWeight: 500 }}>
               {tool.defaultMonthlyPrice}€/{t("mois", "mo") as string}
             </span>
           )}
           {trending && (
-            <span className="flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-semibold" style={{ background: "#fff3e0", color: "#e65100" }}>
+            <span className="flex items-center gap-1 rounded-md px-1.5 py-px text-[11px] font-medium" style={{ background: "#ffedd5", color: "#c2410c" }}>
               <Flame className="h-2.5 w-2.5" />
-              {t("Trending", "Trending")}
+              Trending
             </span>
           )}
         </div>
 
         {/* Description */}
         <p
-          className="mt-1.5 line-clamp-2 text-xs leading-5"
-          style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+          className="mt-2 line-clamp-2 leading-[1.45]"
+          style={{ fontSize: "0.8125rem", color: "hsl(var(--muted-foreground))", fontWeight: 400 }}
         >
           {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription) as string}
         </p>
