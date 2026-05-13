@@ -557,9 +557,12 @@ const ToolDetailPage = () => {
                 const paras = longDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean);
                 return (
                   <div className="py-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "hsl(var(--primary))" }}>
+                    <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
                       {t("Notre analyse", "Our analysis")}
                     </p>
+                    <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                      {t(`${tool.name} en détail`, `${tool.name} — in depth`)}
+                    </h2>
                     {paras.map((para: string, i: number) => (
                       <p key={i} className={i === 0
                         ? "text-[15px] font-medium leading-8 text-foreground mb-4"
@@ -753,6 +756,16 @@ const ToolDetailPage = () => {
 
             {/* ── SECTION: Avis ── */}
             {subPage === "avis" && <section className="space-y-6">
+              {/* Eyebrow + heading */}
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
+                  {t("Évaluation", "Rating")}
+                </p>
+                <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
+                  {t(`Score & avis — ${tool.name}`, `Score & reviews — ${tool.name}`)}
+                </h2>
+              </div>
+
               {/* Score ToolTrim — bloc principal */}
               {(() => {
                 const ts = computeToolTrimScore(tool);

@@ -115,6 +115,8 @@ const App = () => (
               <Route path="tool/:slug/prix" element={<ToolDetailPage />} />
               <Route path="tool/:slug/pricing" element={<ToolDetailPage />} />
               <Route path="tool/:slug/alternatives" element={<ToolDetailPage />} />
+              <Route path="tool/:slug/avis" element={<ToolDetailPage />} />
+              <Route path="tool/:slug/reviews" element={<ToolDetailPage />} />
               <Route path="tool/:slug/faq" element={<ToolDetailPage />} />
               <Route path="outils/:slug" element={<RedirectOutils />} />
               <Route path="category" element={<CategoriesIndexPage />} />
