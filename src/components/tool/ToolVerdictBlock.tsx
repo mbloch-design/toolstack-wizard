@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
-import { Check, X, Award, TrendingDown, ArrowRightLeft, Sparkles, ArrowRight } from "lucide-react";
+import { Check, X, TrendingDown, ArrowRightLeft, Sparkles, ArrowRight } from "lucide-react";
 
 interface Props {
   tool: Tool;
@@ -66,17 +66,7 @@ export default function ToolVerdictBlock({ tool, lang, prefix = "", allTools = [
 
   return (
     <section className="rounded-2xl border border-primary/20 bg-gradient-to-br from-accent/40 via-card to-accent/20 overflow-hidden">
-      {/* Header */}
-      <div className="flex items-center gap-3 px-6 pt-6 pb-4">
-        <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-primary/10">
-          <Award className="h-5 w-5 text-primary" />
-        </div>
-        <h2 className="text-lg font-bold tracking-tight">
-          {t(`Notre avis sur ${tool.name}`, `Our verdict on ${tool.name}`)}
-        </h2>
-      </div>
-
-      <div className="px-6 pb-6 space-y-5">
+      <div className="px-6 py-6 space-y-5">
         {/* Verdict paragraph */}
         {verdict?.threshold && (
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -172,19 +162,6 @@ export default function ToolVerdictBlock({ tool, lang, prefix = "", allTools = [
           </div>
         )}
 
-        {/* CTA diagnostic */}
-        <div className="pt-2">
-          <Link
-            to={`${prefix}/diagnostic`}
-            className="inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
-          >
-            {t(
-              `Pas sûr ? Testez notre diagnostic gratuit pour savoir si ${tool.name} est fait pour vous`,
-              `Not sure? Try our free diagnostic to know if ${tool.name} is right for you`
-            )}
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
       </div>
     </section>
   );

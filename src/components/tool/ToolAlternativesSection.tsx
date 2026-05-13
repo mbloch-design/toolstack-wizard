@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Tool, Category } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { Check } from "lucide-react";
+import { Check, ArrowRightLeft } from "lucide-react";
 import { stripLeadingEmoji } from "@/lib/text";
 
 interface Props {
@@ -28,8 +28,14 @@ export default function ToolAlternativesSection({ tool, category, alternatives, 
     : "";
 
   return (
-    <section className="border-t border-border pt-10">
-      <h2 className="text-xl font-bold tracking-tighter">
+    <section className="space-y-4">
+      {/* Eyebrow */}
+      <p className="text-xs font-bold uppercase tracking-widest flex items-center gap-1.5" style={{ color: "hsl(var(--primary))" }}>
+        <ArrowRightLeft className="h-3.5 w-3.5" />
+        {t("Comparer", "Compare")}
+      </p>
+
+      <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
         {t(`Alternatives à ${tool.name}`, `Alternatives to ${tool.name}`)}
       </h2>
       <p className="mt-1 text-sm text-muted-foreground">

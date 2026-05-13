@@ -1,5 +1,5 @@
 import type { Tool } from "@/data/types";
-import { Check, AlertTriangle } from "lucide-react";
+import { Check, ShieldCheck, CreditCard, Coins } from "lucide-react";
 
 interface Props {
   tool: Tool;
@@ -12,55 +12,77 @@ interface Props {
 }
 
 /**
- * Pricing section with verified data, source attribution and freshness signals.
+ * Pricing section with eyebrow label, verified data, source attribution and freshness signals.
  */
 export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sourceDomain, prefix, lang, t }: Props) {
   const pricing = lang === "en" && tool.pricingEn ? tool.pricingEn : tool.pricing;
+
   return (
-    <section className="rounded-xl border border-border bg-card p-6">
-      <h2 className="text-lg font-bold tracking-tighter">
-        {t(`Prix de ${tool.name}`, `${tool.name} Pricing`)}
+    <section className="space-y-4">
+      {/* Eyebrow */}
+      <p className="text-xs font-bold uppercase tracking-widest flex items-center gap-1.5" style={{ color: "hsl(var(--primary))" }}>
+        <CreditCard className="h-3.5 w-3.5" />
+        {t("Tarification", "Pricing")}
+      </p>
+
+      {/* Main heading */}
+      <h2 className="font-display" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
+        {t(`Prix de ${tool.name}`, `${tool.name} pricing`)}
       </h2>
 
-      <div className="mt-4 space-y-3 text-sm">
+      {/* Plans card */}
+      <div className="rounded-xl border border-border bg-card p-5 space-y-4 text-sm">
         {pricing?.free && (
-          <div className="flex items-start gap-2">
-            <Check className="mt-0.5 h-4 w-4 shrink-0 text-keep" />
+          <div className="flex items-start gap-3">
+            <div className="flex items-center justify-center h-7 w-7 rounded-lg bg-keep/10 shrink-0">
+              <Check className="h-3.5 w-3.5 text-keep" />
+            </div>
             <div>
-              <span className="font-medium">{t("Offre gratuite", "Free plan")}</span>
-              <p className="text-muted-foreground">{pricing.free}</p>
+              <p className="font-medium">{t("Offre gratuite", "Free plan")}</p>
+              <p className="mt-0.5 text-muted-foreground leading-relaxed">{pricing.free}</p>
             </div>
           </div>
         )}
+
         {pricing?.paid && (
-          <div className="flex items-start gap-2">
-            <span className="mt-0.5 text-base">💳</span>
+          <div className={`flex items-start gap-3${pricing?.free ? " pt-3 border-t border-border/50" : ""}`}>
+            <div className="flex items-center justify-center h-7 w-7 rounded-lg bg-primary/8 shrink-0">
+              <Coins className="h-3.5 w-3.5 text-primary/70" />
+            </div>
             <div>
-              <span className="font-medium">{t("Offre payante", "Paid plan")}</span>
-              <p className="text-muted-foreground">{pricing.paid}</p>
+              <p className="font-medium">{t("Offre payante", "Paid plan")}</p>
+              <p className="mt-0.5 text-muted-foreground leading-relaxed">{pricing.paid}</p>
             </div>
           </div>
         )}
 
         {displayPrice > 0 && (
-          <p className="pt-3 border-t border-border/50">
-            {t("À partir de", "Starting from")} <strong className="text-foreground text-base">{displayPrice}€/{t("mois", "mo")}</strong>
-            {tool.pricing_v5?.compare_plan_name && (
-              <span className="text-muted-foreground"> ({tool.pricing_v5.compare_plan_name})</span>
-            )}
-          </p>
+          <div className="pt-4 border-t border-border/50">
+            <p className="text-muted-foreground">
+              {t("À partir de", "Starting from")}{" "}
+              <strong className="text-foreground text-base font-bold">
+                {displayPrice}€<span className="text-sm font-medium">/{t("mois", "mo")}</span>
+              </strong>
+              {tool.pricing_v5?.compare_plan_name && (
+                <span className="text-muted-foreground text-xs ml-1.5">({tool.pricing_v5.compare_plan_name})</span>
+              )}
+            </p>
+          </div>
         )}
 
         {/* Trust signals */}
         <div className="pt-3 border-t border-border/50 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1">
-            <AlertTriangle className="h-3 w-3" />
+          <span className="flex items-center gap-1.5 text-keep/80 font-medium">
+            <ShieldCheck className="h-3.5 w-3.5" />
             {t("Prix vérifié le", "Price verified on")} {verifiedOn}
           </span>
           {sourceDomain && (
-            <a href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`}
-              target="_blank" rel="noopener noreferrer"
-              className="text-primary hover:underline">
+            <a
+              href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
               {t("Source :", "Source:")} {sourceDomain}
             </a>
           )}
