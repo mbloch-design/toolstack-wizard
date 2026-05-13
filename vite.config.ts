@@ -324,8 +324,8 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:url" content="${url}" />`,
               `<meta property="og:image" content="https://tooltrim.com/og-image.png" />`,
               `<meta name="twitter:image" content="https://tooltrim.com/og-image.png" />`,
-              `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
-              `<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
+              `<script id="tool-software-jsonld" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
+              `<script id="tool-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
             ].join("\n    ");
 
             // Inject into <head>, replacing existing title/meta if present
@@ -428,6 +428,40 @@ function staticPrerenderPlugin(): Plugin {
                 ],
               };
 
+              // FAQPage schema — only for /faq sub-page, injected in static HTML
+              // so Google's first-pass crawler (no JS) can validate it
+              const faqSchema = sub.path === "faq" ? {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: isFr ? `À quoi sert ${name} ?` : `What is ${name} used for?`,
+                    acceptedAnswer: { "@type": "Answer", text: tool.shortDescription || tool.short_description || `${name} is a SaaS tool.` },
+                  },
+                  {
+                    "@type": "Question",
+                    name: isFr ? `Combien coûte ${name} ?` : `How much does ${name} cost?`,
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: isFr
+                        ? `${name} coûte ${price === 0 ? "0€ (gratuit)" : price ? `${price}€/mois` : "variable selon le plan"}. Prix vérifié par ToolTrim.`
+                        : `${name} costs ${price === 0 ? "€0 (free)" : price ? `€${price}/month` : "variable by plan"}. Price verified by ToolTrim.`,
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: isFr ? `Existe-t-il des alternatives à ${name} ?` : `Are there alternatives to ${name}?`,
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: isFr
+                        ? `Oui, ToolTrim référence les meilleures alternatives à ${name} avec comparaison des prix et fonctionnalités.`
+                        : `Yes, ToolTrim lists the best alternatives to ${name} with price and feature comparisons.`,
+                    },
+                  },
+                ],
+              } : null;
+
               const metaTags = [
                 `<link rel="canonical" href="${url}" />`,
                 `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
@@ -439,7 +473,8 @@ function staticPrerenderPlugin(): Plugin {
                 `<meta property="og:description" content="${desc.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:url" content="${url}" />`,
                 `<meta property="og:image" content="${BASE}/og-image.png" />`,
-                `<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
+                `<script id="tool-subpage-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
+                ...(faqSchema ? [`<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(faqSchema)}</script>`] : []),
               ].join("\n    ");
 
               let html = baseHtml;
