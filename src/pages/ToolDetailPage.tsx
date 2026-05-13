@@ -18,6 +18,8 @@ import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolVerdictBlock from "@/components/tool/ToolVerdictBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
 import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
+import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
+import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
@@ -283,7 +285,7 @@ const ToolDetailPage = () => {
                       <div className="flex items-center gap-1">
                         {[1,2,3,4,5].map((i) => (
                           <svg key={i} className="h-5 w-5" viewBox="0 0 24 24"
-                            fill={i <= Math.floor(ts.score) ? "hsl(var(--primary))" : i === Math.ceil(ts.score) && ts.score % 1 >= 0.5 ? "hsl(var(--primary) / 0.45)" : "hsl(var(--border))"}
+                            fill={starFill(i, ts.score)}
                           >
                             <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>
                           </svg>
@@ -680,6 +682,14 @@ const ToolDetailPage = () => {
 
             {/* ── SECTION: Alternatives ── */}
             {subPage === "alternatives" && <section className="space-y-8">
+              {/* Comparison table — first thing user sees */}
+              {alternatives.length > 0 && (
+                <ToolComparisonTable
+                  tool={tool} alternatives={alternatives}
+                  prefix={prefix} lang={lang} t={t}
+                />
+              )}
+
               <ToolAlternativesSection
                 tool={tool} category={category} alternatives={alternatives}
                 prefix={prefix} lang={lang} t={t}
@@ -807,7 +817,7 @@ const ToolDetailPage = () => {
                           <div className="flex items-center gap-0.5 mt-2">
                             {[1,2,3,4,5].map((i) => (
                               <svg key={i} className="h-4 w-4" viewBox="0 0 12 12"
-                                fill={i <= Math.floor(ts.score) ? "hsl(var(--primary))" : i === Math.ceil(ts.score) && ts.score % 1 >= 0.5 ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))"}
+                                fill={starFill(i, ts.score)}
                               >
                                 <path d="M6 1l1.3 2.6L10 4l-2 1.9.5 2.7L6 7.4 3.5 8.6 4 5.9 2 4l2.7-.4z"/>
                               </svg>
@@ -924,43 +934,4 @@ const ToolDetailPage = () => {
 
 export default ToolDetailPage;
 
-// ── Score ToolTrim ────────────────────────────────────────────────────────────
-// Calculé depuis les données internes : type, substituabilité, pros/cons, qualité.
-// Pas un avis utilisateur — c'est l'analyse éditoriale ToolTrim.
-
-function computeToolTrimScore(tool: any): { score: number; labelFr: string; labelEn: string } {
-  let score = 3.5;
-
-  // Type d'outil
-  if (tool.tool_type === "metier" || tool.tool_type === "core") score += 0.3;
-  if (tool.tool_type === "ia") score += 0.4;
-
-  // Difficile à remplacer = plus de valeur intrinsèque
-  if (tool.substitutable === false) score += 0.3;
-
-  // Qualité du contenu éditorial
-  if ((tool.pros?.length || 0) >= 4) score += 0.2;
-  if ((tool.cons?.length || 0) >= 5) score -= 0.15;
-
-  // Signal de recommandation interne
-  if (tool.prescription_quality === "silence") score -= 0.2;
-
-  // Fonctionnalités IA intégrées
-  if (tool.ia_use_case) score += 0.15;
-
-  // Plan gratuit = plus accessible
-  const hasFree = tool.pricing?.free &&
-    !tool.pricing.free.toLowerCase().includes("no free") &&
-    !tool.pricing.free.toLowerCase().includes("aucun") &&
-    !tool.pricing.free.toLowerCase().includes("pas de");
-  if (hasFree) score += 0.1;
-
-  // Bornes
-  score = Math.max(2.8, Math.min(4.8, score));
-  score = Math.round(score * 10) / 10;
-
-  const labelFr = score >= 4.5 ? "Excellent" : score >= 4.0 ? "Très bon" : score >= 3.5 ? "Bien" : "Correct";
-  const labelEn = score >= 4.5 ? "Excellent" : score >= 4.0 ? "Very good" : score >= 3.5 ? "Good" : "Fair";
-
-  return { score, labelFr, labelEn };
-}
+// computeToolTrimScore is now in @/lib/toolTrimScore
