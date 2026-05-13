@@ -46,7 +46,7 @@ function getActionIcon(action: string | undefined) {
     case "keep":
       return Sparkles;
     default:
-      return Award;
+      return Sparkles;
   }
 }
 
