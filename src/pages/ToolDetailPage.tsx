@@ -539,19 +539,16 @@ const ToolDetailPage = () => {
             </nav>
 
             {/* ── SECTION: Présentation ── */}
-            {subPage === "presentation" && <section className="space-y-10">
+            {subPage === "presentation" && <section className="divide-y divide-border">
 
               {/* Description courte — mobile uniquement */}
-              <div className="lg:hidden">
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
-                >
+              <div className="lg:hidden pb-8">
+                <p className="text-sm leading-relaxed text-muted-foreground" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
                 </p>
               </div>
 
-              {/* Analyse éditoriale — prose libre, sans carte */}
+              {/* ── Analyse éditoriale ── */}
               {(() => {
                 const longDesc = lang === "en"
                   ? ((tool as any).longDescriptionEn || (tool as any).longDescription || "")
@@ -559,12 +556,15 @@ const ToolDetailPage = () => {
                 if (!longDesc || longDesc.length < 80) return null;
                 const paras = longDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean);
                 return (
-                  <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                  <div className="py-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "hsl(var(--primary))" }}>
+                      {t("Notre analyse", "Our analysis")}
+                    </p>
                     {paras.map((para: string, i: number) => (
-                      <p
-                        key={i}
-                        className={i === 0 ? "text-[15px] leading-8 text-foreground mb-4" : "text-sm leading-7 text-muted-foreground mb-3"}
-                      >
+                      <p key={i} className={i === 0
+                        ? "text-[15px] font-medium leading-8 text-foreground mb-4"
+                        : "text-sm leading-7 text-muted-foreground mb-3 last:mb-0"
+                      }>
                         {para}
                       </p>
                     ))}
@@ -572,66 +572,58 @@ const ToolDetailPage = () => {
                 );
               })()}
 
-              {/* Pros / Cons */}
-              <div>
-                <h2
-                  className="font-display mb-4"
-                  style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "-0.022em" }}
-                >
-                  {t(`Avantages et inconvénients de ${tool.name}`, `${tool.name} — Pros & Cons`)}
-                </h2>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-xl border p-5" style={{ borderColor: "hsl(var(--keep) / 0.25)", background: "hsl(var(--keep) / 0.04)" }}>
-                    <h3
-                      className="mb-3 flex items-center gap-2 text-sm font-semibold"
-                      style={{ color: "hsl(var(--keep))" }}
-                    >
-                      <Check className="h-4 w-4" /> {t("Avantages", "Pros")}
-                    </h3>
-                    <ul className="space-y-2">
-                      {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
-                        <li key={pro} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "'DM Sans', sans-serif" }}>
-                          <Check className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--keep) / 0.7)" }} />
-                          {pro}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="rounded-xl border p-5" style={{ borderColor: "hsl(var(--cancel) / 0.25)", background: "hsl(var(--cancel) / 0.04)" }}>
-                    <h3
-                      className="mb-3 flex items-center gap-2 text-sm font-semibold"
-                      style={{ color: "hsl(var(--cancel))" }}
-                    >
-                      <X className="h-4 w-4" /> {t("Inconvénients", "Cons")}
-                    </h3>
-                    <ul className="space-y-2">
-                      {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
-                        <li key={con} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "'DM Sans', sans-serif" }}>
-                          <X className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--cancel) / 0.7)" }} />
-                          {con}
-                        </li>
-                      ))}
-                    </ul>
+              {/* ── Avantages & inconvénients ── */}
+              {((tool.pros?.length ?? 0) > 0 || (tool.cons?.length ?? 0) > 0) && (
+                <div className="py-8">
+                  <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
+                    {t("Points clés", "Key points")}
+                  </p>
+                  <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+                    {t(`Avantages et inconvénients de ${tool.name}`, `${tool.name} — Pros & Cons`)}
+                  </h2>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-xl border p-5" style={{ borderColor: "hsl(var(--keep) / 0.25)", background: "hsl(var(--keep) / 0.04)" }}>
+                      <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold" style={{ color: "hsl(var(--keep))" }}>
+                        <Check className="h-4 w-4" /> {t("Avantages", "Pros")}
+                      </h3>
+                      <ul className="space-y-2">
+                        {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
+                          <li key={pro} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "'DM Sans', sans-serif" }}>
+                            <Check className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--keep) / 0.7)" }} />
+                            {pro}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="rounded-xl border p-5" style={{ borderColor: "hsl(var(--cancel) / 0.25)", background: "hsl(var(--cancel) / 0.04)" }}>
+                      <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold" style={{ color: "hsl(var(--cancel))" }}>
+                        <X className="h-4 w-4" /> {t("Inconvénients", "Cons")}
+                      </h3>
+                      <ul className="space-y-2">
+                        {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
+                          <li key={con} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "'DM Sans', sans-serif" }}>
+                            <X className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--cancel) / 0.7)" }} />
+                            {con}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
 
-              {/* Use cases */}
+              {/* ── Cas d'usage ── */}
               {tool.useCases && tool.useCases.length > 0 && (
-                <div>
-                  <h2
-                    className="font-display mb-4"
-                    style={{ fontSize: "1.05rem", fontWeight: 700, letterSpacing: "-0.022em" }}
-                  >
+                <div className="py-8">
+                  <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
+                    {t("Cas d'usage", "Use cases")}
+                  </p>
+                  <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
                     {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
                   </h2>
                   <div className="grid gap-2 sm:grid-cols-2">
                     {(lang === "en" && (tool as any).useCasesEn ? (tool as any).useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
-                      <div
-                        key={i}
-                        className="flex items-start gap-2.5 rounded-lg border border-border bg-card p-3 text-sm"
-                        style={{ fontFamily: "'DM Sans', sans-serif" }}
-                      >
+                      <div key={i} className="flex items-start gap-2.5 rounded-lg border border-border bg-card p-3 text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                         <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
                         {uc}
                       </div>
@@ -640,11 +632,18 @@ const ToolDetailPage = () => {
                 </div>
               )}
 
-              {/* Verdict */}
-              <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
+              {/* ── Verdict ── */}
+              <div className="py-8">
+                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
+                  {t("Verdict", "Verdict")}
+                </p>
+                <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
+              </div>
 
-              {/* Diag CTA */}
-              <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
+              {/* ── CTA diagnostic ── */}
+              <div className="py-8">
+                <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
+              </div>
 
               {/* Summary block — SEO/LLM, visuellement discret, en bas de section */}
               <ToolSummaryBlock
