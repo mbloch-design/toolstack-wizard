@@ -5,7 +5,6 @@ import { useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { Search, ExternalLink, ChevronDown, ArrowRight, X, TrendingDown, Sparkles } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import PageHero from "@/components/PageHero";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getToolDomain } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
@@ -39,6 +38,32 @@ const SAVINGS_OPTIONS = [
   { key: "substitutable", labelFr: "Outil remplaçable",           labelEn: "Replaceable tool"           },
   { key: "cheaperAlt",  labelFr: "Alternative moins chère",       labelEn: "Cheaper alternative exists" },
 ];
+
+// ── Breadcrumb — minimal, matches ToolsPage visual density ──
+const Breadcrumb = ({ items }: { items: { label: string; href?: string }[] }) => (
+  <nav className="flex items-center gap-1.5" aria-label="Breadcrumb">
+    {items.map((item, i) => (
+      <span key={i} className="flex items-center gap-1.5">
+        {i > 0 && (
+          <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>/</span>
+        )}
+        {item.href ? (
+          <Link
+            to={item.href}
+            className="text-[11px] font-medium transition-colors hover:text-foreground"
+            style={{ color: "hsl(var(--muted-foreground))" }}
+          >
+            {item.label}
+          </Link>
+        ) : (
+          <span className="text-[11px] font-medium" style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}>
+            {item.label}
+          </span>
+        )}
+      </span>
+    ))}
+  </nav>
+);
 
 const CategoryPage = () => {
   const { lang, t, prefix } = useLang();
@@ -180,56 +205,94 @@ const CategoryPage = () => {
   const hasMore   = visibleCount < filtered.length;
   const relatedCats = categories.filter((c) => c.id !== category.id).slice(0, 4);
 
-  // ── Sidebar pill helper ──
-  const PillButton = ({
+  // ── Sidebar chip helper — same visual language as ToolsPage sidebar items ──
+  const FilterChip = ({
     active, onClick, children,
   }: { active: boolean; onClick: () => void; children: React.ReactNode }) => (
     <button
+      type="button"
       onClick={onClick}
-      className="rounded-md border px-3 py-1.5 text-xs font-medium transition-all duration-150 text-left"
+      className="rounded-lg px-3 py-1.5 text-left transition-colors duration-150"
       style={{
-        fontFamily: "inherit",
-        borderColor: active ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))",
-        background:  active ? "hsl(var(--primary) / 0.1)"  : "hsl(var(--card))",
-        color:       active ? "hsl(var(--primary))"         : "hsl(var(--muted-foreground))",
+        fontSize: "0.8125rem",
+        fontWeight: active ? 500 : 400,
+        background: active ? "hsl(var(--primary) / 0.08)" : "transparent",
+        color: active ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))",
       }}
+      onMouseEnter={e => { if (!active) { (e.currentTarget as HTMLElement).style.background = "hsl(var(--secondary))"; (e.currentTarget as HTMLElement).style.color = "hsl(var(--foreground))"; } }}
+      onMouseLeave={e => { if (!active) { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.color = "hsl(var(--muted-foreground))"; } }}
     >
       {children}
     </button>
   );
 
+  const displayName = t(catName, catNameEn) as string;
+  const catDesc = category.description
+    ? t(category.description, (category as any).descriptionEn || category.description) as string
+    : t(`Prix vérifiés, alternatives honnêtes — sans commission, sans biais.`, `Verified pricing, honest alternatives — no commissions, no bias.`) as string;
+
   return (
-    <div className="min-h-screen">
-      <PageHero
-        breadcrumb={[
-          { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-          { label: t(catName, catNameEn) },
-        ]}
-        eyebrow={t(catName, catNameEn)}
-        icon={<Icon className="h-3.5 w-3.5" />}
-        title={
-          <>
-            {t("Meilleurs outils", "Best tools")} <span className="text-primary">{t(catName, catNameEn)}</span>
-          </>
-        }
-        description={
-          category.description
-            ? t(category.description, category.descriptionEn || category.description)
-            : t(`Prix réels, alternatives testées et verdicts ${year}.`, `Real pricing, tested alternatives and ${year} verdicts.`)
-        }
-        stats={[
-          { value: allCatTools.length, label: t("outils analysés", "tools analyzed") },
-          ...(freeCount > 0 ? [{ value: freeCount, label: t("gratuits ou freemium", "free or freemium"), tone: "positive" as const }] : []),
-          ...(avgPrice > 0 ? [{ value: `${Math.round(avgPrice)}€`, label: t("prix moyen", "avg price") }] : []),
-        ]}
-      />
+    <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
+
+      {/* ══════════════ HERO — même langage que ToolsPage ══════════════ */}
+      <section
+        className="relative overflow-hidden border-b border-border"
+        style={{ background: "hsl(230 40% 97%)" }}
+      >
+        <div className="mx-auto max-w-7xl px-6 py-12">
+          <Breadcrumb items={[
+            { label: t("Outils", "Tools"), href: `${prefix}/tools` },
+            { label: displayName },
+          ]} />
+
+          <div className="mt-5 flex items-center justify-between gap-8">
+            {/* Left: text */}
+            <div>
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {allCatTools.length} {t("outils analysés", "tools analyzed")}
+              </p>
+              <h1
+                className="font-display"
+                style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.08, color: "hsl(var(--foreground))" }}
+              >
+                {displayName}
+              </h1>
+              <p className="mt-3 leading-relaxed" style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))", maxWidth: "48ch", fontWeight: 400 }}>
+                {catDesc}
+              </p>
+              {/* Stats inline — mêmes chips que ToolsPage */}
+              <div className="mt-5 flex flex-wrap items-center gap-2">
+                {freeCount > 0 && (
+                  <span className="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-medium" style={{ background: "#dcfce7", color: "#15803d" }}>
+                    {freeCount} {t("gratuits ou freemium", "free or freemium")}
+                  </span>
+                )}
+                {avgPrice > 0 && (
+                  <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-[11px] font-medium" style={{ color: "hsl(var(--muted-foreground))" }}>
+                    ~{Math.round(avgPrice)}€ {t("prix moyen", "avg price")}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Right: category icon large */}
+            <div
+              className="hidden lg:flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl"
+              style={{ background: "hsl(var(--primary) / 0.08)", color: "hsl(var(--primary))" }}
+              aria-hidden
+            >
+              <Icon className="h-11 w-11" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Body ── */}
       <div className="mx-auto max-w-7xl px-4 py-10">
         <div className="flex items-start gap-8">
 
           {/* ══════════════ SIDEBAR ══════════════ */}
-          <aside className="hidden lg:flex w-64 shrink-0 flex-col gap-6 sticky top-6">
+          <aside className="hidden lg:flex w-[200px] shrink-0 flex-col gap-5 sticky top-6">
 
             {/* Search */}
             <div className="relative">
@@ -243,9 +306,8 @@ const CategoryPage = () => {
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder={t("Rechercher un outil…", "Search a tool…")}
+                placeholder={t("Rechercher…", "Search…")}
                 className="w-full rounded-lg border border-border bg-card py-2.5 pl-9 pr-4 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
                 onFocus={(e) => {
                   e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
                   e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
@@ -259,42 +321,48 @@ const CategoryPage = () => {
 
             {/* ── Profil utilisateur ── */}
             <div>
-              <p className="label-section mb-3">{t("Profil utilisateur", "User profile")}</p>
-              <div className="flex flex-wrap gap-1.5">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {t("Profil", "Profile")}
+              </p>
+              <div className="flex flex-col gap-0.5">
                 {PROFILE_OPTIONS.map((p) => (
-                  <PillButton
+                  <FilterChip
                     key={p.key}
                     active={profileFilter.includes(p.key)}
                     onClick={() => setProfileFilter((f) => toggleArr(f, p.key))}
                   >
                     {lang === "fr" ? p.labelFr : p.labelEn}
-                  </PillButton>
+                  </FilterChip>
                 ))}
               </div>
             </div>
 
             {/* ── Type d'outil ── */}
             <div>
-              <p className="label-section mb-3">{t("Type d'outil", "Tool type")}</p>
-              <div className="flex flex-wrap gap-1.5">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {t("Type", "Type")}
+              </p>
+              <div className="flex flex-col gap-0.5">
                 {TYPE_OPTIONS.map((type) => (
-                  <PillButton
+                  <FilterChip
                     key={type.key}
                     active={typeFilter.includes(type.key)}
                     onClick={() => setTypeFilter((f) => toggleArr(f, type.key))}
                   >
                     {type.short}
-                  </PillButton>
+                  </FilterChip>
                 ))}
               </div>
             </div>
 
             {/* ── Tarification ── */}
             <div>
-              <p className="label-section mb-3">{t("Tarification", "Pricing")}</p>
-              <div className="flex flex-wrap gap-1.5">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {t("Tarif", "Pricing")}
+              </p>
+              <div className="flex flex-col gap-0.5">
                 {(["all", "free", "freemium", "paid"] as PriceFilter[]).map((f) => (
-                  <PillButton
+                  <FilterChip
                     key={f}
                     active={priceFilter === f}
                     onClick={() => setPriceFilter(f)}
@@ -302,53 +370,35 @@ const CategoryPage = () => {
                     {f === "all" ? t("Tous", "All") :
                      f === "free" ? t("Gratuit", "Free") :
                      f === "freemium" ? "Freemium" : t("Payant", "Paid")}
-                  </PillButton>
+                  </FilterChip>
                 ))}
               </div>
             </div>
 
             {/* ── Potentiel d'économie ── */}
             <div>
-              <p className="label-section mb-3">{t("Potentiel d'économie", "Savings potential")}</p>
-              <div className="flex flex-col gap-1.5">
-                {SAVINGS_OPTIONS.map((s) => {
-                  const active = savingsFilter.includes(s.key);
-                  return (
-                    <button
-                      key={s.key}
-                      onClick={() => setSavingsFilter((f) => toggleArr(f, s.key))}
-                      className="flex items-start gap-2.5 rounded-md border px-3 py-2 text-left text-xs transition-all duration-150"
-                      style={{
-                        fontFamily: "inherit",
-                        borderColor: active ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))",
-                        background:  active ? "hsl(var(--primary) / 0.08)" : "transparent",
-                        color:       active ? "hsl(var(--primary))"        : "hsl(var(--muted-foreground))",
-                      }}
-                    >
-                      <span
-                        className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded-sm border flex items-center justify-center transition-all"
-                        style={{
-                          borderColor: active ? "hsl(var(--primary))" : "hsl(var(--border))",
-                          background:  active ? "hsl(var(--primary))" : "transparent",
-                        }}
-                      >
-                        {active && (
-                          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                            <path d="M1.5 4L3.5 6L6.5 2" stroke="hsl(var(--primary-foreground))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        )}
-                      </span>
-                      {lang === "fr" ? s.labelFr : s.labelEn}
-                    </button>
-                  );
-                })}
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {t("Économies", "Savings")}
+              </p>
+              <div className="flex flex-col gap-0.5">
+                {SAVINGS_OPTIONS.map((s) => (
+                  <FilterChip
+                    key={s.key}
+                    active={savingsFilter.includes(s.key)}
+                    onClick={() => setSavingsFilter((f) => toggleArr(f, s.key))}
+                  >
+                    {lang === "fr" ? s.labelFr : s.labelEn}
+                  </FilterChip>
+                ))}
               </div>
             </div>
 
             {/* ── Trier par ── */}
             <div>
-              <p className="label-section mb-3">{t("Trier par", "Sort by")}</p>
-              <div className="flex flex-col gap-1.5">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {t("Trier par", "Sort by")}
+              </p>
+              <div className="flex flex-col gap-0.5">
                 {([
                   ["name",       t("A → Z", "A → Z")],
                   ["price-asc",  t("Prix croissant", "Price ↑")],
@@ -356,20 +406,13 @@ const CategoryPage = () => {
                   ["free-first", t("Gratuit d'abord", "Free first")],
                   ["savings",    t("Économie max", "Max savings")],
                 ] as [SortKey, string][]).map(([key, label]) => (
-                  <button
+                  <FilterChip
                     key={key}
+                    active={sort === key}
                     onClick={() => setSort(key)}
-                    className="flex items-center gap-2 rounded-md border px-3 py-2 text-left text-xs transition-all duration-150"
-                    style={{
-                      fontFamily: "inherit",
-                      borderColor: sort === key ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))",
-                      background:  sort === key ? "hsl(var(--primary) / 0.08)" : "transparent",
-                      color:       sort === key ? "hsl(var(--primary))"        : "hsl(var(--muted-foreground))",
-                    }}
                   >
-                    {sort === key && <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />}
                     {label}
-                  </button>
+                  </FilterChip>
                 ))}
               </div>
             </div>
@@ -379,38 +422,31 @@ const CategoryPage = () => {
               <button
                 onClick={resetFilters}
                 className="inline-flex items-center gap-1.5 text-xs transition-colors"
-                style={{ color: "hsl(var(--muted-foreground))", fontFamily: "ui-monospace, monospace" }}
+                style={{ color: "hsl(var(--muted-foreground))" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(var(--foreground))")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(var(--muted-foreground))")}
               >
                 <X className="h-3 w-3" />
-                {t("Réinitialiser les filtres", "Reset filters")}
+                {t("Réinitialiser", "Reset")}
               </button>
             )}
 
-            {/* ── CTA diagnostic ── */}
-            <div
-              className="rounded-xl border p-4"
-              style={{ borderColor: "hsl(var(--primary) / 0.2)", background: "hsl(var(--primary) / 0.05)" }}
-            >
-              <p className="text-sm font-semibold text-foreground" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                {t("Vous utilisez ces outils ?", "Using these tools?")}
+            {/* ── CTA — ToolsPage style, no border card ── */}
+            <div className="border-t border-border pt-5">
+              <p className="text-sm font-semibold leading-snug text-foreground">
+                {t("Votre stack coûte combien ?", "How much is your stack?")}
               </p>
-              <p
-                className="mt-1 text-xs leading-relaxed"
-                style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
-              >
-                {t(
-                  "Détectez les doublons et économisez en 3 min.",
-                  "Detect duplicates and save money in 3 min."
-                )}
+              <p className="mt-1 text-xs leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {t("Calculez ce que vous payez vraiment.", "Calculate what you're actually paying.")}
               </p>
               <Link
                 to={`${prefix}/selector`}
-                className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition-colors"
+                style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
               >
-                {t("Lancer l'audit", "Start audit")}
+                {t("Calculer mon stack", "Calculate my stack")}
                 <ArrowRight className="h-3 w-3" />
               </Link>
             </div>
@@ -605,7 +641,7 @@ const CategoryPage = () => {
                                   <span
                                     key={i}
                                     className="inline-flex items-center rounded-md border border-border px-2 py-0.5 text-xs"
-                                    style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+                                    style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit" }}
                                   >
                                     {pro.length > 35 ? pro.slice(0, 35) + "…" : pro}
                                   </span>
@@ -617,7 +653,7 @@ const CategoryPage = () => {
                             <Link
                               to={`${prefix}/tool/${tool.slug || tool.id}`}
                               className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-all duration-150 hover:border-primary/40 hover:text-primary"
-                              style={{ fontFamily: "'DM Sans', sans-serif" }}
+                              style={{ fontFamily: "inherit" }}
                             >
                               {t("Voir l'outil", "Learn more")}
                             </Link>
@@ -736,7 +772,7 @@ const CategoryPage = () => {
                 <button
                   onClick={() => setVisibleCount((c) => c + PER_PAGE)}
                   className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-accent"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ fontFamily: "inherit" }}
                 >
                   <ChevronDown className="h-4 w-4" />
                   {t(
@@ -751,7 +787,7 @@ const CategoryPage = () => {
               <div className="mt-16 text-center">
                 <p
                   className="text-sm"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit" }}
                 >
                   {t("Aucun outil trouvé pour ces filtres.", "No tools match these filters.")}
                 </p>
@@ -788,7 +824,7 @@ const CategoryPage = () => {
                         >
                           <CIcon className="h-4 w-4" />
                         </div>
-                        <p className="font-semibold group-hover:text-primary transition-colors" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                        <p className="font-semibold group-hover:text-primary transition-colors" style={{ fontFamily: "inherit" }}>
                           {t(cName, cat.nameEn || cName)}
                         </p>
                         <p className="mt-1 text-xs font-medium" style={{ color: "hsl(var(--primary))", fontFamily: "ui-monospace, monospace" }}>
