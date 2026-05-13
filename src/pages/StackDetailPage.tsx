@@ -268,8 +268,8 @@ const StackDetailPage = () => {
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#stack">
             {t("Cartographie", "Map")}
           </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#expert">
-            {t("Conseil expert", "Expert read")}
+          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#avis">
+            {t("Avis", "Reviews")}
           </a>
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#pieges">
             {t("Pièges", "Traps")}
@@ -379,22 +379,78 @@ const StackDetailPage = () => {
           </div>
         </section>
 
-        <section id="expert" className="scroll-mt-24 border-b border-border py-12">
-          <div className="mb-8 max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-              {t("Conseil expert", "Expert read")}
-            </p>
-            <h2 className="font-display text-2xl font-semibold leading-tight tracking-tight text-foreground md:text-3xl">
-              {t("Ce que je garderais vraiment dans ce métier.", "What I would actually keep for this role.")}
-            </h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {expertTips.map((tip) => (
-              <div key={tip.title} className="rounded-lg border border-border bg-card p-5">
-                <h3 className="text-base font-semibold text-foreground">{t(tip.title, tip.titleEn)}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{t(tip.detail, tip.detailEn)}</p>
+        <section id="avis" className="scroll-mt-24 border-b border-border py-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
+            {t("Avis & retours", "Reviews")}
+          </p>
+
+          {/* ── Note éditoriale ToolTrim ── */}
+          <div className="rounded-2xl border border-border bg-card overflow-hidden mb-6">
+            {/* Header encart */}
+            <div className="flex items-center justify-between gap-4 border-b border-border px-6 py-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                  <span className="text-xs font-black text-primary">TT</span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{t("Note ToolTrim", "ToolTrim Editorial")}</p>
+                  <p className="text-[11px] text-muted-foreground">{t("Analyse indépendante · Prix vérifiés", "Independent analysis · Verified pricing")}</p>
+                </div>
               </div>
-            ))}
+              <span className="shrink-0 rounded-full border border-border px-2.5 py-1 text-[10px] font-semibold text-muted-foreground">
+                {t("Vérifié avr. 2026", "Verified Apr. 2026")}
+              </span>
+            </div>
+
+            {/* Corps éditorial */}
+            <div className="px-6 py-5 space-y-5">
+              {/* Premier tip = note principale */}
+              <div className="border-l-2 border-primary pl-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">
+                  {t(expertTips[0].title, expertTips[0].titleEn)}
+                </p>
+                <p className="text-sm leading-7 text-foreground/80">
+                  {t(expertTips[0].detail, expertTips[0].detailEn)}
+                </p>
+              </div>
+
+              {/* Tips suivants = insights secondaires */}
+              {expertTips.slice(1).map((tip) => (
+                <div key={tip.title} className="flex gap-3">
+                  <div className="mt-[7px] shrink-0 h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
+                  <div>
+                    <p className="text-xs font-semibold text-foreground mb-1">
+                      {t(tip.title, tip.titleEn)}
+                    </p>
+                    <p className="text-sm leading-6 text-muted-foreground">
+                      {t(tip.detail, tip.detailEn)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Teaser avis communauté ── */}
+          <div className="rounded-2xl border border-dashed border-border bg-secondary/30 px-6 py-8 text-center">
+            <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-secondary border border-border">
+              <svg className="h-5 w-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+              </svg>
+            </div>
+            <p className="text-sm font-semibold text-foreground mb-1.5">
+              {t("Tu utilises cette stack ?", "Using this stack?")}
+            </p>
+            <p className="text-sm text-muted-foreground mb-5 max-w-sm mx-auto">
+              {t(
+                "Les avis utilisateurs arrivent bientôt. Partage ton retour d'expérience réel — ce qui marche, ce qui coûte trop cher, ce que tu changerais.",
+                "User reviews are coming soon. Share your real-world experience — what works, what costs too much, what you'd change."
+              )}
+            </p>
+            <span className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-xs font-semibold text-muted-foreground cursor-default select-none">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              {t("Bientôt disponible", "Coming soon")}
+            </span>
           </div>
         </section>
 
