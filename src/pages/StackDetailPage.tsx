@@ -25,7 +25,7 @@ const STACK_LAYERS = [
     id: "ops",
     titleFr: "Ops & automatisation",
     titleEn: "Ops & automation",
-    match: ["pilotage", "automatisation", "base", "documentation", "workspace", "operations", "stockage", "projet", "coordination", "planning", "sourcing", "fichiers", "rendez-vous"],
+    match: ["pilotage", "automatisation", "base", "documentation", "workspace", "operations", "stockage", "projet", "coordination", "planning", "sourcing", "fichiers", "rendez-vous", "ia", "assistant"],
   },
   {
     id: "money",
@@ -255,8 +255,8 @@ const StackDetailPage = () => {
             <StackMetric label={t("Économie repère", "Savings baseline")} value={`${stack.savings}€/${t("mois", "mo")}`} />
             <StackMetric
               label={t("Décisions", "Decisions")}
-              value={`${toolDecisionStats.core}/${toolDecisionStats.conditional}/${toolDecisionStats.challenge}`}
-              hint={t("socle · conditionnel · à challenger", "core · conditional · challenge")}
+              value={`${toolDecisionStats.core} ${t("socles", "core")}`}
+              hint={`${toolDecisionStats.conditional} ${t("conditionnel", "conditional")} · ${toolDecisionStats.challenge} ${t("à challenger", "to challenge")}`}
             />
           </div>
 
@@ -278,79 +278,40 @@ const StackDetailPage = () => {
       <nav className="sticky top-0 z-20 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-6 py-3 text-sm font-semibold text-muted-foreground">
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#overview">
-            {t("Synthèse", "Summary")}
-          </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#expert">
-            {t("Conseil expert", "Expert read")}
+            {t("Verdict", "Verdict")}
           </a>
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#stack">
             {t("Cartographie", "Map")}
           </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#questions">
-            {t("Questions", "Questions")}
+          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#expert">
+            {t("Conseil expert", "Expert read")}
           </a>
           <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#utilisations">
             {t("Scénarios", "Scenarios")}
+          </a>
+          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#questions">
+            {t("Auto-check", "Self-check")}
           </a>
         </div>
       </nav>
 
       <div className="mx-auto max-w-6xl px-6">
 
-        {/* ── OVERVIEW ─────────────────────────────────────────────────── */}
+        {/* ── VERDICT ─────────────────────────────────────────────────── */}
         <section id="overview" className="scroll-mt-24 border-b border-border py-12">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
-                {t("Stack par couche", "Stack by layer")}
-              </p>
-              <div className="space-y-4">
-                {stackLayers.map((layer) => {
-                  const percent = Math.round((layer.tools.length / stack.tools.length) * 100);
-                  return (
-                    <div key={layer.id}>
-                      <div className="mb-1.5 flex items-center justify-between gap-4 text-sm">
-                        <span className="font-semibold text-foreground">{t(layer.titleFr, layer.titleEn)}</span>
-                        <span className="font-mono text-muted-foreground">{layer.tools.length} · {percent}%</span>
-                      </div>
-                      <div className="h-2 overflow-hidden rounded-full bg-muted">
-                        <div className="h-full rounded-full bg-primary" style={{ width: `${Math.max(percent, 8)}%` }} />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
+            {t("Verdict ToolTrim", "ToolTrim verdict")}
+          </p>
+          <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-lg bg-secondary/70 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
-                {t("Lecture ToolTrim", "ToolTrim read")}
-              </p>
-              <div className="grid gap-4">
-                <DecisionNote title={t("À copier si", "Copy it if")} text={t(stack.bestFor, stack.bestForEn)} />
-                <DecisionNote title={t("À surveiller", "Watch")} text={t(stack.risk, stack.riskEn)} />
-                <DecisionNote title={t("À éviter si", "Skip it if")} text={t(stack.avoidIf, stack.avoidIfEn)} />
-              </div>
+              <DecisionNote title={t("À copier si", "Copy it if")} text={t(stack.bestFor, stack.bestForEn)} />
             </div>
-          </div>
-        </section>
-
-        <section id="expert" className="scroll-mt-24 border-b border-border py-12">
-          <div className="mb-8 max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-              {t("Conseil expert", "Expert read")}
-            </p>
-            <h2 className="font-display text-2xl font-semibold leading-tight tracking-tight text-foreground md:text-3xl">
-              {t("Ce que je garderais vraiment dans ce métier.", "What I would actually keep for this role.")}
-            </h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {expertTips.map((tip) => (
-              <div key={tip.title} className="rounded-lg border border-border bg-card p-5">
-                <h3 className="text-base font-semibold text-foreground">{t(tip.title, tip.titleEn)}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{t(tip.detail, tip.detailEn)}</p>
-              </div>
-            ))}
+            <div className="rounded-lg bg-secondary/70 p-5">
+              <DecisionNote title={t("Le principal risque", "Main risk")} text={t(stack.risk, stack.riskEn)} />
+            </div>
+            <div className="rounded-lg bg-secondary/70 p-5">
+              <DecisionNote title={t("À éviter si", "Skip it if")} text={t(stack.avoidIf, stack.avoidIfEn)} />
+            </div>
           </div>
         </section>
 
@@ -408,28 +369,20 @@ const StackDetailPage = () => {
           </div>
         </section>
 
-        {/* ── CHECKPOINTS ────────────────────────────────────────────────── */}
-        <section id="questions" className="scroll-mt-24 border-b border-border py-12">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-8">
-            {t("Questions à trancher", "Questions to answer")}
-          </p>
-          <div className="space-y-10">
-            {stack.checkpoints.map((cp, i) => (
-              <div key={i} className="grid grid-cols-[2rem_1fr] gap-4">
-                <span
-                  className="font-mono text-2xl font-bold leading-none"
-                  style={{ color: "hsl(var(--muted-foreground) / 0.25)" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <p className="text-base font-semibold leading-6 text-foreground">
-                    {t(cp.q, cp.qEn)}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    {t(cp.hint, cp.hintEn)}
-                  </p>
-                </div>
+        <section id="expert" className="scroll-mt-24 border-b border-border py-12">
+          <div className="mb-8 max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              {t("Conseil expert", "Expert read")}
+            </p>
+            <h2 className="font-display text-2xl font-semibold leading-tight tracking-tight text-foreground md:text-3xl">
+              {t("Ce que je garderais vraiment dans ce métier.", "What I would actually keep for this role.")}
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {expertTips.map((tip) => (
+              <div key={tip.title} className="rounded-lg border border-border bg-card p-5">
+                <h3 className="text-base font-semibold text-foreground">{t(tip.title, tip.titleEn)}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{t(tip.detail, tip.detailEn)}</p>
               </div>
             ))}
           </div>
@@ -496,6 +449,33 @@ const StackDetailPage = () => {
                 </article>
               );
             })}
+          </div>
+        </section>
+
+        {/* ── AUTO-CHECK ─────────────────────────────────────────────────── */}
+        <section id="questions" className="scroll-mt-24 border-b border-border py-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-8">
+            {t("Avant d'adopter cette stack", "Before adopting this stack")}
+          </p>
+          <div className="space-y-10">
+            {stack.checkpoints.map((cp, i) => (
+              <div key={i} className="grid grid-cols-[2rem_1fr] gap-4">
+                <span
+                  className="font-mono text-2xl font-bold leading-none"
+                  style={{ color: "hsl(var(--muted-foreground) / 0.25)" }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <p className="text-base font-semibold leading-6 text-foreground">
+                    {t(cp.q, cp.qEn)}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {t(cp.hint, cp.hintEn)}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
