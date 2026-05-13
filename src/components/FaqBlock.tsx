@@ -17,15 +17,57 @@ type FaqBlockProps = {
   className?: string;
 };
 
+type FaqSize = "default" | "compact";
+
 export default function FaqBlock({
-  eyebrow: _eyebrow,
+  eyebrow,
   title,
-  description: _description,
+  description,
   items,
   stats: _stats,
   openCount = 1,
   className = "",
-}: FaqBlockProps) {
+  size = "default",
+}: FaqBlockProps & { size?: FaqSize }) {
+
+  /* ── Compact mode: tool detail page ── */
+  if (size === "compact") {
+    return (
+      <div className={`space-y-4 ${className}`}>
+        {eyebrow && (
+          <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
+            {eyebrow}
+          </p>
+        )}
+        <h2 className="font-display text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+          {title}
+        </h2>
+        {description && (
+          <p className="text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}>
+            {description}
+          </p>
+        )}
+
+        <div className="divide-y divide-border rounded-xl border border-border overflow-hidden">
+          {items.map((item, index) => (
+            <details key={`${item.question}-${index}`} className="group bg-card" open={index < openCount}>
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 px-5 py-4">
+                <h3 className="text-sm font-semibold leading-snug text-foreground pr-2">
+                  {item.question}
+                </h3>
+                <ChevronDown className="h-4 w-4 shrink-0 mt-0.5 text-muted-foreground transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="px-5 pb-5 text-sm leading-7" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}>
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  /* ── Default mode: landing / home page — large editorial layout ── */
   return (
     <div className={`mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[340px_1fr] lg:gap-16 ${className}`}>
       <h2 className="font-display text-[clamp(2.3rem,4.2vw,4.2rem)] font-bold leading-[1.02] tracking-tight text-foreground">

@@ -22,8 +22,7 @@ export default function ToolFAQSection({ tool, displayPrice, verifiedOn, alterna
   const faqs: { q: string; a: string }[] = [
     {
       q: t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`),
-      a: (lang === "en" && tool.longDescriptionEn ? tool.longDescriptionEn : tool.longDescription) || 
-         (lang === "en" && tool.shortDescriptionEn ? tool.shortDescriptionEn : tool.shortDescription) || 
+      a: (lang === "en" && tool.shortDescriptionEn ? tool.shortDescriptionEn : tool.shortDescription) ||
          t(`${tool.name} est un outil de productivité SaaS.`, `${tool.name} is a SaaS productivity tool.`),
     },
     {
@@ -77,16 +76,13 @@ export default function ToolFAQSection({ tool, displayPrice, verifiedOn, alterna
   return (
     <section>
       <FaqBlock
+        size="compact"
         eyebrow={t("FAQ outil", "Tool FAQ")}
         title={t(`Questions fréquentes sur ${tool.name}`, `Frequently asked questions about ${tool.name}`)}
         description={t(
           "Prix, usage, alternatives et contexte : les réponses utiles avant d'ajouter un outil de plus à ta stack.",
           "Pricing, usage, alternatives, and context: useful answers before adding one more tool to your stack."
         )}
-        stats={[
-          { value: displayPrice === 0 ? "0€" : `${displayPrice}€`, label: t("prix repère", "baseline price") },
-          { value: verifiedOn, label: t("prix vérifié", "price verified") },
-        ]}
         items={faqs.map((faq, index) => ({
           question: faq.q,
           answer: faq.a,
