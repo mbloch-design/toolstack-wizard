@@ -236,33 +236,6 @@ const ToolDetailPage = () => {
             })()}
           </h1>
 
-          {/* Score ToolTrim — hero badge */}
-          {(() => {
-            const ts = computeToolTrimScore(tool);
-            return (
-              <Link
-                to={`${prefix}/tool/${slug}/avis`}
-                className="mt-4 inline-flex items-center gap-2.5 rounded-lg border border-border bg-card/80 px-3.5 py-2 text-xs transition-colors hover:border-primary/40 backdrop-blur-sm"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
-              >
-                <span className="flex items-center gap-1">
-                  {[1,2,3,4,5].map((i) => (
-                    <svg key={i} className="h-3 w-3" viewBox="0 0 12 12" fill={i <= Math.round(ts.score) ? "hsl(var(--primary))" : "hsl(var(--border))"}>
-                      <path d="M6 1l1.3 2.6L10 4l-2 1.9.5 2.7L6 7.4 3.5 8.6 4 5.9 2 4l2.7-.4z"/>
-                    </svg>
-                  ))}
-                </span>
-                <span className="font-mono font-bold text-foreground">{ts.score.toFixed(1)}</span>
-                <span style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>·</span>
-                <span className="font-semibold" style={{ color: "hsl(var(--primary))" }}>{t(ts.labelFr, ts.labelEn)}</span>
-                <span style={{ color: "hsl(var(--muted-foreground))" }}>·</span>
-                <span style={{ color: "hsl(var(--muted-foreground))" }}>Score ToolTrim</span>
-                <svg className="h-3 w-3" style={{ color: "hsl(var(--muted-foreground))" }} fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </Link>
-            );
-          })()}
         </div>
       </header>
 
@@ -276,7 +249,7 @@ const ToolDetailPage = () => {
               className="rounded-xl border border-border overflow-hidden"
               style={{ background: "hsl(var(--card))" }}
             >
-              {/* Logo + name */}
+              {/* Logo + name + score */}
               <div className="flex flex-col items-center gap-3 p-5 pb-4 border-b border-border text-center">
                 <ToolLogo tool={tool} size={64} className="rounded-2xl shadow-md" />
                 <div>
@@ -297,6 +270,39 @@ const ToolDetailPage = () => {
                     </Link>
                   )}
                 </div>
+
+                {/* Score ToolTrim — étoiles visibles */}
+                {(() => {
+                  const ts = computeToolTrimScore(tool);
+                  return (
+                    <Link
+                      to={`${prefix}/tool/${slug}/avis`}
+                      className="flex flex-col items-center gap-1.5 rounded-xl border border-border bg-secondary/40 px-4 py-3 w-full transition-colors hover:border-primary/30 hover:bg-primary/[0.03] group"
+                    >
+                      <div className="flex items-center gap-1">
+                        {[1,2,3,4,5].map((i) => (
+                          <svg key={i} className="h-5 w-5" viewBox="0 0 24 24"
+                            fill={i <= Math.floor(ts.score) ? "hsl(var(--primary))" : i === Math.ceil(ts.score) && ts.score % 1 >= 0.5 ? "hsl(var(--primary) / 0.45)" : "hsl(var(--border))"}
+                          >
+                            <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>
+                          </svg>
+                        ))}
+                      </div>
+                      <div className="flex items-baseline gap-1">
+                        <span className="font-mono text-xl font-black" style={{ color: "hsl(var(--foreground))", letterSpacing: "-0.03em" }}>
+                          {ts.score.toFixed(1)}
+                        </span>
+                        <span className="text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.5)" }}>/5</span>
+                        <span className="ml-1 text-xs font-semibold" style={{ color: "hsl(var(--primary))" }}>
+                          {t(ts.labelFr, ts.labelEn)}
+                        </span>
+                      </div>
+                      <span className="text-[10px]" style={{ color: "hsl(var(--muted-foreground))" }}>
+                        Score ToolTrim →
+                      </span>
+                    </Link>
+                  );
+                })()}
               </div>
 
               {/* Price block */}
@@ -436,24 +442,6 @@ const ToolDetailPage = () => {
                       </span>
                     ))}
                   </div>
-                );
-              })()}
-
-              {/* Score ToolTrim */}
-              {(() => {
-                const ts = computeToolTrimScore(tool);
-                return (
-                  <Link
-                    to={`${prefix}/tool/${slug}/avis`}
-                    className="flex items-center justify-between border-t border-border px-4 py-3 transition-colors hover:bg-primary/[0.02] group"
-                    style={{ fontSize: "0.72rem", fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    <span style={{ color: "hsl(var(--muted-foreground))" }}>Score ToolTrim</span>
-                    <span className="flex items-center gap-1.5">
-                      <span className="font-mono font-bold" style={{ color: "hsl(var(--foreground))" }}>{ts.score.toFixed(1)}</span>
-                      <span style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>/5</span>
-                    </span>
-                  </Link>
                 );
               })()}
 
