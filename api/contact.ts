@@ -27,7 +27,7 @@ export default async function handler(request: Request): Promise<Response> {
   }
 
   const { error } = await resend.emails.send({
-    from: "ToolTrim Contact <contact@tooltrim.com>",
+    from: "ToolTrim Contact <onboarding@resend.dev>", // temp — swap to contact@tooltrim.com once domain verified on Resend
     to: "contact@tooltrim.com",
     replyTo: email,
     subject: `[Contact] ${subject}`,
