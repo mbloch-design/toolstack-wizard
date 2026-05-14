@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   ChevronDown,
   FlaskConical,
+  Search,
   HelpCircle,
   Layers,
   Mail,
@@ -27,6 +28,7 @@ import { stripLeadingEmoji } from "@/lib/text";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
+import { SearchModal } from "@/components/SearchModal";
 
 type MegaMenu = "explore" | "method" | null;
 
@@ -40,6 +42,23 @@ const Navbar = () => {
   const [activeMega, setActiveMega] = useState<MegaMenu>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<MegaMenu>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  /* Detect Mac for shortcut label */
+  const isMac = typeof navigator !== "undefined" && /Mac|iPhone|iPad/i.test(navigator.platform || navigator.userAgent);
+  const shortcutLabel = isMac ? "⌘K" : "Ctrl K";
+
+  /* Global Cmd+K / Ctrl+K */
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(open => !open);
+      }
+    };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, []);
   const navRef = useRef<HTMLElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>();
 
@@ -304,6 +323,19 @@ const Navbar = () => {
         )}
 
         <div className="hidden items-center gap-2 lg:flex">
+          {/* Search trigger */}
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="flex items-center gap-2 rounded-xl border border-border/80 bg-secondary/50 px-3 py-1.5 text-sm text-muted-foreground transition-all hover:border-primary/30 hover:bg-secondary hover:text-foreground"
+            aria-label={t("Ouvrir la recherche", "Open search")}
+          >
+            <Search className="h-3.5 w-3.5 shrink-0" />
+            <span className="hidden xl:inline">{t("Rechercher", "Search")}</span>
+            <kbd className="rounded border border-border bg-background px-1 py-0.5 text-[10px] font-medium leading-none text-muted-foreground">
+              {shortcutLabel}
+            </kbd>
+          </button>
+
           <ThemeToggle theme={theme} onClick={toggle} />
           <LanguageToggle href={languageHref} lang={lang} otherLang={otherLang} />
           <Link
@@ -316,6 +348,13 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-1.5 lg:hidden">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="rounded-lg border border-border p-2 text-muted-foreground"
+            aria-label={t("Rechercher", "Search")}
+          >
+            <Search className="h-5 w-5" />
+          </button>
           <Link
             to={`${prefix}/selector`}
             className="hidden rounded-lg bg-primary px-3 py-2 text-[12px] font-semibold text-primary-foreground xs:inline-flex"
@@ -334,6 +373,8 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
 
       {mobileOpen && (
         <div className="absolute inset-x-0 top-full z-50 max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-border bg-background shadow-2xl shadow-black/20 lg:hidden">
