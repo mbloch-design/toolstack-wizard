@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { Mail, MessageSquare, Clock, Send, AlertCircle } from "lucide-react";
+import { Mail, MessageSquare, Clock, AlertCircle, ArrowRight } from "lucide-react";
 
-// ── Replace with your Formspree form ID (formspree.io → New Form → copy ID) ──
 const FORMSPREE_ID = "xgodbpgj";
 
 const ContactPage = () => {
-  const { t, lang } = useLang();
+  const { t, lang, prefix } = useLang();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
 
@@ -31,172 +31,302 @@ const ContactPage = () => {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ ...formData, _language: lang }),
       });
-      if (res.ok) {
-        setStatus("sent");
-      } else {
-        setStatus("error");
-      }
+      setStatus(res.ok ? "sent" : "error");
     } catch {
       setStatus("error");
     }
   };
 
-  if (status === "sent") {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center py-20">
-        <div className="text-center">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-accent">
-            <Send className="h-7 w-7 text-primary" />
-          </div>
-          <h1 className="mt-6 font-display text-3xl font-bold" style={{ letterSpacing: "-0.02em" }}>
-            {t("Message envoyé !", "Message sent!")}
-          </h1>
-          <p className="mt-3 text-muted-foreground max-w-sm mx-auto">
-            {t(
-              "Nous reviendrons vers vous dans les 48 heures. Merci pour votre confiance.",
-              "We'll get back to you within 48 hours. Thank you for your trust."
-            )}
-          </p>
-        </div>
-      </div>
-    );
-  }
+  const inputClass =
+    "mt-1.5 w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150";
 
   const reasons = [
     {
       icon: MessageSquare,
       title: t("Question ou suggestion", "Question or suggestion"),
-      desc: t("Une idée d'amélioration, un outil manquant, un bug ?", "An improvement idea, a missing tool, a bug?"),
+      desc: t("Idée d'amélioration, outil manquant, bug ?", "Improvement idea, missing tool, bug?"),
     },
     {
       icon: Mail,
-      title: t("Partenariat", "Partnership"),
-      desc: t("Vous êtes un éditeur SaaS et souhaitez échanger ?", "You're a SaaS vendor and want to discuss?"),
+      title: t("Partenariat éditeur", "Vendor partnership"),
+      desc: t("Vous éditez un SaaS et voulez échanger.", "You publish a SaaS and want to talk."),
     },
     {
       icon: Clock,
       title: t("Réponse sous 48h", "Response within 48h"),
-      desc: t("Nous lisons et répondons à chaque message reçu.", "We read and respond to every message received."),
+      desc: t("Chaque message est lu et traité.", "Every message is read and handled."),
     },
   ];
 
-  return (
-    <div className="py-16 md:py-24">
-      <div className="container mx-auto max-w-4xl">
-
-        {/* Hero */}
+  // ── Success screen ──────────────────────────────────────────────────────────
+  if (status === "sent") {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center py-20">
         <div className="text-center">
-          <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-accent-foreground mb-6">
-            Contact
-          </span>
-          <h1
-            className="font-display font-bold tracking-tight"
-            style={{ fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "-0.03em" }}
+          <div
+            className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl"
+            style={{ background: "#dcfce7" }}
           >
-            {t("Parlons-en", "Let's talk")}
+            <ArrowRight className="h-7 w-7" style={{ color: "#15803d" }} />
+          </div>
+          <h1
+            className="mt-6 font-display font-bold"
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", letterSpacing: "-0.025em" }}
+          >
+            {t("Message envoyé !", "Message sent!")}
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+          <p className="mt-3 max-w-sm mx-auto" style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))" }}>
             {t(
-              "Question, suggestion ou correction — nous sommes à l'écoute.",
-              "Question, suggestion, or correction — we're listening."
+              "Nous reviendrons vers vous dans les 48 heures.",
+              "We'll get back to you within 48 hours."
             )}
           </p>
+          <Link
+            to={`${prefix}/tools`}
+            className="mt-6 inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors"
+            style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
+          >
+            {t("Explorer les outils", "Explore tools")}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
+      </div>
+    );
+  }
 
-        {/* Reason cards */}
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          {reasons.map((r) => (
-            <div key={r.title} className="rounded-xl border border-border bg-card p-5 text-center">
-              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-                <r.icon className="h-5 w-5 text-accent-foreground" />
+  return (
+    <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
+
+      {/* ── Hero — même langage que ToolsPage / CategoryPage ─────────────────── */}
+      <section
+        className="relative overflow-hidden border-b border-border"
+        style={{ background: "hsl(230 40% 97%)" }}
+      >
+        <div className="mx-auto max-w-7xl px-6 py-12">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-1.5" aria-label="Breadcrumb">
+            <Link
+              to={`${prefix}`}
+              className="text-[11px] font-medium transition-colors hover:text-foreground"
+              style={{ color: "hsl(var(--muted-foreground))" }}
+            >
+              {t("Accueil", "Home")}
+            </Link>
+            <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>/</span>
+            <span className="text-[11px] font-medium" style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}>
+              Contact
+            </span>
+          </nav>
+
+          <div className="mt-5">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+              {t("Nous contacter", "Get in touch")}
+            </p>
+            <h1
+              className="font-display"
+              style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.08 }}
+            >
+              {t("Parlons-en", "Let's talk")}
+            </h1>
+            <p
+              className="mt-3 leading-relaxed"
+              style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))", maxWidth: "48ch" }}
+            >
+              {t(
+                "Question, suggestion ou correction — nous sommes à l'écoute.",
+                "Question, suggestion, or correction — we're listening."
+              )}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Body ─────────────────────────────────────────────────────────────── */}
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+
+          {/* Left — form ─────────────────────────────────────────────────────── */}
+          <div className="flex-1 min-w-0">
+            <p className="mb-5 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+              {t("Formulaire", "Form")}
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="contact-name" className="text-sm font-medium text-foreground">
+                    {t("Nom", "Name")}
+                  </label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder={t("Votre nom", "Your name")}
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className={inputClass}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
+                      e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = "hsl(var(--border))";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-email" className="text-sm font-medium text-foreground">
+                    Email
+                  </label>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className={inputClass}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
+                      e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = "hsl(var(--border))";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
+                  />
+                </div>
               </div>
-              <h3 className="mt-3 text-sm font-semibold">{r.title}</h3>
-              <p className="mt-1 text-xs text-muted-foreground">{r.desc}</p>
-            </div>
-          ))}
-        </div>
 
-        {/* Form */}
-        <div className="mt-12 mx-auto max-w-lg">
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="contact-name" className="text-sm font-medium">
-                  {t("Nom", "Name")}
+                <label htmlFor="contact-subject" className="text-sm font-medium text-foreground">
+                  {t("Sujet", "Subject")}
                 </label>
                 <input
-                  id="contact-name"
-                  name="name"
+                  id="contact-subject"
+                  name="subject"
                   type="text"
                   required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20"
+                  placeholder={t("En quelques mots…", "In a few words…")}
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className={inputClass}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "hsl(var(--border))";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
                 />
               </div>
+
               <div>
-                <label htmlFor="contact-email" className="text-sm font-medium">Email</label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
+                <label htmlFor="contact-message" className="text-sm font-medium text-foreground">
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
                   required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20"
+                  rows={6}
+                  placeholder={t("Décrivez votre demande…", "Describe your request…")}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className={`${inputClass} resize-none`}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "hsl(var(--border))";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
                 />
               </div>
-            </div>
 
-            <div>
-              <label htmlFor="contact-subject" className="text-sm font-medium">
-                {t("Sujet", "Subject")}
-              </label>
-              <input
-                id="contact-subject"
-                name="subject"
-                type="text"
-                required
-                value={formData.subject}
-                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20"
-              />
-            </div>
+              {status === "error" && (
+                <div
+                  className="flex items-start gap-2.5 rounded-lg px-4 py-3 text-sm"
+                  style={{ background: "hsl(var(--destructive) / 0.06)", border: "1px solid hsl(var(--destructive) / 0.2)", color: "hsl(var(--destructive))" }}
+                >
+                  <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span>
+                    {t(
+                      "Une erreur est survenue. Réessayez ou écrivez directement à ",
+                      "Something went wrong. Try again or email "
+                    )}
+                    <a href="mailto:contact@tooltrim.com" className="font-medium underline underline-offset-2">
+                      contact@tooltrim.com
+                    </a>
+                  </span>
+                </div>
+              )}
 
-            <div>
-              <label htmlFor="contact-message" className="text-sm font-medium">Message</label>
-              <textarea
-                id="contact-message"
-                name="message"
-                required
-                rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20 resize-none"
-              />
-            </div>
-
-            {/* Error state */}
-            {status === "error" && (
-              <div className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
-                <AlertCircle className="h-4 w-4 shrink-0" />
-                {t(
-                  "Une erreur est survenue. Réessayez ou écrivez directement à contact@tooltrim.com",
-                  "Something went wrong. Try again or email contact@tooltrim.com directly."
-                )}
+              <div className="pt-1">
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
+                  onMouseEnter={(e) => { if (status !== "sending") (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
+                >
+                  {status === "sending" ? t("Envoi…", "Sending…") : t("Envoyer le message", "Send message")}
+                  {status !== "sending" && <ArrowRight className="h-3.5 w-3.5" />}
+                </button>
               </div>
-            )}
+            </form>
+          </div>
 
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="w-full rounded-lg bg-primary py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              {status === "sending"
-                ? t("Envoi en cours…", "Sending…")
-                : t("Envoyer le message →", "Send message →")}
-            </button>
-          </form>
+          {/* Right — info sidebar ─────────────────────────────────────────────── */}
+          <div className="w-full lg:w-[280px] shrink-0">
+            <p className="mb-5 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+              {t("Pourquoi nous écrire", "Why write to us")}
+            </p>
+
+            <div className="flex flex-col gap-3">
+              {reasons.map((r) => (
+                <div
+                  key={r.title}
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+                >
+                  <div
+                    className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
+                    style={{ background: "hsl(var(--primary) / 0.08)", color: "hsl(var(--primary))" }}
+                  >
+                    <r.icon className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{r.title}</p>
+                    <p className="mt-0.5 text-xs leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+                      {r.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Direct email */}
+            <div className="mt-6 border-t border-border pt-6">
+              <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+                Email direct
+              </p>
+              <a
+                href="mailto:contact@tooltrim.com"
+                className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-opacity hover:opacity-70"
+                style={{ fontFamily: "ui-monospace, monospace" }}
+              >
+                contact@tooltrim.com
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
