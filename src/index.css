@@ -194,6 +194,71 @@
 }
 
 /* ─────────────────────────────────────────────
+   TYPE SCALE — single source of truth
+   Apply these classes to ALL heading / label
+   elements on the homepage and beyond.
+───────────────────────────────────────────── */
+@layer components {
+  /* H1 — hero only */
+  .ts-h1 {
+    font-family: "Uncut Sans", system-ui, sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: hsl(var(--foreground));
+  }
+
+  /* H2 — every section title */
+  .ts-h2 {
+    font-family: "Uncut Sans", system-ui, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: hsl(var(--foreground));
+  }
+
+  /* H3 — step titles, card headlines, sub-section titles */
+  .ts-h3 {
+    font-family: "Uncut Sans", system-ui, sans-serif;
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: hsl(var(--foreground));
+  }
+
+  /* Eyebrow — section overline (replaces all inline uppercase labels) */
+  .ts-eyebrow {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Caption — meta text, dates, roles, small annotations */
+  .ts-caption {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Mono badge — savings amounts, technical labels */
+  .ts-mono-badge {
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+}
+
+/* ─────────────────────────────────────────────
    COMPONENTS
 ───────────────────────────────────────────── */
 @layer components {
@@ -227,10 +292,26 @@
 ───────────────────────────────────────────── */
 @layer utilities {
   /* Eyebrow / section label — Inter, discret */
+  /* Section eyebrow tag — dark filled pill, high contrast, auto-inverts in dark mode */
+  .section-tag {
+    display: inline-block;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0em;
+    padding: 0.45rem 1.1rem;
+    border-radius: 9999px;
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  /* Alias — keep .label-section working, maps to ts-eyebrow values */
   .label-section {
     font-family: Inter, system-ui, sans-serif;
-    font-size: 0.75rem;   /* 12px — Heyflow eyebrow style */
+    font-size: 0.75rem;
     font-weight: 600;
+    line-height: 1;
     letter-spacing: 0.02em;
     text-transform: none;
     color: hsl(var(--muted-foreground));

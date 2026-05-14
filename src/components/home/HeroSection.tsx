@@ -201,20 +201,11 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
           </span>
         </div>
 
-        {/* Main headline — Bricolage Grotesque */}
-        <h1
-          className="font-display"
-          style={{
-            fontSize: "clamp(2.5rem, 5.5vw, 3.75rem)",
-            fontWeight: 400,
-            lineHeight: 1.0,
-            letterSpacing: "-0.04em",
-            color: "hsl(var(--foreground))",
-          }}
-        >
+        {/* Main headline */}
+        <h1 className="ts-h1">
           {t("Ta stack SaaS", "Your SaaS stack")}
           <br />
-          <span style={{ color: "hsl(var(--primary))" }}>
+          <span className="text-primary">
             {t("te coûte trop cher.", "is costing you too much.")}
           </span>
         </h1>
@@ -323,15 +314,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         </div>
 
         {/* Hint */}
-        <p
-          className="mt-6"
-          style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.68rem",
-            letterSpacing: "0.06em",
-            color: "hsl(var(--muted-foreground) / 0.7)",
-          }}
-        >
+        <p className="ts-mono-badge mt-6" style={{ color: "hsl(var(--muted-foreground) / 0.7)" }}>
           {t(
             `${toolCount} outils couverts · aucune donnée stockée`,
             `${toolCount} tools covered · no data stored`

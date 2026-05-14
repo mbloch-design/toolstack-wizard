@@ -104,19 +104,7 @@ const TickerBar = () => {
         {doubled.map((item, i) => (
           <span key={i} className="inline-flex shrink-0 items-center gap-2.5 text-xs">
             {/* Tag pill — DM Mono, primary tint */}
-            <span
-              style={{
-                fontFamily: "ui-monospace, monospace",
-                fontSize: "0.6rem",
-                letterSpacing: "0.07em",
-                textTransform: "uppercase",
-                color: "hsl(var(--primary))",
-                background: "hsl(var(--primary) / 0.1)",
-                border: "1px solid hsl(var(--primary) / 0.2)",
-                borderRadius: "0.375rem",
-                padding: "0.15rem 0.55rem",
-              }}
-            >
+            <span className="ts-mono-badge uppercase tracking-widest rounded-md border border-primary/20 bg-primary/10 px-2 py-0.5 text-primary">
               {item.tag}
             </span>
 

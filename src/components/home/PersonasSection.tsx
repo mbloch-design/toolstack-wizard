@@ -95,10 +95,10 @@ const PersonasSection = () => {
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-5">
+          <span className="section-tag mb-5">
             {t("Pour qui", "Who it's for")}
           </span>
-          <h2 className="font-display font-medium" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
+          <h2 className="ts-h2">
             {t("Conçu pour ", "Built for ")}<em className="text-primary italic">{t("5 expertises métier", "5 professional profiles")}</em>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">

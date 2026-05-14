@@ -12,17 +12,9 @@ const FinalCTA = () => {
         {/* Inner container — centered, constrained */}
         <div className="mx-auto max-w-2xl text-center">
 
-          <p className="label-section mb-5">{t("Prêt ?", "Ready?")}</p>
+          <span className="section-tag mb-6">{t("Prêt ?", "Ready?")}</span>
 
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
-              fontWeight: 400,
-              letterSpacing: "-0.04em",
-              lineHeight: 1.0,
-            }}
-          >
+          <h2 className="ts-h1">
             {t("Combien", "How much")}
             <br />
             <span className="text-primary">{t("payez-vous de trop ?", "are you overpaying?")}</span>
@@ -48,16 +40,7 @@ const FinalCTA = () => {
             </Link>
           </div>
 
-          <p
-            className="mt-4"
-            style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: "0.65rem",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "hsl(var(--muted-foreground) / 0.4)",
-            }}
-          >
+          <p className="ts-mono-badge mt-4 uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>
             {t("Sans inscription · Sans carte bancaire · Résultats immédiats", "No signup · No credit card · Instant results")}
           </p>
 

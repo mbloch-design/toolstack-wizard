@@ -73,11 +73,8 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
       <div className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-10 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_auto] lg:items-end">
           <div>
-            <p className="label-section mb-3">{t("Ce que ToolTrim cherche", "What ToolTrim looks for")}</p>
-            <h2
-              className="max-w-3xl text-foreground"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 500, letterSpacing: "-0.03em", lineHeight: 1.05 }}
-            >
+            <span className="section-tag mb-5">{t("Ce que ToolTrim cherche", "What ToolTrim looks for")}</span>
+            <h2 className="ts-h2 max-w-3xl">
               {t("Des économies utiles, pas des coupes au hasard.", "Useful savings, not random cuts.")}
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
@@ -126,7 +123,7 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
               </div>
 
               <div className="px-1 pb-1 pt-4">
-                <h3 className="text-lg font-semibold leading-tight tracking-tight text-foreground">
+                <h3 className="ts-h3">
                   {item.title}
                 </h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">

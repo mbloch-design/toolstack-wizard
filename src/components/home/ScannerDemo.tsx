@@ -91,10 +91,10 @@ const ScannerDemo = () => {
       <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
         {/* Copy */}
         <div>
-          <p className="text-[12px] font-semibold text-primary mb-4">
+          <span className="section-tag mb-5">
             {t("Démo interactive", "Interactive demo")}
-          </p>
-          <h2 className="font-display font-medium" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
+          </span>
+          <h2 className="ts-h2">
             {lang === "fr" ? (
               <>Voyez ce que l'analyse <em className="text-primary italic">{" "}fait vraiment</em></>
             ) : (

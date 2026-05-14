@@ -57,11 +57,8 @@ const HowItWorks = () => {
         {/* Header — left-aligned like a doc */}
         <div className="mb-16 flex items-end justify-between gap-8">
           <div>
-            <p className="label-section mb-3">{t("Processus", "Process")}</p>
-            <h2
-              className="font-display"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 500, letterSpacing: "-0.03em", lineHeight: 1.05 }}
-            >
+            <span className="section-tag mb-5">{t("Processus", "Process")}</span>
+            <h2 className="ts-h2">
               {t("3 étapes. ", "3 steps. ")}
               <span className="text-primary">{t("Aucune approximation.", "No guesswork.")}</span>
             </h2>
@@ -97,7 +94,7 @@ const HowItWorks = () => {
                   className="font-display select-none"
                   style={{
                     fontSize: "clamp(2rem, 4vw, 3rem)",
-                    fontWeight: 800,
+                    fontWeight: 500,
                     letterSpacing: "-0.04em",
                     color: "hsl(var(--foreground) / 0.08)",
                     lineHeight: 1,
@@ -119,15 +116,7 @@ const HowItWorks = () => {
 
               {/* Left content: title + desc + optional chips */}
               <div className="md:pr-12">
-                <h3
-                  className="font-display mb-3"
-                  style={{
-                    fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
-                    fontWeight: 600,
-                    letterSpacing: "-0.015em",
-                    color: "hsl(var(--foreground))",
-                  }}
-                >
+                <h3 className="ts-h3 mb-3">
                   {step.title}
                 </h3>
                 <p
@@ -201,15 +190,7 @@ const HowItWorks = () => {
             {t("Lancer mon analyse gratuite", "Start my free analysis")}
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
-          <p
-            style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: "0.68rem",
-              letterSpacing: "0.06em",
-              color: "hsl(var(--muted-foreground) / 0.5)",
-              textTransform: "uppercase",
-            }}
-          >
+          <p className="ts-mono-badge uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground) / 0.5)" }}>
             {t("Gratuit · Sans inscription · 3 minutes", "Free · No signup · 3 minutes")}
           </p>
         </div>

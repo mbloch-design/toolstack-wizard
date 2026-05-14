@@ -97,11 +97,8 @@ const TestimonialsSection = () => {
         {/* Header */}
         <div className="mb-12 flex items-end justify-between gap-8">
           <div>
-            <p className="label-section mb-3">{t("Témoignages", "Testimonials")}</p>
-            <h2
-              className="font-display"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 500, letterSpacing: "-0.03em", lineHeight: 1.05 }}
-            >
+            <span className="section-tag mb-5">{t("Témoignages", "Testimonials")}</span>
+            <h2 className="ts-h2">
               {t("Ils ont repris le contrôle ", "They took back control ")}
               <span className="text-primary">{t("de leur stack.", "of their stack.")}</span>
             </h2>
@@ -148,32 +145,12 @@ const TestimonialsSection = () => {
                 {/* Content */}
                 <div className="p-8 flex flex-col justify-between">
                   <div>
-                    {/* Saving badge — DM Mono, primary-tinted */}
-                    <span
-                      className="inline-block mb-6"
-                      style={{
-                        fontFamily: "'DM Mono', monospace",
-                        fontSize: "0.7rem",
-                        letterSpacing: "0.07em",
-                        textTransform: "uppercase",
-                        color: "hsl(var(--primary))",
-                        background: "hsl(var(--primary) / 0.1)",
-                        padding: "0.25rem 0.75rem",
-                        borderRadius: "0.375rem",
-                        border: "1px solid hsl(var(--primary) / 0.2)",
-                      }}
-                    >
+                    {/* Saving badge */}
+                    <span className="ts-mono-badge inline-block mb-6 uppercase tracking-widest rounded-md border border-primary/20 bg-primary/10 px-3 py-1 text-primary">
                       {item.saving}
                     </span>
 
-                    <blockquote
-                      className="font-display leading-snug text-foreground"
-                      style={{
-                        fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
-                        fontWeight: 500,
-                        letterSpacing: "-0.015em",
-                      }}
-                    >
+                    <blockquote className="ts-h3 leading-snug text-foreground">
                       "{lang === "en" ? item.quoteEn : item.quote}"
                     </blockquote>
                   </div>
@@ -183,16 +160,7 @@ const TestimonialsSection = () => {
                     <p className="mt-0.5 text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
                       {lang === "en" ? item.roleEn : item.role}
                     </p>
-                    <p
-                      className="mt-1"
-                      style={{
-                        fontFamily: "'DM Mono', monospace",
-                        fontSize: "0.62rem",
-                        letterSpacing: "0.06em",
-                        textTransform: "uppercase",
-                        color: "hsl(var(--muted-foreground) / 0.5)",
-                      }}
-                    >
+                    <p className="ts-mono-badge mt-1 uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground) / 0.5)" }}>
                       {lang === "en" ? item.contextEn : item.context}
                     </p>
                   </div>
@@ -220,19 +188,7 @@ const TestimonialsSection = () => {
                     {lang === "en" ? nextItem.roleEn : nextItem.role}
                   </p>
                 </div>
-                <span
-                  style={{
-                    fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.65rem",
-                    letterSpacing: "0.07em",
-                    textTransform: "uppercase",
-                    color: "hsl(var(--primary))",
-                    background: "hsl(var(--primary) / 0.1)",
-                    padding: "0.2rem 0.6rem",
-                    borderRadius: "0.375rem",
-                    border: "1px solid hsl(var(--primary) / 0.2)",
-                  }}
-                >
+                <span className="ts-mono-badge uppercase tracking-widest rounded-md border border-primary/20 bg-primary/10 px-2.5 py-1 text-primary">
                   {nextItem.saving}
                 </span>
               </div>

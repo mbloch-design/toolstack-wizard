@@ -19,11 +19,8 @@ const DiffTable = ({ toolCount }: { toolCount: number }) => {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="label-section mb-3">{t("Positionnement", "Positioning")}</p>
-          <h2
-            className="font-display"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 500, letterSpacing: "-0.03em", lineHeight: 1.05 }}
-          >
+          <span className="section-tag mb-5">{t("Positionnement", "Positioning")}</span>
+          <h2 className="ts-h2">
             {t("Pas un annuaire. ", "Not a directory. ")}
             <span className="text-primary">{t("Un diagnostic.", "A diagnosis.")}</span>
           </h2>
@@ -40,22 +37,8 @@ const DiffTable = ({ toolCount }: { toolCount: number }) => {
             <span className="label-section">{t("Fonctionnalité", "Feature")}</span>
             {/* ToolTrim column — highlighted */}
             <div className="flex flex-col items-center gap-1">
-              <span
-                className="font-display text-primary"
-                style={{ fontSize: "0.8rem", fontWeight: 700, letterSpacing: "-0.01em" }}
-              >
-                ToolTrim
-              </span>
-              <span
-                className="rounded-full bg-primary/10 px-2 py-0.5"
-                style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  color: "hsl(var(--primary))",
-                }}
-              >
+              <span className="ts-caption font-display font-semibold text-primary">ToolTrim</span>
+              <span className="ts-mono-badge rounded-full bg-primary/10 px-2 py-0.5 text-primary uppercase tracking-widest">
                 {t("vous", "you")}
               </span>
             </div>
@@ -78,10 +61,7 @@ const DiffTable = ({ toolCount }: { toolCount: number }) => {
               {/* ToolTrim */}
               <div className="flex justify-center">
                 {typeof row.tt === "string" ? (
-                  <span
-                    className="font-display text-primary"
-                    style={{ fontSize: "0.85rem", fontWeight: 700, letterSpacing: "-0.01em" }}
-                  >
+                  <span className="ts-caption font-display font-semibold text-primary">
                     {row.tt}
                   </span>
                 ) : (
