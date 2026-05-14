@@ -102,6 +102,10 @@
     --sidebar-accent-foreground: 0 0% 9%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 224 76% 50%;
+
+    /* ── Font families ── */
+    --font-brand: "Uncut Sans", system-ui, sans-serif;
+    --font-ui:    "Inter Tight", "Inter", system-ui, sans-serif;
   }
 
   .dark {
@@ -153,6 +157,8 @@
 
 /* ─────────────────────────────────────────────
    BASE TYPOGRAPHY
+   --font-brand  Uncut Sans — logo, h1/h2, identity moments
+   --font-ui     Inter Tight — body, nav, UI, cards, tables
 ───────────────────────────────────────────── */
 @layer base {
   * {
@@ -161,53 +167,59 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: Inter, system-ui, sans-serif;
-    font-size: 15px;
-    line-height: 1.65;
+    font-family: var(--font-ui);
+    font-size: 16px;           /* 15–17px range */
+    line-height: 1.5;          /* 1.45–1.6 range */
     font-weight: 400;
-    letter-spacing: 0em;
+    letter-spacing: -0.005em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* ── Headings — Uncut Sans, weights retenues ── */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Uncut Sans", system-ui, sans-serif;
+  /* h1 / h2 — brand identity moments */
+  h1, h2 {
+    font-family: var(--font-brand);
     color: hsl(var(--foreground));
   }
 
   h1 {
     font-weight: 600;
-    line-height: 1.06;
-    letter-spacing: -0.03em;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
   }
   h2 {
     font-weight: 600;
-    line-height: 1.12;
-    letter-spacing: -0.025em;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+  }
+
+  /* h3–h6 — UI / content headings */
+  h3, h4, h5, h6 {
+    font-family: var(--font-ui);
+    color: hsl(var(--foreground));
   }
   h3 {
-    font-weight: 500;
-    line-height: 1.25;
-    letter-spacing: -0.015em;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
   }
   h4, h5, h6 {
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.3;
     letter-spacing: -0.01em;
   }
 
   p {
-    line-height: 1.7;
+    line-height: 1.55;
   }
 
   /* Prose overrides for guide content */
   .prose h1, .prose h2, .prose h3,
   .prose h4, .prose h5, .prose h6 {
-    font-family: "Uncut Sans", system-ui, sans-serif;
+    font-family: var(--font-brand);
   }
   .prose p, .prose li, .prose blockquote {
-    font-family: Inter, system-ui, sans-serif;
+    font-family: var(--font-ui);
     font-size: 1rem;
     line-height: 1.75;
   }
@@ -218,63 +230,73 @@
 
 /* ─────────────────────────────────────────────
    TYPE SCALE — single source of truth
-   Apply these classes to ALL heading / label
-   elements on the homepage and beyond.
+   --font-brand  h1, h2, identity moments
+   --font-ui     h3+, body, UI everywhere
 ───────────────────────────────────────────── */
 @layer components {
-  /* H1 — hero only */
+
+  /* ── Section titles — brand font, 32–56px ── */
   .ts-h1 {
-    font-family: "Uncut Sans", system-ui, sans-serif;
-    font-size: clamp(2.5rem, 5.5vw, 3.75rem);
-    font-weight: 400;
+    font-family: var(--font-brand);
+    font-size: clamp(2rem, 5.5vw, 3.5rem);   /* 32–56px */
+    font-weight: 600;
     line-height: 1.0;
     letter-spacing: -0.04em;
     color: hsl(var(--foreground));
   }
 
-  /* H2 — every section title */
   .ts-h2 {
-    font-family: "Uncut Sans", system-ui, sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 500;
-    line-height: 1.05;
+    font-family: var(--font-brand);
+    font-size: clamp(2rem, 4vw, 3.5rem);     /* 32–56px */
+    font-weight: 600;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: hsl(var(--foreground));
+  }
+
+  /* ── Card / step titles — UI font, 22–32px ── */
+  .ts-h3 {
+    font-family: var(--font-ui);
+    font-size: clamp(1.375rem, 2vw, 2rem);   /* 22–32px */
+    font-weight: 600;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     color: hsl(var(--foreground));
   }
 
-  /* H3 — step titles, card headlines, sub-section titles */
-  .ts-h3 {
-    font-family: "Uncut Sans", system-ui, sans-serif;
-    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.02em;
+  /* ── Scores — UI font, 48–80px ── */
+  .ts-score {
+    font-family: var(--font-ui);
+    font-size: clamp(3rem, 7vw, 5rem);       /* 48–80px */
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
     color: hsl(var(--foreground));
   }
 
-  /* Eyebrow — section overline (replaces all inline uppercase labels) */
+  /* ── Metadata / labels — UI font, 10–12px ── */
   .ts-eyebrow {
-    font-family: Inter, system-ui, sans-serif;
-    font-size: 0.75rem;
+    font-family: var(--font-ui);
+    font-size: 0.6875rem;                    /* 11px */
     font-weight: 600;
     line-height: 1;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: hsl(var(--muted-foreground));
   }
 
-  /* Caption — meta text, dates, roles, small annotations */
   .ts-caption {
-    font-family: Inter, system-ui, sans-serif;
-    font-size: 0.75rem;
+    font-family: var(--font-ui);
+    font-size: 0.6875rem;                    /* 11px */
     font-weight: 500;
     line-height: 1.4;
     color: hsl(var(--muted-foreground));
   }
 
-  /* Mono badge — savings amounts, technical labels */
+  /* ── Mono badge — prices, savings, technical ── */
   .ts-mono-badge {
     font-family: "DM Mono", ui-monospace, monospace;
-    font-size: 0.7rem;
+    font-size: 0.6875rem;                    /* 11px */
     font-weight: 500;
     letter-spacing: 0.04em;
     text-transform: none;
@@ -319,44 +341,48 @@
      Auto-inverts in dark mode (foreground = near-white bg, bg = near-black text).
      Always left-aligned (parent alignment controls centering).
   ──────────────────────────────────────────────────────────────────── */
+  /* Navigation-weight pill — 13px, weight 600, UI font */
   .section-tag {
     display: inline-block;
-    font-family: Inter, system-ui, sans-serif;
-    font-size: 0.8125rem;
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;                    /* 13px — nav scale */
     font-weight: 600;
     line-height: 1;
-    letter-spacing: 0em;
+    letter-spacing: -0.01em;
     padding: 0.4rem 1rem;
     border-radius: 9999px;
     background: hsl(var(--foreground));
     color: hsl(var(--background));
-    margin-bottom: 1.25rem; /* always 20px gap before h2 */
+    margin-bottom: 1.25rem;
   }
 }
 
 @layer utilities {
-  /* Alias — keep .label-section working, maps to ts-eyebrow values */
+  /* Label inside panels / table columns — 11px, uppercase, UI font */
   .label-section {
-    font-family: Inter, system-ui, sans-serif;
-    font-size: 0.75rem;
+    font-family: var(--font-ui);
+    font-size: 0.6875rem;                    /* 11px */
     font-weight: 600;
     line-height: 1;
-    letter-spacing: 0.02em;
-    text-transform: none;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
     color: hsl(var(--muted-foreground));
   }
 
-  /* Explicit Uncut Sans override */
+  /* Brand font override — logo, wordmark, identity headlines */
   .font-display,
-  .font-heading {
-    font-family: "Uncut Sans", system-ui, sans-serif;
+  .font-heading,
+  .logo,
+  .brand-font,
+  .hero-brand-title {
+    font-family: var(--font-brand);
   }
 
-  /* Tabular numbers for stats / prices */
+  /* Tabular numbers for stats / prices — UI font with tabular variant */
   .num-mono {
-    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-family: var(--font-ui);
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
   }
 
   /* Gradient text accent */

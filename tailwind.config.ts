@@ -16,10 +16,14 @@ export default {
     },
     extend: {
       fontFamily: {
+        /* brand / identity moments */
         display: ['"Uncut Sans"', 'system-ui', 'sans-serif'],
         heading: ['"Uncut Sans"', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        brand:   ['"Uncut Sans"', 'system-ui', 'sans-serif'],
+        /* UI / content — Inter Tight with Inter fallback */
+        sans: ['"Inter Tight"', '"Inter"', 'system-ui', 'sans-serif'],
+        body: ['"Inter Tight"', '"Inter"', 'system-ui', 'sans-serif'],
+        ui:   ['"Inter Tight"', '"Inter"', 'system-ui', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       letterSpacing: {
