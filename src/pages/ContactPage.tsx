@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useForm, ValidationError } from "@formspree/react";
 import { useLang } from "@/hooks/useLang";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { Mail, MessageSquare, Clock, AlertCircle, ArrowRight } from "lucide-react";
-
-const FORMSPREE_ID = "xgodbpgj";
+import { Mail, MessageSquare, Clock, ArrowRight } from "lucide-react";
 
 const ContactPage = () => {
   const { t, lang, prefix } = useLang();
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [state, handleSubmit] = useForm("xgodbpgj");
 
   useEffect(() => {
     const title = t("Contact — ToolTrim", "Contact — ToolTrim");
@@ -21,21 +19,6 @@ const ContactPage = () => {
     setHreflang(`/${lang}/contact`);
     return () => cleanupSeo([]);
   }, [lang, t]);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ ...formData, _language: lang }),
-      });
-      setStatus(res.ok ? "sent" : "error");
-    } catch {
-      setStatus("error");
-    }
-  };
 
   const inputClass =
     "mt-1.5 w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150";
@@ -59,7 +42,7 @@ const ContactPage = () => {
   ];
 
   // ── Success screen ──────────────────────────────────────────────────────────
-  if (status === "sent") {
+  if (state.succeeded) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center py-20">
         <div className="text-center">
@@ -165,18 +148,11 @@ const ContactPage = () => {
                     type="text"
                     required
                     placeholder={t("Votre nom", "Your name")}
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className={inputClass}
-                    onFocus={(e) => {
-                      e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
-                      e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
-                    }}
-                    onBlur={(e) => {
-                      e.currentTarget.style.borderColor = "hsl(var(--border))";
-                      e.currentTarget.style.boxShadow = "none";
-                    }}
+                    onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
+                    onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
                   />
+                  <ValidationError field="name" errors={state.errors} className="mt-1 text-xs text-destructive" />
                 </div>
                 <div>
                   <label htmlFor="contact-email" className="text-sm font-medium text-foreground">
@@ -188,18 +164,11 @@ const ContactPage = () => {
                     type="email"
                     required
                     placeholder="you@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className={inputClass}
-                    onFocus={(e) => {
-                      e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
-                      e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
-                    }}
-                    onBlur={(e) => {
-                      e.currentTarget.style.borderColor = "hsl(var(--border))";
-                      e.currentTarget.style.boxShadow = "none";
-                    }}
+                    onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
+                    onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
                   />
+                  <ValidationError field="email" errors={state.errors} className="mt-1 text-xs text-destructive" />
                 </div>
               </div>
 
@@ -213,18 +182,11 @@ const ContactPage = () => {
                   type="text"
                   required
                   placeholder={t("En quelques mots…", "In a few words…")}
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   className={inputClass}
-                  onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
-                    e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
-                  }}
-                  onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "hsl(var(--border))";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
                 />
+                <ValidationError field="subject" errors={state.errors} className="mt-1 text-xs text-destructive" />
               </div>
 
               <div>
@@ -237,49 +199,27 @@ const ContactPage = () => {
                   required
                   rows={6}
                   placeholder={t("Décrivez votre demande…", "Describe your request…")}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className={`${inputClass} resize-none`}
-                  onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)";
-                    e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)";
-                  }}
-                  onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "hsl(var(--border))";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
                 />
+                <ValidationError field="message" errors={state.errors} className="mt-1 text-xs text-destructive" />
               </div>
 
-              {status === "error" && (
-                <div
-                  className="flex items-start gap-2.5 rounded-lg px-4 py-3 text-sm"
-                  style={{ background: "hsl(var(--destructive) / 0.06)", border: "1px solid hsl(var(--destructive) / 0.2)", color: "hsl(var(--destructive))" }}
-                >
-                  <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-                  <span>
-                    {t(
-                      "Une erreur est survenue. Réessayez ou écrivez directement à ",
-                      "Something went wrong. Try again or email "
-                    )}
-                    <a href="mailto:contact@tooltrim.com" className="font-medium underline underline-offset-2">
-                      contact@tooltrim.com
-                    </a>
-                  </span>
-                </div>
-              )}
+              {/* Form-level errors (network, spam, etc.) */}
+              <ValidationError errors={state.errors} className="block rounded-lg px-4 py-3 text-sm text-destructive" style={{ background: "hsl(var(--destructive) / 0.06)", border: "1px solid hsl(var(--destructive) / 0.2)" }} />
 
               <div className="pt-1">
                 <button
                   type="submit"
-                  disabled={status === "sending"}
+                  disabled={state.submitting}
                   className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
-                  onMouseEnter={(e) => { if (status !== "sending") (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
+                  onMouseEnter={(e) => { if (!state.submitting) (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
                 >
-                  {status === "sending" ? t("Envoi…", "Sending…") : t("Envoyer le message", "Send message")}
-                  {status !== "sending" && <ArrowRight className="h-3.5 w-3.5" />}
+                  {state.submitting ? t("Envoi…", "Sending…") : t("Envoyer le message", "Send message")}
+                  {!state.submitting && <ArrowRight className="h-3.5 w-3.5" />}
                 </button>
               </div>
             </form>
