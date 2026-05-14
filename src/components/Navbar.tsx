@@ -175,12 +175,13 @@ const Navbar = () => {
   return (
     <nav ref={navRef} className="fixed inset-x-0 top-3 z-50 px-3 sm:px-4">
       <div
-        className="mx-auto flex h-[72px] max-w-7xl items-center justify-between rounded-2xl border border-border px-5 sm:px-6"
+        className="mx-auto flex h-[72px] max-w-7xl items-center justify-between rounded-2xl px-5 sm:px-6"
         style={{
-          background: "hsl(var(--background) / 0.72)",
+          background: "hsl(var(--background) / 0.78)",
           backdropFilter: "blur(18px) saturate(1.6)",
           WebkitBackdropFilter: "blur(18px) saturate(1.6)",
-          boxShadow: "0 1px 2px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.55)",
+          border: "1px solid hsl(var(--border) / 0.9)",
+          boxShadow: "0 1px 2px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6)",
         }}
       >
         <Link to={prefix} className="group shrink-0 transition-opacity duration-150 hover:opacity-80" onClick={closeMega}>
@@ -340,7 +341,7 @@ const Navbar = () => {
           <LanguageToggle href={languageHref} lang={lang} otherLang={otherLang} />
           <Link
             to={`${prefix}/selector`}
-            className="ml-2 inline-flex items-center gap-2 rounded-2xl border border-foreground/80 bg-foreground px-4 py-2 text-base font-medium text-background transition-colors hover:bg-foreground/85"
+            className="ml-2 inline-flex shrink-0 items-center gap-2 rounded-2xl border border-foreground/80 bg-foreground px-4 py-2 text-base font-medium text-background whitespace-nowrap transition-colors hover:bg-foreground/85"
           >
             {t("Analyser ma stack", "Analyze my stack")}
             <ArrowRight className="h-3.5 w-3.5" />
