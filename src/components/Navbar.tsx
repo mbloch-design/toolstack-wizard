@@ -1,7 +1,6 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
-  ArrowRight,
   BookOpen,
   ChevronDown,
   Layers,
@@ -483,7 +482,6 @@ const Navbar = () => {
           languageHref={languageHref}
           otherLang={otherLang}
           headerHeight={HEADER_H}
-          shortcutLabel={shortcutLabel}
         />
       )}
 
@@ -517,7 +515,6 @@ function EditoralPanel({
   languageHref,
   otherLang,
   headerHeight,
-  shortcutLabel,
 }: {
   prefix: string;
   lang: string;
@@ -530,26 +527,7 @@ function EditoralPanel({
   languageHref: string;
   otherLang: string;
   headerHeight: number;
-  shortcutLabel: string;
 }) {
-  const navigate = useNavigate();
-  const [query, setQuery] = useState("");
-  const searchRef = useRef<HTMLInputElement>(null);
-
-  /* Focus search on open */
-  useEffect(() => {
-    const id = setTimeout(() => searchRef.current?.focus(), 60);
-    return () => clearTimeout(id);
-  }, []);
-
-  const handleSearch = (e: FormEvent) => {
-    e.preventDefault();
-    if (query.trim().length >= 2) {
-      navigate(`${prefix}/search?q=${encodeURIComponent(query.trim())}`);
-      onClose();
-    }
-  };
-
   const section = SECTIONS.find((s) => s.id === activeSection) ?? SECTIONS[0];
 
   return (
@@ -559,7 +537,7 @@ function EditoralPanel({
         top: `${headerHeight + 8}px`,
         left: "24px",
         right: "24px",
-        maxHeight: `calc(100vh - ${headerHeight + 24}px)`,
+        height: "560px",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
@@ -568,74 +546,6 @@ function EditoralPanel({
       aria-modal="true"
       aria-label={t("Menu exploration", "Exploration menu")}
     >
-      {/* ── Top row ── */}
-      <div className="panel-toprow">
-        {/* Logo */}
-        <Link
-          to={prefix}
-          onClick={onClose}
-          aria-label="ToolTrim"
-          className="shrink-0 transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
-        >
-          <img src={logoToolTrim} alt="ToolTrim" className="site-logo h-[24px] w-auto" />
-        </Link>
-
-        {/* Search */}
-        <form onSubmit={handleSearch} className="flex-1 min-w-0 mx-4 lg:mx-6">
-          <div className="panel-search-wrap">
-            <Search className="panel-search-icon" aria-hidden />
-            <input
-              ref={searchRef}
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={t(
-                "Rechercher des outils, stacks ou alternatives…",
-                "Search tools, stacks or alternatives…"
-              )}
-              className="panel-search-input"
-              autoComplete="off"
-              spellCheck={false}
-            />
-            {query && (
-              <button
-                type="button"
-                onClick={() => { setQuery(""); searchRef.current?.focus(); }}
-                className="flex items-center justify-center w-7 h-7 rounded text-muted-foreground transition-colors hover:text-foreground shrink-0"
-                aria-label={t("Effacer", "Clear")}
-              >
-                <X className="h-3.5 w-3.5" />
-              </button>
-            )}
-            <kbd
-              className="hidden xl:flex items-center gap-0.5 shrink-0 px-2 py-1 rounded text-[10px] font-medium text-muted-foreground"
-              style={{ background: "hsl(var(--secondary))", fontFamily: "var(--font-ui)" }}
-            >
-              {shortcutLabel}
-            </kbd>
-          </div>
-        </form>
-
-        {/* Actions */}
-        <div className="hidden items-center gap-2 sm:flex shrink-0">
-          <Link
-            to={`${prefix}/contact`}
-            onClick={onClose}
-            className="panel-btn-secondary"
-          >
-            {t("Soumettre un outil", "Submit Tool")}
-          </Link>
-          <Link
-            to={`${prefix}/selector`}
-            onClick={onClose}
-            className="panel-btn-primary"
-          >
-            {t("Analyser ma stack", "Analyze my stack")}
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-      </div>
-
       {/* ── Body: left rail + content ── */}
       <div className="panel-body">
         {/* Left nav rail */}
