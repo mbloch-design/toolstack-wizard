@@ -70,7 +70,7 @@ const LangLayout = () => {
     >
       <div className="flex min-h-screen flex-col">
         <Navbar />
-        <main className="flex-1 pt-[88px]">
+        <main className="flex-1 pt-[68px]">
           <Outlet key={effectiveLang} />
         </main>
         <Footer />

@@ -22,7 +22,7 @@ import { SearchModal } from "@/components/SearchModal";
 /* ─────────────────────────────────────────────
    Constants
 ───────────────────────────────────────────── */
-const HEADER_H = 88;   // px
+const HEADER_H = 68;   // px
 
 /* ─────────────────────────────────────────────
    Panel section data
@@ -389,13 +389,13 @@ const Navbar = () => {
             aria-label="ToolTrim home"
             className="shrink-0 transition-opacity duration-150 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
           >
-            <img src={logoToolTrim} alt="ToolTrim" className="site-logo w-auto" style={{ height: 32 }} />
+            <img src={logoToolTrim} alt="ToolTrim" className="site-logo w-auto" style={{ height: 28 }} />
           </Link>
 
           {/* ── Desktop center nav ── */}
           <nav
             className="hidden items-center lg:flex"
-            style={{ gap: 34 }}
+            style={{ gap: 30 }}
             aria-label={t("Navigation principale", "Main navigation")}
           >
             {/* Explorer — panel trigger */}
@@ -407,7 +407,7 @@ const Navbar = () => {
               aria-label={panelOpen ? t("Fermer Explorer", "Close Explorer") : t("Ouvrir Explorer", "Open Explorer")}
             >
               {t("Explorer", "Explorer")}
-              <ChevronDown className={`nav-chevron${panelOpen ? " nav-chevron--open" : ""}`} aria-hidden />
+              <ChevronDown className={`nav-chevron${panelOpen ? " nav-chevron--open" : ""}`} strokeWidth={1.5} aria-hidden />
             </button>
 
             {/* Other nav items */}
@@ -423,7 +423,7 @@ const Navbar = () => {
           </nav>
 
           {/* ── Desktop right controls ── */}
-          <div className="hidden items-center lg:flex" style={{ gap: 12 }}>
+          <div className="hidden items-center lg:flex" style={{ gap: 10 }}>
             {/* Inline search bar */}
             <button
               onClick={() => setSearchOpen(true)}
@@ -779,7 +779,7 @@ function LanguageToggle({ href, lang, otherLang }: { href: string; lang: string;
       aria-label={`Switch to ${otherLang === "en" ? "English" : "Français"}`}
       className="flex items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
       style={{
-        height: 36,
+        height: 32,
         border: "1px solid #DADAD4",
         background: "#F8F8F4",
         borderRadius: 9999,
@@ -794,11 +794,16 @@ function LanguageToggle({ href, lang, otherLang }: { href: string; lang: string;
           className="rounded-full transition-all duration-150"
           style={{
             fontFamily: "var(--font-ui)",
-            fontSize: "0.6875rem",           /* 11px */
+            fontSize: "0.75rem",             /* 12px */
             fontWeight: 600,
-            letterSpacing: "0.05em",
+            letterSpacing: "0.04em",
             textTransform: "uppercase",
-            padding: "4px 10px",
+            height: 26,
+            minWidth: 30,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "0 8px",
             background: lang === item ? "#222222" : "transparent",
             color: lang === item ? "#FFFFFF" : "#9A9A92",
           }}
