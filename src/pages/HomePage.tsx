@@ -117,10 +117,10 @@ const HomePage = () => {
 
   useEffect(() => {
     const title = lang === "fr"
-      ? "ToolTrim — Audit de stack SaaS | Prix réels & alternatives vérifiées"
+      ? "ToolTrim — Audit stack SaaS, prix vérifiés"
       : "ToolTrim — SaaS Stack Audit | Real Pricing & Verified Alternatives";
     const desc = lang === "fr"
-      ? `Tu paies des abonnements que tu n'utilises plus ? ToolTrim analyse ta stack, détecte les doublons et trouve les alternatives moins chères. ${stats.total} outils vérifiés manuellement.`
+      ? `Audit gratuit de ta stack SaaS. ToolTrim détecte les doublons et trouve des alternatives moins chères. ${stats.total} outils vérifiés.`
       : `Paying for tools you don't use? ToolTrim audits your SaaS stack, spots redundant subscriptions, and finds cheaper alternatives. ${stats.total} tools manually verified.`;
     const url = `${SEO_BASE}/${lang}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
