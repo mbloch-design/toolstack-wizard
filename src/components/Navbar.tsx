@@ -156,7 +156,7 @@ const Navbar = () => {
   return (
     <nav ref={navRef} className="fixed inset-x-0 top-3 z-50 px-3 sm:px-4">
       <div
-        className="mx-auto flex h-[68px] max-w-7xl items-center justify-between rounded-2xl border border-border px-5 sm:px-6"
+        className="mx-auto flex h-[72px] max-w-7xl items-center justify-between rounded-2xl border border-border px-5 sm:px-6"
         style={{
           background: "hsl(var(--background) / 0.72)",
           backdropFilter: "blur(18px) saturate(1.6)",
@@ -165,7 +165,7 @@ const Navbar = () => {
         }}
       >
         <Link to={prefix} className="group shrink-0 transition-opacity duration-150 hover:opacity-80" onClick={closeMega}>
-          <img src={logoToolTrim} alt="ToolTrim" className="h-7 w-auto" />
+          <img src={logoToolTrim} alt="ToolTrim" className="h-[30px] w-auto" />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -177,7 +177,7 @@ const Navbar = () => {
           />
           <Link
             to={`${prefix}/stacks`}
-            className={`rounded-lg px-3 py-2 text-[15px] font-normal transition-colors ${
+            className={`rounded-lg px-3 py-2 text-base font-medium transition-colors ${
               isActive(`${prefix}/stacks`) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -185,7 +185,7 @@ const Navbar = () => {
           </Link>
           <Link
             to={`${prefix}/guides`}
-            className={`rounded-lg px-3 py-2 text-[15px] font-normal transition-colors ${
+            className={`rounded-lg px-3 py-2 text-base font-medium transition-colors ${
               isActive(`${prefix}/guides`) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -308,7 +308,7 @@ const Navbar = () => {
           <LanguageToggle href={languageHref} lang={lang} otherLang={otherLang} />
           <Link
             to={`${prefix}/selector`}
-            className="ml-2 inline-flex items-center gap-2 rounded-[10px] border border-foreground/80 bg-foreground px-4 py-2.5 text-[15px] font-medium text-background transition-colors hover:bg-foreground/85"
+            className="ml-2 inline-flex items-center gap-2 rounded-2xl border border-foreground/80 bg-foreground px-4 py-2 text-base font-medium text-background transition-colors hover:bg-foreground/85"
           >
             {t("Analyser ma stack", "Analyze my stack")}
             <ArrowRight className="h-3.5 w-3.5" />
@@ -429,7 +429,7 @@ function DesktopMegaButton({
   return (
     <div onMouseEnter={onEnter} onMouseLeave={onLeave} className="relative">
       <button
-        className={`inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] font-normal transition-colors ${
+        className={`inline-flex items-center gap-1 rounded-lg px-3 py-2 text-base font-medium transition-colors ${
           active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
         }`}
       >

@@ -113,7 +113,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
 
   return (
     <section
-      className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden -mt-[84px] pt-[84px]"
+      className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden -mt-[88px] pt-[88px]"
       style={{ minHeight: "clamp(580px, 88vh, 860px)" }}
     >
       {/* Mesh gradient background — blurry blue/white blobs */}
@@ -224,7 +224,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
           className="mx-auto mt-5 max-w-md"
           style={{
             fontFamily: 'Inter, system-ui, sans-serif',
-            fontSize: "0.95rem",
+            fontSize: "1.125rem",
             lineHeight: 1.65,
             color: "hsl(var(--muted-foreground))",
           }}
