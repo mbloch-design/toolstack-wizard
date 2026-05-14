@@ -26,7 +26,7 @@ import { useCategories, useToolSummaries } from "@/hooks/useSupabaseData";
 import { stripLeadingEmoji } from "@/lib/text";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
-import pictoLogo from "@/assets/picto-logo.svg";
+import logoToolTrim from "@/assets/logo-tooltrim.svg";
 
 type MegaMenu = "explore" | "method" | null;
 
@@ -159,16 +159,8 @@ const Navbar = () => {
         className="mx-auto flex h-[68px] max-w-7xl items-center justify-between rounded-2xl border border-border bg-background px-5 sm:px-6"
         style={{ boxShadow: "0 1px 2px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.07)" }}
       >
-        <Link to={prefix} className="group flex items-center gap-2.5 shrink-0" onClick={closeMega}>
-          <img src={pictoLogo} alt="ToolTrim" className="h-6 w-6 transition-opacity duration-150 group-hover:opacity-80" />
-          <div className="leading-none">
-            <span className="font-display text-[1.08rem] font-semibold tracking-[-0.03em] text-foreground">
-              ToolTrim
-            </span>
-            <span className="ml-2 hidden rounded-full border border-border px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground xl:inline-flex">
-              {tools.length || 314} {t("outils vérifiés", "verified tools")}
-            </span>
-          </div>
+        <Link to={prefix} className="group shrink-0 transition-opacity duration-150 hover:opacity-80" onClick={closeMega}>
+          <img src={logoToolTrim} alt="ToolTrim" className="h-7 w-auto" />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
