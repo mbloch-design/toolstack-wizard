@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { useLang } from "@/hooks/useLang";
-import { setSeoTags, setHreflang, cleanupSeo } from "@/lib/seo";
-import { Mail, MessageSquare, Clock, Send } from "lucide-react";
+import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { Mail, MessageSquare, Clock, Send, AlertCircle } from "lucide-react";
+
+// ── Replace with your Formspree form ID (formspree.io → New Form → copy ID) ──
+const FORMSPREE_ID = "YOUR_FORM_ID";
 
 const ContactPage = () => {
   const { t, lang } = useLang();
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
 
   useEffect(() => {
@@ -14,26 +17,45 @@ const ContactPage = () => {
       "Contactez l'équipe ToolTrim : question, suggestion, partenariat ou correction. Nous répondons sous 48h.",
       "Contact the ToolTrim team: question, suggestion, partnership, or correction. We respond within 48h."
     );
-    setSeoTags({ title, description: desc, url: `https://tooltrim.com/${lang}/contact` });
+    setSeoTags({ title, description: desc, url: `${SEO_BASE}/${lang}/contact` });
     setHreflang(`/${lang}/contact`);
     return () => cleanupSeo([]);
   }, [lang, t]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...formData, _language: lang }),
+      });
+      if (res.ok) {
+        setStatus("sent");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
-  if (sent) {
+  if (status === "sent") {
     return (
       <div className="flex min-h-[60vh] items-center justify-center py-20">
         <div className="text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-accent">
             <Send className="h-7 w-7 text-primary" />
           </div>
-          <h1 className="mt-6 font-heading text-3xl font-bold">{t("Message envoyé !", "Message sent!")}</h1>
+          <h1 className="mt-6 font-display text-3xl font-bold" style={{ letterSpacing: "-0.02em" }}>
+            {t("Message envoyé !", "Message sent!")}
+          </h1>
           <p className="mt-3 text-muted-foreground max-w-sm mx-auto">
-            {t("Nous reviendrons vers vous dans les 48 heures. Merci pour votre confiance.", "We'll get back to you within 48 hours. Thank you for your trust.")}
+            {t(
+              "Nous reviendrons vers vous dans les 48 heures. Merci pour votre confiance.",
+              "We'll get back to you within 48 hours. Thank you for your trust."
+            )}
           </p>
         </div>
       </div>
@@ -61,12 +83,16 @@ const ContactPage = () => {
   return (
     <div className="py-16 md:py-24">
       <div className="container mx-auto max-w-4xl">
+
         {/* Hero */}
         <div className="text-center">
           <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-accent-foreground mb-6">
             Contact
           </span>
-          <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl">
+          <h1
+            className="font-display font-bold tracking-tight"
+            style={{ fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "-0.03em" }}
+          >
             {t("Parlons-en", "Let's talk")}
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
@@ -95,7 +121,9 @@ const ContactPage = () => {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label className="text-sm font-medium">{t("Nom", "Name")}</label>
+                <label htmlFor="contact-name" className="text-sm font-medium">
+                  {t("Nom", "Name")}
+                </label>
                 <input
                   id="contact-name"
                   name="name"
@@ -107,7 +135,7 @@ const ContactPage = () => {
                 />
               </div>
               <div>
-                <label className="text-sm font-medium">Email</label>
+                <label htmlFor="contact-email" className="text-sm font-medium">Email</label>
                 <input
                   id="contact-email"
                   name="email"
@@ -119,8 +147,11 @@ const ContactPage = () => {
                 />
               </div>
             </div>
+
             <div>
-              <label className="text-sm font-medium">{t("Sujet", "Subject")}</label>
+              <label htmlFor="contact-subject" className="text-sm font-medium">
+                {t("Sujet", "Subject")}
+              </label>
               <input
                 id="contact-subject"
                 name="subject"
@@ -131,8 +162,9 @@ const ContactPage = () => {
                 className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20"
               />
             </div>
+
             <div>
-              <label className="text-sm font-medium">Message</label>
+              <label htmlFor="contact-message" className="text-sm font-medium">Message</label>
               <textarea
                 id="contact-message"
                 name="message"
@@ -143,11 +175,26 @@ const ContactPage = () => {
                 className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20 resize-none"
               />
             </div>
+
+            {/* Error state */}
+            {status === "error" && (
+              <div className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+                <AlertCircle className="h-4 w-4 shrink-0" />
+                {t(
+                  "Une erreur est survenue. Réessayez ou écrivez directement à contact@tooltrim.com",
+                  "Something went wrong. Try again or email contact@tooltrim.com directly."
+                )}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full rounded-lg bg-primary py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              disabled={status === "sending"}
+              className="w-full rounded-lg bg-primary py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {t("Envoyer le message →", "Send message →")}
+              {status === "sending"
+                ? t("Envoi en cours…", "Sending…")
+                : t("Envoyer le message →", "Send message →")}
             </button>
           </form>
         </div>
