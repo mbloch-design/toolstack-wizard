@@ -2,7 +2,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState, useCallback, type FormEvent } from "react";
 import {
   ArrowRight,
-  BarChart3,
   BookOpen,
   Layers,
   Moon,
@@ -269,67 +268,50 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    id: "rankings",
-    labelFr: "Classements",
-    labelEn: "Rankings",
-    Icon: BarChart3,
-    columns: [
-      {
-        labelFr: "SCORES",
-        labelEn: "SCORES",
-        links: [
-          { fr: "Meilleurs scores ToolTrim", en: "Best ToolTrim scores", path: "/tools?sort=score" },
-          { fr: "Meilleurs outils gratuits", en: "Best free tools", path: "/tools?filter=free&sort=score" },
-          { fr: "Meilleurs outils IA", en: "Best AI tools", path: "/tools?filter=ai&sort=score" },
-          { fr: "Meilleurs outils solo", en: "Best solo tools", path: "/tools?role=solo&sort=score" },
-        ],
-      },
-      {
-        labelFr: "TENDANCES",
-        labelEn: "TRENDING",
-        links: [
-          { fr: "Populaires cette semaine", en: "Popular this week", path: "/tools?sort=trending" },
-          { fr: "Nouveautés", en: "New arrivals", path: "/tools?sort=newest" },
-          { fr: "Récemment mis à jour", en: "Recently updated", path: "/tools?sort=updated" },
-          { fr: "Les plus comparés", en: "Most compared", path: "/tools?sort=compared" },
-        ],
-      },
-      {
-        labelFr: "VERDICTS",
-        labelEn: "VERDICTS",
-        links: [
-          { fr: "Excellent", en: "Excellent", path: "/tools?verdict=excellent" },
-          { fr: "Très bon", en: "Very good", path: "/tools?verdict=very-good" },
-          { fr: "Bon mais limité", en: "Good but limited", path: "/tools?verdict=limited" },
-          { fr: "À surveiller", en: "Worth watching", path: "/tools?verdict=watch" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "blog",
-    labelFr: "Blog",
-    labelEn: "Blog",
+    id: "guides",
+    labelFr: "Guides",
+    labelEn: "Guides",
     Icon: BookOpen,
     columns: [
       {
-        labelFr: "GUIDES",
-        labelEn: "GUIDES",
+        labelFr: "GUIDES D'ACHAT",
+        labelEn: "BUYING GUIDES",
         links: [
-          { fr: "Guides d'achat", en: "Buying guides", path: "/guides" },
-          { fr: "Comparatifs", en: "Comparisons", path: "/guides" },
-          { fr: "Méthodes", en: "Methods", path: "/guides" },
-          { fr: "Stacks commentées", en: "Stack breakdowns", path: "/guides" },
+          { fr: "Bien choisir son outil", en: "How to choose a tool", path: "/guides" },
+          { fr: "Comparer deux solutions", en: "Compare two solutions", path: "/guides" },
+          { fr: "Comprendre les prix", en: "Understanding pricing", path: "/guides" },
+          { fr: "Éviter les mauvais choix", en: "Avoid bad choices", path: "/guides" },
         ],
       },
       {
-        labelFr: "ÉDITORIAL",
-        labelEn: "EDITORIAL",
+        labelFr: "STACKS COMMENTÉES",
+        labelEn: "STACK BREAKDOWNS",
         links: [
-          { fr: "Sélections ToolTrim", en: "ToolTrim selections", path: "/guides" },
-          { fr: "Analyses", en: "Analysis", path: "/guides" },
-          { fr: "Tendances outils", en: "Tool trends", path: "/guides" },
-          { fr: "Retours d'usage", en: "Usage reviews", path: "/guides" },
+          { fr: "Stack freelance", en: "Freelance stack", path: "/stacks" },
+          { fr: "Stack designer", en: "Designer stack", path: "/stacks" },
+          { fr: "Stack développeur", en: "Developer stack", path: "/stacks" },
+          { fr: "Stack consultant", en: "Consultant stack", path: "/stacks" },
+          { fr: "Stack créateur", en: "Creator stack", path: "/stacks" },
+        ],
+      },
+      {
+        labelFr: "ALTERNATIVES",
+        labelEn: "ALTERNATIVES",
+        links: [
+          { fr: "Alternatives gratuites", en: "Free alternatives", path: "/comparatifs" },
+          { fr: "Alternatives moins chères", en: "Cheaper alternatives", path: "/comparatifs" },
+          { fr: "Alternatives open-source", en: "Open-source alternatives", path: "/comparatifs" },
+          { fr: "Remplacer un outil trop cher", en: "Replace an expensive tool", path: "/comparatifs" },
+        ],
+      },
+      {
+        labelFr: "MÉTHODES",
+        labelEn: "METHODS",
+        links: [
+          { fr: "Construire sa stack", en: "Build your stack", path: "/guides" },
+          { fr: "Auditer ses outils", en: "Audit your tools", path: "/guides" },
+          { fr: "Réduire ses abonnements", en: "Cut subscriptions", path: "/guides" },
+          { fr: "Choisir selon son profil", en: "Choose by profile", path: "/guides" },
         ],
       },
     ],
@@ -386,10 +368,10 @@ const Navbar = () => {
   const isPath = (path: string) => location.pathname.startsWith(path);
 
   const navItems = [
-    { fr: "Outils", en: "Tools", path: `${prefix}/tools` },
+    { fr: "Explorer", en: "Explorer", path: `${prefix}/tools` },
     { fr: "Stacks", en: "Stacks", path: `${prefix}/stacks` },
     { fr: "Alternatives", en: "Alternatives", path: `${prefix}/comparatifs` },
-    { fr: "Catégories", en: "Categories", path: `${prefix}/category` },
+    { fr: "Guides", en: "Guides", path: `${prefix}/guides` },
   ];
 
   return (
