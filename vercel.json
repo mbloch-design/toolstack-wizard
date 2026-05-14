@@ -1,69 +1,7 @@
 {
-  "headers": [
-    {
-      "source": "/(fr|en)/tool/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/(fr|en)/category/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/(fr|en)/comparatif/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/(fr|en)/guide/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/(fr|en)/stacks/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.ahrefs.com https://t.contentsquare.net; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://rtfyfuwfdpnsogovkwai.supabase.co https://www.google-analytics.com https://www.googletagmanager.com https://analytics.ahrefs.com https://*.contentsquare.net; frame-src 'none'; object-src 'none'; base-uri 'self'" }
-      ]
+  "functions": {
+    "api/contact.ts": {
+      "runtime": "edge"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.tooltrim.com" }],
-      "destination": "https://tooltrim.com/:path*",
-      "permanent": true
-    },
-    { "source": "/", "destination": "/fr", "permanent": true },
-    { "source": "/tool/:slug", "destination": "/fr/tool/:slug", "permanent": true },
-    { "source": "/category/:slug", "destination": "/fr/category/:slug", "permanent": true },
-    { "source": "/article/:slug", "destination": "/fr/guide/:slug", "permanent": true },
-    { "source": "/fr/article/:slug", "destination": "/fr/guide/:slug", "permanent": true },
-    { "source": "/en/article/:slug", "destination": "/en/guide/:slug", "permanent": true },
-    { "source": "/en/tool/:slug/prix", "destination": "/en/tool/:slug/pricing", "permanent": true },
-    { "source": "/fr/tool/:slug/pricing", "destination": "/fr/tool/:slug/prix", "permanent": true },
-    { "source": "/methodology", "destination": "/fr/methodology", "permanent": true },
-    { "source": "/blog/:slug", "destination": "/fr/guide/:slug", "permanent": true },
-    { "source": "/blog", "destination": "/fr/guides", "permanent": true },
-    { "source": "/guides", "destination": "/fr/guides", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/fr/:path*", "destination": "/index.html" },
-    { "source": "/en/:path*", "destination": "/index.html" }
-  ]
+  }
 }

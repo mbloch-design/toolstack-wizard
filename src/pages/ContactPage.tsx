@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useForm, ValidationError } from "@formspree/react";
 import { useLang } from "@/hooks/useLang";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { Mail, MessageSquare, Clock, ArrowRight, AlertCircle } from "lucide-react";
 
+type Status = "idle" | "submitting" | "success" | "error";
+
 const ContactPage = () => {
   const { t, lang, prefix } = useLang();
-  const [state, handleSubmit] = useForm("xgodbpgj");
+  const [status, setStatus] = useState<Status>("idle");
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     const title = t("Contact — ToolTrim", "Contact — ToolTrim");
@@ -19,6 +21,34 @@ const ContactPage = () => {
     setHreflang(`/${lang}/contact`);
     return () => cleanupSeo([]);
   }, [lang, t]);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   const inputClass =
     "mt-1.5 w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150";
@@ -42,7 +72,7 @@ const ContactPage = () => {
   ];
 
   // ── Success screen ──────────────────────────────────────────────────────────
-  if (state.succeeded) {
+  if (status === "success") {
     return (
       <div className="flex min-h-[60vh] items-center justify-center py-20">
         <div className="text-center">
@@ -82,13 +112,12 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
 
-      {/* ── Hero — même langage que ToolsPage / CategoryPage ─────────────────── */}
+      {/* ── Hero ─────────────────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden border-b border-border"
         style={{ background: "hsl(230 40% 97%)" }}
       >
         <div className="mx-auto max-w-7xl px-6 py-12">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5" aria-label="Breadcrumb">
             <Link
               to={`${prefix}`}
@@ -136,7 +165,7 @@ const ContactPage = () => {
               {t("Formulaire", "Form")}
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label htmlFor="contact-name" className="text-sm font-medium text-foreground">
@@ -152,7 +181,6 @@ const ContactPage = () => {
                     onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
                     onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
                   />
-                  <ValidationError field="name" errors={state.errors} className="mt-1 text-xs text-destructive" />
                 </div>
                 <div>
                   <label htmlFor="contact-email" className="text-sm font-medium text-foreground">
@@ -168,7 +196,6 @@ const ContactPage = () => {
                     onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
                     onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
                   />
-                  <ValidationError field="email" errors={state.errors} className="mt-1 text-xs text-destructive" />
                 </div>
               </div>
 
@@ -186,7 +213,6 @@ const ContactPage = () => {
                   onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
                   onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
                 />
-                <ValidationError field="subject" errors={state.errors} className="mt-1 text-xs text-destructive" />
               </div>
 
               <div>
@@ -203,11 +229,10 @@ const ContactPage = () => {
                   onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
                   onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
                 />
-                <ValidationError field="message" errors={state.errors} className="mt-1 text-xs text-destructive" />
               </div>
 
-              {/* Form-level errors — uses v3 getFormErrors() (not .filter, which doesn't exist on FormspreeErrors) */}
-              {(state.errors as any)?.getFormErrors?.()?.length > 0 && (
+              {/* Error message */}
+              {status === "error" && (
                 <div
                   className="flex items-start gap-2.5 rounded-lg px-4 py-3 text-sm"
                   style={{ background: "hsl(var(--destructive) / 0.06)", border: "1px solid hsl(var(--destructive) / 0.2)", color: "hsl(var(--destructive))" }}
@@ -228,14 +253,14 @@ const ContactPage = () => {
               <div className="pt-1">
                 <button
                   type="submit"
-                  disabled={state.submitting}
+                  disabled={status === "submitting"}
                   className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
-                  onMouseEnter={(e) => { if (!state.submitting) (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
+                  onMouseEnter={(e) => { if (status !== "submitting") (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
                 >
-                  {state.submitting ? t("Envoi…", "Sending…") : t("Envoyer le message", "Send message")}
-                  {!state.submitting && <ArrowRight className="h-3.5 w-3.5" />}
+                  {status === "submitting" ? t("Envoi…", "Sending…") : t("Envoyer le message", "Send message")}
+                  {status !== "submitting" && <ArrowRight className="h-3.5 w-3.5" />}
                 </button>
               </div>
             </form>
