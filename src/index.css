@@ -34,22 +34,22 @@
 @layer base {
   :root {
     --background: 0 0% 99%;
-    --foreground: 0 0% 9%;
+    --foreground: 214 20% 9%;       /* navy-tinted near-black, inspired by Heyflow #070A0D */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 214 20% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 214 20% 9%;
 
     --primary: 224 76% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 60 5% 96%;         /* warm off-white, Heyflow #F6F6F4 */
+    --secondary-foreground: 214 20% 9%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 60 5% 96%;             /* warm off-white */
+    --muted-foreground: 215 12% 46%;
 
     --accent: 224 76% 95%;
     --accent-foreground: 224 76% 44%;
