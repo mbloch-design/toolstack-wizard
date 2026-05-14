@@ -7,10 +7,9 @@ import { setSeoTags, SEO_BASE } from "@/lib/seo";
 export default function ArticleFacturation() {
   useEffect(() => {
     setSeoTags({
-      title:
-        "Logiciel facturation freelance 2026 : le guide honnête (+ obligation e-invoicing) | tooltrim.com",
+      title: "Facturation freelance 2026 : guide honnête | ToolTrim",
       description:
-        "Comparatif sans filtre des meilleurs outils de facturation pour freelances et TPE en 2026. Shine, Pennylane, Indy, Freebe, Dougs — et tout ce que vous devez savoir sur l'obligation de facturation électronique de septembre 2026.",
+        "Comparatif facturation freelance 2026 : Pennylane, Indy, Freebe, Dougs, Qonto. Guide e-invoicing et meilleurs outils pour freelances et TPE.",
       url: `${SEO_BASE}/fr/guide/outils-facturation-freelance-2026`,
       type: "article",
     });
