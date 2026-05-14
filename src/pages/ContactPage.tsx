@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm, ValidationError } from "@formspree/react";
 import { useLang } from "@/hooks/useLang";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { Mail, MessageSquare, Clock, ArrowRight } from "lucide-react";
+import { Mail, MessageSquare, Clock, ArrowRight, AlertCircle } from "lucide-react";
 
 const ContactPage = () => {
   const { t, lang, prefix } = useLang();
@@ -206,8 +206,24 @@ const ContactPage = () => {
                 <ValidationError field="message" errors={state.errors} className="mt-1 text-xs text-destructive" />
               </div>
 
-              {/* Form-level errors (network, spam, etc.) */}
-              <ValidationError errors={state.errors} className="block rounded-lg px-4 py-3 text-sm text-destructive" style={{ background: "hsl(var(--destructive) / 0.06)", border: "1px solid hsl(var(--destructive) / 0.2)" }} />
+              {/* Form-level errors — filter raw network messages, show friendly fallback */}
+              {state.errors?.filter((e: any) => !e.field).length > 0 && (
+                <div
+                  className="flex items-start gap-2.5 rounded-lg px-4 py-3 text-sm"
+                  style={{ background: "hsl(var(--destructive) / 0.06)", border: "1px solid hsl(var(--destructive) / 0.2)", color: "hsl(var(--destructive))" }}
+                >
+                  <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span>
+                    {t(
+                      "Une erreur est survenue. Réessayez ou écrivez directement à ",
+                      "Something went wrong. Please try again or email "
+                    )}
+                    <a href="mailto:contact@tooltrim.com" className="font-medium underline underline-offset-2">
+                      contact@tooltrim.com
+                    </a>
+                  </span>
+                </div>
+              )}
 
               <div className="pt-1">
                 <button
