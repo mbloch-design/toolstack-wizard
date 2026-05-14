@@ -113,7 +113,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
 
   return (
     <section
-      className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+      className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden -mt-[76px] pt-[76px]"
       style={{ minHeight: "clamp(580px, 88vh, 860px)" }}
     >
       {/* Mesh gradient background — blurry blue/white blobs */}

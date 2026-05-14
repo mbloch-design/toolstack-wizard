@@ -154,8 +154,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav ref={navRef} className="sticky top-0 z-50 border-b border-border bg-background/92 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+    <nav ref={navRef} className="fixed inset-x-0 top-3 z-50 px-3 sm:px-4">
+      <div
+        className="mx-auto flex h-14 max-w-7xl items-center justify-between rounded-2xl border border-border bg-background/97 px-4 sm:px-5 backdrop-blur-xl"
+        style={{ boxShadow: "0 1px 2px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.07)" }}
+      >
         <Link to={prefix} className="group flex items-center gap-2.5 shrink-0" onClick={closeMega}>
           <img src={pictoLogo} alt="ToolTrim" className="h-6 w-6 transition-opacity duration-150 group-hover:opacity-80" />
           <div className="leading-none">
