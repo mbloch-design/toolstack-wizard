@@ -61,7 +61,8 @@
     --input: 220 13% 91%;
     --ring: 224 76% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;    /* 10px — nav links, inputs, small buttons (Heyflow = 10px) */
+    --radius-card: 1.25rem; /* 20px — cards (Heyflow = 20px) */
 
     --savings: 224 76% 50%;
     --savings-foreground: 0 0% 100%;

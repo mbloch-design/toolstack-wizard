@@ -336,7 +336,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
                   <button
                     key={name}
                     onClick={() => { setQuery(name); inputRef.current?.focus(); }}
-                    className="flex items-center gap-2 rounded-xl px-3 py-2.5 text-left text-[13px] font-medium text-foreground transition-colors hover:bg-secondary"
+                    className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-left text-[13px] font-medium text-foreground transition-colors hover:bg-secondary"
                   >
                     {name}
                   </button>

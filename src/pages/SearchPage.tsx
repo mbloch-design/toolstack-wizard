@@ -215,7 +215,7 @@ const SearchPage = () => {
 
           {totalCount === 0 ? (
             /* No results */
-            <div className="rounded-2xl border border-border bg-card px-6 py-12 text-center">
+            <div className="rounded-card border border-border bg-card px-6 py-12 text-center">
               <Search className="mx-auto mb-3 h-8 w-8 text-muted-foreground/40" />
               <p className="font-medium text-foreground">
                 {t("Aucun résultat", "No results")}
@@ -228,7 +228,7 @@ const SearchPage = () => {
               </p>
               <Link
                 to={`${prefix}/tools`}
-                className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
               >
                 {t("Voir tous les outils", "Browse all tools")}
                 <ArrowRight className="h-4 w-4" />
@@ -352,7 +352,7 @@ function ToolCard({
   return (
     <Link
       to={`${prefix}/tool/${tool.slug || tool.id}`}
-      className="group flex items-center gap-3.5 rounded-2xl border border-border bg-card px-4 py-3.5 transition-all hover:border-primary/30 hover:bg-primary/3"
+      className="group flex items-center gap-3.5 rounded-card border border-border bg-card px-4 py-3.5 transition-all hover:border-primary/30 hover:bg-primary/3"
     >
       <ToolLogo tool={tool} size={36} />
       <div className="min-w-0 flex-1">
@@ -378,9 +378,9 @@ function CategoryCard({ cat, prefix, lang }: { cat: any; prefix: string; lang: s
   return (
     <Link
       to={`${prefix}/category/${cat.slug}`}
-      className="group flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3.5 transition-all hover:border-primary/30 hover:bg-primary/3"
+      className="group flex items-center gap-3 rounded-card border border-border bg-card px-4 py-3.5 transition-all hover:border-primary/30 hover:bg-primary/3"
     >
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-primary">
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/8 text-primary">
         <Hash className="h-4 w-4" />
       </div>
       <div className="min-w-0 flex-1">
@@ -398,9 +398,9 @@ function GuideCard({ post, prefix }: { post: any; prefix: string }) {
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
-      className="group flex items-start gap-3.5 rounded-2xl border border-border bg-card px-4 py-3.5 transition-all hover:border-primary/30 hover:bg-primary/3"
+      className="group flex items-start gap-3.5 rounded-card border border-border bg-card px-4 py-3.5 transition-all hover:border-primary/30 hover:bg-primary/3"
     >
-      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-primary">
+      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/8 text-primary">
         <BookOpen className="h-4 w-4" />
       </div>
       <div className="min-w-0 flex-1">

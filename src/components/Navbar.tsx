@@ -326,7 +326,7 @@ const Navbar = () => {
           {/* Search trigger */}
           <button
             onClick={() => setSearchOpen(true)}
-            className="flex items-center gap-2 rounded-xl border border-border/80 bg-secondary/50 px-3 py-1.5 text-sm text-muted-foreground transition-all hover:border-primary/30 hover:bg-secondary hover:text-foreground"
+            className="flex items-center gap-2 rounded-lg border border-border/80 bg-secondary/50 px-3 py-1.5 text-sm text-muted-foreground transition-all hover:border-primary/30 hover:bg-secondary hover:text-foreground"
             aria-label={t("Ouvrir la recherche", "Open search")}
           >
             <Search className="h-3.5 w-3.5 shrink-0" />
