@@ -56,102 +56,157 @@
 ───────────────────────────────────────────── */
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 214 20% 9%;       /* navy-tinted near-black, inspired by Heyflow #070A0D */
+    /* ────────────────────────────────────────────
+       DESIGN TOKENS — Awwwards editorial palette
+       ToolTrim blue is the ONLY accent colour.
+    ──────────────────────────────────────────── */
 
-    --card: 0 0% 100%;
-    --card-foreground: 214 20% 9%;
+    /* ── Page / surface ── */
+    --background: 60 22% 97%;        /* #F8F8F4 — warm editorial off-white */
+    --foreground: 0 0% 13%;          /* #222222 — main text */
+
+    --card: 0 0% 100%;               /* #FFFFFF — pure white cards */
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 214 20% 9%;
+    --popover-foreground: 0 0% 13%;
 
-    --primary: 224 76% 50%;
+    /* ── ToolTrim blue — sole accent, use sparingly ── */
+    --primary: 224 76% 50%;          /* #1E4FCC — active, selected, links, rare CTAs */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 60 5% 96%;         /* warm off-white, Heyflow #F6F6F4 */
-    --secondary-foreground: 214 20% 9%;
+    /* ── Secondary / muted surfaces ── */
+    --secondary: 60 15% 94%;         /* #F1F1EC — secondary surface */
+    --secondary-foreground: 0 0% 13%;
 
-    --muted: 60 5% 96%;             /* warm off-white */
-    --muted-foreground: 215 14% 38%;
+    --muted: 60 15% 94%;             /* #F1F1EC */
+    --muted-foreground: 60 3% 42%;   /* #6F6F68 — metadata */
 
-    --accent: 224 76% 95%;
+    /* ── Accent tint (blue, very light) ── */
+    --accent: 224 76% 96%;           /* near-white blue tint */
     --accent-foreground: 224 76% 44%;
 
+    /* ── Status ── */
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 76% 50%;
+    /* ── Borders ── */
+    --border: 60 7% 84%;             /* #DADAD4 — standard */
+    --input:  60 7% 84%;
+    --ring:   224 76% 50%;           /* ToolTrim blue focus ring */
 
-    --radius: 0.625rem;    /* 10px — nav links, inputs, small buttons (Heyflow = 10px) */
-    --radius-card: 1.25rem; /* 20px — cards (Heyflow = 20px) */
+    /* ── Radius (unchanged — layout step) ── */
+    --radius:      0.625rem;
+    --radius-card: 1.25rem;
 
-    --savings: 224 76% 50%;
+    /* ── Semantic overrides ── */
+    --savings: 224 76% 50%;          /* ToolTrim blue — featured savings */
     --savings-foreground: 0 0% 100%;
     --cancel: 0 72% 55%;
     --cancel-foreground: 0 0% 100%;
     --keep: 142 60% 38%;
     --keep-foreground: 0 0% 100%;
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 9% 38%;
+    /* ── Sidebar ── */
+    --sidebar-background: 60 22% 97%;
+    --sidebar-foreground: 60 3% 42%;
     --sidebar-primary: 224 76% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 0 0% 9%;
-    --sidebar-border: 220 13% 91%;
+    --sidebar-accent: 60 15% 94%;
+    --sidebar-accent-foreground: 0 0% 13%;
+    --sidebar-border: 60 7% 84%;
     --sidebar-ring: 224 76% 50%;
 
     /* ── Font families ── */
     --font-brand: "Uncut Sans", system-ui, sans-serif;
     --font-ui:    "Inter Tight", "Inter", system-ui, sans-serif;
+
+    /* ────────────────────────────────────────────
+       SEMANTIC PALETTE REFERENCE (hex aliases)
+       Use with color: var(--color-*) in custom CSS.
+       For Tailwind, use the tokens above.
+    ──────────────────────────────────────────── */
+    --color-bg:            #F8F8F4;
+    --color-surface:       #FFFFFF;
+    --color-surface-soft:  #F1F1EC;
+
+    --color-text:          #222222;
+    --color-text-strong:   #111111;
+    --color-muted:         #6F6F68;
+    --color-muted-light:   #9A9A92;
+
+    --color-border:        #DADAD4;
+    --color-border-soft:   #E7E7E0;
+    --color-border-strong: #222222;
+
+    --color-hover:         #222222;
+    --color-hover-text:    #FFFFFF;
+
+    --color-accent:        hsl(224 76% 50%);   /* ToolTrim blue */
+    --color-accent-soft:   hsl(224 76% 96%);   /* very light tint */
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 93%;
+    /* Editorial dark — same warm neutrals, darkened */
+    --background: 0 0% 7%;           /* #111111 */
+    --foreground: 60 8% 87%;         /* #DEDED6 — warm near-white */
 
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 93%;
+    --card: 0 0% 10%;                /* #1A1A1A */
+    --card-foreground: 60 8% 87%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 93%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 60 8% 87%;
 
-    --primary: 224 76% 60%;
+    --primary: 224 76% 62%;          /* slightly lighter blue for dark bg */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 9%;
-    --secondary-foreground: 0 0% 88%;
+    --secondary: 0 0% 13%;           /* #222222 */
+    --secondary-foreground: 60 5% 80%;
 
-    --muted: 0 0% 9%;
-    --muted-foreground: 0 0% 62%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 60 3% 55%;   /* #8A8A82 */
 
-    --accent: 224 40% 14%;
+    --accent: 224 40% 16%;
     --accent-foreground: 224 76% 72%;
 
-    --destructive: 0 62% 42%;
+    --destructive: 0 62% 44%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 224 76% 60%;
+    --border: 0 0% 18%;              /* #2E2E2E */
+    --input:  0 0% 18%;
+    --ring:   224 76% 62%;
 
-    --keep: 142 55% 42%;
+    --keep: 142 55% 44%;
     --keep-foreground: 0 0% 100%;
     --cancel: 0 70% 55%;
     --cancel-foreground: 0 0% 100%;
-    --savings: 224 76% 60%;
+    --savings: 224 76% 62%;
     --savings-foreground: 0 0% 100%;
 
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 88%;
-    --sidebar-primary: 224 76% 60%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 60 5% 75%;
+    --sidebar-primary: 224 76% 62%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 9%;
-    --sidebar-accent-foreground: 0 0% 88%;
-    --sidebar-border: 0 0% 13%;
-    --sidebar-ring: 224 76% 60%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 60 5% 80%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 224 76% 62%;
+
+    /* dark mode hex aliases */
+    --color-bg:            #111111;
+    --color-surface:       #1A1A1A;
+    --color-surface-soft:  #222222;
+    --color-text:          #DEDED6;
+    --color-text-strong:   #F0F0EA;
+    --color-muted:         #8A8A82;
+    --color-muted-light:   #5E5E58;
+    --color-border:        #2E2E2E;
+    --color-border-soft:   #262626;
+    --color-border-strong: #DEDED6;
+    --color-hover:         #DEDED6;
+    --color-hover-text:    #111111;
+    --color-accent:        hsl(224 76% 62%);
+    --color-accent-soft:   hsl(224 40% 16%);
   }
 }
 
@@ -329,6 +384,99 @@
 
   .surface-control {
     @apply rounded-lg border border-border bg-background transition-colors duration-150 hover:border-primary/30 hover:bg-primary/5;
+  }
+
+  /* ── Buttons ──────────────────────────────────────────────────────────
+     Primary   — dark fill, high contrast. Default CTA.
+     Secondary — ghost / outline. Low-emphasis actions.
+     Accent    — ToolTrim blue. Reserved for brand-strategic moments only.
+  ──────────────────────────────────────────────────────────────────── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.375rem;          /* 6px */
+    border: 1px solid var(--color-border-strong);
+    background: var(--color-text-strong);
+    color: #FFFFFF;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: background 150ms ease, border-color 150ms ease, opacity 150ms ease;
+    box-shadow: none;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    background: var(--color-text);    /* slightly lighter on hover */
+    border-color: var(--color-text);
+  }
+  .btn-primary:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.375rem;          /* 6px */
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+    box-shadow: none;
+    text-decoration: none;
+  }
+  .btn-secondary:hover {
+    background: var(--color-hover);
+    border-color: var(--color-hover);
+    color: var(--color-hover-text);
+  }
+  .btn-secondary:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .btn-accent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.375rem;          /* 6px */
+    border: 1px solid hsl(var(--primary) / 0.8);
+    background: hsl(var(--primary));
+    color: #FFFFFF;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: background 150ms ease, box-shadow 150ms ease;
+    box-shadow: none;
+    text-decoration: none;
+  }
+  .btn-accent:hover {
+    background: hsl(var(--primary) / 0.88);
+    box-shadow: 0 4px 14px hsl(var(--primary) / 0.25);
+  }
+  .btn-accent:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
   }
 }
 
