@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/contact.ts": {
-      "runtime": "edge"
-    }
-  }
-}
