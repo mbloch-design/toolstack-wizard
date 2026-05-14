@@ -327,6 +327,8 @@ const Navbar = () => {
   const otherLang = lang === "fr" ? "en" : "fr";
   const { theme, toggle: toggleTheme } = useTheme();
   const [panelOpen, setPanelOpen] = useState(false);
+  const [panelMounted, setPanelMounted] = useState(false);
+  const [panelClosing, setPanelClosing] = useState(false);
   const [activeSection, setActiveSection] = useState("explorer");
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -334,6 +336,21 @@ const Navbar = () => {
     typeof navigator !== "undefined" &&
     /Mac|iPhone|iPad/i.test(navigator.platform || navigator.userAgent);
   const shortcutLabel = isMac ? "⌘K" : "Ctrl K";
+
+  /* Manage mount/unmount with enter/exit animation timing */
+  useEffect(() => {
+    if (panelOpen) {
+      setPanelClosing(false);
+      setPanelMounted(true);
+    } else if (panelMounted) {
+      setPanelClosing(true);
+      const timer = setTimeout(() => {
+        setPanelMounted(false);
+        setPanelClosing(false);
+      }, 160); // matches exit animation duration
+      return () => clearTimeout(timer);
+    }
+  }, [panelOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
   /* Keyboard shortcuts */
   useEffect(() => {
@@ -343,26 +360,21 @@ const Navbar = () => {
         setSearchOpen((o) => !o);
       }
       if (e.key === "Escape") {
-        setPanelOpen(false);
-        setSearchOpen(false);
+        if (searchOpen) {
+          setSearchOpen(false);
+        } else {
+          setPanelOpen(false);
+        }
       }
     };
     document.addEventListener("keydown", handler);
     return () => document.removeEventListener("keydown", handler);
-  }, []);
+  }, [searchOpen]);
 
   /* Close on route change */
   useEffect(() => {
     setPanelOpen(false);
   }, [location.pathname]);
-
-  /* Body scroll lock when panel is open */
-  useEffect(() => {
-    document.body.style.overflow = panelOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [panelOpen]);
 
   const languageHref = `/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`;
   const isPath = (path: string) => location.pathname.startsWith(path);
@@ -469,7 +481,7 @@ const Navbar = () => {
       </header>
 
       {/* ── Editorial panel ── */}
-      {panelOpen && (
+      {panelMounted && (
         <EditoralPanel
           prefix={prefix}
           lang={lang}
@@ -482,13 +494,14 @@ const Navbar = () => {
           languageHref={languageHref}
           otherLang={otherLang}
           headerHeight={HEADER_H}
+          closing={panelClosing}
         />
       )}
 
-      {/* Backdrop — closes panel on outside click */}
-      {panelOpen && (
+      {/* Transparent click-catcher — closes panel on outside click, no overlay */}
+      {panelMounted && (
         <div
-          className="fixed inset-0 z-[55]"
+          className="fixed inset-0 z-[45]"
           onClick={() => setPanelOpen(false)}
           aria-hidden
         />
@@ -515,6 +528,7 @@ function EditoralPanel({
   languageHref,
   otherLang,
   headerHeight,
+  closing,
 }: {
   prefix: string;
   lang: string;
@@ -527,12 +541,13 @@ function EditoralPanel({
   languageHref: string;
   otherLang: string;
   headerHeight: number;
+  closing?: boolean;
 }) {
   const section = SECTIONS.find((s) => s.id === activeSection) ?? SECTIONS[0];
 
   return (
     <div
-      className="fixed z-[60] editorial-panel"
+      className={`fixed z-[46] editorial-panel${closing ? " editorial-panel--closing" : " editorial-panel--opening"}`}
       style={{
         top: `${headerHeight + 8}px`,
         left: "24px",

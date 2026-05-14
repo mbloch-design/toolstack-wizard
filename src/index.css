@@ -51,6 +51,17 @@
   100% { opacity: 1; transform: scale(1)    translateY(0px);  }
 }
 
+/* Explorer panel enter / exit */
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes panel-out {
+  from { opacity: 1; transform: translateY(0);    }
+  to   { opacity: 0; transform: translateY(-4px); }
+}
+
 /* ─────────────────────────────────────────────
    DESIGN TOKENS
 ───────────────────────────────────────────── */
@@ -1215,6 +1226,17 @@
     border-color: hsl(0 0% 20%);
   }
 
+  /* Enter: opacity + subtle lift, spring-free ease-out */
+  .editorial-panel--opening {
+    animation: panel-in 210ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Exit: faster, ease-in */
+  .editorial-panel--closing {
+    animation: panel-out 160ms ease-in both;
+    pointer-events: none;
+  }
+
   /* Body layout — fills the whole panel, no top row */
   .panel-body {
     display: flex;
@@ -1305,7 +1327,7 @@
   }
 
   .panel-rail-item:focus-visible {
-    outline: 2px solid hsl(var(--primary));
+    outline: 1px solid hsl(var(--primary));
     outline-offset: -2px;
   }
 
@@ -1379,13 +1401,20 @@
   }
 
   .panel-link:hover {
-    opacity: 0.55;
+    opacity: 0.72;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
   }
 
   .panel-link:focus-visible {
-    outline: 2px solid hsl(var(--primary));
-    outline-offset: 2px;
+    outline: 1px solid #222222;
+    outline-offset: 3px;
     border-radius: 2px;
+  }
+
+  .dark .panel-link:focus-visible {
+    outline-color: hsl(var(--foreground));
   }
 
   .panel-link-text {
