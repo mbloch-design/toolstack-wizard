@@ -49,7 +49,7 @@
     --secondary-foreground: 214 20% 9%;
 
     --muted: 60 5% 96%;             /* warm off-white */
-    --muted-foreground: 215 12% 46%;
+    --muted-foreground: 215 14% 38%;
 
     --accent: 224 76% 95%;
     --accent-foreground: 224 76% 44%;
@@ -71,7 +71,7 @@
     --keep-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 9% 46%;
+    --sidebar-foreground: 220 9% 38%;
     --sidebar-primary: 224 76% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 14% 96%;
@@ -97,7 +97,7 @@
     --secondary-foreground: 0 0% 88%;
 
     --muted: 0 0% 9%;
-    --muted-foreground: 0 0% 50%;
+    --muted-foreground: 0 0% 62%;
 
     --accent: 224 40% 14%;
     --accent-foreground: 224 76% 72%;

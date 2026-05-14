@@ -239,7 +239,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         <div className="relative mt-8 max-w-lg mx-auto">
           <Search
             className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4"
-            style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}
+            style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}
           />
           <input
             id="home-tool-search"
@@ -329,7 +329,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             fontFamily: "'DM Mono', monospace",
             fontSize: "0.68rem",
             letterSpacing: "0.06em",
-            color: "hsl(var(--muted-foreground) / 0.45)",
+            color: "hsl(var(--muted-foreground) / 0.7)",
           }}
         >
           {t(
