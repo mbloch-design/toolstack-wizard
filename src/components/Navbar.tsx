@@ -1,8 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState, useCallback, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   ArrowRight,
   BookOpen,
+  ChevronDown,
   Layers,
   Moon,
   Scale,
@@ -21,7 +22,7 @@ import { SearchModal } from "@/components/SearchModal";
 /* ─────────────────────────────────────────────
    Constants
 ───────────────────────────────────────────── */
-const HEADER_H = 72;   // px
+const HEADER_H = 88;   // px
 
 /* ─────────────────────────────────────────────
    Panel section data
@@ -327,7 +328,7 @@ const Navbar = () => {
   const otherLang = lang === "fr" ? "en" : "fr";
   const { theme, toggle: toggleTheme } = useTheme();
   const [panelOpen, setPanelOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("tools");
+  const [activeSection, setActiveSection] = useState("explorer");
   const [searchOpen, setSearchOpen] = useState(false);
 
   const isMac =
@@ -367,8 +368,7 @@ const Navbar = () => {
   const languageHref = `/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`;
   const isPath = (path: string) => location.pathname.startsWith(path);
 
-  const navItems = [
-    { fr: "Explorer", en: "Explorer", path: `${prefix}/tools` },
+  const secondaryNavItems = [
     { fr: "Stacks", en: "Stacks", path: `${prefix}/stacks` },
     { fr: "Alternatives", en: "Alternatives", path: `${prefix}/comparatifs` },
     { fr: "Guides", en: "Guides", path: `${prefix}/guides` },
@@ -382,73 +382,82 @@ const Navbar = () => {
         style={{ height: `${HEADER_H}px` }}
       >
         <div className="mx-auto flex h-full max-w-[1440px] items-center justify-between header-inner">
-          {/* Logo */}
+
+          {/* ── Logo ── */}
           <Link
             to={prefix}
             aria-label="ToolTrim home"
             className="shrink-0 transition-opacity duration-150 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
           >
-            <img src={logoToolTrim} alt="ToolTrim" className="site-logo h-[26px] w-auto" />
+            <img src={logoToolTrim} alt="ToolTrim" className="site-logo w-auto" style={{ height: 32 }} />
           </Link>
 
-          {/* Desktop nav links */}
-          <nav className="hidden items-center lg:flex" aria-label={t("Navigation", "Main navigation")}>
-            {navItems.map((item) => (
+          {/* ── Desktop center nav ── */}
+          <nav
+            className="hidden items-center lg:flex"
+            style={{ gap: 34 }}
+            aria-label={t("Navigation principale", "Main navigation")}
+          >
+            {/* Explorer — panel trigger */}
+            <button
+              onClick={() => setPanelOpen((o) => !o)}
+              className={`nav-explorer-btn${panelOpen ? " nav-explorer-btn--open" : ""}`}
+              aria-expanded={panelOpen}
+              aria-haspopup="dialog"
+              aria-label={panelOpen ? t("Fermer Explorer", "Close Explorer") : t("Ouvrir Explorer", "Open Explorer")}
+            >
+              {t("Explorer", "Explorer")}
+              <ChevronDown className={`nav-chevron${panelOpen ? " nav-chevron--open" : ""}`} aria-hidden />
+            </button>
+
+            {/* Other nav items */}
+            {secondaryNavItems.map((item) => (
               <Link
                 key={item.fr}
                 to={item.path}
-                className={`nav-link ${isPath(item.path) ? "nav-link--active" : ""}`}
+                className={`nav-link${isPath(item.path) ? " nav-link--active" : ""}`}
               >
                 {lang === "en" ? item.en : item.fr}
               </Link>
             ))}
           </nav>
 
-          {/* Right controls — desktop */}
-          <div className="hidden items-center gap-2 lg:flex">
+          {/* ── Desktop right controls ── */}
+          <div className="hidden items-center lg:flex" style={{ gap: 12 }}>
+            {/* Inline search bar */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="nav-search-btn"
-              aria-label={t("Ouvrir la recherche", "Open search")}
+              className="nav-search-bar"
+              aria-label={t("Rechercher", "Search")}
             >
-              <Search className="h-3.5 w-3.5 shrink-0" />
-              <span className="hidden xl:inline">{t("Rechercher", "Search")}</span>
+              <Search className="nav-search-bar-icon" aria-hidden />
+              <span className="nav-search-placeholder">
+                {t("Rechercher…", "Search…")}
+              </span>
               <kbd className="nav-kbd">{shortcutLabel}</kbd>
             </button>
 
-            <Link to={`${prefix}/contact`} className="nav-action-btn">
+            {/* Submit button */}
+            <Link to={`${prefix}/contact`} className="nav-submit-btn">
               {t("Soumettre un outil", "Submit Tool")}
             </Link>
 
+            {/* Language toggle */}
             <LanguageToggle href={languageHref} lang={lang} otherLang={otherLang} />
-
-            <button
-              onClick={() => setPanelOpen((o) => !o)}
-              className={`nav-menu-btn ${panelOpen ? "nav-menu-btn--open" : ""}`}
-              aria-expanded={panelOpen}
-              aria-label={panelOpen ? t("Fermer le menu", "Close menu") : t("Ouvrir le menu", "Open menu")}
-            >
-              {panelOpen ? <X className="h-3.5 w-3.5 shrink-0" /> : <MenuLines />}
-              <span>{t("Menu", "Menu")}</span>
-            </button>
           </div>
 
-          {/* Mobile right */}
+          {/* ── Mobile right ── */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex h-9 w-9 items-center justify-center rounded border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               aria-label={t("Rechercher", "Search")}
             >
               <Search className="h-4 w-4" />
             </button>
             <button
               onClick={() => setPanelOpen((o) => !o)}
-              className={`flex h-9 items-center gap-2 rounded border px-3 text-[13px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                panelOpen
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-border text-foreground hover:border-foreground"
-              }`}
+              className={`nav-menu-btn${panelOpen ? " nav-menu-btn--open" : ""}`}
               aria-expanded={panelOpen}
               aria-label={panelOpen ? t("Fermer", "Close") : t("Menu", "Menu")}
             >
@@ -456,6 +465,7 @@ const Navbar = () => {
               <span>{t("Menu", "Menu")}</span>
             </button>
           </div>
+
         </div>
       </header>
 
@@ -547,9 +557,9 @@ function EditoralPanel({
       className="fixed z-[60] editorial-panel"
       style={{
         top: `${headerHeight + 8}px`,
-        left: "12px",
-        right: "12px",
-        maxHeight: `calc(100vh - ${headerHeight + 20}px)`,
+        left: "24px",
+        right: "24px",
+        maxHeight: `calc(100vh - ${headerHeight + 24}px)`,
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
@@ -767,22 +777,30 @@ function LanguageToggle({ href, lang, otherLang }: { href: string; lang: string;
       hrefLang={otherLang}
       rel="alternate"
       aria-label={`Switch to ${otherLang === "en" ? "English" : "Français"}`}
-      className="flex items-center rounded-full border border-border transition-colors hover:border-foreground/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-      style={{ padding: "3px" }}
+      className="flex items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      style={{
+        height: 36,
+        border: "1px solid #DADAD4",
+        background: "#F8F8F4",
+        borderRadius: 9999,
+        padding: "3px",
+        gap: 2,
+        flexShrink: 0,
+      }}
     >
       {(["fr", "en"] as const).map((item) => (
         <span
           key={item}
-          className="rounded-full transition-all duration-[180ms]"
+          className="rounded-full transition-all duration-150"
           style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.625rem",
+            fontFamily: "var(--font-ui)",
+            fontSize: "0.6875rem",           /* 11px */
             fontWeight: 600,
-            letterSpacing: "0.06em",
+            letterSpacing: "0.05em",
             textTransform: "uppercase",
-            padding: "3px 8px",
-            background: lang === item ? "hsl(var(--foreground))" : "transparent",
-            color: lang === item ? "hsl(var(--background))" : "hsl(var(--muted-foreground) / 0.5)",
+            padding: "4px 10px",
+            background: lang === item ? "#222222" : "transparent",
+            color: lang === item ? "#FFFFFF" : "#9A9A92",
           }}
         >
           {item}
