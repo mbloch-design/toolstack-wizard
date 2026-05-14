@@ -406,7 +406,7 @@ const Navbar = () => {
             aria-label="ToolTrim home"
             className="shrink-0 transition-opacity duration-150 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
           >
-            <img src={logoToolTrim} alt="ToolTrim" className="h-[26px] w-auto" />
+            <img src={logoToolTrim} alt="ToolTrim" className="site-logo h-[26px] w-auto" />
           </Link>
 
           {/* Desktop nav links */}
@@ -585,7 +585,7 @@ function EditoralPanel({
           aria-label="ToolTrim"
           className="shrink-0 transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
         >
-          <img src={logoToolTrim} alt="ToolTrim" className="h-[24px] w-auto" />
+          <img src={logoToolTrim} alt="ToolTrim" className="site-logo h-[24px] w-auto" />
         </Link>
 
         {/* Search */}

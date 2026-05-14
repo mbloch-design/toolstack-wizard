@@ -481,6 +481,20 @@
 }
 
 /* ─────────────────────────────────────────────
+   LOGO — monochromatic dark ink, inverts on dark bg
+───────────────────────────────────────────── */
+@layer utilities {
+  .site-logo {
+    /* dark ink on light bg — no filter needed */
+  }
+
+  .dark .site-logo {
+    /* invert #222 → #ddd (near-white) for dark mode */
+    filter: invert(1);
+  }
+}
+
+/* ─────────────────────────────────────────────
    NAVIGATION — header, nav links, mega-menu
 ───────────────────────────────────────────── */
 @layer components {
