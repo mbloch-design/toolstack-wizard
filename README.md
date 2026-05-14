@@ -1,73 +1,105 @@
-# Welcome to your Lovable project
+# Tooltrim
 
-## Project info
+Tooltrim helps freelancers, solo founders and creators choose better SaaS tools without getting lost in endless comparisons.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Instead of listing every possible app, Tooltrim focuses on practical recommendations: useful tools, clear use cases, verified pricing, and smarter stacks by profile and workflow.
 
-## How can I edit this code?
+Website: https://tooltrim.com
 
-There are several ways of editing your application.
+## Why Tooltrim exists
 
-**Use Lovable**
+Freelancers and small teams often don’t need more tools.  
+They need better decisions.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+The problem is simple: the SaaS market is noisy. Every tool promises to save time, simplify work, automate tasks, or replace another part of the stack. But in reality, many independents end up with duplicated subscriptions, unclear workflows, overlapping features and monthly costs that quietly grow over time.
 
-Changes made via Lovable will be committed automatically to this repo.
+Tooltrim was created to bring more clarity into that decision process.
 
-**Use your preferred IDE**
+The goal is not to recommend the most popular tool by default.  
+The goal is to help people build a leaner, smarter and more useful stack.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## What Tooltrim helps with
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Tooltrim is designed to help users:
 
-Follow these steps:
+- audit their current SaaS stack
+- identify duplicate or unnecessary tools
+- compare tools by real use case
+- discover practical alternatives
+- understand pricing more clearly
+- build stacks adapted to their profile
+- reduce software overload
+- make better decisions before subscribing
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Who Tooltrim is for
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Tooltrim is mainly built for:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- freelancers
+- solo founders
+- creative directors
+- designers
+- developers
+- consultants
+- content creators
+- small business owners
+- independent operators
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Each profile has different needs. A designer, a developer and a consultant should not receive the same generic list of tools. Tooltrim aims to recommend tools based on actual workflows, not just broad software categories.
 
-**Edit a file directly in GitHub**
+## Core idea
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Tooltrim is built around a simple belief:
 
-**Use GitHub Codespaces**
+> Fewer tools. Better decisions. Smarter stacks.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+A good tool stack should help people work with more clarity, not add another layer of complexity.
 
-## What technologies are used for this project?
+## Current focus
 
-This project is built with:
+Tooltrim currently focuses on:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- SaaS discovery
+- tool comparison
+- stack recommendations
+- pricing clarity
+- freelance workflows
+- productivity tools
+- AI tools
+- business tools
+- creative and technical software
 
-## How can I deploy this project?
+The project is still evolving, with new tools, categories and expert stacks added progressively.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Roadmap
 
-## Can I connect a custom domain to my Lovable project?
+Upcoming improvements may include:
 
-Yes, you can!
+- deeper tool reviews
+- expert stack pages by profession
+- more verified pricing data
+- affiliate and partner integrations
+- tool scoring by use case
+- comparison pages
+- SaaS cost audit features
+- multilingual content
+- stronger filtering by profile, budget and workflow
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## About the founder
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Tooltrim was created by Michael Bloch, a creative director working across branding, design, digital products and event experiences.
+
+After years testing tools for creative work, project management, automation, AI workflows and business operations, Tooltrim was born from a simple observation: choosing the right tool takes too much time, and most comparison platforms create more noise than clarity.
+
+Tooltrim is here to make that choice easier.
+
+## Links
+
+- Website: https://tooltrim.com
+- Founder: https://www.linkedin.com/in/michabloch/
+
+## Status
+
+Tooltrim is an active early-stage project.
+
+The platform is being improved continuously with new tools, better recommendations and more practical stack guides for freelancers and solo operators.
