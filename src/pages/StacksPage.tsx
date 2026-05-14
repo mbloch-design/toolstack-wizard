@@ -313,6 +313,46 @@ const StacksPage = () => {
         )}
         primaryCta={{ label: t("Analyser ma stack", "Analyze my stack"), href: `${prefix}/selector` }}
         secondaryCta={{ label: t("Voir les modèles", "View templates"), href: "#stacks" }}
+        rightModule={
+          <div style={{ paddingTop: 4 }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 14 }}>
+              {t("Profils couverts", "Covered profiles")}
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
+              {(lang === "fr"
+                ? ["Freelance", "Designer", "Consultant", "Ops / COO", "Créateur", "Dev"]
+                : ["Freelance", "Designer", "Consultant", "Ops / COO", "Creator", "Dev"]
+              ).map((p) => (
+                <span
+                  key={p}
+                  style={{
+                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, letterSpacing: "-0.01em",
+                    padding: "5px 12px", border: "1px solid #DADAD4", borderRadius: 6,
+                    background: "#FFFFFF", color: "#222222",
+                  }}
+                >
+                  {p}
+                </span>
+              ))}
+            </div>
+            {/* Budget / savings data mini block */}
+            <div style={{ background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8, padding: "16px 18px" }}>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9A9A92", marginBottom: 12 }}>
+                {t("Données types", "Typical data")}
+              </p>
+              {[
+                { label: t("Budget cible", "Target budget"), value: "45–90€/mois" },
+                { label: t("Doublons probables", "Likely overlaps"), value: t("2–4 outils", "2–4 tools") },
+                { label: t("Stacks disponibles", "Available stacks"), value: `${STACKS.length}` },
+              ].map(({ label, value }) => (
+                <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "6px 0", borderBottom: "1px solid #F0F0EA" }}>
+                  <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68" }}>{label}</span>
+                  <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "#222222" }}>{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        }
       />
 
       <section id="stacks" className="scroll-mt-20 bg-background">

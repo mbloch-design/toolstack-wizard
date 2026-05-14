@@ -2085,19 +2085,35 @@
   .eh-container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 112px 48px 96px;
+    padding: 88px 48px 72px;   /* internal pages — was 112/96 */
   }
 
   @media (max-width: 1023px) {
     .eh-container {
-      padding: 72px 24px 64px;
+      padding: 64px 24px 56px;
     }
   }
 
   @media (max-width: 639px) {
     .eh-container {
-      padding: 64px 20px 56px;
+      padding: 52px 20px 48px;
     }
+  }
+
+  /* ── 2-column layout (when rightModule present) ── */
+  .eh-layout-2col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 64px;
+    align-items: start;
+  }
+
+  @media (max-width: 1023px) {
+    .eh-layout-2col {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .eh-layout-right { display: none; }
   }
 
   /* ── Eyebrow ─────────────────────────────── */
@@ -2142,12 +2158,12 @@
   /* ── Title ───────────────────────────────── */
   .eh-title {
     font-family: var(--font-ui);
-    font-size: clamp(3.25rem, 6.5vw, 7rem);  /* 52px → 112px */
+    font-size: clamp(3.5rem, 5.5vw, 6rem);   /* 56px → 96px — was 52→112px */
     font-weight: 600;
-    line-height: 0.95;
-    letter-spacing: -0.065em;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
     color: #222222;
-    max-width: 1100px;
+    max-width: 820px;
     margin: 0;
   }
 
@@ -2161,21 +2177,21 @@
 
   @media (max-width: 639px) {
     .eh-title {
-      font-size: clamp(2.75rem, 12vw, 3.5rem);  /* 44px → 56px */
-      letter-spacing: -0.05em;
+      font-size: clamp(2.75rem, 11vw, 3.5rem);
+      letter-spacing: -0.045em;
     }
   }
 
   /* ── Description ─────────────────────────── */
   .eh-description {
     font-family: var(--font-ui);
-    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);  /* 17px → 20px */
+    font-size: clamp(1.0625rem, 1.3vw, 1.1875rem);  /* 17px → 19px */
     font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: -0.025em;
-    color: #6F6F68;
-    max-width: 620px;
-    margin: 24px 0 0;
+    line-height: 1.55;
+    letter-spacing: -0.02em;
+    color: #4A4A44;   /* slightly darker than before for readability */
+    max-width: 640px;
+    margin: 28px 0 0;
   }
 
   .dark .eh-description {
@@ -2214,6 +2230,16 @@
   .eh-cta-primary:hover {
     background: #000000;
     border-color: #000000;
+  }
+
+  /* Blue accent CTA — homepage only */
+  .eh-cta-primary--accent {
+    background: hsl(var(--primary));
+    border-color: hsl(var(--primary));
+  }
+  .eh-cta-primary--accent:hover {
+    background: hsl(var(--primary) / 0.88);
+    border-color: hsl(var(--primary) / 0.88);
   }
 
   .dark .eh-cta-primary {
@@ -2312,15 +2338,17 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-top: 96px;
+    padding-bottom: 80px;
   }
 
-  .eh-root--centered .eh-title,
-  .eh-root--centered .eh-description {
-    max-width: 760px;
+  .eh-root--centered .eh-title {
+    max-width: 880px;
+    font-size: clamp(3.5rem, 6vw, 6.5rem); /* homepage can go a touch larger */
   }
 
   .eh-root--centered .eh-description {
-    max-width: 560px;
+    max-width: 580px;
   }
 
   .eh-root--centered .eh-meta {
@@ -2329,13 +2357,13 @@
 
   /* ── Compact variant (tool detail, category) */
   .eh-root--compact .eh-container {
-    padding-top: 72px;
-    padding-bottom: 56px;
+    padding-top: 64px;
+    padding-bottom: 52px;
   }
 
   .eh-root--compact .eh-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);  /* 40px → 72px */
-    letter-spacing: -0.055em;
+    font-size: clamp(2.25rem, 4.5vw, 4rem);
+    letter-spacing: -0.05em;
   }
 }
 

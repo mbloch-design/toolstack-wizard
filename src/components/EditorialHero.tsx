@@ -3,8 +3,10 @@ import type { ReactNode } from "react";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    EditorialHero — universal page hero for ToolTrim
-   Replaces the old PageHero (dotted grid + blue gradient) across all pages.
-   Uses only typography, spacing and thin borders — no decorative visuals.
+   - Default: left-aligned, internal-page padding (88px/72px)
+   - centered: homepage layout (96px/80px, center-aligned)
+   - compact: smaller title + reduced padding (tool/category pages)
+   - rightModule: shows a contextual module in the right column on desktop
 ───────────────────────────────────────────────────────────────────────────── */
 
 export interface HeroCtaProps {
@@ -25,8 +27,6 @@ export interface EditorialHeroProps {
   badge?: string;
   /** Main headline — can include <br /> or JSX for line breaks */
   title: ReactNode;
-  /** Optional blue-accented word or phrase injected into the title */
-  titleAccent?: string;
   /** Subtitle / description */
   description?: ReactNode;
   /** Dark filled CTA */
@@ -37,29 +37,21 @@ export interface EditorialHeroProps {
   meta?: HeroMetaItem[];
   /** Breadcrumb trail */
   breadcrumb?: { label: string; href?: string }[];
-  /** Center-aligns content — for homepage only */
+  /** Center-aligns content — homepage only */
   centered?: boolean;
-  /** Compact size — for category / tool detail pages */
+  /** Compact size — tool detail / category pages */
   compact?: boolean;
-  /** Custom content below description + CTAs (e.g. search bar) */
+  /** Custom content below CTAs */
   children?: ReactNode;
+  /** Contextual module — renders in right column on desktop */
+  rightModule?: ReactNode;
 }
 
-/* ── Helper: CTA button ──────────────────────────────────────────────────── */
-function CtaButton({
-  cta,
-  variant,
-}: {
-  cta: HeroCtaProps;
-  variant: "primary" | "secondary";
-}) {
+/* ── CTA button ──────────────────────────────────────────────────────────── */
+function CtaButton({ cta, variant }: { cta: HeroCtaProps; variant: "primary" | "secondary" }) {
   const cls = variant === "primary" ? "eh-cta-primary" : "eh-cta-secondary";
   if (cta.href) {
-    return (
-      <Link to={cta.href} className={cls}>
-        {cta.label}
-      </Link>
-    );
+    return <Link to={cta.href} className={cls}>{cta.label}</Link>;
   }
   return (
     <button type="button" onClick={cta.onClick} className={cls}>
@@ -68,34 +60,20 @@ function CtaButton({
   );
 }
 
-/* ── Helper: Breadcrumb ──────────────────────────────────────────────────── */
-function HeroBreadcrumb({
-  items,
-}: {
-  items: { label: string; href?: string }[];
-}) {
+/* ── Breadcrumb ──────────────────────────────────────────────────────────── */
+function HeroBreadcrumb({ items }: { items: { label: string; href?: string }[] }) {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="mb-8 flex items-center gap-2"
-      style={{
-        fontFamily: "var(--font-ui)",
-        fontSize: 14,
-        color: "#6F6F68",
-      }}
+      style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#6F6F68", display: "flex", alignItems: "center", gap: 8, marginBottom: 24 }}
     >
       {items.map((item, i) => (
-        <span key={i} className="flex items-center gap-2">
-          {i > 0 && (
-            <span aria-hidden style={{ color: "#DADAD4", fontSize: 12 }}>
-              /
-            </span>
-          )}
+        <span key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          {i > 0 && <span aria-hidden style={{ color: "#DADAD4", fontSize: 12 }}>/</span>}
           {item.href ? (
-            <Link
-              to={item.href}
-              className="transition-opacity hover:opacity-70"
-              style={{ color: "#6F6F68", textDecoration: "none" }}
+            <Link to={item.href} style={{ color: "#6F6F68", textDecoration: "none", transition: "opacity 120ms" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = "0.6"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
             >
               {item.label}
             </Link>
@@ -121,64 +99,54 @@ export function EditorialHero({
   centered = false,
   compact = false,
   children,
+  rightModule,
 }: EditorialHeroProps) {
   const rootCls = [
     "eh-root",
     centered ? "eh-root--centered" : "",
     compact  ? "eh-root--compact"  : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
+  ].filter(Boolean).join(" ");
 
   const hasCta = primaryCta || secondaryCta;
+  const has2Col = !!rightModule && !centered;
+
+  const mainContent = (
+    <>
+      {breadcrumb && breadcrumb.length > 0 && <HeroBreadcrumb items={breadcrumb} />}
+      {eyebrow && <span className="eh-eyebrow">{eyebrow}</span>}
+      {badge && <div><span className="eh-badge">{badge}</span></div>}
+      <h1 className="eh-title">{title}</h1>
+      {description && <p className="eh-description">{description}</p>}
+      {hasCta && (
+        <div className="eh-cta-group">
+          {primaryCta && <CtaButton cta={primaryCta} variant="primary" />}
+          {secondaryCta && <CtaButton cta={secondaryCta} variant="secondary" />}
+        </div>
+      )}
+      {children && <div className="eh-body">{children}</div>}
+      {meta && meta.length > 0 && (
+        <div className="eh-meta">
+          {meta.map((item) => (
+            <div key={item.label} className="eh-meta-item">
+              <span className="eh-meta-label">{item.label}</span>
+              <span className="eh-meta-value">{item.value}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </>
+  );
 
   return (
     <section className={rootCls}>
       <div className="eh-container">
-        {/* Breadcrumb */}
-        {breadcrumb && breadcrumb.length > 0 && (
-          <HeroBreadcrumb items={breadcrumb} />
-        )}
-
-        {/* Eyebrow */}
-        {eyebrow && <span className="eh-eyebrow">{eyebrow}</span>}
-
-        {/* Badge */}
-        {badge && <div><span className="eh-badge">{badge}</span></div>}
-
-        {/* Title */}
-        <h1 className="eh-title">{title}</h1>
-
-        {/* Description */}
-        {description && (
-          <p className="eh-description">{description}</p>
-        )}
-
-        {/* CTA group */}
-        {hasCta && (
-          <div className="eh-cta-group">
-            {primaryCta && (
-              <CtaButton cta={primaryCta} variant="primary" />
-            )}
-            {secondaryCta && (
-              <CtaButton cta={secondaryCta} variant="secondary" />
-            )}
+        {has2Col ? (
+          <div className="eh-layout-2col">
+            <div className="eh-layout-left">{mainContent}</div>
+            <div className="eh-layout-right">{rightModule}</div>
           </div>
-        )}
-
-        {/* Custom children (search, filters, etc.) */}
-        {children && <div className="eh-body">{children}</div>}
-
-        {/* Metadata bar */}
-        {meta && meta.length > 0 && (
-          <div className="eh-meta">
-            {meta.map((item) => (
-              <div key={item.label} className="eh-meta-item">
-                <span className="eh-meta-label">{item.label}</span>
-                <span className="eh-meta-value">{item.value}</span>
-              </div>
-            ))}
-          </div>
+        ) : (
+          mainContent
         )}
       </div>
     </section>

@@ -125,6 +125,40 @@ const ComparesIndexPage = () => {
           { label: t("PRIX VÉRIFIÉS", "VERIFIED PRICING"), value: "✓" },
           { label: t("VERDICTS", "VERDICTS"), value: "ToolTrim" },
         ]}
+        rightModule={
+          <div style={{ paddingTop: 4 }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 14 }}>
+              {t("Comparatifs populaires", "Popular comparisons")}
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {[
+                { slugPair: "notion-vs-coda", a: "Notion", b: "Coda" },
+                { slugPair: "zapier-vs-make", a: "Zapier", b: "Make" },
+                { slugPair: "figma-vs-canva", a: "Figma", b: "Canva" },
+                { slugPair: "linear-vs-jira", a: "Linear", b: "Jira" },
+                { slugPair: "github-copilot-vs-cursor", a: "Copilot", b: "Cursor" },
+              ].map(({ slugPair, a, b }) => (
+                <Link
+                  key={slugPair}
+                  to={`${prefix}/comparatif/${slugPair}`}
+                  style={{
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    padding: "10px 14px",
+                    background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
+                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
+                    color: "#222222", textDecoration: "none",
+                    transition: "border-color 160ms ease-out",
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                >
+                  <span>{a} <span style={{ color: "#ADADAD", fontWeight: 400 }}>vs</span> {b}</span>
+                  <ArrowRight style={{ width: 12, height: 12, color: "#ADADAD", flexShrink: 0 }} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        }
       />
 
       <main className="px-4 md:px-8 pb-20 max-w-7xl mx-auto space-y-16">

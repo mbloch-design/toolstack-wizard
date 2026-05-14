@@ -96,7 +96,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
 
         {/* CTA group */}
         <div className="eh-cta-group" style={{ justifyContent: "center", marginTop: 36 }}>
-          <Link to={`${prefix}/selector`} className="eh-cta-primary">
+          <Link to={`${prefix}/selector`} className="eh-cta-primary eh-cta-primary--accent">
             {t("Analyser ma stack", "Analyze my stack")}
           </Link>
           <Link to={`${prefix}/tools`} className="eh-cta-secondary">
@@ -105,7 +105,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         </div>
 
         {/* ── Search module ── */}
-        <div className="eh-body" style={{ width: "100%", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
+        <div className="eh-body" style={{ width: "100%", maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
           {/* Search input */}
           <div style={{ position: "relative" }}>
             <Search
@@ -129,26 +129,32 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleSearchKey}
-              placeholder={t("Rechercher un outil…", "Search for a tool…")}
+              placeholder={t(
+                "Rechercher un outil, une alternative, une stack…",
+                "Search a tool, an alternative, a stack…"
+              )}
               style={{
                 width: "100%",
-                height: 48,
-                paddingLeft: 44,
+                height: 54,
+                paddingLeft: 46,
                 paddingRight: 16,
                 background: "#FFFFFF",
                 border: "1px solid #DADAD4",
-                borderRadius: 8,
+                borderRadius: 10,
                 fontFamily: "var(--font-ui)",
                 fontSize: 15,
                 color: "#222222",
                 outline: "none",
                 transition: "border-color 160ms ease-out",
+                boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
               }}
               onFocus={(e) => {
-                e.currentTarget.style.borderColor = "#222222";
+                e.currentTarget.style.borderColor = "hsl(var(--primary))";
+                e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.12)";
               }}
               onBlur={(e) => {
                 e.currentTarget.style.borderColor = "#DADAD4";
+                e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,0,0,0.04)";
               }}
             />
           </div>
@@ -229,29 +235,24 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
           )}
         </div>
 
-        {/* Metadata bar */}
-        <div className="eh-meta" style={{ justifyContent: "center", marginTop: 40 }}>
-          {toolCount > 0 && (
-            <div className="eh-meta-item">
-              <span className="eh-meta-label">{t("OUTILS", "TOOLS")}</span>
-              <span className="eh-meta-value">{toolCount.toLocaleString()}</span>
-            </div>
-          )}
-          {freeCount > 0 && (
-            <div className="eh-meta-item">
-              <span className="eh-meta-label">{t("PLANS GRATUITS", "FREE PLANS")}</span>
-              <span className="eh-meta-value">{freeCount.toLocaleString()}</span>
-            </div>
-          )}
-          <div className="eh-meta-item">
-            <span className="eh-meta-label">{t("MISE À JOUR", "UPDATED")}</span>
-            <span className="eh-meta-value">{t("Chaque semaine", "Weekly")}</span>
-          </div>
-          <div className="eh-meta-item">
-            <span className="eh-meta-label">{t("SOURCE", "SOURCE")}</span>
-            <span className="eh-meta-value">{t("Indépendant", "Independent")}</span>
-          </div>
-        </div>
+        {/* Trust / data line */}
+        {toolCount > 0 && (
+          <p
+            style={{
+              marginTop: 28,
+              fontFamily: "var(--font-ui)",
+              fontSize: 12,
+              color: "#9A9A92",
+              letterSpacing: "0.04em",
+              textAlign: "center",
+            }}
+          >
+            {toolCount.toLocaleString()}{" "}
+            {t("outils couverts", "tools covered")}{" · "}
+            {t("prix vérifiés", "verified pricing")}{" · "}
+            {t("recommandations indépendantes", "independent recommendations")}
+          </p>
+        )}
 
       </div>
     </section>

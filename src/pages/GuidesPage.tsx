@@ -63,6 +63,53 @@ const GuidesPage = () => {
         )}
         primaryCta={{ label: t("Lire les guides", "Read the guides"), href: `#guides` }}
         secondaryCta={{ label: t("Explorer ToolTrim", "Explore ToolTrim"), href: `${prefix}/tools` }}
+        rightModule={
+          <div style={{ paddingTop: 4 }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 14 }}>
+              {t("Index des guides", "Guide index")}
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {(lang === "fr"
+                ? [
+                    { key: null,                     label: "Tous les guides" },
+                    { key: "Guides d'achat",          label: "Guides d'achat" },
+                    { key: "Stacks commentées",       label: "Stacks commentées" },
+                    { key: "Alternatives",            label: "Alternatives moins chères" },
+                    { key: "Méthodes",                label: "Méthodes" },
+                  ]
+                : [
+                    { key: null,                     label: "All guides" },
+                    { key: "Buying guides",          label: "Buying guides" },
+                    { key: "Annotated stacks",       label: "Annotated stacks" },
+                    { key: "Alternatives",           label: "Cheaper alternatives" },
+                    { key: "Methods",                label: "Methods" },
+                  ]
+              ).map(({ key, label }) => (
+                <a
+                  key={label}
+                  href="#guides"
+                  onClick={(e) => { e.preventDefault(); setActiveCategory(key); document.getElementById("guides")?.scrollIntoView({ behavior: "smooth" }); }}
+                  style={{
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    padding: "10px 14px",
+                    background: activeCategory === key ? "#222222" : "#FFFFFF",
+                    border: `1px solid ${activeCategory === key ? "#222222" : "#DADAD4"}`,
+                    borderRadius: 8,
+                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
+                    color: activeCategory === key ? "#FFFFFF" : "#222222",
+                    textDecoration: "none", cursor: "pointer",
+                    transition: "all 160ms ease-out",
+                  }}
+                  onMouseEnter={e => { if (activeCategory !== key) (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
+                  onMouseLeave={e => { if (activeCategory !== key) (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                >
+                  <span>{label}</span>
+                  <ArrowRight style={{ width: 12, height: 12, color: activeCategory === key ? "#FFFFFF" : "#ADADAD", flexShrink: 0 }} />
+                </a>
+              ))}
+            </div>
+          </div>
+        }
       />
 
       {/* Persona pillar guides */}
