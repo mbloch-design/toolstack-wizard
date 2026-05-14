@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { getCategoryIcon } from "@/lib/categoryIcons";
-import PageHero from "@/components/PageHero";
+import EditorialHero from "@/components/EditorialHero";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import {
   ArrowRight,
@@ -12,7 +12,6 @@ import {
   Bot,
   Boxes,
   Clock3,
-  LayoutGrid,
   Lightbulb,
   PiggyBank,
   RefreshCw,
@@ -257,33 +256,27 @@ const CategoriesIndexPage = () => {
 
   return (
     <div className="min-h-screen">
-      <PageHero
+      <EditorialHero
         breadcrumb={[
           { label: t("Outils", "Tools"), href: `${prefix}/tools` },
           { label: t("Catégories", "Categories") },
         ]}
         eyebrow={t("Catégories", "Categories")}
-        icon={<LayoutGrid className="h-3.5 w-3.5" />}
-        title={t("Explorer les outils par usage", "Explore tools by use case")}
+        title={
+          <>
+            {t("Explorer les outils", "Explore tools")}<br />
+            {t("par usage.", "by use case.")}
+          </>
+        }
         description={t(
           `${categories.length} catégories pour comparer ${tools.length}+ outils SaaS par besoin.`,
           `${categories.length} categories to compare ${tools.length}+ SaaS tools by need.`
         )}
-        actions={
-          <>
-            <Link to={`${prefix}/tools`} className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5">
-              {t("Voir tous les outils", "See all tools")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link to={`${prefix}/stacks`} className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
-              {t("Voir les stacks types", "See stack templates")}
-              <Boxes className="h-4 w-4" />
-            </Link>
-          </>
-        }
-        stats={[
-          { value: categories.length, label: t("catégories", "categories") },
-          { value: tools.length, label: t("outils", "tools"), tone: "primary" },
+        primaryCta={{ label: t("Tous les outils", "All tools"), href: `${prefix}/tools` }}
+        secondaryCta={{ label: t("Voir les stacks", "See stacks"), href: `${prefix}/stacks` }}
+        meta={[
+          { label: t("CATÉGORIES", "CATEGORIES"), value: categories.length },
+          { label: t("OUTILS", "TOOLS"), value: `${tools.length}+` },
         ]}
       />
 

@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Boxes, Check, ChevronDown, Search, X } from "lucide-react";
+import { Check, ChevronDown, Search, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import PageHero from "@/components/PageHero";
-import { Button } from "@/components/ui/button";
+import EditorialHero from "@/components/EditorialHero";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
@@ -299,29 +298,21 @@ const StacksPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <PageHero
-        maxWidth="xl"
-        breadcrumb={[{ label: t("Stacks types", "Stack templates") }]}
+      <EditorialHero
         eyebrow={t("Stacks types", "Stack templates")}
-        icon={<Boxes className="h-3.5 w-3.5" />}
-        title={t("Comparer des stacks types, pas collectionner des outils", "Compare stack templates, not tool collections")}
-        description={t(
-          "Chaque stack part d'un contexte concret : ce qu'il faut couvrir, le budget cible, les doublons probables et les outils à challenger.",
-          "Each stack starts from a concrete context: what to cover, target budget, likely overlaps, and tools to challenge."
-        )}
-        actions={
+        title={
           <>
-            <Button asChild size="lg" className="rounded-lg">
-              <Link to={`${prefix}/selector`}>
-                {t("Analyser ma stack actuelle", "Analyze my current stack")}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-lg">
-              <a href="#stacks">{t("Voir les modèles", "View templates")}</a>
-            </Button>
+            {t("Comparer des stacks types.", "Compare stack templates.")}
+            <br />
+            {t("Pas collectionner des outils.", "Not collect tools.")}
           </>
         }
+        description={t(
+          "Chaque stack part d'un contexte concret : profil, budget, usages, doublons probables et outils à challenger.",
+          "Each stack starts from a concrete context: profile, budget, use cases, likely overlaps, and tools to challenge.",
+        )}
+        primaryCta={{ label: t("Analyser ma stack", "Analyze my stack"), href: `${prefix}/selector` }}
+        secondaryCta={{ label: t("Voir les modèles", "View templates"), href: "#stacks" }}
       />
 
       <section id="stacks" className="scroll-mt-20 bg-background">

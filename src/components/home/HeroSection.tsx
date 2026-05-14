@@ -1,84 +1,28 @@
 import { useState, useMemo, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { Search } from "lucide-react";
 import { getToolDomain } from "@/lib/toolUtils";
+import ToolLogo from "@/components/ToolLogo";
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   HeroSection — homepage hero, editorial redesign.
+   No floating logos. No gradient. No dotted grid.
+   Clean off-white surface, large typographic title, quiet search.
+───────────────────────────────────────────────────────────────────────────── */
 
 const FEATURED_SLUGS = [
   "figma", "notion", "slack", "hubspot", "zapier",
-  "stripe", "linear", "asana", "airtable", "loom",
+  "stripe", "linear", "framer", "airtable", "webflow",
   "intercom", "calendly",
-];
-
-const BRAND_ICONS: Record<string, string> = {
-  airtable: "airtable",
-  asana: "asana",
-  calendly: "calendly",
-  figma: "figma",
-  hubspot: "hubspot",
-  intercom: "intercom",
-  linear: "linear",
-  loom: "loom",
-  notion: "notion",
-  slack: "slack",
-  stripe: "stripe",
-  zapier: "zapier",
-};
-
-const BRAND_COLORS: Record<string, string> = {
-  airtable: "18BFFF",
-  asana: "F06A6A",
-  calendly: "006BFF",
-  figma: "F24E1E",
-  hubspot: "FF5C35",
-  intercom: "0A7CFF",
-  linear: "5E6AD2",
-  loom: "625DF5",
-  notion: "111111",
-  slack: "4A154B",
-  stripe: "635BFF",
-  zapier: "FF4F00",
-};
-
-const getBrandIcon = (key?: string) => {
-  if (!key) return "";
-  const normalized = key.replace(/^www\./, "").split(".")[0].toLowerCase();
-  const icon = BRAND_ICONS[normalized];
-  if (!icon) return "";
-  return `https://cdn.simpleicons.org/${icon}/${BRAND_COLORS[normalized] || "111111"}`;
-};
-
-// Floating brand marks. We avoid Google favicon, which can emit noisy 404s.
-// floatDelay = continuous bob offset, revealDelay = staggered entrance
-type FloatingLogo = {
-  domain: string;
-  label: string;
-  top: string;
-  left?: string;
-  right?: string;
-  size: number;
-  floatDuration: string;
-  floatDelay: string;
-  revealDelay: string;
-};
-
-const FLOAT_LOGOS: FloatingLogo[] = [
-  { domain: "notion.so", label: "Notion", top: "12%", left: "5%", size: 56, floatDuration: "4.4s", floatDelay: "0s", revealDelay: "0.15s" },
-  { domain: "hubspot.com", label: "HubSpot", top: "44%", left: "2%", size: 72, floatDuration: "5.1s", floatDelay: "1.2s", revealDelay: "0.45s" },
-  { domain: "stripe.com", label: "Stripe", top: "74%", left: "6%", size: 58, floatDuration: "4.7s", floatDelay: "2.0s", revealDelay: "0.75s" },
-  { domain: "figma.com", label: "Figma", top: "10%", right: "5%", size: 72, floatDuration: "4.9s", floatDelay: "0.5s", revealDelay: "0.10s" },
-  { domain: "zapier.com", label: "Zapier", top: "46%", right: "2%", size: 60, floatDuration: "5.3s", floatDelay: "1.7s", revealDelay: "0.50s" },
-  { domain: "linear.app", label: "Linear", top: "76%", right: "5%", size: 64, floatDuration: "4.2s", floatDelay: "0.9s", revealDelay: "0.80s" },
-  { domain: "airtable.com", label: "Airtable", top: "4%", left: "22%", size: 44, floatDuration: "3.9s", floatDelay: "1.5s", revealDelay: "0.30s" },
-  { domain: "intercom.com", label: "Intercom", top: "4%", right: "22%", size: 44, floatDuration: "4.6s", floatDelay: "0.3s", revealDelay: "0.20s" },
 ];
 
 const HeroSection = ({ toolCount }: { toolCount: number }) => {
   const { lang, t, prefix } = useLang();
   const { tools } = useToolSummaries();
-  const navigate = useNavigate();
-  const [query, setQuery] = useState("");
+  const navigate  = useNavigate();
+  const [query, setQuery]   = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const featuredTools = useMemo(() => {
@@ -94,9 +38,10 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
     if (!query.trim() || query.length < 2) return [];
     const q = query.toLowerCase();
     return tools
-      .filter((t) =>
-        (t.name ?? "").toLowerCase().includes(q) ||
-        (t.slug || t.id || "").toLowerCase().includes(q)
+      .filter(
+        (t) =>
+          (t.name ?? "").toLowerCase().includes(q) ||
+          (t.slug || t.id || "").toLowerCase().includes(q),
       )
       .slice(0, 8);
   }, [query, tools]);
@@ -108,201 +53,206 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
   };
 
   const handleSearchKey = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && displayedTools.length > 0) handleToolClick(displayedTools[0]);
+    if (e.key === "Enter" && displayedTools.length > 0)
+      handleToolClick(displayedTools[0]);
   };
+
+  /* Free tools count — rough heuristic from tool data */
+  const freeCount = useMemo(
+    () => tools.filter((t) => (t as any).defaultMonthlyPrice === 0).length,
+    [tools],
+  );
 
   return (
     <section
-      className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden -mt-[88px] pt-[88px]"
-      style={{ minHeight: "clamp(580px, 88vh, 860px)" }}
+      className="eh-root eh-root--centered"
+      style={{ minHeight: "clamp(520px, 82vh, 800px)", display: "flex", alignItems: "center" }}
     >
-      {/* Mesh gradient background — light/dark variants via CSS class */}
-      <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
-
-      {/* Floating tool icons — desktop only */}
-      {/* Wrapper: continuous float (translateY) — img: one-shot reveal (scale+opacity) */}
-      {FLOAT_LOGOS.map((logo, i) => (
-        <div
-          key={i}
-          aria-hidden
-          className="pointer-events-none absolute hidden xl:block"
-          style={{
-            top: logo.top,
-            left: logo.left,
-            right: logo.right,
-            width: logo.size,
-            height: logo.size,
-            animation: `float ${logo.floatDuration} ease-in-out ${logo.floatDelay} infinite`,
-          }}
-        >
-          <img
-            src={getBrandIcon(logo.domain)}
-            alt=""
-            loading="eager"
-            width={logo.size}
-            height={logo.size}
-            className="rounded-2xl bg-card p-3 ring-1 ring-border dark:bg-white/8 dark:ring-white/12"
-            style={{
-              width: logo.size,
-              height: logo.size,
-              objectFit: "contain",
-              animation: `logo-reveal 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) ${logo.revealDelay} both`,
-              boxShadow: "0 8px 28px hsl(0 0% 0% / 0.20), 0 2px 6px hsl(0 0% 0% / 0.10)",
-            }}
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
-          />
-        </div>
-      ))}
-
-      {/* Very subtle dot grid */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden
-        style={{
-          backgroundImage:
-            "radial-gradient(hsl(var(--foreground) / 0.07) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-          maskImage:
-            "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
-        }}
-      />
-
-      <div className="relative z-10 w-full max-w-3xl mx-auto">
+      <div className="eh-container w-full" style={{ paddingTop: 80, paddingBottom: 72 }}>
 
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 mb-8">
-          <span
-            className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs"
-            style={{ fontFamily: "'DM Mono', monospace", letterSpacing: "0.05em", color: "hsl(var(--muted-foreground))" }}
-          >
-            <span
-              className="h-1.5 w-1.5 rounded-full bg-primary"
-              style={{ boxShadow: "0 0 6px hsl(var(--primary))" }}
-            />
-            {t("indépendant · gratuit · sans inscription", "independent · free · no signup")}
-          </span>
-        </div>
+        <span className="eh-eyebrow" style={{ marginBottom: 28 }}>
+          {t(
+            "indépendant · gratuit · sans inscription",
+            "independent · free · no account",
+          )}
+        </span>
 
-        {/* Main headline */}
-        <h1 className="ts-h1">
-          {t("Ta stack SaaS", "Your SaaS stack")}
-          <br />
-          <span className="text-primary">
-            {t("te coûte trop cher.", "is costing you too much.")}
-          </span>
+        {/* Title */}
+        <h1 className="eh-title">
+          {t(
+            <>Choisir les bons outils.<br />Sans empiler les abonnements.</>,
+            <>Choose the right tools.<br />Without stacking subscriptions.</>,
+          )}
         </h1>
 
-        {/* Subtitle */}
-        <p
-          className="mx-auto mt-5 max-w-md"
-          style={{
-            fontFamily: 'Inter, system-ui, sans-serif',
-            fontSize: "1.125rem",
-            lineHeight: 1.65,
-            color: "hsl(var(--muted-foreground))",
-          }}
-        >
+        {/* Description */}
+        <p className="eh-description">
           {t(
-            "Commence par ton outil le plus cher — le diagnostic détecte les doublons, les alternatives moins chères, et les abonnements à couper.",
-            "Start with your most expensive tool — the diagnostic detects duplicates, cheaper alternatives, and subscriptions to cut."
+            "ToolTrim compare, organise et recommande les outils qui valent vraiment leur place dans ta stack.",
+            "ToolTrim compares, organises and recommends the tools that genuinely earn their place in your stack.",
           )}
         </p>
 
-        {/* Search */}
-        <div className="relative mt-8 max-w-lg mx-auto">
-          <Search
-            className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4"
-            style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}
-          />
-          <input
-            id="home-tool-search"
-            name="home-tool-search"
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={handleSearchKey}
-            placeholder={t("Rechercher un outil…", "Search for a tool…")}
-            className="w-full rounded-lg border bg-card py-3.5 pl-11 pr-4 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150 dark:bg-white/6 dark:border-white/14"
-            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-            onFocus={(e) => {
-              e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.6)";
-              e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.12)";
-            }}
-            onBlur={(e) => {
-              e.currentTarget.style.borderColor = "";
-              e.currentTarget.style.boxShadow = "";
-            }}
-          />
+        {/* CTA group */}
+        <div className="eh-cta-group" style={{ justifyContent: "center", marginTop: 36 }}>
+          <Link to={`${prefix}/selector`} className="eh-cta-primary">
+            {t("Analyser ma stack", "Analyze my stack")}
+          </Link>
+          <Link to={`${prefix}/tools`} className="eh-cta-secondary">
+            {t("Explorer les outils", "Browse tools")}
+          </Link>
         </div>
 
-        {/* Tool chips */}
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
-          {displayedTools.length > 0 ? (
-            displayedTools.map((tool) => {
-                const iconUrl = getBrandIcon(tool.slug || tool.id || getToolDomain(tool));
-                return (
+        {/* ── Search module ── */}
+        <div className="eh-body" style={{ width: "100%", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
+          {/* Search input */}
+          <div style={{ position: "relative" }}>
+            <Search
+              aria-hidden
+              style={{
+                position: "absolute",
+                left: 16,
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: 16,
+                height: 16,
+                color: "#6F6F68",
+                flexShrink: 0,
+              }}
+            />
+            <input
+              id="home-tool-search"
+              name="home-tool-search"
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleSearchKey}
+              placeholder={t("Rechercher un outil…", "Search for a tool…")}
+              style={{
+                width: "100%",
+                height: 48,
+                paddingLeft: 44,
+                paddingRight: 16,
+                background: "#FFFFFF",
+                border: "1px solid #DADAD4",
+                borderRadius: 8,
+                fontFamily: "var(--font-ui)",
+                fontSize: 15,
+                color: "#222222",
+                outline: "none",
+                transition: "border-color 160ms ease-out",
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.borderColor = "#222222";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.borderColor = "#DADAD4";
+              }}
+            />
+          </div>
+
+          {/* Tool chips */}
+          {displayedTools.length > 0 && (
+            <div
+              style={{
+                marginTop: 12,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 6,
+                justifyContent: "center",
+              }}
+            >
+              {displayedTools.map((tool) => (
                 <button
                   key={tool.id}
                   onClick={() => handleToolClick(tool)}
-                  className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground cursor-pointer transition-all duration-150 dark:bg-white/6 dark:border-white/14"
-                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    height: 32,
+                    padding: "0 10px",
+                    background: "#FFFFFF",
+                    border: "1px solid #DADAD4",
+                    borderRadius: 6,
+                    fontFamily: "var(--font-ui)",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: "#222222",
+                    cursor: "pointer",
+                    transition: "border-color 160ms ease-out",
+                    letterSpacing: "-0.01em",
+                  }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.5)";
-                    (e.currentTarget as HTMLElement).style.background = "hsl(var(--accent))";
-                    (e.currentTarget as HTMLElement).style.color = "hsl(var(--accent-foreground))";
+                    (e.currentTarget as HTMLElement).style.borderColor = "#222222";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "";
-                    (e.currentTarget as HTMLElement).style.background = "";
-                    (e.currentTarget as HTMLElement).style.color = "";
+                    (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4";
                   }}
                 >
-                  {iconUrl ? (
-                    <img
-                      src={iconUrl}
-                      alt=""
-                      width={13}
-                      height={13}
-                      className="h-[13px] w-[13px] shrink-0 rounded-sm object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span
-                      className="flex h-[13px] w-[13px] shrink-0 items-center justify-center rounded-sm bg-secondary text-[8px] font-bold text-foreground"
-                      aria-hidden="true"
-                    >
-                      {(tool.name || "?").charAt(0).toUpperCase()}
-                    </span>
-                  )}
+                  <ToolLogo tool={tool as any} size={14} />
                   {tool.name}
                 </button>
-              );
-            })
-          ) : query.length >= 2 ? (
-            <p className="text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
+              ))}
+            </div>
+          )}
+
+          {query.length >= 2 && displayedTools.length === 0 && (
+            <p
+              style={{
+                marginTop: 10,
+                fontFamily: "var(--font-ui)",
+                fontSize: 13,
+                color: "#6F6F68",
+                textAlign: "center",
+              }}
+            >
               {t("Aucun outil trouvé. ", "No tool found. ")}
               <button
                 onClick={() => navigate(`${prefix}/selector`)}
-                className="text-primary underline underline-offset-2"
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "hsl(var(--primary))",
+                  fontSize: 13,
+                  cursor: "pointer",
+                  padding: 0,
+                  textDecoration: "underline",
+                  textUnderlineOffset: 3,
+                }}
               >
                 {t("Lancer le diagnostic →", "Start diagnostic →")}
               </button>
             </p>
-          ) : null}
+          )}
         </div>
 
-        {/* Hint */}
-        <p className="ts-mono-badge mt-6" style={{ color: "hsl(var(--muted-foreground) / 0.7)" }}>
-          {t(
-            `${toolCount} outils couverts · aucune donnée stockée`,
-            `${toolCount} tools covered · no data stored`
+        {/* Metadata bar */}
+        <div className="eh-meta" style={{ justifyContent: "center", marginTop: 40 }}>
+          {toolCount > 0 && (
+            <div className="eh-meta-item">
+              <span className="eh-meta-label">{t("OUTILS", "TOOLS")}</span>
+              <span className="eh-meta-value">{toolCount.toLocaleString()}</span>
+            </div>
           )}
-        </p>
+          {freeCount > 0 && (
+            <div className="eh-meta-item">
+              <span className="eh-meta-label">{t("PLANS GRATUITS", "FREE PLANS")}</span>
+              <span className="eh-meta-value">{freeCount.toLocaleString()}</span>
+            </div>
+          )}
+          <div className="eh-meta-item">
+            <span className="eh-meta-label">{t("MISE À JOUR", "UPDATED")}</span>
+            <span className="eh-meta-value">{t("Chaque semaine", "Weekly")}</span>
+          </div>
+          <div className="eh-meta-item">
+            <span className="eh-meta-label">{t("SOURCE", "SOURCE")}</span>
+            <span className="eh-meta-value">{t("Indépendant", "Independent")}</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

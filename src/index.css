@@ -2063,6 +2063,283 @@
 }
 
 /* ─────────────────────────────────────────────
+   EDITORIAL HERO SYSTEM (eh-*)
+   Used by all main page heroes.
+   No gradients. No grids. No floating logos.
+   Typography + spacing + thin borders only.
+───────────────────────────────────────────── */
+@layer components {
+
+  /* ── Root shell ──────────────────────────── */
+  .eh-root {
+    background: #F8F8F4;
+    border-bottom: 1px solid #DADAD4;
+  }
+
+  .dark .eh-root {
+    background: hsl(var(--background));
+    border-bottom-color: hsl(var(--border));
+  }
+
+  /* ── Container ───────────────────────────── */
+  .eh-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 112px 48px 96px;
+  }
+
+  @media (max-width: 1023px) {
+    .eh-container {
+      padding: 72px 24px 64px;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .eh-container {
+      padding: 64px 20px 56px;
+    }
+  }
+
+  /* ── Eyebrow ─────────────────────────────── */
+  .eh-eyebrow {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6F6F68;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  .dark .eh-eyebrow {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* ── Badge ───────────────────────────────── */
+  .eh-badge {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 12px;
+    border: 1px solid #DADAD4;
+    background: transparent;
+    color: #222222;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border-radius: 9999px;
+    margin-bottom: 24px;
+  }
+
+  .dark .eh-badge {
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+
+  /* ── Title ───────────────────────────────── */
+  .eh-title {
+    font-family: var(--font-ui);
+    font-size: clamp(3.25rem, 6.5vw, 7rem);  /* 52px → 112px */
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.065em;
+    color: #222222;
+    max-width: 1100px;
+    margin: 0;
+  }
+
+  .dark .eh-title {
+    color: hsl(var(--foreground));
+  }
+
+  .eh-title-accent {
+    color: hsl(var(--primary));
+  }
+
+  @media (max-width: 639px) {
+    .eh-title {
+      font-size: clamp(2.75rem, 12vw, 3.5rem);  /* 44px → 56px */
+      letter-spacing: -0.05em;
+    }
+  }
+
+  /* ── Description ─────────────────────────── */
+  .eh-description {
+    font-family: var(--font-ui);
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);  /* 17px → 20px */
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+    color: #6F6F68;
+    max-width: 620px;
+    margin: 24px 0 0;
+  }
+
+  .dark .eh-description {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* ── CTA group ───────────────────────────── */
+  .eh-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .eh-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 48px;
+    padding: 0 22px;
+    background: #222222;
+    color: #FFFFFF;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 160ms ease-out, border-color 160ms ease-out;
+  }
+
+  .eh-cta-primary:hover {
+    background: #000000;
+    border-color: #000000;
+  }
+
+  .dark .eh-cta-primary {
+    background: hsl(var(--foreground));
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  .eh-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 48px;
+    padding: 0 22px;
+    background: transparent;
+    color: #222222;
+    border: 1px solid #DADAD4;
+    border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 160ms ease-out, color 160ms ease-out;
+  }
+
+  .eh-cta-secondary:hover {
+    border-color: #222222;
+  }
+
+  .dark .eh-cta-secondary {
+    color: hsl(var(--foreground));
+    border-color: hsl(var(--border));
+  }
+
+  .dark .eh-cta-secondary:hover {
+    border-color: hsl(var(--foreground) / 0.6);
+  }
+
+  /* ── Metadata bar ────────────────────────── */
+  .eh-meta {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    border-top: 1px solid #DADAD4;
+    margin-top: 48px;
+    padding-top: 20px;
+  }
+
+  .dark .eh-meta {
+    border-top-color: hsl(var(--border));
+  }
+
+  .eh-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .eh-meta-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    line-height: 1;
+  }
+
+  .dark .eh-meta-label {
+    color: hsl(var(--muted-foreground) / 0.7);
+  }
+
+  .eh-meta-value {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 1.2;
+  }
+
+  .dark .eh-meta-value {
+    color: hsl(var(--foreground));
+  }
+
+  /* ── Children slot ───────────────────────── */
+  .eh-body {
+    margin-top: 32px;
+  }
+
+  /* ── Homepage variant — centered ─────────── */
+  .eh-root--centered .eh-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .eh-root--centered .eh-title,
+  .eh-root--centered .eh-description {
+    max-width: 760px;
+  }
+
+  .eh-root--centered .eh-description {
+    max-width: 560px;
+  }
+
+  .eh-root--centered .eh-meta {
+    justify-content: center;
+  }
+
+  /* ── Compact variant (tool detail, category) */
+  .eh-root--compact .eh-container {
+    padding-top: 72px;
+    padding-bottom: 56px;
+  }
+
+  .eh-root--compact .eh-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);  /* 40px → 72px */
+    letter-spacing: -0.055em;
+  }
+}
+
+/* ─────────────────────────────────────────────
    TOOL CARD EDITORIAL (tce-*)
    Benchmark card — Framer reference design.
    Replaces ToolCard "default" once validated.

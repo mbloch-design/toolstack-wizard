@@ -4,9 +4,9 @@ import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect } from "react";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { ArrowRight, Search, Sparkles, Scale } from "lucide-react";
+import { ArrowRight, Search, Sparkles } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import PageHero from "@/components/PageHero";
+import EditorialHero from "@/components/EditorialHero";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 
@@ -105,26 +105,31 @@ const ComparesIndexPage = () => {
   const year = new Date().getFullYear();
 
   return (
-    <div className="bg-background min-h-screen">
-      <PageHero
+    <div className="min-h-screen">
+      <EditorialHero
         breadcrumb={[{ label: t("Comparatifs", "Comparisons") }]}
         eyebrow={t("Analyse indépendante", "Independent analysis")}
-        icon={<Scale className="h-3.5 w-3.5" />}
         title={
           <>
-            {t("Comparatifs d'outils SaaS", "SaaS tool comparisons")}{" "}
-            <span className="text-primary">{year}</span>
+            {t("Comparer les outils.", "Compare the tools.")}<br />
+            {t("Choisir sans empiler.", "Choose without stacking.")}
           </>
         }
         description={t(
           "Prix vérifiés, fonctionnalités comparées, verdicts tranchés. Chaque comparatif aide à choisir sans empiler des abonnements inutiles.",
           "Verified pricing, compared features, clear verdicts. Each comparison helps you choose without stacking unnecessary subscriptions."
         )}
+        primaryCta={{ label: t("Créer un comparatif", "Create a comparison"), href: "#comparateur" }}
+        meta={[
+          { label: t("ANNÉE", "YEAR"), value: year },
+          { label: t("PRIX VÉRIFIÉS", "VERIFIED PRICING"), value: "✓" },
+          { label: t("VERDICTS", "VERDICTS"), value: "ToolTrim" },
+        ]}
       />
 
       <main className="px-4 md:px-8 pb-20 max-w-7xl mx-auto space-y-16">
         {/* Custom Comparator */}
-        <section className="surface-card p-6 md:p-8">
+        <section id="comparateur" className="surface-card p-6 md:p-8">
           <div className="flex items-center gap-2 mb-6">
             <Sparkles className="h-5 w-5 text-primary" />
             <h2 className="text-lg font-bold text-foreground">

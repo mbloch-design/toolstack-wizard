@@ -5,7 +5,7 @@ import { useState, useMemo, useEffect } from "react";
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
-import PageHero from "@/components/PageHero";
+import EditorialHero from "@/components/EditorialHero";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import PersonaGuidesSection from "@/components/PersonaGuidesSection";
 import type { Tool } from "@/data/types";
@@ -48,50 +48,73 @@ const GuidesPage = () => {
 
   return (
     <div className="min-h-screen">
-      <PageHero
-        breadcrumb={[{ label: t("Guides", "Guides") }]}
+      <EditorialHero
         eyebrow={t("Ressources", "Resources")}
-        icon={<BookOpen className="h-3.5 w-3.5" />}
-        title={t("Guides & Comparatifs", "Guides & Comparisons")}
+        title={
+          <>
+            {t("Des guides pour mieux choisir.", "Guides to help you choose better.")}
+            <br />
+            {t("Pas pour lire plus.", "Not to read more.")}
+          </>
+        }
         description={t(
-          "Analyses approfondies, comparatifs détaillés et conseils pratiques pour construire une stack d'outils plus légère.",
-          "In-depth analyses, detailed comparisons and practical advice to build a leaner tool stack."
+          "Méthodes, comparatifs et stacks commentées pour construire une stack plus claire, plus utile et plus légère.",
+          "Methods, comparisons and annotated stacks to build a clearer, more useful and leaner tool stack.",
         )}
-      >
-          {allCategories.length > 1 && (
-            <div className="mt-8 flex flex-wrap gap-2">
-              <button
-                onClick={() => setActiveCategory(null)}
-                className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
-                  !activeCategory
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "bg-secondary text-muted-foreground hover:bg-secondary/80"
-                }`}
-              >
-                {t("Tous", "All")}
-              </button>
-              {allCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat === activeCategory ? null : cat)}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
-                    activeCategory === cat
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "bg-secondary text-muted-foreground hover:bg-secondary/80"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          )}
-      </PageHero>
+        primaryCta={{ label: t("Lire les guides", "Read the guides"), href: `#guides` }}
+        secondaryCta={{ label: t("Explorer ToolTrim", "Explore ToolTrim"), href: `${prefix}/tools` }}
+      />
 
       {/* Persona pillar guides */}
       <PersonaGuidesSection lang={lang} />
 
+      {/* Category filter chips */}
+      {allCategories.length > 1 && (
+        <div className="container mx-auto max-w-7xl px-4 pt-10 flex flex-wrap gap-2">
+          <button
+            onClick={() => setActiveCategory(null)}
+            style={{
+              height: 32,
+              padding: "0 14px",
+              borderRadius: 6,
+              fontSize: 13,
+              fontWeight: 500,
+              fontFamily: "var(--font-ui)",
+              cursor: "pointer",
+              transition: "all 150ms ease",
+              background: activeCategory === null ? "#222222" : "#FFFFFF",
+              color: activeCategory === null ? "#FFFFFF" : "#6F6F68",
+              border: `1px solid ${activeCategory === null ? "#222222" : "#DADAD4"}`,
+            }}
+          >
+            {t("Tous", "All")}
+          </button>
+          {allCategories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              style={{
+                height: 32,
+                padding: "0 14px",
+                borderRadius: 6,
+                fontSize: 13,
+                fontWeight: 500,
+                fontFamily: "var(--font-ui)",
+                cursor: "pointer",
+                transition: "all 150ms ease",
+                background: activeCategory === cat ? "#222222" : "#FFFFFF",
+                color: activeCategory === cat ? "#FFFFFF" : "#6F6F68",
+                border: `1px solid ${activeCategory === cat ? "#222222" : "#DADAD4"}`,
+              }}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Content */}
-      <section className="container mx-auto max-w-7xl px-4 py-12">
+      <section id="guides" className="container mx-auto max-w-7xl px-4 py-12">
         {loading ? (
           <LoadingSkeleton />
         ) : filtered.length === 0 ? (
