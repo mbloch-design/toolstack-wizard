@@ -206,8 +206,8 @@ const ContactPage = () => {
                 <ValidationError field="message" errors={state.errors} className="mt-1 text-xs text-destructive" />
               </div>
 
-              {/* Form-level errors — filter raw network messages, show friendly fallback */}
-              {state.errors?.filter((e: any) => !e.field).length > 0 && (
+              {/* Form-level errors — uses v3 getFormErrors() (not .filter, which doesn't exist on FormspreeErrors) */}
+              {(state.errors as any)?.getFormErrors?.()?.length > 0 && (
                 <div
                   className="flex items-start gap-2.5 rounded-lg px-4 py-3 text-sm"
                   style={{ background: "hsl(var(--destructive) / 0.06)", border: "1px solid hsl(var(--destructive) / 0.2)", color: "hsl(var(--destructive))" }}
