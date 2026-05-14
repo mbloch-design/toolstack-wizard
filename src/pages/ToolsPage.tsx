@@ -7,6 +7,7 @@ import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
+import { ToolCard } from "@/components/ToolCard";
 import type { Tool } from "@/data/types";
 
 const TOOLS_PER_PAGE = 40;
@@ -265,8 +266,22 @@ const ToolsPage = () => {
               <h2 className="mb-5 font-display" style={{ fontSize: "1.125rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
                 {t("Les outils qu'on recommande vraiment", "Tools we actually recommend")}
               </h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {noteworthy.map(tool => <AppCard key={tool.id} tool={tool} prefix={prefix} t={t} />)}
+              <div className="tc-grid tc-grid--featured-first">
+                {noteworthy.map((tool, i) => {
+                  const catObj = categories.find(c => c.id === tool.categoryId);
+                  const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
+                  return (
+                    <ToolCard
+                      key={tool.id}
+                      tool={tool}
+                      prefix={prefix}
+                      t={t}
+                      lang={lang}
+                      variant={i === 0 ? "featured" : "default"}
+                      categoryLabel={catLabel}
+                    />
+                  );
+                })}
               </div>
             </section>
           )}
@@ -328,8 +343,22 @@ const ToolsPage = () => {
               </div>
             ) : (
               <>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {visible.map(tool => <AppCard key={tool.id} tool={tool} prefix={prefix} t={t} />)}
+                <div className="tc-grid">
+                  {visible.map(tool => {
+                    const catObj = categories.find(c => c.id === tool.categoryId);
+                    const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
+                    return (
+                      <ToolCard
+                        key={tool.id}
+                        tool={tool}
+                        prefix={prefix}
+                        t={t}
+                        lang={lang}
+                        variant="default"
+                        categoryLabel={catLabel}
+                      />
+                    );
+                  })}
                 </div>
                 {hasMore && (
                   <div className="mt-8 flex justify-center">
@@ -356,8 +385,9 @@ function SidebarItem({ active, onClick, icon, label }: {
   return (
     <button type="button" onClick={onClick}
       className="flex w-full items-center gap-2.5 rounded-lg px-3 py-1.5 transition-colors"
-      style={{ fontSize: "0.8125rem", fontWeight: active ? 500 : 400 }}
       style={{
+        fontSize: "0.8125rem",
+        fontWeight: active ? 500 : 400,
         background: active ? "hsl(var(--primary) / 0.08)" : "transparent",
         color: active ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))",
       }}
@@ -382,80 +412,6 @@ function PillTab({ active, onClick, label }: { active: boolean; onClick: () => v
     >
       {label}
     </button>
-  );
-}
-
-// ── App Card ────────────────────────────────────────────────────────────────
-function AppCard({ tool, prefix, t }: {
-  tool: Tool; prefix: string;
-  t: (fr: string | React.ReactNode, en: string | React.ReactNode) => string | React.ReactNode;
-}) {
-  const trending = isTrending(tool);
-  const hasFreeTier = !!(tool.pricing?.free
-    && !tool.pricing.free.toLowerCase().includes("no free")
-    && !tool.pricing.free.toLowerCase().includes("aucun")
-    && !tool.pricing.free.toLowerCase().includes("pas de"));
-  const isFree = tool.defaultMonthlyPrice === 0 && !tool.pricing?.paid;
-  const isFreemium = tool.defaultMonthlyPrice === 0 && !!tool.pricing?.paid;
-
-  return (
-    <Link
-      to={`${prefix}/tool/${tool.slug || tool.id}`}
-      className="group flex items-start gap-4 rounded-2xl border p-4 transition-all duration-150 cursor-pointer"
-      style={{ borderColor: "hsl(var(--border))", background: "hsl(var(--card))" }}
-      onMouseEnter={e => {
-        (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.3)";
-        (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 14px hsl(var(--foreground) / 0.06)";
-      }}
-      onMouseLeave={e => {
-        (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--border))";
-        (e.currentTarget as HTMLElement).style.boxShadow = "none";
-      }}
-    >
-      {/* Logo: large square */}
-      <div className="shrink-0 overflow-hidden rounded-xl" style={{ width: 80, height: 80 }}>
-        <ToolLogo tool={tool} size={80} className="h-full w-full" />
-      </div>
-
-      {/* Content */}
-      <div className="min-w-0 flex-1 pt-0.5">
-        {/* Name */}
-        <h3
-          className="font-display leading-snug transition-colors group-hover:text-primary"
-          style={{ fontSize: "0.875rem", fontWeight: 600, color: "hsl(var(--foreground))", letterSpacing: "-0.01em" }}
-        >
-          {tool.name}
-        </h3>
-
-        {/* Badges row */}
-        <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-          {(isFree || isFreemium || (!isFree && !isFreemium && hasFreeTier)) && (
-            <span className="rounded-md px-1.5 py-px text-[11px] font-medium" style={{ background: "#dcfce7", color: "#15803d", letterSpacing: "0" }}>
-              {isFree ? t("Gratuit", "Free") : t("Plan gratuit", "Free plan")}
-            </span>
-          )}
-          {!isFree && !isFreemium && !hasFreeTier && tool.defaultMonthlyPrice > 0 && (
-            <span className="num-mono text-[11px]" style={{ color: "hsl(var(--muted-foreground))", fontWeight: 500 }}>
-              {tool.defaultMonthlyPrice}€/{t("mois", "mo") as string}
-            </span>
-          )}
-          {trending && (
-            <span className="flex items-center gap-1 rounded-md px-1.5 py-px text-[11px] font-medium" style={{ background: "#ffedd5", color: "#c2410c" }}>
-              <Flame className="h-2.5 w-2.5" />
-              Trending
-            </span>
-          )}
-        </div>
-
-        {/* Description */}
-        <p
-          className="mt-2 line-clamp-2 leading-[1.45]"
-          style={{ fontSize: "0.8125rem", color: "hsl(var(--muted-foreground))", fontWeight: 400 }}
-        >
-          {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription) as string}
-        </p>
-      </div>
-    </Link>
   );
 }
 

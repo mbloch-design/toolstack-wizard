@@ -1146,3 +1146,508 @@
     display: none;
   }
 }
+
+/* ─────────────────────────────────────────────
+   TOOL CARDS — editorial directory system
+   3 variants: .tc-card (grid), .tc-card--featured, .tc-list-row (rankings)
+───────────────────────────────────────────── */
+@layer components {
+
+  /* ── BASE CARD ─────────────────────────────────────────────────────────── */
+  .tc-card {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-radius: 8px;
+    padding: 24px;
+    color: #222222;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 180ms ease-out, background 180ms ease-out;
+  }
+
+  .dark .tc-card {
+    background: hsl(0 0% 11%);
+    border-color: hsl(0 0% 20%);
+    color: hsl(var(--foreground));
+  }
+
+  .tc-card:hover {
+    border-color: #222222;
+    background: #F8F8F4;
+  }
+
+  .dark .tc-card:hover {
+    border-color: hsl(0 0% 55%);
+    background: hsl(0 0% 14%);
+  }
+
+  /* ── FEATURED CARD modifier ─────────────────────────────────────────────── */
+  .tc-card--featured {
+    background: #FFFFFF;
+    border-color: #222222;
+  }
+
+  .dark .tc-card--featured {
+    background: hsl(0 0% 13%);
+    border-color: hsl(0 0% 35%);
+  }
+
+  .tc-card--featured:hover {
+    background: #F8F8F4;
+    border-color: #111111;
+  }
+
+  .dark .tc-card--featured:hover {
+    background: hsl(0 0% 16%);
+  }
+
+  /* ── CARD HEADER ────────────────────────────────────────────────────────── */
+  .tc-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  /* ── LOGO ───────────────────────────────────────────────────────────────── */
+  .tc-logo {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #F8F8F4;
+    border: 1px solid #E7E7E0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dark .tc-logo {
+    background: hsl(0 0% 16%);
+    border-color: hsl(0 0% 22%);
+  }
+
+  .tc-logo--lg {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+  }
+
+  /* ── TYPE LABEL (top-right) ─────────────────────────────────────────────── */
+  .tc-type-label {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6F6F68;
+    line-height: 1;
+    padding-top: 2px;
+    white-space: nowrap;
+  }
+
+  .dark .tc-type-label {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* ── CARD BODY ──────────────────────────────────────────────────────────── */
+  .tc-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Tool name */
+  .tc-name {
+    font-family: var(--font-ui);
+    font-size: clamp(1.375rem, 2.2vw, 1.625rem);   /* 22px → 26px */
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #222222;
+    margin: 0;
+  }
+
+  .dark .tc-name {
+    color: hsl(var(--foreground));
+  }
+
+  .tc-card--featured .tc-name {
+    font-size: clamp(1.625rem, 2.5vw, 2rem);        /* 26px → 32px */
+  }
+
+  /* Category */
+  .tc-category {
+    font-family: var(--font-ui);
+    font-size: 0.875rem;                             /* 14px */
+    font-weight: 400;
+    color: #6F6F68;
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+
+  .dark .tc-category {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Description */
+  .tc-description {
+    font-family: var(--font-ui);
+    font-size: 0.9375rem;                            /* 15px */
+    line-height: 1.45;
+    color: #6F6F68;
+    margin-top: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .dark .tc-description {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Verdict */
+  .tc-verdict {
+    font-family: var(--font-ui);
+    font-size: 0.9375rem;                            /* 15px */
+    font-weight: 500;
+    color: #222222;
+    margin-top: 8px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .dark .tc-verdict {
+    color: hsl(var(--foreground));
+  }
+
+  /* ── CARD FOOTER ────────────────────────────────────────────────────────── */
+  .tc-card-footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #E7E7E0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dark .tc-card-footer {
+    border-top-color: hsl(0 0% 20%);
+  }
+
+  /* ── METADATA ROW ───────────────────────────────────────────────────────── */
+  .tc-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .tc-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .tc-meta-label {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6F6F68;
+    line-height: 1;
+  }
+
+  .dark .tc-meta-label {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .tc-meta-value {
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;                            /* 13px */
+    font-weight: 500;
+    color: #222222;
+    line-height: 1.2;
+  }
+
+  .dark .tc-meta-value {
+    color: hsl(var(--foreground));
+  }
+
+  /* ── BADGES ROW ─────────────────────────────────────────────────────────── */
+  .tc-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tc-badge {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #DADAD4;
+    color: #222222;
+    border-radius: 9999px;
+    padding: 4px 10px;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;                              /* 12px */
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .dark .tc-badge {
+    border-color: hsl(0 0% 28%);
+    color: hsl(var(--foreground));
+  }
+
+  /* IA badge — blue accent */
+  .tc-badge--ia {
+    background: hsl(var(--primary) / 0.08);
+    border-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--primary));
+  }
+
+  .dark .tc-badge--ia {
+    background: hsl(var(--primary) / 0.15);
+    border-color: hsl(var(--primary) / 0.4);
+    color: hsl(var(--primary));
+  }
+
+  /* Pick badge — dark fill */
+  .tc-badge--pick {
+    background: #222222;
+    border-color: #222222;
+    color: #FFFFFF;
+  }
+
+  .dark .tc-badge--pick {
+    background: hsl(var(--foreground));
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  /* ── CTA LINK ───────────────────────────────────────────────────────────── */
+  .tc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;                             /* 14px */
+    font-weight: 500;
+    color: #222222;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: gap 160ms ease-out;
+  }
+
+  .dark .tc-cta {
+    color: hsl(var(--foreground));
+  }
+
+  .tc-card:hover .tc-cta,
+  .tc-card:focus-visible .tc-cta {
+    gap: 7px;    /* arrow moves 3px */
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* ── FEATURED CTA BUTTON ────────────────────────────────────────────────── */
+  .tc-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 42px;
+    padding: 0 20px;
+    background: #222222;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 160ms ease-out, gap 160ms ease-out;
+    align-self: flex-start;
+  }
+
+  .tc-cta-btn:hover {
+    background: #111111;
+    gap: 9px;
+  }
+
+  .dark .tc-cta-btn {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  .dark .tc-cta-btn:hover {
+    background: hsl(var(--foreground) / 0.85);
+  }
+
+  /* ── LIST ROW ───────────────────────────────────────────────────────────── */
+  .tc-list-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-top: 1px solid #DADAD4;
+    text-decoration: none;
+    color: #222222;
+    cursor: pointer;
+    transition: background 160ms ease-out;
+  }
+
+  .dark .tc-list-row {
+    border-top-color: hsl(0 0% 18%);
+    color: hsl(var(--foreground));
+  }
+
+  .tc-list-row:hover {
+    background: #F1F1EC;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 4px;
+  }
+
+  .dark .tc-list-row:hover {
+    background: hsl(0 0% 13%);
+  }
+
+  .tc-list-rank {
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #B0B0A8;
+    width: 28px;
+    flex-shrink: 0;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .dark .tc-list-rank {
+    color: hsl(0 0% 40%);
+  }
+
+  .tc-list-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .tc-list-name {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: #222222;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dark .tc-list-name {
+    color: hsl(var(--foreground));
+  }
+
+  .tc-list-category {
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    color: #6F6F68;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dark .tc-list-category {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .tc-list-verdict {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    color: #6F6F68;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .dark .tc-list-verdict {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .tc-list-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .tc-list-cta {
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #222222;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: gap 160ms ease-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .dark .tc-list-cta {
+    color: hsl(var(--foreground));
+  }
+
+  .tc-list-row:hover .tc-list-cta {
+    gap: 7px;
+  }
+
+  /* ── RESPONSIVE GRID ────────────────────────────────────────────────────── */
+  .tc-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .tc-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .tc-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Featured card: span 2 cols on large screens */
+  @media (min-width: 1024px) {
+    .tc-grid--featured-first .tc-card--featured:first-child {
+      grid-column: span 2;
+    }
+  }
+}

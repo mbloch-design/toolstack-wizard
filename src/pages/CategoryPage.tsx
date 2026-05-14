@@ -8,6 +8,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getToolDomain } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
+import { ToolCard } from "@/components/ToolCard";
 import type { PricingV5, ToolType } from "@/data/types";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
@@ -508,264 +509,23 @@ const CategoryPage = () => {
               </div>
             </div>
 
-            {/* Cards */}
-            <div className="space-y-3">
-              {visible.map((tool) => {
-                const domain        = getToolDomain(tool);
-                const isFree        = tool.defaultMonthlyPrice === 0 && !tool.pricing?.paid;
-                const isFreemium    = !!(tool.pricing?.free && tool.pricing?.paid);
-                const freeAltSlug   = tool.freeAlternative;
-                const betterAlt     = tool.betterAlternative;
-                const pricingV5     = tool.pricing_v5 as PricingV5 | null | undefined;
-                const toolType      = tool.tool_type as ToolType;
-
-                // Type pill label
-                const TYPE_SHORT: Record<string, string> = {
-                  ia: "IA", metier: "Métier", gestion: "Gestion", plugin: "Plugin", satellite: "Satellite",
-                };
-
-                // Savings strip logic — show only the strongest signal
-                const hasSavingsStrip = !!(freeAltSlug || (betterAlt && betterAlt.saving > 0));
-                const stripVariant: "free" | "cheaper" = freeAltSlug ? "free" : "cheaper";
-
+            {/* Cards — editorial list rows */}
+            <div>
+              {visible.map((tool, i) => {
                 return (
-                  <div
+                  <ToolCard
                     key={tool.id}
-                    className="surface-card-hover group overflow-hidden"
-                  >
-                    {/* ── Main body ── */}
-                    <div className="flex items-start gap-4 p-5">
-
-                      {/* Logo */}
-                      <div className="shrink-0 mt-0.5">
-                        <ToolLogo tool={tool} size={56} className="rounded-xl" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-
-                        {/* Row 1: name + type badge + price */}
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="flex-1 min-w-0">
-                            <div className="flex flex-wrap items-center gap-2">
-                              <h3
-                                className="font-display text-foreground group-hover:text-primary transition-colors duration-150"
-                                style={{ fontSize: "0.875rem", fontWeight: 600, letterSpacing: "-0.01em" }}
-                              >
-                                {tool.name}
-                              </h3>
-                              {/* Tool type badge */}
-                              {toolType && toolType !== "satellite" && (
-                                <span
-                                  className="inline-flex shrink-0 items-center rounded px-1.5 py-0.5"
-                                  style={{
-                                    fontSize: "0.65rem",
-                                    letterSpacing: "0.05em",
-                                    textTransform: "uppercase",
-                                    background: "hsl(var(--secondary))",
-                                    color: "hsl(var(--muted-foreground))",
-                                    border: "1px solid hsl(var(--border))",
-                                    fontWeight: 500,
-                                  }}
-                                >
-                                  {TYPE_SHORT[toolType] ?? toolType}
-                                </span>
-                              )}
-                              {/* Free / Freemium badge — aligned with ToolsPage (green) */}
-                              {(isFree || isFreemium) && (
-                                <span
-                                  className="inline-flex shrink-0 items-center rounded-md px-2 py-0.5 text-[11px] font-medium"
-                                  style={{ background: "#dcfce7", color: "#15803d" }}
-                                >
-                                  {isFree ? t("Gratuit", "Free") : t("Plan gratuit", "Free plan")}
-                                </span>
-                              )}
-                            </div>
-
-                            {/* Description */}
-                            <p
-                              className="mt-1.5 line-clamp-2"
-                              style={{
-                                fontSize: "0.8125rem",
-                                lineHeight: 1.55,
-                                color: "hsl(var(--muted-foreground))",
-                                fontWeight: 400,
-                              }}
-                            >
-                              {t(tool.shortDescription, tool.shortDescriptionEn || tool.shortDescription)}
-                            </p>
-                          </div>
-
-                          {/* Price block — paid tools */}
-                          {!isFree && !isFreemium && tool.defaultMonthlyPrice > 0 && (
-                            <div className="shrink-0 text-right">
-                              <div className="flex items-baseline gap-0.5 justify-end">
-                                <span
-                                  className="text-xl font-bold text-foreground"
-                                  style={{ fontFamily: "ui-monospace, monospace", letterSpacing: "-0.02em" }}
-                                >
-                                  {tool.defaultMonthlyPrice}€
-                                </span>
-                                <span
-                                  className="text-xs"
-                                  style={{ color: "hsl(var(--muted-foreground) / 0.6)", fontFamily: "ui-monospace, monospace" }}
-                                >
-                                  /{t("mois", "mo")}
-                                </span>
-                              </div>
-                              {pricingV5?.compare_plan_name && (
-                                <p
-                                  className="mt-0.5 text-right"
-                                  style={{
-                                    fontFamily: "ui-monospace, monospace",
-                                    fontSize: "0.58rem",
-                                    letterSpacing: "0.05em",
-                                    color: "hsl(var(--muted-foreground) / 0.4)",
-                                    textTransform: "uppercase",
-                                  }}
-                                >
-                                  {t("Plan", "Plan")} {pricingV5.compare_plan_name}
-                                </p>
-                              )}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Row 2: pros + CTAs */}
-                        <div className="mt-3 flex items-center justify-between gap-3 flex-wrap">
-                          {tool.pros?.length > 0 && (
-                            <div className="flex flex-wrap gap-1.5">
-                              {(lang === "fr" ? tool.pros : (tool.prosEn || tool.pros))
-                                .slice(0, 2)
-                                .map((pro: string, i: number) => (
-                                  <span
-                                    key={i}
-                                    className="inline-flex items-center rounded-md border border-border px-2 py-0.5 text-xs"
-                                    style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit" }}
-                                  >
-                                    {pro.length > 35 ? pro.slice(0, 35) + "…" : pro}
-                                  </span>
-                                ))}
-                            </div>
-                          )}
-
-                          <div className="flex items-center gap-2 shrink-0 ml-auto">
-                            <Link
-                              to={`${prefix}/tool/${tool.slug || tool.id}`}
-                              className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-all duration-150 hover:border-primary/40 hover:text-primary"
-                              style={{ fontFamily: "inherit" }}
-                            >
-                              {t("Voir l'outil", "Learn more")}
-                            </Link>
-                            {domain && (
-                              <a
-                                href={`https://${domain}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors duration-150"
-                                style={{
-                                  background: "hsl(var(--foreground))",
-                                  color: "hsl(var(--background))",
-                                  fontFamily: "inherit",
-                                }}
-                                onMouseEnter={(e) => {
-                                  (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)";
-                                }}
-                                onMouseLeave={(e) => {
-                                  (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))";
-                                }}
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {t("Visiter", "Visit")}
-                                <ExternalLink className="h-3 w-3" />
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* ── Savings strip ── */}
-                    {hasSavingsStrip && (
-                      <div
-                        className="flex items-center gap-3 border-t px-5 py-2.5"
-                        style={{
-                          borderColor: stripVariant === "free"
-                            ? "hsl(var(--savings) / 0.15)"
-                            : "hsl(var(--cancel) / 0.15)",
-                          background: stripVariant === "free"
-                            ? "hsl(var(--savings) / 0.04)"
-                            : "hsl(var(--cancel) / 0.04)",
-                        }}
-                      >
-                        {stripVariant === "free" ? (
-                          <Sparkles
-                            className="h-3.5 w-3.5 shrink-0"
-                            style={{ color: "hsl(var(--savings))" }}
-                          />
-                        ) : (
-                          <TrendingDown
-                            className="h-3.5 w-3.5 shrink-0"
-                            style={{ color: "hsl(var(--cancel))" }}
-                          />
-                        )}
-
-                        <p
-                          className="flex-1 text-xs"
-                          style={{
-                            fontFamily: "inherit",
-                            color: stripVariant === "free"
-                              ? "hsl(var(--savings))"
-                              : "hsl(var(--cancel))",
-                          }}
-                        >
-                          {stripVariant === "free" ? (
-                            <>
-                              <span className="font-medium">
-                                {t("Alt. gratuite :", "Free alt:")}
-                              </span>{" "}
-                              <span>{asText(freeAltSlug).split(/[\s([/]/)[0]}</span>
-                              {tool.defaultMonthlyPrice > 0 && (
-                                <span style={{ opacity: 0.7 }}>
-                                  {" "}· {t("économisez", "save")} {tool.defaultMonthlyPrice}€/{t("mois", "mo")}
-                                </span>
-                              )}
-                            </>
-                          ) : (
-                            <>
-                              <span className="font-medium">
-                                {t("Moins cher :", "Cheaper:")}
-                              </span>{" "}
-                              <span>{asText(betterAlt?.tool).split(/[\s([/]/)[0]}</span>
-                              {betterAlt && betterAlt.saving > 0 && (
-                                <span style={{ opacity: 0.7 }}>
-                                  {" "}· −{betterAlt.saving}€/{t("mois", "mo")}
-                                </span>
-                              )}
-                            </>
-                          )}
-                        </p>
-
-                        <Link
-                          to={`${prefix}/tool/${tool.slug || tool.id}`}
-                          className="shrink-0 text-xs font-medium underline underline-offset-2 transition-opacity hover:opacity-70"
-                          style={{
-                            fontFamily: "ui-monospace, monospace",
-                            fontSize: "0.65rem",
-                            color: stripVariant === "free"
-                              ? "hsl(var(--savings))"
-                              : "hsl(var(--cancel))",
-                          }}
-                        >
-                          {t("Voir l'analyse →", "See analysis →")}
-                        </Link>
-                      </div>
-                    )}
-                  </div>
+                    tool={tool}
+                    prefix={prefix}
+                    t={t}
+                    lang={lang}
+                    variant="list-row"
+                    rank={i + 1}
+                    categoryLabel={displayName}
+                  />
                 );
               })}
             </div>
-
             {/* Load more */}
             {hasMore && (
               <div className="mt-8 text-center">
