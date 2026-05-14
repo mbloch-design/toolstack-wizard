@@ -1,6 +1,6 @@
 import { useLang } from "@/hooks/useLang";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock, ScanSearch, TrendingDown } from "lucide-react";
 
 const HowItWorks = () => {
   const { t, prefix } = useLang();
@@ -13,14 +13,18 @@ const HowItWorks = () => {
         "Métier, TJM, taille d'équipe, phase de projet. Ce que la plupart des outils ignorent — et qui change tout à l'analyse.",
         "Job, daily rate, team size, project phase. What most tools ignore — and what changes the entire analysis."
       ),
-      proof: t(
-        "ToolTrim adapte chaque recommandation à votre situation. Pas un classement générique.",
-        "ToolTrim adapts every recommendation to your situation. Not a generic ranking."
-      ),
       chips: [
         { label: t("Métier", "Role"), values: [t("Freelance", "Freelancer"), t("Fondateur", "Founder"), "DSI"] },
         { label: "TJM", values: ["< 300€", "300–600€", "600€+"] },
       ],
+      callout: {
+        Icon: Clock,
+        lines: [
+          t("2 minutes", "2 minutes"),
+          t("5 questions", "5 questions"),
+          t("Aucun compte requis", "No account required"),
+        ],
+      },
     },
     {
       num: "02",
@@ -29,11 +33,15 @@ const HowItWorks = () => {
         "Chaque outil est évalué sur ses fonctions réelles, son rapport coût/usage, et sa redondance avec le reste de votre stack.",
         "Each tool is evaluated on its real functions, cost/usage ratio, and redundancy with the rest of your stack."
       ),
-      proof: t(
-        "Notion + Coda = doublon immédiat. L'algorithme tranche, vous n'avez qu'à valider.",
-        "Notion + Coda = immediate duplicate. The algorithm decides, you just confirm."
-      ),
       chips: null,
+      callout: {
+        Icon: ScanSearch,
+        lines: [
+          t("Notion + Coda → Doublon", "Notion + Coda → Duplicate"),
+          t("Zapier + Make → Redondance", "Zapier + Make → Redundancy"),
+          t("−19€/mois identifiés", "−€19/mo identified"),
+        ],
+      },
     },
     {
       num: "03",
@@ -42,11 +50,15 @@ const HowItWorks = () => {
         "Quoi garder, quoi couper, quoi remplacer — avec les économies mensuelles exactes et les alternatives vérifiées.",
         "What to keep, cut, replace — with exact monthly savings and verified alternatives."
       ),
-      proof: t(
-        "Liste priorisée, économies par outil, score de santé de votre stack.",
-        "Prioritized list, per-tool savings, stack health score."
-      ),
       chips: null,
+      callout: {
+        Icon: TrendingDown,
+        lines: [
+          t("3 actions priorisées", "3 prioritized actions"),
+          t("Économies par outil", "Savings per tool"),
+          t("Stack Health Score", "Stack Health Score"),
+        ],
+      },
     },
   ];
 
@@ -91,7 +103,7 @@ const HowItWorks = () => {
                     fontSize: "clamp(2rem, 4vw, 3rem)",
                     fontWeight: 500,
                     letterSpacing: "-0.04em",
-                    color: "hsl(var(--foreground) / 0.08)",
+                    color: "hsl(var(--foreground) / 0.12)",
                     lineHeight: 1,
                     transition: "color 200ms",
                   }}
@@ -101,7 +113,7 @@ const HowItWorks = () => {
                       el.style.color = "hsl(var(--primary) / 0.25)";
                     });
                     el.closest(".group")?.addEventListener("mouseleave", () => {
-                      el.style.color = "hsl(var(--foreground) / 0.08)";
+                      el.style.color = "hsl(var(--foreground) / 0.12)";
                     });
                   }}
                 >
@@ -155,19 +167,29 @@ const HowItWorks = () => {
                 )}
               </div>
 
-              {/* Right: proof — short, direct, no label noise */}
-              <div
-                className="mt-6 md:mt-0 md:pl-10 md:border-l border-border flex items-start"
-              >
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{
-                    color: "hsl(var(--foreground) / 0.55)",
-                    fontStyle: "italic",
-                  }}
-                >
-                  {step.proof}
-                </p>
+              {/* Right: concrete callout — shows the step's real output */}
+              <div className="mt-6 md:mt-0 md:pl-10 md:border-l border-border flex items-start">
+                <div className="surface-accent rounded-xl p-5 w-full">
+                  <step.callout.Icon
+                    className="h-4 w-4 mb-3"
+                    style={{ color: "hsl(var(--primary))" }}
+                  />
+                  <ul className="space-y-1.5">
+                    {step.callout.lines.map((line) => (
+                      <li
+                        key={line}
+                        className="flex items-center gap-2 text-sm"
+                        style={{ color: "hsl(var(--foreground) / 0.75)" }}
+                      >
+                        <span
+                          className="h-1 w-1 shrink-0 rounded-full"
+                          style={{ background: "hsl(var(--primary) / 0.5)" }}
+                        />
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           ))}
