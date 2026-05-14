@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Check, ChevronDown, Search, X } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Search, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import EditorialHero from "@/components/EditorialHero";
 import { useLang } from "@/hooks/useLang";
