@@ -15,7 +15,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const { error } = await resend.emails.send({
-    from: "ToolTrim Contact <onboarding@resend.dev>", // temp — swap to contact@tooltrim.com once domain verified on Resend
+    from: "ToolTrim Contact <contact@tooltrim.com>",
     to: "contact@tooltrim.com",
     replyTo: email,
     subject: `[Contact] ${subject}`,
