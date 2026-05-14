@@ -1,29 +1,17 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(request: Request): Promise<Response> {
-  if (request.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
-  let body: { name?: string; email?: string; subject?: string; message?: string };
-  try {
-    body = await request.json();
-  } catch {
-    return new Response(JSON.stringify({ error: "Invalid JSON" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
-  const { name, email, subject, message } = body;
+  const { name, email, subject, message } = req.body ?? {};
 
   if (!name || !email || !subject || !message) {
-    return new Response(JSON.stringify({ error: "Missing required fields" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    });
+    return res.status(400).json({ error: "Missing required fields" });
   }
 
   const { error } = await resend.emails.send({
@@ -35,22 +23,14 @@ export default async function handler(request: Request): Promise<Response> {
       <p><strong>De :</strong> ${name} &lt;${email}&gt;</p>
       <p><strong>Sujet :</strong> ${subject}</p>
       <hr />
-      <p>${message.replace(/\n/g, "<br>")}</p>
+      <p>${String(message).replace(/\n/g, "<br>")}</p>
     `,
   });
 
   if (error) {
     console.error("[contact] Resend error:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return res.status(500).json({ error: error.message });
   }
 
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
+  return res.status(200).json({ success: true });
 }
-
-export const config = { runtime: "edge" };
