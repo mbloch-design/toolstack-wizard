@@ -18,8 +18,8 @@ const FinalCTA = () => {
             className="font-display"
             style={{
               fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
-              fontWeight: 600,
-              letterSpacing: "-0.035em",
+              fontWeight: 400,
+              letterSpacing: "-0.04em",
               lineHeight: 1.0,
             }}
           >

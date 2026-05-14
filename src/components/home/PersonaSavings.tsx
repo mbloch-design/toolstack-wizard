@@ -51,7 +51,7 @@ const PersonaSavings = () => {
   return (
     <section className="py-16 md:py-20">
       <div className="container mx-auto max-w-3xl">
-        <h2 className="text-center font-display font-semibold" style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+        <h2 className="text-center font-display font-medium" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
           {t(
             "Vous payez probablement pour des outils en double.",
             "You're probably paying for duplicate tools."

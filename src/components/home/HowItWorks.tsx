@@ -60,7 +60,7 @@ const HowItWorks = () => {
             <p className="label-section mb-3">{t("Processus", "Process")}</p>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.1 }}
+              style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 500, letterSpacing: "-0.03em", lineHeight: 1.05 }}
             >
               {t("3 étapes. ", "3 steps. ")}
               <span className="text-primary">{t("Aucune approximation.", "No guesswork.")}</span>

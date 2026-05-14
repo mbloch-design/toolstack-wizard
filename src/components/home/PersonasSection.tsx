@@ -98,7 +98,7 @@ const PersonasSection = () => {
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-5">
             {t("Pour qui", "Who it's for")}
           </span>
-          <h2 className="font-display font-semibold" style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+          <h2 className="font-display font-medium" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.03em", lineHeight: 1.05 }}>
             {t("Conçu pour ", "Built for ")}<em className="text-primary italic">{t("5 expertises métier", "5 professional profiles")}</em>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">
@@ -132,7 +132,7 @@ const PersonasSection = () => {
           <div className="grid md:grid-cols-3">
             {/* Left: Stack */}
             <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-5">
+              <p className="text-[12px] font-semibold text-primary mb-5">
                 {t("Stack typique", "Typical stack")}
               </p>
               <div className="space-y-2.5">
@@ -155,7 +155,7 @@ const PersonasSection = () => {
 
             {/* Center: Signals detected */}
             <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-5">
+              <p className="text-[12px] font-semibold text-primary mb-5">
                 {t("Signaux détectés", "Detected signals")}
               </p>
               <div className="space-y-3">
@@ -173,7 +173,7 @@ const PersonasSection = () => {
             {/* Right: Savings */}
             <div className="p-8 md:p-10 flex flex-col justify-between">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-3">
+                <p className="text-[12px] font-semibold text-primary mb-3">
                   {t("Économie moyenne", "Average savings")}
                 </p>
                 <p className="text-5xl font-semibold tracking-[-3px] text-primary">{p.saving}</p>

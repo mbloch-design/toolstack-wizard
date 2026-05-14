@@ -205,8 +205,8 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         <h1
           className="font-display"
           style={{
-            fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)",
-            fontWeight: 500,
+            fontSize: "clamp(2.5rem, 5.5vw, 3.75rem)",
+            fontWeight: 400,
             lineHeight: 1.0,
             letterSpacing: "-0.04em",
             color: "hsl(var(--foreground))",

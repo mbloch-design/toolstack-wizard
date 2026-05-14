@@ -76,7 +76,7 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
             <p className="label-section mb-3">{t("Ce que ToolTrim cherche", "What ToolTrim looks for")}</p>
             <h2
               className="max-w-3xl text-foreground"
-              style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.1 }}
+              style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 500, letterSpacing: "-0.03em", lineHeight: 1.05 }}
             >
               {t("Des économies utiles, pas des coupes au hasard.", "Useful savings, not random cuts.")}
             </h2>
