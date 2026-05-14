@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useToolSummaries, useCategories, usePosts, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
+import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense, useRef } from "react";
-import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Clock, Clock3, Database, Euro, Layers3, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
-import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
 import { STACKS } from "@/data/stacks";
 
 import HeroSection from "@/components/home/HeroSection";
@@ -14,7 +13,8 @@ import TickerBar from "@/components/home/TickerBar";
 import StatsSection from "@/components/home/StatsSection";
 import PersonasSection from "@/components/home/PersonasSection";
 import FaqBlock from "@/components/FaqBlock";
-import ToolLogo from "@/components/ToolLogo";
+import EditorialSection from "@/components/EditorialSection";
+import GuideCardEditorial from "@/components/GuideCardEditorial";
 
 const HowItWorks = lazy(() => import("@/components/home/HowItWorks"));
 const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSection"));
@@ -186,77 +186,71 @@ const HomePage = () => {
       <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
       {/* 9. Categories */}
-      <section className="border-t border-border py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <span className="section-tag">{t("Catalogue", "Catalog")}</span>
-              <h2 className="ts-h2">
-                {t("Catégories ", "Tool ")}<em className="text-primary not-italic">{t("d'outils", "categories")}</em>
-              </h2>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                {t(`${stats.categories} catégories couvrant tous les besoins de votre activité.`, `${stats.categories} categories covering all your business needs.`)}
-              </p>
-            </div>
-            <Link to={`${prefix}/category`} className="hidden md:inline-flex shrink-0 text-sm font-medium text-primary hover:underline">{t("Voir toutes →", "See all →")}</Link>
-          </div>
-          <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {categories.map((cat) => {
-              const Icon = getCategoryIcon(cat.id);
-              const count = tools.filter((tool) => tool.categoryId === cat.id).length;
-              const catName = stripLeadingEmoji(cat.name, cat.id);
-              const catNameEn = stripLeadingEmoji(cat.nameEn, catName);
-              return (
-                <Link
-                  key={cat.id}
-                  to={`${prefix}/category/${cat.slug}`}
-                  className="group rounded-xl border border-border bg-card p-5 cursor-pointer transition-colors duration-150"
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.4)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = ""; }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/20">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium tracking-tight group-hover:text-primary transition-colors duration-200 truncate text-sm">
-                        {t(catName, catNameEn)}
-                      </p>
-                      <p className="mt-0.5 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>{count} {t("outils", "tools")}</p>
-                    </div>
-                    <ArrowRight className="h-3.5 w-3.5 shrink-0 opacity-30 transition-all duration-200 group-hover:opacity-100 group-hover:text-primary group-hover:translate-x-0.5" />
+      <EditorialSection
+        eyebrow={t("Catalogue", "Catalog")}
+        title={t("Explorer par usage.", "Explore by use case.")}
+        description={t(
+          `${stats.categories} catégories couvrant tous les besoins de votre activité.`,
+          `${stats.categories} categories covering every business need.`
+        )}
+        cta={{ label: t("Toutes les catégories", "All categories"), href: `${prefix}/category` }}
+        variant="white"
+      >
+        <div className="es-grid es-grid--4">
+          {categories.map((cat) => {
+            const Icon = getCategoryIcon(cat.id);
+            const count = tools.filter((tool) => tool.categoryId === cat.id).length;
+            const catName = stripLeadingEmoji(cat.name, cat.id);
+            const catNameEn = stripLeadingEmoji(cat.nameEn, catName);
+            return (
+              <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} className="ec-card" style={{ padding: "18px 20px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <div style={{
+                    width: 32, height: 32, flexShrink: 0,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    border: "1px solid #DADAD4", borderRadius: 6,
+                    color: "#6F6F68",
+                  }}>
+                    <Icon style={{ width: 15, height: 15 }} />
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-          <Link to={`${prefix}/category`} className="mt-5 inline-flex md:hidden text-sm font-medium text-primary hover:underline">{t("Voir toutes les catégories →", "See all categories →")}</Link>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500, color: "#222222", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", letterSpacing: "-0.01em" }}>
+                      {t(catName, catNameEn)}
+                    </p>
+                    <p style={{ marginTop: 2, fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
+                      {count} {t("outils", "tools")}
+                    </p>
+                  </div>
+                  <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, color: "#DADAD4", transition: "color 160ms ease-out, transform 160ms ease-out" }} className="ec-cta-arrow" />
+                </div>
+              </Link>
+            );
+          })}
         </div>
-      </section>
+      </EditorialSection>
 
       {/* 10. Guides */}
       {featuredPosts.length > 0 && (
-        <section className="border-t border-border bg-secondary/20 py-24">
-          <div className="container mx-auto max-w-7xl px-6">
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <span className="section-tag">{t("Guides", "Guides")}</span>
-                <h2 className="ts-h2">
-                  {t("Derniers ", "Latest ")}<em className="text-primary not-italic">{t("guides", "guides")}</em>
-                </h2>
-                <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                  {t("Comparatifs, tutoriels et conseils pour optimiser votre stack.", "Comparisons, tutorials and tips to optimize your stack.")}
-                </p>
-              </div>
-              <Link to={`${prefix}/guides`} className="hidden md:inline-flex shrink-0 text-sm font-medium text-primary hover:underline">{t("Tous les guides", "All guides")} →</Link>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {featuredPosts.map((post) => (
-                <GuideCard key={post.slug} post={post} prefix={prefix} tools={tools} />
-              ))}
-            </div>
+        <EditorialSection
+          eyebrow={t("Guides", "Guides")}
+          title={t("Lire avant de choisir.", "Read before you choose.")}
+          description={t(
+            "Comparatifs, méthodes et stacks commentées pour décider sans empiler.",
+            "Comparisons, methods and annotated stacks to decide without stacking."
+          )}
+          cta={{ label: t("Tous les guides", "All guides"), href: `${prefix}/guides` }}
+        >
+          <div className="es-grid">
+            {featuredPosts.map((post) => (
+              <GuideCardEditorial
+                key={post.slug}
+                post={post}
+                prefix={prefix}
+                ctaLabel={t("Lire l'article →", "Read article →")}
+              />
+            ))}
           </div>
-        </section>
+        </EditorialSection>
       )}
 
       {/* 11. FAQ */}
@@ -308,42 +302,78 @@ function BusinessObjectivesSection() {
   };
 
   return (
-    <section className="overflow-hidden border-t border-border bg-background py-20 md:py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 flex items-end justify-between gap-8">
-          <div className="max-w-4xl">
-            <span className="section-tag">{t("Stacks par objectif", "Stacks by goal")}</span>
-            <h2 className="ts-h2 text-balance">
+    <section className="es-section" style={{ overflow: "hidden" }}>
+      <div className="es-container">
+        {/* Section header */}
+        <div className="es-header">
+          <div>
+            <span className="es-eyebrow">{t("Stacks par objectif", "Stacks by goal")}</span>
+            <h2 className="es-title">
               {t(
-                "Choisissez votre objectif et trouvez la stack qui le sert",
-                "Choose your goal and find the stack built for it"
+                "Choisissez votre objectif.",
+                "Choose your goal."
               )}
             </h2>
           </div>
-
-          <div className="hidden shrink-0 items-center gap-2 md:flex">
+          <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
             <button
               type="button"
               onClick={() => scrollCards("left")}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-background text-primary transition-colors hover:border-primary hover:bg-primary/5"
+              className="hidden md:inline-flex"
               aria-label={t("Objectif précédent", "Previous goal")}
+              style={{
+                width: 40, height: 40,
+                border: "1px solid #DADAD4",
+                borderRadius: "50%",
+                background: "#FFFFFF",
+                color: "#222222",
+                cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                transition: "border-color 160ms ease-out",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft style={{ width: 16, height: 16 }} />
             </button>
             <button
               type="button"
               onClick={() => scrollCards("right")}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 bg-primary text-primary-foreground transition-colors hover:bg-primary/90"
+              className="hidden md:inline-flex"
               aria-label={t("Objectif suivant", "Next goal")}
+              style={{
+                width: 40, height: 40,
+                border: "1px solid #222222",
+                borderRadius: "50%",
+                background: "#222222",
+                color: "#FFFFFF",
+                cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                transition: "opacity 160ms ease-out",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = "0.75"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight style={{ width: 16, height: 16 }} />
             </button>
           </div>
         </div>
 
+        {/* Scroll rail */}
         <div
           ref={scrollRef}
-          className="no-scrollbar grid auto-cols-[minmax(19rem,calc(100vw-3rem))] grid-flow-col gap-5 overflow-x-auto scroll-smooth pb-2 [scroll-snap-type:x_mandatory] sm:auto-cols-[minmax(26rem,42rem)] lg:mr-[calc(50%-50vw)] lg:auto-cols-[minmax(26rem,40rem)] lg:pr-6"
+          className="no-scrollbar"
+          style={{
+            display: "grid",
+            gridAutoFlow: "column",
+            gridAutoColumns: "clamp(18rem, calc(100vw - 3rem), 38rem)",
+            gap: 16,
+            overflowX: "auto",
+            scrollSnapType: "x mandatory",
+            scrollBehavior: "smooth",
+            paddingBottom: 4,
+            marginRight: "calc(50% - 50vw)",
+          }}
         >
           {objectiveCards.map((objective) => {
             const stack = objective.stack!;
@@ -355,56 +385,44 @@ function BusinessObjectivesSection() {
               <Link
                 key={objective.slug}
                 to={`${prefix}/stacks/${stack.slug}`}
-                className="group flex flex-col rounded-lg bg-secondary/70 p-4 transition-colors duration-200 [scroll-snap-align:start] hover:bg-secondary md:p-5"
+                style={{ scrollSnapAlign: "start", display: "flex", flexDirection: "column", textDecoration: "none" }}
+                className="ec-card"
               >
-                {/* Texture visual panel */}
-                {/* Photo + overlays */}
-                <div className="relative overflow-hidden rounded-md bg-secondary">
+                {/* Photo */}
+                <div style={{ position: "relative", overflow: "hidden", borderRadius: 4, marginBottom: 18 }}>
                   <img
                     src={objective.image}
                     alt={title}
-                    className="aspect-[1.28/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                    style={{ aspectRatio: "16/9", width: "100%", objectFit: "cover", display: "block", transition: "transform 500ms ease" }}
                     loading="lazy"
                   />
-
-                  {/* Bottom vignette so overlays read clearly */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 to-transparent" />
-
-                  {/* Budget + savings bar — over photo */}
-                  <div className="absolute inset-x-0 bottom-0 flex items-center justify-between px-3.5 pb-3 pt-1">
-                    <span className="text-[11px] font-medium text-white/70">
-                      {t("Stack optimisée", "Optimized stack")}
+                  {/* Vignette */}
+                  <div style={{ position: "absolute", inset: "0 0 0 0", background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 55%)", pointerEvents: "none" }} />
+                  {/* Budget strip */}
+                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 14px 12px" }}>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.65)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                      {label}
                     </span>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-semibold text-white tabular-nums">
-                        {stack.monthlyBudget}€<span className="font-normal text-white/55 text-xs">/m</span>
-                      </span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-400/25 px-2 py-0.5 text-[10px] font-bold text-emerald-300 ring-1 ring-emerald-400/30">
-                        <TrendingDown className="h-2.5 w-2.5" />
-                        −{stack.savings}€/m
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Label badge */}
-                  <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/40 px-2.5 py-1 text-xs font-semibold text-white shadow-sm backdrop-blur-sm ring-1 ring-white/15">
-                    <Layers3 className="h-3 w-3 text-white/70" />
-                    {label}
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "#FFFFFF" }}>
+                      {stack.monthlyBudget}€<span style={{ fontWeight: 400, fontSize: 11, color: "rgba(255,255,255,0.6)" }}>/m</span>
+                      <span style={{ marginLeft: 8, fontSize: 11, color: "rgba(255,255,255,0.65)" }}>−{stack.savings}€</span>
+                    </span>
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col justify-between pt-5">
-                  <div>
-                    <h3 className="font-display font-semibold leading-snug" style={{ fontSize: "clamp(1.125rem, 1.8vw, 1.375rem)", letterSpacing: "-0.015em", lineHeight: 1.3 }}>
-                      {title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-2">
-                      {desc}
-                    </p>
+                {/* Text */}
+                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                  <div
+                    className="ec-title"
+                    style={{ fontSize: "clamp(1.0625rem, 1.6vw, 1.25rem)", lineHeight: 1.2 }}
+                  >
+                    {title}
                   </div>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                    {t("Voir la stack type", "View stack template")}
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  <p className="ec-text" style={{ marginTop: 10, fontSize: 14, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                    {desc}
+                  </p>
+                  <span className="ec-cta" style={{ marginTop: 20 }}>
+                    {t("Voir la stack →", "View stack →")}
                   </span>
                 </div>
               </Link>
@@ -416,48 +434,5 @@ function BusinessObjectivesSection() {
   );
 }
 
-/* ── Guide card (styled like GuidesPage) ── */
-function GuideCard({ post, prefix, tools }: { post: Post; prefix: string; tools: ToolSummary[] }) {
-  const mentionedTools = useArticleTools(post, tools);
-  const gradient = getArticleGradient(post.slug, post.category);
-
-  return (
-    <Link
-      to={`${prefix}/guide/${post.slug}`}
-      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors duration-150"
-      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.4)"; }}
-      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = ""; }}
-    >
-      <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} px-4 py-6`}>
-        {mentionedTools.length > 0 ? (
-          <div className="flex items-center gap-2">
-            {mentionedTools.slice(0, 4).map((tool) => (
-              <div key={tool.id} className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card">
-                <ToolLogo tool={tool} size={24} className="rounded-md" />
-              </div>
-            ))}
-            {mentionedTools.length > 4 && (
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-xs font-bold text-muted-foreground">
-                +{mentionedTools.length - 4}
-              </div>
-            )}
-          </div>
-        ) : (
-          <BookOpen className="h-8 w-8 text-primary/25" />
-        )}
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          {post.category && (
-            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold text-primary">{post.category}</span>
-          )}
-          <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime || "5 min"}</span>
-        </div>
-        <h3 className="mt-3 text-base font-semibold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">{post.title}</h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">{post.excerpt}</p>
-      </div>
-    </Link>
-  );
-}
 
 export default HomePage;

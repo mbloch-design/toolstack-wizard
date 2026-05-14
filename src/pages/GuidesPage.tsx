@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useTools, type Post } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect } from "react";
-import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
-import { useArticleTools, getArticleGradient } from "@/hooks/useArticleTools";
+import { ArrowRight, BookOpen, Clock } from "lucide-react";
+import { useArticleTools } from "@/hooks/useArticleTools";
 import { ToolLogoStrip } from "@/components/ToolMentionedCard";
 import EditorialHero from "@/components/EditorialHero";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
@@ -151,70 +151,69 @@ function FeaturedCard({
   tools: Tool[];
 }) {
   const mentionedTools = useArticleTools(post, tools);
-  const gradient = getArticleGradient(post.slug, post.category);
 
   return (
     <Link
       to={`${prefix}/guide/${post.slug}`}
-      className="surface-card-hover group relative block overflow-hidden"
+      className="ec-card"
+      style={{ flexDirection: "row", padding: 0, overflow: "hidden" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-      <div className="relative flex flex-col gap-6 md:flex-row">
-        {/* Visual banner */}
-        <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} p-8 md:w-72 md:shrink-0`}>
-          {mentionedTools.length > 0 ? (
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {mentionedTools.slice(0, 6).map((tool) => (
-                <div
-                  key={tool.id}
-                  className="flex h-14 w-14 items-center justify-center rounded-xl border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
-                >
-                  <ToolLogo tool={tool} size={32} className="rounded-md" />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-card/50 backdrop-blur-sm">
-              <BookOpen className="h-12 w-12 text-primary/30" />
-            </div>
-          )}
-        </div>
+      {/* Tool logos panel */}
+      <div style={{
+        width: 220, flexShrink: 0,
+        background: "#F0F0EA", borderRight: "1px solid #DADAD4",
+        display: "flex", flexWrap: "wrap", gap: 10,
+        alignItems: "center", justifyContent: "center",
+        padding: 24,
+      }}
+        className="hidden md:flex"
+      >
+        {mentionedTools.slice(0, 6).map((tool) => (
+          <div
+            key={tool.id}
+            style={{ width: 44, height: 44, borderRadius: 10, border: "1px solid #DADAD4", background: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}
+          >
+            <ToolLogo tool={tool} size={26} className="rounded-md" />
+          </div>
+        ))}
+        {mentionedTools.length === 0 && (
+          <BookOpen style={{ width: 36, height: 36, color: "#DADAD4" }} />
+        )}
+      </div>
 
-        {/* Text */}
-        <div className="flex-1 p-6 md:py-8 md:pr-8 md:pl-0">
-          <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            {post.category && (
-              <span className="rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary">
-                {post.category}
-              </span>
-            )}
-            <span className="flex items-center gap-1">
-              <Clock className="h-3 w-3" /> {post.readTime}
+      {/* Text */}
+      <div style={{ flex: 1, padding: "28px 32px", display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+          {post.category && (
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68" }}>
+              {post.category}
             </span>
-            <span>{post.date}</span>
-          </div>
-          <h2 className="mt-4 group-hover:text-primary transition-colors duration-150" style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)", fontWeight: 600, letterSpacing: "-0.018em", lineHeight: 1.25 }}>
-            {post.title}
-          </h2>
-          <p className="mt-3 text-muted-foreground leading-relaxed line-clamp-3">
-            {post.excerpt}
-          </p>
-
-          {/* Tool logos strip */}
-          {mentionedTools.length > 0 && (
-            <div className="mt-4 flex items-center gap-3">
-              <ToolLogoStrip tools={mentionedTools} maxDisplay={5} />
-              <span className="text-xs text-muted-foreground">
-                {mentionedTools.length} {mentionedTools.length > 1 ? "outils" : "outil"}
-              </span>
-            </div>
           )}
-
-          <div className="mt-5 inline-flex items-center gap-2 font-semibold text-primary text-sm">
-            {t("Lire l'article", "Read article")}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </div>
+          <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#ADADAD", display: "flex", alignItems: "center", gap: 4 }}>
+            <Clock style={{ width: 11, height: 11 }} /> {post.readTime}
+          </span>
         </div>
+        <h2
+          className="ec-title"
+          style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)", lineHeight: 1.2 }}
+        >
+          {post.title}
+        </h2>
+        <p className="ec-text" style={{ marginTop: 12, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+          {post.excerpt}
+        </p>
+        {mentionedTools.length > 0 && (
+          <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 8 }}>
+            <ToolLogoStrip tools={mentionedTools} maxDisplay={5} />
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
+              {mentionedTools.length} {mentionedTools.length > 1 ? "outils" : "outil"}
+            </span>
+          </div>
+        )}
+        <span className="ec-cta">
+          {t("Lire l'article", "Read article")}
+          <ArrowRight className="ec-cta-arrow" style={{ width: 14, height: 14 }} />
+        </span>
       </div>
     </Link>
   );
@@ -223,65 +222,48 @@ function FeaturedCard({
 /* ── Article card ── */
 function ArticleCard({ post, prefix, tools }: { post: Post; prefix: string; tools: Tool[] }) {
   const mentionedTools = useArticleTools(post, tools);
-  const gradient = getArticleGradient(post.slug, post.category);
 
   return (
-    <Link
-      to={`${prefix}/guide/${post.slug}`}
-      className="surface-card-hover group flex flex-col overflow-hidden"
-    >
-      {/* Visual thumbnail */}
-      <div className={`relative flex items-center justify-center bg-gradient-to-br ${gradient} px-4 py-6`}>
-        {mentionedTools.length > 0 ? (
-          <div className="flex items-center gap-2">
-            {mentionedTools.slice(0, 4).map((tool) => (
-              <div
-                key={tool.id}
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm"
-              >
-                <ToolLogo tool={tool} size={24} className="rounded" />
-              </div>
-            ))}
-            {mentionedTools.length > 4 && (
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 bg-card/60 text-xs font-bold text-muted-foreground backdrop-blur-sm">
-                +{mentionedTools.length - 4}
-              </div>
-            )}
+    <Link to={`${prefix}/guide/${post.slug}`} className="ec-card">
+      {/* Thumbnail */}
+      <div style={{
+        background: "#F0F0EA", borderRadius: 4, padding: "16px 14px", marginBottom: 20,
+        display: "flex", alignItems: "center", gap: 8, minHeight: 60,
+      }}>
+        {mentionedTools.slice(0, 4).map((tool) => (
+          <div
+            key={tool.id}
+            style={{ width: 34, height: 34, borderRadius: 8, border: "1px solid #DADAD4", background: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}
+          >
+            <ToolLogo tool={tool} size={20} className="rounded" />
           </div>
-        ) : (
-          <BookOpen className="h-8 w-8 text-primary/25" />
+        ))}
+        {mentionedTools.length > 4 && (
+          <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, color: "#6F6F68" }}>+{mentionedTools.length - 4}</span>
+        )}
+        {mentionedTools.length === 0 && (
+          <BookOpen style={{ width: 22, height: 22, color: "#ADADAD" }} />
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          {post.category && (
-            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 font-semibold text-primary">
-              {post.category}
-            </span>
-          )}
-          <span className="flex items-center gap-1">
-            <Clock className="h-3 w-3" /> {post.readTime}
-          </span>
-        </div>
-        <h3 className="mt-3 text-base font-semibold tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2">
-          {post.title}
-        </h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
-          {post.excerpt}
-        </p>
-        {post.tags && post.tags.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {post.tags.slice(0, 2).map((tag) => (
-              <span
-                key={tag}
-                className="rounded-md bg-secondary px-2 py-0.5 text-[11px] text-muted-foreground"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+      <span className="ec-label">{post.category || "GUIDE"}</span>
+      <div
+        className="ec-title"
+        style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}
+      >
+        {post.title}
+      </div>
+      <p className="ec-text" style={{ display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+        {post.excerpt}
+      </p>
+      <hr className="ec-divider" />
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: 14 }}>
+        <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68", display: "flex", alignItems: "center", gap: 4 }}>
+          <Clock style={{ width: 11, height: 11 }} /> {post.readTime}
+        </span>
+        <span className="ec-cta" style={{ marginTop: 0 }}>
+          Lire <ArrowRight className="ec-cta-arrow" style={{ width: 13, height: 13 }} />
+        </span>
       </div>
     </Link>
   );

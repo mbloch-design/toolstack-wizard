@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
-import { Search, X, Flame } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
@@ -12,26 +12,6 @@ import type { Tool } from "@/data/types";
 
 const TOOLS_PER_PAGE = 40;
 
-const HERO_TOOL_IDS = [
-  "notion", "stripe", "hubspot", "zapier", "figma",
-  "slack", "airtable", "linear", "framer", "intercom",
-  "google-analytics", "webflow",
-];
-
-const MOSAIC_POSITIONS: [string, string, number, string, number][] = [
-  ["4%",  "2%",  64, "rotate(-6deg)", 2],
-  ["0%",  "24%", 56, "rotate(4deg)",  3],
-  ["2%",  "46%", 72, "rotate(-2deg)", 4],
-  ["0%",  "67%", 80, "rotate(3deg)",  5],
-  ["30%", "12%", 56, "rotate(5deg)",  2],
-  ["28%", "34%", 88, "rotate(-4deg)", 5],
-  ["26%", "57%", 64, "rotate(6deg)",  3],
-  ["28%", "77%", 72, "rotate(-3deg)", 4],
-  ["56%", "5%",  64, "rotate(3deg)",  2],
-  ["55%", "27%", 56, "rotate(-5deg)", 3],
-  ["54%", "50%", 80, "rotate(2deg)",  4],
-  ["52%", "72%", 60, "rotate(-4deg)", 3],
-];
 
 type SortKey = "popular" | "name" | "price-asc" | "free-first";
 type PriceFilter = "all" | "free" | "paid";
@@ -76,11 +56,6 @@ const ToolsPage = () => {
     });
     return () => cleanupSeo(["tools-jsonld"]);
   }, [lang, tools]);
-
-  const heroTools = useMemo(() =>
-    HERO_TOOL_IDS.map(id => tools.find(t => t.id === id || t.slug === id)).filter(Boolean) as Tool[],
-    [tools]
-  );
 
   const sortedCategories = useMemo(() =>
     [...categories].sort((a, b) =>
@@ -136,56 +111,39 @@ const ToolsPage = () => {
   return (
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
 
-      {/* ══════════════ HERO ══════════════ */}
-      <section
-        className="relative overflow-hidden border-b border-border"
-        style={{ background: "hsl(230 40% 97%)" }}
-      >
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 py-14 lg:grid-cols-2 lg:items-center" style={{ minHeight: 300 }}>
-          <div className="relative z-10">
-            <h1
-              className="font-display"
-              style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.08, color: "hsl(var(--foreground))", maxWidth: "16ch" }}
-            >
-              {t("Trouvez les bons outils\npour votre stack", "Find the right tools\nfor your stack")}
-            </h1>
-            <p className="mt-3 leading-relaxed" style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))", maxWidth: "44ch", fontWeight: 400 }}>
-              {t("Des prix vérifiés, des alternatives honnêtes — sans commission, sans biais.", "Verified pricing, honest alternatives — no commissions, no bias.")}
-            </p>
-            <div
-              className="relative mt-6 flex items-center rounded-xl border bg-white"
-              style={{ maxWidth: 460, borderColor: "hsl(var(--border))", boxShadow: "0 2px 10px rgba(0,0,0,0.07)" }}
-            >
-              <Search className="pointer-events-none absolute left-4 h-4 w-4" style={{ color: "hsl(var(--muted-foreground))" }} />
-              <input
-                type="search" value={search} onChange={e => setSearch(e.target.value)}
-                placeholder={t("Rechercher un outil…", "Search a tool…")}
-                className="h-12 w-full rounded-xl border-0 bg-transparent pr-10 text-sm font-medium outline-none placeholder:text-muted-foreground"
-                style={{ paddingLeft: "2.5rem", fontFamily: "'DM Sans', sans-serif", color: "hsl(var(--foreground))" }}
-              />
-              {search && (
-                <button type="button" onClick={() => setSearch("")} className="absolute right-3 flex h-6 w-6 items-center justify-center rounded-full hover:bg-secondary">
-                  <X className="h-3.5 w-3.5 text-muted-foreground" />
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* Floating logos */}
-          <div className="relative hidden h-64 lg:block" aria-hidden>
-            {heroTools.slice(0, 12).map((tool, i) => {
-              const [top, left, size, rotate, zIdx] = MOSAIC_POSITIONS[i] ?? ["0%", "0%", 56, "", 1];
-              return (
-                <div key={tool.id} className="absolute" style={{ top, left, zIndex: zIdx, transform: rotate }}>
-                  <div className="overflow-hidden rounded-2xl" style={{ width: size, height: size, boxShadow: "0 4px 16px rgba(0,0,0,0.10)" }}>
-                    <ToolLogo tool={tool} size={size} />
-                  </div>
-                </div>
-              );
-            })}
+      {/* ══════════════ TOOLS SEARCH HEADER ══════════════ */}
+      <div style={{ background: "#F8F8F4", borderBottom: "1px solid #DADAD4", padding: "48px 0 40px" }}>
+        <div className="mx-auto max-w-7xl px-6">
+          <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 16 }}>
+            {t("Catalogue", "Catalog")}
+          </span>
+          <h1
+            style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 600, letterSpacing: "-0.055em", lineHeight: 0.98, color: "#222222", marginBottom: 20 }}
+          >
+            {t("Trouver les bons outils.", "Find the right tools.")}
+          </h1>
+          <div style={{ position: "relative", maxWidth: 460 }}>
+            <Search style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", width: 15, height: 15, color: "#6F6F68", pointerEvents: "none" }} />
+            <input
+              type="search" value={search} onChange={e => setSearch(e.target.value)}
+              placeholder={t("Rechercher un outil…", "Search a tool…")}
+              style={{
+                width: "100%", height: 46, paddingLeft: 42, paddingRight: search ? 36 : 14,
+                background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
+                fontFamily: "var(--font-ui)", fontSize: 14, color: "#222222", outline: "none",
+                transition: "border-color 160ms ease-out",
+              }}
+              onFocus={e => { e.currentTarget.style.borderColor = "#222222"; }}
+              onBlur={e => { e.currentTarget.style.borderColor = "#DADAD4"; }}
+            />
+            {search && (
+              <button type="button" onClick={() => setSearch("")} style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", cursor: "pointer", padding: 4, color: "#6F6F68" }}>
+                <X style={{ width: 13, height: 13 }} />
+              </button>
+            )}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ══════════════ BODY ══════════════ */}
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-10 lg:grid-cols-[200px_1fr]">

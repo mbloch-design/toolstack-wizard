@@ -535,18 +535,13 @@ const StacksPage = () => {
               </div>
 
               {showProfileRecommendations && (
-                <div className="mt-4 rounded-lg border border-border bg-card p-4 md:p-5">
-                  <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-primary">
-                        {t("Recommandées par profil", "Recommended by profile")}
-                      </p>
-                      <h2 className="mt-1 font-display text-xl font-semibold tracking-tight text-foreground">
-                        {t("Commence par la stack de ton métier", "Start with the stack for your role")}
-                      </h2>
-                    </div>
-                    <p className="max-w-md text-sm leading-6 text-muted-foreground">
-                      {t("Une base claire par profil, puis les spécialités pour affiner.", "One clear base per profile, then specialties to refine.")}
+                <div style={{ marginTop: 16, border: "1px solid #DADAD4", borderRadius: 8, padding: "20px 20px 24px", background: "#FFFFFF" }}>
+                  <div style={{ marginBottom: 20 }}>
+                    <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 8 }}>
+                      {t("Recommandées par profil", "Recommended by profile")}
+                    </p>
+                    <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.125rem, 2vw, 1.375rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", lineHeight: 1.15 }}>
+                      {t("Commence par la stack de ton métier", "Start with the stack for your role")}
                     </p>
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
@@ -554,18 +549,19 @@ const StacksPage = () => {
                       <Link
                         key={`recommended-${stack.id}`}
                         to={`${prefix}/stacks/${stack.slug}`}
-                        className="group rounded-lg border border-border bg-background p-4 transition-colors hover:border-primary/35 hover:bg-primary/5"
+                        className="ec-card"
+                        style={{ padding: "16px 18px" }}
                       >
-                        <div className="flex items-center justify-between gap-3">
-                          <span className="rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
+                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                          <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#6F6F68", border: "1px solid #DADAD4", borderRadius: 4, padding: "3px 8px" }}>
                             {t(personaLabel(persona, "fr"), personaLabel(persona, "en"))}
                           </span>
-                          <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                          <ArrowRight className="ec-cta-arrow" style={{ width: 13, height: 13, color: "#ADADAD", flexShrink: 0 }} />
                         </div>
-                        <h3 className="mt-3 text-base font-semibold leading-snug text-foreground">
+                        <div style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, letterSpacing: "-0.02em", color: "#222222", lineHeight: 1.3, marginBottom: 6 }}>
                           {t(stack.title, stack.titleEn)}
-                        </h3>
-                        <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">
+                        </div>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                           {t(stack.bestFor, stack.bestForEn)}
                         </p>
                       </Link>
@@ -582,80 +578,72 @@ const StacksPage = () => {
                     <Link
                       key={stack.id}
                       to={`${prefix}/stacks/${stack.slug}`}
-                      className="group grid overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-primary/35 hover:bg-primary/5 md:grid-cols-[9.5rem_minmax(0,1fr)]"
+                      className="ec-card group"
+                      style={{ flexDirection: "row", padding: 0, overflow: "hidden" }}
                     >
-                      <div className="relative min-h-40 overflow-hidden bg-secondary md:min-h-full">
+                      {/* Image */}
+                      <div style={{ width: 140, flexShrink: 0, overflow: "hidden", background: "#EDEDE8" }} className="hidden md:block">
                         <img
                           src={STACK_VISUALS[stack.slug] || STACK_VISUALS["freelance-solo-zero-bloat"]}
                           alt={t(stack.title, stack.titleEn)}
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                          style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 500ms ease" }}
+                          className="group-hover:scale-[1.04] transition-transform"
                           loading="lazy"
                         />
                       </div>
 
-                      <div className="grid min-w-0 gap-4 p-4 lg:grid-cols-[minmax(0,1fr)_13rem] lg:items-center">
-                        <div className="min-w-0">
-                          <div className="mb-3 flex flex-wrap gap-2">
-                            <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground">
+                      {/* Body */}
+                      <div style={{ flex: 1, minWidth: 0, padding: "18px 20px", display: "grid", gridTemplateColumns: "minmax(0,1fr) 11rem", gap: 16, alignItems: "center" }} className="lg:grid grid-cols-1">
+                        <div style={{ minWidth: 0 }}>
+                          {/* Tags */}
+                          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
+                            <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#6F6F68", border: "1px solid #DADAD4", borderRadius: 4, padding: "2px 8px" }}>
                               {t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"))}
                             </span>
-                            <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground">
+                            <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#6F6F68", border: "1px solid #DADAD4", borderRadius: 4, padding: "2px 8px" }}>
                               {t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}
                             </span>
-                            <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground">
-                              {t(subProfileLabel(stack.subProfiles[0], "fr"), subProfileLabel(stack.subProfiles[0], "en"))}
-                            </span>
-                            <span className="rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
-                              {stack.tools.length} {t("outils", "tools")}
-                            </span>
                             {isProfileRecommended && (
-                              <span className="rounded-full border border-foreground/15 bg-foreground px-3 py-1 text-xs font-semibold text-background">
-                                {t("Stack de base", "Base stack")}
+                              <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#222222", border: "1px solid #222222", borderRadius: 4, padding: "2px 8px" }}>
+                                {t("Base", "Base")}
                               </span>
                             )}
                           </div>
-
-                          <h2 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground md:text-2xl">
+                          <div style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", lineHeight: 1.2, marginBottom: 6 }}>
                             {t(stack.title, stack.titleEn)}
-                          </h2>
-                          <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                            {t(stack.bestFor, stack.bestForEn)}
-                          </p>
-                          <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted-foreground">
+                          </div>
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                             {t(stack.risk, stack.riskEn)}
                           </p>
                         </div>
 
-                        <div className="grid gap-4 border-t border-border pt-4 lg:border-l lg:border-t-0 lg:pl-5 lg:pt-0">
-                          <div>
-                            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                              {t("Premiers outils", "First tools")}
-                            </p>
-                            <div className="mt-2 flex -space-x-2">
-                              {stackTools.slice(0, 5).map(({ tool }) => (
-                                <span
-                                  key={`${stack.id}-${tool!.id}`}
-                                  className="inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-card bg-background"
-                                  title={tool!.name}
-                                >
-                                  <ToolLogo tool={tool!} size={20} className="rounded" />
-                                </span>
-                              ))}
-                            </div>
+                        {/* Right side — budget + tools + cta */}
+                        <div style={{ borderLeft: "1px solid #E7E7E0", paddingLeft: 16, display: "flex", flexDirection: "column", gap: 12 }} className="hidden lg:flex">
+                          {/* Tool logos */}
+                          <div style={{ display: "flex", gap: 4 }}>
+                            {stackTools.slice(0, 4).map(({ tool }) => (
+                              <span
+                                key={`${stack.id}-${tool!.id}`}
+                                style={{ width: 28, height: 28, borderRadius: 6, border: "1px solid #DADAD4", background: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}
+                                title={tool!.name}
+                              >
+                                <ToolLogo tool={tool!} size={18} className="rounded" />
+                              </span>
+                            ))}
                           </div>
-                          <div className="grid grid-cols-2 gap-3 text-sm">
+                          {/* Metrics */}
+                          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                             <div>
-                              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{t("Coût repère", "Cost range")}</p>
-                              <p className="mt-1 font-semibold text-foreground">{stack.monthlyBudget}€/{t("mois", "mo")}</p>
+                              <span className="ec-meta-label">{t("COÛT", "COST")}</span>
+                              <span className="ec-meta-value">{stack.monthlyBudget}€</span>
                             </div>
                             <div>
-                              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{t("Économie", "Savings")}</p>
-                              <p className="mt-1 font-semibold text-foreground">{stack.savings}€/{t("mois", "mo")}</p>
+                              <span className="ec-meta-label">{t("OUTILS", "TOOLS")}</span>
+                              <span className="ec-meta-value">{stack.tools.length}</span>
                             </div>
                           </div>
-                          <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                            {t("Voir", "View")}
-                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                          <span className="ec-cta" style={{ marginTop: 0, fontSize: 13 }}>
+                            {t("Voir", "View")} <ArrowRight className="ec-cta-arrow" style={{ width: 13, height: 13 }} />
                           </span>
                         </div>
                       </div>

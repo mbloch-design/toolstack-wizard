@@ -129,10 +129,10 @@ const ComparesIndexPage = () => {
 
       <main className="px-4 md:px-8 pb-20 max-w-7xl mx-auto space-y-16">
         {/* Custom Comparator */}
-        <section id="comparateur" className="surface-card p-6 md:p-8">
-          <div className="flex items-center gap-2 mb-6">
-            <Sparkles className="h-5 w-5 text-primary" />
-            <h2 className="text-lg font-bold text-foreground">
+        <section id="comparateur" style={{ background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8, padding: "24px 28px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
+            <Sparkles style={{ width: 16, height: 16, color: "#6F6F68" }} />
+            <h2 style={{ fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.02em", color: "#222222" }}>
               {t("Créer un comparatif personnalisé", "Create a custom comparison")}
             </h2>
           </div>
@@ -244,9 +244,19 @@ const ComparesIndexPage = () => {
               <button
                 onClick={handleCompare}
                 disabled={!selectedA || !selectedB}
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground hover:bg-primary/85 transition-colors shadow-lg shadow-primary/20 disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap"
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                  height: 46, padding: "0 20px",
+                  background: selectedA && selectedB ? "#222222" : "#DADAD4",
+                  color: "#FFFFFF", border: "none", borderRadius: 8,
+                  fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
+                  cursor: selectedA && selectedB ? "pointer" : "not-allowed",
+                  whiteSpace: "nowrap", transition: "opacity 160ms ease-out",
+                }}
+                onMouseEnter={e => { if (selectedA && selectedB) (e.currentTarget as HTMLElement).style.opacity = "0.8"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
               >
-                {t("Comparer", "Compare")} <ArrowRight className="h-4 w-4" />
+                {t("Comparer", "Compare")} <ArrowRight style={{ width: 14, height: 14 }} />
               </button>
             </div>
           </div>
@@ -254,11 +264,18 @@ const ComparesIndexPage = () => {
 
         {/* Featured comparisons grid */}
         <section>
-          <h2 className="text-xl md:text-2xl font-heading font-bold tracking-tight text-foreground mb-8">
-            {t("Comparatifs populaires", "Popular Comparisons")}
-          </h2>
+          <div style={{ display: "flex", alignItems: "end", justifyContent: "space-between", gap: 24, marginBottom: 24 }}>
+            <div>
+              <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", display: "block", marginBottom: 10 }}>
+                {t("Comparatifs populaires", "Popular comparisons")}
+              </span>
+              <h2 style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.04em", color: "#222222", lineHeight: 1.05 }}>
+                {t("Outils fréquemment comparés.", "Most compared tools.")}
+              </h2>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="es-grid">
             {resolvedComparisons.map(c => {
               const a = c.toolAData!;
               const b = c.toolBData!;
@@ -266,40 +283,46 @@ const ComparesIndexPage = () => {
                 <Link
                   key={c.slugPair}
                   to={`${prefix}/comparatif/${c.slugPair}`}
-                  className="surface-card-hover group p-5"
+                  className="ec-card"
                 >
-                  {/* Logos side by side */}
-                  <div className="flex items-center justify-center gap-3 mb-4">
-                    <div className="flex flex-col items-center gap-1.5">
-                      <ToolLogo tool={a} size={36} className="rounded-lg" />
-                      <span className="text-xs font-bold text-foreground">{a.name}</span>
+                  <span className="ec-label">{t("COMPARATIF", "COMPARISON")}</span>
+
+                  {/* Logos + names */}
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                      <div style={{ width: 40, height: 40, borderRadius: 10, border: "1px solid #DADAD4", background: "#F8F8F4", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <ToolLogo tool={a} size={26} className="rounded-md" />
+                      </div>
+                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, color: "#222222" }}>{a.name}</span>
                     </div>
-                    <span className="text-sm font-bold text-muted-foreground/40 mt-[-16px]">VS</span>
-                    <div className="flex flex-col items-center gap-1.5">
-                      <ToolLogo tool={b} size={36} className="rounded-lg" />
-                      <span className="text-xs font-bold text-foreground">{b.name}</span>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 700, color: "#ADADAD", marginTop: -12, flexShrink: 0 }}>VS</span>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                      <div style={{ width: 40, height: 40, borderRadius: 10, border: "1px solid #DADAD4", background: "#F8F8F4", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <ToolLogo tool={b} size={26} className="rounded-md" />
+                      </div>
+                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, color: "#222222" }}>{b.name}</span>
                     </div>
                   </div>
 
-                  {/* Pricing */}
-                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                    <span className="font-mono font-bold text-foreground">{getPriceLabel(a, t)}</span>
-                    <span className="text-muted-foreground/50">{t("vs", "vs")}</span>
-                    <span className="font-mono font-bold text-foreground">{getPriceLabel(b, t)}</span>
+                  {/* Pricing row */}
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "#222222" }}>{getPriceLabel(a, t)}</span>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#ADADAD" }}>vs</span>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "#222222" }}>{getPriceLabel(b, t)}</span>
                   </div>
 
                   {/* Verdict snippet */}
-                  <p className="text-xs text-muted-foreground line-clamp-2 mb-3">
+                  <p className="ec-text" style={{ marginTop: 0, fontSize: 13, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                     {t(
                       `${a.name} excelle si ${(a.verdict?.keepIf || [])[0] || "usage avancé"}. ${b.name} convient si ${(b.verdict?.keepIf || [])[0] || "budget limité"}.`,
                       `${a.name} excels if ${(a.verdict?.keepIf || [])[0] || "advanced use"}. ${b.name} fits if ${(b.verdict?.keepIf || [])[0] || "limited budget"}.`
                     )}
                   </p>
 
-                  {/* CTA */}
-                  <div className="flex items-center gap-1 text-primary text-xs font-bold group-hover:gap-2 transition-all">
-                    {t("Voir le comparatif", "See comparison")} <ArrowRight className="h-3 w-3" />
-                  </div>
+                  <span className="ec-cta">
+                    {t("Lire le comparatif", "Read comparison")}
+                    <ArrowRight className="ec-cta-arrow" style={{ width: 13, height: 13 }} />
+                  </span>
                 </Link>
               );
             })}
@@ -307,18 +330,27 @@ const ComparesIndexPage = () => {
         </section>
 
         {/* Bottom CTA */}
-        <section className="text-center pt-4">
-          <p className="text-muted-foreground text-sm mb-4">
+        <section style={{ paddingTop: 16, textAlign: "center" }}>
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#6F6F68", marginBottom: 16 }}>
             {t(
-              "Vous ne trouvez pas votre comparatif ? Utilisez le sélecteur ci-dessus pour comparer n'importe quels outils.",
-              "Can't find your comparison? Use the selector above to compare any tools."
+              "Vous ne trouvez pas votre comparatif ? Utilisez le sélecteur ci-dessus.",
+              "Can't find your comparison? Use the selector above."
             )}
           </p>
           <Link
             to={`${prefix}/selector`}
-            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-bold hover:bg-secondary transition-colors"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              height: 44, padding: "0 20px",
+              border: "1px solid #DADAD4", borderRadius: 8,
+              fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
+              color: "#222222", textDecoration: "none", background: "#FFFFFF",
+              transition: "border-color 160ms ease-out",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
           >
-            {t("Analyser ma stack complète", "Analyze my full stack")} <ArrowRight className="h-4 w-4" />
+            {t("Analyser ma stack complète", "Analyze my full stack")} <ArrowRight style={{ width: 14, height: 14 }} />
           </Link>
         </section>
       </main>
