@@ -73,7 +73,7 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
       <div className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-10 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_auto] lg:items-end">
           <div>
-            <span className="section-tag mb-5">{t("Ce que ToolTrim cherche", "What ToolTrim looks for")}</span>
+            <span className="section-tag">{t("Ce que ToolTrim cherche", "What ToolTrim looks for")}</span>
             <h2 className="ts-h2 max-w-3xl">
               {t("Des économies utiles, pas des coupes au hasard.", "Useful savings, not random cuts.")}
             </h2>

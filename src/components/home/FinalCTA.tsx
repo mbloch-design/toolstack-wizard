@@ -12,7 +12,7 @@ const FinalCTA = () => {
         {/* Inner container — centered, constrained */}
         <div className="mx-auto max-w-2xl text-center">
 
-          <span className="section-tag mb-6">{t("Prêt ?", "Ready?")}</span>
+          <span className="section-tag">{t("Prêt ?", "Ready?")}</span>
 
           <h2 className="ts-h1">
             {t("Combien", "How much")}

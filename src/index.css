@@ -313,9 +313,12 @@
 /* ─────────────────────────────────────────────
    UTILITIES
 ───────────────────────────────────────────── */
-@layer utilities {
-  /* Eyebrow / section label — Inter, discret */
-  /* Section eyebrow tag — dark filled pill, high contrast, auto-inverts in dark mode */
+@layer components {
+  /* ── Section eyebrow tag ──────────────────────────────────────────────
+     Dark filled pill. Use ONCE per section, directly before the h2.
+     Auto-inverts in dark mode (foreground = near-white bg, bg = near-black text).
+     Always left-aligned (parent alignment controls centering).
+  ──────────────────────────────────────────────────────────────────── */
   .section-tag {
     display: inline-block;
     font-family: Inter, system-ui, sans-serif;
@@ -323,12 +326,15 @@
     font-weight: 600;
     line-height: 1;
     letter-spacing: 0em;
-    padding: 0.45rem 1.1rem;
+    padding: 0.4rem 1rem;
     border-radius: 9999px;
     background: hsl(var(--foreground));
     color: hsl(var(--background));
+    margin-bottom: 1.25rem; /* always 20px gap before h2 */
   }
+}
 
+@layer utilities {
   /* Alias — keep .label-section working, maps to ts-eyebrow values */
   .label-section {
     font-family: Inter, system-ui, sans-serif;

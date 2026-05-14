@@ -54,19 +54,14 @@ const HowItWorks = () => {
     <section className="border-t border-border">
       <div className="mx-auto max-w-7xl px-6 py-24">
 
-        {/* Header — left-aligned like a doc */}
-        <div className="mb-16 flex items-end justify-between gap-8">
-          <div>
-            <span className="section-tag mb-5">{t("Processus", "Process")}</span>
-            <h2 className="ts-h2">
-              {t("3 étapes. ", "3 steps. ")}
-              <span className="text-primary">{t("Aucune approximation.", "No guesswork.")}</span>
-            </h2>
-          </div>
-          <p
-            className="hidden md:block max-w-xs text-sm leading-relaxed text-right shrink-0"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
+        {/* Header */}
+        <div className="mb-16">
+          <span className="section-tag">{t("Processus", "Process")}</span>
+          <h2 className="ts-h2">
+            {t("3 étapes. ", "3 steps. ")}
+            <span className="text-primary">{t("Aucune approximation.", "No guesswork.")}</span>
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
             {t(
               "Contrairement aux annuaires, chaque recommandation est filtrée par votre contexte réel.",
               "Unlike directories, every recommendation is filtered by your real context."

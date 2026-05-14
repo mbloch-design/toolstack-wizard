@@ -19,7 +19,7 @@ const DiffTable = ({ toolCount }: { toolCount: number }) => {
 
         {/* Header */}
         <div className="mb-10">
-          <span className="section-tag mb-5">{t("Positionnement", "Positioning")}</span>
+          <span className="section-tag">{t("Positionnement", "Positioning")}</span>
           <h2 className="ts-h2">
             {t("Pas un annuaire. ", "Not a directory. ")}
             <span className="text-primary">{t("Un diagnostic.", "A diagnosis.")}</span>

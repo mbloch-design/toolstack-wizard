@@ -91,7 +91,7 @@ const ScannerDemo = () => {
       <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
         {/* Copy */}
         <div>
-          <span className="section-tag mb-5">
+          <span className="section-tag">
             {t("Démo interactive", "Interactive demo")}
           </span>
           <h2 className="ts-h2">

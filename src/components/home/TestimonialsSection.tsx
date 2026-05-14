@@ -95,28 +95,12 @@ const TestimonialsSection = () => {
       <div className="mx-auto max-w-7xl px-6 py-24">
 
         {/* Header */}
-        <div className="mb-12 flex items-end justify-between gap-8">
-          <div>
-            <span className="section-tag mb-5">{t("Témoignages", "Testimonials")}</span>
-            <h2 className="ts-h2">
-              {t("Ils ont repris le contrôle ", "They took back control ")}
-              <span className="text-primary">{t("de leur stack.", "of their stack.")}</span>
-            </h2>
-          </div>
-
-          {/* Dot indicators — desktop */}
-          <div className="hidden md:flex items-center gap-2 shrink-0 pb-1">
-            {TESTIMONIALS.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => { setIsAnimating(true); setActive(i); setTimeout(() => setIsAnimating(false), 500); }}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  i === active ? "w-8 bg-primary" : "w-1.5 bg-border hover:bg-muted-foreground/40"
-                }`}
-                aria-label={`Testimonial ${i + 1}`}
-              />
-            ))}
-          </div>
+        <div className="mb-12">
+          <span className="section-tag">{t("Témoignages", "Testimonials")}</span>
+          <h2 className="ts-h2">
+            {t("Ils ont repris le contrôle ", "They took back control ")}
+            <span className="text-primary">{t("de leur stack.", "of their stack.")}</span>
+          </h2>
         </div>
 
         {/* Carousel */}
@@ -195,22 +179,21 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
-          {/* Navigation — arrows + mobile dots */}
+          {/* Navigation — dots + arrows */}
           <div className="mt-6 flex items-center justify-between">
-            {/* Mobile dots */}
-            <div className="flex md:hidden items-center gap-2">
+            {/* Dots — all breakpoints */}
+            <div className="flex items-center gap-2">
               {TESTIMONIALS.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => { setIsAnimating(true); setActive(i); setTimeout(() => setIsAnimating(false), 500); }}
                   className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    i === active ? "w-8 bg-primary" : "w-1.5 bg-border"
+                    i === active ? "w-8 bg-primary" : "w-1.5 bg-border hover:bg-muted-foreground/40"
                   }`}
                   aria-label={`Testimonial ${i + 1}`}
                 />
               ))}
             </div>
-            <div className="hidden md:block" />
 
             {/* Arrows */}
             <div className="flex gap-2">

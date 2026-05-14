@@ -94,14 +94,14 @@ const PersonasSection = () => {
     <section className="bg-secondary/30 py-24 px-6">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-14">
-          <span className="section-tag mb-5">
+        <div className="mb-14">
+          <span className="section-tag">
             {t("Pour qui", "Who it's for")}
           </span>
           <h2 className="ts-h2">
-            {t("Conçu pour ", "Built for ")}<em className="text-primary italic">{t("5 expertises métier", "5 professional profiles")}</em>
+            {t("Conçu pour ", "Built for ")}<span className="text-primary">{t("5 expertises métier", "5 professional profiles")}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground leading-relaxed">
+          <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">
             {t(
               "Chaque profil a des besoins différents. ToolTrim adapte son analyse à votre réalité.",
               "Each profile has different needs. ToolTrim adapts its analysis to your reality."
