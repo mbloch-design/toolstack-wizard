@@ -116,21 +116,8 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
       className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden -mt-[88px] pt-[88px]"
       style={{ minHeight: "clamp(580px, 88vh, 860px)" }}
     >
-      {/* Mesh gradient background — blurry blue/white blobs */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden
-        style={{
-          background: [
-            "radial-gradient(ellipse 70% 60% at 52% 28%, rgba(255,255,255,0.92) 0%, transparent 62%)",
-            "radial-gradient(ellipse 58% 52% at 2% 2%, hsl(214 72% 86% / 0.85) 0%, transparent 58%)",
-            "radial-gradient(ellipse 52% 48% at 98% 95%, hsl(220 65% 87% / 0.80) 0%, transparent 55%)",
-            "radial-gradient(ellipse 44% 40% at 10% 92%, hsl(210 60% 89% / 0.65) 0%, transparent 52%)",
-            "radial-gradient(ellipse 40% 36% at 92% 8%, hsl(218 68% 88% / 0.70) 0%, transparent 50%)",
-            "hsl(214 52% 93%)",
-          ].join(", "),
-        }}
-      />
+      {/* Mesh gradient background — light/dark variants via CSS class */}
+      <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
 
       {/* Floating tool icons — desktop only */}
       {/* Wrapper: continuous float (translateY) — img: one-shot reveal (scale+opacity) */}
@@ -154,12 +141,11 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             loading="eager"
             width={logo.size}
             height={logo.size}
-            className="rounded-2xl bg-card p-3 ring-1 ring-border"
+            className="rounded-2xl bg-card p-3 ring-1 ring-border dark:bg-white/8 dark:ring-white/12"
             style={{
               width: logo.size,
               height: logo.size,
               objectFit: "contain",
-              /* Spring reveal: cubic-bezier overshoot gives a pop feel */
               animation: `logo-reveal 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) ${logo.revealDelay} both`,
               boxShadow: "0 8px 28px hsl(0 0% 0% / 0.20), 0 2px 6px hsl(0 0% 0% / 0.10)",
             }}
@@ -176,7 +162,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
         aria-hidden
         style={{
           backgroundImage:
-            "radial-gradient(hsl(var(--border) / 0.8) 1px, transparent 1px)",
+            "radial-gradient(hsl(var(--foreground) / 0.07) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
           maskImage:
             "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
@@ -241,18 +227,15 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleSearchKey}
             placeholder={t("Rechercher un outil…", "Search for a tool…")}
-            className="w-full rounded-lg border bg-card py-3.5 pl-11 pr-4 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150"
-            style={{
-              borderColor: "hsl(var(--border))",
-              fontFamily: 'Inter, system-ui, sans-serif',
-            }}
+            className="w-full rounded-lg border bg-card py-3.5 pl-11 pr-4 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150 dark:bg-white/6 dark:border-white/14"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             onFocus={(e) => {
               e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.6)";
               e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.12)";
             }}
             onBlur={(e) => {
-              e.currentTarget.style.borderColor = "hsl(var(--border))";
-              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.borderColor = "";
+              e.currentTarget.style.boxShadow = "";
             }}
           />
         </div>
@@ -266,7 +249,7 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
                 <button
                   key={tool.id}
                   onClick={() => handleToolClick(tool)}
-                  className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground cursor-pointer transition-all duration-150"
+                  className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground cursor-pointer transition-all duration-150 dark:bg-white/6 dark:border-white/14"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.borderColor = "hsl(var(--primary) / 0.5)";

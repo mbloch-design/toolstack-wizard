@@ -16,6 +16,29 @@
 @tailwind utilities;
 
 /* ─────────────────────────────────────────────
+   HERO GRADIENT — light / dark variants
+───────────────────────────────────────────── */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 70% 60% at 52% 28%, rgba(255,255,255,0.92) 0%, transparent 62%),
+    radial-gradient(ellipse 58% 52% at  2%  2%, hsl(214 72% 86% / 0.85) 0%, transparent 58%),
+    radial-gradient(ellipse 52% 48% at 98% 95%, hsl(220 65% 87% / 0.80) 0%, transparent 55%),
+    radial-gradient(ellipse 44% 40% at 10% 92%, hsl(210 60% 89% / 0.65) 0%, transparent 52%),
+    radial-gradient(ellipse 40% 36% at 92%  8%, hsl(218 68% 88% / 0.70) 0%, transparent 50%),
+    hsl(214 52% 93%);
+}
+
+.dark .hero-gradient {
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 30%, hsl(224 50% 14% / 0.55) 0%, transparent 62%),
+    radial-gradient(ellipse 55% 50% at  2%  2%, hsl(224 60% 18% / 0.65) 0%, transparent 56%),
+    radial-gradient(ellipse 50% 46% at 98% 95%, hsl(220 55% 16% / 0.60) 0%, transparent 54%),
+    radial-gradient(ellipse 42% 38% at 10% 92%, hsl(210 50% 14% / 0.50) 0%, transparent 50%),
+    radial-gradient(ellipse 38% 34% at 92%  8%, hsl(218 55% 16% / 0.55) 0%, transparent 48%),
+    hsl(var(--background));
+}
+
+/* ─────────────────────────────────────────────
    ANIMATIONS
 ───────────────────────────────────────────── */
 @keyframes float {
@@ -106,8 +129,8 @@
     --destructive: 0 62% 42%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 13%;
-    --input: 0 0% 13%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
     --ring: 224 76% 60%;
 
     --keep: 142 55% 42%;
