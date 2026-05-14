@@ -95,9 +95,18 @@
     --input:  60 7% 84%;
     --ring:   224 76% 50%;           /* ToolTrim blue focus ring */
 
-    /* ── Radius (unchanged — layout step) ── */
-    --radius:      0.625rem;
-    --radius-card: 1.25rem;
+    /* ── Radius ── */
+    --radius:      0.5rem;             /* 8px — default */
+    --radius-card: 0.5rem;             /* 8px — cards, editorial */
+    --radius-pill: 9999px;             /* pill badges / filters */
+
+    /* ── Component heights ── */
+    --h-btn:   56px;                   /* primary/secondary button */
+    --h-input: 56px;                   /* input fields */
+    --h-btn-sm: 40px;                  /* compact button */
+
+    /* ── Spacing scale (use only these values) ── */
+    /* 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128 */
 
     /* ── Semantic overrides ── */
     --savings: 224 76% 50%;          /* ToolTrim blue — featured savings */
@@ -359,124 +368,496 @@
 }
 
 /* ─────────────────────────────────────────────
-   COMPONENTS
+   COMPONENTS — surfaces, buttons, inputs, badges
 ───────────────────────────────────────────── */
 @layer components {
+
+  /* ── Surfaces ───────────────────────────────── */
   .surface-card {
-    @apply rounded-lg border border-border bg-card;
-    box-shadow: 0 1px 0 hsl(var(--foreground) / 0.03);
+    border-radius: var(--radius-card);
+    border: 1px solid #DADAD4;
+    background: #FFFFFF;
   }
 
+  .dark .surface-card {
+    border-color: hsl(0 0% 18%);
+    background: hsl(0 0% 10%);
+  }
+
+  /* Grey hover — no blue tint */
   .surface-card-hover {
-    @apply rounded-lg border border-border bg-card transition-colors duration-150 hover:border-primary/30 hover:bg-primary/5;
-    box-shadow: 0 1px 0 hsl(var(--foreground) / 0.03);
+    border-radius: var(--radius-card);
+    border: 1px solid #DADAD4;
+    background: #FFFFFF;
+    transition: border-color 180ms ease-out, background 180ms ease-out;
+    cursor: pointer;
+  }
+
+  .surface-card-hover:hover {
+    border-color: #222222;
+    background: #F8F8F4;
+  }
+
+  .dark .surface-card-hover {
+    border-color: hsl(0 0% 18%);
+    background: hsl(0 0% 10%);
+  }
+
+  .dark .surface-card-hover:hover {
+    border-color: hsl(0 0% 45%);
+    background: hsl(0 0% 13%);
   }
 
   .surface-panel {
-    @apply rounded-lg border border-border bg-background;
+    border-radius: var(--radius-card);
+    border: 1px solid #DADAD4;
+    background: hsl(var(--background));
+  }
+
+  .dark .surface-panel {
+    border-color: hsl(0 0% 18%);
   }
 
   .surface-accent {
-    @apply rounded-lg border;
-    border-color: hsl(var(--primary) / 0.2);
-    background: hsl(var(--primary) / 0.08);
+    border-radius: var(--radius-card);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    background: hsl(var(--primary) / 0.06);
   }
 
   .surface-control {
-    @apply rounded-lg border border-border bg-background transition-colors duration-150 hover:border-primary/30 hover:bg-primary/5;
+    border-radius: var(--radius-card);
+    border: 1px solid #DADAD4;
+    background: hsl(var(--background));
+    transition: border-color 180ms ease-out;
   }
 
-  /* ── Buttons ──────────────────────────────────────────────────────────
-     Primary   — dark fill, high contrast. Default CTA.
-     Secondary — ghost / outline. Low-emphasis actions.
-     Accent    — ToolTrim blue. Reserved for brand-strategic moments only.
-  ──────────────────────────────────────────────────────────────────── */
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.25rem;
-    border-radius: 0.375rem;          /* 6px */
-    border: 1px solid var(--color-border-strong);
-    background: var(--color-text-strong);
-    color: #FFFFFF;
-    font-family: var(--font-ui);
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.01em;
-    cursor: pointer;
-    transition: background 150ms ease, border-color 150ms ease, opacity 150ms ease;
-    box-shadow: none;
-    text-decoration: none;
-  }
-  .btn-primary:hover {
-    background: var(--color-text);    /* slightly lighter on hover */
-    border-color: var(--color-text);
-  }
-  .btn-primary:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
+  .surface-control:hover {
+    border-color: #222222;
   }
 
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.25rem;
-    border-radius: 0.375rem;          /* 6px */
-    border: 1px solid var(--color-border);
-    background: transparent;
-    color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.01em;
-    cursor: pointer;
-    transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
-    box-shadow: none;
-    text-decoration: none;
-  }
-  .btn-secondary:hover {
-    background: var(--color-hover);
-    border-color: var(--color-hover);
-    color: var(--color-hover-text);
-  }
-  .btn-secondary:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
+  .dark .surface-control {
+    border-color: hsl(0 0% 20%);
   }
 
+  /* ── Button system ──────────────────────────────
+     Primary   — dark fill. Main CTA.
+     Secondary — ghost outline. Secondary actions.
+     Accent    — ToolTrim blue. Brand moments only.
+     Sm        — compact variant (40px) for filters.
+  ──────────────────────────────────────────────── */
+
+  /* Shared base */
+  .btn-primary,
+  .btn-secondary,
   .btn-accent {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.25rem;
-    border-radius: 0.375rem;          /* 6px */
-    border: 1px solid hsl(var(--primary) / 0.8);
-    background: hsl(var(--primary));
-    color: #FFFFFF;
+    gap: 8px;
+    height: var(--h-btn);
+    padding: 0 24px;
+    border-radius: 8px;
     font-family: var(--font-ui);
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-size: 1rem;                   /* 16px */
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 160ms ease-out, border-color 160ms ease-out, color 160ms ease-out;
+    box-shadow: none;
+    white-space: nowrap;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .btn-primary:disabled,
+  .btn-secondary:disabled,
+  .btn-accent:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* Primary — dark fill */
+  .btn-primary {
+    background: #222222;
+    border-color: #222222;
+    color: #FFFFFF;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: #000000;
+    border-color: #000000;
+  }
+
+  .dark .btn-primary {
+    background: hsl(var(--foreground));
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  .dark .btn-primary:hover:not(:disabled) {
+    background: hsl(var(--foreground) / 0.85);
+  }
+
+  /* Secondary — ghost */
+  .btn-secondary {
+    background: transparent;
+    border-color: #222222;
+    color: #222222;
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background: #222222;
+    color: #FFFFFF;
+  }
+
+  .dark .btn-secondary {
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--foreground));
+  }
+
+  .dark .btn-secondary:hover:not(:disabled) {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  /* Accent — ToolTrim blue (use sparingly) */
+  .btn-accent {
+    background: hsl(var(--primary));
+    border-color: hsl(var(--primary));
+    color: #FFFFFF;
+  }
+
+  .btn-accent:hover:not(:disabled) {
+    background: hsl(var(--primary) / 0.88);
+    border-color: hsl(var(--primary) / 0.88);
+  }
+
+  /* Small variants */
+  .btn-primary-sm,
+  .btn-secondary-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: var(--h-btn-sm);
+    padding: 0 16px;
+    border-radius: 6px;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;               /* 14px */
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 160ms, border-color 160ms, color 160ms;
+    white-space: nowrap;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .btn-primary-sm {
+    background: #222222;
+    border-color: #222222;
+    color: #FFFFFF;
+  }
+
+  .btn-primary-sm:hover {
+    background: #000000;
+    border-color: #000000;
+  }
+
+  .btn-secondary-sm {
+    background: transparent;
+    border-color: #DADAD4;
+    color: #222222;
+  }
+
+  .btn-secondary-sm:hover {
+    border-color: #222222;
+  }
+
+  .dark .btn-secondary-sm {
+    border-color: hsl(0 0% 25%);
+    color: hsl(var(--foreground));
+  }
+
+  /* Tertiary — text only */
+  .btn-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: #222222;
+    font-family: var(--font-ui);
+    font-size: 0.9375rem;              /* 15px */
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    transition: opacity 160ms;
+  }
+
+  .btn-text:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.75;
+  }
+
+  .dark .btn-text {
+    color: hsl(var(--foreground));
+  }
+
+  /* ── Input system ─────────────────────────────── */
+  .input {
+    display: block;
+    width: 100%;
+    height: var(--h-input);
+    padding: 0 18px;
+    border-radius: 8px;
+    border: 1px solid #DADAD4;
+    background: #F1F1EC;
+    color: #222222;
+    font-family: var(--font-ui);
+    font-size: 1rem;                   /* 16px */
+    font-weight: 400;
     line-height: 1;
     letter-spacing: -0.01em;
-    cursor: pointer;
-    transition: background 150ms ease, box-shadow 150ms ease;
+    outline: none;
+    transition: border-color 160ms ease-out, background 160ms ease-out;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .input::placeholder {
+    color: #6F6F68;
+    font-weight: 400;
+  }
+
+  .input:hover {
+    background: #EDEDE8;
+  }
+
+  .input:focus {
+    border-color: #222222;
+    background: #F1F1EC;
     box-shadow: none;
-    text-decoration: none;
   }
-  .btn-accent:hover {
-    background: hsl(var(--primary) / 0.88);
-    box-shadow: 0 4px 14px hsl(var(--primary) / 0.25);
+
+  .dark .input {
+    background: hsl(0 0% 14%);
+    border-color: hsl(0 0% 22%);
+    color: hsl(var(--foreground));
   }
-  .btn-accent:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
+
+  .dark .input::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .dark .input:focus {
+    border-color: hsl(0 0% 50%);
+  }
+
+  /* Compact input */
+  .input-sm {
+    height: var(--h-btn-sm);
+    padding: 0 14px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+  }
+
+  /* ── Badge / pill system ──────────────────────── */
+
+  /* Base badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid #DADAD4;
+    background: transparent;
+    color: #222222;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-ui);
+    font-size: 0.75rem;                /* 12px */
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+
+  .dark .badge {
+    border-color: hsl(0 0% 25%);
+    color: hsl(var(--foreground));
+  }
+
+  /* Soft fill variant */
+  .badge-soft {
+    background: #F8F8F4;
+    border-color: #E7E7E0;
+    color: #222222;
+  }
+
+  .dark .badge-soft {
+    background: hsl(0 0% 14%);
+    border-color: hsl(0 0% 20%);
+    color: hsl(var(--foreground));
+  }
+
+  /* Accent — ToolTrim blue. MAX ONE per component. */
+  .badge-accent {
+    background: hsl(var(--primary) / 0.08);
+    border-color: hsl(var(--primary) / 0.25);
+    color: hsl(var(--primary));
+  }
+
+  .dark .badge-accent {
+    background: hsl(var(--primary) / 0.15);
+    border-color: hsl(var(--primary) / 0.35);
+  }
+
+  /* Dark fill — ToolTrim Pick, featured */
+  .badge-dark {
+    background: #222222;
+    border-color: #222222;
+    color: #FFFFFF;
+  }
+
+  .dark .badge-dark {
+    background: hsl(var(--foreground));
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  /* Filter pill — interactive */
+  .badge-filter {
+    height: 32px;
+    padding: 0 14px;
+    cursor: pointer;
+    transition: background 140ms, border-color 140ms, color 140ms;
+    background: transparent;
+    border-color: #DADAD4;
+    color: #222222;
+  }
+
+  .badge-filter:hover {
+    border-color: #222222;
+    background: #F8F8F4;
+  }
+
+  .badge-filter--active {
+    background: #222222;
+    border-color: #222222;
+    color: #FFFFFF;
+  }
+
+  .dark .badge-filter--active {
+    background: hsl(var(--foreground));
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  /* ── Label (metadata, section headings) ──────── */
+  .label {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6F6F68;
+  }
+
+  .dark .label {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* ── Dividers / borders ───────────────────────── */
+  /* Use border-top: 1px solid var(--color-border) inline,
+     or these utilities for standalone dividers: */
+  .divider {
+    border: none;
+    border-top: 1px solid #DADAD4;
+    margin: 0;
+  }
+
+  .dark .divider {
+    border-top-color: hsl(0 0% 18%);
+  }
+
+  .divider-soft {
+    border: none;
+    border-top: 1px solid #E7E7E0;
+  }
+
+  .dark .divider-soft {
+    border-top-color: hsl(0 0% 15%);
+  }
+
+  /* ── Editorial container ──────────────────────── */
+  .container-page {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  @media (max-width: 1023px) {
+    .container-page {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .container-page {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  /* ── Section spacing ──────────────────────────── */
+  .section-lg {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  @media (min-width: 1024px) {
+    .section-lg {
+      padding-top: 128px;
+      padding-bottom: 128px;
+    }
+  }
+
+  .section-md {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  @media (min-width: 1024px) {
+    .section-md {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
+  .section-sm {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    .section-sm {
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
   }
 }
 
