@@ -110,7 +110,7 @@ const TestimonialsSection = () => {
             {/* Main card */}
             <div
               key={active}
-              className="rounded-xl bg-card border border-border overflow-hidden animate-in fade-in slide-in-from-right-4 duration-500"
+              className="rounded-xl bg-card border border-border overflow-hidden transition-opacity duration-300"
             >
               <div className="grid md:grid-cols-[220px_1fr] h-full">
 

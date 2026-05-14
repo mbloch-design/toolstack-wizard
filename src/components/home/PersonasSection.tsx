@@ -137,7 +137,7 @@ const PersonasSection = () => {
         {/* Header — centered, benefit-led headline */}
         <div className="mb-14 text-center">
           <span className="section-tag">{t("Par profil", "By profile")}</span>
-          <h2 className="ts-h1">
+          <h2 className="ts-h2">
             {t("Votre métier.", "Your role.")}
             <br />
             <span className="text-primary">{t("Votre diagnostic.", "Your diagnosis.")}</span>

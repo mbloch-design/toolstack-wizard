@@ -190,15 +190,15 @@ const HomePage = () => {
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <p className="label-section mb-3">{t("Catalogue", "Catalog")}</p>
-              <h2 style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+              <span className="section-tag">{t("Catalogue", "Catalog")}</span>
+              <h2 className="ts-h2">
                 {t("Catégories ", "Tool ")}<em className="text-primary not-italic">{t("d'outils", "categories")}</em>
               </h2>
-              <p className="mt-2 text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
                 {t(`${stats.categories} catégories couvrant tous les besoins de votre activité.`, `${stats.categories} categories covering all your business needs.`)}
               </p>
             </div>
-            <Link to={`${prefix}/category`} className="hidden md:inline-flex text-sm font-medium text-primary hover:underline">{t("Voir toutes →", "See all →")}</Link>
+            <Link to={`${prefix}/category`} className="hidden md:inline-flex shrink-0 text-sm font-medium text-primary hover:underline">{t("Voir toutes →", "See all →")}</Link>
           </div>
           <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {categories.map((cat) => {
@@ -240,18 +240,15 @@ const HomePage = () => {
           <div className="container mx-auto max-w-7xl px-6">
             <div className="flex items-end justify-between mb-10">
               <div>
-                <div className="flex items-center gap-2 text-primary mb-3">
-                  <BookOpen className="h-4 w-4" />
-                  <span className="label-section">{t("Ressources", "Resources")}</span>
-                </div>
-                <h2 style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+                <span className="section-tag">{t("Guides", "Guides")}</span>
+                <h2 className="ts-h2">
                   {t("Derniers ", "Latest ")}<em className="text-primary not-italic">{t("guides", "guides")}</em>
                 </h2>
-                <p className="mt-2 text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
+                <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
                   {t("Comparatifs, tutoriels et conseils pour optimiser votre stack.", "Comparisons, tutorials and tips to optimize your stack.")}
                 </p>
               </div>
-              <Link to={`${prefix}/guides`} className="text-sm font-medium text-primary hover:underline">{t("Tous les guides", "All guides")} →</Link>
+              <Link to={`${prefix}/guides`} className="hidden md:inline-flex shrink-0 text-sm font-medium text-primary hover:underline">{t("Tous les guides", "All guides")} →</Link>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {featuredPosts.map((post) => (
@@ -315,11 +312,8 @@ function BusinessObjectivesSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 flex items-end justify-between gap-8">
           <div className="max-w-4xl">
-            <p className="label-section mb-3">{t("Stacks par objectif", "Stacks by goal")}</p>
-            <h2
-              className="text-balance font-display font-semibold"
-              style={{ fontSize: "clamp(1.875rem, 3vw, 2.5rem)", letterSpacing: "-0.025em", lineHeight: 1.1 }}
-            >
+            <span className="section-tag">{t("Stacks par objectif", "Stacks by goal")}</span>
+            <h2 className="ts-h2 text-balance">
               {t(
                 "Choisissez votre objectif et trouvez la stack qui le sert",
                 "Choose your goal and find the stack built for it"
