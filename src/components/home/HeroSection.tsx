@@ -116,13 +116,19 @@ const HeroSection = ({ toolCount }: { toolCount: number }) => {
       className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden"
       style={{ minHeight: "clamp(580px, 88vh, 860px)" }}
     >
-      {/* Subtle radial glow — vibe Linear/Vercel */}
+      {/* Mesh gradient background — blurry blue/white blobs */}
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden
         style={{
-          background:
-            "radial-gradient(ellipse 80% 50% at 50% -10%, hsl(224 76% 60% / 0.12) 0%, transparent 70%)",
+          background: [
+            "radial-gradient(ellipse 70% 60% at 52% 28%, rgba(255,255,255,0.92) 0%, transparent 62%)",
+            "radial-gradient(ellipse 58% 52% at 2% 2%, hsl(214 72% 86% / 0.85) 0%, transparent 58%)",
+            "radial-gradient(ellipse 52% 48% at 98% 95%, hsl(220 65% 87% / 0.80) 0%, transparent 55%)",
+            "radial-gradient(ellipse 44% 40% at 10% 92%, hsl(210 60% 89% / 0.65) 0%, transparent 52%)",
+            "radial-gradient(ellipse 40% 36% at 92% 8%, hsl(218 68% 88% / 0.70) 0%, transparent 50%)",
+            "hsl(214 52% 93%)",
+          ].join(", "),
         }}
       />
 
