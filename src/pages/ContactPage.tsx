@@ -4,7 +4,7 @@ import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { Mail, MessageSquare, Clock, Send, AlertCircle } from "lucide-react";
 
 // ── Replace with your Formspree form ID (formspree.io → New Form → copy ID) ──
-const FORMSPREE_ID = "YOUR_FORM_ID";
+const FORMSPREE_ID = "xgodbpgj";
 
 const ContactPage = () => {
   const { t, lang } = useLang();
