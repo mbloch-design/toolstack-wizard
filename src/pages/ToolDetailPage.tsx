@@ -25,7 +25,6 @@ import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
-import ToolDiagCta from "@/components/tool/ToolDiagCta";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -239,127 +238,99 @@ const ToolDetailPage = () => {
       />
 
       {/* ══════════════════════════════════════════════════════════
-          EDITORIAL HERO — 2-col: identity left / decision right
+          HERO — tool identity & positioning
       ══════════════════════════════════════════════════════════ */}
       <header style={{ background: "#F8F8F4", borderBottom: "1px solid #DADAD4" }}>
         <div className="td-container">
           <div className="td-hero-layout">
 
-            {/* ── LEFT: tool identity + positioning ── */}
-            <div>
-              <Breadcrumb items={[
-                { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-                ...(category ? [{
-                  label: t(catName, catNameEn),
-                  href: `${prefix}/category/${category.slug}`,
-                }] : []),
-                { label: tool.name },
-              ]} />
+            <Breadcrumb items={[
+              { label: t("Outils", "Tools"), href: `${prefix}/tools` },
+              ...(category ? [{
+                label: t(catName, catNameEn),
+                href: `${prefix}/category/${category.slug}`,
+              }] : []),
+              { label: tool.name },
+            ]} />
 
-              {/* Logo + category badge */}
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 28, marginBottom: 24 }}>
-                <div style={{
-                  width: 56, height: 56, borderRadius: 10,
-                  border: "1px solid #DADAD4", background: "#FFFFFF",
-                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                }}>
-                  <ToolLogo tool={tool} size={36} />
-                </div>
-                {category && (
-                  <Link
-                    to={`${prefix}/category/${category.slug}`}
-                    style={{
-                      display: "inline-flex", alignItems: "center", gap: 6,
-                      height: 32, padding: "0 14px",
-                      background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 999,
-                      fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
-                      color: "#222222", textDecoration: "none",
-                      transition: "border-color 140ms",
-                    }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
-                  >
-                    {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11, color: "#6F6F68" }} />}
-                    {t(catName, catNameEn)}
-                  </Link>
-                )}
-              </div>
-
-              {/* H1 — large editorial */}
-              <h1 style={{
-                fontFamily: "var(--font-brand)",
-                fontSize: "clamp(4.5rem, 8vw, 8.25rem)",
-                fontWeight: 600, lineHeight: 0.9,
-                letterSpacing: "-0.07em", color: "#222222",
-                margin: 0,
+            {/* Logo + category badge */}
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 28, marginBottom: 24 }}>
+              <div style={{
+                width: 56, height: 56, borderRadius: 10,
+                border: "1px solid #DADAD4", background: "#FFFFFF",
+                display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
-                {tool.name}
-              </h1>
+                <ToolLogo tool={tool} size={36} />
+              </div>
+              {category && (
+                <Link
+                  to={`${prefix}/category/${category.slug}`}
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: 6,
+                    height: 32, padding: "0 14px",
+                    background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 999,
+                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
+                    color: "#222222", textDecoration: "none",
+                    transition: "border-color 140ms",
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                >
+                  {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11, color: "#6F6F68" }} />}
+                  {t(catName, catNameEn)}
+                </Link>
+              )}
+            </div>
 
-              {/* Positioning sentence */}
-              {tool.shortDescription && (
+            {/* H1 */}
+            <h1 style={{
+              fontFamily: "var(--font-brand)",
+              fontSize: "clamp(4.5rem, 8vw, 7.75rem)",
+              fontWeight: 600, lineHeight: 0.9,
+              letterSpacing: "-0.07em", color: "#222222",
+              margin: 0,
+            }}>
+              {tool.name}
+            </h1>
+
+            {/* Short description */}
+            {tool.shortDescription && (
+              <p style={{
+                fontFamily: "var(--font-ui)",
+                fontSize: 22,
+                lineHeight: 1.35, letterSpacing: "-0.025em",
+                color: "#222222", maxWidth: 780,
+                marginTop: 28,
+              }}>
+                {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+              </p>
+            )}
+
+            {/* Short context: price + usage framing */}
+            {(() => {
+              const pricePart = isFree
+                ? t("Gratuit.", "Free.")
+                : displayPrice > 0
+                ? `${t("À partir de", "From")} ${displayPrice}€/${t("mois", "mo")}.`
+                : null;
+              const verdict = (tool as any).verdict;
+              const threshold = lang === "en" && (tool as any).verdictEn?.threshold
+                ? (tool as any).verdictEn.threshold
+                : verdict?.threshold as string | undefined;
+              const text = [pricePart, threshold].filter(Boolean).join(" ");
+              if (!text) return null;
+              return (
                 <p style={{
                   fontFamily: "var(--font-ui)",
-                  fontSize: 22,
-                  lineHeight: 1.35, letterSpacing: "-0.025em",
-                  color: "#222222", maxWidth: 760,
-                  marginTop: 28,
+                  fontSize: 17,
+                  lineHeight: 1.5, letterSpacing: "-0.015em",
+                  color: "#6F6F68", maxWidth: 760,
+                  marginTop: 16,
                 }}>
-                  {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                  {text}
                 </p>
-              )}
-
-              {/* Price / context line */}
-              {(() => {
-                const verdict = (tool as any).verdict;
-                const threshold = verdict?.threshold as string | undefined;
-                const pricePart = isFree
-                  ? t("Gratuit.", "Free.")
-                  : displayPrice > 0
-                  ? `${t("À partir de", "From")} ${displayPrice}€/${t("mois", "mo")}.`
-                  : null;
-                const text = [pricePart, threshold].filter(Boolean).join(" ");
-                if (!text) return null;
-                return (
-                  <p style={{
-                    fontFamily: "var(--font-ui)",
-                    fontSize: 17,
-                    lineHeight: 1.45, letterSpacing: "-0.015em",
-                    color: "#6F6F68", maxWidth: 680,
-                    marginTop: 16,
-                  }}>
-                    {text}
-                  </p>
-                );
-              })()}
-
-              {/* Metadata bar */}
-              <div className="td-hero-meta">
-                {category && (
-                  <div className="td-hero-meta-item">
-                    <span className="td-hero-meta-label">{t("CATÉGORIE", "CATEGORY")}</span>
-                    <span className="td-hero-meta-value">{t(catName, catNameEn)}</span>
-                  </div>
-                )}
-                <div className="td-hero-meta-item">
-                  <span className="td-hero-meta-label">{t("MODÈLE", "MODEL")}</span>
-                  <span className="td-hero-meta-value">{priceLabel}</span>
-                </div>
-                <div className="td-hero-meta-item">
-                  <span className="td-hero-meta-label">{t("PLAN GRATUIT", "FREE PLAN")}</span>
-                  <span className="td-hero-meta-value">{hasFreeplan ? t("Oui", "Yes") : t("Non", "No")}</span>
-                </div>
-                <div className="td-hero-meta-item">
-                  <span className="td-hero-meta-label">{t("MIS À JOUR", "UPDATED")}</span>
-                  <time className="td-hero-meta-value" dateTime={verifiedOn}>{verifiedOn}</time>
-                </div>
-              </div>
-            </div>
-
-            {/* ── RIGHT: decision summary (desktop only) ── */}
-            <div className="td-hero-decision">
-              <HeroDecisionSummary tool={tool} lang={lang} t={t} gain={tool.prescription_output?.gain_monthly_eur ?? 0} />
-            </div>
+              );
+            })()}
 
           </div>
         </div>
@@ -404,17 +375,50 @@ const ToolDetailPage = () => {
             {subPage === "presentation" && (
               <div style={{ paddingTop: 8 }}>
 
-                {/* 1 · Verdict — keepIf / avoidIf / prescription
-                    Note: shortDescription is already in the hero — not repeated here */}
-                <div className="td-section">
-                  <span className="td-eyebrow">{t("Verdict ToolTrim", "ToolTrim Verdict")}</span>
-                  <h2 className="td-title">
-                    {lang === "fr"
-                      ? `${tool.name} — quand ça a du sens.`
-                      : `${tool.name} — when it makes sense.`}
-                  </h2>
-                  <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
-                </div>
+                {/* 1 · Décision rapide — 3 blocs éditoriaux */}
+                {(() => {
+                  const vd = lang === "en" && (tool as any).verdictEn ? (tool as any).verdictEn : tool.verdict;
+                  const keepItems: string[] = (Array.isArray(vd?.keepIf) ? vd.keepIf : [vd?.keepIf]).filter(Boolean);
+                  const avoidItems: string[] = (Array.isArray(vd?.avoidIf) ? vd.avoidIf : [vd?.avoidIf]).filter(Boolean);
+                  const consArr = lang === "en" && (tool as any).consEn ? (tool as any).consEn : (tool.cons ?? []);
+                  const limitText: string | null = consArr.length > 0 ? consArr[0] : (avoidItems[0] ?? null);
+
+                  const blocks = [
+                    { label: t("À garder si", "Keep if"),           text: keepItems.length  ? keepItems.slice(0, 2).join(". ")  : null },
+                    { label: t("À challenger si", "Challenge if"),   text: avoidItems.length ? avoidItems.slice(0, 2).join(". ") : null },
+                    { label: t("Limite principale", "Main limitation"), text: limitText },
+                  ].filter((b): b is { label: string; text: string } => !!b.text);
+
+                  return (
+                    <div className="td-section">
+                      <span className="td-eyebrow">{t("Décision rapide", "Quick decision")}</span>
+                      <h2 className="td-title">
+                        {lang === "fr"
+                          ? `${tool.name} — quand ça a du sens.`
+                          : `${tool.name} — when it makes sense.`}
+                      </h2>
+
+                      {/* Verdict sentence */}
+                      {vd?.threshold && (
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.55, color: "#222222", maxWidth: 760, marginBottom: 0 }}>
+                          {vd.threshold}
+                        </p>
+                      )}
+
+                      {/* 3-column editorial blocks */}
+                      {blocks.length > 0 && (
+                        <div className="td-dr-grid">
+                          {blocks.map(block => (
+                            <div key={block.label} className="td-dr-block">
+                              <span className="td-dr-label">{block.label}</span>
+                              <p className="td-dr-text">{block.text}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
 
                 {/* 3 · Pour qui */}
                 {(tool as any).relevantFor?.length > 0 && (
@@ -542,11 +546,6 @@ const ToolDetailPage = () => {
                 {/* 9 · Intégrations / Plugins */}
                 <div className="td-section">
                   <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
-                </div>
-
-                {/* 10 · CTA diagnostic */}
-                <div className="td-section">
-                  <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
                 </div>
 
                 {/* SEO/LLM summary — visually quiet, useful for crawlers */}
@@ -903,103 +902,125 @@ const ToolDetailPage = () => {
 
         </div>
       </div>
+
+      {/* ══════════════════════════════════════════════════════════
+          AUDIT DE STACK — editorial band, full-width
+      ══════════════════════════════════════════════════════════ */}
+      <div className="td-diag-band">
+        <div className="td-container">
+          <div className="td-diag-inner">
+            <div>
+              <span style={{
+                display: "block",
+                fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
+                letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+                marginBottom: 14,
+              }}>
+                {t("AUDIT DE STACK", "STACK AUDIT")}
+              </span>
+              <h2 style={{
+                fontFamily: "var(--font-brand)",
+                fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
+                fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.045em",
+                color: "#222222", margin: "0 0 16px",
+              }}>
+                {t(
+                  `${tool.name} fait partie de ta stack ?`,
+                  `Is ${tool.name} part of your stack?`,
+                )}
+              </h2>
+              <p style={{
+                fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
+                color: "#6F6F68", maxWidth: 560, margin: 0,
+              }}>
+                {t(
+                  "Vérifie en quelques minutes si tu l'utilises vraiment, si tu le paies au bon prix, et quels outils peuvent être challengés autour de lui.",
+                  "Find out in a few minutes if you're actually using it, paying the right price, and which tools around it can be challenged.",
+                )}
+              </p>
+              <p style={{
+                fontFamily: "var(--font-ui)", fontSize: 13, color: "#9A9A92",
+                marginTop: 14, letterSpacing: "-0.01em",
+              }}>
+                {t("Gratuit · 5 minutes · Résultat personnalisé", "Free · 5 minutes · Personalised result")}
+              </p>
+            </div>
+            <Link
+              to={`${prefix}/selector?from=${tool.slug || tool.id}`}
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 8,
+                height: 48, padding: "0 22px",
+                background: "#222222", color: "#FFFFFF",
+                borderRadius: 8, border: "none",
+                fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
+                textDecoration: "none", letterSpacing: "-0.01em",
+                transition: "background 160ms ease-out", flexShrink: 0, whiteSpace: "nowrap",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
+            >
+              {t("Auditer ma stack", "Audit my stack")}
+              <ArrowRight style={{ width: 14, height: 14 }} />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════
+          TOOLTRIM — editorial footer CTA
+      ══════════════════════════════════════════════════════════ */}
+      <section className="td-footer-cta">
+        <div className="td-container">
+          <div className="td-footer-inner">
+            <div>
+              <span style={{
+                display: "block",
+                fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
+                letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+                marginBottom: 24,
+              }}>
+                TOOLTRIM
+              </span>
+              <h2 className="td-footer-title">
+                {t("Une stack plus claire.\nMoins d'abonnements inutiles.", "A cleaner stack.\nFewer wasted subscriptions.")}
+              </h2>
+              <p style={{
+                fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
+                color: "#6F6F68", marginTop: 24, maxWidth: 520,
+              }}>
+                {t(
+                  "Analyse tes outils, repère les doublons et compare les alternatives avant de payer un abonnement de plus.",
+                  "Analyse your tools, spot duplicates and compare alternatives before paying for one more subscription.",
+                )}
+              </p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 14, flexShrink: 0 }}>
+              <Link
+                to={`${prefix}/selector`}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                  height: 48, padding: "0 22px",
+                  background: "#222222", color: "#FFFFFF",
+                  borderRadius: 8, border: "none",
+                  fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
+                  textDecoration: "none",
+                  transition: "background 160ms ease-out", whiteSpace: "nowrap",
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
+              >
+                {t("Lancer mon analyse", "Start my analysis")} →
+              </Link>
+              <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#9A9A92" }}>
+                {t("Gratuit · Sans inscription", "Free · No sign-up")}
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </article>
   );
 };
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   HeroDecisionSummary — compact 4-row decision grid in the hero right column
-   Shows the key decision signals at a glance before the user scrolls.
-───────────────────────────────────────────────────────────────────────────── */
-function HeroDecisionSummary({
-  tool, lang, t, gain,
-}: {
-  tool: any;
-  lang: string;
-  t: (fr: string, en: string) => string;
-  gain: number;
-}) {
-  const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
-  const keepItems: string[] = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean);
-  const avoidItems: string[] = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean);
-  const limitText = (Array.isArray(tool.cons) && tool.cons.length > 0)
-    ? tool.cons[0]
-    : avoidItems[avoidItems.length - 1] || null;
-
-  const gainText = gain > 0
-    ? (lang === "fr"
-        ? `~${Math.round(gain)}€/mois économisés en passant à une alternative`
-        : `~€${Math.round(gain)}/mo saved switching to an alternative`)
-    : null;
-
-  const rows = [
-    {
-      label: t("À garder si", "Keep if"),
-      text: keepItems.length > 0 ? keepItems.slice(0, 3).join(", ") : null,
-    },
-    {
-      label: t("À challenger si", "Challenge if"),
-      text: avoidItems.length > 0 ? avoidItems.slice(0, 3).join(", ") : null,
-    },
-    {
-      label: t("Limite", "Limitation"),
-      text: limitText,
-    },
-    gainText ? {
-      label: t("Gain potentiel", "Potential gain"),
-      text: gainText,
-    } : null,
-  ].filter((r): r is { label: string; text: string } => !!r && !!r.text);
-
-  if (rows.length === 0) return null;
-
-  const SEP = { borderTop: "1px solid #E7E7E0" } as const;
-
-  return (
-    <div style={{
-      background: "#FFFFFF",
-      border: "1px solid #DADAD4",
-      borderRadius: 10,
-      padding: "22px 24px",
-    }}>
-      <p style={{
-        fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-        letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
-        marginBottom: 18,
-      }}>
-        {t("Décision rapide", "Quick decision")}
-      </p>
-
-      {rows.map((row, i) => (
-        <div
-          key={row.label}
-          style={{
-            ...(i > 0 ? SEP : {}),
-            display: "grid",
-            gridTemplateColumns: "120px 1fr",
-            gap: 18,
-            alignItems: "start",
-            padding: "14px 0",
-          }}
-        >
-          <span style={{
-            fontFamily: "var(--font-ui)",
-            fontSize: 13, fontWeight: 600,
-            color: "#222222", lineHeight: 1.35,
-          }}>
-            {row.label}
-          </span>
-          <span style={{
-            fontFamily: "var(--font-ui)",
-            fontSize: 14.5, lineHeight: 1.4,
-            color: "#6F6F68",
-          }}>
-            {row.text}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default ToolDetailPage;

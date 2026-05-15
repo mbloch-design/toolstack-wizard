@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles } from "lucide-react";
-import ToolLogo from "@/components/ToolLogo";
+import { ArrowRight } from "lucide-react";
 
 interface Props {
   tool: { name: string; slug?: string; id: string; [key: string]: any };
@@ -9,46 +8,82 @@ interface Props {
   t: (fr: string, en: string) => string;
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   ToolDiagCta — editorial audit band
+   Full-width band, no rounded card, no blue gradient.
+   Used as a standalone section outside the body-grid in ToolDetailPage.
+───────────────────────────────────────────────────────────────────────────── */
 export default function ToolDiagCta({ tool, prefix, lang, t }: Props) {
   const slug = tool.slug || tool.id;
 
   return (
-    <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-background to-accent/30 p-6 md:p-8">
-      <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-        <div className="flex items-center gap-3 shrink-0">
-          <div className="rounded-xl bg-background p-2 shadow-sm ring-1 ring-border">
-            <ToolLogo tool={tool as any} size={36} />
-          </div>
-          <Sparkles className="h-5 w-5 text-primary shrink-0" />
-        </div>
-
-        <div className="flex-1 min-w-0">
-          <p className="font-bold text-foreground text-base leading-snug">
+    <div style={{
+      borderTop: "1px solid #DADAD4",
+      borderBottom: "1px solid #DADAD4",
+      background: "#F8F8F4",
+      padding: "56px 0",
+    }}>
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "1fr auto",
+        gap: 48,
+        alignItems: "center",
+      }}>
+        <div>
+          <span style={{
+            display: "block",
+            fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
+            letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+            marginBottom: 14,
+          }}>
+            {t("AUDIT DE STACK", "STACK AUDIT")}
+          </span>
+          <h2 style={{
+            fontFamily: "var(--font-brand)",
+            fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
+            fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.045em",
+            color: "#222222", margin: "0 0 16px",
+          }}>
             {t(
               `${tool.name} fait partie de ta stack ?`,
-              `Is ${tool.name} part of your stack?`
+              `Is ${tool.name} part of your stack?`,
+            )}
+          </h2>
+          <p style={{
+            fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
+            color: "#6F6F68", maxWidth: 560, margin: 0,
+          }}>
+            {t(
+              "Vérifie en quelques minutes si tu l'utilises vraiment, si tu le paies au bon prix, et quels outils peuvent être challengés autour de lui.",
+              "Find out in a few minutes if you're actually using it, paying the right price, and which tools around it can be challenged.",
             )}
           </p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {t(
-              `Découvre en 5 minutes si tu en paies trop, si tu l'utilises à son plein potentiel, et quels outils tu pourrais éliminer.`,
-              `Find out in 5 minutes if you're overpaying, using it at full potential, and which tools you could cut.`
-            )}
+          <p style={{
+            fontFamily: "var(--font-ui)", fontSize: 13, color: "#9A9A92",
+            marginTop: 14, letterSpacing: "-0.01em",
+          }}>
+            {t("Gratuit · 5 minutes · Résultat personnalisé", "Free · 5 minutes · Personalised result")}
           </p>
         </div>
 
         <Link
           to={`${prefix}/selector?from=${slug}`}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/85 transition-colors shrink-0 whitespace-nowrap"
+          style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            height: 48, padding: "0 22px",
+            background: "#222222", color: "#FFFFFF",
+            borderRadius: 8, border: "none",
+            fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
+            textDecoration: "none", letterSpacing: "-0.01em",
+            transition: "background 160ms ease-out", flexShrink: 0, whiteSpace: "nowrap",
+          }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
         >
           {t("Auditer ma stack", "Audit my stack")}
-          <ArrowRight className="h-4 w-4" />
+          <ArrowRight style={{ width: 14, height: 14 }} />
         </Link>
       </div>
-
-      <p className="mt-4 text-xs text-muted-foreground">
-        {t("Gratuit · 5 minutes · Résultat personnalisé", "Free · 5 minutes · Personalised result")}
-      </p>
     </div>
   );
 }

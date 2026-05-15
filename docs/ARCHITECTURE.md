@@ -1,0 +1,143 @@
+# ToolTrim — Architecture
+
+React SPA · Vite + TypeScript · Tailwind CSS v3
+
+---
+
+## Stack technique
+
+| Couche | Choix |
+|---|---|
+| Framework | React 18 + React Router v6 |
+| Build | Vite |
+| Styles | Tailwind CSS v3 + `@layer components` (classes préfixées) |
+| Data | Supabase (primaire) + JSON local (fallback) |
+| Fonts | Uncut Sans Variable (`--font-brand`) + Inter Tight (`--font-ui`) |
+| Déploiement | Prerender statique via vite-plugin-prerender |
+
+---
+
+## Structure des pages
+
+```
+/                      → HomePage
+/fr/tools              → ToolsPage (grille + diagnostic)
+/fr/category/:slug     → CategoryPage (filtres + tri)
+/fr/tool/:slug         → ToolDetailPage ← page principale
+/fr/tool/:slug/prix    → ToolDetailPage (subPage=prix)
+/fr/tool/:slug/alternatives → ToolDetailPage (subPage=alternatives)
+/fr/tool/:slug/avis    → ToolDetailPage (subPage=avis)
+/fr/tool/:slug/faq     → ToolDetailPage (subPage=faq)
+/fr/guides             → GuidesPage
+/fr/guide/:slug        → GuideDetailPage
+/fr/comparatif/:pair   → ComparePage
+/fr/selector           → SelectorPage (diagnostic)
+```
+
+---
+
+## ToolDetailPage — structure (après refonte session 3)
+
+```
+<article>
+  ├── <header.hero>                         ← identité + positionnement
+  │   ├── Breadcrumb
+  │   ├── Logo + badge catégorie
+  │   ├── H1  clamp(4.5rem → 7.75rem)
+  │   ├── shortDescription  22px
+  │   └── contexte court (prix + threshold)  17px/#6F6F68
+  │
+  ├── <div.td-container>
+  │   └── <div.td-body-grid>               ← 2 colonnes: 1fr | 360px
+  │       ├── <div> main content
+  │       │   ├── StickyDecisionCard (mobile)
+  │       │   ├── <nav.td-tab-nav>         ← 5 tabs, sticky top:var(--header-height)
+  │       │   │   Analyse / Prix / Alternatives / Avis / FAQ
+  │       │   │
+  │       │   └── [subPage === "presentation"]
+  │       │       ├── DÉCISION RAPIDE      ← nouveau (td-dr-grid, 3 blocs)
+  │       │       ├── Pour qui             ← ToolAudienceBlock
+  │       │       ├── Points forts         ← pros list
+  │       │       ├── Limites              ← cons list
+  │       │       ├── Fonctionnalités      ← ToolFeaturesBlock
+  │       │       ├── Cas d'usage
+  │       │       ├── Analyse ToolTrim     ← longDescription
+  │       │       ├── Intégrations         ← ToolPluginsBlock
+  │       │       └── ToolSummaryBlock     ← SEO/LLM, visually quiet
+  │       │
+  │       └── <aside.td-sidebar-desktop>   ← sticky, top:calc(--header-height + 24px)
+  │           ├── StickyDecisionCard
+  │           └── Related posts
+  │
+  ├── <div.td-diag-band>                   ← full-width, toujours visible
+  │   Audit de stack : "{outil} fait partie de ta stack ?"
+  │
+  └── <section.td-footer-cta>              ← full-width
+      "Une stack plus claire. Moins d'abonnements inutiles."
+```
+
+### Règle sticky sidebar
+`position: sticky` doit être sur l'élément grid item directement (`.td-sidebar-desktop`), pas sur un enfant.
+La hauteur du grid item = hauteur du contenu (via `height: fit-content`).
+Les parents ne doivent pas avoir : `overflow: hidden`, `overflow: auto`, `transform`, `filter`, `perspective`.
+
+---
+
+## Système CSS — classes préfixées
+
+Toutes les nouvelles classes utilisent `@layer components` dans `index.css`.
+
+| Préfixe | Scope |
+|---|---|
+| `td-*` | ToolDetailPage (hero, tabs, body, sidebar, sections, footer) |
+| `tc-*` | ToolCard (3 variants : default, featured, list-row) |
+| `tce-*` | ToolCardEditorial (benchmark, non encore migré) |
+| `gi-*` | GuidesPage (index éditorial) |
+| `ga-*` | GuideDetailPage (article éditorial) |
+| `eh-*` | EditorialHero (composant réutilisable) |
+| `es-*` | EditorialSection |
+| `ec-*` | EditorialCard |
+| `nav-*` | Navbar + mega-panel |
+
+---
+
+## Variables CSS globales (`:root`)
+
+```css
+--header-height: 68px;    /* hauteur navbar fixe */
+--font-brand: "Uncut Sans Variable";
+--font-ui: "Inter Tight";
+--primary: 224 76% 50%;   /* ToolTrim blue — usage sparingly */
+```
+
+---
+
+## Données
+
+### Hooks
+- `useTools()` — tous les outils
+- `useToolBySlug(slug)` — outil unique + loading state
+- `useCategories()` — toutes les catégories
+- `usePosts(lang)` — guides/articles
+
+### Score éditorial
+`computeToolTrimScore(tool)` → `{ score: number, labelFr: string, labelEn: string }`
+Plage : 2.8 → 4.8. Utilisé dans StickyDecisionCard et section Avis.
+
+---
+
+## Composants clés (tool detail)
+
+| Composant | Rôle |
+|---|---|
+| `StickyDecisionCard` | Sidebar sticky : score + verdict + CTAs + 4 facts + alternative |
+| `ToolVerdictBlock` | Détail keepIf/avoidIf/prescription (section Analyse) |
+| `ToolPricingSection` | Grille de prix v5 (section Prix) |
+| `ToolAlternativesSection` | Comparatif + table (section Alternatives) |
+| `ToolFAQSection` | FAQ structurée (section FAQ) |
+| `ToolAudienceBlock` | Profils relevantFor + solo/team relevance |
+| `ToolFeaturesBlock` | covers + functional_needs |
+| `ToolPluginsBlock` | Intégrations et plugins |
+| `ToolSummaryBlock` | SEO/LLM summary (visually quiet) |
+| `ToolJsonLd` | Schema.org JSON-LD |
+| `ToolDiagCta` | Bande audit de stack (réécrit : éditorial, sans bleu) |

@@ -115,6 +115,7 @@
     --h-btn:   56px;                   /* primary/secondary button */
     --h-input: 56px;                   /* input fields */
     --h-btn-sm: 40px;                  /* compact button */
+    --header-height: 68px;             /* fixed navbar height */
 
     /* ── Spacing scale (use only these values) ── */
     /* 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128 */
@@ -2916,7 +2917,7 @@
   /* Sticky sidebar — sticky must live on the GRID ITEM itself */
   .td-sidebar-desktop {
     position: sticky;
-    top: 88px;
+    top: calc(var(--header-height) + 24px);
     align-self: start;      /* prevent grid stretch from killing sticky */
     height: fit-content;
   }
@@ -2932,24 +2933,17 @@
   /* td-sidebar is now just a semantic wrapper — no position override */
   .td-sidebar { /* intentionally empty */ }
 
-  /* Hero 2-column layout: left identity + right decision summary */
+  /* Hero — single column: identity + positioning only */
   .td-hero-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 420px;
-    gap: 64px;
-    align-items: end;
-    padding-top: 48px;
-    padding-bottom: 44px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    max-width: 860px;
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 768px) {
     .td-hero-layout {
-      grid-template-columns: 1fr;
-      align-items: start;
-      gap: 0;
       padding-top: 40px;
-      padding-bottom: 36px;
+      padding-bottom: 40px;
     }
-    .td-hero-decision { display: none; }
   }
 
   /* Section wrapper */
@@ -3001,15 +2995,15 @@
     color: #6F6F68;
   }
 
-  /* Tab nav — calm editorial subnav */
+  /* Tab nav — strong editorial subnav */
   .td-tab-nav {
     position: sticky;
-    top: 0;
+    top: var(--header-height);
     z-index: 20;
     display: flex;
     align-items: center;
-    gap: 0;
-    height: 64px;
+    gap: 40px;
+    height: 72px;
     overflow-x: auto;
     border-bottom: 1px solid #DADAD4;
     background: #F8F8F4;
@@ -3022,16 +3016,16 @@
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    height: 64px;
-    padding: 0 20px;
+    height: 72px;
+    padding: 0;
     font-family: var(--font-ui);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: #6F6F68;
     text-decoration: none;
     transition: color 120ms ease-out;
     white-space: nowrap;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
   }
   .td-tab:hover { color: #222222; }
   .td-tab--active { color: #222222; }
@@ -3041,7 +3035,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 2px;
     background: #222222;
   }
 
@@ -3088,6 +3082,88 @@
   }
   .td-alt-row:hover { opacity: 0.7; }
   .td-alt-row:first-child { border-top: none; }
+
+  /* ── Décision rapide — 3-column editorial blocks ── */
+  .td-dr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 40px;
+    margin-top: 40px;
+  }
+  @media (max-width: 768px) {
+    .td-dr-grid { grid-template-columns: 1fr; gap: 0; }
+  }
+  .td-dr-block {
+    border-top: 1px solid #DADAD4;
+    padding-top: 18px;
+    padding-bottom: 8px;
+  }
+  .td-dr-label {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6F6F68;
+    margin-bottom: 10px;
+  }
+  .td-dr-text {
+    font-family: var(--font-ui);
+    font-size: 17px;
+    line-height: 1.5;
+    color: #222222;
+    margin: 0;
+  }
+
+  /* ── Audit de stack — editorial band (full-width, outside grid) ── */
+  .td-diag-band {
+    border-top: 1px solid #DADAD4;
+    border-bottom: 1px solid #DADAD4;
+    background: #F8F8F4;
+    padding: 56px 0;
+  }
+  .td-diag-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .td-diag-inner {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+
+  /* ── ToolTrim footer CTA — editorial, full-width ── */
+  .td-footer-cta {
+    background: #F8F8F4;
+    border-top: 1px solid #DADAD4;
+    padding: 72px 0;
+  }
+  .td-footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: end;
+  }
+  @media (max-width: 900px) {
+    .td-footer-inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+  .td-footer-title {
+    font-family: var(--font-brand);
+    font-size: clamp(3rem, 5vw, 5.125rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+    color: #222222;
+    white-space: pre-line;
+    margin: 0;
+  }
 }
 
 /* ── Guides Index — gi-* system ───────────────────────────────────────────── */
