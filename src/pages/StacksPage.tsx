@@ -13,6 +13,7 @@ import {
 /* ─── Types ─────────────────────────────────────────────────────────────────── */
 type StackListItem = (typeof STACKS)[number];
 type StackFilterId = "all" | "creation" | "business" | "tech" | "ops" | "light" | "ia";
+type StackSortId = "recommended" | "budget" | "tools";
 
 /* ─── Constants ─────────────────────────────────────────────────────────────── */
 const FILTER_PILLS: { id: StackFilterId; label: string; labelEn: string }[] = [
@@ -93,6 +94,7 @@ const StacksPage = () => {
   const { tools } = useToolSummaries();
   const [activeFilter, setActiveFilter] = useState<StackFilterId>("all");
   const [query, setQuery] = useState("");
+  const [sortBy, setSortBy] = useState<StackSortId>("recommended");
 
   const toolBySlug = useMemo(
     () => new Map(tools.map((tool) => [tool.slug || tool.id, tool])),
@@ -108,17 +110,25 @@ const StacksPage = () => {
 
   const filteredStacks = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return STACKS
-      .filter((stack) => stackMatchesFilter(stack, activeFilter) && stackMatchesQuery(stack, q))
-      .sort((a, b) => {
-        const ai = FEATURED_STACK_SLUGS.indexOf(a.slug);
-        const bi = FEATURED_STACK_SLUGS.indexOf(b.slug);
-        if (ai >= 0 && bi >= 0) return ai - bi;
-        if (ai >= 0) return -1;
-        if (bi >= 0) return 1;
-        return 0;
-      });
-  }, [activeFilter, query]);
+    const filtered = STACKS.filter(
+      (stack) => stackMatchesFilter(stack, activeFilter) && stackMatchesQuery(stack, q),
+    );
+    if (sortBy === "budget") {
+      return [...filtered].sort((a, b) => a.monthlyBudget - b.monthlyBudget);
+    }
+    if (sortBy === "tools") {
+      return [...filtered].sort((a, b) => b.tools.length - a.tools.length);
+    }
+    // "recommended" — FEATURED_STACK_SLUGS priority order
+    return [...filtered].sort((a, b) => {
+      const ai = FEATURED_STACK_SLUGS.indexOf(a.slug);
+      const bi = FEATURED_STACK_SLUGS.indexOf(b.slug);
+      if (ai >= 0 && bi >= 0) return ai - bi;
+      if (ai >= 0) return -1;
+      if (bi >= 0) return 1;
+      return 0;
+    });
+  }, [activeFilter, query, sortBy]);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -269,18 +279,33 @@ const StacksPage = () => {
       <section id="stacks" className="sk-section scroll-mt-20">
         <div className="sk-container">
 
-          {/* Filter pills */}
-          <div className="gi-filter-bar" style={{ marginBottom: 32 }}>
-            {FILTER_PILLS.map((pill) => (
-              <button
-                key={pill.id}
-                type="button"
-                onClick={() => setActiveFilter(pill.id)}
-                className={`gi-filter-pill${activeFilter === pill.id ? " gi-filter-pill--active" : ""}`}
+          {/* Filter pills + sort — same row */}
+          <div className="sk-filter-row">
+            <div className="gi-filter-bar">
+              {FILTER_PILLS.map((pill) => (
+                <button
+                  key={pill.id}
+                  type="button"
+                  onClick={() => setActiveFilter(pill.id)}
+                  className={`gi-filter-pill${activeFilter === pill.id ? " gi-filter-pill--active" : ""}`}
+                >
+                  {lang === "fr" ? pill.label : pill.labelEn}
+                </button>
+              ))}
+            </div>
+            <div className="gi-sort-wrapper">
+              <span className="gi-sort-label">{t("Trier par", "Sort by")}</span>
+              <select
+                className="gi-sort-select"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as StackSortId)}
+                aria-label={t("Trier par", "Sort by")}
               >
-                {lang === "fr" ? pill.label : pill.labelEn}
-              </button>
-            ))}
+                <option value="recommended">{t("Recommandé", "Recommended")}</option>
+                <option value="budget">{t("Budget", "Budget")}</option>
+                <option value="tools">{t("Nombre d'outils", "Tool count")}</option>
+              </select>
+            </div>
           </div>
 
           {/* Stack count + search */}
@@ -298,7 +323,7 @@ const StacksPage = () => {
               color: "#6F6F68",
               letterSpacing: "-0.01em",
             }}>
-              {filteredStacks.length}&nbsp;{t("stacks", "stacks")}
+              {filteredStacks.length}&nbsp;{t("stack" + (filteredStacks.length !== 1 ? "s" : ""), "stack" + (filteredStacks.length !== 1 ? "s" : ""))}
             </p>
             <input
               type="search"
@@ -484,7 +509,7 @@ const StacksPage = () => {
             </div>
           ) : (
             <div style={{
-              padding: "48px 0",
+              padding: "56px 0",
               textAlign: "center" as const,
               borderTop: "1px solid #DADAD4",
             }}>
@@ -496,15 +521,33 @@ const StacksPage = () => {
                 color: "#222222",
                 marginBottom: 8,
               }}>
-                {t("Aucune stack trouvée.", "No stack found.")}
+                {t("Aucune stack ne correspond à ces filtres.", "No stack matches these filters.")}
               </p>
               <p style={{
                 fontFamily: "var(--font-ui)",
                 fontSize: 15,
                 color: "#6F6F68",
+                marginBottom: 24,
               }}>
-                {t("Essaie un autre filtre ou efface la recherche.", "Try another filter or clear the search.")}
+                {t(
+                  "Essaie d'élargir ton filtre ou explore toutes les stacks.",
+                  "Try broadening your filter or explore all stacks.",
+                )}
               </p>
+              <button
+                type="button"
+                onClick={() => { setActiveFilter("all"); setQuery(""); setSortBy("recommended"); }}
+                style={{
+                  display: "inline-flex", alignItems: "center",
+                  height: 40, padding: "0 18px",
+                  border: "1px solid #222222", borderRadius: 8,
+                  fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
+                  color: "#222222", background: "transparent",
+                  cursor: "pointer", letterSpacing: "-0.01em",
+                }}
+              >
+                {t("Voir toutes les stacks", "See all stacks")}
+              </button>
             </div>
           )}
         </div>
