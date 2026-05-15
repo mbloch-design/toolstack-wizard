@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate, useLocation } from "react-router-dom";
+import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useRef } from "react";
@@ -44,6 +44,7 @@ const ToolDetailPage = () => {
   const { lang, t, prefix } = useLang();
   const { slug } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
   const { tool, loading } = useToolBySlug(slug);
   const { tools } = useTools();
   const { categories } = useCategories();
@@ -174,7 +175,16 @@ const ToolDetailPage = () => {
     );
   }
 
-  if (!tool) return <Navigate to={`${prefix}/tools`} replace />;
+  /* Outil non trouvé — redirection via useEffect pour éviter React error #310.
+     <Navigate> appelle navigate() dans un useLayoutEffect (commit phase), ce qui
+     peut déclencher "setState during render" en React 18 concurrent mode. */
+  useEffect(() => {
+    if (!loading && !tool) {
+      navigate(`${prefix}/tools`, { replace: true });
+    }
+  }, [loading, tool, navigate, prefix]);
+
+  if (!tool) return null;
 
   /* ── Derived values ── */
   const category   = categories.find((c: any) => c.id === tool.categoryId);
