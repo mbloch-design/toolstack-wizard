@@ -239,93 +239,128 @@ const ToolDetailPage = () => {
       />
 
       {/* ══════════════════════════════════════════════════════════
-          EDITORIAL HERO
+          EDITORIAL HERO — 2-col: identity left / decision right
       ══════════════════════════════════════════════════════════ */}
-      <header style={{ background: "#F8F8F4", borderBottom: "1px solid #DADAD4", paddingTop: 64, paddingBottom: 52 }}>
+      <header style={{ background: "#F8F8F4", borderBottom: "1px solid #DADAD4" }}>
         <div className="td-container">
+          <div className="td-hero-layout">
 
-          {/* Breadcrumb */}
-          <Breadcrumb items={[
-            { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-            ...(category ? [{
-              label: t(catName, catNameEn),
-              href: `${prefix}/category/${category.slug}`,
-            }] : []),
-            { label: tool.name },
-          ]} />
+            {/* ── LEFT: tool identity + positioning ── */}
+            <div>
+              <Breadcrumb items={[
+                { label: t("Outils", "Tools"), href: `${prefix}/tools` },
+                ...(category ? [{
+                  label: t(catName, catNameEn),
+                  href: `${prefix}/category/${category.slug}`,
+                }] : []),
+                { label: tool.name },
+              ]} />
 
-          {/* Logo + category chip */}
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 28, marginBottom: 20 }}>
-            <div style={{
-              width: 56, height: 56, borderRadius: 10,
-              border: "1px solid #DADAD4", background: "#FFFFFF",
-              display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-            }}>
-              <ToolLogo tool={tool} size={36} />
-            </div>
-            {category && (
-              <Link
-                to={`${prefix}/category/${category.slug}`}
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: 6,
-                  height: 28, padding: "0 12px",
-                  background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 6,
-                  fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500,
-                  color: "#6F6F68", textDecoration: "none",
-                  transition: "border-color 140ms",
-                }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; (e.currentTarget as HTMLElement).style.color = "#222222"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; (e.currentTarget as HTMLElement).style.color = "#6F6F68"; }}
-              >
-                {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11 }} />}
-                {t(catName, catNameEn)}
-              </Link>
-            )}
-          </div>
-
-          {/* Tool name — large editorial */}
-          <h1 style={{
-            fontFamily: "var(--font-brand)",
-            fontSize: "clamp(3rem, 7vw, 7rem)",
-            fontWeight: 600, lineHeight: 0.95,
-            letterSpacing: "-0.065em", color: "#222222",
-            marginBottom: 24,
-          }}>
-            {tool.name}
-          </h1>
-
-          {/* Short description */}
-          {tool.shortDescription && (
-            <p style={{
-              fontFamily: "var(--font-ui)",
-              fontSize: 21,
-              lineHeight: 1.35, letterSpacing: "-0.025em",
-              color: "#6F6F68", maxWidth: 720,
-            }}>
-              {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
-            </p>
-          )}
-
-          {/* Metadata row */}
-          <div className="td-hero-meta">
-            {category && (
-              <div className="td-hero-meta-item">
-                <span className="td-hero-meta-label">{t("CATÉGORIE", "CATEGORY")}</span>
-                <span className="td-hero-meta-value">{t(catName, catNameEn)}</span>
+              {/* Logo + category badge */}
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 28, marginBottom: 24 }}>
+                <div style={{
+                  width: 56, height: 56, borderRadius: 10,
+                  border: "1px solid #DADAD4", background: "#FFFFFF",
+                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                }}>
+                  <ToolLogo tool={tool} size={36} />
+                </div>
+                {category && (
+                  <Link
+                    to={`${prefix}/category/${category.slug}`}
+                    style={{
+                      display: "inline-flex", alignItems: "center", gap: 6,
+                      height: 32, padding: "0 14px",
+                      background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 999,
+                      fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
+                      color: "#222222", textDecoration: "none",
+                      transition: "border-color 140ms",
+                    }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                  >
+                    {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11, color: "#6F6F68" }} />}
+                    {t(catName, catNameEn)}
+                  </Link>
+                )}
               </div>
-            )}
-            <div className="td-hero-meta-item">
-              <span className="td-hero-meta-label">{t("MODÈLE", "MODEL")}</span>
-              <span className="td-hero-meta-value">{priceLabel}</span>
+
+              {/* H1 — large editorial */}
+              <h1 style={{
+                fontFamily: "var(--font-brand)",
+                fontSize: "clamp(4.5rem, 8vw, 8.25rem)",
+                fontWeight: 600, lineHeight: 0.9,
+                letterSpacing: "-0.07em", color: "#222222",
+                margin: 0,
+              }}>
+                {tool.name}
+              </h1>
+
+              {/* Positioning sentence */}
+              {tool.shortDescription && (
+                <p style={{
+                  fontFamily: "var(--font-ui)",
+                  fontSize: 22,
+                  lineHeight: 1.35, letterSpacing: "-0.025em",
+                  color: "#222222", maxWidth: 760,
+                  marginTop: 28,
+                }}>
+                  {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                </p>
+              )}
+
+              {/* Price / context line */}
+              {(() => {
+                const verdict = (tool as any).verdict;
+                const threshold = verdict?.threshold as string | undefined;
+                const pricePart = isFree
+                  ? t("Gratuit.", "Free.")
+                  : displayPrice > 0
+                  ? `${t("À partir de", "From")} ${displayPrice}€/${t("mois", "mo")}.`
+                  : null;
+                const text = [pricePart, threshold].filter(Boolean).join(" ");
+                if (!text) return null;
+                return (
+                  <p style={{
+                    fontFamily: "var(--font-ui)",
+                    fontSize: 17,
+                    lineHeight: 1.45, letterSpacing: "-0.015em",
+                    color: "#6F6F68", maxWidth: 680,
+                    marginTop: 16,
+                  }}>
+                    {text}
+                  </p>
+                );
+              })()}
+
+              {/* Metadata bar */}
+              <div className="td-hero-meta">
+                {category && (
+                  <div className="td-hero-meta-item">
+                    <span className="td-hero-meta-label">{t("CATÉGORIE", "CATEGORY")}</span>
+                    <span className="td-hero-meta-value">{t(catName, catNameEn)}</span>
+                  </div>
+                )}
+                <div className="td-hero-meta-item">
+                  <span className="td-hero-meta-label">{t("MODÈLE", "MODEL")}</span>
+                  <span className="td-hero-meta-value">{priceLabel}</span>
+                </div>
+                <div className="td-hero-meta-item">
+                  <span className="td-hero-meta-label">{t("PLAN GRATUIT", "FREE PLAN")}</span>
+                  <span className="td-hero-meta-value">{hasFreeplan ? t("Oui", "Yes") : t("Non", "No")}</span>
+                </div>
+                <div className="td-hero-meta-item">
+                  <span className="td-hero-meta-label">{t("MIS À JOUR", "UPDATED")}</span>
+                  <time className="td-hero-meta-value" dateTime={verifiedOn}>{verifiedOn}</time>
+                </div>
+              </div>
             </div>
-            <div className="td-hero-meta-item">
-              <span className="td-hero-meta-label">{t("PLAN GRATUIT", "FREE PLAN")}</span>
-              <span className="td-hero-meta-value">{hasFreeplan ? t("Oui", "Yes") : t("Non", "No")}</span>
+
+            {/* ── RIGHT: decision summary (desktop only) ── */}
+            <div className="td-hero-decision">
+              <HeroDecisionSummary tool={tool} lang={lang} t={t} gain={tool.prescription_output?.gain_monthly_eur ?? 0} />
             </div>
-            <div className="td-hero-meta-item">
-              <span className="td-hero-meta-label">{t("MIS À JOUR", "UPDATED")}</span>
-              <time className="td-hero-meta-value" dateTime={verifiedOn}>{verifiedOn}</time>
-            </div>
+
           </div>
         </div>
       </header>
@@ -830,7 +865,6 @@ const ToolDetailPage = () => {
 
           {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}
           <aside className="td-sidebar-desktop">
-            <div className="td-sidebar">
               <StickyDecisionCard {...cardProps} />
 
               {/* Related posts */}
@@ -865,7 +899,6 @@ const ToolDetailPage = () => {
                   </div>
                 </div>
               )}
-            </div>
           </aside>
 
         </div>
@@ -873,5 +906,100 @@ const ToolDetailPage = () => {
     </article>
   );
 };
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   HeroDecisionSummary — compact 4-row decision grid in the hero right column
+   Shows the key decision signals at a glance before the user scrolls.
+───────────────────────────────────────────────────────────────────────────── */
+function HeroDecisionSummary({
+  tool, lang, t, gain,
+}: {
+  tool: any;
+  lang: string;
+  t: (fr: string, en: string) => string;
+  gain: number;
+}) {
+  const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
+  const keepItems: string[] = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean);
+  const avoidItems: string[] = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean);
+  const limitText = (Array.isArray(tool.cons) && tool.cons.length > 0)
+    ? tool.cons[0]
+    : avoidItems[avoidItems.length - 1] || null;
+
+  const gainText = gain > 0
+    ? (lang === "fr"
+        ? `~${Math.round(gain)}€/mois économisés en passant à une alternative`
+        : `~€${Math.round(gain)}/mo saved switching to an alternative`)
+    : null;
+
+  const rows = [
+    {
+      label: t("À garder si", "Keep if"),
+      text: keepItems.length > 0 ? keepItems.slice(0, 3).join(", ") : null,
+    },
+    {
+      label: t("À challenger si", "Challenge if"),
+      text: avoidItems.length > 0 ? avoidItems.slice(0, 3).join(", ") : null,
+    },
+    {
+      label: t("Limite", "Limitation"),
+      text: limitText,
+    },
+    gainText ? {
+      label: t("Gain potentiel", "Potential gain"),
+      text: gainText,
+    } : null,
+  ].filter((r): r is { label: string; text: string } => !!r && !!r.text);
+
+  if (rows.length === 0) return null;
+
+  const SEP = { borderTop: "1px solid #E7E7E0" } as const;
+
+  return (
+    <div style={{
+      background: "#FFFFFF",
+      border: "1px solid #DADAD4",
+      borderRadius: 10,
+      padding: "22px 24px",
+    }}>
+      <p style={{
+        fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
+        letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+        marginBottom: 18,
+      }}>
+        {t("Décision rapide", "Quick decision")}
+      </p>
+
+      {rows.map((row, i) => (
+        <div
+          key={row.label}
+          style={{
+            ...(i > 0 ? SEP : {}),
+            display: "grid",
+            gridTemplateColumns: "120px 1fr",
+            gap: 18,
+            alignItems: "start",
+            padding: "14px 0",
+          }}
+        >
+          <span style={{
+            fontFamily: "var(--font-ui)",
+            fontSize: 13, fontWeight: 600,
+            color: "#222222", lineHeight: 1.35,
+          }}>
+            {row.label}
+          </span>
+          <span style={{
+            fontFamily: "var(--font-ui)",
+            fontSize: 14.5, lineHeight: 1.4,
+            color: "#6F6F68",
+          }}>
+            {row.text}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default ToolDetailPage;

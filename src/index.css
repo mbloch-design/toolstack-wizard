@@ -2913,17 +2913,43 @@
     }
   }
 
-  /* Sticky sidebar */
-  .td-sidebar {
+  /* Sticky sidebar — sticky must live on the GRID ITEM itself */
+  .td-sidebar-desktop {
     position: sticky;
     top: 88px;
+    align-self: start;      /* prevent grid stretch from killing sticky */
+    height: fit-content;
   }
   @media (max-width: 1100px) {
-    .td-sidebar { position: static; }
-    .td-sidebar-desktop { display: none; }
+    .td-sidebar-desktop {
+      position: static;
+      display: none;
+    }
   }
   @media (min-width: 1101px) {
     .td-sidebar-mobile { display: none; }
+  }
+  /* td-sidebar is now just a semantic wrapper — no position override */
+  .td-sidebar { /* intentionally empty */ }
+
+  /* Hero 2-column layout: left identity + right decision summary */
+  .td-hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: 64px;
+    align-items: end;
+    padding-top: 48px;
+    padding-bottom: 44px;
+  }
+  @media (max-width: 1100px) {
+    .td-hero-layout {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 0;
+      padding-top: 40px;
+      padding-bottom: 36px;
+    }
+    .td-hero-decision { display: none; }
   }
 
   /* Section wrapper */
