@@ -34,8 +34,8 @@ export function computeToolTrimScore(tool: any): { score: number; labelFr: strin
   score = Math.max(2.8, Math.min(4.8, score));
   score = Math.round(score * 10) / 10;
 
-  const labelFr = score >= 4.5 ? "Incontournable" : score >= 4.0 ? "Solide" : score >= 3.5 ? "Correct" : "À évaluer";
-  const labelEn = score >= 4.5 ? "Must-have" : score >= 4.0 ? "Solid" : score >= 3.5 ? "Decent" : "Mixed";
+  const labelFr = score >= 4.5 ? "Incontournable" : score >= 4.0 ? "Très bon" : score >= 3.5 ? "Correct" : "Mitigé";
+  const labelEn = score >= 4.5 ? "Must-have" : score >= 4.0 ? "Very good" : score >= 3.5 ? "Decent" : "Mixed";
 
   return { score, labelFr, labelEn };
 }

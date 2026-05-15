@@ -2880,3 +2880,183 @@
   .ec-card:hover .ec-cta { text-decoration: underline; text-underline-offset: 3px; }
   .ec-card:hover .ec-cta-arrow { transform: translateX(3px); }
 }
+
+/* ── Tool Detail page — td-* system ──────────────────────────────────────── */
+@layer components {
+
+  /* Page container */
+  .td-container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  @media (max-width: 768px) {
+    .td-container { padding-left: 20px; padding-right: 20px; }
+  }
+
+  /* Two-column body grid: content | sidebar */
+  .td-body-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 56px;
+    align-items: start;
+    padding-top: 48px;
+    padding-bottom: 80px;
+  }
+  @media (max-width: 1100px) {
+    .td-body-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Sticky sidebar */
+  .td-sidebar {
+    position: sticky;
+    top: 96px;
+  }
+  @media (max-width: 1100px) {
+    .td-sidebar { position: static; }
+    .td-sidebar-desktop { display: none; }
+  }
+  @media (min-width: 1101px) {
+    .td-sidebar-mobile { display: none; }
+  }
+
+  /* Section wrapper */
+  .td-section {
+    padding: 52px 0;
+    border-bottom: 1px solid #DADAD4;
+  }
+  .td-section:last-child {
+    border-bottom: none;
+  }
+
+  /* Section eyebrow */
+  .td-eyebrow {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6F6F68;
+    margin-bottom: 16px;
+  }
+
+  /* Section title */
+  .td-title {
+    font-family: var(--font-brand);
+    font-size: clamp(1.875rem, 3.5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.0;
+    letter-spacing: -0.045em;
+    color: #222222;
+    margin-bottom: 24px;
+  }
+
+  /* Body text */
+  .td-body {
+    font-family: var(--font-ui);
+    font-size: clamp(1rem, 1.1vw, 1.0625rem);
+    line-height: 1.6;
+    color: #222222;
+    max-width: 760px;
+  }
+  .td-body p + p { margin-top: 1em; }
+
+  /* Muted variant */
+  .td-muted {
+    color: #6F6F68;
+  }
+
+  /* Tab nav */
+  .td-tab-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid #DADAD4;
+    background: #F8F8F4;
+    scrollbar-width: none;
+    margin-bottom: 0;
+  }
+  .td-tab-nav::-webkit-scrollbar { display: none; }
+
+  .td-tab {
+    position: relative;
+    flex-shrink: 0;
+    padding: 14px 20px;
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #6F6F68;
+    text-decoration: none;
+    transition: color 120ms ease-out;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  .td-tab:hover { color: #222222; }
+  .td-tab--active {
+    color: #222222;
+    font-weight: 500;
+  }
+  .td-tab--active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #222222;
+    border-radius: 2px 2px 0 0;
+  }
+
+  /* Hero metadata row */
+  .td-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #DADAD4;
+  }
+  .td-hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .td-hero-meta-label {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #9A9A92;
+  }
+  .td-hero-meta-value {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: #222222;
+    letter-spacing: -0.01em;
+  }
+
+  /* Editorial comparison rows (alternatives section) */
+  .td-alt-row {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #DADAD4;
+    text-decoration: none;
+    transition: opacity 160ms ease-out;
+  }
+  .td-alt-row:hover { opacity: 0.7; }
+  .td-alt-row:first-child { border-top: none; }
+}

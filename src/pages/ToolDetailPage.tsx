@@ -3,8 +3,8 @@ import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect } from "react";
 import {
-  ExternalLink, Check, X, ArrowRight, AlertTriangle,
-  TrendingDown, Sparkles, ShieldCheck, CalendarCheck,
+  ExternalLink, Check, X, ArrowRight, CalendarCheck,
+  TrendingDown, Sparkles, ShieldCheck,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -21,11 +21,19 @@ import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
 import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
-import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
+import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolAlternativesSection from "@/components/tool/ToolAlternativesSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import ToolDiagCta from "@/components/tool/ToolDiagCta";
+import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ToolDetailPage — editorial redesign
+   - Left: scrollable main content (tab sections)
+   - Right: sticky StickyDecisionCard
+   - Hero: large tool name + short description + metadata row
+───────────────────────────────────────────────────────────────────────────── */
 
 const TABS = [
   { id: "presentation", labelFr: "Analyse",       labelEn: "Overview",      path: ""             },
@@ -44,7 +52,6 @@ const ToolDetailPage = () => {
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
 
-  // Derive active sub-page from URL path
   const pathEnd = location.pathname.split("/").pop() || "";
   const subPage: "presentation" | "prix" | "alternatives" | "faq" | "avis" =
     pathEnd === "prix" || pathEnd === "pricing" ? "prix"
@@ -53,7 +60,7 @@ const ToolDetailPage = () => {
     : pathEnd === "avis" || pathEnd === "reviews" ? "avis"
     : "presentation";
 
-  // ── SEO — unique title/desc/canonical per sub-page ──
+  /* ── SEO ── */
   useEffect(() => {
     if (!tool) return;
     const v5Price = tool.pricing_v5?.compare_price_monthly_eur;
@@ -61,25 +68,18 @@ const ToolDetailPage = () => {
     const hasPrice = price != null && price > 0;
     const year = new Date().getFullYear();
     const baseSlug = tool.slug || tool.id;
-
-    // Round price for titles (cleaner display), keep exact for descriptions
     const priceRounded = hasPrice ? Math.round(price as number) : 0;
     const planName = tool.pricing_v5?.compare_plan_name || null;
     const planSuffixFr = planName ? ` (plan ${planName})` : "";
     const planSuffixEn = planName ? ` (${planName} plan)` : "";
-
-    // Unique per-tool signal: first sentence of shortDescription (≤ 90 chars)
     const rawExcerpt = (tool.shortDescription || "").split(/[.!?]/)[0].trim();
     const shortExcerpt = rawExcerpt.length > 90 ? rawExcerpt.slice(0, 87) + "…" : rawExcerpt;
-
-    // Category label for context (computed inside effect to avoid ordering dependency)
     const cat = categories.find((c: any) => c.id === tool.categoryId);
     const catLabel = cat
       ? stripLeadingEmoji(cat.name, cat.id || "")
       : lang === "fr" ? "outil SaaS" : "SaaS tool";
 
     const SEO: Record<string, { titleFr: string; titleEn: string; descFr: string; descEn: string; suffix: string }> = {
-      // Presentation = hub page: focuses on "vaut-il le coût" / pricing signal, NOT "Avis"
       presentation: {
         titleFr: hasPrice
           ? `${tool.name} ${year} : Vaut-il ${priceRounded}€/mois ? Prix & Verdict | ToolTrim`
@@ -114,7 +114,6 @@ const ToolDetailPage = () => {
           : `Is ${tool.name} free in ${year}?${shortExcerpt ? ` ${shortExcerpt}.` : ""} Free, freemium and paid plans compared with top alternatives.`,
         suffix: "/prix",
       },
-      // Alternatives = category-aware, mentions catLabel for context
       alternatives: {
         titleFr: hasPrice
           ? `Alternatives à ${tool.name} moins chères en ${year} | ToolTrim`
@@ -130,7 +129,6 @@ const ToolDetailPage = () => {
           : `What are the best alternatives to ${tool.name} in ${catLabel}? ToolTrim compares the top free, freemium and paid options for ${year}.`,
         suffix: "/alternatives",
       },
-      // Avis = owns the "Avis / Reviews" keyword, NOT presentation
       avis: {
         titleFr: `Avis ${tool.name} ${year} : Note ToolTrim & Retours d'expérience | ToolTrim`,
         titleEn: `${tool.name} Reviews ${year}: ToolTrim Rating & User Feedback | ToolTrim`,
@@ -170,18 +168,19 @@ const ToolDetailPage = () => {
     return () => cleanupSeo([]);
   }, [tool, lang, subPage, categories]);
 
-
+  /* ── Loading / not found ── */
   if (loading) {
     return (
-      <div className="container py-20 text-center">
-        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>
     );
   }
 
   if (!tool) return <Navigate to={`${prefix}/tools`} replace />;
 
-  const category = categories.find((c: any) => c.id === tool.categoryId);
+  /* ── Derived values ── */
+  const category   = categories.find((c: any) => c.id === tool.categoryId);
   const CategoryIcon = category ? getCategoryIcon(category.id) : null;
   const alternatives = tools
     .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id)
@@ -190,28 +189,40 @@ const ToolDetailPage = () => {
     .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
     .slice(0, 3);
 
-  const v5Price    = tool.pricing_v5?.compare_price_monthly_eur;
-  const displayPrice = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
-  const verifiedOn = tool.pricing_v5?.verified_on || "2026-03-29";
-  const sourceDomain = tool.pricing_v5?.source_domain;
-  const domain     = getDomainFromUrl(tool.websiteUrl) || getToolDomain(tool);
+  const v5Price       = tool.pricing_v5?.compare_price_monthly_eur;
+  const displayPrice  = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
+  const verifiedOn    = tool.pricing_v5?.verified_on || "2026-03-29";
+  const sourceDomain  = tool.pricing_v5?.source_domain;
+  const domain        = getDomainFromUrl(tool.websiteUrl) || getToolDomain(tool);
   const primaryCtaUrl = tool.affiliateLink || tool.websiteUrl || "#";
   const hasAffiliateOffer = Boolean(tool.affiliateLink);
-  const isFree     = displayPrice === 0 && !tool.pricing?.paid;
-  const isFreemium = !!(tool.pricing?.free && tool.pricing?.paid);
-  const freeAlt    = (tool as any).freeAlternative as string | null;
-  const betterAlt  = (tool as any).betterAlternative as { tool: string; saving: number } | null;
-  const catName    = stripLeadingEmoji(category?.name, category?.id || "");
-  const catNameEn  = stripLeadingEmoji(category?.nameEn, catName);
+  const isFree        = displayPrice === 0 && !tool.pricing?.paid;
+  const isFreemium    = !!(tool.pricing?.free && tool.pricing?.paid);
+  const hasFreeplan   = !!(tool.pricing?.free &&
+    !tool.pricing.free.toLowerCase().includes("no free") &&
+    !tool.pricing.free.toLowerCase().includes("aucun") &&
+    !tool.pricing.free.toLowerCase().includes("pas de"));
+  const freeAlt       = (tool as any).freeAlternative as string | null;
+  const betterAlt     = (tool as any).betterAlternative as { tool: string; saving: number } | null;
+  const catName       = stripLeadingEmoji(category?.name, category?.id || "");
+  const catNameEn     = stripLeadingEmoji(category?.nameEn, catName);
 
-  const TYPE_LABEL: Record<string, { fr: string; en: string }> = {
-    ia:        { fr: "Intelligence artificielle", en: "AI tool"     },
-    metier:    { fr: "Outil métier",               en: "Core tool"   },
-    gestion:   { fr: "Gestion",                    en: "Management"  },
-    satellite: { fr: "Satellite",                  en: "Satellite"   },
-    plugin:    { fr: "Plugin / Extension",          en: "Plugin"      },
-  };
+  const priceLabel = isFree
+    ? t("Gratuit", "Free")
+    : isFreemium
+    ? "Freemium"
+    : displayPrice > 0
+    ? `${displayPrice}€/${t("mois", "mo")}`
+    : t("Sur devis", "On request");
+
   const toolType = (tool as any).tool_type as string;
+
+  /* Shared card props */
+  const cardProps = {
+    tool, displayPrice, verifiedOn, isFree, isFreemium, hasFreeplan,
+    prefix, lang, t, primaryCtaUrl, hasAffiliateOffer,
+    alternatives, catName, catNameEn,
+  };
 
   return (
     <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
@@ -227,887 +238,571 @@ const ToolDetailPage = () => {
         }`}
       />
 
-      {/* ── Hero strip: breadcrumb + headline ── */}
-      <header
-        className="relative overflow-hidden border-b border-border"
-        style={{ background: "hsl(var(--card))" }}
-      >
-        {/* Dot grid */}
-        <div
-          className="pointer-events-none absolute inset-0"
-          aria-hidden
-          style={{
-            backgroundImage: "radial-gradient(hsl(var(--border) / 0.8) 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-            maskImage: "radial-gradient(ellipse 100% 100% at 50% 0%, black 20%, transparent 80%)",
-            WebkitMaskImage: "radial-gradient(ellipse 100% 100% at 50% 0%, black 20%, transparent 80%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-7xl px-4 py-8">
+      {/* ══════════════════════════════════════════════════════════
+          EDITORIAL HERO
+      ══════════════════════════════════════════════════════════ */}
+      <header style={{ background: "#F8F8F4", borderBottom: "1px solid #DADAD4", paddingTop: 64, paddingBottom: 52 }}>
+        <div className="td-container">
+
+          {/* Breadcrumb */}
           <Breadcrumb items={[
             { label: t("Outils", "Tools"), href: `${prefix}/tools` },
             ...(category ? [{
               label: t(catName, catNameEn),
-              href: `${prefix}/category/${category.slug}`
+              href: `${prefix}/category/${category.slug}`,
             }] : []),
             { label: tool.name },
           ]} />
 
-          <h1
-            className="font-display mt-4"
-            style={{
-              fontSize: "clamp(1.375rem, 3vw, 2.125rem)",
-              fontWeight: 700,
-              letterSpacing: "-0.025em",
-              lineHeight: 1.14,
-              color: "hsl(var(--foreground))",
-            }}
-          >
-            {(() => {
-              if (lang === "fr") {
-                if (displayPrice > 0) return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>vaut-il vraiment {displayPrice}€/mois ?</span></>;
-                if (isFree || isFreemium) return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>le plan gratuit suffit-il vraiment ?</span></>;
-                return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>notre verdict honnête</span></>;
-              }
-              if (displayPrice > 0) return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>is it really worth €{displayPrice}/mo?</span></>;
-              if (isFree || isFreemium) return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>is the free plan really enough?</span></>;
-              return <>{tool.name} — <span style={{ color: "hsl(var(--primary))" }}>our honest verdict</span></>;
-            })()}
+          {/* Logo + category chip */}
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 28, marginBottom: 20 }}>
+            <div style={{
+              width: 56, height: 56, borderRadius: 10,
+              border: "1px solid #DADAD4", background: "#FFFFFF",
+              display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+            }}>
+              <ToolLogo tool={tool} size={36} />
+            </div>
+            {category && (
+              <Link
+                to={`${prefix}/category/${category.slug}`}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  height: 28, padding: "0 12px",
+                  background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 6,
+                  fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500,
+                  color: "#6F6F68", textDecoration: "none",
+                  transition: "border-color 140ms",
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; (e.currentTarget as HTMLElement).style.color = "#222222"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; (e.currentTarget as HTMLElement).style.color = "#6F6F68"; }}
+              >
+                {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11 }} />}
+                {t(catName, catNameEn)}
+              </Link>
+            )}
+          </div>
+
+          {/* Tool name — large editorial */}
+          <h1 style={{
+            fontFamily: "var(--font-brand)",
+            fontSize: "clamp(3rem, 7vw, 7rem)",
+            fontWeight: 600, lineHeight: 0.95,
+            letterSpacing: "-0.06em", color: "#222222",
+            marginBottom: 24,
+          }}>
+            {tool.name}
           </h1>
 
+          {/* Short description */}
+          {tool.shortDescription && (
+            <p style={{
+              fontFamily: "var(--font-ui)",
+              fontSize: "clamp(1rem, 1.4vw, 1.25rem)",
+              lineHeight: 1.45, color: "#6F6F68", maxWidth: 720,
+            }}>
+              {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+            </p>
+          )}
+
+          {/* Metadata row */}
+          <div className="td-hero-meta">
+            {category && (
+              <div className="td-hero-meta-item">
+                <span className="td-hero-meta-label">{t("CATÉGORIE", "CATEGORY")}</span>
+                <span className="td-hero-meta-value">{t(catName, catNameEn)}</span>
+              </div>
+            )}
+            <div className="td-hero-meta-item">
+              <span className="td-hero-meta-label">{t("MODÈLE", "MODEL")}</span>
+              <span className="td-hero-meta-value">{priceLabel}</span>
+            </div>
+            <div className="td-hero-meta-item">
+              <span className="td-hero-meta-label">{t("PLAN GRATUIT", "FREE PLAN")}</span>
+              <span className="td-hero-meta-value">{hasFreeplan ? t("Oui", "Yes") : t("Non", "No")}</span>
+            </div>
+            <div className="td-hero-meta-item">
+              <span className="td-hero-meta-label">{t("MIS À JOUR", "UPDATED")}</span>
+              <time className="td-hero-meta-value" dateTime={verifiedOn}>{verifiedOn}</time>
+            </div>
+          </div>
         </div>
       </header>
 
-      {/* ── BODY: left card + tabs + content ── */}
-      <div className="mx-auto max-w-7xl px-4 py-10">
-        <div className="flex gap-8 items-start">
+      {/* ══════════════════════════════════════════════════════════
+          BODY — two-column grid
+      ══════════════════════════════════════════════════════════ */}
+      <div className="td-container">
+        <div className="td-body-grid">
 
-          {/* ══════════════ LEFT STICKY CARD ══════════════ */}
-          <aside className="hidden lg:flex w-56 shrink-0 flex-col gap-3 sticky top-6">
+          {/* ── MAIN CONTENT (left column) ── */}
+          <div>
 
-            {/* ── Main card ── */}
-            <div
-              className="rounded-2xl overflow-hidden"
-              style={{
-                background: "hsl(var(--card))",
-                border: "1px solid hsl(var(--border))",
-                boxShadow: "0 1px 6px hsl(var(--foreground) / 0.05)",
-              }}
-            >
-              {/* Identity: logo + name + category */}
-              <div className="flex flex-col items-center gap-2.5 px-5 pt-6 pb-5 text-center">
-                <ToolLogo tool={tool} size={72} className="rounded-2xl" style={{ boxShadow: "0 4px 16px hsl(var(--foreground) / 0.10)" }} />
-                <div className="space-y-1">
-                  <p className="font-display" style={{ fontSize: "0.9375rem", fontWeight: 600, letterSpacing: "-0.02em", color: "hsl(var(--foreground))" }}>
-                    {tool.name}
-                  </p>
-                  {category && (
-                    <Link
-                      to={`${prefix}/category/${category.slug}`}
-                      className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-medium transition-colors hover:text-primary"
-                      style={{
-                        background: "hsl(var(--secondary))",
-                        color: "hsl(var(--muted-foreground))",
-                      }}
-                    >
-                      {CategoryIcon && <CategoryIcon className="h-3 w-3" />}
-                      {t(catName, catNameEn)}
-                    </Link>
-                  )}
-                </div>
-
-                {/* Score compact — une seule ligne */}
-                {(() => {
-                  const ts = computeToolTrimScore(tool);
-                  return (
-                    <Link
-                      to={`${prefix}/tool/${slug}/avis`}
-                      className="mt-1 flex items-center gap-2 rounded-xl px-3 py-2 w-full transition-colors hover:bg-secondary/60 group"
-                      style={{ background: "hsl(var(--secondary) / 0.5)" }}
-                    >
-                      <div className="flex items-center gap-0.5">
-                        {[1,2,3,4,5].map((i) => (
-                          <svg key={i} className="h-3.5 w-3.5" viewBox="0 0 24 24" fill={starFill(i, ts.score)}>
-                            <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>
-                          </svg>
-                        ))}
-                      </div>
-                      <span className="font-mono text-sm font-bold" style={{ color: "hsl(var(--foreground))", letterSpacing: "-0.02em" }}>
-                        {ts.score.toFixed(1)}
-                      </span>
-                      <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground))" }}>
-                        {t(ts.labelFr, ts.labelEn)}
-                      </span>
-                      <ArrowRight className="ml-auto h-3 w-3 opacity-40 group-hover:opacity-70 transition-opacity" />
-                    </Link>
-                  );
-                })()}
-              </div>
-
-              {/* Price + CTA — hero block */}
-              <div className="px-5 pb-5 space-y-3">
-                {/* Price display */}
-                <div className="text-center">
-                  {isFree || isFreemium ? (
-                    <div>
-                      <span
-                        className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-semibold"
-                        style={{
-                          background: "hsl(var(--primary) / 0.08)",
-                          color: "hsl(var(--primary))",
-                          border: "1px solid hsl(var(--primary) / 0.2)",
-                        }}
-                      >
-                        {isFree ? t("Gratuit", "Free") : "Freemium"}
-                      </span>
-                    </div>
-                  ) : (
-                    <div>
-                      <div className="flex items-baseline justify-center gap-1">
-                        <span className="num-mono" style={{ fontSize: "1.75rem", fontWeight: 700, letterSpacing: "-0.03em", color: "hsl(var(--foreground))" }}>
-                          {displayPrice}€
-                        </span>
-                        <span style={{ fontSize: "0.8125rem", color: "hsl(var(--muted-foreground))", fontWeight: 400 }}>
-                          /{t("mois", "mo")}
-                        </span>
-                      </div>
-                      {tool.pricing_v5?.compare_plan_name && (
-                        <p className="mt-0.5 text-[11px] uppercase tracking-wider" style={{ color: "hsl(var(--muted-foreground) / 0.5)", letterSpacing: "0.08em" }}>
-                          {t("Plan", "Plan")} {tool.pricing_v5.compare_plan_name}
-                        </p>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                {/* CTA */}
-                <a
-                  href={primaryCtaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-1.5 rounded-xl py-2.5 text-[0.8125rem] font-semibold transition-opacity hover:opacity-85"
-                  style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
-                >
-                  {hasAffiliateOffer
-                    ? t(`Voir l’offre ${tool.name}`, `View ${tool.name} offer`)
-                    : isFree
-                    ? t(`Ouvrir ${tool.name} — gratuit`, `Open ${tool.name} — free`)
-                    : t(`Essayer ${tool.name}`, `Try ${tool.name}`)}
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-
-                {/* Savings signal — inline sous le CTA */}
-                {(freeAlt || betterAlt) && (
-                  <div
-                    className="flex items-start gap-1.5 rounded-lg px-3 py-2 text-[11px]"
-                    style={{
-                      background: freeAlt ? "hsl(var(--savings) / 0.07)" : "hsl(var(--cancel) / 0.06)",
-                      color: freeAlt ? "hsl(var(--savings))" : "hsl(var(--cancel))",
-                    }}
-                  >
-                    {freeAlt
-                      ? <Sparkles className="h-3 w-3 shrink-0 mt-px" />
-                      : <TrendingDown className="h-3 w-3 shrink-0 mt-px" />
-                    }
-                    <span>
-                      {freeAlt
-                        ? <>{t("Alt. gratuite :", "Free alt:")} <span className="font-medium">{asText(freeAlt).split(/[\s([/]/)[0]}</span></>
-                        : <>{t("Moins cher :", "Cheaper:")} <span className="font-medium">{asText(betterAlt?.tool).split(/[\s([/]/)[0]}</span>{betterAlt?.saving ? ` · −${betterAlt.saving}€` : ""}</>
-                      }
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              {/* Badges */}
-              {(() => {
-                const hasFreeplan = !!(tool.pricing?.free &&
-                  !tool.pricing.free.toLowerCase().includes("no free") &&
-                  !tool.pricing.free.toLowerCase().includes("aucun") &&
-                  !tool.pricing.free.toLowerCase().includes("pas de"));
-                const isAI = !!(tool as any).ia_use_case || toolType === "ia";
-                const isPlugin = toolType === "plugin";
-                const notSubstitutable = (tool as any).substitutable === false;
-                const badges = [
-                  hasFreeplan  && { labelFr: "Plan gratuit",  labelEn: "Free plan",   color: "hsl(var(--keep))",    bg: "hsl(var(--keep) / 0.08)",    border: "hsl(var(--keep) / 0.2)"    },
-                  isFreemium   && { labelFr: "Freemium",       labelEn: "Freemium",    color: "hsl(var(--primary))", bg: "hsl(var(--primary) / 0.06)", border: "hsl(var(--primary) / 0.2)" },
-                  isAI         && { labelFr: "IA",             labelEn: "AI",          color: "hsl(var(--primary))", bg: "hsl(var(--primary) / 0.06)", border: "hsl(var(--primary) / 0.2)" },
-                  isPlugin     && { labelFr: "Plugin",         labelEn: "Plugin",      color: "hsl(var(--muted-foreground))", bg: "hsl(var(--secondary))", border: "hsl(var(--border))" },
-                  notSubstitutable && { labelFr: "Indispensable", labelEn: "Essential", color: "hsl(var(--cancel))", bg: "hsl(var(--cancel) / 0.06)",  border: "hsl(var(--cancel) / 0.2)"  },
-                ].filter(Boolean) as { labelFr: string; labelEn: string; color: string; bg: string; border: string }[];
-                if (!badges.length) return null;
-                return (
-                  <div className="flex flex-wrap gap-1.5 border-t border-border/60 px-5 py-3.5">
-                    {badges.map((b) => (
-                      <span
-                        key={b.labelFr}
-                        className="rounded-full border px-2.5 py-0.5 text-[11px] font-medium"
-                        style={{ color: b.color, background: b.bg, borderColor: b.border }}
-                      >
-                        {t(b.labelFr, b.labelEn)}
-                      </span>
-                    ))}
-                  </div>
-                );
-              })()}
-
-              {/* Key facts */}
-              <div className="border-t border-border/60 px-5 py-3.5 space-y-2.5" style={{ fontSize: "0.75rem" }}>
-                <div className="flex items-center justify-between">
-                  <span style={{ color: "hsl(var(--muted-foreground))" }}>{t("Substituable", "Substitutable")}</span>
-                  <span style={{ color: (tool as any).substitutable ? "hsl(var(--savings))" : "hsl(var(--muted-foreground))" }}>
-                    {(tool as any).substitutable ? t("Oui — alternatives dispo", "Yes — alternatives exist") : t("Non — outil unique", "No — unique tool")}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="flex items-center gap-1" style={{ color: "hsl(var(--muted-foreground))" }}>
-                    <ShieldCheck className="h-3 w-3" />
-                    {t("Prix vérifié le", "Price verified")}
-                  </span>
-                  <time dateTime={verifiedOn} className="num-mono" style={{ color: "hsl(var(--muted-foreground) / 0.55)", fontSize: "0.7rem" }}>
-                    {verifiedOn}
-                  </time>
-                </div>
-              </div>
+            {/* Mobile decision card */}
+            <div className="td-sidebar-mobile" style={{ marginBottom: 32 }}>
+              <StickyDecisionCard {...cardProps} />
             </div>
 
-            {/* Related posts */}
-            {relatedPosts.length > 0 && (
-              <div>
-                <p className="label-section mb-2">{t("Guides liés", "Related guides")}</p>
-                <div className="flex flex-col gap-1.5">
-                  {relatedPosts.map((post: any) => (
-                    <Link
-                      key={post.slug}
-                      to={`${prefix}/guide/${post.slug}`}
-                      className="block rounded-xl border border-border bg-card px-3 py-2.5 text-[0.8125rem] transition-all hover:border-primary/30 hover:shadow-sm"
-                    >
-                      <p className="font-medium text-foreground line-clamp-2 leading-snug">{post.title}</p>
-                      {post.readTime && (
-                        <p className="mt-1 text-[11px]" style={{ color: "hsl(var(--muted-foreground))" }}>
-                          {post.readTime}
-                        </p>
-                      )}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </aside>
-
-          {/* ══════════════ MAIN CONTENT ══════════════ */}
-          <div className="flex-1 min-w-0">
-
-            {/* ── Mobile summary card (lg:hidden — sidebar is hidden on mobile) ── */}
-            {(() => {
-              const ts = computeToolTrimScore(tool);
-              const hasFreeplanMobile = !!(tool.pricing?.free &&
-                !tool.pricing.free.toLowerCase().includes("no free") &&
-                !tool.pricing.free.toLowerCase().includes("aucun") &&
-                !tool.pricing.free.toLowerCase().includes("pas de"));
-              const isAIMobile = !!(tool as any).ia_use_case || toolType === "ia";
-              const notSubMobile = (tool as any).substitutable === false;
-
-              return (
-                <div className="lg:hidden mb-6 rounded-xl border border-border bg-card overflow-hidden">
-                  {/* Top row: logo + name + price */}
-                  <div className="flex items-center gap-3 px-4 py-4 border-b border-border">
-                    <ToolLogo tool={tool} size={44} className="rounded-xl shadow-sm shrink-0" />
-                    <div className="flex-1 min-w-0">
-                      <p className="font-display text-foreground truncate" style={{ fontSize: "0.9375rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                        {tool.name}
-                      </p>
-                      {category && (
-                        <Link
-                          to={`${prefix}/category/${category.slug}`}
-                          className="text-xs hover:text-primary transition-colors"
-                          style={{ color: "hsl(var(--muted-foreground))" }}
-                        >
-                          {t(catName, catNameEn)}
-                        </Link>
-                      )}
-                    </div>
-                    <div className="shrink-0 text-right">
-                      {isFree || isFreemium ? (
-                        <span
-                          className="inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-bold"
-                          style={{
-                            borderColor: "hsl(var(--primary) / 0.3)",
-                            background: "hsl(var(--primary) / 0.08)",
-                            color: "hsl(var(--primary))",
-                            fontFamily: "ui-monospace, monospace",
-                          }}
-                        >
-                          {isFree ? t("Gratuit", "Free") : "Freemium"}
-                        </span>
-                      ) : (
-                        <p style={{ fontFamily: "ui-monospace, monospace" }}>
-                          <span className="text-lg font-black text-foreground">{displayPrice}€</span>
-                          <span className="text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}>/{t("mois", "mo")}</span>
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Score row */}
-                  <Link
-                    to={`${prefix}/tool/${slug}/avis`}
-                    className="flex items-center justify-between gap-3 px-4 py-3 border-b border-border hover:bg-muted/30 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className="flex items-center gap-0.5">
-                        {[1,2,3,4,5].map((i) => (
-                          <svg key={i} className="h-4 w-4" viewBox="0 0 24 24" fill={starFill(i, ts.score)}>
-                            <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>
-                          </svg>
-                        ))}
-                      </div>
-                      <span className="font-mono font-black text-sm" style={{ color: "hsl(var(--foreground))" }}>
-                        {ts.score.toFixed(1)}
-                      </span>
-                      <span className="text-xs font-semibold" style={{ color: "hsl(var(--primary))" }}>
-                        {t(ts.labelFr, ts.labelEn)}
-                      </span>
-                    </div>
-                    <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "ui-monospace, monospace" }}>
-                      Score ToolTrim →
-                    </span>
-                  </Link>
-
-                  {/* Badges + CTA */}
-                  <div className="px-4 py-3 flex items-center justify-between gap-3">
-                    <div className="flex flex-wrap gap-1.5">
-                      {hasFreeplanMobile && (
-                        <span className="rounded-full border px-2 py-0.5 text-[10px] font-semibold"
-                          style={{ color: "hsl(var(--keep))", background: "hsl(var(--keep)/0.08)", borderColor: "hsl(var(--keep)/0.2)" }}>
-                          {t("Plan gratuit", "Free plan")}
-                        </span>
-                      )}
-                      {isAIMobile && (
-                        <span className="rounded-full border px-2 py-0.5 text-[10px] font-semibold"
-                          style={{ color: "hsl(var(--primary))", background: "hsl(var(--primary)/0.06)", borderColor: "hsl(var(--primary)/0.2)" }}>
-                          IA
-                        </span>
-                      )}
-                      {notSubMobile && (
-                        <span className="rounded-full border px-2 py-0.5 text-[10px] font-semibold"
-                          style={{ color: "hsl(var(--cancel))", background: "hsl(var(--cancel)/0.06)", borderColor: "hsl(var(--cancel)/0.2)" }}>
-                          {t("Indispensable", "Essential")}
-                        </span>
-                      )}
-                    </div>
-                    {primaryCtaUrl && (
-                      <a
-                        href={primaryCtaUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold shrink-0 transition-colors"
-                        style={{
-                          background: "hsl(var(--foreground))",
-                          color: "hsl(var(--background))",
-                          fontFamily: "inherit",
-                        }}
-                      >
-                        {t("Visiter", "Visit")}
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              );
-            })()}
-
-            {/* ── Tab nav (sticky) — real links for SEO ── */}
-            <nav
-              className="sticky top-0 z-20 mb-8 flex items-center gap-1 overflow-x-auto border-b border-border pb-0"
-              style={{ background: "hsl(var(--background))" }}
-            >
+            {/* Tab navigation */}
+            <nav className="td-tab-nav" style={{ marginLeft: -48, marginRight: -48, paddingLeft: 48, paddingRight: 48 }}>
               {TABS.map((tab) => {
                 const isActive = subPage === tab.id;
-                const tabPath = tab.id === "prix" && lang === "en" ? "/pricing" : tab.path;
+                const tabPath = tab.id === "prix" && lang === "en" ? "/pricing"
+                  : tab.id === "avis" && lang === "en" ? "/reviews"
+                  : tab.path;
                 return (
                   <Link
                     key={tab.id}
                     to={`${prefix}/tool/${slug}${tabPath}`}
-                    className="relative shrink-0 px-4 py-3 transition-colors duration-150"
-                    style={{
-                      fontSize: "0.8125rem",
-                      fontWeight: isActive ? 500 : 400,
-                      color: isActive ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground) / 0.7)",
-                      textDecoration: "none",
-                    }}
+                    className={`td-tab${isActive ? " td-tab--active" : ""}`}
                   >
                     {lang === "fr" ? tab.labelFr : tab.labelEn}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-primary" />
-                    )}
                   </Link>
                 );
               })}
             </nav>
 
-            {/* ── SECTION: Présentation ── */}
-            {subPage === "presentation" && <section className="divide-y divide-border">
+            {/* ════════════════════════════════
+                SECTION: Analyse / Présentation
+            ════════════════════════════════ */}
+            {subPage === "presentation" && (
+              <div style={{ paddingTop: 8 }}>
 
-              {/* Description courte — lead paragraph, toujours visible */}
-              {tool.shortDescription && (
-                <div className="pb-8">
-                  <p
-                    className="text-foreground leading-7"
-                    style={{ fontSize: "0.9375rem", maxWidth: "72ch", fontWeight: 400 }}
-                  >
-                    {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
-                  </p>
-                </div>
-              )}
-
-              {/* ── Analyse éditoriale ── */}
-              {(() => {
-                const longDesc = lang === "en"
-                  ? ((tool as any).longDescriptionEn || (tool as any).longDescription || "")
-                  : ((tool as any).longDescription || "");
-                if (!longDesc || longDesc.length < 80) return null;
-                const paras = longDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean);
-                return (
-                  <div className="py-8" style={{ fontFamily: "inherit" }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
-                      {t("Notre analyse", "Our analysis")}
+                {/* 1 · Short description lead */}
+                {tool.shortDescription && (
+                  <div className="td-section">
+                    <p className="td-body" style={{ fontSize: "clamp(1rem, 1.3vw, 1.125rem)" }}>
+                      {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
                     </p>
-                    <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                      {t(`Notre analyse de ${tool.name}`, `Our take on ${tool.name}`)}
+                  </div>
+                )}
+
+                {/* 2 · Verdict — keepIf / avoidIf / prescription */}
+                <div className="td-section">
+                  <span className="td-eyebrow">{t("Verdict", "Verdict")}</span>
+                  <h2 className="td-title">
+                    {t(`Quand choisir ${tool.name} ?`, `When to choose ${tool.name}?`)}
+                  </h2>
+                  <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
+                </div>
+
+                {/* 3 · Pour qui */}
+                {(tool as any).relevantFor?.length > 0 && (
+                  <div className="td-section">
+                    <span className="td-eyebrow">{t("Audience", "Audience")}</span>
+                    <h2 className="td-title">
+                      {t(`Pour qui est ${tool.name} ?`, `Who is ${tool.name} for?`)}
                     </h2>
-                    {paras.map((para: string, i: number) => (
-                      <p key={i} className={i === 0
-                        ? "text-[15px] font-medium leading-8 text-foreground mb-6"
-                        : "text-sm leading-7 text-muted-foreground mb-5 last:mb-0"
-                      }>
-                        {para}
-                      </p>
-                    ))}
+                    <ToolAudienceBlock
+                      relevantFor={(tool as any).relevantFor || []}
+                      soloRelevance={tool.soloRelevance}
+                      teamRelevance={tool.teamRelevance}
+                      toolName={tool.name}
+                      t={t}
+                    />
                   </div>
-                );
-              })()}
+                )}
 
-              {/* ── Fonctionnalités ── */}
-              {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
-                <ToolFeaturesBlock
-                  covers={(tool as any).covers || []}
-                  functionalNeeds={(tool as any).functional_needs || []}
-                  toolName={tool.name}
-                  t={t}
-                />
-              )}
-
-              {/* ── Plugins / Host app / Bundle ── */}
-              <ToolPluginsBlock
-                tool={tool} allTools={tools}
-                prefix={prefix} lang={lang} t={t}
-              />
-
-              {/* ── Avantages & inconvénients ── */}
-              {((tool.pros?.length ?? 0) > 0 || (tool.cons?.length ?? 0) > 0) && (
-                <div className="py-8">
-                  <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
-                    {t("Points clés", "Key points")}
-                  </p>
-                  <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                    {t(`Avantages et inconvénients de ${tool.name}`, `${tool.name} — Pros & Cons`)}
-                  </h2>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-xl border p-5" style={{ borderColor: "hsl(var(--keep) / 0.25)", background: "hsl(var(--keep) / 0.04)" }}>
-                      <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold" style={{ color: "hsl(var(--keep))" }}>
-                        <Check className="h-4 w-4" /> {t("Avantages", "Pros")}
-                      </h3>
-                      <ul className="space-y-2">
-                        {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
-                          <li key={pro} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "inherit" }}>
-                            <Check className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--keep) / 0.7)" }} />
-                            {pro}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="rounded-xl border p-5" style={{ borderColor: "hsl(var(--cancel) / 0.25)", background: "hsl(var(--cancel) / 0.04)" }}>
-                      <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold" style={{ color: "hsl(var(--cancel))" }}>
-                        <X className="h-4 w-4" /> {t("Inconvénients", "Cons")}
-                      </h3>
-                      <ul className="space-y-2">
-                        {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
-                          <li key={con} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--foreground) / 0.8)", fontFamily: "inherit" }}>
-                            <X className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--cancel) / 0.7)" }} />
-                            {con}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* ── Cas d'usage ── */}
-              {tool.useCases && tool.useCases.length > 0 && (
-                <div className="py-8">
-                  <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
-                    {t("Cas d'usage", "Use cases")}
-                  </p>
-                  <h2 className="font-display mb-5 text-foreground" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                    {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
-                  </h2>
-                  <div className="grid gap-2 sm:grid-cols-2">
-                    {(lang === "en" && (tool as any).useCasesEn ? (tool as any).useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
-                      <div key={i} className="flex items-start gap-2.5 rounded-lg border border-border bg-card p-3 text-sm" style={{ fontFamily: "inherit" }}>
-                        <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
-                        {uc}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* ── Pour qui ? ── */}
-              {((tool as any).relevantFor?.length > 0) && (
-                <ToolAudienceBlock
-                  relevantFor={(tool as any).relevantFor || []}
-                  soloRelevance={tool.soloRelevance}
-                  teamRelevance={tool.teamRelevance}
-                  toolName={tool.name}
-                  t={t}
-                />
-              )}
-
-              {/* ── Verdict ── */}
-              <div className="py-8">
-                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
-                  {t("Verdict", "Verdict")}
-                </p>
-                <h2 className="mb-4 font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  {t(`Notre avis sur ${tool.name}`, `Our verdict on ${tool.name}`)}
-                </h2>
-                <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
-              </div>
-
-              {/* ── CTA diagnostic ── */}
-              <div className="py-8">
-                <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
-              </div>
-
-              {/* Summary block — SEO/LLM, visuellement discret, en bas de section */}
-              <ToolSummaryBlock
-                tool={tool} category={category} alternatives={alternatives}
-                displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
-              />
-            </section>}
-
-            {/* ── SECTION: Prix ── */}
-            {subPage === "prix" && <section className="space-y-8">
-
-              {/* Intro prose — keyword-rich context for this tab */}
-              <div className="space-y-1">
-                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
-                  {t("Tarifs", "Pricing")}
-                </p>
-                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
-                </h2>
-                <p
-                  className="text-sm leading-7 pt-1"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit", maxWidth: "72ch" }}
-                >
-                  {lang === "fr"
-                    ? (() => {
-                        if (displayPrice === 0)
-                          return `${tool.name} propose un plan gratuit${tool.shortDescription ? ` — ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail complet des plans disponibles en ${new Date().getFullYear()}.`;
-                        const plan = tool.pricing_v5?.compare_plan_name;
-                        return `${tool.name} est facturé ${displayPrice}€/mois${plan ? ` (plan ${plan})` : ""}${tool.shortDescription ? ` — ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail des tarifs et ce qu'ils incluent réellement.`;
-                      })()
-                    : (() => {
-                        if (displayPrice === 0)
-                          return `${tool.name} offers a free plan${tool.shortDescription ? ` — ${((tool as any).shortDescriptionEn || tool.shortDescription).split(/[.!?]/)[0].toLowerCase()}` : ""}. Here's the full breakdown of available plans for ${new Date().getFullYear()}.`;
-                        const plan = tool.pricing_v5?.compare_plan_name;
-                        return `${tool.name} is priced at €${displayPrice}/mo${plan ? ` (${plan} plan)` : ""}${tool.shortDescription ? ` — ${((tool as any).shortDescriptionEn || tool.shortDescription).split(/[.!?]/)[0].toLowerCase()}` : ""}. Here's what each plan actually includes.`;
-                      })()
-                  }
-                </p>
-              </div>
-
-              <ToolPricingSection
-                tool={tool} displayPrice={displayPrice}
-                verifiedOn={verifiedOn} sourceDomain={sourceDomain}
-                prefix={prefix} lang={lang} t={t}
-              />
-            </section>}
-
-            {/* ── SECTION: Alternatives ── */}
-            {subPage === "alternatives" && <section className="space-y-8">
-
-              {/* Intro prose */}
-              <div className="space-y-1">
-                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
-                  {t("Comparatif", "Comparison")}
-                </p>
-                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  {t(`Meilleures alternatives à ${tool.name}`, `Best alternatives to ${tool.name}`)}
-                </h2>
-                <p
-                  className="text-sm leading-7 pt-1"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit", maxWidth: "72ch" }}
-                >
-                  {lang === "fr"
-                    ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""} comparées selon le prix, les fonctionnalités et la pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois de ${tool.name}.` : ""}`
-                    : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""} compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
-                  }
-                </p>
-              </div>
-
-              {/* Comparison table — first thing user sees */}
-              {alternatives.length > 0 && (
-                <ToolComparisonTable
-                  tool={tool} alternatives={alternatives}
-                  prefix={prefix} lang={lang} t={t}
-                />
-              )}
-
-              <ToolAlternativesSection
-                tool={tool} category={category} alternatives={alternatives}
-                prefix={prefix} lang={lang} t={t}
-              />
-
-              {/* Cluster tools */}
-              {(tool as any).substitution_cluster_v2 && (() => {
-                const clusterTools = tools
-                  .filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)
-                  .slice(0, 6);
-                if (!clusterTools.length) return null;
-                return (
-                  <div className="mt-8">
-                    <h3
-                      className="font-display mb-3"
-                      style={{ fontSize: "0.875rem", fontWeight: 600, letterSpacing: "-0.015em" }}
-                    >
-                      {t("Outils substituables directement", "Direct substitutes")}
-                    </h3>
-                    <p
-                      className="mb-4 text-sm"
-                      style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit" }}
-                    >
-                      {t(
-                        `Ces outils couvrent les mêmes besoins que ${tool.name} et peuvent le remplacer directement.`,
-                        `These tools cover the same needs as ${tool.name} and can replace it directly.`
-                      )}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {clusterTools.map((ct: any) => (
-                        <Link
-                          key={ct.id}
-                          to={`${prefix}/tool/${ct.slug || ct.id}`}
-                          className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium transition-all hover:border-primary/30 hover:text-primary"
-                          style={{ fontFamily: "inherit" }}
-                        >
-                          <ToolLogo tool={ct} size={18} />
-                          {ct.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })()}
-
-              {/* Comparisons */}
-              {(() => {
-                const toolId = tool.slug || tool.id;
-                const comparisons = FEATURED_COMPARISONS.filter(
-                  (c: any) => c.toolA === toolId || c.toolB === toolId
-                );
-                const compareTools = comparisons
-                  .map((c: any) => {
-                    const otherId = c.toolA === toolId ? c.toolB : c.toolA;
-                    const other = tools.find((tt: any) => tt.id === otherId || tt.slug === otherId);
-                    return other ? { slugPair: c.slugPair, other } : null;
-                  })
-                  .filter(Boolean) as { slugPair: string; other: any }[];
-                if (!compareTools.length) return null;
-                return (
-                  <div className="mt-8">
-                    <h3
-                      className="font-display mb-3"
-                      style={{ fontSize: "0.875rem", fontWeight: 600, letterSpacing: "-0.015em" }}
-                    >
-                      {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {compareTools.map(({ slugPair, other }) => (
-                        <Link
-                          key={slugPair}
-                          to={`${prefix}/comparatif/${slugPair}`}
-                          className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium transition-all hover:border-primary/30 hover:text-primary"
-                          style={{ fontFamily: "inherit" }}
-                        >
-                          <ToolLogo tool={other} size={18} />
-                          {tool.name} vs {other.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })()}
-            </section>}
-
-            {/* ── SECTION: Avis ── */}
-            {subPage === "avis" && <section className="space-y-6">
-              {/* Eyebrow + heading + intro prose */}
-              <div className="space-y-2">
-                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
-                  {t("Évaluation", "Rating")}
-                </p>
-                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  {t(`Avis sur ${tool.name} — Note & Verdict ToolTrim`, `${tool.name} Reviews — ToolTrim Rating & Verdict`)}
-                </h2>
-                <p
-                  className="text-sm leading-7 pt-1"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit", maxWidth: "72ch" }}
-                >
-                  {lang === "fr"
-                    ? `${tool.shortDescription ? `${tool.shortDescription.split(/[.!?]/)[0]}. ` : ""}Notre analyse indépendante de ${tool.name} en ${new Date().getFullYear()} : score éditorial, signaux de valeur, points forts et limites identifiés.`
-                    : `${(tool as any).shortDescriptionEn ? `${((tool as any).shortDescriptionEn as string).split(/[.!?]/)[0]}. ` : tool.shortDescription ? `${tool.shortDescription.split(/[.!?]/)[0]}. ` : ""}Our independent analysis of ${tool.name} for ${new Date().getFullYear()}: editorial score, value signals, key strengths and identified limitations.`
-                  }
-                </p>
-              </div>
-
-              {/* Score ToolTrim — bloc principal */}
-              {(() => {
-                const ts = computeToolTrimScore(tool);
-                const signals = [
-                  { labelFr: "Outil de référence dans sa catégorie", labelEn: "Category reference tool", active: toolType === "metier" || toolType === "core" || toolType === "ia" },
-                  { labelFr: "Non substituable à court terme", labelEn: "Hard to replace short-term", active: (tool as any).substitutable === false },
-                  { labelFr: "Usages clairs et documentés", labelEn: "Clear and documented use cases", active: ((tool as any).verdict?.keepIf?.length || 0) >= 2 },
-                  { labelFr: "Plan gratuit ou freemium disponible", labelEn: "Free or freemium plan available", active: isFree || isFreemium },
-                  { labelFr: "Fonctionnalités IA intégrées", labelEn: "Built-in AI features", active: !!(tool as any).ia_use_case },
-                  { labelFr: "Prix accessible (< 20€/mois)", labelEn: "Accessible pricing (< €20/mo)", active: displayPrice > 0 && displayPrice < 20 },
-                ];
-                const activeSignals = signals.filter(s => s.active);
-                const inactiveSignals = signals.filter(s => !s.active);
-                return (
-                  <div className="rounded-2xl border border-border bg-card overflow-hidden">
-                    {/* Header score */}
-                    <div className="flex items-center justify-between gap-4 border-b border-border px-6 py-5">
-                      <div className="flex items-center gap-4">
-                        <div className="text-center">
-                          <div className="font-mono text-4xl font-black" style={{ color: "hsl(var(--primary))", letterSpacing: "-0.04em" }}>
-                            {ts.score.toFixed(1)}
+                {/* 4 · Points forts — pros */}
+                {(tool.pros?.length ?? 0) > 0 && (
+                  <div className="td-section">
+                    <span className="td-eyebrow">{t("Points forts", "Strengths")}</span>
+                    <h2 className="td-title">
+                      {t(`Ce que ${tool.name} fait bien.`, `What ${tool.name} does well.`)}
+                    </h2>
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                      {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
+                        <li key={pro} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                          <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(74,155,111,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
+                            <Check style={{ width: 11, height: 11, color: "#4A9B6F" }} />
                           </div>
-                          <div className="text-xs text-muted-foreground mt-0.5">/ 5</div>
+                          <span className="td-body" style={{ fontSize: 15, marginTop: 0 }}>{pro}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* 5 · Limites — cons */}
+                {(tool.cons?.length ?? 0) > 0 && (
+                  <div className="td-section">
+                    <span className="td-eyebrow">{t("Limites", "Limitations")}</span>
+                    <h2 className="td-title">
+                      {t(`Là où ${tool.name} montre ses limites.`, `Where ${tool.name} falls short.`)}
+                    </h2>
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                      {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
+                        <li key={con} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                          <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(173,173,173,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
+                            <X style={{ width: 11, height: 11, color: "#9A9A92" }} />
+                          </div>
+                          <span className="td-body" style={{ fontSize: 15, marginTop: 0 }}>{con}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* 6 · Fonctionnalités */}
+                {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
+                  <div className="td-section">
+                    <span className="td-eyebrow">{t("Fonctionnalités", "Features")}</span>
+                    <h2 className="td-title">
+                      {t(`Ce que couvre ${tool.name}.`, `What ${tool.name} covers.`)}
+                    </h2>
+                    <ToolFeaturesBlock
+                      covers={(tool as any).covers || []}
+                      functionalNeeds={(tool as any).functional_needs || []}
+                      toolName={tool.name}
+                      t={t}
+                    />
+                  </div>
+                )}
+
+                {/* 7 · Cas d'usage */}
+                {tool.useCases && tool.useCases.length > 0 && (
+                  <div className="td-section">
+                    <span className="td-eyebrow">{t("Cas d'usage", "Use cases")}</span>
+                    <h2 className="td-title">
+                      {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
+                    </h2>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
+                      {(lang === "en" && (tool as any).useCasesEn ? (tool as any).useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
+                        <div
+                          key={i}
+                          style={{
+                            display: "flex", alignItems: "flex-start", gap: 10,
+                            padding: "12px 16px",
+                            background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
+                            fontFamily: "var(--font-ui)", fontSize: 14, color: "#222222", lineHeight: 1.45,
+                          }}
+                        >
+                          <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, marginTop: 3, color: "hsl(var(--primary))" }} />
+                          {uc}
                         </div>
-                        <div>
-                          <p className="text-base font-bold text-foreground">{t(ts.labelFr, ts.labelEn)}</p>
-                          <p className="text-xs text-muted-foreground mt-0.5">{t("Score ToolTrim · Analyse indépendante", "ToolTrim Score · Independent analysis")}</p>
-                          <div className="flex items-center gap-0.5 mt-2">
-                            {[1,2,3,4,5].map((i) => (
-                              <svg key={i} className="h-4 w-4" viewBox="0 0 12 12"
-                                fill={starFill(i, ts.score)}
-                              >
-                                <path d="M6 1l1.3 2.6L10 4l-2 1.9.5 2.7L6 7.4 3.5 8.6 4 5.9 2 4l2.7-.4z"/>
-                              </svg>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* 8 · Analyse éditoriale (long description) */}
+                {(() => {
+                  const longDesc = lang === "en"
+                    ? ((tool as any).longDescriptionEn || (tool as any).longDescription || "")
+                    : ((tool as any).longDescription || "");
+                  if (!longDesc || longDesc.length < 80) return null;
+                  const paras = longDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean);
+                  return (
+                    <div className="td-section">
+                      <span className="td-eyebrow">{t("Analyse ToolTrim", "ToolTrim Analysis")}</span>
+                      <h2 className="td-title">
+                        {t(`Notre analyse de ${tool.name}.`, `Our take on ${tool.name}.`)}
+                      </h2>
+                      <div className="td-body">
+                        {paras.map((para: string, i: number) => (
+                          <p key={i} style={i === 0 ? { fontWeight: 500, fontSize: "clamp(1rem, 1.2vw, 1.0625rem)" } : { color: "#6F6F68", marginTop: "1em" }}>
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* 9 · Intégrations / Plugins */}
+                <div className="td-section">
+                  <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+                </div>
+
+                {/* 10 · CTA diagnostic */}
+                <div className="td-section">
+                  <ToolDiagCta tool={tool} prefix={prefix} lang={lang} t={t} />
+                </div>
+
+                {/* SEO/LLM summary — visually quiet, useful for crawlers */}
+                <ToolSummaryBlock
+                  tool={tool} category={category} alternatives={alternatives}
+                  displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
+                />
+              </div>
+            )}
+
+            {/* ════════════════════════════════
+                SECTION: Prix
+            ════════════════════════════════ */}
+            {subPage === "prix" && (
+              <div style={{ paddingTop: 8 }}>
+                <div className="td-section">
+                  <span className="td-eyebrow">{t("Tarifs", "Pricing")}</span>
+                  <h2 className="td-title">
+                    {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
+                  </h2>
+                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
+                    {lang === "fr"
+                      ? (() => {
+                          if (displayPrice === 0)
+                            return `${tool.name} propose un plan gratuit${tool.shortDescription ? ` — ${tool.shortDescription.split(/[.!?]/)[0].toLowerCase()}` : ""}. Voici le détail complet des plans disponibles en ${new Date().getFullYear()}.`;
+                          const plan = tool.pricing_v5?.compare_plan_name;
+                          return `${tool.name} est facturé ${displayPrice}€/mois${plan ? ` (plan ${plan})` : ""}. Voici le détail des tarifs et ce qu'ils incluent réellement.`;
+                        })()
+                      : (() => {
+                          if (displayPrice === 0)
+                            return `${tool.name} offers a free plan. Here's the full breakdown of available plans for ${new Date().getFullYear()}.`;
+                          const plan = tool.pricing_v5?.compare_plan_name;
+                          return `${tool.name} is priced at €${displayPrice}/mo${plan ? ` (${plan} plan)` : ""}. Here's what each plan actually includes.`;
+                        })()
+                    }
+                  </p>
+                  <ToolPricingSection
+                    tool={tool} displayPrice={displayPrice}
+                    verifiedOn={verifiedOn} sourceDomain={sourceDomain}
+                    prefix={prefix} lang={lang} t={t}
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* ════════════════════════════════
+                SECTION: Alternatives
+            ════════════════════════════════ */}
+            {subPage === "alternatives" && (
+              <div style={{ paddingTop: 8 }}>
+                <div className="td-section">
+                  <span className="td-eyebrow">{t("Comparatif", "Comparison")}</span>
+                  <h2 className="td-title">
+                    {t(`Meilleures alternatives à ${tool.name}.`, `Best alternatives to ${tool.name}.`)}
+                  </h2>
+                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
+                    {lang === "fr"
+                      ? `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Des alternatives"} à ${tool.name}${catName ? ` dans la catégorie ${catName}` : ""} — comparées par prix, fonctionnalités et pertinence pour les indépendants et petites équipes.${displayPrice > 0 ? ` Certaines sont gratuites ou moins chères que les ${displayPrice}€/mois de ${tool.name}.` : ""}`
+                      : `${alternatives.length > 0 ? `${alternatives.length} alternatives` : "Alternatives"} to ${tool.name}${catNameEn ? ` in the ${catNameEn} category` : ""} — compared by price, features, and fit for freelancers and small teams.${displayPrice > 0 ? ` Some are free or cheaper than ${tool.name}'s €${displayPrice}/mo.` : ""}`
+                    }
+                  </p>
+
+                  {alternatives.length > 0 && (
+                    <ToolComparisonTable
+                      tool={tool} alternatives={alternatives}
+                      prefix={prefix} lang={lang} t={t}
+                    />
+                  )}
+
+                  <ToolAlternativesSection
+                    tool={tool} category={category} alternatives={alternatives}
+                    prefix={prefix} lang={lang} t={t}
+                  />
+
+                  {/* Substitution cluster */}
+                  {(tool as any).substitution_cluster_v2 && (() => {
+                    const clusterTools = tools
+                      .filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)
+                      .slice(0, 6);
+                    if (!clusterTools.length) return null;
+                    return (
+                      <div style={{ marginTop: 40 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                          {t("Substituables directement", "Direct substitutes")}
+                        </p>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                          {clusterTools.map((ct: any) => (
+                            <Link
+                              key={ct.id}
+                              to={`${prefix}/tool/${ct.slug || ct.id}`}
+                              style={{
+                                display: "inline-flex", alignItems: "center", gap: 8,
+                                padding: "8px 14px",
+                                background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
+                                fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222",
+                                textDecoration: "none", transition: "border-color 140ms",
+                              }}
+                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
+                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                            >
+                              <ToolLogo tool={ct} size={18} />
+                              {ct.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* Featured comparisons */}
+                  {(() => {
+                    const toolId = tool.slug || tool.id;
+                    const comparisons = FEATURED_COMPARISONS.filter(
+                      (c: any) => c.toolA === toolId || c.toolB === toolId
+                    );
+                    const compareTools = comparisons
+                      .map((c: any) => {
+                        const otherId = c.toolA === toolId ? c.toolB : c.toolA;
+                        const other = tools.find((tt: any) => tt.id === otherId || tt.slug === otherId);
+                        return other ? { slugPair: c.slugPair, other } : null;
+                      })
+                      .filter(Boolean) as { slugPair: string; other: any }[];
+                    if (!compareTools.length) return null;
+                    return (
+                      <div style={{ marginTop: 40 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                          {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
+                        </p>
+                        {compareTools.map(({ slugPair, other }) => (
+                          <Link
+                            key={slugPair}
+                            to={`${prefix}/comparatif/${slugPair}`}
+                            className="td-alt-row"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                          >
+                            <div style={{ width: 40, height: 40, borderRadius: 8, border: "1px solid #DADAD4", background: "#F8F8F4", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                              <ToolLogo tool={other} size={24} />
+                            </div>
+                            <div>
+                              <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", lineHeight: 1.2 }}>
+                                {tool.name} vs {other.name}
+                              </p>
+                              <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", marginTop: 2 }}>
+                                {t("Voir la comparaison complète", "See full comparison")}
+                              </p>
+                            </div>
+                            <ArrowRight style={{ width: 14, height: 14, color: "#ADADAD" }} />
+                          </Link>
+                        ))}
+                      </div>
+                    );
+                  })()}
+                </div>
+              </div>
+            )}
+
+            {/* ════════════════════════════════
+                SECTION: Avis
+            ════════════════════════════════ */}
+            {subPage === "avis" && (
+              <div style={{ paddingTop: 8 }}>
+                {(() => {
+                  const ts = computeToolTrimScore(tool);
+                  const signals = [
+                    { labelFr: "Outil de référence dans sa catégorie",  labelEn: "Category reference tool",         active: toolType === "metier" || toolType === "core" || toolType === "ia" },
+                    { labelFr: "Non substituable à court terme",         labelEn: "Hard to replace short-term",      active: (tool as any).substitutable === false },
+                    { labelFr: "Usages clairs et documentés",            labelEn: "Clear and documented use cases",  active: ((tool as any).verdict?.keepIf?.length || 0) >= 2 },
+                    { labelFr: "Plan gratuit ou freemium disponible",    labelEn: "Free or freemium plan available", active: isFree || isFreemium },
+                    { labelFr: "Fonctionnalités IA intégrées",           labelEn: "Built-in AI features",           active: !!(tool as any).ia_use_case },
+                    { labelFr: "Prix accessible (< 20€/mois)",           labelEn: "Accessible pricing (< €20/mo)",  active: displayPrice > 0 && displayPrice < 20 },
+                  ];
+                  const activeSignals = signals.filter(s => s.active);
+                  const inactiveSignals = signals.filter(s => !s.active);
+                  return (
+                    <div className="td-section">
+                      <span className="td-eyebrow">{t("Évaluation", "Rating")}</span>
+                      <h2 className="td-title">
+                        {t(`Notre avis sur ${tool.name}.`, `Our verdict on ${tool.name}.`)}
+                      </h2>
+
+                      {/* Score card */}
+                      <div style={{ background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 10, overflow: "hidden", marginBottom: 32 }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 32, padding: "28px 32px", borderBottom: "1px solid #E7E7E0" }}>
+                          <div style={{ display: "flex", alignItems: "baseline", gap: 4, flexShrink: 0 }}>
+                            <span style={{ fontFamily: "var(--font-brand)", fontSize: 80, fontWeight: 600, lineHeight: 0.9, letterSpacing: "-0.07em", color: "#222222" }}>
+                              {ts.score.toFixed(1)}
+                            </span>
+                            <span style={{ fontFamily: "var(--font-ui)", fontSize: 24, color: "#9A9A92", lineHeight: 1, paddingBottom: 10 }}>/5</span>
+                          </div>
+                          <div>
+                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 20, fontWeight: 600, color: "hsl(var(--primary))", lineHeight: 1.2 }}>
+                              {t(ts.labelFr, ts.labelEn)}
+                            </p>
+                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", marginTop: 6 }}>
+                              {t("Score éditorial ToolTrim · Analyse indépendante", "ToolTrim editorial score · Independent analysis")}
+                            </p>
+                          </div>
+                        </div>
+                        <div style={{ padding: "24px 32px" }}>
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 16 }}>
+                            {t("Signaux analysés", "Analysed signals")}
+                          </p>
+                          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                            {activeSignals.map((s) => (
+                              <div key={s.labelFr} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                                <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(74,155,111,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                  <Check style={{ width: 11, height: 11, color: "#4A9B6F" }} />
+                                </div>
+                                <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#222222" }}>{t(s.labelFr, s.labelEn)}</span>
+                              </div>
+                            ))}
+                            {inactiveSignals.map((s) => (
+                              <div key={s.labelFr} style={{ display: "flex", alignItems: "center", gap: 12, opacity: 0.4 }}>
+                                <div style={{ width: 20, height: 20, borderRadius: "50%", border: "1px solid #DADAD4", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                  <X style={{ width: 11, height: 11, color: "#9A9A92" }} />
+                                </div>
+                                <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#6F6F68" }}>{t(s.labelFr, s.labelEn)}</span>
+                              </div>
                             ))}
                           </div>
                         </div>
                       </div>
-                      <div className="hidden sm:flex flex-col items-end gap-1 text-right">
-                        <span className="rounded-full border border-border px-3 py-1 text-[10px] font-semibold text-muted-foreground">
-                          {t("Vérifié avr. 2026", "Verified Apr. 2026")}
-                        </span>
-                        <span className="text-[10px] text-muted-foreground/60">
-                          {t("Prix vérifiés · Données indépendantes", "Verified pricing · Independent data")}
+
+                      {/* Reviews coming soon */}
+                      <div style={{ background: "#F8F8F4", border: "1px solid #DADAD4", borderRadius: 10, padding: "40px 32px", textAlign: "center" }}>
+                        <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", marginBottom: 10 }}>
+                          {t(`Tu utilises ${tool.name} ?`, `Using ${tool.name}?`)}
+                        </p>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "#6F6F68", maxWidth: 420, margin: "0 auto 24px" }}>
+                          {t(
+                            "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher, ce que tu changerais.",
+                            "User reviews are coming soon. Share what works, what costs too much, what you'd change.",
+                          )}
+                        </p>
+                        <span style={{
+                          display: "inline-flex", alignItems: "center", gap: 8,
+                          padding: "8px 16px",
+                          border: "1px solid hsl(var(--primary) / 0.25)", borderRadius: 6,
+                          background: "hsl(var(--primary) / 0.06)",
+                          fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600,
+                          color: "hsl(var(--primary))", letterSpacing: "0.02em",
+                        }}>
+                          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "hsl(var(--primary))", animation: "pulse 2s infinite" }} />
+                          {t("Bientôt disponible", "Coming soon")}
                         </span>
                       </div>
                     </div>
+                  );
+                })()}
+              </div>
+            )}
 
-                    {/* Signaux pris en compte */}
-                    <div className="px-6 py-5">
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-4">
-                        {t("Signaux analysés", "Analysed signals")}
-                      </p>
-                      <div className="space-y-2.5">
-                        {activeSignals.map((s) => (
-                          <div key={s.labelFr} className="flex items-center gap-3">
-                            <div className="shrink-0 flex h-5 w-5 items-center justify-center rounded-full" style={{ background: "hsl(var(--keep) / 0.1)" }}>
-                              <Check className="h-3 w-3" style={{ color: "hsl(var(--keep))" }} />
-                            </div>
-                            <span className="text-sm text-foreground">{t(s.labelFr, s.labelEn)}</span>
-                          </div>
-                        ))}
-                        {inactiveSignals.map((s) => (
-                          <div key={s.labelFr} className="flex items-center gap-3 opacity-40">
-                            <div className="shrink-0 flex h-5 w-5 items-center justify-center rounded-full border border-border">
-                              <X className="h-3 w-3 text-muted-foreground" />
-                            </div>
-                            <span className="text-sm text-muted-foreground">{t(s.labelFr, s.labelEn)}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })()}
-
-              {/* Avis utilisateurs — teaser */}
-              <div className="rounded-2xl border border-border bg-card px-6 py-8 text-center">
-                <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
-                  <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-                  </svg>
+            {/* ════════════════════════════════
+                SECTION: FAQ
+            ════════════════════════════════ */}
+            {subPage === "faq" && (
+              <div style={{ paddingTop: 8 }}>
+                <div className="td-section">
+                  <span className="td-eyebrow">{t("FAQ", "FAQ")}</span>
+                  <h2 className="td-title">
+                    {t(`Questions sur ${tool.name}.`, `Questions about ${tool.name}.`)}
+                  </h2>
+                  <p className="td-body td-muted" style={{ marginBottom: 32 }}>
+                    {lang === "fr"
+                      ? `Prix, plans, utilité et alternatives à ${tool.name}${catName ? ` (${catName})` : ""} — les réponses essentielles avant d'ajouter cet outil à votre stack en ${new Date().getFullYear()}.`
+                      : `Pricing, plans, use cases and alternatives to ${tool.name}${catNameEn ? ` (${catNameEn})` : ""} — key answers before adding this tool to your stack in ${new Date().getFullYear()}.`
+                    }
+                  </p>
+                  <ToolFAQSection
+                    tool={tool} displayPrice={displayPrice}
+                    verifiedOn={verifiedOn} alternatives={alternatives}
+                    lang={lang} t={t}
+                  />
                 </div>
-                <p className="text-base font-semibold text-foreground mb-2">
-                  {t(`Tu utilises ${tool.name} ?`, `Using ${tool.name}?`)}
-                </p>
-                <p className="text-sm leading-6 text-muted-foreground mb-6 max-w-sm mx-auto">
-                  {t(
-                    "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher, ce que tu changerais.",
-                    "User reviews are coming soon. Share what works, what costs too much, what you'd change."
-                  )}
-                </p>
-                <span className="inline-flex items-center gap-2 rounded-lg border border-primary/25 bg-primary/8 px-4 py-2 text-xs font-semibold text-primary cursor-default select-none">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                  {t("Bientôt disponible", "Coming soon")}
-                </span>
               </div>
-            </section>}
-
-            {/* ── SECTION: FAQ ── */}
-            {subPage === "faq" && <section className="space-y-8">
-
-              {/* Intro prose — same treatment as all other tabs */}
-              <div className="space-y-1">
-                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "hsl(var(--primary))" }}>
-                  {t("FAQ", "FAQ")}
-                </p>
-                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  {t(`Questions fréquentes sur ${tool.name}`, `Frequently asked questions about ${tool.name}`)}
-                </h2>
-                <p
-                  className="text-sm leading-7 pt-1"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit", maxWidth: "72ch" }}
-                >
-                  {lang === "fr"
-                    ? `Prix, plans, utilité et alternatives à ${tool.name}${catName ? ` (${catName})` : ""} — les réponses essentielles avant d'ajouter cet outil à votre stack en ${new Date().getFullYear()}.`
-                    : `Pricing, plans, use cases and alternatives to ${tool.name}${catNameEn ? ` (${catNameEn})` : ""} — key answers before adding this tool to your stack in ${new Date().getFullYear()}.`
-                  }
-                </p>
-              </div>
-
-              <ToolFAQSection
-                tool={tool} displayPrice={displayPrice}
-                verifiedOn={verifiedOn} alternatives={alternatives}
-                lang={lang} t={t}
-              />
-            </section>}
+            )}
 
             {/* ── Freshness footer ── */}
-            <footer
-              className="mt-10 flex flex-wrap items-center gap-3 border-t border-border pt-6 text-xs"
-              style={{ color: "hsl(var(--muted-foreground) / 0.5)", fontFamily: "ui-monospace, monospace" }}
-            >
-              <span className="flex items-center gap-1.5">
-                <CalendarCheck className="h-3 w-3" />
+            <footer style={{
+              marginTop: 24,
+              display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16,
+              borderTop: "1px solid #DADAD4", paddingTop: 24,
+              fontFamily: "var(--font-ui)", fontSize: 12, color: "#9A9A92",
+            }}>
+              <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <CalendarCheck style={{ width: 12, height: 12 }} />
                 {t("Mis à jour :", "Updated:")} <time dateTime={verifiedOn}>{verifiedOn}</time>
               </span>
               {sourceDomain && (
@@ -1119,7 +814,7 @@ const ToolDetailPage = () => {
                       href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline underline-offset-2 hover:text-primary transition-colors"
+                      style={{ color: "#6F6F68", textDecoration: "underline", textUnderlineOffset: 3 }}
                     >
                       {sourceDomain}
                     </a>
@@ -1127,11 +822,57 @@ const ToolDetailPage = () => {
                 </>
               )}
               <span>·</span>
-              <Link to={`${prefix}/contact`} className="underline underline-offset-2 hover:text-primary transition-colors">
+              <Link
+                to={`${prefix}/contact`}
+                style={{ color: "#6F6F68", textDecoration: "underline", textUnderlineOffset: 3 }}
+              >
                 {t("Signaler un prix incorrect", "Report incorrect pricing")}
               </Link>
             </footer>
+
           </div>
+          {/* end main content */}
+
+          {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}
+          <aside className="td-sidebar-desktop">
+            <div className="td-sidebar">
+              <StickyDecisionCard {...cardProps} />
+
+              {/* Related posts */}
+              {relatedPosts.length > 0 && (
+                <div style={{ marginTop: 16 }}>
+                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 10 }}>
+                    {t("Guides liés", "Related guides")}
+                  </p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                    {relatedPosts.map((post: any) => (
+                      <Link
+                        key={post.slug}
+                        to={`${prefix}/guide/${post.slug}`}
+                        style={{
+                          display: "block", padding: "12px 16px",
+                          background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
+                          textDecoration: "none", transition: "border-color 140ms",
+                        }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                      >
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                          {post.title}
+                        </p>
+                        {post.readTime && (
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#9A9A92", marginTop: 4 }}>
+                            {post.readTime}
+                          </p>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </aside>
+
         </div>
       </div>
     </article>
@@ -1139,5 +880,3 @@ const ToolDetailPage = () => {
 };
 
 export default ToolDetailPage;
-
-// computeToolTrimScore is now in @/lib/toolTrimScore
