@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
-import { ExternalLink, Check, X, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { asText } from "@/lib/text";
 import type { Tool } from "@/data/types";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    StickyDecisionCard
-   Right sidebar: editorial score + verdict + best-for/limits + CTAs + metadata
+   Right sidebar: editorial score + verdict sentence + CTAs + key facts + alt
+   Order: header → score → decision sentence → CTAs → key facts → alternative
    No stars. No gradients. No colored badges.
-   Feels like a curated editorial card, not a SaaS dashboard widget.
 ───────────────────────────────────────────────────────────────────────────── */
 
 interface Props {
@@ -29,16 +29,6 @@ interface Props {
   catNameEn: string;
 }
 
-const SEP_TOP = { borderTop: "1px solid #E7E7E0" } as const;
-
-const TYPE_LABEL: Record<string, { fr: string; en: string }> = {
-  ia:        { fr: "Intelligence artificielle", en: "AI tool"    },
-  metier:    { fr: "Outil métier",               en: "Core tool"  },
-  gestion:   { fr: "Gestion",                    en: "Management" },
-  satellite: { fr: "Satellite",                  en: "Satellite"  },
-  plugin:    { fr: "Plugin / Extension",          en: "Plugin"     },
-};
-
 export default function StickyDecisionCard({
   tool, displayPrice, verifiedOn,
   isFree, isFreemium, hasFreeplan, prefix, lang, t,
@@ -48,23 +38,14 @@ export default function StickyDecisionCard({
 
   const ts = computeToolTrimScore(tool);
 
-  /* ── Verdict data ── */
+  /* ── Verdict sentence ── */
   const verdict = lang === "en" && (tool as any).verdictEn ? (tool as any).verdictEn : tool.verdict;
-  const keepItems: string[] = (Array.isArray(verdict?.keepIf)
-    ? verdict.keepIf
-    : [verdict?.keepIf]
-  ).filter(Boolean).slice(0, 4);
-  const avoidItems: string[] = (Array.isArray(verdict?.avoidIf)
-    ? verdict.avoidIf
-    : [verdict?.avoidIf]
-  ).filter(Boolean).slice(0, 3);
+  const keepItems: string[] = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean);
+  const avoidItems: string[] = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean);
 
-  /* ── Verdict sentence — prefer verdict.threshold (editorial), then auto-generate ── */
   const verdictText = (() => {
-    // Use the editorial threshold sentence when it exists
     const threshold = verdict?.threshold as string | undefined;
     if (threshold && threshold.length > 0) return threshold;
-    // Fallback: build from keepIf + avoidIf
     if (keepItems.length && avoidItems.length) {
       const k = keepItems[0];
       const a = avoidItems[0];
@@ -109,18 +90,12 @@ export default function StickyDecisionCard({
     ? "Freemium"
     : t("Payant", "Paid");
 
-  const isAI = !!(tool as any).ia_use_case || (tool as any).tool_type === "ia";
-  const toolType = (tool as any).tool_type as string;
-  const typeLabel = toolType && TYPE_LABEL[toolType]
-    ? t(TYPE_LABEL[toolType].fr, TYPE_LABEL[toolType].en)
-    : t("Outil métier", "Business tool");
-
+  /* ── Key facts: 4 rows ── */
   const metaRows = [
-    { label: t("Plan gratuit", "Free plan"),   value: hasFreeplan ? t("Oui", "Yes") : t("Non", "No") },
-    { label: t("Modèle",       "Model"),        value: modelLabel },
-    { label: t("IA intégrée",  "Built-in AI"),  value: isAI ? t("Oui", "Yes") : t("Non", "No") },
-    { label: t("Type",         "Type"),          value: typeLabel },
-    { label: t("Prix vérifié", "Price verified"), value: verifiedOn },
+    { label: t("Plan gratuit", "Free plan"), value: hasFreeplan ? t("Oui", "Yes") : t("Non", "No") },
+    { label: t("Modèle",       "Model"),     value: modelLabel },
+    { label: t("Prix",         "Price"),     value: priceLabel },
+    { label: t("Vérifié le",   "Verified"),  value: verifiedOn },
   ];
 
   return (
@@ -162,22 +137,20 @@ export default function StickyDecisionCard({
       </div>
 
       {/* ── 2. Score ── */}
-      <div style={{ ...SEP_TOP, borderBottom: "1px solid #E7E7E0", padding: "20px 24px" }}>
+      <div style={{ borderTop: "1px solid #E7E7E0", padding: "20px 24px 16px" }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 12 }}>
-          {/* Large number */}
           <div style={{ display: "flex", alignItems: "baseline", gap: 3, flexShrink: 0 }}>
             <span style={{
               fontFamily: "var(--font-brand)",
-              fontSize: 72, fontWeight: 600, lineHeight: 0.9,
+              fontSize: 64, fontWeight: 600, lineHeight: 0.9,
               letterSpacing: "-0.07em", color: "#222222",
             }}>
               {ts.score.toFixed(1)}
             </span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 22, fontWeight: 400, color: "#9A9A92", lineHeight: 1, paddingBottom: 8 }}>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 20, fontWeight: 400, color: "#9A9A92", lineHeight: 1, paddingBottom: 6 }}>
               /5
             </span>
           </div>
-          {/* Grade */}
           <div style={{ textAlign: "right" }}>
             <span style={{
               display: "block",
@@ -186,66 +159,22 @@ export default function StickyDecisionCard({
             }}>
               {t(ts.labelFr, ts.labelEn)}
             </span>
-            <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92", marginTop: 5, letterSpacing: "0.03em" }}>
+            <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92", marginTop: 4, letterSpacing: "0.03em" }}>
               {t("Score éditorial", "Editorial score")}
             </span>
           </div>
         </div>
-      </div>
 
-      {/* ── 3. Verdict text ── */}
-      {verdictText && (
-        <div style={{ padding: "20px 24px" }}>
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.6, color: "#222222" }}>
+        {/* ── 3. Decision sentence — sits tight under the score ── */}
+        {verdictText && (
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, lineHeight: 1.55, color: "#222222", marginTop: 16 }}>
             {verdictText}
           </p>
-        </div>
-      )}
+        )}
+      </div>
 
-      {/* ── 4. Best for / Not ideal for ── */}
-      {(keepItems.length > 0 || avoidItems.length > 0) && (
-        <div style={{ ...SEP_TOP, padding: "20px 24px" }}>
-          {keepItems.length > 0 && (
-            <div style={{ marginBottom: avoidItems.length > 0 ? 16 : 0 }}>
-              <p style={{
-                fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-                letterSpacing: "0.06em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 8,
-              }}>
-                {t("Idéal pour", "Best for")}
-              </p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 5 }}>
-                {keepItems.map((item, i) => (
-                  <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontFamily: "var(--font-ui)", fontSize: 13, color: "#222222", lineHeight: 1.45 }}>
-                    <Check style={{ width: 12, height: 12, flexShrink: 0, marginTop: 2, color: "#4A9B6F" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {avoidItems.length > 0 && (
-            <div>
-              <p style={{
-                fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-                letterSpacing: "0.06em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 8,
-              }}>
-                {t("Moins adapté si", "Not ideal if")}
-              </p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 5 }}>
-                {avoidItems.map((item, i) => (
-                  <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", lineHeight: 1.45 }}>
-                    <X style={{ width: 12, height: 12, flexShrink: 0, marginTop: 2, color: "#ADADAD" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* ── 5. CTAs ── */}
-      <div style={{ ...SEP_TOP, padding: "20px 24px" }}>
+      {/* ── 4. CTAs ── */}
+      <div style={{ borderTop: "1px solid #E7E7E0", padding: "20px 24px" }}>
         <a
           href={primaryCtaUrl}
           target="_blank"
@@ -288,9 +217,26 @@ export default function StickyDecisionCard({
         </Link>
       </div>
 
+      {/* ── 5. Key facts (4 rows) ── */}
+      <div style={{ borderTop: "1px solid #E7E7E0", padding: "12px 24px 16px" }}>
+        {metaRows.map(({ label, value }, i) => (
+          <div
+            key={label}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              padding: "8px 0",
+              borderBottom: i < metaRows.length - 1 ? "1px solid #E7E7E0" : "none",
+            }}
+          >
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68" }}>{label}</span>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222" }}>{value}</span>
+          </div>
+        ))}
+      </div>
+
       {/* ── 6. Alternative recommandée ── */}
       {altName && (
-        <div style={{ ...SEP_TOP, background: "#F8F8F4", padding: "20px 24px" }}>
+        <div style={{ borderTop: "1px solid #E7E7E0", background: "#F8F8F4", padding: "18px 24px" }}>
           <p style={{
             fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
             letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 10,
@@ -329,23 +275,6 @@ export default function StickyDecisionCard({
           )}
         </div>
       )}
-
-      {/* ── 7. Metadata ── */}
-      <div style={{ ...SEP_TOP, padding: "16px 24px" }}>
-        {metaRows.map(({ label, value }, i) => (
-          <div
-            key={label}
-            style={{
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              padding: "9px 0",
-              borderBottom: i < metaRows.length - 1 ? "1px solid #E7E7E0" : "none",
-            }}
-          >
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68" }}>{label}</span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222" }}>{value}</span>
-          </div>
-        ))}
-      </div>
 
     </div>
   );

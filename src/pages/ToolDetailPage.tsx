@@ -288,7 +288,7 @@ const ToolDetailPage = () => {
             fontFamily: "var(--font-brand)",
             fontSize: "clamp(3rem, 7vw, 7rem)",
             fontWeight: 600, lineHeight: 0.95,
-            letterSpacing: "-0.06em", color: "#222222",
+            letterSpacing: "-0.065em", color: "#222222",
             marginBottom: 24,
           }}>
             {tool.name}
@@ -298,8 +298,9 @@ const ToolDetailPage = () => {
           {tool.shortDescription && (
             <p style={{
               fontFamily: "var(--font-ui)",
-              fontSize: "clamp(1rem, 1.4vw, 1.25rem)",
-              lineHeight: 1.45, color: "#6F6F68", maxWidth: 720,
+              fontSize: 21,
+              lineHeight: 1.35, letterSpacing: "-0.025em",
+              color: "#6F6F68", maxWidth: 720,
             }}>
               {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
             </p>
