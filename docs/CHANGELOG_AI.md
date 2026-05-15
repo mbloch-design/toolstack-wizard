@@ -26,6 +26,51 @@ La logique conditionnelle `isToolPage` a également été retirée (plus nécess
 
 ---
 
+## 2026-05-15 — Sprint 2 suite : stabilisation tabs page outil
+
+**Fichiers modifiés**
+- `src/pages/ToolDetailPage.tsx`
+
+### Problème
+Le commit précédent (`0e8c66d`) utilisait `useNavigate` + `preventScrollReset: true` pour
+gérer le scroll des tabs. Cette approche causait une React error #310
+("Cannot update a component while rendering a different component") en production,
+spécifique à l'environnement `BrowserRouter` (non-data router).
+
+### Fix — approche useRef + useEffect
+Remplacement complet de `handleTabClick` / `useNavigate` / `useCallback` par :
+
+```tsx
+const prevSubPageRef = useRef<string | null>(null);
+const prevSlugRef    = useRef<string | null>(null);
+
+useEffect(() => {
+  // Skip premier rendu et changement d'outil
+  if (prevSubPageRef.current === null || prevSlugRef.current !== slug) {
+    prevSubPageRef.current = subPage;
+    prevSlugRef.current    = slug ?? null;
+    return;
+  }
+  if (prevSubPageRef.current === subPage) return;
+  prevSubPageRef.current = subPage;
+
+  const id = subPage === "presentation" ? "analyse" : subPage;
+  const el = document.getElementById(id);
+  if (!el) return;
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 92, behavior: "smooth" });
+}, [subPage, slug]);
+```
+
+- `<Link>` gère la navigation normalement (URL + SEO préservés)
+- L'`useEffect` détecte le changement de `subPage` et scrolle
+- L'offset `92px` = navbar 68px + marge de confort
+- Les sections ont `id="analyse|prix|alternatives|avis|faq"` + `scroll-margin-top` CSS
+
+### Nettoyage imports
+Supprimés : `useNavigate`, `useCallback`, `ToolVerdictBlock` (orphelin), `TrendingDown`, `Sparkles`, `ShieldCheck`.
+
+---
+
 ## 2026-05-15 — Sprint 2 correction : Suppression CTA dupliqués
 
 **Fichiers modifiés**

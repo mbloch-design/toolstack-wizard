@@ -76,6 +76,17 @@ React SPA · Vite + TypeScript · Tailwind CSS v3
       "Une stack plus claire. Moins d'abonnements inutiles."
 ```
 
+### Règle tabs — scroll ancre
+
+Les tabs pointent vers des routes séparées (`/fr/tool/:slug/prix` etc.) pour le SEO et le prerender.
+La navigation est gérée par `<Link>` normalement. Un `useEffect` surveille `[subPage, slug]` :
+- Premier rendu ou changement d'outil → reset des refs, pas de scroll
+- Changement de `subPage` → `window.scrollTo({ behavior: "smooth" })` avec offset `92px`
+
+**Ne pas utiliser** `useNavigate` + `preventScrollReset` dans un contexte `BrowserRouter` — cela provoque React error #310 en production.
+
+Les sections ont `id="analyse|prix|alternatives|avis|faq"` + `.td-subpage-content { scroll-margin-top: 152px }`.
+
 ### Règle sticky sidebar
 `position: sticky` doit être sur l'élément grid item directement (`.td-sidebar-desktop`), pas sur un enfant.
 La hauteur du grid item = hauteur du contenu (via `height: fit-content`).

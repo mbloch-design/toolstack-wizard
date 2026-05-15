@@ -1,10 +1,9 @@
-import { useParams, Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useParams, Link, Navigate, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import {
   ExternalLink, Check, X, ArrowRight, CalendarCheck,
-  TrendingDown, Sparkles, ShieldCheck,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -15,7 +14,6 @@ import { getToolDomain, getDomainFromUrl } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
-import ToolVerdictBlock from "@/components/tool/ToolVerdictBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
 import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
@@ -46,7 +44,6 @@ const ToolDetailPage = () => {
   const { lang, t, prefix } = useLang();
   const { slug } = useParams();
   const location = useLocation();
-  const navigate = useNavigate();
   const { tool, loading } = useToolBySlug(slug);
   const { tools } = useTools();
   const { categories } = useCategories();
@@ -217,29 +214,34 @@ const ToolDetailPage = () => {
 
   const toolType = (tool as any).tool_type as string;
 
-  /* ── Tab click — smooth scroll, no jump ──
-     Les tabs pointent vers des routes séparées. Sans contrôle, le navigateur
-     remonte en haut de page à chaque navigation. On intercepte le clic :
-     1. navigate() avec preventScrollReset: true  → pas de remontée brutale
-     2. window.scrollTo smooth → positionne la tab nav sous le header fixe     ── */
-  const handleTabClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, destination: string) => {
-      e.preventDefault();
-      navigate(destination, { preventScrollReset: true });
+  /* ── Tabs — smooth scroll vers la section active ──
+     On laisse <Link> gérer la navigation (URL + SEO).
+     Un useEffect détecte le changement de subPage et scrolle vers la section
+     correspondante, uniquement lors d'un changement initié par l'utilisateur
+     (pas sur le premier rendu ni lors du changement d'outil).
+  ── */
+  const prevSubPageRef = useRef<string | null>(null);
+  const prevSlugRef    = useRef<string | null>(null);
 
-      const tabNav = document.querySelector<HTMLElement>(".td-tab-nav");
-      if (!tabNav) return;
-      const navbarH = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue("--navbar-h") || "68",
-        10,
-      );
-      const tabNavTop = tabNav.getBoundingClientRect().top + window.scrollY;
-      const scrollTarget = Math.max(0, tabNavTop - navbarH);
+  useEffect(() => {
+    // Premier rendu ou changement d'outil → reset sans scroller
+    if (prevSubPageRef.current === null || prevSlugRef.current !== (slug ?? null)) {
+      prevSubPageRef.current = subPage;
+      prevSlugRef.current    = slug ?? null;
+      return;
+    }
+    // Même onglet → rien à faire
+    if (prevSubPageRef.current === subPage) return;
+    prevSubPageRef.current = subPage;
 
-      window.scrollTo({ top: scrollTarget, behavior: "smooth" });
-    },
-    [navigate],
-  );
+    // Scroll smooth vers la section avec offset navbar + tab nav
+    const id = subPage === "presentation" ? "analyse" : subPage;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const headerOffset = 92; // 68px navbar + 72px tab nav − 48px marge visuelle
+    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  }, [subPage, slug]);
 
   /* Shared card props */
   const cardProps = {
@@ -384,13 +386,11 @@ const ToolDetailPage = () => {
                 const tabPath = tab.id === "prix" && lang === "en" ? "/pricing"
                   : tab.id === "avis" && lang === "en" ? "/reviews"
                   : tab.path;
-                const destination = `${prefix}/tool/${slug}${tabPath}`;
                 return (
                   <Link
                     key={tab.id}
-                    to={destination}
+                    to={`${prefix}/tool/${slug}${tabPath}`}
                     className={`td-tab${isActive ? " td-tab--active" : ""}`}
-                    onClick={(e) => handleTabClick(e, destination)}
                   >
                     {lang === "fr" ? tab.labelFr : tab.labelEn}
                   </Link>
