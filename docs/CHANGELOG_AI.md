@@ -2,6 +2,41 @@
 
 ---
 
+## 2026-05-15 — Sprint 2 : Refonte template page outil
+
+**Fichiers modifiés**
+- `src/pages/ToolDetailPage.tsx`
+- `src/components/tool/StickyDecisionCard.tsx`
+- `src/index.css`
+
+### 1. H1 conditionnel — noms courts (≤ 5 caractères)
+
+**Problème :** Pour les outils à noms courts (Box, Slack, Zoom…), le H1 en `clamp(4.5rem, 8vw, 7.75rem)` atteignait 124px — disproportionné visuellement.
+
+**Fix :** Condition inline dans `ToolDetailPage.tsx` :
+- `tool.name.length <= 5` → `clamp(4.5rem, 8vw, 6.5rem)` (max 104px)
+- Sinon → `clamp(4.5rem, 8vw, 7.75rem)` (max 124px, inchangé)
+
+Pages prioritaires vérifiées : `/fr/tool/box` (3 chars ✓) · `/fr/tool/framer` (6 chars → max normal ✓)
+
+### 2. Sidebar sticky top — ajustement offset
+
+**Avant :** `top: calc(var(--header-height) + 24px)` (92px total)
+**Après :** `top: calc(var(--navbar-h, 68px) + 20px)` (88px total)
+
+- Utilise la variable canonique `--navbar-h` avec fallback `68px`
+- Réduit l'offset de 24px → 20px conformément au spec Sprint 2
+- Modifié dans `.td-sidebar-desktop` (index.css)
+
+### 3. Label "Prix à partir de" dans StickyDecisionCard
+
+**Avant :** La ligne de fait affichait toujours `Prix` comme label.
+**Après :** Si `displayPrice > 0`, le label devient `Prix à partir de` / `From`. Sinon reste `Prix` / `Price`.
+
+Logique dans `metaRows` de `StickyDecisionCard.tsx`.
+
+---
+
 ## 2026-05-15 — Sprint 1 : Stabilisation structurelle
 
 **Fichiers modifiés**

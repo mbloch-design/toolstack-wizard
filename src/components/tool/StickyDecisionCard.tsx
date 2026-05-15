@@ -94,7 +94,12 @@ export default function StickyDecisionCard({
   const metaRows = [
     { label: t("Plan gratuit", "Free plan"), value: hasFreeplan ? t("Oui", "Yes") : t("Non", "No") },
     { label: t("Modèle",       "Model"),     value: modelLabel },
-    { label: t("Prix",         "Price"),     value: priceLabel },
+    {
+      label: displayPrice > 0
+        ? t("Prix à partir de", "From")
+        : t("Prix", "Price"),
+      value: priceLabel,
+    },
     { label: t("Vérifié le",   "Verified"),  value: verifiedOn },
   ];
 

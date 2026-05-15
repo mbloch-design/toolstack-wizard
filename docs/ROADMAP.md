@@ -20,7 +20,7 @@
 
 ---
 
-## Phase 2 — Stabilisation structurelle (Sprint 1) ← EN COURS
+## Phase 2 — Stabilisation structurelle (Sprint 1) ✅
 
 | Item | Statut | Notes |
 |---|---|---|
@@ -32,6 +32,17 @@
 | docs/ROADMAP.md créé | ✅ Fait | Ce fichier |
 | ToolCardEditorial (orphelin) | 📋 Documenté | Migration Phase 3 |
 | Dark mode gi-*/ga-* | 📋 Dette technique | Phase 6 |
+
+---
+
+## Sprint 2 — Refonte template page outil ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| H1 conditionnel noms courts (≤5 chars → max 104px) | ✅ Fait | `clamp(4.5rem, 8vw, 6.5rem)` |
+| Sidebar sticky top offset | ✅ Fait | `calc(var(--navbar-h, 68px) + 20px)` |
+| Label "Prix à partir de" sidebar | ✅ Fait | Conditionnel si displayPrice > 0 |
+| Responsive td-dr-grid, td-diag-inner, td-footer-inner | ✅ Vérifié | Breakpoints 768px/900px existants OK |
 
 ---
 

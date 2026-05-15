@@ -80,6 +80,11 @@ React SPA · Vite + TypeScript · Tailwind CSS v3
 `position: sticky` doit être sur l'élément grid item directement (`.td-sidebar-desktop`), pas sur un enfant.
 La hauteur du grid item = hauteur du contenu (via `height: fit-content`).
 Les parents ne doivent pas avoir : `overflow: hidden`, `overflow: auto`, `transform`, `filter`, `perspective`.
+`top: calc(var(--navbar-h, 68px) + 20px)` — utilise la variable canonique avec fallback.
+
+### Règle H1 — noms courts
+Si `tool.name.length <= 5` (Box, Slack, Zoom…) : `fontSize: clamp(4.5rem, 8vw, 6.5rem)` (max 104px desktop).
+Sinon : `clamp(4.5rem, 8vw, 7.75rem)` (max 124px). Condition inline dans `ToolDetailPage.tsx`.
 
 ---
 

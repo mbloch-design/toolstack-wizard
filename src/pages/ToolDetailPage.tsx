@@ -282,10 +282,12 @@ const ToolDetailPage = () => {
               )}
             </div>
 
-            {/* H1 */}
+            {/* H1 — clamp réduit pour les noms courts (≤5 chars) pour éviter la disproportion */}
             <h1 style={{
               fontFamily: "var(--font-brand)",
-              fontSize: "clamp(4.5rem, 8vw, 7.75rem)",
+              fontSize: tool.name.length <= 5
+                ? "clamp(4.5rem, 8vw, 6.5rem)"   /* max 104px — Box, Slack, Zoom… */
+                : "clamp(4.5rem, 8vw, 7.75rem)",  /* max 124px — noms longs */
               fontWeight: 600, lineHeight: 0.9,
               letterSpacing: "-0.07em", color: "#222222",
               margin: 0,
