@@ -93,18 +93,23 @@
 
 ---
 
-## Phase 3 — Cards / Listings
+## Phase 3 — Cards / Listings ✅ Sprint 4
 
-| Item | Priorité | Notes |
+| Item | Statut | Notes |
 |---|---|---|
-| Migration ToolCardEditorial → remplace ToolCard default | HAUTE | Connecter à ToolsPage + CategoryPage |
-| Score ToolTrim visible sur card grid | HAUTE | Actuellement absent sur tc-card default |
-| ToolCard list-row : afficher verdict court | MOYENNE | Améliore les pages catégorie |
-| ResultsPage : intégrer editorial card | MOYENNE | Après validation sur ToolsPage |
+| Migration ToolCardEditorial → remplace ToolCard default | ✅ Fait | ToolsPage grille principale |
+| Score ToolTrim visible sur card grid | ✅ Fait | prescription_quality → score numérique |
+| ToolRowEditorial (list row éditorial) | ✅ Fait | Remplace list-row dans CategoryPage |
+| StackCardEditorial (variants row + compact) | ✅ Fait | Extrait de StacksPage |
+| ResultsPage : intégrer editorial card | 📋 Backlog | Après validation sur ToolsPage |
 
-**Note :** `ToolCardEditorial` (src/components/ToolCardEditorial.tsx) est un composant complet avec
-score block, verdict court, 3 metadata rows (Plan / Modèle / IA). Il n'est importé nulle part.
-La migration vers les pages de listing est la prochaine étape logique après Sprint 1.
+**Système de cards stabilisé :**
+- `ToolCardEditorial` — grille outils (ToolsPage) — **actif**
+- `ToolRowEditorial` — liste catégorie (CategoryPage) — **actif**  
+- `StackCardEditorial` — stacks liste + compact (StacksPage) — **actif**
+- `ToolCard variant="featured"` — sélection éditoriale (ToolsPage) — conservé
+- `ToolCard variant="list-row"` — déprécié (remplacé par ToolRowEditorial)
+- `ToolCard variant="default"` — déprécié (remplacé par ToolCardEditorial)
 
 ---
 

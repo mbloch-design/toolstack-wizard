@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, ChevronDown, Search, X } from "lucide-react";
-import ToolLogo from "@/components/ToolLogo";
+import { Check, ChevronDown, Search, X } from "lucide-react";
 import EditorialHero from "@/components/EditorialHero";
+import { StackCardEditorial } from "@/components/StackCardEditorial";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
@@ -586,25 +586,15 @@ const StacksPage = () => {
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
                     {profileRecommendedStacks.map(({ persona, stack }) => (
-                      <Link
+                      <StackCardEditorial
                         key={`recommended-${stack.id}`}
-                        to={`${prefix}/stacks/${stack.slug}`}
-                        className="ec-card"
-                        style={{ padding: "16px 18px" }}
-                      >
-                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-                          <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#6F6F68", border: "1px solid #DADAD4", borderRadius: 4, padding: "3px 8px" }}>
-                            {t(personaLabel(persona, "fr"), personaLabel(persona, "en"))}
-                          </span>
-                          <ArrowRight className="ec-cta-arrow" style={{ width: 13, height: 13, color: "#ADADAD", flexShrink: 0 }} />
-                        </div>
-                        <div style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, letterSpacing: "-0.02em", color: "#222222", lineHeight: 1.3, marginBottom: 6 }}>
-                          {t(stack.title, stack.titleEn)}
-                        </div>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-                          {t(stack.bestFor, stack.bestForEn)}
-                        </p>
-                      </Link>
+                        variant="compact"
+                        stack={stack}
+                        prefix={prefix}
+                        t={t}
+                        lang={lang}
+                        personaTag={lang === "fr" ? personaLabel(persona, "fr") : personaLabel(persona, "en")}
+                      />
                     ))}
                   </div>
                 </div>
@@ -612,82 +602,24 @@ const StacksPage = () => {
 
               <div className="mt-4 grid gap-3">
                 {filteredStacks.map((stack) => {
-                  const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
+                  const stackTools = stack.tools
+                    .map((slot) => toolBySlug.get(slot.slug))
+                    .filter(Boolean) as NonNullable<ReturnType<typeof toolBySlug.get>>[];
                   const isProfileRecommended = PROFILE_RECOMMENDED_STACKS.some((item) => item.slug === stack.slug);
                   return (
-                    <Link
+                    <StackCardEditorial
                       key={stack.id}
-                      to={`${prefix}/stacks/${stack.slug}`}
-                      className="ec-card group"
-                      style={{ flexDirection: "row", padding: 0, overflow: "hidden" }}
-                    >
-                      {/* Image */}
-                      <div style={{ width: 140, flexShrink: 0, overflow: "hidden", background: "#EDEDE8" }} className="hidden md:block">
-                        <img
-                          src={STACK_VISUALS[stack.slug] || STACK_VISUALS["freelance-solo-zero-bloat"]}
-                          alt={t(stack.title, stack.titleEn)}
-                          style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 500ms ease" }}
-                          className="group-hover:scale-[1.04] transition-transform"
-                          loading="lazy"
-                        />
-                      </div>
-
-                      {/* Body */}
-                      <div style={{ flex: 1, minWidth: 0, padding: "18px 20px", display: "grid", gridTemplateColumns: "minmax(0,1fr) 11rem", gap: 16, alignItems: "center" }} className="lg:grid grid-cols-1">
-                        <div style={{ minWidth: 0 }}>
-                          {/* Tags */}
-                          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
-                            <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#6F6F68", border: "1px solid #DADAD4", borderRadius: 4, padding: "2px 8px" }}>
-                              {t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"))}
-                            </span>
-                            <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#6F6F68", border: "1px solid #DADAD4", borderRadius: 4, padding: "2px 8px" }}>
-                              {t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}
-                            </span>
-                            {isProfileRecommended && (
-                              <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#222222", border: "1px solid #222222", borderRadius: 4, padding: "2px 8px" }}>
-                                {t("Base", "Base")}
-                              </span>
-                            )}
-                          </div>
-                          <div style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", lineHeight: 1.2, marginBottom: 6 }}>
-                            {t(stack.title, stack.titleEn)}
-                          </div>
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-                            {t(stack.risk, stack.riskEn)}
-                          </p>
-                        </div>
-
-                        {/* Right side — budget + tools + cta */}
-                        <div style={{ borderLeft: "1px solid #E7E7E0", paddingLeft: 16, display: "flex", flexDirection: "column", gap: 12 }} className="hidden lg:flex">
-                          {/* Tool logos */}
-                          <div style={{ display: "flex", gap: 4 }}>
-                            {stackTools.slice(0, 4).map(({ tool }) => (
-                              <span
-                                key={`${stack.id}-${tool!.id}`}
-                                style={{ width: 28, height: 28, borderRadius: 6, border: "1px solid #DADAD4", background: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}
-                                title={tool!.name}
-                              >
-                                <ToolLogo tool={tool!} size={18} className="rounded" />
-                              </span>
-                            ))}
-                          </div>
-                          {/* Metrics */}
-                          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-                            <div>
-                              <span className="ec-meta-label">{t("COÛT", "COST")}</span>
-                              <span className="ec-meta-value">{stack.monthlyBudget}€</span>
-                            </div>
-                            <div>
-                              <span className="ec-meta-label">{t("OUTILS", "TOOLS")}</span>
-                              <span className="ec-meta-value">{stack.tools.length}</span>
-                            </div>
-                          </div>
-                          <span className="ec-cta" style={{ marginTop: 0, fontSize: 13 }}>
-                            {t("Voir", "View")} <ArrowRight className="ec-cta-arrow" style={{ width: 13, height: 13 }} />
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
+                      variant="row"
+                      stack={stack}
+                      prefix={prefix}
+                      t={t}
+                      lang={lang}
+                      personaTag={lang === "fr" ? personaLabel(stack.persona, "fr") : personaLabel(stack.persona, "en")}
+                      stageTag={lang === "fr" ? stageLabel(stack.stage, "fr") : stageLabel(stack.stage, "en")}
+                      isBase={isProfileRecommended}
+                      stackTools={stackTools}
+                      imageUrl={STACK_VISUALS[stack.slug] || STACK_VISUALS["freelance-solo-zero-bloat"]}
+                    />
                   );
                 })}
               </div>

@@ -2,6 +2,38 @@
 
 ---
 
+## 2026-05-15 — Sprint 4 : Cards / Listings — unification du système de cards
+
+**Fichiers modifiés**
+- `src/pages/ToolsPage.tsx` — grille principale migrée vers ToolCardEditorial
+- `src/pages/CategoryPage.tsx` — liste migrée vers ToolRowEditorial
+- `src/pages/StacksPage.tsx` — cartes migrées vers StackCardEditorial
+- `src/index.css` — ajout du système `tcr-*` (ToolRowEditorial)
+
+**Nouveaux composants**
+- `src/components/ToolRowEditorial.tsx` — ligne éditoriale horizontale (rank + logo + contenu + score + prix + CTA)
+- `src/components/StackCardEditorial.tsx` — carte stack éditoriale (variants `row` + `compact`)
+
+### ToolCardEditorial activé (anciennement orphelin)
+`ToolCardEditorial` remplace `ToolCard variant="default"` dans la grille principale de `ToolsPage`.
+Score ToolTrim visible sur chaque carte (`prescription_quality` → score numérique affiché).
+`ToolCard variant="featured"` conservé pour la section Sélection éditoriale.
+
+### ToolRowEditorial — nouveau système `tcr-*`
+Remplace `ToolCard variant="list-row"` dans `CategoryPage`.
+Layout horizontal : rang · logo · nom/catégorie/extrait · score /5 · prix · flèche CTA.
+Score masqué sur mobile (≤640px) pour économiser la place.
+Badge `tcr-pick` inline si `prescription_quality === "ferme"`.
+
+### StackCardEditorial — extraction des cards StacksPage
+Deux variants :
+- `row` — carte principale de la liste (image 140px + corps + panneau data logo/coût/outils)
+- `compact` — carte recommandée par profil (label persona + titre + bestFor)
+`StacksPage` conserve toute la logique data (filtres, facettes, query) ; `StackCardEditorial` gère uniquement le rendu.
+Import `ArrowRight` et `ToolLogo` supprimés de `StacksPage` (devenus redondants).
+
+---
+
 ## 2026-05-15 — Sprint Guides v2 : filtres, tri, logos, section Commencer ici
 
 **Fichiers modifiés**

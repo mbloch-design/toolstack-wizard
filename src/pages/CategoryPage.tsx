@@ -8,7 +8,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getToolDomain } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
-import { ToolCard } from "@/components/ToolCard";
+import { ToolRowEditorial } from "@/components/ToolRowEditorial";
 import type { PricingV5, ToolType } from "@/data/types";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
@@ -510,21 +510,18 @@ const CategoryPage = () => {
             </div>
 
             {/* Cards — editorial list rows */}
-            <div>
-              {visible.map((tool, i) => {
-                return (
-                  <ToolCard
-                    key={tool.id}
-                    tool={tool}
-                    prefix={prefix}
-                    t={t}
-                    lang={lang}
-                    variant="list-row"
-                    rank={i + 1}
-                    categoryLabel={displayName}
-                  />
-                );
-              })}
+            <div className="tcr-list">
+              {visible.map((tool, i) => (
+                <ToolRowEditorial
+                  key={tool.id}
+                  tool={tool}
+                  prefix={prefix}
+                  t={t}
+                  lang={lang}
+                  rank={i + 1}
+                  categoryLabel={displayName}
+                />
+              ))}
             </div>
             {/* Load more */}
             {hasMore && (

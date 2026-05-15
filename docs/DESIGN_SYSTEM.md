@@ -255,6 +255,40 @@ Déclenchement Markdown : `> À retenir : texte…` (ou `Key takeaway`, `À note
 
 ---
 
+## Cards / Listings — système unifié
+
+### ToolCardEditorial (tce-*) — grille outils
+Carte éditoriale grid. Utilisée par `ToolsPage` (grille principale).
+- `tce-card` — shell blanc, border #DADAD4, hover noir, padding 24px
+- Score block (`tce-score-block`) : score numérique 48px + verdict court
+- Metadata 3 colonnes : PLAN · MODÈLE · IA
+- Badge `tce-pick-badge` : fond #222222, uppercase 10px
+
+### ToolRowEditorial (tcr-*) — liste catégorie
+Ligne horizontale éditoriale. Utilisée par `CategoryPage`.
+```css
+.tcr-list { border-top: 1px solid #DADAD4; }   /* container */
+.tcr-row { padding: 18px 10px; border-bottom: 1px solid #DADAD4; }
+.tcr-rank { width: 20px; color: #9A9A92; font-variant-numeric: tabular-nums; }
+.tcr-logo { width: 40px; height: 40px; border-radius: 8px; }
+.tcr-score { font-size: 13px; font-weight: 600; }   /* "4.6 /5" */
+.tcr-price { min-width: 64px; text-align: right; }
+.tcr-pick { background: #222222; color: #FFFFFF; font-size: 9px; }
+```
+Mobile ≤640px : rang, score, prix masqués.
+
+### StackCardEditorial (ec-card shell) — stacks
+Utilise `ec-card` pour le shell. Deux variants via prop `variant` :
+- `"row"` — image 140px + corps + panneau data (logos outils, coût, CTA)
+- `"compact"` — card grille profil recommandé (label persona + titre + bestFor)
+
+### Composants dépréciés
+- `ToolCard variant="default"` → remplacé par `ToolCardEditorial`
+- `ToolCard variant="list-row"` → remplacé par `ToolRowEditorial`
+- `ToolCard variant="featured"` → conservé pour la Sélection éditoriale ToolsPage uniquement
+
+---
+
 ## Anti-patterns à éviter
 
 - ❌ Bouton bleu sur les pages outils

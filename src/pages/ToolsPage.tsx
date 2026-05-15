@@ -8,6 +8,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCard } from "@/components/ToolCard";
+import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import type { Tool } from "@/data/types";
 
 const TOOLS_PER_PAGE = 40;
@@ -306,13 +307,12 @@ const ToolsPage = () => {
                     const catObj = categories.find(c => c.id === tool.categoryId);
                     const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
                     return (
-                      <ToolCard
+                      <ToolCardEditorial
                         key={tool.id}
                         tool={tool}
                         prefix={prefix}
                         t={t}
                         lang={lang}
-                        variant="default"
                         categoryLabel={catLabel}
                       />
                     );

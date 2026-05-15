@@ -2802,6 +2802,181 @@
 }
 
 /* ─────────────────────────────────────────────
+   TOOL ROW EDITORIAL (tcr-*)
+   Horizontal list row — category rankings, alternatives.
+   rank → logo → content → score → price → cta
+───────────────────────────────────────────── */
+@layer components {
+
+  /* ── Container: adds a top border to the list ── */
+  .tcr-list {
+    border-top: 1px solid #DADAD4;
+  }
+
+  /* ── Row shell ──────────────────────────────── */
+  .tcr-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 10px;
+    border-bottom: 1px solid #DADAD4;
+    text-decoration: none;
+    color: #222222;
+    border-radius: 6px;
+    transition: background 140ms ease-out;
+  }
+  .tcr-row:hover { background: #F8F8F4; }
+  .dark .tcr-row { color: hsl(var(--foreground)); border-bottom-color: hsl(var(--border)); }
+  .dark .tcr-row:hover { background: hsl(var(--secondary)); }
+
+  /* ── Rank ─────────────────────────────────── */
+  .tcr-rank {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 400;
+    color: #9A9A92;
+    width: 20px;
+    flex-shrink: 0;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+
+  /* ── Logo ─────────────────────────────────── */
+  .tcr-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #F8F8F4;
+    border: 1px solid #E7E7E0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .dark .tcr-logo { background: hsl(0 0% 14%); border-color: hsl(0 0% 22%); }
+
+  /* ── Content ──────────────────────────────── */
+  .tcr-content { flex: 1; min-width: 0; }
+
+  .tcr-name {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #222222;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .dark .tcr-name { color: hsl(var(--foreground)); }
+
+  .tcr-category {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin: 3px 0 0;
+    line-height: 1;
+  }
+
+  .tcr-excerpt {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.4;
+    color: #6F6F68;
+    margin: 6px 0 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .dark .tcr-excerpt { color: hsl(var(--muted-foreground)); }
+
+  /* ── Right section ───────────────────────── */
+  .tcr-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+
+  .tcr-score {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #222222;
+    white-space: nowrap;
+  }
+  .dark .tcr-score { color: hsl(var(--foreground)); }
+
+  .tcr-score-denom {
+    font-size: 11px;
+    font-weight: 400;
+    color: #9A9A92;
+    letter-spacing: 0;
+  }
+
+  .tcr-price {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: #6F6F68;
+    min-width: 64px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .tcr-cta {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    color: #222222;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .dark .tcr-cta { color: hsl(var(--foreground)); }
+
+  .tcr-cta-arrow {
+    display: inline-block;
+    transition: transform 160ms ease-out;
+  }
+  .tcr-row:hover .tcr-cta-arrow { transform: translateX(3px); }
+
+  /* ── Pick inline badge ───────────────────── */
+  .tcr-pick {
+    display: inline-flex;
+    align-items: center;
+    height: 18px;
+    padding: 0 7px;
+    background: #222222;
+    color: #FFFFFF;
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  /* ── Responsive ──────────────────────────── */
+  @media (max-width: 640px) {
+    .tcr-rank  { display: none; }
+    .tcr-score { display: none; }
+    .tcr-price { display: none; }
+  }
+}
+
+/* ─────────────────────────────────────────────
    EDITORIAL SECTION SYSTEM (es-*)
    Replaces old SaaS section patterns.
    No gradients. No blue backgrounds. No soft shadows.
