@@ -185,13 +185,51 @@ Contenu : score 64px → phrase verdict 16px → CTA noir → CTA ghost → 4 fa
 ### Hero metadata
 Tags `gi-hero-tag` : texte brut uppercase 11px, dot-séparés via CSS `::before { content: "·" }`. Pas de bordure ni de fond.
 
+### Filtres éditoriaux (gi-filter-bar)
+
+```css
+.gi-filter-pill {
+  height: 34px; padding: 0 14px;
+  border: 1px solid #DADAD4; border-radius: 999px;
+  font-size: 13px; font-weight: 500; color: #222222;
+}
+.gi-filter-pill--active { background: #222222; color: #FFFFFF; }
+```
+**Règle :** Zéro bleu. Filtre actif = noir #222222, pas de bleu ToolTrim.
+
+Tri (`gi-sort-select`) : `<select>` sob sobre, `height: 34px`, flèche SVG custom, label uppercase `TRIER PAR`.
+
+### Logos outils cités (tool-logo-stack)
+
+```css
+.tool-logo-stack { display: flex; align-items: center; margin-top: 8px; }
+.tool-logo-pill { width: 32px; height: 32px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E7E7E0; margin-left: -6px; }
+.tool-logo-pill:first-child { margin-left: 0; }
+.tool-logo-pill:hover { transform: translateY(-1px); }
+.tool-logo-more { background: #F8F8F4; font-size: 11px; font-weight: 600; color: #6F6F68; }
+```
+Maximum 5 logos, overflow en pastille `+N`. Label `OUTILS CITÉS` 11px uppercase #9A9A92.
+**Règle :** Afficher uniquement si l'article mentionne réellement l'outil (via `useArticleTools`).
+
+### Section "Commencer ici" (gi-start-here-grid)
+
+```css
+.gi-start-here-grid { grid-template-columns: repeat(3, 1fr); gap: 0; }
+.gi-start-here-item { border-top: 1px solid #DADAD4; padding: 24px 28px 24px 0; }
+.gi-start-here-item + .gi-start-here-item { padding-left: 28px; border-left: 1px solid #DADAD4; }
+```
+Fond transparent, pas de card. 3 angles : Choisir · Remplacer · Stack. Chaque item clique sur un filtre.
+
 ### Lignes articles (gi-row)
 ```css
-grid-template-columns: 140px minmax(0, 1fr) auto;
+grid-template-columns: 150px minmax(0, 1fr) auto;
 gap: 32px;
-padding: 28px 0;
+padding: 32px 0;
 border-top: 1px solid #DADAD4;
 ```
+- `gi-row-meta` : left col 150px — type (GUIDE/COMPARATIF/ALTERNATIVE/STACK) + intent + read time
+- `gi-row-cat` : 11px, 600, uppercase, `#6F6F68`
+- `gi-row-intent` : 10px, 600, uppercase, `#9A9A92`
 - `gi-row-title` : `clamp(1.875rem, 3.2vw, 2.625rem)`, 30px→42px
 - `gi-row-excerpt` : 16px, `line-height 1.45`, `max-width 720px`
 - `gi-row-cta` : 15px, `#222222`, hover opacity 0.55

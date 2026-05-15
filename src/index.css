@@ -3409,10 +3409,10 @@
   /* Article row (editorial list) */
   .gi-row {
     display: grid;
-    grid-template-columns: 140px minmax(0, 1fr) auto;
+    grid-template-columns: 150px minmax(0, 1fr) auto;
     gap: 32px;
     align-items: start;
-    padding: 28px 0;
+    padding: 32px 0;
     border-top: 1px solid #DADAD4;
     text-decoration: none;
   }
@@ -3557,6 +3557,259 @@
     transition: background 160ms ease-out;
   }
   .gi-cta-band-btn:hover { background: #000000; }
+
+  /* ── Filter bar ───────────────────────────── */
+  .gi-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #DADAD4;
+  }
+  .gi-filter-pills {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .gi-filter-pill {
+    height: 34px;
+    padding: 0 14px;
+    border: 1px solid #DADAD4;
+    border-radius: 999px;
+    background: transparent;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: #222222;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 160ms ease-out, background 160ms ease-out, color 160ms ease-out;
+  }
+  .gi-filter-pill:hover {
+    border-color: #222222;
+  }
+  .gi-filter-pill--active {
+    background: #222222;
+    color: #FFFFFF;
+    border-color: #222222;
+  }
+  .gi-filter-pill--active:hover {
+    background: #000000;
+  }
+
+  /* ── Sort ─────────────────────────────────── */
+  .gi-sort-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .gi-sort-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    white-space: nowrap;
+  }
+  .gi-sort-select {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: #222222;
+    background: transparent;
+    border: 1px solid #DADAD4;
+    border-radius: 6px;
+    padding: 5px 28px 5px 10px;
+    height: 34px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236F6F68' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: border-color 160ms ease-out;
+  }
+  .gi-sort-select:hover { border-color: #222222; }
+  .gi-sort-select:focus { outline: none; border-color: #222222; }
+
+  /* Mobile: scroll filter bar */
+  @media (max-width: 700px) {
+    .gi-filter-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .gi-filter-pills {
+      width: 100%;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .gi-filter-pills::-webkit-scrollbar { display: none; }
+  }
+
+  /* ── Row intent badge ─────────────────────── */
+  .gi-row-intent {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+
+  /* ── Tool logo pills label ────────────────── */
+  .gi-row-tools-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  /* ── Tool logo pill stack (stacked avatars) ── */
+  .tool-logo-stack {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .tool-logo-pill {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid #E7E7E0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: -6px;
+    flex-shrink: 0;
+    transition: transform 160ms ease-out, border-color 160ms ease-out;
+  }
+  .tool-logo-pill:first-child { margin-left: 0; }
+  .tool-logo-pill img {
+    max-width: 18px;
+    max-height: 18px;
+    object-fit: contain;
+  }
+  .tool-logo-pill:hover {
+    transform: translateY(-1px);
+    border-color: #DADAD4;
+    z-index: 1;
+  }
+  .tool-logo-more {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    color: #6F6F68;
+    background: #F8F8F4;
+    border-color: #DADAD4;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── "Commencer ici" section ──────────────── */
+  .gi-start-here-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 32px;
+  }
+  .gi-start-here-item {
+    border-top: 1px solid #DADAD4;
+    padding: 24px 28px 24px 0;
+    text-align: left;
+    background: transparent;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    cursor: pointer;
+    transition: opacity 160ms ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .gi-start-here-item + .gi-start-here-item {
+    padding-left: 28px;
+    border-left: 1px solid #DADAD4;
+  }
+  .gi-start-here-item:hover { opacity: 0.72; }
+  .gi-start-here-icon {
+    font-family: var(--font-ui);
+    font-size: 18px;
+    color: #222222;
+    margin-bottom: 14px;
+    display: block;
+    font-style: normal;
+    line-height: 1;
+  }
+  .gi-start-here-label {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .gi-start-here-desc {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6F6F68;
+    display: block;
+    flex: 1;
+  }
+  .gi-start-here-cta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: #222222;
+    margin-top: 16px;
+    transition: opacity 160ms ease-out;
+  }
+  @media (max-width: 768px) {
+    .gi-start-here-grid { grid-template-columns: 1fr; }
+    .gi-start-here-item + .gi-start-here-item {
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+
+  /* ── Load more ────────────────────────────── */
+  .gi-load-more {
+    height: 44px;
+    padding: 0 24px;
+    background: transparent;
+    border: 1px solid #DADAD4;
+    border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    color: #222222;
+    cursor: pointer;
+    transition: border-color 160ms ease-out, background 160ms ease-out;
+  }
+  .gi-load-more:hover {
+    border-color: #222222;
+    background: #F8F8F4;
+  }
 }
 
 /* ── Guide Article — ga-* system ──────────────────────────────────────────── */

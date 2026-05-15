@@ -2,6 +2,57 @@
 
 ---
 
+## 2026-05-15 — Sprint Guides v2 : filtres, tri, logos, section Commencer ici
+
+**Fichiers modifiés**
+- `src/pages/GuidesPage.tsx`
+- `src/index.css`
+- `docs/DESIGN_SYSTEM.md`
+
+### GuidesPage — nouvelles fonctionnalités
+
+**Barre de filtres éditoriaux** (`gi-filter-bar`, `gi-filter-pill`)
+7 filtres : Tous · Comparer · Remplacer · Réduire les coûts · Construire une stack · IA · Freelance.
+Pills `height: 34px`, `border-radius: 999px`, fond transparent, filtre actif `background: #222222`. Zéro bleu.
+Filtre détecté via keywords dans `title + excerpt + tags + category` (fonction `matchesFilter`).
+
+**Tri discret** (`gi-sort-wrapper`, `gi-sort-select`)
+3 options : Récents (date desc) · Sélection ToolTrim (ordre data source) · Lecture courte (readTime asc).
+Label uppercase `TRIER PAR`, `<select>` sobre, height 34px, flèche custom SVG inline.
+
+**Logos outils cités — pastilles rondes** (`tool-logo-stack`, `tool-logo-pill`)
+Utilise `useArticleTools` (hook existant) pour matcher les outils mentionnés dans chaque guide.
+Pastilles 32px, chevauchement `margin-left: -6px`, hover `translateY(-1px)`.
+Overflow → pastille `+N` (`tool-logo-more`, fond #F8F8F4).
+Label `OUTILS CITÉS` 11px uppercase #9A9A92 au-dessus.
+Maximum 5 logos par row.
+
+**Rows guides améliorées** — colonne gauche 150px (était 140px), padding 32px (était 28px)
+Left meta : type (GUIDE / COMPARATIF / ALTERNATIVE / STACK) + intent (COMPARER / REMPLACER / RÉDUIRE LES COÛTS / STACK) + read time.
+Fonctions `getPostType()` + `getPostIntent()` dérivées des tags/category/slug.
+
+**Section "Commencer ici"** (`gi-start-here-grid`, `gi-start-here-item`)
+3 colonnes, placée après le featured block.
+Chaque item clique sur un filtre et scroll vers #guides.
+Angles : Choisir un outil (comparer) · Remplacer (remplacer) · Stack (stack).
+Pas de card lourde : `border-top` uniquement, fond transparent.
+
+**Load more** (`gi-load-more`)
+Affiche 12 guides max (1 featured + 11 rows). Bouton secondaire sobre.
+Reset automatique de la pagination sur changement de filtre ou de tri.
+
+**Hero right module** — synchro avec `activeFilter`.
+Les items (Comparatifs, Alternatives, IA, Stacks, Freelance) utilisent désormais les mêmes IDs que la barre de filtres.
+
+### Responsive
+
+- Filtres : scroll horizontal `overflow-x: auto`, `flex-wrap: nowrap`, `≤700px`
+- Tri : sous les filtres sur mobile
+- "Commencer ici" : 1 colonne `≤768px`
+- Rows : 1 colonne `≤700px`
+
+---
+
 ## 2026-05-15 — Sprint Grid : Système de grille global
 
 **Fichiers modifiés**

@@ -64,6 +64,21 @@
 
 ---
 
+## Sprint Guides v2 — Filtres, logos, section Commencer ici ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| Barre de filtres éditoriaux | ✅ Fait | 7 filtres, pills noirs, zéro bleu |
+| Tri discret | ✅ Fait | Récents / Sélection / Lecture courte |
+| Logos outils cités (pastilles) | ✅ Fait | `tool-logo-stack`, max 5, +N overflow |
+| Rows guides améliorées | ✅ Fait | type + intent + logos dans chaque row |
+| Section "Commencer ici" | ✅ Fait | 3 angles, `gi-start-here-grid` |
+| Load more (12 par défaut) | ✅ Fait | `gi-load-more`, reset sur filtre/tri |
+| Hero right module synchro | ✅ Fait | Partage le même `activeFilter` |
+| Responsive filtres scroll horizontal | ✅ Fait | `≤700px` |
+
+---
+
 ## Sprint Grid — Système de grille global ✅
 
 | Item | Statut | Notes |
