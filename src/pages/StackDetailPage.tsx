@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, Lightbulb, X } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, ExternalLink, Lightbulb, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { Sheet, SheetContent, SheetClose } from "@/components/ui/sheet";
 import { useLang } from "@/hooks/useLang";
@@ -50,6 +50,287 @@ const STACK_LAYERS = [
     match: ["analytics", "mesure", "support", "ux", "reporting", "tracking", "recherche"],
   },
 ];
+
+/* Per-persona layer overrides */
+const PERSONA_LAYERS: Partial<Record<StackPersona, typeof STACK_LAYERS>> = {
+  content: [
+    { id: "ai",      titleFr: "Copilote éditorial IA",     titleEn: "AI editorial copilot",       match: ["rédaction", "idées", "writing", "ideas", "ia"] },
+    { id: "ideas",   titleFr: "Idées & organisation",       titleEn: "Ideas & organisation",        match: ["organisation", "formulaire", "stockage"] },
+    { id: "visual",  titleFr: "Création visuelle",          titleEn: "Visual creation",             match: ["visuels", "design", "visuals", "visuel"] },
+    { id: "video",   titleFr: "Vidéo & audio",              titleEn: "Video & audio",               match: ["montage", "vidéo", "audio", "parlé"] },
+    { id: "publish", titleFr: "Publication & planification", titleEn: "Publishing & scheduling",   match: ["newsletter", "publication", "social", "scheduling"] },
+    { id: "storage", titleFr: "Stockage & assets",          titleEn: "Storage & assets",            match: ["stockage", "storage", "assets", "fichiers"] },
+  ],
+};
+
+/* ─── Editorial content types ────────────────────────────────────────────── */
+interface StackBudgetRow {
+  tier: string; tierEn: string;
+  amount: string;
+  desc: string; descEn: string;
+}
+interface StackRiskEnhanced {
+  problem: string; problemEn: string;
+  consequence: string; consequenceEn: string;
+  reco: string; recoEn: string;
+}
+interface StackAltVariant {
+  label: string; labelEn: string;
+  title: string; titleEn: string;
+  budget: string;
+  toolsDesc: string; toolsDescEn: string;
+  compromise: string; compromiseEn: string;
+}
+interface StackFaqItem {
+  q: string; qEn: string;
+  a: string; aEn: string;
+}
+interface StackPriority {
+  essential: string[]; essentialEn: string[];
+  optional: string[]; optionalEn: string[];
+  challenge: string[]; challengeEn: string[];
+}
+interface StackEditorialContent {
+  verdictShort: string; verdictShortEn: string;
+  overviewIntro: string; overviewIntroEn: string;
+  overviewServesLabel: string; overviewServesLabelEn: string;
+  overviewServes: string; overviewServesEn: string;
+  overviewAvoidsLabel: string; overviewAvoidsLabelEn: string;
+  overviewAvoids: string; overviewAvoidsEn: string;
+  overviewNotForLabel: string; overviewNotForLabelEn: string;
+  overviewNotFor: string; overviewNotForEn: string;
+  priority: StackPriority;
+  budgetTitle: string; budgetTitleEn: string;
+  budgetRows: StackBudgetRow[];
+  risksTitle: string; risksTitleEn: string;
+  risks: StackRiskEnhanced[];
+  altsTitle: string; altsTitleEn: string;
+  altVariants: StackAltVariant[];
+  ctaTitle: string; ctaTitleEn: string;
+  ctaDesc: string; ctaDescEn: string;
+  faq: StackFaqItem[];
+}
+
+/* ─── Editorial content — Créateur de contenu ───────────────────────────── */
+const CREATEUR_CONTENU: StackEditorialContent = {
+  verdictShort:    "Une stack pensée pour produire régulièrement sans multiplier les outils d'IA, de design et de publication.",
+  verdictShortEn:  "A stack designed for regular publishing without stacking AI, design, and scheduling tools.",
+
+  overviewIntro:   "Cette stack vise les créateurs de contenu qui doivent capter des idées, produire des formats réguliers, recycler leurs contenus et garder une cohérence éditoriale sans empiler trop d'abonnements.",
+  overviewIntroEn: "This stack is for content creators who need to capture ideas, produce regular formats, repurpose content, and maintain editorial consistency without stacking too many subscriptions.",
+
+  overviewServesLabel:    "Elle sert à",
+  overviewServesLabelEn:  "It's for",
+  overviewServes:    "Organiser les idées, produire plus vite et recycler les contenus existants.",
+  overviewServesEn:  "Organizing ideas, producing faster, and repurposing existing content.",
+
+  overviewAvoidsLabel:    "Elle évite",
+  overviewAvoidsLabelEn:  "It avoids",
+  overviewAvoids:    "La dispersion entre trop d'outils d'IA, de design, de notes et de publication.",
+  overviewAvoidsEn:  "Scattering across too many AI, design, notes, and publishing tools.",
+
+  overviewNotForLabel:    "Elle n'est pas faite pour",
+  overviewNotForLabelEn:  "It's not for",
+  overviewNotFor:    "Une équipe média complexe, une production vidéo lourde ou un workflow social media très avancé.",
+  overviewNotForEn:  "A complex media team, heavy video production, or a very advanced social media workflow.",
+
+  priority: {
+    essential:   ["Base d'organisation centrale", "Copilote IA principal configuré", "Outil de création visuelle"],
+    essentialEn: ["Central organization base",    "Configured main AI copilot",      "Visual creation tool"],
+    optional:    ["Outil de programmation sociale", "Outil vidéo avancé", "Outil analytics dédié"],
+    optionalEn:  ["Social scheduling tool",         "Advanced video tool",  "Dedicated analytics tool"],
+    challenge:    ["Plusieurs IA généralistes en parallèle", "Plusieurs outils de design", "Outil de publication payant trop tôt"],
+    challengeEn:  ["Multiple generalist AIs in parallel",    "Multiple design tools",       "Paid publishing tool too early"],
+  },
+
+  budgetTitle:   "Budget cible : 48€/mois.",
+  budgetTitleEn: "Target budget: €48/month.",
+  budgetRows: [
+    {
+      tier: "Budget minimal", tierEn: "Minimal budget", amount: "0–15€/mois",
+      desc:   "Pour tester la stack avec les plans gratuits et un seul outil payant central.",
+      descEn: "To test the stack with free plans and a single paid core tool.",
+    },
+    {
+      tier: "Budget recommandé", tierEn: "Recommended budget", amount: "≈ 48€/mois",
+      desc:   "Autour de 48€/mois si les outils principaux sont réellement utilisés chaque semaine.",
+      descEn: "Around €48/month when the main tools are genuinely used every week.",
+    },
+    {
+      tier: "Budget à surveiller", tierEn: "Budget to watch", amount: "> 80–100€/mois",
+      desc:   "Au-delà de 80–100€/mois, vérifier les doublons IA, design, vidéo ou publication.",
+      descEn: "Above €80–100/month, check for AI, design, video, or publishing duplicates.",
+    },
+  ],
+
+  risksTitle:   "Les doublons à éviter.",
+  risksTitleEn: "Duplicates to avoid.",
+  risks: [
+    {
+      problem: "Deux copilotes IA généralistes", problemEn: "Two generalist AI copilots",
+      consequence:   "Tu paies deux abonnements pour produire les mêmes briefs, posts ou scripts.",
+      consequenceEn: "You pay for two subscriptions to produce the same briefs, posts, or scripts.",
+      reco:   "Garde un seul copilote principal, puis complète avec des outils spécialisés uniquement si le besoin est réel.",
+      recoEn: "Keep one main copilot, then add specialized tools only when the need is real.",
+    },
+    {
+      problem: "Deux outils de design ou templates", problemEn: "Two design or template tools",
+      consequence:   "Canva et Adobe Express font souvent exactement le même travail.",
+      consequenceEn: "Canva and Adobe Express often do exactly the same job.",
+      reco:   "Choisis l'un ou l'autre selon ton usage dominant. Pas les deux.",
+      recoEn: "Choose one based on your main use case. Not both.",
+    },
+    {
+      problem: "Trop d'outils de programmation sociale", problemEn: "Too many social scheduling tools",
+      consequence:   "Buffer, Metricool, Later — un seul suffit si tu publies sur 2–3 canaux.",
+      consequenceEn: "Buffer, Metricool, Later — one is enough if you publish on 2–3 channels.",
+      reco:   "Ne prends un outil payant de scheduling qu'à partir de 3 canaux réguliers.",
+      recoEn: "Only pay for a scheduling tool when you have 3 or more regular channels.",
+    },
+    {
+      problem: "Outils vidéo payants sous-utilisés", problemEn: "Underused paid video tools",
+      consequence:   "Descript ou CapCut Pro coûtent cher si la vidéo n'est pas un canal prioritaire.",
+      consequenceEn: "Descript or CapCut Pro are expensive if video isn't a priority channel.",
+      reco:   "Active un outil vidéo payant seulement si tu publies au moins 4 vidéos par mois.",
+      recoEn: "Activate a paid video tool only if you publish at least 4 videos per month.",
+    },
+    {
+      problem: "Analytics payé trop tôt", problemEn: "Analytics paid too early",
+      consequence:   "Metricool Pro, Shield ou Iconosquare se justifient avec un volume de publication régulier.",
+      consequenceEn: "Metricool Pro, Shield, or Iconosquare are only justified with consistent publishing volume.",
+      reco:   "Commence avec les analytics natifs des plateformes. Upgrade quand tu publies plus de 12 posts/mois.",
+      recoEn: "Start with native platform analytics. Upgrade when publishing more than 12 posts/month.",
+    },
+  ],
+
+  altsTitle:   "Si tu veux une stack plus légère.",
+  altsTitleEn: "If you want a lighter stack.",
+  altVariants: [
+    {
+      label: "Version minimale", labelEn: "Minimal version",
+      title: "Tester la routine", titleEn: "Testing the routine",
+      budget: "0–15€/mois",
+      toolsDesc:   "Notion gratuit + ChatGPT gratuit + Canva gratuit. Zéro abonnement.",
+      toolsDescEn: "Free Notion + free ChatGPT + free Canva. Zero subscription.",
+      compromise:   "Moins de flexibilité sur les formats, pas de scheduling multi-canal.",
+      compromiseEn: "Less format flexibility, no multi-channel scheduling.",
+    },
+    {
+      label: "Version recommandée", labelEn: "Recommended version",
+      title: "Publier régulièrement", titleEn: "Publishing regularly",
+      budget: "≈ 48€/mois",
+      toolsDesc:   "Notion + ChatGPT (ou Claude) + Canva Pro + Buffer + Beehiiv.",
+      toolsDescEn: "Notion + ChatGPT (or Claude) + Canva Pro + Buffer + Beehiiv.",
+      compromise:   "Bon équilibre coût / efficacité pour 3 canaux et une newsletter.",
+      compromiseEn: "Good cost/efficiency balance for 3 channels and a newsletter.",
+    },
+    {
+      label: "Version intensive", labelEn: "Intensive version",
+      title: "Production multi-format", titleEn: "Multi-format production",
+      budget: "80–120€/mois",
+      toolsDesc:   "Stack recommandée + Descript + outil analytics dédié (Metricool, Shield).",
+      toolsDescEn: "Recommended stack + Descript + dedicated analytics tool (Metricool, Shield).",
+      compromise:   "À justifier uniquement si la vidéo, le podcast ou l'audio sont des canaux mesurables et prioritaires.",
+      compromiseEn: "Justified only if video, podcast, or audio are measurable, priority channels.",
+    },
+  ],
+
+  ctaTitle:   "Cette stack ressemble à la tienne ?",
+  ctaTitleEn: "Does this stack look like yours?",
+  ctaDesc:   "Analyse tes outils actuels et repère ceux qui méritent vraiment leur place, ceux qui se doublonnent et ceux que tu peux challenger.",
+  ctaDescEn: "Analyze your current tools and identify which ones earn their place, which ones overlap, and which ones you can challenge.",
+
+  faq: [
+    {
+      q:  "Cette stack est-elle adaptée à un créateur débutant ?",
+      qEn: "Is this stack right for a beginner creator?",
+      a:   "Oui, à condition de commencer par Notion + un seul outil IA. Inutile de prendre Beehiiv avant d'avoir 200 abonnés actifs, ni Buffer avant de publier sur 3 canaux simultanément. La stack se construit par étapes.",
+      aEn: "Yes, provided you start with Notion + one AI tool. No need for Beehiiv before 200 active subscribers, or Buffer before publishing on 3 channels simultaneously. The stack builds in steps.",
+    },
+    {
+      q:  "Peut-on réduire le budget sous 48€/mois ?",
+      qEn: "Can you bring the budget under €48/month?",
+      a:   "Oui. Notion gratuit + ChatGPT gratuit + Canva gratuit couvre les bases sans abonnement. Le budget monte quand Canva Pro, un outil IA payant et Buffer s'ajoutent. Commence gratuit, upgrade à l'usage.",
+      aEn: "Yes. Free Notion + free ChatGPT + free Canva covers the basics without subscriptions. Budget increases when Canva Pro, a paid AI tool, and Buffer are added. Start free, upgrade as usage grows.",
+    },
+    {
+      q:  "Faut-il vraiment plusieurs outils IA ?",
+      qEn: "Do you really need multiple AI tools?",
+      a:   "Non. Un seul copilote IA bien configuré — ton ton éditorial, ta cible, 3 exemples de tes meilleurs textes — produit mieux que 3 IA non configurées. Commence par un seul, configure-le, ensuite seulement ajoute un outil spécialisé si tu as un besoin précis.",
+      aEn: "No. One well-configured AI copilot — your editorial tone, audience, 3 examples of your best writing — produces better than 3 unconfigured AIs. Start with one, configure it, then add a specialized tool only for a specific need.",
+    },
+    {
+      q:  "Quel outil doit servir de base centrale ?",
+      qEn: "Which tool should be the central base?",
+      a:   "Notion. C'est là que vont le backlog d'idées, le calendrier éditorial, les briefs, les brouillons non publiés et les templates de recyclage. L'IA transforme, Notion stocke et structure.",
+      aEn: "Notion. That's where the idea backlog, editorial calendar, briefs, unpublished drafts, and repurposing templates live. AI transforms content; Notion stores and structures it.",
+    },
+    {
+      q:  "Quand ajouter un outil de publication sociale ?",
+      qEn: "When should you add a social publishing tool?",
+      a:   "Dès que tu publies sur plus de 2 canaux simultanément ou que tu veux préparer une semaine de contenu en une seule session. Buffer en plan gratuit (3 canaux, 10 posts en attente) couvre la plupart des créateurs au démarrage.",
+      aEn: "When you publish on more than 2 channels simultaneously, or want to prepare a week of content in one session. Buffer's free plan (3 channels, 10 posts queued) covers most creators starting out.",
+    },
+  ],
+};
+
+/* ─── Editorial content registry ────────────────────────────────────────── */
+const EDITORIAL_REGISTRY: Record<string, StackEditorialContent> = {
+  "createur-contenu-operateur": CREATEUR_CONTENU,
+};
+
+function buildFallbackEditorial(stack: StackGuide): StackEditorialContent {
+  const coreTools  = stack.tools.filter((t) => !t.decision || t.decision === "core");
+  const condTools  = stack.tools.filter((t) => t.decision === "conditional");
+  const chalTools  = stack.tools.filter((t) => t.decision === "challenge");
+  return {
+    verdictShort:    stack.bestFor,
+    verdictShortEn:  stack.bestForEn,
+    overviewIntro:   stack.editorial,
+    overviewIntroEn: stack.editorialEn,
+    overviewServesLabel:    "Elle sert à",    overviewServesLabelEn:  "It's for",
+    overviewServes:    stack.bestFor,         overviewServesEn:  stack.bestForEn,
+    overviewAvoidsLabel:    "Elle évite",     overviewAvoidsLabelEn:  "It avoids",
+    overviewAvoids:    stack.risk,            overviewAvoidsEn:  stack.riskEn,
+    overviewNotForLabel:    "Elle n'est pas faite pour", overviewNotForLabelEn:  "It's not for",
+    overviewNotFor:    stack.avoidIf,         overviewNotForEn:  stack.avoidIfEn,
+    priority: {
+      essential:   coreTools.slice(0, 3).map((t) => t.role),
+      essentialEn: coreTools.slice(0, 3).map((t) => t.roleEn),
+      optional:    condTools.map((t) => t.role),
+      optionalEn:  condTools.map((t) => t.roleEn),
+      challenge:    chalTools.map((t) => t.role),
+      challengeEn:  chalTools.map((t) => t.roleEn),
+    },
+    budgetTitle:   `Budget cible : ${stack.monthlyBudget}€/mois.`,
+    budgetTitleEn: `Target budget: €${stack.monthlyBudget}/month.`,
+    budgetRows: [
+      { tier: "Budget minimal",   tierEn: "Minimal budget",      amount: "Gratuit",
+        desc: "Plans gratuits des outils inclus dans la stack.", descEn: "Free plans of tools in the stack." },
+      { tier: "Budget recommandé", tierEn: "Recommended budget", amount: `≈ ${stack.monthlyBudget}€/mois`,
+        desc: "Quand les outils principaux sont utilisés régulièrement.", descEn: "When main tools are used regularly." },
+      { tier: "Budget à surveiller", tierEn: "Budget to watch",  amount: `> ${Math.round(stack.monthlyBudget * 1.8)}€/mois`,
+        desc: "Vérifier les doublons et les outils sous-utilisés.", descEn: "Check for duplicates and underused tools." },
+    ],
+    risksTitle:   "Les pièges à éviter.",
+    risksTitleEn: "Traps to avoid.",
+    risks: (stack.traps ?? []).map((trap) => ({
+      problem: trap.title, problemEn: trap.titleEn,
+      consequence: trap.detail, consequenceEn: trap.detailEn,
+      reco: "Réévaluer l'usage de cet outil chaque mois.", recoEn: "Reassess this tool's usage each month.",
+    })),
+    altsTitle:   "Stacks proches.",
+    altsTitleEn: "Related stacks.",
+    altVariants: [],
+    ctaTitle:   "Cette stack ressemble à la tienne ?",
+    ctaTitleEn: "Does this stack look like yours?",
+    ctaDesc:   "Analyse tes outils actuels et repère ceux qui méritent vraiment leur place.",
+    ctaDescEn: "Analyze your current tools and identify which ones earn their place.",
+    faq: (stack.checkpoints ?? []).map((cp) => ({
+      q: cp.q, qEn: cp.qEn, a: cp.hint, aEn: cp.hintEn,
+    })),
+  };
+}
 
 /* ─── Expert tips ────────────────────────────────────────────────────────── */
 const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
@@ -151,12 +432,12 @@ const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
 };
 
 const EXPERT_TIPS_BY_PERSONA: Record<StackPersona, StackInsight[]> = {
-  dev: EXPERT_TIPS_BY_STACK["developpeur-freelance-shipper"],
-  designer: EXPERT_TIPS_BY_STACK["designer-freelance-solo"],
-  consultant: EXPERT_TIPS_BY_STACK["consultant-b2b-propre"],
-  content: EXPERT_TIPS_BY_STACK["createur-contenu-operateur"],
-  ops: EXPERT_TIPS_BY_STACK["ops-manager-fractional-coo"],
-  solo: EXPERT_TIPS_BY_STACK["freelance-solo-zero-bloat"],
+  dev:       EXPERT_TIPS_BY_STACK["developpeur-freelance-shipper"],
+  designer:  EXPERT_TIPS_BY_STACK["designer-freelance-solo"],
+  consultant:EXPERT_TIPS_BY_STACK["consultant-b2b-propre"],
+  content:   EXPERT_TIPS_BY_STACK["createur-contenu-operateur"],
+  ops:       EXPERT_TIPS_BY_STACK["ops-manager-fractional-coo"],
+  solo:      EXPERT_TIPS_BY_STACK["freelance-solo-zero-bloat"],
 };
 
 /* ─── Main component ─────────────────────────────────────────────────────── */
@@ -177,6 +458,7 @@ const StackDetailPage = () => {
   }, [stack]);
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (!stack) return;
@@ -201,239 +483,223 @@ const StackDetailPage = () => {
 
   if (!stack) return <Navigate to={`${prefix}/stacks`} replace />;
 
+  /* ── Derived data ───────────────────────────────────────────────────────── */
+  const editorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
+  const expertTips = getExpertTips(stack);
+  const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
+  const stageText   = t(stageLabel(stack.stage, "fr"),   stageLabel(stack.stage, "en"));
+  const budgetDisplay = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
+
   const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
 
-  const stackLayersBase = STACK_LAYERS.map((layer) => ({
+  // Persona-specific or default layers
+  const activeLayers = PERSONA_LAYERS[stack.persona] ?? STACK_LAYERS;
+  const stackLayersBase = activeLayers.map((layer) => ({
     ...layer,
     tools: stackTools.filter(({ slot }) => {
       const role = `${slot.role} ${slot.roleEn}`.toLowerCase();
-      return layer.match.some((keyword) => role.includes(keyword));
+      return layer.match.some((kw) => role.includes(kw));
     }),
   })).filter((layer) => layer.tools.length > 0);
 
-  const assignedSlugs = new Set(stackLayersBase.flatMap((layer) => layer.tools.map(({ slot }) => slot.slug)));
+  const assignedSlugs = new Set(stackLayersBase.flatMap((l) => l.tools.map(({ slot }) => slot.slug)));
   const unassignedTools = stackTools.filter(({ slot }) => !assignedSlugs.has(slot.slug));
   const stackLayers = unassignedTools.length > 0
     ? [...stackLayersBase, { id: "other", titleFr: "Autres outils utiles", titleEn: "Other useful tools", match: [], tools: unassignedTools }]
     : stackLayersBase;
 
-  const expertTips = getExpertTips(stack);
-  const hasTraps = (stack.traps?.length ?? 0) > 0;
-  const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
-  const stageText = t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"));
-  const budgetDisplay = stack.monthlyBudget > 0 ? `≈ ${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
+  // Logo pills (max 5) from tools that have a toolBySlug entry
+  const logoPills = stackTools.slice(0, 5);
+  const logoOverflow = stackTools.length > 5 ? stackTools.length - 5 : 0;
 
+  const hasRisks = editorial.risks.length > 0;
+  const hasAltVariants = editorial.altVariants.length > 0;
+
+  /* ── Render ─────────────────────────────────────────────────────────────── */
   return (
     <div className="min-h-screen bg-background">
 
-      {/* ── Hero ────────────────────────────────────────────────────────────── */}
-      <section style={{ borderBottom: "1px solid #DADAD4", background: "#F8F8F4" }}>
-        <div className="sd-container" style={{ padding: "56px var(--layout-gutter, 48px) 52px" }}>
-          {/* Back link */}
-          <Link
-            to={`${prefix}/stacks`}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 6,
-              fontFamily: "var(--font-ui)",
-              fontSize: 13,
-              fontWeight: 500,
-              color: "#6F6F68",
-              textDecoration: "none",
-              marginBottom: 28,
-              transition: "color 140ms",
-            }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#222222"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#6F6F68"; }}
-          >
-            <ArrowLeft size={14} />
-            {t("Toutes les stacks", "All stacks")}
-          </Link>
+      {/* ════════════════════════════════════════════════════════════════════
+          HERO — 2 colonnes : texte gauche + snapshot droite
+      ════════════════════════════════════════════════════════════════════ */}
+      <section className="sd-hero-section">
+        <div className="sd-hero-grid">
 
-          {/* Tags */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
-            <span style={{
-              fontFamily: "var(--font-ui)",
-              fontSize: 11,
-              fontWeight: 600,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              color: "#6F6F68",
-              padding: "4px 10px",
-              border: "1px solid #DADAD4",
-              borderRadius: 4,
-            }}>
-              {personaText}
-            </span>
-            <span style={{
-              fontFamily: "var(--font-ui)",
-              fontSize: 11,
-              fontWeight: 600,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              color: "#6F6F68",
-              padding: "4px 10px",
-              border: "1px solid #DADAD4",
-              borderRadius: 4,
-            }}>
-              {stageText}
-            </span>
+          {/* ── Left: éditorial ── */}
+          <div>
+            {/* Breadcrumb */}
+            <nav className="sd-hero-breadcrumb" aria-label="breadcrumb">
+              <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
+              <span style={{ color: "#DADAD4" }}>/</span>
+              <span style={{ color: "#222222" }}>{t(stack.title, stack.titleEn)}</span>
+            </nav>
+
+            {/* Eyebrow */}
+            <span className="sd-hero-eyebrow">STACK</span>
+
+            {/* H1 */}
+            <h1 className="sd-hero-h1">
+              {t(stack.title, stack.titleEn)}.
+            </h1>
+
+            {/* Description */}
+            <p className="sd-hero-desc">
+              {t(stack.subtitle, stack.subtitleEn)}
+            </p>
+
+            {/* Verdict court */}
+            <p className="sd-hero-verdict">
+              {t(editorial.verdictShort, editorial.verdictShortEn)}
+            </p>
+
+            {/* CTA */}
+            <Link
+              to={`${prefix}/selector`}
+              style={{
+                display: "inline-flex", alignItems: "center",
+                height: 48, padding: "0 22px",
+                background: "#222222", color: "#FFFFFF",
+                borderRadius: 8, fontFamily: "var(--font-ui)",
+                fontSize: 15, fontWeight: 500, letterSpacing: "-0.01em",
+                textDecoration: "none", transition: "background 160ms ease-out",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
+            >
+              {t("Analyser ma stack", "Analyze my stack")}
+            </Link>
           </div>
 
-          {/* H1 */}
-          <h1 style={{
-            fontFamily: "var(--font-brand)",
-            fontSize: "clamp(3.5rem, 7vw, 7rem)",
-            fontWeight: 600,
-            letterSpacing: "-0.06em",
-            lineHeight: 0.94,
-            color: "#222222",
-            margin: "0 0 28px",
-            maxWidth: 900,
-          }}>
-            {t(stack.title, stack.titleEn)}
-          </h1>
+          {/* ── Right: snapshot module ── */}
+          <div className="sd-snapshot">
+            <span className="sd-snapshot-title">{t("EN UN COUP D'ŒIL", "AT A GLANCE")}</span>
 
-          {/* Editorial description */}
-          <p style={{
-            fontFamily: "var(--font-ui)",
-            fontSize: 18,
-            fontWeight: 400,
-            letterSpacing: "-0.02em",
-            lineHeight: 1.55,
-            color: "#6F6F68",
-            maxWidth: 680,
-            margin: "0 0 36px",
-          }}>
-            {t(stack.editorial, stack.editorialEn)}
-          </p>
+            <div className="sd-snapshot-item">
+              <span className="sd-snapshot-label">{t("Budget cible", "Target budget")}</span>
+              <span className="sd-snapshot-value">{budgetDisplay}</span>
+            </div>
+            <div className="sd-snapshot-item">
+              <span className="sd-snapshot-label">{t("Profil", "Profile")}</span>
+              <span className="sd-snapshot-value">{personaText}</span>
+            </div>
+            <div className="sd-snapshot-item">
+              <span className="sd-snapshot-label">{t("Outils", "Tools")}</span>
+              <span className="sd-snapshot-value">{stack.tools.length}</span>
+            </div>
+            <div className="sd-snapshot-item">
+              <span className="sd-snapshot-label">{t("Niveau", "Level")}</span>
+              <span className="sd-snapshot-value">{stageText}</span>
+            </div>
+            <div className="sd-snapshot-item" style={{ alignItems: "flex-start" }}>
+              <span className="sd-snapshot-label" style={{ marginTop: 2 }}>{t("Risque", "Risk")}</span>
+              <span className="sd-snapshot-value" style={{ fontSize: 12, maxWidth: 180, lineHeight: 1.4 }}>
+                {t(stack.riskSnippet ?? stack.risk, stack.riskSnippetEn ?? stack.riskEn)}
+              </span>
+            </div>
 
-          {/* CTA black button */}
-          <Link
-            to={`${prefix}/selector`}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              height: 48,
-              padding: "0 22px",
-              background: "#222222",
-              color: "#FFFFFF",
-              borderRadius: 8,
-              fontFamily: "var(--font-ui)",
-              fontSize: 15,
-              fontWeight: 500,
-              letterSpacing: "-0.01em",
-              textDecoration: "none",
-              transition: "background 160ms ease-out",
-            }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
-          >
-            {t("Analyser ma stack", "Analyze my stack")}
-          </Link>
+            {/* Logo pills */}
+            {logoPills.length > 0 && (
+              <>
+                <hr className="sd-snapshot-divider" />
+                <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9A9A92", marginBottom: 10 }}>
+                  {t("OUTILS CLÉS", "KEY TOOLS")}
+                </p>
+                <div className="sd-logo-stack">
+                  {logoPills.map(({ tool }) => (
+                    <div key={tool!.slug} className="sd-logo-pill">
+                      <ToolLogo tool={tool!} size={18} />
+                    </div>
+                  ))}
+                  {logoOverflow > 0 && (
+                    <div className="sd-logo-pill sd-logo-more">+{logoOverflow}</div>
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+
         </div>
       </section>
 
-      {/* ── Sticky nav ──────────────────────────────────────────────────────── */}
-      <nav className="sd-nav">
+      {/* ════════════════════════════════════════════════════════════════════
+          SUBNAV
+      ════════════════════════════════════════════════════════════════════ */}
+      <nav className="sd-nav" aria-label="Navigation de section">
         <div className="sd-nav-inner">
-          <a className="sd-nav-link" href="#apercu">{t("Verdict", "Verdict")}</a>
+          <a className="sd-nav-link" href="#apercu">{t("Vue d'ensemble", "Overview")}</a>
           <a className="sd-nav-link" href="#outils">{t("Outils", "Tools")}</a>
-          <a className="sd-nav-link" href="#avis">{t("Avis", "Reviews")}</a>
-          {hasTraps && <a className="sd-nav-link" href="#pieges">{t("Pièges", "Traps")}</a>}
-          {relatedStacks.length > 0 && <a className="sd-nav-link" href="#stacks-proches">{t("Stacks proches", "Related")}</a>}
+          <a className="sd-nav-link" href="#budget">{t("Budget", "Budget")}</a>
+          {hasRisks && <a className="sd-nav-link" href="#risques">{t("Risques", "Risks")}</a>}
+          {hasAltVariants && <a className="sd-nav-link" href="#alternatives">{t("Alternatives", "Alternatives")}</a>}
+          <a className="sd-nav-link" href="#faq">FAQ</a>
         </div>
       </nav>
 
-      {/* ── Summary metrics ─────────────────────────────────────────────────── */}
-      <div className="sd-summary">
-        <div className="sd-summary-inner">
-          <div className="sd-metric">
-            <p className="sd-metric-label">{t("Budget cible", "Target budget")}</p>
-            <p className="sd-metric-value">{budgetDisplay}</p>
-            <p className="sd-metric-hint">{t("estimation mensuelle", "monthly estimate")}</p>
-          </div>
-          <div className="sd-metric">
-            <p className="sd-metric-label">{t("Outils", "Tools")}</p>
-            <p className="sd-metric-value">{stack.tools.length}</p>
-            <p className="sd-metric-hint">{t("dans cette stack", "in this stack")}</p>
-          </div>
-          <div className="sd-metric">
-            <p className="sd-metric-label">{t("Niveau", "Level")}</p>
-            <p className="sd-metric-value" style={{ fontSize: "clamp(1rem, 2vw, 1.375rem)" }}>{stageText}</p>
-            <p className="sd-metric-hint">{personaText}</p>
-          </div>
-          <div className="sd-metric">
-            <p className="sd-metric-label">{t("Risque principal", "Main risk")}</p>
-            <p style={{
-              fontFamily: "var(--font-ui)",
-              fontSize: 13,
-              lineHeight: 1.45,
-              color: "#6F6F68",
-              marginTop: 6,
-              display: "-webkit-box",
-              WebkitLineClamp: 3,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}>
-              {t(stack.risk, stack.riskEn)}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Verdict ─────────────────────────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════════════════════════════
+          VUE D'ENSEMBLE
+      ════════════════════════════════════════════════════════════════════ */}
       <section id="apercu" className="sd-section scroll-mt-20">
         <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
-          <p className="sd-section-title" style={{ marginBottom: 24 }}>
-            {t("Pour qui, pourquoi, à éviter si", "Who it's for, why, when to skip")}
+          <span className="sd-section-eyebrow">{t("VUE D'ENSEMBLE", "OVERVIEW")}</span>
+          <p className="sd-section-title" style={{ marginBottom: 0 }}>
+            {lang === "fr" ? getOverviewTitle(stack) : getOverviewTitleEn(stack)}
           </p>
-          <div className="sd-decision-grid">
-            <div className="sd-decision-col">
-              <p className="sd-decision-label">{t("À copier si", "Copy it if")}</p>
-              <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "#222222" }}>
-                {t(stack.bestFor, stack.bestForEn)}
-              </p>
+
+          <p className="sd-overview-intro">
+            {t(editorial.overviewIntro, editorial.overviewIntroEn)}
+          </p>
+
+          {/* 3-col: sert à / évite / pas faite pour */}
+          <div className="sd-overview-grid">
+            <div className="sd-overview-col">
+              <span className="sd-overview-label">{t(editorial.overviewServesLabel, editorial.overviewServesLabelEn)}</span>
+              <p className="sd-overview-text">{t(editorial.overviewServes, editorial.overviewServesEn)}</p>
             </div>
-            <div className="sd-decision-col">
-              <p className="sd-decision-label">{t("Risque principal", "Main risk")}</p>
-              <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "#222222" }}>
-                {t(stack.risk, stack.riskEn)}
-              </p>
+            <div className="sd-overview-col">
+              <span className="sd-overview-label">{t(editorial.overviewAvoidsLabel, editorial.overviewAvoidsLabelEn)}</span>
+              <p className="sd-overview-text">{t(editorial.overviewAvoids, editorial.overviewAvoidsEn)}</p>
             </div>
-            <div className="sd-decision-col">
-              <p className="sd-decision-label">{t("À éviter si", "Skip it if")}</p>
-              <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "#222222" }}>
-                {t(stack.avoidIf, stack.avoidIfEn)}
-              </p>
+            <div className="sd-overview-col">
+              <span className="sd-overview-label">{t(editorial.overviewNotForLabel, editorial.overviewNotForLabelEn)}</span>
+              <p className="sd-overview-text">{t(editorial.overviewNotFor, editorial.overviewNotForEn)}</p>
             </div>
           </div>
+
+          {/* Expert note */}
+          {expertTips.length > 0 && (
+            <div className="sd-expert-note">
+              <span className="sd-expert-note-label">{t("Note ToolTrim", "ToolTrim note")}</span>
+              <p className="sd-expert-note-text">{t(expertTips[0].detail, expertTips[0].detailEn)}</p>
+              {expertTips.slice(1).map((tip) => (
+                <div key={tip.title} className="sd-expert-note-tip">
+                  <span className="sd-expert-note-tip-label">{t(tip.title, tip.titleEn)} — </span>
+                  {t(tip.detail, tip.detailEn)}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {/* ── Outils ──────────────────────────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════════════════════════════
+          OUTILS — par groupe d'usage
+      ════════════════════════════════════════════════════════════════════ */}
       <section id="outils" className="sd-section scroll-mt-20">
         <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("Cartographie", "Tool map")}</span>
+          <span className="sd-section-eyebrow">{t("OUTILS RECOMMANDÉS", "RECOMMENDED TOOLS")}</span>
           <p className="sd-section-title" style={{ marginBottom: 24 }}>
-            {t("Les outils, couche par couche", "Tools, layer by layer")}
+            {t("Les outils, par usage.", "The tools, by use case.")}
           </p>
 
           {/* Legend */}
           <div style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "8px 20px",
-            marginBottom: 24,
-            padding: "14px 0",
-            borderBottom: "1px solid #DADAD4",
+            display: "flex", flexWrap: "wrap", gap: "8px 20px",
+            marginBottom: 24, padding: "12px 0", borderBottom: "1px solid #DADAD4",
           }}>
             {[
-              { key: "core",        label: t("Socle — indispensable", "Core — essential"),         color: "#4CAF50" },
-              { key: "conditional", label: t("Conditionnel — selon usage", "Conditional"),          color: "#6F6F68" },
-              { key: "challenge",   label: t("À challenger — justifier l'abonnement", "Challenge"), color: "#E53935" },
+              { key: "core",        label: t("Socle — indispensable",          "Core — essential"),    color: "#2E7D32" },
+              { key: "conditional", label: t("Conditionnel — selon usage",      "Conditional"),         color: "#6F6F68" },
+              { key: "challenge",   label: t("À challenger — justifier l'abonnement", "Challenge"),     color: "#C62828" },
             ].map((item) => (
               <span key={item.key} style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
                 <span style={{ width: 8, height: 8, borderRadius: "50%", background: item.color, flexShrink: 0 }} />
@@ -445,124 +711,46 @@ const StackDetailPage = () => {
           {/* Layers */}
           {stackLayers.map((layer) => (
             <div key={layer.id} style={{ marginBottom: 32 }}>
-              {/* Layer title */}
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 0 }}>
-                <p style={{
-                  fontFamily: "var(--font-ui)",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "#222222",
-                  whiteSpace: "nowrap",
-                }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
+                <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#222222", whiteSpace: "nowrap" }}>
                   {t(layer.titleFr, layer.titleEn)}
                 </p>
                 <div style={{ flex: 1, height: 1, background: "#DADAD4" }} />
-                <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92" }}>
-                  {layer.tools.length}
-                </span>
+                <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92" }}>{layer.tools.length}</span>
               </div>
 
-              {/* Tool rows */}
               <div>
                 {layer.tools.map(({ slot, tool }) => {
                   const status = getToolDecisionStatus(slot);
                   const globalIndex = stackTools.findIndex((st) => st.slot.slug === slot.slug);
                   return (
-                    <button
-                      key={slot.slug}
-                      type="button"
-                      onClick={() => setSelectedIndex(globalIndex)}
-                      className="sd-tool-row"
-                    >
+                    <button key={slot.slug} type="button" onClick={() => setSelectedIndex(globalIndex)} className="sd-tool-row">
                       {/* Logo */}
-                      <div style={{
-                        width: 44,
-                        height: 44,
-                        borderRadius: 8,
-                        background: "#F8F8F4",
-                        border: "1px solid #E7E7E0",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        overflow: "hidden",
-                        flexShrink: 0,
-                      }}>
+                      <div style={{ width: 44, height: 44, borderRadius: 8, background: "#F8F8F4", border: "1px solid #E7E7E0", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", flexShrink: 0 }}>
                         <ToolLogo tool={tool!} size={28} />
                       </div>
-
                       {/* Name + role */}
                       <div style={{ minWidth: 0 }}>
-                        <p style={{
-                          fontFamily: "var(--font-ui)",
-                          fontSize: 14,
-                          fontWeight: 600,
-                          letterSpacing: "-0.02em",
-                          color: "#222222",
-                          lineHeight: 1.2,
-                        }}>
-                          {tool!.name}
-                        </p>
-                        <p style={{
-                          fontFamily: "var(--font-ui)",
-                          fontSize: 12,
-                          color: "#9A9A92",
-                          marginTop: 2,
-                          letterSpacing: "-0.01em",
-                        }}>
-                          {t(slot.role, slot.roleEn)}
-                        </p>
+                        <p className="sd-tool-name">{tool!.name}</p>
+                        <p className="sd-tool-role">{t(slot.role, slot.roleEn)}</p>
                       </div>
-
-                      {/* Reason (hidden on mobile via CSS) */}
-                      <p style={{
-                        fontFamily: "var(--font-ui)",
-                        fontSize: 13,
-                        color: "#6F6F68",
-                        lineHeight: 1.45,
-                        display: "-webkit-box",
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden",
-                        letterSpacing: "-0.01em",
-                      }}>
-                        {t(slot.reason, slot.reasonEn)}
-                      </p>
-
-                      {/* Status badge (hidden on mobile via CSS) */}
+                      {/* Reason */}
+                      <p className="sd-tool-reason">{t(slot.reason, slot.reasonEn)}</p>
+                      {/* Status badge */}
                       <span style={{
-                        fontFamily: "var(--font-ui)",
-                        fontSize: 10,
-                        fontWeight: 700,
-                        letterSpacing: "0.06em",
-                        textTransform: "uppercase",
-                        padding: "3px 8px",
-                        borderRadius: 3,
-                        border: `1px solid`,
+                        fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em",
+                        textTransform: "uppercase", padding: "3px 8px", borderRadius: 3, border: "1px solid",
                         whiteSpace: "nowrap",
                         ...(status.key === "core"
-                          ? { borderColor: "rgba(76,175,80,0.3)", background: "rgba(76,175,80,0.06)", color: "#2E7D32" }
+                          ? { borderColor: "rgba(46,125,50,0.3)", background: "rgba(46,125,50,0.06)", color: "#2E7D32" }
                           : status.key === "conditional"
                           ? { borderColor: "#DADAD4", background: "#F8F8F4", color: "#6F6F68" }
-                          : { borderColor: "rgba(229,57,53,0.25)", background: "rgba(229,57,53,0.05)", color: "#C62828" }),
+                          : { borderColor: "rgba(198,40,40,0.25)", background: "rgba(198,40,40,0.05)", color: "#C62828" }),
                       }}>
-                        {status.key === "core"
-                          ? t("Socle", "Core")
-                          : status.key === "conditional"
-                          ? t("Conditionnel", "Conditional")
-                          : t("À challenger", "Challenge")}
+                        {status.key === "core" ? t("Socle", "Core") : status.key === "conditional" ? t("Conditionnel", "Conditional") : t("À challenger", "Challenge")}
                       </span>
-
                       {/* Arrow */}
-                      <span style={{
-                        fontFamily: "var(--font-ui)",
-                        fontSize: 14,
-                        color: "#9A9A92",
-                        transition: "color 140ms",
-                      }}>
-                        →
-                      </span>
+                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#9A9A92", transition: "color 140ms" }}>→</span>
                     </button>
                   );
                 })}
@@ -572,182 +760,93 @@ const StackDetailPage = () => {
         </div>
       </section>
 
-      {/* ── Avis ────────────────────────────────────────────────────────────── */}
-      <section id="avis" className="sd-section scroll-mt-20">
+      {/* ════════════════════════════════════════════════════════════════════
+          ESSENTIEL / OPTIONNEL / À CHALLENGER
+      ════════════════════════════════════════════════════════════════════ */}
+      <section className="sd-section scroll-mt-20">
         <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("Avis & retours", "Reviews")}</span>
-          <p className="sd-section-title" style={{ marginBottom: 24 }}>
-            {t("Note ToolTrim", "ToolTrim editorial")}
+          <span className="sd-section-eyebrow">{t("DÉCISION", "DECISION")}</span>
+          <p className="sd-section-title" style={{ marginBottom: 0 }}>
+            {t("Ce qui mérite vraiment sa place.", "What actually earns its place.")}
           </p>
-
-          {/* Editorial note */}
-          <div style={{
-            background: "#FFFFFF",
-            border: "1px solid #DADAD4",
-            borderRadius: 8,
-            overflow: "hidden",
-            marginBottom: 16,
-          }}>
-            {/* Header */}
-            <div style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: 16,
-              padding: "16px 24px",
-              borderBottom: "1px solid #E7E7E0",
-            }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <div style={{
-                  width: 32,
-                  height: 32,
-                  borderRadius: 6,
-                  background: "#F8F8F4",
-                  border: "1px solid #DADAD4",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "var(--font-ui)",
-                  fontSize: 10,
-                  fontWeight: 800,
-                  color: "#222222",
-                  letterSpacing: "0.04em",
-                }}>
-                  TT
-                </div>
-                <div>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "#222222" }}>
-                    {t("Note ToolTrim", "ToolTrim Editorial")}
-                  </p>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92", marginTop: 1 }}>
-                    {t("Analyse indépendante · Prix vérifiés", "Independent analysis · Verified pricing")}
-                  </p>
-                </div>
-              </div>
-              <span style={{
-                fontFamily: "var(--font-ui)",
-                fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: "0.04em",
-                color: "#9A9A92",
-                border: "1px solid #DADAD4",
-                borderRadius: 4,
-                padding: "3px 8px",
-              }}>
-                {t("Vérifié avr. 2026", "Verified Apr. 2026")}
-              </span>
-            </div>
-
-            {/* Tips content */}
-            <div style={{ padding: "20px 24px" }}>
-              {/* First tip — main */}
-              <div style={{
-                borderLeft: "2px solid #222222",
-                paddingLeft: 16,
-                marginBottom: 20,
-              }}>
-                <p style={{
-                  fontFamily: "var(--font-ui)",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "#222222",
-                  marginBottom: 8,
-                }}>
-                  {t(expertTips[0].title, expertTips[0].titleEn)}
-                </p>
-                <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.6, color: "#222222" }}>
-                  {t(expertTips[0].detail, expertTips[0].detailEn)}
-                </p>
-              </div>
-
-              {/* Secondary tips */}
-              {expertTips.slice(1).map((tip) => (
-                <div
-                  key={tip.title}
-                  style={{
-                    borderTop: "1px solid #E7E7E0",
-                    paddingTop: 16,
-                    marginTop: 16,
-                  }}
-                >
-                  <p style={{
-                    fontFamily: "var(--font-ui)",
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: "#222222",
-                    marginBottom: 6,
-                    letterSpacing: "-0.01em",
-                  }}>
-                    {t(tip.title, tip.titleEn)}
-                  </p>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, lineHeight: 1.55, color: "#6F6F68" }}>
-                    {t(tip.detail, tip.detailEn)}
-                  </p>
-                </div>
+          <div className="sd-priority-grid">
+            {/* Essentiel */}
+            <div className="sd-priority-col sd-priority-col--essential">
+              <span className="sd-priority-label">{t("Essentiel", "Essential")}</span>
+              {t(editorial.priority.essential, editorial.priority.essentialEn).map((item: string, i: number) => (
+                <div key={i} className="sd-priority-item">{item}</div>
               ))}
             </div>
-          </div>
-
-          {/* Coming soon teaser */}
-          <div style={{
-            background: "#FFFFFF",
-            border: "1px solid #DADAD4",
-            borderRadius: 8,
-            padding: "28px 24px",
-            textAlign: "center",
-          }}>
-            <p style={{
-              fontFamily: "var(--font-ui)",
-              fontSize: 14,
-              fontWeight: 600,
-              color: "#222222",
-              marginBottom: 8,
-              letterSpacing: "-0.01em",
-            }}>
-              {t("Tu utilises cette stack ?", "Using this stack?")}
-            </p>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, lineHeight: 1.55, color: "#6F6F68", marginBottom: 16 }}>
-              {t(
-                "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher.",
-                "User reviews are coming soon. Share what works and what costs too much.",
-              )}
-            </p>
-            <span style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 6,
-              fontFamily: "var(--font-ui)",
-              fontSize: 11,
-              fontWeight: 600,
-              letterSpacing: "0.04em",
-              textTransform: "uppercase",
-              color: "#6F6F68",
-              border: "1px solid #DADAD4",
-              borderRadius: 4,
-              padding: "6px 12px",
-            }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#DADAD4" }} />
-              {t("Bientôt disponible", "Coming soon")}
-            </span>
+            {/* Optionnel */}
+            <div className="sd-priority-col sd-priority-col--optional">
+              <span className="sd-priority-label">{t("Optionnel", "Optional")}</span>
+              {t(editorial.priority.optional, editorial.priority.optionalEn).map((item: string, i: number) => (
+                <div key={i} className="sd-priority-item">{item}</div>
+              ))}
+            </div>
+            {/* À challenger */}
+            <div className="sd-priority-col sd-priority-col--challenge">
+              <span className="sd-priority-label">{t("À challenger", "Challenge")}</span>
+              {t(editorial.priority.challenge, editorial.priority.challengeEn).map((item: string, i: number) => (
+                <div key={i} className="sd-priority-item">{item}</div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Pièges fréquents ────────────────────────────────────────────────── */}
-      {hasTraps && (
-        <section id="pieges" className="sd-section scroll-mt-20">
+      {/* ════════════════════════════════════════════════════════════════════
+          BUDGET
+      ════════════════════════════════════════════════════════════════════ */}
+      <section id="budget" className="sd-section scroll-mt-20">
+        <div className="sd-container">
+          <span className="sd-section-eyebrow">{t("BUDGET", "BUDGET")}</span>
+          <p className="sd-section-title" style={{ marginBottom: 8 }}>
+            {t(editorial.budgetTitle, editorial.budgetTitleEn)}
+          </p>
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.5, color: "#6F6F68", marginBottom: 0, maxWidth: 620 }}>
+            {t(
+              "Ce que couvre vraiment ce budget — et où la facture peut grimper.",
+              "What this budget actually covers — and where the bill can climb.",
+            )}
+          </p>
+          <div className="sd-budget-list">
+            {editorial.budgetRows.map((row, i) => (
+              <div key={i} className="sd-budget-row">
+                <span className="sd-budget-tier">{t(row.tier, row.tierEn)}</span>
+                <span className="sd-budget-amount">{row.amount}</span>
+                <span className="sd-budget-desc">{t(row.desc, row.descEn)}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════════════
+          RISQUES — doublons à éviter
+      ════════════════════════════════════════════════════════════════════ */}
+      {hasRisks && (
+        <section id="risques" className="sd-section scroll-mt-20">
           <div className="sd-container">
-            <span className="sd-section-eyebrow">{t("Pièges fréquents", "Common traps")}</span>
-            <p className="sd-section-title" style={{ marginBottom: 24 }}>
-              {t("Ce qu'on fait trop souvent avec cette stack", "What people tend to get wrong")}
+            <span className="sd-section-eyebrow">{t("RISQUES", "RISKS")}</span>
+            <p className="sd-section-title" style={{ marginBottom: 0 }}>
+              {t(editorial.risksTitle, editorial.risksTitleEn)}
             </p>
-            <div>
-              {stack.traps!.map((trap) => (
-                <div key={trap.title} className="sd-risk-row">
-                  <p className="sd-risk-problem">{t(trap.title, trap.titleEn)}</p>
-                  <p className="sd-risk-detail">{t(trap.detail, trap.detailEn)}</p>
+            <div style={{ marginTop: 8 }}>
+              {editorial.risks.map((risk, i) => (
+                <div key={i} className="sd-risk-enhanced-row">
+                  <div className="sd-risk-enhanced-col">
+                    <span className="sd-risk-col-label">{t("Problème", "Problem")}</span>
+                    <p className="sd-risk-problem-text">{t(risk.problem, risk.problemEn)}</p>
+                  </div>
+                  <div className="sd-risk-enhanced-col">
+                    <span className="sd-risk-col-label">{t("Conséquence", "Consequence")}</span>
+                    <p className="sd-risk-consequence-text">{t(risk.consequence, risk.consequenceEn)}</p>
+                  </div>
+                  <div className="sd-risk-enhanced-col">
+                    <span className="sd-risk-col-label">{t("Recommandation ToolTrim", "ToolTrim recommendation")}</span>
+                    <p className="sd-risk-reco-text">{t(risk.reco, risk.recoEn)}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -755,67 +854,48 @@ const StackDetailPage = () => {
         </section>
       )}
 
-      {/* ── CTA band ────────────────────────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════════════════════════════
+          ALTERNATIVES — 3 variantes de stack
+      ════════════════════════════════════════════════════════════════════ */}
+      {hasAltVariants && (
+        <section id="alternatives" className="sd-section scroll-mt-20">
+          <div className="sd-container">
+            <span className="sd-section-eyebrow">{t("ALTERNATIVES", "ALTERNATIVES")}</span>
+            <p className="sd-section-title" style={{ marginBottom: 8 }}>
+              {t(editorial.altsTitle, editorial.altsTitleEn)}
+            </p>
+            <div className="sd-alt-grid">
+              {editorial.altVariants.map((variant, i) => (
+                <div key={i} className="sd-alt-card">
+                  <span className="sd-alt-label">{t(variant.label, variant.labelEn)}</span>
+                  <p className="sd-alt-title">{t(variant.title, variant.titleEn)}</p>
+                  <p className="sd-alt-budget">{variant.budget}</p>
+                  <p className="sd-alt-tools">{t(variant.toolsDesc, variant.toolsDescEn)}</p>
+                  <p className="sd-alt-compromise">{t(variant.compromise, variant.compromiseEn)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ════════════════════════════════════════════════════════════════════
+          CTA BAND
+      ════════════════════════════════════════════════════════════════════ */}
       <div className="sd-cta-band">
         <div className="sd-cta-inner">
-          <span style={{
-            fontFamily: "var(--font-ui)",
-            fontSize: 11,
-            fontWeight: 600,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            color: "#6F6F68",
-            display: "block",
-            marginBottom: 12,
-          }}>
+          <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", display: "block", marginBottom: 12 }}>
             {t("Diagnostic", "Diagnostic")}
           </span>
-          <p style={{
-            fontFamily: "var(--font-brand)",
-            fontSize: "clamp(1.75rem, 4vw, 3.5rem)",
-            fontWeight: 600,
-            letterSpacing: "-0.055em",
-            lineHeight: 0.98,
-            color: "#222222",
-            maxWidth: 720,
-            marginBottom: 16,
-          }}>
-            {t(
-              "Ce guide part d'un profil type. Toi, tu as déjà une stack.",
-              "This guide starts from a typical profile. You already have a stack.",
-            )}
+          <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.75rem, 4vw, 3.25rem)", fontWeight: 600, letterSpacing: "-0.055em", lineHeight: 0.98, color: "#222222", maxWidth: 680, marginBottom: 16 }}>
+            {t(editorial.ctaTitle, editorial.ctaTitleEn)}
           </p>
-          <p style={{
-            fontFamily: "var(--font-ui)",
-            fontSize: 17,
-            lineHeight: 1.5,
-            color: "#6F6F68",
-            maxWidth: 540,
-            marginBottom: 32,
-            letterSpacing: "-0.015em",
-          }}>
-            {t(
-              "Le diagnostic personnalisé regarde ce que tu paies vraiment — outils actifs vs dormants, doublons, plans surévalués. Résultat en moins de 3 minutes.",
-              "The personalized diagnostic looks at what you actually pay — active vs dormant tools, duplicates, overpriced plans. Result in under 3 minutes.",
-            )}
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5, color: "#6F6F68", maxWidth: 540, marginBottom: 32, letterSpacing: "-0.015em" }}>
+            {t(editorial.ctaDesc, editorial.ctaDescEn)}
           </p>
           <Link
             to={`${prefix}/selector`}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              height: 48,
-              padding: "0 22px",
-              background: "#222222",
-              color: "#FFFFFF",
-              borderRadius: 8,
-              fontFamily: "var(--font-ui)",
-              fontSize: 15,
-              fontWeight: 500,
-              letterSpacing: "-0.01em",
-              textDecoration: "none",
-              transition: "background 160ms ease-out",
-            }}
+            style={{ display: "inline-flex", alignItems: "center", height: 48, padding: "0 22px", background: "#222222", color: "#FFFFFF", borderRadius: 8, fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500, letterSpacing: "-0.01em", textDecoration: "none", transition: "background 160ms ease-out" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
           >
@@ -824,29 +904,54 @@ const StackDetailPage = () => {
         </div>
       </div>
 
-      {/* ── Related stacks ──────────────────────────────────────────────────── */}
-      {relatedStacks.length > 0 && (
-        <section id="stacks-proches" className="sd-section scroll-mt-20" style={{ borderBottom: "none" }}>
+      {/* ════════════════════════════════════════════════════════════════════
+          FAQ
+      ════════════════════════════════════════════════════════════════════ */}
+      {editorial.faq.length > 0 && (
+        <section id="faq" className="sd-section scroll-mt-20">
           <div className="sd-container">
-            <span className="sd-section-eyebrow">{t("Stacks proches", "Related stacks")}</span>
+            <span className="sd-section-eyebrow">FAQ</span>
+            <p className="sd-section-title" style={{ marginBottom: 0 }}>
+              {t("Questions fréquentes.", "Frequently asked questions.")}
+            </p>
+            <div className="sd-faq-list">
+              {editorial.faq.map((item, i) => (
+                <details
+                  key={i}
+                  className="sd-faq-item"
+                  open={openFaqIndex === i}
+                  onToggle={(e) => {
+                    if ((e.currentTarget as HTMLDetailsElement).open) setOpenFaqIndex(i);
+                    else if (openFaqIndex === i) setOpenFaqIndex(null);
+                  }}
+                >
+                  <summary className="sd-faq-summary">
+                    {t(item.q, item.qEn)}
+                    <ChevronDown size={16} className="sd-faq-icon" />
+                  </summary>
+                  <p className="sd-faq-answer">{t(item.a, item.aEn)}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ════════════════════════════════════════════════════════════════════
+          STACKS PROCHES
+      ════════════════════════════════════════════════════════════════════ */}
+      {relatedStacks.length > 0 && (
+        <section className="sd-section scroll-mt-20" style={{ borderBottom: "none" }}>
+          <div className="sd-container">
+            <span className="sd-section-eyebrow">{t("STACKS PROCHES", "RELATED STACKS")}</span>
             <p className="sd-section-title" style={{ marginBottom: 24 }}>
-              {t("Tu pourrais aussi regarder", "You might also like")}
+              {t("Tu pourrais aussi regarder.", "You might also like.")}
             </p>
             <div className="sd-related-grid">
               {relatedStacks.map((related) => (
                 <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card">
                   <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
-                    <span style={{
-                      fontFamily: "var(--font-ui)",
-                      fontSize: 10,
-                      fontWeight: 600,
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase",
-                      color: "#9A9A92",
-                      padding: "2px 6px",
-                      border: "1px solid #DADAD4",
-                      borderRadius: 3,
-                    }}>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#9A9A92", padding: "2px 6px", border: "1px solid #DADAD4", borderRadius: 3 }}>
                       {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
                     </span>
                   </div>
@@ -863,7 +968,9 @@ const StackDetailPage = () => {
         </section>
       )}
 
-      {/* ── Tool quick panel ────────────────────────────────────────────────── */}
+      {/* ════════════════════════════════════════════════════════════════════
+          TOOL QUICK PANEL (Sheet — inchangé)
+      ════════════════════════════════════════════════════════════════════ */}
       <Sheet open={selectedIndex !== null} onOpenChange={(open) => { if (!open) setSelectedIndex(null); }}>
         <SheetContent side="right" className="w-full sm:max-w-[420px] p-0 flex flex-col gap-0 overflow-hidden">
           {selectedIndex !== null && (
@@ -882,7 +989,7 @@ const StackDetailPage = () => {
   );
 };
 
-/* ─── Tool Panel ─────────────────────────────────────────────────────────── */
+/* ─── Tool Panel (unchanged) ─────────────────────────────────────────────── */
 interface ToolPanelProps {
   stackTools: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>;
   selectedIndex: number;
@@ -899,7 +1006,7 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
 
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
-      if (e.key === "ArrowLeft" && hasPrev) onNavigate(selectedIndex - 1);
+      if (e.key === "ArrowLeft"  && hasPrev) onNavigate(selectedIndex - 1);
       if (e.key === "ArrowRight" && hasNext) onNavigate(selectedIndex + 1);
     }
     window.addEventListener("keydown", handleKey);
@@ -910,23 +1017,17 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
     core: {
       fr: "Outil central de cette stack. Inutile de chercher une alternative — c'est lui qui tient tout.",
       en: "Core tool in this stack. No need to look for an alternative — it holds everything together.",
-      textClass: "text-keep",
-      borderClass: "border-keep/25 bg-keep/[0.05]",
-      dotClass: "bg-keep",
+      textClass: "text-keep", borderClass: "border-keep/25 bg-keep/[0.05]", dotClass: "bg-keep",
     },
     conditional: {
       fr: "Utile selon les contextes. Vérifie que tu l'utilises vraiment chaque mois avant de renouveler.",
       en: "Useful in some contexts. Check you actually use it every month before renewing.",
-      textClass: "text-primary",
-      borderClass: "border-primary/25 bg-primary/[0.04]",
-      dotClass: "bg-primary",
+      textClass: "text-primary", borderClass: "border-primary/25 bg-primary/[0.04]", dotClass: "bg-primary",
     },
     challenge: {
       fr: "Candidat au downgrade. Cet outil doit prouver sa valeur par un résultat concret et mesurable.",
       en: "Downgrade candidate. This tool needs to prove its value through concrete, measurable results.",
-      textClass: "text-destructive",
-      borderClass: "border-destructive/25 bg-destructive/[0.04]",
-      dotClass: "bg-destructive",
+      textClass: "text-destructive", borderClass: "border-destructive/25 bg-destructive/[0.04]", dotClass: "bg-destructive",
     },
   }[status.key];
 
@@ -1037,45 +1138,23 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
 
       <div className="border-t border-border px-5 py-4 flex items-center justify-between gap-3 bg-background/50">
         <div className="flex items-center gap-1.5">
-          <button
-            type="button"
-            disabled={!hasPrev}
-            onClick={() => onNavigate(selectedIndex - 1)}
+          <button type="button" disabled={!hasPrev} onClick={() => onNavigate(selectedIndex - 1)}
             title={t("Outil précédent (←)", "Previous tool (←)")}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed"
-          >
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed">
             <ChevronLeft className="h-4 w-4" />
           </button>
           <span className="min-w-[3.25rem] text-center text-xs tabular-nums text-muted-foreground">
             {selectedIndex + 1} / {stackTools.length}
           </span>
-          <button
-            type="button"
-            disabled={!hasNext}
-            onClick={() => onNavigate(selectedIndex + 1)}
+          <button type="button" disabled={!hasNext} onClick={() => onNavigate(selectedIndex + 1)}
             title={t("Outil suivant (→)", "Next tool (→)")}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed"
-          >
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed">
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
         <Link
           to={`${prefix}/tool/${tool!.slug}`}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 6,
-            height: 32,
-            padding: "0 14px",
-            background: "#222222",
-            color: "#FFFFFF",
-            borderRadius: 6,
-            fontFamily: "var(--font-ui)",
-            fontSize: 12,
-            fontWeight: 500,
-            letterSpacing: "-0.01em",
-            textDecoration: "none",
-          }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6, height: 32, padding: "0 14px", background: "#222222", color: "#FFFFFF", borderRadius: 6, fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500, letterSpacing: "-0.01em", textDecoration: "none" }}
         >
           {t("Fiche complète", "Full details")}
           <ExternalLink className="h-3 w-3" />
@@ -1090,35 +1169,28 @@ function personaLabel(persona: StackPersona, locale: "fr" | "en") {
   const item = STACK_PERSONAS.find((option) => option.value === persona);
   return locale === "fr" ? item?.label || persona : item?.labelEn || persona;
 }
-
 function stageLabel(stage: StackStage, locale: "fr" | "en") {
   const item = STACK_STAGES.find((option) => option.value === stage);
   return locale === "fr" ? item?.label || stage : item?.labelEn || stage;
 }
-
-function getExpertTips(stack: StackGuide) {
-  return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona];
+function getExpertTips(stack: StackGuide): StackInsight[] {
+  return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona] || [];
 }
-
+function getOverviewTitle(stack: StackGuide): string {
+  return `Une stack pour ${stack.bestFor.split(".")[0].toLowerCase()}.`;
+}
+function getOverviewTitleEn(stack: StackGuide): string {
+  return `A stack to ${stack.bestForEn.split(".")[0].toLowerCase()}.`;
+}
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {
-  if (slot.decision === "challenge") {
-    return { key: "challenge" as const, labelFr: "À challenger", labelEn: "Challenge", className: "border-destructive/25 bg-destructive/8 text-destructive" };
-  }
-  if (slot.decision === "conditional") {
-    return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
-  }
-  if (slot.decision === "core") {
-    return { key: "core" as const, labelFr: "Socle", labelEn: "Core", className: "border-keep/25 bg-keep/10 text-keep" };
-  }
-  const normalizedRole = slot.role.toLowerCase();
-  const challengeKeywords = ["avancé", "advanced", "suite", "backlinks", "connecteurs", "connectors", "handoff", "vectoriel", "photo", "crm agence"];
-  const optionalKeywords = ["plugin", "feedback", "prospection", "social", "seo", "ux", "workshop", "atelier", "prototype", "ia"];
-  if (challengeKeywords.some((kw) => normalizedRole.includes(kw))) {
-    return { key: "challenge" as const, labelFr: "À challenger", labelEn: "Challenge", className: "border-destructive/25 bg-destructive/8 text-destructive" };
-  }
-  if (optionalKeywords.some((kw) => normalizedRole.includes(kw))) {
-    return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
-  }
+  if (slot.decision === "challenge")   return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
+  if (slot.decision === "conditional") return { key: "conditional" as const, labelFr: "Conditionnel",  labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
+  if (slot.decision === "core")        return { key: "core"        as const, labelFr: "Socle",         labelEn: "Core",        className: "border-keep/25 bg-keep/10 text-keep" };
+  const norm = slot.role.toLowerCase();
+  const challengeKw = ["avancé", "advanced", "suite", "backlinks", "connecteurs", "connectors", "handoff", "vectoriel", "photo", "crm agence"];
+  const optionalKw  = ["plugin", "feedback", "prospection", "social", "seo", "ux", "workshop", "atelier", "prototype", "ia"];
+  if (challengeKw.some((kw) => norm.includes(kw))) return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
+  if (optionalKw.some((kw)  => norm.includes(kw))) return { key: "conditional" as const, labelFr: "Conditionnel",  labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
   return { key: "core" as const, labelFr: "Socle", labelEn: "Core", className: "border-keep/25 bg-keep/10 text-keep" };
 }
 
