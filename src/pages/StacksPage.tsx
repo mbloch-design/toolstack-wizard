@@ -356,7 +356,7 @@ const StacksPage = () => {
       />
 
       <section id="stacks" className="scroll-mt-20 bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">
+        <div className="mx-auto max-w-7xl px-12 py-10 md:py-14">
           <div className="grid gap-6 md:grid-cols-[18rem_minmax(0,1fr)]">
             <aside className="rounded-lg border border-border bg-card p-4 md:sticky md:top-24 md:self-start md:p-5">
               <div className="flex items-start justify-between gap-4">

@@ -3854,7 +3854,6 @@
     line-height: 0.94;
     letter-spacing: -0.065em;
     color: #222222;
-    max-width: 1180px;
     margin-bottom: 0;
   }
   @media (max-width: 768px) {
@@ -3906,7 +3905,7 @@
   @media (max-width: 1100px) {
     .ga-body-grid {
       grid-template-columns: 1fr;
-      max-width: 780px;
+      /* no max-width override — keeps same axis as ga-container header */
     }
     .ga-toc-col { display: none; }
   }
@@ -3987,6 +3986,12 @@
     margin-top: 72px;
     margin-bottom: 24px;
     scroll-margin-top: 96px;
+  }
+  @media (max-width: 768px) {
+    /* Reduce H2 ceiling so it stays clearly below H1 (56px at 768px)
+       clamp(26px, 5.5vw, 34px): at 768px → 5.5vw=42px capped to 34px → ratio 56/34=1.65 ✓ */
+    .ga-content h2 { font-size: clamp(1.625rem, 5.5vw, 2.125rem); margin-top: 52px; }
+    .ga-content h3 { font-size: clamp(1.25rem, 4.5vw, 1.625rem); margin-top: 36px; }
   }
   .ga-content h3 {
     font-family: var(--font-brand);
