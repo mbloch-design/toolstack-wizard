@@ -160,6 +160,35 @@
 
 ---
 
+## Sprint Stacks v2 — Filtre + tri ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| Contrôle de tri (Recommandé / Budget / Outils) | ✅ Fait | `gi-sort-select`, même ligne que filtres |
+| `StackSortId` type + `sortBy` state | ✅ Fait | `"recommended" \| "budget" \| "tools"` |
+| Logique de tri dans `filteredStacks` useMemo | ✅ Fait | Budget croissant, outils décroissant, recommended = FEATURED_STACK_SLUGS |
+| `sk-filter-row` layout filtre + tri | ✅ Fait | `display: flex; flex-wrap: wrap; gap: 8px` |
+| Empty state amélioré avec reset button | ✅ Fait | Reset filtre + query + tri en un clic |
+
+---
+
+## Sprint Comparatifs Index v2 — Refonte éditoriale ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| Hero inline (sans EditorialHero) | ✅ Fait | `cix-hero`, H1 2 lignes, zéro badge |
+| Barre de recherche 56px (`cix-search-input`) | ✅ Fait | Filtering temps réel sur nom d'outil |
+| Chips de suggestion (`cix-suggestion-chip`) | ✅ Fait | 5 suggestions, injectées dans searchQuery |
+| Filtres catégorie (`cix-filter-pill`) | ✅ Fait | IA / Productivité / Design / Automatisation / CRM |
+| `getSlugCategory()` détection auto par slug | ✅ Fait | Pas de modification de comparisons.ts |
+| `deriveCardDesc()` description contextuelle | ✅ Fait | verdict.keepIf → shortDescription → fallback |
+| Grille 2 colonnes (`cix-grid`) | ✅ Fait | Gap 24px, ≤900px → 1 colonne |
+| Cards redessinées (`cix-card`) | ✅ Fait | VS block, logos pastilles, cta arrow hover |
+| Comparateur custom conservé et restyled | ✅ Fait | `cix-comparator-band`, fond #F8F8F4 |
+| Système CSS `cix-*` (~280 lignes) | ✅ Fait | Ajouté dans `index.css` |
+
+---
+
 ## Sprint 5a — Responsive / QA global (à faire)
 
 | Item | Priorité | Notes |

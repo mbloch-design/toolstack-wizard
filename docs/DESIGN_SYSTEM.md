@@ -587,6 +587,128 @@ details[open] .sd-faq-icon { transform: rotate(180deg); }
 
 ---
 
+## Système `sk-*` — StacksPage (filtre + tri)
+
+### Ligne filtre + tri (`sk-filter-row`)
+```css
+.sk-filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+/* Les pills de filtre existants utilisent .gi-filter-pill (réutilisé depuis GuidesPage) */
+```
+
+### Contrôle de tri (`gi-sort-select`)
+Partagé entre StacksPage et d'autres pages listant du contenu.
+```css
+.gi-sort-select { font: inherit; font-size: 13px; border: 1px solid #DADAD4;
+  border-radius: 20px; padding: 6px 28px 6px 12px; color: #222222; background: #FFFFFF;
+  appearance: none; cursor: pointer; }
+.gi-sort-select:focus { outline: 2px solid #222222; outline-offset: 2px; }
+```
+
+**Valeurs de tri StacksPage :**
+- `recommended` — Ordre FEATURED_STACK_SLUGS puis reste
+- `budget` — Croissant sur `stack.monthlyBudget`
+- `tools` — Décroissant sur `stack.tools.length`
+
+---
+
+## Système `cix-*` — ComparesIndexPage
+
+### Layout général
+```
+cix-hero (inline, section) ← max-width 1280px
+cix-search-wrap
+  └── cix-search-input (56px height, 600px max-width)
+cix-suggestions (chips row)
+cix-filters (category pills)
+cix-grid (2 colonnes, gap 24px, ≤900px → 1 colonne)
+  └── cix-card (Link, flex-col)
+cix-comparator-band (custom comparator, fond #F8F8F4)
+```
+
+### Hero (`cix-hero`)
+```css
+.cix-hero         { background: #F8F8F4; border-bottom: 1px solid #DADAD4; padding: 72px 0 56px; }
+.cix-hero-inner   { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+.cix-eyebrow      { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #6F6F68; }
+.cix-hero-title   { font-family: var(--font-brand); font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600; letter-spacing: -0.06em; color: #222222; }
+/* Title contient un <br> pour couper après le premier ". " */
+```
+
+### Recherche (`cix-search-wrap`)
+```css
+.cix-search-wrap  { max-width: 600px; }
+.cix-search-input { height: 56px; font-size: 16px; border: 1px solid #DADAD4;
+  border-radius: 28px; padding: 0 20px; background: #FFFFFF; }
+.cix-search-input:focus { outline: none; border-color: #222222; }
+```
+
+### Chips de suggestion (`cix-suggestions`)
+```css
+.cix-suggestions      { display: flex; gap: 8px; flex-wrap: wrap; }
+.cix-suggestion-chip  { font-size: 13px; border: 1px solid #DADAD4; border-radius: 16px;
+  padding: 5px 14px; background: #FFFFFF; cursor: pointer; }
+.cix-suggestion-chip:hover { border-color: #222222; }
+```
+Les chips injectent leur texte dans `setSearchQuery()` au clic.
+
+### Filtres catégorie (`cix-filters`)
+```css
+.cix-filters     { display: flex; gap: 8px; flex-wrap: wrap; }
+.cix-filter-pill { font-size: 13px; border: 1px solid #DADAD4; border-radius: 20px;
+  padding: 6px 16px; background: #FFFFFF; cursor: pointer; }
+.cix-filter-pill.active, .cix-filter-pill:hover { background: #222222; color: #FFFFFF; border-color: #222222; }
+```
+
+**Catégories disponibles :** `all` / `ia` / `productivite` / `design` / `automatisation` / `crm`
+
+Détection automatique via `getSlugCategory(slugPair: string)` — pattern-matching sur les slugs connus sans modification de `comparisons.ts`.
+
+### Grille de cards (`cix-grid`)
+```css
+.cix-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+/* ≤900px → 1 colonne */
+```
+
+### Card comparaison (`cix-card`)
+```css
+.cix-card         { border: 1px solid #DADAD4; border-radius: 10px; padding: 24px;
+  background: #FFFFFF; display: flex; flex-direction: column; gap: 12px;
+  text-decoration: none; transition: border-color 200ms, box-shadow 200ms; }
+.cix-card:hover   { border-color: #222222; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.cix-card-label   { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #6F6F68; }
+.cix-card-vs      { display: flex; align-items: center; gap: 16px; }
+.cix-card-vs-tool { display: flex; align-items: center; gap: 10px; }
+.cix-card-vs-logo { width: 36px; height: 36px; border-radius: 8px; background: #F8F8F4;
+  border: 1px solid #DADAD4; }
+.cix-card-vs-name { font-size: 15px; font-weight: 600; color: #222222; }
+.cix-card-vs-sep  { font-size: 13px; font-weight: 700; color: #9A9A92; letter-spacing: 0.05em; }
+.cix-card-title   { font-size: 18px; font-weight: 600; color: #222222; line-height: 1.3; }
+.cix-card-desc    { font-size: 14px; color: #6F6F68; line-height: 1.5; }
+.cix-card-pricing { font-size: 13px; color: #9A9A92; }
+.cix-card-cta     { font-size: 13px; font-weight: 500; color: #222222;
+  display: flex; align-items: center; gap: 4px; margin-top: auto; }
+.cix-card-cta-arrow { transition: transform 200ms ease; }
+.cix-card:hover .cix-card-cta-arrow { transform: translateX(4px); }
+```
+
+### Logique `deriveCardDesc()`
+Tente dans l'ordre :
+1. `toolA.verdict.keepIf[0]` (tronqué à 80 chars)
+2. `toolA.shortDescription` (tronqué à 80 chars)
+3. `"Comparatif détaillé avec tableau, verdict et recommandations."`
+
+### Comparateur custom (`cix-comparator-band`)
+```css
+.cix-comparator-band  { background: #F8F8F4; border: 1px solid #DADAD4; border-radius: 12px; padding: 40px; }
+.cix-comparator-inner { max-width: 600px; }
+/* Selects natifs restyle avec border-radius 8px */
+```
+
+---
+
 ## Anti-patterns à éviter
 
 - ❌ Bouton bleu sur les pages outils

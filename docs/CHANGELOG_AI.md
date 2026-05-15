@@ -2,6 +2,48 @@
 
 ---
 
+## 2026-05-15 — Sprint Stacks : tri sur /fr/stacks + Sprint Comparatifs Index : refonte /fr/comparatifs
+
+### Sprint Stacks — ajout tri discret
+
+**Fichier modifié** : `src/pages/StacksPage.tsx` + `src/index.css`
+
+**Ajouts**
+- `StackSortId` type : `"recommended" | "budget" | "tools"`
+- `sortBy` state + sort logic dans `filteredStacks` useMemo
+- Sort select (`gi-sort-select`) intégré dans `sk-filter-row` aux côtés des filter pills
+- `.sk-filter-row` CSS : flex row, pills flex-1, sort à droite, wraps sur mobile
+- Empty state amélioré : message explicit + bouton "Voir toutes les stacks" (reset filter + query + sort)
+
+### Sprint Comparatifs Index — refonte /fr/comparatifs
+
+**Fichier modifié** : `src/pages/ComparesIndexPage.tsx` + `src/index.css` (+280 lignes cix-*)
+
+**Hero** : réécriture inline — suppression `EditorialHero` et méta ANNÉE/PRIX VÉRIFIÉS/VERDICTS.
+Structure : eyebrow + H1 `clamp(3.5rem→6rem)` + description 19px + fond `#F8F8F4` border-bottom uniquement.
+
+**Recherche** : input `cix-search-input` (height 56px, border-radius 10px) dans le hero, placeholder éditorial, icône `Search` droite, focus → border #222222.
+
+**Suggestions** : 5 chips `cix-suggestion-chip` (Notion vs Airtable / ChatGPT vs Claude / Zapier vs Make / Figma vs Canva / Linear vs Jira) — navigate vers page comparatif.
+
+**Filtres catégories** : `cix-filter-row` avec 5 `gi-filter-pill` (Tous / IA / Productivité / Design / Automatisation / CRM). Détection catégorie par pattern slugPair via `getSlugCategory()`.
+
+**Grid** : `cix-grid` 2 colonnes desktop / 1 colonne mobile, gap 20px.
+
+**Card** `cix-card` (border `#CFCFC8`, hover `#222222` + translateY(-1px)) :
+- Label catégorie uppercase
+- VS block : logos ronds 32px + noms tools
+- Titre `font-brand clamp(1.375rem→1.75rem)`
+- Description dérivée de `verdict.keepIf` ou `shortDescription`
+- Ligne prix
+- CTA "Lire le comparatif →" avec arrow transition
+
+**Comparateur custom** conservé, restyled avec classes `cix-comparator-*` (sans Tailwind).
+
+**Empty states** : sur search vide + filtres vides → bouton reset.
+
+---
+
 ## 2026-05-15 — Sprint Comparatif v2 : renforcement affordance de comparaison
 
 **Fichiers modifiés**
