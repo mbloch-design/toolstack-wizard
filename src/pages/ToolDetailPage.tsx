@@ -1,7 +1,7 @@
-import { useParams, Link, Navigate, useLocation } from "react-router-dom";
+import { useParams, Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import {
   ExternalLink, Check, X, ArrowRight, CalendarCheck,
   TrendingDown, Sparkles, ShieldCheck,
@@ -46,6 +46,7 @@ const ToolDetailPage = () => {
   const { lang, t, prefix } = useLang();
   const { slug } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
   const { tool, loading } = useToolBySlug(slug);
   const { tools } = useTools();
   const { categories } = useCategories();
@@ -216,6 +217,30 @@ const ToolDetailPage = () => {
 
   const toolType = (tool as any).tool_type as string;
 
+  /* ── Tab click — smooth scroll, no jump ──
+     Les tabs pointent vers des routes séparées. Sans contrôle, le navigateur
+     remonte en haut de page à chaque navigation. On intercepte le clic :
+     1. navigate() avec preventScrollReset: true  → pas de remontée brutale
+     2. window.scrollTo smooth → positionne la tab nav sous le header fixe     ── */
+  const handleTabClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, destination: string) => {
+      e.preventDefault();
+      navigate(destination, { preventScrollReset: true });
+
+      const tabNav = document.querySelector<HTMLElement>(".td-tab-nav");
+      if (!tabNav) return;
+      const navbarH = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue("--navbar-h") || "68",
+        10,
+      );
+      const tabNavTop = tabNav.getBoundingClientRect().top + window.scrollY;
+      const scrollTarget = Math.max(0, tabNavTop - navbarH);
+
+      window.scrollTo({ top: scrollTarget, behavior: "smooth" });
+    },
+    [navigate],
+  );
+
   /* Shared card props */
   const cardProps = {
     tool, displayPrice, verifiedOn, isFree, isFreemium, hasFreeplan,
@@ -359,11 +384,13 @@ const ToolDetailPage = () => {
                 const tabPath = tab.id === "prix" && lang === "en" ? "/pricing"
                   : tab.id === "avis" && lang === "en" ? "/reviews"
                   : tab.path;
+                const destination = `${prefix}/tool/${slug}${tabPath}`;
                 return (
                   <Link
                     key={tab.id}
-                    to={`${prefix}/tool/${slug}${tabPath}`}
+                    to={destination}
                     className={`td-tab${isActive ? " td-tab--active" : ""}`}
+                    onClick={(e) => handleTabClick(e, destination)}
                   >
                     {lang === "fr" ? tab.labelFr : tab.labelEn}
                   </Link>
@@ -375,7 +402,7 @@ const ToolDetailPage = () => {
                 SECTION: Analyse / Présentation
             ════════════════════════════════ */}
             {subPage === "presentation" && (
-              <div style={{ paddingTop: 8 }}>
+              <div id="analyse" className="td-subpage-content" style={{ paddingTop: 8 }}>
 
                 {/* 1 · Décision rapide — 3 blocs éditoriaux */}
                 {(() => {
@@ -562,7 +589,7 @@ const ToolDetailPage = () => {
                 SECTION: Prix
             ════════════════════════════════ */}
             {subPage === "prix" && (
-              <div style={{ paddingTop: 8 }}>
+              <div id="prix" className="td-subpage-content" style={{ paddingTop: 8 }}>
                 <div className="td-section">
                   <span className="td-eyebrow">{t("Tarifs", "Pricing")}</span>
                   <h2 className="td-title">
@@ -597,7 +624,7 @@ const ToolDetailPage = () => {
                 SECTION: Alternatives
             ════════════════════════════════ */}
             {subPage === "alternatives" && (
-              <div style={{ paddingTop: 8 }}>
+              <div id="alternatives" className="td-subpage-content" style={{ paddingTop: 8 }}>
                 <div className="td-section">
                   <span className="td-eyebrow">{t("Comparatif", "Comparison")}</span>
                   <h2 className="td-title">
@@ -708,7 +735,7 @@ const ToolDetailPage = () => {
                 SECTION: Avis
             ════════════════════════════════ */}
             {subPage === "avis" && (
-              <div style={{ paddingTop: 8 }}>
+              <div id="avis" className="td-subpage-content" style={{ paddingTop: 8 }}>
                 {(() => {
                   const ts = computeToolTrimScore(tool);
                   const signals = [
@@ -804,7 +831,7 @@ const ToolDetailPage = () => {
                 SECTION: FAQ
             ════════════════════════════════ */}
             {subPage === "faq" && (
-              <div style={{ paddingTop: 8 }}>
+              <div id="faq" className="td-subpage-content" style={{ paddingTop: 8 }}>
                 <div className="td-section">
                   <span className="td-eyebrow">{t("FAQ", "FAQ")}</span>
                   <h2 className="td-title">

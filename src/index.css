@@ -3079,6 +3079,11 @@
     background: #222222;
   }
 
+  /* Conteneur de sous-page — scroll-margin compense header fixe + tab nav sticky */
+  .td-subpage-content {
+    scroll-margin-top: calc(var(--navbar-h, 68px) + 72px + 12px);
+  }
+
   /* Hero metadata row */
   .td-hero-meta {
     display: flex;
