@@ -2,6 +2,73 @@
 
 ---
 
+## 2026-05-15 — Sprint Stacks Facettes : sidebar de facettes /fr/stacks
+
+### Sprint Stacks Facettes — sidebar combinatoire
+
+**Fichiers modifiés** : `src/pages/StacksPage.tsx` (réécriture complète) + `src/index.css` (+280 lignes sk-*)
+
+**Layout**
+- `sk-listing-layout` : `grid-template-columns: 256px minmax(0, 1fr)` + gap 48px
+- Sidebar sticky : `top: calc(var(--navbar-h, 68px) + 24px)` + `max-height: calc(100vh - navbar - 48px)` + `overflow-y: auto` (scrollable quand contenu > viewport)
+- Mobile < 1024px : sidebar masquée, `sk-listing-layout` → 1 colonne
+
+**Sidebar de facettes (desktop)**
+- Header : eyebrow "AFFINER", titre 20px, description 14px #6F6F68
+- 4 groupes de facettes : PROFIL / OBJECTIF / BUDGET / COMPLEXITÉ
+- `sk-facet-group` : border-top + padding 20px 0
+- `sk-facet-option` : button pleine largeur 34px, hover #EDEDE8, active #222222
+- `sk-facet-count` : count à droite (opacity 0.6), masqué sur option "Tous"
+- `sk-sidebar-reset` : bouton discret, désactivé si aucun filtre actif
+
+**Facettes et types**
+- `StackFacetProfile` : `"all" | StackPersona` (6 personas)
+- `StackFacetObjective` : `"all" | "content" | "sell" | "clients" | "automate" | "produce" | "organize"` (dérivé depuis `subProfiles`)
+- `StackFacetBudget` : `"all" | "light" | "standard" | "premium"` (≤50 / 51-150 / >150€)
+- `StackFacetComplexity` : `"all" | StackStage` (starter/lean/scale)
+- Mapping `OBJECTIVE_SUBPROFILES` : chaque objectif → liste de subProfiles correspondants
+- `getStackObjectives(stack)` : dérive les objectifs depuis `stack.subProfiles`
+- Filtrage combinatoire : toutes les facettes s'appliquent ensemble
+
+**Compteurs dans la sidebar**
+- Calculés dynamiquement sur l'ensemble STACKS (pas sur la sélection courante)
+- `countForProfile / countForObjective / countForBudget / countForComplexity`
+- Total 212 stacks : Créateur 40, Consultant 47, Designer 36, Développeur 37, Ops 28, Solo 24
+
+**Panneau mobile**
+- `sk-mobile-trigger-row` : visible < 1024px, masqué >= 1024px
+- Bouton "Filtres" + badge count actif (ex: "Filtres (2)")
+- `sk-mobile-panel` : fixed full-screen, fond #F8F8F4
+- Header blanc + titre + bouton fermer (×)
+- Corps scrollable avec `SidebarContent` (mêmes facettes)
+- Footer blanc : CTA "Voir les N stacks" noir + "Réinitialiser" secondaire
+- Fermeture via bouton ×, via Escape (event listener), body overflow:hidden pendant ouverture
+
+**Composant partagé `SidebarContent`**
+- Utilisé à la fois par `sk-sidebar` (desktop) et `sk-mobile-panel` (mobile)
+- Reçoit tous les états facettes en props + callbacks
+- `FacetGroup<T>` générique : label + options + active + onChange + counts
+
+**Barre résultats**
+- `sk-results-header` : "N stacks trouvées" (gauche) + tri select (droite)
+- `sk-results-search` : champ recherche desktop (masqué mobile)
+- Le champ recherche mobile est dans `sk-mobile-trigger-row`
+
+**Cards améliorées**
+- Tags `sk-card-tags-row` : budget tier + complexité (stage label) + nombre d'outils
+- STAGE_LABELS : starter → Débutant / lean → Intermédiaire / scale → Avancé
+- `budgetDisplayLabel()` : Budget léger / Standard / Premium
+
+**Empty state**
+- `sk-empty-state` : card avec titre brand + description + CTA "Réinitialiser les filtres"
+- Reset : remet toutes les facettes à "all", query = "", sort = "recommended"
+
+**Supprimé**
+- `StackFilterId` et `FILTER_PILLS` (pills horizontales) — remplacés par sidebar
+- `stackMatchesFilter` — remplacé par `stackMatchesFacets`
+
+---
+
 ## 2026-05-15 — Sprint Stacks : tri sur /fr/stacks + Sprint Comparatifs Index : refonte /fr/comparatifs
 
 ### Sprint Stacks — ajout tri discret

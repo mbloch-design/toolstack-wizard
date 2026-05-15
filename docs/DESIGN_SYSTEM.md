@@ -587,6 +587,112 @@ details[open] .sd-faq-icon { transform: rotate(180deg); }
 
 ---
 
+## Système `sk-*` — StacksPage facettée (sidebar)
+
+### Layout 2 colonnes (`sk-listing-layout`)
+```css
+.sk-listing-layout {
+  display: grid;
+  grid-template-columns: 256px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+/* ≤1023px → 1 colonne, sidebar masquée */
+```
+
+### Sidebar sticky (`sk-sidebar`)
+```css
+.sk-sidebar {
+  position: sticky;
+  top: calc(var(--navbar-h, 68px) + 24px);
+  align-self: start;
+  padding-right: 24px;
+  border-right: 1px solid #DADAD4;
+  max-height: calc(100vh - var(--navbar-h, 68px) - 48px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+```
+
+**Règle :** sidebar scrollable quand contenu > viewport (4 groupes de facettes dépassent 900px de hauteur).
+
+### Header sidebar
+```css
+.sk-sidebar-eyebrow  { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6F6F68; }
+.sk-sidebar-title    { font-size: 20px; font-weight: 600; letter-spacing: -0.03em; color: #222222; }
+.sk-sidebar-desc     { font-size: 14px; line-height: 1.4; color: #6F6F68; }
+```
+
+### Groupes de facettes (`sk-facet-group`)
+```css
+.sk-facet-group       { padding: 20px 0; border-top: 1px solid #DADAD4; }
+.sk-facet-group-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6F6F68; margin: 0 0 10px; }
+.sk-facet-option      { display: flex; justify-content: space-between; align-items: center;
+  width: 100%; height: 34px; padding: 0 10px; border: none; border-radius: 6px;
+  background: transparent; color: #222222; font-size: 14px; font-weight: 500; }
+.sk-facet-option:hover { background: #EDEDE8; }
+.sk-facet-option--active { background: #222222; color: #FFFFFF; }
+.sk-facet-count       { font-size: 12px; opacity: 0.6; }
+/* "Tous" n'affiche pas de count (opt.id !== "all" guard) */
+```
+
+### Facette types et mapping
+```typescript
+// Profile  → StackPersona (dev / designer / consultant / content / ops / solo)
+// Budget   → "light" ≤50€ / "standard" 51-150€ / "premium" >150€
+// Complexity → StackStage (starter=Débutant / lean=Intermédiaire / scale=Avancé)
+// Objective → dérivé depuis subProfiles via OBJECTIVE_SUBPROFILES map
+```
+
+### Reset sidebar
+```css
+.sk-sidebar-reset { height: 34px; border: 1px solid #DADAD4; border-radius: 6px;
+  background: transparent; font-size: 13px; }
+.sk-sidebar-reset:disabled { opacity: 0.35; cursor: default; }
+```
+
+### Trigger mobile (`sk-mobile-trigger-row`)
+```css
+.sk-mobile-trigger-row { display: none; } /* affiché via @media ≤1023px */
+.sk-mobile-trigger     { height: 38px; border: 1px solid #DADAD4; border-radius: 6px;
+  display: inline-flex; align-items: center; gap: 7px; font-size: 14px; }
+/* Badge count : "Filtres (2)" — count calculé depuis états facettes actifs */
+```
+
+### Panneau mobile (`sk-mobile-panel`)
+```css
+.sk-mobile-panel         { position: fixed; inset: 0; z-index: 200; background: #F8F8F4;
+  display: flex; flex-direction: column; }
+.sk-mobile-panel-header  { background: #FFFFFF; border-bottom: 1px solid #DADAD4; padding: 16px 20px; }
+.sk-mobile-panel-body    { flex: 1; overflow-y: auto; padding: 0 20px; }
+.sk-mobile-panel-footer  { background: #FFFFFF; border-top: 1px solid #DADAD4; padding: 16px 20px; }
+.sk-mobile-panel-apply   { flex: 1; height: 46px; background: #222222; color: #FFFFFF; border-radius: 8px; }
+/* Fermeture : bouton × / touche Escape / body overflow masqué pendant ouverture */
+```
+
+### Composant `FacetGroup<T>` (TypeScript générique)
+Réutilisé dans `SidebarContent` — un seul composant pour tous les groupes.
+```tsx
+<FacetGroup<StackFacetProfile>
+  label="PROFIL"
+  options={PROFILE_OPTIONS}
+  active={facetProfile}
+  onChange={setFacetProfile}
+  counts={profileCounts}  /* Map<T, number> */
+  lang={lang}
+/>
+```
+
+### Tags cards (`sk-card-tags-row`)
+```css
+.sk-card-tags-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 8px 0 0; }
+.sk-card-tag      { height: 22px; padding: 0 8px; border: 1px solid #DADAD4; border-radius: 4px;
+  background: #F8F8F4; font-size: 12px; font-weight: 500; color: #6F6F68; }
+/* Affiche : budgetDisplayLabel() / STAGE_LABELS[stage][lang] / N outils */
+```
+
+---
+
 ## Système `sk-*` — StacksPage (filtre + tri)
 
 ### Ligne filtre + tri (`sk-filter-row`)
