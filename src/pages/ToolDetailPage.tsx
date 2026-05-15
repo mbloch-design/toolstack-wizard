@@ -968,59 +968,6 @@ const ToolDetailPage = () => {
         </div>
       </div>
 
-      {/* ══════════════════════════════════════════════════════════
-          TOOLTRIM — editorial footer CTA
-      ══════════════════════════════════════════════════════════ */}
-      <section className="td-footer-cta">
-        <div className="td-container">
-          <div className="td-footer-inner">
-            <div>
-              <span style={{
-                display: "block",
-                fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-                letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
-                marginBottom: 24,
-              }}>
-                TOOLTRIM
-              </span>
-              <h2 className="td-footer-title">
-                {t("Une stack plus claire.\nMoins d'abonnements inutiles.", "A cleaner stack.\nFewer wasted subscriptions.")}
-              </h2>
-              <p style={{
-                fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
-                color: "#6F6F68", marginTop: 24, maxWidth: 520,
-              }}>
-                {t(
-                  "Analyse tes outils, repère les doublons et compare les alternatives avant de payer un abonnement de plus.",
-                  "Analyse your tools, spot duplicates and compare alternatives before paying for one more subscription.",
-                )}
-              </p>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 14, flexShrink: 0 }}>
-              <Link
-                to={`${prefix}/selector`}
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: 8,
-                  height: 48, padding: "0 22px",
-                  background: "#222222", color: "#FFFFFF",
-                  borderRadius: 8, border: "none",
-                  fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
-                  textDecoration: "none",
-                  transition: "background 160ms ease-out", whiteSpace: "nowrap",
-                }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
-              >
-                {t("Lancer mon analyse", "Start my analysis")} →
-              </Link>
-              <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#9A9A92" }}>
-                {t("Gratuit · Sans inscription", "Free · No sign-up")}
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </article>
   );
 };

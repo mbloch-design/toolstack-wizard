@@ -2,6 +2,29 @@
 
 ---
 
+## 2026-05-15 — Sprint 2 correction : Suppression CTA dupliqués
+
+**Fichiers modifiés**
+- `src/pages/ToolDetailPage.tsx`
+- `src/components/Footer.tsx`
+- `docs/DESIGN_SYSTEM.md`
+
+### Problème
+Sur les pages outils, 3 blocs CTA s'empilaient en bas de page :
+1. `td-diag-band` — "[outil] fait partie de ta stack ?" (contextuel)
+2. `td-footer-cta` — "Une stack plus claire. Moins d'abonnements inutiles." (global)
+3. Footer brand statement — logo picto + "Votre stack coûte trop cher. On le prouve en 3 minutes." + bouton bleu
+
+### Fix
+
+**`ToolDetailPage.tsx`** — suppression complète de la section `td-footer-cta` (CTA global inline). Ne reste que `td-diag-band` (CTA contextuel outil).
+
+**`Footer.tsx`** — ajout de `useLocation()` et de la variable `isToolPage` (regex `/\/tool\/[^/]+/`). Le bloc brand statement est conditionnel : `{!isToolPage && (...)}`. Il reste visible sur toutes les autres pages (home, tools, guides, catégories, comparatifs…).
+
+**`DESIGN_SYSTEM.md`** — ajout de la règle "Une seule conversion par page outil" avec table de référence et justification.
+
+---
+
 ## 2026-05-15 — Sprint 2 : Refonte template page outil
 
 **Fichiers modifiés**

@@ -63,7 +63,7 @@ transition: background 160ms ease-out;
 /* hover → background: #000000 */
 ```
 
-Utilisé : `StickyDecisionCard` (Visiter le site), `td-diag-band` (Auditer ma stack), `td-footer-cta` (Lancer mon analyse).
+Utilisé : `StickyDecisionCard` (Visiter le site), `td-diag-band` (Auditer ma stack).
 
 ### CTA secondaire (ghost button)
 ```css
@@ -78,6 +78,23 @@ border-radius: 8px;
 Utilisé : `StickyDecisionCard` (Comparer les alternatives).
 
 **Pas de bouton bleu sur les pages outils.**
+
+---
+
+## Règle CTA — une seule conversion par page outil
+
+> **Une page outil ne doit pas afficher deux CTA d'audit de stack consécutifs.**
+
+| Contexte | CTA à afficher | CTA à ne pas afficher |
+|---|---|---|
+| Page outil (`/tool/:slug`) | CTA contextuel outil (`td-diag-band`) | CTA global Footer brand statement |
+| Autres pages (home, tools, guides…) | Footer brand statement ("Votre stack coûte trop cher…") | — |
+
+**Implémentation :**
+- `ToolDetailPage.tsx` : contient uniquement `td-diag-band` (CTA contextuel). La `td-footer-cta` a été supprimée.
+- `Footer.tsx` : le bloc brand statement est conditionnel — masqué si `useLocation()` détecte `/tool/[slug]` (regex : `/\/tool\/[^/]+/`).
+
+**Raison :** les pages outils ont un parcours spécifique (identifier → décider → agir sur l'outil consulté). Un deuxième CTA global brise la cohérence narrative et noie le signal.
 
 ---
 
@@ -99,13 +116,11 @@ padding: 56px 0;
 /* grille interne : 1fr auto, gap 48px */
 ```
 
-### Footer CTA full-width (td-footer-cta)
-```css
-background: #F8F8F4;
-border-top: 1px solid #DADAD4;
-padding: 72px 0;
-/* grille interne : 1fr auto, gap 64px, align-items end */
-```
+### Footer CTA full-width (td-footer-cta) — DÉPRÉCIÉE sur pages outils
+
+La classe `td-footer-cta` existe dans `index.css` mais n'est plus utilisée dans `ToolDetailPage.tsx`.
+Elle a été supprimée pour éviter la duplication avec `td-diag-band`.
+Conserver la classe pour un éventuel usage sur d'autres pages.
 
 ---
 
