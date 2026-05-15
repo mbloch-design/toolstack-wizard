@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { X, SlidersHorizontal } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
@@ -8,24 +9,18 @@ import {
   STACK_PERSONAS,
   STACKS,
   type StackPersona,
+  type StackStage,
 } from "@/data/stacks";
 
 /* ─── Types ─────────────────────────────────────────────────────────────────── */
 type StackListItem = (typeof STACKS)[number];
-type StackFilterId = "all" | "creation" | "business" | "tech" | "ops" | "light" | "ia";
-type StackSortId = "recommended" | "budget" | "tools";
+type StackFacetProfile    = "all" | StackPersona;
+type StackFacetObjective  = "all" | "content" | "sell" | "clients" | "automate" | "produce" | "organize";
+type StackFacetBudget     = "all" | "light" | "standard" | "premium";
+type StackFacetComplexity = "all" | StackStage;
+type StackSortId          = "recommended" | "budget" | "tools";
 
 /* ─── Constants ─────────────────────────────────────────────────────────────── */
-const FILTER_PILLS: { id: StackFilterId; label: string; labelEn: string }[] = [
-  { id: "all",      label: "Tous",          labelEn: "All" },
-  { id: "creation", label: "Création",      labelEn: "Creative" },
-  { id: "business", label: "Business",      labelEn: "Business" },
-  { id: "tech",     label: "Tech",          labelEn: "Tech" },
-  { id: "ops",      label: "Ops",           labelEn: "Ops" },
-  { id: "light",    label: "Budget léger",  labelEn: "Lean budget" },
-  { id: "ia",       label: "IA",            labelEn: "AI" },
-];
-
 const FEATURED_STACK_SLUGS = [
   "developpeur-freelance-shipper",
   "designer-freelance-solo",
@@ -41,13 +36,70 @@ const FEATURED_STACK_SLUGS = [
 ];
 
 const PROFILE_RECOMMENDED_STACKS = [
-  { persona: "content" as StackPersona,    slug: "createur-contenu-operateur" },
-  { persona: "designer" as StackPersona,   slug: "designer-freelance-solo" },
-  { persona: "dev" as StackPersona,        slug: "developpeur-freelance-shipper" },
+  { persona: "content"    as StackPersona, slug: "createur-contenu-operateur" },
+  { persona: "designer"   as StackPersona, slug: "designer-freelance-solo" },
+  { persona: "dev"        as StackPersona, slug: "developpeur-freelance-shipper" },
   { persona: "consultant" as StackPersona, slug: "consultant-b2b-propre" },
-  { persona: "ops" as StackPersona,        slug: "ops-manager-fractional-coo" },
-  { persona: "solo" as StackPersona,       slug: "freelance-solo-zero-bloat" },
+  { persona: "ops"        as StackPersona, slug: "ops-manager-fractional-coo" },
+  { persona: "solo"       as StackPersona, slug: "freelance-solo-zero-bloat" },
 ] as const;
+
+/* Facet definitions */
+const PROFILE_OPTIONS: { id: StackFacetProfile; label: string; labelEn: string }[] = [
+  { id: "all",        label: "Tous",        labelEn: "All" },
+  { id: "content",    label: "Créateur",    labelEn: "Creator" },
+  { id: "consultant", label: "Consultant",  labelEn: "Consultant" },
+  { id: "designer",   label: "Designer",    labelEn: "Designer" },
+  { id: "dev",        label: "Développeur", labelEn: "Developer" },
+  { id: "ops",        label: "Ops",         labelEn: "Ops" },
+  { id: "solo",       label: "Solo",        labelEn: "Solo" },
+];
+
+const OBJECTIVE_OPTIONS: { id: StackFacetObjective; label: string; labelEn: string }[] = [
+  { id: "all",      label: "Tous",              labelEn: "All" },
+  { id: "content",  label: "Créer du contenu",  labelEn: "Create content" },
+  { id: "sell",     label: "Vendre",            labelEn: "Sell" },
+  { id: "clients",  label: "Gérer ses clients", labelEn: "Manage clients" },
+  { id: "automate", label: "Automatiser",       labelEn: "Automate" },
+  { id: "produce",  label: "Produire",          labelEn: "Produce" },
+  { id: "organize", label: "Organiser",         labelEn: "Organize" },
+];
+
+const BUDGET_OPTIONS: { id: StackFacetBudget; label: string; labelEn: string }[] = [
+  { id: "all",      label: "Tous",          labelEn: "All" },
+  { id: "light",    label: "Budget léger",  labelEn: "Lean budget" },
+  { id: "standard", label: "Standard",      labelEn: "Standard" },
+  { id: "premium",  label: "Premium",       labelEn: "Premium" },
+];
+
+const COMPLEXITY_OPTIONS: { id: StackFacetComplexity; label: string; labelEn: string }[] = [
+  { id: "all",     label: "Tous",          labelEn: "All" },
+  { id: "starter", label: "Débutant",      labelEn: "Beginner" },
+  { id: "lean",    label: "Intermédiaire", labelEn: "Intermediate" },
+  { id: "scale",   label: "Avancé",        labelEn: "Advanced" },
+];
+
+/* Sub-profile → objective mapping */
+const OBJECTIVE_SUBPROFILES: Record<Exclude<StackFacetObjective, "all">, string[]> = {
+  content:  ["copywriting", "newsletter", "social-content", "podcast", "video", "photo",
+             "research", "seo", "short-video", "youtube-long", "audio-creator", "linkedin-content",
+             "creator-newsletter", "instagram-creator", "ugc-creator", "influencer",
+             "educational-content", "seo-blogging", "ai-content", "brand-content", "repurposing",
+             "community-creator", "training"],
+  sell:     ["crm-sales", "ecommerce", "sales-bd", "cro-conversion", "infoproducts",
+             "digital-products", "affiliate-content", "ecommerce-content"],
+  clients:  ["client-delivery", "coaching", "admin", "strategy-consulting",
+             "management-consulting", "hr-consulting", "recruiting"],
+  automate: ["automation", "no-code", "ai-coding", "api-integration", "automation-ops",
+             "ai-automation-consulting", "ai-ops"],
+  produce:  ["web", "product", "brand", "ui-ux", "illustration", "motion", "art-direction",
+             "photo", "video", "full-stack", "front-end", "back-end", "mvp-startup",
+             "web-redesign", "mobile-dev", "interior-design"],
+  organize: ["operations", "analytics", "admin", "reporting-ops", "finance-cfo",
+             "bizops", "revops", "marketing-ops", "product-ops", "fractional-coo",
+             "ops-manager", "people-ops", "finance-ops", "delivery-ops", "customer-ops",
+             "agency-ops", "it-systems", "legal-ops"],
+};
 
 /* ─── Helpers ────────────────────────────────────────────────────────────────── */
 function personaLabel(persona: StackPersona, locale: "fr" | "en") {
@@ -55,46 +107,260 @@ function personaLabel(persona: StackPersona, locale: "fr" | "en") {
   return locale === "fr" ? item?.label || persona : item?.labelEn || persona;
 }
 
-function stackMatchesFilter(stack: StackListItem, filter: StackFilterId): boolean {
-  switch (filter) {
-    case "all":      return true;
-    case "creation": return stack.persona === "content" || stack.persona === "designer";
-    case "business": return stack.persona === "consultant" || stack.persona === "solo";
-    case "tech":     return stack.persona === "dev";
-    case "ops":      return stack.persona === "ops";
-    case "light":    return stack.monthlyBudget <= 50;
-    case "ia":       return (
-      stack.slug.includes("ia-generative") ||
-      stack.slug.includes("ia-visuelle") ||
-      stack.slug.includes("productivite-ia")
-    );
-    default: return true;
-  }
+function getStackObjectives(stack: StackListItem): StackFacetObjective[] {
+  const subs = new Set(stack.subProfiles as string[]);
+  const matched = (Object.entries(OBJECTIVE_SUBPROFILES) as [StackFacetObjective, string[]][])
+    .filter(([, profiles]) => profiles.some((p) => subs.has(p)))
+    .map(([id]) => id);
+  return matched.length > 0 ? matched : ["produce"];
 }
 
-function stackMatchesQuery(stack: StackListItem, query: string) {
-  if (!query) return true;
-  const text = [
-    stack.title,
-    stack.titleEn,
-    stack.subtitle,
-    stack.subtitleEn,
-    stack.bestFor,
-    stack.bestForEn,
-    stack.risk,
-    stack.riskEn,
-    ...stack.tools.map((slot) => `${slot.role} ${slot.roleEn} ${slot.slug}`),
-  ].join(" ").toLowerCase();
-  return text.includes(query);
+function stackMatchesFacets(
+  stack: StackListItem,
+  profile: StackFacetProfile,
+  objective: StackFacetObjective,
+  budget: StackFacetBudget,
+  complexity: StackFacetComplexity,
+  query: string,
+): boolean {
+  if (profile !== "all" && stack.persona !== profile) return false;
+  if (complexity !== "all" && stack.stage !== complexity) return false;
+  if (budget === "light"    && stack.monthlyBudget > 50)                               return false;
+  if (budget === "standard" && (stack.monthlyBudget <= 50 || stack.monthlyBudget > 150)) return false;
+  if (budget === "premium"  && stack.monthlyBudget <= 150)                             return false;
+  if (objective !== "all" && !getStackObjectives(stack).includes(objective))           return false;
+  if (query) {
+    const text = [
+      stack.title, stack.titleEn, stack.subtitle, stack.subtitleEn,
+      stack.bestFor, stack.bestForEn, stack.risk, stack.riskEn,
+      ...stack.tools.map((slot) => `${slot.role} ${slot.roleEn} ${slot.slug}`),
+    ].join(" ").toLowerCase();
+    if (!text.includes(query)) return false;
+  }
+  return true;
+}
+
+/* Count stacks for a given option (excluding that facet) */
+function countForProfile(id: StackFacetProfile, all: StackListItem[]) {
+  return id === "all" ? all.length : all.filter((s) => s.persona === id).length;
+}
+function countForObjective(id: StackFacetObjective, all: StackListItem[]) {
+  return id === "all" ? all.length : all.filter((s) => getStackObjectives(s).includes(id)).length;
+}
+function countForBudget(id: StackFacetBudget, all: StackListItem[]) {
+  if (id === "all")      return all.length;
+  if (id === "light")    return all.filter((s) => s.monthlyBudget <= 50).length;
+  if (id === "standard") return all.filter((s) => s.monthlyBudget > 50 && s.monthlyBudget <= 150).length;
+  return all.filter((s) => s.monthlyBudget > 150).length;
+}
+function countForComplexity(id: StackFacetComplexity, all: StackListItem[]) {
+  return id === "all" ? all.length : all.filter((s) => s.stage === id).length;
+}
+
+/* Stage → label */
+const STAGE_LABELS: Record<StackStage, { fr: string; en: string }> = {
+  starter: { fr: "Débutant",      en: "Beginner" },
+  lean:    { fr: "Intermédiaire", en: "Intermediate" },
+  scale:   { fr: "Avancé",        en: "Advanced" },
+};
+
+/* Budget → display label */
+function budgetDisplayLabel(monthly: number, lang: "fr" | "en") {
+  if (monthly === 0)    return lang === "fr" ? "Gratuit" : "Free";
+  if (monthly <= 50)    return lang === "fr" ? "Budget léger" : "Lean budget";
+  if (monthly <= 150)   return lang === "fr" ? "Standard" : "Standard";
+  return lang === "fr" ? "Premium" : "Premium";
+}
+
+/* ─── Facet group sub-component ─────────────────────────────────────────────── */
+interface FacetGroupProps<T extends string> {
+  label: string;
+  options: { id: T; label: string; labelEn: string }[];
+  active: T;
+  onChange: (id: T) => void;
+  counts: Map<T, number>;
+  lang: "fr" | "en";
+}
+
+function FacetGroup<T extends string>({
+  label, options, active, onChange, counts, lang,
+}: FacetGroupProps<T>) {
+  return (
+    <div className="sk-facet-group">
+      <p className="sk-facet-group-label">{label}</p>
+      {options.map((opt) => {
+        const count = counts.get(opt.id) ?? 0;
+        const isActive = opt.id === active;
+        return (
+          <button
+            key={opt.id}
+            type="button"
+            aria-pressed={isActive}
+            onClick={() => onChange(opt.id)}
+            className={`sk-facet-option${isActive ? " sk-facet-option--active" : ""}`}
+          >
+            <span>{lang === "fr" ? opt.label : opt.labelEn}</span>
+            {opt.id !== "all" && <span className="sk-facet-count">{count}</span>}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ─── Sidebar content ────────────────────────────────────────────────────────── */
+interface SidebarContentProps {
+  lang: "fr" | "en";
+  facetProfile: StackFacetProfile;
+  facetObjective: StackFacetObjective;
+  facetBudget: StackFacetBudget;
+  facetComplexity: StackFacetComplexity;
+  setFacetProfile: (v: StackFacetProfile) => void;
+  setFacetObjective: (v: StackFacetObjective) => void;
+  setFacetBudget: (v: StackFacetBudget) => void;
+  setFacetComplexity: (v: StackFacetComplexity) => void;
+  onReset: () => void;
+  isFiltered: boolean;
+  allStacks: StackListItem[];
+}
+
+function SidebarContent({
+  lang, facetProfile, facetObjective, facetBudget, facetComplexity,
+  setFacetProfile, setFacetObjective, setFacetBudget, setFacetComplexity,
+  onReset, isFiltered, allStacks,
+}: SidebarContentProps) {
+  const profileCounts = useMemo(() => {
+    const map = new Map<StackFacetProfile, number>();
+    for (const opt of PROFILE_OPTIONS) map.set(opt.id, countForProfile(opt.id, allStacks));
+    return map;
+  }, [allStacks]);
+
+  const objectiveCounts = useMemo(() => {
+    const map = new Map<StackFacetObjective, number>();
+    for (const opt of OBJECTIVE_OPTIONS) map.set(opt.id, countForObjective(opt.id, allStacks));
+    return map;
+  }, [allStacks]);
+
+  const budgetCounts = useMemo(() => {
+    const map = new Map<StackFacetBudget, number>();
+    for (const opt of BUDGET_OPTIONS) map.set(opt.id, countForBudget(opt.id, allStacks));
+    return map;
+  }, [allStacks]);
+
+  const complexityCounts = useMemo(() => {
+    const map = new Map<StackFacetComplexity, number>();
+    for (const opt of COMPLEXITY_OPTIONS) map.set(opt.id, countForComplexity(opt.id, allStacks));
+    return map;
+  }, [allStacks]);
+
+  return (
+    <>
+      {/* Header */}
+      <div className="sk-sidebar-header">
+        <span className="sk-sidebar-eyebrow">
+          {lang === "fr" ? "AFFINER" : "FILTER"}
+        </span>
+        <p className="sk-sidebar-title">
+          {lang === "fr" ? "Trouver la bonne stack" : "Find the right stack"}
+        </p>
+        <p className="sk-sidebar-desc">
+          {lang === "fr"
+            ? "Filtre par profil, budget et niveau d'usage."
+            : "Filter by profile, budget, and skill level."}
+        </p>
+      </div>
+
+      {/* Facet groups */}
+      <FacetGroup<StackFacetProfile>
+        label={lang === "fr" ? "PROFIL" : "PROFILE"}
+        options={PROFILE_OPTIONS}
+        active={facetProfile}
+        onChange={setFacetProfile}
+        counts={profileCounts}
+        lang={lang}
+      />
+      <FacetGroup<StackFacetObjective>
+        label={lang === "fr" ? "OBJECTIF" : "OBJECTIVE"}
+        options={OBJECTIVE_OPTIONS}
+        active={facetObjective}
+        onChange={setFacetObjective}
+        counts={objectiveCounts}
+        lang={lang}
+      />
+      <FacetGroup<StackFacetBudget>
+        label={lang === "fr" ? "BUDGET" : "BUDGET"}
+        options={BUDGET_OPTIONS}
+        active={facetBudget}
+        onChange={setFacetBudget}
+        counts={budgetCounts}
+        lang={lang}
+      />
+      <FacetGroup<StackFacetComplexity>
+        label={lang === "fr" ? "COMPLEXITÉ" : "COMPLEXITY"}
+        options={COMPLEXITY_OPTIONS}
+        active={facetComplexity}
+        onChange={setFacetComplexity}
+        counts={complexityCounts}
+        lang={lang}
+      />
+
+      {/* Reset */}
+      <div className="sk-sidebar-reset-row">
+        <button
+          type="button"
+          onClick={onReset}
+          disabled={!isFiltered}
+          className="sk-sidebar-reset"
+        >
+          {lang === "fr" ? "Réinitialiser" : "Reset filters"}
+        </button>
+      </div>
+    </>
+  );
 }
 
 /* ─── Main component ─────────────────────────────────────────────────────────── */
 const StacksPage = () => {
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
-  const [activeFilter, setActiveFilter] = useState<StackFilterId>("all");
-  const [query, setQuery] = useState("");
-  const [sortBy, setSortBy] = useState<StackSortId>("recommended");
+
+  /* Facet state */
+  const [facetProfile,    setFacetProfile]    = useState<StackFacetProfile>("all");
+  const [facetObjective,  setFacetObjective]  = useState<StackFacetObjective>("all");
+  const [facetBudget,     setFacetBudget]     = useState<StackFacetBudget>("all");
+  const [facetComplexity, setFacetComplexity] = useState<StackFacetComplexity>("all");
+  const [sortBy,          setSortBy]          = useState<StackSortId>("recommended");
+  const [query,           setQuery]           = useState("");
+  const [mobileOpen,      setMobileOpen]      = useState(false);
+
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  const isFiltered = facetProfile !== "all" || facetObjective !== "all"
+    || facetBudget !== "all" || facetComplexity !== "all" || query !== "";
+
+  const activeFilterCount = [facetProfile, facetObjective, facetBudget, facetComplexity]
+    .filter((f) => f !== "all").length + (query ? 1 : 0);
+
+  function resetFacets() {
+    setFacetProfile("all");
+    setFacetObjective("all");
+    setFacetBudget("all");
+    setFacetComplexity("all");
+    setQuery("");
+    setSortBy("recommended");
+  }
+
+  /* Close mobile panel on Escape */
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMobileOpen(false); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   const toolBySlug = useMemo(
     () => new Map(tools.map((tool) => [tool.slug || tool.id, tool])),
@@ -110,8 +376,8 @@ const StacksPage = () => {
 
   const filteredStacks = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const filtered = STACKS.filter(
-      (stack) => stackMatchesFilter(stack, activeFilter) && stackMatchesQuery(stack, q),
+    const filtered = STACKS.filter((stack) =>
+      stackMatchesFacets(stack, facetProfile, facetObjective, facetBudget, facetComplexity, q),
     );
     if (sortBy === "budget") {
       return [...filtered].sort((a, b) => a.monthlyBudget - b.monthlyBudget);
@@ -128,7 +394,7 @@ const StacksPage = () => {
       if (bi >= 0) return 1;
       return 0;
     });
-  }, [activeFilter, query, sortBy]);
+  }, [facetProfile, facetObjective, facetBudget, facetComplexity, query, sortBy]);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -275,283 +541,298 @@ const StacksPage = () => {
         </div>
       </section>
 
-      {/* ── Filtres + Liste ────────────────────────────────────────────────── */}
+      {/* ── Listing : sidebar + résultats ─────────────────────────────────── */}
       <section id="stacks" className="sk-section scroll-mt-20">
         <div className="sk-container">
 
-          {/* Filter pills + sort — same row */}
-          <div className="sk-filter-row">
-            <div className="gi-filter-bar">
-              {FILTER_PILLS.map((pill) => (
-                <button
-                  key={pill.id}
-                  type="button"
-                  onClick={() => setActiveFilter(pill.id)}
-                  className={`gi-filter-pill${activeFilter === pill.id ? " gi-filter-pill--active" : ""}`}
-                >
-                  {lang === "fr" ? pill.label : pill.labelEn}
-                </button>
-              ))}
-            </div>
-            <div className="gi-sort-wrapper">
-              <span className="gi-sort-label">{t("Trier par", "Sort by")}</span>
-              <select
-                className="gi-sort-select"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as StackSortId)}
-                aria-label={t("Trier par", "Sort by")}
-              >
-                <option value="recommended">{t("Recommandé", "Recommended")}</option>
-                <option value="budget">{t("Budget", "Budget")}</option>
-                <option value="tools">{t("Nombre d'outils", "Tool count")}</option>
-              </select>
-            </div>
-          </div>
+          {/* Mobile trigger */}
+          <div className="sk-mobile-trigger-row">
+            <button
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              className="sk-mobile-trigger"
+              aria-label={t("Ouvrir les filtres", "Open filters")}
+            >
+              <SlidersHorizontal size={15} aria-hidden />
+              {activeFilterCount > 0
+                ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`)
+                : t("Filtres", "Filters")}
+            </button>
 
-          {/* Stack count + search */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 16,
-            marginBottom: 24,
-            flexWrap: "wrap" as const,
-          }}>
-            <p style={{
-              fontFamily: "var(--font-ui)",
-              fontSize: 13,
-              color: "#6F6F68",
-              letterSpacing: "-0.01em",
-            }}>
-              {filteredStacks.length}&nbsp;{t("stack" + (filteredStacks.length !== 1 ? "s" : ""), "stack" + (filteredStacks.length !== 1 ? "s" : ""))}
-            </p>
+            {/* Inline search (mobile) */}
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t("Rechercher…", "Search…")}
-              style={{
-                fontFamily: "var(--font-ui)",
-                fontSize: 14,
-                height: 36,
-                padding: "0 14px",
-                border: "1px solid #DADAD4",
-                borderRadius: 6,
-                background: "#FFFFFF",
-                color: "#222222",
-                outline: "none",
-                width: 220,
-                letterSpacing: "-0.01em",
-              }}
+              className="sk-search-input"
             />
           </div>
 
-          {/* Stack cards */}
-          {filteredStacks.length > 0 ? (
-            <div style={{ display: "flex", flexDirection: "column" as const, gap: 0 }}>
-              {filteredStacks.map((stack) => {
-                const stackTools = stack.tools
-                  .slice(0, 6)
-                  .map((slot) => toolBySlug.get(slot.slug))
-                  .filter(Boolean) as NonNullable<ReturnType<typeof toolBySlug.get>>[];
-                const titleText = lang === "fr" ? stack.title : stack.titleEn;
-                const subtitleText = lang === "fr" ? stack.subtitle : stack.subtitleEn;
-                const riskText = lang === "fr" ? stack.risk : stack.riskEn;
-                const personaText = personaLabel(stack.persona, lang);
-                const budget = stack.monthlyBudget > 0
-                  ? `≈ ${stack.monthlyBudget}€/mois`
-                  : t("Gratuit", "Free");
-                const isRecommended = PROFILE_RECOMMENDED_STACKS.some((p) => p.slug === stack.slug);
+          {/* 2-column layout */}
+          <div className="sk-listing-layout">
 
-                return (
-                  <Link
-                    key={stack.id}
-                    to={`${prefix}/stacks/${stack.slug}`}
-                    className="sk-card"
-                    style={{ marginBottom: 8 }}
+            {/* ── Sidebar (desktop) ────────────────────────────────────── */}
+            <aside className="sk-sidebar" aria-label={t("Filtres", "Filters")}>
+              <SidebarContent
+                lang={lang}
+                facetProfile={facetProfile}
+                facetObjective={facetObjective}
+                facetBudget={facetBudget}
+                facetComplexity={facetComplexity}
+                setFacetProfile={setFacetProfile}
+                setFacetObjective={setFacetObjective}
+                setFacetBudget={setFacetBudget}
+                setFacetComplexity={setFacetComplexity}
+                onReset={resetFacets}
+                isFiltered={isFiltered}
+                allStacks={STACKS}
+              />
+            </aside>
+
+            {/* ── Results ──────────────────────────────────────────────── */}
+            <div className="sk-results">
+
+              {/* Results header */}
+              <div className="sk-results-header">
+                <span className="sk-results-count">
+                  {filteredStacks.length}&nbsp;
+                  {t(
+                    `stack${filteredStacks.length !== 1 ? "s" : ""} trouvée${filteredStacks.length !== 1 ? "s" : ""}`,
+                    `stack${filteredStacks.length !== 1 ? "s" : ""} found`,
+                  )}
+                </span>
+                <div className="sk-results-sort">
+                  <span className="gi-sort-label">{t("Trier par", "Sort by")}</span>
+                  <select
+                    className="gi-sort-select"
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value as StackSortId)}
+                    aria-label={t("Trier par", "Sort by")}
                   >
-                    {/* Header */}
-                    <div className="sk-card-header">
-                      <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                        <span style={{
-                          fontFamily: "var(--font-ui)",
-                          fontSize: 10,
-                          fontWeight: 600,
-                          letterSpacing: "0.08em",
-                          textTransform: "uppercase" as const,
-                          color: "#9A9A92",
-                        }}>
-                          STACK
-                        </span>
-                        <span style={{ color: "#DADAD4", fontSize: 12 }}>·</span>
-                        <span style={{
-                          fontFamily: "var(--font-ui)",
-                          fontSize: 10,
-                          fontWeight: 600,
-                          letterSpacing: "0.06em",
-                          textTransform: "uppercase" as const,
-                          color: "#6F6F68",
-                        }}>
-                          {personaText}
-                        </span>
-                        {isRecommended && (
-                          <>
+                    <option value="recommended">{t("Recommandé", "Recommended")}</option>
+                    <option value="budget">{t("Budget", "Budget")}</option>
+                    <option value="tools">{t("Nombre d'outils", "Tool count")}</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Search (desktop, inside results col) */}
+              <div className="sk-results-search">
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder={t("Rechercher une stack…", "Search stacks…")}
+                  className="sk-search-input"
+                />
+              </div>
+
+              {/* Stack list */}
+              {filteredStacks.length > 0 ? (
+                <div style={{ display: "flex", flexDirection: "column" as const, gap: 0 }}>
+                  {filteredStacks.map((stack) => {
+                    const stackTools = stack.tools
+                      .slice(0, 5)
+                      .map((slot) => toolBySlug.get(slot.slug))
+                      .filter(Boolean) as NonNullable<ReturnType<typeof toolBySlug.get>>[];
+                    const titleText    = lang === "fr" ? stack.title    : stack.titleEn;
+                    const subtitleText = lang === "fr" ? stack.subtitle : stack.subtitleEn;
+                    const personaText  = personaLabel(stack.persona, lang);
+                    const stageLabel   = STAGE_LABELS[stack.stage][lang];
+                    const budgetLabel  = stack.monthlyBudget > 0
+                      ? `≈ ${stack.monthlyBudget}€/mois`
+                      : t("Gratuit", "Free");
+                    const budgetTag    = budgetDisplayLabel(stack.monthlyBudget, lang);
+                    const isRecommended = PROFILE_RECOMMENDED_STACKS.some((p) => p.slug === stack.slug);
+
+                    return (
+                      <Link
+                        key={stack.id}
+                        to={`${prefix}/stacks/${stack.slug}`}
+                        className="sk-card"
+                      >
+                        {/* Meta row */}
+                        <div className="sk-card-header">
+                          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" as const }}>
+                            <span className="sk-card-meta-label">STACK</span>
                             <span style={{ color: "#DADAD4", fontSize: 12 }}>·</span>
-                            <span style={{
-                              fontFamily: "var(--font-ui)",
-                              fontSize: 9,
-                              fontWeight: 700,
-                              letterSpacing: "0.08em",
-                              textTransform: "uppercase" as const,
-                              color: "#FFFFFF",
-                              background: "#222222",
-                              padding: "2px 6px",
-                              borderRadius: 3,
-                            }}>
-                              {t("Recommandée", "Recommended")}
-                            </span>
-                          </>
-                        )}
-                      </div>
-                      <span style={{
-                        fontFamily: "var(--font-ui)",
-                        fontSize: 13,
-                        fontWeight: 600,
-                        color: "#222222",
-                        letterSpacing: "-0.02em",
-                        whiteSpace: "nowrap" as const,
-                      }}>
-                        {budget}
-                      </span>
-                    </div>
+                            <span className="sk-card-meta-persona">{personaText}</span>
+                            {isRecommended && (
+                              <>
+                                <span style={{ color: "#DADAD4", fontSize: 12 }}>·</span>
+                                <span className="sk-card-badge-recommended">
+                                  {t("Recommandée", "Recommended")}
+                                </span>
+                              </>
+                            )}
+                          </div>
+                          <span className="sk-card-budget">{budgetLabel}</span>
+                        </div>
 
-                    {/* Title */}
-                    <p className="sk-card-title">{titleText}</p>
+                        {/* Title */}
+                        <p className="sk-card-title">{titleText}</p>
 
-                    {/* Subtitle */}
-                    <p className="sk-card-desc">{subtitleText}</p>
+                        {/* Subtitle */}
+                        <p className="sk-card-desc">{subtitleText}</p>
 
-                    {/* Risk snippet */}
-                    {riskText && (
-                      <p style={{
-                        fontFamily: "var(--font-ui)",
-                        fontSize: 12,
-                        color: "#9A9A92",
-                        lineHeight: 1.45,
-                        margin: "8px 0 0",
-                        display: "-webkit-box",
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: "vertical" as const,
-                        overflow: "hidden",
-                      }}>
-                        <span style={{ fontWeight: 600, color: "#6F6F68" }}>
-                          {t("Risque", "Risk")} ·
-                        </span>{" "}
-                        {riskText}
-                      </p>
-                    )}
+                        {/* Tags: budget tier + complexity + tool count */}
+                        <div className="sk-card-tags-row">
+                          <span className="sk-card-tag">{budgetTag}</span>
+                          <span className="sk-card-tag">{stageLabel}</span>
+                          <span className="sk-card-tag">
+                            {stack.tools.length}&nbsp;{t("outils", "tools")}
+                          </span>
+                        </div>
 
-                    {/* Footer: tool logos + CTA */}
-                    <div className="sk-card-footer">
-                      {stackTools.length > 0 && (
-                        <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
-                          {stackTools.map((tool, i) => (
-                            <div
-                              key={tool.id}
-                              title={tool.name}
-                              style={{
-                                width: 28,
-                                height: 28,
-                                borderRadius: "50%",
-                                background: "#FFFFFF",
-                                border: "1px solid #E7E7E0",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                marginLeft: i === 0 ? 0 : -6,
-                                overflow: "hidden",
-                                position: "relative" as const,
-                                zIndex: stackTools.length - i,
-                              }}
-                            >
-                              <ToolLogo tool={tool} size={18} />
-                            </div>
-                          ))}
-                          {stack.tools.length > 6 && (
-                            <div style={{
-                              width: 28,
-                              height: 28,
-                              borderRadius: "50%",
-                              background: "#F8F8F4",
-                              border: "1px solid #E7E7E0",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              marginLeft: -6,
-                              fontFamily: "var(--font-ui)",
-                              fontSize: 11,
-                              fontWeight: 600,
-                              color: "#6F6F68",
-                            }}>
-                              +{stack.tools.length - 6}
+                        {/* Footer: logos + CTA */}
+                        <div className="sk-card-footer">
+                          {stackTools.length > 0 && (
+                            <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
+                              {stackTools.map((tool, i) => (
+                                <div
+                                  key={tool.id}
+                                  title={tool.name}
+                                  style={{
+                                    width: 28,
+                                    height: 28,
+                                    borderRadius: "50%",
+                                    background: "#FFFFFF",
+                                    border: "1px solid #E7E7E0",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    marginLeft: i === 0 ? 0 : -6,
+                                    overflow: "hidden",
+                                    position: "relative" as const,
+                                    zIndex: stackTools.length - i,
+                                  }}
+                                >
+                                  <ToolLogo tool={tool} size={18} />
+                                </div>
+                              ))}
+                              {stack.tools.length > 5 && (
+                                <div style={{
+                                  width: 28,
+                                  height: 28,
+                                  borderRadius: "50%",
+                                  background: "#F8F8F4",
+                                  border: "1px solid #E7E7E0",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  marginLeft: -6,
+                                  fontFamily: "var(--font-ui)",
+                                  fontSize: 11,
+                                  fontWeight: 600,
+                                  color: "#6F6F68",
+                                }}>
+                                  +{stack.tools.length - 5}
+                                </div>
+                              )}
                             </div>
                           )}
+                          <span className="sk-card-cta">
+                            {t("Voir la stack", "See stack")}
+                            <span aria-hidden className="sk-card-cta-arrow"> →</span>
+                          </span>
                         </div>
-                      )}
-                      <span className="sk-card-cta">
-                        {t("Voir la stack", "See stack")}
-                        <span aria-hidden> →</span>
-                      </span>
-                    </div>
-                  </Link>
-                );
-              })}
+                      </Link>
+                    );
+                  })}
+                </div>
+              ) : (
+                /* Empty state */
+                <div className="sk-empty-state">
+                  <p className="sk-empty-title">
+                    {t("Aucune stack ne correspond à ces filtres.", "No stack matches these filters.")}
+                  </p>
+                  <p className="sk-empty-desc">
+                    {t(
+                      "Essaie d'élargir tes critères ou réinitialise les filtres.",
+                      "Try broadening your criteria or reset the filters.",
+                    )}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={resetFacets}
+                    className="sk-empty-reset"
+                  >
+                    {t("Réinitialiser les filtres", "Reset filters")}
+                  </button>
+                </div>
+              )}
             </div>
-          ) : (
-            <div style={{
-              padding: "56px 0",
-              textAlign: "center" as const,
-              borderTop: "1px solid #DADAD4",
-            }}>
-              <p style={{
-                fontFamily: "var(--font-brand)",
-                fontSize: "clamp(1.25rem, 2vw, 1.5rem)",
-                fontWeight: 600,
-                letterSpacing: "-0.04em",
-                color: "#222222",
-                marginBottom: 8,
-              }}>
-                {t("Aucune stack ne correspond à ces filtres.", "No stack matches these filters.")}
-              </p>
-              <p style={{
-                fontFamily: "var(--font-ui)",
-                fontSize: 15,
-                color: "#6F6F68",
-                marginBottom: 24,
-              }}>
-                {t(
-                  "Essaie d'élargir ton filtre ou explore toutes les stacks.",
-                  "Try broadening your filter or explore all stacks.",
-                )}
-              </p>
-              <button
-                type="button"
-                onClick={() => { setActiveFilter("all"); setQuery(""); setSortBy("recommended"); }}
-                style={{
-                  display: "inline-flex", alignItems: "center",
-                  height: 40, padding: "0 18px",
-                  border: "1px solid #222222", borderRadius: 8,
-                  fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
-                  color: "#222222", background: "transparent",
-                  cursor: "pointer", letterSpacing: "-0.01em",
-                }}
-              >
-                {t("Voir toutes les stacks", "See all stacks")}
-              </button>
-            </div>
-          )}
+          </div>
         </div>
       </section>
+
+      {/* ── Mobile filter panel ──────────────────────────────────────────── */}
+      {mobileOpen && (
+        <div
+          className="sk-mobile-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t("Filtres", "Filters")}
+          ref={panelRef}
+        >
+          {/* Panel header */}
+          <div className="sk-mobile-panel-header">
+            <span className="sk-mobile-panel-title">
+              {t("Filtres", "Filters")}
+            </span>
+            <button
+              type="button"
+              className="sk-mobile-panel-close"
+              onClick={() => setMobileOpen(false)}
+              aria-label={t("Fermer", "Close")}
+            >
+              <X size={20} aria-hidden />
+            </button>
+          </div>
+
+          {/* Panel body — scrollable */}
+          <div className="sk-mobile-panel-body">
+            <SidebarContent
+              lang={lang}
+              facetProfile={facetProfile}
+              facetObjective={facetObjective}
+              facetBudget={facetBudget}
+              facetComplexity={facetComplexity}
+              setFacetProfile={setFacetProfile}
+              setFacetObjective={setFacetObjective}
+              setFacetBudget={setFacetBudget}
+              setFacetComplexity={setFacetComplexity}
+              onReset={resetFacets}
+              isFiltered={isFiltered}
+              allStacks={STACKS}
+            />
+          </div>
+
+          {/* Panel footer */}
+          <div className="sk-mobile-panel-footer">
+            <button
+              type="button"
+              className="sk-mobile-panel-apply"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t(
+                `Voir les ${filteredStacks.length} stack${filteredStacks.length !== 1 ? "s" : ""}`,
+                `See ${filteredStacks.length} stack${filteredStacks.length !== 1 ? "s" : ""}`,
+              )}
+            </button>
+            {isFiltered && (
+              <button
+                type="button"
+                className="sk-mobile-panel-reset"
+                onClick={resetFacets}
+              >
+                {t("Réinitialiser", "Reset")}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
 
     </div>
   );
