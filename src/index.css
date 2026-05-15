@@ -5664,3 +5664,152 @@
     max-width: 720px;
   }
 
+  /* ── Tool overview (2-col "Ce que fait chaque outil") ─────── */
+  .cp-overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  @media (max-width: 767px) { .cp-overview-grid { grid-template-columns: 1fr; } }
+
+  .cp-overview-card {
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-radius: 10px;
+    padding: 28px;
+  }
+
+  .cp-overview-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .cp-overview-logo {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    border: 1px solid #E7E7E0;
+    background: #F8F8F4;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .cp-overview-tool-name {
+    font-family: var(--font-ui);
+    font-size: 18px; font-weight: 600;
+    color: #222222; letter-spacing: -0.02em;
+  }
+  .cp-overview-desc {
+    font-family: var(--font-ui);
+    font-size: 15px; line-height: 1.6;
+    color: #6F6F68; margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  .cp-overview-list {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .cp-overview-item {
+    font-family: var(--font-ui);
+    font-size: 14px; line-height: 1.5;
+    color: #222222;
+    padding: 8px 0;
+    border-bottom: 1px solid #F0F0EA;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .cp-overview-item:last-child { border-bottom: none; }
+  .cp-overview-item::before {
+    content: "—";
+    color: #9A9A92;
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+
+  /* ── Pros & cons (2-col "Avantages et limites") ─────────────── */
+  .cp-pros-cons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 24px;
+  }
+  @media (max-width: 640px) { .cp-pros-cons-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  .cp-pros-cons-col {}
+  .cp-pros-cons-head {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #DADAD4;
+  }
+  .cp-pros-cons-tool-name {
+    font-family: var(--font-ui);
+    font-size: 16px; font-weight: 600;
+    color: #222222; letter-spacing: -0.02em;
+  }
+  .cp-pros-cons-sublabel {
+    font-family: var(--font-ui);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .cp-pros-cons-sublabel--pros { color: #2E7D32; }
+  .cp-pros-cons-sublabel--cons { color: #9A9A92; }
+
+  .cp-pros-cons-list { list-style: none; padding: 0; margin: 0; }
+  .cp-pros-cons-item {
+    font-family: var(--font-ui);
+    font-size: 14px; line-height: 1.55;
+    color: #222222;
+    padding: 7px 0;
+    border-bottom: 1px solid #F0F0EA;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .cp-pros-cons-item:last-child { border-bottom: none; }
+  .cp-pros-cons-item--pro::before {
+    content: "+";
+    color: #2E7D32;
+    font-weight: 700; flex-shrink: 0;
+    font-size: 13px;
+  }
+  .cp-pros-cons-item--con::before {
+    content: "—";
+    color: #9A9A92;
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+
+  /* ── Decision rows ("Ce qui doit te faire choisir") ─────────── */
+  .cp-decision-list { list-style: none; padding: 0; margin: 24px 0 0; }
+  .cp-decision-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid #DADAD4;
+  }
+  .cp-decision-row:last-child { border-bottom: 1px solid #DADAD4; }
+  @media (max-width: 640px) {
+    .cp-decision-row { flex-direction: column; gap: 8px; }
+  }
+  .cp-decision-context {
+    font-family: var(--font-ui);
+    font-size: 16px; line-height: 1.5;
+    color: #6F6F68; flex: 1;
+    letter-spacing: -0.01em;
+  }
+  .cp-decision-arrow {
+    font-family: var(--font-ui);
+    font-size: 16px; color: #DADAD4;
+    flex-shrink: 0;
+  }
+  @media (max-width: 640px) { .cp-decision-arrow { display: none; } }
+  .cp-decision-choice {
+    font-family: var(--font-ui);
+    font-size: 15px; font-weight: 600;
+    color: #222222; white-space: nowrap;
+    flex-shrink: 0; min-width: 120px;
+    text-align: right; letter-spacing: -0.01em;
+  }
+  @media (max-width: 640px) {
+    .cp-decision-choice { text-align: left; white-space: normal; min-width: 0; }
+  }
+

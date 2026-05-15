@@ -36,21 +36,41 @@ interface CompareProfile {
 }
 interface CompareFaqItem { q: string; qEn: string; a: string; aEn: string; }
 interface CompareAlt { slug: string; name: string; reason: string; reasonEn: string; price?: string; }
+interface CompareDecisionRow {
+  context: string; contextEn: string;
+  choice: string; choiceEn: string;
+}
 
 interface CompareEditorialContent {
+  /* ── Hero framing ── */
   framing: string; framingEn: string;
   verdictShort: string; verdictShortEn: string;
+  /* ── Quick verdict (VS module + verdict section) ── */
   quickVerdictA: string; quickVerdictAEn: string;
   quickVerdictB: string; quickVerdictBEn: string;
   quickVerdictAvoid: string; quickVerdictAvoidEn: string;
+  /* ── Tool overview (new) ── */
+  toolADesc: string; toolADescEn: string;
+  toolAUseCases: string[]; toolAUseCasesEn: string[];
+  toolBDesc: string; toolBDescEn: string;
+  toolBUseCases: string[]; toolBUseCasesEn: string[];
+  /* ── Comparison table ── */
   tableRows: CompareTableRow[];
+  /* ── Pros + cons ── */
+  prosA: string[]; prosAEn: string[];
+  limitsA: string[]; limitsAEn: string[];
+  prosB: string[]; prosBEn: string[];
+  limitsB: string[]; limitsBEn: string[];
+  /* ── Decision rows (new) ── */
+  decisionRows: CompareDecisionRow[];
+  /* ── Profiles ── */
   profiles: CompareProfile[];
+  /* ── Pricing ── */
   pricingFraming: string; pricingFramingEn: string;
   pricingToolANotes: string; pricingToolANotesEn: string;
   pricingToolBNotes: string; pricingToolBNotesEn: string;
   pricingReco: string; pricingRecoEn: string;
-  limitsA: string[]; limitsAEn: string[];
-  limitsB: string[]; limitsBEn: string[];
+  /* ── Alternatives + FAQ ── */
   alternatives: CompareAlt[];
   faq: CompareFaqItem[];
 }
@@ -79,6 +99,44 @@ const NOTION_VS_AIRTABLE: CompareEditorialContent = {
     "Tu cherches un outil simple pour une seule tâche : les deux peuvent devenir trop lourds si le besoin est mal cadré.",
   quickVerdictAvoidEn:
     "You are looking for a simple single-task tool: both can become too heavy if the need is poorly scoped.",
+
+  /* ── Tool overview ── */
+  toolADesc:
+    "Notion sert à organiser l'information : notes, documents, projets, contenus et bases simples. C'est un espace flexible qui centralise tout ce qu'une équipe ou un individu a besoin de savoir.",
+  toolADescEn:
+    "Notion is for organizing information: notes, documents, projects, content and simple databases. It's a flexible space that centralizes everything a team or individual needs to know.",
+  toolAUseCases: [
+    "Documentation et wiki interne",
+    "Notes et organisation personnelle",
+    "Gestion de projets légère",
+    "Calendrier éditorial et contenus",
+    "Briefs et livrables clients",
+  ],
+  toolAUseCasesEn: [
+    "Documentation and internal wiki",
+    "Notes and personal organization",
+    "Lightweight project management",
+    "Editorial calendar and content",
+    "Client briefs and deliverables",
+  ],
+  toolBDesc:
+    "Airtable sert à structurer des données : bases, vues filtrées, statuts, automatisations et workflows opérationnels. C'est un outil plus puissant que Notion pour gérer des volumes de données ou des process complexes.",
+  toolBDescEn:
+    "Airtable is for structuring data: databases, filtered views, statuses, automations and operational workflows. It's more powerful than Notion for managing data volumes or complex processes.",
+  toolBUseCases: [
+    "Bases de données structurées",
+    "Vues filtrées et kanban",
+    "Suivi opérationnel et statuts",
+    "Automatisations de process",
+    "Reporting et pipelines",
+  ],
+  toolBUseCasesEn: [
+    "Structured databases",
+    "Filtered views and kanban",
+    "Operational tracking and statuses",
+    "Process automations",
+    "Reporting and pipelines",
+  ],
 
   tableRows: [
     { criterion: "Organisation personnelle", criterionEn: "Personal organization",
@@ -121,6 +179,88 @@ const NOTION_VS_AIRTABLE: CompareEditorialContent = {
       toolA: "Plan gratuit généreux", toolAEn: "Generous free plan",
       toolB: "Limites rapides", toolBEn: "Quick limitations",
       winner: "A", verdictLabel: "Notion", verdictLabelEn: "Notion" },
+  ],
+
+  /* ── Pros ── */
+  prosA: [
+    "Flexible et adaptable à presque tous les usages",
+    "Excellent pour écrire, documenter et organiser des contenus",
+    "Prise en main accessible avec de nombreux templates",
+    "Plan gratuit généreux pour un usage solo ou une petite équipe",
+  ],
+  prosAEn: [
+    "Flexible and adaptable to almost any use case",
+    "Excellent for writing, documenting and organizing content",
+    "Accessible onboarding with many templates",
+    "Generous free plan for solo or small team use",
+  ],
+  prosB: [
+    "Structure de données robuste avec liens entre tables",
+    "Vues multiples puissantes : kanban, grille, galerie, formulaire",
+    "Automatisations natives efficaces sur les plans payants",
+    "Meilleur pour des workflows opérationnels à plusieurs",
+  ],
+  prosBEn: [
+    "Robust data structure with table links",
+    "Powerful multiple views: kanban, grid, gallery, form",
+    "Effective native automations on paid plans",
+    "Better for multi-person operational workflows",
+  ],
+
+  /* ── Limits ── */
+  limitsA: [
+    "Peut devenir un fourre-tout sans structure éditoriale claire",
+    "Bases de données moins puissantes qu'un vrai outil de données",
+    "Automatisations limitées selon le plan",
+    "Risque de sur-documenter et de perdre du temps à organiser",
+  ],
+  limitsAEn: [
+    "Can become a catch-all without clear editorial structure",
+    "Databases less powerful than a dedicated data tool",
+    "Automations limited depending on the plan",
+    "Risk of over-documenting and spending time organizing",
+  ],
+  limitsB: [
+    "Peut être trop structuré pour un usage simple",
+    "Courbe d'apprentissage plus élevée que Notion",
+    "Coût qui grimpe vite avec les workflows avancés",
+    "Moins naturel pour écrire, documenter ou naviguer dans du texte",
+  ],
+  limitsBEn: [
+    "Can be overly structured for simple use cases",
+    "Steeper learning curve than Notion",
+    "Costs escalate quickly with advanced workflows",
+    "Less natural for writing, documenting or navigating text",
+  ],
+
+  /* ── Decision rows ── */
+  decisionRows: [
+    {
+      context: "Ton besoin principal est d'écrire, documenter ou organiser de l'information",
+      contextEn: "Your primary need is to write, document or organize information",
+      choice: "Notion", choiceEn: "Notion",
+    },
+    {
+      context: "Tu dois suivre des données, des statuts, des opérations ou des pipelines",
+      contextEn: "You need to track data, statuses, operations or pipelines",
+      choice: "Airtable", choiceEn: "Airtable",
+    },
+    {
+      context: "Ton équipe a besoin de vues filtrées, formulaires et automatisations",
+      contextEn: "Your team needs filtered views, forms and automations",
+      choice: "Airtable", choiceEn: "Airtable",
+    },
+    {
+      context: "Tu veux centraliser notes, idées, projets et contenus en un seul espace",
+      contextEn: "You want to centralize notes, ideas, projects and content in one space",
+      choice: "Notion", choiceEn: "Notion",
+    },
+    {
+      context: "Tu cherches un outil simple pour une seule tâche ponctuelle",
+      contextEn: "You need a simple tool for a single specific task",
+      choice: "Aucun des deux — cherche une alternative plus légère",
+      choiceEn: "Neither — look for a lighter alternative",
+    },
   ],
 
   profiles: [
@@ -181,31 +321,6 @@ const NOTION_VS_AIRTABLE: CompareEditorialContent = {
     "Pour un solo ou une petite équipe ≤ 3 personnes : Notion est moins cher. Au-delà, comparer selon les usages réels.",
   pricingRecoEn:
     "For solo or small team ≤ 3 people: Notion is cheaper. Beyond that, compare based on actual use.",
-
-  limitsA: [
-    "Peut devenir un fourre-tout sans structure éditoriale claire",
-    "Bases de données moins puissantes qu'un vrai outil de données",
-    "Automatisations limitées selon le plan",
-    "Risque de sur-documenter et de perdre du temps à organiser",
-  ],
-  limitsAEn: [
-    "Can become a catch-all without clear editorial structure",
-    "Databases less powerful than a dedicated data tool",
-    "Automations limited depending on the plan",
-    "Risk of over-documenting and spending time organizing",
-  ],
-  limitsB: [
-    "Peut être trop structuré pour un usage simple",
-    "Courbe d'apprentissage plus élevée que Notion",
-    "Coût qui grimpe vite avec les workflows avancés",
-    "Moins naturel pour écrire, documenter ou naviguer dans du texte",
-  ],
-  limitsBEn: [
-    "Can be overly structured for simple use cases",
-    "Steeper learning curve than Notion",
-    "Costs escalate quickly with advanced workflows",
-    "Less natural for writing, documenting or navigating text",
-  ],
 
   alternatives: [
     { slug: "coda", name: "Coda", reason: "Entre document et base de données, souvent bon compromis entre les deux.", reasonEn: "Between document and database, often a good compromise between the two." },
@@ -269,6 +384,16 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     quickVerdictBEn: (toolB.verdictEn?.keepIf || keepsB).slice(0, 2).join(". ") || `You want to use ${toolB.name} as your main tool.`,
     quickVerdictAvoid: `Les deux outils ont des limites — choisis selon ton usage, pas selon les features.`,
     quickVerdictAvoidEn: `Both tools have limitations — choose based on your use case, not feature lists.`,
+
+    toolADesc: toolA.shortDescription || `${toolA.name} est un outil conçu pour ${(toolA.verdict?.keepIf?.[0] || "optimiser votre productivité").toLowerCase()}.`,
+    toolADescEn: toolA.shortDescriptionEn || `${toolA.name} is a tool designed for ${(toolA.verdictEn?.keepIf?.[0] || "boosting your productivity").toLowerCase()}.`,
+    toolAUseCases: (toolA.useCases || toolA.covers || []).slice(0, 5).map(String),
+    toolAUseCasesEn: (toolA.useCases || toolA.covers || []).slice(0, 5).map(String),
+    toolBDesc: toolB.shortDescription || `${toolB.name} est un outil conçu pour ${(toolB.verdict?.keepIf?.[0] || "optimiser votre productivité").toLowerCase()}.`,
+    toolBDescEn: toolB.shortDescriptionEn || `${toolB.name} is a tool designed for ${(toolB.verdictEn?.keepIf?.[0] || "boosting your productivity").toLowerCase()}.`,
+    toolBUseCases: (toolB.useCases || toolB.covers || []).slice(0, 5).map(String),
+    toolBUseCasesEn: (toolB.useCases || toolB.covers || []).slice(0, 5).map(String),
+
     tableRows: [
       { criterion: "Prise en main", criterionEn: "Ease of use",
         toolA: aFerme ? "Bonne" : "Correcte", toolAEn: aFerme ? "Good" : "Fair",
@@ -285,6 +410,35 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         verdictLabel: priceA <= priceB ? toolA.name : toolB.name,
         verdictLabelEn: priceA <= priceB ? toolA.name : toolB.name },
     ],
+
+    prosA: (toolA.pros || []).slice(0, 4).map(String),
+    prosAEn: (toolA.pros || []).slice(0, 4).map(String),
+    limitsA: (toolA.cons || []).slice(0, 4).map(String),
+    limitsAEn: (toolA.cons || []).slice(0, 4).map(String),
+    prosB: (toolB.pros || []).slice(0, 4).map(String),
+    prosBEn: (toolB.pros || []).slice(0, 4).map(String),
+    limitsB: (toolB.cons || []).slice(0, 4).map(String),
+    limitsBEn: (toolB.cons || []).slice(0, 4).map(String),
+
+    decisionRows: [
+      {
+        context: `Tu veux utiliser ${toolA.name} comme outil principal`,
+        contextEn: `You want to use ${toolA.name} as your main tool`,
+        choice: toolA.name, choiceEn: toolA.name,
+      },
+      {
+        context: `Tu veux utiliser ${toolB.name} comme outil principal`,
+        contextEn: `You want to use ${toolB.name} as your main tool`,
+        choice: toolB.name, choiceEn: toolB.name,
+      },
+      {
+        context: `Ton budget est limité`,
+        contextEn: `Your budget is limited`,
+        choice: priceA <= priceB ? toolA.name : toolB.name,
+        choiceEn: priceA <= priceB ? toolA.name : toolB.name,
+      },
+    ],
+
     profiles: [
       { persona: "Solo / Freelance", personaEn: "Solo / Freelancer",
         choice: aFerme ? toolA.name : toolB.name,
@@ -293,6 +447,7 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         limit: (toolA.verdict?.avoidIf?.[0]) || "À vérifier selon ton usage exact.",
         limitEn: (toolA.verdictEn?.avoidIf?.[0]) || "Check based on your exact use case." },
     ],
+
     pricingFraming: `${toolA.name} et ${toolB.name} ont des modèles de prix différents. Vérifiez les plans officiels avant de décider.`,
     pricingFramingEn: `${toolA.name} and ${toolB.name} have different pricing models. Check official plans before deciding.`,
     pricingToolANotes: priceA === 0 ? "Plan gratuit disponible." : `À partir de **${priceA}€/mois**.`,
@@ -301,10 +456,6 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     pricingToolBNotesEn: priceB === 0 ? "Free plan available." : `From **€${priceB}/month**.`,
     pricingReco: `Comparer les plans payants selon vos besoins réels.`,
     pricingRecoEn: `Compare paid plans based on your actual needs.`,
-    limitsA: (toolA.cons || []).slice(0, 4).map(String),
-    limitsAEn: (toolA.cons || []).slice(0, 4).map(String),
-    limitsB: (toolB.cons || []).slice(0, 4).map(String),
-    limitsBEn: (toolB.cons || []).slice(0, 4).map(String),
     alternatives: [],
     faq: [
       { q: `${toolA.name} ou ${toolB.name} — lequel est moins cher ?`,
@@ -521,10 +672,11 @@ const ComparePage = () => {
         <div className="cp-subnav-inner">
           {[
             { href: "#verdict",      label: t("Verdict", "Verdict") },
+            { href: "#outils",       label: t("Ce que font les outils", "What they do") },
             { href: "#comparaison",  label: t("Comparaison", "Comparison") },
+            { href: "#avantages",    label: t("Avantages", "Pros & cons") },
             { href: "#profils",      label: t("Profils", "Profiles") },
             { href: "#prix",         label: t("Prix", "Pricing") },
-            { href: "#alternatives", label: t("Alternatives", "Alternatives") },
             { href: "#faq",          label: "FAQ" },
           ].map((item) => (
             <a key={item.href} href={item.href} className="cp-subnav-link">{item.label}</a>
@@ -539,23 +691,66 @@ const ComparePage = () => {
           <p className="cp-title">{t("Le choix rapide.", "The quick choice.")}</p>
           <div className="cp-verdict-grid">
             <div className="cp-verdict-col">
-              <p className="cp-verdict-label">{toolA.name} {t("gagne si", "wins if")}</p>
+              <p className="cp-verdict-label">{t("Prends", "Take")} {toolA.name} {t("si…", "if…")}</p>
               <p className="cp-verdict-text">
                 {lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn}
               </p>
             </div>
             <div className="cp-verdict-col">
-              <p className="cp-verdict-label">{toolB.name} {t("gagne si", "wins if")}</p>
+              <p className="cp-verdict-label">{t("Prends", "Take")} {toolB.name} {t("si…", "if…")}</p>
               <p className="cp-verdict-text">
                 {lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn}
               </p>
             </div>
             <div className="cp-verdict-col">
-              <p className="cp-verdict-label">{t("À éviter si", "Avoid if")}</p>
+              <p className="cp-verdict-label">{t("Évite les deux si…", "Avoid both if…")}</p>
               <p className="cp-verdict-text">
                 {lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn}
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Ce que fait chaque outil ────────────────────────────────────────── */}
+      <section id="outils" className="cp-section scroll-mt-20">
+        <div className="cp-container">
+          <span className="cp-eyebrow">{t("Rôles distincts", "Distinct roles")}</span>
+          <p className="cp-title">{t("Ce que fait chaque outil.", "What each tool does.")}</p>
+          <div className="cp-overview-grid">
+
+            {/* Tool A card */}
+            <div className="cp-overview-card">
+              <div className="cp-overview-logo-row">
+                <div className="cp-overview-logo"><ToolLogo tool={toolA} size={28} /></div>
+                <span className="cp-overview-tool-name">{toolA.name}</span>
+              </div>
+              <p className="cp-overview-desc">
+                {lang === "fr" ? content.toolADesc : content.toolADescEn}
+              </p>
+              <ul className="cp-overview-list">
+                {(lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn).map((item, i) => (
+                  <li key={i} className="cp-overview-item">{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Tool B card */}
+            <div className="cp-overview-card">
+              <div className="cp-overview-logo-row">
+                <div className="cp-overview-logo"><ToolLogo tool={toolB} size={28} /></div>
+                <span className="cp-overview-tool-name">{toolB.name}</span>
+              </div>
+              <p className="cp-overview-desc">
+                {lang === "fr" ? content.toolBDesc : content.toolBDescEn}
+              </p>
+              <ul className="cp-overview-list">
+                {(lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn).map((item, i) => (
+                  <li key={i} className="cp-overview-item">{item}</li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
@@ -591,6 +786,94 @@ const ComparePage = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Avantages et limites ───────────────────────────────────────────── */}
+      <section id="avantages" className="cp-section scroll-mt-20">
+        <div className="cp-container">
+          <span className="cp-eyebrow">{t("Pour et contre", "Pros and cons")}</span>
+          <p className="cp-title">{t("Avantages et limites.", "Pros and cons.")}</p>
+          <div className="cp-pros-cons-grid">
+
+            {/* Tool A pros + cons */}
+            <div className="cp-pros-cons-col">
+              <div className="cp-pros-cons-head">
+                <ToolLogo tool={toolA} size={20} />
+                <span className="cp-pros-cons-tool-name">{toolA.name}</span>
+              </div>
+              <p className="cp-pros-cons-sublabel cp-pros-cons-sublabel--pros">
+                {t("Avantages", "Advantages")}
+              </p>
+              <ul className="cp-pros-cons-list">
+                {(lang === "fr" ? content.prosA : content.prosAEn).map((item, i) => (
+                  <li key={i} className="cp-pros-cons-item cp-pros-cons-item--pro">{item}</li>
+                ))}
+              </ul>
+              <p className="cp-pros-cons-sublabel cp-pros-cons-sublabel--cons" style={{ marginTop: 20 }}>
+                {t("Limites", "Limitations")}
+              </p>
+              <ul className="cp-pros-cons-list">
+                {(lang === "fr" ? content.limitsA : content.limitsAEn).length > 0
+                  ? (lang === "fr" ? content.limitsA : content.limitsAEn).map((item, i) => (
+                      <li key={i} className="cp-pros-cons-item cp-pros-cons-item--con">{item}</li>
+                    ))
+                  : <li className="cp-pros-cons-item" style={{ color: "#9A9A92" }}>{t("Données non disponibles.", "Data not available.")}</li>
+                }
+              </ul>
+            </div>
+
+            {/* Tool B pros + cons */}
+            <div className="cp-pros-cons-col">
+              <div className="cp-pros-cons-head">
+                <ToolLogo tool={toolB} size={20} />
+                <span className="cp-pros-cons-tool-name">{toolB.name}</span>
+              </div>
+              <p className="cp-pros-cons-sublabel cp-pros-cons-sublabel--pros">
+                {t("Avantages", "Advantages")}
+              </p>
+              <ul className="cp-pros-cons-list">
+                {(lang === "fr" ? content.prosB : content.prosBEn).map((item, i) => (
+                  <li key={i} className="cp-pros-cons-item cp-pros-cons-item--pro">{item}</li>
+                ))}
+              </ul>
+              <p className="cp-pros-cons-sublabel cp-pros-cons-sublabel--cons" style={{ marginTop: 20 }}>
+                {t("Limites", "Limitations")}
+              </p>
+              <ul className="cp-pros-cons-list">
+                {(lang === "fr" ? content.limitsB : content.limitsBEn).length > 0
+                  ? (lang === "fr" ? content.limitsB : content.limitsBEn).map((item, i) => (
+                      <li key={i} className="cp-pros-cons-item cp-pros-cons-item--con">{item}</li>
+                    ))
+                  : <li className="cp-pros-cons-item" style={{ color: "#9A9A92" }}>{t("Données non disponibles.", "Data not available.")}</li>
+                }
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Ce qui doit te faire choisir ───────────────────────────────────── */}
+      {content.decisionRows.length > 0 && (
+        <section className="cp-section scroll-mt-20">
+          <div className="cp-container">
+            <span className="cp-eyebrow">{t("Critères de décision", "Decision criteria")}</span>
+            <p className="cp-title">{t("Ce qui doit te faire choisir.", "What should make you decide.")}</p>
+            <ul className="cp-decision-list">
+              {content.decisionRows.map((row, i) => (
+                <li key={i} className="cp-decision-row">
+                  <span className="cp-decision-context">
+                    {lang === "fr" ? row.context : row.contextEn}
+                  </span>
+                  <span className="cp-decision-arrow">→</span>
+                  <span className="cp-decision-choice">
+                    {lang === "fr" ? row.choice : row.choiceEn}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* ── Profils ────────────────────────────────────────────────────────── */}
       {content.profiles.length > 0 && (
@@ -668,40 +951,6 @@ const ComparePage = () => {
           </div>
         </div>
       </section>
-
-      {/* ── Limites ────────────────────────────────────────────────────────── */}
-      {(content.limitsA.length > 0 || content.limitsB.length > 0) && (
-        <section className="cp-section scroll-mt-20">
-          <div className="cp-container">
-            <span className="cp-eyebrow">{t("Limites", "Limitations")}</span>
-            <p className="cp-title">
-              {t("Là où chaque outil peut te piéger.", "Where each tool can trap you.")}
-            </p>
-            <div className="cp-limits-grid">
-              {[
-                { tool: toolA, limits: lang === "fr" ? content.limitsA : content.limitsAEn },
-                { tool: toolB, limits: lang === "fr" ? content.limitsB : content.limitsBEn },
-              ].map(({ tool, limits }) => (
-                <div key={tool.id}>
-                  <div className="cp-limits-col-head">
-                    <ToolLogo tool={tool} size={20} />
-                    <span className="cp-limits-col-name">{tool.name}</span>
-                  </div>
-                  {limits.length > 0
-                    ? limits.map((limit, i) => (
-                        <div key={i} className="cp-limits-item">{limit}</div>
-                      ))
-                    : (
-                      <div className="cp-limits-item" style={{ color: "#9A9A92" }}>
-                        {t("Données non disponibles.", "Data not available.")}
-                      </div>
-                    )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ── Alternatives ───────────────────────────────────────────────────── */}
       {altTools.length > 0 && (
