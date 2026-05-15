@@ -59,8 +59,12 @@ export default function StickyDecisionCard({
     : [verdict?.avoidIf]
   ).filter(Boolean).slice(0, 3);
 
-  /* ── Verdict sentence ── */
+  /* ── Verdict sentence — prefer verdict.threshold (editorial), then auto-generate ── */
   const verdictText = (() => {
+    // Use the editorial threshold sentence when it exists
+    const threshold = verdict?.threshold as string | undefined;
+    if (threshold && threshold.length > 0) return threshold;
+    // Fallback: build from keepIf + avoidIf
     if (keepItems.length && avoidItems.length) {
       const k = keepItems[0];
       const a = avoidItems[0];
@@ -74,9 +78,7 @@ export default function StickyDecisionCard({
         ? `Pertinent si ${k.charAt(0).toLowerCase() + k.slice(1)}.`
         : `Relevant if ${k.charAt(0).toLowerCase() + k.slice(1)}.`;
     }
-    return lang === "fr"
-      ? (tool.shortDescription || "")
-      : ((tool as any).shortDescriptionEn || tool.shortDescription || "");
+    return "";
   })();
 
   /* ── Alternative ── */

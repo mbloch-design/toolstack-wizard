@@ -345,11 +345,11 @@
     "slug": "framer",
     "name": "Framer",
     "category": "prototyping",
-    "shortDescription": "Créateur de sites web no-code pour designers — animations avancées, CMS intégré, publication directe sans développeur.",
-    "shortDescriptionEn": "No-code website builder for designers — advanced animations, built-in CMS, publish without a developer.",
+    "shortDescription": "Créer et publier des sites visuels premium sans dépendre lourdement d'un développeur.",
+    "shortDescriptionEn": "Create and publish premium visual websites without relying heavily on a developer.",
     "description": "Framer est un outil de prototypage haute fidélité qui permet de créer des prototypes interactifs avec des animations complexes, sans écrire de code. Il propose aussi un éditeur de site web no-code. Freemium.\n\nPlus puissant que Figma pour les prototypes très animés, mais avec une courbe d'apprentissage plus élevée. Figma couvre 90% des besoins de prototypage standard.",
-    "longDescription": "Framer a radicalement évolué : ce n'est plus seulement un outil de prototypage, c'est aujourd'hui l'un des meilleurs créateurs de sites web no-code pour designers. Là où Webflow demande une courbe d'apprentissage importante et Figma ne publie rien, Framer occupe un créneau unique : on conçoit visuellement avec une précision de designer, on ajoute des animations dignes d'une agence (scroll effects, parallax, transitions de page), et on publie directement sur un vrai site optimisé pour le SEO.\n\nPour les indépendants et freelances, les atouts sont immédiats : templates haut de gamme souvent gratuits, CMS intégré pour les pages dynamiques (blog, études de cas, liste de projets), hébergement + CDN inclus, et depuis 2024 une IA générative qui peut créer des sections entières depuis un prompt. La courbe d'apprentissage est réelle mais inférieure à Webflow — en quelques heures on produit quelque chose de convaincant.\n\nLes limites sont claires : Framer n'est pas un outil de design (pas de remplacement pour Figma), pas adapté au e-commerce ou aux applications complexes, et le CMS reste léger comparé à un headless CMS dédié. C'est un outil taillé pour les sites vitrines et les landing pages premium — dans ce périmètre, il est difficile à battre.",
-    "longDescriptionEn": "Framer has radically evolved: it's no longer just a prototyping tool, it's now one of the best no-code website builders for designers. Where Webflow has a steep learning curve and Figma publishes nothing, Framer fills a unique space — design with precision, add agency-quality animations (scroll effects, parallax, page transitions), and publish directly to an SEO-optimized website.\n\nFor freelancers and independents, the benefits are immediate: premium templates often free, built-in CMS for dynamic pages (blog, case studies, project lists), hosting + CDN included, and since 2024 a generative AI that can create entire sections from a prompt. The learning curve is real but lower than Webflow — within a few hours you can produce something compelling.\n\nThe limits are clear: Framer is not a design tool (no Figma replacement), not suited for e-commerce or complex applications, and the CMS remains lightweight compared to a dedicated headless CMS. It's a tool built for showcase sites and premium landing pages — within that scope, it's hard to beat.",
+    "longDescription": "Framer occupe un créneau rare : concevoir visuellement avec la précision d'un designer, ajouter des animations dignes d'une agence (scroll effects, parallax, transitions de page), et publier directement sur un vrai site indexé par Google — sans développeur et sans les compromis d'un WordPress.\n\nPour les indépendants, les atouts sont immédiats : templates haut de gamme souvent gratuits, CMS intégré pour les contenus dynamiques, hébergement + CDN inclus, et depuis 2024 une IA générative qui crée des sections entières depuis un prompt. En quelques heures, on produit quelque chose de convaincant.\n\nLes limites sont claires et assumées : Framer n'est pas un outil de design (ne remplace pas Figma), ne convient pas au e-commerce, et son CMS reste léger face à un headless CMS dédié. C'est un outil taillé pour les sites vitrines et les landing pages — dans ce périmètre précis, peu d'outils font mieux.",
+    "longDescriptionEn": "Framer fills a rare space: design with precision, add agency-quality animations (scroll effects, parallax, page transitions), and publish directly to a Google-indexed website — no developer, no WordPress compromises.\n\nFor independents, the benefits are immediate: premium templates often free, built-in CMS for dynamic content, hosting + CDN included, and since 2024 a generative AI that builds entire sections from a prompt. Within hours you produce something compelling.\n\nThe limits are clear and honest: Framer is not a design tool (no Figma replacement), doesn't suit e-commerce, and its CMS is lightweight compared to a dedicated headless CMS. It's built for showcase sites and premium landing pages — within that precise scope, few tools do it better.",
     "pricing": {
       "free": "Plan gratuit : domaine framer.site, 1 000 pages, 1 collection CMS (1 000 items), collaboration jusqu'à 3 éditeurs — sans domaine custom",
       "paid": "Basic 10$/mois (domaine custom, 30 pages, 1 CMS collection) · Pro 30$/mois (150 pages, 10 collections, staging) · Scale 100$/mois (300 pages, 20 collections, CDN premium)"
@@ -360,16 +360,16 @@
     },
     "defaultMonthlyPrice": 10,
     "pricing_v5": {
-      "compare_price_monthly_eur": 10,
-      "compare_plan_name": "Basic",
-      "verified_on": "2025-05-13",
+      "compare_price_monthly_eur": 5,
+      "compare_plan_name": "Mini",
+      "verified_on": "2026-03-29",
       "source_domain": "framer.com",
       "official_source_url": "https://www.framer.com/pricing/",
       "cautions": [
         "Le plan gratuit n'inclut pas de domaine custom — publication sur framer.site uniquement",
-        "Le plan Basic est limité à 30 pages publiées et 1 collection CMS seulement",
-        "Les éditeurs supplémentaires sont facturés 20$/mois sur Basic, 40$/mois sur Pro et Scale",
-        "Les tarifs sont en dollars — conversion EUR variable selon le taux de change"
+        "Le plan Mini (5€/mois) est limité à 1 page publiée et 1 collection CMS",
+        "Le plan Basic (10€/mois) offre 30 pages et 1 collection CMS",
+        "Les éditeurs supplémentaires sont facturés en supplément sur tous les plans"
       ]
     },
     "affiliateLink": "",
@@ -379,52 +379,48 @@
       "metaDescription": "Framer sur ToolTrim : prototypage avancé avec animations, comparaison avec Figma et cas d'usage."
     },
     "pros": [
-      "Animations et scroll effects dignes d'une agence — sans une ligne de code",
-      "Publie un vrai site web indexable (pas juste un prototype clickable)",
-      "CMS intégré pour contenus dynamiques : blog, études de cas, portefeuille",
-      "Templates haut de gamme, souvent gratuits, communauté active",
-      "Hébergement + CDN inclus, performances excellentes out-of-the-box",
-      "Framer AI (2024) : génère des sections entières depuis un prompt",
-      "Composants React réels — un développeur peut prendre le relais proprement"
+      "Création visuelle rapide — de l'idée au site en quelques heures",
+      "Publication intégrée avec hébergement, CDN et SSL inclus",
+      "Rendu premium out-of-the-box : animations, scroll effects, transitions",
+      "CMS intégré pour contenus dynamiques (blog, portfolio, études de cas)",
+      "Framer AI génère des sections entières depuis un prompt",
+      "Composants React réels — un développeur peut prendre le relais proprement",
+      "Moins de dépendance au développement que Webflow"
     ],
     "prosEn": [
-      "Agency-quality animations and scroll effects — no code required",
-      "Publishes a real, indexable website (not just a clickable prototype)",
-      "Built-in CMS for dynamic content: blog, case studies, portfolio",
-      "Premium templates, often free, active community",
-      "Hosting + CDN included, excellent out-of-the-box performance",
-      "Framer AI (2024): generates entire sections from a text prompt",
-      "Real React components — a developer can take over cleanly"
+      "Fast visual creation — from idea to site in hours",
+      "Integrated publishing with hosting, CDN and SSL included",
+      "Premium output out-of-the-box: animations, scroll effects, transitions",
+      "Built-in CMS for dynamic content (blog, portfolio, case studies)",
+      "Framer AI generates entire sections from a text prompt",
+      "Real React components — a developer can take over cleanly",
+      "Less developer dependency than Webflow"
     ],
     "cons": [
-      "Pas un outil de design : précision et gestion des composants bien inférieure à Figma",
       "CMS limité pour les sites à fort volume de contenu (vs Webflow, WordPress)",
       "Pas adapté au e-commerce ni aux applications avec logique métier",
-      "Vendor lock-in fort : migration vers un autre outil nécessite de tout reconstruire",
-      "Plans payants montent vite pour les équipes (membres facturés en extra)",
-      "Breakpoints fixes (4) — moins de flexibilité responsive que Webflow"
+      "Projets très techniques : besoin de contrôle fin côté code difficile",
+      "Vendor lock-in fort — migrer vers un autre outil demande de tout reconstruire",
+      "Coût qui monte vite pour les équipes (membres facturés en supplément)"
     ],
     "consEn": [
-      "Not a design tool: precision and component management far below Figma",
       "CMS limited for high-volume content sites (vs Webflow, WordPress)",
       "Not suited for e-commerce or apps with business logic",
-      "Strong vendor lock-in: migrating to another tool requires rebuilding everything",
-      "Paid plans scale up quickly for teams (members billed separately)",
-      "Fixed breakpoints (4) — less responsive flexibility than Webflow"
+      "Highly technical projects: fine code-level control is difficult",
+      "Strong vendor lock-in — migrating to another tool requires rebuilding everything",
+      "Cost scales quickly for teams (members billed separately)"
     ],
     "useCases": [
       "Portfolio designer ou agence : vitrine animée qui convertit",
       "Landing page de lancement produit ou SaaS avec animations avancées",
       "Site marketing startup qui veut un rendu premium sans budget agence",
-      "Microsite de campagne ou event avec expérience visuelle forte",
-      "Prototype haute fidélité d'interactions complexes avant développement"
+      "Microsite de campagne ou event avec expérience visuelle forte"
     ],
     "useCasesEn": [
       "Designer or agency portfolio: animated showcase that converts",
       "Product or SaaS launch landing page with advanced animations",
       "Startup marketing site that wants a premium look without agency budget",
-      "Campaign or event microsite with strong visual experience",
-      "High-fidelity prototype of complex interactions before development"
+      "Campaign or event microsite with strong visual experience"
     ],
     "covers": [
       "website-builder",
@@ -449,33 +445,35 @@
     ],
     "verdict": {
       "keepIf": [
-        "Tu es designer freelance et ton site/portfolio est ta vitrine commerciale principale",
-        "Tu construis des landing pages ou sites marketing qui doivent visuellement impressionner",
-        "Tu veux publier rapidement sans développeur avec un rendu premium"
+        "Designers indépendants et studios créatifs",
+        "Portfolios et landing pages à fort rendu visuel",
+        "Sites marketing startup qui veulent un look premium sans budget agence",
+        "Freelances qui veulent passer vite de l'idée au site publié"
       ],
       "avoidIf": [
-        "Tu as besoin de e-commerce, d'un espace membre ou d'une logique applicative",
-        "Ton site est fortement axé contenu avec un volume important d'articles ou de pages",
-        "Tu travailles en équipe avec un workflow Figma établi — la couche design manquera"
+        "CMS avancé avec un volume important de contenu",
+        "E-commerce ou logique applicative complexe",
+        "Projets très techniques avec besoin de contrôle fin côté code"
       ],
-      "threshold": "Indispensable si tu es designer indépendant et que ton site est une vitrine commerciale clé. Optionnel si Webflow couvre déjà tes besoins ou si tu gères un site content-heavy."
+      "threshold": "Très bon choix pour les designers, freelances et studios qui veulent passer vite de l'idée au site publié. À challenger si ton besoin principal est un CMS très robuste ou un e-commerce avancé."
     },
     "verdictEn": {
       "keepIf": [
-        "You're a freelance designer and your site/portfolio is your main commercial showcase",
-        "You're building landing pages or marketing sites that need to visually impress",
-        "You want to publish quickly without a developer and still get a premium result"
+        "Independent designers and creative studios",
+        "Portfolios and landing pages that need strong visual impact",
+        "Startup marketing sites that want a premium look without agency budget",
+        "Freelancers who want to go fast from idea to published site"
       ],
       "avoidIf": [
-        "You need e-commerce, a membership area, or application logic",
-        "Your site is heavily content-driven with a large volume of articles or pages",
-        "You work in a team with an established Figma workflow — the design layer will be missed"
+        "Advanced CMS with high content volume",
+        "E-commerce or complex application logic",
+        "Highly technical projects that need fine code-level control"
       ],
-      "threshold": "Essential if you're a freelance designer and your site is a key commercial showcase. Optional if Webflow already covers your needs or if you manage a content-heavy site."
+      "threshold": "Very good choice for designers, freelancers and studios who want to go fast from idea to published site. Challenge it if you need a heavy CMS or advanced e-commerce."
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
-    "freeAlternative": "Webflow (plan gratuit plus généreux en pages)",
+    "freeAlternative": null,
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "tool_type": "metier",
@@ -492,7 +490,12 @@
       "hosting"
     ],
     "ia_use_case": "Framer AI génère des sections de page entières (hero, features, pricing) depuis un prompt texte, et peut retravailler le contenu ou le style d'une section existante.",
-    "betterAlternative": null,
+    "betterAlternative": {
+      "tool": "webflow",
+      "reason": "Plus structurant pour les sites complexes et les CMS avancés.",
+      "saving": 0,
+      "performanceGain": "CMS avancé, contrôle technique fin, meilleur pour les sites content-heavy"
+    },
     "migrationGuide": "Export HTML/CSS depuis Framer est partiel — prévoir de reconstruire la structure dans le nouvel outil. Les contenus CMS peuvent être exportés en CSV.",
     "downgradePlan": "Le plan gratuit reste utilisable pour un site de test ou un prototype — les pages publiées restent accessibles sur framer.site",
     "prescription_quality": "oui",

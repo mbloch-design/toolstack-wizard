@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
-import { Check, X, TrendingDown, ArrowRightLeft, Sparkles, ArrowRight } from "lucide-react";
+import { Check, X, TrendingDown, ArrowRightLeft, ArrowRight } from "lucide-react";
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ToolVerdictBlock — editorial redesign
+   No gradient cards. No heavy colored boxes.
+   Clean prose + compact keepIf/avoidIf + prescription row.
+───────────────────────────────────────────────────────────────────────────── */
 
 interface Props {
   tool: Tool;
@@ -10,7 +16,6 @@ interface Props {
   t: (fr: string, en: string) => string;
 }
 
-/** Map raw prescription actions to human-readable labels */
 function getActionLabel(action: string | undefined, replacement: string | undefined, t: Props["t"]): string | null {
   if (!action) return null;
   switch (action) {
@@ -43,126 +48,134 @@ function getActionIcon(action: string | undefined) {
     case "replace-better":
     case "replace_for_features":
       return ArrowRightLeft;
-    case "keep":
-      return Sparkles;
     default:
-      return Sparkles;
+      return ArrowRight;
   }
 }
 
 export default function ToolVerdictBlock({ tool, lang, prefix = "", allTools = [], t }: Props) {
-  const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
-  const keepItems = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean);
-  const avoidItems = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean);
+  const verdict = lang === "en" && (tool as any).verdictEn ? (tool as any).verdictEn : tool.verdict;
+  const keepItems = (Array.isArray(verdict?.keepIf) ? verdict.keepIf : [verdict?.keepIf]).filter(Boolean) as string[];
+  const avoidItems = (Array.isArray(verdict?.avoidIf) ? verdict.avoidIf : [verdict?.avoidIf]).filter(Boolean) as string[];
 
   const prescription = tool.prescription_output;
   const actionLabel = getActionLabel(prescription?.action, prescription?.replacement_tool, t);
   const ActionIcon = getActionIcon(prescription?.action);
   const gain = prescription?.gain_monthly_eur;
 
-  // Resolve betterAlternative or prescription replacement to a linkable tool
-  const altSlug = tool.betterAlternative?.tool || prescription?.replacement_tool;
-  const altTool = altSlug ? allTools.find(t => t.id === altSlug || t.slug === altSlug || (t.name ?? "").toLowerCase() === altSlug.toLowerCase()) : null;
+  const altSlug = (tool as any).betterAlternative?.tool || prescription?.replacement_tool;
+  const altTool = altSlug
+    ? allTools.find(t => t.id === altSlug || t.slug === altSlug || (t.name ?? "").toLowerCase() === altSlug.toLowerCase())
+    : null;
 
   return (
-    <section className="rounded-2xl border border-primary/20 bg-gradient-to-br from-accent/40 via-card to-accent/20 overflow-hidden">
-      <div className="px-6 py-6 space-y-5">
-        {/* Verdict paragraph */}
-        {verdict?.threshold && (
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {t(
-              `ToolTrim recommande ${tool.name} dans le cas où : `,
-              `ToolTrim recommends ${tool.name} when: `
-            )}
-            {verdict.threshold}
-          </p>
-        )}
+    <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
 
-        {/* Prescription card */}
-        {tool.prescription_quality === "ferme" && actionLabel && (
-          <div className="rounded-xl border border-border bg-card p-4 flex items-start gap-3">
-            <div className="flex items-center justify-center h-9 w-9 rounded-lg bg-primary/10 shrink-0 mt-0.5">
-              <ActionIcon className="h-4.5 w-4.5 text-primary" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground">
-                {t("Notre recommandation", "Our recommendation")}
+      {/* Threshold / editorial verdict paragraph */}
+      {verdict?.threshold && (
+        <p className="td-body" style={{ marginBottom: 28, fontSize: 16 }}>
+          {verdict.threshold}
+        </p>
+      )}
+
+      {/* keepIf + avoidIf — two columns on desktop */}
+      {(keepItems.length > 0 || avoidItems.length > 0) && (
+        <div style={{ display: "grid", gridTemplateColumns: keepItems.length > 0 && avoidItems.length > 0 ? "1fr 1fr" : "1fr", gap: 24, marginBottom: actionLabel ? 28 : 0 }}
+          className="sm:grid-cols-2"
+        >
+          {keepItems.length > 0 && (
+            <div>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                {t("Idéal si", "Best if")}
               </p>
-              <p className="mt-0.5 text-sm text-muted-foreground">{actionLabel}</p>
-              {gain != null && gain > 0 && (
-                <p className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-keep/10 text-keep px-3 py-1 text-xs font-semibold">
-                  <TrendingDown className="h-3 w-3" />
-                  {t("Économie potentielle", "Potential savings")}: +{Math.round(gain)}€/{t("mois", "mo")}
-                </p>
-              )}
-              {/* Link to the recommended alternative */}
-              {altTool && (
-                <Link
-                  to={`${prefix}/tool/${altTool.slug || altTool.id}`}
-                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-                >
-                  {t(`Voir la fiche de ${altTool.name}`, `See ${altTool.name} review`)}
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              )}
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+                {keepItems.map((item, i) => (
+                  <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                    <div style={{ width: 18, height: 18, borderRadius: "50%", background: "rgba(74,155,111,0.10)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
+                      <Check style={{ width: 10, height: 10, color: "#4A9B6F" }} />
+                    </div>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#222222", lineHeight: 1.45 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-        )}
+          )}
+          {avoidItems.length > 0 && (
+            <div>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                {t("À challenger si", "Challenge it if")}
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+                {avoidItems.map((item, i) => (
+                  <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                    <div style={{ width: 18, height: 18, borderRadius: "50%", background: "rgba(173,173,173,0.10)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
+                      <X style={{ width: 10, height: 10, color: "#9A9A92" }} />
+                    </div>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#6F6F68", lineHeight: 1.45 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
 
-        {/* betterAlternative standalone (if no prescription but betterAlternative exists) */}
-        {tool.prescription_quality !== "ferme" && tool.betterAlternative && altTool && (
-          <div className="rounded-xl border border-border bg-card p-4">
-            <p className="text-sm text-muted-foreground">{tool.betterAlternative.reason}</p>
-            <Link
-              to={`${prefix}/tool/${altTool.slug || altTool.id}`}
-              className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-            >
-              {t(`Découvrir ${altTool.name}, une alternative`, `Discover ${altTool.name}, an alternative`)}
-              {tool.betterAlternative.saving > 0 && ` (−${Math.round(tool.betterAlternative.saving)}€/${t("mois", "mo")})`}
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
+      {/* Prescription row — only if ferme */}
+      {tool.prescription_quality === "ferme" && actionLabel && (
+        <div style={{
+          display: "flex", alignItems: "flex-start", gap: 16,
+          padding: "18px 20px",
+          background: "#F8F8F4", border: "1px solid #DADAD4", borderRadius: 8,
+          marginTop: 24,
+        }}>
+          <div style={{ width: 36, height: 36, borderRadius: 8, background: "#EDEDE8", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <ActionIcon style={{ width: 16, height: 16, color: "#222222" }} />
           </div>
-        )}
-
-        {/* Keep / Avoid grid */}
-        {(keepItems.length > 0 || avoidItems.length > 0) && (
-          <div className="grid gap-4 sm:grid-cols-2">
-            {keepItems.length > 0 && (
-              <div className="rounded-xl border border-keep/15 bg-keep/5 p-4">
-                <h3 className="text-sm font-semibold text-keep flex items-center gap-2">
-                  <Check className="h-4 w-4" />
-                  {t(`Quand choisir ${tool.name}`, `When to choose ${tool.name}`)}
-                </h3>
-                <ul className="mt-3 space-y-2">
-                  {keepItems.map((item: string, i: number) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
-                      <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-keep/60" />
-                      <span>{t(`${tool.name} est pertinent quand `, `${tool.name} is relevant when `)}{item.charAt(0).toLowerCase() + item.slice(1)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "#222222", marginBottom: 4 }}>
+              {t("Recommandation ToolTrim", "ToolTrim recommendation")}
+            </p>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#6F6F68", lineHeight: 1.45 }}>
+              {actionLabel}
+            </p>
+            {gain != null && gain > 0 && (
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, color: "#4A9B6F", marginTop: 8 }}>
+                {t("Économie potentielle", "Potential savings")} : +{Math.round(gain)}€/{t("mois", "mo")}
+              </p>
             )}
-            {avoidItems.length > 0 && (
-              <div className="rounded-xl border border-cancel/15 bg-cancel/5 p-4">
-                <h3 className="text-sm font-semibold text-cancel flex items-center gap-2">
-                  <X className="h-4 w-4" />
-                  {t(`Quand éviter ${tool.name}`, `When to avoid ${tool.name}`)}
-                </h3>
-                <ul className="mt-3 space-y-2">
-                  {avoidItems.map((item: string, i: number) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
-                      <X className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cancel/60" />
-                      <span>{t(`${tool.name} est moins adapté si `, `${tool.name} is less suited if `)}{item.charAt(0).toLowerCase() + item.slice(1)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {altTool && (
+              <Link
+                to={`${prefix}/tool/${(altTool as any).slug || altTool.id}`}
+                style={{ display: "inline-flex", alignItems: "center", gap: 4, fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "hsl(var(--primary))", textDecoration: "none", marginTop: 8 }}
+              >
+                {t(`Voir la fiche de ${altTool.name}`, `See ${altTool.name} review`)}
+                <ArrowRight style={{ width: 12, height: 12 }} />
+              </Link>
             )}
           </div>
-        )}
+        </div>
+      )}
 
-      </div>
-    </section>
+      {/* betterAlternative — if no ferme prescription */}
+      {tool.prescription_quality !== "ferme" && (tool as any).betterAlternative && altTool && (
+        <div style={{
+          display: "flex", alignItems: "flex-start", gap: 12,
+          padding: "14px 16px",
+          background: "#F8F8F4", border: "1px solid #DADAD4", borderRadius: 8,
+          marginTop: 24,
+        }}>
+          <div style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", flex: 1, lineHeight: 1.5 }}>
+            {(tool as any).betterAlternative.reason}
+          </div>
+          <Link
+            to={`${prefix}/tool/${(altTool as any).slug || altTool.id}`}
+            style={{ display: "inline-flex", alignItems: "center", gap: 4, fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "hsl(var(--primary))", textDecoration: "none", flexShrink: 0 }}
+          >
+            {t(`Voir ${altTool.name}`, `See ${altTool.name}`)}
+            <ArrowRight style={{ width: 12, height: 12 }} />
+          </Link>
+        </div>
+      )}
+    </div>
   );
 }

@@ -344,7 +344,7 @@ const ToolDetailPage = () => {
             </div>
 
             {/* Tab navigation */}
-            <nav className="td-tab-nav" style={{ marginLeft: -48, marginRight: -48, paddingLeft: 48, paddingRight: 48 }}>
+            <nav className="td-tab-nav" style={{ marginLeft: "calc(-48px)", marginRight: "calc(-48px)", paddingLeft: 48, paddingRight: 48 }}>
               {TABS.map((tab) => {
                 const isActive = subPage === tab.id;
                 const tabPath = tab.id === "prix" && lang === "en" ? "/pricing"
@@ -368,20 +368,14 @@ const ToolDetailPage = () => {
             {subPage === "presentation" && (
               <div style={{ paddingTop: 8 }}>
 
-                {/* 1 · Short description lead */}
-                {tool.shortDescription && (
-                  <div className="td-section">
-                    <p className="td-body" style={{ fontSize: "clamp(1rem, 1.3vw, 1.125rem)" }}>
-                      {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
-                    </p>
-                  </div>
-                )}
-
-                {/* 2 · Verdict — keepIf / avoidIf / prescription */}
+                {/* 1 · Verdict — keepIf / avoidIf / prescription
+                    Note: shortDescription is already in the hero — not repeated here */}
                 <div className="td-section">
-                  <span className="td-eyebrow">{t("Verdict", "Verdict")}</span>
+                  <span className="td-eyebrow">{t("Verdict ToolTrim", "ToolTrim Verdict")}</span>
                   <h2 className="td-title">
-                    {t(`Quand choisir ${tool.name} ?`, `When to choose ${tool.name}?`)}
+                    {lang === "fr"
+                      ? `${tool.name} — quand ça a du sens.`
+                      : `${tool.name} — when it makes sense.`}
                   </h2>
                   <ToolVerdictBlock tool={tool} lang={lang} prefix={prefix} allTools={tools} t={t} />
                 </div>
