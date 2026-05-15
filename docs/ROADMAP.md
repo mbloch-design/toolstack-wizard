@@ -46,6 +46,24 @@
 
 ---
 
+## Sprint 3 — Guides + Articles ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| Hero metadata tags → dot-séparés | ✅ Fait | CSS `::before` |
+| Titres lignes articles (30px→42px) | ✅ Fait | `gi-row-title` |
+| Bloc featured agrandi | ✅ Fait | `gi-featured-title` |
+| H2 articles (42px→56px) | ✅ Fait | `ga-content h2` |
+| H3 articles (28px→34px) | ✅ Fait | `ga-content h3` |
+| TOC sticky offset → var(--navbar-h) | ✅ Fait | `ga-toc-col` |
+| TOC links couleur (#6F6F68) | ✅ Fait | `ga-toc-link` |
+| Encadrés "À retenir" | ✅ Fait | parser Markdown → ga-takeaway |
+| Module outils — badge prix | ✅ Fait | `ToolRow` amélioré |
+| Correction CTA /diagnostic → /selector | ✅ Fait | GuidesPage + GuideDetailPage |
+| eh-description standardisée | ✅ Fait | 19px, #6F6F68, 680px |
+
+---
+
 ## Phase 3 — Cards / Listings
 
 | Item | Priorité | Notes |

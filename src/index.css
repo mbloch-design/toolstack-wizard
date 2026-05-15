@@ -2226,12 +2226,12 @@
   /* ── Description ─────────────────────────── */
   .eh-description {
     font-family: var(--font-ui);
-    font-size: clamp(1.0625rem, 1.3vw, 1.1875rem);  /* 17px → 19px */
+    font-size: 19px;
     font-weight: 400;
-    line-height: 1.55;
-    letter-spacing: -0.02em;
-    color: #4A4A44;   /* slightly darker than before for readability */
-    max-width: 640px;
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+    color: #6F6F68;
+    max-width: 680px;
     margin: 28px 0 0;
   }
 
@@ -3222,12 +3222,14 @@
     .gi-container { padding: 0 20px; }
   }
 
-  /* Hero metadata tags row */
+  /* Hero metadata tags row — dot-separated plain text, no badge borders */
   .gi-hero-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    align-items: center;
+    gap: 0;
     margin-top: 32px;
+    row-gap: 6px;
   }
   .gi-hero-tag {
     font-family: var(--font-ui);
@@ -3236,10 +3238,12 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #6F6F68;
-    padding: 6px 12px;
-    border: 1px solid #DADAD4;
-    border-radius: 4px;
-    background: #FFFFFF;
+  }
+  .gi-hero-tag + .gi-hero-tag::before {
+    content: "·";
+    padding: 0 10px;
+    color: #ADADAD;
+    font-weight: 400;
   }
 
   /* Featured section */
@@ -3296,10 +3300,10 @@
   }
   .gi-featured-title {
     font-family: var(--font-brand);
-    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 600;
     line-height: 1.0;
-    letter-spacing: -0.045em;
+    letter-spacing: -0.05em;
     color: #222222;
     margin-bottom: 16px;
   }
@@ -3332,10 +3336,10 @@
   /* Article row (editorial list) */
   .gi-row {
     display: grid;
-    grid-template-columns: 130px minmax(0, 1fr) auto;
+    grid-template-columns: 140px minmax(0, 1fr) auto;
     gap: 32px;
     align-items: start;
-    padding: 32px 0;
+    padding: 28px 0;
     border-top: 1px solid #DADAD4;
     text-decoration: none;
   }
@@ -3365,7 +3369,7 @@
   }
   .gi-row-title {
     font-family: var(--font-brand);
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1.875rem, 3.2vw, 2.625rem);
     font-weight: 600;
     line-height: 1.05;
     letter-spacing: -0.045em;
@@ -3376,21 +3380,22 @@
   .gi-row:hover .gi-row-title { opacity: 0.72; }
   .gi-row-excerpt {
     font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.45;
     color: #6F6F68;
-    max-width: 680px;
+    max-width: 720px;
+    margin-top: 10px;
   }
   .gi-row-cta {
     font-family: var(--font-ui);
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
-    color: #9A9A92;
+    color: #222222;
     white-space: nowrap;
     padding-top: 5px;
-    transition: color 160ms ease-out;
+    transition: opacity 160ms ease-out;
   }
-  .gi-row:hover .gi-row-cta { color: #222222; }
+  .gi-row:hover .gi-row-cta { opacity: 0.55; }
 
   /* Theme columns */
   .gi-theme-grid {
@@ -3589,7 +3594,7 @@
   /* Sticky TOC */
   .ga-toc-col {
     position: sticky;
-    top: 96px;
+    top: calc(var(--navbar-h, 68px) + 24px);
   }
   .ga-toc-label {
     font-family: var(--font-ui);
@@ -3602,16 +3607,16 @@
   }
   .ga-toc-nav {
     border-left: 1px solid #DADAD4;
-    padding-left: 18px;
+    padding-left: 20px;
   }
   .ga-toc-link {
     display: block;
     font-family: var(--font-ui);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.35;
-    color: #9A9A92;
+    color: #6F6F68;
     text-decoration: none;
-    margin-bottom: 11px;
+    margin-bottom: 12px;
     transition: color 120ms ease-out;
   }
   .ga-toc-link:hover { color: #222222; }
@@ -3655,7 +3660,7 @@
   }
   .ga-content h2 {
     font-family: var(--font-brand);
-    font-size: clamp(1.875rem, 3vw, 2.625rem);
+    font-size: clamp(2.625rem, 4vw, 3.5rem);
     font-weight: 600;
     line-height: 1.0;
     letter-spacing: -0.05em;
@@ -3666,13 +3671,13 @@
   }
   .ga-content h3 {
     font-family: var(--font-brand);
-    font-size: clamp(1.375rem, 2.2vw, 1.875rem);
+    font-size: clamp(1.75rem, 2.5vw, 2.125rem);
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.04em;
     color: #222222;
     margin-top: 48px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     scroll-margin-top: 96px;
   }
   .ga-content h4 {

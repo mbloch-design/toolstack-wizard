@@ -157,6 +157,34 @@ Plage : 2.8 → 4.8. Utilisé dans StickyDecisionCard et section Avis.
 
 ---
 
+## GuideDetailPage — composants et conventions (après Sprint 3)
+
+### Encadrés "À retenir" (ga-takeaway)
+
+Le renderer Markdown (`markdownToHtml` dans `GuideDetailPage.tsx`) détecte les blockquotes commençant par un des préfixes suivants et les transforme en encadrés sobres :
+- `> À retenir : texte…` → label "À retenir" + texte
+- `> Key takeaway : texte…` → label "Key takeaway" + texte
+- `> À noter : texte…` → label "À noter" + texte
+- `> Note : texte…` → label "Note" + texte
+
+Rendu : `<div class="ga-takeaway"><p class="ga-takeaway-label">…</p><p>…</p></div>` — fond `#EDEDE8`, bordure `#DADAD4`, `border-radius: 10px`.
+
+### TOC sticky
+
+`.ga-toc-col` utilise `top: calc(var(--navbar-h, 68px) + 24px)` (92px total). L'IntersectionObserver surveille les H2 uniquement. Masqué sous 1100px (mobile TOC affiché à la place).
+
+### Typographie article
+
+| Élément | Font-size | Notes |
+|---|---|---|
+| H2 | `clamp(2.625rem, 4vw, 3.5rem)` | 42px → 56px |
+| H3 | `clamp(1.75rem, 2.5vw, 2.125rem)` | 28px → 34px |
+| Body p | 19px | line-height 1.65 |
+| Body li | 18px | line-height 1.6 |
+| Blockquote | 22px | border-left 2px #222222 |
+
+---
+
 ## Composants clés (tool detail)
 
 | Composant | Rôle |

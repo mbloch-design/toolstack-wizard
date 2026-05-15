@@ -492,7 +492,7 @@ const GuideDetailPage = () => {
               )}
             </p>
           </div>
-          <Link to={`${prefix}/diagnostic`} className="ga-cta-btn">
+          <Link to={`${prefix}/selector`} className="ga-cta-btn">
             {t("Analyser ma stack", "Analyze my stack")}
             <ArrowRight style={{ width: 16, height: 16 }} />
           </Link>
@@ -522,15 +522,21 @@ const GuideDetailPage = () => {
 
 /* ── Tool row ── */
 function ToolRow({ tool, prefix, lang }: { tool: Tool; prefix: string; lang: string }) {
-  const isFree = tool.defaultMonthlyPrice === 0 && !(tool.pricing as any)?.paid;
+  const v5Price = (tool as any).pricing_v5?.compare_price_monthly_eur;
+  const price = v5Price != null && v5Price > 0 ? v5Price : tool.defaultMonthlyPrice;
+  const isFree = price === 0 && !(tool.pricing as any)?.paid;
   const isFreemium = !!(tool.pricing as any)?.free && !!(tool.pricing as any)?.paid;
   const priceLabel = isFree
     ? (lang === "fr" ? "Gratuit" : "Free")
     : isFreemium
     ? "Freemium"
-    : tool.defaultMonthlyPrice
-    ? `${tool.defaultMonthlyPrice}€/${lang === "fr" ? "mois" : "mo"}`
+    : price
+    ? `${price}€/${lang === "fr" ? "mois" : "mo"}`
     : (lang === "fr" ? "Payant" : "Paid");
+
+  const usage = tool.shortDescription
+    ? (tool.shortDescription as string).split(/[.!?]/)[0].trim()
+    : null;
 
   return (
     <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className="ga-tool-row">
@@ -542,17 +548,22 @@ function ToolRow({ tool, prefix, lang }: { tool: Tool; prefix: string; lang: str
         <ToolLogo tool={tool} size={22} />
       </div>
       <div>
-        <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.025em", color: "#222222", marginBottom: 2 }}>
+        <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.025em", color: "#222222", marginBottom: 3 }}>
           {tool.name}
         </p>
-        {tool.shortDescription && (
+        {usage && (
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", lineHeight: 1.35 }}>
-            {(tool.shortDescription as string).split(".")[0]}
+            {usage}
           </p>
         )}
       </div>
       <div style={{ textAlign: "right", flexShrink: 0 }}>
-        <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222" }}>
+        <span style={{
+          fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600,
+          letterSpacing: "0.02em", color: "#6F6F68",
+          background: "#F8F8F4", border: "1px solid #DADAD4",
+          borderRadius: 4, padding: "3px 8px",
+        }}>
           {priceLabel}
         </span>
       </div>
@@ -608,7 +619,17 @@ function markdownToHtml(
   html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   html = html.replace(/\*(.+?)\*/g, "<em>$1</em>");
   html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
-  html = html.replace(/^> (.+)$/gm, "<blockquote><p>$1</p></blockquote>");
+  html = html.replace(/^> (.+)$/gm, (_m, text) => {
+    // "À retenir" / "Key takeaway" blockquotes → ga-takeaway box
+    const lower = text.toLowerCase();
+    if (lower.startsWith("à retenir") || lower.startsWith("key takeaway") || lower.startsWith("à noter") || lower.startsWith("note :")) {
+      const colon = text.indexOf(":");
+      const body = colon >= 0 && colon < 20 ? text.slice(colon + 1).trim() : text;
+      const label = colon >= 0 && colon < 20 ? text.slice(0, colon).trim() : "À retenir";
+      return `<div class="ga-takeaway"><p class="ga-takeaway-label">${label}</p><p>${body}</p></div>`;
+    }
+    return `<blockquote><p>${text}</p></blockquote>`;
+  });
   html = html.replace(/^- (.+)$/gm, "<li>$1</li>");
   html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul>$1</ul>");
   html = html.replace(/^\d+\. (.+)$/gm, "<li>$1</li>");

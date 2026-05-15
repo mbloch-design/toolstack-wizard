@@ -180,6 +180,43 @@ Contenu : score 64px → phrase verdict 16px → CTA noir → CTA ghost → 4 fa
 
 ---
 
+## Guides — index éditorial (gi-*)
+
+### Hero metadata
+Tags `gi-hero-tag` : texte brut uppercase 11px, dot-séparés via CSS `::before { content: "·" }`. Pas de bordure ni de fond.
+
+### Lignes articles (gi-row)
+```css
+grid-template-columns: 140px minmax(0, 1fr) auto;
+gap: 32px;
+padding: 28px 0;
+border-top: 1px solid #DADAD4;
+```
+- `gi-row-title` : `clamp(1.875rem, 3.2vw, 2.625rem)`, 30px→42px
+- `gi-row-excerpt` : 16px, `line-height 1.45`, `max-width 720px`
+- `gi-row-cta` : 15px, `#222222`, hover opacity 0.55
+
+---
+
+## Articles guides (ga-*)
+
+### Encadrés "À retenir"
+```css
+.ga-takeaway { background: #EDEDE8; border: 1px solid #DADAD4; border-radius: 10px; padding: 24px 28px; margin: 40px 0; }
+.ga-takeaway-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6F6F68; margin-bottom: 12px; }
+```
+Déclenchement Markdown : `> À retenir : texte…` (ou `Key takeaway`, `À noter`, `Note`).
+
+### TOC sidebar
+```css
+.ga-toc-col { position: sticky; top: calc(var(--navbar-h, 68px) + 24px); }
+.ga-toc-nav { border-left: 1px solid #DADAD4; padding-left: 20px; }
+.ga-toc-link { font-size: 14px; color: #6F6F68; }
+.ga-toc-link--active { color: #222222; font-weight: 500; }
+```
+
+---
+
 ## Anti-patterns à éviter
 
 - ❌ Bouton bleu sur les pages outils

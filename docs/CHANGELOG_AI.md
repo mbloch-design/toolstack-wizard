@@ -2,6 +2,66 @@
 
 ---
 
+## 2026-05-15 — Sprint 3 : Refonte éditoriale Guides + Articles
+
+**Fichiers modifiés**
+- `src/pages/GuidesPage.tsx`
+- `src/pages/GuideDetailPage.tsx`
+- `src/index.css`
+- `src/data/posts-fr.json`
+- `docs/ARCHITECTURE.md`
+- `docs/DESIGN_SYSTEM.md`
+
+### GuidesPage — améliorations éditoriales
+
+**Hero metadata** : les tags `gi-hero-tag` sont passés de badges avec bordure (`border: 1px solid #DADAD4`, `background: #FFFFFF`) à une rangée de texte brut dot-séparée (`·` en `::before`). Plus léger, plus éditorial.
+
+**Bloc featured** : titre agrandi `clamp(1.75rem, 3vw, 2.75rem)` → `clamp(2rem, 3.5vw, 3rem)`.
+
+**Lignes articles** :
+- `gi-row-title` : `clamp(1.5rem, 2.5vw, 2rem)` → `clamp(1.875rem, 3.2vw, 2.625rem)` (30px→42px)
+- `gi-row-excerpt` : 15px → 16px, `line-height` 1.5 → 1.45, `max-width` 680→720px, ajout `margin-top: 10px`
+- `gi-row-cta` : 14px → 15px, couleur `#9A9A92` → `#222222` (toujours visible, hover opacity)
+- `gi-row` padding : 32px → 28px, colonnes `130px` → `140px`
+
+**Correction** : CTA band liait vers `/fr/diagnostic` (route inexistante) → corrigé en `/fr/selector`.
+
+### GuideDetailPage — améliorations éditoriales
+
+**Typographie article** :
+- H2 : `clamp(1.875rem, 3vw, 2.625rem)` → `clamp(2.625rem, 4vw, 3.5rem)` (42px→56px)
+- H3 : `clamp(1.375rem, 2.2vw, 1.875rem)` → `clamp(1.75rem, 2.5vw, 2.125rem)` (28px→34px), `margin-bottom` 16→18px
+
+**TOC** :
+- `ga-toc-col top` : `96px` → `calc(var(--navbar-h, 68px) + 24px)` (utilise la variable canonique)
+- `ga-toc-link` : couleur `#9A9A92` → `#6F6F68` (plus visible), taille 13→14px, `margin-bottom` 11→12px
+- `ga-toc-nav padding-left` : 18px → 20px
+
+**Encadrés "À retenir"** : le renderer Markdown (`markdownToHtml`) détecte maintenant les blockquotes commençant par `À retenir`, `Key takeaway`, `À noter` ou `Note :` et les transforme en `<div class="ga-takeaway">`. Deux exemples ajoutés dans `posts-fr.json` pour l'article `top-5-competences-ia-freelance-2026`.
+
+**Module outils** : `ToolRow` amélioré — prix v5 utilisé en priorité, badge prix sobre (`border: 1px solid #DADAD4`, `background: #F8F8F4`), usage simplifié.
+
+**Correction** : CTA band liait vers `/fr/diagnostic` → corrigé en `/fr/selector`.
+
+### Hero global (EditorialHero / eh-description)
+
+`eh-description` standardisé : `font-size` 19px fixe (était clamp 17→19px), `line-height` 1.55→1.45, `color` `#4A4A44`→`#6F6F68`, `max-width` 640→680px.
+
+---
+
+## 2026-05-15 — Fix React error #310 — Rules of Hooks violation
+
+**Fichiers modifiés**
+- `src/pages/ToolDetailPage.tsx`
+
+### Problème
+Trois hooks (`useEffect` redirect + `useRef` × 2 + `useEffect` scroll) étaient déclarés **après** le `if (loading) return` (ligne 170). En React 18 concurrent mode, le nombre de hooks appelés variait selon `loading`, ce qui déclenche l'erreur #310 ("Cannot update a component while rendering a different component").
+
+### Fix
+Tous les hooks déplacés avant le premier `return` conditionnel. Les `useRef` et `useEffect` sont maintenant dans le bon ordre : SEO effect → redirect effect → prevSubPageRef → prevSlugRef → scroll effect → puis les `if (loading) return` et `if (!tool) return null`.
+
+---
+
 ## 2026-05-15 — Correction footer : suppression bloc marketing global
 
 **Fichiers modifiés**

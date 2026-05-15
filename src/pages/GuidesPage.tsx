@@ -256,7 +256,7 @@ const GuidesPage = () => {
                 )}
               </p>
             </div>
-            <Link to={`${prefix}/diagnostic`} className="gi-cta-band-btn">
+            <Link to={`${prefix}/selector`} className="gi-cta-band-btn">
               {t("Analyser ma stack", "Analyze my stack")}
               <ArrowRight style={{ width: 16, height: 16 }} />
             </Link>
