@@ -166,6 +166,45 @@ const ToolDetailPage = () => {
     return () => cleanupSeo([]);
   }, [tool, lang, subPage, categories]);
 
+  /* ── Tous les hooks doivent être déclarés AVANT les returns conditionnels ──
+     (Rules of Hooks — sinon React error #300/#310 en concurrent mode)        */
+
+  /* Redirect outil non trouvé → /tools */
+  useEffect(() => {
+    if (!loading && !tool) {
+      navigate(`${prefix}/tools`, { replace: true });
+    }
+  }, [loading, tool, navigate, prefix]);
+
+  /* Tabs — smooth scroll vers la section active.
+     <Link> gère la navigation (URL + SEO).
+     L'effect détecte le changement de subPage et scrolle vers la section,
+     uniquement lors d'un changement initié par l'utilisateur
+     (pas sur le premier rendu ni lors du changement d'outil).
+  */
+  const prevSubPageRef = useRef<string | null>(null);
+  const prevSlugRef    = useRef<string | null>(null);
+
+  useEffect(() => {
+    // Premier rendu ou changement d'outil → reset sans scroller
+    if (prevSubPageRef.current === null || prevSlugRef.current !== (slug ?? null)) {
+      prevSubPageRef.current = subPage;
+      prevSlugRef.current    = slug ?? null;
+      return;
+    }
+    // Même onglet → rien à faire
+    if (prevSubPageRef.current === subPage) return;
+    prevSubPageRef.current = subPage;
+
+    // Scroll smooth vers la section avec offset navbar + tab nav
+    const id = subPage === "presentation" ? "analyse" : subPage;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const headerOffset = 92; // 68px navbar + 72px tab nav − 48px marge visuelle
+    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  }, [subPage, slug]);
+
   /* ── Loading / not found ── */
   if (loading) {
     return (
@@ -174,15 +213,6 @@ const ToolDetailPage = () => {
       </div>
     );
   }
-
-  /* Outil non trouvé — redirection via useEffect pour éviter React error #310.
-     <Navigate> appelle navigate() dans un useLayoutEffect (commit phase), ce qui
-     peut déclencher "setState during render" en React 18 concurrent mode. */
-  useEffect(() => {
-    if (!loading && !tool) {
-      navigate(`${prefix}/tools`, { replace: true });
-    }
-  }, [loading, tool, navigate, prefix]);
 
   if (!tool) return null;
 
@@ -223,35 +253,6 @@ const ToolDetailPage = () => {
     : t("Sur devis", "On request");
 
   const toolType = (tool as any).tool_type as string;
-
-  /* ── Tabs — smooth scroll vers la section active ──
-     On laisse <Link> gérer la navigation (URL + SEO).
-     Un useEffect détecte le changement de subPage et scrolle vers la section
-     correspondante, uniquement lors d'un changement initié par l'utilisateur
-     (pas sur le premier rendu ni lors du changement d'outil).
-  ── */
-  const prevSubPageRef = useRef<string | null>(null);
-  const prevSlugRef    = useRef<string | null>(null);
-
-  useEffect(() => {
-    // Premier rendu ou changement d'outil → reset sans scroller
-    if (prevSubPageRef.current === null || prevSlugRef.current !== (slug ?? null)) {
-      prevSubPageRef.current = subPage;
-      prevSlugRef.current    = slug ?? null;
-      return;
-    }
-    // Même onglet → rien à faire
-    if (prevSubPageRef.current === subPage) return;
-    prevSubPageRef.current = subPage;
-
-    // Scroll smooth vers la section avec offset navbar + tab nav
-    const id = subPage === "presentation" ? "analyse" : subPage;
-    const el = document.getElementById(id);
-    if (!el) return;
-    const headerOffset = 92; // 68px navbar + 72px tab nav − 48px marge visuelle
-    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  }, [subPage, slug]);
 
   /* Shared card props */
   const cardProps = {
