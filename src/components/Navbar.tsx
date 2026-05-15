@@ -332,6 +332,16 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("explorer");
   const [searchOpen, setSearchOpen] = useState(false);
 
+  /* Mobile detection — panel renders full-screen below 1024px */
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 1024 : false
+  );
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 1024);
+    window.addEventListener("resize", update, { passive: true });
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   const isMac =
     typeof navigator !== "undefined" &&
     /Mac|iPhone|iPad/i.test(navigator.platform || navigator.userAgent);
@@ -495,6 +505,7 @@ const Navbar = () => {
           otherLang={otherLang}
           headerHeight={HEADER_H}
           closing={panelClosing}
+          isMobile={isMobile}
         />
       )}
 
@@ -529,6 +540,7 @@ function EditoralPanel({
   otherLang,
   headerHeight,
   closing,
+  isMobile = false,
 }: {
   prefix: string;
   lang: string;
@@ -542,13 +554,26 @@ function EditoralPanel({
   otherLang: string;
   headerHeight: number;
   closing?: boolean;
+  isMobile?: boolean;
 }) {
   const section = SECTIONS.find((s) => s.id === activeSection) ?? SECTIONS[0];
 
-  return (
-    <div
-      className={`fixed z-[46] editorial-panel${closing ? " editorial-panel--closing" : " editorial-panel--opening"}`}
-      style={{
+  /* Positioning differs between desktop panel and mobile full-screen menu */
+  const panelStyle: React.CSSProperties = isMobile
+    ? {
+        /* Mobile: full-width, full-height below header, scrollable */
+        top: `${headerHeight}px`,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: "auto",
+        maxWidth: "100vw",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+      }
+    : {
+        /* Desktop: floating card with side margins */
         top: `${headerHeight + 8}px`,
         left: "24px",
         right: "24px",
@@ -556,7 +581,12 @@ function EditoralPanel({
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
-      }}
+      };
+
+  return (
+    <div
+      className={`fixed z-[46] editorial-panel${closing ? " editorial-panel--closing" : " editorial-panel--opening"}`}
+      style={panelStyle}
       role="dialog"
       aria-modal="true"
       aria-label={t("Menu exploration", "Exploration menu")}
@@ -583,8 +613,8 @@ function EditoralPanel({
             );
           })}
 
-          {/* Footer controls */}
-          <div className="mt-auto pt-6 flex flex-col gap-3">
+          {/* Footer controls — hidden on mobile via .panel-rail-footer */}
+          <div className="mt-auto pt-6 flex flex-col gap-3 panel-rail-footer">
             <div className="flex items-center gap-2">
               <ThemeToggle theme={theme} onClick={onToggleTheme} />
               <a

@@ -115,7 +115,8 @@
     --h-btn:   56px;                   /* primary/secondary button */
     --h-input: 56px;                   /* input fields */
     --h-btn-sm: 40px;                  /* compact button */
-    --header-height: 68px;             /* fixed navbar height */
+    --navbar-h: 68px;                  /* fixed navbar height — canonical */
+    --header-height: var(--navbar-h);  /* alias — same value */
 
     /* ── Spacing scale (use only these values) ── */
     /* 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128 */
@@ -1435,18 +1436,27 @@
     color: hsl(var(--muted-foreground));
   }
 
-  /* Mobile: panel becomes scrollable stacked layout */
-  @media (max-width: 767px) {
+  /* Mobile / tablet: panel becomes full-width, stacked, scrollable */
+  @media (max-width: 1023px) {
+    /* Shell: no side rounding, no side borders — positioning handled in JS */
     .editorial-panel {
-      border-radius: 8px;
-      max-height: calc(100vh - 90px) !important;
-      height: auto !important;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      max-width: 100vw;
+      overflow-x: hidden;
     }
 
+    /* Body: stack rail (top) + content (bottom), content scrolls */
     .panel-body {
       flex-direction: column;
+      height: auto;
+      flex: 1;
+      min-height: 0;
     }
 
+    /* Rail: horizontal tab row at the top */
     .panel-rail {
       width: 100%;
       flex-direction: row;
@@ -1455,35 +1465,65 @@
       overflow-y: hidden;
       border-right: none;
       border-bottom: 1px solid #DADAD4;
-      padding: 8px 12px;
+      padding: 10px 16px;
       gap: 4px;
+      flex-shrink: 0;
+      height: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+    .panel-rail::-webkit-scrollbar { display: none; }
 
     .dark .panel-rail {
       border-bottom-color: hsl(0 0% 18%);
     }
 
+    /* Rail items: horizontal chips */
     .panel-rail-item {
       white-space: nowrap;
-      padding: 6px 10px;
-      font-size: 0.8125rem;
+      padding: 7px 12px;
+      font-size: 0.875rem;    /* 14px */
+      flex-shrink: 0;
+      width: auto;
     }
 
+    /* Active indicator: bottom underline instead of left bar */
     .panel-rail-item--active::before {
+      left: 0;
+      right: 0;
+      top: auto;
+      bottom: -10px;          /* aligns with rail border-bottom */
+      width: auto;
+      height: 2px;
+      transform: none;
+      border-radius: 0;
+    }
+
+    /* Hide footer controls (theme + lang) — available in mobile header */
+    .panel-rail-footer {
       display: none;
     }
 
+    /* Content: scrollable, full-width */
     .panel-content {
-      padding: 24px 20px;
+      flex: 1;
+      min-height: 0;
       overflow-y: auto;
+      overflow-x: hidden;
+      padding: 28px 20px;
+      -webkit-overflow-scrolling: touch;
     }
 
+    /* Columns: wrap to allow narrower viewports */
     .panel-columns {
-      gap: 36px;
+      flex-wrap: wrap;
+      gap: 32px 40px;
     }
 
+    /* Links: allow wrapping on narrow screens */
     .panel-link {
-      font-size: 1rem;  /* 16px on mobile */
+      font-size: 1rem;    /* 16px */
+      white-space: normal;
     }
   }
 }

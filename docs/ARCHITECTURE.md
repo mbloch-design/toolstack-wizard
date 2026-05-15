@@ -101,6 +101,21 @@ Toutes les nouvelles classes utilisent `@layer components` dans `index.css`.
 
 ---
 
+## Navbar — mobile menu
+
+`EditoralPanel` gère les deux modes via prop `isMobile` (détecté avec `window.innerWidth < 1024` + resize listener dans `Navbar`).
+
+| Mode | Comportement |
+|---|---|
+| Desktop (≥ 1024px) | Floating card : `left: 24px, right: 24px, height: 560px, top: 76px` |
+| Mobile (< 1024px) | Full-screen : `left: 0, right: 0, bottom: 0, top: 68px, height: auto` |
+
+Layout interne :
+- Desktop : 2 colonnes — `.panel-rail` (260px) + `.panel-content` (flex-1)
+- Mobile : 2 lignes — `.panel-rail` (horizontal, scrollable) + `.panel-content` (scrollable vertical)
+
+Fermetures : Escape (global keydown listener) + clic extérieur (click-catcher `z-[45]`, `fixed inset-0`) + route change.
+
 ## Variables CSS globales (`:root`)
 
 ```css

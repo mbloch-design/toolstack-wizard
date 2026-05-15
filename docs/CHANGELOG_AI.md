@@ -1,5 +1,75 @@
 # ToolTrim — AI Changelog
 
+---
+
+## 2026-05-15 — Sprint 1 : Stabilisation structurelle
+
+**Fichiers modifiés**
+- `src/components/Navbar.tsx`
+- `src/index.css`
+
+**Fichiers créés**
+- `CLAUDE.md`
+- `docs/AI_HANDOFF.md`
+- `docs/ROADMAP.md`
+
+### 1. Mobile menu — fix complet
+
+**Problème :** Le panel Explorer (`EditoralPanel`) utilisait des styles inline fixes (`left: 24px`, `right: 24px`, `height: 560px`) quel que soit l'écran. La media query existante (`max-width: 767px`) ne couvrait pas les tablettes (768–1023px).
+
+**Fix :**
+- Ajout d'un état `isMobile` dans `Navbar` (detecté via `window.innerWidth < 1024`, mis à jour au resize)
+- Passage de `isMobile` à `EditoralPanel` comme prop
+- `EditoralPanel` utilise des styles inline conditionnels :
+  - **Mobile (< 1024px)** : `top: 68px, left: 0, right: 0, bottom: 0, height: auto` → full-screen sous le header
+  - **Desktop (≥ 1024px)** : comportement inchangé (`left: 24px, right: 24px, height: 560px`)
+- Classe `panel-rail-footer` ajoutée au div footer du rail (caché sur mobile via CSS)
+- Media query CSS étendue de `max-width: 767px` → `max-width: 1023px` avec layout corrigé :
+  - `panel-body` : `height: auto; flex: 1; min-height: 0` (fix du bug height: 100% sur parent auto)
+  - `panel-rail` : scrollable horizontalement, `border-right: none; border-bottom: 1px solid #DADAD4`
+  - `panel-content` : `flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden`
+  - `panel-columns` : `flex-wrap: wrap; gap: 32px 40px`
+  - `panel-link` : `white-space: normal` (wrapping sur écrans étroits)
+- Fermeture Escape : déjà implémentée
+- Fermeture au clic extérieur : déjà implémentée (click-catcher `z-[45]`)
+
+### 2. Variable --navbar-h
+
+Ajout de `--navbar-h: 68px` dans `:root` comme variable canonique.
+`--header-height: var(--navbar-h)` est maintenant un alias.
+
+Utilisations :
+- `.td-sidebar-desktop` : `top: calc(var(--header-height) + 24px)`
+- `.td-tab-nav` : `top: var(--header-height)`
+- Plus de valeurs hardcodées (`88px`) dans le CSS.
+
+### 3. Sticky sidebar — vérification
+
+La sticky sidebar fonctionne correctement depuis Session 1. Pattern vérifié :
+- `position: sticky` est sur `.td-sidebar-desktop` (grid item direct)
+- `align-self: start` + `height: fit-content` sont présents
+- Parents `td-container` et `td-body-grid` n'ont pas `overflow: hidden`, `transform`, `filter`
+- `top: calc(var(--navbar-h) + 24px)` = 92px — suffisant pour passer sous le header
+
+### 4. ToolCardEditorial — documenté (non migré)
+
+`ToolCardEditorial` (src/components/ToolCardEditorial.tsx) existe mais n'est importé nulle part.
+Migration vers ToolsPage + CategoryPage documentée en Phase 3 du ROADMAP.
+
+### 5. Dark mode — dette technique documentée
+
+`gi-*` et `ga-*` (guides) n'ont aucun dark variant.
+Documenté comme dette technique dans ROADMAP.md (Phase 6).
+Non traité dans ce sprint.
+
+### 6. Docs créés
+
+- `CLAUDE.md` — guide pour Claude (conventions, variables, règles)
+- `docs/AI_HANDOFF.md` — handoff opérationnel pour reprendre une session
+- `docs/ROADMAP.md` — phases + dette technique
+
+---
+
 Suivi des modifications appliquées par sessions Claude. Format : date · session · fichiers · résumé.
 
 ---
