@@ -64,6 +64,20 @@
 
 ---
 
+## Sprint Grid — Système de grille global ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| Tokens `--layout-*` dans `:root` | ✅ Fait | max, content, article, sidebar, gutter |
+| Overrides responsive `--layout-gutter` | ✅ Fait | 48px → 32px (≤1023) → 20px (≤767) |
+| Classes utilitaires `.layout-*` | ✅ Fait | shell, content, article-grid, tool-grid |
+| `eh-container` 1440px → 1280px | ✅ Corrigé | Aligne hero vs body sur GuidesPage |
+| `ga-body-grid` 1120px → 1280px | ✅ Corrigé | Aligne body article vs hero |
+| `ga-cta-inner` 1120px → 1280px | ✅ Corrigé | Aligne CTA band vs body |
+| Containers tokenisés (`gi-*`, `ga-*`, `td-*`) | ✅ Fait | Utilisent `var(--layout-*)` |
+
+---
+
 ## Phase 3 — Cards / Listings
 
 | Item | Priorité | Notes |

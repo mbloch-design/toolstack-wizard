@@ -118,6 +118,19 @@
     --navbar-h: 68px;                  /* fixed navbar height — canonical */
     --header-height: var(--navbar-h);  /* alias — same value */
 
+    /* ── Layout grid tokens ──────────────────────
+       Usage: @layer components → .layout-shell, .layout-content, etc.
+       All containers use the same --layout-gutter → one breakpoint to rule them all.
+    ─────────────────────────────────────────── */
+    --layout-max:            1440px;   /* full-width shell (hero backgrounds, CTA bands) */
+    --layout-content:        1280px;   /* editorial content (guides, articles, tools) */
+    --layout-article:        760px;    /* article text column */
+    --layout-sidebar:        260px;    /* article TOC sidebar */
+    --layout-tool-sidebar:   360px;    /* tool page sticky card */
+    --layout-gutter:         48px;     /* horizontal padding — desktop */
+    --layout-gutter-tablet:  32px;
+    --layout-gutter-mobile:  20px;
+
     /* ── Spacing scale (use only these values) ── */
     /* 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128 */
 
@@ -166,6 +179,14 @@
 
     --color-accent:        hsl(224 76% 50%);   /* ToolTrim blue */
     --color-accent-soft:   hsl(224 76% 96%);   /* very light tint */
+  }
+
+  /* Responsive gutter — tablet & mobile overrides */
+  @media (max-width: 1023px) {
+    :root { --layout-gutter: var(--layout-gutter-tablet); }
+  }
+  @media (max-width: 767px) {
+    :root { --layout-gutter: var(--layout-gutter-mobile); }
   }
 
   .dark {
@@ -229,6 +250,61 @@
     --color-hover-text:    #111111;
     --color-accent:        hsl(224 76% 62%);
     --color-accent-soft:   hsl(224 40% 16%);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   GLOBAL LAYOUT UTILITIES
+   Single source of truth for container widths.
+   All pages should use these tokens (migration progressive).
+───────────────────────────────────────────── */
+@layer components {
+  /* Full-width shell — hero backgrounds, CTA bands (max 1440px) */
+  .layout-shell {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+  }
+
+  /* Editorial content — guides, articles, tools (max 1280px) */
+  .layout-content {
+    max-width: var(--layout-content);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+  }
+
+  /* Article 2-column grid — text col + TOC sidebar */
+  .layout-article-grid {
+    display: grid;
+    grid-template-columns: minmax(0, var(--layout-article)) var(--layout-sidebar);
+    gap: 64px;
+    max-width: var(--layout-content);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    align-items: start;
+  }
+  @media (max-width: 1100px) {
+    .layout-article-grid {
+      grid-template-columns: 1fr;
+      max-width: 780px;
+    }
+  }
+  @media (max-width: 767px) {
+    .layout-article-grid { padding-inline: var(--layout-gutter-mobile); }
+  }
+
+  /* Tool page 2-column grid — main content + sticky card */
+  .layout-tool-grid {
+    display: grid;
+    grid-template-columns: 1fr var(--layout-tool-sidebar);
+    gap: 48px;
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-gutter);
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .layout-tool-grid { grid-template-columns: 1fr; }
   }
 }
 
@@ -2124,20 +2200,20 @@
 
   /* ── Container ───────────────────────────── */
   .eh-container {
-    max-width: 1440px;
+    max-width: var(--layout-content);   /* 1280px — aligns with gi-* / ga-* body */
     margin: 0 auto;
     padding: 88px 48px 72px;   /* internal pages — was 112/96 */
   }
 
   @media (max-width: 1023px) {
     .eh-container {
-      padding: 64px 24px 56px;
+      padding: 64px var(--layout-gutter-tablet) 56px;
     }
   }
 
   @media (max-width: 639px) {
     .eh-container {
-      padding: 52px 20px 48px;
+      padding: 52px var(--layout-gutter-mobile) 48px;
     }
   }
 
@@ -2927,14 +3003,14 @@
 
   /* Page container */
   .td-container {
-    max-width: 1440px;
+    max-width: var(--layout-max);   /* 1440px */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: var(--layout-gutter);
+    padding-right: var(--layout-gutter);
   }
   @media (max-width: 768px) {
-    .td-container { padding-left: 20px; padding-right: 20px; }
+    .td-container { padding-left: var(--layout-gutter-mobile); padding-right: var(--layout-gutter-mobile); }
     .td-tab-nav { margin-left: -20px !important; margin-right: -20px !important; padding-left: 20px !important; padding-right: 20px !important; }
   }
 
@@ -3214,12 +3290,9 @@
 /* ── Guides Index — gi-* system ───────────────────────────────────────────── */
 @layer components {
   .gi-container {
-    max-width: 1280px;
+    max-width: var(--layout-content);   /* 1280px */
     margin: 0 auto;
-    padding: 0 48px;
-  }
-  @media (max-width: 768px) {
-    .gi-container { padding: 0 20px; }
+    padding: 0 var(--layout-gutter);
   }
 
   /* Hero metadata tags row — dot-separated plain text, no badge borders */
@@ -3489,12 +3562,9 @@
 /* ── Guide Article — ga-* system ──────────────────────────────────────────── */
 @layer components {
   .ga-container {
-    max-width: 1280px;
+    max-width: var(--layout-content);   /* 1280px */
     margin: 0 auto;
-    padding: 0 48px;
-  }
-  @media (max-width: 768px) {
-    .ga-container { padding: 0 20px; }
+    padding: 0 var(--layout-gutter);
   }
 
   /* Article header */
@@ -3575,9 +3645,9 @@
     display: grid;
     grid-template-columns: minmax(0, 760px) 260px;
     gap: 64px;
-    max-width: 1120px;
+    max-width: var(--layout-content);   /* 1280px — aligns with ga-container hero */
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 var(--layout-gutter);
     align-items: start;
   }
   @media (max-width: 1100px) {
@@ -3587,10 +3657,6 @@
     }
     .ga-toc-col { display: none; }
   }
-  @media (max-width: 768px) {
-    .ga-body-grid { padding: 0 20px; }
-  }
-
   /* Sticky TOC */
   .ga-toc-col {
     position: sticky;
@@ -3904,12 +3970,12 @@
     align-items: center;
     justify-content: space-between;
     gap: 32px;
-    max-width: 1120px;
+    max-width: var(--layout-content);   /* 1280px — aligns with ga-body-grid */
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 var(--layout-gutter);
   }
   @media (max-width: 768px) {
-    .ga-cta-inner { flex-direction: column; align-items: flex-start; padding: 0 20px; }
+    .ga-cta-inner { flex-direction: column; align-items: flex-start; }
   }
   .ga-cta-title {
     font-family: var(--font-brand);

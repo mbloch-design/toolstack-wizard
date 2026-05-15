@@ -141,6 +141,38 @@ Fermetures : Escape (global keydown listener) + clic extérieur (click-catcher `
 --primary: 224 76% 50%;   /* ToolTrim blue — usage sparingly */
 ```
 
+### Tokens de layout grid
+
+```css
+--layout-max:            1440px;   /* full-width shell */
+--layout-content:        1280px;   /* contenu éditorial */
+--layout-article:        760px;    /* colonne texte article */
+--layout-sidebar:        260px;    /* sidebar TOC article */
+--layout-tool-sidebar:   360px;    /* sidebar sticky outil */
+--layout-gutter:         48px;     /* desktop (overridé à 32px ≤1023px, 20px ≤767px) */
+```
+
+#### Conteneurs par page
+
+| Page | Conteneur | max-width |
+|---|---|---|
+| ToolDetailPage hero + body | `td-container` | `var(--layout-max)` = 1440px |
+| GuidesPage hero | `eh-container` | `var(--layout-content)` = 1280px |
+| GuidesPage body | `gi-container` | `var(--layout-content)` = 1280px |
+| GuideDetailPage hero | `ga-container` | `var(--layout-content)` = 1280px |
+| GuideDetailPage body | `ga-body-grid` | `var(--layout-content)` = 1280px |
+| GuideDetailPage CTA band | `ga-cta-inner` | `var(--layout-content)` = 1280px |
+| Autres pages (home, tools…) | `max-w-7xl` (Tailwind) | 1280px |
+
+#### Classes utilitaires (migration progressive)
+
+```css
+.layout-shell         /* max 1440px */
+.layout-content       /* max 1280px */
+.layout-article-grid  /* 2-col : 760px + 260px TOC */
+.layout-tool-grid     /* 2-col : 1fr + 360px card */
+```
+
 ---
 
 ## Données

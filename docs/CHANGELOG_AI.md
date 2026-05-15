@@ -2,6 +2,64 @@
 
 ---
 
+## 2026-05-15 — Sprint Grid : Système de grille global
+
+**Fichiers modifiés**
+- `src/index.css`
+- `docs/ARCHITECTURE.md`
+- `docs/DESIGN_SYSTEM.md`
+
+### Tokens de layout ajoutés dans `:root`
+
+```css
+--layout-max:            1440px;   /* full-width shell */
+--layout-content:        1280px;   /* contenu éditorial */
+--layout-article:        760px;    /* colonne texte article */
+--layout-sidebar:        260px;    /* sidebar TOC article */
+--layout-tool-sidebar:   360px;    /* sidebar sticky outil */
+--layout-gutter:         48px;     /* desktop */
+--layout-gutter-tablet:  32px;
+--layout-gutter-mobile:  20px;
+```
+
+Overrides responsive dans `@layer base` :
+- `@media (max-width: 1023px)` → `--layout-gutter: var(--layout-gutter-tablet)`
+- `@media (max-width: 767px)` → `--layout-gutter: var(--layout-gutter-mobile)`
+
+### Classes utilitaires créées dans `@layer components`
+
+| Classe | Usage |
+|---|---|
+| `.layout-shell` | Conteneur 1440px (hero backgrounds, CTA bands) |
+| `.layout-content` | Conteneur 1280px (guides, articles) |
+| `.layout-article-grid` | Grille 2-col article (760px + 260px TOC) |
+| `.layout-tool-grid` | Grille 2-col outil (1fr + 360px sidebar) |
+
+### Corrections d'alignement
+
+**GuideDetailPage** (problème critique — 80px de décalage à 1300px viewport) :
+- `ga-body-grid` : `max-width: 1120px` → `max-width: var(--layout-content)` (1280px)
+- `ga-cta-inner` : `max-width: 1120px` → `max-width: var(--layout-content)` (1280px)
+- `ga-container` : hardcodé 1280px/48px → `var(--layout-content)` / `var(--layout-gutter)`
+
+**GuidesPage** (décalage hero vs body) :
+- `eh-container` : `max-width: 1440px` → `max-width: var(--layout-content)` (1280px)
+- `gi-container` : hardcodé 1280px/48px → `var(--layout-content)` / `var(--layout-gutter)`
+
+**ToolDetailPage** :
+- `td-container` : hardcodé 1440px/48px/20px → `var(--layout-max)` / `var(--layout-gutter)` / `var(--layout-gutter-mobile)`
+
+### Principe après fix
+
+| Zone | max-width | Source |
+|---|---|---|
+| Hero fonds (CTA bands, diag) | 1440px | `var(--layout-max)` |
+| Contenu éditorial (guides, articles, outils) | 1280px | `var(--layout-content)` |
+| Colonnes gauches des articles | 760px | `var(--layout-article)` |
+| Sidebar TOC | 260px | `var(--layout-sidebar)` |
+
+---
+
 ## 2026-05-15 — Sprint 3 : Refonte éditoriale Guides + Articles
 
 **Fichiers modifiés**
