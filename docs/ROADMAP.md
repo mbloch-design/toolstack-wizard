@@ -125,6 +125,26 @@
 
 ---
 
+## Sprint Stack Detail — Refonte éditoriale StackDetailPage ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| Hero 2 colonnes (sd-hero-grid) + Snapshot sticky (sd-snapshot) | ✅ Fait | Logos outils pastilles, métriques, verdict court |
+| Subnav 6 ancres (sd-nav) | ✅ Fait | Vue d'ensemble / Outils / Budget / Risques / Alternatives / FAQ |
+| Section Vue d'ensemble : intro + grille 3 col + note expert | ✅ Fait | sd-overview-grid, sd-expert-note |
+| Section Outils : groupes par couche + labels Essentiel/Optionnel/À challenger | ✅ Fait | PERSONA_LAYERS pour persona contenu |
+| Section Priorités 3 colonnes (sd-priority-grid) | ✅ Fait | Codes couleur vert/gris/rouge |
+| Section Budget 3 niveaux (sd-budget-list) | ✅ Fait | Minimal / Recommandé / À surveiller |
+| Section Risques (sd-risk-enhanced-row) | ✅ Fait | Format Problème / Conséquence / Recommandation |
+| Section Alternatives 3 variantes (sd-alt-grid) | ✅ Fait | Minimale / Recommandée / Intensive |
+| CTA band fond #EDEDE8 (sd-cta-band + sd-cta-inner) | ✅ Fait | |
+| Section FAQ accordéon (sd-faq-list) | ✅ Fait | details/summary natif + ChevronDown |
+| Registre éditorial EDITORIAL_REGISTRY + buildFallbackEditorial() | ✅ Fait | Contenu complet pour createur-contenu-operateur |
+| PERSONA_LAYERS — couches thématiques persona contenu | ✅ Fait | Remplace STACK_LAYERS générique |
+| ~297 classes CSS sd-* ajoutées dans index.css | ✅ Fait | |
+
+---
+
 ## Sprint 5a — Responsive / QA global (à faire)
 
 | Item | Priorité | Notes |

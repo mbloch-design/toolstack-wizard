@@ -402,6 +402,39 @@ Cercles 28px, fond `#FFFFFF`, bordure `1px solid #E7E7E0`, `margin-left: -6px` (
 
 ## Stack detail (sd-*)
 
+### Hero 2 colonnes (`sd-hero-grid`)
+```css
+.sd-hero-section { background: #F8F8F4; border-bottom: 1px solid #DADAD4; padding: 48px 0 52px; }
+.sd-hero-grid { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; }
+/* ≤900px → 1 colonne */
+.sd-hero-h1 { font-family: var(--font-brand); font-size: clamp(3.25rem, 6vw, 5.5rem);
+  font-weight: 600; letter-spacing: -0.06em; line-height: 0.94; color: #222222; }
+.sd-hero-desc  { font-size: 18px; color: #6F6F68; line-height: 1.55; }
+.sd-hero-verdict { font-size: 15px; color: #222222; line-height: 1.5; }
+```
+
+### Snapshot module sticky (`sd-snapshot`)
+```css
+.sd-snapshot { position: sticky; top: calc(var(--navbar-h, 68px) + 24px);
+  background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 10px;
+  padding: 24px; height: fit-content; }
+.sd-snapshot-title { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #6F6F68; }
+.sd-snapshot-item  { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; }
+.sd-snapshot-label { font-size: 13px; color: #6F6F68; }
+.sd-snapshot-value { font-size: 14px; font-weight: 500; color: #222222; }
+.sd-snapshot-divider { height: 1px; background: #DADAD4; margin: 12px 0; }
+```
+
+### Logo pastilles dans snapshot (`sd-logo-stack`)
+```css
+.sd-logo-stack { display: flex; align-items: center; }
+.sd-logo-pill  { width: 28px; height: 28px; border-radius: 999px;
+  background: #FFFFFF; border: 1px solid #E7E7E0; margin-left: -6px; }
+.sd-logo-pill:first-child { margin-left: 0; }
+.sd-logo-more  { background: #F8F8F4; font-size: 10px; font-weight: 600; color: #6F6F68; }
+```
+
 ### Subnav sticky (`sd-nav`)
 ```css
 .sd-nav { position: sticky; top: var(--navbar-h, 68px);
@@ -412,13 +445,88 @@ Cercles 28px, fond `#FFFFFF`, bordure `1px solid #E7E7E0`, `margin-left: -6px` (
 /* Zéro bleu */
 ```
 
-### Métriques résumé (`sd-summary`)
+### Vue d'ensemble (`sd-overview-grid`)
 ```css
-.sd-summary { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #DADAD4; }
-.sd-metric  { padding: 20px 0; border-right: 1px solid #DADAD4; }
-.sd-metric-label { font-size: 11px; font-weight: 600; text-transform: uppercase; color: #6F6F68; }
-.sd-metric-value { font-size: 22px; font-weight: 600; color: #222222; }
-/* ≤767px → 2 colonnes */
+.sd-overview-intro { font-size: 17px; color: #6F6F68; line-height: 1.55; }
+.sd-overview-grid  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.sd-overview-col   { border-top: 3px solid #222222; padding-top: 16px; padding-right: 24px; }
+.sd-overview-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #6F6F68; }
+.sd-overview-text  { font-size: 16px; color: #222222; line-height: 1.5; }
+/* ≤767px → 1 colonne */
+```
+
+### Note expert (`sd-expert-note`)
+```css
+.sd-expert-note { background: #EDEDE8; border: 1px solid #DADAD4; border-radius: 10px;
+  padding: 20px 24px; }
+.sd-expert-note-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #6F6F68; }
+.sd-expert-note-text { font-size: 15px; color: #222222; line-height: 1.5; }
+```
+
+### Priorités 3 colonnes (`sd-priority-grid`)
+```css
+.sd-priority-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.sd-priority-col  { border-top: 3px solid; padding-top: 16px; }
+.sd-priority-col--essential { border-top-color: #2E7D32; }
+.sd-priority-col--optional  { border-top-color: #6F6F68; }
+.sd-priority-col--challenge { border-top-color: #C62828; }
+.sd-priority-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; }
+.sd-priority-item::before { content: "—"; margin-right: 8px; color: #9A9A92; }
+.sd-priority-item { font-size: 15px; color: #222222; line-height: 1.5; }
+/* ≤767px → 1 colonne */
+```
+
+### Budget (`sd-budget-list`)
+```css
+.sd-budget-list { list-style: none; padding: 0; }
+.sd-budget-row  { display: grid; grid-template-columns: 180px 110px 1fr;
+  gap: 24px; align-items: baseline; padding: 14px 0; border-top: 1px solid #DADAD4; }
+.sd-budget-tier   { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #6F6F68; }
+.sd-budget-amount { font-size: 20px; font-weight: 600; color: #222222; }
+.sd-budget-desc   { font-size: 15px; color: #6F6F68; line-height: 1.45; }
+/* ≤640px → 1 colonne */
+```
+
+### Risques (`sd-risk-enhanced-row`)
+```css
+.sd-risk-enhanced-row { display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 0; border-top: 1px solid #DADAD4; padding: 20px 0; }
+.sd-risk-enhanced-col { padding-right: 24px; }
+.sd-risk-col-label    { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #9A9A92; }
+.sd-risk-problem      { font-size: 15px; font-weight: 500; color: #222222; }
+.sd-risk-consequence  { font-size: 15px; color: #6F6F68; }
+.sd-risk-reco-text    { font-size: 14px; color: #222222; line-height: 1.45; }
+/* ≤767px → 1 colonne */
+```
+
+### Alternatives — variantes de stack (`sd-alt-grid`)
+```css
+.sd-alt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.sd-alt-card { border: 1px solid #DADAD4; border-radius: 10px;
+  padding: 20px 22px; background: #FFFFFF; }
+.sd-alt-label      { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #6F6F68; }
+.sd-alt-title      { font-size: 18px; font-weight: 600; color: #222222; }
+.sd-alt-budget     { font-size: 14px; font-weight: 600; color: #6F6F68; }
+.sd-alt-tools      { font-size: 14px; color: #222222; }
+.sd-alt-compromise { font-size: 14px; color: #6F6F68; font-style: italic; }
+/* ≤767px → 1 colonne */
+```
+
+### FAQ (`sd-faq-list`)
+```css
+.sd-faq-list    { list-style: none; padding: 0; }
+.sd-faq-item    { border-top: 1px solid #DADAD4; }
+.sd-faq-summary { display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 500; color: #222222; }
+.sd-faq-icon    { flex-shrink: 0; transition: transform 200ms ease; }
+details[open] .sd-faq-icon { transform: rotate(180deg); }
+.sd-faq-answer  { font-size: 16px; color: #6F6F68; line-height: 1.55; padding-bottom: 20px; }
 ```
 
 ### Lignes outils (`sd-tool-row`)
@@ -428,6 +536,21 @@ Cercles 28px, fond `#FFFFFF`, bordure `1px solid #E7E7E0`, `margin-left: -6px` (
   align-items: center; gap: 16px; padding: 14px 0; border-top: 1px solid #DADAD4; }
 /* Badges statut : inline styles (vert/gris/rouge), zéro bleu */
 ```
+
+### CTA band (`sd-cta-band`)
+```css
+.sd-cta-band  { background: #EDEDE8; border-top: 1px solid #DADAD4; border-bottom: 1px solid #DADAD4; padding: 64px 0; }
+.sd-cta-inner { max-width: var(--layout-content, 1280px); margin: 0 auto;
+  padding: 0 var(--layout-gutter, 48px); }
+```
+
+### Règle éditoriale stack detail
+- **Zéro bleu** sur toute la page
+- Boutons CTA : fond `#222222`, couleur `#FFFFFF`
+- Snapshot module : fond `#FFFFFF` (blanc pur, pas crème)
+- CTA band : fond `#EDEDE8` (crème medium)
+- Priority col essential : `#2E7D32` (vert) / optional : `#6F6F68` (gris) / challenge : `#C62828` (rouge)
+- Registre éditorial : `EDITORIAL_REGISTRY[slug]` → fallback `buildFallbackEditorial(stack)`
 
 ---
 

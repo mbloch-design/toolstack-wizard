@@ -2,6 +2,50 @@
 
 ---
 
+## 2026-05-15 — Sprint Stack Detail : refonte StackDetailPage en page de décision éditoriale
+
+**Fichiers modifiés**
+- `src/pages/StackDetailPage.tsx` — réécriture complète (~1230 lignes)
+- `src/index.css` — ajout du système `sd-*` étendu (~297 lignes)
+
+**Architecture**
+- Supprimé : bande métriques `sd-summary`, section Avis standalone, ancienne section Pièges
+- Ajouté : `StackEditorialContent` interface + `EDITORIAL_REGISTRY` + `buildFallbackEditorial()`
+- Ajouté : `PERSONA_LAYERS` — couches thématiques spécifiques par persona (contenu : IA / Idées / Visuels / Vidéo / Publication / Stockage)
+- Conservé intact : `ToolPanel` + `Sheet`/`SheetContent`/`SheetClose` (shadcn/ui)
+
+**Interfaces TypeScript**
+```typescript
+interface StackEditorialContent {
+  verdictShort / verdictShortEn
+  overviewIntro / overviewIntroEn
+  overviewLabels[3] / overviewTexts[3] + EN
+  priority: { essential[3], optional[3], challenge[3] } + EN
+  budgetRows: StackBudgetRow[3]         // tier / amount / desc
+  risks: StackRiskEnhanced[5]           // problem / consequence / reco
+  altVariants: StackAltVariant[3]       // label / title / budget / tools / compromise
+  faq: StackFaqItem[5]                  // q / a + EN
+  expertNote / expertNoteEn
+}
+```
+
+**Structure de la page (7 nouvelles sections + hero 2-col)**
+1. **Hero 2 colonnes** — breadcrumb, eyebrow STACK, H1 `font-brand clamp(3.25rem,6vw,5.5rem)` ls -0.06em, desc 18px / module `sd-snapshot` sticky (logos pastilles 28px, métriques, verdict court)
+2. **Subnav sticky** — 6 ancres (Vue d'ensemble / Outils / Budget / Risques / Alternatives / FAQ), underline noir
+3. **Vue d'ensemble** — intro 17px + grille 3 colonnes (Elle sert à / Elle évite / Elle n'est pas faite pour) + note expert fond #EDEDE8
+4. **Outils** — sections par couche (PERSONA_LAYERS ou STACK_LAYERS), bouton "Voir le détail" → ToolPanel
+5. **Priorités** — `sd-priority-grid` 3 colonnes, border-top colorée (vert/gris/rouge), items avec dashes
+6. **Budget** — `sd-budget-list` 3 lignes (Minimal / Recommandé / À surveiller), grille 180px + 110px + 1fr
+7. **Risques** — `sd-risk-enhanced-row` 3 colonnes (Problème / Conséquence / Recommandation)
+8. **Alternatives** — `sd-alt-grid` 3 cards (Minimale / Recommandée / Intensive)
+9. **CTA band** — fond `#EDEDE8`, `sd-cta-inner` wrapper (max 1280px)
+10. **FAQ** — `sd-faq-list` avec `<details>/<summary>` natif + ChevronDown rotatif
+
+**Contenu éditorial createur-contenu-operateur**
+Stack `createur-contenu-operateur` : 8 outils (ChatGPT/Notion/Canva/Tally/Beehiiv/Buffer/Descript/Google Drive), 5 risques, 3 variantes alternatives, 5 FAQ.
+
+---
+
 ## 2026-05-15 — Sprint Comparatif : refonte /fr/comparatif/:pair en page de décision éditoriale
 
 **Fichiers modifiés**
