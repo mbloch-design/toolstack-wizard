@@ -105,6 +105,21 @@
 
 ---
 
+## Sprint Comparatif v2 — Renforcement affordance de comparaison ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| Section "Ce que fait chaque outil" (cp-overview-grid) | ✅ Fait | 2 cards symétriques, desc + cas d'usage |
+| Section "Avantages et limites" (cp-pros-cons-grid) | ✅ Fait | Remplace "Limites" seule, pros + cons séparés |
+| Section "Ce qui doit te faire choisir" (cp-decision-list) | ✅ Fait | Rows contexte → choix |
+| Interface CompareEditorialContent étendue | ✅ Fait | toolADesc/UseCases, prosA/B, decisionRows |
+| Subnav 7 ancres | ✅ Fait | Ajout "Ce que font les outils" + "Avantages" |
+| Labels verdict plus explicites ("Prends X si…") | ✅ Fait | |
+| buildFallbackContent mis à jour | ✅ Fait | Nouveaux champs dérivés des données outil |
+| CSS cp-overview-* + cp-pros-cons-* + cp-decision-* | ✅ Fait | ~130 lignes |
+
+---
+
 ## Sprint Comparatif — Refonte /fr/comparatif/:pair ✅
 
 | Item | Statut | Notes |

@@ -2,6 +2,36 @@
 
 ---
 
+## 2026-05-15 — Sprint Comparatif v2 : renforcement affordance de comparaison
+
+**Fichiers modifiés**
+- `src/pages/ComparePage.tsx` — extension interface + 3 nouvelles sections + subnav mis à jour
+- `src/index.css` — ajout `cp-overview-*`, `cp-pros-cons-*`, `cp-decision-*` (~130 lignes)
+
+**Nouvelles sections**
+1. **"Ce que fait chaque outil"** (`id="outils"`) — 2 cards symétriques (`cp-overview-grid`) : description courte + liste de cas d'usage pour chaque outil, avant le tableau comparatif
+2. **"Avantages et limites"** (`id="avantages"`) — remplace l'ancienne section "Limites" isolée ; chaque outil affiche maintenant Avantages (`+` vert) + Limites (`—` gris) en 2 colonnes
+3. **"Ce qui doit te faire choisir"** — liste de `CompareDecisionRow` (contexte → outil recommandé)
+
+**Interface `CompareEditorialContent` étendue**
+```typescript
+toolADesc / toolADescEn
+toolAUseCases[] / toolAUseCasesEn[]
+toolBDesc / toolBDescEn
+toolBUseCases[] / toolBUseCasesEn[]
+prosA[] / prosAEn[]     // avantages outil A
+prosB[] / prosBEn[]     // avantages outil B
+decisionRows: CompareDecisionRow[]   // context + choice
+```
+
+**Subnav** : 7 ancres (Verdict / Ce que font les outils / Comparaison / Avantages / Profils / Prix / FAQ)
+
+**Labels verdict** : "Prends {toolA} si…" / "Prends {toolB} si…" / "Évite les deux si…" (plus explicites)
+
+**`buildFallbackContent`** mis à jour avec les nouveaux champs (dérivés des données outil)
+
+---
+
 ## 2026-05-15 — Sprint Stack Detail : refonte StackDetailPage en page de décision éditoriale
 
 **Fichiers modifiés**

@@ -364,12 +364,45 @@ Utilise `ec-card` pour le shell. Deux variants via prop `variant` :
 ```
 Implémentation : `<details>/<summary>` natif + `useState` pour la rotation du chevron.
 
+### Overview 2 colonnes (`cp-overview-grid`) — "Ce que fait chaque outil"
+```css
+.cp-overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cp-overview-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 10px; padding: 28px; }
+.cp-overview-logo { width: 40px; height: 40px; border-radius: 8px; border: 1px solid #E7E7E0; }
+.cp-overview-desc { font-size: 15px; color: #6F6F68; line-height: 1.6; }
+.cp-overview-item::before { content: "—"; color: #9A9A92; }
+/* ≤767px → 1 colonne */
+```
+
+### Pros & cons (`cp-pros-cons-grid`) — "Avantages et limites"
+```css
+.cp-pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.cp-pros-cons-sublabel--pros { color: #2E7D32; }   /* AVANTAGES */
+.cp-pros-cons-sublabel--cons { color: #9A9A92; }   /* LIMITES */
+.cp-pros-cons-item--pro::before { content: "+"; color: #2E7D32; font-weight: 700; }
+.cp-pros-cons-item--con::before { content: "—"; color: #9A9A92; }
+/* ≤640px → 1 colonne */
+```
+
+### Rows de décision (`cp-decision-list`) — "Ce qui doit te faire choisir"
+```css
+.cp-decision-list { list-style: none; padding: 0; }
+.cp-decision-row { display: flex; align-items: baseline; gap: 16px;
+  padding: 16px 0; border-top: 1px solid #DADAD4; }
+.cp-decision-context { font-size: 16px; color: #6F6F68; flex: 1; }
+.cp-decision-arrow  { font-size: 16px; color: #DADAD4; flex-shrink: 0; }
+.cp-decision-choice { font-size: 15px; font-weight: 600; color: #222222;
+  white-space: nowrap; min-width: 120px; text-align: right; }
+/* ≤640px → colonne, arrow masquée, choice text-align left */
+```
+
 ### Règle éditoriale comparatif
 - **Zéro bleu** sur toute la page (ni boutons, ni hover, ni underline actif)
 - Underline actif/hover subnav : `2px solid #222222`
 - Boutons CTA : fond `#222222`, couleur `#FFFFFF`
 - Module VS : fond `#FFFFFF` (blanc pur, pas crème)
 - CTA band : fond `#EDEDE8` (crème medium, pas crème clair)
+- Avantages : indicateur `+` vert `#2E7D32` / limites : `—` gris `#9A9A92`
 
 ---
 
