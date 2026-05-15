@@ -1,14 +1,23 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Lightbulb, X } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, Lightbulb, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetClose } from "@/components/ui/sheet";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
-import { STACK_PERSONAS, STACK_STAGES, STACKS, type StackGuide, type StackInsight, type StackPersona, type StackStage, type StackToolSlot } from "@/data/stacks";
+import {
+  STACK_PERSONAS,
+  STACK_STAGES,
+  STACKS,
+  type StackGuide,
+  type StackInsight,
+  type StackPersona,
+  type StackStage,
+  type StackToolSlot,
+} from "@/data/stacks";
 
+/* ─── Stack layer grouping ───────────────────────────────────────────────── */
 const STACK_LAYERS = [
   {
     id: "sell",
@@ -42,6 +51,7 @@ const STACK_LAYERS = [
   },
 ];
 
+/* ─── Expert tips ────────────────────────────────────────────────────────── */
 const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
   "developpeur-freelance-shipper": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "GitHub + Vercel + Notion + Stripe. Ajoute Cursor seulement si tu livres du code chaque semaine, sinon ChatGPT suffit pour cadrer et débugger.", detailEn: "GitHub + Vercel + Notion + Stripe. Add Cursor only if you ship code weekly; otherwise ChatGPT is enough for scoping and debugging." },
@@ -61,7 +71,7 @@ const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
   "scenographe-evenementiel": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "SketchUp ou Vectorworks pour le volume, D5 pour valider vite, InDesign pour le dossier, Notion pour les décisions et fournisseurs.", detailEn: "SketchUp ou Vectorworks pour le volume, D5 pour valider vite, InDesign pour le dossier, Notion pour les décisions et fournisseurs." },
     { title: "Le petit plus", titleEn: "Small edge", detail: "OpenCutList, Transmutr et CleanUp évitent que la 3D devienne impossible à fabriquer ou trop lourde.", detailEn: "OpenCutList, Transmutr et CleanUp évitent que la 3D devienne impossible à fabriquer ou trop lourde." },
-    { title: "À challenger", titleEn: "Challenge", detail: "Twinmotion et Skatter se justifient quand l’expérience ou l’ambiance vend vraiment le projet.", detailEn: "Twinmotion et Skatter se justifient quand l’expérience ou l’ambiance vend vraiment le projet." },
+    { title: "À challenger", titleEn: "Challenge", detail: "Twinmotion et Skatter se justifient quand l'expérience ou l'ambiance vend vraiment le projet.", detailEn: "Twinmotion et Skatter se justifient quand l'expérience ou l'ambiance vend vraiment le projet." },
   ],
   "designer-stand-retail-popup": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "SketchUp + Illustrator + InDesign + Notion couvre déjà concept, signalétique, dossier et production.", detailEn: "SketchUp + Illustrator + InDesign + Notion couvre déjà concept, signalétique, dossier et production." },
@@ -76,7 +86,7 @@ const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
   "brand-designer-systeme": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Figma ou Illustrator crée le système, Brandpad ou Notion le rend utilisable par le client.", detailEn: "Figma ou Illustrator crée le système, Brandpad ou Notion le rend utilisable par le client." },
     { title: "Le petit plus", titleEn: "Small edge", detail: "Ajoute Specify ou Tokens Studio seulement si la marque va vers un vrai système digital.", detailEn: "Ajoute Specify ou Tokens Studio seulement si la marque va vers un vrai système digital." },
-    { title: "À challenger", titleEn: "Challenge", detail: "L’IA aide à explorer des territoires, mais la stratégie doit rester décidée et argumentée.", detailEn: "L’IA aide à explorer des territoires, mais la stratégie doit rester décidée et argumentée." },
+    { title: "À challenger", titleEn: "Challenge", detail: "L'IA aide à explorer des territoires, mais la stratégie doit rester décidée et argumentée.", detailEn: "L'IA aide à explorer des territoires, mais la stratégie doit rester décidée et argumentée." },
   ],
   "directeur-artistique": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Are.na, ShotDeck, Eagle et Milanote doivent nourrir une décision, pas devenir une collection infinie.", detailEn: "Are.na, ShotDeck, Eagle et Milanote doivent nourrir une décision, pas devenir une collection infinie." },
@@ -86,7 +96,7 @@ const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
   "developpeur-webflow-nocode-creatif": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Relume + Figma avant Webflow évitent beaucoup de pages mal cadrées.", detailEn: "Relume + Figma avant Webflow évitent beaucoup de pages mal cadrées." },
     { title: "Le petit plus", titleEn: "Small edge", detail: "Chaque script, app Webflow ou automation doit avoir une note de rôle et de maintenance.", detailEn: "Chaque script, app Webflow ou automation doit avoir une note de rôle et de maintenance." },
-    { title: "À challenger", titleEn: "Challenge", detail: "Plausible et Search Console suffisent souvent avant d’ajouter une couche analytics lourde.", detailEn: "Plausible et Search Console suffisent souvent avant d’ajouter une couche analytics lourde." },
+    { title: "À challenger", titleEn: "Challenge", detail: "Plausible et Search Console suffisent souvent avant d'ajouter une couche analytics lourde.", detailEn: "Plausible et Search Console suffisent souvent avant d'ajouter une couche analytics lourde." },
   ],
   "monteur-video": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Choisis un outil principal : DaVinci pour le tout-en-un, Premiere si le client vit dans Adobe.", detailEn: "Choisis un outil principal : DaVinci pour le tout-en-un, Premiere si le client vit dans Adobe." },
@@ -94,7 +104,7 @@ const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
     { title: "À challenger", titleEn: "Challenge", detail: "Topaz Video et Runway restent des outils de finition ou de sauvetage, pas le cœur du montage.", detailEn: "Topaz Video et Runway restent des outils de finition ou de sauvetage, pas le cœur du montage." },
   ],
   "realisateur-videaste": [
-    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "La valeur est autant en préproduction qu’en montage : brief, moodboard, shotlist et planning doivent être visibles.", detailEn: "La valeur est autant en préproduction qu’en montage : brief, moodboard, shotlist et planning doivent être visibles." },
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "La valeur est autant en préproduction qu'en montage : brief, moodboard, shotlist et planning doivent être visibles.", detailEn: "La valeur est autant en préproduction qu'en montage : brief, moodboard, shotlist et planning doivent être visibles." },
     { title: "Le petit plus", titleEn: "Small edge", detail: "ShotDeck et Milanote aident à vendre une direction image avant le tournage.", detailEn: "ShotDeck et Milanote aident à vendre une direction image avant le tournage." },
     { title: "À challenger", titleEn: "Challenge", detail: "Yousign, Indy et Drive ferment la boucle : accord, acompte, livraison, archive.", detailEn: "Yousign, Indy et Drive ferment la boucle : accord, acompte, livraison, archive." },
   ],
@@ -119,24 +129,24 @@ const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
     { title: "À éviter", titleEn: "Avoid", detail: "Ne prends pas CRM, outil projet complet et newsletter avant d'avoir un canal d'acquisition stable.", detailEn: "Do not take CRM, full project management, and newsletter tools before you have a stable acquisition channel." },
   ],
   "ecommerce-retention-support": [
-    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Shopify, GA4, Klaviyo, Gorgias et Hotjar sur pages à friction. Chaque app doit prouver conversion, réachat, panier moyen ou temps support gagné.", detailEn: "Shopify, GA4, Klaviyo, Gorgias, and Hotjar on friction pages. Each app must prove conversion, repeat purchase, AOV, or support time saved." },
-    { title: "Le petit plus", titleEn: "Small edge", detail: "Commence par trois flows Klaviyo : abandon panier, post-achat, winback. Le reste vient après un revenu email mesurable.", detailEn: "Start with three Klaviyo flows: cart abandonment, post-purchase, winback. Everything else comes after measurable email revenue." },
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Shopify, GA4, Klaviyo, Gorgias et Hotjar sur pages à friction.", detailEn: "Shopify, GA4, Klaviyo, Gorgias, and Hotjar on friction pages." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Commence par trois flows Klaviyo : abandon panier, post-achat, winback.", detailEn: "Start with three Klaviyo flows: cart abandonment, post-purchase, winback." },
     { title: "À challenger", titleEn: "Challenge", detail: "Les apps Shopify ralentissent la boutique. Coupe toute app sans métrique de marge associée.", detailEn: "Shopify apps slow the store. Cut any app without an attached margin metric." },
   ],
   "designer-ui-ux-systeme-produit": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Figma, Tokens Studio, Iconify, Stark. Ajoute Content Reel seulement si tu dois remplir beaucoup d'écrans réalistes.", detailEn: "Figma, Tokens Studio, Iconify, Stark. Add Content Reel only if you need to populate many realistic screens." },
-    { title: "Le petit plus", titleEn: "Small edge", detail: "Avant le handoff, vérifie tokens, contrastes, états vides, erreurs, loading et responsive. C'est là que le designer gagne la confiance dev.", detailEn: "Before handoff, check tokens, contrast, empty states, errors, loading, and responsive. This is where designers win developer trust." },
-    { title: "Plugin / réglage", titleEn: "Plugin / setting", detail: "Tokens Studio devient utile quand les tokens sortent de Figma vers GitHub ou plusieurs thèmes. Sinon les styles natifs suffisent.", detailEn: "Tokens Studio becomes useful when tokens leave Figma for GitHub or multiple themes. Otherwise native styles are enough." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Avant le handoff, vérifie tokens, contrastes, états vides, erreurs, loading et responsive.", detailEn: "Before handoff, check tokens, contrast, empty states, errors, loading, and responsive." },
+    { title: "Plugin / réglage", titleEn: "Plugin / setting", detail: "Tokens Studio devient utile quand les tokens sortent de Figma vers GitHub ou plusieurs thèmes.", detailEn: "Tokens Studio becomes useful when tokens leave Figma for GitHub or multiple themes." },
   ],
   "motion-video-studio-solo": [
-    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Screen Studio pour les démos produit, CapCut pour les formats sociaux, DaVinci Resolve pour le montage propre. After Effects vient seulement si le motion complexe ou le Lottie est un livrable régulier.", detailEn: "Screen Studio for product demos, CapCut for social formats, DaVinci Resolve for clean editing. After Effects only comes in when complex motion or Lottie is a recurring deliverable." },
-    { title: "Le petit plus", titleEn: "Small edge", detail: "Décide le format de sortie avant l'outil : vidéo sociale, démo produit, Lottie web ou animation interactive. Le mauvais format crée vite le mauvais abonnement.", detailEn: "Choose the output format before the tool: social video, product demo, web Lottie, or interactive animation. The wrong format quickly creates the wrong subscription." },
-    { title: "Plugins / crédits", titleEn: "Plugins / credits", detail: "Bodymovin est utile si After Effects exporte vers le web. Rive est meilleur pour les animations avec états. Runway doit rester en crédits ou mois ponctuel tant qu'il ne produit pas un format récurrent.", detailEn: "Bodymovin is useful when After Effects exports to web. Rive is better for state-based animations. Runway should stay on credits or occasional months until it powers a recurring format." },
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Screen Studio pour les démos produit, CapCut pour les formats sociaux, DaVinci Resolve pour le montage propre.", detailEn: "Screen Studio for product demos, CapCut for social formats, DaVinci Resolve for clean editing." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Décide le format de sortie avant l'outil : vidéo sociale, démo produit, Lottie web ou animation interactive.", detailEn: "Choose the output format before the tool: social video, product demo, web Lottie, or interactive animation." },
+    { title: "Plugins / crédits", titleEn: "Plugins / credits", detail: "Bodymovin est utile si After Effects exporte vers le web. Rive est meilleur pour les animations avec états.", detailEn: "Bodymovin is useful when After Effects exports to web. Rive is better for state-based animations." },
   ],
   "consultant-revops-pipeline": [
-    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Pipedrive pour le pipe, Folk pour le réseau, Calendly pour la prise de rendez-vous, Notion pour la livraison. HubSpot seulement si marketing et CRM doivent fusionner.", detailEn: "Pipedrive for pipeline, Folk for network, Calendly for scheduling, Notion for delivery. HubSpot only if marketing and CRM must merge." },
-    { title: "Le petit plus", titleEn: "Small edge", detail: "Sépare opportunité et mission. Le CRM s'arrête à la signature ; la mission commence dans Notion avec objectifs, décisions et livrables.", detailEn: "Separate opportunity and engagement. CRM stops at signature; delivery starts in Notion with goals, decisions, and deliverables." },
-    { title: "À challenger", titleEn: "Challenge", detail: "Aircall et DocuSign sont des outils de volume ou de preuve. S'ils ne changent pas le taux de closing ou le risque, ils attendent.", detailEn: "Aircall and DocuSign are volume or proof tools. If they do not change close rate or risk, they can wait." },
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Pipedrive pour le pipe, Folk pour le réseau, Calendly pour la prise de rendez-vous, Notion pour la livraison.", detailEn: "Pipedrive for pipeline, Folk for network, Calendly for scheduling, Notion for delivery." },
+    { title: "Le petit plus", titleEn: "Small edge", detail: "Sépare opportunité et mission. Le CRM s'arrête à la signature ; la mission commence dans Notion.", detailEn: "Separate opportunity and engagement. CRM stops at signature; delivery starts in Notion." },
+    { title: "À challenger", titleEn: "Challenge", detail: "Aircall et DocuSign sont des outils de volume ou de preuve. S'ils ne changent pas le taux de closing, ils attendent.", detailEn: "Aircall and DocuSign are volume or proof tools. If they do not change close rate, they can wait." },
   ],
 };
 
@@ -149,12 +159,24 @@ const EXPERT_TIPS_BY_PERSONA: Record<StackPersona, StackInsight[]> = {
   solo: EXPERT_TIPS_BY_STACK["freelance-solo-zero-bloat"],
 };
 
+/* ─── Main component ─────────────────────────────────────────────────────── */
 const StackDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
   const stack = STACKS.find((item) => item.slug === slug);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
+
+  // Must be before conditional return (hooks rules)
+  const relatedStacks = useMemo(() => {
+    if (!stack) return [];
+    const samePersona = STACKS.filter((s) => s.slug !== stack.slug && s.persona === stack.persona);
+    if (samePersona.length >= 3) return samePersona.slice(0, 3);
+    const fill = STACKS.filter((s) => s.slug !== stack.slug && s.persona !== stack.persona);
+    return [...samePersona, ...fill].slice(0, 3);
+  }, [stack]);
+
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (!stack) return;
@@ -180,13 +202,7 @@ const StackDetailPage = () => {
   if (!stack) return <Navigate to={`${prefix}/stacks`} replace />;
 
   const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
-  const relatedStacks = useMemo(() => {
-    const samePersona = STACKS.filter((s) => s.slug !== stack.slug && s.persona === stack.persona);
-    if (samePersona.length >= 3) return samePersona.slice(0, 3);
-    const fill = STACKS.filter((s) => s.slug !== stack.slug && s.persona !== stack.persona);
-    return [...samePersona, ...fill].slice(0, 3);
-  }, [stack]);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   const stackLayersBase = STACK_LAYERS.map((layer) => ({
     ...layer,
     tools: stackTools.filter(({ slot }) => {
@@ -194,230 +210,479 @@ const StackDetailPage = () => {
       return layer.match.some((keyword) => role.includes(keyword));
     }),
   })).filter((layer) => layer.tools.length > 0);
+
   const assignedSlugs = new Set(stackLayersBase.flatMap((layer) => layer.tools.map(({ slot }) => slot.slug)));
   const unassignedTools = stackTools.filter(({ slot }) => !assignedSlugs.has(slot.slug));
   const stackLayers = unassignedTools.length > 0
-    ? [
-      ...stackLayersBase,
-      {
-        id: "other",
-        titleFr: "Autres outils utiles",
-        titleEn: "Other useful tools",
-        match: [],
-        tools: unassignedTools,
-      },
-    ]
+    ? [...stackLayersBase, { id: "other", titleFr: "Autres outils utiles", titleEn: "Other useful tools", match: [], tools: unassignedTools }]
     : stackLayersBase;
+
   const expertTips = getExpertTips(stack);
+  const hasTraps = (stack.traps?.length ?? 0) > 0;
+  const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
+  const stageText = t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"));
+  const budgetDisplay = stack.monthlyBudget > 0 ? `≈ ${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
 
   return (
     <div className="min-h-screen bg-background">
 
-      {/* ── HEADER ─────────────────────────────────────────────────────── */}
-      <header className="border-b border-border bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
-
+      {/* ── Hero ────────────────────────────────────────────────────────────── */}
+      <section style={{ borderBottom: "1px solid #DADAD4", background: "#F8F8F4" }}>
+        <div className="sd-container" style={{ padding: "56px var(--layout-gutter, 48px) 52px" }}>
+          {/* Back link */}
           <Link
             to={`${prefix}/stacks`}
-            className="mb-6 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              fontFamily: "var(--font-ui)",
+              fontSize: 13,
+              fontWeight: 500,
+              color: "#6F6F68",
+              textDecoration: "none",
+              marginBottom: 28,
+              transition: "color 140ms",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#222222"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#6F6F68"; }}
           >
-            <ArrowLeft className="h-3.5 w-3.5" />
+            <ArrowLeft size={14} />
             {t("Toutes les stacks", "All stacks")}
           </Link>
 
-          <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground">
-              {t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"))}
+          {/* Tags */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
+            <span style={{
+              fontFamily: "var(--font-ui)",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              color: "#6F6F68",
+              padding: "4px 10px",
+              border: "1px solid #DADAD4",
+              borderRadius: 4,
+            }}>
+              {personaText}
             </span>
-            <span className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground">
-              {t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}
-            </span>
-            <span className="rounded-full border border-primary/30 bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
-              {stack.monthlyBudget}€/mois
+            <span style={{
+              fontFamily: "var(--font-ui)",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              color: "#6F6F68",
+              padding: "4px 10px",
+              border: "1px solid #DADAD4",
+              borderRadius: 4,
+            }}>
+              {stageText}
             </span>
           </div>
 
-          <h1
-            className="font-display text-foreground"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 600, letterSpacing: "-0.025em", lineHeight: 1.15 }}
-          >
+          {/* H1 */}
+          <h1 style={{
+            fontFamily: "var(--font-brand)",
+            fontSize: "clamp(3.5rem, 7vw, 7rem)",
+            fontWeight: 600,
+            letterSpacing: "-0.06em",
+            lineHeight: 0.94,
+            color: "#222222",
+            margin: "0 0 28px",
+            maxWidth: 900,
+          }}>
             {t(stack.title, stack.titleEn)}
           </h1>
 
-          <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground">
+          {/* Editorial description */}
+          <p style={{
+            fontFamily: "var(--font-ui)",
+            fontSize: 18,
+            fontWeight: 400,
+            letterSpacing: "-0.02em",
+            lineHeight: 1.55,
+            color: "#6F6F68",
+            maxWidth: 680,
+            margin: "0 0 36px",
+          }}>
             {t(stack.editorial, stack.editorialEn)}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild size="lg" className="rounded-lg">
-              <Link to={`${prefix}/selector`}>
-                {t("Analyser ma stack", "Analyze my stack")}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-
+          {/* CTA black button */}
+          <Link
+            to={`${prefix}/selector`}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              height: 48,
+              padding: "0 22px",
+              background: "#222222",
+              color: "#FFFFFF",
+              borderRadius: 8,
+              fontFamily: "var(--font-ui)",
+              fontSize: 15,
+              fontWeight: 500,
+              letterSpacing: "-0.01em",
+              textDecoration: "none",
+              transition: "background 160ms ease-out",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
+          >
+            {t("Analyser ma stack", "Analyze my stack")}
+          </Link>
         </div>
-      </header>
+      </section>
 
-      <nav className="sticky top-0 z-20 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-6 py-3 text-sm font-semibold text-muted-foreground">
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#overview">
-            {t("Verdict", "Verdict")}
-          </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#stack">
-            {t("Cartographie", "Map")}
-          </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#avis">
-            {t("Avis", "Reviews")}
-          </a>
-          <a className="whitespace-nowrap rounded-full border border-border px-3 py-1.5 transition-colors hover:border-primary hover:text-primary" href="#stacks-proches">
-            {t("Stacks proches", "Related")}
-          </a>
+      {/* ── Sticky nav ──────────────────────────────────────────────────────── */}
+      <nav className="sd-nav">
+        <div className="sd-nav-inner">
+          <a className="sd-nav-link" href="#apercu">{t("Verdict", "Verdict")}</a>
+          <a className="sd-nav-link" href="#outils">{t("Outils", "Tools")}</a>
+          <a className="sd-nav-link" href="#avis">{t("Avis", "Reviews")}</a>
+          {hasTraps && <a className="sd-nav-link" href="#pieges">{t("Pièges", "Traps")}</a>}
+          {relatedStacks.length > 0 && <a className="sd-nav-link" href="#stacks-proches">{t("Stacks proches", "Related")}</a>}
         </div>
       </nav>
 
-      <div className="mx-auto max-w-6xl px-6">
-
-        {/* ── VERDICT ─────────────────────────────────────────────────── */}
-        <section id="overview" className="scroll-mt-24 border-b border-border py-12">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
-            {t("Verdict ToolTrim", "ToolTrim verdict")}
-          </p>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg bg-secondary/70 p-5">
-              <DecisionNote title={t("À copier si", "Copy it if")} text={t(stack.bestFor, stack.bestForEn)} />
-            </div>
-            <div className="rounded-lg bg-secondary/70 p-5">
-              <DecisionNote title={t("Le principal risque", "Main risk")} text={t(stack.risk, stack.riskEn)} />
-            </div>
-            <div className="rounded-lg bg-secondary/70 p-5">
-              <DecisionNote title={t("À éviter si", "Skip it if")} text={t(stack.avoidIf, stack.avoidIfEn)} />
-            </div>
+      {/* ── Summary metrics ─────────────────────────────────────────────────── */}
+      <div className="sd-summary">
+        <div className="sd-summary-inner">
+          <div className="sd-metric">
+            <p className="sd-metric-label">{t("Budget cible", "Target budget")}</p>
+            <p className="sd-metric-value">{budgetDisplay}</p>
+            <p className="sd-metric-hint">{t("estimation mensuelle", "monthly estimate")}</p>
           </div>
-        </section>
-
-        {/* ── OUTILS ─────────────────────────────────────────────────────── */}
-        <section id="stack" className="scroll-mt-24 border-b border-border py-12">
-          <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-              {t("Cartographie", "Map")}
+          <div className="sd-metric">
+            <p className="sd-metric-label">{t("Outils", "Tools")}</p>
+            <p className="sd-metric-value">{stack.tools.length}</p>
+            <p className="sd-metric-hint">{t("dans cette stack", "in this stack")}</p>
+          </div>
+          <div className="sd-metric">
+            <p className="sd-metric-label">{t("Niveau", "Level")}</p>
+            <p className="sd-metric-value" style={{ fontSize: "clamp(1rem, 2vw, 1.375rem)" }}>{stageText}</p>
+            <p className="sd-metric-hint">{personaText}</p>
+          </div>
+          <div className="sd-metric">
+            <p className="sd-metric-label">{t("Risque principal", "Main risk")}</p>
+            <p style={{
+              fontFamily: "var(--font-ui)",
+              fontSize: 13,
+              lineHeight: 1.45,
+              color: "#6F6F68",
+              marginTop: 6,
+              display: "-webkit-box",
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}>
+              {t(stack.risk, stack.riskEn)}
             </p>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-keep/60" />
-                {t("Socle — indispensable", "Core — essential")}
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-primary/60" />
-                {t("Conditionnel — selon usage", "Conditional — depends on use")}
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-destructive/60" />
-                {t("À challenger — justifier l'abonnement", "Challenge — justify the cost")}
-              </span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Verdict ─────────────────────────────────────────────────────────── */}
+      <section id="apercu" className="sd-section scroll-mt-20">
+        <div className="sd-container">
+          <span className="sd-section-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
+          <p className="sd-section-title" style={{ marginBottom: 24 }}>
+            {t("Pour qui, pourquoi, à éviter si", "Who it's for, why, when to skip")}
+          </p>
+          <div className="sd-decision-grid">
+            <div className="sd-decision-col">
+              <p className="sd-decision-label">{t("À copier si", "Copy it if")}</p>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "#222222" }}>
+                {t(stack.bestFor, stack.bestForEn)}
+              </p>
+            </div>
+            <div className="sd-decision-col">
+              <p className="sd-decision-label">{t("Risque principal", "Main risk")}</p>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "#222222" }}>
+                {t(stack.risk, stack.riskEn)}
+              </p>
+            </div>
+            <div className="sd-decision-col">
+              <p className="sd-decision-label">{t("À éviter si", "Skip it if")}</p>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "#222222" }}>
+                {t(stack.avoidIf, stack.avoidIfEn)}
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* ── Tool cards grouped by layer ── */}
-          <div className="space-y-10">
-            {stackLayers.map((layer) => (
-              <div key={layer.id}>
+      {/* ── Outils ──────────────────────────────────────────────────────────── */}
+      <section id="outils" className="sd-section scroll-mt-20">
+        <div className="sd-container">
+          <span className="sd-section-eyebrow">{t("Cartographie", "Tool map")}</span>
+          <p className="sd-section-title" style={{ marginBottom: 24 }}>
+            {t("Les outils, couche par couche", "Tools, layer by layer")}
+          </p>
 
-                {/* Layer header */}
-                <div className="flex items-center gap-3 mb-4">
-                  <p className="shrink-0 text-[10px] font-bold uppercase tracking-[0.14em] text-foreground">
-                    {t(layer.titleFr, layer.titleEn)}
-                  </p>
-                  <div className="flex-1 h-px bg-border" />
-                  <span className="shrink-0 text-[10px] font-mono text-muted-foreground">
-                    {layer.tools.length}
-                  </span>
-                </div>
-
-                {/* Tool cards */}
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {layer.tools.map(({ slot, tool }) => {
-                    const status = getToolDecisionStatus(slot);
-                    const globalIndex = stackTools.findIndex((st) => st.slot.slug === slot.slug);
-                    return (
-                      <button
-                        key={slot.slug}
-                        type="button"
-                        onClick={() => setSelectedIndex(globalIndex)}
-                        className="group flex items-start gap-3.5 rounded-xl border border-border bg-card p-4 text-left transition-all duration-150 hover:border-primary/40 hover:bg-primary/[0.02] cursor-pointer"
-                      >
-                        {/* Logo */}
-                        <ToolLogo tool={tool!} size={44} className="shrink-0 rounded-lg mt-0.5" />
-
-                        {/* Content */}
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-start justify-between gap-2">
-                            <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
-                              {tool!.name}
-                            </p>
-                            <span className={`shrink-0 inline-flex rounded-full border px-2 py-0.5 text-[9px] font-bold leading-none pt-[3px] ${status.className}`}>
-                              {t(status.labelFr, status.labelEn)}
-                            </span>
-                          </div>
-                          <p className="mt-0.5 text-[11px] font-medium text-muted-foreground">
-                            {t(slot.role, slot.roleEn)}
-                          </p>
-                          <p className="mt-1.5 text-[11px] leading-[1.55] text-muted-foreground line-clamp-2">
-                            {t(slot.reason, slot.reasonEn)}
-                          </p>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+          {/* Legend */}
+          <div style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "8px 20px",
+            marginBottom: 24,
+            padding: "14px 0",
+            borderBottom: "1px solid #DADAD4",
+          }}>
+            {[
+              { key: "core",        label: t("Socle — indispensable", "Core — essential"),         color: "#4CAF50" },
+              { key: "conditional", label: t("Conditionnel — selon usage", "Conditional"),          color: "#6F6F68" },
+              { key: "challenge",   label: t("À challenger — justifier l'abonnement", "Challenge"), color: "#E53935" },
+            ].map((item) => (
+              <span key={item.key} style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
+                <span style={{ width: 8, height: 8, borderRadius: "50%", background: item.color, flexShrink: 0 }} />
+                {item.label}
+              </span>
             ))}
           </div>
-        </section>
 
-        <section id="avis" className="scroll-mt-24 border-b border-border py-12">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
-            {t("Avis & retours", "Reviews")}
+          {/* Layers */}
+          {stackLayers.map((layer) => (
+            <div key={layer.id} style={{ marginBottom: 32 }}>
+              {/* Layer title */}
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 0 }}>
+                <p style={{
+                  fontFamily: "var(--font-ui)",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "#222222",
+                  whiteSpace: "nowrap",
+                }}>
+                  {t(layer.titleFr, layer.titleEn)}
+                </p>
+                <div style={{ flex: 1, height: 1, background: "#DADAD4" }} />
+                <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92" }}>
+                  {layer.tools.length}
+                </span>
+              </div>
+
+              {/* Tool rows */}
+              <div>
+                {layer.tools.map(({ slot, tool }) => {
+                  const status = getToolDecisionStatus(slot);
+                  const globalIndex = stackTools.findIndex((st) => st.slot.slug === slot.slug);
+                  return (
+                    <button
+                      key={slot.slug}
+                      type="button"
+                      onClick={() => setSelectedIndex(globalIndex)}
+                      className="sd-tool-row"
+                    >
+                      {/* Logo */}
+                      <div style={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: 8,
+                        background: "#F8F8F4",
+                        border: "1px solid #E7E7E0",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        overflow: "hidden",
+                        flexShrink: 0,
+                      }}>
+                        <ToolLogo tool={tool!} size={28} />
+                      </div>
+
+                      {/* Name + role */}
+                      <div style={{ minWidth: 0 }}>
+                        <p style={{
+                          fontFamily: "var(--font-ui)",
+                          fontSize: 14,
+                          fontWeight: 600,
+                          letterSpacing: "-0.02em",
+                          color: "#222222",
+                          lineHeight: 1.2,
+                        }}>
+                          {tool!.name}
+                        </p>
+                        <p style={{
+                          fontFamily: "var(--font-ui)",
+                          fontSize: 12,
+                          color: "#9A9A92",
+                          marginTop: 2,
+                          letterSpacing: "-0.01em",
+                        }}>
+                          {t(slot.role, slot.roleEn)}
+                        </p>
+                      </div>
+
+                      {/* Reason (hidden on mobile via CSS) */}
+                      <p style={{
+                        fontFamily: "var(--font-ui)",
+                        fontSize: 13,
+                        color: "#6F6F68",
+                        lineHeight: 1.45,
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        letterSpacing: "-0.01em",
+                      }}>
+                        {t(slot.reason, slot.reasonEn)}
+                      </p>
+
+                      {/* Status badge (hidden on mobile via CSS) */}
+                      <span style={{
+                        fontFamily: "var(--font-ui)",
+                        fontSize: 10,
+                        fontWeight: 700,
+                        letterSpacing: "0.06em",
+                        textTransform: "uppercase",
+                        padding: "3px 8px",
+                        borderRadius: 3,
+                        border: `1px solid`,
+                        whiteSpace: "nowrap",
+                        ...(status.key === "core"
+                          ? { borderColor: "rgba(76,175,80,0.3)", background: "rgba(76,175,80,0.06)", color: "#2E7D32" }
+                          : status.key === "conditional"
+                          ? { borderColor: "#DADAD4", background: "#F8F8F4", color: "#6F6F68" }
+                          : { borderColor: "rgba(229,57,53,0.25)", background: "rgba(229,57,53,0.05)", color: "#C62828" }),
+                      }}>
+                        {status.key === "core"
+                          ? t("Socle", "Core")
+                          : status.key === "conditional"
+                          ? t("Conditionnel", "Conditional")
+                          : t("À challenger", "Challenge")}
+                      </span>
+
+                      {/* Arrow */}
+                      <span style={{
+                        fontFamily: "var(--font-ui)",
+                        fontSize: 14,
+                        color: "#9A9A92",
+                        transition: "color 140ms",
+                      }}>
+                        →
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Avis ────────────────────────────────────────────────────────────── */}
+      <section id="avis" className="sd-section scroll-mt-20">
+        <div className="sd-container">
+          <span className="sd-section-eyebrow">{t("Avis & retours", "Reviews")}</span>
+          <p className="sd-section-title" style={{ marginBottom: 24 }}>
+            {t("Note ToolTrim", "ToolTrim editorial")}
           </p>
 
-          {/* ── Note éditoriale ToolTrim ── */}
-          <div className="rounded-2xl border border-border bg-card overflow-hidden mb-6">
-            {/* Header encart */}
-            <div className="flex items-center justify-between gap-4 border-b border-border px-6 py-4">
-              <div className="flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-                  <span className="text-xs font-black text-primary">TT</span>
+          {/* Editorial note */}
+          <div style={{
+            background: "#FFFFFF",
+            border: "1px solid #DADAD4",
+            borderRadius: 8,
+            overflow: "hidden",
+            marginBottom: 16,
+          }}>
+            {/* Header */}
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 16,
+              padding: "16px 24px",
+              borderBottom: "1px solid #E7E7E0",
+            }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <div style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: 6,
+                  background: "#F8F8F4",
+                  border: "1px solid #DADAD4",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontFamily: "var(--font-ui)",
+                  fontSize: 10,
+                  fontWeight: 800,
+                  color: "#222222",
+                  letterSpacing: "0.04em",
+                }}>
+                  TT
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{t("Note ToolTrim", "ToolTrim Editorial")}</p>
-                  <p className="text-[11px] text-muted-foreground">{t("Analyse indépendante · Prix vérifiés", "Independent analysis · Verified pricing")}</p>
+                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "#222222" }}>
+                    {t("Note ToolTrim", "ToolTrim Editorial")}
+                  </p>
+                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92", marginTop: 1 }}>
+                    {t("Analyse indépendante · Prix vérifiés", "Independent analysis · Verified pricing")}
+                  </p>
                 </div>
               </div>
-              <span className="shrink-0 rounded-full border border-border px-2.5 py-1 text-[10px] font-semibold text-muted-foreground">
+              <span style={{
+                fontFamily: "var(--font-ui)",
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                color: "#9A9A92",
+                border: "1px solid #DADAD4",
+                borderRadius: 4,
+                padding: "3px 8px",
+              }}>
                 {t("Vérifié avr. 2026", "Verified Apr. 2026")}
               </span>
             </div>
 
-            {/* Corps éditorial */}
-            <div className="px-6 py-5">
-              {/* Premier tip = note principale */}
-              <div className="border-l-2 border-primary pl-4 mb-5">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">
+            {/* Tips content */}
+            <div style={{ padding: "20px 24px" }}>
+              {/* First tip — main */}
+              <div style={{
+                borderLeft: "2px solid #222222",
+                paddingLeft: 16,
+                marginBottom: 20,
+              }}>
+                <p style={{
+                  fontFamily: "var(--font-ui)",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "#222222",
+                  marginBottom: 8,
+                }}>
                   {t(expertTips[0].title, expertTips[0].titleEn)}
                 </p>
-                <p className="text-sm leading-7 text-foreground">
+                <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.6, color: "#222222" }}>
                   {t(expertTips[0].detail, expertTips[0].detailEn)}
                 </p>
               </div>
 
-              {/* Tips suivants = insights secondaires */}
+              {/* Secondary tips */}
               {expertTips.slice(1).map((tip) => (
-                <div key={tip.title} className="border-t border-border pt-4 mt-4 first:mt-0 first:border-t-0 first:pt-0">
-                  <p className="text-sm font-semibold text-foreground mb-1.5">
+                <div
+                  key={tip.title}
+                  style={{
+                    borderTop: "1px solid #E7E7E0",
+                    paddingTop: 16,
+                    marginTop: 16,
+                  }}
+                >
+                  <p style={{
+                    fontFamily: "var(--font-ui)",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: "#222222",
+                    marginBottom: 6,
+                    letterSpacing: "-0.01em",
+                  }}>
                     {t(tip.title, tip.titleEn)}
                   </p>
-                  <p className="text-sm leading-6 text-muted-foreground">
+                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, lineHeight: 1.55, color: "#6F6F68" }}>
                     {t(tip.detail, tip.detailEn)}
                   </p>
                 </div>
@@ -425,97 +690,180 @@ const StackDetailPage = () => {
             </div>
           </div>
 
-          {/* ── Teaser avis communauté ── */}
-          <div className="rounded-2xl border border-border bg-card px-6 py-8 text-center">
-            <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
-              <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-              </svg>
-            </div>
-            <p className="text-base font-semibold text-foreground mb-2">
+          {/* Coming soon teaser */}
+          <div style={{
+            background: "#FFFFFF",
+            border: "1px solid #DADAD4",
+            borderRadius: 8,
+            padding: "28px 24px",
+            textAlign: "center",
+          }}>
+            <p style={{
+              fontFamily: "var(--font-ui)",
+              fontSize: 14,
+              fontWeight: 600,
+              color: "#222222",
+              marginBottom: 8,
+              letterSpacing: "-0.01em",
+            }}>
               {t("Tu utilises cette stack ?", "Using this stack?")}
             </p>
-            <p className="text-sm leading-6 text-muted-foreground mb-6 max-w-sm mx-auto">
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, lineHeight: 1.55, color: "#6F6F68", marginBottom: 16 }}>
               {t(
-                "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher, ce que tu changerais.",
-                "User reviews are coming soon. Share what works, what costs too much, what you'd change."
+                "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher.",
+                "User reviews are coming soon. Share what works and what costs too much.",
               )}
             </p>
-            <span className="inline-flex items-center gap-2 rounded-lg border border-primary/25 bg-primary/8 px-4 py-2 text-xs font-semibold text-primary cursor-default select-none">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            <span style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              fontFamily: "var(--font-ui)",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              color: "#6F6F68",
+              border: "1px solid #DADAD4",
+              borderRadius: 4,
+              padding: "6px 12px",
+            }}>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#DADAD4" }} />
               {t("Bientôt disponible", "Coming soon")}
             </span>
           </div>
-        </section>
+        </div>
+      </section>
 
-
-        {/* ── STACKS PROCHES ──────────────────────────────────────────────── */}
-        {relatedStacks.length > 0 && (
-          <section id="stacks-proches" className="scroll-mt-24 border-b border-border py-12">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
-              {t("Stacks proches", "Related stacks")}
+      {/* ── Pièges fréquents ────────────────────────────────────────────────── */}
+      {hasTraps && (
+        <section id="pieges" className="sd-section scroll-mt-20">
+          <div className="sd-container">
+            <span className="sd-section-eyebrow">{t("Pièges fréquents", "Common traps")}</span>
+            <p className="sd-section-title" style={{ marginBottom: 24 }}>
+              {t("Ce qu'on fait trop souvent avec cette stack", "What people tend to get wrong")}
             </p>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              {stack.traps!.map((trap) => (
+                <div key={trap.title} className="sd-risk-row">
+                  <p className="sd-risk-problem">{t(trap.title, trap.titleEn)}</p>
+                  <p className="sd-risk-detail">{t(trap.detail, trap.detailEn)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── CTA band ────────────────────────────────────────────────────────── */}
+      <div className="sd-cta-band">
+        <div className="sd-cta-inner">
+          <span style={{
+            fontFamily: "var(--font-ui)",
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "#6F6F68",
+            display: "block",
+            marginBottom: 12,
+          }}>
+            {t("Diagnostic", "Diagnostic")}
+          </span>
+          <p style={{
+            fontFamily: "var(--font-brand)",
+            fontSize: "clamp(1.75rem, 4vw, 3.5rem)",
+            fontWeight: 600,
+            letterSpacing: "-0.055em",
+            lineHeight: 0.98,
+            color: "#222222",
+            maxWidth: 720,
+            marginBottom: 16,
+          }}>
+            {t(
+              "Ce guide part d'un profil type. Toi, tu as déjà une stack.",
+              "This guide starts from a typical profile. You already have a stack.",
+            )}
+          </p>
+          <p style={{
+            fontFamily: "var(--font-ui)",
+            fontSize: 17,
+            lineHeight: 1.5,
+            color: "#6F6F68",
+            maxWidth: 540,
+            marginBottom: 32,
+            letterSpacing: "-0.015em",
+          }}>
+            {t(
+              "Le diagnostic personnalisé regarde ce que tu paies vraiment — outils actifs vs dormants, doublons, plans surévalués. Résultat en moins de 3 minutes.",
+              "The personalized diagnostic looks at what you actually pay — active vs dormant tools, duplicates, overpriced plans. Result in under 3 minutes.",
+            )}
+          </p>
+          <Link
+            to={`${prefix}/selector`}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              height: 48,
+              padding: "0 22px",
+              background: "#222222",
+              color: "#FFFFFF",
+              borderRadius: 8,
+              fontFamily: "var(--font-ui)",
+              fontSize: 15,
+              fontWeight: 500,
+              letterSpacing: "-0.01em",
+              textDecoration: "none",
+              transition: "background 160ms ease-out",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
+          >
+            {t("Analyser ma stack", "Analyze my stack")}
+          </Link>
+        </div>
+      </div>
+
+      {/* ── Related stacks ──────────────────────────────────────────────────── */}
+      {relatedStacks.length > 0 && (
+        <section id="stacks-proches" className="sd-section scroll-mt-20" style={{ borderBottom: "none" }}>
+          <div className="sd-container">
+            <span className="sd-section-eyebrow">{t("Stacks proches", "Related stacks")}</span>
+            <p className="sd-section-title" style={{ marginBottom: 24 }}>
+              {t("Tu pourrais aussi regarder", "You might also like")}
+            </p>
+            <div className="sd-related-grid">
               {relatedStacks.map((related) => (
-                <Link
-                  key={related.slug}
-                  to={`${prefix}/stacks/${related.slug}`}
-                  className="group flex flex-col justify-between rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 cursor-pointer"
-                >
-                  <div>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <span className="rounded-full border border-border px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground">
-                        {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
-                      </span>
-                      <span className="rounded-full border border-primary/30 bg-primary/8 px-2.5 py-0.5 text-[10px] font-semibold text-primary">
-                        {related.monthlyBudget}€/mois
-                      </span>
-                    </div>
-                    <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
-                      {t(related.title, related.titleEn)}
-                    </p>
-                    <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground line-clamp-2">
-                      {t(related.subtitle, related.subtitleEn)}
-                    </p>
+                <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card">
+                  <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
+                    <span style={{
+                      fontFamily: "var(--font-ui)",
+                      fontSize: 10,
+                      fontWeight: 600,
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
+                      color: "#9A9A92",
+                      padding: "2px 6px",
+                      border: "1px solid #DADAD4",
+                      borderRadius: 3,
+                    }}>
+                      {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
+                    </span>
                   </div>
-                  <div className="flex items-center gap-1 mt-5 text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors">
-                    {t("Voir la stack", "View stack")}
-                    <ArrowRight className="h-3 w-3" />
+                  <p className="sd-related-name">{t(related.title, related.titleEn)}</p>
+                  <p className="sd-related-sub">{t(related.subtitle, related.subtitleEn)}</p>
+                  <div className="sd-related-footer">
+                    <span className="sd-related-budget">≈ {related.monthlyBudget}€/mois</span>
+                    <span className="sd-related-cta">{t("Voir", "See")} →</span>
                   </div>
                 </Link>
               ))}
             </div>
-          </section>
-        )}
-
-        {/* ── CTA ────────────────────────────────────────────────────────── */}
-        <section className="py-16">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-            {t("Diagnostic", "Diagnostic")}
-          </p>
-          <h2
-            className="font-display text-foreground mb-4"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.2 }}
-          >
-            {t("Ce guide part d'un profil type. Toi, tu as déjà une stack.", "This guide starts from a typical profile. You already have a stack.")}
-          </h2>
-          <p className="text-sm leading-7 text-muted-foreground mb-8 max-w-xl">
-            {t(
-              "Le diagnostic personnalisé regarde ce que tu paies vraiment — outils actifs vs dormants, doublons, plans surévalués. Résultat en moins de 3 minutes.",
-              "The personalized diagnostic looks at what you actually pay — active vs dormant tools, duplicates, overpriced plans. Result in under 3 minutes."
-            )}
-          </p>
-          <Button asChild size="lg" className="rounded-lg">
-            <Link to={`${prefix}/selector`}>
-              {t("Analyser ma stack", "Analyze my stack")}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          </div>
         </section>
+      )}
 
-      </div>
-
-      {/* ── TOOL QUICK PANEL ────────────────────────────────────────────── */}
+      {/* ── Tool quick panel ────────────────────────────────────────────────── */}
       <Sheet open={selectedIndex !== null} onOpenChange={(open) => { if (!open) setSelectedIndex(null); }}>
         <SheetContent side="right" className="w-full sm:max-w-[420px] p-0 flex flex-col gap-0 overflow-hidden">
           {selectedIndex !== null && (
@@ -534,8 +882,7 @@ const StackDetailPage = () => {
   );
 };
 
-// ── TOOL PANEL ──────────────────────────────────────────────────────────────
-
+/* ─── Tool Panel ─────────────────────────────────────────────────────────── */
 interface ToolPanelProps {
   stackTools: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>;
   selectedIndex: number;
@@ -550,7 +897,6 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
   const hasPrev = selectedIndex > 0;
   const hasNext = selectedIndex < stackTools.length - 1;
 
-  // Keyboard navigation
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
       if (e.key === "ArrowLeft" && hasPrev) onNavigate(selectedIndex - 1);
@@ -592,7 +938,6 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
 
   return (
     <>
-      {/* ── Header ── */}
       <div className={`relative border-b border-border px-6 pb-5 pt-5 bg-gradient-to-b ${headerTint} to-transparent`}>
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-4">
@@ -611,10 +956,7 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
         </div>
       </div>
 
-      {/* ── Body ── */}
       <div className="flex-1 overflow-y-auto px-5 py-5 space-y-4">
-
-        {/* Decision callout */}
         <div className={`flex items-start gap-3 rounded-xl border p-4 ${callout.borderClass}`}>
           <div className={`mt-[5px] shrink-0 h-2 w-2 rounded-full ${callout.dotClass}`} />
           <p className={`text-sm font-medium leading-6 ${callout.textClass}`}>
@@ -622,7 +964,6 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
           </p>
         </div>
 
-        {/* Dans cette stack */}
         <div className="rounded-xl border border-border bg-secondary/40 p-4 space-y-3">
           <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
             {t("Dans cette stack", "In this stack")}
@@ -638,7 +979,6 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
           )}
         </div>
 
-        {/* Description courte */}
         {(tool?.shortDescription || tool?.shortDescriptionEn) && (
           <div className="px-1">
             <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2">
@@ -650,32 +990,23 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
           </div>
         )}
 
-        {/* Pricing — deux cases côte à côte */}
         <div>
           <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-3 px-1">
             {t("Tarifs", "Pricing")}
           </p>
           <div className="grid grid-cols-2 gap-2.5">
-            {/* Gratuit */}
             {tool?.pricing?.free ? (
               <div className="rounded-xl border border-keep/25 bg-keep/[0.05] p-3.5">
-                <p className="text-[10px] font-bold uppercase tracking-wide text-keep mb-2">
-                  {t("Gratuit", "Free")}
-                </p>
+                <p className="text-[10px] font-bold uppercase tracking-wide text-keep mb-2">{t("Gratuit", "Free")}</p>
                 <p className="text-xs leading-5 text-muted-foreground">{tool.pricing.free}</p>
               </div>
             ) : (
               <div className="rounded-xl border border-border bg-secondary/30 p-3.5 flex items-center justify-center">
-                <p className="text-xs text-muted-foreground/50 text-center">
-                  {t("Pas de plan gratuit", "No free plan")}
-                </p>
+                <p className="text-xs text-muted-foreground/50 text-center">{t("Pas de plan gratuit", "No free plan")}</p>
               </div>
             )}
-            {/* Payant */}
             <div className="rounded-xl border border-border bg-secondary/30 p-3.5">
-              <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground mb-2">
-                {t("Payant", "Paid")}
-              </p>
+              <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground mb-2">{t("Payant", "Paid")}</p>
               {tool?.pricing?.paid ? (
                 <p className="text-xs leading-5 text-muted-foreground">{tool.pricing.paid}</p>
               ) : (
@@ -689,7 +1020,6 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
           </div>
         </div>
 
-        {/* Lien site officiel */}
         {tool?.websiteUrl && (
           <a
             href={tool.websiteUrl}
@@ -703,19 +1033,16 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
             <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
           </a>
         )}
-
       </div>
 
-      {/* ── Footer ── */}
       <div className="border-t border-border px-5 py-4 flex items-center justify-between gap-3 bg-background/50">
-        {/* Prev / Next */}
         <div className="flex items-center gap-1.5">
           <button
             type="button"
             disabled={!hasPrev}
             onClick={() => onNavigate(selectedIndex - 1)}
             title={t("Outil précédent (←)", "Previous tool (←)")}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed"
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -727,25 +1054,38 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
             disabled={!hasNext}
             onClick={() => onNavigate(selectedIndex + 1)}
             title={t("Outil suivant (→)", "Next tool (→)")}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed"
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
-
-        {/* Fiche complète */}
         <Link
           to={`${prefix}/tool/${tool!.slug}`}
-          className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            height: 32,
+            padding: "0 14px",
+            background: "#222222",
+            color: "#FFFFFF",
+            borderRadius: 6,
+            fontFamily: "var(--font-ui)",
+            fontSize: 12,
+            fontWeight: 500,
+            letterSpacing: "-0.01em",
+            textDecoration: "none",
+          }}
         >
           {t("Fiche complète", "Full details")}
-          <ExternalLink className="h-3.5 w-3.5" />
+          <ExternalLink className="h-3 w-3" />
         </Link>
       </div>
     </>
   );
 }
 
+/* ─── Helpers ────────────────────────────────────────────────────────────── */
 function personaLabel(persona: StackPersona, locale: "fr" | "en") {
   const item = STACK_PERSONAS.find((option) => option.value === persona);
   return locale === "fr" ? item?.label || persona : item?.labelEn || persona;
@@ -756,121 +1096,30 @@ function stageLabel(stage: StackStage, locale: "fr" | "en") {
   return locale === "fr" ? item?.label || stage : item?.labelEn || stage;
 }
 
-function StackMetric({ label, value, hint }: { label: string; value: string; hint?: string }) {
-  return (
-    <div className="rounded-lg border border-border bg-card p-4">
-      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{label}</p>
-      <p className="mt-2 font-display text-2xl font-semibold tracking-tight text-foreground">{value}</p>
-      {hint && <p className="mt-1 text-xs font-medium text-muted-foreground">{hint}</p>}
-    </div>
-  );
-}
-
-function DecisionNote({ title, text }: { title: string; text: string }) {
-  return (
-    <div>
-      <p className="text-sm font-semibold text-foreground">{title}</p>
-      <p className="mt-1 text-sm leading-6 text-muted-foreground">{text}</p>
-    </div>
-  );
-}
-
 function getExpertTips(stack: StackGuide) {
   return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona];
 }
 
-function ToolStatusBadge({
-  status,
-  t,
-}: {
-  status: ReturnType<typeof getToolDecisionStatus>;
-  t: (fr: string, en?: string) => string;
-}) {
-  return (
-    <span className={`w-fit rounded-full border px-3 py-1 text-xs font-semibold ${status.className}`}>
-      {t(status.labelFr, status.labelEn)}
-    </span>
-  );
-}
-
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {
   if (slot.decision === "challenge") {
-    return {
-      key: "challenge" as const,
-      labelFr: "À challenger",
-      labelEn: "Challenge",
-      className: "border-destructive/25 bg-destructive/8 text-destructive",
-    };
+    return { key: "challenge" as const, labelFr: "À challenger", labelEn: "Challenge", className: "border-destructive/25 bg-destructive/8 text-destructive" };
   }
-
   if (slot.decision === "conditional") {
-    return {
-      key: "conditional" as const,
-      labelFr: "Conditionnel",
-      labelEn: "Conditional",
-      className: "border-primary/25 bg-primary/8 text-primary",
-    };
+    return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
   }
-
   if (slot.decision === "core") {
-    return {
-      key: "core" as const,
-      labelFr: "Socle",
-      labelEn: "Core",
-      className: "border-keep/25 bg-keep/10 text-keep",
-    };
+    return { key: "core" as const, labelFr: "Socle", labelEn: "Core", className: "border-keep/25 bg-keep/10 text-keep" };
   }
-
   const normalizedRole = slot.role.toLowerCase();
-  const challengeKeywords = [
-    "avancé",
-    "advanced",
-    "suite",
-    "backlinks",
-    "connecteurs",
-    "connectors",
-    "handoff",
-    "vectoriel",
-    "photo",
-    "crm agence",
-  ];
-  const optionalKeywords = [
-    "plugin",
-    "feedback",
-    "prospection",
-    "social",
-    "seo",
-    "ux",
-    "workshop",
-    "atelier",
-    "prototype",
-    "ia",
-  ];
-
-  if (challengeKeywords.some((keyword) => normalizedRole.includes(keyword))) {
-    return {
-      key: "challenge" as const,
-      labelFr: "À challenger",
-      labelEn: "Challenge",
-      className: "border-destructive/25 bg-destructive/8 text-destructive",
-    };
+  const challengeKeywords = ["avancé", "advanced", "suite", "backlinks", "connecteurs", "connectors", "handoff", "vectoriel", "photo", "crm agence"];
+  const optionalKeywords = ["plugin", "feedback", "prospection", "social", "seo", "ux", "workshop", "atelier", "prototype", "ia"];
+  if (challengeKeywords.some((kw) => normalizedRole.includes(kw))) {
+    return { key: "challenge" as const, labelFr: "À challenger", labelEn: "Challenge", className: "border-destructive/25 bg-destructive/8 text-destructive" };
   }
-
-  if (optionalKeywords.some((keyword) => normalizedRole.includes(keyword))) {
-    return {
-      key: "conditional" as const,
-      labelFr: "Conditionnel",
-      labelEn: "Conditional",
-      className: "border-primary/25 bg-primary/8 text-primary",
-    };
+  if (optionalKeywords.some((kw) => normalizedRole.includes(kw))) {
+    return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
   }
-
-  return {
-    key: "core" as const,
-    labelFr: "Socle",
-    labelEn: "Core",
-    className: "border-keep/25 bg-keep/10 text-keep",
-  };
+  return { key: "core" as const, labelFr: "Socle", labelEn: "Core", className: "border-keep/25 bg-keep/10 text-keep" };
 }
 
 export default StackDetailPage;

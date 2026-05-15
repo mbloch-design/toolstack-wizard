@@ -2,6 +2,78 @@
 
 ---
 
+## 2026-05-15 — Sprint Comparatif : refonte /fr/comparatif/:pair en page de décision éditoriale
+
+**Fichiers modifiés**
+- `src/pages/ComparePage.tsx` — réécriture complète
+- `src/index.css` — ajout du système `cp-*` (~300 lignes)
+
+**Architecture**
+- Supprimé : `PageHero`, `CompareSidebar`, `CompareVerdictCards`, `CompareStrengthBars`, `FeatureDiff`, `ProsConsSection`, `QuickVerdict`, `ToolFaceCard`, `PricingSection` (tous à fond bleu)
+- Ajouté : contenu éditorial hardcodé `NOTION_VS_AIRTABLE` + registre `EDITORIAL_CONTENT` + fallback générique `buildFallbackContent()`
+
+**Structure de la page (13 sections)**
+1. **Hero 2 colonnes** — breadcrumb, eyebrow COMPARATIF, H1 `font-brand clamp(4rem,7vw,7rem)` ls -0.06em, phrase de cadrage 21px, verdict court 18px / module `cp-vs-module` sticky (logos, séparateur VS, verdict rapide)
+2. **Subnav sticky** — 6 ancres (Verdict / Comparaison / Profils / Prix / Alternatives / FAQ), underline noir, zéro bleu
+3. **Verdict rapide** — `cp-verdict-grid` 3 colonnes (Notion gagne si / Airtable gagne si / À éviter si)
+4. **Tableau comparatif** — `cp-table` 10 lignes × 4 colonnes (Critère / Notion / Airtable / Verdict), responsive `data-label`
+5. **Profils** — `cp-profile-grid` 6 cartes (persona + recommendation + cas d'usage)
+6. **Prix** — 2 `cp-price-row` + bloc recommandation ToolTrim
+7. **Limites** — `cp-limits-grid` 2 colonnes avec dashes `::before "—"`
+8. **Alternatives** — 5 `cp-alt-row` (lien `/tool/` si outil en DB, sinon `<div>`)
+9. **CTA band** — fond `#EDEDE8`, bouton noir `<Link>`
+10. **FAQ** — 5 `FaqItem` avec `<details>/<summary>` + chevron rotatif
+
+**Composants internes**
+- `PricingNote` — rend le `**texte**` en `<strong>` via regex
+- `FaqItem` — `<details>/<summary>` avec `useState` pour la rotation du chevron
+
+**Règle éditoriale**
+- Zéro couleur bleue (`hsl(var(--primary))`)
+- Fond du module VS : `#FFFFFF`, bordure `#DADAD4`
+- CTA band : `#EDEDE8` (pas `#F8F8F4`)
+
+---
+
+## 2026-05-15 — Sprint 5b : refonte StacksPage + StackDetailPage
+
+**Fichiers modifiés**
+- `src/pages/StacksPage.tsx` — réécriture complète
+- `src/pages/StackDetailPage.tsx` — réécriture complète
+- `src/index.css` — ajout des systèmes `sk-*` et `sd-*`
+
+### StacksPage — système `sk-*`
+
+**Supprimé** : `EditorialHero`, filtres à checkboxes avec `facetCounts`, `STACK_FILTER_GROUPS`, `STACK_BUDGET_FILTERS`, `selectedFilters` complexe
+
+**Ajouté**
+- Hero inline `eh-*` — H1 `clamp(3.5rem, 6vw, 6rem)` ls -0.055em lh 0.98
+- Section "Commencer par ton profil" — `sk-profiles-grid` avec 6 `Link` cards (persona → stack recommandée)
+- Filtres 7 pills (`gi-filter-pill` / `gi-filter-pill--active`) : Tous / Création / Business / Tech / Ops / Budget léger / IA
+- Cards inline `sk-card` : tool logo pastilles (cercles 28px, stack -6px) + risk snippet + budget + badge persona
+- `stackMatchesFilter()` — filtre par persona et critères (budget ≤ 50€, slugs IA)
+
+### StackDetailPage — système `sd-*`
+
+**Supprimé** : `Button` import, `ArrowRight` icon, sticky nav en onglets bleus
+
+**Conservé intégralement** : `Sheet` / `SheetContent` / `SheetClose` / `ToolPanel` (inchangé)
+
+**Ajouté**
+- Hero `sd-container` — tags persona/stage, H1 `clamp(3.5rem, 7vw, 7rem)` ls -0.06em lh 0.94, bouton noir `<Link>` inline
+- `sd-nav` sticky `top: var(--navbar-h, 68px)` — liens `sd-nav-link` (hover noir, zéro bleu)
+- `sd-summary` — 4 `sd-metric` : budget / nb outils / étape / risque
+- `sd-decision-grid` — verdict 3 colonnes (À copier si / Risque principal / À éviter si)
+- `sd-tool-row` — 5 colonnes : logo | nom+rôle | raison | badge statut | flèche
+- Badges statut : couleurs inline (vert core / gris conditional / rouge challenge)
+- `sd-risk-row` — liste des pièges par outil (section conditionnelle `hasTraps`)
+- `sd-cta-band` — titre `font-brand` + bouton noir
+- `sd-related-grid` — 3 stacks liées (`sd-related-card`)
+
+**Fix React hooks** : `relatedStacks = useMemo(...)` déplacé avant le `if (!stack) return <Navigate/>` (violations de règles des hooks)
+
+---
+
 ## 2026-05-15 — Sprint 4 : Cards / Listings — unification du système de cards
 
 **Fichiers modifiés**

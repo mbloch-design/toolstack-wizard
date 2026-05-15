@@ -289,6 +289,148 @@ Utilise `ec-card` pour le shell. Deux variants via prop `variant` :
 
 ---
 
+## Comparatif (cp-*)
+
+### Structure hero (`cp-hero`)
+```css
+/* grille 2 colonnes : 1fr 340px (collapse à 1fr ≤1023px) */
+.cp-hero { background: #F8F8F4; border-bottom: 1px solid #DADAD4; padding: 56px 0 52px; }
+.cp-hero-inner { display: grid; grid-template-columns: 1fr 340px; gap: 48px; }
+@media (max-width: 1023px) { .cp-hero-inner { grid-template-columns: 1fr; } }
+```
+
+### Module VS sticky (`cp-vs-module`)
+```css
+.cp-vs-module {
+  position: sticky; top: calc(var(--navbar-h, 68px) + 24px);
+  background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 10px;
+  padding: 24px; height: fit-content;
+}
+```
+- Logos outils : cercles 40px `cp-vs-logo`
+- Séparateur VS : ligne + texte centré
+- Verdict items : `cp-vs-verdict-label` (11px 600 uppercase #6F6F68) + `cp-vs-verdict-text` (14px #222222)
+- **Pas de fond coloré, pas de bleu**
+
+### Subnav sticky (`cp-subnav`)
+```css
+.cp-subnav { position: sticky; top: var(--navbar-h, 68px); height: 48px;
+  border-top: 1px solid #DADAD4; border-bottom: 1px solid #DADAD4;
+  background: #F8F8F4; }
+.cp-subnav-link:hover { color: #222222; border-bottom: 2px solid #222222; }
+/* Actif : même style que hover, géré via JS scroll-spy si nécessaire */
+```
+
+### Tableau comparatif (`cp-table`)
+```css
+.cp-table-head { grid-template-columns: 200px 1fr 1fr 110px; }
+.cp-table-row  { grid-template-columns: 200px 1fr 1fr 110px; border-top: 1px solid #DADAD4; }
+.cp-table-cell--win { font-weight: 500; color: #222222; }
+.cp-table-verdict   { font-size: 12px; font-weight: 600; color: #6F6F68; }
+/* Mobile (≤767px) : display: block, chaque cell avec data-label affiché en ::before */
+```
+
+### Grille profils (`cp-profile-grid`)
+```css
+.cp-profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cp-profile-card { border: 1px solid #DADAD4; border-radius: 10px; padding: 20px 22px; }
+.cp-profile-card:hover { border-color: #222222; }
+```
+
+### Lignes alternatives (`cp-alt-row`)
+```css
+.cp-alt-row { display: flex; align-items: center; gap: 16px;
+  padding: 14px 12px; border-top: 1px solid #DADAD4; }
+.cp-alt-row:hover { background: #F8F8F4; }
+.cp-alt-logo { width: 36px; height: 36px; border-radius: 8px; border: 1px solid #DADAD4; }
+.cp-alt-cta  { font-size: 13px; font-weight: 500; color: #222222; }
+```
+
+### CTA band (`cp-cta-band`)
+```css
+.cp-cta-band {
+  background: #EDEDE8;   /* ≠ #F8F8F4 — fond plus sombre pour contraste */
+  border-top: 1px solid #DADAD4;
+  border-bottom: 1px solid #DADAD4;
+  padding: 64px 0;
+}
+```
+
+### FAQ (`cp-faq-item`)
+```css
+.cp-faq-item    { border-top: 1px solid #DADAD4; }
+.cp-faq-summary { font-size: 17px; font-weight: 500; cursor: pointer; padding: 20px 0; }
+.cp-faq-answer  { font-size: 16px; color: #6F6F68; padding-bottom: 20px; }
+```
+Implémentation : `<details>/<summary>` natif + `useState` pour la rotation du chevron.
+
+### Règle éditoriale comparatif
+- **Zéro bleu** sur toute la page (ni boutons, ni hover, ni underline actif)
+- Underline actif/hover subnav : `2px solid #222222`
+- Boutons CTA : fond `#222222`, couleur `#FFFFFF`
+- Module VS : fond `#FFFFFF` (blanc pur, pas crème)
+- CTA band : fond `#EDEDE8` (crème medium, pas crème clair)
+
+---
+
+## Stacks index (sk-*)
+
+### Hero inline
+Utilise les classes `eh-*` existantes. H1 : `clamp(3.5rem, 6vw, 6rem)` ls -0.055em lh 0.98.
+
+### Grille profils (`sk-profiles-grid`)
+```css
+.sk-profiles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+/* ≤767px → 2 colonnes ; ≤480px → 1 colonne */
+.sk-profile-card { border: 1px solid #DADAD4; border-radius: 10px; padding: 18px 20px; }
+.sk-profile-card:hover { border-color: #222222; }
+```
+
+### Cards de stack (`sk-card`)
+```css
+.sk-card { border-top: 1px solid #DADAD4; padding: 24px 0; }
+.sk-card-persona  { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6F6F68; }
+.sk-card-title    { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 600; }
+.sk-card-for      { font-size: 15px; color: #6F6F68; }
+.sk-card-risk     { font-size: 14px; color: #9A9A92; border-top: 1px solid #E7E7E0; }
+```
+
+### Pastilles logos outils
+Cercles 28px, fond `#FFFFFF`, bordure `1px solid #E7E7E0`, `margin-left: -6px` (stack). Max 5, overflow `+N` en fond `#F8F8F4`.
+
+---
+
+## Stack detail (sd-*)
+
+### Subnav sticky (`sd-nav`)
+```css
+.sd-nav { position: sticky; top: var(--navbar-h, 68px);
+  border-bottom: 1px solid #DADAD4; background: #F8F8F4; height: 56px; }
+.sd-nav-link { font-size: 14px; font-weight: 500; color: #6F6F68; }
+.sd-nav-link:hover,
+.sd-nav-link.active { color: #222222; border-bottom: 2px solid #222222; }
+/* Zéro bleu */
+```
+
+### Métriques résumé (`sd-summary`)
+```css
+.sd-summary { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #DADAD4; }
+.sd-metric  { padding: 20px 0; border-right: 1px solid #DADAD4; }
+.sd-metric-label { font-size: 11px; font-weight: 600; text-transform: uppercase; color: #6F6F68; }
+.sd-metric-value { font-size: 22px; font-weight: 600; color: #222222; }
+/* ≤767px → 2 colonnes */
+```
+
+### Lignes outils (`sd-tool-row`)
+```css
+/* Grille 5 colonnes : 40px | 1fr | 2fr | 90px | 24px */
+.sd-tool-row { display: grid; grid-template-columns: 40px 1fr 2fr 90px 24px;
+  align-items: center; gap: 16px; padding: 14px 0; border-top: 1px solid #DADAD4; }
+/* Badges statut : inline styles (vert/gris/rouge), zéro bleu */
+```
+
+---
+
 ## Anti-patterns à éviter
 
 - ❌ Bouton bleu sur les pages outils

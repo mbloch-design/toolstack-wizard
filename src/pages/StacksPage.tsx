@@ -1,106 +1,28 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Check, ChevronDown, Search, X } from "lucide-react";
-import EditorialHero from "@/components/EditorialHero";
-import { StackCardEditorial } from "@/components/StackCardEditorial";
+import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
-import { STACK_PERSONAS, STACK_STAGES, STACK_SUB_PROFILES, STACKS, type StackBudget, type StackPersona, type StackStage, type StackSubProfile } from "@/data/stacks";
+import {
+  STACK_PERSONAS,
+  STACKS,
+  type StackPersona,
+} from "@/data/stacks";
 
-const STACK_VISUALS: Record<string, string> = {
-  "freelance": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
-  "agence-marketing": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85",
-  "solopreneur": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
-  "ecommerce": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85",
-  "startup-saas": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85",
-  "developpeur-freelance-shipper": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85",
-  "designer-freelance-solo": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1000&q=85",
-  "consultant-b2b-propre": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85",
-  "createur-contenu-operateur": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
-  "ops-manager-fractional-coo": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85",
-  "freelance-solo-zero-bloat": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85",
-  "automatisation-legere-freelance": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
-  "ia-generative-pour-rediger": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85",
-  "ia-generative-pour-images": "https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=1000&q=85",
-  "ia-generative-pour-coder": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1000&q=85",
-  "ia-generative-pour-voix-video": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=85",
-  "ia-generative-pour-recherche-veille": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1000&q=85",
-};
-
+/* ─── Types ─────────────────────────────────────────────────────────────────── */
 type StackListItem = (typeof STACKS)[number];
-type StackFilterKey = "persona" | "subProfile" | "stage" | "budget";
-type StackFilterValue = StackPersona | StackSubProfile | StackStage | StackBudget;
-type SelectedStackFilters = Record<StackFilterKey, string[]>;
-type StackFilterOption = {
-  value: StackFilterValue;
-  label: string;
-  labelEn: string;
-  description?: string;
-  descriptionEn?: string;
-  personas?: StackPersona[];
-  matches?: (stack: StackListItem) => boolean;
-};
-type StackFilterGroup = {
-  id: StackFilterKey;
-  label: string;
-  labelEn: string;
-  description: string;
-  descriptionEn: string;
-  options: StackFilterOption[];
-};
+type StackFilterId = "all" | "creation" | "business" | "tech" | "ops" | "light" | "ia";
 
-const EMPTY_STACK_FILTERS: SelectedStackFilters = {
-  persona: [],
-  subProfile: [],
-  stage: [],
-  budget: [],
-};
-
-const STACK_BUDGET_FILTERS: StackFilterOption[] = [
-  { value: "free", label: "0€/mois", labelEn: "€0/mo" },
-  { value: "under50", label: "Jusqu'à 50€/mois", labelEn: "Up to €50/mo" },
-  { value: "under150", label: "Jusqu'à 150€/mois", labelEn: "Up to €150/mo" },
-];
-
-const STACK_FILTER_GROUPS: StackFilterGroup[] = [
-  {
-    id: "persona",
-    label: "Profil",
-    labelEn: "Profile",
-    description: "La base de départ de la stack.",
-    descriptionEn: "The stack starting profile.",
-    options: STACK_PERSONAS.filter((option): option is { value: StackPersona; label: string; labelEn: string } => option.value !== "all"),
-  },
-  {
-    id: "subProfile",
-    label: "Spécialité",
-    labelEn: "Specialty",
-    description: "Le sous-profil ou le besoin précis.",
-    descriptionEn: "The sub-profile or precise need.",
-    options: STACK_SUB_PROFILES
-      .filter((option): option is { value: StackSubProfile; label: string; labelEn: string; personas?: StackPersona[] } => option.value !== "all")
-      .map((option) => ({
-        ...option,
-        matches: (stack: StackListItem) => stack.subProfiles.includes(option.value),
-      })),
-  },
-  {
-    id: "stage",
-    label: "Maturité",
-    labelEn: "Maturity",
-    description: "Où tu en es dans l'usage.",
-    descriptionEn: "Where you are in the usage.",
-    options: STACK_STAGES.filter((option): option is { value: StackStage; label: string; labelEn: string } => option.value !== "all"),
-  },
-  {
-    id: "budget",
-    label: "Coût mensuel",
-    labelEn: "Monthly cost",
-    description: "Un ordre de grandeur, pas un prix exact.",
-    descriptionEn: "A rough range, not an exact price.",
-    options: STACK_BUDGET_FILTERS,
-  },
+/* ─── Constants ─────────────────────────────────────────────────────────────── */
+const FILTER_PILLS: { id: StackFilterId; label: string; labelEn: string }[] = [
+  { id: "all",      label: "Tous",          labelEn: "All" },
+  { id: "creation", label: "Création",      labelEn: "Creative" },
+  { id: "business", label: "Business",      labelEn: "Business" },
+  { id: "tech",     label: "Tech",          labelEn: "Tech" },
+  { id: "ops",      label: "Ops",           labelEn: "Ops" },
+  { id: "light",    label: "Budget léger",  labelEn: "Lean budget" },
+  { id: "ia",       label: "IA",            labelEn: "AI" },
 ];
 
 const FEATURED_STACK_SLUGS = [
@@ -118,154 +40,85 @@ const FEATURED_STACK_SLUGS = [
 ];
 
 const PROFILE_RECOMMENDED_STACKS = [
-  { persona: "dev", slug: "developpeur-freelance-shipper" },
-  { persona: "designer", slug: "designer-freelance-solo" },
-  { persona: "consultant", slug: "consultant-b2b-propre" },
-  { persona: "content", slug: "createur-contenu-operateur" },
-  { persona: "ops", slug: "ops-manager-fractional-coo" },
-  { persona: "solo", slug: "freelance-solo-zero-bloat" },
+  { persona: "content" as StackPersona,    slug: "createur-contenu-operateur" },
+  { persona: "designer" as StackPersona,   slug: "designer-freelance-solo" },
+  { persona: "dev" as StackPersona,        slug: "developpeur-freelance-shipper" },
+  { persona: "consultant" as StackPersona, slug: "consultant-b2b-propre" },
+  { persona: "ops" as StackPersona,        slug: "ops-manager-fractional-coo" },
+  { persona: "solo" as StackPersona,       slug: "freelance-solo-zero-bloat" },
 ] as const;
 
-const PERSONA_FILTER_GROUP = STACK_FILTER_GROUPS.find((group) => group.id === "persona")!;
-const SUB_PROFILE_FILTER_GROUP = STACK_FILTER_GROUPS.find((group) => group.id === "subProfile")!;
-const SECONDARY_FILTER_GROUPS = STACK_FILTER_GROUPS.filter((group) => group.id === "stage" || group.id === "budget");
+/* ─── Helpers ────────────────────────────────────────────────────────────────── */
+function personaLabel(persona: StackPersona, locale: "fr" | "en") {
+  const item = STACK_PERSONAS.find((p) => p.value === persona);
+  return locale === "fr" ? item?.label || persona : item?.labelEn || persona;
+}
 
+function stackMatchesFilter(stack: StackListItem, filter: StackFilterId): boolean {
+  switch (filter) {
+    case "all":      return true;
+    case "creation": return stack.persona === "content" || stack.persona === "designer";
+    case "business": return stack.persona === "consultant" || stack.persona === "solo";
+    case "tech":     return stack.persona === "dev";
+    case "ops":      return stack.persona === "ops";
+    case "light":    return stack.monthlyBudget <= 50;
+    case "ia":       return (
+      stack.slug.includes("ia-generative") ||
+      stack.slug.includes("ia-visuelle") ||
+      stack.slug.includes("productivite-ia")
+    );
+    default: return true;
+  }
+}
+
+function stackMatchesQuery(stack: StackListItem, query: string) {
+  if (!query) return true;
+  const text = [
+    stack.title,
+    stack.titleEn,
+    stack.subtitle,
+    stack.subtitleEn,
+    stack.bestFor,
+    stack.bestForEn,
+    stack.risk,
+    stack.riskEn,
+    ...stack.tools.map((slot) => `${slot.role} ${slot.roleEn} ${slot.slug}`),
+  ].join(" ").toLowerCase();
+  return text.includes(query);
+}
+
+/* ─── Main component ─────────────────────────────────────────────────────────── */
 const StacksPage = () => {
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
+  const [activeFilter, setActiveFilter] = useState<StackFilterId>("all");
   const [query, setQuery] = useState("");
-  const [selectedFilters, setSelectedFilters] = useState<SelectedStackFilters>(EMPTY_STACK_FILTERS);
-  const [openProfiles, setOpenProfiles] = useState<string[]>([]);
 
-  const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
-
-  const filteredStacks = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return STACKS
-      .filter((stack) => {
-        return stackMatchesFilters(stack, selectedFilters) && stackMatchesQuery(stack, q);
-      })
-      .sort((a, b) => {
-        const aIndex = FEATURED_STACK_SLUGS.indexOf(a.slug);
-        const bIndex = FEATURED_STACK_SLUGS.indexOf(b.slug);
-        if (aIndex >= 0 && bIndex >= 0) return aIndex - bIndex;
-        if (aIndex >= 0) return -1;
-        if (bIndex >= 0) return 1;
-        return 0;
-      });
-  }, [query, selectedFilters]);
-
-  const facetCounts = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const counts: Record<string, number> = {};
-    STACK_FILTER_GROUPS.forEach((group) => {
-      group.options.forEach((option) => {
-        const filtersWithoutCurrent = { ...selectedFilters, [group.id]: [] };
-        counts[`${group.id}-${option.value}`] = STACKS.filter((stack) => (
-          stackMatchesQuery(stack, q)
-          && stackMatchesFilters(stack, filtersWithoutCurrent)
-          && stackMatchesFilterOption(stack, group, option)
-        )).length;
-      });
-    });
-    return counts;
-  }, [query, selectedFilters]);
-
-  const specialtyCounts = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const counts: Record<string, number> = {};
-    PERSONA_FILTER_GROUP.options.forEach((profile) => {
-      SUB_PROFILE_FILTER_GROUP.options.forEach((specialty) => {
-        counts[`${profile.value}-${specialty.value}`] = STACKS.filter((stack) => (
-          stackMatchesQuery(stack, q)
-          && stackMatchesFilters(stack, {
-            ...selectedFilters,
-            persona: [profile.value],
-            subProfile: [],
-          })
-          && stackMatchesFilterOption(stack, SUB_PROFILE_FILTER_GROUP, specialty)
-        )).length;
-      });
-    });
-    return counts;
-  }, [query, selectedFilters]);
-
-  const activeFilters = STACK_FILTER_GROUPS.flatMap((group) => selectedFilters[group.id]
-    .filter((value) => (
-      group.id !== "subProfile" || !isSpecialtyCoveredByCompleteProfile(value, selectedFilters)
-    ))
-    .map((value) => {
-      const option = group.options.find((item) => item.value === value);
-      return {
-        groupId: group.id,
-        value,
-        label: lang === "fr" ? option?.label || value : option?.labelEn || value,
-      };
-    }));
+  const toolBySlug = useMemo(
+    () => new Map(tools.map((tool) => [tool.slug || tool.id, tool])),
+    [tools],
+  );
 
   const profileRecommendedStacks = PROFILE_RECOMMENDED_STACKS
     .map(({ persona, slug }) => ({
       persona,
-      stack: STACKS.find((item) => item.slug === slug),
+      stack: STACKS.find((s) => s.slug === slug),
     }))
     .filter((item): item is { persona: StackPersona; stack: StackListItem } => Boolean(item.stack));
-  const showProfileRecommendations = !query && activeFilters.length === 0;
 
-  const toggleFilter = (groupId: StackFilterKey, value: string) => {
-    setSelectedFilters((current) => ({
-      ...current,
-      [groupId]: current[groupId].includes(value)
-        ? current[groupId].filter((item) => item !== value)
-        : [...current[groupId], value],
-      ...(groupId === "persona" ? { subProfile: [] } : {}),
-    }));
-  };
-
-  const toggleProfile = (value: string) => {
-    const isActive = selectedFilters.persona.includes(value);
-
-    setSelectedFilters((current) => {
-      if (current.persona.includes(value)) {
-        return removeProfileFilters(current, value);
-      }
-
-      return {
-        ...current,
-        persona: [...current.persona, value],
-        subProfile: Array.from(new Set([...current.subProfile, ...getProfileSpecialtyValues(value)])),
-      };
-    });
-    setOpenProfiles((current) => {
-      if (isActive) return current.filter((item) => item !== value);
-      return current.includes(value) ? current : [...current, value];
-    });
-  };
-
-  const toggleProfileOpen = (value: string) => {
-    setOpenProfiles((current) => (
-      current.includes(value) ? current.filter((item) => item !== value) : [...current, value]
-    ));
-  };
-
-  const clearFilter = (filter: { groupId: StackFilterKey; value: string }) => {
-    setSelectedFilters((current) => {
-      if (filter.groupId === "persona") return removeProfileFilters(current, filter.value);
-
-      return {
-        ...current,
-        [filter.groupId]: current[filter.groupId].filter((item) => item !== filter.value),
-      };
-    });
-    if (filter.groupId === "persona") {
-      setOpenProfiles((current) => current.filter((item) => item !== filter.value));
-    }
-  };
-
-  const clearAllFilters = () => {
-    setSelectedFilters(EMPTY_STACK_FILTERS);
-    setQuery("");
-    setOpenProfiles([]);
-  };
+  const filteredStacks = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return STACKS
+      .filter((stack) => stackMatchesFilter(stack, activeFilter) && stackMatchesQuery(stack, q))
+      .sort((a, b) => {
+        const ai = FEATURED_STACK_SLUGS.indexOf(a.slug);
+        const bi = FEATURED_STACK_SLUGS.indexOf(b.slug);
+        if (ai >= 0 && bi >= 0) return ai - bi;
+        if (ai >= 0) return -1;
+        if (bi >= 0) return 1;
+        return 0;
+      });
+  }, [activeFilter, query]);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -298,443 +151,367 @@ const StacksPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <EditorialHero
-        eyebrow={t("Stacks types", "Stack templates")}
-        title={
-          <>
+
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      <section className="eh-root">
+        <div className="eh-container">
+          <span className="eh-eyebrow">{t("Stacks types", "Stack templates")}</span>
+          <h1 style={{
+            fontFamily: "var(--font-brand)",
+            fontSize: "clamp(3.5rem, 6vw, 6rem)",
+            fontWeight: 600,
+            letterSpacing: "-0.055em",
+            lineHeight: 0.98,
+            color: "#222222",
+            maxWidth: 980,
+            margin: "14px 0 24px",
+          }}>
             {t("Comparer des stacks types.", "Compare stack templates.")}
             <br />
             {t("Pas collectionner des outils.", "Not collect tools.")}
-          </>
-        }
-        description={t(
-          "Chaque stack part d'un contexte concret : profil, budget, usages, doublons probables et outils à challenger.",
-          "Each stack starts from a concrete context: profile, budget, use cases, likely overlaps, and tools to challenge.",
-        )}
-        primaryCta={{ label: t("Analyser ma stack", "Analyze my stack"), href: `${prefix}/selector` }}
-        secondaryCta={{ label: t("Voir les modèles", "View templates"), href: "#stacks" }}
-        rightModule={
-          <div style={{ paddingTop: 4 }}>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 14 }}>
-              {t("Profils couverts", "Covered profiles")}
-            </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
-              {(lang === "fr"
-                ? ["Freelance", "Designer", "Consultant", "Ops / COO", "Créateur", "Dev"]
-                : ["Freelance", "Designer", "Consultant", "Ops / COO", "Creator", "Dev"]
-              ).map((p) => (
-                <span
-                  key={p}
-                  style={{
-                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, letterSpacing: "-0.01em",
-                    padding: "5px 12px", border: "1px solid #DADAD4", borderRadius: 6,
-                    background: "#FFFFFF", color: "#222222",
-                  }}
-                >
-                  {p}
-                </span>
-              ))}
-            </div>
-            {/* Budget / savings data mini block */}
-            <div style={{ background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8, padding: "16px 18px" }}>
-              <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9A9A92", marginBottom: 12 }}>
-                {t("Données types", "Typical data")}
-              </p>
-              {[
-                { label: t("Budget cible", "Target budget"), value: "45–90€/mois" },
-                { label: t("Doublons probables", "Likely overlaps"), value: t("2–4 outils", "2–4 tools") },
-                { label: t("Stacks disponibles", "Available stacks"), value: `${STACKS.length}` },
-              ].map(({ label, value }) => (
-                <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "6px 0", borderBottom: "1px solid #F0F0EA" }}>
-                  <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68" }}>{label}</span>
-                  <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "#222222" }}>{value}</span>
-                </div>
-              ))}
-            </div>
+          </h1>
+          <p style={{
+            fontFamily: "var(--font-ui)",
+            fontSize: 22,
+            fontWeight: 400,
+            letterSpacing: "-0.025em",
+            lineHeight: 1.35,
+            color: "#6F6F68",
+            maxWidth: 640,
+            margin: "0 0 32px",
+          }}>
+            {t(
+              "Chaque stack part d'un contexte concret : profil, budget, usages, doublons probables et outils à challenger.",
+              "Each stack starts from a concrete context: profile, budget, use cases, likely overlaps, and tools to challenge.",
+            )}
+          </p>
+          <div className="eh-cta-group">
+            <Link to={`${prefix}/selector`} className="eh-cta-primary">
+              {t("Analyser ma stack", "Analyze my stack")}
+            </Link>
+            <a href="#profils" className="eh-cta-secondary">
+              {t("Voir les profils", "View profiles")}
+            </a>
           </div>
-        }
-      />
+        </div>
+      </section>
 
-      <section id="stacks" className="scroll-mt-20 bg-background">
-        <div className="mx-auto max-w-7xl px-12 py-10 md:py-14">
-          <div className="grid gap-6 md:grid-cols-[18rem_minmax(0,1fr)]">
-            <aside className="rounded-lg border border-border bg-card p-4 md:sticky md:top-24 md:self-start md:p-5">
-              <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">
-                    {t("Filtrer", "Filter")}
+      {/* ── Commencer par ton profil ───────────────────────────────────────── */}
+      <section id="profils" className="sk-section scroll-mt-20" style={{ background: "#F8F8F4" }}>
+        <div className="sk-container">
+          <span style={{
+            fontFamily: "var(--font-ui)",
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase" as const,
+            color: "#6F6F68",
+            display: "block",
+            marginBottom: 10,
+          }}>
+            {t("Recommandées par profil", "Recommended by profile")}
+          </span>
+          <p style={{
+            fontFamily: "var(--font-brand)",
+            fontSize: "clamp(1.75rem, 3vw, 2.625rem)",
+            fontWeight: 600,
+            letterSpacing: "-0.055em",
+            lineHeight: 0.98,
+            color: "#222222",
+            marginBottom: 32,
+          }}>
+            {t("Commence par la stack de ton métier", "Start with the stack for your role")}
+          </p>
+          <div className="sk-profiles-grid">
+            {profileRecommendedStacks.map(({ persona, stack }) => {
+              const title = lang === "fr" ? stack.title : stack.titleEn;
+              const bestFor = lang === "fr" ? stack.bestFor : stack.bestForEn;
+              return (
+                <Link
+                  key={persona}
+                  to={`${prefix}/stacks/${stack.slug}`}
+                  className="sk-profile-card"
+                >
+                  <p className="sk-profile-name">{personaLabel(persona, lang)}</p>
+                  <p style={{
+                    fontFamily: "var(--font-ui)",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    letterSpacing: "0.04em",
+                    textTransform: "uppercase" as const,
+                    color: "#9A9A92",
+                    margin: "4px 0 8px",
+                  }}>
+                    {title}
                   </p>
-                </div>
-                {(activeFilters.length > 0 || query) && (
-                  <button
-                    type="button"
-                    onClick={clearAllFilters}
-                    className="text-xs font-semibold text-primary hover:text-primary/80"
+                  <p className="sk-profile-desc">{bestFor}</p>
+                  <p style={{
+                    fontFamily: "var(--font-ui)",
+                    fontSize: 12,
+                    fontWeight: 500,
+                    color: "#222222",
+                    marginTop: 14,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                  }}>
+                    {t("Voir la stack", "See stack")}
+                    <span aria-hidden>→</span>
+                  </p>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Filtres + Liste ────────────────────────────────────────────────── */}
+      <section id="stacks" className="sk-section scroll-mt-20">
+        <div className="sk-container">
+
+          {/* Filter pills */}
+          <div className="gi-filter-bar" style={{ marginBottom: 32 }}>
+            {FILTER_PILLS.map((pill) => (
+              <button
+                key={pill.id}
+                type="button"
+                onClick={() => setActiveFilter(pill.id)}
+                className={`gi-filter-pill${activeFilter === pill.id ? " gi-filter-pill--active" : ""}`}
+              >
+                {lang === "fr" ? pill.label : pill.labelEn}
+              </button>
+            ))}
+          </div>
+
+          {/* Stack count + search */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 16,
+            marginBottom: 24,
+            flexWrap: "wrap" as const,
+          }}>
+            <p style={{
+              fontFamily: "var(--font-ui)",
+              fontSize: 13,
+              color: "#6F6F68",
+              letterSpacing: "-0.01em",
+            }}>
+              {filteredStacks.length}&nbsp;{t("stacks", "stacks")}
+            </p>
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={t("Rechercher…", "Search…")}
+              style={{
+                fontFamily: "var(--font-ui)",
+                fontSize: 14,
+                height: 36,
+                padding: "0 14px",
+                border: "1px solid #DADAD4",
+                borderRadius: 6,
+                background: "#FFFFFF",
+                color: "#222222",
+                outline: "none",
+                width: 220,
+                letterSpacing: "-0.01em",
+              }}
+            />
+          </div>
+
+          {/* Stack cards */}
+          {filteredStacks.length > 0 ? (
+            <div style={{ display: "flex", flexDirection: "column" as const, gap: 0 }}>
+              {filteredStacks.map((stack) => {
+                const stackTools = stack.tools
+                  .slice(0, 6)
+                  .map((slot) => toolBySlug.get(slot.slug))
+                  .filter(Boolean) as NonNullable<ReturnType<typeof toolBySlug.get>>[];
+                const titleText = lang === "fr" ? stack.title : stack.titleEn;
+                const subtitleText = lang === "fr" ? stack.subtitle : stack.subtitleEn;
+                const riskText = lang === "fr" ? stack.risk : stack.riskEn;
+                const personaText = personaLabel(stack.persona, lang);
+                const budget = stack.monthlyBudget > 0
+                  ? `≈ ${stack.monthlyBudget}€/mois`
+                  : t("Gratuit", "Free");
+                const isRecommended = PROFILE_RECOMMENDED_STACKS.some((p) => p.slug === stack.slug);
+
+                return (
+                  <Link
+                    key={stack.id}
+                    to={`${prefix}/stacks/${stack.slug}`}
+                    className="sk-card"
+                    style={{ marginBottom: 8 }}
                   >
-                    {t("Effacer", "Clear")}
-                  </button>
-                )}
-              </div>
-
-              <div className="mt-5 space-y-6">
-                <div>
-                  <div className="mb-3">
-                    <p className="text-sm font-semibold text-foreground">{t("Profil", "Profile")}</p>
-                  </div>
-                  <div className="space-y-1.5">
-                    {PERSONA_FILTER_GROUP.options.map((profile) => {
-                      const active = selectedFilters.persona.includes(profile.value);
-                      const open = openProfiles.includes(profile.value);
-                      const profileCount = facetCounts[`persona-${profile.value}`] || 0;
-                      const specialties = SUB_PROFILE_FILTER_GROUP.options.filter((specialty) => (
-                        specialty.personas?.includes(profile.value as StackPersona)
-                        && (specialtyCounts[`${profile.value}-${specialty.value}`] || 0) > 0
-                      ));
-
-                      return (
-                        <div key={`profile-${profile.value}`} className="rounded-md">
-                          <div className={`flex min-h-10 items-center rounded-md transition-colors ${
-                            active ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                          }`}>
-                            <button
-                              type="button"
-                              onClick={() => toggleProfile(profile.value)}
-                              aria-pressed={active}
-                              className="flex min-w-0 flex-1 items-center gap-2 px-3 py-2 text-left text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-                            >
-                              <span className={`inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded border ${active ? "border-primary-foreground bg-primary-foreground text-primary" : "border-muted-foreground/40"}`}>
-                                {active && <Check className="h-3 w-3" />}
-                              </span>
-                              <span className="truncate">{t(profile.label, profile.labelEn)}</span>
-                            </button>
-                            <span className={`mr-1 shrink-0 rounded-full px-2 py-0.5 text-xs ${active ? "bg-primary-foreground/15" : "bg-background text-muted-foreground"}`}>
-                              {profileCount}
+                    {/* Header */}
+                    <div className="sk-card-header">
+                      <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                        <span style={{
+                          fontFamily: "var(--font-ui)",
+                          fontSize: 10,
+                          fontWeight: 600,
+                          letterSpacing: "0.08em",
+                          textTransform: "uppercase" as const,
+                          color: "#9A9A92",
+                        }}>
+                          STACK
+                        </span>
+                        <span style={{ color: "#DADAD4", fontSize: 12 }}>·</span>
+                        <span style={{
+                          fontFamily: "var(--font-ui)",
+                          fontSize: 10,
+                          fontWeight: 600,
+                          letterSpacing: "0.06em",
+                          textTransform: "uppercase" as const,
+                          color: "#6F6F68",
+                        }}>
+                          {personaText}
+                        </span>
+                        {isRecommended && (
+                          <>
+                            <span style={{ color: "#DADAD4", fontSize: 12 }}>·</span>
+                            <span style={{
+                              fontFamily: "var(--font-ui)",
+                              fontSize: 9,
+                              fontWeight: 700,
+                              letterSpacing: "0.08em",
+                              textTransform: "uppercase" as const,
+                              color: "#FFFFFF",
+                              background: "#222222",
+                              padding: "2px 6px",
+                              borderRadius: 3,
+                            }}>
+                              {t("Recommandée", "Recommended")}
                             </span>
-                            {specialties.length > 0 && (
-                              <button
-                                type="button"
-                                onClick={() => toggleProfileOpen(profile.value)}
-                                aria-expanded={open}
-                                aria-label={t(`Voir les spécialités ${profile.label}`, `View ${profile.labelEn} specialties`)}
-                                className={`mr-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35 ${
-                                  active ? "text-primary-foreground hover:bg-primary-foreground/10" : "text-muted-foreground hover:bg-background hover:text-foreground"
-                                }`}
-                              >
-                                <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
-                              </button>
-                            )}
-                          </div>
+                          </>
+                        )}
+                      </div>
+                      <span style={{
+                        fontFamily: "var(--font-ui)",
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: "#222222",
+                        letterSpacing: "-0.02em",
+                        whiteSpace: "nowrap" as const,
+                      }}>
+                        {budget}
+                      </span>
+                    </div>
 
-                          {open && specialties.length > 0 && (
-                            <div className="ml-5 mt-1 space-y-1 border-l border-border pl-2">
-                              {specialties.map((specialty) => {
-                                const specialtyActive = selectedFilters.subProfile.includes(specialty.value);
-                                const count = specialtyCounts[`${profile.value}-${specialty.value}`] || 0;
-                                return (
-                                  <button
-                                    key={`${profile.value}-${specialty.value}`}
-                                    type="button"
-                                    onClick={() => {
-                                      if (!active) {
-                                        setSelectedFilters((current) => ({
-                                          ...current,
-                                          persona: current.persona.includes(profile.value)
-                                            ? current.persona
-                                            : [...current.persona, profile.value],
-                                          subProfile: current.subProfile.includes(specialty.value)
-                                            ? current.subProfile
-                                            : [...current.subProfile, specialty.value],
-                                        }));
-                                        return;
-                                      }
-                                      toggleFilter("subProfile", specialty.value);
-                                    }}
-                                    aria-pressed={specialtyActive}
-                                    className={`flex min-h-9 w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-left text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35 ${
-                                      specialtyActive ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                                    }`}
-                                  >
-                                    <span className="flex min-w-0 items-center gap-2">
-                                      <span className={`inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded border ${specialtyActive ? "border-primary bg-primary text-primary-foreground" : "border-muted-foreground/40"}`}>
-                                        {specialtyActive && <Check className="h-3 w-3" />}
-                                      </span>
-                                      <span className="truncate">{t(specialty.label, specialty.labelEn)}</span>
-                                    </span>
-                                    <span className={`shrink-0 rounded-full px-2 py-0.5 text-xs ${specialtyActive ? "bg-primary/10 text-primary" : "bg-background text-muted-foreground"}`}>
-                                      {count}
-                                    </span>
-                                  </button>
-                                );
-                              })}
+                    {/* Title */}
+                    <p className="sk-card-title">{titleText}</p>
+
+                    {/* Subtitle */}
+                    <p className="sk-card-desc">{subtitleText}</p>
+
+                    {/* Risk snippet */}
+                    {riskText && (
+                      <p style={{
+                        fontFamily: "var(--font-ui)",
+                        fontSize: 12,
+                        color: "#9A9A92",
+                        lineHeight: 1.45,
+                        margin: "8px 0 0",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical" as const,
+                        overflow: "hidden",
+                      }}>
+                        <span style={{ fontWeight: 600, color: "#6F6F68" }}>
+                          {t("Risque", "Risk")} ·
+                        </span>{" "}
+                        {riskText}
+                      </p>
+                    )}
+
+                    {/* Footer: tool logos + CTA */}
+                    <div className="sk-card-footer">
+                      {stackTools.length > 0 && (
+                        <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
+                          {stackTools.map((tool, i) => (
+                            <div
+                              key={tool.id}
+                              title={tool.name}
+                              style={{
+                                width: 28,
+                                height: 28,
+                                borderRadius: "50%",
+                                background: "#FFFFFF",
+                                border: "1px solid #E7E7E0",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                marginLeft: i === 0 ? 0 : -6,
+                                overflow: "hidden",
+                                position: "relative" as const,
+                                zIndex: stackTools.length - i,
+                              }}
+                            >
+                              <ToolLogo tool={tool} size={18} />
+                            </div>
+                          ))}
+                          {stack.tools.length > 6 && (
+                            <div style={{
+                              width: 28,
+                              height: 28,
+                              borderRadius: "50%",
+                              background: "#F8F8F4",
+                              border: "1px solid #E7E7E0",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              marginLeft: -6,
+                              fontFamily: "var(--font-ui)",
+                              fontSize: 11,
+                              fontWeight: 600,
+                              color: "#6F6F68",
+                            }}>
+                              +{stack.tools.length - 6}
                             </div>
                           )}
                         </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {SECONDARY_FILTER_GROUPS.map((group) => {
-                  const visibleOptions = getVisibleFilterOptions(group, selectedFilters, facetCounts);
-
-                  if (visibleOptions.length === 0) return null;
-
-                  return (
-                    <div key={group.id}>
-                      <div className="mb-3">
-                        <p className="text-sm font-semibold text-foreground">{t(group.label, group.labelEn)}</p>
-                      </div>
-                      <div className="space-y-1.5">
-                        {visibleOptions.map((option) => {
-                        const active = selectedFilters[group.id].includes(option.value);
-                        const count = facetCounts[`${group.id}-${option.value}`] || 0;
-                        return (
-                          <button
-                            key={`${group.id}-${option.value}`}
-                            type="button"
-                            onClick={() => toggleFilter(group.id, option.value)}
-                            aria-pressed={active}
-                            className={`flex min-h-10 w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-left text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35 ${
-                              active ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                            }`}
-                          >
-                            <span className="flex min-w-0 items-center gap-2">
-                              <span className={`inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded border ${active ? "border-primary bg-primary text-primary-foreground" : "border-muted-foreground/40"}`}>
-                                {active && <Check className="h-3 w-3" />}
-                              </span>
-                              <span className="min-w-0">
-                                <span className="block truncate">{t(option.label, option.labelEn)}</span>
-                              {option.description && option.descriptionEn && (
-                                <span className="block truncate text-xs font-medium text-muted-foreground">
-                                  {t(option.description, option.descriptionEn)}
-                                </span>
-                              )}
-                              </span>
-                            </span>
-                            <span className={`shrink-0 rounded-full px-2 py-0.5 text-xs ${active ? "bg-primary/10 text-primary" : "bg-background text-muted-foreground"}`}>
-                              {count}
-                            </span>
-                          </button>
-                        );
-                      })}
-                      </div>
+                      )}
+                      <span className="sk-card-cta">
+                        {t("Voir la stack", "See stack")}
+                        <span aria-hidden> →</span>
+                      </span>
                     </div>
-                  );
-                })}
-              </div>
-            </aside>
-
-            <div className="min-w-0">
-              <div className="rounded-lg border border-border bg-card p-4 md:p-5">
-                <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)] lg:items-center">
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">
-                      {filteredStacks.length} {t("stacks affichées", "stacks shown")}
-                    </p>
-                  </div>
-                  <label className="relative block">
-                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                    <input
-                      id="stack-search"
-                      name="stack-search"
-                      type="search"
-                      value={query}
-                      onChange={(event) => setQuery(event.target.value)}
-                      placeholder={t("Rechercher une stack", "Search a stack")}
-                      className="h-11 w-full rounded-lg border border-border bg-background pl-10 pr-3 text-sm font-semibold outline-none transition-colors placeholder:text-muted-foreground focus:border-primary"
-                    />
-                  </label>
-                </div>
-
-                {(activeFilters.length > 0 || query) && (
-                  <div className="mt-4 flex flex-wrap items-center gap-2.5 border-t border-border pt-4">
-                    {query && (
-                      <button
-                        type="button"
-                        onClick={() => setQuery("")}
-                        className="inline-flex items-center gap-2 rounded-full border border-foreground/60 bg-background px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-                      >
-                        {t("Recherche", "Search")} : {query}
-                        <X className="h-4 w-4" />
-                      </button>
-                    )}
-                    {activeFilters.map((filter) => (
-                      <button
-                        key={`${filter.groupId}-${filter.value}`}
-                        type="button"
-                        onClick={() => clearFilter(filter)}
-                        className="inline-flex items-center gap-2 rounded-full border border-foreground/60 bg-background px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-                        aria-label={t(`Retirer ${filter.label}`, `Remove ${filter.label}`)}
-                      >
-                        {filter.label}
-                        <X className="h-4 w-4" />
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {showProfileRecommendations && (
-                <div style={{ marginTop: 16, border: "1px solid #DADAD4", borderRadius: 8, padding: "20px 20px 24px", background: "#FFFFFF" }}>
-                  <div style={{ marginBottom: 20 }}>
-                    <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 8 }}>
-                      {t("Recommandées par profil", "Recommended by profile")}
-                    </p>
-                    <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.125rem, 2vw, 1.375rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", lineHeight: 1.15 }}>
-                      {t("Commence par la stack de ton métier", "Start with the stack for your role")}
-                    </p>
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                    {profileRecommendedStacks.map(({ persona, stack }) => (
-                      <StackCardEditorial
-                        key={`recommended-${stack.id}`}
-                        variant="compact"
-                        stack={stack}
-                        prefix={prefix}
-                        t={t}
-                        lang={lang}
-                        personaTag={lang === "fr" ? personaLabel(persona, "fr") : personaLabel(persona, "en")}
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div className="mt-4 grid gap-3">
-                {filteredStacks.map((stack) => {
-                  const stackTools = stack.tools
-                    .map((slot) => toolBySlug.get(slot.slug))
-                    .filter(Boolean) as NonNullable<ReturnType<typeof toolBySlug.get>>[];
-                  const isProfileRecommended = PROFILE_RECOMMENDED_STACKS.some((item) => item.slug === stack.slug);
-                  return (
-                    <StackCardEditorial
-                      key={stack.id}
-                      variant="row"
-                      stack={stack}
-                      prefix={prefix}
-                      t={t}
-                      lang={lang}
-                      personaTag={lang === "fr" ? personaLabel(stack.persona, "fr") : personaLabel(stack.persona, "en")}
-                      stageTag={lang === "fr" ? stageLabel(stack.stage, "fr") : stageLabel(stack.stage, "en")}
-                      isBase={isProfileRecommended}
-                      stackTools={stackTools}
-                      imageUrl={STACK_VISUALS[stack.slug] || STACK_VISUALS["freelance-solo-zero-bloat"]}
-                    />
-                  );
-                })}
-              </div>
-
-              {filteredStacks.length === 0 && (
-                <div className="surface-card p-10 text-center">
-                  <p className="font-display text-xl font-bold text-foreground">{t("Aucun stack trouvé.", "No stack found.")}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{t("Essaie un autre profil ou enlève la recherche.", "Try another profile or clear the search.")}</p>
-                </div>
-              )}
+                  </Link>
+                );
+              })}
             </div>
-          </div>
+          ) : (
+            <div style={{
+              padding: "48px 0",
+              textAlign: "center" as const,
+              borderTop: "1px solid #DADAD4",
+            }}>
+              <p style={{
+                fontFamily: "var(--font-brand)",
+                fontSize: "clamp(1.25rem, 2vw, 1.5rem)",
+                fontWeight: 600,
+                letterSpacing: "-0.04em",
+                color: "#222222",
+                marginBottom: 8,
+              }}>
+                {t("Aucune stack trouvée.", "No stack found.")}
+              </p>
+              <p style={{
+                fontFamily: "var(--font-ui)",
+                fontSize: 15,
+                color: "#6F6F68",
+              }}>
+                {t("Essaie un autre filtre ou efface la recherche.", "Try another filter or clear the search.")}
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
     </div>
   );
 };
-
-function getStackFilterValue(stack: StackListItem, groupId: StackFilterKey) {
-  if (groupId === "subProfile") return "";
-  return stack[groupId];
-}
-
-function getVisibleFilterOptions(
-  group: StackFilterGroup,
-  selectedFilters: SelectedStackFilters,
-  facetCounts: Record<string, number>
-) {
-  if (group.id !== "subProfile") return group.options;
-
-  const selectedProfiles = selectedFilters.persona;
-  const hasSelectedProfile = selectedProfiles.length > 0;
-
-  return group.options.filter((option) => {
-    const count = facetCounts[`${group.id}-${option.value}`] || 0;
-    const active = selectedFilters.subProfile.includes(option.value);
-    if (active) return true;
-    if (!hasSelectedProfile) return false;
-    return count > 0 && option.personas?.some((persona) => selectedProfiles.includes(persona));
-  });
-}
-
-function getProfileSpecialtyValues(profileValue: string) {
-  return SUB_PROFILE_FILTER_GROUP.options
-    .filter((specialty) => specialty.personas?.includes(profileValue as StackPersona))
-    .map((specialty) => specialty.value);
-}
-
-function removeProfileFilters(filters: SelectedStackFilters, profileValue: string): SelectedStackFilters {
-  const remainingProfiles = filters.persona.filter((item) => item !== profileValue);
-  const currentProfileSpecialties = getProfileSpecialtyValues(profileValue);
-  const remainingProfileSpecialties = new Set(
-    remainingProfiles.flatMap((profile) => getProfileSpecialtyValues(profile))
-  );
-
-  return {
-    ...filters,
-    persona: remainingProfiles,
-    subProfile: filters.subProfile.filter((specialtyValue) => (
-      !currentProfileSpecialties.includes(specialtyValue) || remainingProfileSpecialties.has(specialtyValue)
-    )),
-  };
-}
-
-function isSpecialtyCoveredByCompleteProfile(specialtyValue: string, filters: SelectedStackFilters) {
-  return filters.persona.some((profile) => {
-    const profileSpecialties = getProfileSpecialtyValues(profile);
-    return profileSpecialties.includes(specialtyValue) && profileSpecialties.every((value) => filters.subProfile.includes(value));
-  });
-}
-
-function stackMatchesFilterOption(stack: StackListItem, group: StackFilterGroup, option: StackFilterOption) {
-  return option.matches ? option.matches(stack) : getStackFilterValue(stack, group.id) === option.value;
-}
-
-function stackMatchesFilters(stack: StackListItem, filters: SelectedStackFilters) {
-  return STACK_FILTER_GROUPS.every((group) => {
-    const selected = filters[group.id];
-    return selected.length === 0 || group.options.some((option) => (
-      selected.includes(option.value) && stackMatchesFilterOption(stack, group, option)
-    ));
-  });
-}
-
-function stackMatchesQuery(stack: StackListItem, query: string) {
-  if (!query) return true;
-  const text = [
-    stack.title,
-    stack.titleEn,
-    stack.subtitle,
-    stack.subtitleEn,
-    stack.bestFor,
-    stack.bestForEn,
-    stack.risk,
-    stack.riskEn,
-    ...stack.tools.map((slot) => `${slot.role} ${slot.roleEn} ${slot.slug}`),
-  ].join(" ").toLowerCase();
-  return text.includes(query);
-}
-
-function personaLabel(persona: StackPersona, locale: "fr" | "en") {
-  const item = STACK_PERSONAS.find((option) => option.value === persona);
-  return locale === "fr" ? item?.label || persona : item?.labelEn || persona;
-}
-
-function stageLabel(stage: StackStage, locale: "fr" | "en") {
-  const item = STACK_STAGES.find((option) => option.value === stage);
-  return locale === "fr" ? item?.label || stage : item?.labelEn || stage;
-}
-
-function subProfileLabel(subProfile: StackSubProfile | undefined, locale: "fr" | "en") {
-  if (!subProfile) return "";
-  const item = STACK_SUB_PROFILES.find((option) => option.value === subProfile);
-  return locale === "fr" ? item?.label || subProfile : item?.labelEn || subProfile;
-}
 
 export default StacksPage;

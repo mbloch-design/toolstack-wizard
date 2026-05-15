@@ -93,6 +93,51 @@
 
 ---
 
+## Sprint 5b — Stacks : refonte éditoriale ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| StacksPage réécriture (`sk-*`) | ✅ Fait | Hero inline, profils grid, pills filtres, cards pastilles |
+| StackDetailPage réécriture (`sd-*`) | ✅ Fait | Hero brand, subnav noir, summary métriques, tool rows, CTA band |
+| Fix React hooks violation (useMemo avant return) | ✅ Corrigé | `relatedStacks` déplacé avant `if (!stack)` |
+| Suppression `Button` / `ArrowRight` (bleu) | ✅ Fait | Remplacés par boutons noirs inline ou `<Link>` |
+| ToolPanel / Sheet conservé intact | ✅ Vérifié | Aucun changement |
+
+---
+
+## Sprint Comparatif — Refonte /fr/comparatif/:pair ✅
+
+| Item | Statut | Notes |
+|---|---|---|
+| Hero 2 colonnes (cp-hero-inner) | ✅ Fait | H1 font-brand, module VS sticky |
+| Subnav 6 ancres (cp-subnav) | ✅ Fait | Zéro bleu, underline noir |
+| Verdict rapide 3 colonnes (cp-verdict-grid) | ✅ Fait | |
+| Tableau comparatif 10 lignes (cp-table) | ✅ Fait | Responsive data-label mobile |
+| Profils 6 cartes (cp-profile-grid) | ✅ Fait | |
+| Prix avec bold (PricingNote) | ✅ Fait | Composant interne regex |
+| Limites 2 colonnes (cp-limits-grid) | ✅ Fait | `::before "—"` |
+| Alternatives 5 lignes (cp-alt-row) | ✅ Fait | Link DB / div statique |
+| CTA band fond #EDEDE8 (cp-cta-band) | ✅ Fait | |
+| FAQ accordion (FaqItem) | ✅ Fait | `<details>/<summary>` natif |
+| Registre éditorial + fallback générique | ✅ Fait | `EDITORIAL_CONTENT` + `buildFallbackContent()` |
+| Système CSS `cp-*` (~300 lignes) | ✅ Fait | Ajouté dans `index.css` |
+| Documentation CHANGELOG/DESIGN_SYSTEM/ARCHITECTURE/ROADMAP | ✅ Fait | Ce sprint |
+
+---
+
+## Sprint 5a — Responsive / QA global (à faire)
+
+| Item | Priorité | Notes |
+|---|---|---|
+| CategoryPage sidebar sticky offset | HAUTE | `sticky top-6` → `calc(var(--navbar-h, 68px) + 20px)` |
+| Nettoyage CSS `tc-list-row` orphelin | MOYENNE | Remplacé par `tcr-*`, anciens sélecteurs à supprimer |
+| Suppression dead code `ToolCard` default/list-row | MOYENNE | Variants dépréciés mais encore présents dans le fichier |
+| Audit breakpoints 1440→375px sur toutes les pages | HAUTE | 10 breakpoints, vérification visuelle |
+| GuidesPage filtres scroll horizontal ≤700px | MOYENNE | Vérifier que le scroll fonctionne sur iOS |
+| Accessibilité : focus rings, Escape menus, labels boutons | MOYENNE | |
+
+---
+
 ## Phase 3 — Cards / Listings ✅ Sprint 4
 
 | Item | Statut | Notes |

@@ -108,12 +108,16 @@ Toutes les nouvelles classes utilisent `@layer components` dans `index.css`.
 | `td-*` | ToolDetailPage (hero, tabs, body, sidebar, sections, footer) |
 | `tc-*` | ToolCard (3 variants : default, featured, list-row) |
 | `tce-*` | ToolCardEditorial (benchmark, non encore migré) |
+| `tcr-*` | ToolRowEditorial (liste catégorie) |
 | `gi-*` | GuidesPage (index éditorial) |
 | `ga-*` | GuideDetailPage (article éditorial) |
 | `eh-*` | EditorialHero (composant réutilisable) |
 | `es-*` | EditorialSection |
 | `ec-*` | EditorialCard |
 | `nav-*` | Navbar + mega-panel |
+| `sk-*` | StacksPage (index stacks) |
+| `sd-*` | StackDetailPage (détail stack) |
+| `cp-*` | ComparePage (page comparatif) |
 
 ---
 
@@ -214,6 +218,82 @@ Rendu : `<div class="ga-takeaway"><p class="ga-takeaway-label">…</p><p>…</p>
 | Body p | 19px | line-height 1.65 |
 | Body li | 18px | line-height 1.6 |
 | Blockquote | 22px | border-left 2px #222222 |
+
+---
+
+## ComparePage — template éditorial
+
+### Pattern : registre + fallback
+
+```typescript
+// Contenu éditorial hardcodé pour une paire spécifique
+const NOTION_VS_AIRTABLE: CompareEditorialContent = { ... }
+
+// Registre : slugPair → contenu éditorial
+const EDITORIAL_CONTENT: Record<string, CompareEditorialContent> = {
+  "notion-vs-airtable": NOTION_VS_AIRTABLE,
+}
+
+// Fallback générique généré depuis les données outil (pros/cons/pricing)
+function buildFallbackContent(toolA: Tool, toolB: Tool, lang: string): CompareEditorialContent { ... }
+```
+
+**Résolution au rendu** :
+1. Construire `slugPair = [slugA, slugB].sort().join("-vs-")` (canonique)
+2. Chercher dans `EDITORIAL_CONTENT[slugPair]`
+3. Si absent → `buildFallbackContent(toolA, toolB, lang)`
+
+### Interface `CompareEditorialContent`
+
+```typescript
+interface CompareEditorialContent {
+  framingPhrase: string;         // 21px, sous le H1
+  verdictCourt: string;          // 18px, résumé 1 phrase
+  verdictCols: { label, items }[3]; // 3 colonnes verdict rapide
+  tableRows: CompareTableRow[];  // 10 lignes tableau
+  profiles: CompareProfile[];    // 6 cartes profil
+  pricingNotes: { toolA, toolB } // notes prix avec **bold**
+  recommendation: string;        // bloc recommandation ToolTrim
+  limitsA: string[];             // limites outil A
+  limitsB: string[];             // limites outil B
+  alternatives: CompareAlt[];    // 5 alternatives
+  faq: CompareFaqItem[];         // 5 questions FAQ
+}
+```
+
+### Composants internes
+
+| Composant | Rôle |
+|---|---|
+| `PricingNote` | Rend `**texte**` en `<strong>` via regex split |
+| `FaqItem` | `<details>/<summary>` avec `useState` pour chevron rotatif |
+
+### Règle alternatives
+
+Si l'outil alternatif est trouvé dans la DB (`tools.find(t => t.slug === alt.slug)`) → `<Link to="/fr/tool/...">` cliquable.
+Sinon → `<div>` statique avec initiales en fallback logo.
+
+---
+
+## StacksPage / StackDetailPage
+
+### Données stacks
+
+- Source : `src/data/stacks.ts`
+- Type : `StackGuide` avec `persona`, `slug`, `monthlyBudget`, `riskSnippet`, `tools[]`
+- `STACK_PERSONAS`, `PROFILE_RECOMMENDED_STACKS` — mapping profil → stack recommandée
+- `StackFilterId` : `"all" | "creation" | "business" | "tech" | "ops" | "light" | "ia"`
+
+### StackDetailPage — ToolPanel (Sheet)
+
+Le composant `ToolPanel` (side sheet) est **intégralement conservé** dans `StackDetailPage`.
+Il utilise `Sheet` / `SheetContent` / `SheetClose` de shadcn/ui.
+Ne pas modifier ce composant lors de futures refontes éditoriales.
+
+### Fix hooks React (règle)
+
+Les `useMemo` doivent être déclarés **avant** tout `return` conditionnel (`if (!data) return ...`).
+Utiliser un guard `if (!data) return []` **à l'intérieur** du callback `useMemo` si la donnée peut être absente.
 
 ---
 
