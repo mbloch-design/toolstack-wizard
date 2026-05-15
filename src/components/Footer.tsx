@@ -1,19 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, useToolSummaries } from "@/hooks/useSupabaseData";
 import { stripLeadingEmoji } from "@/lib/text";
 import { useMemo } from "react";
-import { ArrowRight } from "lucide-react";
-import pictoLogo from "@/assets/picto-logo.svg";
 
 const Footer = () => {
   const { t, prefix } = useLang();
   const { categories } = useCategories();
   const { tools } = useToolSummaries();
-  const location = useLocation();
-
-  /* Les pages outils ont leurs propres CTAs éditoriaux — ne pas doubler */
-  const isToolPage = /\/tool\/[^/]+/.test(location.pathname);
 
   const topCategories = useMemo(() => {
     return categories
@@ -26,89 +20,6 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border" style={{ background: "hsl(var(--card))" }}>
-
-      {/* ── Brand statement — masqué sur les pages outils (CTA contextuel déjà présent) ── */}
-      {!isToolPage && (
-        <div className="relative overflow-hidden">
-          {/* Radial glow — primary tint bottom-left */}
-          <div
-            className="pointer-events-none absolute inset-0"
-            aria-hidden
-            style={{
-              background: "radial-gradient(ellipse 60% 80% at 0% 100%, hsl(var(--primary) / 0.07) 0%, transparent 70%)",
-            }}
-          />
-          <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-12">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-
-              {/* Big wordmark */}
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={pictoLogo}
-                    alt=""
-                    aria-hidden
-                    style={{
-                      width: "clamp(2.4rem, 5vw, 4.2rem)",
-                      height: "clamp(2.4rem, 5vw, 4.2rem)",
-                      opacity: 0.55,
-                    }}
-                  />
-                  <span
-                    className="font-display select-none"
-                    style={{
-                      fontSize: "clamp(2.8rem, 6vw, 5rem)",
-                      fontWeight: 800,
-                      letterSpacing: "-0.04em",
-                      lineHeight: 1,
-                    }}
-                  >
-                    <span className="text-foreground">Tool</span><span className="text-primary">Trim</span>
-                  </span>
-                </div>
-                <p
-                  className="font-display"
-                  style={{
-                    fontSize: "clamp(1rem, 1.8vw, 1.3rem)",
-                    fontWeight: 500,
-                    letterSpacing: "-0.02em",
-                    color: "hsl(var(--muted-foreground))",
-                    maxWidth: "420px",
-                  }}
-                >
-                  {t("Votre stack coûte trop cher.", "Your stack costs too much.")}{" "}
-                  <span style={{ color: "hsl(var(--foreground) / 0.35)" }}>
-                    {t("On le prouve en 3 minutes.", "We prove it in 3 minutes.")}
-                  </span>
-                </p>
-              </div>
-
-              {/* CTA */}
-              <div className="shrink-0 mb-1">
-                <Link
-                  to={`${prefix}/selector`}
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors duration-150 hover:bg-primary/90"
-                >
-                  {t("Lancer mon analyse", "Start my analysis")}
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-                <p
-                  className="mt-2 text-center"
-                  style={{
-                    fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.6rem",
-                    letterSpacing: "0.07em",
-                    textTransform: "uppercase",
-                    color: "hsl(var(--muted-foreground) / 0.4)",
-                  }}
-                >
-                  {t("Gratuit · Sans inscription", "Free · No signup")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* ── Link columns ── */}
       <div className="border-t border-border" style={{ background: "hsl(var(--background))" }}>

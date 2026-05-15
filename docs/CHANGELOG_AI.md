@@ -2,6 +2,30 @@
 
 ---
 
+## 2026-05-15 — Correction footer : suppression bloc marketing global
+
+**Fichiers modifiés**
+- `src/components/Footer.tsx`
+
+### Supprimé
+Bloc marketing "brand statement" du footer global :
+- grand logo picto ToolTrim
+- wordmark ToolTrim (clamp 2.8rem → 5rem)
+- texte "Votre stack coûte trop cher. On le prouve en 3 minutes."
+- bouton bleu "Lancer mon analyse"
+- mention "Gratuit · Sans inscription"
+- radial glow background
+
+### Conservé
+- Colonnes de navigation (Produit / Catégories / Outils / Entreprise / Légal)
+- Barre de copyright et liens légaux
+
+### Nettoyage imports
+Supprimés de `Footer.tsx` car inutilisés : `useLocation`, `ArrowRight`, `pictoLogo`.
+La logique conditionnelle `isToolPage` a également été retirée (plus nécessaire).
+
+---
+
 ## 2026-05-15 — Sprint 2 correction : Suppression CTA dupliqués
 
 **Fichiers modifiés**
