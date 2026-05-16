@@ -899,3 +899,14 @@ Notion + Trello   Doublon possible   ◌
 - Logo image: max 17px, object-fit contain.
 - Fallback: first letter inside the same pill.
 - Text: sober grey for tool names, dark bold for decision.
+
+## Homepage rhythm — section separators
+
+La homepage doit garder un flux éditorial continu. Les sections se distinguent par l'espacement, la grille commune, les fonds sobres et la hiérarchie typographique, pas par des lignes pleine largeur répétées.
+
+**Règles :**
+- Pas de `border-top` / `border-bottom` pleine largeur entre la plupart des sections homepage.
+- Les bordures restent autorisées à l'intérieur des composants : cartes, lignes de diagnostic, tables, panels, ticker.
+- Le ticker conserve ses bordures fines, car elles font partie de son composant.
+- Les autres pages peuvent continuer à utiliser `es-section` avec bordures si leur structure le demande.
+- Les overrides de fluidité homepage doivent être scopés sous `.home-page`.

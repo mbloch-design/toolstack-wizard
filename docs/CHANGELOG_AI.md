@@ -1388,3 +1388,21 @@ Nettoyer la home après les itérations successives pour retrouver une narration
 - La FAQ utilise le même système de grille que les autres sections.
 - Le CTA final revient à la promesse centrale : auditer la stack depuis le profil, le budget et les usages réels.
 - La meta description de la home intègre désormais le TJM dans les critères de recommandation.
+
+---
+
+## 2026-05-17 — Sprint 26 : Flux visuel homepage
+
+### Objectif
+Retirer les séparateurs pleine largeur trop présents sur la homepage pour retrouver un rythme plus fluide, premium et éditorial.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — ajout d'une classe racine `home-page` pour limiter les ajustements à la home.
+- `src/index.css` — override scoped supprimant les `border-top` / `border-bottom` des wrappers de sections homepage, sans toucher aux bordures internes.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — règle de rythme homepage documentée.
+
+### Résultat
+- Les coupes horizontales entre sections sont supprimées sur la home.
+- Les bordures du ticker, des cartes, des lignes de diagnostic et des panels restent intactes.
+- La séparation repose davantage sur l'espacement, les fonds et la grille commune.

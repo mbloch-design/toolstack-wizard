@@ -9860,3 +9860,18 @@
     margin-top: 18px;
   }
 }
+
+/* Sprint 26 — homepage flow: section rhythm without full-width separators */
+@layer components {
+  .home-page .es-section,
+  .home-page .es-section--band,
+  .home-page .home-actions-section,
+  .home-page .home-noise-section,
+  .home-page .hp-cuts,
+  .home-page .hp-methode,
+  .home-page .home-profile-section,
+  .home-page .home-case-section {
+    border-top: none;
+    border-bottom: none;
+  }
+}

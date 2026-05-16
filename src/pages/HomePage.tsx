@@ -202,7 +202,7 @@ const HomePage = () => {
   }, [lang, stats.total, faq]);
 
   return (
-    <div>
+    <div className="home-page">
       {/* 1. Hero — repositionné autour de l'audit de stack */}
       <HeroSection />
 
