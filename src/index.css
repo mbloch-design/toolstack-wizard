@@ -9131,3 +9131,99 @@
     justify-content: center;
   }
 }
+
+/* Sprint 16 — merged diagnostic and result section */
+@layer components {
+  .hp-cuts.es-section {
+    padding-top: 104px;
+    padding-bottom: 112px;
+  }
+
+  .hp-cuts-heading {
+    font-size: clamp(48px, 5vw, 84px);
+    line-height: 0.96;
+    max-width: 620px;
+  }
+
+  .hp-cuts-intro {
+    max-width: 520px;
+  }
+
+  .hp-result-block {
+    margin-top: 72px;
+    padding-top: 48px;
+    border-top: 1px solid #DADAD4;
+  }
+
+  .hp-result-header {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(48px, 7vw, 96px);
+    align-items: end;
+    margin-bottom: 36px;
+  }
+
+  .hp-result-header .hp-cuts-label {
+    grid-column: 1 / -1;
+    margin-bottom: -20px;
+  }
+
+  .hp-result-title {
+    font-size: clamp(36px, 4vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+    color: #222222;
+    margin: 0;
+  }
+
+  .hp-result-text {
+    font-size: 17px;
+    line-height: 1.45;
+    color: #6F6F68;
+    max-width: 620px;
+    margin: 0;
+  }
+
+  .hp-result-block .hp-aa-inner {
+    gap: 32px;
+  }
+
+  .hp-result-block .hp-aa-saving {
+    margin-top: 20px;
+    border-top: 0;
+    background: #F8F8F4;
+    border: 1px solid #DADAD4;
+    border-radius: 10px;
+  }
+
+  .hp-cuts .hp-result-cta {
+    margin: 32px auto 0;
+    width: max-content;
+  }
+}
+
+@media (max-width: 899px) {
+  .hp-result-block {
+    margin-top: 64px;
+    padding-top: 40px;
+  }
+
+  .hp-result-header {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .hp-result-header .hp-cuts-label {
+    margin-bottom: 0;
+  }
+
+  .hp-result-block .hp-aa-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-cuts .hp-result-cta {
+    margin-left: 0;
+  }
+}

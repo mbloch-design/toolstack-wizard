@@ -1197,3 +1197,37 @@ Transformer la section `Ce que ToolTrim coupe` en bloc de diagnostic plus lisibl
 - Les puces génériques disparaissent.
 - La section explique mieux ce que ToolTrim détecte avant l'audit.
 - Les exemples deviennent un élément de preuve, pas une note secondaire.
+
+---
+
+## 2026-05-17 — Sprint 15 : Suppression section visuelle Trois façons
+
+### Objectif
+Retirer de la home la section doublon avec chips statistiques et cartes visuelles `Couper / doublons / downgrade`, devenue trop lourde par rapport à la nouvelle direction éditoriale.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — suppression du rendu `StatsSection` et de son import.
+- `src/components/home/StatsSection.tsx` — composant supprimé car il n'était plus référencé ailleurs.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- La home passe directement de `BusinessObjectivesSection` à `PersonasSection`.
+- Les 3 cartes principales `AUDIT / STACK / COMPARER` sont conservées.
+- CSS `home-actions-*` / `hac-*` conservé car partagé avec les cartes principales.
+
+---
+
+## 2026-05-17 — Sprint 16 : Fusion diagnostic et résultat
+
+### Objectif
+Fusionner la section `Ce qui pèse` et la section `Résultat concret` pour raconter une seule séquence : diagnostic → décision → résultat.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — intégration des tableaux avant/après dans `WhatWeCutSection`, suppression du rendu et du composant `AvantApresSection`.
+- `src/index.css` — styles `hp-result-*`, spacing de section unifié et CTA unique.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Une seule section explique ce que ToolTrim révèle et montre un exemple de résultat.
+- Le wording précise que l'économie est un exemple, pas une promesse.
+- Le CTA `Auditer ma stack` n'apparaît plus qu'une fois dans ce bloc.
