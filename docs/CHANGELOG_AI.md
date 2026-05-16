@@ -1231,3 +1231,22 @@ Fusionner la section `Ce qui pèse` et la section `Résultat concret` pour racon
 - Une seule section explique ce que ToolTrim révèle et montre un exemple de résultat.
 - Le wording précise que l'économie est un exemple, pas une promesse.
 - Le CTA `Auditer ma stack` n'apparaît plus qu'une fois dans ce bloc.
+
+---
+
+## 2026-05-17 — Sprint 17 : Suppression position/process redondants
+
+### Objectif
+Alléger la home en supprimant deux blocs devenus redondants avec la nouvelle direction : l'ancien bloc position `Pas un annuaire` et le bloc sombre `Processus`.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — suppression des rendus `HowItWorks` et `DiffTable` et de leurs imports lazy.
+- `src/components/home/HowItWorks.tsx` — composant supprimé car non référencé ailleurs.
+- `src/components/home/DiffTable.tsx` — composant supprimé car non référencé ailleurs.
+- `src/index.css` — suppression des styles exclusifs `home-position-*` / `home-decision-*` du bloc `Pas un annuaire`.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Les sections `NOTRE POSITION` et `Processus` ne sont plus rendues sur la home.
+- La home enchaîne directement `PersonasSection` vers `TestimonialsSection`.
+- Les styles du ticker `home-decision-ticker-*` sont conservés car ils appartiennent à la barre animée.

@@ -14,9 +14,7 @@ import FaqBlock from "@/components/FaqBlock";
 import EditorialSection from "@/components/EditorialSection";
 import GuideCardEditorial from "@/components/GuideCardEditorial";
 
-const HowItWorks = lazy(() => import("@/components/home/HowItWorks"));
 const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSection"));
-const DiffTable = lazy(() => import("@/components/home/DiffTable"));
 const FinalCTA = lazy(() => import("@/components/home/FinalCTA"));
 
 const FAQ_FR = [
@@ -181,16 +179,10 @@ const HomePage = () => {
       {/* 8. Pour quel profil */}
       <PersonasSection />
 
-      {/* 9. How it works */}
-      <Suspense fallback={null}><HowItWorks /></Suspense>
-
-      {/* 10. Différences vs annuaires classiques */}
-      <Suspense fallback={null}><DiffTable toolCount={stats.total} /></Suspense>
-
-      {/* 11. Témoignages */}
+      {/* 9. Témoignages */}
       <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
-      {/* 12. Guides */}
+      {/* 10. Guides */}
       {featuredPosts.length > 0 && (
         <EditorialSection
           eyebrow={t("Guides", "Guides")}
