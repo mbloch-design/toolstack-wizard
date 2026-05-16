@@ -789,30 +789,30 @@ function MethodeSection() {
   const steps = [
     {
       num: "01",
-      titleFr: "On analyse ton usage",
-      titleEn: "We analyse your usage",
-      descFr: "Tu listes tes outils. On regarde ce que tu utilises vraiment — pas ce que tu as payé.",
-      descEn: "You list your tools. We look at what you actually use — not what you've paid for.",
-      exampleFr: "Fréquence d'usage, rôle dans la stack, doublons potentiels.",
-      exampleEn: "Usage frequency, role in your stack, potential duplicates.",
+      titleFr: "Tu décris ta réalité",
+      titleEn: "You describe your reality",
+      descFr: "Ton métier, ton niveau, ton TJM, les outils que tu paies déjà et la façon dont tu travailles.",
+      descEn: "Your job, your level, your day rate, the tools you already pay for and how you work.",
+      exampleFr: "Freelance · TJM 500 € · 8 outils actifs · 2 outils peu utilisés",
+      exampleEn: "Freelance · €500 day rate · 8 active tools · 2 rarely used tools",
     },
     {
       num: "02",
-      titleFr: "On détecte les doublons",
-      titleEn: "We detect duplicates",
-      descFr: "Deux outils qui font la même chose, c'est un doublon. ToolTrim les signale sans ambiguïté.",
-      descEn: "Two tools doing the same thing is a duplicate. ToolTrim flags them clearly.",
-      exampleFr: "Notion + Trello = doublon. Loom + Slack video = doublon.",
-      exampleEn: "Notion + Trello = duplicate. Loom + Slack video = duplicate.",
+      titleFr: "ToolTrim lit ta stack entière",
+      titleEn: "ToolTrim reads your whole stack",
+      descFr: "Un outil n’est jamais jugé seul. Il est comparé à ton usage, ton budget et aux autres outils de ta stack.",
+      descEn: "A tool is never judged alone. It is compared to your usage, your budget and the other tools in your stack.",
+      exampleFr: "Notion + Trello + Asana → doublon probable",
+      exampleEn: "Notion + Trello + Asana → likely duplicate",
     },
     {
       num: "03",
-      titleFr: "On te donne une décision",
-      titleEn: "We give you a decision",
-      descFr: "Garder, couper ou remplacer — avec une raison précise, pas une liste de fonctionnalités.",
-      descEn: "Keep, cut or replace — with a specific reason, not a feature list.",
-      exampleFr: "\"Zapier Pro → Make à 9€. Même usage, 40€ économisés.\"",
-      exampleEn: "\"Zapier Pro → Make at €9. Same use, €40 saved.\"",
+      titleFr: "Tu repars avec une décision",
+      titleEn: "You leave with a decision",
+      descFr: "Garder, couper, remplacer ou challenger — avec une raison claire et un budget cible.",
+      descEn: "Keep, cut, replace or challenge — with a clear reason and a target budget.",
+      exampleFr: "Zapier Pro → challenger si moins de 5 automatisations actives",
+      exampleEn: "Zapier Pro → challenge if fewer than 5 active automations",
     },
   ];
 
@@ -824,11 +824,20 @@ function MethodeSection() {
           <div>
             <p className="hp-cuts-label">{t("La méthode", "The method")}</p>
             <h2 style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", fontWeight: 600, color: "#222222", letterSpacing: "-0.04em", lineHeight: 1.15 }}>
-              {t("3 étapes. Pas de jargon.", "3 steps. No jargon.")}
+              {t(
+                <>On part de ton contexte.<br />Pas d’un classement générique.</>,
+                <>We start from your context.<br />Not from a generic ranking.</>,
+              )}
             </h2>
+            <p className="hp-methode-subtitle">
+              {t(
+                "Profil, niveau, budget, TJM, usages réels : chaque signal compte avant de recommander un outil.",
+                "Profile, level, budget, day rate, real usage: every signal matters before recommending a tool.",
+              )}
+            </p>
           </div>
           <Link to={`${prefix}/selector`} className="hp-cuts-cta" style={{ marginTop: 0, flexShrink: 0 }}>
-            {t("Commencer l'audit", "Start the audit")}
+            {t("Commencer l’audit", "Start the audit")}
             <ArrowRight style={{ width: 15, height: 15 }} />
           </Link>
         </div>

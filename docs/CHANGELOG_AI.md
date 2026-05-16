@@ -1284,3 +1284,20 @@ Réécrire la section diagnostic/résultat pour la rendre plus calme, plus lisib
 - Le bloc ne contient plus de tableaux avant/après.
 - Les cinq signaux sont plus courts et plus faciles à scanner.
 - Le résultat chiffré reste présent, mais comme exemple indicatif dans une carte légère.
+
+---
+
+## 2026-05-17 — Sprint 20 : Méthode orientée contexte
+
+### Objectif
+Rendre la section méthode moins générique en montrant que ToolTrim part du contexte réel avant toute recommandation.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — nouveau titre `On part de ton contexte`, ajout du sous-texte, réécriture des trois étapes et exemples.
+- `src/index.css` — style du sous-texte méthode et légère remontée de visibilité des numéros `01 / 02 / 03`.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- La méthode met en avant profil, niveau, budget, TJM et usages réels.
+- Les étapes évitent le vocabulaire trop générique ou technique.
+- La grille existante reste inchangée visuellement.

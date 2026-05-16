@@ -7392,6 +7392,15 @@
     margin-top: 48px;
   }
 
+  .hp-methode-subtitle {
+    font-family: var(--font-ui);
+    font-size: 18px;
+    line-height: 1.45;
+    color: #6F6F68;
+    max-width: 680px;
+    margin: 18px 0 0;
+  }
+
   @media (max-width: 767px) {
     .hp-methode-grid {
       grid-template-columns: 1fr;
@@ -7417,7 +7426,7 @@
     font-family: var(--font-brand);
     font-size: clamp(2rem, 4vw, 3.25rem);
     font-weight: 600;
-    color: #EDEDE8;
+    color: #E2E2DC;
     letter-spacing: -0.06em;
     line-height: 1;
   }
