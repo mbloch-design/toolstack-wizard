@@ -8152,3 +8152,163 @@
   }
 
 }
+
+/* ─────────────────────────────────────────────
+   SPRINT 7 — Grille globale homepage
+   Alignement horizontal · H1 responsive · Spacing
+   Règle : toutes les sections partagent le même axe visuel.
+───────────────────────────────────────────── */
+@layer components {
+
+  /* ── 1. Container : aligner es-container sur eh-container ── */
+  /* es-container était 1440px, eh-container est 1280px → même axe */
+  .es-container {
+    max-width: 1280px;
+  }
+
+  /* ── 2. Hero 2-col : grille contrôlée et padding clamp ── */
+  .hp-hero-2col {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
+    gap: clamp(3.5rem, 6vw, 6rem);          /* 56px → 96px */
+    padding-top:    clamp(4.5rem, 7vw, 7rem);  /* 72px → 112px */
+    padding-bottom: clamp(4rem, 6vw, 6rem);    /* 64px → 96px */
+  }
+
+  /* Collapse tablet — reprend le 1100px du bloc Sprint 4 */
+  @media (max-width: 1100px) {
+    .hp-hero-2col {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding-top:    clamp(2.5rem, 8vw, 3.75rem);
+      padding-bottom: clamp(2rem,   6vw, 3rem);
+    }
+  }
+
+  @media (max-width: 639px) {
+    .hp-hero-2col {
+      padding-top:    clamp(2rem, 8vw, 3rem);
+      padding-bottom: clamp(1.75rem, 6vw, 2.5rem);
+    }
+  }
+
+  /* ── 3. Preview card droite ── */
+  .hp-hero-right {
+    max-width: 440px;
+    width: 100%;
+    align-self: center;
+    justify-self: end;
+  }
+
+  /* Single-col : réaligner à gauche */
+  @media (max-width: 1100px) {
+    .hp-hero-right {
+      justify-self: start;
+      max-width: 480px;
+    }
+  }
+
+  /* ── 4. H1 hero home — override scoped ── */
+  .hp-hero-left .eh-title {
+    font-size: clamp(4rem, 6.5vw, 7rem);  /* 64px → 112px */
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+    max-width: 720px;
+  }
+
+  /* Cap sur très grands écrans ≥ 1600px → 108px max */
+  @media (min-width: 1600px) {
+    .hp-hero-left .eh-title {
+      font-size: clamp(4rem, 6.5vw, 6.75rem);
+    }
+  }
+
+  @media (max-width: 639px) {
+    .hp-hero-left .eh-title {
+      font-size: clamp(2.75rem, 11vw, 3.5rem);
+      letter-spacing: -0.05em;
+      max-width: 100%;
+    }
+  }
+
+  /* ── 5. H2 section "Commence par la bonne question" ── */
+  .home-actions-title {
+    font-size: clamp(2.5rem, 4vw, 4rem);  /* 40px → 64px */
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    max-width: 720px;
+  }
+
+  /* ── 6. Section actions : padding tokens corrects ── */
+  .home-actions-section {
+    padding: var(--space-3xl) 0 var(--space-4xl);  /* 64px 0 96px */
+  }
+
+  @media (max-width: 767px) {
+    .home-actions-section {
+      padding: var(--space-2xl) 0 var(--space-3xl);  /* 48px 0 64px */
+    }
+  }
+
+  /* ── 7. Cards : hauteur cohérente ── */
+  .home-actions-grid {
+    align-items: stretch;
+  }
+
+  .hac-card {
+    height: 100%;
+  }
+
+}
+
+/* ─────────────────────────────────────────────
+   SPRINT 7b — Correction H1 hero et padding
+   Override Sprint 7 : font-size trop grand.
+   5 <br /> forcés → la taille contrôle tout.
+───────────────────────────────────────────── */
+@layer components {
+
+  /* H1 hero : 44px → 68px (spectaculaire mais contenu) */
+  .hp-hero-left .eh-title {
+    font-size: clamp(2.75rem, 4.5vw, 4.25rem);
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+    max-width: 640px;
+  }
+
+  /* Reset du cap 1600px — le clamp gère déjà */
+  @media (min-width: 1600px) {
+    .hp-hero-left .eh-title {
+      font-size: clamp(2.75rem, 4.5vw, 4.5rem);
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 639px) {
+    .hp-hero-left .eh-title {
+      font-size: clamp(2rem, 9vw, 2.75rem);
+      letter-spacing: -0.05em;
+      max-width: 100%;
+    }
+  }
+
+  /* Hero padding : moins agressif */
+  .hp-hero-2col {
+    padding-top:    clamp(3rem, 4.5vw, 4.5rem);   /* 48px → 72px */
+    padding-bottom: clamp(2.5rem, 4vw, 4rem);      /* 40px → 64px */
+  }
+
+  @media (max-width: 1100px) {
+    .hp-hero-2col {
+      padding-top:    clamp(2.5rem, 6vw, 3.5rem);
+      padding-bottom: clamp(2rem,   5vw, 3rem);
+    }
+  }
+
+  @media (max-width: 639px) {
+    .hp-hero-2col {
+      padding-top:    clamp(2rem, 7vw, 2.75rem);
+      padding-bottom: clamp(1.75rem, 5vw, 2.25rem);
+    }
+  }
+
+}
