@@ -7707,3 +7707,220 @@
   .hp-ticker .text-cancel      { color: #7A7A72 !important; }
 
 }
+
+/* ─────────────────────────────────────────────
+   HOME ACTION CARDS (hac-*) Sprint 4d
+   3 cards contour noir · header tableau
+   logos outils · scénario · capsule verdict
+───────────────────────────────────────────── */
+@layer components {
+
+  /* ── Section ─────────────────────────────── */
+  .hac-section {
+    background: #F8F8F4;
+    border-top: 1px solid #DADAD4;
+    border-bottom: 1px solid #DADAD4;
+    padding: 40px 0;
+  }
+
+  /* ── Grid 3 cols ─────────────────────────── */
+  .hac-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 767px) {
+    .hac-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+
+  /* ── Card ────────────────────────────────── */
+  .hac-card {
+    background: #F8F8F4;
+    border: 1.5px solid #222222;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: background 160ms ease-out, transform 160ms ease-out;
+    cursor: pointer;
+  }
+
+  .hac-card:hover {
+    background: #FFFFFF;
+    transform: translateY(-1px);
+  }
+
+  /* ── Header — style tableau ──────────────── */
+  .hac-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    border-bottom: 1.5px solid #222222;
+    padding: 12px 16px;
+    background: inherit;
+  }
+
+  .hac-header-label,
+  .hac-header-num {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #222222;
+    line-height: 1;
+  }
+
+  /* ── Body ────────────────────────────────── */
+  .hac-body {
+    padding: 20px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .hac-title {
+    font-family: var(--font-brand);
+    font-size: clamp(1.5rem, 2.2vw, 1.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    color: #222222;
+    margin: 0 0 12px;
+  }
+
+  .hac-desc {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.45;
+    color: #6F6F68;
+    max-width: 340px;
+    margin: 0;
+  }
+
+  /* ── Scénario block ──────────────────────── */
+  .hac-scenario {
+    border-top: 1px solid #DADAD4;
+    padding-top: 14px;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hac-scenario-label {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  /* Logo pills row */
+  .hac-logos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .hac-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .hac-logo img {
+    max-width: 18px;
+    max-height: 18px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .hac-logo-letter {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    color: #6F6F68;
+    line-height: 1;
+  }
+
+  .hac-vs-sep {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    flex-shrink: 0;
+  }
+
+  .hac-scenario-text {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.4;
+    color: #6F6F68;
+    margin: 8px 0 0;
+  }
+
+  /* Verdict capsule */
+  .hac-capsule {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding: 0 10px;
+    border: 1px solid #222222;
+    border-radius: 999px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: #222222;
+    background: transparent;
+    width: fit-content;
+    margin-top: 12px;
+    flex-shrink: 0;
+  }
+
+  /* ── CTA ─────────────────────────────────── */
+  .hac-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 700;
+    color: #222222;
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 18px;
+  }
+
+  .hac-card:hover .hac-cta {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .hac-cta-arrow {
+    transition: transform 160ms ease-out;
+    flex-shrink: 0;
+  }
+
+  .hac-card:hover .hac-cta-arrow {
+    transform: translateX(3px);
+  }
+
+}

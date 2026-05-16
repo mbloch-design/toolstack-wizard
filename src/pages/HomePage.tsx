@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect, useMemo, lazy, Suspense, useRef } from "react";
+import { useEffect, useMemo, lazy, Suspense, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { STACKS } from "@/data/stacks";
@@ -251,73 +251,136 @@ const HomePage = () => {
 };
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   EntryCardsSection — 3 modules côte à côte, sobres et actionnables
+   HacLogo — favicon CDN + lettre fallback (pour HomeActionCards)
+───────────────────────────────────────────────────────────────────────────── */
+function HacLogo({ name, domain }: { name: string; domain: string }) {
+  const [err, setErr] = useState(false);
+  const src = `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${domain}&size=32`;
+  return (
+    <span className="hac-logo">
+      {!err ? (
+        <img src={src} alt="" aria-hidden="true" onError={() => setErr(true)} />
+      ) : (
+        <span className="hac-logo-letter">{name[0].toUpperCase()}</span>
+      )}
+    </span>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   EntryCardsSection — 3 cards contour noir · header tableau · logos · verdict
 ───────────────────────────────────────────────────────────────────────────── */
 function EntryCardsSection() {
   const { lang, t, prefix } = useLang();
   const isFr = lang === "fr";
 
-  const entries = [
-    {
-      number: "01",
-      titleFr: "Auditer ma stack",
-      titleEn: "Audit my stack",
-      descFr: "Repère les outils utiles, les doublons et les abonnements que tu peux couper.",
-      descEn: "Spot useful tools, duplicates and subscriptions you can cut.",
-      exFr: "Loom + Zapier + Trello → 2 doublons détectés",
-      exEn: "Loom + Zapier + Trello → 2 duplicates found",
-      ctaFr: "Lancer l'audit",
-      ctaEn: "Start audit",
-      href: `${prefix}/selector`,
-    },
-    {
-      number: "02",
-      titleFr: "Trouver ma stack",
-      titleEn: "Find my stack",
-      descFr: "Pars de ton métier, ton budget et ton niveau pour construire un setup simple.",
-      descEn: "Start from your job, budget and level to build a lean setup.",
-      exFr: "Consultant B2B → stack à 50 €/mois",
-      exEn: "B2B consultant → stack at €50/mo",
-      ctaFr: "Voir les stacks",
-      ctaEn: "Browse stacks",
-      href: `${prefix}/stacks`,
-    },
-    {
-      number: "03",
-      titleFr: "Comparer deux outils",
-      titleEn: "Compare two tools",
-      descFr: "Décide entre deux solutions selon ton usage réel, pas selon une liste de fonctionnalités.",
-      descEn: "Choose between two tools based on your actual use, not a feature list.",
-      exFr: "Notion vs Airtable → docs ou base de données ?",
-      exEn: "Notion vs Airtable → docs or database?",
-      ctaFr: "Comparer maintenant",
-      ctaEn: "Compare now",
-      href: `${prefix}/comparatifs`,
-    },
-  ];
-
   return (
-    <section className="hp-entries">
-      <div
-        className="mx-auto"
-        style={{ maxWidth: "var(--layout-content, 1280px)", padding: "0 var(--layout-gutter, 24px)" }}
-      >
-        <div className="hp-entries-grid">
-          {entries.map((entry) => (
-            <Link key={entry.number} to={entry.href} className="hp-entry">
-              <span className="hp-entry-number">{entry.number}</span>
-              <span className="hp-entry-title">{t(entry.titleFr, entry.titleEn)}</span>
-              <p className="hp-entry-desc">{t(entry.descFr, entry.descEn)}</p>
-              <p className="hp-entry-example">
-                <span className="hp-entry-example-lbl">{isFr ? "Ex. : " : "E.g. "}</span>
-                {isFr ? entry.exFr : entry.exEn}
+    <section className="hac-section">
+      <div className="es-container">
+        <div className="hac-grid">
+
+          {/* ── Card 1 — Audit ── */}
+          <Link to={`${prefix}/selector`} className="hac-card">
+            <div className="hac-header">
+              <span className="hac-header-label">{t("Audit", "Audit")}</span>
+              <span className="hac-header-num">01</span>
+            </div>
+            <div className="hac-body">
+              <h2 className="hac-title">{t("Auditer ma stack", "Audit my stack")}</h2>
+              <p className="hac-desc">
+                {t(
+                  "Repère les outils utiles, les doublons et les abonnements que tu peux couper.",
+                  "Spot useful tools, duplicates and subscriptions you can cut.",
+                )}
               </p>
-              <span className="hp-entry-cta">
-                {t(entry.ctaFr, entry.ctaEn)}
-                <ArrowRight className="hp-entry-cta-arrow" style={{ width: 15, height: 15 }} />
+              <div className="hac-scenario">
+                <span className="hac-scenario-label">{t("Exemple", "Example")}</span>
+                <div className="hac-logos">
+                  <HacLogo name="Loom" domain="loom.com" />
+                  <HacLogo name="Zapier" domain="zapier.com" />
+                  <HacLogo name="Trello" domain="trello.com" />
+                </div>
+                <p className="hac-scenario-text">
+                  {t("2 doublons détectés", "2 duplicates found")}
+                </p>
+                <span className="hac-capsule">{t("À challenger", "Challenge")}</span>
+              </div>
+              <span className="hac-cta">
+                {t("Lancer l'audit", "Start audit")}
+                <ArrowRight className="hac-cta-arrow" style={{ width: 15, height: 15 }} />
               </span>
-            </Link>
-          ))}
+            </div>
+          </Link>
+
+          {/* ── Card 2 — Stack ── */}
+          <Link to={`${prefix}/stacks`} className="hac-card">
+            <div className="hac-header">
+              <span className="hac-header-label">{t("Stack", "Stack")}</span>
+              <span className="hac-header-num">02</span>
+            </div>
+            <div className="hac-body">
+              <h2 className="hac-title">{t("Trouver ma stack", "Find my stack")}</h2>
+              <p className="hac-desc">
+                {t(
+                  "Pars de ton métier, ton budget et ton niveau pour construire un setup simple.",
+                  "Start from your job, budget and level to build a lean setup.",
+                )}
+              </p>
+              <div className="hac-scenario">
+                <span className="hac-scenario-label">{t("Exemple", "Example")}</span>
+                <div className="hac-logos">
+                  <HacLogo name="Notion" domain="notion.so" />
+                  <HacLogo name="Tally" domain="tally.so" />
+                  <HacLogo name="Pennylane" domain="pennylane.com" />
+                </div>
+                <p className="hac-scenario-text">
+                  {isFr ? "Consultant B2B · budget cible 50 €/mois" : "B2B consultant · target budget €50/mo"}
+                </p>
+                <span className="hac-capsule">{t("Stack légère", "Lean stack")}</span>
+              </div>
+              <span className="hac-cta">
+                {t("Voir les stacks", "Browse stacks")}
+                <ArrowRight className="hac-cta-arrow" style={{ width: 15, height: 15 }} />
+              </span>
+            </div>
+          </Link>
+
+          {/* ── Card 3 — Comparer ── */}
+          <Link to={`${prefix}/comparatifs`} className="hac-card">
+            <div className="hac-header">
+              <span className="hac-header-label">{t("Comparer", "Compare")}</span>
+              <span className="hac-header-num">03</span>
+            </div>
+            <div className="hac-body">
+              <h2 className="hac-title">{t("Comparer deux outils", "Compare two tools")}</h2>
+              <p className="hac-desc">
+                {t(
+                  "Décide entre deux solutions selon ton usage réel, pas selon une liste de fonctionnalités.",
+                  "Choose between two tools based on your actual use, not a feature list.",
+                )}
+              </p>
+              <div className="hac-scenario">
+                <span className="hac-scenario-label">{t("Exemple", "Example")}</span>
+                <div className="hac-logos">
+                  <HacLogo name="Notion" domain="notion.so" />
+                  <span className="hac-vs-sep">VS</span>
+                  <HacLogo name="Airtable" domain="airtable.com" />
+                </div>
+                <p className="hac-scenario-text">
+                  {t(
+                    "Documentation souple ou base de données structurée ?",
+                    "Flexible docs or structured database?",
+                  )}
+                </p>
+                <span className="hac-capsule">{t("Voir le duel", "See the duel")}</span>
+              </div>
+              <span className="hac-cta">
+                {t("Comparer maintenant", "Compare now")}
+                <ArrowRight className="hac-cta-arrow" style={{ width: 15, height: 15 }} />
+              </span>
+            </div>
+          </Link>
+
         </div>
       </div>
     </section>
