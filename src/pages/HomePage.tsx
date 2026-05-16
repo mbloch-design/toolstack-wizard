@@ -3,9 +3,7 @@ import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense, useRef } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
-import { getCategoryIcon } from "@/lib/categoryIcons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { stripLeadingEmoji } from "@/lib/text";
 import { STACKS } from "@/data/stacks";
 
 import HeroSection from "@/components/home/HeroSection";
@@ -22,18 +20,18 @@ const DiffTable = lazy(() => import("@/components/home/DiffTable"));
 const FinalCTA = lazy(() => import("@/components/home/FinalCTA"));
 
 const FAQ_FR = [
-  { q: "Comment ToolTrim analyse-t-il ma stack ?", a: "ToolTrim compare vos outils à une base d'outils vérifiés. Il détecte les doublons, les outils dormants et les remplacements possibles, avec des prix vérifiés sur les pages officielles." },
-  { q: "Les recommandations sont-elles vraiment fiables ?", a: "ToolTrim ne prescrit que lorsque les données sont vérifiées. Chaque prix est issu de la page officielle de l'outil. Les recommandations incertaines sont signalées explicitement." },
-  { q: "ToolTrim est-il gratuit ?", a: "Oui, l'analyse de base est entièrement gratuite." },
-  { q: "Combien de temps prend l'analyse ?", a: "Moins de 3 minutes. Vous répondez à quelques questions sur votre profil, sélectionnez vos outils, et recevez instantanément vos recommandations personnalisées." },
-  { q: "ToolTrim est-il affilié aux outils recommandés ?", a: "Non. ToolTrim est 100% indépendant. Aucun accord d'affiliation ne biaise les recommandations. Les résultats sont basés uniquement sur votre profil et les données objectives." },
+  { q: "Comment fonctionne l'audit de stack ?", a: "Tu répondes à quelques questions sur ton profil et tu listes tes outils actuels. ToolTrim détecte les doublons, les outils dormants et les abonnements que tu peux couper ou réduire, avec des prix vérifiés sur les pages officielles." },
+  { q: "Les recommandations sont-elles vraiment fiables ?", a: "ToolTrim ne recommande que lorsque les données sont vérifiées. Chaque prix est issu de la page officielle de l'outil. Les recommandations incertaines sont signalées explicitement." },
+  { q: "ToolTrim est-il gratuit ?", a: "Oui, l'audit de base est entièrement gratuit." },
+  { q: "Combien de temps prend l'audit ?", a: "Moins de 3 minutes. Tu réponds à quelques questions sur ton profil, tu sélectionnes tes outils, et tu reçois instantanément tes recommandations personnalisées." },
+  { q: "ToolTrim est-il affilié aux outils recommandés ?", a: "Non. ToolTrim est 100% indépendant. Aucun accord d'affiliation ne biaise les recommandations. Les résultats sont basés uniquement sur ton profil et les données objectives." },
 ];
 
 const FAQ_EN = [
-  { q: "How does ToolTrim analyze my stack?", a: "ToolTrim compares your tools against a database of verified tools. It detects duplicates, dormant tools, and possible replacements, with prices verified on official pages." },
-  { q: "Are the recommendations really reliable?", a: "ToolTrim only prescribes when data is verified. Each price comes from the tool's official page. Uncertain recommendations are explicitly flagged." },
-  { q: "Is ToolTrim free?", a: "Yes, the basic analysis is completely free." },
-  { q: "How long does the analysis take?", a: "Less than 3 minutes. You answer a few questions about your profile, select your tools, and instantly receive personalized recommendations." },
+  { q: "How does the stack audit work?", a: "You answer a few questions about your profile and list your current tools. ToolTrim detects duplicates, dormant tools and subscriptions you can cut or downgrade, with prices verified on official pages." },
+  { q: "Are the recommendations really reliable?", a: "ToolTrim only recommends when data is verified. Each price comes from the tool's official page. Uncertain recommendations are explicitly flagged." },
+  { q: "Is ToolTrim free?", a: "Yes, the basic audit is completely free." },
+  { q: "How long does the audit take?", a: "Less than 3 minutes. You answer a few questions about your profile, select your tools, and instantly receive personalized recommendations." },
   { q: "Is ToolTrim affiliated with recommended tools?", a: "No. ToolTrim is 100% independent. No affiliate deals bias the recommendations. Results are based solely on your profile and objective data." },
 ];
 
@@ -117,15 +115,21 @@ const HomePage = () => {
 
   useEffect(() => {
     const title = lang === "fr"
-      ? "ToolTrim — Audit stack SaaS, prix vérifiés"
-      : "ToolTrim — SaaS Stack Audit | Real Pricing & Verified Alternatives";
+      ? "ToolTrim — Audite ta stack, coupe ce qui ne sert pas"
+      : "ToolTrim — Audit your stack, cut what doesn't work";
     const desc = lang === "fr"
-      ? `Audit gratuit de ta stack SaaS. ToolTrim détecte les doublons et trouve des alternatives moins chères. ${stats.total} outils vérifiés.`
-      : `Paying for tools you don't use? ToolTrim audits your SaaS stack, spots redundant subscriptions, and finds cheaper alternatives. ${stats.total} tools manually verified.`;
+      ? "ToolTrim aide les freelances et solopreneurs à auditer leurs abonnements SaaS, repérer les doublons et construire une stack qui vaut vraiment le coût."
+      : "ToolTrim helps freelancers and solopreneurs audit their SaaS subscriptions, spot duplicates and build a stack that's actually worth the cost.";
     const url = `${SEO_BASE}/${lang}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}`);
-    setJsonLd("home-jsonld", { "@context": "https://schema.org", "@type": "WebSite", name: "ToolTrim", url: SEO_BASE, description: desc, potentialAction: { "@type": "SearchAction", target: `${SEO_BASE}/${lang}/tools?q={search_term_string}`, "query-input": "required name=search_term_string" } });
+    setJsonLd("home-jsonld", {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "ToolTrim",
+      url: SEO_BASE,
+      description: desc,
+    });
     setJsonLd("home-org-jsonld", {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -137,7 +141,7 @@ const HomePage = () => {
         width: 512,
         height: 512,
       },
-      description: "Independent SaaS tool directory with human-verified pricing, honest alternatives and zero affiliate bias.",
+      description: "Stack audit tool for freelancers and solopreneurs. Independent, honest, no affiliate bias.",
       foundingDate: "2024",
       email: "contact@tooltrim.com",
       contactPoint: {
@@ -147,89 +151,46 @@ const HomePage = () => {
         url: `${SEO_BASE}/fr/contact`,
         availableLanguage: ["French", "English"],
       },
-      sameAs: [
-        "https://twitter.com/tooltrim",
-        "https://www.linkedin.com/company/tooltrim",
-        "https://github.com/tooltrim",
-        "https://www.producthunt.com/products/tooltrim",
-        "https://www.crunchbase.com/organization/tooltrim",
-      ],
     });
-    setJsonLd("home-faq-jsonld", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) });
-    return () => cleanupSeo(["home-jsonld", "home-org-jsonld", "home-faq-jsonld"]);
+    return () => cleanupSeo(["home-jsonld", "home-org-jsonld"]);
   }, [lang, stats.total, faq]);
 
   return (
     <div>
-      {/* 1. Hero */}
-      <HeroSection toolCount={stats.total} />
+      {/* 1. Hero — repositionné autour de l'audit de stack */}
+      <HeroSection />
 
       {/* 2. Ticker */}
       <TickerBar />
 
-      {/* 3. Stats */}
-      <StatsSection toolCount={stats.total} categoryCount={stats.categories} />
+      {/* 3. Entrées — 3 chemins clairs */}
+      <EntryCardsSection />
 
-      {/* 4. Who it's for */}
-      <PersonasSection />
+      {/* 4. Manifesto — "Pas un annuaire de plus" */}
+      <ManifestoSection />
 
-      {/* 5. Business objectives */}
+      {/* 5. Ce que ToolTrim coupe */}
+      <WhatWeCutSection />
+
+      {/* 6. Stacks par objectif — concret et contextualisé */}
       <BusinessObjectivesSection />
 
-      {/* 6. How it works */}
+      {/* 7. Ce que ToolTrim cherche (couper / doublons / downgrade) */}
+      <StatsSection toolCount={stats.total} categoryCount={stats.categories} />
+
+      {/* 8. Pour quel profil */}
+      <PersonasSection />
+
+      {/* 9. How it works */}
       <Suspense fallback={null}><HowItWorks /></Suspense>
 
-      {/* 7. Differentiator */}
+      {/* 10. Différences vs annuaires classiques */}
       <Suspense fallback={null}><DiffTable toolCount={stats.total} /></Suspense>
 
-      {/* 8. Testimonials */}
+      {/* 11. Témoignages */}
       <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
-      {/* 9. Categories */}
-      <EditorialSection
-        eyebrow={t("Catalogue", "Catalog")}
-        title={t("Explorer par usage.", "Explore by use case.")}
-        description={t(
-          `${stats.categories} catégories couvrant tous les besoins de votre activité.`,
-          `${stats.categories} categories covering every business need.`
-        )}
-        cta={{ label: t("Toutes les catégories", "All categories"), href: `${prefix}/category` }}
-        variant="white"
-      >
-        <div className="es-grid es-grid--4">
-          {categories.map((cat) => {
-            const Icon = getCategoryIcon(cat.id);
-            const count = tools.filter((tool) => tool.categoryId === cat.id).length;
-            const catName = stripLeadingEmoji(cat.name, cat.id);
-            const catNameEn = stripLeadingEmoji(cat.nameEn, catName);
-            return (
-              <Link key={cat.id} to={`${prefix}/category/${cat.slug}`} className="ec-card" style={{ padding: "18px 20px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <div style={{
-                    width: 32, height: 32, flexShrink: 0,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    border: "1px solid #DADAD4", borderRadius: 6,
-                    color: "#6F6F68",
-                  }}>
-                    <Icon style={{ width: 15, height: 15 }} />
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500, color: "#222222", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", letterSpacing: "-0.01em" }}>
-                      {t(catName, catNameEn)}
-                    </p>
-                    <p style={{ marginTop: 2, fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
-                      {count} {t("outils", "tools")}
-                    </p>
-                  </div>
-                  <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, color: "#DADAD4", transition: "color 160ms ease-out, transform 160ms ease-out" }} className="ec-cta-arrow" />
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </EditorialSection>
-
-      {/* 10. Guides */}
+      {/* 12. Guides */}
       {featuredPosts.length > 0 && (
         <EditorialSection
           eyebrow={t("Guides", "Guides")}
@@ -253,7 +214,7 @@ const HomePage = () => {
         </EditorialSection>
       )}
 
-      {/* 11. FAQ */}
+      {/* 13. FAQ */}
       <section id="faq" className="scroll-mt-24 border-t border-border py-24">
         <div className="mx-auto max-w-7xl px-6">
           <FaqBlock
@@ -264,8 +225,8 @@ const HomePage = () => {
               "A FAQ designed as a real decision area: scope, reliability, pricing, timing, and independence."
             )}
             stats={[
-              { value: `${stats.total}`, label: t("outils vérifiés", "verified tools") },
-              { value: "3 min", label: t("en moyenne", "on average") },
+              { value: "< 3 min", label: t("pour l'audit complet", "for the full audit") },
+              { value: "100%", label: t("indépendant", "independent") },
             ]}
             items={faq.map((item, index) => ({
               question: item.q,
@@ -277,13 +238,186 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 12. Final CTA */}
+      {/* 14. Final CTA */}
       <Suspense fallback={null}><FinalCTA /></Suspense>
     </div>
   );
 };
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   EntryCardsSection — 3 chemins d'entrée dans ToolTrim
+───────────────────────────────────────────────────────────────────────────── */
+function EntryCardsSection() {
+  const { t, prefix } = useLang();
 
+  const entries = [
+    {
+      number: "01",
+      titleFr: "Auditer ma stack",
+      titleEn: "Audit my stack",
+      descFr: "Repère les outils utiles, les doublons et les abonnements que tu peux couper.",
+      descEn: "Spot useful tools, duplicates and subscriptions you can cut.",
+      href: `${prefix}/selector`,
+    },
+    {
+      number: "02",
+      titleFr: "Trouver ma stack",
+      titleEn: "Find my stack",
+      descFr: "Pars de ton métier, ton budget et ton niveau pour construire un setup simple.",
+      descEn: "Start from your job, budget and level to build a lean setup.",
+      href: `${prefix}/stacks`,
+    },
+    {
+      number: "03",
+      titleFr: "Comparer deux outils",
+      titleEn: "Compare two tools",
+      descFr: "Décide entre deux solutions selon ton usage réel, pas selon une liste de fonctionnalités.",
+      descEn: "Choose between two tools based on your actual use case, not a feature list.",
+      href: `${prefix}/comparatifs`,
+    },
+  ];
+
+  return (
+    <section className="hp-entries">
+      <div
+        className="mx-auto"
+        style={{ maxWidth: "var(--layout-content, 1280px)", padding: "0 var(--layout-gutter, 24px)" }}
+      >
+        <div className="hp-entries-grid">
+          {entries.map((entry) => (
+            <Link key={entry.number} to={entry.href} className="hp-entry">
+              <span className="hp-entry-number">{entry.number}</span>
+              <span className="hp-entry-title">{t(entry.titleFr, entry.titleEn)}</span>
+              <p className="hp-entry-desc">{t(entry.descFr, entry.descEn)}</p>
+              <span className="hp-entry-link">
+                {t("Commencer", "Get started")}
+                <ArrowRight style={{ width: 13, height: 13 }} />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ManifestoSection — "Pas un annuaire de plus"
+───────────────────────────────────────────────────────────────────────────── */
+function ManifestoSection() {
+  const { t } = useLang();
+
+  return (
+    <section className="hp-manifesto es-section">
+      <div className="es-container">
+        <div className="hp-manifesto-inner">
+          {/* Left — heading */}
+          <div>
+            <p className="hp-manifesto-label">{t("Notre position", "Our position")}</p>
+            <h2 className="hp-manifesto-heading">
+              {t(
+                <>Pas un annuaire<br />de plus.</>,
+                <>Not another<br />directory.</>,
+              )}
+            </h2>
+          </div>
+
+          {/* Right — text */}
+          <div className="hp-manifesto-body">
+            <p className="hp-manifesto-para">
+              {t(
+                <>ToolTrim ne cherche pas à lister tous les outils du marché.<br />L'objectif est plus simple : <strong>t'aider à décider.</strong></>,
+                <>ToolTrim doesn't try to list every tool on the market.<br />The goal is simpler: <strong>help you decide.</strong></>,
+              )}
+            </p>
+            <p className="hp-manifesto-para">
+              {t(
+                <>Quel outil garder.<br />Quel outil couper.<br />Quel outil remplacer.</>,
+                <>Which tool to keep.<br />Which tool to cut.<br />Which tool to replace.</>,
+              )}
+            </p>
+            <p className="hp-manifesto-para">
+              {t(
+                "Un bon outil doit avoir un rôle clair dans ta stack. Sinon, il devient juste un abonnement de plus.",
+                "A good tool needs a clear role in your stack. Otherwise, it's just another subscription.",
+              )}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   WhatWeCutSection — "Ce que ToolTrim coupe"
+───────────────────────────────────────────────────────────────────────────── */
+function WhatWeCutSection() {
+  const { t, prefix } = useLang();
+
+  const cuts = [
+    {
+      fr: "Les doublons fonctionnels",
+      en: "Functional duplicates",
+    },
+    {
+      fr: "Les outils dormants",
+      en: "Dormant tools",
+    },
+    {
+      fr: "Les abonnements trop tôt",
+      en: "Premature subscriptions",
+    },
+    {
+      fr: "Les alternatives trop lourdes",
+      en: "Overcomplicated alternatives",
+    },
+    {
+      fr: "Les stacks qui coûtent plus qu'elles ne rapportent",
+      en: "Stacks that cost more than they deliver",
+    },
+  ];
+
+  return (
+    <section className="hp-cuts es-section">
+      <div className="es-container">
+        <div className="hp-cuts-inner">
+          {/* Left */}
+          <div>
+            <p className="hp-cuts-label">{t("Ce que ToolTrim coupe", "What ToolTrim cuts")}</p>
+            <h2 className="hp-cuts-heading">
+              {t(
+                <>Tout ce qui<br />alourdit ta stack<br />sans raison.</>,
+                <>Everything that<br />weighs down your<br />stack for no reason.</>,
+              )}
+            </h2>
+          </div>
+
+          {/* Right — list + CTA */}
+          <div>
+            <ul className="hp-cuts-list" role="list">
+              {cuts.map((cut) => (
+                <li key={cut.fr} className="hp-cuts-item">
+                  <span className="hp-cuts-item-dash" aria-hidden="true" />
+                  {t(cut.fr, cut.en)}
+                </li>
+              ))}
+            </ul>
+
+            <Link to={`${prefix}/selector`} className="hp-cuts-cta">
+              {t("Auditer ma stack", "Audit my stack")}
+              <ArrowRight style={{ width: 15, height: 15 }} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BusinessObjectivesSection — stacks par objectif/persona concret
+───────────────────────────────────────────────────────────────────────────── */
 function BusinessObjectivesSection() {
   const { lang, t, prefix } = useLang();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -309,10 +443,7 @@ function BusinessObjectivesSection() {
           <div>
             <span className="es-eyebrow">{t("Stacks par objectif", "Stacks by goal")}</span>
             <h2 className="es-title">
-              {t(
-                "Choisissez votre objectif.",
-                "Choose your goal."
-              )}
+              {t("Des setups concrets, par métier.", "Concrete setups, by job type.")}
             </h2>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>

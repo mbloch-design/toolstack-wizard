@@ -6600,3 +6600,243 @@
   .cix-card:hover .cix-card-cta-arrow { transform: translateX(3px); }
 
 }
+
+/* ─────────────────────────────────────────────
+   HOME PAGE REPOSITIONNEMENT (hp-*)
+   Sprint Home — sections spécifiques à la home
+   repositionnée autour de l'audit de stack.
+───────────────────────────────────────────── */
+@layer components {
+
+  /* ── Entry cards — 3 entrées au-dessus du fold ── */
+  .hp-entries {
+    border-top: 1px solid #DADAD4;
+    background: #FFFFFF;
+  }
+
+  .hp-entries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  @media (max-width: 767px) {
+    .hp-entries-grid {
+      grid-template-columns: 1fr;
+    }
+    .hp-entry + .hp-entry {
+      border-top: 1px solid #DADAD4;
+      border-left: none !important;
+    }
+  }
+
+  .hp-entry {
+    padding: 40px 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 160ms ease-out;
+  }
+  .hp-entry + .hp-entry {
+    border-left: 1px solid #DADAD4;
+  }
+  .hp-entry:hover {
+    background: #F8F8F4;
+  }
+
+  .hp-entry-number {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+  }
+
+  .hp-entry-title {
+    font-family: var(--font-brand);
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+  }
+
+  .hp-entry-desc {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.65;
+    color: #6F6F68;
+    flex: 1;
+  }
+
+  .hp-entry-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: #222222;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: gap 160ms ease-out;
+  }
+  .hp-entry:hover .hp-entry-link {
+    gap: 8px;
+  }
+
+  /* ── Manifesto — "Pas un annuaire de plus" ── */
+  .hp-manifesto {
+    background: #EDEDE8;
+    border-top: 1px solid #DADAD4;
+  }
+
+  .hp-manifesto-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  @media (max-width: 899px) {
+    .hp-manifesto-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .hp-manifesto-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-bottom: 20px;
+  }
+
+  .hp-manifesto-heading {
+    font-family: var(--font-brand);
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+  }
+
+  .hp-manifesto-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hp-manifesto-para {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444440;
+  }
+
+  .hp-manifesto-para strong {
+    color: #222222;
+    font-weight: 600;
+  }
+
+  /* ── What we cut — "Ce que ToolTrim coupe" ── */
+  .hp-cuts {
+    border-top: 1px solid #DADAD4;
+    background: #FFFFFF;
+  }
+
+  .hp-cuts-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  @media (max-width: 899px) {
+    .hp-cuts-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .hp-cuts-heading {
+    font-family: var(--font-brand);
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+  }
+
+  .hp-cuts-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-bottom: 20px;
+  }
+
+  .hp-cuts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hp-cuts-item {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid #EDEDE8;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    color: #222222;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .hp-cuts-item:first-child {
+    border-top: 1px solid #EDEDE8;
+  }
+
+  .hp-cuts-item-dash {
+    flex-shrink: 0;
+    width: 18px;
+    height: 1px;
+    background: #9A9A92;
+    position: relative;
+    top: -0.35em;
+  }
+
+  .hp-cuts-cta {
+    margin-top: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 24px;
+    background: #222222;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: opacity 160ms ease-out;
+  }
+  .hp-cuts-cta:hover {
+    opacity: 0.8;
+  }
+
+}

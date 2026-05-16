@@ -2,6 +2,106 @@
 
 ---
 
+## 2026-05-16 — Sprint Home : Repositionnement autour de l'audit de stack
+
+### Objectif
+Repositionner la home de ToolTrim : sortir du positionnement "comparateur SaaS / annuaire d'outils" pour affirmer le territoire "audit de stack pour freelances et solopreneurs". Le catalogue n'est plus le centre de la home. L'audit de stack devient le CTA principal.
+
+### Fichiers modifiés
+- `src/components/home/HeroSection.tsx` — réécriture complète
+- `src/pages/HomePage.tsx` — restructuration + 3 nouvelles sections
+- `src/index.css` — ajout classes `hp-*` (~130 lignes)
+- `docs/CHANGELOG_AI.md` — ce fichier
+
+### HeroSection.tsx — réécriture
+
+**Supprimé :**
+- Barre de recherche d'outils (input + chips = comportement annuaire)
+- Grille de 12 outils "featured" (Figma, Notion, Slack...)
+- Ligne de stat "X outils couverts · prix vérifiés · recommandations indépendantes"
+- CTA "Explorer les outils" → /tools
+- Import `Search`, `ToolLogo`, `useToolSummaries`, `useNavigate`
+
+**Ajouté :**
+- Eyebrow : "pour les freelances et solopreneurs"
+- H1 : "Arrête d'empiler les outils. / Construis une stack qui travaille / vraiment pour toi."
+- Sous-titre : "ToolTrim aide les freelances et solopreneurs à auditer leurs abonnements, repérer les doublons et choisir les outils qui valent vraiment le coût."
+- CTA primaire : "Auditer ma stack →" → `/fr/selector` (noir, `eh-cta-primary` sans `--accent`)
+- CTA secondaire : "Explorer les stacks types" → `/fr/stacks` (outline)
+
+### HomePage.tsx — restructuration
+
+**Nouvelle structure des sections :**
+1. HeroSection (rewriten)
+2. TickerBar (inchangé)
+3. **EntryCardsSection** — NOUVELLE
+4. **ManifestoSection** — NOUVELLE
+5. **WhatWeCutSection** — NOUVELLE
+6. BusinessObjectivesSection (titre mis à jour : "Des setups concrets, par métier.")
+7. StatsSection (inchangé)
+8. PersonasSection (inchangé)
+9. HowItWorks (lazy, inchangé)
+10. DiffTable (lazy, inchangé)
+11. TestimonialsSection (lazy, inchangé)
+12. Guides (inchangé)
+13. FAQ (stats mises à jour : "< 3 min" + "100% indépendant")
+14. FinalCTA (lazy, inchangé)
+
+**Supprimé :**
+- Section Categories (grille 4 colonnes de catégories = catalog pur)
+- Import `getCategoryIcon`, `stripLeadingEmoji`
+
+**SEO tags mis à jour :**
+- Title FR : "ToolTrim — Audite ta stack, coupe ce qui ne sert pas"
+- Description FR : centrée sur l'audit, pas sur le nombre d'outils
+- JSON-LD `WebSite` : suppression `potentialAction SearchAction` (comportement annuaire)
+- JSON-LD `Organization` : description mise à jour
+
+### Nouvelles sections (composants inline)
+
+**EntryCardsSection** — 3 chemins d'entrée
+- Grille 3 colonnes desktop (`hp-entries-grid`), 1 colonne mobile (border-top séparateurs)
+- 01 "Auditer ma stack" → /selector
+- 02 "Trouver ma stack" → /stacks
+- 03 "Comparer deux outils" → /comparatifs
+- Chaque card : numéro en small caps + titre + description + lien "Commencer →"
+- Hover : background #F8F8F4, gap sur la flèche
+
+**ManifestoSection** — "Pas un annuaire de plus"
+- Fond `#EDEDE8` (medium cream), border-top `#DADAD4`
+- Layout 2 colonnes : heading gauche + 3 paragraphes droite
+- Heading : "Pas un annuaire de plus."
+- Copy : "ToolTrim ne cherche pas à lister tous les outils du marché. L'objectif est plus simple : t'aider à décider. / Quel outil garder. Quel outil couper. Quel outil remplacer. / Un bon outil doit avoir un rôle clair dans ta stack."
+- Mobile : 1 colonne, gap 40px
+
+**WhatWeCutSection** — "Ce que ToolTrim coupe"
+- Fond blanc, border-top `#DADAD4`
+- Layout 2 colonnes : heading gauche + liste + CTA droite
+- Heading : "Tout ce qui alourdit ta stack sans raison."
+- Liste 5 items avec dash `hp-cuts-item-dash` + border-bottom `#EDEDE8`
+  1. Les doublons fonctionnels
+  2. Les outils dormants
+  3. Les abonnements trop tôt
+  4. Les alternatives trop lourdes
+  5. Les stacks qui coûtent plus qu'elles ne rapportent
+- CTA "Auditer ma stack →" noir, 48px, radius 8px
+- Mobile : 1 colonne, heading puis liste
+
+### Classes CSS ajoutées (hp-* dans index.css)
+
+```
+hp-entries, hp-entries-grid, hp-entry, hp-entry + hp-entry
+hp-entry-number, hp-entry-title, hp-entry-desc, hp-entry-link
+hp-manifesto, hp-manifesto-inner, hp-manifesto-label
+hp-manifesto-heading, hp-manifesto-body, hp-manifesto-para
+hp-cuts, hp-cuts-inner, hp-cuts-heading, hp-cuts-label
+hp-cuts-list, hp-cuts-item, hp-cuts-item-dash, hp-cuts-cta
+```
+
+Mobile breakpoints : `hp-entries-grid` → 1 colonne (< 768px), `hp-manifesto-inner` + `hp-cuts-inner` → 1 colonne (< 900px).
+
+---
+
 ## 2026-05-15 — Sprint Stacks Facettes : sidebar de facettes /fr/stacks
 
 ### Sprint Stacks Facettes — sidebar combinatoire
