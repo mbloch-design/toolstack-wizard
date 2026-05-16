@@ -420,7 +420,7 @@ type LogoCloudItem = ManifestoTool & {
   size?: "small" | "default" | "large";
   delay: string;
   depth?: "foreground" | "mid" | "back";
-  motion?: "a" | "b" | "c";
+  motion?: "a" | "b" | "c" | "d";
 };
 
 const manifestoTools: Record<string, ManifestoTool> = {
@@ -439,6 +439,8 @@ const manifestoTools: Record<string, ManifestoTool> = {
   coda: { name: "Coda", slug: "coda", domain: "coda.io", websiteUrl: "https://coda.io" },
   clickup: { name: "ClickUp", slug: "clickup", domain: "clickup.com", websiteUrl: "https://clickup.com" },
   linear: { name: "Linear", slug: "linear", domain: "linear.app", websiteUrl: "https://linear.app" },
+  framer: { name: "Framer", slug: "framer", domain: "framer.com", websiteUrl: "https://www.framer.com" },
+  webflow: { name: "Webflow", slug: "webflow", domain: "webflow.com", websiteUrl: "https://webflow.com" },
   drive: { name: "Google Drive", slug: "google-drive", domain: "google.com", websiteUrl: "https://drive.google.com" },
 };
 
@@ -474,22 +476,24 @@ function ManifestoSection() {
   const { t } = useLang();
 
   const logoCloudItems: LogoCloudItem[] = [
-    { ...manifestoTools.notion, top: "31%", left: "37%", size: "large", delay: "-1.2s", depth: "foreground", motion: "a" },
+    { ...manifestoTools.notion, top: "29%", left: "36%", size: "large", delay: "-1.2s", depth: "foreground", motion: "a" },
     { ...manifestoTools.slack, top: "43%", left: "57%", size: "large", delay: "-4.1s", depth: "foreground", motion: "b" },
-    { ...manifestoTools.figma, top: "55%", left: "44%", size: "large", delay: "-6.2s", depth: "foreground", motion: "c" },
-    { ...manifestoTools.zapier, top: "51%", left: "70%", delay: "-0.8s", depth: "mid", motion: "b" },
+    { ...manifestoTools.figma, top: "57%", left: "45%", size: "large", delay: "-6.2s", depth: "foreground", motion: "c" },
     { ...manifestoTools.canva, top: "68%", left: "30%", delay: "-5.4s", depth: "mid", motion: "a" },
-    { ...manifestoTools.airtable, top: "67%", left: "55%", size: "small", delay: "-3.3s", depth: "back", motion: "c" },
-    { ...manifestoTools.trello, top: "35%", left: "72%", delay: "-7.1s", depth: "mid", motion: "a" },
-    { ...manifestoTools.loom, top: "20%", left: "72%", size: "small", delay: "-2.7s", depth: "back", motion: "b" },
-    { ...manifestoTools.hubspot, top: "60%", left: "17%", size: "small", delay: "-2.1s", depth: "back", motion: "c" },
+    { ...manifestoTools.zapier, top: "50%", left: "70%", delay: "-0.8s", depth: "mid", motion: "b" },
+    { ...manifestoTools.airtable, top: "67%", left: "56%", delay: "-3.3s", depth: "mid", motion: "c" },
+    { ...manifestoTools.trello, top: "34%", left: "73%", delay: "-7.1s", depth: "mid", motion: "a" },
     { ...manifestoTools.coda, top: "42%", left: "23%", delay: "-4.9s", depth: "mid", motion: "b" },
-    { ...manifestoTools.linear, top: "76%", left: "74%", delay: "-6.8s", depth: "mid", motion: "a" },
-    { ...manifestoTools.clickup, top: "25%", left: "50%", size: "small", delay: "-1.8s", depth: "back", motion: "c" },
-    { ...manifestoTools.zoom, top: "76%", left: "41%", size: "small", delay: "-3.9s", depth: "back", motion: "b" },
-    { ...manifestoTools.teams, top: "47%", left: "83%", size: "small", delay: "-5.9s", depth: "back", motion: "a" },
+    { ...manifestoTools.linear, top: "77%", left: "73%", delay: "-6.8s", depth: "mid", motion: "a" },
     { ...manifestoTools.brevo, top: "22%", left: "20%", delay: "-0.4s", depth: "mid", motion: "c" },
-    { ...manifestoTools.drive, top: "82%", left: "57%", size: "small", delay: "-7.6s", depth: "back", motion: "a" },
+    { ...manifestoTools.framer, top: "21%", left: "54%", size: "small", delay: "-8.4s", depth: "back", motion: "d" },
+    { ...manifestoTools.webflow, top: "82%", left: "29%", size: "small", delay: "-9.1s", depth: "back", motion: "b" },
+    { ...manifestoTools.loom, top: "18%", left: "73%", size: "small", delay: "-2.7s", depth: "back", motion: "b" },
+    { ...manifestoTools.hubspot, top: "60%", left: "17%", size: "small", delay: "-2.1s", depth: "back", motion: "c" },
+    { ...manifestoTools.clickup, top: "25%", left: "48%", size: "small", delay: "-1.8s", depth: "back", motion: "d" },
+    { ...manifestoTools.zoom, top: "77%", left: "43%", size: "small", delay: "-3.9s", depth: "back", motion: "b" },
+    { ...manifestoTools.teams, top: "47%", left: "84%", size: "small", delay: "-5.9s", depth: "back", motion: "a" },
+    { ...manifestoTools.drive, top: "83%", left: "58%", size: "small", delay: "-7.6s", depth: "back", motion: "a" },
   ];
 
   return (

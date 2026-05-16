@@ -1163,3 +1163,20 @@ Rendre la section plus naturelle et premium : copy moins générique, cloud moin
 - Subtitle retenu : `Un outil de plus paraît souvent anodin. Jusqu’au moment où ta stack devient illisible.`
 - Closing retenu : `ToolTrim transforme le bruit en décisions : garder, couper, remplacer.`
 - Ajout du label discret `À challenger` sans densifier la copy principale.
+
+---
+
+## 2026-05-16 — Sprint 13 : Cloud de logos plus structuré
+
+### Objectif
+Renforcer uniquement la zone droite de la section de positionnement : plus de densité, plus de profondeur, et une lecture plus claire de la stack comme ensemble.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — ajout de Framer et Webflow, nouvelle composition à 18 logos, classes de profondeur et motion enrichies.
+- `src/index.css` — container plus fort, inner frame, axe discret, tailles 46/58/72, profondeur foreground/mid/back et animation `floatLogoD`.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- La composition devient plus dense au centre et moins uniformément dispersée.
+- Les labels décisionnels restent intégrés au cloud, sans créer de diagramme.
+- La motion reste ambiante et respecte `prefers-reduced-motion`.

@@ -1749,8 +1749,8 @@
 
   /* ── LOGO ───────────────────────────────────────────────────────────────── */
   .tc-logo {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     flex-shrink: 0;
     border-radius: 6px;
     background: #F8F8F4;
@@ -2543,8 +2543,8 @@
   }
 
   .tce-logo {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     border-radius: 6px;
     background: #F8F8F4;
     border: 1px solid #E7E7E0;
@@ -8145,7 +8145,17 @@
   }
 
   /* Respecter prefers-reduced-motion */
-  @media (prefers-reduced-motion: reduce) {
+  @keyframes floatLogoD {
+  0%, 100% {
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(-50%, -50%, 0) translate3d(5px, 8px, 0) rotate(-0.6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
     .animate-ticker {
       animation: none !important;
     }
@@ -8403,6 +8413,16 @@
   }
 }
 
+@keyframes floatLogoD {
+  0%, 100% {
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(-50%, -50%, 0) translate3d(5px, 8px, 0) rotate(-0.6deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-decision-ticker-track {
     animation: none !important;
@@ -8458,6 +8478,16 @@
 @keyframes decisionTickerScroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+@keyframes floatLogoD {
+  0%, 100% {
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(-50%, -50%, 0) translate3d(5px, 8px, 0) rotate(-0.6deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -8663,13 +8693,37 @@
 
   .home-logo-cloud {
     position: relative;
-    height: clamp(360px, 40vw, 560px);
-    border-radius: 22px;
+    height: clamp(400px, 42vw, 580px);
+    border-radius: 24px;
     overflow: hidden;
-    background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.95) 0%, rgba(248, 248, 244, 0.92) 48%, rgba(237, 237, 232, 0.72) 100%);
-    border: 1px solid #DADAD4;
-    box-shadow: 0 24px 70px rgba(34, 34, 34, 0.06);
+    background: radial-gradient(circle at 52% 44%, rgba(255, 255, 255, 0.95) 0%, rgba(248, 248, 244, 0.96) 42%, rgba(237, 237, 232, 0.88) 100%);
+    border: 1px solid #CFCFC8;
+    box-shadow: 0 28px 80px rgba(34, 34, 34, 0.08);
     isolation: isolate;
+  }
+
+
+  .home-logo-cloud::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(34, 34, 34, 0.08);
+    border-radius: 18px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .home-logo-cloud::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 1px;
+    left: 15%;
+    top: 52%;
+    background: linear-gradient(90deg, transparent, rgba(34, 34, 34, 0.16), transparent);
+    transform: rotate(-12deg);
+    pointer-events: none;
+    z-index: 1;
   }
 
   .home-logo-cloud-fade {
@@ -8683,65 +8737,36 @@
   }
 
   .home-logo-cloud-axis {
-    position: absolute;
-    z-index: 0;
-    left: 18%;
-    right: 17%;
-    top: 57%;
-    height: 1px;
-    background: #DADAD4;
-    opacity: 0.45;
-    transform: rotate(-12deg);
-    transform-origin: center;
-  }
-
-  .home-logo-cloud-axis::before,
-  .home-logo-cloud-axis::after {
-    content: "";
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-radius: 999px;
-    background: #DADAD4;
-    top: -3px;
-    opacity: 0.75;
-  }
-
-  .home-logo-cloud-axis::before {
-    left: 0;
-  }
-
-  .home-logo-cloud-axis::after {
-    right: 0;
+    display: none;
   }
 
   .home-logo-cloud-item {
     position: absolute;
     z-index: 1;
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(218, 218, 212, 0.9);
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(207, 207, 200, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    box-shadow: 0 10px 26px rgba(34, 34, 34, 0.07);
+    box-shadow: 0 12px 30px rgba(34, 34, 34, 0.09);
     transform: translate3d(-50%, -50%, 0);
     will-change: transform;
   }
 
   .home-logo-cloud-item.is-small {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     border-radius: 14px;
   }
 
   .home-logo-cloud-item.is-large {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
   }
 
   .home-logo-cloud-item.is-foreground {
@@ -8751,27 +8776,34 @@
 
   .home-logo-cloud-item.is-mid {
     opacity: 0.92;
+    z-index: 3;
   }
 
   .home-logo-cloud-item.is-back {
-    opacity: 0.76;
+    opacity: 0.68;
+    z-index: 2;
+    filter: saturate(0.85);
   }
 
   .home-logo-cloud-item.motion-a {
-    animation: floatLogoA 8.5s ease-in-out infinite;
+    animation: floatLogoA 7.5s ease-in-out infinite;
   }
 
   .home-logo-cloud-item.motion-b {
-    animation: floatLogoB 10s ease-in-out infinite;
+    animation: floatLogoB 9s ease-in-out infinite;
   }
 
   .home-logo-cloud-item.motion-c {
-    animation: floatLogoC 11.5s ease-in-out infinite;
+    animation: floatLogoC 11s ease-in-out infinite;
+  }
+
+  .home-logo-cloud-item.motion-d {
+    animation: floatLogoD 13s ease-in-out infinite;
   }
 
   .home-logo-cloud-image {
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 32px;
+    max-height: 32px;
     object-fit: contain;
   }
 
@@ -8781,8 +8813,8 @@
   }
 
   .home-logo-cloud-item.is-large .home-logo-cloud-image {
-    max-width: 35px;
-    max-height: 35px;
+    max-width: 40px;
+    max-height: 40px;
   }
 
   .home-logo-cloud-fallback {
@@ -8800,11 +8832,11 @@
     text-transform: uppercase;
     color: #222222;
     background: rgba(255, 255, 255, 0.86);
-    border: 1px solid #DADAD4;
+    border: 1px solid rgba(207, 207, 200, 0.95);
     border-radius: 999px;
-    padding: 7px 11px;
+    padding: 8px 12px;
     line-height: 1;
-    box-shadow: 0 8px 18px rgba(34, 34, 34, 0.05);
+    box-shadow: 0 10px 24px rgba(34, 34, 34, 0.06);
     backdrop-filter: blur(8px);
   }
 
@@ -8859,6 +8891,16 @@
   }
 }
 
+@keyframes floatLogoD {
+  0%, 100% {
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(-50%, -50%, 0) translate3d(5px, 8px, 0) rotate(-0.6deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-logo-cloud-item {
     animation: none;
@@ -8896,7 +8938,7 @@
   }
 
   .home-logo-cloud {
-    height: 320px;
+    height: clamp(320px, 76vw, 360px);
     border-radius: 18px;
   }
 
