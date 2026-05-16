@@ -8409,3 +8409,60 @@
     transform: translateX(0);
   }
 }
+
+
+/* Sprint 8b — decision ticker animation + lighter separators */
+@layer components {
+  .decision-ticker {
+    height: 44px;
+    background: #F8F8F4;
+    border-top: 1px solid #E2E2DC;
+    border-bottom: 1px solid #DADAD4;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .decision-ticker-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 44px;
+    animation: decisionTickerScroll 45s linear infinite;
+    will-change: transform;
+  }
+
+  .decision-ticker:hover .decision-ticker-track {
+    animation-play-state: paused;
+  }
+
+  .decision-ticker-content {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .decision-ticker-item {
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 22px;
+    white-space: nowrap;
+    border-right: 1px solid #EAEAE4;
+    font-size: 14px;
+    line-height: 1;
+    color: #6F6F68;
+  }
+}
+
+@keyframes decisionTickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decision-ticker-track {
+    animation: none !important;
+    transform: translateX(0);
+  }
+}

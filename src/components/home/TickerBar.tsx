@@ -125,27 +125,35 @@ function ToolGroup({ tools }: { tools: TickerTool[] }) {
   );
 }
 
+function TickerContent({ lang }: { lang: string }) {
+  return (
+    <div className="decision-ticker-content">
+      {TICKER_ITEMS.map((item) => (
+        <span className="decision-ticker-item" key={item.decisionFr}>
+          <ToolGroup tools={item.from} />
+          {item.to && (
+            <>
+              <span className="ticker-operator">→</span>
+              <ToolGroup tools={item.to} />
+              <span className="ticker-operator">·</span>
+            </>
+          )}
+          {!item.to && <span className="ticker-operator">→</span>}
+          <span className="ticker-decision">{lang === "en" ? item.decisionEn : item.decisionFr}</span>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 const TickerBar = () => {
   const { lang } = useLang();
-  const doubled = [...TICKER_ITEMS, ...TICKER_ITEMS];
 
   return (
-    <div className="home-decision-ticker" aria-label={lang === "fr" ? "Exemples de décisions ToolTrim" : "ToolTrim decision examples"}>
-      <div className="home-decision-ticker-track">
-        {doubled.map((item, index) => (
-          <span className="home-decision-ticker-item" key={`${item.decisionFr}-${index}`}>
-            <ToolGroup tools={item.from} />
-            {item.to && (
-              <>
-                <span className="ticker-operator">→</span>
-                <ToolGroup tools={item.to} />
-                <span className="ticker-operator">·</span>
-              </>
-            )}
-            {!item.to && <span className="ticker-operator">→</span>}
-            <span className="ticker-decision">{lang === "en" ? item.decisionEn : item.decisionFr}</span>
-          </span>
-        ))}
+    <div className="decision-ticker" aria-label={lang === "fr" ? "Exemples de décisions ToolTrim" : "ToolTrim decision examples"}>
+      <div className="decision-ticker-track">
+        <TickerContent lang={lang} />
+        <TickerContent lang={lang} />
       </div>
     </div>
   );
