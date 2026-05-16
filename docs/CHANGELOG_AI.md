@@ -1180,3 +1180,20 @@ Renforcer uniquement la zone droite de la section de positionnement : plus de de
 - La composition devient plus dense au centre et moins uniformément dispersée.
 - Les labels décisionnels restent intégrés au cloud, sans créer de diagramme.
 - La motion reste ambiante et respecte `prefers-reduced-motion`.
+
+---
+
+## 2026-05-16 — Sprint 14 : Section diagnostic des coûts cachés
+
+### Objectif
+Transformer la section `Ce que ToolTrim coupe` en bloc de diagnostic plus lisible : labels métier, exemples plus visibles et CTA rattaché à la liste.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — nouveau titre, intro courte, labels `DOUBLON / DORMANT / TROP TÔT / TROP LOURD / TROP CHER`.
+- `src/index.css` — rows diagnostiques, grille label/contenu, exemples sans italique, CTA aligné à la colonne texte.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Les puces génériques disparaissent.
+- La section explique mieux ce que ToolTrim détecte avant l'audit.
+- Les exemples deviennent un élément de preuve, pas une note secondaire.

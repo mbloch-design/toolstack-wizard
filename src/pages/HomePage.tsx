@@ -545,34 +545,44 @@ function WhatWeCutSection() {
 
   const cuts = [
     {
+      labelFr: "Doublon",
+      labelEn: "Duplicate",
       titleFr: "Les doublons fonctionnels",
       titleEn: "Functional duplicates",
       exampleFr: "Notion + Trello + Asana pour gérer les mêmes projets.",
       exampleEn: "Notion + Trello + Asana for the same projects.",
     },
     {
+      labelFr: "Dormant",
+      labelEn: "Dormant",
       titleFr: "Les outils dormants",
       titleEn: "Dormant tools",
-      exampleFr: "Loom ouvert 2 fois ce mois. Slack video suffit.",
-      exampleEn: "Loom opened twice this month. Slack video does the job.",
+      exampleFr: "Loom ouvert deux fois ce mois-ci. Slack vidéo suffit.",
+      exampleEn: "Loom opened twice this month. Slack video is enough.",
     },
     {
+      labelFr: "Trop tôt",
+      labelEn: "Too soon",
       titleFr: "Les abonnements trop tôt",
       titleEn: "Premature subscriptions",
-      exampleFr: "Zapier Pro à 49 €/mois pour 1 zap actif.",
-      exampleEn: "Zapier Pro at €49/mo for 1 active zap.",
+      exampleFr: "Zapier Pro à 49 €/mois pour un seul zap actif.",
+      exampleEn: "Zapier Pro at €49/mo for one active zap.",
     },
     {
+      labelFr: "Trop lourd",
+      labelEn: "Too heavy",
       titleFr: "Les alternatives trop lourdes",
       titleEn: "Overcomplicated alternatives",
       exampleFr: "HubSpot CRM quand Notion + Tally suffit pour un solo.",
       exampleEn: "HubSpot CRM when Notion + Tally is enough for a solo.",
     },
     {
-      titleFr: "Les stacks qui coûtent plus qu'elles ne rapportent",
-      titleEn: "Stacks that cost more than they deliver",
-      exampleFr: "140 €/mois d'abonnements pour facturer 3 clients.",
-      exampleEn: "€140/mo in subscriptions to invoice 3 clients.",
+      labelFr: "Trop cher",
+      labelEn: "Too costly",
+      titleFr: "Les stacks qui coûtent plus qu’elles ne rapportent",
+      titleEn: "Stacks that cost more than they return",
+      exampleFr: "140 €/mois d’abonnements pour facturer trois clients.",
+      exampleEn: "€140/mo in subscriptions to invoice three clients.",
     },
   ];
 
@@ -582,13 +592,19 @@ function WhatWeCutSection() {
         <div className="hp-cuts-inner">
           {/* Left */}
           <div>
-            <p className="hp-cuts-label">{t("Ce que ToolTrim coupe", "What ToolTrim cuts")}</p>
+            <p className="hp-cuts-label">{t("Ce que ToolTrim détecte", "What ToolTrim detects")}</p>
             <h2 className="hp-cuts-heading">
               {t(
-                <>Tout ce qui<br />alourdit ta stack<br />sans raison.</>,
-                <>Everything that<br />weighs down your<br />stack for no reason.</>,
+                <>Ce qui pèse<br />dans ta stack.<br />Sans toujours<br />se voir.</>,
+                <>What weighs<br />on your stack.<br />Even when<br />you do not see it.</>,
               )}
             </h2>
+            <p className="hp-cuts-intro">
+              {t(
+                "Les vrais coûts ne sont pas toujours dans le prix. Ils sont souvent dans les doublons, les outils dormants et les abonnements pris trop tôt.",
+                "The real costs are not always in the price. They often sit in duplicates, dormant tools and subscriptions bought too soon.",
+              )}
+            </p>
           </div>
 
           {/* Right — decision rows + CTA */}
@@ -596,11 +612,11 @@ function WhatWeCutSection() {
             <div className="hp-cut-rows">
               {cuts.map((cut) => (
                 <div key={cut.titleFr} className="hp-cut-row">
-                  <div className="hp-cut-row-header">
-                    <span className="hp-cut-row-indicator" aria-hidden="true" />
-                    <span className="hp-cut-row-title">{t(cut.titleFr, cut.titleEn)}</span>
+                  <p className="hp-cut-row-label">{t(cut.labelFr, cut.labelEn)}</p>
+                  <div>
+                    <p className="hp-cut-row-title">{t(cut.titleFr, cut.titleEn)}</p>
+                    <p className="hp-cut-row-example">{t(cut.exampleFr, cut.exampleEn)}</p>
                   </div>
-                  <p className="hp-cut-row-example">{t(cut.exampleFr, cut.exampleEn)}</p>
                 </div>
               ))}
             </div>
