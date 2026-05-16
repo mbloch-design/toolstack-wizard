@@ -131,8 +131,16 @@
     --layout-gutter-tablet:  32px;
     --layout-gutter-mobile:  20px;
 
-    /* ── Spacing scale (use only these values) ── */
-    /* 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128 */
+    /* ── Spacing scale ── */
+    --space-2xs: 4px;
+    --space-xs:  8px;
+    --space-sm:  12px;
+    --space-md:  16px;
+    --space-lg:  24px;
+    --space-xl:  32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
 
     /* ── Semantic overrides ── */
     --savings: 224 76% 50%;          /* ToolTrim blue — featured savings */
@@ -7692,19 +7700,15 @@
     opacity: 0.82;
   }
 
-  /* ── Ticker overrides ────────────────────── */
+  /* ── Ticker Sprint 5 — logos + décisions ── */
   .hp-ticker {
+    height: 44px;
     background: #F8F8F4 !important;
     border-top: 1px solid #DADAD4 !important;
     border-bottom: 1px solid #DADAD4 !important;
-    max-height: 42px;
     overflow: hidden;
+    max-height: none;
   }
-
-  /* Tone down semantic colors in ticker — less aggressive */
-  .hp-ticker .text-destructive { color: #7A7A72 !important; }
-  .hp-ticker .text-keep        { color: #2D6E4F !important; }
-  .hp-ticker .text-cancel      { color: #7A7A72 !important; }
 
 }
 
@@ -7921,6 +7925,165 @@
 
   .hac-card:hover .hac-cta-arrow {
     transform: translateX(3px);
+  }
+
+}
+
+/* ─────────────────────────────────────────────
+   TICKER ITEMS (hpt-*) Sprint 5
+   Logos d'outils + décision ToolTrim
+───────────────────────────────────────────── */
+@layer components {
+
+  /* Item wrapper */
+  .hpt-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 22px;
+    height: 44px;
+    border-right: 1px solid #DADAD4;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1;
+    color: #6F6F68;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Logo pill */
+  .hpt-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .hpt-logo img {
+    max-width: 15px;
+    max-height: 15px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .hpt-logo-letter {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    color: #6F6F68;
+    line-height: 1;
+  }
+
+  /* Tool name */
+  .hpt-name {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: #6F6F68;
+    line-height: 1;
+  }
+
+  /* + between tools */
+  .hpt-plus {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: #9A9A92;
+    flex-shrink: 0;
+  }
+
+  /* → arrow */
+  .hpt-arrow {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: #9A9A92;
+    flex-shrink: 0;
+    margin: 0 1px;
+  }
+
+  /* Decision — bold, dark */
+  .hpt-decision {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: #222222;
+    line-height: 1;
+  }
+
+}
+
+/* ─────────────────────────────────────────────
+   HOME ACTIONS SECTION (Sprint 5)
+   Remplace hac-section : titre éditorial +
+   espacement design-system
+───────────────────────────────────────────── */
+@layer components {
+
+  /* ── Section wrapper ─────────────────────── */
+  .home-actions-section {
+    background: #F8F8F4;
+    padding: var(--space-3xl) 0 72px;
+    border-bottom: 1px solid #DADAD4;
+  }
+
+  @media (max-width: 767px) {
+    .home-actions-section {
+      padding: var(--space-2xl) 0 56px;
+    }
+  }
+
+  /* ── Section header ──────────────────────── */
+  .home-actions-header {
+    max-width: 760px;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .home-actions-eyebrow {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .home-actions-title {
+    font-family: var(--font-brand);
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    color: #222222;
+    margin: 0;
+  }
+
+  .home-actions-desc {
+    font-family: var(--font-ui);
+    font-size: 17px;
+    line-height: 1.45;
+    color: #6F6F68;
+    margin-top: 16px;
+    max-width: 680px;
+  }
+
+  /* ── Cards grid ──────────────────────────── */
+  .home-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  @media (max-width: 767px) {
+    .home-actions-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
   }
 
 }

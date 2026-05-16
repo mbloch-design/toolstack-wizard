@@ -22,6 +22,31 @@ Référence du système de design éditorial. Mis à jour au fil des sessions.
 
 ---
 
+## Espacement — tokens globaux
+
+Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** — jamais de pixel arbitraire.
+
+| Token | Valeur | Usage typique |
+|---|---|---|
+| `--space-2xs` | `4px` | Micro-gap, icône + texte |
+| `--space-xs` | `8px` | Gap interne d'un item, padding compact |
+| `--space-sm` | `12px` | Padding dense, gap row |
+| `--space-md` | `16px` | Gap entre éléments de même groupe |
+| `--space-lg` | `24px` | Séparation entre groupes dans une card |
+| `--space-xl` | `32px` | Padding section compact |
+| `--space-2xl` | `48px` | Header section → contenu, séparation standard |
+| `--space-3xl` | `64px` | Padding section principal (desktop) |
+| `--space-4xl` | `96px` | Grandes séparations entre blocs majeurs |
+
+**Règle d'usage :**
+- Éléments internes d'un composant : `xs` / `sm` / `md`
+- Groupes dans une card : `md` / `lg`
+- Header de section → contenu : `2xl`
+- Padding de section (desktop) : `3xl`
+- Séparation entre sections majeures : `3xl` / `4xl`
+
+---
+
 ## Typographie
 
 ### Fonts

@@ -2,6 +2,91 @@
 
 ---
 
+## 2026-05-16 — Sprint 5 : Ticker logos · Titre section · Design tokens espacement
+
+### Objectif
+Rendre le ticker visuellement concret (logos d'outils), introduire les 3 cards avec un vrai titre éditorial, et ancrer tous les espacements dans des tokens de design system.
+
+### Fichiers modifiés
+- `src/components/home/TickerBar.tsx` — réécriture complète avec logos
+- `src/pages/HomePage.tsx` — `EntryCardsSection` : ajout header éditorial + renommage classes
+- `src/index.css` — tokens `--space-*`, classes `hpt-*` (ticker), classes `home-actions-*`
+- `docs/CHANGELOG_AI.md` — ce fichier
+
+### TickerBar.tsx — réécriture avec logos
+
+**Structure item :**
+```
+[logo] Outil A  +  [logo] Outil B  →  Décision
+```
+
+**Nouveau data model :**
+```ts
+interface TickerItem {
+  tools: Array<{ name: string; domain: string }>;
+  decisionFr: string;
+  decisionEn: string;
+}
+```
+
+**Composant `TickerLogo` :** favicon CDN (`t3.gstatic.com/faviconV2`) + lettre initiale en fallback via `useState`.
+
+**8 items :** Notion+Coda / Slack / Zoom+Teams / HubSpot / Zapier / Harvest+Pennylane / Figma+Sketch / Loom
+
+**Nouvelles classes CSS `hpt-*` :**
+- `.hpt-item` : `display:inline-flex; height:44px; padding:0 22px; border-right:1px solid #DADAD4`
+- `.hpt-logo` : pill 24×24px, border #DADAD4, bg white
+- `.hpt-logo img` : max 15×15px
+- `.hpt-name` : 13px #6F6F68
+- `.hpt-plus` : 11px #9A9A92
+- `.hpt-arrow` : 13px #9A9A92
+- `.hpt-decision` : 13px 600 #222222
+
+**`.hp-ticker` override :** `height:44px; max-height:none`
+
+### HomePage.tsx — EntryCardsSection
+
+**Section wrapper :** `hac-section` → `home-actions-section`
+**Grid :** `hac-grid` → `home-actions-grid`
+
+**Header éditorial ajouté au-dessus de la grille :**
+- Eyebrow : "TROIS FAÇONS DE DÉCIDER"
+- Titre : "Commence par la bonne question." — `clamp(2.25rem, 4vw, 3.5rem)` / `ls -0.05em`
+- Description : 17px / `max-width: 680px`
+
+### index.css — tokens et classes
+
+**Tokens d'espacement** ajoutés dans `:root` (remplace le commentaire placeholder) :
+```css
+--space-2xs: 4px;   --space-xs: 8px;    --space-sm: 12px;
+--space-md: 16px;   --space-lg: 24px;   --space-xl: 32px;
+--space-2xl: 48px;  --space-3xl: 64px;  --space-4xl: 96px;
+```
+
+**`.home-actions-section` :** `padding: var(--space-3xl) 0 72px` (mobile: `var(--space-2xl) 0 56px`)
+**`.home-actions-header` :** `max-width:760px; margin-bottom: var(--space-2xl)`
+**`.home-actions-grid` :** 3 colonnes, gap 16px (mobile: 1 colonne, gap 14px)
+
+---
+
+## 2026-05-16 — Sprint 4d — HomeActionCards (contours noirs, header tableau, logos, scénario)
+
+### Objectif
+Remplacer les colonnes textuelles par 3 vraies cards avec contour noir, header interne façon tableau, logos d'outils dans pills, scénario concret, capsule verdict, CTA.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — `EntryCardsSection` réécrite + `HacLogo` component
+- `src/index.css` — bloc `hac-*` (~130 lignes)
+
+### Détails
+- `hac-card` : `border:1.5px solid #222222; border-radius:12px`
+- `hac-header` : grid 2 colonnes (label / numéro), `border-bottom:1.5px solid #222222`
+- `hac-logo` : pill 30×30px, bg white, `border:1px solid #DADAD4`
+- `hac-capsule` : pill 26px, `border:1px solid #222222`
+- Mobile : 1 colonne, gap 14px
+
+---
+
 ## 2026-05-16 — Sprint Home : Identité et vie (Hero 2-col + modules produit)
 
 ### Objectif

@@ -275,9 +275,27 @@ function EntryCardsSection() {
   const isFr = lang === "fr";
 
   return (
-    <section className="hac-section">
+    <section className="home-actions-section">
       <div className="es-container">
-        <div className="hac-grid">
+
+        {/* ── Section header ── */}
+        <div className="home-actions-header">
+          <span className="home-actions-eyebrow">
+            {t("Trois façons de décider", "Three ways to decide")}
+          </span>
+          <h2 className="home-actions-title">
+            {t("Commence par la bonne question.", "Start with the right question.")}
+          </h2>
+          <p className="home-actions-desc">
+            {t(
+              "Audite ta stack, pars d'un profil type ou compare deux outils selon ton usage réel.",
+              "Audit your stack, start from a profile, or compare two tools based on your actual use.",
+            )}
+          </p>
+        </div>
+
+        {/* ── Cards grid ── */}
+        <div className="home-actions-grid">
 
           {/* ── Card 1 — Audit ── */}
           <Link to={`${prefix}/selector`} className="hac-card">
