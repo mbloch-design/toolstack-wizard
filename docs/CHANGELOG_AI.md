@@ -1059,3 +1059,22 @@ GuideDetailPage : header `ga-header` avec eyebrow + `ga-title` clamp + standfirs
 StickyDecisionCard : score 64px, verdict 16px, ordre header→score→verdict→CTAs→4 facts→alternative. Suppression "Best for / Not ideal if" inline dans la sidebar.
 
 Hero 2-col (déprécié en session 3). Sticky sidebar : bug corrigé — `position: sticky` mis sur `.td-sidebar-desktop` (grid item direct) et non sur un enfant.
+
+---
+
+## 2026-05-16 — Sprint 8 : Ticker logos obligatoire + header actions clarifié
+
+### Objectif
+Réconcilier le ticker Awwwards avec la valeur produit ToolTrim : chaque décision doit rester fine, mais toujours montrer les logos des outils concernés.
+
+### Fichiers modifiés
+- `src/components/home/TickerBar.tsx` — ticker court avec logos obligatoires et fallback lettre.
+- `src/components/home/StatsSection.tsx` — header de section remplacé par “Trois façons de décider”.
+- `src/index.css` — classes `home-decision-ticker*` et `ticker-*`, hauteur 44px, séparateurs visibles.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Détails
+- Items courts : Loom, Slack Pro, Zoom + Teams, Zapier, HubSpot → Brevo, Figma + Sketch, Harvest + Pennylane, Coda + Notion.
+- Logos en pills 26px, image max 17px, fallback initiale.
+- Séparation principale via `border-right: 1px solid #DADAD4`.
+- Motion respectueuse de `prefers-reduced-motion`.

@@ -69,18 +69,18 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
   ];
 
   return (
-    <section className="border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-20">
-        <div className="mb-10 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_auto] lg:items-end">
+    <section className="home-actions-section">
+      <div className="layout-shell">
+        <div className="home-actions-header">
           <div>
-            <span className="section-tag">{t("Ce que ToolTrim cherche", "What ToolTrim looks for")}</span>
-            <h2 className="ts-h2 max-w-3xl">
-              {t("Des économies utiles, pas des coupes au hasard.", "Useful savings, not random cuts.")}
+            <span className="home-actions-eyebrow">{t("Trois façons de décider", "Three ways to decide")}</span>
+            <h2 className="home-actions-title">
+              {t("Commence par la bonne question.", "Start with the right question.")}
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="home-actions-desc">
               {t(
-                "Le diagnostic ne te dit pas seulement quoi supprimer. Il distingue ce qu'il faut garder, réduire, remplacer ou simplement surveiller.",
-                "The diagnostic does not just tell you what to delete. It separates what to keep, downgrade, replace or simply watch."
+                "Audite ta stack, pars d'un profil type ou compare deux outils selon ton usage réel.",
+                "Audit your stack, start from a profile template, or compare two tools based on real usage."
               )}
             </p>
             <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-muted-foreground">
@@ -89,16 +89,9 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
               <span className="rounded-full border border-border px-3 py-1.5">{t("100% indépendant", "100% independent")}</span>
             </div>
           </div>
-          <Link
-            to={`${prefix}/selector`}
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-foreground/88 lg:mb-1"
-          >
-            {t("Identifier mes fuites", "Find my leaks")}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="home-actions-grid">
           {stackLeaks.map((item) => (
             <article
               key={item.title}
@@ -134,6 +127,13 @@ const StatsSection = ({ toolCount, categoryCount }: { toolCount: number; categor
           ))}
         </div>
 
+        <Link
+          to={`${prefix}/selector`}
+          className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-foreground/88 lg:mb-1"
+        >
+          {t("Identifier mes fuites", "Find my leaks")}
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </div>
     </section>
   );

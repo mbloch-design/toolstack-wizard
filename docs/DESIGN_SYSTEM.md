@@ -889,3 +889,13 @@ Notion + Trello   Doublon possible   ◌
 - ❌ Couleurs rouge/bleu dans la barre
 - ❌ Hauteur > 44px
 - ❌ Animation < 35s (trop rapide)
+
+## Homepage Decision Ticker — logo version
+
+- Wrapper: `height: 44px`, `background: #F8F8F4`, borders `#DADAD4`.
+- Track: flex, center aligned, slow linear animation.
+- Item: 44px high, `padding: 0 22px`, visible `border-right` separator.
+- Logo pill: 26px circle, white background, `#DADAD4` border.
+- Logo image: max 17px, object-fit contain.
+- Fallback: first letter inside the same pill.
+- Text: sober grey for tool names, dark bold for decision.

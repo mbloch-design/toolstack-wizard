@@ -8312,3 +8312,100 @@
   }
 
 }
+
+
+/* ─────────────────────────────────────────────
+   Sprint 8 — Homepage decision ticker with logos
+───────────────────────────────────────────── */
+@layer components {
+  .home-decision-ticker {
+    height: 44px;
+    background: #F8F8F4;
+    border-top: 1px solid #DADAD4;
+    border-bottom: 1px solid #DADAD4;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .home-decision-ticker-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 44px;
+    animation: ticker 34s linear infinite;
+    will-change: transform;
+  }
+
+  .home-decision-ticker:hover .home-decision-ticker-track {
+    animation-play-state: paused;
+  }
+
+  .home-decision-ticker-item {
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 22px;
+    white-space: nowrap;
+    border-right: 1px solid #DADAD4;
+    font-size: 14px;
+    line-height: 1;
+    color: #6F6F68;
+  }
+
+  .ticker-tool-group,
+  .ticker-tool {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .ticker-logo-pill {
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .ticker-logo-image {
+    max-width: 17px;
+    max-height: 17px;
+    object-fit: contain;
+  }
+
+  .ticker-logo-fallback {
+    font-size: 11px;
+    font-weight: 700;
+    color: #222222;
+  }
+
+  .ticker-tool-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6F6F68;
+  }
+
+  .ticker-decision {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222222;
+  }
+
+  .ticker-operator {
+    font-size: 14px;
+    color: #9A9A92;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-decision-ticker-track {
+    animation: none !important;
+    transform: translateX(0);
+  }
+}
