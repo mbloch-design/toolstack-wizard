@@ -5,6 +5,7 @@ import { useEffect, useMemo, lazy, Suspense, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { STACKS } from "@/data/stacks";
+import { getToolLogoSources, type LogoCandidateTool } from "@/lib/toolLogos";
 
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
@@ -408,6 +409,47 @@ function EntryCardsSection() {
 /* ─────────────────────────────────────────────────────────────────────────────
    ManifestoSection — position + decision framework
 ───────────────────────────────────────────────────────────────────────────── */
+type ManifestoTool = LogoCandidateTool & {
+  name: string;
+  domain: string;
+};
+
+const manifestoTools: Record<string, ManifestoTool> = {
+  notion: { name: "Notion", slug: "notion", domain: "notion.so", websiteUrl: "https://www.notion.so" },
+  trello: { name: "Trello", slug: "trello", domain: "trello.com", websiteUrl: "https://trello.com" },
+  clickup: { name: "ClickUp", slug: "clickup", domain: "clickup.com", websiteUrl: "https://clickup.com" },
+  zapier: { name: "Zapier", slug: "zapier", domain: "zapier.com", websiteUrl: "https://zapier.com" },
+  loom: { name: "Loom", slug: "loom", domain: "loom.com", websiteUrl: "https://www.loom.com" },
+  canva: { name: "Canva", slug: "canva", domain: "canva.com", websiteUrl: "https://www.canva.com" },
+  hubspot: { name: "HubSpot", slug: "hubspot", domain: "hubspot.com", websiteUrl: "https://www.hubspot.com" },
+  brevo: { name: "Brevo", slug: "brevo", domain: "brevo.com", websiteUrl: "https://www.brevo.com" },
+};
+
+function ManifestoToolPill({ tool, showName = true }: { tool: ManifestoTool; showName?: boolean }) {
+  const sources = useMemo(() => getToolLogoSources(tool, 64), [tool]);
+  const [sourceIndex, setSourceIndex] = useState(0);
+  const logoSrc = sources[sourceIndex];
+
+  return (
+    <span className="home-stack-tool-pill">
+      <span className="home-stack-logo-pill" aria-hidden="true">
+        {logoSrc ? (
+          <img
+            className="home-stack-logo-image"
+            src={logoSrc}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            onError={() => setSourceIndex((index) => index + 1)}
+          />
+        ) : (
+          <span className="home-stack-logo-fallback">{tool.name.charAt(0)}</span>
+        )}
+      </span>
+      {showName ? <span className="home-stack-tool-name">{tool.name}</span> : null}
+    </span>
+  );
+}
 function ManifestoSection() {
   const { t } = useLang();
 
@@ -441,6 +483,22 @@ function ManifestoSection() {
     },
   ];
 
+  const rawStack = [
+    manifestoTools.notion,
+    manifestoTools.trello,
+    manifestoTools.clickup,
+    manifestoTools.zapier,
+    manifestoTools.loom,
+    manifestoTools.canva,
+  ];
+
+  const sortedStack = [
+    { labelFr: "À garder", labelEn: "Keep", tools: [manifestoTools.notion, manifestoTools.canva] },
+    { labelFr: "À couper", labelEn: "Cut", tools: [manifestoTools.trello] },
+    { labelFr: "À remplacer", labelEn: "Replace", tools: [manifestoTools.hubspot], replacement: manifestoTools.brevo },
+    { labelFr: "À challenger", labelEn: "Challenge", tools: [manifestoTools.loom] },
+  ];
+
   return (
     <section className="hp-manifesto es-section">
       <div className="es-container">
@@ -465,6 +523,47 @@ function ManifestoSection() {
                   "Every tool needs a clear role in your stack. Otherwise, it is just one more subscription.",
                 )}
               </p>
+            </div>
+
+            <div className="home-stack-visual" aria-label={t("Exemple de tri ToolTrim", "ToolTrim sorting example")}>
+              <p className="home-stack-visual-label">{t("Exemple de tri", "Sorting example")}</p>
+              <h3 className="home-stack-visual-title">
+                {t("Une stack brute devient une décision.", "A raw stack becomes a decision.")}
+              </h3>
+
+              <div className="home-stack-raw">
+                <p className="home-stack-raw-label">{t("Stack brute", "Raw stack")}</p>
+                <div className="home-stack-logo-row">
+                  {rawStack.map((tool) => (
+                    <ManifestoToolPill key={tool.slug} tool={tool} />
+                  ))}
+                </div>
+              </div>
+
+              <div className="home-stack-connector" aria-hidden="true">
+                <span className="home-stack-connector-line" />
+                <span className="home-stack-connector-text">ToolTrim {t("trie", "sorts")} <span>→</span></span>
+                <span className="home-stack-connector-line" />
+              </div>
+
+              <div className="home-stack-decision-list">
+                {sortedStack.map((row) => (
+                  <div className="home-stack-decision-row" key={row.labelFr}>
+                    <p className="home-stack-decision-label">{t(row.labelFr, row.labelEn)}</p>
+                    <div className="home-stack-mini-row">
+                      {row.tools.map((tool) => (
+                        <ManifestoToolPill key={tool.slug} tool={tool} />
+                      ))}
+                      {row.replacement ? (
+                        <>
+                          <span className="home-stack-arrow" aria-hidden="true">→</span>
+                          <ManifestoToolPill tool={row.replacement} />
+                        </>
+                      ) : null}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="home-position-decisions">

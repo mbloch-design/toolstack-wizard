@@ -8735,3 +8735,168 @@
     margin-bottom: 12px;
   }
 }
+
+
+/* Sprint 10 — homepage Stack -> Decisions visual module */
+@layer components {
+  .home-stack-visual {
+    background: #F8F8F4;
+    border: 1px solid #DADAD4;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 40px;
+  }
+
+  .home-stack-visual-label,
+  .home-stack-raw-label,
+  .home-stack-decision-label {
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .home-stack-visual-label {
+    font-size: 11px;
+    line-height: 1;
+    color: #9A9A92;
+    margin: 0;
+  }
+
+  .home-stack-visual-title {
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+    color: #222222;
+    margin: 10px 0 0;
+  }
+
+  .home-stack-raw {
+    margin-top: 24px;
+    padding: 16px;
+    border: 1px solid #E2E2DC;
+    border-radius: 10px;
+    background: #FFFFFF;
+  }
+
+  .home-stack-raw-label {
+    font-size: 10px;
+    line-height: 1;
+    color: #9A9A92;
+    margin: 0 0 12px;
+  }
+
+  .home-stack-logo-row,
+  .home-stack-mini-row,
+  .home-stack-tool-pill {
+    display: flex;
+    align-items: center;
+  }
+
+  .home-stack-logo-row,
+  .home-stack-mini-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .home-stack-tool-pill {
+    min-width: 0;
+    gap: 7px;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 600;
+    color: #222222;
+  }
+
+  .home-stack-logo-pill {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .home-stack-logo-image {
+    max-width: 18px;
+    max-height: 18px;
+    object-fit: contain;
+  }
+
+  .home-stack-logo-fallback {
+    font-size: 12px;
+    font-weight: 700;
+    color: #222222;
+  }
+
+  .home-stack-tool-name {
+    white-space: nowrap;
+  }
+
+  .home-stack-connector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    color: #6F6F68;
+  }
+
+  .home-stack-connector-line {
+    height: 1px;
+    background: #DADAD4;
+    flex: 1;
+  }
+
+  .home-stack-connector-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #222222;
+    white-space: nowrap;
+  }
+
+  .home-stack-decision-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .home-stack-decision-row {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #E2E2DC;
+  }
+
+  .home-stack-decision-label {
+    font-size: 11px;
+    line-height: 1.1;
+    color: #222222;
+    margin: 0;
+  }
+
+  .home-stack-arrow {
+    font-size: 14px;
+    color: #9A9A92;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-stack-visual {
+    padding: 20px;
+  }
+
+  .home-stack-decision-row {
+    display: block;
+    padding: 14px 0;
+  }
+
+  .home-stack-decision-label {
+    margin-bottom: 10px;
+  }
+}

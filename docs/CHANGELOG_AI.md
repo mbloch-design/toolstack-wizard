@@ -1112,3 +1112,20 @@ Le rendu visible de la home utilisait encore un `ManifestoSection` hardcodé dan
 - Ancien titre supprimé du composant rendu.
 - Anciennes lignes "Quel outil garder / couper / remplacer" supprimées.
 - Nouveau module `+ GARDER / – COUPER / → REMPLACER` rendu dans la section.
+
+---
+
+## 2026-05-16 — Sprint 10 : Diagramme de décision home
+
+### Objectif
+Ajouter du rythme visuel dans la section de positionnement sans illustration générique : montrer comment ToolTrim transforme une stack brute en décisions concrètes.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — ajout du module `EXEMPLE DE TRI` dans `ManifestoSection`, avec logos et fallback initiale.
+- `src/index.css` — styles du module `home-stack-*`, connecteur et lignes de décision responsive.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Une stack brute Notion / Trello / ClickUp / Zapier / Loom / Canva est triée visuellement.
+- Les décisions affichées sont `À garder`, `À couper`, `À remplacer` et `À challenger`.
+- Les logos gardent leurs couleurs natives ; aucune image statique ou décoration gratuite ajoutée.
