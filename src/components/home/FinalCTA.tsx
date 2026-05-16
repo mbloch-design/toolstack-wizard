@@ -16,12 +16,12 @@ const FinalCTA = () => {
         <div style={{ maxWidth: 640 }}>
           <span className="es-eyebrow">{t("Prêt ?", "Ready?")}</span>
           <h2 className="es-title" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-            {t("Combien payez-vous de trop ?", "How much are you overpaying?")}
+            {t("Votre stack mérite mieux qu’une liste d’outils.", "Your stack deserves better than a list of tools.")}
           </h2>
           <p className="es-description" style={{ marginTop: 20 }}>
             {t(
-              "La moyenne est 847€/an. Pour certains profils, c'est le double. Découvrez le vôtre en moins de 3 minutes.",
-              "The average is €847/yr. For some profiles, it's double. Discover yours in under 3 minutes."
+              "Pars de ton profil, de ton budget et de tes usages réels. ToolTrim t’aide à voir quoi garder, quoi couper et quoi challenger.",
+              "Start from your profile, budget and real usage. ToolTrim helps you see what to keep, cut and challenge."
             )}
           </p>
 
@@ -47,7 +47,7 @@ const FinalCTA = () => {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = "0.8"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
             >
-              {t("Analyser ma stack gratuitement", "Analyze my stack for free")}
+              {t("Auditer ma stack", "Audit my stack")}
               <ArrowRight style={{ width: 15, height: 15 }} />
             </Link>
             <span

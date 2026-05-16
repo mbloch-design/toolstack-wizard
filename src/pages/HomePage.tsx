@@ -46,7 +46,6 @@ const BUSINESS_OBJECTIVES = [
     challengeEn: "Jira / duplicate copilot",
     metaFr: "4 outils · niveau installé · TJM 400–700€",
     metaEn: "4 tools · established level · €400–700 day rate",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "consultant-b2b-propre",
@@ -61,7 +60,6 @@ const BUSINESS_OBJECTIVES = [
     challengeEn: "CRM too heavy too early",
     metaFr: "4 outils · solo B2B · TJM 600–1200€",
     metaEn: "4 tools · solo B2B · €600–1200 day rate",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "createur-contenu-operateur",
@@ -76,7 +74,6 @@ const BUSINESS_OBJECTIVES = [
     challengeEn: "duplicate AI subscriptions",
     metaFr: "4 outils · rythme hebdo · budget contenu",
     metaEn: "4 tools · weekly rhythm · content budget",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "ops-manager-fractional-coo",
@@ -91,7 +88,6 @@ const BUSINESS_OBJECTIVES = [
     challengeEn: "duplicate PM tools",
     metaFr: "4 outils · équipe légère · ops récurrentes",
     metaEn: "4 tools · light team · recurring ops",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "freelance-solo-zero-bloat",
@@ -106,7 +102,6 @@ const BUSINESS_OBJECTIVES = [
     challengeEn: "full marketing suite",
     metaFr: "4 outils · démarrage · budget bas",
     metaEn: "4 tools · starter · low budget",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "automatisation-legere-freelance",
@@ -121,7 +116,6 @@ const BUSINESS_OBJECTIVES = [
     challengeEn: "Zapier Pro too early",
     metaFr: "4 outils · automatisation légère · usage mesuré",
     metaEn: "4 tools · light automation · measured usage",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
   },
 ];
 
@@ -167,11 +161,11 @@ const HomePage = () => {
 
   useEffect(() => {
     const title = lang === "fr"
-      ? "ToolTrim — Audite ta stack, coupe ce qui ne sert pas"
-      : "ToolTrim — Audit your stack, cut what doesn't work";
+      ? "ToolTrim — Choisir les bons outils pour sa stack freelance"
+      : "ToolTrim — Choose the right tools for your freelance stack";
     const desc = lang === "fr"
-      ? "ToolTrim aide les freelances et solopreneurs à auditer leurs abonnements SaaS, repérer les doublons et construire une stack qui vaut vraiment le coût."
-      : "ToolTrim helps freelancers and solopreneurs audit their SaaS subscriptions, spot duplicates and build a stack that's actually worth the cost.";
+      ? "ToolTrim analyse votre stack SaaS selon votre profil, votre niveau, votre budget et vos usages pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés."
+      : "ToolTrim analyzes your SaaS stack based on your profile, level, budget and usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.";
     const url = `${SEO_BASE}/${lang}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}`);
@@ -262,8 +256,8 @@ const HomePage = () => {
       </EditorialSection>
 
       {/* 15. FAQ */}
-      <section id="faq" className="scroll-mt-24 border-t border-border py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section id="faq" className="es-section es-section--white scroll-mt-24">
+        <div className="es-container">
           <FaqBlock
             eyebrow={t("Questions fréquentes", "Frequently asked questions")}
             title={t("Questions fréquentes", "Frequently asked questions")}

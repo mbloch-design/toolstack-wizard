@@ -1370,3 +1370,20 @@ Transformer la section `Stacks par objectif` pour qu'elle ressemble à des recom
 - Les photos stock ne sont plus rendues dans cette section.
 - Les économies fixes de type `-58€` disparaissent de la home.
 - Chaque carte affiche un budget cible, des outils clés et un angle de décision.
+
+---
+
+## 2026-05-17 — Sprint 25 : Audit global homepage
+
+### Objectif
+Nettoyer la home après les itérations successives pour retrouver une narration cohérente : ToolTrim part du profil, du niveau, du budget, du TJM, des usages et de la stack existante, plutôt que d'empiler des listes d'outils.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — nettoyage des anciennes URLs de photos stock dans les données de stacks, mise à jour des métadonnées SEO et alignement de la FAQ sur le conteneur global.
+- `src/components/home/FinalCTA.tsx` — remplacement de la promesse chiffrée `847€/an` par un CTA final plus calme et contextualisé.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Les anciens marqueurs de comparateur générique et de promesse d'économie non sourcée sont retirés de la home.
+- La FAQ utilise le même système de grille que les autres sections.
+- Le CTA final revient à la promesse centrale : auditer la stack depuis le profil, le budget et les usages réels.
