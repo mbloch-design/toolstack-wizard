@@ -1,81 +1,101 @@
 import { useLang } from "@/hooks/useLang";
+import { Check, X, Minus } from "lucide-react";
 
-const DiffTable = () => {
+const DiffTable = ({ toolCount }: { toolCount: number }) => {
   const { t } = useLang();
 
-  const decisions = [
-    {
-      sign: "+",
-      labelFr: "Garder",
-      labelEn: "Keep",
-      titleFr: "L'outil a un rôle clair.",
-      titleEn: "The tool has a clear role.",
-      textFr: "Utilisé chaque semaine, intégré à ton workflow.",
-      textEn: "Used every week, integrated into your workflow.",
-    },
-    {
-      sign: "–",
-      labelFr: "Couper",
-      labelEn: "Cut",
-      titleFr: "L'outil dort ou fait doublon.",
-      titleEn: "The tool is dormant or redundant.",
-      textFr: "Payé tous les mois, ouvert deux fois par trimestre.",
-      textEn: "Paid every month, opened twice per quarter.",
-    },
-    {
-      sign: "→",
-      labelFr: "Remplacer",
-      labelEn: "Replace",
-      titleFr: "L'outil est trop lourd pour ton usage.",
-      titleEn: "The tool is too heavy for your usage.",
-      textFr: "Une alternative plus légère couvre déjà le besoin.",
-      textEn: "A lighter alternative already covers the need.",
-    },
+  const rows = [
+    { feature: t("Personnalisé par profil et TJM", "Personalized by profile and daily rate"), tt: true, ann: false, comp: false },
+    { feature: t("Détection de doublons dans votre stack", "Duplicate detection in your stack"), tt: true, ann: false, comp: false },
+    { feature: t("Économies estimées par outil", "Estimated savings per tool"), tt: true, ann: false, comp: false },
+    { feature: t("Indépendant — aucune affiliation", "Independent — no affiliation"), tt: true, ann: false, comp: "partial" as const },
+    { feature: "Stack Health Score", tt: true, ann: false, comp: false },
+    { feature: t("Base d'outils vérifiés", "Verified tool database"), tt: `${toolCount}+`, ann: "500+", comp: t("variable", "varies") },
   ];
 
   return (
-    <section className="home-position-section">
-      <div className="layout-shell">
-        <div className="home-position-grid">
-          <div>
-            <p className="home-position-eyebrow">{t("Notre position", "Our position")}</p>
-            <h2 className="home-position-title">
-              {t("Pas un annuaire. Un outil de tri.", "Not a directory. A sorting tool.")}
-            </h2>
-          </div>
+    <section className="border-t border-border">
+      <div className="mx-auto max-w-7xl px-6 py-24">
 
-          <div>
-            <div className="home-position-intro">
-              <p>{t("ToolTrim ne cherche pas à tout lister.", "ToolTrim does not try to list everything.")}</p>
-              <p>{t("Il aide à faire le tri.", "It helps you sort.")}</p>
-              <p>
-                {t(
-                  "Chaque outil doit avoir un rôle clair dans ta stack. Sinon, c'est juste un abonnement de plus.",
-                  "Every tool needs a clear role in your stack. Otherwise, it is just one more subscription."
-                )}
-              </p>
-            </div>
-
-            <div className="home-decision-module">
-              {decisions.map((decision) => (
-                <div className="home-decision-row" key={decision.labelFr}>
-                  <div className="home-decision-label">
-                    <span className="home-decision-sign">{decision.sign}</span>
-                    {t(decision.labelFr, decision.labelEn)}
-                  </div>
-                  <div>
-                    <p className="home-decision-main">{t(decision.titleFr, decision.titleEn)}</p>
-                    <p className="home-decision-secondary">{t(decision.textFr, decision.textEn)}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p className="home-position-closing">
-              {t("Chaque outil doit justifier sa place.", "Every tool has to justify its place.")}
-            </p>
-          </div>
+        {/* Header */}
+        <div className="mb-10">
+          <span className="section-tag">{t("Positionnement", "Positioning")}</span>
+          <h2 className="ts-h2">
+            {t("Pas un annuaire. ", "Not a directory. ")}
+            <span className="text-primary">{t("Un diagnostic.", "A diagnosis.")}</span>
+          </h2>
         </div>
+
+        {/* Table */}
+        <div className="rounded-xl border border-border overflow-hidden">
+
+          {/* Header row */}
+          <div
+            className="grid grid-cols-4 border-b border-border px-6 py-4"
+            style={{ background: "hsl(var(--card))" }}
+          >
+            <span className="label-section">{t("Fonctionnalité", "Feature")}</span>
+            {/* ToolTrim column — highlighted */}
+            <div className="flex flex-col items-center gap-1">
+              <span className="ts-caption font-display font-semibold text-primary">ToolTrim</span>
+              <span className="ts-mono-badge rounded-full bg-primary/10 px-2 py-0.5 text-primary uppercase tracking-widest">
+                {t("vous", "you")}
+              </span>
+            </div>
+            <span className="text-center label-section">{t("Annuaires", "Directories")}</span>
+            <span className="text-center label-section">{t("Comparateurs", "Comparators")}</span>
+          </div>
+
+          {/* Rows */}
+          {rows.map((row, i) => (
+            <div
+              key={i}
+              className="grid grid-cols-4 items-center border-b border-border last:border-b-0 px-6 py-4 transition-colors duration-100"
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--primary) / 0.03)"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = ""; }}
+            >
+              <span className="text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
+                {row.feature}
+              </span>
+
+              {/* ToolTrim */}
+              <div className="flex justify-center">
+                {typeof row.tt === "string" ? (
+                  <span className="ts-caption font-display font-semibold text-primary">
+                    {row.tt}
+                  </span>
+                ) : (
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15">
+                    <Check className="h-3 w-3 text-primary" strokeWidth={2.5} />
+                  </div>
+                )}
+              </div>
+
+              {/* Annuaires */}
+              <div className="flex justify-center">
+                {typeof row.ann === "string" ? (
+                  <span className="text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>{row.ann}</span>
+                ) : (
+                  <X className="h-4 w-4" style={{ color: "hsl(var(--muted-foreground) / 0.2)" }} />
+                )}
+              </div>
+
+              {/* Comparateurs */}
+              <div className="flex justify-center">
+                {typeof row.comp === "string" ? (
+                  row.comp === "partial" ? (
+                    <Minus className="h-4 w-4" style={{ color: "hsl(38 80% 50% / 0.6)" }} />
+                  ) : (
+                    <span className="text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>{row.comp}</span>
+                  )
+                ) : (
+                  <X className="h-4 w-4" style={{ color: "hsl(var(--muted-foreground) / 0.2)" }} />
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
