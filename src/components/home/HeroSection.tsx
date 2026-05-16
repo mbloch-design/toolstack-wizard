@@ -112,7 +112,7 @@ function StackAuditPreview({ lang, prefix }: { lang: string; prefix: string }) {
           {isFr ? "Audit de stack" : "Stack audit"}
         </span>
         <span className="hp-audit-header-budget">
-          {isFr ? "Budget actuel : 85 €/mois" : "Current budget: €85/mo"}
+          {isFr ? "Budget actuel · 85 €/mois" : "Current budget · €85/mo"}
         </span>
       </div>
 
@@ -130,8 +130,6 @@ function StackAuditPreview({ lang, prefix }: { lang: string; prefix: string }) {
         </div>
       ))}
 
-      <div className="hp-audit-divider" />
-
       {/* Footer — budget */}
       <div className="hp-audit-footer">
         <div className="hp-audit-footer-budget">
@@ -147,18 +145,20 @@ function StackAuditPreview({ lang, prefix }: { lang: string; prefix: string }) {
         </span>
       </div>
 
-      {/* Mini CTA */}
-      <Link to={`${prefix}/selector`} className="hp-audit-mini-cta">
-        {isFr ? "Auditer ma vraie stack" : "Audit my real stack"}
-        <ArrowRight style={{ width: 13, height: 13 }} />
-      </Link>
+      <div className="hp-audit-bottom">
+        {/* Mini CTA */}
+        <Link to={`${prefix}/selector`} className="hp-audit-mini-cta">
+          {isFr ? "Auditer ma vraie stack" : "Audit my real stack"}
+          <ArrowRight style={{ width: 13, height: 13 }} />
+        </Link>
 
-      {/* Disclaimer */}
-      <p className="hp-audit-disclaimer">
-        {isFr
-          ? "Exemple illustratif · pas une analyse de ta stack réelle"
-          : "Illustrative example · not an analysis of your actual stack"}
-      </p>
+        {/* Disclaimer */}
+        <p className="hp-audit-disclaimer">
+          {isFr
+            ? "Exemple illustratif, pas une analyse réelle."
+            : "Illustrative example, not a real analysis."}
+        </p>
+      </div>
     </div>
   );
 }

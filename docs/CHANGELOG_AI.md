@@ -1406,3 +1406,20 @@ Retirer les séparateurs pleine largeur trop présents sur la homepage pour retr
 - Les coupes horizontales entre sections sont supprimées sur la home.
 - Les bordures du ticker, des cartes, des lignes de diagnostic et des panels restent intactes.
 - La séparation repose davantage sur l'espacement, les fonds et la grille commune.
+
+---
+
+## 2026-05-17 — Sprint 27 : Carte d'audit hero
+
+### Objectif
+Rendre la carte d'audit du hero plus précise et moins dashboard, sans changer le message du hero ni le rôle de la preview.
+
+### Fichiers modifiés
+- `src/components/home/HeroSection.tsx` — footer de carte regroupé, wording budget/disclaimer simplifié.
+- `src/index.css` — styles `hp-audit-*` affinés : ombre réduite, grille plus nette, labels décisionnels textuels, CTA secondaire en lien discret.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- La preview ressemble davantage à une fiche de décision ToolTrim qu'à un widget SaaS.
+- Le CTA de la carte ne concurrence plus le CTA principal du hero.
+- Les logos, outils, décisions, budget cible et disclaimer restent présents.
