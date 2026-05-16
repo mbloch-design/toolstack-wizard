@@ -2,6 +2,83 @@
 
 ---
 
+## 2026-05-16 — Sprint Home : Identité et vie (Hero 2-col + modules produit)
+
+### Objectif
+Rendre la home plus vivante, concrète et produit-focused. Montrer le geste ToolTrim dès le hero : auditer, trier, garder, couper, remplacer. Ajouter des modules visuels qui donnent une identité produit immédiate.
+
+### Fichiers modifiés
+- `src/components/home/HeroSection.tsx` — réécriture complète (2-col + StackAuditPreview)
+- `src/pages/HomePage.tsx` — enrichissement de 3 sections + 2 nouvelles sections
+- `src/index.css` — ajout classes `hp-*` Sprint 4 (~350 lignes)
+- `docs/CHANGELOG_AI.md` — ce fichier
+
+### HeroSection.tsx — réécriture 2-colonnes
+
+**Supprimé :**
+- `eh-root--centered` (hero centré, colonne unique)
+- `justifyContent: center` sur tous les éléments
+
+**Ajouté :**
+- Layout `hp-hero-2col` : `1fr 420px` sur desktop, colonne unique sous 1100px
+- `hp-hero-left` : eyebrow + H1 alignés à gauche + description + CTAs
+- `hp-hero-right` : `StackAuditPreview` inline component
+- **`AuditToolLogo`** : favicon CDN (`t3.gstatic.com/faviconV2`) + lettre fallback via `useState`
+- **`AuditBadge`** : 4 variants CSS (`--keep` vert / `--challenge` ambre / `--duplicate` rouge / `--soon` gris)
+- **`StackAuditPreview`** : 5 outils (Notion/Canva/Loom/Trello/Zapier), header budget actuel 85€, footer budget cible 48€ + saving −37€/mois, hover "Pourquoi?" reveal (CSS pur, no JS), mini-CTA "Auditer ma vraie stack", disclaimer italique
+
+### HomePage.tsx — enrichissements et nouvelles sections
+
+**EntryCardsSection enrichie :**
+- Ajout `exampleFr`/`exampleEn` par carte (italic sous la description)
+- CTA spécifique par carte : "Lancer l'audit" / "Voir les stacks" / "Comparer maintenant" (au lieu de "Commencer" générique)
+
+**ManifestoSection enrichie :**
+- Ajout bloc `hp-decisions` après les 3 paragraphes
+- 3 lignes : Garder / Couper / Remplacer — chacune avec clé uppercase + description en gras ciblé
+
+**WhatWeCutSection réécrite (liste → decision rows) :**
+- Passage de `hp-cuts-item` (dash + texte) → `hp-cut-row` (point + titre + exemple italique)
+- Chaque item a maintenant un exemple concret (ex : "Loom ouvert 2 fois ce mois. Slack video suffit.")
+
+**AvantAprèsSection — NOUVELLE :**
+- Heading : "9 outils, 123 €/mois → 5 outils, 48 €/mois."
+- 2 panels côte à côte (`hp-aa-panel` / `hp-aa-panel--after`)
+- Panel Avant : header cream, 9 outils listés avec prix
+- Panel Après : header noir, items kept (vert) vs cut (barré gris) avec label doublon/dormant/trop tôt
+- Saving summary : "−75 € / soit −900 €/an"
+- CTA : "Calculer mon économie →"
+
+**MethodeSection — NOUVELLE :**
+- Heading : "3 étapes. Pas de jargon." + CTA inline "Commencer l'audit"
+- Grille 3 colonnes (`hp-methode-grid`) : 01 usage / 02 doublons / 03 décision
+- Chaque step : grand numéro décoratif (couleur cream), titre, description, exemple en box italique
+
+**Ordre des sections mis à jour :**
+1. Hero → 2. TickerBar → 3. EntryCards → 4. Manifesto → 5. WhatWeCut → **6. AvantAprès (NOUVEAU)** → **7. Méthode (NOUVEAU)** → 8. BusinessObjectives → 9-16. sections existantes
+
+### index.css — nouvelles classes Sprint 4 (`@layer components`)
+
+| Famille | Classes |
+|---------|---------|
+| Hero 2-col | `hp-hero-2col`, `hp-hero-left`, `hp-hero-right` |
+| Audit preview | `hp-audit`, `hp-audit-header`, `hp-audit-row`, `hp-audit-logo`, `hp-audit-badge` (4 variants), `hp-audit-price`, `hp-audit-why`, `hp-audit-footer`, `hp-audit-mini-cta`, `hp-audit-disclaimer` |
+| Entry enriched | `hp-entry-example`, `hp-entry-example-label` |
+| Decisions | `hp-decisions`, `hp-decision`, `hp-decision-key`, `hp-decision-desc` |
+| Cut rows | `hp-cut-rows`, `hp-cut-row`, `hp-cut-row-header`, `hp-cut-row-indicator`, `hp-cut-row-title`, `hp-cut-row-example` |
+| Avant/Après | `hp-aa`, `hp-aa-inner`, `hp-aa-panel`, `hp-aa-panel--after`, `hp-aa-panel-header`, `hp-aa-list`, `hp-aa-item`, `hp-aa-item--kept`, `hp-aa-item--cut`, `hp-aa-saving` |
+| Méthode | `hp-methode`, `hp-methode-grid`, `hp-methode-step`, `hp-methode-num`, `hp-methode-title`, `hp-methode-desc`, `hp-methode-example` |
+
+### Décisions techniques
+
+- `AuditToolLogo` : `useState(false)` pour détecter l'erreur de chargement favicon → fallback lettre
+- Hover "Pourquoi?" : `opacity: 0` → `opacity: 1` sur `.hp-audit-row:hover .hp-audit-why` (pur CSS, 0 JS)
+- Badges colorés (vert/ambre/rouge/gris) : seul usage de couleur fonctionnelle sur la home, justifié par la valeur sémiologique (status = décision)
+- Pas de gradient, pas de bleu, palette 100% dans le design system existant
+- Breakpoint 1100px pour le hero (pas 900px) : la preview audit a besoin d'espace à 420px
+
+---
+
 ## 2026-05-16 — Sprint Home : Repositionnement autour de l'audit de stack
 
 ### Objectif
