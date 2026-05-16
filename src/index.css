@@ -7700,14 +7700,16 @@
     opacity: 0.82;
   }
 
-  /* ── Ticker Sprint 5 — logos + décisions ── */
+  /* ── Ticker Sprint 6 — Awwwards style ── */
   .hp-ticker {
-    height: 44px;
+    height: 40px;
     background: #F8F8F4 !important;
     border-top: 1px solid #DADAD4 !important;
     border-bottom: 1px solid #DADAD4 !important;
     overflow: hidden;
     max-height: none;
+    display: flex;
+    align-items: center;
   }
 
 }
@@ -8083,6 +8085,69 @@
     .home-actions-grid {
       grid-template-columns: 1fr;
       gap: 14px;
+    }
+  }
+
+}
+
+/* ─────────────────────────────────────────────
+   TICKER ITEMS (hpt-*) Sprint 6 — Awwwards
+   Override Sprint 5. Typographie pure, sans logos.
+───────────────────────────────────────────── */
+@layer components {
+
+  /* Track flex */
+  .hpt-track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    height: 40px;
+  }
+
+  /* Item group : tools + decision + sep */
+  .hpt-item-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+
+  /* Tool name(s) — léger, secondaire */
+  .hpt-tools {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 400;
+    color: #6F6F68;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* Decision — gras, principal */
+  .hpt-decision {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* Séparateur ◌ */
+  .hpt-sep {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1;
+    color: #222222;
+    opacity: 0.35;
+    margin: 0 22px;
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  /* Respecter prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-ticker {
+      animation: none !important;
     }
   }
 

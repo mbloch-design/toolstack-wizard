@@ -128,7 +128,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "slide-up": "slide-up 0.6s ease-out forwards",
         "count-up": "count-up 0.3s ease-out forwards",
-        ticker: "ticker 28s linear infinite",
+        ticker: "ticker 45s linear infinite",
         float: "float 4s ease-in-out infinite",
       },
     },

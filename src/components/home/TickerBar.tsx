@@ -1,132 +1,62 @@
-import { useState } from "react";
 import { useLang } from "@/hooks/useLang";
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   TickerBar — Sprint 5
-   Bande de décisions ToolTrim avec logos d'outils.
-   Structure par item : [logo] Outil A  +  [logo] Outil B  →  Décision
+   TickerBar — Sprint 6 · style Awwwards
+   Ligne de décisions typographiques : outil(s) + décision courte + ◌
+   Pas de logos. Rythme lent. Intensité basse.
 ───────────────────────────────────────────────────────────────────────────── */
 
-interface TickerTool {
-  name: string;
-  domain: string;
-}
-
 interface TickerItem {
-  tools: TickerTool[];
+  /** Nom(s) d'outil — identiques FR/EN (noms propres) */
+  tools: string;
   decisionFr: string;
   decisionEn: string;
 }
 
 const ITEMS: TickerItem[] = [
-  {
-    tools: [{ name: "Notion", domain: "notion.so" }, { name: "Coda", domain: "coda.io" }],
-    decisionFr: "Doublon à challenger",
-    decisionEn: "Duplicate to challenge",
-  },
-  {
-    tools: [{ name: "Slack", domain: "slack.com" }],
-    decisionFr: "À garder si usage quotidien",
-    decisionEn: "Keep if used daily",
-  },
-  {
-    tools: [{ name: "Zoom", domain: "zoom.us" }, { name: "Teams", domain: "microsoft.com" }],
-    decisionFr: "Redondance possible",
-    decisionEn: "Possible redundancy",
-  },
-  {
-    tools: [{ name: "HubSpot", domain: "hubspot.com" }],
-    decisionFr: "Remplacer par Brevo à ce stade",
-    decisionEn: "Replace with Brevo at this stage",
-  },
-  {
-    tools: [{ name: "Zapier", domain: "zapier.com" }],
-    decisionFr: "Make couvre 90% du besoin",
-    decisionEn: "Make covers 90% of the need",
-  },
-  {
-    tools: [{ name: "Harvest", domain: "getharvest.com" }, { name: "Pennylane", domain: "pennylane.com" }],
-    decisionFr: "Doublon avec Pennylane",
-    decisionEn: "Duplicates Pennylane",
-  },
-  {
-    tools: [{ name: "Figma", domain: "figma.com" }, { name: "Sketch", domain: "sketch.com" }],
-    decisionFr: "Couper Sketch",
-    decisionEn: "Cut Sketch",
-  },
-  {
-    tools: [{ name: "Loom", domain: "loom.com" }],
-    decisionFr: "À challenger si < 3 vidéos/mois",
-    decisionEn: "Challenge if < 3 videos/month",
-  },
+  { tools: "Notion + Trello",  decisionFr: "Doublon possible",    decisionEn: "Possible duplicate"   },
+  { tools: "Slack Pro",        decisionFr: "À garder",            decisionEn: "Keep it"              },
+  { tools: "Zoom + Teams",     decisionFr: "Redondance",          decisionEn: "Redundancy"           },
+  { tools: "Zapier",           decisionFr: "Trop tôt",            decisionEn: "Too soon"             },
+  { tools: "HubSpot",          decisionFr: "À remplacer",         decisionEn: "Replace it"           },
+  { tools: "Figma + Sketch",   decisionFr: "Couper Sketch",       decisionEn: "Cut Sketch"           },
+  { tools: "Loom",             decisionFr: "À challenger",        decisionEn: "Challenge it"         },
+  { tools: "Harvest",          decisionFr: "Doublon Pennylane",   decisionEn: "Duplicates Pennylane" },
+  { tools: "Coda + Notion",    decisionFr: "Garder un seul",      decisionEn: "Keep one"             },
 ];
-
-/* ── Logo pill with favicon CDN + letter fallback ── */
-function TickerLogo({ name, domain }: TickerTool) {
-  const [err, setErr] = useState(false);
-  const src = `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${domain}&size=32`;
-  return (
-    <span className="hpt-logo">
-      {!err ? (
-        <img src={src} alt="" aria-hidden="true" onError={() => setErr(true)} />
-      ) : (
-        <span className="hpt-logo-letter">{name[0].toUpperCase()}</span>
-      )}
-    </span>
-  );
-}
 
 const TickerBar = () => {
   const { lang } = useLang();
-  const doubled = [...ITEMS, ...ITEMS];
+  /* Dupliquer pour boucle seamless (keyframe translateX 0 → -50%) */
+  const track = [...ITEMS, ...ITEMS];
 
   return (
-    <div
-      className="hp-ticker relative overflow-hidden"
-      role="marquee"
-      aria-label={lang === "fr" ? "Exemples de décisions ToolTrim" : "ToolTrim decision examples"}
-    >
+    /* aria-hidden : décoratif, pas de valeur d'information critique */
+    <div className="hp-ticker relative overflow-hidden" aria-hidden="true">
+
       {/* Fades latéraux */}
       <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10"
         style={{ background: "linear-gradient(to right, #F8F8F4, transparent)" }}
       />
       <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10"
         style={{ background: "linear-gradient(to left, #F8F8F4, transparent)" }}
       />
 
-      {/* Scrolling track */}
-      <div
-        className="animate-ticker hover:[animation-play-state:paused]"
-        style={{ display: "inline-flex", alignItems: "center", whiteSpace: "nowrap" }}
-      >
-        {doubled.map((item, i) => (
-          <span key={i} className="hpt-item">
-            {/* Tools — [logo] Name  +  [logo] Name */}
-            {item.tools.map((tool, ti) => (
-              <span
-                key={tool.domain}
-                style={{ display: "inline-flex", alignItems: "center", gap: 5 }}
-              >
-                {ti > 0 && <span className="hpt-plus">+</span>}
-                <TickerLogo name={tool.name} domain={tool.domain} />
-                <span className="hpt-name">{tool.name}</span>
-              </span>
-            ))}
-
-            {/* Arrow */}
-            <span className="hpt-arrow" aria-hidden="true">→</span>
-
-            {/* Decision */}
+      {/* Track animé */}
+      <div className="animate-ticker hpt-track hover:[animation-play-state:paused]">
+        {track.map((item, i) => (
+          <span key={i} className="hpt-item-group">
+            <span className="hpt-tools">{item.tools}</span>
             <span className="hpt-decision">
               {lang === "fr" ? item.decisionFr : item.decisionEn}
             </span>
+            <span className="hpt-sep" aria-hidden="true">◌</span>
           </span>
         ))}
       </div>
+
     </div>
   );
 };
