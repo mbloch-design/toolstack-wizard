@@ -1387,3 +1387,4 @@ Nettoyer la home après les itérations successives pour retrouver une narration
 - Les anciens marqueurs de comparateur générique et de promesse d'économie non sourcée sont retirés de la home.
 - La FAQ utilise le même système de grille que les autres sections.
 - Le CTA final revient à la promesse centrale : auditer la stack depuis le profil, le budget et les usages réels.
+- La meta description de la home intègre désormais le TJM dans les critères de recommandation.

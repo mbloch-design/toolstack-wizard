@@ -164,8 +164,8 @@ const HomePage = () => {
       ? "ToolTrim — Choisir les bons outils pour sa stack freelance"
       : "ToolTrim — Choose the right tools for your freelance stack";
     const desc = lang === "fr"
-      ? "ToolTrim analyse votre stack SaaS selon votre profil, votre niveau, votre budget et vos usages pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés."
-      : "ToolTrim analyzes your SaaS stack based on your profile, level, budget and usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.";
+      ? "ToolTrim analyse votre stack SaaS selon votre profil, votre niveau, votre budget, votre TJM et vos usages pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés."
+      : "ToolTrim analyzes your SaaS stack based on your profile, level, budget, day rate and usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.";
     const url = `${SEO_BASE}/${lang}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}`);
