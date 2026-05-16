@@ -8466,3 +8466,135 @@
     transform: translateX(0);
   }
 }
+
+
+/* Sprint 9 — homepage position decision framework */
+@layer components {
+  .home-position-section {
+    background: #EDEDE8;
+    border-top: 1px solid #DADAD4;
+    border-bottom: 1px solid #DADAD4;
+    padding: 96px 0;
+  }
+
+  .home-position-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(72px, 8vw, 128px);
+    align-items: start;
+  }
+
+  .home-position-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-bottom: 18px;
+    line-height: 1;
+  }
+
+  .home-position-title {
+    font-size: clamp(48px, 5vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    font-weight: 600;
+    color: #222222;
+    max-width: 560px;
+    margin: 0;
+  }
+
+  .home-position-intro {
+    max-width: 620px;
+  }
+
+  .home-position-intro p {
+    font-size: 20px;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    color: #222222;
+    margin: 0;
+  }
+
+  .home-position-intro p + p {
+    margin-top: 8px;
+  }
+
+  .home-decision-module {
+    margin-top: 48px;
+    border-top: 1.5px solid #222222;
+    border-bottom: 1.5px solid #222222;
+  }
+
+  .home-decision-row {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid #DADAD4;
+  }
+
+  .home-decision-row:last-child {
+    border-bottom: none;
+  }
+
+  .home-decision-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #222222;
+    line-height: 1.2;
+  }
+
+  .home-decision-sign {
+    display: inline-block;
+    width: 22px;
+    color: #222222;
+    opacity: 0.85;
+  }
+
+  .home-decision-main {
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+    color: #222222;
+    margin: 0;
+  }
+
+  .home-decision-secondary {
+    font-size: 15px;
+    line-height: 1.45;
+    color: #6F6F68;
+    margin-top: 8px;
+    max-width: 520px;
+  }
+
+  .home-position-closing {
+    margin-top: 28px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-position-section {
+    padding: 64px 0;
+  }
+
+  .home-position-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .home-decision-row {
+    display: block;
+    padding: 24px 0;
+  }
+
+  .home-decision-label {
+    margin-bottom: 12px;
+  }
+}

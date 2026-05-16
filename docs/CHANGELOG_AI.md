@@ -1078,3 +1078,20 @@ Réconcilier le ticker Awwwards avec la valeur produit ToolTrim : chaque décisi
 - Logos en pills 26px, image max 17px, fallback initiale.
 - Séparation principale via `border-right: 1px solid #DADAD4`.
 - Motion respectueuse de `prefers-reduced-motion`.
+
+---
+
+## 2026-05-16 — Sprint 9 : Section position et tri
+
+### Objectif
+Renforcer la section "Pas un annuaire" pour en faire un vrai bloc de positionnement et de décision ToolTrim.
+
+### Fichiers modifiés
+- `src/components/home/DiffTable.tsx` — remplacement de la table comparative par un module Garder / Couper / Remplacer.
+- `src/index.css` — styles `home-position-*` et `home-decision-*`.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Détails
+- Nouveau titre : "Pas un annuaire. Un outil de tri."
+- Layout desktop 2 colonnes : position à gauche, intro + module de décision à droite.
+- Fond #EDEDE8, bordures simples, aucune carte blanche, icône ou gradient.
