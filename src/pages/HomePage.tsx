@@ -251,108 +251,73 @@ const HomePage = () => {
 };
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   EntryCardsSection — Hub d'actions : grande carte audit + 2 cartes secondaires
+   EntryCardsSection — 3 modules côte à côte, sobres et actionnables
 ───────────────────────────────────────────────────────────────────────────── */
 function EntryCardsSection() {
-  const { t, prefix } = useLang();
-  const isFr = useLang().lang === "fr";
+  const { lang, t, prefix } = useLang();
+  const isFr = lang === "fr";
+
+  const entries = [
+    {
+      number: "01",
+      titleFr: "Auditer ma stack",
+      titleEn: "Audit my stack",
+      descFr: "Repère les outils utiles, les doublons et les abonnements que tu peux couper.",
+      descEn: "Spot useful tools, duplicates and subscriptions you can cut.",
+      exFr: "Loom + Zapier + Trello → 2 doublons détectés",
+      exEn: "Loom + Zapier + Trello → 2 duplicates found",
+      ctaFr: "Lancer l'audit",
+      ctaEn: "Start audit",
+      href: `${prefix}/selector`,
+    },
+    {
+      number: "02",
+      titleFr: "Trouver ma stack",
+      titleEn: "Find my stack",
+      descFr: "Pars de ton métier, ton budget et ton niveau pour construire un setup simple.",
+      descEn: "Start from your job, budget and level to build a lean setup.",
+      exFr: "Consultant B2B → stack à 50 €/mois",
+      exEn: "B2B consultant → stack at €50/mo",
+      ctaFr: "Voir les stacks",
+      ctaEn: "Browse stacks",
+      href: `${prefix}/stacks`,
+    },
+    {
+      number: "03",
+      titleFr: "Comparer deux outils",
+      titleEn: "Compare two tools",
+      descFr: "Décide entre deux solutions selon ton usage réel, pas selon une liste de fonctionnalités.",
+      descEn: "Choose between two tools based on your actual use, not a feature list.",
+      exFr: "Notion vs Airtable → docs ou base de données ?",
+      exEn: "Notion vs Airtable → docs or database?",
+      ctaFr: "Comparer maintenant",
+      ctaEn: "Compare now",
+      href: `${prefix}/comparatifs`,
+    },
+  ];
 
   return (
-    <section className="hp-hub es-section">
-      <div className="es-container">
-        <div className="hp-hub-grid">
-
-          {/* ── Grande carte principale — Auditer ma stack ── */}
-          <Link to={`${prefix}/selector`} className="hp-hub-main">
-            <span className="hp-hub-label">{t("Action principale", "Main action")}</span>
-            <span className="hp-hub-title">{t("Auditer ma stack", "Audit my stack")}</span>
-            <p className="hp-hub-desc">
-              {t(
-                "Repère les outils utiles, les doublons et les abonnements que tu peux couper.",
-                "Spot useful tools, duplicates and subscriptions you can cut.",
-              )}
-            </p>
-
-            {/* Mini module Avant → Après */}
-            <div className="hp-hub-mini">
-              <div className="hp-hub-mini-row">
-                <div className="hp-hub-mini-col">
-                  <span className="hp-hub-mini-lbl">{t("Avant", "Before")}</span>
-                  <span className="hp-hub-mini-val">{t("7 outils · 94 €/mois", "7 tools · €94/mo")}</span>
-                </div>
-                <span className="hp-hub-mini-arrow">→</span>
-                <div className="hp-hub-mini-col">
-                  <span className="hp-hub-mini-lbl">{t("Après", "After")}</span>
-                  <span className="hp-hub-mini-val">{t("5 outils · 52 €/mois", "5 tools · €52/mo")}</span>
-                </div>
-              </div>
-              <div className="hp-hub-mini-tags">
-                <span className="hp-hub-mini-tag">{t("À garder", "Keep")}</span>
-                <span className="hp-hub-mini-tag">{t("À couper", "Cut")}</span>
-                <span className="hp-hub-mini-tag">{t("À remplacer", "Replace")}</span>
-              </div>
-            </div>
-
-            {/* Example */}
-            <div className="hp-hub-example">
-              {isFr
-                ? "Loom + Zapier + Trello → 2 doublons détectés, 42 €/mois à challenger"
-                : "Loom + Zapier + Trello → 2 duplicates found, €42/mo to challenge"}
-            </div>
-
-            {/* CTA */}
-            <span className="hp-hub-cta-dark" style={{ marginTop: 24 }}>
-              {t("Lancer l'audit", "Start audit")}
-              <ArrowRight style={{ width: 14, height: 14 }} />
-            </span>
-          </Link>
-
-          {/* ── 2 cartes secondaires empilées ── */}
-          <div className="hp-hub-secondary">
-
-            {/* Carte 2 — Trouver ma stack */}
-            <Link to={`${prefix}/stacks`} className="hp-hub-card">
-              <span className="hp-hub-label">{t("Stacks types", "Stack templates")}</span>
-              <span className="hp-hub-title">{t("Trouver ma stack", "Find my stack")}</span>
-              <p className="hp-hub-desc">
-                {t(
-                  "Pars de ton métier, ton budget et ton niveau pour construire un setup simple.",
-                  "Start from your job, budget and level to build a lean setup.",
-                )}
+    <section className="hp-entries">
+      <div
+        className="mx-auto"
+        style={{ maxWidth: "var(--layout-content, 1280px)", padding: "0 var(--layout-gutter, 24px)" }}
+      >
+        <div className="hp-entries-grid">
+          {entries.map((entry) => (
+            <Link key={entry.number} to={entry.href} className="hp-entry">
+              <span className="hp-entry-number">{entry.number}</span>
+              <span className="hp-entry-title">{t(entry.titleFr, entry.titleEn)}</span>
+              <p className="hp-entry-desc">{t(entry.descFr, entry.descEn)}</p>
+              <p className="hp-entry-example">
+                <span className="hp-entry-example-lbl">{isFr ? "Ex. : " : "E.g. "}</span>
+                {isFr ? entry.exFr : entry.exEn}
               </p>
-              <div className="hp-hub-example">
-                {isFr
-                  ? "Consultant B2B · 50 €/mois → Notion + Tally + Pennylane"
-                  : "B2B consultant · €50/mo → Notion + Tally + Pennylane"}
-              </div>
-              <span className="hp-hub-cta">
-                {t("Voir les stacks", "Browse stacks")}
-                <ArrowRight style={{ width: 13, height: 13 }} />
+              <span className="hp-entry-cta">
+                {t(entry.ctaFr, entry.ctaEn)}
+                <ArrowRight className="hp-entry-cta-arrow" style={{ width: 15, height: 15 }} />
               </span>
             </Link>
-
-            {/* Carte 3 — Comparer deux outils */}
-            <Link to={`${prefix}/comparatifs`} className="hp-hub-card">
-              <span className="hp-hub-label">{t("Comparatifs", "Comparisons")}</span>
-              <span className="hp-hub-title">{t("Comparer deux outils", "Compare two tools")}</span>
-              <p className="hp-hub-desc">
-                {t(
-                  "Décide entre deux solutions selon ton usage réel, pas selon une liste de fonctionnalités.",
-                  "Choose between two tools based on your actual use, not a feature list.",
-                )}
-              </p>
-              <div className="hp-hub-example">
-                {isFr
-                  ? "Notion vs Airtable → documentation souple ou données structurées ?"
-                  : "Notion vs Airtable → flexible docs or structured data?"}
-              </div>
-              <span className="hp-hub-cta">
-                {t("Comparer maintenant", "Compare now")}
-                <ArrowRight style={{ width: 13, height: 13 }} />
-              </span>
-            </Link>
-
-          </div>
+          ))}
         </div>
       </div>
     </section>
