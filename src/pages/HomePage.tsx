@@ -532,67 +532,33 @@ function WhatWeCutSection() {
     {
       labelFr: "Doublon",
       labelEn: "Duplicate",
-      titleFr: "Les doublons fonctionnels",
-      titleEn: "Functional duplicates",
-      exampleFr: "Notion + Trello + Asana pour gérer les mêmes projets.",
-      exampleEn: "Notion + Trello + Asana for the same projects.",
+      exampleFr: "Notion + Trello + Asana pour suivre les mêmes projets.",
+      exampleEn: "Notion + Trello + Asana to track the same projects.",
     },
     {
       labelFr: "Dormant",
       labelEn: "Dormant",
-      titleFr: "Les outils dormants",
-      titleEn: "Dormant tools",
-      exampleFr: "Loom ouvert deux fois ce mois-ci. Slack vidéo suffit.",
-      exampleEn: "Loom opened twice this month. Slack video is enough.",
+      exampleFr: "Loom ouvert deux fois ce mois-ci.",
+      exampleEn: "Loom opened twice this month.",
     },
     {
       labelFr: "Trop tôt",
       labelEn: "Too soon",
-      titleFr: "Les abonnements pris trop tôt",
-      titleEn: "Subscriptions bought too soon",
-      exampleFr: "Zapier Pro à 49 €/mois pour un seul zap actif.",
-      exampleEn: "Zapier Pro at €49/mo for one active zap.",
+      exampleFr: "Zapier Pro payé pour un seul automatisme.",
+      exampleEn: "Zapier Pro paid for one automation.",
     },
     {
-      labelFr: "Trop lourd",
-      labelEn: "Too heavy",
-      titleFr: "Les outils surdimensionnés",
-      titleEn: "Oversized tools",
-      exampleFr: "HubSpot CRM quand Notion + Tally suffit pour un solo.",
-      exampleEn: "HubSpot CRM when Notion + Tally is enough for a solo.",
+      labelFr: "Surdimensionné",
+      labelEn: "Oversized",
+      exampleFr: "HubSpot quand Notion + Tally suffisent.",
+      exampleEn: "HubSpot when Notion + Tally are enough.",
     },
     {
-      labelFr: "Trop cher",
-      labelEn: "Too costly",
-      titleFr: "Les stacks qui coûtent plus qu’elles ne rapportent",
-      titleEn: "Stacks that cost more than they return",
-      exampleFr: "140 €/mois d’abonnements pour facturer trois clients.",
-      exampleEn: "€140/mo in subscriptions to invoice three clients.",
+      labelFr: "À challenger",
+      labelEn: "To challenge",
+      exampleFr: "140 €/mois d’outils pour trois clients actifs.",
+      exampleEn: "€140/mo in tools for three active clients.",
     },
-  ];
-
-  const before = [
-    { nameFr: "Notion", nameEn: "Notion", price: "16 €" },
-    { nameFr: "Trello", nameEn: "Trello", price: "5 €" },
-    { nameFr: "Asana", nameEn: "Asana", price: "12 €" },
-    { nameFr: "Loom", nameEn: "Loom", price: "8 €" },
-    { nameFr: "Zapier", nameEn: "Zapier", price: "49 €" },
-    { nameFr: "Canva", nameEn: "Canva", price: "15 €" },
-    { nameFr: "Slack", nameEn: "Slack", price: "8 €" },
-    { nameFr: "Stripe", nameEn: "Stripe", price: "—" },
-    { nameFr: "Calendly", nameEn: "Calendly", price: "10 €" },
-  ];
-
-  const after = [
-    { nameFr: "Notion", nameEn: "Notion", price: "16 €", kept: true },
-    { nameFr: "Trello", nameEn: "Trello", price: "5 €", kept: false },
-    { nameFr: "Asana", nameEn: "Asana", price: "12 €", kept: false },
-    { nameFr: "Loom", nameEn: "Loom", price: "8 €", kept: false },
-    { nameFr: "Make", nameEn: "Make", price: "9 €", kept: true },
-    { nameFr: "Canva", nameEn: "Canva", price: "15 €", kept: true },
-    { nameFr: "Slack", nameEn: "Slack", price: "8 €", kept: true },
-    { nameFr: "Stripe", nameEn: "Stripe", price: "—", kept: true },
-    { nameFr: "Calendly", nameEn: "Calendly", price: "10 €", kept: false },
   ];
 
   return (
@@ -601,31 +567,25 @@ function WhatWeCutSection() {
         <div className="hp-cuts-inner">
           {/* Left */}
           <div>
-            <p className="hp-cuts-label">{t("Ce que ToolTrim révèle", "What ToolTrim reveals")}</p>
+            <p className="hp-cuts-label">{t("Ce que ToolTrim repère", "What ToolTrim spots")}</p>
             <h2 className="hp-cuts-heading">
               {t(
-                <>Ce qui alourdit ta stack.<br />Et ce que tu peux vraiment couper.</>,
-                <>What weighs down your stack.<br />And what you can actually cut.</>,
+                <>Ce que tu paies encore.<br />Sans toujours l’utiliser.</>,
+                <>What you still pay for.<br />Without always using it.</>,
               )}
             </h2>
             <p className="hp-cuts-intro">
               {t(
-                "Un doublon discret, un outil rarement ouvert, un plan trop haut : le vrai coût d’une stack ne se voit pas toujours dans la facture.",
-                "A quiet duplicate, a rarely opened tool, a plan that is too high: the real cost of a stack is not always visible on the invoice.",
+                "Un outil ajouté pour une mission. Un plan activé trop tôt. Deux solutions qui font le même travail. Pris séparément, rien ne semble grave. Ensemble, ta stack devient plus chère que nécessaire.",
+                "A tool added for one project. A plan activated too early. Two solutions doing the same job. Separately, none of it feels serious. Together, your stack becomes more expensive than it needs to be.",
               )}
             </p>
-            <div className="hp-diagnostic-summary" aria-label={t("Résumé du résultat", "Result summary")}>
-              <p className="hp-diagnostic-summary-label">{t("Exemple :", "Example:")}</p>
-              <p className="hp-diagnostic-summary-value">
-                {t(
-                  <>9 outils, 123 €/mois<br />→ 5 outils, 48 €/mois</>,
-                  <>9 tools, €123/mo<br />→ 5 tools, €48/mo</>,
-                )}
-              </p>
-              <p className="hp-diagnostic-summary-note">
-                {t("Lecture indicative, pas une économie garantie.", "Indicative reading, not a guaranteed saving.")}
-              </p>
-            </div>
+            <p className="hp-cuts-product-line">
+              {t(
+                "ToolTrim repère ces signaux et te montre quoi garder, quoi couper, quoi challenger.",
+                "ToolTrim spots these signals and shows what to keep, cut, or challenge.",
+              )}
+            </p>
             <Link to={`${prefix}/selector`} className="hp-cuts-cta">
               {t("Auditer ma stack", "Audit my stack")}
               <ArrowRight style={{ width: 15, height: 15 }} />
@@ -636,74 +596,30 @@ function WhatWeCutSection() {
           <div className="hp-diagnostic-content">
             <div className="hp-cut-rows">
               {cuts.map((cut) => (
-                <div key={cut.titleFr} className="hp-cut-row">
+                <div key={cut.labelFr} className="hp-cut-row">
                   <p className="hp-cut-row-label">{t(cut.labelFr, cut.labelEn)}</p>
-                  <div>
-                    <p className="hp-cut-row-title">{t(cut.titleFr, cut.titleEn)}</p>
-                    <p className="hp-cut-row-example">{t(cut.exampleFr, cut.exampleEn)}</p>
-                  </div>
+                  <p className="hp-cut-row-example">{t(cut.exampleFr, cut.exampleEn)}</p>
                 </div>
               ))}
             </div>
 
-            <div className="hp-result-panel">
-              <div className="hp-result-panel-header">
-                <h3 className="hp-result-panel-title">{t("Avant / Après ToolTrim", "Before / After ToolTrim")}</h3>
-                <p className="hp-result-panel-text">
-                  {t(
-                    "Un exemple de lecture : les doublons sont supprimés, les plans trop tôt repoussés, les outils utiles conservés.",
-                    "One reading example: duplicates are removed, premature plans pushed back, useful tools kept.",
-                  )}
-                </p>
-              </div>
-
-              <div className="hp-aa-inner">
-                <div className="hp-aa-panel">
-                  <div className="hp-aa-panel-header">
-                    <span className="hp-aa-panel-label">{t("Avant", "Before")}</span>
-                    <span className="hp-aa-panel-stat">123 €<span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 400, color: "#9A9A92" }}>/mois</span></span>
-                  </div>
-                  <ul className="hp-aa-list">
-                    {before.map((item) => (
-                      <li key={item.nameFr} className="hp-aa-item">
-                        <span>{t(item.nameFr, item.nameEn)}</span>
-                        <span className="hp-aa-item-price">{item.price}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="hp-aa-panel hp-aa-panel--after">
-                  <div className="hp-aa-panel-header">
-                    <span className="hp-aa-panel-label">{t("Après ToolTrim", "After ToolTrim")}</span>
-                    <span className="hp-aa-panel-stat">48 €<span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 400, color: "rgba(255,255,255,0.5)" }}>/mois</span></span>
-                  </div>
-                  <ul className="hp-aa-list">
-                    {after.map((item) => (
-                      <li key={item.nameFr} className={`hp-aa-item ${item.kept ? "hp-aa-item--kept" : "hp-aa-item--cut"}`}>
-                        <span>{t(item.nameFr, item.nameEn)}{!item.kept && (
-                          <span style={{ marginLeft: 8, fontSize: 11, fontWeight: 600, color: "#9A9A92", fontStyle: "normal" }}>
-                            {item.nameFr === "Trello" || item.nameFr === "Asana"
-                              ? t("doublon", "duplicate")
-                              : item.nameFr === "Loom"
-                                ? t("dormant", "dormant")
-                                : item.nameFr === "Calendly"
-                                  ? t("trop tôt", "too soon")
-                                  : ""}
-                          </span>
-                        )}</span>
-                        <span className="hp-aa-item-price">{item.price}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="hp-aa-saving">
-                <span className="hp-aa-saving-label">{t("Économie mensuelle :", "Monthly saving:")}</span>
-                <span className="hp-aa-saving-amount">−75 €</span>
-                <span className="hp-aa-saving-sub">{t("soit −900 €/an", "that's −€900/yr")}</span>
-              </div>
+            <div className="hp-result-card">
+              <p className="hp-result-card-label">{t("Exemple de lecture", "Reading example")}</p>
+              <p className="hp-result-card-main">
+                {t(
+                  <>9 outils · 123 €/mois<br />→ 5 outils · 48 €/mois</>,
+                  <>9 tools · €123/mo<br />→ 5 tools · €48/mo</>,
+                )}
+              </p>
+              <p className="hp-result-card-text">
+                {t("Lecture indicative, pas une promesse d’économie.", "Indicative reading, not a promise of savings.")}
+              </p>
+              <p className="hp-result-card-meta">
+                {t(
+                  "Doublons supprimés · Plans repoussés · Outils utiles conservés",
+                  "Duplicates removed · Plans postponed · Useful tools kept",
+                )}
+              </p>
             </div>
           </div>
         </div>

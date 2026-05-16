@@ -1267,3 +1267,20 @@ Rendre la zone `Ce que ToolTrim révèle` réellement unifiée : le diagnostic, 
 - La section ne présente plus `EXEMPLE DE RÉSULTAT` comme un second bloc.
 - Le CTA `Auditer ma stack` reste unique et rattaché à la colonne de décision.
 - Les tableaux avant/après restent visibles, mais ne dominent plus la section.
+
+---
+
+## 2026-05-17 — Sprint 19 : Diagnostic home simplifié
+
+### Objectif
+Réécrire la section diagnostic/résultat pour la rendre plus calme, plus lisible et moins accusatoire, en retirant les tableaux avant/après trop complexes.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — nouveau wording `Ce que tu paies encore`, lignes diagnostiques raccourcies, suppression des tableaux `Avant / Après ToolTrim`, ajout d'une carte résultat compacte.
+- `src/index.css` — fond plus doux, rows simplifiées label/exemple, carte résultat compacte, suppression des styles de panel résultat dans cette section.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Le bloc ne contient plus de tableaux avant/après.
+- Les cinq signaux sont plus courts et plus faciles à scanner.
+- Le résultat chiffré reste présent, mais comme exemple indicatif dans une carte légère.
