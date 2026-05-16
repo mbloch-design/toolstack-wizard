@@ -499,20 +499,20 @@ function ManifestoSection() {
           <p className="home-noise-eyebrow">{t("Notre différence", "Our difference")}</p>
           <h2 className="home-noise-title">
             {t(
-              <>Trop d’outils.<br />Pas assez de décisions.</>,
-              <>Too many tools.<br />Not enough decisions.</>,
+              "Le bon outil dépend de ta réalité.",
+              "The right tool depends on your reality.",
             )}
           </h2>
           <p className="home-noise-subtitle">
             {t(
-              "Un outil de plus paraît souvent anodin. Jusqu’au moment où ta stack devient illisible.",
-              "One more tool often feels harmless. Until your stack becomes unreadable.",
+              "Un outil ne se choisit pas seul. Il dépend de ton profil, de ton niveau, de ton budget, de ton TJM, de tes usages et de ce que tu paies déjà.",
+              "A tool is never chosen in isolation. It depends on your profile, level, budget, day rate, usage and what you already pay for.",
             )}
           </p>
           <p className="home-noise-line">
             {t(
-              "ToolTrim transforme le bruit en décisions : garder, couper, remplacer.",
-              "ToolTrim turns noise into decisions: keep, cut, replace.",
+              "ToolTrim regarde la stack dans son ensemble pour recommander ce qui sert vraiment — sans sous-calibrer, ni suréquiper.",
+              "ToolTrim looks at the stack as a whole to recommend what truly helps — without undersizing or over-equipping.",
             )}
           </p>
         </div>
