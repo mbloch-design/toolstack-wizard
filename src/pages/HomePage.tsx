@@ -166,7 +166,7 @@ const HomePage = () => {
       {/* 3. Entrées — 3 chemins clairs */}
       <EntryCardsSection />
 
-      {/* 4. Manifesto — "Pas un annuaire de plus" */}
+      {/* 4. Manifesto — position + decision framework */}
       <ManifestoSection />
 
       {/* 5. Ce que ToolTrim coupe */}
@@ -406,77 +406,85 @@ function EntryCardsSection() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   ManifestoSection — "Pas un annuaire de plus"
+   ManifestoSection — position + decision framework
 ───────────────────────────────────────────────────────────────────────────── */
 function ManifestoSection() {
   const { t } = useLang();
+
+  const decisions = [
+    {
+      sign: "+",
+      labelFr: "Garder",
+      labelEn: "Keep",
+      titleFr: "L'outil a un rôle clair.",
+      titleEn: "The tool has a clear role.",
+      textFr: "Utilisé chaque semaine, intégré à ton workflow.",
+      textEn: "Used every week, integrated into your workflow.",
+    },
+    {
+      sign: "–",
+      labelFr: "Couper",
+      labelEn: "Cut",
+      titleFr: "L'outil dort ou fait doublon.",
+      titleEn: "The tool is dormant or redundant.",
+      textFr: "Payé tous les mois, ouvert deux fois par trimestre.",
+      textEn: "Paid every month, opened twice per quarter.",
+    },
+    {
+      sign: "→",
+      labelFr: "Remplacer",
+      labelEn: "Replace",
+      titleFr: "L'outil est trop lourd pour ton usage.",
+      titleEn: "The tool is too heavy for your usage.",
+      textFr: "Une alternative plus légère couvre déjà le besoin.",
+      textEn: "A lighter alternative already covers the need.",
+    },
+  ];
 
   return (
     <section className="hp-manifesto es-section">
       <div className="es-container">
         <div className="hp-manifesto-inner">
-          {/* Left — heading */}
           <div>
             <p className="hp-manifesto-label">{t("Notre position", "Our position")}</p>
             <h2 className="hp-manifesto-heading">
               {t(
-                <>Pas un annuaire<br />de plus.</>,
-                <>Not another<br />directory.</>,
+                <>Pas un annuaire.<br />Un outil de tri.</>,
+                <>Not a directory.<br />A sorting tool.</>,
               )}
             </h2>
           </div>
 
-          {/* Right — text + decision blocks */}
           <div className="hp-manifesto-body">
-            <p className="hp-manifesto-para">
-              {t(
-                <>ToolTrim ne cherche pas à lister tous les outils du marché.<br />L'objectif est plus simple : <strong>t'aider à décider.</strong></>,
-                <>ToolTrim doesn't try to list every tool on the market.<br />The goal is simpler: <strong>help you decide.</strong></>,
-              )}
-            </p>
-            <p className="hp-manifesto-para">
-              {t(
-                <>Quel outil garder.<br />Quel outil couper.<br />Quel outil remplacer.</>,
-                <>Which tool to keep.<br />Which tool to cut.<br />Which tool to replace.</>,
-              )}
-            </p>
-            <p className="hp-manifesto-para">
-              {t(
-                "Un bon outil doit avoir un rôle clair dans ta stack. Sinon, il devient juste un abonnement de plus.",
-                "A good tool needs a clear role in your stack. Otherwise, it's just another subscription.",
-              )}
-            </p>
-
-            {/* Decision blocks */}
-            <div className="hp-decisions">
-              <div className="hp-decision">
-                <span className="hp-decision-key">{t("Garder", "Keep")}</span>
-                <span className="hp-decision-desc">
-                  {t(
-                    <>L'outil a un rôle unique. <strong>Tu l'as utilisé cette semaine.</strong></>,
-                    <>The tool has a unique role. <strong>You used it this week.</strong></>,
-                  )}
-                </span>
-              </div>
-              <div className="hp-decision">
-                <span className="hp-decision-key">{t("Couper", "Cut")}</span>
-                <span className="hp-decision-desc">
-                  {t(
-                    <>L'outil est dormant ou <strong>en doublon avec un autre</strong> de ta stack.</>,
-                    <>The tool is dormant or <strong>duplicates another</strong> in your stack.</>,
-                  )}
-                </span>
-              </div>
-              <div className="hp-decision">
-                <span className="hp-decision-key">{t("Remplacer", "Replace")}</span>
-                <span className="hp-decision-desc">
-                  {t(
-                    <>L'outil coûte trop cher pour ton usage. <strong>Une alternative plus légère existe.</strong></>,
-                    <>The tool costs too much for your use. <strong>A lighter alternative exists.</strong></>,
-                  )}
-                </span>
-              </div>
+            <div className="hp-manifesto-intro">
+              <p>{t("ToolTrim ne cherche pas à tout lister.", "ToolTrim does not try to list everything.")}</p>
+              <p>{t("Il aide à faire le tri.", "It helps you sort.")}</p>
+              <p>
+                {t(
+                  "Chaque outil doit avoir un rôle clair dans ta stack. Sinon, c'est juste un abonnement de plus.",
+                  "Every tool needs a clear role in your stack. Otherwise, it is just one more subscription.",
+                )}
+              </p>
             </div>
+
+            <div className="home-position-decisions">
+              {decisions.map((decision) => (
+                <div className="home-position-row" key={decision.labelFr}>
+                  <div className="home-position-label">
+                    <span>{decision.sign}</span>
+                    <span>{t(decision.labelFr, decision.labelEn)}</span>
+                  </div>
+                  <div>
+                    <p className="home-position-row-title">{t(decision.titleFr, decision.titleEn)}</p>
+                    <p className="home-position-row-text">{t(decision.textFr, decision.textEn)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="home-position-closing">
+              {t("Chaque outil doit justifier sa place.", "Every tool has to justify its place.")}
+            </p>
           </div>
         </div>
       </div>

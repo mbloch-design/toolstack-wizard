@@ -1095,3 +1095,20 @@ Renforcer la section "Pas un annuaire" pour en faire un vrai bloc de positionnem
 - Nouveau titre : "Pas un annuaire. Un outil de tri."
 - Layout desktop 2 colonnes : position à gauche, intro + module de décision à droite.
 - Fond #EDEDE8, bordures simples, aucune carte blanche, icône ou gradient.
+
+---
+
+## 2026-05-16 — Sprint 9b : ManifestoSection réellement rendu
+
+### Correction
+Le rendu visible de la home utilisait encore un `ManifestoSection` hardcodé dans `src/pages/HomePage.tsx`, placé avant `DiffTable`. La tentative précédente avait modernisé `DiffTable`, mais pas ce bloc rendu en priorité.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — remplacement du JSX `ManifestoSection` par le nouveau module de tri.
+- `src/index.css` — styles appliqués aux classes réellement rendues.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Ancien titre supprimé du composant rendu.
+- Anciennes lignes "Quel outil garder / couper / remplacer" supprimées.
+- Nouveau module `+ GARDER / – COUPER / → REMPLACER` rendu dans la section.
