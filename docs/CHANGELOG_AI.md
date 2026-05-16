@@ -1301,3 +1301,20 @@ Rendre la section méthode moins générique en montrant que ToolTrim part du co
 - La méthode met en avant profil, niveau, budget, TJM et usages réels.
 - Les étapes évitent le vocabulaire trop générique ou technique.
 - La grille existante reste inchangée visuellement.
+
+---
+
+## 2026-05-17 — Sprint 21 : Profils contextualisés
+
+### Objectif
+Rendre la section `Chaque profil` plus crédible et moins dashboard, en supprimant les économies fixes et en clarifiant que les recommandations changent selon le contexte.
+
+### Fichiers modifiés
+- `src/components/home/PersonasSection.tsx` — nouveau wording `Chaque profil a ses angles morts`, tabs plus courtes, suppression des montants `-€/an`, remplacement par `Budget à recalibrer` / `Abonnements évitables` et colonne `Recommandation ToolTrim`.
+- `src/index.css` — nouvelle direction claire et éditoriale pour `home-profile-*`, tabs sobres, panel blanc 3 colonnes, CTA noir.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Plus de promesse d'économie moyenne non sourcée dans cette section.
+- La lecture passe de `claim chiffré` à `stack typique → signaux → recommandation`.
+- Le bleu dominant disparaît au profit du système noir / gris / blanc de la home.

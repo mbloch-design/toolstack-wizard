@@ -12,9 +12,10 @@ interface Persona {
   stack: string[];
   signals: string[];
   signalsEn: string[];
-  saving: string;
-  note: string;
-  noteEn: string;
+  recommendation: string[];
+  recommendationEn: string[];
+  budgetSignal: string;
+  budgetSignalEn: string;
 }
 
 const PERSONAS: Persona[] = [
@@ -35,9 +36,18 @@ const PERSONAS: Persona[] = [
       "Paid tools with a sufficient free tier",
       "Team tools used solo",
     ],
-    saving: "−780€/an",
-    note: "identifiés sur 2,4 outils en moyenne",
-    noteEn: "identified across 2.4 tools on average",
+    recommendation: [
+      "Garder les outils cœur.",
+      "Challenger les doublons.",
+      "Repousser les plans avancés tant que l’usage ne les justifie pas.",
+    ],
+    recommendationEn: [
+      "Keep core tools.",
+      "Challenge duplicates.",
+      "Postpone advanced plans until usage justifies them.",
+    ],
+    budgetSignal: "Budget à recalibrer",
+    budgetSignalEn: "Budget to recalibrate",
   },
   {
     Icon: Building2,
@@ -56,9 +66,18 @@ const PERSONAS: Persona[] = [
       "Dormant undetected licenses (shadow IT)",
       "Duplicates between isolated departments",
     ],
-    saving: "−3 400€/an",
-    note: "principalement sur les licences dormantes",
-    noteEn: "mainly on dormant licenses",
+    recommendation: [
+      "Cartographier les suites qui se recouvrent.",
+      "Isoler les licences dormantes.",
+      "Consolider avant d’ajouter un nouvel outil.",
+    ],
+    recommendationEn: [
+      "Map overlapping suites.",
+      "Isolate dormant licenses.",
+      "Consolidate before adding another tool.",
+    ],
+    budgetSignal: "Abonnements évitables",
+    budgetSignalEn: "Avoidable subscriptions",
   },
   {
     Icon: Rocket,
@@ -77,9 +96,18 @@ const PERSONAS: Persona[] = [
       "Team tools at 3 users",
       "Automation duplicates (Zapier + Make)",
     ],
-    saving: "−1 680€/an",
-    note: "via downgrade ou swap vers alternatives gratuites",
-    noteEn: "via downgrade or swap to free alternatives",
+    recommendation: [
+      "Limiter les outils d’équipe tant que l’équipe reste petite.",
+      "Challenger les CRM installés trop tôt.",
+      "Garder la stack proche du revenu réel.",
+    ],
+    recommendationEn: [
+      "Limit team tools while the team is small.",
+      "Challenge CRMs installed too early.",
+      "Keep the stack close to actual revenue.",
+    ],
+    budgetSignal: "Plans trop tôt",
+    budgetSignalEn: "Plans activated too early",
   },
   {
     Icon: Bot,
@@ -98,9 +126,18 @@ const PERSONAS: Persona[] = [
       "Overlapping productivity tools",
       "Monthly cost exceeds value generated",
     ],
-    saving: "−960€/an",
-    note: "principalement sur les doublons IA",
-    noteEn: "mainly on AI duplicates",
+    recommendation: [
+      "Choisir une IA principale.",
+      "Garder les outils qui entrent dans la production réelle.",
+      "Couper les tests qui restent ouverts par habitude.",
+    ],
+    recommendationEn: [
+      "Choose one main AI tool.",
+      "Keep tools that are part of real production.",
+      "Cut tests that stay open by habit.",
+    ],
+    budgetSignal: "Outils à challenger",
+    budgetSignalEn: "Tools to challenge",
   },
   {
     Icon: Calculator,
@@ -119,9 +156,18 @@ const PERSONAS: Persona[] = [
       "Underused annual contracts",
       "Functions already covered by the main tool",
     ],
-    saving: "−4 200€/an",
-    note: "via consolidation et renégociation",
-    noteEn: "via consolidation and renegotiation",
+    recommendation: [
+      "Regrouper les fonctions déjà couvertes.",
+      "Identifier les contrats sous-utilisés.",
+      "Prioriser consolidation et renégociation.",
+    ],
+    recommendationEn: [
+      "Group functions already covered elsewhere.",
+      "Identify underused contracts.",
+      "Prioritize consolidation and renegotiation.",
+    ],
+    budgetSignal: "Budget à recalibrer",
+    budgetSignalEn: "Budget to recalibrate",
   },
 ];
 
@@ -129,38 +175,35 @@ const PersonasSection = () => {
   const { lang, t, prefix } = useLang();
   const [active, setActive] = useState(0);
   const p = PERSONAS[active];
+  const signals = lang === "en" ? p.signalsEn : p.signals;
+  const recommendation = lang === "en" ? p.recommendationEn : p.recommendation;
 
   return (
-    <section className="border-t border-border py-24 px-6">
-      <div className="mx-auto max-w-7xl">
+    <section className="home-profile-section">
+      <div className="home-profile-shell">
 
-        {/* Header — centered, benefit-led headline */}
-        <div className="mb-14 text-center">
-          <span className="section-tag">{t("Par profil", "By profile")}</span>
-          <h2 className="ts-h2">
-            {t("Votre métier.", "Your role.")}
-            <br />
-            <span className="text-primary">{t("Votre diagnostic.", "Your diagnosis.")}</span>
+        <div className="home-profile-header">
+          <span className="home-profile-eyebrow">{t("Selon ton contexte", "Based on your context")}</span>
+          <h2 className="home-profile-title">
+            {t("Chaque profil a ses angles morts.", "Every profile has its blind spots.")}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground leading-relaxed">
+          <p className="home-profile-subtitle">
             {t(
-              "Un freelance à 400€/jour n'a pas les mêmes angles morts qu'un DSI de PME. ToolTrim ajuste chaque analyse.",
-              "A freelancer at €400/day doesn't have the same blind spots as an SMB IT director. ToolTrim adjusts every analysis."
+              "Un designer freelance, un fondateur early-stage ou une DAF/Ops ne surpayent pas les mêmes outils. ToolTrim adapte l’analyse à ton métier, ton niveau, ton budget, ton TJM et ta stack déjà en place.",
+              "A freelance designer, an early-stage founder or a CFO/Ops lead do not overpay for the same tools. ToolTrim adapts the analysis to your role, level, budget, day rate and existing stack."
             )}
           </p>
         </div>
 
-        {/* Tabs — card style, dark active state mirrors section-tag */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div className="home-profile-tabs" role="tablist" aria-label={t("Profils", "Profiles")}>
           {PERSONAS.map((persona, i) => (
             <button
               key={i}
+              type="button"
+              role="tab"
+              aria-selected={active === i}
               onClick={() => setActive(i)}
-              className={`flex items-center gap-2.5 rounded-xl border px-5 py-3 text-sm font-semibold transition-all duration-150 cursor-pointer ${
-                active === i
-                  ? "border-transparent bg-foreground text-background shadow-sm"
-                  : "border-border bg-card text-foreground hover:border-primary/30 hover:text-primary"
-              }`}
+              className={`home-profile-tab ${active === i ? "home-profile-tab--active" : ""}`}
             >
               <persona.Icon className="h-4 w-4 shrink-0" />
               <span>{lang === "en" ? persona.roleEn : persona.role}</span>
@@ -168,63 +211,51 @@ const PersonasSection = () => {
           ))}
         </div>
 
-        {/* Detail panel */}
-        <div
-          className="rounded-2xl border border-border bg-card overflow-hidden animate-in fade-in duration-300"
-          key={active}
-        >
-          <div className="grid md:grid-cols-3">
+        <div className="home-profile-panel" key={active}>
+          <div className="home-profile-grid">
 
-            {/* Stack typique */}
-            <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border">
-              <p className="label-section mb-5">{t("Stack typique", "Typical stack")}</p>
-              <div className="space-y-2.5">
+            <div className="home-profile-column">
+              <p className="home-profile-column-label">{t("Stack typique", "Typical stack")}</p>
+              <div className="home-profile-stack">
                 {p.stack.map((name) => (
-                  <div key={name} className="flex items-center gap-3">
-                    <span
-                      className="flex h-5 w-5 shrink-0 items-center justify-center rounded-sm bg-secondary text-[10px] font-bold text-foreground"
-                      aria-hidden="true"
-                    >
+                  <div key={name} className="home-profile-tool">
+                    <span className="home-profile-tool-mark" aria-hidden="true">
                       {name.charAt(0).toUpperCase()}
                     </span>
-                    <span className="text-sm text-foreground">{name}</span>
+                    <span>{name}</span>
                   </div>
                 ))}
               </div>
-              <p className="mt-5 text-xs text-muted-foreground">
+              <p className="home-profile-note">
                 {lang === "en" ? p.subEn : p.sub}
               </p>
             </div>
 
-            {/* Signaux détectés */}
-            <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border">
-              <p className="label-section mb-5">{t("Signaux détectés", "Detected signals")}</p>
-              <div className="space-y-3">
-                {(lang === "en" ? p.signalsEn : p.signals).map((s) => (
-                  <div key={s} className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-destructive/10">
-                      <span className="h-1.5 w-1.5 rounded-full bg-destructive" />
-                    </div>
-                    <p className="text-sm text-foreground leading-relaxed">{s}</p>
-                  </div>
+            <div className="home-profile-column">
+              <p className="home-profile-column-label">{t("Signaux à surveiller", "Signals to watch")}</p>
+              <div className="home-profile-list">
+                {signals.map((signal) => (
+                  <p key={signal}>{signal}</p>
                 ))}
+              </div>
+              <div className="home-profile-budget">
+                <p>{lang === "en" ? p.budgetSignalEn : p.budgetSignal}</p>
+                <span>{t("Identifié selon le profil, le niveau et les outils déjà utilisés.", "Identified based on profile, level and tools already used.")}</span>
               </div>
             </div>
 
-            {/* Économie moyenne */}
-            <div className="p-8 md:p-10 flex flex-col justify-between">
+            <div className="home-profile-column home-profile-column--action">
               <div>
-                <p className="label-section mb-3">{t("Économie moyenne", "Average savings")}</p>
-                <p className="num-mono text-5xl font-semibold text-primary" style={{ letterSpacing: "-0.06em" }}>
-                  {p.saving}
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {lang === "en" ? p.noteEn : p.note}
-                </p>
+                <p className="home-profile-column-label">{t("Recommandation ToolTrim", "ToolTrim recommendation")}</p>
+                <div className="home-profile-list home-profile-list--strong">
+                  {recommendation.map((item) => (
+                    <p key={item}>{item}</p>
+                  ))}
+                </div>
               </div>
               <Link
                 to={`${prefix}/selector`}
-                className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20"
+                className="home-profile-cta"
               >
                 {t("Analyser ma stack", "Analyze my stack")}
                 <ArrowRight className="h-4 w-4" />
