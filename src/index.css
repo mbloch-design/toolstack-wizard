@@ -9000,11 +9000,14 @@
   }
 }
 
-/* Sprint 16 — merged diagnostic and result section */
+/* Sprint 18 — unified diagnostic/result section */
 @layer components {
   .hp-cuts.es-section {
-    padding-top: 104px;
-    padding-bottom: 112px;
+    padding: 112px 0;
+  }
+
+  .hp-cuts-inner {
+    grid-template-columns: 0.85fr 1.15fr;
   }
 
   .hp-cuts-heading {
@@ -9014,84 +9017,130 @@
   }
 
   .hp-cuts-intro {
-    max-width: 520px;
+    max-width: 500px;
   }
 
-  .hp-result-block {
-    margin-top: 72px;
-    padding-top: 48px;
-    border-top: 1px solid #DADAD4;
+  .hp-diagnostic-summary {
+    margin-top: 48px;
   }
 
-  .hp-result-header {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: clamp(48px, 7vw, 96px);
-    align-items: end;
-    margin-bottom: 36px;
+  .hp-diagnostic-summary-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6F6F68;
+    margin: 0 0 10px;
   }
 
-  .hp-result-header .hp-cuts-label {
-    grid-column: 1 / -1;
-    margin-bottom: -20px;
-  }
-
-  .hp-result-title {
-    font-size: clamp(36px, 4vw, 64px);
-    line-height: 1;
+  .hp-diagnostic-summary-value {
+    font-size: clamp(34px, 3.4vw, 56px);
+    line-height: 1.02;
     letter-spacing: -0.055em;
     font-weight: 600;
     color: #222222;
     margin: 0;
   }
 
-  .hp-result-text {
-    font-size: 17px;
-    line-height: 1.45;
-    color: #6F6F68;
+  .hp-diagnostic-summary-note {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #9A9A92;
+    margin: 12px 0 0;
+  }
+
+  .hp-cuts .hp-cuts-cta {
+    margin-left: 0;
+  }
+
+  .hp-diagnostic-content {
+    min-width: 0;
+  }
+
+  .hp-result-panel {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1.5px solid #222222;
+  }
+
+  .hp-result-panel-header {
     max-width: 620px;
+    margin-bottom: 20px;
+  }
+
+  .hp-result-panel-title {
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+    color: #222222;
     margin: 0;
   }
 
-  .hp-result-block .hp-aa-inner {
-    gap: 32px;
+  .hp-result-panel-text {
+    font-size: 15px;
+    line-height: 1.45;
+    color: #6F6F68;
+    margin: 10px 0 0;
+    max-width: 560px;
   }
 
-  .hp-result-block .hp-aa-saving {
-    margin-top: 20px;
+  .hp-result-panel .hp-aa-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .hp-result-panel .hp-aa-panel-header {
+    padding: 11px 14px;
+  }
+
+  .hp-result-panel .hp-aa-item {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .hp-result-panel .hp-aa-saving {
+    justify-content: flex-start;
+    margin-top: 16px;
+    padding: 14px 16px;
     border-top: 0;
     background: #F8F8F4;
     border: 1px solid #DADAD4;
     border-radius: 10px;
   }
 
-  .hp-cuts .hp-result-cta {
-    margin: 32px auto 0;
-    width: max-content;
+  .hp-result-panel .hp-aa-saving-amount {
+    font-size: 22px;
   }
 }
 
 @media (max-width: 899px) {
-  .hp-result-block {
-    margin-top: 64px;
-    padding-top: 40px;
+  .hp-cuts.es-section {
+    padding: 72px 0;
   }
 
-  .hp-result-header {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-bottom: 28px;
+  .hp-diagnostic-summary {
+    margin-top: 40px;
   }
 
-  .hp-result-header .hp-cuts-label {
-    margin-bottom: 0;
+  .hp-result-panel {
+    margin-top: 40px;
+    padding-top: 28px;
   }
 
-  .hp-result-block .hp-aa-inner {
+  .hp-result-panel .hp-aa-inner {
     grid-template-columns: 1fr;
   }
 
-  .hp-cuts .hp-result-cta {
-    margin-left: 0;
+  .hp-result-panel .hp-aa-saving {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .hp-diagnostic-summary-value {
+    font-size: 34px;
+  }
+
+  .hp-result-panel .hp-aa-saving {
+    justify-content: center;
   }
 }

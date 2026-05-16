@@ -610,14 +610,30 @@ function WhatWeCutSection() {
             </h2>
             <p className="hp-cuts-intro">
               {t(
-                "Un outil rarement ouvert, un doublon discret, un plan trop haut : le vrai coût d’une stack ne se voit pas toujours dans la facture. ToolTrim remet chaque outil en contexte pour distinguer l’utile du superflu.",
-                "A rarely opened tool, a quiet duplicate, a plan that is too high: the real cost of a stack is not always visible on the invoice. ToolTrim puts every tool back in context to separate what is useful from what is excess.",
+                "Un doublon discret, un outil rarement ouvert, un plan trop haut : le vrai coût d’une stack ne se voit pas toujours dans la facture.",
+                "A quiet duplicate, a rarely opened tool, a plan that is too high: the real cost of a stack is not always visible on the invoice.",
               )}
             </p>
+            <div className="hp-diagnostic-summary" aria-label={t("Résumé du résultat", "Result summary")}>
+              <p className="hp-diagnostic-summary-label">{t("Exemple :", "Example:")}</p>
+              <p className="hp-diagnostic-summary-value">
+                {t(
+                  <>9 outils, 123 €/mois<br />→ 5 outils, 48 €/mois</>,
+                  <>9 tools, €123/mo<br />→ 5 tools, €48/mo</>,
+                )}
+              </p>
+              <p className="hp-diagnostic-summary-note">
+                {t("Lecture indicative, pas une économie garantie.", "Indicative reading, not a guaranteed saving.")}
+              </p>
+            </div>
+            <Link to={`${prefix}/selector`} className="hp-cuts-cta">
+              {t("Auditer ma stack", "Audit my stack")}
+              <ArrowRight style={{ width: 15, height: 15 }} />
+            </Link>
           </div>
 
-          {/* Right — decision rows + CTA */}
-          <div>
+          {/* Right — diagnostic rows + compact result panel */}
+          <div className="hp-diagnostic-content">
             <div className="hp-cut-rows">
               {cuts.map((cut) => (
                 <div key={cut.titleFr} className="hp-cut-row">
@@ -629,78 +645,67 @@ function WhatWeCutSection() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
 
-        <div className="hp-result-block">
-          <div className="hp-result-header">
-            <p className="hp-cuts-label">{t("Exemple de résultat", "Result example")}</p>
-            <h3 className="hp-result-title">
-              {t(
-                <>9 outils, 123 €/mois<br />→ 5 outils, 48 €/mois.</>,
-                <>9 tools, €123/mo<br />→ 5 tools, €48/mo.</>,
-              )}
-            </h3>
-            <p className="hp-result-text">
-              {t(
-                "Un exemple de lecture ToolTrim : les outils gardés ont un rôle clair, les doublons sont supprimés, les plans trop tôt sont repoussés.",
-                "One example of a ToolTrim reading: kept tools have a clear role, duplicates are removed, and premature plans are pushed back.",
-              )}
-            </p>
-          </div>
-
-          <div className="hp-aa-inner">
-            <div className="hp-aa-panel">
-              <div className="hp-aa-panel-header">
-                <span className="hp-aa-panel-label">{t("Avant", "Before")}</span>
-                <span className="hp-aa-panel-stat">123 €<span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 400, color: "#9A9A92" }}>/mois</span></span>
+            <div className="hp-result-panel">
+              <div className="hp-result-panel-header">
+                <h3 className="hp-result-panel-title">{t("Avant / Après ToolTrim", "Before / After ToolTrim")}</h3>
+                <p className="hp-result-panel-text">
+                  {t(
+                    "Un exemple de lecture : les doublons sont supprimés, les plans trop tôt repoussés, les outils utiles conservés.",
+                    "One reading example: duplicates are removed, premature plans pushed back, useful tools kept.",
+                  )}
+                </p>
               </div>
-              <ul className="hp-aa-list">
-                {before.map((item) => (
-                  <li key={item.nameFr} className="hp-aa-item">
-                    <span>{t(item.nameFr, item.nameEn)}</span>
-                    <span className="hp-aa-item-price">{item.price}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            <div className="hp-aa-panel hp-aa-panel--after">
-              <div className="hp-aa-panel-header">
-                <span className="hp-aa-panel-label">{t("Après ToolTrim", "After ToolTrim")}</span>
-                <span className="hp-aa-panel-stat">48 €<span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 400, color: "rgba(255,255,255,0.5)" }}>/mois</span></span>
+              <div className="hp-aa-inner">
+                <div className="hp-aa-panel">
+                  <div className="hp-aa-panel-header">
+                    <span className="hp-aa-panel-label">{t("Avant", "Before")}</span>
+                    <span className="hp-aa-panel-stat">123 €<span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 400, color: "#9A9A92" }}>/mois</span></span>
+                  </div>
+                  <ul className="hp-aa-list">
+                    {before.map((item) => (
+                      <li key={item.nameFr} className="hp-aa-item">
+                        <span>{t(item.nameFr, item.nameEn)}</span>
+                        <span className="hp-aa-item-price">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="hp-aa-panel hp-aa-panel--after">
+                  <div className="hp-aa-panel-header">
+                    <span className="hp-aa-panel-label">{t("Après ToolTrim", "After ToolTrim")}</span>
+                    <span className="hp-aa-panel-stat">48 €<span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 400, color: "rgba(255,255,255,0.5)" }}>/mois</span></span>
+                  </div>
+                  <ul className="hp-aa-list">
+                    {after.map((item) => (
+                      <li key={item.nameFr} className={`hp-aa-item ${item.kept ? "hp-aa-item--kept" : "hp-aa-item--cut"}`}>
+                        <span>{t(item.nameFr, item.nameEn)}{!item.kept && (
+                          <span style={{ marginLeft: 8, fontSize: 11, fontWeight: 600, color: "#9A9A92", fontStyle: "normal" }}>
+                            {item.nameFr === "Trello" || item.nameFr === "Asana"
+                              ? t("doublon", "duplicate")
+                              : item.nameFr === "Loom"
+                                ? t("dormant", "dormant")
+                                : item.nameFr === "Calendly"
+                                  ? t("trop tôt", "too soon")
+                                  : ""}
+                          </span>
+                        )}</span>
+                        <span className="hp-aa-item-price">{item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <ul className="hp-aa-list">
-                {after.map((item) => (
-                  <li key={item.nameFr} className={`hp-aa-item ${item.kept ? "hp-aa-item--kept" : "hp-aa-item--cut"}`}>
-                    <span>{t(item.nameFr, item.nameEn)}{!item.kept && (
-                      <span style={{ marginLeft: 8, fontSize: 11, fontWeight: 600, color: "#9A9A92", fontStyle: "normal" }}>
-                        {item.nameFr === "Trello" || item.nameFr === "Asana"
-                          ? t("doublon", "duplicate")
-                          : item.nameFr === "Loom"
-                            ? t("dormant", "dormant")
-                            : item.nameFr === "Calendly"
-                              ? t("trop tôt", "too soon")
-                              : ""}
-                      </span>
-                    )}</span>
-                    <span className="hp-aa-item-price">{item.price}</span>
-                  </li>
-                ))}
-              </ul>
+
+              <div className="hp-aa-saving">
+                <span className="hp-aa-saving-label">{t("Économie mensuelle :", "Monthly saving:")}</span>
+                <span className="hp-aa-saving-amount">−75 €</span>
+                <span className="hp-aa-saving-sub">{t("soit −900 €/an", "that's −€900/yr")}</span>
+              </div>
             </div>
           </div>
-
-          <div className="hp-aa-saving">
-            <span className="hp-aa-saving-label">{t("Économie mensuelle :", "Monthly saving:")}</span>
-            <span className="hp-aa-saving-amount">−75 €</span>
-            <span className="hp-aa-saving-sub">{t("soit −900 €/an", "that's −€900/yr")}</span>
-          </div>
-
-          <Link to={`${prefix}/selector`} className="hp-cuts-cta hp-result-cta">
-            {t("Auditer ma stack", "Audit my stack")}
-            <ArrowRight style={{ width: 15, height: 15 }} />
-          </Link>
         </div>
       </div>
     </section>

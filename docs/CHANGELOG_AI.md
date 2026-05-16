@@ -1250,3 +1250,20 @@ Alléger la home en supprimant deux blocs devenus redondants avec la nouvelle di
 - Les sections `NOTRE POSITION` et `Processus` ne sont plus rendues sur la home.
 - La home enchaîne directement `PersonasSection` vers `TestimonialsSection`.
 - Les styles du ticker `home-decision-ticker-*` sont conservés car ils appartiennent à la barre animée.
+
+---
+
+## 2026-05-17 — Sprint 18 : Diagnostic et résultat dans une seule lecture
+
+### Objectif
+Rendre la zone `Ce que ToolTrim révèle` réellement unifiée : le diagnostic, l'exemple chiffré et les tableaux avant/après doivent se lire comme une seule composition, pas comme deux sections successives.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — déplacement du résumé `9 outils, 123 €/mois → 5 outils, 48 €/mois` dans la colonne gauche, intégration du panel `Avant / Après ToolTrim` sous les lignes diagnostiques à droite, suppression du wrapper résultat pleine largeur.
+- `src/index.css` — nouvelle grille diagnostic/résultat, résumé chiffré à gauche, panel avant/après compact dans le flux droit, suppression des styles de bloc résultat autonome.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- La section ne présente plus `EXEMPLE DE RÉSULTAT` comme un second bloc.
+- Le CTA `Auditer ma stack` reste unique et rattaché à la colonne de décision.
+- Les tableaux avant/après restent visibles, mais ne dominent plus la section.
