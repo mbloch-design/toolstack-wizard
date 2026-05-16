@@ -407,184 +407,122 @@ function EntryCardsSection() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   ManifestoSection — position + decision framework
+   ManifestoSection — editorial noise + animated logo cloud
 ───────────────────────────────────────────────────────────────────────────── */
 type ManifestoTool = LogoCandidateTool & {
   name: string;
   domain: string;
 };
 
-const manifestoTools: Record<string, ManifestoTool> = {
-  notion: { name: "Notion", slug: "notion", domain: "notion.so", websiteUrl: "https://www.notion.so" },
-  trello: { name: "Trello", slug: "trello", domain: "trello.com", websiteUrl: "https://trello.com" },
-  clickup: { name: "ClickUp", slug: "clickup", domain: "clickup.com", websiteUrl: "https://clickup.com" },
-  zapier: { name: "Zapier", slug: "zapier", domain: "zapier.com", websiteUrl: "https://zapier.com" },
-  loom: { name: "Loom", slug: "loom", domain: "loom.com", websiteUrl: "https://www.loom.com" },
-  canva: { name: "Canva", slug: "canva", domain: "canva.com", websiteUrl: "https://www.canva.com" },
-  hubspot: { name: "HubSpot", slug: "hubspot", domain: "hubspot.com", websiteUrl: "https://www.hubspot.com" },
-  brevo: { name: "Brevo", slug: "brevo", domain: "brevo.com", websiteUrl: "https://www.brevo.com" },
+type LogoCloudItem = ManifestoTool & {
+  top: string;
+  left: string;
+  size?: "small" | "default" | "large";
+  delay: string;
 };
 
-function ManifestoToolPill({ tool, showName = true }: { tool: ManifestoTool; showName?: boolean }) {
-  const sources = useMemo(() => getToolLogoSources(tool, 64), [tool]);
+const manifestoTools: Record<string, ManifestoTool> = {
+  notion: { name: "Notion", slug: "notion", domain: "notion.so", websiteUrl: "https://www.notion.so" },
+  canva: { name: "Canva", slug: "canva", domain: "canva.com", websiteUrl: "https://www.canva.com" },
+  slack: { name: "Slack", slug: "slack", domain: "slack.com", websiteUrl: "https://slack.com" },
+  zoom: { name: "Zoom", slug: "zoom", domain: "zoom.us", websiteUrl: "https://zoom.us" },
+  teams: { name: "Teams", slug: "microsoftteams", domain: "microsoft.com", websiteUrl: "https://www.microsoft.com/microsoft-teams" },
+  trello: { name: "Trello", slug: "trello", domain: "trello.com", websiteUrl: "https://trello.com" },
+  zapier: { name: "Zapier", slug: "zapier", domain: "zapier.com", websiteUrl: "https://zapier.com" },
+  loom: { name: "Loom", slug: "loom", domain: "loom.com", websiteUrl: "https://www.loom.com" },
+  figma: { name: "Figma", slug: "figma", domain: "figma.com", websiteUrl: "https://www.figma.com" },
+  airtable: { name: "Airtable", slug: "airtable", domain: "airtable.com", websiteUrl: "https://airtable.com" },
+  hubspot: { name: "HubSpot", slug: "hubspot", domain: "hubspot.com", websiteUrl: "https://www.hubspot.com" },
+  brevo: { name: "Brevo", slug: "brevo", domain: "brevo.com", websiteUrl: "https://www.brevo.com" },
+  coda: { name: "Coda", slug: "coda", domain: "coda.io", websiteUrl: "https://coda.io" },
+  clickup: { name: "ClickUp", slug: "clickup", domain: "clickup.com", websiteUrl: "https://clickup.com" },
+  linear: { name: "Linear", slug: "linear", domain: "linear.app", websiteUrl: "https://linear.app" },
+  drive: { name: "Google Drive", slug: "google-drive", domain: "google.com", websiteUrl: "https://drive.google.com" },
+};
+
+function HomeLogoCloudItem({ item }: { item: LogoCloudItem }) {
+  const sources = useMemo(() => getToolLogoSources(item, 64), [item]);
   const [sourceIndex, setSourceIndex] = useState(0);
   const logoSrc = sources[sourceIndex];
 
   return (
-    <span className="home-stack-tool-pill">
-      <span className="home-stack-logo-pill" aria-hidden="true">
-        {logoSrc ? (
-          <img
-            className="home-stack-logo-image"
-            src={logoSrc}
-            alt=""
-            loading="lazy"
-            decoding="async"
-            onError={() => setSourceIndex((index) => index + 1)}
-          />
-        ) : (
-          <span className="home-stack-logo-fallback">{tool.name.charAt(0)}</span>
-        )}
-      </span>
-      {showName ? <span className="home-stack-tool-name">{tool.name}</span> : null}
+    <span
+      className={`home-logo-cloud-item is-${item.size || "default"}`}
+      style={{ top: item.top, left: item.left, animationDelay: item.delay }}
+      title={item.name}
+    >
+      {logoSrc ? (
+        <img
+          className="home-logo-cloud-image"
+          src={logoSrc}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          onError={() => setSourceIndex((index) => index + 1)}
+        />
+      ) : (
+        <span className="home-logo-cloud-fallback">{item.name.charAt(0)}</span>
+      )}
+      <span className="sr-only">{item.name}</span>
     </span>
   );
 }
+
 function ManifestoSection() {
   const { t } = useLang();
 
-  const decisions = [
-    {
-      sign: "+",
-      labelFr: "Garder",
-      labelEn: "Keep",
-      titleFr: "L'outil a un rôle clair.",
-      titleEn: "The tool has a clear role.",
-      textFr: "Utilisé chaque semaine, intégré à ton workflow.",
-      textEn: "Used every week, integrated into your workflow.",
-    },
-    {
-      sign: "–",
-      labelFr: "Couper",
-      labelEn: "Cut",
-      titleFr: "L'outil dort ou fait doublon.",
-      titleEn: "The tool is dormant or redundant.",
-      textFr: "Payé tous les mois, ouvert deux fois par trimestre.",
-      textEn: "Paid every month, opened twice per quarter.",
-    },
-    {
-      sign: "→",
-      labelFr: "Remplacer",
-      labelEn: "Replace",
-      titleFr: "L'outil est trop lourd pour ton usage.",
-      titleEn: "The tool is too heavy for your usage.",
-      textFr: "Une alternative plus légère couvre déjà le besoin.",
-      textEn: "A lighter alternative already covers the need.",
-    },
-  ];
-
-  const rawStack = [
-    manifestoTools.notion,
-    manifestoTools.trello,
-    manifestoTools.clickup,
-    manifestoTools.zapier,
-    manifestoTools.loom,
-    manifestoTools.canva,
-  ];
-
-  const sortedStack = [
-    { labelFr: "À garder", labelEn: "Keep", tools: [manifestoTools.notion, manifestoTools.canva] },
-    { labelFr: "À couper", labelEn: "Cut", tools: [manifestoTools.trello] },
-    { labelFr: "À remplacer", labelEn: "Replace", tools: [manifestoTools.hubspot], replacement: manifestoTools.brevo },
-    { labelFr: "À challenger", labelEn: "Challenge", tools: [manifestoTools.loom] },
+  const logoCloudItems: LogoCloudItem[] = [
+    { ...manifestoTools.notion, top: "12%", left: "18%", size: "large", delay: "-1.2s" },
+    { ...manifestoTools.slack, top: "20%", left: "58%", delay: "-4.1s" },
+    { ...manifestoTools.loom, top: "10%", left: "78%", size: "small", delay: "-2.7s" },
+    { ...manifestoTools.figma, top: "42%", left: "30%", size: "large", delay: "-6.2s" },
+    { ...manifestoTools.zapier, top: "55%", left: "68%", delay: "-0.8s" },
+    { ...manifestoTools.canva, top: "70%", left: "18%", delay: "-5.4s" },
+    { ...manifestoTools.airtable, top: "72%", left: "50%", size: "small", delay: "-3.3s" },
+    { ...manifestoTools.trello, top: "34%", left: "76%", delay: "-7.1s" },
+    { ...manifestoTools.hubspot, top: "58%", left: "8%", size: "small", delay: "-2.1s" },
+    { ...manifestoTools.coda, top: "38%", left: "52%", delay: "-4.9s" },
+    { ...manifestoTools.linear, top: "80%", left: "78%", size: "large", delay: "-6.8s" },
+    { ...manifestoTools.clickup, top: "24%", left: "34%", size: "small", delay: "-1.8s" },
+    { ...manifestoTools.zoom, top: "64%", left: "35%", delay: "-3.9s" },
+    { ...manifestoTools.teams, top: "48%", left: "84%", size: "small", delay: "-5.9s" },
+    { ...manifestoTools.brevo, top: "18%", left: "6%", delay: "-0.4s" },
+    { ...manifestoTools.drive, top: "82%", left: "36%", size: "small", delay: "-7.6s" },
   ];
 
   return (
-    <section className="hp-manifesto es-section">
-      <div className="es-container">
-        <div className="hp-manifesto-inner">
-          <div>
-            <p className="hp-manifesto-label">{t("Notre position", "Our position")}</p>
-            <h2 className="hp-manifesto-heading">
-              {t(
-                <>Pas un annuaire.<br />Un outil de tri.</>,
-                <>Not a directory.<br />A sorting tool.</>,
-              )}
-            </h2>
-          </div>
+    <section className="home-noise-section es-section">
+      <div className="es-container home-noise-grid">
+        <div className="home-noise-copy">
+          <p className="home-noise-eyebrow">{t("Notre différence", "Our difference")}</p>
+          <h2 className="home-noise-title">
+            {t(
+              <>Trop d’outils.<br />Pas assez de décisions.</>,
+              <>Too many tools.<br />Not enough decisions.</>,
+            )}
+          </h2>
+          <p className="home-noise-subtitle">
+            {t(
+              "Chaque abonnement semble utile seul. Ensemble, ils deviennent une stack confuse.",
+              "Every subscription looks useful on its own. Together, they become a confusing stack.",
+            )}
+          </p>
+          <p className="home-noise-line">
+            {t(
+              "ToolTrim remet de l’ordre : garder, couper, remplacer.",
+              "ToolTrim restores order: keep, cut, replace.",
+            )}
+          </p>
+        </div>
 
-          <div className="hp-manifesto-body">
-            <div className="hp-manifesto-intro">
-              <p>{t("ToolTrim ne cherche pas à tout lister.", "ToolTrim does not try to list everything.")}</p>
-              <p>{t("Il aide à faire le tri.", "It helps you sort.")}</p>
-              <p>
-                {t(
-                  "Chaque outil doit avoir un rôle clair dans ta stack. Sinon, c'est juste un abonnement de plus.",
-                  "Every tool needs a clear role in your stack. Otherwise, it is just one more subscription.",
-                )}
-              </p>
-            </div>
-
-            <div className="home-stack-visual" aria-label={t("Exemple de tri ToolTrim", "ToolTrim sorting example")}>
-              <p className="home-stack-visual-label">{t("Exemple de tri", "Sorting example")}</p>
-              <h3 className="home-stack-visual-title">
-                {t("Une stack brute devient une décision.", "A raw stack becomes a decision.")}
-              </h3>
-
-              <div className="home-stack-raw">
-                <p className="home-stack-raw-label">{t("Stack brute", "Raw stack")}</p>
-                <div className="home-stack-logo-row">
-                  {rawStack.map((tool) => (
-                    <ManifestoToolPill key={tool.slug} tool={tool} />
-                  ))}
-                </div>
-              </div>
-
-              <div className="home-stack-connector" aria-hidden="true">
-                <span className="home-stack-connector-line" />
-                <span className="home-stack-connector-text">ToolTrim {t("trie", "sorts")} <span>→</span></span>
-                <span className="home-stack-connector-line" />
-              </div>
-
-              <div className="home-stack-decision-list">
-                {sortedStack.map((row) => (
-                  <div className="home-stack-decision-row" key={row.labelFr}>
-                    <p className="home-stack-decision-label">{t(row.labelFr, row.labelEn)}</p>
-                    <div className="home-stack-mini-row">
-                      {row.tools.map((tool) => (
-                        <ManifestoToolPill key={tool.slug} tool={tool} />
-                      ))}
-                      {row.replacement ? (
-                        <>
-                          <span className="home-stack-arrow" aria-hidden="true">→</span>
-                          <ManifestoToolPill tool={row.replacement} />
-                        </>
-                      ) : null}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="home-position-decisions">
-              {decisions.map((decision) => (
-                <div className="home-position-row" key={decision.labelFr}>
-                  <div className="home-position-label">
-                    <span>{decision.sign}</span>
-                    <span>{t(decision.labelFr, decision.labelEn)}</span>
-                  </div>
-                  <div>
-                    <p className="home-position-row-title">{t(decision.titleFr, decision.titleEn)}</p>
-                    <p className="home-position-row-text">{t(decision.textFr, decision.textEn)}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p className="home-position-closing">
-              {t("Chaque outil doit justifier sa place.", "Every tool has to justify its place.")}
-            </p>
-          </div>
+        <div className="home-logo-cloud" aria-label={t("Exemples d’outils dans une stack", "Examples of tools in a stack")}>
+          <div className="home-logo-cloud-fade" aria-hidden="true" />
+          {logoCloudItems.map((item) => (
+            <HomeLogoCloudItem key={item.slug} item={item} />
+          ))}
+          <span className="home-logo-cloud-label is-keep">{t("À garder", "Keep")}</span>
+          <span className="home-logo-cloud-label is-cut">{t("À couper", "Cut")}</span>
+          <span className="home-logo-cloud-label is-replace">{t("À remplacer", "Replace")}</span>
         </div>
       </div>
     </section>

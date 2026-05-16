@@ -1129,3 +1129,20 @@ Ajouter du rythme visuel dans la section de positionnement sans illustration gé
 - Une stack brute Notion / Trello / ClickUp / Zapier / Loom / Canva est triée visuellement.
 - Les décisions affichées sont `À garder`, `À couper`, `À remplacer` et `À challenger`.
 - Les logos gardent leurs couleurs natives ; aucune image statique ou décoration gratuite ajoutée.
+
+---
+
+## 2026-05-16 — Sprint 11 : Section éditoriale + cloud de logos
+
+### Objectif
+Remplacer le bloc de positionnement trop explicatif par une section plus premium : moins de texte, une idée plus nette, et un cloud de logos animé qui montre le bruit créé par l'accumulation d'outils.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — reconstruction de `ManifestoSection` avec copy courte et cloud animé.
+- `src/index.css` — styles `home-noise-*` et `home-logo-cloud-*`, animation douce et reduced motion.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Anciennes rows `Garder / Couper / Remplacer` supprimées de la section.
+- Nouveau titre : `Trop d'outils. Pas assez de décisions.`
+- Cloud de 16 logos colorés avec labels discrets `À garder`, `À couper`, `À remplacer`.
