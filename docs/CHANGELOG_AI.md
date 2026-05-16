@@ -1336,3 +1336,20 @@ Remplacer la section de faux témoignages par une section plus honnête et utile
 - Aucun portrait ni initiales fictives ne sont rendus dans cette section.
 - Les claims chiffrés de type `-€/an` disparaissent.
 - Le bloc devient une lecture `profil → situation → stack → signal → décision`.
+
+---
+
+## 2026-05-17 — Sprint 23 : Guides home orientés décision
+
+### Objectif
+Transformer la section Guides de la home en contenu d'aide à la décision, plutôt qu'en simple flux de blog avec extraits SEO tronqués.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — remplacement des cartes dynamiques issues des posts par trois cartes éditoriales hardcodées pour la home : facturation, compétences IA, stack IA freelance.
+- `src/index.css` — styles `home-guide-*` : cartes sans troncature, footer meta/CTA, hover sobre.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Le titre devient `Lire pour mieux décider.`.
+- Chaque carte indique la décision que le guide aide à prendre.
+- Les extraits tronqués et les titres SEO longs ne sont plus utilisés dans cette section.

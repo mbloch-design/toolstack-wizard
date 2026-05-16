@@ -9576,3 +9576,99 @@
     font-size: 44px;
   }
 }
+
+/* Sprint 23 — decision-oriented homepage guide cards */
+@layer components {
+  .home-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .home-guide-card {
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    border: 1px solid #DADAD4;
+    border-radius: 12px;
+    background: #FFFFFF;
+    color: #222222;
+    text-decoration: none;
+    transition: border-color 160ms ease-out, transform 160ms ease-out;
+  }
+
+  .home-guide-card:hover {
+    border-color: #222222;
+    transform: translateY(-1px);
+  }
+
+  .home-guide-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    line-height: 1;
+  }
+
+  .home-guide-title {
+    font-family: var(--font-brand);
+    font-size: clamp(26px, 2.4vw, 28px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    color: #222222;
+    margin: 18px 0 0;
+  }
+
+  .home-guide-decision {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    line-height: 1.45;
+    color: #6F6F68;
+    margin: 18px 0 0;
+  }
+
+  .home-guide-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #DADAD4;
+  }
+
+  .home-guide-meta {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: #9A9A92;
+    white-space: nowrap;
+  }
+
+  .home-guide-link {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+    text-align: right;
+  }
+
+  .home-guide-card:hover .home-guide-link {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 899px) {
+  .home-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-guide-card {
+    min-height: 0;
+    padding: 24px;
+  }
+}

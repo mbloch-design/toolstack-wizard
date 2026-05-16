@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
+import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -12,7 +12,6 @@ import TickerBar from "@/components/home/TickerBar";
 import PersonasSection from "@/components/home/PersonasSection";
 import FaqBlock from "@/components/FaqBlock";
 import EditorialSection from "@/components/EditorialSection";
-import GuideCardEditorial from "@/components/GuideCardEditorial";
 
 const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSection"));
 const FinalCTA = lazy(() => import("@/components/home/FinalCTA"));
@@ -96,11 +95,37 @@ const BUSINESS_OBJECTIVES = [
   },
 ];
 
+const HOME_GUIDE_CARDS = [
+  {
+    slug: "outils-facturation-freelance-2026",
+    titleFr: "Facturation freelance : choisir sans se tromper",
+    titleEn: "Freelance invoicing: choose without guessing",
+    decisionFr: "Décider entre Shine, Pennylane, Indy ou Freebe selon ton volume, ton statut et tes obligations.",
+    decisionEn: "Decide between Shine, Pennylane, Indy or Freebe based on your volume, status and obligations.",
+    readTime: "8 min",
+  },
+  {
+    slug: "top-5-competences-ia-freelance-2026",
+    titleFr: "Compétences IA freelance : quoi apprendre en priorité",
+    titleEn: "Freelance AI skills: what to learn first",
+    decisionFr: "Identifier les compétences qui augmentent vraiment ta valeur, sans collectionner les formations inutiles.",
+    decisionEn: "Identify the skills that truly increase your value, without collecting useless courses.",
+    readTime: "9 min",
+  },
+  {
+    slug: "conseils-ia-freelances-2026",
+    titleFr: "Stack IA freelance : garder l’essentiel",
+    titleEn: "Freelance AI stack: keep the essentials",
+    decisionFr: "Savoir quand ChatGPT, Claude ou Perplexity font doublon — et lequel garder selon ton usage.",
+    decisionEn: "Know when ChatGPT, Claude or Perplexity overlap — and which one to keep for your use case.",
+    readTime: "11 min",
+  },
+];
+
 const HomePage = () => {
   const { lang, t, prefix } = useLang();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
-  const { posts } = usePosts(lang);
 
   const stats = useMemo(() => {
     const free = tools.filter(t => t.defaultMonthlyPrice === 0).length;
@@ -108,7 +133,6 @@ const HomePage = () => {
     return { total: tools.length, free, withFree, categories: categories.length };
   }, [tools, categories]);
 
-  const featuredPosts = posts.slice(0, 3);
   const faq = lang === "fr" ? FAQ_FR : FAQ_EN;
 
   useEffect(() => {
@@ -183,28 +207,29 @@ const HomePage = () => {
       <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
       {/* 10. Guides */}
-      {featuredPosts.length > 0 && (
-        <EditorialSection
-          eyebrow={t("Guides", "Guides")}
-          title={t("Lire avant de choisir.", "Read before you choose.")}
-          description={t(
-            "Comparatifs, méthodes et stacks commentées pour décider sans empiler.",
-            "Comparisons, methods and annotated stacks to decide without stacking."
-          )}
-          cta={{ label: t("Tous les guides", "All guides"), href: `${prefix}/guides` }}
-        >
-          <div className="es-grid">
-            {featuredPosts.map((post) => (
-              <GuideCardEditorial
-                key={post.slug}
-                post={post}
-                prefix={prefix}
-                ctaLabel={t("Lire l'article →", "Read article →")}
-              />
-            ))}
-          </div>
-        </EditorialSection>
-      )}
+      <EditorialSection
+        eyebrow={t("Guides", "Guides")}
+        title={t("Lire pour mieux décider.", "Read to decide better.")}
+        description={t(
+          "Des guides courts pour comprendre quoi garder, quoi couper et quand payer un outil plus cher.",
+          "Short guides to understand what to keep, what to cut and when to pay more for a tool."
+        )}
+        cta={{ label: t("Tous les guides", "All guides"), href: `${prefix}/guides` }}
+      >
+        <div className="home-guide-grid">
+          {HOME_GUIDE_CARDS.map((guide) => (
+            <Link key={guide.slug} to={`${prefix}/guide/${guide.slug}`} className="home-guide-card">
+              <span className="home-guide-label">{t("Guide", "Guide")}</span>
+              <h3 className="home-guide-title">{lang === "en" ? guide.titleEn : guide.titleFr}</h3>
+              <p className="home-guide-decision">{lang === "en" ? guide.decisionEn : guide.decisionFr}</p>
+              <div className="home-guide-footer">
+                <span className="home-guide-meta">{guide.readTime}</span>
+                <span className="home-guide-link">{t("Lire le guide →", "Read guide →")}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </EditorialSection>
 
       {/* 15. FAQ */}
       <section id="faq" className="scroll-mt-24 border-t border-border py-24">
