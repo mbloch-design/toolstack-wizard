@@ -2,6 +2,64 @@
 
 ---
 
+## 2026-05-16 — Sprint 6 : Ticker Awwwards — typographie pure, animation lente
+
+### Objectif
+Transformer la barre ticker en signature éditoriale fine et rythmée, style Awwwards.
+Supprimer les logos. Textes courts. Séparateur sobre. Animation lente.
+
+### Fichiers modifiés
+- `src/components/home/TickerBar.tsx` — réécriture complète (sans logos)
+- `src/index.css` — override hp-ticker height 40px + nouvelles classes hpt-*
+- `tailwind.config.ts` — durée animation 28s → 45s
+- `docs/CHANGELOG_AI.md` — ce fichier
+
+### TickerBar.tsx
+
+**Modèle de données simplifié :**
+```ts
+interface TickerItem {
+  tools: string;       // nom(s) propres, identiques FR/EN
+  decisionFr: string;  // décision courte en français
+  decisionEn: string;  // décision courte en anglais
+}
+```
+
+**9 items :** Notion+Trello / Slack Pro / Zoom+Teams / Zapier / HubSpot / Figma+Sketch / Loom / Harvest / Coda+Notion
+
+**Structure d'un item rendu :**
+```
+<span class="hpt-item-group">
+  <span class="hpt-tools">Notion + Trello</span>      ← 400 / #6F6F68
+  <span class="hpt-decision">Doublon possible</span>  ← 600 / #222222
+  <span class="hpt-sep">◌</span>                     ← opacity 0.35
+</span>
+```
+
+**Pas de `useState`, pas de logos, pas d'imports inutiles.** `aria-hidden="true"` (décoratif).
+
+### CSS — classes Sprint 6
+
+**`.hp-ticker` :** `height:40px` (était 44px), `display:flex; align-items:center`
+
+**`.hpt-track` :** `display:inline-flex; align-items:center; white-space:nowrap; height:40px`
+
+**`.hpt-item-group` :** `display:inline-flex; align-items:center; gap:10px`
+
+**`.hpt-tools` :** `font-size:14px; font-weight:400; color:#6F6F68`
+
+**`.hpt-decision` :** `font-size:14px; font-weight:600; color:#222222`
+
+**`.hpt-sep` :** `font-size:14px; color:#222222; opacity:0.35; margin:0 22px`
+
+**`prefers-reduced-motion` :** `animation: none !important` sur `.animate-ticker`
+
+### tailwind.config.ts
+
+`ticker: "ticker 45s linear infinite"` (était 28s)
+
+---
+
 ## 2026-05-16 — Sprint 5 : Ticker logos · Titre section · Design tokens espacement
 
 ### Objectif
