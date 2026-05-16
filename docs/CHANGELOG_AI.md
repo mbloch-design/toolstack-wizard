@@ -1146,3 +1146,20 @@ Remplacer le bloc de positionnement trop explicatif par une section plus premium
 - Anciennes rows `Garder / Couper / Remplacer` supprimées de la section.
 - Nouveau titre : `Trop d'outils. Pas assez de décisions.`
 - Cloud de 16 logos colorés avec labels discrets `À garder`, `À couper`, `À remplacer`.
+
+---
+
+## 2026-05-16 — Sprint 12 : Raffinement du cloud éditorial
+
+### Objectif
+Rendre la section plus naturelle et premium : copy moins générique, cloud moins "panel UI", décisions mieux intégrées dans la composition.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — copy affinée, positions du cloud resserrées, classes de profondeur et de motion par logo.
+- `src/index.css` — container plus atmosphérique, ombre subtile, labels avec blur, axe discret et animations différenciées.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Subtitle retenu : `Un outil de plus paraît souvent anodin. Jusqu’au moment où ta stack devient illisible.`
+- Closing retenu : `ToolTrim transforme le bruit en décisions : garder, couper, remplacer.`
+- Ajout du label discret `À challenger` sans densifier la copy principale.

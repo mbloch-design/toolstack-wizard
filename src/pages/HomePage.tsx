@@ -419,6 +419,8 @@ type LogoCloudItem = ManifestoTool & {
   left: string;
   size?: "small" | "default" | "large";
   delay: string;
+  depth?: "foreground" | "mid" | "back";
+  motion?: "a" | "b" | "c";
 };
 
 const manifestoTools: Record<string, ManifestoTool> = {
@@ -447,7 +449,7 @@ function HomeLogoCloudItem({ item }: { item: LogoCloudItem }) {
 
   return (
     <span
-      className={`home-logo-cloud-item is-${item.size || "default"}`}
+      className={`home-logo-cloud-item is-${item.size || "default"} is-${item.depth || "mid"} motion-${item.motion || "a"}`}
       style={{ top: item.top, left: item.left, animationDelay: item.delay }}
       title={item.name}
     >
@@ -472,22 +474,22 @@ function ManifestoSection() {
   const { t } = useLang();
 
   const logoCloudItems: LogoCloudItem[] = [
-    { ...manifestoTools.notion, top: "12%", left: "18%", size: "large", delay: "-1.2s" },
-    { ...manifestoTools.slack, top: "20%", left: "58%", delay: "-4.1s" },
-    { ...manifestoTools.loom, top: "10%", left: "78%", size: "small", delay: "-2.7s" },
-    { ...manifestoTools.figma, top: "42%", left: "30%", size: "large", delay: "-6.2s" },
-    { ...manifestoTools.zapier, top: "55%", left: "68%", delay: "-0.8s" },
-    { ...manifestoTools.canva, top: "70%", left: "18%", delay: "-5.4s" },
-    { ...manifestoTools.airtable, top: "72%", left: "50%", size: "small", delay: "-3.3s" },
-    { ...manifestoTools.trello, top: "34%", left: "76%", delay: "-7.1s" },
-    { ...manifestoTools.hubspot, top: "58%", left: "8%", size: "small", delay: "-2.1s" },
-    { ...manifestoTools.coda, top: "38%", left: "52%", delay: "-4.9s" },
-    { ...manifestoTools.linear, top: "80%", left: "78%", size: "large", delay: "-6.8s" },
-    { ...manifestoTools.clickup, top: "24%", left: "34%", size: "small", delay: "-1.8s" },
-    { ...manifestoTools.zoom, top: "64%", left: "35%", delay: "-3.9s" },
-    { ...manifestoTools.teams, top: "48%", left: "84%", size: "small", delay: "-5.9s" },
-    { ...manifestoTools.brevo, top: "18%", left: "6%", delay: "-0.4s" },
-    { ...manifestoTools.drive, top: "82%", left: "36%", size: "small", delay: "-7.6s" },
+    { ...manifestoTools.notion, top: "31%", left: "37%", size: "large", delay: "-1.2s", depth: "foreground", motion: "a" },
+    { ...manifestoTools.slack, top: "43%", left: "57%", size: "large", delay: "-4.1s", depth: "foreground", motion: "b" },
+    { ...manifestoTools.figma, top: "55%", left: "44%", size: "large", delay: "-6.2s", depth: "foreground", motion: "c" },
+    { ...manifestoTools.zapier, top: "51%", left: "70%", delay: "-0.8s", depth: "mid", motion: "b" },
+    { ...manifestoTools.canva, top: "68%", left: "30%", delay: "-5.4s", depth: "mid", motion: "a" },
+    { ...manifestoTools.airtable, top: "67%", left: "55%", size: "small", delay: "-3.3s", depth: "back", motion: "c" },
+    { ...manifestoTools.trello, top: "35%", left: "72%", delay: "-7.1s", depth: "mid", motion: "a" },
+    { ...manifestoTools.loom, top: "20%", left: "72%", size: "small", delay: "-2.7s", depth: "back", motion: "b" },
+    { ...manifestoTools.hubspot, top: "60%", left: "17%", size: "small", delay: "-2.1s", depth: "back", motion: "c" },
+    { ...manifestoTools.coda, top: "42%", left: "23%", delay: "-4.9s", depth: "mid", motion: "b" },
+    { ...manifestoTools.linear, top: "76%", left: "74%", delay: "-6.8s", depth: "mid", motion: "a" },
+    { ...manifestoTools.clickup, top: "25%", left: "50%", size: "small", delay: "-1.8s", depth: "back", motion: "c" },
+    { ...manifestoTools.zoom, top: "76%", left: "41%", size: "small", delay: "-3.9s", depth: "back", motion: "b" },
+    { ...manifestoTools.teams, top: "47%", left: "83%", size: "small", delay: "-5.9s", depth: "back", motion: "a" },
+    { ...manifestoTools.brevo, top: "22%", left: "20%", delay: "-0.4s", depth: "mid", motion: "c" },
+    { ...manifestoTools.drive, top: "82%", left: "57%", size: "small", delay: "-7.6s", depth: "back", motion: "a" },
   ];
 
   return (
@@ -503,19 +505,20 @@ function ManifestoSection() {
           </h2>
           <p className="home-noise-subtitle">
             {t(
-              "Chaque abonnement semble utile seul. Ensemble, ils deviennent une stack confuse.",
-              "Every subscription looks useful on its own. Together, they become a confusing stack.",
+              "Un outil de plus paraît souvent anodin. Jusqu’au moment où ta stack devient illisible.",
+              "One more tool often feels harmless. Until your stack becomes unreadable.",
             )}
           </p>
           <p className="home-noise-line">
             {t(
-              "ToolTrim remet de l’ordre : garder, couper, remplacer.",
-              "ToolTrim restores order: keep, cut, replace.",
+              "ToolTrim transforme le bruit en décisions : garder, couper, remplacer.",
+              "ToolTrim turns noise into decisions: keep, cut, replace.",
             )}
           </p>
         </div>
 
         <div className="home-logo-cloud" aria-label={t("Exemples d’outils dans une stack", "Examples of tools in a stack")}>
+          <div className="home-logo-cloud-axis" aria-hidden="true" />
           <div className="home-logo-cloud-fade" aria-hidden="true" />
           {logoCloudItems.map((item) => (
             <HomeLogoCloudItem key={item.slug} item={item} />
@@ -523,6 +526,7 @@ function ManifestoSection() {
           <span className="home-logo-cloud-label is-keep">{t("À garder", "Keep")}</span>
           <span className="home-logo-cloud-label is-cut">{t("À couper", "Cut")}</span>
           <span className="home-logo-cloud-label is-replace">{t("À remplacer", "Replace")}</span>
+          <span className="home-logo-cloud-label is-challenge">{t("À challenger", "Challenge")}</span>
         </div>
       </div>
     </section>
