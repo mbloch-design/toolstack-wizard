@@ -1353,3 +1353,20 @@ Transformer la section Guides de la home en contenu d'aide à la décision, plut
 - Le titre devient `Lire pour mieux décider.`.
 - Chaque carte indique la décision que le guide aide à prendre.
 - Les extraits tronqués et les titres SEO longs ne sont plus utilisés dans cette section.
+
+---
+
+## 2026-05-17 — Sprint 24 : Stacks par objectif en cartes de recommandation
+
+### Objectif
+Transformer la section `Stacks par objectif` pour qu'elle ressemble à des recommandations ToolTrim calibrées par profil, budget et outils, plutôt qu'à des cartes éditoriales avec photos génériques.
+
+### Fichiers modifiés
+- `src/pages/HomePage.tsx` — nouveau titre `Des stacks calibrées pour ton usage`, ajout du sous-texte, suppression du rendu des photos, remplacement par un panneau de stack avec budget cible, logos/pastilles d'outils et ligne `À challenger`.
+- `src/index.css` — styles `home-stack-*` pour les cartes de recommandation, panneaux de stack, logos et footer meta/CTA.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Les photos stock ne sont plus rendues dans cette section.
+- Les économies fixes de type `-58€` disparaissent de la home.
+- Chaque carte affiche un budget cible, des outils clés et un angle de décision.

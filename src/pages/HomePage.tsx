@@ -41,6 +41,11 @@ const BUSINESS_OBJECTIVES = [
     titleEn: "Ship a client website without paying for a startup stack",
     descriptionFr: "Code, preview, specs et paiement : 4 outils suffisent. On coupe Linear, Jira et les copilotes en double.",
     descriptionEn: "Code, preview, specs, payment: 4 tools are enough. We cut Linear, Jira and duplicate AI copilots.",
+    visualTools: ["GitHub", "Vercel", "Notion", "Stripe"],
+    challengeFr: "Jira / copilote redondant",
+    challengeEn: "Jira / duplicate copilot",
+    metaFr: "4 outils · niveau installé · TJM 400–700€",
+    metaEn: "4 tools · established level · €400–700 day rate",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85",
   },
   {
@@ -51,6 +56,11 @@ const BUSINESS_OBJECTIVES = [
     titleEn: "Track your missions without a heavy CRM",
     descriptionFr: "Pipeline, agenda, facturation : une stack à 40 €/mois plutôt que HubSpot à 450 €. Conçue pour un solo, pas pour une équipe sales.",
     descriptionEn: "Pipeline, calendar, invoicing: a 40€/mo stack instead of HubSpot at 450€. Built for a solo, not a sales team.",
+    visualTools: ["Notion", "Tally", "Pennylane", "Brevo"],
+    challengeFr: "CRM trop lourd trop tôt",
+    challengeEn: "CRM too heavy too early",
+    metaFr: "4 outils · solo B2B · TJM 600–1200€",
+    metaEn: "4 tools · solo B2B · €600–1200 day rate",
     image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85",
   },
   {
@@ -61,6 +71,11 @@ const BUSINESS_OBJECTIVES = [
     titleEn: "Publish weekly without stacking 3 paid AI tools",
     descriptionFr: "ChatGPT, Claude, Jasper, Copy.ai : tu n'en as besoin que d'un. On garde la chaîne courte, du brief jusqu'au visuel.",
     descriptionEn: "ChatGPT, Claude, Jasper, Copy.ai: you only need one. Short chain from brief to final visual.",
+    visualTools: ["ChatGPT", "Claude", "Canva", "CapCut"],
+    challengeFr: "abonnements IA en doublon",
+    challengeEn: "duplicate AI subscriptions",
+    metaFr: "4 outils · rythme hebdo · budget contenu",
+    metaEn: "4 tools · weekly rhythm · content budget",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
   },
   {
@@ -71,6 +86,11 @@ const BUSINESS_OBJECTIVES = [
     titleEn: "Structure a company without piling up ClickUp, Asana and Monday",
     descriptionFr: "Un seul PM tool, une doc claire, des automatisations utiles. La stack ops pour un fractional, pas pour un siège social.",
     descriptionEn: "One PM tool, clean docs, useful automations. The ops stack for a fractional, not a HQ.",
+    visualTools: ["Notion", "ClickUp", "Make", "Google Drive"],
+    challengeFr: "PM tools en double",
+    challengeEn: "duplicate PM tools",
+    metaFr: "4 outils · équipe légère · ops récurrentes",
+    metaEn: "4 tools · light team · recurring ops",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85",
   },
   {
@@ -81,6 +101,11 @@ const BUSINESS_OBJECTIVES = [
     titleEn: "Sell and get paid before paying for subscriptions",
     descriptionFr: "Une page d'offre, un formulaire, un lien Stripe. Tant que ça tient, pas besoin d'acheter les outils d'une équipe.",
     descriptionEn: "An offer page, a form, a Stripe link. While it works, no need for team-grade tools.",
+    visualTools: ["Carrd", "Tally", "Stripe", "Notion"],
+    challengeFr: "suite marketing complète",
+    challengeEn: "full marketing suite",
+    metaFr: "4 outils · démarrage · budget bas",
+    metaEn: "4 tools · starter · low budget",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85",
   },
   {
@@ -91,6 +116,11 @@ const BUSINESS_OBJECTIVES = [
     titleEn: "Automate what repeats, not what flatters the ego",
     descriptionFr: "Make + Tally + Notion : 3 outils pour gagner 5 h par semaine. On évite Zapier Pro et les scénarios qu'on ne maintient jamais.",
     descriptionEn: "Make + Tally + Notion: 3 tools to save 5h per week. We skip Zapier Pro and scenarios no one maintains.",
+    visualTools: ["Make", "Tally", "Notion", "Brevo"],
+    challengeFr: "Zapier Pro trop tôt",
+    challengeEn: "Zapier Pro too early",
+    metaFr: "4 outils · automatisation légère · usage mesuré",
+    metaEn: "4 tools · light automation · measured usage",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
   },
 ];
@@ -656,6 +686,22 @@ function WhatWeCutSection() {
 /* ─────────────────────────────────────────────────────────────────────────────
    BusinessObjectivesSection — stacks par objectif/persona concret
 ───────────────────────────────────────────────────────────────────────────── */
+function StackObjectiveLogo({ name }: { name: string }) {
+  const [failed, setFailed] = useState(false);
+  const logo = getToolLogoSources({ slug: name, name }, 64)[0];
+  const initial = name.charAt(0).toUpperCase();
+
+  return (
+    <span className="home-stack-logo" title={name} aria-label={name}>
+      {logo && !failed ? (
+        <img src={logo} alt="" loading="lazy" onError={() => setFailed(true)} />
+      ) : (
+        <span>{initial}</span>
+      )}
+    </span>
+  );
+}
+
 function BusinessObjectivesSection() {
   const { lang, t, prefix } = useLang();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -681,8 +727,14 @@ function BusinessObjectivesSection() {
           <div>
             <span className="es-eyebrow">{t("Stacks par objectif", "Stacks by goal")}</span>
             <h2 className="es-title">
-              {t("Des setups concrets, par métier.", "Concrete setups, by job type.")}
+              {t("Des stacks calibrées pour ton usage.", "Stacks calibrated for your use.")}
             </h2>
+            <p className="es-description">
+              {t(
+                "Métier, budget, niveau, TJM : chaque stack part d’un contexte réel, pas d’une liste d’outils à empiler.",
+                "Role, budget, level, day rate: each stack starts from a real context, not from a list of tools to pile up.",
+              )}
+            </p>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
             <button
@@ -755,44 +807,34 @@ function BusinessObjectivesSection() {
                 key={objective.slug}
                 to={`${prefix}/stacks/${stack.slug}`}
                 style={{ scrollSnapAlign: "start", display: "flex", flexDirection: "column", textDecoration: "none" }}
-                className="ec-card"
+                className="home-stack-card"
               >
-                {/* Photo */}
-                <div style={{ position: "relative", overflow: "hidden", borderRadius: 4, marginBottom: 18 }}>
-                  <img
-                    src={objective.image}
-                    alt={title}
-                    style={{ aspectRatio: "16/9", width: "100%", objectFit: "cover", display: "block", transition: "transform 500ms ease" }}
-                    loading="lazy"
-                  />
-                  {/* Vignette */}
-                  <div style={{ position: "absolute", inset: "0 0 0 0", background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 55%)", pointerEvents: "none" }} />
-                  {/* Budget strip */}
-                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 14px 12px" }}>
-                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.65)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                      {label}
-                    </span>
-                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "#FFFFFF" }}>
-                      {stack.monthlyBudget}€<span style={{ fontWeight: 400, fontSize: 11, color: "rgba(255,255,255,0.6)" }}>/m</span>
-                      <span style={{ marginLeft: 8, fontSize: 11, color: "rgba(255,255,255,0.65)" }}>−{stack.savings}€</span>
-                    </span>
+                <div className="home-stack-panel">
+                  <div className="home-stack-panel-top">
+                    <span className="home-stack-profile">{label}</span>
+                    <span className="home-stack-budget">{t("Budget cible :", "Target budget:")} {stack.monthlyBudget}€/{t("mois", "mo")}</span>
+                  </div>
+                  <div className="home-stack-logos" aria-label={t("Outils clés", "Key tools")}>
+                    {objective.visualTools.map((tool) => (
+                      <StackObjectiveLogo key={tool} name={tool} />
+                    ))}
+                  </div>
+                  <div className="home-stack-challenge">
+                    <span>{t("À challenger", "To challenge")}</span>
+                    <p>{lang === "fr" ? objective.challengeFr : objective.challengeEn}</p>
                   </div>
                 </div>
 
                 {/* Text */}
-                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-                  <div
-                    className="ec-title"
-                    style={{ fontSize: "clamp(1.0625rem, 1.6vw, 1.25rem)", lineHeight: 1.2 }}
-                  >
-                    {title}
-                  </div>
-                  <p className="ec-text" style={{ marginTop: 10, fontSize: 14, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                <div className="home-stack-content">
+                  <h3 className="home-stack-title">{title}</h3>
+                  <p className="home-stack-description">
                     {desc}
                   </p>
-                  <span className="ec-cta" style={{ marginTop: 20 }}>
-                    {t("Voir la stack →", "View stack →")}
-                  </span>
+                  <div className="home-stack-footer">
+                    <span className="home-stack-meta">{lang === "fr" ? objective.metaFr : objective.metaEn}</span>
+                    <span className="home-stack-cta">{t("Voir la stack →", "View stack →")}</span>
+                  </div>
                 </div>
               </Link>
             );
