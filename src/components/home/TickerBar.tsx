@@ -81,52 +81,55 @@ const TickerBar = () => {
   const doubled = [...items, ...items];
 
   return (
-    <div
-      className="relative overflow-hidden border-y border-border"
-      style={{ background: "hsl(var(--card))" }}
-    >
+    <div className="hp-ticker relative overflow-hidden">
       {/* Edge fade — left */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24"
-        style={{
-          background: "linear-gradient(to right, hsl(var(--card)), transparent)",
-        }}
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16"
+        style={{ background: "linear-gradient(to right, #F8F8F4, transparent)" }}
       />
       {/* Edge fade — right */}
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24"
-        style={{
-          background: "linear-gradient(to left, hsl(var(--card)), transparent)",
-        }}
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16"
+        style={{ background: "linear-gradient(to left, #F8F8F4, transparent)" }}
       />
 
-      <div className="flex animate-ticker items-center gap-14 py-3 whitespace-nowrap hover:[animation-play-state:paused]">
+      <div className="flex animate-ticker items-center gap-12 py-2.5 whitespace-nowrap hover:[animation-play-state:paused]">
         {doubled.map((item, i) => (
-          <span key={i} className="inline-flex shrink-0 items-center gap-2.5 text-xs">
-            {/* Tag pill — DM Mono, primary tint */}
-            <span className="ts-mono-badge uppercase tracking-widest rounded-md border border-primary/20 bg-primary/10 px-2 py-0.5 text-primary">
+          <span key={i} className="inline-flex shrink-0 items-center gap-2" style={{ fontSize: 13 }}>
+            {/* Tag pill — muted style */}
+            <span style={{
+              fontFamily: "var(--font-ui)",
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase" as const,
+              color: "#9A9A92",
+              background: "#EDEDE8",
+              border: "1px solid #DADAD4",
+              borderRadius: 4,
+              padding: "2px 7px",
+              flexShrink: 0,
+            }}>
               {item.tag}
             </span>
 
             {/* Content */}
             <span
               className="inline-flex items-center gap-1.5"
-              style={{ color: "hsl(var(--muted-foreground))" }}
+              style={{ color: "#6F6F68", fontFamily: "var(--font-ui)" }}
             >
               {lang === "en" ? item.en : item.fr}
             </span>
 
             {/* Item separator */}
-            <span
-              style={{
-                display: "inline-block",
-                width: 1,
-                height: 14,
-                background: "hsl(var(--border))",
-                marginLeft: "0.5rem",
-                flexShrink: 0,
-              }}
-            />
+            <span style={{
+              display: "inline-block",
+              width: 1,
+              height: 12,
+              background: "#DADAD4",
+              marginLeft: "0.5rem",
+              flexShrink: 0,
+            }} />
           </span>
         ))}
       </div>
