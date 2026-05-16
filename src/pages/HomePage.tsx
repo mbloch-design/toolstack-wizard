@@ -179,7 +179,7 @@ const HomePage = () => {
       {/* 8. Pour quel profil */}
       <PersonasSection />
 
-      {/* 9. Témoignages */}
+      {/* 9. Cas types */}
       <Suspense fallback={null}><TestimonialsSection /></Suspense>
 
       {/* 10. Guides */}

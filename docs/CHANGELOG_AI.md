@@ -1318,3 +1318,21 @@ Rendre la section `Chaque profil` plus crédible et moins dashboard, en supprima
 - Plus de promesse d'économie moyenne non sourcée dans cette section.
 - La lecture passe de `claim chiffré` à `stack typique → signaux → recommandation`.
 - Le bleu dominant disparaît au profit du système noir / gris / blanc de la home.
+
+---
+
+## 2026-05-17 — Sprint 22 : Remplacement témoignages par cas types
+
+### Objectif
+Remplacer la section de faux témoignages par une section plus honnête et utile : des cas types repérés par ToolTrim, sans portraits, sans citations inventées et sans promesses d'économies non vérifiées.
+
+### Fichiers modifiés
+- `src/components/home/TestimonialsSection.tsx` — suppression du carousel, des portraits, des citations et des montants ; ajout de trois cartes `Designer freelance`, `Fondateur early-stage`, `Solopreneur IA`.
+- `src/pages/HomePage.tsx` — commentaire de section mis à jour en `Cas types`.
+- `src/index.css` — styles `home-case-*` pour une section claire, sobre, alignée avec la direction éditoriale de la home.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+
+### Résultat
+- Aucun portrait ni initiales fictives ne sont rendus dans cette section.
+- Les claims chiffrés de type `-€/an` disparaissent.
+- Le bloc devient une lecture `profil → situation → stack → signal → décision`.
