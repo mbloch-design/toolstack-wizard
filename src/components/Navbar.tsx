@@ -246,10 +246,10 @@ const SECTIONS: Section[] = [
         ],
       },
       {
-        labelFr: "GRATUITES",
+        labelFr: "BUDGET",
         labelEn: "FREE",
         links: [
-          { fr: "Alternatives gratuites", en: "Free alternatives", path: "/comparatifs" },
+          { fr: "Comparer les plans gratuits", en: "Compare free plans", path: "/comparatifs" },
           { fr: "Open-source", en: "Open-source", path: "/comparatifs" },
           { fr: "Plans gratuits généreux", en: "Generous free plans", path: "/comparatifs" },
           { fr: "Outils moins chers", en: "Cheaper tools", path: "/comparatifs" },
@@ -295,12 +295,12 @@ const SECTIONS: Section[] = [
         ],
       },
       {
-        labelFr: "ALTERNATIVES",
-        labelEn: "ALTERNATIVES",
+        labelFr: "COMPARATIFS",
+        labelEn: "COMPARISONS",
         links: [
-          { fr: "Alternatives gratuites", en: "Free alternatives", path: "/comparatifs" },
-          { fr: "Alternatives moins chères", en: "Cheaper alternatives", path: "/comparatifs" },
-          { fr: "Alternatives open-source", en: "Open-source alternatives", path: "/comparatifs" },
+          { fr: "Comparer les plans gratuits", en: "Compare free plans", path: "/comparatifs" },
+          { fr: "Comparer les outils moins chers", en: "Compare cheaper tools", path: "/comparatifs" },
+          { fr: "Comparer les options open-source", en: "Compare open-source options", path: "/comparatifs" },
           { fr: "Remplacer un outil trop cher", en: "Replace an expensive tool", path: "/comparatifs" },
         ],
       },
