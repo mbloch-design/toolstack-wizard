@@ -1056,25 +1056,6 @@ Le hero d'une page stack detail doit lire comme un objet de décision, pas comme
 - Éviter les séparateurs ligne par ligne ; utiliser seulement des séparations de groupes.
 
 
-## Stack detail workflow chain (`sd-workflow-*`)
-
-La section `02 — OUTILS` des pages stack detail doit expliquer la chaîne de travail avant l'inventaire. L'utilisateur doit comprendre la stack comme une suite d'étapes, pas comme une table d'outils.
-
-**Ordre recommandé :**
-- Titre : `La chaîne de travail.`
-- Workflow map : nodes compacts avec label, usage, 1 à 3 outils clés et connecteur subtil.
-- `Le socle à garder` : chips logo + nom pour les outils core.
-- `À activer selon le projet` : groupes Conditionnel / À challenger.
-- `Inventaire complet` : détail secondaire, groupé par étape, repliable sur longues stacks.
-
-**Style :**
-- Nodes : fond blanc/translucide, bordure `#DADAD4`, radius 18px, pas de shadow lourde.
-- Connecteur : petit `→` sobre, caché mobile.
-- Logos : pastilles 28–32px, couleurs natives.
-- Séparateurs : lignes pointillées fines, jamais de grosse table pleine largeur.
-- Mobile : workflow en une colonne, inventaire sans scroll horizontal.
-
-
 ## Stack detail integrated workflow inventory
 
 Quand une section outils contient beaucoup d'entrées, ne pas afficher un workflow puis un inventaire séparé. Le workflow est l'interface.

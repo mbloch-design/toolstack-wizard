@@ -1665,3 +1665,19 @@ Supprimer la redondance entre workflow et inventaire complet dans `02 — OUTILS
 - Plus de section `Inventaire complet` séparée sous le workflow.
 - Chaque étape affiche le socle en aperçu et expose Conditionnel / À challenger au clic.
 - Le premier node important est ouvert par défaut selon la stack.
+
+---
+
+## 2026-05-17 — Sprint 38 : Module outils stack non redondant
+
+### Objectif
+Finaliser `02 — OUTILS` comme un seul module workflow, sans inventaire séparé ni couches redondantes héritées des itérations précédentes.
+
+### Fichiers modifiés
+- `src/index.css` — suppression des styles morts `sd-inventory`, `sd-stack-essentials` et `sd-stack-options`.
+- `docs/DESIGN_SYSTEM.md` — retrait de l'ancien pattern workflow + inventaire séparé au profit du pattern intégré.
+- `docs/CHANGELOG_AI.md` — ce suivi.
+
+### Résultat
+- Le code ne garde plus de styles pour une section `Inventaire complet` séparée.
+- Le pattern documenté est désormais unique : workflow nodes + détails intégrés.
