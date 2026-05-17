@@ -155,8 +155,8 @@ function StackAuditPreview({ lang, prefix }: { lang: string; prefix: string }) {
         {/* Disclaimer */}
         <p className="hp-audit-disclaimer">
           {isFr
-            ? "Exemple illustratif, pas une analyse réelle."
-            : "Illustrative example, not a real analysis."}
+            ? "Exemple basé sur un profil freelance type."
+            : "Example based on a typical freelance profile."}
         </p>
       </div>
     </div>
@@ -183,15 +183,15 @@ const HeroSection = () => {
 
             <h1 className="eh-title" style={{ textAlign: "left" }}>
               {t(
-                <>Arrête d'empiler<br />les outils.<br />Construis une stack<br />qui travaille vraiment<br />pour toi.</>,
-                <>Stop stacking tools.<br />Build a stack that<br />actually works<br />for you.</>,
+                <>Tu paies des outils<br />que tu n’utilises plus.<br />Il est temps<br />de le savoir.</>,
+                <>You pay for tools<br />you no longer use.<br />It’s time<br />to know.</>,
               )}
             </h1>
 
             <p className="eh-description" style={{ maxWidth: 480, textAlign: "left", marginTop: 24 }}>
               {t(
-                "ToolTrim aide les freelances et solopreneurs à auditer leurs abonnements, repérer les doublons et choisir les outils qui valent vraiment le coût.",
-                "ToolTrim helps freelancers and solopreneurs audit their subscriptions, spot duplicates and pick tools that are actually worth the cost.",
+                "ToolTrim analyse ta stack, repère les doublons et les abonnements inutiles, et te dit exactement quoi garder — selon ton profil, ton budget et ton usage réel.",
+                "ToolTrim analyzes your stack, spots duplicates and useless subscriptions, and tells you exactly what to keep — based on your profile, budget and real usage.",
               )}
             </p>
 

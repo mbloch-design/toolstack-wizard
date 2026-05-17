@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import { Link } from "react-router-dom";
-import { ArrowRight, Laptop2, Building2, Rocket, Bot, Calculator } from "lucide-react";
+import { ArrowRight, Laptop2, Rocket, Bot, Calculator } from "lucide-react";
 
 interface Persona {
   Icon: React.ComponentType<{ className?: string }>;
@@ -48,36 +48,6 @@ const PERSONAS: Persona[] = [
     ],
     budgetSignal: "Budget à recalibrer",
     budgetSignalEn: "Budget to recalibrate",
-  },
-  {
-    Icon: Building2,
-    role: "DSI PME",
-    roleEn: "SMB IT Director",
-    sub: "Équipe 10–50 pers.",
-    subEn: "Team 10–50 people",
-    stack: ["Slack", "Teams", "Google Workspace", "Asana", "HubSpot"],
-    signals: [
-      "Suites qui se recouvrent (Microsoft + Google)",
-      "Licences dormantes non détectées (shadow IT)",
-      "Doublons entre services isolés",
-    ],
-    signalsEn: [
-      "Overlapping suites (Microsoft + Google)",
-      "Dormant undetected licenses (shadow IT)",
-      "Duplicates between isolated departments",
-    ],
-    recommendation: [
-      "Cartographier les suites qui se recouvrent.",
-      "Isoler les licences dormantes.",
-      "Consolider avant d’ajouter un nouvel outil.",
-    ],
-    recommendationEn: [
-      "Map overlapping suites.",
-      "Isolate dormant licenses.",
-      "Consolidate before adding another tool.",
-    ],
-    budgetSignal: "Abonnements évitables",
-    budgetSignalEn: "Avoidable subscriptions",
   },
   {
     Icon: Rocket,
@@ -189,8 +159,8 @@ const PersonasSection = () => {
           </h2>
           <p className="home-profile-subtitle">
             {t(
-              "Un designer freelance, un fondateur early-stage ou une DAF/Ops ne surpayent pas les mêmes outils. ToolTrim adapte l’analyse à ton métier, ton niveau, ton budget, ton TJM et ta stack déjà en place.",
-              "A freelance designer, an early-stage founder or a CFO/Ops lead do not overpay for the same tools. ToolTrim adapts the analysis to your role, level, budget, day rate and existing stack."
+              "Le problème ne vient jamais du même endroit. Mais ToolTrim sait où chercher selon ton profil.",
+              "The issue never comes from the same place. But ToolTrim knows where to look based on your profile."
             )}
           </p>
         </div>

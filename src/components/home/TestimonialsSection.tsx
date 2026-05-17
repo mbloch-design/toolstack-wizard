@@ -69,8 +69,8 @@ const TestimonialsSection = () => {
           </h2>
           <p className="home-case-subtitle">
             {t(
-              "Selon ton profil, le problème ne vient pas du même outil. ToolTrim lit la stack dans son ensemble pour repérer les doublons, les plans trop tôt et les outils surdimensionnés.",
-              "Depending on your profile, the issue does not come from the same tool. ToolTrim reads the stack as a whole to spot duplicates, premature plans and oversized tools.",
+              "Le problème ne vient jamais du même endroit. Mais ToolTrim sait où chercher selon ton profil.",
+              "The issue never comes from the same place. But ToolTrim knows where to look based on your profile.",
             )}
           </p>
         </div>

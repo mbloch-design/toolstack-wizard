@@ -17,19 +17,19 @@ const TestimonialsSection = lazy(() => import("@/components/home/TestimonialsSec
 const FinalCTA = lazy(() => import("@/components/home/FinalCTA"));
 
 const FAQ_FR = [
-  { q: "Comment fonctionne l'audit de stack ?", a: "Tu répondes à quelques questions sur ton profil et tu listes tes outils actuels. ToolTrim détecte les doublons, les outils dormants et les abonnements que tu peux couper ou réduire, avec des prix vérifiés sur les pages officielles." },
-  { q: "Les recommandations sont-elles vraiment fiables ?", a: "ToolTrim ne recommande que lorsque les données sont vérifiées. Chaque prix est issu de la page officielle de l'outil. Les recommandations incertaines sont signalées explicitement." },
-  { q: "ToolTrim est-il gratuit ?", a: "Oui, l'audit de base est entièrement gratuit." },
-  { q: "Combien de temps prend l'audit ?", a: "Moins de 3 minutes. Tu réponds à quelques questions sur ton profil, tu sélectionnes tes outils, et tu reçois instantanément tes recommandations personnalisées." },
-  { q: "ToolTrim est-il affilié aux outils recommandés ?", a: "Non. ToolTrim est 100% indépendant. Aucun accord d'affiliation ne biaise les recommandations. Les résultats sont basés uniquement sur ton profil et les données objectives." },
+  { q: "ToolTrim est-il affilié aux outils recommandés ?", a: "Non. Les recommandations ne sont pas classées selon des accords commerciaux. ToolTrim regarde ton profil, ton budget, ton usage réel et ta stack existante." },
+  { q: "ToolTrim est-il gratuit ?", a: "Oui. L’audit est gratuit, sans carte bancaire." },
+  { q: "Comment fonctionne l'audit ?", a: "Tu décris ton profil, ton niveau, ton budget, ton TJM et les outils que tu paies déjà. ToolTrim repère les doublons, les outils dormants et les abonnements à challenger." },
+  { q: "Combien de temps prend l'audit ?", a: "Environ 3 minutes. Tu réponds à quelques questions, tu sélectionnes tes outils, puis tu obtiens une lecture claire de ce qu’il faut garder, couper ou challenger." },
+  { q: "Les recommandations sont-elles fiables ?", a: "Elles sont construites à partir de ton contexte et des données disponibles sur les outils. Quand une information est incertaine, elle doit être traitée comme un signal à vérifier, pas comme une promesse automatique." },
 ];
 
 const FAQ_EN = [
-  { q: "How does the stack audit work?", a: "You answer a few questions about your profile and list your current tools. ToolTrim detects duplicates, dormant tools and subscriptions you can cut or downgrade, with prices verified on official pages." },
-  { q: "Are the recommendations really reliable?", a: "ToolTrim only recommends when data is verified. Each price comes from the tool's official page. Uncertain recommendations are explicitly flagged." },
-  { q: "Is ToolTrim free?", a: "Yes, the basic audit is completely free." },
-  { q: "How long does the audit take?", a: "Less than 3 minutes. You answer a few questions about your profile, select your tools, and instantly receive personalized recommendations." },
-  { q: "Is ToolTrim affiliated with recommended tools?", a: "No. ToolTrim is 100% independent. No affiliate deals bias the recommendations. Results are based solely on your profile and objective data." },
+  { q: "Is ToolTrim affiliated with recommended tools?", a: "No. Recommendations are not ranked by commercial deals. ToolTrim looks at your profile, budget, real usage and existing stack." },
+  { q: "Is ToolTrim free?", a: "Yes. The audit is free, with no credit card." },
+  { q: "How does the audit work?", a: "You describe your profile, level, budget, day rate and the tools you already pay for. ToolTrim spots duplicates, dormant tools and subscriptions to challenge." },
+  { q: "How long does the audit take?", a: "About 3 minutes. You answer a few questions, select your tools, then get a clear view of what to keep, cut or challenge." },
+  { q: "Are the recommendations reliable?", a: "They are built from your context and available tool data. When information is uncertain, treat it as a signal to verify, not as an automatic promise." },
 ];
 
 const BUSINESS_OBJECTIVES = [
@@ -161,11 +161,11 @@ const HomePage = () => {
 
   useEffect(() => {
     const title = lang === "fr"
-      ? "ToolTrim — Choisir les bons outils pour sa stack freelance"
-      : "ToolTrim — Choose the right tools for your freelance stack";
+      ? "ToolTrim — Auditer sa stack SaaS freelance"
+      : "ToolTrim — Audit your freelance SaaS stack";
     const desc = lang === "fr"
-      ? "ToolTrim analyse votre stack SaaS selon votre profil, votre niveau, votre budget, votre TJM et vos usages pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés."
-      : "ToolTrim analyzes your SaaS stack based on your profile, level, budget, day rate and usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.";
+      ? "ToolTrim analyse ta stack SaaS selon ton profil, ton budget, ton TJM et tes usages réels pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés."
+      : "ToolTrim analyzes your SaaS stack based on your profile, budget, day rate and real usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.";
     const url = `${SEO_BASE}/${lang}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}`);
@@ -221,7 +221,7 @@ const HomePage = () => {
       {/* 6. Méthode — 3 étapes */}
       <MethodeSection />
 
-      {/* 7. Stacks par objectif — concret et contextualisé */}
+      {/* 7. Stacks par métier — concret et contextualisé */}
       <BusinessObjectivesSection />
 
       {/* 8. Pour quel profil */}
@@ -233,10 +233,10 @@ const HomePage = () => {
       {/* 10. Guides */}
       <EditorialSection
         eyebrow={t("Guides", "Guides")}
-        title={t("Lire pour mieux décider.", "Read to decide better.")}
+        title={t(<>Décider sans se tromper.<br />En moins de 10 minutes.</>, <>Decide without guessing.<br />In under 10 minutes.</>)}
         description={t(
-          "Des guides courts pour comprendre quoi garder, quoi couper et quand payer un outil plus cher.",
-          "Short guides to understand what to keep, what to cut and when to pay more for a tool."
+          "Des guides courts, directs, orientés action — pour choisir le bon outil, pas le plus populaire.",
+          "Short, direct, action-oriented guides — to choose the right tool, not the most popular one."
         )}
         cta={{ label: t("Tous les guides", "All guides"), href: `${prefix}/guides` }}
       >
@@ -316,15 +316,15 @@ function EntryCardsSection() {
         {/* ── Section header ── */}
         <div className="home-actions-header">
           <span className="home-actions-eyebrow">
-            {t("Trois façons de décider", "Three ways to decide")}
+            {t("Trois façons d’utiliser ToolTrim", "Three ways to use ToolTrim")}
           </span>
           <h2 className="home-actions-title">
-            {t("Commence par la bonne question.", "Start with the right question.")}
+            {t("Pas d’outil universel. Un seul bon point de départ.", "No universal tool. One right starting point.")}
           </h2>
           <p className="home-actions-desc">
             {t(
-              "Audite ta stack, pars d'un profil type ou compare deux outils selon ton usage réel.",
-              "Audit your stack, start from a profile, or compare two tools based on your actual use.",
+              "Audite ce que tu paies déjà, pars d’un profil type, ou décide entre deux outils.",
+              "Audit what you already pay for, start from a profile, or decide between two tools.",
             )}
           </p>
         </div>
@@ -534,23 +534,23 @@ function ManifestoSection() {
     <section className="home-noise-section es-section">
       <div className="es-container home-noise-grid">
         <div className="home-noise-copy">
-          <p className="home-noise-eyebrow">{t("Notre différence", "Our difference")}</p>
+          <p className="home-noise-eyebrow">{t("Ce qui nous différencie", "What makes us different")}</p>
           <h2 className="home-noise-title">
             {t(
-              "Le bon outil dépend de ta réalité.",
-              "The right tool depends on your reality.",
+              "Le bon outil, ça dépend de toi.",
+              "The right tool depends on you.",
             )}
           </h2>
           <p className="home-noise-subtitle">
             {t(
-              "Un outil ne se choisit pas seul. Il dépend de ton profil, de ton niveau, de ton budget, de ton TJM, de tes usages et de ce que tu paies déjà.",
-              "A tool is never chosen in isolation. It depends on your profile, level, budget, day rate, usage and what you already pay for.",
+              "Un comparatif générique ne sait pas que tu as 3 clients actifs, que ton TJM est à 600 €, et que tu n’as pas ouvert Trello depuis six semaines.",
+              "A generic comparison does not know you have 3 active clients, a €600 day rate, and haven’t opened Trello in six weeks.",
             )}
           </p>
           <p className="home-noise-line">
             {t(
-              "ToolTrim regarde la stack dans son ensemble pour recommander ce qui sert vraiment — sans sous-calibrer, ni suréquiper.",
-              "ToolTrim looks at the stack as a whole to recommend what truly helps — without undersizing or over-equipping.",
+              "ToolTrim lit ta stack dans son contexte — pour recommander ce qui sert vraiment, pas ce qui semble logique sur le papier.",
+              "ToolTrim reads your stack in context — to recommend what truly helps, not what looks logical on paper.",
             )}
           </p>
         </div>
@@ -661,7 +661,7 @@ function WhatWeCutSection() {
                 )}
               </p>
               <p className="hp-result-card-text">
-                {t("Lecture indicative, pas une promesse d’économie.", "Indicative reading, not a promise of savings.")}
+                {t("Résultat illustratif — profil freelance solo, 8 outils.", "Illustrative result — solo freelance profile, 8 tools.")}
               </p>
               <p className="hp-result-card-meta">
                 {t(
@@ -719,14 +719,14 @@ function BusinessObjectivesSection() {
         {/* Section header */}
         <div className="es-header">
           <div>
-            <span className="es-eyebrow">{t("Stacks par objectif", "Stacks by goal")}</span>
+            <span className="es-eyebrow">{t("Stacks par métier", "Stacks by role")}</span>
             <h2 className="es-title">
-              {t("Des stacks calibrées pour ton usage.", "Stacks calibrated for your use.")}
+              {t("Ta stack existe déjà. Elle t’attend.", "Your stack already exists. It is waiting for you.")}
             </h2>
             <p className="es-description">
               {t(
-                "Métier, budget, niveau, TJM : chaque stack part d’un contexte réel, pas d’une liste d’outils à empiler.",
-                "Role, budget, level, day rate: each stack starts from a real context, not from a list of tools to pile up.",
+                "Dev freelance, consultant B2B, créateur de contenu, solo qui démarre : chaque profil a une stack qui correspond à son usage réel et à son budget.",
+                "Freelance dev, B2B consultant, content creator, solo starter: each profile has a stack that matches real usage and budget.",
               )}
             </p>
           </div>
@@ -850,30 +850,30 @@ function MethodeSection() {
   const steps = [
     {
       num: "01",
-      titleFr: "Tu décris ta réalité",
-      titleEn: "You describe your reality",
-      descFr: "Ton métier, ton niveau, ton TJM, les outils que tu paies déjà et la façon dont tu travailles.",
-      descEn: "Your job, your level, your day rate, the tools you already pay for and how you work.",
-      exampleFr: "Freelance · TJM 500 € · 8 outils actifs · 2 outils peu utilisés",
-      exampleEn: "Freelance · €500 day rate · 8 active tools · 2 rarely used tools",
+      titleFr: "Tu décris comment tu travailles",
+      titleEn: "You describe how you work",
+      descFr: "Profil, niveau, budget, TJM, outils déjà payés : le point de départ reste ton contexte réel.",
+      descEn: "Profile, level, budget, day rate, tools already paid for: the starting point is your real context.",
+      exampleFr: "Freelance · TJM 500 € · 8 outils · 2 peu utilisés",
+      exampleEn: "Freelance · €500 day rate · 8 tools · 2 rarely used",
     },
     {
       num: "02",
-      titleFr: "ToolTrim lit ta stack entière",
-      titleEn: "ToolTrim reads your whole stack",
-      descFr: "Un outil n’est jamais jugé seul. Il est comparé à ton usage, ton budget et aux autres outils de ta stack.",
-      descEn: "A tool is never judged alone. It is compared to your usage, your budget and the other tools in your stack.",
+      titleFr: "ToolTrim lit l’ensemble",
+      titleEn: "ToolTrim reads the whole picture",
+      descFr: "Un outil n’est pas jugé seul. Il est comparé à ton usage, ton budget et aux autres outils déjà en place.",
+      descEn: "A tool is not judged alone. It is compared to your usage, budget and tools already in place.",
       exampleFr: "Notion + Trello + Asana → doublon probable",
       exampleEn: "Notion + Trello + Asana → likely duplicate",
     },
     {
       num: "03",
-      titleFr: "Tu repars avec une décision",
-      titleEn: "You leave with a decision",
-      descFr: "Garder, couper, remplacer ou challenger — avec une raison claire et un budget cible.",
-      descEn: "Keep, cut, replace or challenge — with a clear reason and a target budget.",
-      exampleFr: "Zapier Pro → challenger si moins de 5 automatisations actives",
-      exampleEn: "Zapier Pro → challenge if fewer than 5 active automations",
+      titleFr: "Tu sais quoi faire",
+      titleEn: "You know what to do",
+      descFr: "Garder, couper ou challenger — avec une raison claire pour chaque ligne.",
+      descEn: "Keep, cut or challenge — with a clear reason for every line.",
+      exampleFr: "Zapier Pro → challenger si l’usage reste faible",
+      exampleEn: "Zapier Pro → challenge if usage stays low",
     },
   ];
 
@@ -883,17 +883,17 @@ function MethodeSection() {
         {/* Heading */}
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 24 }}>
           <div>
-            <p className="hp-cuts-label">{t("La méthode", "The method")}</p>
+            <p className="hp-cuts-label">{t("Comment ça marche", "How it works")}</p>
             <h2 style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", fontWeight: 600, color: "#222222", letterSpacing: "-0.04em", lineHeight: 1.15 }}>
               {t(
-                <>On part de ton contexte.<br />Pas d’un classement générique.</>,
-                <>We start from your context.<br />Not from a generic ranking.</>,
+                <>3 minutes.<br />Une décision claire.</>,
+                <>3 minutes.<br />One clear decision.</>,
               )}
             </h2>
             <p className="hp-methode-subtitle">
               {t(
-                "Profil, niveau, budget, TJM, usages réels : chaque signal compte avant de recommander un outil.",
-                "Profile, level, budget, day rate, real usage: every signal matters before recommending a tool.",
+                "Tu décris comment tu travailles. ToolTrim analyse ta stack dans son ensemble — pas outil par outil. Tu repars avec une liste : garder, couper, challenger. Avec une raison pour chaque ligne.",
+                "You describe how you work. ToolTrim analyzes your stack as a whole — not tool by tool. You leave with a list: keep, cut, challenge. With a reason for every line.",
               )}
             </p>
           </div>

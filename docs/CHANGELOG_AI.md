@@ -1423,3 +1423,26 @@ Rendre la carte d'audit du hero plus précise et moins dashboard, sans changer l
 - La preview ressemble davantage à une fiche de décision ToolTrim qu'à un widget SaaS.
 - Le CTA de la carte ne concurrence plus le CTA principal du hero.
 - Les logos, outils, décisions, budget cible et disclaimer restent présents.
+
+---
+
+## 2026-05-17 — Sprint 28 : Alignement copy et conversion homepage
+
+### Objectif
+Aligner la homepage sur la promesse conversion : auditer une stack freelance existante, repérer les doublons et abonnements inutiles, puis recommander selon profil, budget, TJM et usage réel.
+
+### Fichiers modifiés
+- `src/components/Navbar.tsx` — label `Alternatives` remplacé par `Comparatifs`, CTA desktop `Auditer ma stack`, lien `Soumettre un outil` rendu plus discret.
+- `src/components/home/HeroSection.tsx` — nouveau H1, nouveau sous-texte et disclaimer de preview basé sur un profil freelance type.
+- `src/pages/HomePage.tsx` — copy des sections action cards, différence, diagnostic, méthode, stacks, guides, FAQ et metadata mise à jour.
+- `src/components/home/PersonasSection.tsx` — suppression du profil `DSI PME` et sous-texte resserré autour des profils freelance/solo.
+- `src/components/home/TestimonialsSection.tsx` — sous-texte des cas types aligné sur la logique profil.
+- `src/components/home/FinalCTA.tsx` — nouveau CTA final plus direct.
+- `src/index.css` — hiérarchie visuelle nav/CTA ajustée.
+
+### Résultat
+- La page utilise un ton cohérent en `tu`.
+- Le CTA principal devient clairement `Auditer ma stack`.
+- Les comparatifs sont nommés comme tels dans la navigation.
+- La FAQ commence par indépendance, gratuité, fonctionnement, durée et fiabilité.
+- Le positionnement public sort du comparateur générique pour revenir à l'audit de stack freelance.

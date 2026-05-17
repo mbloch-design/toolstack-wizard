@@ -230,8 +230,8 @@ const SECTIONS: Section[] = [
   },
   {
     id: "alternatives",
-    labelFr: "Alternatives",
-    labelEn: "Alternatives",
+    labelFr: "Comparatifs",
+    labelEn: "Comparisons",
     Icon: Scale,
     columns: [
       {
@@ -391,7 +391,7 @@ const Navbar = () => {
 
   const secondaryNavItems = [
     { fr: "Stacks", en: "Stacks", path: `${prefix}/stacks` },
-    { fr: "Alternatives", en: "Alternatives", path: `${prefix}/comparatifs` },
+    { fr: "Comparatifs", en: "Comparisons", path: `${prefix}/comparatifs` },
     { fr: "Guides", en: "Guides", path: `${prefix}/guides` },
   ];
 
@@ -458,7 +458,11 @@ const Navbar = () => {
               <kbd className="nav-kbd">{shortcutLabel}</kbd>
             </button>
 
-            {/* Submit button */}
+            <Link to={`${prefix}/selector`} className="nav-audit-btn">
+              {t("Auditer ma stack", "Audit my stack")}
+            </Link>
+
+            {/* Discreet submit link */}
             <Link to={`${prefix}/contact`} className="nav-submit-btn">
               {t("Soumettre un outil", "Submit Tool")}
             </Link>

@@ -14,16 +14,10 @@ const FinalCTA = () => {
     <section className="es-section es-section--band">
       <div className="es-container">
         <div style={{ maxWidth: 640 }}>
-          <span className="es-eyebrow">{t("Prêt ?", "Ready?")}</span>
+          <span className="es-eyebrow">{t("Maintenant", "Now")}</span>
           <h2 className="es-title" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-            {t("Votre stack mérite mieux qu’une liste d’outils.", "Your stack deserves better than a list of tools.")}
+            {t("Ta stack a peut-être un trou de 30 à 50 € par mois. Tu le sauras en 3 minutes.", "Your stack may have a €30 to €50 monthly leak. You’ll know in 3 minutes.")}
           </h2>
-          <p className="es-description" style={{ marginTop: 20 }}>
-            {t(
-              "Pars de ton profil, de ton budget et de tes usages réels. ToolTrim t’aide à voir quoi garder, quoi couper et quoi challenger.",
-              "Start from your profile, budget and real usage. ToolTrim helps you see what to keep, cut and challenge."
-            )}
-          </p>
 
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 36, flexWrap: "wrap" }}>
             <Link
