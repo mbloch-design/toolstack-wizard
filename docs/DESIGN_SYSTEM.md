@@ -85,6 +85,20 @@ La section `VUE D'ENSEMBLE` doit présenter la promesse centrale de la stack, pa
 
 ---
 
+
+## Pattern fiche stack — Liste d'outils
+
+La section `OUTILS RECOMMANDÉS` doit lire comme une liste de décisions, pas comme une table technique.
+
+- Titre recommandé : “Chaque outil a un rôle.” avec sous-texte court si la page le permet.
+- Légende sous forme de chips texte : `Essentiel`, `Conditionnel`, `À challenger`. Aucun point rouge/vert, pas de statut communiqué uniquement par couleur.
+- Catégories : label uppercase à gauche, compteur à droite, bordure basse `1.5px #222222`.
+- Ligne desktop : identité outil, raison, prix secondaire, décision + lien. Les colonnes doivent rester compactes sur grand écran.
+- Ligne mobile : ordre vertical identité, rôle, raison, prix, décision + lien.
+- Éviter les préfixes répétés comme “Rôle :” ou “Pourquoi :” dans chaque ligne.
+
+---
+
 ## Composants CTA
 
 ### CTA primaire (black button)

@@ -953,22 +953,21 @@ const StackDetailPage = () => {
       <section id="outils" className="sd-section scroll-mt-20">
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("OUTILS RECOMMANDÉS", "RECOMMENDED TOOLS")}</span>
-          <p className="sd-section-title" style={{ marginBottom: 24 }}>
-            {t("Les outils, par usage.", "The tools, by use case.")}
+          <p className="sd-section-title sd-tools-title">
+            {t("Chaque outil a un rôle.", "Every tool has a role.")}
+          </p>
+          <p className="sd-tools-subtitle">
+            {t("Une stack lisible commence par des outils rangés par usage, pas par popularité.", "A readable stack starts with tools organized by use case, not popularity.")}
           </p>
 
           {/* Legend */}
-          <div style={{
-            display: "flex", flexWrap: "wrap", gap: "8px 20px",
-            marginBottom: 24, padding: "12px 0", borderBottom: "1px solid #DADAD4",
-          }}>
+          <div className="sd-tool-legend" aria-label={t("Légende des décisions", "Decision legend")}>
             {[
-              { key: "core",        label: t("Socle indispensable",          "Essential core"),    color: "#2E7D32" },
-              { key: "conditional", label: t("Conditionnel selon usage",      "Conditional"),       color: "#6F6F68" },
-              { key: "challenge",   label: t("À challenger si l'abonnement n'est pas justifié", "Challenge if the subscription is not justified"), color: "#C62828" },
+              { key: "core",        label: t("Essentiel", "Essential") },
+              { key: "conditional", label: t("Conditionnel", "Conditional") },
+              { key: "challenge",   label: t("À challenger", "Challenge") },
             ].map((item) => (
-              <span key={item.key} style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
-                <span style={{ width: 8, height: 8, borderRadius: "50%", background: item.color, flexShrink: 0 }} />
+              <span key={item.key} className="sd-tool-legend-chip">
                 {item.label}
               </span>
             ))}
@@ -976,13 +975,14 @@ const StackDetailPage = () => {
 
           {/* Layers */}
           {stackLayers.map((layer) => (
-            <div key={layer.id} style={{ marginBottom: 32 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
-                <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#222222", whiteSpace: "nowrap" }}>
+            <div key={layer.id} className="sd-tool-layer">
+              <div className="sd-tool-layer-header">
+                <p className="sd-tool-layer-title">
                   {t(layer.titleFr, layer.titleEn)}
                 </p>
-                <div style={{ flex: 1, height: 1, background: "#DADAD4" }} />
-                <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92" }}>{layer.tools.length}</span>
+                <span className="sd-tool-layer-count">
+                  {t(`${layer.tools.length} outil${layer.tools.length > 1 ? "s" : ""}`, `${layer.tools.length} tool${layer.tools.length > 1 ? "s" : ""}`)}
+                </span>
               </div>
 
               <div>
@@ -992,22 +992,26 @@ const StackDetailPage = () => {
                   return (
                     <div key={slot.slug} className="sd-tool-row">
                       <button type="button" onClick={() => setSelectedIndex(globalIndex)} className="sd-tool-row-open">
-                        <div className="sd-tool-logo-box">
-                          <ToolLogo tool={tool!} size={28} />
-                        </div>
                         <div className="sd-tool-main-copy">
-                          <p className="sd-tool-name">{tool!.name}</p>
-                          <p className="sd-tool-role"><span>{t("Rôle", "Role")} :</span> {t(slot.role, slot.roleEn)}</p>
+                          <div className="sd-tool-logo-box">
+                            <ToolLogo tool={tool!} size={28} />
+                          </div>
+                          <div>
+                            <p className="sd-tool-name">{tool!.name}</p>
+                            <p className="sd-tool-role">{t(slot.role, slot.roleEn)}</p>
+                          </div>
                         </div>
-                        <p className="sd-tool-reason"><span>{t("Pourquoi", "Why")} :</span> {t(slot.reason, slot.reasonEn)}</p>
+                        <p className="sd-tool-reason">{t(slot.reason, slot.reasonEn)}</p>
                         <span className="sd-tool-price">{formatToolPrice(tool, lang)}</span>
+                      </button>
+                      <div className="sd-tool-action">
                         <span className={`sd-tool-status sd-tool-status--${status.key}`}>
                           {t(status.labelFr, status.labelEn)}
                         </span>
-                      </button>
-                      <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-tool-detail-link">
-                        {t("Fiche", "Details")} <span aria-hidden>→</span>
-                      </Link>
+                        <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-tool-detail-link">
+                          {t("Fiche", "Details")} <span aria-hidden>→</span>
+                        </Link>
+                      </div>
                     </div>
                   );
                 })}

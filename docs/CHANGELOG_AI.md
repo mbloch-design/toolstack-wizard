@@ -2,6 +2,25 @@
 
 ---
 
+## 2026-05-17 — Stack detail : outils recommandés en liste de décision
+
+### Objectif
+Transformer la section “Outils recommandés” des fiches stack en liste de décisions plus lisible, notamment pour les longues stacks comme architecte d'intérieur.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — titre, sous-texte, légende en chips, headers de catégories et lignes d'outils nettoyées.
+- `src/index.css` — nouveau layout compact pour les lignes d'outils, catégories et états responsive.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — pattern de liste outils pour les fiches stack.
+
+### Détails
+- Remplacement des points couleur par des chips textuelles “Essentiel”, “Conditionnel”, “À challenger”.
+- Suppression des libellés répétés “Rôle” et “Pourquoi” dans chaque ligne.
+- Catégories structurées avec nom, compteur et séparateur net.
+- Lignes organisées autour de l'identité outil, la raison, le prix et l'action.
+
+---
+
 ## 2026-05-17 — Stack detail : vue d'ensemble architecte d'intérieur
 
 ### Objectif
