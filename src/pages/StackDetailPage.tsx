@@ -928,25 +928,28 @@ const StackDetailPage = () => {
 
       <section className="sd-decision-summary-section" aria-labelledby="stack-decision-summary">
         <div className="sd-container sd-decision-summary-inner">
-          <div>
-            <span className="sd-section-eyebrow">{t("CE QU'ON GARDE, CE QU'ON ÉVITE", "WHAT WE KEEP, WHAT WE AVOID")}</span>
-            <h2 id="stack-decision-summary" className="sd-decision-summary-title">{t("Simple par choix, pas par manque.", "Simple by choice, not by limitation.")}</h2>
-          </div>
-          <div className="sd-decision-summary-copy">
-            <p>{t("Une stack premium n’a pas besoin de tout ouvrir en même temps. Certains outils portent la chaîne, d’autres restent utiles seulement selon le projet.", "A premium stack does not need to open everything at once. Some tools carry the chain; others stay useful only depending on the project.")}</p>
 
+          {/* ── Left: title + explanation ── */}
+          <div className="sd-decision-summary-left">
+            <span className="sd-section-eyebrow">{t("CE QU’ON GARDE, CE QU’ON ÉVITE", "WHAT WE KEEP, WHAT WE AVOID")}</span>
+            <h2 id="stack-decision-summary" className="sd-decision-summary-title">{t("Simple par choix, pas par manque.", "Simple by choice, not by limitation.")}</h2>
+            <div className="sd-decision-summary-copy">
+              <p>{t("Une stack premium n’a pas besoin de tout ouvrir en même temps. Certains outils portent la chaîne, d’autres restent utiles seulement selon le projet.", "A premium stack does not need to open everything at once. Some tools carry the chain; others stay useful only depending on the project.")}</p>
+            </div>
           </div>
+
+          {/* ── Right: decision matrix ── */}
           <div className="sd-decision-matrix">
             {decisionRows.map((row) => (
               <div key={row.key} className={`sd-decision-matrix-row${row.strong ? " sd-decision-matrix-row--strong" : ""}`}>
                 <span className="sd-decision-summary-label">{row.label}</span>
-                <div>
+                <div className="sd-decision-matrix-content">
                   {row.markers.length > 0 && (
                     <div className="sd-decision-logo-row">
                       {row.markers.slice(0, 5).map((marker) => (
                         <span key={marker.label} className="sd-decision-tool">
                           <span className="sd-decision-logo-pill" aria-hidden={!marker.tool}>
-                            {marker.tool ? <ToolLogo tool={marker.tool} size={20} /> : getInitials(marker.label)}
+                            {marker.tool ? <ToolLogo tool={marker.tool} size={23} /> : getInitials(marker.label)}
                           </span>
                           <span className="sd-decision-tool-name">{marker.label}</span>
                         </span>
@@ -960,6 +963,7 @@ const StackDetailPage = () => {
               </div>
             ))}
           </div>
+
         </div>
       </section>
 

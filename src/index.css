@@ -11903,3 +11903,182 @@
 .sd-hero-cta:hover {
   background: #000000;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Sprint — Decision matrix layout fix (2026-05-17)
+   Fixes: 2-col grid structure, matrix full-width, row layout, logo sizing
+══════════════════════════════════════════════════════════════════════════ */
+
+/* Section padding: spec says 96px */
+.sd-decision-summary-section {
+  padding: 96px 0;
+}
+
+/* 2-column grid: left editorial | right matrix */
+.sd-decision-summary-inner {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(64px, 8vw, 120px);
+  align-items: start;
+}
+
+/* Left column: title sticks, no overflow */
+.sd-decision-summary-left {
+  min-width: 0;
+}
+.sd-decision-summary-left .sd-section-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+}
+.sd-decision-summary-left .sd-decision-summary-title {
+  margin-bottom: 0;
+}
+.sd-decision-summary-left .sd-decision-summary-copy p {
+  margin-top: 20px;
+}
+
+/* Right column: matrix must fill the column, no artificial cap */
+.sd-decision-matrix {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+
+/* Each decision row: horizontal label | content */
+.sd-decision-matrix-row {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 32px;
+  padding: 28px 0;
+  position: relative;
+  align-items: start;
+}
+.sd-decision-matrix-row--strong {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/* Dotted separator between rows */
+.sd-decision-matrix-row + .sd-decision-matrix-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(34, 34, 34, 0.28) 0,
+    rgba(34, 34, 34, 0.28) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+/* Decision label (left cell) */
+.sd-decision-summary-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9A9A92;
+  padding-top: 4px; /* align with first logo row */
+}
+
+/* Logo row */
+.sd-decision-logo-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+/* Individual tool pill */
+.sd-decision-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #222222;
+}
+
+/* Logo pill: 40×40 */
+.sd-decision-logo-pill {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1px solid #DADAD4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  color: #222222;
+}
+.sd-decision-logo-pill img,
+.sd-decision-logo-pill svg {
+  max-width: 23px;
+  max-height: 23px;
+}
+
+/* Tool name next to logo */
+.sd-decision-tool-name {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* Main sentence */
+.sd-decision-matrix-main {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* Support sentence */
+.sd-decision-matrix-support {
+  max-width: 620px;
+  margin: 8px 0 0;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #6F6F68;
+}
+
+/* Mobile: 1 column, label above content */
+@media (max-width: 900px) {
+  .sd-decision-summary-section {
+    padding: 64px 0;
+  }
+  .sd-decision-summary-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .sd-decision-matrix-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px 0;
+  }
+  .sd-decision-matrix-support {
+    max-width: none;
+  }
+}
+@media (max-width: 767px) {
+  .sd-decision-matrix-row {
+    padding: 20px 0;
+  }
+  .sd-decision-logo-row {
+    gap: 8px;
+  }
+}
