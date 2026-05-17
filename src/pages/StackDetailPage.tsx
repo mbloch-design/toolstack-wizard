@@ -607,7 +607,6 @@ const StackDetailPage = () => {
     const baseItems = [
       { id: "apercu", label: lang === "fr" ? "Vue d'ensemble" : "Overview" },
       { id: "outils", label: lang === "fr" ? "Outils" : "Tools" },
-      { id: "decision", label: lang === "fr" ? "Décision" : "Decision" },
       { id: "budget", label: "Budget" },
       ...(stackEditorial.risks.length > 0 ? [{ id: "risques", label: lang === "fr" ? "Risques" : "Risks" }] : []),
       { id: "calibrage", label: lang === "fr" ? "Calibrage" : "Calibration" },
@@ -702,92 +701,7 @@ const StackDetailPage = () => {
   const watchText = String(watchTextRaw).split(".")[0] + (String(watchTextRaw).includes(".") ? "." : "");
 
   const stackTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
-  const coreTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "core");
-  const optionalTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "conditional");
-  const challengeTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "challenge");
-  const priorityEssential = asArray(lang === "fr" ? editorial.priority.essential : editorial.priority.essentialEn);
-  const priorityOptional = asArray(lang === "fr" ? editorial.priority.optional : editorial.priority.optionalEn);
-  const priorityChallenge = asArray(lang === "fr" ? editorial.priority.challenge : editorial.priority.challengeEn);
   const usageChips = getUsageChips(stack, lang);
-  const pickDecisionMarkers = (labels: string[]) => labels.map((label) => {
-    const normalizedLabel = normalizeDecisionName(label);
-    const match = stackTools.find(({ tool }) => {
-      const normalizedTool = normalizeDecisionName(tool!.name);
-      return normalizedTool.includes(normalizedLabel) || normalizedLabel.includes(normalizedTool);
-    });
-    return { label, tool: match?.tool };
-  });
-  const toDecisionMarkers = (items: typeof stackTools) => items.slice(0, 6).map(({ tool }) => ({ label: tool!.name, tool }));
-  const decisionKeep = coreTools.slice(0, 4).map(({ tool }) => tool!.name);
-  const decisionChallenge = challengeTools.length > 0
-    ? challengeTools.slice(0, 4).map(({ tool }) => tool!.name)
-    : priorityChallenge.slice(0, 3);
-  const decisionOptional = optionalTools.length > 0
-    ? optionalTools.slice(0, 4).map(({ tool }) => tool!.name)
-    : priorityOptional.slice(0, 3);
-  const decisionRows = stack.slug === "architecte-interieur"
-    ? [
-        {
-          key: "keep",
-          label: t("À garder", "Keep"),
-          markers: pickDecisionMarkers(["SketchUp Pro", "LayOut", "AutoCAD LT", "D5 Render"]),
-          main: t("Le socle qui porte la chaîne projet.", "The core that carries the project chain."),
-          support: t("Modèle, plans, échanges techniques et rendus rapides restent lisibles sans ouvrir une stack BIM lourde.", "Model, plans, technical exchanges, and fast renders stay readable without opening a heavy BIM stack."),
-          strong: true,
-        },
-        {
-          key: "optional",
-          label: t("Optionnel", "Optional"),
-          markers: pickDecisionMarkers(["Enscape", "V-Ray", "Twinmotion", "Fredo6 Bundle"]),
-          main: t("À activer seulement quand le livrable le demande.", "Activate only when the deliverable requires it."),
-          support: t("Ces outils renforcent l’image ou les détails, mais ne doivent pas devenir des abonnements réflexes.", "These tools strengthen imagery or details, but should not become reflex subscriptions."),
-        },
-        {
-          key: "challenge",
-          label: t("À challenger", "Challenge"),
-          markers: pickDecisionMarkers(["Moteurs de rendu secondaires", "Plugins rarement utilisés", "Abonnements liés à un chantier"]),
-          main: t("À surveiller selon le projet.", "Watch depending on the project."),
-          support: t("Moteurs de rendu secondaires, plugins rarement utilisés et abonnements liés à un seul chantier doivent rester justifiés.", "Secondary render engines, rarely used plugins, and one-project subscriptions must stay justified."),
-        },
-        {
-          key: "avoid",
-          label: t("À éviter", "Avoid"),
-          markers: pickDecisionMarkers(["Jira", "CRM lourd", "Suite produit complète"]),
-          main: t("Ce qui déplace la stack vers une logique d’équipe produit.", "What moves the stack toward a product-team setup."),
-          support: t("Si tu travailles seul ou en petit studio, ces couches ajoutent souvent plus de suivi que de clarté.", "If you work solo or in a small studio, these layers often add more tracking than clarity."),
-        },
-      ]
-    : [
-        {
-          key: "keep",
-          label: t("À garder", "Keep"),
-          markers: toDecisionMarkers(coreTools),
-          main: decisionKeep.length > 0 ? decisionKeep.join(" / ") : priorityEssential.join(" / "),
-          support: t("Les outils qui portent l’usage principal de cette stack.", "The tools that carry this stack’s main use case."),
-          strong: true,
-        },
-        {
-          key: "optional",
-          label: t("Optionnel", "Optional"),
-          markers: toDecisionMarkers(optionalTools),
-          main: decisionOptional.join(" / "),
-          support: t("Utile seulement si ton volume ou ton niveau de détail le justifie.", "Useful only if your volume or level of detail justifies it."),
-        },
-        {
-          key: "challenge",
-          label: t("À challenger", "Challenge"),
-          markers: toDecisionMarkers(challengeTools),
-          main: decisionChallenge.join(" / "),
-          support: t("À garder si l’usage est régulier, sinon à repousser ou remplacer.", "Keep if usage is regular; otherwise delay or replace."),
-        },
-        {
-          key: "avoid",
-          label: t("À éviter", "Avoid"),
-          markers: pickDecisionMarkers(["Jira", "CRM lourd", "Suite produit complète"]),
-          main: t("Jira, CRM lourd, suite produit complète si tu travailles seul.", "Jira, heavy CRM, full product suite if you work alone."),
-          support: t("Ces couches sont utiles en équipe structurée, rarement en stack solo légère.", "These layers are useful in structured teams, rarely in a light solo stack."),
-        },
-      ];
   const tooLightRows = lang === "fr"
     ? ["Tu gères plusieurs projets clients en parallèle.", "Tu as besoin de QA, staging ou monitoring avancé.", "Tu travailles avec plusieurs devs.", "Tu dois suivre des specs produit lourdes."]
     : ["You manage several client projects in parallel.", "You need advanced QA, staging, or monitoring.", "You work with several developers.", "You need to track heavy product specs."];
@@ -926,47 +840,6 @@ const StackDetailPage = () => {
         </div>
       </section>
 
-      <section className="sd-decision-summary-section" aria-labelledby="stack-decision-summary">
-        <div className="sd-container sd-decision-summary-inner">
-
-          {/* ── Left: title + explanation ── */}
-          <div className="sd-decision-summary-left">
-            <span className="sd-section-eyebrow">{t("CE QU’ON GARDE, CE QU’ON ÉVITE", "WHAT WE KEEP, WHAT WE AVOID")}</span>
-            <h2 id="stack-decision-summary" className="sd-decision-summary-title">{t("Simple par choix, pas par manque.", "Simple by choice, not by limitation.")}</h2>
-            <div className="sd-decision-summary-copy">
-              <p>{t("Une stack premium n’a pas besoin de tout ouvrir en même temps. Certains outils portent la chaîne, d’autres restent utiles seulement selon le projet.", "A premium stack does not need to open everything at once. Some tools carry the chain; others stay useful only depending on the project.")}</p>
-            </div>
-          </div>
-
-          {/* ── Right: decision matrix ── */}
-          <div className="sd-decision-matrix">
-            {decisionRows.map((row) => (
-              <div key={row.key} className={`sd-decision-matrix-row${row.strong ? " sd-decision-matrix-row--strong" : ""}`}>
-                <span className="sd-decision-summary-label">{row.label}</span>
-                <div className="sd-decision-matrix-content">
-                  {row.markers.length > 0 && (
-                    <div className="sd-decision-logo-row">
-                      {row.markers.slice(0, 5).map((marker) => (
-                        <span key={marker.label} className="sd-decision-tool">
-                          <span className="sd-decision-logo-pill" aria-hidden={!marker.tool}>
-                            {marker.tool ? <ToolLogo tool={marker.tool} size={23} /> : getInitials(marker.label)}
-                          </span>
-                          <span className="sd-decision-tool-name">{marker.label}</span>
-                        </span>
-                      ))}
-                      {row.markers.length > 5 && <span className="sd-decision-logo-pill sd-decision-logo-more">+{row.markers.length - 5}</span>}
-                    </div>
-                  )}
-                  <p className="sd-decision-matrix-main">{row.main}</p>
-                  <p className="sd-decision-matrix-support">{row.support}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
       {/* ════════════════════════════════════════════════════════════════════
           SUBNAV
       ════════════════════════════════════════════════════════════════════ */}
@@ -992,7 +865,7 @@ const StackDetailPage = () => {
       ════════════════════════════════════════════════════════════════════ */}
       <section id="apercu" className="sd-section scroll-mt-20">
         <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("VUE D'ENSEMBLE", "OVERVIEW")}</span>
+          <span className="sd-section-eyebrow">{t("01 — VUE D'ENSEMBLE", "01 — OVERVIEW")}</span>
           <p className="sd-section-title sd-overview-title" style={{ marginBottom: 0 }}>
             {overviewTitle}
           </p>
@@ -1040,7 +913,7 @@ const StackDetailPage = () => {
       ════════════════════════════════════════════════════════════════════ */}
       <section id="outils" className="sd-section scroll-mt-20">
         <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("OUTILS RECOMMANDÉS", "RECOMMENDED TOOLS")}</span>
+          <span className="sd-section-eyebrow">{t("02 — OUTILS", "02 — TOOLS")}</span>
           <p className="sd-section-title sd-tools-title">
             {t("Chaque outil a un rôle.", "Every tool has a role.")}
           </p>
@@ -1048,18 +921,10 @@ const StackDetailPage = () => {
             {t("Une stack lisible commence par des outils rangés par usage, pas par popularité.", "A readable stack starts with tools organized by use case, not popularity.")}
           </p>
 
-          {/* Legend */}
-          <div className="sd-tool-legend" aria-label={t("Légende des décisions", "Decision legend")}>
-            {[
-              { key: "core",        label: t("Essentiel", "Essential") },
-              { key: "conditional", label: t("Conditionnel", "Conditional") },
-              { key: "challenge",   label: t("À challenger", "Challenge") },
-            ].map((item) => (
-              <span key={item.key} className="sd-tool-legend-chip">
-                {item.label}
-              </span>
-            ))}
-          </div>
+          {/* Legend — discreet */}
+          <p className="sd-tool-legend-text" aria-label={t("Légende des décisions", "Decision legend")}>
+            {t("Décisions possibles : Socle · Conditionnel · À challenger", "Possible decisions: Core · Conditional · Challenge")}
+          </p>
 
           {/* Layers */}
           {stackLayers.map((layer) => (
@@ -1110,46 +975,11 @@ const StackDetailPage = () => {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          ESSENTIEL / OPTIONNEL / À CHALLENGER
-      ════════════════════════════════════════════════════════════════════ */}
-      <section id="decision" className="sd-section scroll-mt-20">
-        <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("DÉCISION", "DECISION")}</span>
-          <p className="sd-section-title" style={{ marginBottom: 0 }}>
-            {t("Ce qui mérite vraiment sa place.", "What actually earns its place.")}
-          </p>
-          <div className="sd-priority-grid">
-            {/* Essentiel */}
-            <div className="sd-priority-col sd-priority-col--essential">
-              <span className="sd-priority-label">{t("Essentiel", "Essential")}</span>
-              {priorityEssential.map((item: string, i: number) => (
-                <div key={i} className="sd-priority-item">{item}</div>
-              ))}
-            </div>
-            {/* Optionnel */}
-            <div className="sd-priority-col sd-priority-col--optional">
-              <span className="sd-priority-label">{t("Optionnel", "Optional")}</span>
-              {priorityOptional.map((item: string, i: number) => (
-                <div key={i} className="sd-priority-item">{item}</div>
-              ))}
-            </div>
-            {/* À challenger */}
-            <div className="sd-priority-col sd-priority-col--challenge">
-              <span className="sd-priority-label">{t("À challenger", "Challenge")}</span>
-              {priorityChallenge.map((item: string, i: number) => (
-                <div key={i} className="sd-priority-item">{item}</div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════════════
           BUDGET
       ════════════════════════════════════════════════════════════════════ */}
       <section id="budget" className="sd-section scroll-mt-20">
         <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("BUDGET", "BUDGET")}</span>
+          <span className="sd-section-eyebrow">{t("03 — BUDGET", "03 — BUDGET")}</span>
           <p className="sd-section-title" style={{ marginBottom: 8 }}>
             {t(editorial.budgetTitle, editorial.budgetTitleEn)}
           </p>
@@ -1180,7 +1010,7 @@ const StackDetailPage = () => {
       {hasRisks && (
         <section id="risques" className="sd-section scroll-mt-20">
           <div className="sd-container">
-            <span className="sd-section-eyebrow">{t("RISQUES", "RISKS")}</span>
+            <span className="sd-section-eyebrow">{t("04 — RISQUES", "04 — RISKS")}</span>
             <p className="sd-section-title" style={{ marginBottom: 0 }}>
               {t(editorial.risksTitle, editorial.risksTitleEn)}
             </p>
@@ -1208,7 +1038,7 @@ const StackDetailPage = () => {
 
       <section id="calibrage" className="sd-section scroll-mt-20">
         <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("CALIBRAGE", "CALIBRATION")}</span>
+          <span className="sd-section-eyebrow">{t("05 — CALIBRAGE", "05 — CALIBRATION")}</span>
           <p className="sd-section-title" style={{ marginBottom: 0 }}>
             {t("Quand cette stack devient mal calibrée.", "When this stack becomes miscalibrated.")}
           </p>
@@ -1626,14 +1456,14 @@ function getOverviewCards(stack: StackGuide, editorial: StackEditorialContent, l
 }
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {
   if (slot.decision === "challenge")   return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
-  if (slot.decision === "conditional") return { key: "conditional" as const, labelFr: "Optionnel",    labelEn: "Optional",    className: "border-primary/25 bg-primary/8 text-primary" };
-  if (slot.decision === "core")        return { key: "core"        as const, labelFr: "Essentiel",    labelEn: "Essential",   className: "border-keep/25 bg-keep/10 text-keep" };
+  if (slot.decision === "conditional") return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
+  if (slot.decision === "core")        return { key: "core"        as const, labelFr: "Socle",         labelEn: "Core",        className: "border-keep/25 bg-keep/10 text-keep" };
   const norm = slot.role.toLowerCase();
   const challengeKw = ["avancé", "advanced", "suite", "backlinks", "connecteurs", "connectors", "handoff", "vectoriel", "photo", "crm agence"];
   const optionalKw  = ["plugin", "feedback", "prospection", "social", "seo", "ux", "workshop", "atelier", "prototype", "ia"];
-  if (challengeKw.some((kw) => norm.includes(kw))) return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge", className: "border-destructive/25 bg-destructive/8 text-destructive" };
-  if (optionalKw.some((kw)  => norm.includes(kw))) return { key: "conditional" as const, labelFr: "Optionnel", labelEn: "Optional", className: "border-primary/25 bg-primary/8 text-primary" };
-  return { key: "core" as const, labelFr: "Essentiel", labelEn: "Essential", className: "border-keep/25 bg-keep/10 text-keep" };
+  if (challengeKw.some((kw) => norm.includes(kw))) return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
+  if (optionalKw.some((kw)  => norm.includes(kw))) return { key: "conditional" as const, labelFr: "Conditionnel", labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
+  return { key: "core" as const, labelFr: "Socle", labelEn: "Core", className: "border-keep/25 bg-keep/10 text-keep" };
 }
 
 export default StackDetailPage;
