@@ -72,6 +72,19 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 
 ---
 
+
+## Pattern fiche stack — Vue d'ensemble
+
+La section `VUE D'ENSEMBLE` doit présenter la promesse centrale de la stack, pas une longue liste de profils cibles.
+
+- H2 court : `clamp(38px, 4vw, 68px)`, line-height `0.98`, letter-spacing `-0.055em`, max-width `780px`.
+- Intro : 18px, line-height `1.45`, max-width `760px`, couleur `#6F6F68`.
+- Les blocs “sert à / évite / pas faite pour” sont des cartes blanches, bordure `#DADAD4`, radius 14px, padding 22px.
+- La note ToolTrim reste légère : fond blanc, bordure fine, une phrase principale puis des lignes structurées label + texte.
+- L'audience détaillée appartient aux cartes, au hero ou au résumé rapide, pas au H2.
+
+---
+
 ## Composants CTA
 
 ### CTA primaire (black button)

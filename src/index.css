@@ -11204,3 +11204,112 @@
     border-color: transparent;
   }
 }
+
+/* Stack detail overview hierarchy refinement */
+.sd-overview-title {
+  font-size: clamp(38px, 4vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  max-width: 780px;
+}
+.sd-overview-intro {
+  font-size: 18px;
+  line-height: 1.45;
+  color: #6F6F68;
+  max-width: 760px;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+.sd-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 48px;
+}
+.sd-overview-col {
+  min-height: 180px;
+  padding: 22px;
+  background: #FFFFFF;
+  border: 1px solid #DADAD4;
+  border-radius: 14px;
+}
+.sd-overview-col + .sd-overview-col {
+  border-left: 1px solid #DADAD4;
+  padding-left: 22px;
+}
+.sd-overview-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9A9A92;
+  margin-bottom: 14px;
+}
+.sd-overview-text {
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #222222;
+  margin: 0;
+}
+.sd-expert-note {
+  margin-top: 48px;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid #DADAD4;
+  border-radius: 14px;
+}
+.sd-expert-note-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9A9A92;
+  margin-bottom: 0;
+}
+.sd-expert-note-text {
+  margin-top: 14px;
+  padding-left: 0;
+  border-left: 0;
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #222222;
+}
+.sd-expert-note-tip {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #DADAD4;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #6F6F68;
+}
+.sd-expert-note-tip-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9A9A92;
+}
+@media (max-width: 767px) {
+  .sd-overview-grid {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+  .sd-overview-col,
+  .sd-overview-col + .sd-overview-col {
+    padding: 22px;
+    border: 1px solid #DADAD4;
+    margin-top: 0;
+  }
+  .sd-expert-note-tip {
+    display: block;
+  }
+  .sd-expert-note-tip-label {
+    display: block;
+    margin-bottom: 8px;
+  }
+}

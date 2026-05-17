@@ -2,6 +2,24 @@
 
 ---
 
+## 2026-05-17 — Stack detail : vue d'ensemble architecte d'intérieur
+
+### Objectif
+Rendre la section “Vue d'ensemble” plus lisible sur les fiches stack, avec un titre éditorial court, des cartes de lecture et une note ToolTrim plus légère.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — titre, intro et cartes spécifiques pour la stack architecte d'intérieur ; note ToolTrim restructurée.
+- `src/index.css` — affinage typographique et card-based layout pour la section overview et la note.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — règle de pattern pour les sections “Vue d'ensemble” des fiches stack.
+
+### Détails
+- Remplacement du H2 audience trop long par “Une chaîne claire, du brief au chantier.” pour `/fr/stacks/architecte-interieur`.
+- Passage de “Elle sert à / Elle évite / Elle n'est pas faite pour” en cartes blanches avec bordures fines.
+- Note ToolTrim allégée avec une ligne principale, une astuce de dossier projet et un point “À challenger”.
+
+---
+
 ## 2026-05-16 — Sprint 6 : Ticker Awwwards — typographie pure, animation lente
 
 ### Objectif

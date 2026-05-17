@@ -479,8 +479,8 @@ const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
     { title: "À challenger", titleEn: "Challenge", detail: "Adobe complet ne doit rester actif que si tu ouvres vraiment Photoshop, Illustrator ou Lightroom chaque mois. Sinon plan photo ou alternative dédiée.", detailEn: "Full Adobe should stay active only if you actually open Photoshop, Illustrator, or Lightroom monthly. Otherwise use the photo plan or a focused alternative." },
   ],
   "architecte-interieur": [
-    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "SketchUp Pro + LayOut + AutoCAD LT + D5 Render + Programa + Notion + Indy/Qonto/Yousign. C'est complet sans basculer trop tôt dans une stack BIM lourde.", detailEn: "SketchUp Pro + LayOut + AutoCAD LT + D5 Render + Programa + Notion + Indy/Qonto/Yousign. It is complete without moving too early into a heavy BIM stack." },
-    { title: "Le petit plus", titleEn: "Small edge", detail: "Crée un modèle de dossier projet : 01_ADMIN, 02_BRIEF, 03_REFERENCES, 04_PLANS, 05_3D, 06_RENDUS, 07_SOURCING, 08_BUDGET, 09_CHANTIER, 10_LIVRAISON.", detailEn: "Create a project folder template: 01_ADMIN, 02_BRIEF, 03_REFERENCES, 04_PLANS, 05_3D, 06_RENDUS, 07_SOURCING, 08_BUDGET, 09_CHANTIER, 10_LIVRAISON." },
+    { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "SketchUp Pro, LayOut, D5 Render, Programa et Notion couvrent déjà l'essentiel : modèle, rendu, sourcing, validation et suivi client.", detailEn: "SketchUp Pro, LayOut, D5 Render, Programa, and Notion already cover the essentials: model, rendering, sourcing, approval, and client follow-up." },
+    { title: "Astuce", titleEn: "Tip", detail: "Crée un modèle de dossier projet : 01_ADMIN, 02_BRIEF, 03_RÉFÉRENCES, 04_PLANS, 05_3D, 06_RENDUS, 07_SOURCING, 08_BUDGET, 09_CHANTIER, 10_LIVRAISON.", detailEn: "Create a project folder template: 01_ADMIN, 02_BRIEF, 03_REFERENCES, 04_PLANS, 05_3D, 06_RENDUS, 07_SOURCING, 08_BUDGET, 09_CHANTIER, 10_LIVRAISON." },
     { title: "À challenger", titleEn: "Challenge", detail: "V-Ray, Revit, Archicad, Rhino et Twinmotion doivent répondre à un livrable précis. Sinon, garde-les en outil projet, pas en abonnement permanent.", detailEn: "V-Ray, Revit, Archicad, Rhino, and Twinmotion must answer a precise deliverable. Otherwise keep them as project tools, not permanent subscriptions." },
   ],
   "scenographe-evenementiel": [
@@ -674,6 +674,9 @@ const StackDetailPage = () => {
     : t(stack.subtitle, stack.subtitleEn);
   const derived = getStackDerivedFields(stack);
   const expertTips = getExpertTips(stack);
+  const overviewTitle = getOverviewTitle(stack, lang);
+  const overviewIntro = getOverviewIntro(stack, editorial, lang);
+  const overviewCards = getOverviewCards(stack, editorial, lang);
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
   const primarySubProfile = stack.subProfiles[0];
   const subProfileText = primarySubProfile ? t(subProfileLabel(primarySubProfile, "fr"), subProfileLabel(primarySubProfile, "en")) : personaText;
@@ -910,28 +913,22 @@ const StackDetailPage = () => {
       <section id="apercu" className="sd-section scroll-mt-20">
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("VUE D'ENSEMBLE", "OVERVIEW")}</span>
-          <p className="sd-section-title" style={{ marginBottom: 0 }}>
-            {lang === "fr" ? getOverviewTitle(stack) : getOverviewTitleEn(stack)}
+          <p className="sd-section-title sd-overview-title" style={{ marginBottom: 0 }}>
+            {overviewTitle}
           </p>
 
           <p className="sd-overview-intro">
-            {t(editorial.overviewIntro, editorial.overviewIntroEn)}
+            {overviewIntro}
           </p>
 
           {/* 3-col: sert à / évite / pas faite pour */}
           <div className="sd-overview-grid">
-            <div className="sd-overview-col">
-              <span className="sd-overview-label">{t(editorial.overviewServesLabel, editorial.overviewServesLabelEn)}</span>
-              <p className="sd-overview-text">{t(editorial.overviewServes, editorial.overviewServesEn)}</p>
-            </div>
-            <div className="sd-overview-col">
-              <span className="sd-overview-label">{t(editorial.overviewAvoidsLabel, editorial.overviewAvoidsLabelEn)}</span>
-              <p className="sd-overview-text">{t(editorial.overviewAvoids, editorial.overviewAvoidsEn)}</p>
-            </div>
-            <div className="sd-overview-col">
-              <span className="sd-overview-label">{t(editorial.overviewNotForLabel, editorial.overviewNotForLabelEn)}</span>
-              <p className="sd-overview-text">{t(editorial.overviewNotFor, editorial.overviewNotForEn)}</p>
-            </div>
+            {overviewCards.map((card) => (
+              <div key={card.label} className="sd-overview-col">
+                <span className="sd-overview-label">{card.label}</span>
+                <p className="sd-overview-text">{card.text}</p>
+              </div>
+            ))}
           </div>
 
           {/* Expert note */}
@@ -1472,11 +1469,41 @@ function formatToolPrice(tool: ToolSummary | undefined, locale: "fr" | "en") {
 function getExpertTips(stack: StackGuide): StackInsight[] {
   return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona] || [];
 }
-function getOverviewTitle(stack: StackGuide): string {
-  return `Une stack pour ${stack.bestFor.split(".")[0].toLowerCase()}.`;
+function getOverviewTitle(stack: StackGuide, locale: "fr" | "en"): string {
+  if (stack.slug === "architecte-interieur") {
+    return locale === "fr" ? "Une chaîne claire, du brief au chantier." : "A clear chain from brief to site.";
+  }
+  return locale === "fr"
+    ? `Une stack pour ${stack.bestFor.split(".")[0].toLowerCase()}.`
+    : `A stack to ${stack.bestForEn.split(".")[0].toLowerCase()}.`;
 }
-function getOverviewTitleEn(stack: StackGuide): string {
-  return `A stack to ${stack.bestForEn.split(".")[0].toLowerCase()}.`;
+function getOverviewIntro(stack: StackGuide, editorial: StackEditorialContent, locale: "fr" | "en"): string {
+  if (stack.slug === "architecte-interieur") {
+    return locale === "fr"
+      ? "Moodboard, plans, 3D, rendus, sourcing, budget, validations, facturation : cette stack relie chaque étape sans basculer trop tôt dans une stack BIM lourde."
+      : "Moodboard, plans, 3D, renders, sourcing, budget, approvals, invoicing: this stack connects each step without moving too early into a heavy BIM setup.";
+  }
+  return locale === "fr" ? editorial.overviewIntro : editorial.overviewIntroEn;
+}
+function getOverviewCards(stack: StackGuide, editorial: StackEditorialContent, locale: "fr" | "en") {
+  if (stack.slug === "architecte-interieur") {
+    return locale === "fr"
+      ? [
+          { label: "ELLE SERT À", text: "Architectes d’intérieur indépendants, décorateurs, studios résidentiels, retail léger et projets avec sourcing mobilier ou matières." },
+          { label: "ELLE ÉVITE", text: "Payer trop tôt une stack BIM, plusieurs moteurs de rendu et des plugins jamais maîtrisés." },
+          { label: "ELLE N’EST PAS FAITE POUR", text: "Les projets déjà en BIM lourd, avec bureaux d’études, marchés publics ou coordination technique avancée." },
+        ]
+      : [
+          { label: "BUILT FOR", text: "Independent interior architects, decorators, residential studios, light retail, and projects with furniture or material sourcing." },
+          { label: "IT AVOIDS", text: "Paying too early for a BIM stack, multiple render engines, and plugins that never become mastered." },
+          { label: "NOT FOR", text: "Projects already in heavy BIM, with engineering offices, public tenders, or advanced technical coordination." },
+        ];
+  }
+  return [
+    { label: locale === "fr" ? editorial.overviewServesLabel : editorial.overviewServesLabelEn, text: locale === "fr" ? editorial.overviewServes : editorial.overviewServesEn },
+    { label: locale === "fr" ? editorial.overviewAvoidsLabel : editorial.overviewAvoidsLabelEn, text: locale === "fr" ? editorial.overviewAvoids : editorial.overviewAvoidsEn },
+    { label: locale === "fr" ? editorial.overviewNotForLabel : editorial.overviewNotForLabelEn, text: locale === "fr" ? editorial.overviewNotFor : editorial.overviewNotForEn },
+  ];
 }
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {
   if (slot.decision === "challenge")   return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
