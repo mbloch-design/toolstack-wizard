@@ -601,6 +601,7 @@ const StackDetailPage = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState("apercu");
+  const [expandedToolLayers, setExpandedToolLayers] = useState<Set<string>>(() => new Set());
   const navItems = useMemo(() => {
     if (!stack) return [];
     const stackEditorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
@@ -724,6 +725,14 @@ const StackDetailPage = () => {
   const stackLayers = unassignedTools.length > 0
     ? [...stackLayersBase, { id: "other", titleFr: "Autres outils utiles", titleEn: "Other useful tools", match: [], tools: unassignedTools }]
     : stackLayersBase;
+  const toggleToolLayer = (layerId: string) => {
+    setExpandedToolLayers((current) => {
+      const next = new Set(current);
+      if (next.has(layerId)) next.delete(layerId);
+      else next.add(layerId);
+      return next;
+    });
+  };
 
   // Logo pills (max 5) from tools that have a toolBySlug entry
   const logoPills = stackTools.slice(0, 6);
@@ -915,31 +924,68 @@ const StackDetailPage = () => {
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("02 — OUTILS", "02 — TOOLS")}</span>
           <p className="sd-section-title sd-tools-title">
-            {t("Chaque outil a un rôle.", "Every tool has a role.")}
+            {t("Les outils, rangés par rôle.", "Tools, organized by role.")}
           </p>
           <p className="sd-tools-subtitle">
-            {t("Une stack lisible commence par des outils rangés par usage, pas par popularité.", "A readable stack starts with tools organized by use case, not popularity.")}
+            {t("Chaque catégorie couvre une étape du travail. Le socle sert tous les jours. Le conditionnel dépend du projet. Le reste se challenge.", "Each category covers a work step. The core is used every day. Conditional tools depend on the project. The rest gets challenged.")}
           </p>
 
-          {/* Legend — discreet */}
-          <p className="sd-tool-legend-text" aria-label={t("Légende des décisions", "Decision legend")}>
-            {t("Décisions possibles : Socle · Conditionnel · À challenger", "Possible decisions: Core · Conditional · Challenge")}
-          </p>
+          <div className="sd-stack-map" aria-label={t("Carte de la stack", "Stack map")}>
+            <div className="sd-stack-map-header">
+              <p>{t("Carte de la stack", "Stack map")}</p>
+              <span>{t(`${stackTools.length} outil${stackTools.length > 1 ? "s" : ""}`, `${stackTools.length} tool${stackTools.length > 1 ? "s" : ""}`)}</span>
+            </div>
+            <div className="sd-stack-map-grid">
+              {stackLayers.map((layer) => {
+                const summary = getLayerDecisionSummary(layer.tools);
+                const mapLogos = layer.tools.slice(0, 5);
+                const overflow = layer.tools.length > 5 ? layer.tools.length - 5 : 0;
+                return (
+                  <div key={layer.id} className="sd-stack-map-card">
+                    <div className="sd-stack-map-card-top">
+                      <p>{t(layer.titleFr, layer.titleEn)}</p>
+                      <span>{t(`${layer.tools.length} outil${layer.tools.length > 1 ? "s" : ""}`, `${layer.tools.length} tool${layer.tools.length > 1 ? "s" : ""}`)}</span>
+                    </div>
+                    <p className="sd-stack-map-breakdown">
+                      {t(`${summary.core} socle · ${summary.conditional} conditionnels · ${summary.challenge} à challenger`, `${summary.core} core · ${summary.conditional} conditional · ${summary.challenge} to challenge`)}
+                    </p>
+                    <div className="sd-stack-map-logos">
+                      {mapLogos.map(({ tool }) => (
+                        <span key={tool!.slug} className="sd-map-logo-pill">
+                          <ToolLogo tool={tool!} size={20} />
+                        </span>
+                      ))}
+                      {overflow > 0 && <span className="sd-map-logo-pill sd-map-logo-more">+{overflow}</span>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
           {/* Layers */}
-          {stackLayers.map((layer) => (
+          {stackLayers.map((layer) => {
+            const sortedTools = sortToolsByDecision(layer.tools);
+            const isExpanded = expandedToolLayers.has(layer.id);
+            const shouldCollapse = sortedTools.length > 8 && !isExpanded;
+            const visibleTools = shouldCollapse ? sortedTools.slice(0, 6) : sortedTools;
+            const hiddenCount = sortedTools.length - visibleTools.length;
+            return (
             <div key={layer.id} className="sd-tool-layer">
               <div className="sd-tool-layer-header">
-                <p className="sd-tool-layer-title">
-                  {t(layer.titleFr, layer.titleEn)}
-                </p>
+                <div>
+                  <p className="sd-tool-layer-title">
+                    {t(layer.titleFr, layer.titleEn)}
+                  </p>
+                  <p className="sd-tool-layer-purpose">{getLayerPurpose(layer.id, lang)}</p>
+                </div>
                 <span className="sd-tool-layer-count">
                   {t(`${layer.tools.length} outil${layer.tools.length > 1 ? "s" : ""}`, `${layer.tools.length} tool${layer.tools.length > 1 ? "s" : ""}`)}
                 </span>
               </div>
 
-              <div>
-                {layer.tools.map(({ slot, tool }) => {
+              <div id={`sd-tool-layer-${layer.id}`}>
+                {visibleTools.map(({ slot, tool }) => {
                   const status = getToolDecisionStatus(slot);
                   const globalIndex = stackTools.findIndex((st) => st.slot.slug === slot.slug);
                   return (
@@ -955,22 +1001,34 @@ const StackDetailPage = () => {
                           </div>
                         </div>
                         <p className="sd-tool-reason">{t(slot.reason, slot.reasonEn)}</p>
-                        <span className="sd-tool-price">{formatToolPrice(tool, lang)}</span>
                       </button>
-                      <div className="sd-tool-decision-column">
+                      <div className="sd-tool-row-action">
                         <span className={`sd-tool-status sd-tool-status--${status.key}`}>
-                          {t(status.labelFr, status.labelEn)}
+                          {getToolDecisionDisplay(status.key, lang)}
                         </span>
+                        <span className="sd-tool-price">{formatToolPrice(tool, lang)}</span>
+                        <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-tool-detail-link">
+                          {t("Fiche", "Details")} <span aria-hidden>→</span>
+                        </Link>
                       </div>
-                      <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-tool-detail-link">
-                        {t("Fiche", "Details")} <span aria-hidden>→</span>
-                      </Link>
                     </div>
                   );
                 })}
               </div>
+              {hiddenCount > 0 && (
+                <button
+                  type="button"
+                  className="sd-tool-layer-more"
+                  aria-expanded={isExpanded}
+                  aria-controls={`sd-tool-layer-${layer.id}`}
+                  onClick={() => toggleToolLayer(layer.id)}
+                >
+                  {t(`Afficher les ${hiddenCount} autres outils`, `Show ${hiddenCount} more tools`)}
+                </button>
+              )}
             </div>
-          ))}
+          );
+          })}
         </div>
       </section>
 
@@ -1390,6 +1448,49 @@ function formatToolPrice(tool: ToolSummary | undefined, locale: "fr" | "en") {
 }
 function getExpertTips(stack: StackGuide): StackInsight[] {
   return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona] || [];
+}
+function getToolDecisionDisplay(key: "core" | "conditional" | "challenge", locale: "fr" | "en"): string {
+  if (key === "core") return locale === "fr" ? "Socle" : "Core";
+  if (key === "conditional") return locale === "fr" ? "Conditionnel" : "Conditional";
+  return locale === "fr" ? "À challenger" : "Challenge";
+}
+function getDecisionOrder(slot: StackToolSlot): number {
+  const key = getToolDecisionStatus(slot).key;
+  if (key === "core") return 0;
+  if (key === "conditional") return 1;
+  return 2;
+}
+function sortToolsByDecision<T extends { slot: StackToolSlot }>(items: T[]): T[] {
+  return items
+    .map((item, index) => ({ item, index }))
+    .sort((a, b) => getDecisionOrder(a.item.slot) - getDecisionOrder(b.item.slot) || a.index - b.index)
+    .map(({ item }) => item);
+}
+function getLayerDecisionSummary(items: { slot: StackToolSlot }[]) {
+  return items.reduce((acc, item) => {
+    const key = getToolDecisionStatus(item.slot).key;
+    acc[key] += 1;
+    return acc;
+  }, { core: 0, conditional: 0, challenge: 0 });
+}
+function getLayerPurpose(layerId: string, locale: "fr" | "en"): string {
+  const purposes: Record<string, { fr: string; en: string }> = {
+    sell: { fr: "Capturer les demandes, organiser les rendez-vous et qualifier les missions.", en: "Capture requests, organize calls, and qualify projects." },
+    create: { fr: "Produire, présenter et livrer les éléments qui font avancer le projet.", en: "Produce, present, and deliver the assets that move the project forward." },
+    money: { fr: "Facturer, encaisser et garder les documents au propre.", en: "Invoice, collect payments, and keep documents clean." },
+    ops: { fr: "Réduire les tâches répétitives sans automatiser trop tôt.", en: "Reduce repetitive tasks without automating too early." },
+    measure: { fr: "Mesurer, suivre et comprendre ce qui fonctionne vraiment.", en: "Measure, track, and understand what actually works." },
+    code: { fr: "Coder, versionner et garder une base livrable.", en: "Code, version, and keep a shippable base." },
+    preview: { fr: "Montrer rapidement une version claire au client.", en: "Show a clear version to the client quickly." },
+    docs: { fr: "Centraliser le brief, les décisions et les traces projet.", en: "Centralize the brief, decisions, and project trail." },
+    payment: { fr: "Encaisser sans installer une couche finance trop lourde.", en: "Get paid without installing a heavy finance layer." },
+    tasks: { fr: "Suivre les tâches sans transformer la mission en usine produit.", en: "Track tasks without turning the project into a product factory." },
+    ai: { fr: "Accélérer le travail sans multiplier les copilotes redondants.", en: "Speed up work without multiplying redundant copilots." },
+    automation: { fr: "Automatiser seulement les gestes déjà répétés.", en: "Automate only steps that are already repeated." },
+    other: { fr: "Regrouper les outils qui servent cette étape du workflow.", en: "Group the tools that support this workflow step." },
+  };
+  const purpose = purposes[layerId] ?? purposes.other;
+  return locale === "fr" ? purpose.fr : purpose.en;
 }
 function getUsageChips(stack: StackGuide, locale: "fr" | "en"): string[] {
   if (stack.slug === "architecte-interieur") {
