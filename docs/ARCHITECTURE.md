@@ -302,6 +302,18 @@ Le composant `ToolPanel` (side sheet) est **intégralement conservé** dans `Sta
 Il utilise `Sheet` / `SheetContent` / `SheetClose` de shadcn/ui.
 Ne pas modifier ce composant lors de futures refontes éditoriales.
 
+### StackDetailPage — template décisionnel
+
+Le détail stack utilise maintenant les données existantes comme base de décision :
+
+- Hero : `persona`, premier `subProfiles[]`, `monthlyBudget`, `stage`, `getStackDerivedFields(stack).complexity`, `bestFor`, `avoidIf`.
+- Résumé : `tools[]` + `decision` pour extraire les outils à garder, optionnels et à challenger. Quand la donnée manque, fallback sur `editorial.priority`.
+- Outils : regroupement par rôle métier via `PERSONA_LAYERS`, row avec logo, rôle, raison, prix/plan indicatif, statut décisionnel et lien fiche outil.
+- Budget : cible de calibration, pas promesse d'économie.
+- Calibrage : section `Trop légère si` / `Trop lourde si` pour éviter les recommandations hors contexte.
+
+Le contenu spécifique peut être ajouté dans `EDITORIAL_REGISTRY[stack.slug]`. Sinon `buildFallbackEditorial(stack)` continue d'assurer une page complète sans casser les fiches existantes.
+
 ### Fix hooks React (règle)
 
 Les `useMemo` doivent être déclarés **avant** tout `return` conditionnel (`if (!data) return ...`).

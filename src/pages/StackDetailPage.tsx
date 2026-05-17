@@ -8,8 +8,10 @@ import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
 import {
   STACK_PERSONAS,
+  STACK_SUB_PROFILES,
   STACK_STAGES,
   STACKS,
+  getStackDerivedFields,
   type StackGuide,
   type StackInsight,
   type StackPersona,
@@ -53,6 +55,15 @@ const STACK_LAYERS = [
 
 /* Per-persona layer overrides */
 const PERSONA_LAYERS: Partial<Record<StackPersona, typeof STACK_LAYERS>> = {
+  dev: [
+    { id: "code", titleFr: "Coder", titleEn: "Code", match: ["code", "repo", "github", "débug", "debug"] },
+    { id: "preview", titleFr: "Preview client", titleEn: "Client preview", match: ["déploiement", "deployment", "preview", "vercel"] },
+    { id: "docs", titleFr: "Documenter", titleEn: "Document", match: ["base", "workspace", "documentation", "specs", "brief", "décisions", "decisions"] },
+    { id: "payment", titleFr: "Encaisser", titleEn: "Get paid", match: ["paiement", "payment", "facture", "invoice", "stripe"] },
+    { id: "tasks", titleFr: "Suivre les tâches", titleEn: "Track tasks", match: ["projet", "project", "tâches", "tasks", "roadmap", "suivi"] },
+    { id: "ai", titleFr: "IA / assistance", titleEn: "AI / assistance", match: ["ia", "ai", "assistant", "copilote", "chatgpt"] },
+    { id: "automation", titleFr: "Automation", titleEn: "Automation", match: ["automatisation", "automation", "zap", "make"] },
+  ],
   content: [
     { id: "ai",      titleFr: "Copilote éditorial IA",     titleEn: "AI editorial copilot",       match: ["rédaction", "idées", "writing", "ideas", "ia"] },
     { id: "ideas",   titleFr: "Idées & organisation",       titleEn: "Ideas & organisation",        match: ["organisation", "formulaire", "stockage"] },
@@ -274,8 +285,131 @@ const CREATEUR_CONTENU: StackEditorialContent = {
   ],
 };
 
+const DEV_FREELANCE_SHIPPER: StackEditorialContent = {
+  verdictShort:    "Pour livrer vite sans payer une stack de startup.",
+  verdictShortEn:  "To ship fast without paying for a startup stack.",
+
+  overviewIntro:   "Cette stack est pensée pour un développeur freelance qui doit coder, montrer une preview, garder une trace des décisions et encaisser proprement. Elle reste volontairement légère : chaque outil a un rôle distinct.",
+  overviewIntroEn: "This stack is designed for a freelance developer who needs to code, show a preview, keep decision history, and get paid cleanly. It stays deliberately light: every tool has a distinct role.",
+
+  overviewServesLabel:    "Elle sert à",
+  overviewServesLabelEn:  "It's for",
+  overviewServes:    "Coder, présenter une preview client, documenter les décisions et facturer sans stack d'équipe produit.",
+  overviewServesEn:  "Coding, sharing client previews, documenting decisions, and invoicing without a product-team stack.",
+
+  overviewAvoidsLabel:    "Elle évite",
+  overviewAvoidsLabelEn:  "It avoids",
+  overviewAvoids:    "Jira, CRM lourd, suite produit complète et automatisations payées avant d'être répétées.",
+  overviewAvoidsEn:  "Jira, heavy CRM, full product suites, and automations paid before they repeat.",
+
+  overviewNotForLabel:    "À éviter si",
+  overviewNotForLabelEn:  "Avoid if",
+  overviewNotFor:    "Tu travailles déjà avec une équipe produit structurée, beaucoup de QA ou plusieurs environnements complexes.",
+  overviewNotForEn:  "You already work with a structured product team, heavy QA, or several complex environments.",
+
+  priority: {
+    essential:   ["GitHub pour versionner", "Vercel pour partager une preview", "Stripe pour encaisser"],
+    essentialEn: ["GitHub for versioning", "Vercel for previews", "Stripe for payment"],
+    optional:    ["Notion si le client a besoin de contexte", "ChatGPT si tu codes ou debugges chaque semaine"],
+    optionalEn:  ["Notion when the client needs context", "ChatGPT if you code or debug weekly"],
+    challenge:    ["Copilote IA secondaire", "Outil de gestion projet en double", "Automation trop tôt"],
+    challengeEn:  ["Secondary AI copilot", "Duplicate project management tool", "Automation too early"],
+  },
+
+  budgetTitle:   "Budget cible : 32€/mois.",
+  budgetTitleEn: "Target budget: €32/month.",
+  budgetRows: [
+    {
+      tier: "Inclus / souvent gratuit", tierEn: "Included / often free", amount: "0€",
+      desc:   "GitHub, Vercel et Notion couvrent souvent les bases avec leurs plans gratuits selon le volume.",
+      descEn: "GitHub, Vercel, and Notion often cover the basics on free plans depending on volume.",
+    },
+    {
+      tier: "Budget cible", tierEn: "Target budget", amount: "≈ 32€/mois",
+      desc:   "La cible inclut surtout les outils réellement utilisés chaque semaine pour produire, montrer et encaisser.",
+      descEn: "The target mostly includes tools genuinely used every week to produce, preview, and get paid.",
+    },
+    {
+      tier: "À ne pas payer trop tôt", tierEn: "Do not pay too early", amount: "Jira / CRM / IA x2",
+      desc:   "Attends un vrai volume avant d'ajouter outil projet lourd, CRM complet ou plusieurs copilotes IA.",
+      descEn: "Wait for real volume before adding heavy PM tooling, a full CRM, or multiple AI copilots.",
+    },
+  ],
+
+  risksTitle:   "Ce que cette stack évite.",
+  risksTitleEn: "What this stack avoids.",
+  risks: [
+    {
+      problem: "Stack produit trop lourde", problemEn: "Overweight product stack",
+      consequence: "Jira, Linear ou un CRM complet ajoutent du rituel si tu livres seul.",
+      consequenceEn: "Jira, Linear, or a full CRM add ritual if you ship alone.",
+      reco: "Garde un système léger tant que la mission tient dans code, preview, décisions et paiement.",
+      recoEn: "Keep a light system while the project fits code, preview, decisions, and payment.",
+    },
+    {
+      problem: "Outil projet pour deux clients", problemEn: "Project tool for two clients",
+      consequence: "Un outil d'équipe devient vite une couche de suivi de plus.",
+      consequenceEn: "A team tool quickly becomes one more tracking layer.",
+      reco: "Utilise Notion pour le contexte client avant d'ajouter une vraie couche PM.",
+      recoEn: "Use Notion for client context before adding a full PM layer.",
+    },
+    {
+      problem: "CRM avant flux commercial", problemEn: "CRM before sales flow",
+      consequence: "Un pipeline complet ne sert pas si les opportunités sont encore rares.",
+      consequenceEn: "A full pipeline is not useful if opportunities are still rare.",
+      reco: "Repousse le CRM tant que le suivi commercial tient dans une page ou un tableur.",
+      recoEn: "Delay CRM while sales follow-up fits in a page or spreadsheet.",
+    },
+    {
+      problem: "Plusieurs copilotes IA", problemEn: "Several AI copilots",
+      consequence: "ChatGPT, Claude, Copilot et Cursor peuvent couvrir le même besoin.",
+      consequenceEn: "ChatGPT, Claude, Copilot, and Cursor can cover the same need.",
+      reco: "Garde un copilote principal, ajoute un IDE IA seulement si le code est hebdomadaire.",
+      recoEn: "Keep one main copilot, add an AI IDE only if code work is weekly.",
+    },
+    {
+      problem: "Automations trop tôt", problemEn: "Automations too early",
+      consequence: "Automatiser un geste qui n'est pas encore répété crée plus de maintenance que de gain.",
+      consequenceEn: "Automating a task that is not repeated yet creates more maintenance than gain.",
+      reco: "Paie l'automation quand le flux est stable et fréquent.",
+      recoEn: "Pay for automation when the flow is stable and frequent.",
+    },
+  ],
+
+  altsTitle:   "Décisions liées.",
+  altsTitleEn: "Related decisions.",
+  altVariants: [],
+
+  ctaTitle:   "Ta stack dev est déjà plus lourde que ça ?",
+  ctaTitleEn: "Is your dev stack already heavier than this?",
+  ctaDesc:   "Audite tes outils actuels pour voir quoi garder, quoi challenger et quoi repousser.",
+  ctaDescEn: "Audit your current tools to see what to keep, challenge, and postpone.",
+
+  faq: [
+    {
+      q: "Cette stack suffit-elle pour livrer un site client ?",
+      qEn: "Is this stack enough to ship a client website?",
+      a: "Oui, si le besoin principal est de coder, partager une preview, documenter les décisions et encaisser. Elle devient trop légère si tu dois gérer QA avancée, staging complexe ou plusieurs développeurs.",
+      aEn: "Yes, if the core need is coding, sharing a preview, documenting decisions, and getting paid. It becomes too light when you need advanced QA, complex staging, or several developers.",
+    },
+    {
+      q: "Faut-il ajouter Linear ou Jira ?",
+      qEn: "Should you add Linear or Jira?",
+      a: "Pas par défaut. En solo, Notion suffit souvent pour le contexte, les décisions et le suivi client. Linear ou Jira deviennent utiles quand plusieurs personnes priorisent et livrent en même temps.",
+      aEn: "Not by default. Solo, Notion is often enough for context, decisions, and client tracking. Linear or Jira become useful when several people prioritize and ship at the same time.",
+    },
+    {
+      q: "Quand payer un outil IA de code ?",
+      qEn: "When should you pay for an AI coding tool?",
+      a: "Quand tu livres du code chaque semaine et que l'outil réduit vraiment le temps de debug, refactor ou génération. Sinon, un copilote généraliste bien configuré suffit.",
+      aEn: "When you ship code weekly and the tool truly reduces debugging, refactoring, or generation time. Otherwise, a well-configured general copilot is enough.",
+    },
+  ],
+};
+
 /* ─── Editorial content registry ────────────────────────────────────────── */
 const EDITORIAL_REGISTRY: Record<string, StackEditorialContent> = {
+  "developpeur-freelance-shipper": DEV_FREELANCE_SHIPPER,
   "createur-contenu-operateur": CREATEUR_CONTENU,
 };
 
@@ -485,12 +619,41 @@ const StackDetailPage = () => {
 
   /* ── Derived data ───────────────────────────────────────────────────────── */
   const editorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
+  const detailTitle = stack.slug === "developpeur-freelance-shipper"
+    ? t("Développeur freelance shipper", "Freelance developer shipper")
+    : t(stack.title, stack.titleEn);
+  const derived = getStackDerivedFields(stack);
   const expertTips = getExpertTips(stack);
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
-  const stageText   = t(stageLabel(stack.stage, "fr"),   stageLabel(stack.stage, "en"));
+  const primarySubProfile = stack.subProfiles[0];
+  const subProfileText = primarySubProfile ? t(subProfileLabel(primarySubProfile, "fr"), subProfileLabel(primarySubProfile, "en")) : personaText;
+  const levelText = t(stack.stage === "starter" ? "débutant" : stack.stage === "scale" ? "avancé" : "installé", stack.stage === "starter" ? "beginner" : stack.stage === "scale" ? "advanced" : "established");
+  const complexityText = t(
+    derived.complexity === "minimal" ? "minimale" : derived.complexity === "premium" ? "premium" : "équilibrée",
+    derived.complexity === "minimal" ? "minimal" : derived.complexity === "premium" ? "premium" : "balanced",
+  );
   const budgetDisplay = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
 
   const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
+  const coreTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "core");
+  const optionalTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "conditional");
+  const challengeTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "challenge");
+  const priorityEssential = lang === "fr" ? editorial.priority.essential : editorial.priority.essentialEn;
+  const priorityOptional = lang === "fr" ? editorial.priority.optional : editorial.priority.optionalEn;
+  const priorityChallenge = lang === "fr" ? editorial.priority.challenge : editorial.priority.challengeEn;
+  const decisionKeep = coreTools.slice(0, 4).map(({ tool }) => tool!.name);
+  const decisionChallenge = challengeTools.length > 0
+    ? challengeTools.slice(0, 4).map(({ tool }) => tool!.name)
+    : priorityChallenge.slice(0, 3);
+  const decisionOptional = optionalTools.length > 0
+    ? optionalTools.slice(0, 4).map(({ tool }) => tool!.name)
+    : priorityOptional.slice(0, 3);
+  const tooLightRows = lang === "fr"
+    ? ["Tu gères plusieurs projets clients en parallèle.", "Tu as besoin de QA, staging ou monitoring avancé.", "Tu travailles avec plusieurs devs.", "Tu dois suivre des specs produit lourdes."]
+    : ["You manage several client projects in parallel.", "You need advanced QA, staging, or monitoring.", "You work with several developers.", "You need to track heavy product specs."];
+  const tooHeavyRows = lang === "fr"
+    ? ["Tu livres surtout des landing pages simples.", "Tu n'as pas encore de flux client régulier.", "Tu paies plusieurs outils pour la même étape.", "Tu utilises moins de la moitié des fonctions."]
+    : ["You mostly ship simple landing pages.", "You do not have a steady client flow yet.", "You pay several tools for the same step.", "You use less than half of the features."];
 
   // Persona-specific or default layers
   const activeLayers = PERSONA_LAYERS[stack.persona] ?? STACK_LAYERS;
@@ -531,15 +694,15 @@ const StackDetailPage = () => {
             <nav className="sd-hero-breadcrumb" aria-label="breadcrumb">
               <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
               <span style={{ color: "#DADAD4" }}>/</span>
-              <span style={{ color: "#222222" }}>{t(stack.title, stack.titleEn)}</span>
+              <span style={{ color: "#222222" }}>{detailTitle}</span>
             </nav>
 
             {/* Eyebrow */}
-            <span className="sd-hero-eyebrow">STACK</span>
+            <span className="sd-hero-eyebrow">{t(`STACK ${personaText}`.toUpperCase(), `STACK ${personaText}`.toUpperCase())}</span>
 
             {/* H1 */}
             <h1 className="sd-hero-h1">
-              {t(stack.title, stack.titleEn)}.
+              {detailTitle}.
             </h1>
 
             {/* Description */}
@@ -551,6 +714,17 @@ const StackDetailPage = () => {
             <p className="sd-hero-verdict">
               {t(editorial.verdictShort, editorial.verdictShortEn)}
             </p>
+
+            <div className="sd-hero-decision-grid" aria-label={t("Résumé de décision", "Decision summary") as string}>
+              <div>
+                <span>{t("Idéal si", "Best for")}</span>
+                <p>{t(stack.bestFor, stack.bestForEn)}</p>
+              </div>
+              <div>
+                <span>{t("À éviter si", "Avoid if")}</span>
+                <p>{t(stack.avoidIf, stack.avoidIfEn)}</p>
+              </div>
+            </div>
 
             {/* CTA */}
             <Link
@@ -580,7 +754,7 @@ const StackDetailPage = () => {
             </div>
             <div className="sd-snapshot-item">
               <span className="sd-snapshot-label">{t("Profil", "Profile")}</span>
-              <span className="sd-snapshot-value">{personaText}</span>
+              <span className="sd-snapshot-value">{personaText} · {subProfileText}</span>
             </div>
             <div className="sd-snapshot-item">
               <span className="sd-snapshot-label">{t("Outils", "Tools")}</span>
@@ -588,7 +762,11 @@ const StackDetailPage = () => {
             </div>
             <div className="sd-snapshot-item">
               <span className="sd-snapshot-label">{t("Niveau", "Level")}</span>
-              <span className="sd-snapshot-value">{stageText}</span>
+              <span className="sd-snapshot-value">{levelText}</span>
+            </div>
+            <div className="sd-snapshot-item">
+              <span className="sd-snapshot-label">{t("Complexité", "Complexity")}</span>
+              <span className="sd-snapshot-value">{complexityText}</span>
             </div>
             <div className="sd-snapshot-item" style={{ alignItems: "flex-start" }}>
               <span className="sd-snapshot-label" style={{ marginTop: 2 }}>{t("Risque", "Risk")}</span>
@@ -621,6 +799,33 @@ const StackDetailPage = () => {
         </div>
       </section>
 
+      <section className="sd-decision-summary-section" aria-labelledby="stack-decision-summary">
+        <div className="sd-container sd-decision-summary-inner">
+          <div>
+            <span className="sd-section-eyebrow">{t("DÉCISION TOOLTRIM", "TOOLTRIM DECISION")}</span>
+            <h2 id="stack-decision-summary" className="sd-decision-summary-title">{t("La stack à garder simple.", "The stack to keep simple.")}</h2>
+          </div>
+          <div className="sd-decision-summary-grid">
+            <div className="sd-decision-summary-card">
+              <span className="sd-decision-summary-label">{t("À garder", "Keep")}</span>
+              <p>{decisionKeep.length > 0 ? decisionKeep.join(" / ") : priorityEssential.join(" / ")}</p>
+            </div>
+            <div className="sd-decision-summary-card">
+              <span className="sd-decision-summary-label">{t("Optionnel", "Optional")}</span>
+              <p>{decisionOptional.join(" / ")}</p>
+            </div>
+            <div className="sd-decision-summary-card">
+              <span className="sd-decision-summary-label">{t("À challenger", "Challenge")}</span>
+              <p>{decisionChallenge.join(" / ")}</p>
+            </div>
+            <div className="sd-decision-summary-card">
+              <span className="sd-decision-summary-label">{t("À éviter", "Avoid")}</span>
+              <p>{t("Jira, CRM lourd, suite produit complète si tu travailles seul.", "Jira, heavy CRM, full product suite if you work alone.")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ════════════════════════════════════════════════════════════════════
           SUBNAV
       ════════════════════════════════════════════════════════════════════ */}
@@ -630,6 +835,7 @@ const StackDetailPage = () => {
           <a className="sd-nav-link" href="#outils">{t("Outils", "Tools")}</a>
           <a className="sd-nav-link" href="#budget">{t("Budget", "Budget")}</a>
           {hasRisks && <a className="sd-nav-link" href="#risques">{t("Risques", "Risks")}</a>}
+          <a className="sd-nav-link" href="#calibrage">{t("Calibrage", "Calibration")}</a>
           {hasAltVariants && <a className="sd-nav-link" href="#alternatives">{t("Alternatives", "Alternatives")}</a>}
           <a className="sd-nav-link" href="#faq">FAQ</a>
         </div>
@@ -724,34 +930,25 @@ const StackDetailPage = () => {
                   const status = getToolDecisionStatus(slot);
                   const globalIndex = stackTools.findIndex((st) => st.slot.slug === slot.slug);
                   return (
-                    <button key={slot.slug} type="button" onClick={() => setSelectedIndex(globalIndex)} className="sd-tool-row">
-                      {/* Logo */}
-                      <div style={{ width: 44, height: 44, borderRadius: 8, background: "#F8F8F4", border: "1px solid #E7E7E0", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", flexShrink: 0 }}>
-                        <ToolLogo tool={tool!} size={28} />
-                      </div>
-                      {/* Name + role */}
-                      <div style={{ minWidth: 0 }}>
-                        <p className="sd-tool-name">{tool!.name}</p>
-                        <p className="sd-tool-role">{t(slot.role, slot.roleEn)}</p>
-                      </div>
-                      {/* Reason */}
-                      <p className="sd-tool-reason">{t(slot.reason, slot.reasonEn)}</p>
-                      {/* Status badge */}
-                      <span style={{
-                        fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em",
-                        textTransform: "uppercase", padding: "3px 8px", borderRadius: 3, border: "1px solid",
-                        whiteSpace: "nowrap",
-                        ...(status.key === "core"
-                          ? { borderColor: "rgba(46,125,50,0.3)", background: "rgba(46,125,50,0.06)", color: "#2E7D32" }
-                          : status.key === "conditional"
-                          ? { borderColor: "#DADAD4", background: "#F8F8F4", color: "#6F6F68" }
-                          : { borderColor: "rgba(198,40,40,0.25)", background: "rgba(198,40,40,0.05)", color: "#C62828" }),
-                      }}>
-                        {status.key === "core" ? t("Socle", "Core") : status.key === "conditional" ? t("Conditionnel", "Conditional") : t("À challenger", "Challenge")}
-                      </span>
-                      {/* Arrow */}
-                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#9A9A92", transition: "color 140ms" }}>→</span>
-                    </button>
+                    <div key={slot.slug} className="sd-tool-row">
+                      <button type="button" onClick={() => setSelectedIndex(globalIndex)} className="sd-tool-row-open">
+                        <div className="sd-tool-logo-box">
+                          <ToolLogo tool={tool!} size={28} />
+                        </div>
+                        <div className="sd-tool-main-copy">
+                          <p className="sd-tool-name">{tool!.name}</p>
+                          <p className="sd-tool-role"><span>{t("Rôle", "Role")} :</span> {t(slot.role, slot.roleEn)}</p>
+                        </div>
+                        <p className="sd-tool-reason"><span>{t("Pourquoi", "Why")} :</span> {t(slot.reason, slot.reasonEn)}</p>
+                        <span className="sd-tool-price">{formatToolPrice(tool, lang)}</span>
+                        <span className={`sd-tool-status sd-tool-status--${status.key}`}>
+                          {t(status.labelFr, status.labelEn)}
+                        </span>
+                      </button>
+                      <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-tool-detail-link">
+                        {t("Fiche", "Details")} <span aria-hidden>→</span>
+                      </Link>
+                    </div>
                   );
                 })}
               </div>
@@ -773,21 +970,21 @@ const StackDetailPage = () => {
             {/* Essentiel */}
             <div className="sd-priority-col sd-priority-col--essential">
               <span className="sd-priority-label">{t("Essentiel", "Essential")}</span>
-              {t(editorial.priority.essential, editorial.priority.essentialEn).map((item: string, i: number) => (
+              {priorityEssential.map((item: string, i: number) => (
                 <div key={i} className="sd-priority-item">{item}</div>
               ))}
             </div>
             {/* Optionnel */}
             <div className="sd-priority-col sd-priority-col--optional">
               <span className="sd-priority-label">{t("Optionnel", "Optional")}</span>
-              {t(editorial.priority.optional, editorial.priority.optionalEn).map((item: string, i: number) => (
+              {priorityOptional.map((item: string, i: number) => (
                 <div key={i} className="sd-priority-item">{item}</div>
               ))}
             </div>
             {/* À challenger */}
             <div className="sd-priority-col sd-priority-col--challenge">
               <span className="sd-priority-label">{t("À challenger", "Challenge")}</span>
-              {t(editorial.priority.challenge, editorial.priority.challengeEn).map((item: string, i: number) => (
+              {priorityChallenge.map((item: string, i: number) => (
                 <div key={i} className="sd-priority-item">{item}</div>
               ))}
             </div>
@@ -806,8 +1003,8 @@ const StackDetailPage = () => {
           </p>
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.5, color: "#6F6F68", marginBottom: 0, maxWidth: 620 }}>
             {t(
-              "Ce que couvre vraiment ce budget — et où la facture peut grimper.",
-              "What this budget actually covers — and where the bill can climb.",
+              "Ce budget inclut les outils qui portent le code, la preview, le contexte client et le paiement. Il laisse volontairement de côté les couches équipe, CRM complet, QA avancée et automations trop tôt.",
+              "This budget includes the tools that carry code, preview, client context, and payment. It deliberately leaves out team layers, full CRM, advanced QA, and too-early automations.",
             )}
           </p>
           <div className="sd-budget-list">
@@ -819,6 +1016,9 @@ const StackDetailPage = () => {
               </div>
             ))}
           </div>
+          <p className="sd-budget-note">
+            {t("Ce budget est une cible de calibration, pas une promesse exacte.", "This budget is a calibration target, not an exact promise.")}
+          </p>
         </div>
       </section>
 
@@ -853,6 +1053,29 @@ const StackDetailPage = () => {
           </div>
         </section>
       )}
+
+      <section id="calibrage" className="sd-section scroll-mt-20">
+        <div className="sd-container">
+          <span className="sd-section-eyebrow">{t("CALIBRAGE", "CALIBRATION")}</span>
+          <p className="sd-section-title" style={{ marginBottom: 0 }}>
+            {t("Quand cette stack devient mal calibrée.", "When this stack becomes miscalibrated.")}
+          </p>
+          <div className="sd-calibration-grid">
+            <div className="sd-calibration-card">
+              <span className="sd-calibration-label">{t("Trop légère si", "Too light if")}</span>
+              <ul>
+                {tooLightRows.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+            <div className="sd-calibration-card">
+              <span className="sd-calibration-label">{t("Trop lourde si", "Too heavy if")}</span>
+              <ul>
+                {tooHeavyRows.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ════════════════════════════════════════════════════════════════════
           ALTERNATIVES — 3 variantes de stack
@@ -1169,9 +1392,19 @@ function personaLabel(persona: StackPersona, locale: "fr" | "en") {
   const item = STACK_PERSONAS.find((option) => option.value === persona);
   return locale === "fr" ? item?.label || persona : item?.labelEn || persona;
 }
+function subProfileLabel(subProfile: string, locale: "fr" | "en") {
+  const item = STACK_SUB_PROFILES.find((option) => option.value === subProfile);
+  return locale === "fr" ? item?.label || subProfile : item?.labelEn || subProfile;
+}
 function stageLabel(stage: StackStage, locale: "fr" | "en") {
   const item = STACK_STAGES.find((option) => option.value === stage);
   return locale === "fr" ? item?.label || stage : item?.labelEn || stage;
+}
+function formatToolPrice(tool: ToolSummary | undefined, locale: "fr" | "en") {
+  if (!tool) return locale === "fr" ? "Prix à vérifier" : "Check price";
+  if (!tool.defaultMonthlyPrice || tool.defaultMonthlyPrice <= 0) return locale === "fr" ? "Plan gratuit possible" : "Free plan possible";
+  const price = `${Math.round(tool.defaultMonthlyPrice * 100) / 100}€/${locale === "fr" ? "mois" : "mo"}`;
+  return locale === "fr" ? `Dès ${price}` : `From ${price}`;
 }
 function getExpertTips(stack: StackGuide): StackInsight[] {
   return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona] || [];
@@ -1184,14 +1417,14 @@ function getOverviewTitleEn(stack: StackGuide): string {
 }
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {
   if (slot.decision === "challenge")   return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
-  if (slot.decision === "conditional") return { key: "conditional" as const, labelFr: "Conditionnel",  labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
-  if (slot.decision === "core")        return { key: "core"        as const, labelFr: "Socle",         labelEn: "Core",        className: "border-keep/25 bg-keep/10 text-keep" };
+  if (slot.decision === "conditional") return { key: "conditional" as const, labelFr: "Optionnel",    labelEn: "Optional",    className: "border-primary/25 bg-primary/8 text-primary" };
+  if (slot.decision === "core")        return { key: "core"        as const, labelFr: "Essentiel",    labelEn: "Essential",   className: "border-keep/25 bg-keep/10 text-keep" };
   const norm = slot.role.toLowerCase();
   const challengeKw = ["avancé", "advanced", "suite", "backlinks", "connecteurs", "connectors", "handoff", "vectoriel", "photo", "crm agence"];
   const optionalKw  = ["plugin", "feedback", "prospection", "social", "seo", "ux", "workshop", "atelier", "prototype", "ia"];
-  if (challengeKw.some((kw) => norm.includes(kw))) return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge",   className: "border-destructive/25 bg-destructive/8 text-destructive" };
-  if (optionalKw.some((kw)  => norm.includes(kw))) return { key: "conditional" as const, labelFr: "Conditionnel",  labelEn: "Conditional", className: "border-primary/25 bg-primary/8 text-primary" };
-  return { key: "core" as const, labelFr: "Socle", labelEn: "Core", className: "border-keep/25 bg-keep/10 text-keep" };
+  if (challengeKw.some((kw) => norm.includes(kw))) return { key: "challenge"   as const, labelFr: "À challenger", labelEn: "Challenge", className: "border-destructive/25 bg-destructive/8 text-destructive" };
+  if (optionalKw.some((kw)  => norm.includes(kw))) return { key: "conditional" as const, labelFr: "Optionnel", labelEn: "Optional", className: "border-primary/25 bg-primary/8 text-primary" };
+  return { key: "core" as const, labelFr: "Essentiel", labelEn: "Essential", className: "border-keep/25 bg-keep/10 text-keep" };
 }
 
 export default StackDetailPage;

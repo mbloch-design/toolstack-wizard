@@ -1485,3 +1485,21 @@ Repenser les filtres de `/fr/stacks` comme une description de situation freelanc
 - `Objectif` et `Type de stack` permettent plusieurs choix en logique `OR`.
 - Les filtres impossibles sont désactivés au lieu d'afficher des compteurs globaux trompeurs.
 - L'URL peut partager une combinaison comme `?profile=designer&specialty=brand,ui-ux&objective=produce,organize&budget=30-80`.
+
+---
+
+## 2026-05-17 — Sprint 31 : Template détail stack décisionnel
+
+### Objectif
+Transformer `/fr/stacks/developpeur-freelance-shipper` en page de décision : pour qui, budget cible, outils essentiels, optionnels, à challenger, limites de calibration.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — hero enrichi avec profil/spécialité, budget, niveau, complexité, verdict, `Idéal si` / `À éviter si`; ajout du bloc `La décision ToolTrim`; contenu éditorial spécifique dev shipper; outils regroupés par rôle métier; section `Quand cette stack devient mal calibrée`.
+- `src/index.css` — styles `sd-*` pour résumé décisionnel, rows outil avec fiche produit, calibration trop légère/trop lourde, budget note.
+- `docs/CHANGELOG_AI.md`, `docs/ARCHITECTURE.md` — documentation du nouveau template.
+
+### Résultat
+- La page ne lit plus comme une simple fiche descriptive : elle expose quoi garder, quoi challenger et quoi éviter dès le haut.
+- Les outils affichent logo, rôle, raison, prix/plan indicatif, décision et lien vers la fiche outil.
+- Le budget est présenté comme cible de calibration, sans promesse d'économie exacte.
+- Les fallbacks s'appuient sur `tools[]`, `decision`, `bestFor`, `avoidIf`, `monthlyBudget`, `stage` et `getStackDerivedFields`.
