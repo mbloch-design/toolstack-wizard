@@ -1466,3 +1466,22 @@ Transformer `/fr/stacks` en outil de sélection contextualisé plutôt qu'en lis
 - Les filtres se partagent via query params et se combinent en logique `AND`.
 - Les compteurs globaux trompeurs sont retirés.
 - Les cards affichent désormais verdict, idéal si, à éviter si, budget cible, niveau, complexité et logos outils.
+
+---
+
+## 2026-05-17 — Sprint 30 : UX facettes stacks
+
+### Objectif
+Repenser les filtres de `/fr/stacks` comme une description de situation freelance plutôt qu'un filtrage produit.
+
+### Fichiers modifiés
+- `src/pages/StacksPage.tsx` — sidebar réorganisée en `Ton contexte`, `Ton besoin`, `Affiner`; spécialités/objectifs/types en multi-sélection; logique `AND` entre facettes et `OR` dans les facettes multiples; chips actifs supprimables; query params multi-valeurs.
+- `src/index.css` — styles des groupes de facettes, options multi-sélection, états désactivés et message de spécialité dépendante.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md`, `docs/ARCHITECTURE.md` — documentation du nouveau pattern.
+
+### Résultat
+- `Profil` reste single-select et réinitialise les spécialités quand il change.
+- `Spécialité` n'apparaît qu'après choix d'un profil et permet plusieurs choix.
+- `Objectif` et `Type de stack` permettent plusieurs choix en logique `OR`.
+- Les filtres impossibles sont désactivés au lieu d'afficher des compteurs globaux trompeurs.
+- L'URL peut partager une combinaison comme `?profile=designer&specialty=brand,ui-ux&objective=produce,organize&budget=30-80`.

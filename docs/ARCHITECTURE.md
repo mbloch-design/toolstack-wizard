@@ -286,10 +286,13 @@ Sinon → `<div>` statique avec initiales en fallback logo.
 
 ### StacksPage — sélection contextuelle
 
-`StacksPage` porte la logique de facettes de `/fr/stacks` : profil, sous-profil dépendant, objectif, budget, niveau, complexité, type de stack, recherche et tri.
+`StacksPage` porte la logique de facettes de `/fr/stacks` : profil, spécialités dépendantes, objectifs, budget, niveau, complexité, type de stack, nombre d'outils, recherche et tri.
 
-- Les filtres sont persistés en query params (`profile`, `subProfile`, `objective`, `budget`, `level`, `complexity`, `type`, `sort`, `q`).
-- Les sous-profils sont masqués tant que le profil est `Tous`.
+- Les filtres sont persistés en query params (`profile`, `specialty`, `objective`, `budget`, `level`, `complexity`, `type`, `toolCount`, `sort`, `q`). L'ancien `subProfile` est encore lu en fallback.
+- `Profil`, `Budget`, `Niveau`, `Complexité` et `Nombre d'outils` sont single-select.
+- `Spécialité`, `Objectif` et `Type de stack` sont multi-select : `OR` dans la facette, `AND` entre facettes.
+- Les spécialités sont masquées tant que le profil est `Tous` et se réinitialisent à chaque changement de profil.
+- Les valeurs sans résultat sont désactivées ; les compteurs globaux ne sont pas affichés.
 - Les cards stack sont rendues directement par `StackSelectionCard` dans `StacksPage` pour éviter deux systèmes concurrents.
 - L'ancien composant `StackCardEditorial` a été retiré.
 

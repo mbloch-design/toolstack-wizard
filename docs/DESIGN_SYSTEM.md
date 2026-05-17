@@ -656,18 +656,32 @@ details[open] .sd-faq-icon { transform: rotate(180deg); }
 .sk-sidebar-desc     { font-size: 14px; line-height: 1.4; color: #6F6F68; }
 ```
 
+### Sections de facettes (`sk-facet-section`)
+
+Les filtres de `/fr/stacks` sont organisés comme une description de situation, pas comme une sidebar e-commerce :
+
+- `TON CONTEXTE` : Profil, Spécialité, Niveau
+- `TON BESOIN` : Objectif, Budget cible
+- `AFFINER` : Complexité, Type de stack, Nombre d'outils
+
+Les labels de section utilisent 11px uppercase, `letter-spacing: 0.08em`, couleur `#9A9A92`.
+
 ### Groupes de facettes (`sk-facet-group`)
 ```css
-.sk-facet-group       { padding: 20px 0; border-top: 1px solid #DADAD4; }
+.sk-facet-section     { padding: 22px 0; border-bottom: 1px solid #DADAD4; }
+.sk-facet-group       { padding: 14px 0 0; border-top: none; }
 .sk-facet-group-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6F6F68; margin: 0 0 10px; }
 .sk-facet-option      { display: flex; justify-content: space-between; align-items: center;
   width: 100%; height: 34px; padding: 0 10px; border: none; border-radius: 6px;
   background: transparent; color: #222222; font-size: 14px; font-weight: 500; }
 .sk-facet-option:hover { background: #EDEDE8; }
 .sk-facet-option--active { background: #222222; color: #FFFFFF; }
-.sk-facet-count       { font-size: 12px; opacity: 0.6; }
-/* "Tous" n'affiche pas de count (opt.id !== "all" guard) */
+.sk-facet-option:disabled { opacity: 0.36; cursor: not-allowed; }
+.sk-facet-option--multi { gap: 10px; justify-content: flex-start; }
+.sk-facet-check       { width: 14px; height: 14px; border: 1px solid #DADAD4; border-radius: 4px; background: #FFFFFF; }
 ```
+
+Règle : ne pas afficher de compteurs globaux. Désactiver les valeurs sans résultat selon les autres facettes actives.
 
 ### Facette types et mapping
 ```typescript
@@ -703,15 +717,27 @@ details[open] .sd-faq-icon { transform: rotate(180deg); }
 /* Fermeture : bouton × / touche Escape / body overflow masqué pendant ouverture */
 ```
 
-### Composant `FacetGroup<T>` (TypeScript générique)
-Réutilisé dans `SidebarContent` — un seul composant pour tous les groupes.
+### Composants de facettes
+`SidebarContent` utilise deux variantes explicites :
+
+- `SingleFacetGroup<T>` pour Profil, Budget cible, Niveau, Complexité, Nombre d'outils.
+- `MultiFacetGroup<T>` pour Spécialité, Objectif, Type de stack.
+
+La logique attendue est `AND` entre familles de facettes et `OR` à l'intérieur des facettes multi-sélection.
 ```tsx
-<FacetGroup<StackFacetProfile>
-  label="PROFIL"
+<SingleFacetGroup<StackFacetProfile>
+  label="Profil"
   options={PROFILE_OPTIONS}
   active={facetProfile}
-  onChange={setFacetProfile}
-  counts={profileCounts}  /* Map<T, number> */
+  onChange={handleProfileChange}
+  lang={lang}
+/>
+
+<MultiFacetGroup<StackSubProfile>
+  label="Spécialité"
+  options={subProfileOptions}
+  active={facetSpecialties}
+  onToggle={toggleFacetSpecialty}
   lang={lang}
 />
 ```

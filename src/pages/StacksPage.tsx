@@ -21,12 +21,14 @@ import {
 /* ─── Types ─────────────────────────────────────────────────────────────────── */
 type StackListItem = (typeof STACKS)[number];
 type StackFacetProfile = "all" | StackPersona;
-type StackFacetSubProfile = "all" | StackSubProfile;
 type StackFacetObjective = "all" | "content" | "sell" | "clients" | "automate" | "produce" | "organize";
+type StackFacetObjectiveValue = Exclude<StackFacetObjective, "all">;
 type StackFacetBudget = "all" | StackBudgetRange;
 type StackFacetLevel = "all" | StackLevel;
 type StackFacetComplexity = "all" | StackComplexity;
 type StackFacetType = "all" | StackType;
+type StackFacetTypeValue = Exclude<StackFacetType, "all">;
+type StackFacetToolCount = "all" | "1-5" | "6-10" | "11+";
 type StackSortId = "recommended" | "budget" | "tools";
 
 interface Option<T extends string> {
@@ -113,7 +115,17 @@ const TYPE_OPTIONS: Option<StackFacetType>[] = [
   { id: "avancee", label: "Avancée", labelEn: "Advanced" },
 ];
 
-const QUERY_KEYS = ["profile", "subProfile", "objective", "budget", "level", "complexity", "type", "sort", "q"] as const;
+const TOOL_COUNT_OPTIONS: Option<StackFacetToolCount>[] = [
+  { id: "all", label: "Tous", labelEn: "All" },
+  { id: "1-5", label: "1–5 outils", labelEn: "1–5 tools" },
+  { id: "6-10", label: "6–10 outils", labelEn: "6–10 tools" },
+  { id: "11+", label: "11+ outils", labelEn: "11+ tools" },
+];
+
+const OBJECTIVE_MULTI_OPTIONS = OBJECTIVE_OPTIONS.filter((option): option is Option<StackFacetObjectiveValue> => option.id !== "all");
+const TYPE_MULTI_OPTIONS = TYPE_OPTIONS.filter((option): option is Option<StackFacetTypeValue> => option.id !== "all");
+
+const QUERY_KEYS = ["profile", "subProfile", "specialty", "objective", "budget", "level", "complexity", "type", "toolCount", "sort", "q"] as const;
 
 /* ─── Helpers ────────────────────────────────────────────────────────────────── */
 function optionLabel<T extends string>(options: Option<T>[], id: T, lang: "fr" | "en") {
@@ -136,29 +148,51 @@ function validParam<T extends string>(value: string | null, options: Option<T>[]
   return fallback;
 }
 
-function validSubProfileParam(value: string | null): StackFacetSubProfile {
-  if (value && STACK_SUB_PROFILES.some((option) => option.value === value)) return value as StackFacetSubProfile;
-  return "all";
+function uniqueValues<T extends string>(values: T[]): T[] {
+  return Array.from(new Set(values));
+}
+
+function parseMultiParam<T extends string>(value: string | null, allowed: T[]): T[] {
+  if (!value) return [];
+  const allowedSet = new Set(allowed);
+  return uniqueValues(value.split(",").map((part) => part.trim()).filter((part): part is T => allowedSet.has(part as T)));
+}
+
+function serializeMultiParam<T extends string>(values: T[]) {
+  return uniqueValues(values).join(",");
+}
+
+function toggleValue<T extends string>(values: T[], id: T): T[] {
+  return values.includes(id) ? values.filter((value) => value !== id) : [...values, id];
+}
+
+function toolCountMatches(count: number, facet: StackFacetToolCount) {
+  if (facet === "all") return true;
+  if (facet === "1-5") return count >= 1 && count <= 5;
+  if (facet === "6-10") return count >= 6 && count <= 10;
+  return count >= 11;
 }
 
 function matchesStack(enriched: EnrichedStack, filters: {
   profile: StackFacetProfile;
-  subProfile: StackFacetSubProfile;
-  objective: StackFacetObjective;
+  specialties: StackSubProfile[];
+  objectives: StackFacetObjectiveValue[];
   budget: StackFacetBudget;
   level: StackFacetLevel;
   complexity: StackFacetComplexity;
-  type: StackFacetType;
+  types: StackFacetTypeValue[];
+  toolCount: StackFacetToolCount;
   query: string;
 }, toolNames: string[]): boolean {
   const { stack, derived } = enriched;
   if (filters.profile !== "all" && derived.profile !== filters.profile) return false;
-  if (filters.subProfile !== "all" && !stack.subProfiles.includes(filters.subProfile)) return false;
-  if (filters.objective !== "all" && !derived.objectives.includes(filters.objective)) return false;
+  if (filters.specialties.length > 0 && !filters.specialties.some((specialty) => stack.subProfiles.includes(specialty))) return false;
+  if (filters.objectives.length > 0 && !filters.objectives.some((objective) => derived.objectives.includes(objective))) return false;
   if (filters.budget !== "all" && derived.budgetRange !== filters.budget) return false;
   if (filters.level !== "all" && derived.level !== filters.level) return false;
   if (filters.complexity !== "all" && derived.complexity !== filters.complexity) return false;
-  if (filters.type !== "all" && derived.stackType !== filters.type) return false;
+  if (filters.types.length > 0 && !filters.types.includes(derived.stackType)) return false;
+  if (!toolCountMatches(derived.toolCount, filters.toolCount)) return false;
 
   const q = filters.query.trim().toLowerCase();
   if (!q) return true;
@@ -188,26 +222,29 @@ function truncate(text: string, max = 150) {
 }
 
 /* ─── Components ─────────────────────────────────────────────────────────────── */
-interface FacetGroupProps<T extends string> {
+interface SingleFacetGroupProps<T extends string> {
   label: string;
   options: Option<T>[];
   active: T;
   onChange: (id: T) => void;
   lang: "fr" | "en";
+  disabledIds?: Set<T>;
 }
 
-function FacetGroup<T extends string>({ label, options, active, onChange, lang }: FacetGroupProps<T>) {
+function SingleFacetGroup<T extends string>({ label, options, active, onChange, lang, disabledIds }: SingleFacetGroupProps<T>) {
   return (
     <div className="sk-facet-group">
       <p className="sk-facet-group-label">{label}</p>
       <div className="sk-facet-options">
         {options.map((opt) => {
           const isActive = opt.id === active;
+          const isDisabled = Boolean(disabledIds?.has(opt.id) && !isActive);
           return (
             <button
               key={opt.id}
               type="button"
               aria-pressed={isActive}
+              disabled={isDisabled}
               onClick={() => onChange(opt.id)}
               className={`sk-facet-option${isActive ? " sk-facet-option--active" : ""}`}
             >
@@ -220,46 +257,97 @@ function FacetGroup<T extends string>({ label, options, active, onChange, lang }
   );
 }
 
+interface MultiFacetGroupProps<T extends string> {
+  label: string;
+  options: Option<T>[];
+  active: T[];
+  onToggle: (id: T) => void;
+  lang: "fr" | "en";
+  disabledIds?: Set<T>;
+}
+
+function MultiFacetGroup<T extends string>({ label, options, active, onToggle, lang, disabledIds }: MultiFacetGroupProps<T>) {
+  return (
+    <div className="sk-facet-group">
+      <p className="sk-facet-group-label">{label}</p>
+      <div className="sk-facet-options">
+        {options.map((opt) => {
+          const isActive = active.includes(opt.id);
+          const isDisabled = Boolean(disabledIds?.has(opt.id) && !isActive);
+          return (
+            <button
+              key={opt.id}
+              type="button"
+              aria-pressed={isActive}
+              disabled={isDisabled}
+              onClick={() => onToggle(opt.id)}
+              className={`sk-facet-option sk-facet-option--multi${isActive ? " sk-facet-option--active" : ""}`}
+            >
+              <span className="sk-facet-check" aria-hidden />
+              <span>{lang === "fr" ? opt.label : opt.labelEn}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 interface SidebarContentProps {
   lang: "fr" | "en";
   facetProfile: StackFacetProfile;
-  facetSubProfile: StackFacetSubProfile;
-  facetObjective: StackFacetObjective;
+  facetSpecialties: StackSubProfile[];
+  facetObjectives: StackFacetObjectiveValue[];
   facetBudget: StackFacetBudget;
   facetLevel: StackFacetLevel;
   facetComplexity: StackFacetComplexity;
-  facetType: StackFacetType;
-  subProfileOptions: Option<StackFacetSubProfile>[];
+  facetTypes: StackFacetTypeValue[];
+  facetToolCount: StackFacetToolCount;
+  subProfileOptions: Option<StackSubProfile>[];
   setFacetProfile: (v: StackFacetProfile) => void;
-  setFacetSubProfile: (v: StackFacetSubProfile) => void;
-  setFacetObjective: (v: StackFacetObjective) => void;
+  toggleFacetSpecialty: (v: StackSubProfile) => void;
+  toggleFacetObjective: (v: StackFacetObjectiveValue) => void;
   setFacetBudget: (v: StackFacetBudget) => void;
   setFacetLevel: (v: StackFacetLevel) => void;
   setFacetComplexity: (v: StackFacetComplexity) => void;
-  setFacetType: (v: StackFacetType) => void;
+  toggleFacetType: (v: StackFacetTypeValue) => void;
+  setFacetToolCount: (v: StackFacetToolCount) => void;
   onReset: () => void;
   isFiltered: boolean;
+  disabled: {
+    profiles: Set<StackFacetProfile>;
+    specialties: Set<StackSubProfile>;
+    objectives: Set<StackFacetObjectiveValue>;
+    budgets: Set<StackFacetBudget>;
+    levels: Set<StackFacetLevel>;
+    complexities: Set<StackFacetComplexity>;
+    types: Set<StackFacetTypeValue>;
+    toolCounts: Set<StackFacetToolCount>;
+  };
 }
 
 function SidebarContent({
   lang,
   facetProfile,
-  facetSubProfile,
-  facetObjective,
+  facetSpecialties,
+  facetObjectives,
   facetBudget,
   facetLevel,
   facetComplexity,
-  facetType,
+  facetTypes,
+  facetToolCount,
   subProfileOptions,
   setFacetProfile,
-  setFacetSubProfile,
-  setFacetObjective,
+  toggleFacetSpecialty,
+  toggleFacetObjective,
   setFacetBudget,
   setFacetLevel,
   setFacetComplexity,
-  setFacetType,
+  toggleFacetType,
+  setFacetToolCount,
   onReset,
   isFiltered,
+  disabled,
 }: SidebarContentProps) {
   return (
     <>
@@ -273,17 +361,32 @@ function SidebarContent({
         </p>
       </div>
 
-      <FacetGroup label={lang === "fr" ? "PROFIL" : "PROFILE"} options={PROFILE_OPTIONS} active={facetProfile} onChange={setFacetProfile} lang={lang} />
+      <div className="sk-facet-section">
+        <p className="sk-facet-section-title">{lang === "fr" ? "TON CONTEXTE" : "YOUR CONTEXT"}</p>
+        <SingleFacetGroup label={lang === "fr" ? "Profil" : "Profile"} options={PROFILE_OPTIONS} active={facetProfile} onChange={setFacetProfile} lang={lang} disabledIds={disabled.profiles} />
+        {facetProfile === "all" ? (
+          <div className="sk-facet-group">
+            <p className="sk-facet-group-label">{lang === "fr" ? "Spécialité" : "Specialty"}</p>
+            <p className="sk-facet-empty">{lang === "fr" ? "Choisis d’abord un profil." : "Choose a profile first."}</p>
+          </div>
+        ) : (
+          <MultiFacetGroup label={lang === "fr" ? "Spécialité" : "Specialty"} options={subProfileOptions} active={facetSpecialties} onToggle={toggleFacetSpecialty} lang={lang} disabledIds={disabled.specialties} />
+        )}
+        <SingleFacetGroup label={lang === "fr" ? "Niveau" : "Level"} options={LEVEL_OPTIONS} active={facetLevel} onChange={setFacetLevel} lang={lang} disabledIds={disabled.levels} />
+      </div>
 
-      {facetProfile !== "all" && subProfileOptions.length > 1 && (
-        <FacetGroup label={lang === "fr" ? "SOUS-PROFIL" : "SUB-PROFILE"} options={subProfileOptions} active={facetSubProfile} onChange={setFacetSubProfile} lang={lang} />
-      )}
+      <div className="sk-facet-section">
+        <p className="sk-facet-section-title">{lang === "fr" ? "TON BESOIN" : "YOUR NEED"}</p>
+        <MultiFacetGroup label={lang === "fr" ? "Objectif" : "Objective"} options={OBJECTIVE_MULTI_OPTIONS} active={facetObjectives} onToggle={toggleFacetObjective} lang={lang} disabledIds={disabled.objectives} />
+        <SingleFacetGroup label={lang === "fr" ? "Budget cible" : "Target budget"} options={BUDGET_OPTIONS} active={facetBudget} onChange={setFacetBudget} lang={lang} disabledIds={disabled.budgets} />
+      </div>
 
-      <FacetGroup label={lang === "fr" ? "OBJECTIF" : "OBJECTIVE"} options={OBJECTIVE_OPTIONS} active={facetObjective} onChange={setFacetObjective} lang={lang} />
-      <FacetGroup label={lang === "fr" ? "BUDGET" : "BUDGET"} options={BUDGET_OPTIONS} active={facetBudget} onChange={setFacetBudget} lang={lang} />
-      <FacetGroup label={lang === "fr" ? "NIVEAU" : "LEVEL"} options={LEVEL_OPTIONS} active={facetLevel} onChange={setFacetLevel} lang={lang} />
-      <FacetGroup label={lang === "fr" ? "COMPLEXITÉ" : "COMPLEXITY"} options={COMPLEXITY_OPTIONS} active={facetComplexity} onChange={setFacetComplexity} lang={lang} />
-      <FacetGroup label={lang === "fr" ? "TYPE DE STACK" : "STACK TYPE"} options={TYPE_OPTIONS} active={facetType} onChange={setFacetType} lang={lang} />
+      <div className="sk-facet-section">
+        <p className="sk-facet-section-title">{lang === "fr" ? "AFFINER" : "REFINE"}</p>
+        <SingleFacetGroup label={lang === "fr" ? "Complexité" : "Complexity"} options={COMPLEXITY_OPTIONS} active={facetComplexity} onChange={setFacetComplexity} lang={lang} disabledIds={disabled.complexities} />
+        <MultiFacetGroup label={lang === "fr" ? "Type de stack" : "Stack type"} options={TYPE_MULTI_OPTIONS} active={facetTypes} onToggle={toggleFacetType} lang={lang} disabledIds={disabled.types} />
+        <SingleFacetGroup label={lang === "fr" ? "Nombre d’outils" : "Tool count"} options={TOOL_COUNT_OPTIONS} active={facetToolCount} onChange={setFacetToolCount} lang={lang} disabledIds={disabled.toolCounts} />
+      </div>
 
       <div className="sk-sidebar-reset-row">
         <button type="button" onClick={onReset} disabled={!isFiltered} className="sk-sidebar-reset">
@@ -378,12 +481,22 @@ const StacksPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [facetProfile, setFacetProfile] = useState<StackFacetProfile>(() => validParam(searchParams.get("profile"), PROFILE_OPTIONS, "all"));
-  const [facetSubProfile, setFacetSubProfile] = useState<StackFacetSubProfile>(() => validSubProfileParam(searchParams.get("subProfile")));
-  const [facetObjective, setFacetObjective] = useState<StackFacetObjective>(() => validParam(searchParams.get("objective"), OBJECTIVE_OPTIONS, "all"));
+  const [facetSpecialties, setFacetSpecialties] = useState<StackSubProfile[]>(() => parseMultiParam(
+    searchParams.get("specialty") || searchParams.get("subProfile"),
+    STACK_SUB_PROFILES.filter((option): option is { value: StackSubProfile; label: string; labelEn: string; personas?: StackPersona[] } => option.value !== "all").map((option) => option.value),
+  ));
+  const [facetObjectives, setFacetObjectives] = useState<StackFacetObjectiveValue[]>(() => parseMultiParam(
+    searchParams.get("objective"),
+    OBJECTIVE_MULTI_OPTIONS.map((option) => option.id),
+  ));
   const [facetBudget, setFacetBudget] = useState<StackFacetBudget>(() => validParam(searchParams.get("budget"), BUDGET_OPTIONS, "all"));
   const [facetLevel, setFacetLevel] = useState<StackFacetLevel>(() => validParam(searchParams.get("level"), LEVEL_OPTIONS, "all"));
   const [facetComplexity, setFacetComplexity] = useState<StackFacetComplexity>(() => validParam(searchParams.get("complexity"), COMPLEXITY_OPTIONS, "all"));
-  const [facetType, setFacetType] = useState<StackFacetType>(() => validParam(searchParams.get("type"), TYPE_OPTIONS, "all"));
+  const [facetTypes, setFacetTypes] = useState<StackFacetTypeValue[]>(() => parseMultiParam(
+    searchParams.get("type"),
+    TYPE_MULTI_OPTIONS.map((option) => option.id),
+  ));
+  const [facetToolCount, setFacetToolCount] = useState<StackFacetToolCount>(() => validParam(searchParams.get("toolCount"), TOOL_COUNT_OPTIONS, "all"));
   const [sortBy, setSortBy] = useState<StackSortId>(() => validParam(searchParams.get("sort"), [
     { id: "recommended", label: "", labelEn: "" },
     { id: "budget", label: "", labelEn: "" },
@@ -397,61 +510,73 @@ const StacksPage = () => {
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
   const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: getStackDerivedFields(stack) })), []);
 
-  const subProfileOptions = useMemo<Option<StackFacetSubProfile>[]>(() => {
-    if (facetProfile === "all") return [{ id: "all", label: "Tous", labelEn: "All" }];
+  const subProfileOptions = useMemo<Option<StackSubProfile>[]>(() => {
+    if (facetProfile === "all") return [];
     const available = new Set(
       STACKS.filter((stack) => stack.persona === facetProfile).flatMap((stack) => stack.subProfiles),
     );
-    return [
-      { id: "all", label: "Tous", labelEn: "All" },
-      ...STACK_SUB_PROFILES
-        .filter((option): option is { value: StackSubProfile; label: string; labelEn: string; personas?: StackPersona[] } => option.value !== "all" && available.has(option.value))
-        .map((option) => ({ id: option.value, label: option.label, labelEn: option.labelEn })),
-    ];
+    return STACK_SUB_PROFILES
+      .filter((option): option is { value: StackSubProfile; label: string; labelEn: string; personas?: StackPersona[] } => option.value !== "all" && available.has(option.value))
+      .map((option) => ({ id: option.value, label: option.label, labelEn: option.labelEn }));
   }, [facetProfile]);
 
   useEffect(() => {
-    if (facetProfile === "all" && facetSubProfile !== "all") {
-      setFacetSubProfile("all");
-      return;
-    }
-    if (facetSubProfile !== "all" && !subProfileOptions.some((option) => option.id === facetSubProfile)) {
-      setFacetSubProfile("all");
-    }
-  }, [facetProfile, facetSubProfile, subProfileOptions]);
+    const allowed = new Set(subProfileOptions.map((option) => option.id));
+    setFacetSpecialties((current) => current.filter((specialty) => allowed.has(specialty)));
+  }, [subProfileOptions]);
 
-  const isFiltered = facetProfile !== "all" || facetSubProfile !== "all" || facetObjective !== "all" || facetBudget !== "all"
-    || facetLevel !== "all" || facetComplexity !== "all" || facetType !== "all" || query.trim() !== "";
+  function handleProfileChange(nextProfile: StackFacetProfile) {
+    setFacetProfile(nextProfile);
+    setFacetSpecialties([]);
+  }
 
-  const activeFilterCount = [facetProfile, facetSubProfile, facetObjective, facetBudget, facetLevel, facetComplexity, facetType]
-    .filter((f) => f !== "all").length + (query.trim() ? 1 : 0);
+  function toggleFacetSpecialty(id: StackSubProfile) {
+    setFacetSpecialties((current) => toggleValue(current, id));
+  }
+
+  function toggleFacetObjective(id: StackFacetObjectiveValue) {
+    setFacetObjectives((current) => toggleValue(current, id));
+  }
+
+  function toggleFacetType(id: StackFacetTypeValue) {
+    setFacetTypes((current) => toggleValue(current, id));
+  }
+
+  const isFiltered = facetProfile !== "all" || facetSpecialties.length > 0 || facetObjectives.length > 0 || facetBudget !== "all"
+    || facetLevel !== "all" || facetComplexity !== "all" || facetTypes.length > 0 || facetToolCount !== "all" || query.trim() !== "";
+
+  const activeFilterCount = (facetProfile !== "all" ? 1 : 0) + facetSpecialties.length + facetObjectives.length
+    + [facetBudget, facetLevel, facetComplexity, facetToolCount].filter((f) => f !== "all").length
+    + facetTypes.length + (query.trim() ? 1 : 0);
 
   useEffect(() => {
     const next = new URLSearchParams(searchParams);
     QUERY_KEYS.forEach((key) => next.delete(key));
     if (facetProfile !== "all") next.set("profile", facetProfile);
-    if (facetSubProfile !== "all") next.set("subProfile", facetSubProfile);
-    if (facetObjective !== "all") next.set("objective", facetObjective);
+    if (facetSpecialties.length > 0) next.set("specialty", serializeMultiParam(facetSpecialties));
+    if (facetObjectives.length > 0) next.set("objective", serializeMultiParam(facetObjectives));
     if (facetBudget !== "all") next.set("budget", facetBudget);
     if (facetLevel !== "all") next.set("level", facetLevel);
     if (facetComplexity !== "all") next.set("complexity", facetComplexity);
-    if (facetType !== "all") next.set("type", facetType);
+    if (facetTypes.length > 0) next.set("type", serializeMultiParam(facetTypes));
+    if (facetToolCount !== "all") next.set("toolCount", facetToolCount);
     if (sortBy !== "recommended") next.set("sort", sortBy);
     if (query.trim()) next.set("q", query.trim());
 
     const current = searchParams.toString();
     const updated = next.toString();
     if (current !== updated) setSearchParams(next, { replace: true });
-  }, [facetProfile, facetSubProfile, facetObjective, facetBudget, facetLevel, facetComplexity, facetType, sortBy, query, searchParams, setSearchParams]);
+  }, [facetProfile, facetSpecialties, facetObjectives, facetBudget, facetLevel, facetComplexity, facetTypes, facetToolCount, sortBy, query, searchParams, setSearchParams]);
 
   function resetFacets() {
     setFacetProfile("all");
-    setFacetSubProfile("all");
-    setFacetObjective("all");
+    setFacetSpecialties([]);
+    setFacetObjectives([]);
     setFacetBudget("all");
     setFacetLevel("all");
     setFacetComplexity("all");
-    setFacetType("all");
+    setFacetTypes([]);
+    setFacetToolCount("all");
     setQuery("");
     setSortBy("recommended");
   }
@@ -467,19 +592,40 @@ const StacksPage = () => {
     };
   }, [mobileOpen]);
 
+  const currentFilters = useMemo(() => ({
+    profile: facetProfile,
+    specialties: facetSpecialties,
+    objectives: facetObjectives,
+    budget: facetBudget,
+    level: facetLevel,
+    complexity: facetComplexity,
+    types: facetTypes,
+    toolCount: facetToolCount,
+    query,
+  }), [facetProfile, facetSpecialties, facetObjectives, facetBudget, facetLevel, facetComplexity, facetTypes, facetToolCount, query]);
+
+  const hasStackFor = useMemo(() => {
+    return (overrides: Partial<typeof currentFilters>) => enrichedStacks.some((enriched) => {
+      const toolNames = enriched.stack.tools.map((slot) => toolBySlug.get(slot.slug)?.name || slot.slug);
+      return matchesStack(enriched, { ...currentFilters, ...overrides }, toolNames);
+    });
+  }, [currentFilters, enrichedStacks, toolBySlug]);
+
+  const disabledFacetIds = useMemo(() => ({
+    profiles: new Set(PROFILE_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ profile: option.id, specialties: [] })).map((option) => option.id)),
+    specialties: new Set(subProfileOptions.filter((option) => !facetSpecialties.includes(option.id) && !hasStackFor({ specialties: [option.id] })).map((option) => option.id)),
+    objectives: new Set(OBJECTIVE_MULTI_OPTIONS.filter((option) => !facetObjectives.includes(option.id) && !hasStackFor({ objectives: [option.id] })).map((option) => option.id)),
+    budgets: new Set(BUDGET_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ budget: option.id })).map((option) => option.id)),
+    levels: new Set(LEVEL_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ level: option.id })).map((option) => option.id)),
+    complexities: new Set(COMPLEXITY_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ complexity: option.id })).map((option) => option.id)),
+    types: new Set(TYPE_MULTI_OPTIONS.filter((option) => !facetTypes.includes(option.id) && !hasStackFor({ types: [option.id] })).map((option) => option.id)),
+    toolCounts: new Set(TOOL_COUNT_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ toolCount: option.id })).map((option) => option.id)),
+  }), [facetObjectives, facetSpecialties, facetTypes, hasStackFor, subProfileOptions]);
+
   const filteredStacks = useMemo(() => {
     const filtered = enrichedStacks.filter((enriched) => {
       const toolNames = enriched.stack.tools.map((slot) => toolBySlug.get(slot.slug)?.name || slot.slug);
-      return matchesStack(enriched, {
-        profile: facetProfile,
-        subProfile: facetSubProfile,
-        objective: facetObjective,
-        budget: facetBudget,
-        level: facetLevel,
-        complexity: facetComplexity,
-        type: facetType,
-        query,
-      }, toolNames);
+      return matchesStack(enriched, currentFilters, toolNames);
     });
 
     if (sortBy === "budget") return [...filtered].sort((a, b) => a.stack.monthlyBudget - b.stack.monthlyBudget);
@@ -492,16 +638,17 @@ const StacksPage = () => {
       if (bi >= 0) return 1;
       return a.stack.title.localeCompare(b.stack.title);
     });
-  }, [enrichedStacks, toolBySlug, facetProfile, facetSubProfile, facetObjective, facetBudget, facetLevel, facetComplexity, facetType, query, sortBy]);
+  }, [enrichedStacks, toolBySlug, currentFilters, sortBy]);
 
   const activeChips = [
-    facetProfile !== "all" ? { id: "profile", label: optionLabel(PROFILE_OPTIONS, facetProfile, lang), clear: () => setFacetProfile("all") } : null,
-    facetSubProfile !== "all" ? { id: "subProfile", label: subProfileLabel(facetSubProfile, lang), clear: () => setFacetSubProfile("all") } : null,
-    facetObjective !== "all" ? { id: "objective", label: optionLabel(OBJECTIVE_OPTIONS, facetObjective, lang), clear: () => setFacetObjective("all") } : null,
-    facetBudget !== "all" ? { id: "budget", label: optionLabel(BUDGET_OPTIONS, facetBudget, lang), clear: () => setFacetBudget("all") } : null,
-    facetLevel !== "all" ? { id: "level", label: optionLabel(LEVEL_OPTIONS, facetLevel, lang), clear: () => setFacetLevel("all") } : null,
+    facetProfile !== "all" ? { id: "profile", label: optionLabel(PROFILE_OPTIONS, facetProfile, lang), clear: () => handleProfileChange("all") } : null,
+    ...facetSpecialties.map((specialty) => ({ id: `specialty-${specialty}`, label: subProfileLabel(specialty, lang), clear: () => setFacetSpecialties((current) => current.filter((item) => item !== specialty)) })),
+    ...facetObjectives.map((objective) => ({ id: `objective-${objective}`, label: optionLabel(OBJECTIVE_OPTIONS, objective, lang), clear: () => setFacetObjectives((current) => current.filter((item) => item !== objective)) })),
+    facetBudget !== "all" ? { id: "budget", label: `${t("Budget", "Budget")} ${optionLabel(BUDGET_OPTIONS, facetBudget, lang)}`, clear: () => setFacetBudget("all") } : null,
+    facetLevel !== "all" ? { id: "level", label: `${t("Niveau", "Level")} ${optionLabel(LEVEL_OPTIONS, facetLevel, lang).toLowerCase()}`, clear: () => setFacetLevel("all") } : null,
     facetComplexity !== "all" ? { id: "complexity", label: optionLabel(COMPLEXITY_OPTIONS, facetComplexity, lang), clear: () => setFacetComplexity("all") } : null,
-    facetType !== "all" ? { id: "type", label: optionLabel(TYPE_OPTIONS, facetType, lang), clear: () => setFacetType("all") } : null,
+    ...facetTypes.map((type) => ({ id: `type-${type}`, label: optionLabel(TYPE_OPTIONS, type, lang), clear: () => setFacetTypes((current) => current.filter((item) => item !== type)) })),
+    facetToolCount !== "all" ? { id: "toolCount", label: optionLabel(TOOL_COUNT_OPTIONS, facetToolCount, lang), clear: () => setFacetToolCount("all") } : null,
     query.trim() ? { id: "q", label: query.trim(), clear: () => setQuery("") } : null,
   ].filter((chip): chip is { id: string; label: string; clear: () => void } => Boolean(chip));
 
@@ -592,22 +739,25 @@ const StacksPage = () => {
               <SidebarContent
                 lang={lang}
                 facetProfile={facetProfile}
-                facetSubProfile={facetSubProfile}
-                facetObjective={facetObjective}
+                facetSpecialties={facetSpecialties}
+                facetObjectives={facetObjectives}
                 facetBudget={facetBudget}
                 facetLevel={facetLevel}
                 facetComplexity={facetComplexity}
-                facetType={facetType}
+                facetTypes={facetTypes}
+                facetToolCount={facetToolCount}
                 subProfileOptions={subProfileOptions}
-                setFacetProfile={setFacetProfile}
-                setFacetSubProfile={setFacetSubProfile}
-                setFacetObjective={setFacetObjective}
+                setFacetProfile={handleProfileChange}
+                toggleFacetSpecialty={toggleFacetSpecialty}
+                toggleFacetObjective={toggleFacetObjective}
                 setFacetBudget={setFacetBudget}
                 setFacetLevel={setFacetLevel}
                 setFacetComplexity={setFacetComplexity}
-                setFacetType={setFacetType}
+                toggleFacetType={toggleFacetType}
+                setFacetToolCount={setFacetToolCount}
                 onReset={resetFacets}
                 isFiltered={isFiltered}
+                disabled={disabledFacetIds}
               />
             </aside>
 
@@ -637,7 +787,7 @@ const StacksPage = () => {
               {activeChips.length > 0 && (
                 <div className="sk-active-filters" aria-label={t("Filtres actifs", "Active filters") as string}>
                   {activeChips.map((chip) => (
-                    <button key={chip.id} type="button" className="sk-active-chip" onClick={chip.clear}>
+                    <button key={chip.id} type="button" className="sk-active-chip" onClick={chip.clear} aria-label={t(`Retirer le filtre ${chip.label}`, `Remove filter ${chip.label}`) as string}>
                       {chip.label}<X size={13} aria-hidden />
                     </button>
                   ))}
@@ -668,9 +818,9 @@ const StacksPage = () => {
                 </div>
               ) : (
                 <div className="sk-empty-state">
-                  <p className="sk-empty-title">{t("Aucune stack ne correspond à ces filtres.", "No stack matches these filters.")}</p>
+                  <p className="sk-empty-title">{t("Aucune stack ne correspond à cette combinaison.", "No stack matches this combination.")}</p>
                   <p className="sk-empty-desc">
-                    {t("Essaie d’élargir ton budget, de retirer un critère ou de partir d’un profil plus large.", "Try widening your budget, removing one criterion, or starting from a broader profile.")}
+                    {t("Essaie d’élargir ton budget, de retirer une spécialité ou de repartir d’un profil plus large.", "Try widening your budget, removing a specialty, or starting from a broader profile.")}
                   </p>
                   <button type="button" onClick={resetFacets} className="sk-empty-reset">{t("Réinitialiser les filtres", "Reset filters")}</button>
                 </div>
@@ -694,22 +844,25 @@ const StacksPage = () => {
             <SidebarContent
               lang={lang}
               facetProfile={facetProfile}
-              facetSubProfile={facetSubProfile}
-              facetObjective={facetObjective}
+              facetSpecialties={facetSpecialties}
+              facetObjectives={facetObjectives}
               facetBudget={facetBudget}
               facetLevel={facetLevel}
               facetComplexity={facetComplexity}
-              facetType={facetType}
+              facetTypes={facetTypes}
+              facetToolCount={facetToolCount}
               subProfileOptions={subProfileOptions}
-              setFacetProfile={setFacetProfile}
-              setFacetSubProfile={setFacetSubProfile}
-              setFacetObjective={setFacetObjective}
+              setFacetProfile={handleProfileChange}
+              toggleFacetSpecialty={toggleFacetSpecialty}
+              toggleFacetObjective={toggleFacetObjective}
               setFacetBudget={setFacetBudget}
               setFacetLevel={setFacetLevel}
               setFacetComplexity={setFacetComplexity}
-              setFacetType={setFacetType}
+              toggleFacetType={toggleFacetType}
+              setFacetToolCount={setFacetToolCount}
               onReset={resetFacets}
               isFiltered={isFiltered}
+              disabled={disabledFacetIds}
             />
           </div>
           <div className="sk-mobile-panel-footer">
