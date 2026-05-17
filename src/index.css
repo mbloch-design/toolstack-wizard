@@ -11836,3 +11836,70 @@
     margin-bottom: 14px;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Sprint P0+P1 — Stack detail corrections (2026-05-17)
+   Fixes: section padding, decision-summary padding + grid, chips, hero CTA
+══════════════════════════════════════════════════════════════════════════ */
+
+/* Section padding: normalize across all body sections */
+.sd-section {
+  padding: 72px 0;
+  border-bottom: 1px solid #DADAD4;
+}
+@media (max-width: 900px) {
+  .sd-section {
+    padding: 56px 0;
+  }
+}
+
+/* Decision summary: align padding to match surrounding sections */
+.sd-decision-summary-section {
+  padding: 72px 0;
+}
+@media (max-width: 900px) {
+  .sd-decision-summary-section {
+    padding: 56px 0;
+  }
+}
+
+/* Decision summary inner: balanced 2-col ratio */
+.sd-decision-summary-inner {
+  grid-template-columns: 0.38fr 0.62fr;
+}
+
+/* Usage chips: metadata-level sizing (was 44px/17px, too heavy) */
+.sd-usage-chip {
+  height: 34px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 767px) {
+  .sd-usage-chip {
+    height: 32px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+}
+
+/* Hero CTA: CSS class replacing inline style */
+.sd-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 22px;
+  background: #222222;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background 160ms ease-out;
+}
+.sd-hero-cta:hover {
+  background: #000000;
+}

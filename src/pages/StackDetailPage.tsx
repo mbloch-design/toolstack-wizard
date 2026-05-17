@@ -12,12 +12,18 @@ import {
   STACK_STAGES,
   STACKS,
   getStackDerivedFields,
+  getStackObjectives,
   type StackGuide,
   type StackInsight,
   type StackPersona,
   type StackStage,
   type StackToolSlot,
 } from "@/data/stacks";
+
+/* ─── Safety helpers ─────────────────────────────────────────────────────── */
+// Stack records are partially editorial; optional arrays must be normalized before rendering.
+const asArray = <T,>(value: T[] | undefined | null): T[] =>
+  Array.isArray(value) ? value : [];
 
 /* ─── Stack layer grouping ───────────────────────────────────────────────── */
 const STACK_LAYERS = [
@@ -414,9 +420,10 @@ const EDITORIAL_REGISTRY: Record<string, StackEditorialContent> = {
 };
 
 function buildFallbackEditorial(stack: StackGuide): StackEditorialContent {
-  const coreTools  = stack.tools.filter((t) => !t.decision || t.decision === "core");
-  const condTools  = stack.tools.filter((t) => t.decision === "conditional");
-  const chalTools  = stack.tools.filter((t) => t.decision === "challenge");
+  const tools      = asArray(stack.tools);
+  const coreTools  = tools.filter((t) => !t.decision || t.decision === "core");
+  const condTools  = tools.filter((t) => t.decision === "conditional");
+  const chalTools  = tools.filter((t) => t.decision === "challenge");
   return {
     verdictShort:    stack.bestFor,
     verdictShortEn:  stack.bestForEn,
@@ -600,6 +607,7 @@ const StackDetailPage = () => {
     const baseItems = [
       { id: "apercu", label: lang === "fr" ? "Vue d'ensemble" : "Overview" },
       { id: "outils", label: lang === "fr" ? "Outils" : "Tools" },
+      { id: "decision", label: lang === "fr" ? "Décision" : "Decision" },
       { id: "budget", label: "Budget" },
       ...(stackEditorial.risks.length > 0 ? [{ id: "risques", label: lang === "fr" ? "Risques" : "Risks" }] : []),
       { id: "calibrage", label: lang === "fr" ? "Calibrage" : "Calibration" },
@@ -625,7 +633,7 @@ const StackDetailPage = () => {
       headline: title,
       description,
       url: `${SEO_BASE}/${lang}/stacks/${stack.slug}`,
-      about: stack.tools.map((slot) => toolBySlug.get(slot.slug)?.name || slot.slug),
+      about: asArray(stack.tools).map((slot) => toolBySlug.get(slot.slug)?.name || slot.slug),
     });
     return () => cleanupSeo(["stack-detail-jsonld"]);
   }, [lang, stack, toolBySlug]);
@@ -678,7 +686,8 @@ const StackDetailPage = () => {
   const overviewIntro = getOverviewIntro(stack, editorial, lang);
   const overviewCards = getOverviewCards(stack, editorial, lang);
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
-  const primarySubProfile = stack.subProfiles[0];
+  const stackSubProfiles = asArray(stack.subProfiles);
+  const primarySubProfile = stackSubProfiles[0];
   const subProfileText = primarySubProfile ? t(subProfileLabel(primarySubProfile, "fr"), subProfileLabel(primarySubProfile, "en")) : personaText;
   const levelText = t(stack.stage === "starter" ? "débutant" : stack.stage === "scale" ? "avancé" : "installé", stack.stage === "starter" ? "beginner" : stack.stage === "scale" ? "advanced" : "established");
   const complexityText = t(
@@ -692,13 +701,13 @@ const StackDetailPage = () => {
   const watchTextRaw = t(stack.riskSnippet ?? stack.risk, stack.riskSnippetEn ?? stack.riskEn);
   const watchText = String(watchTextRaw).split(".")[0] + (String(watchTextRaw).includes(".") ? "." : "");
 
-  const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
+  const stackTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
   const coreTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "core");
   const optionalTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "conditional");
   const challengeTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "challenge");
-  const priorityEssential = lang === "fr" ? editorial.priority.essential : editorial.priority.essentialEn;
-  const priorityOptional = lang === "fr" ? editorial.priority.optional : editorial.priority.optionalEn;
-  const priorityChallenge = lang === "fr" ? editorial.priority.challenge : editorial.priority.challengeEn;
+  const priorityEssential = asArray(lang === "fr" ? editorial.priority.essential : editorial.priority.essentialEn);
+  const priorityOptional = asArray(lang === "fr" ? editorial.priority.optional : editorial.priority.optionalEn);
+  const priorityChallenge = asArray(lang === "fr" ? editorial.priority.challenge : editorial.priority.challengeEn);
   const usageChips = getUsageChips(stack, lang);
   const pickDecisionMarkers = (labels: string[]) => labels.map((label) => {
     const normalizedLabel = normalizeDecisionName(label);
@@ -841,10 +850,6 @@ const StackDetailPage = () => {
               {heroSubtitle}
             </p>
 
-            <p className="sd-hero-context">
-              {t(stack.bestFor, stack.bestForEn)}
-            </p>
-
             <div className="stack-fit-grid" aria-label={t("Résumé de décision", "Decision summary") as string}>
               <div className="stack-fit-card">
                 <span>{t("Idéal si", "Best for")}</span>
@@ -857,19 +862,7 @@ const StackDetailPage = () => {
             </div>
 
             {/* CTA */}
-            <Link
-              to={`${prefix}/selector`}
-              style={{
-                display: "inline-flex", alignItems: "center",
-                height: 48, padding: "0 22px",
-                background: "#222222", color: "#FFFFFF",
-                borderRadius: 8, fontFamily: "var(--font-ui)",
-                fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em",
-                textDecoration: "none", transition: "background 160ms ease-out",
-              }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
-            >
+            <Link to={`${prefix}/selector`} className="sd-hero-cta">
               {t("Analyser ma stack", "Analyze my stack")}
             </Link>
           </div>
@@ -893,7 +886,7 @@ const StackDetailPage = () => {
               </div>
               <div>
                 <span className="sd-snapshot-label">{t("Outils", "Tools")}</span>
-                <p>{stack.tools.length}</p>
+                <p>{asArray(stack.tools).length}</p>
               </div>
               <div>
                 <span className="sd-snapshot-label">{t("Niveau", "Level")}</span>
@@ -1115,7 +1108,7 @@ const StackDetailPage = () => {
       {/* ════════════════════════════════════════════════════════════════════
           ESSENTIEL / OPTIONNEL / À CHALLENGER
       ════════════════════════════════════════════════════════════════════ */}
-      <section className="sd-section scroll-mt-20">
+      <section id="decision" className="sd-section scroll-mt-20">
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("DÉCISION", "DECISION")}</span>
           <p className="sd-section-title" style={{ marginBottom: 0 }}>
@@ -1575,7 +1568,8 @@ function getUsageChips(stack: StackGuide, locale: "fr" | "en"): string[] {
       ? ["Code", "Preview client", "Documentation", "Paiement", "Versioning", "IA", "Automatisation"]
       : ["Code", "Client preview", "Documentation", "Payment", "Versioning", "AI", "Automation"];
   }
-  return stack.objectives.slice(0, 7);
+  // objectives is a derived field (not on StackGuide directly); compute it safely
+  return getStackObjectives(stack).slice(0, 7);
 }
 function normalizeDecisionName(value: string): string {
   return value
