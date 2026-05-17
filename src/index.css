@@ -5148,6 +5148,270 @@
   }
 }
 
+/* Sprint 34 — contextual stack selection page */
+@layer components {
+  .sk-hero .eh-container { max-width: var(--layout-content); }
+  .sk-hero-title {
+    font-family: var(--font-brand);
+    font-size: clamp(3.25rem, 6vw, 6rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+    font-weight: 600;
+    color: #222222;
+    max-width: 980px;
+    margin: 14px 0 24px;
+  }
+  .sk-hero-subtitle {
+    font-family: var(--font-ui);
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+    color: #6F6F68;
+    max-width: 720px;
+    margin: 0 0 32px;
+  }
+  .sk-section {
+    padding: 72px 0;
+    border-bottom: none;
+  }
+  .sk-profiles-section { background: #F8F8F4; }
+  .sk-listing-section { padding-top: 40px; }
+  .sk-section-eyebrow {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-bottom: 14px;
+  }
+  .sk-section-title {
+    max-width: 760px;
+    margin-bottom: 36px;
+  }
+  .sk-profiles-grid {
+    border: 1px solid #DADAD4;
+    border-right: none;
+    border-bottom: none;
+    background: #FFFFFF;
+  }
+  .sk-profile-card { background: #FFFFFF; }
+  .sk-profile-meta {
+    align-items: flex-start;
+    gap: 14px;
+    line-height: 1.35;
+  }
+  .sk-listing-layout {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 48px;
+  }
+  .sk-sidebar {
+    padding: 0;
+    border-right: none;
+  }
+  .sk-sidebar-header {
+    padding: 0 0 22px;
+    border-bottom: 1px solid #DADAD4;
+  }
+  .sk-facet-group { padding: 22px 0; }
+  .sk-facet-options {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sk-facet-option { justify-content: flex-start; }
+  .sk-results-header {
+    align-items: flex-start;
+    border-bottom: none;
+    padding-bottom: 18px;
+  }
+  .sk-results-count {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+  }
+  .sk-results-context {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.4;
+    color: #9A9A92;
+    margin: 4px 0 0;
+  }
+  .sk-results-search { padding: 0 0 16px; }
+  .sk-search-input {
+    height: 44px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+  .sk-active-filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 18px;
+  }
+  .sk-active-chip,
+  .sk-active-reset {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 32px;
+    padding: 0 11px;
+    border: 1px solid #DADAD4;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #222222;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .sk-active-chip:hover,
+  .sk-active-reset:hover { border-color: #222222; }
+  .sk-active-reset { color: #6F6F68; }
+  .sk-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+  }
+  .sk-card {
+    min-height: 100%;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: transform 160ms ease-out, border-color 160ms ease-out, background 160ms ease-out;
+  }
+  .sk-card:hover {
+    transform: translateY(-1px);
+    background: #FFFFFF;
+  }
+  .sk-card-header {
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .sk-card-kicker {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+  }
+  .sk-card-title {
+    font-size: clamp(1.45rem, 2.2vw, 1.85rem);
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .sk-card-verdict {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.45;
+    color: #6F6F68;
+    margin: 0 0 20px;
+  }
+  .sk-card-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 16px 0;
+    border-top: 1px solid #E7E7E0;
+    border-bottom: 1px solid #E7E7E0;
+  }
+  .sk-card-meta-grid > div {
+    min-width: 0;
+  }
+  .sk-card-meta-grid strong {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    color: #222222;
+  }
+  .sk-card-meta-label {
+    display: block;
+    margin-bottom: 4px;
+  }
+  .sk-card-decision {
+    display: grid;
+    gap: 10px;
+    margin: 18px 0 22px;
+  }
+  .sk-card-decision p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.45;
+    color: #6F6F68;
+  }
+  .sk-card-decision span {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #222222;
+  }
+  .sk-card-footer {
+    margin-top: auto;
+    padding-top: 16px;
+  }
+  .sk-card-logos {
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+  }
+  .sk-card-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid #E7E7E0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -7px;
+    overflow: hidden;
+    position: relative;
+  }
+  .sk-card-logo:first-child { margin-left: 0; }
+  .sk-card-logo-more {
+    background: #F8F8F4;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    color: #6F6F68;
+  }
+  .sk-empty-state { margin-top: 0; }
+  @media (max-width: 1180px) {
+    .sk-results-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 1023px) {
+    .sk-listing-layout { grid-template-columns: 1fr; }
+    .sk-results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 767px) {
+    .sk-section { padding: 56px 0; }
+    .sk-hero-title { font-size: clamp(2.8rem, 14vw, 4.2rem); }
+    .sk-hero-subtitle { font-size: 18px; }
+    .sk-results-header { flex-direction: column; gap: 14px; }
+    .sk-results-grid { grid-template-columns: 1fr; }
+    .sk-card { padding: 22px; }
+    .sk-card-title { font-size: 1.45rem; }
+    .sk-card-meta-grid { grid-template-columns: 1fr 1fr; }
+  }
+}
+
 /* ─────────────────────────────────────────────
    STACK DETAIL (sd-*)
    /fr/stacks/:slug editorial detail page.

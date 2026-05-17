@@ -302,14 +302,22 @@ Ligne horizontale éditoriale. Utilisée par `CategoryPage`.
 ```
 Mobile ≤640px : rang, score, prix masqués.
 
-### StackCardEditorial (ec-card shell) — stacks
-Utilise `ec-card` pour le shell. Deux variants via prop `variant` :
-- `"row"` — image 140px + corps + panneau data (logos outils, coût, CTA)
-- `"compact"` — card grille profil recommandé (label persona + titre + bestFor)
+### Stack selection cards (`sk-card`) — stacks
+La page `/fr/stacks` utilise désormais un système dédié à la sélection contextuelle.
+
+- Shell : `sk-card`, fond blanc, border `#DADAD4`, radius 12px, hover léger.
+- Kicker : `STACK · Profil · Sous-profil` en uppercase 10px.
+- Métadonnées : budget cible, nombre d'outils, niveau, complexité.
+- Décision : `Idéal si` + `À éviter si`, textes courts issus de `bestFor` / `avoidIf`.
+- Logos : maximum 5 pills, puis `+N`.
+- CTA unique : `Voir la stack →`.
+
+Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compteurs globaux si ceux-ci ne tiennent pas compte des autres facettes actives.
 
 ### Composants dépréciés
 - `ToolCard variant="default"` → remplacé par `ToolCardEditorial`
 - `ToolCard variant="list-row"` → remplacé par `ToolRowEditorial`
+- `StackCardEditorial` → supprimé, remplacé par le système `sk-card` contextualisé de `StacksPage`
 - `ToolCard variant="featured"` → conservé pour la Sélection éditoriale ToolsPage uniquement
 
 ---

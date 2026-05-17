@@ -1446,3 +1446,23 @@ Aligner la homepage sur la promesse conversion : auditer une stack freelance exi
 - Les comparatifs sont nommés comme tels dans la navigation.
 - La FAQ commence par indépendance, gratuité, fonctionnement, durée et fiabilité.
 - Le positionnement public sort du comparateur générique pour revenir à l'audit de stack freelance.
+
+---
+
+## 2026-05-17 — Sprint 29 : Page stacks contextuelle
+
+### Objectif
+Transformer `/fr/stacks` en outil de sélection contextualisé plutôt qu'en liste générique : profil, sous-profil, objectif, budget, niveau, complexité, type de stack et recherche.
+
+### Fichiers modifiés
+- `src/pages/StacksPage.tsx` — hero réécrit, filtres URL-persistants, sous-profils dépendants du profil, chips de filtres actifs, grille de cards décisionnelles.
+- `src/data/stacks.ts` — ajout de helpers dérivés pour `budgetRange`, `level`, `complexity`, `stackType`, `toolCount`, verdict et outils à garder/challenger.
+- `src/index.css` — grille 280px / résultats, cards stack en 2 colonnes, filtres et chips actifs.
+- `src/components/StackCardEditorial.tsx` — supprimé : l'ancien composant n'était plus utilisé et créait un deuxième système de cards stack.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md` — documentation alignée.
+
+### Résultat
+- `/fr/stacks` conserve les données existantes sans casser les fiches détail.
+- Les filtres se partagent via query params et se combinent en logique `AND`.
+- Les compteurs globaux trompeurs sont retirés.
+- Les cards affichent désormais verdict, idéal si, à éviter si, budget cible, niveau, complexité et logos outils.

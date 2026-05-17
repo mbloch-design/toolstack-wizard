@@ -221,6 +221,95 @@ export interface StackUseCase {
   workflowEn: string[];
 }
 
+export type StackBudgetRange = "0-30" | "30-80" | "80-150" | "150+";
+export type StackLevel = "debutant" | "installe" | "avance";
+export type StackComplexity = "minimal" | "equilibre" | "premium";
+export type StackType = "socle" | "specialiste" | "workflow" | "avancee";
+
+export interface StackDerivedFields {
+  profile: StackPersona;
+  subProfile: StackSubProfile | "general";
+  objectives: string[];
+  budgetRange: StackBudgetRange;
+  level: StackLevel;
+  complexity: StackComplexity;
+  stackType: StackType;
+  toolCount: number;
+  verdict: string;
+  verdictEn: string;
+  bestFor: string;
+  bestForEn: string;
+  avoidIf: string;
+  avoidIfEn: string;
+  toolsToKeep: string[];
+  toolsToCut: string[];
+  toolsToChallenge: string[];
+}
+
+export function getStackBudgetRange(monthlyBudget: number): StackBudgetRange {
+  if (monthlyBudget <= 30) return "0-30";
+  if (monthlyBudget <= 80) return "30-80";
+  if (monthlyBudget <= 150) return "80-150";
+  return "150+";
+}
+
+export function getStackLevel(stage: StackStage): StackLevel {
+  if (stage === "starter") return "debutant";
+  if (stage === "scale") return "avance";
+  return "installe";
+}
+
+export function getStackComplexity(stack: StackGuide): StackComplexity {
+  const toolCount = stack.tools.length;
+  if (toolCount <= 5 && stack.monthlyBudget <= 50) return "minimal";
+  if (toolCount >= 12 || stack.monthlyBudget > 150 || stack.stage === "scale") return "premium";
+  return "equilibre";
+}
+
+export function getStackType(stack: StackGuide): StackType {
+  if (stack.stage === "scale" || stack.monthlyBudget > 150) return "avancee";
+  if (stack.persona === "ops" || stack.subProfiles.some((item) => item.includes("ops") || item === "automation" || item === "operations")) return "workflow";
+  if (stack.subProfiles.length > 1 || stack.tools.length > 7) return "specialiste";
+  return "socle";
+}
+
+export function getStackObjectives(stack: StackGuide): string[] {
+  const subProfiles = new Set<string>(stack.subProfiles);
+  const objectives: string[] = [];
+  if (["copywriting", "newsletter", "social-content", "podcast", "video", "photo", "short-video", "youtube-long", "creator-newsletter", "seo-blogging", "brand-content"].some((item) => subProfiles.has(item))) objectives.push("content");
+  if (["crm-sales", "sales-bd", "cro-conversion", "ecommerce", "infoproducts", "digital-products"].some((item) => subProfiles.has(item))) objectives.push("sell");
+  if (["client-delivery", "coaching", "admin", "strategy-consulting", "management-consulting", "hr-consulting", "recruiting"].some((item) => subProfiles.has(item))) objectives.push("clients");
+  if (["automation", "no-code", "ai-coding", "api-integration", "automation-ops", "ai-automation-consulting", "ai-ops"].some((item) => subProfiles.has(item))) objectives.push("automate");
+  if (["web", "product", "brand", "ui-ux", "illustration", "motion", "art-direction", "photo", "video", "full-stack", "front-end", "back-end", "mvp-startup", "web-redesign", "mobile-dev", "interior-design"].some((item) => subProfiles.has(item))) objectives.push("produce");
+  if (["operations", "analytics", "admin", "reporting-ops", "finance-cfo", "bizops", "revops", "marketing-ops", "product-ops", "fractional-coo", "ops-manager", "people-ops", "finance-ops", "delivery-ops", "customer-ops", "agency-ops", "it-systems", "legal-ops"].some((item) => subProfiles.has(item))) objectives.push("organize");
+  return objectives.length > 0 ? Array.from(new Set(objectives)) : ["produce"];
+}
+
+export function getStackDerivedFields(stack: StackGuide): StackDerivedFields {
+  const toolsToKeep = stack.tools.filter((tool) => tool.decision === "core" || !tool.decision).map((tool) => tool.slug);
+  const toolsToChallenge = stack.tools.filter((tool) => tool.decision === "challenge" || tool.decision === "conditional").map((tool) => tool.slug);
+
+  return {
+    profile: stack.persona,
+    subProfile: stack.subProfiles[0] ?? "general",
+    objectives: getStackObjectives(stack),
+    budgetRange: getStackBudgetRange(stack.monthlyBudget),
+    level: getStackLevel(stack.stage),
+    complexity: getStackComplexity(stack),
+    stackType: getStackType(stack),
+    toolCount: stack.tools.length,
+    verdict: stack.editorial || stack.subtitle,
+    verdictEn: stack.editorialEn || stack.subtitleEn,
+    bestFor: stack.bestFor,
+    bestForEn: stack.bestForEn,
+    avoidIf: stack.avoidIf,
+    avoidIfEn: stack.avoidIfEn,
+    toolsToKeep,
+    toolsToCut: [],
+    toolsToChallenge,
+  };
+}
+
 export const STACK_PERSONAS: { value: StackPersona | "all"; label: string; labelEn: string }[] = [
   { value: "all", label: "Tous", labelEn: "All" },
   { value: "dev", label: "Dev freelance", labelEn: "Freelance dev" },

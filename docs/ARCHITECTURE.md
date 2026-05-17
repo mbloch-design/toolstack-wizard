@@ -282,7 +282,16 @@ Sinon → `<div>` statique avec initiales en fallback logo.
 - Source : `src/data/stacks.ts`
 - Type : `StackGuide` avec `persona`, `slug`, `monthlyBudget`, `riskSnippet`, `tools[]`
 - `STACK_PERSONAS`, `PROFILE_RECOMMENDED_STACKS` — mapping profil → stack recommandée
-- `StackFilterId` : `"all" | "creation" | "business" | "tech" | "ops" | "light" | "ia"`
+- `getStackDerivedFields(stack)` expose la couche de sélection de l'index : `budgetRange`, `level`, `complexity`, `stackType`, `toolCount`, `verdict`, `toolsToKeep`, `toolsToChallenge`.
+
+### StacksPage — sélection contextuelle
+
+`StacksPage` porte la logique de facettes de `/fr/stacks` : profil, sous-profil dépendant, objectif, budget, niveau, complexité, type de stack, recherche et tri.
+
+- Les filtres sont persistés en query params (`profile`, `subProfile`, `objective`, `budget`, `level`, `complexity`, `type`, `sort`, `q`).
+- Les sous-profils sont masqués tant que le profil est `Tous`.
+- Les cards stack sont rendues directement par `StackSelectionCard` dans `StacksPage` pour éviter deux systèmes concurrents.
+- L'ancien composant `StackCardEditorial` a été retiré.
 
 ### StackDetailPage — ToolPanel (Sheet)
 

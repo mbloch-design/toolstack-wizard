@@ -230,13 +230,13 @@
 | Migration ToolCardEditorial → remplace ToolCard default | ✅ Fait | ToolsPage grille principale |
 | Score ToolTrim visible sur card grid | ✅ Fait | prescription_quality → score numérique |
 | ToolRowEditorial (list row éditorial) | ✅ Fait | Remplace list-row dans CategoryPage |
-| StackCardEditorial (variants row + compact) | ✅ Fait | Extrait de StacksPage |
+| Stack cards contextuelles (`sk-card`) | ✅ Fait | StacksPage sélection profil / budget / niveau |
 | ResultsPage : intégrer editorial card | 📋 Backlog | Après validation sur ToolsPage |
 
 **Système de cards stabilisé :**
 - `ToolCardEditorial` — grille outils (ToolsPage) — **actif**
 - `ToolRowEditorial` — liste catégorie (CategoryPage) — **actif**  
-- `StackCardEditorial` — stacks liste + compact (StacksPage) — **actif**
+- `sk-card` — stacks contextuelles (StacksPage) — **actif**
 - `ToolCard variant="featured"` — sélection éditoriale (ToolsPage) — conservé
 - `ToolCard variant="list-row"` — déprécié (remplacé par ToolRowEditorial)
 - `ToolCard variant="default"` — déprécié (remplacé par ToolCardEditorial)
