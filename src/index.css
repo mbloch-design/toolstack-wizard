@@ -5663,7 +5663,7 @@
     position: relative;
   }
   .sd-decision-item::before {
-    content: "—";
+    content: "•";
     position: absolute;
     left: 0;
     color: #9A9A92;
@@ -5908,7 +5908,7 @@
     padding: 8px 0 8px 16px; border-bottom: 1px solid #E7E7E0; position: relative;
   }
   .sd-priority-item:last-child { border-bottom: none; }
-  .sd-priority-item::before { content: "—"; position: absolute; left: 0; color: #9A9A92; }
+  .sd-priority-item::before { content: "•"; position: absolute; left: 0; color: #9A9A92; }
 
   /* ── Budget rows ─────────────────────────────────────────────────────────── */
   .sd-budget-list { border-top: 1px solid #DADAD4; margin-top: 24px; }
@@ -6218,7 +6218,7 @@
     position: relative;
   }
   .sd-calibration-card li::before {
-    content: "—";
+    content: "•";
     position: absolute;
     left: 0;
     color: #9A9A92;

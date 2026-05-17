@@ -1521,3 +1521,21 @@ Rendre `/fr/stacks/developpeur-freelance-shipper` plus contrôlé et scalable sa
 - Le shell détail stack est limité à 1240px, avec une colonne résumé maîtrisée à 360px.
 - Les lignes outils gagnent en scannabilité : nom 18px, raison/rôle 15px, label décisionnel 11px en pastille sobre.
 - Les séparateurs pleine largeur du template sont adoucis au profit d'un rythme par espacements.
+
+---
+
+## 2026-05-17 — Sprint 33 : Nettoyage éditorial stack dev
+
+### Objectif
+Nettoyer la page `/fr/stacks/developpeur-freelance-shipper` sans toucher au template : ton plus naturel, moins d'anglais, suppression des tirets longs rendus et meilleure lisibilité des labels.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — H1 remplacé par `Dev freelance qui livre`, sous-titre hero simplifié, heading décisionnel réécrit, note ToolTrim renommée `Astuce` / `Réglage utile`, CTA diagnostic et stacks proches réécrits.
+- `src/index.css` — puces CSS `sd-*` remplacées par des points sobres pour éviter les tirets longs rendus dans les listes.
+- `docs/CHANGELOG_AI.md` — ce suivi.
+
+### Résultat
+- La page ne présente plus `shipper` dans le H1.
+- Le hero ne répète plus la même idée entre sous-titre et verdict.
+- La section décision devient `CE QU'ON GARDE, CE QU'ON ÉVITE` / `Simple par choix, pas par manque.`
+- Les tirets longs visibles dans les blocs de cette page sont remplacés par deux-points, phrases naturelles ou puces simples.

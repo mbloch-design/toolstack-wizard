@@ -286,8 +286,8 @@ const CREATEUR_CONTENU: StackEditorialContent = {
 };
 
 const DEV_FREELANCE_SHIPPER: StackEditorialContent = {
-  verdictShort:    "Pour livrer vite sans payer une stack de startup.",
-  verdictShortEn:  "To ship fast without paying for a startup stack.",
+  verdictShort:    "",
+  verdictShortEn:  "",
 
   overviewIntro:   "Cette stack est pensée pour un développeur freelance qui doit coder, montrer une preview, garder une trace des décisions et encaisser proprement. Elle reste volontairement légère : chaque outil a un rôle distinct.",
   overviewIntroEn: "This stack is designed for a freelance developer who needs to code, show a preview, keep decision history, and get paid cleanly. It stays deliberately light: every tool has a distinct role.",
@@ -382,8 +382,8 @@ const DEV_FREELANCE_SHIPPER: StackEditorialContent = {
 
   ctaTitle:   "Ta stack dev est déjà plus lourde que ça ?",
   ctaTitleEn: "Is your dev stack already heavier than this?",
-  ctaDesc:   "Audite tes outils actuels pour voir quoi garder, quoi challenger et quoi repousser.",
-  ctaDescEn: "Audit your current tools to see what to keep, challenge, and postpone.",
+  ctaDesc:   "3 minutes pour savoir ce qui sert vraiment et ce qui te coûte sans raison.",
+  ctaDescEn: "3 minutes to know what is genuinely useful and what costs you for no good reason.",
 
   faq: [
     {
@@ -470,8 +470,8 @@ function buildFallbackEditorial(stack: StackGuide): StackEditorialContent {
 const EXPERT_TIPS_BY_STACK: Record<string, StackInsight[]> = {
   "developpeur-freelance-shipper": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "GitHub + Vercel + Notion + Stripe. Ajoute Cursor seulement si tu livres du code chaque semaine, sinon ChatGPT suffit pour cadrer et débugger.", detailEn: "GitHub + Vercel + Notion + Stripe. Add Cursor only if you ship code weekly; otherwise ChatGPT is enough for scoping and debugging." },
-    { title: "Le petit plus", titleEn: "Small edge", detail: "Crée un template Notion par mission avec brief, décisions, changelog et lien preview Vercel. Le client suit sans te relancer.", detailEn: "Create one Notion template per project with brief, decisions, changelog, and Vercel preview link. The client tracks progress without chasing you." },
-    { title: "Plugin / réglage", titleEn: "Plugin / setting", detail: "Ajoute un fichier de règles projet pour Cursor ou ton IA : stack technique, conventions, composants à réutiliser, choses à ne pas modifier.", detailEn: "Add project rules for Cursor or your AI: tech stack, conventions, reusable components, and things not to touch." },
+    { title: "Astuce", titleEn: "Tip", detail: "Crée un template Notion par mission avec brief, décisions, changelog et lien preview Vercel. Le client suit sans te relancer.", detailEn: "Create one Notion template per project with brief, decisions, changelog, and Vercel preview link. The client tracks progress without chasing you." },
+    { title: "Réglage utile", titleEn: "Useful setting", detail: "Ajoute un fichier de règles projet pour Cursor ou ton IA. Stack technique, conventions, composants à réutiliser, choses à ne pas modifier.", detailEn: "Add project rules for Cursor or your AI. Tech stack, conventions, reusable components, and things not to touch." },
   ],
   "designer-freelance-solo": [
     { title: "Mon setup recommandé", titleEn: "Recommended setup", detail: "Figma reste le centre. Plugins minimum : Tokens Studio si système maintenu, Iconify pour les icônes, Stark pour accessibilité. Canva sert aux déclinaisons, pas à la source design.", detailEn: "Figma stays central. Minimum plugins: Tokens Studio for maintained systems, Iconify for icons, Stark for accessibility. Canva handles variations, not the design source." },
@@ -620,8 +620,11 @@ const StackDetailPage = () => {
   /* ── Derived data ───────────────────────────────────────────────────────── */
   const editorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
   const detailTitle = stack.slug === "developpeur-freelance-shipper"
-    ? t("Développeur freelance shipper", "Freelance developer shipper")
+    ? t("Dev freelance qui livre", "Freelance dev who ships")
     : t(stack.title, stack.titleEn);
+  const heroSubtitle = stack.slug === "developpeur-freelance-shipper"
+    ? t("Pour coder, montrer une preview, documenter et encaisser. Sans payer les outils d'une équipe produit.", "To code, show a preview, document decisions, and get paid. Without paying for product-team tools.")
+    : t(stack.subtitle, stack.subtitleEn);
   const derived = getStackDerivedFields(stack);
   const expertTips = getExpertTips(stack);
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
@@ -707,13 +710,15 @@ const StackDetailPage = () => {
 
             {/* Description */}
             <p className="sd-hero-desc">
-              {t(stack.subtitle, stack.subtitleEn)}
+              {heroSubtitle}
             </p>
 
             {/* Verdict court */}
-            <p className="sd-hero-verdict">
-              {t(editorial.verdictShort, editorial.verdictShortEn)}
-            </p>
+            {editorial.verdictShort && (
+              <p className="sd-hero-verdict">
+                {t(editorial.verdictShort, editorial.verdictShortEn)}
+              </p>
+            )}
 
             <div className="sd-hero-decision-grid" aria-label={t("Résumé de décision", "Decision summary") as string}>
               <div>
@@ -802,8 +807,8 @@ const StackDetailPage = () => {
       <section className="sd-decision-summary-section" aria-labelledby="stack-decision-summary">
         <div className="sd-container sd-decision-summary-inner">
           <div>
-            <span className="sd-section-eyebrow">{t("DÉCISION TOOLTRIM", "TOOLTRIM DECISION")}</span>
-            <h2 id="stack-decision-summary" className="sd-decision-summary-title">{t("La stack à garder simple.", "The stack to keep simple.")}</h2>
+            <span className="sd-section-eyebrow">{t("CE QU'ON GARDE, CE QU'ON ÉVITE", "WHAT WE KEEP, WHAT WE AVOID")}</span>
+            <h2 id="stack-decision-summary" className="sd-decision-summary-title">{t("Simple par choix, pas par manque.", "Simple by choice, not by limitation.")}</h2>
           </div>
           <div className="sd-decision-summary-grid">
             <div className="sd-decision-summary-card">
@@ -878,7 +883,7 @@ const StackDetailPage = () => {
               <p className="sd-expert-note-text">{t(expertTips[0].detail, expertTips[0].detailEn)}</p>
               {expertTips.slice(1).map((tip) => (
                 <div key={tip.title} className="sd-expert-note-tip">
-                  <span className="sd-expert-note-tip-label">{t(tip.title, tip.titleEn)} — </span>
+                  <span className="sd-expert-note-tip-label">{t(tip.title, tip.titleEn)} : </span>
                   {t(tip.detail, tip.detailEn)}
                 </div>
               ))}
@@ -903,9 +908,9 @@ const StackDetailPage = () => {
             marginBottom: 24, padding: "12px 0", borderBottom: "1px solid #DADAD4",
           }}>
             {[
-              { key: "core",        label: t("Socle — indispensable",          "Core — essential"),    color: "#2E7D32" },
-              { key: "conditional", label: t("Conditionnel — selon usage",      "Conditional"),         color: "#6F6F68" },
-              { key: "challenge",   label: t("À challenger — justifier l'abonnement", "Challenge"),     color: "#C62828" },
+              { key: "core",        label: t("Socle indispensable",          "Essential core"),    color: "#2E7D32" },
+              { key: "conditional", label: t("Conditionnel selon usage",      "Conditional"),       color: "#6F6F68" },
+              { key: "challenge",   label: t("À challenger si l'abonnement n'est pas justifié", "Challenge if the subscription is not justified"), color: "#C62828" },
             ].map((item) => (
               <span key={item.key} style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
                 <span style={{ width: 8, height: 8, borderRadius: "50%", background: item.color, flexShrink: 0 }} />
@@ -1168,7 +1173,7 @@ const StackDetailPage = () => {
           <div className="sd-container">
             <span className="sd-section-eyebrow">{t("STACKS PROCHES", "RELATED STACKS")}</span>
             <p className="sd-section-title" style={{ marginBottom: 24 }}>
-              {t("Tu pourrais aussi regarder.", "You might also like.")}
+              {t("Si cette stack ne correspond pas tout à fait à ton usage.", "If this stack does not quite match your use case.")}
             </p>
             <div className="sd-related-grid">
               {relatedStacks.map((related) => (
@@ -1238,8 +1243,8 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
 
   const callout = {
     core: {
-      fr: "Outil central de cette stack. Inutile de chercher une alternative — c'est lui qui tient tout.",
-      en: "Core tool in this stack. No need to look for an alternative — it holds everything together.",
+      fr: "Outil central de cette stack. Inutile de chercher une alternative : c'est lui qui tient tout.",
+      en: "Core tool in this stack. No need to look for an alternative: it holds everything together.",
       textClass: "text-keep", borderClass: "border-keep/25 bg-keep/[0.05]", dotClass: "bg-keep",
     },
     conditional: {
