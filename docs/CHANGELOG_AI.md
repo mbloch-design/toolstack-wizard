@@ -1681,3 +1681,18 @@ Finaliser `02 — OUTILS` comme un seul module workflow, sans inventaire sépar�
 ### Résultat
 - Le code ne garde plus de styles pour une section `Inventaire complet` séparée.
 - Le pattern documenté est désormais unique : workflow nodes + détails intégrés.
+
+---
+
+## 2026-05-17 — Sprint 39 : Stack par étape
+
+### Objectif
+Adapter le principe `Stack by Layer` à ToolTrim sans copier StackShare : la section `02 — OUTILS` présente la stack comme un workflow de décision, pas comme une liste d'outils.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — framing `La stack par étape`, subtitle orienté workflow et aria-label du module ajusté.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du pattern ToolTrim `stack by workflow`.
+
+### Résultat
+- Le module reste unique : nodes workflow + détails intégrés.
+- Aucun inventaire séparé, table ou liste complète redondante n'est rendu sous la grille.

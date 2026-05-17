@@ -911,19 +911,19 @@ const StackDetailPage = () => {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          OUTILS — chaîne complète
+          OUTILS — stack par étape
       ════════════════════════════════════════════════════════════════════ */}
       <section id="outils" className="sd-section scroll-mt-20">
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("02 — OUTILS", "02 — TOOLS")}</span>
           <p className="sd-section-title sd-tools-title">
-            {t("La chaîne complète.", "The complete chain.")}
+            {t("La stack par étape.", "The stack by step.")}
           </p>
           <p className="sd-tools-subtitle">
-            {t("Chaque étape du travail a ses outils. Le socle reste visible. Les options et les outils à challenger se déploient seulement quand tu veux vérifier le détail.", "Each work step has its tools. The core stays visible. Options and tools to challenge expand only when you want to verify the detail.")}
+            {t("Chaque étape du travail a son socle, ses options et ses outils à challenger. Tu lis la stack comme un workflow, pas comme un annuaire.", "Each work step has its core, options, and tools to challenge. You read the stack as a workflow, not as a directory.")}
           </p>
 
-          <div className="sd-workflow-map sd-workflow-map--integrated" aria-label={t("Chaîne complète de la stack", "Complete stack chain")}>
+          <div className="sd-workflow-map sd-workflow-map--integrated" aria-label={t("Stack par étape", "Stack by workflow layer")}>
             {stackLayers.map((step, index) => {
               const sortedTools = sortToolsByDecision(step.tools);
               const previewTools = getWorkflowPreviewTools(sortedTools);
