@@ -1648,3 +1648,20 @@ Remplacer la lecture table/cards de la section `02 — OUTILS` par une compréhe
 - `/fr/stacks/architecte-interieur` lit désormais Brief → Moodboard → Plans → 3D → Rendu → Sourcing → Budget → Validation → Facturation.
 - `/fr/stacks/developpeur-freelance-shipper` et `/fr/stacks/designer-freelance-solo` utilisent la même logique de chaîne contextualisée.
 - Les outils Socle / Conditionnel / À challenger restent visibles, mais la liste complète n'est plus le premier contact avec la section.
+
+---
+
+## 2026-05-17 — Sprint 37 : Inventaire intégré dans le workflow
+
+### Objectif
+Supprimer la redondance entre workflow et inventaire complet dans `02 — OUTILS` : la chaîne devient l'interface principale et contient elle-même tous les détails via disclosure.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — remplacement des blocs séparés socle/options/inventaire par des nodes workflow expansibles avec aperçu, résumé de compte et détails par statut.
+- `src/index.css` — grille workflow 3/2/1 colonnes, état ouvert, détails intégrés et rows compactes dans chaque node.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du pattern workflow intégré.
+
+### Résultat
+- Plus de section `Inventaire complet` séparée sous le workflow.
+- Chaque étape affiche le socle en aperçu et expose Conditionnel / À challenger au clic.
+- Le premier node important est ouvert par défaut selon la stack.

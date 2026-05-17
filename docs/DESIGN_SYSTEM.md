@@ -1073,3 +1073,24 @@ La section `02 — OUTILS` des pages stack detail doit expliquer la chaîne de t
 - Logos : pastilles 28–32px, couleurs natives.
 - Séparateurs : lignes pointillées fines, jamais de grosse table pleine largeur.
 - Mobile : workflow en une colonne, inventaire sans scroll horizontal.
+
+
+## Stack detail integrated workflow inventory
+
+Quand une section outils contient beaucoup d'entrées, ne pas afficher un workflow puis un inventaire séparé. Le workflow est l'interface.
+
+**Node fermé :**
+- Numéro d'étape `01`, titre, usage court.
+- Résumé : `X outils · Y socle · Z conditionnel · N à challenger`.
+- Aperçu : jusqu'à 3 outils, Socle d'abord, puis Conditionnel si besoin.
+- Bouton réel `Voir le détail` avec `aria-expanded`.
+
+**Node ouvert :**
+- Groupes `Socle`, `Conditionnel`, `À challenger`.
+- Rows compactes : logo, nom, rôle, prix, lien `Fiche →`.
+- Pas de paragraphe long dans les détails. Budget, risques et calibrage restent dans leurs sections dédiées.
+
+**Responsive :**
+- Desktop large : 3 colonnes.
+- Medium : 2 colonnes.
+- Mobile : 1 colonne, détails empilés sans scroll horizontal.

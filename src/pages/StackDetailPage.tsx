@@ -587,6 +587,7 @@ const StackDetailPage = () => {
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
   const stack = STACKS.find((item) => item.slug === slug);
+  const stackSlug = stack?.slug;
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
 
   // Must be before conditional return (hooks rules)
@@ -670,6 +671,11 @@ const StackDetailPage = () => {
     activeLink?.scrollIntoView({ block: "nearest", inline: "center" });
   }, [activeSection]);
 
+  useEffect(() => {
+    if (!stackSlug) return;
+    setExpandedToolLayers(new Set([getDefaultWorkflowStepId(stackSlug)]));
+  }, [stackSlug]);
+
   if (!stack) return <Navigate to={`${prefix}/stacks`} replace />;
 
   /* ── Derived data ───────────────────────────────────────────────────────── */
@@ -712,11 +718,6 @@ const StackDetailPage = () => {
 
   const workflowSteps = buildWorkflowSteps(stack, stackTools, lang);
   const stackLayers = workflowSteps.length > 0 ? workflowSteps : buildFallbackWorkflowSteps(stack, stackTools, lang);
-  const inventoryLayers = stackLayers.filter((layer) => layer.tools.length > 0);
-  const coreTools = sortToolsByDecision(stackTools).filter(({ slot }) => getToolDecisionStatus(slot).key === "core");
-  const conditionalTools = sortToolsByDecision(stackTools).filter(({ slot }) => getToolDecisionStatus(slot).key === "conditional");
-  const challengeTools = sortToolsByDecision(stackTools).filter(({ slot }) => getToolDecisionStatus(slot).key === "challenge");
-  const isLongInventory = stackTools.length > 12;
   const toggleToolLayer = (layerId: string) => {
     setExpandedToolLayers((current) => {
       const next = new Set(current);
@@ -910,33 +911,43 @@ const StackDetailPage = () => {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          OUTILS — chaîne de travail
+          OUTILS — chaîne complète
       ════════════════════════════════════════════════════════════════════ */}
       <section id="outils" className="sd-section scroll-mt-20">
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("02 — OUTILS", "02 — TOOLS")}</span>
           <p className="sd-section-title sd-tools-title">
-            {t("La chaîne de travail.", "The workflow chain.")}
+            {t("La chaîne complète.", "The complete chain.")}
           </p>
           <p className="sd-tools-subtitle">
-            {t("Une stack complète ne se lit pas comme une liste d'outils. Elle se lit comme une suite d'étapes : produire, valider, livrer, encaisser.", "A complete stack is not read like a tool list. It is read as a sequence of steps: produce, validate, deliver, get paid.")}
+            {t("Chaque étape du travail a ses outils. Le socle reste visible. Les options et les outils à challenger se déploient seulement quand tu veux vérifier le détail.", "Each work step has its tools. The core stays visible. Options and tools to challenge expand only when you want to verify the detail.")}
           </p>
 
-          <div className="sd-workflow-map" aria-label={t("Chaîne de travail de la stack", "Stack workflow chain")}>
+          <div className="sd-workflow-map sd-workflow-map--integrated" aria-label={t("Chaîne complète de la stack", "Complete stack chain")}>
             {stackLayers.map((step, index) => {
               const sortedTools = sortToolsByDecision(step.tools);
-              const visibleTools = sortedTools.slice(0, 3);
-              const hiddenCount = sortedTools.length - visibleTools.length;
+              const previewTools = getWorkflowPreviewTools(sortedTools);
+              const hiddenCount = sortedTools.length - previewTools.length;
+              const summary = getLayerDecisionSummary(step.tools);
+              const isExpanded = expandedToolLayers.has(step.id);
+              const groups = getWorkflowStatusGroups(sortedTools);
               return (
-                <section key={step.id} className="sd-workflow-step" aria-label={t(step.titleFr, step.titleEn)}>
+                <section key={step.id} className={`sd-workflow-step${isExpanded ? " sd-workflow-step--open" : ""}`} aria-label={t(step.titleFr, step.titleEn)}>
                   {index > 0 && <span className="sd-workflow-connector" aria-hidden>→</span>}
                   <div className="sd-workflow-step-head">
                     <span className="sd-workflow-index">{String(index + 1).padStart(2, "0")}</span>
                     <h3>{t(step.titleFr, step.titleEn)}</h3>
                   </div>
                   <p className="sd-workflow-purpose">{t(step.purposeFr, step.purposeEn)}</p>
-                  <div className="sd-workflow-tools">
-                    {visibleTools.map(({ slot, tool }) => {
+                  <p className="sd-workflow-count">
+                    {t(
+                      `${step.tools.length} outil${step.tools.length > 1 ? "s" : ""} · ${summary.core} socle · ${summary.conditional} conditionnel${summary.conditional > 1 ? "s" : ""} · ${summary.challenge} à challenger`,
+                      `${step.tools.length} tool${step.tools.length > 1 ? "s" : ""} · ${summary.core} core · ${summary.conditional} conditional · ${summary.challenge} to challenge`,
+                    )}
+                  </p>
+
+                  <div className="sd-workflow-tools" aria-label={t("Aperçu des outils", "Tool preview")}>
+                    {previewTools.map(({ slot, tool }) => {
                       const status = getToolDecisionStatus(slot);
                       return (
                         <button
@@ -954,120 +965,52 @@ const StackDetailPage = () => {
                       );
                     })}
                     {hiddenCount > 0 && <span className="sd-workflow-more">+{hiddenCount} {t("outils", "tools")}</span>}
-                    {visibleTools.length === 0 && <span className="sd-workflow-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>}
+                    {previewTools.length === 0 && <span className="sd-workflow-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>}
                   </div>
-                </section>
-              );
-            })}
-          </div>
 
-          <div className="sd-stack-essentials">
-            <div className="sd-stack-essentials-head">
-              <h3>{t("Le socle à garder", "The core to keep")}</h3>
-              <p>{t("Les outils qui portent la stack et servent le workflow principal.", "The tools that carry the stack and support the main workflow.")}</p>
-            </div>
-            <div className="sd-stack-chip-row" aria-label={t("Outils socle", "Core tools")}>
-              {coreTools.slice(0, 8).map(({ tool }) => (
-                <span key={tool!.slug} className="sd-stack-tool-chip">
-                  <span><ToolLogo tool={tool!} size={18} /></span>
-                  {tool!.name}
-                </span>
-              ))}
-              {coreTools.length > 8 && <span className="sd-stack-tool-chip sd-stack-tool-chip--more">+{coreTools.length - 8}</span>}
-            </div>
-          </div>
+                  {step.tools.length > 0 && (
+                    <button
+                      type="button"
+                      className="sd-workflow-detail-toggle"
+                      aria-expanded={isExpanded}
+                      aria-controls={`sd-workflow-detail-${step.id}`}
+                      onClick={() => toggleToolLayer(step.id)}
+                    >
+                      {isExpanded ? t("Masquer le détail", "Hide detail") : t("Voir le détail", "See detail")}
+                    </button>
+                  )}
 
-          {(conditionalTools.length > 0 || challengeTools.length > 0) && (
-            <div className="sd-stack-options">
-              <h3>{t("À activer selon le projet", "Activate depending on the project")}</h3>
-              <div className="sd-stack-options-grid">
-                {conditionalTools.length > 0 && (
-                  <div className="sd-stack-option-group">
-                    <span>{t("Conditionnel", "Conditional")}</span>
-                    <div className="sd-stack-mini-tools">
-                      {conditionalTools.slice(0, 8).map(({ tool }) => (
-                        <span key={tool!.slug} className="sd-stack-mini-tool">
-                          <ToolLogo tool={tool!} size={16} />
-                          {tool!.name}
-                        </span>
-                      ))}
-                      {conditionalTools.length > 8 && <span className="sd-stack-mini-tool sd-stack-mini-tool--more">+{conditionalTools.length - 8}</span>}
-                    </div>
-                  </div>
-                )}
-                {challengeTools.length > 0 && (
-                  <div className="sd-stack-option-group">
-                    <span>{t("À challenger", "To challenge")}</span>
-                    <div className="sd-stack-mini-tools">
-                      {challengeTools.slice(0, 8).map(({ tool }) => (
-                        <span key={tool!.slug} className="sd-stack-mini-tool">
-                          <ToolLogo tool={tool!} size={16} />
-                          {tool!.name}
-                        </span>
-                      ))}
-                      {challengeTools.length > 8 && <span className="sd-stack-mini-tool sd-stack-mini-tool--more">+{challengeTools.length - 8}</span>}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          <div className="sd-inventory">
-            <div className="sd-inventory-header">
-              <div>
-                <h3>{t("Inventaire complet", "Full inventory")}</h3>
-                <p>{t("Le détail reste accessible, mais il vient après la logique de workflow.", "The detail stays available, but it comes after the workflow logic.")}</p>
-              </div>
-              <span>{t(`${stackTools.length} outil${stackTools.length > 1 ? "s" : ""}`, `${stackTools.length} tool${stackTools.length > 1 ? "s" : ""}`)}</span>
-            </div>
-
-            {inventoryLayers.map((layer, layerIndex) => {
-              const sortedTools = sortToolsByDecision(layer.tools);
-              const isOpen = !isLongInventory || layerIndex === 0 || expandedToolLayers.has(layer.id);
-              return (
-                <div key={layer.id} className="sd-inventory-group">
-                  <button
-                    type="button"
-                    className="sd-inventory-toggle"
-                    aria-expanded={isOpen}
-                    aria-controls={`sd-tool-layer-${layer.id}`}
-                    onClick={() => toggleToolLayer(layer.id)}
-                    disabled={!isLongInventory}
-                  >
-                    <span>
-                      <strong>{t(layer.titleFr, layer.titleEn)}</strong>
-                      <small>{t(layer.purposeFr, layer.purposeEn)}</small>
-                    </span>
-                    <em>{t(`${layer.tools.length} outil${layer.tools.length > 1 ? "s" : ""}`, `${layer.tools.length} tool${layer.tools.length > 1 ? "s" : ""}`)}</em>
-                  </button>
-
-                  {isOpen && (
-                    <div id={`sd-tool-layer-${layer.id}`} className="sd-inventory-list">
-                      {sortedTools.map(({ slot, tool }) => {
-                        const status = getToolDecisionStatus(slot);
-                        const globalIndex = stackTools.findIndex((st) => st.slot.slug === slot.slug);
-                        return (
-                          <div key={slot.slug} className="sd-inventory-row">
-                            <button type="button" onClick={() => setSelectedIndex(globalIndex)} className="sd-inventory-tool">
-                              <span className="sd-inventory-logo"><ToolLogo tool={tool!} size={22} /></span>
-                              <span>
-                                <strong>{tool!.name}</strong>
-                                <small>{t(slot.role, slot.roleEn)}</small>
-                              </span>
-                            </button>
-                            <p>{t(slot.reason, slot.reasonEn)}</p>
-                            <div className="sd-inventory-action">
-                              <span>{getToolDecisionDisplay(status.key, lang)}</span>
-                              <small>{formatToolPrice(tool, lang)}</small>
-                              <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`}>{t("Fiche", "Details")} <span aria-hidden>→</span></Link>
-                            </div>
+                  {isExpanded && step.tools.length > 0 && (
+                    <div id={`sd-workflow-detail-${step.id}`} className="sd-workflow-detail">
+                      {groups.map((group) => (
+                        <div key={group.key} className="sd-workflow-detail-group">
+                          <span className="sd-workflow-detail-label">{getToolDecisionDisplay(group.key, lang)}</span>
+                          <div className="sd-workflow-detail-list">
+                            {group.tools.map(({ slot, tool }) => (
+                              <div key={slot.slug} className="sd-workflow-detail-row">
+                                <button
+                                  type="button"
+                                  className="sd-workflow-detail-tool"
+                                  onClick={() => setSelectedIndex(stackTools.findIndex((item) => item.slot.slug === slot.slug))}
+                                >
+                                  <span className="sd-workflow-detail-logo"><ToolLogo tool={tool!} size={18} /></span>
+                                  <span>
+                                    <strong>{tool!.name}</strong>
+                                    <small>{t(slot.role, slot.roleEn)}</small>
+                                  </span>
+                                </button>
+                                <span className="sd-workflow-detail-price">{formatToolPrice(tool, lang)}</span>
+                                <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-workflow-detail-link">
+                                  {t("Fiche", "Details")} <span aria-hidden>→</span>
+                                </Link>
+                              </div>
+                            ))}
                           </div>
-                        );
-                      })}
+                        </div>
+                      ))}
                     </div>
                   )}
-                </div>
+                </section>
               );
             })}
           </div>
@@ -1668,6 +1611,34 @@ function shouldKeepEmptyWorkflowStep(slug: string, stepId: string): boolean {
   if (slug === "designer-freelance-solo") return ["facturer", "prospecter", "automatiser"].includes(stepId);
   if (slug === "developpeur-freelance-shipper") return ["suivre", "automatiser"].includes(stepId);
   return false;
+}
+
+function getDefaultWorkflowStepId(slug: string): string {
+  if (slug === "architecte-interieur") return "3d";
+  if (slug === "developpeur-freelance-shipper") return "coder";
+  if (slug === "designer-freelance-solo") return "creer";
+  return "create";
+}
+
+function getWorkflowPreviewTools<T extends { slot: StackToolSlot }>(items: T[]): T[] {
+  const sorted = sortToolsByDecision(items);
+  const preferred = sorted.filter((item) => getToolDecisionStatus(item.slot).key !== "challenge");
+  const pool = preferred.length > 0 ? preferred : sorted;
+  return pool.slice(0, 3);
+}
+
+function getWorkflowStatusGroups<T extends { slot: StackToolSlot }>(items: T[]) {
+  const sorted = sortToolsByDecision(items);
+  const groupDefs: Array<{ key: "core" | "conditional" | "challenge"; tools: T[] }> = [
+    { key: "core", tools: [] },
+    { key: "conditional", tools: [] },
+    { key: "challenge", tools: [] },
+  ];
+  sorted.forEach((item) => {
+    const key = getToolDecisionStatus(item.slot).key;
+    groupDefs.find((group) => group.key === key)?.tools.push(item);
+  });
+  return groupDefs.filter((group) => group.tools.length > 0);
 }
 
 function normalizeDecisionName(value: string): string {
