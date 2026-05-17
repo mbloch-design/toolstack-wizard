@@ -587,7 +587,6 @@ const StackDetailPage = () => {
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
   const stack = STACKS.find((item) => item.slug === slug);
-  const stackSlug = stack?.slug;
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
 
   // Must be before conditional return (hooks rules)
@@ -672,9 +671,12 @@ const StackDetailPage = () => {
   }, [activeSection]);
 
   useEffect(() => {
-    if (!stackSlug) return;
-    setExpandedToolLayers(new Set([getDefaultWorkflowStepId(stackSlug)]));
-  }, [stackSlug]);
+    if (!stack) return;
+    const previewTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
+    const previewSteps = buildWorkflowSteps(stack, previewTools, lang);
+    const fallbackSteps = previewSteps.length > 0 ? previewSteps : buildFallbackWorkflowSteps(stack, previewTools, lang);
+    setExpandedToolLayers(new Set([getDefaultWorkflowStepId(stack.slug, fallbackSteps)]));
+  }, [lang, stack, toolBySlug]);
 
   if (!stack) return <Navigate to={`${prefix}/stacks`} replace />;
 
@@ -920,7 +922,7 @@ const StackDetailPage = () => {
             {t("La stack par workflow.", "The stack by workflow.")}
           </p>
           <p className="sd-tools-subtitle">
-            {t("On ne choisit pas des outils un par un. On construit une chaîne de travail : coder, montrer, documenter, livrer, encaisser.", "You do not choose tools one by one. You build a workflow chain: code, show, document, deliver, get paid.")}
+            {t("On ne choisit pas des outils un par un. On construit une chaîne de travail : produire, valider, livrer, encaisser.", "You do not choose tools one by one. You build a workflow chain: produce, validate, deliver, get paid.")}
           </p>
 
           <div className="sd-workflow-map sd-workflow-map--integrated" aria-label={t("Stack par workflow", "Stack by workflow")}>
@@ -1613,11 +1615,18 @@ function shouldKeepEmptyWorkflowStep(slug: string, stepId: string): boolean {
   return false;
 }
 
-function getDefaultWorkflowStepId(slug: string): string {
+function getDefaultWorkflowStepId(slug: string, steps: WorkflowStep[]): string {
   if (slug === "architecte-interieur") return "3d";
   if (slug === "developpeur-freelance-shipper") return "coder";
   if (slug === "designer-freelance-solo") return "creer";
-  return "create";
+  const ranked = steps
+    .map((step, index) => ({
+      id: step.id,
+      index,
+      coreCount: step.tools.filter(({ slot }) => getToolDecisionStatus(slot).key === "core").length,
+    }))
+    .sort((a, b) => b.coreCount - a.coreCount || a.index - b.index);
+  return ranked[0]?.id ?? steps[0]?.id ?? "";
 }
 
 function getWorkflowPreviewTools<T extends { slot: StackToolSlot }>(items: T[]): T[] {
