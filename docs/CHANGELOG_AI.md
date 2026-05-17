@@ -1696,3 +1696,18 @@ Adapter le principe `Stack by Layer` à ToolTrim sans copier StackShare : la sec
 ### Résultat
 - Le module reste unique : nodes workflow + détails intégrés.
 - Aucun inventaire séparé, table ou liste complète redondante n'est rendu sous la grille.
+
+---
+
+## 2026-05-17 — Sprint 40 : Reframing Stack by Workflow
+
+### Objectif
+Aligner le wording de `02 — OUTILS` sur le modèle mental `Stack by Workflow` : la section explique comment un freelance travaille, pas seulement quels outils sont groupés.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — titre `La stack par workflow`, sous-titre `On ne choisit pas des outils un par un...`, label accessible du module ajusté.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du framing.
+
+### Résultat
+- Le module reste unique : nodes workflow + disclosure intégré.
+- Aucun inventaire séparé, table ou matrice décisionnelle n'est rendu dans `02 — OUTILS`.

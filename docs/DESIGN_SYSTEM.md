@@ -1077,9 +1077,9 @@ Quand une section outils contient beaucoup d'entrées, ne pas afficher un workfl
 - Mobile : 1 colonne, détails empilés sans scroll horizontal.
 
 
-## Stack detail `Stack by workflow`
+## Stack detail `Stack by Workflow`
 
-Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTrim : il ne montre pas seulement ce qui est utilisé, il explique ce qu'il faut garder, activer selon projet ou challenger.
+Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTrim : il ne montre pas seulement ce qui est utilisé, il explique comment le freelance travaille et quels outils garder, activer selon projet ou challenger.
 
 **Contenu d'un node :**
 - Étape de workflow, numéro et usage court.
@@ -1088,4 +1088,4 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 - Disclosure `Voir le détail` pour afficher tous les outils de l'étape.
 
 **Règle de non-redondance :**
-`02 — OUTILS` ne doit pas rendre d'inventaire séparé sous la grille. Les détails complets vivent dans les nodes expansibles.
+`02 — OUTILS` est un seul module. Ne pas ajouter d'inventaire séparé, de table, de wall of cards ou de matrice décisionnelle sous la grille. Les détails complets vivent dans les nodes expansibles.

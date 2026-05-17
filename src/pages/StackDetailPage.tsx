@@ -917,13 +917,13 @@ const StackDetailPage = () => {
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("02 — OUTILS", "02 — TOOLS")}</span>
           <p className="sd-section-title sd-tools-title">
-            {t("La stack par étape.", "The stack by step.")}
+            {t("La stack par workflow.", "The stack by workflow.")}
           </p>
           <p className="sd-tools-subtitle">
-            {t("Chaque étape du travail a son socle, ses options et ses outils à challenger. Tu lis la stack comme un workflow, pas comme un annuaire.", "Each work step has its core, options, and tools to challenge. You read the stack as a workflow, not as a directory.")}
+            {t("On ne choisit pas des outils un par un. On construit une chaîne de travail : coder, montrer, documenter, livrer, encaisser.", "You do not choose tools one by one. You build a workflow chain: code, show, document, deliver, get paid.")}
           </p>
 
-          <div className="sd-workflow-map sd-workflow-map--integrated" aria-label={t("Stack par étape", "Stack by workflow layer")}>
+          <div className="sd-workflow-map sd-workflow-map--integrated" aria-label={t("Stack par workflow", "Stack by workflow")}>
             {stackLayers.map((step, index) => {
               const sortedTools = sortToolsByDecision(step.tools);
               const previewTools = getWorkflowPreviewTools(sortedTools);
