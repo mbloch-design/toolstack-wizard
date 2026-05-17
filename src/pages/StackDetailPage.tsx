@@ -699,6 +699,16 @@ const StackDetailPage = () => {
   const priorityEssential = lang === "fr" ? editorial.priority.essential : editorial.priority.essentialEn;
   const priorityOptional = lang === "fr" ? editorial.priority.optional : editorial.priority.optionalEn;
   const priorityChallenge = lang === "fr" ? editorial.priority.challenge : editorial.priority.challengeEn;
+  const usageChips = getUsageChips(stack, lang);
+  const pickDecisionMarkers = (labels: string[]) => labels.map((label) => {
+    const normalizedLabel = normalizeDecisionName(label);
+    const match = stackTools.find(({ tool }) => {
+      const normalizedTool = normalizeDecisionName(tool!.name);
+      return normalizedTool.includes(normalizedLabel) || normalizedLabel.includes(normalizedTool);
+    });
+    return { label, tool: match?.tool };
+  });
+  const toDecisionMarkers = (items: typeof stackTools) => items.slice(0, 6).map(({ tool }) => ({ label: tool!.name, tool }));
   const decisionKeep = coreTools.slice(0, 4).map(({ tool }) => tool!.name);
   const decisionChallenge = challengeTools.length > 0
     ? challengeTools.slice(0, 4).map(({ tool }) => tool!.name)
@@ -706,6 +716,69 @@ const StackDetailPage = () => {
   const decisionOptional = optionalTools.length > 0
     ? optionalTools.slice(0, 4).map(({ tool }) => tool!.name)
     : priorityOptional.slice(0, 3);
+  const decisionRows = stack.slug === "architecte-interieur"
+    ? [
+        {
+          key: "keep",
+          label: t("À garder", "Keep"),
+          markers: pickDecisionMarkers(["SketchUp Pro", "LayOut", "AutoCAD LT", "D5 Render"]),
+          main: t("Le socle qui porte la chaîne projet.", "The core that carries the project chain."),
+          support: t("Modèle, plans, échanges techniques et rendus rapides restent lisibles sans ouvrir une stack BIM lourde.", "Model, plans, technical exchanges, and fast renders stay readable without opening a heavy BIM stack."),
+          strong: true,
+        },
+        {
+          key: "optional",
+          label: t("Optionnel", "Optional"),
+          markers: pickDecisionMarkers(["Enscape", "V-Ray", "Twinmotion", "Fredo6 Bundle"]),
+          main: t("À activer seulement quand le livrable le demande.", "Activate only when the deliverable requires it."),
+          support: t("Ces outils renforcent l’image ou les détails, mais ne doivent pas devenir des abonnements réflexes.", "These tools strengthen imagery or details, but should not become reflex subscriptions."),
+        },
+        {
+          key: "challenge",
+          label: t("À challenger", "Challenge"),
+          markers: pickDecisionMarkers(["Moteurs de rendu secondaires", "Plugins rarement utilisés", "Abonnements liés à un chantier"]),
+          main: t("À surveiller selon le projet.", "Watch depending on the project."),
+          support: t("Moteurs de rendu secondaires, plugins rarement utilisés et abonnements liés à un seul chantier doivent rester justifiés.", "Secondary render engines, rarely used plugins, and one-project subscriptions must stay justified."),
+        },
+        {
+          key: "avoid",
+          label: t("À éviter", "Avoid"),
+          markers: pickDecisionMarkers(["Jira", "CRM lourd", "Suite produit complète"]),
+          main: t("Ce qui déplace la stack vers une logique d’équipe produit.", "What moves the stack toward a product-team setup."),
+          support: t("Si tu travailles seul ou en petit studio, ces couches ajoutent souvent plus de suivi que de clarté.", "If you work solo or in a small studio, these layers often add more tracking than clarity."),
+        },
+      ]
+    : [
+        {
+          key: "keep",
+          label: t("À garder", "Keep"),
+          markers: toDecisionMarkers(coreTools),
+          main: decisionKeep.length > 0 ? decisionKeep.join(" / ") : priorityEssential.join(" / "),
+          support: t("Les outils qui portent l’usage principal de cette stack.", "The tools that carry this stack’s main use case."),
+          strong: true,
+        },
+        {
+          key: "optional",
+          label: t("Optionnel", "Optional"),
+          markers: toDecisionMarkers(optionalTools),
+          main: decisionOptional.join(" / "),
+          support: t("Utile seulement si ton volume ou ton niveau de détail le justifie.", "Useful only if your volume or level of detail justifies it."),
+        },
+        {
+          key: "challenge",
+          label: t("À challenger", "Challenge"),
+          markers: toDecisionMarkers(challengeTools),
+          main: decisionChallenge.join(" / "),
+          support: t("À garder si l’usage est régulier, sinon à repousser ou remplacer.", "Keep if usage is regular; otherwise delay or replace."),
+        },
+        {
+          key: "avoid",
+          label: t("À éviter", "Avoid"),
+          markers: pickDecisionMarkers(["Jira", "CRM lourd", "Suite produit complète"]),
+          main: t("Jira, CRM lourd, suite produit complète si tu travailles seul.", "Jira, heavy CRM, full product suite if you work alone."),
+          support: t("Ces couches sont utiles en équipe structurée, rarement en stack solo légère.", "These layers are useful in structured teams, rarely in a light solo stack."),
+        },
+      ];
   const tooLightRows = lang === "fr"
     ? ["Tu gères plusieurs projets clients en parallèle.", "Tu as besoin de QA, staging ou monitoring avancé.", "Tu travailles avec plusieurs devs.", "Tu dois suivre des specs produit lourdes."]
     : ["You manage several client projects in parallel.", "You need advanced QA, staging, or monitoring.", "You work with several developers.", "You need to track heavy product specs."];
@@ -866,23 +939,33 @@ const StackDetailPage = () => {
             <span className="sd-section-eyebrow">{t("CE QU'ON GARDE, CE QU'ON ÉVITE", "WHAT WE KEEP, WHAT WE AVOID")}</span>
             <h2 id="stack-decision-summary" className="sd-decision-summary-title">{t("Simple par choix, pas par manque.", "Simple by choice, not by limitation.")}</h2>
           </div>
-          <div className="sd-decision-summary-grid">
-            <div className="sd-decision-summary-card">
-              <span className="sd-decision-summary-label">{t("À garder", "Keep")}</span>
-              <p>{decisionKeep.length > 0 ? decisionKeep.join(" / ") : priorityEssential.join(" / ")}</p>
-            </div>
-            <div className="sd-decision-summary-card">
-              <span className="sd-decision-summary-label">{t("Optionnel", "Optional")}</span>
-              <p>{decisionOptional.join(" / ")}</p>
-            </div>
-            <div className="sd-decision-summary-card">
-              <span className="sd-decision-summary-label">{t("À challenger", "Challenge")}</span>
-              <p>{decisionChallenge.join(" / ")}</p>
-            </div>
-            <div className="sd-decision-summary-card">
-              <span className="sd-decision-summary-label">{t("À éviter", "Avoid")}</span>
-              <p>{t("Jira, CRM lourd, suite produit complète si tu travailles seul.", "Jira, heavy CRM, full product suite if you work alone.")}</p>
-            </div>
+          <div className="sd-decision-summary-copy">
+            <p>{t("Une stack premium n’a pas besoin de tout ouvrir en même temps. Certains outils portent la chaîne, d’autres restent utiles seulement selon le projet.", "A premium stack does not need to open everything at once. Some tools carry the chain; others stay useful only depending on the project.")}</p>
+
+          </div>
+          <div className="sd-decision-matrix">
+            {decisionRows.map((row) => (
+              <div key={row.key} className={`sd-decision-matrix-row${row.strong ? " sd-decision-matrix-row--strong" : ""}`}>
+                <span className="sd-decision-summary-label">{row.label}</span>
+                <div>
+                  {row.markers.length > 0 && (
+                    <div className="sd-decision-logo-row">
+                      {row.markers.slice(0, 5).map((marker) => (
+                        <span key={marker.label} className="sd-decision-tool">
+                          <span className="sd-decision-logo-pill" aria-hidden={!marker.tool}>
+                            {marker.tool ? <ToolLogo tool={marker.tool} size={20} /> : getInitials(marker.label)}
+                          </span>
+                          <span className="sd-decision-tool-name">{marker.label}</span>
+                        </span>
+                      ))}
+                      {row.markers.length > 5 && <span className="sd-decision-logo-pill sd-decision-logo-more">+{row.markers.length - 5}</span>}
+                    </div>
+                  )}
+                  <p className="sd-decision-matrix-main">{row.main}</p>
+                  <p className="sd-decision-matrix-support">{row.support}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -920,6 +1003,14 @@ const StackDetailPage = () => {
           <p className="sd-overview-intro">
             {overviewIntro}
           </p>
+
+          {usageChips.length > 0 && (
+            <div className="sd-usage-chip-row sd-usage-chip-row--overview" aria-label={t("Usages couverts", "Covered use cases")}>
+              {usageChips.map((chip) => (
+                <span key={chip} className="sd-usage-chip">{chip}</span>
+              ))}
+            </div>
+          )}
 
           {/* 3-col: sert à / évite / pas faite pour */}
           <div className="sd-overview-grid">
@@ -1004,14 +1095,14 @@ const StackDetailPage = () => {
                         <p className="sd-tool-reason">{t(slot.reason, slot.reasonEn)}</p>
                         <span className="sd-tool-price">{formatToolPrice(tool, lang)}</span>
                       </button>
-                      <div className="sd-tool-action">
+                      <div className="sd-tool-decision-column">
                         <span className={`sd-tool-status sd-tool-status--${status.key}`}>
                           {t(status.labelFr, status.labelEn)}
                         </span>
-                        <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-tool-detail-link">
-                          {t("Fiche", "Details")} <span aria-hidden>→</span>
-                        </Link>
                       </div>
+                      <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-tool-detail-link">
+                        {t("Fiche", "Details")} <span aria-hidden>→</span>
+                      </Link>
                     </div>
                   );
                 })}
@@ -1472,6 +1563,32 @@ function formatToolPrice(tool: ToolSummary | undefined, locale: "fr" | "en") {
 }
 function getExpertTips(stack: StackGuide): StackInsight[] {
   return EXPERT_TIPS_BY_STACK[stack.slug] || EXPERT_TIPS_BY_PERSONA[stack.persona] || [];
+}
+function getUsageChips(stack: StackGuide, locale: "fr" | "en"): string[] {
+  if (stack.slug === "architecte-interieur") {
+    return locale === "fr"
+      ? ["Moodboard", "Plans 2D", "3D", "Rendus", "Sourcing", "Budget", "Validation client", "Facturation"]
+      : ["Moodboard", "2D plans", "3D", "Renders", "Sourcing", "Budget", "Client approval", "Invoicing"];
+  }
+  if (stack.slug === "developpeur-freelance-shipper") {
+    return locale === "fr"
+      ? ["Code", "Preview client", "Documentation", "Paiement", "Versioning", "IA", "Automatisation"]
+      : ["Code", "Client preview", "Documentation", "Payment", "Versioning", "AI", "Automation"];
+  }
+  return stack.objectives.slice(0, 7);
+}
+function normalizeDecisionName(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "")
+    .trim();
+}
+function getInitials(label: string): string {
+  const words = label.replace(/\//g, " ").split(/\s+/).filter(Boolean);
+  const initials = words.slice(0, 2).map((word) => word[0]).join("");
+  return initials.toUpperCase() || "?";
 }
 function getOverviewTitle(stack: StackGuide, locale: "fr" | "en"): string {
   if (stack.slug === "architecte-interieur") {

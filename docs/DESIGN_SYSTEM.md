@@ -99,6 +99,21 @@ La section `OUTILS RECOMMANDÉS` doit lire comme une liste de décisions, pas co
 
 ---
 
+
+## Marqueurs fiche stack — Rythme éditorial
+
+Les fiches stack utilisent plusieurs marqueurs réutilisables pour éviter l'effet “box on box”.
+
+- `.stack-dotted-divider` / `.sd-dotted-divider` : séparateur pointillé fin pour headers de catégories, matrices et modules denses.
+- `.sd-usage-chip` : chip d'usage large, 44px desktop, 38px mobile, utilisée comme carte rapide des usages couverts.
+- `.sd-decision-matrix` : matrice en lignes éditoriales, label à gauche, logos/outils et raison à droite.
+- `.sd-decision-logo-pill` : logo rond 34px, avec fallback initiales si le logo n'existe pas.
+- `.sd-tool-decision-column` : colonne décision dédiée dans les lignes outils, fond `#EDEDE8` translucide, sans code couleur rouge/vert.
+
+Les logos servent de points de données visuels. Le texte de décision reste toujours visible.
+
+---
+
 ## Composants CTA
 
 ### CTA primaire (black button)

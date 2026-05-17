@@ -2,6 +2,25 @@
 
 ---
 
+## 2026-05-17 — Stack detail : système éditorial, logos et lignes pointillées
+
+### Objectif
+Renforcer le langage UI des fiches stack avec des marqueurs ToolTrim plus reconnaissables : séparateurs pointillés, chips d'usage, matrice de décision avec logos et lignes outils plus éditoriales.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — chips d'usage, matrice décisionnelle avec logos/fallbacks, colonne décision dédiée dans les lignes outils.
+- `src/index.css` — utilitaire pointillé, chips larges, matrice éditoriale, colonne décision et rythme responsive.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — marqueurs réutilisables pour fiches stack.
+
+### Détails
+- Ajout des usages clés dans l'overview pour `architecte-interieur` et `developpeur-freelance-shipper`.
+- Remplacement des quatre cartes décision par des lignes éditoriales avec logos ou fallback textuel.
+- Ajout d'une colonne décision dédiée dans la liste d'outils, avec séparateurs pointillés.
+- Affinage du résumé hero avec séparateurs pointillés internes.
+
+---
+
 ## 2026-05-17 — Stack detail : outils recommandés en liste de décision
 
 ### Objectif
