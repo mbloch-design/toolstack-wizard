@@ -6228,6 +6228,23 @@
   }
 
   /* Sprint 32 — stack detail typography, spacing and layout pass */
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  #apercu,
+  #outils,
+  #budget,
+  #risques,
+  #calibrage,
+  #alternatives,
+  #faq {
+    scroll-margin-top: calc(var(--navbar-h, 68px) + 72px);
+  }
   .sd-container {
     width: min(calc(100% - 48px), 1240px);
     max-width: 1240px;
@@ -6235,6 +6252,74 @@
   }
   .sd-hero-section {
     border-bottom: none;
+  }
+  .sd-nav {
+    position: sticky;
+    top: var(--navbar-h, 68px);
+    z-index: 30;
+    height: 56px;
+    border-bottom: 1px solid #DADAD4;
+    background: rgba(248, 248, 244, 0.92);
+    backdrop-filter: blur(10px);
+  }
+  .sd-nav-inner {
+    width: min(calc(100% - 48px), 1240px);
+    max-width: 1240px;
+    height: 56px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sd-nav-inner::-webkit-scrollbar {
+    display: none;
+  }
+  .sd-nav-label {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    white-space: nowrap;
+  }
+  .sd-nav-link {
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    padding: 0 14px;
+    border: none;
+    border-radius: 999px;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
+    color: #6F6F68;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 140ms ease-out, background 140ms ease-out;
+  }
+  .sd-nav-link:hover {
+    color: #222222;
+    background: #FFFFFF;
+  }
+  .sd-nav-link:focus-visible {
+    outline: 2px solid #222222;
+    outline-offset: 2px;
+  }
+  .sd-nav-link--active,
+  .sd-nav-link--active:hover {
+    color: #FFFFFF;
+    background: #222222;
   }
   .sd-hero-grid {
     grid-template-columns: minmax(0, 1fr) 360px;
@@ -6517,6 +6602,30 @@
     }
   }
   @media (max-width: 767px) {
+    #apercu,
+    #outils,
+    #budget,
+    #risques,
+    #calibrage,
+    #alternatives,
+    #faq {
+      scroll-margin-top: calc(var(--navbar-h, 68px) + 64px);
+    }
+    .sd-nav,
+    .sd-nav-inner {
+      height: 52px;
+    }
+    .sd-nav-inner {
+      width: min(calc(100% - 32px), 1240px);
+    }
+    .sd-nav-label {
+      display: none;
+    }
+    .sd-nav-link {
+      height: 32px;
+      padding: 0 13px;
+      font-size: 13px;
+    }
     .sd-container,
     .sd-hero-grid,
     .sd-cta-inner {

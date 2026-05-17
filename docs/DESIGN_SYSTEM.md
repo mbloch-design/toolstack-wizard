@@ -971,3 +971,24 @@ Les pages détail stack utilisent une hiérarchie plus éditoriale que les listi
 - Section desktop : autour de `96px` vertical.
 - Section mobile : autour de `64px`.
 - Header vers contenu : `40px` environ.
+
+## Stack detail anchor navigation (`sd-nav`)
+
+La navigation interne des pages détail stack est une navigation d'ancre, pas des tabs.
+
+**Sémantique :**
+- Utiliser `<nav aria-label="Navigation de la page">`.
+- Les items restent de vrais liens `<a href="#section">`.
+- Ne pas utiliser `role="tablist"` / `role="tab"`.
+- Le lien actif expose `aria-current="location"`.
+
+**Style :**
+- Sticky sous le header : `top: var(--navbar-h, 68px)`.
+- Hauteur desktop : `56px`; mobile : `52px`.
+- Fond : `rgba(248,248,244,.92)` + `backdrop-filter: blur(10px)`.
+- Items en pilules sobres : actif noir `#222222`, texte blanc, aucun bleu.
+- Scroll horizontal interne sur mobile, pas de scroll horizontal page.
+
+**Ancrage :**
+- Les sections cibles utilisent `scroll-margin-top: calc(var(--navbar-h, 68px) + 72px)`.
+- Le smooth scroll est natif et désactivé avec `prefers-reduced-motion: reduce`.

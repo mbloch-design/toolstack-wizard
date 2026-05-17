@@ -1539,3 +1539,21 @@ Nettoyer la page `/fr/stacks/developpeur-freelance-shipper` sans toucher au temp
 - Le hero ne répète plus la même idée entre sous-titre et verdict.
 - La section décision devient `CE QU'ON GARDE, CE QU'ON ÉVITE` / `Simple par choix, pas par manque.`
 - Les tirets longs visibles dans les blocs de cette page sont remplacés par deux-points, phrases naturelles ou puces simples.
+
+---
+
+## 2026-05-17 — Sprint 34 : Navigation d'ancre détail stack
+
+### Objectif
+Rendre la navigation interne de `/fr/stacks/developpeur-freelance-shipper` plus claire et plus utile sans changer le contenu ni la structure des sections.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout d'un état actif `activeSection`, scrollspy via `IntersectionObserver`, `aria-current="location"`, label accessible `Navigation de la page` et libellé discret `Sur cette page`.
+- `src/index.css` — style segmenté compact, sticky sous le header, fond translucide avec blur, offset d'ancres et smooth scroll respectant `prefers-reduced-motion`.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du pattern d'ancre.
+
+### Résultat
+- La barre reste visible au scroll sans ressembler à une seconde navigation globale.
+- Le lien actif se met à jour au clic et au scroll.
+- Les ancres atterrissent sous le header sticky grâce à `scroll-margin-top`.
+- Sur mobile, la navigation reste horizontale avec scroll interne, sans scroll horizontal de page.

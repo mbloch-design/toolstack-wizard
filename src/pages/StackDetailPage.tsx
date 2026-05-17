@@ -593,6 +593,21 @@ const StackDetailPage = () => {
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [activeSection, setActiveSection] = useState("apercu");
+  const navItems = useMemo(() => {
+    if (!stack) return [];
+    const stackEditorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
+    const baseItems = [
+      { id: "apercu", label: lang === "fr" ? "Vue d'ensemble" : "Overview" },
+      { id: "outils", label: lang === "fr" ? "Outils" : "Tools" },
+      { id: "budget", label: "Budget" },
+      ...(stackEditorial.risks.length > 0 ? [{ id: "risques", label: lang === "fr" ? "Risques" : "Risks" }] : []),
+      { id: "calibrage", label: lang === "fr" ? "Calibrage" : "Calibration" },
+      ...(stackEditorial.altVariants.length > 0 ? [{ id: "alternatives", label: "Alternatives" }] : []),
+      { id: "faq", label: "FAQ" },
+    ];
+    return baseItems;
+  }, [lang, stack]);
 
   useEffect(() => {
     if (!stack) return;
@@ -614,6 +629,38 @@ const StackDetailPage = () => {
     });
     return () => cleanupSeo(["stack-detail-jsonld"]);
   }, [lang, stack, toolBySlug]);
+
+  useEffect(() => {
+    if (!stack || navItems.length === 0) return;
+    const sections = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter((section): section is HTMLElement => Boolean(section));
+    if (sections.length === 0) return;
+
+    const updateActiveSection = () => {
+      const offset = 68 + 56 + 24;
+      let current = sections[0].id;
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= offset) current = section.id;
+      });
+      setActiveSection(current);
+    };
+
+    const observer = new IntersectionObserver(updateActiveSection, {
+      rootMargin: "-148px 0px -58% 0px",
+      threshold: [0, 0.15, 0.45],
+    });
+
+    sections.forEach((section) => observer.observe(section));
+    updateActiveSection();
+
+    return () => observer.disconnect();
+  }, [navItems, stack]);
+
+  useEffect(() => {
+    const activeLink = document.querySelector<HTMLAnchorElement>(`.sd-nav-link[href="#${activeSection}"]`);
+    activeLink?.scrollIntoView({ block: "nearest", inline: "center" });
+  }, [activeSection]);
 
   if (!stack) return <Navigate to={`${prefix}/stacks`} replace />;
 
@@ -834,15 +881,20 @@ const StackDetailPage = () => {
       {/* ════════════════════════════════════════════════════════════════════
           SUBNAV
       ════════════════════════════════════════════════════════════════════ */}
-      <nav className="sd-nav" aria-label="Navigation de section">
+      <nav className="sd-nav" aria-label="Navigation de la page">
         <div className="sd-nav-inner">
-          <a className="sd-nav-link" href="#apercu">{t("Vue d'ensemble", "Overview")}</a>
-          <a className="sd-nav-link" href="#outils">{t("Outils", "Tools")}</a>
-          <a className="sd-nav-link" href="#budget">{t("Budget", "Budget")}</a>
-          {hasRisks && <a className="sd-nav-link" href="#risques">{t("Risques", "Risks")}</a>}
-          <a className="sd-nav-link" href="#calibrage">{t("Calibrage", "Calibration")}</a>
-          {hasAltVariants && <a className="sd-nav-link" href="#alternatives">{t("Alternatives", "Alternatives")}</a>}
-          <a className="sd-nav-link" href="#faq">FAQ</a>
+          <span className="sd-nav-label">{t("Sur cette page", "On this page")}</span>
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              className={`sd-nav-link${activeSection === item.id ? " sd-nav-link--active" : ""}`}
+              href={`#${item.id}`}
+              aria-current={activeSection === item.id ? "location" : undefined}
+              onClick={() => setActiveSection(item.id)}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       </nav>
 
