@@ -734,7 +734,7 @@ const StackDetailPage = () => {
                 height: 48, padding: "0 22px",
                 background: "#222222", color: "#FFFFFF",
                 borderRadius: 8, fontFamily: "var(--font-ui)",
-                fontSize: 15, fontWeight: 500, letterSpacing: "-0.01em",
+                fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em",
                 textDecoration: "none", transition: "background 160ms ease-out",
               }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
@@ -770,7 +770,7 @@ const StackDetailPage = () => {
             </div>
             <div className="sd-snapshot-item" style={{ alignItems: "flex-start" }}>
               <span className="sd-snapshot-label" style={{ marginTop: 2 }}>{t("Risque", "Risk")}</span>
-              <span className="sd-snapshot-value" style={{ fontSize: 12, maxWidth: 180, lineHeight: 1.4 }}>
+              <span className="sd-snapshot-value" style={{ fontSize: 13, maxWidth: 190, lineHeight: 1.35 }}>
                 {t(stack.riskSnippet ?? stack.risk, stack.riskSnippetEn ?? stack.riskEn)}
               </span>
             </div>
@@ -1118,7 +1118,7 @@ const StackDetailPage = () => {
           </p>
           <Link
             to={`${prefix}/selector`}
-            style={{ display: "inline-flex", alignItems: "center", height: 48, padding: "0 22px", background: "#222222", color: "#FFFFFF", borderRadius: 8, fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500, letterSpacing: "-0.01em", textDecoration: "none", transition: "background 160ms ease-out" }}
+            style={{ display: "inline-flex", alignItems: "center", height: 48, padding: "0 22px", background: "#222222", color: "#FFFFFF", borderRadius: 8, fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", textDecoration: "none", transition: "background 160ms ease-out" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
           >

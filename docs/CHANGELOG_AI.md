@@ -1503,3 +1503,21 @@ Transformer `/fr/stacks/developpeur-freelance-shipper` en page de décision : po
 - Les outils affichent logo, rôle, raison, prix/plan indicatif, décision et lien vers la fiche outil.
 - Le budget est présenté comme cible de calibration, sans promesse d'économie exacte.
 - Les fallbacks s'appuient sur `tools[]`, `decision`, `bestFor`, `avoidIf`, `monthlyBudget`, `stage` et `getStackDerivedFields`.
+
+---
+
+## 2026-05-17 — Sprint 32 : Typographie et rythme détail stack
+
+### Objectif
+Rendre `/fr/stacks/developpeur-freelance-shipper` plus contrôlé et scalable sans réécrire le contenu ni modifier la logique produit.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — micro-ajustement des CTA inline et de la métrique risque pour respecter l'échelle typographique.
+- `src/index.css` — surcouche `sd-*` pour H1, sous-titre hero, H2, corps, métadonnées, largeur de shell, grille hero, rows outils, labels décisionnels et espacements sectionnels.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du scale détail stack.
+
+### Résultat
+- Le H1 plafonne à 104px avec line-height plus serré, les H2 suivent un scale commun et les textes longs reviennent sur une lecture 16px / 1.5.
+- Le shell détail stack est limité à 1240px, avec une colonne résumé maîtrisée à 360px.
+- Les lignes outils gagnent en scannabilité : nom 18px, raison/rôle 15px, label décisionnel 11px en pastille sobre.
+- Les séparateurs pleine largeur du template sont adoucis au profit d'un rythme par espacements.

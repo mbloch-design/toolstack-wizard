@@ -944,3 +944,30 @@ La homepage doit garder un flux éditorial continu. Les sections se distinguent 
 - Le ticker conserve ses bordures fines, car elles font partie de son composant.
 - Les autres pages peuvent continuer à utiliser `es-section` avec bordures si leur structure le demande.
 - Les overrides de fluidité homepage doivent être scopés sous `.home-page`.
+
+## Stack detail typography scale (`sd-*`)
+
+Les pages détail stack utilisent une hiérarchie plus éditoriale que les listings : grand titre décisionnel, blocs de lecture limités, rows outils scannables.
+
+**Shell :**
+- `.sd-container`, `.sd-hero-grid`, `.sd-cta-inner` : `width: min(calc(100% - 48px), 1240px)` desktop.
+- Mobile : `width: min(calc(100% - 32px), 1240px)`.
+- Hero desktop : `minmax(0, 1fr) 360px`, gap `clamp(48px, 6vw, 96px)`.
+
+**Type scale :**
+- H1 stack : `clamp(56px, 6vw, 104px)`, line-height `0.92`, tracking `-0.065em`.
+- Sous-titre hero : `clamp(19px, 1.4vw, 23px)`, line-height `1.42`.
+- H2 section : `clamp(36px, 4vw, 64px)`, line-height `0.98`.
+- Body : `16px / 1.5`.
+- Verdict important : `18px / 1.45`, weight `500`.
+- Metadata : `13px / 1.35`.
+- CTA : `15px`, weight `600`.
+
+**Rows outils :**
+- Desktop : logo `48px`, nom `18px / 600`, rôle/raison `15px / 1.45`, prix `15px`.
+- Labels décisionnels : pastille 28px, `11px` uppercase, bordure sobre `#DADAD4`, sans code couleur rouge/vert.
+
+**Espacement :**
+- Section desktop : autour de `96px` vertical.
+- Section mobile : autour de `64px`.
+- Header vers contenu : `40px` environ.
