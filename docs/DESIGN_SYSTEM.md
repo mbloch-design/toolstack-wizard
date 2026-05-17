@@ -992,3 +992,23 @@ La navigation interne des pages détail stack est une navigation d'ancre, pas de
 **Ancrage :**
 - Les sections cibles utilisent `scroll-margin-top: calc(var(--navbar-h, 68px) + 72px)`.
 - Le smooth scroll est natif et désactivé avec `prefers-reduced-motion: reduce`.
+
+## Stack detail hero quick-read pattern
+
+Le hero d'une page stack detail doit lire comme un objet de décision, pas comme une fiche administrative.
+
+**Grille :**
+- Desktop : `minmax(0, 1fr) 380px`.
+- Gap : `clamp(64px, 7vw, 112px)`.
+- À partir de tablette/mobile, les colonnes se superposent et la carte résumé passe sous l'intro.
+
+**Côté gauche :**
+- Ordre : breadcrumb, eyebrow, H1, sous-titre court, phrase contexte, cartes fit/avoid, CTA.
+- Les cartes `stack-fit-*` remplacent le bloc tableau : fond blanc, bordure `#DADAD4`, rayon 14px, padding 22px.
+
+**Carte droite `sd-snapshot` :**
+- Budget en premier : valeur 40px, suffixe `/mois` en 16px.
+- Facts grid en 2 colonnes : Profil, Outils, Niveau, Complexité.
+- Bloc `À surveiller` limité à une phrase courte.
+- Bloc `Outils clés` : 5–6 logos visibles, pastilles 32px, puis `+N`.
+- Éviter les séparateurs ligne par ligne ; utiliser seulement des séparations de groupes.

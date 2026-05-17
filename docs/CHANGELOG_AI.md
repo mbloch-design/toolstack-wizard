@@ -1557,3 +1557,21 @@ Rendre la navigation interne de `/fr/stacks/developpeur-freelance-shipper` plus 
 - Le lien actif se met à jour au clic et au scroll.
 - Les ancres atterrissent sous le header sticky grâce à `scroll-margin-top`.
 - Sur mobile, la navigation reste horizontale avec scroll interne, sans scroll horizontal de page.
+
+---
+
+## 2026-05-17 — Sprint 35 : Hero détail stack, architecture décisionnelle
+
+### Objectif
+Renforcer le hero du template StackDetailPage sans réécrire la page : hiérarchie plus claire, fit/avoid moins tableau, carte droite moins administrative.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout d'une phrase contexte, remplacement du bloc `Idéal si / À éviter si` par deux cartes éditoriales, refonte de la carte `En un coup d'œil` en budget + facts grid + `À surveiller` + logos clés.
+- `src/index.css` — grille hero `1fr + 380px`, gap plus ample, cartes `stack-fit-*`, budget fort, facts grid, blocs internes espacés sans séparateurs ligne par ligne.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du nouveau pattern hero quick-read.
+
+### Résultat
+- Le hero lit d'abord le contexte, puis la décision, puis l'action.
+- La carte droite n'est plus une table d'administration : le budget devient l'ancre visuelle et les infos secondaires sont regroupées.
+- Les logos clés passent à 6 visibles maximum avec pastilles 32px et `+N`.
+- Le même template reste compatible avec les autres stacks, dont architecte d'intérieur.

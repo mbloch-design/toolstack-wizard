@@ -683,6 +683,11 @@ const StackDetailPage = () => {
     derived.complexity === "minimal" ? "minimal" : derived.complexity === "premium" ? "premium" : "balanced",
   );
   const budgetDisplay = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
+  const budgetParts = String(budgetDisplay).split("/");
+  const budgetAmount = budgetParts[0];
+  const budgetPeriod = budgetParts[1] ? `/${budgetParts.slice(1).join("/")}` : "";
+  const watchTextRaw = t(stack.riskSnippet ?? stack.risk, stack.riskSnippetEn ?? stack.riskEn);
+  const watchText = String(watchTextRaw).split(".")[0] + (String(watchTextRaw).includes(".") ? "." : "");
 
   const stackTools = stack.tools.map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
   const coreTools = stackTools.filter(({ slot }) => getToolDecisionStatus(slot).key === "core");
@@ -722,8 +727,8 @@ const StackDetailPage = () => {
     : stackLayersBase;
 
   // Logo pills (max 5) from tools that have a toolBySlug entry
-  const logoPills = stackTools.slice(0, 5);
-  const logoOverflow = stackTools.length > 5 ? stackTools.length - 5 : 0;
+  const logoPills = stackTools.slice(0, 6);
+  const logoOverflow = stackTools.length > 6 ? stackTools.length - 6 : 0;
 
   const hasRisks = editorial.risks.length > 0;
   const hasAltVariants = editorial.altVariants.length > 0;
@@ -760,19 +765,16 @@ const StackDetailPage = () => {
               {heroSubtitle}
             </p>
 
-            {/* Verdict court */}
-            {editorial.verdictShort && (
-              <p className="sd-hero-verdict">
-                {t(editorial.verdictShort, editorial.verdictShortEn)}
-              </p>
-            )}
+            <p className="sd-hero-context">
+              {t(stack.bestFor, stack.bestForEn)}
+            </p>
 
-            <div className="sd-hero-decision-grid" aria-label={t("Résumé de décision", "Decision summary") as string}>
-              <div>
+            <div className="stack-fit-grid" aria-label={t("Résumé de décision", "Decision summary") as string}>
+              <div className="stack-fit-card">
                 <span>{t("Idéal si", "Best for")}</span>
                 <p>{t(stack.bestFor, stack.bestForEn)}</p>
               </div>
-              <div>
+              <div className="stack-fit-card">
                 <span>{t("À éviter si", "Avoid if")}</span>
                 <p>{t(stack.avoidIf, stack.avoidIfEn)}</p>
               </div>
@@ -800,37 +802,41 @@ const StackDetailPage = () => {
           <div className="sd-snapshot">
             <span className="sd-snapshot-title">{t("EN UN COUP D'ŒIL", "AT A GLANCE")}</span>
 
-            <div className="sd-snapshot-item">
+            <div className="sd-snapshot-budget">
               <span className="sd-snapshot-label">{t("Budget cible", "Target budget")}</span>
-              <span className="sd-snapshot-value">{budgetDisplay}</span>
+              <p className="sd-snapshot-budget-value">
+                {budgetAmount}
+                {budgetPeriod && <span>{budgetPeriod}</span>}
+              </p>
             </div>
-            <div className="sd-snapshot-item">
-              <span className="sd-snapshot-label">{t("Profil", "Profile")}</span>
-              <span className="sd-snapshot-value">{personaText} · {subProfileText}</span>
+
+            <div className="sd-snapshot-facts" aria-label={t("Informations rapides", "Quick facts") as string}>
+              <div>
+                <span className="sd-snapshot-label">{t("Profil", "Profile")}</span>
+                <p>{personaText} · {subProfileText}</p>
+              </div>
+              <div>
+                <span className="sd-snapshot-label">{t("Outils", "Tools")}</span>
+                <p>{stack.tools.length}</p>
+              </div>
+              <div>
+                <span className="sd-snapshot-label">{t("Niveau", "Level")}</span>
+                <p>{levelText}</p>
+              </div>
+              <div>
+                <span className="sd-snapshot-label">{t("Complexité", "Complexity")}</span>
+                <p>{complexityText}</p>
+              </div>
             </div>
-            <div className="sd-snapshot-item">
-              <span className="sd-snapshot-label">{t("Outils", "Tools")}</span>
-              <span className="sd-snapshot-value">{stack.tools.length}</span>
-            </div>
-            <div className="sd-snapshot-item">
-              <span className="sd-snapshot-label">{t("Niveau", "Level")}</span>
-              <span className="sd-snapshot-value">{levelText}</span>
-            </div>
-            <div className="sd-snapshot-item">
-              <span className="sd-snapshot-label">{t("Complexité", "Complexity")}</span>
-              <span className="sd-snapshot-value">{complexityText}</span>
-            </div>
-            <div className="sd-snapshot-item" style={{ alignItems: "flex-start" }}>
-              <span className="sd-snapshot-label" style={{ marginTop: 2 }}>{t("Risque", "Risk")}</span>
-              <span className="sd-snapshot-value" style={{ fontSize: 13, maxWidth: 190, lineHeight: 1.35 }}>
-                {t(stack.riskSnippet ?? stack.risk, stack.riskSnippetEn ?? stack.riskEn)}
-              </span>
+
+            <div className="sd-snapshot-watch">
+              <span className="sd-snapshot-label">{t("À surveiller", "Watch")}</span>
+              <p>{watchText}</p>
             </div>
 
             {/* Logo pills */}
             {logoPills.length > 0 && (
-              <>
-                <hr className="sd-snapshot-divider" />
+              <div className="sd-snapshot-tools">
                 <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9A9A92", marginBottom: 10 }}>
                   {t("OUTILS CLÉS", "KEY TOOLS")}
                 </p>
@@ -844,7 +850,7 @@ const StackDetailPage = () => {
                     <div className="sd-logo-pill sd-logo-more">+{logoOverflow}</div>
                   )}
                 </div>
-              </>
+              </div>
             )}
           </div>
 

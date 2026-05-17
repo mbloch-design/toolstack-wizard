@@ -6322,8 +6322,8 @@
     background: #222222;
   }
   .sd-hero-grid {
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: clamp(48px, 6vw, 96px);
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: clamp(64px, 7vw, 112px);
     width: min(calc(100% - 48px), 1240px);
     max-width: 1240px;
     padding: 88px 0 72px;
@@ -6364,9 +6364,10 @@
     line-height: 1.42;
     letter-spacing: -0.02em;
     max-width: 760px;
-    margin-bottom: 18px;
+    margin-top: 28px;
+    margin-bottom: 0;
   }
-  .sd-hero-verdict,
+  .sd-hero-context,
   .sd-overview-text {
     font-size: 18px;
     line-height: 1.45;
@@ -6374,13 +6375,46 @@
     font-weight: 500;
     color: #222222;
   }
-  .sd-hero-verdict {
-    max-width: 680px;
-    margin-bottom: 32px;
+  .sd-hero-context {
+    font-size: 17px;
+    line-height: 1.45;
+    max-width: 740px;
+    margin: 24px 0 0;
   }
-  .sd-hero-decision-grid {
+  .stack-fit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
     max-width: 760px;
-    margin-bottom: 32px;
+    margin-top: 40px;
+  }
+  .stack-fit-card {
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .stack-fit-card span {
+    display: block;
+    margin-bottom: 12px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+  }
+  .stack-fit-card p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: #222222;
+  }
+  .stack-fit-grid + a {
+    margin-top: 32px;
   }
   .sd-hero-decision-grid p,
   .sd-decision-summary-card p,
@@ -6432,14 +6466,13 @@
   }
   .sd-snapshot {
     width: 100%;
-    max-width: 360px;
+    max-width: 380px;
     justify-self: end;
-    border-radius: 12px;
-    padding: 22px;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: none;
   }
-  .sd-snapshot-item {
-    padding: 12px 0;
-  }
+  .sd-snapshot-item { border-bottom: none; }
   .sd-snapshot-value,
   .sd-metric-hint,
   .sd-budget-note,
@@ -6454,6 +6487,73 @@
   .sd-snapshot-value,
   .sd-related-budget {
     color: #222222;
+  }
+  .sd-snapshot-budget-value {
+    margin: 8px 0 0;
+    font-family: var(--font-brand);
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+    color: #222222;
+  }
+  .sd-snapshot-budget-value span {
+    margin-left: 3px;
+    font-family: var(--font-ui);
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    color: #6F6F68;
+  }
+  .sd-snapshot-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #DADAD4;
+  }
+  .sd-snapshot-facts p {
+    margin: 6px 0 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    color: #222222;
+    overflow-wrap: anywhere;
+  }
+  .sd-snapshot-watch,
+  .sd-snapshot-tools {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #DADAD4;
+  }
+  .sd-snapshot-watch p {
+    margin: 8px 0 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    color: #222222;
+    text-align: left;
+  }
+  .sd-snapshot-tools .sd-logo-stack {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .sd-snapshot-tools .sd-logo-pill {
+    width: 32px;
+    height: 32px;
+    margin-left: 0;
+    background: #F8F8F4;
+    border-color: #DADAD4;
+  }
+  .sd-snapshot-tools .sd-logo-more {
+    font-size: 12px;
+    font-weight: 600;
   }
   .sd-metric-value {
     font-size: clamp(32px, 3vw, 48px);
@@ -6583,8 +6683,8 @@
 
   @media (max-width: 1100px) {
     .sd-hero-grid {
-      grid-template-columns: minmax(0, 1fr) 340px;
-      gap: 48px;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 56px;
     }
     .sd-tool-row-open {
       grid-template-columns: 48px minmax(0, 1fr) minmax(180px, 0.9fr) 110px auto;
@@ -6636,6 +6736,13 @@
     }
     .sd-hero-h1 {
       font-size: clamp(48px, 13vw, 68px);
+    }
+    .stack-fit-grid {
+      grid-template-columns: 1fr;
+      margin-top: 32px;
+    }
+    .stack-fit-card {
+      padding: 20px;
     }
     .sd-section {
       padding: 64px 0;
