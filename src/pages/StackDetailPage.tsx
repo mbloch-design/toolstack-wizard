@@ -710,21 +710,13 @@ const StackDetailPage = () => {
     ? ["Tu livres surtout des landing pages simples.", "Tu n'as pas encore de flux client régulier.", "Tu paies plusieurs outils pour la même étape.", "Tu utilises moins de la moitié des fonctions."]
     : ["You mostly ship simple landing pages.", "You do not have a steady client flow yet.", "You pay several tools for the same step.", "You use less than half of the features."];
 
-  // Persona-specific or default layers
-  const activeLayers = PERSONA_LAYERS[stack.persona] ?? STACK_LAYERS;
-  const stackLayersBase = activeLayers.map((layer) => ({
-    ...layer,
-    tools: stackTools.filter(({ slot }) => {
-      const role = `${slot.role} ${slot.roleEn}`.toLowerCase();
-      return layer.match.some((kw) => role.includes(kw));
-    }),
-  })).filter((layer) => layer.tools.length > 0);
-
-  const assignedSlugs = new Set(stackLayersBase.flatMap((l) => l.tools.map(({ slot }) => slot.slug)));
-  const unassignedTools = stackTools.filter(({ slot }) => !assignedSlugs.has(slot.slug));
-  const stackLayers = unassignedTools.length > 0
-    ? [...stackLayersBase, { id: "other", titleFr: "Autres outils utiles", titleEn: "Other useful tools", match: [], tools: unassignedTools }]
-    : stackLayersBase;
+  const workflowSteps = buildWorkflowSteps(stack, stackTools, lang);
+  const stackLayers = workflowSteps.length > 0 ? workflowSteps : buildFallbackWorkflowSteps(stack, stackTools, lang);
+  const inventoryLayers = stackLayers.filter((layer) => layer.tools.length > 0);
+  const coreTools = sortToolsByDecision(stackTools).filter(({ slot }) => getToolDecisionStatus(slot).key === "core");
+  const conditionalTools = sortToolsByDecision(stackTools).filter(({ slot }) => getToolDecisionStatus(slot).key === "conditional");
+  const challengeTools = sortToolsByDecision(stackTools).filter(({ slot }) => getToolDecisionStatus(slot).key === "challenge");
+  const isLongInventory = stackTools.length > 12;
   const toggleToolLayer = (layerId: string) => {
     setExpandedToolLayers((current) => {
       const next = new Set(current);
@@ -918,117 +910,167 @@ const StackDetailPage = () => {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
-          OUTILS — par groupe d'usage
+          OUTILS — chaîne de travail
       ════════════════════════════════════════════════════════════════════ */}
       <section id="outils" className="sd-section scroll-mt-20">
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("02 — OUTILS", "02 — TOOLS")}</span>
           <p className="sd-section-title sd-tools-title">
-            {t("Les outils, rangés par rôle.", "Tools, organized by role.")}
+            {t("La chaîne de travail.", "The workflow chain.")}
           </p>
           <p className="sd-tools-subtitle">
-            {t("Chaque catégorie couvre une étape du travail. Le socle sert tous les jours. Le conditionnel dépend du projet. Le reste se challenge.", "Each category covers a work step. The core is used every day. Conditional tools depend on the project. The rest gets challenged.")}
+            {t("Une stack complète ne se lit pas comme une liste d'outils. Elle se lit comme une suite d'étapes : produire, valider, livrer, encaisser.", "A complete stack is not read like a tool list. It is read as a sequence of steps: produce, validate, deliver, get paid.")}
           </p>
 
-          <div className="sd-stack-map" aria-label={t("Carte de la stack", "Stack map")}>
-            <div className="sd-stack-map-header">
-              <p>{t("Carte de la stack", "Stack map")}</p>
-              <span>{t(`${stackTools.length} outil${stackTools.length > 1 ? "s" : ""}`, `${stackTools.length} tool${stackTools.length > 1 ? "s" : ""}`)}</span>
-            </div>
-            <div className="sd-stack-map-grid">
-              {stackLayers.map((layer) => {
-                const summary = getLayerDecisionSummary(layer.tools);
-                const mapLogos = layer.tools.slice(0, 5);
-                const overflow = layer.tools.length > 5 ? layer.tools.length - 5 : 0;
-                return (
-                  <div key={layer.id} className="sd-stack-map-card">
-                    <div className="sd-stack-map-card-top">
-                      <p>{t(layer.titleFr, layer.titleEn)}</p>
-                      <span>{t(`${layer.tools.length} outil${layer.tools.length > 1 ? "s" : ""}`, `${layer.tools.length} tool${layer.tools.length > 1 ? "s" : ""}`)}</span>
-                    </div>
-                    <p className="sd-stack-map-breakdown">
-                      {t(`${summary.core} socle · ${summary.conditional} conditionnels · ${summary.challenge} à challenger`, `${summary.core} core · ${summary.conditional} conditional · ${summary.challenge} to challenge`)}
-                    </p>
-                    <div className="sd-stack-map-logos">
-                      {mapLogos.map(({ tool }) => (
-                        <span key={tool!.slug} className="sd-map-logo-pill">
-                          <ToolLogo tool={tool!} size={20} />
-                        </span>
-                      ))}
-                      {overflow > 0 && <span className="sd-map-logo-pill sd-map-logo-more">+{overflow}</span>}
-                    </div>
+          <div className="sd-workflow-map" aria-label={t("Chaîne de travail de la stack", "Stack workflow chain")}>
+            {stackLayers.map((step, index) => {
+              const sortedTools = sortToolsByDecision(step.tools);
+              const visibleTools = sortedTools.slice(0, 3);
+              const hiddenCount = sortedTools.length - visibleTools.length;
+              return (
+                <section key={step.id} className="sd-workflow-step" aria-label={t(step.titleFr, step.titleEn)}>
+                  {index > 0 && <span className="sd-workflow-connector" aria-hidden>→</span>}
+                  <div className="sd-workflow-step-head">
+                    <span className="sd-workflow-index">{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{t(step.titleFr, step.titleEn)}</h3>
                   </div>
-                );
-              })}
+                  <p className="sd-workflow-purpose">{t(step.purposeFr, step.purposeEn)}</p>
+                  <div className="sd-workflow-tools">
+                    {visibleTools.map(({ slot, tool }) => {
+                      const status = getToolDecisionStatus(slot);
+                      return (
+                        <button
+                          key={slot.slug}
+                          type="button"
+                          className="sd-workflow-tool"
+                          onClick={() => setSelectedIndex(stackTools.findIndex((item) => item.slot.slug === slot.slug))}
+                        >
+                          <span className="sd-workflow-logo"><ToolLogo tool={tool!} size={18} /></span>
+                          <span className="sd-workflow-tool-copy">
+                            <span>{tool!.name}</span>
+                            <small>{getToolDecisionDisplay(status.key, lang)}</small>
+                          </span>
+                        </button>
+                      );
+                    })}
+                    {hiddenCount > 0 && <span className="sd-workflow-more">+{hiddenCount} {t("outils", "tools")}</span>}
+                    {visibleTools.length === 0 && <span className="sd-workflow-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+
+          <div className="sd-stack-essentials">
+            <div className="sd-stack-essentials-head">
+              <h3>{t("Le socle à garder", "The core to keep")}</h3>
+              <p>{t("Les outils qui portent la stack et servent le workflow principal.", "The tools that carry the stack and support the main workflow.")}</p>
+            </div>
+            <div className="sd-stack-chip-row" aria-label={t("Outils socle", "Core tools")}>
+              {coreTools.slice(0, 8).map(({ tool }) => (
+                <span key={tool!.slug} className="sd-stack-tool-chip">
+                  <span><ToolLogo tool={tool!} size={18} /></span>
+                  {tool!.name}
+                </span>
+              ))}
+              {coreTools.length > 8 && <span className="sd-stack-tool-chip sd-stack-tool-chip--more">+{coreTools.length - 8}</span>}
             </div>
           </div>
 
-          {/* Layers */}
-          {stackLayers.map((layer) => {
-            const sortedTools = sortToolsByDecision(layer.tools);
-            const isExpanded = expandedToolLayers.has(layer.id);
-            const shouldCollapse = sortedTools.length > 8 && !isExpanded;
-            const visibleTools = shouldCollapse ? sortedTools.slice(0, 6) : sortedTools;
-            const hiddenCount = sortedTools.length - visibleTools.length;
-            return (
-            <div key={layer.id} className="sd-tool-layer">
-              <div className="sd-tool-layer-header">
-                <div>
-                  <p className="sd-tool-layer-title">
-                    {t(layer.titleFr, layer.titleEn)}
-                  </p>
-                  <p className="sd-tool-layer-purpose">{getLayerPurpose(layer.id, lang)}</p>
-                </div>
-                <span className="sd-tool-layer-count">
-                  {t(`${layer.tools.length} outil${layer.tools.length > 1 ? "s" : ""}`, `${layer.tools.length} tool${layer.tools.length > 1 ? "s" : ""}`)}
-                </span>
-              </div>
-
-              <div id={`sd-tool-layer-${layer.id}`}>
-                {visibleTools.map(({ slot, tool }) => {
-                  const status = getToolDecisionStatus(slot);
-                  const globalIndex = stackTools.findIndex((st) => st.slot.slug === slot.slug);
-                  return (
-                    <div key={slot.slug} className="sd-tool-row">
-                      <button type="button" onClick={() => setSelectedIndex(globalIndex)} className="sd-tool-row-open">
-                        <div className="sd-tool-main-copy">
-                          <div className="sd-tool-logo-box">
-                            <ToolLogo tool={tool!} size={28} />
-                          </div>
-                          <div>
-                            <p className="sd-tool-name">{tool!.name}</p>
-                            <p className="sd-tool-role">{t(slot.role, slot.roleEn)}</p>
-                          </div>
-                        </div>
-                        <p className="sd-tool-reason">{t(slot.reason, slot.reasonEn)}</p>
-                      </button>
-                      <div className="sd-tool-row-action">
-                        <span className={`sd-tool-status sd-tool-status--${status.key}`}>
-                          {getToolDecisionDisplay(status.key, lang)}
+          {(conditionalTools.length > 0 || challengeTools.length > 0) && (
+            <div className="sd-stack-options">
+              <h3>{t("À activer selon le projet", "Activate depending on the project")}</h3>
+              <div className="sd-stack-options-grid">
+                {conditionalTools.length > 0 && (
+                  <div className="sd-stack-option-group">
+                    <span>{t("Conditionnel", "Conditional")}</span>
+                    <div className="sd-stack-mini-tools">
+                      {conditionalTools.slice(0, 8).map(({ tool }) => (
+                        <span key={tool!.slug} className="sd-stack-mini-tool">
+                          <ToolLogo tool={tool!} size={16} />
+                          {tool!.name}
                         </span>
-                        <span className="sd-tool-price">{formatToolPrice(tool, lang)}</span>
-                        <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`} className="sd-tool-detail-link">
-                          {t("Fiche", "Details")} <span aria-hidden>→</span>
-                        </Link>
-                      </div>
+                      ))}
+                      {conditionalTools.length > 8 && <span className="sd-stack-mini-tool sd-stack-mini-tool--more">+{conditionalTools.length - 8}</span>}
                     </div>
-                  );
-                })}
+                  </div>
+                )}
+                {challengeTools.length > 0 && (
+                  <div className="sd-stack-option-group">
+                    <span>{t("À challenger", "To challenge")}</span>
+                    <div className="sd-stack-mini-tools">
+                      {challengeTools.slice(0, 8).map(({ tool }) => (
+                        <span key={tool!.slug} className="sd-stack-mini-tool">
+                          <ToolLogo tool={tool!} size={16} />
+                          {tool!.name}
+                        </span>
+                      ))}
+                      {challengeTools.length > 8 && <span className="sd-stack-mini-tool sd-stack-mini-tool--more">+{challengeTools.length - 8}</span>}
+                    </div>
+                  </div>
+                )}
               </div>
-              {hiddenCount > 0 && (
-                <button
-                  type="button"
-                  className="sd-tool-layer-more"
-                  aria-expanded={isExpanded}
-                  aria-controls={`sd-tool-layer-${layer.id}`}
-                  onClick={() => toggleToolLayer(layer.id)}
-                >
-                  {t(`Afficher les ${hiddenCount} autres outils`, `Show ${hiddenCount} more tools`)}
-                </button>
-              )}
             </div>
-          );
-          })}
+          )}
+
+          <div className="sd-inventory">
+            <div className="sd-inventory-header">
+              <div>
+                <h3>{t("Inventaire complet", "Full inventory")}</h3>
+                <p>{t("Le détail reste accessible, mais il vient après la logique de workflow.", "The detail stays available, but it comes after the workflow logic.")}</p>
+              </div>
+              <span>{t(`${stackTools.length} outil${stackTools.length > 1 ? "s" : ""}`, `${stackTools.length} tool${stackTools.length > 1 ? "s" : ""}`)}</span>
+            </div>
+
+            {inventoryLayers.map((layer, layerIndex) => {
+              const sortedTools = sortToolsByDecision(layer.tools);
+              const isOpen = !isLongInventory || layerIndex === 0 || expandedToolLayers.has(layer.id);
+              return (
+                <div key={layer.id} className="sd-inventory-group">
+                  <button
+                    type="button"
+                    className="sd-inventory-toggle"
+                    aria-expanded={isOpen}
+                    aria-controls={`sd-tool-layer-${layer.id}`}
+                    onClick={() => toggleToolLayer(layer.id)}
+                    disabled={!isLongInventory}
+                  >
+                    <span>
+                      <strong>{t(layer.titleFr, layer.titleEn)}</strong>
+                      <small>{t(layer.purposeFr, layer.purposeEn)}</small>
+                    </span>
+                    <em>{t(`${layer.tools.length} outil${layer.tools.length > 1 ? "s" : ""}`, `${layer.tools.length} tool${layer.tools.length > 1 ? "s" : ""}`)}</em>
+                  </button>
+
+                  {isOpen && (
+                    <div id={`sd-tool-layer-${layer.id}`} className="sd-inventory-list">
+                      {sortedTools.map(({ slot, tool }) => {
+                        const status = getToolDecisionStatus(slot);
+                        const globalIndex = stackTools.findIndex((st) => st.slot.slug === slot.slug);
+                        return (
+                          <div key={slot.slug} className="sd-inventory-row">
+                            <button type="button" onClick={() => setSelectedIndex(globalIndex)} className="sd-inventory-tool">
+                              <span className="sd-inventory-logo"><ToolLogo tool={tool!} size={22} /></span>
+                              <span>
+                                <strong>{tool!.name}</strong>
+                                <small>{t(slot.role, slot.roleEn)}</small>
+                              </span>
+                            </button>
+                            <p>{t(slot.reason, slot.reasonEn)}</p>
+                            <div className="sd-inventory-action">
+                              <span>{getToolDecisionDisplay(status.key, lang)}</span>
+                              <small>{formatToolPrice(tool, lang)}</small>
+                              <Link to={`${prefix}/tool/${tool!.slug || tool!.id}`}>{t("Fiche", "Details")} <span aria-hidden>→</span></Link>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -1506,6 +1548,128 @@ function getUsageChips(stack: StackGuide, locale: "fr" | "en"): string[] {
   // objectives is a derived field (not on StackGuide directly); compute it safely
   return getStackObjectives(stack).slice(0, 7);
 }
+
+interface WorkflowStepDefinition {
+  id: string;
+  titleFr: string;
+  titleEn: string;
+  purposeFr: string;
+  purposeEn: string;
+  match: string[];
+  slugs?: string[];
+}
+
+type WorkflowStep = WorkflowStepDefinition & {
+  tools: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>;
+};
+
+const WORKFLOW_STEPS_BY_STACK: Record<string, WorkflowStepDefinition[]> = {
+  "architecte-interieur": [
+    { id: "brief", titleFr: "Brief", titleEn: "Brief", purposeFr: "Cadrer la mission, les contraintes et les décisions de départ.", purposeEn: "Frame the mission, constraints, and starting decisions.", match: ["brief", "ia structure", "projet / décisions", "fichiers / emails", "rendez-vous"], slugs: ["notion", "google-workspace", "chatgpt", "calendly"] },
+    { id: "moodboard", titleFr: "Moodboard", titleEn: "Moodboard", purposeFr: "Rassembler références, ambiances, matières et directions visuelles.", purposeEn: "Gather references, moods, materials, and visual directions.", match: ["moodboard", "recherche visuelle", "bibliothèque images", "exploration visuelle", "ia ambiance", "retouche image"], slugs: ["milanote", "pinterest", "eagle", "krea-ai", "midjourney", "adobe-photoshop", "indesign"] },
+    { id: "plans", titleFr: "Plans", titleEn: "Plans", purposeFr: "Produire les documents techniques et les échanges DWG.", purposeEn: "Produce technical documents and DWG exchanges.", match: ["plans", "2d", "dwg", "layout"], slugs: ["layout-sketchup", "autocad-lt"] },
+    { id: "3d", titleFr: "3D", titleEn: "3D", purposeFr: "Construire le volume, les variantes et les détails récurrents.", purposeEn: "Build volumes, variants, and recurring details.", match: ["3d", "modélisation", "plugin", "hygiène", "géométrie", "formes complexes", "bim", "imports"], slugs: ["sketchup-pro", "fredo6-bundle", "profile-builder-3", "transmutr", "skatter", "cleanup3", "solid-inspector2", "rhino", "revit", "archicad", "blender"] },
+    { id: "rendu", titleFr: "Rendu", titleEn: "Render", purposeFr: "Présenter clairement le projet et ses ambiances.", purposeEn: "Present the project and its atmosphere clearly.", match: ["rendu", "image premium", "vidéo / ambiance", "upscale"], slugs: ["d5-render", "enscape", "v-ray", "twinmotion", "magnific-ai", "firefly"] },
+    { id: "sourcing", titleFr: "Sourcing", titleEn: "Sourcing", purposeFr: "Organiser matières, mobilier, fournisseurs et alternatives.", purposeEn: "Organize materials, furniture, suppliers, and alternatives.", match: ["sourcing", "ff&e"], slugs: ["programa"] },
+    { id: "budget", titleFr: "Budget", titleEn: "Budget", purposeFr: "Suivre les coûts et arbitrer sans perdre le fil.", purposeEn: "Track costs and make trade-offs without losing the thread.", match: ["budget", "projet / décisions"], slugs: ["notion", "programa"] },
+    { id: "validation", titleFr: "Validation", titleEn: "Approval", purposeFr: "Sécuriser les retours client et les décisions signées.", purposeEn: "Secure client feedback and signed decisions.", match: ["validation", "explication client", "signature"], slugs: ["loom", "yousign", "notion"] },
+    { id: "facturation", titleFr: "Facturation", titleEn: "Invoicing", purposeFr: "Encaisser proprement et garder l'administratif clair.", purposeEn: "Get paid cleanly and keep admin clear.", match: ["facturation", "compte pro", "compta"], slugs: ["indy", "qonto", "shine", "pennylane"] },
+  ],
+  "developpeur-freelance-shipper": [
+    { id: "coder", titleFr: "Coder", titleEn: "Code", purposeFr: "Produire le travail sans installer une stack produit complète.", purposeEn: "Produce the work without installing a full product stack.", match: ["code"], slugs: ["chatgpt"] },
+    { id: "versionner", titleFr: "Versionner", titleEn: "Version", purposeFr: "Garder une base propre, partageable et livrable.", purposeEn: "Keep a clean, shareable, shippable base.", match: ["repo", "github"], slugs: ["github"] },
+    { id: "preview", titleFr: "Preview client", titleEn: "Client preview", purposeFr: "Montrer une version réelle sans envoyer de zip.", purposeEn: "Show a real version without sending a zip.", match: ["preview", "déploiement", "deployment"], slugs: ["vercel"] },
+    { id: "documenter", titleFr: "Documenter", titleEn: "Document", purposeFr: "Centraliser brief, décisions et suivi client.", purposeEn: "Centralize brief, decisions, and client tracking.", match: ["base", "workspace", "documentation"], slugs: ["notion"] },
+    { id: "encaisser", titleFr: "Encaisser", titleEn: "Get paid", purposeFr: "Facturer et encaisser sans couche finance lourde.", purposeEn: "Invoice and get paid without a heavy finance layer.", match: ["paiement", "payment"], slugs: ["stripe"] },
+    { id: "suivre", titleFr: "Suivre", titleEn: "Track", purposeFr: "Suivre les tâches seulement quand le volume le justifie.", purposeEn: "Track tasks only when volume justifies it.", match: ["projet", "tasks", "tâches"], slugs: [] },
+    { id: "ia", titleFr: "IA", titleEn: "AI", purposeFr: "Accélérer debug, refactor et recherche sans multiplier les copilotes.", purposeEn: "Speed up debugging, refactoring, and research without multiplying copilots.", match: ["ia", "ai", "assistant"], slugs: ["chatgpt"] },
+    { id: "automatiser", titleFr: "Automatiser", titleEn: "Automate", purposeFr: "Automatiser uniquement les gestes déjà répétés.", purposeEn: "Automate only steps that are already repeated.", match: ["automatisation", "automation"], slugs: [] },
+  ],
+  "designer-freelance-solo": [
+    { id: "creer", titleFr: "Créer", titleEn: "Create", purposeFr: "Produire maquettes, composants, visuels et directions.", purposeEn: "Produce mockups, components, visuals, and directions.", match: ["design", "visuels", "créative", "vectoriel", "photo", "ia rédaction"], slugs: ["figma", "figma-tokens", "figma-iconify", "figma-stark", "canva", "adobe-photoshop", "adobe-illustrator", "adobe-lightroom", "chatgpt"] },
+    { id: "presenter", titleFr: "Présenter", titleEn: "Present", purposeFr: "Faire comprendre une piste et recueillir un retour clair.", purposeEn: "Make a direction understandable and collect clear feedback.", match: ["atelier", "prototype", "feedback"], slugs: ["miro", "framer", "loom"] },
+    { id: "decliner", titleFr: "Décliner", titleEn: "Adapt", purposeFr: "Transformer une direction en formats utiles sans recréer un système.", purposeEn: "Turn a direction into useful formats without recreating a system.", match: ["visuels rapides", "plugin"], slugs: ["canva", "figma-iconify", "figma-tokens"] },
+    { id: "livrer", titleFr: "Livrer", titleEn: "Deliver", purposeFr: "Transmettre fichiers, specs et éléments exploitables.", purposeEn: "Send files, specs, and usable assets.", match: ["stockage", "handoff", "documentation"], slugs: ["google-drive", "zeplin", "notion"] },
+    { id: "facturer", titleFr: "Facturer", titleEn: "Invoice", purposeFr: "Identifier si un outil dédié manque vraiment au workflow.", purposeEn: "Identify whether a dedicated tool is truly missing from the workflow.", match: ["facturation", "paiement"], slugs: [] },
+    { id: "organiser", titleFr: "Organiser", titleEn: "Organize", purposeFr: "Garder briefs, décisions, assets et comptes rendus au même endroit.", purposeEn: "Keep briefs, decisions, assets, and recaps in one place.", match: ["documentation", "stockage"], slugs: ["notion", "google-drive"] },
+    { id: "prospecter", titleFr: "Prospecter", titleEn: "Prospect", purposeFr: "Ne pas ajouter de CRM tant que le flux commercial reste simple.", purposeEn: "Avoid adding CRM while sales flow remains simple.", match: ["prospection", "crm"], slugs: [] },
+    { id: "automatiser", titleFr: "Automatiser", titleEn: "Automate", purposeFr: "Automatiser seulement les livrables et relances répétées.", purposeEn: "Automate only repeated deliverables and follow-ups.", match: ["automatisation"], slugs: [] },
+  ],
+};
+
+function buildWorkflowSteps(
+  stack: StackGuide,
+  stackTools: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>,
+  locale: "fr" | "en",
+): WorkflowStep[] {
+  const definitions = WORKFLOW_STEPS_BY_STACK[stack.slug];
+  if (!definitions) return [];
+  const assigned = new Set<string>();
+  const steps = definitions.map((definition) => {
+    const tools = stackTools.filter(({ slot }) => {
+      if (assigned.has(slot.slug)) return false;
+      const haystack = `${slot.slug} ${slot.role} ${slot.roleEn}`.toLowerCase();
+      const bySlug = definition.slugs?.includes(slot.slug) ?? false;
+      const byText = definition.match.some((keyword) => haystack.includes(keyword.toLowerCase()));
+      return bySlug || byText;
+    });
+    tools.forEach(({ slot }) => assigned.add(slot.slug));
+    return { ...definition, tools: sortToolsByDecision(tools) };
+  });
+  const unassigned = stackTools.filter(({ slot }) => !assigned.has(slot.slug));
+  const usefulSteps = steps.filter((step) => step.tools.length > 0 || shouldKeepEmptyWorkflowStep(stack.slug, step.id));
+  if (unassigned.length > 0) {
+    usefulSteps.push({
+      id: "complement",
+      titleFr: "Complément",
+      titleEn: "Complement",
+      purposeFr: locale === "fr" ? "Outils utiles qui ne portent pas une étape principale." : "Useful tools outside the main chain.",
+      purposeEn: "Useful tools outside the main chain.",
+      match: [],
+      tools: sortToolsByDecision(unassigned),
+    });
+  }
+  return usefulSteps;
+}
+
+function buildFallbackWorkflowSteps(
+  stack: StackGuide,
+  stackTools: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>,
+  locale: "fr" | "en",
+): WorkflowStep[] {
+  const activeLayers = PERSONA_LAYERS[stack.persona] ?? STACK_LAYERS;
+  const layersBase = activeLayers.map((layer) => ({
+    ...layer,
+    purposeFr: getLayerPurpose(layer.id, "fr"),
+    purposeEn: getLayerPurpose(layer.id, "en"),
+    tools: stackTools.filter(({ slot }) => {
+      const role = `${slot.role} ${slot.roleEn}`.toLowerCase();
+      return layer.match.some((keyword) => role.includes(keyword));
+    }),
+  })).filter((layer) => layer.tools.length > 0);
+  const assignedSlugs = new Set(layersBase.flatMap((layer) => layer.tools.map(({ slot }) => slot.slug)));
+  const unassignedTools = stackTools.filter(({ slot }) => !assignedSlugs.has(slot.slug));
+  const fallback = layersBase.map((layer) => ({ ...layer, tools: sortToolsByDecision(layer.tools) }));
+  if (unassignedTools.length > 0) {
+    fallback.push({
+      id: "other",
+      titleFr: "Autres étapes",
+      titleEn: "Other steps",
+      purposeFr: locale === "fr" ? "Outils utiles qui complètent le workflow." : "Useful tools that complete the workflow.",
+      purposeEn: "Useful tools that complete the workflow.",
+      match: [],
+      tools: sortToolsByDecision(unassignedTools),
+    });
+  }
+  return fallback;
+}
+
+function shouldKeepEmptyWorkflowStep(slug: string, stepId: string): boolean {
+  if (slug === "designer-freelance-solo") return ["facturer", "prospecter", "automatiser"].includes(stepId);
+  if (slug === "developpeur-freelance-shipper") return ["suivre", "automatiser"].includes(stepId);
+  return false;
+}
+
 function normalizeDecisionName(value: string): string {
   return value
     .toLowerCase()

@@ -1631,3 +1631,20 @@ Renforcer le hero du template StackDetailPage sans réécrire la page : hiérarc
 - La carte droite n'est plus une table d'administration : le budget devient l'ancre visuelle et les infos secondaires sont regroupées.
 - Les logos clés passent à 6 visibles maximum avec pastilles 32px et `+N`.
 - Le même template reste compatible avec les autres stacks, dont architecte d'intérieur.
+
+---
+
+## 2026-05-17 — Sprint 36 : Outils stack en chaîne de workflow
+
+### Objectif
+Remplacer la lecture table/cards de la section `02 — OUTILS` par une compréhension en 5 secondes : workflow d'abord, socle ensuite, inventaire complet en secondaire.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout d'un mapping de workflow par stack cible, rendu `La chaîne de travail`, blocs `Le socle à garder`, `À activer selon le projet` et inventaire complet secondaire.
+- `src/index.css` — styles des nodes workflow, connecteurs, chips de socle/options et inventaire compact.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du pattern.
+
+### Résultat
+- `/fr/stacks/architecte-interieur` lit désormais Brief → Moodboard → Plans → 3D → Rendu → Sourcing → Budget → Validation → Facturation.
+- `/fr/stacks/developpeur-freelance-shipper` et `/fr/stacks/designer-freelance-solo` utilisent la même logique de chaîne contextualisée.
+- Les outils Socle / Conditionnel / À challenger restent visibles, mais la liste complète n'est plus le premier contact avec la section.
