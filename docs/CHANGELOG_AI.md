@@ -2220,3 +2220,38 @@ Enrichir les pages comparatif avec un modèle éditorial ToolTrim capable d'expl
 - Le seuil de bascule devient une section dédiée.
 - Le coût réel distingue prix affiché, moment où payer et coût caché.
 - Les points d'attention décrivent erreur, conséquence et recommandation ToolTrim.
+
+---
+
+## 2026-05-18 — Sprint 51 : Comparatifs en battle utile
+
+### Objectif
+Transformer les pages comparatif en battles utiles : deux outils visibles face-à-face, verdict ToolTrim au centre, signaux d'adéquation qualitatifs et scores par usage sans notation opaque.
+
+### Fichiers modifiés
+- `src/pages/ComparePage.tsx` — hero battle face-à-face, fact sheet recentrée sur le choix, navigation sticky `Scores`, section `Scores par usage` et suppression du bloc cas d'usage redondant.
+- `src/index.css` — styles `cp-battle-*` et `cp-score-*`, fact sheet hero simplifiée en grille compacte.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du pattern battle utile et des scores qualitatifs.
+
+### Résultat
+- Le comparatif démarre par `quel outil est juste pour quel usage ?`, pas par une table.
+- Les scores restent éditoriaux : `Avantage`, `Suffisant`, `Dépend`.
+- Le flux suit : Verdict, Scores, Comparer, Seuil, Coût, Erreurs, Alternatives, FAQ.
+
+---
+
+## 2026-05-18 — Sprint 52 : Premiers comparatifs battle data
+
+### Objectif
+Brancher les premiers fichiers de données comparatif enrichies dans le rendu `ComparePage`, sans casser les fallbacks existants.
+
+### Fichiers modifiés
+- `src/data/comparison-battles/*.json` — ajout des fiches enrichies `chatgpt-vs-claude`, `notion-vs-airtable`, `figma-vs-canva`, `make-vs-zapier` et `webflow-vs-framer`.
+- `src/data/comparisonBattles.ts` — registre typé des fiches battle.
+- `src/pages/ComparePage.tsx` — adaptateur JSON vers le modèle éditorial ToolTrim existant.
+- `src/data/comparisons.ts` — ajout de `make-vs-zapier` et `webflow-vs-framer` dans les comparatifs accessibles.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du branchement des données battle.
+
+### Résultat
+- Les cinq premiers comparatifs utilisent maintenant leurs données de décision : choix rapide, scores par usage, table des écarts, seuil de bascule, coût réel, erreurs fréquentes et FAQ.
+- Les autres comparatifs gardent le fallback éditorial généré depuis les données outils.

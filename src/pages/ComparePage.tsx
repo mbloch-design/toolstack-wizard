@@ -7,6 +7,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
+import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 function findTool(tools: Tool[], idOrSlug: string): Tool | undefined {
@@ -28,12 +29,38 @@ function getLearningCurve(row?: CompareTableRow, lang: "fr" | "en" = "fr"): stri
 function getToolTrimRisk(content: CompareEditorialContent, lang: "fr" | "en"): string {
   return lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn;
 }
-function getBestForSignal(content: CompareEditorialContent, toolA: Tool, toolB: Tool, lang: "fr" | "en"): string {
-  const useCasesA = lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn;
-  const useCasesB = lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn;
-  const firstA = useCasesA[0] || (lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn);
-  const firstB = useCasesB[0] || (lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn);
-  return `${toolA.name}: ${firstA}. ${toolB.name}: ${firstB}.`;
+function getToolBestFor(content: CompareEditorialContent, side: "A" | "B", lang: "fr" | "en"): string {
+  if (side === "A") {
+    const useCases = lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn;
+    return useCases[0] || (lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn);
+  }
+  const useCases = lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn;
+  return useCases[0] || (lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn);
+}
+function getDefaultChoice(content: CompareEditorialContent, toolA: Tool, toolB: Tool, lang: "fr" | "en"): string {
+  const signal = [
+    lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn,
+    lang === "fr" ? content.tippingPoint.defaultChoice : content.tippingPoint.defaultChoiceEn,
+  ].join(" ").toLowerCase();
+  if (signal.includes(toolA.name.toLowerCase())) return toolA.name;
+  if (signal.includes(toolB.name.toLowerCase())) return toolB.name;
+  const priceA = getPriceNum(toolA);
+  const priceB = getPriceNum(toolB);
+  if (priceA !== priceB) return priceA <= priceB ? toolA.name : toolB.name;
+  return lang === "fr" ? "Selon usage" : "By use case";
+}
+function getCriterionLevels(criterion: CompareDecisiveCriterion, toolA: Tool, toolB: Tool, lang: "fr" | "en") {
+  const decision = (lang === "fr" ? criterion.decision : criterion.decisionEn).toLowerCase();
+  const hasA = decision.includes(toolA.name.toLowerCase());
+  const hasB = decision.includes(toolB.name.toLowerCase());
+  if (hasA && !hasB) return { toolA: "advantage", toolB: "sufficient", winner: "A" as const };
+  if (hasB && !hasA) return { toolA: "sufficient", toolB: "advantage", winner: "B" as const };
+  return { toolA: "context", toolB: "context", winner: "tie" as const };
+}
+function getLevelLabel(level: "advantage" | "sufficient" | "context", lang: "fr" | "en"): string {
+  if (level === "advantage") return lang === "fr" ? "Avantage" : "Advantage";
+  if (level === "sufficient") return lang === "fr" ? "Suffisant" : "Enough";
+  return lang === "fr" ? "Dépend" : "Depends";
 }
 function getBudgetSignal(toolA: Tool, toolB: Tool, lang: "fr" | "en"): string {
   const prices = [getPriceNum(toolA), getPriceNum(toolB)].filter((price) => price > 0);
@@ -163,6 +190,290 @@ interface CompareEditorialContent {
   /* ── Alternatives + FAQ ── */
   alternatives: CompareAlt[];
   faq: CompareFaqItem[];
+}
+
+interface BattleFit {
+  fit: string;
+  reason: string;
+}
+interface BattleUseCaseScore {
+  useCase: string;
+  toolA: BattleFit;
+  toolB: BattleFit;
+  winner: "toolA" | "toolB" | "tie" | "depends";
+  tooltrimDecision: string;
+}
+interface BattleRawData {
+  slug: string;
+  tools: {
+    toolA: {
+      name: string;
+      coreStrengths?: string[];
+      coreLimits?: string[];
+      freePlan?: { summary?: string };
+      paidPlans?: Array<{ name: string; priceMonthly: number | null; currency: string; billingUnit?: string }>;
+    };
+    toolB: {
+      name: string;
+      coreStrengths?: string[];
+      coreLimits?: string[];
+      freePlan?: { summary?: string };
+      paidPlans?: Array<{ name: string; priceMonthly: number | null; currency: string; billingUnit?: string }>;
+    };
+  };
+  comparison: {
+    falseSimilarity?: string;
+    mainDifference: string;
+    decisionSummary: string;
+    finalRecommendation?: string;
+    chooseAIf: string[];
+    chooseBIf: string[];
+    avoidBothIf?: string[];
+    scoreByUseCase?: BattleUseCaseScore[];
+    decisiveCriteria?: Array<{
+      label: string;
+      toolA: string;
+      toolB: string;
+      decision: string;
+    }>;
+    tippingPoint?: {
+      defaultPosition?: string;
+      switchWhen?: string;
+      keepBothIf?: string;
+      warning?: string;
+      examples?: string[];
+    };
+    costReality?: {
+      toolA?: {
+        freePlanReality?: string;
+        whenPaidBecomesNecessary?: string;
+        hiddenCost?: string;
+        pricingRisk?: string;
+      };
+      toolB?: {
+        freePlanReality?: string;
+        whenPaidBecomesNecessary?: string;
+        hiddenCost?: string;
+        pricingRisk?: string;
+      };
+      duplicateCostWarning?: string;
+      tooltrimNote?: string;
+    };
+    pitfalls?: Array<{
+      title: string;
+      consequence: string;
+      recommendation: string;
+    }>;
+  };
+  comparisonRows?: Array<{
+    criterion: string;
+    toolA: string;
+    toolB: string;
+    tooltrimDecision: string;
+    showInMainTable?: boolean;
+  }>;
+  related?: {
+    alternatives?: string[];
+    otherComparisons?: string[];
+  };
+  faq?: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+function asEnglishCopy(value: string): string {
+  return value;
+}
+function slugifyName(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+function getBattleWinner(decision: string, toolAName: string, toolBName: string): CompareTableRow["winner"] {
+  const normalized = decision.toLowerCase();
+  const hasA = normalized.includes(toolAName.toLowerCase());
+  const hasB = normalized.includes(toolBName.toLowerCase());
+  if (hasA && !hasB) return "A";
+  if (hasB && !hasA) return "B";
+  return "tie";
+}
+function formatPlanSummary(tool: BattleRawData["tools"]["toolA"]): string {
+  const free = tool.freePlan?.summary || "Plan gratuit ou prix à vérifier selon volume.";
+  const firstPaid = tool.paidPlans?.find((plan) => plan.priceMonthly && plan.priceMonthly > 0);
+  if (!firstPaid) return free;
+  return `${free} Premier plan payant : ${firstPaid.priceMonthly} ${firstPaid.currency}/mois.`;
+}
+function buildBattleEditorialContent(data: BattleRawData): CompareEditorialContent {
+  const toolAName = data.tools.toolA.name;
+  const toolBName = data.tools.toolB.name;
+  const comparison = data.comparison;
+  const avoidBoth = comparison.avoidBothIf?.[0] || "Aucun des deux si le besoin principal n'est pas encore récurrent.";
+  const scoreCriteria = comparison.scoreByUseCase?.length
+    ? comparison.scoreByUseCase.map((score) => ({
+        title: score.useCase,
+        toolA: score.toolA.reason,
+        toolB: score.toolB.reason,
+        decision: score.tooltrimDecision,
+      }))
+    : comparison.decisiveCriteria || [];
+  const tableRows = (data.comparisonRows || [])
+    .filter((row) => row.showInMainTable !== false)
+    .slice(0, 8)
+    .map((row) => {
+      const winner = getBattleWinner(row.tooltrimDecision, toolAName, toolBName);
+      return {
+        criterion: row.criterion,
+        criterionEn: asEnglishCopy(row.criterion),
+        toolA: row.toolA,
+        toolAEn: asEnglishCopy(row.toolA),
+        toolB: row.toolB,
+        toolBEn: asEnglishCopy(row.toolB),
+        winner,
+        verdictLabel: row.tooltrimDecision,
+        verdictLabelEn: asEnglishCopy(row.tooltrimDecision),
+      };
+    });
+  const fallbackRows = scoreCriteria.slice(0, 8).map((criterion) => {
+    const winner = getBattleWinner(criterion.decision, toolAName, toolBName);
+    return {
+      criterion: criterion.title,
+      criterionEn: asEnglishCopy(criterion.title),
+      toolA: criterion.toolA,
+      toolAEn: asEnglishCopy(criterion.toolA),
+      toolB: criterion.toolB,
+      toolBEn: asEnglishCopy(criterion.toolB),
+      winner,
+      verdictLabel: criterion.decision,
+      verdictLabelEn: asEnglishCopy(criterion.decision),
+    };
+  });
+  const cost = comparison.costReality;
+  const tipping = comparison.tippingPoint;
+  const alternatives = [
+    ...(data.related?.alternatives || []),
+    ...(data.related?.otherComparisons || []),
+  ].slice(0, 6);
+
+  return {
+    framing: comparison.falseSimilarity || comparison.mainDifference,
+    framingEn: asEnglishCopy(comparison.falseSimilarity || comparison.mainDifference),
+    verdictShort: comparison.decisionSummary,
+    verdictShortEn: asEnglishCopy(comparison.decisionSummary),
+    finalRecommendation: comparison.finalRecommendation || comparison.decisionSummary,
+    finalRecommendationEn: asEnglishCopy(comparison.finalRecommendation || comparison.decisionSummary),
+    quickVerdictA: comparison.chooseAIf.join(" "),
+    quickVerdictAEn: asEnglishCopy(comparison.chooseAIf.join(" ")),
+    quickVerdictB: comparison.chooseBIf.join(" "),
+    quickVerdictBEn: asEnglishCopy(comparison.chooseBIf.join(" ")),
+    quickVerdictAvoid: avoidBoth,
+    quickVerdictAvoidEn: asEnglishCopy(avoidBoth),
+    toolADesc: data.tools.toolA.coreStrengths?.join(" ") || comparison.chooseAIf.join(" "),
+    toolADescEn: asEnglishCopy(data.tools.toolA.coreStrengths?.join(" ") || comparison.chooseAIf.join(" ")),
+    toolAUseCases: comparison.chooseAIf,
+    toolAUseCasesEn: comparison.chooseAIf.map(asEnglishCopy),
+    toolBDesc: data.tools.toolB.coreStrengths?.join(" ") || comparison.chooseBIf.join(" "),
+    toolBDescEn: asEnglishCopy(data.tools.toolB.coreStrengths?.join(" ") || comparison.chooseBIf.join(" ")),
+    toolBUseCases: comparison.chooseBIf,
+    toolBUseCasesEn: comparison.chooseBIf.map(asEnglishCopy),
+    tableRows: tableRows.length > 0 ? tableRows : fallbackRows,
+    prosA: data.tools.toolA.coreStrengths?.slice(0, 4) || comparison.chooseAIf,
+    prosAEn: (data.tools.toolA.coreStrengths?.slice(0, 4) || comparison.chooseAIf).map(asEnglishCopy),
+    limitsA: data.tools.toolA.coreLimits?.slice(0, 4) || [],
+    limitsAEn: (data.tools.toolA.coreLimits?.slice(0, 4) || []).map(asEnglishCopy),
+    prosB: data.tools.toolB.coreStrengths?.slice(0, 4) || comparison.chooseBIf,
+    prosBEn: (data.tools.toolB.coreStrengths?.slice(0, 4) || comparison.chooseBIf).map(asEnglishCopy),
+    limitsB: data.tools.toolB.coreLimits?.slice(0, 4) || [],
+    limitsBEn: (data.tools.toolB.coreLimits?.slice(0, 4) || []).map(asEnglishCopy),
+    decisionRows: [
+      ...comparison.chooseAIf.slice(0, 3).map((context) => ({ context, contextEn: asEnglishCopy(context), choice: toolAName, choiceEn: toolAName })),
+      ...comparison.chooseBIf.slice(0, 3).map((context) => ({ context, contextEn: asEnglishCopy(context), choice: toolBName, choiceEn: toolBName })),
+    ],
+    decisiveCriteria: scoreCriteria.slice(0, 6).map((criterion) => ({
+      title: criterion.title,
+      titleEn: asEnglishCopy(criterion.title),
+      toolA: criterion.toolA,
+      toolAEn: asEnglishCopy(criterion.toolA),
+      toolB: criterion.toolB,
+      toolBEn: asEnglishCopy(criterion.toolB),
+      decision: criterion.decision,
+      decisionEn: asEnglishCopy(criterion.decision),
+    })),
+    tippingPoint: {
+      title: "Le seuil de bascule",
+      titleEn: "The tipping point",
+      defaultChoice: tipping?.defaultPosition || comparison.decisionSummary,
+      defaultChoiceEn: asEnglishCopy(tipping?.defaultPosition || comparison.decisionSummary),
+      switchWhen: tipping?.switchWhen || comparison.mainDifference,
+      switchWhenEn: asEnglishCopy(tipping?.switchWhen || comparison.mainDifference),
+      signals: [tipping?.keepBothIf, tipping?.warning, ...(tipping?.examples || [])].filter((item): item is string => Boolean(item)).slice(0, 5),
+      signalsEn: [tipping?.keepBothIf, tipping?.warning, ...(tipping?.examples || [])].filter((item): item is string => Boolean(item)).slice(0, 5).map(asEnglishCopy),
+    },
+    costReality: [
+      {
+        label: "Plan gratuit",
+        labelEn: "Free plan",
+        toolA: cost?.toolA?.freePlanReality || data.tools.toolA.freePlan?.summary || "À vérifier selon volume.",
+        toolAEn: asEnglishCopy(cost?.toolA?.freePlanReality || data.tools.toolA.freePlan?.summary || "Check by volume."),
+        toolB: cost?.toolB?.freePlanReality || data.tools.toolB.freePlan?.summary || "À vérifier selon volume.",
+        toolBEn: asEnglishCopy(cost?.toolB?.freePlanReality || data.tools.toolB.freePlan?.summary || "Check by volume."),
+        recommendation: cost?.tooltrimNote || "Ne paie que si l'usage est régulier et distinct.",
+        recommendationEn: asEnglishCopy(cost?.tooltrimNote || "Only pay when usage is regular and distinct."),
+      },
+      {
+        label: "Quand payer",
+        labelEn: "When to pay",
+        toolA: cost?.toolA?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolA),
+        toolAEn: asEnglishCopy(cost?.toolA?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolA)),
+        toolB: cost?.toolB?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolB),
+        toolBEn: asEnglishCopy(cost?.toolB?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolB)),
+        recommendation: cost?.duplicateCostWarning || "Auditer avant de payer les deux.",
+        recommendationEn: asEnglishCopy(cost?.duplicateCostWarning || "Audit before paying for both."),
+      },
+      {
+        label: "Coût caché",
+        labelEn: "Hidden cost",
+        toolA: cost?.toolA?.hiddenCost || cost?.toolA?.pricingRisk || "Temps de setup et maintenance.",
+        toolAEn: asEnglishCopy(cost?.toolA?.hiddenCost || cost?.toolA?.pricingRisk || "Setup and maintenance time."),
+        toolB: cost?.toolB?.hiddenCost || cost?.toolB?.pricingRisk || "Temps de setup et maintenance.",
+        toolBEn: asEnglishCopy(cost?.toolB?.hiddenCost || cost?.toolB?.pricingRisk || "Setup and maintenance time."),
+        recommendation: cost?.duplicateCostWarning || "Le coût réel inclut le doublon et le temps perdu.",
+        recommendationEn: asEnglishCopy(cost?.duplicateCostWarning || "Real cost includes duplication and lost time."),
+      },
+    ],
+    tooltrimRisks: (comparison.pitfalls || []).map((pitfall) => ({
+      mistake: pitfall.title,
+      mistakeEn: asEnglishCopy(pitfall.title),
+      consequence: pitfall.consequence,
+      consequenceEn: asEnglishCopy(pitfall.consequence),
+      recommendation: pitfall.recommendation,
+      recommendationEn: asEnglishCopy(pitfall.recommendation),
+    })),
+    profiles: [],
+    pricingFraming: cost?.tooltrimNote || comparison.mainDifference,
+    pricingFramingEn: asEnglishCopy(cost?.tooltrimNote || comparison.mainDifference),
+    pricingToolANotes: formatPlanSummary(data.tools.toolA),
+    pricingToolANotesEn: asEnglishCopy(formatPlanSummary(data.tools.toolA)),
+    pricingToolBNotes: formatPlanSummary(data.tools.toolB),
+    pricingToolBNotesEn: asEnglishCopy(formatPlanSummary(data.tools.toolB)),
+    pricingReco: cost?.duplicateCostWarning || "Vérifier le coût réel selon volume, sièges et usage hebdomadaire.",
+    pricingRecoEn: asEnglishCopy(cost?.duplicateCostWarning || "Check real cost by volume, seats, and weekly usage."),
+    alternatives: alternatives.map((name) => ({
+      slug: slugifyName(name),
+      name,
+      reason: "Option proche à regarder si le duel ne colle pas à ton usage.",
+      reasonEn: "Nearby option to check if this battle does not fit your use case.",
+    })),
+    faq: (data.faq || []).map((item) => ({
+      q: item.question,
+      qEn: asEnglishCopy(item.question),
+      a: item.answer,
+      aEn: asEnglishCopy(item.answer),
+    })),
+  };
 }
 
 /* ─── Notion vs Airtable editorial content ───────────────────────────────── */
@@ -944,15 +1255,20 @@ const ComparePage = () => {
     );
   }
 
-  const content = EDITORIAL_CONTENT[slugPair ?? ""] ?? buildFallbackContent(toolA, toolB, lang);
+  const battleData = slugPair && slugPair in BATTLE_COMPARISON_DATA
+    ? BATTLE_COMPARISON_DATA[slugPair as BattleComparisonSlug] as BattleRawData
+    : undefined;
+  const content = battleData
+    ? buildBattleEditorialContent(battleData)
+    : EDITORIAL_CONTENT[slugPair ?? ""] ?? buildFallbackContent(toolA, toolB, lang);
 
   const framing = lang === "fr" ? content.framing : content.framingEn;
   const verdictShort = lang === "fr" ? content.verdictShort : content.verdictShortEn;
   const learningCurveRow = content.tableRows.find((row) => row.criterion === "Prise en main" || row.criterionEn === "Learning curve");
   const decisionTableRows = getDecisionTableRows(content.tableRows);
-  const useCasesA = (lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn).slice(0, 4);
-  const useCasesB = (lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn).slice(0, 4);
-  const bestForSignal = getBestForSignal(content, toolA, toolB, lang);
+  const bestForA = getToolBestFor(content, "A", lang);
+  const bestForB = getToolBestFor(content, "B", lang);
+  const defaultChoice = getDefaultChoice(content, toolA, toolB, lang);
   const budgetSignal = getBudgetSignal(toolA, toolB, lang);
   const levelSignal = getLearningCurve(learningCurveRow, lang);
   const riskSignal = getToolTrimRisk(content, lang);
@@ -965,12 +1281,11 @@ const ComparePage = () => {
   }));
   const navSections: CompareNavSection[] = [
     { id: "verdict", label: t("Verdict", "Verdict") },
-    { id: "criteres", label: t("Critères", "Criteria") },
+    { id: "scores", label: t("Scores", "Scores") },
     { id: "comparaison", label: t("Comparer", "Compare") },
-    { id: "cas-usages", label: t("Cas d'usage", "Use cases") },
     { id: "seuil", label: t("Seuil", "Threshold") },
     { id: "cout", label: t("Coût", "Cost") },
-    { id: "vigilance", label: t("Attention", "Watchouts") },
+    { id: "vigilance", label: t("Erreurs", "Mistakes") },
     ...(altTools.length > 0 ? [{ id: "alternatives", label: t("Alternatives", "Alternatives") }] : []),
     { id: "faq", label: "FAQ" },
   ];
@@ -995,18 +1310,56 @@ const ComparePage = () => {
 
           <p className="cp-hero-promise">{framing}</p>
 
+          <div className="cp-battle-stage" aria-label={t("Battle utile", "Useful battle")}>
+            <article className="cp-battle-card">
+              <div className="cp-battle-card-head">
+                <div className="cp-battle-logo"><ToolLogo tool={toolA} size={34} /></div>
+                <div>
+                  <p className="cp-battle-name">{toolA.name}</p>
+                  <span className="cp-battle-label">{t("Recommandé pour", "Recommended for")}</span>
+                </div>
+              </div>
+              <p className="cp-battle-best">{bestForA}</p>
+              <div className="cp-battle-fit">
+                <span>{t("Signal d'adéquation", "Fit signal")}</span>
+                <strong>{t("Fort selon usage", "Strong by use case")}</strong>
+              </div>
+            </article>
+
+            <div className="cp-battle-center" aria-label={t("Verdict ToolTrim", "ToolTrim verdict")}>
+              <span>VS</span>
+              <p>{t("Verdict ToolTrim", "ToolTrim verdict")}</p>
+              <strong>{lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn}</strong>
+            </div>
+
+            <article className="cp-battle-card">
+              <div className="cp-battle-card-head">
+                <div className="cp-battle-logo"><ToolLogo tool={toolB} size={34} /></div>
+                <div>
+                  <p className="cp-battle-name">{toolB.name}</p>
+                  <span className="cp-battle-label">{t("Recommandé pour", "Recommended for")}</span>
+                </div>
+              </div>
+              <p className="cp-battle-best">{bestForB}</p>
+              <div className="cp-battle-fit">
+                <span>{t("Signal d'adéquation", "Fit signal")}</span>
+                <strong>{t("Fort selon usage", "Strong by use case")}</strong>
+              </div>
+            </article>
+          </div>
+
           <div className="cp-hero-fact-sheet" aria-label={t("Résumé du choix", "Decision summary")}>
             <div className="cp-hero-fact">
-              <span>{t("Outil A", "Tool A")}</span>
-              <p>{toolA.name}</p>
-            </div>
-            <div className="cp-hero-fact">
-              <span>{t("Outil B", "Tool B")}</span>
-              <p>{toolB.name}</p>
+              <span>{t("Par défaut", "Default")}</span>
+              <p>{defaultChoice}</p>
             </div>
             <div className="cp-hero-fact cp-hero-fact--wide">
-              <span>{t("Meilleur pour", "Best for")}</span>
-              <p>{bestForSignal}</p>
+              <span>{toolA.name}</span>
+              <p>{bestForA}</p>
+            </div>
+            <div className="cp-hero-fact cp-hero-fact--wide">
+              <span>{toolB.name}</span>
+              <p>{bestForB}</p>
             </div>
             <div className="cp-hero-fact">
               <span>{t("Budget", "Budget")}</span>
@@ -1059,31 +1412,46 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── Critères décisifs ─────────────────────────────────────────────── */}
-      <section id="criteres" className="cp-section scroll-mt-20">
+      {/* ── Scores par usage ──────────────────────────────────────────────── */}
+      <section id="scores" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("02 — Critères", "02 — Criteria")}</span>
-          <p className="cp-title">{t("Ce qui change vraiment.", "What really changes.")}</p>
-          <div className="cp-criteria-grid">
-            {content.decisiveCriteria.slice(0, 6).map((criterion) => (
-              <article key={criterion.title} className="cp-criterion-card">
-                <p className="cp-criterion-title">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
-                <div className="cp-criterion-sides">
-                  <div>
-                    <span>{toolA.name}</span>
-                    <p>{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+          <span className="cp-eyebrow">{t("02 — Scores par usage", "02 — Usage scores")}</span>
+          <p className="cp-title">{t("Où chaque outil prend l'avantage.", "Where each tool takes the lead.")}</p>
+          <div className="cp-score-list">
+            {content.decisiveCriteria.slice(0, 6).map((criterion) => {
+              const levels = getCriterionLevels(criterion, toolA, toolB, lang);
+              return (
+                <article key={criterion.title} className="cp-score-row">
+                  <div className="cp-score-main">
+                    <p className="cp-score-title">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
+                    <p className="cp-score-decision">
+                      <span>{t("Décision ToolTrim", "ToolTrim decision")}</span>
+                      {lang === "fr" ? criterion.decision : criterion.decisionEn}
+                    </p>
                   </div>
-                  <div>
-                    <span>{toolB.name}</span>
-                    <p>{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                  <div className="cp-score-tools">
+                    <div className={`cp-score-tool${levels.winner === "A" ? " cp-score-tool--winner" : ""}`}>
+                      <div className="cp-score-tool-head">
+                        <span>{toolA.name}</span>
+                        <strong className={`cp-score-level cp-score-level--${levels.toolA}`}>
+                          {getLevelLabel(levels.toolA, lang)}
+                        </strong>
+                      </div>
+                      <p>{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+                    </div>
+                    <div className={`cp-score-tool${levels.winner === "B" ? " cp-score-tool--winner" : ""}`}>
+                      <div className="cp-score-tool-head">
+                        <span>{toolB.name}</span>
+                        <strong className={`cp-score-level cp-score-level--${levels.toolB}`}>
+                          {getLevelLabel(levels.toolB, lang)}
+                        </strong>
+                      </div>
+                      <p>{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                    </div>
                   </div>
-                </div>
-                <p className="cp-criterion-decision">
-                  <span>{t("Décision", "Decision")}</span>
-                  {lang === "fr" ? criterion.decision : criterion.decisionEn}
-                </p>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1120,40 +1488,10 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── Cas d'usage ───────────────────────────────────────────────────── */}
-      <section id="cas-usages" className="cp-section scroll-mt-20">
-        <div className="cp-container">
-          <span className="cp-eyebrow">{t("04 — Cas d'usage", "04 — Use cases")}</span>
-          <p className="cp-title">{t("Choisir selon ton vrai besoin.", "Choose based on your real need.")}</p>
-          <div className="cp-usecase-grid">
-            <div className="cp-usecase-card">
-              <div className="cp-usecase-head">
-                <ToolLogo tool={toolA} size={22} />
-                <span>{t("Choisis", "Choose")} {toolA.name} {t("si…", "if…")}</span>
-              </div>
-              <p className="cp-usecase-main">{lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn}</p>
-              <ul className="cp-usecase-list">
-                {useCasesA.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            </div>
-            <div className="cp-usecase-card">
-              <div className="cp-usecase-head">
-                <ToolLogo tool={toolB} size={22} />
-                <span>{t("Choisis", "Choose")} {toolB.name} {t("si…", "if…")}</span>
-              </div>
-              <p className="cp-usecase-main">{lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn}</p>
-              <ul className="cp-usecase-list">
-                {useCasesB.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Seuil de bascule ──────────────────────────────────────────────── */}
       <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("05 — Seuil de bascule", "05 — Tipping point")}</span>
+          <span className="cp-eyebrow">{t("04 — Seuil de bascule", "04 — Tipping point")}</span>
           <p className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</p>
           <div className="cp-tipping-panel">
             <div>
@@ -1176,7 +1514,7 @@ const ComparePage = () => {
       {/* ── Coût réel ─────────────────────────────────────────────────────── */}
       <section id="cout" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("06 — Coût réel", "06 — Real cost")}</span>
+          <span className="cp-eyebrow">{t("05 — Coût réel", "05 — Real cost")}</span>
           <p className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</p>
           <p className="cp-section-intro">
             {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
@@ -1207,7 +1545,7 @@ const ComparePage = () => {
       {/* ── Points de vigilance ───────────────────────────────────────────── */}
       <section id="vigilance" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("07 — Points d'attention", "07 — Watchouts")}</span>
+          <span className="cp-eyebrow">{t("06 — Erreurs fréquentes", "06 — Common mistakes")}</span>
           <p className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</p>
           <div className="cp-watchout-list">
             {(content.tooltrimRisks.length > 0 ? content.tooltrimRisks : fallbackPitfalls.map((pitfall) => ({
@@ -1239,7 +1577,7 @@ const ComparePage = () => {
       {altTools.length > 0 && (
         <section id="alternatives" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{t("08 — Pour aller plus loin", "08 — Next options")}</span>
+            <span className="cp-eyebrow">{t("07 — Pour aller plus loin", "07 — Next options")}</span>
             <p className="cp-title">
               {t("Si aucun des deux ne colle.", "If neither one fits.")}
             </p>
@@ -1325,7 +1663,7 @@ const ComparePage = () => {
       {/* ── FAQ ────────────────────────────────────────────────────────────── */}
       <section id="faq" className="cp-section cp-section--last scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{altTools.length > 0 ? "09 — FAQ" : "08 — FAQ"}</span>
+          <span className="cp-eyebrow">{altTools.length > 0 ? "08 — FAQ" : "07 — FAQ"}</span>
           <p className="cp-title">
             {t("Questions fréquentes.", "Frequently asked questions.")}
           </p>

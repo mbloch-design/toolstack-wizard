@@ -1,0 +1,599 @@
+{
+  "slug": "webflow-vs-framer",
+  "checkedAt": "2026-05-18",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "Webflow",
+      "officialWebsite": "https://webflow.com",
+      "pricingUrl": "https://webflow.com/pricing",
+      "featuresUrl": "https://webflow.com/features",
+      "docsUrl": "https://help.webflow.com/",
+      "securityUrl": "https://webflow.com/security",
+      "integrationsUrl": "https://webflow.com/apps",
+      "freePlan": {
+        "exists": true,
+        "summary": "Compte et workspace gratuits pour tester et construire. Site plan payant nécessaire pour domaine personnalisé et production sérieuse.",
+        "limits": [
+          "Site plans et Workspace plans séparés.",
+          "Limites CMS, bande passante, sièges et fonctionnalités selon plan.",
+          "CMS export limité à vérifier selon contenu."
+        ],
+        "source": "https://webflow.com/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Basic site",
+          "priceMonthly": 18,
+          "priceYearlyMonthlyEquivalent": 14,
+          "currency": "USD",
+          "billingUnit": "per site",
+          "source": "https://webflow.com/pricing"
+        },
+        {
+          "name": "CMS/Premium site",
+          "priceMonthly": 39,
+          "priceYearlyMonthlyEquivalent": 25,
+          "currency": "USD",
+          "billingUnit": "per site",
+          "source": "https://help.webflow.com/hc/en-us/articles/51059955082387-Updated-pricing-and-simplified-plans-for-May-2026"
+        }
+      ],
+      "coreStrengths": [
+        "Très fort pour sites marketing structurés, CMS, design control et production pro.",
+        "Bon pour agences, SEO technique, collections CMS, interactions avancées.",
+        "Écosystème mature et formation riche."
+      ],
+      "coreLimits": [
+        "Courbe d’apprentissage plus élevée.",
+        "Pricing plus complexe : site plan + workspace + add-ons possibles.",
+        "Peut être lourd pour une landing simple."
+      ],
+      "hiddenConstraints": [
+        "La bande passante et les items CMS peuvent créer des coûts additionnels selon trafic.",
+        "Le coût réel inclut temps de build et maintenance."
+      ],
+      "integrations": [
+        "Webflow Apps",
+        "Zapier",
+        "Make",
+        "HubSpot",
+        "Memberstack"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Export de code possible pour pages statiques selon plan, mais CMS et logique hébergée restent liés à Webflow.",
+        "source": "https://help.webflow.com/"
+      },
+      "setupComplexity": "high",
+      "collaborationFit": "team",
+      "automationDepth": "medium",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Fonctions AI et assistance intégrées progressivement selon offre.",
+        "pricingImpact": "Impact tarifaire à vérifier selon plans 2026.",
+        "source": "https://webflow.com/pricing"
+      }
+    },
+    "toolB": {
+      "name": "Framer",
+      "officialWebsite": "https://www.framer.com",
+      "pricingUrl": "https://www.framer.com/pricing",
+      "featuresUrl": "https://www.framer.com/features",
+      "docsUrl": "https://www.framer.com/help/",
+      "securityUrl": "https://www.framer.com/security",
+      "integrationsUrl": "https://www.framer.com/plugins",
+      "freePlan": {
+        "exists": true,
+        "summary": "Free plan utile pour explorer, templates et petits projets. Domaine personnalisé nécessite un plan payant.",
+        "limits": [
+          "Free inclut domaine Framer et bannière.",
+          "Limites CMS, upload, localisations, trafic et éditeurs selon plan.",
+          "Moins adapté aux sites CMS complexes ou architectures très custom."
+        ],
+        "source": "https://www.framer.com/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Mini/Basic",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per site",
+          "source": "https://www.framer.com/pricing"
+        },
+        {
+          "name": "Pro",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per site",
+          "source": "https://www.framer.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Très rapide pour landing pages, portfolios, sites visuels, prototypes publiables.",
+        "Interface proche design, excellente vitesse de mise en ligne.",
+        "Bon rendu premium avec peu de friction."
+      ],
+      "coreLimits": [
+        "Moins robuste que Webflow pour CMS complexe, gouvernance et sites marketing lourds.",
+        "Peut devenir limité si le site devient un système complet.",
+        "Écosystème pro moins profond que Webflow pour certaines intégrations."
+      ],
+      "hiddenConstraints": [
+        "Le piège est de choisir Framer pour un site qui deviendra très structuré.",
+        "Migration vers autre plateforme peut demander reconstruction."
+      ],
+      "integrations": [
+        "Plugins Framer",
+        "Figma import",
+        "Analytics",
+        "Forms"
+      ],
+      "exportPortability": {
+        "rating": "limited",
+        "notes": "Exports simples et publication Framer. Migration d’un site complet demande souvent reconstruction.",
+        "source": "https://www.framer.com/help/"
+      },
+      "setupComplexity": "low",
+      "collaborationFit": "solo",
+      "automationDepth": "light",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Fonctions AI orientées création de site et assistance design selon disponibilité.",
+        "pricingImpact": "Impact tarifaire à vérifier.",
+        "source": "https://www.framer.com/pricing"
+      }
+    }
+  },
+  "comparison": {
+    "whyCompared": "Les deux permettent de créer et publier des sites visuels sans développement classique.",
+    "falseSimilarity": "Ils semblent être deux website builders design. Webflow est plus proche d’un outil de production web structuré. Framer est plus proche d’un outil design-to-site rapide.",
+    "mainDifference": "Webflow est plus solide pour sites CMS, marketing structurés et agences. Framer est plus rapide pour landing pages, portfolios et sites visuels légers.",
+    "decisionSummary": "Par défaut, ToolTrim recommande Framer pour lancer vite une landing ou un portfolio. Webflow devient meilleur quand le site doit durer, gérer du CMS, du SEO, des rôles et une architecture plus solide.",
+    "tooltrimDefaultChoice": "depends",
+    "battleAngle": {
+      "isThereAWinner": false,
+      "winner": "depends",
+      "winnerReason": "Framer gagne en vitesse. Webflow gagne en profondeur de production.",
+      "contextualWinnerNote": "Framer pour aller vite, Webflow pour construire un vrai système web."
+    },
+    "chooseAIf": [
+      "Tu construis un site marketing avec CMS, blog, SEO, collections, rôles ou besoin d’agence.",
+      "Tu veux un contrôle plus fin sur structure, interactions et production durable.",
+      "Tu dois livrer un site client maintenable."
+    ],
+    "chooseBIf": [
+      "Tu veux lancer vite une landing, un portfolio, une page produit ou un site visuel premium.",
+      "Tu pars d’un design Figma ou d’une intention très visuelle.",
+      "Tu veux réduire le temps de build au maximum."
+    ],
+    "avoidAIf": [
+      "Tu as juste besoin d’une landing simple cette semaine.",
+      "Tu n’as pas le temps d’apprendre la logique Webflow."
+    ],
+    "avoidBIf": [
+      "Le site va devenir un hub CMS, multilingue complexe, marketing ops ou site client structuré.",
+      "Tu as besoin d’un contrôle technique plus profond."
+    ],
+    "avoidBothIf": [
+      "Tu as besoin d’une application web complexe, d’une logique serveur ou d’un produit SaaS complet."
+    ],
+    "decisiveCriteria": [
+      {
+        "label": "Vitesse de lancement",
+        "whyItMatters": "Certains projets doivent exister vite.",
+        "toolA": "Plus long mais plus structurant.",
+        "toolB": "Très rapide pour landing et portfolio.",
+        "decision": "Framer si vitesse prime.",
+        "importance": "high"
+      },
+      {
+        "label": "Profondeur CMS",
+        "whyItMatters": "Le CMS détermine la tenue du site dans le temps.",
+        "toolA": "Plus mature pour collections et sites structurés.",
+        "toolB": "Suffisant pour contenus simples, moins pour systèmes lourds.",
+        "decision": "Webflow si CMS central.",
+        "importance": "high"
+      },
+      {
+        "label": "Complexité de setup",
+        "whyItMatters": "Un freelance doit arbitrer temps vs robustesse.",
+        "toolA": "Plus exigeant.",
+        "toolB": "Plus simple et design-first.",
+        "decision": "Framer pour MVP, Webflow pour site durable.",
+        "importance": "high"
+      },
+      {
+        "label": "Coût réel",
+        "whyItMatters": "Plans, workspace, add-ons et temps de build changent le budget.",
+        "toolA": "Pricing plus complexe et temps de build plus élevé.",
+        "toolB": "Coût de départ souvent plus lisible, mais limites à surveiller.",
+        "decision": "Comparer coût logiciel + temps de production.",
+        "importance": "high"
+      },
+      {
+        "label": "Migration",
+        "whyItMatters": "Changer de plateforme après publication coûte cher.",
+        "toolA": "Lock-in moyen sur CMS/hébergement.",
+        "toolB": "Reconstruction probable si le site devient complexe.",
+        "decision": "Anticiper la taille future du site.",
+        "importance": "medium"
+      }
+    ],
+    "scoreByUseCase": [
+      {
+        "useCase": "Landing page SaaS",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Très propre mais parfois plus lent."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Rapide, visuel, efficace pour lancer."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Framer si pas de CMS lourd.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Site agence avec CMS",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Meilleur pour structure, collections et maintenance."
+        },
+        "toolB": {
+          "fit": "good",
+          "score": null,
+          "reason": "Possible si site léger."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "Webflow.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Portfolio créatif",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Solide mais plus long."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Très bon rendu avec peu de friction."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Framer.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Site marketing long terme",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Plus robuste pour croissance."
+        },
+        "toolB": {
+          "fit": "good",
+          "score": null,
+          "reason": "OK au début, attention à la complexité future."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "Webflow si site stratégique.",
+        "showAsScore": false
+      }
+    ],
+    "nonDecisiveSimilarities": [
+      {
+        "label": "Les deux publient sans coder",
+        "reasonToIgnore": "Le vrai sujet est la complexité future du site."
+      },
+      {
+        "label": "Les deux ont des templates",
+        "reasonToIgnore": "Le template ne remplace pas l’architecture."
+      }
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Commencer avec Framer si le besoin est une landing ou un site vitrine rapide.",
+      "switchWhen": "Passer à Webflow quand le site a un CMS important, plusieurs gabarits, SEO sérieux, équipe marketing ou maintenance client.",
+      "keepBothIf": "Framer pour prototypes/landing rapides, Webflow pour site principal durable.",
+      "warning": "Refaire un site Framer devenu trop complexe dans Webflow coûte plus cher qu’un bon choix initial.",
+      "examples": [
+        "Framer pour pré-lancement produit.",
+        "Webflow pour site corporate avec blog, cas clients et ressources."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Bon pour apprendre et prototyper.",
+        "whenPaidBecomesNecessary": "Domaine, production client, CMS, trafic ou fonctions pro.",
+        "hiddenCost": "Temps de build, workspace, add-ons, limites CMS/bande passante.",
+        "pricingRisk": "Sous-estimer le cumul site plan + workspace."
+      },
+      "toolB": {
+        "freePlanReality": "Bon pour tester et maquetter un site publié sur domaine Framer.",
+        "whenPaidBecomesNecessary": "Domaine personnalisé, suppression branding, trafic, CMS ou localisation.",
+        "hiddenCost": "Reconstruction si le site devient trop structuré.",
+        "pricingRisk": "Choisir le plan bas pour un site qui va grossir vite."
+      },
+      "duplicateCostWarning": "Les deux ensemble ne se justifient que si Framer sert à prototyper et Webflow à produire.",
+      "tooltrimNote": "Le coût réel est surtout le coût de rebuild si la plateforme est trop légère pour l’ambition."
+    },
+    "workflowFit": [
+      {
+        "workflow": "no-code build",
+        "bestChoice": "depends",
+        "reason": "Framer pour vitesse, Webflow pour profondeur."
+      },
+      {
+        "workflow": "agency",
+        "bestChoice": "toolA",
+        "reason": "Plus robuste pour livrer et maintenir des sites clients."
+      },
+      {
+        "workflow": "creative production",
+        "bestChoice": "toolB",
+        "reason": "Plus rapide pour sites visuels."
+      }
+    ],
+    "profileFit": [
+      {
+        "profile": "Designer freelance",
+        "bestChoice": "toolB",
+        "reason": "Permet de lancer vite des sites élégants.",
+        "risk": "Se retrouver limité sur un site client structuré."
+      },
+      {
+        "profile": "Agence web/no-code",
+        "bestChoice": "toolA",
+        "reason": "Meilleur pour systèmes, CMS et maintenance.",
+        "risk": "Surproduire une simple landing."
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": "Choisir Framer pour un site qui va devenir un média",
+        "consequence": "CMS et structure peuvent devenir limitants.",
+        "recommendation": "Choisir Webflow dès le départ si le contenu va grossir."
+      },
+      {
+        "title": "Choisir Webflow pour une simple page test",
+        "consequence": "Trop de setup pour valider une idée.",
+        "recommendation": "Utiliser Framer pour pré-lancement rapide."
+      },
+      {
+        "title": "Comparer seulement le prix mensuel",
+        "consequence": "Le temps de build fausse la décision.",
+        "recommendation": "Comparer prix + temps + migration future."
+      }
+    ],
+    "migrationCost": {
+      "fromAtoB": "Moyen à élevé. Rebuild souvent nécessaire pour structure et CMS.",
+      "fromBtoA": "Moyen. Export et reconstruction selon complexité.",
+      "lockInRisk": "medium"
+    },
+    "finalRecommendation": "ToolTrim recommande Framer pour lancer vite un site visuel simple. Webflow devient le meilleur choix dès que le site doit porter du contenu, du SEO, une équipe ou une croissance durable."
+  },
+  "comparisonRows": [
+    {
+      "group": "Usage",
+      "criterion": "Usage principal",
+      "toolA": "Site structuré, CMS, agence",
+      "toolB": "Landing, portfolio, site visuel rapide",
+      "tooltrimDecision": "Framer pour vitesse, Webflow pour profondeur.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "hero",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "CMS",
+      "criterion": "Profondeur CMS",
+      "toolA": "Forte",
+      "toolB": "Moyenne",
+      "tooltrimDecision": "Webflow si contenu structuré.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Setup",
+      "criterion": "Complexité",
+      "toolA": "Élevée",
+      "toolB": "Faible",
+      "tooltrimDecision": "Framer si tu dois sortir vite.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Coût",
+      "criterion": "Coût réel",
+      "toolA": "Plans + build + add-ons",
+      "toolB": "Plan + risque de rebuild",
+      "tooltrimDecision": "Comparer temps et futur.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Migration",
+      "criterion": "Lock-in",
+      "toolA": "Moyen",
+      "toolB": "Moyen à élevé si site grossit",
+      "tooltrimDecision": "Anticiper avant de choisir.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    }
+  ],
+  "contentBlocks": {
+    "heroPromise": "Framer pour aller vite. Webflow pour construire un site qui tient la route quand il grandit.",
+    "verdictTitle": "Le choix rapide.",
+    "scoreTitle": "Le match par usage.",
+    "criteriaTitle": "Ce qui change vraiment.",
+    "tableTitle": "Les écarts utiles.",
+    "tippingPointTitle": "Le seuil de bascule.",
+    "costTitle": "Le coût réel.",
+    "pitfallsTitle": "Les erreurs de choix fréquentes."
+  },
+  "uiPriority": {
+    "hero": [
+      "Usage principal"
+    ],
+    "verdict": [
+      "Framer rapide",
+      "Webflow durable"
+    ],
+    "scoreByUseCase": [
+      "Landing",
+      "CMS",
+      "Portfolio",
+      "Site long terme"
+    ],
+    "mainTable": [
+      "Vitesse",
+      "CMS",
+      "Setup",
+      "Coût réel",
+      "Migration"
+    ],
+    "tippingPoint": [
+      "Quand le CMS devient central"
+    ],
+    "costReality": [
+      "Temps de build",
+      "Rebuild"
+    ],
+    "pitfalls": [
+      "Mauvais choix de complexité"
+    ],
+    "faq": [
+      "Framer suffit-il pour un site pro ?"
+    ]
+  },
+  "whatNotToShow": [
+    {
+      "item": "Nombre de templates",
+      "reason": "not decisive"
+    },
+    {
+      "item": "Comparaison vague no-code",
+      "reason": "redundant with another section"
+    },
+    {
+      "item": "Animations marketing",
+      "reason": "marketing claim"
+    }
+  ],
+  "displayRules": {
+    "maxMainCriteria": 8,
+    "maxScoreUseCases": 6,
+    "onlyShowHighDifferenceByDefault": true,
+    "avoidRepeatedClaims": true,
+    "preferShortDecisionSentences": true,
+    "hideNonDecisiveSimilaritiesFromMainTable": true,
+    "avoidAbsoluteWinnerIfContextMatters": true
+  },
+  "related": {
+    "alternatives": [
+      "WordPress",
+      "Squarespace",
+      "Wix"
+    ],
+    "stacks": [
+      "designer",
+      "agency",
+      "solo-generaliste"
+    ],
+    "categories": [
+      "website-builder",
+      "no-code",
+      "cms"
+    ],
+    "otherComparisons": [
+      "webflow-vs-wordpress",
+      "framer-vs-squarespace"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Framer suffit-il pour un site professionnel ?",
+      "answer": "Oui pour une landing, un portfolio ou un site vitrine léger. Webflow est plus logique pour CMS, SEO et architecture durable.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "verdict"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Webflow pricing",
+      "url": "https://webflow.com/pricing",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "site plans",
+        "workspace"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Webflow May 2026 pricing update",
+      "url": "https://help.webflow.com/hc/en-us/articles/51059955082387-Updated-pricing-and-simplified-plans-for-May-2026",
+      "type": "official_docs",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing update",
+        "CMS limits",
+        "bandwidth"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Framer pricing",
+      "url": "https://www.framer.com/pricing",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "free plan"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Framer best use cases by plan",
+      "url": "https://www.framer.com/help/articles/best-use-cases-for-each-framer-plan/",
+      "type": "official_docs",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "plan fit",
+        "free limitations"
+      ],
+      "sourceBias": "vendor-biased"
+    }
+  ],
+  "confidence": {
+    "pricing": "low",
+    "features": "high",
+    "recommendation": "high",
+    "notes": "Webflow a publié une mise à jour tarifaire en mai 2026. Les prix Framer précis doivent être revérifiés selon région/devise avant intégration."
+  },
+  "missingData": [
+    "Prix exacts Framer par plan non stabilisés dans cette extraction.",
+    "Détails Webflow Workspace selon configuration à revérifier."
+  ]
+}

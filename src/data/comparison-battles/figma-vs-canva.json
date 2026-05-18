@@ -1,0 +1,618 @@
+{
+  "slug": "figma-vs-canva",
+  "checkedAt": "2026-05-18",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "Figma",
+      "officialWebsite": "https://www.figma.com",
+      "pricingUrl": "https://www.figma.com/pricing/",
+      "featuresUrl": "https://www.figma.com/design/",
+      "docsUrl": "https://help.figma.com/",
+      "securityUrl": "https://www.figma.com/security/",
+      "integrationsUrl": "https://www.figma.com/community/plugins",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan Starter gratuit pour explorer design, fichiers et collaboration légère.",
+        "limits": [
+          "Limites sur fichiers/projets et fonctions avancées selon plan.",
+          "Design systems, admin, sécurité et variables avancées nécessitent plans supérieurs."
+        ],
+        "source": "https://www.figma.com/pricing/"
+      },
+      "paidPlans": [
+        {
+          "name": "Professional Full seat",
+          "priceMonthly": 16,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://www.figma.com/professional/"
+        },
+        {
+          "name": "Professional Dev seat",
+          "priceMonthly": 12,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://www.figma.com/professional/"
+        },
+        {
+          "name": "Professional Collab seat",
+          "priceMonthly": 3,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://www.figma.com/professional/"
+        }
+      ],
+      "coreStrengths": [
+        "Outil pro pour UI/UX, design systems, prototypage et handoff dev.",
+        "Collaboration fine entre designers, PM et développeurs.",
+        "Plugins et composants robustes."
+      ],
+      "coreLimits": [
+        "Pas pensé pour produire rapidement des supports social media en volume sans design system.",
+        "Courbe d’apprentissage plus élevée que Canva.",
+        "Coût par type de seat à surveiller."
+      ],
+      "hiddenConstraints": [
+        "Un mauvais système de seats peut créer une facture inutile.",
+        "Figma est surdimensionné pour des visuels simples non productisés."
+      ],
+      "integrations": [
+        "Plugins Figma",
+        "Dev Mode",
+        "FigJam",
+        "Slack",
+        "Jira"
+      ],
+      "exportPortability": {
+        "rating": "good",
+        "notes": "Export assets, SVG/PNG/PDF et accès fichiers. Les composants et design systems restent dépendants de Figma.",
+        "source": "https://help.figma.com/"
+      },
+      "setupComplexity": "medium",
+      "collaborationFit": "team",
+      "automationDepth": "medium",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Figma AI et crédits/add-ons selon plan.",
+        "pricingImpact": "Crédits IA additionnels possibles selon offre.",
+        "source": "https://www.figma.com/pricing/"
+      }
+    },
+    "toolB": {
+      "name": "Canva",
+      "officialWebsite": "https://www.canva.com",
+      "pricingUrl": "https://www.canva.com/en/pricing/",
+      "featuresUrl": "https://www.canva.com/features/",
+      "docsUrl": "https://www.canva.com/help/",
+      "securityUrl": "https://www.canva.com/security/",
+      "integrationsUrl": "https://www.canva.com/apps/",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan gratuit riche pour créer des visuels simples, présentations et contenus marketing.",
+        "limits": [
+          "Éléments premium, brand kits, stockage, IA et fonctions équipe limités selon plan.",
+          "Contrôle design et systèmes complexes moins profonds que Figma."
+        ],
+        "source": "https://www.canva.com/en/pricing/"
+      },
+      "paidPlans": [
+        {
+          "name": "Pro",
+          "priceMonthly": 15,
+          "priceYearlyMonthlyEquivalent": 10,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://www.canva.com/en/pricing/"
+        },
+        {
+          "name": "Teams",
+          "priceMonthly": 10,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://www.canva.com/en/pricing/"
+        }
+      ],
+      "coreStrengths": [
+        "Rapide pour social media, présentations, supports marketing, templates et contenus de marque.",
+        "Accessible aux non-designers.",
+        "Très bon pour produire en volume sans designer dédié."
+      ],
+      "coreLimits": [
+        "Moins adapté au design produit, UI complexe, design system et handoff dev.",
+        "Risque d’un rendu générique si templates mal maîtrisés.",
+        "Portabilité moins propre pour fichiers de design professionnels."
+      ],
+      "hiddenConstraints": [
+        "Les équipes peuvent produire vite mais diluer la cohérence de marque.",
+        "Le coût Teams a déjà suscité des hausses et discussions liées aux fonctions IA."
+      ],
+      "integrations": [
+        "Apps Canva",
+        "Stock media",
+        "Social platforms",
+        "Google Drive"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Exports simples. Moins portable pour récupérer un système de design éditable hors Canva.",
+        "source": "https://www.canva.com/help/"
+      },
+      "setupComplexity": "low",
+      "collaborationFit": "small-team",
+      "automationDepth": "light",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Magic Studio et fonctions IA intégrées selon plan.",
+        "pricingImpact": "Les fonctions IA contribuent à la valeur et au prix des plans payants.",
+        "source": "https://www.canva.com/en/pricing/"
+      }
+    }
+  },
+  "comparison": {
+    "whyCompared": "Les deux servent à créer des visuels et collaborer autour du design.",
+    "falseSimilarity": "Ils produisent tous les deux des designs. Mais Figma sert à concevoir des interfaces et systèmes. Canva sert à produire vite des supports marketing accessibles.",
+    "mainDifference": "Figma est un outil de design professionnel et product design. Canva est un outil de production visuelle rapide pour non-designers et marketing.",
+    "decisionSummary": "Par défaut, ToolTrim recommande Canva pour créer vite des supports marketing. Figma devient indispensable si le livrable est une interface, un design system ou un projet transmis à des développeurs.",
+    "tooltrimDefaultChoice": "depends",
+    "battleAngle": {
+      "isThereAWinner": false,
+      "winner": "depends",
+      "winnerReason": "Le bon choix dépend du livrable : interface ou support marketing.",
+      "contextualWinnerNote": "Figma gagne en précision produit. Canva gagne en vitesse et accessibilité."
+    },
+    "chooseAIf": [
+      "Tu conçois des interfaces, apps, sites ou design systems.",
+      "Tu dois gérer composants, variants, prototypes et handoff dev.",
+      "Tu travailles avec designers et développeurs."
+    ],
+    "chooseBIf": [
+      "Tu produis posts, présentations, flyers, miniatures, supports commerciaux ou contenus récurrents.",
+      "Des non-designers doivent créer eux-mêmes dans un cadre simple.",
+      "La vitesse prime sur la précision UI."
+    ],
+    "avoidAIf": [
+      "Tu fais uniquement des contenus social media simples.",
+      "Ton équipe n’a pas de culture design et ne veut pas apprendre un outil pro."
+    ],
+    "avoidBIf": [
+      "Tu dois livrer une UI propre à un développeur.",
+      "Tu veux construire un design system robuste et scalable."
+    ],
+    "avoidBothIf": [
+      "Tu as besoin de retouche photo avancée ou de production print très technique."
+    ],
+    "decisiveCriteria": [
+      {
+        "label": "Type de livrable",
+        "whyItMatters": "Le livrable détermine l’outil.",
+        "toolA": "Interfaces, prototypes, design systems.",
+        "toolB": "Visuels marketing, présentations, contenus rapides.",
+        "decision": "Figma pour produit, Canva pour production marketing.",
+        "importance": "high"
+      },
+      {
+        "label": "Niveau de contrôle",
+        "whyItMatters": "Un produit digital exige précision et cohérence.",
+        "toolA": "Contrôle fin, composants, auto-layout, prototypes.",
+        "toolB": "Contrôle suffisant pour supports simples, moins pour systèmes complexes.",
+        "decision": "Figma si précision structurelle.",
+        "importance": "high"
+      },
+      {
+        "label": "Accessibilité équipe",
+        "whyItMatters": "Les non-designers doivent parfois produire seuls.",
+        "toolA": "Plus exigeant.",
+        "toolB": "Très accessible.",
+        "decision": "Canva si l’équipe doit produire sans designer.",
+        "importance": "high"
+      },
+      {
+        "label": "Handoff dev",
+        "whyItMatters": "Un site/app doit passer en production.",
+        "toolA": "Dev Mode, specs, assets, collaboration dev.",
+        "toolB": "Pas conçu pour handoff UI sérieux.",
+        "decision": "Figma si dev derrière.",
+        "importance": "high"
+      },
+      {
+        "label": "Risque de marque générique",
+        "whyItMatters": "La vitesse peut banaliser l’identité.",
+        "toolA": "Plus maîtrisable par designer.",
+        "toolB": "Templates rapides mais risque de déjà-vu.",
+        "decision": "Canva doit être cadré par un brand kit solide.",
+        "importance": "medium"
+      }
+    ],
+    "scoreByUseCase": [
+      {
+        "useCase": "UI/UX design",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Cœur du produit."
+        },
+        "toolB": {
+          "fit": "poor",
+          "score": null,
+          "reason": "Pas fait pour livrer une UI pro."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "Figma.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Social media en volume",
+        "toolA": {
+          "fit": "limited",
+          "score": null,
+          "reason": "Possible mais lent pour non-designers."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Templates et production rapide."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Canva.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Présentations commerciales",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Très propre si designer."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Rapide et accessible à l’équipe."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Canva sauf direction artistique premium.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Design system",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Composants, variables, librairies."
+        },
+        "toolB": {
+          "fit": "limited",
+          "score": null,
+          "reason": "Brand kit utile mais pas design system produit."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "Figma.",
+        "showAsScore": false
+      }
+    ],
+    "nonDecisiveSimilarities": [
+      {
+        "label": "Les deux ont des templates",
+        "reasonToIgnore": "Le vrai critère est le type de livrable et la précision attendue."
+      },
+      {
+        "label": "Les deux exportent en PNG/PDF",
+        "reasonToIgnore": "L’export ne dit rien de la qualité du fichier source."
+      }
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Canva si tu produis du marketing simple et fréquent.",
+      "switchWhen": "Passer à Figma dès qu’il y a UI, dev, design system, composants ou besoin de cohérence produit.",
+      "keepBothIf": "Figma pour concevoir le système, Canva pour permettre à l’équipe de produire des déclinaisons cadrées.",
+      "warning": "Utiliser Canva pour une UI crée souvent des fichiers impossibles à exploiter proprement en dev.",
+      "examples": [
+        "Figma pour maquette site, Canva pour posts LinkedIn.",
+        "Figma pour brand system, Canva pour déclinaisons social media."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Bien pour tester et petits projets.",
+        "whenPaidBecomesNecessary": "Travail pro avec équipe, fichiers, librairies, dev seats ou gouvernance.",
+        "hiddenCost": "Gestion des sièges Full/Dev/Collab.",
+        "pricingRisk": "Payer des seats trop élevés à des profils qui commentent seulement."
+      },
+      "toolB": {
+        "freePlanReality": "Très utile pour visuels simples.",
+        "whenPaidBecomesNecessary": "Brand kit, contenus premium, IA, stockage ou usage équipe.",
+        "hiddenCost": "Risque de hausse sur Teams et dépendance aux assets premium.",
+        "pricingRisk": "Multiplier les seats pour des utilisateurs occasionnels."
+      },
+      "duplicateCostWarning": "Le duo est pertinent si Figma reste outil source et Canva outil de diffusion.",
+      "tooltrimNote": "Le coût réel est souvent le temps designer économisé ou perdu."
+    },
+    "workflowFit": [
+      {
+        "workflow": "creative production",
+        "bestChoice": "toolB",
+        "reason": "Production rapide de supports."
+      },
+      {
+        "workflow": "dev shipping",
+        "bestChoice": "toolA",
+        "reason": "Handoff et design produit."
+      },
+      {
+        "workflow": "agency",
+        "bestChoice": "depends",
+        "reason": "Figma pour conception, Canva pour autonomie client."
+      }
+    ],
+    "profileFit": [
+      {
+        "profile": "Designer UI/UX",
+        "bestChoice": "toolA",
+        "reason": "Outil métier.",
+        "risk": "Aucun si besoin produit."
+      },
+      {
+        "profile": "Community manager",
+        "bestChoice": "toolB",
+        "reason": "Rapidité et templates.",
+        "risk": "Rendu générique sans cadre."
+      },
+      {
+        "profile": "Petite agence",
+        "bestChoice": "depends",
+        "reason": "Les deux sont complémentaires si rôles séparés.",
+        "risk": "Faire tout dans Canva et perdre la précision DA."
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": "Faire une maquette web dans Canva",
+        "consequence": "Le fichier n’est pas exploitable comme base UI sérieuse.",
+        "recommendation": "Utiliser Figma pour tout livrable destiné au dev."
+      },
+      {
+        "title": "Donner Figma à toute l’équipe",
+        "consequence": "Coût et complexité inutiles.",
+        "recommendation": "Limiter Figma aux profils design/dev, Canva aux producteurs de contenus."
+      },
+      {
+        "title": "Abuser des templates Canva",
+        "consequence": "Identité visuelle banalisée.",
+        "recommendation": "Créer un système visuel cadré avant production."
+      }
+    ],
+    "migrationCost": {
+      "fromAtoB": "Faible pour images exportées, élevé pour design systems et UI.",
+      "fromBtoA": "Moyen. Refaire proprement les fichiers sources si le besoin devient pro.",
+      "lockInRisk": "medium"
+    },
+    "finalRecommendation": "Par défaut, ToolTrim recommande Canva pour production marketing rapide. Figma devient le bon choix dès que le design doit être précis, systémique ou transmis à un développeur."
+  },
+  "comparisonRows": [
+    {
+      "group": "Usage",
+      "criterion": "Livrable principal",
+      "toolA": "UI, produit, design system",
+      "toolB": "Marketing, social, présentations",
+      "tooltrimDecision": "Choisir selon le livrable.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "hero",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Design",
+      "criterion": "Contrôle",
+      "toolA": "Très fin",
+      "toolB": "Simple et rapide",
+      "tooltrimDecision": "Figma si précision.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Équipe",
+      "criterion": "Accessibilité",
+      "toolA": "Moyenne",
+      "toolB": "Très forte",
+      "tooltrimDecision": "Canva pour non-designers.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Dev",
+      "criterion": "Handoff",
+      "toolA": "Fort",
+      "toolB": "Faible",
+      "tooltrimDecision": "Figma si dev derrière.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Marque",
+      "criterion": "Risque générique",
+      "toolA": "Faible si designer",
+      "toolB": "Plus élevé avec templates",
+      "tooltrimDecision": "Canva doit être cadré.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    }
+  ],
+  "contentBlocks": {
+    "heroPromise": "Ne choisis pas entre deux outils de design. Choisis entre conception produit et production marketing.",
+    "verdictTitle": "Le choix rapide.",
+    "scoreTitle": "Le match par usage.",
+    "criteriaTitle": "Ce qui change vraiment.",
+    "tableTitle": "Les écarts utiles.",
+    "tippingPointTitle": "Le seuil de bascule.",
+    "costTitle": "Le coût réel.",
+    "pitfallsTitle": "Les erreurs de choix fréquentes."
+  },
+  "uiPriority": {
+    "hero": [
+      "Livrable principal"
+    ],
+    "verdict": [
+      "Figma pour UI",
+      "Canva pour marketing"
+    ],
+    "scoreByUseCase": [
+      "UI/UX",
+      "Social media",
+      "Présentations",
+      "Design system"
+    ],
+    "mainTable": [
+      "Livrable",
+      "Contrôle",
+      "Accessibilité",
+      "Handoff",
+      "Risque générique"
+    ],
+    "tippingPoint": [
+      "Quand il y a un dev derrière"
+    ],
+    "costReality": [
+      "Seats Figma",
+      "Seats Canva"
+    ],
+    "pitfalls": [
+      "Maquette web dans Canva"
+    ],
+    "faq": [
+      "Peut-on utiliser les deux ?"
+    ]
+  },
+  "whatNotToShow": [
+    {
+      "item": "Nombre de templates",
+      "reason": "not decisive"
+    },
+    {
+      "item": "Export PNG/JPG",
+      "reason": "identical between tools"
+    },
+    {
+      "item": "Promesses IA marketing",
+      "reason": "marketing claim"
+    }
+  ],
+  "displayRules": {
+    "maxMainCriteria": 8,
+    "maxScoreUseCases": 6,
+    "onlyShowHighDifferenceByDefault": true,
+    "avoidRepeatedClaims": true,
+    "preferShortDecisionSentences": true,
+    "hideNonDecisiveSimilaritiesFromMainTable": true,
+    "avoidAbsoluteWinnerIfContextMatters": true
+  },
+  "related": {
+    "alternatives": [
+      "Adobe Express",
+      "Penpot",
+      "Sketch"
+    ],
+    "stacks": [
+      "designer",
+      "createur-de-contenu",
+      "agency"
+    ],
+    "categories": [
+      "design",
+      "social-media",
+      "ui-ux"
+    ],
+    "otherComparisons": [
+      "figma-vs-penpot",
+      "canva-vs-adobe-express"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Peut-on utiliser Figma et Canva ensemble ?",
+      "answer": "Oui. Figma pour concevoir le système, Canva pour décliner vite des contenus cadrés.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "tippingPoint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Figma pricing",
+      "url": "https://www.figma.com/pricing/",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "seats",
+        "AI credits"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Figma Professional",
+      "url": "https://www.figma.com/professional/",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "seat pricing"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Canva pricing",
+      "url": "https://www.canva.com/en/pricing/",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "plans"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Canva upgrade help",
+      "url": "https://www.canva.com/help/upgrade-to-canva-pro-or-business/",
+      "type": "official_docs",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "plan positioning"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "The Verge Canva Teams price increase",
+      "url": "https://www.theverge.com/2024/9/3/24234698/canva-price-increase-300-percent-ai-features",
+      "type": "article",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing risk"
+      ],
+      "sourceBias": "neutral"
+    }
+  ],
+  "confidence": {
+    "pricing": "medium",
+    "features": "high",
+    "recommendation": "high",
+    "notes": "Figma seat pricing et Canva pricing peuvent varier selon pays/devise. Vérifier avant affichage en production."
+  },
+  "missingData": [
+    "Prix Canva exacts selon région à confirmer.",
+    "Disponibilité Figma AI et crédits selon plan à vérifier."
+  ]
+}

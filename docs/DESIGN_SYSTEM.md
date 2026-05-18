@@ -399,10 +399,13 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 ```css
 .cp-hero { background: #F8F8F4; border-bottom: 1px solid #DADAD4; padding: 72px 0 64px; }
 .cp-hero-title { font-size: clamp(4rem, 7vw, 7rem); line-height: 0.94; letter-spacing: -0.06em; }
-.cp-hero-fact-sheet { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #DADAD4; border-radius: 18px; }
+.cp-battle-stage { display: grid; grid-template-columns: 1fr 0.62fr 1fr; gap: 16px; }
+.cp-hero-fact-sheet { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #DADAD4; border-radius: 18px; }
 ```
-- Rôle : fiche signalétique du comparatif, pas bloc SEO.
-- Contenu unique : outil A, outil B, meilleur pour, budget, niveau, point d'attention.
+- Rôle : battle utile du comparatif, pas bloc SEO.
+- Le hero met les deux outils face-à-face, avec logo, usage recommandé et verdict ToolTrim central.
+- Pas de score absolu opaque : utiliser `Signal d'adéquation`, `Recommandé pour`, `Avantage`, `Suffisant`, `Dépend`.
+- Contenu unique : choix par défaut, meilleur usage de chaque outil, budget, niveau, point d'attention.
 - Pas de CTA dans le hero.
 - Pas de panneau droit séparé : le résumé vit dans `cp-hero-fact-sheet`.
 
@@ -413,7 +416,7 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 .compare-sticky-nav-item--active { color: #FFFFFF; border-color: rgba(255,255,255,0.80); }
 ```
 - Même esprit que `stack-sticky-nav` : capsule sombre, centrée en bas, navigation de page uniquement.
-- Items courts : Verdict, Comparer, Cas d'usage, Attention, Alternatives, FAQ.
+- Items courts : Verdict, Scores, Comparer, Seuil, Coût, Erreurs, Alternatives, FAQ.
 - Cachée en haut du hero, active state via IntersectionObserver.
 - Cachée sous 768px pour ne pas surcharger la lecture mobile.
 
@@ -439,23 +442,18 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 - Ce bloc doit être la recommandation courte, pas une répétition du tableau.
 - `cp-final-recommendation` porte la phrase finale ToolTrim : choix par défaut + condition où l'autre outil devient meilleur.
 
-### Critères décisifs (`cp-criteria-*`)
+### Scores par usage (`cp-score-*`)
 ```css
-.cp-criteria-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.cp-criterion-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 14px; padding: 24px; }
+.cp-score-row { display: grid; grid-template-columns: 0.72fr 1.28fr; border-bottom: 1px dotted rgba(34,34,34,.36); }
+.cp-score-tool { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 16px; padding: 18px; }
+.cp-score-level--advantage { background: #222222; color: #FFFFFF; }
 ```
-- Rôle : expliquer les vrais écarts avant le tableau.
-- Chaque critère compare A, B et se termine par une décision ToolTrim courte.
-- 4 à 6 critères maximum.
-
-### Cas d'usage (`cp-usecase-*`)
-```css
-.cp-usecase-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.cp-usecase-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 12px; padding: 24px; }
-```
-- Rôle : aider la personne à se reconnaître dans un usage réel.
-- Structure : `Choisis [outil] si...`, une phrase de décision, puis 3 à 4 usages.
-- Ne pas y remettre les avantages/limites complets.
+- Rôle : montrer où chaque outil prend l'avantage avant la table.
+- Les scores sont qualitatifs, pas numériques : `Avantage`, `Suffisant`, `Dépend`.
+- Chaque ligne compare A, B et se termine par une décision ToolTrim courte.
+- 4 à 6 critères maximum, uniquement si le critère change vraiment le choix.
+- Les premiers comparatifs éditorialisés peuvent venir de `src/data/comparison-battles/*.json`.
+- L'adaptateur de page transforme ces JSON en sections ToolTrim : hero battle, scores qualitatifs, table des écarts, seuil de bascule, coût réel, erreurs et FAQ.
 
 ### Points de vigilance (`cp-watchout-*`)
 ```css

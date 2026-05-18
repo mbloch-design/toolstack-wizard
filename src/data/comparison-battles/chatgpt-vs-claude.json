@@ -1,0 +1,653 @@
+{
+  "slug": "chatgpt-vs-claude",
+  "checkedAt": "2026-05-18",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "ChatGPT",
+      "officialWebsite": "https://chatgpt.com",
+      "pricingUrl": "https://chatgpt.com/pricing/",
+      "featuresUrl": "https://chatgpt.com/business/business-plan/",
+      "docsUrl": "https://help.openai.com/",
+      "securityUrl": "https://openai.com/security/",
+      "integrationsUrl": "https://help.openai.com/",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan gratuit disponible. Les plans payants ajoutent plus d’accès aux modèles avancés, aux outils de travail et aux usages intensifs.",
+        "limits": [
+          "Les limites exactes de messages varient selon le plan, la charge et les modèles.",
+          "Certaines fonctions de travail sont réservées aux plans Business/Enterprise."
+        ],
+        "source": "https://chatgpt.com/pricing/"
+      },
+      "paidPlans": [
+        {
+          "name": "Plus",
+          "priceMonthly": 20,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://chatgpt.com/pricing/"
+        },
+        {
+          "name": "Pro",
+          "priceMonthly": 200,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://chatgpt.com/pricing/"
+        },
+        {
+          "name": "Business",
+          "priceMonthly": 30,
+          "priceYearlyMonthlyEquivalent": 25,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://chatgpt.com/pricing/"
+        }
+      ],
+      "coreStrengths": [
+        "Très polyvalent pour rédaction, recherche, analyse multimodale, création, code et workflows généralistes.",
+        "Écosystème large avec outils intégrés comme deep research, analyse de fichiers et fonctionnalités business selon plan.",
+        "Bon choix par défaut pour un solo qui veut un assistant généraliste unique."
+      ],
+      "coreLimits": [
+        "Peut être moins confortable que Claude sur certains longs textes éditoriaux ou documents très narratifs.",
+        "La richesse des modes/outils peut créer du flou si l’utilisateur ne définit pas ses usages."
+      ],
+      "hiddenConstraints": [
+        "Risque de payer Pro sans vrai besoin si l’usage reste ponctuel.",
+        "Les limites d’usage peuvent changer selon charge et plan."
+      ],
+      "integrations": [
+        "Google Drive/Dropbox/OneDrive/SharePoint selon plans et disponibilités",
+        "GPTs/actions selon écosystème"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Export possible conversation par conversation ou via export de compte, mais ce n’est pas un espace documentaire structuré.",
+        "source": "https://help.openai.com/"
+      },
+      "setupComplexity": "low",
+      "collaborationFit": "solo",
+      "automationDepth": "advanced",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "IA conversationnelle multimodale avec modèles avancés, recherche, analyse de fichiers, génération, code et outils business selon plan.",
+        "pricingImpact": "Le coût grimpe surtout avec Pro ou Business, pas seulement avec l’abonnement Plus.",
+        "source": "https://chatgpt.com/pricing/"
+      }
+    },
+    "toolB": {
+      "name": "Claude",
+      "officialWebsite": "https://claude.ai",
+      "pricingUrl": "https://claude.com/pricing",
+      "featuresUrl": "https://claude.ai",
+      "docsUrl": "https://support.anthropic.com/",
+      "securityUrl": "https://trust.anthropic.com/",
+      "integrationsUrl": "https://support.anthropic.com/",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan gratuit disponible. Les plans Pro, Max et Team augmentent l’usage et l’accès aux modèles/fonctions avancées.",
+        "limits": [
+          "Les limites d’usage ne sont pas des volumes fixes publiés de façon simple.",
+          "Les plafonds peuvent dépendre du modèle, de la longueur des conversations et de la charge."
+        ],
+        "source": "https://claude.com/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Pro",
+          "priceMonthly": 20,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://claude.com/pricing"
+        },
+        {
+          "name": "Max",
+          "priceMonthly": 100,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://claude.com/pricing"
+        },
+        {
+          "name": "Team Standard",
+          "priceMonthly": 25,
+          "priceYearlyMonthlyEquivalent": 20,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://claude.com/pricing"
+        },
+        {
+          "name": "Team Premium",
+          "priceMonthly": 125,
+          "priceYearlyMonthlyEquivalent": 100,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://claude.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Très fort pour longs documents, rédaction structurée, analyse de texte, raisonnement calme et reformulation.",
+        "Bon choix pour éditorial, juridique léger, documentation, analyse de corpus et travail de fond.",
+        "Interface simple et peu dispersée."
+      ],
+      "coreLimits": [
+        "Moins large que ChatGPT pour certains usages multimodaux ou écosystème d’outils selon disponibilité.",
+        "Les limites d’usage sont un vrai sujet pour les utilisateurs intensifs."
+      ],
+      "hiddenConstraints": [
+        "Les plans Max peuvent devenir chers si l’usage n’est pas quotidien et critique.",
+        "Risque de doublon coûteux si Claude est gardé uniquement pour quelques textes longs."
+      ],
+      "integrations": [
+        "Google Workspace selon disponibilité",
+        "connecteurs Claude selon plan"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Export et portabilité à vérifier selon espace et plan. Bon pour traiter des documents, moins pensé comme base de connaissance durable.",
+        "source": "https://support.anthropic.com/"
+      },
+      "setupComplexity": "low",
+      "collaborationFit": "solo",
+      "automationDepth": "medium",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Assistant IA orienté rédaction, analyse longue, code et raisonnement, avec plans Pro/Max/Team.",
+        "pricingImpact": "Le vrai coût vient des limites d’usage et du passage éventuel vers Max ou Team.",
+        "source": "https://claude.com/pricing"
+      }
+    }
+  },
+  "comparison": {
+    "whyCompared": "Ce sont deux assistants IA généralistes que les freelances et équipes utilisent pour écrire, analyser, chercher, coder et produire plus vite.",
+    "falseSimilarity": "Ils semblent interchangeables car ils répondent tous les deux à des prompts. En réalité, le choix dépend surtout du type de travail : assistant polyvalent et outillé côté ChatGPT, profondeur rédactionnelle et confort sur longs documents côté Claude.",
+    "mainDifference": "ChatGPT est le meilleur choix par défaut pour un usage généraliste et multimodal. Claude devient plus logique quand le cœur du travail est l’analyse longue, l’écriture structurée ou la qualité éditoriale.",
+    "decisionSummary": "Par défaut, ToolTrim recommande ChatGPT pour un solo ou freelance qui veut un assistant IA unique. Claude devient meilleur si l’usage principal est la rédaction longue, l’analyse de documents ou le travail éditorial exigeant.",
+    "tooltrimDefaultChoice": "toolA",
+    "battleAngle": {
+      "isThereAWinner": false,
+      "winner": "depends",
+      "winnerReason": "Le gagnant dépend du type de production, pas d’un score global.",
+      "contextualWinnerNote": "ChatGPT gagne en assistant généraliste. Claude gagne souvent en confort éditorial et long contexte."
+    },
+    "chooseAIf": [
+      "Tu veux un assistant unique pour rédaction, recherche, image, fichiers, code et usages variés.",
+      "Tu utilises souvent les outils intégrés type recherche, analyse de fichiers, génération ou workflows business.",
+      "Tu veux éviter de payer deux IA sans séparation claire des usages."
+    ],
+    "chooseBIf": [
+      "Tu travailles beaucoup sur des textes longs, briefs, documents, notes, contrats ou synthèses.",
+      "Tu privilégies une réponse plus posée, structurée et souvent plus naturelle sur l’éditorial.",
+      "Tu as besoin d’un second regard IA spécialisé dans l’analyse longue."
+    ],
+    "avoidAIf": [
+      "Ton seul usage est de retravailler de longs textes avec une exigence éditoriale forte.",
+      "Tu te perds dans trop de fonctions et n’as pas besoin d’un assistant multimodal complet."
+    ],
+    "avoidBIf": [
+      "Tu veux un outil très polyvalent avec un écosystème large et beaucoup de modes de travail.",
+      "Tu risques d’atteindre souvent les limites d’usage et ne veux pas passer sur Max ou Team."
+    ],
+    "avoidBothIf": [
+      "Tu n’as pas encore identifié 3 usages récurrents et mesurables.",
+      "Tu cherches une base de connaissance, un CRM ou un outil projet : ce ne sont pas des outils de structuration métier."
+    ],
+    "decisiveCriteria": [
+      {
+        "label": "Polyvalence réelle",
+        "whyItMatters": "Un solo doit souvent couvrir plusieurs usages avec un seul abonnement.",
+        "toolA": "Très fort pour assistant généraliste, multimodal, recherche, fichiers, code et production variée.",
+        "toolB": "Très fort aussi, mais plus intéressant quand le travail est textuel, analytique ou documentaire.",
+        "decision": "ChatGPT si tu veux un seul abonnement généraliste.",
+        "importance": "high"
+      },
+      {
+        "label": "Longs documents et qualité éditoriale",
+        "whyItMatters": "Le confort sur les textes longs change la productivité réelle.",
+        "toolA": "Bon, mais peut demander plus de cadrage pour obtenir un ton très fin.",
+        "toolB": "Souvent plus confortable pour lire, synthétiser et réécrire de longs contenus.",
+        "decision": "Claude si ton travail dépend de documents longs.",
+        "importance": "high"
+      },
+      {
+        "label": "Coût du doublon",
+        "whyItMatters": "Deux IA à 20 USD/mois ou plus deviennent vite un coût fixe inutile.",
+        "toolA": "Peut suffire seul pour la majorité des profils.",
+        "toolB": "À ajouter seulement si un usage distinct est clair.",
+        "decision": "Ne garde les deux que si les usages sont séparés.",
+        "importance": "high"
+      },
+      {
+        "label": "Limites d’usage",
+        "whyItMatters": "Le coût réel dépend souvent des plafonds atteints, pas seulement du prix affiché.",
+        "toolA": "Limites variables selon plan et modèle.",
+        "toolB": "Limites sensibles pour les gros utilisateurs, avec bascule possible vers Max.",
+        "decision": "Vérifier ses pics d’usage avant de payer plus.",
+        "importance": "medium"
+      },
+      {
+        "label": "Travail d’équipe",
+        "whyItMatters": "Admin, sécurité et partage changent la décision en équipe.",
+        "toolA": "Business/Enterprise pour workspace, admin et connecteurs.",
+        "toolB": "Team avec seats Standard/Premium et usage accru.",
+        "decision": "Comparer le coût par seat et le niveau d’usage avant migration équipe.",
+        "importance": "medium"
+      }
+    ],
+    "scoreByUseCase": [
+      {
+        "useCase": "Assistant IA généraliste solo",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Couvre le plus grand nombre d’usages avec un seul abonnement."
+        },
+        "toolB": {
+          "fit": "good",
+          "score": null,
+          "reason": "Très bon, mais moins évident comme unique assistant si l’usage est très varié."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "ChatGPT par défaut.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Écriture longue et réécriture fine",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Efficace avec un bon brief."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Très bon confort sur textes longs, ton et synthèse."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Claude si l’éditorial est central.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Recherche avec sources et livrables rapides",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Plus outillé pour recherche et production multimodale selon plan."
+        },
+        "toolB": {
+          "fit": "good",
+          "score": null,
+          "reason": "Pertinent, mais à vérifier selon fonctionnalités disponibles au moment de l’usage."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "ChatGPT si la recherche est fréquente.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Analyse de documents lourds",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Solide pour fichiers et extraction."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Très fort pour garder une lecture structurée d’un corpus long."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Claude si les documents sont longs et nombreux.",
+        "showAsScore": false
+      }
+    ],
+    "nonDecisiveSimilarities": [
+      {
+        "label": "Les deux savent écrire un post LinkedIn",
+        "reasonToIgnore": "La différence vient du cadrage, du ton et du contexte, pas de la simple capacité à rédiger."
+      },
+      {
+        "label": "Les deux ont un plan gratuit",
+        "reasonToIgnore": "Le gratuit sert à tester, pas à décider un usage pro durable."
+      }
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Commencer avec ChatGPT si tu veux un seul assistant IA.",
+      "switchWhen": "Ajouter ou basculer vers Claude quand plus de 50 % de ton usage concerne longs textes, documents, reformulations sensibles ou analyse éditoriale.",
+      "keepBothIf": "Tu utilises ChatGPT pour recherche/multimodal/code et Claude pour textes longs/édition/analyse documentaire.",
+      "warning": "Payer les deux sans frontière d’usage crée un doublon coûteux et confus.",
+      "examples": [
+        "ChatGPT pour produire une structure, Claude pour affiner un manifeste.",
+        "ChatGPT pour analyser des données et sources, Claude pour transformer en note claire.",
+        "Claude seul si ton usage est principalement rédactionnel."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Bon pour tester, insuffisant pour un usage pro régulier.",
+        "whenPaidBecomesNecessary": "Quand tu l’utilises tous les jours, avec fichiers, recherche, modèles avancés ou production client.",
+        "hiddenCost": "Le vrai coût monte si Pro ou Business devient nécessaire.",
+        "pricingRisk": "Payer Pro par réflexe alors que Plus suffit."
+      },
+      "toolB": {
+        "freePlanReality": "Bon pour tester la qualité de réponse, limité pour un usage intensif.",
+        "whenPaidBecomesNecessary": "Quand les limites bloquent ton rythme de travail.",
+        "hiddenCost": "Bascule possible vers Max ou Team si usage très intensif.",
+        "pricingRisk": "Garder Claude en second outil sans usage distinct."
+      },
+      "duplicateCostWarning": "Le doublon ChatGPT + Claude doit être justifié par deux rôles clairs.",
+      "tooltrimNote": "Ne compare pas seulement 20 USD vs 20 USD. Compare le type de travail que chaque outil remplace."
+    },
+    "workflowFit": [
+      {
+        "workflow": "ai writing",
+        "bestChoice": "toolB",
+        "reason": "Claude est souvent plus confortable pour textes longs et réécriture."
+      },
+      {
+        "workflow": "ai research",
+        "bestChoice": "toolA",
+        "reason": "ChatGPT est plus logique pour un assistant de recherche polyvalent selon plan."
+      },
+      {
+        "workflow": "ai coding",
+        "bestChoice": "depends",
+        "reason": "ChatGPT est très polyvalent, Claude peut être excellent sur raisonnement/code selon modèle et contexte."
+      }
+    ],
+    "profileFit": [
+      {
+        "profile": "Freelance créatif polyvalent",
+        "bestChoice": "toolA",
+        "reason": "Un seul assistant pour idées, contenus, fichiers et présentations.",
+        "risk": "Ajouter Claude trop tôt sans usage séparé."
+      },
+      {
+        "profile": "Consultant stratégie ou copywriter",
+        "bestChoice": "toolB",
+        "reason": "Meilleur fit si livrables longs, notes et reformulations sont le cœur du travail.",
+        "risk": "Manquer d’outils multimodaux ou de recherche selon besoin."
+      },
+      {
+        "profile": "Petite équipe",
+        "bestChoice": "depends",
+        "reason": "Comparer usage par seat, admin, sécurité et volume réel.",
+        "risk": "Multiplier les comptes IA sans gouvernance."
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": "Choisir après un seul prompt",
+        "consequence": "Le résultat reflète souvent le prompt, pas l’outil.",
+        "recommendation": "Tester 5 cas réels : rédaction, synthèse, analyse fichier, recherche, réécriture."
+      },
+      {
+        "title": "Payer deux IA sans séparation",
+        "consequence": "Coût fixe doublé et usage confus.",
+        "recommendation": "Attribuer un rôle clair à chaque outil ou en supprimer un."
+      },
+      {
+        "title": "Confondre assistant IA et outil métier",
+        "consequence": "Les décisions et données finissent dans des conversations difficiles à maintenir.",
+        "recommendation": "Garder Notion, Airtable, Linear ou CRM pour structurer les données durables."
+      }
+    ],
+    "migrationCost": {
+      "fromAtoB": "Faible pour les prompts, moyen si historiques et workflows sont importants.",
+      "fromBtoA": "Faible pour les prompts, moyen si habitudes éditoriales et documents sont centralisés.",
+      "lockInRisk": "medium"
+    },
+    "finalRecommendation": "Par défaut, ToolTrim recommande ChatGPT comme assistant IA unique pour un freelance ou solo polyvalent. Claude devient meilleur si le travail repose surtout sur longs documents, édition, synthèse et qualité rédactionnelle."
+  },
+  "comparisonRows": [
+    {
+      "group": "Usage",
+      "criterion": "Usage principal",
+      "toolA": "Assistant IA généraliste multimodal",
+      "toolB": "Assistant IA très fort sur texte long et analyse",
+      "tooltrimDecision": "ChatGPT par défaut, Claude si travail éditorial long.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "hero",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Décision",
+      "criterion": "Fausse similarité",
+      "toolA": "Répond aux prompts",
+      "toolB": "Répond aux prompts",
+      "tooltrimDecision": "Ne pas choisir sur la simple qualité d’une réponse isolée.",
+      "differenceLevel": "medium",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Coût",
+      "criterion": "Risque de doublon",
+      "toolA": "Peut suffire seul",
+      "toolB": "Souvent second outil spécialisé",
+      "tooltrimDecision": "Garder les deux uniquement avec rôles séparés.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "costReality",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Usage",
+      "criterion": "Long contexte éditorial",
+      "toolA": "Bon",
+      "toolB": "Très fort",
+      "tooltrimDecision": "Claude si documents longs fréquents.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Équipe",
+      "criterion": "Plan business",
+      "toolA": "Business/Enterprise",
+      "toolB": "Team/Enterprise",
+      "tooltrimDecision": "Comparer par seat et limites réelles.",
+      "differenceLevel": "medium",
+      "decisionValue": "medium",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    }
+  ],
+  "contentBlocks": {
+    "heroPromise": "Choisir entre ChatGPT et Claude sans tomber dans le faux match : le bon assistant dépend de ton vrai usage.",
+    "verdictTitle": "Le choix rapide.",
+    "scoreTitle": "Le match par usage.",
+    "criteriaTitle": "Ce qui change vraiment.",
+    "tableTitle": "Les écarts utiles.",
+    "tippingPointTitle": "Le seuil de bascule.",
+    "costTitle": "Le coût réel.",
+    "pitfallsTitle": "Les erreurs de choix fréquentes."
+  },
+  "uiPriority": {
+    "hero": [
+      "Usage principal",
+      "Recommandation par défaut",
+      "Seuil de bascule"
+    ],
+    "verdict": [
+      "ChatGPT par défaut pour polyvalence",
+      "Claude pour longs textes"
+    ],
+    "scoreByUseCase": [
+      "Assistant généraliste",
+      "Écriture longue",
+      "Recherche",
+      "Analyse documents"
+    ],
+    "mainTable": [
+      "Usage principal",
+      "Long contexte",
+      "Coût du doublon",
+      "Limites d’usage",
+      "Travail d’équipe"
+    ],
+    "tippingPoint": [
+      "Ajouter Claude quand l’éditorial devient central"
+    ],
+    "costReality": [
+      "Risque de payer deux IA",
+      "Bascule vers Pro/Max/Team"
+    ],
+    "pitfalls": [
+      "Test trop court",
+      "Doublon IA",
+      "Confusion outil métier"
+    ],
+    "faq": [
+      "Faut-il payer les deux ?",
+      "Claude est-il meilleur pour écrire ?"
+    ]
+  },
+  "whatNotToShow": [
+    {
+      "item": "Liste exhaustive de modèles",
+      "reason": "too detailed"
+    },
+    {
+      "item": "Tous les exemples de prompts",
+      "reason": "redundant with another section"
+    },
+    {
+      "item": "Arguments marketing sur l’IA la plus avancée",
+      "reason": "marketing claim"
+    }
+  ],
+  "displayRules": {
+    "maxMainCriteria": 8,
+    "maxScoreUseCases": 6,
+    "onlyShowHighDifferenceByDefault": true,
+    "avoidRepeatedClaims": true,
+    "preferShortDecisionSentences": true,
+    "hideNonDecisiveSimilaritiesFromMainTable": true,
+    "avoidAbsoluteWinnerIfContextMatters": true
+  },
+  "related": {
+    "alternatives": [
+      "Gemini",
+      "Perplexity",
+      "Mistral Le Chat"
+    ],
+    "stacks": [
+      "solo-generaliste",
+      "consultant",
+      "createur-de-contenu",
+      "dev-freelance"
+    ],
+    "categories": [
+      "ai-assistant",
+      "ai-writing",
+      "ai-research"
+    ],
+    "otherComparisons": [
+      "claude-vs-gemini",
+      "chatgpt-vs-perplexity"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Faut-il payer ChatGPT et Claude ?",
+      "answer": "Seulement si les rôles sont séparés : ChatGPT pour polyvalence/recherche, Claude pour longs textes et analyse documentaire.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "cost"
+    },
+    {
+      "question": "Claude est-il toujours meilleur pour écrire ?",
+      "answer": "Non. Claude est souvent plus confortable sur textes longs, mais ChatGPT peut être excellent avec un brief précis.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "none"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ChatGPT pricing",
+      "url": "https://chatgpt.com/pricing/",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "plans",
+        "ai features"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "ChatGPT Business",
+      "url": "https://chatgpt.com/business/business-plan/",
+      "type": "official_features",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "business features"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "OpenAI Enterprise help",
+      "url": "https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise",
+      "type": "official_docs",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "enterprise controls"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Claude pricing",
+      "url": "https://claude.com/pricing",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "team seats",
+        "max"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Anthropic Claude Pro announcement",
+      "url": "https://www.anthropic.com/news/claude-pro",
+      "type": "official_features",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pro positioning"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "The Verge Claude Max coverage",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/645842/anthropic-launches-a-200-per-month-tier-for-power-users",
+      "type": "article",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "max context",
+        "pricing signal"
+      ],
+      "sourceBias": "neutral"
+    }
+  ],
+  "confidence": {
+    "pricing": "medium",
+    "features": "medium",
+    "recommendation": "medium",
+    "notes": "Prix principaux vérifiés via pages officielles, mais limites d’usage IA variables et susceptibles de changer."
+  },
+  "missingData": [
+    "Limites exactes de messages par modèle et plan non stables.",
+    "Disponibilité précise de certaines fonctions selon pays/plan à vérifier au moment de publication."
+  ]
+}

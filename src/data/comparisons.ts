@@ -34,6 +34,7 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
 
   // Automation
   { slugPair: "zapier-vs-make", toolA: "zapier", toolB: "make" },
+  { slugPair: "make-vs-zapier", toolA: "make", toolB: "zapier" },
   { slugPair: "zapier-vs-albato", toolA: "zapier", toolB: "albato" },
 
   // Design
@@ -62,6 +63,7 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
 
   // Website Builders / CMS
   { slugPair: "webflow-vs-squarespace", toolA: "webflow", toolB: "squarespace" },
+  { slugPair: "webflow-vs-framer", toolA: "webflow", toolB: "framer" },
   { slugPair: "webflow-vs-wix", toolA: "webflow", toolB: "wix" },
   { slugPair: "wix-vs-squarespace", toolA: "wix", toolB: "squarespace" },
   { slugPair: "wordpress-com-vs-wix", toolA: "wordpress-com", toolB: "wix" },

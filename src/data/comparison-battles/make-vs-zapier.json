@@ -1,0 +1,636 @@
+{
+  "slug": "make-vs-zapier",
+  "checkedAt": "2026-05-18",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "Make",
+      "officialWebsite": "https://www.make.com",
+      "pricingUrl": "https://www.make.com/en/pricing",
+      "featuresUrl": "https://www.make.com/en/features",
+      "docsUrl": "https://help.make.com/",
+      "securityUrl": "https://www.make.com/en/security",
+      "integrationsUrl": "https://www.make.com/en/integrations",
+      "freePlan": {
+        "exists": true,
+        "summary": "Free plan sans limite de durée, utile pour automatisations légères et tests.",
+        "limits": [
+          "Crédits/opérations mensuels limités selon plan.",
+          "Chaque module action peut consommer un crédit/opération.",
+          "Scénarios complexes peuvent consommer beaucoup plus que prévu."
+        ],
+        "source": "https://www.make.com/en/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Core",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "usage-based",
+          "source": "https://www.make.com/en/pricing"
+        },
+        {
+          "name": "Pro",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "usage-based",
+          "source": "https://www.make.com/en/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Très puissant pour scénarios visuels, logique avancée, routes, transformations et optimisation.",
+        "Souvent meilleur rapport puissance/prix pour workflows complexes.",
+        "Bon pour utilisateurs prêts à comprendre la logique des données."
+      ],
+      "coreLimits": [
+        "Plus technique que Zapier.",
+        "Debug et architecture demandent méthode.",
+        "Le coût réel dépend du nombre d’opérations générées par bundles/modules."
+      ],
+      "hiddenConstraints": [
+        "Les opérations peuvent exploser si le scénario traite plusieurs bundles dans plusieurs modules.",
+        "Mauvais design = consommation rapide de crédits."
+      ],
+      "integrations": [
+        "Google Workspace",
+        "Slack",
+        "Airtable",
+        "HubSpot",
+        "Webhooks",
+        "API"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Scénarios exportables/importables selon options, mais logique dépend de Make et des modules.",
+        "source": "https://help.make.com/"
+      },
+      "setupComplexity": "medium",
+      "collaborationFit": "small-team",
+      "automationDepth": "advanced",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Fonctions AI et modules IA selon intégrations et plans.",
+        "pricingImpact": "Coût dépend des opérations et appels vers services IA externes.",
+        "source": "https://www.make.com/en/pricing"
+      }
+    },
+    "toolB": {
+      "name": "Zapier",
+      "officialWebsite": "https://zapier.com",
+      "pricingUrl": "https://zapier.com/pricing",
+      "featuresUrl": "https://zapier.com/features",
+      "docsUrl": "https://help.zapier.com/",
+      "securityUrl": "https://zapier.com/security",
+      "integrationsUrl": "https://zapier.com/apps",
+      "freePlan": {
+        "exists": true,
+        "summary": "Free plan avec Zaps, Tables, Forms et 100 tâches/mois selon page pricing.",
+        "limits": [
+          "100 tâches/mois sur Free.",
+          "Limites de steps et de tâches selon plan.",
+          "Les tâches ne sont pas reportées au cycle suivant."
+        ],
+        "source": "https://zapier.com/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Professional",
+          "priceMonthly": 29.99,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "usage-based",
+          "source": "https://zapier.com/pricing"
+        },
+        {
+          "name": "Team",
+          "priceMonthly": 103.5,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "usage-based",
+          "source": "https://zapier.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Très accessible, énorme catalogue d’intégrations, rapide pour automatisations simples.",
+        "Excellent pour connecter deux ou trois apps sans logique complexe.",
+        "Bon pour équipes qui veulent réduire la complexité."
+      ],
+      "coreLimits": [
+        "Peut devenir cher quand les tâches augmentent.",
+        "Moins lisible pour workflows très complexes ou transformations avancées.",
+        "La tarification par tâches peut pénaliser la croissance."
+      ],
+      "hiddenConstraints": [
+        "Un Zap mal configuré peut consommer beaucoup de tâches.",
+        "Les workflows complexes deviennent vite coûteux ou fragmentés."
+      ],
+      "integrations": [
+        "6000+ apps selon communication Zapier",
+        "Google Workspace",
+        "Slack",
+        "HubSpot",
+        "Airtable",
+        "Webhooks"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Zaps dépendants de Zapier. Migration vers Make/n8n demande reconstruction logique.",
+        "source": "https://help.zapier.com/"
+      },
+      "setupComplexity": "low",
+      "collaborationFit": "small-team",
+      "automationDepth": "medium",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Automatisations avec AI, Tables, Interfaces/Forms selon plans et fonctionnalités.",
+        "pricingImpact": "Coût lié aux tâches et aux plans supérieurs.",
+        "source": "https://zapier.com/pricing"
+      }
+    }
+  },
+  "comparison": {
+    "whyCompared": "Les deux automatisent des tâches entre apps SaaS sans coder.",
+    "falseSimilarity": "Ils connectent les mêmes apps, mais pas avec la même logique. Zapier est plus simple et linéaire. Make est plus visuel, plus technique et plus puissant pour scénarios complexes.",
+    "mainDifference": "Zapier gagne en simplicité et rapidité pour automatisations courantes. Make gagne dès que la logique devient multi-étapes, conditionnelle, volumique ou optimisée.",
+    "decisionSummary": "Par défaut, ToolTrim recommande Zapier pour automatisations simples et rapides. Make devient meilleur quand les workflows deviennent complexes, nombreux ou coûteux en tâches.",
+    "tooltrimDefaultChoice": "depends",
+    "battleAngle": {
+      "isThereAWinner": false,
+      "winner": "depends",
+      "winnerReason": "Zapier gagne pour simplicité. Make gagne pour puissance et optimisation.",
+      "contextualWinnerNote": "Le bon choix dépend du niveau de logique et du volume."
+    },
+    "chooseAIf": [
+      "Tu as des scénarios multi-étapes avec routes, filtres, transformations ou webhooks.",
+      "Tu veux optimiser le coût sur des workflows complexes.",
+      "Tu acceptes une courbe d’apprentissage plus technique."
+    ],
+    "chooseBIf": [
+      "Tu veux connecter vite deux ou trois apps.",
+      "Tu privilégies simplicité, catalogue d’apps et mise en place rapide.",
+      "Tu n’as pas envie de designer une architecture d’automatisation."
+    ],
+    "avoidAIf": [
+      "Tu veux une automation très simple et ne veux pas apprendre la logique des bundles/opérations.",
+      "Tu n’as personne pour maintenir les scénarios."
+    ],
+    "avoidBIf": [
+      "Tes tâches explosent en volume ou coût.",
+      "Tu as besoin de logique conditionnelle complexe, agrégation ou transformations avancées."
+    ],
+    "avoidBothIf": [
+      "Ton workflow est critique, très volumique ou nécessite code, tests, versioning et observabilité : regarde n8n ou développement custom."
+    ],
+    "decisiveCriteria": [
+      {
+        "label": "Complexité du workflow",
+        "whyItMatters": "C’est le critère numéro un.",
+        "toolA": "Très bon pour logique avancée visuelle.",
+        "toolB": "Très bon pour flux simples et standardisés.",
+        "decision": "Zapier simple, Make complexe.",
+        "importance": "high"
+      },
+      {
+        "label": "Modèle de consommation",
+        "whyItMatters": "Le prix réel dépend des actions/opérations générées.",
+        "toolA": "Crédits/opérations par module et bundle.",
+        "toolB": "Tâches par action exécutée, limites par plan.",
+        "decision": "Auditer le volume avant choix.",
+        "importance": "high"
+      },
+      {
+        "label": "Courbe d’apprentissage",
+        "whyItMatters": "Un outil mal compris crée des erreurs silencieuses.",
+        "toolA": "Plus technique.",
+        "toolB": "Plus accessible.",
+        "decision": "Zapier pour non-tech, Make pour ops avancé.",
+        "importance": "high"
+      },
+      {
+        "label": "Debug et maintenance",
+        "whyItMatters": "Les automatisations cassent avec les APIs et données.",
+        "toolA": "Plus visible mais demande méthode.",
+        "toolB": "Plus simple mais peut masquer la complexité.",
+        "decision": "Make si quelqu’un maintient sérieusement.",
+        "importance": "medium"
+      },
+      {
+        "label": "Catalogue d’intégrations",
+        "whyItMatters": "La disponibilité native peut éviter du custom.",
+        "toolA": "Très large.",
+        "toolB": "Très large, souvent référence marché.",
+        "decision": "Vérifier les apps critiques avant arbitrage.",
+        "importance": "medium"
+      }
+    ],
+    "scoreByUseCase": [
+      {
+        "useCase": "Automation simple formulaire → email/CRM",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Possible mais plus de setup."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Rapide et simple."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Zapier.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Workflow multi-branches",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Routes, filtres et logique visuelle."
+        },
+        "toolB": {
+          "fit": "good",
+          "score": null,
+          "reason": "Possible mais peut devenir coûteux/moins lisible."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "Make.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Ops internes récurrentes",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Bon pour structurer et optimiser."
+        },
+        "toolB": {
+          "fit": "good",
+          "score": null,
+          "reason": "Très bien si flux simples."
+        },
+        "winner": "depends",
+        "tooltrimDecision": "Zapier au début, Make si volume/complexité.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Utilisateur non-tech",
+        "toolA": {
+          "fit": "limited",
+          "score": null,
+          "reason": "Demande de comprendre données et opérations."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Plus accessible."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Zapier.",
+        "showAsScore": false
+      }
+    ],
+    "nonDecisiveSimilarities": [
+      {
+        "label": "Nombre d’intégrations élevé",
+        "reasonToIgnore": "Les deux couvrent beaucoup d’apps. Le vrai sujet est le workflow réel."
+      },
+      {
+        "label": "Présence de webhooks",
+        "reasonToIgnore": "La présence ne dit rien de la facilité de maintenance."
+      }
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Commencer avec Zapier si tu as 1 à 5 automatisations simples.",
+      "switchWhen": "Passer à Make quand les Zaps deviennent nombreux, chers, multi-étapes, conditionnels ou difficiles à maintenir.",
+      "keepBothIf": "Zapier pour automatisations simples d’équipe, Make pour scénarios ops avancés.",
+      "warning": "Un scénario Make mal construit peut consommer énormément d’opérations ; un Zap mal conçu peut brûler les tâches du mois.",
+      "examples": [
+        "Zapier pour envoyer un lead Typeform vers Pipedrive.",
+        "Make pour enrichir, router, transformer et synchroniser plusieurs bases."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Utile pour tester et petites automatisations.",
+        "whenPaidBecomesNecessary": "Scénarios fréquents, volumes, fonctions avancées ou besoin de plus de crédits.",
+        "hiddenCost": "Consommation d’opérations multipliée par bundles et modules.",
+        "pricingRisk": "Sous-estimer la consommation d’un scénario mal designé."
+      },
+      "toolB": {
+        "freePlanReality": "100 tâches/mois : suffisant pour tests et flux très légers.",
+        "whenPaidBecomesNecessary": "Dès que les automatisations tournent vraiment ou nécessitent plus de tâches/steps.",
+        "hiddenCost": "Chaque action exécutée consomme des tâches ; croissance = facture.",
+        "pricingRisk": "Se retrouver bloqué ou facturé plus haut par volume."
+      },
+      "duplicateCostWarning": "Éviter de maintenir le même workflow dans les deux outils.",
+      "tooltrimNote": "Le coût réel se calcule par scénario : nombre de runs × actions/modules × données traitées."
+    },
+    "workflowFit": [
+      {
+        "workflow": "internal ops",
+        "bestChoice": "toolA",
+        "reason": "Meilleur pour logique avancée et optimisation."
+      },
+      {
+        "workflow": "solo freelance",
+        "bestChoice": "toolB",
+        "reason": "Plus simple pour quelques automatisations."
+      },
+      {
+        "workflow": "sales pipeline",
+        "bestChoice": "depends",
+        "reason": "Zapier pour simple synchro, Make pour enrichissement/routage."
+      }
+    ],
+    "profileFit": [
+      {
+        "profile": "Freelance non-tech",
+        "bestChoice": "toolB",
+        "reason": "Démarrage plus simple.",
+        "risk": "Coût qui grimpe si tout passe par Zapier."
+      },
+      {
+        "profile": "Ops/COO solo",
+        "bestChoice": "toolA",
+        "reason": "Plus puissant pour workflows internes.",
+        "risk": "Créer des scénarios trop complexes sans documentation."
+      },
+      {
+        "profile": "Agence automation",
+        "bestChoice": "toolA",
+        "reason": "Plus de contrôle et optimisation.",
+        "risk": "Maintenance client plus technique."
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": "Choisir Zapier par réflexe",
+        "consequence": "Simple au début, cher si les tâches augmentent.",
+        "recommendation": "Auditer les volumes avant de scaler."
+      },
+      {
+        "title": "Choisir Make sans compétence ops",
+        "consequence": "Scénarios difficiles à maintenir.",
+        "recommendation": "Documenter chaque scénario et surveiller les opérations."
+      },
+      {
+        "title": "Comparer seulement le nombre d’apps",
+        "consequence": "Mauvais critère de décision.",
+        "recommendation": "Comparer le workflow réel et les limites de consommation."
+      }
+    ],
+    "migrationCost": {
+      "fromAtoB": "Moyen. Refaire les Zaps en scénarios, avec tests de données.",
+      "fromBtoA": "Moyen à élevé si scénarios Make avancés avec routes et agrégations.",
+      "lockInRisk": "medium"
+    },
+    "finalRecommendation": "ToolTrim recommande Zapier pour automatiser vite des tâches simples. Make devient le meilleur choix quand les workflows deviennent complexes, volumineux ou trop chers en tâches."
+  },
+  "comparisonRows": [
+    {
+      "group": "Usage",
+      "criterion": "Complexité workflow",
+      "toolA": "Avancé, visuel, routes",
+      "toolB": "Simple, linéaire, rapide",
+      "tooltrimDecision": "Zapier simple, Make complexe.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "hero",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Coût",
+      "criterion": "Unité de consommation",
+      "toolA": "Crédits/opérations",
+      "toolB": "Tâches",
+      "tooltrimDecision": "Calculer par scénario.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Setup",
+      "criterion": "Courbe d’apprentissage",
+      "toolA": "Moyenne",
+      "toolB": "Faible",
+      "tooltrimDecision": "Zapier pour non-tech.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Maintenance",
+      "criterion": "Debug",
+      "toolA": "Puissant mais technique",
+      "toolB": "Simple mais parfois opaque",
+      "tooltrimDecision": "Make si ops avancé.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Volume",
+      "criterion": "Scalabilité coût",
+      "toolA": "Optimisable",
+      "toolB": "Peut coûter cher par tâches",
+      "tooltrimDecision": "Make si volume important.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    }
+  ],
+  "contentBlocks": {
+    "heroPromise": "Ne choisis pas l’outil avec le plus d’intégrations. Choisis celui qui tient ton vrai workflow.",
+    "verdictTitle": "Le choix rapide.",
+    "scoreTitle": "Le match par usage.",
+    "criteriaTitle": "Ce qui change vraiment.",
+    "tableTitle": "Les écarts utiles.",
+    "tippingPointTitle": "Le seuil de bascule.",
+    "costTitle": "Le coût réel.",
+    "pitfallsTitle": "Les erreurs de choix fréquentes."
+  },
+  "uiPriority": {
+    "hero": [
+      "Complexité workflow",
+      "Coût réel"
+    ],
+    "verdict": [
+      "Zapier simple",
+      "Make avancé"
+    ],
+    "scoreByUseCase": [
+      "Automation simple",
+      "Multi-branches",
+      "Ops internes",
+      "Non-tech"
+    ],
+    "mainTable": [
+      "Complexité",
+      "Unité de consommation",
+      "Setup",
+      "Maintenance",
+      "Volume"
+    ],
+    "tippingPoint": [
+      "Quand les Zaps deviennent chers ou complexes"
+    ],
+    "costReality": [
+      "Tâches vs opérations"
+    ],
+    "pitfalls": [
+      "Mauvais calcul de volume"
+    ],
+    "faq": [
+      "Make est-il moins cher que Zapier ?"
+    ]
+  },
+  "whatNotToShow": [
+    {
+      "item": "Nombre brut d’intégrations",
+      "reason": "not decisive"
+    },
+    {
+      "item": "Liste exhaustive des apps",
+      "reason": "too detailed"
+    },
+    {
+      "item": "Promesse no-code générique",
+      "reason": "marketing claim"
+    }
+  ],
+  "displayRules": {
+    "maxMainCriteria": 8,
+    "maxScoreUseCases": 6,
+    "onlyShowHighDifferenceByDefault": true,
+    "avoidRepeatedClaims": true,
+    "preferShortDecisionSentences": true,
+    "hideNonDecisiveSimilaritiesFromMainTable": true,
+    "avoidAbsoluteWinnerIfContextMatters": true
+  },
+  "related": {
+    "alternatives": [
+      "n8n",
+      "Activepieces",
+      "Pipedream"
+    ],
+    "stacks": [
+      "ops-coo",
+      "consultant",
+      "agency",
+      "solo-generaliste"
+    ],
+    "categories": [
+      "automation",
+      "no-code",
+      "workflow"
+    ],
+    "otherComparisons": [
+      "make-vs-n8n",
+      "zapier-vs-n8n"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Make est-il moins cher que Zapier ?",
+      "answer": "Pas toujours. Make peut être plus optimisable sur workflows complexes, mais un mauvais scénario peut consommer beaucoup d’opérations.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "cost"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Make pricing",
+      "url": "https://www.make.com/en/pricing",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "credits"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Make operations help",
+      "url": "https://help.make.com/operations",
+      "type": "official_docs",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "operations",
+        "hidden cost"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Zapier pricing",
+      "url": "https://zapier.com/pricing",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "free tasks"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Zapier zap limits",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496181445261-Zap-limits",
+      "type": "official_docs",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "limits"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Zapier task usage",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496196837261-How-is-task-usage-measured-in-Zapier",
+      "type": "official_docs",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "task usage"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Make community operation limit signal",
+      "url": "https://community.make.com/t/operations-limit/75806",
+      "type": "community",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "usage risk"
+      ],
+      "sourceBias": "community-signal"
+    },
+    {
+      "label": "Zapier community task usage signal",
+      "url": "https://community.zapier.com/how-do-i-3/is-there-a-way-to-create-a-monthly-task-limits-for-all-zaps-51692",
+      "type": "community",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "usage risk"
+      ],
+      "sourceBias": "community-signal"
+    }
+  ],
+  "confidence": {
+    "pricing": "medium",
+    "features": "high",
+    "recommendation": "high",
+    "notes": "Unité de coût bien vérifiée. Prix exacts Make par plan à revérifier selon devise et volume sélectionné."
+  },
+  "missingData": [
+    "Prix Make exacts par volume de crédits à compléter.",
+    "Prix Zapier exacts annualisés selon task tier à compléter."
+  ]
+}

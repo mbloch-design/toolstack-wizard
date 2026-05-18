@@ -1,0 +1,590 @@
+{
+  "slug": "notion-vs-airtable",
+  "checkedAt": "2026-05-18",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "Notion",
+      "officialWebsite": "https://www.notion.com",
+      "pricingUrl": "https://www.notion.com/pricing",
+      "featuresUrl": "https://www.notion.com/product",
+      "docsUrl": "https://www.notion.com/help",
+      "securityUrl": "https://www.notion.com/security",
+      "integrationsUrl": "https://www.notion.com/integrations",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan gratuit utile pour solo et usage léger. Les limites touchent surtout collaboration, historique, fichiers et fonctions avancées selon plan.",
+        "limits": [
+          "Limites de collaboration et d’historique sur Free.",
+          "Certaines permissions, intégrations et fonctions avancées sont sur Business/Enterprise."
+        ],
+        "source": "https://www.notion.com/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Plus",
+          "priceMonthly": 12,
+          "priceYearlyMonthlyEquivalent": 10,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://www.notion.com/pricing"
+        },
+        {
+          "name": "Business",
+          "priceMonthly": 24,
+          "priceYearlyMonthlyEquivalent": 20,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://www.notion.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Excellent pour documentation, wiki, notes, briefs, process, bases légères.",
+        "Très bon pour créer un espace de travail lisible sans complexité technique.",
+        "Adoption facile côté solo et petites équipes."
+      ],
+      "coreLimits": [
+        "Moins robuste qu’une vraie base relationnelle pour données volumineuses, workflows métier et vues complexes.",
+        "Peut devenir un fourre-tout si la gouvernance est faible."
+      ],
+      "hiddenConstraints": [
+        "Le coût réel vient du temps d’organisation et de nettoyage.",
+        "Les bases Notion deviennent fragiles si elles remplacent un vrai outil métier."
+      ],
+      "integrations": [
+        "Slack",
+        "Google Drive",
+        "Figma",
+        "GitHub",
+        "Zapier",
+        "Make"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Export possible en HTML/Markdown/CSV selon contenus, mais relations et vues ne migrent pas toujours proprement.",
+        "source": "https://www.notion.com/help/export-your-content"
+      },
+      "setupComplexity": "low",
+      "collaborationFit": "small-team",
+      "automationDepth": "light",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Notion AI/agents et crédits selon plan et usage.",
+        "pricingImpact": "L’IA peut ajouter un coût par crédits ou plan selon fonctions.",
+        "source": "https://www.notion.com/pricing"
+      }
+    },
+    "toolB": {
+      "name": "Airtable",
+      "officialWebsite": "https://airtable.com",
+      "pricingUrl": "https://airtable.com/pricing",
+      "featuresUrl": "https://airtable.com/product",
+      "docsUrl": "https://support.airtable.com/docs",
+      "securityUrl": "https://www.airtable.com/security",
+      "integrationsUrl": "https://airtable.com/integrations",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan gratuit pour individus, très petites équipes ou besoins légers. Les plans payants ajoutent volume, automatisations, extensions et gouvernance.",
+        "limits": [
+          "Volume de données, automatisations, historique et permissions limités selon plan.",
+          "Les bases complexes peuvent consommer vite les quotas."
+        ],
+        "source": "https://airtable.com/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Team",
+          "priceMonthly": 24,
+          "priceYearlyMonthlyEquivalent": 20,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://airtable.com/pricing"
+        },
+        {
+          "name": "Business",
+          "priceMonthly": 54,
+          "priceYearlyMonthlyEquivalent": 45,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://airtable.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Base de données relationnelle accessible aux non-devs.",
+        "Très fort pour pipelines, catalogues, inventaires, CRM léger, production ops.",
+        "Vues, formulaires, automatisations et interfaces structurent de vrais process."
+      ],
+      "coreLimits": [
+        "Plus complexe à bien modéliser que Notion.",
+        "Moins naturel pour documentation longue et écriture libre.",
+        "Coût par seat et paliers peuvent monter vite."
+      ],
+      "hiddenConstraints": [
+        "Une mauvaise structure de base devient coûteuse à corriger.",
+        "Le prix réel dépend du nombre d’utilisateurs, records, automatisations et interfaces."
+      ],
+      "integrations": [
+        "Slack",
+        "Google Drive",
+        "Salesforce",
+        "Jira",
+        "Zapier",
+        "Make"
+      ],
+      "exportPortability": {
+        "rating": "good",
+        "notes": "Export CSV possible, API disponible. Les interfaces, automatisations et relations demandent une migration soigneuse.",
+        "source": "https://support.airtable.com/docs"
+      },
+      "setupComplexity": "medium",
+      "collaborationFit": "team",
+      "automationDepth": "advanced",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Fonctions IA selon plan et disponibilité pour catégorisation, génération ou aide sur données.",
+        "pricingImpact": "Impact tarifaire à vérifier selon plan et disponibilité.",
+        "source": "https://airtable.com/pricing"
+      }
+    }
+  },
+  "comparison": {
+    "whyCompared": "Les deux permettent d’organiser informations, tableaux et projets sans code.",
+    "falseSimilarity": "Notion et Airtable se ressemblent par leurs tableaux. Mais Notion est d’abord un espace de connaissance, Airtable une base métier structurée.",
+    "mainDifference": "Notion organise le savoir et les contenus. Airtable structure des données opérationnelles avec vues, relations, formulaires et automatisations plus solides.",
+    "decisionSummary": "Par défaut, ToolTrim recommande Notion pour documentation, process et espace de travail solo/petite équipe. Airtable devient meilleur dès que les données pilotent un workflow métier récurrent.",
+    "tooltrimDefaultChoice": "depends",
+    "battleAngle": {
+      "isThereAWinner": false,
+      "winner": "depends",
+      "winnerReason": "Le gagnant dépend de la nature de l’information : contenu/documentation ou données opérationnelles.",
+      "contextualWinnerNote": "Notion gagne pour le savoir. Airtable gagne pour les opérations structurées."
+    },
+    "chooseAIf": [
+      "Tu veux centraliser notes, briefs, wiki, process, contenus et suivi léger.",
+      "Ton équipe doit comprendre vite l’espace sans logique de base avancée.",
+      "Tu privilégies lisibilité et adoption plutôt que puissance de données."
+    ],
+    "chooseBIf": [
+      "Tu gères des leads, inventaires, contenus, ressources ou opérations avec statuts, filtres et vues multiples.",
+      "Tu as besoin de formulaires, automatisations, interfaces ou données relationnelles.",
+      "Tu veux éviter de bricoler un CRM ou un outil ops dans Notion."
+    ],
+    "avoidAIf": [
+      "Tu dois gérer beaucoup de records, relations, permissions fines ou automatisations critiques.",
+      "Ton tableau Notion commence à devenir une base métier déguisée."
+    ],
+    "avoidBIf": [
+      "Tu veux surtout écrire, documenter et partager du contexte.",
+      "Ton besoin est simple et ne justifie pas une modélisation de données."
+    ],
+    "avoidBothIf": [
+      "Tu as besoin d’un ERP, d’un vrai CRM sales complexe ou d’une base transactionnelle critique."
+    ],
+    "decisiveCriteria": [
+      {
+        "label": "Nature du contenu",
+        "whyItMatters": "C’est le vrai point de décision.",
+        "toolA": "Pages, documents, notes, bases simples.",
+        "toolB": "Tables relationnelles, records, vues et interfaces.",
+        "decision": "Notion pour connaissance, Airtable pour opérations.",
+        "importance": "high"
+      },
+      {
+        "label": "Structure de données",
+        "whyItMatters": "Une base mal choisie devient difficile à migrer.",
+        "toolA": "Souple mais moins robuste pour relations complexes.",
+        "toolB": "Plus structuré et meilleur pour données métiers.",
+        "decision": "Airtable si les données sont le produit principal.",
+        "importance": "high"
+      },
+      {
+        "label": "Automatisations",
+        "whyItMatters": "Les workflows récurrents doivent être fiables.",
+        "toolA": "Automatisation légère via intégrations ou Notion AI/agents.",
+        "toolB": "Automatisations natives et intégrations plus orientées process.",
+        "decision": "Airtable si l’automatisation pilote l’activité.",
+        "importance": "high"
+      },
+      {
+        "label": "Adoption",
+        "whyItMatters": "Un outil trop complexe n’est pas tenu à jour.",
+        "toolA": "Très accessible.",
+        "toolB": "Demande plus de logique de modélisation.",
+        "decision": "Notion si l’équipe n’a pas besoin d’une vraie base.",
+        "importance": "medium"
+      },
+      {
+        "label": "Coût réel",
+        "whyItMatters": "Le prix vient des seats et du temps de structure.",
+        "toolA": "Peu cher au départ, coûteux en dette d’organisation.",
+        "toolB": "Plus cher, mais économise du bricolage ops.",
+        "decision": "Comparer coût logiciel et coût de maintenance.",
+        "importance": "high"
+      }
+    ],
+    "scoreByUseCase": [
+      {
+        "useCase": "Wiki d’agence",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Pages, process et documents sont son terrain naturel."
+        },
+        "toolB": {
+          "fit": "limited",
+          "score": null,
+          "reason": "Trop base de données pour un simple wiki."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "Notion.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "CRM léger ou pipeline contenu",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Suffit au début."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Meilleur dès que vues, statuts et automatisations se multiplient."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Airtable si le pipeline devient central.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Documentation projet client",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Lisible et facile à partager."
+        },
+        "toolB": {
+          "fit": "limited",
+          "score": null,
+          "reason": "Moins naturel pour raconter le contexte."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "Notion.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Ops internes récurrentes",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "OK pour démarrer."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Plus fiable quand les données circulent."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Airtable au seuil de process.",
+        "showAsScore": false
+      }
+    ],
+    "nonDecisiveSimilarities": [
+      {
+        "label": "Templates",
+        "reasonToIgnore": "Les deux en proposent. Le critère utile est la structure sous-jacente."
+      },
+      {
+        "label": "Vue tableau",
+        "reasonToIgnore": "Un tableau Notion n’est pas équivalent à une base Airtable pour des opérations complexes."
+      }
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Commencer avec Notion pour organiser le savoir et valider le process.",
+      "switchWhen": "Basculer vers Airtable quand la base a plusieurs vues critiques, des relations entre tables, des formulaires, des automatisations ou plusieurs personnes qui modifient les données.",
+      "keepBothIf": "Notion pour le contexte et Airtable pour la donnée source.",
+      "warning": "Le pire montage consiste à maintenir les mêmes données dans les deux outils.",
+      "examples": [
+        "Notion pour le brief éditorial, Airtable pour le calendrier de production.",
+        "Notion pour le playbook commercial, Airtable pour le pipeline leads."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Très utile en solo.",
+        "whenPaidBecomesNecessary": "Collaboration, historique, fichiers, permissions ou usage équipe.",
+        "hiddenCost": "Temps de nettoyage quand l’espace devient un fourre-tout.",
+        "pricingRisk": "Payer des seats pour des lecteurs passifs."
+      },
+      "toolB": {
+        "freePlanReality": "Bien pour tester une base légère.",
+        "whenPaidBecomesNecessary": "Plus de records, automatisations, interfaces, historique ou gouvernance.",
+        "hiddenCost": "Modélisation initiale et maintenance.",
+        "pricingRisk": "Coût par seat et paliers de volume."
+      },
+      "duplicateCostWarning": "Garder Notion et Airtable est logique uniquement si chacun a un rôle distinct.",
+      "tooltrimNote": "Le coût réel n’est pas le prix mensuel : c’est le coût de la mauvaise structure."
+    },
+    "workflowFit": [
+      {
+        "workflow": "internal ops",
+        "bestChoice": "toolB",
+        "reason": "Plus adapté aux données opérationnelles."
+      },
+      {
+        "workflow": "content ops",
+        "bestChoice": "depends",
+        "reason": "Notion pour brief, Airtable pour pipeline."
+      },
+      {
+        "workflow": "agency",
+        "bestChoice": "depends",
+        "reason": "Notion pour méthode, Airtable pour production structurée."
+      }
+    ],
+    "profileFit": [
+      {
+        "profile": "Freelance solo",
+        "bestChoice": "toolA",
+        "reason": "Plus simple et suffisant pour notes, CRM léger, contenus.",
+        "risk": "Transformer Notion en usine à gaz."
+      },
+      {
+        "profile": "Agence avec production récurrente",
+        "bestChoice": "toolB",
+        "reason": "Meilleur pour statuts, vues, rôles et volumes.",
+        "risk": "Négliger le wiki et le contexte."
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": "Confondre tableau et base métier",
+        "consequence": "Le système devient fragile quand les données grandissent.",
+        "recommendation": "Passer sur Airtable dès que les relations et vues deviennent centrales."
+      },
+      {
+        "title": "Tout mettre dans Notion",
+        "consequence": "L’espace devient lent à comprendre et difficile à maintenir.",
+        "recommendation": "Séparer documentation et données opérationnelles."
+      },
+      {
+        "title": "Surmodéliser Airtable trop tôt",
+        "consequence": "Setup long pour un besoin encore flou.",
+        "recommendation": "Commencer simple, puis structurer quand le process est validé."
+      }
+    ],
+    "migrationCost": {
+      "fromAtoB": "Moyen. CSV possible, mais relations, pages et contexte demandent reprise manuelle.",
+      "fromBtoA": "Moyen à élevé. Les données s’exportent, mais interfaces, automatisations et relations se perdent.",
+      "lockInRisk": "medium"
+    },
+    "finalRecommendation": "Par défaut, ToolTrim recommande Notion pour organiser le savoir et démarrer vite. Airtable devient meilleur quand la donnée devient opérationnelle, relationnelle et répétée."
+  },
+  "comparisonRows": [
+    {
+      "group": "Usage",
+      "criterion": "Nature principale",
+      "toolA": "Documentation et espace de travail",
+      "toolB": "Base de données opérationnelle",
+      "tooltrimDecision": "C’est le critère central.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "hero",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Données",
+      "criterion": "Relations et vues",
+      "toolA": "Souple mais limité",
+      "toolB": "Structuré et plus robuste",
+      "tooltrimDecision": "Airtable si les données pilotent l’activité.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Automation",
+      "criterion": "Workflow",
+      "toolA": "Léger",
+      "toolB": "Avancé",
+      "tooltrimDecision": "Airtable si automatisations récurrentes.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Adoption",
+      "criterion": "Facilité",
+      "toolA": "Très accessible",
+      "toolB": "Plus technique",
+      "tooltrimDecision": "Notion si adoption rapide prioritaire.",
+      "differenceLevel": "medium",
+      "decisionValue": "medium",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Coût",
+      "criterion": "Coût réel",
+      "toolA": "Dette d’organisation",
+      "toolB": "Coût par seat + modélisation",
+      "tooltrimDecision": "Comparer setup et maintenance.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    }
+  ],
+  "contentBlocks": {
+    "heroPromise": "Ne compare pas deux tableaux. Choisis entre un espace de connaissance et une base opérationnelle.",
+    "verdictTitle": "Le choix rapide.",
+    "scoreTitle": "Le match par usage.",
+    "criteriaTitle": "Ce qui change vraiment.",
+    "tableTitle": "Les écarts utiles.",
+    "tippingPointTitle": "Le seuil de bascule.",
+    "costTitle": "Le coût réel.",
+    "pitfallsTitle": "Les erreurs de choix fréquentes."
+  },
+  "uiPriority": {
+    "hero": [
+      "Nature principale",
+      "Seuil de bascule"
+    ],
+    "verdict": [
+      "Notion pour savoir",
+      "Airtable pour données"
+    ],
+    "scoreByUseCase": [
+      "Wiki",
+      "CRM léger",
+      "Ops internes",
+      "Content ops"
+    ],
+    "mainTable": [
+      "Nature principale",
+      "Structure de données",
+      "Automation",
+      "Adoption",
+      "Coût réel"
+    ],
+    "tippingPoint": [
+      "Quand la donnée devient process"
+    ],
+    "costReality": [
+      "Dette Notion",
+      "Seats Airtable"
+    ],
+    "pitfalls": [
+      "Confondre tableau et base"
+    ],
+    "faq": [
+      "Notion peut-il remplacer Airtable ?"
+    ]
+  },
+  "whatNotToShow": [
+    {
+      "item": "Templates",
+      "reason": "not decisive"
+    },
+    {
+      "item": "Mode sombre ou apparence",
+      "reason": "not decisive"
+    },
+    {
+      "item": "Liste complète des intégrations",
+      "reason": "too detailed"
+    }
+  ],
+  "displayRules": {
+    "maxMainCriteria": 8,
+    "maxScoreUseCases": 6,
+    "onlyShowHighDifferenceByDefault": true,
+    "avoidRepeatedClaims": true,
+    "preferShortDecisionSentences": true,
+    "hideNonDecisiveSimilaritiesFromMainTable": true,
+    "avoidAbsoluteWinnerIfContextMatters": true
+  },
+  "related": {
+    "alternatives": [
+      "Coda",
+      "Google Sheets",
+      "ClickUp"
+    ],
+    "stacks": [
+      "solo-generaliste",
+      "consultant",
+      "agency",
+      "ops-coo"
+    ],
+    "categories": [
+      "knowledge-base",
+      "database",
+      "project-management"
+    ],
+    "otherComparisons": [
+      "notion-vs-clickup",
+      "notion-vs-coda",
+      "airtable-vs-google-sheets"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Notion peut-il remplacer Airtable ?",
+      "answer": "Oui pour une base simple. Non si les données deviennent relationnelles, automatisées ou critiques.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "criteria"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Notion pricing",
+      "url": "https://www.notion.com/pricing",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "free plan",
+        "AI"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Airtable pricing",
+      "url": "https://airtable.com/pricing",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "pricing",
+        "free plan"
+      ],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Airtable plans overview",
+      "url": "https://support.airtable.com/docs/airtable-plans",
+      "type": "official_docs",
+      "checkedAt": "2026-05-18",
+      "usedFor": [
+        "plans",
+        "limits"
+      ],
+      "sourceBias": "vendor-biased"
+    }
+  ],
+  "confidence": {
+    "pricing": "medium",
+    "features": "high",
+    "recommendation": "high",
+    "notes": "Recommandation forte car les deux produits ont une différence de nature claire. Prix à revérifier avant publication finale."
+  },
+  "missingData": [
+    "Limites exactes Notion Free/Plus par workspace à revérifier.",
+    "Détails Airtable AI selon plan à vérifier."
+  ]
+}
