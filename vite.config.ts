@@ -66,6 +66,19 @@ const GUIDE_EN_TO_FR = Object.fromEntries(
   Object.entries(GUIDE_SLUG_ALTERNATES).map(([fr, en]) => [en, fr]),
 ) as Record<string, string>;
 
+const GUIDE_COMPARISON_REDIRECTS = new Set([
+  "notion-vs-coda-comparatif-2026",
+  "notion-vs-coda-comparison-2026",
+  "chatgpt-vs-claude-comparatif-2026",
+  "chatgpt-vs-claude-comparison-2026",
+  "zapier-vs-make-comparatif-2026",
+  "zapier-vs-make-comparison-2026",
+  "figma-vs-canva-comparatif-2026",
+  "figma-vs-canva-comparison-2026",
+  "slack-vs-teams-comparatif-2026",
+  "slack-vs-teams-comparison-2026",
+]);
+
 const GUIDE_FR_ONLY_SLUGS = new Set([
   "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
   "meilleurs-outils-ia-freelances-2026",
@@ -212,6 +225,7 @@ function sitemapPlugin(): Plugin {
           if (
             contentArticleSlugs.has(post.slug) ||
             pairedEnSlugs.has(post.slug) ||
+            GUIDE_COMPARISON_REDIRECTS.has(post.slug) ||
             GUIDE_EN_TO_FR[post.slug] ||
             GUIDE_FR_ONLY_SLUGS.has(post.slug)
           ) continue;
@@ -983,6 +997,7 @@ function staticPrerenderPlugin(): Plugin {
           ...postsFrData.map((p: any) => ({ ...p, lang: "fr" })),
           ...postsEnData.map((p: any) => ({ ...p, lang: "en" })),
         ].filter((post: any) => {
+          if (GUIDE_COMPARISON_REDIRECTS.has(post.slug)) return false;
           if (post.lang !== "en") return true;
           if (GUIDE_FR_ONLY_SLUGS.has(post.slug)) return false;
           return !Object.prototype.hasOwnProperty.call(GUIDE_SLUG_ALTERNATES, post.slug);

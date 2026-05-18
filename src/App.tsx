@@ -74,6 +74,17 @@ const GUIDE_EN_TO_FR = Object.fromEntries(
   Object.entries(GUIDE_SLUG_ALTERNATES).map(([fr, en]) => [en, fr]),
 ) as Record<string, string>;
 
+const GUIDE_COMPARISON_REDIRECTS: Record<string, string> = {
+  "notion-vs-coda-comparatif-2026": "notion-vs-coda",
+  "notion-vs-coda-comparison-2026": "notion-vs-coda",
+  "chatgpt-vs-claude-comparatif-2026": "chatgpt-vs-claude",
+  "chatgpt-vs-claude-comparison-2026": "chatgpt-vs-claude",
+  "zapier-vs-make-comparatif-2026": "zapier-vs-make",
+  "zapier-vs-make-comparison-2026": "zapier-vs-make",
+  "figma-vs-canva-comparatif-2026": "figma-vs-canva",
+  "figma-vs-canva-comparison-2026": "figma-vs-canva",
+};
+
 const GUIDE_FR_ONLY_SLUGS = new Set([
   "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
   "meilleurs-outils-ia-freelances-2026",
@@ -224,6 +235,10 @@ function LocalizedToolSubpage({ subpage }: { subpage: "prix" | "pricing" }) {
 /** Keep guide slugs canonical per language and avoid mixed-language duplicates */
 function LocalizedGuidePage() {
   const { slug = "", lang } = useParams();
+  const comparisonSlug = GUIDE_COMPARISON_REDIRECTS[slug];
+  if (comparisonSlug) {
+    return <Navigate to={`/${lang || "fr"}/comparatif/${comparisonSlug}`} replace />;
+  }
   if (lang === "en") {
     const enSlug = GUIDE_SLUG_ALTERNATES[slug];
     if (enSlug) return <Navigate to={`/en/guide/${enSlug}`} replace />;
