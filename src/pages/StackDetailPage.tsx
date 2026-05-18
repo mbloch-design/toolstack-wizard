@@ -627,11 +627,11 @@ function StackStickyNav({
 }
 
 /* ─── Budget value/unit split helper ────────────────────────────────────── */
-function splitBudget(budget: string): { amount: string; unit: string } | null {
-  // Match patterns like "118€/mois", "420€/mois", "€118/month"
-  const match = budget.match(/^(.+?)(\/\w+)$/);
-  if (match) return { amount: match[1], unit: match[2] };
-  return null;
+function splitBudget(s: string): { main: string; unit: string } | null {
+  // "118€/mois" → { main: "118€", unit: "/mois" }
+  // "420€/mois" → { main: "420€", unit: "/mois" }
+  const m = s.match(/^(.+?)(\/\S+)$/);
+  return m ? { main: m[1], unit: m[2] } : null;
 }
 
 /* ─── Main component ─────────────────────────────────────────────────────── */
@@ -830,14 +830,16 @@ const StackDetailPage = () => {
               : longLabels.includes(repere.label)
               ? " sd-fact-col--long"
               : "";
-            const budgetParts = isBudget ? splitBudget(repere.value) : null;
+            const budgetSplit = isBudget ? splitBudget(repere.value) : null;
             return (
               <div key={repere.label} className={`sd-fact-col${modifier}`}>
                 <span className="sd-fact-label">{repere.label}</span>
-                {isBudget && budgetParts ? (
-                  <span className="sd-fact-value sd-fact-value--budget">
-                    <span className="sd-budget-amount">{budgetParts.amount}</span>
-                    <span className="sd-budget-unit">{budgetParts.unit}</span>
+                {isBudget && budgetSplit ? (
+                  <span className="sd-fact-value sd-fact-col--compact sd-budget-value">
+                    <span className="sd-budget-composition">
+                      <span className="sd-budget-main">{budgetSplit.main}</span>
+                      <span className="sd-budget-unit">{budgetSplit.unit}</span>
+                    </span>
                   </span>
                 ) : (
                   <span className="sd-fact-value">{repere.value}</span>

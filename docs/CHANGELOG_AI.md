@@ -2,6 +2,35 @@
 
 ---
 
+## 2026-05-18 — Sprint 56 : Hero fact sheet typography scale
+
+### Objectif
+Harmoniser l'échelle typographique de la table signalétique hero : valeurs métriques (Budget, Outils, Niveau) en grand/gras distinct des valeurs descriptives (Profil, Workflow, Point d'attention) en semi-gras lisible. Budget divisé en montant principal (`118€`, 24–32px, 700) + unité (`/mois`, 14px, muted).
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — refactoring du helper `splitBudget()` (propriétés `main`/`unit`), JSX mis à jour avec `sd-budget-composition` + `sd-budget-main` + `sd-budget-unit`.
+- `src/index.css` — nouveau bloc sprint final : `min-width: 0` sur toutes les cellules, deux familles CSS (`sd-fact-col--compact` / `sd-fact-col--long`), composition budget en `inline-flex` baseline.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation de l'échelle typographique.
+
+### Échelle typographique
+- **Métrique** (`sd-fact-col--compact`): `clamp(1.5rem, 2vw, 2rem)` — 24–32px, font-weight 700, letter-spacing -0.045em, white-space nowrap
+- **Descriptif** (`sd-fact-col--long`): `clamp(1.0625rem, 1.1vw, 1.25rem)` — 17–20px, font-weight 600, letter-spacing -0.025em, overflow-wrap anywhere
+- **Budget main** (`sd-budget-main`): clamp 24–32px, 700, -0.05em
+- **Budget unit** (`sd-budget-unit`): 14px, 500, #6F6F68
+
+### Breakpoints responsive
+- ≥1280px : 6 colonnes pondérées (minmax robustes)
+- 1025–1279px : 3×2
+- ≤1024px : 2 colonnes, border-radius 14px
+- ≤420px : 1 colonne, border-radius 12px
+
+### Résultat
+- "118€" s'affiche grand et gras, "/mois" en petit et muted — jamais coupé
+- Colonnes descriptives lisibles à toutes largeurs sans overflow
+- Grille protégée par `min-width: 0` sur chaque cellule
+
+---
+
 ## 2026-05-18 — Sprint 55 : Hero fact sheet overflow fix
 
 ### Objectif

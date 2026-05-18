@@ -14042,3 +14042,106 @@ section[id] {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
+
+/* Sprint — Hero fact sheet typography scale (2026-05-18) */
+
+/* Table container */
+.sd-hero-fact-table {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 1.2fr)    /* PROFIL */
+    minmax(150px, 0.65fr)   /* BUDGET */
+    minmax(90px,  0.42fr)   /* OUTILS */
+    minmax(130px, 0.55fr)   /* NIVEAU */
+    minmax(300px, 1.45fr)   /* WORKFLOW */
+    minmax(260px, 1.2fr);   /* POINT D'ATTENTION */
+  border: 1px solid #DADAD4;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* All cells: overflow protection */
+.sd-fact-col {
+  min-width: 0;
+  padding: 24px 24px;
+}
+
+/* Labels — all columns */
+.sd-fact-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6F6F68;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+/* ── Metric values (Budget, Outils, Niveau) ── */
+.sd-fact-col--compact .sd-fact-value {
+  font-size: clamp(1.5rem, 2vw, 2rem); /* 24–32px */
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: #222222;
+  white-space: nowrap;
+}
+
+/* ── Descriptive values (Profil, Workflow, Point d'attention) ── */
+.sd-fact-col--long .sd-fact-value {
+  font-size: clamp(1.0625rem, 1.1vw, 1.25rem); /* 17–20px */
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  color: #222222;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* ── Budget split composition ── */
+.sd-budget-composition {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  white-space: nowrap;
+}
+.sd-budget-main {
+  font-size: clamp(1.5rem, 2vw, 2rem); /* 24–32px */
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #222222;
+}
+.sd-budget-unit {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: #6F6F68;
+}
+
+/* ── Responsive ── */
+
+/* 3×2 at 1024–1279px */
+@media (max-width: 1279px) and (min-width: 1025px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* 2 columns at ≤1024px */
+@media (max-width: 1024px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 14px;
+  }
+}
+
+/* Single column at ≤420px */
+@media (max-width: 420px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr;
+    border-radius: 12px;
+  }
+}
