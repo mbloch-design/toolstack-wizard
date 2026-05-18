@@ -584,7 +584,10 @@ const StackDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
-  const resolvedSlug = slug === "sites-ia-automation" ? "createur-sites-ia-automation" : slug;
+  const resolvedSlug =
+    slug === "sites-ia-automation" ? "createur-sites-ia-automation" :
+    slug === "consultant-b2b" ? "consultant-b2b-propre" :
+    slug;
   const stack = STACKS.find((item) => item.slug === resolvedSlug);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
 
@@ -679,15 +682,9 @@ const StackDetailPage = () => {
   /* ── Derived data ───────────────────────────────────────────────────────── */
   const editorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
   const heroDecision = getHeroDecisionMap(stack, editorial, lang);
-  const detailTitle = heroDecision.title.split("\n")[0];
+  const detailTitle = heroDecision.title.split("\n")[0].replace(/\.$/, "");
   const heroSubtitle = heroDecision.promise;
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
-  const budgetDisplay = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
-  const budgetParts = String(budgetDisplay).split("/");
-  const budgetAmount = budgetParts[0];
-  const budgetPeriod = budgetParts[1] ? `/${budgetParts.slice(1).join("/")}` : "";
-  const watchTextRaw = heroDecision.watchout || t(stack.riskSnippet ?? stack.risk, stack.riskSnippetEn ?? stack.riskEn);
-  const watchText = String(watchTextRaw).split(".")[0] + (String(watchTextRaw).includes(".") ? "." : "");
 
   const stackTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
   const tooLightRows = lang === "fr"
@@ -714,10 +711,6 @@ const StackDetailPage = () => {
     });
   };
 
-  // Logo pills (max 5) from tools that have a toolBySlug entry
-  const logoPills = stackTools.slice(0, 6);
-  const logoOverflow = stackTools.length > 6 ? stackTools.length - 6 : 0;
-
   const hasRisks = editorial.risks.length > 0;
   const hasAltVariants = editorial.altVariants.length > 0;
 
@@ -726,90 +719,50 @@ const StackDetailPage = () => {
     <div className="min-h-screen bg-background">
 
       {/* ════════════════════════════════════════════════════════════════════
-          HERO — 2 colonnes : texte gauche + snapshot droite
+          HERO — éditorial + table signalétique
       ════════════════════════════════════════════════════════════════════ */}
       <section className="sd-hero-section">
-        <div className="sd-hero-grid">
+        <div className="sd-hero-editorial">
 
-          {/* ── Left: éditorial ── */}
-          <div>
-            {/* Breadcrumb */}
-            <nav className="sd-hero-breadcrumb" aria-label="breadcrumb">
-              <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
-              <span style={{ color: "#DADAD4" }}>/</span>
-              <span style={{ color: "#222222" }}>{detailTitle}</span>
-            </nav>
+          {/* Breadcrumb */}
+          <nav className="sd-hero-breadcrumb" aria-label="breadcrumb">
+            <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
+            <span style={{ color: "#DADAD4" }}>/</span>
+            <span style={{ color: "#222222" }}>{detailTitle}</span>
+          </nav>
 
-            {/* Eyebrow */}
-            <span className="sd-hero-eyebrow">{t(`STACK ${personaText}`.toUpperCase(), `STACK ${personaText}`.toUpperCase())}</span>
+          {/* Eyebrow */}
+          <span className="sd-hero-eyebrow">{t(`STACK ${personaText}`.toUpperCase(), `STACK ${personaText}`.toUpperCase())}</span>
 
-            {/* H1 */}
-            <h1 className="sd-hero-h1">
-              {heroDecision.title.split("\n").map((line, i) => (
-                i === 0 ? <span key={i}>{line}</span> : <span key={i}><br />{line}</span>
-              ))}
-            </h1>
+          {/* H1 */}
+          <h1 className="sd-hero-h1">
+            {heroDecision.title.split("\n").map((line, i) => (
+              i === 0 ? <span key={i}>{line}</span> : <span key={i}><br />{line}</span>
+            ))}
+          </h1>
 
-            {/* Promise */}
-            <p className="sd-hero-desc">
-              {heroSubtitle}
-            </p>
+          {/* Promise */}
+          <p className="sd-hero-desc">
+            {heroSubtitle}
+          </p>
 
-            {/* Repères compact grid */}
-            <div className="sd-reperes-grid" aria-label={t("Repères de la stack", "Stack overview") as string}>
-              {heroDecision.reperes.map((repere) => (
-                <div key={repere.label} className="sd-repere-item">
-                  <span className="sd-repere-label">{repere.label}</span>
-                  <span className="sd-repere-value">{repere.value}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <Link to={`${prefix}/selector`} className="sd-hero-cta">
-              {t("Analyser ma stack", "Analyze my stack")}
-            </Link>
-          </div>
-
-          {/* ── Right: snapshot module (simplified) ── */}
-          <div className="sd-snapshot">
-            <span className="sd-snapshot-title">{t("EN UN COUP D'ŒIL", "AT A GLANCE")}</span>
-
-            <div className="sd-snapshot-budget">
-              <span className="sd-snapshot-label">{t("Budget cible", "Target budget")}</span>
-              <p className="sd-snapshot-budget-value">
-                {budgetAmount}
-                {budgetPeriod && <span>{budgetPeriod}</span>}
-              </p>
-            </div>
-
-            {/* Watchout */}
-            <div className="sd-snapshot-watch">
-              <span className="sd-snapshot-label">{t("À surveiller", "Watch")}</span>
-              <p>{watchText}</p>
-            </div>
-
-            {/* Socle tools — show editorial overrides if defined, else top core tools */}
-            {logoPills.length > 0 && (
-              <div className="sd-snapshot-tools">
-                <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9A9A92", marginBottom: 10 }}>
-                  {t("SOCLE", "CORE TOOLS")}
-                </p>
-                <div className="sd-logo-stack">
-                  {getSocleTools(stackTools, heroDecision.socleSlugs).map(({ tool }) => (
-                    <div key={tool!.slug} className="sd-logo-pill">
-                      <ToolLogo tool={tool!} size={18} />
-                    </div>
-                  ))}
-                  {logoOverflow > 0 && (
-                    <div className="sd-logo-pill sd-logo-more">+{logoOverflow}</div>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
+          {/* CTA */}
+          <Link to={`${prefix}/selector`} className="sd-hero-cta">
+            {t("Analyser ma stack", "Analyze my stack")}
+          </Link>
 
         </div>
+
+        {/* ── Signaletic fact table ── */}
+        <div className="sd-hero-fact-table" aria-label={t("Signalétique de la stack", "Stack fact sheet") as string}>
+          {heroDecision.reperes.map((repere) => (
+            <div key={repere.label} className="sd-fact-col">
+              <span className="sd-fact-label">{repere.label}</span>
+              <span className="sd-fact-value">{repere.value}</span>
+            </div>
+          ))}
+        </div>
+
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════
@@ -1789,20 +1742,20 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
     watchout: watchoutFallback,
     reperes: locale === "fr"
       ? [
-          { label: "POUR QUI",     value: editorial.overviewServes },
-          { label: "WORKFLOW",     value: locale === "fr" ? stack.subtitle : stack.subtitleEn },
-          { label: "BUDGET",       value: budgetStr },
-          { label: "OUTILS",       value: String(toolCount) },
-          { label: "NIVEAU",       value: stageKey },
-          { label: "À SURVEILLER", value: watchoutShort(watchoutFallback) },
+          { label: "PROFIL",   value: editorial.overviewServes },
+          { label: "WORKFLOW", value: locale === "fr" ? stack.subtitle : stack.subtitleEn },
+          { label: "BUDGET",   value: budgetStr },
+          { label: "OUTILS",   value: String(toolCount) },
+          { label: "NIVEAU",   value: stageKey },
+          { label: "RISQUE",   value: watchoutShort(watchoutFallback) },
         ]
       : [
-          { label: "WHO IT’S FOR", value: editorial.overviewServesEn },
-          { label: "WORKFLOW",     value: stack.subtitleEn },
-          { label: "BUDGET",       value: budgetStr },
-          { label: "TOOLS",        value: String(toolCount) },
-          { label: "LEVEL",        value: stageKey },
-          { label: "WATCH",        value: watchoutShort(watchoutFallback) },
+          { label: "PROFILE",  value: editorial.overviewServesEn },
+          { label: "WORKFLOW", value: stack.subtitleEn },
+          { label: "BUDGET",   value: budgetStr },
+          { label: "TOOLS",    value: String(toolCount) },
+          { label: "LEVEL",    value: stageKey },
+          { label: "RISK",     value: watchoutShort(watchoutFallback) },
         ],
     socleSlugs: [],
   };
@@ -1810,32 +1763,32 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
   if (stack.slug === "developpeur-freelance-shipper") {
     return locale === "fr"
       ? {
-          title: "Dev freelance.\nCoder, montrer, encaisser.",
-          promise: "Une stack légère pour livrer un site, une app ou un MVP client sans monter une équipe produit à toi tout seul.",
-          workflowSummary: "Coder → preview → encaisser",
-          watchout: "Ne paie pas trop tôt des outils d’équipe ou plusieurs copilotes IA.",
+          title: "Dev freelance.",
+          promise: "Coder, montrer, encaisser sans stack produit.",
+          workflowSummary: "Coder → preview → documenter → encaisser",
+          watchout: "Outils d’équipe trop tôt",
           reperes: [
-            { label: "POUR QUI",     value: "Dev freelance solo" },
-            { label: "WORKFLOW",     value: "Coder → preview → encaisser" },
-            { label: "BUDGET",       value: `${stack.monthlyBudget}€/mois` },
-            { label: "OUTILS",       value: String(toolCount) },
-            { label: "NIVEAU",       value: stageKey },
-            { label: "À SURVEILLER", value: "outils d’équipe trop tôt" },
+            { label: "PROFIL",   value: "Dev freelance solo" },
+            { label: "WORKFLOW", value: "Coder → preview → documenter → encaisser" },
+            { label: "BUDGET",   value: `${stack.monthlyBudget}€/mois` },
+            { label: "OUTILS",   value: String(toolCount) },
+            { label: "NIVEAU",   value: stageKey },
+            { label: "RISQUE",   value: "Outils d’équipe trop tôt" },
           ],
           socleSlugs: ["github", "vercel", "notion", "stripe"],
         }
       : {
-          title: "Freelance dev.\nCode, show, get paid.",
-          promise: "A lightweight stack to ship a client site, app, or MVP without building a product team by yourself.",
-          workflowSummary: "Code → preview → get paid",
-          watchout: "Do not pay too early for team tools or multiple AI copilots.",
+          title: "Freelance dev.",
+          promise: "Code, show, get paid without a product stack.",
+          workflowSummary: "Code → preview → document → get paid",
+          watchout: "Team tools too early",
           reperes: [
-            { label: "WHO IT’S FOR", value: "Solo freelance dev" },
-            { label: "WORKFLOW",     value: "Code → preview → get paid" },
-            { label: "BUDGET",       value: `${stack.monthlyBudget}€/mois` },
-            { label: "TOOLS",        value: String(toolCount) },
-            { label: "LEVEL",        value: stageKey },
-            { label: "WATCH",        value: "team tools too early" },
+            { label: "PROFILE",  value: "Solo freelance dev" },
+            { label: "WORKFLOW", value: "Code → preview → document → get paid" },
+            { label: "BUDGET",   value: `${stack.monthlyBudget}€/mois` },
+            { label: "TOOLS",    value: String(toolCount) },
+            { label: "LEVEL",    value: stageKey },
+            { label: "RISK",     value: "Team tools too early" },
           ],
           socleSlugs: ["github", "vercel", "notion", "stripe"],
         };
@@ -1844,32 +1797,32 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
   if (stack.slug === "createur-sites-ia-automation") {
     return locale === "fr"
       ? {
-          title: "Sites IA & automation.\nLancer sans empiler.",
-          promise: "Une stack pour passer d’une idée à une page, un prototype, un workflow automatisé, un paiement et une première mesure.",
-          workflowSummary: "Page → automation → paiement",
-          watchout: "Le risque, c’est d’empiler des outils IA sans relier brief, production, validation, livraison et facturation.",
+          title: "Sites IA & automation.",
+          promise: "Lancer sans empiler les outils IA.",
+          workflowSummary: "Page → automation → paiement → mesure",
+          watchout: "Empilement IA",
           reperes: [
-            { label: "POUR QUI",     value: "Solo no-code / IA" },
-            { label: "WORKFLOW",     value: "Page → automation → paiement" },
-            { label: "BUDGET",       value: `${stack.monthlyBudget}€/mois` },
-            { label: "OUTILS",       value: String(toolCount) },
-            { label: "NIVEAU",       value: "avancé" },
-            { label: "À SURVEILLER", value: "empilement IA" },
+            { label: "PROFIL",   value: "Solo no-code / IA" },
+            { label: "WORKFLOW", value: "Page → automation → paiement → mesure" },
+            { label: "BUDGET",   value: `96€/mois` },
+            { label: "OUTILS",   value: "18" },
+            { label: "NIVEAU",   value: "Avancé" },
+            { label: "RISQUE",   value: "Empilement IA" },
           ],
           socleSlugs: [],
         }
       : {
-          title: "AI sites & automation.\nLaunch without stacking.",
-          promise: "A stack to move from idea to page, prototype, automated workflow, payment, and first measurement.",
-          workflowSummary: "Page → automation → payment",
-          watchout: "The risk is stacking AI tools without connecting brief, production, validation, delivery, and invoicing.",
+          title: "AI sites & automation.",
+          promise: "Launch without stacking AI tools.",
+          workflowSummary: "Page → automation → payment → measurement",
+          watchout: "AI tool stacking",
           reperes: [
-            { label: "WHO IT’S FOR", value: "Solo no-code / AI" },
-            { label: "WORKFLOW",     value: "Page → automation → payment" },
-            { label: "BUDGET",       value: `${stack.monthlyBudget}€/mois` },
-            { label: "TOOLS",        value: String(toolCount) },
-            { label: "LEVEL",        value: "advanced" },
-            { label: "WATCH",        value: "AI tool stacking" },
+            { label: "PROFILE",  value: "Solo no-code / AI" },
+            { label: "WORKFLOW", value: "Page → automation → payment → measurement" },
+            { label: "BUDGET",   value: `€96/month` },
+            { label: "TOOLS",    value: "18" },
+            { label: "LEVEL",    value: "Advanced" },
+            { label: "RISK",     value: "AI tool stacking" },
           ],
           socleSlugs: [],
         };
@@ -1878,32 +1831,32 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
   if (stack.slug === "designer-freelance-solo") {
     return locale === "fr"
       ? {
-          title: "Designer freelance.\nCréer, présenter, livrer.",
-          promise: "Une stack légère pour produire, décliner et livrer des supports clients sans transformer ton quotidien en usine à fichiers.",
-          workflowSummary: "Créer → présenter → livrer",
-          watchout: "Doublons entre outils créa, IA, stockage et présentation.",
+          title: "Designer freelance.",
+          promise: "Créer, présenter, livrer sans usine à fichiers.",
+          workflowSummary: "Créer → présenter → décliner → livrer",
+          watchout: "Doublons créa / IA / stockage",
           reperes: [
-            { label: "POUR QUI",     value: "Designer UI/UX freelance" },
-            { label: "WORKFLOW",     value: "Créer → présenter → livrer" },
-            { label: "BUDGET",       value: `${stack.monthlyBudget}€/mois` },
-            { label: "OUTILS",       value: String(toolCount) },
-            { label: "NIVEAU",       value: stageKey },
-            { label: "À SURVEILLER", value: "doublons créa / IA / stockage" },
+            { label: "PROFIL",   value: "Designer UI/UX freelance" },
+            { label: "WORKFLOW", value: "Créer → présenter → décliner → livrer" },
+            { label: "BUDGET",   value: `118€/mois` },
+            { label: "OUTILS",   value: "15" },
+            { label: "NIVEAU",   value: "Installé" },
+            { label: "RISQUE",   value: "Doublons créa / IA / stockage" },
           ],
           socleSlugs: ["figma", "canva", "notion", "miro"],
         }
       : {
-          title: "Freelance designer.\nCreate, present, deliver.",
-          promise: "A lightweight stack to produce, adapt, and deliver client assets without turning your day into a file factory.",
-          workflowSummary: "Create → present → deliver",
-          watchout: "Overlaps between creative, AI, storage, and presentation tools.",
+          title: "Freelance designer.",
+          promise: "Create, present, deliver without a file factory.",
+          workflowSummary: "Create → present → adapt → deliver",
+          watchout: "Creative / AI / storage overlaps",
           reperes: [
-            { label: "WHO IT’S FOR", value: "Freelance UI/UX designer" },
-            { label: "WORKFLOW",     value: "Create → present → deliver" },
-            { label: "BUDGET",       value: `${stack.monthlyBudget}€/mois` },
-            { label: "TOOLS",        value: String(toolCount) },
-            { label: "LEVEL",        value: stageKey },
-            { label: "WATCH",        value: "creative / AI / storage overlaps" },
+            { label: "PROFILE",  value: "Freelance UI/UX designer" },
+            { label: "WORKFLOW", value: "Create → present → adapt → deliver" },
+            { label: "BUDGET",   value: `€118/month` },
+            { label: "TOOLS",    value: "15" },
+            { label: "LEVEL",    value: "Established" },
+            { label: "RISK",     value: "Creative / AI / storage overlaps" },
           ],
           socleSlugs: ["figma", "canva", "notion", "miro"],
         };
@@ -1912,32 +1865,66 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
   if (stack.slug === "architecte-interieur") {
     return locale === "fr"
       ? {
-          title: "Architecte d’intérieur.\nDu brief au chantier.",
-          promise: "Une stack pour cadrer, projeter, présenter, sourcer et suivre un projet sans basculer trop tôt dans une stack BIM ou agence complète.",
+          title: "Architecte d’intérieur.",
+          promise: "Du brief au chantier sans stack BIM trop tôt.",
           workflowSummary: "Brief → plans → rendu → chantier",
-          watchout: "Ne paie pas trop vite plusieurs moteurs de rendu, plugins ou couches BIM qui ne servent pas chaque semaine.",
+          watchout: "Stack BIM trop tôt",
           reperes: [
-            { label: "POUR QUI",     value: "Architecte intérieur indépendant" },
-            { label: "WORKFLOW",     value: "Brief → plans → rendu → chantier" },
-            { label: "BUDGET",       value: `${stack.monthlyBudget}€/mois` },
-            { label: "OUTILS",       value: String(toolCount) },
-            { label: "NIVEAU",       value: stageKey },
-            { label: "À SURVEILLER", value: "stack BIM trop tôt" },
+            { label: "PROFIL",   value: "Architecte intérieur indépendant" },
+            { label: "WORKFLOW", value: "Brief → plans → rendu → chantier" },
+            { label: "BUDGET",   value: `148€/mois` },
+            { label: "OUTILS",   value: "37" },
+            { label: "NIVEAU",   value: "Avancé" },
+            { label: "RISQUE",   value: "Stack BIM trop tôt" },
           ],
           socleSlugs: [],
         }
       : {
-          title: "Interior architect.\nFrom brief to site.",
-          promise: "A stack to frame, design, present, source, and track a project without moving too early into a BIM or full agency stack.",
+          title: "Interior architect.",
+          promise: "From brief to site without early BIM stack.",
           workflowSummary: "Brief → plans → render → site",
-          watchout: "Do not pay too fast for several render engines, plugins, or BIM layers not used every week.",
+          watchout: "BIM stack too early",
           reperes: [
-            { label: "WHO IT’S FOR", value: "Independent interior architect" },
-            { label: "WORKFLOW",     value: "Brief → plans → render → site" },
-            { label: "BUDGET",       value: `${stack.monthlyBudget}€/mois` },
-            { label: "TOOLS",        value: String(toolCount) },
-            { label: "LEVEL",        value: stageKey },
-            { label: "WATCH",        value: "BIM stack too early" },
+            { label: "PROFILE",  value: "Independent interior architect" },
+            { label: "WORKFLOW", value: "Brief → plans → render → site" },
+            { label: "BUDGET",   value: `€148/month` },
+            { label: "TOOLS",    value: "37" },
+            { label: "LEVEL",    value: "Advanced" },
+            { label: "RISK",     value: "BIM stack too early" },
+          ],
+          socleSlugs: [],
+        };
+  }
+
+  if (stack.slug === "consultant-b2b-propre") {
+    return locale === "fr"
+      ? {
+          title: "Stack consultant B2B.",
+          promise: "Suivre, vendre, livrer sans usine CRM.",
+          workflowSummary: "Opportunité → appel → proposition → livraison",
+          watchout: "CRM plus lourd que la mission",
+          reperes: [
+            { label: "PROFIL",   value: "Consultant solo / B2B" },
+            { label: "WORKFLOW", value: "Opportunité → appel → proposition → livraison" },
+            { label: "BUDGET",   value: "37€/mois" },
+            { label: "OUTILS",   value: "10" },
+            { label: "NIVEAU",   value: "Débutant" },
+            { label: "RISQUE",   value: "CRM plus lourd que la mission" },
+          ],
+          socleSlugs: [],
+        }
+      : {
+          title: "B2B consultant stack.",
+          promise: "Track, sell, deliver without a CRM factory.",
+          workflowSummary: "Opportunity → call → proposal → delivery",
+          watchout: "CRM heavier than the project",
+          reperes: [
+            { label: "PROFILE",  value: "Solo B2B consultant" },
+            { label: "WORKFLOW", value: "Opportunity → call → proposal → delivery" },
+            { label: "BUDGET",   value: "€37/month" },
+            { label: "TOOLS",    value: "10" },
+            { label: "LEVEL",    value: "Beginner" },
+            { label: "RISK",     value: "CRM heavier than the project" },
           ],
           socleSlugs: [],
         };

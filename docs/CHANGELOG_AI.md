@@ -2,6 +2,27 @@
 
 ---
 
+## 2026-05-18 — Stack detail : hero premium fact sheet (table signalétique, zéro panneau droit)
+
+### Objectif
+Transformer le hero des fiches stack en un bloc éditorial propre suivi d'une table signalétique horizontale à 6 colonnes. Suppression du panneau droit (budget + watchout = doublons). Chaque information n'apparaît qu'une seule fois.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — nouveau layout héro (`.sd-hero-editorial` + `.sd-hero-fact-table`), labels repères renommés (PROFIL/WORKFLOW/BUDGET/OUTILS/NIVEAU/RISQUE), suppression du panneau `.sd-snapshot`, données éditoriales ajoutées pour `consultant-b2b-propre`, alias de slug `consultant-b2b` → `consultant-b2b-propre`, nettoyage des variables inutilisées (budgetDisplay, watchText, logoPills, logoOverflow).
+- `src/index.css` — nouveau bloc sprint avec classes `.sd-hero-editorial`, `.sd-hero-fact-table`, `.sd-fact-col`, `.sd-fact-label`, `.sd-fact-value`. Responsive 6→3→2→1 colonnes.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — règle hero mise à jour.
+
+### Détails
+- Suppression de `.sd-reperes-grid` (grille 2×3 administrative) et du panneau `.sd-snapshot` (budget + watchout + logos).
+- Remplacement par `.sd-hero-fact-table` : une seule rangée horizontale de 6 colonnes — PROFIL · WORKFLOW · BUDGET · OUTILS · NIVEAU · RISQUE.
+- Contenu éditorial spécifique pour 5 stacks : `consultant-b2b-propre`, `designer-freelance-solo`, `developpeur-freelance-shipper`, `createur-sites-ia-automation`, `architecte-interieur`.
+- Fallback dynamique pour toutes les autres stacks via `buildFallbackEditorial`.
+- Slug alias : `/fr/stacks/consultant-b2b` résolu vers `consultant-b2b-propre`.
+- Table style : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels 10px uppercase, valeurs 14px/600.
+
+---
+
 ## 2026-05-18 — Stack detail : hero decision dashboard (repères compact + panel simplifié)
 
 ### Objectif

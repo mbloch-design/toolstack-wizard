@@ -73,17 +73,26 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 ---
 
 
-## Pattern fiche stack — Hero decision dashboard
+## Pattern fiche stack — Hero premium fact sheet
 
-Le hero est un tableau de décision. Il répond en 5 secondes à 8 questions : pour qui, workflow, budget, nombre d'outils, niveau, point de vigilance, outils clés, promesse centrale.
+Le hero est un bloc éditorial suivi d'une table signalétique. Il répond en 5 secondes. Chaque information n'apparaît qu'une seule fois.
 
-- **Règle fondamentale** : une information ne doit apparaître qu'une seule fois. Pas de duplication entre la colonne gauche (repères) et le panel droit.
-- H1 fort : `clamp(56px, 6vw, 104px)`, line-height `0.92`, letter-spacing `-0.065em`. Peut contenir un saut de ligne éditorial (`\n`).
-- Promesse courte : `clamp(19px, 1.4vw, 23px)`, line-height `1.42`, max-width `760px`.
-- **Grille repères** (`.sd-reperes-grid`) : remplace les 3 grandes cartes. 6 data points en grille 3×2 — Pour qui · Workflow · Budget · Outils · Niveau · À surveiller. Bordure `#DADAD4`, radius 14px, fond blanc, labels `10px uppercase #9A9A92`, valeurs `14px/600 #222222`.
-- **Panel droit** (`.sd-snapshot`) : Budget cible uniquement + Socle (logos, max 5) + À surveiller. Ne pas répéter Profil/Outils/Niveau/Complexité (déjà dans les repères).
-- **Section Vue d'ensemble** : supprimée. Ne pas créer de section `apercu` ou `overview` entre le hero et les outils.
-- La navigation d'ancre commence à `Outils`.
+### Structure obligatoire
+1. **Bloc éditorial** (pleine largeur) — breadcrumb · eyebrow persona · H1 · promesse · CTA primaire
+2. **Table signalétique** (`.sd-hero-fact-table`) — une rangée horizontale de 6 colonnes : PROFIL · WORKFLOW · BUDGET · OUTILS · NIVEAU · RISQUE
+
+### Règles absolues
+- **Zéro panneau droit** : il ne doit pas exister de `.sd-snapshot` ou panneau "EN UN COUP D'ŒIL" — ces données sont dans la table.
+- **Zéro duplication** : une info dans la table n'est jamais reformulée ailleurs dans le hero.
+- **Zéro grille 2×3 administrative** (`.sd-reperes-grid` remplacée par `.sd-hero-fact-table`).
+- H1 : `clamp(56px, 6vw, 104px)`, line-height `0.92`, letter-spacing `-0.065em`.
+- Promesse : `clamp(19px, 1.4vw, 23px)`, line-height `1.42`, max-width `760px`, 1–2 lignes max.
+- Table : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels `10px/700 uppercase #9A9A92`, valeurs `14px/600 #222222`.
+- Responsive : 6 col desktop → 3 col 1024px → 2 col 640px → 1 col 390px.
+
+### Section Vue d'ensemble
+Supprimée. Ne pas créer de section `apercu` ou `overview` entre le hero et les outils.
+La navigation d'ancre commence à `Outils`.
 
 ---
 

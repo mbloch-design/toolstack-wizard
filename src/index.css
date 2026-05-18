@@ -6903,6 +6903,8 @@
     }
     .sd-container,
     .sd-hero-grid,
+    .sd-hero-editorial,
+    .sd-hero-fact-table,
     .sd-cta-inner {
       width: min(calc(100% - 32px), 1240px);
     }
@@ -13077,6 +13079,90 @@
 }
 @media (max-width: 430px) {
   .sd-reperes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sprint — Hero fact sheet (2026-05-18) */
+
+/* Editorial block: full-width, no right panel */
+.sd-hero-editorial {
+  width: min(calc(100% - 48px), 1240px);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 72px 0 32px;
+}
+
+/* Signaletic fact table: single horizontal row, 6 columns */
+.sd-hero-fact-table {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  width: min(calc(100% - 48px), 1240px);
+  max-width: 1240px;
+  margin: 0 auto 64px;
+  border: 1px solid #DADAD4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #DADAD4; /* gap color */
+  gap: 1px;
+}
+
+.sd-fact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px 18px;
+  background: #FAFAF7;
+}
+
+.sd-fact-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9A9A92;
+  line-height: 1;
+}
+
+.sd-fact-value {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+/* CTA spacing in editorial block */
+.sd-hero-editorial .sd-hero-cta {
+  margin-top: 32px;
+}
+
+/* Tablet: 3 columns per row */
+@media (max-width: 1024px) {
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 640px) {
+  .sd-hero-editorial {
+    padding: 48px 0 24px;
+  }
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 40px;
+  }
+  .sd-fact-col {
+    padding: 14px 14px 16px;
+  }
+}
+
+/* Small mobile: single column */
+@media (max-width: 390px) {
+  .sd-hero-fact-table {
     grid-template-columns: 1fr;
   }
 }
