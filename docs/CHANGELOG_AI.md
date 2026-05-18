@@ -1745,3 +1745,20 @@ Recentrer la page détail dev freelance sur la lecture `profil → workflow → 
 - Le hero explique d'abord le workflow dev : coder, montrer, documenter, encaisser.
 - La meta description ne dit plus “stack divisée par usages, risques et alternatives”.
 - `02 — OUTILS` reste le seul module d'outils, avec nodes workflow et détails intégrés.
+
+---
+
+## 2026-05-18 — Sprint 43 : Stack Map Sana-inspired
+
+### Objectif
+Remplacer les nodes workflow trop interactifs par une carte de stack plus calme : familles de travail à gauche, grille de logos à droite, statuts discrets et disclosure seulement quand une famille dépasse 6 outils.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout des familles `Stack Map` par stack cible et remplacement du rendu `02 — OUTILS` par des blocs de workflow.
+- `src/index.css` — styles des blocs `sd-stack-map`, grille logo + label, statut discret et comportement responsive.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du pattern Stack Map.
+
+### Résultat
+- `02 — OUTILS` affiche `La carte de la stack.`
+- Les outils restent tous accessibles dans les familles de workflow, sans inventaire séparé ni table.
+- Les statuts restent `Socle`, `Conditionnel`, `À challenger`, lisibles sans code couleur.

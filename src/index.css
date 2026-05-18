@@ -12659,3 +12659,185 @@
   .sd-workflow-detail-price,
   .sd-workflow-detail-link { margin-left: 42px; }
 }
+
+/* Stack detail Stack Map: workflow families as calm integration-style blocks */
+.sd-stack-map {
+  display: grid;
+  gap: 24px;
+  margin-top: 48px;
+  padding-top: 0;
+  background-image: none;
+}
+.sd-stack-map-family {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(520px, 1.25fr);
+  gap: 48px;
+  align-items: start;
+  padding: 36px 40px;
+  border-radius: 28px;
+  background: #F4F4EF;
+}
+.sd-stack-map-copy h3 {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  color: #222222;
+}
+.sd-stack-map-copy p {
+  max-width: 340px;
+  margin: 12px 0 0;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #6F6F68;
+}
+.sd-stack-map-count {
+  display: block;
+  margin-top: 18px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.35;
+  color: #9A9A92;
+}
+.sd-stack-map-watch {
+  width: fit-content;
+  min-height: 24px;
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 9px;
+  border: 1px dotted rgba(34, 34, 34, 0.35);
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6F6F68;
+  background: rgba(255, 255, 255, 0.58);
+}
+.sd-stack-map-toggle {
+  margin-top: 18px;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  color: #222222;
+  cursor: pointer;
+}
+.sd-stack-map-toggle:hover,
+.sd-stack-map-toggle:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.sd-stack-map-tools {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 32px;
+}
+.sd-stack-map-tool {
+  min-width: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+.sd-stack-map-tool:hover .sd-stack-map-tool-copy > span,
+.sd-stack-map-tool:focus-visible .sd-stack-map-tool-copy > span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.sd-stack-map-logo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #DADAD4;
+  border-radius: 14px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+.sd-stack-map-tool-copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+  font-family: var(--font-ui);
+}
+.sd-stack-map-tool-copy > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #222222;
+}
+.sd-stack-map-tool-copy small,
+.sd-stack-map-more,
+.sd-stack-map-empty {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9A9A92;
+}
+.sd-stack-map-more,
+.sd-stack-map-empty {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+@media (max-width: 1180px) {
+  .sd-stack-map-family {
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    gap: 32px;
+    padding: 32px;
+  }
+  .sd-stack-map-tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 24px;
+  }
+}
+@media (max-width: 768px) {
+  .sd-stack-map {
+    margin-top: 40px;
+    gap: 18px;
+  }
+  .sd-stack-map-family {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+  .sd-stack-map-tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+@media (max-width: 430px) {
+  .sd-stack-map-family {
+    padding: 24px 18px;
+  }
+  .sd-stack-map-tools {
+    grid-template-columns: 1fr;
+  }
+  .sd-stack-map-tool-copy > span {
+    white-space: normal;
+  }
+}

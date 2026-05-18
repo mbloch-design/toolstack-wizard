@@ -1114,3 +1114,26 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 - Calibrage : seuils où la stack devient trop légère ou trop lourde.
 
 Sur les pages stack detail, éviter les formulations de type “base recommandée divisée par usages”. La page doit se lire comme une fiche de décision workflow-first, pas comme un inventaire.
+
+
+## Stack detail `Stack Map`
+
+Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doit être plus calme et plus visuelle. Il traduit l'inspiration Sana sans copier son style : grands blocs lisibles, titre de famille à gauche, grille d'outils à droite.
+
+**Structure d'un bloc :**
+- Titre de famille de workflow : `Coder & versionner`, `Montrer au client`, `Documenter`.
+- Usage court, maximum une phrase.
+- Résumé : `X outils · Y socle · Z conditionnels · N à challenger`.
+- Grille de logos + labels à droite.
+- Statut discret sous le nom : `Socle`, `Conditionnel`, `À challenger`.
+
+**Règle d'inventaire :**
+- Le `Stack Map` est l'inventaire. Ne pas ajouter de table, liste complète, inventaire séparé ou wall of cards sous le module.
+- Si une famille a 6 outils ou moins, afficher tout.
+- Si une famille a plus de 6 outils, afficher les 6 premiers dans l'ordre `Socle`, `Conditionnel`, `À challenger`, puis un vrai bouton `Voir les X autres outils` avec `aria-expanded`.
+
+**Style :**
+- Bloc calme : `#F4F4EF`, radius 28px, padding 36–40px, sans ombre.
+- Grille desktop : colonne gauche 0.75fr, colonne droite 1.25fr.
+- Tool item : logo 44px, nom 15px/600, statut 10px uppercase gris.
+- Mobile : une colonne, grille outils en 2 colonnes puis 1 colonne sous 430px.
