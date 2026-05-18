@@ -1020,6 +1020,45 @@ Les pages détail stack utilisent une hiérarchie plus éditoriale que les listi
 - Section mobile : autour de `64px`.
 - Header vers contenu : `40px` environ.
 
+## Stack detail sticky bottom nav (`StackStickyNav`)
+
+Composant flottant premium, desktop uniquement (masqué < 768px). Remplace la subnav inline sur desktop.
+
+**Fichier :** inline dans `src/pages/StackDetailPage.tsx`, défini avant le composant principal.
+
+**Visibilité :**
+- Un sentinel `<div ref={sentinelRef} />` est placé à la fin de la `<section>` hero.
+- `IntersectionObserver` surveille ce sentinel. Quand il sort du viewport, `isStickyVisible` passe à `true` et le composant apparaît.
+- La classe `.stack-sticky-nav--hidden` masque le composant via `opacity: 0` + `pointer-events: none` + `translateY(12px)`.
+
+**Active state :** partagé avec `activeSection` (le scrollspy existant de la page).
+
+**Structure :**
+```
+.stack-sticky-nav (fixed bottom capsule)
+  └── .stack-sticky-nav-logo (TT, lien vers /stacks)
+  └── .stack-sticky-nav-items (group)
+      └── .stack-sticky-nav-item (× N, --active sur item courant)
+```
+
+**Style :**
+- Fond `#2A2A28`, border-radius 20px, padding 8px, box-shadow double.
+- Logo : 52×52px, border-radius 14px, fond `#111111`, texte `TT` 13px/800.
+- Item actif : `border-color: rgba(255,255,255,0.80)`, fond translucide `rgba(255,255,255,0.06)`.
+- Animation : `opacity` + `translateY(12px)` 220ms ease.
+
+**Responsive :**
+- Desktop ≥768px : capsule visible, subnav inline (`.sd-subnav-wrapper`) masquée.
+- Mobile <768px : capsule masquée (`display: none`), subnav inline visible.
+
+**Accessibilité :**
+- `<nav aria-label="Navigation de la fiche stack">`.
+- `<a href="#section-id">` vrais liens d'ancre.
+- `aria-current="page"` sur l'item actif.
+- Focus ring : `outline: 2px solid rgba(255,255,255,0.7)` sur `focus-visible`.
+
+---
+
 ## Stack detail anchor navigation (`sd-nav`)
 
 La navigation interne des pages détail stack est une navigation d'ancre, pas des tabs.

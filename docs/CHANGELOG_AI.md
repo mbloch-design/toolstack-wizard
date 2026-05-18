@@ -2,6 +2,36 @@
 
 ---
 
+## 2026-05-18 — Sprint 49 : Premium sticky bottom section nav (StackStickyNav)
+
+### Objectif
+Ajouter une navigation flottante premium en bas d'écran sur les fiches stack detail (desktop uniquement), remplaçant la subnav inline sur desktop. La subnav inline reste visible sur mobile. Inspiration Awwwards : dark capsule centré, logo à gauche, items au centre, item actif avec bordure outline visible.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout du composant `StackStickyNav` (inline, avant le composant principal), import `useRef`, états `sentinelRef` et `isStickyVisible`, sentinel `<div>` à la fin de la section hero, wrapper `.sd-subnav-wrapper` autour de la subnav inline, rendu de `<StackStickyNav>` en bas du JSX principal.
+- `src/index.css` — bloc sprint appended : `.stack-sticky-nav`, `.stack-sticky-nav--hidden`, `.stack-sticky-nav-logo`, `.stack-sticky-nav-items`, `.stack-sticky-nav-item`, `.stack-sticky-nav-item--active`, masquage `.sd-subnav-wrapper` sur desktop (≥768px), masquage `.stack-sticky-nav` sur mobile (≤767px), `scroll-margin-top: 80px` sur sections.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — documentation du composant `StackStickyNav`.
+
+### Architecture du composant
+- `StackStickyNav` : composant fonctionnel inline dans `StackDetailPage.tsx`, reçoit `sections`, `activeId`, `prefix`, `visible`.
+- Visibilité contrôlée par `IntersectionObserver` sur un sentinel `<div>` placé à la fin de la `<section>` hero. Quand le sentinel sort du viewport, `isStickyVisible` passe à `true`.
+- Active state : partagé avec l'état `activeSection` existant (scrollspy déjà en place).
+- Click : `scrollIntoView({ behavior: 'smooth', block: 'start' })`.
+- Animation : `opacity` + `translateY` 220ms ease. `prefers-reduced-motion` → transition 0ms.
+
+### Décisions d'implémentation
+- Pas de nouveau fichier : composant inline dans `StackDetailPage.tsx`.
+- La subnav inline existante (`sd-nav`) est conservée intacte pour mobile — seul son wrapper `.sd-subnav-wrapper` est masqué sur desktop via CSS.
+- `aria-label` sur le `<nav>`, `aria-current="page"` sur l'item actif, focus ring visible.
+
+### Résultat
+- Desktop ≥768px : capsule flottante sombre en bas, subnav inline masquée.
+- Mobile <768px : subnav inline visible, capsule masquée.
+- Build : 0 erreurs. Lint : 0 erreurs (warnings pre-existants inchangés).
+
+---
+
 ## 2026-05-18 — Sprint 48 : Hero premium fact sheet — no CTA, bigger typography, generous spacing
 
 ### Objectif

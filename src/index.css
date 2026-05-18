@@ -13394,3 +13394,126 @@
   font-weight: 700 !important;
   border-bottom-color: #222222 !important;
 }
+
+/* Sprint — Premium sticky bottom section nav (2026-05-18) */
+
+/* Ensure sections don't hide behind sticky elements when scrolled to */
+.sd-section[id],
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Hide the inline subnav on desktop (sticky bottom nav takes over) */
+@media (min-width: 768px) {
+  .sd-subnav-wrapper {
+    display: none;
+  }
+}
+
+/* ── Floating capsule nav ── */
+.stack-sticky-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(0);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2A2A28;
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 1;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.stack-sticky-nav--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(12px);
+}
+
+/* Logo block (left) */
+.stack-sticky-nav-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+
+.stack-sticky-nav-logo:hover {
+  background: #000000;
+}
+
+/* Nav items group */
+.stack-sticky-nav-items {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+}
+
+/* Individual nav item */
+.stack-sticky-nav-item {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+.stack-sticky-nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stack-sticky-nav-item--active {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.80);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+}
+
+.stack-sticky-nav-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+/* Mobile: hide the bottom capsule (inline subnav handles mobile) */
+@media (max-width: 767px) {
+  .stack-sticky-nav {
+    display: none;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .stack-sticky-nav {
+    transition: opacity 0ms;
+  }
+}
