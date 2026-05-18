@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
-import { SEO_BASE, OG_IMAGE } from "@/lib/seo";
+import { SEO_BASE, OG_IMAGE, getAlternateLinks } from "@/lib/seo";
 
 /**
  * Auto-referencing canonical + hreflang FR/EN/x-default for every page.
@@ -19,29 +19,10 @@ export default function DynamicCanonical() {
   const canonicalPath = getCanonicalPath(clean);
   const canonical = `${SEO_BASE}${canonicalPath}`;
 
-  const frMatch = canonicalPath.match(/^\/fr(\/.*)?$/);
-  const enMatch = canonicalPath.match(/^\/en(\/.*)?$/);
+  const localizedMatch = clean.match(/^\/(fr|en)(\/.*)?$/);
+  const alternates = localizedMatch ? getAlternateLinks(clean) : [];
 
-  let frHref: string | null = null;
-  let enHref: string | null = null;
-
-  const toolPricingMatch = canonicalPath.match(/^\/(fr|en)\/tool\/([^/]+)\/(?:prix|pricing)$/);
-
-  if (toolPricingMatch) {
-    const slug = toolPricingMatch[2];
-    frHref = `${SEO_BASE}/fr/tool/${slug}/prix`;
-    enHref = `${SEO_BASE}/en/tool/${slug}/pricing`;
-  } else if (frMatch) {
-    const rest = frMatch[1] || "";
-    frHref = `${SEO_BASE}/fr${rest}`;
-    enHref = `${SEO_BASE}/en${rest}`;
-  } else if (enMatch) {
-    const rest = enMatch[1] || "";
-    frHref = `${SEO_BASE}/fr${rest}`;
-    enHref = `${SEO_BASE}/en${rest}`;
-  }
-
-  const isEn = !!enMatch;
+  const isEn = clean.startsWith("/en");
   const locale = isEn ? "en_US" : "fr_FR";
   const isFunnel =
     /\/selector(\/|$)/.test(canonicalPath) || /\/diagnostic(\/|$)/.test(canonicalPath);
@@ -50,11 +31,9 @@ export default function DynamicCanonical() {
     <Helmet>
       <html lang={isEn ? "en" : "fr"} />
       <link rel="canonical" href={canonical} />
-      {frHref && <link rel="alternate" hrefLang="fr" href={frHref} />}
-      {enHref && <link rel="alternate" hrefLang="en" href={enHref} />}
-      {(frHref || enHref) && (
-        <link rel="alternate" hrefLang="x-default" href={frHref ?? `${SEO_BASE}/fr`} />
-      )}
+      {alternates.map(([hrefLang, href]) => (
+        <link key={hrefLang} rel="alternate" hrefLang={hrefLang} href={href} />
+      ))}
 
       {/* Universal OG defaults */}
       <meta property="og:type" content="website" />

@@ -5,6 +5,40 @@
 export const SEO_BASE = "https://tooltrim.com";
 export const OG_IMAGE = "https://tooltrim.com/og-image.png";
 
+const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
+  "loom-prix-alternatives": "loom-pricing-alternatives",
+  "conseils-ia-freelances-2026": "ai-tips-freelancers-2026",
+  "notion-gratuit-ou-payant": "notion-free-or-paid",
+  "toggl-track-gratuit-ou-payant": "toggl-track-free-or-paid",
+  "calendly-gratuit-suffisant": "calendly-free-enough",
+  "chatgpt-plus-utile-ou-inutile": "chatgpt-plus-worth-it",
+  "grammarly-gratuit-ou-payant": "grammarly-free-or-paid",
+  "stripe-vs-virement": "stripe-vs-bank-transfer",
+  "claude-vs-chatgpt-2026-lequel-choisir-business": "claude-vs-chatgpt-deepseek",
+  "grammarly-vs-languagetool-comparaison": "grammarly-vs-languagetool-comparison-2026",
+  "notion-vs-coda-comparatif-2026": "notion-vs-coda-comparison-2026",
+  "chatgpt-vs-claude-comparatif-2026": "chatgpt-vs-claude-comparison-2026",
+  "zapier-vs-make-comparatif-2026": "zapier-vs-make-comparison-2026",
+  "figma-vs-canva-comparatif-2026": "figma-vs-canva-comparison-2026",
+  "slack-vs-teams-comparatif-2026": "slack-vs-teams-comparison-2026",
+  "stack-redactrice-freelance": "stack-freelance-writer",
+};
+
+const GUIDE_EN_TO_FR = Object.fromEntries(
+  Object.entries(GUIDE_SLUG_ALTERNATES).map(([fr, en]) => [en, fr]),
+) as Record<string, string>;
+
+const GUIDE_FR_ONLY_SLUGS = new Set([
+  "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+  "meilleurs-outils-ia-freelances-2026",
+  "claude-opus-4-6-guide-complet-freelances",
+  "alternatives-gratuites-notion-freelance-2026",
+  "stack-minimaliste-freelance-2026",
+  "stripe-freelance-tarifs-alternatives",
+  "perplexity-vs-chatgpt-recherche",
+  "notion-gratuit-vs-payant-vrai-calcul",
+]);
+
 export function setMeta(nameOrProp: string, content: string) {
   const isOg = nameOrProp.startsWith("og:") || nameOrProp.startsWith("article:");
   const attr = isOg ? "property" : "name";
@@ -37,28 +71,7 @@ export function setHreflang(path: string, base = SEO_BASE) {
   // Remove existing hreflang links
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
 
-  const toolPricingMatch = path.match(/^\/(?:fr|en)\/tool\/([^/]+)\/(?:prix|pricing)$/);
-  const toolAvisMatch    = path.match(/^\/(?:fr|en)\/tool\/([^/]+)\/(?:avis|reviews)$/);
-  const entries: [string, string][] = toolPricingMatch
-    ? [
-        ["fr",        `${base}/fr/tool/${toolPricingMatch[1]}/prix`],
-        ["en",        `${base}/en/tool/${toolPricingMatch[1]}/pricing`],
-        ["x-default", `${base}/fr/tool/${toolPricingMatch[1]}/prix`],
-      ]
-    : toolAvisMatch
-    ? [
-        ["fr",        `${base}/fr/tool/${toolAvisMatch[1]}/avis`],
-        ["en",        `${base}/en/tool/${toolAvisMatch[1]}/reviews`],
-        ["x-default", `${base}/fr/tool/${toolAvisMatch[1]}/avis`],
-      ]
-    : (() => {
-        const cleanPath = path.replace(/^\/(fr|en)/, "");
-        return [
-          ["fr",        `${base}/fr${cleanPath}`],
-          ["en",        `${base}/en${cleanPath}`],
-          ["x-default", `${base}/fr${cleanPath}`],
-        ] as [string, string][];
-      })();
+  const entries = getAlternateLinks(path, base);
 
   for (const [lang, href] of entries) {
     const link = document.createElement("link");
@@ -67,6 +80,33 @@ export function setHreflang(path: string, base = SEO_BASE) {
     link.href = href;
     document.head.appendChild(link);
   }
+}
+
+export function getAlternateLinks(path: string, base = SEO_BASE): [string, string][] {
+  const cleanPath = path.replace(/^\/(fr|en)/, "");
+  const guideMatch = cleanPath.match(/^\/guide\/([^/]+)$/);
+
+  if (guideMatch) {
+    const slug = guideMatch[1];
+    const frSlug = GUIDE_EN_TO_FR[slug] || slug;
+    const enSlug = GUIDE_SLUG_ALTERNATES[slug] || slug;
+    const entries: [string, string][] = [
+      ["fr", `${base}/fr/guide/${frSlug}`],
+    ];
+    if (!GUIDE_FR_ONLY_SLUGS.has(frSlug)) {
+      entries.push(["en", `${base}/en/guide/${enSlug}`]);
+    }
+    entries.push(["x-default", `${base}/fr/guide/${frSlug}`]);
+    return entries;
+  }
+
+  const frPath = cleanPath.replace(/\/pricing$/, "/prix").replace(/\/reviews$/, "/avis");
+  const enPath = cleanPath.replace(/\/prix$/, "/pricing").replace(/\/avis$/, "/reviews");
+  return [
+    ["fr", `${base}/fr${frPath}`],
+    ["en", `${base}/en${enPath}`],
+    ["x-default", `${base}/fr${frPath}`],
+  ];
 }
 
 export function setNoindex() {

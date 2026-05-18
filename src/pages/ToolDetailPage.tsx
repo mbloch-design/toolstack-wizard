@@ -158,11 +158,12 @@ const ToolDetailPage = () => {
       subPage === "prix" && lang === "en" ? "/pricing" :
       subPage === "avis" && lang === "en" ? "/reviews" :
       meta.suffix;
-    const canonicalUrl = `${SEO_BASE}/${lang}/tool/${baseSlug}${canonicalSuffix}`;
+    const canonicalPath = `/${lang}/tool/${baseSlug}${canonicalSuffix}`;
+    const canonicalUrl = `${SEO_BASE}${canonicalPath}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setMeta("article:modified_time", tool.pricing_v5?.verified_on || "2026-03-29");
-    setHreflang(`/${lang}/tool/${baseSlug}${canonicalSuffix}`);
+    setHreflang(canonicalPath);
     return () => cleanupSeo([]);
   }, [tool, lang, subPage, categories]);
 

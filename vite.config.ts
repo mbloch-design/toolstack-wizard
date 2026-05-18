@@ -43,6 +43,40 @@ const PERSONA_PILLAR_PAIRS: { fr: string; en: string; priority: string }[] = [
   { fr: "/fr/guide/meilleurs-outils-ops-manager-freelance",    en: "/en/guide/best-tools-freelance-ops-manager",    priority: "0.8" },
 ];
 
+const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
+  "loom-prix-alternatives": "loom-pricing-alternatives",
+  "conseils-ia-freelances-2026": "ai-tips-freelancers-2026",
+  "notion-gratuit-ou-payant": "notion-free-or-paid",
+  "toggl-track-gratuit-ou-payant": "toggl-track-free-or-paid",
+  "calendly-gratuit-suffisant": "calendly-free-enough",
+  "chatgpt-plus-utile-ou-inutile": "chatgpt-plus-worth-it",
+  "grammarly-gratuit-ou-payant": "grammarly-free-or-paid",
+  "stripe-vs-virement": "stripe-vs-bank-transfer",
+  "claude-vs-chatgpt-2026-lequel-choisir-business": "claude-vs-chatgpt-deepseek",
+  "grammarly-vs-languagetool-comparaison": "grammarly-vs-languagetool-comparison-2026",
+  "notion-vs-coda-comparatif-2026": "notion-vs-coda-comparison-2026",
+  "chatgpt-vs-claude-comparatif-2026": "chatgpt-vs-claude-comparison-2026",
+  "zapier-vs-make-comparatif-2026": "zapier-vs-make-comparison-2026",
+  "figma-vs-canva-comparatif-2026": "figma-vs-canva-comparison-2026",
+  "slack-vs-teams-comparatif-2026": "slack-vs-teams-comparison-2026",
+  "stack-redactrice-freelance": "stack-freelance-writer",
+};
+
+const GUIDE_EN_TO_FR = Object.fromEntries(
+  Object.entries(GUIDE_SLUG_ALTERNATES).map(([fr, en]) => [en, fr]),
+) as Record<string, string>;
+
+const GUIDE_FR_ONLY_SLUGS = new Set([
+  "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+  "meilleurs-outils-ia-freelances-2026",
+  "claude-opus-4-6-guide-complet-freelances",
+  "alternatives-gratuites-notion-freelance-2026",
+  "stack-minimaliste-freelance-2026",
+  "stripe-freelance-tarifs-alternatives",
+  "perplexity-vs-chatgpt-recherche",
+  "notion-gratuit-vs-payant-vrai-calcul",
+]);
+
 function buildToolMetaDesc(tool: any, lang: string): string {
   const short = lang === "fr"
     ? tool.shortDescription || ""
@@ -157,41 +191,31 @@ function sitemapPlugin(): Plugin {
         const postsEn = JSON.parse(postsEnRaw) as any[];
         const contentArticleSlugs = new Set((data.articles || []).map((a: any) => a.slug));
         const enPostBySlug = new Map(postsEn.map((p: any) => [p.slug, p]));
-        const pairedSlugs = new Set<string>();
+        const pairedEnSlugs = new Set<string>();
 
         for (const post of postsFr) {
           if (contentArticleSlugs.has(post.slug)) continue;
-          if (enPostBySlug.has(post.slug)) {
-            // Same slug exists in EN → pair them
+          const enSlug = GUIDE_SLUG_ALTERNATES[post.slug] || post.slug;
+          const enPost = enPostBySlug.get(enSlug);
+          if (!GUIDE_FR_ONLY_SLUGS.has(post.slug) && enPost) {
             addPair(
               `${BASE}/fr/guide/${post.slug}`,
-              `${BASE}/en/guide/${post.slug}`,
+              `${BASE}/en/guide/${enSlug}`,
               "monthly", "0.7", post.date || buildDate
             );
-            pairedSlugs.add(post.slug);
+            pairedEnSlugs.add(enSlug);
           } else {
             addSingle(`${BASE}/fr/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
           }
         }
         for (const post of postsEn) {
-          if (contentArticleSlugs.has(post.slug) || pairedSlugs.has(post.slug)) continue;
+          if (
+            contentArticleSlugs.has(post.slug) ||
+            pairedEnSlugs.has(post.slug) ||
+            GUIDE_EN_TO_FR[post.slug] ||
+            GUIDE_FR_ONLY_SLUGS.has(post.slug)
+          ) continue;
           addSingle(`${BASE}/en/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
-        }
-
-        // ── Comparative guides (localized slugs) ──────────────────────────────
-        const GUIDE_COMPARISONS: [string, string][] = [
-          ["notion-vs-coda-comparatif-2026",       "notion-vs-coda-comparison-2026"],
-          ["chatgpt-vs-claude-comparatif-2026",     "chatgpt-vs-claude-comparison-2026"],
-          ["zapier-vs-make-comparatif-2026",        "zapier-vs-make-comparison-2026"],
-          ["figma-vs-canva-comparatif-2026",        "figma-vs-canva-comparison-2026"],
-          ["slack-vs-teams-comparatif-2026",        "slack-vs-teams-comparison-2026"],
-        ];
-        for (const [frSlug, enSlug] of GUIDE_COMPARISONS) {
-          const frExists = postsFr.some((post: any) => post.slug === frSlug);
-          const enExists = postsEn.some((post: any) => post.slug === enSlug);
-          if (frExists && enExists) {
-            addPair(`${BASE}/fr/guide/${frSlug}`, `${BASE}/en/guide/${enSlug}`, "monthly", "0.7");
-          }
         }
 
         // ── Comparisons index + detail pages ──────────────────────────────────
@@ -334,8 +358,8 @@ function staticPrerenderPlugin(): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
-              `<meta property="og:image" content="https://tooltrim.com/og-image.png" />`,
-              `<meta name="twitter:image" content="https://tooltrim.com/og-image.png" />`,
+              `<meta property="og:image" content="${BASE}/og-image.png" />`,
+              `<meta name="twitter:image" content="${BASE}/og-image.png" />`,
               `<script id="tool-software-jsonld" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
               `<script id="tool-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
             ].join("\n    ");
@@ -679,8 +703,18 @@ function staticPrerenderPlugin(): Plugin {
         for (const sp of SEO_PAGES) {
           const url = `${BASE}${sp.path}`;
           const spLang = sp.path.startsWith("/en/") ? "en" : "fr";
+          const slug = sp.path.split("/").pop() || "";
+          const frSlug = spLang === "fr" ? slug : GUIDE_EN_TO_FR[slug] || slug;
+          const enSlug = spLang === "en" ? slug : GUIDE_SLUG_ALTERNATES[slug] || slug;
+          const frCanonical = sp.path.includes("/guide/") ? `${BASE}/fr/guide/${frSlug}` : url;
+          const enCanonical = sp.path.includes("/guide/") ? `${BASE}/en/guide/${enSlug}` : url;
           const metaTags = [
             `<link rel="canonical" href="${url}" />`,
+            ...(sp.path.includes("/guide/") ? [
+              `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
+              `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${frCanonical}" />`,
+            ] : []),
             `<title>${sp.title}</title>`,
             `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:title" content="${sp.title.replace(/"/g, "&quot;")}" />`,
@@ -948,14 +982,20 @@ function staticPrerenderPlugin(): Plugin {
         const allPostsData = [
           ...postsFrData.map((p: any) => ({ ...p, lang: "fr" })),
           ...postsEnData.map((p: any) => ({ ...p, lang: "en" })),
-        ];
+        ].filter((post: any) => {
+          if (post.lang !== "en") return true;
+          if (GUIDE_FR_ONLY_SLUGS.has(post.slug)) return false;
+          return !Object.prototype.hasOwnProperty.call(GUIDE_SLUG_ALTERNATES, post.slug);
+        });
 
         for (const post of allPostsData) {
           const lang: string = post.lang;
           const slug: string = post.slug;
           const url = `${BASE}/${lang}/guide/${slug}`;
-          const frUrl = `${BASE}/fr/guide/${slug}`;
-          const enUrl = `${BASE}/en/guide/${slug}`;
+          const frSlug = lang === "fr" ? slug : GUIDE_EN_TO_FR[slug] || slug;
+          const enSlug = lang === "en" ? slug : GUIDE_SLUG_ALTERNATES[slug] || slug;
+          const frUrl = `${BASE}/fr/guide/${frSlug}`;
+          const enUrl = `${BASE}/en/guide/${enSlug}`;
           const title = post.seo?.metaTitle || post.title || slug;
           const description = post.seo?.metaDescription || post.excerpt || "";
 
@@ -1012,8 +1052,8 @@ function staticPrerenderPlugin(): Plugin {
             `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
             `<meta property="og:url" content="${url}" />`,
-            `<meta property="og:image" content="https://tooltrim.com/og-image.png" />`,
-            `<meta name="twitter:image" content="https://tooltrim.com/og-image.png" />`,
+            `<meta property="og:image" content="${BASE}/og-image.png" />`,
+            `<meta name="twitter:image" content="${BASE}/og-image.png" />`,
             ...(post.seo?.keywords ? [`<meta name="keywords" content="${post.seo.keywords.replace(/"/g, "&quot;")}" />`] : []),
             `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`,
             `<script type="application/ld+json">${JSON.stringify(postBreadcrumb)}</script>`,

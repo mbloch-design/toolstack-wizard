@@ -51,6 +51,40 @@ const queryClient = new QueryClient({
   },
 });
 
+const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
+  "loom-prix-alternatives": "loom-pricing-alternatives",
+  "conseils-ia-freelances-2026": "ai-tips-freelancers-2026",
+  "notion-gratuit-ou-payant": "notion-free-or-paid",
+  "toggl-track-gratuit-ou-payant": "toggl-track-free-or-paid",
+  "calendly-gratuit-suffisant": "calendly-free-enough",
+  "chatgpt-plus-utile-ou-inutile": "chatgpt-plus-worth-it",
+  "grammarly-gratuit-ou-payant": "grammarly-free-or-paid",
+  "stripe-vs-virement": "stripe-vs-bank-transfer",
+  "claude-vs-chatgpt-2026-lequel-choisir-business": "claude-vs-chatgpt-deepseek",
+  "grammarly-vs-languagetool-comparaison": "grammarly-vs-languagetool-comparison-2026",
+  "notion-vs-coda-comparatif-2026": "notion-vs-coda-comparison-2026",
+  "chatgpt-vs-claude-comparatif-2026": "chatgpt-vs-claude-comparison-2026",
+  "zapier-vs-make-comparatif-2026": "zapier-vs-make-comparison-2026",
+  "figma-vs-canva-comparatif-2026": "figma-vs-canva-comparison-2026",
+  "slack-vs-teams-comparatif-2026": "slack-vs-teams-comparison-2026",
+  "stack-redactrice-freelance": "stack-freelance-writer",
+};
+
+const GUIDE_EN_TO_FR = Object.fromEntries(
+  Object.entries(GUIDE_SLUG_ALTERNATES).map(([fr, en]) => [en, fr]),
+) as Record<string, string>;
+
+const GUIDE_FR_ONLY_SLUGS = new Set([
+  "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+  "meilleurs-outils-ia-freelances-2026",
+  "claude-opus-4-6-guide-complet-freelances",
+  "alternatives-gratuites-notion-freelance-2026",
+  "stack-minimaliste-freelance-2026",
+  "stripe-freelance-tarifs-alternatives",
+  "perplexity-vs-chatgpt-recherche",
+  "notion-gratuit-vs-payant-vrai-calcul",
+]);
+
 const LangLayout = () => {
   const { lang } = useParams<{ lang: string }>();
   const location = useLocation();
@@ -113,8 +147,8 @@ const App = () => (
               <Route path="selector/results" element={<ResultsPage />} />
               <Route path="tools" element={<ToolsPage />} />
               <Route path="tool/:slug" element={<ToolDetailPage />} />
-              <Route path="tool/:slug/prix" element={<ToolDetailPage />} />
-              <Route path="tool/:slug/pricing" element={<ToolDetailPage />} />
+              <Route path="tool/:slug/prix" element={<LocalizedToolSubpage subpage="prix" />} />
+              <Route path="tool/:slug/pricing" element={<LocalizedToolSubpage subpage="pricing" />} />
               <Route path="tool/:slug/alternatives" element={<ToolDetailPage />} />
               <Route path="tool/:slug/avis" element={<ToolDetailPage />} />
               <Route path="tool/:slug/reviews" element={<ToolDetailPage />} />
@@ -137,7 +171,7 @@ const App = () => (
               <Route path="guide/meilleurs-outils-ops-manager-freelance" element={<PersonaPillarPage persona="CLAIRE" lang="fr" />} />
               <Route path="guide/best-tools-freelance-ops-manager" element={<PersonaPillarPage persona="CLAIRE" lang="en" />} />
               <Route path="guide/outils-facturation-freelance-2026" element={<ArticleFacturation />} />
-              <Route path="guide/:slug" element={<GuideDetailPage />} />
+              <Route path="guide/:slug" element={<LocalizedGuidePage />} />
               <Route path="article/:slug" element={<RedirectArticleToGuide />} />
               <Route path="comparatifs" element={<ComparesIndexPage />} />
               <Route path="comparatif/:slugPair" element={<ComparePage />} />
@@ -173,6 +207,33 @@ function RedirectToolToFr() {
 function RedirectOutils() {
   const { slug, lang } = useParams();
   return <Navigate to={`/${lang || "fr"}/tool/${slug}`} replace />;
+}
+
+/** Keep localized tool sub-pages canonical: FR=/prix, EN=/pricing */
+function LocalizedToolSubpage({ subpage }: { subpage: "prix" | "pricing" }) {
+  const { slug, lang } = useParams();
+  if (lang === "en" && subpage === "prix") {
+    return <Navigate to={`/en/tool/${slug}/pricing`} replace />;
+  }
+  if (lang !== "en" && subpage === "pricing") {
+    return <Navigate to={`/${lang || "fr"}/tool/${slug}/prix`} replace />;
+  }
+  return <ToolDetailPage />;
+}
+
+/** Keep guide slugs canonical per language and avoid mixed-language duplicates */
+function LocalizedGuidePage() {
+  const { slug = "", lang } = useParams();
+  if (lang === "en") {
+    const enSlug = GUIDE_SLUG_ALTERNATES[slug];
+    if (enSlug) return <Navigate to={`/en/guide/${enSlug}`} replace />;
+    if (GUIDE_FR_ONLY_SLUGS.has(slug)) return <Navigate to={`/fr/guide/${slug}`} replace />;
+  }
+  if (lang !== "en") {
+    const frSlug = GUIDE_EN_TO_FR[slug];
+    if (frSlug) return <Navigate to={`/${lang || "fr"}/guide/${frSlug}`} replace />;
+  }
+  return <GuideDetailPage />;
 }
 
 /** Redirect /article/:slug → /fr/guide/:slug */
