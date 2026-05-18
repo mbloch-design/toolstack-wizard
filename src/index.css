@@ -13686,6 +13686,112 @@ section[id] {
   max-width: 860px;
 }
 
+/* Sprint — Hero fact sheet overflow fix (2026-05-18) */
+/* Column order (matches JSX): PROFIL · BUDGET · OUTILS · NIVEAU · WORKFLOW · POINT D'ATTENTION */
+
+.sd-hero-fact-table {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 1.2fr)   /* PROFIL */
+    minmax(150px, 0.7fr)   /* BUDGET — must fit "420€/mois" */
+    minmax(90px,  0.45fr)  /* OUTILS */
+    minmax(130px, 0.6fr)   /* NIVEAU — must fit "Intermédiaire" */
+    minmax(280px, 1.4fr)   /* WORKFLOW */
+    minmax(240px, 1.2fr);  /* POINT D'ATTENTION */
+  border: 1px solid #DADAD4;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* CRITICAL — prevents grid blowout when content is wider than allocated space */
+.sd-fact-col {
+  min-width: 0;
+  padding: 22px 22px;
+}
+
+/* Compact values: Budget, Outils, Niveau */
+.sd-fact-col--compact .sd-fact-value {
+  font-size: clamp(1.375rem, 2vw, 1.875rem); /* 22–30px */
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Long values: Profil, Workflow, Point d'attention */
+.sd-fact-col--long .sd-fact-value {
+  font-size: clamp(0.9375rem, 1.1vw, 1.125rem); /* 15–18px */
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Labels */
+.sd-fact-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555550;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Budget value/unit split */
+.sd-fact-value--budget {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  flex-wrap: nowrap;
+}
+
+.sd-budget-amount {
+  font-size: clamp(1.375rem, 2vw, 1.875rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.sd-budget-unit {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6F6F68;
+  letter-spacing: 0;
+}
+
+/* 3×2 grid: 1024px–1279px */
+@media (max-width: 1279px) and (min-width: 1025px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* 2 columns: 769px–1024px */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 2 columns: ≤768px */
+@media (max-width: 768px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 12px;
+  }
+}
+
+/* Single column: ≤420px */
+@media (max-width: 420px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Sprint — Workflow card grouped recommendations (2026-05-18) */
 
 /* Decision micro-copy under the role sentence */

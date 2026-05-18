@@ -2,6 +2,36 @@
 
 ---
 
+## 2026-05-18 — Sprint 55 : Hero fact sheet overflow fix
+
+### Objectif
+Corriger les dépassements de contenu dans la table signalétique du hero : la valeur "118€/mois" dans la colonne BUDGET était coupée. Toutes les largeurs de colonnes ont été rendues robustes face à la longueur réelle du contenu, et la typographie a été différenciée entre colonnes compactes (Budget/Outils/Niveau) et colonnes longues (Profil/Workflow/Point d'attention).
+
+### Correctif critique
+`min-width: 0` sur les enfants de la grille CSS est indispensable : sans cette propriété, un contenu plus large que l'espace alloué force la colonne à s'élargir, ce qui provoque le blowout de la grille.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout du helper `splitBudget()`, rendu conditionnel de la valeur budget avec `sd-budget-amount` (grand) + `sd-budget-unit` (petit).
+- `src/index.css` — nouveau bloc sprint avec `grid-template-columns` pondérées (minmax robustes par colonne), `min-width: 0` sur `.sd-fact-col`, typographie compacte/longue différenciée, responsive 6→3 colonnes à 1279px, 2 colonnes à 1024px.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du correctif.
+
+### Budget : affichage montant/unité séparé
+Le budget "118€/mois" est maintenant rendu en deux spans : `sd-budget-amount` (valeur, clamp 22–30px, 700) + `sd-budget-unit` ("/mois", 13px, #6F6F68). Plus premium, moins de risque de dépassement.
+
+### Breakpoints responsive
+- ≥1280px : 6 colonnes pondérées
+- 1025px–1279px : 3 colonnes (3×2)
+- 769px–1024px : 2 colonnes
+- ≤768px : 2 colonnes, border-radius 12px
+- ≤420px : 1 colonne
+
+### Résultat
+- "118€/mois" et "420€/mois" ne sont plus coupés à aucune largeur.
+- La grille ne blowout plus grâce à `min-width: 0`.
+- Le budget passe en 3 colonnes à 1279px, ce qui donne à chaque cellule ≈1/3 du conteneur.
+
+---
+
 ## 2026-05-18 — Sprint 54 : Workflow card UX hierarchy
 
 ### Objectif
