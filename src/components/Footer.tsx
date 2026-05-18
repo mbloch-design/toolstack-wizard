@@ -119,14 +119,19 @@ const Footer = () => {
       {/* ── Bottom bar ── */}
       <div className="border-t border-border" style={{ background: "hsl(var(--card))" }}>
         <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.65rem",
-            letterSpacing: "0.05em",
-            color: "hsl(var(--muted-foreground) / 0.4)",
-          }}>
-            © {new Date().getFullYear()} ToolTrim
-          </p>
+          <div className="flex items-center gap-3">
+            <p style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.65rem",
+              letterSpacing: "0.05em",
+              color: "hsl(var(--muted-foreground) / 0.4)",
+            }}>
+              © {new Date().getFullYear()} ToolTrim
+            </p>
+            <a href="https://marketingdb.live" target="_blank" rel="noopener noreferrer" style={{ opacity: 0.3, lineHeight: 0 }}>
+              <img src="https://marketingdb.live/badge.svg" alt="Listed on MarketingDB" width="95" height="22" />
+            </a>
+          </div>
           <div className="flex items-center gap-4">
             {[
               { to: `${prefix}/privacy-policy`, label: t("Confidentialité", "Privacy") },
