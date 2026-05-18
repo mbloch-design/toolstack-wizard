@@ -89,9 +89,14 @@ Le hero est un bloc éditorial suivi d'une table signalétique. Il répond en 5 
 - **Non-redondance absolue** : budget → table uniquement · outils → table uniquement · niveau → table uniquement · risque → table uniquement · workflow → table uniquement · promesse → sous le titre uniquement.
 - H1 (`.sd-hero-h1`) : `clamp(3.25rem, 5.5vw, 4.5rem)`, font-weight `700`, line-height `0.92`, letter-spacing `-0.065em`.
 - Promesse (`.sd-hero-desc`) : `clamp(1.0625rem, 1.4vw, 1.3125rem)`, line-height `1.5`, max-width `640px`, 1–2 lignes max.
-- Table : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels `10px/700 uppercase #9A9A92`, valeurs `clamp(0.9375rem, 1.3vw, 1.1875rem)/600 #222222`, cell padding `24px 24px 26px`.
-- Responsive : 6 col desktop → 3 col 1024px → 2 col 640px → 2 col 390px (pas de scroll horizontal).
-- Hero container padding : `96px 0 48px` desktop, `80px 0 40px` tablet, `56px 0 28px` mobile.
+- Table : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels `10px/700 uppercase #9A9A92`, cell padding `22px 24px`.
+- **Grille pondérée** (desktop) : `minmax(180px,1.2fr)` PROFIL · `minmax(240px,1.5fr)` WORKFLOW · `minmax(100px,0.55fr)` BUDGET · `minmax(80px,0.4fr)` OUTILS · `minmax(100px,0.55fr)` NIVEAU · `minmax(200px,1.2fr)` RISQUE.
+- **Modificateur `.sd-fact-col--compact`** (BUDGET, OUTILS, NIVEAU) : valeur `clamp(1.25rem, 2vw, 1.5rem)` / line-height 1.1 — chiffres et mots courts mis en valeur.
+- **Modificateur `.sd-fact-col--long`** (PROFIL, WORKFLOW, RISQUE) : valeur `clamp(0.9375rem, 1.2vw, 1.0625rem)` / line-height 1.3 — texte plus petit pour éviter le débordement.
+- **Règle éditoriale table** : max 8 mots par cellule valeur. Les colonnes longues utilisent la notation flèches pour le workflow (ex. `Brief → plans → rendu → chantier`). Aucune phrase complète dans la table.
+- **Fallback dynamique** : les valeurs PROFIL, WORKFLOW, RISQUE des stacks sans données éditoriales dédiées sont tronquées à 40 caractères avec `truncate()`.
+- Responsive : 6 col desktop → 3 col 1199px → 2 col 900px → 1 col 420px (pas de scroll horizontal).
+- Hero container padding : `96px 0 20px` desktop, `80px 0 16px` tablet, `56px 0 12px` mobile.
 
 ### Section Vue d'ensemble
 Supprimée. Ne pas créer de section `apercu` ou `overview` entre le hero et les outils.

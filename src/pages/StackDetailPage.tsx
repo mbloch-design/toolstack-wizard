@@ -813,12 +813,21 @@ const StackDetailPage = () => {
 
         {/* ── Signaletic fact table ── */}
         <div className="sd-hero-fact-table" aria-label={t("Signalétique de la stack", "Stack fact sheet") as string}>
-          {heroDecision.reperes.map((repere) => (
-            <div key={repere.label} className="sd-fact-col">
-              <span className="sd-fact-label">{repere.label}</span>
-              <span className="sd-fact-value">{repere.value}</span>
-            </div>
-          ))}
+          {heroDecision.reperes.map((repere) => {
+            const compactLabels = ["BUDGET", "OUTILS", "NIVEAU", "TOOLS", "LEVEL"];
+            const longLabels = ["PROFIL", "WORKFLOW", "RISQUE", "PROFILE", "RISK"];
+            const modifier = compactLabels.includes(repere.label)
+              ? " sd-fact-col--compact"
+              : longLabels.includes(repere.label)
+              ? " sd-fact-col--long"
+              : "";
+            return (
+              <div key={repere.label} className={`sd-fact-col${modifier}`}>
+                <span className="sd-fact-label">{repere.label}</span>
+                <span className="sd-fact-value">{repere.value}</span>
+              </div>
+            );
+          })}
         </div>
 
         {/* Sentinel: triggers sticky bottom nav when hero scrolls out of view */}
@@ -1801,6 +1810,8 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
   const budgetStr = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : (locale === "fr" ? "Gratuit" : "Free");
   const watchoutFallback = locale === "fr" ? (stack.riskSnippet ?? stack.risk) : (stack.riskSnippetEn ?? stack.riskEn);
   const watchoutShort = (str: string) => String(str).split(".")[0] + (String(str).includes(".") ? "." : "");
+  // Truncate dynamic values to ~40 chars — table cells must contain facts, not sentences
+  const truncate = (s: string, max = 40) => s.length > max ? s.slice(0, max).trimEnd() + "…" : s;
 
   const fallback: HeroDecisionMap = {
     title: locale === "fr" ? stack.title : stack.titleEn,
@@ -1809,20 +1820,20 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
     watchout: watchoutFallback,
     reperes: locale === "fr"
       ? [
-          { label: "PROFIL",   value: editorial.overviewServes },
-          { label: "WORKFLOW", value: locale === "fr" ? stack.subtitle : stack.subtitleEn },
+          { label: "PROFIL",   value: truncate(editorial.overviewServes) },
+          { label: "WORKFLOW", value: truncate(locale === "fr" ? stack.subtitle : stack.subtitleEn) },
           { label: "BUDGET",   value: budgetStr },
           { label: "OUTILS",   value: String(toolCount) },
           { label: "NIVEAU",   value: stageKey },
-          { label: "RISQUE",   value: watchoutShort(watchoutFallback) },
+          { label: "RISQUE",   value: truncate(watchoutShort(watchoutFallback)) },
         ]
       : [
-          { label: "PROFILE",  value: editorial.overviewServesEn },
-          { label: "WORKFLOW", value: stack.subtitleEn },
+          { label: "PROFILE",  value: truncate(editorial.overviewServesEn) },
+          { label: "WORKFLOW", value: truncate(stack.subtitleEn) },
           { label: "BUDGET",   value: budgetStr },
           { label: "TOOLS",    value: String(toolCount) },
           { label: "LEVEL",    value: stageKey },
-          { label: "RISK",     value: watchoutShort(watchoutFallback) },
+          { label: "RISK",     value: truncate(watchoutShort(watchoutFallback)) },
         ],
     socleSlugs: [],
   };

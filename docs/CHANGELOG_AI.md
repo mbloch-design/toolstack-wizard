@@ -2,6 +2,30 @@
 
 ---
 
+## 2026-05-18 — Sprint 50 : Balanced hero fact-sheet columns
+
+### Objectif
+Remplacer la grille uniforme `repeat(6, 1fr)` de la table signalétique par une grille pondérée : colonnes BUDGET/OUTILS/NIVEAU compactes, colonnes PROFIL/WORKFLOW/RISQUE moyennes à larges. Raccourcir les valeurs dynamiques pour qu'aucune cellule ne devienne un paragraphe.
+
+### Fichiers modifiés
+- `src/index.css` — bloc sprint appended : grille pondérée `.sd-hero-fact-table` (1.5fr workflow, 0.4fr outils…), padding `.sd-fact-col` réduit à 22px 24px, modificateur `.sd-fact-col--compact` (valeur 20–24px), modificateur `.sd-fact-col--long` (valeur 15–17px / line-height 1.3), breakpoints 900–1199px → 3 col, ≤900px → 2 col, ≤420px → 1 col.
+- `src/pages/StackDetailPage.tsx` — rendu de la table via `.map()` : ajout dynamique des classes `sd-fact-col--compact` (BUDGET, OUTILS, NIVEAU, TOOLS, LEVEL) et `sd-fact-col--long` (PROFIL, WORKFLOW, RISQUE, PROFILE, RISK) ; ajout du helper `truncate(s, max=40)` ; application de `truncate()` aux valeurs PROFIL, WORKFLOW, RISQUE du fallback dynamique.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — mise à jour des spécifications de la table signalétique : grille pondérée, modificateurs compact/long, règle éditoriale max 8 mots, responsive révisé.
+
+### Décisions d'implémentation
+- Pas de nouvelles classes sur les stacks éditoriaux dédiés (les valeurs sont déjà courtes) — les classes sont ajoutées dynamiquement sur `repere.label` dans le `.map()`.
+- Le fallback dynamique reste intact fonctionnellement ; seule la troncature à 40 chars est ajoutée.
+- Les breakpoints remplacent les anciens 1024/640/390 dans le bloc sprint — la cascade CSS garantit que les overrides sprint s'appliquent en dernier.
+
+### Résultat
+- Desktop ≥1200px : WORKFLOW 50% plus large que OUTILS, table moins haute.
+- 900–1199px : 3 colonnes par rangée.
+- ≤900px : 2 colonnes. ≤420px : 1 colonne.
+- Build : 0 erreurs. Lint : 0 erreurs (156 warnings pre-existants inchangés).
+
+---
+
 ## 2026-05-18 — Sprint 49 : Premium sticky bottom section nav (StackStickyNav)
 
 ### Objectif
