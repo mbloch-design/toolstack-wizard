@@ -2184,3 +2184,20 @@ Reprendre les pages comparatif avec la même logique que les fiches stack : verd
 - Le comparatif répond plus vite à `quel outil choisir ?`.
 - La table n'est plus l'inventaire principal, mais un module de vrais écarts.
 - Les anciens blocs `Ce que fait chaque outil`, `Avantages et limites`, `Critères de décision` et `Profils` ne sont plus rendus comme couches séparées.
+
+---
+
+## 2026-05-18 — Sprint 49 : Comparatifs alignés système Stack
+
+### Objectif
+Aligner les pages comparatif avec la logique des fiches stack : hero en fiche signalétique, navigation sticky bottom, sections numérotées et information non redondante.
+
+### Fichiers modifiés
+- `src/pages/ComparePage.tsx` — hero sans panneau droit, fact sheet comparatif, `CompareStickyNav`, sections numérotées et libellés clarifiés.
+- `src/index.css` — styles du hero fact sheet et de la sticky nav comparatif en capsule basse.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation de la structure comparatif stack-like.
+
+### Résultat
+- Le hero répond immédiatement à `de quoi parle ce comparatif et quel choix dois-je faire ?`.
+- La navigation de page reprend l'esprit des fiches stack, cachée sur mobile pour préserver la lecture.
+- Les sections suivent le flux : verdict, comparer, cas d'usage, attention, alternatives, FAQ.

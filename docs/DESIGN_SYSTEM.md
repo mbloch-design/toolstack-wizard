@@ -397,33 +397,25 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 
 ### Structure hero (`cp-hero`)
 ```css
-/* grille 2 colonnes : 1fr 340px (collapse à 1fr ≤1023px) */
-.cp-hero { background: #F8F8F4; border-bottom: 1px solid #DADAD4; padding: 56px 0 52px; }
-.cp-hero-inner { display: grid; grid-template-columns: 1fr 340px; gap: 48px; }
-@media (max-width: 1023px) { .cp-hero-inner { grid-template-columns: 1fr; } }
+.cp-hero { background: #F8F8F4; border-bottom: 1px solid #DADAD4; padding: 72px 0 64px; }
+.cp-hero-title { font-size: clamp(4rem, 7vw, 7rem); line-height: 0.94; letter-spacing: -0.06em; }
+.cp-hero-fact-sheet { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #DADAD4; border-radius: 18px; }
 ```
+- Rôle : fiche signalétique du comparatif, pas bloc SEO.
+- Contenu unique : outil A, outil B, meilleur pour, budget, niveau, point d'attention.
+- Pas de CTA dans le hero.
+- Pas de panneau droit séparé : le résumé vit dans `cp-hero-fact-sheet`.
 
-### Panneau décision rapide (`cp-decision-panel`)
+### Sticky nav comparatif (`compare-sticky-nav`)
 ```css
-.cp-decision-panel {
-  position: sticky; top: calc(var(--navbar-h, 68px) + 24px);
-  background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 10px;
-  padding: 24px; height: fit-content;
-}
+.compare-sticky-nav { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); }
+.compare-sticky-nav--hidden { opacity: 0; pointer-events: none; }
+.compare-sticky-nav-item--active { color: #FFFFFF; border-color: rgba(255,255,255,0.80); }
 ```
-- Rôle : répondre très haut à "quel outil choisir ?"
-- Contenu : verdict court, budget, complexité, collaboration, risque principal, liens vers les fiches outils.
-- Le hero garde un titre court et une promesse courte ; le paragraphe SEO ne vit pas dans le hero.
-- **Pas de fond coloré, pas de bleu**
-
-### Subnav sticky (`cp-subnav`)
-```css
-.cp-subnav { position: sticky; top: var(--navbar-h, 68px); height: 48px;
-  border-top: 1px solid #DADAD4; border-bottom: 1px solid #DADAD4;
-  background: #F8F8F4; }
-.cp-subnav-link:hover { color: #222222; border-bottom: 2px solid #222222; }
-/* Actif : même style que hover, géré via JS scroll-spy si nécessaire */
-```
+- Même esprit que `stack-sticky-nav` : capsule sombre, centrée en bas, navigation de page uniquement.
+- Items courts : Verdict, Comparer, Cas d'usage, Attention, Alternatives, FAQ.
+- Cachée en haut du hero, active state via IntersectionObserver.
+- Cachée sous 768px pour ne pas surcharger la lecture mobile.
 
 ### Tableau comparatif (`cp-table`)
 ```css
@@ -498,9 +490,9 @@ Implémentation : `<details>/<summary>` natif + `useState` pour la rotation du c
 
 ### Règle éditoriale comparatif
 - **Zéro bleu** sur toute la page (ni boutons, ni hover, ni underline actif)
-- Underline actif/hover subnav : `2px solid #222222`
+- Sticky bottom nav : capsule sombre, onglet actif bordé clair.
 - Boutons CTA : fond `#222222`, couleur `#FFFFFF`
-- Module VS : fond `#FFFFFF` (blanc pur, pas crème)
+- Hero : fact sheet premium, pas de panneau droit ni CTA.
 - CTA band : fond `#EDEDE8` (crème medium, pas crème clair)
 - Structure recommandée : hero décision → verdict → table utile → cas d'usage → pièges → alternatives → FAQ.
 - Ne pas recréer des couches séparées `ce que fait chaque outil`, `avantages/limites`, `profils` si elles répètent verdict, table ou cas d'usage.

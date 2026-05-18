@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type MouseEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -27,6 +27,20 @@ function getLearningCurve(row?: CompareTableRow, lang: "fr" | "en" = "fr"): stri
 }
 function getToolTrimRisk(content: CompareEditorialContent, lang: "fr" | "en"): string {
   return lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn;
+}
+function getBestForSignal(content: CompareEditorialContent, toolA: Tool, toolB: Tool, lang: "fr" | "en"): string {
+  const useCasesA = lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn;
+  const useCasesB = lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn;
+  const firstA = useCasesA[0] || (lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn);
+  const firstB = useCasesB[0] || (lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn);
+  return `${toolA.name}: ${firstA}. ${toolB.name}: ${firstB}.`;
+}
+function getBudgetSignal(toolA: Tool, toolB: Tool, lang: "fr" | "en"): string {
+  const prices = [getPriceNum(toolA), getPriceNum(toolB)].filter((price) => price > 0);
+  if (prices.length === 0) return lang === "fr" ? "Plans gratuits possibles" : "Free plans possible";
+  return lang === "fr"
+    ? `à partir de ${Math.min(...prices)}€/mois`
+    : `from €${Math.min(...prices)}/month`;
 }
 function getDecisionTableRows(rows: CompareTableRow[]): CompareTableRow[] {
   const preferred = [
@@ -530,6 +544,77 @@ function PricingNote({ text }: { text: string }) {
   );
 }
 
+interface CompareNavSection {
+  id: string;
+  label: string;
+}
+
+function CompareStickyNav({ sections, prefix }: { sections: CompareNavSection[]; prefix: string }) {
+  const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (sections.length === 0) return;
+    const nodes = sections
+      .map((section) => document.getElementById(section.id))
+      .filter((node): node is HTMLElement => Boolean(node));
+    if (nodes.length === 0) return;
+
+    const updateActive = () => {
+      let current = nodes[0].id;
+      nodes.forEach((node) => {
+        if (node.getBoundingClientRect().top <= 180) current = node.id;
+      });
+      setActiveId(current);
+    };
+
+    const sectionObserver = new IntersectionObserver(updateActive, {
+      rootMargin: "-160px 0px -58% 0px",
+      threshold: [0, 0.2, 0.45],
+    });
+    nodes.forEach((node) => sectionObserver.observe(node));
+    updateActive();
+
+    const hero = document.querySelector(".cp-hero");
+    const heroObserver = hero
+      ? new IntersectionObserver(([entry]) => setVisible(!entry.isIntersecting), { threshold: 0 })
+      : null;
+    if (hero && heroObserver) heroObserver.observe(hero);
+
+    return () => {
+      sectionObserver.disconnect();
+      heroObserver?.disconnect();
+    };
+  }, [sections]);
+
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActiveId(id);
+  };
+
+  return (
+    <nav className={`compare-sticky-nav${visible ? "" : " compare-sticky-nav--hidden"}`} aria-label="Navigation du comparatif">
+      <Link to={`${prefix}/comparatifs`} className="compare-sticky-nav-logo" aria-label="Retour aux comparatifs">
+        VS
+      </Link>
+      <div className="compare-sticky-nav-items">
+        {sections.map((section) => (
+          <a
+            key={section.id}
+            href={`#${section.id}`}
+            className={`compare-sticky-nav-item${activeId === section.id ? " compare-sticky-nav-item--active" : ""}`}
+            aria-current={activeId === section.id ? "page" : undefined}
+            onClick={(event) => handleClick(event, section.id)}
+          >
+            {section.label}
+          </a>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
 /* ─── Main page ──────────────────────────────────────────────────────────── */
 const ComparePage = () => {
   const { slugPair } = useParams<{ slugPair: string }>();
@@ -600,17 +685,28 @@ const ComparePage = () => {
   const framing = lang === "fr" ? content.framing : content.framingEn;
   const verdictShort = lang === "fr" ? content.verdictShort : content.verdictShortEn;
   const learningCurveRow = content.tableRows.find((row) => row.criterion === "Prise en main" || row.criterionEn === "Learning curve");
-  const collaborationRow = content.tableRows.find((row) => row.criterion === "Collaboration équipe" || row.criterionEn === "Team collaboration");
   const decisionTableRows = getDecisionTableRows(content.tableRows);
   const pitfalls = getPitfalls(content, toolA, toolB, lang);
   const useCasesA = (lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn).slice(0, 4);
   const useCasesB = (lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn).slice(0, 4);
+  const bestForSignal = getBestForSignal(content, toolA, toolB, lang);
+  const budgetSignal = getBudgetSignal(toolA, toolB, lang);
+  const levelSignal = getLearningCurve(learningCurveRow, lang);
+  const riskSignal = getToolTrimRisk(content, lang);
 
   // Find alternative tools from the loaded tools list
   const altTools = content.alternatives.map((alt) => ({
     ...alt,
     tool: tools.find((t) => t.slug === alt.slug || t.id === alt.slug),
   }));
+  const navSections: CompareNavSection[] = [
+    { id: "verdict", label: t("Verdict", "Verdict") },
+    { id: "comparaison", label: t("Comparer", "Compare") },
+    { id: "cas-usages", label: t("Cas d'usage", "Use cases") },
+    { id: "vigilance", label: t("Attention", "Watchouts") },
+    ...(altTools.length > 0 ? [{ id: "alternatives", label: t("Alternatives", "Alternatives") }] : []),
+    { id: "faq", label: "FAQ" },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -618,102 +714,56 @@ const ComparePage = () => {
       {/* ── Hero ───────────────────────────────────────────────────────────── */}
       <section className="cp-hero">
         <div className="cp-hero-inner">
+          <nav className="cp-breadcrumb" aria-label="Breadcrumb">
+            <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
+            <span>/</span>
+            <span>{toolA.name} vs {toolB.name}</span>
+          </nav>
 
-          {/* Left col */}
-          <div>
-            {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 24, fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68" }}>
-              <Link to={`${prefix}/comparatifs`} style={{ color: "#9A9A92", textDecoration: "none", transition: "color 140ms" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#222222"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#9A9A92"; }}>
-                {t("Comparatifs", "Comparisons")}
-              </Link>
-              <span style={{ color: "#DADAD4" }}>/</span>
-              <span style={{ color: "#222222" }}>{toolA.name} vs {toolB.name}</span>
-            </nav>
+          <span className="cp-eyebrow">COMPARATIF</span>
 
-            {/* Eyebrow */}
-            <span className="cp-eyebrow">Comparatif</span>
+          <h1 className="cp-hero-title">
+            {toolA.name} vs {toolB.name}.
+          </h1>
 
-            {/* H1 */}
-            <h1 style={{
-              fontFamily: "var(--font-brand)",
-              fontSize: "clamp(4rem, 7vw, 7rem)",
-              fontWeight: 600, letterSpacing: "-0.06em",
-              lineHeight: 0.94, color: "#222222",
-              margin: "0 0 24px",
-            }}>
-              {toolA.name}<br />vs {toolB.name}.
-            </h1>
+          <p className="cp-hero-promise">{framing}</p>
 
-            {/* Framing */}
-            <p style={{
-              fontFamily: "var(--font-ui)", fontSize: 21,
-              lineHeight: 1.42, color: "#6F6F68",
-              maxWidth: 760, margin: "0",
-              letterSpacing: "-0.02em",
-            }}>
-              {framing}
-            </p>
+          <div className="cp-hero-fact-sheet" aria-label={t("Résumé du choix", "Decision summary")}>
+            <div className="cp-hero-fact">
+              <span>{t("Outil A", "Tool A")}</span>
+              <p>{toolA.name}</p>
+            </div>
+            <div className="cp-hero-fact">
+              <span>{t("Outil B", "Tool B")}</span>
+              <p>{toolB.name}</p>
+            </div>
+            <div className="cp-hero-fact cp-hero-fact--wide">
+              <span>{t("Meilleur pour", "Best for")}</span>
+              <p>{bestForSignal}</p>
+            </div>
+            <div className="cp-hero-fact">
+              <span>{t("Budget", "Budget")}</span>
+              <p>{budgetSignal}</p>
+            </div>
+            <div className="cp-hero-fact">
+              <span>{t("Niveau", "Level")}</span>
+              <p>{levelSignal}</p>
+            </div>
+            <div className="cp-hero-fact cp-hero-fact--wide">
+              <span>{t("Point d'attention", "Watchout")}</span>
+              <p>{riskSignal}</p>
+            </div>
           </div>
-
-          {/* Right col — decision panel */}
-          <aside className="cp-decision-panel" aria-label={t("Résumé du comparatif", "Comparison summary")}>
-            <span className="cp-decision-panel-title">{t("Décision rapide", "Quick decision")}</span>
-            <p className="cp-decision-panel-verdict">{verdictShort}</p>
-            <div className="cp-decision-facts">
-              <div>
-                <span>{t("Budget", "Budget")}</span>
-                <p>{getPrice(toolA)} / {getPrice(toolB)}</p>
-              </div>
-              <div>
-                <span>{t("Complexité", "Complexity")}</span>
-                <p>{getLearningCurve(learningCurveRow, lang)}</p>
-              </div>
-              <div>
-                <span>{t("Collaboration", "Collaboration")}</span>
-                <p>{getLearningCurve(collaborationRow, lang)}</p>
-              </div>
-              <div>
-                <span>{t("Risque principal", "Main risk")}</span>
-                <p>{getToolTrimRisk(content, lang)}</p>
-              </div>
-            </div>
-            <div className="cp-decision-tools">
-              {[toolA, toolB].map((tool) => (
-                <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="cp-decision-tool-link">
-                  <span className="cp-vs-logo"><ToolLogo tool={tool} size={20} /></span>
-                  <span>{tool.name}</span>
-                </Link>
-              ))}
-            </div>
-          </aside>
-
         </div>
       </section>
 
-      {/* ── Subnav ─────────────────────────────────────────────────────────── */}
-      <nav className="cp-subnav" aria-label={t("Sections", "Sections")}>
-        <div className="cp-subnav-inner">
-          {[
-            { href: "#verdict",      label: t("Verdict", "Verdict") },
-            { href: "#comparaison",  label: t("Comparaison", "Comparison") },
-            { href: "#cas-usages",   label: t("Cas d'usage", "Use cases") },
-            { href: "#vigilance",    label: t("Pièges", "Watchouts") },
-            { href: "#prix",         label: t("Prix", "Pricing") },
-            ...(altTools.length > 0 ? [{ href: "#alternatives", label: t("Alternatives", "Alternatives") }] : []),
-            { href: "#faq",          label: "FAQ" },
-          ].map((item) => (
-            <a key={item.href} href={item.href} className="cp-subnav-link">{item.label}</a>
-          ))}
-        </div>
-      </nav>
+      <CompareStickyNav sections={navSections} prefix={prefix} />
 
       {/* ── Verdict rapide ─────────────────────────────────────────────────── */}
       <section id="verdict" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
-          <p className="cp-title">{t("La recommandation courte.", "The short recommendation.")}</p>
+          <span className="cp-eyebrow">{t("01 — Verdict", "01 — Verdict")}</span>
+          <p className="cp-title">{t("Le choix rapide.", "The quick choice.")}</p>
           <p className="cp-section-intro">{verdictShort}</p>
           <div className="cp-verdict-grid">
             <div className="cp-verdict-col">
@@ -741,7 +791,7 @@ const ComparePage = () => {
       {/* ── Tableau comparatif ─────────────────────────────────────────────── */}
       <section id="comparaison" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("Tableau comparatif", "Comparison table")}</span>
+          <span className="cp-eyebrow">{t("02 — Comparaison", "02 — Comparison")}</span>
           <p className="cp-title">{t("Comparer selon le vrai usage.", "Compare based on real use.")}</p>
           <div className="cp-table">
             <div className="cp-table-head">
@@ -773,8 +823,8 @@ const ComparePage = () => {
       {/* ── Cas d'usage ───────────────────────────────────────────────────── */}
       <section id="cas-usages" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("Cas d'usage", "Use cases")}</span>
-          <p className="cp-title">{t("Reconnais ton besoin.", "Recognize your need.")}</p>
+          <span className="cp-eyebrow">{t("03 — Cas d'usage", "03 — Use cases")}</span>
+          <p className="cp-title">{t("Choisir selon ton vrai besoin.", "Choose based on your real need.")}</p>
           <div className="cp-usecase-grid">
             <div className="cp-usecase-card">
               <div className="cp-usecase-head">
@@ -803,7 +853,7 @@ const ComparePage = () => {
       {/* ── Points de vigilance ───────────────────────────────────────────── */}
       <section id="vigilance" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("Points de vigilance", "Watchouts")}</span>
+          <span className="cp-eyebrow">{t("04 — Points d'attention", "04 — Watchouts")}</span>
           <p className="cp-title">{t("Les pièges à éviter.", "Mistakes to avoid.")}</p>
           <div className="cp-watchout-list">
             {pitfalls.map((pitfall, i) => (
@@ -871,9 +921,9 @@ const ComparePage = () => {
       {altTools.length > 0 && (
         <section id="alternatives" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{t("Alternatives", "Alternatives")}</span>
+            <span className="cp-eyebrow">{t("05 — Pour aller plus loin", "05 — Next options")}</span>
             <p className="cp-title">
-              {t("À regarder avant de choisir.", "Worth checking before you decide.")}
+              {t("Si aucun des deux ne colle.", "If neither one fits.")}
             </p>
             <div>
               {altTools.map((alt) => (
@@ -957,7 +1007,7 @@ const ComparePage = () => {
       {/* ── FAQ ────────────────────────────────────────────────────────────── */}
       <section id="faq" className="cp-section cp-section--last scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">FAQ</span>
+          <span className="cp-eyebrow">{altTools.length > 0 ? "06 — FAQ" : "05 — FAQ"}</span>
           <p className="cp-title">
             {t("Questions fréquentes.", "Frequently asked questions.")}
           </p>
