@@ -1190,10 +1190,12 @@ Sur les pages stack detail, éviter les formulations de type “base recommandé
 - Les conseils pratiques doivent vivre dans les blocs workflow, le budget ou la FAQ selon leur rôle.
 
 **Budget :**
-- Le budget est un module de décision, pas une table de prix.
-- Structure recommandée : titre avec plafond raisonnable, intro courte, trois blocs `Ce qui mérite d'être payé`, `Ce qui peut rester gratuit`, `Ce qui fait grimper la facture`.
-- Ajouter une bande de seuils compacte pour montrer : test, livraison régulière, audit nécessaire.
-- Ne pas réexpliquer tout le workflow ici. La section budget possède uniquement la logique de coût et les seuils d'action.
+- Le budget est un module de décision seuils + principes, pas un catalogue de prix ni une liste d'outils.
+- Structure : eyebrow `03 — BUDGET`, titre dynamique depuis `stack.monthlyBudget` (fallback si 0), intro 18px max 760px, bande de seuils 3 colonnes, bloc principes 3 items texte seul, note 13px muted.
+- Bande de seuils (`sd-budget-thresholds`) : grille 3 col avec bordure unifiée + border-radius 16px. Colonne active (target) porte la classe `sd-budget-threshold--active` (fond #F0F0EA). Structure interne : `sd-bt-range` (valeur, clamp 20–26px, 700) / `sd-bt-label` (uppercase 11px) / `sd-bt-desc` (14px muted).
+- Principes (`sd-budget-principles`) : grille 3 col, gap 48px. Chaque item : `sd-bp-head` (16px 700) + `sd-bp-body` (15px muted). Texte pur — pas de tool chips, pas de logos.
+- Pas de CTA "Auditer ma stack" dans cette section.
+- Ne pas réexpliquer tout le workflow ici. La section budget possède uniquement les seuils et les principes de décision.
 
 
 ## Stack detail `Stack Map`

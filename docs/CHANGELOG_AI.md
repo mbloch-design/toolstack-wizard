@@ -2,6 +2,27 @@
 
 ---
 
+## 2026-05-18 — Sprint 58 : Budget decision module redesign
+
+### Objectif
+Remplacer les 3 grandes cartes avec tool chips de la section Budget par un module de décision épuré : bande de seuils (3 niveaux), 3 principes courts (sans logos) et une note. Supprimer le CTA "Auditer ma stack" de cette section.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — remplacement complet du bloc BUDGET : suppression de `sd-budget-decision-grid`, `BudgetToolChips` et `sd-budget-action`/Link CTA ; ajout de la bande de seuils avec classes `sd-bt-range/label/desc`, du bloc `sd-budget-principles` et d'une note étendue.
+- `src/index.css` — ajout du sprint budget decision module : `.sd-budget-thresholds` (bordure + border-radius unifiés), `.sd-budget-threshold--active`, `.sd-bt-range/label/desc`, `.sd-budget-principles`, `.sd-budget-principle`, `.sd-bp-head/body`, `.sd-budget-intro` (18px), `.sd-budget-note` (13px) et responsive ≤900px.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du module décision budget sans logos ni CTA.
+
+### Résultat
+- Aucun tool chip / logo dans la section Budget.
+- Le CTA "Auditer ma stack" / "Audit my stack" est retiré de cette section.
+- Titre dynamique construit depuis `stack.monthlyBudget` avec fallback.
+- Bande de seuils : Testing (0–15€) / Livrer régulièrement (valeur dynamique, highlighted) / Auditer (80–100€).
+- 3 principes : À payer / À garder gratuit / À auditer — texte uniquement.
+- Note éditoriale courte, 13px muted.
+- Variables inutilisées `budgetPaidTools`, `budgetFreeTools`, `budgetDriverTools`, `budgetWatchLabel` supprimées.
+
+---
+
 ## 2026-05-18 — Sprint 57 : Simplify workflow tool item containers
 
 ### Objectif

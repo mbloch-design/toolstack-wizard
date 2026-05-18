@@ -768,11 +768,7 @@ const StackDetailPage = () => {
   const workflowSteps = buildWorkflowSteps(stack, stackTools, lang);
   const stackLayers = workflowSteps.length > 0 ? workflowSteps : buildFallbackWorkflowSteps(stack, stackTools, lang);
   const stackMapFamilies = buildStackMapFamilies(stack, stackLayers);
-  const budgetPaidTools = getBudgetWorthPayingTools(stackTools);
-  const budgetFreeTools = getBudgetFreeTools(stackTools);
-  const budgetDriverTools = getBudgetDriverTools(stackTools);
   const budgetTargetLabel = stack.monthlyBudget > 0 ? `≈${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
-  const budgetWatchLabel = getBudgetWatchThreshold(stack.monthlyBudget, lang);
   const toggleToolLayer = (layerId: string) => {
     setExpandedToolLayers((current) => {
       const next = new Set(current);
@@ -1045,79 +1041,58 @@ const StackDetailPage = () => {
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("03 — BUDGET", "03 — BUDGET")}</span>
           <p className="sd-section-title sd-budget-title">
-            {t(`${stack.monthlyBudget}€/mois si tu utilises vraiment le socle.`, `€${stack.monthlyBudget}/month if you really use the base.`)}
+            {stack.monthlyBudget > 0
+              ? t(
+                  `${stack.monthlyBudget}€/mois, si le socle travaille vraiment.`,
+                  `€${stack.monthlyBudget}/month, when the core stack earns its keep.`,
+                )
+              : t("Le budget qui reste sain.", "A budget that stays healthy.")}
           </p>
           <p className="sd-budget-intro">
             {t(
-              "Le budget n'est pas une cible à atteindre. C'est un plafond raisonnable pour livrer, montrer, documenter et encaisser sans payer des outils d'équipe trop tôt.",
-              "The budget is not a target to reach. It is a reasonable ceiling to deliver, show, document, and get paid without paying for team tools too early.",
+              "Ce budget reste sain si chaque outil sert une étape réelle : livrer, montrer, documenter ou encaisser. S'il dépasse le seuil sans volume client clair, cherche d'abord les doublons.",
+              "This budget stays healthy when each tool serves a real step: ship, present, document, or get paid. If it climbs past the threshold without clear client volume, look for overlaps first.",
             )}
           </p>
 
-          <div className="sd-budget-decision-grid">
-            <div className="sd-budget-decision-card">
-              <span className="sd-budget-card-label">{t("Ce qui mérite d'être payé", "Worth paying for")}</span>
-              <p>
-                {t(
-                  "Les outils qui portent vraiment la livraison : preview client, assistance au code si elle est utilisée chaque semaine, documentation de mission.",
-                  "Tools that truly carry delivery: client preview, code assistance if used every week, and project documentation.",
-                )}
-              </p>
-              <BudgetToolChips items={budgetPaidTools} emptyLabel={t("À valider selon ton usage réel.", "Validate based on real usage.")} />
-            </div>
-
-            <div className="sd-budget-decision-card">
-              <span className="sd-budget-card-label">{t("Ce qui peut rester gratuit", "What can stay free")}</span>
-              <p>
-                {t(
-                  "Versionner, encaisser ou partager un livrable peut souvent rester sur un plan gratuit tant que le volume est simple.",
-                  "Versioning, getting paid, or sharing a deliverable can often stay on a free plan while volume is simple.",
-                )}
-              </p>
-              <BudgetToolChips items={budgetFreeTools} emptyLabel={t("Regarde d'abord les plans gratuits.", "Check free plans first.")} />
-            </div>
-
-            <div className="sd-budget-decision-card">
-              <span className="sd-budget-card-label">{t("Ce qui fait grimper la facture", "What drives cost up")}</span>
-              <p>
-                {t(
-                  "Plusieurs copilotes IA, un outil projet d'équipe, un CRM complet ou des automatisations trop tôt transforment vite une stack freelance en stack d'équipe.",
-                  "Several AI copilots, a team project tool, a full CRM, or too-early automations quickly turn a freelance stack into a team stack.",
-                )}
-              </p>
-              <BudgetToolChips items={budgetDriverTools} emptyLabel={t("À surveiller avant d'ajouter une couche.", "Watch this before adding another layer.")} />
-            </div>
-          </div>
-
           <div className="sd-budget-thresholds" aria-label={t("Seuils de budget", "Budget thresholds")}>
             <div className="sd-budget-threshold">
-              <strong>0–15€/mois</strong>
-              <span>{t("Tu testes.", "You are testing.")}</span>
+              <span className="sd-bt-range">{t("0–15€/mois", "0–15€/mo")}</span>
+              <span className="sd-bt-label">{t("Tester", "Testing")}</span>
+              <span className="sd-bt-desc">{t("Plans gratuits + un outil payant maximum.", "Free plans + one paid tool maximum.")}</span>
+            </div>
+            <div className="sd-budget-threshold sd-budget-threshold--active">
+              <span className="sd-bt-range">{budgetTargetLabel}</span>
+              <span className="sd-bt-label">{t("Livrer régulièrement", "Shipping regularly")}</span>
+              <span className="sd-bt-desc">{t("Le socle est utilisé chaque semaine.", "The core stack is used every week.")}</span>
             </div>
             <div className="sd-budget-threshold">
-              <strong>{budgetTargetLabel}</strong>
-              <span>{t("Tu livres régulièrement.", "You deliver regularly.")}</span>
-            </div>
-            <div className="sd-budget-threshold">
-              <strong>{budgetWatchLabel}</strong>
-              <span>{t("Tu dois auditer.", "You need to audit.")}</span>
+              <span className="sd-bt-range">{t("80–100€/mois", "80–100€/mo")}</span>
+              <span className="sd-bt-label">{t("Auditer", "Time to audit")}</span>
+              <span className="sd-bt-desc">{t("Doublons IA, CRM, projet ou automatisation à vérifier.", "Check for AI, CRM, project or automation overlaps.")}</span>
             </div>
           </div>
 
-          <div className="sd-budget-action">
-            <p>
-              {t(
-                "Si ta stack dépasse ce seuil sans volume client clair, commence par chercher les doublons IA, projet et automatisation.",
-                "If your stack goes past this threshold without clear client volume, start by looking for AI, project, and automation duplicates.",
-              )}
-            </p>
-            <Link to={`${prefix}/selector`} className="sd-budget-action-link">
-              {t("Auditer ma stack", "Audit my stack")} <span aria-hidden>→</span>
-            </Link>
+          <div className="sd-budget-principles">
+            <div className="sd-budget-principle">
+              <span className="sd-bp-head">{t("À payer", "Worth paying for")}</span>
+              <p className="sd-bp-body">{t("Ce qui porte une étape réelle de livraison.", "What carries a real delivery step.")}</p>
+            </div>
+            <div className="sd-budget-principle">
+              <span className="sd-bp-head">{t("À garder gratuit", "Keep free")}</span>
+              <p className="sd-bp-body">{t("Ce qui suffit en plan gratuit tant que le volume reste simple.", "What a free plan handles while volume stays low.")}</p>
+            </div>
+            <div className="sd-budget-principle">
+              <span className="sd-bp-head">{t("À auditer", "Time to audit")}</span>
+              <p className="sd-bp-body">{t("Ce qui se répète, se chevauche ou sert moins d'une fois par semaine.", "What overlaps, repeats, or gets used less than once a week.")}</p>
+            </div>
           </div>
 
           <p className="sd-budget-note">
-            {t("Ce budget est une cible de calibration, pas une promesse exacte.", "This budget is a calibration target, not an exact promise.")}
+            {t(
+              "Ce budget est un repère, pas une promesse. Si tu dépasses le seuil sans volume client clair, commence par supprimer les doublons avant d'ajouter un nouvel outil.",
+              "This budget is a benchmark, not a promise. If you exceed the threshold without clear client volume, remove overlaps before adding a new tool.",
+            )}
           </p>
         </div>
       </section>

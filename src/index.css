@@ -14172,3 +14172,115 @@ section[id] {
     border-radius: 12px;
   }
 }
+
+/* Sprint — Budget decision module (2026-05-18) */
+
+/* Threshold strip */
+.sd-budget-thresholds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #DADAD4;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 48px;
+}
+.sd-budget-threshold {
+  padding: 26px 28px;
+  border-right: 1px solid #DADAD4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sd-budget-threshold:last-child {
+  border-right: none;
+}
+.sd-budget-threshold--active {
+  background: #F0F0EA;
+}
+.sd-bt-range {
+  font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #222222;
+  line-height: 1;
+}
+.sd-bt-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #555550;
+  line-height: 1;
+}
+.sd-bt-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6F6F68;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
+/* Principles */
+.sd-budget-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 48px;
+  margin-top: 48px;
+}
+.sd-budget-principle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sd-bp-head {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #222222;
+  line-height: 1;
+}
+.sd-bp-body {
+  font-size: 15px;
+  font-weight: 400;
+  color: #6F6F68;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Budget intro */
+.sd-budget-intro {
+  font-size: 18px;
+  font-weight: 400;
+  color: #6F6F68;
+  line-height: 1.55;
+  max-width: 760px;
+  margin-top: 20px;
+}
+
+/* Note */
+.sd-budget-note {
+  font-size: 13px;
+  font-weight: 400;
+  color: #9A9A92;
+  line-height: 1.55;
+  max-width: 720px;
+  margin-top: 36px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sd-budget-thresholds {
+    grid-template-columns: 1fr;
+  }
+  .sd-budget-threshold {
+    border-right: none;
+    border-bottom: 1px solid #DADAD4;
+  }
+  .sd-budget-threshold:last-child {
+    border-bottom: none;
+  }
+  .sd-budget-principles {
+    grid-template-columns: 1fr;
+    gap: 28px 0;
+  }
+}
