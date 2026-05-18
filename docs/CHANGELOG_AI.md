@@ -2255,3 +2255,47 @@ Brancher les premiers fichiers de données comparatif enrichies dans le rendu `C
 ### Résultat
 - Les cinq premiers comparatifs utilisent maintenant leurs données de décision : choix rapide, scores par usage, table des écarts, seuil de bascule, coût réel, erreurs fréquentes et FAQ.
 - Les autres comparatifs gardent le fallback éditorial généré depuis les données outils.
+
+---
+
+## 2026-05-19 — Sprint 53 : Modèle comparatif scalable inspiré G2
+
+### Objectif
+Transformer les pages Comparatif en pages scalables et utiles : plus de fond décisionnel, plus de structure, moins de texte SEO générique. Inspiré de la structure G2 (At a glance, ratings, pricing, features, reviews, tipping point) mais avec l'angle ToolTrim : pas "A gagne contre B" mais "A est le bon choix dans ce contexte, B dans cet autre".
+
+### Principe ToolTrim vs G2
+- **G2** = marketplace d'avis et ratings, score objectif, comparaison exhaustive
+- **ToolTrim** = aide à la décision contextuelle pour freelances et petites équipes — chaque section répond à une question précise
+
+### Fichiers modifiés
+- `src/pages/ComparePage.tsx` — suppression du `cp-battle-stage` dans le hero (redondant avec la fact sheet), ajout de la section `#apercu` (At a glance), réordonnancement des sections (coût avant features, seuil après features), renommage des IDs (`#scores` → `#criteres`, `#comparaison` → `#features`), mise à jour de la sticky nav avec les nouveaux labels.
+- `src/index.css` — ajout des styles `.cp-aglance-*` pour la section At a glance, grille 3 colonnes avec séparateurs signalétiques.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du modèle scalable.
+
+### Architecture de sections cible
+1. Hero — table signalétique 6 faits (sans battle stage)
+2. En un coup d'œil (#apercu) — grille At a glance
+3. Verdict ToolTrim (#verdict) — Le choix rapide
+4. Critères décisionnels (#criteres) — Les critères qui changent le choix
+5. Coût réel (#cout) — Ce que tu paies vraiment
+6. Features décisives (#features) — Ce qui change vraiment la décision (table filtrée)
+7. Seuil de bascule (#seuil) — Quand passer de A à B
+8. Points d'attention (#vigilance) — Erreurs de choix fréquentes
+9. Alternatives (#alternatives) — conditionnel
+10. FAQ (#faq) — conditionnel
+
+### Sticky nav
+Labels : Coup d'œil, Verdict, Critères, Coût, Features, Seuil, Attention, Alternatives, FAQ
+
+### Fallbacks
+- At a glance : toujours rendu depuis les données existantes
+- Features : conditionnel si `decisionTableRows.length > 0`
+- FAQ : conditionnel si `content.faq.length > 0`
+- Sections absentes = non rendues, jamais de titre vide
+
+### Résultat
+- Le hero répond en 5 secondes sans double contenu
+- La section At a glance oriente avant que l'utilisateur lise le verdict
+- Coût réel précède les features pour ancrer la réalité budgétaire
+- Le seuil de bascule clôt la partie décisionnelle avant les erreurs
+- Build : ✅ 0 erreur, 156 warnings pré-existants

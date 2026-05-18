@@ -393,21 +393,48 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 
 ---
 
-## Comparatif (cp-*)
+## Comparatif (cp-*) — Modèle scalable inspiré G2, angle ToolTrim
+
+### Différence ToolTrim vs G2
+- **G2** : marketplace d'avis, scores numériques, comparaison exhaustive, "qui gagne".
+- **ToolTrim** : aide à la décision contextuelle — "A est le bon choix dans ce contexte, B devient meilleur quand ce seuil est atteint".
+- Pas de score sur 10 inventé. Qualificatifs uniquement : `Avantage`, `Suffisant`, `Dépend`.
+
+### Architecture de sections cible (ordre obligatoire)
+| # | Section | ID | Question |
+|---|---|---|---|
+| 01 | Hero | — | Quels outils et quelle décision rapide ? |
+| 02 | En un coup d'œil | `#apercu` | En un coup d'œil, quel outil pour quel contexte ? |
+| 03 | Verdict ToolTrim | `#verdict` | Quelle recommandation assume ToolTrim ? |
+| 04 | Critères décisionnels | `#criteres` | Sur quels critères A ou B prend l'avantage ? |
+| 05 | Coût réel | `#cout` | Quel est le prix affiché et le coût réel ? |
+| 06 | Features décisives | `#features` | Quelles fonctions changent vraiment le choix ? |
+| 07 | Seuil de bascule | `#seuil` | Quand passer de A à B ? |
+| 08 | Points d'attention | `#vigilance` | Où peut-on se tromper ? |
+| 09 | Alternatives | `#alternatives` | Conditionnel |
+| 10 | FAQ | `#faq` | Conditionnel |
 
 ### Structure hero (`cp-hero`)
 ```css
 .cp-hero { background: #F8F8F4; border-bottom: 1px solid #DADAD4; padding: 72px 0 64px; }
 .cp-hero-title { font-size: clamp(4rem, 7vw, 7rem); line-height: 0.94; letter-spacing: -0.06em; }
-.cp-battle-stage { display: grid; grid-template-columns: 1fr 0.62fr 1fr; gap: 16px; }
 .cp-hero-fact-sheet { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #DADAD4; border-radius: 18px; }
 ```
-- Rôle : battle utile du comparatif, pas bloc SEO.
-- Le hero met les deux outils face-à-face, avec logo, usage recommandé et verdict ToolTrim central.
-- Pas de score absolu opaque : utiliser `Signal d'adéquation`, `Recommandé pour`, `Avantage`, `Suffisant`, `Dépend`.
-- Contenu unique : choix par défaut, meilleur usage de chaque outil, budget, niveau, point d'attention.
+- Rôle : orientation immédiate, réponse en 5 secondes.
+- **Pas de battle stage** (les 2 cartes face-à-face ont été supprimées — redondantes avec la fact sheet).
+- Contenu : breadcrumb, label COMPARATIF, h1, promesse courte, fact sheet 6 faits.
+- Fact sheet : Par défaut, Meilleur pour A, Meilleur pour B, Budget, Niveau, Point d'attention.
 - Pas de CTA dans le hero.
-- Pas de panneau droit séparé : le résumé vit dans `cp-hero-fact-sheet`.
+
+### At a glance (`cp-aglance-*`)
+```css
+.cp-aglance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #DADAD4; border-radius: 18px; }
+.cp-aglance-item { padding: 22px 24px; background: #FFFFFF; }
+```
+- Première section scrollée : grille signalétique compacte, même style que la fact sheet hero mais dans la page.
+- Items : Par défaut, Meilleur pour A, Meilleur pour B, Budget, Niveau, Point d'attention.
+- Toujours rendu : dérivé des données existantes, aucun champ optionnel nécessaire.
+- Différence avec le hero : situé dans le flux de lecture, avec `verdictShort` comme intro éditorial.
 
 ### Sticky nav comparatif (`compare-sticky-nav`)
 ```css
@@ -415,45 +442,57 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 .compare-sticky-nav--hidden { opacity: 0; pointer-events: none; }
 .compare-sticky-nav-item--active { color: #FFFFFF; border-color: rgba(255,255,255,0.80); }
 ```
-- Même esprit que `stack-sticky-nav` : capsule sombre, centrée en bas, navigation de page uniquement.
-- Items courts : Verdict, Scores, Comparer, Seuil, Coût, Erreurs, Alternatives, FAQ.
+- Items : Coup d'œil, Verdict, Critères, Coût, Features, Seuil, Attention, Alternatives, FAQ.
+- Affichage conditionnel : Alternatives uniquement si des alternatives existent, FAQ uniquement si des FAQs existent.
 - Cachée en haut du hero, active state via IntersectionObserver.
-- Cachée sous 768px pour ne pas surcharger la lecture mobile.
 
-### Tableau comparatif (`cp-table`)
+### Tableau features décisives (`cp-table` dans `#features`)
 ```css
 .cp-table-head { grid-template-columns: 200px 1fr 1fr 110px; }
 .cp-table-row  { grid-template-columns: 200px 1fr 1fr 110px; border-top: 1px solid #DADAD4; }
 .cp-table-cell--win { font-weight: 500; color: #222222; }
-.cp-table-verdict   { font-size: 12px; font-weight: 600; color: #6F6F68; }
 /* Mobile (≤767px) : display: block, chaque cell avec data-label affiché en ::before */
 ```
-- La table compare uniquement les critères utiles à la décision : usage principal, meilleur pour, limite, prise en main, collaboration, automatisation, budget, niveau de structure, risque.
-- Les deux outils doivent recevoir les mêmes critères, avec cellules courtes et comparables.
-- Si une cellule dépasse 2 lignes, raccourcir la copie plutôt que laisser la table devenir un article.
+- Section conditionnelle : rendue uniquement si `decisionTableRows.length > 0`.
+- La table ne liste que les features décisives, groupées, filtrées par `showInMainTable: true`.
+- Pas de table générique de 40 lignes. Maximum 9 lignes (via `getDecisionTableRows`).
+
+### Critères décisionnels (`cp-score-*`)
+- ID : `#criteres` (anciennement `#scores`).
+- Rôle : montrer où chaque outil prend l'avantage — qualitatif, pas numérique.
+- Labels : `Avantage`, `Suffisant`, `Dépend`.
+- 4 à 6 critères maximum, uniquement si le critère change vraiment le choix.
 
 ### Verdict ToolTrim (`cp-verdict-grid`)
-```css
-.cp-verdict-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.cp-verdict-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 10px; padding: 18px; }
-```
-- Le verdict apparaît avant la table.
+- ID : `#verdict`.
 - Labels : `Choisis A si`, `Choisis B si`, `Évite les deux si`.
-- Ce bloc doit être la recommandation courte, pas une répétition du tableau.
-- `cp-final-recommendation` porte la phrase finale ToolTrim : choix par défaut + condition où l'autre outil devient meilleur.
+- `cp-final-recommendation` porte la phrase finale ToolTrim.
 
-### Scores par usage (`cp-score-*`)
-```css
-.cp-score-row { display: grid; grid-template-columns: 0.72fr 1.28fr; border-bottom: 1px dotted rgba(34,34,34,.36); }
-.cp-score-tool { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 16px; padding: 18px; }
-.cp-score-level--advantage { background: #222222; color: #FFFFFF; }
-```
-- Rôle : montrer où chaque outil prend l'avantage avant la table.
-- Les scores sont qualitatifs, pas numériques : `Avantage`, `Suffisant`, `Dépend`.
-- Chaque ligne compare A, B et se termine par une décision ToolTrim courte.
-- 4 à 6 critères maximum, uniquement si le critère change vraiment le choix.
-- Les premiers comparatifs éditorialisés peuvent venir de `src/data/comparison-battles/*.json`.
-- L'adaptateur de page transforme ces JSON en sections ToolTrim : hero battle, scores qualitatifs, table des écarts, seuil de bascule, coût réel, erreurs et FAQ.
+### Coût réel (`cp-cost-*`)
+- ID : `#cout` — positionné avant Features pour ancrer la réalité budgétaire.
+- Compare : plan gratuit, quand payer, coût caché.
+- Prix inventés interdits : utiliser `à vérifier`, `selon volume`, `à auditer si`.
+
+### Seuil de bascule (`cp-tipping-*`)
+- ID : `#seuil` — positionné après Features.
+- Structure : Par défaut + Passe à l'autre si + signaux concrets en chips.
+
+### Points de vigilance (`cp-watchout-*`)
+- ID : `#vigilance`.
+- Chaque point : erreur, conséquence, recommandation ToolTrim.
+
+### Données battle (`src/data/comparison-battles/*.json`)
+- 5 comparatifs éditorialisés : chatgpt-vs-claude, figma-vs-canva, make-vs-zapier, notion-vs-airtable, webflow-vs-framer.
+- Champs disponibles : `comparison.chooseAIf`, `chooseBIf`, `decisiveCriteria`, `scoreByUseCase`, `tippingPoint`, `costReality`, `pitfalls`, `comparisonRows`, `related`, `faq`.
+- `buildBattleEditorialContent()` adapte ces JSON vers le modèle `CompareEditorialContent`.
+- Les comparatifs sans données battle utilisent `buildFallbackContent()` depuis les données outil Supabase.
+
+### Fallback rules (obligatoires)
+- At a glance : toujours rendu (données derivées de `content`).
+- Features : conditionnel si `decisionTableRows.length > 0`.
+- FAQ : conditionnel si `content.faq.length > 0`.
+- Alternatives : conditionnel si `altTools.length > 0`.
+- Ne jamais rendre un titre de section vide. Ne jamais afficher `undefined`.
 
 ### Points de vigilance (`cp-watchout-*`)
 ```css

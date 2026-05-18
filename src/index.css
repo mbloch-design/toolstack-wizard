@@ -7356,6 +7356,52 @@
   }
   .cp-subnav-link:hover { color: #222222; border-bottom-color: #222222; }
 
+  /* ── At a glance grid ──────────────────────────────────────── */
+  .cp-aglance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 28px;
+    background: #DADAD4;
+    border: 1px solid #DADAD4;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  .cp-aglance-item {
+    min-width: 0;
+    padding: 22px 24px;
+    background: #FFFFFF;
+  }
+  .cp-aglance-item--wide {
+    grid-column: span 1;
+  }
+  .cp-aglance-item span {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+  }
+  .cp-aglance-item p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    color: #222222;
+  }
+  @media (max-width: 1023px) {
+    .cp-aglance-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .cp-aglance-grid { grid-template-columns: 1fr; border-radius: 14px; }
+    .cp-aglance-item--wide { grid-column: span 1; }
+  }
+
   /* ── Generic section wrapper ───────────────────────────────── */
   .cp-section { padding: 56px 0; border-bottom: 1px solid #DADAD4; }
   .cp-section[id] { scroll-margin-top: 96px; }
