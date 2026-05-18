@@ -1280,7 +1280,6 @@ const ComparePage = () => {
     tool: tools.find((t) => t.slug === alt.slug || t.id === alt.slug),
   }));
   const navSections: CompareNavSection[] = [
-    { id: "apercu", label: t("Coup d'œil", "At a glance") },
     { id: "verdict", label: t("Verdict", "Verdict") },
     { id: "criteres", label: t("Critères", "Criteria") },
     { id: "cout", label: t("Coût", "Cost") },
@@ -1342,45 +1341,10 @@ const ComparePage = () => {
 
       <CompareStickyNav sections={navSections} prefix={prefix} />
 
-      {/* ── En un coup d'œil ───────────────────────────────────────────────── */}
-      <section id="apercu" className="cp-section scroll-mt-20">
-        <div className="cp-container">
-          <span className="cp-eyebrow">{t("01 — En un coup d'œil", "01 — At a glance")}</span>
-          <p className="cp-title">{t("L'essentiel pour décider.", "Key facts for your decision.")}</p>
-          {verdictShort && <p className="cp-section-intro">{verdictShort}</p>}
-          <div className="cp-aglance-grid">
-            <div className="cp-aglance-item">
-              <span>{t("Par défaut", "Default")}</span>
-              <p>{defaultChoice}</p>
-            </div>
-            <div className="cp-aglance-item">
-              <span>{toolA.name}</span>
-              <p>{bestForA}</p>
-            </div>
-            <div className="cp-aglance-item">
-              <span>{toolB.name}</span>
-              <p>{bestForB}</p>
-            </div>
-            <div className="cp-aglance-item">
-              <span>{t("Budget", "Budget")}</span>
-              <p>{budgetSignal}</p>
-            </div>
-            <div className="cp-aglance-item">
-              <span>{t("Niveau", "Level")}</span>
-              <p>{levelSignal}</p>
-            </div>
-            <div className="cp-aglance-item cp-aglance-item--wide">
-              <span>{t("Point d'attention", "Watchout")}</span>
-              <p>{riskSignal}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Verdict rapide ─────────────────────────────────────────────────── */}
       <section id="verdict" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("02 — Verdict", "02 — Verdict")}</span>
+          <span className="cp-eyebrow">{t("01 — Verdict", "01 — Verdict")}</span>
           <p className="cp-title">{t("Le choix rapide.", "The quick choice.")}</p>
           <p className="cp-section-intro">{verdictShort}</p>
           <p className="cp-final-recommendation">
@@ -1413,7 +1377,7 @@ const ComparePage = () => {
       {/* ── Ratings décisionnels ──────────────────────────────────────────── */}
       <section id="criteres" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("03 — Critères décisionnels", "03 — Decision criteria")}</span>
+          <span className="cp-eyebrow">{t("02 — Critères décisionnels", "02 — Decision criteria")}</span>
           <p className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</p>
           <div className="cp-score-list">
             {content.decisiveCriteria.slice(0, 6).map((criterion) => {
@@ -1457,7 +1421,7 @@ const ComparePage = () => {
       {/* ── Coût réel ─────────────────────────────────────────────────────── */}
       <section id="cout" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("04 — Coût réel", "04 — Real cost")}</span>
+          <span className="cp-eyebrow">{t("03 — Coût réel", "03 — Real cost")}</span>
           <p className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</p>
           <p className="cp-section-intro">
             {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
@@ -1489,7 +1453,7 @@ const ComparePage = () => {
       {decisionTableRows.length > 0 && (
         <section id="features" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{t("05 — Features décisives", "05 — Decisive features")}</span>
+            <span className="cp-eyebrow">{t("04 — Features décisives", "04 — Decisive features")}</span>
             <p className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</p>
             <div className="cp-table">
               <div className="cp-table-head">
@@ -1522,7 +1486,7 @@ const ComparePage = () => {
       {/* ── Seuil de bascule ──────────────────────────────────────────────── */}
       <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("06 — Seuil de bascule", "06 — Tipping point")}</span>
+          <span className="cp-eyebrow">{t("05 — Seuil de bascule", "05 — Tipping point")}</span>
           <p className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</p>
           <div className="cp-tipping-panel">
             <div>
@@ -1545,7 +1509,7 @@ const ComparePage = () => {
       {/* ── Points de vigilance ───────────────────────────────────────────── */}
       <section id="vigilance" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("07 — Points d'attention", "07 — Watchout")}</span>
+          <span className="cp-eyebrow">{t("06 — Points d'attention", "06 — Watchout")}</span>
           <p className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</p>
           <div className="cp-watchout-list">
             {(content.tooltrimRisks.length > 0 ? content.tooltrimRisks : fallbackPitfalls.map((pitfall) => ({
@@ -1577,7 +1541,7 @@ const ComparePage = () => {
       {altTools.length > 0 && (
         <section id="alternatives" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{t("08 — Pour aller plus loin", "08 — Next options")}</span>
+            <span className="cp-eyebrow">{t("07 — Pour aller plus loin", "07 — Next options")}</span>
             <p className="cp-title">
               {t("Si aucun des deux ne colle.", "If neither one fits.")}
             </p>
@@ -1661,24 +1625,26 @@ const ComparePage = () => {
       </div>
 
       {/* ── FAQ ────────────────────────────────────────────────────────────── */}
-      <section id="faq" className="cp-section cp-section--last scroll-mt-20">
-        <div className="cp-container">
-          <span className="cp-eyebrow">{altTools.length > 0 ? "09 — FAQ" : "08 — FAQ"}</span>
-          <p className="cp-title">
-            {t("Questions fréquentes.", "Frequently asked questions.")}
-          </p>
-          <div>
-            {content.faq.map((item, i) => (
-              <FaqItem
-                key={i}
-                question={lang === "fr" ? item.q : item.qEn}
-                answer={lang === "fr" ? item.a : item.aEn}
-                defaultOpen={i === 0}
-              />
-            ))}
+      {content.faq.length > 0 && (
+        <section id="faq" className="cp-section cp-section--last scroll-mt-20">
+          <div className="cp-container">
+            <span className="cp-eyebrow">{altTools.length > 0 ? "09 — FAQ" : "08 — FAQ"}</span>
+            <p className="cp-title">
+              {t("Questions fréquentes.", "Frequently asked questions.")}
+            </p>
+            <div>
+              {content.faq.map((item, i) => (
+                <FaqItem
+                  key={i}
+                  question={lang === "fr" ? item.q : item.qEn}
+                  answer={lang === "fr" ? item.a : item.aEn}
+                  defaultOpen={i === 0}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
     </div>
   );
