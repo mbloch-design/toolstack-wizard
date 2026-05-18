@@ -2,6 +2,24 @@
 
 ---
 
+## 2026-05-18 — Sprint 54 : Workflow card UX hierarchy
+
+### Objectif
+Raffiner la hiérarchie visuelle et typographique des cartes « Carte de la stack » : retravailler la colonne gauche, remplacer les étiquettes de groupe par des pill tags, agrandir les logos, supprimer les compteurs flottants et simplifier les items d'outil.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout des classes `sd-stack-card-title`, `sd-stack-card-role`, `sd-stack-card-micro` dans la colonne gauche ; remplacement de `sd-tool-group-label` par `sd-group-tag` ; outils passent de `sd-tool-pill` (Link pill) à `sd-tool-item` (Link avec `sd-tool-logo` + `sd-tool-name`) ; micro-info visible avant le bouton expand quand des outils sont masqués ; suppression du bloc `sd-tools-total` dans la colonne droite.
+- `src/index.css` — nouveau bloc Sprint 54 : `sd-stack-card-title` (clamp 26–32px, bold, tight tracking), `sd-stack-card-role` (17px, muted), `sd-stack-card-decision` (15px, 500, dark — override du sprint précédent), `sd-stack-card-micro` (12px, muted), `sd-group-tag` (pill transparent, border, 10px caps), `sd-tool-item` / `sd-tool-logo` (44px, radius 12, white bg) / `sd-tool-name` (15px, 600), `sd-tool-grid` en CSS grid `auto-fill minmax(180px)`, `sd-tools-total` masqué, mobile responsive.
+
+### Résultat
+- Colonne gauche : titre éditorial > description > phrase de recommandation > micro-info > bouton expand.
+- Plus de compteur flottant "X outils affichés" ni de total au bas de la colonne droite.
+- Logos 44px dans un conteneur rond, bien lisibles.
+- Pill tags slim pour identifier les trois groupes (Socle recommandé · Selon ton usage · Extensions).
+- Items d'outil simplifiés : logo + nom uniquement, sans badge de statut.
+
+---
+
 ## 2026-05-18 — Sprint 53 : Workflow cards grouped by recommendation level
 
 ### Objectif

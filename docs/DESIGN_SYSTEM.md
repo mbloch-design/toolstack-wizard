@@ -1193,13 +1193,17 @@ Sur les pages stack detail, éviter les formulations de type “base recommandé
 
 Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doit être plus calme et plus visuelle. Il traduit l'inspiration Sana sans copier son style : grands blocs lisibles, titre de famille à gauche, grille d'outils à droite.
 
-**Structure d'un bloc :**
-- Titre de famille de workflow : `Coder & versionner`, `Montrer au client`, `Documenter`.
-- Usage court, maximum une phrase.
-- Titre de famille à gauche, usage court, micro-texte décisionnel (`.sd-stack-card-decision`).
-- Groupes à droite : `Socle recommandé` · `Selon ton usage` · `Extensions` — chacun avec son label `.sd-tool-group-label`.
-- Outils rendus comme pills (`.sd-tool-pill`) : logo + nom, **pas de badge de statut par outil**.
-- Total discret `.sd-tools-total` en bas de la colonne droite : "9 outils dans cette étape".
+**Structure d'un bloc — colonne gauche :**
+1. `.sd-stack-card-title` — titre éditorial, clamp(1.625rem → 2rem), 700, tracking –0.03em.
+2. `.sd-stack-card-role` — description courte, 17px/400, couleur `#6F6F68`, max-width 380px.
+3. `.sd-stack-card-decision` — phrase de recommandation, 15px/500, couleur `#222222`, max-width 380px. Générée par `getWorkflowDecisionCopy()`.
+4. `.sd-stack-card-micro` — micro-info "X outils visibles sur Y", 12px, `#9A9A92`. Visible uniquement si `hasHiddenGroups`.
+5. `.sd-expand-btn` — bouton expand/collapse. Visible uniquement si `hasHiddenGroups`.
+
+**Structure d'un bloc — colonne droite :**
+- Groupes : `Socle recommandé` · `Selon ton usage` · `Extensions` — chacun introduit par `.sd-group-tag` (pill transparent, border `#DADAD4`, 10px caps, radius 999px).
+- Outils rendus comme `.sd-tool-item` (Link) contenant `.sd-tool-logo` (44px, radius 12px, fond blanc) + `.sd-tool-name` (15px/600). **Pas de badge de statut par outil.**
+- **`.sd-tools-total` supprimé de la colonne droite** — le comptage est dans `.sd-stack-card-micro` (colonne gauche).
 - **`.sd-tools-count-indicator` supprimé** — ne pas réintroduire.
 
 **Règle d'inventaire :**
@@ -1207,20 +1211,18 @@ Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doi
 - Afficher Socle (tout) + 3 premiers Selon usage par défaut.
 - Le reste (secondaires > 3 et/ou extensions) s'affiche après expand.
 - Bouton `.sd-expand-btn` uniquement si des outils sont masqués. Libellé contextuel selon ce qui est caché.
-- **Ne pas afficher de badge de statut répété sur chaque outil** : le label de groupe porte déjà cette information.
+- **Ne pas afficher de badge de statut répété sur chaque outil** : le groupe tag porte déjà cette information.
 
 **Logique de groupement :**
 - `core/socle/essential/keep` → groupe `Socle recommandé`
 - `conditional/conditionnel/optional` + fallback → groupe `Selon ton usage`
 - `challenge/challenger/avoid/extension` + mots-clés rôle avancé → groupe `Extensions`
 
-**Micro-texte décisionnel (`.sd-stack-card-decision`) :**
-- Toujours présent, max 340px de large, 13px/400, couleur `#444440`.
-- Généré par `getWorkflowDecisionCopy()` selon la composition des groupes.
-- Jamais un résumé de comptage — toujours une phrase éditoriale orientée décision.
-
 **Style :**
-- Bloc calme : `#F4F4EF`, radius 28px, padding 36–40px, sans ombre.
-- Grille desktop : colonne gauche 0.75fr, colonne droite 1.25fr.
-- Tool pill : height 36px, border `#E8E8E2`, radius 999px, logo 18px, nom 13px/500.
-- Mobile : une colonne, pills flex-wrap, `sd-stack-card-decision` max-width 100%.
+- Bloc calme : `#F4F4EF`, radius 28px, padding 40px 44px, sans ombre, sans bordure.
+- Grille desktop : colonne gauche 0.75fr, colonne droite 1.25fr, gap 52px.
+- Logo outil : 44px × 44px, radius 12px, fond blanc, border `#E8E8E2`. Image interne 26px.
+- Nom outil : 15px/600, max-width 160px, 2 lignes max.
+- Tool grid : CSS grid `auto-fill minmax(180px, 1fr)`, gap 14px 24px.
+- Group tag : inline-flex, h 26px, padding 0 10px, 10px/700 caps, border `#DADAD4`, radius 999px.
+- Mobile : une colonne, padding réduit 28px 24px, logos 40px.

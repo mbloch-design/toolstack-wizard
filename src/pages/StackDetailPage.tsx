@@ -902,13 +902,22 @@ const StackDetailPage = () => {
 
               const visibleSecondary = isExpanded ? groups.secondary : groups.secondary.slice(0, 3);
 
+              const visibleCount = groups.core.length + Math.min(groups.secondary.length, 3);
+
               return (
                 <section key={family.id} className="sd-stack-map-family" aria-label={t(family.titleFr, family.titleEn)}>
                   {/* Left column: editorial */}
                   <div className="sd-stack-map-copy sd-stack-card-left">
-                    <h3>{t(family.titleFr, family.titleEn)}</h3>
-                    <p>{t(family.purposeFr, family.purposeEn)}</p>
+                    <h3 className="sd-stack-card-title">{t(family.titleFr, family.titleEn)}</h3>
+                    <p className="sd-stack-card-role">{t(family.purposeFr, family.purposeEn)}</p>
                     <p className="sd-stack-card-decision">{decisionCopy}</p>
+                    {hasHiddenGroups && (
+                      <p className="sd-stack-card-micro">
+                        {isExpanded
+                          ? (lang === 'fr' ? `${totalCount} outil${totalCount > 1 ? 's' : ''} dans cette étape` : `${totalCount} tool${totalCount > 1 ? 's' : ''} in this step`)
+                          : (lang === 'fr' ? `${visibleCount} outil${visibleCount > 1 ? 's' : ''} visible${visibleCount > 1 ? 's' : ''} sur ${totalCount}` : `${visibleCount} of ${totalCount} tools shown`)}
+                      </p>
+                    )}
                     {hasHiddenGroups && (
                       <button
                         type="button"
@@ -929,7 +938,7 @@ const StackDetailPage = () => {
                     {/* Core group — always visible */}
                     {groups.core.length > 0 && (
                       <div className="sd-tool-group">
-                        <span className="sd-tool-group-label">
+                        <span className="sd-group-tag">
                           {lang === 'fr' ? 'Socle recommandé' : 'Core stack'}
                         </span>
                         <div className="sd-tool-grid">
@@ -937,10 +946,13 @@ const StackDetailPage = () => {
                             <Link
                               key={slot.slug}
                               to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                              className="sd-tool-pill"
+                              className="sd-tool-item"
+                              title={tool!.name}
                             >
-                              <ToolLogo tool={tool!} size={18} />
-                              {tool!.name}
+                              <span className="sd-tool-logo">
+                                <ToolLogo tool={tool!} size={26} />
+                              </span>
+                              <span className="sd-tool-name">{tool!.name}</span>
                             </Link>
                           ))}
                         </div>
@@ -950,7 +962,7 @@ const StackDetailPage = () => {
                     {/* Secondary group — first 3 always visible, rest on expand */}
                     {groups.secondary.length > 0 && (
                       <div className="sd-tool-group">
-                        <span className="sd-tool-group-label">
+                        <span className="sd-group-tag">
                           {lang === 'fr' ? 'Selon ton usage' : 'As needed'}
                         </span>
                         <div className="sd-tool-grid">
@@ -958,10 +970,13 @@ const StackDetailPage = () => {
                             <Link
                               key={slot.slug}
                               to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                              className="sd-tool-pill"
+                              className="sd-tool-item"
+                              title={tool!.name}
                             >
-                              <ToolLogo tool={tool!} size={18} />
-                              {tool!.name}
+                              <span className="sd-tool-logo">
+                                <ToolLogo tool={tool!} size={26} />
+                              </span>
+                              <span className="sd-tool-name">{tool!.name}</span>
                             </Link>
                           ))}
                         </div>
@@ -971,7 +986,7 @@ const StackDetailPage = () => {
                     {/* Extension group — only when expanded */}
                     {isExpanded && groups.extension.length > 0 && (
                       <div className="sd-tool-group">
-                        <span className="sd-tool-group-label">
+                        <span className="sd-group-tag">
                           {lang === 'fr' ? 'Extensions' : 'Extensions'}
                         </span>
                         <div className="sd-tool-grid">
@@ -979,10 +994,13 @@ const StackDetailPage = () => {
                             <Link
                               key={slot.slug}
                               to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                              className="sd-tool-pill"
+                              className="sd-tool-item"
+                              title={tool!.name}
                             >
-                              <ToolLogo tool={tool!} size={18} />
-                              {tool!.name}
+                              <span className="sd-tool-logo">
+                                <ToolLogo tool={tool!} size={26} />
+                              </span>
+                              <span className="sd-tool-name">{tool!.name}</span>
                             </Link>
                           ))}
                         </div>
@@ -992,15 +1010,6 @@ const StackDetailPage = () => {
                     {/* Fallback: empty family */}
                     {totalCount === 0 && (
                       <span className="sd-stack-map-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>
-                    )}
-
-                    {/* Discreet total at bottom */}
-                    {totalCount > 0 && (
-                      <p className="sd-tools-total">
-                        {lang === 'fr'
-                          ? `${totalCount} outil${totalCount > 1 ? 's' : ''} dans cette étape`
-                          : `${totalCount} tool${totalCount > 1 ? 's' : ''} in this step`}
-                      </p>
                     )}
                   </div>
                 </section>

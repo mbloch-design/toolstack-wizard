@@ -13767,3 +13767,172 @@ section[id] {
     max-width: 100%;
   }
 }
+
+/* Sprint — Workflow card UX hierarchy (2026-05-18) */
+/* Left col typography · group pill tags · tool items · expand button placement */
+
+/* ── Left column: title */
+.sd-stack-card-title {
+  font-size: clamp(1.625rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #222222;
+  margin: 0;
+}
+
+/* ── Left column: description (role) */
+.sd-stack-card-role {
+  margin-top: 14px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #6F6F68;
+  max-width: 380px;
+}
+
+/* ── Left column: decision sentence — stronger weight, darker */
+.sd-stack-card-decision {
+  margin-top: 24px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: #222222 !important;
+  max-width: 380px !important;
+}
+
+/* ── Left column: micro-info before expand button */
+.sd-stack-card-micro {
+  margin-top: 14px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #9A9A92;
+}
+
+/* ── Expand button: positioned after micro-info in left col */
+.sd-stack-card-left .sd-expand-btn {
+  margin-top: 10px;
+}
+
+/* ── Group pill tag (replaces .sd-tool-group-label block style) */
+.sd-group-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  margin-bottom: 14px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555550;
+  background: transparent;
+  border: 1px solid #DADAD4;
+  border-radius: 999px;
+}
+
+/* ── Tool item: logo box + name, no status badge */
+.sd-tool-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #222222;
+}
+.sd-tool-item:hover .sd-tool-name {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* ── Tool logo: larger, rounder box */
+.sd-tool-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.sd-tool-logo img,
+.sd-tool-logo svg {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+/* ── Tool name */
+.sd-tool-name {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ── Tool grid: CSS grid layout */
+.sd-tool-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px 24px;
+}
+
+/* ── Space between tool groups */
+.sd-tool-group + .sd-tool-group {
+  margin-top: 24px;
+}
+
+/* ── Card container: lighter, no border */
+.sd-stack-map-family {
+  border: none !important;
+  background: #F4F4EF;
+  border-radius: 28px;
+  padding: 40px 44px;
+  gap: 52px;
+}
+
+/* ── Remove floating count indicator */
+.sd-tools-count-indicator {
+  display: none !important;
+}
+
+/* ── Remove discreet total from right col (moved to micro-info in left col) */
+.sd-tools-total {
+  display: none !important;
+}
+
+/* ── Mobile */
+@media (max-width: 768px) {
+  .sd-stack-map-family {
+    flex-direction: column;
+    padding: 28px 24px;
+    gap: 28px;
+  }
+  .sd-stack-card-role,
+  .sd-stack-card-decision {
+    max-width: 100%;
+  }
+  .sd-tool-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .sd-tool-logo img,
+  .sd-tool-logo svg {
+    width: 22px;
+    height: 22px;
+  }
+  .sd-tool-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
