@@ -13300,3 +13300,97 @@
     padding: 14px 12px 16px;
   }
 }
+
+/* Sprint — Hero spacing + subnav redesign (2026-05-18) */
+
+/* Tighten hero editorial bottom padding (was 48px) */
+.sd-hero-editorial {
+  padding: 96px 0 20px;
+}
+
+/* Reduce gap between promise and table (was 56px top), eliminate dead air below table (was 72px bottom) */
+.sd-hero-fact-table {
+  margin: 44px auto 0;
+}
+
+/* Tablet overrides */
+@media (max-width: 1024px) {
+  .sd-hero-editorial {
+    padding: 80px 0 16px;
+  }
+  .sd-hero-fact-table {
+    margin-top: 40px;
+  }
+}
+
+/* Mobile overrides */
+@media (max-width: 640px) {
+  .sd-hero-editorial {
+    padding: 56px 0 12px;
+  }
+  .sd-hero-fact-table {
+    margin: 36px auto 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .sd-hero-editorial {
+    padding: 48px 0 12px;
+  }
+  .sd-hero-fact-table {
+    margin: 32px auto 0;
+  }
+}
+
+/* Anchor nav redesign — editorial, typographic, no pill */
+
+/* Hide the "Sur cette page" label (also removed from JSX) */
+.sd-nav-label {
+  display: none;
+}
+
+/* Nav bar: subtle top+bottom border, light background */
+.sd-nav {
+  border-top: 1px solid #DADAD4;
+  border-bottom: 1px solid #DADAD4;
+  background: rgba(248, 248, 244, 0.96) !important;
+}
+
+/* Inner container: generous gap between items */
+.sd-nav-inner {
+  gap: 28px !important;
+}
+
+/* Nav links: no pill shape, underline-only affordance */
+.sd-nav-link {
+  height: auto !important;
+  padding: 0 0 3px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  background: transparent !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #444444 !important;
+  transition: color 120ms ease-out, border-color 120ms ease-out !important;
+}
+
+.sd-nav-link:hover {
+  color: #222222 !important;
+  background: transparent !important;
+  border-bottom-color: rgba(34, 34, 34, 0.35) !important;
+}
+
+.sd-nav-link:focus-visible {
+  outline: 2px solid #222222;
+  outline-offset: 3px;
+}
+
+/* Active state: bold weight + solid underline — NO filled pill */
+.sd-nav-link--active,
+.sd-nav-link--active:hover {
+  color: #222222 !important;
+  background: transparent !important;
+  font-weight: 700 !important;
+  border-bottom-color: #222222 !important;
+}

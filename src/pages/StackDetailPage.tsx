@@ -765,7 +765,6 @@ const StackDetailPage = () => {
       ════════════════════════════════════════════════════════════════════ */}
       <nav className="sd-nav" aria-label="Navigation de la page">
         <div className="sd-nav-inner">
-          <span className="sd-nav-label">{t("Sur cette page", "On this page")}</span>
           {navItems.map((item) => (
             <a
               key={item.id}
