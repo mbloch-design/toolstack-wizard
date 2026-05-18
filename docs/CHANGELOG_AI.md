@@ -2,6 +2,42 @@
 
 ---
 
+## 2026-05-18 — Sprint 51 : Workflow card UX improvements
+
+### Objectif
+Améliorer la lisibilité des cartes "Carte de la stack" (section Outils) sans toucher au héros ni aux autres sections. Quatre problèmes résolus : étiquette "À challenger" anxiogène → "Extension", badge "À surveiller" supprimé, résumé technique remplacé par un résumé lisible, bouton d'expansion trop discret remplacé par un vrai bouton secondaire avec bordure, et ajout d'un indicateur de compte visible.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout des fonctions `getWorkflowStatusLabel()` et `buildWorkflowStatusSummary()` ; remplacement du rendu dans la section workflow cards : suppression du badge `.sd-stack-map-watch`, remplacement du résumé technique par `buildWorkflowStatusSummary()`, remplacement du bouton `.sd-stack-map-toggle` par `.sd-expand-btn`, ajout du wrapper `.sd-stack-map-tools-wrapper` avec indicateur `.sd-tools-count-indicator`, remplacement de `getToolDecisionDisplay()` par `getWorkflowStatusLabel()` pour les labels outils.
+- `src/index.css` — bloc sprint appended : `.sd-stack-map-tools-wrapper`, `.sd-tools-count-indicator`, `.sd-expand-btn` (hover, focus-visible), responsive mobile.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — mise à jour des spécifications des cartes workflow.
+
+### Décisions d'implémentation
+- `getWorkflowStatusLabel()` utilisé UNIQUEMENT dans les workflow cards — les autres sections (Risques, Budget, hero) gardent leurs labels existants.
+- Le modèle de données (`decision: "core" | "conditional" | "challenge"`) est inchangé.
+- `buildWorkflowStatusSummary()` utilise `getToolDecisionStatus()` comme fallback pour les items sans `slot.decision` explicite.
+- L'indicateur de compte est toujours affiché (même quand tous les outils sont visibles), avec libellé adapté.
+- Le bouton expand est masqué quand `hiddenCount === 0` (grâce au `isExpandable` guard existant).
+- Le badge "À surveiller" (`shouldWatchFamily`, `.sd-stack-map-watch`) est entièrement supprimé du JSX des workflow cards. La logique `shouldShowWorkflowWatch()` et le CSS existant sont conservés pour éviter des régressions.
+
+### Nouvelles étiquettes de statut (workflow cards uniquement)
+| Clé interne | FR | EN |
+|---|---|---|
+| `core` | Socle | Core |
+| `conditional` | Selon usage | As needed |
+| `challenge` | Extension | Extension |
+
+### Résultat
+- Aucun "À challenger" visible dans les cartes workflow.
+- Aucun badge "À surveiller" visible dans les cartes workflow.
+- Résumé lisible : "Socle : 2 · Selon usage : 4 · Extensions : 3".
+- Indicateur de compte : "6 sur 9 outils affichés" / "9 outils affichés".
+- Bouton expand visible, avec bordure `#DADAD4`, hover noir.
+- Build : 0 erreurs. Lint : 0 erreurs (156 warnings pre-existants inchangés).
+
+---
+
 ## 2026-05-18 — Sprint 50 : Balanced hero fact-sheet columns
 
 ### Objectif

@@ -1118,12 +1118,12 @@ Quand une section outils contient beaucoup d'entrées, ne pas afficher un workfl
 
 **Node fermé :**
 - Numéro d'étape `01`, titre, usage court.
-- Résumé : `X outils · Y socle · Z conditionnel · N à challenger`.
-- Aperçu : jusqu'à 3 outils, Socle d'abord, puis Conditionnel si besoin.
-- Bouton réel `Voir le détail` avec `aria-expanded`.
+- Résumé : `Socle : Y · Selon usage : Z · Extensions : N` (catégories > 0 uniquement).
+- Aperçu : jusqu'à 3 outils, Socle d'abord, puis Selon usage si besoin.
+- Bouton réel `.sd-expand-btn` avec `aria-expanded`.
 
 **Node ouvert :**
-- Groupes `Socle`, `Conditionnel`, `À challenger`.
+- Groupes `Socle`, `Selon usage`, `Extension`.
 - Rows compactes : logo, nom, rôle, prix, lien `Fiche →`.
 - Pas de paragraphe long dans les détails. Budget, risques et calibrage restent dans leurs sections dédiées.
 
@@ -1139,26 +1139,32 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 
 **Contenu d'un node :**
 - Étape de workflow, numéro et usage court.
-- Résumé compact : total outils, Socle, Conditionnel, À challenger.
+- Résumé compact : `Socle : Y · Selon usage : Z · Extensions : N`.
 - 1 à 3 outils visibles, Socle en priorité.
 - Disclosure `Voir le détail` pour afficher tous les outils de l'étape.
 
 **Règle de non-redondance :**
 `02 — OUTILS` est un seul module. Ne pas ajouter d'inventaire séparé, de table, de wall of cards ou de matrice décisionnelle sous la grille. Les détails complets vivent dans les nodes expansibles.
 
-**Langage de statut :**
-- Utiliser uniquement `Socle`, `Conditionnel`, `À challenger`.
+**Langage de statut (workflow cards) :**
+- Utiliser `Socle`, `Selon usage`, `Extension` — jamais `À challenger`, `Conditionnel` ou `À surveiller` dans les cartes workflow.
+- Mapping : `core/socle/essential/keep` → `Socle` ; `conditional/conditionnel/optional` → `Selon usage` ; `challenge/challenger/avoid` → `Extension`.
 - Ne pas réintroduire `Essentiel` / `Optionnel` dans les pages stack detail.
 - Les statuts doivent rester du texte lisible, jamais un simple code couleur.
 
 **Progressive disclosure :**
 - Un seul node est ouvert par défaut : celui qui porte le plus de Socle, ou le premier node métier prioritaire.
 - Les autres nodes montrent seulement la forme de la stack : nom d'étape, usage, comptes et 1 à 3 outils.
-- Le bouton `Voir le détail` reste un vrai `<button>` avec `aria-expanded` et `aria-controls`.
+- Le bouton expand reste un vrai `<button>` avec `aria-expanded`, `aria-controls`, classe `.sd-expand-btn` (bordure `#DADAD4`, radius 999px, hover noir).
+- Texte bouton : "Afficher les N outils restants ↓" / "Réduire la liste ↑".
 
-**Poids de workflow :**
-- Afficher un marqueur discret `À surveiller` seulement si l'étape est chargée : conditionnel + à challenger >= socle, ou plus de 5 outils.
-- Ce marqueur indique une zone à vérifier, pas une alerte forte.
+**Indicateur de compte :**
+- Afficher `.sd-tools-count-indicator` au-dessus de la grille d'outils, aligné à droite (gauche sur mobile).
+- Collapsed : "6 sur 9 outils affichés". Expanded : "9 outils affichés". Toujours visible.
+
+**Badge "À surveiller" :**
+- Supprimé des cartes workflow. Ne pas le réintroduire.
+- La logique `shouldShowWorkflowWatch()` reste dans le code mais n'est plus rendue.
 - Ne pas répéter ici la logique budget, risques ou calibrage : ces informations appartiennent à leurs sections.
 
 **Structure informationnelle :**
@@ -1189,14 +1195,15 @@ Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doi
 **Structure d'un bloc :**
 - Titre de famille de workflow : `Coder & versionner`, `Montrer au client`, `Documenter`.
 - Usage court, maximum une phrase.
-- Résumé : `X outils · Y socle · Z conditionnels · N à challenger`.
+- Résumé lisible : `Socle : Y · Selon usage : Z · Extensions : N` (seules les catégories > 0 sont affichées).
+- Indicateur de compte `.sd-tools-count-indicator` : "6 sur 9 outils affichés" ou "9 outils affichés".
 - Grille de logos + labels à droite.
-- Statut discret sous le nom : `Socle`, `Conditionnel`, `À challenger`.
+- Statut discret sous le nom : `Socle`, `Selon usage`, `Extension` — **jamais** `Conditionnel`, `À challenger`.
 
 **Règle d'inventaire :**
 - Le `Stack Map` est l'inventaire. Ne pas ajouter de table, liste complète, inventaire séparé ou wall of cards sous le module.
 - Si une famille a 6 outils ou moins, afficher tout.
-- Si une famille a plus de 6 outils, afficher les 6 premiers dans l'ordre `Socle`, `Conditionnel`, `À challenger`, puis un vrai bouton `Voir les X autres outils` avec `aria-expanded`.
+- Si une famille a plus de 6 outils, afficher les 6 premiers dans l'ordre `Socle`, `Selon usage`, `Extension`, puis le bouton `.sd-expand-btn` ("Afficher les X outils restants ↓") avec `aria-expanded`.
 
 **Style :**
 - Bloc calme : `#F4F4EF`, radius 28px, padding 36–40px, sans ombre.

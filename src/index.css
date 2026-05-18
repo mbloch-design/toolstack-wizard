@@ -13568,3 +13568,60 @@ section[id] {
     grid-template-columns: 1fr;
   }
 }
+
+/* Sprint — Workflow card UX improvements (2026-05-18) */
+/* Status labels: Socle / Selon usage / Extension */
+/* Removed À surveiller badge, replaced technical summary, added count indicator + expand button */
+
+/* Wrapper: stack the count indicator above the tool grid */
+.sd-stack-map-tools-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Count indicator: right-aligned, small, subtle */
+.sd-tools-count-indicator {
+  display: block;
+  text-align: right;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: #444444;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+/* Expand / collapse button: real secondary button with border */
+.sd-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 8px 14px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: #222222;
+  background: transparent;
+  border: 1px solid #DADAD4;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease;
+  white-space: nowrap;
+}
+.sd-expand-btn:hover {
+  border-color: #222222;
+  background: rgba(34, 34, 34, 0.04);
+}
+.sd-expand-btn:focus-visible {
+  outline: 2px solid #222222;
+  outline-offset: 2px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .sd-tools-count-indicator {
+    text-align: left;
+  }
+}

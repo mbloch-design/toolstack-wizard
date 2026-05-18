@@ -874,60 +874,61 @@ const StackDetailPage = () => {
           <div className="sd-stack-map" aria-label={t("Carte de la stack", "Stack map")}>
             {stackMapFamilies.map((family) => {
               const sortedTools = sortToolsByDecision(family.tools);
-              const summary = getLayerDecisionSummary(sortedTools);
-              const shouldWatchFamily = shouldShowWorkflowWatch(summary, sortedTools.length);
               const isExpandable = sortedTools.length > 6;
               const isExpanded = expandedToolLayers.has(family.id);
               const visibleTools = isExpandable && !isExpanded ? sortedTools.slice(0, 6) : sortedTools;
               const hiddenCount = sortedTools.length - visibleTools.length;
+              const totalCount = sortedTools.length;
+              const visibleCount = visibleTools.length;
+              const statusSummary = buildWorkflowStatusSummary(sortedTools, lang);
               return (
                 <section key={family.id} className="sd-stack-map-family" aria-label={t(family.titleFr, family.titleEn)}>
                   <div className="sd-stack-map-copy">
                     <h3>{t(family.titleFr, family.titleEn)}</h3>
                     <p>{t(family.purposeFr, family.purposeEn)}</p>
-                    <span className="sd-stack-map-count">
-                      {t(
-                        `${sortedTools.length} outil${sortedTools.length > 1 ? "s" : ""} · ${summary.core} socle · ${summary.conditional} conditionnel${summary.conditional > 1 ? "s" : ""} · ${summary.challenge} à challenger`,
-                        `${sortedTools.length} tool${sortedTools.length > 1 ? "s" : ""} · ${summary.core} core · ${summary.conditional} conditional · ${summary.challenge} to challenge`,
-                      )}
-                    </span>
-                    {shouldWatchFamily && (
-                      <span className="sd-stack-map-watch">{t("À surveiller", "Watch")}</span>
+                    {statusSummary && (
+                      <span className="sd-stack-map-count">{statusSummary}</span>
                     )}
                     {isExpandable && (
                       <button
                         type="button"
-                        className="sd-stack-map-toggle"
+                        className="sd-expand-btn"
                         aria-expanded={isExpanded}
                         aria-controls={`sd-stack-map-tools-${family.id}`}
                         onClick={() => toggleToolLayer(family.id)}
                       >
                         {isExpanded
-                          ? t("Masquer le détail", "Hide detail")
-                          : t(`Voir les ${hiddenCount} autres outils`, `See ${hiddenCount} more tools`)}
+                          ? t("Réduire la liste", "Show less") + " ↑"
+                          : t(`Afficher les ${hiddenCount} outils restants`, `Show ${hiddenCount} more tools`) + " ↓"}
                       </button>
                     )}
                   </div>
 
-                  <div id={`sd-stack-map-tools-${family.id}`} className="sd-stack-map-tools">
-                    {visibleTools.map(({ slot, tool }) => {
-                      const status = getToolDecisionStatus(slot);
-                      return (
-                        <Link
-                          key={slot.slug}
-                          to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                          className="sd-stack-map-tool"
-                        >
-                          <span className="sd-stack-map-logo"><ToolLogo tool={tool!} size={24} /></span>
-                          <span className="sd-stack-map-tool-copy">
-                            <span>{tool!.name}</span>
-                            <small>{getToolDecisionDisplay(status.key, lang)}</small>
-                          </span>
-                        </Link>
-                      );
-                    })}
-                    {hiddenCount > 0 && <span className="sd-stack-map-more">+{hiddenCount} {t("outils", "tools")}</span>}
-                    {visibleTools.length === 0 && <span className="sd-stack-map-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>}
+                  <div className="sd-stack-map-tools-wrapper">
+                    <span className="sd-tools-count-indicator">
+                      {visibleCount < totalCount
+                        ? t(`${visibleCount} sur ${totalCount} outils affichés`, `${visibleCount} of ${totalCount} tools shown`)
+                        : t(`${totalCount} outil${totalCount > 1 ? "s" : ""} affiché${totalCount > 1 ? "s" : ""}`, `${totalCount} tool${totalCount > 1 ? "s" : ""} shown`)}
+                    </span>
+                    <div id={`sd-stack-map-tools-${family.id}`} className="sd-stack-map-tools">
+                      {visibleTools.map(({ slot, tool }) => {
+                        const status = getToolDecisionStatus(slot);
+                        return (
+                          <Link
+                            key={slot.slug}
+                            to={`${prefix}/tool/${tool!.slug || tool!.id}`}
+                            className="sd-stack-map-tool"
+                          >
+                            <span className="sd-stack-map-logo"><ToolLogo tool={tool!} size={24} /></span>
+                            <span className="sd-stack-map-tool-copy">
+                              <span>{tool!.name}</span>
+                              <small>{getWorkflowStatusLabel(status.key, lang)}</small>
+                            </span>
+                          </Link>
+                        );
+                      })}
+                      {visibleTools.length === 0 && <span className="sd-stack-map-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>}
+                    </div>
                   </div>
                 </section>
               );
@@ -1439,6 +1440,42 @@ function getToolDecisionDisplay(key: "core" | "conditional" | "challenge", local
   if (key === "core") return locale === "fr" ? "Socle" : "Core";
   if (key === "conditional") return locale === "fr" ? "Conditionnel" : "Conditional";
   return locale === "fr" ? "À challenger" : "Challenge";
+}
+
+/** Workflow-card-only status label — friendlier, no technical jargon */
+function getWorkflowStatusLabel(status: string, locale: "fr" | "en"): string {
+  const fr: Record<string, string> = {
+    core: "Socle", socle: "Socle", essential: "Socle", keep: "Socle",
+    conditional: "Selon usage", conditionnel: "Selon usage", optional: "Selon usage",
+    challenge: "Extension", challenger: "Extension", avoid: "Extension",
+  };
+  const en: Record<string, string> = {
+    core: "Core", socle: "Core", essential: "Core", keep: "Core",
+    conditional: "As needed", conditionnel: "As needed", optional: "As needed",
+    challenge: "Extension", challenger: "Extension", avoid: "Extension",
+  };
+  const map = locale === "en" ? en : fr;
+  return map[status?.toLowerCase()] ?? (locale === "en" ? "As needed" : "Selon usage");
+}
+
+/** Build a readable status summary for the workflow card header */
+function buildWorkflowStatusSummary(items: { slot: StackToolSlot }[], locale: "fr" | "en"): string {
+  const core       = items.filter(({ slot }) => ["core","socle","essential","keep"].includes(slot.decision?.toLowerCase() ?? "")).length;
+  const conditional = items.filter(({ slot }) => ["conditional","conditionnel","optional"].includes(slot.decision?.toLowerCase() ?? "")).length;
+  const extension  = items.filter(({ slot }) => ["challenge","challenger","avoid"].includes(slot.decision?.toLowerCase() ?? "")).length;
+  // Fall back to getToolDecisionStatus key for items without a direct string decision
+  const byKey = items.reduce<{ core: number; conditional: number; challenge: number }>(
+    (acc, item) => { acc[getToolDecisionStatus(item.slot).key] += 1; return acc; },
+    { core: 0, conditional: 0, challenge: 0 },
+  );
+  const coreCount       = core || byKey.core;
+  const conditionalCount = conditional || byKey.conditional;
+  const extensionCount  = extension || byKey.challenge;
+  const parts: string[] = [];
+  if (coreCount)        parts.push(locale === "en" ? `Core: ${coreCount}` : `Socle : ${coreCount}`);
+  if (conditionalCount) parts.push(locale === "en" ? `As needed: ${conditionalCount}` : `Selon usage : ${conditionalCount}`);
+  if (extensionCount)   parts.push(locale === "en" ? `Extensions: ${extensionCount}` : `Extensions : ${extensionCount}`);
+  return parts.join(" · ");
 }
 
 function getSocleTools(
