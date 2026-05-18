@@ -13625,3 +13625,63 @@ section[id] {
     text-align: left;
   }
 }
+
+/* Sprint — Hero fact sheet refinement (2026-05-18) */
+/* Column order: PROFIL · BUDGET · OUTILS · NIVEAU · WORKFLOW · POINT D'ATTENTION */
+/* RISQUE renamed → POINT D'ATTENTION; weighted grid; typography split compact vs long */
+
+.sd-hero-fact-table {
+  grid-template-columns:
+    minmax(200px, 1.25fr)   /* PROFIL */
+    minmax(110px, 0.55fr)   /* BUDGET */
+    minmax(80px,  0.4fr)    /* OUTILS */
+    minmax(110px, 0.55fr)   /* NIVEAU */
+    minmax(260px, 1.45fr)   /* WORKFLOW */
+    minmax(220px, 1.25fr);  /* POINT D'ATTENTION */
+}
+
+@media (max-width: 1199px) and (min-width: 901px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Short-value columns: Budget, Outils, Niveau */
+.sd-fact-col--compact .sd-fact-value {
+  font-size: clamp(1.25rem, 2.2vw, 1.625rem); /* 20–26px */
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+/* Long-value columns: Profil, Workflow, Point d'attention */
+.sd-fact-col--long .sd-fact-value {
+  font-size: clamp(0.9375rem, 1.2vw, 1.125rem); /* 15–18px */
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Labels — slightly muted but still readable */
+.sd-fact-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #555550;
+}
+
+/* Promise max-width */
+.sd-hero-promise {
+  max-width: 860px;
+}

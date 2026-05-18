@@ -79,22 +79,23 @@ Le hero est un bloc éditorial suivi d'une table signalétique. Il répond en 5 
 
 ### Structure obligatoire
 1. **Bloc éditorial** (pleine largeur) — breadcrumb · eyebrow persona · H1 · promesse
-2. **Table signalétique** (`.sd-hero-fact-table`) — une rangée horizontale de 6 colonnes : PROFIL · WORKFLOW · BUDGET · OUTILS · NIVEAU · RISQUE
+2. **Table signalétique** (`.sd-hero-fact-table`) — une rangée horizontale de 6 colonnes : PROFIL · BUDGET · OUTILS · NIVEAU · WORKFLOW · POINT D'ATTENTION
 
 ### Règles absolues
 - **Zéro CTA dans le hero** : pas de bouton "Analyser ma stack" ni de lien de conversion dans la zone hero. Le CTA vit dans le `sd-cta-band` après les sections.
 - **Zéro panneau droit** : il ne doit pas exister de `.sd-snapshot` ou panneau "EN UN COUP D'ŒIL" — ces données sont dans la table.
 - **Zéro duplication** : une info dans la table n'est jamais reformulée ailleurs dans le hero.
 - **Zéro grille 2×3 administrative** (`.sd-reperes-grid` remplacée par `.sd-hero-fact-table`).
-- **Non-redondance absolue** : budget → table uniquement · outils → table uniquement · niveau → table uniquement · risque → table uniquement · workflow → table uniquement · promesse → sous le titre uniquement.
+- **Non-redondance absolue** : budget → table uniquement · outils → table uniquement · niveau → table uniquement · point d'attention → table uniquement · workflow → table uniquement · promesse → sous le titre uniquement.
 - H1 (`.sd-hero-h1`) : `clamp(3.25rem, 5.5vw, 4.5rem)`, font-weight `700`, line-height `0.92`, letter-spacing `-0.065em`.
 - Promesse (`.sd-hero-desc`) : `clamp(1.0625rem, 1.4vw, 1.3125rem)`, line-height `1.5`, max-width `640px`, 1–2 lignes max.
-- Table : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels `10px/700 uppercase #9A9A92`, cell padding `22px 24px`.
-- **Grille pondérée** (desktop) : `minmax(180px,1.2fr)` PROFIL · `minmax(240px,1.5fr)` WORKFLOW · `minmax(100px,0.55fr)` BUDGET · `minmax(80px,0.4fr)` OUTILS · `minmax(100px,0.55fr)` NIVEAU · `minmax(200px,1.2fr)` RISQUE.
-- **Modificateur `.sd-fact-col--compact`** (BUDGET, OUTILS, NIVEAU) : valeur `clamp(1.25rem, 2vw, 1.5rem)` / line-height 1.1 — chiffres et mots courts mis en valeur.
-- **Modificateur `.sd-fact-col--long`** (PROFIL, WORKFLOW, RISQUE) : valeur `clamp(0.9375rem, 1.2vw, 1.0625rem)` / line-height 1.3 — texte plus petit pour éviter le débordement.
-- **Règle éditoriale table** : max 8 mots par cellule valeur. Les colonnes longues utilisent la notation flèches pour le workflow (ex. `Brief → plans → rendu → chantier`). Aucune phrase complète dans la table.
-- **Fallback dynamique** : les valeurs PROFIL, WORKFLOW, RISQUE des stacks sans données éditoriales dédiées sont tronquées à 40 caractères avec `truncate()`.
+- Table : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels `10px/600 uppercase #555550`, cell padding `22px 24px`.
+- **Grille pondérée** (desktop) : `minmax(200px,1.25fr)` PROFIL · `minmax(110px,0.55fr)` BUDGET · `minmax(80px,0.4fr)` OUTILS · `minmax(110px,0.55fr)` NIVEAU · `minmax(260px,1.45fr)` WORKFLOW · `minmax(220px,1.25fr)` POINT D'ATTENTION.
+- **Modificateur `.sd-fact-col--compact`** (BUDGET, OUTILS, NIVEAU) : valeur `clamp(1.25rem, 2.2vw, 1.625rem)` / font-weight 700 / line-height 1.05 — chiffres et mots courts mis en valeur (20–26px).
+- **Modificateur `.sd-fact-col--long`** (PROFIL, WORKFLOW, POINT D'ATTENTION) : valeur `clamp(0.9375rem, 1.2vw, 1.125rem)` / font-weight 600 / line-height 1.25 — texte lisible sans débordement (15–18px).
+- **Label RISQUE → POINT D'ATTENTION** (FR) / RISK → KEY RISK (EN). Les deux anciens labels ne doivent plus apparaître.
+- **Règle éditoriale table** : max 7 mots par cellule valeur. Les colonnes longues utilisent la notation flèches (ex. `Brief → plans → chantier`). Aucune phrase complète dans la table.
+- **Fallback dynamique** : les valeurs PROFIL, WORKFLOW, POINT D'ATTENTION des stacks sans données éditoriales dédiées sont tronquées à 40 caractères avec `truncate()`.
 - Responsive : 6 col desktop → 3 col 1199px → 2 col 900px → 1 col 420px (pas de scroll horizontal).
 - Hero container padding : `96px 0 20px` desktop, `80px 0 16px` tablet, `56px 0 12px` mobile.
 

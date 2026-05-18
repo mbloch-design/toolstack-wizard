@@ -2,6 +2,26 @@
 
 ---
 
+## 2026-05-18 — Sprint 52 : Hero fact sheet refinement
+
+### Objectif
+Affiner la table signalétique du hero des fiches stack : réordonner les colonnes, pondérer la grille, hiérarchiser la typographie entre colonnes courtes (chiffres) et longues (texte), renommer RISQUE en POINT D'ATTENTION et mettre à jour les copies éditoriales par slug.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — nouvelle ordre des repères (PROFIL · BUDGET · OUTILS · NIVEAU · WORKFLOW · POINT D'ATTENTION), labels compact/long mis à jour pour inclure `POINT D'ATTENTION` et `KEY RISK`, copies éditoriales mises à jour pour 6 slugs (designer-freelance-solo, consultant-b2b-propre, developpeur-freelance-shipper, createur-sites-ia-automation, architecte-interieur), ajout du slug agence-marketing.
+- `src/index.css` — nouveau bloc sprint : grille pondérée 6 colonnes, breakpoints responsive (1199px, 900px, 420px), typographie `.sd-fact-col--compact` (20–26px / 700) et `.sd-fact-col--long` (15–18px / 600), labels `10px/600 #555550`, `.sd-hero-promise max-width 860px`.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation de l'ordre des colonnes, du renommage RISQUE → POINT D'ATTENTION, de la hiérarchie typographique.
+
+### Résultat
+- Ordre des colonnes : PROFIL · BUDGET · OUTILS · NIVEAU · WORKFLOW · POINT D'ATTENTION.
+- Budget, Outils, Niveau : colonnes étroites, valeurs 20–26px / gras 700 — les chiffres sautent aux yeux.
+- Profil, Workflow, Point d'attention : colonnes larges, valeurs 15–18px / semi-bold 600 — le texte reste lisible sans débordement.
+- "RISQUE" disparu de toutes les tables ; remplacé par "POINT D'ATTENTION" (FR) / "KEY RISK" (EN).
+- Slug agence-marketing couvert par un bloc éditorial dédié.
+- Aucun scroll horizontal sur aucun breakpoint.
+
+---
+
 ## 2026-05-18 — Sprint 51 : Workflow card UX improvements
 
 ### Objectif
