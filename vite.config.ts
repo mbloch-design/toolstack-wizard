@@ -805,9 +805,13 @@ function staticPrerenderPlugin(): Plugin {
             const title = isFr
               ? `${stack.title} : outils, usages et budget | ToolTrim`
               : `${stack.titleEn}: tools, use cases and budget | ToolTrim`;
-            const description = isFr
-              ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois. Stack divisée par usages, risques et alternatives.`
-              : `${stack.subtitleEn} Target budget: €${stack.monthlyBudget}/month. Stack divided by use cases, risks and alternatives.`;
+            const description = stack.slug === "developpeur-freelance-shipper"
+              ? isFr
+                ? "Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde. Budget cible : 32€/mois."
+                : "Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: €32/month."
+              : isFr
+                ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois. Stack organisée par workflow, budget, risques et calibrage.`
+                : `${stack.subtitleEn} Target budget: €${stack.monthlyBudget}/month. Stack organized by workflow, budget, risks and calibration.`;
             const url = `${BASE}/${lang}/stacks/${stack.slug}`;
             const frUrl = `${BASE}/fr/stacks/${stack.slug}`;
             const enUrl = `${BASE}/en/stacks/${stack.slug}`;

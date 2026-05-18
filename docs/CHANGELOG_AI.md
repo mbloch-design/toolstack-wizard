@@ -1728,3 +1728,20 @@ Finaliser les pages détail stack autour de la lecture `profil → workflow → 
 - La section outils reste une seule grille `Stack by Workflow`, avec détails accessibles dans chaque node.
 - Les outils restent tous accessibles via disclosure, sans inventaire complet séparé ni table-first layout.
 - Le poids d'une étape est lisible via le résumé de compte et le marqueur `À surveiller` quand il apporte une vraie information.
+
+---
+
+## 2026-05-18 — Sprint 42 : Stack detail orientée workflow-first
+
+### Objectif
+Recentrer la page détail dev freelance sur la lecture `profil → workflow → décisions`, pour éviter le framing générique “base recommandée” et clarifier que la stack sert une chaîne de travail.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — copie hero, metadata SEO, overview, budget et sous-titre `02 — OUTILS` spécifiques à `developpeur-freelance-shipper`.
+- `src/data/stacks.ts`, `vite.config.ts` — alignement de la description statique/pré-rendue pour éviter l'ancien framing “base recommandée” et “stack divisée par usages”.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation de la règle d'information ownership.
+
+### Résultat
+- Le hero explique d'abord le workflow dev : coder, montrer, documenter, encaisser.
+- La meta description ne dit plus “stack divisée par usages, risques et alternatives”.
+- `02 — OUTILS` reste le seul module d'outils, avec nodes workflow et détails intégrés.

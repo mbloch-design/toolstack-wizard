@@ -1104,3 +1104,13 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 - Afficher un marqueur discret `À surveiller` seulement si l'étape est chargée : conditionnel + à challenger >= socle, ou plus de 5 outils.
 - Ce marqueur indique une zone à vérifier, pas une alerte forte.
 - Ne pas répéter ici la logique budget, risques ou calibrage : ces informations appartiennent à leurs sections.
+
+**Structure informationnelle :**
+- Hero : cible, promesse courte, budget cible, niveau, fit / avoid.
+- Vue d'ensemble : sens du workflow et contexte d'usage.
+- Outils : étapes de workflow et outils uniquement.
+- Budget : logique de coût, plans et seuils d'upgrade.
+- Risques : erreurs et scénarios d'overbuild.
+- Calibrage : seuils où la stack devient trop légère ou trop lourde.
+
+Sur les pages stack detail, éviter les formulations de type “base recommandée divisée par usages”. La page doit se lire comme une fiche de décision workflow-first, pas comme un inventaire.

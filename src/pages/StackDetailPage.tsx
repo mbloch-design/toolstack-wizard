@@ -295,23 +295,23 @@ const DEV_FREELANCE_SHIPPER: StackEditorialContent = {
   verdictShort:    "",
   verdictShortEn:  "",
 
-  overviewIntro:   "Cette stack est pensée pour un développeur freelance qui doit coder, montrer une preview, garder une trace des décisions et encaisser proprement. Elle reste volontairement légère : chaque outil a un rôle distinct.",
-  overviewIntroEn: "This stack is designed for a freelance developer who needs to code, show a preview, keep decision history, and get paid cleanly. It stays deliberately light: every tool has a distinct role.",
+  overviewIntro:   "Le besoin n'est pas de recréer une équipe produit. Le besoin, c'est de coder proprement, montrer vite, garder une trace des décisions et encaisser sans multiplier les abonnements.",
+  overviewIntroEn: "The goal is not to recreate a product team. The goal is to code cleanly, show progress fast, keep decision history, and get paid without multiplying subscriptions.",
 
   overviewServesLabel:    "Elle sert à",
   overviewServesLabelEn:  "It's for",
-  overviewServes:    "Coder, présenter une preview client, documenter les décisions et facturer sans stack d'équipe produit.",
-  overviewServesEn:  "Coding, sharing client previews, documenting decisions, and invoicing without a product-team stack.",
+  overviewServes:    "Développeurs freelances qui livrent des sites, apps, MVP ou missions client sans équipe produit complète.",
+  overviewServesEn:  "Freelance developers shipping websites, apps, MVPs, or client projects without a full product team.",
 
   overviewAvoidsLabel:    "Elle évite",
   overviewAvoidsLabelEn:  "It avoids",
-  overviewAvoids:    "Jira, CRM lourd, suite produit complète et automatisations payées avant d'être répétées.",
-  overviewAvoidsEn:  "Jira, heavy CRM, full product suites, and automations paid before they repeat.",
+  overviewAvoids:    "Payer trop tôt des outils d'équipe, un workflow projet trop lourd ou plusieurs copilotes IA qui font doublon.",
+  overviewAvoidsEn:  "Paying too early for team tools, an overweight project workflow, or several overlapping AI copilots.",
 
-  overviewNotForLabel:    "À éviter si",
-  overviewNotForLabelEn:  "Avoid if",
-  overviewNotFor:    "Tu travailles déjà avec une équipe produit structurée, beaucoup de QA ou plusieurs environnements complexes.",
-  overviewNotForEn:  "You already work with a structured product team, heavy QA, or several complex environments.",
+  overviewNotForLabel:    "Elle n'est pas faite pour",
+  overviewNotForLabelEn:  "It's not for",
+  overviewNotFor:    "Les équipes produit structurées avec QA, staging avancé, monitoring complexe et plusieurs environnements critiques.",
+  overviewNotForEn:  "Structured product teams with QA, advanced staging, complex monitoring, and several critical environments.",
 
   priority: {
     essential:   ["GitHub pour versionner", "Vercel pour partager une preview", "Stripe pour encaisser"],
@@ -322,23 +322,23 @@ const DEV_FREELANCE_SHIPPER: StackEditorialContent = {
     challengeEn:  ["Secondary AI copilot", "Duplicate project management tool", "Automation too early"],
   },
 
-  budgetTitle:   "Budget cible : 32€/mois.",
-  budgetTitleEn: "Target budget: €32/month.",
+  budgetTitle:   "32€/mois, tant que la stack reste légère.",
+  budgetTitleEn: "€32/month, while the stack stays light.",
   budgetRows: [
     {
       tier: "Inclus / souvent gratuit", tierEn: "Included / often free", amount: "0€",
-      desc:   "GitHub, Vercel et Notion couvrent souvent les bases avec leurs plans gratuits selon le volume.",
-      descEn: "GitHub, Vercel, and Notion often cover the basics on free plans depending on volume.",
+      desc:   "GitHub, Vercel et Notion peuvent souvent couvrir versioning, preview et contexte client avec leurs plans gratuits selon le volume.",
+      descEn: "GitHub, Vercel, and Notion can often cover versioning, preview, and client context on free plans depending on volume.",
     },
     {
       tier: "Budget cible", tierEn: "Target budget", amount: "≈ 32€/mois",
-      desc:   "La cible inclut surtout les outils réellement utilisés chaque semaine pour produire, montrer et encaisser.",
-      descEn: "The target mostly includes tools genuinely used every week to produce, preview, and get paid.",
+      desc:   "La cible tient quand le socle reste simple : hébergement, preview, documentation et paiement.",
+      descEn: "The target holds when the base stays simple: hosting, preview, documentation, and payment.",
     },
     {
       tier: "À ne pas payer trop tôt", tierEn: "Do not pay too early", amount: "Jira / CRM / IA x2",
-      desc:   "Attends un vrai volume avant d'ajouter outil projet lourd, CRM complet ou plusieurs copilotes IA.",
-      descEn: "Wait for real volume before adding heavy PM tooling, a full CRM, or multiple AI copilots.",
+      desc:   "Attends un vrai volume répétitif avant d'ajouter outil projet lourd, CRM complet, plusieurs copilotes IA ou automatisations payantes.",
+      descEn: "Wait for real repeated volume before adding heavy PM tooling, a full CRM, multiple AI copilots, or paid automations.",
     },
   ],
 
@@ -622,9 +622,13 @@ const StackDetailPage = () => {
     const title = lang === "fr"
       ? `${stack.title} : outils, usages et budget | ToolTrim`
       : `${stack.titleEn}: tools, use cases and budget | ToolTrim`;
-    const description = lang === "fr"
-      ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois.`
-      : `${stack.subtitleEn} Target budget: €${stack.monthlyBudget}/month.`;
+    const description = stack.slug === "developpeur-freelance-shipper"
+      ? lang === "fr"
+        ? "Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde. Budget cible : 32€/mois."
+        : "Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: €32/month."
+      : lang === "fr"
+        ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois.`
+        : `${stack.subtitleEn} Target budget: €${stack.monthlyBudget}/month.`;
     setSeoTags({ title, description, url: `${SEO_BASE}/${lang}/stacks/${stack.slug}`, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/stacks/${stack.slug}`);
     setJsonLd("stack-detail-jsonld", {
@@ -683,10 +687,10 @@ const StackDetailPage = () => {
   /* ── Derived data ───────────────────────────────────────────────────────── */
   const editorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
   const detailTitle = stack.slug === "developpeur-freelance-shipper"
-    ? t("Dev freelance qui livre", "Freelance dev who ships")
+    ? t("Dev freelance. Tu codes, tu montres, tu encaisses", "Freelance dev. You code, show, and get paid")
     : t(stack.title, stack.titleEn);
   const heroSubtitle = stack.slug === "developpeur-freelance-shipper"
-    ? t("Pour coder, montrer une preview, documenter et encaisser. Sans payer les outils d'une équipe produit.", "To code, show a preview, document decisions, and get paid. Without paying for product-team tools.")
+    ? t("Une stack légère pour coder, partager une preview client, documenter les décisions et encaisser sans monter une équipe produit à toi tout seul.", "A lightweight stack to code, share a client preview, document decisions, and get paid without building a product team by yourself.")
     : t(stack.subtitle, stack.subtitleEn);
   const derived = getStackDerivedFields(stack);
   const expertTips = getExpertTips(stack);
@@ -922,7 +926,9 @@ const StackDetailPage = () => {
             {t("La stack par workflow.", "The stack by workflow.")}
           </p>
           <p className="sd-tools-subtitle">
-            {t("On ne choisit pas des outils un par un. On construit une chaîne de travail : produire, valider, livrer, encaisser.", "You do not choose tools one by one. You build a workflow chain: produce, validate, deliver, get paid.")}
+            {stack.slug === "developpeur-freelance-shipper"
+              ? t("On ne choisit pas des outils un par un. On construit une chaîne de travail : coder, montrer, documenter, livrer, encaisser.", "You do not choose tools one by one. You build a workflow chain: code, show, document, deliver, get paid.")
+              : t("On ne choisit pas des outils un par un. On construit une chaîne de travail : produire, valider, livrer, encaisser.", "You do not choose tools one by one. You build a workflow chain: produce, validate, deliver, get paid.")}
           </p>
 
           <div className="sd-workflow-map sd-workflow-map--integrated" aria-label={t("Stack par workflow", "Stack by workflow")}>
@@ -1035,10 +1041,15 @@ const StackDetailPage = () => {
             {t(editorial.budgetTitle, editorial.budgetTitleEn)}
           </p>
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.5, color: "#6F6F68", marginBottom: 0, maxWidth: 620 }}>
-            {t(
-              "Ce budget inclut les outils qui portent le code, la preview, le contexte client et le paiement. Il laisse volontairement de côté les couches équipe, CRM complet, QA avancée et automations trop tôt.",
-              "This budget includes the tools that carry code, preview, client context, and payment. It deliberately leaves out team layers, full CRM, advanced QA, and too-early automations.",
-            )}
+            {stack.slug === "developpeur-freelance-shipper"
+              ? t(
+                  "Ce budget tient si tu gardes le socle simple : hébergement, preview, documentation et paiement. Il grimpe quand tu ajoutes plusieurs copilotes IA, des outils projet d'équipe ou des automatisations avant d'avoir un vrai volume répétitif.",
+                  "This budget holds if you keep the base simple: hosting, preview, documentation, and payment. It climbs when you add several AI copilots, team project tools, or automations before real repeated volume.",
+                )
+              : t(
+                  "Ce budget inclut les outils qui portent le code, la preview, le contexte client et le paiement. Il laisse volontairement de côté les couches équipe, CRM complet, QA avancée et automations trop tôt.",
+                  "This budget includes the tools that carry code, preview, client context, and payment. It deliberately leaves out team layers, full CRM, advanced QA, and too-early automations.",
+                )}
           </p>
           <div className="sd-budget-list">
             {editorial.budgetRows.map((row, i) => (
@@ -1497,8 +1508,8 @@ function getUsageChips(stack: StackGuide, locale: "fr" | "en"): string[] {
   }
   if (stack.slug === "developpeur-freelance-shipper") {
     return locale === "fr"
-      ? ["Code", "Preview client", "Documentation", "Paiement", "Versioning", "IA", "Automatisation"]
-      : ["Code", "Client preview", "Documentation", "Payment", "Versioning", "AI", "Automation"];
+      ? ["Coder", "Versionner", "Preview client", "Documenter", "Encaisser", "Suivre", "IA", "Automatiser"]
+      : ["Code", "Version", "Client preview", "Document", "Get paid", "Track", "AI", "Automate"];
   }
   // objectives is a derived field (not on StackGuide directly); compute it safely
   return getStackObjectives(stack).slice(0, 7);
@@ -1676,6 +1687,9 @@ function getInitials(label: string): string {
 function getOverviewTitle(stack: StackGuide, locale: "fr" | "en"): string {
   if (stack.slug === "architecte-interieur") {
     return locale === "fr" ? "Une chaîne claire, du brief au chantier." : "A clear chain from brief to site.";
+  }
+  if (stack.slug === "developpeur-freelance-shipper") {
+    return locale === "fr" ? "Une chaîne simple, du code au paiement." : "A simple chain from code to payment.";
   }
   return locale === "fr"
     ? `Une stack pour ${stack.bestFor.split(".")[0].toLowerCase()}.`
