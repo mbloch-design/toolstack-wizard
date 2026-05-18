@@ -1,0 +1,196 @@
+{
+  "slug": "slack-vs-microsoft-teams",
+  "checkedAt": "2026-05-19",
+  "lastUpdatedAt": "2026-05-19",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "Slack",
+      "officialWebsite": "https://slack.com",
+      "pricingUrl": "https://slack.com/pricing",
+      "freePlan": {
+        "exists": true,
+        "summary": "Free avec canaux et collaboration de base.",
+        "limits": [
+          "Historique messages/fichiers limité aux 90 derniers jours.",
+          "Données de plus d'un an supprimées sur Free."
+        ],
+        "source": "https://slack.com/help/articles/27204752526611-Feature-limitations-on-the-free-version-of-Slack"
+      },
+      "paidPlans": [
+        {
+          "name": "Pro",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://slack.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Équipes tech, agences, communautés de travail rapides.",
+        "Messagerie d'équipe claire, canaux thématiques, intégrations riches.",
+        "Meilleur pour fluidité et culture canal."
+      ],
+      "coreLimits": [
+        "Historique limité sur Free — données perdues après 90 jours.",
+        "Coût par seat qui monte avec l'équipe."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Slack ajoute des fonctions IA selon plans Salesforce/Slack.",
+        "pricingImpact": "Certaines fonctions IA peuvent être incluses ou réservées aux plans supérieurs.",
+        "source": "https://slack.com/pricing"
+      }
+    },
+    "toolB": {
+      "name": "Microsoft Teams",
+      "officialWebsite": "https://www.microsoft.com/microsoft-teams",
+      "pricingUrl": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options",
+      "freePlan": {
+        "exists": true,
+        "summary": "Teams existe via plans Microsoft 365/Teams ; l'offre gratuite/business varie selon marché.",
+        "limits": [
+          "Fonctionnalités liées aux plans Microsoft 365 et conditions régionales."
+        ],
+        "source": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options"
+      },
+      "paidPlans": [
+        {
+          "name": "Teams Essentials",
+          "priceMonthly": 4,
+          "priceYearlyMonthlyEquivalent": 4,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options"
+        },
+        {
+          "name": "Microsoft 365 Business Basic",
+          "priceMonthly": 6,
+          "priceYearlyMonthlyEquivalent": 6,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-plans-and-pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Entreprises déjà Microsoft 365 — Outlook, SharePoint, OneDrive.",
+        "Réunions, visioconférence et fichiers Office dans un seul espace.",
+        "Coût inclus si Microsoft 365 est déjà payé."
+      ],
+      "coreLimits": [
+        "Complexité licence Microsoft et dépendance suite Office.",
+        "Moins fluide pour communautés ou petites équipes sans M365."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Teams peut être complété par Microsoft 365 Copilot selon abonnement éligible.",
+        "pricingImpact": "Copilot est un add-on séparé selon éligibilité.",
+        "source": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options"
+      }
+    }
+  },
+  "comparison": {
+    "mainDifference": "Slack est meilleur comme hub de conversation. Teams est meilleur si Microsoft 365 est déjà le socle.",
+    "decisionSummary": "Slack pour fluidité et culture canal. Teams pour intégration Office et réunions d'entreprise.",
+    "finalRecommendation": "Par défaut, ToolTrim recommande Slack pour les petites équipes agiles hors Microsoft. Teams devient meilleur quand Microsoft 365 est déjà payé et structurant.",
+    "chooseAIf": [
+      "Vous voulez une messagerie d'équipe claire et rapide.",
+      "Votre stack n'est pas centrée Microsoft."
+    ],
+    "chooseBIf": [
+      "Votre organisation utilise Outlook, SharePoint, OneDrive et Microsoft 365.",
+      "Les réunions et fichiers Office sont centraux."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin d'un chat client support dédié."
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Slack pour les petites équipes agiles hors Microsoft.",
+      "switchWhen": "Passer à Teams quand Microsoft 365 est déjà payé et que la collaboration Office est centrale.",
+      "warning": "Choisir Slack Free en oubliant la limite d'historique — les données disparaissent après 90 jours.",
+      "examples": [
+        "Slack pour une agence ou startup tech sans dépendance Microsoft.",
+        "Teams pour une PME ou grande entreprise déjà sur Microsoft 365."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Très bon pour démarrer, mauvais comme mémoire long terme.",
+        "whenPaidBecomesNecessary": "Dès que l'historique devient une mémoire d'équipe.",
+        "hiddenCost": "Perte ou masquage de l'historique gratuit."
+      },
+      "toolB": {
+        "freePlanReality": "Dépend fortement de l'écosystème Microsoft.",
+        "whenPaidBecomesNecessary": "Dès que l'équipe vit déjà dans Microsoft 365.",
+        "hiddenCost": "Complexité licence Microsoft et dépendance suite Office."
+      },
+      "tooltrimNote": "Teams paraît économique s'il est inclus dans Microsoft 365 ; Slack devient coûteux par seat mais plus fluide pour conversation pure."
+    },
+    "pitfalls": [
+      {
+        "title": "Utiliser Slack Free sans prévoir la perte d'historique",
+        "consequence": "Perte de mémoire collective après 90 jours.",
+        "recommendation": "Passer au plan Pro dès que la conservation de l'historique devient critique."
+      },
+      {
+        "title": "Adopter Teams hors d'un écosystème Microsoft",
+        "consequence": "Outil lourd et moins intuitif sans la suite Office.",
+        "recommendation": "Slack ou Discord plus adaptés pour les équipes sans dépendance Microsoft."
+      }
+    ]
+  },
+  "comparisonRows": [
+    {
+      "criterion": "Usage principal",
+      "toolA": "Messagerie agile, canaux thématiques",
+      "toolB": "Collaboration intégrée Office et réunions",
+      "tooltrimDecision": "Slack si messagerie pure, Teams si écosystème Microsoft.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Plan gratuit",
+      "toolA": "Free limité à 90 jours d'historique",
+      "toolB": "Varie selon Microsoft 365",
+      "tooltrimDecision": "Attention à la limite d'historique Slack Free.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Prix d'entrée payant",
+      "toolA": "Pro (prix à vérifier)",
+      "toolB": "Essentials à 4 USD/user/mois",
+      "tooltrimDecision": "Teams Essentials moins cher si hors Microsoft 365.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Intégration Office",
+      "toolA": "Intégrations externes",
+      "toolB": "Natif avec Outlook, SharePoint, OneDrive",
+      "tooltrimDecision": "Teams si Microsoft 365 est le socle.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Réunions vidéo",
+      "toolA": "Huddles, intégration Zoom/Meet",
+      "toolB": "Teams Meetings natif",
+      "tooltrimDecision": "Teams pour réunions enterprise, Slack pour check-ins rapides.",
+      "showInMainTable": true
+    }
+  ],
+  "related": {
+    "alternatives": ["make-vs-zapier", "notion-vs-airtable"],
+    "otherComparisons": ["clickup-vs-asana", "hubspot-vs-pipedrive"]
+  },
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "Équipes tech, agences, communautés de travail rapides.",
+    "bestForToolB": "Entreprises déjà Microsoft 365.",
+    "bestForSolo": "toolA",
+    "bestForTeam": "depends",
+    "budgetReality": "Teams paraît économique s'il est inclus dans Microsoft 365 ; Slack devient coûteux par seat mais plus fluide pour conversation pure.",
+    "complexity": "depends",
+    "mainRisk": "Choisir Slack Free en oubliant la limite d'historique.",
+    "decisionSummary": "Slack pour fluidité et culture canal. Teams pour intégration Office et réunions d'entreprise."
+  },
+  "faq": []
+}

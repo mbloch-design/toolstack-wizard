@@ -632,5 +632,16 @@
   "missingData": [
     "Prix Make exacts par volume de crédits à compléter.",
     "Prix Zapier exacts annualisés selon task tier à compléter."
-  ]
+  ],
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "Automatisations visuelles complexes et budget sensible au volume.",
+    "bestForToolB": "Automatisations rapides pour non-tech.",
+    "bestForSolo": "depends",
+    "bestForTeam": "depends",
+    "budgetReality": "Zapier coûte plus cher quand le volume monte ; Make coûte plus en temps de configuration.",
+    "complexity": "depends",
+    "mainRisk": "Choisir Zapier pour un gros volume ou Make pour une automatisation ultra simple à livrer vite.",
+    "decisionSummary": "Zapier pour démarrer sans friction. Make dès que le scénario devient logique, volumétrique ou budgétairement sensible."
+  }
 }

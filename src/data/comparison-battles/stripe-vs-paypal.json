@@ -1,0 +1,187 @@
+{
+  "slug": "stripe-vs-paypal",
+  "checkedAt": "2026-05-19",
+  "lastUpdatedAt": "2026-05-19",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "Stripe",
+      "officialWebsite": "https://stripe.com",
+      "pricingUrl": "https://stripe.com/en-fr/pricing",
+      "freePlan": {
+        "exists": false,
+        "summary": "Pas un outil avec plan gratuit ; inscription sans abonnement, frais à l'usage.",
+        "limits": [
+          "Frais de transaction, conversion, produits additionnels."
+        ],
+        "source": "https://stripe.com/en-fr/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Standard payments",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "usage-based",
+          "billingUnit": "transaction fee",
+          "source": "https://stripe.com/en-fr/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "SaaS, marketplaces, subscriptions, API payments.",
+        "Infrastructure de paiement flexible et très personnalisable.",
+        "Billing, Tax, Connect — écosystème complet pour développeurs."
+      ],
+      "coreLimits": [
+        "Nécessite setup technique et conformité paiement.",
+        "Frais additionnels sur Billing (0,7%), Tax, Connect."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Stripe propose des briques avancées, automatisation fraude, Billing, Tax et API.",
+        "pricingImpact": "Add-ons comme Billing ou Invoicing ajoutent des frais.",
+        "source": "https://stripe.com/billing/pricing"
+      }
+    },
+    "toolB": {
+      "name": "PayPal",
+      "officialWebsite": "https://www.paypal.com",
+      "pricingUrl": "https://www.paypal.com/us/business/paypal-business-fees",
+      "freePlan": {
+        "exists": false,
+        "summary": "Pas un outil avec plan gratuit ; compte business avec frais marchands à l'usage.",
+        "limits": [
+          "Frais variables selon pays, type de transaction et devise."
+        ],
+        "source": "https://www.paypal.com/us/business/paypal-business-fees"
+      },
+      "paidPlans": [
+        {
+          "name": "Merchant fees",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "usage-based",
+          "billingUnit": "transaction fee",
+          "source": "https://www.paypal.com/us/business/paypal-business-fees"
+        }
+      ],
+      "coreStrengths": [
+        "E-commerce simple, clients qui veulent payer via PayPal.",
+        "Méthode de paiement reconnue et rassurante pour certains clients.",
+        "Déploiement rapide sans développement lourd."
+      ],
+      "coreLimits": [
+        "Frais internationaux, conversion, litiges et conditions par marché.",
+        "Moins adapté aux logiques produit/API avancées."
+      ],
+      "aiFeatures": {
+        "exists": false,
+        "summary": "IA non décisive dans ce comparatif paiement.",
+        "pricingImpact": "",
+        "source": "https://www.paypal.com/us/business/paypal-business-fees"
+      }
+    }
+  },
+  "comparison": {
+    "mainDifference": "Stripe est une infrastructure de paiement. PayPal est une méthode de paiement reconnue par les clients.",
+    "decisionSummary": "Stripe pour construire un système de paiement. PayPal pour ajouter une option de paiement client familière.",
+    "finalRecommendation": "Par défaut, ToolTrim recommande Stripe pour les SaaS et produits digitaux. PayPal devient complémentaire si la conversion client augmente avec cette option.",
+    "chooseAIf": [
+      "Vous avez un SaaS, abonnement, marketplace ou besoin API.",
+      "Vous voulez contrôler le checkout et les flux."
+    ],
+    "chooseBIf": [
+      "Vos clients demandent PayPal.",
+      "Vous voulez ajouter vite une méthode de paiement connue."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin d'un PSP local très spécifique."
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Stripe pour les SaaS et produits digitaux qui contrôlent leur checkout.",
+      "switchWhen": "Ajouter PayPal comme méthode complémentaire si les clients le demandent ou si la conversion augmente avec cette option.",
+      "warning": "Comparer seulement le taux affiché sans modèle de revenus — le vrai coût dépend du mix cartes, international, conversions et add-ons.",
+      "examples": [
+        "Stripe seul pour un SaaS B2B avec paiement carte.",
+        "Stripe + PayPal pour un e-commerce B2C avec clients internationaux."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Gratuit à installer, payant à l'usage.",
+        "whenPaidBecomesNecessary": "Dès qu'il y a transactions, Billing, Tax ou Connect.",
+        "hiddenCost": "Billing 0,7%, conversion, disputes, Tax, Connect selon usage."
+      },
+      "toolB": {
+        "freePlanReality": "Gratuit à ouvrir, payant à l'usage.",
+        "whenPaidBecomesNecessary": "Dès qu'il y a transactions ou vente internationale.",
+        "hiddenCost": "Frais internationaux, conversion, litiges et conditions par marché."
+      },
+      "tooltrimNote": "Le prix réel dépend du mix cartes, international, conversions, litiges et add-ons."
+    },
+    "pitfalls": [
+      {
+        "title": "Comparer uniquement les taux de transaction affichés",
+        "consequence": "Sous-estimation des frais réels selon le profil de paiement.",
+        "recommendation": "Modéliser le coût avec votre mix réel de cartes, international et add-ons."
+      },
+      {
+        "title": "Choisir PayPal pour un SaaS avec logique d'abonnement API",
+        "consequence": "Limitations techniques et contrôle insuffisant du checkout.",
+        "recommendation": "Stripe ou un PSP technique pour toute logique produit avancée."
+      }
+    ]
+  },
+  "comparisonRows": [
+    {
+      "criterion": "Usage principal",
+      "toolA": "Infrastructure paiement, API, SaaS",
+      "toolB": "Méthode de paiement client connue",
+      "tooltrimDecision": "Stripe pour infrastructure, PayPal pour option client.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Modèle tarifaire",
+      "toolA": "Frais à la transaction + add-ons",
+      "toolB": "Frais marchands à la transaction",
+      "tooltrimDecision": "Comparer selon le profil de transactions réelles.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Setup technique",
+      "toolA": "Fort — API, webhooks, SDK",
+      "toolB": "Faible — bouton PayPal rapide",
+      "tooltrimDecision": "PayPal si zéro dev. Stripe si contrôle du checkout.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Subscriptions / Billing",
+      "toolA": "Fort — Stripe Billing natif",
+      "toolB": "Limité",
+      "tooltrimDecision": "Stripe pour abonnements récurrents.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Confiance client",
+      "toolA": "Neutre — checkout Stripe ou personnalisé",
+      "toolB": "Fort — marque PayPal rassurante",
+      "tooltrimDecision": "PayPal si conversion nécessite la marque.",
+      "showInMainTable": true
+    }
+  ],
+  "related": {
+    "alternatives": ["make-vs-zapier", "clickup-vs-asana"],
+    "otherComparisons": ["hubspot-vs-pipedrive", "webflow-vs-framer"]
+  },
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "SaaS, marketplaces, subscriptions, API payments.",
+    "bestForToolB": "E-commerce simple, clients qui veulent payer via PayPal.",
+    "bestForSolo": "depends",
+    "bestForTeam": "toolA",
+    "budgetReality": "Le prix réel dépend du mix cartes, international, conversions, litiges et add-ons.",
+    "complexity": "depends",
+    "mainRisk": "Comparer seulement le taux affiché sans modèle de revenus.",
+    "decisionSummary": "Stripe pour construire un système de paiement. PayPal pour ajouter une option de paiement client familière."
+  },
+  "faq": []
+}

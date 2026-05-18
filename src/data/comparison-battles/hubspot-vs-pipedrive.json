@@ -1,0 +1,188 @@
+{
+  "slug": "hubspot-vs-pipedrive",
+  "checkedAt": "2026-05-19",
+  "lastUpdatedAt": "2026-05-19",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "HubSpot",
+      "officialWebsite": "https://www.hubspot.com",
+      "pricingUrl": "https://www.hubspot.com/pricing/crm",
+      "freePlan": {
+        "exists": true,
+        "summary": "CRM gratuit à 100% selon HubSpot, utile pour contacts, deals et outils de base.",
+        "limits": [
+          "Limites et branding HubSpot sur certains outils gratuits.",
+          "Automatisations avancées payantes."
+        ],
+        "source": "https://www.hubspot.com/pricing/crm"
+      },
+      "paidPlans": [
+        {
+          "name": "Starter Customer Platform",
+          "priceMonthly": 10,
+          "priceYearlyMonthlyEquivalent": 9,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://www.hubspot.com/products/crm/starter"
+        }
+      ],
+      "coreStrengths": [
+        "CRM + marketing + contenu + croissance multi-hubs.",
+        "Démarrer gratuitement avec un CRM complet.",
+        "Automatisation inbound, workflows, formulaires et campagnes dans une seule plateforme."
+      ],
+      "coreLimits": [
+        "Montée en gamme forte vers hubs Pro/Enterprise.",
+        "Complexité et coût peuvent grimper vite."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "HubSpot intègre Breeze/AI dans l'écosystème CRM/marketing selon plans.",
+        "pricingImpact": "Les fonctions avancées deviennent surtout utiles sur plans payants.",
+        "source": "https://www.hubspot.com/pricing/crm"
+      }
+    },
+    "toolB": {
+      "name": "Pipedrive",
+      "officialWebsite": "https://www.pipedrive.com",
+      "pricingUrl": "https://www.pipedrive.com/en/pricing",
+      "freePlan": {
+        "exists": false,
+        "summary": "Pas de plan gratuit permanent. Essai gratuit disponible.",
+        "limits": [
+          "Abonnement requis après essai."
+        ],
+        "source": "https://www.pipedrive.com/en/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Essential",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://www.pipedrive.com/en/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Pipeline commercial simple et focus closing.",
+        "Adoption sales rapide, interface claire et visuelle.",
+        "Meilleur pour une petite équipe sales qui veut juste vendre."
+      ],
+      "coreLimits": [
+        "Pas de plan gratuit permanent.",
+        "Moins adapté si le CRM doit nourrir marketing et support."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Pipedrive propose des fonctions sales et add-ons ; IA à vérifier selon plan exact.",
+        "pricingImpact": "Add-ons sales/marketing peuvent augmenter le coût réel.",
+        "source": "https://www.pipedrive.com/en/pricing"
+      }
+    }
+  },
+  "comparison": {
+    "mainDifference": "HubSpot est une plateforme marketing/sales. Pipedrive est un CRM pipeline-first.",
+    "decisionSummary": "HubSpot si vous voulez une plateforme complète. Pipedrive si vous voulez vendre et suivre un pipeline sans usine à gaz.",
+    "finalRecommendation": "Par défaut, ToolTrim recommande Pipedrive pour une petite équipe sales. HubSpot devient meilleur quand le CRM doit nourrir marketing, support et acquisition.",
+    "chooseAIf": [
+      "Vous combinez CRM, marketing, formulaires, contenu et automation.",
+      "Vous acceptez une plateforme plus large."
+    ],
+    "chooseBIf": [
+      "Votre besoin central est pipeline, relances et closing.",
+      "Vous voulez une adoption sales rapide."
+    ],
+    "avoidBothIf": [
+      "Vous avez déjà un CRM enterprise lourd ou besoin ERP."
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Pipedrive pour une petite équipe sales qui doit juste fermer des deals.",
+      "switchWhen": "Passer à HubSpot quand le CRM doit s'étendre au marketing, à l'inbound et aux workflows automatisés.",
+      "warning": "Choisir HubSpot pour tout faire puis subir la montée tarifaire vers les hubs Pro/Enterprise.",
+      "examples": [
+        "Pipedrive pour une équipe commerciale de 3-5 personnes qui gère un pipeline simple.",
+        "HubSpot pour une PME qui veut aligner marketing et sales dans une même plateforme."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Très bon pour démarrer un CRM simple.",
+        "whenPaidBecomesNecessary": "Dès qu'il faut automatisation, reporting, marketing sérieux ou enlever limites.",
+        "hiddenCost": "Montée en gamme forte vers hubs Pro/Enterprise."
+      },
+      "toolB": {
+        "freePlanReality": "Pas de gratuit permanent.",
+        "whenPaidBecomesNecessary": "Dès l'usage réel après essai.",
+        "hiddenCost": "Add-ons comme campagnes, visiteurs, documents, leads."
+      },
+      "tooltrimNote": "HubSpot démarre gratuit mais peut grimper vite. Pipedrive est plus lisible pour une équipe sales simple."
+    },
+    "pitfalls": [
+      {
+        "title": "Utiliser HubSpot Free comme CRM définitif sans prévoir la montée",
+        "consequence": "Coût qui explose dès qu'on veut des automatisations ou reporting avancé.",
+        "recommendation": "Projeter le coût à 6 mois avec les fonctions dont vous aurez vraiment besoin."
+      },
+      {
+        "title": "Choisir Pipedrive quand le besoin va au-delà du pipeline",
+        "consequence": "Stack fragmentée avec des outils marketing séparés.",
+        "recommendation": "Évaluer si HubSpot ou un outil marketing séparé est plus cohérent à terme."
+      }
+    ]
+  },
+  "comparisonRows": [
+    {
+      "criterion": "Usage principal",
+      "toolA": "Plateforme CRM + marketing + automation",
+      "toolB": "CRM pipeline-first, closing",
+      "tooltrimDecision": "HubSpot si plateforme complète, Pipedrive si focus sales.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Plan gratuit",
+      "toolA": "CRM gratuit permanent",
+      "toolB": "Essai uniquement",
+      "tooltrimDecision": "HubSpot si besoin de gratuit.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Adoption sales",
+      "toolA": "Plus complexe, plus de fonctions",
+      "toolB": "Rapide, interface visuelle pipeline",
+      "tooltrimDecision": "Pipedrive pour adoption sales rapide.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Marketing intégré",
+      "toolA": "Fort — emails, formulaires, automation, contenu",
+      "toolB": "Limité — add-ons nécessaires",
+      "tooltrimDecision": "HubSpot si le marketing est dans le scope.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Coût à l'usage",
+      "toolA": "Peut grimper fort vers les hubs Pro",
+      "toolB": "Plus lisible par user",
+      "tooltrimDecision": "Pipedrive plus prévisible pour équipe sales pure.",
+      "showInMainTable": true
+    }
+  ],
+  "related": {
+    "alternatives": ["notion-vs-airtable", "clickup-vs-asana"],
+    "otherComparisons": ["slack-vs-microsoft-teams", "make-vs-zapier"]
+  },
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "CRM + marketing + contenu + croissance multi-hubs.",
+    "bestForToolB": "Pipeline commercial simple et focus closing.",
+    "bestForSolo": "toolB",
+    "bestForTeam": "depends",
+    "budgetReality": "HubSpot démarre gratuit mais peut grimper vite. Pipedrive est plus lisible pour une équipe sales simple.",
+    "complexity": "depends",
+    "mainRisk": "Choisir HubSpot pour tout faire puis subir la montée tarifaire.",
+    "decisionSummary": "HubSpot si vous voulez une plateforme complète. Pipedrive si vous voulez vendre et suivre un pipeline sans usine à gaz."
+  },
+  "faq": []
+}

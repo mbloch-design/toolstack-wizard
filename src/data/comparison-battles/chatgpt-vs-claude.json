@@ -649,5 +649,16 @@
   "missingData": [
     "Limites exactes de messages par modèle et plan non stables.",
     "Disponibilité précise de certaines fonctions selon pays/plan à vérifier au moment de publication."
-  ]
+  ],
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "Recherche multimodale, outils intégrés, usage polyvalent.",
+    "bestForToolB": "Rédaction longue, analyse structurée, documents longs.",
+    "bestForSolo": "depends",
+    "bestForTeam": "depends",
+    "budgetReality": "Le coût réel vient souvent du doublon ChatGPT + Claude.",
+    "complexity": "low",
+    "mainRisk": "Choisir après un seul test ou payer deux IA sans cas d'usage séparés.",
+    "decisionSummary": "ChatGPT si vous voulez l'écosystème polyvalent. Claude si vous traitez beaucoup de textes longs et de réflexion structurée."
+  }
 }

@@ -1,0 +1,203 @@
+{
+  "slug": "clickup-vs-asana",
+  "checkedAt": "2026-05-19",
+  "lastUpdatedAt": "2026-05-19",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "ClickUp",
+      "officialWebsite": "https://clickup.com",
+      "pricingUrl": "https://clickup.com/pricing",
+      "freePlan": {
+        "exists": true,
+        "summary": "Free Forever avec tâches illimitées, membres illimités et 60 MB de stockage.",
+        "limits": [
+          "60 MB de stockage.",
+          "Limites sur champs, formulaires, automatisations et vues avancées."
+        ],
+        "source": "https://clickup.com/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Unlimited",
+          "priceMonthly": 7,
+          "priceYearlyMonthlyEquivalent": 7,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://clickup.com/pricing"
+        },
+        {
+          "name": "Business",
+          "priceMonthly": 12,
+          "priceYearlyMonthlyEquivalent": 12,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://clickup.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Power users, équipes qui veulent centraliser beaucoup de fonctions.",
+        "Très complet à coût bas — tâches, vues, dashboards, automatisations.",
+        "Idéal pour les solos et équipes prêtes à configurer un vrai workspace."
+      ],
+      "coreLimits": [
+        "Complexité de configuration et risque de sur-outillage.",
+        "Courbe d'apprentissage plus longue qu'Asana."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "ClickUp intègre IA et automatisations selon plans.",
+        "pricingImpact": "L'intérêt augmente sur plans payants avec automatisations et dashboards.",
+        "source": "https://clickup.com/pricing"
+      }
+    },
+    "toolB": {
+      "name": "Asana",
+      "officialWebsite": "https://asana.com",
+      "pricingUrl": "https://asana.com/pricing",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan Personal gratuit pour usage individuel ou très petite équipe.",
+        "limits": [
+          "Fonctions avancées de workflow, reporting et IA sur plans payants."
+        ],
+        "source": "https://help.asana.com/s/article/asana-subscriptions-and-pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Starter",
+          "priceMonthly": 10.99,
+          "priceYearlyMonthlyEquivalent": 10.99,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://asana.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Équipes qui veulent clarté, adoption rapide et coordination.",
+        "Interface propre, moins de bruit fonctionnel.",
+        "Meilleur pour coordination d'équipe multi-profils."
+      ],
+      "coreLimits": [
+        "Coût par user plus élevé que ClickUp.",
+        "Moins de fonctionnalités gratuitement."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Asana AI Teammates disponibles sur Starter, Advanced, Enterprise et Enterprise+ selon page pricing.",
+        "pricingImpact": "IA incluse dans la logique de plans payants et add-ons/conditions.",
+        "source": "https://asana.com/pricing"
+      }
+    }
+  },
+  "comparison": {
+    "mainDifference": "ClickUp donne beaucoup. Asana donne moins mais structure mieux l'adoption équipe.",
+    "decisionSummary": "ClickUp si vous acceptez de configurer. Asana si l'adoption équipe prime.",
+    "finalRecommendation": "Par défaut, ToolTrim recommande Asana pour une équipe qui doit s'aligner vite. ClickUp devient meilleur pour power users ou équipes prêtes à structurer un vrai workspace.",
+    "chooseAIf": [
+      "Vous voulez un outil très complet à coût bas.",
+      "Vous aimez configurer vues, champs, dashboards."
+    ],
+    "chooseBIf": [
+      "Votre priorité est coordination claire et adoption par l'équipe.",
+      "Vous voulez moins de bruit fonctionnel."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin d'un outil produit/dev spécialisé type Linear/Jira."
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Asana pour une équipe qui doit s'aligner vite sans phase de configuration.",
+      "switchWhen": "Basculer vers ClickUp quand l'équipe a besoin de centraliser beaucoup de workflows et accepte de configurer le workspace.",
+      "warning": "Choisir ClickUp pour tout faire et créer une usine à gaz — la richesse fonctionnelle peut devenir un frein à l'adoption.",
+      "examples": [
+        "Asana pour une équipe marketing qui coordonne des campagnes.",
+        "ClickUp pour une équipe ops qui veut centraliser tâches, reporting et automatisations."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Très généreux en fonctionnalités mais stockage très limité.",
+        "whenPaidBecomesNecessary": "Dès qu'il faut stockage, intégrations, dashboards et automatisations.",
+        "hiddenCost": "Complexité de configuration et risque de sur-outillage."
+      },
+      "toolB": {
+        "freePlanReality": "Plus propre et simple mais moins riche gratuitement.",
+        "whenPaidBecomesNecessary": "Dès qu'il faut timeline, workflow builder, reporting et coordination d'équipe.",
+        "hiddenCost": "Minimum seats/structure d'équipe à vérifier, coût par user plus élevé."
+      },
+      "tooltrimNote": "ClickUp paraît plus économique mais coûte en setup. Asana coûte plus mais réduit souvent la friction d'adoption."
+    },
+    "pitfalls": [
+      {
+        "title": "Choisir ClickUp pour tout faire sans phase de setup",
+        "consequence": "L'équipe se perd dans les options et abandonne l'outil.",
+        "recommendation": "Définir les vues et workflows avant de déployer ClickUp en équipe."
+      },
+      {
+        "title": "Choisir Asana quand le besoin est surtout individuel/power user",
+        "consequence": "Coût par user plus élevé pour des fonctions disponibles gratuitement ailleurs.",
+        "recommendation": "ClickUp Free est souvent suffisant pour un solo ou une petite équipe tech."
+      }
+    ]
+  },
+  "comparisonRows": [
+    {
+      "criterion": "Usage principal",
+      "toolA": "Centraliser tout, workflows complexes",
+      "toolB": "Coordination d'équipe structurée",
+      "tooltrimDecision": "Choisir selon la priorité config vs adoption.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Plan gratuit",
+      "toolA": "Très généreux, tâches illimitées",
+      "toolB": "Plus propre mais moins riche",
+      "tooltrimDecision": "ClickUp Free gagne en volume de fonctions.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Prix d'entrée payant",
+      "toolA": "7 USD/user/mois",
+      "toolB": "10,99 USD/user/mois",
+      "tooltrimDecision": "ClickUp moins cher par user.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Adoption équipe",
+      "toolA": "Plus longue à configurer",
+      "toolB": "Plus rapide à déployer",
+      "tooltrimDecision": "Asana pour adoption rapide.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "IA intégrée",
+      "toolA": "IA et automatisations selon plans",
+      "toolB": "AI Teammates sur Starter+",
+      "tooltrimDecision": "Les deux ont de l'IA sur plans payants.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Meilleur pour solo",
+      "toolA": "Fort — ClickUp Free très complet",
+      "toolB": "Suffisant — Personal Free limité",
+      "tooltrimDecision": "ClickUp pour solo/power user.",
+      "showInMainTable": true
+    }
+  ],
+  "related": {
+    "alternatives": ["notion-vs-airtable", "trello-vs-linear"],
+    "otherComparisons": ["notion-vs-airtable", "make-vs-zapier"]
+  },
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "Power users, équipes qui veulent centraliser beaucoup de fonctions.",
+    "bestForToolB": "Équipes qui veulent clarté, adoption et coordination.",
+    "bestForSolo": "toolA",
+    "bestForTeam": "toolB",
+    "budgetReality": "ClickUp paraît plus économique mais coûte en setup. Asana coûte plus mais réduit souvent la friction d'adoption.",
+    "complexity": "depends",
+    "mainRisk": "Choisir ClickUp pour tout faire et créer une usine à gaz.",
+    "decisionSummary": "ClickUp si vous acceptez de configurer. Asana si l'adoption équipe prime."
+  },
+  "faq": []
+}

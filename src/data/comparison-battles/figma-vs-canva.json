@@ -614,5 +614,16 @@
   "missingData": [
     "Prix Canva exacts selon région à confirmer.",
     "Disponibilité Figma AI et crédits selon plan à vérifier."
-  ]
+  ],
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "UX/UI, design systems, prototypage produit.",
+    "bestForToolB": "Marketing, social media, présentations, contenus rapides.",
+    "bestForSolo": "depends",
+    "bestForTeam": "depends",
+    "budgetReality": "Figma coûte par seat design ; Canva coûte moins cher pour de la production non-tech.",
+    "complexity": "depends",
+    "mainRisk": "Choisir Canva pour faire du produit ou Figma pour faire de la production social en volume.",
+    "decisionSummary": "Figma si le livrable est une interface. Canva si le livrable est un contenu prêt à publier."
+  }
 }

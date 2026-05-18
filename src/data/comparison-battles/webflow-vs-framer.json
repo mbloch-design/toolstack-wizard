@@ -595,5 +595,16 @@
   "missingData": [
     "Prix exacts Framer par plan non stabilisés dans cette extraction.",
     "Détails Webflow Workspace selon configuration à revérifier."
-  ]
+  ],
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "Sites marketing CMS, agences, production web structurée.",
+    "bestForToolB": "Landing pages, portfolios, prototypage rapide, startups early.",
+    "bestForSolo": "toolB",
+    "bestForTeam": "toolA",
+    "budgetReality": "Framer semble plus simple au départ. Webflow demande de surveiller site/workspace/add-ons.",
+    "complexity": "depends",
+    "mainRisk": "Choisir Framer pour un site CMS complexe ou Webflow pour une simple landing page urgente.",
+    "decisionSummary": "Framer pour vitesse. Webflow pour structure, CMS et production long terme."
+  }
 }

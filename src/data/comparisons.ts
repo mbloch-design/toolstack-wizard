@@ -24,7 +24,9 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "notion-vs-coda", toolA: "notion", toolB: "coda" },
   { slugPair: "asana-vs-trello", toolA: "asana", toolB: "trello" },
   { slugPair: "asana-vs-clickup", toolA: "asana", toolB: "clickup" },
+  { slugPair: "clickup-vs-asana", toolA: "clickup", toolB: "asana" },
   { slugPair: "clickup-vs-trello", toolA: "clickup", toolB: "trello" },
+  { slugPair: "trello-vs-linear", toolA: "trello", toolB: "linear" },
   { slugPair: "wrike-vs-asana", toolA: "wrike", toolB: "asana" },
   { slugPair: "basecamp-vs-asana", toolA: "basecamp", toolB: "asana" },
   { slugPair: "hive-vs-asana", toolA: "hive", toolB: "asana" },
@@ -39,6 +41,7 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
 
   // Design
   { slugPair: "figma-vs-canva", toolA: "figma", toolB: "canva" },
+  { slugPair: "canva-vs-photoshop-elements", toolA: "canva", toolB: "photoshop-elements" },
   { slugPair: "visme-vs-canva", toolA: "visme", toolB: "canva" },
   { slugPair: "prezi-vs-pitch", toolA: "prezi", toolB: "pitch" },
 
@@ -55,6 +58,7 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "moosend-vs-mailchimp", toolA: "moosend", toolB: "mailchimp" },
 
   // CRM / Sales
+  { slugPair: "hubspot-vs-pipedrive", toolA: "hubspot", toolB: "pipedrive" },
   { slugPair: "pipedrive-vs-salesforce", toolA: "pipedrive", toolB: "salesforce" },
   { slugPair: "pipedrive-vs-zoho", toolA: "pipedrive", toolB: "zoho" },
   { slugPair: "salesforce-vs-zoho", toolA: "salesforce", toolB: "zoho" },
@@ -91,6 +95,7 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "instapage-vs-leadpages", toolA: "instapage", toolB: "leadpages" },
 
   // Payments / Finance
+  { slugPair: "stripe-vs-paypal", toolA: "stripe", toolB: "paypal" },
   { slugPair: "stripe-vs-razorpay", toolA: "stripe", toolB: "razorpay" },
   { slugPair: "quickbooks-vs-freshbooks", toolA: "quickbooks", toolB: "freshbooks" },
 
@@ -99,6 +104,7 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "typeform-vs-surveysparrow", toolA: "typeform", toolB: "surveysparrow" },
 
   // Communication / Support
+  { slugPair: "slack-vs-microsoft-teams", toolA: "slack", toolB: "microsoft-teams" },
   { slugPair: "slack-vs-front", toolA: "slack", toolB: "front" },
   { slugPair: "tidio-vs-zendesk", toolA: "tidio", toolB: "zendesk" },
 

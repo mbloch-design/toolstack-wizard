@@ -1,0 +1,198 @@
+{
+  "slug": "trello-vs-linear",
+  "checkedAt": "2026-05-19",
+  "lastUpdatedAt": "2026-05-19",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "Trello",
+      "officialWebsite": "https://trello.com",
+      "pricingUrl": "https://trello.com/pricing",
+      "freePlan": {
+        "exists": true,
+        "summary": "Free avec cartes illimitées, jusqu'à 10 boards par workspace et 250 command runs/mois.",
+        "limits": [
+          "10 open boards par workspace.",
+          "10 collaborateurs.",
+          "10 MB par fichier.",
+          "250 automatisations par mois."
+        ],
+        "source": "https://support.atlassian.com/trello/docs/which-trello-plan-is-best-for-me/"
+      },
+      "paidPlans": [
+        {
+          "name": "Standard",
+          "priceMonthly": 5,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://trello.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Gestion simple, planning visuel Kanban, équipes non-tech.",
+        "Prise en main immédiate, aucune formation nécessaire.",
+        "Free très généreux pour les usages simples."
+      ],
+      "coreLimits": [
+        "Pas adapté pour piloter un backlog produit sérieux.",
+        "Risque de désordre si projet dev complexe."
+      ],
+      "aiFeatures": {
+        "exists": false,
+        "summary": "Trello intègre surtout automatisation et intégrations, IA non décisive ici.",
+        "pricingImpact": "",
+        "source": "https://trello.com/pricing"
+      }
+    },
+    "toolB": {
+      "name": "Linear",
+      "officialWebsite": "https://linear.app",
+      "pricingUrl": "https://linear.app/pricing",
+      "freePlan": {
+        "exists": true,
+        "summary": "Free avec membres illimités et 2 équipes.",
+        "limits": [
+          "Limites d'équipes et d'issues actives selon plan.",
+          "Payant pour équipes plus structurées."
+        ],
+        "source": "https://linear.app/pricing"
+      },
+      "paidPlans": [
+        {
+          "name": "Basic",
+          "priceMonthly": 10,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://linear.app/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Produit, dev, bugs, cycles, roadmap.",
+        "Workflows IA, Linear Agent automations et Code Intelligence.",
+        "Interface rapide et opinionée pour les équipes qui shippent."
+      ],
+      "coreLimits": [
+        "Risque d'outil trop spécialisé pour non-dev.",
+        "Moins adapté aux équipes sans culture produit/engineering."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Linear met en avant workflows IA, Linear Agent automations et Code Intelligence en beta sur plans adaptés.",
+        "pricingImpact": "Fonctions IA orientées équipes produit/dev, surtout Business et plus.",
+        "source": "https://linear.app/pricing"
+      }
+    }
+  },
+  "comparison": {
+    "mainDifference": "Trello organise visuellement. Linear structure le shipping produit/dev.",
+    "decisionSummary": "Trello si la simplicité prime. Linear si l'équipe shippe du produit.",
+    "finalRecommendation": "Par défaut, ToolTrim recommande Trello pour les équipes non-tech. Linear devient meilleur dès que le travail ressemble à du shipping produit.",
+    "chooseAIf": [
+      "Vous avez besoin d'un Kanban simple.",
+      "Votre équipe n'est pas orientée produit/dev."
+    ],
+    "chooseBIf": [
+      "Vous gérez issues, cycles, roadmap et releases.",
+      "Votre équipe travaille avec GitHub ou un workflow dev."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin de planification portefeuille lourde."
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Trello pour les équipes non-tech qui veulent un Kanban simple.",
+      "switchWhen": "Passer à Linear dès que le travail ressemble à du shipping produit — bugs, cycles, sprints, releases.",
+      "warning": "Utiliser Trello pour piloter un backlog produit sérieux — l'outil craque sous la complexité.",
+      "examples": [
+        "Trello pour une équipe marketing qui gère des campagnes en Kanban.",
+        "Linear pour une équipe dev qui ship des features avec GitHub et des cycles hebdomadaires."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Très bon pour Kanban simple.",
+        "whenPaidBecomesNecessary": "Dès qu'il faut plus de boards, vues et contrôles.",
+        "hiddenCost": "Risque de désordre si projet dev complexe."
+      },
+      "toolB": {
+        "freePlanReality": "Très bon pour petites équipes produit/dev.",
+        "whenPaidBecomesNecessary": "Dès qu'il faut issues illimitées, plusieurs équipes et rôles admin.",
+        "hiddenCost": "Risque d'outil trop spécialisé pour non-dev."
+      },
+      "tooltrimNote": "Trello est moins cher pour simple Kanban. Linear vaut son coût si la vitesse de shipping compte."
+    },
+    "pitfalls": [
+      {
+        "title": "Gérer un backlog produit complexe dans Trello",
+        "consequence": "Cartes qui s'accumulent sans priorisation ni cycle clair.",
+        "recommendation": "Linear ou Jira pour tout backlog avec sprints, bugs et roadmap."
+      },
+      {
+        "title": "Imposer Linear à une équipe non-dev",
+        "consequence": "Friction d'adoption et outil sous-utilisé.",
+        "recommendation": "Trello ou Asana pour les équipes sans culture produit/engineering."
+      }
+    ]
+  },
+  "comparisonRows": [
+    {
+      "criterion": "Usage principal",
+      "toolA": "Kanban visuel, planning simple",
+      "toolB": "Issues, cycles, roadmap produit",
+      "tooltrimDecision": "Trello si simple, Linear si dev/produit.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Plan gratuit",
+      "toolA": "Généreux — 10 boards, cartes illimitées",
+      "toolB": "Bon — membres illimités, 2 équipes",
+      "tooltrimDecision": "Les deux ont un bon Free selon usage.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Prix d'entrée payant",
+      "toolA": "5 USD/user/mois",
+      "toolB": "10 USD/user/mois",
+      "tooltrimDecision": "Trello moins cher pour usage simple.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Adapté aux non-dev",
+      "toolA": "Fort — aucune formation nécessaire",
+      "toolB": "Faible — pensé pour l'engineering",
+      "tooltrimDecision": "Trello pour équipes non-tech.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Vitesse de shipping",
+      "toolA": "Faible — pas de cycles ni de releases",
+      "toolB": "Fort — cycles, sprints, GitHub intégration",
+      "tooltrimDecision": "Linear si l'équipe shippe du produit.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "IA intégrée",
+      "toolA": "Absente ou marginale",
+      "toolB": "Linear Agent, Code Intelligence (beta)",
+      "tooltrimDecision": "Linear pour les équipes dev qui veulent l'IA.",
+      "showInMainTable": true
+    }
+  ],
+  "related": {
+    "alternatives": ["clickup-vs-asana", "notion-vs-airtable"],
+    "otherComparisons": ["clickup-vs-asana", "notion-vs-airtable"]
+  },
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "Gestion simple, planning visuel, équipes non-tech.",
+    "bestForToolB": "Produit, dev, bugs, cycles, roadmap.",
+    "bestForSolo": "toolA",
+    "bestForTeam": "depends",
+    "budgetReality": "Trello est moins cher pour simple Kanban. Linear vaut son coût si la vitesse de shipping compte.",
+    "complexity": "depends",
+    "mainRisk": "Utiliser Trello pour piloter un backlog produit sérieux.",
+    "decisionSummary": "Trello si la simplicité prime. Linear si l'équipe shippe du produit."
+  },
+  "faq": []
+}

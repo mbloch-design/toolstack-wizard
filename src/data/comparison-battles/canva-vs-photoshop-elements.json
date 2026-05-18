@@ -1,0 +1,189 @@
+{
+  "slug": "canva-vs-photoshop-elements",
+  "checkedAt": "2026-05-19",
+  "lastUpdatedAt": "2026-05-19",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "Canva",
+      "officialWebsite": "https://www.canva.com",
+      "pricingUrl": "https://www.canva.com/en/pricing/",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan gratuit utilisable pour créer et publier des designs simples.",
+        "limits": [
+          "Stockage et assets premium limités.",
+          "Certaines fonctions IA soumises à limites d'usage."
+        ],
+        "source": "https://www.canva.com/en/pricing/"
+      },
+      "paidPlans": [
+        {
+          "name": "Pro",
+          "priceMonthly": 18,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://www.canva.com/en/pricing/"
+        }
+      ],
+      "coreStrengths": [
+        "Création rapide de contenus, réseaux sociaux, supports marketing.",
+        "Templates prêts à publier, très accessible aux non-designers.",
+        "Collaboration et brand kit en équipe."
+      ],
+      "coreLimits": [
+        "Contrôle photo précis limité par rapport à un éditeur dédié.",
+        "Coût récurrent et dépendance aux contenus premium."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Canva AI / Magic Studio intégrés selon le plan, avec limites d'usage possibles.",
+        "pricingImpact": "Les fonctions IA renforcent l'intérêt des plans payants, surtout Pro/Business.",
+        "source": "https://www.canva.com/policies/ai-product-terms/"
+      }
+    },
+    "toolB": {
+      "name": "Adobe Photoshop Elements",
+      "officialWebsite": "https://www.adobe.com/products/photoshop-elements.html",
+      "pricingUrl": "https://www.adobe.com/products/photoshop-elements/features.html",
+      "freePlan": {
+        "exists": false,
+        "summary": "Pas de plan gratuit permanent. Essai gratuit complet de 7 jours.",
+        "limits": [
+          "Licence payante requise après essai.",
+          "Licence valable 3 ans, non renouvelable automatiquement."
+        ],
+        "source": "https://www.adobe.com/products/photoshop-elements/features.html"
+      },
+      "paidPlans": [
+        {
+          "name": "Photoshop Elements 2026",
+          "priceMonthly": null,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "one-time 3-year term license",
+          "source": "https://www.adobe.com/products/photoshop-elements/features.html"
+        }
+      ],
+      "coreStrengths": [
+        "Retouche photo locale, organisation personnelle, corrections guidées.",
+        "Achat one-time sans abonnement mensuel Creative Cloud.",
+        "25 crédits génératifs IA par mois inclus (Generate Image, Restore Photo)."
+      ],
+      "coreLimits": [
+        "Pas fait pour produire des assets social media en volume.",
+        "Renouvellement requis après 3 ans, courbe d'apprentissage photo."
+      ],
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Photoshop Elements 2026 inclut Generate Image, Insert Object, Restore Photo.",
+        "pricingImpact": "25 crédits génératifs par mois inclus ; crédits supplémentaires possibles dans l'app.",
+        "source": "https://www.adobe.com/products/photoshop-elements/whats-new.html"
+      }
+    }
+  },
+  "comparison": {
+    "mainDifference": "Canva est un outil de production marketing. Photoshop Elements est un éditeur photo grand public, pas un outil de design collaboratif.",
+    "decisionSummary": "Choisir Canva pour produire et décliner. Choisir Elements pour retoucher des photos sans abonnement Creative Cloud.",
+    "finalRecommendation": "Par défaut, ToolTrim recommande Canva pour les créatifs et solos qui produisent des contenus. Photoshop Elements devient logique si le besoin principal est la retouche photo simple sans abonnement lourd.",
+    "chooseAIf": [
+      "Vous produisez beaucoup de formats marketing.",
+      "Vous travaillez avec templates, marque, exports et collaboration."
+    ],
+    "chooseBIf": [
+      "Vous retouchez surtout des photos.",
+      "Vous voulez éviter un abonnement mensuel complet."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin de Photoshop professionnel ou d'une suite brand/asset complète."
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Canva si le livrable est un contenu marketing à publier.",
+      "switchWhen": "Passer à Photoshop Elements quand le besoin principal devient la retouche photo locale sans payer un abonnement récurrent.",
+      "warning": "Comparer un outil de design collaboratif à un logiciel de retouche photo — ils ne couvrent pas le même besoin.",
+      "examples": [
+        "Canva pour social media et présentations. Photoshop Elements pour organiser et retoucher ses photos personnelles.",
+        "Les deux peuvent coexister si l'usage est clairement séparé."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Bon pour produire vite des visuels simples.",
+        "whenPaidBecomesNecessary": "Dès qu'il faut Brand Kit, assets premium, export régulier ou IA avancée.",
+        "hiddenCost": "Coût récurrent et dépendance aux contenus premium."
+      },
+      "toolB": {
+        "freePlanReality": "Seulement un essai court de 7 jours.",
+        "whenPaidBecomesNecessary": "Dès que l'essai est terminé.",
+        "hiddenCost": "Temps d'apprentissage photo et renouvellement après 3 ans."
+      },
+      "tooltrimNote": "Canva coûte en abonnement ; Elements coûte en licence limitée à 3 ans."
+    },
+    "pitfalls": [
+      {
+        "title": "Utiliser Canva pour de la retouche photo précise",
+        "consequence": "Contrôle insuffisant par rapport à un éditeur dédié.",
+        "recommendation": "Photoshop Elements ou Lightroom pour les corrections photos sérieuses."
+      },
+      {
+        "title": "Utiliser Photoshop Elements pour produire des contenus social media en volume",
+        "consequence": "Lent, pas de templates, pas de collaboration.",
+        "recommendation": "Canva reste l'outil adapté pour la production de contenus en volume."
+      }
+    ]
+  },
+  "comparisonRows": [
+    {
+      "criterion": "Usage principal",
+      "toolA": "Design et contenus marketing",
+      "toolB": "Retouche photo locale",
+      "tooltrimDecision": "Choisir selon le livrable.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Plan gratuit",
+      "toolA": "Free permanent",
+      "toolB": "Essai 7 jours seulement",
+      "tooltrimDecision": "Canva si besoin de gratuit.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Modèle tarifaire",
+      "toolA": "Abonnement mensuel",
+      "toolB": "Licence one-time 3 ans",
+      "tooltrimDecision": "Dépend de la préférence abonnement vs achat unique.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "IA intégrée",
+      "toolA": "Magic Studio, génération d'images",
+      "toolB": "25 crédits génératifs/mois",
+      "tooltrimDecision": "Les deux ont de l'IA, Canva plus intégré au flux marketing.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Collaboration",
+      "toolA": "Forte, multi-utilisateurs",
+      "toolB": "Logiciel local, pas collaboratif",
+      "tooltrimDecision": "Canva si travail en équipe.",
+      "showInMainTable": true
+    }
+  ],
+  "related": {
+    "alternatives": ["figma-vs-canva", "canva-vs-photoshop-elements"],
+    "otherComparisons": ["figma-vs-canva", "notion-vs-airtable"]
+  },
+  "tooltrimAtAGlance": {
+    "defaultChoice": "toolA",
+    "bestForToolA": "Création rapide de contenus, réseaux sociaux, supports marketing.",
+    "bestForToolB": "Retouche photo locale, organisation personnelle, corrections guidées.",
+    "bestForSolo": "depends",
+    "bestForTeam": "toolA",
+    "budgetReality": "Canva coûte en abonnement ; Elements coûte en licence limitée à 3 ans.",
+    "complexity": "depends",
+    "mainRisk": "Comparer un outil de design collaboratif à un logiciel de retouche photo.",
+    "decisionSummary": "Choisir Canva pour produire et décliner. Choisir Elements pour retoucher des photos sans abonnement Creative Cloud."
+  },
+  "faq": []
+}

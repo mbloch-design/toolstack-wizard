@@ -586,5 +586,16 @@
   "missingData": [
     "Limites exactes Notion Free/Plus par workspace à revérifier.",
     "Détails Airtable AI selon plan à vérifier."
-  ]
+  ],
+  "tooltrimAtAGlance": {
+    "defaultChoice": "depends",
+    "bestForToolA": "Documentation, wiki, gestion légère de projet.",
+    "bestForToolB": "CRM, inventaire, operations, bases relationnelles.",
+    "bestForSolo": "toolA",
+    "bestForTeam": "depends",
+    "budgetReality": "Notion démarre moins technique. Airtable devient plus rentable si la structure évite des erreurs opérationnelles.",
+    "complexity": "depends",
+    "mainRisk": "Confondre table Notion et base de données métier.",
+    "decisionSummary": "Notion tant que le contenu prime. Airtable dès que la donnée devient l'objet principal."
+  }
 }
