@@ -818,11 +818,14 @@ const StackDetailPage = () => {
         {/* ── Signaletic fact table ── */}
         <div className="sd-hero-fact-table" aria-label={t("Signalétique de la stack", "Stack fact sheet") as string}>
           {heroDecision.reperes.map((repere) => {
-            const compactLabels = ["BUDGET", "OUTILS", "NIVEAU", "TOOLS", "LEVEL"];
+            const compactLabels = ["BUDGET", "OUTILS", "TOOLS"];
+            const levelLabels  = ["NIVEAU", "LEVEL"];
             const longLabels = ["PROFIL", "WORKFLOW", "POINT D'ATTENTION", "PROFILE", "KEY RISK"];
             const isBudget = repere.label === "BUDGET";
             const modifier = compactLabels.includes(repere.label)
               ? " sd-fact-col--compact"
+              : levelLabels.includes(repere.label)
+              ? " sd-fact-col--level"
               : longLabels.includes(repere.label)
               ? " sd-fact-col--long"
               : "";

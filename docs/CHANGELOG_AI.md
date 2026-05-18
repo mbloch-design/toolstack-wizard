@@ -2,6 +2,26 @@
 
 ---
 
+## 2026-05-18 — Sprint 59 : Hero fact sheet no-truncation fix
+
+### Objectif
+Supprimer toute troncature des valeurs de la table signalétique hero, en particulier NIVEAU qui affichait "inst..." au lieu de "Installé". Restreindre la grille 6 colonnes à ≥1440px.
+
+### Cause racine
+`.sd-fact-col--compact .sd-fact-value { white-space: nowrap }` (ligne ~14115, sprint typographie) était appliqué à la colonne NIVEAU car "NIVEAU" figurait dans `compactLabels`. Combiné à `overflow: hidden` hérité du conteneur `.sd-hero-fact-table`, le texte était coupé invisiblement.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — "NIVEAU"/"LEVEL" sortis de `compactLabels` vers un nouveau tableau `levelLabels`; le modificateur `sd-fact-col--level` est appliqué à la place de `sd-fact-col--compact`.
+- `src/index.css` — bloc sprint ajouté en fin de fichier : grille 6 col uniquement ≥1440px, 3×2 col 769–1439px, 2 col ≤768px, 1 col ≤480px. Règles `!important` sur `white-space`, `overflow`, `text-overflow`, `-webkit-line-clamp`, `max-width` pour toutes les familles de valeurs (compact, level, long).
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation de la règle no-truncation et du nouveau modificateur niveau.
+
+### Résultat
+- Aucune cellule de la table signalétique ne peut tronquer sa valeur.
+- NIVEAU a son propre modificateur CSS `sd-fact-col--level` (police légèrement plus petite que compact, mais `white-space: normal`).
+- La grille 6 colonnes ne s'active qu'à ≥1440px ; entre 769px et 1439px, la table est 3×2.
+
+---
+
 ## 2026-05-18 — Sprint 58 : Budget decision module redesign
 
 ### Objectif

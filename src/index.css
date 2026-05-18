@@ -14284,3 +14284,129 @@ section[id] {
     gap: 28px 0;
   }
 }
+
+/* Sprint — Hero fact sheet no-truncation fix (2026-05-18) */
+
+/* ── 6 columns only at ≥1440px ── */
+@media (min-width: 1440px) {
+  .sd-hero-fact-table {
+    grid-template-columns:
+      minmax(240px, 1.2fr)   /* PROFIL */
+      minmax(150px, 0.65fr)  /* BUDGET */
+      minmax(90px,  0.42fr)  /* OUTILS */
+      minmax(150px, 0.65fr)  /* NIVEAU — min 150px, must fit "Intermédiaire" */
+      minmax(300px, 1.45fr)  /* WORKFLOW */
+      minmax(260px, 1.2fr);  /* POINT D'ATTENTION */
+  }
+}
+
+/* ── 3×2 grid from 769px to 1439px ── */
+@media (max-width: 1439px) and (min-width: 769px) {
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ── 2 columns at ≤768px ── */
+@media (max-width: 768px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 14px;
+  }
+}
+
+/* ── 1 column at ≤480px ── */
+@media (max-width: 480px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr;
+    border-radius: 12px;
+  }
+}
+
+/* ── All cells: overflow protection ── */
+.sd-fact-col {
+  min-width: 0;
+  padding: 24px 22px;
+}
+
+/* ── Labels ── */
+.sd-fact-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6F6F68;
+  margin-bottom: 14px;
+  line-height: 1;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  white-space: normal !important;
+}
+
+/* ── Metric values: Budget & Outils ── */
+.sd-fact-col--compact .sd-fact-value {
+  font-size: clamp(1.375rem, 1.8vw, 2rem); /* 22–32px */
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: #222222;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  -webkit-line-clamp: unset !important;
+  max-width: none !important;
+}
+
+/* ── Level value (NIVEAU) — own modifier, no nowrap ── */
+.sd-fact-col--level .sd-fact-value {
+  font-size: clamp(1.25rem, 1.35vw, 1.625rem); /* 20–26px */
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #222222;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  -webkit-line-clamp: unset !important;
+  max-width: none !important;
+}
+
+/* ── Descriptive values: Profil, Workflow, Point d'attention ── */
+.sd-fact-col--long .sd-fact-value {
+  font-size: clamp(1.0625rem, 1.05vw, 1.25rem); /* 17–20px */
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #222222;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  -webkit-line-clamp: unset !important;
+  max-width: none !important;
+}
+
+/* ── Budget split ── */
+.sd-budget-composition {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  white-space: nowrap; /* OK — both parts are short */
+  flex-wrap: nowrap;
+}
+.sd-budget-main {
+  font-size: clamp(1.375rem, 1.8vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #222222;
+}
+.sd-budget-unit {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  color: #6F6F68;
+}

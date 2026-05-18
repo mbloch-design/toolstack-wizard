@@ -90,20 +90,22 @@ Le hero est un bloc éditorial suivi d'une table signalétique. Il répond en 5 
 - H1 (`.sd-hero-h1`) : `clamp(3.25rem, 5.5vw, 4.5rem)`, font-weight `700`, line-height `0.92`, letter-spacing `-0.065em`.
 - Promesse (`.sd-hero-desc`) : `clamp(1.0625rem, 1.4vw, 1.3125rem)`, line-height `1.5`, max-width `640px`, 1–2 lignes max.
 - Table : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels `10px/600 uppercase #555550`, cell padding `22px 24px`.
-- **Grille pondérée** (desktop ≥1280px) : `minmax(220px,1.2fr)` PROFIL · `minmax(150px,0.65fr)` BUDGET · `minmax(90px,0.42fr)` OUTILS · `minmax(130px,0.55fr)` NIVEAU · `minmax(300px,1.45fr)` WORKFLOW · `minmax(260px,1.2fr)` POINT D'ATTENTION.
+- **Grille pondérée — 6 colonnes uniquement à ≥1440px** : `minmax(240px,1.2fr)` PROFIL · `minmax(150px,0.65fr)` BUDGET · `minmax(90px,0.42fr)` OUTILS · `minmax(150px,0.65fr)` NIVEAU (min 150px pour "Intermédiaire") · `minmax(300px,1.45fr)` WORKFLOW · `minmax(260px,1.2fr)` POINT D'ATTENTION.
 - **`min-width: 0` obligatoire sur `.sd-fact-col`** : sans cette propriété, un contenu plus large que l'espace alloué force la colonne à s'élargir (grid blowout). C'est le correctif le plus critique pour les dépassements de contenu.
-- **Échelle typographique — deux familles :**
-  - **Métrique** (`.sd-fact-col--compact` — BUDGET, OUTILS, NIVEAU) : valeur `clamp(1.5rem, 2vw, 2rem)` (24–32px), font-weight 700, letter-spacing -0.045em, white-space nowrap.
-  - **Descriptif** (`.sd-fact-col--long` — PROFIL, WORKFLOW, POINT D'ATTENTION) : valeur `clamp(1.0625rem, 1.1vw, 1.25rem)` (17–20px), font-weight 600, letter-spacing -0.025em, overflow-wrap anywhere.
+- **Zéro troncature sur les valeurs** : aucun `text-overflow: ellipsis`, `white-space: nowrap` ni `-webkit-line-clamp` sur les cellules de valeur. Toutes les surcharges doivent utiliser `!important` pour écraser les sprints précédents.
+- **Échelle typographique — trois familles :**
+  - **Métrique** (`.sd-fact-col--compact` — BUDGET, OUTILS) : valeur `clamp(1.375rem, 1.8vw, 2rem)` (22–32px), font-weight 700, letter-spacing -0.045em, white-space normal.
+  - **Niveau** (`.sd-fact-col--level` — NIVEAU uniquement) : valeur `clamp(1.25rem, 1.35vw, 1.625rem)` (20–26px), font-weight 700, letter-spacing -0.04em, white-space normal. Modificateur propre pour éviter le `white-space: nowrap` des métriques.
+  - **Descriptif** (`.sd-fact-col--long` — PROFIL, WORKFLOW, POINT D'ATTENTION) : valeur `clamp(1.0625rem, 1.05vw, 1.25rem)` (17–20px), font-weight 600, letter-spacing -0.025em, overflow-wrap anywhere.
 - **Budget : composition montant + unité** — helper `splitBudget()` (propriétés `main`/`unit`) sépare "118€/mois" en :
-  - `sd-budget-main` : `clamp(1.5rem, 2vw, 2rem)`, 700, letter-spacing -0.05em, #222222
-  - `sd-budget-unit` : 14px, 500, letter-spacing -0.01em, #6F6F68
-  - Wrapper `sd-budget-composition` : `inline-flex`, align-items baseline, gap 3px, white-space nowrap.
+  - `sd-budget-main` : `clamp(1.375rem, 1.8vw, 2rem)`, 700, letter-spacing -0.05em, #222222
+  - `sd-budget-unit` : 14px, 500, #6F6F68
+  - Wrapper `sd-budget-composition` : `inline-flex`, align-items baseline, gap 3px, white-space nowrap (les deux fragments sont courts).
   - Ne jamais rendre le budget comme string plate. Ne pas utiliser `text-overflow: ellipsis` sur la valeur budget.
 - **Label RISQUE → POINT D'ATTENTION** (FR) / RISK → KEY RISK (EN). Les deux anciens labels ne doivent plus apparaître.
-- **Règle éditoriale table** : max 7 mots par cellule valeur. Les colonnes longues utilisent la notation flèches (ex. `Brief → plans → chantier`). Aucune phrase complète dans la table.
+- **Règle éditoriale table** : max 7 mots par cellule valeur. Les colonnes longues utilisent la notation flèches (ex. `Brief → plans → chantier`). Aucune phrase complète dans la table. NIVEAU : valeurs courtes max 12 caractères (Installé, Avancé, Débutant, Intermédiaire).
 - **Fallback dynamique** : les valeurs PROFIL, WORKFLOW, POINT D'ATTENTION des stacks sans données éditoriales dédiées sont tronquées à 40 caractères avec `truncate()`.
-- **Responsive** : 6 col ≥1280px → 3 col (3×2) 1025–1279px → 2 col ≤1024px (radius 14px) → 1 col ≤420px (radius 12px, pas de scroll horizontal).
+- **Responsive** : 6 col ≥1440px → 3×2 col 769–1439px → 2 col ≤768px (radius 14px) → 1 col ≤480px (radius 12px, pas de scroll horizontal).
 - Hero container padding : `96px 0 20px` desktop, `80px 0 16px` tablet, `56px 0 12px` mobile.
 
 ### Section Vue d'ensemble
