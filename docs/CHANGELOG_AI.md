@@ -2201,3 +2201,22 @@ Aligner les pages comparatif avec la logique des fiches stack : hero en fiche si
 - Le hero répond immédiatement à `de quoi parle ce comparatif et quel choix dois-je faire ?`.
 - La navigation de page reprend l'esprit des fiches stack, cachée sur mobile pour préserver la lecture.
 - Les sections suivent le flux : verdict, comparer, cas d'usage, attention, alternatives, FAQ.
+
+---
+
+## 2026-05-18 — Sprint 50 : Profondeur décisionnelle des comparatifs
+
+### Objectif
+Enrichir les pages comparatif avec un modèle éditorial ToolTrim capable d'expliquer non seulement `qui gagne`, mais dans quel contexte, à quel coût réel et à partir de quel seuil l'autre outil devient plus pertinent.
+
+### Fichiers modifiés
+- `src/pages/ComparePage.tsx` — ajout des champs `finalRecommendation`, `decisiveCriteria`, `tippingPoint`, `costReality` et `tooltrimRisks`, avec fallback pour les comparatifs non éditorialisés.
+- `src/pages/ComparesIndexPage.tsx` — ajout du signal de risque principal sur les cartes comparatif.
+- `src/index.css` — styles des critères décisifs, seuil de bascule, coût réel et points d'attention enrichis.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du modèle décisionnel enrichi.
+
+### Résultat
+- La page compare d'abord les vrais écarts avant de montrer le tableau.
+- Le seuil de bascule devient une section dédiée.
+- Le coût réel distingue prix affiché, moment où payer et coût caché.
+- Les points d'attention décrivent erreur, conséquence et recommandation ToolTrim.

@@ -437,6 +437,16 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 - Le verdict apparaît avant la table.
 - Labels : `Choisis A si`, `Choisis B si`, `Évite les deux si`.
 - Ce bloc doit être la recommandation courte, pas une répétition du tableau.
+- `cp-final-recommendation` porte la phrase finale ToolTrim : choix par défaut + condition où l'autre outil devient meilleur.
+
+### Critères décisifs (`cp-criteria-*`)
+```css
+.cp-criteria-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cp-criterion-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 14px; padding: 24px; }
+```
+- Rôle : expliquer les vrais écarts avant le tableau.
+- Chaque critère compare A, B et se termine par une décision ToolTrim courte.
+- 4 à 6 critères maximum.
 
 ### Cas d'usage (`cp-usecase-*`)
 ```css
@@ -454,6 +464,17 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 ```
 - Rôle : montrer où la mauvaise décision arrive.
 - Les pièges doivent être spécifiques au comparatif, pas des conseils génériques sur les SaaS.
+- Chaque point riche peut contenir : erreur, conséquence, recommandation ToolTrim.
+
+### Seuil de bascule (`cp-tipping-*`)
+- Rôle : montrer quand l'outil recommandé par défaut cesse d'être le meilleur choix.
+- Structure : `Par défaut`, `Passe à l'autre si`, puis signaux concrets en chips.
+- Ne pas utiliser de seuil chiffré inventé si la donnée n'existe pas.
+
+### Coût réel (`cp-cost-*`)
+- Rôle : comparer coût affiché, plan gratuit, moment où payer et coût caché.
+- Les prix précis viennent des données disponibles ; sinon utiliser des formules prudentes : `à vérifier`, `selon volume`, `à auditer si`.
+- Le coût réel inclut temps de setup, migration, maintenance et formation.
 
 ### Lignes alternatives (`cp-alt-row`)
 ```css
@@ -494,7 +515,7 @@ Implémentation : `<details>/<summary>` natif + `useState` pour la rotation du c
 - Boutons CTA : fond `#222222`, couleur `#FFFFFF`
 - Hero : fact sheet premium, pas de panneau droit ni CTA.
 - CTA band : fond `#EDEDE8` (crème medium, pas crème clair)
-- Structure recommandée : hero décision → verdict → table utile → cas d'usage → pièges → alternatives → FAQ.
+- Structure recommandée : hero décision → verdict → critères décisifs → table utile → cas d'usage → seuil de bascule → coût réel → pièges → alternatives → FAQ.
 - Ne pas recréer des couches séparées `ce que fait chaque outil`, `avantages/limites`, `profils` si elles répètent verdict, table ou cas d'usage.
 
 ---

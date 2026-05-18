@@ -7286,6 +7286,90 @@
     letter-spacing: -0.015em;
     color: #6F6F68;
   }
+  .cp-final-recommendation {
+    max-width: 860px;
+    margin: -8px 0 30px;
+    padding: 18px 20px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-radius: 14px;
+    font-family: var(--font-ui);
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    color: #222222;
+  }
+  .cp-final-recommendation span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+  }
+
+  /* ── Decisive criteria ───────────────────────────────────── */
+  .cp-criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+  @media (max-width: 767px) { .cp-criteria-grid { grid-template-columns: 1fr; } }
+  .cp-criterion-card {
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .cp-criterion-title {
+    margin: 0 0 18px;
+    font-family: var(--font-brand);
+    font-size: 24px;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    color: #222222;
+  }
+  .cp-criterion-sides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 520px) { .cp-criterion-sides { grid-template-columns: 1fr; } }
+  .cp-criterion-sides span,
+  .cp-cost-row span,
+  .cp-tipping-panel span,
+  .cp-cost-note span {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+  }
+  .cp-criterion-sides p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.45;
+    color: #6F6F68;
+  }
+  .cp-criterion-decision {
+    margin: 18px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid #E7E7E0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.45;
+    font-weight: 600;
+    color: #222222;
+  }
+  .cp-criterion-decision span { display: block; margin-bottom: 6px; }
 
   /* ── Verdict rapide grid (3 cols) ──────────────────────────── */
   .cp-verdict-grid {
@@ -7413,6 +7497,114 @@
     line-height: 1.55; color: #6F6F68;
   }
   .cp-price-plans strong { color: #222222; font-weight: 600; }
+
+  /* ── Tipping point + real cost ───────────────────────────── */
+  .cp-tipping-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 28px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  @media (max-width: 767px) { .cp-tipping-panel { grid-template-columns: 1fr; } }
+  .cp-tipping-panel div {
+    padding: 24px;
+  }
+  .cp-tipping-panel div + div {
+    border-left: 1px solid #DADAD4;
+  }
+  @media (max-width: 767px) {
+    .cp-tipping-panel div + div {
+      border-left: none;
+      border-top: 1px solid #DADAD4;
+    }
+  }
+  .cp-tipping-panel p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 17px;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    color: #222222;
+  }
+  .cp-tipping-signals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .cp-tipping-signals li {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid #DADAD4;
+    border-radius: 999px;
+    background: #FFFFFF;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.3;
+    color: #222222;
+  }
+  .cp-cost-grid {
+    margin-top: 28px;
+    border-top: 1px solid #DADAD4;
+  }
+  .cp-cost-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid #DADAD4;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .cp-cost-row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+  .cp-cost-label {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #222222;
+  }
+  .cp-cost-row p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.45;
+    color: #6F6F68;
+  }
+  .cp-cost-reco {
+    color: #222222 !important;
+    font-weight: 600;
+  }
+  .cp-cost-note {
+    margin-top: 24px;
+    padding: 18px 20px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-radius: 14px;
+  }
+  .cp-cost-note p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.45;
+    font-weight: 600;
+    color: #222222;
+  }
 
   /* ── Limits grid ───────────────────────────────────────────── */
   .cp-limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -7717,6 +7909,21 @@
     line-height: 1.45;
     letter-spacing: -0.01em;
     color: #222222;
+  }
+  .cp-watchout-row--rich {
+    align-items: start;
+  }
+  .cp-watchout-title {
+    font-weight: 700;
+  }
+  .cp-watchout-copy {
+    margin-top: 8px !important;
+    color: #6F6F68 !important;
+  }
+  .cp-watchout-reco {
+    margin-top: 8px !important;
+    font-size: 14px !important;
+    font-weight: 600;
   }
 
 /* ─────────────────────────────────────────────

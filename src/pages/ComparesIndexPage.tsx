@@ -118,6 +118,20 @@ function getCardBestFor(a: Tool, b: Tool, lang: "fr" | "en"): string {
   if (keepA && keepB) return `${a.name}: ${keepA}. ${b.name}: ${keepB}.`;
   return deriveCardDesc(a, b, lang);
 }
+function getCardRisk(a: Tool, b: Tool, lang: "fr" | "en"): string {
+  const avoidA = lang === "fr"
+    ? (a.verdict?.avoidIf || [])[0]
+    : (a.verdictEn?.avoidIf || a.verdict?.avoidIf || [])[0];
+  const avoidB = lang === "fr"
+    ? (b.verdict?.avoidIf || [])[0]
+    : (b.verdictEn?.avoidIf || b.verdict?.avoidIf || [])[0];
+  if (avoidA || avoidB) {
+    return [avoidA && `${a.name}: ${avoidA}`, avoidB && `${b.name}: ${avoidB}`].filter(Boolean).join(". ");
+  }
+  return lang === "fr"
+    ? "Risque : choisir au nombre de fonctions plutôt qu'au besoin réel."
+    : "Risk: choosing by feature count instead of real need.";
+}
 
 /* ─── ToolInput — autocomplete with keyboard nav ─────────────────────────── */
 interface ToolInputProps {
@@ -606,6 +620,7 @@ const ComparesIndexPage = () => {
                 const desc = deriveCardDesc(a, b, lang);
                 const question = getCardDecisionQuestion(a, b, lang);
                 const bestFor = getCardBestFor(a, b, lang);
+                const risk = getCardRisk(a, b, lang);
                 const catId = getSlugCategory(c.slugPair);
                 const catLabel = COMPARE_CATEGORY_FILTERS.find(f => f.id === catId);
                 return (
@@ -640,6 +655,10 @@ const ComparesIndexPage = () => {
                     <div className="cix-card-signal">
                       <span>{t("Meilleur pour", "Best for")}</span>
                       <p>{bestFor}</p>
+                    </div>
+                    <div className="cix-card-signal cix-card-signal--risk">
+                      <span>{t("Risque", "Risk")}</span>
+                      <p>{risk}</p>
                     </div>
                     <p className="cix-card-pricing">
                       {getPriceLabel(a, t)}

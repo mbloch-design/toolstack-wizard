@@ -102,11 +102,35 @@ interface CompareDecisionRow {
   context: string; contextEn: string;
   choice: string; choiceEn: string;
 }
+interface CompareDecisiveCriterion {
+  title: string; titleEn: string;
+  toolA: string; toolAEn: string;
+  toolB: string; toolBEn: string;
+  decision: string; decisionEn: string;
+}
+interface CompareTippingPoint {
+  title: string; titleEn: string;
+  defaultChoice: string; defaultChoiceEn: string;
+  switchWhen: string; switchWhenEn: string;
+  signals: string[]; signalsEn: string[];
+}
+interface CompareCostRealityRow {
+  label: string; labelEn: string;
+  toolA: string; toolAEn: string;
+  toolB: string; toolBEn: string;
+  recommendation: string; recommendationEn: string;
+}
+interface CompareRiskPoint {
+  mistake: string; mistakeEn: string;
+  consequence: string; consequenceEn: string;
+  recommendation: string; recommendationEn: string;
+}
 
 interface CompareEditorialContent {
   /* ── Hero framing ── */
   framing: string; framingEn: string;
   verdictShort: string; verdictShortEn: string;
+  finalRecommendation: string; finalRecommendationEn: string;
   /* ── Quick verdict (VS module + verdict section) ── */
   quickVerdictA: string; quickVerdictAEn: string;
   quickVerdictB: string; quickVerdictBEn: string;
@@ -125,6 +149,10 @@ interface CompareEditorialContent {
   limitsB: string[]; limitsBEn: string[];
   /* ── Decision rows (new) ── */
   decisionRows: CompareDecisionRow[];
+  decisiveCriteria: CompareDecisiveCriterion[];
+  tippingPoint: CompareTippingPoint;
+  costReality: CompareCostRealityRow[];
+  tooltrimRisks: CompareRiskPoint[];
   /* ── Profiles ── */
   profiles: CompareProfile[];
   /* ── Pricing ── */
@@ -148,6 +176,10 @@ const NOTION_VS_AIRTABLE: CompareEditorialContent = {
     "Choisis Notion si tu veux centraliser notes, docs, projets et contenus. Choisis Airtable si tu dois gérer des bases de données, des vues, des statuts ou des workflows plus structurés.",
   verdictShortEn:
     "Choose Notion if you want to centralize notes, docs, projects and content. Choose Airtable if you need to manage databases, views, statuses or more structured workflows.",
+  finalRecommendation:
+    "Pour un freelance solo, ToolTrim recommande Notion par défaut. Airtable devient meilleur quand la donnée, les vues et les statuts pilotent vraiment le workflow.",
+  finalRecommendationEn:
+    "For a solo freelancer, ToolTrim recommends Notion by default. Airtable becomes better when data, views, and statuses truly drive the workflow.",
 
   quickVerdictA:
     "Tu veux un espace flexible pour écrire, organiser, documenter et gérer des projets légers.",
@@ -325,6 +357,130 @@ const NOTION_VS_AIRTABLE: CompareEditorialContent = {
     },
   ],
 
+  decisiveCriteria: [
+    {
+      title: "Structure des données",
+      titleEn: "Data structure",
+      toolA: "Notion suffit pour bases simples, contenus mixtes et suivi léger.",
+      toolAEn: "Notion is enough for simple databases, mixed content, and light tracking.",
+      toolB: "Airtable devient plus solide dès que relations, vues et statuts deviennent centraux.",
+      toolBEn: "Airtable becomes stronger when relations, views, and statuses become central.",
+      decision: "Airtable si la donnée pilote le workflow.",
+      decisionEn: "Airtable if data drives the workflow.",
+    },
+    {
+      title: "Documentation",
+      titleEn: "Documentation",
+      toolA: "Notion est plus naturel pour écrire, relier et partager des docs.",
+      toolAEn: "Notion is more natural for writing, linking, and sharing docs.",
+      toolB: "Airtable peut stocker du contexte, mais l'expérience reste moins éditoriale.",
+      toolBEn: "Airtable can store context, but the experience is less editorial.",
+      decision: "Notion si le contenu est le livrable principal.",
+      decisionEn: "Notion if content is the main deliverable.",
+    },
+    {
+      title: "Automatisation",
+      titleEn: "Automation",
+      toolA: "Notion couvre quelques automatisations, mais reste limité pour des process avancés.",
+      toolAEn: "Notion covers some automation, but stays limited for advanced processes.",
+      toolB: "Airtable est plus pertinent pour formulaires, vues, règles et opérations répétées.",
+      toolBEn: "Airtable is more relevant for forms, views, rules, and repeated operations.",
+      decision: "Airtable si l'opération doit se répéter chaque semaine.",
+      decisionEn: "Airtable if the operation repeats every week.",
+    },
+    {
+      title: "Coût réel",
+      titleEn: "Real cost",
+      toolA: "Le plan gratuit ou Plus suffit souvent longtemps pour un solo.",
+      toolAEn: "The free or Plus plan is often enough for a solo user for a long time.",
+      toolB: "Airtable devient vite payant dès que volume, collaborateurs ou automatisations augmentent.",
+      toolBEn: "Airtable gets paid quickly when volume, collaborators, or automations increase.",
+      decision: "Notion tant que le besoin reste personnel ou documentaire.",
+      decisionEn: "Notion while the need stays personal or documentation-focused.",
+    },
+  ],
+
+  tippingPoint: {
+    title: "Le seuil de bascule",
+    titleEn: "The tipping point",
+    defaultChoice: "Choisis Notion par défaut si tu centralises surtout notes, docs, process et suivi léger.",
+    defaultChoiceEn: "Choose Notion by default if you mostly centralize notes, docs, processes, and light tracking.",
+    switchWhen: "Passe à Airtable quand tu gères plusieurs bases reliées, des vues par statut, des formulaires ou des automatisations récurrentes.",
+    switchWhenEn: "Switch to Airtable when you manage several linked bases, status views, forms, or recurring automations.",
+    signals: [
+      "plus de 3 bases relationnelles",
+      "plusieurs vues par équipe ou client",
+      "statuts et automatisations au cœur du suivi",
+      "volume de données trop lourd pour une page Notion",
+    ],
+    signalsEn: [
+      "more than 3 relational bases",
+      "several views by team or client",
+      "statuses and automations drive tracking",
+      "data volume too heavy for a Notion page",
+    ],
+  },
+
+  costReality: [
+    {
+      label: "Coût affiché",
+      labelEn: "Listed cost",
+      toolA: "Gratuit puis 12€/mois/membre sur Plus.",
+      toolAEn: "Free, then €12/month/member on Plus.",
+      toolB: "Gratuit limité, puis 20€/mois/siège sur Team.",
+      toolBEn: "Limited free plan, then €20/month/seat on Team.",
+      recommendation: "Compare surtout le nombre de sièges et d'automatisations.",
+      recommendationEn: "Compare seats and automations first.",
+    },
+    {
+      label: "Plan gratuit",
+      labelEn: "Free plan",
+      toolA: "Souvent suffisant pour solo, docs et bases légères.",
+      toolAEn: "Often enough for solo, docs, and light databases.",
+      toolB: "Utile pour tester, mais vite limité par volume et collaboration.",
+      toolBEn: "Useful for testing, but quickly limited by volume and collaboration.",
+      recommendation: "Ne paie Airtable que si la structure apporte un vrai gain.",
+      recommendationEn: "Only pay for Airtable if structure brings a real gain.",
+    },
+    {
+      label: "Coût caché",
+      labelEn: "Hidden cost",
+      toolA: "Temps perdu si l'espace devient un fourre-tout.",
+      toolAEn: "Lost time if the workspace becomes a catch-all.",
+      toolB: "Temps de setup, nettoyage des champs et maintenance des vues.",
+      toolBEn: "Setup time, field cleanup, and view maintenance.",
+      recommendation: "Auditer dès que l'outil demande plus de maintenance que d'usage.",
+      recommendationEn: "Audit as soon as the tool needs more maintenance than use.",
+    },
+  ],
+
+  tooltrimRisks: [
+    {
+      mistake: "Confondre doc et base métier",
+      mistakeEn: "Confusing docs and business databases",
+      consequence: "Tu peux choisir Airtable pour écrire des docs, ou Notion pour piloter une donnée trop structurée.",
+      consequenceEn: "You may choose Airtable for docs, or Notion for data that is too structured.",
+      recommendation: "Pars du livrable principal : contenu ou donnée.",
+      recommendationEn: "Start from the main deliverable: content or data.",
+    },
+    {
+      mistake: "Payer Airtable trop tôt",
+      mistakeEn: "Paying for Airtable too early",
+      consequence: "Le coût grimpe avant que le workflow ne soit réellement stable.",
+      consequenceEn: "Cost rises before the workflow is truly stable.",
+      recommendation: "Teste d'abord le besoin sur un flux simple.",
+      recommendationEn: "Test the need on a simple flow first.",
+    },
+    {
+      mistake: "Garder les deux pour le même usage",
+      mistakeEn: "Keeping both for the same use",
+      consequence: "Les docs, statuts et bases se dupliquent vite.",
+      consequenceEn: "Docs, statuses, and databases quickly duplicate.",
+      recommendation: "Attribue un rôle unique à chaque outil ou coupe l'un des deux.",
+      recommendationEn: "Give each tool a single role or cut one.",
+    },
+  ],
+
   profiles: [
     { persona: "Freelance créatif", personaEn: "Creative freelancer",
       choice: "Notion",
@@ -440,6 +596,12 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     verdictShortEn: keepsA[0] && keepsB[0]
       ? `Choose ${toolA.name} if ${keepsA[0].toLowerCase()}. Choose ${toolB.name} if ${keepsB[0].toLowerCase()}.`
       : `The choice depends on your primary use case.`,
+    finalRecommendation: keepsA[0] && keepsB[0]
+      ? `ToolTrim recommande ${toolA.name} si ${keepsA[0].toLowerCase()}. ${toolB.name} devient meilleur si ${keepsB[0].toLowerCase()}.`
+      : `ToolTrim recommande de choisir selon ton usage principal, ton budget réel et le niveau de structure nécessaire.`,
+    finalRecommendationEn: keepsA[0] && keepsB[0]
+      ? `ToolTrim recommends ${toolA.name} if ${keepsA[0].toLowerCase()}. ${toolB.name} becomes better if ${keepsB[0].toLowerCase()}.`
+      : `ToolTrim recommends choosing by primary use case, real budget, and required structure level.`,
     quickVerdictA: keepsA.slice(0, 2).join(". ") || `Tu veux utiliser ${toolA.name} comme outil principal.`,
     quickVerdictAEn: (toolA.verdictEn?.keepIf || keepsA).slice(0, 2).join(". ") || `You want to use ${toolA.name} as your main tool.`,
     quickVerdictB: keepsB.slice(0, 2).join(". ") || `Tu veux utiliser ${toolB.name} comme outil principal.`,
@@ -501,6 +663,120 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       },
     ],
 
+    decisiveCriteria: [
+      {
+        title: "Usage principal",
+        titleEn: "Primary use case",
+        toolA: keepsA[0] || `${toolA.name} convient si son usage couvre ton besoin principal.`,
+        toolAEn: (toolA.verdictEn?.keepIf?.[0]) || `${toolA.name} fits if its use case covers your main need.`,
+        toolB: keepsB[0] || `${toolB.name} convient si son usage couvre ton besoin principal.`,
+        toolBEn: (toolB.verdictEn?.keepIf?.[0]) || `${toolB.name} fits if its use case covers your main need.`,
+        decision: "Choisir l'outil qui couvre le flux le plus fréquent, pas celui qui a le plus de fonctions.",
+        decisionEn: "Choose the tool that covers the most frequent workflow, not the one with the most features.",
+      },
+      {
+        title: "Coût réel",
+        titleEn: "Real cost",
+        toolA: priceA === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${priceA}€/mois.`,
+        toolAEn: priceA === 0 ? "Free plan possible depending on volume." : `Paid plan starts around €${priceA}/month.`,
+        toolB: priceB === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${priceB}€/mois.`,
+        toolBEn: priceB === 0 ? "Free plan possible depending on volume." : `Paid plan starts around €${priceB}/month.`,
+        decision: "Auditer si le coût monte avant que l'usage soit hebdomadaire.",
+        decisionEn: "Audit if cost rises before weekly usage is real.",
+      },
+      {
+        title: "Risque de surdimensionnement",
+        titleEn: "Overbuilding risk",
+        toolA: (toolA.verdict?.avoidIf?.[0]) || "À éviter si tu n'utilises qu'une petite partie de l'outil.",
+        toolAEn: (toolA.verdictEn?.avoidIf?.[0]) || "Avoid if you only use a small part of the tool.",
+        toolB: (toolB.verdict?.avoidIf?.[0]) || "À éviter si tu n'utilises qu'une petite partie de l'outil.",
+        toolBEn: (toolB.verdictEn?.avoidIf?.[0]) || "Avoid if you only use a small part of the tool.",
+        decision: "Le meilleur choix est souvent le plus petit outil qui couvre le besoin réel.",
+        decisionEn: "The best choice is often the smallest tool that covers the real need.",
+      },
+    ],
+
+    tippingPoint: {
+      title: "Le seuil de bascule",
+      titleEn: "The tipping point",
+      defaultChoice: `Choisis ${priceA <= priceB ? toolA.name : toolB.name} par défaut si le besoin est simple et le budget serré.`,
+      defaultChoiceEn: `Choose ${priceA <= priceB ? toolA.name : toolB.name} by default if the need is simple and budget is tight.`,
+      switchWhen: `Passe à ${priceA <= priceB ? toolB.name : toolA.name} quand le gain de structure, de collaboration ou d'automatisation justifie le coût.`,
+      switchWhenEn: `Switch to ${priceA <= priceB ? toolB.name : toolA.name} when structure, collaboration, or automation gains justify the cost.`,
+      signals: [
+        "usage hebdomadaire réel",
+        "plusieurs personnes concernées",
+        "automatisations ou intégrations nécessaires",
+        "temps de setup inférieur au temps gagné",
+      ],
+      signalsEn: [
+        "real weekly usage",
+        "several people involved",
+        "automations or integrations required",
+        "setup time lower than time saved",
+      ],
+    },
+
+    costReality: [
+      {
+        label: "Prix affiché",
+        labelEn: "Listed price",
+        toolA: priceA === 0 ? "Gratuit ou prix à vérifier selon plan." : `À partir de ${priceA}€/mois.`,
+        toolAEn: priceA === 0 ? "Free or price to check by plan." : `From €${priceA}/month.`,
+        toolB: priceB === 0 ? "Gratuit ou prix à vérifier selon plan." : `À partir de ${priceB}€/mois.`,
+        toolBEn: priceB === 0 ? "Free or price to check by plan." : `From €${priceB}/month.`,
+        recommendation: "Vérifier le prix selon sièges, volume et options réellement utilisées.",
+        recommendationEn: "Check price by seats, volume, and options actually used.",
+      },
+      {
+        label: "Quand payer",
+        labelEn: "When to pay",
+        toolA: "Quand le plan gratuit bloque un usage fréquent.",
+        toolAEn: "When the free plan blocks frequent usage.",
+        toolB: "Quand le plan gratuit bloque un usage fréquent.",
+        toolBEn: "When the free plan blocks frequent usage.",
+        recommendation: "Ne paie pas pour une fonctionnalité que tu n'utilises pas chaque semaine.",
+        recommendationEn: "Do not pay for a feature you do not use weekly.",
+      },
+      {
+        label: "Coût caché",
+        labelEn: "Hidden cost",
+        toolA: "Setup, migration, formation ou maintenance du workspace.",
+        toolAEn: "Setup, migration, training, or workspace maintenance.",
+        toolB: "Setup, migration, formation ou maintenance du workspace.",
+        toolBEn: "Setup, migration, training, or workspace maintenance.",
+        recommendation: "Le coût réel inclut le temps passé à maintenir l'outil.",
+        recommendationEn: "Real cost includes time spent maintaining the tool.",
+      },
+    ],
+
+    tooltrimRisks: [
+      {
+        mistake: "Choisir le plus complet",
+        mistakeEn: "Choosing the most complete tool",
+        consequence: "Tu paies et configures plus que ce que ton usage réel demande.",
+        consequenceEn: "You pay for and configure more than your real use requires.",
+        recommendation: "Choisis le plus petit outil qui couvre le flux principal.",
+        recommendationEn: "Choose the smallest tool that covers the main workflow.",
+      },
+      {
+        mistake: "Décider au prix marketing",
+        mistakeEn: "Deciding from marketing price",
+        consequence: "Le vrai coût peut venir des sièges, volumes, automatisations ou du temps de setup.",
+        consequenceEn: "The real cost can come from seats, volume, automations, or setup time.",
+        recommendation: "Compare le coût à ton usage hebdomadaire réel.",
+        recommendationEn: "Compare cost to your real weekly usage.",
+      },
+      {
+        mistake: "Garder deux outils qui se chevauchent",
+        mistakeEn: "Keeping two overlapping tools",
+        consequence: "Les données, tâches ou décisions se retrouvent en double.",
+        consequenceEn: "Data, tasks, or decisions become duplicated.",
+        recommendation: "Attribue un rôle clair à chaque outil ou coupe le doublon.",
+        recommendationEn: "Give each tool a clear role or cut the duplicate.",
+      },
+    ],
+
     profiles: [
       { persona: "Solo / Freelance", personaEn: "Solo / Freelancer",
         choice: aFerme ? toolA.name : toolB.name,
@@ -530,18 +806,6 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         aEn: `${keepsA[0] ? `Choose ${toolA.name} if ${keepsA[0].toLowerCase()}. ` : ""}${keepsB[0] ? `Choose ${toolB.name} if ${keepsB[0].toLowerCase()}.` : ""}` },
     ],
   };
-}
-
-/* ─── Simple prose renderer (bold via **text**) ──────────────────────────── */
-function PricingNote({ text }: { text: string }) {
-  const parts = text.split(/\*\*(.*?)\*\*/g);
-  return (
-    <span>
-      {parts.map((part, i) =>
-        i % 2 === 1 ? <strong key={i} style={{ color: "#222222", fontWeight: 600 }}>{part}</strong> : part
-      )}
-    </span>
-  );
 }
 
 interface CompareNavSection {
@@ -686,13 +950,13 @@ const ComparePage = () => {
   const verdictShort = lang === "fr" ? content.verdictShort : content.verdictShortEn;
   const learningCurveRow = content.tableRows.find((row) => row.criterion === "Prise en main" || row.criterionEn === "Learning curve");
   const decisionTableRows = getDecisionTableRows(content.tableRows);
-  const pitfalls = getPitfalls(content, toolA, toolB, lang);
   const useCasesA = (lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn).slice(0, 4);
   const useCasesB = (lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn).slice(0, 4);
   const bestForSignal = getBestForSignal(content, toolA, toolB, lang);
   const budgetSignal = getBudgetSignal(toolA, toolB, lang);
   const levelSignal = getLearningCurve(learningCurveRow, lang);
   const riskSignal = getToolTrimRisk(content, lang);
+  const fallbackPitfalls = getPitfalls(content, toolA, toolB, lang);
 
   // Find alternative tools from the loaded tools list
   const altTools = content.alternatives.map((alt) => ({
@@ -701,8 +965,11 @@ const ComparePage = () => {
   }));
   const navSections: CompareNavSection[] = [
     { id: "verdict", label: t("Verdict", "Verdict") },
+    { id: "criteres", label: t("Critères", "Criteria") },
     { id: "comparaison", label: t("Comparer", "Compare") },
     { id: "cas-usages", label: t("Cas d'usage", "Use cases") },
+    { id: "seuil", label: t("Seuil", "Threshold") },
+    { id: "cout", label: t("Coût", "Cost") },
     { id: "vigilance", label: t("Attention", "Watchouts") },
     ...(altTools.length > 0 ? [{ id: "alternatives", label: t("Alternatives", "Alternatives") }] : []),
     { id: "faq", label: "FAQ" },
@@ -765,6 +1032,10 @@ const ComparePage = () => {
           <span className="cp-eyebrow">{t("01 — Verdict", "01 — Verdict")}</span>
           <p className="cp-title">{t("Le choix rapide.", "The quick choice.")}</p>
           <p className="cp-section-intro">{verdictShort}</p>
+          <p className="cp-final-recommendation">
+            <span>{t("Recommandation ToolTrim", "ToolTrim recommendation")}</span>
+            {lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn}
+          </p>
           <div className="cp-verdict-grid">
             <div className="cp-verdict-col">
               <p className="cp-verdict-label">{t("Choisis", "Choose")} {toolA.name} {t("si…", "if…")}</p>
@@ -788,10 +1059,39 @@ const ComparePage = () => {
         </div>
       </section>
 
+      {/* ── Critères décisifs ─────────────────────────────────────────────── */}
+      <section id="criteres" className="cp-section scroll-mt-20">
+        <div className="cp-container">
+          <span className="cp-eyebrow">{t("02 — Critères", "02 — Criteria")}</span>
+          <p className="cp-title">{t("Ce qui change vraiment.", "What really changes.")}</p>
+          <div className="cp-criteria-grid">
+            {content.decisiveCriteria.slice(0, 6).map((criterion) => (
+              <article key={criterion.title} className="cp-criterion-card">
+                <p className="cp-criterion-title">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
+                <div className="cp-criterion-sides">
+                  <div>
+                    <span>{toolA.name}</span>
+                    <p>{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+                  </div>
+                  <div>
+                    <span>{toolB.name}</span>
+                    <p>{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                  </div>
+                </div>
+                <p className="cp-criterion-decision">
+                  <span>{t("Décision", "Decision")}</span>
+                  {lang === "fr" ? criterion.decision : criterion.decisionEn}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Tableau comparatif ─────────────────────────────────────────────── */}
       <section id="comparaison" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("02 — Comparaison", "02 — Comparison")}</span>
+          <span className="cp-eyebrow">{t("03 — Comparaison", "03 — Comparison")}</span>
           <p className="cp-title">{t("Comparer selon le vrai usage.", "Compare based on real use.")}</p>
           <div className="cp-table">
             <div className="cp-table-head">
@@ -823,7 +1123,7 @@ const ComparePage = () => {
       {/* ── Cas d'usage ───────────────────────────────────────────────────── */}
       <section id="cas-usages" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("03 — Cas d'usage", "03 — Use cases")}</span>
+          <span className="cp-eyebrow">{t("04 — Cas d'usage", "04 — Use cases")}</span>
           <p className="cp-title">{t("Choisir selon ton vrai besoin.", "Choose based on your real need.")}</p>
           <div className="cp-usecase-grid">
             <div className="cp-usecase-card">
@@ -850,69 +1150,87 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── Points de vigilance ───────────────────────────────────────────── */}
-      <section id="vigilance" className="cp-section scroll-mt-20">
+      {/* ── Seuil de bascule ──────────────────────────────────────────────── */}
+      <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("04 — Points d'attention", "04 — Watchouts")}</span>
-          <p className="cp-title">{t("Les pièges à éviter.", "Mistakes to avoid.")}</p>
-          <div className="cp-watchout-list">
-            {pitfalls.map((pitfall, i) => (
-              <div key={i} className="cp-watchout-row">
-                <span>{String(i + 1).padStart(2, "0")}</span>
-                <p>{pitfall}</p>
-              </div>
+          <span className="cp-eyebrow">{t("05 — Seuil de bascule", "05 — Tipping point")}</span>
+          <p className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</p>
+          <div className="cp-tipping-panel">
+            <div>
+              <span>{t("Par défaut", "Default")}</span>
+              <p>{lang === "fr" ? content.tippingPoint.defaultChoice : content.tippingPoint.defaultChoiceEn}</p>
+            </div>
+            <div>
+              <span>{t("Passe à l'autre si", "Switch when")}</span>
+              <p>{lang === "fr" ? content.tippingPoint.switchWhen : content.tippingPoint.switchWhenEn}</p>
+            </div>
+          </div>
+          <ul className="cp-tipping-signals">
+            {(lang === "fr" ? content.tippingPoint.signals : content.tippingPoint.signalsEn).map((signal) => (
+              <li key={signal}>{signal}</li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── Coût réel ─────────────────────────────────────────────────────── */}
+      <section id="cout" className="cp-section scroll-mt-20">
+        <div className="cp-container">
+          <span className="cp-eyebrow">{t("06 — Coût réel", "06 — Real cost")}</span>
+          <p className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</p>
+          <p className="cp-section-intro">
+            {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
+          </p>
+          <div className="cp-cost-grid">
+            {content.costReality.map((row) => (
+              <article key={row.label} className="cp-cost-row">
+                <p className="cp-cost-label">{lang === "fr" ? row.label : row.labelEn}</p>
+                <div>
+                  <span>{toolA.name}</span>
+                  <p>{lang === "fr" ? row.toolA : row.toolAEn}</p>
+                </div>
+                <div>
+                  <span>{toolB.name}</span>
+                  <p>{lang === "fr" ? row.toolB : row.toolBEn}</p>
+                </div>
+                <p className="cp-cost-reco">{lang === "fr" ? row.recommendation : row.recommendationEn}</p>
+              </article>
+            ))}
+          </div>
+          <div className="cp-cost-note">
+            <span>{t("Recommandation ToolTrim", "ToolTrim recommendation")}</span>
+            <p>{lang === "fr" ? content.pricingReco : content.pricingRecoEn}</p>
           </div>
         </div>
       </section>
 
-      {/* ── Prix ───────────────────────────────────────────────────────────── */}
-      <section id="prix" className="cp-section scroll-mt-20">
+      {/* ── Points de vigilance ───────────────────────────────────────────── */}
+      <section id="vigilance" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("Prix", "Pricing")}</span>
-          <p className="cp-title">
-            {t("Lequel coûte vraiment le moins cher ?", "Which actually costs less?")}
-          </p>
-          <p style={{
-            fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.55,
-            color: "#6F6F68", maxWidth: 760, marginBottom: 28,
-            letterSpacing: "-0.015em",
-          }}>
-            {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
-          </p>
-
-          {/* Pricing rows */}
-          <div className="cp-price-row">
-            <div className="cp-price-tool">
-              <ToolLogo tool={toolA} size={20} />
-              {toolA.name}
-            </div>
-            <p className="cp-price-plans">
-              <PricingNote text={lang === "fr" ? content.pricingToolANotes : content.pricingToolANotesEn} />
-            </p>
-          </div>
-          <div className="cp-price-row">
-            <div className="cp-price-tool">
-              <ToolLogo tool={toolB} size={20} />
-              {toolB.name}
-            </div>
-            <p className="cp-price-plans">
-              <PricingNote text={lang === "fr" ? content.pricingToolBNotes : content.pricingToolBNotesEn} />
-            </p>
-          </div>
-
-          {/* Recommendation */}
-          <div style={{
-            marginTop: 24, padding: "16px 20px",
-            background: "#F8F8F4", border: "1px solid #DADAD4",
-            borderRadius: 8,
-          }}>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 6 }}>
-              {t("Recommandation ToolTrim", "ToolTrim recommendation")}
-            </p>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.55, color: "#222222" }}>
-              {lang === "fr" ? content.pricingReco : content.pricingRecoEn}
-            </p>
+          <span className="cp-eyebrow">{t("07 — Points d'attention", "07 — Watchouts")}</span>
+          <p className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</p>
+          <div className="cp-watchout-list">
+            {(content.tooltrimRisks.length > 0 ? content.tooltrimRisks : fallbackPitfalls.map((pitfall) => ({
+              mistake: pitfall,
+              mistakeEn: pitfall,
+              consequence: "",
+              consequenceEn: "",
+              recommendation: "",
+              recommendationEn: "",
+            }))).slice(0, 5).map((risk, i) => (
+              <article key={`${risk.mistake}-${i}`} className="cp-watchout-row cp-watchout-row--rich">
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <div>
+                  <p className="cp-watchout-title">{lang === "fr" ? risk.mistake : risk.mistakeEn}</p>
+                  {(lang === "fr" ? risk.consequence : risk.consequenceEn) && (
+                    <p className="cp-watchout-copy">{lang === "fr" ? risk.consequence : risk.consequenceEn}</p>
+                  )}
+                  {(lang === "fr" ? risk.recommendation : risk.recommendationEn) && (
+                    <p className="cp-watchout-reco">{lang === "fr" ? risk.recommendation : risk.recommendationEn}</p>
+                  )}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -921,7 +1239,7 @@ const ComparePage = () => {
       {altTools.length > 0 && (
         <section id="alternatives" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{t("05 — Pour aller plus loin", "05 — Next options")}</span>
+            <span className="cp-eyebrow">{t("08 — Pour aller plus loin", "08 — Next options")}</span>
             <p className="cp-title">
               {t("Si aucun des deux ne colle.", "If neither one fits.")}
             </p>
@@ -1007,7 +1325,7 @@ const ComparePage = () => {
       {/* ── FAQ ────────────────────────────────────────────────────────────── */}
       <section id="faq" className="cp-section cp-section--last scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{altTools.length > 0 ? "06 — FAQ" : "05 — FAQ"}</span>
+          <span className="cp-eyebrow">{altTools.length > 0 ? "09 — FAQ" : "08 — FAQ"}</span>
           <p className="cp-title">
             {t("Questions fréquentes.", "Frequently asked questions.")}
           </p>
