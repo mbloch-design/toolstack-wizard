@@ -13685,3 +13685,85 @@ section[id] {
 .sd-hero-promise {
   max-width: 860px;
 }
+
+/* Sprint — Workflow card grouped recommendations (2026-05-18) */
+
+/* Decision micro-copy under the role sentence */
+.sd-stack-card-decision {
+  font-size: 13px;
+  font-weight: 400;
+  color: #444440;
+  line-height: 1.55;
+  margin-top: 10px;
+  max-width: 340px;
+}
+
+/* Tool group container */
+.sd-tool-group {
+  margin-bottom: 20px;
+}
+.sd-tool-group:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Group label: uppercase, small, bold */
+.sd-tool-group-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #222222;
+  margin-bottom: 10px;
+}
+
+/* Flex row of pills */
+.sd-tool-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Individual tool pill: logo + name, no status badge */
+.sd-tool-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px 0 8px;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E2;
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: #222222;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: border-color 120ms ease;
+}
+.sd-tool-pill:hover {
+  border-color: #AAAAAA;
+}
+.sd-tool-pill img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Discreet total at bottom of right column */
+.sd-tools-total {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 400;
+  color: #888880;
+  margin-top: 16px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .sd-stack-card-decision {
+    max-width: 100%;
+  }
+}

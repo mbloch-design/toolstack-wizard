@@ -874,22 +874,42 @@ const StackDetailPage = () => {
           <div className="sd-stack-map" aria-label={t("Carte de la stack", "Stack map")}>
             {stackMapFamilies.map((family) => {
               const sortedTools = sortToolsByDecision(family.tools);
-              const isExpandable = sortedTools.length > 6;
+              const groups = groupToolsByRecommendation(sortedTools);
               const isExpanded = expandedToolLayers.has(family.id);
-              const visibleTools = isExpandable && !isExpanded ? sortedTools.slice(0, 6) : sortedTools;
-              const hiddenCount = sortedTools.length - visibleTools.length;
               const totalCount = sortedTools.length;
-              const visibleCount = visibleTools.length;
-              const statusSummary = buildWorkflowStatusSummary(sortedTools, lang);
+              const decisionCopy = getWorkflowDecisionCopy(groups, lang);
+
+              // Expand logic: always show core + first 3 secondary; hide rest
+              const hiddenSecondary = Math.max(0, groups.secondary.length - 3);
+              const hasHiddenGroups = hiddenSecondary > 0 || groups.extension.length > 0;
+
+              let expandLabel: string;
+              if (hiddenSecondary === 0 && groups.extension.length > 0) {
+                expandLabel = lang === 'fr'
+                  ? `Voir les ${groups.extension.length} extensions`
+                  : `Show ${groups.extension.length} extensions`;
+              } else if (hiddenSecondary > 0 && groups.extension.length > 0) {
+                expandLabel = lang === 'fr'
+                  ? `Voir tous les outils de cette étape`
+                  : `Show all tools in this step`;
+              } else if (hiddenSecondary > 0) {
+                expandLabel = lang === 'fr'
+                  ? `Afficher les ${hiddenSecondary} compléments`
+                  : `Show ${hiddenSecondary} more`;
+              } else {
+                expandLabel = lang === 'fr' ? 'Voir les compléments' : 'Show add-ons';
+              }
+
+              const visibleSecondary = isExpanded ? groups.secondary : groups.secondary.slice(0, 3);
+
               return (
                 <section key={family.id} className="sd-stack-map-family" aria-label={t(family.titleFr, family.titleEn)}>
-                  <div className="sd-stack-map-copy">
+                  {/* Left column: editorial */}
+                  <div className="sd-stack-map-copy sd-stack-card-left">
                     <h3>{t(family.titleFr, family.titleEn)}</h3>
                     <p>{t(family.purposeFr, family.purposeEn)}</p>
-                    {statusSummary && (
-                      <span className="sd-stack-map-count">{statusSummary}</span>
-                    )}
-                    {isExpandable && (
+                    <p className="sd-stack-card-decision">{decisionCopy}</p>
+                    {hasHiddenGroups && (
                       <button
                         type="button"
                         className="sd-expand-btn"
@@ -898,37 +918,90 @@ const StackDetailPage = () => {
                         onClick={() => toggleToolLayer(family.id)}
                       >
                         {isExpanded
-                          ? t("Réduire la liste", "Show less") + " ↑"
-                          : t(`Afficher les ${hiddenCount} outils restants`, `Show ${hiddenCount} more tools`) + " ↓"}
+                          ? (lang === 'fr' ? 'Réduire ↑' : 'Show less ↑')
+                          : expandLabel + ' ↓'}
                       </button>
                     )}
                   </div>
 
-                  <div className="sd-stack-map-tools-wrapper">
-                    <span className="sd-tools-count-indicator">
-                      {visibleCount < totalCount
-                        ? t(`${visibleCount} sur ${totalCount} outils affichés`, `${visibleCount} of ${totalCount} tools shown`)
-                        : t(`${totalCount} outil${totalCount > 1 ? "s" : ""} affiché${totalCount > 1 ? "s" : ""}`, `${totalCount} tool${totalCount > 1 ? "s" : ""} shown`)}
-                    </span>
-                    <div id={`sd-stack-map-tools-${family.id}`} className="sd-stack-map-tools">
-                      {visibleTools.map(({ slot, tool }) => {
-                        const status = getToolDecisionStatus(slot);
-                        return (
-                          <Link
-                            key={slot.slug}
-                            to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                            className="sd-stack-map-tool"
-                          >
-                            <span className="sd-stack-map-logo"><ToolLogo tool={tool!} size={24} /></span>
-                            <span className="sd-stack-map-tool-copy">
-                              <span>{tool!.name}</span>
-                              <small>{getWorkflowStatusLabel(status.key, lang)}</small>
-                            </span>
-                          </Link>
-                        );
-                      })}
-                      {visibleTools.length === 0 && <span className="sd-stack-map-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>}
-                    </div>
+                  {/* Right column: grouped tools */}
+                  <div id={`sd-stack-map-tools-${family.id}`} className="sd-stack-map-tools-wrapper sd-stack-card-right">
+                    {/* Core group — always visible */}
+                    {groups.core.length > 0 && (
+                      <div className="sd-tool-group">
+                        <span className="sd-tool-group-label">
+                          {lang === 'fr' ? 'Socle recommandé' : 'Core stack'}
+                        </span>
+                        <div className="sd-tool-grid">
+                          {groups.core.map(({ slot, tool }) => (
+                            <Link
+                              key={slot.slug}
+                              to={`${prefix}/tool/${tool!.slug || tool!.id}`}
+                              className="sd-tool-pill"
+                            >
+                              <ToolLogo tool={tool!} size={18} />
+                              {tool!.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Secondary group — first 3 always visible, rest on expand */}
+                    {groups.secondary.length > 0 && (
+                      <div className="sd-tool-group">
+                        <span className="sd-tool-group-label">
+                          {lang === 'fr' ? 'Selon ton usage' : 'As needed'}
+                        </span>
+                        <div className="sd-tool-grid">
+                          {visibleSecondary.map(({ slot, tool }) => (
+                            <Link
+                              key={slot.slug}
+                              to={`${prefix}/tool/${tool!.slug || tool!.id}`}
+                              className="sd-tool-pill"
+                            >
+                              <ToolLogo tool={tool!} size={18} />
+                              {tool!.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Extension group — only when expanded */}
+                    {isExpanded && groups.extension.length > 0 && (
+                      <div className="sd-tool-group">
+                        <span className="sd-tool-group-label">
+                          {lang === 'fr' ? 'Extensions' : 'Extensions'}
+                        </span>
+                        <div className="sd-tool-grid">
+                          {groups.extension.map(({ slot, tool }) => (
+                            <Link
+                              key={slot.slug}
+                              to={`${prefix}/tool/${tool!.slug || tool!.id}`}
+                              className="sd-tool-pill"
+                            >
+                              <ToolLogo tool={tool!} size={18} />
+                              {tool!.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Fallback: empty family */}
+                    {totalCount === 0 && (
+                      <span className="sd-stack-map-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>
+                    )}
+
+                    {/* Discreet total at bottom */}
+                    {totalCount > 0 && (
+                      <p className="sd-tools-total">
+                        {lang === 'fr'
+                          ? `${totalCount} outil${totalCount > 1 ? 's' : ''} dans cette étape`
+                          : `${totalCount} tool${totalCount > 1 ? 's' : ''} in this step`}
+                      </p>
+                    )}
                   </div>
                 </section>
               );
@@ -1810,6 +1883,58 @@ function getWorkflowStatusGroups<T extends { slot: StackToolSlot }>(items: T[]) 
     groupDefs.find((group) => group.key === key)?.tools.push(item);
   });
   return groupDefs.filter((group) => group.tools.length > 0);
+}
+
+/* ─── Grouped recommendation helpers (2026-05-18) ───────────────────────── */
+type ToolGroupKey = 'core' | 'secondary' | 'extension';
+
+function getToolGroup(slot: StackToolSlot): ToolGroupKey {
+  const d = (slot.decision ?? '').toLowerCase();
+  const r = `${slot.role ?? ''} ${slot.roleEn ?? ''}`.toLowerCase();
+  if (['core', 'socle', 'essential', 'keep'].includes(d)) return 'core';
+  if (['challenge', 'challenger', 'avoid', 'extension'].includes(d)) return 'extension';
+  if (['conditional', 'conditionnel', 'optional'].includes(d)) return 'secondary';
+  // Fallback from role keywords
+  const extKw = ['avancé', 'advanced', 'suite', 'backlinks', 'vectoriel', 'photo', 'crm agence'];
+  if (extKw.some((k) => r.includes(k))) return 'extension';
+  // Fallback from decision status key
+  const key = getToolDecisionStatus(slot).key;
+  if (key === 'core') return 'core';
+  if (key === 'challenge') return 'extension';
+  return 'secondary';
+}
+
+function groupToolsByRecommendation<T extends { slot: StackToolSlot }>(tools: T[]): { core: T[]; secondary: T[]; extension: T[] } {
+  return {
+    core:      tools.filter((t) => getToolGroup(t.slot) === 'core'),
+    secondary: tools.filter((t) => getToolGroup(t.slot) === 'secondary'),
+    extension: tools.filter((t) => getToolGroup(t.slot) === 'extension'),
+  };
+}
+
+function getWorkflowDecisionCopy(
+  groups: { core: Array<{ tool: ToolSummary | undefined; slot: StackToolSlot }>; secondary: Array<{ tool: ToolSummary | undefined; slot: StackToolSlot }>; extension: Array<{ tool: ToolSummary | undefined; slot: StackToolSlot }> },
+  lang: string,
+): string {
+  const { core, secondary, extension } = groups;
+  const coreNames = core.slice(0, 2).map((t) => t.tool?.name ?? t.slot.slug);
+  if (lang === 'en') {
+    if (core.length > 0 && extension.length > 0)
+      return `Core stack: ${coreNames.join(' + ')}. Add-ons depend on your deliverables. Extensions only when truly needed.`;
+    if (core.length > 0)
+      return `Core stack is enough to start. Add-ons depend on your actual usage.`;
+    if (secondary.length > 0 && core.length === 0)
+      return `No mandatory core here. These tools are useful depending on your workflow.`;
+    return `Choose based on your deliverables.`;
+  }
+  // French
+  if (core.length > 0 && extension.length > 0)
+    return `Socle recommandé : ${coreNames.join(' + ')}. Les compléments dépendent de tes livrables. Les extensions doivent répondre à un besoin précis.`;
+  if (core.length > 0)
+    return `Le socle suffit pour démarrer. Les compléments dépendent de ton usage réel.`;
+  if (secondary.length > 0 && core.length === 0)
+    return `Aucun socle obligatoire ici. Ces outils deviennent utiles selon ton mode de travail.`;
+  return `Choisis selon tes livrables.`;
 }
 
 function normalizeDecisionName(value: string): string {

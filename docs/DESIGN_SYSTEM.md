@@ -1196,18 +1196,31 @@ Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doi
 **Structure d'un bloc :**
 - Titre de famille de workflow : `Coder & versionner`, `Montrer au client`, `Documenter`.
 - Usage court, maximum une phrase.
-- Résumé lisible : `Socle : Y · Selon usage : Z · Extensions : N` (seules les catégories > 0 sont affichées).
-- Indicateur de compte `.sd-tools-count-indicator` : "6 sur 9 outils affichés" ou "9 outils affichés".
-- Grille de logos + labels à droite.
-- Statut discret sous le nom : `Socle`, `Selon usage`, `Extension` — **jamais** `Conditionnel`, `À challenger`.
+- Titre de famille à gauche, usage court, micro-texte décisionnel (`.sd-stack-card-decision`).
+- Groupes à droite : `Socle recommandé` · `Selon ton usage` · `Extensions` — chacun avec son label `.sd-tool-group-label`.
+- Outils rendus comme pills (`.sd-tool-pill`) : logo + nom, **pas de badge de statut par outil**.
+- Total discret `.sd-tools-total` en bas de la colonne droite : "9 outils dans cette étape".
+- **`.sd-tools-count-indicator` supprimé** — ne pas réintroduire.
 
 **Règle d'inventaire :**
 - Le `Stack Map` est l'inventaire. Ne pas ajouter de table, liste complète, inventaire séparé ou wall of cards sous le module.
-- Si une famille a 6 outils ou moins, afficher tout.
-- Si une famille a plus de 6 outils, afficher les 6 premiers dans l'ordre `Socle`, `Selon usage`, `Extension`, puis le bouton `.sd-expand-btn` ("Afficher les X outils restants ↓") avec `aria-expanded`.
+- Afficher Socle (tout) + 3 premiers Selon usage par défaut.
+- Le reste (secondaires > 3 et/ou extensions) s'affiche après expand.
+- Bouton `.sd-expand-btn` uniquement si des outils sont masqués. Libellé contextuel selon ce qui est caché.
+- **Ne pas afficher de badge de statut répété sur chaque outil** : le label de groupe porte déjà cette information.
+
+**Logique de groupement :**
+- `core/socle/essential/keep` → groupe `Socle recommandé`
+- `conditional/conditionnel/optional` + fallback → groupe `Selon ton usage`
+- `challenge/challenger/avoid/extension` + mots-clés rôle avancé → groupe `Extensions`
+
+**Micro-texte décisionnel (`.sd-stack-card-decision`) :**
+- Toujours présent, max 340px de large, 13px/400, couleur `#444440`.
+- Généré par `getWorkflowDecisionCopy()` selon la composition des groupes.
+- Jamais un résumé de comptage — toujours une phrase éditoriale orientée décision.
 
 **Style :**
 - Bloc calme : `#F4F4EF`, radius 28px, padding 36–40px, sans ombre.
 - Grille desktop : colonne gauche 0.75fr, colonne droite 1.25fr.
-- Tool item : logo 44px, nom 15px/600, statut 10px uppercase gris.
-- Mobile : une colonne, grille outils en 2 colonnes puis 1 colonne sous 430px.
+- Tool pill : height 36px, border `#E8E8E2`, radius 999px, logo 18px, nom 13px/500.
+- Mobile : une colonne, pills flex-wrap, `sd-stack-card-decision` max-width 100%.

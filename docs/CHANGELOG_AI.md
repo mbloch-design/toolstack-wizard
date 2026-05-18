@@ -2,6 +2,26 @@
 
 ---
 
+## 2026-05-18 — Sprint 53 : Workflow cards grouped by recommendation level
+
+### Objectif
+Remplacer la liste plate d'outils avec badge de statut par-outil dans les cartes de la stack map. Chaque carte affiche désormais trois groupes — Socle recommandé / Selon ton usage / Extensions — pour que le lecteur comprenne immédiatement quoi adopter, quoi activer selon son usage et quoi éviter par réflexe.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout de `getToolGroup()`, `groupToolsByRecommendation()`, `getWorkflowDecisionCopy()` ; remplacement du rendu de la liste plate par la structure groupée ; suppression de `.sd-tools-count-indicator` (résumé de comptage en haut) ; ajout du total discret en bas `.sd-tools-total` ; logique d'expansion progressive (socle + 3 secondaires visibles, reste sur expand).
+- `src/index.css` — ajout du bloc sprint avec `.sd-stack-card-decision`, `.sd-tool-group`, `.sd-tool-group-label`, `.sd-tool-grid`, `.sd-tool-pill`, `.sd-tools-total`.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du nouveau pattern.
+
+### Résultat
+- Les outils sont groupés visuellement par niveau de recommandation dans chaque card.
+- Les badges de statut par outil (`Socle`, `Selon usage`, `Extension`) sont supprimés des cartes workflow : le groupe-label porte l'information.
+- Un micro-texte éditorial (`sd-stack-card-decision`) sous la phrase de rôle résume la logique de choix pour cette étape.
+- L'indicateur "6 sur 9 outils affichés" en haut de grille est supprimé ; remplacé par "9 outils dans cette étape" discret en bas.
+- Bouton d'expansion uniquement quand des groupes sont masqués (secondaires > 3 ou extensions présentes).
+- 0 erreur de build, 0 erreur lint.
+
+---
+
 ## 2026-05-18 — Sprint 52 : Hero fact sheet refinement
 
 ### Objectif
