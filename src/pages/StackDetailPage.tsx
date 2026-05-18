@@ -931,6 +931,7 @@ const StackDetailPage = () => {
               const previewTools = getWorkflowPreviewTools(sortedTools);
               const hiddenCount = sortedTools.length - previewTools.length;
               const summary = getLayerDecisionSummary(step.tools);
+              const shouldWatchLayer = shouldShowWorkflowWatch(summary, step.tools.length);
               const isExpanded = expandedToolLayers.has(step.id);
               const groups = getWorkflowStatusGroups(sortedTools);
               return (
@@ -947,6 +948,11 @@ const StackDetailPage = () => {
                       `${step.tools.length} tool${step.tools.length > 1 ? "s" : ""} · ${summary.core} core · ${summary.conditional} conditional · ${summary.challenge} to challenge`,
                     )}
                   </p>
+                  {shouldWatchLayer && (
+                    <span className="sd-workflow-watch">
+                      {t("À surveiller", "Watch")}
+                    </span>
+                  )}
 
                   <div className="sd-workflow-tools" aria-label={t("Aperçu des outils", "Tool preview")}>
                     {previewTools.map(({ slot, tool }) => {
@@ -1460,6 +1466,10 @@ function getLayerDecisionSummary(items: { slot: StackToolSlot }[]) {
     return acc;
   }, { core: 0, conditional: 0, challenge: 0 });
 }
+function shouldShowWorkflowWatch(summary: { core: number; conditional: number; challenge: number }, total: number): boolean {
+  if (total === 0) return false;
+  return summary.conditional + summary.challenge >= summary.core || total > 5;
+}
 function getLayerPurpose(layerId: string, locale: "fr" | "en"): string {
   const purposes: Record<string, { fr: string; en: string }> = {
     sell: { fr: "Capturer les demandes, organiser les rendez-vous et qualifier les missions.", en: "Capture requests, organize calls, and qualify projects." },
@@ -1510,35 +1520,35 @@ type WorkflowStep = WorkflowStepDefinition & {
 
 const WORKFLOW_STEPS_BY_STACK: Record<string, WorkflowStepDefinition[]> = {
   "architecte-interieur": [
-    { id: "brief", titleFr: "Brief", titleEn: "Brief", purposeFr: "Cadrer la mission, les contraintes et les décisions de départ.", purposeEn: "Frame the mission, constraints, and starting decisions.", match: ["brief", "ia structure", "projet / décisions", "fichiers / emails", "rendez-vous"], slugs: ["notion", "google-workspace", "chatgpt", "calendly"] },
-    { id: "moodboard", titleFr: "Moodboard", titleEn: "Moodboard", purposeFr: "Rassembler références, ambiances, matières et directions visuelles.", purposeEn: "Gather references, moods, materials, and visual directions.", match: ["moodboard", "recherche visuelle", "bibliothèque images", "exploration visuelle", "ia ambiance", "retouche image"], slugs: ["milanote", "pinterest", "eagle", "krea-ai", "midjourney", "adobe-photoshop", "indesign"] },
-    { id: "plans", titleFr: "Plans", titleEn: "Plans", purposeFr: "Produire les documents techniques et les échanges DWG.", purposeEn: "Produce technical documents and DWG exchanges.", match: ["plans", "2d", "dwg", "layout"], slugs: ["layout-sketchup", "autocad-lt"] },
-    { id: "3d", titleFr: "3D", titleEn: "3D", purposeFr: "Construire le volume, les variantes et les détails récurrents.", purposeEn: "Build volumes, variants, and recurring details.", match: ["3d", "modélisation", "plugin", "hygiène", "géométrie", "formes complexes", "bim", "imports"], slugs: ["sketchup-pro", "fredo6-bundle", "profile-builder-3", "transmutr", "skatter", "cleanup3", "solid-inspector2", "rhino", "revit", "archicad", "blender"] },
-    { id: "rendu", titleFr: "Rendu", titleEn: "Render", purposeFr: "Présenter clairement le projet et ses ambiances.", purposeEn: "Present the project and its atmosphere clearly.", match: ["rendu", "image premium", "vidéo / ambiance", "upscale"], slugs: ["d5-render", "enscape", "v-ray", "twinmotion", "magnific-ai", "firefly"] },
-    { id: "sourcing", titleFr: "Sourcing", titleEn: "Sourcing", purposeFr: "Organiser matières, mobilier, fournisseurs et alternatives.", purposeEn: "Organize materials, furniture, suppliers, and alternatives.", match: ["sourcing", "ff&e"], slugs: ["programa"] },
-    { id: "budget", titleFr: "Budget", titleEn: "Budget", purposeFr: "Suivre les coûts et arbitrer sans perdre le fil.", purposeEn: "Track costs and make trade-offs without losing the thread.", match: ["budget", "projet / décisions"], slugs: ["notion", "programa"] },
-    { id: "validation", titleFr: "Validation", titleEn: "Approval", purposeFr: "Sécuriser les retours client et les décisions signées.", purposeEn: "Secure client feedback and signed decisions.", match: ["validation", "explication client", "signature"], slugs: ["loom", "yousign", "notion"] },
-    { id: "facturation", titleFr: "Facturation", titleEn: "Invoicing", purposeFr: "Encaisser proprement et garder l'administratif clair.", purposeEn: "Get paid cleanly and keep admin clear.", match: ["facturation", "compte pro", "compta"], slugs: ["indy", "qonto", "shine", "pennylane"] },
+    { id: "brief", titleFr: "Brief", titleEn: "Brief", purposeFr: "Cadrer la mission.", purposeEn: "Frame the mission.", match: ["brief", "ia structure", "projet / décisions", "fichiers / emails", "rendez-vous"], slugs: ["notion", "google-workspace", "chatgpt", "calendly"] },
+    { id: "moodboard", titleFr: "Moodboard", titleEn: "Moodboard", purposeFr: "Aligner l'intention visuelle.", purposeEn: "Align the visual intent.", match: ["moodboard", "recherche visuelle", "bibliothèque images", "exploration visuelle", "ia ambiance", "retouche image"], slugs: ["milanote", "pinterest", "eagle", "krea-ai", "midjourney", "adobe-photoshop", "indesign"] },
+    { id: "plans", titleFr: "Plans", titleEn: "Plans", purposeFr: "Produire les documents techniques.", purposeEn: "Produce technical documents.", match: ["plans", "2d", "dwg", "layout"], slugs: ["layout-sketchup", "autocad-lt"] },
+    { id: "3d", titleFr: "3D", titleEn: "3D", purposeFr: "Construire le volume.", purposeEn: "Build the volume.", match: ["3d", "modélisation", "plugin", "hygiène", "géométrie", "formes complexes", "bim", "imports"], slugs: ["sketchup-pro", "fredo6-bundle", "profile-builder-3", "transmutr", "skatter", "cleanup3", "solid-inspector2", "rhino", "revit", "archicad", "blender"] },
+    { id: "rendu", titleFr: "Rendu", titleEn: "Render", purposeFr: "Présenter clairement.", purposeEn: "Present clearly.", match: ["rendu", "image premium", "vidéo / ambiance", "upscale"], slugs: ["d5-render", "enscape", "v-ray", "twinmotion", "magnific-ai", "firefly"] },
+    { id: "sourcing", titleFr: "Sourcing", titleEn: "Sourcing", purposeFr: "Organiser matières et mobilier.", purposeEn: "Organize materials and furniture.", match: ["sourcing", "ff&e"], slugs: ["programa"] },
+    { id: "budget", titleFr: "Budget", titleEn: "Budget", purposeFr: "Suivre les coûts.", purposeEn: "Track costs.", match: ["budget", "projet / décisions"], slugs: ["notion", "programa"] },
+    { id: "validation", titleFr: "Validation", titleEn: "Approval", purposeFr: "Sécuriser les décisions client.", purposeEn: "Secure client decisions.", match: ["validation", "explication client", "signature"], slugs: ["loom", "yousign", "notion"] },
+    { id: "facturation", titleFr: "Facturation", titleEn: "Invoicing", purposeFr: "Encaisser proprement.", purposeEn: "Get paid cleanly.", match: ["facturation", "compte pro", "compta"], slugs: ["indy", "qonto", "shine", "pennylane"] },
   ],
   "developpeur-freelance-shipper": [
-    { id: "coder", titleFr: "Coder", titleEn: "Code", purposeFr: "Produire le travail sans installer une stack produit complète.", purposeEn: "Produce the work without installing a full product stack.", match: ["code"], slugs: ["chatgpt"] },
-    { id: "versionner", titleFr: "Versionner", titleEn: "Version", purposeFr: "Garder une base propre, partageable et livrable.", purposeEn: "Keep a clean, shareable, shippable base.", match: ["repo", "github"], slugs: ["github"] },
-    { id: "preview", titleFr: "Preview client", titleEn: "Client preview", purposeFr: "Montrer une version réelle sans envoyer de zip.", purposeEn: "Show a real version without sending a zip.", match: ["preview", "déploiement", "deployment"], slugs: ["vercel"] },
-    { id: "documenter", titleFr: "Documenter", titleEn: "Document", purposeFr: "Centraliser brief, décisions et suivi client.", purposeEn: "Centralize brief, decisions, and client tracking.", match: ["base", "workspace", "documentation"], slugs: ["notion"] },
-    { id: "encaisser", titleFr: "Encaisser", titleEn: "Get paid", purposeFr: "Facturer et encaisser sans couche finance lourde.", purposeEn: "Invoice and get paid without a heavy finance layer.", match: ["paiement", "payment"], slugs: ["stripe"] },
-    { id: "suivre", titleFr: "Suivre", titleEn: "Track", purposeFr: "Suivre les tâches seulement quand le volume le justifie.", purposeEn: "Track tasks only when volume justifies it.", match: ["projet", "tasks", "tâches"], slugs: [] },
-    { id: "ia", titleFr: "IA", titleEn: "AI", purposeFr: "Accélérer debug, refactor et recherche sans multiplier les copilotes.", purposeEn: "Speed up debugging, refactoring, and research without multiplying copilots.", match: ["ia", "ai", "assistant"], slugs: ["chatgpt"] },
-    { id: "automatiser", titleFr: "Automatiser", titleEn: "Automate", purposeFr: "Automatiser uniquement les gestes déjà répétés.", purposeEn: "Automate only steps that are already repeated.", match: ["automatisation", "automation"], slugs: [] },
+    { id: "coder", titleFr: "Coder", titleEn: "Code", purposeFr: "Produire le projet.", purposeEn: "Produce the project.", match: ["code"], slugs: ["chatgpt"] },
+    { id: "versionner", titleFr: "Versionner", titleEn: "Version", purposeFr: "Garder un historique propre.", purposeEn: "Keep a clean history.", match: ["repo", "github"], slugs: ["github"] },
+    { id: "preview", titleFr: "Preview client", titleEn: "Client preview", purposeFr: "Montrer une version accessible.", purposeEn: "Show an accessible version.", match: ["preview", "déploiement", "deployment"], slugs: ["vercel"] },
+    { id: "documenter", titleFr: "Documenter", titleEn: "Document", purposeFr: "Centraliser specs et décisions.", purposeEn: "Centralize specs and decisions.", match: ["base", "workspace", "documentation"], slugs: ["notion"] },
+    { id: "encaisser", titleFr: "Encaisser", titleEn: "Get paid", purposeFr: "Facturer et recevoir les paiements.", purposeEn: "Invoice and receive payments.", match: ["paiement", "payment"], slugs: ["stripe"] },
+    { id: "suivre", titleFr: "Suivre", titleEn: "Track", purposeFr: "Organiser les tâches.", purposeEn: "Organize tasks.", match: ["projet", "tasks", "tâches"], slugs: [] },
+    { id: "ia", titleFr: "IA", titleEn: "AI", purposeFr: "Accélérer sans multiplier les copilotes.", purposeEn: "Speed up without multiplying copilots.", match: ["ia", "ai", "assistant"], slugs: ["chatgpt"] },
+    { id: "automatiser", titleFr: "Automatiser", titleEn: "Automate", purposeFr: "Éviter les répétitions utiles.", purposeEn: "Avoid useful repetitions.", match: ["automatisation", "automation"], slugs: [] },
   ],
   "designer-freelance-solo": [
-    { id: "creer", titleFr: "Créer", titleEn: "Create", purposeFr: "Produire maquettes, composants, visuels et directions.", purposeEn: "Produce mockups, components, visuals, and directions.", match: ["design", "visuels", "créative", "vectoriel", "photo", "ia rédaction"], slugs: ["figma", "figma-tokens", "figma-iconify", "figma-stark", "canva", "adobe-photoshop", "adobe-illustrator", "adobe-lightroom", "chatgpt"] },
-    { id: "presenter", titleFr: "Présenter", titleEn: "Present", purposeFr: "Faire comprendre une piste et recueillir un retour clair.", purposeEn: "Make a direction understandable and collect clear feedback.", match: ["atelier", "prototype", "feedback"], slugs: ["miro", "framer", "loom"] },
-    { id: "decliner", titleFr: "Décliner", titleEn: "Adapt", purposeFr: "Transformer une direction en formats utiles sans recréer un système.", purposeEn: "Turn a direction into useful formats without recreating a system.", match: ["visuels rapides", "plugin"], slugs: ["canva", "figma-iconify", "figma-tokens"] },
-    { id: "livrer", titleFr: "Livrer", titleEn: "Deliver", purposeFr: "Transmettre fichiers, specs et éléments exploitables.", purposeEn: "Send files, specs, and usable assets.", match: ["stockage", "handoff", "documentation"], slugs: ["google-drive", "zeplin", "notion"] },
-    { id: "facturer", titleFr: "Facturer", titleEn: "Invoice", purposeFr: "Identifier si un outil dédié manque vraiment au workflow.", purposeEn: "Identify whether a dedicated tool is truly missing from the workflow.", match: ["facturation", "paiement"], slugs: [] },
-    { id: "organiser", titleFr: "Organiser", titleEn: "Organize", purposeFr: "Garder briefs, décisions, assets et comptes rendus au même endroit.", purposeEn: "Keep briefs, decisions, assets, and recaps in one place.", match: ["documentation", "stockage"], slugs: ["notion", "google-drive"] },
-    { id: "prospecter", titleFr: "Prospecter", titleEn: "Prospect", purposeFr: "Ne pas ajouter de CRM tant que le flux commercial reste simple.", purposeEn: "Avoid adding CRM while sales flow remains simple.", match: ["prospection", "crm"], slugs: [] },
-    { id: "automatiser", titleFr: "Automatiser", titleEn: "Automate", purposeFr: "Automatiser seulement les livrables et relances répétées.", purposeEn: "Automate only repeated deliverables and follow-ups.", match: ["automatisation"], slugs: [] },
+    { id: "creer", titleFr: "Créer", titleEn: "Create", purposeFr: "Produire les visuels.", purposeEn: "Produce visuals.", match: ["design", "visuels", "créative", "vectoriel", "photo", "ia rédaction"], slugs: ["figma", "figma-tokens", "figma-iconify", "figma-stark", "canva", "adobe-photoshop", "adobe-illustrator", "adobe-lightroom", "chatgpt"] },
+    { id: "presenter", titleFr: "Présenter", titleEn: "Present", purposeFr: "Montrer les pistes.", purposeEn: "Show directions.", match: ["atelier", "prototype", "feedback"], slugs: ["miro", "framer", "loom"] },
+    { id: "decliner", titleFr: "Décliner", titleEn: "Adapt", purposeFr: "Préparer les formats.", purposeEn: "Prepare formats.", match: ["visuels rapides", "plugin"], slugs: ["canva", "figma-iconify", "figma-tokens"] },
+    { id: "livrer", titleFr: "Livrer", titleEn: "Deliver", purposeFr: "Transmettre proprement.", purposeEn: "Hand off cleanly.", match: ["stockage", "handoff", "documentation"], slugs: ["google-drive", "zeplin", "notion"] },
+    { id: "facturer", titleFr: "Facturer", titleEn: "Invoice", purposeFr: "Encaisser.", purposeEn: "Get paid.", match: ["facturation", "paiement"], slugs: [] },
+    { id: "organiser", titleFr: "Organiser", titleEn: "Organize", purposeFr: "Ranger fichiers et décisions.", purposeEn: "Organize files and decisions.", match: ["documentation", "stockage"], slugs: ["notion", "google-drive"] },
+    { id: "prospecter", titleFr: "Prospecter", titleEn: "Prospect", purposeFr: "Suivre les opportunités.", purposeEn: "Track opportunities.", match: ["prospection", "crm"], slugs: [] },
+    { id: "automatiser", titleFr: "Automatiser", titleEn: "Automate", purposeFr: "Réduire les tâches répétitives.", purposeEn: "Reduce repetitive tasks.", match: ["automatisation"], slugs: [] },
   ],
 };
 

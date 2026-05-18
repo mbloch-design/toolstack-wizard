@@ -1089,3 +1089,18 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 
 **Règle de non-redondance :**
 `02 — OUTILS` est un seul module. Ne pas ajouter d'inventaire séparé, de table, de wall of cards ou de matrice décisionnelle sous la grille. Les détails complets vivent dans les nodes expansibles.
+
+**Langage de statut :**
+- Utiliser uniquement `Socle`, `Conditionnel`, `À challenger`.
+- Ne pas réintroduire `Essentiel` / `Optionnel` dans les pages stack detail.
+- Les statuts doivent rester du texte lisible, jamais un simple code couleur.
+
+**Progressive disclosure :**
+- Un seul node est ouvert par défaut : celui qui porte le plus de Socle, ou le premier node métier prioritaire.
+- Les autres nodes montrent seulement la forme de la stack : nom d'étape, usage, comptes et 1 à 3 outils.
+- Le bouton `Voir le détail` reste un vrai `<button>` avec `aria-expanded` et `aria-controls`.
+
+**Poids de workflow :**
+- Afficher un marqueur discret `À surveiller` seulement si l'étape est chargée : conditionnel + à challenger >= socle, ou plus de 5 outils.
+- Ce marqueur indique une zone à vérifier, pas une alerte forte.
+- Ne pas répéter ici la logique budget, risques ou calibrage : ces informations appartiennent à leurs sections.

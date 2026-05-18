@@ -1711,3 +1711,20 @@ Aligner le wording de `02 — OUTILS` sur le modèle mental `Stack by Workflow` 
 ### Résultat
 - Le module reste unique : nodes workflow + disclosure intégré.
 - Aucun inventaire séparé, table ou matrice décisionnelle n'est rendu dans `02 — OUTILS`.
+
+---
+
+## 2026-05-18 — Sprint 41 : Stack detail structurée par workflow
+
+### Objectif
+Finaliser les pages détail stack autour de la lecture `profil → workflow → décisions`, avec `02 — OUTILS` comme module unique et non redondant.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — objectifs courts par étape pour architecte intérieur, dev freelance et designer solo ; ajout du signal discret `À surveiller` sur les nodes trop chargés en conditionnel/challenge.
+- `src/index.css` — style du marqueur workflow `À surveiller`.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du pattern final.
+
+### Résultat
+- La section outils reste une seule grille `Stack by Workflow`, avec détails accessibles dans chaque node.
+- Les outils restent tous accessibles via disclosure, sans inventaire complet séparé ni table-first layout.
+- Le poids d'une étape est lisible via le résumé de compte et le marqueur `À surveiller` quand il apporte une vraie information.
