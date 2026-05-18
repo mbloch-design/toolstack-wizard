@@ -13020,3 +13020,63 @@
     white-space: normal;
   }
 }
+
+/* Sprint — Hero decision dashboard (2026-05-18) */
+/* Compact repères grid: replaces the 3 large fit cards in the hero */
+
+.sd-reperes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 36px;
+  max-width: 760px;
+  border: 1px solid #DADAD4;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #DADAD4; /* gap color via background */
+}
+
+.sd-repere-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 16px 15px;
+  background: #FFFFFF;
+}
+
+.sd-repere-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #9A9A92;
+  line-height: 1;
+}
+
+.sd-repere-value {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+/* CTA spacing after repères */
+.sd-reperes-grid + .sd-hero-cta {
+  margin-top: 28px;
+}
+
+/* Mobile: 2 columns then 1 */
+@media (max-width: 768px) {
+  .sd-reperes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
+  }
+}
+@media (max-width: 430px) {
+  .sd-reperes-grid {
+    grid-template-columns: 1fr;
+  }
+}

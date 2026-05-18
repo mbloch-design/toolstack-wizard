@@ -2,6 +2,28 @@
 
 ---
 
+## 2026-05-18 — Stack detail : hero decision dashboard (repères compact + panel simplifié)
+
+### Objectif
+Simplifier le hero des fiches stack en un "decision dashboard" lisible en 5 secondes. Remplacement des 3 grandes cartes (POUR QUI / CE QUE ÇA COUVRE / À ÉVITER SI) par une grille compacte de 6 repères. Simplification du panel droit pour éviter les doublons.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — nouveau composant repères, `getHeroDecisionMap` retourne `reperes` + `socleSlugs`, panel droit allégé, helper `getSocleTools`, nettoyage imports inutilisés.
+- `src/index.css` — nouveau bloc sprint avec classes `.sd-reperes-grid`, `.sd-repere-item`, `.sd-repere-label`, `.sd-repere-value`.
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — règle hero decision dashboard mise à jour.
+
+### Détails
+- Les 3 cartes `stack-fit-card--hero` (POUR QUI / CE QUE ÇA COUVRE / À ÉVITER SI) sont supprimées du hero.
+- Remplacement par `.sd-reperes-grid` : grille 3×2 de data points (Pour qui · Workflow · Budget · Outils · Niveau · À surveiller).
+- Contenus spécifiques pour 4 stacks : `designer-freelance-solo`, `developpeur-freelance-shipper`, `sites-ia-automation`, `architecte-interieur`. Fallback dynamique pour les autres.
+- Panel droit : suppression de la grille facts (Profil/Outils/Niveau/Complexité) — ces infos sont maintenant dans les repères. Seuls Budget cible + Socle (logos) + À surveiller restent.
+- Helper `getSocleTools` : utilise `socleSlugs` éditoriales si définies, sinon remonte les outils Socle de la stack.
+- `getHeroDecisionMap` refactorisé pour retourner un type `HeroDecisionMap` avec `reperes[]` et `socleSlugs[]`.
+- Imports inutilisés supprimés : `getStackDerivedFields`, `getStackObjectives`.
+
+---
+
 ## 2026-05-17 — Stack detail : système éditorial, logos et lignes pointillées
 
 ### Objectif

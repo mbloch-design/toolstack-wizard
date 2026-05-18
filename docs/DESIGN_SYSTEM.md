@@ -73,15 +73,16 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 ---
 
 
-## Pattern fiche stack — Hero decision map
+## Pattern fiche stack — Hero decision dashboard
 
-Le hero remplace la section `VUE D'ENSEMBLE` sur les fiches stack detail. Il doit présenter la promesse centrale et qualifier l'usage sans retarder l'information utile.
+Le hero est un tableau de décision. Il répond en 5 secondes à 8 questions : pour qui, workflow, budget, nombre d'outils, niveau, point de vigilance, outils clés, promesse centrale.
 
-- H1 fort : `clamp(56px, 6vw, 104px)`, line-height `0.92`, letter-spacing `-0.065em`.
+- **Règle fondamentale** : une information ne doit apparaître qu'une seule fois. Pas de duplication entre la colonne gauche (repères) et le panel droit.
+- H1 fort : `clamp(56px, 6vw, 104px)`, line-height `0.92`, letter-spacing `-0.065em`. Peut contenir un saut de ligne éditorial (`\n`).
 - Promesse courte : `clamp(19px, 1.4vw, 23px)`, line-height `1.42`, max-width `760px`.
-- Trois cartes standards dans le hero : `POUR QUI`, `CE QUE ÇA COUVRE`, `À ÉVITER SI`.
-- Les cartes sont blanches, bordure `#DADAD4`, radius 18px, padding 20px, sans hauteur minimale forcée.
-- Les chips workflow et la `Note ToolTrim` ne doivent pas apparaître entre hero et outils; ces détails appartiennent à `02 — OUTILS`, au budget ou à la FAQ.
+- **Grille repères** (`.sd-reperes-grid`) : remplace les 3 grandes cartes. 6 data points en grille 3×2 — Pour qui · Workflow · Budget · Outils · Niveau · À surveiller. Bordure `#DADAD4`, radius 14px, fond blanc, labels `10px uppercase #9A9A92`, valeurs `14px/600 #222222`.
+- **Panel droit** (`.sd-snapshot`) : Budget cible uniquement + Socle (logos, max 5) + À surveiller. Ne pas répéter Profil/Outils/Niveau/Complexité (déjà dans les repères).
+- **Section Vue d'ensemble** : supprimée. Ne pas créer de section `apercu` ou `overview` entre le hero et les outils.
 - La navigation d'ancre commence à `Outils`.
 
 ---
