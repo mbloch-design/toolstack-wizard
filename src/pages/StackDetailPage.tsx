@@ -295,23 +295,23 @@ const DEV_FREELANCE_SHIPPER: StackEditorialContent = {
   verdictShort:    "",
   verdictShortEn:  "",
 
-  overviewIntro:   "Le besoin n'est pas de recréer une équipe produit. Le besoin, c'est de coder proprement, montrer vite, garder une trace des décisions et encaisser sans multiplier les abonnements.",
-  overviewIntroEn: "The goal is not to recreate a product team. The goal is to code cleanly, show progress fast, keep decision history, and get paid without multiplying subscriptions.",
+  overviewIntro:   "Coder proprement. Montrer vite. Garder une trace. Encaisser sans empiler les abonnements.",
+  overviewIntroEn: "Code cleanly. Show progress fast. Keep a trace. Get paid without stacking subscriptions.",
 
-  overviewServesLabel:    "Elle sert à",
-  overviewServesLabelEn:  "It's for",
+  overviewServesLabel:    "Pour qui",
+  overviewServesLabelEn:  "Who it's for",
   overviewServes:    "Développeurs freelances qui livrent des sites, apps, MVP ou missions client sans équipe produit complète.",
   overviewServesEn:  "Freelance developers shipping websites, apps, MVPs, or client projects without a full product team.",
 
-  overviewAvoidsLabel:    "Elle évite",
-  overviewAvoidsLabelEn:  "It avoids",
+  overviewAvoidsLabel:    "Ce que ça évite",
+  overviewAvoidsLabelEn:  "What it avoids",
   overviewAvoids:    "Payer trop tôt des outils d'équipe, un workflow projet trop lourd ou plusieurs copilotes IA qui font doublon.",
   overviewAvoidsEn:  "Paying too early for team tools, an overweight project workflow, or several overlapping AI copilots.",
 
-  overviewNotForLabel:    "Elle n'est pas faite pour",
-  overviewNotForLabelEn:  "It's not for",
-  overviewNotFor:    "Les équipes produit structurées avec QA, staging avancé, monitoring complexe et plusieurs environnements critiques.",
-  overviewNotForEn:  "Structured product teams with QA, advanced staging, complex monitoring, and several critical environments.",
+  overviewNotForLabel:    "Quand passer plus lourd",
+  overviewNotForLabelEn:  "When to go heavier",
+  overviewNotFor:    "Si tu travailles avec QA, staging avancé, monitoring complexe ou plusieurs environnements critiques.",
+  overviewNotForEn:  "If you work with QA, advanced staging, complex monitoring, or several critical environments.",
 
   priority: {
     essential:   ["GitHub pour versionner", "Vercel pour partager une preview", "Stripe pour encaisser"],
@@ -693,7 +693,6 @@ const StackDetailPage = () => {
     ? t("Une stack légère pour coder, partager une preview client, documenter les décisions et encaisser sans monter une équipe produit à toi tout seul.", "A lightweight stack to code, share a client preview, document decisions, and get paid without building a product team by yourself.")
     : t(stack.subtitle, stack.subtitleEn);
   const derived = getStackDerivedFields(stack);
-  const expertTips = getExpertTips(stack);
   const overviewTitle = getOverviewTitle(stack, lang);
   const overviewIntro = getOverviewIntro(stack, editorial, lang);
   const overviewCards = getOverviewCards(stack, editorial, lang);
@@ -714,7 +713,6 @@ const StackDetailPage = () => {
   const watchText = String(watchTextRaw).split(".")[0] + (String(watchTextRaw).includes(".") ? "." : "");
 
   const stackTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
-  const usageChips = getUsageChips(stack, lang);
   const tooLightRows = lang === "fr"
     ? ["Tu gères plusieurs projets clients en parallèle.", "Tu as besoin de QA, staging ou monitoring avancé.", "Tu travailles avec plusieurs devs.", "Tu dois suivre des specs produit lourdes."]
     : ["You manage several client projects in parallel.", "You need advanced QA, staging, or monitoring.", "You work with several developers.", "You need to track heavy product specs."];
@@ -882,13 +880,10 @@ const StackDetailPage = () => {
           <p className="sd-overview-intro">
             {overviewIntro}
           </p>
-
-          {usageChips.length > 0 && (
-            <div className="sd-usage-chip-row sd-usage-chip-row--overview" aria-label={t("Usages couverts", "Covered use cases")}>
-              {usageChips.map((chip) => (
-                <span key={chip} className="sd-usage-chip">{chip}</span>
-              ))}
-            </div>
+          {stack.slug === "developpeur-freelance-shipper" && (
+            <p className="sd-overview-flowline">
+              {t("Workflow couvert : coder → montrer → documenter → encaisser.", "Covered workflow: code → show → document → get paid.")}
+            </p>
           )}
 
           {/* 3-col: sert à / évite / pas faite pour */}
@@ -900,20 +895,6 @@ const StackDetailPage = () => {
               </div>
             ))}
           </div>
-
-          {/* Expert note */}
-          {expertTips.length > 0 && (
-            <div className="sd-expert-note">
-              <span className="sd-expert-note-label">{t("Note ToolTrim", "ToolTrim note")}</span>
-              <p className="sd-expert-note-text">{t(expertTips[0].detail, expertTips[0].detailEn)}</p>
-              {expertTips.slice(1).map((tip) => (
-                <div key={tip.title} className="sd-expert-note-tip">
-                  <span className="sd-expert-note-tip-label">{t(tip.title, tip.titleEn)} : </span>
-                  {t(tip.detail, tip.detailEn)}
-                </div>
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
@@ -1466,21 +1447,6 @@ function getLayerPurpose(layerId: string, locale: "fr" | "en"): string {
   const purpose = purposes[layerId] ?? purposes.other;
   return locale === "fr" ? purpose.fr : purpose.en;
 }
-function getUsageChips(stack: StackGuide, locale: "fr" | "en"): string[] {
-  if (stack.slug === "architecte-interieur") {
-    return locale === "fr"
-      ? ["Moodboard", "Plans 2D", "3D", "Rendus", "Sourcing", "Budget", "Validation client", "Facturation"]
-      : ["Moodboard", "2D plans", "3D", "Renders", "Sourcing", "Budget", "Client approval", "Invoicing"];
-  }
-  if (stack.slug === "developpeur-freelance-shipper") {
-    return locale === "fr"
-      ? ["Coder", "Versionner", "Preview client", "Documenter", "Encaisser", "Suivre", "IA", "Automatiser"]
-      : ["Code", "Version", "Client preview", "Document", "Get paid", "Track", "AI", "Automate"];
-  }
-  // objectives is a derived field (not on StackGuide directly); compute it safely
-  return getStackObjectives(stack).slice(0, 7);
-}
-
 interface WorkflowStepDefinition {
   id: string;
   titleFr: string;
@@ -1756,23 +1722,34 @@ function getOverviewIntro(stack: StackGuide, editorial: StackEditorialContent, l
   return locale === "fr" ? editorial.overviewIntro : editorial.overviewIntroEn;
 }
 function getOverviewCards(stack: StackGuide, editorial: StackEditorialContent, locale: "fr" | "en") {
+  const labels = locale === "fr"
+    ? {
+        serves: "POUR QUI",
+        avoids: "CE QUE ÇA ÉVITE",
+        notFor: "QUAND PASSER PLUS LOURD",
+      }
+    : {
+        serves: "WHO IT'S FOR",
+        avoids: "WHAT IT AVOIDS",
+        notFor: "WHEN TO GO HEAVIER",
+      };
   if (stack.slug === "architecte-interieur") {
     return locale === "fr"
       ? [
-          { label: "ELLE SERT À", text: "Architectes d’intérieur indépendants, décorateurs, studios résidentiels, retail léger et projets avec sourcing mobilier ou matières." },
-          { label: "ELLE ÉVITE", text: "Payer trop tôt une stack BIM, plusieurs moteurs de rendu et des plugins jamais maîtrisés." },
-          { label: "ELLE N’EST PAS FAITE POUR", text: "Les projets déjà en BIM lourd, avec bureaux d’études, marchés publics ou coordination technique avancée." },
+          { label: labels.serves, text: "Architectes d’intérieur indépendants, décorateurs, studios résidentiels, retail léger et projets avec sourcing mobilier ou matières." },
+          { label: labels.avoids, text: "Payer trop tôt une stack BIM, plusieurs moteurs de rendu et des plugins jamais maîtrisés." },
+          { label: labels.notFor, text: "Les projets déjà en BIM lourd, avec bureaux d’études, marchés publics ou coordination technique avancée." },
         ]
       : [
-          { label: "BUILT FOR", text: "Independent interior architects, decorators, residential studios, light retail, and projects with furniture or material sourcing." },
-          { label: "IT AVOIDS", text: "Paying too early for a BIM stack, multiple render engines, and plugins that never become mastered." },
-          { label: "NOT FOR", text: "Projects already in heavy BIM, with engineering offices, public tenders, or advanced technical coordination." },
+          { label: labels.serves, text: "Independent interior architects, decorators, residential studios, light retail, and projects with furniture or material sourcing." },
+          { label: labels.avoids, text: "Paying too early for a BIM stack, multiple render engines, and plugins that never become mastered." },
+          { label: labels.notFor, text: "Projects already in heavy BIM, with engineering offices, public tenders, or advanced technical coordination." },
         ];
   }
   return [
-    { label: locale === "fr" ? editorial.overviewServesLabel : editorial.overviewServesLabelEn, text: locale === "fr" ? editorial.overviewServes : editorial.overviewServesEn },
-    { label: locale === "fr" ? editorial.overviewAvoidsLabel : editorial.overviewAvoidsLabelEn, text: locale === "fr" ? editorial.overviewAvoids : editorial.overviewAvoidsEn },
-    { label: locale === "fr" ? editorial.overviewNotForLabel : editorial.overviewNotForLabelEn, text: locale === "fr" ? editorial.overviewNotFor : editorial.overviewNotForEn },
+    { label: labels.serves, text: locale === "fr" ? editorial.overviewServes : editorial.overviewServesEn },
+    { label: labels.avoids, text: locale === "fr" ? editorial.overviewAvoids : editorial.overviewAvoidsEn },
+    { label: labels.notFor, text: locale === "fr" ? editorial.overviewNotFor : editorial.overviewNotForEn },
   ];
 }
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {

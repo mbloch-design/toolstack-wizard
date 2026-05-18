@@ -1762,3 +1762,20 @@ Remplacer les nodes workflow trop interactifs par une carte de stack plus calme 
 - `02 — OUTILS` affiche `La carte de la stack.`
 - Les outils restent tous accessibles dans les familles de workflow, sans inventaire séparé ni table.
 - Les statuts restent `Socle`, `Conditionnel`, `À challenger`, lisibles sans code couleur.
+
+---
+
+## 2026-05-18 — Sprint 44 : Vue d'ensemble simplifiée
+
+### Objectif
+Réduire `01 — VUE D'ENSEMBLE` à son rôle principal : qualifier rapidement si la stack correspond à la façon de travailler de l'utilisateur.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — suppression du rendu des chips workflow et de la note ToolTrim dans l'overview ; labels de qualification standardisés.
+- `src/index.css` — ajout d'une ligne workflow légère et réduction de l'espacement avant les trois blocs.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du rôle limité de l'overview.
+
+### Résultat
+- Plus de bloc `Note ToolTrim` dans `Vue d'ensemble`.
+- Plus de chips workflow redondants avant `La carte de la stack`.
+- Les trois blocs restent centrés sur `Pour qui`, `Ce que ça évite`, `Quand passer plus lourd`.

@@ -1107,13 +1107,19 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 
 **Structure informationnelle :**
 - Hero : cible, promesse courte, budget cible, niveau, fit / avoid.
-- Vue d'ensemble : sens du workflow et contexte d'usage.
+- Vue d'ensemble : qualification rapide uniquement. Elle répond à “est-ce aligné avec ma façon de travailler ?”.
 - Outils : étapes de workflow et outils uniquement.
 - Budget : logique de coût, plans et seuils d'upgrade.
 - Risques : erreurs et scénarios d'overbuild.
 - Calibrage : seuils où la stack devient trop légère ou trop lourde.
 
 Sur les pages stack detail, éviter les formulations de type “base recommandée divisée par usages”. La page doit se lire comme une fiche de décision workflow-first, pas comme un inventaire.
+
+**Vue d'ensemble :**
+- Utiliser un titre court, une intro courte et trois blocs de qualification.
+- Ne pas afficher de chips workflow dans cette section : la carte de la stack porte déjà cette lecture.
+- Ne pas afficher de `Note ToolTrim`, astuce d'implémentation ou réglage outil dans l'overview.
+- Les conseils pratiques doivent vivre dans les blocs workflow, le budget ou la FAQ selon leur rôle.
 
 
 ## Stack detail `Stack Map`

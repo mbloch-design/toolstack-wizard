@@ -11220,11 +11220,19 @@
   margin-top: 24px;
   margin-bottom: 0;
 }
+.sd-overview-flowline {
+  margin: 16px 0 0;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #222222;
+}
 .sd-overview-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 48px;
+  margin-top: 40px;
 }
 .sd-overview-col {
   min-height: 180px;
