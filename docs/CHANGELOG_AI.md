@@ -1796,3 +1796,20 @@ Transformer `03 — BUDGET` en aide à la décision plutôt qu'en tableau de pri
 - Le budget répond à `Combien payer, et pour quoi ?`.
 - La table `Budget minimal / recommandé / à surveiller` n'est plus le contenu principal.
 - Le CTA `Auditer ma stack` apparaît après les seuils pour guider l'action.
+
+---
+
+## 2026-05-18 — Sprint 46 : Vue d'ensemble comme qualification
+
+### Objectif
+Réécrire `01 — VUE D'ENSEMBLE` pour les pages stack clés afin qu'elle réponde à `Est-ce que cette stack correspond à ma façon de travailler ?`, sans répéter le hero ni la carte des outils.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — titres, intros et blocs de qualification dédiés pour dev freelance, sites IA & automation, designer freelance solo et architecte intérieur.
+- `src/index.css` — allègement des blocs overview et suppression du style de ligne workflow devenue inutile.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du rôle qualification de l'overview.
+
+### Résultat
+- Les blocs `POUR QUI`, `CE QUE ÇA ÉVITE`, `QUAND PASSER PLUS LOURD` deviennent la structure standard.
+- Les listes de capacités et les détails de workflow restent hors de l'overview.
+- Le slug demandé `sites-ia-automation` est résolu vers la stack source `createur-sites-ia-automation`.

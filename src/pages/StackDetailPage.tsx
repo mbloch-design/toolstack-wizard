@@ -586,7 +586,8 @@ const StackDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, lang, prefix } = useLang();
   const { tools } = useToolSummaries();
-  const stack = STACKS.find((item) => item.slug === slug);
+  const resolvedSlug = slug === "sites-ia-automation" ? "createur-sites-ia-automation" : slug;
+  const stack = STACKS.find((item) => item.slug === resolvedSlug);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
 
   // Must be before conditional return (hooks rules)
@@ -885,12 +886,6 @@ const StackDetailPage = () => {
           <p className="sd-overview-intro">
             {overviewIntro}
           </p>
-          {stack.slug === "developpeur-freelance-shipper" && (
-            <p className="sd-overview-flowline">
-              {t("Workflow couvert : coder → montrer → documenter → encaisser.", "Covered workflow: code → show → document → get paid.")}
-            </p>
-          )}
-
           {/* 3-col: sert à / évite / pas faite pour */}
           <div className="sd-overview-grid">
             {overviewCards.map((card) => (
@@ -1822,6 +1817,12 @@ function getOverviewTitle(stack: StackGuide, locale: "fr" | "en"): string {
   if (stack.slug === "developpeur-freelance-shipper") {
     return locale === "fr" ? "Une chaîne simple, du code au paiement." : "A simple chain from code to payment.";
   }
+  if (stack.slug === "designer-freelance-solo") {
+    return locale === "fr" ? "Une chaîne claire, de l’idée au livrable." : "A clear chain from idea to deliverable.";
+  }
+  if (stack.slug === "createur-sites-ia-automation") {
+    return locale === "fr" ? "Une chaîne pour lancer, pas pour empiler." : "A chain to launch, not to stack tools.";
+  }
   return locale === "fr"
     ? `Une stack pour ${stack.bestFor.split(".")[0].toLowerCase()}.`
     : `A stack to ${stack.bestForEn.split(".")[0].toLowerCase()}.`;
@@ -1829,8 +1830,18 @@ function getOverviewTitle(stack: StackGuide, locale: "fr" | "en"): string {
 function getOverviewIntro(stack: StackGuide, editorial: StackEditorialContent, locale: "fr" | "en"): string {
   if (stack.slug === "architecte-interieur") {
     return locale === "fr"
-      ? "Moodboard, plans, 3D, rendus, sourcing, budget, validations, facturation : cette stack relie chaque étape sans basculer trop tôt dans une stack BIM lourde."
-      : "Moodboard, plans, 3D, renders, sourcing, budget, approvals, invoicing: this stack connects each step without moving too early into a heavy BIM setup.";
+      ? "Cadrer, projeter, présenter, sourcer et suivre le projet sans basculer trop tôt dans une stack BIM ou agence complète."
+      : "Frame, design, present, source, and track the project without moving too early into a BIM or full agency stack.";
+  }
+  if (stack.slug === "designer-freelance-solo") {
+    return locale === "fr"
+      ? "Créer, présenter, décliner et livrer sans transformer ton quotidien en usine à fichiers, abonnements et exports."
+      : "Create, present, adapt, and deliver without turning your day into a factory of files, subscriptions, and exports.";
+  }
+  if (stack.slug === "createur-sites-ia-automation") {
+    return locale === "fr"
+      ? "Elle sert à passer d’une idée à un prototype utilisable : page, formulaire, automatisation, paiement, mesure. Pas à collectionner tous les outils IA du moment."
+      : "It helps move from idea to usable prototype: page, form, automation, payment, measurement. Not to collect every AI tool of the moment.";
   }
   return locale === "fr" ? editorial.overviewIntro : editorial.overviewIntroEn;
 }
@@ -1849,14 +1860,40 @@ function getOverviewCards(stack: StackGuide, editorial: StackEditorialContent, l
   if (stack.slug === "architecte-interieur") {
     return locale === "fr"
       ? [
-          { label: labels.serves, text: "Architectes d’intérieur indépendants, décorateurs, studios résidentiels, retail léger et projets avec sourcing mobilier ou matières." },
-          { label: labels.avoids, text: "Payer trop tôt une stack BIM, plusieurs moteurs de rendu et des plugins jamais maîtrisés." },
-          { label: labels.notFor, text: "Les projets déjà en BIM lourd, avec bureaux d’études, marchés publics ou coordination technique avancée." },
+          { label: labels.serves, text: "Architectes d’intérieur, décorateurs ou studios indépendants qui gèrent des projets résidentiels, retail léger ou sourcing mobilier." },
+          { label: labels.avoids, text: "Payer trop vite plusieurs moteurs de rendu, plugins, outils BIM ou couches de gestion qui ne servent pas encore chaque semaine." },
+          { label: labels.notFor, text: "Si tes projets impliquent bureaux d’études, marchés publics, coordination technique avancée ou livrables BIM stricts." },
         ]
       : [
-          { label: labels.serves, text: "Independent interior architects, decorators, residential studios, light retail, and projects with furniture or material sourcing." },
-          { label: labels.avoids, text: "Paying too early for a BIM stack, multiple render engines, and plugins that never become mastered." },
-          { label: labels.notFor, text: "Projects already in heavy BIM, with engineering offices, public tenders, or advanced technical coordination." },
+          { label: labels.serves, text: "Interior architects, decorators, or independent studios managing residential projects, light retail, or furniture sourcing." },
+          { label: labels.avoids, text: "Paying too fast for several render engines, plugins, BIM tools, or management layers that are not useful every week yet." },
+          { label: labels.notFor, text: "If your projects involve engineering offices, public tenders, advanced technical coordination, or strict BIM deliverables." },
+        ];
+  }
+  if (stack.slug === "designer-freelance-solo") {
+    return locale === "fr"
+      ? [
+          { label: labels.serves, text: "Designers freelances qui produisent des identités, visuels, présentations, contenus ou supports clients avec une stack légère." },
+          { label: labels.avoids, text: "Multiplier les outils créa, IA, stockage et présentation sans clarifier le flux entre création, validation et livraison." },
+          { label: labels.notFor, text: "Si tu travailles en équipe créative, avec production vidéo avancée, asset management lourd ou workflows de validation complexes." },
+        ]
+      : [
+          { label: labels.serves, text: "Freelance designers producing identities, visuals, presentations, content, or client assets with a light stack." },
+          { label: labels.avoids, text: "Multiplying creative, AI, storage, and presentation tools without clarifying the flow between creation, validation, and delivery." },
+          { label: labels.notFor, text: "If you work in a creative team, with advanced video production, heavy asset management, or complex validation workflows." },
+        ];
+  }
+  if (stack.slug === "createur-sites-ia-automation") {
+    return locale === "fr"
+      ? [
+          { label: labels.serves, text: "Freelances ou solos qui veulent lancer un mini-produit, une landing, un agent simple ou un workflow automatisé sans équipe technique complète." },
+          { label: labels.avoids, text: "Multiplier les outils IA sans relier brief, production, validation, paiement et suivi." },
+          { label: labels.notFor, text: "Si le produit devient critique, multi-utilisateur, avec sécurité avancée, backend robuste, support client ou logique métier complexe." },
+        ]
+      : [
+          { label: labels.serves, text: "Freelancers or solos who want to launch a mini-product, landing page, simple agent, or automated workflow without a full technical team." },
+          { label: labels.avoids, text: "Multiplying AI tools without connecting brief, production, validation, payment, and tracking." },
+          { label: labels.notFor, text: "If the product becomes critical or multi-user, with advanced security, robust backend, customer support, or complex business logic." },
         ];
   }
   return [

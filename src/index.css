@@ -11381,30 +11381,22 @@
   margin-top: 24px;
   margin-bottom: 0;
 }
-.sd-overview-flowline {
-  margin: 16px 0 0;
-  font-family: var(--font-ui);
-  font-size: 14px;
-  line-height: 1.4;
-  font-weight: 600;
-  color: #222222;
-}
 .sd-overview-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 40px;
+  margin-top: 36px;
 }
 .sd-overview-col {
-  min-height: 180px;
-  padding: 22px;
+  min-height: 0;
+  padding: 24px;
   background: #FFFFFF;
   border: 1px solid #DADAD4;
   border-radius: 14px;
 }
 .sd-overview-col + .sd-overview-col {
   border-left: 1px solid #DADAD4;
-  padding-left: 22px;
+  padding-left: 24px;
 }
 .sd-overview-label {
   font-size: 11px;

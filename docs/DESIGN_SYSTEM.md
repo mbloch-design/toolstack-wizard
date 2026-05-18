@@ -79,9 +79,11 @@ La section `VUE D'ENSEMBLE` doit présenter la promesse centrale de la stack, pa
 
 - H2 court : `clamp(38px, 4vw, 68px)`, line-height `0.98`, letter-spacing `-0.055em`, max-width `780px`.
 - Intro : 18px, line-height `1.45`, max-width `760px`, couleur `#6F6F68`.
-- Les blocs “sert à / évite / pas faite pour” sont des cartes blanches, bordure `#DADAD4`, radius 14px, padding 22px.
-- La note ToolTrim reste légère : fond blanc, bordure fine, une phrase principale puis des lignes structurées label + texte.
-- L'audience détaillée appartient aux cartes, au hero ou au résumé rapide, pas au H2.
+- La section sert uniquement à qualifier l'usage : ne pas répéter le hero, ne pas lister toutes les capacités, ne pas expliquer les outils.
+- Les trois blocs standards sont `POUR QUI`, `CE QUE ÇA ÉVITE`, `QUAND PASSER PLUS LOURD`.
+- Les blocs sont des cartes blanches, bordure `#DADAD4`, radius 14px, padding 24px, sans hauteur minimale forcée.
+- Les chips workflow et la `Note ToolTrim` ne doivent pas apparaître dans `Vue d'ensemble`; ces détails appartiennent à `02 — OUTILS`, au budget ou à la FAQ.
+- L'audience détaillée appartient aux blocs de qualification, au hero ou au résumé rapide, pas au H2.
 
 ---
 
