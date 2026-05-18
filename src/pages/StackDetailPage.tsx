@@ -723,6 +723,11 @@ const StackDetailPage = () => {
   const workflowSteps = buildWorkflowSteps(stack, stackTools, lang);
   const stackLayers = workflowSteps.length > 0 ? workflowSteps : buildFallbackWorkflowSteps(stack, stackTools, lang);
   const stackMapFamilies = buildStackMapFamilies(stack, stackLayers);
+  const budgetPaidTools = getBudgetWorthPayingTools(stackTools);
+  const budgetFreeTools = getBudgetFreeTools(stackTools);
+  const budgetDriverTools = getBudgetDriverTools(stackTools);
+  const budgetTargetLabel = stack.monthlyBudget > 0 ? `≈${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
+  const budgetWatchLabel = getBudgetWatchThreshold(stack.monthlyBudget, lang);
   const toggleToolLayer = (layerId: string) => {
     setExpandedToolLayers((current) => {
       const next = new Set(current);
@@ -984,29 +989,78 @@ const StackDetailPage = () => {
       <section id="budget" className="sd-section scroll-mt-20">
         <div className="sd-container">
           <span className="sd-section-eyebrow">{t("03 — BUDGET", "03 — BUDGET")}</span>
-          <p className="sd-section-title" style={{ marginBottom: 8 }}>
-            {t(editorial.budgetTitle, editorial.budgetTitleEn)}
+          <p className="sd-section-title sd-budget-title">
+            {t(`${stack.monthlyBudget}€/mois si tu utilises vraiment le socle.`, `€${stack.monthlyBudget}/month if you really use the base.`)}
           </p>
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.5, color: "#6F6F68", marginBottom: 0, maxWidth: 620 }}>
-            {stack.slug === "developpeur-freelance-shipper"
-              ? t(
-                  "Ce budget tient si tu gardes le socle simple : hébergement, preview, documentation et paiement. Il grimpe quand tu ajoutes plusieurs copilotes IA, des outils projet d'équipe ou des automatisations avant d'avoir un vrai volume répétitif.",
-                  "This budget holds if you keep the base simple: hosting, preview, documentation, and payment. It climbs when you add several AI copilots, team project tools, or automations before real repeated volume.",
-                )
-              : t(
-                  "Ce budget inclut les outils qui portent le code, la preview, le contexte client et le paiement. Il laisse volontairement de côté les couches équipe, CRM complet, QA avancée et automations trop tôt.",
-                  "This budget includes the tools that carry code, preview, client context, and payment. It deliberately leaves out team layers, full CRM, advanced QA, and too-early automations.",
+          <p className="sd-budget-intro">
+            {t(
+              "Le budget n'est pas une cible à atteindre. C'est un plafond raisonnable pour livrer, montrer, documenter et encaisser sans payer des outils d'équipe trop tôt.",
+              "The budget is not a target to reach. It is a reasonable ceiling to deliver, show, document, and get paid without paying for team tools too early.",
+            )}
+          </p>
+
+          <div className="sd-budget-decision-grid">
+            <div className="sd-budget-decision-card">
+              <span className="sd-budget-card-label">{t("Ce qui mérite d'être payé", "Worth paying for")}</span>
+              <p>
+                {t(
+                  "Les outils qui portent vraiment la livraison : preview client, assistance au code si elle est utilisée chaque semaine, documentation de mission.",
+                  "Tools that truly carry delivery: client preview, code assistance if used every week, and project documentation.",
                 )}
-          </p>
-          <div className="sd-budget-list">
-            {editorial.budgetRows.map((row, i) => (
-              <div key={i} className="sd-budget-row">
-                <span className="sd-budget-tier">{t(row.tier, row.tierEn)}</span>
-                <span className="sd-budget-amount">{row.amount}</span>
-                <span className="sd-budget-desc">{t(row.desc, row.descEn)}</span>
-              </div>
-            ))}
+              </p>
+              <BudgetToolChips items={budgetPaidTools} emptyLabel={t("À valider selon ton usage réel.", "Validate based on real usage.")} />
+            </div>
+
+            <div className="sd-budget-decision-card">
+              <span className="sd-budget-card-label">{t("Ce qui peut rester gratuit", "What can stay free")}</span>
+              <p>
+                {t(
+                  "Versionner, encaisser ou partager un livrable peut souvent rester sur un plan gratuit tant que le volume est simple.",
+                  "Versioning, getting paid, or sharing a deliverable can often stay on a free plan while volume is simple.",
+                )}
+              </p>
+              <BudgetToolChips items={budgetFreeTools} emptyLabel={t("Regarde d'abord les plans gratuits.", "Check free plans first.")} />
+            </div>
+
+            <div className="sd-budget-decision-card">
+              <span className="sd-budget-card-label">{t("Ce qui fait grimper la facture", "What drives cost up")}</span>
+              <p>
+                {t(
+                  "Plusieurs copilotes IA, un outil projet d'équipe, un CRM complet ou des automatisations trop tôt transforment vite une stack freelance en stack d'équipe.",
+                  "Several AI copilots, a team project tool, a full CRM, or too-early automations quickly turn a freelance stack into a team stack.",
+                )}
+              </p>
+              <BudgetToolChips items={budgetDriverTools} emptyLabel={t("À surveiller avant d'ajouter une couche.", "Watch this before adding another layer.")} />
+            </div>
           </div>
+
+          <div className="sd-budget-thresholds" aria-label={t("Seuils de budget", "Budget thresholds")}>
+            <div className="sd-budget-threshold">
+              <strong>0–15€/mois</strong>
+              <span>{t("Tu testes.", "You are testing.")}</span>
+            </div>
+            <div className="sd-budget-threshold">
+              <strong>{budgetTargetLabel}</strong>
+              <span>{t("Tu livres régulièrement.", "You deliver regularly.")}</span>
+            </div>
+            <div className="sd-budget-threshold">
+              <strong>{budgetWatchLabel}</strong>
+              <span>{t("Tu dois auditer.", "You need to audit.")}</span>
+            </div>
+          </div>
+
+          <div className="sd-budget-action">
+            <p>
+              {t(
+                "Si ta stack dépasse ce seuil sans volume client clair, commence par chercher les doublons IA, projet et automatisation.",
+                "If your stack goes past this threshold without clear client volume, start by looking for AI, project, and automation duplicates.",
+              )}
+            </p>
+            <Link to={`${prefix}/selector`} className="sd-budget-action-link">
+              {t("Auditer ma stack", "Audit my stack")} <span aria-hidden>→</span>
+            </Link>
+          </div>
+
           <p className="sd-budget-note">
             {t("Ce budget est une cible de calibration, pas une promesse exacte.", "This budget is a calibration target, not an exact promise.")}
           </p>
@@ -1212,6 +1266,29 @@ interface ToolPanelProps {
   t: (fr: string, en: string) => string;
 }
 
+function BudgetToolChips({
+  items,
+  emptyLabel,
+}: {
+  items: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>;
+  emptyLabel: string;
+}) {
+  if (items.length === 0) {
+    return <span className="sd-budget-tool-empty">{emptyLabel}</span>;
+  }
+
+  return (
+    <div className="sd-budget-tool-list">
+      {items.map(({ slot, tool }) => (
+        <span key={slot.slug} className="sd-budget-tool-chip">
+          <span className="sd-budget-tool-logo"><ToolLogo tool={tool!} size={18} /></span>
+          <span>{tool!.name}</span>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPanelProps) {
   const { slot, tool } = stackTools[selectedIndex];
   const status = getToolDecisionStatus(slot);
@@ -1405,6 +1482,42 @@ function getToolDecisionDisplay(key: "core" | "conditional" | "challenge", local
   if (key === "conditional") return locale === "fr" ? "Conditionnel" : "Conditional";
   return locale === "fr" ? "À challenger" : "Challenge";
 }
+
+function getBudgetWorthPayingTools(items: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>) {
+  const paid = sortToolsByDecision(items)
+    .filter(({ slot, tool }) => (tool?.defaultMonthlyPrice ?? 0) > 0 && getToolDecisionStatus(slot).key !== "challenge")
+    .slice(0, 4);
+  if (paid.length > 0) return paid;
+  return sortToolsByDecision(items)
+    .filter(({ slot }) => getToolDecisionStatus(slot).key === "core")
+    .slice(0, 4);
+}
+
+function getBudgetFreeTools(items: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>) {
+  return sortToolsByDecision(items)
+    .filter(({ tool }) => (tool?.defaultMonthlyPrice ?? 0) <= 0)
+    .slice(0, 4);
+}
+
+function getBudgetDriverTools(items: Array<{ slot: StackToolSlot; tool: ToolSummary | undefined }>) {
+  const drivers = sortToolsByDecision(items)
+    .filter(({ slot }) => {
+      const key = getToolDecisionStatus(slot).key;
+      return key === "conditional" || key === "challenge";
+    })
+    .slice(0, 4);
+  if (drivers.length > 0) return drivers;
+  return sortToolsByDecision(items)
+    .filter(({ tool }) => (tool?.defaultMonthlyPrice ?? 0) >= 25)
+    .slice(0, 4);
+}
+
+function getBudgetWatchThreshold(monthlyBudget: number, locale: "fr" | "en") {
+  if (monthlyBudget <= 60) return locale === "fr" ? "80–100€/mois" : "€80–100/month";
+  const rounded = Math.ceil((monthlyBudget * 1.35) / 10) * 10;
+  return locale === "fr" ? `>${rounded}€/mois` : `>€${rounded}/month`;
+}
+
 function getDecisionOrder(slot: StackToolSlot): number {
   const key = getToolDecisionStatus(slot).key;
   if (key === "core") return 0;

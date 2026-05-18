@@ -1109,7 +1109,7 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 - Hero : cible, promesse courte, budget cible, niveau, fit / avoid.
 - Vue d'ensemble : qualification rapide uniquement. Elle répond à “est-ce aligné avec ma façon de travailler ?”.
 - Outils : étapes de workflow et outils uniquement.
-- Budget : logique de coût, plans et seuils d'upgrade.
+- Budget : logique de coût, ce qui mérite paiement, ce qui peut rester gratuit, facteurs de dérive et seuil d'audit.
 - Risques : erreurs et scénarios d'overbuild.
 - Calibrage : seuils où la stack devient trop légère ou trop lourde.
 
@@ -1120,6 +1120,12 @@ Sur les pages stack detail, éviter les formulations de type “base recommandé
 - Ne pas afficher de chips workflow dans cette section : la carte de la stack porte déjà cette lecture.
 - Ne pas afficher de `Note ToolTrim`, astuce d'implémentation ou réglage outil dans l'overview.
 - Les conseils pratiques doivent vivre dans les blocs workflow, le budget ou la FAQ selon leur rôle.
+
+**Budget :**
+- Le budget est un module de décision, pas une table de prix.
+- Structure recommandée : titre avec plafond raisonnable, intro courte, trois blocs `Ce qui mérite d'être payé`, `Ce qui peut rester gratuit`, `Ce qui fait grimper la facture`.
+- Ajouter une bande de seuils compacte pour montrer : test, livraison régulière, audit nécessaire.
+- Ne pas réexpliquer tout le workflow ici. La section budget possède uniquement la logique de coût et les seuils d'action.
 
 
 ## Stack detail `Stack Map`

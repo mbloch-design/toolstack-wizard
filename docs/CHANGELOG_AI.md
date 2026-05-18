@@ -1779,3 +1779,20 @@ Réduire `01 — VUE D'ENSEMBLE` à son rôle principal : qualifier rapidement s
 - Plus de bloc `Note ToolTrim` dans `Vue d'ensemble`.
 - Plus de chips workflow redondants avant `La carte de la stack`.
 - Les trois blocs restent centrés sur `Pour qui`, `Ce que ça évite`, `Quand passer plus lourd`.
+
+---
+
+## 2026-05-18 — Sprint 45 : Budget en module de décision
+
+### Objectif
+Transformer `03 — BUDGET` en aide à la décision plutôt qu'en tableau de prix : expliquer quoi payer, ce qui peut rester gratuit, ce qui fait grimper la facture et quand auditer.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — remplacement des rows budget par trois blocs de décision, chips d'outils et bande de seuils.
+- `src/index.css` — styles du module budget, seuils compacts et chips logo.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation de la propriété d'information du budget.
+
+### Résultat
+- Le budget répond à `Combien payer, et pour quoi ?`.
+- La table `Budget minimal / recommandé / à surveiller` n'est plus le contenu principal.
+- Le CTA `Auditer ma stack` apparaît après les seuils pour guider l'action.
