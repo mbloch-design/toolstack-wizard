@@ -5746,14 +5746,14 @@
 
   .sd-hero-breadcrumb {
     display: flex; align-items: center; gap: 6px;
-    font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: #9A9A92;
+    font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: #222222;
     text-decoration: none; margin-bottom: 20px; letter-spacing: -0.01em;
   }
-  .sd-hero-breadcrumb a { color: #9A9A92; text-decoration: none; }
+  .sd-hero-breadcrumb a { color: #222222; text-decoration: none; }
   .sd-hero-breadcrumb a:hover { color: #222222; }
   .sd-hero-eyebrow {
-    font-family: var(--font-ui); font-size: 11px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; color: #6F6F68;
+    font-family: var(--font-ui); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: #222222;
     display: block; margin-bottom: 16px;
   }
   .sd-hero-h1 {
@@ -6502,10 +6502,10 @@
   .sd-priority-label {
     font-size: 11px;
     line-height: 1;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #9A9A92;
+    color: #222222;
   }
   .sd-hero-eyebrow,
   .sd-section-eyebrow {
@@ -12094,10 +12094,10 @@
 .sd-section-eyebrow {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #9A9A92;
+  color: #222222;
   display: block;
   margin-bottom: 16px;
 }
@@ -12106,8 +12106,8 @@
 .sd-tool-legend-text {
   font-family: var(--font-ui);
   font-size: 12px;
-  font-weight: 500;
-  color: #9A9A92;
+  font-weight: 400;
+  color: #222222;
   letter-spacing: 0.01em;
   margin: 0 0 28px;
 }
@@ -12188,10 +12188,10 @@
 .sd-decision-summary-label {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #9A9A92;
+  color: #222222;
   padding-top: 4px; /* align with first logo row */
 }
 
@@ -12321,8 +12321,8 @@
   flex-shrink: 0;
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 600;
-  color: #9A9A92;
+  font-weight: 400;
+  color: #222222;
 }
 .sd-stack-map-grid {
   display: grid;
@@ -12355,8 +12355,8 @@
   flex-shrink: 0;
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 600;
-  color: #9A9A92;
+  font-weight: 400;
+  color: #222222;
 }
 .sd-stack-map-breakdown {
   margin: 12px 0 0;
@@ -12578,7 +12578,7 @@
   justify-content: center;
   border-radius: 999px;
   background: #F8F8F4;
-  color: #9A9A92;
+  color: #222222;
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 700;
@@ -12591,9 +12591,9 @@
 .sd-workflow-index {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.08em;
-  color: #9A9A92;
+  color: #222222;
 }
 .sd-workflow-step h3 {
   margin: 0;
@@ -12664,8 +12664,8 @@
   line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 700;
-  color: #9A9A92;
+  font-weight: 400;
+  color: #222222;
 }
 .sd-workflow-more,
 .sd-workflow-empty {
@@ -12693,7 +12693,7 @@
   font-family: var(--font-ui);
   font-size: 12px;
   line-height: 1.35;
-  color: #9A9A92;
+  color: #222222;
 }
 .sd-workflow-watch {
   width: fit-content;
@@ -12749,10 +12749,10 @@
   margin-bottom: 8px;
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #9A9A92;
+  color: #222222;
 }
 .sd-workflow-detail-list {
   display: grid;
@@ -12881,7 +12881,7 @@
   font-family: var(--font-ui);
   font-size: 12px;
   line-height: 1.35;
-  color: #9A9A92;
+  color: #222222;
 }
 .sd-stack-map-watch {
   width: fit-content;
@@ -12973,10 +12973,10 @@
   font-family: var(--font-ui);
   font-size: 10px;
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #9A9A92;
+  color: #222222;
 }
 .sd-stack-map-more,
 .sd-stack-map-empty {
@@ -13049,10 +13049,10 @@
 .sd-repere-label {
   font-family: var(--font-ui);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #9A9A92;
+  color: #222222;
   line-height: 1;
 }
 
@@ -13118,10 +13118,10 @@
 .sd-fact-label {
   font-family: var(--font-ui);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #9A9A92;
+  color: #222222;
   line-height: 1;
 }
 
@@ -13206,10 +13206,10 @@
 .sd-hero-eyebrow {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #9A9A92;
+  color: #222222;
   display: block;
   margin-bottom: 20px;
 }
@@ -13237,14 +13237,14 @@
   background: #FAFAF7;
 }
 
-/* Label — uppercase, muted, small */
+/* Label — uppercase, small, weight-only hierarchy */
 .sd-fact-label {
   font-family: var(--font-ui);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #9A9A92;
+  color: #222222;
   line-height: 1;
 }
 

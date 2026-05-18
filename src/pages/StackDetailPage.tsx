@@ -1096,7 +1096,7 @@ const StackDetailPage = () => {
               {relatedStacks.map((related) => (
                 <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card">
                   <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
-                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#9A9A92", padding: "2px 6px", border: "1px solid #DADAD4", borderRadius: 3 }}>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", color: "#222222", padding: "2px 6px", border: "1px solid #DADAD4", borderRadius: 3 }}>
                       {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
                     </span>
                   </div>
