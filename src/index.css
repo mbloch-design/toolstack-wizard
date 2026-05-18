@@ -13166,3 +13166,137 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Sprint — Hero premium fact sheet (2026-05-18) */
+/* Override: bigger title, bigger values, no CTA in hero, generous padding */
+
+/* Editorial container — generous vertical rhythm */
+.sd-hero-editorial {
+  width: min(calc(100% - 48px), 1240px);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 96px 0 48px;
+}
+
+/* H1 — very large, tight letter-spacing */
+.sd-hero-h1 {
+  font-family: var(--font-brand);
+  font-size: clamp(3.25rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+  color: #222222;
+  margin: 0 0 28px;
+  max-width: 820px;
+}
+
+/* Promise — readable, editorial weight */
+.sd-hero-desc {
+  font-family: var(--font-ui);
+  font-size: clamp(1.0625rem, 1.4vw, 1.3125rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+  color: #3A3A38;
+  max-width: 640px;
+  margin: 0;
+}
+
+/* Eyebrow persona label */
+.sd-hero-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9A9A92;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Signaletic table — 6 columns, values at readable size */
+.sd-hero-fact-table {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  width: min(calc(100% - 48px), 1240px);
+  max-width: 1240px;
+  margin: 56px auto 72px;
+  border: 1px solid #DADAD4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #DADAD4;
+  gap: 1px;
+}
+
+/* Each cell */
+.sd-fact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 24px 26px;
+  background: #FAFAF7;
+}
+
+/* Label — uppercase, muted, small */
+.sd-fact-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #9A9A92;
+  line-height: 1;
+}
+
+/* Value — prominent, readable */
+.sd-fact-value {
+  font-family: var(--font-ui);
+  font-size: clamp(0.9375rem, 1.3vw, 1.1875rem);
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+/* Tablet: 3 columns */
+@media (max-width: 1024px) {
+  .sd-hero-editorial {
+    padding: 80px 0 40px;
+  }
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 48px;
+  }
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 640px) {
+  .sd-hero-editorial {
+    padding: 56px 0 28px;
+  }
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 40px auto 48px;
+  }
+  .sd-fact-col {
+    padding: 18px 16px 20px;
+  }
+  .sd-fact-value {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Small mobile: 2 columns (retain readability, no horizontal scroll) */
+@media (max-width: 390px) {
+  .sd-hero-editorial {
+    padding: 48px 0 24px;
+  }
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 32px auto 40px;
+    width: calc(100% - 32px);
+  }
+  .sd-fact-col {
+    padding: 14px 12px 16px;
+  }
+}

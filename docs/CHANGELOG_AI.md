@@ -2,6 +2,27 @@
 
 ---
 
+## 2026-05-18 — Sprint 48 : Hero premium fact sheet — no CTA, bigger typography, generous spacing
+
+### Objectif
+Finaliser le hero des fiches stack en bloc éditorial premium : supprimer le CTA "Analyser ma stack" du hero, agrandir la typographie (H1 plus grande, valeurs de table plus lisibles), aérer les paddings, garder la non-redondance absolue.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — suppression du `<Link>` CTA dans la zone hero (`.sd-hero-editorial`).
+- `src/index.css` — bloc sprint appended : overrides `.sd-hero-editorial` (padding 96px), `.sd-hero-h1` (weight 700, clamp plus large), `.sd-hero-desc` (color #3A3A38), `.sd-hero-eyebrow` (margin-bottom 20px), `.sd-hero-fact-table` (margin-top 56px, margin-bottom 72px), `.sd-fact-col` (padding 24px), `.sd-fact-value` (clamp ~15–19px). Mobile 390px → 2 colonnes (pas 1).
+- `docs/CHANGELOG_AI.md` — ce fichier.
+- `docs/DESIGN_SYSTEM.md` — règle mise à jour : Zéro CTA dans le hero, non-redondance absolue explicitée, typographie et paddings cibles documentés.
+
+### Résultat
+- Hero : breadcrumb → eyebrow → H1 → promesse → table signalétique. Rien d'autre.
+- CTA supprimé du hero. Il reste dans `sd-cta-band` après les sections.
+- H1 : weight 700, clamp(3.25rem, 5.5vw, 4.5rem), letter-spacing -0.065em.
+- Valeurs de la table : clamp(0.9375rem, 1.3vw, 1.1875rem), lisibles sans zoom.
+- Mobile 390px : table reste en 2 colonnes (pas de scroll horizontal, pas de colonne unique).
+- Build : 0 erreurs. Lint : 0 erreurs (warnings pre-existants inchangés).
+
+---
+
 ## 2026-05-18 — Stack detail : hero premium fact sheet (table signalétique, zéro panneau droit)
 
 ### Objectif

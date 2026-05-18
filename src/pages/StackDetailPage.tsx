@@ -746,11 +746,6 @@ const StackDetailPage = () => {
             {heroSubtitle}
           </p>
 
-          {/* CTA */}
-          <Link to={`${prefix}/selector`} className="sd-hero-cta">
-            {t("Analyser ma stack", "Analyze my stack")}
-          </Link>
-
         </div>
 
         {/* ── Signaletic fact table ── */}

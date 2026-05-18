@@ -78,17 +78,20 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 Le hero est un bloc éditorial suivi d'une table signalétique. Il répond en 5 secondes. Chaque information n'apparaît qu'une seule fois.
 
 ### Structure obligatoire
-1. **Bloc éditorial** (pleine largeur) — breadcrumb · eyebrow persona · H1 · promesse · CTA primaire
+1. **Bloc éditorial** (pleine largeur) — breadcrumb · eyebrow persona · H1 · promesse
 2. **Table signalétique** (`.sd-hero-fact-table`) — une rangée horizontale de 6 colonnes : PROFIL · WORKFLOW · BUDGET · OUTILS · NIVEAU · RISQUE
 
 ### Règles absolues
+- **Zéro CTA dans le hero** : pas de bouton "Analyser ma stack" ni de lien de conversion dans la zone hero. Le CTA vit dans le `sd-cta-band` après les sections.
 - **Zéro panneau droit** : il ne doit pas exister de `.sd-snapshot` ou panneau "EN UN COUP D'ŒIL" — ces données sont dans la table.
 - **Zéro duplication** : une info dans la table n'est jamais reformulée ailleurs dans le hero.
 - **Zéro grille 2×3 administrative** (`.sd-reperes-grid` remplacée par `.sd-hero-fact-table`).
-- H1 : `clamp(56px, 6vw, 104px)`, line-height `0.92`, letter-spacing `-0.065em`.
-- Promesse : `clamp(19px, 1.4vw, 23px)`, line-height `1.42`, max-width `760px`, 1–2 lignes max.
-- Table : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels `10px/700 uppercase #9A9A92`, valeurs `14px/600 #222222`.
-- Responsive : 6 col desktop → 3 col 1024px → 2 col 640px → 1 col 390px.
+- **Non-redondance absolue** : budget → table uniquement · outils → table uniquement · niveau → table uniquement · risque → table uniquement · workflow → table uniquement · promesse → sous le titre uniquement.
+- H1 (`.sd-hero-h1`) : `clamp(3.25rem, 5.5vw, 4.5rem)`, font-weight `700`, line-height `0.92`, letter-spacing `-0.065em`.
+- Promesse (`.sd-hero-desc`) : `clamp(1.0625rem, 1.4vw, 1.3125rem)`, line-height `1.5`, max-width `640px`, 1–2 lignes max.
+- Table : fond `#FAFAF7`, bordure `#DADAD4`, radius 16px, labels `10px/700 uppercase #9A9A92`, valeurs `clamp(0.9375rem, 1.3vw, 1.1875rem)/600 #222222`, cell padding `24px 24px 26px`.
+- Responsive : 6 col desktop → 3 col 1024px → 2 col 640px → 2 col 390px (pas de scroll horizontal).
+- Hero container padding : `96px 0 48px` desktop, `80px 0 40px` tablet, `56px 0 28px` mobile.
 
 ### Section Vue d'ensemble
 Supprimée. Ne pas créer de section `apercu` ou `overview` entre le hero et les outils.
