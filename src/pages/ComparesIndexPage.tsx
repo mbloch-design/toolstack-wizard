@@ -92,6 +92,32 @@ function deriveCardDesc(a: Tool, b: Tool, lang: "fr" | "en"): string {
     ? `Comparer ${a.name} et ${b.name} selon ton usage.`
     : `Compare ${a.name} and ${b.name} based on your use case.`);
 }
+function getCardDecisionQuestion(a: Tool, b: Tool, lang: "fr" | "en"): string {
+  const keepA = lang === "fr"
+    ? (a.verdict?.keepIf || [])[0]
+    : (a.verdictEn?.keepIf || a.verdict?.keepIf || [])[0];
+  const keepB = lang === "fr"
+    ? (b.verdict?.keepIf || [])[0]
+    : (b.verdictEn?.keepIf || b.verdict?.keepIf || [])[0];
+  if (keepA && keepB) {
+    return lang === "fr"
+      ? `Plutôt ${a.name} pour ${keepA.toLowerCase()}, ou ${b.name} pour ${keepB.toLowerCase()} ?`
+      : `${a.name} for ${keepA.toLowerCase()}, or ${b.name} for ${keepB.toLowerCase()}?`;
+  }
+  return lang === "fr"
+    ? `Quel outil colle le mieux à ton usage réel ?`
+    : `Which tool best fits your real use case?`;
+}
+function getCardBestFor(a: Tool, b: Tool, lang: "fr" | "en"): string {
+  const keepA = lang === "fr"
+    ? (a.verdict?.keepIf || [])[0]
+    : (a.verdictEn?.keepIf || a.verdict?.keepIf || [])[0];
+  const keepB = lang === "fr"
+    ? (b.verdict?.keepIf || [])[0]
+    : (b.verdictEn?.keepIf || b.verdict?.keepIf || [])[0];
+  if (keepA && keepB) return `${a.name}: ${keepA}. ${b.name}: ${keepB}.`;
+  return deriveCardDesc(a, b, lang);
+}
 
 /* ─── ToolInput — autocomplete with keyboard nav ─────────────────────────── */
 interface ToolInputProps {
@@ -578,6 +604,8 @@ const ComparesIndexPage = () => {
                 const a = c.toolAData!;
                 const b = c.toolBData!;
                 const desc = deriveCardDesc(a, b, lang);
+                const question = getCardDecisionQuestion(a, b, lang);
+                const bestFor = getCardBestFor(a, b, lang);
                 const catId = getSlugCategory(c.slugPair);
                 const catLabel = COMPARE_CATEGORY_FILTERS.find(f => f.id === catId);
                 return (
@@ -607,7 +635,12 @@ const ComparesIndexPage = () => {
                       </div>
                     </div>
                     <p className="cix-card-title">{a.name} vs {b.name}</p>
+                    <p className="cix-card-question">{question}</p>
                     <p className="cix-card-desc">{desc}</p>
+                    <div className="cix-card-signal">
+                      <span>{t("Meilleur pour", "Best for")}</span>
+                      <p>{bestFor}</p>
+                    </div>
                     <p className="cix-card-pricing">
                       {getPriceLabel(a, t)}
                       <span style={{ margin: "0 6px", color: "#DADAD4" }}>vs</span>

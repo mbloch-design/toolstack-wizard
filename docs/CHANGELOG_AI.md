@@ -2166,3 +2166,21 @@ Faire du hero la vraie carte de décision de la fiche stack : cible, promesse, c
 - Les pages stack se comprennent dès le hero, sans attendre une section overview.
 - `Outils` devient la première ancre de page.
 - `Vue d'ensemble` n'est plus rendue comme section autonome sur le template stack detail.
+
+---
+
+## 2026-05-18 — Sprint 48 : Comparatifs orientés décision
+
+### Objectif
+Reprendre les pages comparatif avec la même logique que les fiches stack : verdict visible tôt, table resserrée, cas d'usage concrets et points de vigilance spécifiques.
+
+### Fichiers modifiés
+- `src/pages/ComparePage.tsx` — hero signalétique, panel décision rapide, verdict ToolTrim renforcé, table limitée aux critères utiles, remplacement des blocs redondants par `Cas d'usage` et `Points de vigilance`.
+- `src/pages/ComparesIndexPage.tsx` — cartes enrichies avec question centrale et signal `Meilleur pour`.
+- `src/index.css` — styles `cp-decision-panel`, `cp-usecase-*`, `cp-watchout-*`, `cix-card-question` et `cix-card-signal`.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du nouveau flux décisionnel.
+
+### Résultat
+- Le comparatif répond plus vite à `quel outil choisir ?`.
+- La table n'est plus l'inventaire principal, mais un module de vrais écarts.
+- Les anciens blocs `Ce que fait chaque outil`, `Avantages et limites`, `Critères de décision` et `Profils` ne sont plus rendus comme couches séparées.

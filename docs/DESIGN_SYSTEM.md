@@ -403,17 +403,17 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 @media (max-width: 1023px) { .cp-hero-inner { grid-template-columns: 1fr; } }
 ```
 
-### Module VS sticky (`cp-vs-module`)
+### Panneau décision rapide (`cp-decision-panel`)
 ```css
-.cp-vs-module {
+.cp-decision-panel {
   position: sticky; top: calc(var(--navbar-h, 68px) + 24px);
   background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 10px;
   padding: 24px; height: fit-content;
 }
 ```
-- Logos outils : cercles 40px `cp-vs-logo`
-- Séparateur VS : ligne + texte centré
-- Verdict items : `cp-vs-verdict-label` (11px 600 uppercase #6F6F68) + `cp-vs-verdict-text` (14px #222222)
+- Rôle : répondre très haut à "quel outil choisir ?"
+- Contenu : verdict court, budget, complexité, collaboration, risque principal, liens vers les fiches outils.
+- Le hero garde un titre court et une promesse courte ; le paragraphe SEO ne vit pas dans le hero.
 - **Pas de fond coloré, pas de bleu**
 
 ### Subnav sticky (`cp-subnav`)
@@ -433,13 +433,35 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 .cp-table-verdict   { font-size: 12px; font-weight: 600; color: #6F6F68; }
 /* Mobile (≤767px) : display: block, chaque cell avec data-label affiché en ::before */
 ```
+- La table compare uniquement les critères utiles à la décision : usage principal, meilleur pour, limite, prise en main, collaboration, automatisation, budget, niveau de structure, risque.
+- Les deux outils doivent recevoir les mêmes critères, avec cellules courtes et comparables.
+- Si une cellule dépasse 2 lignes, raccourcir la copie plutôt que laisser la table devenir un article.
 
-### Grille profils (`cp-profile-grid`)
+### Verdict ToolTrim (`cp-verdict-grid`)
 ```css
-.cp-profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.cp-profile-card { border: 1px solid #DADAD4; border-radius: 10px; padding: 20px 22px; }
-.cp-profile-card:hover { border-color: #222222; }
+.cp-verdict-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.cp-verdict-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 10px; padding: 18px; }
 ```
+- Le verdict apparaît avant la table.
+- Labels : `Choisis A si`, `Choisis B si`, `Évite les deux si`.
+- Ce bloc doit être la recommandation courte, pas une répétition du tableau.
+
+### Cas d'usage (`cp-usecase-*`)
+```css
+.cp-usecase-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cp-usecase-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 12px; padding: 24px; }
+```
+- Rôle : aider la personne à se reconnaître dans un usage réel.
+- Structure : `Choisis [outil] si...`, une phrase de décision, puis 3 à 4 usages.
+- Ne pas y remettre les avantages/limites complets.
+
+### Points de vigilance (`cp-watchout-*`)
+```css
+.cp-watchout-list { border-top: 1px solid #DADAD4; }
+.cp-watchout-row { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; }
+```
+- Rôle : montrer où la mauvaise décision arrive.
+- Les pièges doivent être spécifiques au comparatif, pas des conseils génériques sur les SaaS.
 
 ### Lignes alternatives (`cp-alt-row`)
 ```css
@@ -468,37 +490,11 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 ```
 Implémentation : `<details>/<summary>` natif + `useState` pour la rotation du chevron.
 
-### Overview 2 colonnes (`cp-overview-grid`) — "Ce que fait chaque outil"
-```css
-.cp-overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.cp-overview-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 10px; padding: 28px; }
-.cp-overview-logo { width: 40px; height: 40px; border-radius: 8px; border: 1px solid #E7E7E0; }
-.cp-overview-desc { font-size: 15px; color: #6F6F68; line-height: 1.6; }
-.cp-overview-item::before { content: "—"; color: #9A9A92; }
-/* ≤767px → 1 colonne */
-```
-
-### Pros & cons (`cp-pros-cons-grid`) — "Avantages et limites"
-```css
-.cp-pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.cp-pros-cons-sublabel--pros { color: #2E7D32; }   /* AVANTAGES */
-.cp-pros-cons-sublabel--cons { color: #9A9A92; }   /* LIMITES */
-.cp-pros-cons-item--pro::before { content: "+"; color: #2E7D32; font-weight: 700; }
-.cp-pros-cons-item--con::before { content: "—"; color: #9A9A92; }
-/* ≤640px → 1 colonne */
-```
-
-### Rows de décision (`cp-decision-list`) — "Ce qui doit te faire choisir"
-```css
-.cp-decision-list { list-style: none; padding: 0; }
-.cp-decision-row { display: flex; align-items: baseline; gap: 16px;
-  padding: 16px 0; border-top: 1px solid #DADAD4; }
-.cp-decision-context { font-size: 16px; color: #6F6F68; flex: 1; }
-.cp-decision-arrow  { font-size: 16px; color: #DADAD4; flex-shrink: 0; }
-.cp-decision-choice { font-size: 15px; font-weight: 600; color: #222222;
-  white-space: nowrap; min-width: 120px; text-align: right; }
-/* ≤640px → colonne, arrow masquée, choice text-align left */
-```
+### Index comparatifs (`cix-card-*`)
+- Chaque carte doit donner plus qu'un lien : question centrale, différence utile, meilleur usage, catégorie et CTA.
+- `cix-card-question` porte la question qui donne envie de cliquer.
+- `cix-card-signal` porte le signal "Meilleur pour" avec une phrase courte.
+- Éviter les descriptions longues qui répètent le titre.
 
 ### Règle éditoriale comparatif
 - **Zéro bleu** sur toute la page (ni boutons, ni hover, ni underline actif)
@@ -506,7 +502,8 @@ Implémentation : `<details>/<summary>` natif + `useState` pour la rotation du c
 - Boutons CTA : fond `#222222`, couleur `#FFFFFF`
 - Module VS : fond `#FFFFFF` (blanc pur, pas crème)
 - CTA band : fond `#EDEDE8` (crème medium, pas crème clair)
-- Avantages : indicateur `+` vert `#2E7D32` / limites : `—` gris `#9A9A92`
+- Structure recommandée : hero décision → verdict → table utile → cas d'usage → pièges → alternatives → FAQ.
+- Ne pas recréer des couches séparées `ce que fait chaque outil`, `avantages/limites`, `profils` si elles répètent verdict, table ou cas d'usage.
 
 ---
 

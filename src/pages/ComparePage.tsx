@@ -21,6 +21,54 @@ function getPrice(tool: Tool): string {
 function getPriceNum(tool: Tool): number {
   return tool.pricing_v5?.compare_price_monthly_eur || tool.defaultMonthlyPrice || 0;
 }
+function getLearningCurve(row?: CompareTableRow, lang: "fr" | "en" = "fr"): string {
+  if (!row) return lang === "fr" ? "À cadrer" : "Scope first";
+  return lang === "fr" ? `${row.toolA} / ${row.toolB}` : `${row.toolAEn} / ${row.toolBEn}`;
+}
+function getToolTrimRisk(content: CompareEditorialContent, lang: "fr" | "en"): string {
+  return lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn;
+}
+function getDecisionTableRows(rows: CompareTableRow[]): CompareTableRow[] {
+  const preferred = [
+    "Usage principal",
+    "Meilleur pour",
+    "Limite principale",
+    "Prise en main",
+    "Collaboration équipe",
+    "Automatisations",
+    "Budget solo / gratuit",
+    "Base de données structurée",
+    "Scalabilité des données",
+    "Prix de départ",
+  ];
+  const selected = preferred
+    .map((criterion) => rows.find((row) => row.criterion === criterion))
+    .filter((row): row is CompareTableRow => Boolean(row));
+  const seen = new Set(selected.map((row) => row.criterion));
+  rows.forEach((row) => {
+    if (selected.length < 9 && !seen.has(row.criterion)) selected.push(row);
+  });
+  return selected.slice(0, 9);
+}
+function getPitfalls(content: CompareEditorialContent, toolA: Tool, toolB: Tool, lang: "fr" | "en"): string[] {
+  const avoid = lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn;
+  const limitsA = lang === "fr" ? content.limitsA : content.limitsAEn;
+  const limitsB = lang === "fr" ? content.limitsB : content.limitsBEn;
+  const fallback = lang === "fr"
+    ? [
+        `Choisir ${toolA.name} ou ${toolB.name} pour une seule tâche simple.`,
+        "Payer trop tôt pour des automatisations ou fonctions avancées.",
+        "Garder deux outils qui couvrent la même étape du workflow.",
+      ]
+    : [
+        `Choosing ${toolA.name} or ${toolB.name} for one simple task.`,
+        "Paying too early for automations or advanced features.",
+        "Keeping two tools that cover the same workflow step.",
+      ];
+  return [avoid, ...limitsA.slice(0, 2), ...limitsB.slice(0, 2), ...fallback]
+    .filter(Boolean)
+    .slice(0, 5);
+}
 
 /* ─── Editorial content types ────────────────────────────────────────────── */
 interface CompareTableRow {
@@ -551,6 +599,12 @@ const ComparePage = () => {
 
   const framing = lang === "fr" ? content.framing : content.framingEn;
   const verdictShort = lang === "fr" ? content.verdictShort : content.verdictShortEn;
+  const learningCurveRow = content.tableRows.find((row) => row.criterion === "Prise en main" || row.criterionEn === "Learning curve");
+  const collaborationRow = content.tableRows.find((row) => row.criterion === "Collaboration équipe" || row.criterionEn === "Team collaboration");
+  const decisionTableRows = getDecisionTableRows(content.tableRows);
+  const pitfalls = getPitfalls(content, toolA, toolB, lang);
+  const useCasesA = (lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn).slice(0, 4);
+  const useCasesB = (lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn).slice(0, 4);
 
   // Find alternative tools from the loaded tools list
   const altTools = content.alternatives.map((alt) => ({
@@ -596,73 +650,44 @@ const ComparePage = () => {
             <p style={{
               fontFamily: "var(--font-ui)", fontSize: 21,
               lineHeight: 1.42, color: "#6F6F68",
-              maxWidth: 820, margin: "0 0 20px",
+              maxWidth: 760, margin: "0",
               letterSpacing: "-0.02em",
             }}>
               {framing}
             </p>
-
-            {/* Verdict short */}
-            <p style={{
-              fontFamily: "var(--font-ui)", fontSize: 18,
-              lineHeight: 1.5, color: "#222222",
-              maxWidth: 860, letterSpacing: "-0.015em",
-            }}>
-              {verdictShort}
-            </p>
           </div>
 
-          {/* Right col — VS module */}
-          <div className="cp-vs-module">
-            <div className="cp-vs-row">
-              <div className="cp-vs-logo"><ToolLogo tool={toolA} size={24} /></div>
-              <span className="cp-vs-name">{toolA.name}</span>
-              <span style={{ marginLeft: "auto", fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
-                {getPrice(toolA)}
-              </span>
-            </div>
-            <div className="cp-vs-sep">vs</div>
-            <div className="cp-vs-row">
-              <div className="cp-vs-logo"><ToolLogo tool={toolB} size={24} /></div>
-              <span className="cp-vs-name">{toolB.name}</span>
-              <span style={{ marginLeft: "auto", fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68" }}>
-                {getPrice(toolB)}
-              </span>
-            </div>
-
-            {/* Quick verdict items */}
-            <div className="cp-vs-verdict-block">
-              <div className="cp-vs-verdict-item">
-                <p className="cp-vs-verdict-label">{toolA.name} {t("si", "if")}</p>
-                <p className="cp-vs-verdict-text">
-                  {lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn}
-                </p>
+          {/* Right col — decision panel */}
+          <aside className="cp-decision-panel" aria-label={t("Résumé du comparatif", "Comparison summary")}>
+            <span className="cp-decision-panel-title">{t("Décision rapide", "Quick decision")}</span>
+            <p className="cp-decision-panel-verdict">{verdictShort}</p>
+            <div className="cp-decision-facts">
+              <div>
+                <span>{t("Budget", "Budget")}</span>
+                <p>{getPrice(toolA)} / {getPrice(toolB)}</p>
               </div>
-              <div className="cp-vs-verdict-item">
-                <p className="cp-vs-verdict-label">{toolB.name} {t("si", "if")}</p>
-                <p className="cp-vs-verdict-text">
-                  {lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn}
-                </p>
+              <div>
+                <span>{t("Complexité", "Complexity")}</span>
+                <p>{getLearningCurve(learningCurveRow, lang)}</p>
+              </div>
+              <div>
+                <span>{t("Collaboration", "Collaboration")}</span>
+                <p>{getLearningCurve(collaborationRow, lang)}</p>
+              </div>
+              <div>
+                <span>{t("Risque principal", "Main risk")}</span>
+                <p>{getToolTrimRisk(content, lang)}</p>
               </div>
             </div>
-
-            {/* Links to tool pages */}
-            <div style={{ display: "flex", gap: 8, marginTop: 16, paddingTop: 16, borderTop: "1px solid #E7E7E0" }}>
+            <div className="cp-decision-tools">
               {[toolA, toolB].map((tool) => (
-                <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} style={{
-                  flex: 1, display: "flex", justifyContent: "center", alignItems: "center",
-                  height: 34, border: "1px solid #DADAD4", borderRadius: 6,
-                  fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500,
-                  color: "#6F6F68", textDecoration: "none", transition: "border-color 140ms, color 140ms",
-                }}
-                  onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#222222"; el.style.color = "#222222"; }}
-                  onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#DADAD4"; el.style.color = "#6F6F68"; }}
-                >
-                  {t("Fiche", "Review")} {tool.name}
+                <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="cp-decision-tool-link">
+                  <span className="cp-vs-logo"><ToolLogo tool={tool} size={20} /></span>
+                  <span>{tool.name}</span>
                 </Link>
               ))}
             </div>
-          </div>
+          </aside>
 
         </div>
       </section>
@@ -672,11 +697,11 @@ const ComparePage = () => {
         <div className="cp-subnav-inner">
           {[
             { href: "#verdict",      label: t("Verdict", "Verdict") },
-            { href: "#outils",       label: t("Ce que font les outils", "What they do") },
             { href: "#comparaison",  label: t("Comparaison", "Comparison") },
-            { href: "#avantages",    label: t("Avantages", "Pros & cons") },
-            { href: "#profils",      label: t("Profils", "Profiles") },
+            { href: "#cas-usages",   label: t("Cas d'usage", "Use cases") },
+            { href: "#vigilance",    label: t("Pièges", "Watchouts") },
             { href: "#prix",         label: t("Prix", "Pricing") },
+            ...(altTools.length > 0 ? [{ href: "#alternatives", label: t("Alternatives", "Alternatives") }] : []),
             { href: "#faq",          label: "FAQ" },
           ].map((item) => (
             <a key={item.href} href={item.href} className="cp-subnav-link">{item.label}</a>
@@ -688,16 +713,17 @@ const ComparePage = () => {
       <section id="verdict" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
-          <p className="cp-title">{t("Le choix rapide.", "The quick choice.")}</p>
+          <p className="cp-title">{t("La recommandation courte.", "The short recommendation.")}</p>
+          <p className="cp-section-intro">{verdictShort}</p>
           <div className="cp-verdict-grid">
             <div className="cp-verdict-col">
-              <p className="cp-verdict-label">{t("Prends", "Take")} {toolA.name} {t("si…", "if…")}</p>
+              <p className="cp-verdict-label">{t("Choisis", "Choose")} {toolA.name} {t("si…", "if…")}</p>
               <p className="cp-verdict-text">
                 {lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn}
               </p>
             </div>
             <div className="cp-verdict-col">
-              <p className="cp-verdict-label">{t("Prends", "Take")} {toolB.name} {t("si…", "if…")}</p>
+              <p className="cp-verdict-label">{t("Choisis", "Choose")} {toolB.name} {t("si…", "if…")}</p>
               <p className="cp-verdict-text">
                 {lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn}
               </p>
@@ -708,49 +734,6 @@ const ComparePage = () => {
                 {lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn}
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Ce que fait chaque outil ────────────────────────────────────────── */}
-      <section id="outils" className="cp-section scroll-mt-20">
-        <div className="cp-container">
-          <span className="cp-eyebrow">{t("Rôles distincts", "Distinct roles")}</span>
-          <p className="cp-title">{t("Ce que fait chaque outil.", "What each tool does.")}</p>
-          <div className="cp-overview-grid">
-
-            {/* Tool A card */}
-            <div className="cp-overview-card">
-              <div className="cp-overview-logo-row">
-                <div className="cp-overview-logo"><ToolLogo tool={toolA} size={28} /></div>
-                <span className="cp-overview-tool-name">{toolA.name}</span>
-              </div>
-              <p className="cp-overview-desc">
-                {lang === "fr" ? content.toolADesc : content.toolADescEn}
-              </p>
-              <ul className="cp-overview-list">
-                {(lang === "fr" ? content.toolAUseCases : content.toolAUseCasesEn).map((item, i) => (
-                  <li key={i} className="cp-overview-item">{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Tool B card */}
-            <div className="cp-overview-card">
-              <div className="cp-overview-logo-row">
-                <div className="cp-overview-logo"><ToolLogo tool={toolB} size={28} /></div>
-                <span className="cp-overview-tool-name">{toolB.name}</span>
-              </div>
-              <p className="cp-overview-desc">
-                {lang === "fr" ? content.toolBDesc : content.toolBDescEn}
-              </p>
-              <ul className="cp-overview-list">
-                {(lang === "fr" ? content.toolBUseCases : content.toolBUseCasesEn).map((item, i) => (
-                  <li key={i} className="cp-overview-item">{item}</li>
-                ))}
-              </ul>
-            </div>
-
           </div>
         </div>
       </section>
@@ -767,7 +750,7 @@ const ComparePage = () => {
               <span className="cp-table-head-cell">{toolB.name}</span>
               <span className="cp-table-head-cell">{t("Verdict", "Verdict")}</span>
             </div>
-            {content.tableRows.map((row) => (
+            {decisionTableRows.map((row) => (
               <div key={row.criterion} className="cp-table-row">
                 <span className="cp-table-cell" data-label="">
                   {lang === "fr" ? row.criterion : row.criterionEn}
@@ -787,119 +770,51 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── Avantages et limites ───────────────────────────────────────────── */}
-      <section id="avantages" className="cp-section scroll-mt-20">
+      {/* ── Cas d'usage ───────────────────────────────────────────────────── */}
+      <section id="cas-usages" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("Pour et contre", "Pros and cons")}</span>
-          <p className="cp-title">{t("Avantages et limites.", "Pros and cons.")}</p>
-          <div className="cp-pros-cons-grid">
-
-            {/* Tool A pros + cons */}
-            <div className="cp-pros-cons-col">
-              <div className="cp-pros-cons-head">
-                <ToolLogo tool={toolA} size={20} />
-                <span className="cp-pros-cons-tool-name">{toolA.name}</span>
+          <span className="cp-eyebrow">{t("Cas d'usage", "Use cases")}</span>
+          <p className="cp-title">{t("Reconnais ton besoin.", "Recognize your need.")}</p>
+          <div className="cp-usecase-grid">
+            <div className="cp-usecase-card">
+              <div className="cp-usecase-head">
+                <ToolLogo tool={toolA} size={22} />
+                <span>{t("Choisis", "Choose")} {toolA.name} {t("si…", "if…")}</span>
               </div>
-              <p className="cp-pros-cons-sublabel cp-pros-cons-sublabel--pros">
-                {t("Avantages", "Advantages")}
-              </p>
-              <ul className="cp-pros-cons-list">
-                {(lang === "fr" ? content.prosA : content.prosAEn).map((item, i) => (
-                  <li key={i} className="cp-pros-cons-item cp-pros-cons-item--pro">{item}</li>
-                ))}
-              </ul>
-              <p className="cp-pros-cons-sublabel cp-pros-cons-sublabel--cons" style={{ marginTop: 20 }}>
-                {t("Limites", "Limitations")}
-              </p>
-              <ul className="cp-pros-cons-list">
-                {(lang === "fr" ? content.limitsA : content.limitsAEn).length > 0
-                  ? (lang === "fr" ? content.limitsA : content.limitsAEn).map((item, i) => (
-                      <li key={i} className="cp-pros-cons-item cp-pros-cons-item--con">{item}</li>
-                    ))
-                  : <li className="cp-pros-cons-item" style={{ color: "#9A9A92" }}>{t("Données non disponibles.", "Data not available.")}</li>
-                }
+              <p className="cp-usecase-main">{lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn}</p>
+              <ul className="cp-usecase-list">
+                {useCasesA.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
-
-            {/* Tool B pros + cons */}
-            <div className="cp-pros-cons-col">
-              <div className="cp-pros-cons-head">
-                <ToolLogo tool={toolB} size={20} />
-                <span className="cp-pros-cons-tool-name">{toolB.name}</span>
+            <div className="cp-usecase-card">
+              <div className="cp-usecase-head">
+                <ToolLogo tool={toolB} size={22} />
+                <span>{t("Choisis", "Choose")} {toolB.name} {t("si…", "if…")}</span>
               </div>
-              <p className="cp-pros-cons-sublabel cp-pros-cons-sublabel--pros">
-                {t("Avantages", "Advantages")}
-              </p>
-              <ul className="cp-pros-cons-list">
-                {(lang === "fr" ? content.prosB : content.prosBEn).map((item, i) => (
-                  <li key={i} className="cp-pros-cons-item cp-pros-cons-item--pro">{item}</li>
-                ))}
-              </ul>
-              <p className="cp-pros-cons-sublabel cp-pros-cons-sublabel--cons" style={{ marginTop: 20 }}>
-                {t("Limites", "Limitations")}
-              </p>
-              <ul className="cp-pros-cons-list">
-                {(lang === "fr" ? content.limitsB : content.limitsBEn).length > 0
-                  ? (lang === "fr" ? content.limitsB : content.limitsBEn).map((item, i) => (
-                      <li key={i} className="cp-pros-cons-item cp-pros-cons-item--con">{item}</li>
-                    ))
-                  : <li className="cp-pros-cons-item" style={{ color: "#9A9A92" }}>{t("Données non disponibles.", "Data not available.")}</li>
-                }
+              <p className="cp-usecase-main">{lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn}</p>
+              <ul className="cp-usecase-list">
+                {useCasesB.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ── Ce qui doit te faire choisir ───────────────────────────────────── */}
-      {content.decisionRows.length > 0 && (
-        <section className="cp-section scroll-mt-20">
-          <div className="cp-container">
-            <span className="cp-eyebrow">{t("Critères de décision", "Decision criteria")}</span>
-            <p className="cp-title">{t("Ce qui doit te faire choisir.", "What should make you decide.")}</p>
-            <ul className="cp-decision-list">
-              {content.decisionRows.map((row, i) => (
-                <li key={i} className="cp-decision-row">
-                  <span className="cp-decision-context">
-                    {lang === "fr" ? row.context : row.contextEn}
-                  </span>
-                  <span className="cp-decision-arrow">→</span>
-                  <span className="cp-decision-choice">
-                    {lang === "fr" ? row.choice : row.choiceEn}
-                  </span>
-                </li>
-              ))}
-            </ul>
+      {/* ── Points de vigilance ───────────────────────────────────────────── */}
+      <section id="vigilance" className="cp-section scroll-mt-20">
+        <div className="cp-container">
+          <span className="cp-eyebrow">{t("Points de vigilance", "Watchouts")}</span>
+          <p className="cp-title">{t("Les pièges à éviter.", "Mistakes to avoid.")}</p>
+          <div className="cp-watchout-list">
+            {pitfalls.map((pitfall, i) => (
+              <div key={i} className="cp-watchout-row">
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <p>{pitfall}</p>
+              </div>
+            ))}
           </div>
-        </section>
-      )}
-
-      {/* ── Profils ────────────────────────────────────────────────────────── */}
-      {content.profiles.length > 0 && (
-        <section id="profils" className="cp-section scroll-mt-20">
-          <div className="cp-container">
-            <span className="cp-eyebrow">{t("Pour quel profil ?", "Which profile?")}</span>
-            <p className="cp-title">{t("Le bon choix selon ton profil.", "The right choice for your profile.")}</p>
-            <div className="cp-profile-grid">
-              {content.profiles.map((profile) => (
-                <div key={profile.persona} className="cp-profile-card">
-                  <p className="cp-profile-persona">
-                    {lang === "fr" ? profile.persona : profile.personaEn}
-                  </p>
-                  <p className="cp-profile-choice">{profile.choice}.</p>
-                  <p className="cp-profile-reason">
-                    {lang === "fr" ? profile.reason : profile.reasonEn}
-                  </p>
-                  <p className="cp-profile-limit">
-                    {t("Limite :", "Limit:")} {lang === "fr" ? profile.limit : profile.limitEn}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* ── Prix ───────────────────────────────────────────────────────────── */}
       <section id="prix" className="cp-section scroll-mt-20">
