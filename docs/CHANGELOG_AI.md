@@ -1813,3 +1813,20 @@ Réécrire `01 — VUE D'ENSEMBLE` pour les pages stack clés afin qu'elle répo
 - Les blocs `POUR QUI`, `CE QUE ÇA ÉVITE`, `QUAND PASSER PLUS LOURD` deviennent la structure standard.
 - Les listes de capacités et les détails de workflow restent hors de l'overview.
 - Le slug demandé `sites-ia-automation` est résolu vers la stack source `createur-sites-ia-automation`.
+
+---
+
+## 2026-05-18 — Sprint 47 : Hero stack decision map
+
+### Objectif
+Faire du hero la vraie carte de décision de la fiche stack : cible, promesse, couverture, condition d'évitement, budget, niveau, complexité, vigilance et outils clés visibles immédiatement.
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — ajout du helper hero decision map par stack clé, suppression du rendu de `Vue d'ensemble`, navigation d'ancre démarrant à `Outils`, panel `En un coup d'œil` enrichi avec le workflow.
+- `src/index.css` — cartes hero en grille de qualification, bloc workflow dans le snapshot et retrait de l'ancre `apercu`.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du nouveau rôle du hero et de la suppression de l'overview redondante.
+
+### Résultat
+- Les pages stack se comprennent dès le hero, sans attendre une section overview.
+- `Outils` devient la première ancre de page.
+- `Vue d'ensemble` n'est plus rendue comme section autonome sur le template stack detail.

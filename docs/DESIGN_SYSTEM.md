@@ -73,17 +73,16 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 ---
 
 
-## Pattern fiche stack — Vue d'ensemble
+## Pattern fiche stack — Hero decision map
 
-La section `VUE D'ENSEMBLE` doit présenter la promesse centrale de la stack, pas une longue liste de profils cibles.
+Le hero remplace la section `VUE D'ENSEMBLE` sur les fiches stack detail. Il doit présenter la promesse centrale et qualifier l'usage sans retarder l'information utile.
 
-- H2 court : `clamp(38px, 4vw, 68px)`, line-height `0.98`, letter-spacing `-0.055em`, max-width `780px`.
-- Intro : 18px, line-height `1.45`, max-width `760px`, couleur `#6F6F68`.
-- La section sert uniquement à qualifier l'usage : ne pas répéter le hero, ne pas lister toutes les capacités, ne pas expliquer les outils.
-- Les trois blocs standards sont `POUR QUI`, `CE QUE ÇA ÉVITE`, `QUAND PASSER PLUS LOURD`.
-- Les blocs sont des cartes blanches, bordure `#DADAD4`, radius 14px, padding 24px, sans hauteur minimale forcée.
-- Les chips workflow et la `Note ToolTrim` ne doivent pas apparaître dans `Vue d'ensemble`; ces détails appartiennent à `02 — OUTILS`, au budget ou à la FAQ.
-- L'audience détaillée appartient aux blocs de qualification, au hero ou au résumé rapide, pas au H2.
+- H1 fort : `clamp(56px, 6vw, 104px)`, line-height `0.92`, letter-spacing `-0.065em`.
+- Promesse courte : `clamp(19px, 1.4vw, 23px)`, line-height `1.42`, max-width `760px`.
+- Trois cartes standards dans le hero : `POUR QUI`, `CE QUE ÇA COUVRE`, `À ÉVITER SI`.
+- Les cartes sont blanches, bordure `#DADAD4`, radius 18px, padding 20px, sans hauteur minimale forcée.
+- Les chips workflow et la `Note ToolTrim` ne doivent pas apparaître entre hero et outils; ces détails appartiennent à `02 — OUTILS`, au budget ou à la FAQ.
+- La navigation d'ancre commence à `Outils`.
 
 ---
 
@@ -555,16 +554,8 @@ Cercles 28px, fond `#FFFFFF`, bordure `1px solid #E7E7E0`, `margin-left: -6px` (
 /* Zéro bleu */
 ```
 
-### Vue d'ensemble (`sd-overview-grid`)
-```css
-.sd-overview-intro { font-size: 17px; color: #6F6F68; line-height: 1.55; }
-.sd-overview-grid  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
-.sd-overview-col   { border-top: 3px solid #222222; padding-top: 16px; padding-right: 24px; }
-.sd-overview-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: #6F6F68; }
-.sd-overview-text  { font-size: 16px; color: #222222; line-height: 1.5; }
-/* ≤767px → 1 colonne */
-```
+### Vue d'ensemble
+Le pattern `sd-overview-grid` est historique. Ne pas l'utiliser sur les fiches stack detail actuelles : la qualification vit dans le hero decision map.
 
 ### Note expert (`sd-expert-note`)
 ```css
@@ -1039,7 +1030,7 @@ La navigation interne des pages détail stack est une navigation d'ancre, pas de
 
 ## Stack detail hero quick-read pattern
 
-Le hero d'une page stack detail doit lire comme un objet de décision, pas comme une fiche administrative.
+Le hero d'une page stack detail doit lire comme une carte de décision, pas comme un simple titre de page. Il répond dès le premier écran à : pour qui, ce que ça couvre, quand éviter, budget, nombre d'outils, niveau, complexité, point de vigilance et outils clés.
 
 **Grille :**
 - Desktop : `minmax(0, 1fr) 380px`.
@@ -1047,15 +1038,21 @@ Le hero d'une page stack detail doit lire comme un objet de décision, pas comme
 - À partir de tablette/mobile, les colonnes se superposent et la carte résumé passe sous l'intro.
 
 **Côté gauche :**
-- Ordre : breadcrumb, eyebrow, H1, sous-titre court, phrase contexte, cartes fit/avoid, CTA.
-- Les cartes `stack-fit-*` remplacent le bloc tableau : fond blanc, bordure `#DADAD4`, rayon 14px, padding 22px.
+- Ordre : breadcrumb, eyebrow, H1, promesse courte, trois cartes de décision, CTA.
+- Les cartes `stack-fit-*` portent `POUR QUI`, `CE QUE ÇA COUVRE`, `À ÉVITER SI`.
+- Style : fond blanc, bordure `#DADAD4`, rayon 18px, padding 20px, texte 15px/1.4.
 
 **Carte droite `sd-snapshot` :**
 - Budget en premier : valeur 40px, suffixe `/mois` en 16px.
 - Facts grid en 2 colonnes : Profil, Outils, Niveau, Complexité.
+- Bloc `Workflow` : résumé de la chaîne principale, court et lisible.
 - Bloc `À surveiller` limité à une phrase courte.
 - Bloc `Outils clés` : 5–6 logos visibles, pastilles 32px, puis `+N`.
 - Éviter les séparateurs ligne par ligne ; utiliser seulement des séparations de groupes.
+
+**Navigation :**
+- Si le hero possède la qualification, ne pas rendre une section `Vue d'ensemble` immédiatement après.
+- La navigation d'ancre commence par `Outils`, puis `Budget`, `Risques`, `Calibrage`, `FAQ`.
 
 
 ## Stack detail integrated workflow inventory
@@ -1108,8 +1105,7 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 - Ne pas répéter ici la logique budget, risques ou calibrage : ces informations appartiennent à leurs sections.
 
 **Structure informationnelle :**
-- Hero : cible, promesse courte, budget cible, niveau, fit / avoid.
-- Vue d'ensemble : qualification rapide uniquement. Elle répond à “est-ce aligné avec ma façon de travailler ?”.
+- Hero : cible, promesse courte, couverture, avoid-if, budget cible, nombre d'outils, niveau, complexité, vigilance et outils clés.
 - Outils : étapes de workflow et outils uniquement.
 - Budget : logique de coût, ce qui mérite paiement, ce qui peut rester gratuit, facteurs de dérive et seuil d'audit.
 - Risques : erreurs et scénarios d'overbuild.
@@ -1118,9 +1114,8 @@ Le pattern s'inspire du principe UX `Stack by Layer`, mais sa logique est ToolTr
 Sur les pages stack detail, éviter les formulations de type “base recommandée divisée par usages”. La page doit se lire comme une fiche de décision workflow-first, pas comme un inventaire.
 
 **Vue d'ensemble :**
-- Utiliser un titre court, une intro courte et trois blocs de qualification.
-- Ne pas afficher de chips workflow dans cette section : la carte de la stack porte déjà cette lecture.
-- Ne pas afficher de `Note ToolTrim`, astuce d'implémentation ou réglage outil dans l'overview.
+- Ne pas rendre de section overview autonome quand le hero contient déjà la qualification.
+- Ne pas réintroduire de cartes immédiatement sous le hero qui répètent `POUR QUI`, `CE QUE ÇA COUVRE` ou `À ÉVITER SI`.
 - Les conseils pratiques doivent vivre dans les blocs workflow, le budget ou la FAQ selon leur rôle.
 
 **Budget :**

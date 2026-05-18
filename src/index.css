@@ -6397,7 +6397,6 @@
       scroll-behavior: auto;
     }
   }
-  #apercu,
   #outils,
   #budget,
   #risques,
@@ -6577,6 +6576,20 @@
   .stack-fit-grid + a {
     margin-top: 32px;
   }
+  .stack-fit-grid--hero {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 920px;
+    margin-top: 36px;
+  }
+  .stack-fit-card--hero {
+    min-height: 0;
+    padding: 20px;
+    border-radius: 18px;
+  }
+  .stack-fit-card--hero p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
   .sd-hero-decision-grid p,
   .sd-decision-summary-card p,
   .sd-overview-intro,
@@ -6686,12 +6699,14 @@
     overflow-wrap: anywhere;
   }
   .sd-snapshot-watch,
+  .sd-snapshot-workflow,
   .sd-snapshot-tools {
     margin-top: 24px;
     padding-top: 24px;
     border-top: 1px solid #DADAD4;
   }
-  .sd-snapshot-watch p {
+  .sd-snapshot-watch p,
+  .sd-snapshot-workflow p {
     margin: 8px 0 0;
     font-family: var(--font-ui);
     font-size: 15px;
@@ -6863,7 +6878,6 @@
     }
   }
   @media (max-width: 767px) {
-    #apercu,
     #outils,
     #budget,
     #risques,
@@ -6901,6 +6915,9 @@
     .stack-fit-grid {
       grid-template-columns: 1fr;
       margin-top: 32px;
+    }
+    .stack-fit-grid--hero {
+      margin-top: 28px;
     }
     .stack-fit-card {
       padding: 20px;
@@ -11878,6 +11895,7 @@
 }
 .sd-snapshot-facts,
 .sd-snapshot-watch,
+.sd-snapshot-workflow,
 .sd-snapshot-tools {
   border-top: 0;
   background-image: repeating-linear-gradient(to right, rgba(34,34,34,0.28) 0, rgba(34,34,34,0.28) 1px, transparent 1px, transparent 8px);
@@ -12070,7 +12088,7 @@
    Removes decision matrix section, numbered eyebrows, tool status rename
 ══════════════════════════════════════════════════════════════════════════ */
 
-/* Numbered eyebrow: "01 — VUE D'ENSEMBLE" style */
+/* Numbered eyebrow for stack detail sections */
 .sd-section-eyebrow {
   font-family: var(--font-ui);
   font-size: 11px;
