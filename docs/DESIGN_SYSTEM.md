@@ -1208,8 +1208,12 @@ Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doi
 5. `.sd-expand-btn` — bouton expand/collapse. Visible uniquement si `hasHiddenGroups`.
 
 **Structure d'un bloc — colonne droite :**
-- Groupes : `Socle recommandé` · `Selon ton usage` · `Extensions` — chacun introduit par `.sd-group-tag` (pill transparent, border `#DADAD4`, 10px caps, radius 999px).
-- Outils rendus comme `.sd-tool-item` (Link) contenant `.sd-tool-logo` (44px, radius 12px, fond blanc) + `.sd-tool-name` (15px/600). **Pas de badge de statut par outil.**
+- Groupes : `Socle recommandé` · `Selon ton usage` · `Extensions` — chacun introduit par `.sd-group-tag` (pill transparent, border `#DADAD4`, 10px caps, height 24px, radius 999px, couleur `#6F6F68`).
+- Outils rendus comme `.sd-tool-item` (`Link`, `display:flex`, `gap:14px`) contenant :
+  - `.sd-tool-logo` — **unique conteneur logo** : 56×56px, radius 16px, fond blanc, border `1px solid #DADAD4`. Transition border-color 120ms sur hover. **Pas de conteneur intermédiaire.** La `<img>` ToolLogo à l'intérieur a ses propres styles ring/bg/padding strippés par CSS (`!important`).
+  - `.sd-tool-name` — 17px, font-weight 650, letter-spacing -0.025em, max-width 180px, -webkit-line-clamp 2.
+- **Règle une seule coque logo :** Ne jamais imbriquer `.sd-tool-logo` dans un autre conteneur décoratif. Le composant `ToolLogo` est passé avec `size={34}` — sa `<img>` est 34×34px à l'intérieur de la coque 56px.
+- **Pas de badge de statut par outil :** Les group tags portent le sens (Socle / Selon usage / Extensions). Ne pas ajouter `<small>`, `<span class="sd-tool-status">` ou équivalent sous le nom.
 - **`.sd-tools-total` supprimé de la colonne droite** — le comptage est dans `.sd-stack-card-micro` (colonne gauche).
 - **`.sd-tools-count-indicator` supprimé** — ne pas réintroduire.
 

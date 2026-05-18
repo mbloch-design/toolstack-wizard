@@ -969,7 +969,7 @@ const StackDetailPage = () => {
                               title={tool!.name}
                             >
                               <span className="sd-tool-logo">
-                                <ToolLogo tool={tool!} size={26} />
+                                <ToolLogo tool={tool!} size={34} />
                               </span>
                               <span className="sd-tool-name">{tool!.name}</span>
                             </Link>
@@ -993,7 +993,7 @@ const StackDetailPage = () => {
                               title={tool!.name}
                             >
                               <span className="sd-tool-logo">
-                                <ToolLogo tool={tool!} size={26} />
+                                <ToolLogo tool={tool!} size={34} />
                               </span>
                               <span className="sd-tool-name">{tool!.name}</span>
                             </Link>
@@ -1017,7 +1017,7 @@ const StackDetailPage = () => {
                               title={tool!.name}
                             >
                               <span className="sd-tool-logo">
-                                <ToolLogo tool={tool!} size={26} />
+                                <ToolLogo tool={tool!} size={34} />
                               </span>
                               <span className="sd-tool-name">{tool!.name}</span>
                             </Link>

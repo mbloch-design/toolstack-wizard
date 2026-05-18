@@ -2,6 +2,30 @@
 
 ---
 
+## 2026-05-18 — Sprint 57 : Simplify workflow tool item containers
+
+### Objectif
+Alléger les tool items dans les workflow family cards : un seul conteneur logo (56×56px), plus de double border/ring autour des logos, nom à 17px/650, pas de badge statut sous le nom (les group tags portent le sens).
+
+### Fichiers modifiés
+- `src/pages/StackDetailPage.tsx` — `ToolLogo` size prop : 26 → 34 dans les trois groupes (core, secondary, extension).
+- `src/index.css` — sprint block mis à jour : `.sd-tool-item` flex + gap 14px, `.sd-tool-logo` 56×56px radius 16px border #DADAD4, `.sd-tool-logo img` strip ring/bg/padding de ToolLogo, `.sd-tool-name` 17px/650, `.sd-tool-grid` auto-fit minmax(210px,1fr), mobile 48px logo / 28px image.
+- `docs/CHANGELOG_AI.md`, `docs/DESIGN_SYSTEM.md` — documentation du pattern tool item.
+
+### Avant → après
+- **Niveaux de nesting logo :** 2 (`.sd-tool-logo` shell 44px + `ToolLogo <img>` avec ring-1/bg-card/padding propres) → 1 (`.sd-tool-logo` seul shell 56px, img sans décoration propre)
+- **Supprimé du JSX :** aucun (status badge déjà absent depuis sprint précédent)
+- **Taille logo :** 44px → 56px (shell), 26px → 34px (image), mobile 40px → 48px / 22px → 28px
+- **Nom outil :** 15px/600 → 17px/650, max-width 160 → 180px
+- **Grid :** minmax(180px) → minmax(210px), gap 14/24 → 18/28
+
+### Résultat
+- Logos bien visibles, un seul border, pas de double ring
+- Group tags (Socle recommandé / Selon ton usage / Extensions) toujours visibles
+- 0 erreurs build, 0 erreurs lint
+
+---
+
 ## 2026-05-18 — Sprint 56 : Hero fact sheet typography scale
 
 ### Objectif
