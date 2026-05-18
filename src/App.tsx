@@ -36,6 +36,7 @@ const TermsPage = lazy(() => import("@/pages/TermsPage"));
 const ComparePage = lazy(() => import("@/pages/ComparePage"));
 const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
+const CreditsPage = lazy(() => import("@/pages/CreditsPage"));
 const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
@@ -199,6 +200,8 @@ const App = () => (
               <Route path="audit-saas-gratuit" element={<AuditLanding />} />
               <Route path="free-saas-audit" element={<AuditLanding />} />
             </Route>
+            {/* Standalone pages — no Navbar/Footer wrapper */}
+            <Route path="/credits" element={<CreditsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
