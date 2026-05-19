@@ -2,6 +2,48 @@
 
 ---
 
+## 2026-05-19 — Sprint 66 : Hero comparatif — logos, contenu éditorial, battle ChatGPT vs Gemini
+
+### Objectif
+Clarifier la valeur ToolTrim dans le hero comparatif. Résoudre six problèmes : logos absents, position label trop long, heroContract trop technique, microfact budget montrant un prix brut, microfact risque vague, et absence de la battle ChatGPT vs Gemini.
+
+### Corrections CSS (`src/index.css`)
+- `.cp-hero-duel-logo` — suppression de `border`, `background`, `border-radius` : le conteneur est neutre, `ToolLogo` gère sa propre présentation visuelle
+- `.cp-hero-promise` — margin réduit de `0 0 40px` à `0 0 20px` pour serrer avec `.cp-hero-brief`
+- Nouvelle classe `.cp-hero-brief` — paragraphe éditorial court entre sous-titre et duel cards, `font-size: var(--tt-size-body)`, `color: #6F6F68`, `max-width: 720px`
+
+### Corrections `src/lib/toolLogos.ts`
+- Ajout `gemini: "googlegemini"` dans `SIMPLE_ICON_SLUGS` (section G) — résout le logo absent pour Gemini
+
+### Corrections `src/pages/ComparePage.tsx`
+- `getBudgetSignal()` — refactorisé pour retourner un signal éditorial, plus jamais un prix brut (ex: `"Compare le plan utile, pas le prix d'entrée"`)
+- `CompareEditorialContent` — nouveau champ `aglanceHeroBrief?: string`
+- `BattleRawData.tooltrimAtAGlance` — nouveau champ `heroBrief?: string`
+- `buildBattleEditorialContent` — mapping `aglanceHeroBrief: aglance?.heroBrief`
+- `heroBrief` dans le render — affiché si présent, null sinon (pas de fallback générique)
+- `heroPositionA / heroPositionB` — utilisent `?? null` : label affiché uniquement si explicitement renseigné dans le JSON (plus de fallback `bestForA` trop long)
+- Logo `ToolLogo` — taille passée à `size={48}` pour une meilleure lisibilité dans les duel cards
+- JSX hero — `{heroBrief && <p className="cp-hero-brief">{heroBrief}</p>}` inséré après le sous-titre
+- JSX duel positions — `{heroPositionA && ...}` conditionnel pour éviter les labels vides
+
+### Nouvelle battle : ChatGPT vs Gemini
+- Nouveau fichier `src/data/comparison-battles/chatgpt-vs-gemini.json`
+- Contenu éditorial intégral selon brief de mission :
+  - heroPromise : `"Deux assistants généralistes. Deux écosystèmes."`
+  - heroBrief : paragraphe explicatif sur le choix par écosystème
+  - heroPositionA : `"Assistant polyvalent"` / bestFor : `"Écriture · analyse · code · images · fichiers"`
+  - heroPositionB : `"Assistant Google-first"` / bestFor : `"Workspace · recherche · documents · multimodal"`
+  - heroContract : `"Ne choisis pas l'IA \"la plus forte\". Choisis celle qui s'insère le mieux dans ton workflow réel."`
+  - defaultChoiceLabel : `"ChatGPT"`, budgetShort : `"Compare le plan utile, pas le prix d'entrée"`, mainRisk : `"Payer deux IA généralistes sans usages séparés"`
+- Enregistrement dans `src/data/comparisonBattles.ts` (import + entrée `"chatgpt-vs-gemini"`)
+
+### Règles préservées
+- Aucune taille typographique locale créée — tout référence `var(--tt-size-*)`
+- Fallback logo propre : `ToolLogo` affiche initiale stylée si toutes les sources CDN échouent
+- TypeScript : `exit:0` confirmé
+
+---
+
 ## 2026-05-19 — Sprint 65 : Design system typographique scalable — tokens globaux
 
 ### Objectif

@@ -1,0 +1,682 @@
+{
+  "slug": "chatgpt-vs-gemini",
+  "checkedAt": "2026-05-19",
+  "locale": "fr",
+  "tools": {
+    "toolA": {
+      "name": "ChatGPT",
+      "officialWebsite": "https://chatgpt.com",
+      "pricingUrl": "https://chatgpt.com/pricing/",
+      "featuresUrl": "https://chatgpt.com/business/business-plan/",
+      "docsUrl": "https://help.openai.com/",
+      "securityUrl": "https://openai.com/security/",
+      "integrationsUrl": "https://help.openai.com/",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan gratuit disponible. Les plans payants ajoutent l'accès aux modèles avancés, aux outils de travail et aux usages intensifs.",
+        "limits": [
+          "Les limites exactes de messages varient selon le plan, la charge et les modèles.",
+          "Certaines fonctions de travail sont réservées aux plans Business/Enterprise."
+        ],
+        "source": "https://chatgpt.com/pricing/"
+      },
+      "paidPlans": [
+        {
+          "name": "Plus",
+          "priceMonthly": 20,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://chatgpt.com/pricing/"
+        },
+        {
+          "name": "Pro",
+          "priceMonthly": 200,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://chatgpt.com/pricing/"
+        },
+        {
+          "name": "Business",
+          "priceMonthly": 30,
+          "priceYearlyMonthlyEquivalent": 25,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://chatgpt.com/pricing/"
+        }
+      ],
+      "coreStrengths": [
+        "Assistant polyvalent pour rédaction, recherche, analyse, images, fichiers et code.",
+        "Écosystème large avec outils intégrés, GPTs et connexions à services tiers.",
+        "Fonctionne bien en dehors de tout écosystème Google — idéal pour les workflows agnostiques."
+      ],
+      "coreLimits": [
+        "Moins intégré nativement à Google Workspace, Gmail, Google Docs ou Google Search.",
+        "Peut générer du bruit si l'utilisateur ne cadre pas précisément ses usages."
+      ],
+      "hiddenConstraints": [
+        "Risque de payer Pro sans vrai besoin si l'usage reste ponctuel.",
+        "Les limites d'usage peuvent changer selon charge et plan."
+      ],
+      "integrations": [
+        "Google Drive/Dropbox/OneDrive/SharePoint selon plans",
+        "GPTs et actions selon écosystème",
+        "Plugins et connecteurs selon plan Business/Enterprise"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Export conversation par conversation ou via export de compte. Pas un espace documentaire structuré.",
+        "source": "https://help.openai.com/"
+      },
+      "setupComplexity": "low",
+      "collaborationFit": "solo",
+      "automationDepth": "advanced",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "IA conversationnelle multimodale avec modèles avancés, recherche, analyse de fichiers, génération et code.",
+        "pricingImpact": "Le coût grimpe surtout avec Pro ou Business.",
+        "source": "https://chatgpt.com/pricing/"
+      }
+    },
+    "toolB": {
+      "name": "Gemini",
+      "officialWebsite": "https://gemini.google.com",
+      "pricingUrl": "https://gemini.google.com/advanced",
+      "featuresUrl": "https://workspace.google.com/intl/fr/products/gemini/",
+      "docsUrl": "https://support.google.com/gemini",
+      "securityUrl": "https://safety.google/",
+      "integrationsUrl": "https://workspace.google.com/intl/fr/products/gemini/",
+      "freePlan": {
+        "exists": true,
+        "summary": "Plan gratuit disponible. Gemini Advanced (Google One AI Premium) ajoute accès aux modèles avancés et l'intégration Workspace approfondie.",
+        "limits": [
+          "Les limites d'usage Gemini Advanced ne sont pas publiées de façon simple.",
+          "L'intégration Workspace complète nécessite Gemini for Google Workspace selon plan."
+        ],
+        "source": "https://gemini.google.com/advanced"
+      },
+      "paidPlans": [
+        {
+          "name": "Google One AI Premium (Gemini Advanced)",
+          "priceMonthly": 22,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per user",
+          "source": "https://gemini.google.com/advanced"
+        },
+        {
+          "name": "Gemini for Workspace Business Starter",
+          "priceMonthly": 12,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://workspace.google.com/pricing"
+        },
+        {
+          "name": "Gemini for Workspace Business Standard",
+          "priceMonthly": 20,
+          "priceYearlyMonthlyEquivalent": null,
+          "currency": "USD",
+          "billingUnit": "per seat",
+          "source": "https://workspace.google.com/pricing"
+        }
+      ],
+      "coreStrengths": [
+        "Intégration native profonde dans Google Workspace : Gmail, Docs, Sheets, Drive, Meet.",
+        "Accès à la recherche Google avec sources récentes et résultats enrichis.",
+        "Fort sur l'analyse de documents et fichiers dans l'écosystème Google Drive.",
+        "Multimodal avec compréhension d'images, vidéo, PDF et audio."
+      ],
+      "coreLimits": [
+        "Devient vraiment intéressant uniquement si le workflow est ancré dans Google Workspace.",
+        "Moins pertinent pour un usage hors écosystème Google.",
+        "Intégration Workspace avancée dépend du plan souscrit."
+      ],
+      "hiddenConstraints": [
+        "Le vrai bénéfice nécessite d'utiliser Gmail, Docs, Drive au quotidien.",
+        "L'abonnement AI Premium inclut 2 To Google One — valeur perçue peut masquer le coût réel de l'IA."
+      ],
+      "integrations": [
+        "Gmail, Google Docs, Sheets, Slides, Drive, Meet natifs",
+        "Google Search intégré",
+        "Workspace Admin selon plan"
+      ],
+      "exportPortability": {
+        "rating": "medium",
+        "notes": "Les contenus générés dans Workspace restent dans l'écosystème Google. Portabilité via Google Takeout.",
+        "source": "https://support.google.com/gemini"
+      },
+      "setupComplexity": "low",
+      "collaborationFit": "solo",
+      "automationDepth": "medium",
+      "aiFeatures": {
+        "exists": true,
+        "summary": "Assistant IA multimodal avec intégration Workspace, recherche Google, analyse de documents et génération.",
+        "pricingImpact": "Le vrai coût dépend de la combinaison Gemini Advanced + Workspace selon plan.",
+        "source": "https://gemini.google.com/advanced"
+      }
+    }
+  },
+  "comparison": {
+    "whyCompared": "Ce sont deux assistants IA généralistes souvent comparés par les freelances et équipes qui cherchent leur outil IA principal.",
+    "falseSimilarity": "Ils semblent interchangeables car ils répondent tous les deux à des prompts. En réalité, le choix dépend surtout de l'écosystème : Gemini devient vraiment intéressant seulement si ton travail quotidien est dans Google Workspace.",
+    "mainDifference": "ChatGPT est l'assistant par défaut si tu veux un outil polyvalent agnostique. Gemini est plus logique si Gmail, Docs, Drive et la recherche Google sont au cœur de ton workflow.",
+    "decisionSummary": "Par défaut, ToolTrim recommande ChatGPT pour un usage généraliste. Gemini devient meilleur si tu travailles déjà dans Google Workspace tous les jours.",
+    "tooltrimDefaultChoice": "toolA",
+    "battleAngle": {
+      "isThereAWinner": false,
+      "winner": "depends",
+      "winnerReason": "Le gagnant dépend de l'écosystème utilisé au quotidien, pas d'un score global.",
+      "contextualWinnerNote": "ChatGPT gagne en assistant agnostique polyvalent. Gemini gagne dans un workflow Google-first."
+    },
+    "chooseAIf": [
+      "Tu veux un assistant IA principal qui fonctionne quel que soit ton écosystème.",
+      "Tu utilises des outils variés hors de Google : Notion, Slack, Figma, GitHub, etc.",
+      "Tu veux un assistant unique pour rédaction, analyse, code, images et recherche."
+    ],
+    "chooseBIf": [
+      "Ton travail quotidien est ancré dans Google Workspace : Gmail, Docs, Sheets, Drive.",
+      "Tu utilises Google Search intensivement et veux des réponses enrichies avec sources récentes.",
+      "Tu veux une IA qui lit et modifie directement tes fichiers Google Drive sans friction."
+    ],
+    "avoidAIf": [
+      "Ton seul usage est de travailler dans Google Workspace et tu veux l'intégration la plus native possible."
+    ],
+    "avoidBIf": [
+      "Tu travailles principalement hors de l'écosystème Google.",
+      "Tu ne veux pas dépendre d'un abonnement Google pour accéder aux modèles avancés."
+    ],
+    "avoidBothIf": [
+      "Tu n'as pas encore identifié 3 usages récurrents et mesurables pour une IA.",
+      "Tu cherches un outil projet, un CRM ou une base de connaissance structurée."
+    ],
+    "decisiveCriteria": [
+      {
+        "label": "Adéquation à l'écosystème",
+        "whyItMatters": "Une IA qui s'intègre à tes outils existants change la productivité réelle.",
+        "toolA": "Agnostique et polyvalent, fonctionne dans tous les contextes.",
+        "toolB": "Très fort dans Google Workspace, moins intéressant en dehors.",
+        "decision": "Gemini si tu es Google-first. ChatGPT sinon.",
+        "importance": "high"
+      },
+      {
+        "label": "Polyvalence des usages",
+        "whyItMatters": "Un solo doit souvent couvrir plusieurs usages avec un seul abonnement.",
+        "toolA": "Couvre le plus grand nombre d'usages : écriture, code, analyse, image, recherche.",
+        "toolB": "Fort sur recherche et Workspace, moins large sur usages créatifs ou code avancé.",
+        "decision": "ChatGPT si l'usage est varié et hors Google.",
+        "importance": "high"
+      },
+      {
+        "label": "Intégration documentaire",
+        "whyItMatters": "Accéder et modifier directement ses documents change le flux de travail.",
+        "toolA": "Connexion Google Drive/OneDrive possible selon plan, moins native.",
+        "toolB": "Lecture et modification native de Gmail, Docs, Sheets, Drive.",
+        "decision": "Gemini si les documents Google sont au centre.",
+        "importance": "high"
+      },
+      {
+        "label": "Coût du doublon",
+        "whyItMatters": "Deux IA à 20 USD/mois ou plus deviennent vite un coût fixe inutile.",
+        "toolA": "Peut suffire seul pour la majorité des profils.",
+        "toolB": "À ajouter seulement si l'usage Workspace est réel et quotidien.",
+        "decision": "Ne garde les deux que si les usages sont clairement séparés.",
+        "importance": "high"
+      },
+      {
+        "label": "Accès à la recherche récente",
+        "whyItMatters": "La recherche avec sources change la qualité des réponses factuelles.",
+        "toolA": "Recherche web disponible selon plan et mode.",
+        "toolB": "Intégration Google Search native avec sources récentes.",
+        "decision": "Avantage Gemini pour la recherche avec sources Google fraîches.",
+        "importance": "medium"
+      }
+    ],
+    "scoreByUseCase": [
+      {
+        "useCase": "Assistant IA généraliste solo",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Couvre le plus grand nombre d'usages avec un seul abonnement, quel que soit l'écosystème."
+        },
+        "toolB": {
+          "fit": "good",
+          "score": null,
+          "reason": "Bon, mais devient vraiment intéressant seulement dans un contexte Google-first."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "ChatGPT par défaut.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Travail dans Google Workspace",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Connexion Drive possible mais moins native."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Intégration native Gmail, Docs, Sheets, Drive, Meet."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Gemini si tu vis dans Google Workspace.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Recherche avec sources récentes",
+        "toolA": {
+          "fit": "good",
+          "score": null,
+          "reason": "Recherche web disponible, bonne qualité selon plan."
+        },
+        "toolB": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Google Search intégré nativement avec résultats enrichis."
+        },
+        "winner": "toolB",
+        "tooltrimDecision": "Avantage Gemini pour la recherche Google-native.",
+        "showAsScore": false
+      },
+      {
+        "useCase": "Code, automatisation, outils créatifs",
+        "toolA": {
+          "fit": "strong",
+          "score": null,
+          "reason": "Très fort pour code, génération d'images, analyse de fichiers variés."
+        },
+        "toolB": {
+          "fit": "good",
+          "score": null,
+          "reason": "Capable, mais moins spécialisé sur code et créatif."
+        },
+        "winner": "toolA",
+        "tooltrimDecision": "ChatGPT pour code et créatif.",
+        "showAsScore": false
+      }
+    ],
+    "nonDecisiveSimilarities": [
+      {
+        "label": "Les deux répondent à des prompts",
+        "reasonToIgnore": "La vraie différence vient de l'intégration aux outils, pas de la capacité à converser."
+      },
+      {
+        "label": "Les deux ont un plan gratuit",
+        "reasonToIgnore": "Le gratuit sert à tester, pas à décider un usage pro durable."
+      }
+    ],
+    "tippingPoint": {
+      "defaultPosition": "Commencer avec ChatGPT si tu veux un assistant IA agnostique et polyvalent.",
+      "switchWhen": "Basculer vers Gemini quand plus de 60 % de ton travail passe par Gmail, Google Docs, Sheets ou Drive.",
+      "keepBothIf": "Tu uses ChatGPT pour code, créatif et outils non-Google, et Gemini pour Workspace et recherche Google.",
+      "warning": "Payer les deux sans frontière d'usage crée un doublon coûteux. Gemini n'apporte pas grand-chose hors écosystème Google.",
+      "examples": [
+        "ChatGPT pour produire et itérer rapidement, Gemini pour insérer directement dans Google Docs.",
+        "ChatGPT pour code et analyse de fichiers variés, Gemini pour résumés d'emails Gmail.",
+        "Gemini seul si ton workflow est 100 % Google Workspace."
+      ]
+    },
+    "costReality": {
+      "toolA": {
+        "freePlanReality": "Bon pour tester, insuffisant pour un usage pro régulier.",
+        "whenPaidBecomesNecessary": "Quand tu l'utilises tous les jours, avec fichiers, recherche, modèles avancés ou production client.",
+        "hiddenCost": "Le vrai coût monte si Pro ou Business devient nécessaire.",
+        "pricingRisk": "Payer Pro par réflexe alors que Plus suffit."
+      },
+      "toolB": {
+        "freePlanReality": "Utile pour tester, mais l'intégration Workspace complète et les modèles avancés nécessitent AI Premium.",
+        "whenPaidBecomesNecessary": "Quand l'intégration Gmail/Docs/Drive devient centrale dans ton workflow.",
+        "hiddenCost": "L'abonnement AI Premium inclut 2 To Google One — coût perçu comme stockage plus que comme IA.",
+        "pricingRisk": "Payer Gemini Advanced sans vraiment utiliser Workspace au quotidien."
+      },
+      "duplicateCostWarning": "Le doublon ChatGPT + Gemini n'a de sens que si l'usage Workspace est réel et quotidien.",
+      "tooltrimNote": "Ne compare pas seulement les prix d'entrée. Compare si ton workflow est ou non dans l'écosystème Google."
+    },
+    "workflowFit": [
+      {
+        "workflow": "ai writing",
+        "bestChoice": "toolA",
+        "reason": "ChatGPT est plus polyvalent pour rédaction hors contexte Google."
+      },
+      {
+        "workflow": "ai research",
+        "bestChoice": "toolB",
+        "reason": "Gemini est plus fort pour la recherche avec intégration Google Search native."
+      },
+      {
+        "workflow": "ai coding",
+        "bestChoice": "toolA",
+        "reason": "ChatGPT est plus fort pour code, debug et projets techniques variés."
+      }
+    ],
+    "profileFit": [
+      {
+        "profile": "Freelance agnostique (Notion, Slack, Figma, GitHub)",
+        "bestChoice": "toolA",
+        "reason": "ChatGPT s'intègre à tous les écosystèmes sans friction.",
+        "risk": "Ajouter Gemini sans usage Workspace distinct."
+      },
+      {
+        "profile": "Profil Google-first (Gmail, Docs, Drive quotidien)",
+        "bestChoice": "toolB",
+        "reason": "Gemini dans Workspace devient un vrai accélérateur si l'écosystème est là.",
+        "risk": "Ne pas exploiter les intégrations et utiliser Gemini comme simple chatbot."
+      },
+      {
+        "profile": "Petite équipe mixte",
+        "bestChoice": "depends",
+        "reason": "Dépend du stack : Workspace-centric ou non.",
+        "risk": "Multiplier les abonnements IA sans gouvernance claire."
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": "Choisir Gemini juste parce que c'est Google",
+        "consequence": "Gemini n'apporte pas grand-chose si tu ne travailles pas dans Workspace.",
+        "recommendation": "Evaluer honnêtement : combien d'heures par semaine dans Gmail, Docs, Drive ?"
+      },
+      {
+        "title": "Payer deux IA généralistes sans usages séparés",
+        "consequence": "Coût fixe doublé et usage confus entre deux outils similaires.",
+        "recommendation": "Définir un rôle précis pour chaque outil ou n'en garder qu'un."
+      },
+      {
+        "title": "Confondre assistant IA et outil métier",
+        "consequence": "Les décisions et données finissent dans des conversations difficiles à maintenir.",
+        "recommendation": "Garder Notion, Airtable, Linear ou CRM pour structurer les données durables."
+      }
+    ],
+    "migrationCost": {
+      "fromAtoB": "Faible pour les prompts. Moyen si des workflows sont bâtis sur des GPTs ou des connexions non-Google.",
+      "fromBtoA": "Faible pour les prompts. Moyen si l'intégration Workspace native est utilisée intensivement.",
+      "lockInRisk": "medium"
+    },
+    "finalRecommendation": "Par défaut, ToolTrim recommande ChatGPT comme assistant IA principal si tu veux un outil agnostique et polyvalent. Gemini devient plus logique uniquement si ton workflow quotidien est ancré dans Google Workspace."
+  },
+  "comparisonRows": [
+    {
+      "group": "Usage",
+      "criterion": "Usage principal",
+      "toolA": "Assistant polyvalent agnostique : écriture, code, analyse, images, fichiers",
+      "toolB": "Assistant Google-first : Workspace, recherche, documents, multimodal",
+      "tooltrimDecision": "ChatGPT par défaut, Gemini si workflow Google-first.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "hero",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Intégration",
+      "criterion": "Intégration Workspace",
+      "toolA": "Connexion Drive/OneDrive possible selon plan, non native",
+      "toolB": "Native : Gmail, Docs, Sheets, Drive, Meet",
+      "tooltrimDecision": "Avantage Gemini si tu travailles dans Google Workspace.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Coût",
+      "criterion": "Risque de doublon",
+      "toolA": "Peut suffire seul pour la majorité des profils",
+      "toolB": "Intéressant seulement si usage Workspace est réel et quotidien",
+      "tooltrimDecision": "Ne garder les deux que si les rôles sont clairs.",
+      "differenceLevel": "high",
+      "decisionValue": "high",
+      "displayPriority": "costReality",
+      "showInMainTable": true,
+      "reasonToShow": "Critère réellement différenciant pour choisir."
+    },
+    {
+      "group": "Recherche",
+      "criterion": "Recherche avec sources récentes",
+      "toolA": "Disponible selon plan et mode",
+      "toolB": "Google Search natif, résultats enrichis",
+      "tooltrimDecision": "Avantage Gemini pour la recherche Google-native.",
+      "differenceLevel": "medium",
+      "decisionValue": "medium",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Critère différenciant selon usage."
+    },
+    {
+      "group": "Usage",
+      "criterion": "Code et outils créatifs",
+      "toolA": "Très fort pour code, images, fichiers variés",
+      "toolB": "Capable, moins spécialisé",
+      "tooltrimDecision": "ChatGPT pour code et créatif.",
+      "differenceLevel": "medium",
+      "decisionValue": "medium",
+      "displayPriority": "mainTable",
+      "showInMainTable": true,
+      "reasonToShow": "Différenciant pour profils techniques."
+    }
+  ],
+  "contentBlocks": {
+    "heroPromise": "Deux assistants généralistes. Deux écosystèmes.",
+    "verdictTitle": "Le choix rapide.",
+    "scoreTitle": "Le match par usage.",
+    "criteriaTitle": "Ce qui change vraiment.",
+    "tableTitle": "Les écarts utiles.",
+    "tippingPointTitle": "Le seuil de bascule.",
+    "costTitle": "Le coût réel.",
+    "pitfallsTitle": "Les erreurs de choix fréquentes."
+  },
+  "uiPriority": {
+    "hero": [
+      "Usage principal",
+      "Recommandation par défaut",
+      "Intégration écosystème"
+    ],
+    "verdict": [
+      "ChatGPT par défaut pour polyvalence agnostique",
+      "Gemini pour workflow Google-first"
+    ],
+    "scoreByUseCase": [
+      "Assistant généraliste",
+      "Travail dans Google Workspace",
+      "Recherche avec sources",
+      "Code et créatif"
+    ],
+    "mainTable": [
+      "Usage principal",
+      "Intégration Workspace",
+      "Risque de doublon",
+      "Recherche récente",
+      "Code et créatif"
+    ],
+    "tippingPoint": [
+      "Basculer vers Gemini quand le workflow est Google-first"
+    ],
+    "costReality": [
+      "Risque de payer deux IA généralistes",
+      "Gemini sans Workspace = peu de valeur ajoutée"
+    ],
+    "pitfalls": [
+      "Choisir Gemini juste parce que c'est Google",
+      "Doublon IA sans usages séparés",
+      "Confusion outil métier"
+    ],
+    "faq": [
+      "Faut-il payer les deux ?",
+      "Gemini est-il meilleur avec Google Workspace ?"
+    ]
+  },
+  "whatNotToShow": [
+    {
+      "item": "Comparaison de scores de benchmarks IA",
+      "reason": "marketing claim"
+    },
+    {
+      "item": "Liste exhaustive de modèles",
+      "reason": "too detailed"
+    },
+    {
+      "item": "Arguments sur l'IA la plus avancée ou la plus forte",
+      "reason": "marketing claim"
+    }
+  ],
+  "displayRules": {
+    "maxMainCriteria": 8,
+    "maxScoreUseCases": 6,
+    "onlyShowHighDifferenceByDefault": true,
+    "avoidRepeatedClaims": true,
+    "preferShortDecisionSentences": true,
+    "hideNonDecisiveSimilaritiesFromMainTable": true,
+    "avoidAbsoluteWinnerIfContextMatters": true
+  },
+  "related": {
+    "alternatives": [
+      "Claude",
+      "Perplexity",
+      "Mistral Le Chat"
+    ],
+    "stacks": [
+      "solo-generaliste",
+      "consultant",
+      "createur-de-contenu",
+      "dev-freelance"
+    ],
+    "categories": [
+      "ai-assistant",
+      "ai-writing",
+      "ai-research"
+    ],
+    "otherComparisons": [
+      "chatgpt-vs-claude",
+      "claude-vs-gemini"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Faut-il payer ChatGPT et Gemini ?",
+      "answer": "Seulement si les rôles sont vraiment séparés : ChatGPT pour la polyvalence agnostique, Gemini pour l'intégration Workspace native. Sans usage Workspace quotidien, Gemini n'apporte pas grand-chose de plus.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "cost"
+    },
+    {
+      "question": "Gemini est-il meilleur avec Google Workspace ?",
+      "answer": "Oui, clairement. L'intégration native Gmail, Docs, Drive et Google Search fait de Gemini l'assistant le plus logique si ton workflow quotidien est dans l'écosystème Google.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "none"
+    },
+    {
+      "question": "ChatGPT peut-il aussi s'intégrer à Google Drive ?",
+      "answer": "Oui, une connexion est possible selon le plan, mais elle est moins native et moins profonde que celle de Gemini. ChatGPT reste plus fort en dehors de l'écosystème Google.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "none"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ChatGPT pricing",
+      "url": "https://chatgpt.com/pricing/",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-19",
+      "usedFor": ["pricing", "plans", "ai features"],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Gemini Advanced pricing",
+      "url": "https://gemini.google.com/advanced",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-19",
+      "usedFor": ["pricing", "plans"],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Gemini for Google Workspace",
+      "url": "https://workspace.google.com/intl/fr/products/gemini/",
+      "type": "official_features",
+      "checkedAt": "2026-05-19",
+      "usedFor": ["workspace integrations", "features"],
+      "sourceBias": "vendor-biased"
+    },
+    {
+      "label": "Google Workspace pricing",
+      "url": "https://workspace.google.com/pricing",
+      "type": "official_pricing",
+      "checkedAt": "2026-05-19",
+      "usedFor": ["workspace plans", "seat pricing"],
+      "sourceBias": "vendor-biased"
+    }
+  ],
+  "confidence": {
+    "pricing": "medium",
+    "features": "medium",
+    "recommendation": "medium",
+    "notes": "Prix principaux vérifiés via pages officielles, mais intégrations Workspace et limites d'usage susceptibles d'évoluer."
+  },
+  "missingData": [
+    "Limites exactes d'usage Gemini Advanced non publiées de façon simple.",
+    "Disponibilité précise de certaines intégrations Workspace selon pays/plan à vérifier."
+  ],
+  "tooltrimAtAGlance": {
+    "defaultChoice": "toolA",
+    "heroPromise": "Deux assistants généralistes. Deux écosystèmes.",
+    "heroBrief": "ChatGPT reste le choix le plus simple pour un assistant polyvalent au quotidien. Gemini devient intéressant si ton travail est déjà ancré dans Google Workspace, la recherche, les documents et les usages multimodaux.",
+    "heroPositionA": "Assistant polyvalent",
+    "heroPositionB": "Assistant Google-first",
+    "bestForToolA": "Écriture · analyse · code · images · fichiers",
+    "bestForToolB": "Workspace · recherche · documents · multimodal",
+    "heroContract": "Ne choisis pas l'IA \"la plus forte\". Choisis celle qui s'insère le mieux dans ton workflow réel.",
+    "defaultChoiceLabel": "ChatGPT",
+    "budgetShort": "Compare le plan utile, pas le prix d'entrée",
+    "mainRisk": "Payer deux IA généralistes sans usages séparés",
+    "bestForSolo": "toolA",
+    "bestForTeam": "depends",
+    "budgetReality": "Le coût réel vient souvent du doublon ChatGPT + Gemini sans frontière d'usage.",
+    "complexity": "low",
+    "decisionSummary": "ChatGPT si tu veux un assistant agnostique et polyvalent. Gemini si ton workflow est Google-first."
+  },
+  "verdict": {
+    "summary": "Pas de gagnant absolu. ChatGPT est plus polyvalent et agnostique. Gemini est plus fort dans Google Workspace.",
+    "chooseAIf": [
+      "Vous voulez un assistant généraliste qui fonctionne hors de l'écosystème Google.",
+      "Vous avez des usages variés : code, images, fichiers, recherche non-Google."
+    ],
+    "chooseBIf": [
+      "Votre workflow quotidien passe par Gmail, Google Docs, Sheets ou Drive.",
+      "Vous voulez une IA qui accède directement à vos documents Google."
+    ],
+    "avoidAIf": [
+      "Votre seul usage est l'intégration native Google Workspace."
+    ],
+    "avoidBIf": [
+      "Vous travaillez principalement hors de l'écosystème Google.",
+      "Vous n'utilisez pas Gmail, Docs ou Drive au quotidien."
+    ],
+    "avoidBothIf": [
+      "Vous n'avez pas d'usage IA hebdomadaire clairement identifié."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande ChatGPT pour un solo ou freelance qui veut un assistant agnostique. Gemini devient meilleur si le workflow est ancré dans Google Workspace.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Free puis Plus à 20 USD/mois.",
+      "toolB": "Free puis AI Premium (Gemini Advanced) autour de 22 USD/mois."
+    },
+    "freePlanReality": {
+      "toolA": "Bon pour tester, pas pour production intensive.",
+      "toolB": "Suffisant pour tester, mais intégration Workspace complète nécessite le plan payant."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Usage quotidien, fichiers, recherche, code, outils avancés.",
+      "toolB": "Quand l'intégration Gmail/Docs/Drive native devient centrale dans le workflow."
+    },
+    "hiddenCosts": {
+      "toolA": "Risque de payer Pro sans usage intensif réel.",
+      "toolB": "L'AI Premium inclut 2 To Google One — coût perçu comme stockage plus que comme IA."
+    },
+    "tooltrimNote": "Le vrai coût est souvent le doublon : payer deux IA généralistes sans séparation claire des usages.",
+    "checkedAt": "2026-05-19"
+  }
+}

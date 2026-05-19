@@ -62,12 +62,12 @@ function getLevelLabel(level: "advantage" | "sufficient" | "context", lang: "fr"
   if (level === "sufficient") return lang === "fr" ? "Suffisant" : "Enough";
   return lang === "fr" ? "Dépend" : "Depends";
 }
-function getBudgetSignal(toolA: Tool, toolB: Tool, lang: "fr" | "en"): string {
-  const prices = [getPriceNum(toolA), getPriceNum(toolB)].filter((price) => price > 0);
-  if (prices.length === 0) return lang === "fr" ? "Plans gratuits possibles" : "Free plans possible";
+function getBudgetSignal(_toolA: Tool, _toolB: Tool, lang: "fr" | "en"): string {
+  // Return an editorial signal, not a raw price benchmark.
+  // Enriched pages override this via aglanceBudget in the battle JSON.
   return lang === "fr"
-    ? `à partir de ${Math.min(...prices)}€/mois`
-    : `from €${Math.min(...prices)}/month`;
+    ? "Comparer le plan utile, pas l'entrée"
+    : "Compare by actual plan, not entry price";
 }
 function getDecisionTableRows(rows: CompareTableRow[]): CompareTableRow[] {
   const preferred = [
@@ -211,6 +211,7 @@ interface CompareEditorialContent {
   aglanceDefaultLabel?: string;
   aglanceLevel?: string;
   aglanceHeroPromise?: string;
+  aglanceHeroBrief?: string;   // short editorial context paragraph below the subtitle
   aglancePositionA?: string;
   aglancePositionB?: string;
   aglanceContract?: string;
@@ -244,6 +245,7 @@ interface BattleRawData {
     mainRisk?: string;
     decisionSummary?: string;
     heroPromise?: string;
+    heroBrief?: string;         // editorial context paragraph shown below the subtitle
     heroPositionA?: string;
     heroPositionB?: string;
     heroContract?: string;
@@ -545,6 +547,7 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
     aglanceDefaultLabel: aglance?.defaultChoiceLabel,
     aglanceLevel: aglance?.complexityLabel,
     aglanceHeroPromise: aglance?.heroPromise,
+    aglanceHeroBrief: aglance?.heroBrief,
     aglancePositionA: aglance?.heroPositionA,
     aglancePositionB: aglance?.heroPositionB,
     aglanceContract: aglance?.heroContract,
@@ -1408,10 +1411,12 @@ const ComparePage = () => {
   const budgetSignal = content.aglanceBudget || getBudgetSignal(toolA, toolB, lang);
   const levelSignal = content.aglanceLevel || getLearningCurve(learningCurveRow, lang);
   const riskSignal = content.aglanceRisk || getToolTrimRisk(content, lang);
-  /* Hero duel — Sprint 62 */
+  /* Hero duel — Sprint 62/66 */
   const heroPromise = content.aglanceHeroPromise || framing;
-  const heroPositionA = content.aglancePositionA || bestForA;
-  const heroPositionB = content.aglancePositionB || bestForB;
+  const heroBrief = content.aglanceHeroBrief || null;   // only show if explicitly set — no generic fallback
+  // Position labels (small uppercase, 10px) — only use explicit values, NOT bestForA fallback (too long)
+  const heroPositionA = content.aglancePositionA ?? null;
+  const heroPositionB = content.aglancePositionB ?? null;
   const heroContract = content.aglanceContract || (lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn);
   const fallbackPitfalls = getPitfalls(content, toolA, toolB, lang);
 
@@ -1451,15 +1456,18 @@ const ComparePage = () => {
 
           <p className="cp-hero-promise">{heroPromise}</p>
 
+          {/* Editorial brief — only shown if set in JSON (heroBrief field) */}
+          {heroBrief && <p className="cp-hero-brief">{heroBrief}</p>}
+
           {/* Face-à-face duel */}
           <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
             <article className="cp-hero-duel-card">
               <div className="cp-hero-duel-head">
                 <div className="cp-hero-duel-logo">
-                  <ToolLogo tool={toolA} size={36} />
+                  <ToolLogo tool={toolA} size={48} />
                 </div>
                 <div>
-                  <p className="cp-hero-duel-position">{heroPositionA}</p>
+                  {heroPositionA && <p className="cp-hero-duel-position">{heroPositionA}</p>}
                   <h2 className="cp-hero-duel-name">{toolA.name}</h2>
                 </div>
               </div>
@@ -1471,10 +1479,10 @@ const ComparePage = () => {
             <article className="cp-hero-duel-card cp-hero-duel-card--right">
               <div className="cp-hero-duel-head">
                 <div className="cp-hero-duel-logo">
-                  <ToolLogo tool={toolB} size={36} />
+                  <ToolLogo tool={toolB} size={48} />
                 </div>
                 <div>
-                  <p className="cp-hero-duel-position">{heroPositionB}</p>
+                  {heroPositionB && <p className="cp-hero-duel-position">{heroPositionB}</p>}
                   <h2 className="cp-hero-duel-name">{toolB.name}</h2>
                 </div>
               </div>

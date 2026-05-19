@@ -81,6 +81,7 @@ const SIMPLE_ICON_SLUGS: Record<string, string> = {
   freshdesk: "freshdesk",
   // G
   gcp: "googlecloud",
+  gemini: "googlegemini",
   "google-cloud": "googlecloud",
   "google-analytics": "googleanalytics",
   "google-drive": "googledrive",

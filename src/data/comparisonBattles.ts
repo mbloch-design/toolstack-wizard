@@ -1,5 +1,6 @@
 import canvaVsPhotoshopElements from "./comparison-battles/canva-vs-photoshop-elements.json";
 import chatgptVsClaude from "./comparison-battles/chatgpt-vs-claude.json";
+import chatgptVsGemini from "./comparison-battles/chatgpt-vs-gemini.json";
 import clickupVsAsana from "./comparison-battles/clickup-vs-asana.json";
 import figmaVsCanva from "./comparison-battles/figma-vs-canva.json";
 import hubspotVsPipedrive from "./comparison-battles/hubspot-vs-pipedrive.json";
@@ -13,6 +14,7 @@ import webflowVsFramer from "./comparison-battles/webflow-vs-framer.json";
 export const BATTLE_COMPARISON_DATA = {
   "canva-vs-photoshop-elements": canvaVsPhotoshopElements,
   "chatgpt-vs-claude": chatgptVsClaude,
+  "chatgpt-vs-gemini": chatgptVsGemini,
   "clickup-vs-asana": clickupVsAsana,
   "figma-vs-canva": figmaVsCanva,
   "hubspot-vs-pipedrive": hubspotVsPipedrive,
