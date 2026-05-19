@@ -460,7 +460,7 @@
     }
   ],
   "contentBlocks": {
-    "heroPromise": "Deux assistants généralistes. Deux écosystèmes.",
+    "heroPromise": "ChatGPT reste l'option par défaut. Gemini ne devient pertinent que si ton workflow vit dans Google Workspace.",
     "verdictTitle": "Le choix rapide.",
     "scoreTitle": "Le match par usage.",
     "criteriaTitle": "Ce qui change vraiment.",
@@ -620,7 +620,7 @@
   ],
   "tooltrimAtAGlance": {
     "defaultChoice": "toolA",
-    "heroPromise": "Deux assistants généralistes. Deux écosystèmes.",
+    "heroPromise": "ChatGPT reste l'option par défaut. Gemini ne devient pertinent que si ton workflow vit dans Google Workspace.",
     "heroBrief": "ChatGPT reste le choix le plus simple pour un assistant polyvalent au quotidien. Gemini devient intéressant si ton travail est déjà ancré dans Google Workspace, la recherche, les documents et les usages multimodaux.",
     "heroPositionA": "Assistant polyvalent",
     "heroPositionB": "Assistant Google-first",
@@ -680,6 +680,11 @@
     "hiddenCosts": {
       "toolA": "Risque de payer Pro sans usage intensif réel.",
       "toolB": "L'AI Premium inclut 2 To Google One — coût perçu comme stockage plus que comme IA."
+    },
+    "costRecommendations": {
+      "freePlan": "Le gratuit suffit pour tester des prompts et vérifier si l'usage revient chaque semaine.",
+      "whenPaying": "Paie ChatGPT si l'usage devient transversal. Paie Gemini si Workspace devient le centre du travail.",
+      "hiddenCost": "Le vrai risque est de payer Pro ou AI Premium sans séparation claire des rôles."
     },
     "tooltrimNote": "Le vrai coût est souvent le doublon : payer deux IA généralistes sans séparation claire des usages.",
     "checkedAt": "2026-05-19"

@@ -7312,13 +7312,13 @@
     grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
     gap: 0;
     align-items: start;
-    margin-bottom: 32px;
+    margin-bottom: 0;
   }
   .cp-hero-duel-card {
     padding: 24px 28px;
     background: #FFFFFF;
     border: 1px solid var(--color-border, #DADAD4);
-    border-radius: var(--tt-radius-md, 18px);
+    border-radius: 8px;
   }
   .cp-hero-duel-card--right {
     text-align: left;
@@ -7406,7 +7406,7 @@
     gap: 1px;
     background: #DADAD4;
     border: 1px solid #DADAD4;
-    border-radius: 14px;
+    border-radius: 8px;
     overflow: hidden;
   }
   .cp-hero-microfact-cell {
@@ -7683,7 +7683,7 @@
   }
 
   /* ── Generic section wrapper ───────────────────────────────── */
-  .cp-section { padding: var(--tt-section-y) 0; border-bottom: 1px solid var(--color-border, #DADAD4); }
+  .cp-section { padding: clamp(64px, 6vw, 80px) 0; border-bottom: 1px solid var(--color-border, #DADAD4); }
   .cp-section[id] { scroll-margin-top: 96px; }
   .cp-section--last { border-bottom: none; }
   .cp-container {
@@ -7701,9 +7701,9 @@
   /* Section heading — uses tt-section-title scale */
   .cp-title {
     font-family: var(--font-brand);
-    font-size: var(--tt-size-section-h);
+    font-size: clamp(32px, 3vw, 36px);
     font-weight: 700; letter-spacing: -0.06em;
-    line-height: 0.95; color: #222222;
+    line-height: 1.02; color: #222222;
     max-width: 620px; margin-bottom: 0;
   }
   /* Intro paragraph beneath a full-width title (used in coût, etc.) */
@@ -7726,11 +7726,11 @@
   .cp-section-heading .cp-title { margin-bottom: 0; }
   @media (max-width: 1023px) {
     .cp-section-grid { grid-template-columns: 1fr; gap: 32px; }
-    .cp-section-heading .cp-title { margin-bottom: 20px; font-size: clamp(40px, 9vw, 56px); }
+    .cp-section-heading .cp-title { margin-bottom: 20px; font-size: clamp(32px, 7vw, 36px); }
   }
   @media (max-width: 640px) {
     .cp-section-grid { gap: 20px; }
-    .cp-title { font-size: clamp(40px, 11vw, 56px); }
+    .cp-title { font-size: clamp(30px, 8vw, 34px); }
   }
   /* ── Verdict: framing phrase — uses tt-section-intro scale ──── */
   .cp-section-framing {
@@ -7835,12 +7835,13 @@
   }
   .compare-verdict-choice {
     border: 1px solid var(--color-border, #DADAD4);
-    border-radius: var(--tt-radius-lg, 24px);
+    border-radius: 8px;
     padding: 32px;
     background: transparent;
   }
   .compare-verdict-choice .tt-fact-label { margin-bottom: 14px; }
   .compare-verdict-choice-title { margin: 0 0 10px; }
+  .compare-verdict-choice-title { font-size: 18px; line-height: 1.25; }
   .compare-verdict-choice-body { margin: 0; max-width: 480px; }
 
   /* Full-width warning band */
@@ -7916,8 +7917,8 @@
   .cp-score-title {
     margin: 0;
     font-family: var(--font-brand);
-    font-size: 26px;
-    line-height: 1.05;
+    font-size: 20px;
+    line-height: 1.15;
     letter-spacing: -0.04em;
     font-weight: 600;
     color: #222222;
@@ -7953,7 +7954,7 @@
     min-width: 0;
     background: #FFFFFF;
     border: 1px solid #DADAD4;
-    border-radius: 16px;
+    border-radius: 8px;
     padding: 18px;
   }
   .cp-score-tool--winner {
@@ -7983,9 +7984,14 @@
     background: #F8F8F4;
   }
   .cp-score-level--advantage {
-    background: #222222;
-    border-color: #222222;
-    color: #FFFFFF;
+    background: #D1FAE5;
+    border-color: #D1FAE5;
+    color: #065F46;
+  }
+  .cp-score-level--sufficient {
+    background: #F3F3EE;
+    border-color: #F3F3EE;
+    color: #6F6F68;
   }
   .cp-score-level--context {
     background: transparent;
@@ -8185,7 +8191,7 @@
     margin-top: 28px;
     background: #FFFFFF;
     border: 1px solid #DADAD4;
-    border-radius: 18px;
+    border-radius: 8px;
     overflow: hidden;
   }
   @media (max-width: 767px) { .cp-tipping-panel { grid-template-columns: 1fr; } }
@@ -8211,25 +8217,29 @@
     color: #222222;
   }
   .cp-tipping-signals {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 18px 0 0;
+    display: grid;
+    gap: 10px;
+    margin: 20px 0 0;
     padding: 0;
     list-style: none;
   }
   .cp-tipping-signals li {
-    display: inline-flex;
-    align-items: center;
-    min-height: 34px;
-    padding: 7px 12px;
-    border: 1px solid #DADAD4;
-    border-radius: 999px;
-    background: #FFFFFF;
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     font-family: var(--font-ui);
-    font-size: 13px;
-    line-height: 1.3;
+    font-size: 14px;
+    line-height: 1.45;
     color: #222222;
+  }
+  .cp-tipping-signals li::before {
+    content: "–";
+    color: #9A9A92;
   }
   .cp-cost-grid {
     margin-top: 28px;
@@ -8274,7 +8284,7 @@
     padding: 18px 20px;
     background: #FFFFFF;
     border: 1px solid #DADAD4;
-    border-radius: 14px;
+    border-radius: 8px;
   }
   .cp-cost-note p {
     margin: 0;
@@ -8342,10 +8352,16 @@
 
   /* ── CTA band ──────────────────────────────────────────────── */
   .cp-cta-band {
-    background: #EDEDE8;
-    border-top: 1px solid #DADAD4;
-    border-bottom: 1px solid #DADAD4;
-    padding: 56px 0;
+    background: transparent;
+    border: 0;
+    padding: 0 0 72px;
+  }
+  .cp-cta-band .cp-container {
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-radius: 6px;
+    padding-top: 28px;
+    padding-bottom: 28px;
   }
 
   /* ── FAQ ───────────────────────────────────────────────────── */

@@ -184,6 +184,17 @@ Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes l
 
 **Interdiction :** définir un `font-size` custom sur une page si `tt-*` ou `--tt-size-*` couvre déjà ce cas d'usage.
 
+### Ajustement comparatif — hiérarchie compacte
+
+Les pages Comparatif utilisent `.cp-title` comme titre de section, mais ce niveau doit rester nettement inférieur au H1 hero.
+
+- H1 comparatif : `--tt-size-hero`, conservé comme signal principal.
+- H2 comparatif `.cp-title` : `clamp(32px, 3vw, 36px)`, weight 700.
+- Titres de critères / cartes : `18–20px`.
+- Corps de cards et cellules : `14px`.
+
+Ne pas remonter les H2 comparatif au niveau `--tt-size-section-h` sans revoir toute la hiérarchie hero.
+
 ### Hiérarchie éditoriale (référence pages Stack)
 
 | Rôle | Font | Size | Weight | LS | LH |
@@ -548,15 +559,15 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 .cp-hero-title { font-size: clamp(72px, 12vw, 170px); font-weight: 700; letter-spacing: -0.075em; line-height: 0.92; }
 .cp-hero-promise { font-size: clamp(24px, 2.2vw, 36px); letter-spacing: -0.025em; max-width: 680px; }
 .cp-hero-duel { display: grid; grid-template-columns: 1fr 48px 1fr; }
-.cp-hero-duel-card { padding: 24px 28px; background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 18px; }
+.cp-hero-duel-card { padding: 24px 28px; background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 8px; }
 .cp-hero-contract { padding: 20px 0; border-top: 1px solid #DADAD4; border-bottom: 1px solid #DADAD4; }
-.cp-hero-microfact { display: grid; grid-template-columns: repeat(3, 1fr); background: #DADAD4; border-radius: 14px; overflow: hidden; }
+.cp-hero-microfact { display: grid; grid-template-columns: repeat(3, 1fr); background: #DADAD4; border-radius: 8px; overflow: hidden; }
 .cp-hero-microfact-cell { padding: 18px 20px; background: #FFFFFF; }
 ```
 - Rôle : face-à-face de décision — orientation en 5 secondes.
-- Structure : breadcrumb → eyebrow → `h1` display → `heroPromise` → duel 2 cartes → contrat ToolTrim → micro-fiche 3 cellules.
-- **Duel** : 2 cartes `cp-hero-duel-card` avec logo, `heroPositionX` (position/rôle), nom outil, description courte. Séparateur `VS` centré entre les 2 cartes.
-- **Contrat ToolTrim** (`cp-hero-contract`) : statement éditorial entre filets — pas de carte, pas de fond coloré. Phrase d'arbitrage directe.
+- Structure : breadcrumb → eyebrow → `h1` display → `heroPromise` → Verdict ToolTrim → duel 2 cartes → micro-fiche 3 cellules.
+- **Duel** : 2 cartes `cp-hero-duel-card` symétriques. Soit les deux outils ont un logo fiable, soit aucune carte hero n'affiche de logo. Ne jamais laisser une carte avec logo et l'autre vide.
+- **Verdict ToolTrim** (`cp-hero-contract`) : statement éditorial entre filets — pas de carte, pas de fond coloré. Phrase d'arbitrage directe, placée avant les cartes outils.
 - **Micro-fiche** (`cp-hero-microfact`) : 3 cellules uniquement — PAR DÉFAUT, COÛT RÉEL, RISQUE. Remplace la fact-sheet 6 faits.
 - Nouveaux champs JSON dans `tooltrimAtAGlance` : `heroPromise`, `heroPositionA`, `heroPositionB`, `heroContract`. Tous optionnels — fallback sur valeurs dérivées.
 - Pas de CTA dans le hero.
@@ -628,12 +639,12 @@ Chaque section utilise une structure à 2 colonnes sur desktop :
 cp-container
   span.cp-eyebrow          ← 12px 700 caps, margin-bottom 28px
   div.cp-section-grid      ← grid: minmax(280px, 0.9fr) / minmax(0, 1.6fr), gap 80px
-    div.cp-section-heading ← gauche : h2.cp-title (clamp 44–72px, weight 700, tracking -0.065em)
+    div.cp-section-heading ← gauche : h2.cp-title (clamp 32–36px, weight 700, tracking -0.06em)
     div.cp-section-body    ← droite : contenu décisionnel
 ```
 
 Exceptions full-width (Features table, Alternatives, FAQ) : h2.cp-title avec `marginBottom: 28px`.
-Mobile (≤1023px) : 1 colonne, gap 32px. Titre mobile `clamp(42px, 13vw, 60px)`.
+Mobile (≤1023px) : 1 colonne, gap 32px. Titre mobile autour de `30–36px`.
 
 ### Verdict ToolTrim (`#verdict`) — layout 2 cartes (Sprint 67)
 
@@ -692,7 +703,8 @@ Mobile ≤900px : header + choice-grid en 1 colonne.
 
 ### Seuil de bascule (`cp-tipping-*`)
 - ID : `#seuil` — positionné après Features.
-- Structure : Par défaut + Passe à l'autre si + signaux concrets en chips.
+- Structure : Par défaut + Passe à l'autre si + signaux concrets en liste éditoriale.
+- Les signaux longs ne doivent pas être rendus en pills. Utiliser une liste simple avec tiret fin pour les phrases de plus de 5 mots.
 
 ### Points de vigilance (`cp-watchout-*`)
 - ID : `#vigilance`.
@@ -742,12 +754,14 @@ Mobile ≤900px : header + choice-grid en 1 colonne.
 ### CTA band (`cp-cta-band`)
 ```css
 .cp-cta-band {
-  background: #EDEDE8;   /* ≠ #F8F8F4 — fond plus sombre pour contraste */
-  border-top: 1px solid #DADAD4;
-  border-bottom: 1px solid #DADAD4;
-  padding: 64px 0;
+  background: transparent;
+  border: 0;
+  padding: 0 0 72px;
 }
 ```
+- Le CTA Diagnostic vit en clôture de page, après la FAQ.
+- Il se rend comme un encadré inline : fond blanc, bordure `#DADAD4`, radius `6px`, padding `24–32px`.
+- Ne pas utiliser de bande pleine largeur colorée pour ce CTA sur les pages comparatif.
 
 ### FAQ (`cp-faq-item`)
 ```css

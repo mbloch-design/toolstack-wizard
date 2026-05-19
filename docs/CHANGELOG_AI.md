@@ -2,6 +2,43 @@
 
 ---
 
+## 2026-05-19 — Sprint 71 : Corrections UI comparatif — hero, hiérarchie, coût, seuil, CTA
+
+### Objectif
+Corriger les pages `/comparatif/*` selon l'audit UI : hero plus décisionnel, hiérarchie H1/H2 claire, coût réel non répétitif, seuil plus lisible, CTA Diagnostic moins intrusif.
+
+### Corrections
+
+**`src/pages/ComparePage.tsx`**
+- Hero comparatif réordonné : label → H1 → standfirst → Verdict ToolTrim → cartes outils → triptyque.
+- Suppression du paragraphe hero secondaire quand il répétait le standfirst.
+- Cartes hero rendues symétriques sans zone logo, pour éviter l'asymétrie logo vide / logo présent.
+- Libellé "Contrat ToolTrim" remplacé par "Verdict ToolTrim".
+- CTA Diagnostic déplacé après la FAQ.
+- Adaptateur coût réel enrichi avec recommandations par ligne : plan gratuit, quand payer, coût caché.
+
+**`src/data/comparison-battles/chatgpt-vs-gemini.json`**
+- Standfirst hero fusionné en une phrase décisionnelle.
+- Ajout de recommandations coût spécifiques par ligne pour éviter les répétitions mot pour mot.
+
+**`src/index.css`**
+- H2 comparatif `.cp-title` réduit à `32–36px`.
+- Titres de critères/cartes ajustés à `18–20px`.
+- Espacement `.cp-section` réduit à `64–80px`.
+- Pills du seuil de bascule remplacées par une liste éditoriale à tiret fin.
+- CTA Diagnostic transformé en encadré inline blanc, bordure fine, radius `6px`.
+- Badges `AVANTAGE` / `SUFFISANT` passés en version légère.
+- Radius des cartes comparatif touchées ramené à `8px`.
+
+### Vérifications attendues
+- H1 nettement dominant par rapport aux H2.
+- Verdict visible avant les cartes outils.
+- Tableau Coût réel sans recommandation répétée mot pour mot.
+- Seuil de bascule lisible sans longues pills.
+- CTA Diagnostic intégré en clôture de page, après FAQ.
+
+---
+
 ## 2026-05-19 — Sprint 70 : Stack cards — logos, hiérarchie Socle/Compléments, wording, layout
 
 ### Objectif

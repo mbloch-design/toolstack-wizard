@@ -276,6 +276,11 @@ interface BattleRawData {
     freePlanReality?: { toolA?: string; toolB?: string };
     whenPaidBecomesNecessary?: { toolA?: string; toolB?: string };
     hiddenCosts?: { toolA?: string; toolB?: string };
+    costRecommendations?: {
+      freePlan?: string;
+      whenPaying?: string;
+      hiddenCost?: string;
+    };
     tooltrimNote?: string;
   };
   tools: {
@@ -501,8 +506,8 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
         toolAEn: asEnglishCopy(pc?.freePlanReality?.toolA || cost?.toolA?.freePlanReality || data.tools.toolA.freePlan?.summary || "Check by volume."),
         toolB: pc?.freePlanReality?.toolB || cost?.toolB?.freePlanReality || data.tools.toolB.freePlan?.summary || "À vérifier selon volume.",
         toolBEn: asEnglishCopy(pc?.freePlanReality?.toolB || cost?.toolB?.freePlanReality || data.tools.toolB.freePlan?.summary || "Check by volume."),
-        recommendation: pc?.tooltrimNote || cost?.tooltrimNote || "Ne paie que si l'usage est régulier et distinct.",
-        recommendationEn: asEnglishCopy(pc?.tooltrimNote || cost?.tooltrimNote || "Only pay when usage is regular and distinct."),
+        recommendation: pc?.costRecommendations?.freePlan || "Le gratuit suffit pour tester si le besoin reste ponctuel et sans volume client.",
+        recommendationEn: asEnglishCopy(pc?.costRecommendations?.freePlan || "Free is enough to test when the need stays occasional and low volume."),
       },
       {
         label: "Quand payer",
@@ -511,8 +516,8 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
         toolAEn: asEnglishCopy(pc?.whenPaidBecomesNecessary?.toolA || cost?.toolA?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolA)),
         toolB: pc?.whenPaidBecomesNecessary?.toolB || cost?.toolB?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolB),
         toolBEn: asEnglishCopy(pc?.whenPaidBecomesNecessary?.toolB || cost?.toolB?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolB)),
-        recommendation: cost?.duplicateCostWarning || "Auditer avant de payer les deux.",
-        recommendationEn: asEnglishCopy(cost?.duplicateCostWarning || "Audit before paying for both."),
+        recommendation: pc?.costRecommendations?.whenPaying || "Passe au payant quand la limite bloque un usage hebdomadaire clair.",
+        recommendationEn: asEnglishCopy(pc?.costRecommendations?.whenPaying || "Move to paid when a limit blocks a clear weekly use."),
       },
       {
         label: "Coût caché",
@@ -521,8 +526,8 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
         toolAEn: asEnglishCopy(pc?.hiddenCosts?.toolA || cost?.toolA?.hiddenCost || cost?.toolA?.pricingRisk || "Setup and maintenance time."),
         toolB: pc?.hiddenCosts?.toolB || cost?.toolB?.hiddenCost || cost?.toolB?.pricingRisk || "Temps de setup et maintenance.",
         toolBEn: asEnglishCopy(pc?.hiddenCosts?.toolB || cost?.toolB?.hiddenCost || cost?.toolB?.pricingRisk || "Setup and maintenance time."),
-        recommendation: cost?.duplicateCostWarning || "Le coût réel inclut le doublon et le temps perdu.",
-        recommendationEn: asEnglishCopy(cost?.duplicateCostWarning || "Real cost includes duplication and lost time."),
+        recommendation: pc?.costRecommendations?.hiddenCost || "Surveille surtout le temps de setup, les doublons et la maintenance.",
+        recommendationEn: asEnglishCopy(pc?.costRecommendations?.hiddenCost || "Watch setup time, duplicates, and maintenance first."),
       },
     ],
     tooltrimRisks: (comparison.pitfalls || []).map((pitfall) => ({
@@ -1449,7 +1454,6 @@ const ComparePage = () => {
   const riskSignal = content.aglanceRisk || getToolTrimRisk(content, lang);
   /* Hero duel — Sprint 62/66 */
   const heroPromise = content.aglanceHeroPromise || framing;
-  const heroBrief = content.aglanceHeroBrief || null;   // only show if explicitly set — no generic fallback
   // Position labels (small uppercase, 10px) — only use explicit values, NOT bestForA fallback (too long)
   const heroPositionA = content.aglancePositionA ?? null;
   const heroPositionB = content.aglancePositionB ?? null;
@@ -1492,16 +1496,18 @@ const ComparePage = () => {
 
           <p className="cp-hero-promise">{heroPromise}</p>
 
-          {/* Editorial brief — only shown if set in JSON (heroBrief field) */}
-          {heroBrief && <p className="cp-hero-brief">{heroBrief}</p>}
+          {/* Verdict ToolTrim */}
+          <div className="cp-hero-contract">
+            <span className="cp-hero-contract-label">
+              {t("Verdict ToolTrim", "ToolTrim verdict")}
+            </span>
+            <p>{heroContract}</p>
+          </div>
 
           {/* Face-à-face duel */}
           <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
             <article className="cp-hero-duel-card">
               <div className="cp-hero-duel-head">
-                <div className="cp-hero-duel-logo">
-                  <ToolLogo tool={toolA} size={48} />
-                </div>
                 <div>
                   {heroPositionA && <p className="cp-hero-duel-position">{heroPositionA}</p>}
                   <h2 className="cp-hero-duel-name">{toolA.name}</h2>
@@ -1514,9 +1520,6 @@ const ComparePage = () => {
 
             <article className="cp-hero-duel-card cp-hero-duel-card--right">
               <div className="cp-hero-duel-head">
-                <div className="cp-hero-duel-logo">
-                  <ToolLogo tool={toolB} size={48} />
-                </div>
                 <div>
                   {heroPositionB && <p className="cp-hero-duel-position">{heroPositionB}</p>}
                   <h2 className="cp-hero-duel-name">{toolB.name}</h2>
@@ -1524,14 +1527,6 @@ const ComparePage = () => {
               </div>
               <p className="cp-hero-duel-desc">{bestForB}</p>
             </article>
-          </div>
-
-          {/* Contrat ToolTrim */}
-          <div className="cp-hero-contract">
-            <span className="cp-hero-contract-label">
-              {t("Contrat ToolTrim", "ToolTrim take")}
-            </span>
-            <p>{heroContract}</p>
           </div>
 
           {/* Micro-fiche courte — 3 cellules */}
@@ -1871,7 +1866,29 @@ const ComparePage = () => {
         </section>
       )}
 
-      {/* ── CTA band ───────────────────────────────────────────────────────── */}
+      {/* ── FAQ ────────────────────────────────────────────────────────────── */}
+      {content.faq.length > 0 && (
+        <section id="faq" className="cp-section cp-section--last scroll-mt-20">
+          <div className="cp-container">
+            <span className="cp-eyebrow">{altTools.length > 0 ? "09 — FAQ" : "08 — FAQ"}</span>
+            <h2 className="cp-title" style={{ marginBottom: 28 }}>
+              {t("Questions fréquentes.", "Frequently asked questions.")}
+            </h2>
+            <div>
+              {content.faq.map((item, i) => (
+                <FaqItem
+                  key={i}
+                  question={lang === "fr" ? item.q : item.qEn}
+                  answer={lang === "fr" ? item.a : item.aEn}
+                  defaultOpen={i === 0}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── CTA diagnostic ─────────────────────────────────────────────────── */}
       <div className="cp-cta-band">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("Diagnostic", "Diagnostic")}</span>
@@ -1909,28 +1926,6 @@ const ComparePage = () => {
           </Link>
         </div>
       </div>
-
-      {/* ── FAQ ────────────────────────────────────────────────────────────── */}
-      {content.faq.length > 0 && (
-        <section id="faq" className="cp-section cp-section--last scroll-mt-20">
-          <div className="cp-container">
-            <span className="cp-eyebrow">{altTools.length > 0 ? "09 — FAQ" : "08 — FAQ"}</span>
-            <h2 className="cp-title" style={{ marginBottom: 28 }}>
-              {t("Questions fréquentes.", "Frequently asked questions.")}
-            </h2>
-            <div>
-              {content.faq.map((item, i) => (
-                <FaqItem
-                  key={i}
-                  question={lang === "fr" ? item.q : item.qEn}
-                  answer={lang === "fr" ? item.a : item.aEn}
-                  defaultOpen={i === 0}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
     </div>
   );
