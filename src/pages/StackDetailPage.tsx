@@ -901,19 +901,12 @@ const StackDetailPage = () => {
               const hiddenSecondary = Math.max(0, groups.secondary.length - 3);
               const hasHiddenGroups = hiddenSecondary > 0 || groups.extension.length > 0;
 
+              const hiddenTotal = hiddenSecondary + (isExpanded ? 0 : groups.extension.length);
               let expandLabel: string;
-              if (hiddenSecondary === 0 && groups.extension.length > 0) {
+              if (hiddenTotal > 0) {
                 expandLabel = lang === 'fr'
-                  ? `Voir les ${groups.extension.length} extensions`
-                  : `Show ${groups.extension.length} extensions`;
-              } else if (hiddenSecondary > 0 && groups.extension.length > 0) {
-                expandLabel = lang === 'fr'
-                  ? `Voir tous les outils de cette étape`
-                  : `Show all tools in this step`;
-              } else if (hiddenSecondary > 0) {
-                expandLabel = lang === 'fr'
-                  ? `Afficher les ${hiddenSecondary} compléments`
-                  : `Show ${hiddenSecondary} more`;
+                  ? `Afficher les ${hiddenTotal} complément${hiddenTotal > 1 ? 's' : ''}`
+                  : `Show ${hiddenTotal} more`;
               } else {
                 expandLabel = lang === 'fr' ? 'Voir les compléments' : 'Show add-ons';
               }
@@ -929,11 +922,11 @@ const StackDetailPage = () => {
                     <h3 className="sd-stack-card-title">{t(family.titleFr, family.titleEn)}</h3>
                     <p className="sd-stack-card-role">{t(family.purposeFr, family.purposeEn)}</p>
                     <p className="sd-stack-card-decision">{decisionCopy}</p>
-                    {hasHiddenGroups && (
+                    {hasHiddenGroups && !isExpanded && (
                       <p className="sd-stack-card-micro">
-                        {isExpanded
-                          ? (lang === 'fr' ? `${totalCount} outil${totalCount > 1 ? 's' : ''} dans cette étape` : `${totalCount} tool${totalCount > 1 ? 's' : ''} in this step`)
-                          : (lang === 'fr' ? `${visibleCount} outil${visibleCount > 1 ? 's' : ''} visible${visibleCount > 1 ? 's' : ''} sur ${totalCount}` : `${visibleCount} of ${totalCount} tools shown`)}
+                        {lang === 'fr'
+                          ? `+${hiddenTotal} masqué${hiddenTotal > 1 ? 's' : ''}`
+                          : `+${hiddenTotal} hidden`}
                       </p>
                     )}
                     {hasHiddenGroups && (
@@ -957,7 +950,7 @@ const StackDetailPage = () => {
                     {groups.core.length > 0 && (
                       <div className="sd-tool-group">
                         <span className="sd-group-tag">
-                          {lang === 'fr' ? 'Socle recommandé' : 'Core stack'}
+                          {lang === 'fr' ? 'Socle' : 'Core'}
                         </span>
                         <div className="sd-tool-grid">
                           {groups.core.map(({ slot, tool }) => (
@@ -981,7 +974,7 @@ const StackDetailPage = () => {
                     {groups.secondary.length > 0 && (
                       <div className="sd-tool-group">
                         <span className="sd-group-tag">
-                          {lang === 'fr' ? 'Selon ton usage' : 'As needed'}
+                          {lang === 'fr' ? 'Compléments' : 'Add-ons'}
                         </span>
                         <div className="sd-tool-grid">
                           {visibleSecondary.map(({ slot, tool }) => (
@@ -1925,21 +1918,21 @@ function getWorkflowDecisionCopy(
   const { core, secondary, extension } = groups;
   const coreNames = core.slice(0, 2).map((t) => t.tool?.name ?? t.slot.slug);
   if (lang === 'en') {
-    if (core.length > 0 && extension.length > 0)
-      return `Core stack: ${coreNames.join(' + ')}. Add-ons depend on your deliverables. Extensions only when truly needed.`;
+    if (core.length > 0 && (secondary.length > 0 || extension.length > 0))
+      return `Core: ${coreNames.join(' + ')}. Add-ons only when the deliverable requires it.`;
     if (core.length > 0)
-      return `Core stack is enough to start. Add-ons depend on your actual usage.`;
+      return `Core: ${coreNames.join(' + ')}. Add-ons based on your actual use.`;
     if (secondary.length > 0 && core.length === 0)
-      return `No mandatory core here. These tools are useful depending on your workflow.`;
+      return `No mandatory core here. These become useful based on your workflow.`;
     return `Choose based on your deliverables.`;
   }
   // French
-  if (core.length > 0 && extension.length > 0)
-    return `Socle recommandé : ${coreNames.join(' + ')}. Les compléments dépendent de tes livrables. Les extensions doivent répondre à un besoin précis.`;
+  if (core.length > 0 && (secondary.length > 0 || extension.length > 0))
+    return `Socle : ${coreNames.join(' + ')}. Compléments seulement si le livrable l'exige.`;
   if (core.length > 0)
-    return `Le socle suffit pour démarrer. Les compléments dépendent de ton usage réel.`;
+    return `Socle : ${coreNames.join(' + ')}. Compléments selon ton usage réel.`;
   if (secondary.length > 0 && core.length === 0)
-    return `Aucun socle obligatoire ici. Ces outils deviennent utiles selon ton mode de travail.`;
+    return `Aucun socle obligatoire. Ces outils deviennent utiles selon ton mode de travail.`;
   return `Choisis selon tes livrables.`;
 }
 

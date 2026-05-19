@@ -77,6 +77,9 @@ const SIMPLE_ICON_SLUGS: Record<string, string> = {
   facebook: "facebook",
   figma: "figma",
   firebase: "firebase",
+  "figma-iconify": "iconify",
+  "figma-tokens": "tokensstudio",
+  "tokens-studio": "tokensstudio",
   framer: "framer",
   freshdesk: "freshdesk",
   // G

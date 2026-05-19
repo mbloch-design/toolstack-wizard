@@ -14046,7 +14046,7 @@
 }
 .sd-stack-map-family {
   display: grid;
-  grid-template-columns: minmax(260px, 0.75fr) minmax(520px, 1.25fr);
+  grid-template-columns: minmax(240px, 0.52fr) minmax(480px, 1fr);
   gap: 48px;
   align-items: start;
   padding: 36px 40px;
@@ -14887,31 +14887,34 @@ section[id] {
   letter-spacing: 0;
 }
 
-/* Expand / collapse button: real secondary button with border */
+/* Expand / collapse button: discreet secondary link-style */
 .sd-expand-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 12px;
-  padding: 8px 14px;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 0;
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 600;
-  color: #222222;
+  font-weight: 500;
+  color: #6F6F68;
   background: transparent;
-  border: 1px solid #DADAD4;
-  border-radius: 999px;
+  border: none;
+  border-bottom: 1px solid #DADAD4;
+  border-radius: 0;
   cursor: pointer;
-  transition: border-color 150ms ease, background 150ms ease;
+  transition: color 120ms ease, border-color 120ms ease;
   white-space: nowrap;
+  line-height: 1.5;
 }
 .sd-expand-btn:hover {
+  color: #222222;
   border-color: #222222;
-  background: rgba(34, 34, 34, 0.04);
 }
 .sd-expand-btn:focus-visible {
   outline: 2px solid #222222;
   outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Mobile adjustments */
@@ -15253,7 +15256,7 @@ section[id] {
   height: 56px;
   min-width: 56px;
   border-radius: 16px;
-  background: #FFFFFF;
+  background: #F5F5F0; /* neutral — prevents blank-white flash during logo load */
   border: 1px solid #DADAD4;
   display: flex;
   align-items: center;
@@ -15262,7 +15265,7 @@ section[id] {
   overflow: hidden;
   transition: border-color 120ms ease;
 }
-/* Strip ToolLogo's own ring/bg/padding — the shell handles all that */
+/* Strip ToolLogo's own ring/radius/padding — the shell handles all that */
 .sd-tool-logo img,
 .sd-tool-logo svg {
   width: 34px !important;
@@ -15272,11 +15275,10 @@ section[id] {
   object-fit: contain;
   display: block;
   border-radius: 0 !important;
-  background: transparent !important;
+  background: #F5F5F0 !important; /* match shell bg — no blank-white flash */
   box-shadow: none !important;
   padding: 0 !important;
   outline: none !important;
-  ring: none !important;
 }
 
 /* ── Tool name */
@@ -15317,8 +15319,8 @@ section[id] {
   border: none !important;
   background: #F4F4EF;
   border-radius: 28px;
-  padding: 40px 44px;
-  gap: 52px;
+  padding: 36px 40px;
+  gap: 44px;
 }
 
 /* ── Remove floating count indicator */

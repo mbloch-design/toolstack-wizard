@@ -2,6 +2,54 @@
 
 ---
 
+## 2026-05-19 — Sprint 70 : Stack cards — logos, hiérarchie Socle/Compléments, wording, layout
+
+### Objectif
+Rendre les cards "Carte de la stack" plus lisibles, plus fiables et moins massives. Corriger les logos vides, renommer les groupes, raccourcir le wording décisionnel, rendre le bouton "voir plus" secondaire.
+
+### Problèmes corrigés
+
+| Fichier | Problème | Type |
+|---|---|---|
+| `toolLogos.ts` | `figma-tokens` et `figma-iconify` sans entrée SimpleIcons → multiples tentatives CDN → flash blanc | Logo |
+| `index.css` | `.sd-tool-logo` `background: #FFFFFF` → flash blanc visible pendant chargement img | CSS |
+| `index.css` | `.sd-tool-logo img` `background: transparent` → shell blanc visible entre tentatives sources | CSS |
+| `StackDetailPage.tsx` | "Socle recommandé" et "Selon ton usage" → libellés trop longs pour des tags | UX |
+| `StackDetailPage.tsx` | `getWorkflowDecisionCopy` → phrases trop longues et répétitives | Contenu |
+| `StackDetailPage.tsx` | Micro-info "X visibles sur Y" → trop verbeux | UX |
+| `StackDetailPage.tsx` | Expand label "Voir tous les outils de cette étape" → trop générique | UX |
+| `index.css` | `.sd-expand-btn` → trop visible pour une action secondaire (pill épais, 1px solid foncé) | UX |
+| `index.css` | Card padding 40×44px → trop généreux | Layout |
+
+### Corrections
+
+**`src/lib/toolLogos.ts`**
+- Ajout de `"figma-tokens": "tokensstudio"`, `"tokens-studio": "tokensstudio"`, `"figma-iconify": "iconify"` dans `SIMPLE_ICON_SLUGS`
+- Tokens Studio et Iconify résolus immédiatement via SimpleIcons CDN sans fallback favicon
+
+**`src/index.css`**
+- `.sd-tool-logo` : `background: #FFFFFF` → `#F5F5F0` (neutre, harmonise avec fond de card)
+- `.sd-tool-logo img` : `background: transparent !important` → `background: #F5F5F0 !important` (correspond au shell, aucun flash blanc pendant chargement)
+- `.sd-stack-map-family` layout : `0.75fr / 1.25fr` → `0.52fr / 1fr` (approche 34%/66%)
+- `.sd-stack-map-family` padding : `40px 44px` → `36px 40px`, gap `52px` → `44px`
+- `.sd-expand-btn` : suppression du pill (border-radius 999px, padding 8px 14px) → lien souligné discret (border-bottom seulement, color #6F6F68, font-weight 500)
+
+**`src/pages/StackDetailPage.tsx`**
+- Labels de groupe : "Socle recommandé" → "Socle" / "Selon ton usage" → "Compléments"
+- `getWorkflowDecisionCopy` : phrases raccourcies — "Socle : X + Y. Compléments seulement si le livrable l'exige." — 2 lignes max, pas de répétition
+- Micro-info : "X visibles sur Y" → "+N masqués" (ne s'affiche que si masqués)
+- Expand label : logique simplifiée → "Afficher les N compléments" quelle que soit la composition du groupe caché
+
+### Résultat
+- Zéro logo blanc pour `figma-tokens` et `figma-iconify`
+- Flash blanc pendant chargement supprimé pour tous les logos de stack cards
+- Groupes Socle / Compléments lisibles et courts
+- Wording décisionnel 2x plus court et plus actionnable
+- Expand button secondaire (lien discret plutôt que pill)
+- Cards moins massives (padding réduit de ~10%)
+
+---
+
 ## 2026-05-19 — Sprint 69 : Correction audit UI/UX — slugs bruts, alternatives enrichies, CTA verdict
 
 ### Objectif
