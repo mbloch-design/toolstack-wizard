@@ -597,5 +597,46 @@
     "complexity": "depends",
     "mainRisk": "Confondre table Notion et base de données métier.",
     "decisionSummary": "Notion tant que le contenu prime. Airtable dès que la donnée devient l'objet principal."
+  },
+  "verdict": {
+    "summary": "Notion gagne pour documenter et collaborer légèrement. Airtable gagne pour structurer et exploiter des données.",
+    "chooseAIf": [
+      "Vous construisez un wiki ou un espace client.",
+      "Vos tableaux restent simples."
+    ],
+    "chooseBIf": [
+      "Vous gérez des records, relations, vues métier ou automatisations."
+    ],
+    "avoidAIf": [
+      "Votre base doit devenir robuste et filtrable à grande échelle."
+    ],
+    "avoidBIf": [
+      "Vous cherchez surtout un espace d’écriture et de documentation."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin d’un vrai ERP ou d’une base SQL maîtrisée."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Notion pour les solos et équipes créatives. Airtable devient meilleur quand les données, vues et permissions deviennent structurantes.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Free puis Plus/Business par seat.",
+      "toolB": "Free puis plans payants par seat éditeur."
+    },
+    "freePlanReality": {
+      "toolA": "Très bon pour solo et documentation.",
+      "toolB": "Bon pour tester une base simple."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Dès qu’une équipe a besoin d’historique, permissions et espaces avancés.",
+      "toolB": "Dès que la base devient volumineuse, relationnelle ou collaborative."
+    },
+    "hiddenCosts": {
+      "toolA": "Coût de désordre si on force Notion comme base métier.",
+      "toolB": "Coût par éditeur et setup de base plus exigeant."
+    },
+    "tooltrimNote": "Notion organise la connaissance. Airtable structure des données métier.",
+    "checkedAt": "2026-05-19"
   }
 }

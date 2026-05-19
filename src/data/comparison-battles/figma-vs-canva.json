@@ -625,5 +625,47 @@
     "complexity": "depends",
     "mainRisk": "Choisir Canva pour faire du produit ou Figma pour faire de la production social en volume.",
     "decisionSummary": "Figma si le livrable est une interface. Canva si le livrable est un contenu prêt à publier."
+  },
+  "verdict": {
+    "summary": "Pas de vainqueur absolu. Figma gagne côté produit. Canva gagne côté contenu marketing.",
+    "chooseAIf": [
+      "Vous concevez des interfaces.",
+      "Vous travaillez avec développeurs, composants et prototypes."
+    ],
+    "chooseBIf": [
+      "Vous produisez des visuels social, decks ou supports rapides.",
+      "Votre équipe n’est pas composée de designers produit."
+    ],
+    "avoidAIf": [
+      "Vous cherchez surtout des templates prêts à publier."
+    ],
+    "avoidBIf": [
+      "Vous devez livrer un design system ou une maquette produit précise."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin de retouche photo professionnelle lourde."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Figma pour l’UX/UI et Canva pour les contenus marketing. Le seuil bascule dès que le livrable passe d’un visuel à publier à une interface à construire.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Plan gratuit puis sièges payants selon rôle.",
+      "toolB": "Plan gratuit puis Pro/Business."
+    },
+    "freePlanReality": {
+      "toolA": "Bon pour tester et prototyper.",
+      "toolB": "Très bon pour créer vite mais limité sur marque/assets."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Dès qu’une équipe design a besoin de bibliothèques, Dev Mode ou gouvernance.",
+      "toolB": "Dès qu’il faut Brand Kit, premium assets et production régulière."
+    },
+    "hiddenCosts": {
+      "toolA": "Coût par type de seat et complexité design system.",
+      "toolB": "Abonnement récurrent et contrôle créatif plus limité."
+    },
+    "tooltrimNote": "Figma est un outil de conception produit. Canva est un outil de production graphique rapide.",
+    "checkedAt": "2026-05-19"
   }
 }

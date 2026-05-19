@@ -7585,6 +7585,26 @@
     font-family: var(--font-ui);
     font-size: 17px; line-height: 1.5; color: #222222;
   }
+  .cp-verdict-col--full { grid-column: 1 / -1; border-left: none; }
+  .cp-verdict-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .cp-verdict-list li {
+    font-family: var(--font-ui); font-size: 15px; line-height: 1.5; color: #222222;
+    padding-left: 18px; position: relative;
+  }
+  .cp-verdict-list li::before {
+    content: "✓"; position: absolute; left: 0;
+    color: #3B6E3C; font-size: 13px; font-weight: 700; top: 1px;
+  }
+  .cp-verdict-list--avoid li::before { content: "✕"; color: #C0392B; }
+  .cp-verdict-avoid-label {
+    font-family: var(--font-ui);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #C0392B; margin-top: 16px; margin-bottom: 8px;
+  }
 
   /* ── Comparison table ──────────────────────────────────────── */
   .cp-table { width: 100%; margin-top: 24px; }

@@ -185,8 +185,14 @@
     }
   ],
   "related": {
-    "alternatives": ["notion-vs-airtable", "trello-vs-linear"],
-    "otherComparisons": ["notion-vs-airtable", "make-vs-zapier"]
+    "alternatives": [
+      "notion-vs-airtable",
+      "trello-vs-linear"
+    ],
+    "otherComparisons": [
+      "notion-vs-airtable",
+      "make-vs-zapier"
+    ]
   },
   "tooltrimAtAGlance": {
     "defaultChoice": "depends",
@@ -199,5 +205,47 @@
     "mainRisk": "Choisir ClickUp pour tout faire et créer une usine à gaz.",
     "decisionSummary": "ClickUp si vous acceptez de configurer. Asana si l'adoption équipe prime."
   },
-  "faq": []
+  "faq": [],
+  "verdict": {
+    "summary": "ClickUp gagne en richesse/prix. Asana gagne en clarté et adoption équipe.",
+    "chooseAIf": [
+      "Vous voulez un outil très complet à coût bas.",
+      "Vous aimez configurer vues, champs, dashboards."
+    ],
+    "chooseBIf": [
+      "Votre priorité est coordination claire et adoption par l’équipe.",
+      "Vous voulez moins de bruit fonctionnel."
+    ],
+    "avoidAIf": [
+      "Votre équipe se perd dans les outils trop configurables."
+    ],
+    "avoidBIf": [
+      "Vous cherchez le maximum de fonctions au prix le plus bas."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin d’un outil produit/dev spécialisé type Linear/Jira."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Asana pour une équipe qui doit s’aligner vite. ClickUp devient meilleur pour power users ou équipes prêtes à structurer un vrai workspace.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Free puis Unlimited à 7 USD/user/mois annuel.",
+      "toolB": "Personal Free puis Starter à 10,99 USD/user/mois annuel."
+    },
+    "freePlanReality": {
+      "toolA": "Très généreux en fonctionnalités mais stockage très limité.",
+      "toolB": "Plus propre et simple mais moins riche gratuitement."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Dès qu’il faut stockage, intégrations, dashboards et automatisations.",
+      "toolB": "Dès qu’il faut timeline, workflow builder, reporting et coordination d’équipe."
+    },
+    "hiddenCosts": {
+      "toolA": "Complexité de configuration et risque de sur-outillage.",
+      "toolB": "Minimum seats/structure d’équipe à vérifier, coût par user plus élevé."
+    },
+    "tooltrimNote": "ClickUp donne beaucoup. Asana donne moins mais structure mieux l’adoption équipe.",
+    "checkedAt": "2026-05-19"
+  }
 }

@@ -171,8 +171,14 @@
     }
   ],
   "related": {
-    "alternatives": ["figma-vs-canva", "canva-vs-photoshop-elements"],
-    "otherComparisons": ["figma-vs-canva", "notion-vs-airtable"]
+    "alternatives": [
+      "figma-vs-canva",
+      "canva-vs-photoshop-elements"
+    ],
+    "otherComparisons": [
+      "figma-vs-canva",
+      "notion-vs-airtable"
+    ]
   },
   "tooltrimAtAGlance": {
     "defaultChoice": "toolA",
@@ -185,5 +191,47 @@
     "mainRisk": "Comparer un outil de design collaboratif à un logiciel de retouche photo.",
     "decisionSummary": "Choisir Canva pour produire et décliner. Choisir Elements pour retoucher des photos sans abonnement Creative Cloud."
   },
-  "faq": []
+  "faq": [],
+  "verdict": {
+    "summary": "Canva gagne pour la production de contenus. Photoshop Elements reste pertinent pour la retouche photo simple en local.",
+    "chooseAIf": [
+      "Vous produisez beaucoup de formats marketing.",
+      "Vous travaillez avec templates, marque, exports et collaboration."
+    ],
+    "chooseBIf": [
+      "Vous retouchez surtout des photos.",
+      "Vous voulez éviter un abonnement mensuel complet."
+    ],
+    "avoidAIf": [
+      "Vous cherchez un contrôle photo précis type éditeur local."
+    ],
+    "avoidBIf": [
+      "Vous devez créer des assets social media en volume."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin de Photoshop professionnel ou d’une suite brand/asset complète."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Canva pour les créatifs et solos qui produisent des contenus. Photoshop Elements devient logique si le besoin principal est la retouche photo simple sans abonnement lourd.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Canva Free puis Pro selon besoin premium.",
+      "toolB": "Achat Photoshop Elements 2026, licence 3 ans."
+    },
+    "freePlanReality": {
+      "toolA": "Bon pour produire vite des visuels simples.",
+      "toolB": "Seulement un essai court."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Dès qu’il faut Brand Kit, assets premium, export régulier ou IA avancée.",
+      "toolB": "Dès que l’essai est terminé."
+    },
+    "hiddenCosts": {
+      "toolA": "Coût récurrent et dépendance aux contenus premium.",
+      "toolB": "Temps d’apprentissage photo et renouvellement après 3 ans."
+    },
+    "tooltrimNote": "Canva est l’outil de production marketing. Photoshop Elements est un éditeur photo grand public, pas un outil de design collaboratif.",
+    "checkedAt": "2026-05-19"
+  }
 }

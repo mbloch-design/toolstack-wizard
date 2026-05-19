@@ -643,5 +643,47 @@
     "complexity": "depends",
     "mainRisk": "Choisir Zapier pour un gros volume ou Make pour une automatisation ultra simple à livrer vite.",
     "decisionSummary": "Zapier pour démarrer sans friction. Make dès que le scénario devient logique, volumétrique ou budgétairement sensible."
+  },
+  "verdict": {
+    "summary": "Zapier gagne en simplicité. Make gagne quand le workflow devient complexe ou volumineux.",
+    "chooseAIf": [
+      "Vous avez besoin de branches, scénarios visuels, contrôles fins.",
+      "Vous surveillez le coût au volume."
+    ],
+    "chooseBIf": [
+      "Vous voulez connecter vite deux ou trois apps.",
+      "Votre équipe non-tech doit maintenir les automatisations."
+    ],
+    "avoidAIf": [
+      "Vous n’avez pas le temps de modéliser un scénario."
+    ],
+    "avoidBIf": [
+      "Vous avez beaucoup d’étapes et un volume élevé."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin d’une stack self-hosted ou de logique code forte."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Zapier pour démarrer vite. Make devient meilleur quand le volume, la logique ou le coût par exécution deviennent décisifs.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Free avec crédits.",
+      "toolB": "Free avec 100 tasks/mois."
+    },
+    "freePlanReality": {
+      "toolA": "Mieux pour apprendre la logique visuelle et tester quelques scénarios.",
+      "toolB": "Mieux pour automatisations simples et rapides."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Quand les scénarios tournent souvent ou manipulent beaucoup d’étapes/data.",
+      "toolB": "Très vite si plusieurs Zaps multi-étapes tournent chaque jour."
+    },
+    "hiddenCosts": {
+      "toolA": "Temps de setup plus élevé et logique de crédits.",
+      "toolB": "Tasks consommées vite, coût volume souvent plus élevé."
+    },
+    "tooltrimNote": "Zapier gagne en simplicité. Make gagne en contrôle et coût-volume si l’utilisateur accepte la complexité.",
+    "checkedAt": "2026-05-19"
   }
 }

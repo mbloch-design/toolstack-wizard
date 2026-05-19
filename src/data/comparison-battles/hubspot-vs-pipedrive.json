@@ -170,8 +170,14 @@
     }
   ],
   "related": {
-    "alternatives": ["notion-vs-airtable", "clickup-vs-asana"],
-    "otherComparisons": ["slack-vs-microsoft-teams", "make-vs-zapier"]
+    "alternatives": [
+      "notion-vs-airtable",
+      "clickup-vs-asana"
+    ],
+    "otherComparisons": [
+      "slack-vs-microsoft-teams",
+      "make-vs-zapier"
+    ]
   },
   "tooltrimAtAGlance": {
     "defaultChoice": "depends",
@@ -184,5 +190,47 @@
     "mainRisk": "Choisir HubSpot pour tout faire puis subir la montée tarifaire.",
     "decisionSummary": "HubSpot si vous voulez une plateforme complète. Pipedrive si vous voulez vendre et suivre un pipeline sans usine à gaz."
   },
-  "faq": []
+  "faq": [],
+  "verdict": {
+    "summary": "HubSpot gagne comme plateforme globale. Pipedrive gagne comme CRM de vente simple et focalisé.",
+    "chooseAIf": [
+      "Vous combinez CRM, marketing, formulaires, contenu et automation.",
+      "Vous acceptez une plateforme plus large."
+    ],
+    "chooseBIf": [
+      "Votre besoin central est pipeline, relances et closing.",
+      "Vous voulez une adoption sales rapide."
+    ],
+    "avoidAIf": [
+      "Vous craignez les sauts de prix et la complexité des hubs."
+    ],
+    "avoidBIf": [
+      "Vous cherchez une plateforme inbound complète."
+    ],
+    "avoidBothIf": [
+      "Vous avez déjà un CRM enterprise lourd ou besoin ERP."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Pipedrive pour une petite équipe sales. HubSpot devient meilleur quand le CRM doit nourrir marketing, support et acquisition.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Free puis Starter autour de 10 USD/seat/mois.",
+      "toolB": "Essai puis plan payant par user."
+    },
+    "freePlanReality": {
+      "toolA": "Très bon pour démarrer un CRM simple.",
+      "toolB": "Pas de gratuit permanent."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Dès qu’il faut automatisation, reporting, marketing sérieux ou enlever limites.",
+      "toolB": "Dès l’usage réel après essai."
+    },
+    "hiddenCosts": {
+      "toolA": "Montée en gamme forte vers hubs Pro/Enterprise.",
+      "toolB": "Add-ons comme campagnes, visiteurs, documents, leads."
+    },
+    "tooltrimNote": "HubSpot est une plateforme marketing/sales. Pipedrive est un CRM pipeline-first.",
+    "checkedAt": "2026-05-19"
+  }
 }

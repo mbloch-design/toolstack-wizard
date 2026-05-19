@@ -169,8 +169,14 @@
     }
   ],
   "related": {
-    "alternatives": ["make-vs-zapier", "clickup-vs-asana"],
-    "otherComparisons": ["hubspot-vs-pipedrive", "webflow-vs-framer"]
+    "alternatives": [
+      "make-vs-zapier",
+      "clickup-vs-asana"
+    ],
+    "otherComparisons": [
+      "hubspot-vs-pipedrive",
+      "webflow-vs-framer"
+    ]
   },
   "tooltrimAtAGlance": {
     "defaultChoice": "depends",
@@ -183,5 +189,47 @@
     "mainRisk": "Comparer seulement le taux affiché sans modèle de revenus.",
     "decisionSummary": "Stripe pour construire un système de paiement. PayPal pour ajouter une option de paiement client familière."
   },
-  "faq": []
+  "faq": [],
+  "verdict": {
+    "summary": "Stripe gagne pour l’infrastructure et l’API. PayPal gagne comme option de paiement simple et rassurante pour certains clients.",
+    "chooseAIf": [
+      "Vous avez un SaaS, abonnement, marketplace ou besoin API.",
+      "Vous voulez contrôler le checkout et les flux."
+    ],
+    "chooseBIf": [
+      "Vos clients demandent PayPal.",
+      "Vous voulez ajouter vite une méthode de paiement connue."
+    ],
+    "avoidAIf": [
+      "Vous ne pouvez pas gérer setup technique et conformité paiement."
+    ],
+    "avoidBIf": [
+      "Vous avez une logique produit/API avancée."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin d’un PSP local très spécifique."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Stripe pour les SaaS et produits digitaux. PayPal devient complémentaire si la conversion client augmente avec cette option.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Pas d’abonnement standard ; frais à la transaction.",
+      "toolB": "Pas d’abonnement standard ; frais marchands à la transaction."
+    },
+    "freePlanReality": {
+      "toolA": "Gratuit à installer, payant à l’usage.",
+      "toolB": "Gratuit à ouvrir, payant à l’usage."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Dès qu’il y a transactions, Billing, Tax ou Connect.",
+      "toolB": "Dès qu’il y a transactions ou vente internationale."
+    },
+    "hiddenCosts": {
+      "toolA": "Billing 0,7%, conversion, disputes, Tax, Connect selon usage.",
+      "toolB": "Frais internationaux, conversion, litiges et conditions par marché."
+    },
+    "tooltrimNote": "Stripe est une infrastructure de paiement. PayPal est une méthode de paiement reconnue par les clients.",
+    "checkedAt": "2026-05-19"
+  }
 }

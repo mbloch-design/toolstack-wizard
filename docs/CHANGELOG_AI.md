@@ -2,6 +2,54 @@
 
 ---
 
+## 2026-05-19 — Sprint 60 : Verdict structuré + données pricing réelles
+
+### Objectif
+Zéro redondance entre sections de la page comparatif. Chaque section répond à une question distincte. Le verdict affiche des listes à puces contextuelles au lieu d'un bloc de texte. Le coût réel utilise les données `pricingComparison` vérifiées.
+
+### Principe de non-redondance
+| Section | Question unique |
+|---------|----------------|
+| Hero fact sheet | Qui utilise quoi en un regard (étiquettes courtes) |
+| 01 Verdict | Conditions précises pour choisir A / B / éviter chacun / éviter les deux |
+| 02 Critères | Les critères qui changent vraiment le score final |
+| 03 Coût réel | Réalité des plans gratuits, quand payer, coûts cachés (jamais dans le hero) |
+| 04 Features | Fonctions qui changent le résultat (table comparative) |
+| 05 Seuil | À quel moment on bascule de A vers B |
+| 06 Vigilance | Erreurs de choix fréquentes et conséquences |
+
+### Fichiers modifiés
+
+**`src/pages/ComparePage.tsx`**
+- `BattleRawData` — 3 nouveaux types top-level : `tooltrimAtAGlance`, `verdict`, `pricingComparison`
+- `CompareEditorialContent` — 11 nouveaux champs : `chooseAIfList[]`, `chooseBIfList[]`, `avoidAIfList[]`, `avoidBIfList[]`, `avoidBothIfList[]`, `aglanceBestForA/B`, `aglanceBudget`, `aglanceRisk`, `aglanceDefaultLabel`, `aglanceLevel`
+- `buildBattleEditorialContent()` — lit `data.verdict.*` pour les listes puces, `data.pricingComparison.*` pour les 3 lignes coût, `data.tooltrimAtAGlance.*` pour les signaux hero
+- Hero fact sheet — préfère les overrides `aglance*` quand disponibles
+- Section `#verdict` JSX — remplace les 3 blocs de texte par des listes `✓ / ✕` avec `cp-verdict-list` et `cp-verdict-avoid-label`
+- `NOTION_VS_AIRTABLE` inline const — ajout des 11 nouveaux champs
+- `buildFallbackContent()` — ajout des 11 champs stub
+
+**`src/data/comparison-battles/*.json`** (11 fichiers)
+- Merge de `verdict` (summary, chooseAIf[], chooseBIf[], avoidAIf[], avoidBIf[], avoidBothIf[], finalRecommendation) depuis les fichiers vérifiés Downloads
+- Merge de `pricingComparison` (entryLevel, freePlanReality, whenPaidBecomesNecessary, hiddenCosts, tooltrimNote) depuis les fichiers vérifiés Downloads
+- `slack-vs-microsoft-teams.json` — `tooltrimAtAGlance` enrichi de 3 champs hero concis : `defaultChoiceLabel`, `budgetShort`, `complexityLabel` (valeurs mission : "Ça dépend du socle existant", "Slack s'ajoute. Teams peut déjà être inclus.", "À cadrer") + mise à jour `bestForToolA/B`, `mainRisk`
+
+**`src/index.css`**
+- `.cp-verdict-col--full` — span 3 colonnes pour "Évite les deux"
+- `.cp-verdict-list` — liste puces `✓` avec gap 6px
+- `.cp-verdict-list--avoid` — puce `✕` rouge (#C0392B)
+- `.cp-verdict-avoid-label` — label "Évite X si…" en 11px caps rouge
+
+### QA zero-redondance (Slack vs Teams)
+- Hero : étiquettes courtes ("Multi-clients + stack ouverte", "À cadrer", etc.)
+- Verdict 01 : conditions précises ×5 (chooseA, chooseB, avoidA, avoidB, avoidBoth)
+- Coût 03 : freePlanReality, whenPaid, hiddenCosts — jamais répétés ailleurs
+- Aucune information n'apparaît dans deux sections différentes
+
+### Build
+- `npx tsc --noEmit` → ✅ 0 errors
+- `npm run build` → ✅ built in 27s, 0 errors
+
 ## 2026-05-18 — Sprint 59 : Hero fact sheet no-truncation fix
 
 ### Objectif

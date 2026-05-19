@@ -187,6 +187,19 @@ interface CompareEditorialContent {
   pricingToolANotes: string; pricingToolANotesEn: string;
   pricingToolBNotes: string; pricingToolBNotesEn: string;
   pricingReco: string; pricingRecoEn: string;
+  /* ── Structured verdict bullet lists (from verdict object) ── */
+  chooseAIfList: string[];
+  chooseBIfList: string[];
+  avoidAIfList: string[];
+  avoidBIfList: string[];
+  avoidBothIfList: string[];
+  /* ── Hero signal overrides (from tooltrimAtAGlance) ── */
+  aglanceBestForA?: string;
+  aglanceBestForB?: string;
+  aglanceBudget?: string;
+  aglanceRisk?: string;
+  aglanceDefaultLabel?: string;
+  aglanceLevel?: string;
   /* ── Alternatives + FAQ ── */
   alternatives: CompareAlt[];
   faq: CompareFaqItem[];
@@ -205,6 +218,34 @@ interface BattleUseCaseScore {
 }
 interface BattleRawData {
   slug: string;
+  tooltrimAtAGlance?: {
+    defaultChoice?: string;
+    defaultChoiceLabel?: string;
+    bestForToolA?: string;
+    bestForToolB?: string;
+    budgetReality?: string;
+    budgetShort?: string;
+    complexity?: string;
+    complexityLabel?: string;
+    mainRisk?: string;
+    decisionSummary?: string;
+  };
+  verdict?: {
+    summary?: string;
+    chooseAIf?: string[];
+    chooseBIf?: string[];
+    avoidAIf?: string[];
+    avoidBIf?: string[];
+    avoidBothIf?: string[];
+    finalRecommendation?: string;
+  };
+  pricingComparison?: {
+    entryLevel?: { toolA?: string; toolB?: string };
+    freePlanReality?: { toolA?: string; toolB?: string };
+    whenPaidBecomesNecessary?: { toolA?: string; toolB?: string };
+    hiddenCosts?: { toolA?: string; toolB?: string };
+    tooltrimNote?: string;
+  };
   tools: {
     toolA: {
       name: string;
@@ -352,6 +393,9 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
     };
   });
   const cost = comparison.costReality;
+  const pc = data.pricingComparison;
+  const verd = data.verdict;
+  const aglance = data.tooltrimAtAGlance;
   const tipping = comparison.tippingPoint;
   const alternatives = [
     ...(data.related?.alternatives || []),
@@ -361,16 +405,16 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
   return {
     framing: comparison.falseSimilarity || comparison.mainDifference,
     framingEn: asEnglishCopy(comparison.falseSimilarity || comparison.mainDifference),
-    verdictShort: comparison.decisionSummary,
-    verdictShortEn: asEnglishCopy(comparison.decisionSummary),
-    finalRecommendation: comparison.finalRecommendation || comparison.decisionSummary,
-    finalRecommendationEn: asEnglishCopy(comparison.finalRecommendation || comparison.decisionSummary),
-    quickVerdictA: comparison.chooseAIf.join(" "),
-    quickVerdictAEn: asEnglishCopy(comparison.chooseAIf.join(" ")),
-    quickVerdictB: comparison.chooseBIf.join(" "),
-    quickVerdictBEn: asEnglishCopy(comparison.chooseBIf.join(" ")),
-    quickVerdictAvoid: avoidBoth,
-    quickVerdictAvoidEn: asEnglishCopy(avoidBoth),
+    verdictShort: verd?.summary || comparison.decisionSummary,
+    verdictShortEn: asEnglishCopy(verd?.summary || comparison.decisionSummary),
+    finalRecommendation: verd?.finalRecommendation || comparison.finalRecommendation || comparison.decisionSummary,
+    finalRecommendationEn: asEnglishCopy(verd?.finalRecommendation || comparison.finalRecommendation || comparison.decisionSummary),
+    quickVerdictA: (verd?.chooseAIf ?? comparison.chooseAIf).join(" "),
+    quickVerdictAEn: asEnglishCopy((verd?.chooseAIf ?? comparison.chooseAIf).join(" ")),
+    quickVerdictB: (verd?.chooseBIf ?? comparison.chooseBIf).join(" "),
+    quickVerdictBEn: asEnglishCopy((verd?.chooseBIf ?? comparison.chooseBIf).join(" ")),
+    quickVerdictAvoid: (verd?.avoidBothIf?.[0]) ?? avoidBoth,
+    quickVerdictAvoidEn: asEnglishCopy((verd?.avoidBothIf?.[0]) ?? avoidBoth),
     toolADesc: data.tools.toolA.coreStrengths?.join(" ") || comparison.chooseAIf.join(" "),
     toolADescEn: asEnglishCopy(data.tools.toolA.coreStrengths?.join(" ") || comparison.chooseAIf.join(" ")),
     toolAUseCases: comparison.chooseAIf,
@@ -416,30 +460,30 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
       {
         label: "Plan gratuit",
         labelEn: "Free plan",
-        toolA: cost?.toolA?.freePlanReality || data.tools.toolA.freePlan?.summary || "À vérifier selon volume.",
-        toolAEn: asEnglishCopy(cost?.toolA?.freePlanReality || data.tools.toolA.freePlan?.summary || "Check by volume."),
-        toolB: cost?.toolB?.freePlanReality || data.tools.toolB.freePlan?.summary || "À vérifier selon volume.",
-        toolBEn: asEnglishCopy(cost?.toolB?.freePlanReality || data.tools.toolB.freePlan?.summary || "Check by volume."),
-        recommendation: cost?.tooltrimNote || "Ne paie que si l'usage est régulier et distinct.",
-        recommendationEn: asEnglishCopy(cost?.tooltrimNote || "Only pay when usage is regular and distinct."),
+        toolA: pc?.freePlanReality?.toolA || cost?.toolA?.freePlanReality || data.tools.toolA.freePlan?.summary || "À vérifier selon volume.",
+        toolAEn: asEnglishCopy(pc?.freePlanReality?.toolA || cost?.toolA?.freePlanReality || data.tools.toolA.freePlan?.summary || "Check by volume."),
+        toolB: pc?.freePlanReality?.toolB || cost?.toolB?.freePlanReality || data.tools.toolB.freePlan?.summary || "À vérifier selon volume.",
+        toolBEn: asEnglishCopy(pc?.freePlanReality?.toolB || cost?.toolB?.freePlanReality || data.tools.toolB.freePlan?.summary || "Check by volume."),
+        recommendation: pc?.tooltrimNote || cost?.tooltrimNote || "Ne paie que si l'usage est régulier et distinct.",
+        recommendationEn: asEnglishCopy(pc?.tooltrimNote || cost?.tooltrimNote || "Only pay when usage is regular and distinct."),
       },
       {
         label: "Quand payer",
         labelEn: "When to pay",
-        toolA: cost?.toolA?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolA),
-        toolAEn: asEnglishCopy(cost?.toolA?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolA)),
-        toolB: cost?.toolB?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolB),
-        toolBEn: asEnglishCopy(cost?.toolB?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolB)),
+        toolA: pc?.whenPaidBecomesNecessary?.toolA || cost?.toolA?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolA),
+        toolAEn: asEnglishCopy(pc?.whenPaidBecomesNecessary?.toolA || cost?.toolA?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolA)),
+        toolB: pc?.whenPaidBecomesNecessary?.toolB || cost?.toolB?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolB),
+        toolBEn: asEnglishCopy(pc?.whenPaidBecomesNecessary?.toolB || cost?.toolB?.whenPaidBecomesNecessary || formatPlanSummary(data.tools.toolB)),
         recommendation: cost?.duplicateCostWarning || "Auditer avant de payer les deux.",
         recommendationEn: asEnglishCopy(cost?.duplicateCostWarning || "Audit before paying for both."),
       },
       {
         label: "Coût caché",
         labelEn: "Hidden cost",
-        toolA: cost?.toolA?.hiddenCost || cost?.toolA?.pricingRisk || "Temps de setup et maintenance.",
-        toolAEn: asEnglishCopy(cost?.toolA?.hiddenCost || cost?.toolA?.pricingRisk || "Setup and maintenance time."),
-        toolB: cost?.toolB?.hiddenCost || cost?.toolB?.pricingRisk || "Temps de setup et maintenance.",
-        toolBEn: asEnglishCopy(cost?.toolB?.hiddenCost || cost?.toolB?.pricingRisk || "Setup and maintenance time."),
+        toolA: pc?.hiddenCosts?.toolA || cost?.toolA?.hiddenCost || cost?.toolA?.pricingRisk || "Temps de setup et maintenance.",
+        toolAEn: asEnglishCopy(pc?.hiddenCosts?.toolA || cost?.toolA?.hiddenCost || cost?.toolA?.pricingRisk || "Setup and maintenance time."),
+        toolB: pc?.hiddenCosts?.toolB || cost?.toolB?.hiddenCost || cost?.toolB?.pricingRisk || "Temps de setup et maintenance.",
+        toolBEn: asEnglishCopy(pc?.hiddenCosts?.toolB || cost?.toolB?.hiddenCost || cost?.toolB?.pricingRisk || "Setup and maintenance time."),
         recommendation: cost?.duplicateCostWarning || "Le coût réel inclut le doublon et le temps perdu.",
         recommendationEn: asEnglishCopy(cost?.duplicateCostWarning || "Real cost includes duplication and lost time."),
       },
@@ -453,14 +497,27 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
       recommendationEn: asEnglishCopy(pitfall.recommendation),
     })),
     profiles: [],
-    pricingFraming: cost?.tooltrimNote || comparison.mainDifference,
-    pricingFramingEn: asEnglishCopy(cost?.tooltrimNote || comparison.mainDifference),
-    pricingToolANotes: formatPlanSummary(data.tools.toolA),
-    pricingToolANotesEn: asEnglishCopy(formatPlanSummary(data.tools.toolA)),
-    pricingToolBNotes: formatPlanSummary(data.tools.toolB),
-    pricingToolBNotesEn: asEnglishCopy(formatPlanSummary(data.tools.toolB)),
-    pricingReco: cost?.duplicateCostWarning || "Vérifier le coût réel selon volume, sièges et usage hebdomadaire.",
-    pricingRecoEn: asEnglishCopy(cost?.duplicateCostWarning || "Check real cost by volume, seats, and weekly usage."),
+    pricingFraming: pc?.tooltrimNote || cost?.tooltrimNote || comparison.mainDifference,
+    pricingFramingEn: asEnglishCopy(pc?.tooltrimNote || cost?.tooltrimNote || comparison.mainDifference),
+    pricingToolANotes: pc?.entryLevel?.toolA || formatPlanSummary(data.tools.toolA),
+    pricingToolANotesEn: asEnglishCopy(pc?.entryLevel?.toolA || formatPlanSummary(data.tools.toolA)),
+    pricingToolBNotes: pc?.entryLevel?.toolB || formatPlanSummary(data.tools.toolB),
+    pricingToolBNotesEn: asEnglishCopy(pc?.entryLevel?.toolB || formatPlanSummary(data.tools.toolB)),
+    pricingReco: cost?.duplicateCostWarning || pc?.tooltrimNote || "Vérifier le coût réel selon volume, sièges et usage hebdomadaire.",
+    pricingRecoEn: asEnglishCopy(cost?.duplicateCostWarning || pc?.tooltrimNote || "Check real cost by volume, seats, and weekly usage."),
+    /* ── Structured verdict bullet lists ── */
+    chooseAIfList: verd?.chooseAIf ?? comparison.chooseAIf,
+    chooseBIfList: verd?.chooseBIf ?? comparison.chooseBIf,
+    avoidAIfList: verd?.avoidAIf ?? [],
+    avoidBIfList: verd?.avoidBIf ?? [],
+    avoidBothIfList: verd?.avoidBothIf ?? comparison.avoidBothIf ?? [],
+    /* ── Hero signal overrides from tooltrimAtAGlance ── */
+    aglanceBestForA: aglance?.bestForToolA,
+    aglanceBestForB: aglance?.bestForToolB,
+    aglanceBudget: aglance?.budgetShort,
+    aglanceRisk: aglance?.mainRisk,
+    aglanceDefaultLabel: aglance?.defaultChoiceLabel,
+    aglanceLevel: aglance?.complexityLabel,
     alternatives: alternatives.map((name) => ({
       slug: slugifyName(name),
       name,
@@ -851,6 +908,34 @@ const NOTION_VS_AIRTABLE: CompareEditorialContent = {
   pricingRecoEn:
     "For solo or small team ≤ 3 people: Notion is cheaper. Beyond that, compare based on actual use.",
 
+  /* ── Structured verdict bullet lists ── */
+  chooseAIfList: [
+    "Documentation et wiki interne",
+    "Notes et organisation personnelle",
+    "Gestion de projets légère",
+  ],
+  chooseBIfList: [
+    "Bases de données structurées et vues filtrées",
+    "Automatisations de process",
+    "Reporting et pipelines",
+  ],
+  avoidAIfList: [
+    "Tu dois gérer des volumes de données ou des workflows complexes.",
+  ],
+  avoidBIfList: [
+    "Tu cherches un espace d'écriture et d'organisation flexible.",
+  ],
+  avoidBothIfList: [
+    "Tu cherches un outil simple pour une seule tâche : les deux peuvent devenir trop lourds.",
+  ],
+  /* ── Hero signal overrides ── */
+  aglanceBestForA: "Docs, notes, wikis et projets légers",
+  aglanceBestForB: "Bases de données, vues et workflows",
+  aglanceBudget: "Notion moins cher pour solo/petite équipe",
+  aglanceRisk: "Ne pas mélanger les deux rôles",
+  aglanceDefaultLabel: "Notion par défaut pour centraliser",
+  aglanceLevel: "Notion accessible, Airtable complexe",
+
   alternatives: [
     { slug: "coda", name: "Coda", reason: "Entre document et base de données, souvent bon compromis entre les deux.", reasonEn: "Between document and database, often a good compromise between the two." },
     { slug: "clickup", name: "ClickUp", reason: "Plus orienté gestion de projet, avec vue tâches, sprints et reporting.", reasonEn: "More project-management oriented, with task view, sprints and reporting.", price: "Gratuit / 7€+/mois" },
@@ -1105,6 +1190,19 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     pricingToolBNotesEn: priceB === 0 ? "Free plan available." : `From **€${priceB}/month**.`,
     pricingReco: `Comparer les plans payants selon vos besoins réels.`,
     pricingRecoEn: `Compare paid plans based on your actual needs.`,
+    /* ── Structured verdict bullet lists (fallback: derive from keepsA/B) ── */
+    chooseAIfList: (toolA.verdict?.keepIf || keepsA).slice(0, 3).map(String),
+    chooseBIfList: (toolB.verdict?.keepIf || keepsB).slice(0, 3).map(String),
+    avoidAIfList: (toolA.verdict?.avoidIf || []).slice(0, 2).map(String),
+    avoidBIfList: (toolB.verdict?.avoidIf || []).slice(0, 2).map(String),
+    avoidBothIfList: [],
+    /* ── Hero signal overrides (none for fallback) ── */
+    aglanceBestForA: undefined,
+    aglanceBestForB: undefined,
+    aglanceBudget: undefined,
+    aglanceRisk: undefined,
+    aglanceDefaultLabel: undefined,
+    aglanceLevel: undefined,
     alternatives: [],
     faq: [
       { q: `${toolA.name} ou ${toolB.name} — lequel est moins cher ?`,
@@ -1266,12 +1364,12 @@ const ComparePage = () => {
   const verdictShort = lang === "fr" ? content.verdictShort : content.verdictShortEn;
   const learningCurveRow = content.tableRows.find((row) => row.criterion === "Prise en main" || row.criterionEn === "Learning curve");
   const decisionTableRows = getDecisionTableRows(content.tableRows);
-  const bestForA = getToolBestFor(content, "A", lang);
-  const bestForB = getToolBestFor(content, "B", lang);
-  const defaultChoice = getDefaultChoice(content, toolA, toolB, lang);
-  const budgetSignal = getBudgetSignal(toolA, toolB, lang);
-  const levelSignal = getLearningCurve(learningCurveRow, lang);
-  const riskSignal = getToolTrimRisk(content, lang);
+  const bestForA = content.aglanceBestForA || getToolBestFor(content, "A", lang);
+  const bestForB = content.aglanceBestForB || getToolBestFor(content, "B", lang);
+  const defaultChoice = content.aglanceDefaultLabel || getDefaultChoice(content, toolA, toolB, lang);
+  const budgetSignal = content.aglanceBudget || getBudgetSignal(toolA, toolB, lang);
+  const levelSignal = content.aglanceLevel || getLearningCurve(learningCurveRow, lang);
+  const riskSignal = content.aglanceRisk || getToolTrimRisk(content, lang);
   const fallbackPitfalls = getPitfalls(content, toolA, toolB, lang);
 
   // Find alternative tools from the loaded tools list
@@ -1352,24 +1450,58 @@ const ComparePage = () => {
             {lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn}
           </p>
           <div className="cp-verdict-grid">
+            {/* ── Choose A column ── */}
             <div className="cp-verdict-col">
               <p className="cp-verdict-label">{t("Choisis", "Choose")} {toolA.name} {t("si…", "if…")}</p>
-              <p className="cp-verdict-text">
-                {lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn}
-              </p>
+              {content.chooseAIfList.length > 0 ? (
+                <ul className="cp-verdict-list">
+                  {content.chooseAIfList.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+              ) : (
+                <p className="cp-verdict-text">{lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn}</p>
+              )}
+              {content.avoidAIfList.length > 0 && (
+                <>
+                  <p className="cp-verdict-avoid-label">{t("Évite", "Skip")} {toolA.name} {t("si…", "if…")}</p>
+                  <ul className="cp-verdict-list cp-verdict-list--avoid">
+                    {content.avoidAIfList.map((item, i) => <li key={i}>{item}</li>)}
+                  </ul>
+                </>
+              )}
             </div>
+            {/* ── Choose B column ── */}
             <div className="cp-verdict-col">
               <p className="cp-verdict-label">{t("Choisis", "Choose")} {toolB.name} {t("si…", "if…")}</p>
-              <p className="cp-verdict-text">
-                {lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn}
-              </p>
+              {content.chooseBIfList.length > 0 ? (
+                <ul className="cp-verdict-list">
+                  {content.chooseBIfList.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+              ) : (
+                <p className="cp-verdict-text">{lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn}</p>
+              )}
+              {content.avoidBIfList.length > 0 && (
+                <>
+                  <p className="cp-verdict-avoid-label">{t("Évite", "Skip")} {toolB.name} {t("si…", "if…")}</p>
+                  <ul className="cp-verdict-list cp-verdict-list--avoid">
+                    {content.avoidBIfList.map((item, i) => <li key={i}>{item}</li>)}
+                  </ul>
+                </>
+              )}
             </div>
-            <div className="cp-verdict-col">
-              <p className="cp-verdict-label">{t("Évite les deux si…", "Avoid both if…")}</p>
-              <p className="cp-verdict-text">
-                {lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn}
-              </p>
-            </div>
+            {/* ── Avoid both ── */}
+            {content.avoidBothIfList.length > 0 ? (
+              <div className="cp-verdict-col cp-verdict-col--full">
+                <p className="cp-verdict-label">{t("Évite les deux si…", "Avoid both if…")}</p>
+                <ul className="cp-verdict-list cp-verdict-list--avoid">
+                  {content.avoidBothIfList.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+              </div>
+            ) : (
+              <div className="cp-verdict-col">
+                <p className="cp-verdict-label">{t("Évite les deux si…", "Avoid both if…")}</p>
+                <p className="cp-verdict-text">{lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn}</p>
+              </div>
+            )}
           </div>
         </div>
       </section>

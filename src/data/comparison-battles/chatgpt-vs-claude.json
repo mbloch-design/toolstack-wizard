@@ -660,5 +660,46 @@
     "complexity": "low",
     "mainRisk": "Choisir après un seul test ou payer deux IA sans cas d'usage séparés.",
     "decisionSummary": "ChatGPT si vous voulez l'écosystème polyvalent. Claude si vous traitez beaucoup de textes longs et de réflexion structurée."
+  },
+  "verdict": {
+    "summary": "Pas de gagnant absolu. ChatGPT est plus polyvalent. Claude est souvent plus confortable pour textes longs et analyse profonde.",
+    "chooseAIf": [
+      "Vous voulez un assistant généraliste avec outils variés.",
+      "Vous utilisez recherche, multimodal, code ou génération visuelle."
+    ],
+    "chooseBIf": [
+      "Vous travaillez beaucoup sur documents longs, rédaction ou analyse nuancée."
+    ],
+    "avoidAIf": [
+      "Vous cherchez surtout une lecture longue très stable."
+    ],
+    "avoidBIf": [
+      "Vous avez besoin d’un écosystème d’outils très large dans une seule interface."
+    ],
+    "avoidBothIf": [
+      "Vous n’avez pas d’usage hebdomadaire clair."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande de choisir une IA principale selon usage réel. Garder les deux seulement si ChatGPT sert aux outils polyvalents et Claude aux textes longs.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Free puis Plus à 20 USD/mois.",
+      "toolB": "Free puis Pro autour de 20 USD/mois."
+    },
+    "freePlanReality": {
+      "toolA": "Bon pour tester, pas pour production intensive.",
+      "toolB": "Bon pour tester, limites sensibles selon usage."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Usage quotidien, fichiers, recherche, code, outils avancés.",
+      "toolB": "Rédaction longue, analyse de documents, usage fréquent."
+    },
+    "hiddenCosts": {
+      "toolA": "Risque de payer Pro sans usage intensif réel.",
+      "toolB": "Risque de doubler avec ChatGPT si usages non séparés."
+    },
+    "tooltrimNote": "Le vrai coût est souvent le doublon : payer deux IA sans séparation claire des usages.",
+    "checkedAt": "2026-05-19"
   }
 }

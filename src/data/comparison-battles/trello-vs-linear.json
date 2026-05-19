@@ -180,8 +180,14 @@
     }
   ],
   "related": {
-    "alternatives": ["clickup-vs-asana", "notion-vs-airtable"],
-    "otherComparisons": ["clickup-vs-asana", "notion-vs-airtable"]
+    "alternatives": [
+      "clickup-vs-asana",
+      "notion-vs-airtable"
+    ],
+    "otherComparisons": [
+      "clickup-vs-asana",
+      "notion-vs-airtable"
+    ]
   },
   "tooltrimAtAGlance": {
     "defaultChoice": "depends",
@@ -194,5 +200,47 @@
     "mainRisk": "Utiliser Trello pour piloter un backlog produit sérieux.",
     "decisionSummary": "Trello si la simplicité prime. Linear si l'équipe shippe du produit."
   },
-  "faq": []
+  "faq": [],
+  "verdict": {
+    "summary": "Trello gagne pour organiser simplement. Linear gagne pour suivre du produit et du développement.",
+    "chooseAIf": [
+      "Vous avez besoin d’un Kanban simple.",
+      "Votre équipe n’est pas orientée produit/dev."
+    ],
+    "chooseBIf": [
+      "Vous gérez issues, cycles, roadmap et releases.",
+      "Votre équipe travaille avec GitHub ou un workflow dev."
+    ],
+    "avoidAIf": [
+      "Vous devez piloter bugs, cycles et priorités produit."
+    ],
+    "avoidBIf": [
+      "Vous voulez juste une to-do visuelle facile."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin de planification portefeuille lourde."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Trello pour les équipes non-tech. Linear devient meilleur dès que le travail ressemble à du shipping produit.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Free puis Standard autour de 5 USD/user/mois annuel.",
+      "toolB": "Free puis Basic à 10 USD/user/mois annuel."
+    },
+    "freePlanReality": {
+      "toolA": "Très bon pour Kanban simple.",
+      "toolB": "Très bon pour petites équipes produit/dev."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Dès qu’il faut plus de boards, vues et contrôles.",
+      "toolB": "Dès qu’il faut issues illimitées, plusieurs équipes et rôles admin."
+    },
+    "hiddenCosts": {
+      "toolA": "Risque de désordre si projet dev complexe.",
+      "toolB": "Risque d’outil trop spécialisé pour non-dev."
+    },
+    "tooltrimNote": "Trello organise visuellement. Linear structure le shipping produit/dev.",
+    "checkedAt": "2026-05-19"
+  }
 }

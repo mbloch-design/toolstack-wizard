@@ -606,5 +606,47 @@
     "complexity": "depends",
     "mainRisk": "Choisir Framer pour un site CMS complexe ou Webflow pour une simple landing page urgente.",
     "decisionSummary": "Framer pour vitesse. Webflow pour structure, CMS et production long terme."
+  },
+  "verdict": {
+    "summary": "Framer gagne sur vitesse de mise en ligne. Webflow gagne quand le site devient un vrai actif web structuré.",
+    "chooseAIf": [
+      "Vous avez un site CMS sérieux, des contraintes client ou SEO avancé.",
+      "Vous travaillez en agence ou avec une équipe web."
+    ],
+    "chooseBIf": [
+      "Vous devez lancer vite une page soignée.",
+      "Vous privilégiez design et vitesse de publication."
+    ],
+    "avoidAIf": [
+      "Vous voulez juste tester une landing page en une journée."
+    ],
+    "avoidBIf": [
+      "Vous avez beaucoup de contenus, gouvernance ou contraintes CMS."
+    ],
+    "avoidBothIf": [
+      "Vous avez besoin d’un back-end applicatif complexe."
+    ],
+    "finalRecommendation": "Par défaut, ToolTrim recommande Framer pour lancer vite, Webflow pour construire durablement. Le seuil bascule quand le site devient un système éditorial ou marketing complexe.",
+    "reviewedAt": "2026-05-19"
+  },
+  "pricingComparison": {
+    "entryLevel": {
+      "toolA": "Gratuit pour construire, payant pour publier proprement.",
+      "toolB": "Gratuit pour explorer, payant pour domaine personnalisé."
+    },
+    "freePlanReality": {
+      "toolA": "Très bon pour staging et apprentissage.",
+      "toolB": "Très bon pour prototypes et landing pages simples."
+    },
+    "whenPaidBecomesNecessary": {
+      "toolA": "Site client, CMS réel, domaine, trafic, collaboration.",
+      "toolB": "Domaine personnalisé, site public pro, besoins de scale/localisation."
+    },
+    "hiddenCosts": {
+      "toolA": "Plan site + workspace + add-ons de bande passante/CMS selon cas.",
+      "toolB": "Add-ons et limites quand le site grandit."
+    },
+    "tooltrimNote": "Webflow est plus robuste pour sites marketing structurés. Framer va plus vite pour landing pages visuelles.",
+    "checkedAt": "2026-05-19"
   }
 }
