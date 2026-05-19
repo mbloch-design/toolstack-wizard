@@ -1849,13 +1849,7 @@ const ComparePage = () => {
       <div className="cp-cta-band">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("Diagnostic", "Diagnostic")}</span>
-          <p style={{
-            fontFamily: "var(--font-brand)",
-            fontSize: "clamp(1.75rem, 4vw, 3.5rem)",
-            fontWeight: 600, letterSpacing: "-0.055em",
-            lineHeight: 0.98, color: "#222222",
-            maxWidth: 720, marginBottom: 16,
-          }}>
+          <p className="tt-cta-title">
             {t(
               `${toolA.name} ou ${toolB.name} sont déjà dans ta stack ?`,
               `${toolA.name} or ${toolB.name} already in your stack?`,

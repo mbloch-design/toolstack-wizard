@@ -2,6 +2,69 @@
 
 ---
 
+## 2026-05-19 — Sprint 65 : Design system typographique scalable — tokens globaux
+
+### Objectif
+Créer une source unique de vérité pour toute la typographie ToolTrim. Plus aucune page ne code ses tailles en dur. Changer un token `--tt-size-*` dans `:root` propage le changement partout.
+
+### Nouveaux tokens CSS dans `:root`
+13 variables `--tt-size-*` couvrant tous les niveaux typographiques :
+- `--tt-size-hero` → `clamp(64px, 8vw, 124px)`
+- `--tt-size-hero-sub` → `clamp(22px, 2vw, 30px)`
+- `--tt-size-section-h` → `clamp(44px, 5vw, 76px)`
+- `--tt-size-section-intro` → `clamp(20px, 1.8vw, 26px)`
+- `--tt-size-body-large` → `clamp(18px, 1.5vw, 22px)`
+- `--tt-size-body` → `16px`
+- `--tt-size-kicker` → `11px`
+- `--tt-size-fact` → `clamp(18px, 1.2vw, 22px)`
+- `--tt-size-fact-compact` → `14px`
+- `--tt-size-card-title` → `15px`
+- `--tt-size-card-body` → `14px`
+- `--tt-size-metric` → `clamp(24px, 1.8vw, 32px)`
+- `--tt-size-cta-h` → `clamp(28px, 4vw, 56px)`
+
+Variables de section : `--tt-section-y`, `--tt-hero-pt`, `--tt-hero-pb`
+Variables de radius : `--tt-radius-sm/md/lg/xl`
+
+### Migration classes `tt-*`
+Toutes les 12 classes `tt-*` existantes référencent maintenant `var(--tt-size-*)` au lieu de clamp() codés en dur.
+
+### Nouvelles classes `tt-*`
+- `.tt-cta-title` — titre de bande CTA (`--tt-size-cta-h`)
+- `.tt-container` / `.tt-hero` / `.tt-section` / `.tt-section--last` — primitives layout
+- `.tt-section-header` / `.tt-section-grid` — patterns de section
+- `.tt-content-narrow` / `.tt-content-wide` — conteneurs à largeur contrainte
+- `.tt-table-head-cell` / `.tt-table-criterion` / `.tt-table-value` / `.tt-table-note` / `.tt-table-decision` — tokens table
+- `.tt-statement` / `.tt-statement-label` / `.tt-statement-text` — pattern bloc éditorial
+
+### Migration `cp-*` → tokens
+Classes clés migrées sur `var(--tt-size-*)` :
+- `.cp-hero-title` → `var(--tt-size-hero)`
+- `.cp-hero-promise` → `var(--tt-size-hero-sub)`
+- `.cp-eyebrow` → `var(--tt-size-kicker)`
+- `.cp-title` → `var(--tt-size-section-h)`
+- `.cp-section-framing` → `var(--tt-size-section-intro)`
+- `.cp-verdict-statement-label` → `var(--tt-size-kicker)`
+- `.cp-table-cell--criterion` → `var(--tt-size-fact-compact)`
+- `.cp-table-tool-note` → `var(--tt-size-card-body)`
+- `.cp-section` → `padding: var(--tt-section-y) 0`
+- `.cp-hero` → `padding: var(--tt-hero-pt) 0 var(--tt-hero-pb)`
+- `.cp-hero-duel-card` → `border-radius: var(--tt-radius-md)`
+
+### Migration `sd-*` → tokens
+- Toutes les occurrences de `font-size: 11px` dans les eyebrows → `var(--tt-size-kicker)`
+- Groupe sélecteur (`.sd-hero-eyebrow, .sd-section-eyebrow, …`) migré
+
+### Migration JSX pages
+- `ComparePage.tsx` CTA band title → `.tt-cta-title`
+- `StackDetailPage.tsx` CTA band title → `.tt-cta-title` + kicker → `.tt-kicker`
+
+### Règle anti-exception renforcée
+FORBIDDEN : `font-size: clamp(...)` ou px en dur dans un class `cp-*` / `sd-*` couverte par un token
+REQUIRED : référencer `var(--tt-size-*)` ou utiliser directement une class `tt-*`
+
+---
+
 ## 2026-05-19 — Sprint 64 : Table décisionnelle "Ce qui change vraiment le choix"
 
 ### Objectif

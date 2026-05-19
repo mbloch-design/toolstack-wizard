@@ -55,27 +55,92 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 --font-ui:    "Inter Tight"           /* UI, corps, labels */
 ```
 
+### Variables CSS de taille (`--tt-size-*`)
+
+Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes les classes `tt-*`, `cp-*`, `sd-*` doivent référencer ces vars — jamais coder `clamp()` en dur sur une page.
+
+| Variable | Valeur | Niveau |
+|---|---|---|
+| `--tt-size-hero` | `clamp(64px, 8vw, 124px)` | H1 principal (Compare, ToolDetail) |
+| `--tt-size-hero-sub` | `clamp(22px, 2vw, 30px)` | Phrase sous H1 |
+| `--tt-size-section-h` | `clamp(44px, 5vw, 76px)` | Titre de section — éditorial large |
+| `--tt-size-section-intro` | `clamp(20px, 1.8vw, 26px)` | Intro de section |
+| `--tt-size-body-large` | `clamp(18px, 1.5vw, 22px)` | Grand corps / framing |
+| `--tt-size-body` | `16px` | Corps standard |
+| `--tt-size-kicker` | `11px` | TOUS les kickers / eyebrows |
+| `--tt-size-fact` | `clamp(18px, 1.2vw, 22px)` | Valeur données |
+| `--tt-size-fact-compact` | `14px` | Valeur cellule compacte |
+| `--tt-size-card-title` | `15px` | Titre card / row |
+| `--tt-size-card-body` | `14px` | Corps card / note secondaire |
+| `--tt-size-metric` | `clamp(24px, 1.8vw, 32px)` | KPI numérique |
+| `--tt-size-cta-h` | `clamp(28px, 4vw, 56px)` | Titre de bande CTA |
+
+**Variables de spacing :**
+
+| Variable | Valeur | Usage |
+|---|---|---|
+| `--tt-section-y` | `clamp(80px, 9vw, 140px)` | Padding vertical de section |
+| `--tt-hero-pt` | `72px` | Padding-top du hero |
+| `--tt-hero-pb` | `64px` | Padding-bottom du hero |
+
+**Variables de radius :**
+
+| Variable | Valeur |
+|---|---|
+| `--tt-radius-sm` | `12px` |
+| `--tt-radius-md` | `18px` |
+| `--tt-radius-lg` | `24px` |
+| `--tt-radius-xl` | `32px` |
+
+---
+
 ### Échelle canonique ToolTrim (`tt-*` classes)
 
-**Règle anti-exception :** Les pages Stack sont la référence. Les pages Comparatif utilisent la même échelle. Aucune taille custom ne peut dépasser les valeurs ci-dessous sans justification documentée.
+**Règle anti-exception :** Toutes les classes utilisent `var(--tt-size-*)`. Changer une variable `--tt-size-*` dans `:root` propage le changement partout. Ne jamais coder une taille en dur dans une classe `tt-*`, `cp-*`, ou `sd-*` couverte par les tokens.
 
-| Classe | Font | Size (clamp) | Weight | LS | LH | Usage |
-|---|---|---|---|---|---|---|
-| `.tt-hero-title` | brand | `clamp(64px, 8vw, 124px)` | 700 | -0.07em | 0.92 | H1 de toutes les pages principales |
-| `.tt-hero-subtitle` | ui | `clamp(22px, 2vw, 30px)` | 400 | -0.035em | 1.28 | Phrase sous le H1 |
-| `.tt-kicker` | ui | `11px` | 700 | +0.08em | 1 | Eyebrow / numéro de section |
-| `.tt-section-title` | brand | `clamp(44px, 5vw, 76px)` | 700 | -0.06em | 0.95 | Titre de chaque section scrollée |
-| `.tt-section-intro` | ui | `clamp(20px, 1.8vw, 26px)` | 400 | -0.035em | 1.32 | Phrase d'intro de section |
-| `.tt-body` | ui | `16px` | 400 | — | 1.5 | Corps de texte standard |
-| `.tt-body-large` | ui | `clamp(18px, 1.5vw, 22px)` | 400 | -0.02em | 1.42 | Résumés, phrases éditoriales courtes |
-| `.tt-fact-label` | ui | `10px` | 700 | +0.08em | 1 | Label en uppercase dans les grilles |
-| `.tt-fact-value` | ui | `clamp(18px, 1.2vw, 22px)` | 600 | -0.03em | 1.18 | Valeur dans un bloc de données |
-| `.tt-fact-value-compact` | ui | `14px` | 600 | -0.015em | 1.38 | Valeur dans une cellule compacte |
-| `.tt-card-title` | ui | `15px` | 600 | -0.02em | 1.3 | Titre d'une card |
-| `.tt-card-body` | ui | `14px` | 400 | -0.01em | 1.45 | Corps d'une card |
-| `.tt-metric-value` | ui | `clamp(24px, 1.8vw, 32px)` | 700 | -0.045em | 1 | KPI, métrique numérique |
+| Classe | Token | Weight | LS | LH | Usage |
+|---|---|---|---|---|---|
+| `.tt-hero-title` | `--tt-size-hero` | 700 | -0.07em | 0.92 | H1 pages principales |
+| `.tt-hero-subtitle` | `--tt-size-hero-sub` | 400 | -0.035em | 1.28 | Phrase sous H1 |
+| `.tt-kicker` | `--tt-size-kicker` | 700 | +0.08em | 1 | Eyebrows, kickers, labels uppercase |
+| `.tt-section-title` | `--tt-size-section-h` | 700 | -0.06em | 0.95 | Titres de sections |
+| `.tt-section-intro` | `--tt-size-section-intro` | 400 | -0.035em | 1.32 | Intros de section |
+| `.tt-body` | `--tt-size-body` | 400 | — | 1.5 | Corps standard |
+| `.tt-body-large` | `--tt-size-body-large` | 400 | -0.02em | 1.42 | Grand corps, framing |
+| `.tt-fact-label` | `10px` (fixe) | 700 | +0.08em | 1 | Micro-label uppercase (10px) |
+| `.tt-fact-value` | `--tt-size-fact` | 600 | -0.03em | 1.18 | Valeur bloc de données |
+| `.tt-fact-value-compact` | `--tt-size-fact-compact` | 600 | -0.015em | 1.38 | Valeur cellule compacte |
+| `.tt-card-title` | `--tt-size-card-title` | 600 | -0.02em | 1.3 | Titre card |
+| `.tt-card-body` | `--tt-size-card-body` | 400 | -0.01em | 1.45 | Corps card |
+| `.tt-metric-value` | `--tt-size-metric` | 700 | -0.045em | 1 | KPI / métrique |
+| `.tt-cta-title` | `--tt-size-cta-h` | 600 | -0.055em | 0.98 | Titre de bande CTA |
 
-**Interdiction :** définir un `font-size` custom sur une page si `.tt-*` couvre déjà ce cas d'usage.
+**Nouvelles classes — table et statement :**
+
+| Classe | Token | Usage |
+|---|---|---|
+| `.tt-table-head-cell` | `10px` | Header colonne de table |
+| `.tt-table-criterion` | `--tt-size-fact-compact` | Colonne critère |
+| `.tt-table-value` | `17px` | Valeur principale (outil) dans table |
+| `.tt-table-note` | `--tt-size-card-body` | Note secondaire dans cellule |
+| `.tt-table-decision` | `16px` | Colonne décision ToolTrim |
+| `.tt-statement-label` | `10px` | Label du bloc statement |
+| `.tt-statement-text` | `--tt-size-body-large` | Texte du bloc statement |
+
+**Classes de layout :**
+
+| Classe | Équivalent | Usage |
+|---|---|---|
+| `.tt-container` | `.cp-container` | Conteneur éditorial max-width 1280px |
+| `.tt-hero` | `.cp-hero` structure | Bande hero avec bg et border-bottom |
+| `.tt-section` | `.cp-section` | Section avec padding `--tt-section-y` |
+| `.tt-section--last` | — | Supprime border-bottom |
+| `.tt-section-header` | — | Bloc kicker + titre + intro |
+| `.tt-section-grid` | `.cp-section-grid` | Grille 2 colonnes heading/content |
+| `.tt-content-narrow` | — | Contrainte de largeur 760px |
+| `.tt-content-wide` | — | Contrainte de largeur 980px |
+
+**Interdiction :** définir un `font-size` custom sur une page si `tt-*` ou `--tt-size-*` couvre déjà ce cas d'usage.
 
 ### Hiérarchie éditoriale (référence pages Stack)
 

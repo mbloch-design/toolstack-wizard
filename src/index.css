@@ -187,6 +187,36 @@
 
     --color-accent:        hsl(224 76% 50%);   /* ToolTrim blue */
     --color-accent-soft:   hsl(224 76% 96%);   /* very light tint */
+
+    /* ── ToolTrim typography scale — canonical size tokens ──────────────────
+       Single source of truth. All page-level classes (cp-*, sd-*, tt-*) must
+       reference these vars instead of hard-coding clamp() / px values.
+       To resize a level globally → change ONE var here.
+    ──────────────────────────────────────────────────────────────────────── */
+    --tt-size-hero:          clamp(64px, 8vw, 124px);    /* H1 Compare, ToolDetail */
+    --tt-size-hero-sub:      clamp(22px, 2vw, 30px);     /* Subtitle / promise below H1 */
+    --tt-size-section-h:     clamp(44px, 5vw, 76px);     /* Section title — editorial */
+    --tt-size-section-intro: clamp(20px, 1.8vw, 26px);   /* Intro paragraph under title */
+    --tt-size-body-large:    clamp(18px, 1.5vw, 22px);   /* Large body / framing copy */
+    --tt-size-body:          16px;                        /* Standard body */
+    --tt-size-kicker:        11px;                        /* ALL kickers / eyebrows */
+    --tt-size-fact:          clamp(18px, 1.2vw, 22px);   /* Fact/data value */
+    --tt-size-fact-compact:  14px;                        /* Table cell / compact fact */
+    --tt-size-card-title:    15px;                        /* Card / row title */
+    --tt-size-card-body:     14px;                        /* Card body / secondary note */
+    --tt-size-metric:        clamp(24px, 1.8vw, 32px);   /* KPI / metric */
+    --tt-size-cta-h:         clamp(28px, 4vw, 56px);     /* CTA band heading */
+
+    /* ── Section / hero spacing ── */
+    --tt-section-y: clamp(80px, 9vw, 140px);  /* Section vertical padding */
+    --tt-hero-pt:   72px;                       /* Hero padding-top */
+    --tt-hero-pb:   64px;                       /* Hero padding-bottom */
+
+    /* ── Border radius scale ── */
+    --tt-radius-sm: 12px;
+    --tt-radius-md: 18px;
+    --tt-radius-lg: 24px;
+    --tt-radius-xl: 32px;
   }
 
   /* Responsive gutter — tablet & mobile overrides */
@@ -479,7 +509,7 @@
   /* ── Hero title — display, brand font ──────── */
   .tt-hero-title {
     font-family: var(--font-brand);
-    font-size: clamp(64px, 8vw, 124px);
+    font-size: var(--tt-size-hero);
     font-weight: 700;
     line-height: 0.92;
     letter-spacing: -0.07em;
@@ -488,7 +518,7 @@
   /* ── Hero subtitle — intro below title ──────── */
   .tt-hero-subtitle {
     font-family: var(--font-ui);
-    font-size: clamp(22px, 2vw, 30px);
+    font-size: var(--tt-size-hero-sub);
     font-weight: 400;
     line-height: 1.28;
     letter-spacing: -0.035em;
@@ -498,7 +528,7 @@
   /* ── Section kicker / eyebrow ───────────────── */
   .tt-kicker {
     font-family: var(--font-ui);
-    font-size: 11px;
+    font-size: var(--tt-size-kicker);
     font-weight: 700;
     line-height: 1;
     letter-spacing: 0.08em;
@@ -509,7 +539,7 @@
   /* ── Section title — brand font, editorial ──── */
   .tt-section-title {
     font-family: var(--font-brand);
-    font-size: clamp(44px, 5vw, 76px);
+    font-size: var(--tt-size-section-h);
     font-weight: 700;
     line-height: 0.95;
     letter-spacing: -0.06em;
@@ -519,7 +549,7 @@
   /* ── Section intro paragraph ────────────────── */
   .tt-section-intro {
     font-family: var(--font-ui);
-    font-size: clamp(20px, 1.8vw, 26px);
+    font-size: var(--tt-size-section-intro);
     font-weight: 400;
     line-height: 1.32;
     letter-spacing: -0.035em;
@@ -529,14 +559,14 @@
   /* ── Body text ───────────────────────────────── */
   .tt-body {
     font-family: var(--font-ui);
-    font-size: 16px;
+    font-size: var(--tt-size-body);
     font-weight: 400;
     line-height: 1.5;
   }
   /* ── Body large — framing, summaries ────────── */
   .tt-body-large {
     font-family: var(--font-ui);
-    font-size: clamp(18px, 1.5vw, 22px);
+    font-size: var(--tt-size-body-large);
     font-weight: 400;
     line-height: 1.42;
     letter-spacing: -0.02em;
@@ -555,7 +585,7 @@
   /* ── Fact value — decisive data point ───────── */
   .tt-fact-value {
     font-family: var(--font-ui);
-    font-size: clamp(18px, 1.2vw, 22px);
+    font-size: var(--tt-size-fact);
     font-weight: 600;
     line-height: 1.18;
     letter-spacing: -0.03em;
@@ -564,7 +594,7 @@
   /* ── Fact value compact — cell / table ──────── */
   .tt-fact-value-compact {
     font-family: var(--font-ui);
-    font-size: 14px;
+    font-size: var(--tt-size-fact-compact);
     font-weight: 600;
     line-height: 1.38;
     letter-spacing: -0.015em;
@@ -573,7 +603,7 @@
   /* ── Card title ─────────────────────────────── */
   .tt-card-title {
     font-family: var(--font-ui);
-    font-size: 15px;
+    font-size: var(--tt-size-card-title);
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: -0.02em;
@@ -582,7 +612,7 @@
   /* ── Card body ──────────────────────────────── */
   .tt-card-body {
     font-family: var(--font-ui);
-    font-size: 14px;
+    font-size: var(--tt-size-card-body);
     font-weight: 400;
     line-height: 1.45;
     letter-spacing: -0.01em;
@@ -591,11 +621,126 @@
   /* ── Metric value — KPIs, numbers ───────────── */
   .tt-metric-value {
     font-family: var(--font-ui);
-    font-size: clamp(24px, 1.8vw, 32px);
+    font-size: var(--tt-size-metric);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.045em;
     color: #222222;
+  }
+  /* ── CTA band heading — medium-scale title ──── */
+  .tt-cta-title {
+    font-family: var(--font-brand);
+    font-size: var(--tt-size-cta-h);
+    font-weight: 600;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+    color: #222222;
+    max-width: 720px;
+    margin: 0 0 16px;
+  }
+
+  /* ─────────────────────────────────────────────
+     LAYOUT PRIMITIVES — reusable containers
+     Use these instead of page-specific equivalents
+     to keep spacing & width consistent site-wide.
+  ───────────────────────────────────────────── */
+  /* Shared container — full editorial width */
+  .tt-container {
+    max-width: var(--layout-content, 1280px);
+    margin: 0 auto;
+    padding: 0 var(--layout-gutter, 48px);
+  }
+  /* Hero band */
+  .tt-hero {
+    background: var(--color-bg, #F8F8F4);
+    border-bottom: 1px solid var(--color-border, #DADAD4);
+    padding: var(--tt-hero-pt, 72px) 0 var(--tt-hero-pb, 64px);
+  }
+  /* Standard page section */
+  .tt-section {
+    padding: var(--tt-section-y) 0;
+    border-bottom: 1px solid var(--color-border, #DADAD4);
+  }
+  .tt-section--last { border-bottom: none; }
+  /* Section header block (kicker + title + optional intro) */
+  .tt-section-header { margin-bottom: 48px; }
+  /* Two-column section grid (heading + content) */
+  .tt-section-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.6fr);
+    gap: 80px;
+    align-items: start;
+  }
+  @media (max-width: 1023px) {
+    .tt-section-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 640px) {
+    .tt-section-grid { gap: 20px; }
+  }
+  /* Constrained-width content column */
+  .tt-content-narrow { max-width: 760px; }
+  .tt-content-wide   { max-width: 980px; }
+
+  /* ─────────────────────────────────────────────
+     TABLE TYPOGRAPHY TOKENS — reusable table text
+     Use in decision tables on all pages.
+  ───────────────────────────────────────────── */
+  .tt-table-head-cell {
+    font-family: var(--font-ui);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-label, #8D8D86);
+  }
+  .tt-table-criterion {
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-fact-compact); font-weight: 600;
+    line-height: 1.3; letter-spacing: -0.02em;
+    color: var(--color-text, #222222);
+  }
+  .tt-table-value {
+    font-family: var(--font-ui);
+    font-size: 17px; line-height: 1.18;
+    font-weight: 650; letter-spacing: -0.03em;
+    color: var(--color-text, #222222);
+  }
+  .tt-table-note {
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-card-body); line-height: 1.38;
+    font-weight: 400; letter-spacing: -0.01em;
+    color: var(--color-muted, #6F6F68);
+    margin: 6px 0 0;
+  }
+  .tt-table-decision {
+    font-family: var(--font-ui);
+    font-size: 16px; line-height: 1.32;
+    font-weight: 600; letter-spacing: -0.025em;
+    color: var(--color-text, #222222);
+  }
+
+  /* ─────────────────────────────────────────────
+     STATEMENT PATTERN — editorial "take" block
+     Used in hero contract, verdict statements.
+  ───────────────────────────────────────────── */
+  .tt-statement {
+    padding: 20px 0;
+    border-top: 1px solid var(--color-border, #DADAD4);
+    border-bottom: 1px solid var(--color-border, #DADAD4);
+  }
+  .tt-statement-label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--font-ui);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-muted-light, #9A9A92);
+  }
+  .tt-statement-text {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-body-large);
+    line-height: 1.42; letter-spacing: -0.02em;
+    font-weight: 500;
+    color: var(--color-text, #222222);
   }
 }
 
@@ -5698,7 +5843,7 @@
   .sd-section:last-child { border-bottom: none; }
   .sd-section-eyebrow {
     font-family: var(--font-ui);
-    font-size: 11px;
+    font-size: var(--tt-size-kicker);
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -5887,7 +6032,7 @@
   .sd-hero-breadcrumb a { color: #222222; text-decoration: none; }
   .sd-hero-breadcrumb a:hover { color: #222222; }
   .sd-hero-eyebrow {
-    font-family: var(--font-ui); font-size: 11px; font-weight: 500;
+    font-family: var(--font-ui); font-size: var(--tt-size-kicker); font-weight: 500;
     letter-spacing: 0.08em; text-transform: uppercase; color: #222222;
     display: block; margin-bottom: 16px;
   }
@@ -6635,7 +6780,7 @@
   .sd-risk-col-label,
   .sd-alt-label,
   .sd-priority-label {
-    font-size: 11px;
+    font-size: var(--tt-size-kicker);
     line-height: 1;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -7088,9 +7233,9 @@
 
   /* ── Hero ──────────────────────────────────────────────────── */
   .cp-hero {
-    background: #F8F8F4;
-    border-bottom: 1px solid #DADAD4;
-    padding: 72px 0 64px;
+    background: var(--color-bg, #F8F8F4);
+    border-bottom: 1px solid var(--color-border, #DADAD4);
+    padding: var(--tt-hero-pt, 72px) 0 var(--tt-hero-pb, 64px);
   }
   .cp-hero-inner {
     max-width: var(--layout-content, 1280px);
@@ -7118,7 +7263,7 @@
     max-width: 1040px;
     margin: 0 0 20px;
     font-family: var(--font-brand);
-    font-size: clamp(64px, 8vw, 124px);
+    font-size: var(--tt-size-hero);
     font-weight: 700;
     letter-spacing: -0.07em;
     line-height: 0.92;
@@ -7129,7 +7274,7 @@
     max-width: 680px;
     margin: 0 0 40px;
     font-family: var(--font-ui);
-    font-size: clamp(22px, 2vw, 30px);
+    font-size: var(--tt-size-hero-sub);
     line-height: 1.32;
     letter-spacing: -0.03em;
     color: #6F6F68;
@@ -7146,8 +7291,8 @@
   .cp-hero-duel-card {
     padding: 24px 28px;
     background: #FFFFFF;
-    border: 1px solid #DADAD4;
-    border-radius: 18px;
+    border: 1px solid var(--color-border, #DADAD4);
+    border-radius: var(--tt-radius-md, 18px);
   }
   .cp-hero-duel-card--right {
     text-align: left;
@@ -7518,7 +7663,7 @@
   }
 
   /* ── Generic section wrapper ───────────────────────────────── */
-  .cp-section { padding: clamp(80px, 9vw, 140px) 0; border-bottom: 1px solid #DADAD4; }
+  .cp-section { padding: var(--tt-section-y) 0; border-bottom: 1px solid var(--color-border, #DADAD4); }
   .cp-section[id] { scroll-margin-top: 96px; }
   .cp-section--last { border-bottom: none; }
   .cp-container {
@@ -7529,14 +7674,14 @@
   /* Kicker / section number — uses tt-kicker scale */
   .cp-eyebrow {
     font-family: var(--font-ui);
-    font-size: 11px; font-weight: 700;
+    font-size: var(--tt-size-kicker); font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
     color: #6F6F68; display: block; margin-bottom: 28px;
   }
   /* Section heading — uses tt-section-title scale */
   .cp-title {
     font-family: var(--font-brand);
-    font-size: clamp(44px, 5vw, 76px);
+    font-size: var(--tt-size-section-h);
     font-weight: 700; letter-spacing: -0.06em;
     line-height: 0.95; color: #222222;
     max-width: 620px; margin-bottom: 0;
@@ -7570,7 +7715,7 @@
   /* ── Verdict: framing phrase — uses tt-section-intro scale ──── */
   .cp-section-framing {
     font-family: var(--font-ui);
-    font-size: clamp(20px, 1.8vw, 26px);
+    font-size: var(--tt-size-section-intro);
     line-height: 1.32;
     font-weight: 400;
     letter-spacing: -0.03em;
@@ -7590,7 +7735,7 @@
   .cp-verdict-statement-label {
     display: block;
     font-family: var(--font-ui);
-    font-size: 11px; font-weight: 700;
+    font-size: var(--tt-size-kicker); font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
     color: #9A9A92; margin-bottom: 14px;
   }
@@ -7770,9 +7915,9 @@
   }
   .cp-table-head-cell {
     font-family: var(--font-ui);
-    font-size: 10px; font-weight: 700;
+    font-size: 10px; font-weight: 700;  /* 10px — tighter than kicker, table-specific */
     letter-spacing: 0.08em; text-transform: uppercase;
-    color: #8D8D86; padding: 0 24px 0 0;
+    color: var(--color-label, #8D8D86); padding: 0 24px 0 0;
   }
   .cp-table-head-cell:first-child { padding-left: 0; }
   .cp-table-head-cell--decision { padding: 0 0 0 24px; }
@@ -7790,9 +7935,9 @@
   .cp-table-cell--criterion {
     padding: 0 24px 0 0;
     font-family: var(--font-ui);
-    font-size: 14px; line-height: 1.3;
+    font-size: var(--tt-size-fact-compact); line-height: 1.3;
     font-weight: 600; letter-spacing: -0.02em;
-    color: #222222;
+    color: var(--color-text, #222222);
   }
   /* Tool columns (A & B) */
   .cp-table-cell {
@@ -7810,9 +7955,9 @@
   .cp-table-tool-note {
     margin: 6px 0 0;
     font-family: var(--font-ui);
-    font-size: 14px; line-height: 1.38;
+    font-size: var(--tt-size-card-body); line-height: 1.38;
     font-weight: 400; letter-spacing: -0.01em;
-    color: #6F6F68;
+    color: var(--color-muted, #6F6F68);
   }
   /* Winner highlight */
   .cp-table-cell--win .cp-table-tool-title { font-weight: 700; }
@@ -13035,7 +13180,7 @@
 /* Numbered eyebrow for stack detail sections */
 .sd-section-eyebrow {
   font-family: var(--font-ui);
-  font-size: 11px;
+  font-size: var(--tt-size-kicker);
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -14147,7 +14292,7 @@
 /* Eyebrow persona label */
 .sd-hero-eyebrow {
   font-family: var(--font-ui);
-  font-size: 11px;
+  font-size: var(--tt-size-kicker);
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;

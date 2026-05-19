@@ -1185,10 +1185,10 @@ const StackDetailPage = () => {
       ════════════════════════════════════════════════════════════════════ */}
       <div className="sd-cta-band">
         <div className="sd-cta-inner">
-          <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", display: "block", marginBottom: 12 }}>
+          <span className="tt-kicker" style={{ color: "#6F6F68", marginBottom: 12 }}>
             {t("Diagnostic", "Diagnostic")}
           </span>
-          <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.75rem, 4vw, 3.25rem)", fontWeight: 600, letterSpacing: "-0.055em", lineHeight: 0.98, color: "#222222", maxWidth: 680, marginBottom: 16 }}>
+          <p className="tt-cta-title">
             {t(editorial.ctaTitle, editorial.ctaTitleEn)}
           </p>
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5, color: "#6F6F68", maxWidth: 540, marginBottom: 32, letterSpacing: "-0.015em" }}>
