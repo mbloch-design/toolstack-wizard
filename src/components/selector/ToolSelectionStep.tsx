@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Search, Check, X } from "lucide-react";
 import { Tool, SelectedTool } from "@/data/types";
-import { getToolLogoUrl } from "@/hooks/useSupabaseData";
+import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { useCategories } from "@/hooks/useSupabaseData";
 
@@ -39,9 +39,6 @@ function ToolCard({
   selected: SelectedTool | undefined;
   onToggle: () => void;
 }) {
-  const logoUrl = getToolLogoUrl(tool);
-  const [logoFailed, setLogoFailed] = useState(false);
-
   return (
     <button
       onClick={onToggle}
@@ -51,20 +48,8 @@ function ToolCard({
           : "border-border bg-card hover:border-primary/30 hover:shadow-sm"
       }`}
     >
-      {/* Logo */}
-      {logoUrl && !logoFailed ? (
-        <img
-          src={logoUrl}
-          alt=""
-          className="h-8 w-8 shrink-0 rounded-lg object-contain"
-          loading="lazy"
-          onError={() => setLogoFailed(true)}
-        />
-      ) : (
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-xs font-bold text-foreground">
-          {(tool.name ?? "?").charAt(0).toUpperCase()}
-        </div>
-      )}
+      {/* Logo — centralized via ToolLogo (multi-source fallback + initial) */}
+      <ToolLogo tool={tool} size={32} />
 
       <div className="flex-1 min-w-0">
         <p className="font-medium text-sm truncate">{tool.name}</p>

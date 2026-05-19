@@ -5,7 +5,7 @@ import {
   VERTICAL_FAMILIES, TIME_WEIGHT_OPTIONS,
 } from "@/data/types";
 import { Tool } from "@/data/types";
-import { getToolLogoUrl } from "@/hooks/useSupabaseData";
+import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -114,14 +114,9 @@ const ProfileRecapPanel = ({ form, tools, currentStep, onGoToStep, onReset }: Pr
           {selectedTools.length > 0 ? (
             <div className="mt-1">
               <div className="flex items-center gap-1">
-                {selectedTools.slice(0, 6).map((tool) => {
-                  const logoUrl = getToolLogoUrl(tool);
-                  return logoUrl ? (
-                    <img key={tool.id} src={logoUrl} alt="" className="h-5 w-5 rounded" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
-                  ) : (
-                    <div key={tool.id} className="flex h-5 w-5 items-center justify-center rounded bg-secondary text-[10px] font-bold">{(tool.name ?? "?").charAt(0)}</div>
-                  );
-                })}
+                {selectedTools.slice(0, 6).map((tool) => (
+                  <ToolLogo key={tool.id} tool={tool} size={20} />
+                ))}
                 {selectedTools.length > 6 && <span className="text-xs text-muted-foreground">+{selectedTools.length - 6}</span>}
               </div>
               <p className="mt-0.5 text-xs font-medium">{selectedTools.length} {t("outils", "tools")} · {totalCost}€/{t("mois", "mo")}</p>

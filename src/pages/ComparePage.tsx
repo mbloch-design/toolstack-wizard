@@ -1838,10 +1838,8 @@ const ComparePage = () => {
                   </Link>
                 ) : (
                   <div key={alt.slug} className="cp-alt-row" style={{ cursor: "default" }}>
-                    <div className="cp-alt-logo" style={{ background: "#F8F8F4" }}>
-                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 700, color: "#9A9A92" }}>
-                        {alt.name.slice(0, 2).toUpperCase()}
-                      </span>
+                    <div className="cp-alt-logo">
+                      <ToolLogo tool={{ name: alt.name, slug: slugifyName(alt.name) }} size={24} />
                     </div>
                     <div className="cp-alt-content">
                       <p className="cp-alt-name">{alt.name}</p>

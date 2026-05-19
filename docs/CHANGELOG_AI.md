@@ -2,6 +2,58 @@
 
 ---
 
+## 2026-05-19 — Sprint 68 : Centralisation des logos outils — ToolLogo comme composant unique
+
+### Objectif
+Stabiliser l'affichage des logos outils partout sur ToolTrim. Éliminer les carrés vides, les `<img>` sans fallback, et les composants locaux qui dupliquaient la logique de `ToolLogo`.
+
+### Problèmes identifiés
+
+| Fichier | Problème |
+|---|---|
+| `ResultsPage.tsx` | Composant `Logo` local — seulement 2 niveaux de fallback, couleur de fond aléatoire |
+| `ProfileRecapPanel.tsx` | `<img onError style.display=none>` → **carré blanc vide** quand l'image échoue |
+| `ToolSelectionStep.tsx` | `getToolLogoUrl()` = première source seulement, perd la chaîne multi-source |
+| `ComparePage.tsx:1841` | Fallback `alt.name.slice(0,2)` manuel pour outils non trouvés dans l'index |
+
+### Corrections
+
+**`ResultsPage.tsx`**
+- Suppression du composant `Logo` local (30 lignes de logique dupliquée)
+- Import `ToolLogo` + alias `const Logo = ...` → compatibilité de tous les call-sites sans modifier chaque `<Logo>`
+- Suppression de `getToolLogoUrl` / `getToolLogoUrlHD` de cet import
+
+**`ProfileRecapPanel.tsx`**
+- Suppression du pattern `{ getToolLogoUrl(tool) ? <img onError display=none> : <div initial> }`
+- Remplacement par `<ToolLogo tool={tool} size={20} />` — fallback initial garanti, jamais de carré vide
+- Suppression import `getToolLogoUrl`
+
+**`ToolSelectionStep.tsx`**
+- Suppression du pattern `getToolLogoUrl + logoFailed useState + img + fallback div`
+- Remplacement par `<ToolLogo tool={tool} size={32} />` — chaîne complète : SimpleIcons → Google Favicon → DuckDuckGo → initiale
+- Suppression import `getToolLogoUrl`
+
+**`ComparePage.tsx`**
+- Fallback des alternatives non-résolues : suppression du `<span>` hardcodé `alt.name.slice(0,2)`
+- Remplacement par `<ToolLogo tool={{ name: alt.name, slug: slugifyName(alt.name) }} size={24} />` — essaie SimpleIcons + favicon avant les initiales
+
+### Nouveaux tokens CSS (`src/index.css`)
+Ajout des classes utilitaires `.tt-tool-logo-sm/md/lg/xl` pour documenter les tailles standard :
+- `sm` = 28px (ticker, inline, recap strip)
+- `md` = 40px (cards, tables, sidebar)
+- `lg` = 52px (hero, stack cards)
+- `xl` = 64px (compare duel, tool detail hero)
+
+Note : `ToolLogo` utilise le prop `size` en inline style — ces classes servent de référence documentaire et peuvent optionnellement encadrer le composant dans des wrappers.
+
+### Résultat
+- **Zéro carré vide** — le fallback initial est toujours affiché si toutes les sources CDN échouent
+- **Chaîne multi-source** — SimpleIcons → Google Favicon V2 → DuckDuckGo → initiale lettre
+- **Logique unique** — tout logo outil passe par `ToolLogo` (sauf composants homepage intentionnellement isolés : HeroSection, TickerBar, HomePage)
+- TypeScript `exit:0` · Build `exit:0` · Lint `exit:0` (0 erreurs)
+
+---
+
 ## 2026-05-19 — Sprint 67 : Section Verdict — layout 2 cartes, hiérarchie décisionnelle, zéro benchmark
 
 ### Objectif

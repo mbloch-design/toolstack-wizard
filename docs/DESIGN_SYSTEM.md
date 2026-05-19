@@ -4,6 +4,48 @@ Référence du système de design éditorial. Mis à jour au fil des sessions.
 
 ---
 
+## ToolLogo — composant unique pour les logos outils
+
+**Règle absolue** : tout affichage d'un logo outil doit passer par `<ToolLogo tool={...} size={N} />`.
+Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
+
+### Ordre de résolution
+1. `tool.logo` si URL HTTP présente
+2. SimpleIcons (map manuelle `SIMPLE_ICON_SLUGS` → CDN `cdn.simpleicons.org`)
+3. Probe automatique SimpleIcons via slug normalisé
+4. Google Favicon V2 (`t3.gstatic.com/faviconV2`)
+5. DuckDuckGo favicon (`icons.duckduckgo.com`)
+6. **Fallback initial** — première lettre du nom en majuscule, fond `bg-secondary`
+
+### Tailles standard
+
+| Classe CSS | `size` prop | Usage |
+|---|---|---|
+| `.tt-tool-logo-sm` | `size={28}` | Ticker, mentions inline, recap strip |
+| `.tt-tool-logo-md` | `size={40}` | Cards, tables, sidebar |
+| `.tt-tool-logo-lg` | `size={52}` | Hero sections, stack tool cards |
+| `.tt-tool-logo-xl` | `size={64}` | Compare duel, tool detail hero |
+
+### Usage
+```tsx
+<ToolLogo tool={tool} size={40} />
+// Pour un outil sans objet complet (nom + slug uniquement) :
+<ToolLogo tool={{ name: "Slack", slug: "slack" }} size={28} />
+```
+
+### Interdit
+- `<img src={logoUrl} />` sans gestion d'erreur complète
+- `onError={(e) => { e.target.style.display = "none" }}` → crée un carré vide
+- Composant local qui duplique la logique de ToolLogo
+- Carré placeholder sans initiale de fallback
+
+### Exceptions homepage (ne pas modifier)
+- `HeroSection.tsx` → `AuditToolLogo` (données pré-hardcodées, domaine uniquement)
+- `TickerBar.tsx` → override `logoOverride` pour effet visuel animé
+- `HomePage.tsx` → inline `getToolLogoSources` pour animations personnalisées
+
+---
+
 ## Palette
 
 | Token | Valeur | Usage |

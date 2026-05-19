@@ -20,7 +20,7 @@ import { setNoindex } from "@/lib/seo";
 import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { getToolLogoUrl, getToolLogoUrlHD } from "@/hooks/useSupabaseData";
+import ToolLogo from "@/components/ToolLogo";
 
 /* ═══════════ Helpers ═══════════ */
 
@@ -37,37 +37,10 @@ const Tip = ({ text }: { text: string }) => (
   </TooltipProvider>
 );
 
-const Logo = ({ tool, size = 36 }: { tool: Tool; size?: number }) => {
-  const googleUrl = getToolLogoUrl(tool);
-  const hdUrl = getToolLogoUrlHD(tool);
-  const [src, setSrc] = useState<string | null>(hdUrl || googleUrl);
-  const [failed, setFailed] = useState(0);
-
-  const handleError = () => {
-    if (failed === 0 && hdUrl && googleUrl) {
-      setSrc(googleUrl);
-      setFailed(1);
-    } else {
-      setFailed(2);
-    }
-  };
-
-  // Fallback: colored initial
-  if (!src || failed >= 2) {
-    let hash = 0;
-    for (let i = 0; i < tool.name.length; i++) hash = tool.name.charCodeAt(i) + ((hash << 5) - hash);
-    const hue = Math.abs(hash) % 360;
-    return (
-      <span
-        className="flex shrink-0 items-center justify-center rounded-xl text-xs font-bold text-white"
-        style={{ width: size, height: size, minWidth: size, minHeight: size, backgroundColor: `hsl(${hue}, 55%, 45%)` }}
-      >
-        {(tool.name ?? "?").charAt(0).toUpperCase()}
-      </span>
-    );
-  }
-  return <img src={src} alt={`${tool.name} logo`} loading="lazy" className="shrink-0 rounded-xl bg-white dark:bg-secondary/50 object-contain" style={{ width: size, height: size, minWidth: size, minHeight: size }} onError={handleError} />;
-};
+/** Thin alias so call-sites keep `<Logo tool={...} size={...} />` unchanged. */
+const Logo = ({ tool, size = 36 }: { tool: Tool; size?: number }) => (
+  <ToolLogo tool={tool} size={size} />
+);
 
 const BADGE_STYLES: Record<string, string> = {
   "Doublon": "bg-primary/10 text-primary border-primary/20",
