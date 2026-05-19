@@ -215,6 +215,12 @@ interface CompareEditorialContent {
   aglancePositionA?: string;
   aglancePositionB?: string;
   aglanceContract?: string;
+  /* ── Verdict card content (2-card layout) ── */
+  verdictCardTitleA?: string; verdictCardTitleAEn?: string;
+  verdictCardTitleB?: string; verdictCardTitleBEn?: string;
+  verdictCardTextA?: string; verdictCardTextAEn?: string;
+  verdictCardTextB?: string; verdictCardTextBEn?: string;
+  verdictWarning?: string; verdictWarningEn?: string;
   /* ── Alternatives + FAQ ── */
   alternatives: CompareAlt[];
   faq: CompareFaqItem[];
@@ -249,6 +255,12 @@ interface BattleRawData {
     heroPositionA?: string;
     heroPositionB?: string;
     heroContract?: string;
+    /* ── Verdict card overrides ── */
+    verdictCardTitleA?: string;   // card title for toolA choice card (e.g. "Le choix polyvalent")
+    verdictCardTitleB?: string;   // card title for toolB choice card
+    verdictCardTextA?: string;    // card body for toolA (1 short sentence)
+    verdictCardTextB?: string;    // card body for toolB
+    verdictWarning?: string;      // full-width warning: don't pay for both
   };
   verdict?: {
     summary?: string;
@@ -551,6 +563,17 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
     aglancePositionA: aglance?.heroPositionA,
     aglancePositionB: aglance?.heroPositionB,
     aglanceContract: aglance?.heroContract,
+    /* ── Verdict card fields — explicit overrides first, then first decisive sentence ── */
+    verdictCardTitleA: aglance?.verdictCardTitleA,
+    verdictCardTitleAEn: asEnglishCopy(aglance?.verdictCardTitleA || ""),
+    verdictCardTitleB: aglance?.verdictCardTitleB,
+    verdictCardTitleBEn: asEnglishCopy(aglance?.verdictCardTitleB || ""),
+    verdictCardTextA: aglance?.verdictCardTextA || verd?.chooseAIf?.[0] || comparison.chooseAIf[0],
+    verdictCardTextAEn: asEnglishCopy(aglance?.verdictCardTextA || verd?.chooseAIf?.[0] || comparison.chooseAIf[0]),
+    verdictCardTextB: aglance?.verdictCardTextB || verd?.chooseBIf?.[0] || comparison.chooseBIf[0],
+    verdictCardTextBEn: asEnglishCopy(aglance?.verdictCardTextB || verd?.chooseBIf?.[0] || comparison.chooseBIf[0]),
+    verdictWarning: aglance?.verdictWarning || verd?.avoidBothIf?.[0] || comparison.avoidBothIf?.[0] || "Garde les deux uniquement si les usages sont vraiment distincts.",
+    verdictWarningEn: asEnglishCopy(aglance?.verdictWarning || verd?.avoidBothIf?.[0] || comparison.avoidBothIf?.[0] || "Keep both only if the use cases are genuinely distinct."),
     alternatives: alternatives.map((name) => ({
       slug: slugifyName(name),
       name,
@@ -1403,6 +1426,18 @@ const ComparePage = () => {
 
   const framing = lang === "fr" ? content.framing : content.framingEn;
   const verdictShort = lang === "fr" ? content.verdictShort : content.verdictShortEn;
+  /* Verdict 2-card layout */
+  const verdictCardTitleA = lang === "fr" ? (content.verdictCardTitleA ?? "") : (content.verdictCardTitleAEn ?? "");
+  const verdictCardTitleB = lang === "fr" ? (content.verdictCardTitleB ?? "") : (content.verdictCardTitleBEn ?? "");
+  const verdictCardTextA = lang === "fr"
+    ? (content.verdictCardTextA || content.chooseAIfList[0] || "")
+    : (content.verdictCardTextAEn || content.chooseAIfList[0] || "");
+  const verdictCardTextB = lang === "fr"
+    ? (content.verdictCardTextB || content.chooseBIfList[0] || "")
+    : (content.verdictCardTextBEn || content.chooseBIfList[0] || "");
+  const verdictWarningText = lang === "fr"
+    ? (content.verdictWarning || content.quickVerdictAvoid)
+    : (content.verdictWarningEn || content.quickVerdictAvoidEn);
   const learningCurveRow = content.tableRows.find((row) => row.criterion === "Prise en main" || row.criterionEn === "Learning curve");
   const decisionTableRows = getDecisionTableRows(content.tableRows);
   const bestForA = content.aglanceBestForA || getToolBestFor(content, "A", lang);
@@ -1521,76 +1556,44 @@ const ComparePage = () => {
       {/* ── 01 Verdict ─────────────────────────────────────────────────────── */}
       <section id="verdict" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("01 — Verdict", "01 — Verdict")}</span>
-          <div className="cp-section-grid">
 
-            {/* Left column: heading */}
-            <div className="cp-section-heading">
+          {/* Header: kicker + title left — intro phrase right */}
+          <div className="compare-verdict-header">
+            <div className="compare-verdict-header-left">
+              <span className="cp-eyebrow">{t("01 — Verdict", "01 — Verdict")}</span>
               <h2 className="cp-title">{t("Le choix rapide.", "The quick choice.")}</h2>
             </div>
-
-            {/* Right column: framing + statement + decision columns */}
-            <div className="cp-section-body">
-
-              {/* Framing phrase — what this choice is really about */}
-              {verdictShort && (
-                <p className="cp-section-framing">{verdictShort}</p>
-              )}
-
-              {/* Editorial recommendation — not a card, an editorial statement */}
-              <div className="cp-verdict-statement">
-                <span className="cp-verdict-statement-label">
-                  {t("Recommandation ToolTrim", "ToolTrim recommendation")}
-                </span>
-                <p>{lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn}</p>
-              </div>
-
-              {/* Decision columns — when each tool wins */}
-              <div className="cp-decision-columns">
-                <article className="cp-decision-col">
-                  <span className="cp-decision-label">
-                    {toolA.name} {t("si…", "if…")}
-                  </span>
-                  <p className="cp-decision-text">
-                    {content.chooseAIfList.join(" ")}
-                  </p>
-                  {content.avoidAIfList.length > 0 && (
-                    <p className="cp-decision-note">
-                      <span>{t("Évite", "Skip")} {toolA.name} {t("si…", "if…")}</span>
-                      {content.avoidAIfList.join(" ")}
-                    </p>
-                  )}
-                </article>
-                <article className="cp-decision-col">
-                  <span className="cp-decision-label">
-                    {toolB.name} {t("si…", "if…")}
-                  </span>
-                  <p className="cp-decision-text">
-                    {content.chooseBIfList.join(" ")}
-                  </p>
-                  {content.avoidBIfList.length > 0 && (
-                    <p className="cp-decision-note">
-                      <span>{t("Évite", "Skip")} {toolB.name} {t("si…", "if…")}</span>
-                      {content.avoidBIfList.join(" ")}
-                    </p>
-                  )}
-                </article>
-                {(content.avoidBothIfList.length > 0 || content.quickVerdictAvoid) && (
-                  <article className="cp-decision-col">
-                    <span className="cp-decision-label">
-                      {t("Ne paie pas les deux si…", "Don't use both if…")}
-                    </span>
-                    <p className="cp-decision-text">
-                      {content.avoidBothIfList.length > 0
-                        ? content.avoidBothIfList.join(" ")
-                        : (lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn)}
-                    </p>
-                  </article>
-                )}
-              </div>
-
-            </div>
+            {verdictShort && (
+              <p className="tt-section-intro compare-verdict-intro">{verdictShort}</p>
+            )}
           </div>
+
+          {/* Two choice cards */}
+          <div className="compare-verdict-choice-grid">
+            <article className="compare-verdict-choice">
+              <span className="tt-fact-label">{toolA.name.toUpperCase()}</span>
+              {verdictCardTitleA && (
+                <h3 className="tt-card-title compare-verdict-choice-title">{verdictCardTitleA}</h3>
+              )}
+              <p className="tt-card-body compare-verdict-choice-body">{verdictCardTextA}</p>
+            </article>
+            <article className="compare-verdict-choice">
+              <span className="tt-fact-label">{toolB.name.toUpperCase()}</span>
+              {verdictCardTitleB && (
+                <h3 className="tt-card-title compare-verdict-choice-title">{verdictCardTitleB}</h3>
+              )}
+              <p className="tt-card-body compare-verdict-choice-body">{verdictCardTextB}</p>
+            </article>
+          </div>
+
+          {/* Full-width warning: don't pay for both without a clear rule */}
+          <div className="compare-verdict-warning">
+            <span className="tt-fact-label">
+              {t("Ne paie pas les deux sans règle claire", "Don't pay for both without a clear rule")}
+            </span>
+            <p className="tt-body-large">{verdictWarningText}</p>
+          </div>
+
         </div>
       </section>
 

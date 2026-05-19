@@ -634,7 +634,12 @@
     "bestForTeam": "depends",
     "budgetReality": "Le coût réel vient souvent du doublon ChatGPT + Gemini sans frontière d'usage.",
     "complexity": "low",
-    "decisionSummary": "ChatGPT si tu veux un assistant agnostique et polyvalent. Gemini si ton workflow est Google-first."
+    "decisionSummary": "ChatGPT si tu veux un assistant agnostique et polyvalent. Gemini si ton workflow est Google-first.",
+    "verdictCardTitleA": "Le choix polyvalent",
+    "verdictCardTitleB": "Le choix Google-first",
+    "verdictCardTextA": "À privilégier si tu veux un assistant unique pour écrire, analyser, coder, manipuler des fichiers et produire vite au quotidien.",
+    "verdictCardTextB": "À considérer si ton travail vit déjà dans Google Workspace, avec beaucoup de documents, recherche, fichiers et usages multimodaux.",
+    "verdictWarning": "Garde les deux seulement si tu sépares vraiment les usages : ChatGPT pour production polyvalente, Gemini pour écosystème Google ou tests spécifiques. Sinon, tu ajoutes un doublon IA."
   },
   "verdict": {
     "summary": "Pas de gagnant absolu. ChatGPT est plus polyvalent et agnostique. Gemini est plus fort dans Google Workspace.",

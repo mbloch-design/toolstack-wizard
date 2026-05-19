@@ -593,27 +593,55 @@ cp-container
 Exceptions full-width (Features table, Alternatives, FAQ) : h2.cp-title avec `marginBottom: 28px`.
 Mobile (≤1023px) : 1 colonne, gap 32px. Titre mobile `clamp(42px, 13vw, 60px)`.
 
-### Verdict ToolTrim (`#verdict`) — editorial approach
+### Verdict ToolTrim (`#verdict`) — layout 2 cartes (Sprint 67)
 
-**Anti-pattern supprimé** : `cp-final-recommendation` (card border-radius), `cp-verdict-grid` (bullet lists ✓/✕).
+**Règle** : le verdict répond à "quel outil choisir selon mon usage réel ?" — pas "quel modèle a le meilleur benchmark ?". Zéro benchmark, zéro nom de modèle technique, zéro répétition du hero.
+
+**Anti-patterns supprimés** : `cp-final-recommendation`, `cp-verdict-grid`, `cp-verdict-statement`, `cp-decision-columns` (3 colonnes compressées), labels rouges "Évite X si…".
 
 Structure :
-1. `cp-section-framing` — phrase de cadrage, clamp(21–29px), muted, max-width 760px
-2. `cp-verdict-statement` — recommandation entre 2 filets horizontaux, sans fond, texte clamp(22–32px) 600 noir, max-width 980px
-3. `cp-decision-columns` — 3 colonnes prose éditoriale (clamp 18–24px), séparateurs fins
+1. `compare-verdict-header` — grid 2 col (0.85fr / 1.4fr) : kicker+titre à gauche, `tt-section-intro` à droite
+2. `compare-verdict-choice-grid` — grid 2 col, 1 carte par outil
+3. `compare-verdict-warning` — bandeau pleine largeur, séparateurs haut/bas
+
+Anatomie d'une carte `.compare-verdict-choice` :
+- `tt-fact-label` — nom de l'outil en caps (10px)
+- `tt-card-title` — titre éditorial conditionnel (15px semi-bold) — ex: "Le choix polyvalent"
+- `tt-card-body` — 1 phrase décisive (14px)
 
 ```css
-/* Recommandation editorial — pas une card */
-.cp-verdict-statement { border-top: 1px solid #DADAD4; border-bottom: 1px solid #DADAD4;
-  padding: 28px 0; margin-bottom: 52px; background: transparent; }
-/* Colonnes de décision — prose large */
-.cp-decision-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.cp-decision-col { border-top: 1px solid #DADAD4; padding: 28px 40px 12px 0; }
-.cp-decision-col + .cp-decision-col { border-left: 1px solid #DADAD4; padding-left: 40px; padding-right: 0; }
+.compare-verdict-header {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.4fr);
+  gap: clamp(48px, 6vw, 96px);
+  align-items: start;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.compare-verdict-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.compare-verdict-choice {
+  border: 1px solid var(--color-border, #DADAD4);
+  border-radius: var(--tt-radius-lg, 24px);
+  padding: 32px;
+}
+.compare-verdict-warning {
+  border-top: 1px solid var(--color-border, #DADAD4);
+  border-bottom: 1px solid var(--color-border, #DADAD4);
+  padding: 28px 0;
+}
 ```
 
-Labels colonnes : `{OUTIL_A} si…` / `{OUTIL_B} si…` / `Ne paie pas les deux si…`
-Note d'évitement : `cp-decision-note` — 14px muted, label rouge caps "Évite X si…"
+Typographie : uniquement tokens globaux. Aucun clamp local. Aucune couleur rouge/alerte dans le verdict.
+Mobile ≤900px : header + choice-grid en 1 colonne.
+
+**Données JSON** (`tooltrimAtAGlance`) :
+- `verdictCardTitleA/B` — titre de la carte (optionnel — h3 masqué si absent)
+- `verdictCardTextA/B` — 1 phrase décisive ; fallback → `verdict.chooseAIf[0]`
+- `verdictWarning` — texte doublon ; fallback → `comparison.avoidBothIf[0]`
 
 ### Coût réel (`cp-cost-*`)
 - ID : `#cout` — positionné avant Features pour ancrer la réalité budgétaire.

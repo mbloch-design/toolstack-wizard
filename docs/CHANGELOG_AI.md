@@ -2,6 +2,80 @@
 
 ---
 
+## 2026-05-19 — Sprint 67 : Section Verdict — layout 2 cartes, hiérarchie décisionnelle, zéro benchmark
+
+### Objectif
+Transformer le verdict comparatif en vraie aide à la décision. Remplacer la grille 3 colonnes compressée (textes trop longs, labels rouges "Évite…", framing répété, benchmarks techniques) par une structure claire : header 2 colonnes + 2 cartes de choix + bandeau doublon pleine largeur.
+
+### Problèmes résolus
+- Grille 3 colonnes trop étroite pour des textes de décision
+- Labels rouges "Évite A/B si…" ajoutaient du bruit visuel
+- `cp-verdict-statement` ("Recommandation ToolTrim") répétait le hero
+- `chooseAIfList.join(" ")` = liste entière concaténée, trop longue dans une colonne compressée
+- Benchmarks, noms de modèles, pourcentages dans `verdictShort` visibles dans le verdict
+
+### Nouvelle structure verdict
+
+1. **Header 2 colonnes** — kicker + titre h2 à gauche / phrase intro à droite (`tt-section-intro`)
+2. **Grille 2 cartes** — une carte par outil, label uppercase + titre + texte court
+3. **Bandeau warning** — pleine largeur, séparateurs haut/bas, texte doublon IA
+
+### Nouvelles classes CSS (`src/index.css`)
+- `.compare-verdict-header` — grid 2 col (0.85fr / 1.4fr), gap clamp(48px–96px)
+- `.compare-verdict-header-left` — colonne flex pour eyebrow + titre
+- `.compare-verdict-intro` — alias margin:0 pour `tt-section-intro` dans le header
+- `.compare-verdict-choice-grid` — grid 2 col, gap 24px
+- `.compare-verdict-choice` — carte avec `border: 1px solid var(--color-border)`, `border-radius: var(--tt-radius-lg)`, `padding: 32px`
+- `.compare-verdict-choice-title` — modifier pour `tt-card-title` dans les cartes
+- `.compare-verdict-choice-body` — modifier pour `tt-card-body` dans les cartes
+- `.compare-verdict-warning` — bandeau `border-top/bottom: 1px solid var(--color-border)`, `padding: 28px 0`
+- Mobile `≤900px` : header et choice-grid en 1 colonne
+
+### Typographie : uniquement tokens globaux
+- Kicker : `cp-eyebrow` → `var(--tt-size-kicker)`
+- Titre section : `cp-title` → `var(--tt-size-section-h)`
+- Intro header : `.tt-section-intro` → `var(--tt-size-section-intro)`
+- Label carte : `.tt-fact-label` (10px uppercase)
+- Titre carte : `.tt-card-title` → `var(--tt-size-card-title)`
+- Corps carte : `.tt-card-body` → `var(--tt-size-card-body)`
+- Bandeau texte : `.tt-body-large` → `var(--tt-size-body-large)`
+- Aucune valeur px/clamp locale créée
+
+### Nouveaux champs TypeScript
+**`BattleRawData.tooltrimAtAGlance`** — 5 nouveaux champs optionnels :
+- `verdictCardTitleA/B` — titre de la carte outil (ex: "Le choix polyvalent")
+- `verdictCardTextA/B` — texte court, 1 phrase décisive
+- `verdictWarning` — texte du bandeau doublon
+
+**`CompareEditorialContent`** — 10 nouveaux champs optionnels (fr + En pairs)
+
+**`buildBattleEditorialContent`** — mapping avec fallback :
+- CardTitle : `aglance?.verdictCardTitleA` (vide si absent — h3 conditionnel)
+- CardText : `aglance?.verdictCardTextA` → `verd?.chooseAIf?.[0]` → `comparison.chooseAIf[0]`
+- Warning : `aglance?.verdictWarning` → `verd?.avoidBothIf?.[0]` → `comparison.avoidBothIf?.[0]`
+
+### Contenu ChatGPT vs Gemini (`chatgpt-vs-gemini.json`)
+Nouveaux champs dans `tooltrimAtAGlance` :
+- `verdictCardTitleA` : "Le choix polyvalent"
+- `verdictCardTitleB` : "Le choix Google-first"
+- `verdictCardTextA` : "À privilégier si tu veux un assistant unique pour écrire, analyser, coder, manipuler des fichiers et produire vite au quotidien."
+- `verdictCardTextB` : "À considérer si ton travail vit déjà dans Google Workspace, avec beaucoup de documents, recherche, fichiers et usages multimodaux."
+- `verdictWarning` : doublon IA avec règle de séparation des usages
+
+### Règle ZÉRO REDONDANCE appliquée
+- Hero = contexte écosystème
+- Verdict = règle de choix (1 titre + 1 phrase par outil)
+- Critères = détails comparatifs (section 02)
+- Coût = section dédiée
+- Plus de répétition du `finalRecommendation` dans le verdict
+
+### QA
+- TypeScript : `exit:0`
+- Build : `exit:0` (0 erreurs)
+- Lint : `exit:0` (0 erreurs, 156 warnings préexistants)
+
+---
+
 ## 2026-05-19 — Sprint 66 : Hero comparatif — logos, contenu éditorial, battle ChatGPT vs Gemini
 
 ### Objectif
