@@ -2,6 +2,41 @@
 
 ---
 
+## 2026-05-19 — Sprint 63 : Harmonisation typographique Comparatif ↔ Stack
+
+### Objectif
+Recaler les pages Comparatif sur le système typographique global ToolTrim. La page Stack est la référence. Supprimer les tailles spécifiques trop agressives introduites au Sprint 62.
+
+### Écarts corrigés
+
+| Élément | Avant | Après |
+|---|---|---|
+| `cp-hero-title` | `clamp(72px, 12vw, 170px)` | `clamp(64px, 8vw, 124px)` |
+| `cp-hero-promise` | `clamp(24px, 2.2vw, 36px)` | `clamp(22px, 2vw, 30px)` |
+| `cp-eyebrow` | `12px` | `11px` (aligne Stack) |
+| `cp-title` (section) | `clamp(44px, 5vw, 72px)` · ls -0.065em | `clamp(44px, 5vw, 76px)` · ls -0.06em |
+| `cp-section-framing` | `clamp(21px, 2vw, 29px)` | `clamp(20px, 1.8vw, 26px)` |
+| `cp-verdict-statement p` | `clamp(22px, 2.2vw, 32px)` | `clamp(21px, 2vw, 28px)` |
+| Mobile hero (640px) | `clamp(52px, 15vw, 72px)` | `clamp(44px, 12vw, 64px)` |
+| Tablet section heading | `clamp(42px, 13vw, 60px)` | `clamp(40px, 9vw, 56px)` |
+
+### Nouveaux tokens globaux `tt-*`
+Ajout d'une section `TT TYPE SCALE` dans `src/index.css` avec 12 classes documentées :
+`tt-hero-title`, `tt-hero-subtitle`, `tt-kicker`, `tt-section-title`, `tt-section-intro`, `tt-body`, `tt-body-large`, `tt-fact-label`, `tt-fact-value`, `tt-fact-value-compact`, `tt-card-title`, `tt-card-body`, `tt-metric-value`.
+
+### Règle anti-exception documentée
+Interdiction de définir des font-sizes spécifiques par page si couverts par `tt-*`. Pages Stack = référence. Comparatif = même échelle, structure différente.
+
+### Fichiers modifiés
+- `src/index.css` — tokens `tt-*`, corrections `cp-hero-title`, `cp-hero-promise`, `cp-eyebrow`, `cp-title`, `cp-section-framing`, `cp-verdict-statement p`, overrides mobile/tablet
+- `docs/DESIGN_SYSTEM.md` — section typographie canonique avec table `tt-*` et règle anti-exception
+- `docs/CHANGELOG_AI.md` — cette entrée
+
+### Build
+✅ 0 erreur TypeScript · build OK
+
+---
+
 ## 2026-05-19 — Sprint 62 : Hero comparatif face-à-face de décision
 
 ### Objectif

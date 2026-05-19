@@ -55,20 +55,41 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 --font-ui:    "Inter Tight"           /* UI, corps, labels */
 ```
 
-### Hiérarchie éditoriale
+### Échelle canonique ToolTrim (`tt-*` classes)
+
+**Règle anti-exception :** Les pages Stack sont la référence. Les pages Comparatif utilisent la même échelle. Aucune taille custom ne peut dépasser les valeurs ci-dessous sans justification documentée.
+
+| Classe | Font | Size (clamp) | Weight | LS | LH | Usage |
+|---|---|---|---|---|---|---|
+| `.tt-hero-title` | brand | `clamp(64px, 8vw, 124px)` | 700 | -0.07em | 0.92 | H1 de toutes les pages principales |
+| `.tt-hero-subtitle` | ui | `clamp(22px, 2vw, 30px)` | 400 | -0.035em | 1.28 | Phrase sous le H1 |
+| `.tt-kicker` | ui | `11px` | 700 | +0.08em | 1 | Eyebrow / numéro de section |
+| `.tt-section-title` | brand | `clamp(44px, 5vw, 76px)` | 700 | -0.06em | 0.95 | Titre de chaque section scrollée |
+| `.tt-section-intro` | ui | `clamp(20px, 1.8vw, 26px)` | 400 | -0.035em | 1.32 | Phrase d'intro de section |
+| `.tt-body` | ui | `16px` | 400 | — | 1.5 | Corps de texte standard |
+| `.tt-body-large` | ui | `clamp(18px, 1.5vw, 22px)` | 400 | -0.02em | 1.42 | Résumés, phrases éditoriales courtes |
+| `.tt-fact-label` | ui | `10px` | 700 | +0.08em | 1 | Label en uppercase dans les grilles |
+| `.tt-fact-value` | ui | `clamp(18px, 1.2vw, 22px)` | 600 | -0.03em | 1.18 | Valeur dans un bloc de données |
+| `.tt-fact-value-compact` | ui | `14px` | 600 | -0.015em | 1.38 | Valeur dans une cellule compacte |
+| `.tt-card-title` | ui | `15px` | 600 | -0.02em | 1.3 | Titre d'une card |
+| `.tt-card-body` | ui | `14px` | 400 | -0.01em | 1.45 | Corps d'une card |
+| `.tt-metric-value` | ui | `clamp(24px, 1.8vw, 32px)` | 700 | -0.045em | 1 | KPI, métrique numérique |
+
+**Interdiction :** définir un `font-size` custom sur une page si `.tt-*` couvre déjà ce cas d'usage.
+
+### Hiérarchie éditoriale (référence pages Stack)
 
 | Rôle | Font | Size | Weight | LS | LH |
 |---|---|---|---|---|---|
-| Hero H1 (tool) | brand | clamp(4.5rem, 8vw, 7.75rem) | 600 | -0.07em | 0.9 |
-| Hero H1 (guide) | brand | clamp(3.5rem, 7vw, 7rem) | 600 | -0.065em | 0.94 |
-| Section title (td-title) | brand | clamp(2.625rem, 4vw, 4rem) | 600 | -0.055em | 0.98 |
-| Footer CTA title | brand | clamp(3rem, 5vw, 5.125rem) | 600 | -0.055em | 0.95 |
-| Eyebrow | ui | 11px | 600 | +0.08em | 1 |
-| Description courte | ui | 22px | 400 | -0.025em | 1.35 |
-| Contexte court | ui | 17px | 400 | -0.015em | 1.5 |
-| Corps (td-body) | ui | 18px | 400 | -0.02em | 1.55 |
-| Label card meta | ui | 11px | 600 | +0.08em | 1 |
-| Tab actif | ui | 16px | 500 | -0.02em | 1 |
+| Hero H1 (stack) | brand | `clamp(56px, 6vw, 104px)` | 600 | -0.065em | 0.92 |
+| Hero H1 (comparatif) | brand | `clamp(64px, 8vw, 124px)` | 700 | -0.07em | 0.92 |
+| Hero subtitle | ui | `clamp(22px, 2vw, 30px)` | 400 | -0.03em | 1.32 |
+| Section kicker | ui | `11px` | 700 | +0.08em | 1 |
+| Section title | brand | `clamp(44px, 5vw, 76px)` | 700 | -0.06em | 0.95 |
+| Section framing | ui | `clamp(20px, 1.8vw, 26px)` | 400 | -0.03em | 1.32 |
+| Body | ui | `16px` | 400 | — | 1.5 |
+| Fact label | ui | `10px` | 700 | +0.08em | 1 |
+| Eyebrow | ui | `11px` | 600 | +0.08em | 1 |
 
 ---
 
