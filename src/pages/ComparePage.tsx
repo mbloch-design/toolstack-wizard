@@ -1439,78 +1439,91 @@ const ComparePage = () => {
 
       <CompareStickyNav sections={navSections} prefix={prefix} />
 
-      {/* ── Verdict rapide ─────────────────────────────────────────────────── */}
+      {/* ── 01 Verdict ─────────────────────────────────────────────────────── */}
       <section id="verdict" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("01 — Verdict", "01 — Verdict")}</span>
-          <p className="cp-title">{t("Le choix rapide.", "The quick choice.")}</p>
-          <p className="cp-section-intro">{verdictShort}</p>
-          <p className="cp-final-recommendation">
-            <span>{t("Recommandation ToolTrim", "ToolTrim recommendation")}</span>
-            {lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn}
-          </p>
-          <div className="cp-verdict-grid">
-            {/* ── Choose A column ── */}
-            <div className="cp-verdict-col">
-              <p className="cp-verdict-label">{t("Choisis", "Choose")} {toolA.name} {t("si…", "if…")}</p>
-              {content.chooseAIfList.length > 0 ? (
-                <ul className="cp-verdict-list">
-                  {content.chooseAIfList.map((item, i) => <li key={i}>{item}</li>)}
-                </ul>
-              ) : (
-                <p className="cp-verdict-text">{lang === "fr" ? content.quickVerdictA : content.quickVerdictAEn}</p>
-              )}
-              {content.avoidAIfList.length > 0 && (
-                <>
-                  <p className="cp-verdict-avoid-label">{t("Évite", "Skip")} {toolA.name} {t("si…", "if…")}</p>
-                  <ul className="cp-verdict-list cp-verdict-list--avoid">
-                    {content.avoidAIfList.map((item, i) => <li key={i}>{item}</li>)}
-                  </ul>
-                </>
-              )}
+          <div className="cp-section-grid">
+
+            {/* Left column: heading */}
+            <div className="cp-section-heading">
+              <h2 className="cp-title">{t("Le choix rapide.", "The quick choice.")}</h2>
             </div>
-            {/* ── Choose B column ── */}
-            <div className="cp-verdict-col">
-              <p className="cp-verdict-label">{t("Choisis", "Choose")} {toolB.name} {t("si…", "if…")}</p>
-              {content.chooseBIfList.length > 0 ? (
-                <ul className="cp-verdict-list">
-                  {content.chooseBIfList.map((item, i) => <li key={i}>{item}</li>)}
-                </ul>
-              ) : (
-                <p className="cp-verdict-text">{lang === "fr" ? content.quickVerdictB : content.quickVerdictBEn}</p>
+
+            {/* Right column: framing + statement + decision columns */}
+            <div className="cp-section-body">
+
+              {/* Framing phrase — what this choice is really about */}
+              {verdictShort && (
+                <p className="cp-section-framing">{verdictShort}</p>
               )}
-              {content.avoidBIfList.length > 0 && (
-                <>
-                  <p className="cp-verdict-avoid-label">{t("Évite", "Skip")} {toolB.name} {t("si…", "if…")}</p>
-                  <ul className="cp-verdict-list cp-verdict-list--avoid">
-                    {content.avoidBIfList.map((item, i) => <li key={i}>{item}</li>)}
-                  </ul>
-                </>
-              )}
+
+              {/* Editorial recommendation — not a card, an editorial statement */}
+              <div className="cp-verdict-statement">
+                <span className="cp-verdict-statement-label">
+                  {t("Recommandation ToolTrim", "ToolTrim recommendation")}
+                </span>
+                <p>{lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn}</p>
+              </div>
+
+              {/* Decision columns — when each tool wins */}
+              <div className="cp-decision-columns">
+                <article className="cp-decision-col">
+                  <span className="cp-decision-label">
+                    {toolA.name} {t("si…", "if…")}
+                  </span>
+                  <p className="cp-decision-text">
+                    {content.chooseAIfList.join(" ")}
+                  </p>
+                  {content.avoidAIfList.length > 0 && (
+                    <p className="cp-decision-note">
+                      <span>{t("Évite", "Skip")} {toolA.name} {t("si…", "if…")}</span>
+                      {content.avoidAIfList.join(" ")}
+                    </p>
+                  )}
+                </article>
+                <article className="cp-decision-col">
+                  <span className="cp-decision-label">
+                    {toolB.name} {t("si…", "if…")}
+                  </span>
+                  <p className="cp-decision-text">
+                    {content.chooseBIfList.join(" ")}
+                  </p>
+                  {content.avoidBIfList.length > 0 && (
+                    <p className="cp-decision-note">
+                      <span>{t("Évite", "Skip")} {toolB.name} {t("si…", "if…")}</span>
+                      {content.avoidBIfList.join(" ")}
+                    </p>
+                  )}
+                </article>
+                {(content.avoidBothIfList.length > 0 || content.quickVerdictAvoid) && (
+                  <article className="cp-decision-col">
+                    <span className="cp-decision-label">
+                      {t("Ne paie pas les deux si…", "Don't use both if…")}
+                    </span>
+                    <p className="cp-decision-text">
+                      {content.avoidBothIfList.length > 0
+                        ? content.avoidBothIfList.join(" ")
+                        : (lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn)}
+                    </p>
+                  </article>
+                )}
+              </div>
+
             </div>
-            {/* ── Avoid both ── */}
-            {content.avoidBothIfList.length > 0 ? (
-              <div className="cp-verdict-col cp-verdict-col--full">
-                <p className="cp-verdict-label">{t("Évite les deux si…", "Avoid both if…")}</p>
-                <ul className="cp-verdict-list cp-verdict-list--avoid">
-                  {content.avoidBothIfList.map((item, i) => <li key={i}>{item}</li>)}
-                </ul>
-              </div>
-            ) : (
-              <div className="cp-verdict-col">
-                <p className="cp-verdict-label">{t("Évite les deux si…", "Avoid both if…")}</p>
-                <p className="cp-verdict-text">{lang === "fr" ? content.quickVerdictAvoid : content.quickVerdictAvoidEn}</p>
-              </div>
-            )}
           </div>
         </div>
       </section>
 
-      {/* ── Ratings décisionnels ──────────────────────────────────────────── */}
+      {/* ── 02 Critères décisionnels ─────────────────────────────────────── */}
       <section id="criteres" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("02 — Critères décisionnels", "02 — Decision criteria")}</span>
-          <p className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</p>
+          <div className="cp-section-grid">
+          <div className="cp-section-heading">
+            <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
+          </div>
+          <div className="cp-section-body">
           <div className="cp-score-list">
             {content.decisiveCriteria.slice(0, 6).map((criterion) => {
               const levels = getCriterionLevels(criterion, toolA, toolB, lang);
@@ -1547,14 +1560,20 @@ const ComparePage = () => {
               );
             })}
           </div>
+          </div>{/* end cp-section-body */}
+          </div>{/* end cp-section-grid */}
         </div>
       </section>
 
-      {/* ── Coût réel ─────────────────────────────────────────────────────── */}
+      {/* ── 03 Coût réel ──────────────────────────────────────────────────── */}
       <section id="cout" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("03 — Coût réel", "03 — Real cost")}</span>
-          <p className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</p>
+          <div className="cp-section-grid">
+          <div className="cp-section-heading">
+            <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
+          </div>
+          <div className="cp-section-body">
           <p className="cp-section-intro">
             {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
           </p>
@@ -1578,15 +1597,17 @@ const ComparePage = () => {
             <span>{t("Recommandation ToolTrim", "ToolTrim recommendation")}</span>
             <p>{lang === "fr" ? content.pricingReco : content.pricingRecoEn}</p>
           </div>
+          </div>{/* end cp-section-body */}
+          </div>{/* end cp-section-grid */}
         </div>
       </section>
 
-      {/* ── Features décisives ─────────────────────────────────────────────── */}
+      {/* ── 04 Features décisives ──────────────────────────────────────────── */}
       {decisionTableRows.length > 0 && (
         <section id="features" className="cp-section scroll-mt-20">
           <div className="cp-container">
             <span className="cp-eyebrow">{t("04 — Features décisives", "04 — Decisive features")}</span>
-            <p className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</p>
+            <h2 className="cp-title" style={{ marginBottom: 28 }}>{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
             <div className="cp-table">
               <div className="cp-table-head">
                 <span className="cp-table-head-cell">{t("Critère", "Criterion")}</span>
@@ -1615,11 +1636,15 @@ const ComparePage = () => {
         </section>
       )}
 
-      {/* ── Seuil de bascule ──────────────────────────────────────────────── */}
+      {/* ── 05 Seuil de bascule ───────────────────────────────────────────── */}
       <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("05 — Seuil de bascule", "05 — Tipping point")}</span>
-          <p className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</p>
+          <div className="cp-section-grid">
+          <div className="cp-section-heading">
+            <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
+          </div>
+          <div className="cp-section-body">
           <div className="cp-tipping-panel">
             <div>
               <span>{t("Par défaut", "Default")}</span>
@@ -1635,14 +1660,20 @@ const ComparePage = () => {
               <li key={signal}>{signal}</li>
             ))}
           </ul>
+          </div>{/* end cp-section-body */}
+          </div>{/* end cp-section-grid */}
         </div>
       </section>
 
-      {/* ── Points de vigilance ───────────────────────────────────────────── */}
+      {/* ── 06 Points de vigilance ────────────────────────────────────────── */}
       <section id="vigilance" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("06 — Points d'attention", "06 — Watchout")}</span>
-          <p className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</p>
+          <div className="cp-section-grid">
+          <div className="cp-section-heading">
+            <h2 className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</h2>
+          </div>
+          <div className="cp-section-body">
           <div className="cp-watchout-list">
             {(content.tooltrimRisks.length > 0 ? content.tooltrimRisks : fallbackPitfalls.map((pitfall) => ({
               mistake: pitfall,
@@ -1666,17 +1697,19 @@ const ComparePage = () => {
               </article>
             ))}
           </div>
+          </div>{/* end cp-section-body */}
+          </div>{/* end cp-section-grid */}
         </div>
       </section>
 
-      {/* ── Alternatives ───────────────────────────────────────────────────── */}
+      {/* ── 07 Alternatives ────────────────────────────────────────────────── */}
       {altTools.length > 0 && (
         <section id="alternatives" className="cp-section scroll-mt-20">
           <div className="cp-container">
             <span className="cp-eyebrow">{t("07 — Pour aller plus loin", "07 — Next options")}</span>
-            <p className="cp-title">
+            <h2 className="cp-title" style={{ marginBottom: 28 }}>
               {t("Si aucun des deux ne colle.", "If neither one fits.")}
-            </p>
+            </h2>
             <div>
               {altTools.map((alt) => (
                 alt.tool ? (
@@ -1761,9 +1794,9 @@ const ComparePage = () => {
         <section id="faq" className="cp-section cp-section--last scroll-mt-20">
           <div className="cp-container">
             <span className="cp-eyebrow">{altTools.length > 0 ? "09 — FAQ" : "08 — FAQ"}</span>
-            <p className="cp-title">
+            <h2 className="cp-title" style={{ marginBottom: 28 }}>
               {t("Questions fréquentes.", "Frequently asked questions.")}
-            </p>
+            </h2>
             <div>
               {content.faq.map((item, i) => (
                 <FaqItem

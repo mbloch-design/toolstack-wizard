@@ -2,6 +2,80 @@
 
 ---
 
+## 2026-05-19 — Sprint 61 : Architecture typographique éditoriale des sections Comparatif
+
+### Objectif
+Transformer la mise en page des pages Comparatif en mise en page éditoriale : hiérarchie typographique forte, sections à 2 colonnes (titre / contenu), recommandation comme temps fort editorial (et non card SaaS), colonnes de décision lisibles et scannables.
+
+### Architecture section (nouveau système)
+
+Chaque section suit désormais la structure :
+```
+cp-container
+  cp-eyebrow          ← 12px caps, margin-bottom 28px, poids 700
+  cp-section-grid     ← 2 colonnes desktop : 0.9fr / 1.6fr, gap 80px
+    cp-section-heading  ← gauche : titre h2 cp-title
+    cp-section-body     ← droite : contenu décisionnel
+```
+
+Sauf exceptions full-width (features table, alternatives list, FAQ) → `margin-bottom: 28px` sur le titre.
+
+### Verdict (section 01) — refonte complète
+
+| Avant | Après |
+|-------|-------|
+| p.cp-title + p.cp-section-intro + p.cp-final-recommendation (card border-radius) + cp-verdict-grid (bullet lists ✓/✕) | h2.cp-title + p.cp-section-framing + div.cp-verdict-statement (editorial) + div.cp-decision-columns (prose éditoriale) |
+
+Structure :
+1. **`cp-section-framing`** — phrase de cadrage (22–29px, muted, max-width 760px)
+2. **`cp-verdict-statement`** — recommandation entre 2 filets horizontaux, sans fond ni card, texte 22–32px 600 noir
+3. **`cp-decision-columns`** — 3 colonnes prose éditoriale, 18–24px, séparateurs fins
+
+### CSS — classes supprimées
+
+`.cp-verdict-grid`, `.cp-verdict-col`, `.cp-verdict-col--full`, `.cp-verdict-text`, `.cp-verdict-label`, `.cp-verdict-list`, `.cp-verdict-list--avoid`, `.cp-verdict-avoid-label`, `.cp-final-recommendation`
+
+### CSS — classes ajoutées / mises à jour
+
+| Classe | Changement |
+|--------|-----------|
+| `.cp-section` | padding `56px 0` → `clamp(80px, 9vw, 140px) 0` |
+| `.cp-eyebrow` | font-size 11→12px, margin-bottom 10→28px, font-weight 600→700 |
+| `.cp-title` | size `clamp(1.75rem, 3vw, 2.625rem)` → `clamp(44px, 5vw, 72px)`, weight 600→700, tracking -0.055→-0.065em, line-height 0.98→0.92, max-width 620px |
+| `.cp-section-grid` | NEW — 2-col grid layout |
+| `.cp-section-heading` | NEW — gauche du grid |
+| `.cp-section-framing` | NEW — clamp(21px, 2vw, 29px), muted, max-width 760px |
+| `.cp-verdict-statement` | NEW — border-top/bottom, no bg, texte clamp(22px, 2.2vw, 32px) 600 |
+| `.cp-verdict-statement-label` | NEW — 11px caps, muted |
+| `.cp-decision-columns` | NEW — repeat(3, 1fr), border-top |
+| `.cp-decision-col` | NEW — padding 28px, border-left sur col 2/3 |
+| `.cp-decision-label` | NEW — 11px 700 caps |
+| `.cp-decision-text` | NEW — clamp(18px, 1.6vw, 24px), prose |
+| `.cp-decision-note` | NEW — 14px muted, label rouge pour "Évite si" |
+
+### JSX — sections mises à jour
+
+- **Verdict** : h2 + cp-section-grid complet + cp-section-framing + cp-verdict-statement + cp-decision-columns
+- **Critères** : h2 + cp-section-grid
+- **Coût** : h2 + cp-section-grid  
+- **Seuil** : h2 + cp-section-grid
+- **Vigilance** : h2 + cp-section-grid
+- **Alternatives, Features, FAQ** : h2 (full-width, marginBottom 28px inline)
+
+Toutes les balises `<p className="cp-title">` → `<h2 className="cp-title">` (amélioration sémantique SEO)
+
+### Mobile
+
+- Grille en 1 colonne sous 1023px, gap 32px
+- Titre mobile : `clamp(42px, 13vw, 60px)`
+- Colonnes de décision empilées, border-left supprimé, border-top par article
+- cp-section-framing : 20px
+- cp-verdict-statement p : 21px
+
+### Build
+- `npx tsc --noEmit` → ✅ 0 errors
+- `npm run build` → ✅ built in 13s, 0 errors
+
 ## 2026-05-19 — Sprint 60 : Verdict structuré + données pricing réelles
 
 ### Objectif

@@ -463,10 +463,41 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 - Labels : `Avantage`, `Suffisant`, `Dépend`.
 - 4 à 6 critères maximum, uniquement si le critère change vraiment le choix.
 
-### Verdict ToolTrim (`cp-verdict-grid`)
-- ID : `#verdict`.
-- Labels : `Choisis A si`, `Choisis B si`, `Évite les deux si`.
-- `cp-final-recommendation` porte la phrase finale ToolTrim.
+### Architecture typographique des sections (`cp-section-grid`)
+
+Chaque section utilise une structure à 2 colonnes sur desktop :
+```
+cp-container
+  span.cp-eyebrow          ← 12px 700 caps, margin-bottom 28px
+  div.cp-section-grid      ← grid: minmax(280px, 0.9fr) / minmax(0, 1.6fr), gap 80px
+    div.cp-section-heading ← gauche : h2.cp-title (clamp 44–72px, weight 700, tracking -0.065em)
+    div.cp-section-body    ← droite : contenu décisionnel
+```
+
+Exceptions full-width (Features table, Alternatives, FAQ) : h2.cp-title avec `marginBottom: 28px`.
+Mobile (≤1023px) : 1 colonne, gap 32px. Titre mobile `clamp(42px, 13vw, 60px)`.
+
+### Verdict ToolTrim (`#verdict`) — editorial approach
+
+**Anti-pattern supprimé** : `cp-final-recommendation` (card border-radius), `cp-verdict-grid` (bullet lists ✓/✕).
+
+Structure :
+1. `cp-section-framing` — phrase de cadrage, clamp(21–29px), muted, max-width 760px
+2. `cp-verdict-statement` — recommandation entre 2 filets horizontaux, sans fond, texte clamp(22–32px) 600 noir, max-width 980px
+3. `cp-decision-columns` — 3 colonnes prose éditoriale (clamp 18–24px), séparateurs fins
+
+```css
+/* Recommandation editorial — pas une card */
+.cp-verdict-statement { border-top: 1px solid #DADAD4; border-bottom: 1px solid #DADAD4;
+  padding: 28px 0; margin-bottom: 52px; background: transparent; }
+/* Colonnes de décision — prose large */
+.cp-decision-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cp-decision-col { border-top: 1px solid #DADAD4; padding: 28px 40px 12px 0; }
+.cp-decision-col + .cp-decision-col { border-left: 1px solid #DADAD4; padding-left: 40px; padding-right: 0; }
+```
+
+Labels colonnes : `{OUTIL_A} si…` / `{OUTIL_B} si…` / `Ne paie pas les deux si…`
+Note d'évitement : `cp-decision-note` — 14px muted, label rouge caps "Évite X si…"
 
 ### Coût réel (`cp-cost-*`)
 - ID : `#cout` — positionné avant Features pour ancrer la réalité budgétaire.
