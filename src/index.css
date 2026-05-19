@@ -7754,53 +7754,121 @@
 
   /* (cp-verdict-grid / cp-verdict-col removed — replaced by cp-decision-columns) */
 
-  /* ── Comparison table ──────────────────────────────────────── */
-  .cp-table { width: 100%; margin-top: 24px; }
+  /* ── Decision table ─────────────────────────────────────────── */
+  .cp-table {
+    width: 100%;
+    margin-top: 48px;
+    border-top: 1px solid #DADAD4;
+  }
+  /* Header row */
   .cp-table-head {
     display: grid;
-    grid-template-columns: 200px 1fr 1fr 110px;
-    gap: 0; padding-bottom: 10px;
+    grid-template-columns: minmax(140px, 0.8fr) minmax(220px, 1.25fr) minmax(220px, 1.25fr) minmax(240px, 1.3fr);
+    gap: 0;
+    padding: 16px 0;
     border-bottom: 1px solid #DADAD4;
   }
   .cp-table-head-cell {
     font-family: var(--font-ui);
     font-size: 10px; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
-    color: #9A9A92; padding: 0 12px;
+    color: #8D8D86; padding: 0 24px 0 0;
   }
   .cp-table-head-cell:first-child { padding-left: 0; }
+  .cp-table-head-cell--decision { padding: 0 0 0 24px; }
+  /* Data rows */
   .cp-table-row {
     display: grid;
-    grid-template-columns: 200px 1fr 1fr 110px;
-    gap: 0; align-items: baseline;
-    border-bottom: 1px solid #E7E7E0;
-    padding: 13px 0;
+    grid-template-columns: minmax(140px, 0.8fr) minmax(220px, 1.25fr) minmax(220px, 1.25fr) minmax(240px, 1.3fr);
+    gap: 0;
+    align-items: start;
+    padding: 28px 0;
+    border-bottom: 1px solid #E2E2DC;
   }
   .cp-table-row:last-child { border-bottom: 1px solid #DADAD4; }
-  .cp-table-cell {
+  /* Criterion column */
+  .cp-table-cell--criterion {
+    padding: 0 24px 0 0;
     font-family: var(--font-ui);
-    font-size: 13px; line-height: 1.4;
-    color: #6F6F68; padding: 0 12px;
+    font-size: 14px; line-height: 1.3;
+    font-weight: 600; letter-spacing: -0.02em;
+    color: #222222;
   }
-  .cp-table-cell:first-child {
-    padding-left: 0; color: #222222;
-    font-weight: 500; font-size: 13px;
+  /* Tool columns (A & B) */
+  .cp-table-cell {
+    padding: 0 24px 0 0;
   }
-  .cp-table-cell--win { color: #222222; font-weight: 600; }
-  .cp-table-verdict { font-weight: 700; color: #222222; font-size: 12px; }
-  @media (max-width: 767px) {
+  /* Tool value — main title */
+  .cp-table-tool-title {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 17px; line-height: 1.18;
+    font-weight: 650; letter-spacing: -0.03em;
+    color: #222222;
+  }
+  /* Tool value — secondary note */
+  .cp-table-tool-note {
+    margin: 6px 0 0;
+    font-family: var(--font-ui);
+    font-size: 14px; line-height: 1.38;
+    font-weight: 400; letter-spacing: -0.01em;
+    color: #6F6F68;
+  }
+  /* Winner highlight */
+  .cp-table-cell--win .cp-table-tool-title { font-weight: 700; }
+  /* Decision column */
+  .cp-table-verdict {
+    padding: 0 0 0 24px;
+    border-left: 2px solid #222222;
+    font-family: var(--font-ui);
+    font-size: 16px; line-height: 1.32;
+    font-weight: 600; letter-spacing: -0.025em;
+    color: #222222;
+  }
+  /* ── Mobile stacked (≤ 900px) ──────────────────── */
+  @media (max-width: 900px) {
+    .cp-table { margin-top: 40px; }
     .cp-table-head { display: none; }
     .cp-table-row {
-      display: block; padding: 16px 0;
-      border-bottom: 1px solid #E7E7E0;
+      display: block;
+      padding: 28px 0;
+      border-bottom: 1px solid #DADAD4;
     }
-    .cp-table-cell { display: block; padding: 2px 0; font-size: 13px; }
-    .cp-table-cell:first-child { font-size: 13px; font-weight: 700; margin-bottom: 6px; color: #222222; }
+    .cp-table-cell--criterion {
+      padding: 0 0 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid #E2E2DC;
+      font-size: 15px;
+    }
+    .cp-table-cell {
+      display: block;
+      padding: 0;
+      margin-top: 18px;
+    }
     .cp-table-cell::before {
-      content: attr(data-label) " — ";
-      font-weight: 600; color: #9A9A92; font-size: 11px;
+      content: attr(data-label);
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #9A9A92; margin-bottom: 8px;
     }
-    .cp-table-cell:first-child::before { content: ""; }
+    .cp-table-tool-title { font-size: 16px; }
+    .cp-table-verdict {
+      display: block;
+      margin-top: 20px; padding: 20px 0 0;
+      border-left: none;
+      border-top: 2px solid #222222;
+      font-size: 16px;
+    }
+    .cp-table-verdict::before {
+      content: attr(data-label);
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #9A9A92; margin-bottom: 8px;
+    }
   }
 
   /* ── Profile cards ─────────────────────────────────────────── */

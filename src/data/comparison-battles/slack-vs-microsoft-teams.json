@@ -143,37 +143,44 @@
   "comparisonRows": [
     {
       "criterion": "Usage principal",
-      "toolA": "Messagerie agile, canaux thématiques",
-      "toolB": "Collaboration intégrée Office et réunions",
-      "tooltrimDecision": "Slack si messagerie pure, Teams si écosystème Microsoft.",
+      "toolA": { "title": "Communication externe fluide", "note": "Clients, canaux, outils tiers." },
+      "toolB": { "title": "Hub Microsoft 365", "note": "Réunions, Office, fichiers, droits." },
+      "tooltrimDecision": "Slack si l'externe pilote. Teams si Microsoft 365 est le socle.",
       "showInMainTable": true
     },
     {
-      "criterion": "Plan gratuit",
-      "toolA": "Free limité à 90 jours d'historique",
-      "toolB": "Varie selon Microsoft 365",
-      "tooltrimDecision": "Attention à la limite d'historique Slack Free.",
+      "criterion": "Collaboration externe",
+      "toolA": { "title": "Slack Connect", "note": "Un espace commun avec clients et partenaires." },
+      "toolB": { "title": "Invités et accès externes", "note": "Plus cadré, mais plus administratif." },
+      "tooltrimDecision": "Slack pour multi-clients. Teams pour organisations Microsoft-first.",
       "showInMainTable": true
     },
     {
-      "criterion": "Prix d'entrée payant",
-      "toolA": "Pro (prix à vérifier)",
-      "toolB": "Essentials à 4 USD/user/mois",
-      "tooltrimDecision": "Teams Essentials moins cher si hors Microsoft 365.",
+      "criterion": "Coût réel",
+      "toolA": { "title": "Abonnement additionnel", "note": "À justifier si Teams est déjà payé." },
+      "toolB": { "title": "Souvent lié à Microsoft 365", "note": "Rationnel si la suite est déjà utilisée." },
+      "tooltrimDecision": "Ne compare pas le prix seul. Compare le doublon.",
       "showInMainTable": true
     },
     {
-      "criterion": "Intégration Office",
-      "toolA": "Intégrations externes",
-      "toolB": "Natif avec Outlook, SharePoint, OneDrive",
-      "tooltrimDecision": "Teams si Microsoft 365 est le socle.",
+      "criterion": "Réunions et documents",
+      "toolA": { "title": "Check-ins rapides", "note": "Huddles et intégrations visio." },
+      "toolB": { "title": "Réunions + Office natifs", "note": "Calendrier, fichiers et coédition." },
+      "tooltrimDecision": "Teams si les réunions structurent le travail.",
       "showInMainTable": true
     },
     {
-      "criterion": "Réunions vidéo",
-      "toolA": "Huddles, intégration Zoom/Meet",
-      "toolB": "Teams Meetings natif",
-      "tooltrimDecision": "Teams pour réunions enterprise, Slack pour check-ins rapides.",
+      "criterion": "Stack d'outils",
+      "toolA": { "title": "Stack ouverte", "note": "Figma, GitHub, Notion, Make, Google." },
+      "toolB": { "title": "Suite intégrée", "note": "Outlook, SharePoint, OneDrive, Office." },
+      "tooltrimDecision": "Slack pour outils variés. Teams pour suite Microsoft.",
+      "showInMainTable": true
+    },
+    {
+      "criterion": "Risque principal",
+      "toolA": { "title": "Ajouter un canal de plus", "note": "Peut doubler Teams ou l'outil client." },
+      "toolB": { "title": "Subir les espaces clients", "note": "Changements de tenant et notifications dispersées." },
+      "tooltrimDecision": "Choisis le hub qui réduit le plus les changements de contexte.",
       "showInMainTable": true
     }
   ],

@@ -2,6 +2,48 @@
 
 ---
 
+## 2026-05-19 — Sprint 64 : Table décisionnelle "Ce qui change vraiment le choix"
+
+### Objectif
+Transformer la table comparative en vraie aide à la décision. Chaque ligne répond : "Sur ce critère, A ou B ?" — pas un catalogue de features.
+
+### Changements de données (Slack vs Teams)
+- Remplacement des 5 lignes plates par 6 lignes structurées avec `{ title, note }` pour chaque outil
+- Suppression des lignes redondantes avec la section Coût (plan gratuit, prix d'entrée)
+- Nouvelles lignes : Usage principal, Collaboration externe, Coût réel, Réunions et documents, Stack d'outils, Risque principal
+- Contenu basé sur le brief éditorial de la mission (wording validé)
+
+### Nouveaux types TypeScript
+- `BattleRowCellValue = string | { title: string; note?: string }` — rétro-compatible
+- `cellTitle()` / `cellNote()` — helpers pour extraire les champs selon le type
+- `CompareTableRow` étendu avec `toolANote?`, `toolANoteEn?`, `toolBNote?`, `toolBNoteEn?`
+- `BattleRawData.comparisonRows.toolA/toolB` accepte maintenant l'union type
+
+### Architecture JSX
+- Cellules outil : `<p className="cp-table-tool-title">` + `{note && <p className="cp-table-tool-note">}` — note absente = pas d'espace vide
+- Cellule décision : `<div className="cp-table-verdict">` avec `data-label` pour mobile
+- Header : "Décision ToolTrim" au lieu de "Verdict"
+- Attribut `role="table/row/cell/columnheader"` pour accessibilité
+
+### Nouveau CSS `cp-table`
+- Grille : `minmax(140px,0.8fr) minmax(220px,1.25fr) minmax(220px,1.25fr) minmax(240px,1.3fr)` (verdict large, pas 110px)
+- `align-items: start` (plus `baseline`) — hauteur naturelle
+- `.cp-table-tool-title` : 17px · weight 650 · -0.03em
+- `.cp-table-tool-note` : 14px · 400 · #6F6F68
+- `.cp-table-verdict` : `border-left: 2px solid #222222` · 16px · weight 600
+- Mobile (≤900px) : stacked card, labels via `::before`, décision avec `border-top` accent
+
+### Fallback
+- Autres JSON (strings plates) : `cellTitle()` retourne la string, `cellNote()` retourne `undefined` → `<p className="cp-table-tool-note">` non rendu
+- `NOTION_VS_AIRTABLE` : non affecté (note fields `undefined`)
+- `buildFallbackContent` : non affecté (pas de notes générées)
+
+### Build
+✅ 0 erreur TypeScript · build OK · 32 comparisons pré-rendus
+
+---
+
+
 ## 2026-05-19 — Sprint 63 : Harmonisation typographique Comparatif ↔ Stack
 
 ### Objectif

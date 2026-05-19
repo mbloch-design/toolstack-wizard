@@ -115,8 +115,18 @@ function getPitfalls(content: CompareEditorialContent, toolA: Tool, toolB: Tool,
 interface CompareTableRow {
   criterion: string; criterionEn: string;
   toolA: string; toolAEn: string;
+  toolANote?: string; toolANoteEn?: string;
   toolB: string; toolBEn: string;
+  toolBNote?: string; toolBNoteEn?: string;
   winner: "A" | "B" | "tie"; verdictLabel: string; verdictLabelEn: string;
+}
+/** Battle JSON cell value — either a flat string or a structured title+note */
+type BattleRowCellValue = string | { title: string; note?: string };
+function cellTitle(v: BattleRowCellValue): string {
+  return typeof v === "string" ? v : v.title;
+}
+function cellNote(v: BattleRowCellValue): string | undefined {
+  return typeof v === "string" ? undefined : v.note;
 }
 interface CompareProfile {
   persona: string; personaEn: string;
@@ -316,8 +326,8 @@ interface BattleRawData {
   };
   comparisonRows?: Array<{
     criterion: string;
-    toolA: string;
-    toolB: string;
+    toolA: BattleRowCellValue;
+    toolB: BattleRowCellValue;
     tooltrimDecision: string;
     showInMainTable?: boolean;
   }>;
@@ -374,13 +384,21 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
     .slice(0, 8)
     .map((row) => {
       const winner = getBattleWinner(row.tooltrimDecision, toolAName, toolBName);
+      const aTitle = cellTitle(row.toolA);
+      const aNoteRaw = cellNote(row.toolA);
+      const bTitle = cellTitle(row.toolB);
+      const bNoteRaw = cellNote(row.toolB);
       return {
         criterion: row.criterion,
         criterionEn: asEnglishCopy(row.criterion),
-        toolA: row.toolA,
-        toolAEn: asEnglishCopy(row.toolA),
-        toolB: row.toolB,
-        toolBEn: asEnglishCopy(row.toolB),
+        toolA: aTitle,
+        toolAEn: asEnglishCopy(aTitle),
+        toolANote: aNoteRaw,
+        toolANoteEn: aNoteRaw ? asEnglishCopy(aNoteRaw) : undefined,
+        toolB: bTitle,
+        toolBEn: asEnglishCopy(bTitle),
+        toolBNote: bNoteRaw,
+        toolBNoteEn: bNoteRaw ? asEnglishCopy(bNoteRaw) : undefined,
         winner,
         verdictLabel: row.tooltrimDecision,
         verdictLabelEn: asEnglishCopy(row.tooltrimDecision),
@@ -1655,35 +1673,65 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── 04 Features décisives ──────────────────────────────────────────── */}
+      {/* ── 04 Ce qui change vraiment le choix ────────────────────────────── */}
       {decisionTableRows.length > 0 && (
         <section id="features" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{t("04 — Features décisives", "04 — Decisive features")}</span>
-            <h2 className="cp-title" style={{ marginBottom: 28 }}>{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
-            <div className="cp-table">
-              <div className="cp-table-head">
-                <span className="cp-table-head-cell">{t("Critère", "Criterion")}</span>
-                <span className="cp-table-head-cell">{toolA.name}</span>
-                <span className="cp-table-head-cell">{toolB.name}</span>
-                <span className="cp-table-head-cell">{t("Verdict", "Verdict")}</span>
-              </div>
-              {decisionTableRows.map((row) => (
-                <div key={row.criterion} className="cp-table-row">
-                  <span className="cp-table-cell" data-label="">
-                    {lang === "fr" ? row.criterion : row.criterionEn}
-                  </span>
-                  <span className={`cp-table-cell${row.winner === "A" ? " cp-table-cell--win" : ""}`} data-label={toolA.name}>
-                    {lang === "fr" ? row.toolA : row.toolAEn}
-                  </span>
-                  <span className={`cp-table-cell${row.winner === "B" ? " cp-table-cell--win" : ""}`} data-label={toolB.name}>
-                    {lang === "fr" ? row.toolB : row.toolBEn}
-                  </span>
-                  <span className="cp-table-cell cp-table-verdict" data-label={t("Verdict", "Verdict")}>
-                    {lang === "fr" ? row.verdictLabel : row.verdictLabelEn}
-                  </span>
+            <span className="cp-eyebrow">{t("04 — Critères décisifs", "04 — Decisive criteria")}</span>
+            <h2 className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
+            <div className="cp-table" role="table" aria-label={t("Critères décisifs", "Decisive criteria")}>
+              {/* Header */}
+              <div className="cp-table-head" role="row">
+                <div className="cp-table-head-cell" role="columnheader">{t("Critère", "Criterion")}</div>
+                <div className="cp-table-head-cell" role="columnheader">{toolA.name}</div>
+                <div className="cp-table-head-cell" role="columnheader">{toolB.name}</div>
+                <div className="cp-table-head-cell cp-table-head-cell--decision" role="columnheader">
+                  {t("Décision ToolTrim", "ToolTrim decision")}
                 </div>
-              ))}
+              </div>
+              {/* Rows */}
+              {decisionTableRows.map((row) => {
+                const aTitle = lang === "fr" ? row.toolA : row.toolAEn;
+                const aNote = lang === "fr" ? row.toolANote : row.toolANoteEn;
+                const bTitle = lang === "fr" ? row.toolB : row.toolBEn;
+                const bNote = lang === "fr" ? row.toolBNote : row.toolBNoteEn;
+                const crit = lang === "fr" ? row.criterion : row.criterionEn;
+                const verdict = lang === "fr" ? row.verdictLabel : row.verdictLabelEn;
+                return (
+                  <div key={row.criterion} className="cp-table-row" role="row">
+                    {/* Criterion */}
+                    <div className="cp-table-cell--criterion" role="cell">
+                      {crit}
+                    </div>
+                    {/* Tool A */}
+                    <div
+                      className={`cp-table-cell${row.winner === "A" ? " cp-table-cell--win" : ""}`}
+                      data-label={toolA.name}
+                      role="cell"
+                    >
+                      <p className="cp-table-tool-title">{aTitle}</p>
+                      {aNote && <p className="cp-table-tool-note">{aNote}</p>}
+                    </div>
+                    {/* Tool B */}
+                    <div
+                      className={`cp-table-cell${row.winner === "B" ? " cp-table-cell--win" : ""}`}
+                      data-label={toolB.name}
+                      role="cell"
+                    >
+                      <p className="cp-table-tool-title">{bTitle}</p>
+                      {bNote && <p className="cp-table-tool-note">{bNote}</p>}
+                    </div>
+                    {/* Decision */}
+                    <div
+                      className="cp-table-verdict"
+                      data-label={t("Décision ToolTrim", "ToolTrim decision")}
+                      role="cell"
+                    >
+                      {verdict}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

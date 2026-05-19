@@ -474,16 +474,39 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 - Affichage conditionnel : Alternatives uniquement si des alternatives existent, FAQ uniquement si des FAQs existent.
 - Cachée en haut du hero, active state via IntersectionObserver.
 
-### Tableau features décisives (`cp-table` dans `#features`)
+### Table décisionnelle (`cp-table` dans `#features`) — Sprint 64
+
 ```css
-.cp-table-head { grid-template-columns: 200px 1fr 1fr 110px; }
-.cp-table-row  { grid-template-columns: 200px 1fr 1fr 110px; border-top: 1px solid #DADAD4; }
-.cp-table-cell--win { font-weight: 500; color: #222222; }
-/* Mobile (≤767px) : display: block, chaque cell avec data-label affiché en ::before */
+/* Grille — colonne Décision large, pas compressée */
+.cp-table-head, .cp-table-row {
+  grid-template-columns: minmax(140px,0.8fr) minmax(220px,1.25fr) minmax(220px,1.25fr) minmax(240px,1.3fr);
+}
+.cp-table-cell--criterion { font-size: 14px; font-weight: 600; padding-right: 24px; }
+.cp-table-tool-title      { font-size: 17px; font-weight: 650; letter-spacing: -0.03em; }
+.cp-table-tool-note       { font-size: 14px; font-weight: 400; color: #6F6F68; margin-top: 6px; }
+.cp-table-verdict         { border-left: 2px solid #222222; padding-left: 24px; font-size: 16px; font-weight: 600; }
+/* Mobile ≤900px : stacked card, labels via ::before, verdict avec border-top accent */
 ```
-- Section conditionnelle : rendue uniquement si `decisionTableRows.length > 0`.
-- La table ne liste que les features décisives, groupées, filtrées par `showInMainTable: true`.
-- Pas de table générique de 40 lignes. Maximum 9 lignes (via `getDecisionTableRows`).
+
+**Architecture cellule outil :**
+```tsx
+<div className="cp-table-cell">
+  <p className="cp-table-tool-title">{title}</p>
+  {note && <p className="cp-table-tool-note">{note}</p>}
+</div>
+```
+
+**Format JSON :**
+- `toolA` / `toolB` : `string` (flat, rétro-compat) **ou** `{ title: string; note?: string }` (structuré)
+- `tooltrimDecision` : phrase de max 2 lignes — jamais un paragraphe
+- `showInMainTable: true` pour les lignes à afficher
+
+**Règles de contenu :**
+- Max 6 lignes par table (uniquement les critères qui changent vraiment la décision)
+- Pas de ligne redondante avec la section Coût
+- Pas de ligne redondante avec le Verdict
+- Si un critère ne tranche pas entre les deux outils → ne pas l'afficher
+- Section conditionnelle : rendue uniquement si `decisionTableRows.length > 0`
 
 ### Critères décisionnels (`cp-score-*`)
 - ID : `#criteres` (anciennement `#scores`).
