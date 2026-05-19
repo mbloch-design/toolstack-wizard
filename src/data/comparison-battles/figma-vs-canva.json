@@ -523,9 +523,26 @@
   },
   "related": {
     "alternatives": [
-      "Adobe Express",
-      "Penpot",
-      "Sketch"
+      {
+        "name": "Adobe Express",
+        "reason": "Alternative légère à Canva, intégrée à l'écosystème Adobe. Idéale si tu utilises déjà Photoshop ou Illustrator.",
+        "reasonEn": "Lightweight alternative to Canva, integrated into Adobe's ecosystem. Ideal if you already use Photoshop or Illustrator."
+      },
+      {
+        "name": "Penpot",
+        "reason": "Alternative open source à Figma, auto-hébergeable. Choix naturel pour les équipes qui veulent sortir du SaaS propriétaire.",
+        "reasonEn": "Open-source alternative to Figma, self-hostable. Natural choice for teams wanting to avoid proprietary SaaS."
+      },
+      {
+        "name": "Sketch",
+        "reason": "Précurseur de Figma, encore utilisé dans certaines équipes macOS. Moins collaboratif mais solide pour le design UI.",
+        "reasonEn": "Figma's predecessor, still used by some macOS teams. Less collaborative but solid for UI design."
+      },
+      {
+        "name": "Framer",
+        "reason": "Design et publication web en un outil. Pertinent si tu veux créer des sites interactifs sans passer par un dev.",
+        "reasonEn": "Design and web publishing in one tool. Relevant if you want to build interactive sites without a developer."
+      }
     ],
     "stacks": [
       "designer",
@@ -548,6 +565,30 @@
       "answer": "Oui. Figma pour concevoir le système, Canva pour décliner vite des contenus cadrés.",
       "sourceNeeded": false,
       "avoidIfAlreadyCoveredIn": "tippingPoint"
+    },
+    {
+      "question": "Figma est-il gratuit ?",
+      "answer": "Figma propose un plan gratuit limité à 3 fichiers Figma et 3 fichiers FigJam. Pour une utilisation professionnelle (fichiers illimités, partage avancé), les plans payants démarrent à 15 $/seat/mois.",
+      "sourceNeeded": true,
+      "avoidIfAlreadyCoveredIn": "pricingComparison"
+    },
+    {
+      "question": "Canva est-il adapté aux designers produit ?",
+      "answer": "Non. Canva n'est pas conçu pour le design produit : pas de composants réutilisables, pas de variants, pas de handoff développeur. C'est un outil de production contenu, pas de design système.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "scoreCriteria"
+    },
+    {
+      "question": "Quelle est la principale différence entre Figma et Canva ?",
+      "answer": "La nature du livrable. Figma produit des interfaces (maquettes, prototypes, design systems). Canva produit des visuels prêts à publier (posts, présentations, flyers). Le point de bascule : dès que le fichier doit être intégré par un développeur, il faut Figma.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "tippingPoint"
+    },
+    {
+      "question": "Lequel choisir pour une petite équipe sans designer dédié ?",
+      "answer": "Canva. Sa courbe d'apprentissage est quasi nulle et ses templates couvrent 90 % des besoins marketing. Figma nécessite une formation minimale et suppose que l'output final sera développé.",
+      "sourceNeeded": false,
+      "avoidIfAlreadyCoveredIn": "decisionSummary"
     }
   ],
   "sources": [
@@ -624,7 +665,16 @@
     "budgetReality": "Figma coûte par seat design ; Canva coûte moins cher pour de la production non-tech.",
     "complexity": "depends",
     "mainRisk": "Choisir Canva pour faire du produit ou Figma pour faire de la production social en volume.",
-    "decisionSummary": "Figma si le livrable est une interface. Canva si le livrable est un contenu prêt à publier."
+    "decisionSummary": "Figma si le livrable est une interface. Canva si le livrable est un contenu prêt à publier.",
+    "heroPromise": "Ne choisis pas entre deux outils de design. Choisis entre conception produit et production marketing.",
+    "heroBrief": "Figma et Canva ont le même nom de catégorie — design — mais ne font pas le même travail. L'un construit des interfaces, l'autre produit des visuels.",
+    "heroPositionA": "Conception produit",
+    "heroPositionB": "Production contenu",
+    "verdictCardTitleA": "Le choix produit",
+    "verdictCardTitleB": "Le choix contenu",
+    "verdictCardTextA": "Figma si ton livrable est une interface, une maquette ou un design system. L'outil de référence pour toute équipe qui travaille avec des développeurs.",
+    "verdictCardTextB": "Canva si ton livrable est un visuel prêt à publier. Zéro formation, templates pour tout, parfait pour les équipes marketing sans designer dédié.",
+    "verdictWarning": "N'achète pas les deux plans sans règle claire. Segmente par rôle : designers produit → Figma, équipe marketing → Canva. Le chevauchement coûte cher et crée de la confusion sur les livrables."
   },
   "verdict": {
     "summary": "Pas de vainqueur absolu. Figma gagne côté produit. Canva gagne côté contenu marketing.",

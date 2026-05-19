@@ -346,7 +346,7 @@ interface BattleRawData {
     showInMainTable?: boolean;
   }>;
   related?: {
-    alternatives?: string[];
+    alternatives?: Array<string | { name: string; reason?: string; reasonEn?: string }>;
     otherComparisons?: string[];
   };
   faq?: Array<{
@@ -437,10 +437,7 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
   const verd = data.verdict;
   const aglance = data.tooltrimAtAGlance;
   const tipping = comparison.tippingPoint;
-  const alternatives = [
-    ...(data.related?.alternatives || []),
-    ...(data.related?.otherComparisons || []),
-  ].slice(0, 6);
+  const alternatives = (data.related?.alternatives || []).slice(0, 6);
 
   return {
     framing: comparison.falseSimilarity || comparison.mainDifference,
@@ -574,12 +571,16 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
     verdictCardTextBEn: asEnglishCopy(aglance?.verdictCardTextB || verd?.chooseBIf?.[0] || comparison.chooseBIf[0]),
     verdictWarning: aglance?.verdictWarning || verd?.avoidBothIf?.[0] || comparison.avoidBothIf?.[0] || "Garde les deux uniquement si les usages sont vraiment distincts.",
     verdictWarningEn: asEnglishCopy(aglance?.verdictWarning || verd?.avoidBothIf?.[0] || comparison.avoidBothIf?.[0] || "Keep both only if the use cases are genuinely distinct."),
-    alternatives: alternatives.map((name) => ({
-      slug: slugifyName(name),
-      name,
-      reason: "Option proche à regarder si le duel ne colle pas à ton usage.",
-      reasonEn: "Nearby option to check if this battle does not fit your use case.",
-    })),
+    alternatives: alternatives.map((alt) => {
+      const name = typeof alt === "string" ? alt : alt.name;
+      const reason = typeof alt === "object" && alt.reason
+        ? alt.reason
+        : "Option proche à regarder si le duel ne colle pas à ton usage.";
+      const reasonEn = typeof alt === "object" && alt.reasonEn
+        ? alt.reasonEn
+        : "Nearby option to check if this battle does not fit your use case.";
+      return { slug: slugifyName(name), name, reason, reasonEn };
+    }),
     faq: (data.faq || []).map((item) => ({
       q: item.question,
       qEn: asEnglishCopy(item.question),
@@ -1592,6 +1593,22 @@ const ComparePage = () => {
               {t("Ne paie pas les deux sans règle claire", "Don't pay for both without a clear rule")}
             </span>
             <p className="tt-body-large">{verdictWarningText}</p>
+          </div>
+
+          {/* Secondary CTA — personalised recommendation */}
+          <div className="compare-verdict-cta">
+            <p className="tt-card-body">
+              {t(
+                "Pas encore sûr·e de ce qui correspond à ta situation ?",
+                "Still not sure which fits your situation?",
+              )}
+            </p>
+            <Link
+              to={`${prefix}/selector?from=${slugPair}`}
+              className="compare-verdict-cta-link"
+            >
+              {t("Obtenir une recommandation personnalisée →", "Get a personalised recommendation →")}
+            </Link>
           </div>
 
         </div>

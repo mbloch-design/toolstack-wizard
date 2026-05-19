@@ -2,6 +2,47 @@
 
 ---
 
+## 2026-05-19 — Sprint 69 : Correction audit UI/UX — slugs bruts, alternatives enrichies, CTA verdict
+
+### Objectif
+Appliquer les corrections identifiées lors de l'audit UI/UX de `/fr/comparatif/figma-vs-canva` : bug critique des slugs de comparaison injectés dans la liste d'alternatives, descriptions génériques, FAQ insuffisante, CTA secondaire absent dans la section Verdict.
+
+### Problèmes corrigés
+
+| Fichier | Problème | Priorité |
+|---|---|---|
+| `ComparePage.tsx` | `otherComparisons` (slugs) injectés dans le tableau `alternatives` (noms d'outils) → slug brut affiché | Critique |
+| `ComparePage.tsx` | Toutes les alternatives ont la même description générique hardcodée | Contenu |
+| `ComparePage.tsx` | Pas de CTA secondaire dans la section Verdict | UX |
+| `figma-vs-canva.json` | `alternatives` en format `string[]` sans raisons par outil | Contenu |
+| `figma-vs-canva.json` | 1 seule question FAQ | Contenu |
+| `figma-vs-canva.json` | `tooltrimAtAGlance` sans `heroPositionA/B`, `verdictCardTitleA/B`, `verdictWarning` | Contenu |
+
+### Corrections
+
+**`src/pages/ComparePage.tsx`**
+- `BattleRawData.related.alternatives` : type changé de `string[]` vers `Array<string | { name, reason?, reasonEn? }>` — support format objet avec raison spécifique par outil
+- Construction du tableau `alternatives` : suppression de l'injection de `otherComparisons` — les slugs de comparaison ne sont pas des noms d'outils
+- Mapping `alternatives` : extraction de la raison spécifique si format objet, fallback générique si format string
+- Section Verdict : ajout d'un bloc `.compare-verdict-cta` après la bande d'avertissement — lien vers le sélecteur ToolTrim avec passage du `slugPair`
+
+**`src/data/comparison-battles/figma-vs-canva.json`**
+- `related.alternatives` : passage au format objet avec 4 entrées (Adobe Express, Penpot, Sketch, Framer) + raison distincte + traduction EN pour chacune
+- `faq` : 4 nouvelles questions ajoutées (Figma gratuit ? ; Canva adapté au design produit ? ; Principale différence ? ; Petite équipe sans designer ?)
+- `tooltrimAtAGlance` : ajout de `heroPositionA/B`, `heroBrief`, `verdictCardTitleA/B`, `verdictCardTextA/B`, `verdictWarning`
+
+**`src/index.css`**
+- Ajout de `.compare-verdict-cta`, `.compare-verdict-cta .tt-card-body`, `.compare-verdict-cta-link` (layout flex, bordure, hover noir) et responsive `@media (max-width: 640px)`
+
+### Résultat
+- Zéro slug brut dans la section alternatives
+- 4 descriptions d'alternatives contextualisées et uniques
+- 5 questions FAQ (minimum recommandé pour le SEO)
+- CTA secondaire visible dans le Verdict pour toutes les pages comparatives
+- `figma-vs-canva` : section Verdict complètement enrichie avec titres de cartes, textes et avertissement spécifiques
+
+---
+
 ## 2026-05-19 — Sprint 68 : Centralisation des logos outils — ToolLogo comme composant unique
 
 ### Objectif
