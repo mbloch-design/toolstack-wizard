@@ -199,7 +199,11 @@
     "decisionSummary": "Slack pour fluidité et culture canal. Teams pour intégration Office et réunions d'entreprise.",
     "defaultChoiceLabel": "Ça dépend du socle existant",
     "budgetShort": "Slack s'ajoute. Teams peut déjà être inclus.",
-    "complexityLabel": "À cadrer"
+    "complexityLabel": "À cadrer",
+    "heroPromise": "Deux hubs pour parler. Deux logiques pour travailler.",
+    "heroPositionA": "Le hub externe",
+    "heroPositionB": "Le hub Microsoft 365",
+    "heroContract": "Ne choisis pas une messagerie. Choisis le hub qui t'évite le plus de changements de contexte."
   },
   "faq": [],
   "verdict": {

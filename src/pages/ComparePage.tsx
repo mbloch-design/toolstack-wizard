@@ -200,6 +200,10 @@ interface CompareEditorialContent {
   aglanceRisk?: string;
   aglanceDefaultLabel?: string;
   aglanceLevel?: string;
+  aglanceHeroPromise?: string;
+  aglancePositionA?: string;
+  aglancePositionB?: string;
+  aglanceContract?: string;
   /* ── Alternatives + FAQ ── */
   alternatives: CompareAlt[];
   faq: CompareFaqItem[];
@@ -229,6 +233,10 @@ interface BattleRawData {
     complexityLabel?: string;
     mainRisk?: string;
     decisionSummary?: string;
+    heroPromise?: string;
+    heroPositionA?: string;
+    heroPositionB?: string;
+    heroContract?: string;
   };
   verdict?: {
     summary?: string;
@@ -518,6 +526,10 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
     aglanceRisk: aglance?.mainRisk,
     aglanceDefaultLabel: aglance?.defaultChoiceLabel,
     aglanceLevel: aglance?.complexityLabel,
+    aglanceHeroPromise: aglance?.heroPromise,
+    aglancePositionA: aglance?.heroPositionA,
+    aglancePositionB: aglance?.heroPositionB,
+    aglanceContract: aglance?.heroContract,
     alternatives: alternatives.map((name) => ({
       slug: slugifyName(name),
       name,
@@ -935,6 +947,10 @@ const NOTION_VS_AIRTABLE: CompareEditorialContent = {
   aglanceRisk: "Ne pas mélanger les deux rôles",
   aglanceDefaultLabel: "Notion par défaut pour centraliser",
   aglanceLevel: "Notion accessible, Airtable complexe",
+  aglanceHeroPromise: "Un espace pour penser. Une base pour piloter.",
+  aglancePositionA: "L'espace d'organisation",
+  aglancePositionB: "La base de données",
+  aglanceContract: "Ne choisis pas l'outil le plus complet. Choisis celui qui structure le livrable le plus central de ton travail.",
 
   alternatives: [
     { slug: "coda", name: "Coda", reason: "Entre document et base de données, souvent bon compromis entre les deux.", reasonEn: "Between document and database, often a good compromise between the two." },
@@ -1203,6 +1219,10 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     aglanceRisk: undefined,
     aglanceDefaultLabel: undefined,
     aglanceLevel: undefined,
+    aglanceHeroPromise: undefined,
+    aglancePositionA: undefined,
+    aglancePositionB: undefined,
+    aglanceContract: undefined,
     alternatives: [],
     faq: [
       { q: `${toolA.name} ou ${toolB.name} — lequel est moins cher ?`,
@@ -1370,6 +1390,11 @@ const ComparePage = () => {
   const budgetSignal = content.aglanceBudget || getBudgetSignal(toolA, toolB, lang);
   const levelSignal = content.aglanceLevel || getLearningCurve(learningCurveRow, lang);
   const riskSignal = content.aglanceRisk || getToolTrimRisk(content, lang);
+  /* Hero duel — Sprint 62 */
+  const heroPromise = content.aglanceHeroPromise || framing;
+  const heroPositionA = content.aglancePositionA || bestForA;
+  const heroPositionB = content.aglancePositionB || bestForB;
+  const heroContract = content.aglanceContract || (lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn);
   const fallbackPitfalls = getPitfalls(content, toolA, toolB, lang);
 
   // Find alternative tools from the loaded tools list
@@ -1406,31 +1431,59 @@ const ComparePage = () => {
             {toolA.name} vs {toolB.name}.
           </h1>
 
-          <p className="cp-hero-promise">{framing}</p>
+          <p className="cp-hero-promise">{heroPromise}</p>
 
-          <div className="cp-hero-fact-sheet" aria-label={t("Résumé du choix", "Decision summary")}>
-            <div className="cp-hero-fact">
+          {/* Face-à-face duel */}
+          <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
+            <article className="cp-hero-duel-card">
+              <div className="cp-hero-duel-head">
+                <div className="cp-hero-duel-logo">
+                  <ToolLogo tool={toolA} size={36} />
+                </div>
+                <div>
+                  <p className="cp-hero-duel-position">{heroPositionA}</p>
+                  <h2 className="cp-hero-duel-name">{toolA.name}</h2>
+                </div>
+              </div>
+              <p className="cp-hero-duel-desc">{bestForA}</p>
+            </article>
+
+            <div className="cp-hero-duel-vs" aria-hidden="true">VS</div>
+
+            <article className="cp-hero-duel-card cp-hero-duel-card--right">
+              <div className="cp-hero-duel-head">
+                <div className="cp-hero-duel-logo">
+                  <ToolLogo tool={toolB} size={36} />
+                </div>
+                <div>
+                  <p className="cp-hero-duel-position">{heroPositionB}</p>
+                  <h2 className="cp-hero-duel-name">{toolB.name}</h2>
+                </div>
+              </div>
+              <p className="cp-hero-duel-desc">{bestForB}</p>
+            </article>
+          </div>
+
+          {/* Contrat ToolTrim */}
+          <div className="cp-hero-contract">
+            <span className="cp-hero-contract-label">
+              {t("Contrat ToolTrim", "ToolTrim take")}
+            </span>
+            <p>{heroContract}</p>
+          </div>
+
+          {/* Micro-fiche courte — 3 cellules */}
+          <div className="cp-hero-microfact" aria-label={t("Signaux clés", "Key signals")}>
+            <div className="cp-hero-microfact-cell">
               <span>{t("Par défaut", "Default")}</span>
               <p>{defaultChoice}</p>
             </div>
-            <div className="cp-hero-fact cp-hero-fact--wide">
-              <span>{toolA.name}</span>
-              <p>{bestForA}</p>
-            </div>
-            <div className="cp-hero-fact cp-hero-fact--wide">
-              <span>{toolB.name}</span>
-              <p>{bestForB}</p>
-            </div>
-            <div className="cp-hero-fact">
-              <span>{t("Budget", "Budget")}</span>
+            <div className="cp-hero-microfact-cell">
+              <span>{t("Coût réel", "Real cost")}</span>
               <p>{budgetSignal}</p>
             </div>
-            <div className="cp-hero-fact">
-              <span>{t("Niveau", "Level")}</span>
-              <p>{levelSignal}</p>
-            </div>
-            <div className="cp-hero-fact cp-hero-fact--wide">
-              <span>{t("Point d'attention", "Watchout")}</span>
+            <div className="cp-hero-microfact-cell">
+              <span>{t("Risque", "Risk")}</span>
               <p>{riskSignal}</p>
             </div>
           </div>

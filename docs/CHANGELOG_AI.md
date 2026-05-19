@@ -2,6 +2,42 @@
 
 ---
 
+## 2026-05-19 — Sprint 62 : Hero comparatif face-à-face de décision
+
+### Objectif
+Transformer le hero des pages Comparatif en vrai face-à-face de décision. Remplacer la table froide de 6 faits par un duel orienté, un contrat éditorial et 3 signaux clés.
+
+### Principe
+Le hero doit répondre en 5 secondes : quels outils, quelle logique pour chacun, quel arbitrage ToolTrim, quel risque principal. Zéro redondance avec le Verdict (conditions si-alors) et le Coût (détails pricing).
+
+### Structure hero cible
+1. Breadcrumb + eyebrow COMPARATIF
+2. Titre `h1` en display typographique
+3. Phrase de promesse ToolTrim (editorial, pas générique)
+4. Face-à-face duel (`cp-hero-duel`) — 2 cards avec logo, position, nom, description courte
+5. Contrat ToolTrim (`cp-hero-contract`) — statement éditorial entre filets, sans carte
+6. Micro-fiche 3 cellules (`cp-hero-microfact`) — PAR DÉFAUT / COÛT RÉEL / RISQUE
+
+### Nouveaux champs JSON (`tooltrimAtAGlance`)
+- `heroPromise` — phrase de promesse hero (subtitle éditorial)
+- `heroPositionA` — titre de position court pour l'outil A (ex. "Le hub externe")
+- `heroPositionB` — titre de position court pour l'outil B (ex. "Le hub Microsoft 365")
+- `heroContract` — arbitrage ToolTrim en une phrase forte (sans fioritures)
+
+### Fichiers modifiés
+- `src/data/comparison-battles/slack-vs-microsoft-teams.json` — ajout des 4 nouveaux champs dans `tooltrimAtAGlance`
+- `src/pages/ComparePage.tsx` — extension de `BattleRawData.tooltrimAtAGlance`, `CompareEditorialContent`, `buildBattleEditorialContent()`, `buildFallbackContent()`, `NOTION_VS_AIRTABLE` ; ajout des variables hero duel ; réécriture du JSX hero
+- `src/index.css` — mise à jour `cp-hero-title` (clamp 72px→170px, weight 700, tracking -0.075em), `cp-hero-promise` (clamp 24px→36px) ; suppression de `cp-battle-stage/card/center/hero-fact-sheet/fact` ; ajout de `cp-hero-duel`, `cp-hero-duel-card`, `cp-hero-duel-vs`, `cp-hero-contract`, `cp-hero-microfact`, `cp-hero-microfact-cell`
+
+### Résultats
+- Le hero oriente en 5 secondes sans dupliquer le contenu des sections suivantes
+- Le contrat ToolTrim remplace la recommandation générique par une phrase d'arbitrage directe
+- La micro-fiche 3 cellules remplace la table 6 faits — plus lisible, plus focalisée
+- Fallback gracieux : toutes les nouvelles propriétés sont optionnelles — si absentes, les valeurs dérivées existantes prennent le relais
+- Build : ✅ 0 erreur TypeScript
+
+---
+
 ## 2026-05-19 — Sprint 61 : Architecture typographique éditoriale des sections Comparatif
 
 ### Objectif

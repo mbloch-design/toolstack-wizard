@@ -414,16 +414,23 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 | 09 | Alternatives | `#alternatives` | Conditionnel |
 | 10 | FAQ | `#faq` | Conditionnel |
 
-### Structure hero (`cp-hero`)
+### Structure hero (`cp-hero`) — Sprint 62
 ```css
 .cp-hero { background: #F8F8F4; border-bottom: 1px solid #DADAD4; padding: 72px 0 64px; }
-.cp-hero-title { font-size: clamp(4rem, 7vw, 7rem); line-height: 0.94; letter-spacing: -0.06em; }
-.cp-hero-fact-sheet { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #DADAD4; border-radius: 18px; }
+.cp-hero-title { font-size: clamp(72px, 12vw, 170px); font-weight: 700; letter-spacing: -0.075em; line-height: 0.92; }
+.cp-hero-promise { font-size: clamp(24px, 2.2vw, 36px); letter-spacing: -0.025em; max-width: 680px; }
+.cp-hero-duel { display: grid; grid-template-columns: 1fr 48px 1fr; }
+.cp-hero-duel-card { padding: 24px 28px; background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 18px; }
+.cp-hero-contract { padding: 20px 0; border-top: 1px solid #DADAD4; border-bottom: 1px solid #DADAD4; }
+.cp-hero-microfact { display: grid; grid-template-columns: repeat(3, 1fr); background: #DADAD4; border-radius: 14px; overflow: hidden; }
+.cp-hero-microfact-cell { padding: 18px 20px; background: #FFFFFF; }
 ```
-- Rôle : orientation immédiate, réponse en 5 secondes.
-- **Pas de battle stage** (les 2 cartes face-à-face ont été supprimées — redondantes avec la fact sheet).
-- Contenu : breadcrumb, label COMPARATIF, h1, promesse courte, fact sheet 6 faits.
-- Fact sheet : Par défaut, Meilleur pour A, Meilleur pour B, Budget, Niveau, Point d'attention.
+- Rôle : face-à-face de décision — orientation en 5 secondes.
+- Structure : breadcrumb → eyebrow → `h1` display → `heroPromise` → duel 2 cartes → contrat ToolTrim → micro-fiche 3 cellules.
+- **Duel** : 2 cartes `cp-hero-duel-card` avec logo, `heroPositionX` (position/rôle), nom outil, description courte. Séparateur `VS` centré entre les 2 cartes.
+- **Contrat ToolTrim** (`cp-hero-contract`) : statement éditorial entre filets — pas de carte, pas de fond coloré. Phrase d'arbitrage directe.
+- **Micro-fiche** (`cp-hero-microfact`) : 3 cellules uniquement — PAR DÉFAUT, COÛT RÉEL, RISQUE. Remplace la fact-sheet 6 faits.
+- Nouveaux champs JSON dans `tooltrimAtAGlance` : `heroPromise`, `heroPositionA`, `heroPositionB`, `heroContract`. Tous optionnels — fallback sur valeurs dérivées.
 - Pas de CTA dans le hero.
 
 ### At a glance (`cp-aglance-*`)
