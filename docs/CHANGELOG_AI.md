@@ -2,6 +2,31 @@
 
 ---
 
+## 2026-05-21 — Sprint 77 : Comparatif — comportement post-vigilance + polish CTA band
+
+### Objectif
+Affiner le hover des cartes erreurs, le padding mobile, et nettoyer le CTA band final (inline styles → classes).
+
+### Corrections
+
+**`src/index.css`**
+- Ajout `transition` + `.cp-pitfall-card:hover` : `border-color #B8B8B2`, `background #FDFDFB` — signal discret sans scale ni ombre.
+- Ajout `@media (max-width: 480px)` : padding carte `22px 20px 24px`.
+- `.cp-cta-band .cp-container` : padding top/bottom 36px (vs 28px).
+- Ajout `.cp-cta-band-desc` : classe CSS pour la description (remplace inline style `fontSize: 17, color: #6F6F68`).
+- Ajout responsive ≤640px : padding conteneur 28px 20px, bouton pleine largeur.
+
+**`src/pages/ComparePage.tsx`**
+- CTA band : remplacement du `<Link>` avec inline styles + `onMouseEnter/Leave` par `className="tt-button-primary"`.
+- CTA band : remplacement du `<p style={...}>` par `<p className="cp-cta-band-desc">`.
+- Suppression des 2 handlers `onMouseEnter` / `onMouseLeave` — le hover est désormais en CSS pur.
+
+**`docs/DESIGN_SYSTEM.md`**
+- Section `cp-pitfall-*` mise à jour avec règles hover + mobile Sprint 77.
+- Section `cp-cta-band` documentée : `.cp-cta-band-desc`, `tt-button-primary`, règle "un seul CTA final".
+
+---
+
 ## 2026-05-21 — Sprint 76 : Comparatif — section erreurs fréquentes en bloc anti-pattern
 
 ### Objectif

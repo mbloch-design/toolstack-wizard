@@ -2007,30 +2007,13 @@ const ComparePage = () => {
               `${toolA.name} or ${toolB.name} already in your stack?`,
             )}
           </p>
-          <p style={{
-            fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
-            color: "#6F6F68", maxWidth: 540, marginBottom: 32,
-            letterSpacing: "-0.015em",
-          }}>
+          <p className="cp-cta-band-desc">
             {t(
               "Analyse tes outils actuels et vérifie si tu n'as pas déjà plusieurs outils qui font le même travail.",
               "Audit your current tools and check if you already have overlapping subscriptions.",
             )}
           </p>
-          <Link
-            to={`${prefix}/selector?from=${slugPair}`}
-            style={{
-              display: "inline-flex", alignItems: "center",
-              height: 48, padding: "0 22px",
-              background: "#222222", color: "#FFFFFF",
-              borderRadius: 8, fontFamily: "var(--font-ui)",
-              fontSize: 15, fontWeight: 500,
-              letterSpacing: "-0.01em", textDecoration: "none",
-              transition: "background 160ms ease-out",
-            }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
-          >
+          <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-primary">
             {t("Analyser ma stack →", "Analyze my stack →")}
           </Link>
         </div>

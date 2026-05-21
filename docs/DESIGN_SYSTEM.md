@@ -810,11 +810,13 @@ Lignes recommandées (max 5) :
 - **CTA** `.cp-tipping-cta` → `tt-button-primary` → `/selector?from={slugPair}`.
 - Aucune puce/tiret — `cp-tipping-signals` supprimé. `cp-tipping-panel span` supprimé.
 
-### Erreurs fréquentes (`cp-pitfall-*`) — Sprint 76
+### Erreurs fréquentes (`cp-pitfall-*`) — Sprint 76 + 77
 - ID : `#vigilance`.
 - Chaque erreur suit la structure : **Erreur → Conséquence → Correction ToolTrim** (max 3 cartes).
 - Classe racine `.cp-pitfall-grid` : `repeat(3, 1fr)` → `1fr` sur ≤768px.
-- Carte `.cp-pitfall-card` : `border-top: 3px solid #C8600A` (accent attention sobre), fond blanc.
+- Carte `.cp-pitfall-card` : `border-top: 3px solid #C8600A` (accent attention sobre), fond blanc. `transition` sur border-color + background.
+- **Hover** (Sprint 77) : `border-color: #B8B8B2`, `background: #FDFDFB` — signal discret, pas de scale ni d'ombre.
+- **Mobile ≤480px** (Sprint 77) : padding réduit à `22px 20px 24px`.
 - Index `.cp-pitfall-index` : numéro `01/02/03` en orange `#C8600A`.
 - Conséquence `.cp-pitfall-consequence` : couleur `#555554` (contraste > `#6F6F68`).
 - Correction `.cp-pitfall-fix` : encadré bg `#FDF5EE`, border `#EDD9C8`, `tt-fact-label` + `<p>`.
@@ -860,16 +862,13 @@ Lignes recommandées (max 5) :
 .cp-alt-cta  { font-size: 13px; font-weight: 500; color: #222222; }
 ```
 
-### CTA band (`cp-cta-band`)
-```css
-.cp-cta-band {
-  background: transparent;
-  border: 0;
-  padding: 0 0 72px;
-}
-```
-- Le CTA Diagnostic vit en clôture de page, après la FAQ.
-- Il se rend comme un encadré inline : fond blanc, bordure `#DADAD4`, radius `6px`, padding `24–32px`.
+### CTA band (`cp-cta-band`) — Sprint 77
+- Le CTA Diagnostic est l'**unique action principale** en clôture de page (après FAQ si présente).
+- Rendu inline : fond blanc `#FFFFFF`, bordure `#DADAD4`, radius `6px`, padding `36px`.
+- Description : `.cp-cta-band-desc` (17px, `#6F6F68`, max-width 540px).
+- Bouton : `tt-button-primary` (class globale — plus d'inline style ni de `onMouseEnter/Leave`).
+- Mobile ≤640px : container padding réduit, bouton pleine largeur.
+- Règle : **un seul CTA à ce niveau**. Ne pas ajouter de CTA concurrent dans la section vigilance ou la FAQ.
 - Ne pas utiliser de bande pleine largeur colorée pour ce CTA sur les pages comparatif.
 
 ### FAQ (`cp-faq-item`)

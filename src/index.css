@@ -8485,8 +8485,21 @@
     background: #FFFFFF;
     border: 1px solid #DADAD4;
     border-radius: 6px;
-    padding-top: 28px;
-    padding-bottom: 28px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .cp-cta-band-desc {
+    font-family: var(--font-ui);
+    font-size: 17px;
+    line-height: 1.5;
+    color: #6F6F68;
+    max-width: 540px;
+    margin: 12px 0 28px;
+    letter-spacing: -0.015em;
+  }
+  @media (max-width: 640px) {
+    .cp-cta-band .cp-container { padding: 28px 20px; }
+    .cp-cta-band .tt-button-primary { justify-content: center; width: 100%; }
   }
 
   /* ── FAQ ───────────────────────────────────────────────────── */
@@ -8725,6 +8738,14 @@
     border: 1px solid #DADAD4;
     border-top: 3px solid #C8600A;
     border-radius: 8px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .cp-pitfall-card:hover {
+    border-color: #B8B8B2;
+    background: #FDFDFB;
+  }
+  @media (max-width: 480px) {
+    .cp-pitfall-card { padding: 22px 20px 24px; }
   }
   .cp-pitfall-index {
     display: block;
