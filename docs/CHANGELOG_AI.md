@@ -2,6 +2,36 @@
 
 ---
 
+## 2026-05-21 — Sprint 76 : Comparatif — section erreurs fréquentes en bloc anti-pattern
+
+### Objectif
+Transformer `#vigilance` en grille de 3 cartes avec sémantique Erreur → Conséquence → Correction ToolTrim.
+
+### Corrections
+
+**`src/pages/ComparePage.tsx`**
+- Suppression du layout `cp-section-grid` pour la section vigilance.
+- Header migré vers `cp-matrix-header` + `cp-matrix-intro` éditoriale fixe.
+- `cp-watchout-list / cp-watchout-row` remplacés par `cp-pitfall-grid` (3 cartes `repeat(3, 1fr)`).
+- Structure de chaque carte : `cp-pitfall-index` (numéro) + `cp-pitfall-title` (h3) + `cp-pitfall-consequence` + `cp-pitfall-fix` (encadré correction).
+- Slice limité à 3 items (vs 5 avant).
+- Pas de CTA ajouté ici — `cp-cta-band` existant en bas de page suffit.
+
+**`src/index.css`**
+- Suppression `.cp-watchout-list`, `.cp-watchout-row`, `.cp-watchout-row span/p`, `.cp-watchout-row--rich`, `.cp-watchout-title`, `.cp-watchout-copy`, `.cp-watchout-reco`.
+- Ajout `.cp-pitfall-grid` : `repeat(3, 1fr)` → `1fr` sur ≤768px.
+- Ajout `.cp-pitfall-card` : `border-top: 3px solid #C8600A` (accent orange sobre), fond blanc, border radius 8px.
+- Ajout `.cp-pitfall-index` : `#C8600A`, `font-size: 11px`, lettrée.
+- Ajout `.cp-pitfall-title` : 700, 16px, couleur #222222.
+- Ajout `.cp-pitfall-consequence` : 14px, couleur `#555554` (contraste amélioré vs #6F6F68).
+- Ajout `.cp-pitfall-fix` : bg `#FDF5EE`, border `#EDD9C8`, `tt-fact-label` + `<p>` couleur `#3A2010`.
+
+**`docs/DESIGN_SYSTEM.md`**
+- Section `cp-pitfall-*` documentée (remplace `cp-watchout-*`).
+- Règles éditoriales : 3 erreurs max, structure Erreur → Conséquence → Correction, pas de CTA en double.
+
+---
+
 ## 2026-05-21 — Sprint 75 : Comparatif — section seuil de bascule en section signature
 
 ### Objectif

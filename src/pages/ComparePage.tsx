@@ -1898,13 +1898,17 @@ const ComparePage = () => {
       {/* ── 06 Points de vigilance ────────────────────────────────────────── */}
       <section id="vigilance" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("06 — Points d'attention", "06 — Watchout")}</span>
-          <div className="cp-section-grid">
-          <div className="cp-section-heading">
+          <div className="cp-matrix-header">
+            <span className="cp-eyebrow">{t("06 — Attention", "06 — Watchout")}</span>
             <h2 className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</h2>
+            <p className="cp-matrix-intro">
+              {t(
+                "Le mauvais choix coûte rarement seulement un abonnement. Il coûte surtout de la clarté, du temps et de la concentration.",
+                "The wrong choice rarely costs just a subscription. It mostly costs clarity, time, and focus."
+              )}
+            </p>
           </div>
-          <div className="cp-section-body">
-          <div className="cp-watchout-list">
+          <div className="cp-pitfall-grid">
             {(content.tooltrimRisks.length > 0 ? content.tooltrimRisks : fallbackPitfalls.map((pitfall) => ({
               mistake: pitfall,
               mistakeEn: pitfall,
@@ -1912,23 +1916,22 @@ const ComparePage = () => {
               consequenceEn: "",
               recommendation: "",
               recommendationEn: "",
-            }))).slice(0, 5).map((risk, i) => (
-              <article key={`${risk.mistake}-${i}`} className="cp-watchout-row cp-watchout-row--rich">
-                <span>{String(i + 1).padStart(2, "0")}</span>
-                <div>
-                  <p className="cp-watchout-title">{lang === "fr" ? risk.mistake : risk.mistakeEn}</p>
-                  {(lang === "fr" ? risk.consequence : risk.consequenceEn) && (
-                    <p className="cp-watchout-copy">{lang === "fr" ? risk.consequence : risk.consequenceEn}</p>
-                  )}
-                  {(lang === "fr" ? risk.recommendation : risk.recommendationEn) && (
-                    <p className="cp-watchout-reco">{lang === "fr" ? risk.recommendation : risk.recommendationEn}</p>
-                  )}
-                </div>
+            }))).slice(0, 3).map((risk, i) => (
+              <article key={`${risk.mistake}-${i}`} className="cp-pitfall-card">
+                <span className="cp-pitfall-index">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="cp-pitfall-title">{lang === "fr" ? risk.mistake : risk.mistakeEn}</h3>
+                {(lang === "fr" ? risk.consequence : risk.consequenceEn) && (
+                  <p className="cp-pitfall-consequence">{lang === "fr" ? risk.consequence : risk.consequenceEn}</p>
+                )}
+                {(lang === "fr" ? risk.recommendation : risk.recommendationEn) && (
+                  <div className="cp-pitfall-fix">
+                    <span className="tt-fact-label">{t("Correction ToolTrim", "ToolTrim fix")}</span>
+                    <p>{lang === "fr" ? risk.recommendation : risk.recommendationEn}</p>
+                  </div>
+                )}
               </article>
             ))}
           </div>
-          </div>{/* end cp-section-body */}
-          </div>{/* end cp-section-grid */}
         </div>
       </section>
 

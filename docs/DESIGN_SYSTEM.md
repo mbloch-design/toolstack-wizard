@@ -810,9 +810,16 @@ Lignes recommandées (max 5) :
 - **CTA** `.cp-tipping-cta` → `tt-button-primary` → `/selector?from={slugPair}`.
 - Aucune puce/tiret — `cp-tipping-signals` supprimé. `cp-tipping-panel span` supprimé.
 
-### Points de vigilance (`cp-watchout-*`)
+### Erreurs fréquentes (`cp-pitfall-*`) — Sprint 76
 - ID : `#vigilance`.
-- Chaque point : erreur, conséquence, recommandation ToolTrim.
+- Chaque erreur suit la structure : **Erreur → Conséquence → Correction ToolTrim** (max 3 cartes).
+- Classe racine `.cp-pitfall-grid` : `repeat(3, 1fr)` → `1fr` sur ≤768px.
+- Carte `.cp-pitfall-card` : `border-top: 3px solid #C8600A` (accent attention sobre), fond blanc.
+- Index `.cp-pitfall-index` : numéro `01/02/03` en orange `#C8600A`.
+- Conséquence `.cp-pitfall-consequence` : couleur `#555554` (contraste > `#6F6F68`).
+- Correction `.cp-pitfall-fix` : encadré bg `#FDF5EE`, border `#EDD9C8`, `tt-fact-label` + `<p>`.
+- Pas de rouge vif, pas d'emoji, pas d'ombre forte — sobriété ToolTrim.
+- `cp-watchout-*` supprimé Sprint 76.
 
 ### Données battle (`src/data/comparison-battles/*.json`)
 - 5 comparatifs éditorialisés : chatgpt-vs-claude, figma-vs-canva, make-vs-zapier, notion-vs-airtable, webflow-vs-framer.
@@ -827,14 +834,12 @@ Lignes recommandées (max 5) :
 - Alternatives : conditionnel si `altTools.length > 0`.
 - Ne jamais rendre un titre de section vide. Ne jamais afficher `undefined`.
 
-### Points de vigilance (`cp-watchout-*`)
-```css
-.cp-watchout-list { border-top: 1px solid #DADAD4; }
-.cp-watchout-row { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; }
-```
-- Rôle : montrer où la mauvaise décision arrive.
-- Les pièges doivent être spécifiques au comparatif, pas des conseils génériques sur les SaaS.
-- Chaque point riche peut contenir : erreur, conséquence, recommandation ToolTrim.
+### Erreurs fréquentes — règles éditoriales
+- Rôle : montrer où la mauvaise décision arrive, avec une action corrective concrète.
+- Les erreurs doivent être spécifiques au comparatif, pas des conseils génériques sur les SaaS.
+- Chaque carte contient : erreur + conséquence + correction ToolTrim (les 3 champs sont optionnels si absent dans les données).
+- Pas de CTA dans cette section — un `cp-cta-band` existe déjà en bas de page.
+- Fallback si `tooltrimRisks` vide : 3 items dérivés de `getPitfalls()`, sans conséquence ni correction.
 
 ### Seuil de bascule (`cp-tipping-*`) — Sprint 75
 - Rôle : montrer quand l'outil recommandé par défaut cesse d'être le meilleur choix.

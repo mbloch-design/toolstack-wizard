@@ -8703,47 +8703,72 @@
     line-height: 1.4;
     color: #222222;
   }
-  .cp-watchout-list {
-    margin-top: 26px;
-    border-top: 1px solid #DADAD4;
-  }
-  .cp-watchout-row {
+  /* ── Pitfall / Erreurs fréquentes — Sprint 76 ────────────── */
+  /* (cp-watchout-list / cp-watchout-row / cp-watchout-title / cp-watchout-copy / cp-watchout-reco removed Sprint 76) */
+
+  /* --tt-warning: #C8600A (burnt orange, subtle attention accent — no token needed beyond this block) */
+
+  .cp-pitfall-grid {
     display: grid;
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 18px;
-    padding: 18px 0;
-    border-bottom: 1px solid #DADAD4;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
   }
-  .cp-watchout-row span {
+  @media (max-width: 768px) {
+    .cp-pitfall-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  .cp-pitfall-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 28px 32px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-top: 3px solid #C8600A;
+    border-radius: 8px;
+  }
+  .cp-pitfall-index {
+    display: block;
+    margin-bottom: 16px;
     font-family: var(--font-ui);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.08em;
-    color: #9A9A92;
+    color: #C8600A;
   }
-  .cp-watchout-row p {
-    max-width: 780px;
-    margin: 0;
+  .cp-pitfall-title {
+    margin: 0 0 12px;
     font-family: var(--font-ui);
     font-size: 16px;
-    line-height: 1.45;
+    font-weight: 700;
+    line-height: 1.35;
     letter-spacing: -0.01em;
     color: #222222;
   }
-  .cp-watchout-row--rich {
-    align-items: start;
+  .cp-pitfall-consequence {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.55;
+    color: #555554;
+    flex: 1;
   }
-  .cp-watchout-title {
-    font-weight: 700;
+  .cp-pitfall-fix {
+    margin-top: 20px;
+    padding: 16px 18px;
+    background: #FDF5EE;
+    border: 1px solid #EDD9C8;
+    border-radius: 6px;
   }
-  .cp-watchout-copy {
-    margin-top: 8px !important;
-    color: #6F6F68 !important;
+  .cp-pitfall-fix .tt-fact-label {
+    display: block;
+    margin-bottom: 8px;
   }
-  .cp-watchout-reco {
-    margin-top: 8px !important;
-    font-size: 14px !important;
-    font-weight: 600;
+  .cp-pitfall-fix p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.55;
+    color: #3A2010;
   }
 
 /* ─────────────────────────────────────────────
