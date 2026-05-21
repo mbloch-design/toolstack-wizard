@@ -1496,18 +1496,11 @@ const ComparePage = () => {
 
           <p className="cp-hero-promise">{heroPromise}</p>
 
-          {/* Verdict ToolTrim */}
-          <div className="cp-hero-contract">
-            <span className="cp-hero-contract-label">
-              {t("Verdict ToolTrim", "ToolTrim verdict")}
-            </span>
-            <p>{heroContract}</p>
-          </div>
-
           {/* Face-à-face duel */}
           <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
             <article className="cp-hero-duel-card">
               <div className="cp-hero-duel-head">
+                <ToolLogo tool={toolA} size={48} className="cp-hero-duel-logo" />
                 <div>
                   {heroPositionA && <p className="cp-hero-duel-position">{heroPositionA}</p>}
                   <h2 className="cp-hero-duel-name">{toolA.name}</h2>
@@ -1516,10 +1509,11 @@ const ComparePage = () => {
               <p className="cp-hero-duel-desc">{bestForA}</p>
             </article>
 
-            <div className="cp-hero-duel-vs" aria-hidden="true">VS</div>
+            <div className="cp-hero-duel-vs" aria-hidden="true"><span>VS</span></div>
 
             <article className="cp-hero-duel-card cp-hero-duel-card--right">
               <div className="cp-hero-duel-head">
+                <ToolLogo tool={toolB} size={48} className="cp-hero-duel-logo" />
                 <div>
                   {heroPositionB && <p className="cp-hero-duel-position">{heroPositionB}</p>}
                   <h2 className="cp-hero-duel-name">{toolB.name}</h2>
@@ -1527,6 +1521,14 @@ const ComparePage = () => {
               </div>
               <p className="cp-hero-duel-desc">{bestForB}</p>
             </article>
+          </div>
+
+          {/* Contrat ToolTrim — after duel for immediate tool recognition */}
+          <div className="cp-hero-contract">
+            <span className="cp-hero-contract-label">
+              {t("Contrat ToolTrim", "ToolTrim contract")}
+            </span>
+            <p>{heroContract}</p>
           </div>
 
           {/* Micro-fiche courte — 3 cellules */}
