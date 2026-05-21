@@ -2,6 +2,42 @@
 
 ---
 
+## 2026-05-21 — Sprint 73 : Comparatif — section critères en matrice de décision
+
+### Objectif
+Transformer la section `#criteres` de chaque page comparatif en vraie matrice 4 colonnes, lisible et sans redondance.
+
+### Corrections
+
+**`src/pages/ComparePage.tsx`**
+- Section `#criteres` : suppression du layout `cp-section-grid` (titre gauche / contenu droite).
+- Remplacement de `cp-score-list / cp-score-row / cp-score-tool / cp-score-level` par une matrice `cp-matrix`.
+- En-têtes de colonnes avec `<ToolLogo size={28} />` + nom outil — plus de répétition dans chaque ligne.
+- Cellules outil : badge `cp-matrix-badge--{level}` + texte — suppression du nom outil dans la cellule.
+- Cellules décision : `data-label` pour labels mobiles via `::before { content: attr(data-label) }`.
+- Intro section ajoutée : "Pas les features les plus visibles…"
+
+**`src/index.css`**
+- Suppression complète `cp-score-list`, `cp-score-row`, `cp-score-title`, `cp-score-decision`, `cp-score-tools`, `cp-score-tool`, `cp-score-tool--winner`, `cp-score-tool-head`, `cp-score-level`, `cp-score-level--advantage/sufficient/context`.
+- Règle partagée `span` conservée uniquement pour `cp-cost-row`, `cp-tipping-panel`, `cp-cost-note`.
+- Ajout bloc `cp-matrix-*` (180 lignes CSS) : header, matrice 4 col, badges, mobile cards.
+- Badges : "Avantage" fond `#222222` blanc ; "Suffisant" outline gris ; "Dépend" transparent.
+- Mobile ≤900px : `cp-matrix-thead` masqué, chaque `cp-matrix-row` → card autonome.
+- Mobile `::before` injecte le nom outil / "Décision ToolTrim" via `content: attr(data-label)`.
+
+**`docs/DESIGN_SYSTEM.md`**
+- Ajout `### Critères décisionnels — Matrice de décision (Sprint 73)`.
+- Tableau badges, structure colonnes, règles logos et données.
+
+### Règles confirmées
+- Noms outils dans les en-têtes, pas dans chaque cellule.
+- Décision = conséquence pratique d'usage, pas doublon du badge.
+- Badges non colorés agressivement (pas de vert saturé).
+- ToolLogo uniquement dans les headers — jamais répété par ligne.
+- Mobile : zéro scroll horizontal, chaque critère = card autonome.
+
+---
+
 ## 2026-05-21 — Sprint 72 : Comparatif — hero logos + VS badge + verdict scannabilité + boutons globaux
 
 ### Objectif

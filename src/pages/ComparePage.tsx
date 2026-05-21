@@ -1615,53 +1615,83 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── 02 Critères décisionnels ─────────────────────────────────────── */}
+      {/* ── 02 Critères décisionnels — matrice de décision ─────────────── */}
       <section id="criteres" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("02 — Critères décisionnels", "02 — Decision criteria")}</span>
-          <div className="cp-section-grid">
-          <div className="cp-section-heading">
+
+          {/* Section header — pleine largeur */}
+          <div className="cp-matrix-header">
+            <span className="cp-eyebrow">{t("02 — Critères décisionnels", "02 — Decision criteria")}</span>
             <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
+            <p className="cp-matrix-intro">
+              {t(
+                "Pas les features les plus visibles. Les critères qui changent vraiment la décision.",
+                "Not the most visible features. The criteria that actually change the decision.",
+              )}
+            </p>
           </div>
-          <div className="cp-section-body">
-          <div className="cp-score-list">
+
+          {/* Matrice comparative — 4 colonnes */}
+          <div className="cp-matrix" role="table" aria-label={t("Matrice de décision", "Decision matrix")}>
+
+            {/* En-têtes de colonnes */}
+            <div className="cp-matrix-thead" role="row">
+              <div className="cp-matrix-th cp-matrix-th--criterion" role="columnheader">
+                {t("Critère", "Criterion")}
+              </div>
+              <div className="cp-matrix-th cp-matrix-th--tool" role="columnheader">
+                <ToolLogo tool={toolA} size={28} className="cp-matrix-th-logo" />
+                <span>{toolA.name}</span>
+              </div>
+              <div className="cp-matrix-th cp-matrix-th--tool" role="columnheader">
+                <ToolLogo tool={toolB} size={28} className="cp-matrix-th-logo" />
+                <span>{toolB.name}</span>
+              </div>
+              <div className="cp-matrix-th cp-matrix-th--decision" role="columnheader">
+                {t("Décision ToolTrim", "ToolTrim decision")}
+              </div>
+            </div>
+
+            {/* Lignes de critères */}
             {content.decisiveCriteria.slice(0, 6).map((criterion) => {
               const levels = getCriterionLevels(criterion, toolA, toolB, lang);
               return (
-                <article key={criterion.title} className="cp-score-row">
-                  <div className="cp-score-main">
-                    <p className="cp-score-title">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
-                    <p className="cp-score-decision">
-                      <span>{t("Décision ToolTrim", "ToolTrim decision")}</span>
-                      {lang === "fr" ? criterion.decision : criterion.decisionEn}
-                    </p>
+                <div key={criterion.title} className="cp-matrix-row" role="row">
+                  <div className="cp-matrix-cell cp-matrix-cell--criterion" role="cell">
+                    <p className="cp-matrix-criterion">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
                   </div>
-                  <div className="cp-score-tools">
-                    <div className={`cp-score-tool${levels.winner === "A" ? " cp-score-tool--winner" : ""}`}>
-                      <div className="cp-score-tool-head">
-                        <span>{toolA.name}</span>
-                        <strong className={`cp-score-level cp-score-level--${levels.toolA}`}>
-                          {getLevelLabel(levels.toolA, lang)}
-                        </strong>
-                      </div>
-                      <p>{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
-                    </div>
-                    <div className={`cp-score-tool${levels.winner === "B" ? " cp-score-tool--winner" : ""}`}>
-                      <div className="cp-score-tool-head">
-                        <span>{toolB.name}</span>
-                        <strong className={`cp-score-level cp-score-level--${levels.toolB}`}>
-                          {getLevelLabel(levels.toolB, lang)}
-                        </strong>
-                      </div>
-                      <p>{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
-                    </div>
+                  <div
+                    className={`cp-matrix-cell cp-matrix-cell--tool${levels.winner === "A" ? " cp-matrix-cell--winner" : ""}`}
+                    role="cell"
+                    data-label={toolA.name}
+                  >
+                    <strong className={`cp-matrix-badge cp-matrix-badge--${levels.toolA}`}>
+                      {getLevelLabel(levels.toolA, lang)}
+                    </strong>
+                    <p className="cp-matrix-text">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
                   </div>
-                </article>
+                  <div
+                    className={`cp-matrix-cell cp-matrix-cell--tool${levels.winner === "B" ? " cp-matrix-cell--winner" : ""}`}
+                    role="cell"
+                    data-label={toolB.name}
+                  >
+                    <strong className={`cp-matrix-badge cp-matrix-badge--${levels.toolB}`}>
+                      {getLevelLabel(levels.toolB, lang)}
+                    </strong>
+                    <p className="cp-matrix-text">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                  </div>
+                  <div
+                    className="cp-matrix-cell cp-matrix-cell--decision"
+                    role="cell"
+                    data-label={t("Décision ToolTrim", "ToolTrim decision")}
+                  >
+                    <p className="cp-matrix-decision">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
+                  </div>
+                </div>
               );
             })}
+
           </div>
-          </div>{/* end cp-section-body */}
-          </div>{/* end cp-section-grid */}
         </div>
       </section>
 

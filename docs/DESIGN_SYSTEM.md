@@ -720,6 +720,54 @@ Mobile ≤900px : header + choice-grid en 1 colonne. Mobile ≤640px : callout f
 - `verdictCardTextA/B` — 1 phrase décisive ; fallback → `verdict.chooseAIf[0]`
 - `verdictWarning` — texte callout anti-doublon ; fallback → `comparison.avoidBothIf[0]`
 
+### Critères décisionnels (`#criteres`) — Matrice de décision (Sprint 73)
+
+**Règle** : zéro répétition des noms outils dans chaque cellule — les en-têtes de colonnes suffisent. La colonne Décision ToolTrim apporte une conséquence d'usage, pas un simple doublon du badge.
+
+**Anti-patterns supprimés** : `cp-score-list`, `cp-score-row`, `cp-score-tool` (cartes imbriquées avec noms répétés), `cp-score-level` (badges verts saturés), layout `cp-section-grid` restreint à 1.6fr.
+
+Structure desktop — 4 colonnes pleine largeur :
+1. `.cp-matrix-header` — eyebrow + titre h2 + intro courte (pleine largeur)
+2. `.cp-matrix` — matrice avec `role="table"` sémantique
+   - `.cp-matrix-thead` — en-têtes : "Critère" | ToolLogo+nom A | ToolLogo+nom B | "Décision ToolTrim"
+   - `.cp-matrix-row` × N — 1 ligne par critère (max 6)
+   - Cellule critère `.cp-matrix-cell--criterion` — nom du critère en 14px/600
+   - Cellule outil `.cp-matrix-cell--tool` — badge + texte 14px ; `data-label={toolName}` pour mobile
+   - Cellule décision `.cp-matrix-cell--decision` — fond `#FAFAF8`, texte conséquence pratique
+
+Structure mobile ≤900px :
+- `.cp-matrix-thead` masqué
+- Chaque `.cp-matrix-row` → carte autonome avec `border-radius: 8px`
+- `.cp-matrix-cell--tool::before` et `::before` injectent le nom via `content: attr(data-label)`
+- Critère en haut sur fond `#F4F4F0`, décision en bas sur fond `#F8F8F4`
+
+```css
+/* Colonnes : critère 0.85fr | outil A 1.15fr | outil B 1.15fr | décision 1.1fr */
+.cp-matrix-thead, .cp-matrix-row {
+  grid-template-columns: minmax(180px, 0.85fr) minmax(230px, 1.15fr) minmax(230px, 1.15fr) minmax(250px, 1.1fr);
+}
+.cp-matrix-th--tool { display: flex; align-items: center; gap: 10px; border-left: 1px solid #DADAD4; }
+.cp-matrix-cell { padding: 22px 20px; }
+.cp-matrix-cell--decision { border-left: 1px solid #DADAD4; background: #FAFAF8; }
+.cp-matrix-cell--winner { background: #F6F6F2; }
+```
+
+Badges :
+| Classe | Style | Quand |
+|---|---|---|
+| `.cp-matrix-badge--advantage` | fond `#222222`, texte blanc | outil gagne sur ce critère |
+| `.cp-matrix-badge--sufficient` | outline `#DADAD4`, texte `#6F6F68` | outil correct mais pas dominant |
+| `.cp-matrix-badge--context` | transparent, texte `#9A9A92` | égalité ou dépend du contexte |
+
+**Logos** : `<ToolLogo size={28} />` uniquement dans l'en-tête de colonne. Ne pas répéter dans chaque cellule.
+
+**Données** (`CompareDecisiveCriterion`) :
+- `title` / `titleEn` — nom du critère
+- `toolA` / `toolAEn` — texte cellule outil A
+- `toolB` / `toolBEn` — texte cellule outil B
+- `decision` / `decisionEn` — conséquence pratique (max 2 lignes)
+- Badge déduit automatiquement via `getCriterionLevels()` depuis le texte de décision
+
 ### Coût réel (`cp-cost-*`)
 - ID : `#cout` — positionné avant Features pour ancrer la réalité budgétaire.
 - Compare : plan gratuit, quand payer, coût caché.

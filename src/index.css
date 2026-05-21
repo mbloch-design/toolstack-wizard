@@ -7946,37 +7946,7 @@
   }
 
   /* ── Usage scores ────────────────────────────────────────── */
-  .cp-score-list {
-    margin-top: 28px;
-    border-top: 1px dotted rgba(34, 34, 34, 0.36);
-  }
-  .cp-score-row {
-    display: grid;
-    grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
-    gap: 32px;
-    align-items: start;
-    padding: 26px 0;
-    border-bottom: 1px dotted rgba(34, 34, 34, 0.36);
-  }
-  .cp-score-title {
-    margin: 0;
-    font-family: var(--font-brand);
-    font-size: 20px;
-    line-height: 1.15;
-    letter-spacing: -0.04em;
-    font-weight: 600;
-    color: #222222;
-  }
-  .cp-score-decision {
-    margin: 14px 0 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
-    color: #6F6F68;
-  }
-  .cp-score-decision span,
-  .cp-score-tool-head span,
+  /* Shared micro-label rule — cost, tipping, cost-note columns */
   .cp-cost-row span,
   .cp-tipping-panel span,
   .cp-cost-note span {
@@ -7989,73 +7959,174 @@
     text-transform: uppercase;
     color: #9A9A92;
   }
-  .cp-score-tools {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
+
+  /* ── Decision matrix — Critères décisionnels (Sprint 73) ──────── */
+  .cp-matrix-header {
+    margin-bottom: 32px;
   }
-  .cp-score-tool {
-    min-width: 0;
-    background: #FFFFFF;
+  .cp-matrix-header .cp-eyebrow { margin-bottom: 12px; }
+  .cp-matrix-header .cp-title { margin-bottom: 0; max-width: none; }
+  .cp-matrix-intro {
+    margin: 12px 0 0;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #9A9A92;
+  }
+
+  /* Matrix wrapper */
+  .cp-matrix {
+    width: 100%;
     border: 1px solid #DADAD4;
     border-radius: 8px;
-    padding: 18px;
+    overflow: hidden;
   }
-  .cp-score-tool--winner {
-    border-color: #222222;
+
+  /* Column widths — shared by thead + body rows */
+  .cp-matrix-thead,
+  .cp-matrix-row {
+    display: grid;
+    grid-template-columns:
+      minmax(180px, 0.85fr)
+      minmax(230px, 1.15fr)
+      minmax(230px, 1.15fr)
+      minmax(250px, 1.1fr);
   }
-  .cp-score-tool-head {
+
+  /* Header row */
+  .cp-matrix-thead {
+    background: #F4F4F0;
+    border-bottom: 2px solid #DADAD4;
+  }
+  .cp-matrix-th {
+    padding: 14px 20px;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+  }
+  .cp-matrix-th--tool {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 12px;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: #222222;
+    border-left: 1px solid #DADAD4;
   }
-  .cp-score-level {
-    flex-shrink: 0;
+  .cp-matrix-th--decision {
+    border-left: 1px solid #DADAD4;
+  }
+  .cp-matrix-th-logo { flex-shrink: 0; }
+
+  /* Data rows */
+  .cp-matrix-row { border-bottom: 1px solid #DADAD4; }
+  .cp-matrix-row:last-child { border-bottom: none; }
+
+  .cp-matrix-cell {
+    padding: 22px 20px;
+    min-width: 0;
+  }
+  .cp-matrix-cell--tool { border-left: 1px solid #DADAD4; }
+  .cp-matrix-cell--decision {
+    border-left: 1px solid #DADAD4;
+    background: #FAFAF8;
+  }
+  .cp-matrix-cell--winner { background: #F6F6F2; }
+
+  /* Criterion label */
+  .cp-matrix-criterion {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: #222222;
+  }
+
+  /* Badges */
+  .cp-matrix-badge {
     display: inline-flex;
     align-items: center;
-    min-height: 24px;
-    padding: 0 9px;
-    border: 1px solid #DADAD4;
+    height: 22px;
+    padding: 0 8px;
     border-radius: 999px;
     font-family: var(--font-ui);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #222222;
-    background: #F8F8F4;
+    margin-bottom: 10px;
   }
-  .cp-score-level--advantage {
-    background: #D1FAE5;
-    border-color: #D1FAE5;
-    color: #065F46;
-  }
-  .cp-score-level--sufficient {
-    background: #F3F3EE;
-    border-color: #F3F3EE;
+  .cp-matrix-badge--advantage { background: #222222; color: #FFFFFF; }
+  .cp-matrix-badge--sufficient {
+    background: transparent;
+    border: 1px solid #DADAD4;
     color: #6F6F68;
   }
-  .cp-score-level--context {
+  .cp-matrix-badge--context {
     background: transparent;
+    border: 1px solid transparent;
+    color: #9A9A92;
   }
-  .cp-score-tool p {
+
+  /* Cell body text */
+  .cp-matrix-text,
+  .cp-matrix-decision {
     margin: 0;
     font-family: var(--font-ui);
     font-size: 14px;
-    line-height: 1.45;
-    color: #6F6F68;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #444440;
   }
+
+  /* Mobile ≤ 900px: each row becomes a standalone card */
   @media (max-width: 900px) {
-    .cp-score-row {
-      grid-template-columns: 1fr;
-      gap: 18px;
+    .cp-matrix { border: none; border-radius: 0; overflow: visible; }
+    .cp-matrix-thead { display: none; }
+    .cp-matrix-row {
+      display: block;
+      border: 1px solid #DADAD4;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .cp-matrix-row:last-child { border-bottom: 1px solid #DADAD4; }
+    .cp-matrix-cell {
+      border-left: none !important;
+      border-bottom: 1px solid #DADAD4;
+      padding: 16px 20px;
+    }
+    .cp-matrix-cell:last-child { border-bottom: none; }
+    .cp-matrix-cell--criterion { background: #F4F4F0; }
+    .cp-matrix-cell--decision { background: #F8F8F4; }
+    .cp-matrix-cell--winner { background: #FFFFFF; }
+    /* Tool name + decision label injected via data-label attribute */
+    .cp-matrix-cell--tool::before,
+    .cp-matrix-cell--decision::before {
+      content: attr(data-label);
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9A9A92;
+      margin-bottom: 8px;
     }
   }
-  @media (max-width: 560px) { .cp-score-tools { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) {
+    .cp-matrix-cell { padding: 14px 16px; }
+  }
 
-  /* (cp-verdict-grid / cp-verdict-col removed — replaced by cp-decision-columns) */
+  /* (cp-score-* removed Sprint 73 — replaced by cp-matrix-*) */
 
   /* ── Decision table ─────────────────────────────────────────── */
   .cp-table {
