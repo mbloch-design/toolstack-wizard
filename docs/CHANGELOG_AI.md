@@ -2,6 +2,37 @@
 
 ---
 
+## 2026-05-21 — Sprint 75 : Comparatif — section seuil de bascule en section signature
+
+### Objectif
+Transformer `#seuil` en section pleine largeur avec carte directionnelle (PAR DÉFAUT → PASSE À L'AUTRE SI), 3 règles numérotées et CTA sélecteur.
+
+### Corrections
+
+**`src/pages/ComparePage.tsx`**
+- Suppression du layout `cp-section-grid` pour la section seuil.
+- Header migré vers `cp-matrix-header` + `cp-matrix-intro` éditoriale fixe.
+- `cp-tipping-panel` (2 cols) remplacé par `cp-tipping-card` (grille `1fr 48px 1fr`) avec SVG flèche centrale.
+  - Gauche : `cp-tipping-card-state` — label `tt-fact-label` "Par défaut" + `cp-tipping-card-text`.
+  - Centre : `cp-tipping-card-arrow` — SVG `→` rotatif sur mobile.
+  - Droite : `cp-tipping-card-state--switch` — bg `#F8F8F4`, bordure gauche.
+- `cp-tipping-signals` (liste à tirets) remplacé par `cp-tipping-rules` : `<ol>` max 3 items, chaque item `cp-tipping-rule-num` + `<p>`.
+- `cp-tipping-cta` ajouté avec `tt-button-primary` → `/selector?from={slugPair}`.
+
+**`src/index.css`**
+- Suppression `.cp-tipping-panel span` (règle micro-label partagée — dernière occurrence, retirée Sprint 75).
+- Suppression `.cp-tipping-panel`, `.cp-tipping-panel div`, `.cp-tipping-panel p`, `.cp-tipping-panel div + div`.
+- Suppression `.cp-tipping-signals`, `.cp-tipping-signals li`, `.cp-tipping-signals li::before`.
+- Ajout `.cp-tipping-card`, `.cp-tipping-card-state`, `.cp-tipping-card-state--switch`, `.cp-tipping-card-arrow`, `.cp-tipping-card-text`.
+- Ajout `.cp-tipping-rules`, `.cp-tipping-rules-heading`, `.cp-tipping-rules-list`, `.cp-tipping-rule`, `.cp-tipping-rule-num`.
+- Ajout `.cp-tipping-cta` + responsive ≤640px.
+- Mobile ≤768px : carte stacked, flèche pivotée 90°.
+
+**`docs/DESIGN_SYSTEM.md`**
+- Section `cp-tipping-*` mise à jour avec Sprint 75 (structure carte + règles + CTA).
+
+---
+
 ## 2026-05-21 — Sprint 74 : Comparatif — section coût en matrice financière
 
 ### Objectif

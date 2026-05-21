@@ -1839,29 +1839,59 @@ const ComparePage = () => {
       {/* ── 05 Seuil de bascule ───────────────────────────────────────────── */}
       <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("05 — Seuil de bascule", "05 — Tipping point")}</span>
-          <div className="cp-section-grid">
-          <div className="cp-section-heading">
+          <div className="cp-matrix-header">
+            <span className="cp-eyebrow">{t("05 — Seuil de bascule", "05 — Tipping point")}</span>
             <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
+            <p className="cp-matrix-intro">
+              {t(
+                "Un seul critère suffit à faire basculer le choix. Voici la logique.",
+                "One criterion is enough to tip the decision. Here's the logic."
+              )}
+            </p>
           </div>
-          <div className="cp-section-body">
-          <div className="cp-tipping-panel">
-            <div>
-              <span>{t("Par défaut", "Default")}</span>
-              <p>{lang === "fr" ? content.tippingPoint.defaultChoice : content.tippingPoint.defaultChoiceEn}</p>
+
+          {/* Directional flow card */}
+          <div className="cp-tipping-card">
+            <div className="cp-tipping-card-state">
+              <span className="tt-fact-label">{t("Par défaut", "Default")}</span>
+              <p className="cp-tipping-card-text">
+                {lang === "fr" ? content.tippingPoint.defaultChoice : content.tippingPoint.defaultChoiceEn}
+              </p>
             </div>
-            <div>
-              <span>{t("Passe à l'autre si", "Switch when")}</span>
-              <p>{lang === "fr" ? content.tippingPoint.switchWhen : content.tippingPoint.switchWhenEn}</p>
+            <div className="cp-tipping-card-arrow" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div className="cp-tipping-card-state cp-tipping-card-state--switch">
+              <span className="tt-fact-label">{t("Passe à l'autre si", "Switch when")}</span>
+              <p className="cp-tipping-card-text">
+                {lang === "fr" ? content.tippingPoint.switchWhen : content.tippingPoint.switchWhenEn}
+              </p>
             </div>
           </div>
-          <ul className="cp-tipping-signals">
-            {(lang === "fr" ? content.tippingPoint.signals : content.tippingPoint.signalsEn).map((signal) => (
-              <li key={signal}>{signal}</li>
-            ))}
-          </ul>
-          </div>{/* end cp-section-body */}
-          </div>{/* end cp-section-grid */}
+
+          {/* Numbered rules */}
+          {(lang === "fr" ? content.tippingPoint.signals : content.tippingPoint.signalsEn).length > 0 && (
+            <div className="cp-tipping-rules">
+              <span className="tt-fact-label cp-tipping-rules-heading">{t("À retenir", "Key rules")}</span>
+              <ol className="cp-tipping-rules-list">
+                {(lang === "fr" ? content.tippingPoint.signals : content.tippingPoint.signalsEn).slice(0, 3).map((signal, i) => (
+                  <li key={i} className="cp-tipping-rule">
+                    <span className="cp-tipping-rule-num">{String(i + 1).padStart(2, "0")}</span>
+                    <p>{signal}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          {/* CTA */}
+          <div className="cp-tipping-cta">
+            <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-primary">
+              {t("Vérifier ma stack →", "Check my stack →")}
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -799,10 +799,16 @@ Lignes recommandées (max 5) :
 
 **Callout** `.cp-cost-callout` — style identique à `.compare-verdict-callout` (fond `#EDEDE8`, border `#DADAD4`, radius 8px). Contient `tt-fact-label` + `tt-body-large`.
 
-### Seuil de bascule (`cp-tipping-*`)
+### Seuil de bascule (`cp-tipping-*`) — Sprint 75
 - ID : `#seuil` — positionné après Features.
-- Structure : Par défaut + Passe à l'autre si + signaux concrets en liste éditoriale.
-- Les signaux longs ne doivent pas être rendus en pills. Utiliser une liste simple avec tiret fin pour les phrases de plus de 5 mots.
+- Layout pleine largeur (pas de `cp-section-grid`). Header : `cp-matrix-header` + intro éditoriale fixe.
+- **Carte directionnelle** `cp-tipping-card` : grille `1fr 48px 1fr` (desktop) → stacked (mobile ≤768px).
+  - Gauche `.cp-tipping-card-state` : label `tt-fact-label` "Par défaut" + `cp-tipping-card-text`.
+  - Centre `.cp-tipping-card-arrow` : SVG flèche →, tourne 90° sur mobile.
+  - Droite `.cp-tipping-card-state--switch` : bg `#F8F8F4`, border-left, label "Passe à l'autre si".
+- **Règles numérotées** `cp-tipping-rules` : max 3 items de `signals[]`, chaque li = `cp-tipping-rule-num` + `<p>`. Fond `#F4F4F0` sur le numéro.
+- **CTA** `.cp-tipping-cta` → `tt-button-primary` → `/selector?from={slugPair}`.
+- Aucune puce/tiret — `cp-tipping-signals` supprimé. `cp-tipping-panel span` supprimé.
 
 ### Points de vigilance (`cp-watchout-*`)
 - ID : `#vigilance`.
@@ -830,9 +836,9 @@ Lignes recommandées (max 5) :
 - Les pièges doivent être spécifiques au comparatif, pas des conseils génériques sur les SaaS.
 - Chaque point riche peut contenir : erreur, conséquence, recommandation ToolTrim.
 
-### Seuil de bascule (`cp-tipping-*`)
+### Seuil de bascule (`cp-tipping-*`) — Sprint 75
 - Rôle : montrer quand l'outil recommandé par défaut cesse d'être le meilleur choix.
-- Structure : `Par défaut`, `Passe à l'autre si`, puis signaux concrets en chips.
+- Structure : carte directionnelle (Par défaut → Passe à l'autre si) + max 3 règles numérotées + CTA.
 - Ne pas utiliser de seuil chiffré inventé si la donnée n'existe pas.
 
 ### Coût réel (`cp-cost-*`)

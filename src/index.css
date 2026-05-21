@@ -7946,17 +7946,7 @@
   }
 
   /* ── Usage scores ────────────────────────────────────────── */
-  /* Shared micro-label rule — tipping panel only (cp-cost-row / cp-cost-note removed Sprint 74) */
-  .cp-tipping-panel span {
-    display: block;
-    margin-bottom: 6px;
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #9A9A92;
-  }
+  /* (cp-tipping-panel span shared rule removed Sprint 75) */
 
   /* ── Decision matrix — Critères décisionnels (Sprint 73) ──────── */
   .cp-matrix-header {
@@ -8296,32 +8286,37 @@
   }
   .cp-price-plans strong { color: #222222; font-weight: 600; }
 
-  /* ── Tipping point + real cost ───────────────────────────── */
-  .cp-tipping-panel {
+  /* ── Tipping point — Sprint 75 ───────────────────────────── */
+  /* (cp-tipping-panel, cp-tipping-signals removed Sprint 75) */
+
+  /* Directional flow card */
+  .cp-tipping-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 48px 1fr;
     gap: 0;
-    margin-top: 28px;
     background: #FFFFFF;
     border: 1px solid #DADAD4;
     border-radius: 8px;
     overflow: hidden;
   }
-  @media (max-width: 767px) { .cp-tipping-panel { grid-template-columns: 1fr; } }
-  .cp-tipping-panel div {
-    padding: 24px;
+  .cp-tipping-card-state {
+    padding: 28px 32px;
   }
-  .cp-tipping-panel div + div {
+  .cp-tipping-card-state--switch {
     border-left: 1px solid #DADAD4;
+    background: #F8F8F4;
   }
-  @media (max-width: 767px) {
-    .cp-tipping-panel div + div {
-      border-left: none;
-      border-top: 1px solid #DADAD4;
-    }
+  .cp-tipping-card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #DADAD4;
+    border-right: 1px solid #DADAD4;
+    color: #9A9A92;
+    flex-shrink: 0;
   }
-  .cp-tipping-panel p {
-    margin: 0;
+  .cp-tipping-card-text {
+    margin: 8px 0 0;
     font-family: var(--font-ui);
     font-size: 17px;
     line-height: 1.45;
@@ -8329,30 +8324,88 @@
     font-weight: 500;
     color: #222222;
   }
-  .cp-tipping-signals {
+  @media (max-width: 768px) {
+    .cp-tipping-card {
+      grid-template-columns: 1fr;
+    }
+    .cp-tipping-card-arrow {
+      border-left: none;
+      border-right: none;
+      border-top: 1px solid #DADAD4;
+      border-bottom: 1px solid #DADAD4;
+      padding: 12px 0;
+      transform: rotate(90deg);
+    }
+    .cp-tipping-card-state--switch {
+      border-left: none;
+      border-top: 1px solid #DADAD4;
+    }
+    .cp-tipping-card-state {
+      padding: 22px 24px;
+    }
+  }
+
+  /* Numbered rules */
+  .cp-tipping-rules {
+    margin-top: 28px;
+  }
+  .cp-tipping-rules-heading {
+    display: block;
+    margin-bottom: 16px;
+  }
+  .cp-tipping-rules-list {
     display: grid;
-    gap: 10px;
-    margin: 20px 0 0;
+    gap: 0;
+    margin: 0;
     padding: 0;
     list-style: none;
+    border: 1px solid #DADAD4;
+    border-radius: 8px;
+    overflow: hidden;
   }
-  .cp-tipping-signals li {
+  .cp-tipping-rule {
     display: grid;
-    grid-template-columns: 18px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: 48px 1fr;
+    gap: 0;
     align-items: start;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
+    border-bottom: 1px solid #DADAD4;
+    background: #FFFFFF;
+  }
+  .cp-tipping-rule:last-child { border-bottom: none; }
+  .cp-tipping-rule-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #9A9A92;
+    border-right: 1px solid #DADAD4;
+    background: #F4F4F0;
+  }
+  .cp-tipping-rule p {
+    margin: 0;
+    padding: 16px 20px;
     font-family: var(--font-ui);
     font-size: 14px;
-    line-height: 1.45;
-    color: #222222;
+    line-height: 1.5;
+    color: #444440;
   }
-  .cp-tipping-signals li::before {
-    content: "–";
-    color: #9A9A92;
+  @media (max-width: 640px) {
+    .cp-tipping-rule-num { min-width: 40px; }
+  }
+
+  /* CTA row */
+  .cp-tipping-cta {
+    display: flex;
+    align-items: center;
+    margin-top: 28px;
+  }
+  @media (max-width: 640px) {
+    .cp-tipping-cta { flex-direction: column; align-items: stretch; }
+    .cp-tipping-cta .tt-button-primary { justify-content: center; }
   }
   /* ── Cost section callout — recommandation finale (Sprint 74) ── */
   .cp-cost-callout {
