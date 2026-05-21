@@ -166,10 +166,15 @@ function sitemapPlugin(): Plugin {
           urls.push(`  <url>\n    <loc>${enLoc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
         };
 
+        // Helper: check if a path matches any exclusion pattern
+        const isExcluded = (path: string) =>
+          EXCLUDE_SITEMAP_PATTERNS.some((pat) => path.includes(pat));
+
         // ── Static pages ──────────────────────────────────────────────────────
         for (const page of STATIC_PAGES) {
           const frPath = page ? `/fr/${page}` : `/fr`;
           const enPath = page ? `/en/${page}` : `/en`;
+          if (isExcluded(frPath)) continue; // e.g. /methodology excluded intentionally
           const prio = page === "" ? "1.0" : page === "tools" ? "0.9" : "0.7";
           const freq = page === "" ? "daily" : "weekly";
           addPair(`${BASE}${frPath}`, `${BASE}${enPath}`, freq, prio);

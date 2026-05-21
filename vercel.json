@@ -37,6 +37,8 @@
     }
   ],
   "redirects": [
+    { "source": "/fr/methodology", "destination": "/fr/transparency", "permanent": true },
+    { "source": "/en/methodology", "destination": "/en/transparency", "permanent": true },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.tooltrim.com" }],
