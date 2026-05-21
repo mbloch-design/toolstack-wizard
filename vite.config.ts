@@ -403,13 +403,21 @@ function staticPrerenderPlugin(): Plugin {
           }
         }
 
-        // --- Prerender tool sub-pages: /prix, /alternatives, /faq ---
+        // --- Prerender tool sub-pages: /prix, /alternatives, /faq, /avis ---
+        // EN path overrides for FR-only slug names
+        const EN_SUB_PATH: Record<string, string> = { prix: "pricing", avis: "reviews" };
+
         type SubPageDef = {
           path: string;
-          buildTitle: (name: string, isFr: boolean) => string;
-          buildDesc: (name: string, price: number | null, isFr: boolean) => string;
-          buildBody: (name: string, price: number | null, isFr: boolean) => string;
+          buildTitle: (name: string, isFr: boolean, tool: any) => string;
+          buildDesc: (name: string, price: number | null, isFr: boolean, tool: any) => string;
+          buildBody: (name: string, price: number | null, isFr: boolean, tool: any) => string;
         };
+
+        // Build a slug→name lookup for enriching alternative names
+        const slugToName: Record<string, string> = {};
+        for (const t of tools) { slugToName[t.slug || t.id] = t.name || t.slug || t.id; }
+
         const TOOL_SUB_PAGES: SubPageDef[] = [
           {
             path: "prix",
@@ -419,9 +427,14 @@ function staticPrerenderPlugin(): Plugin {
             buildDesc: (name, price, isFr) => isFr
               ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison — mis à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
               : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown — updated 2026. Is it worth €${price}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
-            buildBody: (name, price, isFr) => isFr
-              ? `Retrouvez tous les plans et tarifs de ${name}${price ? ` (à partir de ${price}€/mois)` : ""} sur ToolTrim. Analyse indépendante du rapport qualité-prix et des alternatives moins chères.`
-              : `Find all ${name} plans and pricing${price ? ` (from €${price}/month)` : ""} on ToolTrim. Independent analysis of value for money and cheaper alternatives.`,
+            buildBody: (name, price, isFr, tool) => {
+              const v5 = tool.pricing_v5;
+              const planNote = v5?.compare_plan_name ? (isFr ? ` (plan ${v5.compare_plan_name})` : ` (${v5.compare_plan_name} plan)`) : "";
+              const caution = v5?.cautions?.[0] ? ` ${v5.cautions[0]}` : "";
+              return isFr
+                ? `Tous les plans et tarifs de ${name}${price ? ` : à partir de ${price}€/mois${planNote}` : " : gratuit ou freemium"}. ${caution || `Prix vérifié par ToolTrim — analyse du rapport qualité-prix pour freelances.`}`
+                : `All ${name} plans and pricing${price ? `: from €${price}/month${planNote}` : ": free or freemium"}. ${caution || `Price verified by ToolTrim — value analysis for freelancers.`}`;
+            },
           },
           {
             path: "alternatives",
@@ -431,9 +444,17 @@ function staticPrerenderPlugin(): Plugin {
             buildDesc: (name, _price, isFr) => isFr
               ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées — mise à jour 2026.`
               : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options — updated 2026.`,
-            buildBody: (name, _price, isFr) => isFr
-              ? `Alternatives à ${name} sélectionnées par ToolTrim : comparaison des fonctionnalités, des prix et du positionnement pour chaque profil freelance.`
-              : `${name} alternatives selected by ToolTrim: feature comparison, pricing and positioning for every freelance profile.`,
+            buildBody: (name, _price, isFr, tool) => {
+              const altIds: string[] = tool.alternatives || [];
+              const altNames = altIds.slice(0, 5).map((id: string) => slugToName[id] || id).filter(Boolean);
+              const altList = altNames.length > 0
+                ? (isFr ? ` Principales alternatives : ${altNames.join(", ")}.` : ` Top alternatives: ${altNames.join(", ")}.`)
+                : "";
+              const freeAlt = tool.freeAlternative ? (isFr ? ` Alternative gratuite : ${tool.freeAlternative}.` : ` Free alternative: ${tool.freeAlternative}.`) : "";
+              return isFr
+                ? `Alternatives à ${name} sélectionnées par ToolTrim : comparaison des fonctionnalités, prix et positionnement pour chaque profil freelance.${altList}${freeAlt}`
+                : `${name} alternatives selected by ToolTrim: feature, pricing and positioning comparison for every freelance profile.${altList}${freeAlt}`;
+            },
           },
           {
             path: "faq",
@@ -443,9 +464,39 @@ function staticPrerenderPlugin(): Plugin {
             buildDesc: (name, _price, isFr) => isFr
               ? `Toutes les questions fréquentes sur ${name} : prix, plans, alternatives, intégrations et conseils d'utilisation — réponses ToolTrim 2026.`
               : `All frequently asked questions about ${name}: pricing, plans, alternatives, integrations and usage tips — ToolTrim answers 2026.`,
-            buildBody: (name, _price, isFr) => isFr
-              ? `FAQ sur ${name} par ToolTrim : combien ça coûte, quelles alternatives, comment annuler, est-ce que ça vaut le coup pour un freelance ?`
-              : `${name} FAQ by ToolTrim: how much does it cost, what are the alternatives, how to cancel, is it worth it for a freelancer?`,
+            buildBody: (name, price, isFr, tool) => {
+              const threshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
+              const soloNote = (isFr ? tool.soloRelevance : null) || "";
+              const thresholdPart = threshold ? ` ${threshold}` : "";
+              const soloPart = soloNote ? ` ${soloNote}` : "";
+              return isFr
+                ? `FAQ ToolTrim sur ${name} : combien ça coûte${price ? ` (${price}€/mois)` : ""}, quelles alternatives, comment annuler.${thresholdPart}${soloPart}`
+                : `ToolTrim FAQ for ${name}: how much does it cost${price ? ` (€${price}/month)` : ""}, what are the alternatives, how to cancel.${thresholdPart}`;
+            },
+          },
+          {
+            path: "avis",
+            buildTitle: (name, isFr) => isFr
+              ? `Avis ${name} 2026 : Note ToolTrim & retours d'expérience | ToolTrim`
+              : `${name} Reviews 2026: ToolTrim Rating & User Feedback | ToolTrim`,
+            buildDesc: (name, _price, isFr, tool) => {
+              const short = (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || "";
+              const excerpt = short.split(/[.!?]/)[0]?.trim() || "";
+              const part = excerpt.length > 30 ? `${excerpt}. ` : "";
+              return isFr
+                ? `${part}Avis indépendant sur ${name} : points forts, points faibles, rapport qualité-prix et verdict ToolTrim — mis à jour 2026.`
+                : `${part}Independent review of ${name}: pros, cons, value for money and ToolTrim verdict — updated 2026.`;
+            },
+            buildBody: (name, price, isFr, tool) => {
+              const threshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
+              const pros = (isFr ? tool.pros : tool.prosEn || tool.pros) || [];
+              const firstPro = Array.isArray(pros) && pros[0] ? String(pros[0]) : "";
+              const proPart = firstPro ? (isFr ? ` Point fort : ${firstPro}.` : ` Top strength: ${firstPro}.`) : "";
+              const thresholdPart = threshold ? ` Verdict : ${threshold}` : "";
+              return isFr
+                ? `Avis ToolTrim sur ${name} : analyse indépendante des fonctionnalités, du prix${price ? ` (${price}€/mois)` : ""} et de la valeur réelle pour freelances et indépendants.${proPart}${thresholdPart}`
+                : `ToolTrim review of ${name}: independent analysis of features, pricing${price ? ` (€${price}/month)` : ""} and real value for freelancers and solopreneurs.${proPart}${thresholdPart}`;
+            },
           },
         ];
 
@@ -457,14 +508,14 @@ function staticPrerenderPlugin(): Plugin {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             for (const sub of TOOL_SUB_PAGES) {
-              const localizedPath = sub.path === "prix" && !isFr ? "pricing" : sub.path;
+              const localizedPath = !isFr && EN_SUB_PATH[sub.path] ? EN_SUB_PATH[sub.path] : sub.path;
               const url      = `${BASE}/${lang}/tool/${slug}/${localizedPath}`;
               const frUrl    = `${BASE}/fr/tool/${slug}/${sub.path}`;
-              const enUrl    = `${BASE}/en/tool/${slug}/${sub.path === "prix" ? "pricing" : sub.path}`;
+              const enUrl    = `${BASE}/en/tool/${slug}/${EN_SUB_PATH[sub.path] ?? sub.path}`;
               const mainUrl  = `${BASE}/${lang}/tool/${slug}`;
-              const title    = sub.buildTitle(name, isFr);
-              const desc     = sub.buildDesc(name, price, isFr);
-              const bodyText = sub.buildBody(name, price, isFr);
+              const title    = sub.buildTitle(name, isFr, tool);
+              const desc     = sub.buildDesc(name, price, isFr, tool);
+              const bodyText = sub.buildBody(name, price, isFr, tool);
 
               // BreadcrumbList for sub-page
               const breadcrumb = {
@@ -478,8 +529,15 @@ function staticPrerenderPlugin(): Plugin {
                 ],
               };
 
-              // FAQPage schema — only for /faq sub-page, injected in static HTML
+              // FAQPage schema — /faq sub-page only, injected in static HTML
               // so Google's first-pass crawler (no JS) can validate it
+              const verdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
+              const altNames = (tool.alternatives || []).slice(0, 3)
+                .map((id: string) => slugToName[id] || id).filter(Boolean);
+              const altAnswer = altNames.length > 0
+                ? (isFr ? `Les principales alternatives à ${name} sont : ${altNames.join(", ")}.` : `The main alternatives to ${name} are: ${altNames.join(", ")}.`)
+                : (isFr ? `ToolTrim référence les meilleures alternatives à ${name} avec comparaison des prix et fonctionnalités.` : `ToolTrim lists the best alternatives to ${name} with price and feature comparisons.`);
+
               const faqSchema = sub.path === "faq" ? {
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
@@ -487,7 +545,10 @@ function staticPrerenderPlugin(): Plugin {
                   {
                     "@type": "Question",
                     name: isFr ? `À quoi sert ${name} ?` : `What is ${name} used for?`,
-                    acceptedAnswer: { "@type": "Answer", text: tool.shortDescription || tool.short_description || `${name} is a SaaS tool.` },
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || `${name} is a SaaS tool.`,
+                    },
                   },
                   {
                     "@type": "Question",
@@ -501,13 +562,18 @@ function staticPrerenderPlugin(): Plugin {
                   },
                   {
                     "@type": "Question",
-                    name: isFr ? `Existe-t-il des alternatives à ${name} ?` : `Are there alternatives to ${name}?`,
+                    name: isFr ? `${name} vaut-il son prix ?` : `Is ${name} worth the price?`,
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: isFr
-                        ? `Oui, ToolTrim référence les meilleures alternatives à ${name} avec comparaison des prix et fonctionnalités.`
-                        : `Yes, ToolTrim lists the best alternatives to ${name} with price and feature comparisons.`,
+                      text: verdictThreshold || (isFr
+                        ? `Cela dépend de votre usage. Consultez notre verdict complet sur la page principale de ${name}.`
+                        : `It depends on your usage. See our full verdict on ${name}'s main page.`),
                     },
+                  },
+                  {
+                    "@type": "Question",
+                    name: isFr ? `Quelles sont les meilleures alternatives à ${name} ?` : `What are the best alternatives to ${name}?`,
+                    acceptedAnswer: { "@type": "Answer", text: altAnswer },
                   },
                 ],
               } : null;
@@ -1106,7 +1172,7 @@ function staticPrerenderPlugin(): Plugin {
         html404 = html404.replace("</head>", `    ${meta404}\n  </head>`);
         fs.writeFileSync(path.resolve(distDir, "404.html"), html404, "utf-8");
 
-        const subPageCount = tools.length * 2 * 3; // 3 sub-pages × 2 langs
+        const subPageCount = tools.length * 2 * 4; // 4 sub-pages (prix, alternatives, faq, avis) × 2 langs
         const guidesCount = allPostsData.length;
         console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${COMPARISONS_PRERENDER.length * 2} comparisons + ${guidesCount} guide pages (Article + FAQPage) + 404.html`);
       } catch (e) {
