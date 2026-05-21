@@ -656,6 +656,50 @@
   .tt-tool-logo-xl  { width: 64px; height: 64px; min-width: 64px; min-height: 64px; flex-shrink: 0; }
 
   /* ─────────────────────────────────────────────
+     GLOBAL BUTTONS
+     Use these site-wide instead of page-specific
+     button styles. Never create a local .foo-btn.
+  ───────────────────────────────────────────── */
+  .tt-button-primary {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 40px;
+    padding: 0 18px;
+    background: #222222;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .tt-button-primary:hover { background: #3A3A38; }
+  .tt-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 40px;
+    padding: 0 18px;
+    background: transparent;
+    border: 1.5px solid #222222;
+    border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: #222222;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .tt-button-secondary:hover { background: #222222; color: #FFFFFF; }
+
+  /* ─────────────────────────────────────────────
      LAYOUT PRIMITIVES — reusable containers
      Use these instead of page-specific equivalents
      to keep spacing & width consistent site-wide.
@@ -7841,64 +7885,46 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
   }
   .compare-verdict-choice {
     border: 1px solid var(--color-border, #DADAD4);
     border-radius: 8px;
-    padding: 32px;
-    background: transparent;
+    padding: 28px 32px;
+    background: #FFFFFF;
   }
-  .compare-verdict-choice .tt-fact-label { margin-bottom: 14px; }
-  .compare-verdict-choice-title { margin: 0 0 10px; }
-  .compare-verdict-choice-title { font-size: 18px; line-height: 1.25; }
-  .compare-verdict-choice-body { margin: 0; max-width: 480px; }
-
-  /* Full-width warning band */
-  .compare-verdict-warning {
-    border-top: 1px solid var(--color-border, #DADAD4);
-    border-bottom: 1px solid var(--color-border, #DADAD4);
-    padding: 28px 0;
+  /* Card head: logo + tool name in a flex row */
+  .compare-verdict-choice-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
   }
-  .compare-verdict-warning .tt-fact-label { margin-bottom: 12px; }
-  .compare-verdict-warning .tt-body-large { margin: 0; color: #444444; }
+  .compare-verdict-choice-logo { flex-shrink: 0; }
+  .compare-verdict-choice-head .tt-fact-label { margin-bottom: 0; }
+  .compare-verdict-choice-title { margin: 0 0 10px; font-size: 18px; line-height: 1.25; }
+  .compare-verdict-choice-body { margin: 0; max-width: 480px; color: #444440; }
 
-  /* Secondary CTA below warning band */
-  .compare-verdict-cta {
+  /* Callout box: anti-doublon warning + CTA */
+  .compare-verdict-callout {
+    padding: 28px 32px;
+    background: #EDEDE8;
+    border: 1px solid var(--color-border, #DADAD4);
+    border-radius: 8px;
+  }
+  .compare-verdict-callout .tt-fact-label { margin-bottom: 12px; }
+  .compare-verdict-callout .tt-body-large { margin: 0; color: #444440; max-width: 760px; }
+  /* Footer: question phrase + primary CTA */
+  .compare-verdict-callout-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 24px 0 0;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #DADAD4;
   }
-  .compare-verdict-cta .tt-card-body { margin: 0; color: var(--color-muted, #6F6F68); }
-  .compare-verdict-cta-link {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    height: 40px;
-    padding: 0 18px;
-    background: transparent;
-    border: 1.5px solid #222222;
-    border-radius: 8px;
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    color: #222222;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  .compare-verdict-cta-link:hover {
-    background: #222222;
-    color: #FFFFFF;
-  }
-  @media (max-width: 640px) {
-    .compare-verdict-cta {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
+  .compare-verdict-callout-footer .tt-card-body { margin: 0; }
 
   /* Mobile: stack everything */
   @media (max-width: 900px) {
@@ -7909,6 +7935,14 @@
     }
     .compare-verdict-choice-grid { grid-template-columns: 1fr; }
     .compare-verdict-choice-body { max-width: 100%; }
+  }
+  @media (max-width: 640px) {
+    .compare-verdict-choice { padding: 22px 20px; }
+    .compare-verdict-callout { padding: 22px 20px; }
+    .compare-verdict-callout-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   /* ── Usage scores ────────────────────────────────────────── */

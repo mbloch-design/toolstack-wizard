@@ -284,7 +284,44 @@ Les logos servent de points de données visuels. Le texte de décision reste tou
 
 ## Composants CTA
 
-### CTA primaire (black button)
+### Boutons globaux — `.tt-button-primary` / `.tt-button-secondary`
+
+**Règle absolue** : ne jamais créer de classe bouton spécifique à une page (`foo-cta-link`, `bar-button`). Utiliser uniquement les classes globales ci-dessous. Ces classes sont définies dans `src/index.css` au bloc `GLOBAL BUTTONS`.
+
+```css
+/* Bouton primaire — action principale, fond noir */
+.tt-button-primary {
+  display: inline-flex; align-items: center; flex-shrink: 0;
+  height: 40px; padding: 0 18px;
+  background: #222222; border: none; border-radius: 8px;
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  color: #FFFFFF; text-decoration: none; white-space: nowrap;
+  cursor: pointer; transition: background 0.15s ease;
+}
+.tt-button-primary:hover { background: #3A3A38; }
+
+/* Bouton secondaire — action de navigation, contour fin */
+.tt-button-secondary {
+  display: inline-flex; align-items: center; flex-shrink: 0;
+  height: 40px; padding: 0 18px;
+  background: transparent; border: 1.5px solid #222222; border-radius: 8px;
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  color: #222222; text-decoration: none; white-space: nowrap;
+  cursor: pointer; transition: background 0.15s ease, color 0.15s ease;
+}
+.tt-button-secondary:hover { background: #222222; color: #FFFFFF; }
+```
+
+**Règle de choix :**
+| Contexte | Classe |
+|---|---|
+| Action qui déclenche l'audit / le sélecteur d'outils | `.tt-button-primary` |
+| Lien de navigation, lecture complémentaire | `.tt-button-secondary` |
+| Jamais deux boutons primaires dans la même zone | — |
+
+**Ne pas concurrencer "Auditer ma stack"** dans la navigation globale. Un seul CTA noir par vue.
+
+### CTA primaire legacy (black button)
 ```css
 background: #222222;
 color: #FFFFFF;
@@ -293,24 +330,17 @@ padding: 0 22px;
 border-radius: 8px;
 font-size: 15px;
 font-weight: 500;
-letter-spacing: -0.01em;
-transition: background 160ms ease-out;
-/* hover → background: #000000 */
 ```
 
-Utilisé : `StickyDecisionCard` (Visiter le site), `td-diag-band` (Auditer ma stack).
+Utilisé dans : `StickyDecisionCard` (Visiter le site), `td-diag-band` (Auditer ma stack). Ces composants n'ont pas encore migré vers `.tt-button-primary` (hauteur 48px vs 40px).
 
-### CTA secondaire (ghost button)
+### CTA secondaire legacy (ghost button)
 ```css
-background: transparent;
-color: #222222;
-height: 44px;
-border: 1px solid #DADAD4;
-border-radius: 8px;
-/* hover → border-color: #222222, background: #F8F8F4 */
+background: transparent; color: #222222;
+height: 44px; border: 1px solid #DADAD4; border-radius: 8px;
 ```
 
-Utilisé : `StickyDecisionCard` (Comparer les alternatives).
+Utilisé dans : `StickyDecisionCard` (Comparer les alternatives).
 
 **Pas de bouton bleu sur les pages outils.**
 
@@ -565,9 +595,9 @@ Les filtres associés utilisent `sk-facet-*` et ne doivent pas afficher de compt
 .cp-hero-microfact-cell { padding: 18px 20px; background: #FFFFFF; }
 ```
 - Rôle : face-à-face de décision — orientation en 5 secondes.
-- Structure : breadcrumb → eyebrow → `h1` display → `heroPromise` → Verdict ToolTrim → duel 2 cartes → micro-fiche 3 cellules.
-- **Duel** : 2 cartes `cp-hero-duel-card` symétriques. Soit les deux outils ont un logo fiable, soit aucune carte hero n'affiche de logo. Ne jamais laisser une carte avec logo et l'autre vide.
-- **Verdict ToolTrim** (`cp-hero-contract`) : statement éditorial entre filets — pas de carte, pas de fond coloré. Phrase d'arbitrage directe, placée avant les cartes outils.
+- Structure : breadcrumb → eyebrow → `h1` display → `heroPromise` → duel 2 cartes → Contrat ToolTrim → micro-fiche 3 cellules.
+- **Duel** : 2 cartes `cp-hero-duel-card`. Chaque carte affiche `<ToolLogo size={48} />` + position label + nom outil + description. ToolLogo gère le fallback initiales — jamais de carré vide. Badge VS encadré (cercle 28px, fond `#EDEDEA`).
+- **Contrat ToolTrim** (`cp-hero-contract`) : statement éditorial entre filets (margin-top 28px), placé **après** les cartes duel. Label "Contrat ToolTrim" (fr) / "ToolTrim contract" (en). Ne pas remettre "Verdict" ici — la section `#verdict` suit.
 - **Micro-fiche** (`cp-hero-microfact`) : 3 cellules uniquement — PAR DÉFAUT, COÛT RÉEL, RISQUE. Remplace la fact-sheet 6 faits.
 - Nouveaux champs JSON dans `tooltrimAtAGlance` : `heroPromise`, `heroPositionA`, `heroPositionB`, `heroContract`. Tous optionnels — fallback sur valeurs dérivées.
 - Pas de CTA dans le hero.
@@ -646,55 +676,49 @@ cp-container
 Exceptions full-width (Features table, Alternatives, FAQ) : h2.cp-title avec `marginBottom: 28px`.
 Mobile (≤1023px) : 1 colonne, gap 32px. Titre mobile autour de `30–36px`.
 
-### Verdict ToolTrim (`#verdict`) — layout 2 cartes (Sprint 67)
+### Verdict ToolTrim (`#verdict`) — layout 2 cartes + callout (Sprint 72)
 
 **Règle** : le verdict répond à "quel outil choisir selon mon usage réel ?" — pas "quel modèle a le meilleur benchmark ?". Zéro benchmark, zéro nom de modèle technique, zéro répétition du hero.
 
-**Anti-patterns supprimés** : `cp-final-recommendation`, `cp-verdict-grid`, `cp-verdict-statement`, `cp-decision-columns` (3 colonnes compressées), labels rouges "Évite X si…".
+**Anti-patterns supprimés** : `cp-final-recommendation`, `cp-verdict-grid`, `cp-verdict-statement`, `cp-decision-columns` (3 colonnes compressées), labels rouges "Évite X si…", `compare-verdict-warning` (bandeau plat remplacé par callout encadré).
 
 Structure :
 1. `compare-verdict-header` — grid 2 col (0.85fr / 1.4fr) : kicker+titre à gauche, `tt-section-intro` à droite
-2. `compare-verdict-choice-grid` — grid 2 col, 1 carte par outil
-3. `compare-verdict-warning` — bandeau pleine largeur, séparateurs haut/bas
+2. `compare-verdict-choice-grid` — grid 2 col, 1 carte par outil (fond #FFFFFF)
+3. `compare-verdict-callout` — encadré pleine largeur, fond #EDEDE8, avec CTA `.tt-button-primary` intégré
 
 Anatomie d'une carte `.compare-verdict-choice` :
-- `tt-fact-label` — nom de l'outil en caps (10px)
-- `tt-card-title` — titre éditorial conditionnel (15px semi-bold) — ex: "Le choix polyvalent"
-- `tt-card-body` — 1 phrase décisive (14px)
+- `.compare-verdict-choice-head` — flex row : `ToolLogo` (size=40) + `tt-fact-label` (nom outil)
+- `tt-card-title compare-verdict-choice-title` — titre éditorial conditionnel (18px) — ex: "Le choix polyvalent"
+- `tt-card-body compare-verdict-choice-body` — 1 phrase décisive (14px, couleur #444440)
+
+Anatomie du callout `.compare-verdict-callout` :
+- `tt-fact-label` — "NE PAIE PAS LES DEUX SANS RÈGLE CLAIRE"
+- `tt-body-large` — texte anti-doublon (max-width 760px, couleur #444440)
+- `.compare-verdict-callout-footer` — flex row : phrase question à gauche, `.tt-button-primary` "Analyser ma stack →" à droite
 
 ```css
-.compare-verdict-header {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.4fr);
-  gap: clamp(48px, 6vw, 96px);
-  align-items: start;
-  margin-bottom: clamp(40px, 5vw, 64px);
-}
-.compare-verdict-choice-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-bottom: 24px;
-}
-.compare-verdict-choice {
-  border: 1px solid var(--color-border, #DADAD4);
-  border-radius: var(--tt-radius-lg, 24px);
-  padding: 32px;
-}
-.compare-verdict-warning {
-  border-top: 1px solid var(--color-border, #DADAD4);
-  border-bottom: 1px solid var(--color-border, #DADAD4);
-  padding: 28px 0;
+.compare-verdict-choice-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.compare-verdict-choice { padding: 28px 32px; background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 8px; }
+.compare-verdict-choice-body { color: #444440; }
+.compare-verdict-callout { padding: 28px 32px; background: #EDEDE8; border: 1px solid #DADAD4; border-radius: 8px; }
+.compare-verdict-callout-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; margin-top: 24px; padding-top: 20px; border-top: 1px solid #DADAD4;
 }
 ```
 
+**Règle logos** : chaque carte affiche `<ToolLogo tool={tool} size={40} className="compare-verdict-choice-logo" />`. ToolLogo gère le fallback initiales — jamais de carré vide.
+
+**Règle CTA** : bouton `.tt-button-primary` uniquement si le lien mène vers l'audit/sélecteur. Lien `/selector?from={slugPair}` qualifie. Ne pas utiliser `.tt-button-primary` pour un lien de lecture.
+
 Typographie : uniquement tokens globaux. Aucun clamp local. Aucune couleur rouge/alerte dans le verdict.
-Mobile ≤900px : header + choice-grid en 1 colonne.
+Mobile ≤900px : header + choice-grid en 1 colonne. Mobile ≤640px : callout footer en colonne, CTA pleine largeur.
 
 **Données JSON** (`tooltrimAtAGlance`) :
 - `verdictCardTitleA/B` — titre de la carte (optionnel — h3 masqué si absent)
 - `verdictCardTextA/B` — 1 phrase décisive ; fallback → `verdict.chooseAIf[0]`
-- `verdictWarning` — texte doublon ; fallback → `comparison.avoidBothIf[0]`
+- `verdictWarning` — texte callout anti-doublon ; fallback → `comparison.avoidBothIf[0]`
 
 ### Coût réel (`cp-cost-*`)
 - ID : `#cout` — positionné avant Features pour ancrer la réalité budgétaire.

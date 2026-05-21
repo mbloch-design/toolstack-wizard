@@ -1569,14 +1569,20 @@ const ComparePage = () => {
           {/* Two choice cards */}
           <div className="compare-verdict-choice-grid">
             <article className="compare-verdict-choice">
-              <span className="tt-fact-label">{toolA.name.toUpperCase()}</span>
+              <div className="compare-verdict-choice-head">
+                <ToolLogo tool={toolA} size={40} className="compare-verdict-choice-logo" />
+                <span className="tt-fact-label">{toolA.name}</span>
+              </div>
               {verdictCardTitleA && (
                 <h3 className="tt-card-title compare-verdict-choice-title">{verdictCardTitleA}</h3>
               )}
               <p className="tt-card-body compare-verdict-choice-body">{verdictCardTextA}</p>
             </article>
             <article className="compare-verdict-choice">
-              <span className="tt-fact-label">{toolB.name.toUpperCase()}</span>
+              <div className="compare-verdict-choice-head">
+                <ToolLogo tool={toolB} size={40} className="compare-verdict-choice-logo" />
+                <span className="tt-fact-label">{toolB.name}</span>
+              </div>
               {verdictCardTitleB && (
                 <h3 className="tt-card-title compare-verdict-choice-title">{verdictCardTitleB}</h3>
               )}
@@ -1584,28 +1590,26 @@ const ComparePage = () => {
             </article>
           </div>
 
-          {/* Full-width warning: don't pay for both without a clear rule */}
-          <div className="compare-verdict-warning">
+          {/* Callout: ne paie pas les deux sans règle claire */}
+          <div className="compare-verdict-callout">
             <span className="tt-fact-label">
               {t("Ne paie pas les deux sans règle claire", "Don't pay for both without a clear rule")}
             </span>
             <p className="tt-body-large">{verdictWarningText}</p>
-          </div>
-
-          {/* Secondary CTA — personalised recommendation */}
-          <div className="compare-verdict-cta">
-            <p className="tt-card-body">
-              {t(
-                "Pas encore sûr·e de ce qui correspond à ta situation ?",
-                "Still not sure which fits your situation?",
-              )}
-            </p>
-            <Link
-              to={`${prefix}/selector?from=${slugPair}`}
-              className="compare-verdict-cta-link"
-            >
-              {t("Obtenir une recommandation personnalisée →", "Get a personalised recommendation →")}
-            </Link>
+            <div className="compare-verdict-callout-footer">
+              <p className="tt-card-body">
+                {t(
+                  "Pas encore sûr·e de ce qui correspond à ta situation ?",
+                  "Still not sure which fits your situation?",
+                )}
+              </p>
+              <Link
+                to={`${prefix}/selector?from=${slugPair}`}
+                className="tt-button-primary"
+              >
+                {t("Analyser ma stack →", "Analyse my stack →")}
+              </Link>
+            </div>
           </div>
 
         </div>

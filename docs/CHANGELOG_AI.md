@@ -2,6 +2,50 @@
 
 ---
 
+## 2026-05-21 — Sprint 72 : Comparatif — hero logos + VS badge + verdict scannabilité + boutons globaux
+
+### Objectif
+Rendre les pages `/comparatif/*` plus scannables, plus décisionnelles et visuellement plus riches sans sortir de la sobriété ToolTrim.
+
+### Corrections
+
+**`src/pages/ComparePage.tsx`**
+- Hero : ajout `<ToolLogo size={48} />` dans chaque carte duel (`.cp-hero-duel-head`).
+- Hero : badge VS encapsulé dans `<span>` stylisé (cercle 28px, fond `#EDEDEA`, texte `#6F6F68`).
+- Hero : bloc contrat ToolTrim déplacé **après** les cartes duel (reconnaissance outil avant arbitrage).
+- Hero : label "Verdict ToolTrim" → "Contrat ToolTrim" / "ToolTrim contract".
+- Verdict `#verdict` : ajout `<ToolLogo size={40} />` + `.compare-verdict-choice-head` dans chaque carte choix.
+- Verdict `#verdict` : `.compare-verdict-warning` (bandeau plat) → `.compare-verdict-callout` (encadré `#EDEDE8`).
+- Verdict `#verdict` : CTA intégré dans le callout — bouton `.tt-button-primary` "Analyser ma stack →" (était lien ghost externe au callout).
+- Verdict `#verdict` : suppression du `<div className="compare-verdict-cta">` autonome.
+
+**`src/index.css`**
+- Ajout bloc `GLOBAL BUTTONS` : `.tt-button-primary` et `.tt-button-secondary` — classes globales réutilisables.
+- `.cp-hero-duel-vs` : wrap du texte dans `<span>` + styles cercle (28px, `#EDEDEA`, `#6F6F68`).
+- `.cp-hero-contract` : `margin-bottom` conservé, `margin-top: 28px` ajouté (contract maintenant après duel).
+- `.compare-verdict-choice-grid` : `margin-bottom` 24px → 32px.
+- `.compare-verdict-choice` : `background: transparent` → `background: #FFFFFF`, padding 32px → 28px 32px.
+- Ajout `.compare-verdict-choice-head` (flex row, gap 14px, margin-bottom 20px).
+- `.compare-verdict-choice-body` : couleur `#444440` (précédemment héritée de `.tt-card-body` `#6F6F68`).
+- Suppression `.compare-verdict-warning` + `.compare-verdict-cta` + `.compare-verdict-cta-link`.
+- Ajout `.compare-verdict-callout` (encadré `#EDEDE8`, border `#DADAD4`, border-radius 8px, padding 28px 32px).
+- Ajout `.compare-verdict-callout-footer` (flex row, border-top, margin-top 24px).
+- Mobile ≤640px : `compare-verdict-callout-footer` passe en colonne.
+
+**`docs/DESIGN_SYSTEM.md`**
+- Ajout section "Boutons globaux `.tt-button-primary` / `.tt-button-secondary`" avec règle de choix.
+- Mise à jour `### Verdict ToolTrim` : anatomie callout, règle logos, règle CTA.
+- Mise à jour `### Structure hero` : ordre duel → contract, badge VS, logos obligatoires.
+
+### Règles confirmées
+- Tout logo passe par `<ToolLogo>` — jamais d'img directe ni de carré vide.
+- Bouton noir (`.tt-button-primary`) uniquement si l'action mène vers l'audit ou le sélecteur.
+- Ne pas dupliquer le verdict entre hero (contrat) et section #verdict (cartes choix).
+- Pas de code couleur rouge/alerte dans la section verdict.
+- Pas de bouton bleu sur les pages comparatif.
+
+---
+
 ## 2026-05-19 — Sprint 71 : Corrections UI comparatif — hero, hiérarchie, coût, seuil, CTA
 
 ### Objectif
