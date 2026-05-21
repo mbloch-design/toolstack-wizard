@@ -7946,10 +7946,8 @@
   }
 
   /* ── Usage scores ────────────────────────────────────────── */
-  /* Shared micro-label rule — cost, tipping, cost-note columns */
-  .cp-cost-row span,
-  .cp-tipping-panel span,
-  .cp-cost-note span {
+  /* Shared micro-label rule — tipping panel only (cp-cost-row / cp-cost-note removed Sprint 74) */
+  .cp-tipping-panel span {
     display: block;
     margin-bottom: 6px;
     font-family: var(--font-ui);
@@ -8356,59 +8354,18 @@
     content: "–";
     color: #9A9A92;
   }
-  .cp-cost-grid {
+  /* ── Cost section callout — recommandation finale (Sprint 74) ── */
+  .cp-cost-callout {
     margin-top: 28px;
-    border-top: 1px solid #DADAD4;
-  }
-  .cp-cost-row {
-    display: grid;
-    grid-template-columns: 160px 1fr 1fr 1fr;
-    gap: 24px;
-    padding: 22px 0;
-    border-bottom: 1px solid #DADAD4;
-    align-items: start;
-  }
-  @media (max-width: 900px) {
-    .cp-cost-row {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-  }
-  .cp-cost-label {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #222222;
-  }
-  .cp-cost-row p {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 14px;
-    line-height: 1.45;
-    color: #6F6F68;
-  }
-  .cp-cost-reco {
-    color: #222222 !important;
-    font-weight: 600;
-  }
-  .cp-cost-note {
-    margin-top: 24px;
-    padding: 18px 20px;
-    background: #FFFFFF;
-    border: 1px solid #DADAD4;
+    padding: 28px 32px;
+    background: #EDEDE8;
+    border: 1px solid var(--color-border, #DADAD4);
     border-radius: 8px;
   }
-  .cp-cost-note p {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.45;
-    font-weight: 600;
-    color: #222222;
-  }
+  .cp-cost-callout .tt-fact-label { margin-bottom: 12px; }
+  .cp-cost-callout .tt-body-large { margin: 0; color: #444440; max-width: 820px; }
+  @media (max-width: 640px) { .cp-cost-callout { padding: 22px 20px; } }
+  /* (cp-cost-grid / cp-cost-row / cp-cost-label / cp-cost-reco / cp-cost-note removed Sprint 74) */
 
   /* ── Limits grid ───────────────────────────────────────────── */
   .cp-limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }

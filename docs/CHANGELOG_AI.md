@@ -2,6 +2,37 @@
 
 ---
 
+## 2026-05-21 — Sprint 74 : Comparatif — section coût en matrice financière
+
+### Objectif
+Transformer la section `#cout` en matrice lisible, sans redondance, avec callout de recommandation.
+
+### Corrections
+
+**`src/pages/ComparePage.tsx`**
+- Suppression du layout `cp-section-grid` pour la section coût.
+- Remplacement de `cp-cost-grid / cp-cost-row` par `cp-matrix` (réutilise les classes Sprint 73).
+- En-têtes avec `<ToolLogo size={28} />` + nom outil — plus de `<span>toolName</span>` par ligne.
+- Colonne "Lecture ToolTrim" (label renommé depuis "Recommandation") avec `data-label` pour mobile.
+- `cp-cost-note` remplacé par `cp-cost-callout` (encadré `#EDEDE8`, `tt-fact-label` + `tt-body-large`).
+- `pricingFraming` utilisé comme intro `cp-matrix-intro` au lieu d'être perdu dans `cp-section-body`.
+
+**`src/index.css`**
+- Suppression `cp-cost-grid`, `cp-cost-row`, `cp-cost-label`, `cp-cost-row p`, `cp-cost-reco`, `cp-cost-note`.
+- Mise à jour règle partagée `span` : retrait de `.cp-cost-row span` et `.cp-cost-note span` (ne reste que `.cp-tipping-panel span`).
+- Ajout `.cp-cost-callout` (fond `#EDEDE8`, border `#DADAD4`, radius 8px, padding 28px 32px).
+
+**`docs/DESIGN_SYSTEM.md`**
+- Remplacement `### Coût réel (cp-cost-*)` par documentation complète Sprint 74.
+
+### Règles confirmées
+- Zéro prix inventé. Données `costReality` uniquement depuis les données vérifiées.
+- Colonne "Lecture ToolTrim" renommée "Lecture" (différenciation de "Décision" dans les critères).
+- `cp-matrix` et ses classes réutilisés pour la cohérence visuelle entre les sections.
+- Mobile : même comportement cards que la matrice critères (via classes partagées).
+
+---
+
 ## 2026-05-21 — Sprint 73 : Comparatif — section critères en matrice de décision
 
 ### Objectif

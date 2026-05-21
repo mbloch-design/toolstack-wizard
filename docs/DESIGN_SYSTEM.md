@@ -768,10 +768,36 @@ Badges :
 - `decision` / `decisionEn` — conséquence pratique (max 2 lignes)
 - Badge déduit automatiquement via `getCriterionLevels()` depuis le texte de décision
 
-### Coût réel (`cp-cost-*`)
-- ID : `#cout` — positionné avant Features pour ancrer la réalité budgétaire.
-- Compare : plan gratuit, quand payer, coût caché.
-- Prix inventés interdits : utiliser `à vérifier`, `selon volume`, `à auditer si`.
+### Coût réel (`#cout`) — matrice financière (Sprint 74)
+
+**Règle** : ne jamais inventer un prix. Tout montant affiché doit avoir une source et une date (`checkedAt`). Si non vérifié → "à vérifier selon plan / région".
+
+**Anti-patterns supprimés** : `cp-cost-grid`, `cp-cost-row` (grille `160px 1fr 1fr 1fr` étriquée), noms outils répétés dans chaque cellule, `cp-cost-note` timide.
+
+Structure — identique à `#criteres`, mêmes classes `cp-matrix-*` :
+1. `.cp-matrix-header` — eyebrow + titre + `cp-matrix-intro` (= `pricingFraming` éditorial)
+2. `.cp-matrix` `role="table"` — en-têtes avec logos, lignes de coût
+   - Colonne "Critère" — label de la ligne (Prix public, Plan gratuit, Quand payer, Coût caché, Doublon)
+   - Colonnes outils — texte sans répéter le nom (header suffit) ; `data-label` pour mobile
+   - Colonne "Lecture ToolTrim" — décision pratique différente par ligne
+3. `.cp-cost-callout` — encadré `#EDEDE8`, recommandation finale (`pricingReco`)
+
+Lignes recommandées (max 5) :
+| Label | Quoi |
+|---|---|
+| Prix public | Plan utile pour usage pro |
+| Plan gratuit | Ce que le gratuit permet vraiment |
+| Quand payer | Moment où le payant devient rationnel |
+| Coût caché | Ce que le prix ne montre pas |
+| Doublon | Quand payer les deux devient incohérent |
+
+**Données** (`CompareCostRealityRow`) :
+- `label` / `labelEn` — nom de la ligne
+- `toolA` / `toolAEn` — texte outil A (court, sans nom répété)
+- `toolB` / `toolBEn` — texte outil B
+- `recommendation` / `recommendationEn` — lecture ToolTrim (conséquence pratique)
+
+**Callout** `.cp-cost-callout` — style identique à `.compare-verdict-callout` (fond `#EDEDE8`, border `#DADAD4`, radius 8px). Contient `tt-fact-label` + `tt-body-large`.
 
 ### Seuil de bascule (`cp-tipping-*`)
 - ID : `#seuil` — positionné après Features.

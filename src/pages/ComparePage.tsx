@@ -1695,40 +1695,80 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── 03 Coût réel ──────────────────────────────────────────────────── */}
+      {/* ── 03 Coût réel — matrice financière ────────────────────────────── */}
       <section id="cout" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <span className="cp-eyebrow">{t("03 — Coût réel", "03 — Real cost")}</span>
-          <div className="cp-section-grid">
-          <div className="cp-section-heading">
+
+          {/* Section header — pleine largeur */}
+          <div className="cp-matrix-header">
+            <span className="cp-eyebrow">{t("03 — Coût réel", "03 — Real cost")}</span>
             <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
+            <p className="cp-matrix-intro">
+              {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
+            </p>
           </div>
-          <div className="cp-section-body">
-          <p className="cp-section-intro">
-            {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
-          </p>
-          <div className="cp-cost-grid">
+
+          {/* Matrice coût — mêmes colonnes que la matrice critères */}
+          <div className="cp-matrix" role="table" aria-label={t("Comparaison des coûts", "Cost comparison")}>
+
+            {/* En-têtes */}
+            <div className="cp-matrix-thead" role="row">
+              <div className="cp-matrix-th cp-matrix-th--criterion" role="columnheader">
+                {t("Critère", "Criterion")}
+              </div>
+              <div className="cp-matrix-th cp-matrix-th--tool" role="columnheader">
+                <ToolLogo tool={toolA} size={28} className="cp-matrix-th-logo" />
+                <span>{toolA.name}</span>
+              </div>
+              <div className="cp-matrix-th cp-matrix-th--tool" role="columnheader">
+                <ToolLogo tool={toolB} size={28} className="cp-matrix-th-logo" />
+                <span>{toolB.name}</span>
+              </div>
+              <div className="cp-matrix-th cp-matrix-th--decision" role="columnheader">
+                {t("Lecture ToolTrim", "ToolTrim reading")}
+              </div>
+            </div>
+
+            {/* Lignes de coût */}
             {content.costReality.map((row) => (
-              <article key={row.label} className="cp-cost-row">
-                <p className="cp-cost-label">{lang === "fr" ? row.label : row.labelEn}</p>
-                <div>
-                  <span>{toolA.name}</span>
-                  <p>{lang === "fr" ? row.toolA : row.toolAEn}</p>
+              <div key={row.label} className="cp-matrix-row" role="row">
+                <div className="cp-matrix-cell cp-matrix-cell--criterion" role="cell">
+                  <p className="cp-matrix-criterion">{lang === "fr" ? row.label : row.labelEn}</p>
                 </div>
-                <div>
-                  <span>{toolB.name}</span>
-                  <p>{lang === "fr" ? row.toolB : row.toolBEn}</p>
+                <div
+                  className="cp-matrix-cell cp-matrix-cell--tool"
+                  role="cell"
+                  data-label={toolA.name}
+                >
+                  <p className="cp-matrix-text">{lang === "fr" ? row.toolA : row.toolAEn}</p>
                 </div>
-                <p className="cp-cost-reco">{lang === "fr" ? row.recommendation : row.recommendationEn}</p>
-              </article>
+                <div
+                  className="cp-matrix-cell cp-matrix-cell--tool"
+                  role="cell"
+                  data-label={toolB.name}
+                >
+                  <p className="cp-matrix-text">{lang === "fr" ? row.toolB : row.toolBEn}</p>
+                </div>
+                <div
+                  className="cp-matrix-cell cp-matrix-cell--decision"
+                  role="cell"
+                  data-label={t("Lecture ToolTrim", "ToolTrim reading")}
+                >
+                  <p className="cp-matrix-decision">{lang === "fr" ? row.recommendation : row.recommendationEn}</p>
+                </div>
+              </div>
             ))}
+
           </div>
-          <div className="cp-cost-note">
-            <span>{t("Recommandation ToolTrim", "ToolTrim recommendation")}</span>
-            <p>{lang === "fr" ? content.pricingReco : content.pricingRecoEn}</p>
+
+          {/* Recommandation finale */}
+          <div className="cp-cost-callout">
+            <span className="tt-fact-label">
+              {t("Recommandation ToolTrim", "ToolTrim recommendation")}
+            </span>
+            <p className="tt-body-large">{lang === "fr" ? content.pricingReco : content.pricingRecoEn}</p>
           </div>
-          </div>{/* end cp-section-body */}
-          </div>{/* end cp-section-grid */}
+
         </div>
       </section>
 
