@@ -1496,6 +1496,14 @@ const ComparePage = () => {
 
           <p className="cp-hero-promise">{heroPromise}</p>
 
+          {/* Contrat ToolTrim — verdict framing before the duel */}
+          <div className="cp-hero-contract">
+            <span className="cp-hero-contract-label">
+              {t("Contrat ToolTrim", "ToolTrim contract")}
+            </span>
+            <p>{heroContract}</p>
+          </div>
+
           {/* Face-à-face duel */}
           <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
             <article className="cp-hero-duel-card">
@@ -1521,14 +1529,6 @@ const ComparePage = () => {
               </div>
               <p className="cp-hero-duel-desc">{bestForB}</p>
             </article>
-          </div>
-
-          {/* Contrat ToolTrim — after duel for immediate tool recognition */}
-          <div className="cp-hero-contract">
-            <span className="cp-hero-contract-label">
-              {t("Contrat ToolTrim", "ToolTrim contract")}
-            </span>
-            <p>{heroContract}</p>
           </div>
 
           {/* Micro-fiche courte — 3 cellules */}
@@ -1864,7 +1864,7 @@ const ComparePage = () => {
               </svg>
             </div>
             <div className="cp-tipping-card-state cp-tipping-card-state--switch">
-              <span className="tt-fact-label">{t("Passe à l'autre si", "Switch when")}</span>
+              <span className="tt-fact-label">{t("Bascule si", "Switch when")}</span>
               <p className="cp-tipping-card-text">
                 {lang === "fr" ? content.tippingPoint.switchWhen : content.tippingPoint.switchWhenEn}
               </p>

@@ -195,7 +195,7 @@
     ──────────────────────────────────────────────────────────────────────── */
     --tt-size-hero:          clamp(64px, 8vw, 124px);    /* H1 Compare, ToolDetail */
     --tt-size-hero-sub:      clamp(22px, 2vw, 30px);     /* Subtitle / promise below H1 */
-    --tt-size-section-h:     clamp(44px, 5vw, 76px);     /* Section title — editorial */
+    --tt-size-section-h:     clamp(40px, 4.5vw, 56px);    /* Section title — editorial */
     --tt-size-section-intro: clamp(20px, 1.8vw, 26px);   /* Intro paragraph under title */
     --tt-size-body-large:    clamp(18px, 1.5vw, 22px);   /* Large body / framing copy */
     --tt-size-body:          16px;                        /* Standard body */
@@ -205,7 +205,7 @@
     --tt-size-card-title:    15px;                        /* Card / row title */
     --tt-size-card-body:     14px;                        /* Card body / secondary note */
     --tt-size-metric:        clamp(24px, 1.8vw, 32px);   /* KPI / metric */
-    --tt-size-cta-h:         clamp(28px, 4vw, 56px);     /* CTA band heading */
+    --tt-size-cta-h:         clamp(22px, 2.5vw, 36px);    /* CTA band heading */
 
     /* ── Section / hero spacing ── */
     --tt-section-y: clamp(80px, 9vw, 140px);  /* Section vertical padding */
@@ -7321,7 +7321,7 @@
   /* Uses tt-hero-title scale — no page-specific overrides above 124px */
   .cp-hero-title {
     max-width: 1040px;
-    margin: 0 0 20px;
+    margin: 0 0 28px;
     font-family: var(--font-brand);
     font-size: var(--tt-size-hero);
     font-weight: 700;
@@ -7375,6 +7375,8 @@
   }
   .cp-hero-duel-logo {
     flex-shrink: 0;
+    width: 48px;
+    height: 48px;
     /* Visual styling delegated to ToolLogo — no extra border/bg/radius to
        avoid double-frame. Use size=48 in JSX to match the duel card head. */
   }
@@ -7774,7 +7776,7 @@
   .cp-section-grid {
     display: grid;
     grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.6fr);
-    gap: 80px;
+    gap: 60px;
     align-items: start;
   }
   .cp-section-heading .cp-title { margin-bottom: 0; }
@@ -8054,7 +8056,7 @@
   }
   .cp-matrix-badge--advantage { background: #222222; color: #FFFFFF; }
   .cp-matrix-badge--sufficient {
-    background: transparent;
+    background: #F3F3EE;
     border: 1px solid #DADAD4;
     color: #6F6F68;
   }
@@ -8482,11 +8484,12 @@
     padding: 0 0 72px;
   }
   .cp-cta-band .cp-container {
-    background: #FFFFFF;
-    border: 1px solid #DADAD4;
-    border-radius: 6px;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--color-border, #DADAD4);
+    border-radius: 0;
+    padding-top: 48px;
+    padding-bottom: 0;
   }
   .cp-cta-band-desc {
     font-family: var(--font-ui);

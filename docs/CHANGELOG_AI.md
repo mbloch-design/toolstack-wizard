@@ -2,6 +2,36 @@
 
 ---
 
+## 2026-05-22 — Sprint 71 : Comparatif — audit hiérarchie et fluidité
+
+### Objectif
+Corrections issues de l'audit /comparatif/* : espacement, hiérarchie typographique, logo symétrie, badges, CTA trop intrusif, ordre hero.
+
+### Corrections
+- **`src/index.css`** — `--tt-size-section-h` max réduit de 76px → 56px (clamp 40–56px)
+- **`src/index.css`** — `--tt-size-cta-h` max réduit de 56px → 36px (clamp 22–36px) : CTA Diagnostic moins agressif
+- **`src/index.css`** — `.cp-hero-title` margin-bottom 20px → 28px (respiration H1/H2)
+- **`src/index.css`** — `.cp-hero-duel-logo` : ajout `width: 48px; height: 48px` pour symétrie des logos dans les cartes héro
+- **`src/index.css`** — `.cp-section-grid` gap 80px → 60px
+- **`src/index.css`** — `.cp-matrix-badge--sufficient` : fond `#F3F3EE` (badge visible sans couleur agressive)
+- **`src/index.css`** — `.cp-cta-band .cp-container` : suppression du box blanc/bordé → border-top éditorial seul
+- **`src/pages/ComparePage.tsx`** — Hero : contrat ToolTrim déplacé AVANT les cartes duel (verdict avant tools)
+- **`src/pages/ComparePage.tsx`** — Label tipping point : "Passe à l'autre si" → "Bascule si"
+
+---
+
+## 2026-05-22 — Context impeccable : PRODUCT.md + DESIGN.md
+
+### Objectif
+Installer le contexte de design ToolTrim pour le skill `/impeccable`.
+
+### Fichiers créés
+- **`PRODUCT.md`** — register `brand`, utilisateurs, personnalité, anti-références, 5 principes
+- **`DESIGN.md`** — système visuel complet : North Star "Le Conseiller Silencieux", palette achromatique, règles nommées
+- **`.impeccable/design.json`** — sidecar avec 5 composants HTML/CSS, tonal ramps, narrative
+
+---
+
 ## 2026-05-21 — Sprint 77 : Comparatif — comportement post-vigilance + polish CTA band
 
 ### Objectif

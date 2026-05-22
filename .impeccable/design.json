@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-22T00:00:00Z",
+  "title": "Design System: ToolTrim",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Warm Editorial Off-White",
+        "canonical": "#F8F8F4",
+        "tonalRamp": ["#1A1A18", "#2E2E2B", "#4A4A46", "#666661", "#888882", "#B0B0A9", "#D4D4CE", "#E9E9E4", "#F8F8F4"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Pure White Surface",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#1A1A1A", "#333333", "#555555", "#777777", "#999999", "#BBBBBB", "#DDDDDD", "#F0F0F0", "#FFFFFF"]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Warm Light Surface",
+        "canonical": "#F1F1EC",
+        "tonalRamp": ["#191917", "#2D2D2B", "#484845", "#63635F", "#86867F", "#AEAEA8", "#CFCFCA", "#E4E4DF", "#F1F1EC"]
+      },
+      "near-black": {
+        "role": "primary",
+        "displayName": "Near-Black",
+        "canonical": "#222222",
+        "tonalRamp": ["#111111", "#222222", "#3A3A38", "#555552", "#6F6F6B", "#8A8A86", "#B0B0AC", "#D4D4D1", "#F0F0EE"]
+      },
+      "deep-black": {
+        "role": "primary",
+        "displayName": "Deep Black",
+        "canonical": "#111111",
+        "tonalRamp": ["#080808", "#111111", "#1E1E1E", "#333333", "#4A4A4A", "#666666", "#8A8A8A", "#B8B8B8", "#E8E8E8"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Warm Mid-Grey",
+        "canonical": "#6F6F68",
+        "tonalRamp": ["#1A1A19", "#2E2E2C", "#484846", "#5E5E5C", "#6F6F68", "#8A8A84", "#ADADAA", "#CECEC7", "#EDEDEA"]
+      },
+      "muted-light": {
+        "role": "neutral",
+        "displayName": "Light Warm Grey",
+        "canonical": "#9A9A92",
+        "tonalRamp": ["#1C1C1B", "#333332", "#4E4E4D", "#686865", "#838380", "#9A9A92", "#B8B8B0", "#D3D3CC", "#EDEDEC"]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Standard Border",
+        "canonical": "#DADAD4",
+        "tonalRamp": ["#1A1A18", "#2E2E2C", "#4A4A47", "#666663", "#868680", "#A8A8A3", "#C5C5BF", "#DADAD4", "#F0F0EE"]
+      },
+      "border-soft": {
+        "role": "neutral",
+        "displayName": "Soft Border",
+        "canonical": "#E7E7E0",
+        "tonalRamp": ["#1A1A19", "#2E2E2D", "#4A4A49", "#686868", "#888887", "#ABABAA", "#C9C9C5", "#E0E0D9", "#E7E7E0"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "H1 on compare pages and tool detail heroes. Used once per view." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles. Anchors each content block." },
+      "title": { "displayName": "Title", "purpose": "CTA band headings, secondary section anchors." },
+      "body-large": { "displayName": "Body Large", "purpose": "Framing copy, introductions, verdict summaries." },
+      "body": { "displayName": "Body", "purpose": "Standard prose. Max 65–75ch line length." },
+      "label": { "displayName": "Label / Kicker", "purpose": "Eyebrow labels above headings. Metadata categories. Always uppercase." }
+    },
+    "shadows": [
+      {
+        "name": "floating-ui",
+        "value": "0 8px 32px rgba(34,34,34,0.08), 0 2px 8px rgba(34,34,34,0.04)",
+        "purpose": "Dropdowns, command palettes, popovers — elements detached from the document flow."
+      },
+      {
+        "name": "modal",
+        "value": "0 28px 80px rgba(34,34,34,0.08)",
+        "purpose": "Large overlay panels and modals. One use only per overlay."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "0.15s ease",
+        "purpose": "Default easing for button background, border, and color state changes."
+      },
+      {
+        "name": "entry-fade",
+        "value": "opacity 0.5s ease-out, transform 0.5s ease-out",
+        "purpose": "Page section entrances. translateY(12px) → 0, opacity 0 → 1."
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "640px" },
+      { "name": "tablet", "value": "768px" },
+      { "name": "desktop", "value": "1024px" },
+      { "name": "wide", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default CTA — black fill, white text. Inverts to slightly lighter black on hover.",
+      "html": "<button class=\"ds-btn-primary\">Voir le verdict</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; background: #222222; border: none; border-radius: 8px; font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 13px; font-weight: 600; color: #FFFFFF; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background 0.15s ease; } .ds-btn-primary:hover { background: #3A3A38; } .ds-btn-primary:focus-visible { outline: 2px solid #222222; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost variant — transparent with black stroke. Inverts to solid black on hover, converging with primary.",
+      "html": "<button class=\"ds-btn-secondary\">Comparer</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; background: transparent; border: 1.5px solid #222222; border-radius: 8px; font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 13px; font-weight: 600; color: #222222; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background 0.15s ease, color 0.15s ease; } .ds-btn-secondary:hover { background: #222222; color: #FFFFFF; } .ds-btn-secondary:focus-visible { outline: 2px solid #222222; outline-offset: 2px; }"
+    },
+    {
+      "name": "Kicker Label",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Uppercase eyebrow label placed above a section title. Establishes context; never used decoratively.",
+      "html": "<span class=\"ds-kicker\">Comparatif</span>",
+      "css": ".ds-kicker { display: block; font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 11px; font-weight: 700; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; color: #6F6F68; margin-bottom: 12px; }"
+    },
+    {
+      "name": "Tool Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Tool comparison card — white on off-white, 1px border, no shadow. Represents the tonal elevation strategy.",
+      "html": "<div class=\"ds-tool-card\"><span class=\"ds-tool-card-title\">Figma</span><p class=\"ds-tool-card-body\">Le standard de l'industrie pour la conception d'interfaces.</p></div>",
+      "css": ".ds-tool-card { background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 12px; padding: 20px 24px; } .ds-tool-card-title { font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 1.3; letter-spacing: -0.02em; color: #222222; display: block; margin-bottom: 6px; } .ds-tool-card-body { font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.45; letter-spacing: -0.01em; color: #6F6F68; margin: 0; }"
+    },
+    {
+      "name": "Verdict Block",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "ToolTrim's signature component. Kicker → decision headline → rationale. No icon, no color highlight — authority via words.",
+      "html": "<div class=\"ds-verdict\"><span class=\"ds-verdict-kicker\">Notre verdict</span><div class=\"ds-verdict-decision\">Figma si ton livrable est une interface.</div><p class=\"ds-verdict-rationale\">Canva si ton livrable est un visuel prêt à publier. Les deux outils ne se recoupent pas — ils servent des livrables différents.</p></div>",
+      "css": ".ds-verdict { padding: 32px; background: #FFFFFF; border: 1px solid #DADAD4; border-radius: 18px; } .ds-verdict-kicker { display: block; font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 11px; font-weight: 700; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; color: #6F6F68; margin-bottom: 16px; } .ds-verdict-decision { font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 22px; font-weight: 600; line-height: 1.18; letter-spacing: -0.03em; color: #222222; margin-bottom: 12px; } .ds-verdict-rationale { font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5; color: #6F6F68; margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le Conseiller Silencieux",
+    "overview": "ToolTrim's visual system is built around one conviction: the design should disappear so the judgment can speak. Not minimalism as aesthetic posture, but minimalism as discipline — every element that isn't load-bearing gets removed. The result is a surface that feels neither cold nor warm, but exact. Like a well-annotated page in a technical report: nothing decorative, everything purposeful.\n\nThe palette is essentially achromatic. Warm near-black text on a warm off-white ground, depth achieved entirely through tonal layering rather than shadow or color contrast. Three surface tones (#F8F8F4 → #F1F1EC → #FFFFFF) create hierarchy without noise. The single blue carried in the codebase is a technical residual — not a design choice, not a brand signal. This system trusts monochrome completely.\n\nTypography does all the expressive work. Uncut Sans at extreme scale and tight tracking (-0.07em) creates authority at the display level. Inter Tight handles everything else — lean, functional, legible at 16px. The gap between display and body is large by design: hierarchy by contrast, not by color.",
+    "keyCharacteristics": [
+      "Achromatic in practice: black, warm grey, off-white",
+      "Tonal depth with zero box-shadow on content surfaces",
+      "Uncut Sans for display scale only; Inter Tight owns all content",
+      "Borders as section markers, not decoration",
+      "No gradients, no blurs, no glass effects, no badge multiplication"
+    ],
+    "rules": [
+      {
+        "name": "The Monochrome Commitment Rule",
+        "body": "This system has no accent color. The blue in the codebase is a technical residual being phased out. Do not introduce new color to fill the void; the void is the point.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tonal Stack Rule",
+        "body": "Depth is encoded in three surface steps: bg (#F8F8F4) → surface-soft (#F1F1EC) → white (#FFFFFF). Use this stack to communicate hierarchy — do not reach for shadow or color to do the same job.",
+        "section": "colors"
+      },
+      {
+        "name": "The Display Monopoly Rule",
+        "body": "Uncut Sans is used exclusively at display scale (44px and above). It never appears at body size. Inter Tight owns everything under 26px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tight-Track Hierarchy Rule",
+        "body": "Letter-spacing decreases as text grows: display uses -0.07em, body uses -0.01 to -0.02em, labels use +0.08em (uppercase only). Never apply positive tracking to lowercase text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Content surfaces are always flat. Borders — not shadows — define card boundaries. If you're tempted to add box-shadow to a card, use a border: 1px solid #DADAD4 instead.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Float-Signals-Detachment Rule",
+        "body": "A shadow means the element has left the document flow. If it hasn't left the flow, it doesn't get a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use tonal layering (surface-soft → white) to create depth — the only elevation tool for content surfaces.",
+      "Do use border: 1px solid #DADAD4 as the canonical card boundary.",
+      "Do keep Uncut Sans exclusively at display scale (44px and above).",
+      "Do let whitespace vary deliberately — tighter within a section, generous between sections.",
+      "Do lead every verdict section with the decision itself. Judgment precedes rationale.",
+      "Do use the tt-kicker pattern (uppercase, +0.08em, #6F6F68) as the singular metadata label above headings.",
+      "Do write border-bottom: 1px solid #DADAD4 as section separators."
+    ],
+    "donts": [
+      "Don't add box-shadow to inline cards or content panels.",
+      "Don't use gradient text (background-clip: text).",
+      "Don't use border-left thicker than 1px as a colored accent stripe.",
+      "Don't create badge proliferation — star ratings, upvote counts, affiliate signals (G2/Capterra patterns).",
+      "Don't use the blue accent (#1E4FCC) for decorative purposes — it is a residual being phased out.",
+      "Don't use pastel fills, emojis in UI, or gamification cues (Product Hunt patterns).",
+      "Don't add three-column feature grids with icon + heading + text (SaaS landing page cliché).",
+      "Don't repeat CTAs at every scroll position.",
+      "Don't apply glassmorphism or blur-based layering — no backdrop-filter.",
+      "Don't use identical padding everywhere — rhythm requires variation."
+    ]
+  }
+}
