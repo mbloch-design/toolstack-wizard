@@ -2,6 +2,31 @@
 
 ---
 
+## 2026-05-22 — Sprint 72 : Refonte tronçon 02–04 ComparePage
+
+### Objectif
+Différenciation visuelle des trois sections identiques (02 Critères / 03 Coût réel / 04 Ce qui change vraiment). Supprimer l'effet "trois tables identiques" signalé dans l'audit /impeccable critique.
+
+### Corrections CSS (`src/index.css`)
+- **`.cp-section-heading .cp-eyebrow`** : override `margin-bottom: 12px` (réduit dans contexte grille éditoriale)
+- **`.cp-section--cost`** : fond `#F1F1EC` (surface-soft) pour isoler visuellement la section Coût réel
+- **`.cp-cost-reco`** : nouveau composant — recommandation intégrée dans la colonne gauche (verdict avant matrice), séparée par `border-top: 1px solid #CECECA`
+- **`.cp-verdict-list` / `.cp-verdict-item`** : nouvelle structure 2 colonnes (critère+outils gauche, verdict droite) pour section 04 — remplace `cp-table` 4 colonnes
+- Classes associées : `cp-verdict-item-num`, `cp-verdict-item-criterion`, `cp-verdict-item-tools`, `cp-verdict-item-tool`, `cp-verdict-item-tool-name`, `cp-verdict-item-tool-value`, `cp-verdict-item-tool-note`, `cp-verdict-item-tool--win`, `cp-verdict-item-right`, `cp-verdict-item-verdict`
+- Responsive 900px : `cp-verdict-item` passe en 1 colonne, verdict sous les outils avec `border-top`
+
+### Corrections TSX (`src/pages/ComparePage.tsx`)
+- **Section 02** : `cp-matrix-header` → `cp-section-grid` avec `cp-section-heading` gauche + `cp-matrix` droite (layout éditorial 2 colonnes)
+- **Section 03** : fond `cp-section--cost` + `cp-section-grid` avec recommandation intégrée dans colonne gauche (`cp-cost-reco`) — verdict exposé avant la matrice, `cp-cost-callout` supprimé
+- **Section 04** : `cp-table` 4 colonnes → `cp-verdict-list` (liste numérotée, verdict en colonne droite comme hero de chaque ligne)
+
+### Résultat
+- Section 02 : grille éditoriale, contexte ancré à gauche, matrice à droite
+- Section 03 : surface distincte (`#F1F1EC`), recommandation exposée avant les données
+- Section 04 : format liste décisionnelle, numérotée, verdict mis en valeur
+
+---
+
 ## 2026-05-22 — Sprint 71 : Comparatif — audit hiérarchie et fluidité
 
 ### Objectif
