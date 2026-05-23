@@ -1466,7 +1466,6 @@ const ComparePage = () => {
     tool: tools.find((t) => t.slug === alt.slug || t.id === alt.slug),
   }));
   const navSections: CompareNavSection[] = [
-    { id: "verdict", label: t("Verdict", "Verdict") },
     { id: "criteres", label: t("Critères", "Criteria") },
     { id: "cout", label: t("Coût", "Cost") },
     { id: "features", label: t("Features", "Features") },
@@ -1496,15 +1495,7 @@ const ComparePage = () => {
 
           <p className="cp-hero-promise">{heroPromise}</p>
 
-          {/* Contrat ToolTrim — verdict framing before the duel */}
-          <div className="cp-hero-contract">
-            <span className="cp-hero-contract-label">
-              {t("Contrat ToolTrim", "ToolTrim contract")}
-            </span>
-            <p>{heroContract}</p>
-          </div>
-
-          {/* Face-à-face duel */}
+          {/* Face-à-face duel — enhanced with verdict card content */}
           <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
             <article className="cp-hero-duel-card">
               <div className="cp-hero-duel-head">
@@ -1514,7 +1505,10 @@ const ComparePage = () => {
                   <h2 className="cp-hero-duel-name">{toolA.name}</h2>
                 </div>
               </div>
-              <p className="cp-hero-duel-desc">{bestForA}</p>
+              {verdictCardTitleA && (
+                <p className="cp-hero-duel-verdict-title">{verdictCardTitleA}</p>
+              )}
+              <p className="cp-hero-duel-desc">{verdictCardTextA || bestForA}</p>
             </article>
 
             <div className="cp-hero-duel-vs" aria-hidden="true"><span>VS</span></div>
@@ -1527,8 +1521,33 @@ const ComparePage = () => {
                   <h2 className="cp-hero-duel-name">{toolB.name}</h2>
                 </div>
               </div>
-              <p className="cp-hero-duel-desc">{bestForB}</p>
+              {verdictCardTitleB && (
+                <p className="cp-hero-duel-verdict-title">{verdictCardTitleB}</p>
+              )}
+              <p className="cp-hero-duel-desc">{verdictCardTextB || bestForB}</p>
             </article>
+          </div>
+
+          {/* Callout : règle anti-doublon + CTA */}
+          <div className="compare-verdict-callout">
+            <span className="tt-fact-label">
+              {t("Ne paie pas les deux sans règle claire", "Don't pay for both without a clear rule")}
+            </span>
+            <p className="tt-body-large">{verdictWarningText}</p>
+            <div className="compare-verdict-callout-footer">
+              <p className="tt-card-body">
+                {t(
+                  "Pas encore sûr·e de ce qui correspond à ta situation ?",
+                  "Still not sure which fits your situation?",
+                )}
+              </p>
+              <Link
+                to={`${prefix}/selector?from=${slugPair}`}
+                className="tt-button-primary"
+              >
+                {t("Analyser ma stack →", "Analyse my stack →")}
+              </Link>
+            </div>
           </div>
 
           {/* Micro-fiche courte — 3 cellules */}
@@ -1551,77 +1570,13 @@ const ComparePage = () => {
 
       <CompareStickyNav sections={navSections} prefix={prefix} />
 
-      {/* ── 01 Verdict ─────────────────────────────────────────────────────── */}
-      <section id="verdict" className="cp-section scroll-mt-20">
-        <div className="cp-container">
-
-          {/* Header: kicker + title left — intro phrase right */}
-          <div className="compare-verdict-header">
-            <div className="compare-verdict-header-left">
-              <span className="cp-eyebrow">{t("01 — Verdict", "01 — Verdict")}</span>
-              <h2 className="cp-title">{t("Le choix rapide.", "The quick choice.")}</h2>
-            </div>
-            {verdictShort && (
-              <p className="tt-section-intro compare-verdict-intro">{verdictShort}</p>
-            )}
-          </div>
-
-          {/* Two choice cards */}
-          <div className="compare-verdict-choice-grid">
-            <article className="compare-verdict-choice">
-              <div className="compare-verdict-choice-head">
-                <ToolLogo tool={toolA} size={40} className="compare-verdict-choice-logo" />
-                <span className="tt-fact-label">{toolA.name}</span>
-              </div>
-              {verdictCardTitleA && (
-                <h3 className="tt-card-title compare-verdict-choice-title">{verdictCardTitleA}</h3>
-              )}
-              <p className="tt-card-body compare-verdict-choice-body">{verdictCardTextA}</p>
-            </article>
-            <article className="compare-verdict-choice">
-              <div className="compare-verdict-choice-head">
-                <ToolLogo tool={toolB} size={40} className="compare-verdict-choice-logo" />
-                <span className="tt-fact-label">{toolB.name}</span>
-              </div>
-              {verdictCardTitleB && (
-                <h3 className="tt-card-title compare-verdict-choice-title">{verdictCardTitleB}</h3>
-              )}
-              <p className="tt-card-body compare-verdict-choice-body">{verdictCardTextB}</p>
-            </article>
-          </div>
-
-          {/* Callout: ne paie pas les deux sans règle claire */}
-          <div className="compare-verdict-callout">
-            <span className="tt-fact-label">
-              {t("Ne paie pas les deux sans règle claire", "Don't pay for both without a clear rule")}
-            </span>
-            <p className="tt-body-large">{verdictWarningText}</p>
-            <div className="compare-verdict-callout-footer">
-              <p className="tt-card-body">
-                {t(
-                  "Pas encore sûr·e de ce qui correspond à ta situation ?",
-                  "Still not sure which fits your situation?",
-                )}
-              </p>
-              <Link
-                to={`${prefix}/selector?from=${slugPair}`}
-                className="tt-button-primary"
-              >
-                {t("Analyser ma stack →", "Analyse my stack →")}
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── 02 Critères décisionnels — matrice de décision ─────────────── */}
+      {/* ── 01 Critères décisionnels — matrice de décision ─────────────── */}
       <section id="criteres" className="cp-section scroll-mt-20">
         <div className="cp-container">
 
           {/* Full-width header: counter → eyebrow → title → intro */}
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">02</span>
+            <span className="cp-section-counter" aria-hidden="true">01</span>
             <span className="cp-eyebrow">{t("Critères décisionnels", "Decision criteria")}</span>
             <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
             <p className="cp-matrix-intro">
@@ -1679,7 +1634,7 @@ const ComparePage = () => {
 
           {/* Full-width header: counter → eyebrow → title → framing → reco */}
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">03</span>
+            <span className="cp-section-counter" aria-hidden="true">02</span>
             <span className="cp-eyebrow">{t("Coût réel", "Real cost")}</span>
             <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
             <p className="cp-matrix-intro">
@@ -1735,7 +1690,7 @@ const ComparePage = () => {
       {decisionTableRows.length > 0 && (
         <section id="features" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-section-counter" aria-hidden="true">04</span>
+            <span className="cp-section-counter" aria-hidden="true">03</span>
             <span className="cp-eyebrow">{t("Critères décisifs", "Decisive criteria")}</span>
             <h2 className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
             <div className="cp-verdict-list" role="list">
@@ -1781,7 +1736,7 @@ const ComparePage = () => {
       <section id="seuil" className="cp-section cp-section--tipping scroll-mt-20">
         <div className="cp-container">
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">05</span>
+            <span className="cp-section-counter" aria-hidden="true">04</span>
             <span className="cp-eyebrow">{t("Seuil de bascule", "Tipping point")}</span>
             <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
             <p className="cp-matrix-intro">

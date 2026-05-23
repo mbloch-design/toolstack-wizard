@@ -7398,6 +7398,16 @@
     line-height: 1.0;
     color: #222222;
   }
+  /* Verdict title inside duel card (e.g. "Le choix produit") */
+  .cp-hero-duel-verdict-title {
+    margin: 0 0 10px;
+    font-family: var(--font-ui);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: #222222;
+  }
   .cp-hero-duel-desc {
     margin: 0;
     font-family: var(--font-ui);
@@ -7425,34 +7435,6 @@
     font-weight: 800;
     letter-spacing: 0.06em;
     color: #6F6F68;
-  }
-
-  /* Contrat ToolTrim — sits after the duel */
-  .cp-hero-contract {
-    padding: 20px 0;
-    border-top: 1px solid #DADAD4;
-    border-bottom: 1px solid #DADAD4;
-    margin-top: 28px;
-    margin-bottom: 28px;
-  }
-  .cp-hero-contract-label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #9A9A92;
-  }
-  .cp-hero-contract p {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: clamp(17px, 1.5vw, 22px);
-    line-height: 1.42;
-    letter-spacing: -0.02em;
-    font-weight: 500;
-    color: #222222;
   }
 
   /* Micro-fiche — 3 cellules */
