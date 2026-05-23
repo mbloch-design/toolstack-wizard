@@ -8121,10 +8121,11 @@
 
   /* ── Criterion table — Awwwards grid style (Sprint 75) ─────────── */
   /* Outer bordered container with rounded corners + overflow:hidden  */
-  /* per Awwwards jobs/profile pattern: label row → divider → values  */
+  /* Awwwards exact system: one color (--color-text) for ALL borders.  */
+  /* No separate gray — borders = text. Hierarchy via size + weight.   */
   .cp-criterion-table {
     width: 100%;
-    border: 1px solid var(--color-border, #DADAD4);
+    border: 1px solid var(--color-text);
     border-radius: 12px;
     overflow: hidden;
   }
@@ -8133,53 +8134,53 @@
   .cp-crit-table-head {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-bottom: 1.5px solid var(--color-border, #DADAD4);
+    border-bottom: 1px solid var(--color-text);
   }
   .cp-crit-table-th {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 20px;
+    padding: 16px;
     font-family: var(--font-ui);
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--color-muted, #6F6F68);
+    color: var(--color-text);
   }
   .cp-crit-table-th:first-child {
-    border-right: 1px solid var(--color-border, #DADAD4);
+    border-right: 1px solid var(--color-text);
   }
 
   /* Each criterion block: label-row + tools-row */
   .cp-crit-table-block {
-    border-bottom: 1px solid var(--color-border-soft, #E7E7E0);
+    border-bottom: 1px solid var(--color-text);
   }
   .cp-crit-table-block:last-child { border-bottom: none; }
 
   /* Full-width label row: kicker + decision text */
   .cp-crit-table-label-row {
-    padding: 18px 20px 14px;
-    border-bottom: 1px solid var(--color-border-soft, #E7E7E0);
+    padding: 20px 16px 16px;
+    border-bottom: 1px solid var(--color-text);
   }
   .cp-crit-table-label {
     display: block;
     font-family: var(--font-ui);
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--color-muted, #6F6F68);
-    margin-bottom: 5px;
+    color: var(--color-text);
+    margin-bottom: 6px;
   }
   .cp-crit-table-decision {
     margin: 0;
     font-family: var(--font-ui);
-    font-size: clamp(14px, 1.3vw, 16px);
-    font-weight: 600;
-    line-height: 1.35;
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-weight: 300;
+    line-height: 1.3;
     letter-spacing: -0.02em;
-    color: var(--color-text, #222222);
+    color: var(--color-text);
   }
 
   /* Two-column tool row: separated by a vertical divider */
@@ -8188,10 +8189,10 @@
     grid-template-columns: 1fr 1fr;
   }
   .cp-crit-table-tool {
-    padding: 14px 20px;
+    padding: 20px 16px;
   }
   .cp-crit-table-tool:first-child {
-    border-right: 1px solid var(--color-border-soft, #E7E7E0);
+    border-right: 1px solid var(--color-text);
   }
   .cp-crit-table-tool-text {
     margin: 0;
@@ -8199,24 +8200,24 @@
     font-size: 13px;
     line-height: 1.5;
     letter-spacing: -0.01em;
-    color: var(--color-muted, #6F6F68);
+    color: var(--color-text);
+    font-weight: 300;
   }
-  /* Winner: promote to full text color, slight weight bump */
+  /* Winner: weight bump only — same color, hierarchy through weight */
   .cp-crit-table-tool--winner .cp-crit-table-tool-text {
-    color: var(--color-text, #222222);
     font-weight: 500;
   }
 
   @media (max-width: 640px) {
     .cp-crit-table-th,
     .cp-crit-table-label-row,
-    .cp-crit-table-tool { padding-left: 16px; padding-right: 16px; }
+    .cp-crit-table-tool { padding: 16px; }
     .cp-crit-table-tools { grid-template-columns: 1fr; }
     .cp-crit-table-tool:first-child {
       border-right: none;
-      border-bottom: 1px solid var(--color-border-soft, #E7E7E0);
+      border-bottom: 1px solid var(--color-text);
     }
-    .cp-crit-table-decision { font-size: 14px; }
+    .cp-crit-table-decision { font-size: 16px; }
   }
 
   /* ── Decision table ─────────────────────────────────────────── */

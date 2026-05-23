@@ -2,6 +2,51 @@
 
 ---
 
+## 2026-05-23 — Sprint 77 : Palette chromatique Awwwards — tout = var(--color-text)
+
+### Objectif
+Appliquer le vrai système de couleur de la référence Awwwards (`awwwards.com/jobs/senior-developer-cape-town.html`) : **une seule couleur pour tout** — texte ET bordures. Inspecté en live via computed styles JS (`rgb(34,34,34)` pour tout sur fond `#F8F8F8`). La hiérarchie se crée uniquement par la taille (`10px` label → `20px` décision) et le poids (`500` → `300`), pas par la couleur.
+
+### Changements CSS (`src/index.css`)
+
+#### Bordures : `var(--color-border)` / `var(--color-border-soft)` → `var(--color-text)` sur tous les éléments `cp-crit-table-*`
+- `.cp-criterion-table` border : `1px solid var(--color-border, #DADAD4)` → `1px solid var(--color-text)`
+- `.cp-crit-table-head` border-bottom : `1.5px solid var(--color-border)` → `1px solid var(--color-text)`
+- `.cp-crit-table-th:first-child` border-right : `var(--color-border)` → `var(--color-text)`
+- `.cp-crit-table-block` border-bottom : `var(--color-border-soft)` → `var(--color-text)`
+- `.cp-crit-table-label-row` border-bottom : `var(--color-border-soft)` → `var(--color-text)`
+- `.cp-crit-table-tool:first-child` border-right : `var(--color-border-soft)` → `var(--color-text)`
+- Mobile : `.cp-crit-table-tool:first-child` border-bottom : `var(--color-border-soft)` → `var(--color-text)`
+
+#### Couleur des labels TH : `var(--color-muted)` → `var(--color-text)`
+- `.cp-crit-table-th` color : `var(--color-muted, #6F6F68)` → `var(--color-text)`
+- `.cp-crit-table-label` color : `var(--color-muted, #6F6F68)` → `var(--color-text)`
+
+#### Typographie TH : ajustée pour correspondre aux mesures Awwwards exactes
+- `.cp-crit-table-th` padding : `14px 20px` → `16px` (uniforme, comme Awwwards)
+- `.cp-crit-table-th` font-weight : `700` → `500`
+- `.cp-crit-table-th` letter-spacing : `0.08em` → `0.05em`
+- `.cp-crit-table-label` font-weight : `700` → `500`
+- `.cp-crit-table-label` letter-spacing : `0.08em` → `0.05em`
+- `.cp-crit-table-label-row` padding : `18px 20px 14px` → `20px 16px 16px`
+
+#### Typographie décision + outil : taille grande + poids léger (style TD Awwwards)
+- `.cp-crit-table-decision` font-size : `clamp(14px, 1.3vw, 16px)` → `clamp(16px, 1.5vw, 20px)`
+- `.cp-crit-table-decision` font-weight : `600` → `300`
+- `.cp-crit-table-decision` line-height : `1.35` → `1.3`
+- `.cp-crit-table-tool` padding : `14px 20px` → `20px 16px`
+- `.cp-crit-table-tool-text` color : `var(--color-muted)` → `var(--color-text)`
+- `.cp-crit-table-tool-text` font-weight : `(non défini)` → `300`
+- `.cp-crit-table-tool--winner` : suppression du `color` (identique) — différenciation uniquement par `font-weight: 500`
+- Mobile : `.cp-crit-table-decision` font-size : `14px` → `16px`, padding uniforme `16px`
+
+### Résultat visuel
+- **Dark (section 02)** : bordures `#DEDED6` sur fond `#111111` — grille claire éditoriale
+- **Light (section 03)** : bordures `#222222` sur fond `#F1F1EC` — identique à la référence Awwwards
+- Système monochrome : zéro couleur secondaire dans les tableaux, tout repose sur contraste taille/poids
+
+---
+
 ## 2026-05-23 — Sprint 76 : Layout pleine largeur + harmonisation dark/light
 
 ### Objectif
