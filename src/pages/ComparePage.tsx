@@ -1633,36 +1633,38 @@ const ComparePage = () => {
               </p>
             </div>
 
-            {/* Right: editorial rows — verdict-first, no cells */}
-            <div className="cp-editorial-rows">
-              <div className="cp-editorial-colheads">
-                <div className="cp-editorial-colhead">
-                  <ToolLogo tool={toolA} size={20} className="flex-shrink-0" />
+            {/* Right: criterion table — Awwwards bordered grid (Sprint 75) */}
+            <div className="cp-criterion-table">
+              {/* Column headers — tool names */}
+              <div className="cp-crit-table-head">
+                <div className="cp-crit-table-th">
+                  <ToolLogo tool={toolA} size={16} className="flex-shrink-0" />
                   <span>{toolA.name}</span>
                 </div>
-                <div className="cp-editorial-colhead">
-                  <ToolLogo tool={toolB} size={20} className="flex-shrink-0" />
+                <div className="cp-crit-table-th">
+                  <ToolLogo tool={toolB} size={16} className="flex-shrink-0" />
                   <span>{toolB.name}</span>
                 </div>
               </div>
+              {/* Criterion blocks: label+verdict row / tool cells row */}
               {content.decisiveCriteria.slice(0, 6).map((criterion) => {
                 const levels = getCriterionLevels(criterion, toolA, toolB, lang);
                 return (
-                  <div key={criterion.title} className="cp-editorial-row">
-                    <span className="cp-editorial-row-label">
-                      {lang === "fr" ? criterion.title : criterion.titleEn}
-                    </span>
-                    <p className="cp-editorial-row-decision">
-                      {lang === "fr" ? criterion.decision : criterion.decisionEn}
-                    </p>
-                    <div className="cp-editorial-row-tools">
-                      <div className={`cp-editorial-tool${levels.winner === "A" ? " cp-editorial-tool--winner" : ""}`}>
-                        <span className="cp-editorial-tool-label">{toolA.name}</span>
-                        <p className="cp-editorial-tool-text">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+                  <div key={criterion.title} className="cp-crit-table-block">
+                    <div className="cp-crit-table-label-row">
+                      <span className="cp-crit-table-label">
+                        {lang === "fr" ? criterion.title : criterion.titleEn}
+                      </span>
+                      <p className="cp-crit-table-decision">
+                        {lang === "fr" ? criterion.decision : criterion.decisionEn}
+                      </p>
+                    </div>
+                    <div className="cp-crit-table-tools">
+                      <div className={`cp-crit-table-tool${levels.winner === "A" ? " cp-crit-table-tool--winner" : ""}`}>
+                        <p className="cp-crit-table-tool-text">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
                       </div>
-                      <div className={`cp-editorial-tool${levels.winner === "B" ? " cp-editorial-tool--winner" : ""}`}>
-                        <span className="cp-editorial-tool-label">{toolB.name}</span>
-                        <p className="cp-editorial-tool-text">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                      <div className={`cp-crit-table-tool${levels.winner === "B" ? " cp-crit-table-tool--winner" : ""}`}>
+                        <p className="cp-crit-table-tool-text">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
                       </div>
                     </div>
                   </div>
@@ -1694,34 +1696,36 @@ const ComparePage = () => {
               </div>
             </div>
 
-            {/* Right: editorial rows — verdict-first, no cells */}
-            <div className="cp-editorial-rows">
-              <div className="cp-editorial-colheads">
-                <div className="cp-editorial-colhead">
-                  <ToolLogo tool={toolA} size={20} className="flex-shrink-0" />
+            {/* Right: criterion table — Awwwards bordered grid (Sprint 75) */}
+            <div className="cp-criterion-table">
+              {/* Column headers — tool names */}
+              <div className="cp-crit-table-head">
+                <div className="cp-crit-table-th">
+                  <ToolLogo tool={toolA} size={16} className="flex-shrink-0" />
                   <span>{toolA.name}</span>
                 </div>
-                <div className="cp-editorial-colhead">
-                  <ToolLogo tool={toolB} size={20} className="flex-shrink-0" />
+                <div className="cp-crit-table-th">
+                  <ToolLogo tool={toolB} size={16} className="flex-shrink-0" />
                   <span>{toolB.name}</span>
                 </div>
               </div>
+              {/* Cost blocks: label+recommendation row / tool cells row */}
               {content.costReality.map((row) => (
-                <div key={row.label} className="cp-editorial-row">
-                  <span className="cp-editorial-row-label">
-                    {lang === "fr" ? row.label : row.labelEn}
-                  </span>
-                  <p className="cp-editorial-row-decision">
-                    {lang === "fr" ? row.recommendation : row.recommendationEn}
-                  </p>
-                  <div className="cp-editorial-row-tools">
-                    <div className="cp-editorial-tool">
-                      <span className="cp-editorial-tool-label">{toolA.name}</span>
-                      <p className="cp-editorial-tool-text">{lang === "fr" ? row.toolA : row.toolAEn}</p>
+                <div key={row.label} className="cp-crit-table-block">
+                  <div className="cp-crit-table-label-row">
+                    <span className="cp-crit-table-label">
+                      {lang === "fr" ? row.label : row.labelEn}
+                    </span>
+                    <p className="cp-crit-table-decision">
+                      {lang === "fr" ? row.recommendation : row.recommendationEn}
+                    </p>
+                  </div>
+                  <div className="cp-crit-table-tools">
+                    <div className="cp-crit-table-tool">
+                      <p className="cp-crit-table-tool-text">{lang === "fr" ? row.toolA : row.toolAEn}</p>
                     </div>
-                    <div className="cp-editorial-tool">
-                      <span className="cp-editorial-tool-label">{toolB.name}</span>
-                      <p className="cp-editorial-tool-text">{lang === "fr" ? row.toolB : row.toolBEn}</p>
+                    <div className="cp-crit-table-tool">
+                      <p className="cp-crit-table-tool-text">{lang === "fr" ? row.toolB : row.toolBEn}</p>
                     </div>
                   </div>
                 </div>

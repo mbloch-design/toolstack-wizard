@@ -2,6 +2,37 @@
 
 ---
 
+## 2026-05-23 — Sprint 75 : cp-criterion-table — pattern Awwwards (container bordé + grid)
+
+### Objectif
+Remplacer `cp-editorial-rows` (liste ouverte sans bordure) par `cp-criterion-table` : un composant grille bordée arrondie identique au pattern Awwwards jobs/profil (WORKS|SOTM|SOTD|HM, DATE|CATEGORIES|COUNTRY|TYPE). Analyse directe de `awwwards.com/RezoZero` et du détail d'offre emploi avant toute implémentation.
+
+### Pattern de référence extrait (Awwwards)
+- Container : `border: 1px solid`, `border-radius: 12px`, `overflow: hidden`
+- Header row : labels uppercase 11px, `border-bottom: 1.5px`, vertical divider `border-right: 1px`
+- Data rows : label kicker (10px uppercase) + décision (16px 600) sur pleine largeur, séparée par `border-bottom: 1px soft`
+- Cells outils : 2 colonnes 1fr/1fr, `border-right: 1px soft` sur première, padding 14px 20px
+- Gagnant : `font-weight: 500` + `color-text` vs `color-muted` seul — zéro badge
+
+### Nouveaux composants CSS (`src/index.css`)
+- **`.cp-criterion-table`** : container bordé arrondi 12px, `overflow: hidden`
+- **`.cp-crit-table-head`** : grid 1fr/1fr, `border-bottom: 1.5px`
+- **`.cp-crit-table-th`** : flex logo+nom, uppercase 11px, `border-right` sur premier
+- **`.cp-crit-table-block`** : bloc par critère, `border-bottom: 1px soft`
+- **`.cp-crit-table-label-row`** : padding 18px 20px, `border-bottom: 1px soft`
+- **`.cp-crit-table-label`** : kicker 10px uppercase +0.08em muted
+- **`.cp-crit-table-decision`** : `clamp(14px, 1.3vw, 16px)` 600, `color-text` — hero de la ligne
+- **`.cp-crit-table-tools`** : grid 1fr/1fr, vertical divider sur première cellule
+- **`.cp-crit-table-tool-text`** : 13px muted par défaut, `font-weight: 500` + `color-text` si winner
+- **`.cp-section--cost`** : ajout variables CSS light-mode scopées (`--color-text: #222222` etc.) pour corriger les couleurs sur le fond `#F1F1EC` dans un contexte dark global
+
+### Changements TSX (`src/pages/ComparePage.tsx`)
+- Sections 02 et 03 : `cp-editorial-rows` → `cp-criterion-table` avec `cp-crit-table-*`
+- Logos outils réduits à 16px dans le header (était 20px)
+- Structure : header outils → N blocs (label-row + tools-row)
+
+---
+
 ## 2026-05-23 — Sprint 74 : cp-editorial-rows — remplacement cp-matrix sections 02 et 03
 
 ### Objectif
