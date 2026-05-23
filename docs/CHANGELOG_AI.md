@@ -2,6 +2,54 @@
 
 ---
 
+## 2026-05-23 — Sprint 74 : cp-editorial-rows — remplacement cp-matrix sections 02 et 03
+
+### Objectif
+Remplacer la grille `cp-matrix` à 4 colonnes (critère | toolA badge | toolB badge | décision) par un format éditorial sans cellules, verdict en tête de ligne. Inspiré d'une analyse approfondie de sites Awwwards (The Pudding, Pitch, Stripe, Are.na) : pas de tableaux, pas de cases — hiérarchie par typographie et règles horizontales seules.
+
+### Principe de conception
+- **Verdict-first** : la décision (texte le plus grand, le plus visible) précède les données des outils
+- **Pas de cellules, pas de bordures de case** : règles horizontales `border-bottom` uniquement
+- **Critère comme ancre micro-label** : uppercase, muted, 11px — posture de kicker
+- **Distinction gagnant par couleur texte uniquement** : `var(--color-text)` vs `var(--color-muted)` — pas de badges, pas d'icônes
+
+### Nouveaux composants CSS (`src/index.css`)
+- **`.cp-editorial-rows`** : conteneur, `width: 100%`
+- **`.cp-editorial-colheads`** : 2 colonnes 1fr/1fr, séparées par `border-bottom: 1.5px`
+- **`.cp-editorial-colhead`** : flex avec logo outil (20px) + nom, 13px 600
+- **`.cp-editorial-row`** : `padding: 28px 0 24px`, séparé par `border-bottom: 1px soft`
+- **`.cp-editorial-row-label`** : kicker 11px uppercase +0.08em, couleur muted
+- **`.cp-editorial-row-decision`** : `clamp(16px, 1.5vw, 19px)` 600 -0.025em, max-width 68ch — texte hero de la ligne
+- **`.cp-editorial-row-tools`** : grille 2 colonnes 1fr/1fr, gap 32px
+- **`.cp-editorial-tool-label`** : micro-label outil 10px uppercase, muted
+- **`.cp-editorial-tool-text`** : 13px muted par défaut
+- **`.cp-editorial-tool--winner`** : override `color-text` sur label et texte
+- Toutes les couleurs via variables CSS (`var(--color-text)`, `var(--color-muted)`, `var(--color-border)`, `var(--color-border-soft)`) — compatible thème sombre
+
+### Changements TSX (`src/pages/ComparePage.tsx`)
+- **Section 02** (Critères décisifs) : `cp-matrix` 4 colonnes → `cp-editorial-rows` avec `decisiveCriteria.slice(0, 6)`, `getCriterionLevels()` pour déterminer le gagnant
+- **Section 03** (Coût réel) : `cp-matrix` coûts → `cp-editorial-rows` avec `costReality`, pas de distinction gagnant (neutre)
+- Les deux sections conservent les entêtes colonnes avec logos outils (`<ToolLogo size={20} />`)
+
+---
+
+## 2026-05-23 — Sprint 73 : Compteurs architecturaux + section sombre tipping point
+
+### Objectif
+Différenciation architecturale des sections 02–05 par grands numéros de section, et inversion tonale de la section 05 (Tipping Point) pour signal de rupture.
+
+### Nouveaux composants CSS (`src/index.css`)
+- **`.cp-section-counter`** : compteur architectural `clamp(72px, 7vw, 96px)`, Uncut Sans 700, `letter-spacing: -0.07em`, couleur `var(--color-border, #DADAD4)` (muted structurel, pas décoratif)
+- **`.cp-section--tipping`** : modificateur dark `background: #111111`, texte `#DEDED6`, muted `#8A8A82`, border `#2E2E2E` — variables CSS locales scoped à la section
+- **`tt-button-light`** : variante bouton pour contexte sombre — border + texte `#DEDED6`, hover fond `#DEDED6` texte `#111111`
+
+### Changements TSX (`src/pages/ComparePage.tsx`)
+- Sections 02–05 : ajout `<span className="cp-section-counter">02</span>` etc. avant l'eyebrow label dans la colonne gauche
+- Section 05 (`cp-section--tipping`) : classe sombre appliquée, bouton CTA switché vers `tt-button-light`
+- Verdict bump : `cp-section-heading` augmenté pour section 02 (hiérarchie décisive)
+
+---
+
 ## 2026-05-22 — Sprint 72 : Refonte tronçon 02–04 ComparePage
 
 ### Objectif

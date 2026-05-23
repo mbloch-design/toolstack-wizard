@@ -1622,7 +1622,8 @@ const ComparePage = () => {
 
             {/* Left: section anchor + editorial heading */}
             <div className="cp-section-heading">
-              <span className="cp-eyebrow">{t("02 — Critères décisionnels", "02 — Decision criteria")}</span>
+              <span className="cp-section-counter" aria-hidden="true">02</span>
+              <span className="cp-eyebrow">{t("Critères décisionnels", "Decision criteria")}</span>
               <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
               <p className="cp-matrix-intro">
                 {t(
@@ -1632,67 +1633,42 @@ const ComparePage = () => {
               </p>
             </div>
 
-            {/* Right: matrice comparative — 4 colonnes */}
-            <div className="cp-matrix" role="table" aria-label={t("Matrice de décision", "Decision matrix")}>
-
-            {/* En-têtes de colonnes */}
-            <div className="cp-matrix-thead" role="row">
-              <div className="cp-matrix-th cp-matrix-th--criterion" role="columnheader">
-                {t("Critère", "Criterion")}
-              </div>
-              <div className="cp-matrix-th cp-matrix-th--tool" role="columnheader">
-                <ToolLogo tool={toolA} size={28} className="cp-matrix-th-logo" />
-                <span>{toolA.name}</span>
-              </div>
-              <div className="cp-matrix-th cp-matrix-th--tool" role="columnheader">
-                <ToolLogo tool={toolB} size={28} className="cp-matrix-th-logo" />
-                <span>{toolB.name}</span>
-              </div>
-              <div className="cp-matrix-th cp-matrix-th--decision" role="columnheader">
-                {t("Décision ToolTrim", "ToolTrim decision")}
-              </div>
-            </div>
-
-            {/* Lignes de critères */}
-            {content.decisiveCriteria.slice(0, 6).map((criterion) => {
-              const levels = getCriterionLevels(criterion, toolA, toolB, lang);
-              return (
-                <div key={criterion.title} className="cp-matrix-row" role="row">
-                  <div className="cp-matrix-cell cp-matrix-cell--criterion" role="cell">
-                    <p className="cp-matrix-criterion">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
-                  </div>
-                  <div
-                    className={`cp-matrix-cell cp-matrix-cell--tool${levels.winner === "A" ? " cp-matrix-cell--winner" : ""}`}
-                    role="cell"
-                    data-label={toolA.name}
-                  >
-                    <strong className={`cp-matrix-badge cp-matrix-badge--${levels.toolA}`}>
-                      {getLevelLabel(levels.toolA, lang)}
-                    </strong>
-                    <p className="cp-matrix-text">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
-                  </div>
-                  <div
-                    className={`cp-matrix-cell cp-matrix-cell--tool${levels.winner === "B" ? " cp-matrix-cell--winner" : ""}`}
-                    role="cell"
-                    data-label={toolB.name}
-                  >
-                    <strong className={`cp-matrix-badge cp-matrix-badge--${levels.toolB}`}>
-                      {getLevelLabel(levels.toolB, lang)}
-                    </strong>
-                    <p className="cp-matrix-text">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
-                  </div>
-                  <div
-                    className="cp-matrix-cell cp-matrix-cell--decision"
-                    role="cell"
-                    data-label={t("Décision ToolTrim", "ToolTrim decision")}
-                  >
-                    <p className="cp-matrix-decision">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
-                  </div>
+            {/* Right: editorial rows — verdict-first, no cells */}
+            <div className="cp-editorial-rows">
+              <div className="cp-editorial-colheads">
+                <div className="cp-editorial-colhead">
+                  <ToolLogo tool={toolA} size={20} className="flex-shrink-0" />
+                  <span>{toolA.name}</span>
                 </div>
-              );
-            })}
-
-          </div>
+                <div className="cp-editorial-colhead">
+                  <ToolLogo tool={toolB} size={20} className="flex-shrink-0" />
+                  <span>{toolB.name}</span>
+                </div>
+              </div>
+              {content.decisiveCriteria.slice(0, 6).map((criterion) => {
+                const levels = getCriterionLevels(criterion, toolA, toolB, lang);
+                return (
+                  <div key={criterion.title} className="cp-editorial-row">
+                    <span className="cp-editorial-row-label">
+                      {lang === "fr" ? criterion.title : criterion.titleEn}
+                    </span>
+                    <p className="cp-editorial-row-decision">
+                      {lang === "fr" ? criterion.decision : criterion.decisionEn}
+                    </p>
+                    <div className="cp-editorial-row-tools">
+                      <div className={`cp-editorial-tool${levels.winner === "A" ? " cp-editorial-tool--winner" : ""}`}>
+                        <span className="cp-editorial-tool-label">{toolA.name}</span>
+                        <p className="cp-editorial-tool-text">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+                      </div>
+                      <div className={`cp-editorial-tool${levels.winner === "B" ? " cp-editorial-tool--winner" : ""}`}>
+                        <span className="cp-editorial-tool-label">{toolB.name}</span>
+                        <p className="cp-editorial-tool-text">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -1704,7 +1680,8 @@ const ComparePage = () => {
 
             {/* Left: heading + recommendation (verdict before evidence) */}
             <div className="cp-section-heading">
-              <span className="cp-eyebrow">{t("03 — Coût réel", "03 — Real cost")}</span>
+              <span className="cp-section-counter" aria-hidden="true">03</span>
+              <span className="cp-eyebrow">{t("Coût réel", "Real cost")}</span>
               <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
               <p className="cp-matrix-intro">
                 {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
@@ -1717,58 +1694,39 @@ const ComparePage = () => {
               </div>
             </div>
 
-            {/* Right: matrice coût */}
-            <div className="cp-matrix" role="table" aria-label={t("Comparaison des coûts", "Cost comparison")}>
-
-            {/* En-têtes */}
-            <div className="cp-matrix-thead" role="row">
-              <div className="cp-matrix-th cp-matrix-th--criterion" role="columnheader">
-                {t("Critère", "Criterion")}
+            {/* Right: editorial rows — verdict-first, no cells */}
+            <div className="cp-editorial-rows">
+              <div className="cp-editorial-colheads">
+                <div className="cp-editorial-colhead">
+                  <ToolLogo tool={toolA} size={20} className="flex-shrink-0" />
+                  <span>{toolA.name}</span>
+                </div>
+                <div className="cp-editorial-colhead">
+                  <ToolLogo tool={toolB} size={20} className="flex-shrink-0" />
+                  <span>{toolB.name}</span>
+                </div>
               </div>
-              <div className="cp-matrix-th cp-matrix-th--tool" role="columnheader">
-                <ToolLogo tool={toolA} size={28} className="cp-matrix-th-logo" />
-                <span>{toolA.name}</span>
-              </div>
-              <div className="cp-matrix-th cp-matrix-th--tool" role="columnheader">
-                <ToolLogo tool={toolB} size={28} className="cp-matrix-th-logo" />
-                <span>{toolB.name}</span>
-              </div>
-              <div className="cp-matrix-th cp-matrix-th--decision" role="columnheader">
-                {t("Lecture ToolTrim", "ToolTrim reading")}
-              </div>
+              {content.costReality.map((row) => (
+                <div key={row.label} className="cp-editorial-row">
+                  <span className="cp-editorial-row-label">
+                    {lang === "fr" ? row.label : row.labelEn}
+                  </span>
+                  <p className="cp-editorial-row-decision">
+                    {lang === "fr" ? row.recommendation : row.recommendationEn}
+                  </p>
+                  <div className="cp-editorial-row-tools">
+                    <div className="cp-editorial-tool">
+                      <span className="cp-editorial-tool-label">{toolA.name}</span>
+                      <p className="cp-editorial-tool-text">{lang === "fr" ? row.toolA : row.toolAEn}</p>
+                    </div>
+                    <div className="cp-editorial-tool">
+                      <span className="cp-editorial-tool-label">{toolB.name}</span>
+                      <p className="cp-editorial-tool-text">{lang === "fr" ? row.toolB : row.toolBEn}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-
-            {/* Lignes de coût */}
-            {content.costReality.map((row) => (
-              <div key={row.label} className="cp-matrix-row" role="row">
-                <div className="cp-matrix-cell cp-matrix-cell--criterion" role="cell">
-                  <p className="cp-matrix-criterion">{lang === "fr" ? row.label : row.labelEn}</p>
-                </div>
-                <div
-                  className="cp-matrix-cell cp-matrix-cell--tool"
-                  role="cell"
-                  data-label={toolA.name}
-                >
-                  <p className="cp-matrix-text">{lang === "fr" ? row.toolA : row.toolAEn}</p>
-                </div>
-                <div
-                  className="cp-matrix-cell cp-matrix-cell--tool"
-                  role="cell"
-                  data-label={toolB.name}
-                >
-                  <p className="cp-matrix-text">{lang === "fr" ? row.toolB : row.toolBEn}</p>
-                </div>
-                <div
-                  className="cp-matrix-cell cp-matrix-cell--decision"
-                  role="cell"
-                  data-label={t("Lecture ToolTrim", "ToolTrim reading")}
-                >
-                  <p className="cp-matrix-decision">{lang === "fr" ? row.recommendation : row.recommendationEn}</p>
-                </div>
-              </div>
-            ))}
-
-          </div>
 
           </div>
         </div>
@@ -1778,7 +1736,8 @@ const ComparePage = () => {
       {decisionTableRows.length > 0 && (
         <section id="features" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{t("04 — Critères décisifs", "04 — Decisive criteria")}</span>
+            <span className="cp-section-counter" aria-hidden="true">04</span>
+            <span className="cp-eyebrow">{t("Critères décisifs", "Decisive criteria")}</span>
             <h2 className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
             <div className="cp-verdict-list" role="list">
               {decisionTableRows.map((row, index) => {
@@ -1820,10 +1779,11 @@ const ComparePage = () => {
       )}
 
       {/* ── 05 Seuil de bascule ───────────────────────────────────────────── */}
-      <section id="seuil" className="cp-section scroll-mt-20">
+      <section id="seuil" className="cp-section cp-section--tipping scroll-mt-20">
         <div className="cp-container">
           <div className="cp-matrix-header">
-            <span className="cp-eyebrow">{t("05 — Seuil de bascule", "05 — Tipping point")}</span>
+            <span className="cp-section-counter" aria-hidden="true">05</span>
+            <span className="cp-eyebrow">{t("Seuil de bascule", "Tipping point")}</span>
             <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
             <p className="cp-matrix-intro">
               {t(
@@ -1871,7 +1831,7 @@ const ComparePage = () => {
 
           {/* CTA */}
           <div className="cp-tipping-cta">
-            <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-primary">
+            <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-light">
               {t("Vérifier ma stack →", "Check my stack →")}
             </Link>
           </div>

@@ -8119,6 +8119,91 @@
 
   /* (cp-score-* removed Sprint 73 — replaced by cp-matrix-*) */
 
+  /* ── Editorial rows — replaces cp-matrix (Sprint 74) ─────────── */
+  .cp-editorial-rows {
+    width: 100%;
+  }
+
+  .cp-editorial-colheads {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+    padding-bottom: 14px;
+    border-bottom: 1.5px solid var(--color-border, #DADAD4);
+  }
+  .cp-editorial-colhead {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text, #222222);
+  }
+
+  .cp-editorial-row {
+    padding: 28px 0 24px;
+    border-bottom: 1px solid var(--color-border-soft, #E7E7E0);
+  }
+  .cp-editorial-row:last-child { border-bottom: none; }
+
+  .cp-editorial-row-label {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted, #6F6F68);
+    margin-bottom: 9px;
+  }
+
+  .cp-editorial-row-decision {
+    margin: 0 0 16px;
+    font-family: var(--font-ui);
+    font-size: clamp(16px, 1.5vw, 19px);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    color: var(--color-text, #222222);
+    max-width: 68ch;
+  }
+
+  .cp-editorial-row-tools {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+  }
+
+  .cp-editorial-tool-label {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-muted, #6F6F68);
+    margin-bottom: 3px;
+  }
+  .cp-editorial-tool-text {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--color-muted, #6F6F68);
+  }
+  .cp-editorial-tool--winner .cp-editorial-tool-label { color: var(--color-muted, #6F6F68); }
+  .cp-editorial-tool--winner .cp-editorial-tool-text  { color: var(--color-text, #222222); }
+
+  @media (max-width: 640px) {
+    .cp-editorial-colheads { grid-template-columns: 1fr 1fr; gap: 0 16px; }
+    .cp-editorial-row { padding: 22px 0 18px; }
+    .cp-editorial-row-tools { gap: 0 16px; }
+    .cp-editorial-row-decision { font-size: 16px; }
+  }
+
   /* ── Decision table ─────────────────────────────────────────── */
   .cp-table {
     width: 100%;
@@ -8505,7 +8590,7 @@
   .cp-verdict-item-verdict {
     margin: 0;
     font-family: var(--font-ui);
-    font-size: 19px; font-weight: 600; line-height: 1.28; letter-spacing: -0.025em;
+    font-size: clamp(20px, 2vw, 26px); font-weight: 600; line-height: 1.22; letter-spacing: -0.03em;
     color: #222222;
   }
   @media (max-width: 900px) {
@@ -8521,6 +8606,93 @@
     }
     .cp-verdict-item-verdict { font-size: 17px; }
   }
+
+  /* ── Section counter — large architectural number ──────────── */
+  .cp-section-counter {
+    display: block;
+    font-family: var(--font-brand);
+    font-size: clamp(72px, 8vw, 96px);
+    font-weight: 700;
+    line-height: 0.88;
+    letter-spacing: -0.06em;
+    color: #E4E4DF;
+    margin-bottom: 16px;
+    user-select: none;
+  }
+  .cp-section--tipping .cp-section-counter { color: rgba(255,255,255,0.1); }
+
+  /* ── Section 05 — dark tipping point (visual climax) ────────── */
+  .cp-section--tipping {
+    background: #111111;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .cp-section--tipping .cp-eyebrow { color: rgba(255,255,255,0.35); }
+  .cp-section--tipping .cp-title { color: #FFFFFF; }
+  .cp-section--tipping .cp-matrix-intro { color: rgba(255,255,255,0.45); }
+  /* Tipping flow card */
+  .cp-section--tipping .cp-tipping-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .cp-section--tipping .cp-tipping-card-state--switch {
+    background: rgba(255,255,255,0.04);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .cp-section--tipping .cp-tipping-card-arrow {
+    border-left: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.25);
+  }
+  .cp-section--tipping .cp-tipping-card-text { color: rgba(255,255,255,0.82); }
+  .cp-section--tipping .tt-fact-label { color: rgba(255,255,255,0.3); }
+  /* Rules list */
+  .cp-section--tipping .cp-tipping-rules-list {
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .cp-section--tipping .cp-tipping-rule {
+    background: transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .cp-section--tipping .cp-tipping-rule:last-child { border-bottom: none; }
+  .cp-section--tipping .cp-tipping-rule-num {
+    background: rgba(255,255,255,0.04);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.28);
+  }
+  .cp-section--tipping .cp-tipping-rule p { color: rgba(255,255,255,0.55); }
+  /* Mobile overrides for tipping dark section */
+  @media (max-width: 768px) {
+    .cp-section--tipping .cp-tipping-card-arrow {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .cp-section--tipping .cp-tipping-card-state--switch {
+      border-left: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+  }
+
+  /* ── Light button (dark section contexts) ────────────────────── */
+  .tt-button-light {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 40px;
+    padding: 0 18px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: #111111;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .tt-button-light:hover { background: #EEEEEA; }
+  .tt-button-light:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; }
 
   /* ── Limits grid ───────────────────────────────────────────── */
   .cp-limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
