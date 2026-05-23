@@ -1618,23 +1618,22 @@ const ComparePage = () => {
       {/* ── 02 Critères décisionnels — matrice de décision ─────────────── */}
       <section id="criteres" className="cp-section scroll-mt-20">
         <div className="cp-container">
-          <div className="cp-section-grid">
 
-            {/* Left: section anchor + editorial heading */}
-            <div className="cp-section-heading">
-              <span className="cp-section-counter" aria-hidden="true">02</span>
-              <span className="cp-eyebrow">{t("Critères décisionnels", "Decision criteria")}</span>
-              <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
-              <p className="cp-matrix-intro">
-                {t(
-                  "Pas les features les plus visibles. Les critères qui changent vraiment la décision.",
-                  "Not the most visible features. The criteria that actually change the decision.",
-                )}
-              </p>
-            </div>
+          {/* Full-width header: counter → eyebrow → title → intro */}
+          <div className="cp-matrix-header">
+            <span className="cp-section-counter" aria-hidden="true">02</span>
+            <span className="cp-eyebrow">{t("Critères décisionnels", "Decision criteria")}</span>
+            <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
+            <p className="cp-matrix-intro">
+              {t(
+                "Pas les features les plus visibles. Les critères qui changent vraiment la décision.",
+                "Not the most visible features. The criteria that actually change the decision.",
+              )}
+            </p>
+          </div>
 
-            {/* Right: criterion table — Awwwards bordered grid (Sprint 75) */}
-            <div className="cp-criterion-table">
+          {/* Full-width criterion table — Awwwards bordered grid (Sprint 75) */}
+          <div className="cp-criterion-table">
               {/* Column headers — tool names */}
               <div className="cp-crit-table-head">
                 <div className="cp-crit-table-th">
@@ -1670,7 +1669,6 @@ const ComparePage = () => {
                   </div>
                 );
               })}
-            </div>
           </div>
         </div>
       </section>
@@ -1678,26 +1676,25 @@ const ComparePage = () => {
       {/* ── 03 Coût réel — matrice financière ────────────────────────────── */}
       <section id="cout" className="cp-section cp-section--cost scroll-mt-20">
         <div className="cp-container">
-          <div className="cp-section-grid">
 
-            {/* Left: heading + recommendation (verdict before evidence) */}
-            <div className="cp-section-heading">
-              <span className="cp-section-counter" aria-hidden="true">03</span>
-              <span className="cp-eyebrow">{t("Coût réel", "Real cost")}</span>
-              <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
-              <p className="cp-matrix-intro">
-                {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
-              </p>
-              <div className="cp-cost-reco">
-                <span className="tt-fact-label">
-                  {t("Recommandation ToolTrim", "ToolTrim recommendation")}
-                </span>
-                <p className="tt-body-large">{lang === "fr" ? content.pricingReco : content.pricingRecoEn}</p>
-              </div>
+          {/* Full-width header: counter → eyebrow → title → framing → reco */}
+          <div className="cp-matrix-header">
+            <span className="cp-section-counter" aria-hidden="true">03</span>
+            <span className="cp-eyebrow">{t("Coût réel", "Real cost")}</span>
+            <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
+            <p className="cp-matrix-intro">
+              {lang === "fr" ? content.pricingFraming : content.pricingFramingEn}
+            </p>
+            <div className="cp-cost-reco">
+              <span className="tt-fact-label">
+                {t("Recommandation ToolTrim", "ToolTrim recommendation")}
+              </span>
+              <p className="tt-body-large">{lang === "fr" ? content.pricingReco : content.pricingRecoEn}</p>
             </div>
+          </div>
 
-            {/* Right: criterion table — Awwwards bordered grid (Sprint 75) */}
-            <div className="cp-criterion-table">
+          {/* Full-width criterion table — Awwwards bordered grid (Sprint 75) */}
+          <div className="cp-criterion-table">
               {/* Column headers — tool names */}
               <div className="cp-crit-table-head">
                 <div className="cp-crit-table-th">
@@ -1730,8 +1727,6 @@ const ComparePage = () => {
                   </div>
                 </div>
               ))}
-            </div>
-
           </div>
         </div>
       </section>

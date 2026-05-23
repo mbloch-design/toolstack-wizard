@@ -7752,15 +7752,15 @@
     font-family: var(--font-ui);
     font-size: var(--tt-size-kicker); font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
-    color: #6F6F68; display: block; margin-bottom: 28px;
+    color: var(--color-muted, #6F6F68); display: block; margin-bottom: 16px;
   }
   /* Section heading — uses tt-section-title scale */
   .cp-title {
     font-family: var(--font-brand);
-    font-size: clamp(32px, 3vw, 36px);
+    font-size: clamp(32px, 3vw, 44px);
     font-weight: 700; letter-spacing: -0.06em;
-    line-height: 1.02; color: #222222;
-    max-width: 620px; margin-bottom: 0;
+    line-height: 1.02; color: var(--color-text, #222222);
+    max-width: none; margin-bottom: 0;
   }
   /* Intro paragraph beneath a full-width title (used in coût, etc.) */
   .cp-section-intro {
@@ -7953,7 +7953,7 @@
 
   /* ── Decision matrix — Critères décisionnels (Sprint 73) ──────── */
   .cp-matrix-header {
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
   .cp-matrix-header .cp-eyebrow { margin-bottom: 12px; }
   .cp-matrix-header .cp-title { margin-bottom: 0; max-width: none; }
@@ -7963,7 +7963,7 @@
     font-size: 15px;
     line-height: 1.5;
     letter-spacing: -0.01em;
-    color: #9A9A92;
+    color: var(--color-muted, #6F6F68);
   }
 
   /* Matrix wrapper */
@@ -8539,10 +8539,10 @@
   .cp-cost-reco {
     margin-top: 24px;
     padding-top: 20px;
-    border-top: 1px solid #CECECA;
+    border-top: 1px solid var(--color-border-soft, #E7E7E0);
   }
   .cp-cost-reco .tt-fact-label { margin-bottom: 10px; }
-  .cp-cost-reco .tt-body-large { margin: 0; color: #3A3A38; }
+  .cp-cost-reco .tt-body-large { margin: 0; color: var(--color-text, #222222); }
 
   /* ── Verdict list (section 04) ─────────────────────────────── */
   .cp-verdict-list {
@@ -8631,6 +8631,8 @@
   }
 
   /* ── Section counter — large architectural number ──────────── */
+  /* Decorative structural element: visible in dark (border tonal),  */
+  /* ultra-subtle in light (near-bg). Color via border variable.     */
   .cp-section-counter {
     display: block;
     font-family: var(--font-brand);
@@ -8638,11 +8640,11 @@
     font-weight: 700;
     line-height: 0.88;
     letter-spacing: -0.06em;
-    color: #E4E4DF;
+    color: var(--color-border, #DADAD4);
     margin-bottom: 16px;
     user-select: none;
   }
-  .cp-section--tipping .cp-section-counter { color: rgba(255,255,255,0.1); }
+  .cp-section--tipping .cp-section-counter { color: rgba(255,255,255,0.08); }
 
   /* ── Section 05 — dark tipping point (visual climax) ────────── */
   .cp-section--tipping {

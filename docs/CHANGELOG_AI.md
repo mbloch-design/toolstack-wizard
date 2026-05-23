@@ -2,6 +2,31 @@
 
 ---
 
+## 2026-05-23 — Sprint 76 : Layout pleine largeur + harmonisation dark/light
+
+### Objectif
+Supprimer le layout 2 colonnes (`cp-section-grid` heading gauche / tableau droite) sur les sections 02 et 03. Titre en pleine largeur, tableau en pleine largeur en dessous. Harmoniser toutes les couleurs hardcodées des composants de comparaison via les variables CSS `var(--color-*)`.
+
+### Changements layout (`src/pages/ComparePage.tsx`)
+- **Section 02** : suppression de `cp-section-grid` + `cp-section-heading` → structure plate avec `cp-matrix-header` (counter → eyebrow → title → intro) puis `cp-criterion-table` en pleine largeur
+- **Section 03** : idem, avec `cp-matrix-header` incluant aussi `cp-matrix-intro` + `cp-cost-reco` avant le tableau
+
+### Harmonisation CSS (`src/index.css`)
+- **`.cp-eyebrow`** : `color: #6F6F68` → `var(--color-muted, #6F6F68)`, `margin-bottom: 28px → 16px`
+- **`.cp-title`** : `color: #222222` → `var(--color-text, #222222)`, `max-width: 620px → none`, `font-size` max étendu à 44px
+- **`.cp-matrix-intro`** : `color: #9A9A92` → `var(--color-muted, #6F6F68)`
+- **`.cp-matrix-header`** : `margin-bottom: 32px → 40px`
+- **`.cp-section-counter`** : `color: #E4E4DF` → `var(--color-border, #DADAD4)` — fantôme architectural subtil dans les deux modes
+- **`.cp-section--tipping .cp-section-counter`** : `rgba(255,255,255,0.1)` → `rgba(255,255,255,0.08)` — encore plus discret
+- **`.cp-cost-reco`** : `border-top: #CECECA` → `var(--color-border-soft)`, texte `#3A3A38` → `var(--color-text)`
+
+### Résultat
+- Sections 02 et 03 : titre pleine largeur → table pleine largeur, rythme vertical clair
+- Mode sombre : tous les textes lisibles via variables CSS
+- Mode clair (section 03) : variables light-mode scoped (Sprint 75) + harmonisation confirmée
+
+---
+
 ## 2026-05-23 — Sprint 75 : cp-criterion-table — pattern Awwwards (container bordé + grid)
 
 ### Objectif
