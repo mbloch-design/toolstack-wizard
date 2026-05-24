@@ -296,6 +296,45 @@
    Single source of truth for container widths.
    All pages should use these tokens (migration progressive).
 ───────────────────────────────────────────── */
+
+/* ── Force light mode on editorial pages (ComparePage) ─────────────
+   Overrides the .dark root cascade. Declared outside @layer so
+   specificity beats the layered .dark values.
+────────────────────────────────────────────────────────────────── */
+.cp-page-light {
+  color-scheme: light;
+  background-color: #F8F8F4;
+  color: #222222;
+  /* shadcn/tailwind tokens */
+  --background: 60 22% 97%;
+  --foreground: 0 0% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 13%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 13%;
+  --muted: 60 15% 94%;
+  --muted-foreground: 60 3% 42%;
+  --border: 60 7% 84%;
+  --input: 60 7% 84%;
+  --secondary: 60 15% 94%;
+  --secondary-foreground: 0 0% 13%;
+  --accent: 224 76% 96%;
+  --accent-foreground: 224 76% 44%;
+  /* semantic hex tokens */
+  --color-bg:            #F8F8F4;
+  --color-surface:       #FFFFFF;
+  --color-surface-soft:  #F1F1EC;
+  --color-text:          #222222;
+  --color-text-strong:   #111111;
+  --color-muted:         #6F6F68;
+  --color-muted-light:   #9A9A92;
+  --color-border:        #DADAD4;
+  --color-border-soft:   #E7E7E0;
+  --color-border-strong: #222222;
+  --color-hover:         #222222;
+  --color-hover-text:    #FFFFFF;
+}
+
 @layer components {
   /* Full-width shell — hero backgrounds, CTA bands (max 1440px) */
   .layout-shell {
@@ -8383,89 +8422,103 @@
   .cp-cost-reco .tt-body-large { margin: 0; color: var(--color-text, #222222); }
 
   /* ── Verdict list (section 04) ─────────────────────────────── */
-  .cp-verdict-list {
+  /* ── Section 04 — criteria comparison table ────────────────── */
+  .cp-crit-table {
     margin-top: 40px;
-    border-top: 1px solid #DADAD4;
+    border-top: 2px solid #222222;
   }
-  .cp-verdict-item {
+  .cp-crit-head {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 48px;
-    padding: 36px 0;
-    border-bottom: 1px solid #E7E7E0;
-    align-items: start;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    padding: 14px 0;
+    border-bottom: 1px solid #222222;
   }
-  .cp-verdict-item:last-child { border-bottom: 1px solid #DADAD4; }
-  .cp-verdict-item-left {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .cp-verdict-item-num {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
-    color: #9A9A92;
-    margin-bottom: 10px;
-  }
-  .cp-verdict-item-criterion {
-    margin: 0 0 18px;
-    font-family: var(--font-ui);
-    font-size: 16px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.3;
-    color: #222222;
-  }
-  .cp-verdict-item-tools {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .cp-verdict-item-tool {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .cp-verdict-item-tool-name {
+  .cp-crit-head-label {
     font-family: var(--font-ui);
     font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
     color: #9A9A92;
   }
-  .cp-verdict-item-tool-value {
+  .cp-crit-head-tool {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 24px;
     font-family: var(--font-ui);
-    font-size: 14px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.35;
-    color: #3A3A38;
-  }
-  .cp-verdict-item-tool--win .cp-verdict-item-tool-value {
-    font-weight: 650;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
     color: #222222;
   }
-  .cp-verdict-item-tool-note {
+  .cp-crit-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    border-bottom: 1px solid #E7E7E0;
+    align-items: start;
+  }
+  .cp-crit-row:last-child { border-bottom: 1px solid #DADAD4; }
+  .cp-crit-col {
+    padding: 28px 24px 28px 0;
+  }
+  .cp-crit-col:not(.cp-crit-col--label) {
+    padding-left: 24px;
+    padding-right: 0;
+    border-left: 1px solid #E7E7E0;
+  }
+  .cp-crit-num {
+    display: block;
     font-family: var(--font-ui);
-    font-size: 13px; font-weight: 400; letter-spacing: -0.01em; line-height: 1.4;
-    color: #6F6F68;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+    color: #CBCBC3;
+    margin-bottom: 8px;
   }
-  .cp-verdict-item-right {
-    padding-left: 28px;
-    border-left: 1px solid #DADAD4;
-    align-self: center;
+  .cp-crit-name {
+    margin: 0 0 8px;
+    font-family: var(--font-ui);
+    font-size: 15px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.3;
+    color: #222222;
   }
-  .cp-verdict-item-verdict {
+  .cp-crit-verdict {
     margin: 0;
     font-family: var(--font-ui);
-    font-size: clamp(20px, 2vw, 26px); font-weight: 600; line-height: 1.22; letter-spacing: -0.03em;
+    font-size: 13px; font-weight: 400; line-height: 1.5; letter-spacing: -0.01em;
+    color: #9A9A92;
+  }
+  .cp-crit-val {
+    margin: 0 0 6px;
+    font-family: var(--font-ui);
+    font-size: 14px; font-weight: 400; letter-spacing: -0.01em; line-height: 1.4;
+    color: #ADADAB;
+  }
+  .cp-crit-col--win .cp-crit-val {
+    font-weight: 600;
     color: #222222;
   }
-  @media (max-width: 900px) {
-    .cp-verdict-item {
-      grid-template-columns: 1fr;
-      gap: 0;
+  .cp-crit-note {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 13px; font-weight: 400; line-height: 1.45; letter-spacing: -0.01em;
+    color: #CBCBC3;
+  }
+  .cp-crit-col--win .cp-crit-note { color: #6F6F68; }
+  @media (max-width: 768px) {
+    .cp-crit-head { grid-template-columns: 1fr 1fr; }
+    .cp-crit-head-label { display: none; }
+    .cp-crit-head-tool { padding-left: 0; }
+    .cp-crit-head-tool:first-of-type { padding-left: 0; border-left: none; }
+    .cp-crit-row { grid-template-columns: 1fr 1fr; }
+    .cp-crit-col--label {
+      grid-column: 1 / -1;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #E7E7E0;
     }
-    .cp-verdict-item-right {
-      padding: 20px 0 0;
-      margin-top: 20px;
-      border-left: none;
-      border-top: 1px solid #DADAD4;
-    }
-    .cp-verdict-item-verdict { font-size: 17px; }
+    .cp-crit-col:not(.cp-crit-col--label):first-of-type { border-left: none; padding-left: 0; }
+    .cp-crit-col:not(.cp-crit-col--label) { padding-top: 16px; padding-bottom: 28px; }
+  }
+  @media (max-width: 480px) {
+    .cp-crit-head { grid-template-columns: 1fr; }
+    .cp-crit-head-tool + .cp-crit-head-tool { display: none; }
+    .cp-crit-row { grid-template-columns: 1fr; }
+    .cp-crit-col--label { border-bottom: 1px solid #E7E7E0; padding-bottom: 14px; }
+    .cp-crit-col:not(.cp-crit-col--label) { border-left: none; padding-left: 0; padding-top: 14px; }
+    .cp-crit-col:not(.cp-crit-col--label) + .cp-crit-col:not(.cp-crit-col--label) { padding-top: 0; }
   }
 
   /* ── Section counter — large architectural number ──────────── */
@@ -16302,35 +16355,6 @@ section[id] {
 }
 
 /* ── Verdict list legend (section 03 tool orientation) ─────────── */
-.cp-verdict-legend {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid #222222;
-  margin-bottom: 0;
-}
-.cp-verdict-legend-tool {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #222222;
-}
-.cp-verdict-legend-vs {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #9A9A92;
-}
-@media (max-width: 640px) {
-  .cp-verdict-legend { display: none; }
-}
 
 /* ── Criterion table: mobile tool labels ───────────────────────── */
 .cp-crit-table-mobile-label {
