@@ -1037,69 +1037,89 @@ const NOTION_VS_AIRTABLE: CompareEditorialContent = {
 /* ─── GitHub Copilot vs Cursor editorial content ─────────────────────────── */
 const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
   framing:
-    "Extension universelle ou IDE conçu pour l'IA. L'un s'installe dans votre IDE existant, l'autre vous demande d'en changer.",
+    "Copilot s'installe en 2 minutes sans rien changer à votre éditeur. Cursor vous demande de changer d'IDE. Ce n'est pas une différence de features — c'est une question de jusqu'où vous voulez que l'IA entre dans votre façon de coder.",
   framingEn:
-    "Universal extension or AI-native IDE. One installs into your existing editor, the other asks you to switch.",
+    "Copilot installs in 2 minutes without changing your editor. Cursor asks you to switch IDEs. This isn't a feature difference — it's about how far you want AI to go in how you code.",
+
+  aglanceHeroBrief:
+    "Sur JetBrains ou Visual Studio : Copilot, point final. Vous copiez-collez depuis l'interface d'un LLM vers votre éditeur tous les jours : Cursor résout ça nativement. Vous payez déjà Claude Pro ou ChatGPT Plus pour coder : Cursor les remplace probablement.",
 
   verdictShort:
-    "Freelance solo qui veut shipper vite et accepte une facture variable ? Cursor. Grande entreprise, JetBrains ou Visual Studio, budget fixe à 10$ ? Copilot.",
+    "Solo sur VS Code, features entières, facture variable acceptable ? Cursor. JetBrains, Visual Studio, équipe ou budget fixe ? Copilot.",
   verdictShortEn:
-    "Solo freelancer who wants to ship fast and accepts a variable bill? Cursor. Large company, JetBrains or Visual Studio, fixed $10 budget? Copilot.",
+    "Solo on VS Code, shipping entire features, comfortable with variable billing? Cursor. JetBrains, Visual Studio, team or fixed budget? Copilot.",
 
   finalRecommendation:
-    "ToolTrim recommande Copilot par défaut pour les agences, les entreprises, et les développeurs sur JetBrains ou Visual Studio. Si vous êtes solo et prêt à changer d'IDE, Cursor et son Composer changent concrètement la façon dont on travaille sur plusieurs fichiers.",
+    "Copilot par défaut pour les équipes, les agences, et quiconque est sur JetBrains ou Visual Studio. Si vous êtes solo sur VS Code et que vous copiez-collez depuis l'interface d'un LLM vers votre éditeur — Cursor résout ce problème et revient souvent moins cher que Copilot + ChatGPT Plus ensemble.",
   finalRecommendationEn:
-    "ToolTrim recommends Copilot by default for agencies, enterprises, and developers on JetBrains or Visual Studio. If you're solo and ready to switch IDEs, Cursor and its Composer concretely change how you work across multiple files.",
+    "Copilot by default for teams, agencies, and anyone on JetBrains or Visual Studio. If you're solo on VS Code and copy-pasting from an LLM web interface to your editor — Cursor solves that and often costs less than Copilot + ChatGPT Plus combined.",
 
   quickVerdictA:
-    "Vous êtes sur JetBrains, Visual Studio ou un IDE que vous ne voulez pas quitter, et vous avez besoin d'un budget mensuel prévisible.",
+    "Votre équipe est sur JetBrains, IntelliJ ou Visual Studio. Ou vous avez un budget mensuel strict et n'avez pas envie de surveiller une facture variable.",
   quickVerdictAEn:
-    "You're on JetBrains, Visual Studio or an IDE you don't want to leave, and need a predictable monthly budget.",
+    "Your team is on JetBrains, IntelliJ or Visual Studio. Or you have a strict monthly budget and don't want to track variable billing.",
   quickVerdictB:
-    "Vous êtes développeur solo et passez beaucoup de temps à modifier du code sur plusieurs fichiers simultanément.",
+    "Vous êtes solo sur VS Code, vous modifiez plusieurs fichiers liés en même temps, et vous payez déjà ChatGPT Plus ou Claude Pro pour du code.",
   quickVerdictBEn:
-    "You're a solo developer and spend a lot of time editing code across multiple files at once.",
+    "You're solo on VS Code, edit multiple linked files at once, and already pay for ChatGPT Plus or Claude Pro for coding.",
   quickVerdictAvoid:
-    "Vous travaillez dans des environnements de défense ou 'air-gapped' où aucune requête cloud n'est autorisée.",
+    "Vous travaillez dans des environnements de défense ou air-gapped sans accès cloud. Aucun des deux ne fonctionne dans ce contexte.",
   quickVerdictAvoidEn:
-    "You work in defense or air-gapped environments where no cloud requests are allowed.",
+    "You work in defense or air-gapped environments without cloud access. Neither tool works in that context.",
+
+  verdictCardTitleA: "L'extension universelle",
+  verdictCardTitleAEn: "The universal extension",
+  verdictCardTextA:
+    "Votre IDE reste le même. Prix fixe, zéro friction d'adoption.",
+  verdictCardTextAEn:
+    "Your IDE stays the same. Fixed price, zero adoption friction.",
+  verdictCardTitleB: "L'IDE IA natif",
+  verdictCardTitleBEn: "The AI-native IDE",
+  verdictCardTextB:
+    "Composer coordonne plusieurs fichiers à la fois. Pour un dev solo qui shippe, la différence est palpable.",
+  verdictCardTextBEn:
+    "Composer coordinates multiple files at once. For a solo dev shipping features, the difference is real.",
+  verdictWarning:
+    "Vous payez déjà Claude Pro ou ChatGPT Plus pour coder ? Cursor les intègre nativement. Cursor Pro (20$) + annuler Claude/ChatGPT revient souvent moins cher que Copilot (10$) + garder les deux.",
+  verdictWarningEn:
+    "Already paying Claude Pro or ChatGPT Plus to code? Cursor includes both natively. Cursor Pro ($20) + canceling Claude/ChatGPT often costs less than Copilot ($10) + keeping both.",
 
   toolADesc:
-    "GitHub Copilot est une extension IA qui se greffe à votre IDE existant. Elle fonctionne partout — VS Code, JetBrains, Visual Studio — sans vous demander de changer vos habitudes. Son modèle à prix fixe en fait l'option par défaut pour les équipes et les développeurs qui veulent un coût prévisible.",
+    "Copilot s'installe comme n'importe quelle extension — VS Code, JetBrains, Visual Studio. Vous ne changez rien à votre workflow, vous ajoutez de l'intelligence dessus. C'est son argument central : zéro friction d'adoption, prix fixe à 10$/mois, compatible avec l'IDE que votre équipe utilise déjà.",
   toolADescEn:
-    "GitHub Copilot is an AI extension that plugs into your existing IDE. It works everywhere — VS Code, JetBrains, Visual Studio — without asking you to change your habits. Its fixed-price model makes it the default for teams who want predictable costs.",
+    "Copilot installs like any extension — VS Code, JetBrains, Visual Studio. You change nothing about your workflow, you layer intelligence on top. That's its core argument: zero adoption friction, fixed price at $10/mo, compatible with whatever IDE your team already uses.",
   toolAUseCases: [
-    "Autocomplétion dans votre IDE actuel",
-    "Génération de Pull Requests de A à Z",
-    "Code reviews automatisées",
-    "Équipes sur JetBrains ou Visual Studio",
-    "Budget mensuel fixe et prévisible",
+    "Autocomplétion dans votre IDE actuel sans rien changer",
+    "Pull Requests générées de A à Z",
+    "Code reviews automatisées via GitHub Actions",
+    "Équipes sur JetBrains, IntelliJ ou Visual Studio",
+    "Budget mensuel fixe à 10$ sans variable",
   ],
   toolAUseCasesEn: [
-    "Autocomplete in your current IDE",
+    "Autocomplete in your current IDE without changing anything",
     "End-to-end Pull Request generation",
-    "Automated code reviews",
-    "Teams on JetBrains or Visual Studio",
-    "Fixed and predictable monthly budget",
+    "Automated code reviews via GitHub Actions",
+    "Teams on JetBrains, IntelliJ or Visual Studio",
+    "Fixed $10/mo budget without surprises",
   ],
 
   toolBDesc:
-    "Cursor est un éditeur de code conçu dès le départ pour l'IA, pas adapté après coup. Son outil Composer coordonne des modifications sur plusieurs fichiers en même temps. Pour un développeur solo prêt à changer d'IDE, il remplace le copier-coller quotidien entre Claude.ai et votre éditeur.",
+    "Cursor n'est pas une extension — c'est un IDE entier, fork de VS Code, conçu dès le départ pour l'IA. Son outil Composer coordonne des modifications sur plusieurs fichiers simultanément, ce que Copilot ne fait pas aussi bien. Pour un développeur solo qui génère des features entières avec un agent, la différence est palpable. Le coût : vous changez d'éditeur et vous surveillez votre facture.",
   toolBDescEn:
-    "Cursor is a code editor designed from the ground up for AI, not retrofitted. Its Composer tool coordinates changes across multiple files at once. For a solo developer ready to switch, it replaces daily copy-pasting between Claude.ai and your editor.",
+    "Cursor isn't an extension — it's a full IDE, a VS Code fork, designed from the ground up for AI. Its Composer tool coordinates changes across multiple files at once, something Copilot handles less fluidly. For a solo developer generating entire features with an agent, the difference is real. The cost: you switch editors and you watch your bill.",
   toolBUseCases: [
-    "Modification multi-fichiers via Composer",
-    "Accès direct aux modèles frontières (Claude, GPT-4o)",
-    "Cloud Agents et Bugbot autonomes",
-    "Développement solo fullstack ou front-end",
-    "Remplacement de l'interface web Claude pour le code",
+    "Modifications multi-fichiers coordonnées via Composer",
+    "Accès direct à Claude et GPT-4o sans copier-coller",
+    "Remplace ChatGPT Plus ou Claude Pro pour les tâches de code",
+    "Agents autonomes sur de gros refactors (Bugbot, Cloud Agents)",
+    "Ghost Mode pour les projets sous NDA (100% local)",
   ],
   toolBUseCasesEn: [
-    "Multi-file editing via Composer",
-    "Direct access to frontier models (Claude, GPT-4o)",
-    "Autonomous Cloud Agents and Bugbot",
-    "Solo fullstack or front-end development",
-    "Replaces Claude web interface for coding",
+    "Coordinated multi-file edits via Composer",
+    "Direct access to Claude and GPT-4o without copy-pasting",
+    "Replaces ChatGPT Plus or Claude Pro for coding",
+    "Autonomous agents for large refactors (Bugbot, Cloud Agents)",
+    "Ghost Mode for NDA projects (100% local)",
   ],
 
   tableRows: [
@@ -1112,16 +1132,16 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
       toolB: "Native via Composer", toolBEn: "Native via Composer",
       winner: "B", verdictLabel: "Cursor", verdictLabelEn: "Cursor" },
     { criterion: "Modèle de prix", criterionEn: "Pricing model",
-      toolA: "Abonnement fixe (10$/mois)", toolAEn: "Fixed subscription ($10/mo)",
-      toolB: "Hybride : abonnement + consommation API", toolBEn: "Hybrid: subscription + API usage",
+      toolA: "Fixe à 10$/mois", toolAEn: "Fixed at $10/mo",
+      toolB: "Hybride : 20$/mois + consommation API", toolBEn: "Hybrid: $20/mo + API usage",
       winner: "A", verdictLabel: "Copilot", verdictLabelEn: "Copilot" },
     { criterion: "Confidentialité du code", criterionEn: "Code privacy",
-      toolA: "Opt-out requis (plans individuels)", toolAEn: "Opt-out required (individual plans)",
-      toolB: "Privacy Mode et Ghost Mode disponibles", toolBEn: "Privacy Mode and Ghost Mode available",
+      toolA: "Entraînement activé par défaut (opt-out requis)", toolAEn: "Training on by default (opt-out required)",
+      toolB: "Privacy Mode + Ghost Mode disponibles", toolBEn: "Privacy Mode + Ghost Mode available",
       winner: "B", verdictLabel: "Cursor", verdictLabelEn: "Cursor" },
-    { criterion: "Prise en main", criterionEn: "Ease of setup",
-      toolA: "Très simple (extension)", toolAEn: "Very simple (extension)",
-      toolB: "Modérée (changement d'IDE)", toolBEn: "Moderate (IDE switch required)",
+    { criterion: "Prise en main", criterionEn: "Setup",
+      toolA: "Extension : 2 minutes", toolAEn: "Extension: 2 minutes",
+      toolB: "Changement d'IDE requis", toolBEn: "IDE switch required",
       winner: "A", verdictLabel: "Copilot", verdictLabelEn: "Copilot" },
     { criterion: "Génération de PR", criterionEn: "PR generation",
       toolA: "Oui, de A à Z", toolAEn: "Yes, end-to-end",
@@ -1130,136 +1150,144 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
   ],
 
   prosA: [
-    "Fonctionne dans tous les IDEs — aucun changement d'environnement requis",
-    "Prix fixe à 10$/mois, sans surprise en fin de mois",
+    "Fonctionne dans tous les IDEs — aucun changement d'environnement",
+    "Prix fixe à 10$/mois, aucune facture surprise",
     "Pull requests générées de A à Z",
-    "Plan Business avec confidentialité garantie pour les équipes",
+    "Plan Business : données non utilisées pour l'entraînement, inclus d'office",
   ],
   prosAEn: [
-    "Works in all IDEs — no environment change required",
-    "Fixed price at $10/mo, no end-of-month surprises",
+    "Works in all IDEs — no environment change",
+    "Fixed $10/mo, no surprise bill",
     "End-to-end Pull Request generation",
-    "Business plan with guaranteed privacy for teams",
+    "Business plan: data not used for training, included by default",
   ],
   limitsA: [
-    "L'agent passe moins bien d'un fichier à l'autre que celui de Cursor",
-    "Entraînement sur vos données activé par défaut (opt-out requis sur les plans individuels)",
-    "Les code reviews automatisées consomment des minutes GitHub Actions payantes",
+    "L'agent multi-fichiers reste moins fluide que Composer de Cursor",
+    "Plans individuels : entraînement sur vos données activé par défaut depuis 2026 — opt-out manuel requis",
+    "Code reviews automatisées consomment des minutes GitHub Actions payantes",
   ],
   limitsAEn: [
-    "Agent handles cross-file tasks less fluidly than Cursor",
-    "Training on your data enabled by default (opt-out required on individual plans)",
+    "Multi-file agent less fluid than Cursor's Composer",
+    "Individual plans: data training enabled by default since 2026 — manual opt-out required",
     "Automated code reviews consume paid GitHub Actions minutes",
   ],
   prosB: [
-    "IDE pensé pour l'IA dès le départ, pas adapté après coup",
-    "Composer : modification multi-fichiers coordonnée par un agent",
-    "Accès natif aux modèles frontières sans copier-coller",
+    "Composer : modifications multi-fichiers coordonnées par un agent, nativement",
+    "Intègre Claude et GPT-4o — remplace souvent ChatGPT Plus pour le code",
     "Ghost Mode (100% local) pour les projets sous NDA",
+    "IDE pensé pour l'IA depuis le premier jour, pas adapté après coup",
   ],
   prosBEn: [
-    "IDE designed for AI from the ground up, not retrofitted",
-    "Composer: agent-coordinated multi-file editing",
-    "Native access to frontier models without copy-pasting",
+    "Composer: agent-coordinated multi-file edits, natively",
+    "Includes Claude and GPT-4o — often replaces ChatGPT Plus for coding",
     "Ghost Mode (100% local) for NDA projects",
+    "IDE designed for AI from day one, not retrofitted",
   ],
   limitsB: [
-    "Facturation usage-based difficile à prévoir pour les utilisateurs intensifs",
-    "Nécessite de changer d'IDE — incompatible avec JetBrains ou Visual Studio",
-    "Les workflows .cursorrules ne migrent pas vers d'autres éditeurs",
-    "Bugbot facturé séparément des plans Pro/Pro+",
+    "Facturation variable : une session agent intensive peut coûter 10-20$ sans que vous le voyiez venir",
+    "Nécessite de changer d'IDE — incompatible avec JetBrains et Visual Studio",
+    "Les règles .cursorrules ne migrent pas vers d'autres éditeurs — vous créez une dépendance",
+    "Bugbot facturé séparément des plans Pro et Pro+",
   ],
   limitsBEn: [
-    "Usage-based billing hard to predict for heavy users",
-    "Requires an IDE switch — incompatible with JetBrains or Visual Studio",
-    ".cursorrules workflows don't migrate to other editors",
-    "Bugbot billed separately from Pro/Pro+ plans",
+    "Variable billing: an intensive agent session can cost $10-20 without warning",
+    "Requires an IDE switch — incompatible with JetBrains and Visual Studio",
+    ".cursorrules workflows don't migrate to other editors — you create a dependency",
+    "Bugbot billed separately from Pro and Pro+ plans",
   ],
 
   decisionRows: [
     { context: "Tu es sur JetBrains, IntelliJ ou Visual Studio",
       contextEn: "You're on JetBrains, IntelliJ or Visual Studio",
-      choice: "GitHub Copilot", choiceEn: "GitHub Copilot" },
-    { context: "Tu veux un budget mensuel fixe et prévisible",
-      contextEn: "You want a fixed, predictable monthly budget",
-      choice: "GitHub Copilot", choiceEn: "GitHub Copilot" },
-    { context: "Tu modifies du code sur plusieurs fichiers en même temps tous les jours",
-      contextEn: "You edit code across multiple files at once every day",
-      choice: "Cursor", choiceEn: "Cursor" },
-    { context: "Tu copies-colles constamment depuis l'interface web de Claude vers ton éditeur",
-      contextEn: "You constantly copy-paste from Claude's web interface to your editor",
-      choice: "Cursor — Composer le fait nativement", choiceEn: "Cursor — Composer does this natively" },
+      choice: "GitHub Copilot — Cursor ne supporte pas ces IDEs",
+      choiceEn: "GitHub Copilot — Cursor doesn't support these IDEs" },
+    { context: "Tu veux un budget mensuel fixe sans variable",
+      contextEn: "You want a fixed monthly budget without variables",
+      choice: "GitHub Copilot",
+      choiceEn: "GitHub Copilot" },
+    { context: "Tu modifies plusieurs fichiers liés en même temps tous les jours",
+      contextEn: "You edit multiple linked files at once every day",
+      choice: "Cursor — Composer est fait pour ça",
+      choiceEn: "Cursor — Composer is built for this" },
+    { context: "Tu copies-colles depuis Claude.ai ou ChatGPT vers ton éditeur tous les jours",
+      contextEn: "You copy-paste from Claude.ai or ChatGPT to your editor daily",
+      choice: "Cursor — Composer fait ça nativement",
+      choiceEn: "Cursor — Composer does this natively" },
     { context: "Tu travailles en grande entreprise avec des contraintes de sécurité",
       contextEn: "You work in a large company with security constraints",
-      choice: "GitHub Copilot Business", choiceEn: "GitHub Copilot Business" },
-    { context: "Tu veux la confidentialité maximale sans plan Enterprise",
-      contextEn: "You want maximum privacy without an Enterprise plan",
-      choice: "Cursor Ghost Mode", choiceEn: "Cursor Ghost Mode" },
+      choice: "GitHub Copilot Business",
+      choiceEn: "GitHub Copilot Business" },
+    { context: "Tu paies déjà ChatGPT Plus ou Claude Pro pour coder",
+      contextEn: "You already pay ChatGPT Plus or Claude Pro to code",
+      choice: "Cursor Pro — il les remplace, le calcul change",
+      choiceEn: "Cursor Pro — it replaces both, the math changes" },
   ],
 
   decisiveCriteria: [
     {
       title: "Compatibilité IDE",
       titleEn: "IDE compatibility",
-      toolA: "Copilot s'installe en extension dans tous les IDEs — JetBrains, Visual Studio, VS Code.",
-      toolAEn: "Copilot installs as an extension in all IDEs — JetBrains, Visual Studio, VS Code.",
+      toolA: "Copilot s'installe en extension dans tous les IDEs — JetBrains, Visual Studio, VS Code, CLI.",
+      toolAEn: "Copilot installs as an extension in all IDEs — JetBrains, Visual Studio, VS Code, CLI.",
       toolB: "Cursor est un fork de VS Code. JetBrains et Visual Studio ne sont pas supportés.",
       toolBEn: "Cursor is a VS Code fork. JetBrains and Visual Studio are not supported.",
-      decision: "Copilot si vous ne voulez pas changer d'IDE.",
-      decisionEn: "Copilot if you don't want to switch IDEs.",
+      decision: "Sur JetBrains : décision prise. Copilot, point final.",
+      decisionEn: "On JetBrains: decision made. Copilot, full stop.",
     },
     {
       title: "Modèle de prix",
       titleEn: "Pricing model",
-      toolA: "Prix fixe à 10$/mois. Prévisible, sans surprise.",
-      toolAEn: "Fixed price at $10/mo. Predictable, no surprises.",
-      toolB: "Abonnement + consommation API selon les modèles utilisés. La facture varie.",
-      toolBEn: "Subscription + API usage based on models used. The bill varies.",
-      decision: "Copilot si le budget est une contrainte. Cursor si l'usage justifie la variabilité.",
-      decisionEn: "Copilot if budget is a constraint. Cursor if usage justifies variability.",
+      toolA: "Abonnement fixe à 10$/mois. Vous savez ce que vous payez avant de coder.",
+      toolAEn: "Fixed subscription at $10/mo. You know what you're paying before you code.",
+      toolB: "20$/mois + consommation selon les modèles. Une session agent peut coûter 10-20$ seule.",
+      toolBEn: "$20/mo + usage based on models. One agent session can cost $10-20 alone.",
+      decision: "Copilot si le budget est une contrainte. Cursor si vous supprimez votre abonnement Claude ou ChatGPT Plus — le calcul s'inverse.",
+      decisionEn: "Copilot if budget is a constraint. Cursor if you cancel your Claude or ChatGPT Plus sub — the math flips.",
+    },
+    {
+      title: "Travail multi-fichiers",
+      titleEn: "Multi-file work",
+      toolA: "Possible via mode agent, mais moins fluide. Copilot coordonne moins bien des modifications liées entre plusieurs fichiers.",
+      toolAEn: "Possible via agent mode, but less fluid. Copilot handles linked changes across files less smoothly.",
+      toolB: "Composer est conçu pour ça. Il coordonne des modifications sur plusieurs fichiers simultanément, avec un contexte partagé.",
+      toolBEn: "Composer is built for this. It coordinates changes across multiple files at once, with shared context.",
+      decision: "Cursor si les refactors multi-fichiers sont quotidiens. Copilot si vous travaillez surtout fichier par fichier.",
+      decisionEn: "Cursor if multi-file refactors are daily. Copilot if you mostly work file by file.",
     },
     {
       title: "Confidentialité",
       titleEn: "Privacy",
-      toolA: "Entraînement activé par défaut sur les plans individuels — opt-out manuel requis.",
-      toolAEn: "Training enabled by default on individual plans — manual opt-out required.",
-      toolB: "Privacy Mode et Ghost Mode (100% local) disponibles pour tous les plans.",
-      toolBEn: "Privacy Mode and Ghost Mode (100% local) available on all plans.",
-      decision: "Copilot Business pour les agences. Cursor Ghost Mode pour la paranoïa freelance.",
-      decisionEn: "Copilot Business for agencies. Cursor Ghost Mode for privacy-conscious freelancers.",
-    },
-    {
-      title: "Multi-fichiers",
-      titleEn: "Multi-file editing",
-      toolA: "Possible via mode agent, mais moins fluide que Cursor.",
-      toolAEn: "Possible via agent mode, but less fluid than Cursor.",
-      toolB: "Composer coordonne des modifications sur plusieurs fichiers simultanément.",
-      toolBEn: "Composer coordinates changes across multiple files at once.",
-      decision: "Cursor si le travail multi-fichiers est quotidien.",
-      decisionEn: "Cursor if multi-file work is daily.",
+      toolA: "Plans individuels (Free et Pro) : entraînement sur vos données activé par défaut depuis 2026. Opt-out manuel dans les paramètres GitHub.",
+      toolAEn: "Individual plans (Free and Pro): training on your data enabled by default since 2026. Manual opt-out in GitHub settings.",
+      toolB: "Privacy Mode désactive l'envoi de données. Ghost Mode traite tout en local — aucune donnée ne quitte votre machine.",
+      toolBEn: "Privacy Mode disables data sending. Ghost Mode processes everything locally — no data leaves your machine.",
+      decision: "Copilot Business pour les équipes (opt-out inclus d'office). Cursor Ghost Mode pour les projets sous NDA en solo.",
+      decisionEn: "Copilot Business for teams (opt-out included). Cursor Ghost Mode for solo NDA projects.",
     },
   ],
 
   tippingPoint: {
-    title: "Le seuil de bascule",
-    titleEn: "The tipping point",
-    defaultChoice: "GitHub Copilot par défaut. Compatible avec tous les IDEs, prévisible à 10$/mois.",
-    defaultChoiceEn: "GitHub Copilot by default. Compatible with all IDEs, predictable at $10/mo.",
+    title: "Le moment où Cursor devient évident",
+    titleEn: "The moment Cursor becomes obvious",
+    defaultChoice:
+      "Copilot à 10$/mois. Compatible partout, prix fixe, zéro friction. C'est le point de départ raisonnable pour la majorité des développeurs.",
+    defaultChoiceEn:
+      "Copilot at $10/mo. Compatible everywhere, fixed price, zero friction. The sensible starting point for most developers.",
     switchWhen:
-      "Vous passez plus de temps à copier-coller depuis l'interface web de Claude vers votre IDE qu'à coder. Composer de Cursor fait ça nativement.",
+      "Le jour où vous réalisez que vous passez plus de temps à copier-coller entre l'interface d'un LLM et votre éditeur qu'à écrire du code. Composer fait exactement ça — sans changer de fenêtre.",
     switchWhenEn:
-      "You spend more time copy-pasting from Claude's web interface to your IDE than coding. Cursor's Composer does this natively.",
+      "The day you realize you spend more time copy-pasting between an LLM web interface and your editor than actually writing code. Composer does exactly this — without switching windows.",
     signals: [
-      "copier-coller quotidien entre Claude.ai et votre éditeur",
-      "modifications fréquentes sur 3+ fichiers liés en même temps",
-      "refactors multi-fichiers qui prennent des heures manuellement",
-      "vous avez déjà testé VS Code et n'y êtes pas attaché",
+      "vous copiez-collez depuis Claude.ai ou ChatGPT vers votre éditeur plusieurs fois par jour",
+      "vous faites des refactors sur 3+ fichiers liés et vous devez tout coordonner manuellement",
+      "vous travaillez sur VS Code et n'y êtes pas attaché à vie",
+      "vous payez déjà Claude Pro ou ChatGPT Plus pour coder — Cursor les remplace",
     ],
     signalsEn: [
-      "daily copy-pasting between Claude.ai and your editor",
-      "frequent changes across 3+ linked files at once",
-      "multi-file refactors that take hours manually",
-      "you've used VS Code before and aren't attached to it",
+      "you copy-paste from Claude.ai or ChatGPT to your editor multiple times a day",
+      "you refactor across 3+ linked files and handle all coordination manually",
+      "you mostly use VS Code and aren't attached to it long-term",
+      "you already pay Claude Pro or ChatGPT Plus for coding — Cursor replaces them",
     ],
   },
 
@@ -1267,108 +1295,146 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
     {
       label: "Prix de base",
       labelEn: "Base price",
-      toolA: "Pro à 10$/mois. Pro+ à 39$/mois.",
-      toolAEn: "Pro at $10/mo. Pro+ at $39/mo.",
-      toolB: "Pro à 20$/mois. Pro+ à 60$/mois. Ultra à 200$/mois.",
-      toolBEn: "Pro at $20/mo. Pro+ at $60/mo. Ultra at $200/mo.",
-      recommendation: "Copilot Pro est difficile à battre sur le rapport qualité/prix.",
-      recommendationEn: "Copilot Pro is hard to beat on value for money.",
+      toolA: "Pro à 10$/mois (ou 8,33$ en annuel). Pro+ à 39$/mois.",
+      toolAEn: "Pro at $10/mo (or $8.33 annually). Pro+ at $39/mo.",
+      toolB: "Pro à 20$/mois. Pro+ à 60$/mois. Ultra à 200$/mois. Teams à 40$/utilisateur.",
+      toolBEn: "Pro at $20/mo. Pro+ at $60/mo. Ultra at $200/mo. Teams at $40/user.",
+      recommendation:
+        "Copilot Pro est difficile à battre sur le prix brut. Mais si Cursor remplace votre abonnement Claude ou ChatGPT Plus, le calcul s'inverse : Cursor Pro (20$) vs Copilot (10$) + ChatGPT Plus (20$) = 10$ d'économies.",
+      recommendationEn:
+        "Copilot Pro is hard to beat on raw price. But if Cursor replaces your Claude or ChatGPT Plus sub, the math flips: Cursor Pro ($20) vs Copilot ($10) + ChatGPT Plus ($20) = $10 savings.",
     },
     {
       label: "Plan gratuit",
       labelEn: "Free plan",
-      toolA: "50 requêtes premium/mois. Ça fond en une matinée de développement sérieux.",
-      toolAEn: "50 premium requests/month. Gone in one serious morning of development.",
-      toolB: "Inexploitable au quotidien. Suffisant pour tester l'interface quelques heures.",
-      toolBEn: "Unusable daily. Enough to test the interface for a few hours.",
-      recommendation: "Ne comptez pas sur le plan gratuit pour un usage professionnel.",
-      recommendationEn: "Don't count on the free plan for professional use.",
+      toolA: "50 requêtes premium par mois. Ça fond en une demi-matinée de développement sérieux.",
+      toolAEn: "50 premium requests/month. Gone in half a serious morning of development.",
+      toolB: "Juste suffisant pour tester l'interface quelques heures. Inexploitable au quotidien.",
+      toolBEn: "Just enough to test the interface for a few hours. Unusable daily.",
+      recommendation:
+        "Les deux plans gratuits sont des freemium au sens strict. Pour un usage professionnel, prévoir un plan payant dès le départ.",
+      recommendationEn:
+        "Both free plans are freemium in the strict sense. Budget for a paid plan from day one for any professional use.",
     },
     {
-      label: "Coût caché",
-      labelEn: "Hidden cost",
-      toolA: "Les code reviews automatisées consomment des minutes GitHub Actions payantes depuis juin 2026.",
-      toolAEn: "Automated code reviews consume paid GitHub Actions minutes since June 2026.",
-      toolB: "Les modèles frontières en mode manuel dévident votre pool de crédits. Bugbot est facturé en plus.",
-      toolBEn: "Frontier models in manual mode drain your credit pool. Bugbot is billed on top.",
-      recommendation: "Sur Cursor, activez le mode Auto pour limiter la consommation de crédits.",
-      recommendationEn: "On Cursor, enable Auto mode to limit credit consumption.",
+      label: "Coût réel vs coût affiché",
+      labelEn: "Real cost vs listed price",
+      toolA:
+        "Les code reviews automatisées consomment des minutes GitHub Actions payantes depuis juin 2026 — non incluses dans le forfait.",
+      toolAEn:
+        "Automated code reviews consume paid GitHub Actions minutes since June 2026 — not included in the subscription.",
+      toolB:
+        "Les modèles frontières en mode manuel dévident vos crédits vite. Une session Cloud Agent sur un refactor complexe : comptez 10-20$ seule. Bugbot facturé en plus.",
+      toolBEn:
+        "Frontier models in manual mode drain credits fast. One Cloud Agent session on a complex refactor: budget $10-20 alone. Bugbot billed on top.",
+      recommendation:
+        "Sur Cursor : activez le mode Auto. Sur Copilot : vérifiez votre consommation GitHub Actions si vous utilisez les code reviews.",
+      recommendationEn:
+        "On Cursor: enable Auto mode. On Copilot: check your GitHub Actions usage if you use code reviews.",
     },
   ],
 
   tooltrimRisks: [
     {
-      mistake: "Laisser Copilot s'entraîner sur votre code",
-      mistakeEn: "Letting Copilot train on your code",
-      consequence: "Vos snippets propriétaires alimentent les modèles de GitHub par défaut sur les plans individuels.",
-      consequenceEn: "Your proprietary snippets feed GitHub's models by default on individual plans.",
-      recommendation: "Désactivez le partage de données dans vos paramètres GitHub dès l'inscription, ou prenez un plan Business.",
-      recommendationEn: "Disable data sharing in your GitHub settings on signup, or use a Business plan.",
+      mistake: "Ne pas faire l'opt-out sur Copilot individuel",
+      mistakeEn: "Not opting out on individual Copilot plans",
+      consequence:
+        "Depuis 2026, GitHub utilise vos données de code pour entraîner ses modèles par défaut sur les plans Free et Pro.",
+      consequenceEn:
+        "Since 2026, GitHub uses your code data to train its models by default on Free and Pro plans.",
+      recommendation:
+        "Allez dans vos paramètres GitHub → Copilot → désactivez 'Allow GitHub to use my code snippets' dès l'inscription. Ou prenez un plan Business.",
+      recommendationEn:
+        "Go to GitHub settings → Copilot → disable 'Allow GitHub to use my code snippets' on signup. Or use a Business plan.",
     },
     {
-      mistake: "Cumuler inutilement les abonnements IA",
-      mistakeEn: "Stacking AI subscriptions unnecessarily",
-      consequence: "Payer ChatGPT Plus (20$) + Copilot (10$) + Cursor (20$) simultanément.",
-      consequenceEn: "Paying ChatGPT Plus ($20) + Copilot ($10) + Cursor ($20) simultaneously.",
-      recommendation: "Cursor intègre déjà GPT-4o et Claude. Il remplace souvent ChatGPT Plus pour les tâches de code.",
-      recommendationEn: "Cursor already includes GPT-4o and Claude. It often replaces ChatGPT Plus for coding tasks.",
+      mistake: "Payer Cursor + ChatGPT Plus + Claude Pro en même temps",
+      mistakeEn: "Paying Cursor + ChatGPT Plus + Claude Pro simultaneously",
+      consequence:
+        "Beaucoup de développeurs cumulent 3 abonnements IA sans réaliser que Cursor en intègre deux nativement.",
+      consequenceEn:
+        "Many developers stack 3 AI subscriptions without realizing Cursor natively includes two of them.",
+      recommendation:
+        "Si vous prenez Cursor, testez 1 mois sans ChatGPT Plus ni Claude Pro. Pour les tâches de code, Cursor les remplace dans la plupart des cas.",
+      recommendationEn:
+        "If you take Cursor, test 1 month without ChatGPT Plus and Claude Pro. For coding tasks, Cursor replaces them in most cases.",
     },
     {
-      mistake: "Ignorer la facture usage-based de Cursor",
-      mistakeEn: "Ignoring Cursor's usage-based billing",
-      consequence: "La facture monte vite si vous laissez des agents lourds tourner en boucle.",
-      consequenceEn: "The bill rises quickly if you let heavy agents run in loops.",
-      recommendation: "Activez le mode Auto et surveillez votre consommation dans les paramètres Cursor.",
-      recommendationEn: "Enable Auto mode and monitor your usage in Cursor settings.",
+      mistake: "Laisser un agent Cursor tourner sans surveiller",
+      mistakeEn: "Letting a Cursor agent run unsupervised",
+      consequence:
+        "Les Cloud Agents et Bugbot consomment des crédits API réels. Une boucle d'agent sur un refactor complexe peut coûter 20-50$ sans notification proactive.",
+      consequenceEn:
+        "Cloud Agents and Bugbot consume real API credits. An agent loop on a complex refactor can cost $20-50 with no proactive notification.",
+      recommendation:
+        "Activez le mode Auto pour les sessions normales. Réservez les modèles frontières manuels aux refactors que vous supervisez activement.",
+      recommendationEn:
+        "Enable Auto mode for normal sessions. Reserve manual frontier models for refactors you're actively supervising.",
     },
   ],
 
   profiles: [
-    { persona: "Freelance solo fullstack", personaEn: "Solo fullstack freelancer",
+    { persona: "Freelance solo sur VS Code", personaEn: "Solo freelancer on VS Code",
       choice: "Cursor",
-      reason: "Composer change la façon dont on travaille sur plusieurs fichiers. Pour quelqu'un qui génère des features entières, c'est un gain réel.",
-      reasonEn: "Composer changes how you work across multiple files. For someone shipping entire features, it's a real gain.",
-      limit: "La facture peut surprendre. Surveiller l'usage des agents en boucle.",
-      limitEn: "The bill can surprise you. Keep an eye on looping agent usage." },
+      reason:
+        "Composer change concrètement la façon de travailler sur plusieurs fichiers. Si vous êtes sur VS Code et que vous générez des features entières, ce n'est pas une promesse — c'est un gain visible dès la première semaine.",
+      reasonEn:
+        "Composer concretely changes how you work across multiple files. If you're on VS Code and generating entire features, this isn't a promise — it's a visible gain from the first week.",
+      limit:
+        "Surveillez votre facture. Une semaine de travail intensif avec des agents peut coûter 30-50$ de plus que le forfait de base.",
+      limitEn:
+        "Watch your bill. One intense week with agents can cost $30-50 more than the base plan." },
     { persona: "Développeur en agence", personaEn: "Agency developer",
       choice: "GitHub Copilot",
-      reason: "Budget prévisible, compatible avec tous les IDEs de l'équipe, plan Business avec opt-out d'entraînement inclus.",
-      reasonEn: "Predictable budget, compatible with all team IDEs, Business plan with training opt-out included.",
-      limit: "L'agent multi-fichiers reste moins fluide que Cursor.",
-      limitEn: "Multi-file agent still less fluid than Cursor." },
-    { persona: "Développeur sous NDA", personaEn: "Developer working under NDA",
+      reason:
+        "Budget prévisible, compatible avec tous les IDEs de l'équipe, plan Business avec opt-out d'entraînement inclus d'office. C'est l'outil sans discussion pour les équipes.",
+      reasonEn:
+        "Predictable budget, compatible with all team IDEs, Business plan with training opt-out included by default. No debate needed for teams.",
+      limit:
+        "L'agent multi-fichiers reste moins fluide que Cursor. Pour des refactors complexes sur une grosse codebase, vous sentirez la différence.",
+      limitEn:
+        "Multi-file agent still less fluid than Cursor. For complex refactors on a large codebase, you'll feel the gap." },
+    { persona: "Développeur sous NDA strict", personaEn: "Strict NDA developer",
       choice: "Cursor Ghost Mode",
-      reason: "Ghost Mode traite tout en local — aucune donnée envoyée en dehors de votre machine.",
-      reasonEn: "Ghost Mode processes everything locally — no data leaves your machine.",
-      limit: "Performances réduites par rapport aux modèles cloud frontières.",
-      limitEn: "Reduced performance compared to cloud frontier models." },
-    { persona: "Entreprise / JetBrains", personaEn: "Enterprise / JetBrains",
-      choice: "GitHub Copilot Business",
-      reason: "Seul Copilot supporte nativement IntelliJ, PyCharm et les autres IDEs JetBrains.",
-      reasonEn: "Only Copilot natively supports IntelliJ, PyCharm and other JetBrains IDEs.",
-      limit: "Les code reviews automatisées consomment des minutes Actions payantes depuis 2026.",
-      limitEn: "Automated code reviews consume paid Actions minutes since 2026." },
+      reason:
+        "Ghost Mode traite tout en local — aucune donnée ne sort de votre machine. C'est la seule option pour les projets où le code ne peut pas toucher un serveur tiers.",
+      reasonEn:
+        "Ghost Mode processes everything locally — no data leaves your machine. The only viable option for projects where code can't touch a third-party server.",
+      limit:
+        "Performances sensiblement réduites par rapport aux modèles cloud frontières. Vous échangez la confidentialité contre la qualité des suggestions.",
+      limitEn:
+        "Noticeably lower performance than cloud frontier models. You trade privacy for suggestion quality." },
+    { persona: "Développeur sur JetBrains", personaEn: "JetBrains developer",
+      choice: "GitHub Copilot",
+      reason:
+        "Cursor ne supporte pas JetBrains — ce n'est pas un manque de features, c'est une contrainte architecturale. Copilot est la seule option viable.",
+      reasonEn:
+        "Cursor doesn't support JetBrains — not a missing feature, an architectural constraint. Copilot is the only viable option.",
+      limit:
+        "Pas d'accès à Composer. Si vous en avez besoin, la seule alternative est de migrer votre workflow vers VS Code.",
+      limitEn:
+        "No access to Composer. If you need it, the only path is migrating your workflow to VS Code." },
   ],
 
   pricingFraming:
     "Copilot reste un abonnement logiciel classique. Cursor ressemble de plus en plus à un revendeur d'API cloud déguisé en éditeur de code.",
   pricingFramingEn:
-    "Copilot is still a classic software subscription. Cursor increasingly resembles a cloud API reseller disguised as a code editor.",
+    "Copilot is still a classic software subscription. Cursor increasingly looks like a cloud API reseller disguised as a code editor.",
 
   pricingToolANotes:
-    "Plan Free (gratuit, limité). **Pro à 10$/mois** (ou ~8,33$ en annuel). Pro+ à **39$/mois**. Business et Enterprise disponibles.",
+    "Plan Free (gratuit, limité à 50 requêtes/mois). **Pro à 10$/mois** (8,33$ en annuel). Pro+ à **39$/mois**. Business et Enterprise avec confidentialité garantie.",
   pricingToolANotesEn:
-    "Free plan (limited). **Pro at $10/mo** (or ~$8.33 annually). Pro+ at **$39/mo**. Business and Enterprise available.",
+    "Free plan (limited to 50 requests/month). **Pro at $10/mo** ($8.33 annually). Pro+ at **$39/mo**. Business and Enterprise with guaranteed privacy.",
 
   pricingToolBNotes:
-    "Plan Hobby gratuit mais inexploitable. **Pro à 20$/mois**. Pro+ à **60$/mois**. Ultra à **200$/mois**. Teams à **40$/utilisateur/mois**. Bugbot facturé en plus.",
+    "Plan Hobby gratuit mais inexploitable. **Pro à 20$/mois** + consommation variable. Pro+ à **60$/mois**. Ultra à **200$/mois**. Teams à **40$/utilisateur/mois**. Bugbot facturé séparément.",
   pricingToolBNotesEn:
-    "Hobby free plan, unusable daily. **Pro at $20/mo**. Pro+ at **$60/mo**. Ultra at **$200/mo**. Teams at **$40/user/mo**. Bugbot billed separately.",
+    "Hobby free plan, unusable daily. **Pro at $20/mo** + variable consumption. Pro+ at **$60/mo**. Ultra at **$200/mo**. Teams at **$40/user/mo**. Bugbot billed separately.",
 
   pricingReco:
-    "Si le budget est une contrainte, Copilot Pro à 10$/mois est difficile à battre. Si vous êtes solo et que Composer justifie le coût, Cursor Pro à 20$ reste raisonnable — mais activez le mode Auto pour les modèles frontières.",
+    "Si vous partez de zéro, Copilot Pro à 10$ est difficile à battre. Si vous prenez Cursor, testez d'abord sans ChatGPT Plus ni Claude Pro — pour les tâches de code, Cursor les remplace dans la plupart des cas. Calcul réel : Cursor Pro (20$) vs Copilot (10$) + ChatGPT Plus (20$) = 10$ d'économies pour un outil plus intégré.",
   pricingRecoEn:
-    "If budget is a constraint, Copilot Pro at $10/mo is hard to beat. If you're solo and Composer justifies the cost, Cursor Pro at $20 stays reasonable — but enable Auto mode for frontier models.",
+    "Starting from scratch, Copilot Pro at $10 is hard to beat. If you take Cursor, test it first without ChatGPT Plus or Claude Pro — for coding tasks, Cursor replaces them in most cases. Real math: Cursor Pro ($20) vs Copilot ($10) + ChatGPT Plus ($20) = $10 savings for a more integrated tool.",
 
   chooseAIfList: [
     "Votre équipe est sur JetBrains, Visual Studio ou un IDE non-VS Code",
@@ -1376,64 +1442,76 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
     "Vous travaillez dans une grande entreprise avec des contraintes de sécurité",
   ],
   chooseBIfList: [
-    "Vous êtes développeur solo et modifiez du code sur plusieurs fichiers tous les jours",
-    "Vous voulez accéder aux modèles frontières sans copier-coller depuis une interface web",
-    "Vous êtes prêt à changer d'IDE pour un workflow IA plus intégré",
+    "Vous êtes solo sur VS Code et modifiez plusieurs fichiers liés en même temps tous les jours",
+    "Vous copiez-collez depuis l'interface web d'un LLM vers votre éditeur régulièrement",
+    "Vous payez déjà ChatGPT Plus ou Claude Pro pour coder — Cursor les remplace",
   ],
   avoidAIfList: [
-    "Vous refusez de devoir faire un opt-out manuel pour protéger votre code (activé par défaut en 2026).",
+    "Vous refusez de gérer un opt-out manuel pour protéger votre code (entraînement activé par défaut sur les plans individuels depuis 2026).",
   ],
   avoidBIfList: [
-    "Vous avez un budget strict et fuyez la facturation à la consommation.",
-    "Vous ne voulez pas quitter votre setup actuel — VS Code, JetBrains, peu importe.",
+    "Vous avez un budget strict et fuyez la facturation variable.",
+    "Vous ne voulez pas quitter votre éditeur actuel, quel qu'il soit.",
   ],
   avoidBothIfList: [
-    "Vous travaillez dans des environnements de défense ou 'air-gapped' où aucune requête cloud n'est autorisée.",
+    "Vous travaillez dans des environnements de défense ou air-gapped sans accès cloud. Les deux outils sont inutilisables dans ce contexte.",
   ],
 
-  aglanceBestForA: "Compatibilité universelle, prix fixe",
-  aglanceBestForB: "Multi-fichiers natif, modèles frontières",
-  aglanceBudget: "Copilot moins cher et plus prévisible",
-  aglanceRisk: "Facture Cursor variable, opt-out Copilot",
-  aglanceDefaultLabel: "Copilot par défaut pour compatibilité",
-  aglanceLevel: "Copilot simple à installer, Cursor demande un changement d'IDE",
-  aglanceHeroPromise: "Extension universelle ou IDE conçu pour l'IA.",
+  aglanceBestForA: "Équipes, JetBrains, budget fixe",
+  aglanceBestForB: "Solo VS Code, multi-fichiers, remplace ChatGPT Plus",
+  aglanceBudget: "Copilot 10$ fixe vs Cursor 20$ + variable",
+  aglanceRisk: "Facture Cursor variable — agent sans surveillance",
+  aglanceDefaultLabel: "Copilot par défaut",
+  aglanceLevel: "Copilot : extension en 2 min. Cursor : changement d'IDE.",
+  aglanceHeroPromise:
+    "Copilot s'adapte à votre workflow. Cursor vous demande de le reconstruire autour de l'IA.",
   aglancePositionA: "L'extension universelle",
   aglancePositionB: "L'IDE IA natif",
-  aglanceContract: "Ne choisis pas selon les features. Choisis selon ton IDE, ton budget et la fréquence des modifications multi-fichiers.",
+  aglanceContract:
+    "Ne choisissez pas selon la liste de features. Choisissez selon votre IDE, votre budget, et si vous copiez-collez du code depuis une interface web tous les jours.",
 
   alternatives: [
     { slug: "codeium", name: "Codeium (Windsurf)",
-      reason: "Alternative gratuite à Copilot pour l'autocomplétion basique dans tous les IDEs.",
-      reasonEn: "Free Copilot alternative for basic autocomplete in all IDEs.",
+      reason: "Alternative gratuite pour l'autocomplétion dans tous les IDEs. Sans abonnement obligatoire.",
+      reasonEn: "Free alternative for autocomplete in all IDEs. No mandatory subscription.",
       price: "Gratuit" },
     { slug: "tabnine", name: "Tabnine",
-      reason: "Option 100% locale pour les équipes qui refusent catégoriquement le cloud.",
-      reasonEn: "100% local option for teams that refuse cloud entirely.",
+      reason: "100% local pour les équipes qui refusent le cloud par principe ou par contrat.",
+      reasonEn: "100% local for teams that refuse cloud by principle or contract.",
       price: "Gratuit / 12$/mois" },
   ],
 
   faq: [
-    { q: "Cursor est-il vraiment différent de GitHub Copilot ?",
-      qEn: "Is Cursor really different from GitHub Copilot?",
-      a: "Oui. Copilot est une extension qui s'ajoute à votre IDE. Cursor est un IDE entier conçu autour de l'IA. La différence principale : Composer de Cursor coordonne des modifications sur plusieurs fichiers simultanément, ce que Copilot fait moins bien.",
-      aEn: "Yes. Copilot is an extension added to your IDE. Cursor is a full IDE designed around AI. The key difference: Cursor's Composer coordinates changes across multiple files at once, something Copilot handles less fluidly." },
-    { q: "Peut-on utiliser Cursor avec JetBrains ?",
-      qEn: "Can you use Cursor with JetBrains?",
-      a: "Non. Cursor est un fork de VS Code. Si vous êtes sur IntelliJ, PyCharm ou WebStorm, seul GitHub Copilot supporte nativement ces IDEs.",
-      aEn: "No. Cursor is a VS Code fork. If you're on IntelliJ, PyCharm or WebStorm, only GitHub Copilot natively supports these IDEs." },
-    { q: "GitHub Copilot s'entraîne-t-il sur mon code ?",
-      qEn: "Does GitHub Copilot train on my code?",
-      a: "Sur les plans individuels (Free et Pro), l'entraînement sur vos données est activé par défaut depuis 2026. Vous devez faire un opt-out manuel dans les paramètres GitHub. Sur le plan Business, l'entraînement est désactivé par défaut.",
-      aEn: "On individual plans (Free and Pro), training on your data is enabled by default since 2026. You must manually opt out in GitHub settings. On the Business plan, training is disabled by default." },
-    { q: "Cursor est-il moins cher que GitHub Copilot ?",
-      qEn: "Is Cursor cheaper than GitHub Copilot?",
-      a: "Non. Copilot Pro coûte 10$/mois avec un prix fixe. Cursor Pro coûte 20$/mois, plus une facturation variable selon les modèles utilisés. Pour un budget limité, Copilot est l'option plus prévisible.",
-      aEn: "No. Copilot Pro costs $10/mo with a fixed price. Cursor Pro costs $20/mo, plus variable billing based on models used. For a limited budget, Copilot is the more predictable option." },
-    { q: "Faut-il payer ChatGPT Plus en plus de Cursor ?",
-      qEn: "Do you need to pay for ChatGPT Plus on top of Cursor?",
-      a: "Non. Cursor intègre déjà GPT-4o et Claude nativement. Pour les tâches de code, Cursor peut remplacer votre abonnement ChatGPT Plus. Inutile de payer les deux.",
-      aEn: "No. Cursor already includes GPT-4o and Claude natively. For coding tasks, Cursor can replace your ChatGPT Plus subscription. No need to pay for both." },
+    {
+      q: "Si je prends Cursor, est-ce que j'annule Claude Pro ?",
+      qEn: "If I get Cursor, should I cancel Claude Pro?",
+      a: "Probablement, pour les tâches de code. Cursor intègre Claude nativement — vous n'avez pas besoin d'ouvrir l'interface web. Pour d'autres usages (rédaction, analyse, conversations longues), Claude Pro reste utile. Testez 1 mois sans Claude Pro après avoir pris Cursor : vous verrez rapidement si vous y revenez.",
+      aEn: "Probably, for coding tasks. Cursor integrates Claude natively — no need to open the web interface. For other uses (writing, analysis, long conversations), Claude Pro stays useful. Test 1 month without Claude Pro after getting Cursor: you'll quickly see if you go back to it.",
+    },
+    {
+      q: "Combien coûte vraiment une journée active sur Cursor Pro ?",
+      qEn: "What does an active day on Cursor Pro actually cost?",
+      a: "En mode Auto (modèles légers par défaut), une journée normale rentre dans le forfait à 20$. Le problème vient des modèles frontières en mode manuel et des agents. Une session Cloud Agent sur un refactor complexe peut consommer 10-20$ seule. Si vous laissez Bugbot analyser tout votre codebase, c'est facturé en plus. Activez Auto et réservez les modèles lourds aux tâches que vous supervisez.",
+      aEn: "In Auto mode (lightweight models by default), a normal day fits within the $20 plan. The issue comes from manual frontier models and agents. One Cloud Agent session on a complex refactor can consume $10-20 alone. Running Bugbot on your whole codebase is billed on top. Enable Auto, reserve heavy models for tasks you're actively watching.",
+    },
+    {
+      q: "Copilot peut-il faire la même chose que Composer de Cursor ?",
+      qEn: "Can Copilot do the same thing as Cursor's Composer?",
+      a: "Partiellement. Copilot a un mode agent qui peut modifier plusieurs fichiers, mais le contexte partagé entre fichiers est moins robuste. Composer a été conçu pour ça depuis le premier jour — il coordonne les modifications avec un état global du projet. Pour des refactors simples sur 2-3 fichiers, Copilot suffit. Pour des refactors profonds sur une codebase entière, Cursor prend l'avantage.",
+      aEn: "Partially. Copilot has an agent mode that can edit multiple files, but shared context across files is less robust. Composer was designed for this from day one — it coordinates changes with a global project state. For simple refactors across 2-3 files, Copilot works fine. For deep refactors across an entire codebase, Cursor wins.",
+    },
+    {
+      q: "Mes extensions VS Code marchent dans Cursor ?",
+      qEn: "Do my VS Code extensions work in Cursor?",
+      a: "La grande majorité, oui. Cursor est un fork de VS Code — le marketplace d'extensions est compatible. Quelques extensions payantes avec vérification de licence peuvent poser problème, mais c'est rare. Vos raccourcis, thèmes et configurations migrent aussi. La transition prend en général 1-2 jours pour retrouver son setup habituel.",
+      aEn: "The vast majority, yes. Cursor is a VS Code fork — the extension marketplace is compatible. A few paid extensions with license verification can cause issues, but it's rare. Your keybindings, themes and configs migrate too. The transition typically takes 1-2 days to get back to your usual setup.",
+    },
+    {
+      q: "GitHub Copilot s'entraîne-t-il vraiment sur mon code ?",
+      qEn: "Does GitHub Copilot really train on my code?",
+      a: "Sur les plans Free et Pro (individuels), oui par défaut depuis 2026. GitHub a modifié ses conditions pour utiliser les données des plans individuels pour l'entraînement de ses modèles, sauf opt-out explicite. Allez dans vos paramètres GitHub → Copilot → désactivez 'Allow GitHub to use my code snippets for product improvements'. Sur le plan Business, c'est désactivé par défaut.",
+      aEn: "On Free and Pro (individual) plans, yes by default since 2026. GitHub changed its terms to use individual plan data for model training, unless you explicitly opt out. Go to GitHub settings → Copilot → disable 'Allow GitHub to use my code snippets for product improvements'. On the Business plan, it's disabled by default.",
+    },
   ],
 };
 
