@@ -2102,50 +2102,27 @@ const ComparePage = () => {
             <span>{toolA.name} vs {toolB.name}</span>
           </nav>
 
-          {/* Lead block: title + editorial promise, grouped for scan clarity */}
-          <div className="cp-hero-lead">
-            <h1 className="cp-hero-title">
-              {toolA.name} vs {toolB.name}.
-            </h1>
-            <p className="cp-hero-promise">{heroPromise}</p>
-          </div>
+          {/* Title with inline logos */}
+          <h1 className="cp-hero-title">
+            <span className="cp-hero-title-tool">
+              <ToolLogo tool={toolA} size={40} className="cp-hero-title-logo" aria-hidden="true" />
+              {toolA.name}
+            </span>
+            <span className="cp-hero-title-vs" aria-hidden="true">vs</span>
+            <span className="cp-hero-title-tool">
+              <ToolLogo tool={toolB} size={40} className="cp-hero-title-logo" aria-hidden="true" />
+              {toolB.name}<span aria-hidden="true">.</span>
+            </span>
+          </h1>
 
-          {/* Tool row — identity only, no card chrome */}
-          <div className="cp-hero-tools" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
-            <div className="cp-hero-tool">
-              <ToolLogo tool={toolA} size={36} className="cp-hero-tool-logo" />
-              <div className="cp-hero-tool-info">
-                {heroPositionA && <span className="cp-hero-tool-position">{heroPositionA}</span>}
-                <span className="cp-hero-tool-name">{toolA.name}</span>
-              </div>
-            </div>
-            <span className="cp-hero-tools-vs" aria-hidden="true">vs</span>
-            <div className="cp-hero-tool cp-hero-tool--right">
-              <ToolLogo tool={toolB} size={36} className="cp-hero-tool-logo" />
-              <div className="cp-hero-tool-info">
-                {heroPositionB && <span className="cp-hero-tool-position">{heroPositionB}</span>}
-                <span className="cp-hero-tool-name">{toolB.name}</span>
-              </div>
-            </div>
-          </div>
+          {/* Editorial promise — core difference in one line */}
+          <p className="cp-hero-promise">{heroPromise}</p>
 
-          {/* Micro-fiche — 3 decision signals + jump-to-verdict */}
-          <div className="cp-hero-microfact" aria-label={t("Signaux clés", "Key signals")}>
-            <div className="cp-hero-microfact-cell">
-              <span>{t("Par défaut", "Default")}</span>
-              <p>{defaultChoice}</p>
-            </div>
-            <div className="cp-hero-microfact-cell">
-              <span>{t("Coût réel", "Real cost")}</span>
-              <p>{budgetSignal}</p>
-            </div>
-            <div className="cp-hero-microfact-cell">
-              <span>{t("Risque", "Risk")}</span>
-              <p>{riskSignal}</p>
-            </div>
-          </div>
-          <a href="#criteres" className="cp-hero-verdict-jump" onClick={(e) => { e.preventDefault(); document.getElementById("criteres")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>
-            {t("Voir les critères →", "See the criteria →")}
+          {/* Intro — strategic recommendation, not a list */}
+          <p className="cp-hero-intro">{heroContract}</p>
+
+          <a href="#seuil" className="cp-hero-verdict-jump" onClick={(e) => { e.preventDefault(); document.getElementById("seuil")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>
+            {t("Lire le verdict →", "Read the verdict →")}
           </a>
         </div>
       </section>
