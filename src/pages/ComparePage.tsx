@@ -1510,10 +1510,6 @@ const ComparePage = () => {
 
           <p className="cp-hero-promise">{heroPromise}</p>
 
-          {content.aglanceHeroBrief && (
-            <p className="cp-hero-brief">{content.aglanceHeroBrief}</p>
-          )}
-
           {/* Face-à-face duel — enhanced with verdict card content */}
           <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
             <article className="cp-hero-duel-card">
@@ -1546,6 +1542,10 @@ const ComparePage = () => {
               <p className="cp-hero-duel-desc">{verdictCardTextB || bestForB}</p>
             </article>
           </div>
+
+          {content.aglanceHeroBrief && (
+            <p className="cp-hero-brief">{content.aglanceHeroBrief}</p>
+          )}
 
           {/* Callout : règle anti-doublon */}
           <div className="compare-verdict-callout">
@@ -1702,6 +1702,17 @@ const ComparePage = () => {
             <span className="cp-section-counter" aria-hidden="true">03</span>
             <span className="cp-eyebrow">{t("Critères décisifs", "Decisive criteria")}</span>
             <h2 className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
+            <div className="cp-verdict-legend" aria-hidden="true">
+              <span className="cp-verdict-legend-tool">
+                <ToolLogo tool={toolA} size={14} className="flex-shrink-0" />
+                {toolA.name}
+              </span>
+              <span className="cp-verdict-legend-vs">vs</span>
+              <span className="cp-verdict-legend-tool">
+                <ToolLogo tool={toolB} size={14} className="flex-shrink-0" />
+                {toolB.name}
+              </span>
+            </div>
             <div className="cp-verdict-list" role="list">
               {decisionTableRows.map((row, index) => {
                 const aTitle = lang === "fr" ? row.toolA : row.toolAEn;

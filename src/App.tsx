@@ -114,8 +114,11 @@ const LangLayout = () => {
       }}
     >
       <div className="flex min-h-screen flex-col">
+        <a href="#main-content" className="skip-to-content">
+          {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
+        </a>
         <Navbar />
-        <main className="flex-1 pt-[68px]">
+        <main id="main-content" className="flex-1 pt-[68px]">
           <Outlet key={effectiveLang} />
         </main>
         <Footer />
