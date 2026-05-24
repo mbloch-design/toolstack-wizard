@@ -2110,62 +2110,24 @@ const ComparePage = () => {
             <p className="cp-hero-promise">{heroPromise}</p>
           </div>
 
-          {/* Face-à-face duel */}
-          <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
-            <article className="cp-hero-duel-card">
-              <div className="cp-hero-duel-head">
-                <ToolLogo tool={toolA} size={48} className="cp-hero-duel-logo" />
-                <div>
-                  {heroPositionA && <p className="cp-hero-duel-position">{heroPositionA}</p>}
-                  <h2 className="cp-hero-duel-name">{toolA.name}</h2>
-                </div>
+          {/* Tool row — identity only, no card chrome */}
+          <div className="cp-hero-tools" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
+            <div className="cp-hero-tool">
+              <ToolLogo tool={toolA} size={36} className="cp-hero-tool-logo" />
+              <div className="cp-hero-tool-info">
+                {heroPositionA && <span className="cp-hero-tool-position">{heroPositionA}</span>}
+                <span className="cp-hero-tool-name">{toolA.name}</span>
               </div>
-              {verdictCardTitleA && (
-                <p className="cp-hero-duel-verdict-title">{verdictCardTitleA}</p>
-              )}
-              <p className="cp-hero-duel-desc">{verdictCardTextA || bestForA}</p>
-            </article>
-
-            <div className="cp-hero-duel-vs" aria-hidden="true"><span>VS</span></div>
-
-            <article className="cp-hero-duel-card cp-hero-duel-card--right">
-              <div className="cp-hero-duel-head">
-                <ToolLogo tool={toolB} size={48} className="cp-hero-duel-logo" />
-                <div>
-                  {heroPositionB && <p className="cp-hero-duel-position">{heroPositionB}</p>}
-                  <h2 className="cp-hero-duel-name">{toolB.name}</h2>
-                </div>
+            </div>
+            <span className="cp-hero-tools-vs" aria-hidden="true">vs</span>
+            <div className="cp-hero-tool cp-hero-tool--right">
+              <ToolLogo tool={toolB} size={36} className="cp-hero-tool-logo" />
+              <div className="cp-hero-tool-info">
+                {heroPositionB && <span className="cp-hero-tool-position">{heroPositionB}</span>}
+                <span className="cp-hero-tool-name">{toolB.name}</span>
               </div>
-              {verdictCardTitleB && (
-                <p className="cp-hero-duel-verdict-title">{verdictCardTitleB}</p>
-              )}
-              <p className="cp-hero-duel-desc">{verdictCardTextB || bestForB}</p>
-            </article>
+            </div>
           </div>
-
-          {/* Decision tree — mirror layout: conditions split under their tool */}
-          {content.quickDecisionTree && content.quickDecisionTree.length > 0 && (() => {
-            const tree = content.quickDecisionTree!;
-            const toolBKey = toolB.name.split(" ").pop()!.toLowerCase();
-            const treeA = tree.filter(s => !s.answer.toLowerCase().includes(toolBKey));
-            const treeB = tree.filter(s => s.answer.toLowerCase().includes(toolBKey));
-            return (
-              <div className="cp-decision-tree--mirror" role="list" aria-label={t("Décision rapide", "Quick decision")}>
-                <div className="cp-decision-tree-col" role="listitem">
-                  <span className="cp-decision-tree-col-title">{toolA.name}</span>
-                  {treeA.map((step, i) => (
-                    <p key={i} className="cp-decision-tree-item">{lang === "fr" ? step.condition : step.conditionEn}</p>
-                  ))}
-                </div>
-                <div className="cp-decision-tree-col" role="listitem">
-                  <span className="cp-decision-tree-col-title">{toolB.name}</span>
-                  {treeB.map((step, i) => (
-                    <p key={i} className="cp-decision-tree-item">{lang === "fr" ? step.condition : step.conditionEn}</p>
-                  ))}
-                </div>
-              </div>
-            );
-          })()}
 
           {/* Micro-fiche — 3 decision signals + jump-to-verdict */}
           <div className="cp-hero-microfact" aria-label={t("Signaux clés", "Key signals")}>

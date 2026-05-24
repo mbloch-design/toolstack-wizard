@@ -7350,99 +7350,50 @@
     color: #6F6F68;
   }
 
-  /* Face-à-face duel */
-  .cp-hero-duel {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
-    gap: 0;
-    align-items: start;
-    margin-bottom: 0;
-  }
-  .cp-hero-duel-card {
-    padding: 24px 28px;
-    background: #FFFFFF;
-    border: 1px solid var(--color-border, #DADAD4);
-    border-radius: 8px;
-  }
-  .cp-hero-duel-card--right {
-    text-align: left;
-  }
-  .cp-hero-duel-head {
+  /* ── Tool row — identité légère, pas de carte ─────────────── */
+  .cp-hero-tools {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
+    margin: 0 0 28px;
   }
-  .cp-hero-duel-logo {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    /* Visual styling delegated to ToolLogo — no extra border/bg/radius to
-       avoid double-frame. Use size=48 in JSX to match the duel card head. */
+  .cp-hero-tool {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
   }
-  .cp-hero-duel-position {
-    margin: 0 0 3px;
+  .cp-hero-tool--right { justify-content: flex-end; }
+  .cp-hero-tool-logo { flex-shrink: 0; }
+  .cp-hero-tool-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cp-hero-tool-position {
     font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #9A9A92;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #9A9A92; line-height: 1;
   }
-  .cp-hero-duel-name {
-    margin: 0;
+  .cp-hero-tool-name {
     font-family: var(--font-brand);
-    font-size: clamp(22px, 2.2vw, 28px);
-    font-weight: 600;
-    letter-spacing: -0.045em;
-    line-height: 1.0;
-    color: #222222;
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 600; letter-spacing: -0.045em;
+    line-height: 1.0; color: #222222;
   }
-  /* Verdict title inside duel card (e.g. "Le choix produit") */
-  .cp-hero-duel-verdict-title {
-    margin: 0 0 10px;
+  .cp-hero-tools-vs {
+    padding: 0 28px; flex-shrink: 0;
     font-family: var(--font-ui);
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    color: #222222;
-  }
-  .cp-hero-duel-desc {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: -0.012em;
-    color: #444440;
-  }
-  .cp-hero-duel-vs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-  }
-  .cp-hero-duel-vs span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #EDEDEA;
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    color: #6F6F68;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #CBCBC3;
   }
 
-  /* Micro-fiche — 3 cellules */
+  /* ── Micro-fiche — 3 cellules ──────────────────────────────── */
   .cp-hero-microfact {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1px;
-    margin-top: 16px;
     background: #DADAD4;
     border: 1px solid #DADAD4;
     border-radius: 8px;
@@ -7457,46 +7408,25 @@
     display: block;
     margin-bottom: 7px;
     font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
     color: #9A9A92;
   }
   .cp-hero-microfact-cell p {
     margin: 0;
     font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.4;
-    letter-spacing: -0.012em;
-    font-weight: 700;
+    font-size: 15px; line-height: 1.4;
+    letter-spacing: -0.012em; font-weight: 700;
     color: #222222;
   }
 
-  @media (max-width: 1023px) {
-    .cp-hero-duel {
-      grid-template-columns: 1fr;
-    }
-    .cp-hero-duel-vs {
-      height: 28px;
-      align-self: auto;
-    }
-    .cp-hero-microfact {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
   @media (max-width: 640px) {
     .cp-hero { padding: 56px 0 48px; }
     .cp-hero-inner { padding: 0 24px; }
     .cp-hero-title { font-size: clamp(44px, 12vw, 64px); }
-    .cp-hero-promise { font-size: 20px; margin-bottom: 32px; }
-    .cp-hero-duel {
-      grid-template-columns: 1fr;
-    }
-    .cp-hero-duel-card { padding: 20px; }
-    .cp-hero-microfact {
-      grid-template-columns: 1fr;
-    }
+    .cp-hero-promise { font-size: 20px; margin-bottom: 28px; }
+    .cp-hero-tools-vs { padding: 0 16px; }
+    .cp-hero-microfact { grid-template-columns: 1fr; }
   }
 
   /* ── VS module (right col) ─────────────────────────────────── */
