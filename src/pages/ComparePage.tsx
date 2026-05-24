@@ -1099,15 +1099,15 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
   toolAUseCases: [
     "Autocomplétion dans votre IDE actuel sans rien changer",
     "Pull Requests générées de A à Z",
-    "Code reviews automatisées via GitHub Actions",
-    "Équipes sur JetBrains, IntelliJ ou Visual Studio",
+    "Code reviews automatisées via GitHub Actions, le système d'automatisation intégré à GitHub",
+    "Équipes sur JetBrains (IntelliJ, WebStorm, PyCharm) ou Visual Studio. Cursor ne tourne pas sur ces IDEs, Copilot s'y installe en extension.",
     "Budget mensuel fixe à 10$ sans variable",
   ],
   toolAUseCasesEn: [
     "Autocomplete in your current IDE without changing anything",
     "End-to-end Pull Request generation",
-    "Automated code reviews via GitHub Actions",
-    "Teams on JetBrains, IntelliJ or Visual Studio",
+    "Automated code reviews via GitHub Actions, GitHub's built-in automation system",
+    "Teams on JetBrains (IntelliJ, WebStorm, PyCharm) or Visual Studio. Cursor doesn't run on these IDEs, Copilot installs as an extension.",
     "Fixed $10/mo budget without surprises",
   ],
 
@@ -1119,15 +1119,15 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
     "Modifications multi-fichiers coordonnées via Composer",
     "Accès direct à Claude et GPT-4o sans copier-coller",
     "Remplace ChatGPT Plus ou Claude Pro pour les tâches de code",
-    "Agents autonomes sur de gros refactors (Bugbot, Cloud Agents)",
-    "Ghost Mode pour les projets sous NDA (100% local)",
+    "Agents autonomes sur de gros refactors, dont Bugbot (détection automatique de bugs) et Cloud Agents (agents qui tournent sans supervision)",
+    "Ghost Mode, le mode sans cloud de Cursor : tout est traité sur votre machine, rien n'est envoyé à un serveur externe",
   ],
   toolBUseCasesEn: [
     "Coordinated multi-file edits via Composer",
     "Direct access to Claude and GPT-4o without copy-pasting",
     "Replaces ChatGPT Plus or Claude Pro for coding",
-    "Autonomous agents for large refactors (Bugbot, Cloud Agents)",
-    "Ghost Mode for NDA projects (100% local)",
+    "Autonomous agents for large refactors, including Bugbot (automatic bug detection) and Cloud Agents (agents that run without supervision)",
+    "Ghost Mode, Cursor's cloud-free mode: everything processed on your machine, nothing sent to an external server",
   ],
 
   tableRows: [
@@ -1145,7 +1145,7 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
       winner: "A", verdictLabel: "Copilot", verdictLabelEn: "Copilot" },
     { criterion: "Confidentialité du code", criterionEn: "Code privacy",
       toolA: "Entraînement activé par défaut (opt-out requis)", toolAEn: "Training on by default (opt-out required)",
-      toolB: "Privacy Mode + Ghost Mode disponibles", toolBEn: "Privacy Mode + Ghost Mode available",
+      toolB: "Privacy Mode (données non stockées) et Ghost Mode (100% local) disponibles", toolBEn: "Privacy Mode (data not stored) and Ghost Mode (100% local) available",
       winner: "B", verdictLabel: "Cursor", verdictLabelEn: "Cursor" },
     { criterion: "Prise en main", criterionEn: "Setup",
       toolA: "Extension : 2 minutes", toolAEn: "Extension: 2 minutes",
@@ -1194,13 +1194,13 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
   limitsB: [
     "Facturation variable : une session agent intensive peut coûter 10-20$ sans que vous le voyiez venir",
     "Nécessite de changer d'IDE — incompatible avec JetBrains et Visual Studio",
-    "Les règles .cursorrules ne migrent pas vers d'autres éditeurs — vous créez une dépendance",
+    "Les fichiers .cursorrules, la configuration propre à Cursor, ne migrent pas vers d'autres éditeurs. Vous créez une dépendance.",
     "Bugbot facturé séparément des plans Pro et Pro+",
   ],
   limitsBEn: [
     "Variable billing: an intensive agent session can cost $10-20 without warning",
     "Requires an IDE switch — incompatible with JetBrains and Visual Studio",
-    ".cursorrules workflows don't migrate to other editors — you create a dependency",
+    ".cursorrules files, Cursor's proprietary configuration, don't migrate to other editors. You're creating a dependency.",
     "Bugbot billed separately from Pro and Pro+ plans",
   ],
 
@@ -1336,9 +1336,9 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
       toolBEn:
         "Frontier models in manual mode drain credits fast. One Cloud Agent session on a complex refactor: budget $10-20 alone. Bugbot billed on top.",
       recommendation:
-        "Sur Cursor : activez le mode Auto. Sur Copilot : vérifiez votre consommation GitHub Actions si vous utilisez les code reviews.",
+        "Sur Cursor : activez le mode Auto, il sélectionne les modèles les moins coûteux par défaut. Sur Copilot : vérifiez votre consommation GitHub Actions si vous utilisez les code reviews.",
       recommendationEn:
-        "On Cursor: enable Auto mode. On Copilot: check your GitHub Actions usage if you use code reviews.",
+        "On Cursor: enable Auto mode, it selects the cheapest models by default. On Copilot: check your GitHub Actions usage if you use code reviews.",
     },
   ],
 
@@ -1375,7 +1375,7 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
       consequenceEn:
         "Cloud Agents and Bugbot consume real API credits. An agent loop on a complex refactor can cost $20-50 with no proactive notification.",
       recommendation:
-        "Activez le mode Auto pour les sessions normales. Réservez les modèles frontières manuels aux refactors que vous supervisez activement.",
+        "Activez le mode Auto (sélection automatique des modèles économiques) pour les sessions normales. Réservez les modèles frontières manuels aux refactors que vous supervisez activement.",
       recommendationEn:
         "Enable Auto mode for normal sessions. Reserve manual frontier models for refactors you're actively supervising.",
     },
