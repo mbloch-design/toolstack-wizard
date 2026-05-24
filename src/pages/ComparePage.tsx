@@ -1928,7 +1928,7 @@ const ComparePage = () => {
   const { lang, t, prefix } = useLang();
   const { tools, loading } = useTools();
   const [staleLoading, setStaleLoading] = useState(false);
-  const [activeProfile, setActiveProfile] = useState(0);
+  const [activeProfile, setActiveProfile] = useState(-1);
 
   // Network error detection: if still loading after 10s, show recovery state
   useEffect(() => {
@@ -2157,7 +2157,7 @@ const ComparePage = () => {
             </div>
           )}
 
-          {/* Micro-fiche — 3 decision signals */}
+          {/* Micro-fiche — 3 decision signals + jump-to-verdict */}
           <div className="cp-hero-microfact" aria-label={t("Signaux clés", "Key signals")}>
             <div className="cp-hero-microfact-cell">
               <span>{t("Par défaut", "Default")}</span>
@@ -2172,6 +2172,9 @@ const ComparePage = () => {
               <p>{riskSignal}</p>
             </div>
           </div>
+          <a href="#seuil" className="cp-hero-verdict-jump" onClick={(e) => { e.preventDefault(); document.getElementById("seuil")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>
+            {t("Aller au verdict →", "Go to verdict →")}
+          </a>
         </div>
       </section>
 
@@ -2621,6 +2624,13 @@ const ComparePage = () => {
             {t("Analyser ma stack →", "Analyze my stack →")}
           </Link>
         </div>
+      </div>
+
+      {/* ── Methodology footnote ───────────────────────────────────────────── */}
+      <div className="cp-methodology-note">
+        <Link to={`${prefix}/methodology`} className="cp-methodology-link">
+          {t("Comment ToolTrim évalue les outils →", "How ToolTrim evaluates tools →")}
+        </Link>
       </div>
 
     </div>

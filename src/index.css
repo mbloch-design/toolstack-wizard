@@ -7891,27 +7891,6 @@
   .compare-verdict-choice-title { margin: 0 0 10px; font-size: 18px; line-height: 1.25; }
   .compare-verdict-choice-body { margin: 0; max-width: 480px; color: #444440; }
 
-  /* Callout box: anti-doublon warning + CTA */
-  .compare-verdict-callout {
-    padding: 28px 32px;
-    background: #EDEDE8;
-    border: 1px solid var(--color-border, #DADAD4);
-    border-radius: 8px;
-  }
-  .compare-verdict-callout .tt-fact-label { margin-bottom: 12px; }
-  .compare-verdict-callout .tt-body-large { margin: 0; color: #444440; max-width: 760px; }
-  /* Footer: question phrase + primary CTA */
-  .compare-verdict-callout-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid #DADAD4;
-  }
-  .compare-verdict-callout-footer .tt-card-body { margin: 0; }
-
   /* Mobile: stack everything */
   @media (max-width: 900px) {
     .compare-verdict-header {
@@ -7924,11 +7903,6 @@
   }
   @media (max-width: 640px) {
     .compare-verdict-choice { padding: 22px 20px; }
-    .compare-verdict-callout { padding: 22px 20px; }
-    .compare-verdict-callout-footer {
-      flex-direction: column;
-      align-items: flex-start;
-    }
   }
 
   /* ── Usage scores ────────────────────────────────────────── */
@@ -8190,6 +8164,9 @@
     font-weight: 300;
   }
   /* Winner: weight bump — hierarchy through weight, not color */
+  .cp-crit-table-tool--winner {
+    background: #F8F8F4;
+  }
   .cp-crit-table-tool--winner .cp-crit-table-tool-text {
     font-weight: 500;
   }
@@ -9176,6 +9153,37 @@
 
   /* Hero lead block — groups h1 + promise for clean scan entry */
   .cp-hero-lead { display: contents; }
+
+  /* Hero jump-to-verdict — escape hatch for users who know what they want */
+  .cp-hero-verdict-jump {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #9A9A92;
+    text-decoration: none;
+    transition: color 0.12s ease;
+  }
+  .cp-hero-verdict-jump:hover { color: #222222; }
+
+  /* Methodology footnote */
+  .cp-methodology-note {
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #E7E7E0;
+  }
+  .cp-methodology-link {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #9A9A92;
+    text-decoration: none;
+    transition: color 0.12s ease;
+  }
+  .cp-methodology-link:hover { color: #222222; }
 
   /* Criterion level legend — micro-legend above criterion table */
   .cp-crit-level-legend {
