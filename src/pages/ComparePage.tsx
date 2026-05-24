@@ -2272,35 +2272,36 @@ const ComparePage = () => {
             </p>
           </div>
 
-          <div className="cp-crit-table" role="table" aria-label={t("Comparaison des critères décisionnels", "Decision criteria comparison")}>
-            <div className="cp-crit-head" role="row">
-              <div className="cp-crit-head-label" role="columnheader">{t("Critère", "Criterion")}</div>
-              <div className="cp-crit-head-tool" role="columnheader">
-                <ToolLogo tool={toolA} size={16} className="flex-shrink-0" aria-hidden="true" />
-                {toolA.name}
-              </div>
-              <div className="cp-crit-head-tool" role="columnheader">
-                <ToolLogo tool={toolB} size={16} className="flex-shrink-0" aria-hidden="true" />
-                {toolB.name}
-              </div>
-            </div>
+          <div className="cp-crit-list" role="list" aria-label={t("Comparaison des critères décisionnels", "Decision criteria comparison")}>
             {content.decisiveCriteria.slice(0, 6).map((criterion, index) => {
               const levels = getCriterionLevels(criterion, toolA, toolB, lang);
-              const aWins = levels.winner === "A";
-              const bWins = levels.winner === "B";
               return (
-                <div key={criterion.title} className="cp-crit-row" role="row">
-                  <div className="cp-crit-col cp-crit-col--label" role="cell">
-                    <span className="cp-crit-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                    <p className="cp-crit-name">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
-                    <p className="cp-crit-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
+                <div key={criterion.title} className="cp-crit-block" role="listitem">
+                  <div className="cp-crit-block-header">
+                    <span className="cp-crit-block-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                    <h3 className="cp-crit-block-title">{lang === "fr" ? criterion.title : criterion.titleEn}</h3>
                   </div>
-                  <div className={`cp-crit-col${aWins ? " cp-crit-col--win" : ""}`} role="cell">
-                    <p className="cp-crit-val">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+                  <div>
+                    <div className={`cp-crit-block-tool${levels.winner === "A" ? " cp-crit-block-tool--win" : ""}`}>
+                      <div className="cp-crit-block-tool-name">
+                        <ToolLogo tool={toolA} size={15} aria-hidden="true" />
+                        <span>{toolA.name}</span>
+                      </div>
+                      <div className="cp-crit-block-tool-right">
+                        <p className="cp-crit-block-tool-val">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+                      </div>
+                    </div>
+                    <div className={`cp-crit-block-tool${levels.winner === "B" ? " cp-crit-block-tool--win" : ""}`}>
+                      <div className="cp-crit-block-tool-name">
+                        <ToolLogo tool={toolB} size={15} aria-hidden="true" />
+                        <span>{toolB.name}</span>
+                      </div>
+                      <div className="cp-crit-block-tool-right">
+                        <p className="cp-crit-block-tool-val">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={`cp-crit-col${bWins ? " cp-crit-col--win" : ""}`} role="cell">
-                    <p className="cp-crit-val">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
-                  </div>
+                  <p className="cp-crit-block-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
                 </div>
               );
             })}
@@ -2320,20 +2321,7 @@ const ComparePage = () => {
                 {lang === "fr" ? content.featuresIntro : content.featuresIntroEn}
               </p>
             )}
-            <div className="cp-crit-table" role="table" aria-label={t("Comparaison des critères", "Criteria comparison")}>
-              {/* Column headers */}
-              <div className="cp-crit-head" role="row">
-                <div className="cp-crit-head-label" role="columnheader">{t("Critère", "Criterion")}</div>
-                <div className="cp-crit-head-tool" role="columnheader">
-                  <ToolLogo tool={toolA} size={16} className="flex-shrink-0" aria-hidden="true" />
-                  {toolA.name}
-                </div>
-                <div className="cp-crit-head-tool" role="columnheader">
-                  <ToolLogo tool={toolB} size={16} className="flex-shrink-0" aria-hidden="true" />
-                  {toolB.name}
-                </div>
-              </div>
-              {/* Data rows */}
+            <div className="cp-crit-list" role="list" aria-label={t("Comparaison des critères", "Criteria comparison")}>
               {decisionTableRows.map((row, index) => {
                 const aTitle = lang === "fr" ? row.toolA : row.toolAEn;
                 const aNote = lang === "fr" ? row.toolANote : row.toolANoteEn;
@@ -2341,23 +2329,35 @@ const ComparePage = () => {
                 const bNote = lang === "fr" ? row.toolBNote : row.toolBNoteEn;
                 const crit = lang === "fr" ? row.criterion : row.criterionEn;
                 const verdict = lang === "fr" ? row.verdictLabel : row.verdictLabelEn;
-                const aWins = row.winner === "A";
-                const bWins = row.winner === "B";
                 return (
-                  <div key={row.criterion} className="cp-crit-row" role="row">
-                    <div className="cp-crit-col cp-crit-col--label" role="cell">
-                      <span className="cp-crit-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                      <p className="cp-crit-name">{crit}</p>
-                      {verdict && <p className="cp-crit-verdict">{verdict}</p>}
+                  <div key={row.criterion} className="cp-crit-block" role="listitem">
+                    <div className="cp-crit-block-header">
+                      <span className="cp-crit-block-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                      <h3 className="cp-crit-block-title">{crit}</h3>
                     </div>
-                    <div className={`cp-crit-col${aWins ? " cp-crit-col--win" : ""}`} role="cell">
-                      <p className="cp-crit-val">{aTitle}</p>
-                      {aNote && <p className="cp-crit-note">{aNote}</p>}
+                    <div>
+                      <div className={`cp-crit-block-tool${row.winner === "A" ? " cp-crit-block-tool--win" : ""}`}>
+                        <div className="cp-crit-block-tool-name">
+                          <ToolLogo tool={toolA} size={15} aria-hidden="true" />
+                          <span>{toolA.name}</span>
+                        </div>
+                        <div className="cp-crit-block-tool-right">
+                          <p className="cp-crit-block-tool-val">{aTitle}</p>
+                          {aNote && <p className="cp-crit-block-tool-note">{aNote}</p>}
+                        </div>
+                      </div>
+                      <div className={`cp-crit-block-tool${row.winner === "B" ? " cp-crit-block-tool--win" : ""}`}>
+                        <div className="cp-crit-block-tool-name">
+                          <ToolLogo tool={toolB} size={15} aria-hidden="true" />
+                          <span>{toolB.name}</span>
+                        </div>
+                        <div className="cp-crit-block-tool-right">
+                          <p className="cp-crit-block-tool-val">{bTitle}</p>
+                          {bNote && <p className="cp-crit-block-tool-note">{bNote}</p>}
+                        </div>
+                      </div>
                     </div>
-                    <div className={`cp-crit-col${bWins ? " cp-crit-col--win" : ""}`} role="cell">
-                      <p className="cp-crit-val">{bTitle}</p>
-                      {bNote && <p className="cp-crit-note">{bNote}</p>}
-                    </div>
+                    {verdict && <p className="cp-crit-block-verdict">{verdict}</p>}
                   </div>
                 );
               })}
