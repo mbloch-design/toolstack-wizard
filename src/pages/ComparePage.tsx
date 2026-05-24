@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
-import { useEffect, useMemo, useState, type MouseEvent } from "react";
+import { useEffect, useMemo, useState, useRef, type MouseEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -1843,6 +1843,8 @@ interface CompareNavSection {
 function CompareStickyNav({ sections, prefix }: { sections: CompareNavSection[]; prefix: string }) {
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
   const [visible, setVisible] = useState(false);
+  const activeIdRef = useRef(activeId);
+  activeIdRef.current = activeId;
 
   useEffect(() => {
     if (sections.length === 0) return;
@@ -1872,9 +1874,23 @@ function CompareStickyNav({ sections, prefix }: { sections: CompareNavSection[];
       : null;
     if (hero && heroObserver) heroObserver.observe(hero);
 
+    // Keyboard: ←/→ cycles through sections
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      const currentIdx = sections.findIndex((s) => s.id === activeIdRef.current);
+      const next = e.key === "ArrowRight"
+        ? sections[Math.min(currentIdx + 1, sections.length - 1)]
+        : sections[Math.max(currentIdx - 1, 0)];
+      if (!next || next.id === activeIdRef.current) return;
+      document.getElementById(next.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveId(next.id);
+    };
+    document.addEventListener("keydown", handleKey);
+
     return () => {
       sectionObserver.disconnect();
       heroObserver?.disconnect();
+      document.removeEventListener("keydown", handleKey);
     };
   }, [sections]);
 
@@ -1911,6 +1927,15 @@ const ComparePage = () => {
   const { slugPair } = useParams<{ slugPair: string }>();
   const { lang, t, prefix } = useLang();
   const { tools, loading } = useTools();
+  const [staleLoading, setStaleLoading] = useState(false);
+  const [activeProfile, setActiveProfile] = useState(0);
+
+  // Network error detection: if still loading after 10s, show recovery state
+  useEffect(() => {
+    if (!loading) { setStaleLoading(false); return; }
+    const timer = setTimeout(() => setStaleLoading(true), 10000);
+    return () => clearTimeout(timer);
+  }, [loading]);
 
   const parsedPair = useMemo(() => {
     if (!slugPair) return null;
@@ -1954,6 +1979,33 @@ const ComparePage = () => {
     });
     return () => cleanupSeo(["compare-jsonld", "compare-faq-jsonld"]);
   }, [toolA, toolB, lang, slugPair]);
+
+  if (loading && staleLoading) {
+    return (
+      <div className="cp-not-found">
+        <div className="cp-not-found-inner">
+          <span className="cp-eyebrow">{t("Problème de connexion", "Connection issue")}</span>
+          <h1 className="cp-not-found-title">
+            {t("Le chargement prend trop de temps.", "Loading is taking too long.")}
+          </h1>
+          <p className="cp-not-found-body">
+            {t(
+              "Vérifie ta connexion internet et réessaie. Si le problème persiste, consulte la liste des comparatifs.",
+              "Check your internet connection and try again. If it persists, browse all comparisons."
+            )}
+          </p>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <button className="tt-button-primary" onClick={() => window.location.reload()}>
+              {t("Réessayer", "Try again")}
+            </button>
+            <Link to={`${prefix}/comparatifs`} className="tt-button-secondary">
+              {t("Voir tous les comparatifs", "See all comparisons")}
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -2033,7 +2085,7 @@ const ComparePage = () => {
     { id: "seuil", label: t("Seuil", "Threshold") },
     { id: "cout", label: t("Coût", "Cost") },
     { id: "features", label: t("Tableau", "Table") },
-    { id: "vigilance", label: t("Attention", "Watchout") },
+    { id: "vigilance", label: t("Risques", "Risks") },
     ...(content.profiles && content.profiles.length > 0 ? [{ id: "profiles", label: t("Profils", "Profiles") }] : []),
     ...(altTools.length > 0 ? [{ id: "alternatives", label: t("Alternatives", "Alternatives") }] : []),
     ...(content.faq.length > 0 ? [{ id: "faq", label: "FAQ" }] : []),
@@ -2051,15 +2103,15 @@ const ComparePage = () => {
             <span>{toolA.name} vs {toolB.name}</span>
           </nav>
 
-          <span className="cp-eyebrow">{t("COMPARATIF", "COMPARISON")}</span>
+          {/* Lead block: title + editorial promise, grouped for scan clarity */}
+          <div className="cp-hero-lead">
+            <h1 className="cp-hero-title">
+              {toolA.name} vs {toolB.name}.
+            </h1>
+            <p className="cp-hero-promise">{heroPromise}</p>
+          </div>
 
-          <h1 className="cp-hero-title">
-            {toolA.name} vs {toolB.name}.
-          </h1>
-
-          <p className="cp-hero-promise">{heroPromise}</p>
-
-          {/* Face-à-face duel — enhanced with verdict card content */}
+          {/* Face-à-face duel */}
           <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
             <article className="cp-hero-duel-card">
               <div className="cp-hero-duel-head">
@@ -2092,11 +2144,7 @@ const ComparePage = () => {
             </article>
           </div>
 
-          {content.aglanceHeroBrief && (
-            <p className="cp-hero-brief">{content.aglanceHeroBrief}</p>
-          )}
-
-          {/* Decision tree — 30-second choice */}
+          {/* Decision tree — 30-second choice for power users */}
           {content.quickDecisionTree && content.quickDecisionTree.length > 0 && (
             <div className="cp-decision-tree" role="list" aria-label={t("Décision rapide", "Quick decision")}>
               {content.quickDecisionTree.map((step, i) => (
@@ -2109,15 +2157,7 @@ const ComparePage = () => {
             </div>
           )}
 
-          {/* Callout : règle anti-doublon */}
-          <div className="compare-verdict-callout">
-            <span className="tt-fact-label">
-              {t("Ne paie pas les deux sans règle claire", "Don't pay for both without a clear rule")}
-            </span>
-            <p className="tt-body-large">{verdictWarningText}</p>
-          </div>
-
-          {/* Micro-fiche courte — 3 cellules */}
+          {/* Micro-fiche — 3 decision signals */}
           <div className="cp-hero-microfact" aria-label={t("Signaux clés", "Key signals")}>
             <div className="cp-hero-microfact-cell">
               <span>{t("Par défaut", "Default")}</span>
@@ -2155,6 +2195,15 @@ const ComparePage = () => {
                   )}
             </p>
           </div>
+
+          {/* Criterion level legend — explains Avantage/Suffisant/Dépend */}
+          <p className="cp-crit-level-legend" aria-label={t("Légende des niveaux", "Level legend")}>
+            <span>{t("Avantage", "Advantage")} = {t("remporte le critère", "wins this criterion")}</span>
+            <span aria-hidden="true"> · </span>
+            <span>{t("Suffisant", "Enough")} = {t("couvre le besoin", "covers the need")}</span>
+            <span aria-hidden="true"> · </span>
+            <span>{t("Dépend", "Depends")} = {t("selon le contexte", "context-dependent")}</span>
+          </p>
 
           {/* Full-width criterion table — Awwwards bordered grid (Sprint 75) */}
           <div className="cp-criterion-table">
@@ -2388,7 +2437,7 @@ const ComparePage = () => {
         <div className="cp-container">
           <div className="cp-matrix-header">
             <span className="cp-section-counter" aria-hidden="true">05</span>
-            <span className="cp-eyebrow">{t("Attention", "Watchout")}</span>
+            <span className="cp-eyebrow">{t("Risques fréquents", "Common risks")}</span>
             <h2 className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</h2>
             <p className="cp-matrix-intro">
               {content.risksIntro
@@ -2441,20 +2490,36 @@ const ComparePage = () => {
                 )}
               </p>
             </div>
-            <div className="cp-profile-grid">
-              {content.profiles.slice(0, 4).map((profile, i) => (
-                <article key={i} className="cp-profile-card">
-                  <p className="cp-profile-persona">{lang === "fr" ? profile.persona : profile.personaEn}</p>
-                  <p className="cp-profile-choice">→ {profile.choice}</p>
-                  <p className="cp-profile-reason">{lang === "fr" ? profile.reason : profile.reasonEn}</p>
-                  {(lang === "fr" ? profile.limit : profile.limitEn) && (
-                    <div className="cp-profile-limit">
-                      <span className="tt-fact-label">{t("Limite", "Limit")}</span>
-                      <p>{lang === "fr" ? profile.limit : profile.limitEn}</p>
-                    </div>
-                  )}
-                </article>
-              ))}
+            {/* Accordion: scannable persona list + one expanded detail */}
+            <div className="cp-profile-accordion" role="list">
+              {content.profiles.slice(0, 6).map((profile, i) => {
+                const isOpen = activeProfile === i;
+                const personaName = lang === "fr" ? profile.persona : profile.personaEn;
+                return (
+                  <div key={i} className={`cp-profile-row${isOpen ? " cp-profile-row--open" : ""}`} role="listitem">
+                    <button
+                      className="cp-profile-trigger"
+                      aria-expanded={isOpen}
+                      onClick={() => setActiveProfile(isOpen ? -1 : i)}
+                    >
+                      <span className="cp-profile-trigger-name">{personaName}</span>
+                      <span className="cp-profile-trigger-choice">→ {profile.choice}</span>
+                      <ChevronDown className="cp-profile-trigger-icon" aria-hidden="true" />
+                    </button>
+                    {isOpen && (
+                      <div className="cp-profile-detail" role="region" aria-label={personaName}>
+                        <p className="cp-profile-reason">{lang === "fr" ? profile.reason : profile.reasonEn}</p>
+                        {(lang === "fr" ? profile.limit : profile.limitEn) && (
+                          <div className="cp-profile-limit">
+                            <span className="tt-fact-label">{t("Limite", "Limit")}</span>
+                            <p>{lang === "fr" ? profile.limit : profile.limitEn}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
