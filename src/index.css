@@ -9055,6 +9055,48 @@
     color: #3A2010;
   }
 
+  /* ── Limites & alternatives — compact fused section ─── */
+  .cp-limites-risks {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
+  }
+  .cp-limites-risk-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid #E7E7E0;
+  }
+  .cp-limites-risk-row:first-child { border-top: 1px solid #E7E7E0; }
+  .cp-limites-risk-num {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #9A9A92;
+    flex-shrink: 0;
+    min-width: 24px;
+    padding-top: 2px;
+  }
+  .cp-limites-risk-title {
+    margin: 0 0 4px;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #222222;
+  }
+  .cp-limites-risk-fix {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.55;
+    color: #6F6F68;
+  }
+  .cp-limites-alts { display: flex; flex-direction: column; }
+  .cp-limites-alts-heading { display: block; margin-bottom: 12px; }
+
   /* ── Decision tree in hero ─────────────────── */
   .cp-decision-tree {
     display: flex;
