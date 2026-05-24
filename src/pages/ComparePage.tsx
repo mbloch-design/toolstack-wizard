@@ -221,6 +221,12 @@ interface CompareEditorialContent {
   verdictCardTextA?: string; verdictCardTextAEn?: string;
   verdictCardTextB?: string; verdictCardTextBEn?: string;
   verdictWarning?: string; verdictWarningEn?: string;
+  /* ── Section intro overrides ── */
+  criteriaIntro?: string; criteriaIntroEn?: string;
+  featuresIntro?: string; featuresIntroEn?: string;
+  tippingIntro?: string; tippingIntroEn?: string;
+  risksIntro?: string; risksIntroEn?: string;
+  faqIntro?: string; faqIntroEn?: string;
   /* ── Alternatives + FAQ ── */
   alternatives: CompareAlt[];
   faq: CompareFaqItem[];
@@ -1457,6 +1463,31 @@ const GITHUB_COPILOT_VS_CURSOR: CompareEditorialContent = {
     "Vous travaillez dans des environnements de défense ou air-gapped sans accès cloud. Les deux outils sont inutilisables dans ce contexte.",
   ],
 
+  criteriaIntro:
+    "Deux de ces quatre critères suffisent à trancher dans la quasi-totalité des cas. L'IDE que vous utilisez déjà et votre rapport à la facturation variable — tout le reste est secondaire. Les deux autres critères entrent en jeu selon votre contexte spécifique.",
+  criteriaIntroEn:
+    "Two of these four criteria are enough to decide in almost every case. The IDE you already use and your relationship to variable billing — everything else is secondary. The other two criteria come into play depending on your specific context.",
+
+  featuresIntro:
+    "Ce tableau répond à une seule question : dans votre situation, lequel des deux gagne ? Si plusieurs lignes pointent dans la même direction, votre décision est déjà prise. La colonne 'Verdict' résume l'essentiel.",
+  featuresIntroEn:
+    "This table answers one question: in your situation, which one wins? If multiple rows point the same direction, your decision is already made. The Verdict column captures what matters.",
+
+  tippingIntro:
+    "La plupart des gens qui hésitent entre les deux outils ont déjà leur réponse — ils ne l'ont pas encore formulée clairement. Le seuil de bascule, c'est le moment où Cursor cesse d'être 'intéressant' et devient 'évident'. Voici comment l'identifier.",
+  tippingIntroEn:
+    "Most people who hesitate between the two tools already have their answer — they just haven't put it into words yet. The tipping point is the moment when Cursor stops being 'interesting' and becomes 'obvious'. Here's how to identify it.",
+
+  risksIntro:
+    "Ces trois erreurs arrivent souvent dans les 30 premiers jours. Elles ne concernent pas des cas rares — ce sont les retours les plus fréquents sur ces deux outils. Vaut mieux les connaître avant de payer.",
+  risksIntroEn:
+    "These three mistakes happen often in the first 30 days. They're not edge cases — they're the most common feedback we see on both tools. Better to know them before you pay.",
+
+  faqIntro:
+    "Les questions ci-dessous sont celles que les développeurs posent après avoir lu les pages de vente — pas avant. Ce sont les doutes qui subsistent quand on a déjà compris l'essentiel.",
+  faqIntroEn:
+    "The questions below are the ones developers ask after reading the sales pages — not before. They're the doubts that remain once you already understand the basics.",
+
   aglanceBestForA: "Équipes, JetBrains, budget fixe",
   aglanceBestForB: "Solo VS Code, multi-fichiers, remplace ChatGPT Plus",
   aglanceBudget: "Copilot 10$ fixe vs Cursor 20$ + variable",
@@ -2067,10 +2098,12 @@ const ComparePage = () => {
             <span className="cp-eyebrow">{t("Critères décisionnels", "Decision criteria")}</span>
             <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
             <p className="cp-matrix-intro">
-              {t(
-                "Pas les features les plus visibles. Les critères qui changent vraiment la décision.",
-                "Not the most visible features. The criteria that actually change the decision.",
-              )}
+              {content.criteriaIntro
+                ? (lang === "fr" ? content.criteriaIntro : content.criteriaIntroEn)
+                : t(
+                    "Pas les features les plus visibles. Les critères qui changent vraiment la décision.",
+                    "Not the most visible features. The criteria that actually change the decision.",
+                  )}
             </p>
           </div>
 
@@ -2184,6 +2217,11 @@ const ComparePage = () => {
             <span className="cp-section-counter" aria-hidden="true">03</span>
             <span className="cp-eyebrow">{t("Critères décisifs", "Decisive criteria")}</span>
             <h2 className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
+            {content.featuresIntro && (
+              <p className="cp-matrix-intro">
+                {lang === "fr" ? content.featuresIntro : content.featuresIntroEn}
+              </p>
+            )}
             <div className="cp-verdict-legend" aria-hidden="true">
               <span className="cp-verdict-legend-tool">
                 <ToolLogo tool={toolA} size={14} className="flex-shrink-0" />
@@ -2242,10 +2280,12 @@ const ComparePage = () => {
             <span className="cp-eyebrow">{t("Seuil de bascule", "Tipping point")}</span>
             <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
             <p className="cp-matrix-intro">
-              {t(
-                "Un seul critère suffit à faire basculer le choix. Voici la logique.",
-                "One criterion is enough to tip the decision. Here's the logic."
-              )}
+              {content.tippingIntro
+                ? (lang === "fr" ? content.tippingIntro : content.tippingIntroEn)
+                : t(
+                    "Un seul critère suffit à faire basculer le choix. Voici la logique.",
+                    "One criterion is enough to tip the decision. Here's the logic.",
+                  )}
             </p>
           </div>
 
@@ -2302,10 +2342,12 @@ const ComparePage = () => {
             <span className="cp-eyebrow">{t("Attention", "Watchout")}</span>
             <h2 className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</h2>
             <p className="cp-matrix-intro">
-              {t(
-                "Le mauvais choix coûte rarement seulement un abonnement. Il coûte surtout de la clarté, du temps et de la concentration.",
-                "The wrong choice rarely costs just a subscription. It mostly costs clarity, time, and focus."
-              )}
+              {content.risksIntro
+                ? (lang === "fr" ? content.risksIntro : content.risksIntroEn)
+                : t(
+                    "Le mauvais choix coûte rarement seulement un abonnement. Il coûte surtout de la clarté, du temps et de la concentration.",
+                    "The wrong choice rarely costs just a subscription. It mostly costs clarity, time, and focus.",
+                  )}
             </p>
           </div>
           <div className="cp-pitfall-grid">
@@ -2385,6 +2427,11 @@ const ComparePage = () => {
             <h2 className="cp-title cp-title--section-lead">
               {t("Questions fréquentes.", "Frequently asked questions.")}
             </h2>
+            {content.faqIntro && (
+              <p className="cp-matrix-intro">
+                {lang === "fr" ? content.faqIntro : content.faqIntroEn}
+              </p>
+            )}
             <div>
               {content.faq.map((item, i) => (
                 <FaqItem
