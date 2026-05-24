@@ -7744,6 +7744,7 @@
     line-height: 1.02; color: var(--color-text, #222222);
     max-width: none; margin-bottom: 0;
   }
+  .cp-title--section-lead { margin-bottom: 28px; }
   /* Intro paragraph beneath a full-width title (used in coût, etc.) */
   .cp-section-intro {
     max-width: 820px;

@@ -1409,8 +1409,9 @@ const ComparePage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div style={{ width: 32, height: 32, borderRadius: "50%", border: "3px solid #DADAD4", borderTopColor: "#222222", animation: "spin 0.8s linear infinite" }} />
+      <div className="min-h-screen flex items-center justify-center" role="status" aria-label={t("Chargement en cours", "Loading")}>
+        <div style={{ width: 32, height: 32, borderRadius: "50%", border: "3px solid #DADAD4", borderTopColor: "#222222", animation: "spin 0.8s linear infinite" }} aria-hidden="true" />
+        <span className="sr-only">{t("Chargement en cours…", "Loading…")}</span>
       </div>
     );
   }
@@ -1482,7 +1483,7 @@ const ComparePage = () => {
   const navSections: CompareNavSection[] = [
     { id: "criteres", label: t("Critères", "Criteria") },
     { id: "cout", label: t("Coût", "Cost") },
-    { id: "features", label: t("Features", "Features") },
+    { id: "features", label: t("Tableau", "Table") },
     { id: "seuil", label: t("Seuil", "Threshold") },
     { id: "vigilance", label: t("Attention", "Watchout") },
     ...(altTools.length > 0 ? [{ id: "alternatives", label: t("Alternatives", "Alternatives") }] : []),
@@ -1546,26 +1547,12 @@ const ComparePage = () => {
             </article>
           </div>
 
-          {/* Callout : règle anti-doublon + CTA */}
+          {/* Callout : règle anti-doublon */}
           <div className="compare-verdict-callout">
             <span className="tt-fact-label">
               {t("Ne paie pas les deux sans règle claire", "Don't pay for both without a clear rule")}
             </span>
             <p className="tt-body-large">{verdictWarningText}</p>
-            <div className="compare-verdict-callout-footer">
-              <p className="tt-card-body">
-                {t(
-                  "Pas encore sûr·e de ce qui correspond à ta situation ?",
-                  "Still not sure which fits your situation?",
-                )}
-              </p>
-              <Link
-                to={`${prefix}/selector?from=${slugPair}`}
-                className="tt-button-primary"
-              >
-                {t("Analyser ma stack →", "Analyse my stack →")}
-              </Link>
-            </div>
           </div>
 
           {/* Micro-fiche courte — 3 cellules */}
@@ -1861,7 +1848,7 @@ const ComparePage = () => {
           <div className="cp-container">
             <span className="cp-section-counter" aria-hidden="true">06</span>
             <span className="cp-eyebrow">{t("Pour aller plus loin", "Next options")}</span>
-            <h2 className="cp-title" style={{ marginBottom: 28 }}>
+            <h2 className="cp-title cp-title--section-lead">
               {t("Si aucun des deux ne colle.", "If neither one fits.")}
             </h2>
             <div>
@@ -1902,7 +1889,7 @@ const ComparePage = () => {
           <div className="cp-container">
             <span className="cp-section-counter" aria-hidden="true">{altTools.length > 0 ? "07" : "06"}</span>
             <span className="cp-eyebrow">FAQ</span>
-            <h2 className="cp-title" style={{ marginBottom: 28 }}>
+            <h2 className="cp-title cp-title--section-lead">
               {t("Questions fréquentes.", "Frequently asked questions.")}
             </h2>
             <div>
