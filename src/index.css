@@ -16203,3 +16203,62 @@ section[id] {
   line-height: 1;
   color: #6F6F68;
 }
+
+/* ── Compare: 404 not-found state ──────────────────────────────── */
+.cp-not-found {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+.cp-not-found-inner {
+  max-width: 560px;
+}
+.cp-not-found-inner .cp-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+}
+.cp-not-found-title {
+  font-family: var(--font-brand);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1.0;
+  color: #222222;
+  margin: 0 0 20px;
+}
+.cp-not-found-body {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+  color: #6F6F68;
+  margin: 0 0 32px;
+  max-width: 480px;
+}
+
+/* ── Spinner keyframe (used in loading state) ──────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Criterion table: mobile tool labels ───────────────────────── */
+.cp-crit-table-mobile-label {
+  display: none;
+}
+@media (max-width: 640px) {
+  .cp-crit-table-head {
+    display: none;
+  }
+  .cp-crit-table-mobile-label {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin-bottom: 5px;
+  }
+}

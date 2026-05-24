@@ -1417,13 +1417,22 @@ const ComparePage = () => {
 
   if (!parsedPair || !toolA || !toolB) {
     return (
-      <div style={{ maxWidth: 600, margin: "80px auto", padding: "0 24px", textAlign: "center" }}>
-        <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, color: "#6F6F68", marginBottom: 16 }}>
-          {t("Comparatif non trouvé.", "Comparison not found.")}
-        </p>
-        <Link to={`${prefix}/comparatifs`} style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "#222222", textDecoration: "underline" }}>
-          {t("Voir tous les comparatifs", "See all comparisons")}
-        </Link>
+      <div className="cp-not-found">
+        <div className="cp-not-found-inner">
+          <span className="cp-eyebrow">{t("Comparatif introuvable", "Comparison not found")}</span>
+          <h1 className="cp-not-found-title">
+            {t("Ce comparatif n'existe pas encore.", "This comparison doesn't exist yet.")}
+          </h1>
+          <p className="cp-not-found-body">
+            {t(
+              "Le duel que tu cherches n'est pas encore dans notre base. Consulte la liste des comparatifs disponibles.",
+              "The matchup you're looking for isn't in our database yet. Browse the available comparisons."
+            )}
+          </p>
+          <Link to={`${prefix}/comparatifs`} className="tt-button-primary">
+            {t("Voir tous les comparatifs →", "See all comparisons →")}
+          </Link>
+        </div>
       </div>
     );
   }
@@ -1624,9 +1633,11 @@ const ComparePage = () => {
                     </div>
                     <div className="cp-crit-table-tools">
                       <div className={`cp-crit-table-tool${levels.winner === "A" ? " cp-crit-table-tool--winner" : ""}`}>
+                        <span className="cp-crit-table-mobile-label">{toolA.name}</span>
                         <p className="cp-crit-table-tool-text">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
                       </div>
                       <div className={`cp-crit-table-tool${levels.winner === "B" ? " cp-crit-table-tool--winner" : ""}`}>
+                        <span className="cp-crit-table-mobile-label">{toolB.name}</span>
                         <p className="cp-crit-table-tool-text">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
                       </div>
                     </div>
@@ -1683,9 +1694,11 @@ const ComparePage = () => {
                   </div>
                   <div className="cp-crit-table-tools">
                     <div className="cp-crit-table-tool">
+                      <span className="cp-crit-table-mobile-label">{toolA.name}</span>
                       <p className="cp-crit-table-tool-text">{lang === "fr" ? row.toolA : row.toolAEn}</p>
                     </div>
                     <div className="cp-crit-table-tool">
+                      <span className="cp-crit-table-mobile-label">{toolB.name}</span>
                       <p className="cp-crit-table-tool-text">{lang === "fr" ? row.toolB : row.toolBEn}</p>
                     </div>
                   </div>
