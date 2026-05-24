@@ -2143,18 +2143,29 @@ const ComparePage = () => {
             </article>
           </div>
 
-          {/* Decision tree — 30-second choice for power users */}
-          {content.quickDecisionTree && content.quickDecisionTree.length > 0 && (
-            <div className="cp-decision-tree" role="list" aria-label={t("Décision rapide", "Quick decision")}>
-              {content.quickDecisionTree.map((step, i) => (
-                <div key={i} className="cp-decision-tree-step" role="listitem">
-                  <span className="cp-decision-tree-if">{lang === "fr" ? step.condition : step.conditionEn}</span>
-                  <span className="cp-decision-tree-arrow" aria-hidden="true">→</span>
-                  <span className="cp-decision-tree-answer">{lang === "fr" ? step.answer : step.answerEn}</span>
+          {/* Decision tree — mirror layout: conditions split under their tool */}
+          {content.quickDecisionTree && content.quickDecisionTree.length > 0 && (() => {
+            const tree = content.quickDecisionTree!;
+            const toolBKey = toolB.name.split(" ").pop()!.toLowerCase();
+            const treeA = tree.filter(s => !s.answer.toLowerCase().includes(toolBKey));
+            const treeB = tree.filter(s => s.answer.toLowerCase().includes(toolBKey));
+            return (
+              <div className="cp-decision-tree--mirror" role="list" aria-label={t("Décision rapide", "Quick decision")}>
+                <div className="cp-decision-tree-col" role="listitem">
+                  <span className="cp-decision-tree-col-title">{toolA.name}</span>
+                  {treeA.map((step, i) => (
+                    <p key={i} className="cp-decision-tree-item">{lang === "fr" ? step.condition : step.conditionEn}</p>
+                  ))}
                 </div>
-              ))}
-            </div>
-          )}
+                <div className="cp-decision-tree-col" role="listitem">
+                  <span className="cp-decision-tree-col-title">{toolB.name}</span>
+                  {treeB.map((step, i) => (
+                    <p key={i} className="cp-decision-tree-item">{lang === "fr" ? step.condition : step.conditionEn}</p>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Micro-fiche — 3 decision signals + jump-to-verdict */}
           <div className="cp-hero-microfact" aria-label={t("Signaux clés", "Key signals")}>
