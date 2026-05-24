@@ -2272,50 +2272,38 @@ const ComparePage = () => {
             </p>
           </div>
 
-          <p className="cp-crit-level-legend" aria-label={t("Légende des niveaux", "Level legend")}>
-            <span>{t("Avantage", "Advantage")} = {t("remporte le critère", "wins this criterion")}</span>
-            <span aria-hidden="true"> · </span>
-            <span>{t("Suffisant", "Enough")} = {t("couvre le besoin", "covers the need")}</span>
-            <span aria-hidden="true"> · </span>
-            <span>{t("Dépend", "Depends")} = {t("selon le contexte", "context-dependent")}</span>
-          </p>
-
-          <div className="cp-criterion-table">
-              <div className="cp-crit-table-head">
-                <div className="cp-crit-table-th">
-                  <ToolLogo tool={toolA} size={16} className="flex-shrink-0" />
-                  <span>{toolA.name}</span>
-                </div>
-                <div className="cp-crit-table-th">
-                  <ToolLogo tool={toolB} size={16} className="flex-shrink-0" />
-                  <span>{toolB.name}</span>
-                </div>
+          <div className="cp-crit-table" role="table" aria-label={t("Comparaison des critères décisionnels", "Decision criteria comparison")}>
+            <div className="cp-crit-head" role="row">
+              <div className="cp-crit-head-label" role="columnheader">{t("Critère", "Criterion")}</div>
+              <div className="cp-crit-head-tool" role="columnheader">
+                <ToolLogo tool={toolA} size={16} className="flex-shrink-0" aria-hidden="true" />
+                {toolA.name}
               </div>
-              {content.decisiveCriteria.slice(0, 6).map((criterion) => {
-                const levels = getCriterionLevels(criterion, toolA, toolB, lang);
-                return (
-                  <div key={criterion.title} className="cp-crit-table-block">
-                    <div className="cp-crit-table-label-row">
-                      <span className="cp-crit-table-label">
-                        {lang === "fr" ? criterion.title : criterion.titleEn}
-                      </span>
-                      <p className="cp-crit-table-decision">
-                        {lang === "fr" ? criterion.decision : criterion.decisionEn}
-                      </p>
-                    </div>
-                    <div className="cp-crit-table-tools">
-                      <div className={`cp-crit-table-tool${levels.winner === "A" ? " cp-crit-table-tool--winner" : ""}`}>
-                        <span className="cp-crit-table-mobile-label">{toolA.name}</span>
-                        <p className="cp-crit-table-tool-text">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
-                      </div>
-                      <div className={`cp-crit-table-tool${levels.winner === "B" ? " cp-crit-table-tool--winner" : ""}`}>
-                        <span className="cp-crit-table-mobile-label">{toolB.name}</span>
-                        <p className="cp-crit-table-tool-text">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
-                      </div>
-                    </div>
+              <div className="cp-crit-head-tool" role="columnheader">
+                <ToolLogo tool={toolB} size={16} className="flex-shrink-0" aria-hidden="true" />
+                {toolB.name}
+              </div>
+            </div>
+            {content.decisiveCriteria.slice(0, 6).map((criterion, index) => {
+              const levels = getCriterionLevels(criterion, toolA, toolB, lang);
+              const aWins = levels.winner === "A";
+              const bWins = levels.winner === "B";
+              return (
+                <div key={criterion.title} className="cp-crit-row" role="row">
+                  <div className="cp-crit-col cp-crit-col--label" role="cell">
+                    <span className="cp-crit-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                    <p className="cp-crit-name">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
+                    <p className="cp-crit-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
                   </div>
-                );
-              })}
+                  <div className={`cp-crit-col${aWins ? " cp-crit-col--win" : ""}`} role="cell">
+                    <p className="cp-crit-val">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+                  </div>
+                  <div className={`cp-crit-col${bWins ? " cp-crit-col--win" : ""}`} role="cell">
+                    <p className="cp-crit-val">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

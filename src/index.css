@@ -7990,111 +7990,6 @@
 
   /* (cp-score-* removed Sprint 73 — replaced by cp-matrix-*) */
 
-  /* ── Criterion table — Awwwards grid style (Sprint 75) ─────────── */
-  /* Outer bordered container with rounded corners + overflow:hidden  */
-  /* Awwwards exact system: one color (--color-text) for ALL borders.  */
-  /* No separate gray — borders = text. Hierarchy via size + weight.   */
-  .cp-criterion-table {
-    width: 100%;
-    border: 1px solid var(--color-text);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  /* Column header row: tool names separated by a vertical divider */
-  .cp-crit-table-head {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid var(--color-text);
-  }
-  .cp-crit-table-th {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 16px;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--color-text);
-  }
-  .cp-crit-table-th:first-child {
-    border-right: 1px solid var(--color-text);
-  }
-
-  /* Each criterion block: label-row + tools-row */
-  .cp-crit-table-block {
-    border-bottom: 1px solid var(--color-text);
-  }
-  .cp-crit-table-block:last-child { border-bottom: none; }
-
-  /* Full-width label row: kicker (metadata) + verdict (editorial judgment) */
-  .cp-crit-table-label-row {
-    padding: 18px 16px 14px;
-    border-bottom: 1px solid var(--color-text);
-  }
-  /* Criterion kicker — structural metadata, clearly subordinate in color */
-  .cp-crit-table-label {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #9A9A92;
-    margin-bottom: 10px;
-  }
-  /* Editorial verdict — authoritative weight, readable scale */
-  .cp-crit-table-decision {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.45;
-    letter-spacing: -0.015em;
-    color: var(--color-text);
-  }
-
-  /* Two-column tool row: separated by a vertical divider */
-  .cp-crit-table-tools {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .cp-crit-table-tool {
-    padding: 18px 16px;
-  }
-  .cp-crit-table-tool:first-child {
-    border-right: 1px solid var(--color-text);
-  }
-  /* Tool evidence — light, subordinate to the verdict above */
-  .cp-crit-table-tool-text {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 13px;
-    line-height: 1.55;
-    letter-spacing: -0.01em;
-    color: var(--color-text);
-    font-weight: 300;
-  }
-  /* Winner: weight bump — hierarchy through weight, not color */
-  .cp-crit-table-tool--winner {
-    background: #F8F8F4;
-  }
-  .cp-crit-table-tool--winner .cp-crit-table-tool-text {
-    font-weight: 500;
-  }
-
-  @media (max-width: 640px) {
-    .cp-crit-table-th,
-    .cp-crit-table-label-row,
-    .cp-crit-table-tool { padding: 16px; }
-    .cp-crit-table-tools { grid-template-columns: 1fr; }
-    .cp-crit-table-tool:first-child {
-      border-right: none;
-      border-bottom: 1px solid var(--color-text);
-    }
-  }
 
   /* ── Decision table ─────────────────────────────────────────── */
   .cp-table {
@@ -9080,16 +8975,6 @@
   }
   .cp-methodology-link:hover { color: #222222; }
 
-  /* Criterion level legend — micro-legend above criterion table */
-  .cp-crit-level-legend {
-    margin: 0 0 16px;
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #9A9A92;
-  }
 
   /* Profile accordion — replaces grid of identical cards */
   .cp-profile-accordion {
@@ -16354,24 +16239,3 @@ section[id] {
   outline-offset: -4px;
 }
 
-/* ── Verdict list legend (section 03 tool orientation) ─────────── */
-
-/* ── Criterion table: mobile tool labels ───────────────────────── */
-.cp-crit-table-mobile-label {
-  display: none;
-}
-@media (max-width: 640px) {
-  .cp-crit-table-head {
-    display: none;
-  }
-  .cp-crit-table-mobile-label {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #9A9A92;
-    margin-bottom: 5px;
-  }
-}
