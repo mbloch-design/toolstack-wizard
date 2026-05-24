@@ -2130,7 +2130,7 @@ const ComparePage = () => {
       <CompareStickyNav sections={navSections} prefix={prefix} />
 
       {/* ── 01 Verdict — seuil de bascule ─────────────────────────────────── */}
-      <section id="seuil" className="cp-section cp-section--tipping scroll-mt-20">
+      <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <div className="cp-matrix-header">
             <span className="cp-section-counter" aria-hidden="true">01</span>
@@ -2189,7 +2189,7 @@ const ComparePage = () => {
 
           {/* CTA */}
           <div className="cp-tipping-cta">
-            <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-light">
+            <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-secondary">
               {t("Vérifier ma stack →", "Check my stack →")}
             </Link>
           </div>

@@ -7685,13 +7685,6 @@
     max-width: 900px;
   }
   @media (max-width: 767px) { .cp-verdict-statement p { font-size: 23px; line-height: 1.28; } }
-  /* Dark section overrides — verdict statement is in cp-section--tipping (#111111 bg) */
-  .cp-section--tipping .cp-verdict-statement {
-    border-top-color: rgba(255,255,255,0.12);
-    border-bottom-color: rgba(255,255,255,0.12);
-  }
-  .cp-section--tipping .cp-verdict-statement p { color: rgba(255,255,255,0.95); }
-  .cp-section--tipping .cp-verdict-statement-label { color: rgba(255,255,255,0.35); }
   /* ── Verdict: decision columns ──────────────────────────────── */
   .cp-decision-columns {
     display: grid;
@@ -8353,7 +8346,7 @@
   }
   @media (max-width: 640px) {
     .cp-tipping-cta { flex-direction: column; align-items: stretch; }
-    .cp-tipping-cta .tt-button-primary { justify-content: center; }
+    .cp-tipping-cta .tt-button-secondary { justify-content: center; }
   }
   /* ── Cost section callout — recommandation finale (Sprint 74) ── */
   .cp-cost-callout {
@@ -8489,81 +8482,6 @@
     margin-bottom: 24px;
     user-select: none;
   }
-  .cp-section--tipping .cp-section-counter { color: rgba(255,255,255,0.08); }
-
-  /* ── Section 01 — dark verdict (visual opening statement) ──── */
-  .cp-section--tipping {
-    background: #111111;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding: clamp(88px, 9vw, 128px) 0;
-  }
-  .cp-section--tipping .cp-eyebrow { color: rgba(255,255,255,0.35); }
-  .cp-section--tipping .cp-title { color: #FFFFFF; font-size: clamp(40px, 4.2vw, 56px); }
-  .cp-section--tipping .cp-matrix-intro { color: rgba(255,255,255,0.45); }
-  /* Tipping flow card */
-  .cp-section--tipping .cp-tipping-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .cp-section--tipping .cp-tipping-card-state--switch {
-    background: rgba(255,255,255,0.04);
-    border-left: 1px solid rgba(255,255,255,0.1);
-  }
-  .cp-section--tipping .cp-tipping-card-arrow {
-    border-left: 1px solid rgba(255,255,255,0.1);
-    border-right: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.25);
-  }
-  .cp-section--tipping .cp-tipping-card-text { color: rgba(255,255,255,0.82); }
-  .cp-section--tipping .tt-fact-label { color: rgba(255,255,255,0.3); }
-  /* Rules list */
-  .cp-section--tipping .cp-tipping-rules-list {
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .cp-section--tipping .cp-tipping-rule {
-    background: transparent;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .cp-section--tipping .cp-tipping-rule:last-child { border-bottom: none; }
-  .cp-section--tipping .cp-tipping-rule-num {
-    background: rgba(255,255,255,0.04);
-    border-right: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.28);
-  }
-  .cp-section--tipping .cp-tipping-rule p { color: rgba(255,255,255,0.55); }
-  /* Mobile overrides for tipping dark section */
-  @media (max-width: 768px) {
-    .cp-section--tipping .cp-tipping-card-arrow {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .cp-section--tipping .cp-tipping-card-state--switch {
-      border-left: none;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-  }
-
-  /* ── Light button (dark section contexts) ────────────────────── */
-  .tt-button-light {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    height: 40px;
-    padding: 0 18px;
-    background: #FFFFFF;
-    border: none;
-    border-radius: 8px;
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    color: #111111;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background 0.15s ease;
-  }
-  .tt-button-light:hover { background: #EEEEEA; }
-  .tt-button-light:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; }
 
   /* ── Limits grid ───────────────────────────────────────────── */
   .cp-limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
