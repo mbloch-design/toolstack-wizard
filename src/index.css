@@ -9078,6 +9078,102 @@
     color: #3A2010;
   }
 
+  /* ── Decision tree in hero ─────────────────── */
+  .cp-decision-tree {
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+    border: 1px solid var(--color-border, #DADAD4);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #FFFFFF;
+    margin: 24px 0 0;
+  }
+  .cp-decision-tree-step {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 16px;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--color-border, #DADAD4);
+  }
+  .cp-decision-tree-step:last-child { border-bottom: none; }
+  .cp-decision-tree-if {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555554;
+  }
+  .cp-decision-tree-arrow {
+    font-size: 12px;
+    color: #9A9A92;
+  }
+  .cp-decision-tree-answer {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 700;
+    color: #222222;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ── Profile cards ──────────────────────────── */
+  .cp-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .cp-profile-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+  .cp-profile-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 28px;
+    background: #FFFFFF;
+    border: 1px solid #DADAD4;
+    border-top: 3px solid #222222;
+    border-radius: 8px;
+  }
+  .cp-profile-persona {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9A92;
+    margin: 0 0 8px;
+  }
+  .cp-profile-choice {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 700;
+    color: #222222;
+    margin: 0 0 12px;
+  }
+  .cp-profile-reason {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.55;
+    color: #555554;
+    flex: 1;
+    margin: 0 0 16px;
+  }
+  .cp-profile-limit {
+    padding: 12px 16px;
+    background: #F8F8F4;
+    border: 1px solid #E8E8E4;
+    border-radius: 6px;
+  }
+  .cp-profile-limit .tt-fact-label { display: block; margin-bottom: 6px; }
+  .cp-profile-limit p {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6F6F68;
+  }
+
 /* ─────────────────────────────────────────────
    COMPARATIFS INDEX (cix-*)
    /fr/comparatifs — hero, search, grid, cards
