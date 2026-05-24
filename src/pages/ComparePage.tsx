@@ -1390,16 +1390,21 @@ const ComparePage = () => {
     setHreflang(`/${lang}/comparatif/${slugPair}`);
     setJsonLd("compare-jsonld", {
       "@context": "https://schema.org",
-      "@type": "Article",
-      headline: title,
+      "@type": "ItemList",
+      name: title,
       description: desc,
       url,
+      numberOfItems: 2,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: toolA.name, url: `${SEO_BASE}/${lang}/tool/${toolA.slug}` },
+        { "@type": "ListItem", position: 2, name: toolB.name, url: `${SEO_BASE}/${lang}/tool/${toolB.slug}` },
+      ],
       author: { "@type": "Organization", name: "ToolTrim", url: SEO_BASE },
       publisher: { "@type": "Organization", name: "ToolTrim", url: SEO_BASE },
       datePublished: "2026-03-13",
       inLanguage: lang,
     });
-    return () => cleanupSeo(["compare-jsonld"]);
+    return () => cleanupSeo(["compare-jsonld", "compare-faq-jsonld"]);
   }, [toolA, toolB, lang, slugPair]);
 
   if (loading) {
@@ -1487,13 +1492,17 @@ const ComparePage = () => {
             <span>{toolA.name} vs {toolB.name}</span>
           </nav>
 
-          <span className="cp-eyebrow">COMPARATIF</span>
+          <span className="cp-eyebrow">{t("COMPARATIF", "COMPARISON")}</span>
 
           <h1 className="cp-hero-title">
             {toolA.name} vs {toolB.name}.
           </h1>
 
           <p className="cp-hero-promise">{heroPromise}</p>
+
+          {content.aglanceHeroBrief && (
+            <p className="cp-hero-brief">{content.aglanceHeroBrief}</p>
+          )}
 
           {/* Face-à-face duel — enhanced with verdict card content */}
           <div className="cp-hero-duel" aria-label={t("Face-à-face des deux outils", "Head-to-head comparison")}>
@@ -1796,7 +1805,8 @@ const ComparePage = () => {
       <section id="vigilance" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <div className="cp-matrix-header">
-            <span className="cp-eyebrow">{t("06 — Attention", "06 — Watchout")}</span>
+            <span className="cp-section-counter" aria-hidden="true">05</span>
+            <span className="cp-eyebrow">{t("Attention", "Watchout")}</span>
             <h2 className="cp-title">{t("Les erreurs de choix fréquentes.", "Common decision mistakes.")}</h2>
             <p className="cp-matrix-intro">
               {t(
@@ -1836,7 +1846,8 @@ const ComparePage = () => {
       {altTools.length > 0 && (
         <section id="alternatives" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{t("07 — Pour aller plus loin", "07 — Next options")}</span>
+            <span className="cp-section-counter" aria-hidden="true">06</span>
+            <span className="cp-eyebrow">{t("Pour aller plus loin", "Next options")}</span>
             <h2 className="cp-title" style={{ marginBottom: 28 }}>
               {t("Si aucun des deux ne colle.", "If neither one fits.")}
             </h2>
@@ -1876,7 +1887,8 @@ const ComparePage = () => {
       {content.faq.length > 0 && (
         <section id="faq" className="cp-section cp-section--last scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-eyebrow">{altTools.length > 0 ? "09 — FAQ" : "08 — FAQ"}</span>
+            <span className="cp-section-counter" aria-hidden="true">{altTools.length > 0 ? "07" : "06"}</span>
+            <span className="cp-eyebrow">FAQ</span>
             <h2 className="cp-title" style={{ marginBottom: 28 }}>
               {t("Questions fréquentes.", "Frequently asked questions.")}
             </h2>
@@ -1930,9 +1942,9 @@ function FaqItem({ question, answer, defaultOpen = false }: { question: string; 
         <ChevronDown
           size={16}
           style={{
-            flexShrink: 0, color: "#9A9A92",
+            flexShrink: 0, color: "var(--color-muted-light, #9A9A92)",
             transform: open ? "rotate(180deg)" : "rotate(0deg)",
-            transition: "transform 160ms",
+            transition: "transform 160ms ease-out",
           }}
         />
       </summary>

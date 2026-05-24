@@ -15267,11 +15267,37 @@ section[id] {
   outline-offset: 2px;
 }
 
-/* Mobile: hide the bottom capsule (inline subnav handles mobile) */
+/* Mobile: reposition capsule to top bar */
 @media (max-width: 767px) {
-  .stack-sticky-nav,
-  .compare-sticky-nav {
+  .stack-sticky-nav {
     display: none;
+  }
+  .compare-sticky-nav {
+    bottom: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(0);
+    border-radius: 0;
+    max-width: 100%;
+    padding: 6px 12px;
+    gap: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  .compare-sticky-nav--hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  .compare-sticky-nav-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+  .compare-sticky-nav-item {
+    height: 38px;
+    padding: 0 12px;
+    font-size: 12px;
   }
 }
 
