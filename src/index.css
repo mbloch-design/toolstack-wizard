@@ -7650,12 +7650,12 @@
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--color-muted, #6F6F68); display: block; margin-bottom: 16px;
   }
-  /* Section heading — uses tt-section-title scale */
+  /* Section heading — headline scale, compressed */
   .cp-title {
     font-family: var(--font-brand);
-    font-size: clamp(36px, 3.5vw, 48px);
+    font-size: var(--tt-size-section-h);
     font-weight: 700; letter-spacing: -0.06em;
-    line-height: 1.02; color: var(--color-text, #222222);
+    line-height: 0.95; color: var(--color-text, #222222);
     max-width: none; margin-bottom: 0;
   }
   .cp-title--section-lead { margin-bottom: 28px; }
@@ -7684,7 +7684,7 @@
   }
   @media (max-width: 640px) {
     .cp-section-grid { gap: 20px; }
-    .cp-title { font-size: clamp(32px, 8vw, 38px); }
+    .cp-title { font-size: clamp(32px, 9vw, 44px); line-height: 0.97; }
   }
   /* ── Verdict: framing phrase — uses tt-section-intro scale ──── */
   .cp-section-framing {
@@ -7715,15 +7715,15 @@
   }
   .cp-verdict-statement p {
     margin: 0;
-    font-family: var(--font-ui);
-    font-size: clamp(26px, 2.8vw, 38px);
-    line-height: 1.18;
-    font-weight: 600;
-    letter-spacing: -0.038em;
+    font-family: var(--font-brand);
+    font-size: clamp(44px, 5vw, 68px);
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: -0.06em;
     color: #222222;
     max-width: 900px;
   }
-  @media (max-width: 767px) { .cp-verdict-statement p { font-size: 23px; line-height: 1.28; } }
+  @media (max-width: 767px) { .cp-verdict-statement p { font-size: clamp(30px, 8vw, 44px); line-height: 0.98; } }
   /* ── Verdict: decision columns ──────────────────────────────── */
   .cp-decision-columns {
     display: grid;
@@ -7833,7 +7833,7 @@
     font-family: var(--font-ui);
     font-size: 16px;
     line-height: 1.5;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     color: var(--color-muted, #6F6F68);
   }
 
@@ -8465,10 +8465,10 @@
   }
   .cp-sub-section-title {
     margin: 0 0 32px;
-    font-family: var(--font-brand);
-    font-size: clamp(20px, 2.2vw, 26px); font-weight: 700; letter-spacing: -0.03em;
+    font-family: var(--font-ui);
+    font-size: clamp(17px, 1.4vw, 21px); font-weight: 600; letter-spacing: -0.025em;
     color: #222222;
-    line-height: 1.15;
+    line-height: 1.3;
   }
 
   /* ── Section counter — large architectural number ──────────── */
@@ -9057,16 +9057,18 @@
   .cp-profile-row--open .cp-profile-trigger { background: #F8F8F4; }
   .cp-profile-trigger-name {
     font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
     color: #222222;
     flex: 1;
     min-width: 0;
   }
   .cp-profile-trigger-choice {
     font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     color: #6F6F68;
     white-space: nowrap;
     flex-shrink: 0;
