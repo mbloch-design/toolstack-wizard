@@ -2216,35 +2216,32 @@ const ComparePage = () => {
             </div>
           </div>
 
-          {/* Full-width criterion list — outils en lignes, même structure que §03/04 */}
-          <div className="cp-crit-list" role="list" aria-label={t("Comparaison des coûts", "Cost comparison")}>
+          {/* Grille 3 colonnes : critère | outil A | outil B */}
+          <div className="cp-compare-table" role="table" aria-label={t("Comparaison des coûts", "Cost comparison")}>
+            <div className="cp-compare-header" role="row">
+              <div className="cp-compare-header-label" role="columnheader" aria-hidden="true" />
+              <div className="cp-compare-header-tool" role="columnheader">
+                <ToolLogo tool={toolA} size={40} aria-hidden="true" />
+                <span className="cp-compare-header-name">{toolA.name}</span>
+              </div>
+              <div className="cp-compare-header-tool" role="columnheader">
+                <ToolLogo tool={toolB} size={40} aria-hidden="true" />
+                <span className="cp-compare-header-name">{toolB.name}</span>
+              </div>
+            </div>
             {content.costReality.map((row, index) => (
-              <div key={row.label} className="cp-crit-block" role="listitem">
-                <div className="cp-crit-block-header">
-                  <span className="cp-crit-block-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                  <h3 className="cp-crit-block-title">{lang === "fr" ? row.label : row.labelEn}</h3>
+              <div key={row.label} className="cp-compare-row" role="row">
+                <div className="cp-compare-row-label" role="cell">
+                  <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                  <p className="cp-compare-row-title">{lang === "fr" ? row.label : row.labelEn}</p>
+                  <p className="cp-compare-row-verdict">{lang === "fr" ? row.recommendation : row.recommendationEn}</p>
                 </div>
-                <div>
-                  <div className="cp-crit-block-tool cp-crit-block-tool--win">
-                    <div className="cp-crit-block-tool-name">
-                      <ToolLogo tool={toolA} size={15} aria-hidden="true" />
-                      <span>{toolA.name}</span>
-                    </div>
-                    <div className="cp-crit-block-tool-right">
-                      <p className="cp-crit-block-tool-val">{lang === "fr" ? row.toolA : row.toolAEn}</p>
-                    </div>
-                  </div>
-                  <div className="cp-crit-block-tool cp-crit-block-tool--win">
-                    <div className="cp-crit-block-tool-name">
-                      <ToolLogo tool={toolB} size={15} aria-hidden="true" />
-                      <span>{toolB.name}</span>
-                    </div>
-                    <div className="cp-crit-block-tool-right">
-                      <p className="cp-crit-block-tool-val">{lang === "fr" ? row.toolB : row.toolBEn}</p>
-                    </div>
-                  </div>
+                <div className="cp-compare-row-tool cp-compare-row-tool--eq" role="cell">
+                  <p className="cp-compare-row-tool-val">{lang === "fr" ? row.toolA : row.toolAEn}</p>
                 </div>
-                <p className="cp-crit-block-verdict">{lang === "fr" ? row.recommendation : row.recommendationEn}</p>
+                <div className="cp-compare-row-tool cp-compare-row-tool--eq" role="cell">
+                  <p className="cp-compare-row-tool-val">{lang === "fr" ? row.toolB : row.toolBEn}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -2269,36 +2266,33 @@ const ComparePage = () => {
             </p>
           </div>
 
-          <div className="cp-crit-list" role="list" aria-label={t("Comparaison des critères décisionnels", "Decision criteria comparison")}>
+          <div className="cp-compare-table" role="table" aria-label={t("Comparaison des critères décisionnels", "Decision criteria comparison")}>
+            <div className="cp-compare-header" role="row">
+              <div className="cp-compare-header-label" role="columnheader" aria-hidden="true" />
+              <div className="cp-compare-header-tool" role="columnheader">
+                <ToolLogo tool={toolA} size={40} aria-hidden="true" />
+                <span className="cp-compare-header-name">{toolA.name}</span>
+              </div>
+              <div className="cp-compare-header-tool" role="columnheader">
+                <ToolLogo tool={toolB} size={40} aria-hidden="true" />
+                <span className="cp-compare-header-name">{toolB.name}</span>
+              </div>
+            </div>
             {content.decisiveCriteria.slice(0, 6).map((criterion, index) => {
               const levels = getCriterionLevels(criterion, toolA, toolB, lang);
               return (
-                <div key={criterion.title} className="cp-crit-block" role="listitem">
-                  <div className="cp-crit-block-header">
-                    <span className="cp-crit-block-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                    <h3 className="cp-crit-block-title">{lang === "fr" ? criterion.title : criterion.titleEn}</h3>
+                <div key={criterion.title} className="cp-compare-row" role="row">
+                  <div className="cp-compare-row-label" role="cell">
+                    <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                    <p className="cp-compare-row-title">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
+                    <p className="cp-compare-row-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
                   </div>
-                  <div>
-                    <div className={`cp-crit-block-tool${levels.winner === "A" ? " cp-crit-block-tool--win" : ""}`}>
-                      <div className="cp-crit-block-tool-name">
-                        <ToolLogo tool={toolA} size={15} aria-hidden="true" />
-                        <span>{toolA.name}</span>
-                      </div>
-                      <div className="cp-crit-block-tool-right">
-                        <p className="cp-crit-block-tool-val">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
-                      </div>
-                    </div>
-                    <div className={`cp-crit-block-tool${levels.winner === "B" ? " cp-crit-block-tool--win" : ""}`}>
-                      <div className="cp-crit-block-tool-name">
-                        <ToolLogo tool={toolB} size={15} aria-hidden="true" />
-                        <span>{toolB.name}</span>
-                      </div>
-                      <div className="cp-crit-block-tool-right">
-                        <p className="cp-crit-block-tool-val">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
-                      </div>
-                    </div>
+                  <div className={`cp-compare-row-tool${levels.winner === "A" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                    <p className="cp-compare-row-tool-val">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
                   </div>
-                  <p className="cp-crit-block-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
+                  <div className={`cp-compare-row-tool${levels.winner === "B" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                    <p className="cp-compare-row-tool-val">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                  </div>
                 </div>
               );
             })}
@@ -2318,7 +2312,18 @@ const ComparePage = () => {
                 {lang === "fr" ? content.featuresIntro : content.featuresIntroEn}
               </p>
             )}
-            <div className="cp-crit-list" role="list" aria-label={t("Comparaison des critères", "Criteria comparison")}>
+            <div className="cp-compare-table" role="table" aria-label={t("Comparaison des critères", "Criteria comparison")}>
+              <div className="cp-compare-header" role="row">
+                <div className="cp-compare-header-label" role="columnheader" aria-hidden="true" />
+                <div className="cp-compare-header-tool" role="columnheader">
+                  <ToolLogo tool={toolA} size={40} aria-hidden="true" />
+                  <span className="cp-compare-header-name">{toolA.name}</span>
+                </div>
+                <div className="cp-compare-header-tool" role="columnheader">
+                  <ToolLogo tool={toolB} size={40} aria-hidden="true" />
+                  <span className="cp-compare-header-name">{toolB.name}</span>
+                </div>
+              </div>
               {decisionTableRows.map((row, index) => {
                 const aTitle = lang === "fr" ? row.toolA : row.toolAEn;
                 const aNote = lang === "fr" ? row.toolANote : row.toolANoteEn;
@@ -2327,34 +2332,20 @@ const ComparePage = () => {
                 const crit = lang === "fr" ? row.criterion : row.criterionEn;
                 const verdict = lang === "fr" ? row.verdictLabel : row.verdictLabelEn;
                 return (
-                  <div key={row.criterion} className="cp-crit-block" role="listitem">
-                    <div className="cp-crit-block-header">
-                      <span className="cp-crit-block-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                      <h3 className="cp-crit-block-title">{crit}</h3>
+                  <div key={row.criterion} className="cp-compare-row" role="row">
+                    <div className="cp-compare-row-label" role="cell">
+                      <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                      <p className="cp-compare-row-title">{crit}</p>
+                      {verdict && <p className="cp-compare-row-verdict">{verdict}</p>}
                     </div>
-                    <div>
-                      <div className={`cp-crit-block-tool${row.winner === "A" ? " cp-crit-block-tool--win" : ""}`}>
-                        <div className="cp-crit-block-tool-name">
-                          <ToolLogo tool={toolA} size={15} aria-hidden="true" />
-                          <span>{toolA.name}</span>
-                        </div>
-                        <div className="cp-crit-block-tool-right">
-                          <p className="cp-crit-block-tool-val">{aTitle}</p>
-                          {aNote && <p className="cp-crit-block-tool-note">{aNote}</p>}
-                        </div>
-                      </div>
-                      <div className={`cp-crit-block-tool${row.winner === "B" ? " cp-crit-block-tool--win" : ""}`}>
-                        <div className="cp-crit-block-tool-name">
-                          <ToolLogo tool={toolB} size={15} aria-hidden="true" />
-                          <span>{toolB.name}</span>
-                        </div>
-                        <div className="cp-crit-block-tool-right">
-                          <p className="cp-crit-block-tool-val">{bTitle}</p>
-                          {bNote && <p className="cp-crit-block-tool-note">{bNote}</p>}
-                        </div>
-                      </div>
+                    <div className={`cp-compare-row-tool${row.winner === "A" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                      <p className="cp-compare-row-tool-val">{aTitle}</p>
+                      {aNote && <p className="cp-compare-row-tool-note">{aNote}</p>}
                     </div>
-                    {verdict && <p className="cp-crit-block-verdict">{verdict}</p>}
+                    <div className={`cp-compare-row-tool${row.winner === "B" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                      <p className="cp-compare-row-tool-val">{bTitle}</p>
+                      {bNote && <p className="cp-compare-row-tool-note">{bNote}</p>}
+                    </div>
                   </div>
                 );
               })}

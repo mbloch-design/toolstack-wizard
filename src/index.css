@@ -8316,83 +8316,106 @@
   .cp-cost-reco .tt-fact-label { margin-bottom: 10px; }
   .cp-cost-reco .tt-body-large { margin: 0; color: var(--color-text, #222222); }
 
-  /* ── Sections 03 & 04 — criterion as title, tools as rows ──── */
-  .cp-crit-list {
+  /* ── Sections 02, 03, 04 — grille 3 colonnes : critère | outil A | outil B */
+  .cp-compare-table {
     margin-top: 40px;
     border-top: 2px solid #222222;
   }
-  .cp-crit-block {
-    padding: 32px 0;
-    border-bottom: 1px solid #E7E7E0;
+  /* Header row — grands logos + noms d'outils */
+  .cp-compare-header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    padding: 24px 0;
+    border-bottom: 2px solid #222222;
   }
-  .cp-crit-block:last-child { border-bottom: 1px solid #DADAD4; }
-  .cp-crit-block-header {
+  .cp-compare-header-label {
+    /* empty spacer — aligns with criterion column */
+  }
+  .cp-compare-header-tool {
     display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding-left: 28px;
+    border-left: 1px solid #E7E7E0;
   }
-  .cp-crit-block-num {
+  .cp-compare-header-name {
+    font-family: var(--font-ui);
+    font-size: 16px; font-weight: 700; letter-spacing: -0.02em;
+    color: #222222;
+  }
+  /* Criterion rows */
+  .cp-compare-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    border-bottom: 1px solid #E7E7E0;
+    align-items: start;
+  }
+  .cp-compare-row:last-child { border-bottom: 1px solid #DADAD4; }
+  .cp-compare-row-label {
+    padding: 28px 28px 28px 0;
+  }
+  .cp-compare-row-num {
+    display: block;
     font-family: var(--font-ui);
     font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
     color: #CBCBC3;
-    flex-shrink: 0;
+    margin-bottom: 10px;
   }
-  .cp-crit-block-title {
-    margin: 0;
+  .cp-compare-row-title {
+    margin: 0 0 10px;
     font-family: var(--font-ui);
-    font-size: 17px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.25;
+    font-size: 17px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2;
     color: #222222;
   }
-  .cp-crit-block-tool {
-    display: flex;
-    align-items: flex-start;
-    padding: 14px 0;
-    border-top: 1px solid #E7E7E0;
-  }
-  .cp-crit-block-tool-name {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 188px;
-    flex-shrink: 0;
-    padding-right: 20px;
-    padding-top: 1px;
+  .cp-compare-row-verdict {
+    margin: 0;
     font-family: var(--font-ui);
-    font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
-    color: #ADADAB;
+    font-size: 13px; font-weight: 400; line-height: 1.5; letter-spacing: -0.01em;
+    color: #9A9A92;
   }
-  .cp-crit-block-tool--win .cp-crit-block-tool-name { color: #222222; }
-  .cp-crit-block-tool-right { flex: 1; }
-  .cp-crit-block-tool-val {
-    margin: 0 0 4px;
+  /* Tool value columns — muted by default (loser state) */
+  .cp-compare-row-tool {
+    padding: 28px 0 28px 28px;
+    border-left: 1px solid #E7E7E0;
+  }
+  .cp-compare-row-tool-val {
+    margin: 0 0 6px;
     font-family: var(--font-ui);
     font-size: 14px; font-weight: 400; letter-spacing: -0.01em; line-height: 1.5;
     color: #ADADAB;
   }
-  .cp-crit-block-tool--win .cp-crit-block-tool-val { font-weight: 600; color: #222222; }
-  .cp-crit-block-tool-note {
+  .cp-compare-row-tool-note {
     margin: 0;
     font-family: var(--font-ui);
     font-size: 12px; font-weight: 400; line-height: 1.45; letter-spacing: -0.01em;
     color: #CBCBC3;
   }
-  .cp-crit-block-tool--win .cp-crit-block-tool-note { color: #6F6F68; }
-  .cp-crit-block-verdict {
-    margin: 16px 0 0 204px;
-    padding-top: 14px;
-    border-top: 1px solid #E7E7E0;
-    font-family: var(--font-ui);
-    font-size: 13px; font-weight: 400; line-height: 1.5; letter-spacing: -0.01em;
-    color: #9A9A92;
+  /* Winner: full contrast */
+  .cp-compare-row-tool--win .cp-compare-row-tool-val {
+    font-weight: 700; color: #111111;
   }
-  @media (max-width: 640px) {
-    .cp-crit-block-tool-name { width: 130px; font-size: 10px; }
-    .cp-crit-block-verdict { margin-left: 0; }
+  .cp-compare-row-tool--win .cp-compare-row-tool-note { color: #6F6F68; }
+  /* Equal (cost section — no winner, both shown at full weight) */
+  .cp-compare-row-tool--eq .cp-compare-row-tool-val {
+    color: #444444; font-weight: 400;
   }
-  @media (max-width: 400px) {
-    .cp-crit-block-tool { flex-direction: column; gap: 6px; }
-    .cp-crit-block-tool-name { width: auto; padding-right: 0; }
+  /* Responsive — 768px: label full-width, tools side by side */
+  @media (max-width: 768px) {
+    .cp-compare-header { grid-template-columns: 1fr 1fr; }
+    .cp-compare-header-label { display: none; }
+    .cp-compare-header-tool:first-of-type { border-left: none; padding-left: 0; }
+    .cp-compare-row { grid-template-columns: 1fr 1fr; }
+    .cp-compare-row-label { grid-column: 1 / -1; padding-bottom: 18px; border-bottom: 1px solid #E7E7E0; }
+    .cp-compare-row-tool:first-of-type { border-left: none; padding-left: 0; }
+    .cp-compare-row-tool { padding-top: 18px; padding-bottom: 28px; }
+  }
+  @media (max-width: 480px) {
+    .cp-compare-header { grid-template-columns: 1fr; }
+    .cp-compare-header-tool + .cp-compare-header-tool { border-top: 1px solid #E7E7E0; margin-top: 16px; padding-top: 16px; border-left: none; padding-left: 0; }
+    .cp-compare-row { grid-template-columns: 1fr; }
+    .cp-compare-row-tool { border-left: none; padding-left: 0; padding-top: 0; }
+    .cp-compare-row-tool + .cp-compare-row-tool { padding-top: 14px; }
   }
 
   /* ── Section counter — large architectural number ──────────── */
