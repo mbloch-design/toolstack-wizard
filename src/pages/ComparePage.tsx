@@ -2080,15 +2080,16 @@ const ComparePage = () => {
     ...alt,
     tool: tools.find((t) => t.slug === alt.slug || t.id === alt.slug),
   }));
+  const hasDecisionSection = (content.quickDecisionTree && content.quickDecisionTree.length > 0) || (content.profiles && content.profiles.length > 0);
+  const hasComparaisonSection = content.decisiveCriteria.length > 0 || decisionTableRows.length > 0;
+  const hasDouteSection = content.faq.length > 0 || content.tooltrimRisks.length > 0 || altTools.length > 0;
+
   const navSections: CompareNavSection[] = [
-    ...(content.quickDecisionTree && content.quickDecisionTree.length > 0 ? [{ id: "decision", label: t("Ma situation", "My situation") }] : []),
-    ...(content.profiles && content.profiles.length > 0 ? [{ id: "profiles", label: t("Profils", "Profiles") }] : []),
+    ...(hasDecisionSection ? [{ id: "decision", label: t("Ma situation", "My situation") }] : []),
     { id: "seuil", label: t("Verdict", "Verdict") },
     { id: "cout", label: t("Coût", "Cost") },
-    { id: "criteres", label: t("Critères", "Criteria") },
-    { id: "features", label: t("Tableau", "Table") },
-    ...(content.faq.length > 0 ? [{ id: "faq", label: "FAQ" }] : []),
-    { id: "limites", label: t("Limites", "Limits") },
+    ...(hasComparaisonSection ? [{ id: "comparaison", label: t("Comparaison", "Comparison") }] : []),
+    ...(hasDouteSection ? [{ id: "doutes", label: "FAQ" }] : []),
   ];
 
   return (
@@ -2130,81 +2131,76 @@ const ComparePage = () => {
 
       <CompareStickyNav sections={navSections} prefix={prefix} />
 
-      {/* ── 01 Ma situation — arbre de décision rapide ────────────────────── */}
-      {content.quickDecisionTree && content.quickDecisionTree.length > 0 && (
+      {/* ── 01 Ma situation — arbre de décision + profils ───────────────────── */}
+      {hasDecisionSection && (
         <section id="decision" className="cp-section scroll-mt-20">
           <div className="cp-container">
             <div className="cp-matrix-header">
               <span className="cp-section-counter" aria-hidden="true">01</span>
               <span className="cp-eyebrow">{t("Ma situation", "My situation")}</span>
-              <h2 className="cp-title">{t("Trouve ta réponse en 30 secondes.", "Find your answer in 30 seconds.")}</h2>
+              <h2 className="cp-title">
+                {content.quickDecisionTree && content.quickDecisionTree.length > 0
+                  ? t("Trouve ta réponse en 30 secondes.", "Find your answer in 30 seconds.")
+                  : t("Selon ton profil et ton usage.", "Based on your profile and workflow.")}
+              </h2>
             </div>
-            <div className="cp-decision-list">
-              {content.quickDecisionTree.map((item, i) => (
-                <div key={i} className="cp-decision-item">
-                  <p className="cp-decision-condition">{lang === "fr" ? item.condition : item.conditionEn}</p>
-                  <p className="cp-decision-answer">{lang === "fr" ? item.answer : item.answerEn}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
-      {/* ── 02 Selon ton profil ────────────────────────────────────────────── */}
-      {content.profiles && content.profiles.length > 0 && (
-        <section id="profiles" className="cp-section scroll-mt-20">
-          <div className="cp-container">
-            <div className="cp-matrix-header">
-              <span className="cp-section-counter" aria-hidden="true">02</span>
-              <span className="cp-eyebrow">{t("Selon ton profil", "By profile")}</span>
-              <h2 className="cp-title">{t("Trouve ton cas.", "Find your case.")}</h2>
-              <p className="cp-matrix-intro">
-                {t(
-                  "Deux personnes dans des contextes différents feront le bon choix en choisissant des outils opposés. Voici les profils les plus fréquents — trouve le tien.",
-                  "Two people in different contexts will make the right choice by picking opposite tools. Here are the most common profiles — find yours.",
-                )}
-              </p>
-            </div>
-            <div className="cp-profile-accordion" role="list">
-              {content.profiles.slice(0, 6).map((profile, i) => {
-                const isOpen = activeProfile === i;
-                const personaName = lang === "fr" ? profile.persona : profile.personaEn;
-                return (
-                  <div key={i} className={`cp-profile-row${isOpen ? " cp-profile-row--open" : ""}`} role="listitem">
-                    <button
-                      className="cp-profile-trigger"
-                      aria-expanded={isOpen}
-                      onClick={() => setActiveProfile(isOpen ? -1 : i)}
-                    >
-                      <span className="cp-profile-trigger-name">{personaName}</span>
-                      <span className="cp-profile-trigger-choice">→ {profile.choice}</span>
-                      <ChevronDown className="cp-profile-trigger-icon" aria-hidden="true" />
-                    </button>
-                    {isOpen && (
-                      <div className="cp-profile-detail" role="region" aria-label={personaName}>
-                        <p className="cp-profile-reason">{lang === "fr" ? profile.reason : profile.reasonEn}</p>
-                        {(lang === "fr" ? profile.limit : profile.limitEn) && (
-                          <div className="cp-profile-limit">
-                            <span className="tt-fact-label">{t("Limite", "Limit")}</span>
-                            <p>{lang === "fr" ? profile.limit : profile.limitEn}</p>
+            {content.quickDecisionTree && content.quickDecisionTree.length > 0 && (
+              <div className="cp-decision-list">
+                {content.quickDecisionTree.map((item, i) => (
+                  <div key={i} className="cp-decision-item">
+                    <p className="cp-decision-condition">{lang === "fr" ? item.condition : item.conditionEn}</p>
+                    <p className="cp-decision-answer">{lang === "fr" ? item.answer : item.answerEn}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {content.profiles && content.profiles.length > 0 && (
+              <div className="cp-sub-section">
+                <span className="cp-sub-section-eyebrow">{t("Selon ton profil", "By profile")}</span>
+                <p className="cp-sub-section-title">{t("Trouve ton cas.", "Find your case.")}</p>
+                <div className="cp-profile-accordion" role="list">
+                  {content.profiles.slice(0, 6).map((profile, i) => {
+                    const isOpen = activeProfile === i;
+                    const personaName = lang === "fr" ? profile.persona : profile.personaEn;
+                    return (
+                      <div key={i} className={`cp-profile-row${isOpen ? " cp-profile-row--open" : ""}`} role="listitem">
+                        <button
+                          className="cp-profile-trigger"
+                          aria-expanded={isOpen}
+                          onClick={() => setActiveProfile(isOpen ? -1 : i)}
+                        >
+                          <span className="cp-profile-trigger-name">{personaName}</span>
+                          <span className="cp-profile-trigger-choice">→ {profile.choice}</span>
+                          <ChevronDown className="cp-profile-trigger-icon" aria-hidden="true" />
+                        </button>
+                        {isOpen && (
+                          <div className="cp-profile-detail" role="region" aria-label={personaName}>
+                            <p className="cp-profile-reason">{lang === "fr" ? profile.reason : profile.reasonEn}</p>
+                            {(lang === "fr" ? profile.limit : profile.limitEn) && (
+                              <div className="cp-profile-limit">
+                                <span className="tt-fact-label">{t("Limite", "Limit")}</span>
+                                <p>{lang === "fr" ? profile.limit : profile.limitEn}</p>
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}
 
-      {/* ── 03 Verdict — seuil de bascule ─────────────────────────────────── */}
+      {/* ── 02 Verdict — seuil de bascule ─────────────────────────────────── */}
       <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">03</span>
+            <span className="cp-section-counter" aria-hidden="true">02</span>
             <span className="cp-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
             <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
             <p className="cp-matrix-intro">
@@ -2267,13 +2263,13 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── 02 Coût réel — matrice financière ────────────────────────────── */}
+      {/* ── 03 Coût réel — matrice financière ────────────────────────────── */}
       <section id="cout" className="cp-section cp-section--cost scroll-mt-20">
         <div className="cp-container">
 
           {/* Full-width header: counter → eyebrow → title → framing → reco */}
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">04</span>
+            <span className="cp-section-counter" aria-hidden="true">03</span>
             <span className="cp-eyebrow">{t("Coût réel", "Real cost")}</span>
             <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
             <p className="cp-matrix-intro">
@@ -2319,71 +2315,25 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* ── 03 Critères décisionnels — matrice de décision ─────────────── */}
-      <section id="criteres" className="cp-section scroll-mt-20">
-        <div className="cp-container">
-
-          <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">05</span>
-            <span className="cp-eyebrow">{t("Critères décisionnels", "Decision criteria")}</span>
-            <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
-            <p className="cp-matrix-intro">
-              {content.criteriaIntro
-                ? (lang === "fr" ? content.criteriaIntro : content.criteriaIntroEn)
-                : t(
-                    "Pas les features les plus visibles. Les critères qui changent vraiment la décision.",
-                    "Not the most visible features. The criteria that actually change the decision.",
-                  )}
-            </p>
-          </div>
-
-          <div className="cp-compare-table" role="table" aria-label={t("Comparaison des critères décisionnels", "Decision criteria comparison")}>
-            <div className="cp-compare-header" role="row">
-              <div className="cp-compare-header-label" role="columnheader" aria-hidden="true" />
-              <div className="cp-compare-header-tool" role="columnheader">
-                <ToolLogo tool={toolA} size={40} aria-hidden="true" />
-                <span className="cp-compare-header-name">{toolA.name}</span>
-              </div>
-              <div className="cp-compare-header-tool" role="columnheader">
-                <ToolLogo tool={toolB} size={40} aria-hidden="true" />
-                <span className="cp-compare-header-name">{toolB.name}</span>
-              </div>
-            </div>
-            {content.decisiveCriteria.slice(0, 6).map((criterion, index) => {
-              const levels = getCriterionLevels(criterion, toolA, toolB, lang);
-              return (
-                <div key={criterion.title} className="cp-compare-row" role="row">
-                  <div className="cp-compare-row-label" role="cell">
-                    <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                    <p className="cp-compare-row-title">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
-                    <p className="cp-compare-row-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
-                  </div>
-                  <div className={`cp-compare-row-tool${levels.winner === "A" ? " cp-compare-row-tool--win" : ""}`} role="cell">
-                    <p className="cp-compare-row-tool-val">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
-                  </div>
-                  <div className={`cp-compare-row-tool${levels.winner === "B" ? " cp-compare-row-tool--win" : ""}`} role="cell">
-                    <p className="cp-compare-row-tool-val">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 04 Ce qui change vraiment le choix ────────────────────────────── */}
-      {decisionTableRows.length > 0 && (
-        <section id="features" className="cp-section scroll-mt-20">
+      {/* ── 04 Comparaison — critères décisionnels ────────────────────────── */}
+      {hasComparaisonSection && (
+        <section id="comparaison" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-section-counter" aria-hidden="true">06</span>
-            <span className="cp-eyebrow">{t("Critères décisifs", "Decisive criteria")}</span>
-            <h2 className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
-            {content.featuresIntro && (
+            <div className="cp-matrix-header">
+              <span className="cp-section-counter" aria-hidden="true">04</span>
+              <span className="cp-eyebrow">{t("Comparaison", "Comparison")}</span>
+              <h2 className="cp-title">{t("Les critères qui font la différence.", "The criteria that make the difference.")}</h2>
               <p className="cp-matrix-intro">
-                {lang === "fr" ? content.featuresIntro : content.featuresIntroEn}
+                {content.criteriaIntro
+                  ? (lang === "fr" ? content.criteriaIntro : content.criteriaIntroEn)
+                  : t(
+                      "Pas les features les plus visibles — les critères qui changent vraiment la décision.",
+                      "Not the most visible features — the criteria that actually change the decision.",
+                    )}
               </p>
-            )}
-            <div className="cp-compare-table" role="table" aria-label={t("Comparaison des critères", "Criteria comparison")}>
+            </div>
+
+            <div className="cp-compare-table" role="table" aria-label={t("Comparaison détaillée", "Detailed comparison")}>
               <div className="cp-compare-header" role="row">
                 <div className="cp-compare-header-label" role="columnheader" aria-hidden="true" />
                 <div className="cp-compare-header-tool" role="columnheader">
@@ -2395,125 +2345,153 @@ const ComparePage = () => {
                   <span className="cp-compare-header-name">{toolB.name}</span>
                 </div>
               </div>
-              {decisionTableRows.map((row, index) => {
-                const aTitle = lang === "fr" ? row.toolA : row.toolAEn;
-                const aNote = lang === "fr" ? row.toolANote : row.toolANoteEn;
-                const bTitle = lang === "fr" ? row.toolB : row.toolBEn;
-                const bNote = lang === "fr" ? row.toolBNote : row.toolBNoteEn;
-                const crit = lang === "fr" ? row.criterion : row.criterionEn;
-                const verdict = lang === "fr" ? row.verdictLabel : row.verdictLabelEn;
-                return (
-                  <div key={row.criterion} className="cp-compare-row" role="row">
-                    <div className="cp-compare-row-label" role="cell">
-                      <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                      <p className="cp-compare-row-title">{crit}</p>
-                      {verdict && <p className="cp-compare-row-verdict">{verdict}</p>}
-                    </div>
-                    <div className={`cp-compare-row-tool${row.winner === "A" ? " cp-compare-row-tool--win" : ""}`} role="cell">
-                      <p className="cp-compare-row-tool-val">{aTitle}</p>
-                      {aNote && <p className="cp-compare-row-tool-note">{aNote}</p>}
-                    </div>
-                    <div className={`cp-compare-row-tool${row.winner === "B" ? " cp-compare-row-tool--win" : ""}`} role="cell">
-                      <p className="cp-compare-row-tool-val">{bTitle}</p>
-                      {bNote && <p className="cp-compare-row-tool-note">{bNote}</p>}
-                    </div>
-                  </div>
-                );
-              })}
+
+              {/* Prefer decisiveCriteria (editorial, win/loss). Fallback to tableRows. */}
+              {content.decisiveCriteria.length > 0
+                ? content.decisiveCriteria.slice(0, 6).map((criterion, index) => {
+                    const levels = getCriterionLevels(criterion, toolA, toolB, lang);
+                    return (
+                      <div key={criterion.title} className="cp-compare-row" role="row">
+                        <div className="cp-compare-row-label" role="cell">
+                          <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                          <p className="cp-compare-row-title">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
+                          <p className="cp-compare-row-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
+                        </div>
+                        <div className={`cp-compare-row-tool${levels.winner === "A" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                          <p className="cp-compare-row-tool-val">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
+                        </div>
+                        <div className={`cp-compare-row-tool${levels.winner === "B" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                          <p className="cp-compare-row-tool-val">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
+                        </div>
+                      </div>
+                    );
+                  })
+                : decisionTableRows.map((row, index) => {
+                    const aTitle = lang === "fr" ? row.toolA : row.toolAEn;
+                    const aNote = lang === "fr" ? row.toolANote : row.toolANoteEn;
+                    const bTitle = lang === "fr" ? row.toolB : row.toolBEn;
+                    const bNote = lang === "fr" ? row.toolBNote : row.toolBNoteEn;
+                    const crit = lang === "fr" ? row.criterion : row.criterionEn;
+                    const verdict = lang === "fr" ? row.verdictLabel : row.verdictLabelEn;
+                    return (
+                      <div key={row.criterion} className="cp-compare-row" role="row">
+                        <div className="cp-compare-row-label" role="cell">
+                          <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                          <p className="cp-compare-row-title">{crit}</p>
+                          {verdict && <p className="cp-compare-row-verdict">{verdict}</p>}
+                        </div>
+                        <div className={`cp-compare-row-tool${row.winner === "A" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                          <p className="cp-compare-row-tool-val">{aTitle}</p>
+                          {aNote && <p className="cp-compare-row-tool-note">{aNote}</p>}
+                        </div>
+                        <div className={`cp-compare-row-tool${row.winner === "B" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                          <p className="cp-compare-row-tool-val">{bTitle}</p>
+                          {bNote && <p className="cp-compare-row-tool-note">{bNote}</p>}
+                        </div>
+                      </div>
+                    );
+                  })
+              }
             </div>
           </div>
         </section>
       )}
 
-      {/* profiles section moved up to section 02 */}
-
-      {/* ── FAQ ────────────────────────────────────────────────────────────── */}
-      {content.faq.length > 0 && (
-        <section id="faq" className="cp-section scroll-mt-20">
+      {/* ── 05 FAQ & Doutes — questions, limites, alternatives ────────────── */}
+      {hasDouteSection && (
+        <section id="doutes" className="cp-section cp-section--last scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-section-counter" aria-hidden="true">07</span>
-            <span className="cp-eyebrow">FAQ</span>
-            <h2 className="cp-title cp-title--section-lead">
-              {t("Questions fréquentes.", "Frequently asked questions.")}
-            </h2>
-            {content.faqIntro && (
-              <p className="cp-matrix-intro">
-                {lang === "fr" ? content.faqIntro : content.faqIntroEn}
-              </p>
-            )}
-            <div>
-              {content.faq.map((item, i) => (
-                <FaqItem
-                  key={i}
-                  question={lang === "fr" ? item.q : item.qEn}
-                  answer={lang === "fr" ? item.a : item.aEn}
-                  defaultOpen={i === 0}
-                />
-              ))}
+            <div className="cp-matrix-header">
+              <span className="cp-section-counter" aria-hidden="true">05</span>
+              <span className="cp-eyebrow">{t("FAQ & Doutes", "FAQ & Doubts")}</span>
+              <h2 className="cp-title">
+                {content.faq.length > 0
+                  ? t("Questions fréquentes.", "Frequently asked questions.")
+                  : t("Ce qui peut faire hésiter.", "What might give you pause.")}
+              </h2>
+              {content.faq.length > 0 && content.faqIntro && (
+                <p className="cp-matrix-intro">
+                  {lang === "fr" ? content.faqIntro : content.faqIntroEn}
+                </p>
+              )}
             </div>
-          </div>
-        </section>
-      )}
 
-      {/* ── 07 Limites & alternatives ──────────────────────────────────────── */}
-      {(content.tooltrimRisks.length > 0 || altTools.length > 0) && (
-        <section id="limites" className="cp-section cp-section--last scroll-mt-20">
-          <div className="cp-container">
-            <span className="cp-section-counter" aria-hidden="true">08</span>
-            <span className="cp-eyebrow">{t("Limites & alternatives", "Limits & alternatives")}</span>
-            <h2 className="cp-title">
-              {t("Ce qui peut faire hésiter.", "What might give you pause.")}
-            </h2>
-
-            {/* Compact pitfalls list */}
-            {content.tooltrimRisks.length > 0 && (
-              <div className="cp-limites-risks">
-                {content.tooltrimRisks.slice(0, 3).map((risk, i) => (
-                  <div key={`${risk.mistake}-${i}`} className="cp-limites-risk-row">
-                    <span className="cp-limites-risk-num">{String(i + 1).padStart(2, "0")}</span>
-                    <div>
-                      <p className="cp-limites-risk-title">{lang === "fr" ? risk.mistake : risk.mistakeEn}</p>
-                      {(lang === "fr" ? risk.recommendation : risk.recommendationEn) && (
-                        <p className="cp-limites-risk-fix">{lang === "fr" ? risk.recommendation : risk.recommendationEn}</p>
-                      )}
-                    </div>
-                  </div>
+            {/* FAQ accordion */}
+            {content.faq.length > 0 && (
+              <div>
+                {content.faq.map((item, i) => (
+                  <FaqItem
+                    key={i}
+                    question={lang === "fr" ? item.q : item.qEn}
+                    answer={lang === "fr" ? item.a : item.aEn}
+                    defaultOpen={i === 0}
+                  />
                 ))}
               </div>
             )}
 
-            {/* Alternatives — compact links */}
-            {altTools.length > 0 && (
-              <div className="cp-limites-alts">
-                <span className="tt-fact-label cp-limites-alts-heading">
-                  {t("Si aucun des deux ne colle", "If neither one fits")}
-                </span>
-                {altTools.map((alt) => (
-                  alt.tool ? (
-                    <Link key={alt.slug} to={`${prefix}/tool/${alt.tool.slug}`} className="cp-alt-row">
-                      <div className="cp-alt-logo"><ToolLogo tool={alt.tool} size={24} /></div>
-                      <div className="cp-alt-content">
-                        <p className="cp-alt-name">{alt.tool.name}</p>
-                        <p className="cp-alt-reason">{lang === "fr" ? alt.reason : alt.reasonEn}</p>
+            {/* Risks — sub-section if preceded by FAQ */}
+            {content.tooltrimRisks.length > 0 && (
+              <div className={content.faq.length > 0 ? "cp-sub-section" : ""}>
+                {content.faq.length > 0 && (
+                  <>
+                    <span className="cp-sub-section-eyebrow">{t("Erreurs fréquentes", "Common mistakes")}</span>
+                    <p className="cp-sub-section-title">{t("Ce qui peut faire hésiter.", "What might give you pause.")}</p>
+                  </>
+                )}
+                <div className="cp-limites-risks">
+                  {content.tooltrimRisks.slice(0, 3).map((risk, i) => (
+                    <div key={`${risk.mistake}-${i}`} className="cp-limites-risk-row">
+                      <span className="cp-limites-risk-num">{String(i + 1).padStart(2, "0")}</span>
+                      <div>
+                        <p className="cp-limites-risk-title">{lang === "fr" ? risk.mistake : risk.mistakeEn}</p>
+                        {(lang === "fr" ? risk.recommendation : risk.recommendationEn) && (
+                          <p className="cp-limites-risk-fix">{lang === "fr" ? risk.recommendation : risk.recommendationEn}</p>
+                        )}
                       </div>
-                      <div className="cp-alt-right">
-                        {alt.price && <span className="cp-alt-price">{alt.price}</span>}
-                        <span className="cp-alt-cta">{t("Voir la fiche", "See review")} →</span>
-                      </div>
-                    </Link>
-                  ) : (
-                    <div key={alt.slug} className="cp-alt-row" style={{ cursor: "default" }}>
-                      <div className="cp-alt-logo">
-                        <ToolLogo tool={{ name: alt.name, slug: slugifyName(alt.name) }} size={24} />
-                      </div>
-                      <div className="cp-alt-content">
-                        <p className="cp-alt-name">{alt.name}</p>
-                        <p className="cp-alt-reason">{lang === "fr" ? alt.reason : alt.reasonEn}</p>
-                      </div>
-                      {alt.price && <div className="cp-alt-right"><span className="cp-alt-price">{alt.price}</span></div>}
                     </div>
-                  )
-                ))}
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Alternatives — sub-section if preceded by other content */}
+            {altTools.length > 0 && (
+              <div className={content.faq.length > 0 || content.tooltrimRisks.length > 0 ? "cp-sub-section" : ""}>
+                {(content.faq.length > 0 || content.tooltrimRisks.length > 0) && (
+                  <>
+                    <span className="cp-sub-section-eyebrow">{t("Alternatives", "Alternatives")}</span>
+                    <p className="cp-sub-section-title">{t("Si aucun des deux ne colle.", "If neither one fits.")}</p>
+                  </>
+                )}
+                <div className="cp-limites-alts">
+                  {altTools.map((alt) => (
+                    alt.tool ? (
+                      <Link key={alt.slug} to={`${prefix}/tool/${alt.tool.slug}`} className="cp-alt-row">
+                        <div className="cp-alt-logo"><ToolLogo tool={alt.tool} size={24} /></div>
+                        <div className="cp-alt-content">
+                          <p className="cp-alt-name">{alt.tool.name}</p>
+                          <p className="cp-alt-reason">{lang === "fr" ? alt.reason : alt.reasonEn}</p>
+                        </div>
+                        <div className="cp-alt-right">
+                          {alt.price && <span className="cp-alt-price">{alt.price}</span>}
+                          <span className="cp-alt-cta">{t("Voir la fiche", "See review")} →</span>
+                        </div>
+                      </Link>
+                    ) : (
+                      <div key={alt.slug} className="cp-alt-row" style={{ cursor: "default" }}>
+                        <div className="cp-alt-logo">
+                          <ToolLogo tool={{ name: alt.name, slug: slugifyName(alt.name) }} size={24} />
+                        </div>
+                        <div className="cp-alt-content">
+                          <p className="cp-alt-name">{alt.name}</p>
+                          <p className="cp-alt-reason">{lang === "fr" ? alt.reason : alt.reasonEn}</p>
+                        </div>
+                        {alt.price && <div className="cp-alt-right"><span className="cp-alt-price">{alt.price}</span></div>}
+                      </div>
+                    )
+                  ))}
+                </div>
               </div>
             )}
           </div>
