@@ -2081,11 +2081,12 @@ const ComparePage = () => {
     tool: tools.find((t) => t.slug === alt.slug || t.id === alt.slug),
   }));
   const navSections: CompareNavSection[] = [
+    ...(content.quickDecisionTree && content.quickDecisionTree.length > 0 ? [{ id: "decision", label: t("Ma situation", "My situation") }] : []),
+    ...(content.profiles && content.profiles.length > 0 ? [{ id: "profiles", label: t("Profils", "Profiles") }] : []),
     { id: "seuil", label: t("Verdict", "Verdict") },
     { id: "cout", label: t("Coût", "Cost") },
     { id: "criteres", label: t("Critères", "Criteria") },
     { id: "features", label: t("Tableau", "Table") },
-    ...(content.profiles && content.profiles.length > 0 ? [{ id: "profiles", label: t("Profils", "Profiles") }] : []),
     ...(content.faq.length > 0 ? [{ id: "faq", label: "FAQ" }] : []),
     { id: "limites", label: t("Limites", "Limits") },
   ];
@@ -2129,11 +2130,81 @@ const ComparePage = () => {
 
       <CompareStickyNav sections={navSections} prefix={prefix} />
 
-      {/* ── 01 Verdict — seuil de bascule ─────────────────────────────────── */}
+      {/* ── 01 Ma situation — arbre de décision rapide ────────────────────── */}
+      {content.quickDecisionTree && content.quickDecisionTree.length > 0 && (
+        <section id="decision" className="cp-section scroll-mt-20">
+          <div className="cp-container">
+            <div className="cp-matrix-header">
+              <span className="cp-section-counter" aria-hidden="true">01</span>
+              <span className="cp-eyebrow">{t("Ma situation", "My situation")}</span>
+              <h2 className="cp-title">{t("Trouve ta réponse en 30 secondes.", "Find your answer in 30 seconds.")}</h2>
+            </div>
+            <div className="cp-decision-list">
+              {content.quickDecisionTree.map((item, i) => (
+                <div key={i} className="cp-decision-item">
+                  <p className="cp-decision-condition">{lang === "fr" ? item.condition : item.conditionEn}</p>
+                  <p className="cp-decision-answer">{lang === "fr" ? item.answer : item.answerEn}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 02 Selon ton profil ────────────────────────────────────────────── */}
+      {content.profiles && content.profiles.length > 0 && (
+        <section id="profiles" className="cp-section scroll-mt-20">
+          <div className="cp-container">
+            <div className="cp-matrix-header">
+              <span className="cp-section-counter" aria-hidden="true">02</span>
+              <span className="cp-eyebrow">{t("Selon ton profil", "By profile")}</span>
+              <h2 className="cp-title">{t("Trouve ton cas.", "Find your case.")}</h2>
+              <p className="cp-matrix-intro">
+                {t(
+                  "Deux personnes dans des contextes différents feront le bon choix en choisissant des outils opposés. Voici les profils les plus fréquents — trouve le tien.",
+                  "Two people in different contexts will make the right choice by picking opposite tools. Here are the most common profiles — find yours.",
+                )}
+              </p>
+            </div>
+            <div className="cp-profile-accordion" role="list">
+              {content.profiles.slice(0, 6).map((profile, i) => {
+                const isOpen = activeProfile === i;
+                const personaName = lang === "fr" ? profile.persona : profile.personaEn;
+                return (
+                  <div key={i} className={`cp-profile-row${isOpen ? " cp-profile-row--open" : ""}`} role="listitem">
+                    <button
+                      className="cp-profile-trigger"
+                      aria-expanded={isOpen}
+                      onClick={() => setActiveProfile(isOpen ? -1 : i)}
+                    >
+                      <span className="cp-profile-trigger-name">{personaName}</span>
+                      <span className="cp-profile-trigger-choice">→ {profile.choice}</span>
+                      <ChevronDown className="cp-profile-trigger-icon" aria-hidden="true" />
+                    </button>
+                    {isOpen && (
+                      <div className="cp-profile-detail" role="region" aria-label={personaName}>
+                        <p className="cp-profile-reason">{lang === "fr" ? profile.reason : profile.reasonEn}</p>
+                        {(lang === "fr" ? profile.limit : profile.limitEn) && (
+                          <div className="cp-profile-limit">
+                            <span className="tt-fact-label">{t("Limite", "Limit")}</span>
+                            <p>{lang === "fr" ? profile.limit : profile.limitEn}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 03 Verdict — seuil de bascule ─────────────────────────────────── */}
       <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">01</span>
+            <span className="cp-section-counter" aria-hidden="true">03</span>
             <span className="cp-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
             <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
             <p className="cp-matrix-intro">
@@ -2202,7 +2273,7 @@ const ComparePage = () => {
 
           {/* Full-width header: counter → eyebrow → title → framing → reco */}
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">02</span>
+            <span className="cp-section-counter" aria-hidden="true">04</span>
             <span className="cp-eyebrow">{t("Coût réel", "Real cost")}</span>
             <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
             <p className="cp-matrix-intro">
@@ -2253,7 +2324,7 @@ const ComparePage = () => {
         <div className="cp-container">
 
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">03</span>
+            <span className="cp-section-counter" aria-hidden="true">05</span>
             <span className="cp-eyebrow">{t("Critères décisionnels", "Decision criteria")}</span>
             <h2 className="cp-title">{t("Les critères qui changent le choix.", "The criteria that change the choice.")}</h2>
             <p className="cp-matrix-intro">
@@ -2304,7 +2375,7 @@ const ComparePage = () => {
       {decisionTableRows.length > 0 && (
         <section id="features" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-section-counter" aria-hidden="true">04</span>
+            <span className="cp-section-counter" aria-hidden="true">06</span>
             <span className="cp-eyebrow">{t("Critères décisifs", "Decisive criteria")}</span>
             <h2 className="cp-title">{t("Ce qui change vraiment le choix.", "What actually changes the decision.")}</h2>
             {content.featuresIntro && (
@@ -2354,60 +2425,13 @@ const ComparePage = () => {
         </section>
       )}
 
-      {/* ── 05 Profils ─────────────────────────────────────────────────────── */}
-      {content.profiles && content.profiles.length > 0 && (
-        <section id="profiles" className="cp-section scroll-mt-20">
-          <div className="cp-container">
-            <div className="cp-matrix-header">
-              <span className="cp-section-counter" aria-hidden="true">05</span>
-              <span className="cp-eyebrow">{t("Pour quel profil", "Which profile")}</span>
-              <h2 className="cp-title">{t("Selon votre profil.", "Based on your profile.")}</h2>
-              <p className="cp-matrix-intro">
-                {t(
-                  "Deux personnes dans des contextes différents feront le bon choix en choisissant des outils opposés. Voici les profils les plus fréquents — trouvez le vôtre.",
-                  "Two people in different contexts will make the right choice by picking opposite tools. Here are the most common profiles — find yours.",
-                )}
-              </p>
-            </div>
-            <div className="cp-profile-accordion" role="list">
-              {content.profiles.slice(0, 6).map((profile, i) => {
-                const isOpen = activeProfile === i;
-                const personaName = lang === "fr" ? profile.persona : profile.personaEn;
-                return (
-                  <div key={i} className={`cp-profile-row${isOpen ? " cp-profile-row--open" : ""}`} role="listitem">
-                    <button
-                      className="cp-profile-trigger"
-                      aria-expanded={isOpen}
-                      onClick={() => setActiveProfile(isOpen ? -1 : i)}
-                    >
-                      <span className="cp-profile-trigger-name">{personaName}</span>
-                      <span className="cp-profile-trigger-choice">→ {profile.choice}</span>
-                      <ChevronDown className="cp-profile-trigger-icon" aria-hidden="true" />
-                    </button>
-                    {isOpen && (
-                      <div className="cp-profile-detail" role="region" aria-label={personaName}>
-                        <p className="cp-profile-reason">{lang === "fr" ? profile.reason : profile.reasonEn}</p>
-                        {(lang === "fr" ? profile.limit : profile.limitEn) && (
-                          <div className="cp-profile-limit">
-                            <span className="tt-fact-label">{t("Limite", "Limit")}</span>
-                            <p>{lang === "fr" ? profile.limit : profile.limitEn}</p>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* profiles section moved up to section 02 */}
 
       {/* ── FAQ ────────────────────────────────────────────────────────────── */}
       {content.faq.length > 0 && (
         <section id="faq" className="cp-section scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-section-counter" aria-hidden="true">06</span>
+            <span className="cp-section-counter" aria-hidden="true">07</span>
             <span className="cp-eyebrow">FAQ</span>
             <h2 className="cp-title cp-title--section-lead">
               {t("Questions fréquentes.", "Frequently asked questions.")}
@@ -2435,7 +2459,7 @@ const ComparePage = () => {
       {(content.tooltrimRisks.length > 0 || altTools.length > 0) && (
         <section id="limites" className="cp-section cp-section--last scroll-mt-20">
           <div className="cp-container">
-            <span className="cp-section-counter" aria-hidden="true">07</span>
+            <span className="cp-section-counter" aria-hidden="true">08</span>
             <span className="cp-eyebrow">{t("Limites & alternatives", "Limits & alternatives")}</span>
             <h2 className="cp-title">
               {t("Ce qui peut faire hésiter.", "What might give you pause.")}

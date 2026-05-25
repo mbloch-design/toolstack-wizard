@@ -8418,6 +8418,38 @@
     .cp-compare-row-tool + .cp-compare-row-tool { padding-top: 14px; }
   }
 
+  /* ── Section 01 — quick decision list ─────────────────────── */
+  .cp-decision-list {
+    margin-top: 40px;
+    border-top: 2px solid #222222;
+  }
+  .cp-decision-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 22px 0;
+    border-bottom: 1px solid #E7E7E0;
+  }
+  .cp-decision-item:last-child { border-bottom: 1px solid #DADAD4; }
+  .cp-decision-condition {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 15px; font-weight: 400; letter-spacing: -0.01em; line-height: 1.4;
+    color: #9A9A92;
+    flex: 1;
+  }
+  .cp-decision-answer {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 17px; font-weight: 700; letter-spacing: -0.03em;
+    color: #222222;
+    flex-shrink: 0;
+  }
+  @media (max-width: 600px) {
+    .cp-decision-item { flex-direction: column; gap: 6px; }
+  }
+
   /* ── Section counter — large architectural number ──────────── */
   /* Decorative structural element: visible in dark (border tonal),  */
   /* ultra-subtle in light (near-bg). Color via border variable.     */
