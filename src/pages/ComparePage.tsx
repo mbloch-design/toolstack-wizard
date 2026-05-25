@@ -2216,40 +2216,37 @@ const ComparePage = () => {
             </div>
           </div>
 
-          {/* Full-width criterion table — Awwwards bordered grid */}
-          <div className="cp-criterion-table">
-              <div className="cp-crit-table-head">
-                <div className="cp-crit-table-th">
-                  <ToolLogo tool={toolA} size={16} className="flex-shrink-0" />
-                  <span>{toolA.name}</span>
+          {/* Full-width criterion list — outils en lignes, même structure que §03/04 */}
+          <div className="cp-crit-list" role="list" aria-label={t("Comparaison des coûts", "Cost comparison")}>
+            {content.costReality.map((row, index) => (
+              <div key={row.label} className="cp-crit-block" role="listitem">
+                <div className="cp-crit-block-header">
+                  <span className="cp-crit-block-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                  <h3 className="cp-crit-block-title">{lang === "fr" ? row.label : row.labelEn}</h3>
                 </div>
-                <div className="cp-crit-table-th">
-                  <ToolLogo tool={toolB} size={16} className="flex-shrink-0" />
-                  <span>{toolB.name}</span>
+                <div>
+                  <div className="cp-crit-block-tool cp-crit-block-tool--win">
+                    <div className="cp-crit-block-tool-name">
+                      <ToolLogo tool={toolA} size={15} aria-hidden="true" />
+                      <span>{toolA.name}</span>
+                    </div>
+                    <div className="cp-crit-block-tool-right">
+                      <p className="cp-crit-block-tool-val">{lang === "fr" ? row.toolA : row.toolAEn}</p>
+                    </div>
+                  </div>
+                  <div className="cp-crit-block-tool cp-crit-block-tool--win">
+                    <div className="cp-crit-block-tool-name">
+                      <ToolLogo tool={toolB} size={15} aria-hidden="true" />
+                      <span>{toolB.name}</span>
+                    </div>
+                    <div className="cp-crit-block-tool-right">
+                      <p className="cp-crit-block-tool-val">{lang === "fr" ? row.toolB : row.toolBEn}</p>
+                    </div>
+                  </div>
                 </div>
+                <p className="cp-crit-block-verdict">{lang === "fr" ? row.recommendation : row.recommendationEn}</p>
               </div>
-              {content.costReality.map((row) => (
-                <div key={row.label} className="cp-crit-table-block">
-                  <div className="cp-crit-table-label-row">
-                    <span className="cp-crit-table-label">
-                      {lang === "fr" ? row.label : row.labelEn}
-                    </span>
-                    <p className="cp-crit-table-decision">
-                      {lang === "fr" ? row.recommendation : row.recommendationEn}
-                    </p>
-                  </div>
-                  <div className="cp-crit-table-tools">
-                    <div className="cp-crit-table-tool">
-                      <span className="cp-crit-table-mobile-label">{toolA.name}</span>
-                      <p className="cp-crit-table-tool-text">{lang === "fr" ? row.toolA : row.toolAEn}</p>
-                    </div>
-                    <div className="cp-crit-table-tool">
-                      <span className="cp-crit-table-mobile-label">{toolB.name}</span>
-                      <p className="cp-crit-table-tool-text">{lang === "fr" ? row.toolB : row.toolBEn}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            ))}
           </div>
         </div>
       </section>
