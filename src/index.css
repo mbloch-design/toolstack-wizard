@@ -7835,12 +7835,11 @@
     color: var(--color-muted);
   }
 
-  /* Matrix wrapper */
+  /* Matrix wrapper — editorial open table, no card frame */
   .cp-matrix {
     width: 100%;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    overflow: hidden;
+    margin-top: 40px;
+    border-top: 2px solid var(--color-border-strong);
   }
 
   /* Column widths — shared by thead + body rows */
@@ -7854,13 +7853,12 @@
       minmax(250px, 1.1fr);
   }
 
-  /* Header row */
+  /* Header row — no fill, just a stronger underline */
   .cp-matrix-thead {
-    background: var(--color-surface-soft);
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
   }
   .cp-matrix-th {
-    padding: 14px 20px;
+    padding: 16px 24px 16px 0;
     font-family: var(--font-ui);
     font-size: var(--tt-size-kicker);
     font-weight: 700;
@@ -7872,32 +7870,31 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    padding-left: 28px;
     font-size: var(--tt-size-card-body);
     font-weight: 600;
     letter-spacing: -0.01em;
     text-transform: none;
     color: var(--color-text);
-    border-left: 1px solid var(--color-border);
   }
   .cp-matrix-th--decision {
-    border-left: 1px solid var(--color-border);
+    padding-left: 28px;
   }
   .cp-matrix-th-logo { flex-shrink: 0; }
 
   /* Data rows */
-  .cp-matrix-row { border-bottom: 1px solid var(--color-border); }
-  .cp-matrix-row:last-child { border-bottom: none; }
+  .cp-matrix-row { border-bottom: 1px solid var(--color-border-soft); }
+  .cp-matrix-row:last-child { border-bottom: 1px solid var(--color-border); }
 
   .cp-matrix-cell {
-    padding: 22px 20px;
+    padding: 28px 24px 28px 0;
     min-width: 0;
   }
-  .cp-matrix-cell--tool { border-left: 1px solid var(--color-border); }
+  .cp-matrix-cell--tool { padding-left: 28px; }
   .cp-matrix-cell--decision {
-    border-left: 1px solid var(--color-border);
-    background: var(--color-surface-soft);
+    padding-left: 28px;
   }
-  .cp-matrix-cell--winner { background: var(--color-surface-soft); }
+  .cp-matrix-cell--winner .cp-matrix-text { color: var(--color-text-strong); font-weight: 500; }
 
   /* Criterion label */
   .cp-matrix-criterion {
@@ -7955,27 +7952,20 @@
     color: var(--color-text);
   }
 
-  /* Mobile ≤ 900px: each row becomes a standalone card */
+  /* Mobile ≤ 900px: stacked rows, no card frame — editorial mobile */
   @media (max-width: 900px) {
-    .cp-matrix { border: none; border-radius: 0; overflow: visible; }
     .cp-matrix-thead { display: none; }
     .cp-matrix-row {
       display: block;
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      margin-bottom: 12px;
-      overflow: hidden;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--color-border-soft);
     }
     .cp-matrix-row:last-child { border-bottom: 1px solid var(--color-border); }
     .cp-matrix-cell {
-      border-left: none !important;
-      border-bottom: 1px solid var(--color-border);
-      padding: 16px 20px;
+      padding: 0 0 16px;
     }
-    .cp-matrix-cell:last-child { border-bottom: none; }
-    .cp-matrix-cell--criterion { background: var(--color-surface-soft); }
-    .cp-matrix-cell--decision { background: var(--color-bg); }
-    .cp-matrix-cell--winner { background: var(--color-surface); }
+    .cp-matrix-cell:last-child { padding-bottom: 0; }
+    .cp-matrix-cell--criterion { padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid var(--color-border-soft); }
     /* Tool name + decision label injected via data-label attribute */
     .cp-matrix-cell--tool::before,
     .cp-matrix-cell--decision::before {
@@ -7991,7 +7981,7 @@
     }
   }
   @media (max-width: 480px) {
-    .cp-matrix-cell { padding: 14px 16px; }
+    .cp-matrix-row { padding: 24px 0; }
   }
 
   /* (cp-score-* removed Sprint 73 — replaced by cp-matrix-*) */
@@ -8000,8 +7990,8 @@
   /* ── Decision table ─────────────────────────────────────────── */
   .cp-table {
     width: 100%;
-    margin-top: 48px;
-    border-top: 1px solid var(--color-border);
+    margin-top: 40px;
+    border-top: 2px solid var(--color-border-strong);
   }
   /* Header row */
   .cp-table-head {
