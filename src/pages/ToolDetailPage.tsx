@@ -279,7 +279,7 @@ const ToolDetailPage = () => {
       {/* ══════════════════════════════════════════════════════════
           HERO — tool identity & positioning
       ══════════════════════════════════════════════════════════ */}
-      <header style={{ background: "#F8F8F4", borderBottom: "1px solid #DADAD4" }}>
+      <header style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)" }}>
         <div className="td-container">
           <div className="td-hero-layout">
 
@@ -296,7 +296,7 @@ const ToolDetailPage = () => {
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 28, marginBottom: 24 }}>
               <div style={{
                 width: 56, height: 56, borderRadius: 10,
-                border: "1px solid #DADAD4", background: "#FFFFFF",
+                border: "1px solid var(--color-border)", background: "var(--color-surface)",
                 display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
                 <ToolLogo tool={tool} size={36} />
@@ -307,15 +307,15 @@ const ToolDetailPage = () => {
                   style={{
                     display: "inline-flex", alignItems: "center", gap: 6,
                     height: 32, padding: "0 14px",
-                    background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 999,
+                    background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 999,
                     fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
-                    color: "#222222", textDecoration: "none",
+                    color: "var(--color-text)", textDecoration: "none",
                     transition: "border-color 140ms",
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
                 >
-                  {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11, color: "#6F6F68" }} />}
+                  {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11, color: "var(--color-muted)" }} />}
                   {t(catName, catNameEn)}
                 </Link>
               )}
@@ -328,7 +328,7 @@ const ToolDetailPage = () => {
                 ? "clamp(4.5rem, 8vw, 6.5rem)"   /* max 104px — Box, Slack, Zoom… */
                 : "clamp(4.5rem, 8vw, 7.75rem)",  /* max 124px — noms longs */
               fontWeight: 600, lineHeight: 0.9,
-              letterSpacing: "-0.07em", color: "#222222",
+              letterSpacing: "-0.07em", color: "var(--color-text)",
               margin: 0,
             }}>
               {tool.name}
@@ -340,7 +340,7 @@ const ToolDetailPage = () => {
                 fontFamily: "var(--font-ui)",
                 fontSize: 22,
                 lineHeight: 1.35, letterSpacing: "-0.025em",
-                color: "#222222", maxWidth: 780,
+                color: "var(--color-text)", maxWidth: 780,
                 marginTop: 28,
               }}>
                 {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
@@ -365,7 +365,7 @@ const ToolDetailPage = () => {
                   fontFamily: "var(--font-ui)",
                   fontSize: 17,
                   lineHeight: 1.5, letterSpacing: "-0.015em",
-                  color: "#6F6F68", maxWidth: 760,
+                  color: "var(--color-muted)", maxWidth: 760,
                   marginTop: 16,
                 }}>
                   {text}
@@ -441,7 +441,7 @@ const ToolDetailPage = () => {
 
                       {/* Verdict sentence */}
                       {vd?.threshold && (
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.55, color: "#222222", maxWidth: 760, marginBottom: 0 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.55, color: "var(--color-text)", maxWidth: 760, marginBottom: 0 }}>
                           {vd.threshold}
                         </p>
                       )}
@@ -509,7 +509,7 @@ const ToolDetailPage = () => {
                       {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
                         <li key={con} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                           <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(173,173,173,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
-                            <X style={{ width: 11, height: 11, color: "#9A9A92" }} />
+                            <X style={{ width: 11, height: 11, color: "var(--color-muted-light)" }} />
                           </div>
                           <span className="td-body" style={{ fontSize: 15, marginTop: 0 }}>{con}</span>
                         </li>
@@ -548,8 +548,8 @@ const ToolDetailPage = () => {
                           style={{
                             display: "flex", alignItems: "flex-start", gap: 10,
                             padding: "12px 16px",
-                            background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
-                            fontFamily: "var(--font-ui)", fontSize: 14, color: "#222222", lineHeight: 1.45,
+                            background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
+                            fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)", lineHeight: 1.45,
                           }}
                         >
                           <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, marginTop: 3, color: "hsl(var(--primary))" }} />
@@ -575,7 +575,7 @@ const ToolDetailPage = () => {
                       </h2>
                       <div className="td-body">
                         {paras.map((para: string, i: number) => (
-                          <p key={i} style={i === 0 ? { fontWeight: 500, fontSize: "clamp(1rem, 1.2vw, 1.0625rem)" } : { color: "#6F6F68", marginTop: "1em" }}>
+                          <p key={i} style={i === 0 ? { fontWeight: 500, fontSize: "clamp(1rem, 1.2vw, 1.0625rem)" } : { color: "var(--color-muted)", marginTop: "1em" }}>
                             {para}
                           </p>
                         ))}
@@ -669,7 +669,7 @@ const ToolDetailPage = () => {
                     if (!clusterTools.length) return null;
                     return (
                       <div style={{ marginTop: 40 }}>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
                           {t("Substituables directement", "Direct substitutes")}
                         </p>
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -680,12 +680,12 @@ const ToolDetailPage = () => {
                               style={{
                                 display: "inline-flex", alignItems: "center", gap: 8,
                                 padding: "8px 14px",
-                                background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
-                                fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222",
+                                background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
+                                fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)",
                                 textDecoration: "none", transition: "border-color 140ms",
                               }}
-                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
-                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
+                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
                             >
                               <ToolLogo tool={ct} size={18} />
                               {ct.name}
@@ -712,7 +712,7 @@ const ToolDetailPage = () => {
                     if (!compareTools.length) return null;
                     return (
                       <div style={{ marginTop: 40 }}>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 12 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
                           {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
                         </p>
                         {compareTools.map(({ slugPair, other }) => (
@@ -722,18 +722,18 @@ const ToolDetailPage = () => {
                             className="td-alt-row"
                             style={{ textDecoration: "none", color: "inherit" }}
                           >
-                            <div style={{ width: 40, height: 40, borderRadius: 8, border: "1px solid #DADAD4", background: "#F8F8F4", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            <div style={{ width: 40, height: 40, borderRadius: 8, border: "1px solid var(--color-border)", background: "var(--color-bg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                               <ToolLogo tool={other} size={24} />
                             </div>
                             <div>
-                              <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", lineHeight: 1.2 }}>
+                              <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", lineHeight: 1.2 }}>
                                 {tool.name} vs {other.name}
                               </p>
-                              <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", marginTop: 2 }}>
+                              <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", marginTop: 2 }}>
                                 {t("Voir la comparaison complète", "See full comparison")}
                               </p>
                             </div>
-                            <ArrowRight style={{ width: 14, height: 14, color: "#ADADAD" }} />
+                            <ArrowRight style={{ width: 14, height: 14, color: "var(--color-muted-light)" }} />
                           </Link>
                         ))}
                       </div>
@@ -768,25 +768,25 @@ const ToolDetailPage = () => {
                       </h2>
 
                       {/* Score card */}
-                      <div style={{ background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 10, overflow: "hidden", marginBottom: 32 }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 32, padding: "28px 32px", borderBottom: "1px solid #E7E7E0" }}>
+                      <div style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 10, overflow: "hidden", marginBottom: 32 }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 32, padding: "28px 32px", borderBottom: "1px solid var(--color-border-soft)" }}>
                           <div style={{ display: "flex", alignItems: "baseline", gap: 4, flexShrink: 0 }}>
-                            <span style={{ fontFamily: "var(--font-brand)", fontSize: 80, fontWeight: 600, lineHeight: 0.9, letterSpacing: "-0.07em", color: "#222222" }}>
+                            <span style={{ fontFamily: "var(--font-brand)", fontSize: 80, fontWeight: 600, lineHeight: 0.9, letterSpacing: "-0.07em", color: "var(--color-text)" }}>
                               {ts.score.toFixed(1)}
                             </span>
-                            <span style={{ fontFamily: "var(--font-ui)", fontSize: 24, color: "#9A9A92", lineHeight: 1, paddingBottom: 10 }}>/5</span>
+                            <span style={{ fontFamily: "var(--font-ui)", fontSize: 24, color: "var(--color-muted-light)", lineHeight: 1, paddingBottom: 10 }}>/5</span>
                           </div>
                           <div>
                             <p style={{ fontFamily: "var(--font-ui)", fontSize: 20, fontWeight: 600, color: "hsl(var(--primary))", lineHeight: 1.2 }}>
                               {t(ts.labelFr, ts.labelEn)}
                             </p>
-                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", marginTop: 6 }}>
+                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", marginTop: 6 }}>
                               {t("Score éditorial ToolTrim · Analyse indépendante", "ToolTrim editorial score · Independent analysis")}
                             </p>
                           </div>
                         </div>
                         <div style={{ padding: "24px 32px" }}>
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 16 }}>
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 16 }}>
                             {t("Signaux analysés", "Analysed signals")}
                           </p>
                           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -795,15 +795,15 @@ const ToolDetailPage = () => {
                                 <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(74,155,111,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                                   <Check style={{ width: 11, height: 11, color: "#4A9B6F" }} />
                                 </div>
-                                <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#222222" }}>{t(s.labelFr, s.labelEn)}</span>
+                                <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)" }}>{t(s.labelFr, s.labelEn)}</span>
                               </div>
                             ))}
                             {inactiveSignals.map((s) => (
                               <div key={s.labelFr} style={{ display: "flex", alignItems: "center", gap: 12, opacity: 0.4 }}>
-                                <div style={{ width: 20, height: 20, borderRadius: "50%", border: "1px solid #DADAD4", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                                  <X style={{ width: 11, height: 11, color: "#9A9A92" }} />
+                                <div style={{ width: 20, height: 20, borderRadius: "50%", border: "1px solid var(--color-border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                  <X style={{ width: 11, height: 11, color: "var(--color-muted-light)" }} />
                                 </div>
-                                <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#6F6F68" }}>{t(s.labelFr, s.labelEn)}</span>
+                                <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-muted)" }}>{t(s.labelFr, s.labelEn)}</span>
                               </div>
                             ))}
                           </div>
@@ -811,11 +811,11 @@ const ToolDetailPage = () => {
                       </div>
 
                       {/* Reviews coming soon */}
-                      <div style={{ background: "#F8F8F4", border: "1px solid #DADAD4", borderRadius: 10, padding: "40px 32px", textAlign: "center" }}>
-                        <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", marginBottom: 10 }}>
+                      <div style={{ background: "var(--color-bg)", border: "1px solid var(--color-border)", borderRadius: 10, padding: "40px 32px", textAlign: "center" }}>
+                        <p style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", marginBottom: 10 }}>
                           {t(`Tu utilises ${tool.name} ?`, `Using ${tool.name}?`)}
                         </p>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "#6F6F68", maxWidth: 420, margin: "0 auto 24px" }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 15, lineHeight: 1.55, color: "var(--color-muted)", maxWidth: 420, margin: "0 auto 24px" }}>
                           {t(
                             "Les avis utilisateurs arrivent bientôt. Partage ce qui marche, ce qui coûte trop cher, ce que tu changerais.",
                             "User reviews are coming soon. Share what works, what costs too much, what you'd change.",
@@ -868,8 +868,8 @@ const ToolDetailPage = () => {
             <footer style={{
               marginTop: 24,
               display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16,
-              borderTop: "1px solid #DADAD4", paddingTop: 24,
-              fontFamily: "var(--font-ui)", fontSize: 12, color: "#9A9A92",
+              borderTop: "1px solid var(--color-border)", paddingTop: 24,
+              fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted-light)",
             }}>
               <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <CalendarCheck style={{ width: 12, height: 12 }} />
@@ -884,7 +884,7 @@ const ToolDetailPage = () => {
                       href={tool.pricing_v5?.official_source_url || `https://${sourceDomain}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: "#6F6F68", textDecoration: "underline", textUnderlineOffset: 3 }}
+                      style={{ color: "var(--color-muted)", textDecoration: "underline", textUnderlineOffset: 3 }}
                     >
                       {sourceDomain}
                     </a>
@@ -894,7 +894,7 @@ const ToolDetailPage = () => {
               <span>·</span>
               <Link
                 to={`${prefix}/contact`}
-                style={{ color: "#6F6F68", textDecoration: "underline", textUnderlineOffset: 3 }}
+                style={{ color: "var(--color-muted)", textDecoration: "underline", textUnderlineOffset: 3 }}
               >
                 {t("Signaler un prix incorrect", "Report incorrect pricing")}
               </Link>
@@ -910,7 +910,7 @@ const ToolDetailPage = () => {
               {/* Related posts */}
               {relatedPosts.length > 0 && (
                 <div style={{ marginTop: 16 }}>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 10 }}>
+                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 10 }}>
                     {t("Guides liés", "Related guides")}
                   </p>
                   <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -920,17 +920,17 @@ const ToolDetailPage = () => {
                         to={`${prefix}/guide/${post.slug}`}
                         style={{
                           display: "block", padding: "12px 16px",
-                          background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
+                          background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
                           textDecoration: "none", transition: "border-color 140ms",
                         }}
-                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
-                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
                       >
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                           {post.title}
                         </p>
                         {post.readTime && (
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#9A9A92", marginTop: 4 }}>
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted-light)", marginTop: 4 }}>
                             {post.readTime}
                           </p>
                         )}
@@ -954,7 +954,7 @@ const ToolDetailPage = () => {
               <span style={{
                 display: "block",
                 fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-                letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+                letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
                 marginBottom: 14,
               }}>
                 {t("AUDIT DE STACK", "STACK AUDIT")}
@@ -963,7 +963,7 @@ const ToolDetailPage = () => {
                 fontFamily: "var(--font-brand)",
                 fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
                 fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.045em",
-                color: "#222222", margin: "0 0 16px",
+                color: "var(--color-text)", margin: "0 0 16px",
               }}>
                 {t(
                   `${tool.name} fait partie de ta stack ?`,
@@ -972,7 +972,7 @@ const ToolDetailPage = () => {
               </h2>
               <p style={{
                 fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5,
-                color: "#6F6F68", maxWidth: 560, margin: 0,
+                color: "var(--color-muted)", maxWidth: 560, margin: 0,
               }}>
                 {t(
                   "Vérifie en quelques minutes si tu l'utilises vraiment, si tu le paies au bon prix, et quels outils peuvent être challengés autour de lui.",
@@ -980,7 +980,7 @@ const ToolDetailPage = () => {
                 )}
               </p>
               <p style={{
-                fontFamily: "var(--font-ui)", fontSize: 13, color: "#9A9A92",
+                fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted-light)",
                 marginTop: 14, letterSpacing: "-0.01em",
               }}>
                 {t("Gratuit · 5 minutes · Résultat personnalisé", "Free · 5 minutes · Personalised result")}
@@ -991,14 +991,14 @@ const ToolDetailPage = () => {
               style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 height: 48, padding: "0 22px",
-                background: "#222222", color: "#FFFFFF",
+                background: "var(--color-text)", color: "var(--color-surface)",
                 borderRadius: 8, border: "none",
                 fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
                 textDecoration: "none", letterSpacing: "-0.01em",
                 transition: "background 160ms ease-out", flexShrink: 0, whiteSpace: "nowrap",
               }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
             >
               {t("Auditer ma stack", "Audit my stack")}
               <ArrowRight style={{ width: 14, height: 14 }} />

@@ -370,7 +370,7 @@ const ComparesIndexPage = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div style={{ width: 32, height: 32, borderRadius: "50%", border: "3px solid #DADAD4", borderTopColor: "#222222", animation: "spin 0.8s linear infinite" }} />
+        <div style={{ width: 32, height: 32, borderRadius: "50%", border: "3px solid var(--color-border)", borderTopColor: "var(--color-text)", animation: "spin 0.8s linear infinite" }} />
       </div>
     );
   }
@@ -562,7 +562,7 @@ const ComparesIndexPage = () => {
                 fontFamily: "var(--font-brand)",
                 fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
                 fontWeight: 600, letterSpacing: "-0.04em",
-                color: "#222222", lineHeight: 1.05,
+                color: "var(--color-text)", lineHeight: 1.05,
               }}>
                 {compareState === "one"
                   ? t(
@@ -571,7 +571,7 @@ const ComparesIndexPage = () => {
                     )
                   : t("Comparatifs éditoriaux.", "Editorial comparisons.")}
               </p>
-              <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#9A9A92" }}>
+              <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted-light)" }}>
                 {filteredComparisons.length}&nbsp;{t("comparatifs", "comparisons")}
               </span>
             </div>
@@ -600,10 +600,10 @@ const ComparesIndexPage = () => {
                 style={{
                   display: "inline-flex", alignItems: "center",
                   height: 34, padding: "0 14px",
-                  border: "1px solid #DADAD4", borderRadius: 6,
+                  border: "1px solid var(--color-border)", borderRadius: 6,
                   background: "transparent",
                   fontFamily: "var(--font-ui)", fontSize: 13,
-                  color: "#6F6F68", cursor: "pointer",
+                  color: "var(--color-muted)", cursor: "pointer",
                 }}
               >
                 {t("← Voir tous les comparatifs", "← See all comparisons")}
@@ -633,7 +633,7 @@ const ComparesIndexPage = () => {
                       {t("COMPARATIF", "COMPARISON")}
                       {catLabel && catLabel.id !== "all" && (
                         <>
-                          <span style={{ margin: "0 6px", color: "#DADAD4" }}>·</span>
+                          <span style={{ margin: "0 6px", color: "var(--color-border)" }}>·</span>
                           {lang === "fr" ? catLabel.label : catLabel.labelEn}
                         </>
                       )}
@@ -662,7 +662,7 @@ const ComparesIndexPage = () => {
                     </div>
                     <p className="cix-card-pricing">
                       {getPriceLabel(a, t)}
-                      <span style={{ margin: "0 6px", color: "#DADAD4" }}>vs</span>
+                      <span style={{ margin: "0 6px", color: "var(--color-border)" }}>vs</span>
                       {getPriceLabel(b, t)}
                     </p>
                     <span className="cix-card-cta">
@@ -674,18 +674,18 @@ const ComparesIndexPage = () => {
               })}
             </div>
           ) : (
-            <div style={{ padding: "48px 0", borderTop: "1px solid #DADAD4" }}>
+            <div style={{ padding: "48px 0", borderTop: "1px solid var(--color-border)" }}>
               <p style={{
                 fontFamily: "var(--font-brand)",
                 fontSize: "clamp(1.125rem, 2vw, 1.375rem)",
                 fontWeight: 600, letterSpacing: "-0.04em",
-                color: "#222222", marginBottom: 8,
+                color: "var(--color-text)", marginBottom: 8,
               }}>
                 {t("Aucun comparatif trouvé.", "No comparison found.")}
               </p>
               <p style={{
                 fontFamily: "var(--font-ui)",
-                fontSize: 14, color: "#6F6F68", marginBottom: 20,
+                fontSize: 14, color: "var(--color-muted)", marginBottom: 20,
               }}>
                 {t(
                   "Essaie un autre filtre ou explore tous les comparatifs.",
@@ -698,9 +698,9 @@ const ComparesIndexPage = () => {
                 style={{
                   display: "inline-flex", alignItems: "center",
                   height: 38, padding: "0 18px",
-                  border: "1px solid #222222", borderRadius: 6,
+                  border: "1px solid var(--color-border-strong)", borderRadius: 6,
                   fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
-                  color: "#222222", background: "transparent", cursor: "pointer",
+                  color: "var(--color-text)", background: "transparent", cursor: "pointer",
                 }}
               >
                 {t("Voir tous les comparatifs", "See all comparisons")}

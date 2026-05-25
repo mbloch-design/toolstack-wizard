@@ -249,7 +249,7 @@ const GuidesPage = () => {
           <div style={{ paddingTop: 4 }}>
             <p style={{
               fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-              letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+              letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
               marginBottom: 14,
             }}>
               {t("Index des guides", "Guide index")}
@@ -283,19 +283,19 @@ const GuidesPage = () => {
                   style={{
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                     padding: "10px 14px",
-                    background: activeFilter === filter ? "#222222" : "#FFFFFF",
-                    border: `1px solid ${activeFilter === filter ? "#222222" : "#DADAD4"}`,
+                    background: activeFilter === filter ? "var(--color-text)" : "var(--color-surface)",
+                    border: `1px solid ${activeFilter === filter ? "var(--color-text)" : "var(--color-border)"}`,
                     borderRadius: 8,
                     fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
-                    color: activeFilter === filter ? "#FFFFFF" : "#222222",
+                    color: activeFilter === filter ? "var(--color-surface)" : "var(--color-text)",
                     textDecoration: "none", cursor: "pointer",
                     transition: "all 160ms ease-out",
                   }}
-                  onMouseEnter={e => { if (activeFilter !== filter) (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
-                  onMouseLeave={e => { if (activeFilter !== filter) (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                  onMouseEnter={e => { if (activeFilter !== filter) (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
+                  onMouseLeave={e => { if (activeFilter !== filter) (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
                 >
                   <span>{label}</span>
-                  <ArrowRight style={{ width: 12, height: 12, color: activeFilter === filter ? "#FFFFFF" : "#ADADAD", flexShrink: 0 }} />
+                  <ArrowRight style={{ width: 12, height: 12, color: activeFilter === filter ? "var(--color-surface)" : "var(--color-muted-light)", flexShrink: 0 }} />
                 </a>
               ))}
             </div>
@@ -317,7 +317,7 @@ const GuidesPage = () => {
 
       {/* ══ 2. Featured ══════════════════════════════════════════════════════ */}
       {!loading && featured && (
-        <div style={{ borderBottom: "1px solid #DADAD4" }}>
+        <div style={{ borderBottom: "1px solid var(--color-border)" }}>
           <div className="gi-container" style={{ paddingTop: 72, paddingBottom: 72 }}>
             <p className="gi-section-label">{t("À lire en premier", "Read first")}</p>
             <FeaturedBlock post={featured} prefix={prefix} lang={lang} t={t} tools={tools} />
@@ -327,7 +327,7 @@ const GuidesPage = () => {
 
       {/* ══ 3. Commencer ici ═════════════════════════════════════════════════ */}
       {!loading && (
-        <div style={{ borderBottom: "1px solid #DADAD4" }}>
+        <div style={{ borderBottom: "1px solid var(--color-border)" }}>
           <div className="gi-container" style={{ paddingTop: 56, paddingBottom: 56 }}>
             <p className="gi-section-label">{t("Commencer par le bon angle.", "Start from the right angle.")}</p>
             <div className="gi-start-here-grid">
@@ -352,7 +352,7 @@ const GuidesPage = () => {
       )}
 
       {/* ══ 4. Filter bar + guides list ══════════════════════════════════════ */}
-      <div id="guides" style={{ borderBottom: "1px solid #DADAD4" }}>
+      <div id="guides" style={{ borderBottom: "1px solid var(--color-border)" }}>
         <div className="gi-container" style={{ paddingTop: 56, paddingBottom: 72 }}>
 
           {/* Section label */}
@@ -390,12 +390,12 @@ const GuidesPage = () => {
 
           {!loading && filteredPosts.length === 0 && (
             <div style={{ paddingTop: 48, textAlign: "center" }}>
-              <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, color: "#9A9A92" }}>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, color: "var(--color-muted-light)" }}>
                 {t("Aucun guide pour ce filtre.", "No guides for this filter.")}
               </p>
               <button
                 onClick={() => setActiveFilter("all")}
-                style={{ marginTop: 16, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500, color: "#222222", cursor: "pointer", background: "none", border: "none", textDecoration: "underline" }}
+                style={{ marginTop: 16, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500, color: "var(--color-text)", cursor: "pointer", background: "none", border: "none", textDecoration: "underline" }}
               >
                 {t("Voir tous les guides", "See all guides")}
               </button>
@@ -429,7 +429,7 @@ const GuidesPage = () => {
       </div>
 
       {/* ══ 5. Par thème ═════════════════════════════════════════════════════ */}
-      <div style={{ borderBottom: "1px solid #DADAD4" }}>
+      <div style={{ borderBottom: "1px solid var(--color-border)" }}>
         <div className="gi-container" style={{ paddingTop: 72, paddingBottom: 72 }}>
           <p className="gi-section-label">{t("Par thème", "By theme")}</p>
           <div className="gi-theme-grid">
@@ -499,13 +499,13 @@ function FeaturedBlock({
           {post.category && <span className="gi-featured-meta-item">{post.category}</span>}
           {post.date && (
             <>
-              <span style={{ width: 3, height: 3, borderRadius: "50%", background: "#DADAD4", flexShrink: 0 }} />
+              <span style={{ width: 3, height: 3, borderRadius: "50%", background: "var(--color-border)", flexShrink: 0 }} />
               <span className="gi-featured-meta-item">{post.date.slice(0, 4)}</span>
             </>
           )}
           {post.readTime && (
             <>
-              <span style={{ width: 3, height: 3, borderRadius: "50%", background: "#DADAD4", flexShrink: 0 }} />
+              <span style={{ width: 3, height: 3, borderRadius: "50%", background: "var(--color-border)", flexShrink: 0 }} />
               <span className="gi-featured-meta-item">{post.readTime}</span>
             </>
           )}
@@ -529,7 +529,7 @@ function FeaturedBlock({
         <div>
           <p style={{
             fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-            letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+            letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
             marginBottom: 20,
           }}>
             {t("Dans ce guide", "In this guide")}
@@ -540,12 +540,12 @@ function FeaturedBlock({
                 <div key={tool.id} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <div style={{
                     width: 28, height: 28, borderRadius: 6,
-                    border: "1px solid #DADAD4", background: "#FFFFFF",
+                    border: "1px solid var(--color-border)", background: "var(--color-surface)",
                     display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                   }}>
                     <ToolLogo tool={tool} size={18} />
                   </div>
-                  <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222" }}>
+                  <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)" }}>
                     {tool.name}
                   </span>
                 </div>
@@ -553,7 +553,7 @@ function FeaturedBlock({
             </div>
           ) : (
             post.category && (
-              <p style={{ fontFamily: "var(--font-brand)", fontSize: 28, fontWeight: 600, letterSpacing: "-0.04em", color: "#222222", lineHeight: 1.1 }}>
+              <p style={{ fontFamily: "var(--font-brand)", fontSize: 28, fontWeight: 600, letterSpacing: "-0.04em", color: "var(--color-text)", lineHeight: 1.1 }}>
                 {post.category}
               </p>
             )
@@ -561,8 +561,8 @@ function FeaturedBlock({
         </div>
         {post.readTime && (
           <div style={{ marginTop: 32, display: "flex", alignItems: "center", gap: 6 }}>
-            <Clock style={{ width: 12, height: 12, color: "#9A9A92" }} />
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#9A9A92" }}>{post.readTime}</span>
+            <Clock style={{ width: 12, height: 12, color: "var(--color-muted-light)" }} />
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted-light)" }}>{post.readTime}</span>
           </div>
         )}
       </div>
@@ -622,17 +622,17 @@ function LoadingSkeleton() {
       {[1, 2, 3, 4].map((i) => (
         <div key={i} style={{
           display: "grid", gridTemplateColumns: "150px 1fr auto",
-          gap: 32, padding: "32px 0", borderTop: i > 1 ? "1px solid #DADAD4" : "none",
+          gap: 32, padding: "32px 0", borderTop: i > 1 ? "1px solid var(--color-border)" : "none",
         }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <div style={{ height: 12, background: "#EDEDE8", borderRadius: 4, width: 64 }} />
-            <div style={{ height: 12, background: "#F0F0EA", borderRadius: 4, width: 88 }} />
+            <div style={{ height: 12, background: "var(--color-surface-soft)", borderRadius: 4, width: 64 }} />
+            <div style={{ height: 12, background: "var(--color-surface-soft)", borderRadius: 4, width: 88 }} />
           </div>
           <div>
-            <div style={{ height: 28, background: "#EDEDE8", borderRadius: 4, marginBottom: 10, maxWidth: 480 }} />
-            <div style={{ height: 14, background: "#F0F0EA", borderRadius: 4, maxWidth: 600 }} />
+            <div style={{ height: 28, background: "var(--color-surface-soft)", borderRadius: 4, marginBottom: 10, maxWidth: 480 }} />
+            <div style={{ height: 14, background: "var(--color-surface-soft)", borderRadius: 4, maxWidth: 600 }} />
           </div>
-          <div style={{ height: 14, background: "#EDEDE8", borderRadius: 4, width: 40 }} />
+          <div style={{ height: 14, background: "var(--color-surface-soft)", borderRadius: 4, width: 40 }} />
         </div>
       ))}
     </div>

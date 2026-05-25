@@ -113,32 +113,32 @@ const ToolsPage = () => {
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
 
       {/* ══════════════ TOOLS SEARCH HEADER ══════════════ */}
-      <div style={{ background: "#F8F8F4", borderBottom: "1px solid #DADAD4", padding: "48px 0 40px" }}>
+      <div style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)", padding: "48px 0 40px" }}>
         <div className="mx-auto max-w-7xl px-6">
-          <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 16 }}>
+          <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 16 }}>
             {t("Catalogue", "Catalog")}
           </span>
           <h1
-            style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 600, letterSpacing: "-0.055em", lineHeight: 0.98, color: "#222222", marginBottom: 20 }}
+            style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 600, letterSpacing: "-0.055em", lineHeight: 0.98, color: "var(--color-text)", marginBottom: 20 }}
           >
             {t("Trouver les bons outils.", "Find the right tools.")}
           </h1>
           <div style={{ position: "relative", maxWidth: 460 }}>
-            <Search style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", width: 15, height: 15, color: "#6F6F68", pointerEvents: "none" }} />
+            <Search style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", width: 15, height: 15, color: "var(--color-muted)", pointerEvents: "none" }} />
             <input
               type="search" value={search} onChange={e => setSearch(e.target.value)}
               placeholder={t("Rechercher un outil…", "Search a tool…")}
               style={{
                 width: "100%", height: 46, paddingLeft: 42, paddingRight: search ? 36 : 14,
-                background: "#FFFFFF", border: "1px solid #DADAD4", borderRadius: 8,
-                fontFamily: "var(--font-ui)", fontSize: 14, color: "#222222", outline: "none",
+                background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
+                fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)", outline: "none",
                 transition: "border-color 160ms ease-out",
               }}
-              onFocus={e => { e.currentTarget.style.borderColor = "#222222"; }}
-              onBlur={e => { e.currentTarget.style.borderColor = "#DADAD4"; }}
+              onFocus={e => { e.currentTarget.style.borderColor = "var(--color-text)"; }}
+              onBlur={e => { e.currentTarget.style.borderColor = "var(--color-border)"; }}
             />
             {search && (
-              <button type="button" onClick={() => setSearch("")} style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", cursor: "pointer", padding: 4, color: "#6F6F68" }}>
+              <button type="button" onClick={() => setSearch("")} style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", cursor: "pointer", padding: 4, color: "var(--color-muted)" }}>
                 <X style={{ width: 13, height: 13 }} />
               </button>
             )}

@@ -738,16 +738,16 @@ function BusinessObjectivesSection() {
               aria-label={t("Objectif précédent", "Previous goal")}
               style={{
                 width: 40, height: 40,
-                border: "1px solid #DADAD4",
+                border: "1px solid var(--color-border)",
                 borderRadius: "50%",
-                background: "#FFFFFF",
-                color: "#222222",
+                background: "var(--color-surface)",
+                color: "var(--color-text)",
                 cursor: "pointer",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 transition: "border-color 160ms ease-out",
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
             >
               <ChevronLeft style={{ width: 16, height: 16 }} />
             </button>
@@ -758,10 +758,10 @@ function BusinessObjectivesSection() {
               aria-label={t("Objectif suivant", "Next goal")}
               style={{
                 width: 40, height: 40,
-                border: "1px solid #222222",
+                border: "1px solid var(--color-border-strong)",
                 borderRadius: "50%",
-                background: "#222222",
-                color: "#FFFFFF",
+                background: "var(--color-text)",
+                color: "var(--color-surface)",
                 cursor: "pointer",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 transition: "opacity 160ms ease-out",
@@ -884,7 +884,7 @@ function MethodeSection() {
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 24 }}>
           <div>
             <p className="hp-cuts-label">{t("Comment ça marche", "How it works")}</p>
-            <h2 style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", fontWeight: 600, color: "#222222", letterSpacing: "-0.04em", lineHeight: 1.15 }}>
+            <h2 style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", fontWeight: 600, color: "var(--color-text)", letterSpacing: "-0.04em", lineHeight: 1.15 }}>
               {t(
                 <>3 minutes.<br />Une décision claire.</>,
                 <>3 minutes.<br />One clear decision.</>,

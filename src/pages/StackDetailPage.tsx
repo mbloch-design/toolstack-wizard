@@ -794,8 +794,8 @@ const StackDetailPage = () => {
           {/* Breadcrumb */}
           <nav className="sd-hero-breadcrumb" aria-label="breadcrumb">
             <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
-            <span style={{ color: "#DADAD4" }}>/</span>
-            <span style={{ color: "#222222" }}>{detailTitle}</span>
+            <span style={{ color: "var(--color-border)" }}>/</span>
+            <span style={{ color: "var(--color-text)" }}>{detailTitle}</span>
           </nav>
 
           {/* Eyebrow */}
@@ -1178,20 +1178,20 @@ const StackDetailPage = () => {
       ════════════════════════════════════════════════════════════════════ */}
       <div className="sd-cta-band">
         <div className="sd-cta-inner">
-          <span className="tt-kicker" style={{ color: "#6F6F68", marginBottom: 12 }}>
+          <span className="tt-kicker" style={{ color: "var(--color-muted)", marginBottom: 12 }}>
             {t("Diagnostic", "Diagnostic")}
           </span>
           <p className="tt-cta-title">
             {t(editorial.ctaTitle, editorial.ctaTitleEn)}
           </p>
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5, color: "#6F6F68", maxWidth: 540, marginBottom: 32, letterSpacing: "-0.015em" }}>
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5, color: "var(--color-muted)", maxWidth: 540, marginBottom: 32, letterSpacing: "-0.015em" }}>
             {t(editorial.ctaDesc, editorial.ctaDescEn)}
           </p>
           <Link
             to={`${prefix}/selector`}
-            style={{ display: "inline-flex", alignItems: "center", height: 48, padding: "0 22px", background: "#222222", color: "#FFFFFF", borderRadius: 8, fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", textDecoration: "none", transition: "background 160ms ease-out" }}
+            style={{ display: "inline-flex", alignItems: "center", height: 48, padding: "0 22px", background: "var(--color-text)", color: "var(--color-surface)", borderRadius: 8, fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", textDecoration: "none", transition: "background 160ms ease-out" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
           >
             {t("Analyser ma stack", "Analyze my stack")}
           </Link>
@@ -1245,7 +1245,7 @@ const StackDetailPage = () => {
               {relatedStacks.map((related) => (
                 <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card">
                   <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
-                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", color: "#222222", padding: "2px 6px", border: "1px solid #DADAD4", borderRadius: 3 }}>
+                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text)", padding: "2px 6px", border: "1px solid var(--color-border)", borderRadius: 3 }}>
                       {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
                     </span>
                   </div>
@@ -1476,7 +1476,7 @@ function ToolPanel({ stackTools, selectedIndex, onNavigate, prefix, t }: ToolPan
         </div>
         <Link
           to={`${prefix}/tool/${tool!.slug}`}
-          style={{ display: "inline-flex", alignItems: "center", gap: 6, height: 32, padding: "0 14px", background: "#222222", color: "#FFFFFF", borderRadius: 6, fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500, letterSpacing: "-0.01em", textDecoration: "none" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6, height: 32, padding: "0 14px", background: "var(--color-text)", color: "var(--color-surface)", borderRadius: 6, fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500, letterSpacing: "-0.01em", textDecoration: "none" }}
         >
           {t("Fiche complète", "Full details")}
           <ExternalLink className="h-3 w-3" />

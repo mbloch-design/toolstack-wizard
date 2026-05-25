@@ -174,11 +174,11 @@ const GuideDetailPage = () => {
   if (loading) {
     return (
       <div>
-        <div style={{ background: "#F8F8F4", borderBottom: "1px solid #DADAD4", padding: "80px 48px 72px" }}>
+        <div style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)", padding: "80px 48px 72px" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-            <div style={{ height: 14, width: 200, background: "#EDEDE8", borderRadius: 4, marginBottom: 32 }} />
-            <div style={{ height: 72, width: "70%", background: "#EDEDE8", borderRadius: 4, marginBottom: 20 }} />
-            <div style={{ height: 22, width: "55%", background: "#F0F0EA", borderRadius: 4 }} />
+            <div style={{ height: 14, width: 200, background: "var(--color-surface-soft)", borderRadius: 4, marginBottom: 32 }} />
+            <div style={{ height: 72, width: "70%", background: "var(--color-surface-soft)", borderRadius: 4, marginBottom: 20 }} />
+            <div style={{ height: 22, width: "55%", background: "var(--color-surface-soft)", borderRadius: 4 }} />
           </div>
         </div>
       </div>
@@ -188,7 +188,7 @@ const GuideDetailPage = () => {
   if (!post) {
     return (
       <div style={{ maxWidth: 780, margin: "0 auto", padding: "80px 48px", textAlign: "center" }}>
-        <h1 style={{ fontFamily: "var(--font-brand)", fontSize: 32, fontWeight: 600, color: "#222222", marginBottom: 16 }}>
+        <h1 style={{ fontFamily: "var(--font-brand)", fontSize: 32, fontWeight: 600, color: "var(--color-text)", marginBottom: 16 }}>
           {t("Article introuvable", "Article not found")}
         </h1>
         <Link
@@ -210,9 +210,9 @@ const GuideDetailPage = () => {
   return (
     <>
       {/* Reading progress bar */}
-      <div style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, height: 2, background: "#EDEDE8" }}>
+      <div style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, height: 2, background: "var(--color-surface-soft)" }}>
         <div style={{
-          height: "100%", background: "#222222",
+          height: "100%", background: "var(--color-text)",
           width: `${readProgress}%`,
           transition: "width 150ms ease-out",
         }} />
@@ -270,13 +270,13 @@ const GuideDetailPage = () => {
                   style={{
                     display: "inline-flex", alignItems: "center", gap: 6,
                     height: 32, padding: "0 10px 0 6px",
-                    border: "1px solid #DADAD4", borderRadius: 6,
-                    background: "#FFFFFF", textDecoration: "none",
-                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222",
+                    border: "1px solid var(--color-border)", borderRadius: 6,
+                    background: "var(--color-surface)", textDecoration: "none",
+                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)",
                     transition: "border-color 140ms",
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#222222"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#DADAD4"; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
                 >
                   <div style={{
                     width: 20, height: 20, borderRadius: 4,
@@ -304,7 +304,7 @@ const GuideDetailPage = () => {
               <div className="ga-mobile-toc">
                 <p style={{
                   fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-                  letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+                  letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
                   marginBottom: 10,
                 }}>
                   {t("Sommaire", "Contents")}
@@ -312,19 +312,19 @@ const GuideDetailPage = () => {
                 <div style={{
                   display: "flex", flexWrap: "wrap", gap: 8,
                   padding: "14px 16px",
-                  border: "1px solid #DADAD4", borderRadius: 8,
-                  background: "#F8F8F4",
+                  border: "1px solid var(--color-border)", borderRadius: 8,
+                  background: "var(--color-bg)",
                 }}>
                   {h2Toc.map((item) => (
                     <a
                       key={item.id}
                       href={`#${item.id}`}
                       style={{
-                        fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68",
+                        fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)",
                         textDecoration: "none", whiteSpace: "nowrap",
                         padding: "3px 10px",
-                        border: "1px solid #DADAD4", borderRadius: 4,
-                        background: "#FFFFFF",
+                        border: "1px solid var(--color-border)", borderRadius: 4,
+                        background: "var(--color-surface)",
                         transition: "color 120ms",
                       }}
                     >
@@ -392,16 +392,16 @@ const GuideDetailPage = () => {
             )}
 
             {/* Back link */}
-            <div style={{ marginTop: 48, paddingTop: 28, borderTop: "1px solid #DADAD4" }}>
+            <div style={{ marginTop: 48, paddingTop: 28, borderTop: "1px solid var(--color-border)" }}>
               <Link
                 to={`${prefix}/guides`}
                 style={{
                   fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
-                  color: "#6F6F68", textDecoration: "none",
+                  color: "var(--color-muted)", textDecoration: "none",
                   transition: "color 140ms",
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#222222"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#6F6F68"; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-text)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-muted)"; }}
               >
                 ← {t("Tous les guides", "All guides")}
               </Link>
@@ -438,15 +438,15 @@ const GuideDetailPage = () => {
                       style={{
                         display: "flex", alignItems: "center", gap: 8,
                         textDecoration: "none",
-                        fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68",
+                        fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)",
                         transition: "color 140ms",
                       }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#222222"; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#6F6F68"; }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-text)"; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "var(--color-muted)"; }}
                     >
                       <div style={{
                         width: 24, height: 24, borderRadius: 5,
-                        border: "1px solid #DADAD4", background: "#F8F8F4",
+                        border: "1px solid var(--color-border)", background: "var(--color-bg)",
                         display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                       }}>
                         <ToolLogo tool={tool} size={15} />
@@ -459,18 +459,18 @@ const GuideDetailPage = () => {
             )}
 
             {/* Progress indicator */}
-            <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid #DADAD4" }}>
-              <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "#9A9A92", marginBottom: 8 }}>
+            <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid var(--color-border)" }}>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: 8 }}>
                 {t("Lecture", "Reading")}
               </p>
-              <div style={{ height: 3, background: "#EDEDE8", borderRadius: 2, overflow: "hidden" }}>
+              <div style={{ height: 3, background: "var(--color-surface-soft)", borderRadius: 2, overflow: "hidden" }}>
                 <div style={{
-                  height: "100%", background: "#222222", borderRadius: 2,
+                  height: "100%", background: "var(--color-text)", borderRadius: 2,
                   width: `${readProgress}%`,
                   transition: "width 150ms ease-out",
                 }} />
               </div>
-              <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92", marginTop: 6 }}>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "var(--color-muted-light)", marginTop: 6 }}>
                 {Math.round(readProgress)}%
               </p>
             </div>
@@ -506,7 +506,7 @@ const GuideDetailPage = () => {
           style={{
             position: "fixed", bottom: 24, right: 24, zIndex: 40,
             width: 40, height: 40, borderRadius: "50%",
-            background: "#222222", color: "#FFFFFF",
+            background: "var(--color-text)", color: "var(--color-surface)",
             border: "none", cursor: "pointer",
             display: "flex", alignItems: "center", justifyContent: "center",
             transition: "opacity 160ms",
@@ -542,17 +542,17 @@ function ToolRow({ tool, prefix, lang }: { tool: Tool; prefix: string; lang: str
     <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className="ga-tool-row">
       <div style={{
         width: 36, height: 36, borderRadius: 7,
-        border: "1px solid #DADAD4", background: "#F8F8F4",
+        border: "1px solid var(--color-border)", background: "var(--color-bg)",
         display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
       }}>
         <ToolLogo tool={tool} size={22} />
       </div>
       <div>
-        <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.025em", color: "#222222", marginBottom: 3 }}>
+        <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.025em", color: "var(--color-text)", marginBottom: 3 }}>
           {tool.name}
         </p>
         {usage && (
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", lineHeight: 1.35 }}>
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", lineHeight: 1.35 }}>
             {usage}
           </p>
         )}
@@ -560,8 +560,8 @@ function ToolRow({ tool, prefix, lang }: { tool: Tool; prefix: string; lang: str
       <div style={{ textAlign: "right", flexShrink: 0 }}>
         <span style={{
           fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600,
-          letterSpacing: "0.02em", color: "#6F6F68",
-          background: "#F8F8F4", border: "1px solid #DADAD4",
+          letterSpacing: "0.02em", color: "var(--color-muted)",
+          background: "var(--color-bg)", border: "1px solid var(--color-border)",
           borderRadius: 4, padding: "3px 8px",
         }}>
           {priceLabel}
