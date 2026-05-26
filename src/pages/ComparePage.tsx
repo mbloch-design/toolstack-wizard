@@ -164,6 +164,8 @@ interface CompareRiskPoint {
 }
 
 interface CompareEditorialContent {
+  /* ── Editorial signature ── */
+  checkedAt?: string; // ISO date "YYYY-MM-DD" — when the verdict was last reviewed
   /* ── Hero framing ── */
   framing: string; framingEn: string;
   verdictShort: string; verdictShortEn: string;
@@ -2098,11 +2100,26 @@ const ComparePage = () => {
       {/* ── Hero ───────────────────────────────────────────────────────────── */}
       <section className="cp-hero">
         <div className="cp-hero-inner">
-          <nav className="cp-breadcrumb" aria-label="Breadcrumb">
-            <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
-            <span>/</span>
-            <span>{toolA.name} vs {toolB.name}</span>
-          </nav>
+          <div className="cp-hero-meta">
+            <nav className="cp-breadcrumb" aria-label="Breadcrumb">
+              <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
+              <span>/</span>
+              <span>{toolA.name} vs {toolB.name}</span>
+            </nav>
+            {content.checkedAt && (() => {
+              const d = new Date(content.checkedAt);
+              const monthFr = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+              const monthEn = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+              const label = lang === "fr"
+                ? `Vérifié · ${monthFr[d.getMonth()]} ${d.getFullYear()}`
+                : `Reviewed · ${monthEn[d.getMonth()]} ${d.getFullYear()}`;
+              return (
+                <time className="cp-hero-checked" dateTime={content.checkedAt} aria-label={lang === "fr" ? `Verdict vérifié en ${monthFr[d.getMonth()]} ${d.getFullYear()}` : `Verdict reviewed in ${monthEn[d.getMonth()]} ${d.getFullYear()}`}>
+                  {label}
+                </time>
+              );
+            })()}
+          </div>
 
           {/* Title with inline logos */}
           <h1 className="cp-hero-title">

@@ -7340,11 +7340,32 @@
     margin: 0 auto;
     padding: 0 var(--layout-gutter, 48px);
   }
+  /* Hero meta row — breadcrumb left, "Reviewed · month year" stamp right.
+     Editorial signature: monospace stamp signals fact-checked, dated verdict. */
+  .cp-hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .cp-hero-checked {
+    flex-shrink: 0;
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    font-size: var(--tt-size-kicker);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .cp-hero-meta { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
   .cp-breadcrumb {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     font-family: var(--font-ui);
     font-size: 13px;
     color: var(--color-muted);
