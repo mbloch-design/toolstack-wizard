@@ -4,7 +4,8 @@ import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { STACKS } from "@/data/stacks";
+// STACKS no longer imported here — HomePage only needed each stack's monthlyBudget;
+// inlined into BUSINESS_OBJECTIVES below. Saves ~190KB gz on the home bundle.
 import { getToolLogoSources, type LogoCandidateTool } from "@/lib/toolLogos";
 
 import HeroSection from "@/components/home/HeroSection";
@@ -35,6 +36,7 @@ const FAQ_EN = [
 const BUSINESS_OBJECTIVES = [
   {
     slug: "developpeur-freelance-shipper",
+    monthlyBudget: 32,
     labelFr: "Dev freelance",
     labelEn: "Freelance dev",
     titleFr: "Livrer un site client sans payer une stack de startup",
@@ -49,6 +51,7 @@ const BUSINESS_OBJECTIVES = [
   },
   {
     slug: "consultant-b2b-propre",
+    monthlyBudget: 37,
     labelFr: "Consultant B2B",
     labelEn: "B2B consultant",
     titleFr: "Suivre ses missions sans usine à CRM",
@@ -63,6 +66,7 @@ const BUSINESS_OBJECTIVES = [
   },
   {
     slug: "createur-contenu-operateur",
+    monthlyBudget: 48,
     labelFr: "Créateur de contenu",
     labelEn: "Content creator",
     titleFr: "Publier chaque semaine sans cumuler 3 IA payantes",
@@ -77,6 +81,7 @@ const BUSINESS_OBJECTIVES = [
   },
   {
     slug: "ops-manager-fractional-coo",
+    monthlyBudget: 84,
     labelFr: "Ops / Fractional COO",
     labelEn: "Ops / Fractional COO",
     titleFr: "Structurer une boîte sans empiler ClickUp, Asana et Monday",
@@ -91,6 +96,7 @@ const BUSINESS_OBJECTIVES = [
   },
   {
     slug: "freelance-solo-zero-bloat",
+    monthlyBudget: 12,
     labelFr: "Solo qui démarre",
     labelEn: "Solo starter",
     titleFr: "Vendre et encaisser avant de payer des abonnements",
@@ -105,6 +111,7 @@ const BUSINESS_OBJECTIVES = [
   },
   {
     slug: "automatisation-legere-freelance",
+    monthlyBudget: 28,
     labelFr: "Automatisation light",
     labelEn: "Light automation",
     titleFr: "Automatiser ce qui se répète, pas ce qui flatte l'ego",
@@ -699,10 +706,7 @@ function StackObjectiveLogo({ name }: { name: string }) {
 function BusinessObjectivesSection() {
   const { lang, t, prefix } = useLang();
   const scrollRef = useRef<HTMLDivElement>(null);
-  const objectiveCards = BUSINESS_OBJECTIVES.map((objective) => ({
-    ...objective,
-    stack: STACKS.find((stack) => stack.slug === objective.slug),
-  })).filter((objective) => objective.stack);
+  const objectiveCards = BUSINESS_OBJECTIVES;
 
   const scrollCards = (direction: "left" | "right") => {
     const container = scrollRef.current;
@@ -791,7 +795,6 @@ function BusinessObjectivesSection() {
           }}
         >
           {objectiveCards.map((objective) => {
-            const stack = objective.stack!;
             const title = lang === "fr" ? objective.titleFr : objective.titleEn;
             const label = lang === "fr" ? objective.labelFr : objective.labelEn;
             const desc = lang === "fr" ? objective.descriptionFr : objective.descriptionEn;
@@ -799,14 +802,14 @@ function BusinessObjectivesSection() {
             return (
               <Link
                 key={objective.slug}
-                to={`${prefix}/stacks/${stack.slug}`}
+                to={`${prefix}/stacks/${objective.slug}`}
                 style={{ scrollSnapAlign: "start", display: "flex", flexDirection: "column", textDecoration: "none" }}
                 className="home-stack-card"
               >
                 <div className="home-stack-panel">
                   <div className="home-stack-panel-top">
                     <span className="home-stack-profile">{label}</span>
-                    <span className="home-stack-budget">{t("Budget cible :", "Target budget:")} {stack.monthlyBudget}€/{t("mois", "mo")}</span>
+                    <span className="home-stack-budget">{t("Budget cible :", "Target budget:")} {objective.monthlyBudget}€/{t("mois", "mo")}</span>
                   </div>
                   <div className="home-stack-logos" aria-label={t("Outils clés", "Key tools")}>
                     {objective.visualTools.map((tool) => (
