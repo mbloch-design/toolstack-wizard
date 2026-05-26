@@ -16187,7 +16187,7 @@ section[id] {
     line-height: 1.45;
   }
 
-  /* Hide all chrome and non-editorial UI */
+  /* Hide all chrome and non-editorial UI — applies across all pages */
   nav.cp-breadcrumb,
   .cp-subnav,
   .cp-cta-band,
@@ -16195,12 +16195,49 @@ section[id] {
   .cp-methodology-note,
   .cp-hero-verdict-jump,
   .cp-faq-nav,
+  .td-tab-nav,
+  .td-sidebar-desktop,
+  .td-sidebar-mobile,
+  .gi-cta-band,
+  .ga-tab-nav,
+  .ga-cta-band,
   .skip-to-content,
   /* Site-wide chrome */
   header[role="banner"],
   footer[role="contentinfo"],
   .tt-navbar,
   .tt-footer {
+    display: none !important;
+  }
+
+  /* ToolDetailPage + GuideDetailPage shared print treatment */
+  .td-container,
+  .ga-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .td-body-grid {
+    display: block !important;
+  }
+  .td-section {
+    page-break-inside: auto;
+    margin-bottom: 6mm !important;
+  }
+  .td-title {
+    font-size: 22pt !important;
+    line-height: 1.1 !important;
+    color: #000000 !important;
+    page-break-after: avoid;
+  }
+  .td-eyebrow,
+  .ga-eyebrow {
+    font-size: 8pt !important;
+    color: #555555 !important;
+  }
+  /* Tool/guide CTAs that aren't editorial: hide affiliate buttons etc. */
+  .td-cta-row,
+  .td-affiliate-cta,
+  .ga-cta-inline {
     display: none !important;
   }
 
