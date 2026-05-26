@@ -7710,17 +7710,18 @@
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--color-muted-light); margin-bottom: 14px;
   }
+  /* Statement is a pull-quote, NOT a competing headline.
+     Must read smaller than the section H2 (40-56px). */
   .cp-verdict-statement p {
     margin: 0;
-    font-family: var(--font-brand);
-    font-size: clamp(44px, 5vw, 68px);
-    line-height: 0.95;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-section-intro);
+    line-height: 1.3;
     font-weight: 700;
-    letter-spacing: -0.06em;
-    color: var(--color-text);
-    max-width: 900px;
+    letter-spacing: -0.025em;
+    color: var(--color-text-strong);
+    max-width: 760px;
   }
-  @media (max-width: 767px) { .cp-verdict-statement p { font-size: clamp(30px, 8vw, 44px); line-height: 0.98; } }
   /* ── Verdict: decision columns ──────────────────────────────── */
   .cp-decision-columns {
     display: grid;
@@ -7738,13 +7739,13 @@
   .cp-decision-label {
     display: block;
     font-family: var(--font-ui);
-    font-size: 11px; font-weight: 700;
+    font-size: var(--tt-size-kicker); font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--color-muted); margin-bottom: 18px;
   }
   .cp-decision-text {
     font-family: var(--font-ui);
-    font-size: clamp(18px, 1.6vw, 24px);
+    font-size: var(--tt-size-body-large);
     line-height: 1.42;
     font-weight: 400;
     letter-spacing: -0.02em;
@@ -7754,10 +7755,10 @@
   .cp-decision-note {
     margin: 14px 0 0;
     font-family: var(--font-ui);
-    font-size: 14px; line-height: 1.45; color: var(--color-muted-light);
+    font-size: var(--tt-size-card-body); line-height: 1.45; color: var(--color-muted);
   }
   .cp-decision-note span {
-    display: block; font-size: 10px; font-weight: 700;
+    display: block; font-size: var(--tt-size-kicker); font-weight: 700;
     letter-spacing: 0.06em; text-transform: uppercase;
     color: #C0392B; margin-bottom: 4px;
   }
@@ -8493,15 +8494,16 @@
   }
   .cp-alt-content { flex: 1; min-width: 0; }
   .cp-alt-name {
-    font-family: var(--font-ui); font-size: 14px;
+    font-family: var(--font-ui); font-size: var(--tt-size-card-body);
     font-weight: 600; color: var(--color-text); letter-spacing: -0.02em;
   }
   .cp-alt-reason { font-family: var(--font-ui); font-size: var(--tt-size-card-body); letter-spacing: -0.01em; color: var(--color-muted); margin-top: 2px; }
   .cp-alt-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
   .cp-alt-price { font-family: var(--font-ui); font-size: var(--tt-size-card-body); font-weight: 600; letter-spacing: -0.02em; color: var(--color-text); }
   .cp-alt-cta {
-    font-family: var(--font-ui); font-size: 12px;
-    font-weight: 500; color: var(--color-muted-light);
+    font-family: var(--font-ui); font-size: var(--tt-size-kicker);
+    font-weight: 600; color: var(--color-muted);
+    letter-spacing: 0.02em;
     transition: color 140ms;
   }
   .cp-alt-row:hover .cp-alt-cta { color: var(--color-text); }
@@ -8800,7 +8802,7 @@
   .cp-pitfall-consequence {
     margin: 0;
     font-family: var(--font-ui);
-    font-size: 14px;
+    font-size: var(--tt-size-card-body);
     line-height: 1.55;
     color: var(--color-muted);
     flex: 1;
@@ -8860,7 +8862,7 @@
   .cp-limites-risk-fix {
     margin: 0;
     font-family: var(--font-ui);
-    font-size: 14px;
+    font-size: var(--tt-size-card-body);
     line-height: 1.55;
     color: var(--color-muted);
   }
