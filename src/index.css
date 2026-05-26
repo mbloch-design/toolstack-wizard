@@ -7351,10 +7351,17 @@
   }
   .cp-breadcrumb a {
     color: var(--color-muted-light);
-    text-decoration: none;
-    transition: color 140ms;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    transition: color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+                text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
   }
-  .cp-breadcrumb a:hover { color: var(--color-text); }
+  .cp-breadcrumb a:hover {
+    color: var(--color-text);
+    text-decoration-color: var(--color-text);
+  }
   .cp-breadcrumb span:last-child { color: var(--color-text); }
   /* Uses tt-hero-title scale — no page-specific overrides above 124px */
   .cp-hero-title {
@@ -7888,8 +7895,12 @@
   }
   .cp-matrix-th-logo { flex-shrink: 0; }
 
-  /* Data rows */
-  .cp-matrix-row { border-bottom: 1px solid var(--color-border-soft); }
+  /* Data rows — editorial hover wash confirms scanning intent */
+  .cp-matrix-row {
+    border-bottom: 1px solid var(--color-border-soft);
+    transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .cp-matrix-row:hover { background-color: var(--color-surface-soft); }
   .cp-matrix-row:last-child { border-bottom: 1px solid var(--color-border); }
 
   .cp-matrix-cell {
@@ -8013,7 +8024,7 @@
   }
   .cp-table-head-cell:first-child { padding-left: 0; }
   .cp-table-head-cell--decision { padding: 0 0 0 24px; }
-  /* Data rows */
+  /* Data rows — editorial hover wash confirms scanning intent */
   .cp-table-row {
     display: grid;
     grid-template-columns: minmax(140px, 0.8fr) minmax(220px, 1.25fr) minmax(220px, 1.25fr) minmax(240px, 1.3fr);
@@ -8021,7 +8032,9 @@
     align-items: start;
     padding: 28px 0;
     border-bottom: 1px solid var(--color-border-soft);
+    transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
+  .cp-table-row:hover { background-color: var(--color-surface-soft); }
   .cp-table-row:last-child { border-bottom: 1px solid var(--color-border); }
   /* Criterion column */
   .cp-table-cell--criterion {
@@ -8302,13 +8315,15 @@
     line-height: 1;
     color: var(--color-text-strong);
   }
-  /* Criterion rows — open, single rhythm, like the reference table */
+  /* Criterion rows — open, single rhythm, with editorial hover wash */
   .cp-compare-row {
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr;
     border-bottom: 1px solid var(--color-border-soft);
     align-items: start;
+    transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
+  .cp-compare-row:hover { background-color: var(--color-surface-soft); }
   .cp-compare-row:last-child { border-bottom: 1px solid var(--color-border); }
   .cp-compare-row-label {
     padding: 28px 28px 28px 0;
@@ -8385,7 +8400,9 @@
     align-items: baseline;
     padding: 22px 0;
     border-bottom: 1px solid var(--color-border-soft);
+    transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
+  .cp-decision-item:hover { background-color: var(--color-surface-soft); }
   .cp-decision-item:last-child { border-bottom: 1px solid var(--color-border); }
   /* TIER 1 — lede pair (condition + answer) on the "Ma situation" list */
   .cp-decision-condition {
@@ -8979,14 +8996,21 @@
     display: inline-block;
     margin-top: 16px;
     font-family: var(--font-ui);
-    font-size: 12px;
+    font-size: var(--tt-size-kicker);
     font-weight: 600;
     letter-spacing: 0.04em;
-    color: var(--color-muted-light);
-    text-decoration: none;
-    transition: color 0.12s ease;
+    color: var(--color-muted);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    transition: color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+                text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
   }
-  .cp-hero-verdict-jump:hover { color: var(--color-text); }
+  .cp-hero-verdict-jump:hover {
+    color: var(--color-text);
+    text-decoration-color: var(--color-text);
+  }
 
   /* Methodology footnote */
   .cp-methodology-note {
@@ -8996,14 +9020,21 @@
   }
   .cp-methodology-link {
     font-family: var(--font-ui);
-    font-size: 11px;
+    font-size: var(--tt-size-kicker);
     font-weight: 500;
     letter-spacing: 0.04em;
-    color: var(--color-muted-light);
-    text-decoration: none;
-    transition: color 0.12s ease;
+    color: var(--color-muted);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    transition: color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+                text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
   }
-  .cp-methodology-link:hover { color: var(--color-text); }
+  .cp-methodology-link:hover {
+    color: var(--color-text);
+    text-decoration-color: var(--color-text);
+  }
 
 
   /* Profile accordion — replaces grid of identical cards */
