@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useTools } from "@/hooks/useSupabaseData";
+import { useToolPair } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, useState, useRef, type MouseEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
@@ -10,9 +10,7 @@ import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
-function findTool(tools: Tool[], idOrSlug: string): Tool | undefined {
-  return tools.find((t) => t.id === idOrSlug || t.slug === idOrSlug);
-}
+// findTool removed — useToolPair now resolves slugs directly via targeted query.
 function getPrice(tool: Tool): string {
   const v5 = tool.pricing_v5?.compare_price_monthly_eur;
   if (v5 != null && v5 > 0) return `${v5}€/mois`;
@@ -1930,16 +1928,8 @@ function CompareStickyNav({ sections, prefix }: { sections: CompareNavSection[];
 const ComparePage = () => {
   const { slugPair } = useParams<{ slugPair: string }>();
   const { lang, t, prefix } = useLang();
-  const { tools, loading } = useTools();
   const [staleLoading, setStaleLoading] = useState(false);
   const [activeProfile, setActiveProfile] = useState(-1);
-
-  // Network error detection: if still loading after 10s, show recovery state
-  useEffect(() => {
-    if (!loading) { setStaleLoading(false); return; }
-    const timer = setTimeout(() => setStaleLoading(true), 10000);
-    return () => clearTimeout(timer);
-  }, [loading]);
 
   const parsedPair = useMemo(() => {
     if (!slugPair) return null;
@@ -1950,8 +1940,14 @@ const ComparePage = () => {
     return null;
   }, [slugPair]);
 
-  const toolA = useMemo(() => parsedPair ? findTool(tools, parsedPair.idA) : undefined, [tools, parsedPair]);
-  const toolB = useMemo(() => parsedPair ? findTool(tools, parsedPair.idB) : undefined, [tools, parsedPair]);
+  const { toolA, toolB, loading } = useToolPair(parsedPair?.idA, parsedPair?.idB);
+
+  // Network error detection: if still loading after 10s, show recovery state
+  useEffect(() => {
+    if (!loading) { setStaleLoading(false); return; }
+    const timer = setTimeout(() => setStaleLoading(true), 10000);
+    return () => clearTimeout(timer);
+  }, [loading]);
 
   useEffect(() => {
     if (!toolA || !toolB) return;

@@ -175,6 +175,65 @@ export function useCategories() {
   return { categories, loading };
 }
 
+/**
+ * Targeted hook for pages that only need 1-2 specific tools (ComparePage).
+ * Avoids loading the full 3.3MB tools_v4.json chunk just to look up two slugs.
+ *
+ * Strategy:
+ *  1. Try Supabase with `.in('slug', [slugA, slugB])` — 2-row payload.
+ *  2. If Supabase returns 0 results (offline, prerender, etc.), fall back
+ *     to a lazy import of tools_v4.json and find the 2 entries there.
+ *  3. Return `{ toolA, toolB, loading }` mapped through the same mapToolFromJson
+ *     so consumers get exactly the same Tool shape as useTools().
+ */
+export function useToolPair(slugA: string | undefined | null, slugB: string | undefined | null) {
+  const [toolA, setToolA] = useState<Tool | undefined>(undefined);
+  const [toolB, setToolB] = useState<Tool | undefined>(undefined);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!slugA || !slugB) { setLoading(false); return; }
+    let cancelled = false;
+    setLoading(true);
+
+    (async () => {
+      const findInList = (list: Tool[], key: string) =>
+        list.find((t) => t.id === key || t.slug === key);
+
+      // 1) Targeted Supabase query — ~2 rows
+      try {
+        const { data, error } = await supabase
+          .from("tools")
+          .select("*")
+          .in("slug", [slugA, slugB]);
+
+        if (cancelled) return;
+
+        if (!error && data && data.length > 0) {
+          const mapped = data.map(mapToolFromJson);
+          const a = findInList(mapped, slugA);
+          const b = findInList(mapped, slugB);
+          if (a && b) {
+            setToolA(a); setToolB(b); setLoading(false);
+            return;
+          }
+        }
+      } catch { /* fall through to local */ }
+
+      // 2) Fallback: lazy import the full local catalog
+      const localTools = await loadLocalTools();
+      if (cancelled) return;
+      setToolA(findInList(localTools, slugA));
+      setToolB(findInList(localTools, slugB));
+      setLoading(false);
+    })();
+
+    return () => { cancelled = true; };
+  }, [slugA, slugB]);
+
+  return { toolA, toolB, loading };
+}
+
 export function useTools() {
   const [tools, setTools] = useState<Tool[]>([]);
   const [loading, setLoading] = useState(true);
