@@ -16165,3 +16165,245 @@ section[id] {
   outline-offset: -4px;
 }
 
+/* ─────────────────────────────────────────────────────────────────────────
+   Print stylesheet — ComparePage as a 2-page editorial brief
+   ─────────────────────────────────────────────────────────────────────────
+   Goal: someone reading a comparison can print it as a clean, dated brief
+   to share with their team or keep offline. B&W friendly, typography-led,
+   no decorative UI noise.
+   ───────────────────────────────────────────────────────────────────────── */
+@media print {
+  /* Page setup — A4 with editorial margins */
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm 16mm;
+  }
+
+  /* Reset to print-friendly base */
+  html, body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  /* Hide all chrome and non-editorial UI */
+  nav.cp-breadcrumb,
+  .cp-subnav,
+  .cp-cta-band,
+  .cp-tipping-cta,
+  .cp-methodology-note,
+  .cp-hero-verdict-jump,
+  .cp-faq-nav,
+  .skip-to-content,
+  /* Site-wide chrome */
+  header[role="banner"],
+  footer[role="contentinfo"],
+  .tt-navbar,
+  .tt-footer {
+    display: none !important;
+  }
+
+  /* Hero — keep the title, drop the giant logos */
+  .cp-hero {
+    padding: 0 0 8mm !important;
+    border-bottom: 1pt solid #000000 !important;
+    background: none !important;
+  }
+  .cp-hero-meta {
+    margin-bottom: 4mm !important;
+  }
+  .cp-hero-checked {
+    font-size: 9pt !important;
+    color: #555555 !important;
+  }
+  .cp-hero-title {
+    font-size: 22pt !important;
+    line-height: 1.1 !important;
+    margin: 0 0 4mm !important;
+    color: #000000 !important;
+  }
+  .cp-hero-title-logo {
+    display: none !important;
+  }
+  .cp-hero-title-vs {
+    color: #555555 !important;
+  }
+  .cp-hero-promise {
+    font-size: 12pt !important;
+    color: #000000 !important;
+    max-width: 100% !important;
+    margin: 0 0 3mm !important;
+  }
+  .cp-hero-intro {
+    font-size: 10.5pt !important;
+    color: #333333 !important;
+    max-width: 100% !important;
+  }
+
+  /* Sections — flatten padding, tighten rhythm */
+  .cp-section {
+    padding: 6mm 0 !important;
+    page-break-inside: auto;
+  }
+  .cp-matrix-header {
+    margin-bottom: 4mm !important;
+  }
+  .cp-title {
+    font-size: 16pt !important;
+    line-height: 1.15 !important;
+    color: #000000 !important;
+    page-break-after: avoid;
+  }
+  .cp-eyebrow,
+  .cp-sub-section-eyebrow {
+    font-size: 8pt !important;
+    color: #555555 !important;
+    margin-bottom: 2mm !important;
+  }
+  .cp-matrix-intro,
+  .cp-section-intro {
+    font-size: 10pt !important;
+    color: #333333 !important;
+    max-width: 100% !important;
+  }
+
+  /* Verdict statement — the editorial peak, keep on its page */
+  .cp-verdict-statement {
+    padding: 0 0 4mm !important;
+    margin-bottom: 6mm !important;
+    border-bottom: 0.5pt solid #999999 !important;
+    page-break-inside: avoid;
+  }
+  .cp-verdict-statement p {
+    font-size: 14pt !important;
+    line-height: 1.3 !important;
+    color: #000000 !important;
+    max-width: 100% !important;
+  }
+  .cp-verdict-statement p::after {
+    background: #000000 !important;
+  }
+
+  /* Decision list (Ma situation) — compact print pairs */
+  .cp-decision-list {
+    border-top: 1pt solid #000000 !important;
+    max-width: 100% !important;
+  }
+  .cp-decision-item {
+    padding: 3mm 0 !important;
+    border-bottom: 0.5pt solid #BBBBBB !important;
+    page-break-inside: avoid;
+  }
+  .cp-decision-condition {
+    font-size: 10pt !important;
+    color: #000000 !important;
+  }
+  .cp-decision-answer {
+    font-size: 10pt !important;
+    color: #000000 !important;
+  }
+  .cp-decision-answer::before {
+    color: #555555 !important;
+  }
+
+  /* Tables — print-friendly: no hover, strong dividers */
+  .cp-compare-table,
+  .cp-table,
+  .cp-matrix {
+    page-break-inside: auto;
+  }
+  .cp-compare-header,
+  .cp-table-head,
+  .cp-matrix-thead {
+    border-bottom: 1pt solid #000000 !important;
+    page-break-after: avoid;
+  }
+  .cp-compare-row,
+  .cp-table-row,
+  .cp-matrix-row {
+    border-bottom: 0.5pt solid #BBBBBB !important;
+    page-break-inside: avoid;
+    background: none !important; /* kill hover wash */
+  }
+  .cp-compare-row-title,
+  .cp-table-cell--criterion,
+  .cp-matrix-criterion {
+    color: #000000 !important;
+  }
+  .cp-compare-row-verdict,
+  .cp-matrix-text {
+    color: #333333 !important;
+  }
+  .cp-compare-row-tool--win .cp-compare-row-tool-val,
+  .cp-table-cell--win .cp-table-tool-title {
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+  .cp-table-verdict {
+    color: #000000 !important;
+  }
+
+  /* Verdict logic — par défaut / bascule si — keep paired on same page */
+  .cp-tipping-card {
+    page-break-inside: avoid;
+    gap: 8mm !important;
+  }
+  .cp-tipping-card-text {
+    font-size: 10.5pt !important;
+    color: #000000 !important;
+  }
+
+  /* Rules — keep each rule with its content */
+  .cp-tipping-rule {
+    page-break-inside: avoid;
+  }
+  .cp-tipping-rule p {
+    color: #000000 !important;
+  }
+
+  /* FAQ — auto-open all accordion items for print */
+  .cp-faq-item details,
+  .cp-faq-item {
+    page-break-inside: avoid;
+  }
+  .cp-faq-summary {
+    color: #000000 !important;
+  }
+  .cp-faq-summary::after,
+  details > summary::-webkit-details-marker {
+    display: none !important;
+  }
+  details[class*="cp-faq"] > .cp-faq-answer,
+  .cp-faq-item .cp-faq-answer {
+    display: block !important;
+    color: #000000 !important;
+  }
+
+  /* Links — show URLs after external anchors */
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #555555;
+    word-wrap: break-word;
+  }
+  /* Don't expand internal route links */
+  a[href^="/"]::after,
+  .cp-breadcrumb a::after,
+  .cp-methodology-link::after { content: ""; }
+
+  /* Source / methodology footer for print — appended via ::after on .cp-hero */
+  /* Page numbers and methodology attribution sit in the printed margin */
+  @page {
+    @bottom-center {
+      content: "Vérifié par ToolTrim · page " counter(page) " / " counter(pages);
+      font-size: 8pt;
+      color: #555555;
+    }
+  }
+}
+
