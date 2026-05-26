@@ -133,7 +133,7 @@ interface CompareProfile {
   choice: string; reason: string; reasonEn: string;
   limit: string; limitEn: string;
 }
-interface CompareFaqItem { q: string; qEn: string; a: string; aEn: string; }
+interface CompareFaqItem { q: string; qEn: string; a: string; aEn: string; theme?: string; themeEn?: string; }
 interface CompareAlt { slug: string; name: string; reason: string; reasonEn: string; price?: string; }
 interface CompareDecisionRow {
   context: string; contextEn: string;
@@ -2407,19 +2407,71 @@ const ComparePage = () => {
               )}
             </div>
 
-            {/* FAQ accordion */}
-            {content.faq.length > 0 && (
-              <div>
-                {content.faq.map((item, i) => (
-                  <FaqItem
-                    key={i}
-                    question={lang === "fr" ? item.q : item.qEn}
-                    answer={lang === "fr" ? item.a : item.aEn}
-                    defaultOpen={i === 0}
-                  />
-                ))}
-              </div>
-            )}
+            {/* FAQ accordion — grouped by theme if items declare one, else flat */}
+            {content.faq.length > 0 && (() => {
+              const themedItems = content.faq.filter(
+                (item) => (lang === "fr" ? item.theme : item.themeEn ?? item.theme),
+              );
+              const isGrouped = themedItems.length === content.faq.length && content.faq.length > 0;
+
+              if (!isGrouped) {
+                // Flat accordion — identical to the original render, untouched
+                return (
+                  <div>
+                    {content.faq.map((item, i) => (
+                      <FaqItem
+                        key={i}
+                        question={lang === "fr" ? item.q : item.qEn}
+                        answer={lang === "fr" ? item.a : item.aEn}
+                        defaultOpen={i === 0}
+                      />
+                    ))}
+                  </div>
+                );
+              }
+
+              // Grouped accordion — themes drawn from data, order preserved
+              const themeOrder: string[] = [];
+              const themeMap = new Map<string, { items: CompareFaqItem[]; startIndex: number }>();
+              content.faq.forEach((item, i) => {
+                const themeKey = (lang === "fr" ? item.theme : item.themeEn) ?? item.theme ?? "—";
+                if (!themeMap.has(themeKey)) {
+                  themeOrder.push(themeKey);
+                  themeMap.set(themeKey, { items: [], startIndex: i });
+                }
+                themeMap.get(themeKey)!.items.push(item);
+              });
+              const slugify = (s: string) =>
+                "faq-" + s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+              return (
+                <div>
+                  <nav className="cp-faq-nav" aria-label={t("Thèmes de la FAQ", "FAQ themes")}>
+                    {themeOrder.map((name) => (
+                      <a key={name} href={`#${slugify(name)}`} className="cp-faq-nav-link">
+                        {name}
+                      </a>
+                    ))}
+                  </nav>
+                  {themeOrder.map((name, themeIdx) => {
+                    const group = themeMap.get(name)!;
+                    return (
+                      <div key={name} className="cp-faq-theme" id={slugify(name)}>
+                        <h3 className="cp-faq-theme-title">{name}</h3>
+                        {group.items.map((item, i) => (
+                          <FaqItem
+                            key={`${name}-${i}`}
+                            question={lang === "fr" ? item.q : item.qEn}
+                            answer={lang === "fr" ? item.a : item.aEn}
+                            defaultOpen={themeIdx === 0 && i === 0}
+                          />
+                        ))}
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })()}
 
             {/* Risks — sub-section if preceded by FAQ */}
             {content.tooltrimRisks.length > 0 && (
