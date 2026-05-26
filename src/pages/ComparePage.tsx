@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useToolPair } from "@/hooks/useSupabaseData";
+import { useToolPair, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, useState, useRef, type MouseEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
@@ -1941,6 +1941,9 @@ const ComparePage = () => {
   }, [slugPair]);
 
   const { toolA, toolB, loading } = useToolPair(parsedPair?.idA, parsedPair?.idB);
+  // Lightweight summaries for alternative tools lookup (slug/name/logo only).
+  // Already statically loaded — no extra network or chunk cost.
+  const { tools: toolSummaries } = useToolSummaries();
 
   // Network error detection: if still loading after 10s, show recovery state
   useEffect(() => {
@@ -2075,10 +2078,12 @@ const ComparePage = () => {
   const heroContract = content.aglanceContract || (lang === "fr" ? content.finalRecommendation : content.finalRecommendationEn);
   const fallbackPitfalls = getPitfalls(content, toolA, toolB, lang);
 
-  // Find alternative tools from the loaded tools list
+  // Find alternative tools from the lightweight summaries index.
+  // ToolLogo only reads {slug, name, logo, websiteUrl, affiliateLink, ...} —
+  // all present in ToolSummary, so no need to load the full 3.3MB catalog.
   const altTools = content.alternatives.map((alt) => ({
     ...alt,
-    tool: tools.find((t) => t.slug === alt.slug || t.id === alt.slug),
+    tool: toolSummaries.find((t) => t.slug === alt.slug || t.id === alt.slug),
   }));
   const hasDecisionSection = (content.quickDecisionTree && content.quickDecisionTree.length > 0) || (content.profiles && content.profiles.length > 0);
   const hasComparaisonSection = content.decisiveCriteria.length > 0 || decisionTableRows.length > 0;
