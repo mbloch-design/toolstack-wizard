@@ -2284,11 +2284,11 @@ const ComparePage = () => {
             <div className="cp-compare-header" role="row">
               <div className="cp-compare-header-label" role="columnheader" aria-hidden="true" />
               <div className="cp-compare-header-tool" role="columnheader">
-                <ToolLogo tool={toolA} size={40} aria-hidden="true" />
+                <ToolLogo tool={toolA} size={56} aria-hidden="true" />
                 <span className="cp-compare-header-name">{toolA.name}</span>
               </div>
               <div className="cp-compare-header-tool" role="columnheader">
-                <ToolLogo tool={toolB} size={40} aria-hidden="true" />
+                <ToolLogo tool={toolB} size={56} aria-hidden="true" />
                 <span className="cp-compare-header-name">{toolB.name}</span>
               </div>
             </div>
@@ -2331,11 +2331,11 @@ const ComparePage = () => {
               <div className="cp-compare-header" role="row">
                 <div className="cp-compare-header-label" role="columnheader" aria-hidden="true" />
                 <div className="cp-compare-header-tool" role="columnheader">
-                  <ToolLogo tool={toolA} size={40} aria-hidden="true" />
+                  <ToolLogo tool={toolA} size={56} aria-hidden="true" />
                   <span className="cp-compare-header-name">{toolA.name}</span>
                 </div>
                 <div className="cp-compare-header-tool" role="columnheader">
-                  <ToolLogo tool={toolB} size={40} aria-hidden="true" />
+                  <ToolLogo tool={toolB} size={56} aria-hidden="true" />
                   <span className="cp-compare-header-name">{toolB.name}</span>
                 </div>
               </div>
