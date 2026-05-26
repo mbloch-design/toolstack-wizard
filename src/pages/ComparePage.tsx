@@ -2136,7 +2136,6 @@ const ComparePage = () => {
         <section id="decision" className="cp-section scroll-mt-20">
           <div className="cp-container">
             <div className="cp-matrix-header">
-              <span className="cp-section-counter" aria-hidden="true">01</span>
               <span className="cp-eyebrow">{t("Ma situation", "My situation")}</span>
               <h2 className="cp-title">
                 {content.quickDecisionTree && content.quickDecisionTree.length > 0
@@ -2200,7 +2199,6 @@ const ComparePage = () => {
       <section id="seuil" className="cp-section scroll-mt-20">
         <div className="cp-container">
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">02</span>
             <span className="cp-eyebrow">{t("Verdict ToolTrim", "ToolTrim verdict")}</span>
             <h2 className="cp-title">{lang === "fr" ? content.tippingPoint.title : content.tippingPoint.titleEn}</h2>
             <p className="cp-matrix-intro">
@@ -2246,7 +2244,6 @@ const ComparePage = () => {
               <ol className="cp-tipping-rules-list">
                 {(lang === "fr" ? content.tippingPoint.signals : content.tippingPoint.signalsEn).slice(0, 3).map((signal, i) => (
                   <li key={i} className="cp-tipping-rule">
-                    <span className="cp-tipping-rule-num">{String(i + 1).padStart(2, "0")}</span>
                     <p>{signal}</p>
                   </li>
                 ))}
@@ -2269,7 +2266,6 @@ const ComparePage = () => {
 
           {/* Full-width header: counter → eyebrow → title → framing → reco */}
           <div className="cp-matrix-header">
-            <span className="cp-section-counter" aria-hidden="true">03</span>
             <span className="cp-eyebrow">{t("Coût réel", "Real cost")}</span>
             <h2 className="cp-title">{t("Ce que tu paies vraiment.", "What you really pay for.")}</h2>
             <p className="cp-matrix-intro">
@@ -2319,7 +2315,6 @@ const ComparePage = () => {
         <section id="comparaison" className="cp-section scroll-mt-20">
           <div className="cp-container">
             <div className="cp-matrix-header">
-              <span className="cp-section-counter" aria-hidden="true">04</span>
               <span className="cp-eyebrow">{t("Comparaison", "Comparison")}</span>
               <h2 className="cp-title">{t("Les critères qui font la différence.", "The criteria that make the difference.")}</h2>
               <p className="cp-matrix-intro">
@@ -2399,7 +2394,6 @@ const ComparePage = () => {
         <section id="doutes" className="cp-section cp-section--last scroll-mt-20">
           <div className="cp-container">
             <div className="cp-matrix-header">
-              <span className="cp-section-counter" aria-hidden="true">05</span>
               <span className="cp-eyebrow">{t("FAQ & Doutes", "FAQ & Doubts")}</span>
               <h2 className="cp-title">
                 {content.faq.length > 0
@@ -2439,7 +2433,6 @@ const ComparePage = () => {
                 <div className="cp-limites-risks">
                   {content.tooltrimRisks.slice(0, 3).map((risk, i) => (
                     <div key={`${risk.mistake}-${i}`} className="cp-limites-risk-row">
-                      <span className="cp-limites-risk-num">{String(i + 1).padStart(2, "0")}</span>
                       <div>
                         <p className="cp-limites-risk-title">{lang === "fr" ? risk.mistake : risk.mistakeEn}</p>
                         {(lang === "fr" ? risk.recommendation : risk.recommendationEn) && (
