@@ -7698,10 +7698,9 @@
   }
   /* ── Verdict: editorial recommendation statement ────────────── */
   .cp-verdict-statement {
-    border-top: 1px solid var(--color-border);
+    padding: clamp(40px, 4vw, 56px) 0 clamp(48px, 4.5vw, 64px);
+    margin-bottom: clamp(48px, 4.5vw, 64px);
     border-bottom: 1px solid var(--color-border);
-    padding: clamp(52px, 5vw, 72px) 0;
-    margin-bottom: clamp(56px, 5.5vw, 88px);
     background: transparent;
   }
   .cp-verdict-statement-label {
@@ -8157,119 +8156,84 @@
   /* ── Tipping point — Sprint 75 ───────────────────────────── */
   /* (cp-tipping-panel, cp-tipping-signals removed Sprint 75) */
 
-  /* Directional flow card */
+  /* Verdict logic — two parallel editorial blocks, no card, no arrow gimmick */
   .cp-tipping-card {
     display: grid;
-    grid-template-columns: 1fr 48px 1fr;
-    gap: 0;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    overflow: hidden;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 5vw, 80px);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    margin-bottom: clamp(56px, 5vw, 80px);
   }
   .cp-tipping-card-state {
-    padding: 28px 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
   }
   .cp-tipping-card-state--switch {
-    border-left: 1px solid var(--color-border);
-    background: var(--color-bg);
+    border: none;
+    background: transparent;
   }
   .cp-tipping-card-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 1px solid var(--color-border);
-    border-right: 1px solid var(--color-border);
-    color: var(--color-muted-light);
-    flex-shrink: 0;
+    display: none;
   }
   .cp-tipping-card-text {
-    margin: 8px 0 0;
+    margin: 12px 0 0;
     font-family: var(--font-ui);
-    font-size: 17px;
-    line-height: 1.45;
+    font-size: var(--tt-size-body-large);
+    line-height: 1.4;
     letter-spacing: -0.02em;
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--color-text-strong);
   }
   @media (max-width: 768px) {
     .cp-tipping-card {
       grid-template-columns: 1fr;
-    }
-    .cp-tipping-card-arrow {
-      border-left: none;
-      border-right: none;
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-      padding: 12px 0;
-      transform: rotate(90deg);
-    }
-    .cp-tipping-card-state--switch {
-      border-left: none;
-      border-top: 1px solid var(--color-border);
-    }
-    .cp-tipping-card-state {
-      padding: 22px 24px;
+      gap: 32px;
     }
   }
 
-  /* Numbered rules */
+  /* Rules — open editorial list, no frame, no number column */
   .cp-tipping-rules {
-    margin-top: 28px;
+    margin-top: 0;
+    border-top: 2px solid var(--color-border-strong);
   }
   .cp-tipping-rules-heading {
     display: block;
-    margin-bottom: 16px;
+    padding-top: 20px;
+    margin-bottom: 8px;
   }
   .cp-tipping-rules-list {
-    display: grid;
-    gap: 0;
+    display: block;
     margin: 0;
     padding: 0;
     list-style: none;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    overflow: hidden;
+    border: none;
+    border-radius: 0;
   }
   .cp-tipping-rule {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 0;
-    align-items: start;
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-surface);
+    display: block;
+    padding: 0;
+    background: transparent;
+    border-bottom: 1px solid var(--color-border-soft);
   }
-  .cp-tipping-rule:last-child { border-bottom: none; }
-  .cp-tipping-rule-num {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: var(--color-muted-light);
-    border-right: 1px solid var(--color-border);
-    background: var(--color-surface-soft);
-  }
+  .cp-tipping-rule:last-child { border-bottom: 1px solid var(--color-border); }
   .cp-tipping-rule p {
     margin: 0;
-    padding: 16px 20px;
+    padding: 20px 0;
     font-family: var(--font-ui);
-    font-size: 14px;
+    font-size: var(--tt-size-body);
     line-height: 1.5;
-    color: var(--color-muted);
-  }
-  @media (max-width: 640px) {
-    .cp-tipping-rule-num { min-width: 40px; }
+    letter-spacing: -0.01em;
+    color: var(--color-text);
   }
 
   /* CTA row */
   .cp-tipping-cta {
     display: flex;
     align-items: center;
-    margin-top: 28px;
+    margin-top: clamp(40px, 4vw, 56px);
   }
   @media (max-width: 640px) {
     .cp-tipping-cta { flex-direction: column; align-items: stretch; }
