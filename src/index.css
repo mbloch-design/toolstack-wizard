@@ -7839,11 +7839,10 @@
     color: var(--color-text);
   }
 
-  /* Matrix wrapper — editorial open table, no card frame */
+  /* Matrix wrapper — editorial open table, anchored by header underline */
   .cp-matrix {
     width: 100%;
     margin-top: 40px;
-    border-top: 2px solid var(--color-border-strong);
   }
 
   /* Column widths — shared by thead + body rows */
@@ -7857,9 +7856,9 @@
       minmax(250px, 1.1fr);
   }
 
-  /* Header row — no fill, just a stronger underline */
+  /* Header row — no fill, anchored by a strong underline */
   .cp-matrix-thead {
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 2px solid var(--color-border-strong);
   }
   .cp-matrix-th {
     padding: 16px 24px 16px 0;
@@ -7995,15 +7994,14 @@
   .cp-table {
     width: 100%;
     margin-top: 40px;
-    border-top: 2px solid var(--color-border-strong);
   }
   /* Header row */
   .cp-table-head {
     display: grid;
     grid-template-columns: minmax(140px, 0.8fr) minmax(220px, 1.25fr) minmax(220px, 1.25fr) minmax(240px, 1.3fr);
     gap: 0;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--color-border);
+    padding: 0 0 16px;
+    border-bottom: 2px solid var(--color-border-strong);
   }
   .cp-table-head-cell {
     font-family: var(--font-ui);
@@ -8282,16 +8280,15 @@
   .cp-cost-reco .tt-body-large { margin: 0; color: var(--color-text, #222222); }
 
   /* ── Sections 02, 03, 04 — grille 3 colonnes : critère | outil A | outil B */
-  /* Inspired by editorial pricing tables: identity-rich headers, simple rows */
+  /* Editorial pricing-table pattern: no top wall, anchored under-header line */
   .cp-compare-table {
     margin-top: 40px;
-    border-top: 2px solid var(--color-border-strong);
   }
-  /* Header row — generous vertical air, logo prominent, italic tool name */
+  /* Header row — generous vertical air, logo prominent, upright bold name */
   .cp-compare-header {
     display: grid;
-    grid-template-columns: 2fr 1.5fr 1.5fr;
-    padding: 36px 0 32px;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    padding: 0 0 28px;
     border-bottom: 2px solid var(--color-border-strong);
     align-items: end;
   }
@@ -8302,14 +8299,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 16px;
     padding-left: 28px;
   }
   .cp-compare-header-name {
     font-family: var(--font-ui);
     font-size: var(--tt-size-body-large);
     font-weight: 700;
-    font-style: italic;
     letter-spacing: -0.02em;
     line-height: 1;
     color: var(--color-text-strong);
@@ -8317,13 +8313,13 @@
   /* Criterion rows — open, single rhythm, like the reference table */
   .cp-compare-row {
     display: grid;
-    grid-template-columns: 2fr 1.5fr 1.5fr;
+    grid-template-columns: 1.4fr 1fr 1fr;
     border-bottom: 1px solid var(--color-border-soft);
     align-items: start;
   }
   .cp-compare-row:last-child { border-bottom: 1px solid var(--color-border); }
   .cp-compare-row-label {
-    padding: 24px 28px 24px 0;
+    padding: 28px 28px 28px 0;
   }
   /* Criterion title — primary label, like "Storage space" / "Validity" */
   .cp-compare-row-title {
@@ -8341,7 +8337,7 @@
   }
   /* Tool value columns — clean, single value per cell like the reference */
   .cp-compare-row-tool {
-    padding: 24px 0 24px 28px;
+    padding: 28px 0 28px 28px;
   }
   .cp-compare-row-tool-val {
     margin: 0;
