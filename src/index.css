@@ -7577,10 +7577,11 @@
   }
   /* ── Verdict: editorial recommendation statement ────────────── */
   .cp-verdict-statement {
-    /* No padding-top — matrix-header margin-bottom carries the upper gap */
-    padding: 0 0 clamp(40px, 4vw, 56px);
+    /* No padding-top — matrix-header margin-bottom carries the upper gap.
+       No border-bottom either — the editorial endmark (▪) marks the close;
+       a hairline below would be double-marking. */
+    padding: 0;
     margin-bottom: clamp(48px, 4.5vw, 64px);
-    border-bottom: 1px solid var(--color-border);
     background: transparent;
   }
   .cp-verdict-statement-label {
@@ -7741,7 +7742,6 @@
     transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .cp-matrix-row:hover { background-color: var(--color-surface-soft); }
-  .cp-matrix-row:last-child { border-bottom: 1px solid var(--color-border); }
 
   .cp-matrix-cell {
     padding: 28px 24px 28px 0;
@@ -7817,7 +7817,6 @@
       padding: 28px 0;
       border-bottom: 1px solid var(--color-border-soft);
     }
-    .cp-matrix-row:last-child { border-bottom: 1px solid var(--color-border); }
     .cp-matrix-cell {
       padding: 0 0 16px;
     }
@@ -7875,7 +7874,6 @@
     transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .cp-table-row:hover { background-color: var(--color-surface-soft); }
-  .cp-table-row:last-child { border-bottom: 1px solid var(--color-border); }
   /* Criterion column */
   .cp-table-cell--criterion {
     padding: 0 24px 0 0;
@@ -8078,7 +8076,6 @@
     background: transparent;
     border-bottom: 1px solid var(--color-border-soft);
   }
-  .cp-tipping-rule:last-child { border-bottom: 1px solid var(--color-border); }
   /* TIER 2 — body standard */
   .cp-tipping-rule p {
     margin: 0;
@@ -8164,7 +8161,6 @@
     transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .cp-compare-row:hover { background-color: var(--color-surface-soft); }
-  .cp-compare-row:last-child { border-bottom: 1px solid var(--color-border); }
   .cp-compare-row-label {
     padding: 28px 28px 28px 0;
   }
@@ -8243,7 +8239,6 @@
     transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .cp-decision-item:hover { background-color: var(--color-surface-soft); }
-  .cp-decision-item:last-child { border-bottom: 1px solid var(--color-border); }
   /* TIER 1 — lede pair (condition + answer) on the "Ma situation" list */
   .cp-decision-condition {
     margin: 0;
@@ -8365,7 +8360,6 @@
   .cp-cta-band .cp-container {
     background: transparent;
     border: none;
-    border-top: 1px solid var(--color-border, #DADAD4);
     border-radius: 0;
     padding-top: 48px;
     padding-bottom: 0;
@@ -8430,7 +8424,6 @@
 
   /* Existing flat-accordion styles — unchanged from the original */
   .cp-faq-item { border-top: 1px solid var(--color-border); }
-  .cp-faq-item:last-child { border-bottom: 1px solid var(--color-border); }
   .cp-faq-summary {
     font-family: var(--font-ui);
     font-size: 16px; font-weight: 600;
@@ -8875,11 +8868,10 @@
     text-decoration-color: var(--color-text);
   }
 
-  /* Methodology footnote */
+  /* Methodology footnote — sits below the CTA band, no hairline (CTA padding carries the gap) */
   .cp-methodology-note {
     padding: 20px 0;
     text-align: center;
-    border-top: 1px solid var(--color-border-soft);
   }
   .cp-methodology-link {
     font-family: var(--font-ui);
