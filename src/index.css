@@ -7635,9 +7635,12 @@
   }
 
   /* ── Generic section wrapper ───────────────────────────────── */
-  .cp-section { padding: var(--tt-section-y) 0; border-bottom: 1px solid var(--color-border, #DADAD4); }
+  /* Sections are separated by vertical rhythm only — no hairline borders.
+     Strong dividers (2px) are reserved for editorial moments inside a
+     section (sub-section, table header), not for section boundaries. */
+  .cp-section { padding: var(--tt-section-y) 0; }
   .cp-section[id] { scroll-margin-top: 96px; }
-  .cp-section--last { border-bottom: none; }
+  .cp-section--last { /* kept for semantic compat */ }
   .cp-container {
     max-width: var(--layout-content, 1280px);
     margin: 0 auto;
@@ -8258,17 +8261,11 @@
   @media (max-width: 640px) { .cp-cost-callout { padding: 22px 20px; } }
   /* (cp-cost-grid / cp-cost-row / cp-cost-label / cp-cost-reco / cp-cost-note removed Sprint 74) */
 
-  /* ── Cost section surface — re-scope to light-mode values ────── */
-  /* The compare page is dark-themed; this section is the only light  */
-  /* surface, so we explicitly restore legible light-mode variables.  */
+  /* Cost section — no longer needs its own surface or var overrides
+     (the page is already light-themed). Kept as a hook for future
+     cost-specific styling if needed. */
   .cp-section--cost {
-    background: var(--color-surface-soft);
-    --color-bg: #F1F1EC;
-    --color-text: #222222;
-    --color-muted: #6F6F68;
-    --color-border: #DADAD4;
-    --color-border-soft: #E7E7E0;
-    --color-surface: #FFFFFF;
+    /* background continuity with the rest of the page */
   }
   /* Recommendation embedded in left column (section 03) */
   .cp-cost-reco {
