@@ -1181,9 +1181,9 @@ const StackDetailPage = () => {
           <span className="tt-kicker" style={{ color: "var(--color-muted)", marginBottom: 12 }}>
             {t("Diagnostic", "Diagnostic")}
           </span>
-          <p className="tt-cta-title">
+          <h2 className="tt-cta-title">
             {t(editorial.ctaTitle, editorial.ctaTitleEn)}
-          </p>
+          </h2>
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 17, lineHeight: 1.5, color: "var(--color-muted)", maxWidth: 540, marginBottom: 32, letterSpacing: "-0.015em" }}>
             {t(editorial.ctaDesc, editorial.ctaDescEn)}
           </p>

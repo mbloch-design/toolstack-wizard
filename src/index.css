@@ -7567,7 +7567,7 @@
     font-family: var(--font-ui);
     font-size: var(--tt-size-kicker); font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted-light); margin-bottom: 14px;
+    color: var(--color-muted); margin-bottom: 14px;
   }
   /* Statement is a pull-quote, NOT a competing headline.
      Must read smaller than the section H2 (40-56px). */
@@ -7755,7 +7755,7 @@
   .cp-matrix-badge--context {
     background: transparent;
     border: 1px solid transparent;
-    color: var(--color-muted-light);
+    color: var(--color-muted);
   }
 
   /* Cell body text */
@@ -7942,7 +7942,7 @@
     font-family: var(--font-ui);
     font-size: 10px; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted-light); margin-bottom: 8px;
+    color: var(--color-muted); margin-bottom: 8px;
   }
   .cp-profile-choice {
     font-family: var(--font-brand);
@@ -7956,7 +7956,7 @@
   }
   .cp-profile-limit {
     font-family: var(--font-ui);
-    font-size: 13px; color: var(--color-muted-light);
+    font-size: 13px; color: var(--color-muted);
     margin-top: 10px; padding-top: 10px;
     border-top: 1px solid var(--color-border-soft);
   }
@@ -8240,6 +8240,7 @@
   }
   @media (max-width: 600px) {
     .cp-decision-item { grid-template-columns: 1fr; row-gap: 8px; padding: 18px 0; }
+    .cp-decision-answer { white-space: normal; }
     .cp-decision-answer::before { display: none; }
   }
 
@@ -8251,7 +8252,7 @@
     display: block;
     font-family: var(--font-ui);
     font-size: var(--tt-size-kicker); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted-light);
+    color: var(--color-muted);
     padding-top: 48px;
     border-top: 1px solid var(--color-border);
     margin-bottom: 10px;
@@ -8503,7 +8504,7 @@
     margin-bottom: 8px;
   }
   .cp-pros-cons-sublabel--pros { color: #2E7D32; }
-  .cp-pros-cons-sublabel--cons { color: var(--color-muted-light); }
+  .cp-pros-cons-sublabel--cons { color: var(--color-muted); }
 
   .cp-pros-cons-list { list-style: none; padding: 0; margin: 0; }
   .cp-pros-cons-item {
@@ -8744,7 +8745,7 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--color-muted-light);
+    color: var(--color-muted);
     border-bottom: 1px solid var(--color-border);
   }
   .cp-decision-tree-item {
@@ -8785,7 +8786,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-muted-light);
+    color: var(--color-muted);
     margin: 0 0 8px;
   }
   .cp-profile-choice {

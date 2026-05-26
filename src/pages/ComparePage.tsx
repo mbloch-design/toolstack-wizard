@@ -2158,7 +2158,7 @@ const ComparePage = () => {
             {content.profiles && content.profiles.length > 0 && (
               <div className="cp-sub-section">
                 <span className="cp-sub-section-eyebrow">{t("Selon ton profil", "By profile")}</span>
-                <p className="cp-sub-section-title">{t("Trouve ton cas.", "Find your case.")}</p>
+                <h3 className="cp-sub-section-title">{t("Trouve ton cas.", "Find your case.")}</h3>
                 <div className="cp-profile-accordion" role="list">
                   {content.profiles.slice(0, 6).map((profile, i) => {
                     const isOpen = activeProfile === i;
@@ -2351,9 +2351,11 @@ const ComparePage = () => {
                           <p className="cp-compare-row-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
                         </div>
                         <div className={`cp-compare-row-tool${levels.winner === "A" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                          {levels.winner === "A" && <span className="sr-only">{t("Recommandé : ", "Recommended: ")}</span>}
                           <p className="cp-compare-row-tool-val">{lang === "fr" ? criterion.toolA : criterion.toolAEn}</p>
                         </div>
                         <div className={`cp-compare-row-tool${levels.winner === "B" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                          {levels.winner === "B" && <span className="sr-only">{t("Recommandé : ", "Recommended: ")}</span>}
                           <p className="cp-compare-row-tool-val">{lang === "fr" ? criterion.toolB : criterion.toolBEn}</p>
                         </div>
                       </div>
@@ -2373,10 +2375,12 @@ const ComparePage = () => {
                           {verdict && <p className="cp-compare-row-verdict">{verdict}</p>}
                         </div>
                         <div className={`cp-compare-row-tool${row.winner === "A" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                          {row.winner === "A" && <span className="sr-only">{t("Recommandé : ", "Recommended: ")}</span>}
                           <p className="cp-compare-row-tool-val">{aTitle}</p>
                           {aNote && <p className="cp-compare-row-tool-note">{aNote}</p>}
                         </div>
                         <div className={`cp-compare-row-tool${row.winner === "B" ? " cp-compare-row-tool--win" : ""}`} role="cell">
+                          {row.winner === "B" && <span className="sr-only">{t("Recommandé : ", "Recommended: ")}</span>}
                           <p className="cp-compare-row-tool-val">{bTitle}</p>
                           {bNote && <p className="cp-compare-row-tool-note">{bNote}</p>}
                         </div>
@@ -2479,7 +2483,7 @@ const ComparePage = () => {
                 {content.faq.length > 0 && (
                   <>
                     <span className="cp-sub-section-eyebrow">{t("Pièges fréquents", "Common pitfalls")}</span>
-                    <p className="cp-sub-section-title">{t("Pièges à éviter.", "Pitfalls to avoid.")}</p>
+                    <h3 className="cp-sub-section-title">{t("Pièges à éviter.", "Pitfalls to avoid.")}</h3>
                   </>
                 )}
                 <div className="cp-limites-risks">
@@ -2503,7 +2507,7 @@ const ComparePage = () => {
                 {(content.faq.length > 0 || content.tooltrimRisks.length > 0) && (
                   <>
                     <span className="cp-sub-section-eyebrow">{t("Alternatives", "Alternatives")}</span>
-                    <p className="cp-sub-section-title">{t("Si aucun des deux ne colle.", "If neither one fits.")}</p>
+                    <h3 className="cp-sub-section-title">{t("Si aucun des deux ne colle.", "If neither one fits.")}</h3>
                   </>
                 )}
                 <div className="cp-limites-alts">
@@ -2544,12 +2548,12 @@ const ComparePage = () => {
       <div className="cp-cta-band">
         <div className="cp-container">
           <span className="cp-eyebrow">{t("Diagnostic", "Diagnostic")}</span>
-          <p className="tt-cta-title">
+          <h2 className="tt-cta-title">
             {t(
               `${toolA.name} ou ${toolB.name} sont déjà dans ta stack ?`,
               `${toolA.name} or ${toolB.name} already in your stack?`,
             )}
-          </p>
+          </h2>
           <p className="cp-cta-band-desc">
             {t(
               "Vérifie si plusieurs outils de ta stack font le même travail.",
