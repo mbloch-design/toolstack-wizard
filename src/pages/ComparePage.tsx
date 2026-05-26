@@ -1986,7 +1986,7 @@ const ComparePage = () => {
         <div className="cp-not-found-inner">
           <span className="cp-eyebrow">{t("Problème de connexion", "Connection issue")}</span>
           <h1 className="cp-not-found-title">
-            {t("Le chargement prend trop de temps.", "Loading is taking too long.")}
+            {t("Le serveur ne répond pas. Réessaye dans un instant.", "Server isn't responding. Try again in a moment.")}
           </h1>
           <p className="cp-not-found-body">
             {t(
@@ -2022,7 +2022,7 @@ const ComparePage = () => {
         <div className="cp-not-found-inner">
           <span className="cp-eyebrow">{t("Comparatif introuvable", "Comparison not found")}</span>
           <h1 className="cp-not-found-title">
-            {t("Ce comparatif n'existe pas encore.", "This comparison doesn't exist yet.")}
+            {t("Ce comparatif n'existe pas.", "This comparison doesn't exist.")}
           </h1>
           <p className="cp-not-found-body">
             {t(
@@ -2394,7 +2394,7 @@ const ComparePage = () => {
         <section id="doutes" className="cp-section cp-section--last scroll-mt-20">
           <div className="cp-container">
             <div className="cp-matrix-header">
-              <span className="cp-eyebrow">{t("FAQ & Doutes", "FAQ & Doubts")}</span>
+              <span className="cp-eyebrow">{t("Doutes", "Doubts")}</span>
               <h2 className="cp-title">
                 {content.faq.length > 0
                   ? t("Questions fréquentes.", "Frequently asked questions.")
@@ -2426,8 +2426,8 @@ const ComparePage = () => {
               <div className={content.faq.length > 0 ? "cp-sub-section" : ""}>
                 {content.faq.length > 0 && (
                   <>
-                    <span className="cp-sub-section-eyebrow">{t("Erreurs fréquentes", "Common mistakes")}</span>
-                    <p className="cp-sub-section-title">{t("Ce qui peut faire hésiter.", "What might give you pause.")}</p>
+                    <span className="cp-sub-section-eyebrow">{t("Pièges fréquents", "Common pitfalls")}</span>
+                    <p className="cp-sub-section-title">{t("Pièges à éviter.", "Pitfalls to avoid.")}</p>
                   </>
                 )}
                 <div className="cp-limites-risks">
@@ -2500,8 +2500,8 @@ const ComparePage = () => {
           </p>
           <p className="cp-cta-band-desc">
             {t(
-              "Analyse tes outils actuels et vérifie si tu n'as pas déjà plusieurs outils qui font le même travail.",
-              "Audit your current tools and check if you already have overlapping subscriptions.",
+              "Vérifie si plusieurs outils de ta stack font le même travail.",
+              "Check if multiple tools in your stack do the same job.",
             )}
           </p>
           <Link to={`${prefix}/selector?from=${slugPair}`} className="tt-button-primary">
