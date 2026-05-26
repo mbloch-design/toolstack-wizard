@@ -7591,7 +7591,9 @@
     color: var(--color-muted); margin-bottom: 14px;
   }
   /* Statement is a pull-quote, NOT a competing headline.
-     Must read smaller than the section H2 (40-56px). */
+     Must read smaller than the section H2 (40-56px).
+     Editorial endmark: a filled square sits after the last word, like
+     the "fin d'article" marks magazines use to close a verdict. */
   .cp-verdict-statement p {
     margin: 0;
     font-family: var(--font-ui);
@@ -7601,6 +7603,15 @@
     letter-spacing: -0.025em;
     color: var(--color-text-strong);
     max-width: 760px;
+  }
+  .cp-verdict-statement p::after {
+    content: "";
+    display: inline-block;
+    width: 0.42em;
+    height: 0.42em;
+    background: var(--color-text-strong);
+    margin-left: 0.28em;
+    vertical-align: 0.08em;
   }
   /* (cp-decision-columns / cp-decision-col / cp-decision-label / cp-decision-text /
      cp-decision-note: removed — never rendered in JSX. The active

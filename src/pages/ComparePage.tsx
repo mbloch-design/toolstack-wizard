@@ -2230,9 +2230,10 @@ const ComparePage = () => {
             </p>
           </div>
 
-          {/* Verdict statement — front-loaded, authoritative */}
+          {/* Verdict statement — front-loaded, authoritative. Trailing period
+              stripped so the CSS endmark sits cleanly at the end. */}
           <div className="cp-verdict-statement">
-            <p>{verdictShort}</p>
+            <p>{verdictShort.trim().replace(/[.。]\s*$/, "")}</p>
           </div>
 
           {/* Directional flow card */}
