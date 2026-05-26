@@ -2100,6 +2100,10 @@ const ComparePage = () => {
   return (
     <div className="min-h-screen cp-page-light">
 
+      {/* Reading progress — CSS-only scroll-driven editorial signal. Gracefully
+          invisible on browsers without animation-timeline support. */}
+      <div className="cp-reading-progress" aria-hidden="true" />
+
       {/* ── Hero ───────────────────────────────────────────────────────────── */}
       <section className="cp-hero">
         <div className="cp-hero-inner">

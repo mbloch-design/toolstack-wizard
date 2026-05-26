@@ -16158,6 +16158,37 @@ section[id] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   Reading progress bar — ComparePage long-form signal
+   ─────────────────────────────────────────────────────────────────────────
+   2px bar at top, scales from 0 to full as the user scrolls the document.
+   CSS-only via animation-timeline: scroll(root) — gracefully invisible
+   on browsers without support (Firefox limited as of 2026, others OK).
+   ───────────────────────────────────────────────────────────────────────── */
+.cp-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-text-strong);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 100;
+  pointer-events: none;
+  animation: cpReadingProgress linear;
+  animation-timeline: scroll(root);
+}
+@keyframes cpReadingProgress {
+  to { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cp-reading-progress { animation: none; transform: scaleX(0); }
+}
+@media print {
+  .cp-reading-progress { display: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    Print stylesheet — ComparePage as a 2-page editorial brief
    ─────────────────────────────────────────────────────────────────────────
    Goal: someone reading a comparison can print it as a clean, dated brief
