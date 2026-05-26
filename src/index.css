@@ -7703,7 +7703,8 @@
   }
   /* ── Verdict: editorial recommendation statement ────────────── */
   .cp-verdict-statement {
-    padding: clamp(40px, 4vw, 56px) 0 clamp(48px, 4.5vw, 64px);
+    /* No padding-top — matrix-header margin-bottom carries the upper gap */
+    padding: 0 0 clamp(40px, 4vw, 56px);
     margin-bottom: clamp(48px, 4.5vw, 64px);
     border-bottom: 1px solid var(--color-border);
     background: transparent;
@@ -7845,7 +7846,6 @@
   /* Matrix wrapper — editorial open table, anchored by header underline */
   .cp-matrix {
     width: 100%;
-    margin-top: 40px;
   }
 
   /* Column widths — shared by thead + body rows */
@@ -7996,7 +7996,6 @@
   /* ── Decision table ─────────────────────────────────────────── */
   .cp-table {
     width: 100%;
-    margin-top: 40px;
   }
   /* Header row */
   .cp-table-head {
@@ -8064,7 +8063,7 @@
   }
   /* ── Mobile stacked (≤ 900px) ──────────────────── */
   @media (max-width: 900px) {
-    .cp-table { margin-top: 40px; }
+    .cp-table { margin-top: 0; }
     .cp-table-head { display: none; }
     .cp-table-row {
       display: block;
@@ -8248,17 +8247,13 @@
     .cp-tipping-cta { flex-direction: column; align-items: stretch; }
     .cp-tipping-cta .tt-button-secondary { justify-content: center; }
   }
-  /* ── Cost section callout — recommandation finale (Sprint 74) ── */
+  /* Cost section callout — editorial open block, no card frame */
   .cp-cost-callout {
-    margin-top: 28px;
-    padding: 28px 32px;
-    background: var(--color-surface-soft);
-    border: 1px solid var(--color-border, #DADAD4);
-    border-radius: 8px;
+    padding: 24px 0 0;
+    border-top: 1px solid var(--color-border);
   }
-  .cp-cost-callout .tt-fact-label { margin-bottom: 12px; }
-  .cp-cost-callout .tt-body-large { margin: 0; color: var(--color-muted); max-width: 820px; }
-  @media (max-width: 640px) { .cp-cost-callout { padding: 22px 20px; } }
+  .cp-cost-callout .tt-fact-label { margin-bottom: 10px; }
+  .cp-cost-callout .tt-body-large { margin: 0; color: var(--color-text); max-width: 68ch; }
   /* (cp-cost-grid / cp-cost-row / cp-cost-label / cp-cost-reco / cp-cost-note removed Sprint 74) */
 
   /* Cost section — no longer needs its own surface or var overrides
@@ -8279,7 +8274,7 @@
   /* ── Sections 02, 03, 04 — grille 3 colonnes : critère | outil A | outil B */
   /* Editorial pricing-table pattern: no top wall, anchored under-header line */
   .cp-compare-table {
-    margin-top: 40px;
+    /* gap from matrix-header is carried by cp-matrix-header margin-bottom */
   }
   /* Header row — generous vertical air, logo prominent, upright bold name */
   .cp-compare-header {
@@ -8380,7 +8375,6 @@
   /* 30-second scan: condition + verdict tight on one line.
      Capped width so the pair stays visually locked on wide screens. */
   .cp-decision-list {
-    margin-top: 40px;
     max-width: 920px;
     border-top: 2px solid var(--color-border-strong);
   }
