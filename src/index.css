@@ -7419,151 +7419,9 @@
     .cp-hero-promise { margin-bottom: 28px; }
   }
 
-  /* ── VS module (right col) ─────────────────────────────────── */
-  .cp-vs-module {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 22px 20px;
-    position: sticky;
-    top: calc(var(--navbar-h, 68px) + 24px);
-  }
-  @media (max-width: 1023px) { .cp-vs-module { position: static; } }
-  .cp-decision-panel {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 14px;
-    padding: 24px;
-    position: sticky;
-    top: calc(var(--navbar-h, 68px) + 24px);
-    height: fit-content;
-  }
-  @media (max-width: 1023px) { .cp-decision-panel { position: static; } }
-  .cp-decision-panel-title {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-    margin-bottom: 14px;
-  }
-  .cp-decision-panel-verdict {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 16px;
-    line-height: 1.45;
-    letter-spacing: -0.015em;
-    font-weight: 500;
-    color: var(--color-text);
-  }
-  .cp-decision-facts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px 20px;
-    margin-top: 22px;
-    padding-top: 22px;
-    border-top: 1px solid var(--color-border);
-  }
-  .cp-decision-facts div:last-child { grid-column: 1 / -1; }
-  .cp-decision-facts span {
-    display: block;
-    margin-bottom: 6px;
-    font-family: var(--font-ui);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-muted-light);
-  }
-  .cp-decision-facts p {
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 13px;
-    line-height: 1.35;
-    font-weight: 600;
-    color: var(--color-text);
-  }
-  .cp-decision-tools {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 20px;
-    padding-top: 18px;
-    border-top: 1px solid var(--color-border);
-  }
-  .cp-decision-tool-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-width: 0;
-    height: 38px;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--color-text);
-    text-decoration: none;
-  }
-  .cp-decision-tool-link span:last-child {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .cp-vs-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 0;
-  }
-  .cp-vs-row + .cp-vs-row { border-top: 1px solid var(--color-border-soft); }
-  .cp-vs-logo {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border-soft);
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden; flex-shrink: 0;
-  }
-  .cp-vs-name {
-    font-family: var(--font-ui);
-    font-size: 15px; font-weight: 600;
-    letter-spacing: -0.02em; color: var(--color-text);
-  }
-  .cp-vs-sep {
-    text-align: center; padding: 6px 0;
-    font-family: var(--font-ui);
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--color-muted-light);
-    border-top: 1px solid var(--color-border-soft);
-    border-bottom: 1px solid var(--color-border-soft);
-    margin: 4px 0;
-  }
-  .cp-vs-verdict-block {
-    border-top: 1px solid var(--color-border);
-    margin-top: 16px; padding-top: 14px;
-  }
-  .cp-vs-verdict-item {
-    padding: 8px 0;
-    border-bottom: 1px solid var(--color-border-soft);
-  }
-  .cp-vs-verdict-item:last-child { border-bottom: none; }
-  .cp-vs-verdict-label {
-    font-family: var(--font-ui);
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted-light); margin-bottom: 3px;
-  }
-  .cp-vs-verdict-text {
-    font-family: var(--font-ui);
-    font-size: 13px; line-height: 1.45;
-    color: var(--color-text);
-  }
+  /* (cp-vs-module, cp-decision-panel, cp-decision-facts, cp-decision-tools,
+     cp-vs-row/logo/name/sep/verdict — all removed: orphaned by previous
+     redesigns, no JSX references remained) */
 
   /* ── Subnav ────────────────────────────────────────────────── */
   .cp-subnav {
@@ -7680,21 +7538,9 @@
     letter-spacing: -0.015em;
     color: var(--color-text);
   }
-  /* ── Two-column section layout (left=heading, right=content) ── */
-  .cp-section-grid {
-    display: grid;
-    grid-template-columns: minmax(300px, 1fr) minmax(0, 1.5fr);
-    gap: clamp(48px, 5vw, 72px);
-    align-items: start;
-  }
-  .cp-section-heading .cp-eyebrow { margin-bottom: 12px; }
-  .cp-section-heading .cp-title { margin-bottom: 0; }
-  @media (max-width: 1023px) {
-    .cp-section-grid { grid-template-columns: 1fr; gap: 32px; }
-    .cp-section-heading .cp-title { margin-bottom: 20px; font-size: clamp(34px, 7vw, 40px); }
-  }
+  /* (cp-section-grid + cp-section-heading: removed — never rendered in JSX.
+     If a two-column header pattern is needed later, reintroduce intentionally.) */
   @media (max-width: 640px) {
-    .cp-section-grid { gap: 20px; }
     .cp-title { font-size: clamp(32px, 9vw, 44px); line-height: 0.97; }
   }
   /* ── Verdict: framing phrase — uses tt-section-intro scale ──── */
@@ -7735,47 +7581,9 @@
     color: var(--color-text-strong);
     max-width: 760px;
   }
-  /* ── Verdict: decision columns ──────────────────────────────── */
-  .cp-decision-columns {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  @media (max-width: 767px) { .cp-decision-columns { grid-template-columns: 1fr; } }
-  .cp-decision-col {
-    border-top: 1px solid var(--color-border);
-    padding: 28px 40px 28px 0;
-  }
-  .cp-decision-col + .cp-decision-col { border-left: 1px solid var(--color-border); padding-left: 40px; padding-right: 0; }
-  @media (max-width: 767px) {
-    .cp-decision-col { border-left: none !important; padding: 24px 0 12px; }
-  }
-  .cp-decision-label {
-    display: block;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-kicker); font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted); margin-bottom: 18px;
-  }
-  /* TIER 1 — body-large, used for the lede column inside the decision split */
-  .cp-decision-text {
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-body-large);
-    line-height: 1.5;
-    font-weight: 400;
-    letter-spacing: -0.015em;
-    color: var(--color-text);
-    margin: 0;
-  }
-  .cp-decision-note {
-    margin: 14px 0 0;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-body); line-height: 1.45; color: var(--color-muted);
-  }
-  .cp-decision-note span {
-    display: block; font-size: var(--tt-size-kicker); font-weight: 700;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: #C0392B; margin-bottom: 4px;
-  }
+  /* (cp-decision-columns / cp-decision-col / cp-decision-label / cp-decision-text /
+     cp-decision-note: removed — never rendered in JSX. The active
+     cp-decision-list/-item/-condition/-answer family lives further down.) */
 
   /* ── Verdict section: 2-card layout (Sprint 67) ─────────── */
   /* Header: 2-col — title left, intro phrase right */
@@ -8457,19 +8265,7 @@
   }
 
   /* ── Section counter — large architectural number ──────────── */
-  /* Decorative structural element: visible in dark (border tonal),  */
-  /* ultra-subtle in light (near-bg). Color via border variable.     */
-  .cp-section-counter {
-    display: block;
-    font-family: var(--font-brand);
-    font-size: clamp(48px, 5vw, 64px);
-    font-weight: 700;
-    line-height: 0.9;
-    letter-spacing: -0.06em;
-    color: var(--color-border);
-    margin-bottom: 20px;
-    user-select: none;
-  }
+  /* (cp-section-counter removed — decorative numbering dropped) */
 
   /* ── Limits grid ───────────────────────────────────────────── */
   .cp-limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -8905,16 +8701,7 @@
     border-bottom: 1px solid var(--color-border-soft);
   }
   .cp-limites-risk-row:first-child { border-top: 1px solid var(--color-border-soft); }
-  .cp-limites-risk-num {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: var(--color-muted-light);
-    flex-shrink: 0;
-    min-width: 24px;
-    padding-top: 2px;
-  }
+  /* (cp-limites-risk-num removed — decorative numbering dropped) */
   .cp-limites-risk-title {
     margin: 0 0 4px;
     font-family: var(--font-ui);
