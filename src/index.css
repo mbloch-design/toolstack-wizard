@@ -7332,8 +7332,7 @@
 
   /* ── Hero ──────────────────────────────────────────────────── */
   .cp-hero {
-    background: var(--color-bg, #F8F8F4);
-    border-bottom: 1px solid var(--color-border, #DADAD4);
+    background: var(--color-bg);
     padding: var(--tt-hero-pt, 72px) 0 var(--tt-hero-pb, 64px);
   }
   .cp-hero-inner {
@@ -7381,7 +7380,7 @@
   }
   .cp-hero-title-logo { flex-shrink: 0; }
   .cp-hero-title-vs {
-    color: var(--color-border);
+    color: var(--color-muted-light);
     font-weight: 700;
   }
   /* Uses tt-hero-subtitle scale */
@@ -7392,7 +7391,7 @@
     font-size: var(--tt-size-hero-sub);
     line-height: 1.35;
     letter-spacing: -0.02em;
-    color: var(--color-muted);
+    color: var(--color-text-strong);
   }
   /* Intro paragraph — editorial context, one or two sentences */
   .cp-hero-intro {
@@ -7402,7 +7401,7 @@
     font-size: var(--tt-size-body-large);
     line-height: 1.48;
     letter-spacing: -0.02em;
-    color: var(--color-muted);
+    color: var(--color-text);
   }
 
   @media (max-width: 640px) {

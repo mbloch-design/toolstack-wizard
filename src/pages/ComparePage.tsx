@@ -2107,12 +2107,12 @@ const ComparePage = () => {
           {/* Title with inline logos */}
           <h1 className="cp-hero-title">
             <span className="cp-hero-title-tool">
-              <ToolLogo tool={toolA} size={40} className="cp-hero-title-logo" aria-hidden="true" />
+              <ToolLogo tool={toolA} size={72} className="cp-hero-title-logo" aria-hidden="true" />
               {toolA.name}
             </span>
             <span className="cp-hero-title-vs" aria-hidden="true">vs</span>
             <span className="cp-hero-title-tool">
-              <ToolLogo tool={toolB} size={40} className="cp-hero-title-logo" aria-hidden="true" />
+              <ToolLogo tool={toolB} size={72} className="cp-hero-title-logo" aria-hidden="true" />
               {toolB.name}<span aria-hidden="true">.</span>
             </span>
           </h1>
