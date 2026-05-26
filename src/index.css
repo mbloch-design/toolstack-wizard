@@ -8405,15 +8405,18 @@
   }
 
   /* ── Section 01 — quick decision list ─────────────────────── */
+  /* 30-second scan: condition + verdict tight on one line.
+     Capped width so the pair stays visually locked on wide screens. */
   .cp-decision-list {
     margin-top: 40px;
+    max-width: 920px;
     border-top: 2px solid var(--color-border-strong);
   }
   .cp-decision-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 40px;
     align-items: baseline;
-    justify-content: space-between;
-    gap: 40px;
     padding: 22px 0;
     border-bottom: 1px solid var(--color-border-soft);
   }
@@ -8421,19 +8424,31 @@
   .cp-decision-condition {
     margin: 0;
     font-family: var(--font-ui);
-    font-size: var(--tt-size-body); font-weight: 400; letter-spacing: -0.015em; line-height: 1.45;
-    color: var(--color-muted);
-    flex: 1;
+    font-size: var(--tt-size-body-large);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    color: var(--color-text);
   }
   .cp-decision-answer {
     margin: 0;
     font-family: var(--font-ui);
-    font-size: var(--tt-size-metric); font-weight: 700; letter-spacing: -0.045em;
-    color: var(--color-text);
-    flex-shrink: 0;
+    font-size: var(--tt-size-body-large);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    color: var(--color-text-strong);
+    white-space: nowrap;
+  }
+  .cp-decision-answer::before {
+    content: "→ ";
+    color: var(--color-muted-light);
+    font-weight: 400;
+    margin-right: 6px;
   }
   @media (max-width: 600px) {
-    .cp-decision-item { flex-direction: column; gap: 6px; }
+    .cp-decision-item { grid-template-columns: 1fr; row-gap: 8px; padding: 18px 0; }
+    .cp-decision-answer::before { display: none; }
   }
 
   /* ── Sub-section divider (content blocks within a section) ── */
