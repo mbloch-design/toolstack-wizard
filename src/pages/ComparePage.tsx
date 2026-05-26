@@ -133,7 +133,7 @@ interface CompareProfile {
   choice: string; reason: string; reasonEn: string;
   limit: string; limitEn: string;
 }
-interface CompareFaqItem { q: string; qEn: string; a: string; aEn: string; theme?: string; themeEn?: string; }
+interface CompareFaqItem { q: string; qEn: string; a: string; aEn: string; }
 interface CompareAlt { slug: string; name: string; reason: string; reasonEn: string; price?: string; }
 interface CompareDecisionRow {
   context: string; contextEn: string;
@@ -2407,55 +2407,19 @@ const ComparePage = () => {
               )}
             </div>
 
-            {/* FAQ — grouped by theme when present, otherwise flat accordion */}
-            {content.faq.length > 0 && (() => {
-              // Group by theme (preserving first-seen order); fallback to "Général" / "General"
-              const fallbackTheme = lang === "fr" ? "Général" : "General";
-              const themeOrder: string[] = [];
-              const themeMap = new Map<string, CompareFaqItem[]>();
-              content.faq.forEach((item) => {
-                const themeKey = (lang === "fr" ? item.theme : item.themeEn) ?? item.theme ?? fallbackTheme;
-                if (!themeMap.has(themeKey)) {
-                  themeOrder.push(themeKey);
-                  themeMap.set(themeKey, []);
-                }
-                themeMap.get(themeKey)!.push(item);
-              });
-              const themes = themeOrder.map((name) => ({ name, items: themeMap.get(name)! }));
-              const isGrouped = themes.length > 1;
-
-              const slugifyTheme = (name: string) =>
-                "faq-" + name.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-
-              return (
-                <>
-                  {isGrouped && (
-                    <nav className="cp-faq-nav" aria-label={t("Thèmes de la FAQ", "FAQ themes")}>
-                      {themes.map((theme) => (
-                        <a key={theme.name} href={`#${slugifyTheme(theme.name)}`} className="cp-faq-nav-link">
-                          {theme.name}
-                        </a>
-                      ))}
-                    </nav>
-                  )}
-                  {themes.map((theme, themeIdx) => (
-                    <div key={theme.name} className="cp-faq-theme" id={isGrouped ? slugifyTheme(theme.name) : undefined}>
-                      {isGrouped && <h3 className="cp-faq-theme-title">{theme.name}</h3>}
-                      <div className="cp-faq-list">
-                        {theme.items.map((item, i) => (
-                          <FaqItem
-                            key={`${theme.name}-${i}`}
-                            question={lang === "fr" ? item.q : item.qEn}
-                            answer={lang === "fr" ? item.a : item.aEn}
-                            defaultOpen={themeIdx === 0 && i === 0}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </>
-              );
-            })()}
+            {/* FAQ accordion */}
+            {content.faq.length > 0 && (
+              <div>
+                {content.faq.map((item, i) => (
+                  <FaqItem
+                    key={i}
+                    question={lang === "fr" ? item.q : item.qEn}
+                    answer={lang === "fr" ? item.a : item.aEn}
+                    defaultOpen={i === 0}
+                  />
+                ))}
+              </div>
+            )}
 
             {/* Risks — sub-section if preceded by FAQ */}
             {content.tooltrimRisks.length > 0 && (
