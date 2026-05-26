@@ -208,7 +208,7 @@
     --tt-size-cta-h:         clamp(22px, 2.5vw, 36px);    /* CTA band heading */
 
     /* ── Section / hero spacing ── */
-    --tt-section-y: clamp(80px, 9vw, 140px);  /* Section vertical padding */
+    --tt-section-y: clamp(56px, 5.5vw, 88px);  /* Section vertical padding — tightened so consecutive sections read as flow, not islands */
     --tt-hero-pt:   72px;                       /* Hero padding-top */
     --tt-hero-pb:   64px;                       /* Hero padding-bottom */
 
