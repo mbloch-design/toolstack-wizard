@@ -2299,7 +2299,6 @@ const ComparePage = () => {
             {content.costReality.map((row, index) => (
               <div key={row.label} className="cp-compare-row" role="row">
                 <div className="cp-compare-row-label" role="cell">
-                  <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                   <p className="cp-compare-row-title">{lang === "fr" ? row.label : row.labelEn}</p>
                   <p className="cp-compare-row-verdict">{lang === "fr" ? row.recommendation : row.recommendationEn}</p>
                 </div>
@@ -2353,7 +2352,6 @@ const ComparePage = () => {
                     return (
                       <div key={criterion.title} className="cp-compare-row" role="row">
                         <div className="cp-compare-row-label" role="cell">
-                          <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                           <p className="cp-compare-row-title">{lang === "fr" ? criterion.title : criterion.titleEn}</p>
                           <p className="cp-compare-row-verdict">{lang === "fr" ? criterion.decision : criterion.decisionEn}</p>
                         </div>
@@ -2376,7 +2374,6 @@ const ComparePage = () => {
                     return (
                       <div key={row.criterion} className="cp-compare-row" role="row">
                         <div className="cp-compare-row-label" role="cell">
-                          <span className="cp-compare-row-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                           <p className="cp-compare-row-title">{crit}</p>
                           {verdict && <p className="cp-compare-row-verdict">{verdict}</p>}
                         </div>
