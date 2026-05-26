@@ -7384,8 +7384,9 @@
     font-weight: 700;
   }
   /* Uses tt-hero-subtitle scale */
+  /* Hero promise — section "promise" peak, bolded sub-headline */
   .cp-hero-promise {
-    max-width: 680px;
+    max-width: 68ch;
     margin: 0 0 32px;
     font-family: var(--font-ui);
     font-size: var(--tt-size-hero-sub);
@@ -7393,14 +7394,14 @@
     letter-spacing: -0.02em;
     color: var(--color-text-strong);
   }
-  /* Intro paragraph — editorial context, one or two sentences */
+  /* TIER 1 — lede paragraph (one or two sentences under a heading) */
   .cp-hero-intro {
-    max-width: 680px;
+    max-width: 68ch;
     margin: 0 0 32px;
     font-family: var(--font-ui);
     font-size: var(--tt-size-body-large);
-    line-height: 1.48;
-    letter-spacing: -0.02em;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
     color: var(--color-text);
   }
 
@@ -7659,14 +7660,15 @@
   }
   .cp-title--section-lead { margin-bottom: 28px; }
   /* Intro paragraph beneath a full-width title (used in coût, etc.) */
+  /* TIER 1 — lede paragraph under section H2 */
   .cp-section-intro {
-    max-width: 820px;
+    max-width: 68ch;
     margin: 32px 0 48px;
     font-family: var(--font-ui);
     font-size: var(--tt-size-body-large);
-    line-height: 1.48;
-    letter-spacing: -0.02em;
-    color: var(--color-muted);
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    color: var(--color-text);
   }
   /* ── Two-column section layout (left=heading, right=content) ── */
   .cp-section-grid {
@@ -7743,12 +7745,13 @@
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--color-muted); margin-bottom: 18px;
   }
+  /* TIER 1 — body-large, used for the lede column inside the decision split */
   .cp-decision-text {
     font-family: var(--font-ui);
     font-size: var(--tt-size-body-large);
-    line-height: 1.42;
+    line-height: 1.5;
     font-weight: 400;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
     color: var(--color-text);
     margin: 0;
   }
@@ -7825,13 +7828,15 @@
   }
   .cp-matrix-header .cp-eyebrow { margin-bottom: 12px; }
   .cp-matrix-header .cp-title { margin-bottom: 0; max-width: none; }
+  /* TIER 1 — lede paragraph under matrix-header H2 (same tier as section-intro) */
   .cp-matrix-intro {
+    max-width: 68ch;
     margin: 20px 0 0;
     font-family: var(--font-ui);
-    font-size: var(--tt-size-body);
+    font-size: var(--tt-size-body-large);
     line-height: 1.5;
-    letter-spacing: -0.02em;
-    color: var(--color-muted);
+    letter-spacing: -0.015em;
+    color: var(--color-text);
   }
 
   /* Matrix wrapper — editorial open table, no card frame */
@@ -8179,12 +8184,13 @@
   .cp-tipping-card-arrow {
     display: none;
   }
+  /* TIER 1 — body-large in the verdict logic blocks (par défaut / bascule si) */
   .cp-tipping-card-text {
     margin: 12px 0 0;
     font-family: var(--font-ui);
     font-size: var(--tt-size-body-large);
-    line-height: 1.4;
-    letter-spacing: -0.02em;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
     font-weight: 500;
     color: var(--color-text-strong);
   }
@@ -8220,12 +8226,13 @@
     border-bottom: 1px solid var(--color-border-soft);
   }
   .cp-tipping-rule:last-child { border-bottom: 1px solid var(--color-border); }
+  /* TIER 2 — body standard */
   .cp-tipping-rule p {
     margin: 0;
     padding: 20px 0;
     font-family: var(--font-ui);
     font-size: var(--tt-size-body);
-    line-height: 1.5;
+    line-height: 1.55;
     letter-spacing: -0.01em;
     color: var(--color-text);
   }
@@ -8386,13 +8393,14 @@
     border-bottom: 1px solid var(--color-border-soft);
   }
   .cp-decision-item:last-child { border-bottom: 1px solid var(--color-border); }
+  /* TIER 1 — lede pair (condition + answer) on the "Ma situation" list */
   .cp-decision-condition {
     margin: 0;
     font-family: var(--font-ui);
     font-size: var(--tt-size-body-large);
     font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.4;
+    letter-spacing: -0.015em;
+    line-height: 1.5;
     color: var(--color-text);
   }
   .cp-decision-answer {
@@ -8497,7 +8505,7 @@
     font-family: var(--font-ui); font-size: var(--tt-size-card-body);
     font-weight: 600; color: var(--color-text); letter-spacing: -0.02em;
   }
-  .cp-alt-reason { font-family: var(--font-ui); font-size: var(--tt-size-card-body); letter-spacing: -0.01em; color: var(--color-muted); margin-top: 2px; }
+  .cp-alt-reason { font-family: var(--font-ui); font-size: var(--tt-size-card-body); line-height: 1.5; letter-spacing: -0.01em; color: var(--color-muted); margin-top: 2px; }
   .cp-alt-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
   .cp-alt-price { font-family: var(--font-ui); font-size: var(--tt-size-card-body); font-weight: 600; letter-spacing: -0.02em; color: var(--color-text); }
   .cp-alt-cta {
@@ -8522,14 +8530,15 @@
     padding-top: 48px;
     padding-bottom: 0;
   }
+  /* TIER 1 — lede paragraph under CTA heading */
   .cp-cta-band-desc {
     font-family: var(--font-ui);
     font-size: var(--tt-size-body-large);
-    line-height: 1.48;
-    color: var(--color-muted);
-    max-width: 540px;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    color: var(--color-text);
+    max-width: 56ch;
     margin: 12px 0 28px;
-    letter-spacing: -0.02em;
   }
   @media (max-width: 640px) {
     .cp-cta-band .cp-container { padding: 28px 20px; }
@@ -8799,11 +8808,13 @@
     letter-spacing: -0.02em;
     color: var(--color-text);
   }
+  /* TIER 3 — body compact */
   .cp-pitfall-consequence {
     margin: 0;
     font-family: var(--font-ui);
     font-size: var(--tt-size-card-body);
-    line-height: 1.55;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
     color: var(--color-muted);
     flex: 1;
   }
@@ -8859,11 +8870,13 @@
     letter-spacing: -0.02em;
     color: var(--color-text);
   }
+  /* TIER 3 — body compact */
   .cp-limites-risk-fix {
     margin: 0;
     font-family: var(--font-ui);
     font-size: var(--tt-size-card-body);
-    line-height: 1.55;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
     color: var(--color-muted);
   }
   .cp-limites-alts { display: flex; flex-direction: column; }
