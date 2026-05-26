@@ -249,6 +249,7 @@ interface BattleUseCaseScore {
 }
 interface BattleRawData {
   slug: string;
+  checkedAt?: string;
   tooltrimAtAGlance?: {
     defaultChoice?: string;
     defaultChoiceLabel?: string;
@@ -455,6 +456,7 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
   const alternatives = (data.related?.alternatives || []).slice(0, 6);
 
   return {
+    checkedAt: data.checkedAt,
     framing: comparison.falseSimilarity || comparison.mainDifference,
     framingEn: asEnglishCopy(comparison.falseSimilarity || comparison.mainDifference),
     verdictShort: verd?.summary || comparison.decisionSummary,
