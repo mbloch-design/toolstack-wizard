@@ -48,7 +48,7 @@ export interface DowngradePlan {
 }
 
 export type ToolType = "metier" | "plugin" | "ia" | "gestion" | "satellite";
-export type PrescriptionQuality = "ferme" | "question" | "silence";
+export type PrescriptionQuality = "ferme" | "oui" | "question" | "silence";
 
 export interface PrescriptionOutput {
   action: string;

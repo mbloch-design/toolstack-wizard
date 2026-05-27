@@ -62,10 +62,9 @@ const TestimonialsSection = () => {
         <div className="home-case-header">
           <p className="home-case-eyebrow">{t("Cas types", "Typical cases")}</p>
           <h2 className="home-case-title">
-            {t(
-              <>Les mêmes erreurs reviennent souvent.<br />Pas toujours au même endroit.</>,
-              <>The same mistakes come back often.<br />Not always in the same place.</>,
-            )}
+            {lang === "fr"
+              ? <>Les mêmes erreurs reviennent souvent.<br />Pas toujours au même endroit.</>
+              : <>The same mistakes come back often.<br />Not always in the same place.</>}
           </h2>
           <p className="home-case-subtitle">
             {t(

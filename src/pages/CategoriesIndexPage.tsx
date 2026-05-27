@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
+import type { Category } from "@/data/types";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import EditorialHero from "@/components/EditorialHero";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
@@ -223,7 +224,7 @@ const CategoriesIndexPage = () => {
 
     return ids
       .map((id) => categories.find((cat) => cat.id === id))
-      .filter(Boolean);
+      .filter((cat): cat is Category => Boolean(cat));
   }, [activeIntentConfig, categories]);
 
   const featuredStacks = useMemo(() => {
@@ -449,7 +450,7 @@ const CategoriesIndexPage = () => {
             {CATEGORY_GROUPS.map((group) => {
               const groupCategories = group.categoryIds
                 .map((id) => categories.find((cat) => cat.id === id))
-                .filter(Boolean);
+                .filter((cat): cat is Category => Boolean(cat));
 
               if (groupCategories.length === 0) return null;
 
@@ -527,7 +528,7 @@ function CategoryCard({
 }: {
   cat: ReturnType<typeof useCategories>["categories"][number];
   prefix: string;
-  t: (fr: string, en?: string) => string;
+  t: (fr: string, en: string) => string;
   stats?: { count: number; freeCount: number; paidCount: number };
   featured?: boolean;
 }) {

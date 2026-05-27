@@ -198,6 +198,8 @@ export interface StackGuide {
   savings: number;
   risk: string;
   riskEn: string;
+  riskSnippet?: string;
+  riskSnippetEn?: string;
   bestFor: string;
   bestForEn: string;
   avoidIf: string;

@@ -12,7 +12,7 @@ import type { Tool } from "@/data/types";
 interface ToolCardEditorialProps {
   tool: Tool;
   prefix: string;
-  t: (fr: string | React.ReactNode, en: string | React.ReactNode) => string | React.ReactNode;
+  t: (fr: string, en: string) => string;
   categoryLabel?: string;
   lang?: "fr" | "en";
 }

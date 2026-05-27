@@ -182,10 +182,9 @@ const HeroSection = () => {
             </span>
 
             <h1 className="eh-title" style={{ textAlign: "left" }}>
-              {t(
-                <>Tu paies des outils<br />que tu n’utilises plus.<br />Il est temps<br />de le savoir.</>,
-                <>You pay for tools<br />you no longer use.<br />It’s time<br />to know.</>,
-              )}
+              {lang === "fr"
+                ? <>Tu paies des outils<br />que tu n’utilises plus.<br />Il est temps<br />de le savoir.</>
+                : <>You pay for tools<br />you no longer use.<br />It’s time<br />to know.</>}
             </h1>
 
             <p className="eh-description" style={{ maxWidth: 480, textAlign: "left", marginTop: 24 }}>

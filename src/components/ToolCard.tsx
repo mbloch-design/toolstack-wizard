@@ -13,7 +13,7 @@ import type { Tool } from "@/data/types";
 interface ToolCardProps {
   tool: Tool;
   prefix: string;
-  t: (fr: string | React.ReactNode, en: string | React.ReactNode) => string | React.ReactNode;
+  t: (fr: string, en: string) => string;
   variant?: "default" | "featured" | "list-row";
   categoryLabel?: string;
   rank?: number;               // list-row only
