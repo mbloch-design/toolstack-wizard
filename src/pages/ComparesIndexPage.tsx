@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -10,24 +10,6 @@ import { FEATURED_COMPARISONS } from "@/data/comparisons";
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 function findTool(tools: Tool[], idOrSlug: string): Tool | undefined {
   return tools.find(t => t.id === idOrSlug || t.slug === idOrSlug);
-}
-
-function getPriceLabel(tool: Tool, t: (fr: string, en: string) => string): string {
-  const v5 = tool.pricing_v5?.compare_price_monthly_eur;
-  const price = v5 != null && v5 > 0 ? v5 : tool.defaultMonthlyPrice;
-  if (price > 0) return `${price}€/${t("mois", "mo")}`;
-  return t("Gratuit", "Free");
-}
-
-/* ─── Slug matching (bidirectional) ──────────────────────────────────────── */
-function findExistingComparison(
-  slugA: string,
-  slugB: string,
-): { exists: boolean; slugPair: string | null } {
-  const ab = `${slugA}-vs-${slugB}`;
-  const ba = `${slugB}-vs-${slugA}`;
-  const found = FEATURED_COMPARISONS.find(c => c.slugPair === ab || c.slugPair === ba);
-  return { exists: !!found, slugPair: found?.slugPair ?? null };
 }
 
 /* ─── Category detection ─────────────────────────────────────────────────── */
@@ -118,159 +100,19 @@ function getCardBestFor(a: Tool, b: Tool, lang: "fr" | "en"): string {
   if (keepA && keepB) return `${a.name}: ${keepA}. ${b.name}: ${keepB}.`;
   return deriveCardDesc(a, b, lang);
 }
-function getCardRisk(a: Tool, b: Tool, lang: "fr" | "en"): string {
-  const avoidA = lang === "fr"
-    ? (a.verdict?.avoidIf || [])[0]
-    : (a.verdictEn?.avoidIf || a.verdict?.avoidIf || [])[0];
-  const avoidB = lang === "fr"
-    ? (b.verdict?.avoidIf || [])[0]
-    : (b.verdictEn?.avoidIf || b.verdict?.avoidIf || [])[0];
-  if (avoidA || avoidB) {
-    return [avoidA && `${a.name}: ${avoidA}`, avoidB && `${b.name}: ${avoidB}`].filter(Boolean).join(". ");
-  }
-  return lang === "fr"
-    ? "Risque : choisir au nombre de fonctions plutôt qu'au besoin réel."
-    : "Risk: choosing by feature count instead of real need.";
-}
+/* (getCardRisk removed — cards no longer surface "Risque" signals;
+   risk content lives inside the comparison page, not the listing card.) */
 
-/* ─── ToolInput — autocomplete with keyboard nav ─────────────────────────── */
-interface ToolInputProps {
-  inputId: string;
-  label: string;
-  placeholder: string;
-  value: string;
-  selected: Tool | null;
-  suggestions: Tool[];
-  onInput: (v: string) => void;
-  onSelect: (tool: Tool) => void;
-  onClear: () => void;
-  t: (fr: string, en: string) => string;
-}
-
-function ToolInput({
-  inputId, label, placeholder, value,
-  selected, suggestions, onInput, onSelect, onClear, t,
-}: ToolInputProps) {
-  const [open, setOpen] = useState(false);
-  const [highlighted, setHighlighted] = useState(-1);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  /* Reset highlight when suggestions list changes */
-  useEffect(() => { setHighlighted(-1); }, [suggestions.length]);
-
-  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      setOpen(true);
-      setHighlighted(h => Math.min(h + 1, suggestions.length - 1));
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setHighlighted(h => Math.max(h - 1, 0));
-    } else if (e.key === "Enter" && highlighted >= 0 && suggestions[highlighted]) {
-      e.preventDefault();
-      onSelect(suggestions[highlighted]);
-      setOpen(false);
-    } else if (e.key === "Escape") {
-      setOpen(false);
-    }
-  }
-
-  if (selected) {
-    return (
-      <div className="cix-vs-selected">
-        <div className="cix-vs-selected-logo">
-          <ToolLogo tool={selected} size={18} />
-        </div>
-        <span className="cix-vs-selected-name">{selected.name}</span>
-        <button
-          type="button"
-          onClick={onClear}
-          className="cix-vs-selected-clear"
-          aria-label={t("Effacer", "Clear")}
-        >
-          ✕
-        </button>
-      </div>
-    );
-  }
-
-  return (
-    <div className="cix-vs-input-wrap">
-      <label htmlFor={inputId} className="sr-only">{label}</label>
-      <input
-        id={inputId}
-        ref={inputRef}
-        type="text"
-        value={value}
-        autoComplete="off"
-        placeholder={placeholder}
-        className="cix-vs-input-field"
-        onChange={e => { onInput(e.target.value); setOpen(true); }}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setTimeout(() => setOpen(false), 180)}
-        onKeyDown={handleKeyDown}
-        aria-autocomplete="list"
-        aria-expanded={open && suggestions.length > 0}
-        aria-haspopup="listbox"
-      />
-      {open && suggestions.length > 0 && (
-        <div className="cix-vs-dropdown" role="listbox" aria-label={label}>
-          {suggestions.map((tool, i) => (
-            <button
-              key={tool.id}
-              type="button"
-              role="option"
-              aria-selected={i === highlighted}
-              onMouseDown={() => { onSelect(tool); setOpen(false); }}
-              onMouseEnter={() => setHighlighted(i)}
-              className={`cix-vs-option${i === highlighted ? " cix-vs-option--highlighted" : ""}`}
-            >
-              <div className="cix-vs-option-logo">
-                <ToolLogo tool={tool} size={16} />
-              </div>
-              <span className="cix-vs-option-name">{tool.name}</span>
-              {tool.categoryId && (
-                <span className="cix-vs-option-cat">{tool.categoryId}</span>
-              )}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
+/* (ToolInput + ToolInputProps removed — replaced by single search field) */
 
 /* ─── Main component ─────────────────────────────────────────────────────── */
 const ComparesIndexPage = () => {
   const { lang, t, prefix } = useLang();
   const { tools, loading } = useTools();
-  const navigate = useNavigate();
 
-  /* VS module state */
-  const [searchA, setSearchA] = useState("");
-  const [searchB, setSearchB] = useState("");
-  const [selectedA, setSelectedA] = useState<Tool | null>(null);
-  const [selectedB, setSelectedB] = useState<Tool | null>(null);
-
-  /* Listing state */
+  /* Single search query + category filter */
+  const [query, setQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState<CompareCategoryId>("all");
-
-  /* Autocomplete suggestions */
-  const suggestionsA = useMemo(() => {
-    if (!searchA.trim()) return [];
-    const q = searchA.toLowerCase();
-    return tools
-      .filter(tool => (tool.name ?? "").toLowerCase().includes(q) && tool.id !== selectedB?.id)
-      .slice(0, 7);
-  }, [searchA, tools, selectedB]);
-
-  const suggestionsB = useMemo(() => {
-    if (!searchB.trim()) return [];
-    const q = searchB.toLowerCase();
-    return tools
-      .filter(tool => (tool.name ?? "").toLowerCase().includes(q) && tool.id !== selectedA?.id)
-      .slice(0, 7);
-  }, [searchB, tools, selectedA]);
 
   /* Resolved comparison list */
   const resolvedComparisons = useMemo(() =>
@@ -282,66 +124,27 @@ const ComparesIndexPage = () => {
     [tools],
   );
 
-  /* Determine VS module state */
-  type CompareState =
-    | "idle"         // nothing selected
-    | "one"          // one tool selected
-    | "found"        // both selected, comparison exists
-    | "unavailable"; // both selected, comparison doesn't exist
-
-  const compareState = useMemo((): CompareState => {
-    if (!selectedA && !selectedB) return "idle";
-    if (!selectedA || !selectedB) return "one";
-    const slugA = selectedA.slug || selectedA.id;
-    const slugB = selectedB.slug || selectedB.id;
-    const { exists } = findExistingComparison(slugA, slugB);
-    return exists ? "found" : "unavailable";
-  }, [selectedA, selectedB]);
-
-  /* Filtered listing */
+  /* Filtered listing — single text query (matches either tool's name) + category */
   const filteredComparisons = useMemo(() => {
     let result = resolvedComparisons;
-
-    /* Cas C — one tool selected: show only comparisons involving that tool */
-    if (compareState === "one") {
-      const sel = selectedA || selectedB;
-      if (sel) {
-        const id = sel.id;
-        const slug = sel.slug || sel.id;
-        result = result.filter(c =>
-          c.toolA === id || c.toolA === slug ||
-          c.toolB === id || c.toolB === slug,
-        );
-      }
+    const q = query.trim().toLowerCase();
+    if (q) {
+      result = result.filter(c =>
+        (c.toolAData?.name ?? "").toLowerCase().includes(q) ||
+        (c.toolBData?.name ?? "").toLowerCase().includes(q),
+      );
     }
-
-    /* Category filter */
     if (categoryFilter !== "all") {
       result = result.filter(c => getSlugCategory(c.slugPair) === categoryFilter);
     }
-
     return result;
-  }, [resolvedComparisons, compareState, selectedA, selectedB, categoryFilter]);
+  }, [resolvedComparisons, query, categoryFilter]);
 
-  /* Related comparisons for "unavailable" state */
+  /* If query has no matches, surface a few related comparisons */
   const relatedComparisons = useMemo(() => {
-    if (compareState !== "unavailable") return [];
-    const ids = [selectedA?.id, selectedA?.slug, selectedB?.id, selectedB?.slug].filter(Boolean);
-    return resolvedComparisons.filter(c => ids.includes(c.toolA) || ids.includes(c.toolB)).slice(0, 4);
-  }, [compareState, resolvedComparisons, selectedA, selectedB]);
-
-  function handleCompare() {
-    if (compareState !== "found" || !selectedA || !selectedB) return;
-    const slugA = selectedA.slug || selectedA.id;
-    const slugB = selectedB.slug || selectedB.id;
-    const { slugPair } = findExistingComparison(slugA, slugB);
-    if (slugPair) navigate(`${prefix}/comparatif/${slugPair}`);
-  }
-
-  function clearAll() {
-    setSelectedA(null); setSearchA("");
-    setSelectedB(null); setSearchB("");
-  }
+    if (filteredComparisons.length > 0 || !query.trim()) return [];
+    return resolvedComparisons.slice(0, 4);
+  }, [filteredComparisons.length, query, resolvedComparisons]);
 
   /* SEO */
   useEffect(() => {
@@ -375,8 +178,6 @@ const ComparesIndexPage = () => {
     );
   }
 
-  const canCompare = compareState === "found";
-
   return (
     <div className="min-h-screen bg-background">
 
@@ -396,89 +197,37 @@ const ComparesIndexPage = () => {
             )}
           </p>
 
-          {/* ── VS Module ─────────────────────────────────────────────── */}
-          <div className="cix-vs-module">
-
-            <span className="cix-vs-eyebrow">
-              {t("COMPARER DEUX OUTILS", "COMPARE TWO TOOLS")}
-            </span>
-
-            {/* [Outil A] VS [Outil B] [Comparer] */}
-            <div className="cix-vs-row">
-
-              <ToolInput
-                inputId="vs-tool-a"
-                label={t("Outil 1", "Tool 1")}
-                placeholder={t("Ex. Notion", "E.g. Notion")}
-                value={searchA}
-                selected={selectedA}
-                suggestions={suggestionsA}
-                onInput={setSearchA}
-                onSelect={(tool) => { setSelectedA(tool); setSearchA(""); }}
-                onClear={() => { setSelectedA(null); setSearchA(""); }}
-                t={t}
+          {/* ── Single search field — filters the listing below in real time ── */}
+          <div className="cix-search-module">
+            <label htmlFor="cix-search-input" className="cix-search-label">
+              {t("Filtrer les comparatifs", "Filter comparisons")}
+            </label>
+            <div className="cix-search-field">
+              <input
+                id="cix-search-input"
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={t("Ex. Notion, ChatGPT, Figma…", "E.g. Notion, ChatGPT, Figma…")}
+                className="cix-search-input"
+                autoComplete="off"
               />
-
-              {/* VS badge */}
-              <div className="cix-vs-badge" aria-hidden>VS</div>
-
-              <ToolInput
-                inputId="vs-tool-b"
-                label={t("Outil 2", "Tool 2")}
-                placeholder={t("Ex. Airtable", "E.g. Airtable")}
-                value={searchB}
-                selected={selectedB}
-                suggestions={suggestionsB}
-                onInput={setSearchB}
-                onSelect={(tool) => { setSelectedB(tool); setSearchB(""); }}
-                onClear={() => { setSelectedB(null); setSearchB(""); }}
-                t={t}
-              />
-
-              {/* Compare button */}
-              <button
-                type="button"
-                onClick={handleCompare}
-                disabled={!canCompare}
-                className="cix-vs-btn"
-                aria-disabled={!canCompare}
-              >
-                {t("Comparer", "Compare")}
-              </button>
-
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  className="cix-search-clear"
+                  aria-label={t("Effacer", "Clear")}
+                >
+                  ×
+                </button>
+              )}
             </div>
 
-            {/* Cas D: nothing selected */}
-            {compareState === "idle" && (
-              <p className="cix-vs-hint">
-                {t("Sélectionne deux outils pour voir s'il existe un comparatif.", "Select two tools to find an existing comparison.")}
-              </p>
-            )}
-
-            {/* Cas C: one tool selected */}
-            {compareState === "one" && (
-              <p className="cix-vs-hint">
-                {t(
-                  `${filteredComparisons.length} comparatif${filteredComparisons.length !== 1 ? "s" : ""} trouvé${filteredComparisons.length !== 1 ? "s" : ""} — ajoute un deuxième outil pour comparer directement.`,
-                  `${filteredComparisons.length} comparison${filteredComparisons.length !== 1 ? "s" : ""} found — add a second tool to compare directly.`,
-                )}
-              </p>
-            )}
-
-            {/* Cas A: both selected, comparison exists */}
-            {compareState === "found" && selectedA && selectedB && (
-              <p className="cix-vs-hint cix-vs-hint--success">
-                {t(
-                  `Le comparatif ${selectedA.name} vs ${selectedB.name} est disponible.`,
-                  `The ${selectedA.name} vs ${selectedB.name} comparison is available.`,
-                )}
-              </p>
-            )}
-
-            {/* Popular suggestions */}
-            <div className="cix-vs-popular">
-              <span className="cix-vs-popular-label">{t("POPULAIRES", "POPULAR")}</span>
-              {POPULAR_SUGGESTIONS.map(s => (
+            {/* Popular suggestions — quick entry points */}
+            <div className="cix-popular">
+              <span className="cix-popular-label">{t("POPULAIRES", "POPULAR")}</span>
+              {POPULAR_SUGGESTIONS.map((s) => (
                 <Link
                   key={s.slugPair}
                   to={`${prefix}/comparatif/${s.slugPair}`}
@@ -488,220 +237,104 @@ const ComparesIndexPage = () => {
                 </Link>
               ))}
             </div>
-
           </div>
-          {/* /VS Module */}
 
         </div>
       </section>
-
-      {/* ── Cas B: unavailable ────────────────────────────────────────────── */}
-      {compareState === "unavailable" && selectedA && selectedB && (
-        <section className="cix-section">
-          <div className="cix-container">
-            <div className="cix-unavailable">
-              <p className="cix-unavailable-title">
-                {t("Ce comparatif n'est pas encore disponible.", "This comparison isn't available yet.")}
-              </p>
-              <p className="cix-unavailable-desc">
-                {t(
-                  "Tu peux explorer les outils séparément ou consulter les comparatifs proches.",
-                  "You can explore the tools separately or browse related comparisons.",
-                )}
-              </p>
-              <div className="cix-unavailable-actions">
-                <button
-                  type="button"
-                  onClick={clearAll}
-                  className="cix-unavailable-btn-secondary"
-                >
-                  {t("Voir tous les comparatifs", "See all comparisons")}
-                </button>
-                <Link to={`${prefix}/outil/${selectedA.slug || selectedA.id}`} className="cix-unavailable-btn-tool">
-                  {t(`Explorer ${selectedA.name}`, `Explore ${selectedA.name}`)}
-                </Link>
-                <Link to={`${prefix}/outil/${selectedB.slug || selectedB.id}`} className="cix-unavailable-btn-tool">
-                  {t(`Explorer ${selectedB.name}`, `Explore ${selectedB.name}`)}
-                </Link>
-              </div>
-              {relatedComparisons.length > 0 && (
-                <div className="cix-unavailable-related">
-                  <p className="cix-unavailable-related-label">
-                    {t("Comparatifs proches", "Related comparisons")}
-                  </p>
-                  <div className="cix-unavailable-related-list">
-                    {relatedComparisons.map(c => (
-                      <Link
-                        key={c.slugPair}
-                        to={`${prefix}/comparatif/${c.slugPair}`}
-                        className="cix-suggestion-chip"
-                      >
-                        {c.toolAData!.name} vs {c.toolBData!.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ── Listing section ───────────────────────────────────────────────── */}
       <section className="cix-section">
         <div className="cix-container">
 
           {/* Header */}
-          <div style={{ marginBottom: 32 }}>
-            <div style={{
-              display: "flex", alignItems: "baseline",
-              justifyContent: "space-between", gap: 16,
-              flexWrap: "wrap", marginBottom: 20,
-            }}>
-              <p style={{
-                fontFamily: "var(--font-brand)",
-                fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
-                fontWeight: 600, letterSpacing: "-0.04em",
-                color: "var(--color-text)", lineHeight: 1.05,
-              }}>
-                {compareState === "one"
-                  ? t(
-                      `Comparatifs liés à ${(selectedA || selectedB)!.name}.`,
-                      `Comparisons for ${(selectedA || selectedB)!.name}.`,
-                    )
-                  : t("Comparatifs éditoriaux.", "Editorial comparisons.")}
-              </p>
-              <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted-light)" }}>
-                {filteredComparisons.length}&nbsp;{t("comparatifs", "comparisons")}
-              </span>
-            </div>
-
-            {/* Category filters — only when not filtering by tool */}
-            {compareState !== "one" && (
-              <div className="cix-filter-row">
-                {COMPARE_CATEGORY_FILTERS.map(f => (
-                  <button
-                    key={f.id}
-                    type="button"
-                    onClick={() => setCategoryFilter(f.id)}
-                    className={`gi-filter-pill${categoryFilter === f.id ? " gi-filter-pill--active" : ""}`}
-                  >
-                    {lang === "fr" ? f.label : f.labelEn}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* Reset tool filter (Cas C) */}
-            {compareState === "one" && (
-              <button
-                type="button"
-                onClick={clearAll}
-                style={{
-                  display: "inline-flex", alignItems: "center",
-                  height: 34, padding: "0 14px",
-                  border: "1px solid var(--color-border)", borderRadius: 6,
-                  background: "transparent",
-                  fontFamily: "var(--font-ui)", fontSize: 13,
-                  color: "var(--color-muted)", cursor: "pointer",
-                }}
-              >
-                {t("← Voir tous les comparatifs", "← See all comparisons")}
-              </button>
-            )}
+          <div className="cix-listing-header">
+            <p className="cix-listing-title">
+              {query.trim()
+                ? t(`Résultats pour "${query.trim()}"`, `Results for "${query.trim()}"`)
+                : t("Comparatifs éditoriaux.", "Editorial comparisons.")}
+            </p>
+            <span className="cix-listing-count">
+              {filteredComparisons.length}&nbsp;{t("comparatifs", "comparisons")}
+            </span>
           </div>
 
-          {/* Grid */}
+          {/* Category filters */}
+          <div className="cix-filter-row">
+            {COMPARE_CATEGORY_FILTERS.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                onClick={() => setCategoryFilter(f.id)}
+                className={`gi-filter-pill${categoryFilter === f.id ? " gi-filter-pill--active" : ""}`}
+              >
+                {lang === "fr" ? f.label : f.labelEn}
+              </button>
+            ))}
+          </div>
+
+          {/* Editorial list — one comparison per row, 4 zones each */}
           {filteredComparisons.length > 0 ? (
-            <div className="cix-grid">
-              {filteredComparisons.map(c => {
+            <ul className="cix-list" role="list">
+              {filteredComparisons.map((c) => {
                 const a = c.toolAData!;
                 const b = c.toolBData!;
-                const desc = deriveCardDesc(a, b, lang);
                 const question = getCardDecisionQuestion(a, b, lang);
                 const bestFor = getCardBestFor(a, b, lang);
-                const risk = getCardRisk(a, b, lang);
                 const catId = getSlugCategory(c.slugPair);
-                const catLabel = COMPARE_CATEGORY_FILTERS.find(f => f.id === catId);
+                const catLabel = COMPARE_CATEGORY_FILTERS.find((f) => f.id === catId);
                 return (
+                  <li key={c.slugPair} className="cix-list-item">
+                    <Link
+                      to={`${prefix}/comparatif/${c.slugPair}`}
+                      className="cix-card"
+                      aria-label={t(`Lire le comparatif ${a.name} vs ${b.name}`, `Read the ${a.name} vs ${b.name} comparison`)}
+                    >
+                      <div className="cix-card-logos" aria-hidden="true">
+                        <span className="cix-card-logo"><ToolLogo tool={a} size={36} /></span>
+                        <span className="cix-card-logo"><ToolLogo tool={b} size={36} /></span>
+                      </div>
+                      <div className="cix-card-body">
+                        <h3 className="cix-card-title">{a.name} vs {b.name}</h3>
+                        <p className="cix-card-question">{question}</p>
+                        <p className="cix-card-bestfor">
+                          <span>{t("Meilleur pour", "Best for")}</span> {bestFor}
+                        </p>
+                      </div>
+                      {catLabel && catLabel.id !== "all" && (
+                        <span className="cix-card-cat" aria-hidden="true">
+                          {lang === "fr" ? catLabel.label : catLabel.labelEn}
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <div className="cix-empty">
+              <p className="cix-empty-title">
+                {query.trim()
+                  ? t(`Pas encore de comparatif sur "${query.trim()}".`, `No comparison on "${query.trim()}" yet.`)
+                  : t("Aucun comparatif trouvé.", "No comparison found.")}
+              </p>
+              <p className="cix-empty-desc">
+                {t("Voici les plus consultés en attendant :", "Most-read in the meantime:")}
+              </p>
+              <div className="cix-empty-chips">
+                {(relatedComparisons.length > 0 ? relatedComparisons : resolvedComparisons.slice(0, 4)).map((c) => (
                   <Link
                     key={c.slugPair}
                     to={`${prefix}/comparatif/${c.slugPair}`}
-                    className="cix-card"
+                    className="cix-suggestion-chip"
                   >
-                    <p className="cix-card-label">
-                      {t("COMPARATIF", "COMPARISON")}
-                      {catLabel && catLabel.id !== "all" && (
-                        <>
-                          <span style={{ margin: "0 6px", color: "var(--color-border)" }}>·</span>
-                          {lang === "fr" ? catLabel.label : catLabel.labelEn}
-                        </>
-                      )}
-                    </p>
-                    <div className="cix-card-vs">
-                      <div className="cix-card-vs-tool">
-                        <div className="cix-card-vs-logo"><ToolLogo tool={a} size={18} /></div>
-                        <span className="cix-card-vs-name">{a.name}</span>
-                      </div>
-                      <span className="cix-card-vs-sep">VS</span>
-                      <div className="cix-card-vs-tool">
-                        <div className="cix-card-vs-logo"><ToolLogo tool={b} size={18} /></div>
-                        <span className="cix-card-vs-name">{b.name}</span>
-                      </div>
-                    </div>
-                    <p className="cix-card-title">{a.name} vs {b.name}</p>
-                    <p className="cix-card-question">{question}</p>
-                    <p className="cix-card-desc">{desc}</p>
-                    <div className="cix-card-signal">
-                      <span>{t("Meilleur pour", "Best for")}</span>
-                      <p>{bestFor}</p>
-                    </div>
-                    <div className="cix-card-signal cix-card-signal--risk">
-                      <span>{t("Risque", "Risk")}</span>
-                      <p>{risk}</p>
-                    </div>
-                    <p className="cix-card-pricing">
-                      {getPriceLabel(a, t)}
-                      <span style={{ margin: "0 6px", color: "var(--color-border)" }}>vs</span>
-                      {getPriceLabel(b, t)}
-                    </p>
-                    <span className="cix-card-cta">
-                      {t("Lire le comparatif", "Read comparison")}
-                      <span className="cix-card-cta-arrow" aria-hidden> →</span>
-                    </span>
+                    {c.toolAData!.name} vs {c.toolBData!.name}
                   </Link>
-                );
-              })}
-            </div>
-          ) : (
-            <div style={{ padding: "48px 0", borderTop: "1px solid var(--color-border)" }}>
-              <p style={{
-                fontFamily: "var(--font-brand)",
-                fontSize: "clamp(1.125rem, 2vw, 1.375rem)",
-                fontWeight: 600, letterSpacing: "-0.04em",
-                color: "var(--color-text)", marginBottom: 8,
-              }}>
-                {t("Aucun comparatif trouvé.", "No comparison found.")}
-              </p>
-              <p style={{
-                fontFamily: "var(--font-ui)",
-                fontSize: 14, color: "var(--color-muted)", marginBottom: 20,
-              }}>
-                {t(
-                  "Essaie un autre filtre ou explore tous les comparatifs.",
-                  "Try another filter or explore all comparisons.",
-                )}
-              </p>
+                ))}
+              </div>
               <button
                 type="button"
-                onClick={() => { clearAll(); setCategoryFilter("all"); }}
-                style={{
-                  display: "inline-flex", alignItems: "center",
-                  height: 38, padding: "0 18px",
-                  border: "1px solid var(--color-border-strong)", borderRadius: 6,
-                  fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
-                  color: "var(--color-text)", background: "transparent", cursor: "pointer",
-                }}
+                onClick={() => { setQuery(""); setCategoryFilter("all"); }}
+                className="cix-empty-reset"
               >
                 {t("Voir tous les comparatifs", "See all comparisons")}
               </button>

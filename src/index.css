@@ -8974,10 +8974,10 @@
 @layer components {
 
   /* ── Hero ──────────────────────────────────────────────── */
+  /* ── Hero ──────────────────────────────────────────────── */
   .cix-hero {
     background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-    padding: 80px 0 64px;
+    padding: 80px 0 56px;
   }
   .cix-hero-inner {
     max-width: var(--layout-content, 1280px);
@@ -8986,274 +8986,124 @@
   }
   .cix-hero-eyebrow {
     font-family: var(--font-ui);
-    font-size: 11px; font-weight: 600;
+    font-size: var(--tt-size-kicker); font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--color-muted); display: block; margin-bottom: 14px;
   }
   .cix-hero-h1 {
     font-family: var(--font-brand);
-    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-size: clamp(3.25rem, 5.5vw, 5.5rem);
     font-weight: 600; letter-spacing: -0.055em;
     line-height: 0.96; color: var(--color-text);
     margin: 0 0 20px; max-width: 960px;
   }
   .cix-hero-desc {
     font-family: var(--font-ui);
-    font-size: 19px; line-height: 1.45;
-    color: var(--color-muted); max-width: 720px;
-    letter-spacing: -0.02em;
+    font-size: var(--tt-size-body-large);
+    line-height: 1.5;
+    color: var(--color-text); max-width: 68ch;
+    letter-spacing: -0.015em;
+    margin-bottom: 36px;
   }
 
-  /* ── VS Module ─────────────────────────────────────────── */
-  .cix-vs-module {
-    margin-top: 40px;
-    max-width: 880px;
+  /* ── Single search field ─────────────────────────────── */
+  .cix-search-module {
+    max-width: 640px;
   }
-  .cix-vs-eyebrow {
+  .cix-search-label {
     display: block;
     font-family: var(--font-ui);
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted); margin-bottom: 12px;
+    font-size: var(--tt-size-kicker);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 10px;
   }
-
-  /* Row: [Input A] [VS badge] [Input B] [Btn] */
-  .cix-vs-row {
-    display: flex; align-items: center; gap: 12px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: 12px;
-  }
-
-  /* Input wrap */
-  .cix-vs-input-wrap {
-    flex: 1; min-width: 0;
+  .cix-search-field {
     position: relative;
-    height: 52px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border-soft);
-    border-radius: 8px;
-    padding: 0 14px;
-    display: flex; align-items: center; gap: 10px;
-    transition: border-color 140ms, background 140ms;
+    display: flex;
+    align-items: stretch;
+    border-bottom: 2px solid var(--color-border-strong);
+    transition: border-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
   }
-  .cix-vs-input-wrap:focus-within {
-    border-color: var(--color-text);
-    background: var(--color-surface);
+  .cix-search-field:focus-within {
+    border-color: var(--color-text-strong);
   }
-  .cix-vs-input-field {
-    flex: 1; border: none; outline: none; background: transparent;
-    font-family: var(--font-ui);
-    font-size: 15px; color: var(--color-text);
-    letter-spacing: -0.015em;
-    min-width: 0;
-  }
-  .cix-vs-input-field::placeholder { color: var(--color-muted-light); }
-
-  /* Selected tool */
-  .cix-vs-selected {
-    flex: 1; min-width: 0;
-    height: 52px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border-soft);
-    border-radius: 8px;
-    padding: 0 14px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .cix-vs-selected-logo {
-    width: 28px; height: 28px; flex-shrink: 0;
-    border-radius: 6px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-soft);
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  .cix-vs-selected-name {
-    font-family: var(--font-ui);
-    font-size: 15px; font-weight: 500;
-    color: var(--color-text); flex: 1; min-width: 0;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  }
-  .cix-vs-selected-clear {
-    margin-left: auto; flex-shrink: 0;
-    font-size: 11px; color: var(--color-muted-light);
-    background: none; border: none; cursor: pointer;
-    padding: 4px 2px;
-    transition: color 120ms;
-  }
-  .cix-vs-selected-clear:hover { color: var(--color-text); }
-  .cix-vs-selected-clear:focus-visible { outline: 2px solid var(--color-border-strong); outline-offset: 2px; border-radius: 2px; }
-
-  /* VS badge */
-  .cix-vs-badge {
-    flex-shrink: 0;
-    width: 40px; height: 40px;
-    border-radius: 999px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-ui);
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.08em; color: var(--color-text);
-  }
-
-  /* Compare button */
-  .cix-vs-btn {
-    flex-shrink: 0;
-    height: 52px; padding: 0 22px;
-    background: var(--color-text); color: var(--color-surface);
-    border: 1px solid var(--color-border-strong); border-radius: 8px;
-    font-family: var(--font-ui);
-    font-size: 15px; font-weight: 500;
-    letter-spacing: -0.01em; white-space: nowrap;
-    cursor: pointer;
-    transition: opacity 160ms;
-  }
-  .cix-vs-btn:hover:not(:disabled) { opacity: 0.85; }
-  .cix-vs-btn:disabled { opacity: 0.45; cursor: not-allowed; }
-  .cix-vs-btn:focus-visible { outline: 2px solid var(--color-border-strong); outline-offset: 2px; }
-
-  /* Hint text below row */
-  .cix-vs-hint {
-    font-family: var(--font-ui);
-    font-size: 13px; color: var(--color-muted-light);
-    letter-spacing: -0.01em;
-    margin: 10px 0 0; line-height: 1.4;
-  }
-  .cix-vs-hint--success { color: #2E7D32; }
-
-  /* Autocomplete dropdown */
-  .cix-vs-dropdown {
-    position: absolute; top: calc(100% + 4px); left: 0; right: 0;
-    z-index: 40;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    overflow: hidden; overflow-y: auto;
-    max-height: 280px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  }
-  .cix-vs-option {
-    width: 100%; display: flex; align-items: center; gap: 10px;
-    padding: 10px 14px; border: none; background: none;
-    text-align: left; cursor: pointer;
-    transition: background 100ms;
-  }
-  .cix-vs-option:hover, .cix-vs-option--highlighted { background: var(--color-bg); }
-  .cix-vs-option-logo {
-    width: 24px; height: 24px; flex-shrink: 0;
-    border-radius: 6px; background: var(--color-bg); border: 1px solid var(--color-border-soft);
-    display: flex; align-items: center; justify-content: center; overflow: hidden;
-  }
-  .cix-vs-option-name {
-    font-family: var(--font-ui);
-    font-size: 14px; font-weight: 500; color: var(--color-text);
+  .cix-search-input {
     flex: 1;
-  }
-  .cix-vs-option-cat {
+    height: 52px;
+    padding: 0 4px;
+    background: transparent;
+    border: none;
+    outline: none;
     font-family: var(--font-ui);
-    font-size: 11px; color: var(--color-muted-light);
-    letter-spacing: 0.02em; margin-left: auto;
-    max-width: 100px;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font-size: var(--tt-size-body-large);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--color-text-strong);
+  }
+  .cix-search-input::placeholder {
+    color: var(--color-muted-light);
+    font-weight: 400;
+  }
+  .cix-search-clear {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    align-self: center;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--color-muted);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 140ms ease-out, color 140ms ease-out;
+  }
+  .cix-search-clear:hover {
+    background: var(--color-surface-soft);
+    color: var(--color-text);
   }
 
-  /* Popular suggestions */
-  .cix-vs-popular {
-    display: flex; flex-wrap: wrap;
-    align-items: center; gap: 8px;
-    margin-top: 14px;
+  /* ── Popular chips below the search ──────────────────── */
+  .cix-popular {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
   }
-  .cix-vs-popular-label {
+  .cix-popular-label {
     font-family: var(--font-ui);
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted-light); white-space: nowrap; margin-right: 2px;
+    font-size: var(--tt-size-kicker);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-right: 8px;
   }
-  /* suggestion chips reused from below */
   .cix-suggestion-chip {
-    display: inline-flex; align-items: center;
-    height: 30px; padding: 0 10px;
-    border: 1px solid var(--color-border); border-radius: 999px;
-    background: transparent;
-    font-family: var(--font-ui); font-size: 13px;
-    font-weight: 500; color: var(--color-text);
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
     text-decoration: none;
-    transition: border-color 140ms, background 140ms;
-    white-space: nowrap; cursor: pointer;
+    transition: border-color 140ms ease-out, color 140ms ease-out;
   }
   .cix-suggestion-chip:hover {
-    border-color: var(--color-text); background: var(--color-bg);
+    border-color: var(--color-text-strong);
+    color: var(--color-text-strong);
   }
 
-  /* Unavailable state */
-  .cix-unavailable {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 28px;
-    max-width: 720px;
-  }
-  .cix-unavailable-title {
-    font-family: var(--font-brand);
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
-    font-weight: 600; letter-spacing: -0.04em;
-    color: var(--color-text); margin: 0 0 8px;
-  }
-  .cix-unavailable-desc {
-    font-family: var(--font-ui);
-    font-size: 14px; color: var(--color-muted);
-    line-height: 1.5; margin: 0 0 20px;
-  }
-  .cix-unavailable-actions {
-    display: flex; flex-wrap: wrap; gap: 10px;
-  }
-  .cix-unavailable-btn-secondary {
-    display: inline-flex; align-items: center;
-    height: 36px; padding: 0 16px;
-    border: 1px solid var(--color-border); border-radius: 6px;
-    background: transparent; color: var(--color-text);
-    font-family: var(--font-ui); font-size: 13px; font-weight: 500;
-    cursor: pointer; transition: border-color 140ms;
-  }
-  .cix-unavailable-btn-secondary:hover { border-color: var(--color-text); }
-  .cix-unavailable-btn-tool {
-    display: inline-flex; align-items: center;
-    height: 36px; padding: 0 16px;
-    border: 1px solid var(--color-border); border-radius: 6px;
-    background: transparent; color: var(--color-text);
-    font-family: var(--font-ui); font-size: 13px; font-weight: 500;
-    text-decoration: none; transition: border-color 140ms;
-  }
-  .cix-unavailable-btn-tool:hover { border-color: var(--color-text); }
-  .cix-unavailable-related { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--color-border); }
-  .cix-unavailable-related-label {
-    font-family: var(--font-ui);
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted-light); margin: 0 0 10px;
-  }
-  .cix-unavailable-related-list { display: flex; flex-wrap: wrap; gap: 8px; }
-
-  /* Mobile responsive */
-  @media (max-width: 640px) {
-    .cix-vs-row {
-      flex-direction: column; align-items: stretch;
-    }
-    .cix-vs-badge { align-self: center; }
-    .cix-vs-btn { height: 46px; }
-    .cix-vs-input-wrap, .cix-vs-selected { height: 46px; }
-    .cix-vs-popular { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
-    .cix-suggestion-chip { flex-shrink: 0; }
-  }
-  @media (max-width: 767px) {
-    .cix-vs-module { max-width: 100%; }
-  }
-
-  /* ── Section + Container ───────────────────────────────── */
-  .cix-section { padding: 56px 0; border-bottom: 1px solid var(--color-border); }
-  .cix-section--last { border-bottom: none; }
+  /* ── Section / container shared ──────────────────────── */
+  .cix-section { padding: 56px 0; }
+  .cix-section--last { /* kept for compat */ }
   .cix-section--alt { background: var(--color-bg); }
   .cix-container {
     max-width: var(--layout-content, 1280px);
@@ -9261,142 +9111,175 @@
     padding: 0 var(--layout-gutter, 48px);
   }
 
-  /* ── Category filter row ───────────────────────────────── */
-  .cix-filter-row {
-    display: flex; flex-wrap: wrap; gap: 8px;
+  /* ── Listing header ──────────────────────────────────── */
+  .cix-listing-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
   }
-  @media (max-width: 700px) {
-    .cix-filter-row {
-      flex-wrap: nowrap; overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 4px;
-    }
+  .cix-listing-title {
+    font-family: var(--font-brand);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--color-text);
+    margin: 0;
+  }
+  .cix-listing-count {
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-card-body);
+    color: var(--color-muted);
+  }
+
+  /* ── Category filters ────────────────────────────────── */
+  .cix-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 640px) {
+    .cix-filter-row { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; }
     .cix-filter-row .gi-filter-pill { flex-shrink: 0; }
   }
 
-  /* ── Cards grid ────────────────────────────────────────── */
-  .cix-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  /* ── Editorial list (replaces grid) ──────────────────── */
+  .cix-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 2px solid var(--color-border-strong);
   }
-  @media (max-width: 767px) { .cix-grid { grid-template-columns: 1fr; } }
-
-  /* ── Card ──────────────────────────────────────────────── */
+  .cix-list-item {
+    border-bottom: 1px solid var(--color-border-soft);
+  }
   .cix-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 26px;
-    display: flex; flex-direction: column;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 16px;
+    margin: 0 -16px;
+    border-radius: 4px;
     text-decoration: none;
-    transition: border-color 160ms ease-out, transform 160ms ease-out;
-    cursor: pointer;
+    color: inherit;
+    transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .cix-card:hover {
-    border-color: var(--color-text);
-    transform: translateY(-1px);
+    background-color: var(--color-surface-soft);
   }
-
-  .cix-card-label {
-    font-family: var(--font-ui);
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--color-muted); margin-bottom: 18px;
-  }
-
-  .cix-card-vs {
-    display: flex; align-items: center; gap: 12px;
-    margin-bottom: 0;
-  }
-  .cix-card-vs-tool {
-    display: flex; align-items: center; gap: 8px;
-  }
-  .cix-card-vs-logo {
-    width: 32px; height: 32px;
-    border-radius: 999px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border-soft);
-    display: flex; align-items: center; justify-content: center;
+  .cix-card-logos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     flex-shrink: 0;
   }
-  .cix-card-vs-name {
-    font-family: var(--font-ui);
-    font-size: 15px; font-weight: 500; color: var(--color-text);
+  .cix-card-logo {
+    display: inline-flex;
   }
-  .cix-card-vs-sep {
-    font-family: var(--font-ui);
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--color-muted-light); padding: 0 2px;
+  .cix-card-body {
+    min-width: 0;
   }
-
   .cix-card-title {
-    font-family: var(--font-brand);
-    font-size: clamp(1.375rem, 2vw, 1.75rem);
-    font-weight: 600; letter-spacing: -0.04em;
-    color: var(--color-text); line-height: 1.05;
-    margin-top: 16px;
-  }
-  .cix-card-desc {
+    margin: 0;
     font-family: var(--font-ui);
-    font-size: 14px; line-height: 1.5;
-    color: var(--color-muted); margin-top: 10px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    flex: 1;
+    font-size: var(--tt-size-body-large);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--color-text-strong);
   }
   .cix-card-question {
-    margin-top: 10px;
+    margin: 6px 0 0;
     font-family: var(--font-ui);
-    font-size: 15px;
-    line-height: 1.35;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-size: var(--tt-size-body);
+    line-height: 1.45;
+    letter-spacing: -0.01em;
     color: var(--color-text);
   }
-  .cix-card-signal {
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid var(--color-border-soft);
-  }
-  .cix-card-signal span {
-    display: block;
-    margin-bottom: 6px;
+  .cix-card-bestfor {
+    margin: 8px 0 0;
     font-family: var(--font-ui);
+    font-size: var(--tt-size-card-body);
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+  .cix-card-bestfor span {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     font-size: 10px;
+    color: var(--color-muted);
+    margin-right: 8px;
+  }
+  .cix-card-cat {
+    flex-shrink: 0;
+    align-self: start;
+    padding-top: 4px;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-kicker);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-muted-light);
   }
-  .cix-card-signal p {
-    margin: 0;
+  @media (max-width: 768px) {
+    .cix-card {
+      grid-template-columns: auto 1fr;
+      padding: 20px 16px;
+    }
+    .cix-card-cat { grid-column: 1 / -1; padding-top: 0; }
+  }
+
+  /* ── Empty state ─────────────────────────────────────── */
+  .cix-empty {
+    padding: 48px 0;
+    border-top: 1px solid var(--color-border);
+    max-width: 640px;
+  }
+  .cix-empty-title {
+    font-family: var(--font-brand);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+    margin: 0 0 8px;
+  }
+  .cix-empty-desc {
     font-family: var(--font-ui);
-    font-size: 13px;
-    line-height: 1.45;
+    font-size: var(--tt-size-body);
     color: var(--color-muted);
+    margin: 0 0 20px;
   }
-  .cix-card-pricing {
+  .cix-empty-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .cix-empty-reset {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 18px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 6px;
+    background: transparent;
     font-family: var(--font-ui);
-    font-size: 13px; font-weight: 600;
-    color: var(--color-muted); margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--color-border-soft);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background 140ms, color 140ms;
   }
-  .cix-card-cta {
-    font-family: var(--font-ui);
-    font-size: 14px; font-weight: 500;
-    color: var(--color-text); margin-top: 18px;
-    display: inline-flex; align-items: center; gap: 4px;
+  .cix-empty-reset:hover {
+    background: var(--color-text);
+    color: var(--color-surface);
   }
-  .cix-card-cta-arrow {
-    display: inline-block;
-    transition: transform 160ms ease-out;
-  }
-  .cix-card:hover .cix-card-cta-arrow { transform: translateX(3px); }
 
 }
 
