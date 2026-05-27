@@ -16503,6 +16503,161 @@ section[id] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   Shared form primitives — .tt-form-* (reusable across any form)
+   ───────────────────────────────────────────────────────────────────────── */
+.tt-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tt-form-label {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.tt-form-input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-text-strong);
+  outline: none;
+  transition: border-color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+              background 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tt-form-input::placeholder {
+  color: var(--color-muted-light);
+}
+.tt-form-input:hover {
+  border-color: var(--color-border-strong);
+}
+.tt-form-input:focus,
+.tt-form-input:focus-visible {
+  border-color: var(--color-text-strong);
+  background: var(--color-bg);
+}
+.tt-form-textarea {
+  resize: vertical;
+  min-height: 140px;
+  font-family: var(--font-ui);
+  line-height: 1.5;
+}
+.tt-form-error {
+  margin: 0;
+  padding: 12px 14px;
+  background: oklch(0.96 0.02 25);
+  border: 1px solid oklch(0.85 0.06 25);
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  line-height: 1.5;
+  color: oklch(0.32 0.12 25);
+}
+.tt-form-error-link {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Contact — form + side info (2-col on desktop, stacks on mobile)
+   ───────────────────────────────────────────────────────────────────────── */
+.cn-body {
+  background: var(--color-bg);
+  padding: clamp(40px, 5vw, 72px) 0 clamp(56px, 6vw, 96px);
+}
+.cn-container {
+  max-width: var(--layout-content, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter, 48px);
+}
+.cn-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+  max-width: 1080px;
+}
+@media (max-width: 900px) {
+  .cn-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.cn-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cn-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 560px) {
+  .cn-form-row { grid-template-columns: 1fr; }
+}
+.cn-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.cn-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.cn-aside-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cn-aside-label {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.cn-aside-email {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: var(--tt-size-body);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--color-text-strong);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
+  width: max-content;
+}
+.cn-aside-email:hover {
+  text-decoration-color: var(--color-text-strong);
+}
+.cn-aside-text {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    Methodology — contrast table + inline stats + CARS framework
    ─────────────────────────────────────────────────────────────────────────
    Page reuses .ab-* (long-form article) classes from About. These me-*

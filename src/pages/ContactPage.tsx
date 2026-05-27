@@ -2,20 +2,32 @@ import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { Mail, MessageSquare, Clock, ArrowRight, AlertCircle } from "lucide-react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+/**
+ * Contact — editorial chrome (tt-page-hero + date stamp) wrapping a clean
+ * functional form. No decorative icons, no card stack for "reasons", no
+ * shadcn hsl vars. Form fields use the shared .tt-form-* classes so any
+ * future form on the site can drop in without a rewrite.
+ */
 const ContactPage = () => {
   const { t, lang, prefix } = useLang();
   const [status, setStatus] = useState<Status>("idle");
   const formRef = useRef<HTMLFormElement>(null);
 
+  const now = new Date();
+  const monthFr = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+  const monthEn = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const stamp = lang === "fr"
+    ? `Contact · ${monthFr[now.getMonth()]} ${now.getFullYear()}`
+    : `Contact · ${monthEn[now.getMonth()]} ${now.getFullYear()}`;
+
   useEffect(() => {
     const title = t("Contact — ToolTrim", "Contact — ToolTrim");
     const desc = t(
-      "Contactez l'équipe ToolTrim : question, suggestion, partenariat ou correction. Nous répondons sous 48h.",
-      "Contact the ToolTrim team: question, suggestion, partnership, or correction. We respond within 48h."
+      "Une question, une suggestion, une correction. On lit chaque message. Réponse sous 48 heures.",
+      "A question, a suggestion, a correction. We read every message. Response within 48 hours.",
     );
     setSeoTags({ title, description: desc, url: `${SEO_BASE}/${lang}/contact` });
     setHreflang(`/${lang}/contact`);
@@ -40,273 +52,184 @@ const ContactPage = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      if (res.ok) {
-        setStatus("success");
-      } else {
-        setStatus("error");
-      }
+      setStatus(res.ok ? "success" : "error");
     } catch {
       setStatus("error");
     }
   };
 
-  const inputClass =
-    "mt-1.5 w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all duration-150";
-
-  const reasons = [
-    {
-      icon: MessageSquare,
-      title: t("Question ou suggestion", "Question or suggestion"),
-      desc: t("Idée d'amélioration, outil manquant, bug ?", "Improvement idea, missing tool, bug?"),
-    },
-    {
-      icon: Mail,
-      title: t("Partenariat éditeur", "Vendor partnership"),
-      desc: t("Vous éditez un SaaS et voulez échanger.", "You publish a SaaS and want to talk."),
-    },
-    {
-      icon: Clock,
-      title: t("Réponse sous 48h", "Response within 48h"),
-      desc: t("Chaque message est lu et traité.", "Every message is read and handled."),
-    },
-  ];
-
-  // ── Success screen ──────────────────────────────────────────────────────────
+  // ── Success screen — editorial tone, not generic check-mark ──
   if (status === "success") {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center py-20">
-        <div className="text-center">
-          <div
-            className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl"
-            style={{ background: "#dcfce7" }}
-          >
-            <ArrowRight className="h-7 w-7" style={{ color: "#15803d" }} />
+      <div className="ab-page">
+        <section className="tt-page-hero">
+          <div className="tt-page-hero-inner">
+            <span className="tt-page-hero-eyebrow">{t("Message reçu", "Message received")}</span>
+            <h1 className="tt-page-hero-title">{t("Bien reçu. Merci.", "Got it. Thanks.")}</h1>
+            <p className="tt-page-hero-desc">
+              {t(
+                "On revient vers toi dans les 48 heures. Pas de réponse automatique — un humain lit ton message.",
+                "We'll get back to you within 48 hours. No auto-reply — a human reads your message.",
+              )}
+            </p>
+            <div className="tt-page-hero-cta">
+              <Link to={`${prefix}/tools`} className="tt-button-primary">
+                {t("Explorer le catalogue →", "Browse the catalog →")}
+              </Link>
+              <Link to={`${prefix}/comparatifs`} className="ab-cta-secondary">
+                {t("Voir les comparatifs", "See the comparisons")}
+              </Link>
+            </div>
           </div>
-          <h1
-            className="mt-6 font-display font-bold"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", letterSpacing: "-0.025em" }}
-          >
-            {t("Message envoyé !", "Message sent!")}
-          </h1>
-          <p className="mt-3 max-w-sm mx-auto" style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))" }}>
-            {t(
-              "Nous reviendrons vers vous dans les 48 heures.",
-              "We'll get back to you within 48 hours."
-            )}
-          </p>
-          <Link
-            to={`${prefix}/tools`}
-            className="mt-6 inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors"
-            style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
-          >
-            {t("Explorer les outils", "Explore tools")}
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
+        </section>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
+    <div className="ab-page">
 
-      {/* ── Hero ─────────────────────────────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden border-b border-border"
-        style={{ background: "hsl(230 40% 97%)" }}
-      >
-        <div className="mx-auto max-w-7xl px-6 py-12">
-          <nav className="flex items-center gap-1.5" aria-label="Breadcrumb">
-            <Link
-              to={`${prefix}`}
-              className="text-[11px] font-medium transition-colors hover:text-foreground"
-              style={{ color: "hsl(var(--muted-foreground))" }}
-            >
-              {t("Accueil", "Home")}
-            </Link>
-            <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>/</span>
-            <span className="text-[11px] font-medium" style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}>
-              Contact
-            </span>
-          </nav>
-
-          <div className="mt-5">
-            <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-              {t("Nous contacter", "Get in touch")}
-            </p>
-            <h1
-              className="font-display"
-              style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.08 }}
-            >
-              {t("Parlons-en", "Let's talk")}
-            </h1>
-            <p
-              className="mt-3 leading-relaxed"
-              style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))", maxWidth: "48ch" }}
-            >
-              {t(
-                "Question, suggestion ou correction — nous sommes à l'écoute.",
-                "Question, suggestion, or correction — we're listening."
-              )}
-            </p>
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className="tt-page-hero">
+        <div className="tt-page-hero-inner">
+          <div className="ab-hero-meta">
+            <nav className="cp-breadcrumb" aria-label="Breadcrumb">
+              <Link to={prefix || "/fr"}>ToolTrim</Link>
+              <span>/</span>
+              <span>Contact</span>
+            </nav>
+            <time className="cp-hero-checked" dateTime={now.toISOString().slice(0, 10)}>{stamp}</time>
           </div>
+
+          <span className="tt-page-hero-eyebrow">{t("Contact", "Contact")}</span>
+          <h1 className="tt-page-hero-title">{t("Parlons-en.", "Let's talk.")}</h1>
+          <p className="tt-page-hero-desc">
+            {t(
+              "Question, suggestion, correction — on lit chaque message. Réponse sous 48 heures, par un humain.",
+              "Question, suggestion, correction — we read every message. Response within 48 hours, by a human.",
+            )}
+          </p>
         </div>
       </section>
 
-      {/* ── Body ─────────────────────────────────────────────────────────────── */}
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+      {/* ── Body — form + side info ──────────────────────────── */}
+      <div className="cn-body">
+        <div className="cn-container">
 
-          {/* Left — form ─────────────────────────────────────────────────────── */}
-          <div className="flex-1 min-w-0">
-            <p className="mb-5 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-              {t("Formulaire", "Form")}
-            </p>
+          <div className="cn-grid">
 
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="contact-name" className="text-sm font-medium text-foreground">
-                    {t("Nom", "Name")}
-                  </label>
+            {/* Left — form */}
+            <form ref={formRef} onSubmit={handleSubmit} className="cn-form" noValidate>
+              <div className="cn-form-row">
+                <div className="tt-form-field">
+                  <label htmlFor="contact-name" className="tt-form-label">{t("Nom", "Name")}</label>
                   <input
                     id="contact-name"
                     name="name"
                     type="text"
                     required
-                    placeholder={t("Votre nom", "Your name")}
-                    className={inputClass}
-                    onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
+                    placeholder={t("Ton nom", "Your name")}
+                    className="tt-form-input"
+                    autoComplete="name"
                   />
                 </div>
-                <div>
-                  <label htmlFor="contact-email" className="text-sm font-medium text-foreground">
-                    Email
-                  </label>
+                <div className="tt-form-field">
+                  <label htmlFor="contact-email" className="tt-form-label">Email</label>
                   <input
                     id="contact-email"
                     name="email"
                     type="email"
                     required
                     placeholder="you@example.com"
-                    className={inputClass}
-                    onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
+                    className="tt-form-input"
+                    autoComplete="email"
                   />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="contact-subject" className="text-sm font-medium text-foreground">
-                  {t("Sujet", "Subject")}
-                </label>
+              <div className="tt-form-field">
+                <label htmlFor="contact-subject" className="tt-form-label">{t("Sujet", "Subject")}</label>
                 <input
                   id="contact-subject"
                   name="subject"
                   type="text"
                   required
                   placeholder={t("En quelques mots…", "In a few words…")}
-                  className={inputClass}
-                  onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
-                  onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
+                  className="tt-form-input"
                 />
               </div>
 
-              <div>
-                <label htmlFor="contact-message" className="text-sm font-medium text-foreground">
-                  Message
-                </label>
+              <div className="tt-form-field">
+                <label htmlFor="contact-message" className="tt-form-label">Message</label>
                 <textarea
                   id="contact-message"
                   name="message"
                   required
-                  rows={6}
-                  placeholder={t("Décrivez votre demande…", "Describe your request…")}
-                  className={`${inputClass} resize-none`}
-                  onFocus={(e) => { e.currentTarget.style.borderColor = "hsl(var(--primary) / 0.5)"; e.currentTarget.style.boxShadow = "0 0 0 3px hsl(var(--primary) / 0.1)"; }}
-                  onBlur={(e) => { e.currentTarget.style.borderColor = "hsl(var(--border))"; e.currentTarget.style.boxShadow = "none"; }}
+                  rows={7}
+                  placeholder={t("Décris ta demande…", "Describe your request…")}
+                  className="tt-form-input tt-form-textarea"
                 />
               </div>
 
-              {/* Error message */}
               {status === "error" && (
-                <div
-                  className="flex items-start gap-2.5 rounded-lg px-4 py-3 text-sm"
-                  style={{ background: "hsl(var(--destructive) / 0.06)", border: "1px solid hsl(var(--destructive) / 0.2)", color: "hsl(var(--destructive))" }}
-                >
-                  <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-                  <span>
-                    {t(
-                      "Une erreur est survenue. Réessayez ou écrivez directement à ",
-                      "Something went wrong. Please try again or email "
-                    )}
-                    <a href="mailto:contact@tooltrim.com" className="font-medium underline underline-offset-2">
-                      contact@tooltrim.com
-                    </a>
-                  </span>
-                </div>
+                <p className="tt-form-error" role="alert">
+                  {t(
+                    "Une erreur est survenue. Réessaye, ou écris directement à ",
+                    "Something went wrong. Try again, or email ",
+                  )}
+                  <a href="mailto:contact@tooltrim.com" className="tt-form-error-link">contact@tooltrim.com</a>
+                </p>
               )}
 
-              <div className="pt-1">
+              <div className="cn-form-actions">
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-                  style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
-                  onMouseEnter={(e) => { if (status !== "submitting") (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground) / 0.85)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(var(--foreground))"; }}
+                  className="tt-button-primary"
                 >
-                  {status === "submitting" ? t("Envoi…", "Sending…") : t("Envoyer le message", "Send message")}
-                  {status !== "submitting" && <ArrowRight className="h-3.5 w-3.5" />}
+                  {status === "submitting"
+                    ? t("Envoi…", "Sending…")
+                    : t("Envoyer le message →", "Send the message →")}
                 </button>
               </div>
             </form>
-          </div>
 
-          {/* Right — info sidebar ─────────────────────────────────────────────── */}
-          <div className="w-full lg:w-[280px] shrink-0">
-            <p className="mb-5 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-              {t("Pourquoi nous écrire", "Why write to us")}
-            </p>
-
-            <div className="flex flex-col gap-3">
-              {reasons.map((r) => (
-                <div
-                  key={r.title}
-                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+            {/* Right — side info */}
+            <aside className="cn-aside">
+              <div className="cn-aside-block">
+                <span className="cn-aside-label">{t("Email direct", "Direct email")}</span>
+                <a
+                  href="mailto:contact@tooltrim.com"
+                  className="cn-aside-email"
                 >
-                  <div
-                    className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
-                    style={{ background: "hsl(var(--primary) / 0.08)", color: "hsl(var(--primary))" }}
-                  >
-                    <r.icon className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">{r.title}</p>
-                    <p className="mt-0.5 text-xs leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
-                      {r.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+                  contact@tooltrim.com
+                </a>
+              </div>
 
-            {/* Direct email */}
-            <div className="mt-6 border-t border-border pt-6">
-              <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-                Email direct
-              </p>
-              <a
-                href="mailto:contact@tooltrim.com"
-                className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-opacity hover:opacity-70"
-                style={{ fontFamily: "ui-monospace, monospace" }}
-              >
-                contact@tooltrim.com
-              </a>
-            </div>
+              <div className="cn-aside-block">
+                <span className="cn-aside-label">{t("Délai de réponse", "Response time")}</span>
+                <p className="cn-aside-text">{t("Sous 48 heures ouvrées.", "Within 48 working hours.")}</p>
+              </div>
+
+              <div className="cn-aside-block">
+                <span className="cn-aside-label">{t("Avant d'écrire", "Before writing")}</span>
+                <p className="cn-aside-text">
+                  {t(
+                    "Ta réponse est probablement déjà dans la ",
+                    "Your answer is probably already in our ",
+                  )}
+                  <Link to={`${prefix}/methodology`} className="ab-inline-link">
+                    {t("méthodologie", "methodology")}
+                  </Link>
+                  {t(" ou dans la ", " or our ")}
+                  <Link to={`${prefix}/transparency`} className="ab-inline-link">
+                    {t("page transparence", "transparency page")}
+                  </Link>
+                  .
+                </p>
+              </div>
+            </aside>
+
           </div>
         </div>
       </div>
