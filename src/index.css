@@ -7361,17 +7361,38 @@
   @media (max-width: 640px) {
     .cp-hero-meta { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
+
+  /* ── Breadcrumb — editorial publication mark ──────────────
+     Signature: tiny filled square ▪ prefix (same shape that closes
+     the verdict-statement and the article lede) + monospace
+     uppercase publication mark for the parent path + sans-serif
+     current section. Wirecutter / Stripe Press pattern, scaled down. */
   .cp-breadcrumb {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 0;
     font-family: var(--font-ui);
     font-size: 13px;
     color: var(--color-muted);
   }
+  .cp-breadcrumb::before {
+    content: "";
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    background: var(--color-text-strong);
+    flex-shrink: 0;
+    margin-right: 2px;
+    transform: translateY(-0.04em);
+  }
   .cp-breadcrumb a {
-    color: var(--color-muted-light);
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-offset: 4px;
@@ -7380,10 +7401,25 @@
                 text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
   }
   .cp-breadcrumb a:hover {
-    color: var(--color-text);
-    text-decoration-color: var(--color-text);
+    color: var(--color-text-strong);
+    text-decoration-color: var(--color-text-strong);
   }
-  .cp-breadcrumb span:last-child { color: var(--color-text); }
+  /* Separator span (any span that's not the last one) */
+  .cp-breadcrumb > span:not(:last-child) {
+    color: var(--color-border);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    user-select: none;
+  }
+  /* Current section — sans-serif, real weight, normal case */
+  .cp-breadcrumb > span:last-child {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text-strong);
+    text-transform: none;
+  }
   /* Uses tt-hero-title scale — no page-specific overrides above 124px */
   .cp-hero-title {
     display: flex;
