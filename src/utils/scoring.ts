@@ -7,6 +7,7 @@ import type {
   DiagnosticResult,
 } from "@/types/diagnostic";
 import { computePertinenceFallback } from "@/utils/pertinenceFallback";
+import { buildDiagnosticInsights } from "@/utils/diagnosticInsights";
 
 // ─── Force-silence list ───────────────────────────────────────────
 const FORCE_SILENCE = ["stripe", "google-drive", "paypal", "google-analytics"];
@@ -350,6 +351,22 @@ export function runDiagnostic(
     allPrescriptions.filter((p) => p.type === "doublon" || p.type === "doublon-ia").length * 1 +
     allPrescriptions.filter((p) => p.type === "dormant").length * 0.5;
 
+  const roundedStackTotalCost = Math.round(stackTotalCost * 100) / 100;
+  const roundedEstimatedWaste = Math.round(estimatedWaste * 100) / 100;
+  const roundedOptimizedCost = Math.round(optimizedCost * 100) / 100;
+  const roundedAnnualSavings = Math.round(annualSavings * 100) / 100;
+  const insights = buildDiagnosticInsights({
+    sessionState,
+    toolScores,
+    prescriptions,
+    recommendations,
+    healthScore,
+    stackTotalCost: roundedStackTotalCost,
+    estimatedWaste: roundedEstimatedWaste,
+    optimizedCost: roundedOptimizedCost,
+    annualSavings: roundedAnnualSavings,
+  });
+
   return {
     sessionId: crypto.randomUUID(),
     sessionState,
@@ -359,12 +376,13 @@ export function runDiagnostic(
     ),
     prescriptions,
     recommendations,
+    insights,
     healthScore,
     healthLabel,
-    stackTotalCost: Math.round(stackTotalCost * 100) / 100,
-    estimatedWaste: Math.round(estimatedWaste * 100) / 100,
-    optimizedCost: Math.round(optimizedCost * 100) / 100,
+    stackTotalCost: roundedStackTotalCost,
+    estimatedWaste: roundedEstimatedWaste,
+    optimizedCost: roundedOptimizedCost,
     hoursRecoverable: Math.round(hoursRecoverable * 10) / 10,
-    annualSavings: Math.round(annualSavings * 100) / 100,
+    annualSavings: roundedAnnualSavings,
   };
 }

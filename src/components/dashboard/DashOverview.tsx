@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import type { DiagnosticResult, Prescription } from "@/types/diagnostic";
-import { ArrowRight, Share2, ChevronRight } from "lucide-react";
+import { ArrowRight, Share2, ChevronRight, Gauge, Layers3, ShieldAlert } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 
 
@@ -122,6 +122,16 @@ export default function DashOverview({ result, t, onShare, onNavigate }: Props) 
     result.healthScore >= 60 ? "text-yellow-500" :
     result.healthScore >= 40 ? "text-orange-500" :
     "text-destructive";
+  const primaryRisk = result.insights.primaryRisk;
+  const profile = result.insights.profile;
+  const maturity = result.insights.maturity;
+  const personaContext = result.insights.personaContext;
+  const riskTone =
+    primaryRisk?.severity === "high"
+      ? "border-destructive/30 bg-destructive/5 text-destructive"
+      : primaryRisk?.severity === "medium"
+        ? "border-orange-300 bg-orange-50 text-orange-700"
+        : "border-border bg-card text-foreground";
 
   return (
     <div className="space-y-8">
@@ -145,6 +155,48 @@ export default function DashOverview({ result, t, onShare, onNavigate }: Props) 
           {t("Voir mon plan d'action", "View my action plan")}
           <ArrowRight className="w-4 h-4" />
         </button>
+      </div>
+
+      {/* ─── 1b. GO7 INTELLIGENCE READ ─── */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="border border-border bg-card rounded-xl p-4 space-y-2">
+          <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground">
+            <Layers3 className="w-4 h-4" />
+            {t("Profil stack", "Stack profile")}
+          </div>
+          <p className="text-sm font-semibold text-foreground">{t(profile.labelFr, profile.labelEn)}</p>
+          <p className="text-xs text-muted-foreground leading-relaxed">{t(profile.summaryFr, profile.summaryEn)}</p>
+        </div>
+        <div className="border border-border bg-card rounded-xl p-4 space-y-2">
+          <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground">
+            <Gauge className="w-4 h-4" />
+            {t("Maturité", "Maturity")}
+          </div>
+          <p className="text-sm font-semibold text-foreground">{t(maturity.labelFr, maturity.labelEn)}</p>
+          <p className="text-xs text-muted-foreground leading-relaxed">{t(maturity.summaryFr, maturity.summaryEn)}</p>
+        </div>
+        <div className={`border rounded-xl p-4 space-y-2 ${riskTone}`}>
+          <div className="inline-flex items-center gap-2 text-xs font-medium">
+            <ShieldAlert className="w-4 h-4" />
+            {t("Risque principal", "Primary risk")}
+          </div>
+          <p className="text-sm font-semibold">
+            {primaryRisk ? t(primaryRisk.labelFr, primaryRisk.labelEn) : t("Rien de bloquant", "Nothing blocking")}
+          </p>
+          <p className="text-xs leading-relaxed opacity-80">
+            {primaryRisk
+              ? t(primaryRisk.detailFr, primaryRisk.detailEn)
+              : t("La stack ne montre pas de signal rouge majeur.", "The stack shows no major red flag.")}
+          </p>
+        </div>
+      </div>
+
+      <div className="border border-border rounded-xl bg-muted/30 px-4 py-3">
+        <p className="text-sm text-foreground leading-relaxed">
+          <span className="font-medium">{t(personaContext.labelFr, personaContext.labelEn)}</span>
+          {" · "}
+          <span className="text-muted-foreground">{t(personaContext.angleFr, personaContext.angleEn)}</span>
+        </p>
       </div>
 
       {/* ─── 2. TOP 2-3 BIGGEST PROBLEMS ─── */}

@@ -83,6 +83,7 @@ export interface DiagnosticResult {
   doublons: DoubleRule[];
   prescriptions: { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] };
   recommendations: Tool[];
+  insights: DiagnosticInsights;
   healthScore: number;
   healthLabel: "Optimisée" | "Correcte" | "À revoir" | "Critique";
   stackTotalCost: number;
@@ -98,4 +99,83 @@ export interface Prescription {
   verdict: "cancel" | "review" | "downgrade";
   message: string;
   savingsEstimate: number;
+}
+
+export type DiagnosticSeverity = "low" | "medium" | "high";
+export type StackProfileId =
+  | "healthy"
+  | "bloated"
+  | "overlap_heavy"
+  | "under_instrumented"
+  | "high_leverage";
+export type StackMaturityId = "emerging" | "structured" | "overbuilt" | "optimized";
+
+export interface DiagnosticRiskFlag {
+  id: string;
+  severity: DiagnosticSeverity;
+  labelFr: string;
+  labelEn: string;
+  detailFr: string;
+  detailEn: string;
+  actionFr: string;
+  actionEn: string;
+  impactMonthly?: number;
+}
+
+export interface FunctionalCoverageItem {
+  key: string;
+  label: string;
+  toolCount: number;
+  monthlyCost: number;
+  toolNames: string[];
+  status: "missing" | "covered" | "overcovered";
+}
+
+export interface DiagnosticFocusArea {
+  id: string;
+  priority: DiagnosticSeverity;
+  labelFr: string;
+  labelEn: string;
+  actionFr: string;
+  actionEn: string;
+}
+
+export interface DiagnosticInsights {
+  profile: {
+    id: StackProfileId;
+    labelFr: string;
+    labelEn: string;
+    summaryFr: string;
+    summaryEn: string;
+  };
+  maturity: {
+    id: StackMaturityId;
+    labelFr: string;
+    labelEn: string;
+    summaryFr: string;
+    summaryEn: string;
+  };
+  personaContext: {
+    persona: Persona;
+    labelFr: string;
+    labelEn: string;
+    angleFr: string;
+    angleEn: string;
+  };
+  primaryRisk: DiagnosticRiskFlag | null;
+  riskFlags: DiagnosticRiskFlag[];
+  functionalCoverage: FunctionalCoverageItem[];
+  focusAreas: DiagnosticFocusArea[];
+  metrics: {
+    toolCount: number;
+    paidToolCount: number;
+    stackCost: number;
+    optimizedCost: number;
+    wasteRatio: number;
+    duplicateCount: number;
+    dormantCount: number;
+    reviewCount: number;
+    highCostToolCount: number;
+  };
+  generatedAt: string;
 }

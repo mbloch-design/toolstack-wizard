@@ -24,12 +24,23 @@ export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, t }: P
       setError(t("Email invalide", "Invalid email"));
       return;
     }
-    onUpdate({ email: email.trim() });
-    // TODO: trigger edge function for deferred email
+    onUpdate({
+      email: email.trim(),
+      emailPreferences: {
+        summary: true,
+        actions: session.emailPreferences?.actions ?? false,
+        checkIn: session.emailPreferences?.checkIn ?? false,
+      },
+    });
     onNext();
   };
 
   const handleSkip = () => {
+    onUpdate({
+      emailPreferences: session.emailPreferences
+        ? { ...session.emailPreferences, summary: false }
+        : { summary: false, actions: false, checkIn: false },
+    });
     onNext();
   };
 

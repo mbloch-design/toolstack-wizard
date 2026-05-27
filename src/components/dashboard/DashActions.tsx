@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
-import { Check, ChevronRight, ExternalLink } from "lucide-react";
+import { Check, ChevronRight, ExternalLink, Target } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 
 
@@ -226,6 +226,26 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
           </p>
         )}
       </div>
+
+      {result.insights.focusAreas.length > 0 && (
+        <div className="border border-border rounded-xl bg-card p-4 space-y-3">
+          <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Target className="w-4 h-4" />
+            {t("Ordre de bataille", "Battle order")}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {result.insights.focusAreas.slice(0, 4).map((focus) => (
+              <div key={focus.id} className="rounded-lg border border-border bg-muted/20 px-3 py-2">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-medium text-foreground">{t(focus.labelFr, focus.labelEn)}</p>
+                  <span className="text-[10px] uppercase tracking-wide text-muted-foreground">{focus.priority}</span>
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{t(focus.actionFr, focus.actionEn)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* ─── 2-4. URGENCY SECTIONS ─── */}
       {(["now", "week", "month"] as const).map((urgency) => {

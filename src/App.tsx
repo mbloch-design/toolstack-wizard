@@ -40,6 +40,7 @@ const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
 const ArticleFacturation = lazy(() => import("@/pages/ArticleFacturation"));
+const BackOfficePage = lazy(() => import("@/pages/BackOfficePage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -201,6 +202,7 @@ const App = () => (
               <Route path="search" element={<SearchPage />} />
               <Route path="audit-saas-gratuit" element={<AuditLanding />} />
               <Route path="free-saas-audit" element={<AuditLanding />} />
+              <Route path="back-office" element={<BackOfficePage />} />
             </Route>
 <Route path="*" element={<NotFound />} />
           </Routes>

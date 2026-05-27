@@ -4,7 +4,14 @@ import { useLang } from "@/hooks/useLang";
 import { useDiagnosticData } from "@/hooks/useDiagnosticData";
 import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
 import { runDiagnostic } from "@/utils/scoring";
-import { supabase } from "@/integrations/supabase/client";
+import {
+  createDiagnosticSession,
+  insertDiagnosticRestitution,
+  insertDiagnosticSessionSnapshot,
+  insertDiagnosticStepEvent,
+  queueDiagnosticEmailJob,
+  updateDiagnosticSession,
+} from "@/lib/diagnosticPersistence";
 
 import DiagStep0Prenom from "@/components/diagnostic/DiagStep0Prenom";
 import DiagStep1Tjm from "@/components/diagnostic/DiagStep1Tjm";
@@ -30,6 +37,10 @@ import DiagTransitionOverlay from "@/components/diagnostic/DiagTransitionOverlay
 type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 const TOTAL_VISIBLE_STEPS = 10;
+const FUNNEL_VERSION = "v1";
+const PROGRESS_MAP: Record<StepId, number> = {
+  0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8, 11: 9, 12: 10,
+};
 
 function createInitialSession(language: "fr" | "en"): SessionState {
   return {
@@ -41,6 +52,41 @@ function createInitialSession(language: "fr" | "en"): SessionState {
     selectedTools: [],
     discoveryAnswers: new Map(),
     closingAnswers: ["", "", ""],
+  };
+}
+
+function serializeDiscoveryAnswers(answers: Map<string, number>) {
+  const out: Record<string, number> = {};
+  answers.forEach((v, k) => { out[k] = v; });
+  return out;
+}
+
+function serializeToolScores(result: DiagnosticResult) {
+  const out: Record<string, { pertinence: number; valueIndex: number; scoreFinal: number }> = {};
+  result.toolScores.forEach((v, k) => { out[k] = v; });
+  return out;
+}
+
+function serializeSessionSnapshot(session: SessionState) {
+  return {
+    firstName: session.firstName,
+    tjm: session.tjm,
+    language: session.language,
+    persona: session.persona,
+    complementarySkills: session.complementarySkills,
+    primarySpecialty: session.primarySpecialty || null,
+    complementarySpecialties: session.complementarySpecialties || [],
+    email: session.email || null,
+    emailPreferences: session.emailPreferences || null,
+    apiSpendTranche: session.apiSpendTranche || null,
+    selectedTools: session.selectedTools.map((t) => ({
+      id: t.id,
+      name: t.name,
+      price: t.price,
+      category: t.category,
+    })),
+    discoveryAnswers: serializeDiscoveryAnswers(session.discoveryAnswers),
+    closingAnswers: session.closingAnswers,
   };
 }
 
@@ -56,7 +102,10 @@ export default function DiagnosticRouter() {
   );
   const [dbSessionId, setDbSessionId] = useState<string | null>(null);
   const [dbSessionToken, setDbSessionToken] = useState<string | null>(null);
-  const savingRef = useRef(false);
+  const bootstrapAttemptedRef = useRef(false);
+  const finalSaveDoneRef = useRef(false);
+  const reportEmailQueuedRef = useRef(false);
+  const previousStepRef = useRef<StepId | null>(null);
 
   // Compute diagnostic result when reaching dashboard
   const diagnosticResult = useMemo<DiagnosticResult | null>(() => {
@@ -64,66 +113,42 @@ export default function DiagnosticRouter() {
     return runDiagnostic(session, { allTools: tools, doublonRules });
   }, [step, session, tools, doublonRules]);
 
-  // Save session to Supabase (non-blocking, called once when results compute)
-  const saveToSupabase = useCallback(async (s: SessionState, result: DiagnosticResult) => {
-    if (savingRef.current) return;
-    savingRef.current = true;
-    try {
-      const discoveryObj: Record<string, number> = {};
-      s.discoveryAnswers.forEach((v, k) => { discoveryObj[k] = v; });
-
-      const toolScoresObj: Record<string, { pertinence: number; valueIndex: number; scoreFinal: number }> = {};
-      result.toolScores.forEach((v, k) => { toolScoresObj[k] = v; });
-
-      const prescriptionsObj = {
-        phase1: result.prescriptions.phase1,
-        phase2: result.prescriptions.phase2,
-        phase3: result.prescriptions.phase3,
-      };
-
-      const { data, error } = await supabase
-        .from("diagnostic_sessions" as any)
-        .insert({
-          first_name: s.firstName || null,
-          persona: s.persona,
-          language: s.language,
-          email: s.email || null,
-          tjm: s.tjm || 0,
-          api_spend_tranche: s.apiSpendTranche || null,
-          selected_tools: s.selectedTools.map((t) => ({ id: t.id, name: t.name, price: t.price, category: t.category })),
-          discovery_answers: discoveryObj,
-          closing_answers: s.closingAnswers,
-          stack_total_cost: result.stackTotalCost,
-          estimated_waste: result.estimatedWaste,
-          optimized_cost: result.optimizedCost,
-          health_score: result.healthScore,
-          health_label: result.healthLabel,
-          annual_savings: result.annualSavings,
-          hours_recoverable: result.hoursRecoverable,
-          prescriptions: prescriptionsObj,
-          recommendations: result.recommendations.map((r) => ({ id: r.id, name: r.name })),
-          tool_scores: toolScoresObj,
-          email_preferences: s.emailPreferences || {},
-        } as any)
-        .select("id, session_token")
-        .single();
-
-      if (error) {
-        console.error("[DiagSave] Insert failed:", error.message);
-      } else if (data) {
-        setDbSessionId((data as any).id);
-        setDbSessionToken((data as any).session_token ?? null);
-      }
-    } catch (err) {
-      console.error("[DiagSave] Unexpected error:", err);
-    }
-  }, []);
-
   const updateSession = useCallback((patch: Partial<SessionState>) => {
     setSession((prev) => ({ ...prev, ...patch }));
   }, []);
 
   const goTo = useCallback((s: StepId) => setStep(s), []);
+
+  const logEvent = useCallback((stepId: StepId, eventName: string, eventPayload: Record<string, unknown> = {}) => {
+    if (!dbSessionId || !dbSessionToken) return;
+    void insertDiagnosticStepEvent(dbSessionId, dbSessionToken, {
+      stepId,
+      eventName,
+      eventPayload,
+      source: "web",
+      lang: session.language,
+      persona: session.persona,
+    });
+  }, [dbSessionId, dbSessionToken, session.language, session.persona]);
+
+  const maybeQueueReportEmail = useCallback(() => {
+    if (!dbSessionId || !dbSessionToken || reportEmailQueuedRef.current) return;
+    const wantsSummary = session.emailPreferences?.summary === true;
+    const email = session.email?.trim();
+    if (!wantsSummary || !email) return;
+
+    reportEmailQueuedRef.current = true;
+    void queueDiagnosticEmailJob(dbSessionId, dbSessionToken, {
+      email,
+      templateKey: "diagnostic_report_ready",
+      locale: session.language,
+      metadata: {
+        trigger_step: 9,
+        funnel_version: FUNNEL_VERSION,
+      },
+    });
+    logEvent(9, "report_requested", { template_key: "diagnostic_report_ready" });
+  }, [dbSessionId, dbSessionToken, logEvent, session.email, session.emailPreferences, session.language]);
 
   // Transition helper
   const goToWithTransition = useCallback((s: StepId, message: string) => {
@@ -134,15 +159,176 @@ export default function DiagnosticRouter() {
     }, 1500);
   }, []);
 
-  // Trigger save when diagnosticResult is first computed
+  // Bootstrap DB session early to persist funnel progress from the first step.
   useEffect(() => {
-    if (diagnosticResult && !savingRef.current) {
-      saveToSupabase(session, diagnosticResult);
+    if (loading || error || bootstrapAttemptedRef.current) return;
+    bootstrapAttemptedRef.current = true;
+
+    void (async () => {
+      const row = await createDiagnosticSession({
+        language: session.language,
+        persona: session.persona,
+        source: "web",
+        funnelVersion: FUNNEL_VERSION,
+        firstName: session.firstName || null,
+        email: session.email || null,
+        lastStepId: step,
+      });
+      if (!row) return;
+      setDbSessionId(row.id);
+      setDbSessionToken(row.session_token);
+    })();
+  }, [loading, error, session.language, session.persona, session.firstName, session.email, step]);
+
+  // Persist step viewed + snapshots when navigating through the funnel.
+  useEffect(() => {
+    if (!dbSessionId || !dbSessionToken) return;
+    const previous = previousStepRef.current;
+    if (previous === step) return;
+    previousStepRef.current = step;
+
+    // Queue report email only on explicit transition from recap step -> closing step.
+    if (previous === 9 && step === 10) {
+      maybeQueueReportEmail();
     }
-  }, [diagnosticResult]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    const completionPct = Number(((PROGRESS_MAP[step] / TOTAL_VISIBLE_STEPS) * 100).toFixed(2));
+    const snapshot = serializeSessionSnapshot(session);
+
+    logEvent(step, "step_viewed", {
+      previous_step: previous,
+      from_tool: fromTool || null,
+      completion_pct: completionPct,
+    });
+
+    void updateDiagnosticSession(dbSessionId, dbSessionToken, {
+      first_name: session.firstName || null,
+      persona: session.persona,
+      language: session.language,
+      email: session.email || null,
+      tjm: session.tjm || 0,
+      api_spend_tranche: session.apiSpendTranche || null,
+      selected_tools: snapshot.selectedTools,
+      discovery_answers: snapshot.discoveryAnswers,
+      closing_answers: snapshot.closingAnswers,
+      email_preferences: session.emailPreferences || {},
+      last_step_id: step,
+      source: "web",
+      funnel_version: FUNNEL_VERSION,
+      abandoned_at: null,
+    });
+
+    void insertDiagnosticSessionSnapshot(dbSessionId, dbSessionToken, {
+      stepId: step,
+      snapshot,
+      completionPct,
+      isFinal: step >= 12,
+    });
+  }, [dbSessionId, dbSessionToken, fromTool, logEvent, maybeQueueReportEmail, session, step]);
+
+  // Persist final computed result once (without creating a second DB session row).
+  useEffect(() => {
+    if (!diagnosticResult || !dbSessionId || !dbSessionToken || finalSaveDoneRef.current) return;
+    finalSaveDoneRef.current = true;
+
+    const discoveryObj = serializeDiscoveryAnswers(session.discoveryAnswers);
+    const toolScoresObj = serializeToolScores(diagnosticResult);
+    const prescriptionsObj = {
+      phase1: diagnosticResult.prescriptions.phase1,
+      phase2: diagnosticResult.prescriptions.phase2,
+      phase3: diagnosticResult.prescriptions.phase3,
+    };
+
+    void (async () => {
+      await updateDiagnosticSession(dbSessionId, dbSessionToken, {
+        first_name: session.firstName || null,
+        persona: session.persona,
+        language: session.language,
+        email: session.email || null,
+        tjm: session.tjm || 0,
+        api_spend_tranche: session.apiSpendTranche || null,
+        selected_tools: session.selectedTools.map((tool) => ({
+          id: tool.id,
+          name: tool.name,
+          price: tool.price,
+          category: tool.category,
+        })),
+        discovery_answers: discoveryObj,
+        closing_answers: session.closingAnswers,
+        stack_total_cost: diagnosticResult.stackTotalCost,
+        estimated_waste: diagnosticResult.estimatedWaste,
+        optimized_cost: diagnosticResult.optimizedCost,
+        health_score: diagnosticResult.healthScore,
+        health_label: diagnosticResult.healthLabel,
+        annual_savings: diagnosticResult.annualSavings,
+        hours_recoverable: diagnosticResult.hoursRecoverable,
+        prescriptions: prescriptionsObj,
+        recommendations: diagnosticResult.recommendations.map((r) => ({ id: r.id, name: r.name })),
+        tool_scores: toolScoresObj,
+        stack_profile: diagnosticResult.insights.profile.id,
+        stack_maturity: diagnosticResult.insights.maturity.id,
+        primary_risk: diagnosticResult.insights.primaryRisk?.id || null,
+        risk_flags: diagnosticResult.insights.riskFlags,
+        functional_coverage: diagnosticResult.insights.functionalCoverage,
+        diagnostic_insights: diagnosticResult.insights,
+        email_preferences: session.emailPreferences || {},
+        last_step_id: 12,
+        completed_at: new Date().toISOString(),
+        abandoned_at: null,
+      });
+
+      void insertDiagnosticRestitution(dbSessionId, dbSessionToken, {
+        channel: "dashboard",
+        version: FUNNEL_VERSION,
+        summary: {
+          profile: diagnosticResult.insights.profile,
+          maturity: diagnosticResult.insights.maturity,
+          primary_risk: diagnosticResult.insights.primaryRisk,
+          focus_areas: diagnosticResult.insights.focusAreas,
+        },
+        details: {
+          insights: diagnosticResult.insights,
+          prescriptions: prescriptionsObj,
+          recommendations: diagnosticResult.recommendations.map((r) => ({ id: r.id, name: r.name })),
+        },
+        scoreSnapshot: {
+          health_score: diagnosticResult.healthScore,
+          health_label: diagnosticResult.healthLabel,
+          stack_total_cost: diagnosticResult.stackTotalCost,
+          estimated_waste: diagnosticResult.estimatedWaste,
+          optimized_cost: diagnosticResult.optimizedCost,
+          annual_savings: diagnosticResult.annualSavings,
+        },
+      });
+
+      logEvent(12, "session_completed", {
+        health_score: diagnosticResult.healthScore,
+        estimated_waste: diagnosticResult.estimatedWaste,
+        stack_profile: diagnosticResult.insights.profile.id,
+        primary_risk: diagnosticResult.insights.primaryRisk?.id || null,
+      });
+      void insertDiagnosticSessionSnapshot(dbSessionId, dbSessionToken, {
+        stepId: 12,
+        snapshot: serializeSessionSnapshot(session),
+        completionPct: 100,
+        isFinal: true,
+      });
+    })();
+  }, [dbSessionId, dbSessionToken, diagnosticResult, logEvent, session]);
+
+  useEffect(() => {
+    if (!dbSessionId || !dbSessionToken) return;
+    if (step >= 11) {
+      void updateDiagnosticSession(dbSessionId, dbSessionToken, {
+        last_step_id: step,
+        abandoned_at: null,
+      });
+    }
+  }, [dbSessionId, dbSessionToken, step]);
 
   // Step navigation logic
   const nextFrom = useCallback((current: StepId) => {
+    logEvent(current, "step_completed", { direction: "next" });
     switch (current) {
       case 0: return goTo(1);
       case 1: return goTo(2);
@@ -172,9 +358,10 @@ export default function DiagnosticRouter() {
       case 11: return goTo(12); // results loading → dashboard
       case 12: return;
     }
-  }, [session.persona, session.firstName, goTo, goToWithTransition, t]);
+  }, [goTo, goToWithTransition, logEvent, session.firstName, session.persona, t]);
 
   const prevFrom = useCallback((current: StepId) => {
+    logEvent(current, "step_back", { direction: "prev" });
     switch (current) {
       case 1: return goTo(0);
       case 2: return goTo(1);
@@ -188,7 +375,7 @@ export default function DiagnosticRouter() {
       case 10: return goTo(9);
       default: return;
     }
-  }, [session.persona, goTo]);
+  }, [goTo, logEvent, session.persona]);
 
   if (loading) {
     return (
@@ -207,10 +394,7 @@ export default function DiagnosticRouter() {
   }
 
   // Map internal step to visible progress (0-9)
-  const progressMap: Record<StepId, number> = {
-    0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8, 11: 9, 12: 10,
-  };
-  const progressIndex = progressMap[step];
+  const progressIndex = PROGRESS_MAP[step];
 
   const showRightPanel = step >= 7 && step <= 10;
 

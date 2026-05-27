@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -110,9 +110,22 @@ const ComparesIndexPage = () => {
   const { lang, t, prefix } = useLang();
   const { tools, loading } = useTools();
 
-  /* Single search query + category filter */
-  const [query, setQuery] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState<CompareCategoryId>("all");
+  /* Single search query + category filter — also accept ?q= and ?cat= URL params
+     so deep-links from the navbar (e.g. "Alternative à Notion") pre-fill the field. */
+  const [searchParams, setSearchParams] = useSearchParams();
+  const isValidCat = (v: string | null): v is CompareCategoryId =>
+    v === "all" || v === "ia" || v === "productivite" || v === "design" || v === "crm" || v === "automatisation";
+  const [query, setQuery] = useState(() => searchParams.get("q") ?? "");
+  const [categoryFilter, setCategoryFilter] = useState<CompareCategoryId>(
+    () => (isValidCat(searchParams.get("cat")) ? (searchParams.get("cat") as CompareCategoryId) : "all"),
+  );
+  /* Sync state changes back to the URL (replaceState so back-button isn't polluted) */
+  useEffect(() => {
+    const next = new URLSearchParams();
+    if (query.trim()) next.set("q", query.trim());
+    if (categoryFilter !== "all") next.set("cat", categoryFilter);
+    setSearchParams(next, { replace: true });
+  }, [query, categoryFilter, setSearchParams]);
 
   /* Resolved comparison list */
   const resolvedComparisons = useMemo(() =>
