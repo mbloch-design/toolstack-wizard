@@ -16354,6 +16354,155 @@ section[id] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   About — editorial manifesto layout
+   ─────────────────────────────────────────────────────────────────────────
+   Long-form prose, voice-led. The page is a written piece, not a
+   "team/values/methodology" card grid. Stripe Press / Substack masthead
+   pattern. One column, generous line-height, occasional pull-quote.
+   ───────────────────────────────────────────────────────────────────────── */
+.ab-hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+@media (max-width: 640px) {
+  .ab-hero-meta { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+.ab-article {
+  background: var(--color-bg);
+  padding: clamp(48px, 5vw, 88px) 0 clamp(56px, 6vw, 96px);
+}
+.ab-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter, 48px);
+}
+
+/* Lede — opening editorial line, body-large bold, ends with the same
+   filled-square endmark used on cp-verdict-statement. */
+.ab-lede {
+  margin: 0 0 clamp(48px, 5vw, 72px);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-section-intro);
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+}
+.ab-endmark {
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  background: var(--color-text-strong);
+  margin-left: 0.28em;
+  vertical-align: 0.08em;
+}
+
+.ab-section {
+  margin-bottom: clamp(40px, 4vw, 56px);
+}
+.ab-section-title {
+  margin: 0 0 16px;
+  font-family: var(--font-brand);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: var(--color-text-strong);
+}
+.ab-prose p {
+  margin: 0 0 16px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+.ab-prose p:last-child { margin-bottom: 0; }
+
+/* Inline editorial link — underline-draw on hover, same as cp-breadcrumb */
+.ab-inline-link {
+  color: var(--color-text-strong);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.ab-inline-link:hover {
+  text-decoration-color: var(--color-text-strong);
+}
+
+/* Numbered rules — editorial list, NOT a card grid */
+.ab-rules {
+  list-style: none;
+  counter-reset: ab-rule;
+  padding: 0;
+  margin: 0;
+}
+.ab-rules li {
+  counter-increment: ab-rule;
+  position: relative;
+  padding: 16px 0 16px 48px;
+  border-bottom: 1px solid var(--color-border-soft);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+.ab-rules li:last-child {
+  border-bottom: none;
+}
+.ab-rules li::before {
+  content: counter(ab-rule, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 18px;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: var(--tt-size-kicker);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
+.ab-rules strong {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-text-strong);
+  margin-right: 6px;
+}
+
+/* CTA at the bottom */
+.ab-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: clamp(56px, 5vw, 80px);
+  padding-top: clamp(40px, 4vw, 56px);
+  border-top: 1px solid var(--color-border);
+}
+.ab-cta-secondary {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  font-weight: 500;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+              text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.ab-cta-secondary:hover {
+  color: var(--color-text);
+  text-decoration-color: var(--color-text);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    CategoryPage — editorial alignment of hero + related categories
    ─────────────────────────────────────────────────────────────────────────
    Replaces the SaaS-cliché hero (giant icon top-right, hsl tinted bg) with
