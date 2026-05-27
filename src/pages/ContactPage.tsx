@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
@@ -15,6 +15,20 @@ const ContactPage = () => {
   const { t, lang, prefix } = useLang();
   const [status, setStatus] = useState<Status>("idle");
   const formRef = useRef<HTMLFormElement>(null);
+
+  /* Pre-fill subject when arriving via ?subject= (e.g. footer "Soumettre
+     un outil" link → ?subject=submit-tool). Recognised keys → localized
+     subject; unknown values fall back to the raw query string. */
+  const [searchParams] = useSearchParams();
+  const subjectParam = searchParams.get("subject") ?? "";
+  const subjectPresets: Record<string, { fr: string; en: string }> = {
+    "submit-tool": { fr: "Soumettre un outil", en: "Submit a tool" },
+    partnership:   { fr: "Partenariat éditeur", en: "Vendor partnership" },
+    correction:    { fr: "Correction de fiche", en: "Page correction" },
+  };
+  const initialSubject = subjectPresets[subjectParam]
+    ? subjectPresets[subjectParam][lang === "en" ? "en" : "fr"]
+    : subjectParam;
 
   const now = new Date();
   const monthFr = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
@@ -156,6 +170,7 @@ const ContactPage = () => {
                   required
                   placeholder={t("En quelques mots…", "In a few words…")}
                   className="tt-form-input"
+                  defaultValue={initialSubject}
                 />
               </div>
 

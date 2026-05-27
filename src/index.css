@@ -1567,46 +1567,7 @@
     color: hsl(var(--muted-foreground));
   }
 
-  /* ── Submit tool button ───────────────────── */
-  .nav-submit-btn {
-    display: inline-flex;
-    align-items: center;
-    height: 48px;
-    padding: 0 22px;
-    border-radius: 8px;
-    border: 1px solid var(--color-border-strong);
-    background: transparent;
-    color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: 0.9375rem;              /* 15px */
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 160ms ease-out, color 160ms ease-out;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .dark .nav-submit-btn {
-    border-color: hsl(var(--foreground));
-    color: hsl(var(--foreground));
-  }
-
-  .nav-submit-btn:hover {
-    background: var(--color-text);
-    color: var(--color-surface);
-  }
-
-  .dark .nav-submit-btn:hover {
-    background: hsl(var(--foreground));
-    color: hsl(var(--background));
-  }
-
-  .nav-submit-btn:focus-visible {
-    outline: 2px solid hsl(var(--primary));
-    outline-offset: 2px;
-  }
+  /* (nav-submit-btn removed — Submit Tool link moved to the footer) */
 
   /* ── Mobile menu button ───────────────────── */
   .nav-menu-btn {
