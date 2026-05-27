@@ -4,7 +4,7 @@ import { useToolPair, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, useState, useRef, type MouseEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
@@ -248,6 +248,7 @@ interface BattleUseCaseScore {
 interface BattleRawData {
   slug: string;
   checkedAt?: string;
+  lastUpdatedAt?: string;
   tooltrimAtAGlance?: {
     defaultChoice?: string;
     defaultChoiceLabel?: string;
@@ -1945,6 +1946,12 @@ const ComparePage = () => {
   // Already statically loaded — no extra network or chunk cost.
   const { tools: toolSummaries } = useToolSummaries();
 
+  // Resolved early (static JSON, no async) so SEO effects can read battle metadata.
+  const battleDataForSeo = useMemo(() => {
+    if (!slugPair || !(slugPair in BATTLE_COMPARISON_DATA)) return undefined;
+    return BATTLE_COMPARISON_DATA[slugPair as BattleComparisonSlug] as BattleRawData;
+  }, [slugPair]);
+
   // Network error detection: if still loading after 10s, show recovery state
   useEffect(() => {
     if (!loading) { setStaleLoading(false); return; }
@@ -1958,30 +1965,79 @@ const ComparePage = () => {
     const title = lang === "fr"
       ? `${toolA.name} vs ${toolB.name} ${year} — comparatif, prix et verdict | ToolTrim`
       : `${toolA.name} vs ${toolB.name} ${year} — comparison, pricing & verdict | ToolTrim`;
+
+    // Decision-framing description: verb-driven, no audience assumption, no hardcoded copy.
+    const decisionLine = battleDataForSeo
+      ? (lang === "fr"
+          ? (battleDataForSeo.comparison.decisionSummary || battleDataForSeo.comparison.mainDifference)
+          : (battleDataForSeo.comparison.decisionSummary || battleDataForSeo.comparison.mainDifference))
+      : (lang === "fr" ? "Deux logiques différentes, un seul bon choix selon ton usage." : "Two different logics, one right choice for your use case.");
     const desc = lang === "fr"
-      ? `${toolA.name} ou ${toolB.name} ? Comparatif complet : logiques différentes, profils adaptés, prix réels et verdict ToolTrim. Décide en 5 minutes.`
-      : `${toolA.name} or ${toolB.name}? Full comparison: different logics, profiles, real pricing and ToolTrim verdict. Decide in 5 minutes.`;
+      ? `${toolA.name} vs ${toolB.name} : ${decisionLine} Prix réels, verdict ToolTrim et critères de décision.`
+      : `${toolA.name} vs ${toolB.name}: ${decisionLine} Real pricing, ToolTrim verdict and decision criteria.`;
+
     const url = `${SEO_BASE}/${lang}/comparatif/${slugPair}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/comparatif/${slugPair}`);
+
+    // Per-page AI summary for GEO/generative engines.
+    const aiSummary = battleDataForSeo
+      ? `ToolTrim compares ${toolA.name} and ${toolB.name} with human-verified pricing. ${battleDataForSeo.comparison.decisionSummary}`
+      : `ToolTrim compares ${toolA.name} and ${toolB.name} with human-verified pricing.`;
+    setMeta("ai-summary", aiSummary);
+
+    // Freshness signal for AI crawlers — use most specific date available.
+    const verifiedDate = battleDataForSeo
+      ? (battleDataForSeo.lastUpdatedAt || battleDataForSeo.checkedAt || "")
+      : "";
+    if (verifiedDate) setMeta("data-verified-date", verifiedDate);
+
+    // Rich schema: Article (editorial content) + SoftwareApplication (the two tools).
+    const datePublished = battleDataForSeo?.checkedAt || year.toString();
+    const dateModified = battleDataForSeo?.lastUpdatedAt || battleDataForSeo?.checkedAt || year.toString();
+    const comparatifsLabel = lang === "fr" ? "Comparatifs" : "Comparisons";
+    const comparatifsPath = `${SEO_BASE}/${lang}/comparatifs`;
     setJsonLd("compare-jsonld", {
       "@context": "https://schema.org",
-      "@type": "ItemList",
-      name: title,
-      description: desc,
-      url,
-      numberOfItems: 2,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: toolA.name, url: `${SEO_BASE}/${lang}/tool/${toolA.slug}` },
-        { "@type": "ListItem", position: 2, name: toolB.name, url: `${SEO_BASE}/${lang}/tool/${toolB.slug}` },
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": `${url}#article`,
+          "headline": title,
+          "description": desc,
+          "url": url,
+          "datePublished": datePublished,
+          "dateModified": dateModified,
+          "inLanguage": lang,
+          "author": { "@type": "Organization", "name": "ToolTrim", "url": SEO_BASE },
+          "publisher": { "@type": "Organization", "name": "ToolTrim", "url": SEO_BASE },
+          "about": [
+            {
+              "@type": "SoftwareApplication",
+              "name": toolA.name,
+              ...(toolA.websiteUrl ? { "url": toolA.websiteUrl } : {}),
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": toolB.name,
+              ...(toolB.websiteUrl ? { "url": toolB.websiteUrl } : {}),
+            },
+          ],
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "ToolTrim", "item": `${SEO_BASE}/${lang}` },
+            { "@type": "ListItem", "position": 2, "name": comparatifsLabel, "item": comparatifsPath },
+            { "@type": "ListItem", "position": 3, "name": `${toolA.name} vs ${toolB.name}`, "item": url },
+          ],
+        },
       ],
-      author: { "@type": "Organization", name: "ToolTrim", url: SEO_BASE },
-      publisher: { "@type": "Organization", name: "ToolTrim", url: SEO_BASE },
-      datePublished: "2026-03-13",
-      inLanguage: lang,
     });
-    return () => cleanupSeo(["compare-jsonld", "compare-faq-jsonld"]);
-  }, [toolA, toolB, lang, slugPair]);
+    return () => {
+      cleanupSeo(["compare-jsonld", "compare-faq-jsonld"]);
+    };
+  }, [toolA, toolB, lang, slugPair, battleDataForSeo]);
 
   if (loading && staleLoading) {
     return (

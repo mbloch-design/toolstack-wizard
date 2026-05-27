@@ -105,7 +105,8 @@ export function getAlternateLinks(path: string, base = SEO_BASE): [string, strin
   return [
     ["fr", `${base}/fr${frPath}`],
     ["en", `${base}/en${enPath}`],
-    ["x-default", `${base}/fr${frPath}`],
+    // x-default points to English as the internationally neutral fallback.
+    ["x-default", `${base}/en${enPath}`],
   ];
 }
 
