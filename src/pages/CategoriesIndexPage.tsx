@@ -223,7 +223,7 @@ const CategoriesIndexPage = () => {
 
     return ids
       .map((id) => categories.find((cat) => cat.id === id))
-      .filter(Boolean);
+      .filter((cat): cat is Category => Boolean(cat));
   }, [activeIntentConfig, categories]);
 
   const featuredStacks = useMemo(() => {
@@ -449,7 +449,7 @@ const CategoriesIndexPage = () => {
             {CATEGORY_GROUPS.map((group) => {
               const groupCategories = group.categoryIds
                 .map((id) => categories.find((cat) => cat.id === id))
-                .filter(Boolean);
+                .filter((cat): cat is Category => Boolean(cat));
 
               if (groupCategories.length === 0) return null;
 

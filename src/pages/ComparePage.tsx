@@ -407,7 +407,12 @@ function buildBattleEditorialContent(data: BattleRawData): CompareEditorialConte
         toolB: score.toolB.reason,
         decision: score.tooltrimDecision,
       }))
-    : comparison.decisiveCriteria || [];
+    : (comparison.decisiveCriteria || []).map((c) => ({
+        title: c.label,
+        toolA: c.toolA,
+        toolB: c.toolB,
+        decision: c.decision,
+      }));
   const tableRows = (data.comparisonRows || [])
     .filter((row) => row.showInMainTable !== false)
     .slice(0, 8)

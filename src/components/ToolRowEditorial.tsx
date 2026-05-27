@@ -10,7 +10,7 @@ import type { Tool } from "@/data/types";
 interface ToolRowEditorialProps {
   tool: Tool;
   prefix: string;
-  t: (fr: string | React.ReactNode, en: string | React.ReactNode) => string | React.ReactNode;
+  t: (fr: string, en: string) => string;
   rank?: number;
   categoryLabel?: string;
   lang?: "fr" | "en";

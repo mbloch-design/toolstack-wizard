@@ -240,7 +240,7 @@ const HomePage = () => {
       {/* 10. Guides */}
       <EditorialSection
         eyebrow={t("Guides", "Guides")}
-        title={t(<>Décider sans se tromper.<br />En moins de 10 minutes.</>, <>Decide without guessing.<br />In under 10 minutes.</>)}
+        title={lang === "fr" ? <>Décider sans se tromper.<br />En moins de 10 minutes.</> : <>Decide without guessing.<br />In under 10 minutes.</>}
         description={t(
           "Des guides courts, directs, orientés action — pour choisir le bon outil, pas le plus populaire.",
           "Short, direct, action-oriented guides — to choose the right tool, not the most popular one."
@@ -625,10 +625,9 @@ function WhatWeCutSection() {
           <div>
             <p className="hp-cuts-label">{t("Ce que ToolTrim repère", "What ToolTrim spots")}</p>
             <h2 className="hp-cuts-heading">
-              {t(
-                <>Ce que tu paies encore.<br />Sans toujours l’utiliser.</>,
-                <>What you still pay for.<br />Without always using it.</>,
-              )}
+              {lang === "fr"
+                ? <>Ce que tu paies encore.<br />Sans toujours l’utiliser.</>
+                : <>What you still pay for.<br />Without always using it.</>}
             </h2>
             <p className="hp-cuts-intro">
               {t(
@@ -662,10 +661,9 @@ function WhatWeCutSection() {
             <div className="hp-result-card">
               <p className="hp-result-card-label">{t("Exemple de lecture", "Reading example")}</p>
               <p className="hp-result-card-main">
-                {t(
-                  <>9 outils · 123 €/mois<br />→ 5 outils · 48 €/mois</>,
-                  <>9 tools · €123/mo<br />→ 5 tools · €48/mo</>,
-                )}
+                {lang === "fr"
+                  ? <>9 outils · 123 €/mois<br />→ 5 outils · 48 €/mois</>
+                  : <>9 tools · €123/mo<br />→ 5 tools · €48/mo</>}
               </p>
               <p className="hp-result-card-text">
                 {t("Résultat illustratif — profil freelance solo, 8 outils.", "Illustrative result — solo freelance profile, 8 tools.")}
@@ -888,10 +886,9 @@ function MethodeSection() {
           <div>
             <p className="hp-cuts-label">{t("Comment ça marche", "How it works")}</p>
             <h2 style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", fontWeight: 600, color: "var(--color-text)", letterSpacing: "-0.04em", lineHeight: 1.15 }}>
-              {t(
-                <>3 minutes.<br />Une décision claire.</>,
-                <>3 minutes.<br />One clear decision.</>,
-              )}
+              {lang === "fr"
+                ? <>3 minutes.<br />Une décision claire.</>
+                : <>3 minutes.<br />One clear decision.</>}
             </h2>
             <p className="hp-methode-subtitle">
               {t(

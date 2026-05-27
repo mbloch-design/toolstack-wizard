@@ -88,12 +88,13 @@ const SearchPage = () => {
 
   const totalCount = toolResults.length + catResults.length + guideResults.length;
 
-  const tabs: { id: Tab; label: string; count: number }[] = [
+  const tabs: { id: Tab; label: string; count: number }[] = ([
     { id: "all",        label: t("Tous", "All"),              count: totalCount },
     { id: "tools",      label: t("Outils", "Tools"),          count: toolResults.length },
     { id: "categories", label: t("Catégories", "Categories"), count: catResults.length },
     { id: "guides",     label: t("Guides", "Guides"),         count: guideResults.length },
-  ].filter(tab => tab.id === "all" || tab.count > 0);
+  ] as { id: Tab; label: string; count: number }[])
+    .filter(tab => tab.id === "all" || tab.count > 0);
 
   const showTools      = activeTab === "all" || activeTab === "tools";
   const showCategories = activeTab === "all" || activeTab === "categories";
