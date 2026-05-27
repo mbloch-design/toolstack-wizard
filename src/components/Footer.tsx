@@ -68,6 +68,7 @@ const Footer = () => {
               <Link to={`${prefix}/methodology`}>{t("Méthodologie éditoriale", "Editorial methodology")}</Link>
               <Link to={`${prefix}/transparency`}>{t("Transparence", "Transparency")}</Link>
               <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
+              <Link to={`${prefix}/contact?subject=submit-tool`}>{t("Soumettre un outil", "Submit a tool")}</Link>
             </nav>
 
           </div>

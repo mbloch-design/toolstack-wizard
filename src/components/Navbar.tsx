@@ -462,10 +462,8 @@ const Navbar = () => {
               {t("Auditer ma stack", "Audit my stack")}
             </Link>
 
-            {/* Discreet submit link */}
-            <Link to={`${prefix}/contact`} className="nav-submit-btn">
-              {t("Soumettre un outil", "Submit Tool")}
-            </Link>
+            {/* (Submit Tool link moved to Footer — keeps the top bar focused
+                on Explorer / Audit / Language) */}
 
             {/* Language toggle */}
             <LanguageToggle href={languageHref} lang={lang} otherLang={otherLang} />
