@@ -4,6 +4,16 @@
 
 ToolTrim helps freelancers, solopreneurs, and startup founders audit their software subscriptions to eliminate waste, detect redundancies, and optimize costs — backed by human-verified data only.
 
+## Pages
+
+- [Accueil](/fr): Audit indépendant de stack SaaS pour freelances et petites équipes.
+- [Outils](/fr/tools): Catalogue de 314 outils SaaS avec prix vérifiés et verdicts.
+- [Catégories](/fr/categories): Explorer les outils par catégorie fonctionnelle.
+- [Guides](/fr/guides): Comparatifs structurés et analyses ROI par profil.
+- [Sélecteur de stack](/fr/selector): Trouver la combinaison d'outils la plus rentable.
+- [Méthodologie](/fr/methodology): Comment les prix sont vérifiés et les verdicts produits.
+- [Contact](/fr/contact): Poser une question ou signaler une erreur de prix.
+
 ## Key Facts
 
 - **314 tools** analyzed across 15 categories (project management, design, AI, dev, marketing, finance…)
