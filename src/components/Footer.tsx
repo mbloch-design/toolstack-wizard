@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
+import logoToolTrim from "@/assets/logo-tooltrim.svg";
 
 /**
  * Editorial footer — three strata:
@@ -73,10 +74,16 @@ const Footer = () => {
         </div>
       </section>
 
-      {/* ── 3. Signature — brand mark XL + meta bar ────────────────── */}
+      {/* ── 3. Signature — brand logo XL + meta bar ────────────────── */}
       <section className="tt-footer-signature">
         <div className="tt-footer-container">
-          <p className="tt-footer-brand-mark" aria-hidden="true">ToolTrim</p>
+          <img
+            src={logoToolTrim}
+            alt="ToolTrim"
+            className="tt-footer-logo"
+            width={1362}
+            height={300}
+          />
 
           <div className="tt-footer-meta">
             <time className="tt-footer-stamp">{updatedStamp}</time>

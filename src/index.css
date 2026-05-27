@@ -16132,17 +16132,16 @@ section[id] {
   padding-top: clamp(40px, 5vw, 72px);
   border-top: 1px solid var(--color-border);
 }
-.tt-footer-brand-mark {
-  margin: 0;
-  font-family: var(--font-brand);
-  font-size: clamp(80px, 14vw, 220px);
-  font-weight: 700;
-  letter-spacing: -0.065em;
-  line-height: 0.85;
-  color: var(--color-text-strong);
+/* Brand logo — architectural scale, ratio 136.26:30.07 ≈ 4.53:1.
+   At max 960px width, the logo stands at ~212px tall — the same vertical
+   presence as the previous text version, with the real wordmark. */
+.tt-footer-logo {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
   user-select: none;
-  /* Bleed slightly off the gutter so it feels architectural, not boxed */
-  margin-left: -0.04em;
+  margin-left: -2px;
 }
 .tt-footer-meta {
   display: flex;
