@@ -16503,6 +16503,156 @@ section[id] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   Methodology — contrast table + inline stats + CARS framework
+   ─────────────────────────────────────────────────────────────────────────
+   Page reuses .ab-* (long-form article) classes from About. These me-*
+   classes cover the 3 page-specific patterns: 2-col contrast table,
+   inline monospace stats line, and the CARS framework list.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Contrast table (Annuaire vs Diagnostic) — open editorial pattern ── */
+.me-contrast {
+  margin: 24px 0 0;
+  border-top: 2px solid var(--color-border-strong);
+}
+.me-contrast-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 16px 0;
+  border-bottom: 2px solid var(--color-border-strong);
+}
+.me-contrast-head-col {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding-right: 16px;
+}
+.me-contrast-head-col--us {
+  padding-left: 16px;
+  padding-right: 0;
+  color: var(--color-text-strong);
+}
+.me-contrast-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+.me-contrast-row:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+.me-contrast-them {
+  padding: 18px 16px 18px 0;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-border);
+  text-decoration-thickness: 1px;
+}
+.me-contrast-us {
+  padding: 18px 0 18px 16px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--color-text-strong);
+}
+@media (max-width: 560px) {
+  .me-contrast-head,
+  .me-contrast-row {
+    grid-template-columns: 1fr;
+  }
+  .me-contrast-them,
+  .me-contrast-us {
+    padding: 14px 0;
+  }
+  .me-contrast-head-col--us {
+    padding-left: 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border-soft);
+  }
+}
+
+/* ── Inline stats — monospace, "·" separator, same as hero stamps ── */
+.me-stats {
+  margin: 28px 0 0;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: var(--tt-size-kicker);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.me-stats-sep {
+  color: var(--color-border);
+}
+
+/* ── CARS framework — definition list with monospace letter anchors ── */
+.me-cars {
+  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--color-border);
+}
+.me-cars-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border-soft);
+  align-items: baseline;
+}
+.me-cars-row:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+.me-cars-letter {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--color-text-strong);
+}
+.me-cars-body {
+  min-width: 0;
+}
+.me-cars-word {
+  margin: 0 0 4px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+}
+.me-cars-desc {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-muted);
+}
+.me-cars-aside {
+  margin: 24px 0 0;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    CategoryPage — editorial alignment of hero + related categories
    ─────────────────────────────────────────────────────────────────────────
    Replaces the SaaS-cliché hero (giant icon top-right, hsl tinted bg) with
