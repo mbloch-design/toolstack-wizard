@@ -443,7 +443,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* ── Desktop right controls ── */}
+          {/* ── Desktop right controls — search · lang · primary CTA ── */}
           <div className="hidden items-center lg:flex" style={{ gap: 10 }}>
             {/* Inline search bar */}
             <button
@@ -458,15 +458,13 @@ const Navbar = () => {
               <kbd className="nav-kbd">{shortcutLabel}</kbd>
             </button>
 
+            {/* Language toggle */}
+            <LanguageToggle href={languageHref} lang={lang} otherLang={otherLang} />
+
+            {/* Primary CTA sits last — anchored to the right edge */}
             <Link to={`${prefix}/selector`} className="nav-audit-btn">
               {t("Auditer ma stack", "Audit my stack")}
             </Link>
-
-            {/* (Submit Tool link moved to Footer — keeps the top bar focused
-                on Explorer / Audit / Language) */}
-
-            {/* Language toggle */}
-            <LanguageToggle href={languageHref} lang={lang} otherLang={otherLang} />
           </div>
 
           {/* ── Mobile right ── */}
