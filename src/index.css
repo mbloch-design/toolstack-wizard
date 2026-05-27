@@ -16041,19 +16041,40 @@ section[id] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   Footer — editorial signature, three strata, asymmetric columns
+   Footer — editorial dark slab (Committed color strategy)
    ─────────────────────────────────────────────────────────────────────────
-   1. Baseline tagline (Uncut Sans bold + body intro)
-   2. Three link columns (Produit · Catégories · À propos, asymmetric ratio)
-   3. Signature: huge Uncut Sans brand mark + monospace meta bar
-   No shadcn hsl vars, no Tailwind utility classes — all design tokens.
+   Brief: hybrid utility + editorial closer. Dark surface breaks from the
+   page's light Restrained palette so the footer reads as a deliberate
+   "end of article" moment, not a fade-out.
+
+   Scene: freelance closing a comparison at 23h, just made a decision,
+   returns to the world. The footer says "we exist, we're serious, we're
+   back tomorrow."
+
+   References: Stripe.com (dark + giant wordmark), Linear.app (asymmetric
+   + dense), Vercel (mark architectural).
+
+   Color palette (OKLCH, tinted toward neutral with a hint of brand hue) :
+     surface  oklch(0.18 0.005 270)  ≈ #1d1d1f deep neutral
+     border   oklch(0.28 0.005 270)
+     text     oklch(0.92 0.005 270)  ≈ off-white
+     muted    oklch(0.62 0.005 270)
+
+   Structure (3 strata, unchanged from v1):
+     1. Baseline — tagline + intro
+     2. Links — 3 asymmetric columns
+     3. Signature — logo XL + monospace meta bar
    ───────────────────────────────────────────────────────────────────────── */
 .tt-footer {
-  background: var(--color-bg);
-  color: var(--color-text);
+  --tt-footer-surface: oklch(0.18 0.005 270);
+  --tt-footer-border:  oklch(0.28 0.005 270);
+  --tt-footer-text:    oklch(0.92 0.005 270);
+  --tt-footer-muted:   oklch(0.62 0.005 270);
+
+  background: var(--tt-footer-surface);
+  color: var(--tt-footer-text);
   padding: clamp(56px, 6vw, 96px) 0 0;
   margin-top: clamp(64px, 7vw, 120px);
-  border-top: 1px solid var(--color-border);
 }
 .tt-footer-container {
   max-width: var(--layout-content, 1280px);
@@ -16072,7 +16093,7 @@ section[id] {
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1;
-  color: var(--color-text-strong);
+  color: var(--tt-footer-text);
 }
 .tt-footer-intro {
   margin: 0;
@@ -16081,13 +16102,13 @@ section[id] {
   font-size: var(--tt-size-body-large);
   line-height: 1.5;
   letter-spacing: -0.015em;
-  color: var(--color-muted);
+  color: var(--tt-footer-muted);
 }
 
 /* ── 2. Link columns ────────────────────────────────────── */
 .tt-footer-links {
   padding: clamp(40px, 4vw, 56px) 0;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--tt-footer-border);
 }
 .tt-footer-grid {
   display: grid;
@@ -16106,7 +16127,7 @@ section[id] {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--tt-footer-muted);
   margin-bottom: 8px;
 }
 .tt-footer-col a {
@@ -16114,7 +16135,7 @@ section[id] {
   font-size: var(--tt-size-body);
   font-weight: 500;
   letter-spacing: -0.01em;
-  color: var(--color-text);
+  color: var(--tt-footer-text);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 4px;
@@ -16123,18 +16144,19 @@ section[id] {
               text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 .tt-footer-col a:hover {
-  color: var(--color-text-strong);
-  text-decoration-color: var(--color-text-strong);
+  color: oklch(0.99 0 0); /* pure off-white on hover */
+  text-decoration-color: oklch(0.99 0 0);
 }
 
-/* ── 3. Signature — brand mark + meta ───────────────────── */
+/* ── 3. Signature — brand logo + meta ───────────────────── */
 .tt-footer-signature {
   padding-top: clamp(40px, 5vw, 72px);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--tt-footer-border);
 }
 /* Brand logo — architectural scale, ratio 136.26:30.07 ≈ 4.53:1.
-   At max 960px width, the logo stands at ~212px tall — the same vertical
-   presence as the previous text version, with the real wordmark. */
+   The source SVG ships with fill #222 (dark). On a dark slab that would
+   be invisible, so we invert via CSS filter — the SVG file stays untouched
+   (still consumed at full color by the Navbar on the light surface). */
 .tt-footer-logo {
   display: block;
   width: 100%;
@@ -16142,6 +16164,7 @@ section[id] {
   height: auto;
   user-select: none;
   margin-left: -2px;
+  filter: invert(1) brightness(0.92);
 }
 .tt-footer-meta {
   display: flex;
@@ -16150,7 +16173,7 @@ section[id] {
   flex-wrap: wrap;
   gap: 16px;
   padding: 28px 0 32px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--tt-footer-border);
   margin-top: clamp(32px, 4vw, 48px);
 }
 .tt-footer-stamp {
@@ -16158,7 +16181,7 @@ section[id] {
   font-size: var(--tt-size-kicker);
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--color-muted);
+  color: var(--tt-footer-muted);
 }
 .tt-footer-legal {
   display: flex;
@@ -16169,16 +16192,16 @@ section[id] {
   font-size: var(--tt-size-kicker);
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--color-muted);
+  color: var(--tt-footer-muted);
 }
 .tt-footer-copyright {
   white-space: nowrap;
 }
 .tt-footer-sep {
-  color: var(--color-border);
+  color: var(--tt-footer-border);
 }
 .tt-footer-legal a {
-  color: var(--color-muted);
+  color: var(--tt-footer-muted);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 3px;
@@ -16187,8 +16210,8 @@ section[id] {
               text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 .tt-footer-legal a:hover {
-  color: var(--color-text);
-  text-decoration-color: var(--color-text);
+  color: var(--tt-footer-text);
+  text-decoration-color: var(--tt-footer-text);
 }
 
 /* ── Responsive ────────────────────────────────────────── */
