@@ -194,42 +194,42 @@ const ComparesIndexPage = () => {
   return (
     <div className="min-h-screen bg-background">
 
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="cix-hero">
-        <div className="cix-hero-inner">
+      {/* ── Hero — shared tt-page-hero pattern ─────────────────────────── */}
+      <section className="tt-page-hero">
+        <div className="tt-page-hero-inner">
 
-          <span className="cix-hero-eyebrow">{t("Comparatifs", "Comparisons")}</span>
-          <h1 className="cix-hero-h1">
+          <span className="tt-page-hero-eyebrow">{t("Comparatifs", "Comparisons")}</span>
+          <h1 className="tt-page-hero-title">
             {t("Comparer les outils.", "Compare the tools.")}<br />
             {t("Choisir sans empiler.", "Choose without stacking.")}
           </h1>
-          <p className="cix-hero-desc">
+          <p className="tt-page-hero-desc">
             {t(
               "Des comparatifs clairs pour comprendre les différences, les limites et le bon choix selon ton usage.",
               "Clear comparisons to understand differences, limitations and the right choice for your use case.",
             )}
           </p>
 
-          {/* ── Single search field — filters the listing below in real time ── */}
-          <div className="cix-search-module">
-            <label htmlFor="cix-search-input" className="cix-search-label">
+          {/* Single search field — filters the listing below in real time */}
+          <div className="tt-page-hero-search">
+            <label htmlFor="cix-search-input" className="tt-page-hero-search-label">
               {t("Filtrer les comparatifs", "Filter comparisons")}
             </label>
-            <div className="cix-search-field">
+            <div className="tt-page-hero-search-field">
               <input
                 id="cix-search-input"
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t("Ex. Notion, ChatGPT, Figma…", "E.g. Notion, ChatGPT, Figma…")}
-                className="cix-search-input"
+                className="tt-page-hero-search-input"
                 autoComplete="off"
               />
               {query && (
                 <button
                   type="button"
                   onClick={() => setQuery("")}
-                  className="cix-search-clear"
+                  className="tt-page-hero-search-clear"
                   aria-label={t("Effacer", "Clear")}
                 >
                   ×

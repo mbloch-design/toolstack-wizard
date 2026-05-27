@@ -16236,6 +16236,124 @@ section[id] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   Shared page hero — used by ToolsPage, StacksPage, ComparesIndexPage
+   (and any future index/listing page). One visual contract so the 3
+   "explore" landings read as part of the same product.
+   ─────────────────────────────────────────────────────────────────────────
+   Variants:
+   - .tt-page-hero-search   → text filter (Tools, Compares)
+   - .tt-page-hero-cta      → CTA group (Stacks, no search)
+   Each variant slots after the desc; the surrounding shell is identical.
+   ───────────────────────────────────────────────────────────────────────── */
+.tt-page-hero {
+  background: var(--color-bg);
+  padding: 80px 0 56px;
+}
+.tt-page-hero-inner {
+  max-width: var(--layout-content, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter, 48px);
+}
+.tt-page-hero-eyebrow {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 14px;
+}
+.tt-page-hero-title {
+  font-family: var(--font-brand);
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+  color: var(--color-text-strong);
+  margin: 0 0 20px;
+  max-width: 22ch;
+}
+.tt-page-hero-desc {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+  max-width: 56ch;
+  margin: 0 0 32px;
+}
+
+/* ── Variant: search ── */
+.tt-page-hero-search {
+  max-width: 640px;
+}
+.tt-page-hero-search-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 10px;
+}
+.tt-page-hero-search-field {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 2px solid var(--color-border-strong);
+  transition: border-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tt-page-hero-search-field:focus-within {
+  border-color: var(--color-text-strong);
+}
+.tt-page-hero-search-input {
+  flex: 1;
+  height: 52px;
+  padding: 0 4px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--color-text-strong);
+}
+.tt-page-hero-search-input::placeholder {
+  color: var(--color-muted-light);
+  font-weight: 400;
+}
+.tt-page-hero-search-clear {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  align-self: center;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--color-muted);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 140ms ease-out, color 140ms ease-out;
+}
+.tt-page-hero-search-clear:hover {
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+}
+
+/* ── Variant: CTA group (Stacks-style) ── */
+.tt-page-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    CategoryPage — editorial alignment of hero + related categories
    ─────────────────────────────────────────────────────────────────────────
    Replaces the SaaS-cliché hero (giant icon top-right, hsl tinted bg) with

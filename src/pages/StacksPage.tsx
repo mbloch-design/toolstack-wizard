@@ -687,17 +687,17 @@ const StacksPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="eh-root sk-hero">
-        <div className="eh-container">
-          <span className="eh-eyebrow">{t("Stacks types", "Stack templates")}</span>
-          <h1 className="sk-hero-title">{t("Trouve la stack adaptée à ton contexte.", "Find the stack that fits your context.")}</h1>
-          <p className="sk-hero-subtitle">
+      <section className="tt-page-hero">
+        <div className="tt-page-hero-inner">
+          <span className="tt-page-hero-eyebrow">{t("Stacks types", "Stack templates")}</span>
+          <h1 className="tt-page-hero-title">{t("Trouve la stack adaptée à ton contexte.", "Find the stack that fits your context.")}</h1>
+          <p className="tt-page-hero-desc">
             {t(
               "Profil, niveau, budget, TJM, usages réels : ToolTrim classe les stacks selon ta situation, pas selon une liste générique d’outils.",
               "Profile, level, budget, day rate, real usage: ToolTrim ranks stacks by your situation, not by a generic list of tools.",
             )}
           </p>
-          <div className="eh-cta-group">
+          <div className="tt-page-hero-cta">
             <Link to={`${prefix}/selector`} className="eh-cta-primary">{t("Auditer ma stack", "Audit my stack")} <span aria-hidden>→</span></Link>
             <a href="#profils" className="eh-cta-secondary">{t("Explorer les profils", "Explore profiles")}</a>
           </div>
