@@ -16236,6 +16236,123 @@ section[id] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   CategoryPage — editorial alignment of hero + related categories
+   ─────────────────────────────────────────────────────────────────────────
+   Replaces the SaaS-cliché hero (giant icon top-right, hsl tinted bg) with
+   the editorial pattern used on ComparePage and ComparesIndex. Replaces the
+   related-categories card-grid (banned identical-card pattern) with an
+   editorial list. Sidebar logic and tool-list rendering are untouched —
+   only the surrounding chrome is brand-aligned.
+   ───────────────────────────────────────────────────────────────────────── */
+.cat-hero {
+  background: var(--color-bg);
+  padding: 80px 0 56px;
+}
+.cat-hero-inner {
+  max-width: var(--layout-content, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter, 48px);
+}
+.cat-hero-eyebrow {
+  display: block;
+  margin-top: 24px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.cat-hero-title {
+  margin: 14px 0 0;
+  font-family: var(--font-brand);
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+  color: var(--color-text-strong);
+}
+.cat-hero-desc {
+  margin: 20px 0 0;
+  max-width: 56ch;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+.cat-hero-stats {
+  margin: 24px 0 0;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: var(--tt-size-kicker);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cat-hero-stats-sep {
+  color: var(--color-border);
+}
+
+/* ── Related categories — editorial list ─────────────────── */
+.cat-related {
+  margin-top: clamp(48px, 5vw, 80px);
+  padding-top: clamp(40px, 4vw, 56px);
+  border-top: 2px solid var(--color-border-strong);
+}
+.cat-related-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.cat-related-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cat-related-item {
+  border-bottom: 1px solid var(--color-border-soft);
+}
+.cat-related-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 24px;
+  padding: 20px 16px;
+  margin: 0 -16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.cat-related-row:hover {
+  background-color: var(--color-surface-soft);
+}
+.cat-related-name {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-text-strong);
+}
+.cat-related-count {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: var(--tt-size-kicker);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    Reading progress bar — ComparePage long-form signal
    ─────────────────────────────────────────────────────────────────────────
    2px bar at top, scales from 0 to full as the user scrolls the document.

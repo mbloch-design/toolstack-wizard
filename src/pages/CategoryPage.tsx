@@ -235,56 +235,32 @@ const CategoryPage = () => {
   return (
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
 
-      {/* ══════════════ HERO — même langage que ToolsPage ══════════════ */}
-      <section
-        className="relative overflow-hidden border-b border-border"
-        style={{ background: "hsl(230 40% 97%)" }}
-      >
-        <div className="mx-auto max-w-7xl px-6 py-12">
+      {/* ══════════════ HERO — editorial, aligned with cp-hero pattern ══════════════ */}
+      <section className="cat-hero">
+        <div className="cat-hero-inner">
           <Breadcrumb items={[
             { label: t("Outils", "Tools"), href: `${prefix}/tools` },
             { label: displayName },
           ]} />
 
-          <div className="mt-5 flex items-center justify-between gap-8">
-            {/* Left: text */}
-            <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
-                {allCatTools.length} {t("outils analysés", "tools analyzed")}
-              </p>
-              <h1
-                className="font-display"
-                style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.08, color: "hsl(var(--foreground))" }}
-              >
-                {displayName}
-              </h1>
-              <p className="mt-3 leading-relaxed" style={{ fontSize: "0.9375rem", color: "hsl(var(--muted-foreground))", maxWidth: "48ch", fontWeight: 400 }}>
-                {catDesc}
-              </p>
-              {/* Stats inline — mêmes chips que ToolsPage */}
-              <div className="mt-5 flex flex-wrap items-center gap-2">
-                {freeCount > 0 && (
-                  <span className="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-medium" style={{ background: "#dcfce7", color: "#15803d" }}>
-                    {freeCount} {t("gratuits ou freemium", "free or freemium")}
-                  </span>
-                )}
-                {avgPrice > 0 && (
-                  <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-[11px] font-medium" style={{ color: "hsl(var(--muted-foreground))" }}>
-                    ~{Math.round(avgPrice)}€ {t("prix moyen", "avg price")}
-                  </span>
-                )}
-              </div>
-            </div>
+          <span className="cat-hero-eyebrow">
+            {allCatTools.length} {t("outils analysés", "tools analyzed")}
+          </span>
+          <h1 className="cat-hero-title">{displayName}</h1>
+          {catDesc && <p className="cat-hero-desc">{catDesc}</p>}
 
-            {/* Right: category icon large */}
-            <div
-              className="hidden lg:flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl"
-              style={{ background: "hsl(var(--primary) / 0.08)", color: "hsl(var(--primary))" }}
-              aria-hidden
-            >
-              <Icon className="h-11 w-11" />
-            </div>
-          </div>
+          {/* Stats line — editorial, monospace */}
+          {(freeCount > 0 || avgPrice > 0) && (
+            <p className="cat-hero-stats">
+              {freeCount > 0 && (
+                <span>{freeCount} {t("gratuits ou freemium", "free or freemium")}</span>
+              )}
+              {freeCount > 0 && avgPrice > 0 && <span className="cat-hero-stats-sep" aria-hidden="true">·</span>}
+              {avgPrice > 0 && (
+                <span>~{Math.round(avgPrice)}€ {t("prix moyen", "avg price")}</span>
+              )}
+            </p>
+          )}
         </div>
       </section>
 
@@ -558,40 +534,27 @@ const CategoryPage = () => {
               </div>
             )}
 
-            {/* Related categories */}
+            {/* Related categories — editorial list, no card grid */}
             {relatedCats.length > 0 && (
-              <div className="mt-14 border-t border-border pt-10">
-                <h2 className="font-display" style={{ fontSize: "1.0625rem", fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  {t("Catégories connexes", "Related categories")}
-                </h2>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <section className="cat-related">
+                <span className="cat-related-eyebrow">{t("Catégories connexes", "Related categories")}</span>
+                <ul className="cat-related-list" role="list">
                   {relatedCats.map((cat) => {
-                    const CIcon = getCategoryIcon(cat.id);
                     const count = tools.filter((tool) => tool.categoryId === cat.id).length;
                     const cName = stripLeadingEmoji(cat.name, cat.id);
                     return (
-                      <Link
-                        key={cat.id}
-                        to={`${prefix}/category/${cat.slug}`}
-                        className="surface-card-hover group p-4"
-                      >
-                        <div
-                          className="mb-2.5 inline-flex rounded-lg p-2"
-                          style={{ background: "hsl(var(--primary) / 0.08)", color: "hsl(var(--primary))" }}
-                        >
-                          <CIcon className="h-4 w-4" />
-                        </div>
-                        <p className="font-semibold group-hover:text-primary transition-colors" style={{ fontFamily: "inherit" }}>
-                          {t(cName, cat.nameEn || cName)}
-                        </p>
-                        <p className="mt-1 text-xs font-medium" style={{ color: "hsl(var(--primary))", fontFamily: "ui-monospace, monospace" }}>
-                          {count} {t("outils", "tools")} →
-                        </p>
-                      </Link>
+                      <li key={cat.id} className="cat-related-item">
+                        <Link to={`${prefix}/category/${cat.slug}`} className="cat-related-row">
+                          <span className="cat-related-name">{t(cName, cat.nameEn || cName)}</span>
+                          <span className="cat-related-count">
+                            {count} {t("outils", "tools")}
+                          </span>
+                        </Link>
+                      </li>
                     );
                   })}
-                </div>
-              </div>
+                </ul>
+              </section>
             )}
           </div>
         </div>
