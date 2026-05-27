@@ -528,7 +528,7 @@ function CategoryCard({
 }: {
   cat: ReturnType<typeof useCategories>["categories"][number];
   prefix: string;
-  t: (fr: string, en?: string) => string;
+  t: (fr: string, en: string) => string;
   stats?: { count: number; freeCount: number; paidCount: number };
   featured?: boolean;
 }) {
