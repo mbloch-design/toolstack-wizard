@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useTools, useCategories } from "@/hooks/useSupabaseData";
+import type { Category } from "@/data/types";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import EditorialHero from "@/components/EditorialHero";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";

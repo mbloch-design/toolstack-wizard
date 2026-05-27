@@ -582,7 +582,7 @@ function ManifestoSection() {
    WhatWeCutSection — "Ce que ToolTrim coupe"
 ───────────────────────────────────────────────────────────────────────────── */
 function WhatWeCutSection() {
-  const { t, prefix } = useLang();
+  const { lang, t, prefix } = useLang();
 
   const cuts = [
     {
@@ -846,7 +846,7 @@ function BusinessObjectivesSection() {
    Grille 3 étapes : usage / doublons / décision
 ───────────────────────────────────────────────────────────────────────────── */
 function MethodeSection() {
-  const { t, prefix } = useLang();
+  const { lang, t, prefix } = useLang();
 
   const steps = [
     {

@@ -401,7 +401,7 @@ interface StackSelectionCardProps {
   enriched: EnrichedStack;
   prefix: string;
   lang: "fr" | "en";
-  t: (fr: string | React.ReactNode, en: string | React.ReactNode) => string | React.ReactNode;
+  t: (fr: string, en: string) => string;
   tools: NonNullable<ReturnType<typeof useToolSummaries>["tools"]>[number][];
   isRecommended: boolean;
 }

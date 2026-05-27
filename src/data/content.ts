@@ -1,4 +1,4 @@
-import type { Vertical } from "./types";
+import type { Vertical, VerticalFamily } from "./types";
 import verticalsJson from "./verticals.json";
 
 // Verticals — the only consumed export here.
