@@ -40,29 +40,19 @@ const SAVINGS_OPTIONS = [
   { key: "cheaperAlt",  labelFr: "Alternative moins chère",       labelEn: "Cheaper alternative exists" },
 ];
 
-// ── Breadcrumb — minimal, matches ToolsPage visual density ──
+// ── Breadcrumb — editorial publication mark (▪ MONO / Section) ──
+// Renders as direct children of .cp-breadcrumb so the CSS selectors
+// (> a, > span:not(:last-child), > span:last-child) match correctly.
 const Breadcrumb = ({ items }: { items: { label: string; href?: string }[] }) => (
-  <nav className="flex items-center gap-1.5" aria-label="Breadcrumb">
-    {items.map((item, i) => (
-      <span key={i} className="flex items-center gap-1.5">
-        {i > 0 && (
-          <span className="text-[11px]" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }}>/</span>
-        )}
-        {item.href ? (
-          <Link
-            to={item.href}
-            className="text-[11px] font-medium transition-colors hover:text-foreground"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            {item.label}
-          </Link>
-        ) : (
-          <span className="text-[11px] font-medium" style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}>
-            {item.label}
-          </span>
-        )}
-      </span>
-    ))}
+  <nav className="cp-breadcrumb" aria-label="Breadcrumb">
+    {items.flatMap((item, i) => {
+      const parts = [];
+      if (i > 0) parts.push(<span key={`sep-${i}`}>/</span>);
+      parts.push(item.href
+        ? <Link key={`l-${i}`} to={item.href}>{item.label}</Link>
+        : <span key={`s-${i}`}>{item.label}</span>);
+      return parts;
+    })}
   </nav>
 );
 
@@ -264,8 +254,9 @@ const CategoryPage = () => {
         </div>
       </section>
 
-      {/* ── Body ── */}
-      <div className="mx-auto max-w-7xl px-4 py-10">
+      {/* ── Body — same horizontal constraints as the hero (1280 max / 48px gutter)
+            so the sidebar + tool list align vertically with the H1 above. */}
+      <div className="cat-body">
         <div className="flex items-start gap-8">
 
           {/* ══════════════ SIDEBAR ══════════════ */}

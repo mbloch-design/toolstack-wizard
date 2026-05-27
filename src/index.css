@@ -16817,10 +16817,23 @@ section[id] {
   background: var(--color-bg);
   padding: 80px 0 56px;
 }
-.cat-hero-inner {
+.cat-hero-inner,
+.cat-body {
   max-width: var(--layout-content, 1280px);
   margin: 0 auto;
   padding: 0 var(--layout-gutter, 48px);
+}
+.cat-body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (max-width: 1023px) {
+  .cat-hero-inner,
+  .cat-body { padding-left: var(--layout-gutter-tablet, 32px); padding-right: var(--layout-gutter-tablet, 32px); }
+}
+@media (max-width: 639px) {
+  .cat-hero-inner,
+  .cat-body { padding-left: var(--layout-gutter-mobile, 20px); padding-right: var(--layout-gutter-mobile, 20px); }
 }
 .cat-hero-eyebrow {
   display: block;
