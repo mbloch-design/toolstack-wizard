@@ -4,6 +4,7 @@ import { useToolPair, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, useState, useRef, type MouseEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
@@ -2169,11 +2170,10 @@ const ComparePage = () => {
       <section className="cp-hero">
         <div className="cp-hero-inner">
           <div className="cp-hero-meta">
-            <nav className="cp-breadcrumb" aria-label="Breadcrumb">
-              <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
-              <span>/</span>
-              <span>{toolA.name} vs {toolB.name}</span>
-            </nav>
+            <Breadcrumb items={[
+              { label: t("Comparatifs", "Comparisons"), href: `${prefix}/comparatifs` },
+              { label: `${toolA.name} vs ${toolB.name}` },
+            ]} />
             {content.checkedAt && (() => {
               const d = new Date(content.checkedAt);
               const monthFr = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];

@@ -1,4 +1,5 @@
 import { useLang } from "@/hooks/useLang";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Link } from "react-router-dom";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useMemo, useEffect } from "react";
@@ -59,11 +60,7 @@ const AboutPage = () => {
       <section className="tt-page-hero">
         <div className="tt-page-hero-inner">
           <div className="ab-hero-meta">
-            <nav className="cp-breadcrumb" aria-label="Breadcrumb">
-              <Link to={prefix || "/fr"}>ToolTrim</Link>
-              <span>/</span>
-              <span>{t("Manifeste", "Manifesto")}</span>
-            </nav>
+            <Breadcrumb items={[{ label: t("Manifeste", "Manifesto") }]} />
             <time className="cp-hero-checked" dateTime={now.toISOString().slice(0, 10)}>{stamp}</time>
           </div>
 

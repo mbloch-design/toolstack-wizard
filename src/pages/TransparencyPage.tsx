@@ -1,4 +1,5 @@
 import { useLang } from "@/hooks/useLang";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { setSeoTags, setHreflang, cleanupSeo } from "@/lib/seo";
@@ -39,11 +40,7 @@ const TransparencyPage = () => {
       <section className="tt-page-hero">
         <div className="tt-page-hero-inner">
           <div className="ab-hero-meta">
-            <nav className="cp-breadcrumb" aria-label="Breadcrumb">
-              <Link to={prefix || "/fr"}>ToolTrim</Link>
-              <span>/</span>
-              <span>{t("Transparence", "Transparency")}</span>
-            </nav>
+            <Breadcrumb items={[{ label: t("Transparence", "Transparency") }]} />
             <time className="cp-hero-checked" dateTime={now.toISOString().slice(0, 10)}>{stamp}</time>
           </div>
 

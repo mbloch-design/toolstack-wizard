@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
+import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -107,11 +108,7 @@ const ContactPage = () => {
       <section className="tt-page-hero">
         <div className="tt-page-hero-inner">
           <div className="ab-hero-meta">
-            <nav className="cp-breadcrumb" aria-label="Breadcrumb">
-              <Link to={prefix || "/fr"}>ToolTrim</Link>
-              <span>/</span>
-              <span>Contact</span>
-            </nav>
+            <Breadcrumb items={[{ label: "Contact" }]} />
             <time className="cp-hero-checked" dateTime={now.toISOString().slice(0, 10)}>{stamp}</time>
           </div>
 

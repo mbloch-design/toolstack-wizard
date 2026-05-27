@@ -9,6 +9,7 @@ import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } 
 import { getToolDomain } from "@/lib/toolUtils";
 import { asText, stripLeadingEmoji } from "@/lib/text";
 import { ToolRowEditorial } from "@/components/ToolRowEditorial";
+import Breadcrumb from "@/components/Breadcrumb";
 import type { PricingV5, ToolType } from "@/data/types";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
@@ -40,21 +41,9 @@ const SAVINGS_OPTIONS = [
   { key: "cheaperAlt",  labelFr: "Alternative moins chère",       labelEn: "Cheaper alternative exists" },
 ];
 
-// ── Breadcrumb — editorial publication mark (▪ MONO / Section) ──
-// Renders as direct children of .cp-breadcrumb so the CSS selectors
-// (> a, > span:not(:last-child), > span:last-child) match correctly.
-const Breadcrumb = ({ items }: { items: { label: string; href?: string }[] }) => (
-  <nav className="cp-breadcrumb" aria-label="Breadcrumb">
-    {items.flatMap((item, i) => {
-      const parts = [];
-      if (i > 0) parts.push(<span key={`sep-${i}`}>/</span>);
-      parts.push(item.href
-        ? <Link key={`l-${i}`} to={item.href}>{item.label}</Link>
-        : <span key={`s-${i}`}>{item.label}</span>);
-      return parts;
-    })}
-  </nav>
-);
+// (Local Breadcrumb component removed — uses the shared editorial
+//  Breadcrumb from @/components/Breadcrumb instead, with ▪ publication
+//  mark + JSON-LD schema.)
 
 const CategoryPage = () => {
   const { lang, t, prefix } = useLang();
