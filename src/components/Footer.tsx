@@ -1,160 +1,97 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useCategories, useToolSummaries } from "@/hooks/useSupabaseData";
-import { stripLeadingEmoji } from "@/lib/text";
-import { useMemo } from "react";
 
+/**
+ * Editorial footer — three strata:
+ *   1. Baseline: brand tagline + one-sentence intro
+ *   2. Links: three asymmetric columns
+ *   3. Signature: brand mark XL + monospace meta bar (date, legal, copyright)
+ *
+ * Uses ToolTrim design tokens only (no shadcn hsl vars, no Tailwind utility
+ * styling). Inherits the page's editorial voice and signature set.
+ */
 const Footer = () => {
-  const { t, prefix } = useLang();
-  const { categories } = useCategories();
-  const { tools } = useToolSummaries();
-
-  const topCategories = useMemo(() => {
-    return categories
-      .map(cat => ({ ...cat, count: tools.filter(t => t.categoryId === cat.id).length }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 8);
-  }, [categories, tools]);
-
-  const topTools = useMemo(() => tools.slice(0, 8), [tools]);
+  const { t, prefix, lang } = useLang();
+  const year = new Date().getFullYear();
+  const monthFr = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+  const monthEn = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const now = new Date();
+  const updatedStamp = lang === "fr"
+    ? `Mis à jour · ${monthFr[now.getMonth()]} ${now.getFullYear()}`
+    : `Updated · ${monthEn[now.getMonth()]} ${now.getFullYear()}`;
 
   return (
-    <footer className="border-t border-border" style={{ background: "hsl(var(--card))" }}>
+    <footer className="tt-footer" role="contentinfo">
 
-      {/* ── Link columns ── */}
-      <div className="border-t border-border" style={{ background: "hsl(var(--background))" }}>
-        <div className="mx-auto max-w-7xl px-6 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-
-            {/* Product */}
-            <div>
-              <p className="label-section mb-4">{t("Produit", "Product")}</p>
-              <nav className="flex flex-col gap-2.5">
-                {[
-                  { to: `${prefix}/selector`, label: t("Audit de stack", "Stack audit") },
-                  { to: `${prefix}/tools`, label: t("Catalogue d'outils", "Tool catalog") },
-                  { to: `${prefix}/category`, label: t("Catégories", "Categories") },
-                  { to: `${prefix}/guides`, label: t("Guides", "Guides") },
-                  { to: `${prefix}/stacks`, label: t("Stacks types", "Stack templates") },
-                  { to: `${prefix}/comparatifs`, label: t("Comparatifs", "Comparisons") },
-                ].map(item => (
-                  <Link key={item.to} to={item.to}
-                    className="text-sm transition-colors duration-150 hover:text-foreground"
-                    style={{ color: "hsl(var(--muted-foreground))" }}>
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
-            {/* Categories */}
-            <div>
-              <p className="label-section mb-4">{t("Catégories", "Categories")}</p>
-              <nav className="flex flex-col gap-2.5">
-                {topCategories.map(cat => {
-                  const catName = stripLeadingEmoji(cat.name, cat.id);
-                  const catNameEn = stripLeadingEmoji(cat.nameEn, catName);
-                  return (
-                    <Link key={cat.id} to={`${prefix}/category/${cat.slug}`}
-                      className="text-sm transition-colors duration-150 hover:text-foreground"
-                      style={{ color: "hsl(var(--muted-foreground))" }}>
-                      {t(catName, catNameEn)}
-                    </Link>
-                  );
-                })}
-              </nav>
-            </div>
-
-            {/* Tools */}
-            <div>
-              <p className="label-section mb-4">{t("Outils", "Tools")}</p>
-              <nav className="flex flex-col gap-2.5">
-                {topTools.map(tool => (
-                  <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`}
-                    className="text-sm transition-colors duration-150 hover:text-foreground"
-                    style={{ color: "hsl(var(--muted-foreground))" }}>
-                    {tool.name}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
-            {/* Company + Legal */}
-            <div>
-              <p className="label-section mb-4">{t("Entreprise", "Company")}</p>
-              <nav className="flex flex-col gap-2.5">
-                {[
-                  { to: `${prefix}/about`, label: t("À propos", "About") },
-                  { to: `${prefix}/transparency`, label: t("Transparence", "Transparency") },
-                  { to: `${prefix}/contact`, label: "Contact" },
-                ].map(item => (
-                  <Link key={item.to} to={item.to}
-                    className="text-sm transition-colors duration-150 hover:text-foreground"
-                    style={{ color: "hsl(var(--muted-foreground))" }}>
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-
-              <p className="label-section mb-3 mt-7">{t("Légal", "Legal")}</p>
-              <nav className="flex flex-col gap-2.5">
-                {[
-                  { to: `${prefix}/legal-notice`, label: t("Mentions légales", "Legal notice") },
-                  { to: `${prefix}/privacy-policy`, label: t("Confidentialité", "Privacy") },
-                  { to: `${prefix}/terms`, label: t("CGV", "Terms") },
-                ].map(item => (
-                  <Link key={item.to} to={item.to}
-                    className="text-sm transition-colors duration-150 hover:text-foreground"
-                    style={{ color: "hsl(var(--muted-foreground))" }}>
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      {/* ── Bottom bar ── */}
-      <div className="border-t border-border" style={{ background: "hsl(var(--card))" }}>
-        <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.65rem",
-            letterSpacing: "0.05em",
-            color: "hsl(var(--muted-foreground) / 0.4)",
-          }}>
-            © {new Date().getFullYear()} ToolTrim
+      {/* ── 1. Baseline — editorial tagline + brand intro ───────────── */}
+      <section className="tt-footer-baseline">
+        <div className="tt-footer-container">
+          <p className="tt-footer-tagline">
+            {t("Choisir, pas empiler.", "Choose, don't stack.")}
           </p>
-          <div className="flex items-center gap-4">
-            {[
-              { to: `${prefix}/privacy-policy`, label: t("Confidentialité", "Privacy") },
-              { to: `${prefix}/terms`, label: t("CGV", "Terms") },
-              { to: `${prefix}/legal-notice`, label: t("Mentions légales", "Legal") },
-            ].map((item, i, arr) => (
-              <span key={item.to} className="flex items-center gap-4">
-                <Link to={item.to}
-                  style={{
-                    fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.65rem",
-                    letterSpacing: "0.05em",
-                    color: "hsl(var(--muted-foreground) / 0.4)",
-                    transition: "color 150ms",
-                  }}
-                  onMouseEnter={e => ((e.target as HTMLElement).style.color = "hsl(var(--muted-foreground))")}
-                  onMouseLeave={e => ((e.target as HTMLElement).style.color = "hsl(var(--muted-foreground) / 0.4)")}
-                >
-                  {item.label}
-                </Link>
-                {i < arr.length - 1 && (
-                  <span style={{ color: "hsl(var(--border))" }}>·</span>
-                )}
-              </span>
-            ))}
+          <p className="tt-footer-intro">
+            {t(
+              "ToolTrim aide les freelances et fondateurs solo à choisir les bons outils SaaS — pas à en découvrir de nouveaux.",
+              "ToolTrim helps freelancers and solo founders choose the right SaaS tools — not discover new ones.",
+            )}
+          </p>
+        </div>
+      </section>
+
+      {/* ── 2. Links — three asymmetric editorial columns ──────────── */}
+      <section className="tt-footer-links">
+        <div className="tt-footer-container">
+          <div className="tt-footer-grid">
+
+            <nav aria-label={t("Produit", "Product")} className="tt-footer-col">
+              <span className="tt-footer-col-label">{t("Produit", "Product")}</span>
+              <Link to={`${prefix}/selector`}>{t("Audit de stack", "Stack audit")}</Link>
+              <Link to={`${prefix}/tools`}>{t("Catalogue", "Catalog")}</Link>
+              <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
+              <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
+              <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
+            </nav>
+
+            <nav aria-label={t("Catégories", "Categories")} className="tt-footer-col">
+              <span className="tt-footer-col-label">{t("Catégories", "Categories")}</span>
+              <Link to={`${prefix}/category/ia-generaliste`}>{t("IA", "AI")}</Link>
+              <Link to={`${prefix}/category/organisation`}>{t("Organisation", "Organization")}</Link>
+              <Link to={`${prefix}/category/creation-design`}>{t("Design", "Design")}</Link>
+              <Link to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
+              <Link to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
+            </nav>
+
+            <nav aria-label={t("À propos", "About")} className="tt-footer-col tt-footer-col--wide">
+              <span className="tt-footer-col-label">{t("À propos", "About")}</span>
+              <Link to={`${prefix}/about`}>{t("Qui est ToolTrim", "Who is ToolTrim")}</Link>
+              <Link to={`${prefix}/methodology`}>{t("Méthodologie éditoriale", "Editorial methodology")}</Link>
+              <Link to={`${prefix}/transparency`}>{t("Transparence", "Transparency")}</Link>
+              <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
+            </nav>
+
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ── 3. Signature — brand mark XL + meta bar ────────────────── */}
+      <section className="tt-footer-signature">
+        <div className="tt-footer-container">
+          <p className="tt-footer-brand-mark" aria-hidden="true">ToolTrim</p>
+
+          <div className="tt-footer-meta">
+            <time className="tt-footer-stamp">{updatedStamp}</time>
+            <div className="tt-footer-legal">
+              <span className="tt-footer-copyright">© {year} ToolTrim</span>
+              <span className="tt-footer-sep" aria-hidden="true">·</span>
+              <Link to={`${prefix}/legal-notice`}>{t("Mentions", "Legal")}</Link>
+              <span className="tt-footer-sep" aria-hidden="true">·</span>
+              <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>
+              <span className="tt-footer-sep" aria-hidden="true">·</span>
+              <Link to={`${prefix}/terms`}>{t("CGV", "Terms")}</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </footer>
   );

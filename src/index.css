@@ -16041,6 +16041,179 @@ section[id] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   Footer — editorial signature, three strata, asymmetric columns
+   ─────────────────────────────────────────────────────────────────────────
+   1. Baseline tagline (Uncut Sans bold + body intro)
+   2. Three link columns (Produit · Catégories · À propos, asymmetric ratio)
+   3. Signature: huge Uncut Sans brand mark + monospace meta bar
+   No shadcn hsl vars, no Tailwind utility classes — all design tokens.
+   ───────────────────────────────────────────────────────────────────────── */
+.tt-footer {
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: clamp(56px, 6vw, 96px) 0 0;
+  margin-top: clamp(64px, 7vw, 120px);
+  border-top: 1px solid var(--color-border);
+}
+.tt-footer-container {
+  max-width: var(--layout-content, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter, 48px);
+}
+
+/* ── 1. Baseline ────────────────────────────────────────── */
+.tt-footer-baseline {
+  padding-bottom: clamp(40px, 4vw, 56px);
+}
+.tt-footer-tagline {
+  margin: 0 0 16px;
+  font-family: var(--font-brand);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--color-text-strong);
+}
+.tt-footer-intro {
+  margin: 0;
+  max-width: 56ch;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body-large);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--color-muted);
+}
+
+/* ── 2. Link columns ────────────────────────────────────── */
+.tt-footer-links {
+  padding: clamp(40px, 4vw, 56px) 0;
+  border-top: 1px solid var(--color-border);
+}
+.tt-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+}
+.tt-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tt-footer-col-label {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+}
+.tt-footer-col a {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-body);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+              text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tt-footer-col a:hover {
+  color: var(--color-text-strong);
+  text-decoration-color: var(--color-text-strong);
+}
+
+/* ── 3. Signature — brand mark + meta ───────────────────── */
+.tt-footer-signature {
+  padding-top: clamp(40px, 5vw, 72px);
+  border-top: 1px solid var(--color-border);
+}
+.tt-footer-brand-mark {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(80px, 14vw, 220px);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.85;
+  color: var(--color-text-strong);
+  user-select: none;
+  /* Bleed slightly off the gutter so it feels architectural, not boxed */
+  margin-left: -0.04em;
+}
+.tt-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 28px 0 32px;
+  border-top: 1px solid var(--color-border);
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.tt-footer-stamp {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: var(--tt-size-kicker);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
+.tt-footer-legal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: var(--tt-size-kicker);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
+.tt-footer-copyright {
+  white-space: nowrap;
+}
+.tt-footer-sep {
+  color: var(--color-border);
+}
+.tt-footer-legal a {
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+              text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tt-footer-legal a:hover {
+  color: var(--color-text);
+  text-decoration-color: var(--color-text);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .tt-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .tt-footer-col--wide { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .tt-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .tt-footer-col--wide { grid-column: auto; }
+  .tt-footer-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    Reading progress bar — ComparePage long-form signal
    ─────────────────────────────────────────────────────────────────────────
    2px bar at top, scales from 0 to full as the user scrolls the document.
