@@ -3678,9 +3678,19 @@
     background: var(--color-text);
   }
 
-  /* Conteneur de sous-page — scroll-margin compense header fixe + tab nav sticky */
+  /* Section anchor — scroll-margin compensates the fixed header + sticky tab nav */
   .td-subpage-content {
     scroll-margin-top: calc(var(--navbar-h, 68px) + 72px + 12px);
+    padding-top: 8px;
+  }
+  /* Single-scroll article: every section after the first gets a strong
+     editorial divider + generous space so the page reads as chapters,
+     not a flat dump. The first section (#analyse) follows the tab nav
+     directly with no extra rule. */
+  .td-subpage-content + .td-subpage-content {
+    margin-top: clamp(48px, 5vw, 72px);
+    padding-top: clamp(40px, 4vw, 56px);
+    border-top: 2px solid var(--color-border-strong);
   }
 
   /* Hero metadata row */

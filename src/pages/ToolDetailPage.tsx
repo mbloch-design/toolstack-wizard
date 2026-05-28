@@ -186,24 +186,29 @@ const ToolDetailPage = () => {
   const prevSubPageRef = useRef<string | null>(null);
   const prevSlugRef    = useRef<string | null>(null);
 
+  /* Single-scroll article: all sections render together. Sub-routes
+     (/prix, /alternatives, /avis, /faq) are deep-links that scroll to the
+     matching anchor — instant on fresh load (SEO landing), smooth on
+     in-page nav clicks. The bare tool route never auto-scrolls. */
   useEffect(() => {
-    // Premier rendu ou changement d'outil → reset sans scroller
-    if (prevSubPageRef.current === null || prevSlugRef.current !== (slug ?? null)) {
-      prevSubPageRef.current = subPage;
-      prevSlugRef.current    = slug ?? null;
-      return;
-    }
-    // Même onglet → rien à faire
-    if (prevSubPageRef.current === subPage) return;
-    prevSubPageRef.current = subPage;
-
-    // Scroll smooth vers la section avec offset navbar + tab nav
     const id = subPage === "presentation" ? "analyse" : subPage;
-    const el = document.getElementById(id);
-    if (!el) return;
-    const headerOffset = 92; // 68px navbar + 72px tab nav − 48px marge visuelle
-    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    const isFirst = prevSubPageRef.current === null;
+    const toolChanged = prevSlugRef.current !== (slug ?? null);
+    const sameTab = prevSubPageRef.current === subPage;
+    prevSubPageRef.current = subPage;
+    prevSlugRef.current = slug ?? null;
+
+    if (sameTab && !toolChanged) return;
+    if ((isFirst || toolChanged) && subPage === "presentation") return;
+
+    const behavior: ScrollBehavior = isFirst || toolChanged ? "auto" : "smooth";
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const headerOffset = 92; // navbar + sticky section nav − visual margin
+      const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top: Math.max(0, top), behavior });
+    });
   }, [subPage, slug]);
 
   /* ── Loading / not found ── */
@@ -413,8 +418,8 @@ const ToolDetailPage = () => {
             {/* ════════════════════════════════
                 SECTION: Analyse / Présentation
             ════════════════════════════════ */}
-            {subPage === "presentation" && (
-              <div id="analyse" className="td-subpage-content" style={{ paddingTop: 8 }}>
+            {(
+              <div id="analyse" className="td-subpage-content">
 
                 {/* 1 · Décision rapide — 3 blocs éditoriaux */}
                 {(() => {
@@ -600,8 +605,8 @@ const ToolDetailPage = () => {
             {/* ════════════════════════════════
                 SECTION: Prix
             ════════════════════════════════ */}
-            {subPage === "prix" && (
-              <div id="prix" className="td-subpage-content" style={{ paddingTop: 8 }}>
+            {(
+              <div id="prix" className="td-subpage-content">
                 <div className="td-section">
                   <span className="td-eyebrow">{t("Tarifs", "Pricing")}</span>
                   <h2 className="td-title">
@@ -635,8 +640,8 @@ const ToolDetailPage = () => {
             {/* ════════════════════════════════
                 SECTION: Alternatives
             ════════════════════════════════ */}
-            {subPage === "alternatives" && (
-              <div id="alternatives" className="td-subpage-content" style={{ paddingTop: 8 }}>
+            {(
+              <div id="alternatives" className="td-subpage-content">
                 <div className="td-section">
                   <span className="td-eyebrow">{t("Comparatif", "Comparison")}</span>
                   <h2 className="td-title">
@@ -746,8 +751,8 @@ const ToolDetailPage = () => {
             {/* ════════════════════════════════
                 SECTION: Avis
             ════════════════════════════════ */}
-            {subPage === "avis" && (
-              <div id="avis" className="td-subpage-content" style={{ paddingTop: 8 }}>
+            {(
+              <div id="avis" className="td-subpage-content">
                 {(() => {
                   const ts = computeToolTrimScore(tool);
                   const signals = [
@@ -842,8 +847,8 @@ const ToolDetailPage = () => {
             {/* ════════════════════════════════
                 SECTION: FAQ
             ════════════════════════════════ */}
-            {subPage === "faq" && (
-              <div id="faq" className="td-subpage-content" style={{ paddingTop: 8 }}>
+            {(
+              <div id="faq" className="td-subpage-content">
                 <div className="td-section">
                   <span className="td-eyebrow">{t("FAQ", "FAQ")}</span>
                   <h2 className="td-title">
