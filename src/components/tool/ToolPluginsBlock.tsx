@@ -56,7 +56,7 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
   if (!hasAnyContent) return null;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+    <div className="td-section" style={{ display: "flex", flexDirection: "column", gap: 32 }}>
 
       {/* ── Case 1: Plugin → show host app ── */}
       {hostApp && (

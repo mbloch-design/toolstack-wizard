@@ -593,10 +593,8 @@ const ToolDetailPage = () => {
                   );
                 })()}
 
-                {/* 9 · Intégrations / Plugins */}
-                <div className="td-section">
-                  <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
-                </div>
+                {/* 9 · Intégrations / Plugins — self-wraps .td-section, renders nothing when empty */}
+                <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
 
                 {/* SEO/LLM summary — visually quiet, useful for crawlers */}
                 <ToolSummaryBlock
