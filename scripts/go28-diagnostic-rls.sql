@@ -54,3 +54,31 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON public.diagnostic_session_snapshots TO s
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.diagnostic_email_jobs TO service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.diagnostic_restitutions TO service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.diagnostic_report_artifacts TO service_role;
+
+DROP POLICY IF EXISTS "Insert diagnostic_restitutions by session_token" ON public.diagnostic_restitutions;
+CREATE POLICY "Insert diagnostic_restitutions by session_token"
+ON public.diagnostic_restitutions
+FOR INSERT
+TO anon, authenticated
+WITH CHECK (
+  EXISTS (
+    SELECT 1
+    FROM public.diagnostic_sessions ds
+    WHERE ds.id = diagnostic_restitutions.session_id
+      AND ds.session_token::text = ((current_setting('request.headers', true))::json ->> 'x-session-token')
+  )
+);
+
+DROP POLICY IF EXISTS "Insert diagnostic_report_artifacts by session_token" ON public.diagnostic_report_artifacts;
+CREATE POLICY "Insert diagnostic_report_artifacts by session_token"
+ON public.diagnostic_report_artifacts
+FOR INSERT
+TO anon, authenticated
+WITH CHECK (
+  EXISTS (
+    SELECT 1
+    FROM public.diagnostic_sessions ds
+    WHERE ds.id = diagnostic_report_artifacts.session_id
+      AND ds.session_token::text = ((current_setting('request.headers', true))::json ->> 'x-session-token')
+  )
+);

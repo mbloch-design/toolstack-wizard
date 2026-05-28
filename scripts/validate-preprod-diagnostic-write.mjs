@@ -145,9 +145,29 @@ try {
     })
   );
 
+  await expectOk(
+    "insert diagnostic restitution with x-session-token",
+    await fetch(baseUrl("diagnostic_restitutions"), {
+      method: "POST",
+      headers: anonHeaders({
+        Prefer: "return=minimal",
+        "x-session-token": sessionToken,
+      }),
+      body: JSON.stringify({
+        session_id: sessionId,
+        channel: "dashboard",
+        version: "go28-write-probe",
+        summary: { marker },
+        details: { source: "go28-write-probe" },
+        score_snapshot: { health_score: 64 },
+      }),
+    })
+  );
+
   console.log("[OK] anon can create diagnostic session");
   console.log("[OK] anon can update diagnostic session with session token");
   console.log("[OK] anon can insert diagnostic step event with session token");
+  console.log("[OK] anon can insert diagnostic restitution with session token");
   console.log("");
   console.log("GO28 diagnostic write path verdict: PASS");
 } catch (error) {

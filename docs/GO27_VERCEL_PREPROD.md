@@ -64,7 +64,7 @@ Le warning `preprod app responds` doit disparaitre.
 URL verifiee :
 
 ```text
-https://toolstack-wizard-get2jswpl-mbloch-designs-projects.vercel.app/fr
+https://preprod.tooltrim.com/fr
 ```
 
 Resultat app :

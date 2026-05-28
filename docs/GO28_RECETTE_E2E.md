@@ -23,7 +23,7 @@ Le premier script copie le SQL GO28. Il faut le coller dans le SQL Editor Supaba
 1. Ouvrir la preprod :
 
 ```text
-https://toolstack-wizard-2ya5ntb97-mbloch-designs-projects.vercel.app/fr
+https://preprod.tooltrim.com/fr
 ```
 
 2. Lancer un diagnostic complet.
