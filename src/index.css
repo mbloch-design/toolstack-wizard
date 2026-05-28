@@ -9902,6 +9902,17 @@
     }
   }
 
+  /* Consistent keyboard focus ring for the home's interactive elements (a11y) */
+  .hac-card:focus-visible,
+  .home-guide-card:focus-visible,
+  .eh-cta-primary:focus-visible,
+  .eh-cta-secondary:focus-visible,
+  .hp-cuts-cta:focus-visible,
+  .hp-audit-mini-cta:focus-visible {
+    outline: 2px solid var(--color-border-strong);
+    outline-offset: 3px;
+  }
+
   .hp-audit-logo {
     width: 28px;
     height: 28px;
