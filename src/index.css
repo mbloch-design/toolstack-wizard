@@ -17369,3 +17369,33 @@ section[id] {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────────────
+   Tool page — scroll-driven section reveal (signature motion)
+   ─────────────────────────────────────────────────────────────────────────
+   Each chapter fades + lifts as it enters the viewport. CSS-only via
+   animation-timeline: view(); progressive enhancement behind @supports so
+   browsers without it just show static content. Disabled for reduced motion.
+   td-feature hover is the lone feedback micro-interaction.
+   ───────────────────────────────────────────────────────────────────────── */
+.td-feature { transition: border-color 140ms cubic-bezier(0.25, 1, 0.5, 1); }
+.td-feature:hover { border-color: var(--color-text); }
+
+/* Sticky card "see review" link — underline draw + arrow nudge */
+.td-cardlink { position: relative; }
+.td-cardlink-arrow { transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1); }
+.td-cardlink:hover .td-cardlink-arrow { transform: translateX(3px); }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .td-subpage-content > .td-section {
+      animation: tdSectionReveal both cubic-bezier(0.16, 1, 0.3, 1);
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    @keyframes tdSectionReveal {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  }
+}
+

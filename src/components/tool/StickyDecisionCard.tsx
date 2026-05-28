@@ -268,6 +268,7 @@ export default function StickyDecisionCard({
           {altTool && (
             <Link
               to={`${prefix}/tool/${(altTool as any).slug || altTool.id}`}
+              className="td-cardlink"
               style={{
                 fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
                 color: "var(--color-text-strong)", textDecoration: "none",
@@ -275,7 +276,7 @@ export default function StickyDecisionCard({
               }}
             >
               {t("Voir la fiche", "See review")}
-              <ArrowRight style={{ width: 12, height: 12 }} />
+              <ArrowRight style={{ width: 12, height: 12 }} className="td-cardlink-arrow" />
             </Link>
           )}
         </div>
