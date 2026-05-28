@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
+import Breadcrumb from "./Breadcrumb";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    EditorialHero — universal page hero for ToolTrim
@@ -61,30 +62,14 @@ function CtaButton({ cta, variant }: { cta: HeroCtaProps; variant: "primary" | "
 }
 
 /* ── Breadcrumb ──────────────────────────────────────────────────────────── */
-function HeroBreadcrumb({ items }: { items: { label: string; href?: string }[] }) {
-  return (
-    <nav
-      aria-label="Breadcrumb"
-      style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "#6F6F68", display: "flex", alignItems: "center", gap: 8, marginBottom: 24 }}
-    >
-      {items.map((item, i) => (
-        <span key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          {i > 0 && <span aria-hidden style={{ color: "#DADAD4", fontSize: 12 }}>/</span>}
-          {item.href ? (
-            <Link to={item.href} style={{ color: "#6F6F68", textDecoration: "none", transition: "opacity 120ms" }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = "0.6"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
-            >
-              {item.label}
-            </Link>
-          ) : (
-            <span style={{ color: "#222222" }}>{item.label}</span>
-          )}
-        </span>
-      ))}
-    </nav>
-  );
-}
+// Delegates to the shared editorial Breadcrumb so any consumer of
+// EditorialHero gets the same ▪ TOOLTRIM / [section] publication mark
+// signature as the rest of the site. No local styling.
+const HeroBreadcrumb = ({ items }: { items: { label: string; href?: string }[] }) => (
+  <div style={{ marginBottom: 24 }}>
+    <Breadcrumb items={items} />
+  </div>
+);
 
 /* ── Main component ──────────────────────────────────────────────────────── */
 export function EditorialHero({

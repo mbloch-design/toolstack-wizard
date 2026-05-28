@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { X, SlidersHorizontal } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
@@ -689,6 +690,9 @@ const StacksPage = () => {
     <div className="min-h-screen bg-background">
       <section className="tt-page-hero">
         <div className="tt-page-hero-inner">
+          <div style={{ marginBottom: 14 }}>
+            <Breadcrumb items={[{ label: t("Stacks", "Stacks") }]} />
+          </div>
           <span className="tt-page-hero-eyebrow">{t("Stacks types", "Stack templates")}</span>
           <h1 className="tt-page-hero-title">{t("Trouve la stack adaptée à ton contexte.", "Find the stack that fits your context.")}</h1>
           <p className="tt-page-hero-desc">

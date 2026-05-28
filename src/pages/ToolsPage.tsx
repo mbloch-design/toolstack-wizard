@@ -5,6 +5,7 @@ import { useTools, useCategories } from "@/hooks/useSupabaseData";
 import { Search, X } from "lucide-react";
 import { getCategoryIcon } from "@/lib/categoryIcons";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCard } from "@/components/ToolCard";
@@ -115,6 +116,9 @@ const ToolsPage = () => {
       {/* ══════════════ HERO — shared tt-page-hero pattern ══════════════ */}
       <section className="tt-page-hero">
         <div className="tt-page-hero-inner">
+          <div style={{ marginBottom: 14 }}>
+            <Breadcrumb items={[{ label: t("Catalogue", "Catalog") }]} />
+          </div>
           <span className="tt-page-hero-eyebrow">{t("Catalogue", "Catalog")}</span>
           <h1 className="tt-page-hero-title">{t("Trouver les bons outils.", "Find the right tools.")}</h1>
           <p className="tt-page-hero-desc">

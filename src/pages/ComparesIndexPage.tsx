@@ -4,6 +4,7 @@ import { useLang } from "@/hooks/useLang";
 import { useTools } from "@/hooks/useSupabaseData";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 
@@ -197,6 +198,9 @@ const ComparesIndexPage = () => {
       {/* ── Hero — shared tt-page-hero pattern ─────────────────────────── */}
       <section className="tt-page-hero">
         <div className="tt-page-hero-inner">
+          <div style={{ marginBottom: 14 }}>
+            <Breadcrumb items={[{ label: t("Comparatifs", "Comparisons") }]} />
+          </div>
 
           <span className="tt-page-hero-eyebrow">{t("Comparatifs", "Comparisons")}</span>
           <h1 className="tt-page-hero-title">
