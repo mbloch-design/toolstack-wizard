@@ -56,38 +56,31 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
   if (!hasAnyContent) return null;
 
   return (
-    <div className="py-8 space-y-6">
+    <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
 
       {/* ── Case 1: Plugin → show host app ── */}
       {hostApp && (
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
-            {toolType === "satellite"
-              ? t("Prérequis", "Requires")
-              : t("Fonctionne avec", "Works with")}
-          </p>
-          <h2 className="font-display mb-4 text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+          <span className="td-subhead">
+            {toolType === "satellite" ? t("Prérequis", "Requires") : t("Fonctionne avec", "Works with")}
+          </span>
+          <h2 className="td-subtitle">
             {toolType === "satellite"
               ? t(`${tool.name} s'intègre dans`, `${tool.name} integrates with`)
               : t(`${tool.name} est un plugin pour`, `${tool.name} is a plugin for`)}
           </h2>
 
-          <Link
-            to={`${prefix}/tool/${(hostApp as any).slug || hostApp.id}`}
-            className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-md"
-          >
-            <ToolLogo tool={hostApp as any} size={48} className="rounded-xl shrink-0" />
-            <div className="flex-1 min-w-0">
-              <p className="font-bold text-foreground group-hover:text-primary transition-colors">
-                {hostApp.name}
-              </p>
-              <p className="text-sm mt-0.5 truncate" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}>
+          <Link to={`${prefix}/tool/${(hostApp as any).slug || hostApp.id}`} className="td-tile">
+            <ToolLogo tool={hostApp as any} size={44} className="rounded-xl shrink-0" />
+            <div className="td-tile-body">
+              <p className="td-tile-title">{hostApp.name}</p>
+              <p className="td-tile-sub">
                 {lang === "en" && (hostApp as any).shortDescriptionEn
                   ? (hostApp as any).shortDescriptionEn
                   : hostApp.shortDescription}
               </p>
             </div>
-            <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
+            <ArrowRight className="td-tile-arrow" />
           </Link>
         </div>
       )}
@@ -95,91 +88,73 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
       {/* ── Case 3: Bundle child ── */}
       {bundleParent && (
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
-            <span className="inline-flex items-center gap-1.5">
-              <Package className="h-3.5 w-3.5" />
-              {t("Inclus dans", "Included in")}
-            </span>
-          </p>
+          <span className="td-subhead">
+            <Package />
+            {t("Inclus dans", "Included in")}
+          </span>
 
-          <div className="rounded-xl border border-border bg-card overflow-hidden">
-            {/* Bundle parent */}
-            <Link
-              to={`${prefix}/tool/${(bundleParent as any).slug || bundleParent.id}`}
-              className="group flex items-center gap-3 px-4 py-3.5 border-b border-border hover:bg-muted/30 transition-colors"
-            >
-              <ToolLogo tool={bundleParent as any} size={32} className="rounded-lg shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors">
-                  {bundleParent.name}
-                </p>
-                <p className="text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
-                  {t("Voir le bundle complet", "View full bundle")}
-                </p>
-              </div>
-              <ArrowRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-            </Link>
+          <Link to={`${prefix}/tool/${(bundleParent as any).slug || bundleParent.id}`} className="td-tile">
+            <ToolLogo tool={bundleParent as any} size={36} className="rounded-lg shrink-0" />
+            <div className="td-tile-body">
+              <p className="td-tile-title">{bundleParent.name}</p>
+              <p className="td-tile-sub">{t("Voir le bundle complet", "View full bundle")}</p>
+            </div>
+            <ArrowRight className="td-tile-arrow" />
+          </Link>
 
-            {/* Siblings */}
-            {bundleSiblings.length > 0 && (
-              <div className="px-4 py-3">
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: "hsl(var(--muted-foreground))" }}>
-                  {t("Autres outils du bundle", "Other tools in bundle")}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {bundleSiblings.map(s => (
-                    <Link
-                      key={s.id}
-                      to={`${prefix}/tool/${(s as any).slug || s.id}`}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-muted/40 px-2.5 py-1.5 text-xs font-medium transition-all hover:border-primary/30 hover:text-primary"
-                    >
-                      <ToolLogo tool={s as any} size={14} className="rounded" />
-                      {s.name}
-                    </Link>
-                  ))}
-                </div>
+          {bundleSiblings.length > 0 && (
+            <div style={{ marginTop: 16 }}>
+              <span className="td-subhead" style={{ marginBottom: 10 }}>
+                {t("Autres outils du bundle", "Other tools in bundle")}
+              </span>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {bundleSiblings.map(s => (
+                  <Link key={s.id} to={`${prefix}/tool/${(s as any).slug || s.id}`} className="td-chip">
+                    <ToolLogo tool={s as any} size={14} className="rounded" />
+                    {s.name}
+                  </Link>
+                ))}
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       )}
 
       {/* ── Case 2: Host tool → show plugins ── */}
       {childPlugins.length > 0 && (
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(var(--primary))" }}>
-            <span className="inline-flex items-center gap-1.5">
-              <Puzzle className="h-3.5 w-3.5" />
-              {t("Plugins & extensions", "Plugins & extensions")}
-            </span>
-          </p>
-          <h2 className="font-display mb-4 text-foreground" style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}>
+          <span className="td-subhead">
+            <Puzzle />
+            {t("Plugins & extensions", "Plugins & extensions")}
+          </span>
+          <h2 className="td-subtitle">
             {t(`Extensions disponibles pour ${tool.name}`, `Available extensions for ${tool.name}`)}
           </h2>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 10 }}>
             {childPlugins.map(p => (
               <Link
                 key={p.id}
                 to={`${prefix}/tool/${(p as any).slug || p.id}`}
-                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:-translate-y-0.5 hover:shadow-md"
+                className="td-tile"
+                style={{ alignItems: "flex-start" }}
               >
-                <ToolLogo tool={p as any} size={32} className="rounded-lg shrink-0 mt-0.5" />
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">
+                <ToolLogo tool={p as any} size={32} className="rounded-lg shrink-0" />
+                <div className="td-tile-body">
+                  <p className="td-tile-title" style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                     {p.name}
                   </p>
-                  <p className="text-xs mt-0.5 line-clamp-2 leading-relaxed" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}>
+                  <p className="td-tile-sub" style={{ whiteSpace: "normal", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
                     {lang === "en" && (p as any).shortDescriptionEn
                       ? (p as any).shortDescriptionEn
                       : p.shortDescription}
                   </p>
                   {(p as any).defaultMonthlyPrice === 0 ? (
-                    <span className="mt-1.5 inline-block text-[10px] font-semibold" style={{ color: "hsl(var(--keep))" }}>
+                    <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text-strong)" }}>
                       {t("Gratuit", "Free")}
                     </span>
                   ) : (p as any).defaultMonthlyPrice > 0 ? (
-                    <span className="mt-1.5 inline-block text-[10px] font-mono" style={{ color: "hsl(var(--muted-foreground))" }}>
+                    <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-mono, ui-monospace)", fontSize: 11, color: "var(--color-muted)" }}>
                       {Math.round((p as any).defaultMonthlyPrice)}€/{t("mois", "mo")}
                     </span>
                   ) : null}

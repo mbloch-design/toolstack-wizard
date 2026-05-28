@@ -86,31 +86,16 @@ export default function ToolAudienceBlock({ relevantFor, soloRelevance, teamRele
 
   if (mapped.length === 0 && !isSoloHigh && !isTeamHigh) return null;
 
-  return (
-    <div className="py-8">
-      <p
-        className="text-xs font-bold uppercase tracking-widest mb-2"
-        style={{ color: "hsl(var(--primary))" }}
-      >
-        {t("Pour qui ?", "Who is it for?")}
-      </p>
-      <h2
-        className="font-display mb-5 text-foreground"
-        style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}
-      >
-        {t(`À qui s'adresse ${toolName} ?`, `Who should use ${toolName}?`)}
-      </h2>
+  const showRelevance = isSoloHigh || isTeamHigh || isSoloMed || isTeamMed;
 
-      {/* Audience chips */}
+  return (
+    <div>
+      {/* Audience chips (parent section already renders the eyebrow + title) */}
       {mapped.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-5">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: showRelevance ? 20 : 0 }}>
           {mapped.map(({ labelFr, labelEn, Icon }, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground/85"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
-            >
-              <Icon className="h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--primary))" }} />
+            <span key={i} className="td-chip">
+              <Icon />
               {t(labelFr, labelEn)}
             </span>
           ))}
@@ -118,34 +103,22 @@ export default function ToolAudienceBlock({ relevantFor, soloRelevance, teamRele
       )}
 
       {/* Solo / Team signal — only when clean values exist */}
-      {(isSoloHigh || isTeamHigh || isSoloMed || isTeamMed) && (
-        <div className="flex gap-3">
-          <div
-            className="flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm flex-1"
-            style={{
-              borderColor: isSoloHigh ? "hsl(var(--primary) / 0.3)" : "hsl(var(--border))",
-              background: isSoloHigh ? "hsl(var(--primary) / 0.05)" : "hsl(var(--muted) / 0.3)",
-            }}
-          >
-            <User className="h-4 w-4 shrink-0" style={{ color: isSoloHigh ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))" }} />
+      {showRelevance && (
+        <div className="td-relevance">
+          <div className={`td-relevance-item${isSoloHigh ? " td-relevance-item--on" : ""}`}>
+            <User />
             <div>
-              <p className="font-semibold text-foreground text-xs">{t("Solo / Freelance", "Solo / Freelance")}</p>
-              <p className="text-[11px]" style={{ color: "hsl(var(--muted-foreground))" }}>
+              <p className="td-relevance-label">{t("Solo / Freelance", "Solo / Freelance")}</p>
+              <p className="td-relevance-note">
                 {isSoloHigh ? t("Très recommandé", "Highly recommended") : t("Peut convenir", "Can work")}
               </p>
             </div>
           </div>
-          <div
-            className="flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm flex-1"
-            style={{
-              borderColor: isTeamHigh ? "hsl(var(--primary) / 0.3)" : "hsl(var(--border))",
-              background: isTeamHigh ? "hsl(var(--primary) / 0.05)" : "hsl(var(--muted) / 0.3)",
-            }}
-          >
-            <Users className="h-4 w-4 shrink-0" style={{ color: isTeamHigh ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))" }} />
+          <div className={`td-relevance-item${isTeamHigh ? " td-relevance-item--on" : ""}`}>
+            <Users />
             <div>
-              <p className="font-semibold text-foreground text-xs">{t("Équipe", "Team")}</p>
-              <p className="text-[11px]" style={{ color: "hsl(var(--muted-foreground))" }}>
+              <p className="td-relevance-label">{t("Équipe", "Team")}</p>
+              <p className="td-relevance-note">
                 {isTeamHigh ? t("Très recommandé", "Highly recommended") : t("Peut convenir", "Can work")}
               </p>
             </div>

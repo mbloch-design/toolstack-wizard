@@ -3742,6 +3742,101 @@
     }
   }
 
+  /* ── Editorial primitives for tool sub-blocks (audience / features / plugins)
+     Replaces the legacy Tailwind + hsl(var(--primary)) blue cards. ───────── */
+  .td-subhead {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-kicker);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 14px;
+  }
+  .td-subhead svg { width: 13px; height: 13px; vertical-align: -2px; margin-right: 7px; }
+  .td-subtitle {
+    font-family: var(--font-brand);
+    font-size: clamp(1.25rem, 2vw, 1.625rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    color: var(--color-text);
+    margin-bottom: 18px;
+  }
+
+  .td-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+    white-space: nowrap;
+    text-decoration: none;
+    transition: border-color 140ms ease-out;
+  }
+  a.td-chip:hover { border-color: var(--color-text); }
+  .td-chip svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--color-muted); }
+
+  .td-tile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    text-decoration: none;
+    transition: border-color 140ms ease-out;
+  }
+  .td-tile:hover { border-color: var(--color-text); }
+  .td-tile-body { flex: 1; min-width: 0; }
+  .td-tile-title { font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--color-text); line-height: 1.3; }
+  .td-tile-sub { font-family: var(--font-ui); font-size: 12px; color: var(--color-muted); line-height: 1.4; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .td-tile-arrow { width: 15px; height: 15px; flex-shrink: 0; color: var(--color-muted-light); transition: transform 140ms ease-out, color 140ms ease-out; }
+  .td-tile:hover .td-tile-arrow { color: var(--color-text); transform: translateX(2px); }
+
+  .td-relevance { display: flex; gap: 12px; }
+  .td-relevance-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  .td-relevance-item--on { border-color: var(--color-border-strong); background: var(--color-surface-soft); }
+  .td-relevance-item svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--color-muted); }
+  .td-relevance-item--on svg { color: var(--color-text-strong); }
+  .td-relevance-label { font-family: var(--font-ui); font-size: 12px; font-weight: 600; color: var(--color-text); }
+  .td-relevance-note { font-family: var(--font-ui); font-size: 11px; color: var(--color-muted); margin-top: 1px; }
+
+  .td-feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  @media (min-width: 640px) { .td-feature-grid { grid-template-columns: repeat(3, 1fr); } }
+  .td-feature {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+  .td-feature svg { width: 12px; height: 12px; flex-shrink: 0; color: var(--color-text-strong); }
+  .td-feature span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
   /* Tab nav — strong editorial subnav */
   .td-tab-nav {
     position: sticky;

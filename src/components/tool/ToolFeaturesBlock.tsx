@@ -85,44 +85,19 @@ export default function ToolFeaturesBlock({ covers, functionalNeeds = [], toolNa
   const features = allSlugs.slice(0, MAX_FEATURES).map(slug => getLabel(slug, lang as "fr" | "en"));
 
   return (
-    <div className="py-8">
-      {/* Eyebrow */}
-      <p
-        className="text-xs font-bold uppercase tracking-widest mb-2"
-        style={{ color: "hsl(var(--primary))" }}
-      >
-        {t("Fonctionnalités", "Features")}
-      </p>
-
-      {/* h2 */}
-      <h2
-        className="font-display mb-5 text-foreground"
-        style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.025em" }}
-      >
-        {t(`Ce que fait ${toolName}`, `What ${toolName} does`)}
-      </h2>
-
-      {/* Feature grid */}
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+    <div>
+      {/* Feature grid (parent section already renders the eyebrow + title) */}
+      <div className="td-feature-grid">
         {features.map((label) => (
-          <div
-            key={label}
-            className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2.5 text-sm"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
-          >
-            <div
-              className="flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full"
-              style={{ background: "hsl(var(--primary) / 0.1)" }}
-            >
-              <Check className="h-2.5 w-2.5" style={{ color: "hsl(var(--primary))" }} />
-            </div>
-            <span className="truncate text-foreground/85 leading-tight">{label}</span>
+          <div key={label} className="td-feature">
+            <Check />
+            <span>{label}</span>
           </div>
         ))}
       </div>
 
       {allSlugs.length > MAX_FEATURES && (
-        <p className="mt-3 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
+        <p style={{ marginTop: 12, fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)" }}>
           {t(
             `+ ${allSlugs.length - MAX_FEATURES} autres fonctionnalités`,
             `+ ${allSlugs.length - MAX_FEATURES} more features`
