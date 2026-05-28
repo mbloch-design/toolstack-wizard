@@ -564,22 +564,14 @@ const ToolDetailPage = () => {
                     <h2 className="td-title">
                       {t(`À quoi sert ${tool.name} ?`, `What is ${tool.name} used for?`)}
                     </h2>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
+                    <ul className="td-uselist">
                       {(lang === "en" && (tool as any).useCasesEn ? (tool as any).useCasesEn : tool.useCases)!.map((uc: string, i: number) => (
-                        <div
-                          key={i}
-                          style={{
-                            display: "flex", alignItems: "flex-start", gap: 10,
-                            padding: "12px 16px",
-                            background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 8,
-                            fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)", lineHeight: 1.45,
-                          }}
-                        >
-                          <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, marginTop: 3, color: "var(--color-text-strong)" }} />
-                          {uc}
-                        </div>
+                        <li key={i} className="td-use">
+                          <span className="td-use-marker" aria-hidden="true"><ArrowRight /></span>
+                          <span className="td-use-text">{uc}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 )}
 
