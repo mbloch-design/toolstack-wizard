@@ -105,8 +105,8 @@ export default function StickyDecisionCard({
 
   return (
     <div style={{
-      background: "#FFFFFF",
-      border: "1px solid #DADAD4",
+      background: "var(--color-surface)",
+      border: "1px solid var(--color-border)",
       borderRadius: 10,
       overflow: "hidden",
     }}>
@@ -116,7 +116,7 @@ export default function StickyDecisionCard({
         <span style={{
           display: "block",
           fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-          letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68",
+          letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
           marginBottom: 14,
         }}>
           {t("Verdict ToolTrim", "ToolTrim Verdict")}
@@ -124,17 +124,17 @@ export default function StickyDecisionCard({
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{
             width: 40, height: 40, borderRadius: 8,
-            border: "1px solid #DADAD4", background: "#F8F8F4",
+            border: "1px solid var(--color-border)", background: "var(--color-bg)",
             display: "flex", alignItems: "center", justifyContent: "center",
             flexShrink: 0,
           }}>
             <ToolLogo tool={tool as any} size={26} />
           </div>
           <div>
-            <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "#222222", lineHeight: 1.2 }}>
+            <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", lineHeight: 1.2 }}>
               {tool.name}
             </p>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#6F6F68", marginTop: 2 }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted)", marginTop: 2 }}>
               {t(catName, catNameEn)}
             </p>
           </div>
@@ -142,17 +142,17 @@ export default function StickyDecisionCard({
       </div>
 
       {/* ── 2. Score ── */}
-      <div style={{ borderTop: "1px solid #E7E7E0", padding: "20px 24px 16px" }}>
+      <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "20px 24px 16px" }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 12 }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 3, flexShrink: 0 }}>
             <span style={{
               fontFamily: "var(--font-brand)",
               fontSize: 64, fontWeight: 600, lineHeight: 0.9,
-              letterSpacing: "-0.07em", color: "#222222",
+              letterSpacing: "-0.07em", color: "var(--color-text)",
             }}>
               {ts.score.toFixed(1)}
             </span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 20, fontWeight: 400, color: "#9A9A92", lineHeight: 1, paddingBottom: 6 }}>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 20, fontWeight: 400, color: "var(--color-muted-light)", lineHeight: 1, paddingBottom: 6 }}>
               /5
             </span>
           </div>
@@ -160,11 +160,11 @@ export default function StickyDecisionCard({
             <span style={{
               display: "block",
               fontFamily: "var(--font-ui)", fontSize: 17, fontWeight: 600,
-              color: "hsl(var(--primary))", lineHeight: 1.15,
+              color: "var(--color-text-strong)", lineHeight: 1.15,
             }}>
               {t(ts.labelFr, ts.labelEn)}
             </span>
-            <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, color: "#9A9A92", marginTop: 4, letterSpacing: "0.03em" }}>
+            <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, color: "var(--color-muted-light)", marginTop: 4, letterSpacing: "0.03em" }}>
               {t("Score éditorial", "Editorial score")}
             </span>
           </div>
@@ -172,14 +172,14 @@ export default function StickyDecisionCard({
 
         {/* ── 3. Decision sentence — sits tight under the score ── */}
         {verdictText && (
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, lineHeight: 1.55, color: "#222222", marginTop: 16 }}>
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, lineHeight: 1.55, color: "var(--color-text)", marginTop: 16 }}>
             {verdictText}
           </p>
         )}
       </div>
 
       {/* ── 4. CTAs ── */}
-      <div style={{ borderTop: "1px solid #E7E7E0", padding: "20px 24px" }}>
+      <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "20px 24px" }}>
         <a
           href={primaryCtaUrl}
           target="_blank"
@@ -187,14 +187,14 @@ export default function StickyDecisionCard({
           style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
             width: "100%", height: 48,
-            background: "#222222", color: "#FFFFFF",
+            background: "var(--color-text)", color: "var(--color-surface)",
             borderRadius: 8, border: "none",
             fontFamily: "var(--font-ui)", fontSize: 15, fontWeight: 500,
             textDecoration: "none", cursor: "pointer",
             transition: "background 160ms ease-out",
           }}
-          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
-          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#222222"; }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-hover, #1a1a18)"; }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
         >
           {hasAffiliateOffer
             ? t("Voir l'offre", "View offer")
@@ -209,42 +209,42 @@ export default function StickyDecisionCard({
           style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
             width: "100%", height: 44,
-            background: "transparent", color: "#222222",
-            borderRadius: 8, border: "1px solid #DADAD4",
+            background: "transparent", color: "var(--color-text)",
+            borderRadius: 8, border: "1px solid var(--color-border)",
             fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
             textDecoration: "none", marginTop: 10,
             transition: "all 160ms ease-out",
           }}
-          onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#222222"; el.style.background = "#F8F8F4"; }}
-          onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#DADAD4"; el.style.background = "transparent"; }}
+          onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; }}
+          onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; }}
         >
           {t("Comparer les alternatives", "Compare alternatives")}
         </Link>
       </div>
 
       {/* ── 5. Key facts (4 rows) ── */}
-      <div style={{ borderTop: "1px solid #E7E7E0", padding: "12px 24px 16px" }}>
+      <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "12px 24px 16px" }}>
         {metaRows.map(({ label, value }, i) => (
           <div
             key={label}
             style={{
               display: "flex", alignItems: "center", justifyContent: "space-between",
               padding: "8px 0",
-              borderBottom: i < metaRows.length - 1 ? "1px solid #E7E7E0" : "none",
+              borderBottom: i < metaRows.length - 1 ? "1px solid var(--color-border-soft)" : "none",
             }}
           >
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68" }}>{label}</span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "#222222" }}>{value}</span>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)" }}>{label}</span>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)" }}>{value}</span>
           </div>
         ))}
       </div>
 
       {/* ── 6. Alternative recommandée ── */}
       {altName && (
-        <div style={{ borderTop: "1px solid #E7E7E0", background: "#F8F8F4", padding: "18px 24px" }}>
+        <div style={{ borderTop: "1px solid var(--color-border-soft)", background: "var(--color-bg)", padding: "18px 24px" }}>
           <p style={{
             fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-            letterSpacing: "0.08em", textTransform: "uppercase", color: "#6F6F68", marginBottom: 10,
+            letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 10,
           }}>
             {t("Alternative recommandée", "Recommended alternative")}
           </p>
@@ -252,17 +252,17 @@ export default function StickyDecisionCard({
             {altTool && (
               <div style={{
                 width: 28, height: 28, borderRadius: 6,
-                border: "1px solid #DADAD4", background: "#FFFFFF",
+                border: "1px solid var(--color-border)", background: "var(--color-surface)",
                 display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
                 <ToolLogo tool={altTool as any} size={18} />
               </div>
             )}
-            <span style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "#222222" }}>
+            <span style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)" }}>
               {altName}
             </span>
           </div>
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#6F6F68", lineHeight: 1.5, marginBottom: 10 }}>
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", lineHeight: 1.5, marginBottom: 10 }}>
             {altReason}
           </p>
           {altTool && (
@@ -270,7 +270,7 @@ export default function StickyDecisionCard({
               to={`${prefix}/tool/${(altTool as any).slug || altTool.id}`}
               style={{
                 fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
-                color: "hsl(var(--primary))", textDecoration: "none",
+                color: "var(--color-text-strong)", textDecoration: "none",
                 display: "inline-flex", alignItems: "center", gap: 4,
               }}
             >

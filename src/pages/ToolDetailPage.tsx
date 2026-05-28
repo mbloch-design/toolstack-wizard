@@ -494,7 +494,7 @@ const ToolDetailPage = () => {
                       {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
                         <li key={pro} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                           <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(74,155,111,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
-                            <Check style={{ width: 11, height: 11, color: "#4A9B6F" }} />
+                            <Check style={{ width: 11, height: 11, color: "var(--color-text-strong)" }} />
                           </div>
                           <span className="td-body" style={{ fontSize: 15, marginTop: 0 }}>{pro}</span>
                         </li>
@@ -557,7 +557,7 @@ const ToolDetailPage = () => {
                             fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)", lineHeight: 1.45,
                           }}
                         >
-                          <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, marginTop: 3, color: "hsl(var(--primary))" }} />
+                          <ArrowRight style={{ width: 13, height: 13, flexShrink: 0, marginTop: 3, color: "var(--color-text-strong)" }} />
                           {uc}
                         </div>
                       ))}
@@ -782,7 +782,7 @@ const ToolDetailPage = () => {
                             <span style={{ fontFamily: "var(--font-ui)", fontSize: 24, color: "var(--color-muted-light)", lineHeight: 1, paddingBottom: 10 }}>/5</span>
                           </div>
                           <div>
-                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 20, fontWeight: 600, color: "hsl(var(--primary))", lineHeight: 1.2 }}>
+                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 20, fontWeight: 600, color: "var(--color-text-strong)", lineHeight: 1.2 }}>
                               {t(ts.labelFr, ts.labelEn)}
                             </p>
                             <p style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)", marginTop: 6 }}>
@@ -798,7 +798,7 @@ const ToolDetailPage = () => {
                             {activeSignals.map((s) => (
                               <div key={s.labelFr} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                                 <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(74,155,111,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                                  <Check style={{ width: 11, height: 11, color: "#4A9B6F" }} />
+                                  <Check style={{ width: 11, height: 11, color: "var(--color-text-strong)" }} />
                                 </div>
                                 <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)" }}>{t(s.labelFr, s.labelEn)}</span>
                               </div>
@@ -829,12 +829,12 @@ const ToolDetailPage = () => {
                         <span style={{
                           display: "inline-flex", alignItems: "center", gap: 8,
                           padding: "8px 16px",
-                          border: "1px solid hsl(var(--primary) / 0.25)", borderRadius: 6,
-                          background: "hsl(var(--primary) / 0.06)",
+                          border: "1px solid var(--color-border)", borderRadius: 6,
+                          background: "var(--color-surface-soft)",
                           fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600,
-                          color: "hsl(var(--primary))", letterSpacing: "0.02em",
+                          color: "var(--color-text-strong)", letterSpacing: "0.02em",
                         }}>
-                          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "hsl(var(--primary))", animation: "pulse 2s infinite" }} />
+                          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-text-strong)", animation: "pulse 2s infinite" }} />
                           {t("Bientôt disponible", "Coming soon")}
                         </span>
                       </div>
@@ -1002,7 +1002,7 @@ const ToolDetailPage = () => {
                 textDecoration: "none", letterSpacing: "-0.01em",
                 transition: "background 160ms ease-out", flexShrink: 0, whiteSpace: "nowrap",
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#000000"; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-hover, #1a1a18)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "var(--color-text)"; }}
             >
               {t("Auditer ma stack", "Audit my stack")}
