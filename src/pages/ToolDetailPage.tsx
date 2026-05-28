@@ -997,7 +997,6 @@ const ToolDetailPage = () => {
 
       <SectionPillNav
         sections={pillSections}
-        logoLabel="TT"
         logoTo={`${prefix}/tools`}
         logoAriaLabel={t("Retour aux outils", "Back to tools")}
         ariaLabel={t("Navigation de la fiche outil", "Tool page navigation")}

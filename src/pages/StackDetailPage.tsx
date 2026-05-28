@@ -1169,7 +1169,6 @@ const StackDetailPage = () => {
       ════════════════════════════════════════════════════════════════════ */}
       <SectionPillNav
         sections={navItems}
-        logoLabel="TT"
         logoTo={`${prefix}/stacks`}
         logoAriaLabel={t("Retour aux stacks", "Back to stacks")}
         ariaLabel={t("Navigation de la fiche stack", "Stack page navigation")}

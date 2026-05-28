@@ -2136,7 +2136,6 @@ const ComparePage = () => {
 
       <SectionPillNav
         sections={navSections}
-        logoLabel="VS"
         logoTo={`${prefix}/comparatifs`}
         logoAriaLabel={t("Retour aux comparatifs", "Back to comparisons")}
         ariaLabel={t("Navigation du comparatif", "Comparison navigation")}

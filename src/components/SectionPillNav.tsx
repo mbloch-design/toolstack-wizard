@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
+import pictoLogo from "@/assets/picto-logo.svg";
 
 export interface PillNavSection {
   id: string;
@@ -9,8 +10,6 @@ export interface PillNavSection {
 interface SectionPillNavProps {
   /** In-page sections to anchor to. */
   sections: PillNavSection[];
-  /** Short label inside the left logo block (e.g. "TT", "VS"). */
-  logoLabel: string;
   /** Destination of the logo block (usually the parent index). */
   logoTo: string;
   /** Accessible label for the logo block. */
@@ -32,7 +31,6 @@ interface SectionPillNavProps {
  */
 export default function SectionPillNav({
   sections,
-  logoLabel,
   logoTo,
   logoAriaLabel,
   ariaLabel,
@@ -104,7 +102,7 @@ export default function SectionPillNav({
       aria-label={ariaLabel}
     >
       <Link to={logoTo} className="tt-pillnav-logo" aria-label={logoAriaLabel}>
-        {logoLabel}
+        <img src={pictoLogo} alt="" className="tt-pillnav-logo-img" />
       </Link>
       <div className="tt-pillnav-items">
         {sections.map((section) => (
