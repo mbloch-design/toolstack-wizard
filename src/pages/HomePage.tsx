@@ -216,11 +216,8 @@ const HomePage = () => {
     if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
     const root = document.querySelector(".home-page");
     if (!root) return;
-    const sections = Array.from(root.querySelectorAll<HTMLElement>(":scope > section"));
-    if (sections.length === 0) return;
 
     root.classList.add("home-reveal-ready");
-    const vh = window.innerHeight;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -232,14 +229,27 @@ const HomePage = () => {
       },
       { rootMargin: "0px 0px -12% 0px", threshold: 0.06 }
     );
-    sections.forEach((s) => {
-      if (s.getBoundingClientRect().top < vh * 0.9) {
-        s.classList.add("is-revealed"); // above the fold — no entry animation
+
+    const seen = new WeakSet<Element>();
+    const register = (s: HTMLElement) => {
+      if (seen.has(s)) return;
+      seen.add(s);
+      if (s.getBoundingClientRect().top < window.innerHeight * 0.9) {
+        s.classList.add("is-revealed"); // already on screen — no entry animation
       } else {
         io.observe(s);
       }
-    });
-    return () => io.disconnect();
+    };
+
+    const scan = () => root.querySelectorAll<HTMLElement>(":scope > section").forEach(register);
+    scan();
+
+    // Lazy (Suspense) sections mount after this effect — catch them so they
+    // don't stay stuck hidden (opacity:0) and leave a blank gap.
+    const mo = new MutationObserver(scan);
+    mo.observe(root, { childList: true });
+
+    return () => { io.disconnect(); mo.disconnect(); };
   }, []);
 
   return (
