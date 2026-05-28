@@ -26,6 +26,9 @@ function AuditToolLogo({ name, domain }: AuditToolLogoProps) {
           src={faviconUrl}
           alt=""
           aria-hidden="true"
+          width={18}
+          height={18}
+          loading="lazy"
           onError={() => setImgError(true)}
         />
       ) : (
@@ -123,8 +126,9 @@ function StackAuditPreview({ lang, prefix }: { lang: string; prefix: string }) {
           <span className="hp-audit-tool-name">{tool.name}</span>
           <AuditBadge variant={tool.variant} lang={lang} />
           <span className="hp-audit-price">{tool.price}</span>
-          {/* Hover reveal */}
-          <span className="hp-audit-why" aria-hidden="true">
+          {/* Hover reveal — kept in the a11y tree so the rationale is available
+              to keyboard / screen-reader users, not just on pointer hover. */}
+          <span className="hp-audit-why">
             {isFr ? tool.whyFr : tool.whyEn}
           </span>
         </div>

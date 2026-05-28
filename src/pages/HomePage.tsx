@@ -301,7 +301,7 @@ function HacLogo({ name, domain }: { name: string; domain: string }) {
   return (
     <span className="hac-logo">
       {!err ? (
-        <img src={src} alt="" aria-hidden="true" onError={() => setErr(true)} />
+        <img src={src} alt="" aria-hidden="true" width={20} height={20} loading="lazy" onError={() => setErr(true)} />
       ) : (
         <span className="hac-logo-letter">{name[0].toUpperCase()}</span>
       )}
