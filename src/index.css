@@ -17385,17 +17385,20 @@ section[id] {
 .td-cardlink-arrow { transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1); }
 .td-cardlink:hover .td-cardlink-arrow { transform: translateX(3px); }
 
+/* Cross-browser reveal: JS (IntersectionObserver) toggles .td-in. The hidden
+   start state only applies once JS has added .td-reveal-ready, so content stays
+   visible if JS is unavailable. Skipped under reduced motion. */
 @media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .td-subpage-content > .td-section {
-      animation: tdSectionReveal both cubic-bezier(0.16, 1, 0.3, 1);
-      animation-timeline: view();
-      animation-range: entry 0% entry 55%;
-    }
-    @keyframes tdSectionReveal {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+  .td-reveal-ready .td-subpage-content > .td-section {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .td-reveal-ready .td-subpage-content > .td-section.td-in {
+    opacity: 1;
+    transform: none;
   }
 }
 

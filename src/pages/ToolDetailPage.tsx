@@ -213,6 +213,35 @@ const ToolDetailPage = () => {
     });
   }, [subPage, slug]);
 
+  /* Scroll-driven section reveal (cross-browser via IntersectionObserver).
+     Content stays visible if JS or IO is unavailable, and the animation is
+     skipped entirely under prefers-reduced-motion. */
+  useEffect(() => {
+    if (!tool) return;
+    if (typeof IntersectionObserver === "undefined") return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+
+    const root = document.querySelector(".td-page-grid");
+    if (!root) return;
+    const sections = Array.from(root.querySelectorAll<HTMLElement>(".td-subpage-content > .td-section"));
+    if (sections.length === 0) return;
+
+    root.classList.add("td-reveal-ready");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("td-in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
+    );
+    sections.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  }, [tool, slug]);
+
   /* ── Loading / not found ── */
   if (loading) {
     return (
