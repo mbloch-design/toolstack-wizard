@@ -996,6 +996,15 @@ const ToolDetailPage = () => {
         logoAriaLabel={t("Retour aux outils", "Back to tools")}
         ariaLabel={t("Navigation de la fiche outil", "Tool page navigation")}
         heroSelector=".td-hero"
+        onSelect={(id) => {
+          const tab = TABS.find((tb) => (tb.id === "presentation" ? "analyse" : tb.id) === id);
+          if (!tab) return false;
+          const path = tab.id === "prix" && lang === "en" ? "/pricing"
+            : tab.id === "avis" && lang === "en" ? "/reviews"
+            : tab.path;
+          navigate(`${prefix}/tool/${slug}${path}`);
+          return true;
+        }}
       />
 
     </article>

@@ -21,6 +21,12 @@ interface SectionPillNavProps {
    * hero is on screen and fades in once it scrolls out of view.
    */
   heroSelector: string;
+  /**
+   * Optional click handler. Return `true` to signal the selection was handled
+   * externally (e.g. routed to a dedicated URL) and skip the internal smooth
+   * scroll. Return falsy / omit to keep the default anchor-scroll behavior.
+   */
+  onSelect?: (id: string) => boolean | void;
 }
 
 /**
@@ -35,11 +41,14 @@ export default function SectionPillNav({
   logoAriaLabel,
   ariaLabel,
   heroSelector,
+  onSelect,
 }: SectionPillNavProps) {
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
   const [visible, setVisible] = useState(false);
   const activeIdRef = useRef(activeId);
   activeIdRef.current = activeId;
+  const onSelectRef = useRef(onSelect);
+  onSelectRef.current = onSelect;
 
   useEffect(() => {
     if (sections.length === 0) return;
@@ -76,8 +85,9 @@ export default function SectionPillNav({
         ? sections[Math.min(currentIdx + 1, sections.length - 1)]
         : sections[Math.max(currentIdx - 1, 0)];
       if (!next || next.id === activeIdRef.current) return;
-      document.getElementById(next.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
       setActiveId(next.id);
+      if (onSelectRef.current?.(next.id)) return;
+      document.getElementById(next.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     };
     document.addEventListener("keydown", handleKey);
 
@@ -90,8 +100,9 @@ export default function SectionPillNav({
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
     event.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     setActiveId(id);
+    if (onSelect?.(id)) return;
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   if (sections.length === 0) return null;
