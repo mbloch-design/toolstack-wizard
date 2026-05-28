@@ -170,6 +170,11 @@ export default function StickyDecisionCard({
           </div>
         </div>
 
+        {/* Score bar — visual read of the score on the /5 scale */}
+        <div className="td-scorebar" role="presentation">
+          <div className="td-scorebar-fill" style={{ width: `${Math.max(0, Math.min(1, ts.score / 5)) * 100}%` }} />
+        </div>
+
         {/* ── 3. Decision sentence — sits tight under the score ── */}
         {verdictText && (
           <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, lineHeight: 1.55, color: "var(--color-text)", marginTop: 16 }}>
