@@ -213,6 +213,17 @@ const ToolDetailPage = () => {
     });
   }, [subPage, slug]);
 
+  /* Keep the pricing sub-route canonical per locale: FR=/prix, EN=/pricing.
+     Only fires on a mismatched direct URL, never on normal in-page nav. */
+  useEffect(() => {
+    const end = location.pathname.split("/").pop();
+    if (lang === "en" && end === "prix") {
+      navigate(`${prefix}/tool/${slug}/pricing`, { replace: true });
+    } else if (lang !== "en" && end === "pricing") {
+      navigate(`${prefix}/tool/${slug}/prix`, { replace: true });
+    }
+  }, [lang, location.pathname, slug, prefix, navigate]);
+
   /* Scroll-driven section reveal (cross-browser via IntersectionObserver).
      Content stays visible if JS or IO is unavailable, and the animation is
      skipped entirely under prefers-reduced-motion. */
