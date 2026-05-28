@@ -348,47 +348,32 @@ const ToolDetailPage = () => {
               { label: tool.name },
             ]} />
 
-            {/* Logo + category badge */}
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 28, marginBottom: 24 }}>
-              <div style={{
-                width: 56, height: 56, borderRadius: 10,
-                border: "1px solid var(--color-border)", background: "var(--color-surface)",
-                display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-              }}>
-                <ToolLogo tool={tool} size={36} />
+            {/* Identity lockup — logo + (category eyebrow + name) */}
+            <div className="td-hero-lockup">
+              <div className="td-hero-logo">
+                <ToolLogo tool={tool} size={48} />
               </div>
-              {category && (
-                <Link
-                  to={`${prefix}/category/${category.slug}`}
-                  style={{
-                    display: "inline-flex", alignItems: "center", gap: 6,
-                    height: 32, padding: "0 14px",
-                    background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 999,
-                    fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500,
-                    color: "var(--color-text)", textDecoration: "none",
-                    transition: "border-color 140ms",
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)"; }}
-                >
-                  {CategoryIcon && <CategoryIcon style={{ width: 11, height: 11, color: "var(--color-muted)" }} />}
-                  {t(catName, catNameEn)}
-                </Link>
-              )}
+              <div style={{ minWidth: 0 }}>
+                {category && (
+                  <Link to={`${prefix}/category/${category.slug}`} className="td-hero-cat">
+                    {CategoryIcon && <CategoryIcon />}
+                    {t(catName, catNameEn)}
+                  </Link>
+                )}
+                {/* H1 — clamp réduit pour les noms courts (≤5 chars) */}
+                <h1 style={{
+                  fontFamily: "var(--font-brand)",
+                  fontSize: tool.name.length <= 5
+                    ? "clamp(4rem, 7vw, 6rem)"      /* max 96px — Box, Slack, Zoom… */
+                    : "clamp(4rem, 7.5vw, 7rem)",   /* max 112px — noms longs */
+                  fontWeight: 600, lineHeight: 0.9,
+                  letterSpacing: "-0.07em", color: "var(--color-text)",
+                  margin: 0,
+                }}>
+                  {tool.name}
+                </h1>
+              </div>
             </div>
-
-            {/* H1 — clamp réduit pour les noms courts (≤5 chars) pour éviter la disproportion */}
-            <h1 style={{
-              fontFamily: "var(--font-brand)",
-              fontSize: tool.name.length <= 5
-                ? "clamp(4.5rem, 8vw, 6.5rem)"   /* max 104px — Box, Slack, Zoom… */
-                : "clamp(4.5rem, 8vw, 7.75rem)",  /* max 124px — noms longs */
-              fontWeight: 600, lineHeight: 0.9,
-              letterSpacing: "-0.07em", color: "var(--color-text)",
-              margin: 0,
-            }}>
-              {tool.name}
-            </h1>
 
             {/* Short description */}
             {tool.shortDescription && (

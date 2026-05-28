@@ -3589,6 +3589,41 @@
     }
   }
 
+  /* Hero identity lockup — logo aligned with the [category eyebrow + name] block */
+  .td-hero-lockup {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2vw, 28px);
+    margin-top: 28px;
+  }
+  .td-hero-logo {
+    width: clamp(56px, 7vw, 84px);
+    height: clamp(56px, 7vw, 84px);
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .td-hero-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 140ms ease-out;
+  }
+  .td-hero-cat:hover { color: var(--color-text); }
+  .td-hero-cat svg { width: 12px; height: 12px; color: var(--color-muted-light); }
+
   /* Section wrapper */
   .td-section {
     padding: 56px 0;
