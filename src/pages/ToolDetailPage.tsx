@@ -195,20 +195,21 @@ const ToolDetailPage = () => {
     const id = subPage === "presentation" ? "analyse" : subPage;
     const isFirst = prevSubPageRef.current === null;
     const toolChanged = prevSlugRef.current !== (slug ?? null);
-    const sameTab = prevSubPageRef.current === subPage;
     prevSubPageRef.current = subPage;
     prevSlugRef.current = slug ?? null;
 
-    if (sameTab && !toolChanged) return;
-    if ((isFirst || toolChanged) && subPage === "presentation") return;
+    // Only auto-scroll on a fresh deep-link landing (direct entry to a
+    // sub-route URL). In-page navigation is owned by the floating pill nav,
+    // which scrolls itself — re-scrolling here would double-fire.
+    if (!isFirst && !toolChanged) return;
+    if (subPage === "presentation") return; // bare route never auto-scrolls
 
-    const behavior: ScrollBehavior = isFirst || toolChanged ? "auto" : "smooth";
     requestAnimationFrame(() => {
       const el = document.getElementById(id);
       if (!el) return;
-      const headerOffset = 92; // navbar + sticky section nav − visual margin
+      const headerOffset = 92;
       const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top: Math.max(0, top), behavior });
+      window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
     });
   }, [subPage, slug]);
 
@@ -997,13 +998,17 @@ const ToolDetailPage = () => {
         ariaLabel={t("Navigation de la fiche outil", "Tool page navigation")}
         heroSelector=".td-hero"
         onSelect={(id) => {
+          // Update the URL to the dedicated route (SEO), but let the pill
+          // handle the scroll itself (return false) so it works even when the
+          // route is already current.
           const tab = TABS.find((tb) => (tb.id === "presentation" ? "analyse" : tb.id) === id);
-          if (!tab) return false;
-          const path = tab.id === "prix" && lang === "en" ? "/pricing"
-            : tab.id === "avis" && lang === "en" ? "/reviews"
-            : tab.path;
-          navigate(`${prefix}/tool/${slug}${path}`);
-          return true;
+          if (tab) {
+            const path = tab.id === "prix" && lang === "en" ? "/pricing"
+              : tab.id === "avis" && lang === "en" ? "/reviews"
+              : tab.path;
+            navigate(`${prefix}/tool/${slug}${path}`, { replace: false });
+          }
+          return false;
         }}
       />
 

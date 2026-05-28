@@ -3786,10 +3786,17 @@
     background: var(--color-text);
   }
 
-  /* Section anchor — scroll-margin compensates the fixed header + sticky tab nav */
+  /* Section anchor — scroll-margin compensates the fixed header only.
+     (The in-page nav is now the bottom-floating pill, not a top bar.) */
   .td-subpage-content {
-    scroll-margin-top: calc(var(--navbar-h, 68px) + 72px + 12px);
+    scroll-margin-top: calc(var(--navbar-h, 68px) + 24px);
     padding-top: 8px;
+  }
+  /* Mobile: the pill repositions to a top bar, so add its height. */
+  @media (max-width: 767px) {
+    .td-subpage-content {
+      scroll-margin-top: calc(var(--navbar-h, 68px) + 72px);
+    }
   }
   /* Single-scroll article: every section after the first gets a strong
      editorial divider + generous space so the page reads as chapters,
