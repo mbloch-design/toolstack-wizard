@@ -17,6 +17,7 @@ import {
   Activity,
   Ban,
   CheckCircle2,
+  ClipboardCheck,
   Download,
   Eye,
   ExternalLink,
@@ -40,8 +41,9 @@ import {
 const STORAGE_KEY = "tooltrim.backoffice.admin_key";
 
 type SessionStatus = "all" | "new" | "active" | "completed" | "abandoned";
-type TabId = "pilotage" | "sessions" | "emails" | "restitutions" | "quality";
+type TabId = "preprod" | "pilotage" | "sessions" | "emails" | "restitutions" | "quality";
 type RestitutionLike = Pick<BackofficeRestitution, "channel" | "summary" | "details" | "score_snapshot">;
+type PreprodCheckStatus = "ok" | "warning" | "fail";
 
 function formatDateTime(value: string | null, locale: "fr" | "en") {
   if (!value) return "—";
@@ -238,6 +240,53 @@ function getJobCtaUrl(job: BackofficeEmailJob) {
   return textValue(getJobMetadata(job), "cta_url");
 }
 
+function getPreprodUrl() {
+  const raw =
+    import.meta.env.VITE_PREPROD_APP_URL ||
+    import.meta.env.VITE_TOOLTRIM_APP_URL ||
+    "https://preprod.tooltrim.com/fr";
+  return String(raw).replace(/\/+$/, "");
+}
+
+function isSessionCompleted(session: BackofficeSession) {
+  return Boolean(session.completed_at);
+}
+
+function getCompletedAtTime(session: BackofficeSession) {
+  const time = session.completed_at ? new Date(session.completed_at).getTime() : 0;
+  return Number.isFinite(time) ? time : 0;
+}
+
+function hasMeaningfulDiagnosticPayload(session: BackofficeSession) {
+  const context = asRecord(session.diagnostic_context);
+  const insights = asRecord(session.diagnostic_insights);
+  return Boolean(
+    context?.persona_confidence &&
+      context?.stack_goal &&
+      insights?.profile &&
+      insights?.maturity &&
+      Array.isArray(session.functional_coverage) &&
+      Array.isArray(session.risk_flags)
+  );
+}
+
+function getDashboardRestitutionBySession(restitutions: BackofficeRestitution[]) {
+  const map = new Map<string, BackofficeRestitution>();
+  [...restitutions]
+    .filter((restitution) => restitution.channel === "dashboard")
+    .sort((a, b) => new Date(b.generated_at).getTime() - new Date(a.generated_at).getTime())
+    .forEach((restitution) => {
+      if (!map.has(restitution.session_id)) map.set(restitution.session_id, restitution);
+    });
+  return map;
+}
+
+function preprodCheckClasses(status: PreprodCheckStatus) {
+  if (status === "ok") return "bg-green-100 text-green-800";
+  if (status === "warning") return "bg-amber-100 text-amber-800";
+  return "bg-red-100 text-red-700";
+}
+
 function getJobEmailQuality(job: BackofficeEmailJob) {
   const metadata = getJobMetadata(job);
   const quality = asRecord(metadata.email_quality);
@@ -323,7 +372,7 @@ export default function BackOfficePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [activeTab, setActiveTab] = useState<TabId>("pilotage");
+  const [activeTab, setActiveTab] = useState<TabId>("preprod");
   const [days, setDays] = useState(30);
   const [limit, setLimit] = useState(150);
   const [personaFilter, setPersonaFilter] = useState<string>("all");
@@ -524,6 +573,97 @@ export default function BackOfficePage() {
       { total: 0, email: 0, dashboard: 0, pdf: 0, go10: 0 }
     );
   }, [dashboard?.recentRestitutions]);
+
+  const preprodSelectorUrl = useMemo(() => `${getPreprodUrl()}/selector`, []);
+
+  const preprodSummary = useMemo(() => {
+    const sessions = dashboard?.sessions || [];
+    const restitutions = dashboard?.recentRestitutions || [];
+    const dashboardRestitutions = getDashboardRestitutionBySession(restitutions);
+    const completedSessions = sessions
+      .filter(isSessionCompleted)
+      .sort((a, b) => getCompletedAtTime(b) - getCompletedAtTime(a));
+    const latestCompleted = completedSessions[0] || null;
+    const latestRestitution = latestCompleted ? dashboardRestitutions.get(latestCompleted.session_id) || null : null;
+    const completedMissingRestitution = completedSessions.filter(
+      (session) => !dashboardRestitutions.has(session.session_id)
+    );
+    const completedMissingEmailJob = completedSessions.filter(
+      (session) => Boolean(session.email) && Number(session.email_jobs_count || 0) === 0
+    );
+    const completedWithEmailFailure = completedSessions.filter(
+      (session) => Number(session.email_failed_count || 0) > 0
+    );
+    const latestHasJourney =
+      latestCompleted != null &&
+      (latestCompleted.max_step_seen || latestCompleted.last_step_id || 0) >= 12 &&
+      Number(latestCompleted.event_count || 0) >= 10;
+    const latestHasEmail =
+      latestCompleted != null &&
+      (!latestCompleted.email || Number(latestCompleted.email_jobs_count || 0) > 0);
+    const latestHasPayload = latestCompleted ? hasMeaningfulDiagnosticPayload(latestCompleted) : false;
+    const checks = [
+      {
+        id: "session",
+        labelFr: "Session complète récente",
+        labelEn: "Recent completed session",
+        status: latestCompleted ? "ok" : "fail",
+        detail: latestCompleted?.completed_at || "missing",
+      },
+      {
+        id: "journey",
+        labelFr: "Parcours et événements",
+        labelEn: "Journey and events",
+        status: latestHasJourney ? "ok" : "fail",
+        detail: latestCompleted
+          ? `step=${latestCompleted.max_step_seen ?? latestCompleted.last_step_id ?? "?"} events=${latestCompleted.event_count || 0}`
+          : "missing",
+      },
+      {
+        id: "payload",
+        labelFr: "Données diagnostic",
+        labelEn: "Diagnostic payload",
+        status: latestHasPayload ? "ok" : "fail",
+        detail: latestCompleted?.stack_profile || "missing",
+      },
+      {
+        id: "restitution",
+        labelFr: "Restitution dashboard",
+        labelEn: "Dashboard restitution",
+        status: latestRestitution ? "ok" : "fail",
+        detail: latestRestitution?.id || "missing",
+      },
+      {
+        id: "email",
+        labelFr: "Job email si email présent",
+        labelEn: "Email job when email exists",
+        status: latestHasEmail ? "ok" : "warning",
+        detail: latestCompleted?.email ? `${latestCompleted.email_sent_count}/${latestCompleted.email_jobs_count}` : "no email",
+      },
+    ] satisfies Array<{
+      id: string;
+      labelFr: string;
+      labelEn: string;
+      status: PreprodCheckStatus;
+      detail: string;
+    }>;
+    const failed = checks.filter((check) => check.status === "fail").length;
+    const warnings = checks.filter((check) => check.status === "warning").length;
+    const verdict: PreprodCheckStatus = failed > 0 ? "fail" : warnings > 0 ? "warning" : "ok";
+
+    return {
+      completedSessions,
+      latestCompleted,
+      latestRestitution,
+      completedMissingRestitution,
+      completedMissingEmailJob,
+      completedWithEmailFailure,
+      checks,
+      failed,
+      warnings,
+      verdict,
+    };
+  }, [dashboard?.recentRestitutions, dashboard?.sessions]);
 
   const qualityRows = useMemo(() => {
     return filteredSessions
@@ -1172,6 +1312,15 @@ export default function BackOfficePage() {
 
       <div className="flex flex-wrap items-center gap-2">
         <button
+          onClick={() => setActiveTab("preprod")}
+          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
+            activeTab === "preprod" ? "bg-primary text-primary-foreground" : "border border-border"
+          }`}
+        >
+          <ClipboardCheck className="w-4 h-4" />
+          {t("Préprod", "Preprod")}
+        </button>
+        <button
           onClick={() => setActiveTab("pilotage")}
           className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
             activeTab === "pilotage" ? "bg-primary text-primary-foreground" : "border border-border"
@@ -1217,6 +1366,180 @@ export default function BackOfficePage() {
           {t("Qualité", "Quality")}
         </button>
       </div>
+
+      {activeTab === "preprod" && (
+        <div className="space-y-4">
+          <div className="border border-border rounded-lg bg-card p-4">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+              <div>
+                <div className="inline-flex items-center gap-2 text-sm font-medium">
+                  <ClipboardCheck className="w-4 h-4" />
+                  {t("Recette préprod", "Preprod acceptance")}
+                </div>
+                <div className="mt-2 text-2xl font-semibold">
+                  {preprodSummary.verdict === "ok"
+                    ? t("Préprod validée", "Preprod validated")
+                    : preprodSummary.verdict === "warning"
+                      ? t("Préprod à surveiller", "Preprod needs attention")
+                      : t("Préprod bloquée", "Preprod blocked")}
+                </div>
+                <div className="mt-1 text-sm text-muted-foreground">
+                  {t("Contrôle basé sur la dernière session complétée et les données réellement capturées.", "Check based on the latest completed session and captured data.")}
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className={`inline-flex h-8 items-center px-3 rounded-full text-sm ${preprodCheckClasses(preprodSummary.verdict)}`}>
+                  {preprodSummary.failed === 0
+                    ? t("Aucun échec", "No failure")
+                    : t(`${preprodSummary.failed} échec(s)`, `${preprodSummary.failed} failure(s)`)}
+                </span>
+                <a
+                  href={preprodSelectorUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="h-8 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  {t("Ouvrir le tunnel", "Open funnel")}
+                </a>
+                <button
+                  onClick={() => void loadDashboard()}
+                  className="h-8 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
+                >
+                  <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+                  {t("Rafraîchir", "Refresh")}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Sessions terminées", "Completed sessions")}</div>
+              <div className="text-lg font-semibold mt-1">{preprodSummary.completedSessions.length}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Dernier score", "Latest score")}</div>
+              <div className="text-lg font-semibold mt-1">{preprodSummary.latestCompleted?.health_score ?? "—"}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Restitution manquante", "Missing restitution")}</div>
+              <div className="text-lg font-semibold mt-1 text-red-600">{preprodSummary.completedMissingRestitution.length}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Email manquant", "Missing email")}</div>
+              <div className="text-lg font-semibold mt-1 text-amber-700">{preprodSummary.completedMissingEmailJob.length}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Emails en erreur", "Email failures")}</div>
+              <div className="text-lg font-semibold mt-1 text-red-600">{preprodSummary.completedWithEmailFailure.length}</div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+            <section className="border border-border rounded-lg bg-card overflow-hidden">
+              <div className="px-3 py-2 border-b border-border text-sm font-medium">
+                {t("Checklist GO29", "GO29 checklist")}
+              </div>
+              <div className="divide-y divide-border">
+                {preprodSummary.checks.map((check) => (
+                  <div key={check.id} className="p-3 flex items-start justify-between gap-3">
+                    <div>
+                      <div className="text-sm font-medium">{locale === "en" ? check.labelEn : check.labelFr}</div>
+                      <div className="mt-1 text-xs text-muted-foreground break-all">{check.detail}</div>
+                    </div>
+                    <span className={`shrink-0 inline-flex px-2 py-0.5 rounded-full text-xs ${preprodCheckClasses(check.status)}`}>
+                      {check.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="border border-border rounded-lg bg-card p-3">
+              <div className="text-sm font-medium">{t("Dernière session validée", "Latest validated session")}</div>
+              {preprodSummary.latestCompleted ? (
+                <div className="mt-3 space-y-2 text-sm">
+                  <div className="flex justify-between gap-3">
+                    <span className="text-muted-foreground">{t("Session", "Session")}</span>
+                    <span className="font-mono text-xs">{preprodSummary.latestCompleted.session_id}</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className="text-muted-foreground">{t("Terminée", "Completed")}</span>
+                    <span>{formatDateTime(preprodSummary.latestCompleted.completed_at, locale)}</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className="text-muted-foreground">{t("Persona", "Persona")}</span>
+                    <span>{preprodSummary.latestCompleted.persona || "—"}</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className="text-muted-foreground">{t("Profil", "Profile")}</span>
+                    <span>{getInsightLabel(preprodSummary.latestCompleted, "profile", locale)}</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className="text-muted-foreground">{t("Restitution", "Restitution")}</span>
+                    <span className="font-mono text-xs">{preprodSummary.latestRestitution?.id || "—"}</span>
+                  </div>
+                  <button
+                    onClick={() => void openDetail(preprodSummary.latestCompleted?.session_id || "")}
+                    className="mt-2 h-8 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
+                  >
+                    <Eye className="w-4 h-4" />
+                    {t("Voir le détail", "View detail")}
+                  </button>
+                </div>
+              ) : (
+                <div className="mt-3 text-sm text-muted-foreground">
+                  {t("Aucune session complétée sur la période filtrée.", "No completed session in the selected period.")}
+                </div>
+              )}
+            </section>
+          </div>
+
+          {(preprodSummary.completedMissingRestitution.length > 0 || preprodSummary.completedMissingEmailJob.length > 0) && (
+            <section className="border border-border rounded-lg bg-card overflow-hidden">
+              <div className="px-3 py-2 border-b border-border text-sm font-medium">
+                {t("Anomalies de recette", "Acceptance anomalies")}
+              </div>
+              <div className="overflow-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-muted/40">
+                    <tr className="text-left">
+                      <th className="px-3 py-2 font-medium">{t("Session", "Session")}</th>
+                      <th className="px-3 py-2 font-medium">{t("Terminée", "Completed")}</th>
+                      <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
+                      <th className="px-3 py-2 font-medium">{t("Anomalie", "Anomaly")}</th>
+                      <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ...preprodSummary.completedMissingRestitution.map((session) => ({ session, anomaly: t("Restitution manquante", "Missing restitution") })),
+                      ...preprodSummary.completedMissingEmailJob.map((session) => ({ session, anomaly: t("Job email manquant", "Missing email job") })),
+                    ].slice(0, 12).map(({ session, anomaly }) => (
+                      <tr key={`${session.session_id}-${anomaly}`} className="border-t border-border">
+                        <td className="px-3 py-2 font-mono text-xs">{session.session_id.slice(0, 8)}</td>
+                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(session.completed_at, locale)}</td>
+                        <td className="px-3 py-2">{session.email || session.first_name || "—"}</td>
+                        <td className="px-3 py-2">{anomaly}</td>
+                        <td className="px-3 py-2">
+                          <button
+                            onClick={() => void openDetail(session.session_id)}
+                            className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                          >
+                            <Eye className="w-3.5 h-3.5" />
+                            {t("Détails", "Details")}
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+        </div>
+      )}
 
       {activeTab === "pilotage" && (
         <div className="space-y-4">
