@@ -9913,6 +9913,23 @@
     outline-offset: 3px;
   }
 
+  /* Scroll-driven section reveal — JS toggles .is-revealed as each section
+     enters. Hidden start state only applies once JS adds .home-reveal-ready,
+     so content stays visible without JS. Disabled under reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    .home-reveal-ready > section {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 640ms cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 640ms cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .home-reveal-ready > section.is-revealed {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   .hp-audit-logo {
     width: 28px;
     height: 28px;

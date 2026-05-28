@@ -208,6 +208,40 @@ const HomePage = () => {
     return () => cleanupSeo(["home-jsonld", "home-org-jsonld"]);
   }, [lang, stats.total, faq]);
 
+  /* Scroll-driven section reveal (cross-browser via IntersectionObserver).
+     Content stays visible without JS; skipped under prefers-reduced-motion.
+     Above-the-fold sections are revealed synchronously to avoid a flash. */
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const root = document.querySelector(".home-page");
+    if (!root) return;
+    const sections = Array.from(root.querySelectorAll<HTMLElement>(":scope > section"));
+    if (sections.length === 0) return;
+
+    root.classList.add("home-reveal-ready");
+    const vh = window.innerHeight;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-revealed");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.06 }
+    );
+    sections.forEach((s) => {
+      if (s.getBoundingClientRect().top < vh * 0.9) {
+        s.classList.add("is-revealed"); // above the fold — no entry animation
+      } else {
+        io.observe(s);
+      }
+    });
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="home-page">
       {/* 1. Hero — repositionné autour de l'audit de stack */}
