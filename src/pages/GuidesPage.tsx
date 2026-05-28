@@ -233,6 +233,7 @@ const GuidesPage = () => {
 
       {/* ══ 1. Hero ══════════════════════════════════════════════════════════ */}
       <EditorialHero
+        breadcrumb={[{ label: t("Guides", "Guides") }]}
         eyebrow={t("Ressources", "Resources")}
         title={
           <>
