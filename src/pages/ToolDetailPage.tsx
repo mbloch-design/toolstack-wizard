@@ -493,7 +493,7 @@ const ToolDetailPage = () => {
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                       {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
                         <li key={pro} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                          <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(74,155,111,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
+                          <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--color-surface-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
                             <Check style={{ width: 11, height: 11, color: "var(--color-text-strong)" }} />
                           </div>
                           <span className="td-body" style={{ fontSize: 15, marginTop: 0 }}>{pro}</span>
@@ -513,7 +513,7 @@ const ToolDetailPage = () => {
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                       {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
                         <li key={con} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                          <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(173,173,173,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
+                          <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--color-surface-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
                             <X style={{ width: 11, height: 11, color: "var(--color-muted-light)" }} />
                           </div>
                           <span className="td-body" style={{ fontSize: 15, marginTop: 0 }}>{con}</span>
@@ -797,7 +797,7 @@ const ToolDetailPage = () => {
                           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                             {activeSignals.map((s) => (
                               <div key={s.labelFr} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                                <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(74,155,111,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--color-surface-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                                   <Check style={{ width: 11, height: 11, color: "var(--color-text-strong)" }} />
                                 </div>
                                 <span style={{ fontFamily: "var(--font-ui)", fontSize: 14, color: "var(--color-text)" }}>{t(s.labelFr, s.labelEn)}</span>
