@@ -73,7 +73,7 @@ const ToolDetailPage = () => {
     const planSuffixEn = planName ? ` (${planName} plan)` : "";
     const rawExcerpt = (tool.shortDescription || "").split(/[.!?]/)[0].trim();
     const shortExcerpt = rawExcerpt.length > 90 ? rawExcerpt.slice(0, 87) + "…" : rawExcerpt;
-    const cat = categories.find((c: any) => c.id === tool.categoryId);
+    const cat = categories.find((c: any) => c.id === (tool.categoryId || (tool as any).category) || c.slug === (tool.categoryId || (tool as any).category));
     const catLabel = cat
       ? stripLeadingEmoji(cat.name, cat.id || "")
       : lang === "fr" ? "outil SaaS" : "SaaS tool";
@@ -282,10 +282,16 @@ const ToolDetailPage = () => {
   if (!tool) return null;
 
   /* ── Derived values ── */
-  const category   = categories.find((c: any) => c.id === tool.categoryId);
+  // Most tools store the category as a `category` slug/id, not `categoryId`.
+  // Resolve from either so the category never silently disappears.
+  const catKey = tool.categoryId || (tool as any).category || null;
+  const category   = categories.find((c: any) => c.id === catKey || c.slug === catKey);
   const CategoryIcon = category ? getCategoryIcon(category.id) : null;
   const alternatives = tools
-    .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id)
+    .filter((tt: any) => {
+      const ttKey = tt.categoryId || tt.category || null;
+      return catKey != null && ttKey === catKey && tt.id !== tool.id;
+    })
     .slice(0, 6);
   const relatedPosts = posts
     .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
