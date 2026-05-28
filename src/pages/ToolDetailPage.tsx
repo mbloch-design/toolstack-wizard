@@ -343,7 +343,7 @@ const ToolDetailPage = () => {
             {tool.shortDescription && (
               <p style={{
                 fontFamily: "var(--font-ui)",
-                fontSize: 22,
+                fontSize: "var(--tt-size-hero-sub)",
                 lineHeight: 1.35, letterSpacing: "-0.025em",
                 color: "var(--color-text)", maxWidth: 780,
                 marginTop: 28,
@@ -674,7 +674,7 @@ const ToolDetailPage = () => {
                     if (!clusterTools.length) return null;
                     return (
                       <div style={{ marginTop: 40 }}>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
                           {t("Substituables directement", "Direct substitutes")}
                         </p>
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -717,7 +717,7 @@ const ToolDetailPage = () => {
                     if (!compareTools.length) return null;
                     return (
                       <div style={{ marginTop: 40 }}>
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 12 }}>
                           {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
                         </p>
                         {compareTools.map(({ slugPair, other }) => (
@@ -791,7 +791,7 @@ const ToolDetailPage = () => {
                           </div>
                         </div>
                         <div style={{ padding: "24px 32px" }}>
-                          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 16 }}>
+                          <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 16 }}>
                             {t("Signaux analysés", "Analysed signals")}
                           </p>
                           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -915,7 +915,7 @@ const ToolDetailPage = () => {
               {/* Related posts */}
               {relatedPosts.length > 0 && (
                 <div style={{ marginTop: 16 }}>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 10 }}>
+                  <p style={{ fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: 10 }}>
                     {t("Guides liés", "Related guides")}
                   </p>
                   <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -958,7 +958,7 @@ const ToolDetailPage = () => {
             <div>
               <span style={{
                 display: "block",
-                fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
+                fontFamily: "var(--font-ui)", fontSize: "var(--tt-size-kicker)", fontWeight: 600,
                 letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
                 marginBottom: 14,
               }}>
