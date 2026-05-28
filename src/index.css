@@ -3354,7 +3354,7 @@
     .es-section { padding: 56px 0; }
   }
   .es-container {
-    max-width: 1440px;
+    max-width: var(--layout-content, 1280px);
     padding: 0 48px;
     margin: 0 auto;
   }
