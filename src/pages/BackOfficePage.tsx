@@ -7,6 +7,7 @@ import {
   type BackofficeRestitution,
   type BackofficeSession,
   type BackofficeSessionDetailResponse,
+  authenticateBackofficeAdmin,
   fetchBackofficeDashboard,
   fetchBackofficeSessionDetail,
   updateBackofficeEmailJob,
@@ -38,12 +39,17 @@ import {
   X,
 } from "lucide-react";
 
-const STORAGE_KEY = "tooltrim.backoffice.admin_key";
+const STORAGE_KEY = "tooltrim.backoffice.admin_session";
+const LEGACY_STORAGE_KEY = "tooltrim.backoffice.admin_key";
 
 type SessionStatus = "all" | "new" | "active" | "completed" | "abandoned";
 type TabId = "preprod" | "pilotage" | "sessions" | "emails" | "restitutions" | "quality";
 type RestitutionLike = Pick<BackofficeRestitution, "channel" | "summary" | "details" | "score_snapshot">;
 type PreprodCheckStatus = "ok" | "warning" | "fail";
+type AdminSession = {
+  token: string;
+  expiresAt: string;
+};
 
 function formatDateTime(value: string | null, locale: "fr" | "en") {
   if (!value) return "—";
@@ -361,12 +367,29 @@ function parseTagsInput(input: string) {
     .filter((item) => item.length > 0);
 }
 
+function parseAdminSession(raw: string | null): AdminSession | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw) as Partial<AdminSession>;
+    if (!parsed.token || !parsed.expiresAt) return null;
+    const expiresAt = new Date(parsed.expiresAt).getTime();
+    if (!Number.isFinite(expiresAt) || expiresAt <= Date.now()) return null;
+    return {
+      token: parsed.token,
+      expiresAt: parsed.expiresAt,
+    };
+  } catch {
+    return null;
+  }
+}
+
 export default function BackOfficePage() {
   const { lang, t } = useLang();
   const locale = lang === "en" ? "en" : "fr";
 
   const [adminKeyInput, setAdminKeyInput] = useState("");
-  const [adminKey, setAdminKey] = useState<string | null>(null);
+  const [adminSession, setAdminSession] = useState<AdminSession | null>(null);
+  const [authLoading, setAuthLoading] = useState(false);
 
   const [dashboard, setDashboard] = useState<BackofficeDashboardResponse | null>(null);
   const [loading, setLoading] = useState(false);
@@ -398,51 +421,59 @@ export default function BackOfficePage() {
   }, []);
 
   useEffect(() => {
-    const savedKey = localStorage.getItem(STORAGE_KEY);
-    if (savedKey) {
-      setAdminKey(savedKey);
+    localStorage.removeItem(LEGACY_STORAGE_KEY);
+    const savedSession = parseAdminSession(localStorage.getItem(STORAGE_KEY));
+    if (savedSession) {
+      setAdminSession(savedSession);
+    } else {
+      localStorage.removeItem(STORAGE_KEY);
     }
   }, []);
 
   const loadDashboard = useCallback(async () => {
-    if (!adminKey) return;
+    if (!adminSession) return;
     setLoading(true);
     setError(null);
     try {
-      const data = await fetchBackofficeDashboard(adminKey, {
+      const data = await fetchBackofficeDashboard(adminSession.token, {
         days,
         limit,
         persona: personaFilter === "all" ? null : personaFilter,
       });
       setDashboard(data);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Unable to load data");
+      const message = e instanceof Error ? e.message : "Unable to load data";
+      setError(message);
+      if (message.toLowerCase().includes("unauthorized")) {
+        localStorage.removeItem(STORAGE_KEY);
+        setAdminSession(null);
+      }
     } finally {
       setLoading(false);
     }
-  }, [adminKey, days, limit, personaFilter]);
+  }, [adminSession, days, limit, personaFilter]);
 
   useEffect(() => {
     void loadDashboard();
   }, [loadDashboard]);
 
   useEffect(() => {
-    if (!adminKey) return;
+    if (!adminSession) return;
     const timer = setInterval(() => {
       void loadDashboard();
     }, 30000);
     return () => clearInterval(timer);
-  }, [adminKey, loadDashboard]);
+  }, [adminSession, loadDashboard]);
 
   const openDetail = useCallback(
     async (sessionId: string) => {
-      if (!adminKey) return;
+      if (!adminSession) return;
       setDetailLoading(true);
       setDetailError(null);
       setDetail(null);
       setSessionAdminMessage(null);
       try {
-        const response = await fetchBackofficeSessionDetail(adminKey, sessionId);
+        const response = await fetchBackofficeSessionDetail(adminSession.token, sessionId);
         setDetail(response);
       } catch (e) {
         setDetailError(e instanceof Error ? e.message : "Unable to load session detail");
@@ -450,7 +481,7 @@ export default function BackOfficePage() {
         setDetailLoading(false);
       }
     },
-    [adminKey]
+    [adminSession]
   );
 
   useEffect(() => {
@@ -735,18 +766,32 @@ export default function BackOfficePage() {
     });
   }, [pilotage.rows, pilotageLaneFilter, pilotagePriorityFilter]);
 
-  const connect = useCallback(() => {
+  const connect = useCallback(async () => {
     const value = adminKeyInput.trim();
     if (!value) return;
-    localStorage.setItem(STORAGE_KEY, value);
-    setAdminKey(value);
+    setAuthLoading(true);
     setError(null);
-    setAdminKeyInput("");
-  }, [adminKeyInput]);
+    try {
+      const response = await authenticateBackofficeAdmin(value);
+      const session = {
+        token: response.adminSessionToken,
+        expiresAt: response.expiresAt,
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
+      setAdminSession(session);
+      setAdminKeyInput("");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : t("Connexion impossible", "Unable to sign in"));
+    } finally {
+      setAuthLoading(false);
+    }
+  }, [adminKeyInput, t]);
 
   const disconnect = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY);
-    setAdminKey(null);
+    localStorage.removeItem(LEGACY_STORAGE_KEY);
+    setAdminSession(null);
     setDashboard(null);
     setDetail(null);
     setError(null);
@@ -754,12 +799,12 @@ export default function BackOfficePage() {
   }, []);
 
   const saveSessionAdmin = useCallback(async () => {
-    if (!adminKey || !detail?.session?.session_id) return;
+    if (!adminSession || !detail?.session?.session_id) return;
     setSessionAdminSaving(true);
     setSessionAdminMessage(null);
     try {
       const tags = parseTagsInput(sessionTagsInput);
-      const result = await updateBackofficeSessionAdmin(adminKey, {
+      const result = await updateBackofficeSessionAdmin(adminSession.token, {
         sessionId: detail.session.session_id,
         tags,
         note: sessionNoteInput.trim() || null,
@@ -788,11 +833,11 @@ export default function BackOfficePage() {
     } finally {
       setSessionAdminSaving(false);
     }
-  }, [adminKey, detail?.session?.session_id, loadDashboard, sessionNoteInput, sessionTagsInput, t]);
+  }, [adminSession, detail?.session?.session_id, loadDashboard, sessionNoteInput, sessionTagsInput, t]);
 
   const runEmailJobAction = useCallback(
     async (job: BackofficeEmailJob, action: "retry_now" | "cancel" | "schedule") => {
-      if (!adminKey) return;
+      if (!adminSession) return;
       setEmailJobActionLoadingId(job.id);
       setEmailJobActionError(null);
       try {
@@ -800,7 +845,7 @@ export default function BackOfficePage() {
           action === "schedule"
             ? new Date(Date.now() + 60 * 60 * 1000).toISOString()
             : undefined;
-        const result = await updateBackofficeEmailJob(adminKey, {
+        const result = await updateBackofficeEmailJob(adminSession.token, {
           jobId: job.id,
           action,
           scheduledFor,
@@ -822,7 +867,7 @@ export default function BackOfficePage() {
         });
 
         if (detail?.session?.session_id === result.job.session_id) {
-          const refreshed = await fetchBackofficeSessionDetail(adminKey, result.job.session_id);
+          const refreshed = await fetchBackofficeSessionDetail(adminSession.token, result.job.session_id);
           setDetail(refreshed);
         }
         void loadDashboard();
@@ -834,7 +879,7 @@ export default function BackOfficePage() {
         setEmailJobActionLoadingId(null);
       }
     },
-    [adminKey, detail?.session?.session_id, loadDashboard, t]
+    [adminSession, detail?.session?.session_id, loadDashboard, t]
   );
 
   const exportSessionsCsv = useCallback(() => {
@@ -1123,7 +1168,7 @@ export default function BackOfficePage() {
     );
   }, [locale, qualityRows]);
 
-  if (!adminKey) {
+  if (!adminSession) {
     return (
       <div className="max-w-xl mx-auto px-4 py-16">
         <div className="border border-border rounded-lg bg-card p-6 space-y-4">
@@ -1135,24 +1180,36 @@ export default function BackOfficePage() {
           </div>
           <p className="text-sm text-muted-foreground">
             {t(
-              "Saisis ta clé d'administration pour ouvrir le suivi diagnostic.",
-              "Enter your admin key to open diagnostic operations."
+              "Saisis ta clé une seule fois. Elle est échangée contre une session admin temporaire.",
+              "Enter your key once. It is exchanged for a temporary admin session."
             )}
           </p>
+          {error && (
+            <div className="border border-red-300 bg-red-50 text-red-700 rounded-md px-3 py-2 text-sm">
+              {error}
+            </div>
+          )}
           <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="password"
               value={adminKeyInput}
               onChange={(event) => setAdminKeyInput(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") void connect();
+              }}
               placeholder={t("Clé d'administration", "Admin key")}
               className="flex-1 h-10 px-3 rounded-md border border-input bg-background text-sm"
             />
             <button
-              onClick={connect}
-              className="h-10 px-4 rounded-md bg-primary text-primary-foreground text-sm font-medium"
+              onClick={() => void connect()}
+              disabled={authLoading}
+              className="h-10 px-4 rounded-md bg-primary text-primary-foreground text-sm font-medium disabled:opacity-60"
             >
-              {t("Ouvrir", "Open")}
+              {authLoading ? t("Connexion…", "Signing in…") : t("Ouvrir", "Open")}
             </button>
+          </div>
+          <div className="text-xs text-muted-foreground">
+            {t("La clé brute n'est plus conservée dans le navigateur.", "The raw key is no longer kept in the browser.")}
           </div>
         </div>
       </div>
@@ -1173,7 +1230,10 @@ export default function BackOfficePage() {
             )}
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="h-9 px-3 rounded-md border border-border text-xs inline-flex items-center text-muted-foreground">
+            {t("Session jusqu'à", "Session until")} {formatDateTime(adminSession.expiresAt, locale)}
+          </span>
           <button
             onClick={
               activeTab === "pilotage"

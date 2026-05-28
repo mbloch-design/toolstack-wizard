@@ -3,7 +3,15 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.4";
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, x-admin-key",
+    "authorization, x-client-info, apikey, content-type, x-admin-key, x-admin-session",
+};
+
+const ADMIN_SESSION_TTL_MS = 8 * 60 * 60 * 1000;
+const encoder = new TextEncoder();
+
+type AuthModePayload = {
+  mode: "auth";
+  adminKey?: string;
 };
 
 type DashboardModePayload = {
@@ -33,6 +41,7 @@ type UpdateEmailJobModePayload = {
 };
 
 type Payload =
+  | AuthModePayload
   | DashboardModePayload
   | SessionDetailModePayload
   | UpdateSessionAdminModePayload
@@ -50,11 +59,87 @@ function getBearerToken(req: Request) {
   return auth.slice("Bearer ".length).trim();
 }
 
-function assertAdminAccess(req: Request) {
+function getAdminSecret() {
   const expected = Deno.env.get("BACKOFFICE_ADMIN_KEY");
   if (!expected) {
     throw new Error("Missing BACKOFFICE_ADMIN_KEY secret");
   }
+  return expected;
+}
+
+function base64UrlEncode(bytes: Uint8Array) {
+  let binary = "";
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  return btoa(binary).replaceAll("+", "-").replaceAll("/", "_").replaceAll("=", "");
+}
+
+function base64UrlDecode(value: string) {
+  const padded = value.replaceAll("-", "+").replaceAll("_", "/").padEnd(Math.ceil(value.length / 4) * 4, "=");
+  const binary = atob(padded);
+  return Uint8Array.from(binary, (char) => char.charCodeAt(0));
+}
+
+async function getSigningKey(secret: string) {
+  return crypto.subtle.importKey(
+    "raw",
+    encoder.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign", "verify"]
+  );
+}
+
+async function signAdminSession(secret: string) {
+  const now = Date.now();
+  const header = base64UrlEncode(encoder.encode(JSON.stringify({ alg: "HS256", typ: "ToolTrimAdminSession" })));
+  const body = base64UrlEncode(encoder.encode(JSON.stringify({
+    sub: "tooltrim-backoffice-admin",
+    iat: now,
+    exp: now + ADMIN_SESSION_TTL_MS,
+    nonce: crypto.randomUUID(),
+  })));
+  const data = `${header}.${body}`;
+  const key = await getSigningKey(secret);
+  const signature = new Uint8Array(await crypto.subtle.sign("HMAC", key, encoder.encode(data)));
+  return {
+    token: `${data}.${base64UrlEncode(signature)}`,
+    expiresAt: new Date(now + ADMIN_SESSION_TTL_MS).toISOString(),
+  };
+}
+
+async function verifyAdminSession(token: string | null, secret: string) {
+  if (!token) return false;
+  try {
+    const parts = token.split(".");
+    if (parts.length !== 3) return false;
+    const [header, body, signature] = parts;
+    const data = `${header}.${body}`;
+    const key = await getSigningKey(secret);
+    const signatureOk = await crypto.subtle.verify(
+      "HMAC",
+      key,
+      base64UrlDecode(signature),
+      encoder.encode(data)
+    );
+    if (!signatureOk) return false;
+
+    const payload = JSON.parse(new TextDecoder().decode(base64UrlDecode(body))) as { exp?: unknown; sub?: unknown };
+    return (
+      payload.sub === "tooltrim-backoffice-admin" &&
+      typeof payload.exp === "number" &&
+      payload.exp > Date.now()
+    );
+  } catch {
+    return false;
+  }
+}
+
+async function assertAdminAccess(req: Request) {
+  const expected = getAdminSecret();
+  const sessionToken = req.headers.get("x-admin-session");
+  if (await verifyAdminSession(sessionToken, expected)) return true;
   const provided = req.headers.get("x-admin-key") || getBearerToken(req);
   return provided === expected;
 }
@@ -444,7 +529,27 @@ Deno.serve(async (req) => {
   }
 
   try {
-    if (!assertAdminAccess(req)) {
+    const payload = (await req.json().catch(() => ({}))) as Payload;
+
+    if (payload.mode === "auth") {
+      const expected = getAdminSecret();
+      if (!payload.adminKey || payload.adminKey !== expected) {
+        return new Response(JSON.stringify({ error: "Unauthorized" }), {
+          status: 401,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      const session = await signAdminSession(expected);
+      return new Response(JSON.stringify({
+        mode: "auth",
+        adminSessionToken: session.token,
+        expiresAt: session.expiresAt,
+      }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    if (!(await assertAdminAccess(req))) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -457,7 +562,6 @@ Deno.serve(async (req) => {
       throw new Error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
     }
 
-    const payload = (await req.json().catch(() => ({}))) as Payload;
     const supabase = createClient(supabaseUrl, serviceRoleKey);
 
     if (payload.mode === "session_detail") {

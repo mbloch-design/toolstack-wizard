@@ -31,6 +31,7 @@
     "validate:preprod-app": "node scripts/validate-preprod-app.mjs",
     "validate:preprod-write": "node scripts/validate-preprod-diagnostic-write.mjs",
     "validate:go28": "node scripts/validate-go28-e2e.mjs",
+    "validate:go30": "node scripts/validate-go30-admin-auth.mjs",
     "login:vercel": "npx --yes vercel login"
   },
   "dependencies": {
