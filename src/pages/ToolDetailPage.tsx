@@ -451,6 +451,9 @@ const ToolDetailPage = () => {
                     { label: t("Limite principale", "Main limitation"), text: limitText },
                   ].filter((b): b is { label: string; text: string } => !!b.text);
 
+                  // Nothing to say → no section (avoids an empty title-only block)
+                  if (!vd?.threshold && blocks.length === 0) return null;
+
                   return (
                     <div className="td-section">
                       <span className="td-eyebrow">{t("Décision rapide", "Quick decision")}</span>
@@ -482,22 +485,14 @@ const ToolDetailPage = () => {
                   );
                 })()}
 
-                {/* 3 · Pour qui */}
-                {(tool as any).relevantFor?.length > 0 && (
-                  <div className="td-section">
-                    <span className="td-eyebrow">{t("Audience", "Audience")}</span>
-                    <h2 className="td-title">
-                      {t(`Pour qui est ${tool.name} ?`, `Who is ${tool.name} for?`)}
-                    </h2>
-                    <ToolAudienceBlock
-                      relevantFor={(tool as any).relevantFor || []}
-                      soloRelevance={tool.soloRelevance}
-                      teamRelevance={tool.teamRelevance}
-                      toolName={tool.name}
-                      t={t}
-                    />
-                  </div>
-                )}
+                {/* 3 · Pour qui — self-wraps .td-section, renders nothing when empty */}
+                <ToolAudienceBlock
+                  relevantFor={(tool as any).relevantFor || []}
+                  soloRelevance={tool.soloRelevance}
+                  teamRelevance={tool.teamRelevance}
+                  toolName={tool.name}
+                  t={t}
+                />
 
                 {/* 4 · Points forts — pros */}
                 {(tool.pros?.length ?? 0) > 0 && (

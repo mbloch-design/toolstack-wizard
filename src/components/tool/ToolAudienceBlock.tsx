@@ -89,8 +89,11 @@ export default function ToolAudienceBlock({ relevantFor, soloRelevance, teamRele
   const showRelevance = isSoloHigh || isTeamHigh || isSoloMed || isTeamMed;
 
   return (
-    <div>
-      {/* Audience chips (parent section already renders the eyebrow + title) */}
+    <div className="td-section">
+      <span className="td-eyebrow">{t("Audience", "Audience")}</span>
+      <h2 className="td-title">{t(`Pour qui est ${toolName} ?`, `Who is ${toolName} for?`)}</h2>
+
+      {/* Audience chips */}
       {mapped.length > 0 && (
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: showRelevance ? 20 : 0 }}>
           {mapped.map(({ labelFr, labelEn, Icon }, i) => (
