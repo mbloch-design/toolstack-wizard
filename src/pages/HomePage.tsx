@@ -219,10 +219,7 @@ const HomePage = () => {
       {/* 3. Entrées — 3 chemins clairs */}
       <EntryCardsSection />
 
-      {/* 4. Manifesto — position + decision framework */}
-      <ManifestoSection />
-
-      {/* 5. Ce que ToolTrim coupe */}
+      {/* 4. Position — what ToolTrim spots & cuts (merged with the former Manifesto) */}
       <WhatWeCutSection />
 
       {/* 6. Méthode — 3 étapes */}
@@ -637,8 +634,8 @@ function WhatWeCutSection() {
             </p>
             <p className="hp-cuts-product-line">
               {t(
-                "ToolTrim repère ces signaux et te montre quoi garder, quoi couper, quoi challenger.",
-                "ToolTrim spots these signals and shows what to keep, cut, or challenge.",
+                "Le bon outil dépend de ton contexte : ToolTrim lit ta stack — 3 clients actifs, un TJM, un Trello pas ouvert depuis six semaines — et te montre quoi garder, quoi couper, quoi challenger.",
+                "The right tool depends on your context: ToolTrim reads your stack — 3 active clients, a day rate, a Trello untouched for six weeks — and shows what to keep, cut, or challenge.",
               )}
             </p>
             <Link to={`${prefix}/selector`} className="hp-cuts-cta">
