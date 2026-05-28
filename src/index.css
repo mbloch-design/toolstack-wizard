@@ -9936,24 +9936,28 @@
     flex-shrink: 0;
   }
 
+  /* Achromatic, differentiated (no green/amber/red) — consistent with the
+     stack decision badges. Meaning carried by fill/weight, not hue. */
   .hp-audit-badge--keep {
-    background: #ECFDF0;
-    color: #166534;
+    background: var(--color-text-strong);
+    color: var(--color-surface);
   }
 
   .hp-audit-badge--challenge {
-    background: #FFFBEB;
-    color: #92400E;
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border-strong);
   }
 
   .hp-audit-badge--duplicate {
-    background: #FEF2F2;
-    color: #991B1B;
+    background: transparent;
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
   }
 
   .hp-audit-badge--soon {
     background: var(--color-surface-soft);
-    color: var(--color-muted);
+    color: var(--color-muted-light);
   }
 
   .hp-audit-price {
