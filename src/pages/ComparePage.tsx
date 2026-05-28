@@ -4,6 +4,7 @@ import { useToolPair, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, useState, useRef, type MouseEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import SectionPillNav from "@/components/SectionPillNav";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import type { Tool } from "@/data/types";
@@ -1849,87 +1850,6 @@ interface CompareNavSection {
   label: string;
 }
 
-function CompareStickyNav({ sections, prefix }: { sections: CompareNavSection[]; prefix: string }) {
-  const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
-  const [visible, setVisible] = useState(false);
-  const activeIdRef = useRef(activeId);
-  activeIdRef.current = activeId;
-
-  useEffect(() => {
-    if (sections.length === 0) return;
-    const nodes = sections
-      .map((section) => document.getElementById(section.id))
-      .filter((node): node is HTMLElement => Boolean(node));
-    if (nodes.length === 0) return;
-
-    const updateActive = () => {
-      let current = nodes[0].id;
-      nodes.forEach((node) => {
-        if (node.getBoundingClientRect().top <= 180) current = node.id;
-      });
-      setActiveId(current);
-    };
-
-    const sectionObserver = new IntersectionObserver(updateActive, {
-      rootMargin: "-160px 0px -58% 0px",
-      threshold: [0, 0.2, 0.45],
-    });
-    nodes.forEach((node) => sectionObserver.observe(node));
-    updateActive();
-
-    const hero = document.querySelector(".cp-hero");
-    const heroObserver = hero
-      ? new IntersectionObserver(([entry]) => setVisible(!entry.isIntersecting), { threshold: 0 })
-      : null;
-    if (hero && heroObserver) heroObserver.observe(hero);
-
-    // Keyboard: ←/→ cycles through sections
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-      const currentIdx = sections.findIndex((s) => s.id === activeIdRef.current);
-      const next = e.key === "ArrowRight"
-        ? sections[Math.min(currentIdx + 1, sections.length - 1)]
-        : sections[Math.max(currentIdx - 1, 0)];
-      if (!next || next.id === activeIdRef.current) return;
-      document.getElementById(next.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-      setActiveId(next.id);
-    };
-    document.addEventListener("keydown", handleKey);
-
-    return () => {
-      sectionObserver.disconnect();
-      heroObserver?.disconnect();
-      document.removeEventListener("keydown", handleKey);
-    };
-  }, [sections]);
-
-  const handleClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
-    event.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    setActiveId(id);
-  };
-
-  return (
-    <nav className={`compare-sticky-nav${visible ? "" : " compare-sticky-nav--hidden"}`} aria-label="Navigation du comparatif">
-      <Link to={`${prefix}/comparatifs`} className="compare-sticky-nav-logo" aria-label="Retour aux comparatifs">
-        VS
-      </Link>
-      <div className="compare-sticky-nav-items">
-        {sections.map((section) => (
-          <a
-            key={section.id}
-            href={`#${section.id}`}
-            className={`compare-sticky-nav-item${activeId === section.id ? " compare-sticky-nav-item--active" : ""}`}
-            aria-current={activeId === section.id ? "page" : undefined}
-            onClick={(event) => handleClick(event, section.id)}
-          >
-            {section.label}
-          </a>
-        ))}
-      </div>
-    </nav>
-  );
-}
 
 /* ─── Main page ──────────────────────────────────────────────────────────── */
 const ComparePage = () => {
@@ -2214,7 +2134,14 @@ const ComparePage = () => {
         </div>
       </section>
 
-      <CompareStickyNav sections={navSections} prefix={prefix} />
+      <SectionPillNav
+        sections={navSections}
+        logoLabel="VS"
+        logoTo={`${prefix}/comparatifs`}
+        logoAriaLabel={t("Retour aux comparatifs", "Back to comparisons")}
+        ariaLabel={t("Navigation du comparatif", "Comparison navigation")}
+        heroSelector=".cp-hero"
+      />
 
       {/* ── 01 Ma situation — arbre de décision + profils ───────────────────── */}
       {hasDecisionSection && (

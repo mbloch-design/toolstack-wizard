@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ChevronDown, ChevronLeft, ChevronRight, ExternalLink, Lightbulb, X } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import SectionPillNav from "@/components/SectionPillNav";
 import { Sheet, SheetContent, SheetClose } from "@/components/ui/sheet";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -579,53 +580,6 @@ const EXPERT_TIPS_BY_PERSONA: Record<StackPersona, StackInsight[]> = {
   solo:      EXPERT_TIPS_BY_STACK["freelance-solo-zero-bloat"],
 };
 
-/* ─── StackStickyNav — floating bottom capsule nav ──────────────────────── */
-function StackStickyNav({
-  sections,
-  activeId,
-  prefix,
-  visible,
-}: {
-  sections: { id: string; label: string }[];
-  activeId: string;
-  prefix: string;
-  visible: boolean;
-}) {
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  return (
-    <nav
-      className={`stack-sticky-nav${visible ? "" : " stack-sticky-nav--hidden"}`}
-      aria-label="Navigation de la fiche stack"
-    >
-      {/* Logo block — links back to stacks index */}
-      <Link to={`${prefix}/stacks`} className="stack-sticky-nav-logo" aria-label="Retour aux stacks">
-        TT
-      </Link>
-
-      {/* Nav items */}
-      <div className="stack-sticky-nav-items">
-        {sections.map((item) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            className={`stack-sticky-nav-item${activeId === item.id ? " stack-sticky-nav-item--active" : ""}`}
-            aria-current={activeId === item.id ? "page" : undefined}
-            onClick={(e) => handleNavClick(e, item.id)}
-          >
-            {item.label}
-          </a>
-        ))}
-      </div>
-    </nav>
-  );
-}
-
 /* ─── Budget value/unit split helper ────────────────────────────────────── */
 function splitBudget(s: string): { main: string; unit: string } | null {
   // "118€/mois" → { main: "118€", unit: "/mois" }
@@ -657,12 +611,8 @@ const StackDetailPage = () => {
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [activeSection, setActiveSection] = useState("outils");
   const [expandedToolLayers, setExpandedToolLayers] = useState<Set<string>>(() => new Set());
 
-  // Sticky bottom nav visibility (true when hero sentinel scrolls out of view)
-  const sentinelRef = useRef<HTMLDivElement>(null);
-  const [isStickyVisible, setIsStickyVisible] = useState(false);
   const navItems = useMemo(() => {
     if (!stack) return [];
     const stackEditorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
@@ -695,50 +645,6 @@ const StackDetailPage = () => {
     });
     return () => cleanupSeo(["stack-detail-jsonld"]);
   }, [lang, stack, toolBySlug]);
-
-  useEffect(() => {
-    if (!stack || navItems.length === 0) return;
-    const sections = navItems
-      .map((item) => document.getElementById(item.id))
-      .filter((section): section is HTMLElement => Boolean(section));
-    if (sections.length === 0) return;
-
-    const updateActiveSection = () => {
-      const offset = 68 + 56 + 24;
-      let current = sections[0].id;
-      sections.forEach((section) => {
-        if (section.getBoundingClientRect().top <= offset) current = section.id;
-      });
-      setActiveSection(current);
-    };
-
-    const observer = new IntersectionObserver(updateActiveSection, {
-      rootMargin: "-148px 0px -58% 0px",
-      threshold: [0, 0.15, 0.45],
-    });
-
-    sections.forEach((section) => observer.observe(section));
-    updateActiveSection();
-
-    return () => observer.disconnect();
-  }, [navItems, stack]);
-
-  useEffect(() => {
-    const activeLink = document.querySelector<HTMLAnchorElement>(`.sd-nav-link[href="#${activeSection}"]`);
-    activeLink?.scrollIntoView({ block: "nearest", inline: "center" });
-  }, [activeSection]);
-
-  // Sentinel: show sticky bottom nav when hero scrolls out of view
-  useEffect(() => {
-    const sentinel = sentinelRef.current;
-    if (!sentinel) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsStickyVisible(!entry.isIntersecting),
-      { threshold: 0 },
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     if (!stack) return;
@@ -848,31 +754,10 @@ const StackDetailPage = () => {
           })}
         </div>
 
-        {/* Sentinel: triggers sticky bottom nav when hero scrolls out of view */}
-        <div ref={sentinelRef} aria-hidden="true" style={{ height: 0 }} />
+        {/* Sentinel: reveals the floating pill nav once the hero scrolls away */}
+        <div className="sd-hero-sentinel" aria-hidden="true" style={{ height: 0 }} />
 
       </section>
-
-      {/* ════════════════════════════════════════════════════════════════════
-          SUBNAV
-      ════════════════════════════════════════════════════════════════════ */}
-      <div className="sd-subnav-wrapper">
-      <nav className="sd-nav" aria-label="Navigation de la page">
-        <div className="sd-nav-inner">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              className={`sd-nav-link${activeSection === item.id ? " sd-nav-link--active" : ""}`}
-              href={`#${item.id}`}
-              aria-current={activeSection === item.id ? "location" : undefined}
-              onClick={() => setActiveSection(item.id)}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </nav>
-      </div>
 
       {/* ════════════════════════════════════════════════════════════════════
           OUTILS — stack par étape
@@ -1282,7 +1167,14 @@ const StackDetailPage = () => {
       {/* ════════════════════════════════════════════════════════════════════
           STICKY BOTTOM NAV — desktop only, visible after hero
       ════════════════════════════════════════════════════════════════════ */}
-      <StackStickyNav sections={navItems} activeId={activeSection} prefix={prefix} visible={isStickyVisible} />
+      <SectionPillNav
+        sections={navItems}
+        logoLabel="TT"
+        logoTo={`${prefix}/stacks`}
+        logoAriaLabel={t("Retour aux stacks", "Back to stacks")}
+        ariaLabel={t("Navigation de la fiche stack", "Stack page navigation")}
+        heroSelector=".sd-hero-sentinel"
+      />
 
     </div>
   );

@@ -6,6 +6,7 @@ import {
   ExternalLink, Check, X, ArrowRight, CalendarCheck,
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
+import SectionPillNav from "@/components/SectionPillNav";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
@@ -267,6 +268,11 @@ const ToolDetailPage = () => {
     alternatives, catName, catNameEn,
   };
 
+  const pillSections = TABS.map((tab) => ({
+    id: tab.id === "presentation" ? "analyse" : tab.id,
+    label: lang === "fr" ? tab.labelFr : tab.labelEn,
+  }));
+
   return (
     <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
       <ToolJsonLd
@@ -284,7 +290,7 @@ const ToolDetailPage = () => {
       {/* ══════════════════════════════════════════════════════════
           HERO — tool identity & positioning
       ══════════════════════════════════════════════════════════ */}
-      <header style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)" }}>
+      <header className="td-hero" style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)" }}>
         <div className="td-container">
           <div className="td-hero-layout">
 
@@ -395,25 +401,6 @@ const ToolDetailPage = () => {
             <div className="td-sidebar-mobile" style={{ marginBottom: 32 }}>
               <StickyDecisionCard {...cardProps} />
             </div>
-
-            {/* Tab navigation */}
-            <nav className="td-tab-nav" style={{ marginLeft: "calc(-48px)", marginRight: "calc(-48px)", paddingLeft: 48, paddingRight: 48 }}>
-              {TABS.map((tab) => {
-                const isActive = subPage === tab.id;
-                const tabPath = tab.id === "prix" && lang === "en" ? "/pricing"
-                  : tab.id === "avis" && lang === "en" ? "/reviews"
-                  : tab.path;
-                return (
-                  <Link
-                    key={tab.id}
-                    to={`${prefix}/tool/${slug}${tabPath}`}
-                    className={`td-tab${isActive ? " td-tab--active" : ""}`}
-                  >
-                    {lang === "fr" ? tab.labelFr : tab.labelEn}
-                  </Link>
-                );
-              })}
-            </nav>
 
             {/* ════════════════════════════════
                 SECTION: Analyse / Présentation
@@ -1007,6 +994,15 @@ const ToolDetailPage = () => {
           </div>
         </div>
       </div>
+
+      <SectionPillNav
+        sections={pillSections}
+        logoLabel="TT"
+        logoTo={`${prefix}/tools`}
+        logoAriaLabel={t("Retour aux outils", "Back to tools")}
+        ariaLabel={t("Navigation de la fiche outil", "Tool page navigation")}
+        heroSelector=".td-hero"
+      />
 
     </article>
   );

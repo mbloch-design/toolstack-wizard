@@ -185,6 +185,10 @@
     --color-hover:         #222222;
     --color-hover-text:    #FFFFFF;
 
+    /* Dark "ink" surface — floating pill nav, aligned with the footer slab */
+    --color-ink:           oklch(0.20 0.004 100);
+    --color-ink-border:    oklch(0.30 0.004 100);
+
     --color-accent:        hsl(224 76% 50%);   /* ToolTrim blue */
     --color-accent-soft:   hsl(224 76% 96%);   /* very light tint */
 
@@ -14892,101 +14896,10 @@ section[id] {
   }
 }
 
-/* ── Floating capsule nav ── */
-.stack-sticky-nav {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-50%) translateY(0);
-  z-index: 60;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #2A2A28;
-  border-radius: 20px;
-  padding: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  opacity: 1;
-  transition: opacity 220ms ease, transform 220ms ease;
-}
-
-.stack-sticky-nav--hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-50%) translateY(12px);
-}
-
-/* Logo block (left) */
-.stack-sticky-nav-logo {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: var(--color-text-strong);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-surface);
-  font-family: var(--font-ui);
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: -0.02em;
-  flex-shrink: 0;
-  text-decoration: none;
-  transition: background 150ms ease;
-}
-
-.stack-sticky-nav-logo:hover {
-  background: #000000;
-}
-
-/* Nav items group */
-.stack-sticky-nav-items {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 14px;
-}
-
-/* Individual nav item */
-.stack-sticky-nav-item {
-  display: flex;
-  align-items: center;
-  height: 44px;
-  padding: 0 16px;
-  border-radius: 10px;
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
-  border: 1px solid transparent;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
-  cursor: pointer;
-  background: transparent;
-}
-
-.stack-sticky-nav-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.stack-sticky-nav-item--active {
-  color: var(--color-surface);
-  border-color: rgba(255, 255, 255, 0.80);
-  background: rgba(255, 255, 255, 0.06);
-  font-weight: 600;
-}
-
-.stack-sticky-nav-item:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.7);
-  outline-offset: 2px;
-}
-
-.compare-sticky-nav {
+/* ── Shared floating capsule section nav (tool / stack / comparatif) ──────
+   Single source of truth. Was duplicated as .stack-sticky-nav and
+   .compare-sticky-nav; now one .tt-pillnav system, tokenized on --color-ink. */
+.tt-pillnav {
   position: fixed;
   left: 50%;
   bottom: 24px;
@@ -14996,22 +14909,22 @@ section[id] {
   align-items: center;
   gap: 8px;
   max-width: min(calc(100vw - 32px), 860px);
-  background: #2A2A28;
+  background: var(--color-ink);
   border-radius: 20px;
   padding: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-ink-border);
   opacity: 1;
   transition: opacity 220ms ease, transform 220ms ease;
 }
 
-.compare-sticky-nav--hidden {
+.tt-pillnav--hidden {
   opacity: 0;
   pointer-events: none;
   transform: translateX(-50%) translateY(12px);
 }
 
-.compare-sticky-nav-logo {
+.tt-pillnav-logo {
   width: 52px;
   height: 52px;
   border-radius: 14px;
@@ -15029,11 +14942,11 @@ section[id] {
   transition: background 150ms ease;
 }
 
-.compare-sticky-nav-logo:hover {
-  background: #000000;
+.tt-pillnav-logo:hover {
+  background: var(--color-hover, #1a1a18);
 }
 
-.compare-sticky-nav-items {
+.tt-pillnav-items {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -15045,11 +14958,9 @@ section[id] {
   scrollbar-width: none;
 }
 
-.compare-sticky-nav-items::-webkit-scrollbar {
-  display: none;
-}
+.tt-pillnav-items::-webkit-scrollbar { display: none; }
 
-.compare-sticky-nav-item {
+.tt-pillnav-item {
   display: flex;
   align-items: center;
   height: 44px;
@@ -15067,29 +14978,26 @@ section[id] {
   background: transparent;
 }
 
-.compare-sticky-nav-item:hover {
+.tt-pillnav-item:hover {
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.9);
 }
 
-.compare-sticky-nav-item--active {
+.tt-pillnav-item--active {
   color: var(--color-surface);
   border-color: rgba(255, 255, 255, 0.80);
   background: rgba(255, 255, 255, 0.06);
   font-weight: 600;
 }
 
-.compare-sticky-nav-item:focus-visible {
+.tt-pillnav-item:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.7);
   outline-offset: 2px;
 }
 
-/* Mobile: reposition capsule to top bar */
+/* Mobile: reposition capsule to a top bar */
 @media (max-width: 767px) {
-  .stack-sticky-nav {
-    display: none;
-  }
-  .compare-sticky-nav {
+  .tt-pillnav {
     bottom: auto;
     top: 0;
     left: 0;
@@ -15102,16 +15010,16 @@ section[id] {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
-  .compare-sticky-nav--hidden {
+  .tt-pillnav--hidden {
     transform: translateY(-100%);
     opacity: 0;
   }
-  .compare-sticky-nav-logo {
+  .tt-pillnav-logo {
     width: 44px;
     height: 44px;
     border-radius: 10px;
   }
-  .compare-sticky-nav-item {
+  .tt-pillnav-item {
     height: 38px;
     padding: 0 12px;
     font-size: 12px;
@@ -15120,8 +15028,7 @@ section[id] {
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  .stack-sticky-nav,
-  .compare-sticky-nav {
+  .tt-pillnav {
     transition: opacity 0ms;
   }
 }
