@@ -359,31 +359,29 @@ const ToolDetailPage = () => {
               { label: tool.name },
             ]} />
 
-            {/* Identity lockup — logo + (category eyebrow + name) */}
+            {/* Category eyebrow — above the lockup so the logo aligns to the title */}
+            {category && (
+              <Link to={`${prefix}/category/${category.slug}`} className="td-hero-cat">
+                {CategoryIcon && <CategoryIcon />}
+                {t(catName, catNameEn)}
+              </Link>
+            )}
+
+            {/* Identity lockup — logo aligned with the name */}
             <div className="td-hero-lockup">
-              <div className="td-hero-logo">
-                <ToolLogo tool={tool} size={48} />
-              </div>
-              <div style={{ minWidth: 0 }}>
-                {category && (
-                  <Link to={`${prefix}/category/${category.slug}`} className="td-hero-cat">
-                    {CategoryIcon && <CategoryIcon />}
-                    {t(catName, catNameEn)}
-                  </Link>
-                )}
-                {/* H1 — clamp réduit pour les noms courts (≤5 chars) */}
-                <h1 style={{
-                  fontFamily: "var(--font-brand)",
-                  fontSize: tool.name.length <= 5
-                    ? "clamp(4rem, 7vw, 6rem)"      /* max 96px — Box, Slack, Zoom… */
-                    : "clamp(4rem, 7.5vw, 7rem)",   /* max 112px — noms longs */
-                  fontWeight: 600, lineHeight: 0.9,
-                  letterSpacing: "-0.07em", color: "var(--color-text)",
-                  margin: 0,
-                }}>
-                  {tool.name}
-                </h1>
-              </div>
+              <ToolLogo tool={tool} size={96} className="td-hero-logo" />
+              {/* H1 — clamp réduit pour les noms courts (≤5 chars) */}
+              <h1 style={{
+                fontFamily: "var(--font-brand)",
+                fontSize: tool.name.length <= 5
+                  ? "clamp(4rem, 7vw, 6rem)"      /* max 96px — Box, Slack, Zoom… */
+                  : "clamp(4rem, 7.5vw, 7rem)",   /* max 112px — noms longs */
+                fontWeight: 600, lineHeight: 0.9,
+                letterSpacing: "-0.07em", color: "var(--color-text)",
+                margin: 0,
+              }}>
+                {tool.name}
+              </h1>
             </div>
 
             {/* Short description */}
