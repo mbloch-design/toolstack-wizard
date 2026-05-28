@@ -30,6 +30,7 @@ function serializeResult(result: DiagnosticResult) {
     })),
     toolScores: toolScoresObj,
     prescriptions: result.prescriptions,
+    insights: result.insights,
     recommendations: result.recommendations.slice(0, 6).map((r) => ({
       id: r.id, name: r.name, price: r.price, category: r.category,
     })),

@@ -5,6 +5,8 @@ export interface SessionState {
   tjm: number;
   language: "fr" | "en";
   persona: Persona;
+  personaConfidence?: "clear" | "hybrid" | "unsure";
+  stackGoal?: "reduce_costs" | "save_time" | "simplify" | "quality";
   complementarySkills: Persona[];
   primarySpecialty?: string;
   complementarySpecialties?: string[];
@@ -140,6 +142,58 @@ export interface DiagnosticFocusArea {
   actionEn: string;
 }
 
+export interface DiagnosticAnswerSignal {
+  id: string;
+  source: "onboarding" | "discovery" | "closing";
+  severity: DiagnosticSeverity;
+  labelFr: string;
+  labelEn: string;
+  detailFr: string;
+  detailEn: string;
+  actionFr: string;
+  actionEn: string;
+  toolIds?: string[];
+  impact?: "keep" | "review" | "cancel";
+}
+
+export interface DiagnosticConfidence {
+  score: number;
+  labelFr: string;
+  labelEn: string;
+  summaryFr: string;
+  summaryEn: string;
+}
+
+export type DiagnosticCalibrationDimension =
+  | "confidence"
+  | "score"
+  | "savings"
+  | "coverage"
+  | "actions"
+  | "data";
+
+export interface DiagnosticCalibrationFlag {
+  id: string;
+  dimension: DiagnosticCalibrationDimension;
+  severity: DiagnosticSeverity;
+  labelFr: string;
+  labelEn: string;
+  detailFr: string;
+  detailEn: string;
+  actionFr: string;
+  actionEn: string;
+}
+
+export interface DiagnosticCalibration {
+  score: number;
+  reviewRequired: boolean;
+  labelFr: string;
+  labelEn: string;
+  summaryFr: string;
+  summaryEn: string;
+  flags: DiagnosticCalibrationFlag[];
+}
+
 export interface DiagnosticInsights {
   profile: {
     id: StackProfileId;
@@ -166,6 +220,9 @@ export interface DiagnosticInsights {
   riskFlags: DiagnosticRiskFlag[];
   functionalCoverage: FunctionalCoverageItem[];
   focusAreas: DiagnosticFocusArea[];
+  answerSignals: DiagnosticAnswerSignal[];
+  confidence: DiagnosticConfidence;
+  calibration: DiagnosticCalibration;
   metrics: {
     toolCount: number;
     paidToolCount: number;
@@ -176,6 +233,11 @@ export interface DiagnosticInsights {
     dormantCount: number;
     reviewCount: number;
     highCostToolCount: number;
+    activeDiscoveryCount: number;
+    answeredDiscoveryCount: number;
+    answeredClosingCount: number;
+    protectedToolCount: number;
+    challengedToolCount: number;
   };
   generatedAt: string;
 }

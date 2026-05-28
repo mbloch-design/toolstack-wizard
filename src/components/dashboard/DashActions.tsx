@@ -1,7 +1,8 @@
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
+import { updateDiagnosticSession } from "@/lib/diagnosticPersistence";
 import { Check, ChevronRight, ExternalLink, Target } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 
@@ -26,6 +27,29 @@ interface ActionItem {
   savings: number;
   timeMinutes: number;
   urgency: "now" | "week" | "month";
+}
+
+const ACTIONS_STORAGE_PREFIX = "tooltrim.diagnostic.actions.";
+
+function getActionStorageKey(sessionId?: string | null) {
+  return sessionId ? `${ACTIONS_STORAGE_PREFIX}${sessionId}` : null;
+}
+
+function readStoredActionIds(sessionId?: string | null) {
+  const key = getActionStorageKey(sessionId);
+  if (!key || typeof window === "undefined") return new Set<string>();
+  try {
+    const parsed = JSON.parse(window.localStorage.getItem(key) || "[]");
+    return new Set(Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : []);
+  } catch {
+    return new Set<string>();
+  }
+}
+
+function writeStoredActionIds(sessionId: string | null | undefined, ids: string[]) {
+  const key = getActionStorageKey(sessionId);
+  if (!key || typeof window === "undefined") return;
+  window.localStorage.setItem(key, JSON.stringify(ids));
 }
 
 function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"]): ActionItem[] {
@@ -75,6 +99,16 @@ function buildActions(result: DiagnosticResult, allTools: Tool[], t: Props["t"])
     });
   }
 
+  for (const signal of result.insights.answerSignals.filter((item) => item.source === "closing")) {
+    items.push({
+      id: `signal-${signal.id}`,
+      label: t(signal.actionFr, signal.actionEn),
+      savings: 0,
+      timeMinutes: signal.severity === "high" ? 20 : 30,
+      urgency: signal.severity === "low" ? "month" : "week",
+    });
+  }
+
   // MONTH — recommendations
   for (const rec of recommendations.slice(0, 3)) {
     items.push({
@@ -112,44 +146,53 @@ const URGENCY_CONFIG = {
 export default function DashActions({ result, allTools, t, onNavigate, dbSessionId, dbSessionToken }: Props) {
   const { prefix } = useLang();
   const actions = useMemo(() => buildActions(result, allTools, t), [result, allTools, t]);
-  const [checked, setChecked] = useState<Set<string>>(new Set());
+  const [checked, setChecked] = useState<Set<string>>(() => readStoredActionIds(dbSessionId));
   const [lastChecked, setLastChecked] = useState<string | null>(null);
   const updateTimer = useRef<ReturnType<typeof setTimeout>>();
 
-  const persistActions = useCallback((count: number) => {
+  useEffect(() => {
+    setChecked(readStoredActionIds(dbSessionId));
+  }, [dbSessionId]);
+
+  useEffect(() => {
+    return () => {
+      if (updateTimer.current) clearTimeout(updateTimer.current);
+    };
+  }, []);
+
+  const persistActions = useCallback((next: Set<string>) => {
+    const completedIds = Array.from(next);
+    writeStoredActionIds(dbSessionId, completedIds);
     if (!dbSessionId || !dbSessionToken) return;
     if (updateTimer.current) clearTimeout(updateTimer.current);
+    const recoveredSavings = actions
+      .filter((action) => next.has(action.id))
+      .reduce((sum, action) => sum + action.savings, 0);
+    const totalSavings = actions.reduce((sum, action) => sum + action.savings, 0);
     updateTimer.current = setTimeout(async () => {
       try {
-        // Direct PostgREST call so we can pass the per-session token header (required by RLS)
-        const SUPABASE_URL = "https://rtfyfuwfdpnsogovkwai.supabase.co";
-        const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0ZnlmdXdmZHBuc29nb3Zrd2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyOTcyMDcsImV4cCI6MjA4ODg3MzIwN30.pwpmh9Qe8dLZFq1rMqtCRmEMJ9dnbcdvT_B4CjIu4Xc";
-        await fetch(
-          `${SUPABASE_URL}/rest/v1/diagnostic_sessions?id=eq.${encodeURIComponent(dbSessionId)}`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-              apikey: ANON_KEY,
-              Authorization: `Bearer ${ANON_KEY}`,
-              "x-session-token": dbSessionToken,
-              Prefer: "return=minimal",
-            },
-            body: JSON.stringify({ actions_completed: count }),
-          }
-        );
+        await updateDiagnosticSession(dbSessionId, dbSessionToken, {
+          actions_completed: completedIds.length,
+          action_state: {
+            completed_action_ids: completedIds,
+            recovered_savings: recoveredSavings,
+            total_savings: totalSavings,
+            updated_at: new Date().toISOString(),
+            version: "v1",
+          },
+        });
       } catch (err) {
         console.error("[DiagActions] Update failed:", err);
       }
     }, 1000);
-  }, [dbSessionId, dbSessionToken]);
+  }, [actions, dbSessionId, dbSessionToken]);
 
   const toggle = useCallback((id: string, savings: number) => {
     setChecked((prev) => {
       const next = new Set(prev);
       if (next.has(id)) { next.delete(id); setLastChecked(null); }
       else { next.add(id); setLastChecked(`${savings}€`); }
-      persistActions(next.size);
+      persistActions(next);
       return next;
     });
   }, [persistActions]);
@@ -288,7 +331,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
 
                     {/* Logo */}
                     {action.tool && (
-                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground"><div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{action.tool.name.charAt(0)}</div></div>
+                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">{action.tool.name.charAt(0)}</div>
                     )}
 
                     {/* Label */}

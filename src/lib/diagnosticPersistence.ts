@@ -93,6 +93,7 @@ export async function createDiagnosticSession(
       source: payload.source || "web",
       funnel_version: payload.funnelVersion || "v1",
       last_step_id: payload.lastStepId ?? 0,
+      last_client_seen_at: toIsoNow(),
       updated_at: toIsoNow(),
     };
 
@@ -139,6 +140,41 @@ export async function updateDiagnosticSession(
   } catch (error) {
     console.error("[DiagPersistence] updateDiagnosticSession failed:", error);
     return false;
+  }
+}
+
+export function markDiagnosticSessionAbandoned(
+  sessionId: string,
+  sessionToken: string,
+  payload: { stepId: number; reason?: string }
+) {
+  try {
+    const { url } = getSupabaseConfig();
+    const nowIso = toIsoNow();
+    void fetch(
+      `${url}/rest/v1/diagnostic_sessions?id=eq.${encodeURIComponent(sessionId)}`,
+      {
+        method: "PATCH",
+        keepalive: true,
+        headers: {
+          ...buildHeaders(sessionToken),
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify({
+          abandoned_at: nowIso,
+          last_client_seen_at: nowIso,
+          last_step_id: payload.stepId,
+          recovery_state: {
+            reason: payload.reason || "client_hidden",
+            step_id: payload.stepId,
+            captured_at: nowIso,
+          },
+          updated_at: nowIso,
+        }),
+      }
+    );
+  } catch (error) {
+    console.error("[DiagPersistence] markDiagnosticSessionAbandoned failed:", error);
   }
 }
 

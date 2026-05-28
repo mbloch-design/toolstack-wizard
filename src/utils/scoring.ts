@@ -3,6 +3,8 @@ import type {
   Persona,
   SessionState,
   DoubleRule,
+  DiscoveryQuestion,
+  DiagnosticAnswerSignal,
   Prescription,
   DiagnosticResult,
 } from "@/types/diagnostic";
@@ -321,6 +323,292 @@ export function computeRecommendations(
 export interface DiagnosticData {
   allTools: Tool[];
   doublonRules: DoubleRule[];
+  discoveryQuestions?: DiscoveryQuestion[];
+}
+
+type DiscoveryToolSignal = DiagnosticAnswerSignal & {
+  source: "discovery";
+  impact: "keep" | "review" | "cancel";
+  toolIds: string[];
+};
+
+type SignalSummary = {
+  activeDiscoveryCount: number;
+  answeredDiscoveryCount: number;
+  answeredClosingCount: number;
+  protectedToolCount: number;
+  challengedToolCount: number;
+};
+
+function collectOnboardingSignals(sessionState: SessionState): DiagnosticAnswerSignal[] {
+  const signals: DiagnosticAnswerSignal[] = [];
+
+  if (sessionState.personaConfidence === "hybrid") {
+    signals.push({
+      id: "onboarding_persona_hybrid",
+      source: "onboarding",
+      severity: "medium",
+      labelFr: "Profil hybride",
+      labelEn: "Hybrid profile",
+      detailFr: "Le diagnostic doit tenir compte d'un métier principal et d'usages secondaires.",
+      detailEn: "The diagnostic should account for one main role and secondary use cases.",
+      actionFr: "Croiser le persona principal avec les compétences complémentaires avant de trancher.",
+      actionEn: "Cross-check the main persona with complementary skills before making hard calls.",
+    });
+  }
+
+  if (sessionState.personaConfidence === "unsure") {
+    signals.push({
+      id: "onboarding_persona_uncertain",
+      source: "onboarding",
+      severity: "high",
+      labelFr: "Profil à confirmer",
+      labelEn: "Profile to confirm",
+      detailFr: "L'utilisateur hésite sur son persona: les recommandations doivent rester prudentes.",
+      detailEn: "The user is unsure about their persona: recommendations should stay cautious.",
+      actionFr: "Utiliser les réponses stack et discovery pour confirmer le bon angle de restitution.",
+      actionEn: "Use stack and discovery answers to confirm the right restitution angle.",
+    });
+  }
+
+  if (sessionState.stackGoal) {
+    const copy = {
+      reduce_costs: {
+        labelFr: "Objectif économies",
+        labelEn: "Cost reduction goal",
+        actionFr: "Prioriser les doublons, outils dormants et renouvellements.",
+        actionEn: "Prioritize duplicates, dormant tools, and renewals.",
+      },
+      save_time: {
+        labelFr: "Objectif temps",
+        labelEn: "Time-saving goal",
+        actionFr: "Ne pas couper un outil utile uniquement pour une petite économie.",
+        actionEn: "Do not cut a useful tool only for a small saving.",
+      },
+      simplify: {
+        labelFr: "Objectif simplification",
+        labelEn: "Simplification goal",
+        actionFr: "Favoriser les arbitrages qui réduisent la dispersion.",
+        actionEn: "Favor decisions that reduce fragmentation.",
+      },
+      quality: {
+        labelFr: "Objectif meilleur choix",
+        labelEn: "Better-choice goal",
+        actionFr: "Comparer fit métier, coût et alternatives avant économie brute.",
+        actionEn: "Compare business fit, cost, and alternatives before raw savings.",
+      },
+    }[sessionState.stackGoal];
+
+    signals.push({
+      id: `onboarding_goal_${sessionState.stackGoal}`,
+      source: "onboarding",
+      severity: "low",
+      labelFr: copy.labelFr,
+      labelEn: copy.labelEn,
+      detailFr: "Objectif principal déclaré au début du tunnel.",
+      detailEn: "Main goal declared at the start of the funnel.",
+      actionFr: copy.actionFr,
+      actionEn: copy.actionEn,
+    });
+  }
+
+  return signals;
+}
+
+function isDiscoveryQuestionActive(question: DiscoveryQuestion, sessionState: SessionState) {
+  if (question.persona !== "ALL" && question.persona !== sessionState.persona) return false;
+  const selectedToolIds = new Set(sessionState.selectedTools.map((tool) => tool.id));
+  if (question.condition_tool_ids.length === 0) return true;
+  if (question.condition_type === "all") {
+    return question.condition_tool_ids.every((id) => selectedToolIds.has(id));
+  }
+  return question.condition_tool_ids.some((id) => selectedToolIds.has(id));
+}
+
+function collectDiscoverySignals(sessionState: SessionState, questions: DiscoveryQuestion[] = []): DiscoveryToolSignal[] {
+  const selectedToolIds = new Set(sessionState.selectedTools.map((tool) => tool.id));
+  const signals: DiscoveryToolSignal[] = [];
+
+  for (const question of questions) {
+    if (!isDiscoveryQuestionActive(question, sessionState)) continue;
+    const answerIndex = sessionState.discoveryAnswers.get(question.id);
+    if (answerIndex == null) continue;
+    const option = question.options[answerIndex];
+    if (!option) continue;
+
+    const affectedIds = (option.affectedTools?.length ? option.affectedTools : question.condition_tool_ids)
+      .filter((id) => selectedToolIds.has(id));
+    if (affectedIds.length === 0) continue;
+
+    const impact = option.impact;
+    const severity = impact === "cancel" ? "high" : impact === "review" ? "medium" : "low";
+    const toolNames = affectedIds
+      .map((id) => sessionState.selectedTools.find((tool) => tool.id === id)?.name || id)
+      .join(", ");
+
+    signals.push({
+      id: `discovery_${question.id}_${impact}`,
+      source: "discovery",
+      severity,
+      impact,
+      toolIds: affectedIds,
+      labelFr: impact === "keep" ? "Usage confirmé" : impact === "cancel" ? "Usage à couper" : "Usage à vérifier",
+      labelEn: impact === "keep" ? "Confirmed use" : impact === "cancel" ? "Use to cut" : "Use to review",
+      detailFr: `${option.label} · ${toolNames}`,
+      detailEn: `${option.label} · ${toolNames}`,
+      actionFr: impact === "keep"
+        ? "Ne pas prescrire de suppression sur ces outils sans autre signal fort."
+        : impact === "cancel"
+          ? "Traiter ces outils comme candidats directs à suppression ou downgrade."
+          : "Vérifier usage réel, propriétaire et coût avant de décider.",
+      actionEn: impact === "keep"
+        ? "Do not prescribe removal on these tools without another strong signal."
+        : impact === "cancel"
+          ? "Treat these tools as direct candidates for cancellation or downgrade."
+          : "Check real usage, owner, and cost before deciding.",
+    });
+  }
+
+  return signals;
+}
+
+function collectClosingSignals(sessionState: SessionState): DiagnosticAnswerSignal[] {
+  const [bankAnswer, annualAnswer, passwordAnswer] = sessionState.closingAnswers;
+  const normalized = (value: string) =>
+    value
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  const signals: DiagnosticAnswerSignal[] = [];
+
+  if (["oui absolument", "maybe", "peut etre", "peut-être", "je ne regarde jamais", "i never check"].some((token) => normalized(bankAnswer).includes(token))) {
+    signals.push({
+      id: "closing_billing_blind_spot",
+      source: "closing",
+      severity: normalized(bankAnswer).includes("jamais") || normalized(bankAnswer).includes("never") ? "high" : "medium",
+      labelFr: "Angle mort facturation",
+      labelEn: "Billing blind spot",
+      detailFr: "Un prélèvement non reconnu ou non vérifié peut masquer un abonnement dormant.",
+      detailEn: "An unrecognized or unchecked charge can hide a dormant subscription.",
+      actionFr: "Faire une revue bancaire courte avant la prochaine date de renouvellement.",
+      actionEn: "Run a short bank statement review before the next renewal date.",
+    });
+  }
+
+  if (["oui", "probably", "probablement"].some((token) => normalized(annualAnswer).includes(token))) {
+    signals.push({
+      id: "closing_annual_lock_in",
+      source: "closing",
+      severity: "medium",
+      labelFr: "Renouvellement annuel à surveiller",
+      labelEn: "Annual renewal to watch",
+      detailFr: "Un abonnement annuel inutilisé crée un faux sentiment de coût déjà absorbé.",
+      detailEn: "An unused annual plan creates a false sense that the cost is already absorbed.",
+      actionFr: "Lister les dates de renouvellement et décider 30 jours avant chacune.",
+      actionEn: "List renewal dates and decide 30 days before each one.",
+    });
+  }
+
+  if (["gratuit", "je n'en ai pas", "free", "don't have", "dont have"].some((token) => normalized(passwordAnswer).includes(token))) {
+    signals.push({
+      id: "closing_password_foundation",
+      source: "closing",
+      severity: "low",
+      labelFr: "Socle sécurité léger",
+      labelEn: "Light security foundation",
+      detailFr: "Le gestionnaire de mots de passe n'est pas forcément un coût à optimiser, mais c'est un socle à clarifier.",
+      detailEn: "A password manager is not necessarily a cost optimization topic, but it is a foundation to clarify.",
+      actionFr: "Vérifier que le socle accès et mots de passe est volontaire, pas subi.",
+      actionEn: "Check that access and password management is intentional, not accidental.",
+    });
+  }
+
+  return signals;
+}
+
+function buildSignalSummary(
+  sessionState: SessionState,
+  discoveryQuestions: DiscoveryQuestion[] = [],
+  discoverySignals: DiscoveryToolSignal[]
+): SignalSummary {
+  const activeDiscoveryQuestions = discoveryQuestions.filter((question) => isDiscoveryQuestionActive(question, sessionState));
+  const answeredDiscoveryCount = activeDiscoveryQuestions.filter((question) => sessionState.discoveryAnswers.has(question.id)).length;
+  const answeredClosingCount = sessionState.closingAnswers.filter((answer) => answer.trim().length > 0).length;
+  const protectedToolCount = new Set(
+    discoverySignals
+      .filter((signal) => signal.impact === "keep")
+      .flatMap((signal) => signal.toolIds)
+  ).size;
+  const challengedToolCount = new Set(
+    discoverySignals
+      .filter((signal) => signal.impact === "review" || signal.impact === "cancel")
+      .flatMap((signal) => signal.toolIds)
+  ).size;
+
+  return {
+    activeDiscoveryCount: activeDiscoveryQuestions.length,
+    answeredDiscoveryCount,
+    answeredClosingCount,
+    protectedToolCount,
+    challengedToolCount,
+  };
+}
+
+function applyDiscoverySignalsToPrescriptions(
+  prescriptions: { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] },
+  selectedTools: Tool[],
+  discoverySignals: DiscoveryToolSignal[]
+) {
+  if (discoverySignals.length === 0) return prescriptions;
+
+  const selectedToolMap = new Map(selectedTools.map((tool) => [tool.id, tool]));
+  const dominant = new Map<string, DiscoveryToolSignal>();
+  const rank = { keep: 3, cancel: 2, review: 1 };
+
+  for (const signal of discoverySignals) {
+    for (const toolId of signal.toolIds) {
+      const current = dominant.get(toolId);
+      if (!current || rank[signal.impact] > rank[current.impact]) {
+        dominant.set(toolId, signal);
+      }
+    }
+  }
+
+  const shouldRemove = (prescription: Prescription) => {
+    const signal = dominant.get(prescription.toolId);
+    return signal?.impact === "keep" || signal?.impact === "cancel";
+  };
+
+  const next = {
+    phase1: prescriptions.phase1.filter((p) => !shouldRemove(p)),
+    phase2: prescriptions.phase2.filter((p) => !shouldRemove(p)),
+    phase3: prescriptions.phase3.filter((p) => !shouldRemove(p)),
+  };
+
+  const existingIds = new Set([
+    ...next.phase1,
+    ...next.phase2,
+    ...next.phase3,
+  ].map((prescription) => prescription.toolId));
+
+  for (const [toolId, signal] of dominant) {
+    if (signal.impact === "keep" || existingIds.has(toolId)) continue;
+    const tool = selectedToolMap.get(toolId);
+    if (!tool || !canPrescribe(tool)) continue;
+
+    next.phase3.push({
+      toolId,
+      type: signal.impact === "cancel" ? "dormant" : "inadapté",
+      verdict: signal.impact === "cancel" ? "cancel" : "review",
+      message: signal.impact === "cancel"
+        ? `${tool.name}: usage déclaré trop faible`
+        : `${tool.name}: usage à vérifier (${signal.detailFr})`,
+      savingsEstimate: signal.impact === "cancel" ? tool.price : 0,
+    });
+    existingIds.add(toolId);
+  }
+
+  return next;
 }
 
 export function runDiagnostic(
@@ -334,7 +622,15 @@ export function runDiagnostic(
     toolScores.set(tool.id, computeScoreFinal(tool, persona, complementarySkills, tjm));
   }
 
-  const prescriptions = computePrescriptions(selectedTools, toolScores, data.doublonRules, persona);
+  const discoverySignals = collectDiscoverySignals(sessionState, data.discoveryQuestions);
+  const answerSignals = [
+    ...collectOnboardingSignals(sessionState),
+    ...discoverySignals,
+    ...collectClosingSignals(sessionState),
+  ];
+  const signalSummary = buildSignalSummary(sessionState, data.discoveryQuestions, discoverySignals);
+  const basePrescriptions = computePrescriptions(selectedTools, toolScores, data.doublonRules, persona);
+  const prescriptions = applyDiscoverySignalsToPrescriptions(basePrescriptions, selectedTools, discoverySignals);
   const { score: healthScore, label: healthLabel } = computeStackHealth(prescriptions);
   const recommendations = computeRecommendations(
     data.allTools, selectedTools, persona, complementarySkills, tjm
@@ -365,6 +661,8 @@ export function runDiagnostic(
     estimatedWaste: roundedEstimatedWaste,
     optimizedCost: roundedOptimizedCost,
     annualSavings: roundedAnnualSavings,
+    answerSignals,
+    signalSummary,
   });
 
   return {

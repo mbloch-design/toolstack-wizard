@@ -22,6 +22,36 @@ interface Prescription {
   savingsEstimate: number;
 }
 
+interface LocalizedDiagnosticItem {
+  id?: string;
+  labelFr?: string;
+  labelEn?: string;
+  summaryFr?: string;
+  summaryEn?: string;
+  actionFr?: string;
+  actionEn?: string;
+}
+
+interface DiagnosticRiskFlag extends LocalizedDiagnosticItem {
+  severity?: "low" | "medium" | "high";
+  detailFr?: string;
+  detailEn?: string;
+  impactMonthly?: number;
+}
+
+interface DiagnosticFocusArea extends LocalizedDiagnosticItem {
+  priority?: "low" | "medium" | "high";
+}
+
+interface DiagnosticInsights {
+  profile?: LocalizedDiagnosticItem | null;
+  maturity?: LocalizedDiagnosticItem | null;
+  primaryRisk?: DiagnosticRiskFlag | null;
+  riskFlags?: DiagnosticRiskFlag[] | null;
+  focusAreas?: DiagnosticFocusArea[] | null;
+  metrics?: Record<string, number> | null;
+}
+
 interface ReportPayload {
   lang: "fr" | "en";
   firstName: string;
@@ -36,7 +66,30 @@ interface ReportPayload {
   selectedTools: Tool[];
   toolScores: Record<string, { pertinence: number; valueIndex: number; scoreFinal: number }>;
   prescriptions: { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] };
+  insights?: DiagnosticInsights;
   recommendations: { id: string; name: string; price: number; category: string }[];
+}
+
+function humanizeId(value: string | null | undefined) {
+  if (!value) return "";
+  return value
+    .replaceAll("_", " ")
+    .replaceAll("-", " ")
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function localizedField(
+  item: LocalizedDiagnosticItem | DiagnosticRiskFlag | null | undefined,
+  field: "label" | "summary" | "action" | "detail",
+  locale: "fr" | "en"
+) {
+  if (!item) return "";
+  const suffix = locale === "en" ? "En" : "Fr";
+  const key = `${field}${suffix}` as keyof (LocalizedDiagnosticItem & DiagnosticRiskFlag);
+  const fallbackKey = `${field}${locale === "en" ? "Fr" : "En"}` as keyof (LocalizedDiagnosticItem & DiagnosticRiskFlag);
+  const value = item[key] || item[fallbackKey];
+  return typeof value === "string" ? value : "";
 }
 
 Deno.serve(async (req) => {
@@ -194,6 +247,97 @@ Deno.serve(async (req) => {
     doc.setFont("helvetica", "normal");
     doc.text(`${payload.selectedTools.length} ${t("outils analysés", "tools analyzed")} • ${payload.hoursRecoverable}h ${t("récupérables/mois", "recoverable/mo")}`, M, y);
     y += 10;
+
+    // ToolTrim intelligence read
+    if (payload.insights) {
+      const profileLabel = localizedField(payload.insights.profile, "label", lang) || humanizeId(payload.insights.profile?.id);
+      const profileSummary = localizedField(payload.insights.profile, "summary", lang);
+      const maturityLabel = localizedField(payload.insights.maturity, "label", lang) || humanizeId(payload.insights.maturity?.id);
+      const primaryRisk = payload.insights.primaryRisk || payload.insights.riskFlags?.[0] || null;
+      const primaryRiskLabel = localizedField(primaryRisk, "label", lang) || humanizeId(primaryRisk?.id);
+      const primaryRiskAction = localizedField(primaryRisk, "action", lang);
+      const focusAreas = Array.isArray(payload.insights.focusAreas) ? payload.insights.focusAreas.slice(0, 3) : [];
+      const profileSummaryLines = profileSummary ? doc.splitTextToSize(profileSummary, CW - 10) as string[] : [];
+      const primaryRiskActionLines = primaryRiskAction ? doc.splitTextToSize(primaryRiskAction, CW - 10) as string[] : [];
+      const focusLines = focusAreas.map((focus) => {
+        const label = localizedField(focus, "label", lang) || humanizeId(focus.id);
+        const action = localizedField(focus, "action", lang);
+        const text = `• ${label}${action ? ` — ${action}` : ""}`;
+        return doc.splitTextToSize(text, CW - 14) as string[];
+      });
+      const insightBoxH =
+        30 +
+        profileSummaryLines.length * 4 +
+        (primaryRiskLabel ? 5 + Math.max(primaryRiskActionLines.length, 1) * 4 : 0) +
+        (focusLines.length > 0 ? 10 + focusLines.reduce((sum, lines) => sum + Math.max(lines.length, 1) * 4 + 3, 0) : 0);
+
+      y = checkPageBreak(y, insightBoxH + 8);
+      doc.setFillColor(...LIGHT_BG);
+      doc.roundedRect(M, y, CW, insightBoxH, 3, 3, "F");
+
+      let iy = y + 8;
+      doc.setFontSize(8);
+      doc.setTextColor(...GRAY);
+      doc.setFont("helvetica", "normal");
+      doc.text(t("Lecture ToolTrim", "ToolTrim Read"), M + 5, iy);
+      iy += 7;
+
+      doc.setFontSize(12);
+      doc.setTextColor(...NAVY);
+      doc.setFont("helvetica", "bold");
+      doc.text(profileLabel || payload.healthLabel, M + 5, iy, { maxWidth: 85 });
+
+      if (maturityLabel) {
+        doc.setFontSize(8);
+        doc.setTextColor(...GRAY);
+        doc.setFont("helvetica", "normal");
+        doc.text(`${t("Maturité", "Maturity")}: ${maturityLabel}`, M + CW - 5, iy, { align: "right", maxWidth: 70 });
+      }
+      iy += 7;
+
+      if (profileSummary) {
+        doc.setFontSize(8);
+        doc.setTextColor(...GRAY);
+        doc.setFont("helvetica", "normal");
+        doc.text(profileSummaryLines, M + 5, iy);
+        iy += profileSummaryLines.length * 4;
+        iy += 2;
+      }
+
+      if (primaryRiskLabel) {
+        doc.setFontSize(9);
+        doc.setTextColor(...ORANGE);
+        doc.setFont("helvetica", "bold");
+        doc.text(`${t("Risque principal", "Primary risk")}: ${primaryRiskLabel}`, M + 5, iy, { maxWidth: CW - 10 });
+        iy += 5;
+        if (primaryRiskAction) {
+          doc.setFontSize(8);
+          doc.setTextColor(...GRAY);
+          doc.setFont("helvetica", "normal");
+          doc.text(primaryRiskActionLines, M + 5, iy);
+          iy += primaryRiskActionLines.length * 4;
+        }
+      }
+
+      if (focusAreas.length > 0) {
+        iy += 4;
+        doc.setFontSize(9);
+        doc.setTextColor(...NAVY);
+        doc.setFont("helvetica", "bold");
+        doc.text(t("Priorités fonctionnelles", "Functional priorities"), M + 5, iy);
+        iy += 6;
+
+        for (const lines of focusLines) {
+          doc.setFontSize(8);
+          doc.setFont("helvetica", "normal");
+          doc.setTextColor(...GRAY);
+          doc.text(lines, M + 7, iy);
+          iy += Math.max(lines.length, 1) * 4 + 3;
+        }
+      }
+
+      y += insightBoxH + 10;
+    }
 
     // Prescriptions summary
     const allPrescriptions = [

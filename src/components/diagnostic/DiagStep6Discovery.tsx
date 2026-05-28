@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import type { SessionState, DiscoveryQuestion } from "@/types/diagnostic";
 
 interface Props {
@@ -32,12 +32,40 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
 
   const [questionIdx, setQuestionIdx] = useState(0);
   const [answers, setAnswers] = useState<Map<string, number>>(() => new Map(session.discoveryAnswers));
+  const [autoAdvanced, setAutoAdvanced] = useState(false);
 
-  // Skip if no questions
+  useEffect(() => {
+    if (activeQuestions.length === 0 && !autoAdvanced) {
+      setAutoAdvanced(true);
+      onUpdate({ discoveryAnswers: answers });
+      onNext();
+    }
+  }, [activeQuestions.length, answers, autoAdvanced, onNext, onUpdate]);
+
+  // Stable fallback state when there is no discovery question for this profile/tools set.
   if (activeQuestions.length === 0) {
-    // Auto-advance
-    onNext();
-    return null;
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[50vh] gap-6 text-center">
+        <h2 className="text-xl md:text-2xl font-bold text-foreground">
+          {t("Aucune question complémentaire", "No extra question")}
+        </h2>
+        <p className="text-sm text-muted-foreground max-w-md">
+          {t(
+            "On passe à l'étape suivante avec les informations déjà collectées.",
+            "We continue with the information already collected."
+          )}
+        </p>
+        <button
+          onClick={() => {
+            onUpdate({ discoveryAnswers: answers });
+            onNext();
+          }}
+          className="rounded-xl bg-primary px-6 py-3 text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
+        >
+          {t("Continuer", "Continue")}
+        </button>
+      </div>
+    );
   }
 
   const current = activeQuestions[questionIdx];

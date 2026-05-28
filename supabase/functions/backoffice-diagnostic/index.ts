@@ -137,7 +137,7 @@ async function fetchDashboard(
   const { data: recentEmailJobs, error: jobsError } = await supabase
     .from("diagnostic_email_jobs")
     .select(
-      "id, session_id, email, template_key, locale, status, attempts, provider, provider_message_id, scheduled_for, sent_at, delivered_at, opened_at, clicked_at, failed_at, last_error, created_at, updated_at"
+      "id, session_id, email, template_key, locale, status, attempts, provider, provider_message_id, scheduled_for, sent_at, delivered_at, opened_at, clicked_at, failed_at, last_error, metadata, created_at, updated_at"
     )
     .gte("created_at", sinceIso)
     .order("created_at", { ascending: false })
@@ -145,6 +145,17 @@ async function fetchDashboard(
 
   if (jobsError) {
     throw new Error(`Failed to fetch recent email jobs: ${jobsError.message}`);
+  }
+
+  const { data: recentRestitutions, error: restitutionsError } = await supabase
+    .from("diagnostic_restitutions")
+    .select("id, session_id, channel, version, summary, details, score_snapshot, generated_at")
+    .gte("generated_at", sinceIso)
+    .order("generated_at", { ascending: false })
+    .limit(200);
+
+  if (restitutionsError) {
+    throw new Error(`Failed to fetch recent restitutions: ${restitutionsError.message}`);
   }
 
   return {
@@ -158,6 +169,7 @@ async function fetchDashboard(
     sessions: sessions || [],
     emailHealth: emailHealth || [],
     recentEmailJobs: recentEmailJobs || [],
+    recentRestitutions: recentRestitutions || [],
   };
 }
 
@@ -215,7 +227,7 @@ async function fetchSessionDetail(
   const { data: emailJobs, error: emailJobsError } = await supabase
     .from("diagnostic_email_jobs")
     .select(
-      "id, email, template_key, locale, status, attempts, provider, provider_message_id, scheduled_for, sent_at, delivered_at, opened_at, clicked_at, failed_at, last_error, metadata, created_at, updated_at"
+      "id, session_id, email, template_key, locale, status, attempts, provider, provider_message_id, scheduled_for, sent_at, delivered_at, opened_at, clicked_at, failed_at, last_error, metadata, created_at, updated_at"
     )
     .eq("session_id", sessionId)
     .order("created_at", { ascending: false })

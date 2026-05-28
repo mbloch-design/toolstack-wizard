@@ -11,7 +11,15 @@
     "preview": "vite preview",
     "sync:data": "node scripts/sync-supabase-to-json.mjs",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:go14": "vitest run src/test/diagnostic/go14.diagnostic.spec.ts",
+    "test:go15": "vitest run src/test/diagnostic/go15.onboarding.spec.ts",
+    "test:go16": "vitest run src/test/email/go16EmailQuality.spec.ts src/test/diagnostic/go15.onboarding.spec.ts",
+    "test:go17": "vitest run src/test/backoffice/go17Pilotage.spec.ts src/test/email/go16EmailQuality.spec.ts",
+    "test:go19": "vitest run src/test/backoffice/go19AdminAlerts.spec.ts src/test/backoffice/go17Pilotage.spec.ts",
+    "test:go21": "vitest run src/test/backoffice/go21EndToEnd.spec.ts src/test/backoffice/go19AdminAlerts.spec.ts src/test/backoffice/go17Pilotage.spec.ts",
+    "test:go22": "vitest run src/test/backoffice/go21EndToEnd.spec.ts src/test/email/go16EmailQuality.spec.ts",
+    "verify:preprod": "npm test -- --environment node && tsc --noEmit && npm run build"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import type { DiagnosticResult, Prescription } from "@/types/diagnostic";
-import { ArrowRight, Share2, ChevronRight, Gauge, Layers3, ShieldAlert } from "lucide-react";
+import { ArrowRight, Share2, ChevronRight, CheckCircle2, Gauge, Layers3, ShieldAlert } from "lucide-react";
 import DashPdfExport from "./DashPdfExport";
 
 
@@ -125,6 +125,7 @@ export default function DashOverview({ result, t, onShare, onNavigate }: Props) 
   const primaryRisk = result.insights.primaryRisk;
   const profile = result.insights.profile;
   const maturity = result.insights.maturity;
+  const confidence = result.insights.confidence;
   const personaContext = result.insights.personaContext;
   const riskTone =
     primaryRisk?.severity === "high"
@@ -158,7 +159,7 @@ export default function DashOverview({ result, t, onShare, onNavigate }: Props) 
       </div>
 
       {/* ─── 1b. GO7 INTELLIGENCE READ ─── */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
         <div className="border border-border bg-card rounded-xl p-4 space-y-2">
           <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground">
             <Layers3 className="w-4 h-4" />
@@ -174,6 +175,17 @@ export default function DashOverview({ result, t, onShare, onNavigate }: Props) 
           </div>
           <p className="text-sm font-semibold text-foreground">{t(maturity.labelFr, maturity.labelEn)}</p>
           <p className="text-xs text-muted-foreground leading-relaxed">{t(maturity.summaryFr, maturity.summaryEn)}</p>
+        </div>
+        <div className="border border-border bg-card rounded-xl p-4 space-y-2">
+          <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground">
+            <CheckCircle2 className="w-4 h-4" />
+            {t("Qualité diagnostic", "Diagnostic quality")}
+          </div>
+          <p className="text-sm font-semibold text-foreground">
+            {t(confidence.labelFr, confidence.labelEn)}
+            <span className="text-muted-foreground font-['DM_Mono'] ml-1">({confidence.score}/100)</span>
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed">{t(confidence.summaryFr, confidence.summaryEn)}</p>
         </div>
         <div className={`border rounded-xl p-4 space-y-2 ${riskTone}`}>
           <div className="inline-flex items-center gap-2 text-xs font-medium">

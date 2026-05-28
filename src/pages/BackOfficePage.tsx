@@ -4,6 +4,7 @@ import { removeNoindex, setNoindex } from "@/lib/seo";
 import {
   type BackofficeEmailJob,
   type BackofficeDashboardResponse,
+  type BackofficeRestitution,
   type BackofficeSession,
   type BackofficeSessionDetailResponse,
   fetchBackofficeDashboard,
@@ -11,13 +12,16 @@ import {
   updateBackofficeEmailJob,
   updateBackofficeSessionAdmin,
 } from "@/lib/backofficeApi";
+import { buildBackofficePilotage, type PilotageLane, type PilotageRow } from "@/lib/backofficePilotage";
 import {
   Activity,
   Ban,
   CheckCircle2,
   Download,
   Eye,
+  ExternalLink,
   Filter,
+  FileText,
   Lock,
   LogOut,
   Layers3,
@@ -36,7 +40,8 @@ import {
 const STORAGE_KEY = "tooltrim.backoffice.admin_key";
 
 type SessionStatus = "all" | "new" | "active" | "completed" | "abandoned";
-type TabId = "sessions" | "emails";
+type TabId = "pilotage" | "sessions" | "emails" | "restitutions" | "quality";
+type RestitutionLike = Pick<BackofficeRestitution, "channel" | "summary" | "details" | "score_snapshot">;
 
 function formatDateTime(value: string | null, locale: "fr" | "en") {
   if (!value) return "—";
@@ -71,6 +76,16 @@ function asRecord(value: unknown): Record<string, unknown> | null {
   return value as Record<string, unknown>;
 }
 
+function textValue(record: Record<string, unknown> | null | undefined, key: string) {
+  const value = record?.[key];
+  return typeof value === "string" && value.trim() ? value : null;
+}
+
+function numberRecordValue(record: Record<string, unknown> | null | undefined, key: string) {
+  const value = record?.[key];
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
 function localizedField(record: Record<string, unknown> | null, key: string, locale: "fr" | "en") {
   if (!record) return null;
   const localizedKey = `${key}${locale === "en" ? "En" : "Fr"}`;
@@ -84,10 +99,104 @@ function getInsightLabel(session: BackofficeSession, key: "profile" | "maturity"
   return localizedField(item, "label", locale) || humanizeId(key === "profile" ? session.stack_profile : session.stack_maturity);
 }
 
+function getSessionInsightRoot(session: BackofficeSession) {
+  return asRecord(session.diagnostic_insights) || {};
+}
+
+function getSessionConfidence(session: BackofficeSession) {
+  const confidence = asRecord(getSessionInsightRoot(session).confidence);
+  return {
+    score: numberRecordValue(confidence, "score"),
+    labelFr: textValue(confidence, "labelFr"),
+    labelEn: textValue(confidence, "labelEn"),
+  };
+}
+
+function getSessionCalibration(session: BackofficeSession) {
+  const calibration = asRecord(getSessionInsightRoot(session).calibration);
+  const rawFlags = calibration?.flags;
+  const flags = Array.isArray(rawFlags)
+    ? rawFlags.map(asRecord).filter((flag): flag is Record<string, unknown> => !!flag)
+    : [];
+  return {
+    score: numberRecordValue(calibration, "score"),
+    reviewRequired: calibration?.reviewRequired === true,
+    labelFr: textValue(calibration, "labelFr"),
+    labelEn: textValue(calibration, "labelEn"),
+    summaryFr: textValue(calibration, "summaryFr"),
+    summaryEn: textValue(calibration, "summaryEn"),
+    flags,
+  };
+}
+
+function getSessionDiagnosticContext(session: BackofficeSession) {
+  return asRecord(session.diagnostic_context) || {};
+}
+
+function contextLabel(value: string | null, locale: "fr" | "en") {
+  const labels: Record<string, { fr: string; en: string }> = {
+    clear: { fr: "Profil clair", en: "Clear profile" },
+    hybrid: { fr: "Profil hybride", en: "Hybrid profile" },
+    unsure: { fr: "Profil à confirmer", en: "Profile to confirm" },
+    reduce_costs: { fr: "Réduire les coûts", en: "Reduce costs" },
+    save_time: { fr: "Gagner du temps", en: "Save time" },
+    simplify: { fr: "Simplifier", en: "Simplify" },
+    quality: { fr: "Mieux choisir", en: "Choose better" },
+  };
+  if (!value) return "—";
+  return labels[value]?.[locale] || humanizeId(value);
+}
+
+function getLocalizedLabel(record: Record<string, unknown> | null, locale: "fr" | "en", fallback = "—") {
+  return localizedField(record, "label", locale) || fallback;
+}
+
+function getFlagSeverity(flag: Record<string, unknown>) {
+  const severity = flag.severity;
+  return severity === "high" || severity === "medium" || severity === "low" ? severity : "low";
+}
+
+function qualitySeverityClasses(severity: string) {
+  if (severity === "high") return "bg-red-100 text-red-700";
+  if (severity === "medium") return "bg-amber-100 text-amber-800";
+  return "bg-muted text-muted-foreground";
+}
+
+function pilotageLaneLabel(lane: PilotageLane, locale: "fr" | "en") {
+  const labels: Record<PilotageLane, { fr: string; en: string }> = {
+    email: { fr: "Email", en: "Email" },
+    quality: { fr: "Qualite", en: "Quality" },
+    recovery: { fr: "Relance", en: "Recovery" },
+    value: { fr: "Valeur", en: "Value" },
+    watch: { fr: "Suivi", en: "Watch" },
+  };
+  return labels[lane][locale];
+}
+
+function pilotageLaneClasses(lane: PilotageLane) {
+  if (lane === "email") return "bg-red-100 text-red-700";
+  if (lane === "quality") return "bg-amber-100 text-amber-800";
+  if (lane === "recovery") return "bg-blue-100 text-blue-800";
+  if (lane === "value") return "bg-green-100 text-green-800";
+  return "bg-muted text-muted-foreground";
+}
+
+function pilotagePriorityClasses(priority: PilotageRow["priorityLabel"]) {
+  if (priority === "critical") return "bg-red-100 text-red-700";
+  if (priority === "high") return "bg-amber-100 text-amber-800";
+  if (priority === "medium") return "bg-blue-100 text-blue-800";
+  return "bg-muted text-muted-foreground";
+}
+
 function getRiskFlags(session: BackofficeSession) {
   return Array.isArray(session.risk_flags)
     ? session.risk_flags.map(asRecord).filter((flag): flag is Record<string, unknown> => !!flag)
     : [];
+}
+
+function getCompletedActionIds(session: BackofficeSession) {
+  const ids = session.action_state?.completed_action_ids;
+  return Array.isArray(ids) ? ids.filter((item): item is string => typeof item === "string") : [];
 }
 
 function getSessionStatus(session: BackofficeSession): Exclude<SessionStatus, "all"> {
@@ -102,6 +211,75 @@ function statusClasses(status: Exclude<SessionStatus, "all">) {
   if (status === "abandoned") return "bg-red-100 text-red-700";
   if (status === "active") return "bg-amber-100 text-amber-800";
   return "bg-muted text-foreground";
+}
+
+function emailStatusClasses(status: string) {
+  if (["sent", "delivered", "opened", "clicked"].includes(status)) return "bg-green-100 text-green-800";
+  if (status === "failed") return "bg-red-100 text-red-700";
+  if (status === "processing") return "bg-blue-100 text-blue-800";
+  if (status === "queued") return "bg-amber-100 text-amber-800";
+  if (status === "cancelled") return "bg-muted text-muted-foreground";
+  return "bg-muted text-foreground";
+}
+
+function getJobMetadata(job: BackofficeEmailJob) {
+  return asRecord(job.metadata) || {};
+}
+
+function getJobTemplateVersion(job: BackofficeEmailJob) {
+  return textValue(getJobMetadata(job), "template_version") || "—";
+}
+
+function getJobTrigger(job: BackofficeEmailJob) {
+  return textValue(getJobMetadata(job), "trigger") || textValue(getJobMetadata(job), "parent_template_key") || "—";
+}
+
+function getJobCtaUrl(job: BackofficeEmailJob) {
+  return textValue(getJobMetadata(job), "cta_url");
+}
+
+function getJobEmailQuality(job: BackofficeEmailJob) {
+  const metadata = getJobMetadata(job);
+  const quality = asRecord(metadata.email_quality);
+  const summary = asRecord(metadata.email_quality_summary);
+  const flags = Array.isArray(quality?.flags)
+    ? quality.flags.map(asRecord).filter((flag): flag is Record<string, unknown> => !!flag)
+    : [];
+  const status = textValue(quality, "status") || textValue(summary, "status");
+  const score = numberRecordValue(quality, "score") ?? numberRecordValue(summary, "score");
+  return {
+    status: status || "pending",
+    score,
+    flags,
+    flagIds: Array.isArray(summary?.flag_ids)
+      ? summary.flag_ids.filter((item): item is string => typeof item === "string")
+      : flags.map((flag) => String(flag.id || "")).filter(Boolean),
+  };
+}
+
+function emailQualityClasses(status: string) {
+  if (status === "passed") return "bg-green-100 text-green-800";
+  if (status === "warning") return "bg-amber-100 text-amber-800";
+  if (status === "failed") return "bg-red-100 text-red-700";
+  return "bg-muted text-muted-foreground";
+}
+
+function getRestitutionTemplate(restitution: RestitutionLike) {
+  const summary = asRecord(restitution.summary);
+  return textValue(summary, "template_key") || textValue(summary, "profile_label") || restitution.channel;
+}
+
+function getRestitutionSubject(restitution: RestitutionLike) {
+  const summary = asRecord(restitution.summary);
+  return textValue(summary, "subject") || textValue(summary, "primary_risk_label") || "—";
+}
+
+function getRestitutionScore(restitution: RestitutionLike) {
+  return numberRecordValue(asRecord(restitution.score_snapshot), "health_score");
+}
+
+function getRestitutionCtaUrl(restitution: RestitutionLike) {
+  return textValue(asRecord(restitution.details), "cta_url");
 }
 
 function toCsvValue(value: unknown) {
@@ -145,12 +323,14 @@ export default function BackOfficePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [activeTab, setActiveTab] = useState<TabId>("sessions");
+  const [activeTab, setActiveTab] = useState<TabId>("pilotage");
   const [days, setDays] = useState(30);
   const [limit, setLimit] = useState(150);
   const [personaFilter, setPersonaFilter] = useState<string>("all");
   const [profileFilter, setProfileFilter] = useState<string>("all");
   const [statusFilter, setStatusFilter] = useState<SessionStatus>("all");
+  const [pilotageLaneFilter, setPilotageLaneFilter] = useState<PilotageLane | "all">("all");
+  const [pilotagePriorityFilter, setPilotagePriorityFilter] = useState<PilotageRow["priorityLabel"] | "all">("all");
   const [search, setSearch] = useState("");
 
   const [detailLoading, setDetailLoading] = useState(false);
@@ -311,6 +491,110 @@ export default function BackOfficePage() {
     );
   }, [dashboard]);
 
+  const emailOpsSummary = useMemo(() => {
+    const jobs = dashboard?.recentEmailJobs || [];
+    const now = Date.now();
+    return jobs.reduce(
+      (acc, job) => {
+        if (job.status === "queued") {
+          acc.queued += 1;
+          const scheduledAt = new Date(job.scheduled_for).getTime();
+          if (!Number.isNaN(scheduledAt) && scheduledAt <= now) acc.dueNow += 1;
+        }
+        if (job.status === "processing") acc.processing += 1;
+        if (job.status === "failed") acc.failed += 1;
+        if (job.status === "cancelled") acc.cancelled += 1;
+        return acc;
+      },
+      { queued: 0, dueNow: 0, processing: 0, failed: 0, cancelled: 0 }
+    );
+  }, [dashboard?.recentEmailJobs]);
+
+  const restitutionSummary = useMemo(() => {
+    const restitutions = dashboard?.recentRestitutions || [];
+    return restitutions.reduce(
+      (acc, restitution) => {
+        acc.total += 1;
+        if (restitution.channel === "email") acc.email += 1;
+        if (restitution.channel === "dashboard") acc.dashboard += 1;
+        if (restitution.channel === "pdf") acc.pdf += 1;
+        if (restitution.version.includes("go10")) acc.go10 += 1;
+        return acc;
+      },
+      { total: 0, email: 0, dashboard: 0, pdf: 0, go10: 0 }
+    );
+  }, [dashboard?.recentRestitutions]);
+
+  const qualityRows = useMemo(() => {
+    return filteredSessions
+      .map((session) => {
+        const confidence = getSessionConfidence(session);
+        const calibration = getSessionCalibration(session);
+        const highFlagCount = calibration.flags.filter((flag) => getFlagSeverity(flag) === "high").length;
+        const mediumFlagCount = calibration.flags.filter((flag) => getFlagSeverity(flag) === "medium").length;
+        const hasConfidence = confidence.score != null;
+        const hasCalibration = calibration.score != null;
+        const reviewRequired =
+          calibration.reviewRequired ||
+          !hasConfidence ||
+          !hasCalibration ||
+          highFlagCount > 0 ||
+          (confidence.score != null && confidence.score < 60);
+
+        return {
+          session,
+          confidenceScore: confidence.score,
+          confidenceLabel: locale === "en" ? confidence.labelEn : confidence.labelFr,
+          calibrationScore: calibration.score,
+          calibrationLabel: locale === "en" ? calibration.labelEn : calibration.labelFr,
+          calibrationSummary: locale === "en" ? calibration.summaryEn : calibration.summaryFr,
+          reviewRequired,
+          flags: calibration.flags,
+          highFlagCount,
+          mediumFlagCount,
+          hasConfidence,
+          hasCalibration,
+        };
+      })
+      .filter((row) => row.reviewRequired || row.flags.length > 0)
+      .sort(
+        (a, b) =>
+          Number(b.reviewRequired) - Number(a.reviewRequired) ||
+          b.highFlagCount - a.highFlagCount ||
+          b.mediumFlagCount - a.mediumFlagCount ||
+          (a.confidenceScore ?? -1) - (b.confidenceScore ?? -1) ||
+          new Date(b.session.created_at).getTime() - new Date(a.session.created_at).getTime()
+      );
+  }, [filteredSessions, locale]);
+
+  const qualitySummary = useMemo(() => {
+    const confidenceScores = filteredSessions
+      .map((session) => getSessionConfidence(session).score)
+      .filter((score): score is number => score != null);
+    const avgConfidence = confidenceScores.length
+      ? Math.round(confidenceScores.reduce((sum, score) => sum + score, 0) / confidenceScores.length)
+      : 0;
+    return {
+      reviewRequired: qualityRows.filter((row) => row.reviewRequired).length,
+      avgConfidence,
+      highFlags: qualityRows.reduce((sum, row) => sum + row.highFlagCount, 0),
+      mediumFlags: qualityRows.reduce((sum, row) => sum + row.mediumFlagCount, 0),
+      lowConfidence: filteredSessions.filter((session) => {
+        const score = getSessionConfidence(session).score;
+        return score == null || score < 60;
+      }).length,
+    };
+  }, [filteredSessions, qualityRows]);
+
+  const pilotage = useMemo(() => buildBackofficePilotage(filteredSessions), [filteredSessions]);
+  const filteredPilotageRows = useMemo(() => {
+    return pilotage.rows.filter((row) => {
+      if (pilotageLaneFilter !== "all" && row.lane !== pilotageLaneFilter) return false;
+      if (pilotagePriorityFilter !== "all" && row.priorityLabel !== pilotagePriorityFilter) return false;
+      return true;
+    });
+  }, [pilotage.rows, pilotageLaneFilter, pilotagePriorityFilter]);
+
   const connect = useCallback(() => {
     const value = adminKeyInput.trim();
     if (!value) return;
@@ -414,31 +698,42 @@ export default function BackOfficePage() {
   );
 
   const exportSessionsCsv = useCallback(() => {
-    const rows = filteredSessions.map((session) => ({
-      session_id: session.session_id,
-      created_at: session.created_at,
-      updated_at: session.updated_at,
-      completed_at: session.completed_at,
-      abandoned_at: session.abandoned_at,
-      first_name: session.first_name,
-      email: session.email,
-      persona: session.persona,
-      stack_profile: session.stack_profile,
-      stack_maturity: session.stack_maturity,
-      primary_risk: session.primary_risk,
-      risk_flags_count: getRiskFlags(session).length,
-      status: getSessionStatus(session),
-      health_score: session.health_score,
-      estimated_waste: session.estimated_waste,
-      annual_savings: session.annual_savings,
-      max_step_seen: session.max_step_seen,
-      email_jobs_count: session.email_jobs_count,
-      email_sent_count: session.email_sent_count,
-      email_failed_count: session.email_failed_count,
-      admin_tags: session.admin_tags || [],
-      admin_note: session.admin_note,
-      admin_updated_at: session.admin_updated_at,
-    }));
+    const rows = filteredSessions.map((session) => {
+      const context = getSessionDiagnosticContext(session);
+      return {
+        session_id: session.session_id,
+        created_at: session.created_at,
+        updated_at: session.updated_at,
+        completed_at: session.completed_at,
+        abandoned_at: session.abandoned_at,
+        last_client_seen_at: session.last_client_seen_at,
+        resumed_at: session.resumed_at,
+        first_name: session.first_name,
+        email: session.email,
+        persona: session.persona,
+        persona_confidence: textValue(context, "persona_confidence"),
+        stack_goal: textValue(context, "stack_goal"),
+        stack_profile: session.stack_profile,
+        stack_maturity: session.stack_maturity,
+        primary_risk: session.primary_risk,
+        risk_flags_count: getRiskFlags(session).length,
+        status: getSessionStatus(session),
+        health_score: session.health_score,
+        estimated_waste: session.estimated_waste,
+        annual_savings: session.annual_savings,
+        max_step_seen: session.max_step_seen,
+        email_jobs_count: session.email_jobs_count,
+        email_sent_count: session.email_sent_count,
+        email_failed_count: session.email_failed_count,
+        admin_tags: session.admin_tags || [],
+        admin_note: session.admin_note,
+        admin_updated_at: session.admin_updated_at,
+        action_completed_ids: getCompletedActionIds(session),
+        recovered_savings: typeof session.action_state?.recovered_savings === "number"
+          ? session.action_state.recovered_savings
+          : "",
+      };
+    });
     downloadCsv(
       `tooltrim-backoffice-sessions-${new Date().toISOString().slice(0, 10)}.csv`,
       [
@@ -447,9 +742,13 @@ export default function BackOfficePage() {
         "updated_at",
         "completed_at",
         "abandoned_at",
+        "last_client_seen_at",
+        "resumed_at",
         "first_name",
         "email",
         "persona",
+        "persona_confidence",
+        "stack_goal",
         "stack_profile",
         "stack_maturity",
         "primary_risk",
@@ -465,32 +764,40 @@ export default function BackOfficePage() {
         "admin_tags",
         "admin_note",
         "admin_updated_at",
+        "action_completed_ids",
+        "recovered_savings",
       ],
       rows
     );
   }, [filteredSessions]);
 
   const exportEmailCsv = useCallback(() => {
-    const rows = (dashboard?.recentEmailJobs || []).map((job) => ({
-      id: job.id,
-      session_id: job.session_id,
-      email: job.email,
-      template_key: job.template_key,
-      locale: job.locale,
-      status: job.status,
-      attempts: job.attempts,
-      provider: job.provider,
-      provider_message_id: job.provider_message_id,
-      scheduled_for: job.scheduled_for,
-      sent_at: job.sent_at,
-      delivered_at: job.delivered_at,
-      opened_at: job.opened_at,
-      clicked_at: job.clicked_at,
-      failed_at: job.failed_at,
-      last_error: job.last_error,
-      created_at: job.created_at,
-      updated_at: job.updated_at,
-    }));
+    const rows = (dashboard?.recentEmailJobs || []).map((job) => {
+      const quality = getJobEmailQuality(job);
+      return {
+        id: job.id,
+        session_id: job.session_id,
+        email: job.email,
+        template_key: job.template_key,
+        locale: job.locale,
+        status: job.status,
+        quality_status: quality.status,
+        quality_score: quality.score ?? "",
+        quality_flags: quality.flagIds,
+        attempts: job.attempts,
+        provider: job.provider,
+        provider_message_id: job.provider_message_id,
+        scheduled_for: job.scheduled_for,
+        sent_at: job.sent_at,
+        delivered_at: job.delivered_at,
+        opened_at: job.opened_at,
+        clicked_at: job.clicked_at,
+        failed_at: job.failed_at,
+        last_error: job.last_error,
+        created_at: job.created_at,
+        updated_at: job.updated_at,
+      };
+    });
     downloadCsv(
       `tooltrim-backoffice-email-jobs-${new Date().toISOString().slice(0, 10)}.csv`,
       [
@@ -500,6 +807,9 @@ export default function BackOfficePage() {
         "template_key",
         "locale",
         "status",
+        "quality_status",
+        "quality_score",
+        "quality_flags",
         "attempts",
         "provider",
         "provider_message_id",
@@ -516,6 +826,162 @@ export default function BackOfficePage() {
       rows
     );
   }, [dashboard?.recentEmailJobs]);
+
+  const exportPilotageCsv = useCallback(() => {
+    const rows = filteredPilotageRows.map((row) => ({
+      session_id: row.sessionId,
+      created_at: row.createdAt,
+      first_name: row.firstName,
+      email: row.email,
+      persona: row.persona,
+      persona_confidence: row.personaConfidence,
+      stack_goal: row.stackGoal,
+      profile: row.profile,
+      status: row.status,
+      lane: row.lane,
+      priority_score: row.priorityScore,
+      priority_label: row.priorityLabel,
+      action: locale === "en" ? row.actionEn : row.actionFr,
+      reasons: locale === "en" ? row.reasonsEn : row.reasonsFr,
+      health_score: row.healthScore,
+      estimated_waste: row.monthlyWaste,
+      annual_savings: row.annualSavings,
+      email_failed_count: row.emailFailedCount,
+      email_sent_count: row.emailSentCount,
+      email_jobs_count: row.emailJobsCount,
+      review_required: row.reviewRequired,
+    }));
+    downloadCsv(
+      `tooltrim-backoffice-pilotage-${new Date().toISOString().slice(0, 10)}.csv`,
+      [
+        "session_id",
+        "created_at",
+        "first_name",
+        "email",
+        "persona",
+        "persona_confidence",
+        "stack_goal",
+        "profile",
+        "status",
+        "lane",
+        "priority_score",
+        "priority_label",
+        "action",
+        "reasons",
+        "health_score",
+        "estimated_waste",
+        "annual_savings",
+        "email_failed_count",
+        "email_sent_count",
+        "email_jobs_count",
+        "review_required",
+      ],
+      rows
+    );
+  }, [filteredPilotageRows, locale]);
+
+  const exportRestitutionsCsv = useCallback(() => {
+    const rows = (dashboard?.recentRestitutions || []).map((restitution) => {
+      const summary = asRecord(restitution.summary);
+      const score = asRecord(restitution.score_snapshot);
+      return {
+        id: restitution.id,
+        session_id: restitution.session_id,
+        generated_at: restitution.generated_at,
+        channel: restitution.channel,
+        version: restitution.version,
+        template_key: textValue(summary, "template_key"),
+        subject: textValue(summary, "subject"),
+        profile: textValue(summary, "profile"),
+        profile_label: textValue(summary, "profile_label"),
+        primary_risk: textValue(summary, "primary_risk"),
+        primary_risk_label: textValue(summary, "primary_risk_label"),
+        focus_area_count: numberRecordValue(summary, "focus_area_count"),
+        completed_action_count: numberRecordValue(summary, "completed_action_count"),
+        health_score: numberRecordValue(score, "health_score"),
+        estimated_waste: numberRecordValue(score, "estimated_waste"),
+        annual_savings: numberRecordValue(score, "annual_savings"),
+      };
+    });
+    downloadCsv(
+      `tooltrim-backoffice-restitutions-${new Date().toISOString().slice(0, 10)}.csv`,
+      [
+        "id",
+        "session_id",
+        "generated_at",
+        "channel",
+        "version",
+        "template_key",
+        "subject",
+        "profile",
+        "profile_label",
+        "primary_risk",
+        "primary_risk_label",
+        "focus_area_count",
+        "completed_action_count",
+        "health_score",
+        "estimated_waste",
+        "annual_savings",
+      ],
+      rows
+    );
+  }, [dashboard?.recentRestitutions]);
+
+  const exportQualityCsv = useCallback(() => {
+    const rows = qualityRows.map((row) => {
+      const context = getSessionDiagnosticContext(row.session);
+      return {
+        session_id: row.session.session_id,
+        created_at: row.session.created_at,
+        completed_at: row.session.completed_at,
+        email: row.session.email,
+        persona: row.session.persona,
+        persona_confidence: textValue(context, "persona_confidence"),
+        stack_goal: textValue(context, "stack_goal"),
+        stack_profile: row.session.stack_profile,
+        health_score: row.session.health_score,
+        estimated_waste: row.session.estimated_waste,
+        confidence_score: row.confidenceScore ?? "",
+        confidence_label: row.confidenceLabel || "",
+        calibration_score: row.calibrationScore ?? "",
+        calibration_label: row.calibrationLabel || "",
+        review_required: row.reviewRequired,
+        high_flags: row.highFlagCount,
+        medium_flags: row.mediumFlagCount,
+        flags: row.flags.map((flag) => getLocalizedLabel(flag, locale, humanizeId(String(flag.id || "")))),
+        actions: row.flags.map((flag) => localizedField(flag, "action", locale) || ""),
+        calibration_summary: row.calibrationSummary || "",
+        admin_tags: row.session.admin_tags || [],
+      };
+    });
+    downloadCsv(
+      `tooltrim-backoffice-quality-${new Date().toISOString().slice(0, 10)}.csv`,
+      [
+        "session_id",
+        "created_at",
+        "completed_at",
+        "email",
+        "persona",
+        "persona_confidence",
+        "stack_goal",
+        "stack_profile",
+        "health_score",
+        "estimated_waste",
+        "confidence_score",
+        "confidence_label",
+        "calibration_score",
+        "calibration_label",
+        "review_required",
+        "high_flags",
+        "medium_flags",
+        "flags",
+        "actions",
+        "calibration_summary",
+        "admin_tags",
+      ],
+      rows
+    );
+  }, [locale, qualityRows]);
 
   if (!adminKey) {
     return (
@@ -569,7 +1035,17 @@ export default function BackOfficePage() {
         </div>
         <div className="flex items-center gap-2">
           <button
-            onClick={activeTab === "sessions" ? exportSessionsCsv : exportEmailCsv}
+            onClick={
+              activeTab === "pilotage"
+                ? exportPilotageCsv
+                : activeTab === "sessions"
+                ? exportSessionsCsv
+                : activeTab === "emails"
+                  ? exportEmailCsv
+                  : activeTab === "restitutions"
+                    ? exportRestitutionsCsv
+                    : exportQualityCsv
+            }
             className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
           >
             <Download className="w-4 h-4" />
@@ -694,7 +1170,16 @@ export default function BackOfficePage() {
         </select>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          onClick={() => setActiveTab("pilotage")}
+          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
+            activeTab === "pilotage" ? "bg-primary text-primary-foreground" : "border border-border"
+          }`}
+        >
+          <Activity className="w-4 h-4" />
+          {t("Pilotage", "Command")}
+        </button>
         <button
           onClick={() => setActiveTab("sessions")}
           className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
@@ -713,7 +1198,209 @@ export default function BackOfficePage() {
           <Mail className="w-4 h-4" />
           {t("Emails", "Emails")}
         </button>
+        <button
+          onClick={() => setActiveTab("restitutions")}
+          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
+            activeTab === "restitutions" ? "bg-primary text-primary-foreground" : "border border-border"
+          }`}
+        >
+          <FileText className="w-4 h-4" />
+          {t("Restitutions", "Restitutions")}
+        </button>
+        <button
+          onClick={() => setActiveTab("quality")}
+          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
+            activeTab === "quality" ? "bg-primary text-primary-foreground" : "border border-border"
+          }`}
+        >
+          <ShieldAlert className="w-4 h-4" />
+          {t("Qualité", "Quality")}
+        </button>
       </div>
+
+      {activeTab === "pilotage" && (
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Critiques", "Critical")}</div>
+              <div className="text-lg font-semibold mt-1 text-red-600">{pilotage.summary.critical}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Priorité haute", "High priority")}</div>
+              <div className="text-lg font-semibold mt-1">{pilotage.summary.high}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Revue humaine", "Human review")}</div>
+              <div className="text-lg font-semibold mt-1 text-amber-700">{pilotage.summary.reviewRequired}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Relances tunnel", "Funnel recovery")}</div>
+              <div className="text-lg font-semibold mt-1">{pilotage.summary.recovery}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Valeur/mois", "Value/mo")}</div>
+              <div className="text-lg font-semibold mt-1">{formatMoney(pilotage.summary.monthlyWaste)}</div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+            <section className="border border-border rounded-lg bg-card p-3">
+              <div className="inline-flex items-center gap-2 text-sm font-medium">
+                <Mail className="w-4 h-4" />
+                {t("Emails à réparer", "Email issues")}
+              </div>
+              <div className="mt-2 text-2xl font-semibold">{pilotage.summary.emailIssues}</div>
+              <div className="mt-1 text-xs text-muted-foreground">
+                {t("Jobs échoués ou rapports non envoyés.", "Failed jobs or unsent reports.")}
+              </div>
+            </section>
+            <section className="border border-border rounded-lg bg-card p-3">
+              <div className="inline-flex items-center gap-2 text-sm font-medium">
+                <TrendingDown className="w-4 h-4" />
+                {t("Economies potentielles", "Potential savings")}
+              </div>
+              <div className="mt-2 text-2xl font-semibold">{formatMoney(pilotage.summary.annualSavings)}</div>
+              <div className="mt-1 text-xs text-muted-foreground">
+                {t("Cumul annuel des sessions filtrées.", "Annual total for filtered sessions.")}
+              </div>
+            </section>
+            <section className="border border-border rounded-lg bg-card p-3">
+              <div className="inline-flex items-center gap-2 text-sm font-medium">
+                <ShieldAlert className="w-4 h-4" />
+                {t("File de décision", "Decision queue")}
+              </div>
+              <div className="mt-2 text-2xl font-semibold">{pilotage.summary.total}</div>
+              <div className="mt-1 text-xs text-muted-foreground">
+                {t("Triée par risque, valeur et urgence opérationnelle.", "Sorted by risk, value, and operational urgency.")}
+              </div>
+            </section>
+          </div>
+
+          <div className="border border-border rounded-lg bg-card overflow-hidden">
+            <div className="px-3 py-2 border-b border-border flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2">
+              <div className="text-sm font-medium inline-flex items-center gap-2">
+                <Activity className="w-4 h-4" />
+                {t("Priorités opérationnelles", "Operational priorities")}
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <select
+                  value={pilotageLaneFilter}
+                  onChange={(event) => setPilotageLaneFilter(event.target.value as PilotageLane | "all")}
+                  className="h-8 rounded-md border border-input bg-background px-2 text-xs"
+                >
+                  <option value="all">{t("Toutes décisions", "All decisions")}</option>
+                  <option value="email">{pilotageLaneLabel("email", locale)}</option>
+                  <option value="quality">{pilotageLaneLabel("quality", locale)}</option>
+                  <option value="recovery">{pilotageLaneLabel("recovery", locale)}</option>
+                  <option value="value">{pilotageLaneLabel("value", locale)}</option>
+                  <option value="watch">{pilotageLaneLabel("watch", locale)}</option>
+                </select>
+                <select
+                  value={pilotagePriorityFilter}
+                  onChange={(event) => setPilotagePriorityFilter(event.target.value as PilotageRow["priorityLabel"] | "all")}
+                  className="h-8 rounded-md border border-input bg-background px-2 text-xs"
+                >
+                  <option value="all">{t("Toutes priorités", "All priorities")}</option>
+                  <option value="critical">critical</option>
+                  <option value="high">high</option>
+                  <option value="medium">medium</option>
+                  <option value="low">low</option>
+                </select>
+              </div>
+            </div>
+            <div className="overflow-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-muted/40">
+                  <tr className="text-left">
+                    <th className="px-3 py-2 font-medium">{t("Priorité", "Priority")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Décision", "Decision")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Raisons", "Reasons")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Valeur", "Value")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Santé", "Health")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Email", "Email")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredPilotageRows.slice(0, 80).map((row) => {
+                    const reasons = locale === "en" ? row.reasonsEn : row.reasonsFr;
+                    return (
+                      <tr key={row.sessionId} className="border-t border-border align-top">
+                        <td className="px-3 py-2">
+                          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${pilotagePriorityClasses(row.priorityLabel)}`}>
+                            {row.priorityScore}
+                          </span>
+                          <div className="mt-1 text-xs text-muted-foreground">{row.priorityLabel}</div>
+                        </td>
+                        <td className="px-3 py-2 min-w-[180px]">
+                          <div className="font-medium">{row.firstName || "—"}</div>
+                          <div className="text-xs text-muted-foreground">{row.email || "—"}</div>
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            {[row.persona, row.profile ? humanizeId(row.profile) : null].filter(Boolean).join(" / ") || "—"}
+                          </div>
+                        </td>
+                        <td className="px-3 py-2">
+                          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${pilotageLaneClasses(row.lane)}`}>
+                            {pilotageLaneLabel(row.lane, locale)}
+                          </span>
+                          <div className="mt-1 text-xs text-muted-foreground">{row.status}</div>
+                        </td>
+                        <td className="px-3 py-2 min-w-[240px]">
+                          <div className="flex flex-wrap gap-1">
+                            {reasons.slice(0, 4).map((reason) => (
+                              <span key={reason} className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                                {reason}
+                              </span>
+                            ))}
+                            {reasons.length > 4 && (
+                              <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                                +{reasons.length - 4}
+                              </span>
+                            )}
+                          </div>
+                        </td>
+                        <td className="px-3 py-2 whitespace-nowrap">
+                          <div className="font-medium">{formatMoney(row.monthlyWaste)}/mois</div>
+                          <div className="text-xs text-muted-foreground">{formatMoney(row.annualSavings)}/an</div>
+                        </td>
+                        <td className="px-3 py-2">{row.healthScore ?? "—"}</td>
+                        <td className="px-3 py-2">
+                          <div className={row.emailFailedCount > 0 ? "text-red-600 font-medium" : "text-foreground"}>
+                            {row.emailSentCount}/{row.emailJobsCount}
+                          </div>
+                          {row.emailFailedCount > 0 && (
+                            <div className="text-xs text-red-600">{row.emailFailedCount} failed</div>
+                          )}
+                        </td>
+                        <td className="px-3 py-2 max-w-[220px]">
+                          <div className="text-xs text-muted-foreground">
+                            {locale === "en" ? row.actionEn : row.actionFr}
+                          </div>
+                          <button
+                            onClick={() => void openDetail(row.sessionId)}
+                            className="mt-2 h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                          >
+                            <Eye className="w-3.5 h-3.5" />
+                            {t("Détails", "Details")}
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  {!loading && filteredPilotageRows.length === 0 && (
+                    <tr>
+                      <td colSpan={8} className="px-3 py-8 text-center text-muted-foreground">
+                        {t("Aucune priorité sur la période", "No priority on this period")}
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
 
       {activeTab === "sessions" && (
         <div className="border border-border rounded-lg bg-card overflow-hidden">
@@ -834,6 +1521,29 @@ export default function BackOfficePage() {
             </div>
           </div>
 
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("File d'attente", "Queued")}</div>
+              <div className="text-lg font-semibold mt-1">{emailOpsSummary.queued}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("À traiter", "Due now")}</div>
+              <div className="text-lg font-semibold mt-1">{emailOpsSummary.dueNow}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("En traitement", "Processing")}</div>
+              <div className="text-lg font-semibold mt-1">{emailOpsSummary.processing}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Échecs récents", "Recent failed")}</div>
+              <div className="text-lg font-semibold mt-1 text-red-600">{emailOpsSummary.failed}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Annulés", "Cancelled")}</div>
+              <div className="text-lg font-semibold mt-1">{emailOpsSummary.cancelled}</div>
+            </div>
+          </div>
+
           <div className="border border-border rounded-lg bg-card overflow-hidden">
             <div className="px-3 py-2 border-b border-border text-sm font-medium">
               {t("Santé email par jour et template", "Email health by day and template")}
@@ -896,25 +1606,60 @@ export default function BackOfficePage() {
                     <th className="px-3 py-2 font-medium">{t("Créé", "Created")}</th>
                     <th className="px-3 py-2 font-medium">{t("Email", "Email")}</th>
                     <th className="px-3 py-2 font-medium">{t("Template", "Template")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Version", "Version")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Déclencheur", "Trigger")}</th>
                     <th className="px-3 py-2 font-medium">{t("Status", "Status")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Qualité", "Quality")}</th>
                     <th className="px-3 py-2 font-medium">{t("Schedule", "Schedule")}</th>
                     <th className="px-3 py-2 font-medium">{t("Attempts", "Attempts")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Erreur", "Error")}</th>
                     <th className="px-3 py-2 font-medium">{t("Actions", "Actions")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {(dashboard?.recentEmailJobs || []).map((job) => {
                     const isBusy = emailJobActionLoadingId === job.id;
+                    const ctaUrl = getJobCtaUrl(job);
+                    const quality = getJobEmailQuality(job);
                     return (
                       <tr key={job.id} className="border-t border-border">
                         <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.created_at, locale)}</td>
                         <td className="px-3 py-2">{job.email}</td>
                         <td className="px-3 py-2">{job.template_key}</td>
-                        <td className="px-3 py-2">{job.status}</td>
+                        <td className="px-3 py-2">{getJobTemplateVersion(job)}</td>
+                        <td className="px-3 py-2">{getJobTrigger(job)}</td>
+                        <td className="px-3 py-2">
+                          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailStatusClasses(job.status)}`}>
+                            {job.status}
+                          </span>
+                        </td>
+                        <td className="px-3 py-2">
+                          <span
+                            className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailQualityClasses(quality.status)}`}
+                            title={quality.flagIds.join(", ")}
+                          >
+                            {quality.status}
+                            {quality.score != null ? ` ${quality.score}` : ""}
+                          </span>
+                        </td>
                         <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.scheduled_for, locale)}</td>
                         <td className="px-3 py-2">{job.attempts}</td>
+                        <td className="px-3 py-2 max-w-[220px] truncate" title={job.last_error || ""}>
+                          {job.last_error || "—"}
+                        </td>
                         <td className="px-3 py-2">
                           <div className="flex flex-wrap gap-1">
+                            {ctaUrl && (
+                              <a
+                                href={ctaUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                              >
+                                <ExternalLink className="w-3.5 h-3.5" />
+                                CTA
+                              </a>
+                            )}
                             <button
                               disabled={isBusy}
                               onClick={() => void runEmailJobAction(job, "retry_now")}
@@ -946,8 +1691,247 @@ export default function BackOfficePage() {
                   })}
                   {!loading && (dashboard?.recentEmailJobs || []).length === 0 && (
                     <tr>
-                      <td colSpan={7} className="px-3 py-8 text-center text-muted-foreground">
+                      <td colSpan={11} className="px-3 py-8 text-center text-muted-foreground">
                         {t("Aucun job récent", "No recent jobs")}
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "restitutions" && (
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Total restitutions", "Total restitutions")}</div>
+              <div className="text-lg font-semibold mt-1">{restitutionSummary.total}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Email", "Email")}</div>
+              <div className="text-lg font-semibold mt-1">{restitutionSummary.email}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Dashboard", "Dashboard")}</div>
+              <div className="text-lg font-semibold mt-1">{restitutionSummary.dashboard}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("PDF", "PDF")}</div>
+              <div className="text-lg font-semibold mt-1">{restitutionSummary.pdf}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Version GO10", "GO10 version")}</div>
+              <div className="text-lg font-semibold mt-1">{restitutionSummary.go10}</div>
+            </div>
+          </div>
+
+          <div className="border border-border rounded-lg bg-card overflow-hidden">
+            <div className="px-3 py-2 border-b border-border text-sm font-medium">
+              {t("Restitutions récentes", "Recent restitutions")}
+            </div>
+            <div className="overflow-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-muted/40">
+                  <tr className="text-left">
+                    <th className="px-3 py-2 font-medium">{t("Date", "Date")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Canal", "Channel")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Version", "Version")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Template / profil", "Template / profile")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Sujet / risque", "Subject / risk")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Score", "Score")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Session", "Session")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Actions", "Actions")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(dashboard?.recentRestitutions || []).map((restitution) => {
+                    const ctaUrl = getRestitutionCtaUrl(restitution);
+                    return (
+                      <tr key={restitution.id} className="border-t border-border">
+                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(restitution.generated_at, locale)}</td>
+                        <td className="px-3 py-2">{restitution.channel}</td>
+                        <td className="px-3 py-2">{restitution.version}</td>
+                        <td className="px-3 py-2">{getRestitutionTemplate(restitution)}</td>
+                        <td className="px-3 py-2 max-w-[280px] truncate" title={getRestitutionSubject(restitution)}>
+                          {getRestitutionSubject(restitution)}
+                        </td>
+                        <td className="px-3 py-2">{getRestitutionScore(restitution) ?? "—"}</td>
+                        <td className="px-3 py-2 font-mono text-xs">{restitution.session_id.slice(0, 8)}</td>
+                        <td className="px-3 py-2">
+                          <div className="flex flex-wrap gap-1">
+                            <button
+                              onClick={() => void openDetail(restitution.session_id)}
+                              className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                            >
+                              <Eye className="w-3.5 h-3.5" />
+                              {t("Session", "Session")}
+                            </button>
+                            {ctaUrl && (
+                              <a
+                                href={ctaUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                              >
+                                <ExternalLink className="w-3.5 h-3.5" />
+                                CTA
+                              </a>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  {!loading && (dashboard?.recentRestitutions || []).length === 0 && (
+                    <tr>
+                      <td colSpan={8} className="px-3 py-8 text-center text-muted-foreground">
+                        {t("Aucune restitution récente", "No recent restitutions")}
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "quality" && (
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("À revoir", "Review required")}</div>
+              <div className="text-lg font-semibold mt-1 text-red-600">{qualitySummary.reviewRequired}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Confiance moyenne", "Average confidence")}</div>
+              <div className="text-lg font-semibold mt-1">{qualitySummary.avgConfidence}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Flags hauts", "High flags")}</div>
+              <div className="text-lg font-semibold mt-1 text-red-600">{qualitySummary.highFlags}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Flags moyens", "Medium flags")}</div>
+              <div className="text-lg font-semibold mt-1">{qualitySummary.mediumFlags}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Confiance faible", "Low confidence")}</div>
+              <div className="text-lg font-semibold mt-1">{qualitySummary.lowConfidence}</div>
+            </div>
+          </div>
+
+          <div className="border border-border rounded-lg bg-card overflow-hidden">
+            <div className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
+              <ShieldAlert className="w-4 h-4" />
+              {t("Contrôle qualité scoring", "Scoring quality control")}
+            </div>
+            <div className="overflow-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-muted/40">
+                  <tr className="text-left">
+                    <th className="px-3 py-2 font-medium">{t("Créée", "Created")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Persona", "Persona")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Profil", "Profile")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Score", "Score")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Confiance", "Confidence")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Calibration", "Calibration")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Revue", "Review")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Flags", "Flags")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {qualityRows.map((row) => {
+                    const firstFlags = row.flags.slice(0, 3);
+                    const primaryFlag = row.flags[0];
+                    return (
+                      <tr key={row.session.session_id} className="border-t border-border align-top">
+                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(row.session.created_at, locale)}</td>
+                        <td className="px-3 py-2">
+                          <div className="font-medium">{row.session.first_name || "—"}</div>
+                          <div className="text-xs text-muted-foreground">{row.session.email || "—"}</div>
+                        </td>
+                        <td className="px-3 py-2">{row.session.persona || "—"}</td>
+                        <td className="px-3 py-2">
+                          <div className="font-medium">{getInsightLabel(row.session, "profile", locale)}</div>
+                          <div className="text-xs text-muted-foreground">{humanizeId(row.session.primary_risk)}</div>
+                        </td>
+                        <td className="px-3 py-2">{row.session.health_score ?? "—"}</td>
+                        <td className="px-3 py-2">
+                          <div className="font-medium">{row.confidenceScore ?? "—"}</div>
+                          <div className="text-xs text-muted-foreground">
+                            {row.confidenceLabel || t("Non calculée", "Not computed")}
+                          </div>
+                        </td>
+                        <td className="px-3 py-2">
+                          <div className="font-medium">{row.calibrationScore ?? "—"}</div>
+                          <div className="text-xs text-muted-foreground">
+                            {row.calibrationLabel || t("Calibration absente", "Missing calibration")}
+                          </div>
+                        </td>
+                        <td className="px-3 py-2">
+                          <span
+                            className={`inline-flex px-2 py-0.5 rounded-full text-xs ${
+                              row.reviewRequired ? "bg-red-100 text-red-700" : "bg-green-100 text-green-800"
+                            }`}
+                          >
+                            {row.reviewRequired ? t("Oui", "Yes") : t("OK", "OK")}
+                          </span>
+                        </td>
+                        <td className="px-3 py-2 min-w-[220px]">
+                          {firstFlags.length > 0 ? (
+                            <div className="flex flex-wrap gap-1">
+                              {firstFlags.map((flag) => {
+                                const severity = getFlagSeverity(flag);
+                                return (
+                                  <span
+                                    key={String(flag.id)}
+                                    className={`inline-flex px-2 py-0.5 rounded-full text-xs ${qualitySeverityClasses(severity)}`}
+                                  >
+                                    {getLocalizedLabel(flag, locale, humanizeId(String(flag.id || "")))}
+                                  </span>
+                                );
+                              })}
+                              {row.flags.length > firstFlags.length && (
+                                <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                                  +{row.flags.length - firstFlags.length}
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            <span className="text-xs text-muted-foreground">
+                              {row.hasCalibration ? t("Aucun flag", "No flag") : t("Calibration absente", "Missing calibration")}
+                            </span>
+                          )}
+                        </td>
+                        <td className="px-3 py-2 max-w-[300px]">
+                          <div className="text-xs text-muted-foreground">
+                            {primaryFlag
+                              ? localizedField(primaryFlag, "action", locale) || "—"
+                              : row.hasCalibration
+                                ? row.calibrationSummary || "—"
+                                : t("Relancer un diagnostic GO13 pour obtenir la calibration.", "Run a GO13 diagnostic again to get calibration.")}
+                          </div>
+                          <button
+                            onClick={() => void openDetail(row.session.session_id)}
+                            className="mt-2 h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                          >
+                            <Eye className="w-3.5 h-3.5" />
+                            {t("Détails", "Details")}
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  {!loading && qualityRows.length === 0 && (
+                    <tr>
+                      <td colSpan={10} className="px-3 py-8 text-center text-muted-foreground">
+                        {t("Aucun diagnostic à revoir sur la période", "No diagnostic needs review on this period")}
                       </td>
                     </tr>
                   )}
@@ -1026,6 +2010,23 @@ export default function BackOfficePage() {
                   </div>
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <div className="border border-border rounded-lg p-3">
+                    <div className="text-xs text-muted-foreground">{t("Dernier signal client", "Last client signal")}</div>
+                    <div className="text-sm font-medium mt-1">{formatDateTime(detail.session.last_client_seen_at, locale)}</div>
+                  </div>
+                  <div className="border border-border rounded-lg p-3">
+                    <div className="text-xs text-muted-foreground">{t("Dernière reprise", "Last resume")}</div>
+                    <div className="text-sm font-medium mt-1">{formatDateTime(detail.session.resumed_at, locale)}</div>
+                  </div>
+                  <div className="border border-border rounded-lg p-3">
+                    <div className="text-xs text-muted-foreground">{t("Actions cochées", "Checked actions")}</div>
+                    <div className="text-sm font-medium mt-1">
+                      {getCompletedActionIds(detail.session).length || detail.session.actions_completed || 0}
+                    </div>
+                  </div>
+                </div>
+
                 {(() => {
                   const riskFlags = getRiskFlags(detail.session);
                   const primaryRisk = riskFlags.find((flag) => flag.id === detail.session.primary_risk) || riskFlags[0];
@@ -1075,6 +2076,124 @@ export default function BackOfficePage() {
                               </p>
                             </div>
                           ))}
+                        </div>
+                      )}
+                    </section>
+                  );
+                })()}
+
+                {(() => {
+                  const confidence = getSessionConfidence(detail.session);
+                  const calibration = getSessionCalibration(detail.session);
+                  const context = getSessionDiagnosticContext(detail.session);
+                  const confidenceLabel = locale === "en" ? confidence.labelEn : confidence.labelFr;
+                  const calibrationLabel = locale === "en" ? calibration.labelEn : calibration.labelFr;
+                  const calibrationSummary = locale === "en" ? calibration.summaryEn : calibration.summaryFr;
+                  const complementarySkills = Array.isArray(context.complementary_skills)
+                    ? context.complementary_skills.filter((item): item is string => typeof item === "string")
+                    : [];
+                  const complementarySpecialties = Array.isArray(context.complementary_specialties)
+                    ? context.complementary_specialties.filter((item): item is string => typeof item === "string")
+                    : [];
+                  const reviewRequired =
+                    calibration.reviewRequired ||
+                    confidence.score == null ||
+                    calibration.score == null ||
+                    (confidence.score != null && confidence.score < 60);
+                  return (
+                    <section className="border border-border rounded-lg p-3 space-y-3">
+                      <div className="inline-flex items-center gap-2 text-sm font-medium">
+                        <ShieldAlert className="w-4 h-4" />
+                        {t("Calibration qualité GO13", "GO13 quality calibration")}
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div className="rounded-lg border border-border p-3">
+                          <div className="text-xs text-muted-foreground">{t("Contexte GO15", "GO15 context")}</div>
+                          <div className="mt-1 text-sm font-semibold">
+                            {contextLabel(textValue(context, "persona_confidence"), locale)}
+                          </div>
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            {contextLabel(textValue(context, "stack_goal"), locale)}
+                          </div>
+                        </div>
+                        <div className="rounded-lg border border-border p-3">
+                          <div className="text-xs text-muted-foreground">{t("Profils secondaires", "Secondary profiles")}</div>
+                          <div className="mt-1 text-sm font-semibold">
+                            {complementarySkills.length > 0 ? complementarySkills.map(humanizeId).join(", ") : "—"}
+                          </div>
+                        </div>
+                        <div className="rounded-lg border border-border p-3">
+                          <div className="text-xs text-muted-foreground">{t("Spécialités", "Specialties")}</div>
+                          <div className="mt-1 text-sm font-semibold">
+                            {[
+                              textValue(context, "primary_specialty"),
+                              ...complementarySpecialties,
+                            ].filter(Boolean).map((item) => humanizeId(String(item))).join(", ") || "—"}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div className="rounded-lg border border-border p-3">
+                          <div className="text-xs text-muted-foreground">{t("Confiance", "Confidence")}</div>
+                          <div className="mt-1 text-sm font-semibold">{confidence.score ?? "—"}</div>
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            {confidenceLabel || t("Non calculée", "Not computed")}
+                          </div>
+                        </div>
+                        <div className="rounded-lg border border-border p-3">
+                          <div className="text-xs text-muted-foreground">{t("Calibration", "Calibration")}</div>
+                          <div className="mt-1 text-sm font-semibold">{calibration.score ?? "—"}</div>
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            {calibrationLabel || t("Calibration absente", "Missing calibration")}
+                          </div>
+                        </div>
+                        <div className="rounded-lg border border-border p-3">
+                          <div className="text-xs text-muted-foreground">{t("Revue humaine", "Human review")}</div>
+                          <div
+                            className={`mt-1 inline-flex px-2 py-0.5 rounded-full text-xs ${
+                              reviewRequired ? "bg-red-100 text-red-700" : "bg-green-100 text-green-800"
+                            }`}
+                          >
+                            {reviewRequired ? t("Conseillée", "Advised") : t("Non requise", "Not required")}
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        {calibrationSummary ||
+                          t(
+                            "Cette session ne contient pas encore la nouvelle calibration GO13.",
+                            "This session does not contain the new GO13 calibration yet."
+                          )}
+                      </p>
+                      {calibration.flags.length > 0 ? (
+                        <div className="space-y-2">
+                          {calibration.flags.map((flag) => {
+                            const severity = getFlagSeverity(flag);
+                            return (
+                              <div key={String(flag.id)} className="rounded-lg bg-muted/30 px-3 py-2">
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-sm font-medium">
+                                    {getLocalizedLabel(flag, locale, humanizeId(String(flag.id || "")))}
+                                  </span>
+                                  <span className={`inline-flex px-2 py-0.5 rounded-full text-[10px] ${qualitySeverityClasses(severity)}`}>
+                                    {severity}
+                                  </span>
+                                </div>
+                                <p className="mt-1 text-xs text-muted-foreground">
+                                  {localizedField(flag, "detail", locale) || "—"}
+                                </p>
+                                <p className="mt-1 text-xs text-muted-foreground">
+                                  {localizedField(flag, "action", locale) || "—"}
+                                </p>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <div className="rounded-lg bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
+                          {calibration.score == null
+                            ? t("Aucun flag disponible tant que la session n'a pas été recalculée.", "No flag is available until the session is recalculated.")
+                            : t("Aucun conflit majeur détecté.", "No major conflict detected.")}
                         </div>
                       )}
                     </section>
@@ -1168,24 +2287,129 @@ export default function BackOfficePage() {
                       <thead className="bg-muted/40">
                         <tr className="text-left">
                           <th className="px-3 py-2 font-medium">{t("Template", "Template")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Version", "Version")}</th>
                           <th className="px-3 py-2 font-medium">{t("Status", "Status")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Qualité", "Quality")}</th>
                           <th className="px-3 py-2 font-medium">{t("Attempts", "Attempts")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Programmé", "Scheduled")}</th>
                           <th className="px-3 py-2 font-medium">{t("Created", "Created")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {detail.emailJobs.map((job) => (
-                          <tr key={job.id} className="border-t border-border">
-                            <td className="px-3 py-2">{job.template_key}</td>
-                            <td className="px-3 py-2">{job.status}</td>
-                            <td className="px-3 py-2">{job.attempts}</td>
-                            <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.created_at, locale)}</td>
-                          </tr>
-                        ))}
+                        {detail.emailJobs.map((job) => {
+                          const isBusy = emailJobActionLoadingId === job.id;
+                          const ctaUrl = getJobCtaUrl(job);
+                          const quality = getJobEmailQuality(job);
+                          return (
+                            <tr key={job.id} className="border-t border-border">
+                              <td className="px-3 py-2">
+                                <div className="font-medium">{job.template_key}</div>
+                                <div className="text-xs text-muted-foreground">{getJobTrigger(job)}</div>
+                              </td>
+                              <td className="px-3 py-2">{getJobTemplateVersion(job)}</td>
+                              <td className="px-3 py-2">
+                                <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailStatusClasses(job.status)}`}>
+                                  {job.status}
+                                </span>
+                              </td>
+                              <td className="px-3 py-2">
+                                <span
+                                  className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailQualityClasses(quality.status)}`}
+                                  title={quality.flagIds.join(", ")}
+                                >
+                                  {quality.status}
+                                  {quality.score != null ? ` ${quality.score}` : ""}
+                                </span>
+                              </td>
+                              <td className="px-3 py-2">{job.attempts}</td>
+                              <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.scheduled_for, locale)}</td>
+                              <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.created_at, locale)}</td>
+                              <td className="px-3 py-2">
+                                <div className="flex flex-wrap gap-1">
+                                  {ctaUrl && (
+                                    <a
+                                      href={ctaUrl}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                                    >
+                                      <ExternalLink className="w-3.5 h-3.5" />
+                                      CTA
+                                    </a>
+                                  )}
+                                  <button
+                                    disabled={isBusy}
+                                    onClick={() => void runEmailJobAction(job, "retry_now")}
+                                    className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1 disabled:opacity-50"
+                                  >
+                                    <RotateCcw className="w-3.5 h-3.5" />
+                                    {t("Relancer", "Retry")}
+                                  </button>
+                                  <button
+                                    disabled={isBusy || job.status === "cancelled"}
+                                    onClick={() => void runEmailJobAction(job, "cancel")}
+                                    className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1 disabled:opacity-50"
+                                  >
+                                    <Ban className="w-3.5 h-3.5" />
+                                    {t("Annuler", "Cancel")}
+                                  </button>
+                                </div>
+                                {job.last_error && (
+                                  <div className="mt-1 text-xs text-red-600 max-w-[280px] truncate" title={job.last_error}>
+                                    {job.last_error}
+                                  </div>
+                                )}
+                              </td>
+                            </tr>
+                          );
+                        })}
                         {detail.emailJobs.length === 0 && (
                           <tr>
-                            <td colSpan={4} className="px-3 py-6 text-center text-muted-foreground">
+                            <td colSpan={8} className="px-3 py-6 text-center text-muted-foreground">
                               {t("Aucun job email", "No email jobs")}
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                <section className="border border-border rounded-lg overflow-hidden">
+                  <header className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
+                    <Activity className="w-4 h-4" />
+                    {t("Historique email", "Email history")}
+                  </header>
+                  <div className="max-h-52 overflow-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-muted/40">
+                        <tr className="text-left">
+                          <th className="px-3 py-2 font-medium">{t("Date", "Date")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Job", "Job")}</th>
+                          <th className="px-3 py-2 font-medium">{t("De", "From")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Vers", "To")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Source", "Source")}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {detail.emailJobEvents.map((event) => (
+                          <tr key={event.id} className="border-t border-border">
+                            <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(event.created_at, locale)}</td>
+                            <td className="px-3 py-2 font-mono text-xs">{event.job_id.slice(0, 8)}</td>
+                            <td className="px-3 py-2">{event.status_from || "—"}</td>
+                            <td className="px-3 py-2">
+                              <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailStatusClasses(event.status_to)}`}>
+                                {event.status_to}
+                              </span>
+                            </td>
+                            <td className="px-3 py-2">{event.event_source}</td>
+                          </tr>
+                        ))}
+                        {detail.emailJobEvents.length === 0 && (
+                          <tr>
+                            <td colSpan={5} className="px-3 py-6 text-center text-muted-foreground">
+                              {t("Aucun événement email", "No email events")}
                             </td>
                           </tr>
                         )}
@@ -1206,25 +2430,46 @@ export default function BackOfficePage() {
                           <th className="px-3 py-2 font-medium">{t("Date", "Date")}</th>
                           <th className="px-3 py-2 font-medium">{t("Canal", "Channel")}</th>
                           <th className="px-3 py-2 font-medium">{t("Version", "Version")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Template / profil", "Template / profile")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Sujet / risque", "Subject / risk")}</th>
                           <th className="px-3 py-2 font-medium">{t("Score", "Score")}</th>
+                          <th className="px-3 py-2 font-medium">{t("Lien", "Link")}</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {(detail.restitutions || []).map((restitution) => (
-                          <tr key={restitution.id} className="border-t border-border">
-                            <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(restitution.generated_at, locale)}</td>
-                            <td className="px-3 py-2">{restitution.channel}</td>
-                            <td className="px-3 py-2">{restitution.version}</td>
-                            <td className="px-3 py-2">
-                              {typeof restitution.score_snapshot?.health_score === "number"
-                                ? restitution.score_snapshot.health_score
-                                : "—"}
-                            </td>
-                          </tr>
-                        ))}
+                        {(detail.restitutions || []).map((restitution) => {
+                          const ctaUrl = getRestitutionCtaUrl(restitution);
+                          return (
+                            <tr key={restitution.id} className="border-t border-border">
+                              <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(restitution.generated_at, locale)}</td>
+                              <td className="px-3 py-2">{restitution.channel}</td>
+                              <td className="px-3 py-2">{restitution.version}</td>
+                              <td className="px-3 py-2">{getRestitutionTemplate(restitution)}</td>
+                              <td className="px-3 py-2 max-w-[240px] truncate" title={getRestitutionSubject(restitution)}>
+                                {getRestitutionSubject(restitution)}
+                              </td>
+                              <td className="px-3 py-2">{getRestitutionScore(restitution) ?? "—"}</td>
+                              <td className="px-3 py-2">
+                                {ctaUrl ? (
+                                  <a
+                                    href={ctaUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                                  >
+                                    <ExternalLink className="w-3.5 h-3.5" />
+                                    CTA
+                                  </a>
+                                ) : (
+                                  "—"
+                                )}
+                              </td>
+                            </tr>
+                          );
+                        })}
                         {(detail.restitutions || []).length === 0 && (
                           <tr>
-                            <td colSpan={4} className="px-3 py-6 text-center text-muted-foreground">
+                            <td colSpan={7} className="px-3 py-6 text-center text-muted-foreground">
                               {t("Aucune restitution", "No restitutions")}
                             </td>
                           </tr>

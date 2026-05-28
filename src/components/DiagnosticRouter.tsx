@@ -5,10 +5,16 @@ import { useDiagnosticData } from "@/hooks/useDiagnosticData";
 import type { SessionState, Persona, DiagnosticResult } from "@/types/diagnostic";
 import { runDiagnostic } from "@/utils/scoring";
 import {
+  clearDiagnosticRecovery,
+  loadDiagnosticRecovery,
+  saveDiagnosticRecovery,
+} from "@/lib/diagnosticRecovery";
+import {
   createDiagnosticSession,
   insertDiagnosticRestitution,
   insertDiagnosticSessionSnapshot,
   insertDiagnosticStepEvent,
+  markDiagnosticSessionAbandoned,
   queueDiagnosticEmailJob,
   updateDiagnosticSession,
 } from "@/lib/diagnosticPersistence";
@@ -48,11 +54,18 @@ function createInitialSession(language: "fr" | "en"): SessionState {
     tjm: 0,
     language,
     persona: "THEO" as Persona,
+    personaConfidence: "clear",
+    stackGoal: "reduce_costs",
     complementarySkills: [],
     selectedTools: [],
     discoveryAnswers: new Map(),
     closingAnswers: ["", "", ""],
   };
+}
+
+function toStepId(value: unknown): StepId {
+  const parsed = Number(value);
+  return Number.isInteger(parsed) && parsed >= 0 && parsed <= 12 ? (parsed as StepId) : 0;
 }
 
 function serializeDiscoveryAnswers(answers: Map<string, number>) {
@@ -73,6 +86,8 @@ function serializeSessionSnapshot(session: SessionState) {
     tjm: session.tjm,
     language: session.language,
     persona: session.persona,
+    personaConfidence: session.personaConfidence || null,
+    stackGoal: session.stackGoal || null,
     complementarySkills: session.complementarySkills,
     primarySpecialty: session.primarySpecialty || null,
     complementarySpecialties: session.complementarySpecialties || [],
@@ -90,34 +105,66 @@ function serializeSessionSnapshot(session: SessionState) {
   };
 }
 
+function buildDiagnosticContext(session: SessionState) {
+  return {
+    persona_confidence: session.personaConfidence || null,
+    stack_goal: session.stackGoal || null,
+    complementary_skills: session.complementarySkills,
+    primary_specialty: session.primarySpecialty || null,
+    complementary_specialties: session.complementarySpecialties || [],
+  };
+}
+
 export default function DiagnosticRouter() {
   const { lang, t } = useLang();
+  const language = lang === "en" ? "en" : "fr";
   const [searchParams] = useSearchParams();
   const fromTool = searchParams.get("from") || undefined;
   const { tools, clusters, doublonRules, discoveryQuestions, loading, error } = useDiagnosticData();
-  const [step, setStep] = useState<StepId>(0);
+  const recoveryRef = useRef<ReturnType<typeof loadDiagnosticRecovery> | undefined>(undefined);
+  if (recoveryRef.current === undefined) {
+    recoveryRef.current = loadDiagnosticRecovery(language, FUNNEL_VERSION);
+  }
+  const recovered = recoveryRef.current;
+  const [step, setStep] = useState<StepId>(() => toStepId(recovered?.step));
   const [showTransition, setShowTransition] = useState<string | null>(null);
-  const [session, setSession] = useState<SessionState>(() =>
-    createInitialSession(lang === "en" ? "en" : "fr")
+  const [showRecoveryBanner, setShowRecoveryBanner] = useState(
+    () => !!recovered && toStepId(recovered.step) > 0 && toStepId(recovered.step) < 12
   );
-  const [dbSessionId, setDbSessionId] = useState<string | null>(null);
-  const [dbSessionToken, setDbSessionToken] = useState<string | null>(null);
-  const bootstrapAttemptedRef = useRef(false);
-  const finalSaveDoneRef = useRef(false);
-  const reportEmailQueuedRef = useRef(false);
+  const [session, setSession] = useState<SessionState>(() =>
+    recovered?.session || createInitialSession(language)
+  );
+  const [dbSessionId, setDbSessionId] = useState<string | null>(recovered?.dbSessionId || null);
+  const [dbSessionToken, setDbSessionToken] = useState<string | null>(recovered?.dbSessionToken || null);
+  const bootstrapAttemptedRef = useRef(!!(recovered?.dbSessionId && recovered?.dbSessionToken));
+  const finalSaveDoneRef = useRef(recovered?.finalSaveDone === true);
+  const reportEmailQueuedRef = useRef(recovered?.reportEmailQueued === true);
   const previousStepRef = useRef<StepId | null>(null);
+  const resumeLoggedRef = useRef(false);
 
   // Compute diagnostic result when reaching dashboard
   const diagnosticResult = useMemo<DiagnosticResult | null>(() => {
     if (step < 11) return null;
-    return runDiagnostic(session, { allTools: tools, doublonRules });
-  }, [step, session, tools, doublonRules]);
+    return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions });
+  }, [step, session, tools, doublonRules, discoveryQuestions]);
 
   const updateSession = useCallback((patch: Partial<SessionState>) => {
     setSession((prev) => ({ ...prev, ...patch }));
   }, []);
 
   const goTo = useCallback((s: StepId) => setStep(s), []);
+
+  const persistRecovery = useCallback(() => {
+    saveDiagnosticRecovery({
+      funnelVersion: FUNNEL_VERSION,
+      step,
+      session,
+      dbSessionId,
+      dbSessionToken,
+      finalSaveDone: finalSaveDoneRef.current,
+      reportEmailQueued: reportEmailQueuedRef.current,
+    });
+  }, [dbSessionId, dbSessionToken, session, step]);
 
   const logEvent = useCallback((stepId: StepId, eventName: string, eventPayload: Record<string, unknown> = {}) => {
     if (!dbSessionId || !dbSessionToken) return;
@@ -138,6 +185,7 @@ export default function DiagnosticRouter() {
     if (!wantsSummary || !email) return;
 
     reportEmailQueuedRef.current = true;
+    persistRecovery();
     void queueDiagnosticEmailJob(dbSessionId, dbSessionToken, {
       email,
       templateKey: "diagnostic_report_ready",
@@ -148,7 +196,7 @@ export default function DiagnosticRouter() {
       },
     });
     logEvent(9, "report_requested", { template_key: "diagnostic_report_ready" });
-  }, [dbSessionId, dbSessionToken, logEvent, session.email, session.emailPreferences, session.language]);
+  }, [dbSessionId, dbSessionToken, logEvent, persistRecovery, session.email, session.emailPreferences, session.language]);
 
   // Transition helper
   const goToWithTransition = useCallback((s: StepId, message: string) => {
@@ -180,6 +228,37 @@ export default function DiagnosticRouter() {
     })();
   }, [loading, error, session.language, session.persona, session.firstName, session.email, step]);
 
+  useEffect(() => {
+    persistRecovery();
+  }, [persistRecovery]);
+
+  useEffect(() => {
+    if (!recovered || !dbSessionId || !dbSessionToken || resumeLoggedRef.current) return;
+    resumeLoggedRef.current = true;
+    const resumedAt = new Date().toISOString();
+    void updateDiagnosticSession(dbSessionId, dbSessionToken, {
+      resumed_at: resumedAt,
+      last_client_seen_at: resumedAt,
+      abandoned_at: null,
+      recovery_state: {
+        status: "resumed",
+        resumed_at: resumedAt,
+        restored_step_id: step,
+      },
+    });
+    void insertDiagnosticStepEvent(dbSessionId, dbSessionToken, {
+      stepId: step,
+      eventName: "session_resumed",
+      eventPayload: {
+        restored_step: step,
+        saved_at: recovered.savedAt,
+      },
+      source: "web",
+      lang: session.language,
+      persona: session.persona,
+    });
+  }, [dbSessionId, dbSessionToken, recovered, session.language, session.persona, step]);
+
   // Persist step viewed + snapshots when navigating through the funnel.
   useEffect(() => {
     if (!dbSessionId || !dbSessionToken) return;
@@ -205,6 +284,7 @@ export default function DiagnosticRouter() {
       first_name: session.firstName || null,
       persona: session.persona,
       language: session.language,
+      diagnostic_context: buildDiagnosticContext(session),
       email: session.email || null,
       tjm: session.tjm || 0,
       api_spend_tranche: session.apiSpendTranche || null,
@@ -215,6 +295,7 @@ export default function DiagnosticRouter() {
       last_step_id: step,
       source: "web",
       funnel_version: FUNNEL_VERSION,
+      last_client_seen_at: new Date().toISOString(),
       abandoned_at: null,
     });
 
@@ -244,6 +325,7 @@ export default function DiagnosticRouter() {
         first_name: session.firstName || null,
         persona: session.persona,
         language: session.language,
+        diagnostic_context: buildDiagnosticContext(session),
         email: session.email || null,
         tjm: session.tjm || 0,
         api_spend_tranche: session.apiSpendTranche || null,
@@ -273,9 +355,11 @@ export default function DiagnosticRouter() {
         diagnostic_insights: diagnosticResult.insights,
         email_preferences: session.emailPreferences || {},
         last_step_id: 12,
+        last_client_seen_at: new Date().toISOString(),
         completed_at: new Date().toISOString(),
         abandoned_at: null,
       });
+      persistRecovery();
 
       void insertDiagnosticRestitution(dbSessionId, dbSessionToken, {
         channel: "dashboard",
@@ -314,17 +398,52 @@ export default function DiagnosticRouter() {
         isFinal: true,
       });
     })();
-  }, [dbSessionId, dbSessionToken, diagnosticResult, logEvent, session]);
+  }, [dbSessionId, dbSessionToken, diagnosticResult, logEvent, persistRecovery, session]);
 
   useEffect(() => {
     if (!dbSessionId || !dbSessionToken) return;
     if (step >= 11) {
       void updateDiagnosticSession(dbSessionId, dbSessionToken, {
         last_step_id: step,
+        last_client_seen_at: new Date().toISOString(),
         abandoned_at: null,
       });
     }
   }, [dbSessionId, dbSessionToken, step]);
+
+  useEffect(() => {
+    if (!dbSessionId || !dbSessionToken || step <= 0 || step >= 12) return;
+    const markHidden = (reason: string) => {
+      markDiagnosticSessionAbandoned(dbSessionId, dbSessionToken, {
+        stepId: step,
+        reason,
+      });
+    };
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "hidden") markHidden("visibility_hidden");
+    };
+    const onPageHide = () => markHidden("page_hide");
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("pagehide", onPageHide);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      window.removeEventListener("pagehide", onPageHide);
+    };
+  }, [dbSessionId, dbSessionToken, step]);
+
+  const restartDiagnostic = useCallback(() => {
+    clearDiagnosticRecovery();
+    recoveryRef.current = null;
+    setSession(createInitialSession(language));
+    setStep(0);
+    setShowRecoveryBanner(false);
+    setDbSessionId(null);
+    setDbSessionToken(null);
+    bootstrapAttemptedRef.current = false;
+    finalSaveDoneRef.current = false;
+    reportEmailQueuedRef.current = false;
+    previousStepRef.current = null;
+  }, [language]);
 
   // Step navigation logic
   const nextFrom = useCallback((current: StepId) => {
@@ -387,8 +506,16 @@ export default function DiagnosticRouter() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh] text-destructive">
-        <p>{error}</p>
+      <div className="flex items-center justify-center min-h-[60vh] px-4">
+        <div className="max-w-lg w-full rounded-lg border border-destructive/30 bg-destructive/5 p-4 text-center">
+          <p className="text-destructive text-sm">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-3 h-9 px-4 rounded-md bg-primary text-primary-foreground text-sm font-medium"
+          >
+            {t("Réessayer", "Retry")}
+          </button>
+        </div>
       </div>
     );
   }
@@ -411,6 +538,33 @@ export default function DiagnosticRouter() {
         totalSteps={TOTAL_VISIBLE_STEPS}
         t={t}
       />
+
+      {showRecoveryBanner && (
+        <div className="border-b border-border bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <p className="text-sm text-foreground">
+              {t(
+                "On a repris ton diagnostic là où tu l'avais laissé.",
+                "We picked up your diagnostic where you left off."
+              )}
+            </p>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowRecoveryBanner(false)}
+                className="h-8 px-3 rounded-md bg-primary text-primary-foreground text-xs font-medium"
+              >
+                {t("Continuer", "Continue")}
+              </button>
+              <button
+                onClick={restartDiagnostic}
+                className="h-8 px-3 rounded-md border border-border text-xs font-medium text-foreground"
+              >
+                {t("Recommencer", "Restart")}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Transition overlay */}
       {showTransition && (
@@ -468,7 +622,13 @@ export default function DiagnosticRouter() {
             />
           )}
           {step === 9 && (
-            <DiagStep6bEmailRecap session={session} onUpdate={updateSession} onNext={() => nextFrom(9)} t={t} />
+            <DiagStep6bEmailRecap
+              session={session}
+              onUpdate={updateSession}
+              onNext={() => nextFrom(9)}
+              onPrev={() => prevFrom(9)}
+              t={t}
+            />
           )}
           {step === 10 && (
             <DiagStep7Closing
