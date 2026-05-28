@@ -263,6 +263,13 @@ const ToolDetailPage = () => {
     return () => io.disconnect();
   }, [tool, slug]);
 
+  /* Pill nav sections — memoized. MUST stay above the early returns so the
+     hook order is stable (React error #310 otherwise). */
+  const pillSections = useMemo(() => TABS.map((tab) => ({
+    id: tab.id === "presentation" ? "analyse" : tab.id,
+    label: lang === "fr" ? tab.labelFr : tab.labelEn,
+  })), [lang]);
+
   /* ── Loading / not found ── */
   if (loading) {
     return (
@@ -318,11 +325,6 @@ const ToolDetailPage = () => {
     prefix, lang, t, primaryCtaUrl, hasAffiliateOffer,
     alternatives, catName, catNameEn,
   };
-
-  const pillSections = useMemo(() => TABS.map((tab) => ({
-    id: tab.id === "presentation" ? "analyse" : tab.id,
-    label: lang === "fr" ? tab.labelFr : tab.labelEn,
-  })), [lang]);
 
   return (
     <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
