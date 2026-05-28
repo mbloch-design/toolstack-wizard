@@ -6,7 +6,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCh
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 // STACKS no longer imported here — HomePage only needed each stack's monthlyBudget;
 // inlined into BUSINESS_OBJECTIVES below. Saves ~190KB gz on the home bundle.
-import { getToolLogoSources, type LogoCandidateTool } from "@/lib/toolLogos";
+import { getToolLogoSources } from "@/lib/toolLogos";
 
 import HeroSection from "@/components/home/HeroSection";
 import TickerBar from "@/components/home/TickerBar";
@@ -445,138 +445,7 @@ function EntryCardsSection() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   ManifestoSection — editorial noise + animated logo cloud
-───────────────────────────────────────────────────────────────────────────── */
-type ManifestoTool = LogoCandidateTool & {
-  name: string;
-  domain: string;
-};
-
-type LogoCloudItem = ManifestoTool & {
-  top: string;
-  left: string;
-  size?: "small" | "default" | "large";
-  delay: string;
-  depth?: "foreground" | "mid" | "back";
-  motion?: "a" | "b" | "c" | "d";
-};
-
-const manifestoTools: Record<string, ManifestoTool> = {
-  notion: { name: "Notion", slug: "notion", domain: "notion.so", websiteUrl: "https://www.notion.so" },
-  canva: { name: "Canva", slug: "canva", domain: "canva.com", websiteUrl: "https://www.canva.com" },
-  slack: { name: "Slack", slug: "slack", domain: "slack.com", websiteUrl: "https://slack.com" },
-  zoom: { name: "Zoom", slug: "zoom", domain: "zoom.us", websiteUrl: "https://zoom.us" },
-  teams: { name: "Teams", slug: "microsoftteams", domain: "microsoft.com", websiteUrl: "https://www.microsoft.com/microsoft-teams" },
-  trello: { name: "Trello", slug: "trello", domain: "trello.com", websiteUrl: "https://trello.com" },
-  zapier: { name: "Zapier", slug: "zapier", domain: "zapier.com", websiteUrl: "https://zapier.com" },
-  loom: { name: "Loom", slug: "loom", domain: "loom.com", websiteUrl: "https://www.loom.com" },
-  figma: { name: "Figma", slug: "figma", domain: "figma.com", websiteUrl: "https://www.figma.com" },
-  airtable: { name: "Airtable", slug: "airtable", domain: "airtable.com", websiteUrl: "https://airtable.com" },
-  hubspot: { name: "HubSpot", slug: "hubspot", domain: "hubspot.com", websiteUrl: "https://www.hubspot.com" },
-  brevo: { name: "Brevo", slug: "brevo", domain: "brevo.com", websiteUrl: "https://www.brevo.com" },
-  coda: { name: "Coda", slug: "coda", domain: "coda.io", websiteUrl: "https://coda.io" },
-  clickup: { name: "ClickUp", slug: "clickup", domain: "clickup.com", websiteUrl: "https://clickup.com" },
-  linear: { name: "Linear", slug: "linear", domain: "linear.app", websiteUrl: "https://linear.app" },
-  framer: { name: "Framer", slug: "framer", domain: "framer.com", websiteUrl: "https://www.framer.com" },
-  webflow: { name: "Webflow", slug: "webflow", domain: "webflow.com", websiteUrl: "https://webflow.com" },
-  drive: { name: "Google Drive", slug: "google-drive", domain: "google.com", websiteUrl: "https://drive.google.com" },
-};
-
-function HomeLogoCloudItem({ item }: { item: LogoCloudItem }) {
-  const sources = useMemo(() => getToolLogoSources(item, 64), [item]);
-  const [sourceIndex, setSourceIndex] = useState(0);
-  const logoSrc = sources[sourceIndex];
-
-  return (
-    <span
-      className={`home-logo-cloud-item is-${item.size || "default"} is-${item.depth || "mid"} motion-${item.motion || "a"}`}
-      style={{ top: item.top, left: item.left, animationDelay: item.delay }}
-      title={item.name}
-    >
-      {logoSrc ? (
-        <img
-          className="home-logo-cloud-image"
-          src={logoSrc}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          onError={() => setSourceIndex((index) => index + 1)}
-        />
-      ) : (
-        <span className="home-logo-cloud-fallback">{item.name.charAt(0)}</span>
-      )}
-      <span className="sr-only">{item.name}</span>
-    </span>
-  );
-}
-
-function ManifestoSection() {
-  const { t } = useLang();
-
-  const logoCloudItems: LogoCloudItem[] = [
-    { ...manifestoTools.notion, top: "29%", left: "36%", size: "large", delay: "-1.2s", depth: "foreground", motion: "a" },
-    { ...manifestoTools.slack, top: "43%", left: "57%", size: "large", delay: "-4.1s", depth: "foreground", motion: "b" },
-    { ...manifestoTools.figma, top: "57%", left: "45%", size: "large", delay: "-6.2s", depth: "foreground", motion: "c" },
-    { ...manifestoTools.canva, top: "68%", left: "30%", delay: "-5.4s", depth: "mid", motion: "a" },
-    { ...manifestoTools.zapier, top: "50%", left: "70%", delay: "-0.8s", depth: "mid", motion: "b" },
-    { ...manifestoTools.airtable, top: "67%", left: "56%", delay: "-3.3s", depth: "mid", motion: "c" },
-    { ...manifestoTools.trello, top: "34%", left: "73%", delay: "-7.1s", depth: "mid", motion: "a" },
-    { ...manifestoTools.coda, top: "42%", left: "23%", delay: "-4.9s", depth: "mid", motion: "b" },
-    { ...manifestoTools.linear, top: "77%", left: "73%", delay: "-6.8s", depth: "mid", motion: "a" },
-    { ...manifestoTools.brevo, top: "22%", left: "20%", delay: "-0.4s", depth: "mid", motion: "c" },
-    { ...manifestoTools.framer, top: "21%", left: "54%", size: "small", delay: "-8.4s", depth: "back", motion: "d" },
-    { ...manifestoTools.webflow, top: "82%", left: "29%", size: "small", delay: "-9.1s", depth: "back", motion: "b" },
-    { ...manifestoTools.loom, top: "18%", left: "73%", size: "small", delay: "-2.7s", depth: "back", motion: "b" },
-    { ...manifestoTools.hubspot, top: "60%", left: "17%", size: "small", delay: "-2.1s", depth: "back", motion: "c" },
-    { ...manifestoTools.clickup, top: "25%", left: "48%", size: "small", delay: "-1.8s", depth: "back", motion: "d" },
-    { ...manifestoTools.zoom, top: "77%", left: "43%", size: "small", delay: "-3.9s", depth: "back", motion: "b" },
-    { ...manifestoTools.teams, top: "47%", left: "84%", size: "small", delay: "-5.9s", depth: "back", motion: "a" },
-    { ...manifestoTools.drive, top: "83%", left: "58%", size: "small", delay: "-7.6s", depth: "back", motion: "a" },
-  ];
-
-  return (
-    <section className="home-noise-section es-section">
-      <div className="es-container home-noise-grid">
-        <div className="home-noise-copy">
-          <p className="home-noise-eyebrow">{t("Ce qui nous différencie", "What makes us different")}</p>
-          <h2 className="home-noise-title">
-            {t(
-              "Le bon outil, ça dépend de toi.",
-              "The right tool depends on you.",
-            )}
-          </h2>
-          <p className="home-noise-subtitle">
-            {t(
-              "Un comparatif générique ne sait pas que tu as 3 clients actifs, que ton TJM est à 600 €, et que tu n’as pas ouvert Trello depuis six semaines.",
-              "A generic comparison does not know you have 3 active clients, a €600 day rate, and haven’t opened Trello in six weeks.",
-            )}
-          </p>
-          <p className="home-noise-line">
-            {t(
-              "ToolTrim lit ta stack dans son contexte — pour recommander ce qui sert vraiment, pas ce qui semble logique sur le papier.",
-              "ToolTrim reads your stack in context — to recommend what truly helps, not what looks logical on paper.",
-            )}
-          </p>
-        </div>
-
-        <div className="home-logo-cloud" aria-label={t("Exemples d’outils dans une stack", "Examples of tools in a stack")}>
-          <div className="home-logo-cloud-axis" aria-hidden="true" />
-          <div className="home-logo-cloud-fade" aria-hidden="true" />
-          {logoCloudItems.map((item) => (
-            <HomeLogoCloudItem key={item.slug} item={item} />
-          ))}
-          <span className="home-logo-cloud-label is-keep">{t("À garder", "Keep")}</span>
-          <span className="home-logo-cloud-label is-cut">{t("À couper", "Cut")}</span>
-          <span className="home-logo-cloud-label is-replace">{t("À remplacer", "Replace")}</span>
-          <span className="home-logo-cloud-label is-challenge">{t("À challenger", "Challenge")}</span>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   WhatWeCutSection — "Ce que ToolTrim coupe"
+   WhatWeCutSection — "Ce que ToolTrim coupe" (also carries the position thesis)
 ───────────────────────────────────────────────────────────────────────────── */
 function WhatWeCutSection() {
   const { lang, t, prefix } = useLang();
