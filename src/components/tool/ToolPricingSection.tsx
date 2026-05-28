@@ -30,60 +30,21 @@ export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sou
   const officialUrl = tool.pricing_v5?.official_source_url || (sourceDomain ? `https://${sourceDomain}` : null);
 
   return (
-    <section className="space-y-4">
-      {/* Eyebrow */}
-      <p
-        className="text-xs font-bold uppercase tracking-widest flex items-center gap-1.5"
-        style={{ color: "hsl(var(--primary))" }}
-      >
-        <CreditCard className="h-3.5 w-3.5" />
-        {t("Tarification", "Pricing")}
-      </p>
-
-      {/* Heading */}
-      <h2
-        className="font-display"
-        style={{ fontSize: "1.15rem", fontWeight: 700, letterSpacing: "-0.02em" }}
-      >
-        {t(`Prix de ${tool.name}`, `${tool.name} pricing`)}
-      </h2>
-
-      {/* Plan cards */}
-      <div className={`grid gap-3 ${hasFree && hasPaid ? "sm:grid-cols-2" : "grid-cols-1"}`}>
+    <section style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {/* Plan cards (parent section already renders the eyebrow + title) */}
+      <div style={{ display: "grid", gridTemplateColumns: hasFree && hasPaid ? "repeat(auto-fit, minmax(240px, 1fr))" : "1fr", gap: 12 }}>
 
         {/* Free plan card */}
         {hasFree && (
-          <div
-            className="rounded-xl border p-5 flex flex-col gap-3"
-            style={{
-              borderColor: "hsl(var(--keep) / 0.3)",
-              background: "hsl(var(--keep) / 0.04)",
-            }}
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div
-                  className="flex h-7 w-7 items-center justify-center rounded-lg"
-                  style={{ background: "hsl(var(--keep) / 0.12)" }}
-                >
-                  <Sparkles className="h-3.5 w-3.5" style={{ color: "hsl(var(--keep))" }} />
-                </div>
-                <span className="text-sm font-semibold" style={{ color: "hsl(var(--keep))" }}>
-                  {t("Gratuit", "Free")}
-                </span>
-              </div>
-              <span
-                className="rounded-full border px-2.5 py-0.5 text-xs font-bold"
-                style={{
-                  borderColor: "hsl(var(--keep) / 0.25)",
-                  color: "hsl(var(--keep))",
-                  background: "hsl(var(--keep) / 0.08)",
-                }}
-              >
-                0 €
+          <div style={{ border: "1px solid var(--color-border-strong)", borderRadius: 12, padding: 20, background: "var(--color-surface-soft)", display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "var(--color-text-strong)" }}>
+                <Sparkles style={{ width: 15, height: 15, color: "var(--color-text-strong)" }} />
+                {t("Gratuit", "Free")}
               </span>
+              <span style={{ fontFamily: "var(--font-mono, ui-monospace)", fontSize: 13, fontWeight: 700, color: "var(--color-text-strong)" }}>0 €</span>
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.5, color: "var(--color-muted)" }}>
               {pricing?.free}
             </p>
           </div>
@@ -91,35 +52,20 @@ export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sou
 
         {/* Paid plan card */}
         {(hasPaid || displayPrice > 0) && (
-          <div className="rounded-xl border border-border bg-card p-5 flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div
-                  className="flex h-7 w-7 items-center justify-center rounded-lg"
-                  style={{ background: "hsl(var(--primary) / 0.1)" }}
-                >
-                  <CreditCard className="h-3.5 w-3.5" style={{ color: "hsl(var(--primary))" }} />
-                </div>
-                <span className="text-sm font-semibold text-foreground">
-                  {tool.pricing_v5?.compare_plan_name || t("Plan payant", "Paid plan")}
-                </span>
-              </div>
+          <div style={{ border: "1px solid var(--color-border)", borderRadius: 12, padding: 20, background: "var(--color-surface)", display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "var(--color-text)" }}>
+                <CreditCard style={{ width: 15, height: 15, color: "var(--color-muted)" }} />
+                {tool.pricing_v5?.compare_plan_name || t("Plan payant", "Paid plan")}
+              </span>
               {displayPrice > 0 && (
-                <div className="text-right">
-                  <span
-                    className="font-mono text-base font-black"
-                    style={{ color: "hsl(var(--foreground))", letterSpacing: "-0.02em" }}
-                  >
-                    {displayPrice}€
-                  </span>
-                  <span className="text-xs" style={{ color: "hsl(var(--muted-foreground) / 0.6)" }}>
-                    /{t("mois", "mo")}
-                  </span>
-                </div>
+                <span style={{ fontFamily: "var(--font-mono, ui-monospace)", fontSize: 15, fontWeight: 700, color: "var(--color-text-strong)", letterSpacing: "-0.02em" }}>
+                  {displayPrice}€<span style={{ fontSize: 12, fontWeight: 400, color: "var(--color-muted-light)" }}>/{t("mois", "mo")}</span>
+                </span>
               )}
             </div>
             {hasPaid && (
-              <p className="text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+              <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.5, color: "var(--color-muted)" }}>
                 {pricing?.paid}
               </p>
             )}
@@ -129,46 +75,26 @@ export default function ToolPricingSection({ tool, displayPrice, verifiedOn, sou
 
       {/* Cautions */}
       {(tool.pricing_v5?.cautions?.length ?? 0) > 0 && (
-        <div
-          className="rounded-lg border px-4 py-3 flex items-start gap-2.5 text-sm"
-          style={{
-            borderColor: "hsl(var(--border))",
-            background: "hsl(var(--muted) / 0.4)",
-          }}
-        >
-          <Check className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--muted-foreground))" }} />
-          <p style={{ color: "hsl(var(--muted-foreground))" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 10, border: "1px solid var(--color-border)", borderRadius: 8, padding: "12px 16px", background: "var(--color-surface-soft)" }}>
+          <Check style={{ marginTop: 2, width: 14, height: 14, flexShrink: 0, color: "var(--color-muted)" }} />
+          <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.5, color: "var(--color-muted)" }}>
             {tool.pricing_v5!.cautions![0]}
           </p>
         </div>
       )}
 
       {/* Trust footer */}
-      <div
-        className="flex flex-wrap items-center justify-between gap-3 border-t pt-4"
-        style={{ borderColor: "hsl(var(--border) / 0.6)" }}
-      >
-        <span
-          className="flex items-center gap-1.5 text-xs font-medium"
-          style={{ color: "hsl(var(--keep) / 0.8)" }}
-        >
-          <ShieldCheck className="h-3.5 w-3.5" />
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, borderTop: "1px solid var(--color-border-soft)", paddingTop: 16 }}>
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 500, color: "var(--color-muted)" }}>
+          <ShieldCheck style={{ width: 14, height: 14 }} />
           {t("Prix vérifié le", "Price verified on")} {verifiedOn}
-          {sourceDomain && (
-            <span style={{ color: "hsl(var(--muted-foreground))" }}>· {sourceDomain}</span>
-          )}
+          {sourceDomain && <span style={{ color: "var(--color-muted-light)" }}>· {sourceDomain}</span>}
         </span>
 
         {officialUrl && (
-          <a
-            href={officialUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-medium transition-colors hover:border-primary/30 hover:text-primary"
-            style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'DM Sans', sans-serif" }}
-          >
+          <a href={officialUrl} target="_blank" rel="noopener noreferrer" className="td-chip" style={{ fontSize: 12 }}>
             {t("Voir tous les plans", "See all plans")}
-            <ExternalLink className="h-3 w-3" />
+            <ExternalLink />
           </a>
         )}
       </div>
