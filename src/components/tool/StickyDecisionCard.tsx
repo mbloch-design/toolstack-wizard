@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
-import { ExternalLink, ArrowRight, Sparkles, Layers, CreditCard, ShieldCheck } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { asText } from "@/lib/text";
 import type { Tool } from "@/data/types";
@@ -74,35 +74,6 @@ export default function StickyDecisionCard({
     || (lang === "fr"
       ? "Alternative moins chère pour des usages similaires."
       : "Cheaper alternative for similar needs.");
-
-  /* ── Labels ── */
-  const priceLabel = isFree
-    ? t("Gratuit", "Free")
-    : isFreemium
-    ? "Freemium"
-    : displayPrice > 0
-    ? `${displayPrice}€/${t("mois", "mo")}`
-    : t("Sur devis", "On request");
-
-  const modelLabel = isFree
-    ? t("Gratuit", "Free")
-    : isFreemium
-    ? "Freemium"
-    : t("Payant", "Paid");
-
-  /* ── Key facts: 4 rows ── */
-  const metaRows = [
-    { Icon: Sparkles,    label: t("Plan gratuit", "Free plan"), value: hasFreeplan ? t("Oui", "Yes") : t("Non", "No") },
-    { Icon: Layers,      label: t("Modèle",       "Model"),     value: modelLabel },
-    {
-      Icon: CreditCard,
-      label: displayPrice > 0
-        ? t("Prix à partir de", "From")
-        : t("Prix", "Price"),
-      value: priceLabel,
-    },
-    { Icon: ShieldCheck, label: t("Vérifié le",   "Verified"),  value: verifiedOn },
-  ];
 
   return (
     <div style={{
@@ -203,43 +174,6 @@ export default function StickyDecisionCard({
             : t("Visiter le site", "Visit website")}
           <ExternalLink style={{ width: 14, height: 14 }} />
         </a>
-
-        <Link
-          to={`${prefix}/tool/${(tool as any).slug || tool.id}/alternatives`}
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-            width: "100%", height: 44,
-            background: "transparent", color: "var(--color-text)",
-            borderRadius: 8, border: "1px solid var(--color-border)",
-            fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500,
-            textDecoration: "none", marginTop: 10,
-            transition: "all 160ms ease-out",
-          }}
-          onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-text)"; el.style.background = "var(--color-bg)"; }}
-          onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--color-border)"; el.style.background = "transparent"; }}
-        >
-          {t("Comparer les alternatives", "Compare alternatives")}
-        </Link>
-      </div>
-
-      {/* ── 5. Key facts (4 rows, with icons) ── */}
-      <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "12px 24px 16px" }}>
-        {metaRows.map(({ Icon, label, value }, i) => (
-          <div
-            key={label}
-            style={{
-              display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12,
-              padding: "9px 0",
-              borderBottom: i < metaRows.length - 1 ? "1px solid var(--color-border-soft)" : "none",
-            }}
-          >
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)" }}>
-              <Icon style={{ width: 15, height: 15, flexShrink: 0, color: "var(--color-muted-light)" }} />
-              {label}
-            </span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "var(--color-text)", textAlign: "right" }}>{value}</span>
-          </div>
-        ))}
       </div>
 
       {/* ── 6. Alternative recommandée ── */}
