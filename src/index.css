@@ -3576,16 +3576,24 @@
   /* td-sidebar is now just a semantic wrapper — no position override */
   .td-sidebar { /* intentionally empty */ }
 
-  /* Hero — single column: identity + positioning only */
+  /* Hero — single column: identity + positioning only (legacy, unused) */
   .td-hero-layout {
     padding-top: 56px;
     padding-bottom: 56px;
     max-width: 860px;
   }
+
+  /* Hero identity — now the head of the main column in the unified page grid.
+     Sits beside the decision card so the verdict starts at the very top. */
+  .td-page-grid .td-hero {
+    padding-bottom: clamp(36px, 3.5vw, 52px);
+    margin-bottom: clamp(20px, 2vw, 32px);
+    border-bottom: 1px solid var(--color-border);
+  }
   @media (max-width: 768px) {
-    .td-hero-layout {
-      padding-top: 40px;
-      padding-bottom: 40px;
+    .td-page-grid .td-hero {
+      padding-bottom: 32px;
+      margin-bottom: 16px;
     }
   }
 

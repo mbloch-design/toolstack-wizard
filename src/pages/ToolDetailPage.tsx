@@ -290,9 +290,14 @@ const ToolDetailPage = () => {
       {/* ══════════════════════════════════════════════════════════
           HERO — tool identity & positioning
       ══════════════════════════════════════════════════════════ */}
-      <header className="td-hero" style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)" }}>
-        <div className="td-container">
-          <div className="td-hero-layout">
+      <div className="td-container">
+        <div className="td-body-grid td-page-grid">
+
+          {/* ── MAIN COLUMN (left): hero identity + sections ── */}
+          <div>
+
+            {/* Hero identity */}
+            <div className="td-hero">
 
             <Breadcrumb items={[
               { label: t("Outils", "Tools"), href: `${prefix}/tools` },
@@ -384,18 +389,8 @@ const ToolDetailPage = () => {
               );
             })()}
 
-          </div>
-        </div>
-      </header>
-
-      {/* ══════════════════════════════════════════════════════════
-          BODY — two-column grid
-      ══════════════════════════════════════════════════════════ */}
-      <div className="td-container">
-        <div className="td-body-grid">
-
-          {/* ── MAIN CONTENT (left column) ── */}
-          <div>
+            </div>
+            {/* end hero identity */}
 
             {/* Mobile decision card */}
             <div className="td-sidebar-mobile" style={{ marginBottom: 32 }}>
