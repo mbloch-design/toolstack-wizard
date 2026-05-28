@@ -8,9 +8,11 @@ interface ToolLogoProps {
   tool: LogoTool;
   size?: number;
   className?: string;
+  /** Above-the-fold logos (e.g. page hero) load eagerly for a faster LCP. */
+  eager?: boolean;
 }
 
-const ToolLogo = ({ tool, size = 32, className = "" }: ToolLogoProps) => {
+const ToolLogo = ({ tool, size = 32, className = "", eager = false }: ToolLogoProps) => {
   const sources = useMemo(() => getToolLogoSources(tool, size <= 32 ? 32 : size <= 64 ? 64 : 128), [tool, size]);
   const sourceKey = sources.join("|");
   const [sourceIndex, setSourceIndex] = useState(0);
@@ -27,7 +29,8 @@ const ToolLogo = ({ tool, size = 32, className = "" }: ToolLogoProps) => {
         alt=""
         width={size}
         height={size}
-        loading="lazy"
+        loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : undefined}
         className={`shrink-0 rounded-lg bg-card object-contain ring-1 ring-border/50 ${className}`}
         style={{ width: size, height: size, minWidth: size, minHeight: size, padding: Math.max(2, Math.round(size * 0.14)) }}
         onError={() => setSourceIndex((index) => index + 1)}

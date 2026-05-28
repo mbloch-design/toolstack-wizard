@@ -1,7 +1,7 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolBySlug, useTools, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import {
   ExternalLink, Check, X, ArrowRight, CalendarCheck,
 } from "lucide-react";
@@ -319,10 +319,10 @@ const ToolDetailPage = () => {
     alternatives, catName, catNameEn,
   };
 
-  const pillSections = TABS.map((tab) => ({
+  const pillSections = useMemo(() => TABS.map((tab) => ({
     id: tab.id === "presentation" ? "analyse" : tab.id,
     label: lang === "fr" ? tab.labelFr : tab.labelEn,
-  }));
+  })), [lang]);
 
   return (
     <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
@@ -369,7 +369,7 @@ const ToolDetailPage = () => {
 
             {/* Identity lockup — logo aligned with the name */}
             <div className="td-hero-lockup">
-              <ToolLogo tool={tool} size={96} className="td-hero-logo" />
+              <ToolLogo tool={tool} size={96} className="td-hero-logo" eager />
               {/* H1 — clamp réduit pour les noms courts (≤5 chars) */}
               <h1 style={{
                 fontFamily: "var(--font-brand)",
@@ -378,7 +378,7 @@ const ToolDetailPage = () => {
                   : "clamp(4rem, 7.5vw, 7rem)",   /* max 112px — noms longs */
                 fontWeight: 600, lineHeight: 0.9,
                 letterSpacing: "-0.07em", color: "var(--color-text)",
-                margin: 0,
+                margin: 0, minWidth: 0, overflowWrap: "break-word", hyphens: "auto",
               }}>
                 {tool.name}
               </h1>

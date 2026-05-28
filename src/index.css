@@ -3903,10 +3903,16 @@
   a.td-chip:focus-visible,
   .td-tile:focus-visible,
   .td-synth-link:focus-visible,
-  .td-cardlink:focus-visible {
+  .td-cardlink:focus-visible,
+  .td-hero-cat:focus-visible,
+  .td-cta-primary:focus-visible {
     outline: 2px solid var(--color-border-strong);
     outline-offset: 2px;
     border-radius: 6px;
+  }
+  /* Mobile: lift chip touch targets toward 44px */
+  @media (max-width: 640px) {
+    .td-chip { padding-top: 10px; padding-bottom: 10px; }
   }
 
   /* Section anchor — scroll-margin compensates the fixed header only.

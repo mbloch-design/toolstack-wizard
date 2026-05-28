@@ -155,6 +155,7 @@ export default function StickyDecisionCard({
           href={primaryCtaUrl}
           target="_blank"
           rel="noopener noreferrer"
+          className="td-cta-primary"
           style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
             width: "100%", height: 48,
