@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, Sparkles, Layers, CreditCard, ShieldCheck } from "lucide-react";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { asText } from "@/lib/text";
 import type { Tool } from "@/data/types";
@@ -92,49 +92,44 @@ export default function StickyDecisionCard({
 
   /* ── Key facts: 4 rows ── */
   const metaRows = [
-    { label: t("Plan gratuit", "Free plan"), value: hasFreeplan ? t("Oui", "Yes") : t("Non", "No") },
-    { label: t("Modèle",       "Model"),     value: modelLabel },
+    { Icon: Sparkles,    label: t("Plan gratuit", "Free plan"), value: hasFreeplan ? t("Oui", "Yes") : t("Non", "No") },
+    { Icon: Layers,      label: t("Modèle",       "Model"),     value: modelLabel },
     {
+      Icon: CreditCard,
       label: displayPrice > 0
         ? t("Prix à partir de", "From")
         : t("Prix", "Price"),
       value: priceLabel,
     },
-    { label: t("Vérifié le",   "Verified"),  value: verifiedOn },
+    { Icon: ShieldCheck, label: t("Vérifié le",   "Verified"),  value: verifiedOn },
   ];
 
   return (
     <div style={{
       background: "var(--color-surface)",
       border: "1px solid var(--color-border)",
-      borderRadius: 10,
+      borderRadius: 14,
       overflow: "hidden",
+      boxShadow: "0 1px 2px rgba(20,20,18,0.04), 0 20px 44px -24px rgba(20,20,18,0.22)",
     }}>
 
-      {/* ── 1. Header ── */}
-      <div style={{ padding: "24px 24px 20px" }}>
+      {/* ── 1. Header — distinct band for presence ── */}
+      <div style={{ padding: "22px 24px 20px", background: "var(--color-surface-soft)", borderBottom: "1px solid var(--color-border)" }}>
         <span style={{
           display: "block",
           fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
           letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-muted)",
-          marginBottom: 14,
+          marginBottom: 16,
         }}>
           {t("Verdict ToolTrim", "ToolTrim Verdict")}
         </span>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{
-            width: 40, height: 40, borderRadius: 8,
-            border: "1px solid var(--color-border)", background: "var(--color-bg)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            flexShrink: 0,
-          }}>
-            <ToolLogo tool={tool as any} size={26} />
-          </div>
-          <div>
-            <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.03em", color: "var(--color-text)", lineHeight: 1.2 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <ToolLogo tool={tool as any} size={48} />
+          <div style={{ minWidth: 0 }}>
+            <p style={{ fontFamily: "var(--font-brand)", fontSize: 18, fontWeight: 600, letterSpacing: "-0.035em", color: "var(--color-text)", lineHeight: 1.15 }}>
               {tool.name}
             </p>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted)", marginTop: 2 }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "var(--color-muted)", marginTop: 3 }}>
               {t(catName, catNameEn)}
             </p>
           </div>
@@ -227,19 +222,22 @@ export default function StickyDecisionCard({
         </Link>
       </div>
 
-      {/* ── 5. Key facts (4 rows) ── */}
+      {/* ── 5. Key facts (4 rows, with icons) ── */}
       <div style={{ borderTop: "1px solid var(--color-border-soft)", padding: "12px 24px 16px" }}>
-        {metaRows.map(({ label, value }, i) => (
+        {metaRows.map(({ Icon, label, value }, i) => (
           <div
             key={label}
             style={{
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              padding: "8px 0",
+              display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12,
+              padding: "9px 0",
               borderBottom: i < metaRows.length - 1 ? "1px solid var(--color-border-soft)" : "none",
             }}
           >
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)" }}>{label}</span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 500, color: "var(--color-text)" }}>{value}</span>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "var(--font-ui)", fontSize: 13, color: "var(--color-muted)" }}>
+              <Icon style={{ width: 15, height: 15, flexShrink: 0, color: "var(--color-muted-light)" }} />
+              {label}
+            </span>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "var(--color-text)", textAlign: "right" }}>{value}</span>
           </div>
         ))}
       </div>
