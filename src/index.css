@@ -16972,55 +16972,18 @@ section[id] {
    editorial list. Sidebar logic and tool-list rendering are untouched —
    only the surrounding chrome is brand-aligned.
    ───────────────────────────────────────────────────────────────────────── */
-.cat-hero {
-  background: var(--color-bg);
-  padding: 80px 0 56px;
-}
-.cat-hero-inner,
+/* Category body shares the shared hero's width/gutter (hero now uses
+   .tt-page-hero; the old .cat-hero* shell classes were removed). */
 .cat-body {
   max-width: var(--layout-content, 1280px);
   margin: 0 auto;
-  padding: 0 var(--layout-gutter, 48px);
-}
-.cat-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px var(--layout-gutter, 48px);
 }
 @media (max-width: 1023px) {
-  .cat-hero-inner,
   .cat-body { padding-left: var(--layout-gutter-tablet, 32px); padding-right: var(--layout-gutter-tablet, 32px); }
 }
 @media (max-width: 639px) {
-  .cat-hero-inner,
   .cat-body { padding-left: var(--layout-gutter-mobile, 20px); padding-right: var(--layout-gutter-mobile, 20px); }
-}
-.cat-hero-eyebrow {
-  display: block;
-  margin-top: 24px;
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-kicker);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-.cat-hero-title {
-  margin: 14px 0 0;
-  font-family: var(--font-brand);
-  font-size: clamp(2.75rem, 5vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 0.98;
-  color: var(--color-text-strong);
-}
-.cat-hero-desc {
-  margin: 20px 0 0;
-  max-width: 56ch;
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-body-large);
-  line-height: 1.5;
-  letter-spacing: -0.015em;
-  color: var(--color-text);
 }
 .cat-hero-stats {
   margin: 24px 0 0;
