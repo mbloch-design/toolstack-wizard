@@ -227,6 +227,10 @@ const ToolDetailPage = () => {
     if (sections.length === 0) return;
 
     root.classList.add("td-reveal-ready");
+
+    // Reveal anything already in (or above) the viewport synchronously so
+    // above-the-fold sections never flash hidden, then observe the rest.
+    const vh = window.innerHeight;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -238,7 +242,13 @@ const ToolDetailPage = () => {
       },
       { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
     );
-    sections.forEach((s) => io.observe(s));
+    sections.forEach((s) => {
+      if (s.getBoundingClientRect().top < vh * 0.92) {
+        s.classList.add("td-in"); // already visible on load — no entry animation
+      } else {
+        io.observe(s);
+      }
+    });
     return () => io.disconnect();
   }, [tool, slug]);
 

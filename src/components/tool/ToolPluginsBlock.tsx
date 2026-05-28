@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { Puzzle, Package, ArrowRight, Layers } from "lucide-react";
+import { Puzzle, Package, ArrowRight } from "lucide-react";
 
 interface Props {
   tool: Tool;

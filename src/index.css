@@ -3538,7 +3538,6 @@
   }
   @media (max-width: 768px) {
     .td-container { padding-left: var(--layout-gutter-mobile); padding-right: var(--layout-gutter-mobile); }
-    .td-tab-nav { margin-left: -20px !important; margin-right: -20px !important; padding-left: 20px !important; padding-right: 20px !important; }
   }
 
   /* Two-column body grid: content | sidebar */
@@ -3575,13 +3574,6 @@
   }
   /* td-sidebar is now just a semantic wrapper — no position override */
   .td-sidebar { /* intentionally empty */ }
-
-  /* Hero — single column: identity + positioning only (legacy, unused) */
-  .td-hero-layout {
-    padding-top: 56px;
-    padding-bottom: 56px;
-    max-width: 860px;
-  }
 
   /* Hero identity — now the head of the main column in the unified page grid.
      Sits beside the decision card so the verdict starts at the very top. */
@@ -3837,48 +3829,14 @@
   .td-feature svg { width: 12px; height: 12px; flex-shrink: 0; color: var(--color-text-strong); }
   .td-feature span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-  /* Tab nav — strong editorial subnav */
-  .td-tab-nav {
-    position: sticky;
-    top: var(--header-height);
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    height: 72px;
-    overflow-x: auto;
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-bg);
-    scrollbar-width: none;
-  }
-  .td-tab-nav::-webkit-scrollbar { display: none; }
-
-  .td-tab {
-    position: relative;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    height: 72px;
-    padding: 0;
-    font-family: var(--font-ui);
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-muted);
-    text-decoration: none;
-    transition: color 120ms ease-out;
-    white-space: nowrap;
-    letter-spacing: -0.02em;
-  }
-  .td-tab:hover { color: var(--color-text); }
-  .td-tab--active { color: var(--color-text); }
-  .td-tab--active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-text);
+  /* Focus-visible for editorial interactive primitives (a11y) */
+  a.td-chip:focus-visible,
+  .td-tile:focus-visible,
+  .td-synth-link:focus-visible,
+  .td-cardlink:focus-visible {
+    outline: 2px solid var(--color-border-strong);
+    outline-offset: 2px;
+    border-radius: 6px;
   }
 
   /* Section anchor — scroll-margin compensates the fixed header only.
@@ -17120,7 +17078,7 @@ section[id] {
   .cp-methodology-note,
   .cp-hero-verdict-jump,
   .cp-faq-nav,
-  .td-tab-nav,
+  .tt-pillnav,
   .td-sidebar-desktop,
   .td-sidebar-mobile,
   .gi-cta-band,
