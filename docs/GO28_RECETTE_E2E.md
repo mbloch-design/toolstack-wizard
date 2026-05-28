@@ -9,13 +9,21 @@ GO28 valide le parcours reel ToolTrim sur preprod : utilisateur, diagnostic, res
 - `npm run validate:preprod-app` passe.
 - `npm run validate:preprod` passe avec `warnings: 0`.
 - La preprod Vercel est accessible.
+- Le chemin d'ecriture diagnostic passe :
+
+```bash
+npm run copy:go28-rls-sql
+npm run validate:preprod-write
+```
+
+Le premier script copie le SQL GO28. Il faut le coller dans le SQL Editor Supabase puis cliquer sur Run avant de relancer la validation.
 
 ## Parcours utilisateur
 
 1. Ouvrir la preprod :
 
 ```text
-https://toolstack-wizard-get2jswpl-mbloch-designs-projects.vercel.app/fr
+https://toolstack-wizard-2ya5ntb97-mbloch-designs-projects.vercel.app/fr
 ```
 
 2. Lancer un diagnostic complet.
@@ -48,6 +56,7 @@ La validation GO28 attend une session **terminee** : il faut arriver au dashboar
 
 ```bash
 npm run validate:preprod
+npm run validate:preprod-write
 npm run validate:go28
 ```
 

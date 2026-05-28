@@ -72,12 +72,15 @@ function toIsoNow() {
   return new Date().toISOString();
 }
 
-async function safeJson(res: Response) {
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(text || `HTTP ${res.status}`);
+function createUuid() {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
   }
-  return res.json();
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (char) => {
+    const random = Math.floor(Math.random() * 16);
+    const value = char === "x" ? random : (random & 0x3) | 0x8;
+    return value.toString(16);
+  });
 }
 
 export async function createDiagnosticSession(
@@ -85,7 +88,13 @@ export async function createDiagnosticSession(
 ): Promise<SessionRow | null> {
   try {
     const { url } = getSupabaseConfig();
+    const session: SessionRow = {
+      id: createUuid(),
+      session_token: createUuid(),
+    };
     const body = {
+      id: session.id,
+      session_token: session.session_token,
       first_name: payload.firstName ?? null,
       persona: payload.persona,
       language: payload.language,
@@ -97,20 +106,17 @@ export async function createDiagnosticSession(
       updated_at: toIsoNow(),
     };
 
-    const res = await fetch(
-      `${url}/rest/v1/diagnostic_sessions?select=id,session_token`,
-      {
-        method: "POST",
-        headers: {
-          ...buildHeaders(),
-          Prefer: "return=representation",
-        },
-        body: JSON.stringify(body),
-      }
-    );
+    const res = await fetch(`${url}/rest/v1/diagnostic_sessions`, {
+      method: "POST",
+      headers: {
+        ...buildHeaders(),
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify(body),
+    });
 
-    const data = (await safeJson(res)) as SessionRow[];
-    return data?.[0] || null;
+    if (!res.ok) throw new Error(await res.text());
+    return session;
   } catch (error) {
     console.error("[DiagPersistence] createDiagnosticSession failed:", error);
     return null;

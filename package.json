@@ -24,10 +24,12 @@
     "setup:preprod-secrets": "node scripts/setup-preprod-secrets.mjs",
     "deploy:preprod-supabase": "node scripts/deploy-preprod-supabase.mjs",
     "copy:go26-preprod-sql": "node scripts/copy-go26-preprod-sql.mjs",
+    "copy:go28-rls-sql": "node scripts/copy-go28-rls-sql.mjs",
     "deploy:preprod-functions": "node scripts/deploy-preprod-functions.mjs",
     "deploy:preprod-secrets": "node scripts/deploy-preprod-secrets.mjs",
     "set:preprod-url": "node scripts/set-preprod-app-url.mjs",
     "validate:preprod-app": "node scripts/validate-preprod-app.mjs",
+    "validate:preprod-write": "node scripts/validate-preprod-diagnostic-write.mjs",
     "validate:go28": "node scripts/validate-go28-e2e.mjs",
     "login:vercel": "npx --yes vercel login"
   },
