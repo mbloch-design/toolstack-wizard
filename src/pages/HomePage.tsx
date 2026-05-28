@@ -751,7 +751,7 @@ function MethodeSection() {
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 24 }}>
           <div>
             <p className="hp-cuts-label">{t("Comment ça marche", "How it works")}</p>
-            <h2 style={{ fontFamily: "var(--font-brand)", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", fontWeight: 600, color: "var(--color-text)", letterSpacing: "-0.04em", lineHeight: 1.15 }}>
+            <h2 className="hp-cuts-heading">
               {lang === "fr"
                 ? <>3 minutes.<br />Une décision claire.</>
                 : <>3 minutes.<br />One clear decision.</>}
