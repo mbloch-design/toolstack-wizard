@@ -19,7 +19,17 @@
     "test:go19": "vitest run src/test/backoffice/go19AdminAlerts.spec.ts src/test/backoffice/go17Pilotage.spec.ts",
     "test:go21": "vitest run src/test/backoffice/go21EndToEnd.spec.ts src/test/backoffice/go19AdminAlerts.spec.ts src/test/backoffice/go17Pilotage.spec.ts",
     "test:go22": "vitest run src/test/backoffice/go21EndToEnd.spec.ts src/test/email/go16EmailQuality.spec.ts",
-    "verify:preprod": "npm test -- --environment node && tsc --noEmit && npm run build"
+    "verify:preprod": "npm test -- --environment node && tsc --noEmit && npm run build",
+    "validate:preprod": "node scripts/validate-preprod.mjs",
+    "setup:preprod-secrets": "node scripts/setup-preprod-secrets.mjs",
+    "deploy:preprod-supabase": "node scripts/deploy-preprod-supabase.mjs",
+    "copy:go26-preprod-sql": "node scripts/copy-go26-preprod-sql.mjs",
+    "deploy:preprod-functions": "node scripts/deploy-preprod-functions.mjs",
+    "deploy:preprod-secrets": "node scripts/deploy-preprod-secrets.mjs",
+    "set:preprod-url": "node scripts/set-preprod-app-url.mjs",
+    "validate:preprod-app": "node scripts/validate-preprod-app.mjs",
+    "validate:go28": "node scripts/validate-go28-e2e.mjs",
+    "login:vercel": "npx --yes vercel login"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
