@@ -120,8 +120,8 @@ function StackAuditPreview({ lang, prefix }: { lang: string; prefix: string }) {
       </div>
 
       {/* Tool rows */}
-      {AUDIT_TOOLS.map((tool) => (
-        <div key={tool.name} className="hp-audit-row">
+      {AUDIT_TOOLS.map((tool, i) => (
+        <div key={tool.name} className="hp-audit-row" style={{ animationDelay: `${80 + i * 70}ms` }}>
           <AuditToolLogo name={tool.name} domain={tool.domain} />
           <span className="hp-audit-tool-name">{tool.name}</span>
           <AuditBadge variant={tool.variant} lang={lang} />
