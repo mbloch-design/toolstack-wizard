@@ -7282,36 +7282,116 @@
     "slug": "affinity-photo",
     "name": "Affinity Photo",
     "category": "design-tools",
-    "shortDescription": "Retouche photo professionnelle (achat unique)",
-    "shortDescriptionEn": "Professional photo editing (one-time purchase).",
-    "description": "Affinity Photo, c'est retouche photo professionnelle (achat unique). Entièrement gratuit.",
-    "longDescription": "Affinity Photo, c'est retouche photo professionnelle (achat unique). Entièrement gratuit.",
-    "longDescriptionEn": "Affinity Photo is professional photo editing (one-time purchase). Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Retouche photo professionnelle, gratuite depuis 2024.",
+    "shortDescriptionEn": "Professional photo editing, free since 2024.",
+    "description": "Affinity Photo est un logiciel de retouche avancée pour photographes et graphistes. Il couvre les calques, les masques, le traitement RAW, la correction colorimétrique et la composition multi-images. Concurrent sérieux de Photoshop pendant des années, il est passé gratuit en 2024 après le rachat de Serif par Canva. Pour quiconque voulait éviter l'abonnement Adobe, la question du budget ne se pose plus.",
+    "longDescription": "Affinity Photo est un logiciel de retouche avancée pour photographes et graphistes. Il couvre les calques, les masques, le traitement RAW, la correction colorimétrique et la composition multi-images. Concurrent sérieux de Photoshop pendant des années, il est passé gratuit en 2024 après le rachat de Serif par Canva. Pour quiconque voulait éviter l'abonnement Adobe, la question du budget ne se pose plus.",
+    "longDescriptionEn": "Affinity Photo is a professional photo editing application for photographers and designers. It covers layers, masks, RAW processing, color correction, and multi-image compositing. A serious Photoshop competitor for years, it became free in 2024 after Canva acquired Serif. For anyone looking to avoid an Adobe subscription, the pricing question is settled.",
+    "pricing": {
+      "free": "Gratuit depuis 2024 (rachat par Canva)",
+      "paid": null
+    },
+    "pricingEn": {
+      "free": "Free since 2024 (Canva acquisition)",
+      "paid": null
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Gratuit",
+      "verified_on": "2026-05-01",
+      "source_domain": "affinity.serif.com",
+      "official_source_url": "https://affinity.serif.com/fr-fr/photo/",
+      "cautions": [
+        "Gratuit depuis le rachat de Serif par Canva en 2024",
+        "Affinity Photo 1 nécessitait un achat unique. la version 2 est désormais sans frais",
+        "L'application iPad est incluse sans frais supplémentaire"
+      ]
+    },
     "affiliateLink": "",
-    "websiteUrl": "https://affinity.serif.com/photo",
+    "websiteUrl": "https://affinity.serif.com/fr-fr/photo/",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "metaDescription": "Affinity Photo est un logiciel de retouche photo professionnel, gratuit depuis 2024. Verdict ToolTrim : pour qui ça vaut le coup, et quand Photoshop reste la meilleure option."
+    },
     "articles": [],
     "covers": [],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
-    "relevantFor": [],
-    "alternatives": [],
-    "verdict": null,
-    "verdictEn": null,
-    "pros": [],
-    "prosEn": null,
-    "cons": [],
-    "consEn": null,
-    "useCases": [],
-    "useCasesEn": null,
+    "soloRelevance": "Adapté aux photographes et graphistes indépendants qui veulent un outil avancé sans abonnement.",
+    "teamRelevance": "Moins pratique en équipe si le reste du flux est sur Adobe.",
+    "relevantFor": [
+      "designer",
+      "photo",
+      "freelance"
+    ],
+    "alternatives": [
+      "adobe-photoshop",
+      "adobe-lightroom",
+      "capture-one",
+      "luminar-neo"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous retouchez régulièrement des photos et cherchez une alternative sérieuse à Photoshop",
+        "Vous êtes photographe ou créateur indépendant et l'écosystème Adobe ne vous est pas imposé"
+      ],
+      "avoidIf": [
+        "Votre équipe ou vos clients travaillent dans un flux Adobe intégré. La compatibilité n'est pas parfaite.",
+        "Vous n'avez besoin que de retouches légères et ponctuelles : un outil plus simple suffit"
+      ],
+      "threshold": "Gratuit et puissant, Affinity Photo est difficile à ignorer pour un usage pro individuel. Le seul frein réel est l'intégration dans un environnement déjà Adobe."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly edit photos and want a serious alternative to Photoshop",
+        "You're a photographer or independent creator and Adobe's ecosystem isn't imposed on you"
+      ],
+      "avoidIf": [
+        "Your team or clients work in an integrated Adobe workflow. Compatibility isn't seamless.",
+        "You only need occasional light edits: a simpler tool is enough"
+      ],
+      "threshold": "Free and powerful, Affinity Photo is hard to ignore for individual professional use. The only real friction is integration into an already-Adobe environment."
+    },
+    "pros": [
+      "Gratuit depuis 2024, sans abonnement ni frais cachés",
+      "Traitement RAW, calques non destructifs, masques et courbes. les outils essentiels sont là",
+      "Compatible PSD : import et export des fichiers Photoshop",
+      "Disponible sur Mac, Windows et iPad avec une seule licence",
+      "Interface plus légère que Photoshop pour les usages courants"
+    ],
+    "prosEn": [
+      "Free since 2024, no subscription or hidden fees",
+      "RAW processing, non-destructive layers, masks and curves. the core tools are there",
+      "PSD compatible: import and export Photoshop files",
+      "Available on Mac, Windows and iPad under a single licence",
+      "Cleaner interface than Photoshop for everyday use"
+    ],
+    "cons": [
+      "Courbe d'apprentissage réelle si vous venez d'un outil basique",
+      "Moins intégré dans les flux d'agence déjà sur Adobe. pas de Creative Cloud, pas de sync",
+      "Communauté et ressources pédagogiques plus restreintes que Photoshop",
+      "Pas de stockage cloud intégré"
+    ],
+    "consEn": [
+      "Real learning curve if you're coming from a basic editor",
+      "Less integrated in agency workflows already on Adobe. no Creative Cloud, no sync",
+      "Smaller community and fewer learning resources than Photoshop",
+      "No built-in cloud storage"
+    ],
+    "useCases": [
+      "Retouche photo avancée : correction de lumière, couleurs et détails fins",
+      "Photomontage et composition multi-calques",
+      "Détourage précis avec les outils de sélection par couleur et tracé",
+      "Traitement de fichiers RAW pour photographes"
+    ],
+    "useCasesEn": [
+      "Advanced photo editing: light, color and fine detail correction",
+      "Photomontage and multi-layer compositing",
+      "Precise cutouts with color selection and pen tool",
+      "RAW file processing for photographers"
+    ],
     "personas": [],
-    "tool_type": "satellite",
+    "tool_type": "metier",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -7321,7 +7401,7 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "ferme",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
