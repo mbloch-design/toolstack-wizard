@@ -41,7 +41,7 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
   return (
     <section
       aria-label={t("Résumé", "Summary")}
-      className="rounded-xl border border-border bg-secondary/20 p-5"
+      className="td-synthesis"
       itemScope
       itemType="https://schema.org/SoftwareApplication"
     >
@@ -50,53 +50,55 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
       <meta itemProp="applicationCategory" content="BusinessApplication" />
       <meta itemProp="operatingSystem" content="Web" />
 
-      <dl className="space-y-2 text-sm leading-relaxed">
-        <div className="flex flex-wrap gap-x-1">
-          <dt className="font-semibold text-foreground">{tool.name}</dt>
-          <dd className="text-muted-foreground">
-            {t(`est un outil de ${categoryLabel}.`, `is a ${categoryLabel} tool.`)}
+      <span className="td-synth-eyebrow">{t("En bref", "In short")}</span>
+
+      <dl className="td-synth-dl">
+        <div className="td-synth-row">
+          <dt className="td-synth-dt">{t("Catégorie", "Category")}</dt>
+          <dd className="td-synth-dd">
+            {t(`Outil de ${categoryLabel}.`, `${categoryLabel} tool.`)}
           </dd>
         </div>
 
-        <div className="flex flex-wrap gap-x-1">
-          <dt className="font-semibold text-foreground">{t("Prix à partir de", "Price from")}</dt>
-          <dd className="text-muted-foreground">
+        <div className="td-synth-row">
+          <dt className="td-synth-dt">{t("Prix à partir de", "Price from")}</dt>
+          <dd className="td-synth-dd">
             {displayPrice === 0
-              ? t("gratuit", "free")
+              ? t("Gratuit", "Free")
               : `${displayPrice}€/${t("mois", "mo")}`}
             {tool.pricing_v5?.compare_plan_name && ` (${tool.pricing_v5.compare_plan_name})`}.
           </dd>
         </div>
 
-        <div className="flex flex-wrap gap-x-1">
-          <dt className="font-semibold text-foreground">{t("Idéal pour", "Best for")}</dt>
-          <dd className="text-muted-foreground">{idealFor}.</dd>
+        <div className="td-synth-row">
+          <dt className="td-synth-dt">{t("Idéal pour", "Best for")}</dt>
+          <dd className="td-synth-dd">{idealFor}.</dd>
         </div>
 
         {avoidCases && (
-          <div className="flex flex-wrap gap-x-1">
-            <dt className="font-semibold text-foreground">{t("À éviter si", "Avoid if")}</dt>
-            <dd className="text-muted-foreground">{avoidCases}.</dd>
+          <div className="td-synth-row">
+            <dt className="td-synth-dt">{t("À éviter si", "Avoid if")}</dt>
+            <dd className="td-synth-dd">{avoidCases}.</dd>
           </div>
         )}
 
         {topAlts && (
-          <div className="flex flex-wrap gap-x-1">
-            <dt className="font-semibold text-foreground">{t("Alternatives fréquentes", "Common alternatives")}</dt>
-            <dd className="text-muted-foreground">
+          <div className="td-synth-row">
+            <dt className="td-synth-dt">{t("Alternatives", "Alternatives")}</dt>
+            <dd className="td-synth-dd">
               {alternatives.slice(0, 4).map((alt, i) => (
                 <span key={alt.id}>
                   {i > 0 && ", "}
-                  <Link to={`${prefix}/tool/${alt.slug}`} className="text-primary hover:underline">{alt.name}</Link>
+                  <Link to={`${prefix}/tool/${alt.slug}`} className="td-synth-link">{alt.name}</Link>
                 </span>
               ))}.
             </dd>
           </div>
         )}
 
-        <div className="flex flex-wrap gap-x-1">
-          <dt className="font-semibold text-foreground">{t("Verdict ToolTrim", "ToolTrim Verdict")}</dt>
-          <dd className="text-muted-foreground">{verdictText}</dd>
+        <div className="td-synth-row">
+          <dt className="td-synth-dt">{t("Verdict ToolTrim", "ToolTrim verdict")}</dt>
+          <dd className="td-synth-dd">{verdictText}</dd>
         </div>
       </dl>
     </section>
