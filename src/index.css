@@ -3634,6 +3634,41 @@
     color: var(--color-muted);
   }
 
+  /* Editorial judgment list — pros / limits, no badges, hairline-ruled */
+  .td-judgment {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .td-judgment-item {
+    display: grid;
+    grid-template-columns: 1.75rem 1fr;
+    column-gap: 18px;
+    align-items: baseline;
+    padding: 15px 2px;
+    border-bottom: 1px solid var(--color-border-soft);
+  }
+  .td-judgment-marker {
+    font-family: var(--font-brand);
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-align: center;
+    user-select: none;
+  }
+  .td-judgment-marker--pro { color: var(--color-text-strong); }
+  .td-judgment-marker--con { color: var(--color-muted-light); }
+  .td-judgment-text {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+  .td-judgment-item--con .td-judgment-text { color: var(--color-muted); }
+
   /* Tab nav — strong editorial subnav */
   .td-tab-nav {
     position: sticky;

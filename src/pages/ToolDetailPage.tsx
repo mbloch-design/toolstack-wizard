@@ -490,13 +490,11 @@ const ToolDetailPage = () => {
                     <h2 className="td-title">
                       {t(`Ce que ${tool.name} fait bien.`, `What ${tool.name} does well.`)}
                     </h2>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                    <ul className="td-judgment">
                       {(lang === "en" && (tool as any).prosEn ? (tool as any).prosEn : tool.pros)?.map((pro: string) => (
-                        <li key={pro} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                          <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--color-surface-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
-                            <Check style={{ width: 11, height: 11, color: "var(--color-text-strong)" }} />
-                          </div>
-                          <span className="td-body" style={{ fontSize: 15, marginTop: 0 }}>{pro}</span>
+                        <li key={pro} className="td-judgment-item td-judgment-item--pro">
+                          <span className="td-judgment-marker td-judgment-marker--pro" aria-hidden="true">+</span>
+                          <span className="td-judgment-text">{pro}</span>
                         </li>
                       ))}
                     </ul>
@@ -510,13 +508,11 @@ const ToolDetailPage = () => {
                     <h2 className="td-title">
                       {t(`Là où ${tool.name} montre ses limites.`, `Where ${tool.name} falls short.`)}
                     </h2>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                    <ul className="td-judgment">
                       {(lang === "en" && (tool as any).consEn ? (tool as any).consEn : tool.cons)?.map((con: string) => (
-                        <li key={con} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                          <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--color-surface-soft)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
-                            <X style={{ width: 11, height: 11, color: "var(--color-muted-light)" }} />
-                          </div>
-                          <span className="td-body" style={{ fontSize: 15, marginTop: 0 }}>{con}</span>
+                        <li key={con} className="td-judgment-item td-judgment-item--con">
+                          <span className="td-judgment-marker td-judgment-marker--con" aria-hidden="true">−</span>
+                          <span className="td-judgment-text">{con}</span>
                         </li>
                       ))}
                     </ul>
