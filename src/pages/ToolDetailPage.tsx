@@ -279,7 +279,7 @@ const ToolDetailPage = () => {
       <ToolJsonLd
         tool={tool} category={category} displayPrice={displayPrice}
         verifiedOn={verifiedOn} alternatives={alternatives} lang={lang}
-        includeFaq={subPage === "faq"}
+        includeFaq={subPage === "faq" || subPage === "presentation"}
         canonicalUrl={`https://tooltrim.com/${lang}/tool/${tool.slug || tool.id}${
           subPage === "prix" ? (lang === "en" ? "/pricing" : "/prix") :
           subPage === "alternatives" ? "/alternatives" :

@@ -139,13 +139,19 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       const freeAlts = alternatives.filter(a => a.defaultMonthlyPrice === 0).slice(0, 3);
       const topAlts = alternatives.slice(0, 5).map(a => a.name).join(", ");
 
+      // Mirrors the on-page FAQ (ToolFAQSection) exactly: same questions,
+      // same order, same answer text — required by Google's FAQPage policy.
+      const planFr = tool.pricing_v5?.compare_plan_name ? ` (plan ${tool.pricing_v5.compare_plan_name})` : "";
+      const planEn = tool.pricing_v5?.compare_plan_name ? ` (${tool.pricing_v5.compare_plan_name} plan)` : "";
+
       const faqEntries = [
         {
           "@type": "Question",
           name: lang === "fr" ? `À quoi sert ${tool.name} ?` : `What is ${tool.name} used for?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: (lang === "en" && (tool as any).shortDescriptionEn ? (tool as any).shortDescriptionEn : tool.shortDescription) || `${tool.name} is a SaaS tool.`,
+            text: (lang === "en" && (tool as any).shortDescriptionEn ? (tool as any).shortDescriptionEn : tool.shortDescription)
+              || (lang === "fr" ? `${tool.name} est un outil de productivité SaaS.` : `${tool.name} is a SaaS productivity tool.`),
           },
         },
         {
@@ -154,8 +160,22 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
           acceptedAnswer: {
             "@type": "Answer",
             text: lang === "fr"
-              ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}. Prix vérifié le ${verifiedOn}.`
-              : `${tool.name} costs ${displayPrice === 0 ? "€0 (free)" : `€${displayPrice}/month`}. Price verified on ${verifiedOn}.`,
+              ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${planFr}. Prix vérifié le ${verifiedOn}.`
+              : `${tool.name} costs ${displayPrice === 0 ? "€0 (free)" : `€${displayPrice}/month`}${planEn}. Price verified on ${verifiedOn}.`,
+          },
+        },
+        {
+          "@type": "Question",
+          name: lang === "fr" ? `${tool.name} est-il adapté aux débutants ?` : `Is ${tool.name} suitable for beginners?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: tool.soloRelevance
+              ? (lang === "fr"
+                ? `${tool.name} est particulièrement adapté aux freelances et indépendants. ${tool.soloRelevance}`
+                : `${tool.name} is particularly suited for freelancers and solopreneurs. ${tool.soloRelevance}`)
+              : (lang === "fr"
+                ? `${tool.name} convient à la plupart des professionnels. Consultez la section "Pour qui" pour plus de détails.`
+                : `${tool.name} suits most professionals. See the "Who is it for" section for details.`),
           },
         },
         {
@@ -163,7 +183,8 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
           name: lang === "fr" ? `${tool.name} vaut-il son prix ?` : `Is ${tool.name} worth the price?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: tool.verdict?.threshold || (lang === "fr" ? "Cela dépend de votre usage." : "It depends on your usage."),
+            text: ((lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : tool.verdict?.threshold)
+              || (lang === "fr" ? "Cela dépend de votre usage. Consultez notre verdict ci-dessus." : "It depends on your usage. See our verdict above."),
           },
         },
         {
