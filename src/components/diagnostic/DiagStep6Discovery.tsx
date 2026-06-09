@@ -7,10 +7,11 @@ interface Props {
   onNext: () => void;
   onPrev: () => void;
   discoveryQuestions: DiscoveryQuestion[];
+  maxQuestions?: number;
   t: (fr: string, en: string) => string;
 }
 
-export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, discoveryQuestions, t }: Props) {
+export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, discoveryQuestions, maxQuestions = 3, t }: Props) {
   const selectedToolIds = useMemo(
     () => new Set(session.selectedTools.map((t) => t.id)),
     [session.selectedTools]
@@ -27,8 +28,8 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
         return q.condition_tool_ids.every((id) => selectedToolIds.has(id));
       }
       return q.condition_tool_ids.some((id) => selectedToolIds.has(id));
-    });
-  }, [discoveryQuestions, session.persona, selectedToolIds]);
+    }).slice(0, maxQuestions);
+  }, [discoveryQuestions, maxQuestions, session.persona, selectedToolIds]);
 
   const [questionIdx, setQuestionIdx] = useState(0);
   const [answers, setAnswers] = useState<Map<string, number>>(() => new Map(session.discoveryAnswers));
@@ -47,12 +48,12 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] gap-6 text-center">
         <h2 className="text-xl md:text-2xl font-bold text-foreground">
-          {t("Aucune question complémentaire", "No extra question")}
+          {t("Pas besoin de question en plus", "No extra question needed")}
         </h2>
         <p className="text-sm text-muted-foreground max-w-md">
           {t(
-            "On passe à l'étape suivante avec les informations déjà collectées.",
-            "We continue with the information already collected."
+            "Ta stack suffit déjà pour générer un premier verdict.",
+            "Your stack is already enough to generate a first verdict."
           )}
         </p>
         <button
@@ -98,7 +99,7 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
     <div className="flex flex-col items-center justify-center min-h-[50vh] gap-8 text-center">
       {/* Progress */}
       <div className="text-sm text-muted-foreground">
-        {t("Question", "Question")} {questionIdx + 1}/{activeQuestions.length}
+        {t("Question utile", "Useful question")} {questionIdx + 1}/{activeQuestions.length}
       </div>
       <div className="flex gap-1 w-full max-w-md">
         {activeQuestions.map((_, i) => (
@@ -113,6 +114,11 @@ export default function DiagStep6Discovery({ session, onUpdate, onNext, onPrev, 
 
       {/* Question */}
       <div className="space-y-2 max-w-lg">
+        {questionIdx === 0 && (
+          <p className="text-xs font-semibold uppercase text-primary">
+            {t("On ne garde que ce qui change le verdict", "Only what changes the verdict")}
+          </p>
+        )}
         <h2 className="text-xl md:text-2xl font-bold text-foreground">{current.question}</h2>
         {current.subtitle && (
           <p className="text-sm text-muted-foreground">{current.subtitle}</p>

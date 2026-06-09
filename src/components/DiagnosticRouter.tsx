@@ -19,33 +19,31 @@ import {
   updateDiagnosticSession,
 } from "@/lib/diagnosticPersistence";
 
-import DiagStep0Prenom from "@/components/diagnostic/DiagStep0Prenom";
-import DiagStep1Tjm from "@/components/diagnostic/DiagStep1Tjm";
-import DiagStep2Persona from "@/components/diagnostic/DiagStep2Persona";
-import DiagStep2bEmail from "@/components/diagnostic/DiagStep2bEmail";
-import DiagStep2cComplementary from "@/components/diagnostic/DiagStep2cComplementary";
-import DiagStep3SofiaSpecialties from "@/components/diagnostic/DiagStep3SofiaSpecialties";
-import DiagStep4Clusters from "@/components/diagnostic/DiagStep4Clusters";
-import DiagStep5ApiCosts from "@/components/diagnostic/DiagStep5ApiCosts";
+import DiagStepStackScan from "@/components/diagnostic/DiagStepStackScan";
+import DiagStepProfileGoal from "@/components/diagnostic/DiagStepProfileGoal";
 import DiagStep6Discovery from "@/components/diagnostic/DiagStep6Discovery";
 import DiagStep6bEmailRecap from "@/components/diagnostic/DiagStep6bEmailRecap";
-import DiagStep7Closing from "@/components/diagnostic/DiagStep7Closing";
+import DiagStepPreVerdict from "@/components/diagnostic/DiagStepPreVerdict";
 import DiagResultsLoading from "@/components/diagnostic/DiagResultsLoading";
 import DiagDashboard from "@/components/dashboard/DiagDashboard";
 import DiagTopBar from "@/components/diagnostic/DiagTopBar";
-import DiagRightPanel from "@/components/diagnostic/DiagRightPanel";
 import DiagSaveIndicator from "@/components/diagnostic/DiagSaveIndicator";
 import DiagTransitionOverlay from "@/components/diagnostic/DiagTransitionOverlay";
 
-// Steps: 0=Prenom, 1=TJM, 2=Persona, 3=Email, 4=Complementary,
-// 5=SofiaSpecialties(conditional), 6=Clusters, 7=ApiCosts(conditional),
-// 8=Discovery, 9=EmailRecap, 10=Closing, 11=ResultsLoading, 12=Dashboard
-type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+// V2 steps: 0=Stack scan, 1=Profile/goal, 2=Dynamic questions,
+// 3=Pre-verdict, 4=Email recap, 5=Loading, 12=Dashboard.
+type StepId = 0 | 1 | 2 | 3 | 4 | 5 | 12;
 
-const TOTAL_VISIBLE_STEPS = 10;
-const FUNNEL_VERSION = "v1";
+const TOTAL_VISIBLE_STEPS = 6;
+const FUNNEL_VERSION = "v2";
 const PROGRESS_MAP: Record<StepId, number> = {
-  0: 0, 1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 10: 8, 11: 9, 12: 10,
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  12: 6,
 };
 
 function createInitialSession(language: "fr" | "en"): SessionState {
@@ -65,7 +63,9 @@ function createInitialSession(language: "fr" | "en"): SessionState {
 
 function toStepId(value: unknown): StepId {
   const parsed = Number(value);
-  return Number.isInteger(parsed) && parsed >= 0 && parsed <= 12 ? (parsed as StepId) : 0;
+  return parsed === 0 || parsed === 1 || parsed === 2 || parsed === 3 || parsed === 4 || parsed === 5 || parsed === 12
+    ? (parsed as StepId)
+    : 0;
 }
 
 function serializeDiscoveryAnswers(answers: Map<string, number>) {
@@ -120,7 +120,7 @@ export default function DiagnosticRouter() {
   const language = lang === "en" ? "en" : "fr";
   const [searchParams] = useSearchParams();
   const fromTool = searchParams.get("from") || undefined;
-  const { tools, clusters, doublonRules, discoveryQuestions, loading, error } = useDiagnosticData();
+  const { tools, doublonRules, discoveryQuestions, loading, error } = useDiagnosticData();
   const recoveryRef = useRef<ReturnType<typeof loadDiagnosticRecovery> | undefined>(undefined);
   if (recoveryRef.current === undefined) {
     recoveryRef.current = loadDiagnosticRecovery(language, FUNNEL_VERSION);
@@ -142,9 +142,14 @@ export default function DiagnosticRouter() {
   const previousStepRef = useRef<StepId | null>(null);
   const resumeLoggedRef = useRef(false);
 
-  // Compute diagnostic result when reaching dashboard
+  const previewDiagnosticResult = useMemo<DiagnosticResult | null>(() => {
+    if (step < 3 || session.selectedTools.length === 0) return null;
+    return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions });
+  }, [discoveryQuestions, doublonRules, session, step, tools]);
+
+  // Compute final diagnostic result when reaching dashboard.
   const diagnosticResult = useMemo<DiagnosticResult | null>(() => {
-    if (step < 11) return null;
+    if (step !== 12) return null;
     return runDiagnostic(session, { allTools: tools, doublonRules, discoveryQuestions });
   }, [step, session, tools, doublonRules, discoveryQuestions]);
 
@@ -191,11 +196,11 @@ export default function DiagnosticRouter() {
       templateKey: "diagnostic_report_ready",
       locale: session.language,
       metadata: {
-        trigger_step: 9,
+        trigger_step: 4,
         funnel_version: FUNNEL_VERSION,
       },
     });
-    logEvent(9, "report_requested", { template_key: "diagnostic_report_ready" });
+    logEvent(4, "report_requested", { template_key: "diagnostic_report_ready" });
   }, [dbSessionId, dbSessionToken, logEvent, persistRecovery, session.email, session.emailPreferences, session.language]);
 
   // Transition helper
@@ -266,8 +271,8 @@ export default function DiagnosticRouter() {
     if (previous === step) return;
     previousStepRef.current = step;
 
-    // Queue report email only on explicit transition from recap step -> closing step.
-    if (previous === 9 && step === 10) {
+    // Queue report email only on explicit transition from email recap -> loading/results.
+    if (previous === 4 && step === 5) {
       maybeQueueReportEmail();
     }
 
@@ -453,31 +458,15 @@ export default function DiagnosticRouter() {
       case 1: return goTo(2);
       case 2: return goTo(3);
       case 3: return goTo(4);
-      case 4: return session.persona === "SOFIA" ? goTo(5) : goTo(6);
-      case 5: return goTo(6);
-      case 6: // after clusters → transition → api costs (Theo) or discovery
-        if (session.persona === "THEO") {
-          return goToWithTransition(7, t(
-            `Merci ${session.firstName} ! On affine ton diagnostic…`,
-            `Thanks ${session.firstName}! Refining your diagnostic…`
-          ));
-        }
-        return goToWithTransition(8, t(
-          `Merci ${session.firstName} ! On analyse ta stack…`,
-          `Thanks ${session.firstName}! Analyzing your stack…`
+      case 4:
+        return goToWithTransition(5, t(
+          session.firstName ? `C'est parti ${session.firstName} ! Calcul en cours…` : "Calcul de ton diagnostic…",
+          session.firstName ? `Here we go ${session.firstName}! Calculating…` : "Calculating your diagnostic…"
         ));
-      case 7: return goTo(8); // api costs → discovery
-      case 8: return goTo(9); // discovery → email recap
-      case 9: return goTo(10); // email recap → closing
-      case 10: // closing → results loading with transition
-        return goToWithTransition(11, t(
-          `C'est parti ${session.firstName} ! Calcul en cours…`,
-          `Here we go ${session.firstName}! Calculating…`
-        ));
-      case 11: return goTo(12); // results loading → dashboard
+      case 5: return goTo(12);
       case 12: return;
     }
-  }, [goTo, goToWithTransition, logEvent, session.firstName, session.persona, t]);
+  }, [goTo, goToWithTransition, logEvent, session.firstName, t]);
 
   const prevFrom = useCallback((current: StepId) => {
     logEvent(current, "step_back", { direction: "prev" });
@@ -487,14 +476,9 @@ export default function DiagnosticRouter() {
       case 3: return goTo(2);
       case 4: return goTo(3);
       case 5: return goTo(4);
-      case 6: return session.persona === "SOFIA" ? goTo(5) : goTo(4);
-      case 7: return goTo(6);
-      case 8: return session.persona === "THEO" ? goTo(7) : goTo(6);
-      case 9: return goTo(8);
-      case 10: return goTo(9);
       default: return;
     }
-  }, [goTo, logEvent, session.persona]);
+  }, [goTo, logEvent]);
 
   if (loading) {
     return (
@@ -523,8 +507,6 @@ export default function DiagnosticRouter() {
   // Map internal step to visible progress (0-9)
   const progressIndex = PROGRESS_MAP[step];
 
-  const showRightPanel = step >= 7 && step <= 10;
-
   // If on dashboard step, render full dashboard
   if (step === 12 && diagnosticResult) {
     return <DiagDashboard result={diagnosticResult} allTools={tools} t={t} dbSessionId={dbSessionId} dbSessionToken={dbSessionToken} />;
@@ -535,7 +517,7 @@ export default function DiagnosticRouter() {
       <DiagTopBar
         session={session}
         step={progressIndex}
-        totalSteps={TOTAL_VISIBLE_STEPS}
+        totalSteps={TOTAL_VISIBLE_STEPS + 1}
         t={t}
       />
 
@@ -575,71 +557,57 @@ export default function DiagnosticRouter() {
         />
       )}
 
-      <div className={`max-w-7xl mx-auto px-4 py-8 md:py-12 ${showRightPanel ? "flex gap-6" : ""}`}>
+      <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
         {/* Main content */}
         <div className="flex-1 min-w-0">
           {step === 0 && (
-            <DiagStep0Prenom session={session} onUpdate={updateSession} onNext={() => nextFrom(0)} t={t} fromTool={fromTool} />
+            <DiagStepStackScan
+              session={session}
+              tools={tools}
+              onUpdate={updateSession}
+              onNext={() => nextFrom(0)}
+              t={t}
+              fromTool={fromTool}
+            />
           )}
           {step === 1 && (
-            <DiagStep1Tjm session={session} onUpdate={updateSession} onNext={() => nextFrom(1)} t={t} />
-          )}
-          {step === 2 && (
-            <DiagStep2Persona session={session} onUpdate={updateSession} onNext={() => nextFrom(2)} t={t} />
-          )}
-          {step === 3 && (
-            <DiagStep2bEmail session={session} onUpdate={updateSession} onNext={() => nextFrom(3)} t={t} />
-          )}
-          {step === 4 && (
-            <DiagStep2cComplementary session={session} onUpdate={updateSession} onNext={() => nextFrom(4)} t={t} />
-          )}
-          {step === 5 && (
-            <DiagStep3SofiaSpecialties session={session} onUpdate={updateSession} onNext={() => nextFrom(5)} t={t} />
-          )}
-          {step === 6 && (
-            <DiagStep4Clusters
+            <DiagStepProfileGoal
               session={session}
               onUpdate={updateSession}
-              onNext={() => nextFrom(6)}
-              onPrev={() => prevFrom(6)}
-              clusters={clusters}
-              tools={tools}
-              doublonRules={doublonRules}
+              onNext={() => nextFrom(1)}
+              onPrev={() => prevFrom(1)}
               t={t}
             />
           )}
-          {step === 7 && (
-            <DiagStep5ApiCosts session={session} onUpdate={updateSession} onNext={() => nextFrom(7)} t={t} />
-          )}
-          {step === 8 && (
+          {step === 2 && (
             <DiagStep6Discovery
               session={session}
               onUpdate={updateSession}
-              onNext={() => nextFrom(8)}
-              onPrev={() => prevFrom(8)}
+              onNext={() => nextFrom(2)}
+              onPrev={() => prevFrom(2)}
               discoveryQuestions={discoveryQuestions}
               t={t}
             />
           )}
-          {step === 9 && (
+          {step === 3 && previewDiagnosticResult && (
+            <DiagStepPreVerdict
+              session={session}
+              result={previewDiagnosticResult}
+              onNext={() => nextFrom(3)}
+              onPrev={() => prevFrom(3)}
+              t={t}
+            />
+          )}
+          {step === 4 && (
             <DiagStep6bEmailRecap
               session={session}
               onUpdate={updateSession}
-              onNext={() => nextFrom(9)}
-              onPrev={() => prevFrom(9)}
+              onNext={() => nextFrom(4)}
+              onPrev={() => prevFrom(4)}
               t={t}
             />
           )}
-          {step === 10 && (
-            <DiagStep7Closing
-              session={session}
-              onUpdate={updateSession}
-              onNext={() => nextFrom(10)}
-              onPrev={() => prevFrom(10)}
-              t={t}
-            />
-          )}
-          {step === 11 && (
+          {step === 5 && (
             <DiagResultsLoading
               toolCount={session.selectedTools.length}
               t={t}
@@ -647,11 +615,6 @@ export default function DiagnosticRouter() {
             />
           )}
         </div>
-
-        {/* Right panel — desktop only, steps 6-10 */}
-        {showRightPanel && (
-          <DiagRightPanel session={session} doublonRules={doublonRules} t={t} />
-        )}
       </div>
 
       {/* Auto-save indicator */}

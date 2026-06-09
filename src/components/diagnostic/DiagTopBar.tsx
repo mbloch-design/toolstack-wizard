@@ -15,7 +15,7 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
     [session.selectedTools]
   );
 
-  const showCounter = step >= 6; // visible from clusters onward (internal step 6+)
+  const showCounter = session.selectedTools.length > 0;
 
   const progressPercent = Math.round((step / Math.max(totalSteps - 1, 1)) * 100);
 
