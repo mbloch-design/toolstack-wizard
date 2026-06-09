@@ -18,6 +18,11 @@ export interface SessionState {
   };
   apiSpendTranche?: "low" | "mid" | "high" | "premium" | "unknown";
   selectedTools: Tool[];
+  selectionCoverage?: {
+    covered: string[];
+    skipped: string[];
+    confidence: "low" | "medium" | "high";
+  };
   discoveryAnswers: Map<string, number>;
   closingAnswers: [string, string, string];
 }

@@ -94,6 +94,7 @@ function serializeSessionSnapshot(session: SessionState) {
     email: session.email || null,
     emailPreferences: session.emailPreferences || null,
     apiSpendTranche: session.apiSpendTranche || null,
+    selectionCoverage: session.selectionCoverage || null,
     selectedTools: session.selectedTools.map((t) => ({
       id: t.id,
       name: t.name,
@@ -112,6 +113,7 @@ function buildDiagnosticContext(session: SessionState) {
     complementary_skills: session.complementarySkills,
     primary_specialty: session.primarySpecialty || null,
     complementary_specialties: session.complementarySpecialties || [],
+    selection_coverage: session.selectionCoverage || null,
   };
 }
 
