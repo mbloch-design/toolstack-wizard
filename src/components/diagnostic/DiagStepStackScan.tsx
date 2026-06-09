@@ -438,23 +438,21 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
           </div>
 
           <div className="rounded-xl border border-border bg-card p-5">
-            <p className="text-sm font-semibold text-foreground">{t("Outils sélectionnés", "Selected tools")}</p>
+            <p className="text-sm font-semibold text-foreground">{t("Ajuster les outils", "Adjust tools")}</p>
             {selectedTools.length === 0 ? (
               <p className="mt-4 rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">
                 {t("Aucun outil pour l’instant.", "No tool yet.")}
               </p>
             ) : (
-              <div className="mt-4 flex max-h-[320px] flex-wrap gap-2 overflow-y-auto">
+              <div className="mt-4 max-h-[420px] space-y-2 overflow-y-auto pr-1">
                 {selectedTools.map((tool) => (
-                  <button
+                  <SelectedToolRow
                     key={tool.id}
-                    type="button"
-                    onClick={() => toggleTool(tool)}
-                    className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-2 text-sm text-foreground hover:border-destructive/50"
-                  >
-                    {tool.name}
-                    <X className="h-3.5 w-3.5 text-muted-foreground" />
-                  </button>
+                    tool={tool}
+                    onRemove={() => toggleTool(tool)}
+                    onUpdate={(patch) => updateSelectedTool(tool.id, patch)}
+                    t={t}
+                  />
                 ))}
               </div>
             )}
@@ -765,9 +763,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
           <div className="rounded-xl border border-border bg-card p-4">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-sm font-semibold text-foreground">{t("Ta sélection", "Your selection")}</p>
+                <p className="text-sm font-semibold text-foreground">{t("Résumé de ta stack", "Stack summary")}</p>
                 <p className="text-xs text-muted-foreground">
-                  {t("Ajuste seulement les outils suspects.", "Only adjust suspicious tools.")}
+                  {t("Le détail se vérifie juste après.", "Details are checked right after.")}
                 </p>
               </div>
               <button
@@ -786,16 +784,29 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
                 {t("Sélectionne au moins un outil pour obtenir un premier signal.", "Select at least one tool to get a first signal.")}
               </p>
             ) : (
-              <div className="mt-4 max-h-[58vh] space-y-2 overflow-y-auto pr-1">
-                {selectedTools.map((tool) => (
-                  <SelectedToolRow
-                    key={tool.id}
-                    tool={tool}
-                    onRemove={() => toggleTool(tool)}
-                    onUpdate={(patch) => updateSelectedTool(tool.id, patch)}
-                    t={t}
-                  />
-                ))}
+              <div className="mt-4 space-y-4">
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="rounded-lg bg-muted/50 p-3 text-center">
+                    <p className="font-mono text-2xl font-bold text-foreground">{selectedTools.length}</p>
+                    <p className="text-xs text-muted-foreground">{t("outils", "tools")}</p>
+                  </div>
+                  <div className="rounded-lg bg-muted/50 p-3 text-center">
+                    <p className="font-mono text-2xl font-bold text-foreground">{coveredCount}</p>
+                    <p className="text-xs text-muted-foreground">{t("zones", "areas")}</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {selectedTools.slice(-5).map((tool) => (
+                    <span key={tool.id} className="rounded-md border border-border px-2.5 py-1 text-xs font-medium text-foreground">
+                      {tool.name}
+                    </span>
+                  ))}
+                  {selectedTools.length > 5 && (
+                    <span className="rounded-md bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                      +{selectedTools.length - 5}
+                    </span>
+                  )}
+                </div>
               </div>
             )}
           </div>
