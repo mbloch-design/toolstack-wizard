@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import type { Session } from "@supabase/supabase-js";
 import { useLang } from "@/hooks/useLang";
 import { removeNoindex, setNoindex } from "@/lib/seo";
+import { supabase } from "@/integrations/supabase/client";
 import {
   type BackofficeEmailJob,
   type BackofficeDashboardResponse,
   type BackofficeRestitution,
   type BackofficeSession,
   type BackofficeSessionDetailResponse,
-  authenticateBackofficeAdmin,
   fetchBackofficeDashboard,
   fetchBackofficeSessionDetail,
   updateBackofficeEmailJob,
@@ -39,7 +40,7 @@ import {
   X,
 } from "lucide-react";
 
-const STORAGE_KEY = "tooltrim.backoffice.admin_session";
+const LEGACY_SESSION_STORAGE_KEY = "tooltrim.backoffice.admin_session";
 const LEGACY_STORAGE_KEY = "tooltrim.backoffice.admin_key";
 
 type SessionStatus = "all" | "new" | "active" | "completed" | "abandoned";
@@ -47,8 +48,9 @@ type TabId = "preprod" | "pilotage" | "sessions" | "emails" | "restitutions" | "
 type RestitutionLike = Pick<BackofficeRestitution, "channel" | "summary" | "details" | "score_snapshot">;
 type PreprodCheckStatus = "ok" | "warning" | "fail";
 type AdminSession = {
-  token: string;
-  expiresAt: string;
+  accessToken: string;
+  email: string | null;
+  expiresAt: string | null;
 };
 
 function formatDateTime(value: string | null, locale: "fr" | "en") {
@@ -367,27 +369,23 @@ function parseTagsInput(input: string) {
     .filter((item) => item.length > 0);
 }
 
-function parseAdminSession(raw: string | null): AdminSession | null {
-  if (!raw) return null;
-  try {
-    const parsed = JSON.parse(raw) as Partial<AdminSession>;
-    if (!parsed.token || !parsed.expiresAt) return null;
-    const expiresAt = new Date(parsed.expiresAt).getTime();
-    if (!Number.isFinite(expiresAt) || expiresAt <= Date.now()) return null;
-    return {
-      token: parsed.token,
-      expiresAt: parsed.expiresAt,
-    };
-  } catch {
-    return null;
-  }
+function toAdminSession(session: Session | null): AdminSession | null {
+  if (!session?.access_token) return null;
+  return {
+    accessToken: session.access_token,
+    email: session.user.email || null,
+    expiresAt: typeof session.expires_at === "number"
+      ? new Date(session.expires_at * 1000).toISOString()
+      : null,
+  };
 }
 
 export default function BackOfficePage() {
   const { lang, t } = useLang();
   const locale = lang === "en" ? "en" : "fr";
 
-  const [adminKeyInput, setAdminKeyInput] = useState("");
+  const [adminEmailInput, setAdminEmailInput] = useState("");
+  const [adminPasswordInput, setAdminPasswordInput] = useState("");
   const [adminSession, setAdminSession] = useState<AdminSession | null>(null);
   const [authLoading, setAuthLoading] = useState(false);
 
@@ -422,12 +420,17 @@ export default function BackOfficePage() {
 
   useEffect(() => {
     localStorage.removeItem(LEGACY_STORAGE_KEY);
-    const savedSession = parseAdminSession(localStorage.getItem(STORAGE_KEY));
-    if (savedSession) {
-      setAdminSession(savedSession);
-    } else {
-      localStorage.removeItem(STORAGE_KEY);
-    }
+    localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
+
+    void supabase.auth.getSession().then(({ data }) => {
+      setAdminSession(toAdminSession(data.session));
+    });
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setAdminSession(toAdminSession(session));
+    });
+
+    return () => listener.subscription.unsubscribe();
   }, []);
 
   const loadDashboard = useCallback(async () => {
@@ -435,7 +438,7 @@ export default function BackOfficePage() {
     setLoading(true);
     setError(null);
     try {
-      const data = await fetchBackofficeDashboard(adminSession.token, {
+      const data = await fetchBackofficeDashboard(adminSession.accessToken, {
         days,
         limit,
         persona: personaFilter === "all" ? null : personaFilter,
@@ -445,8 +448,8 @@ export default function BackOfficePage() {
       const message = e instanceof Error ? e.message : "Unable to load data";
       setError(message);
       if (message.toLowerCase().includes("unauthorized")) {
-        localStorage.removeItem(STORAGE_KEY);
         setAdminSession(null);
+        void supabase.auth.signOut();
       }
     } finally {
       setLoading(false);
@@ -473,7 +476,7 @@ export default function BackOfficePage() {
       setDetail(null);
       setSessionAdminMessage(null);
       try {
-        const response = await fetchBackofficeSessionDetail(adminSession.token, sessionId);
+        const response = await fetchBackofficeSessionDetail(adminSession.accessToken, sessionId);
         setDetail(response);
       } catch (e) {
         setDetailError(e instanceof Error ? e.message : "Unable to load session detail");
@@ -767,30 +770,32 @@ export default function BackOfficePage() {
   }, [pilotage.rows, pilotageLaneFilter, pilotagePriorityFilter]);
 
   const connect = useCallback(async () => {
-    const value = adminKeyInput.trim();
-    if (!value) return;
+    const email = adminEmailInput.trim();
+    const password = adminPasswordInput;
+    if (!email || !password) return;
     setAuthLoading(true);
     setError(null);
     try {
-      const response = await authenticateBackofficeAdmin(value);
-      const session = {
-        token: response.adminSessionToken,
-        expiresAt: response.expiresAt,
-      };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      if (signInError) throw signInError;
       localStorage.removeItem(LEGACY_STORAGE_KEY);
-      setAdminSession(session);
-      setAdminKeyInput("");
+      localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
+      setAdminSession(toAdminSession(data.session));
+      setAdminPasswordInput("");
     } catch (e) {
       setError(e instanceof Error ? e.message : t("Connexion impossible", "Unable to sign in"));
     } finally {
       setAuthLoading(false);
     }
-  }, [adminKeyInput, t]);
+  }, [adminEmailInput, adminPasswordInput, t]);
 
   const disconnect = useCallback(() => {
-    localStorage.removeItem(STORAGE_KEY);
+    void supabase.auth.signOut();
     localStorage.removeItem(LEGACY_STORAGE_KEY);
+    localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
     setAdminSession(null);
     setDashboard(null);
     setDetail(null);
@@ -804,7 +809,7 @@ export default function BackOfficePage() {
     setSessionAdminMessage(null);
     try {
       const tags = parseTagsInput(sessionTagsInput);
-      const result = await updateBackofficeSessionAdmin(adminSession.token, {
+      const result = await updateBackofficeSessionAdmin(adminSession.accessToken, {
         sessionId: detail.session.session_id,
         tags,
         note: sessionNoteInput.trim() || null,
@@ -845,7 +850,7 @@ export default function BackOfficePage() {
           action === "schedule"
             ? new Date(Date.now() + 60 * 60 * 1000).toISOString()
             : undefined;
-        const result = await updateBackofficeEmailJob(adminSession.token, {
+        const result = await updateBackofficeEmailJob(adminSession.accessToken, {
           jobId: job.id,
           action,
           scheduledFor,
@@ -867,7 +872,7 @@ export default function BackOfficePage() {
         });
 
         if (detail?.session?.session_id === result.job.session_id) {
-          const refreshed = await fetchBackofficeSessionDetail(adminSession.token, result.job.session_id);
+          const refreshed = await fetchBackofficeSessionDetail(adminSession.accessToken, result.job.session_id);
           setDetail(refreshed);
         }
         void loadDashboard();
@@ -1180,8 +1185,8 @@ export default function BackOfficePage() {
           </div>
           <p className="text-sm text-muted-foreground">
             {t(
-              "Saisis ta clé une seule fois. Elle est échangée contre une session admin temporaire.",
-              "Enter your key once. It is exchanged for a temporary admin session."
+              "Connecte-toi avec ton email et ton mot de passe administrateur.",
+              "Sign in with your admin email and password."
             )}
           </p>
           {error && (
@@ -1189,16 +1194,23 @@ export default function BackOfficePage() {
               {error}
             </div>
           )}
-          <div className="flex flex-col sm:flex-row gap-2">
+          <div className="grid gap-2">
+            <input
+              type="email"
+              value={adminEmailInput}
+              onChange={(event) => setAdminEmailInput(event.target.value)}
+              placeholder={t("Email administrateur", "Admin email")}
+              className="h-10 px-3 rounded-md border border-input bg-background text-sm"
+            />
             <input
               type="password"
-              value={adminKeyInput}
-              onChange={(event) => setAdminKeyInput(event.target.value)}
+              value={adminPasswordInput}
+              onChange={(event) => setAdminPasswordInput(event.target.value)}
               onKeyDown={(event) => {
                 if (event.key === "Enter") void connect();
               }}
-              placeholder={t("Clé d'administration", "Admin key")}
-              className="flex-1 h-10 px-3 rounded-md border border-input bg-background text-sm"
+              placeholder={t("Mot de passe", "Password")}
+              className="h-10 px-3 rounded-md border border-input bg-background text-sm"
             />
             <button
               onClick={() => void connect()}
@@ -1209,7 +1221,7 @@ export default function BackOfficePage() {
             </button>
           </div>
           <div className="text-xs text-muted-foreground">
-            {t("La clé brute n'est plus conservée dans le navigateur.", "The raw key is no longer kept in the browser.")}
+            {t("L'accès est limité aux emails autorisés côté serveur.", "Access is restricted to server-allowed emails.")}
           </div>
         </div>
       </div>
@@ -1232,7 +1244,8 @@ export default function BackOfficePage() {
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <span className="h-9 px-3 rounded-md border border-border text-xs inline-flex items-center text-muted-foreground">
-            {t("Session jusqu'à", "Session until")} {formatDateTime(adminSession.expiresAt, locale)}
+            {adminSession.email || t("Admin connecté", "Signed-in admin")}
+            {adminSession.expiresAt ? ` · ${formatDateTime(adminSession.expiresAt, locale)}` : ""}
           </span>
           <button
             onClick={

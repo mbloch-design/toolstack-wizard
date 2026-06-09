@@ -66,7 +66,8 @@ loadEnvFile(ENV_FILE);
 const missing = requiredEnv([
   "SUPABASE_URL",
   "VITE_SUPABASE_PUBLISHABLE_KEY",
-  "BACKOFFICE_ADMIN_KEY",
+  "GO30_ADMIN_EMAIL",
+  "GO30_ADMIN_PASSWORD",
 ]);
 
 if (missing.length > 0) {
@@ -76,31 +77,26 @@ if (missing.length > 0) {
 
 try {
   const auth = await expectOk(
-    "admin key can create temporary admin session",
-    await fetch(functionUrl("backoffice-diagnostic"), {
+    "admin email/password can create Supabase session",
+    await fetch(`${process.env.SUPABASE_URL.replace(/\/+$/, "")}/auth/v1/token?grant_type=password`, {
       method: "POST",
       headers: headers(),
       body: JSON.stringify({
-        mode: "auth",
-        adminKey: process.env.BACKOFFICE_ADMIN_KEY,
+        email: process.env.GO30_ADMIN_EMAIL,
+        password: process.env.GO30_ADMIN_PASSWORD,
       }),
     })
   );
 
-  if (!auth?.adminSessionToken || !auth?.expiresAt) {
-    throw new Error("admin auth response missing adminSessionToken/expiresAt");
-  }
-
-  const expiresAt = new Date(auth.expiresAt).getTime();
-  if (!Number.isFinite(expiresAt) || expiresAt <= Date.now()) {
-    throw new Error(`admin session expiry is invalid: ${auth.expiresAt}`);
+  if (!auth?.access_token) {
+    throw new Error("Supabase auth response missing access_token");
   }
 
   await expectOk(
-    "temporary admin session can read dashboard",
+    "Supabase admin session can read dashboard",
     await fetch(functionUrl("backoffice-diagnostic"), {
       method: "POST",
-      headers: headers({ "x-admin-session": auth.adminSessionToken }),
+      headers: headers({ Authorization: `Bearer ${auth.access_token}` }),
       body: JSON.stringify({
         mode: "dashboard",
         days: 2,
@@ -110,10 +106,10 @@ try {
   );
 
   await expectUnauthorized(
-    "tampered admin session is rejected",
+    "invalid Supabase admin session is rejected",
     await fetch(functionUrl("backoffice-diagnostic"), {
       method: "POST",
-      headers: headers({ "x-admin-session": `${auth.adminSessionToken.slice(0, -4)}nope` }),
+      headers: headers({ Authorization: "Bearer invalid-admin-session" }),
       body: JSON.stringify({
         mode: "dashboard",
         days: 2,
@@ -122,9 +118,9 @@ try {
     })
   );
 
-  console.log("[OK] admin key creates temporary admin session");
-  console.log("[OK] temporary admin session reads dashboard");
-  console.log("[OK] tampered admin session is rejected");
+  console.log("[OK] admin email/password creates Supabase session");
+  console.log("[OK] Supabase admin session reads dashboard");
+  console.log("[OK] invalid Supabase admin session is rejected");
   console.log("");
   console.log("GO30 admin auth verdict: PASS");
 } catch (error) {

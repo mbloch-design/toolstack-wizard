@@ -20,10 +20,10 @@ function buildBaseHeaders(): HeadersInit {
   };
 }
 
-function buildHeaders(adminSessionToken: string): HeadersInit {
+function buildHeaders(accessToken: string): HeadersInit {
   return {
     ...buildBaseHeaders(),
-    "x-admin-session": adminSessionToken,
+    Authorization: `Bearer ${accessToken}`,
   };
 }
 
@@ -124,12 +124,6 @@ export type BackofficeEmailJob = {
   updated_at: string;
 };
 
-export type BackofficeAuthResponse = {
-  mode: "auth";
-  adminSessionToken: string;
-  expiresAt: string;
-};
-
 export type BackofficeRestitution = {
   id: string;
   session_id: string;
@@ -212,25 +206,13 @@ export type BackofficeUpdateEmailJobResponse = {
   job: BackofficeEmailJob;
 };
 
-export async function authenticateBackofficeAdmin(adminKey: string): Promise<BackofficeAuthResponse> {
-  const res = await fetch(getFunctionUrl(), {
-    method: "POST",
-    headers: buildBaseHeaders(),
-    body: JSON.stringify({
-      mode: "auth",
-      adminKey,
-    }),
-  });
-  return parseOrThrow(res) as Promise<BackofficeAuthResponse>;
-}
-
 export async function fetchBackofficeDashboard(
-  adminSessionToken: string,
+  accessToken: string,
   params: { days: number; limit: number; persona?: string | null }
 ): Promise<BackofficeDashboardResponse> {
   const res = await fetch(getFunctionUrl(), {
     method: "POST",
-    headers: buildHeaders(adminSessionToken),
+    headers: buildHeaders(accessToken),
     body: JSON.stringify({
       mode: "dashboard",
       days: params.days,
@@ -242,12 +224,12 @@ export async function fetchBackofficeDashboard(
 }
 
 export async function fetchBackofficeSessionDetail(
-  adminSessionToken: string,
+  accessToken: string,
   sessionId: string
 ): Promise<BackofficeSessionDetailResponse> {
   const res = await fetch(getFunctionUrl(), {
     method: "POST",
-    headers: buildHeaders(adminSessionToken),
+    headers: buildHeaders(accessToken),
     body: JSON.stringify({
       mode: "session_detail",
       sessionId,
@@ -257,12 +239,12 @@ export async function fetchBackofficeSessionDetail(
 }
 
 export async function updateBackofficeSessionAdmin(
-  adminSessionToken: string,
+  accessToken: string,
   payload: { sessionId: string; tags?: string[]; note?: string | null }
 ): Promise<BackofficeUpdateSessionAdminResponse> {
   const res = await fetch(getFunctionUrl(), {
     method: "POST",
-    headers: buildHeaders(adminSessionToken),
+    headers: buildHeaders(accessToken),
     body: JSON.stringify({
       mode: "update_session_admin",
       sessionId: payload.sessionId,
@@ -274,7 +256,7 @@ export async function updateBackofficeSessionAdmin(
 }
 
 export async function updateBackofficeEmailJob(
-  adminSessionToken: string,
+  accessToken: string,
   payload: {
     jobId: string;
     action: "retry_now" | "cancel" | "schedule";
@@ -283,7 +265,7 @@ export async function updateBackofficeEmailJob(
 ): Promise<BackofficeUpdateEmailJobResponse> {
   const res = await fetch(getFunctionUrl(), {
     method: "POST",
-    headers: buildHeaders(adminSessionToken),
+    headers: buildHeaders(accessToken),
     body: JSON.stringify({
       mode: "update_email_job",
       jobId: payload.jobId,

@@ -1,12 +1,9 @@
-import { spawnSync } from "node:child_process";
-import { existsSync, readFileSync, writeFileSync, rmSync } from "node:fs";
-import { join } from "node:path";
-import { tmpdir } from "node:os";
+import { existsSync, readFileSync } from "node:fs";
 
 const PROJECT_REF = "rtfyfuwfdpnsogovkwai";
-const SUPABASE_BIN = process.env.SUPABASE_CLI || "supabase";
 const REQUIRED_SECRETS = [
   "BACKOFFICE_ADMIN_KEY",
+  "BACKOFFICE_ADMIN_EMAILS",
   "BACKOFFICE_ALERT_WORKER_KEY",
   "DIAGNOSTIC_EMAIL_WORKER_KEY",
 ];
@@ -39,15 +36,25 @@ function hasValue(value) {
   return Boolean(value && !value.includes("<"));
 }
 
-function runSupabase(args, env) {
-  let result = spawnSync(SUPABASE_BIN, args, { stdio: "inherit", env });
+async function pushSecrets(accessToken, envFile, keys) {
+  const response = await fetch(`https://api.supabase.com/v1/projects/${PROJECT_REF}/secrets`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(
+      keys.map((key) => ({
+        name: key,
+        value: envFile[key],
+      }))
+    ),
+  });
 
-  if (result.error?.code === "ENOENT" && !process.env.SUPABASE_CLI) {
-    console.log("Local supabase CLI not found, falling back to npx supabase@latest.");
-    result = spawnSync("npx", ["--yes", "supabase@latest", ...args], { stdio: "inherit", env });
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Supabase Management API HTTP ${response.status}: ${text.slice(0, 700)}`);
   }
-
-  if (result.status !== 0) process.exit(result.status || 1);
 }
 
 const envFile = loadEnv();
@@ -68,22 +75,17 @@ const keys = [
   ...OPTIONAL_SECRETS.filter((key) => hasValue(envFile[key])),
 ];
 
-const tempEnvPath = join(tmpdir(), `tooltrim-preprod-secrets-${process.pid}.env`);
-const tempBody = keys.map((key) => `${key}=${envFile[key]}`).join("\n");
-writeFileSync(tempEnvPath, `${tempBody}\n`, { mode: 0o600 });
-
 try {
   console.log(`Pushing Supabase Edge Function secrets to ${PROJECT_REF}:`);
   for (const key of keys) console.log(`- ${key}`);
   console.log("");
 
-  runSupabase(["secrets", "set", "--project-ref", PROJECT_REF, "--env-file", tempEnvPath], {
-    ...process.env,
-    SUPABASE_ACCESS_TOKEN: accessToken,
-  });
+  await pushSecrets(accessToken, envFile, keys);
 
   console.log("");
   console.log("Supabase Edge Function secrets pushed. Now run: npm run validate:preprod");
-} finally {
-  rmSync(tempEnvPath, { force: true });
+} catch (error) {
+  console.error("[FAIL] Supabase Edge Function secrets push failed");
+  console.error(`     ${error instanceof Error ? error.message : String(error)}`);
+  process.exit(1);
 }
