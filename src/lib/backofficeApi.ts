@@ -70,6 +70,7 @@ export type BackofficeSession = {
   estimated_waste: number | null;
   optimized_cost: number | null;
   annual_savings: number | null;
+  selected_tools?: Array<Record<string, unknown>> | null;
   actions_completed: number | null;
   stack_profile: string | null;
   stack_maturity: string | null;

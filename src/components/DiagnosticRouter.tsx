@@ -568,6 +568,12 @@ export default function DiagnosticRouter() {
               tools={tools}
               onUpdate={updateSession}
               onNext={() => nextFrom(0)}
+              onTrack={(eventName, eventPayload = {}) => {
+                logEvent(0, eventName, {
+                  ...eventPayload,
+                  funnel_version: FUNNEL_VERSION,
+                });
+              }}
               t={t}
               fromTool={fromTool}
             />

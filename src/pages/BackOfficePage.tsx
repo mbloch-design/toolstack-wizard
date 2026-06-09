@@ -53,6 +53,8 @@ type AdminSession = {
   expiresAt: string | null;
 };
 
+const SELECTION_AREA_TOTAL = 10;
+
 function formatDateTime(value: string | null, locale: "fr" | "en") {
   if (!value) return "—";
   const date = new Date(value);
@@ -141,6 +143,47 @@ function getSessionCalibration(session: BackofficeSession) {
 
 function getSessionDiagnosticContext(session: BackofficeSession) {
   return asRecord(session.diagnostic_context) || {};
+}
+
+function getSelectionCoverage(session: BackofficeSession) {
+  const context = getSessionDiagnosticContext(session);
+  const coverage = asRecord(context.selection_coverage);
+  const covered = Array.isArray(coverage?.covered)
+    ? coverage.covered.filter((item): item is string => typeof item === "string")
+    : [];
+  const skipped = Array.isArray(coverage?.skipped)
+    ? coverage.skipped.filter((item): item is string => typeof item === "string")
+    : [];
+  const confidenceValue = coverage?.confidence;
+  const confidence =
+    confidenceValue === "high" || confidenceValue === "medium" || confidenceValue === "low"
+      ? confidenceValue
+      : null;
+  const checkedCount = covered.length + skipped.length;
+  const missingCount = Math.max(SELECTION_AREA_TOTAL - checkedCount, 0);
+  return {
+    hasCoverage: Boolean(coverage),
+    covered,
+    skipped,
+    confidence,
+    coveredCount: covered.length,
+    skippedCount: skipped.length,
+    checkedCount,
+    missingCount,
+  };
+}
+
+function selectionConfidenceLabel(confidence: string | null, locale: "fr" | "en") {
+  if (confidence === "high") return locale === "en" ? "High" : "Forte";
+  if (confidence === "medium") return locale === "en" ? "Medium" : "Moyenne";
+  if (confidence === "low") return locale === "en" ? "Low" : "Faible";
+  return locale === "en" ? "Missing" : "Absente";
+}
+
+function selectionConfidenceClasses(confidence: string | null) {
+  if (confidence === "high") return "bg-green-100 text-green-800";
+  if (confidence === "medium") return "bg-amber-100 text-amber-800";
+  return "bg-red-100 text-red-700";
 }
 
 function contextLabel(value: string | null, locale: "fr" | "en") {
@@ -759,6 +802,46 @@ export default function BackOfficePage() {
       }).length,
     };
   }, [filteredSessions, qualityRows]);
+
+  const selectionQualityRows = useMemo(() => {
+    return filteredSessions
+      .map((session) => {
+        const coverage = getSelectionCoverage(session);
+        const reviewRequired =
+          !coverage.hasCoverage ||
+          coverage.confidence === "low" ||
+          coverage.coveredCount < 4 ||
+          coverage.missingCount > 3;
+        return {
+          session,
+          coverage,
+          reviewRequired,
+        };
+      })
+      .filter((row) => row.reviewRequired || row.coverage.skippedCount > 0)
+      .sort(
+        (a, b) =>
+          Number(b.reviewRequired) - Number(a.reviewRequired) ||
+          b.coverage.missingCount - a.coverage.missingCount ||
+          a.coverage.coveredCount - b.coverage.coveredCount ||
+          new Date(b.session.created_at).getTime() - new Date(a.session.created_at).getTime()
+      );
+  }, [filteredSessions]);
+
+  const selectionQualitySummary = useMemo(() => {
+    const coverages = filteredSessions.map(getSelectionCoverage);
+    const withCoverage = coverages.filter((coverage) => coverage.hasCoverage);
+    const avgCovered = withCoverage.length
+      ? Math.round(withCoverage.reduce((sum, coverage) => sum + coverage.coveredCount, 0) / withCoverage.length)
+      : 0;
+    return {
+      missingCoverage: coverages.filter((coverage) => !coverage.hasCoverage).length,
+      lowCoverage: coverages.filter((coverage) => coverage.hasCoverage && coverage.coveredCount < 4).length,
+      skippedAreas: coverages.reduce((sum, coverage) => sum + coverage.skippedCount, 0),
+      avgCovered,
+      reviewRequired: selectionQualityRows.filter((row) => row.reviewRequired).length,
+    };
+  }, [filteredSessions, selectionQualityRows]);
 
   const pilotage = useMemo(() => buildBackofficePilotage(filteredSessions), [filteredSessions]);
   const filteredPilotageRows = useMemo(() => {
@@ -2197,6 +2280,120 @@ export default function BackOfficePage() {
 
       {activeTab === "quality" && (
         <div className="space-y-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Sélections à revoir", "Selections to review")}</div>
+              <div className="text-lg font-semibold mt-1 text-red-600">{selectionQualitySummary.reviewRequired}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Couverture absente", "Missing coverage")}</div>
+              <div className="text-lg font-semibold mt-1">{selectionQualitySummary.missingCoverage}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Couverture faible", "Low coverage")}</div>
+              <div className="text-lg font-semibold mt-1">{selectionQualitySummary.lowCoverage}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Zones moyennes", "Average areas")}</div>
+              <div className="text-lg font-semibold mt-1">{selectionQualitySummary.avgCovered}/{SELECTION_AREA_TOTAL}</div>
+            </div>
+            <div className="border border-border rounded-lg bg-card p-3">
+              <div className="text-xs text-muted-foreground">{t("Zones ignorées", "Skipped areas")}</div>
+              <div className="text-lg font-semibold mt-1">{selectionQualitySummary.skippedAreas}</div>
+            </div>
+          </div>
+
+          <div className="border border-border rounded-lg bg-card overflow-hidden">
+            <div className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
+              <Layers3 className="w-4 h-4" />
+              {t("Qualité de sélection utilisateur", "User selection quality")}
+            </div>
+            <div className="overflow-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-muted/40">
+                  <tr className="text-left">
+                    <th className="px-3 py-2 font-medium">{t("Créée", "Created")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Outils", "Tools")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Zones", "Areas")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Confiance", "Confidence")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Zones ignorées", "Skipped areas")}</th>
+                    <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {selectionQualityRows.map((row) => {
+                    const selectedTools = Array.isArray(row.session.selected_tools)
+                      ? row.session.selected_tools
+                      : [];
+                    return (
+                      <tr key={row.session.session_id} className="border-t border-border align-top">
+                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(row.session.created_at, locale)}</td>
+                        <td className="px-3 py-2">
+                          <div className="font-medium">{row.session.first_name || "—"}</div>
+                          <div className="text-xs text-muted-foreground">{row.session.email || "—"}</div>
+                        </td>
+                        <td className="px-3 py-2">{selectedTools.length}</td>
+                        <td className="px-3 py-2">
+                          <div className="font-medium">{row.coverage.coveredCount}/{SELECTION_AREA_TOTAL}</div>
+                          <div className="text-xs text-muted-foreground">
+                            {row.coverage.missingCount} {t("non vérifiée(s)", "unchecked")}
+                          </div>
+                        </td>
+                        <td className="px-3 py-2">
+                          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${selectionConfidenceClasses(row.coverage.confidence)}`}>
+                            {selectionConfidenceLabel(row.coverage.confidence, locale)}
+                          </span>
+                        </td>
+                        <td className="px-3 py-2 max-w-[260px]">
+                          {row.coverage.skipped.length > 0 ? (
+                            <div className="flex flex-wrap gap-1">
+                              {row.coverage.skipped.slice(0, 4).map((item) => (
+                                <span key={item} className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted text-muted-foreground">
+                                  {humanizeId(item)}
+                                </span>
+                              ))}
+                              {row.coverage.skipped.length > 4 && (
+                                <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                                  +{row.coverage.skipped.length - 4}
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            <span className="text-xs text-muted-foreground">—</span>
+                          )}
+                        </td>
+                        <td className="px-3 py-2 max-w-[300px]">
+                          <div className="text-xs text-muted-foreground">
+                            {!row.coverage.hasCoverage
+                              ? t("Session ancienne ou couverture non capturée.", "Older session or coverage not captured.")
+                              : row.reviewRequired
+                                ? t("Relire avant d'interpréter le score.", "Review before interpreting score.")
+                                : t("Sélection exploitable.", "Selection is usable.")}
+                          </div>
+                          <button
+                            onClick={() => void openDetail(row.session.session_id)}
+                            className="mt-2 h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                          >
+                            <Eye className="w-3.5 h-3.5" />
+                            {t("Détails", "Details")}
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  {!loading && selectionQualityRows.length === 0 && (
+                    <tr>
+                      <td colSpan={7} className="px-3 py-8 text-center text-muted-foreground">
+                        {t("Aucune sélection à revoir sur la période", "No selection needs review on this period")}
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             <div className="border border-border rounded-lg bg-card p-3">
               <div className="text-xs text-muted-foreground">{t("À revoir", "Review required")}</div>

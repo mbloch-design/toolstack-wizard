@@ -410,6 +410,7 @@ SELECT
   s.estimated_waste,
   s.optimized_cost,
   s.annual_savings,
+  COALESCE(s.selected_tools, '[]'::jsonb) AS selected_tools,
   s.actions_completed,
   s.stack_profile,
   s.stack_maturity,

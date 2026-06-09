@@ -24,6 +24,7 @@ interface Props {
   tools: Tool[];
   onUpdate: (patch: Partial<SessionState>) => void;
   onNext: () => void;
+  onTrack?: (eventName: string, eventPayload?: Record<string, unknown>) => void;
   t: (fr: string, en: string) => string;
   fromTool?: string;
 }
@@ -202,7 +203,7 @@ function nextMomentId(coveredIds: Set<string>, skippedIds: Set<string>, currentI
   return ordered.find((moment) => !coveredIds.has(moment.id) && !skippedIds.has(moment.id))?.id || currentId;
 }
 
-export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t, fromTool }: Props) {
+export default function DiagStepStackScan({ session, tools, onUpdate, onNext, onTrack, t, fromTool }: Props) {
   const [search, setSearch] = useState("");
   const initialSelectedTools = useMemo(() => {
     if (session.selectedTools.length > 0 || !fromTool) return session.selectedTools || [];
@@ -287,13 +288,28 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
   const toggleTool = (tool: Tool) => {
     setSelectedTools((prev) => {
       const alreadySelected = prev.some((item) => item.id === tool.id);
-      if (alreadySelected) return prev.filter((item) => item.id !== tool.id);
+      if (alreadySelected) {
+        onTrack?.("selector_tool_removed", {
+          tool_id: tool.id,
+          tool_name: tool.name,
+          moment_id: activeMoment.id,
+          selected_count: Math.max(prev.length - 1, 0),
+        });
+        return prev.filter((item) => item.id !== tool.id);
+      }
 
       const nextSkipped = new Set(skippedMomentIds);
       STACK_MOMENTS.forEach((moment) => {
         if (matchesMoment(tool, moment)) nextSkipped.delete(moment.id);
       });
       setSkippedMomentIds(nextSkipped);
+      onTrack?.("selector_tool_added", {
+        tool_id: tool.id,
+        tool_name: tool.name,
+        moment_id: activeMoment.id,
+        source: "suggestion",
+        selected_count: prev.length + 1,
+      });
       return [...prev, tool];
     });
   };
@@ -306,13 +322,25 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
     const name = customName.trim();
     if (name.length < 2) return;
     const price = Math.max(0, Number(customPrice) || 0);
-    setSelectedTools((prev) => [...prev, makeCustomTool(name, price, activeMoment)]);
+    const customTool = makeCustomTool(name, price, activeMoment);
+    setSelectedTools((prev) => [...prev, customTool]);
+    onTrack?.("selector_custom_tool_added", {
+      tool_name: name,
+      moment_id: activeMoment.id,
+      price,
+    });
     setCustomName("");
     setCustomPrice("");
     setSearch("");
   };
 
   const handleNext = () => {
+    onTrack?.("selector_review_confirmed", {
+      selected_count: selectedTools.length,
+      covered_count: coveredCount,
+      skipped_count: skippedMomentIds.size,
+      confidence: coverageConfidence,
+    });
     onUpdate({
       selectedTools,
       selectionCoverage: {
@@ -325,14 +353,46 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
   };
 
   const moveToNextMoment = () => {
+    onTrack?.("selector_moment_next", {
+      moment_id: activeMoment.id,
+      selected_in_moment: selectedInActiveMoment,
+      selected_count: selectedTools.length,
+      covered_count: coveredCount,
+    });
     setActiveMomentId(nextMomentId(coveredMomentIds, skippedMomentIds, activeMoment.id));
   };
 
   const skipActiveMoment = () => {
     const nextSkipped = new Set(skippedMomentIds);
     nextSkipped.add(activeMoment.id);
+    onTrack?.("selector_moment_skipped", {
+      moment_id: activeMoment.id,
+      selected_count: selectedTools.length,
+      skipped_count: nextSkipped.size,
+    });
     setSkippedMomentIds(nextSkipped);
     setActiveMomentId(nextMomentId(coveredMomentIds, nextSkipped, activeMoment.id));
+  };
+
+  const openReview = (reason: string) => {
+    onTrack?.("selector_review_opened", {
+      reason,
+      selected_count: selectedTools.length,
+      covered_count: coveredCount,
+      missing_count: missingMoments.length,
+    });
+    setReviewMode(true);
+  };
+
+  const toggleSearchPanel = () => {
+    const next = !showCatalog;
+    setShowCatalog(next);
+    if (next) {
+      onTrack?.("selector_search_opened", {
+        moment_id: activeMoment.id,
+        selected_count: selectedTools.length,
+      });
+    }
   };
 
   const toolName = fromTool
@@ -379,6 +439,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
                     onClick={() => {
                       setActiveMomentId(moment.id);
                       setReviewMode(false);
+                      onTrack?.("selector_review_area_reopened", {
+                        moment_id: moment.id,
+                        covered: moment.covered,
+                        skipped: moment.skipped,
+                      });
                     }}
                     className="flex min-h-12 items-center gap-3 rounded-lg border border-border px-3 text-left text-sm hover:border-primary/40"
                   >
@@ -433,7 +498,13 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
         <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="button"
-            onClick={() => setReviewMode(false)}
+            onClick={() => {
+              onTrack?.("selector_review_back_to_edit", {
+                selected_count: selectedTools.length,
+                missing_count: missingMoments.length,
+              });
+              setReviewMode(false);
+            }}
             className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
           >
             {t("Ajouter un oubli", "Add something missing")}
@@ -480,7 +551,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
             {selectedTools.length > 0 && (
               <button
                 type="button"
-                onClick={() => setReviewMode(true)}
+                onClick={() => openReview("top_count")}
                 className="rounded-md border border-border px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted"
               >
                 {selectedTools.length} {t("outil(s)", "tool(s)")}
@@ -523,7 +594,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
           <div className="mt-6 rounded-lg bg-muted/40 p-3">
             <button
               type="button"
-              onClick={() => setShowCatalog((value) => !value)}
+              onClick={toggleSearchPanel}
               className="inline-flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-foreground"
             >
               <span>{t("Je cherche un autre outil", "I’m looking for another tool")}</span>
@@ -610,7 +681,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
               {selectedTools.length > 0 && missingMoments.length === 0 && (
                 <button
                   type="button"
-                  onClick={() => setReviewMode(true)}
+                  onClick={() => openReview("all_moments_checked")}
                   className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border px-5 text-sm font-semibold text-foreground hover:bg-muted"
                 >
                   {t("Vérifier ma stack", "Check my stack")}
@@ -643,7 +714,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
             </div>
             <button
               type="button"
-              onClick={() => setReviewMode(true)}
+              onClick={() => openReview("floating_bar")}
               className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground"
             >
               {t("Vérifier", "Review")}
