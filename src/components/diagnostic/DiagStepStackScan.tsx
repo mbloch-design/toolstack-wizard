@@ -239,6 +239,8 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
   const [skippedMomentIds, setSkippedMomentIds] = useState<Set<string>>(
     () => new Set(session.selectionCoverage?.skipped || [])
   );
+  const [showCatalog, setShowCatalog] = useState(false);
+  const [reviewMode, setReviewMode] = useState(false);
   const [customName, setCustomName] = useState("");
   const [customPrice, setCustomPrice] = useState("");
 
@@ -315,17 +317,25 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
 
   const coverageCount = momentCoverage.filter((moment) => moment.covered || moment.skipped).length;
   const coveredCount = momentCoverage.filter((moment) => moment.covered).length;
+  const missingMoments = momentCoverage.filter((moment) => !moment.covered && !moment.skipped);
+  const selectedInActiveMoment = activeMoment.selected.length;
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
   const totalCost = selectedTools.reduce((sum, tool) => sum + tool.price, 0);
   const lowUsageCount = selectedTools.filter((tool) => tool.usage === "low" || tool.usage === "dormant").length;
 
   const toggleTool = (tool: Tool) => {
-    setSelectedTools((prev) =>
-      prev.some((item) => item.id === tool.id)
-        ? prev.filter((item) => item.id !== tool.id)
-        : [...prev, tool]
-    );
+    setSelectedTools((prev) => {
+      const alreadySelected = prev.some((item) => item.id === tool.id);
+      if (alreadySelected) return prev.filter((item) => item.id !== tool.id);
+
+      const nextSkipped = new Set(skippedMomentIds);
+      STACK_MOMENTS.forEach((moment) => {
+        if (matchesMoment(tool, moment)) nextSkipped.delete(moment.id);
+      });
+      setSkippedMomentIds(nextSkipped);
+      return [...prev, tool];
+    });
   };
 
   const updateSelectedTool = (toolId: string, patch: Partial<Tool>) => {
@@ -369,6 +379,121 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
     ? fromTool.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())
     : null;
 
+  if (reviewMode) {
+    return (
+      <div className="mx-auto max-w-5xl space-y-6">
+        <div className="space-y-3 text-center">
+          <p className="inline-flex rounded-md border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase text-primary">
+            {t("Dernière vérification", "Final check")}
+          </p>
+          <h1 className="text-3xl font-bold text-foreground md:text-4xl">
+            {t("Voilà ce que j’ai compris de ta stack.", "Here is what I understood about your stack.")}
+          </h1>
+          <p className="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base">
+            {t(
+              "Corrige un oubli maintenant si besoin. Après ça, je passe au profil et au scoring.",
+              "Fix any omission now if needed. After this, I move to profile and scoring."
+            )}
+          </p>
+        </div>
+
+        <div className="grid gap-3 md:grid-cols-3">
+          <ReviewMetric label={t("Outils retenus", "Selected tools")} value={String(selectedTools.length)} />
+          <ReviewMetric label={t("Zones couvertes", "Covered areas")} value={`${coveredCount}/${STACK_MOMENTS.length}`} />
+          <ReviewMetric
+            label={t("Confiance", "Confidence")}
+            value={coverageConfidence === "high" ? t("Forte", "High") : coverageConfidence === "medium" ? t("Moyenne", "Medium") : t("À affiner", "Low")}
+          />
+        </div>
+
+        <section className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
+          <div className="rounded-xl border border-border bg-card p-5">
+            <p className="text-sm font-semibold text-foreground">{t("Zones de travail", "Work areas")}</p>
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              {momentCoverage.map((moment) => {
+                const Icon = moment.Icon;
+                return (
+                  <button
+                    key={moment.id}
+                    type="button"
+                    onClick={() => {
+                      setActiveMomentId(moment.id);
+                      setReviewMode(false);
+                    }}
+                    className="flex min-h-12 items-center gap-3 rounded-lg border border-border px-3 text-left text-sm hover:border-primary/40"
+                  >
+                    <Icon className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    <span className="min-w-0 flex-1 truncate text-foreground">{t(moment.fr, moment.en)}</span>
+                    {moment.covered ? (
+                      <span className="rounded-md bg-primary/10 px-2 py-1 text-xs font-semibold text-primary">{moment.selected.length}</span>
+                    ) : moment.skipped ? (
+                      <span className="text-xs text-muted-foreground">{t("ignorée", "skipped")}</span>
+                    ) : (
+                      <span className="rounded-md bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-800">{t("à vérifier", "check")}</span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-border bg-card p-5">
+            <p className="text-sm font-semibold text-foreground">{t("Outils sélectionnés", "Selected tools")}</p>
+            {selectedTools.length === 0 ? (
+              <p className="mt-4 rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">
+                {t("Aucun outil pour l’instant.", "No tool yet.")}
+              </p>
+            ) : (
+              <div className="mt-4 flex max-h-[320px] flex-wrap gap-2 overflow-y-auto">
+                {selectedTools.map((tool) => (
+                  <button
+                    key={tool.id}
+                    type="button"
+                    onClick={() => toggleTool(tool)}
+                    className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-2 text-sm text-foreground hover:border-destructive/50"
+                  >
+                    {tool.name}
+                    <X className="h-3.5 w-3.5 text-muted-foreground" />
+                  </button>
+                ))}
+              </div>
+            )}
+            {missingMoments.length > 0 && (
+              <div className="mt-5 rounded-lg bg-muted/50 p-4">
+                <p className="text-sm font-semibold text-foreground">
+                  {t("Zones encore non vérifiées", "Areas not checked yet")}
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {missingMoments.slice(0, 4).map((moment) => t(moment.fr, moment.en)).join(", ")}
+                  {missingMoments.length > 4 ? "..." : ""}
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+
+        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <button
+            type="button"
+            onClick={() => setReviewMode(false)}
+            className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
+          >
+            {t("Ajouter un oubli", "Add something missing")}
+          </button>
+          <button
+            type="button"
+            onClick={handleNext}
+            disabled={selectedTools.length === 0}
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground disabled:opacity-40"
+          >
+            {t("Confirmer et continuer", "Confirm and continue")}
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-6xl space-y-6">
       <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
@@ -411,7 +536,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
         </div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
         <section className="space-y-4">
           <div className="rounded-xl border border-border bg-card p-5">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
@@ -428,8 +553,15 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
                 </p>
               </div>
               <div className="shrink-0 rounded-lg bg-muted/50 px-3 py-2 text-sm text-muted-foreground">
-                {coverageCount}/{STACK_MOMENTS.length} {t("moments vérifiés", "moments checked")}
+                {coverageCount}/{STACK_MOMENTS.length} {t("zones vérifiées", "areas checked")}
               </div>
+            </div>
+
+            <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full rounded-full bg-primary transition-all duration-500"
+                style={{ width: `${Math.max(8, Math.round((coverageCount / STACK_MOMENTS.length) * 100))}%` }}
+              />
             </div>
 
             <div className="mt-5 grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
@@ -456,75 +588,109 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
               >
                 {t("Pas concerné", "Not relevant")}
               </button>
-              <button
-                type="button"
-                onClick={moveToNextMoment}
-                className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-foreground px-4 text-sm font-semibold text-background"
-              >
-                {activeMoment.covered ? t("Moment suivant", "Next moment") : t("Passer pour l'instant", "Skip for now")}
-                <ChevronRight className="h-4 w-4" />
-              </button>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                {selectedTools.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setReviewMode(true)}
+                    className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-border px-4 text-sm font-semibold text-foreground hover:bg-muted"
+                  >
+                    {t("Revoir ma stack", "Review my stack")}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={moveToNextMoment}
+                  className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-foreground px-4 text-sm font-semibold text-background"
+                >
+                  {selectedInActiveMoment > 0 ? t("Question suivante", "Next question") : t("Passer pour l'instant", "Skip for now")}
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="relative">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <input
-              id="diagnostic-stack-search"
-              name="stack-search"
-              type="text"
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder={t("Rechercher ChatGPT, Notion, Canva...", "Search ChatGPT, Notion, Canva...")}
-              className="h-12 w-full rounded-xl border border-input bg-background pl-10 pr-10 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              autoFocus
-            />
-            {search && (
+          <div className="rounded-xl border border-dashed border-border bg-card p-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold text-foreground">
+                  {t("Tu ne trouves pas un outil ?", "Can't find a tool?")}
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {t("Cherche dans tout le catalogue ou ajoute-le à la main.", "Search the full catalog or add it manually.")}
+                </p>
+              </div>
               <button
                 type="button"
-                onClick={() => setSearch("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md p-1 text-muted-foreground hover:text-foreground"
-                aria-label={t("Effacer", "Clear")}
+                onClick={() => setShowCatalog((value) => !value)}
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-border px-4 text-sm font-semibold text-foreground hover:bg-muted"
               >
-                <X className="h-4 w-4" />
+                <Search className="h-4 w-4" />
+                {showCatalog ? t("Masquer le catalogue", "Hide catalog") : t("Chercher un outil", "Search a tool")}
               </button>
+            </div>
+            {showCatalog && (
+              <div className="mt-4 space-y-4">
+                <div className="relative">
+                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <input
+                    id="diagnostic-stack-search"
+                    name="stack-search"
+                    type="text"
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                    placeholder={t("Rechercher ChatGPT, Notion, Canva...", "Search ChatGPT, Notion, Canva...")}
+                    className="h-12 w-full rounded-xl border border-input bg-background pl-10 pr-10 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  />
+                  {search && (
+                    <button
+                      type="button"
+                      onClick={() => setSearch("")}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md p-1 text-muted-foreground hover:text-foreground"
+                      aria-label={t("Effacer", "Clear")}
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  )}
+                </div>
+
+                <div className="flex gap-2 overflow-x-auto pb-1">
+                  {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      type="button"
+                      onClick={() => setActiveCategory(category.id)}
+                      className={`shrink-0 rounded-md border px-3 py-2 text-xs font-medium capitalize transition-colors ${
+                        activeCategory === category.id
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border bg-card text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {category.label}
+                    </button>
+                  ))}
+                </div>
+
+                {!search.trim() && activeCategory === "all" && (
+                  <ToolGrid
+                    title={t("Les plus fréquents", "Most common")}
+                    tools={popularTools.filter((tool) => !selectedIds.has(tool.id))}
+                    selectedIds={selectedIds}
+                    onToggle={toggleTool}
+                    t={t}
+                  />
+                )}
+
+                <ToolGrid
+                  title={search.trim() ? t("Résultats", "Results") : t("Catalogue", "Catalog")}
+                  tools={filteredTools.slice(0, 24)}
+                  selectedIds={selectedIds}
+                  onToggle={toggleTool}
+                  t={t}
+                />
+              </div>
             )}
           </div>
-
-          <div className="flex gap-2 overflow-x-auto pb-1">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                type="button"
-                onClick={() => setActiveCategory(category.id)}
-                className={`shrink-0 rounded-md border px-3 py-2 text-xs font-medium capitalize transition-colors ${
-                  activeCategory === category.id
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-
-          {!search.trim() && activeCategory === "all" && (
-            <ToolGrid
-              title={t("Les plus fréquents", "Most common")}
-              tools={popularTools.filter((tool) => !selectedIds.has(tool.id))}
-              selectedIds={selectedIds}
-              onToggle={toggleTool}
-              t={t}
-            />
-          )}
-
-          <ToolGrid
-            title={search.trim() ? t("Résultats", "Results") : t("Catalogue", "Catalog")}
-            tools={filteredTools.slice(0, 48)}
-            selectedIds={selectedIds}
-            onToggle={toggleTool}
-            t={t}
-          />
 
           <div className="rounded-xl border border-dashed border-border bg-card p-4">
             <p className="text-sm font-semibold text-foreground">
@@ -606,11 +772,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, t,
               </div>
               <button
                 type="button"
-                onClick={handleNext}
+                onClick={() => setReviewMode(true)}
                 disabled={selectedTools.length === 0}
                 className="inline-flex h-10 items-center gap-2 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground disabled:opacity-40"
               >
-                {t("Analyser", "Analyze")}
+                {t("Revoir", "Review")}
                 <ArrowRight className="h-4 w-4" />
               </button>
             </div>
@@ -673,6 +839,15 @@ function ToolChoiceButton({
         {selected && <Check className="h-3 w-3 text-primary-foreground" />}
       </div>
     </button>
+  );
+}
+
+function ReviewMetric({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-border bg-card p-4 text-center">
+      <p className="font-mono text-3xl font-bold text-foreground">{value}</p>
+      <p className="mt-1 text-xs font-semibold uppercase text-muted-foreground">{label}</p>
+    </div>
   );
 }
 
