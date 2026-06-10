@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -229,6 +229,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const [reviewMode, setReviewMode] = useState(false);
   const [customName, setCustomName] = useState("");
   const [customPrice, setCustomPrice] = useState("");
+  const [selectionFeedback, setSelectionFeedback] = useState<{
+    id: string;
+    toolName: string;
+    action: "added" | "removed";
+  } | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
   const allKnownTools = useMemo(() => {
@@ -242,7 +247,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const q = normalize(search);
     return allKnownTools
       .filter((tool) => {
-        if (selectedIds.has(tool.id)) return false;
         if (!q) return true;
         return normalize(tool.name).includes(q) || normalize(tool.category || "").includes(q);
       })
@@ -271,8 +275,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const activeMomentSuggestions = useMemo(() => {
     return tools
       .filter((tool) => matchesMoment(tool, activeMoment))
-      .filter((tool) => !selectedIds.has(tool.id))
       .sort((a, b) => {
+        const aSelected = selectedIds.has(a.id);
+        const bSelected = selectedIds.has(b.id);
+        if (aSelected !== bSelected) return aSelected ? -1 : 1;
         const aKnown = activeMoment.ids.includes(a.id);
         const bKnown = activeMoment.ids.includes(b.id);
         if (aKnown !== bKnown) return aKnown ? -1 : 1;
@@ -287,10 +293,22 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const selectedInActiveMoment = activeMoment.selected.length;
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
+
+  useEffect(() => {
+    if (!selectionFeedback) return undefined;
+    const timeout = window.setTimeout(() => setSelectionFeedback(null), 2600);
+    return () => window.clearTimeout(timeout);
+  }, [selectionFeedback]);
+
   const toggleTool = (tool: Tool) => {
     setSelectedTools((prev) => {
       const alreadySelected = prev.some((item) => item.id === tool.id);
       if (alreadySelected) {
+        setSelectionFeedback({
+          id: `${tool.id}-removed-${Date.now()}`,
+          toolName: tool.name,
+          action: "removed",
+        });
         onTrack?.("selector_tool_removed", {
           tool_id: tool.id,
           tool_name: tool.name,
@@ -312,6 +330,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         source: "suggestion",
         selected_count: prev.length + 1,
       });
+      setSelectionFeedback({
+        id: `${tool.id}-added-${Date.now()}`,
+        toolName: tool.name,
+        action: "added",
+      });
       return [...prev, tool];
     });
   };
@@ -326,6 +349,11 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
     const price = Math.max(0, Number(customPrice) || 0);
     const customTool = makeCustomTool(name, price, activeMoment);
     setSelectedTools((prev) => [...prev, customTool]);
+    setSelectionFeedback({
+      id: `${customTool.id}-added-${Date.now()}`,
+      toolName: customTool.name,
+      action: "added",
+    });
     onTrack?.("selector_custom_tool_added", {
       tool_name: name,
       moment_id: activeMoment.id,
@@ -639,6 +667,14 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 t={t}
               />
             )}
+            {selectionFeedback && (
+              <SelectionFeedbackMessage
+                key={selectionFeedback.id}
+                toolName={selectionFeedback.toolName}
+                action={selectionFeedback.action}
+                t={t}
+              />
+            )}
           </div>
 
           {!search.trim() && (
@@ -661,6 +697,13 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   </div>
                 )}
               </div>
+              {selectedInActiveMoment > 0 && (
+                <p className="rounded-lg bg-primary/5 px-3 py-2 text-sm font-medium text-primary" role="status">
+                  {selectedInActiveMoment === 1
+                    ? t("1 outil retenu pour cette zone.", "1 tool selected for this area.")
+                    : t(`${selectedInActiveMoment} outils retenus pour cette zone.`, `${selectedInActiveMoment} tools selected for this area.`)}
+                </p>
+              )}
             </div>
           )}
 
@@ -758,8 +801,11 @@ function ToolChoiceButton({
     <button
       type="button"
       onClick={onToggle}
-      className={`flex min-h-[72px] items-center gap-3 rounded-lg border p-3 text-left transition-colors ${
-        selected ? "border-primary bg-primary/5" : "border-border bg-background hover:border-primary/40"
+      aria-pressed={selected}
+      className={`flex min-h-[76px] items-center gap-3 rounded-lg border p-3 text-left shadow-sm transition-all duration-200 ${
+        selected
+          ? "border-primary bg-primary/10 ring-2 ring-primary/20"
+          : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
       }`}
     >
       <ToolLogo tool={tool} size={36} className="rounded-md" />
@@ -769,12 +815,51 @@ function ToolChoiceButton({
           {tool.price > 0 ? `${tool.price}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
         </p>
       </div>
-      <div className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${
-        selected ? "border-primary bg-primary" : "border-border"
-      }`}>
-        {selected && <Check className="h-3 w-3 text-primary-foreground" />}
-      </div>
+      {selected ? (
+        <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground">
+          <Check className="h-3.5 w-3.5" />
+          {t("Ajouté", "Added")}
+        </span>
+      ) : (
+        <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground">
+          <Plus className="h-4 w-4" />
+        </span>
+      )}
     </button>
+  );
+}
+
+function SelectionFeedbackMessage({
+  toolName,
+  action,
+  t,
+}: {
+  toolName: string;
+  action: "added" | "removed";
+  t: (fr: string, en: string) => string;
+}) {
+  const added = action === "added";
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className={`flex items-center gap-3 rounded-lg border px-3 py-2 text-sm font-medium ${
+        added
+          ? "border-primary/20 bg-primary/5 text-primary"
+          : "border-border bg-muted/50 text-muted-foreground"
+      }`}
+    >
+      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${
+        added ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground"
+      }`}>
+        {added ? <Check className="h-3.5 w-3.5" /> : <X className="h-3.5 w-3.5" />}
+      </span>
+      <span>
+        {added
+          ? t(`${toolName} a été ajouté à ta sélection.`, `${toolName} was added to your selection.`)
+          : t(`${toolName} a été retiré.`, `${toolName} was removed.`)}
+      </span>
+    </div>
   );
 }
 
@@ -812,10 +897,11 @@ function ToolGrid({
               key={tool.id}
               type="button"
               onClick={() => onToggle(tool)}
-              className={`flex min-h-[74px] items-center gap-3 rounded-lg border p-3 text-left transition-colors ${
+              aria-pressed={selected}
+              className={`flex min-h-[76px] items-center gap-3 rounded-lg border p-3 text-left shadow-sm transition-all duration-200 ${
                 selected
-                  ? "border-primary bg-primary/5"
-                  : "border-border bg-card hover:border-primary/40"
+                  ? "border-primary bg-primary/10 ring-2 ring-primary/20"
+                  : "border-border bg-card hover:border-primary/40 hover:bg-muted/30"
               }`}
             >
               <ToolLogo tool={tool} size={36} className="rounded-md" />
@@ -825,11 +911,16 @@ function ToolGrid({
                   {tool.price > 0 ? `${tool.price}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
                 </p>
               </div>
-              <div className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${
-                selected ? "border-primary bg-primary" : "border-border"
-              }`}>
-                {selected && <Check className="h-3 w-3 text-primary-foreground" />}
-              </div>
+              {selected ? (
+                <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground">
+                  <Check className="h-3.5 w-3.5" />
+                  {t("Ajouté", "Added")}
+                </span>
+              ) : (
+                <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground">
+                  <Plus className="h-4 w-4" />
+                </span>
+              )}
             </button>
           );
         })}
