@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Cluster, DoubleRule, DiscoveryQuestion, Persona } from "@/types/diagnostic";
+import { inferCatalogMonthlyPrice } from "@/utils/diagnosticPricing";
 
 function mapTool(t: any): Tool {
+  const catalogPrice = inferCatalogMonthlyPrice({
+    defaultMonthlyPrice: Number(t.default_monthly_price) || 0,
+    pricing: t.pricing && typeof t.pricing === "object" ? t.pricing : undefined,
+    pricingEn: t.pricing_en && typeof t.pricing_en === "object" ? t.pricing_en : undefined,
+    pricing_v5: t.pricing_v5 && typeof t.pricing_v5 === "object" ? t.pricing_v5 : undefined,
+  });
+
   return {
     id: t.id,
     slug: t.slug || undefined,
@@ -11,7 +19,8 @@ function mapTool(t: any): Tool {
     logo: t.logo || undefined,
     websiteUrl: t.website_url || undefined,
     affiliateLink: t.affiliate_link || undefined,
-    price: Number(t.default_monthly_price) || 0,
+    price: catalogPrice.amount,
+    priceCurrency: catalogPrice.currency,
     category: t.category || "",
     functional_needs: Array.isArray(t.functional_needs) ? t.functional_needs : [],
     pertinence_by_persona: t.pertinence_by_persona || undefined,
@@ -35,6 +44,8 @@ function mapTool(t: any): Tool {
       ? JSON.stringify(t.better_alternative)
       : t.better_alternative || undefined,
     pricing_v5: t.pricing_v5 && typeof t.pricing_v5 === "object" ? t.pricing_v5 : undefined,
+    catalogMonthlyPrice: catalogPrice.amount,
+    catalogMonthlyPriceCurrency: catalogPrice.currency,
     force_silence: t.force_silence === true || t.prescription_quality === "silence",
     bundle_parent: t.bundle_parent || undefined,
   };

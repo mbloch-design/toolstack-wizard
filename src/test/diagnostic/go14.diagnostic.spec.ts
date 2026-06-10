@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from "vitest";
 import { runDiagnostic } from "@/utils/scoring";
+import { formatMonthlyTotal, inferCatalogMonthlyPrice } from "@/utils/diagnosticPricing";
 import { GO14_DIAGNOSTIC_DATA, GO14_SCENARIOS } from "@/test/diagnostic/go14Fixtures";
 import type { SessionState, Tool } from "@/types/diagnostic";
 
@@ -14,6 +15,44 @@ function expectNumberBetween(value: number, min?: number, max?: number) {
 }
 
 describe("GO14 - Banc de recette metier", () => {
+  it("conserve la devise source des prix catalogue au lieu d'inventer une conversion euro", () => {
+    expect(inferCatalogMonthlyPrice({
+      defaultMonthlyPrice: 17.32,
+      pricing: { paid: "USD 20/month (Plus)" },
+      pricing_v5: { compare_price_monthly_eur: 17.32 },
+    })).toMatchObject({
+      amount: 20,
+      currency: "USD",
+      source: "pricing_text",
+    });
+
+    expect(inferCatalogMonthlyPrice({
+      defaultMonthlyPrice: 11.5,
+      pricing: { paid: "Plus 11,5€/mois" },
+      pricing_v5: { compare_price_monthly_eur: 11.5 },
+    })).toMatchObject({
+      amount: 11.5,
+      currency: "EUR",
+      source: "pricing_text",
+    });
+
+    expect(inferCatalogMonthlyPrice({
+      defaultMonthlyPrice: 0,
+      pricing: { paid: "$0.27/M tokens" },
+      pricing_v5: { compare_price_monthly_eur: 0 },
+    })).toMatchObject({
+      amount: 0,
+      currency: undefined,
+      source: "unknown",
+    });
+
+    expect(formatMonthlyTotal([
+      { price: 20, priceCurrency: "USD" },
+      { price: 10, priceCurrency: "EUR" },
+      { price: 7 },
+    ], (fr) => fr)).toBe("20$ + 10€ + 7 à vérifier");
+  });
+
   it("verifie que le jeu de scenarios est coherent", () => {
     expect(GO14_SCENARIOS.length).toBeGreaterThanOrEqual(6);
   });

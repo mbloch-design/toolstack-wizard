@@ -36,6 +36,7 @@ export interface Tool {
   websiteUrl?: string;
   affiliateLink?: string;
   price: number;
+  priceCurrency?: string;
   category: string;
   functional_needs: string[];
   pertinence_by_persona?: Record<Persona, number>;
@@ -75,6 +76,7 @@ export interface Tool {
   } | null;
   selectedOffer?: "free" | "paid" | "team" | "unknown";
   catalogMonthlyPrice?: number;
+  catalogMonthlyPriceCurrency?: string;
   selectedPriceIsEstimate?: boolean;
   force_silence: boolean;
   bundle_parent?: string;

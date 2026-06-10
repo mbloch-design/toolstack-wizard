@@ -1,5 +1,6 @@
 import { useMemo } from "react";
-import type { SessionState, DoubleRule } from "@/types/diagnostic";
+import type { SessionState } from "@/types/diagnostic";
+import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
 
 interface Props {
   session: SessionState;
@@ -10,9 +11,9 @@ interface Props {
 }
 
 export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }: Props) {
-  const totalCost = useMemo(
-    () => session.selectedTools.reduce((sum, tool) => sum + tool.price, 0),
-    [session.selectedTools]
+  const totalCostLabel = useMemo(
+    () => formatMonthlyTotal(session.selectedTools, t),
+    [session.selectedTools, t]
   );
 
   const showCounter = session.selectedTools.length > 0;
@@ -93,7 +94,7 @@ export default function DiagTopBar({ session, step, totalSteps, clusterInfo, t }
           <div className="hidden items-center gap-3 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-mono shrink-0 md:flex">
             <span className="text-foreground">{session.selectedTools.length} {t("outils", "tools")}</span>
             <span className="text-muted-foreground">·</span>
-            <span className="text-foreground">{totalCost}€/{t("mois", "mo")}</span>
+            <span className="text-foreground">{totalCostLabel}/{t("mois", "mo")}</span>
           </div>
         )}
       </div>

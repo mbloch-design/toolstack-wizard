@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import type { SessionState, Tool } from "@/types/diagnostic";
+import { formatMonthlyTotal, formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 
 interface Props {
   session: SessionState;
@@ -193,11 +194,14 @@ function makeCustomTool(name: string, price: number, moment?: StackMoment): Tool
 
 function withDefaultOffer(tool: Tool): Tool {
   const catalogMonthlyPrice = tool.catalogMonthlyPrice ?? Number(tool.price || 0);
+  const catalogMonthlyPriceCurrency = tool.catalogMonthlyPriceCurrency || tool.priceCurrency;
   return {
     ...tool,
     catalogMonthlyPrice,
+    catalogMonthlyPriceCurrency,
     selectedOffer: tool.selectedOffer || (catalogMonthlyPrice > 0 ? "paid" : "free"),
     selectedPriceIsEstimate: tool.selectedPriceIsEstimate ?? true,
+    priceCurrency: tool.priceCurrency || catalogMonthlyPriceCurrency,
   };
 }
 
@@ -327,7 +331,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const coveredCount = momentCoverage.filter((moment) => moment.covered).length;
   const missingMoments = momentCoverage.filter((moment) => !moment.covered && !moment.skipped);
   const selectedInActiveMoment = activeMoment.selected.length;
-  const selectedMonthlyCost = selectedTools.reduce((sum, tool) => sum + (Number(tool.price) || 0), 0);
+  const selectedMonthlyCostLabel = formatMonthlyTotal(selectedTools, t);
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
 
@@ -381,6 +385,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         ...tool,
         selectedOffer: offer,
         price: offerPrice(tool, offer),
+        priceCurrency: tool.catalogMonthlyPriceCurrency || tool.priceCurrency,
         selectedPriceIsEstimate: offer !== "free",
       };
     }));
@@ -793,7 +798,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                     type="number"
                     value={customPrice}
                     onChange={(event) => setCustomPrice(event.target.value)}
-                    placeholder="€/mois"
+                    placeholder={t("prix/mois", "price/mo")}
                     className="h-10 rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   />
                   <button
@@ -844,7 +849,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
           selectedTools={selectedTools}
           coveredCount={coveredCount}
           totalMoments={STACK_MOMENTS.length}
-          monthlyCost={selectedMonthlyCost}
+          monthlyCostLabel={selectedMonthlyCostLabel}
           activeMomentLabel={t(activeMoment.fr, activeMoment.en)}
           onReview={() => openReview("stack_companion")}
           onRemove={(tool) => toggleTool(tool, "companion")}
@@ -856,7 +861,7 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
         selectedTools={selectedTools}
         coveredCount={coveredCount}
         totalMoments={STACK_MOMENTS.length}
-        monthlyCost={selectedMonthlyCost}
+        monthlyCostLabel={selectedMonthlyCostLabel}
         onReview={() => openReview("mobile_stack_bar")}
         t={t}
       />
@@ -899,9 +904,9 @@ function ToolChoiceButton({
           <p className="truncate text-sm font-semibold text-foreground">{displayTool.name}</p>
           <p className="truncate text-xs text-muted-foreground">
             {selected
-              ? `${offerLabel(displayTool, t)} · ${displayTool.price > 0 ? `${displayTool.price}€/${t("mois", "mo")}` : "0€"}`
+              ? `${offerLabel(displayTool, t)} · ${formatToolMonthlyPrice(displayTool, t)}`
               : displayTool.price > 0
-                ? t(`≈ ${displayTool.price}€/mois catalogue`, `≈ €${displayTool.price}/mo catalog`)
+                ? formatToolMonthlyPrice(displayTool, t, { approximate: true, catalog: true })
                 : t("Gratuit possible", "Free possible")}
           </p>
         </div>
@@ -967,7 +972,7 @@ function StackCompanion({
   selectedTools,
   coveredCount,
   totalMoments,
-  monthlyCost,
+  monthlyCostLabel,
   activeMomentLabel,
   onReview,
   onRemove,
@@ -976,7 +981,7 @@ function StackCompanion({
   selectedTools: Tool[];
   coveredCount: number;
   totalMoments: number;
-  monthlyCost: number;
+  monthlyCostLabel: string;
   activeMomentLabel: string;
   onReview: () => void;
   onRemove: (tool: Tool) => void;
@@ -1020,7 +1025,7 @@ function StackCompanion({
         <div className="space-y-4 p-4">
           <div className="grid grid-cols-2 gap-2">
             <StackStat label={t("Outils", "Tools")} value={String(selectedTools.length)} />
-            <StackStat label={t("Budget", "Budget")} value={`${monthlyCost}€`} suffix={t("/mois", "/mo")} />
+            <StackStat label={t("Budget", "Budget")} value={monthlyCostLabel} suffix={t("/mois", "/mo")} />
           </div>
 
           <div className="rounded-lg border border-border bg-background p-3">
@@ -1088,7 +1093,9 @@ function StackCompanion({
                     <span className="rounded bg-background px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground">
                       {offerLabel(tool, t)}
                     </span>
-                    <span className="font-mono text-xs text-muted-foreground">{tool.price || 0}€</span>
+                    <span className="font-mono text-xs text-muted-foreground">
+                      {formatMoney(tool.price || 0, tool.priceCurrency || tool.catalogMonthlyPriceCurrency)}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -1114,14 +1121,14 @@ function MobileStackBar({
   selectedTools,
   coveredCount,
   totalMoments,
-  monthlyCost,
+  monthlyCostLabel,
   onReview,
   t,
 }: {
   selectedTools: Tool[];
   coveredCount: number;
   totalMoments: number;
-  monthlyCost: number;
+  monthlyCostLabel: string;
   onReview: () => void;
   t: (fr: string, en: string) => string;
 }) {
@@ -1144,7 +1151,7 @@ function MobileStackBar({
           {selectedTools.length} {t("outil(s) dans ta stack", "tool(s) in your stack")}
         </p>
         <p className="text-xs text-muted-foreground">
-          {coveredCount}/{totalMoments} {t("zones", "areas")} · {monthlyCost}€/{t("mois", "mo")}
+          {coveredCount}/{totalMoments} {t("zones", "areas")} · {monthlyCostLabel}/{t("mois", "mo")}
         </p>
       </div>
       <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
@@ -1284,7 +1291,7 @@ function SelectedToolRow({
               selectedPriceIsEstimate: false,
             });
           }}
-          placeholder="€/mois"
+          placeholder={t("prix/mois", "price/mo")}
           className="h-9 rounded-md border border-input bg-background px-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-ring"
         />
         <div className="grid grid-cols-3 rounded-md border border-border p-0.5">

@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import type { SessionState } from "@/types/diagnostic";
+import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
 
 interface Props {
   session: SessionState;
@@ -15,9 +16,9 @@ export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, onPrev
 
   const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
-  const totalCost = useMemo(
-    () => session.selectedTools.reduce((sum, tool) => sum + tool.price, 0),
-    [session.selectedTools]
+  const totalCostLabel = useMemo(
+    () => formatMonthlyTotal(session.selectedTools, t),
+    [session.selectedTools, t]
   );
 
   const handleSend = () => {
@@ -56,7 +57,7 @@ export default function DiagStep6bEmailRecap({ session, onUpdate, onNext, onPrev
           </p>
         </div>
         <div className="space-y-1">
-          <p className="text-3xl font-bold font-mono text-foreground">{totalCost}€</p>
+          <p className="text-3xl font-bold font-mono text-foreground">{totalCostLabel}</p>
           <p className="text-xs text-muted-foreground uppercase tracking-wide">
             /{t("mois", "mo")}
           </p>
