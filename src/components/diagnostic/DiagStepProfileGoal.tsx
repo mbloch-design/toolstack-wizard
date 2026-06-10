@@ -33,11 +33,51 @@ const GOALS: Array<{
   Icon: typeof Scissors;
   fr: string;
   en: string;
+  detailFr: string;
+  detailEn: string;
+  algoFr: string;
+  algoEn: string;
 }> = [
-  { value: "reduce_costs", Icon: Scissors, fr: "Réduire les coûts", en: "Reduce costs" },
-  { value: "simplify", Icon: Compass, fr: "Simplifier", en: "Simplify" },
-  { value: "save_time", Icon: Gauge, fr: "Gagner du temps", en: "Save time" },
-  { value: "quality", Icon: Sparkles, fr: "Mieux choisir", en: "Choose better" },
+  {
+    value: "reduce_costs",
+    Icon: Scissors,
+    fr: "Réduire les coûts",
+    en: "Reduce costs",
+    detailFr: "Je classe d’abord les économies directes, doublons et plans trop chers.",
+    detailEn: "I rank direct savings, duplicates, and oversized plans first.",
+    algoFr: "Priorité aux montants récupérables et aux downgrades.",
+    algoEn: "Prioritizes recoverable spend and downgrades.",
+  },
+  {
+    value: "simplify",
+    Icon: Compass,
+    fr: "Simplifier",
+    en: "Simplify",
+    detailFr: "Je privilégie les arbitrages qui réduisent la dispersion de ta stack.",
+    detailEn: "I favor decisions that reduce stack fragmentation.",
+    algoFr: "Priorité aux doublons, recouvrements et outils satellites.",
+    algoEn: "Prioritizes overlaps, redundancy, and satellite tools.",
+  },
+  {
+    value: "save_time",
+    Icon: Gauge,
+    fr: "Gagner du temps",
+    en: "Save time",
+    detailFr: "Je protège davantage les outils utiles, même s’ils coûtent un peu.",
+    detailEn: "I protect useful tools more, even when they cost a bit.",
+    algoFr: "Priorité aux frictions, outils peu adaptés et actions rapides.",
+    algoEn: "Prioritizes friction, poor-fit tools, and quick actions.",
+  },
+  {
+    value: "quality",
+    Icon: Sparkles,
+    fr: "Mieux choisir",
+    en: "Choose better",
+    detailFr: "Je compare surtout fit métier, pertinence et bon niveau d’abonnement.",
+    detailEn: "I compare business fit, relevance, and the right subscription tier.",
+    algoFr: "Priorité au fit, au bon palier d’offre et aux alternatives utiles.",
+    algoEn: "Prioritizes fit, right plan tier, and useful alternatives.",
+  },
 ];
 
 const TJM_OPTIONS = [
@@ -92,6 +132,8 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
 
   const inferredMeta = PERSONAS.find((item) => item.id === inferred.persona) || PERSONAS[0];
   const selectedMeta = PERSONAS.find((item) => item.id === persona) || inferredMeta;
+  const selectedGoal = GOALS.find((goal) => goal.value === stackGoal) || GOALS[0];
+  const SelectedGoalIcon = selectedGoal.Icon;
   const isIntro = variant === "intro";
   const emailValue = email.trim();
   const isValidEmail = (value: string) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -110,8 +152,8 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
         )
       : profileStep === "goal"
         ? t(
-            "Ça m’aide à classer les recommandations : économies, simplicité, temps gagné ou meilleur choix.",
-            "This helps me rank recommendations: savings, simplicity, saved time or better choices."
+            "Tu peux continuer avec la lecture proposée. Change-la seulement si ton intention principale est différente.",
+            "You can continue with the suggested read. Change it only if your main intent is different."
           )
         : t(
             "Tu peux tout laisser vide. Ces infos servent juste à personnaliser le rapport et les estimations.",
@@ -239,31 +281,66 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
           )}
 
           {profileStep === "goal" && (
-            <section className="grid gap-3 sm:grid-cols-2">
-          {GOALS.map((goal) => {
-            const Icon = goal.Icon;
-            const selected = goal.value === stackGoal;
-            return (
-              <button
-                key={goal.value}
-                type="button"
-                onClick={() => setStackGoal(goal.value)}
-                className={`group flex min-h-[86px] w-full items-center gap-4 rounded-lg border px-4 text-left transition-all ${
-                  selected ? "border-primary bg-primary/5 text-foreground shadow-sm" : "border-border bg-card hover:border-foreground/30 hover:bg-muted/30"
-                }`}
-              >
-                <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-md ${selected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground group-hover:text-foreground"}`}>
-                  <Icon className="h-5 w-5" />
-                </span>
-                <span className="min-w-0 flex-1 text-sm font-semibold text-foreground">{t(goal.fr, goal.en)}</span>
-                <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
-                  selected ? "border-primary bg-primary text-primary-foreground" : "border-border text-transparent"
-                }`}>
-                  <Check className="h-3.5 w-3.5" />
-                </span>
-              </button>
-            );
-          })}
+            <section className="space-y-4">
+              <div className="rounded-lg border border-primary bg-primary/5 p-5">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="flex min-w-0 gap-4">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground">
+                      <SelectedGoalIcon className="h-5 w-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold uppercase text-primary">
+                        {t("Lecture retenue", "Selected read")}
+                      </p>
+                      <h2 className="mt-1 text-xl font-bold text-foreground">
+                        {t(selectedGoal.fr, selectedGoal.en)}
+                      </h2>
+                      <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                        {t(selectedGoal.detailFr, selectedGoal.detailEn)}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="inline-flex w-fit items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground">
+                    <Check className="h-3.5 w-3.5" />
+                    {t("Actif", "Active")}
+                  </span>
+                </div>
+                <div className="mt-4 rounded-md bg-background/80 p-3">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">
+                    {t("Impact dans l’algo", "Algorithm impact")}
+                  </p>
+                  <p className="mt-1 text-sm text-foreground">
+                    {t(selectedGoal.algoFr, selectedGoal.algoEn)}
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-xs font-semibold uppercase text-muted-foreground">
+                  {t("Changer seulement si besoin", "Change only if needed")}
+                </p>
+                <div className="grid gap-2 sm:grid-cols-3">
+                  {GOALS.filter((goal) => goal.value !== stackGoal).map((goal) => {
+                    const Icon = goal.Icon;
+                    return (
+                      <button
+                        key={goal.value}
+                        type="button"
+                        onClick={() => setStackGoal(goal.value)}
+                        className="group flex min-h-[72px] items-center gap-3 rounded-lg border border-border bg-card px-3 text-left transition-colors hover:border-foreground/30 hover:bg-muted/30"
+                      >
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground group-hover:text-foreground">
+                          <Icon className="h-4 w-4" />
+                        </span>
+                        <span className="min-w-0">
+                          <span className="block text-sm font-semibold text-foreground">{t(goal.fr, goal.en)}</span>
+                          <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">{t(goal.algoFr, goal.algoEn)}</span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </section>
           )}
 
@@ -361,6 +438,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
 
         <ProfileContextPanel
           selectedMeta={selectedMeta}
+          selectedGoal={selectedGoal}
           stepHelp={stepHelp}
           profileStep={profileStep}
           stackGoal={stackGoal}
@@ -374,6 +452,7 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
 
 function ProfileContextPanel({
   selectedMeta,
+  selectedGoal,
   stepHelp,
   profileStep,
   stackGoal,
@@ -381,13 +460,14 @@ function ProfileContextPanel({
   t,
 }: {
   selectedMeta: PersonaMeta;
+  selectedGoal: (typeof GOALS)[number];
   stepHelp: string;
   profileStep: "persona" | "goal" | "details";
   stackGoal: NonNullable<SessionState["stackGoal"]>;
   tjm: number;
   t: (fr: string, en: string) => string;
 }) {
-  const Icon = selectedMeta.Icon;
+  const Icon = profileStep === "goal" ? selectedGoal.Icon : selectedMeta.Icon;
   const goalLabel = GOALS.find((goal) => goal.value === stackGoal);
   return (
     <aside className="lg:sticky lg:top-28">
@@ -400,10 +480,23 @@ function ProfileContextPanel({
             <Icon className="h-5 w-5" />
           </span>
           <div className="min-w-0">
-            <p className="text-base font-semibold text-foreground">{t(selectedMeta.labelFr, selectedMeta.labelEn)}</p>
+            <p className="text-base font-semibold text-foreground">
+              {profileStep === "goal" ? t(selectedGoal.fr, selectedGoal.en) : t(selectedMeta.labelFr, selectedMeta.labelEn)}
+            </p>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{stepHelp}</p>
           </div>
         </div>
+
+        {profileStep === "goal" && (
+          <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-3">
+            <p className="text-xs font-semibold uppercase text-primary">
+              {t("Ce que l’algo change", "What the algorithm changes")}
+            </p>
+            <p className="mt-1 text-sm leading-relaxed text-foreground">
+              {t(selectedGoal.algoFr, selectedGoal.algoEn)}
+            </p>
+          </div>
+        )}
 
         <div className="mt-5 space-y-2 border-t border-border pt-4">
           <ContextLine

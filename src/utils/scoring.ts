@@ -326,11 +326,66 @@ function detectInadapted(tools: Tool[], scores: Map<string, ToolScore>): Prescri
   return out;
 }
 
+function goalPriority(prescription: Prescription, goal: SessionState["stackGoal"]): number {
+  const savings = Number(prescription.savingsEstimate || 0);
+  const directness =
+    prescription.verdict === "cancel" ? 30 :
+    prescription.verdict === "downgrade" ? 24 :
+    12;
+
+  if (goal === "simplify") {
+    const typeScore =
+      prescription.type === "doublon" || prescription.type === "doublon-ia" ? 80 :
+      prescription.type === "dormant" ? 60 :
+      prescription.type === "pricing-tier" ? 35 :
+      25;
+    return typeScore + directness + Math.min(30, savings);
+  }
+
+  if (goal === "save_time") {
+    const typeScore =
+      prescription.type === "inadapté" ? 75 :
+      prescription.type === "doublon" || prescription.type === "doublon-ia" ? 55 :
+      prescription.type === "dormant" ? 40 :
+      prescription.type === "pricing-tier" ? 30 :
+      20;
+    return typeScore + directness + Math.min(16, savings / 2);
+  }
+
+  if (goal === "quality") {
+    const typeScore =
+      prescription.type === "inadapté" ? 85 :
+      prescription.type === "pricing-tier" ? 70 :
+      prescription.type === "doublon" || prescription.type === "doublon-ia" ? 55 :
+      prescription.type === "dormant" ? 35 :
+      20;
+    return typeScore + directness + Math.min(20, savings / 2);
+  }
+
+  const typeScore =
+    prescription.type === "pricing-tier" ? 65 :
+    prescription.type === "dormant" ? 60 :
+    prescription.type === "doublon" || prescription.type === "doublon-ia" ? 55 :
+    25;
+  return typeScore + directness + Math.min(80, savings * 2);
+}
+
+function prioritizePrescriptions(
+  prescriptions: Prescription[],
+  goal: SessionState["stackGoal"]
+): Prescription[] {
+  return [...prescriptions].sort((a, b) =>
+    goalPriority(b, goal) - goalPriority(a, goal) ||
+    Number(b.savingsEstimate || 0) - Number(a.savingsEstimate || 0)
+  );
+}
+
 export function computePrescriptions(
   selectedTools: Tool[],
   toolScores: Map<string, ToolScore>,
   doublonRules: DoubleRule[],
-  _persona: Persona
+  _persona: Persona,
+  stackGoal?: SessionState["stackGoal"]
 ): { phase1: Prescription[]; phase2: Prescription[]; phase3: Prescription[] } {
   const p1 = phase1Certified(selectedTools);
   const p1ToolIds = new Set(p1.map((p) => p.toolId));
@@ -356,7 +411,11 @@ export function computePrescriptions(
       return tool ? canPrescribe(tool) : true;
     });
 
-  return { phase1: filterSilence(p1), phase2: filterSilence(p2), phase3: filterSilence(phase3) };
+  return {
+    phase1: prioritizePrescriptions(filterSilence(p1), stackGoal),
+    phase2: prioritizePrescriptions(filterSilence(p2), stackGoal),
+    phase3: prioritizePrescriptions(filterSilence(phase3), stackGoal),
+  };
 }
 
 // ─── 6. Stack Health Score ─────────────────────────────────────────
@@ -723,7 +782,13 @@ export function runDiagnostic(
     ...collectClosingSignals(sessionState),
   ];
   const signalSummary = buildSignalSummary(sessionState, data.discoveryQuestions, discoverySignals);
-  const basePrescriptions = computePrescriptions(selectedTools, toolScores, data.doublonRules, persona);
+  const basePrescriptions = computePrescriptions(
+    selectedTools,
+    toolScores,
+    data.doublonRules,
+    persona,
+    sessionState.stackGoal
+  );
   const prescriptions = applyDiscoverySignalsToPrescriptions(basePrescriptions, selectedTools, discoverySignals);
   const { score: healthScore, label: healthLabel } = computeStackHealth(prescriptions);
   const recommendations = computeRecommendations(

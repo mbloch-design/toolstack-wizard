@@ -2,6 +2,7 @@
 import { describe, expect, it } from "vitest";
 import { runDiagnostic } from "@/utils/scoring";
 import { GO14_DIAGNOSTIC_DATA, GO14_SCENARIOS } from "@/test/diagnostic/go14Fixtures";
+import type { SessionState, Tool } from "@/types/diagnostic";
 
 function expectNumberBetween(value: number, min?: number, max?: number) {
   if (typeof min === "number") {
@@ -115,5 +116,65 @@ describe("GO14 - Banc de recette metier", () => {
     expect(pricingPrescription?.pricingContext?.hasFreeTier).toBe(true);
     expect(result.insights.metrics.pricingTierCount).toBe(1);
     expect(result.insights.riskFlags.map((flag) => flag.id)).toContain("pricing_tier_mismatch");
+  });
+
+  it("utilise l'objectif du diagnostic pour prioriser les recommandations", () => {
+    const overlapToolA: Tool = {
+      id: "research-a",
+      name: "Research A",
+      price: 18,
+      category: "research",
+      functional_needs: ["research", "notes", "summary"],
+      tool_type: "satellite",
+      usage: "medium",
+      prescription_quality: "oui",
+      pertinence_by_persona: { THEO: 88, SOFIA: 50, MARC: 50, ALIX: 50, CLAIRE: 50 },
+      force_silence: false,
+    };
+    const overlapToolB: Tool = {
+      id: "research-b",
+      name: "Research B",
+      price: 25,
+      category: "research",
+      functional_needs: ["research", "notes", "summary"],
+      tool_type: "satellite",
+      usage: "medium",
+      prescription_quality: "oui",
+      pertinence_by_persona: { THEO: 84, SOFIA: 50, MARC: 50, ALIX: 50, CLAIRE: 50 },
+      force_silence: false,
+    };
+    const poorFitTool: Tool = {
+      id: "creative-suite",
+      name: "Creative Suite",
+      price: 12,
+      category: "design",
+      functional_needs: ["design", "assets"],
+      tool_type: "satellite",
+      usage: "medium",
+      prescription_quality: "oui",
+      pertinence_by_persona: { THEO: 20, SOFIA: 94, MARC: 50, ALIX: 72, CLAIRE: 50 },
+      force_silence: false,
+    };
+    const baseSession: SessionState = {
+      firstName: "Theo",
+      tjm: 0,
+      language: "fr",
+      persona: "THEO",
+      complementarySkills: [],
+      selectedTools: [overlapToolA, overlapToolB, poorFitTool],
+      discoveryAnswers: new Map(),
+      closingAnswers: ["", "", ""],
+    };
+    const data = {
+      allTools: [overlapToolA, overlapToolB, poorFitTool],
+      doublonRules: [],
+      discoveryQuestions: [],
+    };
+
+    const simplifyResult = runDiagnostic({ ...baseSession, stackGoal: "simplify" }, data);
+    const qualityResult = runDiagnostic({ ...baseSession, stackGoal: "quality" }, data);
+
+    expect(simplifyResult.prescriptions.phase3[0]?.type).toBe("doublon");
+    expect(qualityResult.prescriptions.phase3[0]?.type).toBe("inadapté");
   });
 });
