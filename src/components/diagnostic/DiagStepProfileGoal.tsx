@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { ArrowRight, BriefcaseBusiness, Code2, Compass, Gauge, Palette, PenLine, Scissors, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Check, Code2, Compass, Gauge, Palette, PenLine, Scissors, Sparkles, Workflow } from "lucide-react";
 import type { Persona, SessionState, Tool } from "@/types/diagnostic";
 
 interface Props {
@@ -82,6 +82,7 @@ function inferPersona(tools: Tool[]) {
 
 export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev, variant = "confirm", t }: Props) {
   const inferred = useMemo(() => inferPersona(session.selectedTools), [session.selectedTools]);
+  const [profileStep, setProfileStep] = useState<"persona" | "goal" | "details">("persona");
   const [firstName, setFirstName] = useState(session.firstName || "");
   const [email, setEmail] = useState(session.email || "");
   const [emailError, setEmailError] = useState("");
@@ -91,11 +92,43 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
 
   const inferredMeta = PERSONAS.find((item) => item.id === inferred.persona) || PERSONAS[0];
   const selectedMeta = PERSONAS.find((item) => item.id === persona) || inferredMeta;
-  const selectedLabel = t(selectedMeta.labelFr, selectedMeta.labelEn);
   const isIntro = variant === "intro";
-  const hasSelectedTools = session.selectedTools.length > 0;
   const emailValue = email.trim();
   const isValidEmail = (value: string) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  const stepIndex = profileStep === "persona" ? 0 : profileStep === "goal" ? 1 : 2;
+  const stepTitle =
+    profileStep === "persona"
+      ? t("Pour commencer, tu fais surtout quoi ?", "First, what do you mostly do?")
+      : profileStep === "goal"
+        ? t("Qu’est-ce que tu veux améliorer en priorité ?", "What do you want to improve first?")
+        : t("Deux détails, seulement si tu veux.", "Two details, only if you want.");
+  const stepSubtitle =
+    profileStep === "persona"
+      ? t(
+          "Je m’en sers pour éviter les suggestions hors sujet. Choisis le profil le plus proche, même si ce n’est pas parfait.",
+          "I use this to avoid irrelevant suggestions. Pick the closest profile, even if it is not perfect."
+        )
+      : profileStep === "goal"
+        ? t(
+            "Ça m’aide à classer les recommandations : économies, simplicité, temps gagné ou meilleur choix.",
+            "This helps me rank recommendations: savings, simplicity, saved time or better choices."
+          )
+        : t(
+            "Tu peux tout laisser vide. Ces infos servent juste à personnaliser le rapport et les estimations.",
+            "You can leave everything blank. These only personalize the report and estimates."
+          );
+
+  const goBackWithinIntro = () => {
+    if (profileStep === "details") return setProfileStep("goal");
+    if (profileStep === "goal") return setProfileStep("persona");
+    return onPrev?.();
+  };
+
+  const handlePrimary = () => {
+    if (profileStep === "persona") return setProfileStep("goal");
+    if (profileStep === "goal") return setProfileStep("details");
+    return handleNext();
+  };
 
   const handleNext = () => {
     if (!isValidEmail(emailValue)) {
@@ -120,113 +153,101 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
   };
 
   return (
-    <div className="mx-auto max-w-5xl space-y-7">
-      <div className="grid gap-5 lg:grid-cols-[1fr_340px] lg:items-end">
-        <div className="space-y-2">
-          <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-            {isIntro
-              ? t("D’abord, je calibre le diagnostic.", "First, I calibrate the diagnostic.")
-              : t("Je confirme le bon angle de lecture.", "I confirm the right reading angle.")}
+    <div className="mx-auto max-w-3xl space-y-8 pb-10">
+      <header className="space-y-5 text-center">
+        <div className="mx-auto flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
+          <span>{t("Diagnostic guidé", "Guided diagnostic")}</span>
+          <span className="text-primary/40">·</span>
+          <span>{stepIndex + 1}/3</span>
+        </div>
+        <div className="space-y-3">
+          <h1 className="mx-auto max-w-2xl text-3xl font-bold leading-tight text-foreground md:text-4xl">
+            {stepTitle}
           </h1>
-          <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
-            {isIntro
-              ? t(
-                  "Ton profil sert à proposer les bons outils dès le départ. Sinon le sélecteur devient trop généraliste.",
-                  "Your profile helps suggest the right tools from the start. Otherwise the selector becomes too generic."
-                )
-              : t(
-                  `Tu as renseigné ${session.selectedTools.length} outil(s). Maintenant je calibre le diagnostic sur ton activité et ton objectif.`,
-                  `You listed ${session.selectedTools.length} tool(s). Now I calibrate the diagnostic around your work and goal.`
-                )}
+          <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            {stepSubtitle}
           </p>
         </div>
-
-        <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
-          <p className="text-xs font-semibold uppercase text-primary">
-            {isIntro ? t("Pourquoi maintenant", "Why now") : t("Profil détecté", "Detected profile")}
-          </p>
-          <div className="mt-2 flex items-center gap-3">
-            {isIntro ? <selectedMeta.Icon className="h-6 w-6 text-primary" /> : <inferredMeta.Icon className="h-6 w-6 text-primary" />}
-            <div>
-              <p className="font-semibold text-foreground">
-                {isIntro ? selectedLabel : t(inferredMeta.labelFr, inferredMeta.labelEn)}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                {isIntro
-                  ? t("Les suggestions seront orientées pour ce métier.", "Suggestions will be oriented around this role.")
-                  : inferred.confidence === "clear"
-                    ? t("Signal assez clair", "Fairly clear signal")
-                    : t("Profil probablement hybride", "Probably a hybrid profile")}
-              </p>
-            </div>
-          </div>
+        <div className="mx-auto flex max-w-xs gap-2" aria-hidden="true">
+          {[0, 1, 2].map((item) => (
+            <span
+              key={item}
+              className={`h-1.5 flex-1 rounded-full transition-colors ${item <= stepIndex ? "bg-primary" : "bg-muted"}`}
+            />
+          ))}
         </div>
-      </div>
+      </header>
 
-      <section className="grid gap-3 md:grid-cols-5">
-        {PERSONAS.map((item) => {
-          const Icon = item.Icon;
-          const selected = item.id === persona;
-          return (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => setPersona(item.id)}
-              className={`min-h-[132px] rounded-xl border p-4 text-left transition-colors ${
-                selected ? "border-primary bg-primary/5 ring-1 ring-primary/20" : "border-border bg-card hover:border-primary/40"
-              }`}
-            >
-              <Icon className={`h-5 w-5 ${selected ? "text-primary" : "text-muted-foreground"}`} />
-              <p className="mt-3 text-sm font-semibold text-foreground">{t(item.labelFr, item.labelEn)}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{t(item.hintFr, item.hintEn)}</p>
-            </button>
-          );
-        })}
-      </section>
+      {profileStep === "persona" && (
+        <section className="space-y-3">
+          {PERSONAS.map((item) => {
+            const Icon = item.Icon;
+            const selected = item.id === persona;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setPersona(item.id)}
+                className={`flex min-h-[76px] w-full items-center gap-4 rounded-lg border px-4 text-left transition-colors ${
+                  selected ? "border-primary bg-primary/5 text-foreground" : "border-border bg-card hover:border-primary/40"
+                }`}
+              >
+                <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md ${selected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
+                  <Icon className="h-5 w-5" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-foreground">{t(item.labelFr, item.labelEn)}</span>
+                  <span className="mt-0.5 block text-sm text-muted-foreground">{t(item.hintFr, item.hintEn)}</span>
+                </span>
+                {selected && <Check className="h-5 w-5 shrink-0 text-primary" />}
+              </button>
+            );
+          })}
+        </section>
+      )}
 
-      <section className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="rounded-xl border border-border bg-card p-4">
-          <p className="text-sm font-semibold text-foreground">{t("Ton objectif principal", "Your main goal")}</p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            {t("C'est ce qui priorise les recommandations finales.", "This prioritizes the final recommendations.")}
-          </p>
-          <div className="mt-3 grid gap-2 sm:grid-cols-2">
-            {GOALS.map((goal) => {
-              const Icon = goal.Icon;
-              const selected = goal.value === stackGoal;
-              return (
-                <button
-                  key={goal.value}
-                  type="button"
-                  onClick={() => setStackGoal(goal.value)}
-                  className={`flex min-h-12 items-center gap-3 rounded-lg border px-3 text-left text-sm font-medium transition-colors ${
-                    selected ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  <Icon className="h-4 w-4 shrink-0" />
-                  {t(goal.fr, goal.en)}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+      {profileStep === "goal" && (
+        <section className="space-y-3">
+          {GOALS.map((goal) => {
+            const Icon = goal.Icon;
+            const selected = goal.value === stackGoal;
+            return (
+              <button
+                key={goal.value}
+                type="button"
+                onClick={() => setStackGoal(goal.value)}
+                className={`flex min-h-[72px] w-full items-center gap-4 rounded-lg border px-4 text-left transition-colors ${
+                  selected ? "border-primary bg-primary/5 text-foreground" : "border-border bg-card hover:border-primary/40"
+                }`}
+              >
+                <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md ${selected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
+                  <Icon className="h-5 w-5" />
+                </span>
+                <span className="min-w-0 flex-1 text-sm font-semibold text-foreground">{t(goal.fr, goal.en)}</span>
+                {selected && <Check className="h-5 w-5 shrink-0 text-primary" />}
+              </button>
+            );
+          })}
+        </section>
+      )}
 
-        <div className="rounded-xl border border-border bg-card p-4">
-          <p className="text-sm font-semibold text-foreground">{t("Détails utiles", "Useful details")}</p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            {t("Le prénom personnalise le rapport. L'email reste optionnel. Le TJM sert seulement à estimer le temps récupérable.", "The first name personalizes the report. Email remains optional. The day rate only estimates recoverable time.")}
-          </p>
-          <div className="mt-3 grid gap-2">
-            <div className="grid gap-2 sm:grid-cols-2">
+      {profileStep === "details" && (
+        <section className="space-y-5">
+          <div className="grid gap-3 sm:grid-cols-2">
+            <label className="space-y-2">
+              <span className="text-sm font-medium text-foreground">{t("Ton prénom", "Your first name")}</span>
               <input
                 id="diagnostic-first-name-compact"
                 name="first-name"
                 type="text"
                 value={firstName}
                 onChange={(event) => setFirstName(event.target.value)}
-                placeholder={t("Prénom", "First name")}
-                className="h-10 rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                placeholder={t("Ex. Sofia", "E.g. Sofia")}
+                className="h-12 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
+            </label>
+            <label className="space-y-2">
+              <span className="text-sm font-medium text-foreground">{t("Email optionnel", "Optional email")}</span>
               <input
                 id="diagnostic-email-early"
                 name="email"
@@ -236,19 +257,28 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
                   setEmail(event.target.value);
                   setEmailError("");
                 }}
-                placeholder={t("Email optionnel", "Optional email")}
-                className="h-10 rounded-md border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                placeholder={t("Pour recevoir le rapport", "To receive the report")}
+                className="h-12 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
+            </label>
+          </div>
+          {emailError && <p className="text-sm text-destructive">{emailError}</p>}
+
+          <div className="space-y-3">
+            <div>
+              <p className="text-sm font-medium text-foreground">{t("Ton tarif jour, si tu veux affiner le calcul", "Your day rate, if you want a sharper estimate")}</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {t("Tu peux choisir “Pas utile” sans pénaliser le diagnostic.", "You can choose “Not needed” without hurting the diagnostic.")}
+              </p>
             </div>
-            {emailError && <p className="text-xs text-destructive">{emailError}</p>}
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               {TJM_OPTIONS.map((option) => (
                 <button
                   key={option.value}
                   type="button"
                   onClick={() => setTjm(option.value)}
-                  className={`h-9 rounded-md border px-2 text-xs font-medium ${
-                    tjm === option.value ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground"
+                  className={`h-11 rounded-md border px-2 text-sm font-medium ${
+                    tjm === option.value ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {t(option.label.fr, option.label.en)}
@@ -257,39 +287,40 @@ export default function DiagStepProfileGoal({ session, onUpdate, onNext, onPrev,
               <button
                 type="button"
                 onClick={() => setTjm(0)}
-                className={`h-9 rounded-md border px-2 text-xs font-medium ${
-                  tjm === 0 ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground"
+                className={`h-11 rounded-md border px-2 text-sm font-medium ${
+                  tjm === 0 ? "border-primary bg-primary/5 text-foreground" : "border-border text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {t("Pas utile", "Not needed")}
               </button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-        {onPrev ? (
+      <footer className="flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
+        {profileStep === "persona" && !onPrev ? (
+          <p className="text-sm text-muted-foreground">
+            {t("Pas besoin d’être exact : tu pourras corriger ensuite.", "No need to be exact: you can adjust later.")}
+          </p>
+        ) : (
           <button
             type="button"
-            onClick={onPrev}
+            onClick={goBackWithinIntro}
             className="h-11 rounded-md border border-border px-5 text-sm font-medium text-foreground hover:bg-muted"
           >
-            {hasSelectedTools ? t("Retour à la stack", "Back to stack") : t("Retour", "Back")}
+            {t("Retour", "Back")}
           </button>
-        ) : <span />}
+        )}
         <button
           type="button"
-          onClick={handleNext}
+          onClick={handlePrimary}
           className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground"
         >
-          {isIntro ? t("Trouver mes outils", "Find my tools") : t("Continuer avec ce contexte", "Continue with this context")}
+          {profileStep === "details" ? t("Trouver mes outils", "Find my tools") : t("Continuer", "Continue")}
           <ArrowRight className="h-4 w-4" />
         </button>
-      </div>
-      <p className="text-center text-xs text-muted-foreground">
-        {t(`Lecture retenue : ${selectedLabel}.`, `Selected lens: ${selectedLabel}.`)}
-      </p>
+      </footer>
     </div>
   );
 }
