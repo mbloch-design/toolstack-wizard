@@ -6,7 +6,7 @@ import DashStackUtile from "./DashStackUtile";
 import DashOptimisations from "./DashOptimisations";
 import DashActions from "./DashActions";
 import DashShareModal from "./DashShareModal";
-import { Eye, Flame, CheckCircle, Rocket, ListChecks, Menu, X } from "lucide-react";
+import { BookOpenText, CheckCircle, Flame, ListChecks, Menu, Rocket, X } from "lucide-react";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 
@@ -18,12 +18,12 @@ interface Props {
   dbSessionToken?: string | null;
 }
 
-const TABS: { id: Tab; icon: typeof Eye; labelFr: string; labelEn: string }[] = [
-  { id: "overview", icon: Eye, labelFr: "Aperçu", labelEn: "Overview" },
-  { id: "gaspillage", icon: Flame, labelFr: "Gaspillage", labelEn: "Waste" },
-  { id: "stack", icon: CheckCircle, labelFr: "Stack utile", labelEn: "Useful Stack" },
-  { id: "optimiser", icon: Rocket, labelFr: "Optimiser", labelEn: "Optimize" },
-  { id: "actions", icon: ListChecks, labelFr: "Mes actions", labelEn: "My Actions" },
+const TABS: { id: Tab; icon: typeof BookOpenText; labelFr: string; labelEn: string }[] = [
+  { id: "overview", icon: BookOpenText, labelFr: "Synthèse", labelEn: "Summary" },
+  { id: "actions", icon: ListChecks, labelFr: "Plan", labelEn: "Plan" },
+  { id: "stack", icon: CheckCircle, labelFr: "Carte stack", labelEn: "Stack map" },
+  { id: "gaspillage", icon: Flame, labelFr: "À revoir", labelEn: "Review" },
+  { id: "optimiser", icon: Rocket, labelFr: "Options", labelEn: "Options" },
 ];
 
 export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSessionToken }: Props) {
@@ -71,9 +71,12 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
     <div className="min-h-screen flex flex-col md:flex-row bg-background">
       {/* Mobile header */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 border-b border-border bg-card">
-        <span className="font-semibold text-sm text-foreground font-['DM_Mono']">
-          {t("Résultats", "Results")}
-        </span>
+        <div>
+          <span className="block text-sm font-semibold text-foreground">
+            {t("Restitution", "Restitution")}
+          </span>
+          <span className="text-xs text-muted-foreground">ToolTrim</span>
+        </div>
         <button onClick={() => setMobileOpen(!mobileOpen)} className="p-1.5 rounded-lg hover:bg-muted">
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -100,10 +103,13 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
       )}
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex flex-col w-[200px] min-h-screen border-r border-border bg-card p-3 gap-1 shrink-0 sticky top-0 h-screen">
+      <aside className="hidden md:flex flex-col w-[220px] min-h-screen border-r border-border bg-card p-3 gap-1 shrink-0 sticky top-0 h-screen">
         <div className="mb-4 px-2">
-          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            {t("Diagnostic", "Diagnostic")}
+          <p className="text-sm font-bold text-foreground">
+            {t("Restitution", "Restitution")}
+          </p>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            {t("Lis d’abord la synthèse, creuse seulement si besoin.", "Read the summary first, then dig in if needed.")}
           </p>
         </div>
         {TABS.map((tab) => (
@@ -154,7 +160,7 @@ export default function DiagDashboard({ result, allTools, t, dbSessionId, dbSess
 
       {/* Main content */}
       <main className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-6 md:py-10">
+        <div className="max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-10">
           {renderPage()}
         </div>
       </main>
