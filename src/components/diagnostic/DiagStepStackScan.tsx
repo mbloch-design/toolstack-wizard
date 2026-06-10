@@ -273,6 +273,10 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   } | null>(null);
 
   const selectedIds = useMemo(() => new Set(selectedTools.map((tool) => tool.id)), [selectedTools]);
+  const selectedToolsById = useMemo(
+    () => new Map(selectedTools.map((tool) => [tool.id, tool])),
+    [selectedTools]
+  );
   const allKnownTools = useMemo(() => {
     const map = new Map<string, Tool>();
     tools.forEach((tool) => map.set(tool.id, tool));
@@ -328,7 +332,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
   const coveredCount = momentCoverage.filter((moment) => moment.covered).length;
   const missingMoments = momentCoverage.filter((moment) => !moment.covered && !moment.skipped);
   const selectedInActiveMoment = activeMoment.selected.length;
-  const selectedToolsInActiveMoment = activeMoment.selected;
   const selectedMonthlyCost = selectedTools.reduce((sum, tool) => sum + (Number(tool.price) || 0), 0);
   const coverageConfidence: NonNullable<SessionState["selectionCoverage"]>["confidence"] =
     coveredCount >= 7 ? "high" : coveredCount >= 4 ? "medium" : "low";
@@ -743,8 +746,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                 <ToolGrid
                   title={t("Résultats", "Results")}
                   tools={filteredTools.slice(0, 8)}
-                  selectedIds={selectedIds}
+                  selectedToolsById={selectedToolsById}
                   onToggle={(tool) => toggleTool(tool, "search")}
+                  onOfferChange={updateSelectedToolOffer}
                   t={t}
                 />
               ) : (
@@ -782,8 +786,9 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   <ToolChoiceButton
                     key={tool.id}
                     tool={tool}
-                    selected={selectedIds.has(tool.id)}
+                    selectedTool={selectedToolsById.get(tool.id)}
                     onToggle={() => toggleTool(tool, "suggestion")}
+                    onOfferChange={(offer) => updateSelectedToolOffer(tool.id, offer)}
                     t={t}
                   />
                 )) : (
@@ -792,17 +797,6 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
                   </div>
                 )}
               </div>
-            </div>
-          )}
-
-          {selectedInActiveMoment > 0 && (
-            <div className="mt-6">
-              <ActiveOfferCheck
-                tools={selectedToolsInActiveMoment}
-                onOfferChange={updateSelectedToolOffer}
-                onUpdateTool={(toolId, patch) => updateSelectedTool(toolId, patch)}
-                t={t}
-              />
             </div>
           )}
 
@@ -907,141 +901,63 @@ export default function DiagStepStackScan({ session, tools, onUpdate, onNext, on
 
 function ToolChoiceButton({
   tool,
-  selected,
+  selectedTool,
   onToggle,
+  onOfferChange,
   t,
 }: {
   tool: Tool;
-  selected: boolean;
+  selectedTool?: Tool;
   onToggle: () => void;
+  onOfferChange: (offer: NonNullable<Tool["selectedOffer"]>) => void;
   t: (fr: string, en: string) => string;
 }) {
+  const selected = Boolean(selectedTool);
+  const displayTool = selectedTool || withDefaultOffer(tool);
+
   return (
-    <button
-      type="button"
-      onClick={onToggle}
-      aria-pressed={selected}
-      className={`flex min-h-[76px] items-center gap-3 rounded-lg border p-3 text-left shadow-sm transition-all duration-200 ${
+    <div
+      className={`h-[118px] rounded-lg border p-3 shadow-sm transition-all duration-200 ${
         selected
           ? "border-primary bg-primary/10 ring-2 ring-primary/20"
           : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
       }`}
     >
-      <ToolLogo tool={tool} size={36} className="rounded-md" />
-      <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
-        <p className="text-xs text-muted-foreground">
-          {tool.price > 0
-            ? t(`≈ ${tool.price}€/mois catalogue`, `≈ €${tool.price}/mo catalog`)
-            : t("Gratuit possible", "Free possible")}
-        </p>
-      </div>
-      {selected ? (
-        <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground">
-          <Check className="h-3.5 w-3.5" />
-          {t("Ajouté", "Added")}
-        </span>
-      ) : (
-        <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground">
-          <Plus className="h-4 w-4" />
-        </span>
-      )}
-    </button>
-  );
-}
-
-function ActiveOfferCheck({
-  tools,
-  onOfferChange,
-  onUpdateTool,
-  t,
-}: {
-  tools: Tool[];
-  onOfferChange: (toolId: string, offer: NonNullable<Tool["selectedOffer"]>) => void;
-  onUpdateTool: (toolId: string, patch: Partial<Tool>) => void;
-  t: (fr: string, en: string) => string;
-}) {
-  return (
-    <div className="rounded-lg border border-border bg-muted/20 p-3">
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs font-semibold uppercase text-primary">
-            {t("Plan utilisé", "Plan used")}
-          </p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {t(
-              "Ajuste seulement si le prix affiché ne correspond pas à ton abonnement réel.",
-              "Adjust only if the displayed price does not match your real subscription."
-            )}
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-pressed={selected}
+        className="flex h-[54px] w-full items-center gap-3 text-left"
+      >
+        <ToolLogo tool={displayTool} size={36} className="rounded-md" />
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-sm font-semibold text-foreground">{displayTool.name}</p>
+          <p className="truncate text-xs text-muted-foreground">
+            {selected
+              ? `${offerLabel(displayTool, t)} · ${displayTool.price > 0 ? `${displayTool.price}€/${t("mois", "mo")}` : "0€"}`
+              : displayTool.price > 0
+                ? t(`≈ ${displayTool.price}€/mois catalogue`, `≈ €${displayTool.price}/mo catalog`)
+                : t("Gratuit possible", "Free possible")}
           </p>
         </div>
-        <span className="text-xs font-semibold text-primary">
-          {tools.length} {tools.length > 1 ? t("outils", "tools") : t("outil", "tool")}
-        </span>
-      </div>
-      <div className="mt-3 space-y-2">
-        {tools.map((tool) => (
-          <ToolOfferRow
-            key={tool.id}
-            tool={tool}
-            onOfferChange={(offer) => onOfferChange(tool.id, offer)}
-            onPriceChange={(price) => onUpdateTool(tool.id, {
-              price,
-              selectedOffer: price <= 0 ? "free" : tool.selectedOffer === "free" ? "paid" : tool.selectedOffer,
-              selectedPriceIsEstimate: false,
-            })}
-            t={t}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ToolOfferRow({
-  tool,
-  onOfferChange,
-  onPriceChange,
-  t,
-}: {
-  tool: Tool;
-  onOfferChange: (offer: NonNullable<Tool["selectedOffer"]>) => void;
-  onPriceChange: (price: number) => void;
-  t: (fr: string, en: string) => string;
-}) {
-  const selectedOffer = tool.selectedOffer || (tool.price > 0 ? "paid" : "free");
-  const showPriceInput = selectedOffer === "paid" || selectedOffer === "team";
-
-  return (
-    <div className="rounded-lg border border-border bg-background p-3">
-      <div className="grid gap-3 lg:grid-cols-[minmax(150px,1fr)_minmax(260px,auto)_92px] lg:items-center">
-        <div className="flex min-w-0 flex-1 items-center gap-2">
-          <ToolLogo tool={tool} size={28} className="rounded-md" />
-          <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
-            <p className="text-xs text-muted-foreground">
-              {offerLabel(tool, t)} · {tool.price > 0 ? `${tool.price}€/${t("mois", "mo")}` : t("0€ estimé", "Estimated €0")}
-            </p>
-          </div>
-        </div>
-        <OfferSelector tool={tool} onChange={onOfferChange} t={t} />
-        {showPriceInput ? (
-          <label className="flex h-9 w-full items-center gap-1 rounded-md border border-input bg-background px-2 text-xs lg:w-[92px]">
-            <input
-              type="text"
-              inputMode="decimal"
-              value={tool.price || ""}
-              onChange={(event) => onPriceChange(Math.max(0, Number(event.target.value.replace(",", ".")) || 0))}
-              placeholder="Prix"
-              className="min-w-0 flex-1 bg-transparent text-right outline-none"
-              aria-label={t(`Prix mensuel de ${tool.name}`, `Monthly price for ${tool.name}`)}
-            />
-            <span className="text-muted-foreground">€</span>
-          </label>
-        ) : (
-          <span className="inline-flex h-9 items-center justify-center rounded-md border border-border bg-muted/30 px-2 text-xs font-semibold text-muted-foreground lg:w-[92px]">
-            {selectedOffer === "free" ? "0€" : t("À vérifier", "Check")}
+        {selected ? (
+          <span className="inline-flex shrink-0 items-center justify-center rounded-full bg-primary p-1.5 text-primary-foreground">
+            <Check className="h-3.5 w-3.5" />
           </span>
+        ) : (
+          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground">
+            <Plus className="h-4 w-4" />
+          </span>
+        )}
+      </button>
+
+      <div className="mt-2 h-8">
+        {selected ? (
+          <OfferSelector tool={displayTool} onChange={onOfferChange} compact t={t} />
+        ) : (
+          <p className="flex h-8 items-center rounded-md bg-muted/30 px-2 text-xs font-medium text-muted-foreground">
+            {t("Ajoute pour choisir le plan", "Add to choose plan")}
+          </p>
         )}
       </div>
     </div>
@@ -1051,21 +967,25 @@ function ToolOfferRow({
 function OfferSelector({
   tool,
   onChange,
+  compact = false,
   t,
 }: {
   tool: Tool;
   onChange: (offer: NonNullable<Tool["selectedOffer"]>) => void;
+  compact?: boolean;
   t: (fr: string, en: string) => string;
 }) {
   const currentOffer = tool.selectedOffer || (tool.price > 0 ? "paid" : "free");
   return (
-    <div className="grid w-full grid-cols-4 gap-1 rounded-md border border-border bg-muted/30 p-1 lg:w-[280px]">
+    <div className={`grid w-full grid-cols-4 gap-1 rounded-md border border-border bg-muted/30 p-1 ${
+      compact ? "" : "lg:w-[280px]"
+    }`}>
       {OFFER_OPTIONS.map((option) => (
         <button
           key={option.value}
           type="button"
           onClick={() => onChange(option.value)}
-          className={`h-8 whitespace-nowrap rounded-[5px] px-2 text-xs font-semibold transition-colors ${
+          className={`${compact ? "h-6 px-1 text-[10px]" : "h-8 px-2 text-xs"} whitespace-nowrap rounded-[5px] font-semibold transition-colors ${
             currentOffer === option.value
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:bg-background hover:text-foreground"
@@ -1357,14 +1277,16 @@ function NoSearchResult({
 function ToolGrid({
   title,
   tools,
-  selectedIds,
+  selectedToolsById,
   onToggle,
+  onOfferChange,
   t,
 }: {
   title: string;
   tools: Tool[];
-  selectedIds: Set<string>;
+  selectedToolsById: Map<string, Tool>;
   onToggle: (tool: Tool) => void;
+  onOfferChange: (toolId: string, offer: NonNullable<Tool["selectedOffer"]>) => void;
   t: (fr: string, en: string) => string;
 }) {
   if (tools.length === 0) return null;
@@ -1373,39 +1295,15 @@ function ToolGrid({
       <p className="text-xs font-semibold uppercase text-muted-foreground">{title}</p>
       <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
         {tools.map((tool) => {
-          const selected = selectedIds.has(tool.id);
           return (
-            <button
+            <ToolChoiceButton
               key={tool.id}
-              type="button"
-              onClick={() => onToggle(tool)}
-              aria-pressed={selected}
-              className={`flex min-h-[76px] items-center gap-3 rounded-lg border p-3 text-left shadow-sm transition-all duration-200 ${
-                selected
-                  ? "border-primary bg-primary/10 ring-2 ring-primary/20"
-                  : "border-border bg-card hover:border-primary/40 hover:bg-muted/30"
-              }`}
-            >
-              <ToolLogo tool={tool} size={36} className="rounded-md" />
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold text-foreground">{tool.name}</p>
-                <p className="text-xs text-muted-foreground">
-                  {tool.price > 0
-                    ? t(`≈ ${tool.price}€/mois catalogue`, `≈ €${tool.price}/mo catalog`)
-                    : t("Gratuit possible", "Free possible")}
-                </p>
-              </div>
-              {selected ? (
-                <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground">
-                  <Check className="h-3.5 w-3.5" />
-                  {t("Ajouté", "Added")}
-                </span>
-              ) : (
-                <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground">
-                  <Plus className="h-4 w-4" />
-                </span>
-              )}
-            </button>
+              tool={tool}
+              selectedTool={selectedToolsById.get(tool.id)}
+              onToggle={() => onToggle(tool)}
+              onOfferChange={(offer) => onOfferChange(tool.id, offer)}
+              t={t}
+            />
           );
         })}
       </div>
